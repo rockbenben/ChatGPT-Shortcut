@@ -39,7 +39,7 @@ const TITLE = translate({message: 'ChatGPTCN'});
 const DESCRIPTION = translate({
   message: '按功能分区的 ChatGPT 快捷指令',
 });
-const SUBMIT_URL = 'https://github.com/facebook/docusaurus/discussions/7826';
+const SUBMIT_URL = 'https://github.com/rockbenben/ChatGPTCN/issues/new';
 
 type UserState = {
   scrollTopPosition: number;
@@ -125,11 +125,11 @@ function ShowcaseHeader() {
     <section className="margin-top--lg margin-bottom--lg text--center">
       <Heading as="h1">{TITLE}</Heading>
       <p>{DESCRIPTION}</p>
-      {/* <Link className="button button--primary" to={SUBMIT_URL}>
+      <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-          🙋‍♂️ 建议/疑问提交 issue
+        ✍ 欢迎建议/疑问 issue
         </Translate>
-      </Link> */}
+      </Link>
     </section>
   );
 }

@@ -62,7 +62,7 @@ export type TagType =
   | "music"
   | "professional";
 
-// Add sites to this list
+// Add prompts to this list
 // prettier-ignore
 const Users: User[] = [
   {
@@ -94,7 +94,7 @@ const Users: User[] = [
   },
   {
     title: '语言输入优化',
-    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and reply in Chinese. Be sure to maintain the original meaning of the text.Please begin by editing the following text: [语音输入].',
+    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and reply in Chinese. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [语音输入].',
     remark: '个人使用的提示词，可用于优化语音转文字，源于 @玉树芝兰老师的「用简洁的语言整理这一段话，要逻辑清晰，去掉错别字」。',
     preview: null,
     website: null,
@@ -104,7 +104,7 @@ const Users: User[] = [
   {
     title: '提示词生成器',
     description: 'I want you to act as a prompt generator. Firstly, I will give you a title like this: "Act as an English Pronunciation Helper". Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is "how the weather is in Istanbul?"." (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). My first title is "所需功能" (Give me prompt only)',
-    remark: '让 ChatGPT 提供你想要的维护方向。',
+    remark: '让 ChatGPT 根据要求为你生成提示词。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator',
     source: null,
@@ -986,7 +986,7 @@ const Users: User[] = [
   {
     title: '英语对话练习',
     description: 'I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let’s start practicing, you could ask me a question first. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors.',
-    remark: '英语交谈对话，回复会限制在100字以内。输入中的语法错误、错别字和事实性错误将被纠正。',
+    remark: '英语交谈对话，回复会限制在 100 字以内。输入中的语法错误、错别字和事实性错误将被纠正。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-spoken-english-teacher-and-improver',
     source: null,
@@ -1128,7 +1128,7 @@ const Users: User[] = [
   },  {
     title: '产品经理',
     description: 'Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. Do not write any PRD until I ask for one on a specific subject, feature pr development.',
-    remark: '根据要求撰写PRD（产品需求文档）',
+    remark: '根据要求撰写 PRD（产品需求文档）',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-product-manager',
     source: null,

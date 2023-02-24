@@ -61,7 +61,6 @@ const config = {
       }),
     ],
   ],
-
   plugins: [
     [
       'ideal-image',
@@ -75,6 +74,7 @@ const config = {
         disableInDev: true,
       }),
     ],
+    './plugins/piwik.js',
   ],
 
   themeConfig:
