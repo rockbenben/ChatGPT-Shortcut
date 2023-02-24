@@ -1,10 +1,10 @@
 # ChatGPTCN
 
-[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可对提示词进行搜索筛选。提示词主要来自 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，会定期同步更新。如果您需要自定义提示词，可以参考 [ChatGPT 官方案例](https://platform.openai.com/examples)进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
+[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可对提示词进行搜索筛选并一键复制。提示词主要来自 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，会定期同步更新。如果您需要自定义提示词，可以参考 [ChatGPT 官方案例](https://platform.openai.com/examples)进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
 
 ## 使用说明
 
-通过标签、关键词筛选后，点击卡片右侧的「复制」获取提示词，将其粘贴到 ChatGPT，参考中文提示定制需求，即可得到指定领域的建议输出。
+页面默认显示所有提示词。通过标签、关键词筛选后，点击卡片右侧的「复制」获取提示词，将其粘贴到 ChatGPT，参考中文提示定制需求，即可得到指定领域的建议输出。
 
 ![image](https://user-images.githubusercontent.com/28252913/221302238-bbe4d0a4-712a-447c-b9be-b40e8c739b1d.png)
 
@@ -16,7 +16,7 @@
 
 关键词搜索包括标题、简介和提示词内容。
 
-搜索功能基于 Docusaurus 的 showcase，因此 bug 也相同。移动端支持中文输入，PC 端不支持中文输入法，需通过复制中文关键词来解决。一般情况下，建议使用英文搜索。该问题已提交到 Docusaurus，正在等待修复。目前对方的回复是尝试修复 `FWIW, you should not be using Chinese anyway, since the showcase is not localized.`。
+搜索功能基于 Docusaurus 的 showcase，因此 bug 也相同。移动端支持中文输入，PC 端不支持中文输入法，需通过复制中文关键词来解决。一般情况下，建议使用英文搜索。该问题已提交到 Docusaurus，正在等待修复。目前对方的回复是尝试修复 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。
 
 ## 为什么提示词用英文？
 
