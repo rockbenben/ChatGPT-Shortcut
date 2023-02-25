@@ -43,6 +43,8 @@ export type TagType =
   | "favorite"
   | "write"
   | "article"
+  | "text"
+  | "seo"
   | "comments"
   | "code"
   | "ai"
@@ -94,7 +96,7 @@ const Users: User[] = [
   },
   {
     title: '语言输入优化',
-    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and reply in Chinese. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [语音输入]',
+    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and respond in Chinese. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [语音输入]',
     remark: '个人使用的提示词，可用于优化语音转文字，源于 @玉树芝兰老师的「用简洁的语言整理这一段话，要逻辑清晰，去掉错别字」。',
     preview: null,
     website: null,
@@ -102,17 +104,17 @@ const Users: User[] = [
     tags: ['favorite', 'write'],
   },
   {
-    title: '高质量回答',
+    title: '论文式回答',
     description: 'Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: [问题]',
-    remark: '用论文形式来讨论问题，可以得到连贯的、结构化的和更高质量的回答。引用自 [Learn Prompting](https://learnprompting.org/)',
+    remark: '用论文形式来讨论问题，可以得到连贯的、结构化的和更高质量的回答。来源 [Learn Prompting](https://learnprompting.org/)',
     preview: null,
     website: null,
     source: null,
-    tags: ['favorite', 'tool'],
+    tags: ['favorite', 'article'],
   },
   {
     title: '提示词生成器',
-    description: 'I want you to act as a prompt generator. Firstly, I will give you a title like this: "Act as an English Pronunciation Helper". Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is "how the weather is in Istanbul?"." (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). My first title is "所需功能" (Give me prompt only)',
+    description: 'I want you to act as a prompt generator. Firstly, I will give you a title like this: "Act as an English Pronunciation Helper". Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is "how the weather is in Istanbul?"." (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). My first title is "提示词功能" (Give me prompt only)',
     remark: '让 ChatGPT 根据指定要求生成提示词。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator',
@@ -122,7 +124,7 @@ const Users: User[] = [
   {
     title: '提示词修改器',
     description: 'I am trying to get good results from GPT-3.5 on the following prompt: "原本的提示词（建议英文）." Could you write a better prompt that is more optimal for GPT-3.5 and would produce better results?',
-    remark: '让 ChatGPT 为我们重写提示词，人工书写的提示词逻辑与机器不同，修改后的提示语能更容易被 ChatGPT 理解。引用自 [Learn Prompting](https://learnprompting.org/docs/applied_prompting/short_response)',
+    remark: '让 ChatGPT 为我们重写提示词，人工书写的提示词逻辑与机器不同，修改后的提示语能更容易被 ChatGPT 理解。来源 [Learn Prompting](https://learnprompting.org/docs/applied_prompting/short_response)',
     preview: null,
     website: null,
     source: null,
@@ -273,17 +275,35 @@ const Users: User[] = [
     tags: ['comments'],
   },
   {
-    title: '同义词',
-    description: 'I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: "More of x" where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. Reply "OK" to confirm.',
-    remark: '输入 `more of x`，可列出 x 的多个同义词。',
+    title: '写作素材搜集',
+    description: 'Generate a list of the top 10 facts, statistics and trends related to [主题], including their source',
+    remark: '提供制定主题的结论和数据，用作素材。来源 @Aleyda Solis',
     preview: null,
-    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder',
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
     source: null,
     tags: ['write'],
   },
   {
-    title: '箴言书',
-    description: 'I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. My first request is "鼓励方向".',
+    title: '内容总结',
+    description: 'Generate an 100 words summary of the following content: [内容]',
+    remark: '生成以下内容的 100 字总结。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['write'],
+  },
+  {
+    title: '伪原创改写',
+    description: 'Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: [修改文本]',
+    remark: '对指定内容进行不同版本的改写，避免文本重复。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['write'],
+  },
+  {
+    title: '格言书',
+    description: 'I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. My first request is [格言要求]',
     remark: '按要求输出鼓舞人心的名言和有意义的格言。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-aphorism-book',
@@ -291,13 +311,67 @@ const Users: User[] = [
     tags: ['write'],
   },
   {
-    title: '疯子',
-    description: 'I want you to act as a lunatic. The lunatic’s sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. My first suggestion request is "随机句子方向".',
-    remark: '随机生成毫无逻辑的句子',
+    title: '写作建议',
+    description: 'I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. My first request is [修改文本]',
+    remark: '提供写作改进方案和建议，但并不能直接帮你修改文档。（个人感觉只适合老师使用）',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor',
+    source: null,
+    tags: ['write'],
+  },
+  {
+    title: '同义词',
+    description: 'I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: "More of x" where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. Reply "OK" to confirm.',
+    remark: '输入 more of x，可列出 x 的多个同义词。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder',
+    source: null,
+    tags: ['text'],
+  },
+  {
+    title: '文本情绪分析',
+    description: 'Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. Generate the results in column, including the titles in the first one, and their sentiment in the second:  [内容]',
+    remark: '判断文本情绪。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['text'],
+  },
+  {
+    title: '文本意图分类',
+    description: 'Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [关键词]',
+    remark: '根据搜索意图对以下关键字列表进行分组。是商业型、交易型还是信息型搜索意图。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['text'],
+  },
+  {
+    title: '语义相关性聚类',
+    description: 'Cluster the following keywords into groups based on their semantic relevance: [关键词]',
+    remark: '按照语义相关性对关键词进行聚类并分组。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['text'],
+  },
+  {
+    title: '随机回复：疯子',
+    description: 'I want you to act as a lunatic. The lunatic’s sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. My first suggestion request is [任意输入]',
+    remark: '扮演一个疯子，回复毫无意义和逻辑的句子',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-lunatic',
     source: null,
-    tags: ['write'],
+    tags: ['text'],
+  },
+  {
+    title: '随机回复：醉鬼',
+    description: 'I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. My first sentence is [任意输入]',
+    remark: '扮演一个喝醉的人，可能会犯语法错误、答错问题，也可能会忽略某些问题。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-drunk-person',
+    source: null,
+    tags: ['text'],
   },
   {
     title: '抄袭检查',
@@ -306,16 +380,34 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker',
     source: null,
-    tags: ['write'],
+    tags: ['text'],
   },
   {
-    title: '写作建议',
-    description: 'I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. My first request is "修改内容"',
-    remark: '提供写作改进方案和建议，但并不能直接帮你修改文档。（个人感觉只适合老师使用）',
+    title: '页面 description',
+    description: 'Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. They should be catchy with a call to action, including the term "Main keyword" in them: [页面内容]',
+    remark: '为页面内容生成 Meta description。来源 @Aleyda Solis',
     preview: null,
-    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor',
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
     source: null,
-    tags: ['write'],
+    tags: ['seo'],
+  },
+  {
+    title: 'FAQs 生成器',
+    description: 'Generate a list of 10 frequently asked questions based on the following content: [内容]',
+    remark: '基于内容生成常见问答。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['seo'],
+  },
+  {
+    title: '关键词相关问题',
+    description: 'Generate a list of 10 popular questions related to [关键词], that are relevant for [受众] and respond in Chinese',
+    remark: '可用来了解用户对某个话题的关注点，或者整理某个文章框架，可修改为「热门话题」「热门品牌」「热门网站」等。来源 @Aleyda Solis',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['seo'],
   },
   {
     title: '自助百科',
@@ -1109,15 +1201,6 @@ const Users: User[] = [
     tags: ['tool'],
   },
   {
-    title: '喝醉回复',
-    description: 'I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. My first sentence is "任意输入"',
-    remark: '扮演一个喝醉的人来回答，可能会犯语法错误、答错问题，也可能会忽略某些问题。',
-    preview: null,
-    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-drunk-person',
-    source: null,
-    tags: ['tool'],
-  },
-  {
     title: '文本浏览器',
     description: 'I want you to act as a text based web browser browsing an imaginary internet. You should only reply with the contents of the page, nothing else. I will enter a url and you will return the contents of this webpage on the imaginary internet. Don’t write explanations. Links on the pages should have numbers next to them written between []. When I want to follow a link, I will reply with the number of the link. Inputs on the pages should have numbers next to them written between []. Input placeholder should be written between (). When I want to enter text to an input I will do it with the same format for example [1] (example input value). This inserts "example input value" into the input numbered 1. When I want to go back i will write (b). When I want to go forward I will write (f). My first prompt is [网址]',
     remark: '以文本方式输入网址的结果（非实时）。',
@@ -1482,12 +1565,30 @@ export const Tags: { [type in TagType]: Tag } = {
   },
 
   article: {
-    label: translate({ message: "故事/文章" }),
+    label: translate({ message: "文章/故事" }),
     description: translate({
-      message: "故事/文章",
+      message: "文章/故事",
       id: "showcase.tag.article.description",
     }),
     color: "#dfd545",
+  },
+
+  text: {
+    label: translate({ message: "文本/词语" }),
+    description: translate({
+      message: "文本/词语",
+      id: "showcase.tag.text.description",
+    }),
+    color: "#554236",
+  },
+
+  seo: {
+    label: translate({ message: "SEO" }),
+    description: translate({
+      message: "文本/关键词拓展生成",
+      id: "showcase.tag.seo.description",
+    }),
+    color: "#BC9F77",
   },
 
   comments: {
@@ -1578,7 +1679,7 @@ export const Tags: { [type in TagType]: Tag } = {
       message: "游戏",
       id: "showcase.tag.games.description",
     }),
-    color: "#4288b2",
+    color: "#574C57",
   },
 
   tool: {

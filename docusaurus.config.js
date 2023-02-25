@@ -82,6 +82,7 @@ const config = {
     ({
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
+      metadata: [{name: 'keywords', content: 'prompt,ChatGPT,提示词,AI prompts'}],
       navbar: {
         title: 'ChatGPTCN',
         logo: {
