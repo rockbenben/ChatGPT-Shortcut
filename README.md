@@ -1,6 +1,8 @@
 # ChatGPTCN
 
-[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可对提示词进行搜索筛选并一键复制。提示词主要来自 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，会定期同步更新。如果您需要自定义提示词，可以参考 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
+[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可通过标签筛选、关键词搜索和一键复制来使用提示词，旨在简化你的工作流程并提高生产力。
+
+提示词来自精选和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期更新。如需自定义提示词，可以参考 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
 
 ## 使用说明
 

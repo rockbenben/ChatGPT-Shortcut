@@ -35,9 +35,9 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'ChatGPTCN - 简单易用的 ChatGPT 快捷指令表'});
+const TITLE = translate({message: 'ChatGPTCN - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！'});
 const DESCRIPTION = translate({
-  message: '按功能分区的 ChatGPT 快捷指令',
+  message: '让生产力加倍的 ChatGPT 快捷指令',
 });
 const SUBMIT_URL = 'https://github.com/rockbenben/ChatGPTCN/issues/new';
 
