@@ -1,6 +1,6 @@
 # ChatGPTCN
 
-[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可对提示词进行搜索筛选并一键复制。提示词主要来自 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，会定期同步更新。如果您需要自定义提示词，可以参考 [ChatGPT 官方案例](https://platform.openai.com/examples)进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
+[ChatGPTCN](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可对提示词进行搜索筛选并一键复制。提示词主要来自 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，会定期同步更新。如果您需要自定义提示词，可以参考 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPTCN/issues/new)。
 
 ## 使用说明
 
@@ -33,6 +33,6 @@ yarn
 # Local Development
 yarn start
 
-# Build: This command generates static content into the `build` directory 
+# Build: This command generates static content into the `build` directory
 yarn build
 ```

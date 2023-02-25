@@ -90,12 +90,12 @@ const config = {
         },
         items: [
           {
-            href: 'https://newzone.top/apps/ChatGPT.html',
+            to: 'https://newzone.top/apps/ChatGPT.html',
             label: 'ChatGPT 使用笔记',
             position: 'left',
           },
           {
-            href: 'https://nav.newzone.top',
+            to: 'https://nav.newzone.top',
             label: '开源工具导航',
             position: 'left',
           },
@@ -103,7 +103,6 @@ const config = {
             href: 'https://github.com/rockbenben/ChatGPTCN',
             position: 'right',
             className: 'header-github-link',
-            'aria-label': 'GitHub repository',
           },
           /* {
             type: 'doc',
