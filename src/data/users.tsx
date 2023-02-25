@@ -67,7 +67,7 @@ export type TagType =
 const Users: User[] = [
   {
     title: '英语翻译或修改',
-    description: 'I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is "要翻译的语言"',
+    description: 'I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is [要翻译的语言]',
     remark: '将其他语言翻译为英语，或改进你提供的英语句子。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver',
@@ -76,7 +76,7 @@ const Users: User[] = [
   },
   {
     title: '写作标题生成器',
-    description: 'I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. My first topic is "文章内容"',
+    description: 'I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. My first topic is [文章内容]',
     remark: '个人使用的提示词，可根据文章内容生成相应语言的标题。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces',
@@ -85,8 +85,8 @@ const Users: User[] = [
   },
   {
     title: '写作助理',
-    description: 'As a Chinese writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. Please begin by editing the following text: [文章内容].',
-    remark: '个人使用的提示词，可用于改进文字段落和句式。由于 ChatGPT token 数量的限制，超过 2048 字符的改写须使用 OpenAI Playground（4K token）。本提示暂未发到 Awesome ChatGPT Prompts，可自行复制使用。',
+    description: 'As a Chinese writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. Please begin by editing the following text: [文章内容]',
+    remark: '个人使用的提示词，可用于改进文字段落和句式。由于 ChatGPT token 数量的限制，超过 2048 字符的改写建议使用 OpenAI Playground（4K token）。',
     preview: null,
     website: null,
     source: null,
@@ -94,7 +94,7 @@ const Users: User[] = [
   },
   {
     title: '语言输入优化',
-    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and reply in Chinese. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [语音输入].',
+    description: 'Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors and reply in Chinese. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [语音输入]',
     remark: '个人使用的提示词，可用于优化语音转文字，源于 @玉树芝兰老师的「用简洁的语言整理这一段话，要逻辑清晰，去掉错别字」。',
     preview: null,
     website: null,
@@ -102,9 +102,18 @@ const Users: User[] = [
     tags: ['favorite', 'write'],
   },
   {
+    title: '高质量回答',
+    description: 'Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: [问题]',
+    remark: '用论文形式来讨论问题，可以得到连贯的、结构化的和更高质量的回答。引用自 [Learn Prompting](https://learnprompting.org/)',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['favorite', 'tool'],
+  },
+  {
     title: '提示词生成器',
     description: 'I want you to act as a prompt generator. Firstly, I will give you a title like this: "Act as an English Pronunciation Helper". Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is "how the weather is in Istanbul?"." (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). My first title is "所需功能" (Give me prompt only)',
-    remark: '让 ChatGPT 根据要求为你生成提示词。',
+    remark: '让 ChatGPT 根据指定要求生成提示词。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator',
     source: null,
@@ -112,8 +121,8 @@ const Users: User[] = [
   },
   {
     title: '提示词修改器',
-    description: 'I am trying to get good results from GPT-3.5 on the following prompt:"所需提示词（建议英文）" Could you write a better prompt that is more optimal for GPT-3.5 and would produce better results?',
-    remark: '人工书写的提示词逻辑与机器不同，修改后的提示语能更容易被 ChatGPT 理解。',
+    description: 'I am trying to get good results from GPT-3.5 on the following prompt: "原本的提示词（建议英文）." Could you write a better prompt that is more optimal for GPT-3.5 and would produce better results?',
+    remark: '让 ChatGPT 为我们重写提示词，人工书写的提示词逻辑与机器不同，修改后的提示语能更容易被 ChatGPT 理解。引用自 [Learn Prompting](https://learnprompting.org/docs/applied_prompting/short_response)',
     preview: null,
     website: null,
     source: null,

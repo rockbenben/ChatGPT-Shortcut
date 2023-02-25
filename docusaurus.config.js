@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ChatGPTCN：简单易用的 ChatGPT 快捷指令',
+  title: '标签筛选、关键词搜索和一键复制 Prompts',
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: 'img/favicon.ico',
 
@@ -81,7 +81,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'ChatGPTCN',
         logo: {

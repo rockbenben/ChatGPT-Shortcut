@@ -35,7 +35,7 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'ChatGPTCN - 为中文母语人士创建的 ChatGPT 快捷指令表'});
+const TITLE = translate({message: 'ChatGPTCN - 简单易用的 ChatGPT 快捷指令表'});
 const DESCRIPTION = translate({
   message: '按功能分区的 ChatGPT 快捷指令',
 });
