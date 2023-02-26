@@ -35,7 +35,7 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'ChatGPTCN - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！'});
+const TITLE = translate({message: 'ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！'});
 const DESCRIPTION = translate({
   message: '让生产力加倍的 ChatGPT 快捷指令',
 });
@@ -123,7 +123,7 @@ function useFilteredUsers() {
 function ShowcaseHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">ChatGPTCN</Heading>
+      <Heading as="h1">ChatGPT Shortcut</Heading>
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">

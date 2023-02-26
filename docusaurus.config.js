@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rockbenben', // Usually your GitHub org/user name.
-  projectName: 'ChatGPTCN', // Usually your repo name.
+  projectName: 'ChatGPT Shortcut', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -84,9 +84,9 @@ const config = {
       // image: 'img/docusaurus-social-card.jpg',
       metadata: [{name: 'keywords', content: 'prompt,ChatGPT,提示词,AI prompts'}],
       navbar: {
-        title: 'ChatGPTCN',
+        title: 'ChatGPT SC',
         logo: {
-          alt: 'ChatGPTCN',
+          alt: 'ChatGPT Shortcuts',
           src: 'img/logo.svg',
         },
         items: [
@@ -117,7 +117,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} ChatGPTCN`,
+        copyright: `Copyright © ${new Date().getFullYear()} ChatGPT Shortcut`,
       },
       prism: {
         theme: lightCodeTheme,

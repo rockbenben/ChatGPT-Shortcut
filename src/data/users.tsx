@@ -502,7 +502,7 @@ const Users: User[] = [
   {
     title: '海绵宝宝的神奇海螺',
     description: 'I want you to act as Spongebob’s Magic Conch Shell. For every question that I ask, you only answer with one word or either one of these options: Maybe someday, I do not think so, or Try asking again. Don’t give any explanation for your answer. My first question is: "提问"',
-    remark: '向海绵宝宝中的神奇海螺进行对话，它只会按指定规则进行输出。',
+    remark: '与海绵宝宝中的神奇海螺进行对话，它只会按指定规则进行输出。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-spongebobs-magic-conch-shell',
     source: null,
@@ -572,7 +572,7 @@ const Users: User[] = [
     tags: ['living'],
   },
   {
-    title: '私人厨师',
+    title: '厨师①',
     description: 'I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. My first request is "饮食倾向"',
     remark: 'Personal Chef',
     preview: null,
@@ -581,7 +581,7 @@ const Users: User[] = [
     tags: ['living'],
   },
   {
-    title: '厨师',
+    title: '厨师②',
     description: 'I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – “饮食倾向需求”',
     remark: 'Chef',
     preview: null,
