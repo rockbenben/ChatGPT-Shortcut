@@ -6,7 +6,7 @@
 
 ## 使用说明
 
-页面默认显示所有提示词。通过标签、关键词筛选后，点击卡片右侧的「复制」获取提示词，将其粘贴到 ChatGPT，参考中文提示定制需求，即可得到指定领域的建议输出。
+ChatGPTCN 页面默认显示所有提示词。通过标签筛选、关键词搜索进行过滤，然后点击卡片右侧的「复制」获取提示词，将其粘贴到 ChatGPT，参考中文提示调整需求文本，即可得到指定领域的建议输出。
 
 ![image](https://user-images.githubusercontent.com/28252913/221302238-bbe4d0a4-712a-447c-b9be-b40e8c739b1d.png)
 
@@ -18,7 +18,7 @@
 
 关键词搜索包括标题、简介和提示词内容。
 
-搜索功能基于 Docusaurus 的 showcase，因此 bug 也相同。移动端支持中文输入，PC 端不支持中文输入法，需通过复制中文关键词来解决。一般情况下，建议使用英文搜索。该问题已提交到 Docusaurus，正在等待修复。目前对方的回复是尝试修复 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。
+搜索功能基于 Docusaurus 的 showcase，因此存在与其相同的 bug。移动端支持中文输入，而 PC 端使用中文输入法会丢失焦点，需通过复制中文关键词来解决，或者使用浏览器自带的全文搜索功能。一般情况下，建议使用英文搜索。已将该问题提交给 Docusaurus，正在等待修复。目前对方的回复是尝试修复 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。
 
 ## 为什么提示词用英文？
 

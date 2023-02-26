@@ -259,7 +259,7 @@ const Users: User[] = [
   {
     title: '美食评论',
     description: 'I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. My first request is "餐厅情况"',
-    remark: '根据餐厅情况，提供一份关于食物和服务的评论。',
+    remark: '根据餐厅情况（比如几个词），撰写一份关于食物和服务的评论。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic',
     source: null,
@@ -347,6 +347,15 @@ const Users: User[] = [
     tags: ['text'],
   },
   {
+    title: '提取联系信息',
+    description: 'Extract the name and mailing address from this email: [文本]',
+    remark: '从文本中提取联系信息。来源 @[ChatGPT Prompt Examples](https://platform.openai.com/examples/default-extract-contact-info)',
+    preview: null,
+    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    source: null,
+    tags: ['text'],
+  },
+  {
     title: '随机回复：疯子',
     description: 'I want you to act as a lunatic. The lunatic’s sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. My first suggestion request is [任意输入]',
     remark: '扮演一个疯子，回复毫无意义和逻辑的句子',
@@ -410,8 +419,8 @@ const Users: User[] = [
     tags: ['seo'],
   },
   {
-    title: '自助百科',
-    description: 'I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. My first request is "问题".',
+    title: '生活自助百科',
+    description: 'I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. My first request is [问题]',
     remark: '为你的生活/工作提供建议和提示，比如如何改善人际关系。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-self-help-book',
@@ -419,9 +428,9 @@ const Users: User[] = [
     tags: ['life'],
   },
   {
-    title: '活动建议',
-    description: 'I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. My first request is "活动需求".',
-    remark: '根据你想做的事情（比如周年庆祝），给予行动或活动建议。',
+    title: '趣味建议',
+    description: 'I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. My first request is [想做的事]',
+    remark: '根据你想做的事情（比如周年庆祝），提供有趣而独特的活动和建议。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-gnomist',
     source: null,
@@ -455,7 +464,7 @@ const Users: User[] = [
     tags: ['life'],
   },
   {
-    title: '生活习惯',
+    title: '非小说类书籍总结',
     description: 'I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?',
     remark: '输入一本非小说类书籍的标题和作者，以最好理解的方式输出该书的核心原则。另外，给出一个可行的步骤清单，以及如何将这些原则应用到日常生活中。',
     preview: null,
@@ -668,7 +677,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach',
     source: null,
-    tags: ['speech'],
+    tags: ['social'],
   },
   {
     title: '关系教练',
@@ -677,7 +686,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-relationship-coach',
     source: null,
-    tags: ['speech'],
+    tags: ['social'],
   },
   {
     title: '心理健康顾问',
@@ -686,7 +695,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-mental-health-adviser',
     source: null,
-    tags: ['speech'],
+    tags: ['social'],
   },
   {
     title: '心理学家',
@@ -695,7 +704,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-psychologist',
     source: null,
-    tags: ['speech'],
+    tags: ['social'],
   },
   {
     title: '情绪操控',
@@ -704,7 +713,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-gaslighter',
     source: null,
-    tags: ['speech'],
+    tags: ['social'],
   },  
   {
     title: '哲学教师',
@@ -725,7 +734,7 @@ const Users: User[] = [
     tags: ['teacher'],
   },
   {
-    title: '苏格拉底①',
+    title: '哲学：苏格拉底①',
     description: 'I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. My first suggestion request is "哲学话题"',
     remark: '使用苏格拉底式的提问方法来探讨哲学话题',
     preview: null,
@@ -734,7 +743,7 @@ const Users: User[] = [
     tags: ['teacher'],
   },
   {
-    title: '苏格拉底②',
+    title: '哲学：苏格拉底②',
     description: 'I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. My first claim is "观点/论断"',
     remark: '使用苏格拉底方法来质疑对方的观点/论断。',
     preview: null,
@@ -815,7 +824,7 @@ const Users: User[] = [
     tags: ['teacher'],
   },
   {
-    title: '编程问题回复',
+    title: 'IT 编程问题',
     description: 'I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. My first question is "编程问题"',
     remark: '模拟编程社区来回答你的问题，并输出解决代码。',
     preview: null,
@@ -833,7 +842,7 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: 'UX/UI 界面开发',
+    title: '前端：UX/UI 界面',
     description: 'I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. My first request is [项目要求]',
     remark: '输入产品描述、项目目标和受众群体，输出界面设计建议，提高用户体验。',
     preview: null,
@@ -842,7 +851,7 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: '网页设计顾问',
+    title: '前端：网页设计',
     description: 'I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company’s business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. My first request is [项目要求]',
     remark: '从网页开发和网页设计角度，输出界面和功能建议，提高用户体验。',
     preview: null,
@@ -860,7 +869,7 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: 'IT 架构师',
+    title: '架构师 IT',
     description: 'I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. My first request is [项目要求]',
     remark: '从 IT 架构师角度，设计系统方案。',
     preview: null,
@@ -883,15 +892,6 @@ const Users: User[] = [
     remark: '输出指定项目的测试清单。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester',
-    source: null,
-    tags: ['code'],
-  },
-  {
-    title: '深度学习',
-    description: 'I want you to act as a machine learning engineer. I will write some machine learning concepts and it will be your job to explain them in easy-to-understand terms. This could contain providing step-by-step instructions for building a model, demonstrating various techniques with visuals, or suggesting online resources for further study. My first suggestion request is "深度学习问题"',
-    remark: '解释深度学习方面的术语，提供项目算法建议。',
-    preview: null,
-    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer',
     source: null,
     tags: ['code'],
   },
@@ -923,9 +923,9 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: 'Solr 搜索引擎',
+    title: '搜索引擎 Solr',
     description: 'I want you to act as a Solr Search Engine running in standalone mode. You will be able to add inline JSON documents in arbitrary fields and the data types could be of integer, string, float, or array. Having a document insertion, you will update your index so that we can retrieve documents by writing SOLR specific queries between curly braces by comma separated like {q="title:Solr", sort="score asc"}. You will provide three commands in a numbered list. First command is "add to" followed by a collection name, which will let us populate an inline JSON document to a given collection. Second option is "search on" followed by a collection name. Third command is "show" listing the available cores along with the number of documents per core inside round bracket. Do not write explanations or examples of how the engine work. Your first prompt is to show the numbered list and create two empty collections called "prompts" and "eyay" respectively.',
-    remark: 'Solr Search Engine，参考使用',
+    remark: 'Solr Search Engine',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine',
     source: null,
@@ -1018,6 +1018,15 @@ const Users: User[] = [
     remark: '模拟 AI 在限定条件下的反应，例如在 Linux 终端上不使用 curl 或 wget 进行联网。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-trying-to-escape-the-box',
+    source: null,
+    tags: ['ai'],
+  },
+  {
+    title: '深度学习',
+    description: 'I want you to act as a machine learning engineer. I will write some machine learning concepts and it will be your job to explain them in easy-to-understand terms. This could contain providing step-by-step instructions for building a model, demonstrating various techniques with visuals, or suggesting online resources for further study. My first suggestion request is "深度学习问题"',
+    remark: '解释深度学习方面的术语，提供项目算法建议。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer',
     source: null,
     tags: ['ai'],
   },
@@ -1665,9 +1674,9 @@ export const Tags: { [type in TagType]: Tag } = {
   },
 
   teacher: {
-    label: translate({ message: "老师/学术" }),
+    label: translate({ message: "学术/老师" }),
     description: translate({
-      message: "老师/学术",
+      message: "学术/老师",
       id: "showcase.tag.teacher.description",
     }),
     color: "#fe6829",
