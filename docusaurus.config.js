@@ -101,7 +101,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/rockbenben/ChatGPTCN',
+            href: 'https://github.com/rockbenben/ChatGPT-Shortcut',
             position: 'right',
             className: 'header-github-link',
           },
