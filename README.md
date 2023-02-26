@@ -8,7 +8,7 @@
 
 ChatGPT Shortcut 页面默认显示所有提示词。通过标签筛选、关键词搜索进行过滤，然后点击卡片右侧的「复制」获取提示词，将其粘贴到 ChatGPT，参考中文提示调整需求文本，即可得到指定领域的建议输出。
 
-![image](https://user-images.githubusercontent.com/28252913/221302238-bbe4d0a4-712a-447c-b9be-b40e8c739b1d.png)
+![image](https://user-images.githubusercontent.com/28252913/221407055-839e9a59-d084-4352-8716-fef6ef859673.png)
 
 ### 标签筛选
 
