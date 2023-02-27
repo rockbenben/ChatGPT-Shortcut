@@ -30,7 +30,7 @@ import ShowcaseFilterToggle, {
   type Operator,
   readOperator,
 } from './_components/ShowcaseFilterToggle';
-import ShowcaseCard from './_components/ShowcaseCard';
+import ShowcaseCard from './_components/ShowcaseCard/cn';
 import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';

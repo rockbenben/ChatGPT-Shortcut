@@ -81,12 +81,12 @@ function ShowcaseCard({user}: {user: User}) {
     setTimeout(() => setShowCopied(false), 2000);
   };
   // 点击显示中文文本
-  const [paragraphText, setParagraphText] = useState(user.description);
+  const [paragraphText, setParagraphText] = useState(user.descn);
   function handleParagraphClick() {
-    if (paragraphText === user.description) {
-      setParagraphText(user.descn);
-    } else {
+    if (paragraphText === user.descn) {
       setParagraphText(user.description);
+    } else {
+      setParagraphText(user.descn);
     }
   }
   return (

@@ -82,7 +82,7 @@ const config = {
     ({
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
-      metadata: [{name: 'keywords', content: 'prompt,ChatGPT,提示词,AI prompts'}],
+      metadata: [{name: 'keywords', content: 'prompt,ChatGPT,AI prompts，提示词'}],
       navbar: {
         title: 'ChatGPT SC',
         logo: {
@@ -100,6 +100,8 @@ const config = {
             label: '开源工具导航',
             position: 'left',
           },
+          {href: '/', label: 'EN', title: '英文提示词', position: 'right'},
+          {to: '/cn', label: 'CN', title: '中文提示词', position: 'right'},
           {
             href: 'https://github.com/rockbenben/ChatGPT-Shortcut',
             position: 'right',
