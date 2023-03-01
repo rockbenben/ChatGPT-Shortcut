@@ -128,7 +128,7 @@ function ShowcaseHeader() {
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-        ✍ 欢迎建议/疑问 issue
+        🙏 请添加你的提示词
         </Translate>
       </Link>
     </section>
