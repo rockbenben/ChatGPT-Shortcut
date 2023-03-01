@@ -91,8 +91,8 @@ const config = {
         },
         items: [
           {
-            to: 'https://newzone.top/apps/ChatGPT.html',
-            label: 'ChatGPT 使用笔记',
+            to: 'https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html',
+            label: 'ChatGPT 使用说明',
             position: 'left',
           },
           {
