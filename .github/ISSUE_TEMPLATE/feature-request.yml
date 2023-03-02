@@ -3,8 +3,6 @@ description: Suggest an idea for this project
 title: "[Feature]"
 labels:
   - enhancement
-labels:
-  - bug
 assignees: rockbenben
 body:
   - type: checkboxes
@@ -16,7 +14,7 @@ body:
         - label: 我搜索了现有的问题，没有人要求类似的功能。
           required: true
 
-        - label: 我认为 25% 以上的用户需要这个功能持积极态度。
+        - label: 我认为 25% 以上的用户需要这个功能。
           required: true
 
   - type: textarea
