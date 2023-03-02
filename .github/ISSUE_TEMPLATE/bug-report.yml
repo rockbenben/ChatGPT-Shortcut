@@ -1,0 +1,36 @@
+name: 问题模板
+description: 请提交遇到的问题或 Bug
+title: "[Bug]"
+labels:
+  - bug
+assignees: rockbenben
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Make sure that you follow these statements.
+      options:
+        - label: 我已经看过 [使用说明](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 问题描述
+
+        > 如果方便的话，请添加屏幕截图以帮助解决你的问题。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请描述一下你遇到的问题。
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 补充说明
+      description: 如有必要，请描述你期望的结果。

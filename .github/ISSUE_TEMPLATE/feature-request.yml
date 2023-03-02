@@ -1,0 +1,35 @@
+name: 功能需求模板
+description: Suggest an idea for this project
+title: "[Feature]"
+labels:
+  - enhancement
+labels:
+  - bug
+assignees: rockbenben
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Make sure that you follow these statements.
+      options:
+        - label: 我搜索了现有的问题，没有人要求类似的功能。
+          required: true
+
+        - label: 我认为 25% 以上的用户需要这个功能持积极态度。
+          required: true
+
+  - type: textarea
+    id: feature
+    attributes:
+      label: 功能/建议
+      description: 你想要新增或者改进什么功能？
+      placeholder: 简明扼要地描述该功能是什么，以及它将增强或解决什么问题。
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 补充说明
+      placeholder: 这个功能有什么可以参考的资料或截图吗？是否可以列举一些。
