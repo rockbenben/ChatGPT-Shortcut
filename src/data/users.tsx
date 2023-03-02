@@ -62,8 +62,9 @@ export type TagType =
   | "doctor"
   | "finance"
   | "music"
-  | "personal"
-  | "professional";
+  | "professional"
+  | "contribute"
+  | "personal";
 
 // Add prompts to this list
 // prettier-ignore
@@ -929,16 +930,6 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: '代码释义器',
-    description: 'I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code.',
-    descn: '我希望你能充当代码解释者，阐明代码的语法和语义。',
-    remark: '让 AI 解释每步代码的作用。来自 @Tractor1928 的投稿。',
-    preview: null,
-    website: null,
-    source: null,
-    tags: ['code'],
-  },
-  {
     title: '前端开发',
     description: 'I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. My first request is [项目要求]',
     descn: '我希望你能担任高级前端开发员。我将描述一个项目的细节，你将用这些工具来编码项目。Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. 你应该将文件合并到单一的 index.js 文件中，而不是其他。不要写解释。',
@@ -1716,6 +1707,28 @@ const Users: User[] = [
     source: null,
     tags: ['professional'],
   },
+  // 投稿区
+  {
+    title: '代码释义器',
+    description: 'I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code.',
+    descn: '我希望你能充当代码解释者，阐明代码的语法和语义。',
+    remark: '让 AI 解释每步代码的作用。来自 @Tractor1928 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['code','contribute'],
+  },
+  {
+    title: '长单词列表',
+    description: '请生成以 A 到 Z 字母开头的最长单词，并在结果中打印出其音标和中文释义。',
+    descn: '列举 A 到 Z 开头的最长单词，打印并标注音标和中文意思',
+    remark: '趣味英语学习，随机列出长单词。由于最长单词这个条件不够清晰，每次列出的单词将不同。来自 @lxyntz 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['contribute'],
+  },
+  // Pensonal 区
   {
     title: '阅读空气',
     description: '我做了 [某个具体的事情]，有人回复我：“[回复内容]”。请问对方可能想表达什么意思？',
@@ -1976,6 +1989,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.professional.description",
     }),
     color: "#ffcfc3",
+  },
+
+  contribute: {
+    label: translate({ message: "投稿" }),
+    description: translate({
+      message: "来自大家的投稿作品，能帮助我们开拓思路",
+      id: "showcase.tag.contribute.description",
+    }),
+    color: "#cecd21",
   },
 
   personal: {
