@@ -75,6 +75,7 @@ const config = {
       }),
     ],
     './plugins/piwik.js',
+    './plugins/instantpage.js',
   ],
 
   themeConfig:

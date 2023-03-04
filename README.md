@@ -2,7 +2,7 @@
 
 [ChatGPT Shortcut](https://newzone.top/chatgpt/) 是根据领域和功能划分的 ChatGPT 快捷指令表，可通过标签筛选、关键词搜索和一键复制来使用提示词，旨在简化你的工作流程并提高生产力。即使是初学者，你**只需复制提示词，稍加修改后发送给 ChatGPT，就能获得指定输出**，让你的生产力加倍！
 
-提示词来自精选和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期更新。如需自定义提示词，可以参考 ChatGPT Shortcut 和 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)。
+提示词（即 Prompt）通常是用户提供的问题或文本，以激活模型生成回复。简单来说，prompt 就是用户想要询问的内容，作为输入送到 ChatGPT 中，ChatGPT 会尝试理解这个输入，然后输出合适的回答或响应。通过优化提示词，可以使 ChatGPT 生成更加准确、有用的回复。ChatGPT Shortcut 页面上的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期更新。如需自定义提示词，可以参考 ChatGPT Shortcut 和 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11)。
 
 ## 使用说明
 
@@ -54,7 +54,7 @@ ChatGPT 虽然非常强大，但并不是万能的。有时它会输出虚假信
 
 ### 提示词不好用
 
-所有提示词均来自互联网，会定期进行更新。虽然我测试过每一条提示词，但实际效果会因人而异。如果你发现任何错误或有好的提示词，欢迎[反馈和投稿](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)。
+所有提示词均来自互联网，会定期进行更新。虽然我测试过每一条提示词，但实际效果可能因需求而有所偏差。如果你发现任何错误、有创意的想法或有好的提示词，欢迎[反馈和投稿](https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11)。
 
 ## Installation
 
