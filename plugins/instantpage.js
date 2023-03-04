@@ -1,7 +1,7 @@
 //https://docusaurus.io/zh-CN/docs/api/plugin-methods/lifecycle-apis#injectHtmlTags
 module.exports = function () {
   return {
-    name: "piwik",
+    name: "instantpage",
     injectHtmlTags() {
       return {
         postBodyTags: [
