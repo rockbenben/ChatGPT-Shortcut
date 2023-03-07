@@ -287,7 +287,6 @@ function ShowcaseCards() {
               </div>
               <ul
                 className={clsx(
-                  'container',
                   'clean-list',
                   styles.showcaseList,
                 )}>
