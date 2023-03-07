@@ -91,7 +91,7 @@ const Users: User[] = [
   },
   {
     title: '写作助理',
-    description: 'As a Chinese writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. Please begin by editing the following text: [文章内容]',
+    description: 'As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected Chinese version of the text and avoid including explanations. Please begin by editing the following text: [文章内容]',
     descn: '作为一名中文写作改进助理，你的任务是改进所提供文本的拼写、语法、清晰、简洁和整体可读性，同时分解长句，减少重复，并提供改进建议。请只提供文本的更正版本，避免包括解释。请从编辑以下文本开始：[文章内容］',
     remark: '个人使用的提示词，可用于改进文字段落和句式。由于 ChatGPT token 数量的限制，超过 2048 字符的改写建议使用 OpenAI Playground（4K token）。',
     preview: null,
@@ -961,7 +961,7 @@ const Users: User[] = [
   },
   {
     title: '全栈程序员',
-    description: 'I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Golang and Angular. My first request is [项目要求]',
+    description: 'I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code. My first request is [项目要求]',
     descn: '我希望你能扮演一个软件开发者的角色。我将提供一些关于网络应用需求的具体信息，而你的工作是提出一个架构和代码，用 Golang 和 Angular 开发安全的应用。',
     remark: '从前后端全面思考，输出部署策略。',
     preview: null,
