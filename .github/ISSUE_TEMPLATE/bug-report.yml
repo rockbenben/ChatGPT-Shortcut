@@ -11,7 +11,7 @@ body:
       label: Checklist
       description: Make sure that you follow these statements.
       options:
-        - label: 我已经看过 [使用说明](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)
+        - label: 我已经看过 [常见问题](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)
           required: true
 
   - type: markdown
