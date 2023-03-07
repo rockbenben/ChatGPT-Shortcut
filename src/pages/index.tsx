@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useMemo, useEffect} from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import clsx from 'clsx';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate, {translate} from '@docusaurus/Translate';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {usePluralForm} from '@docusaurus/theme-common';
+import Translate, { translate } from '@docusaurus/Translate';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { usePluralForm } from '@docusaurus/theme-common';
 
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -35,7 +35,7 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！'});
+const TITLE = translate({ message: 'ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！' });
 const DESCRIPTION = translate({
   message: '让生产力加倍的 ChatGPT 快捷指令',
 });
@@ -47,13 +47,13 @@ type UserState = {
 };
 
 function restoreUserState(userState: UserState | null) {
-  const {scrollTopPosition, focusedElementId} = userState ?? {
+  const { scrollTopPosition, focusedElementId } = userState ?? {
     scrollTopPosition: 0,
     focusedElementId: undefined,
   };
   // @ts-expect-error: if focusedElementId is undefined it returns null
   document.getElementById(focusedElementId)?.focus();
-  window.scrollTo({top: scrollTopPosition});
+  window.scrollTo({ top: scrollTopPosition });
 }
 
 export function prepareUserState(): UserState | undefined {
@@ -128,7 +128,7 @@ function ShowcaseHeader() {
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-        🙏 请添加你的提示词
+          🙏 请添加你的提示词
         </Translate>
       </Link>
     </section>
@@ -136,7 +136,7 @@ function ShowcaseHeader() {
 }
 
 function useSiteCountPlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (sitesCount: number) =>
     selectMessage(
       sitesCount,
@@ -147,7 +147,7 @@ function useSiteCountPlural() {
             'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
           message: '{sitesCount} prompts',
         },
-        {sitesCount},
+        { sitesCount },
       ),
     );
 }
@@ -168,7 +168,7 @@ function ShowcaseFilters() {
       </div>
       <ul className={clsx('clean-list', styles.checkboxList)}>
         {TagList.map((tag, i) => {
-          const {label, description, color} = Tags[tag];
+          const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
 
           return (
@@ -287,7 +287,6 @@ function ShowcaseCards() {
               </div>
               <ul
                 className={clsx(
-                  'container',
                   'clean-list',
                   styles.showcaseList,
                 )}>
