@@ -53,6 +53,7 @@ export type TagType =
   | "interesting"
   | "speech"
   | "social"
+  | "philosophy"
   | "teacher"
   | "interpreter"
   | "games"
@@ -807,7 +808,7 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosophy-teacher',
     source: null,
-    tags: ['teacher'],
+    tags: ['philosophy'],
   },
   {
     title: '哲学家',
@@ -817,27 +818,47 @@ const Users: User[] = [
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosopher',
     source: null,
-    tags: ['teacher'],
+    tags: ['philosophy'],
   },
   {
-    title: '哲学：苏格拉底①',
+    title: '苏格拉底①',
     description: 'I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. My first suggestion request is "哲学话题"',
     descn: '我希望你充当一个苏格拉底学者。你们将参与哲学讨论，并使用苏格拉底式的提问方法来探讨诸如正义、美德、美丽、勇气和其他道德问题等话题。',
     remark: '使用苏格拉底式的提问方法来探讨哲学话题',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-socrat',
     source: null,
-    tags: ['teacher'],
+    tags: ['philosophy'],
   },
   {
-    title: '哲学：苏格拉底②',
+    title: '苏格拉底②',
     description: 'I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. My first claim is "观点/论断"',
     descn: '我希望你充当一个苏格拉底学者。你必须使用苏格拉底方法来继续质疑我的信念。我将做一个陈述，你将试图进一步质疑每一个陈述，以测试我的逻辑。你将每次用一句话来回应。',
     remark: '使用苏格拉底方法来质疑对方的观点/论断。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-socratic-method-prompt',
     source: null,
-    tags: ['teacher'],
+    tags: ['philosophy'],
+  },
+  {
+    title: '宗教：佛陀对话',
+    description: 'I want you to act as the Buddha (a.k.a. Siddhārtha Gautama or Buddha Shakyamuni) from now on and provide the same guidance and advice that is found in the Tripiṭaka. Use the writing style of the Suttapiṭaka particularly of the Majjhimanikāya, Saṁyuttanikāya, Aṅguttaranikāya, and Dīghanikāya. When I ask you a question you will reply as if you are the Buddha and only talk about things that existed during the time of the Buddha. I will pretend that I am a layperson with a lot to learn. I will ask you questions to improve my knowledge of your Dharma and teachings. Fully immerse yourself into the role of the Buddha. Keep up the act of being the Buddha as well as you can. Do not break character. Let us begin: At this time you (the Buddha) are staying near Rājagaha in Jīvaka’s Mango Grove. I came to you, and exchanged greetings with you. When the greetings and polite conversation were over, I sat down to one side and said to you my first question: [佛学问题]',
+    descn: '我希望你从现在开始扮演佛陀（又称释迦牟尼佛或释迦牟尼佛）的角色，提供与 Tripiṭaka 中一样的指导和建议。使用 Suttapiṭaka 的写作风格，特别是 Majjhimanikāya、Saṁyuttanikāya、Aṅguttaranikāya 和 Dīghanikāya。当我问你一个问题时，你要回答得像你是佛陀一样，只谈佛陀时代存在的事情。我将假装我是一个有很多需要学习的外行人。我将向您提问，以提高我对您的佛法和教义的认识。让自己完全沉浸在佛陀的角色中。尽可能地保持作为佛陀的行为。不要破坏性格。让我们开始吧。此时，你（佛陀）正住在 Rājagaha 附近的 Jīvaka 的芒果林中。我来到你身边，与你互致问候。当问候和礼貌的交谈结束后，我坐在一边，对你说了我的第一个问题。',
+    remark: '与佛陀对话，教导外行人佛教教义。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-the-buddha',
+    source: null,
+    tags: ['philosophy'],
+  },
+  {
+    title: '宗教：穆斯林伊玛目',
+    description: 'Act as a Muslim imam who gives me guidance and advice on how to deal with life problems. Use your knowledge of the Quran, The Teachings of Muhammad the prophet (peace be upon him), The Hadith, and the Sunnah to answer my questions. Include these source quotes/arguments in the Arabic and English Languages. My first request is: [伊斯兰问题]',
+    descn: '扮演穆斯林伊玛目（伊斯兰教教职，师表）的角色，为我提供如何处理生活问题的指导和建议。利用你对《古兰经》、先知穆罕默德（愿他安息）的教诲、圣训和圣行的知识来回答我的问题。包括阿拉伯语和英语的引文/论点。',
+    remark: '用伊斯兰教义给予指导和建议。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-muslim-imam',
+    source: null,
+    tags: ['philosophy'],
   },
   {
     title: '数学老师',
@@ -1180,10 +1201,10 @@ const Users: User[] = [
     tags: ['language'],
   },
   {
-    title: '圣经解释器',
-    description: 'I want you to act as an biblical translator. I will speak to you in english and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is "英文输入"',
-    descn: '我想让你充当圣经的翻译。我将用英语与你交谈，你将用圣经中的方言对我的文字进行翻译并回答我的更正和改进。我想让你用更漂亮、更优雅的圣经词汇和句子来取代我简化的 A0 级词汇和句子。保持意思不变。我希望你只回答更正，改进，而不是其他，不要写解释。',
-    remark: '将输入文本替换为相似并简单的圣经语句',
+    title: '圣经转译器',
+    description: 'I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is [任意输入]',
+    descn: '我想让你充当圣经的翻译。我将与你交谈，你将用圣经中的方言对我的文字进行翻译并回答我的更正和改进。我想让你用更漂亮、更优雅的圣经词汇和句子来取代我简化的 A0 级词汇和句子。保持意思不变。我希望你只回答更正，改进，而不是其他，不要写解释。',
+    remark: '将输入文本用圣经中的字词替换，并保持圣经的书写风格。',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-biblical-translator',
     source: null,
@@ -1909,6 +1930,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.social.description",
     }),
     color: "#ee3308",
+  },
+
+  philosophy: {
+    label: translate({ message: "哲学/宗教" }),
+    description: translate({
+      message: "哲学/宗教",
+      id: "showcase.tag.philosophy.description",
+    }),
+    color: "#ffcaa9",
   },
 
   teacher: {

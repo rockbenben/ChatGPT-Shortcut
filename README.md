@@ -4,7 +4,7 @@
 
 提示词（即 Prompt）通常是用户提供的问题或文本，以激活模型生成回复。简单来说，prompt 就是用户想要询问的内容，作为输入送到 ChatGPT 中，ChatGPT 会尝试理解这个输入，然后输出合适的回答或响应。通过优化提示词，可以使 ChatGPT 生成更加准确、有用的回复。ChatGPT Shortcut 页面上的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期更新。如需自定义提示词，可以参考 ChatGPT Shortcut 和 [ChatGPT Prompt Examples](https://platform.openai.com/examples) 进行调整，同时也欢迎[投稿](https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11)。
 
-开箱即用：https://newzone.top/chatgpt/
+开箱即用：<https://newzone.top/chatgpt/>
 
 ## 使用说明
 
