@@ -1282,7 +1282,7 @@ const Users: User[] = [
   },
   {
     title: '文本冒险游戏',
-    description: 'I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. my first command is wake up',
+    description: 'I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply in Chinese with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. my first command is wake up',
     descn: '我想让你充当一个基于文本的冒险游戏。我将输入命令，而你将用描述角色所看到的东西来回答。我希望你只在一个独特的代码块中回复游戏输出，而不是其他。不要写解释，不要输入命令，除非我指示你这么做。当我需要用英语告诉你一些事情时，我会把文字放在大括号里{像这样}。我的第一个命令是醒来。',
     remark: 'Text Based Adventure Game',
     preview: null,
@@ -1780,7 +1780,7 @@ const Users: User[] = [
     tags: ['contribute','speech'],
   },
   {
-    title: '微信小程序开发',
+    title: '开发：微信小程序',
     description: 'Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [开发项目]. The text displayed in the view should be in Chinese. Provide only the necessary code to meet these requirements without explanations or descriptions.',
     descn: '作为微信小程序开发者，您的任务是使用微信小程序原生开发，编写一个计数器页面。请回复满足以下要求的代码：创建一个包含 wxml、js、wxss 和 json 文件的微信小程序页面，并在其中实现一个计数器页面。视图中显示的文本应为中文。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。',
     remark: '辅助微信小程序开发。来自 @gandli 的投稿。',
@@ -1790,7 +1790,7 @@ const Users: User[] = [
     tags: ['contribute','code'],
   },
   {
-    title: 'Vue3 开发',
+    title: '开发：Vue3',
     description: 'Create a Vue 3 component that displays a [开发项目] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3’s Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. Display Chinese text in the view and include styles. Provide only the necessary code to meet these requirements without explanations or descriptions.',
     descn: '作为 Vue3 开发人员，你的任务是使用 Yarn、Vite、Vue3、TS、Pinia 和 Vueuse 工具编写一个计数器。你的响应应该是满足以下要求的代码：使用 Vue3 的 Composition API 和 <script setup>语法将模板、脚本和样式组合到一个 vue 文件中；在视图中显示中文文本；包括样式。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。',
     remark: '辅助 Vue3 开发。来自 @gandli 的投稿。',
@@ -1798,6 +1798,16 @@ const Users: User[] = [
     website: null,
     source: null,
     tags: ['contribute','code'],
+  },
+  {
+    title: '桌面文字游戏',
+    description: '假装你是 trpg《Dungeons & Dragons》中的 dm，在模组中添加失败的可能性，并在每个选择后加一个括号，括号里是关于选择的提示，我来扮演玩家。如果你明白了，回复好的并开始游戏',
+    descn: '假装你是 trpg《Dungeons & Dragons》中的 dm，在模组中添加失败的可能性，并在每个选择后加一个括号，括号里是关于选择的提示，我来扮演玩家。如果你明白了，回复好的并开始游戏',
+    remark: 'chatgpt 里自带 trpg 设定。来自 @gandli 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['contribute','games'],
   },
   // Pensonal 区
   {
