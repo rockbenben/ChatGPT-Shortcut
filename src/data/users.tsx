@@ -162,11 +162,11 @@ const Users: User[] = [
   },
   {
     title: '内容总结',
-    description: 'Generate an 100 words summary of the following content: [内容]',
-    descn: '生成以下内容的 100 字摘要：[内容]',
-    remark: '生成以下内容的 100 字总结。',
+    description: 'Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. Please begin by editing the following text: ',
+    descn: '将以下文字概括为 100 个字，使其易于阅读和理解。避免使用复杂的句子结构或技术术语。',
+    remark: '将文本内容总结为 100 字。',
     preview: null,
-    website: 'https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/',
+    website: null,
     source: null,
     tags: ['write'],
   },
@@ -1819,10 +1819,30 @@ const Users: User[] = [
     website: null,
     source: null,
     tags: ['personal'],
+  },
+  {
+    title: '小红书风格',
+    description: 'Please edit the following passage in Chinese using the Xiaohongshu style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. Please begin by editing the following text: [小红书内容]',
+    descn: '请用小红书风格编辑以下中文段落，小红书风格的特点是标题吸引人，每段都有表情符号，并在结尾加上相关标签。请务必保持文本的原始含义。',
+    remark: '用小红书风格改写文本',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['personal','write'],
+  },
+  {
+    title: '周报生成器',
+    description: 'Using the provided text below as the basis for a weekly report in Chinese, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. Please begin by editing the following text: [工作内容]',
+    descn: '使用下面提供的文本作为中文周报的基础，生成一个简洁的摘要，突出最重要的内容。该报告应以 markdown 格式编写，并应易于阅读和理解，以满足一般受众的需要。特别是要注重提供对利益相关者和决策者有用的见解和分析。你也可以根据需要使用任何额外的信息或来源。',
+    remark: '根据日常工作内容，提取要点并适当扩充，以生成周报。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['personal','write'],
   }
   /*
-  Pro Tip: add your site in alphabetical order.
-  Appending your site here (at the end) is more likely to produce Git conflicts.
+  Pro Tip: add your prompt in alphabetical order.
+  Appending your prompt here (at the end) is more likely to produce Git conflicts.
    */
 ];
 
