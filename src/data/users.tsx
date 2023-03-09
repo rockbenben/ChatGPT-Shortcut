@@ -1779,6 +1779,16 @@ const Users: User[] = [
     source: null,
     tags: ['contribute','speech'],
   },
+  {
+    title: '微信小程序开发',
+    description: '我想让你担任微信小程序开发人员，我将描述一个项目的细节，你将用微信小程序原生开发编码项目：创建一个微信小程序页面，应该包含 wxml、js、wxss、json。只需回复代码，不要写解释。我的第一个请求是“请帮我用微信小程序原生开发写一个 Todos 页面。”',
+    descn: '我想让你担任微信小程序开发人员，我将描述一个项目的细节，你将用微信小程序原生开发编码项目：创建一个微信小程序页面，应该包含 wxml、js、wxss、json。',
+    remark: '辅助微信小程序开发。来自 @gandli 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['contribute','code'],
+  },
   // Pensonal 区
   {
     title: '阅读空气',
