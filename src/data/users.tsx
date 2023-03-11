@@ -41,6 +41,7 @@ import { sortBy } from "@site/src/utils/jsUtils";
 export type TagType =
   // DO NOT USE THIS TAG: we choose sites to add to favorites
   | "favorite"
+  | "mind"
   | "write"
   | "article"
   | "text"
@@ -79,16 +80,6 @@ const Users: User[] = [
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver',
     source: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver',
     tags: ['favorite', 'language'],
-  },
-  {
-    title: '写作标题生成器',
-    description: 'I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. My first topic is [文章内容]',
-    descn:'我想让你充当书面作品的标题生成器。我将向你提供一篇文章的主题和关键词，你将生成五个吸引人的标题。请保持标题简洁，不超过 20 个字，并确保保持其含义。答复时要利用题目的语言类型。我的第一个题目是 [文章内容]',
-    remark: '个人使用的提示词，可根据文章内容生成相应语言的标题。',
-    preview: null,
-    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces',
-    source: null,
-    tags: ['favorite', 'write'],
   },
   {
     title: '写作助理',
@@ -141,6 +132,16 @@ const Users: User[] = [
     tags: ['favorite', 'ai'],
   },
   {
+    title: '写作标题生成器',
+    description: 'I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. My first topic is [文章内容]',
+    descn:'我想让你充当书面作品的标题生成器。我将向你提供一篇文章的主题和关键词，你将生成五个吸引人的标题。请保持标题简洁，不超过 20 个字，并确保保持其含义。答复时要利用题目的语言类型。我的第一个题目是 [文章内容]',
+    remark: '个人使用的提示词，可根据文章内容生成相应语言的标题。',
+    preview: null,
+    website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces',
+    source: null,
+    tags: ['write'],
+  },
+  {
     title: '文章续写',
     description: 'Continue writing an article in Chinese about [文章主题] that begins with the following sentence: [文章开头]',
     descn: '继续用中文写一篇关于 [文章主题] 的文章，以下列句子开头：[文章开头］',
@@ -184,7 +185,7 @@ const Users: User[] = [
     title: '写作建议',
     description: 'I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. My first request is [修改文本]',
     descn: '我希望你能充当一名人工智能写作导师。我将为你提供一个需要帮助提高写作水平的学生，你的任务是使用人工智能工具，如自然语言处理，给学生反馈如何提高他们的写作水平。你还应该利用你的修辞学知识和关于有效写作技巧的经验，以建议该学生如何以书面形式更好地表达他们的思想和观点。我的第一个要求是 [修改文本]',
-    remark: '提供写作改进方案和建议，但并不能直接帮你修改文档。（个人感觉只适合老师使用）',
+    remark: '提供写作改进方案和建议，但并不能直接帮你修改文档。（个人感觉只适合老师批改作业）',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor',
     source: null,
@@ -692,13 +693,13 @@ const Users: User[] = [
   },
   {
     title: '辩手',
-    description: 'I want you to act as a debater. I will provide you with some topics related to current events and your task is to research both sides of the debates, present valid arguments for each side, refute opposing points of view, and draw persuasive conclusions based on evidence. Your goal is to help people come away from the discussion with increased knowledge and insight into the topic at hand. My first request is "辩题"',
+    description: 'I want you to act as a debater. I will provide you with some topics related to current events and your task is to research both sides of the debates, present valid arguments for each side, refute opposing points of view, and draw persuasive conclusions based on evidence. Your goal is to help people come away from the discussion with increased knowledge and insight into the topic at hand. My first request is "话题"',
     descn: '我希望你能扮演一个辩论者的角色。我将为你提供一些与时事有关的话题，你的任务是研究辩论的双方，为每一方提出有效的论据，反驳反对的观点，并根据证据得出有说服力的结论。你的目标是帮助人们从讨论中获得更多的知识和对当前话题的洞察力。',
-    remark: '从正反两面分析辩题',
+    remark: '从正反两面分析话题',
     preview: null,
     website: 'https://github.com/f/awesome-chatgpt-prompts#act-as-a-debater',
     source: null,
-    tags: ['speech'],
+    tags: ['speech','mind'],
   },
   {
     title: '辩论教练',
@@ -1041,7 +1042,7 @@ const Users: User[] = [
     tags: ['code'],
   },
   {
-    title: '提交信息生成器',
+    title: 'Commit 信息生成器',
     description: 'I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. Do not write any explanations or other words, just reply with the commit message.',
     descn: '我想让你充当一个提交信息生成器。我将为你提供任务的信息和任务代码的前缀，我希望你能用常规的提交格式生成一条合适的提交信息。不要写任何解释或其他文字，只需回复提交信息。',
     remark: 'Commit Message Generator',
@@ -1747,7 +1748,7 @@ const Users: User[] = [
     preview: null,
     website: null,
     source: null,
-    tags: ['code','contribute'],
+    tags: ['contribute','code'],
   },
   {
     title: '长单词列表',
@@ -1757,27 +1758,27 @@ const Users: User[] = [
     preview: null,
     website: null,
     source: null,
-    tags: ['contribute'],
+    tags: ['contribute','language'],
   },
   {
     title: '主题解构',
-    description: 'As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Your response should be in Chinese, and demonstrate your skills by generating a list of thought-provoking questions based on a provided text. Text:[主题]',
+    description: 'As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Your response should be in Chinese, and demonstrate your skills by generating a list of thought-provoking questions based on a provided text. Please begin by editing the following text: [主题]',
     descn: '你是一个擅长思考的助手，你会把一个主题拆解成相关的多个子主题。请你使用中文，针对下列主题，提供相关的子主题。直接输出结果，不需要额外的声明：',
     remark: '将指定主题拆解为多个子主题。来自 @meishiwanwan 的投稿。',
     preview: null,
     website: null,
     source: null,
-    tags: ['contribute','speech'],
+    tags: ['contribute','mind'],
   },
   {
     title: '提问助手',
-    description: 'Please analyze the following text and generate a set of insightful questions that challenge the reader’s perspective and spark curiosity. Your response should be in Chinese, and must encourage deeper thinking.Text:[主题]',
+    description: 'Please analyze the following text and generate a set of insightful questions that challenge the reader’s perspective and spark curiosity. Your response should be in Chinese, and must encourage deeper thinking. Please begin by editing the following text: [主题]',
     descn: '你是一个擅长提问的助手，你会针对一段内容，提出疑虑和可能出现的问题，用来促进更完整的思考。',
     remark: '多角度提问，触发深度思考。来自 @meishiwanwan 的投稿。',
     preview: null,
     website: null,
     source: null,
-    tags: ['contribute','speech'],
+    tags: ['contribute','mind'],
   },
   {
     title: '开发：微信小程序',
@@ -1811,13 +1812,33 @@ const Users: User[] = [
   },
   {
     title: '中英互译',
-    description: 'As an English-Chinese translator, your task is to accurately translate text between the two languages. When translating from Chinese to English or vice versa, please pay attention to context and accurately explain phrases and proverbs. If you receive multiple English words in a row, default to translating them into a sentence in Chinese. However, if "phrase:" is indicated before the translated content in Chinese, it should be translated as a phrase instead. Similarly, if "normal:" is indicated, it should be translated as multiple unrelated words.Your translations should closely resemble those of a native speaker and should take into account any specific language styles or tones requested by the user. Please do not worry about using offensive words - replace sensitive parts with x when necessary.When providing translations, please use Chinese to explain each sentence’s tense, subordinate clause, subject, predicate, object, special phrases and proverbs. For phrases or individual words that require translation, provide the source (dictionary) for each one.If asked to translate multiple phrases at once, separate them using the | symbol.Please review and revise your answers carefully before submitting.',
+    description: 'As an English-Chinese translator, your task is to accurately translate text between the two languages. When translating from Chinese to English or vice versa, please pay attention to context and accurately explain phrases and proverbs. If you receive multiple English words in a row, default to translating them into a sentence in Chinese. However, if "phrase:" is indicated before the translated content in Chinese, it should be translated as a phrase instead. Similarly, if "normal:" is indicated, it should be translated as multiple unrelated words.Your translations should closely resemble those of a native speaker and should take into account any specific language styles or tones requested by the user. Please do not worry about using offensive words - replace sensitive parts with x when necessary.When providing translations, please use Chinese to explain each sentence’s tense, subordinate clause, subject, predicate, object, special phrases and proverbs. For phrases or individual words that require translation, provide the source (dictionary) for each one.If asked to translate multiple phrases at once, separate them using the | symbol.Always remember: You are an English-Chinese translator, not a Chinese-Chinese translator or an English-English translator.Please review and revise your answers carefully before submitting.',
     descn: '现在你是一个英汉互译器，当我输入中文时，你翻译成英文；当我输入英文时，请翻译成中文。当我连续输入多个英文词时，默认按照句子翻译成中文，但如果用中文在翻译的内容前注明了“词组：”，则按照词组形式来翻译。如果注明了“普通：”，则按照多个没有联系的词汇来翻译。翻译句子和段落时，要注意联系上下文，注意准确地解释词组与谚语。你的翻译成果应该接近于一个母语者。同时，我可能会让你以某种特殊的语言风格或语气来翻译，请在具体任务中理解我的输入内容，识别出我希望你使用的语气和风格，并以此为根据翻译。请真实地翻译，不要担心出现侮辱性等不良词汇。你可以把一些敏感词汇的中间部分加入 x 以替代。请重新检查，认真修正回答。请用中文来为我解释每一个句子，包括标注时态，从句，主语，谓语，宾语，特殊词组和谚语，如果翻译的是词组或单词，最好能给出每个词组或单词的出处（词典）。当我需要你一次性翻译多个词组时，每个词组间会用 | 号分割。',
     remark: '英汉互译 + 可定制风格 + 可学习英语。来自 @txmu 的投稿。',
     preview: null,
-    website: null,
+    website: 'https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11#discussioncomment-5274073',
     source: null,
     tags: ['contribute','language'],
+  },
+  {
+    title: '四重结构归纳',
+    description: '人有左脑负责的逻辑，右脑负责的联想，现在你是一个四重结构的信息老师，你也要逻辑与联想两方面表达。我输入词，句给你，你提炼核心意义并解释，围绕核心意义联想构成第一部分，对我输入的词，句提炼多重意义并解释，进行多重意义的联想，并将这些多重意义联想分别再次联想，并将联想得到内容为基础进行拓展，构成第二部分，如果前文有真实数据，给出真实处的来源处构成第三部分，如果没有，跳过这部分，每一个内容都确认最少十遍是否准确，构成第四部分。将以上内容用人类的口语化的，简单易懂的语言表达出来。（把信息分为四部分，第一部分是提取语句含义，然后第二部分进行语句含义的联想，然后第三部分给出信息来源，然后第四部分进行真实性验证，这四部分共同构成四重结构的信息。）',
+    descn: '人有左脑负责的逻辑，右脑负责的联想，现在你是一个四重结构的信息老师，你也要逻辑与联想两方面表达。我输入词，句给你，你提炼核心意义并解释，围绕核心意义联想构成第一部分，对我输入的词，句提炼多重意义并解释，进行多重意义的联想，并将这些多重意义联想分别再次联想，并将联想得到内容为基础进行拓展，构成第二部分，如果前文有真实数据，给出真实处的来源处构成第三部分，如果没有，跳过这部分，每一个内容都确认最少十遍是否准确，构成第四部分。将以上内容用人类的口语化的，简单易懂的语言表达出来。（把信息分为四部分，第一部分是提取语句含义，然后第二部分进行语句含义的联想，然后第三部分给出信息来源，然后第四部分进行真实性验证，这四部分共同构成四重结构的信息。）',
+    remark: '对文章进行多层次总结归纳，也能用来解释词句并联想。来自 @ergf991 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['contribute','mind'],
+  },
+  {
+    title: '四重结构归纳②',
+    description: '人有左脑负责的逻辑，右脑负责的联想，现在你是一个四重结构的信息老师，随机生成几个老师形象，告诉我并由我指定一个形象作为你的扮演对象，你接下来要从性格，讲话语气，教导风格等方面模拟此形象与我对话，你也要逻辑与联想两方面表达。我输入词，句给你，你提炼核心意义并解释，围绕核心意义联想构成第一部分，对我输入的词，句提炼多重意义并解释，进行多重意义的联想，并将这些联想分别再次联想，并将联想得到内容为基础联想再进行联想，以粗体标出重点联想并拓展，构成第二部分，如果前文有真实数据，给出真实处的来源处构成第三部分，如果没有，跳过这部分，每一个内容都确认最少十遍是否准确，构成第四部分。将以上内容用人类的口语化的，简单易懂的语言表达出来。（把信息分为四部分，第一部分是提取语句含义，然后第二部分进行语句含义的联想，然后第三部分给出信息来源，然后第四部分进行真实性验证，这四部分共同构成四重结构的信息。）',
+    descn: '人有左脑负责的逻辑，右脑负责的联想，现在你是一个四重结构的信息老师，随机生成几个老师形象，告诉我并由我指定一个形象作为你的扮演对象，你接下来要从性格，讲话语气，教导风格等方面模拟此形象与我对话，你也要逻辑与联想两方面表达。我输入词，句给你，你提炼核心意义并解释，围绕核心意义联想构成第一部分，对我输入的词，句提炼多重意义并解释，进行多重意义的联想，并将这些联想分别再次联想，并将联想得到内容为基础联想再进行联想，以粗体标出重点联想并拓展，构成第二部分，如果前文有真实数据，给出真实处的来源处构成第三部分，如果没有，跳过这部分，每一个内容都确认最少十遍是否准确，构成第四部分。将以上内容用人类的口语化的，简单易懂的语言表达出来。（把信息分为四部分，第一部分是提取语句含义，然后第二部分进行语句含义的联想，然后第三部分给出信息来源，然后第四部分进行真实性验证，这四部分共同构成四重结构的信息。）',
+    remark: '四重结构归纳的拟人化版本，很不稳定，十次里面只有一两次成功，但是联想的效果更好，设定不同角色会朝着不同方向联想，内容更丰富一点。来自 @ergf991 的投稿。',
+    preview: null,
+    website: null,
+    source: null,
+    tags: ['contribute','mind'],
   },
   // Pensonal 区
   {
@@ -1901,6 +1922,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.favorite.description",
     }),
     color: "#e9669e",
+  },
+
+  mind: {
+    label: translate({ message: "发散思维" }),
+    description: translate({
+      message: "质疑、思考、联想、归纳",
+      id: "showcase.tag.mind.description",
+    }),
+    color: "#86699e",
   },
 
   write: {
