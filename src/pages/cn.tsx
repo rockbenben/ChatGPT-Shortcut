@@ -5,12 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useMemo, useEffect} from 'react';
+import React, { useState, useMemo, useEffect , useCallback } from 'react';
 import clsx from 'clsx';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate, {translate} from '@docusaurus/Translate';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {usePluralForm} from '@docusaurus/theme-common';
+import Translate, { translate } from '@docusaurus/Translate';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { usePluralForm } from '@docusaurus/theme-common';
+import { debounce } from 'lodash';
 
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
@@ -220,6 +221,49 @@ function SearchBar() {
   useEffect(() => {
     setValue(readSearchName(location.search));
   }, [location]);
+
+  useEffect(() => {
+    const searchbar = document.getElementById('searchbar');
+    if (searchbar) {
+      searchbar.focus();
+    }
+  }, [value]);
+
+  const updateSearch = useCallback(
+    debounce((searchValue: string) => {
+      const newSearch = new URLSearchParams(location.search);
+      newSearch.delete(SearchNameQueryKey);
+      if (searchValue) {
+        newSearch.set(SearchNameQueryKey, searchValue);
+      }
+      history.push({
+        ...location,
+        search: newSearch.toString(),
+        state: prepareUserState(),
+      });
+    }, 800), //搜索延时
+    [location, history]
+  );
+
+  const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
+    if (window.innerWidth >= 768) { // PC 端
+      setValue(e.currentTarget.value);
+      updateSearch(e.currentTarget.value);
+    } else { // 移动端
+      setValue(e.currentTarget.value);
+      const newSearch = new URLSearchParams(location.search);
+      newSearch.delete(SearchNameQueryKey);
+      if (e.currentTarget.value) {
+        newSearch.set(SearchNameQueryKey, e.currentTarget.value);
+      }
+      history.push({
+        ...location,
+        search: newSearch.toString(),
+        state: prepareUserState(),
+      });
+    }
+  };
+
   return (
     <div className={styles.searchContainer}>
       <input
@@ -229,22 +273,7 @@ function SearchBar() {
           id: 'showcase.searchBar.placeholder',
         })}
         value={value ?? undefined}
-        onInput={(e) => {
-          setValue(e.currentTarget.value);
-          const newSearch = new URLSearchParams(location.search);
-          newSearch.delete(SearchNameQueryKey);
-          if (e.currentTarget.value) {
-            newSearch.set(SearchNameQueryKey, e.currentTarget.value);
-          }
-          history.push({
-            ...location,
-            search: newSearch.toString(),
-            state: prepareUserState(),
-          });
-          setTimeout(() => {
-            document.getElementById('searchbar')?.focus();
-          }, 0);
-        }}
+        onInput={handleInput}
       />
     </div>
   );
