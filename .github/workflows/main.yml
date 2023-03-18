@@ -37,7 +37,7 @@ jobs:
           folder: build
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           local-dir: build/
           server: ${{ secrets.ftp_host }}
