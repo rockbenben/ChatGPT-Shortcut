@@ -14,7 +14,7 @@
 
 - 🚀 **Simplified process**: ChatGPT Shortcut provides a quick command table that can quickly filter and search for prompts suitable for different scenarios, helping users simplify the usage process.
 - 💻 **Amplify productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
-- 🎓 **Suitable for beginners**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
+- 🎓 **Beginner-friendly**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
 - 🆕 **Regular updates**: The prompts of ChatGPT Shortcut come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
 - 📦 **Ready-to-use**: <https://ai.newzone.top/en/>
 
