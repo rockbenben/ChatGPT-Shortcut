@@ -5,7 +5,7 @@
     English | <a href="./README-zh.md">中文</a>
 </p>
 <p align="center">
-    <em>Power Up Your Productivity</em>
+    <em>Maximize your Efficiency and Productivity</em>
 </p>
 
 ![image](https://user-images.githubusercontent.com/28252913/228527416-ac77a71e-df07-4c92-aae0-2634df64f6c6.png)
@@ -13,7 +13,7 @@
 ## Why Use ChatGPT Shortcut?
 
 - 🚀 **Simplified process**: ChatGPT Shortcut provides a quick command table that can quickly filter and search for prompts suitable for different scenarios, helping users simplify the usage process.
-- 💻 **Improved productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
+- 💻 **Amplify productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
 - 🎓 **Suitable for beginners**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
 - 🆕 **Regular updates**: The prompts of ChatGPT Shortcut come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
 - 📦 **Ready-to-use**: <https://ai.newzone.top/en/>
@@ -36,7 +36,7 @@ The keyword search scope includes the title, summary, content and Chinese transl
 
 Through tag filtering and keyword searching, clicking on "Copy" button at top right corner of each card allows you to get prompted words which can be pasted into ChatGPT for generating replies specific to your desired domain or topic .If there's any ambiguity regarding Chinese notes in prompted words,you may click on green title of prompted word for source webpage reference .
 
-![image](https://user-images.githubusercontent.com/28252913/222007471-e7bec93d-164a-42d2-a019-1b5655bf29fb.png)
+![image](https://user-images.githubusercontent.com/28252913/228576490-3dd3c807-869f-4a49-95c5-72424d3af356.png)
 
 ## 🤔 Frequently Asked Questions
 
