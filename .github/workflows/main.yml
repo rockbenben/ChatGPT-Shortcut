@@ -29,12 +29,12 @@ jobs:
       - name: Build website
         run: yarn build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # 这是文档部署到的分支名称
-          branch: gh-pages
-          folder: build
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     # 这是文档部署到的分支名称
+      #     branch: gh-pages
+      #     folder: build
 
       # - name: 📂 Sync files
       #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
