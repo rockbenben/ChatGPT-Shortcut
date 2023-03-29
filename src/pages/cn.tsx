@@ -36,7 +36,7 @@ import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import styles from './styles.module.css';
 
-const TITLE = translate({message: 'ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！'});
+const TITLE = translate({message: 'ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts'});
 const DESCRIPTION = translate({
   message: '让生产力加倍的 ChatGPT 快捷指令',
 });
@@ -84,7 +84,7 @@ function filterUsers(
     // eslint-disable-next-line no-param-reassign
     // 搜索范围
     users = users.filter((user) =>
-      (user.title + user.description + user.descn + user.remark).toLowerCase().includes(searchName.toLowerCase()),
+    (user.title + user.description + user.desc_cn + user.remark + user.desc_en+ user.remark_en).toLowerCase().includes(searchName.toLowerCase()),
     );
   }
   if (selectedTags.length === 0) {
@@ -165,6 +165,19 @@ function ShowcaseFilters() {
           </Heading>
           <span>{siteCountPlural(filteredUsers.length)}</span>
         </div>
+        <Link style={{
+          display: 'inline-block',
+          backgroundColor: '#18816a',
+          color: 'var(--site-color-favorite-background)',
+          padding: '5px 10px',
+          borderRadius: '5px',
+          textDecoration: 'none',
+          fontSize: '8px',
+          fontWeight: 'bold',
+          marginRight: '8px',
+        }} to="/" title="将提示词的默认语言切换为英文。">
+          EN
+        </Link>
         <ShowcaseFilterToggle />
       </div>
       <ul className={clsx('clean-list', styles.checkboxList)}>
