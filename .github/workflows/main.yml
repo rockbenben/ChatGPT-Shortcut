@@ -36,12 +36,12 @@ jobs:
           branch: gh-pages
           folder: build
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          local-dir: build/
-          server: ${{ secrets.ftp_host }}
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
-          port: ${{ secrets.ftp_port }} # 建议更改默认的 21 端口
-          timeout: 600000
+      # - name: 📂 Sync files
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #   with:
+      #     local-dir: build/
+      #     server: ${{ secrets.ftp_host }}
+      #     username: ${{ secrets.ftp_username }}
+      #     password: ${{ secrets.ftp_password }}
+      #     port: ${{ secrets.ftp_port }} # 建议更改默认的 21 端口
+      #     timeout: 600000
