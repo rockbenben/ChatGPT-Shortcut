@@ -81,12 +81,12 @@ function ShowcaseCard({user}: {user: User}) {
     setTimeout(() => setShowCopied(false), 2000);
   };
   // 点击显示中文文本
-  const [paragraphText, setParagraphText] = useState(user.descn);
+  const [paragraphText, setParagraphText] = useState(user.desc_cn);
   function handleParagraphClick() {
-    if (paragraphText === user.descn) {
+    if (paragraphText === user.desc_cn) {
       setParagraphText(user.description);
     } else {
-      setParagraphText(user.descn);
+      setParagraphText(user.desc_cn);
     }
   }
   return (
@@ -94,7 +94,7 @@ function ShowcaseCard({user}: {user: User}) {
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
         <Image img={image} alt={user.title} />
       </div> */}
-      <div className="card__body">
+      <div className={clsx('card__body', styles.cardBodyHeight)}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
             <Link href={user.website} className={styles.showcaseCardLink}>

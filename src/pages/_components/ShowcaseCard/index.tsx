@@ -84,7 +84,7 @@ function ShowcaseCard({user}: {user: User}) {
   const [paragraphText, setParagraphText] = useState(user.description);
   function handleParagraphClick() {
     if (paragraphText === user.description) {
-      setParagraphText(user.descn);
+      setParagraphText(user.desc_cn);
     } else {
       setParagraphText(user.description);
     }
@@ -94,7 +94,7 @@ function ShowcaseCard({user}: {user: User}) {
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
         <Image img={image} alt={user.title} />
       </div> */}
-      <div className="card__body">
+      <div className={clsx('card__body', styles.cardBodyHeight)}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
             <Link href={user.website} className={styles.showcaseCardLink}>
