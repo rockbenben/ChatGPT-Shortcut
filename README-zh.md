@@ -2,7 +2,7 @@
 ⚡️ChatGPT Shortcut
 </h1>
 <p align="center">
-    <a href="./README.md">English</a> | 中文
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut">English</a> | 中文
 </p>
 <p align="center">
     <em>让生产力加倍的 ChatGPT 快捷指令</em>
