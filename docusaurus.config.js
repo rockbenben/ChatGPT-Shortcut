@@ -101,7 +101,7 @@ const config = {
         items: [
           {
             href: 'https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut',
-            label: 'Find us on Product Hunt',
+            label: 'Find on Product Hunt',
             target: '_blank',
             position: 'left',
           },
