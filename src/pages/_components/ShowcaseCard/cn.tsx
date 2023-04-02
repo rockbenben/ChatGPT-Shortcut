@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import copy from 'copy-text-to-clipboard';
-import Image from '@theme/IdealImage';
+//import Image from '@theme/IdealImage';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import {
   Tags,
@@ -60,17 +60,17 @@ function ShowcaseCardTag({tags}: {tags: TagType[]}) {
   );
 }
 
-function getCardImage(user: User): string {
+/* function getCardImage(user: User): string {
   return (
     user.preview ??
     `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
       user.website,
     )}/showcase`
   );
-}
+} */
 
 function ShowcaseCard({user}: {user: User}) {
-  const image = getCardImage(user);
+  //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
   const handleCopyCode = () => {
