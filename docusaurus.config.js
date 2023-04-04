@@ -121,6 +121,11 @@ const config = {
             position: "right",
             className: "header-github-link",
           },
+          {
+            href: "https://discord.gg/PZTQfJ4GjX",
+            position: "right",
+            className: "header-discord-link",
+          },
         ],
       },
       footer: {
