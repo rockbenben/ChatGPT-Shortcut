@@ -6,13 +6,5 @@
   "logo.alt": {
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
-  },
-  "item.label.ChatGPT 使用说明": {
-    "message": "",
-    "description": "Navbar item with label ChatGPT 使用说明"
-  },
-  "item.label.开源工具导航": {
-    "message": "",
-    "description": "Navbar item with label 开源工具导航"
   }
 }

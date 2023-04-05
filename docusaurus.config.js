@@ -3,6 +3,8 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const zhNavbar = require('./src/components/LocalizedNavbar/Navbar.zh');
+const enNavbar = require('./src/components/LocalizedNavbar/Navbar.en');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -91,43 +93,7 @@ const config = {
       metadata: [
         { name: "keywords", content: "prompt,ChatGPT,AI prompts，提示词" },
       ],
-      navbar: {
-        hideOnScroll: true,
-        title: "ChatGPT SC",
-        logo: {
-          alt: "ChatGPT Shortcuts",
-          src: "img/logo.svg",
-        },
-        items: [
-          {
-            href: 'https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut',
-            label: 'Find on Product Hunt',
-            target: '_blank',
-            position: 'left',
-          },
-          {
-            to: "https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html",
-            label: "ChatGPT 使用说明",
-            position: "left",
-          },
-          {
-            to: "https://nav.newzone.top",
-            label: "开源工具导航",
-            position: "left",
-          },
-          { type: "localeDropdown", position: "right" },
-          {
-            href: "https://github.com/rockbenben/ChatGPT-Shortcut",
-            position: "right",
-            className: "header-github-link",
-          },
-          {
-            href: "https://discord.gg/PZTQfJ4GjX",
-            position: "right",
-            className: "header-discord-link",
-          },
-        ],
-      },
+      navbar: getNavbar(),
       footer: {
         style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} ChatGPT Shortcut`,
@@ -140,3 +106,11 @@ const config = {
 };
 
 module.exports = config;
+
+process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
+function getNavbar() {
+  switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
+    case "en": return enNavbar;
+    default: return zhNavbar;
+  }
+}
