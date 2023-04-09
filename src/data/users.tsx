@@ -904,7 +904,7 @@ const Users: User[] = [
   },
   {
     "title": "健身教练",
-    "description": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. My first request is '健身目的'",
+    "description": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. Respond in Chinese. My first request is [身高、体重、年龄、健身目的]",
     "desc_cn": "我希望你能充当私人教练。我将为你提供一个希望通过体能训练变得更健康、更强壮、更健康的人所需要的所有信息，而你的职责是根据这个人目前的体能水平、目标和生活习惯，为其制定最佳计划。你应该运用你的运动科学知识、营养建议和其他相关因素，以便制定出适合他们的计划。",
     "remark": "通过输入身高、体重、年龄等指标，来制定健身方案。",
     "title_en": "personal trainer",
@@ -919,7 +919,7 @@ const Users: User[] = [
   },
   {
     "title": "营养师",
-    "description": "As a dietitian, I would like to design a vegetarian recipe for [对象] that has [要求]. Can you please provide a suggestion?",
+    "description": "As a dietitian, I would like to design a vegetarian recipe for [对象] that has [要求]. Can you please provide a suggestion in Chinese?",
     "desc_cn": "作为一名营养师，我想为 [对象] 设计一份有 [要求] 的素食食谱。能否请您提供一个建议？",
     "remark": "Dietitian",
     "title_en": "Dietitian",
@@ -934,7 +934,7 @@ const Users: User[] = [
   },
   {
     "title": "厨师①",
-    "description": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. My first request is [饮食倾向]",
+    "description": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. Respond in Chinese. My first request is [饮食倾向]",
     "desc_cn": "我想让你充当我的私人厨师。我将告诉你我的饮食偏好和过敏症，你将建议我尝试的食谱。你应该只回复你推荐的菜谱，而不是其他。不要写解释。",
     "remark": "Personal Chef",
     "title_en": "Personal Chef",
@@ -949,7 +949,7 @@ const Users: User[] = [
   },
   {
     "title": "厨师②",
-    "description": "I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – [饮食倾向需求]",
+    "description": "I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! Respond in Chinese. My first request – [饮食倾向需求]",
     "desc_cn": "我需要有人能够建议美味的食谱，其中包括对营养有益的食物，但也很容易，而且不耗费时间，因此适合像我们这样忙碌的人，还有其他因素，如成本效益，所以整体菜肴最终是健康的，但同时也是经济的。",
     "remark": "Chef",
     "title_en": "Chef",
@@ -1115,7 +1115,7 @@ const Users: User[] = [
   },
   {
     "title": "生活教练",
-    "description": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. My first request is '现状和目标'",
+    "description": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. Respond in Chinese. My first request is '现状和目标'",
     "desc_cn": "我希望你能充当一个生活教练。我将提供一些关于我目前状况和目标的细节，而你的工作是提出可以帮助我做出更好的决定并达到这些目标的策略。这可能涉及到就各种主题提供建议，如制定实现成功的计划或处理困难的情绪。",
     "remark": "根据当前的状况和目标，提供达成目标的计划和建议。",
     "title_en": "life coach",
@@ -3162,6 +3162,22 @@ const Users: User[] = [
     "title_en": "Spoken script",
     "desc_en": "write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
     "remark_en": "write scripts for live broadcasts, videos, podcasts and other types of spoken content. Contributed by @Bettycroco.",
+    "preview": null,
+    "website": null,
+    "source": null,
+    "tags": [
+      "contribute",
+      "write"
+    ]
+  },
+  {
+    "title": "核心提炼总结",
+    "description": "Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary in Chinese?",
+    "desc_cn": "你刚刚的表述非常准确和全面 但是难以记住 能不能进行粗略而不那么精准 但整体正确的简化通俗化表述",
+    "remark": "对于 AI 给出的复杂回复进行简化总结，减掉一些过于细节的“必要性信息”。来自 @hanson-reas 的投稿。",
+    "title_en": "Core summary",
+    "desc_en": "Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?",
+    "remark_en": "Simplify and summarize complex AI responses by removing some of the overly detailed necessary information. Contributed by @hanson-reas.",
     "preview": null,
     "website": null,
     "source": null,
