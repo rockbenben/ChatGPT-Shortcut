@@ -14,7 +14,7 @@
 - 💻 **Amplify productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
 - 🎓 **Beginner-friendly**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
 - 🆕 **Regular updates**: The prompts of ChatGPT Shortcut come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
-- 📦 **Ready-to-use**: <https://ai.newzone.top/en/>
+- 📦 **Ready-to-use**: <https://aishort.top/en/>
 
 ## Instructions
 

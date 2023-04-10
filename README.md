@@ -15,7 +15,7 @@
 - 🎓 **适合初学者**：即使是初学者，只需复制提示词，稍加修改后发送给 ChatGPT，就能获得指定输出。
 - 🆕 **定期更新**：ChatGPT Shortcut 的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期进行更新，为用户提供新的提示词和思路。
 - 🇨🇳 **方便中文用户**：虽然提示词使用英文，但提供了中文翻译，方便中文用户理解和使用。
-- 📦 **开箱即用**：<https://ai.newzone.top/>
+- 📦 **开箱即用**：<https://www.aishort.top/>
 
 查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。
 
@@ -47,7 +47,7 @@ ChatGPT Shortcut 页面默认显示全部的提示词，页面分为标签区、
 
 默认情况下，提示词内容会显示为英文。如果你想查看中文释义，可以点击提示词内容将其切换到中文，再次点击即可切回英文。请注意，语言切换只在文字上点击有效，点击空白区域无效。
 
-![中英文切换](http://tc.seoipo.com/chatgptshortcut_encn.gif)
+![中英文切换](http://img.newzone.top/chatgptshortcut_encn.gif)
 
 如果想让提示词默认显示为中文，你可以点击标签区右上方的 `CN` 按钮。需要注意的是，即使切换到中文翻译，复制按钮也仅针对英文提示词复制。下方会有解释原因。
 
