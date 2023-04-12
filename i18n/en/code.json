@@ -15,13 +15,13 @@
     "message": "Writing"
   },
   "showcase.tag.write.description": {
-    "message": "Writing assistance"
+    "message": "Polishing grammar and style of articles to assist you in completing your writing."
   },
   "文章/故事": {
     "message": "Article"
   },
   "showcase.tag.article.description": {
-    "message": "Article/Story"
+    "message": "Articles with certain styles such as novels, research papers, news, and screenplays."
   },
   "文本/词语": {
     "message": "Words"
@@ -88,12 +88,6 @@
   },
   "showcase.tag.philosophy.description": {
     "message": "Philosophy/Religion"
-  },
-  "学术/老师": {
-    "message": "Teacher"
-  },
-  "showcase.tag.teacher.description": {
-    "message": "Academic/Teacher"
   },
   "游戏": {
     "message": "Game"
@@ -488,5 +482,17 @@
   },
   "ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
     "message": "ChatGPT Shortcut - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, keyword search, and one-click prompt copying."
+  },
+  "教育/学生": {
+    "message": "Pedagogy"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "Content related to student education."
+  },
+  "学术/教师": {
+    "message": "Academic"
+  },
+  "showcase.tag.academic.description": {
+    "message": "People and things related to academia or schools."
   }
 }

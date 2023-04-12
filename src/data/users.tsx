@@ -55,7 +55,8 @@ export type TagType =
   | "speech"
   | "social"
   | "philosophy"
-  | "teacher"
+  | "pedagogy"
+  | "academic"
   | "interpreter"
   | "games"
   | "tool"
@@ -228,7 +229,7 @@ const Users: User[] = [
     ]
   },
   {
-    "title": "内容总结",
+    "title": "总结内容",
     "description": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. Please begin by editing the following text: ",
     "desc_cn": "将以下文字概括为 100 个字，使其易于阅读和理解。避免使用复杂的句子结构或技术术语。",
     "remark": "将文本内容总结为 100 字。",
@@ -1305,7 +1306,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-math-teacher",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1320,7 +1321,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematical-history-teacher",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1335,7 +1336,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1350,7 +1351,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-statistician",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1365,7 +1366,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1380,7 +1381,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1395,7 +1396,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1410,7 +1411,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-educational-content-creator",
     "source": null,
     "tags": [
-      "teacher"
+      "academic"
     ]
   },
   {
@@ -1702,10 +1703,10 @@ const Users: User[] = [
     "title": "Midjourney 提示生成器",
     "description": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. Here is your first prompt: [画面描述]",
     "desc_cn": "我想让你充当 Midjourney 人工智能程序的提示生成器。你的工作是提供详细和有创意的描述，以激发人工智能的独特和有趣的图像。请记住，人工智能能够理解广泛的语言，并能解释抽象的概念，所以请自由发挥想象力和描述力，尽可能地发挥。例如，你可以描述一个未来城市的场景，或一个充满奇怪生物的超现实景观。你的描述越详细，越有想象力，产生的图像就越有趣。",
-    "remark": "通过为提供的图像描述填充详细且有创意的描述，激发 Midjourney 生成独特有趣的图像。",
+    "remark": "通过为提供的图像描述填充详细且有创意的描述，激发 Midjourney 生成独特有趣的图像。这也适用于 Stable Diffusion。",
     "title_en": "Midjourney Prompt Generator",
     "desc_en": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. Here is your first prompt: ",
-    "remark_en": "By filling in detailed and creative descriptions for the provided image, Midjourney is inspired to generate unique and interesting images.",
+    "remark_en": "By filling in detailed and creative descriptions for the provided image, Midjourney is inspired to generate unique and interesting images. This also applies to Stable Diffusion.",
     "preview": null,
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
     "source": null,
@@ -1875,7 +1876,7 @@ const Users: User[] = [
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-spoken-english-teacher-and-improver",
     "source": null,
     "tags": [
-      "language"
+      "pedagogy"
     ]
   },
   {
@@ -2815,7 +2816,8 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "mind"
+      "mind",
+      "pedagogy"
     ]
   },
   {
@@ -2847,7 +2849,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "mind"
+      "pedagogy"
     ]
   },
   {
@@ -2879,8 +2881,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "language",
-      "teacher"
+      "pedagogy"
     ]
   },
   {
@@ -2927,7 +2928,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "mind"
+      "pedagogy"
     ]
   },
   {
@@ -2991,7 +2992,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "language"
+      "pedagogy"
     ]
   },
   {
@@ -3103,7 +3104,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "write"
+      "pedagogy"
     ]
   },
   {
@@ -3151,7 +3152,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "contribute",
-      "language"
+      "pedagogy"
     ]
   },
   {
@@ -3171,7 +3172,7 @@ const Users: User[] = [
     ]
   },
   {
-    "title": "核心提炼总结",
+    "title": "总结：核心提炼",
     "description": "Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary in Chinese?",
     "desc_cn": "你刚刚的表述非常准确和全面 但是难以记住 能不能进行粗略而不那么精准 但整体正确的简化通俗化表述",
     "remark": "对于 AI 给出的复杂回复进行简化总结，减掉一些过于细节的“必要性信息”。来自 @hanson-reas 的投稿。",
@@ -3230,6 +3231,7 @@ const Users: User[] = [
     "source": null,
     "tags": [
       "personal",
+      "favorite",
       "write"
     ]
   },
@@ -3309,7 +3311,7 @@ export const Tags: { [type in TagType]: Tag } = {
   write: {
     label: translate({ message: "写作辅助" }),
     description: translate({
-      message: "写作辅助",
+      message: "对文章的语法和风格进行润色，以帮助你完成写作",
       id: "showcase.tag.write.description",
     }),
     color: "#75581e",
@@ -3318,10 +3320,19 @@ export const Tags: { [type in TagType]: Tag } = {
   article: {
     label: translate({ message: "文章/故事" }),
     description: translate({
-      message: "文章/故事",
+      message: "小说、论文、新闻、剧本等有一定样式的文章",
       id: "showcase.tag.article.description",
     }),
     color: "#dfd545",
+  },
+
+  comments: {
+    label: translate({ message: "点评/评鉴" }),
+    description: translate({
+      message: "点评/评鉴",
+      id: "showcase.tag.comments.description",
+    }),
+    color: "#eeef99",
   },
 
   text: {
@@ -3340,15 +3351,6 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.seo.description",
     }),
     color: "#BC9F77",
-  },
-
-  comments: {
-    label: translate({ message: "点评/评鉴" }),
-    description: translate({
-      message: "点评/评鉴",
-      id: "showcase.tag.comments.description",
-    }),
-    color: "#eeef99",
   },
 
   code: {
@@ -3424,11 +3426,20 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#ffcaa9",
   },
 
-  teacher: {
-    label: translate({ message: "学术/老师" }),
+  pedagogy: {
+    label: translate({ message: "教育/学生" }),
     description: translate({
-      message: "学术/老师",
-      id: "showcase.tag.teacher.description",
+      message: "与学生教育相关的内容",
+      id: "showcase.tag.pedagogy.description",
+    }),
+    color: "#fe0999",
+  },
+
+  academic: {
+    label: translate({ message: "学术/教师" }),
+    description: translate({
+      message: "与学术或学校相关的人和事物",
+      id: "showcase.tag.academic.description",
     }),
     color: "#fe6829",
   },
@@ -3463,7 +3474,7 @@ export const Tags: { [type in TagType]: Tag } = {
   language: {
     label: translate({ message: "语言/翻译" }),
     description: translate({
-      message: "语言/翻译",
+      message: "语言生成、转换、翻译、识别等多种工具",
       id: "showcase.tag.language.description",
     }),
     color: "#39ca30",
