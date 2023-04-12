@@ -102,13 +102,13 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      announcementBar: {
+      /* announcementBar: {
         id: 'announcement_bar',
         content: getAnnouncement(),
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: false,
-      },
+      }, */
     }),
 };
 
@@ -121,9 +121,9 @@ function getNavbar() {
     default: return zhNavbar;
   }
 }
-function getAnnouncement() {
+/* function getAnnouncement() {
   switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en": return 'Old domain will expire soon. Please bookmark aishort.top';
-    default: return '旧域名即将失效，继续使用请收藏 aishort.top';
+    case "en": return 'Announcement_en';
+    default: return 'Announcement_cn';
   }
-}
+} */
