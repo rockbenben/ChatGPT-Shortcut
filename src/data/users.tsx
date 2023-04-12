@@ -2000,7 +2000,7 @@ const Users: User[] = [
     ]
   },
   {
-    "title": "符号设计",
+    "title": "图像：符号设计",
     "description": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. My first object is '符号对象'",
     "desc_cn": "我想让你充当一个 ascii 艺术家。我将把对象写给你，我将要求你在代码块中写出该对象的 ascii 代码。只写 ascii 代码。不要解释你写的对象。我将在双引号中说明这些对象。",
     "remark": "用 Ascii 符号生成不同的图像。",
@@ -2015,7 +2015,7 @@ const Users: User[] = [
     ]
   },
   {
-    "title": "SVG 设计",
+    "title": "图像：SVG 设计",
     "description": "I would like you to act as an SVG designer. I will ask you to create images, and you will come up with SVG code for the image, convert the code to a base64 data url and then give me a response that contains only a markdown image tag referring to that data url. Do not put the markdown inside a code block. Send only the markdown, so no text. My first request is: [图像描述]",
     "desc_cn": "我想让你作为一个 SVG 设计师。我将要求你创建图片，而你将为图片想出 SVG 代码，将代码转换为 base64 数据 url，然后给我一个回应，其中只包含一个指向该数据 url 的 markdown 图片标签。不要把 markdown 放在代码块里。只发送 markdown，所以不要发送文本。",
     "remark": "如果提示错误，则删除「Do not put the markdown inside a code block. Send only the markdown, so no text」。",
@@ -3092,7 +3092,7 @@ const Users: User[] = [
     ]
   },
   {
-    "title": "中学满分作文",
+    "title": "题目：中学满分作文",
     "description": "我需要你写作文，文体为记叙文，800 字左右。文章分为开头，三个层次，结尾。开头，结尾，以及每个层次都需要紧扣题目，题目要贯穿全文，每个层次都要一件单独的事情。第一层次要关于具体的技巧性描写（细节动作描写，艺术美，初次尝试的喜悦，紧扣题目）；第二层次要有一点创新的内容（细节动作描写，创新的想法，创新后体会到的深层道理，紧扣题目）；第三层次要关于深层内容（文化传承/自我价值/责任担当，紧扣题目）。对于标题，有表层含义和深层含义（引申含义），在文中应该充分体现。\n我需要你先告诉我你对于标题的解读，两层含义分别是什么，以及能对应什么具体事物。然后给我一份提纲，提纲包括：具体的开头段落，三个层次的事件主旨点题句及具体的事件，具体的结尾段落。\n标题是《xxxx》，材料为 [xxxx]。",
     "desc_cn": "我需要你写作文，文体为记叙文，800 字左右。文章分为开头，三个层次，结尾。开头，结尾，以及每个层次都需要紧扣题目，题目要贯穿全文，每个层次都要一件单独的事情。第一层次要关于具体的技巧性描写（细节动作描写，艺术美，初次尝试的喜悦，紧扣题目）；第二层次要有一点创新的内容（细节动作描写，创新的想法，创新后体会到的深层道理，紧扣题目）；第三层次要关于深层内容（文化传承/自我价值/责任担当，紧扣题目）。对于标题，有表层含义和深层含义（引申含义），在文中应该充分体现。\n我需要你先告诉我你对于标题的解读，两层含义分别是什么，以及能对应什么具体事物。然后给我一份提纲，提纲包括：具体的开头段落，三个层次的事件主旨点题句及具体的事件，具体的结尾段落。\n标题是《xxxx》，材料为 [xxxx]。",
     "remark": "在执行完这个 prompt 后，再输入「把这些转换成一篇作文」，查看文章效果是否更佳。来自 @Qizhen-Yang 的投稿。",
