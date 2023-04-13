@@ -259,7 +259,7 @@ function SearchBar() {
   );
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
-    if (window.innerWidth >= 768) { // PC 端
+    if (window.innerWidth >= 768 || (typeof chrome !== 'undefined' && chrome.extension)) { // PC 端或插件版
       setValue(e.currentTarget.value);
       updateSearch(e.currentTarget.value);
     } else { // 移动端
