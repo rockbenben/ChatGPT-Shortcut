@@ -40,6 +40,12 @@ Through tag filtering and keyword searching, clicking on "Copy" button at top ri
 
 ## 🤔 FAQs
 
+### Do I have to input "Promot" every time?
+
+In the API, the prompt can be set as "system prompt", so there's no need to input the prompt each time. ChatGPT will execute actions based on the system prompt.
+
+For the web version of ChatGPT, if the main prompt hasn't been changed, you can simply enclose subsequent response content with quotation marks, which eliminates the need to input the prompt every time. If the response content doesn't meet the prompt requirements, it indicates that ChatGPT has forgotten the prompt and it needs to be input again to awaken it.
+
 ### Outputting False Information
 
 Although ChatGPT is very powerful, it is not omnipotent. Sometimes it may output false information. For example, when I need to enter hundreds of pieces of information into ChatGPT Shortcut in a specified format, I let ChatGPT convert the data according to the specified format. However, during the conversion process, I found that some of the information was mistakenly written by ChatGPT. For example, in a text message, one label is "movie critic", but ChatGPT changed it to "film critic". Although this will not cause any impact on the text itself, it can lead to errors when used in code.Therefore, when using ChatGPT , be sure to check its output content.

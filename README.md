@@ -14,10 +14,12 @@
 - 💻 **提高生产力**：通过使用优化过的提示词，用户可以获得更加准确、有用的回复，从而提高生产力。
 - 🎓 **适合初学者**：即使是初学者，只需复制提示词，稍加修改后发送给 ChatGPT，就能获得指定输出。
 - 🆕 **定期更新**：ChatGPT Shortcut 的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期进行更新，为用户提供新的提示词和思路。
-- 🇨🇳 **方便中文用户**：虽然提示词使用英文，但提供了中文翻译，方便中文用户理解和使用。
+- 🇨🇳 **中文优化**：虽然提示词仍然使用英文，但提供了中文翻译，支持默认中文回复，方便中文用户理解和使用。
 - 📦 **开箱即用**：<https://www.aishort.top/>
 
 查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。
+
+Chrome 插件版已经提交，等待审核。
 
 ## 使用说明
 
@@ -59,11 +61,15 @@ ChatGPT Shortcut 是为方便中文母语人士使用 ChatGPT 而创建的，但
 
 使用中文提示词可能会得到不错的结果，但是当你再次输入相同的中文提示时，结果可能与之前大相径庭。因为 ChatGPT 对中文的理解每次都不同，所以建议大家在生产力型提示词的输入中使用英文提示词，以保证输出效果。此外，英文提示词带来的回复也很可能是英文的，你可以在提示词结尾添加 `respond in Chinese`，将回复指定为中文。
 
-### 中文搜索出错
+### 每次都要输入 Promot？
 
-搜索功能基于 Docusaurus 的 showcase，存在 PC 端中文输入法焦点丢失问题。向 Docusaurus 反馈后，对方表示会尝试修复和 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。但问题始终没有解决。
+API 中可以将提示词设为「system prompt」，这样后续就不需要输入提示词了，ChatGPT 会按照 system prompt 来执行操作。
 
-因此，我将搜索组件分为移动端和 PC 端两类。移动端搜索逻辑保持不变，而屏幕宽度阈值 768px 以上的 PC 端浏览引入 `debounce` 函数解决中文输入问题。但这在 PC 端产生两个问题：一是中文输入需在 800 毫秒内完成；二是 PC 端搜索刷新从即时变为 800 毫秒延迟。若你有更好的解决方案，欢迎提供反馈。
+在网页版 ChatGPT 中，如果没有切换主提示词，只需用引号将后续回复内容框选即可，这样就不需要每次都输入提示词。当回复内容不符合提示词要求时，说明 ChatGPT 已经忘记了提示词，此时需要重新输入提示词以唤醒它。
+
+### 中文搜索延迟
+
+搜索功能基于 Docusaurus 的 showcase，存在 PC 端中文输入法焦点丢失问题。向 Docusaurus 反馈后，对方表示会尝试修复和 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。但问题始终没有解决。因此，我将搜索组件分为移动端和 PC 端两类。移动端搜索逻辑保持不变，而屏幕宽度阈值 768px 以上的 PC 端浏览引入 `debounce` 函数解决中文输入问题。但这在 PC 端产生两个问题：一是中文输入需在 800 毫秒内完成；二是 PC 端搜索刷新从即时变为 800 毫秒延迟。若你有更好的解决方案，欢迎提供反馈。
 
 ### 输出虚假信息
 
