@@ -81,7 +81,13 @@ ChatGPT 虽然非常强大，但并不是万能的。有时它会输出虚假信
 
 此外，提示词不仅能用于工作生产，更重要的是帮助您开拓思路，发散思维，从多个角度考虑问题，并解决人们在思考时容易忽略的问题。
 
-## Installation
+## Deploy
+
+### Deploy With Vercel
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fgh-pages)
+
+### Installation
 
 ```shell
 # Installation
