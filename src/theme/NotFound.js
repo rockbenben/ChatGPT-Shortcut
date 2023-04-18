@@ -7,7 +7,7 @@ export default function NotFound() {
   useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = "/";
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -35,7 +35,7 @@ export default function NotFound() {
                   <a href="/">Back to home</a>
                 </button>
                 <button className="homepage">
-                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">
+                  <a href="https://github.com/rockbenben/ChatGPT-Shortcut/issues/new?assignees=rockbenben&labels=bug&template=bug-report.yml&title=%5BBug%5D">
                     Report this bug
                   </a>
                 </button>

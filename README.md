@@ -17,9 +17,11 @@
 - 🇨🇳 **中文优化**：虽然提示词仍然使用英文，但提供了中文翻译，支持默认中文回复，方便中文用户理解和使用。
 - 📦 **开箱即用**：<https://www.aishort.top/>
 
-查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。
+查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。Chrome 插件版已经提交，等待审核。
 
-Chrome 插件版已经提交，等待审核。
+<a href="https://discord.gg/PZTQfJ4GjX">
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord">
+</a>
 
 ## 使用说明
 
