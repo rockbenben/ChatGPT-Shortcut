@@ -1,31 +1,36 @@
 # 使用 nodejs 作为基础镜像
-FROM node:16-slim
+FROM node:16-alpine
 
 # 设置工作目录
-RUN mkdir -p /usr/src
-WORKDIR /usr/src
+WORKDIR /app
 
 # 配置环境 yarn
 # RUN npm install -g yarn
 
 # 复制项目中的 package.json 和 yarn.lock 到工作目录中
-COPY package.json yarn.lock /usr/src/
+COPY package.json yarn.lock ./
 
 # 安装依赖包
 RUN yarn install
 
-# 复制项目中的所有文件到工作目录中
-COPY . /usr/src
+# 复制项目源代码到工作目录
+COPY . .
 
-# 构建应用程序
+# 构建静态站点
 RUN yarn build
 
-# 暴露 3000 端口
-EXPOSE 3000
-ENV NODE_ENV=production
+# 使用NGINX作为Web服务器
+FROM nginx:stable-alpine
 
-ENTRYPOINT yarn run serve -- --build --port 3000 --host localhost
+# 将Docusaurus静态站点文件复制到NGINX默认目录
+COPY --from=0 /app/build /usr/share/nginx/html
+
+# 暴露端口80
+EXPOSE 80
+
+# 启动NGINX
+CMD ["nginx", "-g", "daemon off;"]
 
 # 容器构建&运行命令
-# docker build -f Dockerfile -t chatgpt-shortcut .
-# docker run -p 3000:3000 chatgpt-shortcut
+# docker build -t chatgpt-shortcut .
+# docker run -d -p 80:80 --name chatgpt-shortcut chatgpt-shortcut
