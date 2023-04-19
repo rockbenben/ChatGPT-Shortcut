@@ -1,6 +1,6 @@
-import React, { useState, useEffect,useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
-import axios from 'axios';
+import axios from "axios";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -18,7 +18,7 @@ import Heading from "@theme/Heading";
 import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ({ label, color, description }, ref) => (
@@ -78,15 +78,18 @@ function ShowcaseCard({ user, isDescription }) {
   const currentLanguage = i18n.currentLocale;
   const userTitle = currentLanguage === "en" ? user.title_en : user.title;
   const userRemark = currentLanguage === "en" ? user.remark_en : user.remark;
-  const userDescription = currentLanguage === 'zh-Hans' ? paragraphText : user.desc_en;
+  const userDescription =
+    currentLanguage === "zh-Hans" ? paragraphText : user.desc_en;
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
-  
+
   const handleCopyClick = useCallback(async () => {
     try {
       // Update the copy count on the server
-      const response = await axios.post(`https://api-count.newzone.top/api/cards/${user.id}/copy`);
+      const response = await axios.post(
+        `https://api-count.newzone.top/api/cards/${user.id}/copy`
+      );
       const updatedCount = response.data.copyCount;
       if (user.description) {
         copy(user.description);
@@ -96,7 +99,7 @@ function ShowcaseCard({ user, isDescription }) {
       // Update the copy count in the local state
       setCopyCount(updatedCount);
     } catch (error) {
-      console.error('Error updating copy count:', error);
+      console.error("Error updating copy count:", error);
     }
   }, [user.id]);
 
@@ -105,13 +108,15 @@ function ShowcaseCard({ user, isDescription }) {
   useEffect(() => {
     const fetchCopyCount = async () => {
       try {
-        const response = await axios.get(`https://api-count.newzone.top/api/cards/${user.id}/count`);
+        const response = await axios.get(
+          `https://api-count.newzone.top/api/cards/${user.id}/count`
+        );
         setCopyCount(response.data.count);
       } catch (error) {
-        console.error('Error fetching copy count:', error);
+        console.error("Error fetching copy count:", error);
       }
     };
-  
+
     fetchCopyCount();
   }, [user.id]);
 
@@ -124,11 +129,11 @@ function ShowcaseCard({ user, isDescription }) {
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
             <Link href={user.website} className={styles.showcaseCardLink}>
-              {userTitle} {' '}
+              {userTitle}{" "}
             </Link>
-          <span className={styles.showcaseCardCopyCount}>
-            {copyCount > 0 && `🔥${copyCount}`}
-          </span>
+            <span className={styles.showcaseCardBody}>
+              {copyCount > 0 && `🔥${copyCount}`}
+            </span>
           </Heading>
           {user.tags.includes("favorite") && (
             <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
@@ -159,7 +164,9 @@ function ShowcaseCard({ user, isDescription }) {
           </button>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p onClick={handleParagraphClick} className={styles.showcaseCardBody}>{userDescription}</p>
+        <p onClick={handleParagraphClick} className={styles.showcaseCardBody}>
+          {userDescription}
+        </p>
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
         <ShowcaseCardTag tags={user.tags} />
