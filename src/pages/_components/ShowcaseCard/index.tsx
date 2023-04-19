@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import clsx from "clsx";
+import axios from 'axios';
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -56,15 +57,6 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-/* function getCardImage(user: User): string {
-  return (
-    user.preview ??
-    `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
-      user.website,
-    )}/showcase`
-  );
-} */
-
 function ShowcaseCard({ user, isDescription }) {
   const [paragraphText, setParagraphText] = useState(
     isDescription ? user.description : user.desc_cn
@@ -90,13 +82,38 @@ function ShowcaseCard({ user, isDescription }) {
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
-  const handleCopyCode = () => {
-    if (user.description) {
-      copy(user.description);
+  
+  const handleCopyClick = useCallback(async () => {
+    try {
+      // Update the copy count on the server
+      const response = await axios.post(`https://api-count.newzone.top/api/cards/${user.id}/copy`);
+      const updatedCount = response.data.copyCount;
+      if (user.description) {
+        copy(user.description);
+      }
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+      // Update the copy count in the local state
+      setCopyCount(updatedCount);
+    } catch (error) {
+      console.error('Error updating copy count:', error);
     }
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 2000);
-  };
+  }, [user.id]);
+
+  const [copyCount, setCopyCount] = useState(0);
+
+  useEffect(() => {
+    const fetchCopyCount = async () => {
+      try {
+        const response = await axios.get(`https://api-count.newzone.top/api/cards/${user.id}/count`);
+        setCopyCount(response.data.count);
+      } catch (error) {
+        console.error('Error fetching copy count:', error);
+      }
+    };
+  
+    fetchCopyCount();
+  }, [user.id]);
 
   return (
     <li key={userTitle} className="card shadow--md">
@@ -107,8 +124,11 @@ function ShowcaseCard({ user, isDescription }) {
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
             <Link href={user.website} className={styles.showcaseCardLink}>
-              {userTitle}
+              {userTitle} {' '}
             </Link>
+          <span className={styles.showcaseCardCopyCount}>
+            {copyCount > 0 && `🔥${copyCount}`}
+          </span>
           </Heading>
           {user.tags.includes("favorite") && (
             <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
@@ -129,7 +149,7 @@ function ShowcaseCard({ user, isDescription }) {
               styles.showcaseCardSrcBtn
             )}
             type="button"
-            onClick={handleCopyCode}
+            onClick={handleCopyClick}
           >
             {copied ? (
               <Translate>已复制</Translate>
@@ -139,9 +159,7 @@ function ShowcaseCard({ user, isDescription }) {
           </button>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        {/* <p className={styles.showcaseCardBody}>{user.description}</p> */}
         <p onClick={handleParagraphClick} className={styles.showcaseCardBody}>{userDescription}</p>
-
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
         <ShowcaseCardTag tags={user.tags} />
