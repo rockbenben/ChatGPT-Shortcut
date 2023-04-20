@@ -262,7 +262,9 @@ const Users: User[] = UsersData as User[];
 export const TagList = Object.keys(Tags) as TagType[];
 function sortUsers() {
   let result = Users;
-  // Sort by site name
+  // Sort by prompt weight
+  result = sortBy(result, (user) => -user.weight);
+  // Sort by prompt title
   result = sortBy(result, (user) => user.title.toLowerCase());
   // Sort by favorite tag, favorites first
   result = sortBy(result, (user) => !user.tags.includes("favorite"));

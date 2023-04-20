@@ -96,7 +96,7 @@ function filterUsers(
     );
   }
   if (selectedTags.length === 0) {
-    return users;
+    return users.sort((a, b) => b.weight - a.weight);
   }
   return users.filter((user) => {
     if (user.tags.length === 0) {
@@ -240,10 +240,10 @@ function ShowcaseFilters({ onToggleDescription }) {
 
 const favoriteUsers = sortedUsers.filter((user) =>
   user.tags.includes("favorite")
-);
+).sort((a, b) => b.weight - a.weight);
 const otherUsers = sortedUsers.filter(
   (user) => !user.tags.includes("favorite")
-);
+).sort((a, b) => b.weight - a.weight);
 
 function SearchBar() {
   const history = useHistory();

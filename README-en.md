@@ -38,6 +38,10 @@ Through tag filtering and keyword searching, clicking on "Copy" button at top ri
 
 ![image](https://user-images.githubusercontent.com/28252913/228576490-3dd3c807-869f-4a49-95c5-72424d3af356.png)
 
+### 🔥 Popular Sorting
+
+The page now displays the usage count of each prompt, with those that have been used more frequently being marked as "favorite". Additionally, prompt labels will be sorted based on their "heat value". The heat value will be periodically updated.
+
 ## 🤔 FAQs
 
 ### Do I have to input "Promot" every time?
@@ -56,7 +60,13 @@ All prompts are from the Internet and will be updated regularly. Although I have
 
 In addition, prompts can not only be used for work production, but more importantly help you develop your thinking skills,broaden your mind,and consider problems from multiple perspectives,and solve problems that people tend to overlook while thinking.
 
-## Installation
+## Deploy
+
+### Deploy With Vercel
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fgh-pages)
+
+### Installation
 
 ```shell
 # Installation
