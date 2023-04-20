@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
-import axios from "axios";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -17,6 +16,7 @@ import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
 import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
+import { updateCopyCount } from "@site/src/api";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
@@ -57,7 +57,7 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-function ShowcaseCard({ user, isDescription }) {
+function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
   const [paragraphText, setParagraphText] = useState(
     isDescription ? user.description : user.desc_cn
   );
@@ -86,38 +86,19 @@ function ShowcaseCard({ user, isDescription }) {
 
   const handleCopyClick = useCallback(async () => {
     try {
-      // Update the copy count on the server
-      const response = await axios.post(
-        `https://api-count.newzone.top/api/cards/${user.id}/copy`
-      );
-      const updatedCount = response.data.copyCount;
-      if (user.description) {
-        copy(user.description);
+      const updatedCount = await updateCopyCount(user.id);
+      if (updatedCount !== null) {
+        if (user.description) {
+          copy(user.description);
+        }
+        setShowCopied(true);
+        setTimeout(() => setShowCopied(false), 2000);
+        // Notify parent component to update the copy count
+        onCopy(user.id, updatedCount);
       }
-      setShowCopied(true);
-      setTimeout(() => setShowCopied(false), 2000);
-      // Update the copy count in the local state
-      setCopyCount(updatedCount);
     } catch (error) {
       console.error("Error updating copy count:", error);
     }
-  }, [user.id]);
-
-  const [copyCount, setCopyCount] = useState(0);
-
-  useEffect(() => {
-    const fetchCopyCount = async () => {
-      try {
-        const response = await axios.get(
-          `https://api-count.newzone.top/api/cards/${user.id}/count`
-        );
-        setCopyCount(response.data.count);
-      } catch (error) {
-        console.error("Error fetching copy count:", error);
-      }
-    };
-
-    fetchCopyCount();
   }, [user.id]);
 
   return (

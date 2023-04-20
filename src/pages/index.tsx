@@ -1,4 +1,9 @@
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, {
+  useState,
+  useMemo,
+  useEffect,
+  useCallback,
+} from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -26,8 +31,9 @@ import ShowcaseFilterToggle, {
   type Operator,
   readOperator,
 } from "./_components/ShowcaseFilterToggle";
-import ShowcaseCard from "./_components/ShowcaseCard";
 import ShowcaseTooltip from "./_components/ShowcaseTooltip";
+import ShowcaseCard from "./_components/ShowcaseCard";
+import { fetchAllCopyCounts } from "../api";
 
 import styles from "./styles.module.css";
 
@@ -161,7 +167,7 @@ function useSiteCountPlural() {
 
 function ShowcaseFilters({ onToggleDescription }) {
   const filteredUsers = useFilteredUsers();
-  const siteCountPlural = useSiteCountPlural();
+  const siteCountPlural = useCallback(useSiteCountPlural(), []);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
   return (
@@ -176,20 +182,7 @@ function ShowcaseFilters({ onToggleDescription }) {
         {currentLanguage === "zh-Hans" && (
           <button
             onClick={onToggleDescription}
-            style={{
-              display: "inline-block",
-              backgroundColor: "#18816a",
-              color: "var(--site-color-favorite-background)",
-              padding: "5px 10px",
-              borderRadius: "5px",
-              textDecoration: "none",
-              fontSize: "8px",
-              fontWeight: "bold",
-              marginRight: "8px",
-              border: "none",
-              boxShadow: "none",
-              cursor: "pointer",
-            }}
+            className={styles.onToggleButton}
             title="更改提示词的显示语言，支持中英文的切换"
           >
             切换 Prompt 语言
@@ -238,17 +231,25 @@ function ShowcaseFilters({ onToggleDescription }) {
   );
 }
 
-const favoriteUsers = sortedUsers.filter((user) =>
-  user.tags.includes("favorite")
-).sort((a, b) => b.weight - a.weight);
-const otherUsers = sortedUsers.filter(
-  (user) => !user.tags.includes("favorite")
-).sort((a, b) => b.weight - a.weight);
+const [favoriteUsers, otherUsers] = sortedUsers.reduce(
+  ([favorites, others], user) => {
+    if (user.tags.includes("favorite")) {
+      favorites.push(user);
+    } else {
+      others.push(user);
+    }
+    return [favorites, others];
+  },
+  [[], []]
+);
+
+favoriteUsers.sort((a, b) => b.weight - a.weight);
+otherUsers.sort((a, b) => b.weight - a.weight);
 
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-  
+
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
   const [value, setValue] = useState<string | null>(null);
@@ -281,7 +282,9 @@ function SearchBar() {
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
     if (
-      currentLanguage === "zh-Hans" &&  (window.innerWidth >= 768 || (typeof chrome !== "undefined" && chrome.extension))
+      currentLanguage === "zh-Hans" &&
+      (window.innerWidth >= 768 ||
+        (typeof chrome !== "undefined" && chrome.extension))
     ) {
       // PC 端或插件版
       setValue(e.currentTarget.value);
@@ -318,6 +321,24 @@ function SearchBar() {
 }
 
 function ShowcaseCards({ isDescription }) {
+  const [copyCounts, setCopyCounts] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const counts = await fetchAllCopyCounts();
+      setCopyCounts(counts);
+    };
+  
+    fetchData();
+  }, []);
+
+  const handleCardCopy = useCallback((cardId, updatedCount) => {
+    setCopyCounts((prevCopyCounts) => ({
+      ...prevCopyCounts,
+      [cardId]: updatedCount,
+    }));
+  }, []);
+
   const filteredUsers = useFilteredUsers();
 
   if (filteredUsers.length === 0) {
@@ -361,6 +382,8 @@ function ShowcaseCards({ isDescription }) {
                     key={user.title}
                     user={user}
                     isDescription={isDescription}
+                    copyCount={copyCounts[user.id] || 0}
+                    onCopy={handleCardCopy}
                   />
                 ))}
               </ul>
@@ -378,6 +401,8 @@ function ShowcaseCards({ isDescription }) {
                   key={user.title}
                   user={user}
                   isDescription={isDescription}
+                  copyCount={copyCounts[user.id] || 0}
+                  onCopy={handleCardCopy}
                 />
               ))}
             </ul>
@@ -396,6 +421,8 @@ function ShowcaseCards({ isDescription }) {
                 key={user.title}
                 user={user}
                 isDescription={isDescription}
+                copyCount={copyCounts[user.id] || 0}
+                onCopy={handleCardCopy}
               />
             ))}
           </ul>
@@ -407,9 +434,9 @@ function ShowcaseCards({ isDescription }) {
 
 export default function Showcase(): JSX.Element {
   const [isDescription, setIsDescription] = useState(true);
-  const toggleDescription = () => {
-    setIsDescription(!isDescription);
-  };
+  const toggleDescription = useCallback(() => {
+    setIsDescription((prevIsDescription) => !prevIsDescription);
+  }, []);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">

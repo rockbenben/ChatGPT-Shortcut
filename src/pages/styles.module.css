@@ -93,3 +93,18 @@
 .svgIconFavorite {
   margin-left: 1rem;
 }
+
+.onToggleButton {
+  display: inline-block;
+  background-color: #18816a;
+  color: var(--site-color-favorite-background);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 8px;
+  font-weight: bold;
+  margin-right: 8px;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
