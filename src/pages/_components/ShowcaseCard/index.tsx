@@ -87,15 +87,13 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
   const handleCopyClick = useCallback(async () => {
     try {
       const updatedCount = await updateCopyCount(user.id);
-      if (updatedCount !== null) {
-        if (user.description) {
-          copy(user.description);
-        }
-        setShowCopied(true);
-        setTimeout(() => setShowCopied(false), 2000);
-        // Notify parent component to update the copy count
-        onCopy(user.id, updatedCount);
+      if (user.description) {
+        copy(user.description);
       }
+      setShowCopied(true);
+      setTimeout(() => setShowCopied(false), 2000);
+      // Notify parent component to update the copy count
+      onCopy(user.id, updatedCount);
     } catch (error) {
       console.error("Error updating copy count:", error);
     }
