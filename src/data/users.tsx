@@ -32,9 +32,9 @@ export const Tags: { [type in TagType]: Tag } = {
   },
 
   article: {
-    label: translate({ message: "文章/故事" }),
+    label: translate({ message: "文章/报告" }),
     description: translate({
-      message: "小说、论文、新闻、剧本等有一定样式的文章",
+      message: "小说、论文、新闻、剧本、报告等有一定样式的文章",
       id: "showcase.tag.article.description",
     }),
     color: "#dfd545",

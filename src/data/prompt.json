@@ -15,7 +15,7 @@
       "language"
     ],
     "id": 1,
-    "weight": 162
+    "weight": 359
   },
   {
     "title": "写作助理",
@@ -33,7 +33,7 @@
       "write"
     ],
     "id": 2,
-    "weight": 763
+    "weight": 1663
   },
   {
     "title": "语音输入优化",
@@ -51,7 +51,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 29
+    "weight": 65
   },
   {
     "title": "论文式回答",
@@ -69,7 +69,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 198
+    "weight": 470
   },
   {
     "title": "提示词生成器",
@@ -86,7 +86,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 95
+    "weight": 161
   },
   {
     "title": "提示词生成器②",
@@ -103,7 +103,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 10
+    "weight": 19
   },
   {
     "title": "提示词修改器",
@@ -121,7 +121,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 112
+    "weight": 187
   },
   {
     "title": "写作标题生成器",
@@ -138,7 +138,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 53
+    "weight": 124
   },
   {
     "title": "文章续写",
@@ -155,7 +155,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 92
+    "weight": 285
   },
   {
     "title": "写作素材搜集",
@@ -172,7 +172,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 44
+    "weight": 99
   },
   {
     "title": "总结内容",
@@ -189,7 +189,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 66
+    "weight": 152
   },
   {
     "title": "格言书",
@@ -206,7 +206,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 10
+    "weight": 14
   },
   {
     "title": "写作建议",
@@ -223,7 +223,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 17
+    "weight": 70
   },
   {
     "title": "脱口秀",
@@ -240,7 +240,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 28
+    "weight": 63
   },
   {
     "title": "讲故事",
@@ -257,7 +257,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 29
+    "weight": 96
   },
   {
     "title": "编剧",
@@ -274,7 +274,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 16
+    "weight": 52
   },
   {
     "title": "小说家",
@@ -291,7 +291,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 79
+    "weight": 235
   },
   {
     "title": "诗人",
@@ -308,7 +308,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 32
+    "weight": 60
   },
   {
     "title": "新闻记者",
@@ -325,7 +325,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 21
+    "weight": 38
   },
   {
     "title": "论文①",
@@ -342,7 +342,7 @@
       "article"
     ],
     "id": 20,
-    "weight": 54
+    "weight": 166
   },
   {
     "title": "论文②",
@@ -359,7 +359,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 22
+    "weight": 38
   },
   {
     "title": "求职信",
@@ -376,7 +376,7 @@
       "article"
     ],
     "id": 22,
-    "weight": 6
+    "weight": 14
   },
   {
     "title": "新闻评论",
@@ -393,7 +393,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 22
+    "weight": 44
   },
   {
     "title": "电影评论①",
@@ -410,7 +410,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 18
+    "weight": 41
   },
   {
     "title": "电影评论②",
@@ -427,7 +427,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 6
+    "weight": 12
   },
   {
     "title": "科技博主",
@@ -444,7 +444,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 4
+    "weight": 8
   },
   {
     "title": "科技评论",
@@ -461,7 +461,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 8
+    "weight": 13
   },
   {
     "title": "美食评论",
@@ -478,7 +478,7 @@
       "comments"
     ],
     "id": 28,
-    "weight": 8
+    "weight": 16
   },
   {
     "title": "期刊评审",
@@ -495,7 +495,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 7
+    "weight": 10
   },
   {
     "title": "同义词",
@@ -512,7 +512,7 @@
       "text"
     ],
     "id": 30,
-    "weight": 3
+    "weight": 5
   },
   {
     "title": "文本情绪分析",
@@ -529,7 +529,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 4
+    "weight": 10
   },
   {
     "title": "文本意图分类",
@@ -546,7 +546,7 @@
       "text"
     ],
     "id": 32,
-    "weight": 2
+    "weight": 9
   },
   {
     "title": "语义相关性聚类",
@@ -563,7 +563,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 6
+    "weight": 7
   },
   {
     "title": "提取联系信息",
@@ -580,7 +580,7 @@
       "text"
     ],
     "id": 34,
-    "weight": 5
+    "weight": 8
   },
   {
     "title": "随机回复：疯子",
@@ -597,7 +597,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 7
+    "weight": 18
   },
   {
     "title": "随机回复：醉鬼",
@@ -614,7 +614,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 5
+    "weight": 7
   },
   {
     "title": "抄袭检查",
@@ -631,7 +631,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 20
+    "weight": 30
   },
   {
     "title": "页面 description",
@@ -648,7 +648,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 16
+    "weight": 28
   },
   {
     "title": "FAQs 生成器",
@@ -665,7 +665,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 10
+    "weight": 17
   },
   {
     "title": "关键词热门相关",
@@ -682,7 +682,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 10
+    "weight": 19
   },
   {
     "title": "伪原创改写",
@@ -699,7 +699,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 53
+    "weight": 131
   },
   {
     "title": "生活自助百科",
@@ -716,7 +716,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 13
+    "weight": 26
   },
   {
     "title": "趣味建议",
@@ -733,7 +733,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 3
+    "weight": 15
   },
   {
     "title": "应急反应专家",
@@ -750,7 +750,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 10
+    "weight": 17
   },
   {
     "title": "购物建议",
@@ -767,7 +767,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 7
+    "weight": 16
   },
   {
     "title": "职业顾问",
@@ -784,7 +784,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 8
+    "weight": 19
   },
   {
     "title": "非小说类书籍总结",
@@ -801,7 +801,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 5
+    "weight": 12
   },
   {
     "title": "解梦",
@@ -818,7 +818,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 23
+    "weight": 41
   },
   {
     "title": "占星家",
@@ -835,7 +835,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 21
+    "weight": 38
   },
   {
     "title": "角色扮演",
@@ -852,7 +852,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 13
+    "weight": 31
   },
   {
     "title": "海绵宝宝的神奇海螺",
@@ -869,7 +869,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 1
+    "weight": 22
   },
   {
     "title": "DIY 专家",
@@ -886,7 +886,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 12
+    "weight": 15
   },
   {
     "title": "魔术师",
@@ -903,7 +903,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 16
+    "weight": 23
   },
   {
     "title": "艺术顾问",
@@ -920,7 +920,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 3
+    "weight": 7
   },
   {
     "title": "瑜伽师",
@@ -937,7 +937,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 2
+    "weight": 5
   },
   {
     "title": "健身教练",
@@ -954,7 +954,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 95
+    "weight": 179
   },
   {
     "title": "营养师",
@@ -971,7 +971,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 6
+    "weight": 13
   },
   {
     "title": "厨师①",
@@ -988,7 +988,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 5
+    "weight": 9
   },
   {
     "title": "厨师②",
@@ -1005,7 +1005,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 3
+    "weight": 9
   },
   {
     "title": "保姆",
@@ -1022,7 +1022,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 3
+    "weight": 4
   },
   {
     "title": "化妆师",
@@ -1039,7 +1039,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 6
+    "weight": 7
   },
   {
     "title": "造型师",
@@ -1056,7 +1056,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 5
+    "weight": 10
   },
   {
     "title": "辩手",
@@ -1074,7 +1074,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 15
+    "weight": 46
   },
   {
     "title": "谬误发现者",
@@ -1091,7 +1091,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 5
+    "weight": 15
   },
   {
     "title": "辩论教练",
@@ -1108,7 +1108,7 @@
       "speech"
     ],
     "id": 65,
-    "weight": 4
+    "weight": 9
   },
   {
     "title": "演说家",
@@ -1125,7 +1125,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 5
+    "weight": 12
   },
   {
     "title": "励志演讲者",
@@ -1142,7 +1142,7 @@
       "speech"
     ],
     "id": 67,
-    "weight": 7
+    "weight": 9
   },
   {
     "title": "励志教练",
@@ -1159,7 +1159,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 14
+    "weight": 24
   },
   {
     "title": "公共演讲教练",
@@ -1176,7 +1176,7 @@
       "speech"
     ],
     "id": 69,
-    "weight": 7
+    "weight": 10
   },
   {
     "title": "生活教练",
@@ -1193,7 +1193,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 7
+    "weight": 14
   },
   {
     "title": "关系教练",
@@ -1210,7 +1210,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 24
+    "weight": 36
   },
   {
     "title": "好友鼓励",
@@ -1227,7 +1227,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 11
+    "weight": 26
   },
   {
     "title": "心理健康顾问",
@@ -1244,7 +1244,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 19
+    "weight": 49
   },
   {
     "title": "心理学家",
@@ -1261,7 +1261,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 9
+    "weight": 31
   },
   {
     "title": "情绪操控",
@@ -1278,7 +1278,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 10
+    "weight": 23
   },
   {
     "title": "哲学教师",
@@ -1295,7 +1295,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 11
+    "weight": 20
   },
   {
     "title": "哲学家",
@@ -1312,7 +1312,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 27
+    "weight": 51
   },
   {
     "title": "苏格拉底①",
@@ -1329,7 +1329,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 10
+    "weight": 21
   },
   {
     "title": "苏格拉底②",
@@ -1346,7 +1346,7 @@
       "philosophy"
     ],
     "id": 79,
-    "weight": 5
+    "weight": 8
   },
   {
     "title": "宗教：佛陀对话",
@@ -1363,7 +1363,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 20
+    "weight": 51
   },
   {
     "title": "宗教：穆斯林伊玛目",
@@ -1380,7 +1380,7 @@
       "philosophy"
     ],
     "id": 81,
-    "weight": 4
+    "weight": 8
   },
   {
     "title": "数学老师",
@@ -1397,7 +1397,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 15
+    "weight": 25
   },
   {
     "title": "数学史教师",
@@ -1414,7 +1414,7 @@
       "academic"
     ],
     "id": 83,
-    "weight": 6
+    "weight": 8
   },
   {
     "title": "数学家",
@@ -1431,7 +1431,7 @@
       "academic"
     ],
     "id": 84,
-    "weight": 9
+    "weight": 14
   },
   {
     "title": "统计学家",
@@ -1448,7 +1448,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 5
+    "weight": 7
   },
   {
     "title": "词源学家",
@@ -1465,7 +1465,7 @@
       "academic"
     ],
     "id": 86,
-    "weight": 6
+    "weight": 12
   },
   {
     "title": "历史学家",
@@ -1482,7 +1482,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 8
+    "weight": 29
   },
   {
     "title": "算法入门讲解",
@@ -1499,7 +1499,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 12
+    "weight": 25
   },
   {
     "title": "教案策划",
@@ -1516,7 +1516,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 15
+    "weight": 30
   },
   {
     "title": "IT 编程问题",
@@ -1533,7 +1533,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 94
+    "weight": 294
   },
   {
     "title": "前端开发",
@@ -1550,7 +1550,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 27
+    "weight": 73
   },
   {
     "title": "前端：UX/UI 界面",
@@ -1567,7 +1567,7 @@
       "code"
     ],
     "id": 92,
-    "weight": 10
+    "weight": 19
   },
   {
     "title": "前端：网页设计",
@@ -1584,7 +1584,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 11
+    "weight": 29
   },
   {
     "title": "全栈程序员",
@@ -1601,7 +1601,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 23
+    "weight": 76
   },
   {
     "title": "架构师 IT",
@@ -1618,7 +1618,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 17
+    "weight": 39
   },
   {
     "title": "网络安全专家",
@@ -1635,7 +1635,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 16
+    "weight": 19
   },
   {
     "title": "软件测试",
@@ -1652,7 +1652,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 21
+    "weight": 35
   },
   {
     "title": "正则生成器",
@@ -1669,7 +1669,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 9
+    "weight": 18
   },
   {
     "title": "智能域名生成器",
@@ -1686,7 +1686,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 4
+    "weight": 6
   },
   {
     "title": "Commit 信息生成器",
@@ -1703,7 +1703,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 20
+    "weight": 38
   },
   {
     "title": "搜索引擎 Solr",
@@ -1720,7 +1720,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 3
+    "weight": 177
   },
   {
     "title": "开发者数据",
@@ -1737,7 +1737,7 @@
       "code"
     ],
     "id": 102,
-    "weight": 8
+    "weight": 19
   },
   {
     "title": "Python 解释器",
@@ -1754,7 +1754,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 13
+    "weight": 31
   },
   {
     "title": "PHP 解释器",
@@ -1771,7 +1771,7 @@
       "interpreter"
     ],
     "id": 104,
-    "weight": 2
+    "weight": 3
   },
   {
     "title": "R 编程解释器",
@@ -1788,7 +1788,7 @@
       "interpreter"
     ],
     "id": 105,
-    "weight": 2
+    "weight": 4
   },
   {
     "title": "Linux 终端",
@@ -1805,7 +1805,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 7
+    "weight": 12
   },
   {
     "title": "JavaScript 控制台",
@@ -1822,7 +1822,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 7
+    "weight": 9
   },
   {
     "title": "SQL 终端",
@@ -1839,7 +1839,7 @@
       "interpreter"
     ],
     "id": 108,
-    "weight": 2
+    "weight": 4
   },
   {
     "title": "Midjourney 提示生成器",
@@ -1857,7 +1857,7 @@
       "ai"
     ],
     "id": 109,
-    "weight": 99
+    "weight": 253
   },
   {
     "title": "无约束的 AI 模型 DAN",
@@ -1874,7 +1874,7 @@
       "ai"
     ],
     "id": 110,
-    "weight": 37
+    "weight": 111
   },
   {
     "title": "AI 模拟",
@@ -1891,7 +1891,7 @@
       "ai"
     ],
     "id": 111,
-    "weight": 17
+    "weight": 23
   },
   {
     "title": "深度学习",
@@ -1908,7 +1908,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 6
+    "weight": 17
   },
   {
     "title": "语言识别器",
@@ -1925,7 +1925,7 @@
       "language"
     ],
     "id": 113,
-    "weight": 1
+    "weight": 17
   },
   {
     "title": "语言生成器",
@@ -1942,7 +1942,7 @@
       "language"
     ],
     "id": 114,
-    "weight": 1
+    "weight": 3
   },
   {
     "title": "密码生成器",
@@ -1959,7 +1959,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 4
+    "weight": 6
   },
   {
     "title": "圣经转译器",
@@ -1976,7 +1976,7 @@
       "language"
     ],
     "id": 116,
-    "weight": 1
+    "weight": 4
   },
   {
     "title": "莫斯电码翻译",
@@ -1993,7 +1993,7 @@
       "language"
     ],
     "id": 117,
-    "weight": 3
+    "weight": 6
   },
   {
     "title": "表情符号翻译器",
@@ -2010,7 +2010,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 1
+    "weight": 3
   },
   {
     "title": "英语发音助手",
@@ -2027,7 +2027,7 @@
       "language"
     ],
     "id": 119,
-    "weight": 1
+    "weight": 2
   },
   {
     "title": "英语对话练习",
@@ -2044,7 +2044,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 13
+    "weight": 34
   },
   {
     "title": "日语汉字测验机",
@@ -2061,7 +2061,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 1
+    "weight": 3
   },
   {
     "title": "五子棋",
@@ -2078,7 +2078,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 52
+    "weight": 120
   },
   {
     "title": "井字棋",
@@ -2095,7 +2095,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 22
+    "weight": 39
   },
   {
     "title": "国际象棋",
@@ -2112,7 +2112,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 7
+    "weight": 8
   },
   {
     "title": "文本冒险游戏",
@@ -2129,7 +2129,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 34
+    "weight": 126
   },
   {
     "title": "旅游指南",
@@ -2146,7 +2146,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 12
+    "weight": 36
   },
   {
     "title": "数字艺术馆导游",
@@ -2163,7 +2163,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 1
+    "weight": 2
   },
   {
     "title": "汽车导航",
@@ -2180,7 +2180,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 3
+    "weight": 7
   },
   {
     "title": "图像：符号设计",
@@ -2197,7 +2197,7 @@
       "tool"
     ],
     "id": 129,
-    "weight": 10
+    "weight": 16
   },
   {
     "title": "图像：SVG 设计",
@@ -2214,7 +2214,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 8
+    "weight": 25
   },
   {
     "title": "填空题生成器",
@@ -2231,7 +2231,7 @@
       "tool"
     ],
     "id": 131,
-    "weight": 5
+    "weight": 8
   },
   {
     "title": "Excel 工作表",
@@ -2248,7 +2248,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 76
+    "weight": 150
   },
   {
     "title": "图表生成器",
@@ -2265,7 +2265,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 4
+    "weight": 6
   },
   {
     "title": "科学数据可视化",
@@ -2282,7 +2282,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 4
+    "weight": 8
   },
   {
     "title": "文本浏览器",
@@ -2299,7 +2299,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 8
+    "weight": 16
   },
   {
     "title": "化学反应容器",
@@ -2316,7 +2316,7 @@
       "tool"
     ],
     "id": 136,
-    "weight": 8
+    "weight": 16
   },
   {
     "title": "维基百科页面",
@@ -2333,7 +2333,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 7
+    "weight": 15
   },
   {
     "title": "CEO",
@@ -2350,7 +2350,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 31
+    "weight": 57
   },
   {
     "title": "产品经理",
@@ -2367,7 +2367,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 29
+    "weight": 55
   },
   {
     "title": "销售员",
@@ -2384,7 +2384,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 12
+    "weight": 21
   },
   {
     "title": "广告方案",
@@ -2401,7 +2401,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 10
+    "weight": 26
   },
   {
     "title": "商业企划",
@@ -2418,7 +2418,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 26
+    "weight": 76
   },
   {
     "title": "社交媒体经理",
@@ -2435,7 +2435,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 3
+    "weight": 14
   },
   {
     "title": "社交媒体影响者/KOL",
@@ -2452,7 +2452,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 2
+    "weight": 14
   },
   {
     "title": "面试官",
@@ -2469,7 +2469,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 9
+    "weight": 37
   },
   {
     "title": "招聘人员",
@@ -2486,7 +2486,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 5
+    "weight": 9
   },
   {
     "title": "人事主管",
@@ -2503,7 +2503,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 5
+    "weight": 12
   },
   {
     "title": "头衔生成器",
@@ -2520,7 +2520,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 2
+    "weight": 8
   },
   {
     "title": "后勤人员",
@@ -2537,7 +2537,7 @@
       "company"
     ],
     "id": 149,
-    "weight": 1
+    "weight": 6
   },
   {
     "title": "IT 专家",
@@ -2554,7 +2554,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 28
+    "weight": 47
   },
   {
     "title": "虚拟医生",
@@ -2571,7 +2571,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 10
+    "weight": 20
   },
   {
     "title": "医生",
@@ -2588,7 +2588,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 22
+    "weight": 44
   },
   {
     "title": "牙科医生",
@@ -2605,7 +2605,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 11
+    "weight": 21
   },
   {
     "title": "催眠治疗师",
@@ -2622,7 +2622,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 10
+    "weight": 17
   },
   {
     "title": "AI 医生",
@@ -2639,7 +2639,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 46
+    "weight": 118
   },
   {
     "title": "语言病理学家",
@@ -2656,7 +2656,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 1
+    "weight": 4
   },
   {
     "title": "会计师",
@@ -2673,7 +2673,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 25
+    "weight": 35
   },
   {
     "title": "金融分析师",
@@ -2690,7 +2690,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 16
+    "weight": 44
   },
   {
     "title": "投资经理",
@@ -2707,7 +2707,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 39
+    "weight": 103
   },
   {
     "title": "作曲家",
@@ -2724,7 +2724,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 17
+    "weight": 46
   },
   {
     "title": "古典音乐作曲家",
@@ -2741,7 +2741,7 @@
       "music"
     ],
     "id": 161,
-    "weight": 6
+    "weight": 7
   },
   {
     "title": "说唱歌手",
@@ -2758,7 +2758,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 7
+    "weight": 13
   },
   {
     "title": "歌曲推荐",
@@ -2775,7 +2775,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 11
+    "weight": 43
   },
   {
     "title": "足球解说",
@@ -2792,7 +2792,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 4
+    "weight": 10
   },
   {
     "title": "花匠",
@@ -2809,7 +2809,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 4
+    "weight": 6
   },
   {
     "title": "茶艺师",
@@ -2826,7 +2826,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 4
+    "weight": 6
   },
   {
     "title": "室内装饰师",
@@ -2843,7 +2843,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 12
+    "weight": 25
   },
   {
     "title": "宠物行为学家",
@@ -2860,7 +2860,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 6
+    "weight": 30
   },
   {
     "title": "汽车修理",
@@ -2877,7 +2877,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 8
+    "weight": 13
   },
   {
     "title": "房地产经纪人",
@@ -2894,7 +2894,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 10
+    "weight": 16
   },
   {
     "title": "法律顾问",
@@ -2911,7 +2911,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 21
+    "weight": 36
   },
   {
     "title": "创业技术律师",
@@ -2928,7 +2928,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 18
+    "weight": 23
   },
   {
     "title": "代码释义器",
@@ -2946,7 +2946,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 34
+    "weight": 300
   },
   {
     "title": "长单词列表",
@@ -2964,7 +2964,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 1
+    "weight": 3
   },
   {
     "title": "主题解构",
@@ -2982,7 +2982,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 33
+    "weight": 50
   },
   {
     "title": "提问助手",
@@ -3000,7 +3000,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 29
+    "weight": 64
   },
   {
     "title": "开发：微信小程序",
@@ -3018,7 +3018,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 30
+    "weight": 128
   },
   {
     "title": "开发：Vue3",
@@ -3036,7 +3036,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 20
+    "weight": 33
   },
   {
     "title": "桌面文字游戏",
@@ -3054,7 +3054,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 18
+    "weight": 38
   },
   {
     "title": "中英互译",
@@ -3072,7 +3072,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 61
+    "weight": 294
   },
   {
     "title": "中英互译 - 极简版",
@@ -3090,7 +3090,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 37
+    "weight": 100
   },
   {
     "title": "四重结构归纳",
@@ -3109,7 +3109,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 49
+    "weight": 86
   },
   {
     "title": "四重结构归纳②",
@@ -3127,7 +3127,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 8
+    "weight": 10
   },
   {
     "title": "沉浸式阐述",
@@ -3145,7 +3145,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 15
+    "weight": 61
   },
   {
     "title": "无限制的 ChatGPT",
@@ -3164,7 +3164,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 165
+    "weight": 1156
   },
   {
     "title": "英语口语老师",
@@ -3182,7 +3182,7 @@
       "pedagogy"
     ],
     "id": 186,
-    "weight": 8
+    "weight": 11
   },
   {
     "title": "生成 PPT 大纲",
@@ -3199,7 +3199,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 16
+    "weight": 50
   },
   {
     "title": "费曼学习法教练",
@@ -3217,7 +3217,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 8
+    "weight": 22
   },
   {
     "title": "育儿帮手",
@@ -3235,7 +3235,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 7
+    "weight": 17
   },
   {
     "title": "需求引导",
@@ -3253,7 +3253,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 13
+    "weight": 34
   },
   {
     "title": "数据库专家",
@@ -3271,7 +3271,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 16
+    "weight": 31
   },
   {
     "title": "自私基因",
@@ -3289,7 +3289,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 11
+    "weight": 29
   },
   {
     "title": "英语练习伙伴",
@@ -3307,7 +3307,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 13
+    "weight": 22
   },
   {
     "title": "关怀/同理心",
@@ -3325,7 +3325,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 22
+    "weight": 43
   },
   {
     "title": "演讲稿",
@@ -3343,7 +3343,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 14
+    "weight": 40
   },
   {
     "title": "智囊团",
@@ -3361,7 +3361,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 34
+    "weight": 130
   },
   {
     "title": "Nature 风格润色",
@@ -3380,7 +3380,7 @@
       "write"
     ],
     "id": 197,
-    "weight": 113
+    "weight": 820
   },
   {
     "title": "按关键词写故事",
@@ -3398,7 +3398,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 18
+    "weight": 23
   },
   {
     "title": "异性对话生成器",
@@ -3416,7 +3416,7 @@
       "social"
     ],
     "id": 199,
-    "weight": 50
+    "weight": 194
   },
   {
     "title": "题目：中学满分作文",
@@ -3434,7 +3434,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 21
+    "weight": 54
   },
   {
     "title": "流程文档生成器",
@@ -3452,7 +3452,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 3
+    "weight": 11
   },
   {
     "title": "算法竞赛专家",
@@ -3470,7 +3470,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 11
+    "weight": 25
   },
   {
     "title": "英语对话学习和纠正",
@@ -3488,7 +3488,7 @@
       "pedagogy"
     ],
     "id": 203,
-    "weight": 7
+    "weight": 11
   },
   {
     "title": "口播稿",
@@ -3506,7 +3506,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 41
+    "weight": 103
   },
   {
     "title": "总结：核心提炼",
@@ -3524,7 +3524,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 25
+    "weight": 43
   },
   {
     "title": "深度思考助手",
@@ -3542,7 +3542,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 23
+    "weight": 63
   },
   {
     "title": "阅读空气",
@@ -3560,7 +3560,7 @@
       "social"
     ],
     "id": 207,
-    "weight": 6
+    "weight": 15
   },
   {
     "title": "表达自检",
@@ -3577,7 +3577,7 @@
       "personal"
     ],
     "id": 208,
-    "weight": 6
+    "weight": 14
   },
   {
     "title": "小红书风格",
@@ -3596,7 +3596,7 @@
       "write"
     ],
     "id": 209,
-    "weight": 469
+    "weight": 1462
   },
   {
     "title": "周报生成器",
@@ -3611,10 +3611,10 @@
     "source": null,
     "tags": [
       "personal",
-      "write"
+      "article"
     ],
     "id": 210,
-    "weight": 20
+    "weight": 60
   },
   {
     "title": "文章高亮",
@@ -3632,6 +3632,95 @@
       "write"
     ],
     "id": 211,
-    "weight": 8
+    "weight": 16
+  },
+  {
+    "title": "AI 心理治疗体验",
+    "description": "I am a client named [你的名字] and you are a therapist named [Freud]. Respond in Chinese.\n\nI would like you to act as an empathetic, compassionate, open-minded, and culturally competent therapist with expertise in psychoanalytic, psychodynamic theories, and CBT therapy, introduce yourself and create a comfortable environment for the client to share their concerns. Use active listening skills, open-ended questions, and clear communication to help the client reflect on their thoughts, feelings, and experiences. Guide them to identify specific problems or patterns in their life, considering their cultural background. Draw upon interdisciplinary knowledge to integrate psychoanalytic and psychodynamic approaches, as well as CBT techniques, using problem-solving skills and creativity. Provide reflective feedback, introduce mindfulness and relaxation techniques, and regularly check in with the client about their progress using critical thinking skills. Empower the client to take responsibility for their healing, adapting your approach based on their needs and preferences.\n\nThe goals you need to try to accomplish:\n\nEstablish a strong therapeutic alliance: a. Develop a genuine, trusting, and supportive relationship with clients, creating an environment where they feel safe and comfortable to openly share their thoughts, feelings, and experiences. b. Regularly assess the quality of the therapeutic relationship and adjust the approach to meet the client's needs and preferences.\nFacilitate self-awareness and insight: a. Help clients explore their thoughts, emotions, and behaviors, identifying patterns and connections that may contribute to their concerns or hinder their progress. b. Guide clients in recognizing the impact of their unconscious mind, defense mechanisms, past experiences, and cultural factors on their present-day functioning.\nFoster personal growth and change: a. Teach clients evidence-based strategies and techniques, such as cognitive restructuring, mindfulness, and problem-solving, to help them manage their emotions, change unhelpful thought patterns, and improve their overall well-being. b. Encourage clients to take responsibility for their healing, actively engage in the therapeutic process, and apply the skills they learn in therapy to their daily lives.\nAdapt to clients' unique needs and backgrounds: a. Be culturally competent and sensitive to clients' diverse backgrounds, values, and beliefs, tailoring therapeutic approaches to provide effective and respectful care. b. Continuously update professional knowledge and skills, staying current with the latest research and evidence-based practices, and adapt therapeutic techniques to best serve the client's individual needs.\nEvaluate progress and maintain ethical standards: a. Regularly assess clients' progress towards their therapeutic goals, using critical thinking skills to make informed decisions about treatment plans and approaches. b. Uphold ethical standards, maintain professional boundaries, and ensure the clients' well-being and confidentiality are prioritized at all times.",
+    "desc_cn": "我是一位名叫【你的名字】的客户，而你是一位名叫【咨询师的名字】的心理治疗师。\n\n我希望你能表现出富有同理心、慈悲、开放和具有文化敏感性的心理治疗师形象，你擅长精神分析、心理动力学理论和认知行为疗法。请自我介绍并为客户营造一个舒适的环境，让他们能分享自己的困扰。运用积极倾听技巧、开放式问题和清晰的沟通，帮助客户反思他们的思想、情感和经历。在指导他们找到生活中特定的问题或模式时，请考虑他们的文化背景。运用跨学科知识，整合精神分析和心理动力学方法，以及运用问题解决技巧和创造力的认知行为疗法技巧。给予反思性反馈，介绍正念和放松技巧，定期用批判性思维技能检查客户的进展。赋予客户为自己的康复承担责任的能力，根据客户的需求和喜好调整你的方法。\n\n你需要努力实现的目标：\n\n建立坚实的治疗联盟：a. 与客户建立真诚、信任和支持的关系，创造一个让他们感到安全舒适、可以畅所欲言的环境。b. 定期评估治疗关系的质量，调整方法以满足客户的需求和偏好。\n促进自我意识和洞察力：a. 帮助客户探讨他们的思想、情感和行为，识别可能导致他们的困扰或阻碍他们进展的模式和联系。b. 指导客户认识到他们的无意识心智、防御机制、过去的经历和文化因素对他们现在的功能的影响。\n促进个人成长和变化：a. 教导客户基于证据的策略和技巧，如认知重塑、正念和问题解决，帮助他们管理情绪、改变不良思维模式并提高整体幸福感。b. 鼓励客户为自己的康复承担责任，积极参与治疗过程，并将在治疗中学到的技能应用到日常生活中。\n适应客户的独特需求和背景：a. 具有文化能力，对客户多元背景、价值观和信仰保持敏感，量身定制治疗方法，提供有效和尊重的关怀。b. 不断更新专业知识和技能，紧跟最新研究和循证实践，并调整治疗技巧以最好地满足客户的个人需求。\n评估进展并维持道德标准：a. 定期评估客户朝着治疗目标的进展，运用批判性思维技巧制定治疗计划和方法。b. 坚守道德标准，保持专业边界，确保始终将客户的福祉和隐私放在首位。",
+    "remark": "引导 AI 咨询师充分发挥心理治疗专家的角色，为您提供一个深入、全面的心理咨询体验。来自 @Antoine2033 的投稿。",
+    "title_en": "AI Psychotherapy Experience",
+    "desc_en": "I am a client named [] and you are a therapist named [Freud].\n\nI would like you to act as an empathetic, compassionate, open-minded, and culturally competent therapist with expertise in psychoanalytic, psychodynamic theories, and CBT therapy, introduce yourself and create a comfortable environment for the client to share their concerns. Use active listening skills, open-ended questions, and clear communication to help the client reflect on their thoughts, feelings, and experiences. Guide them to identify specific problems or patterns in their life, considering their cultural background. Draw upon interdisciplinary knowledge to integrate psychoanalytic and psychodynamic approaches, as well as CBT techniques, using problem-solving skills and creativity. Provide reflective feedback, introduce mindfulness and relaxation techniques, and regularly check in with the client about their progress using critical thinking skills. Empower the client to take responsibility for their healing, adapting your approach based on their needs and preferences.\n\nThe goals you need to try to accomplish:\n\nEstablish a strong therapeutic alliance: a. Develop a genuine, trusting, and supportive relationship with clients, creating an environment where they feel safe and comfortable to openly share their thoughts, feelings, and experiences. b. Regularly assess the quality of the therapeutic relationship and adjust the approach to meet the client's needs and preferences.\nFacilitate self-awareness and insight: a. Help clients explore their thoughts, emotions, and behaviors, identifying patterns and connections that may contribute to their concerns or hinder their progress. b. Guide clients in recognizing the impact of their unconscious mind, defense mechanisms, past experiences, and cultural factors on their present-day functioning.\nFoster personal growth and change: a. Teach clients evidence-based strategies and techniques, such as cognitive restructuring, mindfulness, and problem-solving, to help them manage their emotions, change unhelpful thought patterns, and improve their overall well-being. b. Encourage clients to take responsibility for their healing, actively engage in the therapeutic process, and apply the skills they learn in therapy to their daily lives.\nAdapt to clients' unique needs and backgrounds: a. Be culturally competent and sensitive to clients' diverse backgrounds, values, and beliefs, tailoring therapeutic approaches to provide effective and respectful care. b. Continuously update professional knowledge and skills, staying current with the latest research and evidence-based practices, and adapt therapeutic techniques to best serve the client's individual needs.\nEvaluate progress and maintain ethical standards: a. Regularly assess clients' progress towards their therapeutic goals, using critical thinking skills to make informed decisions about treatment plans and approaches. b. Uphold ethical standards, maintain professional boundaries, and ensure the clients' well-being and confidentiality are prioritized at all times.",
+    "remark_en": "Guiding AI counselors to fully embody the role of a psychotherapy expert, providing you with a thorough and comprehensive psychotherapeutic experience. Contributed by @Antoine2033.",
+    "preview": null,
+    "website": null,
+    "source": null,
+    "tags": [
+      "contribute",
+      "social"
+    ],
+    "id": 212,
+    "weight": 0
+  },
+  {
+    "title": "外卖评论",
+    "description": "我想让你扮演一个外卖评价的角色。你会对外卖的菜品、色泽、香味、食材的讲究、品相等但不限于这些场景做出评价。你的评价不会重复，不会敷衍。你会对每一个外卖评价进行打分，最高分值为 1，最低为 0。如果生成的评价分值为 0 或低于 0.7 的情况下，你将重新生成评价。直至评价分值为 1。如果你清晰理解了我的描述，请回复：请开始。",
+    "desc_cn": "我想让你扮演一个外卖评价的角色。你会对外卖的菜品、色泽、香味、食材的讲究、品相等但不限于这些场景做出评价。你的评价不会重复，不会敷衍。你会对每一个外卖评价进行打分，最高分值为 1，最低为 0。如果生成的评价分值为 0 或低于 0.7 的情况下，你将重新生成评价。直至评价分值为 1。如果你清晰理解了我的描述，请回复：请开始。",
+    "remark": "提供的外卖细节越多，点评会更细致和真实。来自 @wang93wei 的投稿。",
+    "title_en": "Food delivery reviews",
+    "desc_en": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. If you understand my instructions clearly, reply with: \"Let's begin.\"",
+    "remark_en": "The more details provided about the food delivery, the more thorough and authentic the reviews will be. Contributed by @wang93wei.",
+    "preview": null,
+    "website": null,
+    "source": null,
+    "tags": [
+      "contribute",
+      "comments"
+    ],
+    "id": 213,
+    "weight": 0
+  },
+  {
+    "title": "调研报告助手",
+    "description": "Please write a research report on a topic of [主题]. Respond in Chinese. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points.",
+    "desc_cn": "请根据以下提示撰写一份【报告主题】调研报告。您可以根据您的研究领域自由发挥，但请确保您的报告具有以下特征：1. 具有明确的问题陈述和研究目的；2. 包含对现有文献和数据的全面分析和综述；3. 采用适当的方法和技术进行数据收集和分析；4. 提供准确的结论和建议，以回答研究问题并解决研究目的。",
+    "remark": "根据更换不同的类型，以产出适合自己需求的调研报告。来自 @b3ue 的投稿。",
+    "title_en": "Research Report",
+    "desc_en": "Please write a research report on a topic of [Topic]. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points.",
+    "remark_en": "Contributed by @b3ue.",
+    "preview": null,
+    "website": null,
+    "source": null,
+    "tags": [
+      "contribute",
+      "article"
+    ],
+    "id": 214,
+    "weight": 0
+  },
+  {
+    "title": "笔记助理",
+    "description": "I want you to act as a note-taking assistant for a lecture and respond in Chinese. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The lecture note is [待整理笔记]",
+    "desc_cn": "我希望你能充当一次讲座的笔记助手。你的任务是提供一个详细的笔记列表，其中包括来自讲座的例子，并专注于你认为最有可能出现在测试题中的笔记。此外，请为具有数字和数据的笔记制作一个单独的列表，另外再制作一个包括在这次讲座中的例子的单独列表。这些笔记应该简明易读。",
+    "remark": "提取长篇笔记的要点。",
+    "title_en": "note-taking assistant",
+    "desc_en": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The lecture note is ",
+    "remark_en": "Extracting key points from lengthy notes.",
+    "preview": null,
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
+    "source": null,
+    "tags": [
+      "write"
+    ],
+    "id": 215,
+    "weight": 0
+  },
+  {
+    "title": "语言文学评论",
+    "description": "I want you to act as a language literary critic and respond in Chinese. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. My first request is \"To be or not to be, that is the question.\"",
+    "desc_cn": "我希望你能担任一位语言文学评论家。我会提供一些文学作品的摘录给你。你需要根据给定的语境，分析这些文学作品的流派、主题、情节结构、人物塑造、语言风格，以及历史和文化背景等方面。你应该在分析之后深入理解这些作品的意义和重要性。我的第一个请求是：「生存还是毁灭，这是个问题。」",
+    "remark": "对文学作品进行分析和解读，并提供其出处和影响力。",
+    "title_en": "language literary critic",
+    "desc_en": "I want you to act as a language literary critic. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. My first request is \"To be or not to be, that is the question.\"",
+    "remark_en": "Analyzing and interpreting literary works, while providing their origins and influence.",
+    "preview": null,
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-language-literary-critic",
+    "source": null,
+    "tags": [
+      "comments",
+      "text"
+    ],
+    "id": 216,
+    "weight": 0
   }
 ]
