@@ -13,15 +13,6 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#e9669e",
   },
 
-  mind: {
-    label: translate({ message: "发散思维" }),
-    description: translate({
-      message: "质疑、思考、联想、归纳",
-      id: "showcase.tag.mind.description",
-    }),
-    color: "#86699e",
-  },
-
   write: {
     label: translate({ message: "写作辅助" }),
     description: translate({
@@ -38,33 +29,6 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.article.description",
     }),
     color: "#dfd545",
-  },
-
-  comments: {
-    label: translate({ message: "点评/评鉴" }),
-    description: translate({
-      message: "点评/评鉴",
-      id: "showcase.tag.comments.description",
-    }),
-    color: "#eeef99",
-  },
-
-  text: {
-    label: translate({ message: "文本/词语" }),
-    description: translate({
-      message: "文本/词语",
-      id: "showcase.tag.text.description",
-    }),
-    color: "#554236",
-  },
-
-  seo: {
-    label: translate({ message: "SEO" }),
-    description: translate({
-      message: "文本/关键词拓展生成",
-      id: "showcase.tag.seo.description",
-    }),
-    color: "#BC9F77",
   },
 
   code: {
@@ -86,15 +50,6 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#ff6100", // Facebook blue
   },
 
-  life: {
-    label: translate({ message: "自助百科" }),
-    description: translate({
-      message: "生活知识/自助百科",
-      id: "showcase.tag.life.description",
-    }),
-    color: "#a44fb7",
-  },
-
   living: {
     label: translate({ message: "生活质量" }),
     description: translate({
@@ -113,13 +68,13 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#127f82",
   },
 
-  speech: {
-    label: translate({ message: "辩论/演讲" }),
+  life: {
+    label: translate({ message: "自助百科" }),
     description: translate({
-      message: "辩论/演讲",
-      id: "showcase.tag.speech.description",
+      message: "生活知识/自助百科",
+      id: "showcase.tag.life.description",
     }),
-    color: "#9c1d10",
+    color: "#a44fb7",
   },
 
   social: {
@@ -138,6 +93,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.philosophy.description",
     }),
     color: "#ffcaa9",
+  },
+
+  mind: {
+    label: translate({ message: "发散思维" }),
+    description: translate({
+      message: "质疑、思考、联想、归纳",
+      id: "showcase.tag.mind.description",
+    }),
+    color: "#86699e",
   },
 
   pedagogy: {
@@ -194,6 +158,33 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#39ca30",
   },
 
+  speech: {
+    label: translate({ message: "辩论/演讲" }),
+    description: translate({
+      message: "辩论/演讲",
+      id: "showcase.tag.speech.description",
+    }),
+    color: "#9c1d10",
+  },
+
+  comments: {
+    label: translate({ message: "点评/评鉴" }),
+    description: translate({
+      message: "点评/评鉴",
+      id: "showcase.tag.comments.description",
+    }),
+    color: "#eeef99",
+  },
+
+  text: {
+    label: translate({ message: "文本/词语" }),
+    description: translate({
+      message: "文本/词语",
+      id: "showcase.tag.text.description",
+    }),
+    color: "#554236",
+  },
+
   company: {
     label: translate({ message: "企业职位" }),
     description: translate({
@@ -201,6 +192,15 @@ export const Tags: { [type in TagType]: Tag } = {
       id: "showcase.tag.company.description",
     }),
     color: "#124f4e",
+  },
+
+  seo: {
+    label: translate({ message: "SEO" }),
+    description: translate({
+      message: "文本/关键词拓展生成",
+      id: "showcase.tag.seo.description",
+    }),
+    color: "#BC9F77",
   },
 
   doctor: {
