@@ -17,6 +17,10 @@ const zhNavbar = {
       position: 'left',
       items: [
         {
+          label: "Chrome 扩展版",
+          href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
+        },
+        {
           label: 'IMGPrompt',
           href: 'https://prompt.newzone.top/',
         },
