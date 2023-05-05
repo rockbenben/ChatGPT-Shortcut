@@ -98,7 +98,14 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
       console.error("Error updating copy count:", error);
     }
   }, [user.id]);
-
+  // 将显示数据单位简化到 k
+  const formatCopyCount = (count) => {
+    if (count >= 1000) {
+      return (count / 1000).toFixed(1) + "k";
+    }
+    return count;
+  };
+  
   return (
     <li key={userTitle} className="card shadow--md">
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
@@ -111,7 +118,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>
-              {copyCount > 0 && `🔥${copyCount}`}
+              {copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}
             </span>
           </Heading>
           {user.tags.includes("favorite") && (
