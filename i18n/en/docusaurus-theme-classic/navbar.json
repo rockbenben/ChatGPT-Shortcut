@@ -7,16 +7,36 @@
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
-  "item.label.ChatGPT 使用说明": {
-    "message": "The original intention behind creating ChatGPT Shortcut",
-    "description": "Navbar item with label The original intention behind creating ChatGPT Shortcut"
-  },
-  "item.label.开源工具导航": {
-    "message": "open-source tool directory",
-    "description": "Navbar item with label open-source tool directory"
-  },
   "item.label.Find on Product Hunt": {
     "message": "Find on Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
+  },
+  "item.label.ChatGPT Shortcut 原理说明": {
+    "message": "ChatGPT Shortcut 原理说明",
+    "description": "Navbar item with label ChatGPT Shortcut 原理说明"
+  },
+  "item.label.其他工具": {
+    "message": "其他工具",
+    "description": "Navbar item with label 其他工具"
+  },
+  "item.label.反馈/添加提示词": {
+    "message": "反馈/添加提示词",
+    "description": "Navbar item with label 反馈/添加提示词"
+  },
+  "item.label.Chrome 扩展版": {
+    "message": "Chrome 扩展版",
+    "description": "Navbar item with label Chrome 扩展版"
+  },
+  "item.label.IMGPrompt": {
+    "message": "IMGPrompt",
+    "description": "Navbar item with label IMGPrompt"
+  },
+  "item.label.文字处理": {
+    "message": "文字处理",
+    "description": "Navbar item with label 文字处理"
+  },
+  "item.label.工具收藏": {
+    "message": "工具收藏",
+    "description": "Navbar item with label 工具收藏"
   }
 }

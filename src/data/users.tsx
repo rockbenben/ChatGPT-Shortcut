@@ -256,6 +256,15 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#ebcb63",
   },
+
+  new: {
+    label: translate({ message: "New Prompt" }),
+    description: translate({
+      message: "近期新增的提示词",
+      id: "showcase.tag.new.description",
+    }),
+    color: "#ebcb63",
+  },
 };
 
 const Users: User[] = UsersData as User[];

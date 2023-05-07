@@ -42,7 +42,8 @@ export type TagType =
   | "music"
   | "professional"
   | "contribute"
-  | "personal";
+  | "personal"
+  | "new";
 
 export type Tag = {
   label: string;

@@ -155,9 +155,6 @@
   "showcase.tag.personal.description": {
     "message": "For personal non-productivity usage only, provided for reference purposes."
   },
-  "ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！": {
-    "message": "ChatGPT Shortcut - A concise and user-friendly shortcut guide for ChatGPT, Power up your efficiency and productivity."
-  },
   "让生产力加倍的 ChatGPT 快捷指令": {
     "message": "Maximize your Efficiency and Productivity"
   },
@@ -494,5 +491,11 @@
   },
   "showcase.tag.academic.description": {
     "message": "People and things related to academia or schools."
+  },
+  "New Prompt": {
+    "message": "New Prompt"
+  },
+  "showcase.tag.new.description": {
+    "message": "Recently added prompts"
   }
 }
