@@ -263,7 +263,7 @@ export const Tags: { [type in TagType]: Tag } = {
       message: "近期新增的提示词",
       id: "showcase.tag.new.description",
     }),
-    color: "#ebcb63",
+    color: "#666b63",
   },
 };
 
