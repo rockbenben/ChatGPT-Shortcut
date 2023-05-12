@@ -257,11 +257,11 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#ebcb63",
   },
 
-  new: {
-    label: translate({ message: "New Prompt" }),
+  latest: {
+    label: translate({ message: "Latest" }),
     description: translate({
       message: "近期新增的提示词",
-      id: "showcase.tag.new.description",
+      id: "showcase.tag.latest.description",
     }),
     color: "#666b63",
   },

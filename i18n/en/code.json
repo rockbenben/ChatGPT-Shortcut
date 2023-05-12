@@ -492,10 +492,10 @@
   "showcase.tag.academic.description": {
     "message": "People and things related to academia or schools."
   },
-  "New Prompt": {
-    "message": "New Prompt"
+  "Latest": {
+    "message": "Latest"
   },
-  "showcase.tag.new.description": {
+  "showcase.tag.latest.description": {
     "message": "Recently added prompts"
   }
 }

@@ -43,7 +43,7 @@ export type TagType =
   | "professional"
   | "contribute"
   | "personal"
-  | "new";
+  | "latest";
 
 export type Tag = {
   label: string;
