@@ -15,9 +15,11 @@
 - 🎓 **适合初学者**：即使是初学者，只需复制提示词，稍加修改后发送给 ChatGPT，就能获得指定输出。
 - 🆕 **定期更新**：ChatGPT Shortcut 的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期进行更新，为用户提供新的提示词和思路。
 - 🇨🇳 **中文优化**：虽然提示词仍然使用英文，但提供了中文翻译，支持默认中文回复，方便中文用户理解和使用。
-- 📦 **开箱即用**：<https://www.aishort.top/> <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://user-images.githubusercontent.com/3750161/214147732-c75e96a4-48a4-4b64-b407-c2402e899a75.PNG" height="40" alt="Chrome" valign="middle">
-  </a>
+- 📦 **开箱即用**：<https://www.aishort.top/>
+  <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
+  <img src="https://user-images.githubusercontent.com/3750161/214147732-c75e96a4-48a4-4b64-b407-c2402e899a75.PNG" height="40" alt="Chrome" valign="middle"></a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
+  <img src="https://user-images.githubusercontent.com/3750161/233201810-d1026855-0482-44c8-b1ec-c7247134473e.png" height="40" alt="Edge" valign="middle"></a>
 
 查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。
 

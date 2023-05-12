@@ -15,6 +15,10 @@
 - 🎓 **Beginner-friendly**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
 - 🆕 **Regular updates**: The prompts of ChatGPT Shortcut come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
 - 📦 **Ready-to-use**: <https://aishort.top/en/>
+  <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
+  <img src="https://user-images.githubusercontent.com/3750161/214147732-c75e96a4-48a4-4b64-b407-c2402e899a75.PNG" height="40" alt="Chrome" valign="middle"></a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
+  <img src="https://user-images.githubusercontent.com/3750161/233201810-d1026855-0482-44c8-b1ec-c7247134473e.png" height="40" alt="Edge" valign="middle"></a>
 
 ## Instructions
 
