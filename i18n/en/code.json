@@ -497,5 +497,22 @@
   },
   "showcase.tag.latest.description": {
     "message": "Recently added prompts"
+  },
+  "feedback.title": {
+    "message": "Feedback and suggestions"
+  },
+  "feedback.description": {
+    "message": "您的反馈对我们很重要！"
+  },
+  "feedback.welcome": {
+    "message": "Feedback and suggestions",
+    "description": "The welcome title on the feedback page"
+  },
+  "feedback.paragraph": {
+    "message": "We cordially invite you to provide suggestions, ideas, and keywords to continuously enhance ChatGPT Shortcut, thereby improving personal efficiency and productivity. If you encounter any bugs, please provide the relevant link and details of the issue. When it comes to keyword suggestions, you may submit content in multiple languages or simply describe your thoughts on the desired keywords. We look forward to expanding our collective knowledge and generating high-quality outputs through these suggestions. Once your submitted keywords are published, your contributions will be credited on the page. You can search for entries associated with your contributor name (username).",
+    "description": "The main paragraph on the feedback page"
+  },
+  "收藏": {
+    "message": "Favorite"
   }
 }

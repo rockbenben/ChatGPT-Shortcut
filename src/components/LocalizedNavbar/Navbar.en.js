@@ -12,6 +12,11 @@ const enNavbar = {
       target: '_blank',
       position: 'left',
     },
+    {
+      to: "https://www.aishort.top/en/feedback",
+      label: "Feedback",
+      position: "left",
+    },
     { type: "localeDropdown", position: "right" },
     {
       href: "https://github.com/rockbenben/ChatGPT-Shortcut",

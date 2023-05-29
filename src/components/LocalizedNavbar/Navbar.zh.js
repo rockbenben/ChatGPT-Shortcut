@@ -39,8 +39,8 @@ const zhNavbar = {
       ],
     },
     {
-      to: "https://xq7pd3qu17.feishu.cn/share/base/form/shrcnK7oaSPaAcj1YAHfy4jo0Jh",
-      label: "反馈/添加提示词",
+      to: "https://www.aishort.top/feedback",
+      label: "反馈",
       position: "left",
     },
     { type: "localeDropdown", position: "right" },

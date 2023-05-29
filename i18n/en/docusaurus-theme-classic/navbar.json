@@ -19,10 +19,6 @@
     "message": "其他工具",
     "description": "Navbar item with label 其他工具"
   },
-  "item.label.反馈/添加提示词": {
-    "message": "反馈/添加提示词",
-    "description": "Navbar item with label 反馈/添加提示词"
-  },
   "item.label.Chrome 扩展版": {
     "message": "Chrome 扩展版",
     "description": "Navbar item with label Chrome 扩展版"
@@ -38,5 +34,9 @@
   "item.label.工具收藏": {
     "message": "工具收藏",
     "description": "Navbar item with label 工具收藏"
+  },
+  "item.label.反馈": {
+    "message": "反馈",
+    "description": "Navbar item with label Feedback"
   }
 }
