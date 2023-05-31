@@ -1,19 +1,19 @@
 <h1 align="center">
-⚡️ChatGPT Shortcut
+⚡️AI Short
 </h1>
 <p align="center">
     English | <a href="./README.md">中文</a>
 </p>
 <p align="center">
-    <em>Maximize your Efficiency and Productivity</em>
+    <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
 </p>
 
-## Why use ChatGPT Shortcut?
+## Why use AiShort?
 
-- 🚀 **Simplified process**: ChatGPT Shortcut provides a quick command table that can quickly filter and search for prompts suitable for different scenarios, helping users simplify the usage process.
+- 🚀 **Simplified process**: AiShort provides a quick command table that can quickly filter and search for prompts suitable for different scenarios, helping users simplify the usage process.
 - 💻 **Amplify productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
 - 🎓 **Beginner-friendly**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
-- 🆕 **Regular updates**: The prompts of ChatGPT Shortcut come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
+- 🆕 **Regular updates**: The prompts of AiShort come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
 - 📦 **Ready-to-use**: <https://aishort.top/en/>
   <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://user-images.githubusercontent.com/3750161/214147732-c75e96a4-48a4-4b64-b407-c2402e899a75.PNG" height="40" alt="Chrome" valign="middle"></a>
@@ -22,7 +22,7 @@
 
 ## Instructions
 
-The ChatGPT Shortcut page displays all the prompts by default, and is divided into label area, search area, and prompt display area.
+The AiShort page displays all the prompts by default, and is divided into label area, search area, and prompt display area.
 
 ![image](https://user-images.githubusercontent.com/28252913/228847638-3437d24d-72b0-4acc-a5ea-9dc3ac89c421.png)
 
@@ -56,7 +56,7 @@ For the web version of ChatGPT, if the main prompt hasn't been changed, you can 
 
 ### Outputting False Information
 
-Although ChatGPT is very powerful, it is not omnipotent. Sometimes it may output false information. For example, when I need to enter hundreds of pieces of information into ChatGPT Shortcut in a specified format, I let ChatGPT convert the data according to the specified format. However, during the conversion process, I found that some of the information was mistakenly written by ChatGPT. For example, in a text message, one label is "movie critic", but ChatGPT changed it to "film critic". Although this will not cause any impact on the text itself, it can lead to errors when used in code.Therefore, when using ChatGPT , be sure to check its output content.
+Although ChatGPT is very powerful, it is not omnipotent. Sometimes it may output false information. For example, when I need to enter hundreds of pieces of information into AiShort in a specified format, I let ChatGPT convert the data according to the specified format. However, during the conversion process, I found that some of the information was mistakenly written by ChatGPT. For example, in a text message, one label is "movie critic", but ChatGPT changed it to "film critic". Although this will not cause any impact on the text itself, it can lead to errors when used in code.Therefore, when using ChatGPT , be sure to check its output content.
 
 ### Function of prompt
 

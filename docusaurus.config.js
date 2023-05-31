@@ -77,12 +77,12 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       metadata: [
-        { name: "keywords", content: "prompt,ChatGPT,AI prompts，提示词" },
+        { name: "keywords", content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词" },
       ],
       navbar: getNavbar(),
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} ChatGPT Shortcut`,
+        copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut)`,
       },
       prism: {
         theme: lightCodeTheme,

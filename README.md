@@ -1,19 +1,19 @@
 <h1 align="center">
-⚡️ChatGPT Shortcut
+⚡️AI Short
 </h1>
 <p align="center">
     <a href="./README-en.md">English</a> | 中文
 </p>
 <p align="center">
-    <em>让生产力加倍的 ChatGPT 快捷指令</em>
+    <em>ChatGPT Shortcut，让生产力加倍的 ChatGPT 快捷指令</em>
 </p>
 
-## Why use ChatGPT Shortcut?
+## Why use AiShort?
 
-- 🚀 **简化流程**：ChatGPT Shortcut 提供了快捷指令表，可以快速筛选和搜索适用于不同场景的提示词，帮助用户简化使用流程。
+- 🚀 **简化流程**：AiShort 提供了快捷指令表，可以快速筛选和搜索适用于不同场景的提示词，帮助用户简化使用流程。
 - 💻 **提高生产力**：通过使用优化过的提示词，用户可以获得更加准确、有用的回复，从而提高生产力。
 - 🎓 **适合初学者**：即使是初学者，只需复制提示词，稍加修改后发送给 ChatGPT，就能获得指定输出。
-- 🆕 **定期更新**：ChatGPT Shortcut 的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期进行更新，为用户提供新的提示词和思路。
+- 🆕 **定期更新**：AiShort 的提示词来自网络精选、投稿和 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，定期进行更新，为用户提供新的提示词和思路。
 - 🇨🇳 **中文优化**：虽然提示词仍然使用英文，但提供了中文翻译，支持默认中文回复，方便中文用户理解和使用。
 - 📦 **开箱即用**：<https://www.aishort.top/>
   <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
@@ -21,7 +21,7 @@
   <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://user-images.githubusercontent.com/3750161/233201810-d1026855-0482-44c8-b1ec-c7247134473e.png" height="40" alt="Edge" valign="middle"></a>
 
-查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 ChatGPT Shortcut 的开发思路与初衷。
+查看[博客文章](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)了解 AiShort 的开发思路与初衷。
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord">
@@ -29,7 +29,7 @@
 
 ## 使用说明
 
-ChatGPT Shortcut 页面默认显示全部的提示词，页面分为标签区、搜索区和提示词展示区。
+AiShort 页面默认显示全部的提示词，页面分为标签区、搜索区和提示词展示区。
 
 ![image](https://user-images.githubusercontent.com/28252913/222007639-20148284-8366-427f-9ee7-ad1be0edbd2e.png)
 
@@ -67,7 +67,7 @@ ChatGPT Shortcut 页面默认显示全部的提示词，页面分为标签区、
 
 ### 为什么提示词用英文？
 
-ChatGPT Shortcut 是为方便中文母语人士使用 ChatGPT 而创建的，但是提示词却全部是英文。这是因为相较于中文，ChatGPT 对英文的理解更为出色。即使是国内第一个对话式大型语言模型 MOSS，也承认 MOSS 的英文回答水平比中文高，建议使用英文。（MOSS 已不对外开放）
+AiShort 是为方便中文母语人士使用 ChatGPT 而创建的，但是提示词却全部是英文。这是因为相较于中文，ChatGPT 对英文的理解更为出色。即使是国内第一个对话式大型语言模型 MOSS，也承认 MOSS 的英文回答水平比中文高，建议使用英文。（MOSS 已不对外开放）
 
 使用中文提示词可能会得到不错的结果，但是当你再次输入相同的中文提示时，结果可能与之前大相径庭。因为 ChatGPT 对中文的理解每次都不同，所以建议大家在生产力型提示词的输入中使用英文提示词，以保证输出效果。此外，英文提示词带来的回复也很可能是英文的，你可以在提示词结尾添加 `respond in Chinese`，将回复指定为中文。
 
@@ -83,7 +83,7 @@ API 中可以将提示词设为「system prompt」，这样后续就不需要输
 
 ### 输出虚假信息
 
-ChatGPT 虽然非常强大，但并不是万能的。有时它会输出虚假信息。例如，当我需要将上百条信息录入到 ChatGPT Shortcut 中时，我让 ChatGPT 按指定格式转换数据。但是在转换过程中，我发现其中一些信息被 ChatGPT 误写。例如，在文本中一条标签是 `movie critic`，而 ChatGPT 将其更改为 `film critic`。尽管这在文本中不会造成什么影响，但放在代码中会报错。因此，在使用 ChatGPT 时，务必检查其输出内容。
+ChatGPT 虽然非常强大，但并不是万能的。有时它会输出虚假信息。例如，当我需要将上百条信息录入到 AiShort 中时，我让 ChatGPT 按指定格式转换数据。但是在转换过程中，我发现其中一些信息被 ChatGPT 误写。例如，在文本中一条标签是 `movie critic`，而 ChatGPT 将其更改为 `film critic`。尽管这在文本中不会造成什么影响，但放在代码中会报错。因此，在使用 ChatGPT 时，务必检查其输出内容。
 
 ### 提示词不好用
 
