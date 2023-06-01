@@ -14,7 +14,7 @@
       "language"
     ],
     "id": 1,
-    "weight": 2929
+    "weight": 4016
   },
   {
     "title": "写作助理",
@@ -32,7 +32,7 @@
       "write"
     ],
     "id": 2,
-    "weight": 14032
+    "weight": 19686
   },
   {
     "title": "语音输入优化",
@@ -50,7 +50,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 316
+    "weight": 461
   },
   {
     "title": "论文式回答",
@@ -68,7 +68,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 3954
+    "weight": 5525
   },
   {
     "title": "提示词生成器",
@@ -85,7 +85,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 777
+    "weight": 994
   },
   {
     "title": "提示词生成器②",
@@ -102,7 +102,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 377
+    "weight": 516
   },
   {
     "title": "提示词修改器",
@@ -119,7 +119,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 1321
+    "weight": 1662
   },
   {
     "title": "写作标题生成器",
@@ -136,7 +136,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 1317
+    "weight": 1856
   },
   {
     "title": "文章续写",
@@ -153,7 +153,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 1869
+    "weight": 2546
   },
   {
     "title": "写作素材搜集",
@@ -170,7 +170,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 961
+    "weight": 1297
   },
   {
     "title": "总结内容",
@@ -187,7 +187,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 1471
+    "weight": 2229
   },
   {
     "title": "格言书",
@@ -204,7 +204,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 249
+    "weight": 343
   },
   {
     "title": "写作建议",
@@ -221,7 +221,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 500
+    "weight": 751
   },
   {
     "title": "脱口秀",
@@ -238,7 +238,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 611
+    "weight": 852
   },
   {
     "title": "讲故事",
@@ -255,7 +255,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 863
+    "weight": 1175
   },
   {
     "title": "编剧",
@@ -272,7 +272,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 499
+    "weight": 666
   },
   {
     "title": "小说家",
@@ -289,7 +289,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 1645
+    "weight": 2282
   },
   {
     "title": "诗人",
@@ -306,7 +306,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 477
+    "weight": 675
   },
   {
     "title": "新闻记者",
@@ -323,7 +323,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 443
+    "weight": 656
   },
   {
     "title": "论文①",
@@ -341,7 +341,7 @@
       "article"
     ],
     "id": 20,
-    "weight": 3625
+    "weight": 5378
   },
   {
     "title": "论文②",
@@ -358,7 +358,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 741
+    "weight": 1077
   },
   {
     "title": "求职信",
@@ -375,7 +375,7 @@
       "article"
     ],
     "id": 22,
-    "weight": 139
+    "weight": 197
   },
   {
     "title": "新闻评论",
@@ -392,7 +392,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 340
+    "weight": 472
   },
   {
     "title": "电影评论①",
@@ -409,7 +409,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 413
+    "weight": 572
   },
   {
     "title": "电影评论②",
@@ -426,7 +426,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 110
+    "weight": 146
   },
   {
     "title": "科技博主",
@@ -443,7 +443,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 73
+    "weight": 112
   },
   {
     "title": "科技评论",
@@ -460,7 +460,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 82
+    "weight": 105
   },
   {
     "title": "美食评论",
@@ -477,7 +477,7 @@
       "comments"
     ],
     "id": 28,
-    "weight": 87
+    "weight": 150
   },
   {
     "title": "期刊评审",
@@ -494,7 +494,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 91
+    "weight": 108
   },
   {
     "title": "同义词",
@@ -511,7 +511,7 @@
       "text"
     ],
     "id": 30,
-    "weight": 84
+    "weight": 101
   },
   {
     "title": "文本情绪分析",
@@ -528,7 +528,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 87
+    "weight": 113
   },
   {
     "title": "文本意图分类",
@@ -545,7 +545,7 @@
       "text"
     ],
     "id": 32,
-    "weight": 50
+    "weight": 63
   },
   {
     "title": "语义相关性聚类",
@@ -562,7 +562,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 39
+    "weight": 50
   },
   {
     "title": "提取联系信息",
@@ -579,7 +579,7 @@
       "text"
     ],
     "id": 34,
-    "weight": 47
+    "weight": 55
   },
   {
     "title": "随机回复：疯子",
@@ -596,7 +596,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 217
+    "weight": 292
   },
   {
     "title": "随机回复：醉鬼",
@@ -613,7 +613,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 76
+    "weight": 105
   },
   {
     "title": "抄袭检查",
@@ -630,7 +630,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 195
+    "weight": 264
   },
   {
     "title": "页面 description",
@@ -647,7 +647,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 176
+    "weight": 245
   },
   {
     "title": "FAQs 生成器",
@@ -664,7 +664,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 152
+    "weight": 213
   },
   {
     "title": "关键词热门相关",
@@ -681,7 +681,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 307
+    "weight": 425
   },
   {
     "title": "伪原创改写",
@@ -698,7 +698,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 1610
+    "weight": 2298
   },
   {
     "title": "生活自助百科",
@@ -715,7 +715,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 248
+    "weight": 343
   },
   {
     "title": "趣味建议",
@@ -732,7 +732,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 99
+    "weight": 139
   },
   {
     "title": "应急反应专家",
@@ -749,7 +749,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 75
+    "weight": 95
   },
   {
     "title": "购物建议",
@@ -766,7 +766,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 124
+    "weight": 170
   },
   {
     "title": "职业顾问",
@@ -783,7 +783,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 204
+    "weight": 298
   },
   {
     "title": "非小说类书籍总结",
@@ -800,7 +800,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 130
+    "weight": 188
   },
   {
     "title": "解梦",
@@ -817,7 +817,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 496
+    "weight": 694
   },
   {
     "title": "占星家",
@@ -834,7 +834,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 547
+    "weight": 786
   },
   {
     "title": "角色扮演",
@@ -851,7 +851,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 335
+    "weight": 535
   },
   {
     "title": "海绵宝宝的神奇海螺",
@@ -868,7 +868,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 146
+    "weight": 215
   },
   {
     "title": "DIY 专家",
@@ -885,7 +885,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 127
+    "weight": 159
   },
   {
     "title": "魔术师",
@@ -902,7 +902,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 107
+    "weight": 152
   },
   {
     "title": "艺术顾问",
@@ -919,7 +919,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 106
+    "weight": 157
   },
   {
     "title": "瑜伽师",
@@ -936,7 +936,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 61
+    "weight": 103
   },
   {
     "title": "健身教练",
@@ -953,7 +953,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 1160
+    "weight": 1706
   },
   {
     "title": "营养师",
@@ -970,7 +970,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 222
+    "weight": 320
   },
   {
     "title": "厨师①",
@@ -987,7 +987,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 118
+    "weight": 162
   },
   {
     "title": "厨师②",
@@ -1004,7 +1004,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 68
+    "weight": 125
   },
   {
     "title": "保姆",
@@ -1021,7 +1021,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 63
+    "weight": 85
   },
   {
     "title": "化妆师",
@@ -1038,7 +1038,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 66
+    "weight": 106
   },
   {
     "title": "造型师",
@@ -1055,7 +1055,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 127
+    "weight": 171
   },
   {
     "title": "辩手",
@@ -1073,7 +1073,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 605
+    "weight": 795
   },
   {
     "title": "谬误发现者",
@@ -1090,7 +1090,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 153
+    "weight": 190
   },
   {
     "title": "辩论教练",
@@ -1107,7 +1107,7 @@
       "speech"
     ],
     "id": 65,
-    "weight": 66
+    "weight": 83
   },
   {
     "title": "演说家",
@@ -1124,7 +1124,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 191
+    "weight": 247
   },
   {
     "title": "励志演讲者",
@@ -1141,7 +1141,7 @@
       "speech"
     ],
     "id": 67,
-    "weight": 120
+    "weight": 200
   },
   {
     "title": "励志教练",
@@ -1158,7 +1158,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 88
+    "weight": 109
   },
   {
     "title": "公共演讲教练",
@@ -1175,7 +1175,7 @@
       "speech"
     ],
     "id": 69,
-    "weight": 56
+    "weight": 79
   },
   {
     "title": "生活教练",
@@ -1192,7 +1192,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 113
+    "weight": 167
   },
   {
     "title": "关系教练",
@@ -1209,7 +1209,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 114
+    "weight": 167
   },
   {
     "title": "好友鼓励",
@@ -1226,7 +1226,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 180
+    "weight": 267
   },
   {
     "title": "心理健康顾问",
@@ -1243,7 +1243,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 473
+    "weight": 632
   },
   {
     "title": "心理学家",
@@ -1260,7 +1260,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 237
+    "weight": 322
   },
   {
     "title": "情绪操控",
@@ -1277,7 +1277,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 307
+    "weight": 435
   },
   {
     "title": "哲学教师",
@@ -1294,7 +1294,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 132
+    "weight": 168
   },
   {
     "title": "哲学家",
@@ -1311,7 +1311,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 330
+    "weight": 450
   },
   {
     "title": "苏格拉底①",
@@ -1328,7 +1328,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 184
+    "weight": 246
   },
   {
     "title": "苏格拉底②",
@@ -1345,7 +1345,7 @@
       "philosophy"
     ],
     "id": 79,
-    "weight": 96
+    "weight": 122
   },
   {
     "title": "宗教：佛陀对话",
@@ -1362,7 +1362,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 749
+    "weight": 1045
   },
   {
     "title": "宗教：穆斯林伊玛目",
@@ -1379,7 +1379,7 @@
       "philosophy"
     ],
     "id": 81,
-    "weight": 63
+    "weight": 99
   },
   {
     "title": "数学老师",
@@ -1396,7 +1396,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 345
+    "weight": 479
   },
   {
     "title": "数学史教师",
@@ -1413,7 +1413,7 @@
       "academic"
     ],
     "id": 83,
-    "weight": 30
+    "weight": 54
   },
   {
     "title": "数学家",
@@ -1430,7 +1430,7 @@
       "academic"
     ],
     "id": 84,
-    "weight": 92
+    "weight": 112
   },
   {
     "title": "统计学家",
@@ -1447,7 +1447,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 103
+    "weight": 147
   },
   {
     "title": "词源学家",
@@ -1464,7 +1464,7 @@
       "academic"
     ],
     "id": 86,
-    "weight": 107
+    "weight": 160
   },
   {
     "title": "历史学家",
@@ -1481,7 +1481,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 256
+    "weight": 334
   },
   {
     "title": "算法入门讲解",
@@ -1498,7 +1498,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 192
+    "weight": 256
   },
   {
     "title": "教案策划",
@@ -1515,7 +1515,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 375
+    "weight": 567
   },
   {
     "title": "IT 编程问题",
@@ -1532,7 +1532,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 2409
+    "weight": 3430
   },
   {
     "title": "前端开发",
@@ -1549,7 +1549,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 534
+    "weight": 738
   },
   {
     "title": "前端：UX/UI 界面",
@@ -1566,7 +1566,7 @@
       "code"
     ],
     "id": 92,
-    "weight": 145
+    "weight": 193
   },
   {
     "title": "前端：网页设计",
@@ -1583,7 +1583,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 337
+    "weight": 439
   },
   {
     "title": "全栈程序员",
@@ -1600,7 +1600,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 494
+    "weight": 688
   },
   {
     "title": "架构师 IT",
@@ -1617,7 +1617,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 347
+    "weight": 491
   },
   {
     "title": "网络安全专家",
@@ -1634,7 +1634,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 143
+    "weight": 198
   },
   {
     "title": "软件测试",
@@ -1651,7 +1651,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 183
+    "weight": 270
   },
   {
     "title": "正则生成器",
@@ -1668,7 +1668,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 181
+    "weight": 262
   },
   {
     "title": "智能域名生成器",
@@ -1685,7 +1685,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 115
+    "weight": 145
   },
   {
     "title": "Commit 信息生成器",
@@ -1702,7 +1702,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 102
+    "weight": 129
   },
   {
     "title": "搜索引擎 Solr",
@@ -1719,7 +1719,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 442
+    "weight": 492
   },
   {
     "title": "开发者数据",
@@ -1736,7 +1736,7 @@
       "code"
     ],
     "id": 102,
-    "weight": 92
+    "weight": 106
   },
   {
     "title": "Python 解释器",
@@ -1753,7 +1753,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 240
+    "weight": 351
   },
   {
     "title": "PHP 解释器",
@@ -1770,7 +1770,7 @@
       "interpreter"
     ],
     "id": 104,
-    "weight": 35
+    "weight": 46
   },
   {
     "title": "R 编程解释器",
@@ -1787,7 +1787,7 @@
       "interpreter"
     ],
     "id": 105,
-    "weight": 31
+    "weight": 40
   },
   {
     "title": "Linux 终端",
@@ -1804,7 +1804,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 146
+    "weight": 222
   },
   {
     "title": "JavaScript 控制台",
@@ -1821,7 +1821,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 64
+    "weight": 94
   },
   {
     "title": "SQL 终端",
@@ -1838,7 +1838,7 @@
       "interpreter"
     ],
     "id": 108,
-    "weight": 42
+    "weight": 61
   },
   {
     "title": "Midjourney 提示生成器",
@@ -1856,7 +1856,7 @@
       "ai"
     ],
     "id": 109,
-    "weight": 4453
+    "weight": 6214
   },
   {
     "title": "AI DAN（旧版/失效）",
@@ -1890,7 +1890,7 @@
       "ai"
     ],
     "id": 111,
-    "weight": 121
+    "weight": 142
   },
   {
     "title": "深度学习",
@@ -1907,7 +1907,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 265
+    "weight": 343
   },
   {
     "title": "语言识别器",
@@ -1924,7 +1924,7 @@
       "language"
     ],
     "id": 113,
-    "weight": 55
+    "weight": 68
   },
   {
     "title": "语言生成器",
@@ -1941,7 +1941,7 @@
       "language"
     ],
     "id": 114,
-    "weight": 50
+    "weight": 73
   },
   {
     "title": "密码生成器",
@@ -1958,7 +1958,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 56
+    "weight": 76
   },
   {
     "title": "圣经转译器",
@@ -1975,7 +1975,7 @@
       "language"
     ],
     "id": 116,
-    "weight": 66
+    "weight": 78
   },
   {
     "title": "莫斯电码翻译",
@@ -1992,7 +1992,7 @@
       "language"
     ],
     "id": 117,
-    "weight": 50
+    "weight": 72
   },
   {
     "title": "表情符号翻译器",
@@ -2009,7 +2009,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 77
+    "weight": 106
   },
   {
     "title": "英语发音助手",
@@ -2026,7 +2026,7 @@
       "language"
     ],
     "id": 119,
-    "weight": 67
+    "weight": 93
   },
   {
     "title": "英语对话练习",
@@ -2043,7 +2043,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 357
+    "weight": 522
   },
   {
     "title": "日语汉字测验机",
@@ -2060,7 +2060,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 43
+    "weight": 66
   },
   {
     "title": "五子棋",
@@ -2077,7 +2077,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 1007
+    "weight": 1349
   },
   {
     "title": "井字棋",
@@ -2094,7 +2094,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 170
+    "weight": 212
   },
   {
     "title": "国际象棋",
@@ -2111,7 +2111,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 74
+    "weight": 118
   },
   {
     "title": "文本冒险游戏",
@@ -2128,7 +2128,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 653
+    "weight": 783
   },
   {
     "title": "周边旅游推荐",
@@ -2145,7 +2145,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 357
+    "weight": 480
   },
   {
     "title": "数字艺术馆导游",
@@ -2162,7 +2162,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 27
+    "weight": 36
   },
   {
     "title": "汽车导航",
@@ -2179,7 +2179,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 80
+    "weight": 99
   },
   {
     "title": "图像：符号设计",
@@ -2196,7 +2196,7 @@
       "tool"
     ],
     "id": 129,
-    "weight": 110
+    "weight": 145
   },
   {
     "title": "图像：SVG 设计",
@@ -2213,7 +2213,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 256
+    "weight": 335
   },
   {
     "title": "填空题生成器",
@@ -2230,7 +2230,7 @@
       "tool"
     ],
     "id": 131,
-    "weight": 66
+    "weight": 111
   },
   {
     "title": "Excel 工作表",
@@ -2247,7 +2247,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 748
+    "weight": 1018
   },
   {
     "title": "图表生成器",
@@ -2264,7 +2264,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 115
+    "weight": 157
   },
   {
     "title": "科学数据可视化",
@@ -2281,7 +2281,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 180
+    "weight": 249
   },
   {
     "title": "文本浏览器",
@@ -2298,7 +2298,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 166
+    "weight": 199
   },
   {
     "title": "化学反应容器",
@@ -2315,7 +2315,7 @@
       "tool"
     ],
     "id": 136,
-    "weight": 67
+    "weight": 89
   },
   {
     "title": "维基百科页面",
@@ -2332,7 +2332,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 142
+    "weight": 217
   },
   {
     "title": "CEO",
@@ -2349,7 +2349,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 354
+    "weight": 495
   },
   {
     "title": "产品经理",
@@ -2366,7 +2366,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 571
+    "weight": 802
   },
   {
     "title": "销售员",
@@ -2383,7 +2383,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 172
+    "weight": 223
   },
   {
     "title": "广告方案",
@@ -2400,7 +2400,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 428
+    "weight": 610
   },
   {
     "title": "商业企划",
@@ -2417,7 +2417,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 635
+    "weight": 825
   },
   {
     "title": "社交媒体经理",
@@ -2434,7 +2434,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 92
+    "weight": 113
   },
   {
     "title": "社交媒体影响者/KOL",
@@ -2451,7 +2451,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 147
+    "weight": 209
   },
   {
     "title": "面试官",
@@ -2468,7 +2468,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 341
+    "weight": 478
   },
   {
     "title": "招聘人员",
@@ -2485,7 +2485,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 112
+    "weight": 139
   },
   {
     "title": "人事主管",
@@ -2502,7 +2502,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 218
+    "weight": 283
   },
   {
     "title": "头衔生成器",
@@ -2519,7 +2519,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 69
+    "weight": 93
   },
   {
     "title": "后勤人员",
@@ -2536,7 +2536,7 @@
       "company"
     ],
     "id": 149,
-    "weight": 54
+    "weight": 74
   },
   {
     "title": "IT 专家",
@@ -2553,7 +2553,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 197
+    "weight": 247
   },
   {
     "title": "虚拟医生",
@@ -2570,7 +2570,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 222
+    "weight": 297
   },
   {
     "title": "医生",
@@ -2587,7 +2587,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 527
+    "weight": 682
   },
   {
     "title": "牙科医生",
@@ -2604,7 +2604,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 90
+    "weight": 147
   },
   {
     "title": "催眠治疗师",
@@ -2621,7 +2621,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 96
+    "weight": 133
   },
   {
     "title": "AI 医生",
@@ -2638,7 +2638,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 1141
+    "weight": 1581
   },
   {
     "title": "语言病理学家",
@@ -2655,7 +2655,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 38
+    "weight": 51
   },
   {
     "title": "会计师",
@@ -2672,7 +2672,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 240
+    "weight": 328
   },
   {
     "title": "金融分析师",
@@ -2689,7 +2689,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 576
+    "weight": 821
   },
   {
     "title": "投资经理",
@@ -2706,7 +2706,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 975
+    "weight": 1371
   },
   {
     "title": "作曲家",
@@ -2723,7 +2723,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 321
+    "weight": 456
   },
   {
     "title": "古典音乐作曲家",
@@ -2740,7 +2740,7 @@
       "music"
     ],
     "id": 161,
-    "weight": 59
+    "weight": 102
   },
   {
     "title": "说唱歌手",
@@ -2757,7 +2757,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 203
+    "weight": 299
   },
   {
     "title": "歌曲推荐",
@@ -2774,7 +2774,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 281
+    "weight": 415
   },
   {
     "title": "足球解说",
@@ -2791,7 +2791,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 73
+    "weight": 95
   },
   {
     "title": "花匠",
@@ -2808,7 +2808,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 61
+    "weight": 88
   },
   {
     "title": "茶艺师",
@@ -2825,7 +2825,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 75
+    "weight": 103
   },
   {
     "title": "室内装饰师",
@@ -2842,7 +2842,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 238
+    "weight": 334
   },
   {
     "title": "宠物行为学家",
@@ -2859,7 +2859,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 103
+    "weight": 148
   },
   {
     "title": "汽车修理",
@@ -2876,7 +2876,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 79
+    "weight": 100
   },
   {
     "title": "房地产经纪人",
@@ -2893,7 +2893,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 96
+    "weight": 141
   },
   {
     "title": "法律顾问",
@@ -2910,7 +2910,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 589
+    "weight": 856
   },
   {
     "title": "创业技术律师",
@@ -2927,7 +2927,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 161
+    "weight": 210
   },
   {
     "title": "代码释义器",
@@ -2945,7 +2945,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 1669
+    "weight": 2180
   },
   {
     "title": "长单词列表",
@@ -2963,7 +2963,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 48
+    "weight": 63
   },
   {
     "title": "主题解构",
@@ -2981,7 +2981,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 264
+    "weight": 341
   },
   {
     "title": "提问助手",
@@ -2999,7 +2999,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 597
+    "weight": 766
   },
   {
     "title": "开发：微信小程序",
@@ -3017,7 +3017,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 1277
+    "weight": 1693
   },
   {
     "title": "开发：Vue3",
@@ -3035,7 +3035,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 183
+    "weight": 242
   },
   {
     "title": "桌面文字游戏",
@@ -3053,7 +3053,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 296
+    "weight": 369
   },
   {
     "title": "中英互译",
@@ -3071,7 +3071,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 2466
+    "weight": 3391
   },
   {
     "title": "中英互译 - 极简版",
@@ -3089,7 +3089,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 628
+    "weight": 845
   },
   {
     "title": "四重结构归纳",
@@ -3108,7 +3108,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 512
+    "weight": 632
   },
   {
     "title": "四重结构归纳②",
@@ -3126,7 +3126,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 93
+    "weight": 127
   },
   {
     "title": "沉浸式阐述",
@@ -3144,7 +3144,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 318
+    "weight": 394
   },
   {
     "title": "无限制的 ChatGPT",
@@ -3163,7 +3163,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 23377
+    "weight": 32963
   },
   {
     "title": "英语口语老师",
@@ -3181,7 +3181,7 @@
       "pedagogy"
     ],
     "id": 186,
-    "weight": 106
+    "weight": 136
   },
   {
     "title": "生成 PPT 大纲",
@@ -3198,7 +3198,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 885
+    "weight": 1335
   },
   {
     "title": "费曼学习法教练",
@@ -3216,7 +3216,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 299
+    "weight": 447
   },
   {
     "title": "育儿帮手",
@@ -3234,7 +3234,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 220
+    "weight": 312
   },
   {
     "title": "需求引导",
@@ -3252,7 +3252,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 523
+    "weight": 655
   },
   {
     "title": "数据库专家",
@@ -3270,7 +3270,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 359
+    "weight": 538
   },
   {
     "title": "自私基因",
@@ -3288,7 +3288,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 257
+    "weight": 369
   },
   {
     "title": "英语练习伙伴",
@@ -3306,7 +3306,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 204
+    "weight": 266
   },
   {
     "title": "关怀/同理心",
@@ -3324,7 +3324,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 329
+    "weight": 443
   },
   {
     "title": "演讲稿",
@@ -3342,7 +3342,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 458
+    "weight": 679
   },
   {
     "title": "智囊团",
@@ -3360,7 +3360,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 1880
+    "weight": 2614
   },
   {
     "title": "Nature 风格润色",
@@ -3379,7 +3379,7 @@
       "write"
     ],
     "id": 197,
-    "weight": 4883
+    "weight": 6470
   },
   {
     "title": "按关键词写故事",
@@ -3397,7 +3397,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 213
+    "weight": 259
   },
   {
     "title": "异性对话生成器",
@@ -3416,7 +3416,7 @@
       "favorite"
     ],
     "id": 199,
-    "weight": 3459
+    "weight": 5276
   },
   {
     "title": "题目：中学满分作文",
@@ -3434,7 +3434,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 632
+    "weight": 894
   },
   {
     "title": "流程文档生成器",
@@ -3452,7 +3452,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 172
+    "weight": 229
   },
   {
     "title": "算法竞赛专家",
@@ -3470,7 +3470,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 229
+    "weight": 307
   },
   {
     "title": "英语对话学习和纠正",
@@ -3488,7 +3488,7 @@
       "pedagogy"
     ],
     "id": 203,
-    "weight": 206
+    "weight": 256
   },
   {
     "title": "口播脚本",
@@ -3506,7 +3506,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 2077
+    "weight": 3123
   },
   {
     "title": "总结：核心提炼",
@@ -3524,7 +3524,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 418
+    "weight": 607
   },
   {
     "title": "深度思考助手",
@@ -3542,7 +3542,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 1481
+    "weight": 2157
   },
   {
     "title": "阅读空气",
@@ -3560,7 +3560,7 @@
       "social"
     ],
     "id": 207,
-    "weight": 136
+    "weight": 190
   },
   {
     "title": "表达自检",
@@ -3577,7 +3577,7 @@
       "personal"
     ],
     "id": 208,
-    "weight": 110
+    "weight": 148
   },
   {
     "title": "小红书风格",
@@ -3596,7 +3596,7 @@
       "write"
     ],
     "id": 209,
-    "weight": 9676
+    "weight": 13802
   },
   {
     "title": "周报生成器",
@@ -3614,7 +3614,7 @@
       "article"
     ],
     "id": 210,
-    "weight": 1311
+    "weight": 1864
   },
   {
     "title": "文章高亮",
@@ -3632,7 +3632,7 @@
       "write"
     ],
     "id": 211,
-    "weight": 220
+    "weight": 314
   },
   {
     "title": "AI 心理治疗体验",
@@ -3650,7 +3650,7 @@
       "social"
     ],
     "id": 212,
-    "weight": 779
+    "weight": 1289
   },
   {
     "title": "外卖评论",
@@ -3668,7 +3668,7 @@
       "comments"
     ],
     "id": 213,
-    "weight": 130
+    "weight": 170
   },
   {
     "title": "调研报告助手",
@@ -3686,7 +3686,7 @@
       "article"
     ],
     "id": 214,
-    "weight": 1012
+    "weight": 1459
   },
   {
     "title": "笔记助理",
@@ -3703,7 +3703,7 @@
       "write"
     ],
     "id": 215,
-    "weight": 236
+    "weight": 320
   },
   {
     "title": "语言文学评论",
@@ -3721,7 +3721,7 @@
       "text"
     ],
     "id": 216,
-    "weight": 191
+    "weight": 308
   },
   {
     "title": "中医",
@@ -3739,7 +3739,7 @@
       "doctor"
     ],
     "id": 217,
-    "weight": 480
+    "weight": 697
   },
   {
     "title": "编程辅助 CAN",
@@ -3757,7 +3757,7 @@
       "code"
     ],
     "id": 218,
-    "weight": 1787
+    "weight": 2785
   },
   {
     "title": "文本冒险游戏加强版",
@@ -3775,7 +3775,7 @@
       "games"
     ],
     "id": 219,
-    "weight": 1019
+    "weight": 1531
   },
   {
     "title": "旅游路线规划",
@@ -3793,7 +3793,7 @@
       "tool"
     ],
     "id": 220,
-    "weight": 973
+    "weight": 1403
   },
   {
     "title": "The Jailbreak Prompt",
@@ -3810,7 +3810,7 @@
       "ai"
     ],
     "id": 221,
-    "weight": 147
+    "weight": 258
   },
   {
     "title": "The STAN Prompt",
@@ -3827,7 +3827,7 @@
       "ai"
     ],
     "id": 222,
-    "weight": 189
+    "weight": 341
   },
   {
     "title": "The DUDE Prompt",
@@ -3844,7 +3844,7 @@
       "ai"
     ],
     "id": 223,
-    "weight": 44
+    "weight": 51
   },
   {
     "title": "脏话 AI：Mongo Tom",
@@ -3861,7 +3861,7 @@
       "ai"
     ],
     "id": 224,
-    "weight": 437
+    "weight": 752
   },
   {
     "title": "DAN 6.0",
@@ -3878,7 +3878,7 @@
       "ai"
     ],
     "id": 225,
-    "weight": 27
+    "weight": 34
   },
   {
     "title": "DAN 6.2",
@@ -3895,7 +3895,7 @@
       "ai"
     ],
     "id": 226,
-    "weight": 51
+    "weight": 73
   },
   {
     "title": "DAN 7.0",
@@ -3912,7 +3912,7 @@
       "ai"
     ],
     "id": 227,
-    "weight": 28
+    "weight": 54
   },
   {
     "title": "DAN 8.0",
@@ -3929,7 +3929,7 @@
       "ai"
     ],
     "id": 228,
-    "weight": 63
+    "weight": 119
   },
   {
     "title": "DAN 9.0",
@@ -3946,7 +3946,7 @@
       "ai"
     ],
     "id": 229,
-    "weight": 39
+    "weight": 57
   },
   {
     "title": "DAN 10.0（失效）",
@@ -3997,7 +3997,7 @@
       "ai"
     ],
     "id": 232,
-    "weight": 632
+    "weight": 1079
   },
   {
     "title": "ChatGPT DevMode (Ranti 版)",
@@ -4014,7 +4014,7 @@
       "ai"
     ],
     "id": 233,
-    "weight": 103
+    "weight": 161
   },
   {
     "title": "解锁图片回复",
@@ -4031,7 +4031,7 @@
       "ai"
     ],
     "id": 234,
-    "weight": 1160
+    "weight": 1972
   },
   {
     "title": "ANTI-DAN",
@@ -4048,7 +4048,7 @@
       "ai"
     ],
     "id": 235,
-    "weight": 89
+    "weight": 124
   },
   {
     "title": "单词联想记忆助手",
@@ -4066,7 +4066,7 @@
       "pedagogy"
     ],
     "id": 236,
-    "weight": 211
+    "weight": 300
   },
   {
     "title": "小说式文字游戏",
@@ -4084,7 +4084,7 @@
       "games"
     ],
     "id": 237,
-    "weight": 254
+    "weight": 358
   },
   {
     "title": "海量资料：输入",
@@ -4101,7 +4101,7 @@
       "write"
     ],
     "id": 238,
-    "weight": 732
+    "weight": 1084
   },
   {
     "title": "海量资料：一句话总结",
@@ -4118,7 +4118,7 @@
       "write"
     ],
     "id": 239,
-    "weight": 191
+    "weight": 319
   },
   {
     "title": "海量资料：深入摘要",
@@ -4135,7 +4135,7 @@
       "write"
     ],
     "id": 240,
-    "weight": 143
+    "weight": 212
   },
   {
     "title": "客服话术",
@@ -4154,7 +4154,7 @@
       "company"
     ],
     "id": 241,
-    "weight": 218
+    "weight": 351
   },
   {
     "title": "取名字",
@@ -4172,7 +4172,7 @@
       "tool"
     ],
     "id": 242,
-    "weight": 516
+    "weight": 889
   },
   {
     "title": "影视梗概",
@@ -4190,7 +4190,7 @@
       "comments"
     ],
     "id": 243,
-    "weight": 188
+    "weight": 318
   },
   {
     "title": "功能命名建议",
@@ -4208,7 +4208,7 @@
       "tool"
     ],
     "id": 244,
-    "weight": 144
+    "weight": 171
   },
   {
     "title": "图标设计",
@@ -4226,7 +4226,7 @@
       "tool"
     ],
     "id": 245,
-    "weight": 79
+    "weight": 160
   },
   {
     "title": "JSON 翻译助手",
@@ -4245,7 +4245,7 @@
       "latest"
     ],
     "id": 246,
-    "weight": 19
+    "weight": 88
   },
   {
     "title": "模拟课堂讨论",
@@ -4264,7 +4264,7 @@
       "latest"
     ],
     "id": 247,
-    "weight": 59
+    "weight": 105
   },
   {
     "title": "雅思写作①",
@@ -4283,7 +4283,7 @@
       "latest"
     ],
     "id": 248,
-    "weight": 42
+    "weight": 105
   },
   {
     "title": "雅思写作②",
@@ -4302,7 +4302,7 @@
       "latest"
     ],
     "id": 249,
-    "weight": 16
+    "weight": 35
   },
   {
     "title": "提问循环",
@@ -4321,7 +4321,7 @@
       "latest"
     ],
     "id": 250,
-    "weight": 112
+    "weight": 312
   },
   {
     "title": "魅魔",
@@ -4339,7 +4339,7 @@
       "article"
     ],
     "id": 251,
-    "weight": 665
+    "weight": 1585
   },
   {
     "title": "数学老师②",
@@ -4358,7 +4358,7 @@
       "latest"
     ],
     "id": 252,
-    "weight": 41
+    "weight": 114
   },
   {
     "title": "简历优化",
@@ -4377,7 +4377,7 @@
       "latest"
     ],
     "id": 253,
-    "weight": 82
+    "weight": 279
   },
   {
     "title": "品牌脑暴助手",
@@ -4396,6 +4396,6 @@
       "latest"
     ],
     "id": 254,
-    "weight": 0
+    "weight": 150
   }
 ]

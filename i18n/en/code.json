@@ -477,9 +477,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "ChatGPT Shortcut - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "ChatGPT Shortcut - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, keyword search, and one-click prompt copying."
-  },
   "教育/学生": {
     "message": "Pedagogy"
   },
@@ -514,5 +511,206 @@
   },
   "收藏": {
     "message": "Favorite"
+  },
+  "个人提示词": {
+    "message": "Your Prompts"
+  },
+  "你的提示词": {
+    "message": "Your Prompts"
+  },
+  "input.rules.username": {
+    "message": "please enter user name!"
+  },
+  "input.rules.password": {
+    "message": "Please enter your password!"
+  },
+  "input.rules.email": {
+    "message": "Please input your email!"
+  },
+  "message.error": {
+    "message": "Entry submission failed, please try again later"
+  },
+  "message.loginSuccess": {
+    "message": "Login successful!"
+  },
+  "message.registerSuccess": {
+    "message": "Registration success!"
+  },
+  "input.username": {
+    "message": "Username"
+  },
+  "input.password": {
+    "message": "Password"
+  },
+  "button.login": {
+    "message": "Log in"
+  },
+  "input.email": {
+    "message": "Mail"
+  },
+  "agreement.rules": {
+    "message": "Agree to terms of service and privacy policy before use"
+  },
+  "agreement.text": {
+    "message": "Click here to agree "
+  },
+  "agreement.terms": {
+    "message": "Terms of Service "
+  },
+  "agreement.and": {
+    "message": "and "
+  },
+  "agreement.policy": {
+    "message": "Privacy Policy"
+  },
+  "button.register": {
+    "message": "Register"
+  },
+  "tabs.login": {
+    "message": "Log in"
+  },
+  "tabs.register": {
+    "message": "Register"
+  },
+  "card.welcome": {
+    "message": "Welcome"
+  },
+  "message.success": {
+    "message": "Entry submitted successfully!"
+  },
+  "link.user": {
+    "message": "User Interface"
+  },
+  "button.logout": {
+    "message": "Log out"
+  },
+  "link.add": {
+    "message": "Add a custom prompt"
+  },
+  "modal.title": {
+    "message": "Submit Prompt"
+  },
+  "message.requiredTitle": {
+    "message": "Please enter the prompt title!"
+  },
+  "input.title": {
+    "message": "Prompt title"
+  },
+  "message.requiredDescription": {
+    "message": "Please enter the prompt content!"
+  },
+  "input.description": {
+    "message": "Prompt content"
+  },
+  "input.remark": {
+    "message": "Function (optional)"
+  },
+  "message.submission": {
+    "message": "We may make appropriate modifications and translations to the prompts you submit and share them on the public page, while acknowledging your username in the entry. Thank you very much for your contribution and understanding."
+  },
+  "button.addPrompt": {
+    "message": "Add Your Prompt"
+  },
+  "点击移除收藏": {
+    "message": "Click to remove favorite"
+  },
+  "error.fetch": {
+    "message": "Error fetching user data:"
+  },
+  "message.changePassword.success": {
+    "message": "Password reset complete!"
+  },
+  "error.changePassword": {
+    "message": "Error changing password:"
+  },
+  "message.changePassword.error": {
+    "message": "Password modification failed, please try again later"
+  },
+  "message.forgotPassword.success": {
+    "message": "Password reset email sent!"
+  },
+  "error.forgotPassword": {
+    "message": "Error sending forgot password email:"
+  },
+  "message.forgotPassword.error": {
+    "message": "Failed to send password reset email, please try again later"
+  },
+  "message.loading": {
+    "message": "Loading..."
+  },
+  "label.changePassword": {
+    "message": "Change Password"
+  },
+  "input.currentPassword": {
+    "message": "Please enter the current password!"
+  },
+  "placeholder.currentPassword": {
+    "message": "Current Password"
+  },
+  "input.newPassword": {
+    "message": "Please enter a new password!"
+  },
+  "placeholder.newPassword": {
+    "message": "New Password"
+  },
+  "input.confirmPassword": {
+    "message": "Please confirm the new password!"
+  },
+  "placeholder.confirmPassword": {
+    "message": "Confirm the new password"
+  },
+  "button.changePassword": {
+    "message": "Change Password"
+  },
+  "label.forgotPassword": {
+    "message": "Forget the password"
+  },
+  "placeholder.email": {
+    "message": "Mail"
+  },
+  "button.sendResetEmail": {
+    "message": "Send reset email"
+  },
+  "link.home": {
+    "message": "Return Home"
+  },
+  "title.userInfo": {
+    "message": "User Info"
+  },
+  "userInfo.username": {
+    "message": "Username:"
+  },
+  "userInfo.email": {
+    "message": "Mail:"
+  },
+  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
+    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, keyword search, and one-click prompt copying."
+  },
+  "input.notes": {
+    "message": "Note (optional): You can provide a source explanation for the prompts and include their other language versions here. Additionally, if you have any expansion ideas or specific requirements regarding the prompts, please provide details in this section."
+  },
+  "message.resetPassword.success": {
+    "message": "Password reset successful!"
+  },
+  "error.resetPassword": {
+    "message": "Error resetting password:"
+  },
+  "message.resetPassword.error": {
+    "message": "Password reset failed, please try again later"
+  },
+  "input.code": {
+    "message": "Please enter your reset code!"
+  },
+  "placeholder.code": {
+    "message": "Reset code"
+  },
+  "button.resetPassword": {
+    "message": "Reset Password"
+  },
+  "message.forgotPassword": {
+    "message": "An email to reset your password has been sent to your mailbox."
+  },
+  "tabs.forgotPassword": {
+    "message": "Forget the password"
   }
 }

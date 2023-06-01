@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
+import { message, Tooltip } from "antd";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -14,9 +15,15 @@ import {
 } from "@site/src/data/users";
 import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
-import Tooltip from "../ShowcaseTooltip";
+//import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
-import { updateCopyCount } from "@site/src/api";
+import {
+  updateCopyCount,
+  getUserAllInfo,
+  createFavorite,
+  updateFavorite,
+} from "@site/src/api";
+import Cookies from "js-cookie";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
@@ -57,7 +64,13 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
+function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get("auth_token");
+    setIsLoggedIn(!!token);
+  }, []);
   const [paragraphText, setParagraphText] = useState(
     isDescription ? user.description : user.desc_cn
   );
@@ -105,7 +118,59 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
     }
     return count;
   };
-  
+
+  const handleLove = useCallback(async () => {
+    try {
+      const response = await getUserAllInfo();
+      let userLoves;
+      let favoriteId;
+
+      if (!response.data.favorites) {
+        const createFavoriteResponse = await createFavorite([user.id]);
+        userLoves = [user.id];
+        favoriteId = createFavoriteResponse.data.data.id;
+      } else {
+        userLoves = response.data.favorites.loves || [];
+        favoriteId = response.data.favorites.id;
+
+        if (!userLoves.includes(user.id)) {
+          userLoves.push(user.id);
+          message.success("Added to favorites successfully!");
+        }
+      }
+
+      await updateFavorite(favoriteId, userLoves);
+      onLove(userLoves);
+    } catch (err) {
+      console.error(err);
+    }
+  }, [user.id, onLove]);
+
+  const removeFavorite = useCallback(async () => {
+    try {
+      const response = await getUserAllInfo();
+
+      let userLoves;
+      let favoriteId;
+
+      if (response.data.favorites) {
+        userLoves = response.data.favorites.loves || [];
+        favoriteId = response.data.favorites.id;
+
+        const index = userLoves.indexOf(user.id);
+        if (index > -1) {
+          userLoves.splice(index, 1);
+          message.success("Removed from favorites successfully!");
+        }
+
+        await updateFavorite(favoriteId, userLoves);
+        onLove(userLoves);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }, [user.id, onLove, isLoggedIn]);
+
   return (
     <li key={userTitle} className="card shadow--md">
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
@@ -122,7 +187,13 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
             </span>
           </Heading>
           {user.tags.includes("favorite") && (
-            <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
+            <Tooltip
+              title={isLoggedIn ? <Translate>点击移除收藏</Translate> : ""}
+            >
+              <div onClick={isLoggedIn ? removeFavorite : null}>
+                <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
+              </div>
+            </Tooltip>
           )}
           {/* {user.source && (
             <Link
@@ -134,6 +205,18 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy }) {
               <Translate id="showcase.card.sourceLink">source</Translate>
             </Link>
           )} */}
+          {isLoggedIn && !user.tags.includes("favorite") && (
+            <button
+              className={clsx(
+                "button button--secondary button--sm",
+                styles.showcaseCardSrcBtn
+              )}
+              type="button"
+              onClick={handleLove}
+            >
+              <Translate>收藏</Translate>
+            </button>
+          )}
           <button
             className={clsx(
               "button button--secondary button--sm",
