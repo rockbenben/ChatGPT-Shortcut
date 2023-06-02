@@ -1,11 +1,11 @@
-import { Button, Card, Form, Input, message, Tabs, Checkbox } from "antd";
+import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
 import React, { useEffect, useState } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import Cookies from "js-cookie";
-import { login, register, forgotPassword, changePassword, resetPassword, confirmEmail, sendConfirmationEmail } from '@site/src/api';
+import { login, register, forgotPassword } from '@site/src/api';
 
 const rules = {
-  username: [{ required: true, message: translate({ id: "input.rules.username", message: "请输入用户名！" }) }],
+  username: [{ required: true, message: translate({ id: "input.rules.username", message: "请输入用户名或注册邮箱！" }) }],
   password: [{ required: true, message: translate({ id: "input.rules.password", message: "请输入密码！" }) }],
   email: [{ required: true, message: translate({ id: "input.rules.email", message: "请输入邮箱！" }) }],
 };
@@ -68,16 +68,28 @@ const LoginPage = () => {
       handleErrors(err);
     }
   };
+  // Add a new state value to track the active tab
+  const [activeTab, setActiveTab] = useState("1");
+  const handleForgotPasswordClick = () => {
+    setActiveTab("3");
+  };
   const loginForm = (
     <Form onFinish={onFinishLogin}>
       <Form.Item name="username" rules={rules.username}>
-        <Input placeholder={translate({ id: "input.username", message: "用户名" })} />
+        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
       </Form.Item>
       <Form.Item name="password" rules={rules.password}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item>
-        <Button htmlType="submit"><Translate id="button.login">登录</Translate></Button>
+        <Space size="middle">
+          <Button htmlType="submit">
+            <Translate id="button.login">登录</Translate>
+          </Button>
+          <Button onClick={handleForgotPasswordClick}>
+            <Translate id="button.forgotPassword">忘记密码</Translate>
+          </Button>
+        </Space>
       </Form.Item>
     </Form>
   );
@@ -116,6 +128,7 @@ const LoginPage = () => {
       </Form.Item>
     </Form>
   );
+
   const forgotForm = (
     <Form onFinish={handleForgotPassword}>
       <Form.Item
@@ -151,7 +164,7 @@ const LoginPage = () => {
 
   return (
     <Card title={<Translate id="card.welcome">欢迎</Translate>} bordered={false}>
-      <Tabs defaultActiveKey="1" items={items} />
+      <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={setActiveTab} items={items} />
     </Card>
   );
 };

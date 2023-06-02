@@ -35,9 +35,9 @@ const ResetPassword = () => {
           <Form.Item
             name="code"
             initialValue={resetCode}
-            rules={[{ required: true, message: translate({ id: 'input.code', message: '请输入您的重置代码！'}) }]}
+            rules={[{ required: true, message: translate({ id: 'input.resetPassword.code', message: '请输入您的重置代码！'}) }]}
           >
-            <Input placeholder={translate({ id: 'placeholder.code', message: '重置代码'})} />
+            <Input placeholder={translate({ id: 'placeholder.resetPassword.code', message: '重置代码'})} />
           </Form.Item>
           <Form.Item
             name="newPassword"

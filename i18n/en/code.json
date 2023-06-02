@@ -33,7 +33,7 @@
     "message": "SEO"
   },
   "showcase.tag.seo.description": {
-    "message": "Keyword Expansion Generation"
+    "message": "Prompt Expansion Generation"
   },
   "点评/评鉴": {
     "message": "Reviews"
@@ -506,7 +506,7 @@
     "description": "The welcome title on the feedback page"
   },
   "feedback.paragraph": {
-    "message": "We cordially invite you to provide suggestions, ideas, and keywords to continuously enhance ChatGPT Shortcut, thereby improving personal efficiency and productivity. If you encounter any bugs, please provide the relevant link and details of the issue. When it comes to keyword suggestions, you may submit content in multiple languages or simply describe your thoughts on the desired keywords. We look forward to expanding our collective knowledge and generating high-quality outputs through these suggestions. Once your submitted keywords are published, your contributions will be credited on the page. You can search for entries associated with your contributor name (username).",
+    "message": "We cordially invite you to provide suggestions, ideas, and prompts to continuously enhance ChatGPT Shortcut, thereby improving personal efficiency and productivity. If you encounter any bugs, please provide the relevant link and details of the issue. When it comes to prompt suggestions, you may submit content in multiple languages or simply describe your thoughts on the desired prompts. We look forward to expanding our collective knowledge and generating high-quality outputs through these suggestions. Once your submitted prompts are published, your contributions will be credited on the page. You can search for entries associated with your contributor name (username).",
     "description": "The main paragraph on the feedback page"
   },
   "收藏": {
@@ -519,7 +519,7 @@
     "message": "Your Prompts"
   },
   "input.rules.username": {
-    "message": "please enter user name!"
+    "message": "Please enter username or mail!"
   },
   "input.rules.password": {
     "message": "Please enter your password!"
@@ -537,7 +537,7 @@
     "message": "Registration success!"
   },
   "input.username": {
-    "message": "Username"
+    "message": "Username/Mail"
   },
   "input.password": {
     "message": "Password"
@@ -583,30 +583,6 @@
   },
   "button.logout": {
     "message": "Log out"
-  },
-  "link.add": {
-    "message": "Add a custom prompt"
-  },
-  "modal.title": {
-    "message": "Submit Prompt"
-  },
-  "message.requiredTitle": {
-    "message": "Please enter the prompt title!"
-  },
-  "input.title": {
-    "message": "Prompt title"
-  },
-  "message.requiredDescription": {
-    "message": "Please enter the prompt content!"
-  },
-  "input.description": {
-    "message": "Prompt content"
-  },
-  "input.remark": {
-    "message": "Function (optional)"
-  },
-  "message.submission": {
-    "message": "We may make appropriate modifications and translations to the prompts you submit and share them on the public page, while acknowledging your username in the entry. Thank you very much for your contribution and understanding."
   },
   "button.addPrompt": {
     "message": "Add Your Prompt"
@@ -684,10 +660,7 @@
     "message": "Mail:"
   },
   "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, keyword search, and one-click prompt copying."
-  },
-  "input.notes": {
-    "message": "Note (optional): You can provide a source explanation for the prompts and include their other language versions here. Additionally, if you have any expansion ideas or specific requirements regarding the prompts, please provide details in this section."
+    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, prompt search, and one-click prompt copying."
   },
   "message.resetPassword.success": {
     "message": "Password reset successful!"
@@ -698,12 +671,6 @@
   "message.resetPassword.error": {
     "message": "Password reset failed, please try again later"
   },
-  "input.code": {
-    "message": "Please enter your reset code!"
-  },
-  "placeholder.code": {
-    "message": "Reset code"
-  },
   "button.resetPassword": {
     "message": "Reset Password"
   },
@@ -712,5 +679,41 @@
   },
   "tabs.forgotPassword": {
     "message": "Forget the password"
+  },
+  "button.forgotPassword": {
+    "message": "Forgot Password"
+  },
+  "input.resetPassword.code": {
+    "message": "Please enter your reset code!"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "Reset code"
+  },
+  "link.addprompt": {
+    "message": "Add a custom prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Share Prompt (This content will appear in the 'Your Prompts' tab)"
+  },
+  "message.addprompt.requiredTitle": {
+    "message": "Please enter the prompt title!"
+  },
+  "input.addprompt.title": {
+    "message": "Prompt title"
+  },
+  "message.addprompt.requiredDescription": {
+    "message": "Please enter the prompt content!"
+  },
+  "input.addprompt.description": {
+    "message": "Prompt content"
+  },
+  "input.addprompt.remark": {
+    "message": "Explanation of Prompt Function (optional)"
+  },
+  "input.addprompt.notes": {
+    "message": "Note (optional): You can provide a source explanation for the prompts and include their other language versions here. Additionally, if you have any expansion ideas or specific requirements regarding the prompts, please provide details in this section."
+  },
+  "message.addprompt.submission": {
+    "message": "We may make appropriate modifications and translations to the prompts you submit and share them on the public page, while acknowledging your username in the entry. Thank you very much for your contribution and understanding."
   }
 }

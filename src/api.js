@@ -42,13 +42,14 @@ export async function updateFavorite(favoriteId, loves) {
 
 export async function submitPrompt(values) {
   const username = Cookies.get("username");
+  const remark = values.remark ? `${values.remark} ` : '';
   return axios.post(
     `${API_URL}/userprompts`,
     {
       data: {
         title: values.title,
         description: values.description,
-        remark: `${values.remark} Contributed by ${username}.`,
+        remark: `${remark}Contributed by ${username}`,
         notes: values.notes,
       },
     },
