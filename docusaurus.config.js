@@ -3,8 +3,8 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const zhNavbar = require('./src/components/LocalizedNavbar/Navbar.zh');
-const enNavbar = require('./src/components/LocalizedNavbar/Navbar.en');
+const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
+const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -44,6 +44,10 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        docs: {
+          path: "docs",
+          sidebarPath: "sidebars.js",
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -77,7 +81,11 @@ const config = {
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       metadata: [
-        { name: "keywords", content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词" },
+        {
+          name: "keywords",
+          content:
+            "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
+        },
       ],
       navbar: getNavbar(),
       footer: {
@@ -103,9 +111,11 @@ module.exports = config;
 
 process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
 function getNavbar() {
-  switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en": return enNavbar;
-    default: return zhNavbar;
+  switch (process.env.DOCUSAURUS_CURRENT_LOCALE) {
+    case "en":
+      return enNavbar;
+    default:
+      return zhNavbar;
   }
 }
 /* function getAnnouncement() {
