@@ -715,5 +715,8 @@
   },
   "message.addprompt.submission": {
     "message": "We may make appropriate modifications and translations to the prompts you submit and share them on the public page, while acknowledging your username in the entry. Thank you very much for your contribution and understanding."
+  },
+  "message.success1": {
+    "message": "Click on the label 'Your Prompt' to view the custom prompts that have been added."
   }
 }

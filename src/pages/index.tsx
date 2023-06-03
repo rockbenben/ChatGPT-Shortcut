@@ -89,6 +89,7 @@ function filterUsers(
   searchName: string | null
 ) {
   if (searchName) {
+    const lowercaseSearchName = searchName.toLowerCase();
     // eslint-disable-next-line no-param-reassign
     // 搜索范围
     users = users.filter((user) =>
@@ -101,7 +102,7 @@ function filterUsers(
         user.remark_en
       )
         .toLowerCase()
-        .includes(searchName.toLowerCase())
+        .includes(lowercaseSearchName)
     );
   }
   if (selectedTags.length === 0) {
