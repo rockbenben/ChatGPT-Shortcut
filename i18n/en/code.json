@@ -545,6 +545,9 @@
   "button.login": {
     "message": "Log in"
   },
+  "input.register.username": {
+    "message": "Username"
+  },
   "input.email": {
     "message": "Mail"
   },
@@ -589,9 +592,6 @@
   },
   "点击移除收藏": {
     "message": "Click to remove favorite"
-  },
-  "error.fetch": {
-    "message": "Error fetching user data:"
   },
   "message.changePassword.success": {
     "message": "Password reset complete!"

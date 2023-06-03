@@ -73,16 +73,6 @@ export async function register(values) {
   });
 }
 
-// user
-export async function fetchUserData() {
-  try {
-    const response = await axios.get(`${API_URL}/users/me`, config);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-    throw error;
-  }
-}
 
 export async function changePassword(values) {
   try {
@@ -110,6 +100,17 @@ export async function forgotPassword(email) {
     return true;
   } catch (error) {
     console.error("Error sending forgot password email:", error);
+    throw error;
+  }
+}
+
+// user
+export async function fetchUserData() {
+  try {
+    const response = await axios.get(`${API_URL}/users/me`, config);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user data:", error);
     throw error;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useContext,useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import { message, Tooltip } from "antd";
 import Link from "@docusaurus/Link";
@@ -19,11 +19,10 @@ import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 import {
   updateCopyCount,
-  getUserAllInfo,
   createFavorite,
   updateFavorite,
 } from "@site/src/api";
-import Cookies from "js-cookie";
+import { AuthContext } from '../AuthContext';
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
@@ -65,12 +64,8 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
 }
 
 function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
-  useEffect(() => {
-    const token = Cookies.get("auth_token");
-    setIsLoggedIn(!!token);
-  }, []);
   const [paragraphText, setParagraphText] = useState(
     isDescription ? user.description : user.desc_cn
   );
@@ -121,7 +116,8 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   const handleLove = useCallback(async () => {
     try {
-      const response = await getUserAllInfo();
+      const response = userAuth;
+      console.log(response);
       let userLoves;
       let favoriteId;
 
@@ -141,14 +137,16 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
       await updateFavorite(favoriteId, userLoves);
       onLove(userLoves);
+      refreshUserAuth();
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove]);
+  }, [user.id, onLove, userAuth, refreshUserAuth]);
 
   const removeFavorite = useCallback(async () => {
     try {
-      const response = await getUserAllInfo();
+      const response = userAuth;
+      console.log(response);
 
       let userLoves;
       let favoriteId;
@@ -165,11 +163,12 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
         await updateFavorite(favoriteId, userLoves);
         onLove(userLoves);
+        refreshUserAuth();
       }
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, isLoggedIn]);
+  }, [user.id, onLove, userAuth, refreshUserAuth]);
 
   return (
     <li key={userTitle} className="card shadow--md">
@@ -188,9 +187,9 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </Heading>
           {user.tags.includes("favorite") && (
             <Tooltip
-              title={isLoggedIn ? <Translate>点击移除收藏</Translate> : ""}
+              title={userAuth ? <Translate>点击移除收藏</Translate> : ""}
             >
-              <div onClick={isLoggedIn ? removeFavorite : null}>
+              <div onClick={userAuth ? removeFavorite : null}>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
               </div>
             </Tooltip>
@@ -205,7 +204,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
               <Translate id="showcase.card.sourceLink">source</Translate>
             </Link>
           )} */}
-          {isLoggedIn && !user.tags.includes("favorite") && (
+          {userAuth && !user.tags.includes("favorite") && (
             <button
               className={clsx(
                 "button button--secondary button--sm",

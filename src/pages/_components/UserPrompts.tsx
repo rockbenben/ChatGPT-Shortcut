@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -6,29 +6,21 @@ import styles from "./ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
 import { Spin } from 'antd';
 import Heading from "@theme/Heading";
-import { getUserAllInfo } from "@site/src/api";
+import { AuthContext } from './AuthContext';
 
 export default function UserPromptsPage() {
+  const userAuth = useContext(AuthContext);
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
+  //console.log('userAuth:', userAuth);
 
   useEffect(() => {
-    const fetchUserPrompts = async () => {
-      setLoading(true);
-      try {
-        const response = await getUserAllInfo();
-        setUserPrompts(response.data.userprompts || []);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-  
-    fetchUserPrompts();
-  }, []);
-  
+    if (userAuth && userAuth.userAuth.data.userprompts) {
+      setUserPrompts(userAuth.userAuth.data.userprompts);
+    }
+  }, [userAuth]);
+
   const handleCopyClick = (index) => {
     const UserPrompt = userprompts[index];
     if (UserPrompt) {

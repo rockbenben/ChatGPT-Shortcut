@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import Cookies from "js-cookie";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography } from "antd";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt } from "@site/src/api";
+import { AuthContext } from './AuthContext';
 
 const UserStatus = () => {
-  const [username, setUsername] = useState(null);
+  const { userAuth, setUserAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const cookieUsername = Cookies.get("username");
-    setUsername(cookieUsername || null);
-  }, []);
-
+  // 这里的 handleLogout 可能需要调用一个注销 API，然后在返回成功后清除 userAuth
   const handleLogout = async (event) => {
     event.preventDefault();
     Cookies.remove("auth_token");
     Cookies.remove("username");
-    setUsername(null);
+    setUserAuth(null);
+    window.location.reload();
   };
 
   const onFinish = async (values) => {
@@ -38,7 +36,7 @@ const UserStatus = () => {
     }
   };
 
-  if (username) {
+  if (userAuth && userAuth.data) {
     return (
       <div>
         <Link to="/user" style={{ marginRight: "10px" }}>

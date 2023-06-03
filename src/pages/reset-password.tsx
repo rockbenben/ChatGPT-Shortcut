@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
 import { Form, Input, Button, message } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";

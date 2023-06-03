@@ -1,8 +1,9 @@
+import React, { useContext, useState } from "react";
 import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
-import React, { useEffect, useState } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import Cookies from "js-cookie";
 import { login, register, forgotPassword } from '@site/src/api';
+import { AuthContext } from './AuthContext';
 
 const rules = {
   username: [{ required: true, message: translate({ id: "input.rules.username", message: "请输入用户名或注册邮箱！" }) }],
@@ -11,24 +12,13 @@ const rules = {
 };
 
 const LoginPage = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState(null);
-
-  useEffect(() => {
-    const token = Cookies.get("auth_token");
-    const storedUsername = Cookies.get("username");
-    if (token) {
-      setIsLoggedIn(true);
-      setUsername(storedUsername);
-    }
-  }, []);
+  const { setUserAuth } = useContext(AuthContext);
 
   const handleSuccess = (username, jwt) => {
     Cookies.set("auth_token", jwt);
     Cookies.set("username", username);
-    setUsername(username);
-    setIsLoggedIn(true);
-    window.location.href = "/";
+    setUserAuth({ username, jwt });
+    window.location.reload();
   };
 
   const handleErrors = (err) => {
@@ -97,7 +87,7 @@ const LoginPage = () => {
   const registerForm = (
     <Form onFinish={onFinishRegister}>
       <Form.Item name="username" rules={rules.username}>
-        <Input placeholder={translate({ id: "input.username", message: "用户名" })} />
+        <Input placeholder={translate({ id: "input.register.username", message: "用户名" })} />
       </Form.Item>
       <Form.Item name="email" rules={rules.email}>
         <Input placeholder={translate({ id: "input.email", message: "邮箱" })} />

@@ -1,4 +1,5 @@
 import React, {
+  useContext,
   useState,
   useMemo,
   useEffect,
@@ -13,7 +14,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { usePluralForm } from "@docusaurus/theme-common";
 import { debounce } from "lodash";
 
-import Link from "@docusaurus/Link";
+//import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import {
@@ -35,8 +36,9 @@ import ShowcaseTooltip from "./_components/ShowcaseTooltip";
 import ShowcaseCard from "./_components/ShowcaseCard";
 import UserStatus from "./_components/UserStatus";
 import UserPrompts from "./_components/UserPrompts";
+import { AuthContext, AuthProvider } from './_components/AuthContext';
 import Cookies from "js-cookie";
-import { fetchAllCopyCounts, getUserAllInfo} from "@site/src/api";
+import { fetchAllCopyCounts} from "@site/src/api";
 
 import styles from "./styles.module.css";
 
@@ -351,24 +353,14 @@ function SearchBar() {
 
 function ShowcaseCards({ isDescription }) {
   const [copyCounts, setCopyCounts] = useState({});
-  const [userLoves, setUserLoves] = useState([]);
-  const [isLoading, setLoading] = useState(false);
 
+  const { userAuth } = useContext(AuthContext);
+  const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
+
+  // 当 userAuth 改变时，更新 userLoves 的值
   useEffect(() => {
-    const fetchUserLoves = async () => {
-      setLoading(true);
-      try {
-        const response = await getUserAllInfo();
-        setUserLoves(response.data.favorites.loves);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUserLoves();
-  }, []);
+    setUserLoves(userAuth?.data?.favorites?.loves || []);
+  }, [userAuth]);
 
   const [favoriteUsers, otherUsers] = sortedUsers.reduce(
     ([favorites, others], user) => {
@@ -518,9 +510,11 @@ export default function Showcase(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <ShowcaseHeader />
-        <ShowcaseFilters onToggleDescription={toggleDescription} />
-        <ShowcaseCards isDescription={isDescription} />
+        <AuthProvider>
+          <ShowcaseHeader />
+          <ShowcaseFilters onToggleDescription={toggleDescription} />
+          <ShowcaseCards isDescription={isDescription} />
+        </AuthProvider>
       </main>
     </Layout>
   );
