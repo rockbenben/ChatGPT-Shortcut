@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from './AuthContext';
 import Layout from "@theme/Layout";
-import { Card, Form, Input, Button, message, Tabs } from "antd";
+import { Card, Form, Input, Button, message, Tabs, Spin } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { changePassword, forgotPassword } from "@site/src/api";
@@ -9,6 +9,16 @@ import { changePassword, forgotPassword } from "@site/src/api";
 const UserProfile = () => {
   const { userAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!userAuth) {
+        window.location.replace('/');
+      }
+    }, 1000);
+    // 清除计时器以防止内存泄漏
+    return () => clearTimeout(timer);
+  }, [userAuth]);
 
   const onFinishChangePassword = async (values) => {
     setLoading(true);
@@ -37,7 +47,7 @@ const UserProfile = () => {
   };
 
   if (!userAuth) {
-    return <div><Translate id="message.loading">Loading...</Translate></div>;
+    return <Spin tip={<Translate id="message.loading">Loading...</Translate>} />;
   }
 
   const items = [
