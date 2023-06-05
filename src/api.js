@@ -14,6 +14,12 @@ const config = {
 
 // 登陆用户获取
 export async function getUserAllInfo() {
+  // 检查 authToken 是否存在
+  if (!authToken) {
+    // 如果 authToken 不存在，直接返回 null 或者抛出错误
+    // return null;
+    throw new Error("Auth token not provided");
+  }
   return axios.get(`${API_URL}/users/me?populate=*`, config);
 }
 
@@ -105,6 +111,9 @@ export async function forgotPassword(email) {
 // user
 export async function fetchUserData() {
   try {
+    if (!authToken) {
+      throw new Error("Auth token not provided");
+    }
     const response = await axios.get(`${API_URL}/users/me`, config);
     return response.data;
   } catch (error) {
