@@ -25,6 +25,7 @@ const UserStatus = () => {
     setLoading(true);
     try {
       await submitPrompt(values);
+      window.location.reload();
       message.success(<Translate id="message.success">词条提交成功！</Translate>);
       message.success(<Translate id="message.success1">点击标签「你的提示词」查看已添加的自定义提示词。</Translate>);
       setOpen(false);

@@ -37,7 +37,6 @@ import ShowcaseCard from "./_components/ShowcaseCard";
 import UserStatus from "./_components/UserStatus";
 import UserPrompts from "./_components/UserPrompts";
 import { AuthContext, AuthProvider } from './_components/AuthContext';
-import Cookies from "js-cookie";
 import { fetchAllCopyCounts} from "@site/src/api";
 
 import styles from "./styles.module.css";
@@ -175,12 +174,8 @@ function ShowcaseFilters({ onToggleDescription }) {
   const handleClick = () => {
     setShowUserPrompts(!showUserPrompts);
   }
-  const [username, setUsername] = useState(null);
-  useEffect(() => {
-    const cookieUsername = Cookies.get("username");
-    setUsername(cookieUsername || null);
-  }, []);
 
+  const { userAuth } = useContext(AuthContext);
   const filteredUsers = useFilteredUsers();
   const siteCountPlural = useCallback(useSiteCountPlural(), []);
   const { i18n } = useDocusaurusContext();
@@ -207,7 +202,7 @@ function ShowcaseFilters({ onToggleDescription }) {
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
-        {username && (
+        {userAuth && (
         <li className={styles.checkboxListItem} onClick={handleClick}>
           <ShowcaseTooltip
             text={translate({
@@ -353,7 +348,6 @@ function SearchBar() {
 
 function ShowcaseCards({ isDescription }) {
   const [copyCounts, setCopyCounts] = useState({});
-
   const { userAuth } = useContext(AuthContext);
   const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
 
@@ -365,7 +359,7 @@ function ShowcaseCards({ isDescription }) {
   const [favoriteUsers, otherUsers] = sortedUsers.reduce(
     ([favorites, others], user) => {
       //登陆后移除默认的收藏标签
-      if (Cookies.get('auth_token')) {
+      if (userAuth) {
         if (user.tags.includes("favorite")) {
           const index = user.tags.indexOf("favorite");
           if (index > -1) {

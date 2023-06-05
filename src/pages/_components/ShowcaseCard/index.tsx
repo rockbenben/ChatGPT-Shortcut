@@ -91,6 +91,13 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
+  // 将显示数据单位简化到 k
+  const formatCopyCount = (count) => {
+    if (count >= 1000) {
+      return (count / 1000).toFixed(1) + "k";
+    }
+    return count;
+  };
 
   const handleCopyClick = useCallback(async () => {
     try {
@@ -106,28 +113,19 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       console.error("Error updating copy count:", error);
     }
   }, [user.id]);
-  // 将显示数据单位简化到 k
-  const formatCopyCount = (count) => {
-    if (count >= 1000) {
-      return (count / 1000).toFixed(1) + "k";
-    }
-    return count;
-  };
 
   const handleLove = useCallback(async () => {
     try {
-      const response = userAuth;
-      console.log(response);
       let userLoves;
       let favoriteId;
 
-      if (!response.data.favorites) {
+      if (!userAuth.data.favorites) {
         const createFavoriteResponse = await createFavorite([user.id]);
         userLoves = [user.id];
-        favoriteId = createFavoriteResponse.data.data.id;
+        favoriteId = createFavoriteResponse.data.id;
       } else {
-        userLoves = response.data.favorites.loves || [];
-        favoriteId = response.data.favorites.id;
+        userLoves = userAuth.data.favorites.loves || [];
+        favoriteId = userAuth.data.favorites.id;
 
         if (!userLoves.includes(user.id)) {
           userLoves.push(user.id);
@@ -145,15 +143,12 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   const removeFavorite = useCallback(async () => {
     try {
-      const response = userAuth;
-      console.log(response);
-
       let userLoves;
       let favoriteId;
 
-      if (response.data.favorites) {
-        userLoves = response.data.favorites.loves || [];
-        favoriteId = response.data.favorites.id;
+      if (userAuth.data.favorites) {
+        userLoves = userAuth.data.favorites.loves || [];
+        favoriteId = userAuth.data.favorites.id;
 
         const index = userLoves.indexOf(user.id);
         if (index > -1) {
@@ -175,7 +170,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
         <Image img={image} alt={user.title} />
       </div> */}
-      <div className={clsx("card__body", styles.cardBodyHeight)}>
+      <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
             <Link href={user.website} className={styles.showcaseCardLink}>
