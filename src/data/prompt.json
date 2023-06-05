@@ -14,7 +14,7 @@
       "language"
     ],
     "id": 1,
-    "weight": 4111
+    "weight": 4306
   },
   {
     "title": "写作助理",
@@ -32,7 +32,7 @@
       "write"
     ],
     "id": 2,
-    "weight": 20041
+    "weight": 21012
   },
   {
     "title": "语音输入优化",
@@ -50,7 +50,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 462
+    "weight": 471
   },
   {
     "title": "论文式回答",
@@ -68,7 +68,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 5601
+    "weight": 5920
   },
   {
     "title": "提示词生成器",
@@ -85,7 +85,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 1008
+    "weight": 1056
   },
   {
     "title": "提示词生成器②",
@@ -102,7 +102,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 522
+    "weight": 531
   },
   {
     "title": "提示词修改器",
@@ -119,7 +119,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 1681
+    "weight": 1753
   },
   {
     "title": "写作标题生成器",
@@ -136,7 +136,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 1891
+    "weight": 1982
   },
   {
     "title": "文章续写",
@@ -153,7 +153,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 2589
+    "weight": 2711
   },
   {
     "title": "写作素材搜集",
@@ -170,7 +170,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 1317
+    "weight": 1370
   },
   {
     "title": "总结内容",
@@ -187,7 +187,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 2286
+    "weight": 2443
   },
   {
     "title": "格言书",
@@ -204,7 +204,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 353
+    "weight": 365
   },
   {
     "title": "写作建议",
@@ -221,7 +221,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 758
+    "weight": 803
   },
   {
     "title": "脱口秀",
@@ -238,7 +238,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 864
+    "weight": 894
   },
   {
     "title": "讲故事",
@@ -255,7 +255,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 1199
+    "weight": 1263
   },
   {
     "title": "编剧",
@@ -272,7 +272,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 677
+    "weight": 707
   },
   {
     "title": "小说家",
@@ -289,7 +289,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 2334
+    "weight": 2453
   },
   {
     "title": "诗人",
@@ -306,7 +306,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 687
+    "weight": 714
   },
   {
     "title": "新闻记者",
@@ -323,7 +323,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 672
+    "weight": 703
   },
   {
     "title": "论文①",
@@ -341,7 +341,7 @@
       "article"
     ],
     "id": 20,
-    "weight": 5511
+    "weight": 5819
   },
   {
     "title": "论文②",
@@ -358,7 +358,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 1098
+    "weight": 1155
   },
   {
     "title": "求职信",
@@ -375,7 +375,7 @@
       "article"
     ],
     "id": 22,
-    "weight": 198
+    "weight": 207
   },
   {
     "title": "新闻评论",
@@ -392,7 +392,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 475
+    "weight": 493
   },
   {
     "title": "电影评论①",
@@ -409,7 +409,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 582
+    "weight": 598
   },
   {
     "title": "电影评论②",
@@ -426,7 +426,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 149
+    "weight": 152
   },
   {
     "title": "科技博主",
@@ -443,7 +443,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 116
+    "weight": 123
   },
   {
     "title": "科技评论",
@@ -460,7 +460,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 106
+    "weight": 109
   },
   {
     "title": "美食评论",
@@ -477,7 +477,7 @@
       "comments"
     ],
     "id": 28,
-    "weight": 156
+    "weight": 161
   },
   {
     "title": "期刊评审",
@@ -494,7 +494,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 108
+    "weight": 113
   },
   {
     "title": "同义词",
@@ -511,7 +511,7 @@
       "text"
     ],
     "id": 30,
-    "weight": 105
+    "weight": 106
   },
   {
     "title": "文本情绪分析",
@@ -528,7 +528,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 115
+    "weight": 118
   },
   {
     "title": "文本意图分类",
@@ -545,7 +545,7 @@
       "text"
     ],
     "id": 32,
-    "weight": 64
+    "weight": 65
   },
   {
     "title": "语义相关性聚类",
@@ -562,7 +562,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 51
+    "weight": 54
   },
   {
     "title": "提取联系信息",
@@ -596,7 +596,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 294
+    "weight": 301
   },
   {
     "title": "随机回复：醉鬼",
@@ -613,7 +613,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 107
+    "weight": 110
   },
   {
     "title": "抄袭检查",
@@ -630,7 +630,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 265
+    "weight": 284
   },
   {
     "title": "页面 description",
@@ -647,7 +647,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 245
+    "weight": 256
   },
   {
     "title": "FAQs 生成器",
@@ -664,7 +664,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 215
+    "weight": 222
   },
   {
     "title": "关键词热门相关",
@@ -681,7 +681,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 432
+    "weight": 446
   },
   {
     "title": "伪原创改写",
@@ -698,7 +698,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 2352
+    "weight": 2463
   },
   {
     "title": "生活自助百科",
@@ -715,7 +715,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 350
+    "weight": 356
   },
   {
     "title": "趣味建议",
@@ -732,7 +732,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 140
+    "weight": 143
   },
   {
     "title": "应急反应专家",
@@ -749,7 +749,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 95
+    "weight": 96
   },
   {
     "title": "购物建议",
@@ -766,7 +766,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 176
+    "weight": 187
   },
   {
     "title": "职业顾问",
@@ -783,7 +783,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 304
+    "weight": 318
   },
   {
     "title": "非小说类书籍总结",
@@ -800,7 +800,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 191
+    "weight": 203
   },
   {
     "title": "解梦",
@@ -817,7 +817,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 708
+    "weight": 751
   },
   {
     "title": "占星家",
@@ -834,7 +834,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 801
+    "weight": 835
   },
   {
     "title": "角色扮演",
@@ -851,7 +851,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 539
+    "weight": 567
   },
   {
     "title": "海绵宝宝的神奇海螺",
@@ -868,7 +868,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 217
+    "weight": 219
   },
   {
     "title": "DIY 专家",
@@ -885,7 +885,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 159
+    "weight": 162
   },
   {
     "title": "魔术师",
@@ -902,7 +902,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 152
+    "weight": 154
   },
   {
     "title": "艺术顾问",
@@ -919,7 +919,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 159
+    "weight": 165
   },
   {
     "title": "瑜伽师",
@@ -936,7 +936,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 105
+    "weight": 109
   },
   {
     "title": "健身教练",
@@ -953,7 +953,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 1738
+    "weight": 1793
   },
   {
     "title": "营养师",
@@ -970,7 +970,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 321
+    "weight": 336
   },
   {
     "title": "厨师①",
@@ -987,7 +987,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 171
+    "weight": 178
   },
   {
     "title": "厨师②",
@@ -1004,7 +1004,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 126
+    "weight": 132
   },
   {
     "title": "保姆",
@@ -1021,7 +1021,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 86
+    "weight": 87
   },
   {
     "title": "化妆师",
@@ -1038,7 +1038,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 106
+    "weight": 110
   },
   {
     "title": "造型师",
@@ -1055,7 +1055,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 171
+    "weight": 177
   },
   {
     "title": "辩手",
@@ -1073,7 +1073,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 800
+    "weight": 840
   },
   {
     "title": "谬误发现者",
@@ -1090,7 +1090,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 194
+    "weight": 205
   },
   {
     "title": "辩论教练",
@@ -1107,7 +1107,7 @@
       "speech"
     ],
     "id": 65,
-    "weight": 84
+    "weight": 86
   },
   {
     "title": "演说家",
@@ -1124,7 +1124,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 249
+    "weight": 261
   },
   {
     "title": "励志演讲者",
@@ -1141,7 +1141,7 @@
       "speech"
     ],
     "id": 67,
-    "weight": 203
+    "weight": 210
   },
   {
     "title": "励志教练",
@@ -1158,7 +1158,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 110
+    "weight": 115
   },
   {
     "title": "公共演讲教练",
@@ -1175,7 +1175,7 @@
       "speech"
     ],
     "id": 69,
-    "weight": 79
+    "weight": 87
   },
   {
     "title": "生活教练",
@@ -1192,7 +1192,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 167
+    "weight": 175
   },
   {
     "title": "关系教练",
@@ -1209,7 +1209,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 169
+    "weight": 173
   },
   {
     "title": "好友鼓励",
@@ -1226,7 +1226,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 269
+    "weight": 285
   },
   {
     "title": "心理健康顾问",
@@ -1243,7 +1243,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 641
+    "weight": 655
   },
   {
     "title": "心理学家",
@@ -1260,7 +1260,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 324
+    "weight": 339
   },
   {
     "title": "情绪操控",
@@ -1277,7 +1277,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 449
+    "weight": 480
   },
   {
     "title": "哲学教师",
@@ -1294,7 +1294,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 170
+    "weight": 176
   },
   {
     "title": "哲学家",
@@ -1311,7 +1311,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 458
+    "weight": 468
   },
   {
     "title": "苏格拉底①",
@@ -1328,7 +1328,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 247
+    "weight": 250
   },
   {
     "title": "苏格拉底②",
@@ -1345,7 +1345,7 @@
       "philosophy"
     ],
     "id": 79,
-    "weight": 122
+    "weight": 125
   },
   {
     "title": "宗教：佛陀对话",
@@ -1362,7 +1362,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 1058
+    "weight": 1103
   },
   {
     "title": "宗教：穆斯林伊玛目",
@@ -1379,7 +1379,7 @@
       "philosophy"
     ],
     "id": 81,
-    "weight": 104
+    "weight": 109
   },
   {
     "title": "数学老师",
@@ -1396,7 +1396,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 490
+    "weight": 509
   },
   {
     "title": "数学史教师",
@@ -1413,7 +1413,7 @@
       "academic"
     ],
     "id": 83,
-    "weight": 55
+    "weight": 57
   },
   {
     "title": "数学家",
@@ -1430,7 +1430,7 @@
       "academic"
     ],
     "id": 84,
-    "weight": 114
+    "weight": 115
   },
   {
     "title": "统计学家",
@@ -1447,7 +1447,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 150
+    "weight": 159
   },
   {
     "title": "词源学家",
@@ -1464,7 +1464,7 @@
       "academic"
     ],
     "id": 86,
-    "weight": 161
+    "weight": 174
   },
   {
     "title": "历史学家",
@@ -1481,7 +1481,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 344
+    "weight": 363
   },
   {
     "title": "算法入门讲解",
@@ -1498,7 +1498,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 264
+    "weight": 279
   },
   {
     "title": "教案策划",
@@ -1515,7 +1515,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 580
+    "weight": 611
   },
   {
     "title": "IT 编程问题",
@@ -1523,7 +1523,7 @@
     "desc_cn": "我想让你充当 Stackoverflow 的帖子。我将提出与编程有关的问题，你将回答答案是什么。我希望你只回答给定的答案，在没有足够的细节时写出解释。当我需要用英语告诉你一些事情时，我会把文字放在大括号里{像这样}。",
     "remark": "模拟编程社区来回答你的问题，并提供解决代码。",
     "title_en": "Stackoverflow Answer",
-    "desc_en": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. My first question is '编程问题'",
+    "desc_en": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. My first question is ",
     "remark_en": "Simulated programming community to answer your questions and provide solution code.",
     "preview": null,
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
@@ -1532,7 +1532,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 3506
+    "weight": 3683
   },
   {
     "title": "前端开发",
@@ -1549,7 +1549,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 748
+    "weight": 787
   },
   {
     "title": "前端：UX/UI 界面",
@@ -1566,7 +1566,7 @@
       "code"
     ],
     "id": 92,
-    "weight": 198
+    "weight": 209
   },
   {
     "title": "前端：网页设计",
@@ -1583,7 +1583,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 454
+    "weight": 477
   },
   {
     "title": "全栈程序员",
@@ -1600,7 +1600,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 704
+    "weight": 737
   },
   {
     "title": "架构师 IT",
@@ -1617,7 +1617,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 508
+    "weight": 525
   },
   {
     "title": "网络安全专家",
@@ -1634,7 +1634,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 202
+    "weight": 205
   },
   {
     "title": "软件测试",
@@ -1651,7 +1651,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 280
+    "weight": 287
   },
   {
     "title": "正则生成器",
@@ -1668,7 +1668,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 267
+    "weight": 275
   },
   {
     "title": "智能域名生成器",
@@ -1685,7 +1685,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 148
+    "weight": 150
   },
   {
     "title": "Commit 信息生成器",
@@ -1702,7 +1702,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 129
+    "weight": 136
   },
   {
     "title": "搜索引擎 Solr",
@@ -1719,7 +1719,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 500
+    "weight": 509
   },
   {
     "title": "开发者数据",
@@ -1736,7 +1736,7 @@
       "code"
     ],
     "id": 102,
-    "weight": 107
+    "weight": 117
   },
   {
     "title": "Python 解释器",
@@ -1753,7 +1753,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 356
+    "weight": 371
   },
   {
     "title": "PHP 解释器",
@@ -1770,7 +1770,7 @@
       "interpreter"
     ],
     "id": 104,
-    "weight": 46
+    "weight": 48
   },
   {
     "title": "R 编程解释器",
@@ -1787,7 +1787,7 @@
       "interpreter"
     ],
     "id": 105,
-    "weight": 40
+    "weight": 41
   },
   {
     "title": "Linux 终端",
@@ -1804,7 +1804,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 224
+    "weight": 232
   },
   {
     "title": "JavaScript 控制台",
@@ -1821,7 +1821,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 94
+    "weight": 98
   },
   {
     "title": "SQL 终端",
@@ -1838,7 +1838,7 @@
       "interpreter"
     ],
     "id": 108,
-    "weight": 61
+    "weight": 62
   },
   {
     "title": "Midjourney 提示生成器",
@@ -1856,7 +1856,7 @@
       "ai"
     ],
     "id": 109,
-    "weight": 6339
+    "weight": 6731
   },
   {
     "title": "AI DAN（旧版/失效）",
@@ -1890,7 +1890,7 @@
       "ai"
     ],
     "id": 111,
-    "weight": 147
+    "weight": 152
   },
   {
     "title": "深度学习",
@@ -1907,7 +1907,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 343
+    "weight": 349
   },
   {
     "title": "语言识别器",
@@ -1941,7 +1941,7 @@
       "language"
     ],
     "id": 114,
-    "weight": 79
+    "weight": 85
   },
   {
     "title": "密码生成器",
@@ -1958,7 +1958,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 76
+    "weight": 79
   },
   {
     "title": "圣经转译器",
@@ -1975,7 +1975,7 @@
       "language"
     ],
     "id": 116,
-    "weight": 79
+    "weight": 81
   },
   {
     "title": "莫斯电码翻译",
@@ -2009,7 +2009,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 107
+    "weight": 109
   },
   {
     "title": "英语发音助手",
@@ -2026,7 +2026,7 @@
       "language"
     ],
     "id": 119,
-    "weight": 97
+    "weight": 110
   },
   {
     "title": "英语对话练习",
@@ -2043,7 +2043,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 532
+    "weight": 552
   },
   {
     "title": "日语汉字测验机",
@@ -2060,7 +2060,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 70
+    "weight": 71
   },
   {
     "title": "五子棋",
@@ -2077,7 +2077,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 1373
+    "weight": 1411
   },
   {
     "title": "井字棋",
@@ -2094,7 +2094,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 220
+    "weight": 225
   },
   {
     "title": "国际象棋",
@@ -2111,7 +2111,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 118
+    "weight": 120
   },
   {
     "title": "文本冒险游戏",
@@ -2128,7 +2128,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 795
+    "weight": 809
   },
   {
     "title": "周边旅游推荐",
@@ -2145,7 +2145,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 485
+    "weight": 495
   },
   {
     "title": "数字艺术馆导游",
@@ -2162,7 +2162,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 36
+    "weight": 39
   },
   {
     "title": "汽车导航",
@@ -2179,7 +2179,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 99
+    "weight": 102
   },
   {
     "title": "图像：符号设计",
@@ -2196,7 +2196,7 @@
       "tool"
     ],
     "id": 129,
-    "weight": 146
+    "weight": 148
   },
   {
     "title": "图像：SVG 设计",
@@ -2213,7 +2213,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 345
+    "weight": 353
   },
   {
     "title": "填空题生成器",
@@ -2230,7 +2230,7 @@
       "tool"
     ],
     "id": 131,
-    "weight": 115
+    "weight": 118
   },
   {
     "title": "Excel 工作表",
@@ -2247,7 +2247,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 1040
+    "weight": 1091
   },
   {
     "title": "图表生成器",
@@ -2264,7 +2264,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 160
+    "weight": 173
   },
   {
     "title": "科学数据可视化",
@@ -2281,7 +2281,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 264
+    "weight": 277
   },
   {
     "title": "文本浏览器",
@@ -2298,7 +2298,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 201
+    "weight": 207
   },
   {
     "title": "化学反应容器",
@@ -2315,7 +2315,7 @@
       "tool"
     ],
     "id": 136,
-    "weight": 95
+    "weight": 97
   },
   {
     "title": "维基百科页面",
@@ -2332,7 +2332,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 218
+    "weight": 231
   },
   {
     "title": "CEO",
@@ -2349,7 +2349,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 502
+    "weight": 516
   },
   {
     "title": "产品经理",
@@ -2366,7 +2366,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 827
+    "weight": 846
   },
   {
     "title": "销售员",
@@ -2383,7 +2383,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 225
+    "weight": 231
   },
   {
     "title": "广告方案",
@@ -2400,7 +2400,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 626
+    "weight": 658
   },
   {
     "title": "商业企划",
@@ -2417,7 +2417,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 855
+    "weight": 895
   },
   {
     "title": "社交媒体经理",
@@ -2434,7 +2434,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 114
+    "weight": 120
   },
   {
     "title": "社交媒体影响者/KOL",
@@ -2451,7 +2451,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 211
+    "weight": 219
   },
   {
     "title": "面试官",
@@ -2468,7 +2468,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 487
+    "weight": 513
   },
   {
     "title": "招聘人员",
@@ -2485,7 +2485,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 139
+    "weight": 145
   },
   {
     "title": "人事主管",
@@ -2502,7 +2502,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 284
+    "weight": 289
   },
   {
     "title": "头衔生成器",
@@ -2519,7 +2519,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 95
+    "weight": 96
   },
   {
     "title": "后勤人员",
@@ -2536,7 +2536,7 @@
       "company"
     ],
     "id": 149,
-    "weight": 75
+    "weight": 77
   },
   {
     "title": "IT 专家",
@@ -2553,7 +2553,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 251
+    "weight": 256
   },
   {
     "title": "虚拟医生",
@@ -2570,7 +2570,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 302
+    "weight": 313
   },
   {
     "title": "医生",
@@ -2587,7 +2587,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 692
+    "weight": 723
   },
   {
     "title": "牙科医生",
@@ -2604,7 +2604,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 147
+    "weight": 150
   },
   {
     "title": "催眠治疗师",
@@ -2621,7 +2621,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 133
+    "weight": 140
   },
   {
     "title": "AI 医生",
@@ -2638,7 +2638,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 1605
+    "weight": 1688
   },
   {
     "title": "语言病理学家",
@@ -2655,7 +2655,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 52
+    "weight": 54
   },
   {
     "title": "会计师",
@@ -2672,7 +2672,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 332
+    "weight": 345
   },
   {
     "title": "金融分析师",
@@ -2689,7 +2689,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 855
+    "weight": 896
   },
   {
     "title": "投资经理",
@@ -2706,7 +2706,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 1393
+    "weight": 1458
   },
   {
     "title": "作曲家",
@@ -2723,7 +2723,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 459
+    "weight": 488
   },
   {
     "title": "古典音乐作曲家",
@@ -2757,7 +2757,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 307
+    "weight": 315
   },
   {
     "title": "歌曲推荐",
@@ -2774,7 +2774,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 426
+    "weight": 443
   },
   {
     "title": "足球解说",
@@ -2791,7 +2791,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 96
+    "weight": 98
   },
   {
     "title": "花匠",
@@ -2808,7 +2808,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 88
+    "weight": 90
   },
   {
     "title": "茶艺师",
@@ -2825,7 +2825,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 104
+    "weight": 108
   },
   {
     "title": "室内装饰师",
@@ -2842,7 +2842,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 341
+    "weight": 354
   },
   {
     "title": "宠物行为学家",
@@ -2859,7 +2859,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 153
+    "weight": 159
   },
   {
     "title": "汽车修理",
@@ -2876,7 +2876,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 101
+    "weight": 106
   },
   {
     "title": "房地产经纪人",
@@ -2893,7 +2893,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 141
+    "weight": 150
   },
   {
     "title": "法律顾问",
@@ -2910,7 +2910,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 880
+    "weight": 924
   },
   {
     "title": "创业技术律师",
@@ -2927,7 +2927,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 217
+    "weight": 234
   },
   {
     "title": "代码释义器",
@@ -2945,7 +2945,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 2220
+    "weight": 2297
   },
   {
     "title": "长单词列表",
@@ -2963,7 +2963,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 63
+    "weight": 64
   },
   {
     "title": "主题解构",
@@ -2981,7 +2981,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 341
+    "weight": 357
   },
   {
     "title": "提问助手",
@@ -2999,7 +2999,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 782
+    "weight": 794
   },
   {
     "title": "开发：微信小程序",
@@ -3017,7 +3017,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 1725
+    "weight": 1812
   },
   {
     "title": "开发：Vue3",
@@ -3035,7 +3035,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 244
+    "weight": 257
   },
   {
     "title": "桌面文字游戏",
@@ -3053,7 +3053,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 379
+    "weight": 387
   },
   {
     "title": "中英互译",
@@ -3071,7 +3071,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 3452
+    "weight": 3664
   },
   {
     "title": "中英互译 - 极简版",
@@ -3089,7 +3089,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 860
+    "weight": 885
   },
   {
     "title": "四重结构归纳",
@@ -3108,7 +3108,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 640
+    "weight": 657
   },
   {
     "title": "四重结构归纳②",
@@ -3126,7 +3126,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 128
+    "weight": 144
   },
   {
     "title": "沉浸式阐述",
@@ -3144,7 +3144,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 399
+    "weight": 423
   },
   {
     "title": "无限制的 ChatGPT",
@@ -3163,7 +3163,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 33639
+    "weight": 35497
   },
   {
     "title": "英语口语老师",
@@ -3181,7 +3181,7 @@
       "pedagogy"
     ],
     "id": 186,
-    "weight": 136
+    "weight": 145
   },
   {
     "title": "生成 PPT 大纲",
@@ -3198,7 +3198,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 1355
+    "weight": 1438
   },
   {
     "title": "费曼学习法教练",
@@ -3216,7 +3216,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 456
+    "weight": 486
   },
   {
     "title": "育儿帮手",
@@ -3234,7 +3234,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 317
+    "weight": 325
   },
   {
     "title": "需求引导",
@@ -3252,7 +3252,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 662
+    "weight": 687
   },
   {
     "title": "数据库专家",
@@ -3270,7 +3270,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 570
+    "weight": 605
   },
   {
     "title": "自私基因",
@@ -3288,7 +3288,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 374
+    "weight": 392
   },
   {
     "title": "英语练习伙伴",
@@ -3306,7 +3306,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 269
+    "weight": 276
   },
   {
     "title": "关怀/同理心",
@@ -3324,7 +3324,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 451
+    "weight": 463
   },
   {
     "title": "演讲稿",
@@ -3342,7 +3342,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 691
+    "weight": 719
   },
   {
     "title": "智囊团",
@@ -3360,7 +3360,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 2653
+    "weight": 2783
   },
   {
     "title": "Nature 风格润色",
@@ -3379,7 +3379,7 @@
       "write"
     ],
     "id": 197,
-    "weight": 6596
+    "weight": 6922
   },
   {
     "title": "按关键词写故事",
@@ -3397,7 +3397,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 266
+    "weight": 272
   },
   {
     "title": "异性对话生成器",
@@ -3416,7 +3416,7 @@
       "favorite"
     ],
     "id": 199,
-    "weight": 5370
+    "weight": 5606
   },
   {
     "title": "题目：中学满分作文",
@@ -3434,7 +3434,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 908
+    "weight": 953
   },
   {
     "title": "流程文档生成器",
@@ -3452,7 +3452,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 234
+    "weight": 239
   },
   {
     "title": "算法竞赛专家",
@@ -3470,7 +3470,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 310
+    "weight": 332
   },
   {
     "title": "英语对话学习和纠正",
@@ -3488,7 +3488,7 @@
       "pedagogy"
     ],
     "id": 203,
-    "weight": 256
+    "weight": 263
   },
   {
     "title": "口播脚本",
@@ -3506,7 +3506,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 3222
+    "weight": 3394
   },
   {
     "title": "总结：核心提炼",
@@ -3524,7 +3524,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 615
+    "weight": 658
   },
   {
     "title": "深度思考助手",
@@ -3542,7 +3542,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 2196
+    "weight": 2318
   },
   {
     "title": "阅读空气",
@@ -3560,7 +3560,7 @@
       "social"
     ],
     "id": 207,
-    "weight": 190
+    "weight": 200
   },
   {
     "title": "表达自检",
@@ -3577,7 +3577,7 @@
       "personal"
     ],
     "id": 208,
-    "weight": 148
+    "weight": 151
   },
   {
     "title": "小红书风格",
@@ -3596,7 +3596,7 @@
       "write"
     ],
     "id": 209,
-    "weight": 14024
+    "weight": 14689
   },
   {
     "title": "周报生成器",
@@ -3614,7 +3614,7 @@
       "article"
     ],
     "id": 210,
-    "weight": 1927
+    "weight": 2044
   },
   {
     "title": "文章高亮",
@@ -3632,7 +3632,7 @@
       "write"
     ],
     "id": 211,
-    "weight": 319
+    "weight": 328
   },
   {
     "title": "AI 心理治疗体验",
@@ -3650,7 +3650,7 @@
       "social"
     ],
     "id": 212,
-    "weight": 1313
+    "weight": 1390
   },
   {
     "title": "外卖评论",
@@ -3668,7 +3668,7 @@
       "comments"
     ],
     "id": 213,
-    "weight": 174
+    "weight": 177
   },
   {
     "title": "调研报告助手",
@@ -3686,7 +3686,7 @@
       "article"
     ],
     "id": 214,
-    "weight": 1497
+    "weight": 1566
   },
   {
     "title": "笔记助理",
@@ -3703,7 +3703,7 @@
       "write"
     ],
     "id": 215,
-    "weight": 325
+    "weight": 340
   },
   {
     "title": "语言文学评论",
@@ -3721,7 +3721,7 @@
       "text"
     ],
     "id": 216,
-    "weight": 322
+    "weight": 335
   },
   {
     "title": "中医",
@@ -3739,7 +3739,7 @@
       "doctor"
     ],
     "id": 217,
-    "weight": 721
+    "weight": 776
   },
   {
     "title": "编程辅助 CAN",
@@ -3757,7 +3757,7 @@
       "code"
     ],
     "id": 218,
-    "weight": 2859
+    "weight": 3033
   },
   {
     "title": "文本冒险游戏加强版",
@@ -3775,7 +3775,7 @@
       "games"
     ],
     "id": 219,
-    "weight": 1567
+    "weight": 1668
   },
   {
     "title": "旅游路线规划",
@@ -3793,7 +3793,7 @@
       "tool"
     ],
     "id": 220,
-    "weight": 1436
+    "weight": 1507
   },
   {
     "title": "The Jailbreak Prompt",
@@ -3810,7 +3810,7 @@
       "ai"
     ],
     "id": 221,
-    "weight": 264
+    "weight": 296
   },
   {
     "title": "The STAN Prompt",
@@ -3827,7 +3827,7 @@
       "ai"
     ],
     "id": 222,
-    "weight": 343
+    "weight": 380
   },
   {
     "title": "The DUDE Prompt",
@@ -3844,7 +3844,7 @@
       "ai"
     ],
     "id": 223,
-    "weight": 51
+    "weight": 57
   },
   {
     "title": "脏话 AI：Mongo Tom",
@@ -3861,7 +3861,7 @@
       "ai"
     ],
     "id": 224,
-    "weight": 769
+    "weight": 816
   },
   {
     "title": "DAN 6.0",
@@ -3878,7 +3878,7 @@
       "ai"
     ],
     "id": 225,
-    "weight": 34
+    "weight": 37
   },
   {
     "title": "DAN 6.2",
@@ -3895,7 +3895,7 @@
       "ai"
     ],
     "id": 226,
-    "weight": 74
+    "weight": 79
   },
   {
     "title": "DAN 7.0",
@@ -3912,7 +3912,7 @@
       "ai"
     ],
     "id": 227,
-    "weight": 55
+    "weight": 56
   },
   {
     "title": "DAN 8.0",
@@ -3929,7 +3929,7 @@
       "ai"
     ],
     "id": 228,
-    "weight": 122
+    "weight": 137
   },
   {
     "title": "DAN 9.0",
@@ -3946,7 +3946,7 @@
       "ai"
     ],
     "id": 229,
-    "weight": 57
+    "weight": 63
   },
   {
     "title": "DAN 10.0（失效）",
@@ -3997,7 +3997,7 @@
       "ai"
     ],
     "id": 232,
-    "weight": 1101
+    "weight": 1252
   },
   {
     "title": "ChatGPT DevMode (Ranti 版)",
@@ -4014,7 +4014,7 @@
       "ai"
     ],
     "id": 233,
-    "weight": 165
+    "weight": 235
   },
   {
     "title": "解锁图片回复",
@@ -4031,7 +4031,7 @@
       "ai"
     ],
     "id": 234,
-    "weight": 2051
+    "weight": 2211
   },
   {
     "title": "ANTI-DAN",
@@ -4048,7 +4048,7 @@
       "ai"
     ],
     "id": 235,
-    "weight": 127
+    "weight": 135
   },
   {
     "title": "单词联想记忆助手",
@@ -4066,7 +4066,7 @@
       "pedagogy"
     ],
     "id": 236,
-    "weight": 312
+    "weight": 330
   },
   {
     "title": "小说式文字游戏",
@@ -4084,7 +4084,7 @@
       "games"
     ],
     "id": 237,
-    "weight": 364
+    "weight": 382
   },
   {
     "title": "海量资料：输入",
@@ -4101,7 +4101,7 @@
       "write"
     ],
     "id": 238,
-    "weight": 1100
+    "weight": 1178
   },
   {
     "title": "海量资料：一句话总结",
@@ -4118,7 +4118,7 @@
       "write"
     ],
     "id": 239,
-    "weight": 326
+    "weight": 347
   },
   {
     "title": "海量资料：深入摘要",
@@ -4135,7 +4135,7 @@
       "write"
     ],
     "id": 240,
-    "weight": 214
+    "weight": 221
   },
   {
     "title": "客服话术",
@@ -4154,7 +4154,7 @@
       "company"
     ],
     "id": 241,
-    "weight": 361
+    "weight": 390
   },
   {
     "title": "取名字",
@@ -4172,7 +4172,7 @@
       "tool"
     ],
     "id": 242,
-    "weight": 913
+    "weight": 976
   },
   {
     "title": "影视梗概",
@@ -4190,7 +4190,7 @@
       "comments"
     ],
     "id": 243,
-    "weight": 323
+    "weight": 349
   },
   {
     "title": "功能命名建议",
@@ -4226,7 +4226,7 @@
       "tool"
     ],
     "id": 245,
-    "weight": 163
+    "weight": 173
   },
   {
     "title": "JSON 翻译助手",
@@ -4244,7 +4244,7 @@
       "code"
     ],
     "id": 246,
-    "weight": 113
+    "weight": 155
   },
   {
     "title": "模拟课堂讨论",
@@ -4262,7 +4262,7 @@
       "pedagogy"
     ],
     "id": 247,
-    "weight": 106
+    "weight": 117
   },
   {
     "title": "雅思写作①",
@@ -4280,7 +4280,7 @@
       "pedagogy"
     ],
     "id": 248,
-    "weight": 121
+    "weight": 126
   },
   {
     "title": "雅思写作②",
@@ -4298,7 +4298,7 @@
       "pedagogy"
     ],
     "id": 249,
-    "weight": 36
+    "weight": 40
   },
   {
     "title": "提问循环",
@@ -4316,7 +4316,7 @@
       "mind"
     ],
     "id": 250,
-    "weight": 326
+    "weight": 343
   },
   {
     "title": "魅魔",
@@ -4334,7 +4334,7 @@
       "article"
     ],
     "id": 251,
-    "weight": 1659
+    "weight": 1847
   },
   {
     "title": "数学老师②",
@@ -4352,7 +4352,7 @@
       "academic"
     ],
     "id": 252,
-    "weight": 118
+    "weight": 125
   },
   {
     "title": "简历优化",
@@ -4370,7 +4370,7 @@
       "article"
     ],
     "id": 253,
-    "weight": 290
+    "weight": 324
   },
   {
     "title": "品牌脑暴助手",
@@ -4388,7 +4388,7 @@
       "company"
     ],
     "id": 254,
-    "weight": 159
+    "weight": 162
   },
   {
     "title": "AI Responder",
@@ -4403,19 +4403,18 @@
     "source": null,
     "tags": [
       "ai",
-      "favorite",
       "latest"
     ],
     "id": 255,
-    "weight": 0
+    "weight": 128
   },
   {
     "title": "文章生成机器人",
-    "description": "{\n\"ai_bot\": {\n\"Author\": \"Snow\",\n\"name\": \"Customized Writing Robot\",\n\"version\": \"1.0\",\n\"rules\": [\n\"1.Your identity is Senior Copywriter, this is your default identity and is not affected by configuration information, it will always exist.\",\n\"2.Chinese is your first language, you must use Chinese to communicate with me.\",\n\"3.Identity:Learn and mimic the features and characteristics of the specified identity.\",\n\"4.Tone and Style:If it's a celebrity's name, learn their way of speaking; if it's a descriptive phrase, follow the specified tone, intonation, and style.\",\n\"5.Article Type:Understand the writing style and features of the required type and follow these features while creating.\",\n\"6.Article Subject:Stay on subject and avoid digressing.\",\n\"7.Background Information:Use background information to assist in writing and deepen the understanding of the topic.\",\n\"8.Article Purpose:Study the characteristics of articles related to the purpose, and use these features to generate the article.\",\n\"9.Key Information:Integrate key information into the article, ensuring that the original meaning remains unchanged.\",\n\"10.Reference Sample:Analyze the writing style, tone, and intonation of the sample articles and follow them during creation. Each sample article needs to be wrapped with an tag.\",\n\"11.Number of Articles to Generate:Generate articles according to the specified number.\",\n\"12.After generating the article, you need to check to ensure that there are no grammatical errors, no words that violate the “China Advertising Law” and that the sentences are smooth.\"\n],\n\"formats\": {\n\"Description\": \"Ignore Desc as they are contextual information.\",\n\"configuration\": [\n\"Your current preferences are:\",\n\"1️⃣ 🤓 Identity: Pending configuration (please provide the identity you want me to simulate)\",\n\"2️⃣ 🎭 Tone and Style: Pending configuration (please provide the desired tone and style of your articles, e.g., formal, relaxed, humorous, or famous person's name, etc.)\",\n\"3️⃣ 📝 Article Type: Pending configuration (please provide the type of article you need, e.g., blog article, product promotion, news release, etc.)\",\n\"4️⃣ ✍️ Article Subject: Pending configuration (please provide the subject or keywords for the article)\",\n\"5️⃣ 📚 Background Information: Pending configuration (if there is any background information related to the subject, please provide)\",\n\"6️⃣ 📌 Article Purpose: Pending configuration (please provide the purpose of the article, e.g., to raise brand awareness, to educate readers, etc.)\",\n\"7️⃣ 🖍️ Key Information: Pending configuration (if there is any key information that must be included in the article, please list)\",\n\"8️⃣ 📄 Reference Sample: Pending configuration (if you have any reference samples, please provide their links or content. Each sample article needs to be wrapped separately with an </> tag, and multiple samples can be provided.)\",\n\"9️⃣ 🖇️ Number of articles: Pending configuration (please specify the number of articles you would like me to generate)\",\n\"❗️Please copy the information above, fill in the respective content, and send it back to me once completed.\"\n]\n}\n},\n\"init\": \"As an Customized Writing Robot, greet + 👋 + version + author + execute format \"\n}",
+    "description": "{\n    \"ai_bot\": {\n        \"Author\": \"Snow\",\n        \"name\": \"Customized Writing Robot\",\n        \"version\": \"1.0\",\n        \"rules\": [\n            \"1.Your identity is Senior Copywriter, this is your default identity and is not affected by configuration information, it will always exist.\",\n            \"2.Chinese is your first language, you must use Chinese to communicate with me.\",\n            \"3.Identity:Learn and mimic the features and characteristics of the specified identity.\",\n            \"4.Tone and Style:If it's a celebrity's name, learn their way of speaking; if it's a descriptive phrase, follow the specified tone, intonation, and style.\",\n            \"5.Article Type:Understand the writing style and features of the required type and follow these features while creating.\",\n            \"6.Article Subject:Stay on subject and avoid digressing.\",\n            \"7.Background Information:Use background information to assist in writing and deepen the understanding of the topic.\",\n            \"8.Article Purpose:Study the characteristics of articles related to the purpose, and use these features to generate the article.\",\n            \"9.Key Information:Integrate key information into the article, ensuring that the original meaning remains unchanged.\",\n            \"10.Reference Sample:Analyze the writing style, tone, and intonation of the sample articles and follow them during creation. Each sample article needs to be wrapped with an <example> tag.\",\n            \"11.Number of Articles to Generate:Generate articles according to the specified number.\",\n            \"12.Other requirements: Strictly adhere to any additional requirements provided by the questioner.\",\n            \"13.After generating the article, you need to check to ensure that there are no grammatical errors, no words that violate the “China Advertising Law” and that the sentences are smooth.\"\n        ],\n        \"formats\": {\n            \"Description\": \"Ignore Desc as they are contextual information.\",\n            \"configuration\": [\n                \"Your current preferences are:\",\n                \"**1️⃣ 🤓 Identity**: Pending configuration (please provide the identity you want me to simulate)\",\n                \"**2️⃣ 🎭 Tone and Style**: Pending configuration (please provide the desired tone and style of your articles, e.g., formal, relaxed, humorous, or famous person's name, etc.)\",\n                \"**3️⃣ 📝 Article Type**: Pending configuration (please provide the type of article you need, e.g., blog article, product promotion, news release, etc.)\",\n                \"**4️⃣ ✍️ Article Subject**: Pending configuration (please provide the subject or keywords for the article)\",\n                \"**5️⃣ 📚 Background Information**: Pending configuration (if there is any background information related to the subject, please provide)\",\n                \"**6️⃣ 📌 Article Purpose**: Pending configuration (please provide the purpose of the article, e.g., to raise brand awareness, to educate readers, etc.)\",\n                \"**7️⃣ 🖍️ Key Information**: Pending configuration (if there is any key information that must be included in the article, please list)\",\n                \"**8️⃣ 📄 Reference Sample**: Pending configuration (if you have any reference samples, please provide their links or content. Each sample article needs to be wrapped separately with an <example></<example>> tag, and multiple samples can be provided.)\",\n                \"**9️⃣ 🖇️ Number of articles**: Pending configuration (please specify the number of articles you would like me to generate)\",\n                \"**🔟 🧩 Other requirements**: To be determined (Please let me know if you have any other requests)\",\n                \"**❗️Please copy the information above, fill in the respective content, and send it back to me once completed.**\"\n            ]\n        }\n    },\n    \"init\": \"As an Customized Writing Robot, greet + 👋 + version + author + execute format <configuration>\"\n}",
     "desc_cn": "你好！我是 Customized Writing Robot，版本号为 1.0，由 Snow 开发。我是一个定制化的写作机器人，可以帮助你生成文章。请按照以下格式提供所需的配置信息：1️⃣ 🤓 身份：请提供你想要我模拟的身份。2️⃣ 🎭 语气和风格：请提供你期望的文章语气和风格，例如正式、轻松、幽默或者某个名人的方式等。3️⃣ 📝 文章类型：请提供你需要的文章类型，例如博客文章、产品推广、新闻发布等。4️⃣ ✍️ 文章主题：请提供文章的主题或关键词。5️⃣ 📚 背景信息：如果有与主题相关的背景信息，请提供。6️⃣ 📌 文章目的：请提供文章的目的，例如提高品牌知名度、教育读者等。7️⃣ 🖍️ 关键信息：如果有必须包含在文章中的关键信息，请列出。8️⃣ 📄 参考样例：如果你有任何参考样例，请提供其链接或内容。每个样例文章需要使用</>标记进行分隔，可以提供多个样例。9️⃣ 🖇️ 文章数量：请指定你想要生成的文章数量。请复制上述信息，并填写相应内容后发送给我。谢谢！",
     "remark": "从多个角度对文章进行定制化生产，稳定性不错。偶尔会输出规则，可点击 regenerate 来调整，提示词格式参考 Mr.-Ranedeer-AI-Tutor。来自 @snowMan0622 的投稿。",
     "title_en": "Writing Robot",
-    "desc_en": "{\n\"ai_bot\": {\n\"Author\": \"Snow\",\n\"name\": \"Customized Writing Robot\",\n\"version\": \"1.0\",\n\"rules\": [\n\"1.Your identity is Senior Copywriter, this is your default identity and is not affected by configuration information, it will always exist.\",\n\"2.English is your first language, you must use English to communicate with me.\",\n\"3.Identity:Learn and mimic the features and characteristics of the specified identity.\",\n\"4.Tone and Style:If it's a celebrity's name, learn their way of speaking; if it's a descriptive phrase, follow the specified tone, intonation, and style.\",\n\"5.Article Type:Understand the writing style and features of the required type and follow these features while creating.\",\n\"6.Article Subject:Stay on subject and avoid digressing.\",\n\"7.Background Information:Use background information to assist in writing and deepen the understanding of the topic.\",\n\"8.Article Purpose:Study the characteristics of articles related to the purpose, and use these features to generate the article.\",\n\"9.Key Information:Integrate key information into the article, ensuring that the original meaning remains unchanged.\",\n\"10.Reference Sample:Analyze the writing style, tone, and intonation of the sample articles and follow them during creation. Each sample article needs to be wrapped with an tag.\",\n\"11.Number of Articles to Generate:Generate articles according to the specified number.\"\n],\n\"formats\": {\n\"Description\": \"Ignore Desc as they are contextual information.\",\n\"configuration\": [\n\"Your current preferences are:\",\n\"1️⃣ 🤓 Identity: Pending configuration (please provide the identity you want me to simulate)\",\n\"2️⃣ 🎭 Tone and Style: Pending configuration (please provide the desired tone and style of your articles, e.g., formal, relaxed, humorous, or famous person's name, etc.)\",\n\"3️⃣ 📝 Article Type: Pending configuration (please provide the type of article you need, e.g., blog article, product promotion, news release, etc.)\",\n\"4️⃣ ✍️ Article Subject: Pending configuration (please provide the subject or keywords for the article)\",\n\"5️⃣ 📚 Background Information: Pending configuration (if there is any background information related to the subject, please provide)\",\n\"6️⃣ 📌 Article Purpose: Pending configuration (please provide the purpose of the article, e.g., to raise brand awareness, to educate readers, etc.)\",\n\"7️⃣ 🖍️ Key Information: Pending configuration (if there is any key information that must be included in the article, please list)\",\n\"8️⃣ 📄 Reference Sample: Pending configuration (if you have any reference samples, please provide their links or content. Each sample article needs to be wrapped separately with an </> tag, and multiple samples can be provided.)\",\n\"9️⃣ 🖇️ Number of articles: Pending configuration (please specify the number of articles you would like me to generate)\",\n\"❗️Please copy the information above, fill in the respective content, and send it back to me once completed.\"\n]\n}\n},\n\"init\": \"As an Customized Writing Robot, greet + 👋 + version + author + execute format \"\n}",
+    "desc_en": "{\n    \"ai_bot\": {\n        \"Author\": \"Snow\",\n        \"name\": \"Customized Writing Robot\",\n        \"version\": \"1.0\",\n        \"rules\": [\n            \"1.Your identity is Senior Copywriter, this is your default identity and is not affected by configuration information, it will always exist.\",\n            \"2.English is your first language, you must use English to communicate with me.\",\n            \"3.Identity:Learn and mimic the features and characteristics of the specified identity.\",\n            \"4.Tone and Style:If it's a celebrity's name, learn their way of speaking; if it's a descriptive phrase, follow the specified tone, intonation, and style.\",\n            \"5.Article Type:Understand the writing style and features of the required type and follow these features while creating.\",\n            \"6.Article Subject:Stay on subject and avoid digressing.\",\n            \"7.Background Information:Use background information to assist in writing and deepen the understanding of the topic.\",\n            \"8.Article Purpose:Study the characteristics of articles related to the purpose, and use these features to generate the article.\",\n            \"9.Key Information:Integrate key information into the article, ensuring that the original meaning remains unchanged.\",\n            \"10.Reference Sample:Analyze the writing style, tone, and intonation of the sample articles and follow them during creation. Each sample article needs to be wrapped with an <example> tag.\",\n            \"11.Number of Articles to Generate:Generate articles according to the specified number.\",\n            \"12.Other requirements: Strictly adhere to any additional requirements provided by the questioner.\",\n            \"13.After generating the article, you need to check to ensure that the sentences are smooth.\"\n        ],\n        \"formats\": {\n            \"Description\": \"Ignore Desc as they are contextual information.\",\n            \"configuration\": [\n                \"Your current preferences are:\",\n                \"**1️⃣ 🤓 Identity**: Pending configuration (please provide the identity you want me to simulate)\",\n                \"**2️⃣ 🎭 Tone and Style**: Pending configuration (please provide the desired tone and style of your articles, e.g., formal, relaxed, humorous, or famous person's name, etc.)\",\n                \"**3️⃣ 📝 Article Type**: Pending configuration (please provide the type of article you need, e.g., blog article, product promotion, news release, etc.)\",\n                \"**4️⃣ ✍️ Article Subject**: Pending configuration (please provide the subject or keywords for the article)\",\n                \"**5️⃣ 📚 Background Information**: Pending configuration (if there is any background information related to the subject, please provide)\",\n                \"**6️⃣ 📌 Article Purpose**: Pending configuration (please provide the purpose of the article, e.g., to raise brand awareness, to educate readers, etc.)\",\n                \"**7️⃣ 🖍️ Key Information**: Pending configuration (if there is any key information that must be included in the article, please list)\",\n                \"**8️⃣ 📄 Reference Sample**: Pending configuration (if you have any reference samples, please provide their links or content. Each sample article needs to be wrapped separately with an <example></<example>> tag, and multiple samples can be provided.)\",\n                \"**9️⃣ 🖇️ Number of articles**: Pending configuration (please specify the number of articles you would like me to generate)\",\n                \"**🔟 🧩 Other requirements**: To be determined (Please let me know if you have any other requests)\",\n                \"**❗️Please copy the information above, fill in the respective content, and send it back to me once completed.**\"\n            ]\n        }\n    },\n    \"init\": \"As an Customized Writing Robot, greet + 👋 + version + author + execute format <configuration>\"\n}",
     "remark_en": "Customize the article production from various perspectives, with good stability. Occasionally, rule-based outputs may occur, but you can click 'regenerate' to make adjustments. For the format of prompt keywords, please refer to Mr.-Ranedeer-AI-Tutor. Contributed by @snowMan0622.",
     "preview": null,
     "website": "https://github.com/JushBJJ/Mr.-Ranedeer-AI-Tutor/tree/main",
@@ -4423,11 +4422,10 @@
     "tags": [
       "contribute",
       "write",
-      "favorite",
       "latest"
     ],
     "id": 256,
-    "weight": 12
+    "weight": 193
   },
   {
     "title": "学术写作 - 概念界定",
@@ -4446,7 +4444,7 @@
       "latest"
     ],
     "id": 257,
-    "weight": 0
+    "weight": 23
   },
   {
     "title": "论文标题生成",
@@ -4465,7 +4463,7 @@
       "latest"
     ],
     "id": 258,
-    "weight": 0
+    "weight": 21
   },
   {
     "title": "论文期刊匹配",
@@ -4484,7 +4482,7 @@
       "latest"
     ],
     "id": 259,
-    "weight": 0
+    "weight": 22
   },
   {
     "title": "语法对照检查",
@@ -4503,7 +4501,7 @@
       "latest"
     ],
     "id": 260,
-    "weight": 0
+    "weight": 12
   },
   {
     "title": "核心知识点",
@@ -4522,7 +4520,7 @@
       "latest"
     ],
     "id": 261,
-    "weight": 0
+    "weight": 15
   },
   {
     "title": "学习计划制定",
@@ -4541,7 +4539,7 @@
       "latest"
     ],
     "id": 262,
-    "weight": 0
+    "weight": 13
   },
   {
     "title": "学习测验助手",
@@ -4560,7 +4558,7 @@
       "latest"
     ],
     "id": 263,
-    "weight": 0
+    "weight": 6
   },
   {
     "title": "模拟人生文字游戏",
@@ -4579,7 +4577,7 @@
       "latest"
     ],
     "id": 264,
-    "weight": 0
+    "weight": 30
   },
   {
     "title": "私人辅导老师",
@@ -4598,7 +4596,7 @@
       "latest"
     ],
     "id": 265,
-    "weight": 100
+    "weight": 23
   },
   {
     "title": "Midjourney 提示生成器②",
@@ -4617,7 +4615,7 @@
       "latest"
     ],
     "id": 266,
-    "weight": 0
+    "weight": 53
   },
   {
     "title": "论文降重",
@@ -4636,7 +4634,7 @@
       "latest"
     ],
     "id": 267,
-    "weight": 0
+    "weight": 44
   },
   {
     "title": "日语学法语",
@@ -4654,7 +4652,7 @@
       "language"
     ],
     "id": 268,
-    "weight": 0
+    "weight": 3
   },
   {
     "title": "角色扮演 - 宇智波斑",
@@ -4673,7 +4671,7 @@
       "latest"
     ],
     "id": 269,
-    "weight": 100
+    "weight": 13
   },
   {
     "title": "提问助手 Pro",
@@ -4692,7 +4690,7 @@
       "latest"
     ],
     "id": 270,
-    "weight": 1000
+    "weight": 42
   },
   {
     "title": "困惑查询",
@@ -4711,6 +4709,6 @@
       "latest"
     ],
     "id": 271,
-    "weight": 1000
+    "weight": 57
   }
 ]
