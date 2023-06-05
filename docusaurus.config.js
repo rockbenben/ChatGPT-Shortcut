@@ -3,8 +3,8 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
-const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
+//const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
+//const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -87,7 +87,75 @@ const config = {
             "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
         },
       ],
-      navbar: getNavbar(),
+      navbar: {
+        hideOnScroll: true,
+        title: "AI Short",
+        logo: {
+          alt: "ChatGPT Shortcuts",
+          src: "img/logo.svg",
+        },
+        items: [
+          {
+            to: "docs",
+            label: "使用说明",
+            position: "left",
+          },
+          {
+            type: 'dropdown',
+            label: '浏览器扩展',
+            position: 'left',
+            items: [
+              {
+                label: "Chrome 扩展",
+                href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
+              },
+              {
+                label: 'Edge 扩展',
+                href: 'https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin',
+              },
+            ],
+          },
+          {
+            type: 'dropdown',
+            label: '其他工具',
+            position: 'left',
+            items: [
+              {
+                label: 'IMGPrompt',
+                href: 'https://prompt.newzone.top/',
+              },
+              {
+                label: '文字处理',
+                href: 'https://tools.newzone.top/',
+              },
+              {
+                label: '工具收藏',
+                href: 'https://nav.newzone.top',
+              },
+              {
+                label: 'Find on Product Hunt',
+                href: 'https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut',
+              },
+            ],
+          },
+          {
+            to: "https://www.aishort.top/feedback",
+            label: "反馈",
+            position: "left",
+          },
+          { type: "localeDropdown", position: "right" },
+          {
+            href: "https://github.com/rockbenben/ChatGPT-Shortcut",
+            position: "right",
+            className: "header-github-link",
+          },
+          {
+            href: "https://discord.gg/PZTQfJ4GjX",
+            position: "right",
+            className: "header-discord-link",
+          },
+        ],
+      },
       footer: {
         style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut)`,
@@ -109,7 +177,7 @@ const config = {
 
 module.exports = config;
 
-process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
+/* process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
 function getNavbar() {
   switch (process.env.DOCUSAURUS_CURRENT_LOCALE) {
     case "en":
@@ -117,7 +185,7 @@ function getNavbar() {
     default:
       return zhNavbar;
   }
-}
+} */
 /* function getAnnouncement() {
   switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
     case "en": return 'Announcement_en';
