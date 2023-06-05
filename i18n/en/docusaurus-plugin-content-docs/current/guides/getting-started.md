@@ -2,25 +2,25 @@
 
 The AiShort page presents all the prompts as the default setting, and it is divided into sections: the label area, search area, and prompt display area.
 
-![image](https://user-images.githubusercontent.com/28252913/222007639-20148284-8366-427f-9ee7-ad1be0edbd2e.png)
+![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
 
 ## 🏷︎ Label Filtering
 
 The label area categorizes prompts based on their domain and functionality, allowing for selection according to different scenarios and needs. By utilizing the "Label Filtering Rule Toggle" button located at the top right of the label area, multiple labels can be filtered simultaneously. The default state is set to OR, meaning that all prompts under the selected labels are included. When switched to AND, only prompts that possess multiple selected labels will be filtered.
 
-![](https://img.newzone.top/2023-02-28-10-31-01.png?imageMogr2/format/webp)
+![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
 
 ## 🔍 Keyword Search
 
 The scope of the keyword search encompasses the titles, descriptions, content, and Chinese translations of the prompts. Upon inputting a keyword, the prompt display area will promptly exhibit the filtered content. If labels have been selected, the keyword search is limited to the range of the selected labels. For the PC version, after changes are made in the search box, new search results will be displayed after a delay of 800 milliseconds. On mobile devices, the results update instantly.
 
-![](https://img.newzone.top/2023-02-28-10-31-10.png?imageMogr2/format/webp)
+![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
 
 ## 🔬 Prompt Copying
 
 Through label filtering and keyword searching, prompts can be obtained by clicking the "Copy" button located at the top right of each card. By pasting the copied prompt into ChatGPT and adjusting the desired text based on the Chinese prompt, responses specific to the designated domain can be obtained. If the Chinese notes within the prompts are not clear, clicking on the green title of the prompt will display the source webpage.
 
-![](https://img.newzone.top/2023-02-28-10-31-19.png?imageMogr2/format/webp)
+![](https://img.newzone.top/2023-06-05-21-00-55.png?imageMogr2/format/webp)
 
 ## 💬 Language Switching
 
