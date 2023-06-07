@@ -718,5 +718,29 @@
   },
   "message.success1": {
     "message": "Click on the label 'Your Prompt' to view the custom prompts that have been added."
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "Confirm Delete"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "Are you sure you want to delete this prompt?"
+  },
+  "message.deletePrompt.success": {
+    "message": "Prompt successfully deleted!"
+  },
+  "message.deletePrompt.error": {
+    "message": "Failed to delete prompt, please try again later."
+  },
+  "link.deleteprompt": {
+    "message": "Delete"
+  },
+  "link.updateprompt": {
+    "message": "Edit"
+  },
+  "modal.updateprompt.title": {
+    "message": "Edit the Prompt"
+  },
+  "button.updateprompt": {
+    "message": "Update the Prompt"
   }
 }

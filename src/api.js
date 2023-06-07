@@ -63,6 +63,29 @@ export async function submitPrompt(values) {
   );
 }
 
+// 更新 updatePrompt 函数，让它接受两个参数：id 和 values
+export async function updatePrompt(id, values) {
+  return axios.put(
+    `${API_URL}/userprompts/${id}`,
+    {
+      data: {
+        title: values.title,
+        description: values.description,
+        remark: values.remark,
+        notes: values.notes,
+      },
+    },
+    config
+  );
+}
+
+export async function deletePrompt(id) {
+  return axios.delete(
+    `${API_URL}/userprompts/${id}`,
+    config
+  );
+}
+
 export async function login(values) {
   return axios.post(`${API_URL}/auth/local`, {
     identifier: values.username,
