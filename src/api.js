@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 // 登陆体系常量
 const API_URL = "https://api.newzone.top/api"; // http://localhost:1337/api  https://api.newzone.top/api
 const authToken = Cookies.get("auth_token"); // Get the auth token from the cookie
-const username = Cookies.get("username");
 
 const config = {
   headers: {
@@ -48,14 +47,13 @@ export async function updateFavorite(favoriteId, loves) {
 }
 
 export async function submitPrompt(values) {
-  const remark = values.remark ? `${values.remark} ` : '';
   return axios.post(
     `${API_URL}/userprompts`,
     {
       data: {
         title: values.title,
         description: values.description,
-        remark: `${remark}Contributed by ${username}`,
+        remark: values.remark,
         notes: values.notes,
       },
     },

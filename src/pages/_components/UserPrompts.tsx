@@ -4,10 +4,21 @@ import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "./ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, message, Spin, Modal, Typography } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  message,
+  Spin,
+  Modal,
+  Typography,
+  Space,
+  Tooltip,
+} from "antd";
 import Heading from "@theme/Heading";
 import { AuthContext } from "./AuthContext";
 import { updatePrompt, deletePrompt } from "@site/src/api";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 export default function UserPromptsPage() {
   const userAuth = useContext(AuthContext);
@@ -36,10 +47,10 @@ export default function UserPromptsPage() {
   };
   // 新增的状态变量，用于跟踪正在被编辑的 UserPrompt 的 id
   const [editingPromptId, setEditingPromptId] = useState(null);
-  const [editingPrompt, setEditingPrompt] = useState(null);
+  const [form] = Form.useForm();
   const handleEditPrompt = (UserPrompt) => {
     setEditingPromptId(UserPrompt.id);
-    setEditingPrompt(UserPrompt);
+    form.setFieldsValue(UserPrompt);
     setOpen(true);
   };
   const onUpdateprompt = async (values) => {
@@ -63,27 +74,39 @@ export default function UserPromptsPage() {
 
   const handleDeletePrompt = (id) => {
     Modal.confirm({
-      title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
-      content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
+      title: (
+        <Translate id="message.deletePrompt.confirm.title">
+          Confirm Delete
+        </Translate>
+      ),
+      content: (
+        <Translate id="message.deletePrompt.confirm.content">
+          Are you sure you want to delete this prompt?
+        </Translate>
+      ),
       onOk: async () => {
         setLoading(true);
         try {
           await deletePrompt(id);
           window.location.reload();
           message.success(
-            <Translate id="message.deletePrompt.success">Prompt successfully deleted!</Translate>
+            <Translate id="message.deletePrompt.success">
+              Prompt successfully deleted!
+            </Translate>
           );
         } catch (err) {
           console.error(err);
           message.error(
-            <Translate id="message.deletePrompt.error">Failed to delete prompt, please try again later.</Translate>
+            <Translate id="message.deletePrompt.error">
+              Failed to delete prompt, please try again later.
+            </Translate>
           );
         } finally {
           setLoading(false);
         }
       },
       onCancel() {
-        console.log('Cancel');
+        console.log("Cancel");
       },
     });
   };
@@ -117,24 +140,6 @@ export default function UserPromptsPage() {
                     {UserPrompt.title}{" "}
                   </Link>
                 </Heading>
-                <Link
-                  className={clsx(
-                    "button button--secondary button--sm",
-                    styles.showcaseCardSrcBtn
-                  )}
-                  onClick={() => handleDeletePrompt(UserPrompt.id)}
-                >
-                  <Translate id="link.deleteprompt">删除</Translate>
-                </Link>
-                <Link
-                  className={clsx(
-                    "button button--secondary button--sm",
-                    styles.showcaseCardSrcBtn
-                  )}
-                  onClick={() => handleEditPrompt(UserPrompt)}
-                >
-                  <Translate id="link.updateprompt">修改</Translate>
-                </Link>
                 <button
                   className={clsx(
                     "button button--secondary button--sm",
@@ -154,6 +159,30 @@ export default function UserPromptsPage() {
               <p className={styles.showcaseCardBody}>
                 {UserPrompt.description}
               </p>
+              <Space>
+                <Tooltip
+                  title={<Translate id="tooltip.deleteprompt">删除</Translate>}
+                >
+                  <a
+                    style={{ fontSize: "14px" }}
+                    onClick={() => handleDeletePrompt(UserPrompt.id)}
+                  >
+                    <DeleteOutlined />
+                    <Translate id="link.deleteprompt">删除</Translate>
+                  </a>
+                </Tooltip>
+                <Tooltip
+                  title={<Translate id="tooltip.updateprompt">修改</Translate>}
+                >
+                  <a
+                    style={{ fontSize: "14px" }}
+                    onClick={() => handleEditPrompt(UserPrompt)}
+                  >
+                    <EditOutlined />
+                    <Translate id="link.updateprompt">修改</Translate>
+                  </a>
+                </Tooltip>
+              </Space>
             </div>
           </li>
         ))
@@ -166,9 +195,12 @@ export default function UserPromptsPage() {
         })}
         open={open}
         footer={null}
-        onCancel={() => setOpen(false)}
+        onCancel={() => {
+          setOpen(false);
+          form.resetFields();  // 关闭编辑框时重置表单的值
+        }}
       >
-        <Form onFinish={onUpdateprompt} initialValues={editingPrompt}>
+        <Form form={form} onFinish={onUpdateprompt}>
           <Form.Item
             name="title"
             rules={[
