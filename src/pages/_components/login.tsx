@@ -18,6 +18,8 @@ const LoginPage = () => {
     Cookies.set("auth_token", jwt);
     Cookies.set("username", username);
     setUserAuth({ username, jwt });
+    // 发送消息给扩展
+    window.postMessage({ action: "login", username, jwt }, "*");
     window.location.reload();
   };
 
