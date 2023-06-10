@@ -6,6 +6,7 @@ import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 //import Image from '@theme/IdealImage';
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
+import { LinkOutlined } from "@ant-design/icons";
 import {
   Tags,
   TagList,
@@ -173,7 +174,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
-            <Link href={user.website} className={styles.showcaseCardLink}>
+            <Link href={"/prompt/"+ user.id} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>
@@ -233,6 +234,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
         <ShowcaseCardTag tags={user.tags} />
+        {user.website ? <a href={user.website} style={{ marginLeft: 'auto' }}><LinkOutlined /></a> : null}
       </ul>
     </li>
   );
