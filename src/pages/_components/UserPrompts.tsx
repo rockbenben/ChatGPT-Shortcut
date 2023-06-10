@@ -12,7 +12,6 @@ import {
   Spin,
   Modal,
   Typography,
-  Space,
   Tooltip,
 } from "antd";
 import Heading from "@theme/Heading";
@@ -133,38 +132,50 @@ export default function UserPromptsPage() {
       ) : (
         userprompts.map((UserPrompt, index) => (
           <li key={UserPrompt.id} className="card shadow--md">
-            <div className={clsx("card__body")}>
-              <div className={clsx(styles.showcaseCardHeader)}>
-                <Heading as="h4" className={styles.showcaseCardTitle}>
-                  <Link className={styles.showcaseCardLink}>
-                    {UserPrompt.title}{" "}
-                  </Link>
-                </Heading>
-                <button
-                  className={clsx(
-                    "button button--secondary button--sm",
-                    styles.showcaseCardSrcBtn
-                  )}
-                  type="button"
-                  onClick={() => handleCopyClick(index)}
-                >
-                  {copiedIndex === index ? (
-                    <Translate>已复制</Translate>
-                  ) : (
-                    <Translate>复制</Translate>
-                  )}
-                </button>
+            <div
+              className={clsx("card__body")}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+              }}
+            >
+              <div>
+                <div className={clsx(styles.showcaseCardHeader)}>
+                  <Heading as="h4" className={styles.showcaseCardTitle}>
+                    <Link className={styles.showcaseCardLink}>
+                      {UserPrompt.title}{" "}
+                    </Link>
+                  </Heading>
+                  <button
+                    className={clsx(
+                      "button button--secondary button--sm",
+                      styles.showcaseCardSrcBtn
+                    )}
+                    type="button"
+                    onClick={() => handleCopyClick(index)}
+                  >
+                    {copiedIndex === index ? (
+                      <Translate>已复制</Translate>
+                    ) : (
+                      <Translate>复制</Translate>
+                    )}
+                  </button>
+                </div>
+                <p className={styles.showcaseCardBody}>
+                  👉 {UserPrompt.remark}
+                </p>
+                <p className={styles.showcaseCardBody}>
+                  {UserPrompt.description}
+                </p>
               </div>
-              <p className={styles.showcaseCardBody}>👉 {UserPrompt.remark}</p>
-              <p className={styles.showcaseCardBody}>
-                {UserPrompt.description}
-              </p>
-              <Space>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Tooltip
                   title={<Translate id="tooltip.deleteprompt">删除</Translate>}
                 >
                   <a
-                    style={{ fontSize: "14px" }}
+                    style={{ fontSize: "14px", cursor: "pointer" }}
                     onClick={() => handleDeletePrompt(UserPrompt.id)}
                   >
                     <DeleteOutlined />
@@ -175,14 +186,14 @@ export default function UserPromptsPage() {
                   title={<Translate id="tooltip.updateprompt">修改</Translate>}
                 >
                   <a
-                    style={{ fontSize: "14px" }}
+                    style={{ fontSize: "14px", cursor: "pointer" }}
                     onClick={() => handleEditPrompt(UserPrompt)}
                   >
                     <EditOutlined />
                     <Translate id="link.updateprompt">修改</Translate>
                   </a>
                 </Tooltip>
-              </Space>
+              </div>
             </div>
           </li>
         ))
@@ -197,7 +208,7 @@ export default function UserPromptsPage() {
         footer={null}
         onCancel={() => {
           setOpen(false);
-          form.resetFields();  // 关闭编辑框时重置表单的值
+          form.resetFields(); // 关闭编辑框时重置表单的值
         }}
       >
         <Form form={form} onFinish={onUpdateprompt}>
