@@ -748,5 +748,8 @@
   },
   "tooltip.updateprompt": {
     "message": "Edit"
+  },
+  "comments.info": {
+    "message": "Kindly provide your opinions, thoughts, or insights regarding the given prompt in the space below."
   }
 }

@@ -20,7 +20,7 @@ The scope of the keyword search encompasses the titles, descriptions, content, a
 
 Through label filtering and keyword searching, prompts can be obtained by clicking the "Copy" button located at the top right of each card. By pasting the copied prompt into ChatGPT and adjusting the desired text based on the Chinese prompt, responses specific to the designated domain can be obtained. If the Chinese notes within the prompts are not clear, clicking on the green title of the prompt will display the source webpage.
 
-![](https://img.newzone.top/2023-06-05-21-00-55.png?imageMogr2/format/webp)
+![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
 ## 💬 Language Switching
 
