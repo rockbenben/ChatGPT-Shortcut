@@ -228,7 +228,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </button>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p onClick={handleParagraphClick} className={styles.showcaseCardBody}>
+        <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
           {userDescription}
         </p>
       </div>

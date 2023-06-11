@@ -181,7 +181,7 @@
     "message": "All prompts"
   },
   "已复制": {
-    "message": "Copyed"
+    "message": "Copied"
   },
   "复制": {
     "message": "Copy"
@@ -742,5 +742,11 @@
   },
   "button.updateprompt": {
     "message": "Update the Prompt"
+  },
+  "tooltip.deleteprompt": {
+    "message": "Delete"
+  },
+  "tooltip.updateprompt": {
+    "message": "Edit"
   }
 }
