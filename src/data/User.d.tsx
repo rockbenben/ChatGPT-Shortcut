@@ -6,9 +6,7 @@ export type User = {
   title_en: string;
   desc_en: string;
   remark_en: string;
-  preview: string | null; // null = use our serverless screenshot service
   website: string | null;
-  source: string | null;
   tags: TagType[];
   id: number;
 };
