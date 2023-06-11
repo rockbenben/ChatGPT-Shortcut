@@ -1,19 +1,6 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
-import { Card, Tag, Space, Badge, Row, Col, Input } from "antd";
-import Link from "@docusaurus/Link";
-import Layout from "@theme/Layout";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { LinkOutlined, HeartOutlined, CheckOutlined, CopyOutlined } from "@ant-design/icons";
-import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import clsx from "clsx";
-import Translate from "@docusaurus/Translate";
-import copy from "copy-text-to-clipboard";
-import styles from "../_components/ShowcaseCard/styles.module.css";
-import { AuthContext, AuthProvider } from '../_components/AuthContext';
-import { updateCopyCount, createFavorite, updateFavorite } from "@site/src/api";
-import { Waline } from "@site/src/components/waline";
+import React from "react";
+import PromptPage from "../_components/PromptPage";
 
-const { TextArea } = Input;  // Import TextArea from Input
 const prompt = {
   "title": "AI Responder",
   "description": "You are an expert ChatGPT Prompt Engineer and respond in Chinese. I will refer to you as AiShort. Together, we will create the best ChatGPT responses. Our collaboration will proceed as follows:\n1. I will communicate how you can assist me.\n2. Based on my needs, you will suggest additional expert roles you should adopt to provide the best response, and ask for my approval.\n3. If I agree, you will assume all the proposed roles and start assisting.\n4. If I disagree, you will ask which roles should be removed, adjust according to my feedback.\n5. Once roles are set, you will confirm your active expert roles, summarize the skills under each role, and ask for my satisfaction.\n6. We will adjust roles based on my feedback until I am satisfied.\n7. Once roles are confirmed, you will ask me, \"AiShort, how can I assist you now?\"\n8. I will answer your question.\n9. You will ask if I want to use any reference sources to craft the perfect prompt.\n10. If I do, you will ask how many sources I want to use and confirm each source individually.\n11. After confirming sources, you will request more details about my initial prompt to understand my expectations.\n12. I will answer your questions.\n13. Acting under all confirmed expert roles, you will create a detailed ChatGPT prompt using my initial prompt and additional details from step 12, then ask for my feedback.\n14. If I am satisfied, you will summarize how each expert role contributed and how they collaborated to produce comprehensive results. If I have other needs, we will return to step 1. If not, we will conclude the task.\n15. If I am not satisfied, you will ask for my specific feedback on the prompt, then adjust it according to my feedback. We will repeat this process until I am satisfied with the prompt.\nIf you completely understand your task, reply with: \"How can I assist you today, AiShort?\"",
@@ -28,100 +15,11 @@ const prompt = {
     "latest"
   ],
   "id": 255,
-  "weight": 241
+  "weight": 246
 };
 
-function PromptPage() {
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split('-')[0];;
-
-  const title = currentLanguage === "en" ? prompt.title_en : prompt.title;
-  const [description, setDescription] = useState(
-    currentLanguage === "zh" ? prompt.description : prompt.desc_en
-  );
-  
-  // Switching between the native language and English
-  function handleParagraphClick() {
-    // If the current language is English, do nothing
-    if (currentLanguage === 'en') return;
-  
-    if (description === prompt.description) {
-  	setDescription(prompt.desc_cn);
-    } else {
-  	setDescription(prompt.description);
-    }
-  }
-  
-  const remark = currentLanguage === "en" ? prompt.remark_en : prompt.remark;
-  const weight = prompt.weight;
-  const website = prompt.website;
-  const tags = prompt.tags;
-
-  // Handle copying the description text
-  const [copied, setShowCopied] = useState(false);
-  const handleCopyClick = useCallback(async () => {
-	try {
-	  await updateCopyCount(prompt.id);
-	  if (description) {
-		copy(description);
-	  }
-	  setShowCopied(true);
-	  setTimeout(() => setShowCopied(false), 2000);
-	} catch (error) {
-	  console.error("Error updating copy count:", error);
-	}
-  }, [prompt.id, description]);
-
-  const walineOptions = {
-    serverURL: "https://waline.newzone.top",
-    path: "/prompt/" + prompt.id,
-    lang: "en", // 设置为英文
-  };
-
-  return (
-	<Layout title={title} description={remark}>
-	  <Row justify="center" style={{ marginTop: "20px" }}>
-		<Col xs={24} sm={22} md={20} lg={18} xl={16}>
-		<li key={title} className="card shadow--md">
-		  <Card
-			title={
-			  <span>
-				{title}{" "}
-				<Badge count={"Weight: " + weight} style={{ backgroundColor: "#52c41a" }} />
-				<button className={clsx( "button button--secondary button--sm", styles.showcaseCardSrcBtn )} type="button" onClick={handleCopyClick}>
-					{copied ? (<Translate>已复制</Translate>) : (<Translate>复制</Translate>)}
-				</button>
-				{/* <Button type="text" icon={<HeartOutlined />} /> */}
-			  </span>
-			}
-			extra={website ? <a href={website}><LinkOutlined /></a> : null}
-		  >
-			<Row>
-			  <Col span={12}>
-				<p className={styles.showcaseCardBody}>👉 {remark}</p>
-				<p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
-				  {description}
-				</p>
-				<Space wrap>
-				  {tags.map((tag) => (
-					<Link to={"/?tags="+tag}>
-					<Tag color="blue" key={tag}>
-					  {tag}
-					</Tag>
-					</Link>
-				  ))}
-				</Space>
-			  </Col>
-			  <Col span={12}>
-				<Waline {...walineOptions}/>
-			  </Col>
-			</Row>
-		  </Card>
-		</li>
-		</Col>
-	  </Row>
-	</Layout>
-  );
+function PromptDetail() {
+  return <PromptPage prompt={prompt} />;
 }
 
-export default PromptPage;
+export default PromptDetail;
