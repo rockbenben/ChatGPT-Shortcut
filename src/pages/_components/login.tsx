@@ -15,8 +15,8 @@ const LoginPage = () => {
   const { setUserAuth } = useContext(AuthContext);
 
   const handleSuccess = (username, jwt) => {
-    Cookies.set("auth_token", jwt);
-    Cookies.set("username", username);
+    Cookies.set("auth_token", jwt, { expires: 365 });
+    Cookies.set("username", username, { expires: 365 });
     setUserAuth({ username, jwt });
     // 发送消息给扩展
     window.postMessage({ action: "login", username, jwt }, "*");
