@@ -95,11 +95,12 @@ function filterUsers(
     // 搜索范围
     users = users.filter((user) =>
       (
-        user.title +
-        user.description +
-        user.desc_cn +
-        user.remark +
-        user.desc_en +
+        user.title_zh +
+        user.prompt_zh +
+        user.desc_zh +
+        user.remark_zh +
+        user.title_en +
+        user.prompt_en +
         user.remark_en
       )
         .toLowerCase()
@@ -440,7 +441,7 @@ function ShowcaseCards({ isDescription }) {
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
                   <ShowcaseCard
-                    key={user.title}
+                    key={user.title_zh}
                     user={user}
                     isDescription={isDescription}
                     copyCount={copyCounts[user.id] || 0}
@@ -460,7 +461,7 @@ function ShowcaseCards({ isDescription }) {
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {otherUsers.map((user) => (
                 <ShowcaseCard
-                  key={user.title}
+                  key={user.title_zh}
                   user={user}
                   isDescription={isDescription}
                   copyCount={copyCounts[user.id] || 0}
@@ -481,7 +482,7 @@ function ShowcaseCards({ isDescription }) {
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
               <ShowcaseCard
-                key={user.title}
+                key={user.title_zh}
                 user={user}
                 isDescription={isDescription}
                 copyCount={copyCounts[user.id] || 0}

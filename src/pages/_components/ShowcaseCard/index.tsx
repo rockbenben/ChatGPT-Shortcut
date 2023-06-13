@@ -68,27 +68,27 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
   const [paragraphText, setParagraphText] = useState(
-    isDescription ? user.description : user.desc_cn
+    isDescription ? user.prompt_zh : user.desc_zh
   );
 
   useEffect(() => {
-    setParagraphText(isDescription ? user.description : user.desc_cn);
-  }, [isDescription, user.description, user.desc_cn]);
+    setParagraphText(isDescription ? user.prompt_zh : user.desc_zh);
+  }, [isDescription, user.prompt_zh, user.desc_zh]);
 
   // 点击显示中文文本
   function handleParagraphClick() {
-    if (paragraphText === user.description) {
-      setParagraphText(user.desc_cn);
+    if (paragraphText === user.prompt_zh) {
+      setParagraphText(user.desc_zh);
     } else {
-      setParagraphText(user.description);
+      setParagraphText(user.prompt_zh);
     }
   }
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
-  const userTitle = currentLanguage === "en" ? user.title_en : user.title;
-  const userRemark = currentLanguage === "en" ? user.remark_en : user.remark;
+  const userTitle = currentLanguage === "en" ? user.title_en : user.title_zh;
+  const userRemark = currentLanguage === "en" ? user.remark_en : user.remark_zh;
   const userDescription =
-    currentLanguage === "zh-Hans" ? paragraphText : user.desc_en;
+    currentLanguage === "zh-Hans" ? paragraphText : user.prompt_en;
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
@@ -103,7 +103,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const handleCopyClick = useCallback(async () => {
     try {
       const updatedCount = await updateCopyCount(user.id);
-      if (user.description) {
+      if (user.prompt_zh) {
         copy(userDescription);
       }
       setShowCopied(true);
