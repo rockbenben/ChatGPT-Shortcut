@@ -15,9 +15,9 @@ function PromptPage({ prompt }) {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
-  const title = currentLanguage === "en" ? prompt.title_en : prompt.title;
+  const title = currentLanguage === "en" ? prompt.title_en : prompt.title_zh;
   const [description, setDescription] = useState(
-    currentLanguage === "zh" ? prompt.description : prompt.desc_en
+    currentLanguage === "zh" ? prompt.prompt_zh : prompt.prompt_en
   );
 
   // Switching between the native language and English
@@ -25,14 +25,14 @@ function PromptPage({ prompt }) {
     // If the current language is English, do nothing
     if (currentLanguage === "en") return;
 
-    if (description === prompt.description) {
-      setDescription(prompt.desc_cn);
+    if (description === prompt.prompt_zh) {
+      setDescription(prompt.desc_zh);
     } else {
-      setDescription(prompt.description);
+      setDescription(prompt.prompt_zh);
     }
   }
 
-  const remark = currentLanguage === "en" ? prompt.remark_en : prompt.remark;
+  const remark = currentLanguage === "en" ? prompt.remark_en : prompt.remark_zh;
   const weight = prompt.weight;
   const website = prompt.website;
   const tags = prompt.tags;

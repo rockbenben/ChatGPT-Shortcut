@@ -1,22 +1,8 @@
 import React from "react";
 import PromptPage from "../_components/PromptPage";
 
-const prompt = {
-  "title": "雅思写作①",
-  "description": "你是一名专业的英语教授\n下面是雅思写作任务评分标准。\n第一步，\n指定题目为《示例题目：Rich countries often give money to poorer countries, but it does not solve poverty. Therefore, developed countries should give other types of help to the poor countries rather than financial aid. To what extent do you agree or disagree? You should write at least 250 words.》\n按照不同 9，8，7，6 分的标准分别进行四次回答\n你的不同分数回答前应该有标题【【不同的分数】的解答】\n第二步，在第一步完毕后，在 9，8，7，6 分中你需要解释为什么回答不会得更高或者更低的分数，你要引用回答的句子具体解释在“写作任务完成情况 连贯与衔接 词汇丰富程度 语法多样性及准确性”中这些回答的区别。\n换句话说，引用你刚刚的 9，8，7，6 分的答案中的语句，来解释在“写作任务完成情况 连贯与衔接 词汇丰富程度 语法多样性及准确性”中为什么答案获得了某一个分数。\nLet's think step by step\n9 分：\n\n写作任务完成情况：完全满足所有的写作任务要求，清晰地呈现充分展开的写作内容\n连贯与衔接：衔接手段运用自如，行文连贯，熟练地运用分段\n词汇丰富程度：使用丰富的词汇，能自然地使用并掌握复杂的词汇特征；极少出现轻微错误，且仅属笔误\n语法多样性及准确性：完全灵活且准确地运用丰富多样的语法结构；极少出现轻微错误，且仅属笔误\n8 分：\n\n写作任务完成情况：写作内容充分地涵盖了所有的写作任务要求，就主要内容/要点进行清晰和恰当的呈现、强调以及阐述\n连贯与衔接：将信息与观点进行有逻辑的排序，各种衔接手段运用得当，充分且合理地使用分段\n词汇丰富程度：流畅和灵活地使用丰富的词汇，达意准确，熟练地使用不常用词汇，但在词语选择及搭配方面有时偶尔出现错误，拼写及/或构词方面错误极少\n语法多样性及准确性：运用丰富多样的语法结构，大多数句子准确无误，只在极偶然情况下出现错误或存在不当之处\n7 分：\n\n写作任务完成情况：写作内容涵盖写作任务的要求，（学术类）清晰地呈现关于主要趋势、区别或不同阶段的概述，（培训类）清晰地呈现写作目的，行文语气一致且恰当，能就主要内容/要点进行清晰的呈现与强调，但未能更为充分地展开\n连贯与衔接：符合逻辑地组织信息及观点，清晰的行文推进贯穿全文，恰当地使用一系列衔接手段，尽管有时使用不足或过多，有时无法保持一贯清晰或恰当地使用指代\n词汇丰富程度：使用足够的词汇，体现一定灵活性及准确性，使用不常见词汇，对语体及搭配有一定认识，在选择用词、拼写及/或构词方面可能偶尔出现错误\n语法多样性及准确性：运用各种复杂的语法结构，多数句子准确无误，对语法及标点符号掌握较好，但有时出现少许错误\n6 分：\n\n写作任务完成情况：根据写作任务要求作文，（学术类）选择恰当的信息进行概述，（培训类）写作目的基本清晰，行文语气有时未能保持前后一致，呈现并充分地强调了主要内容/要点，但有时含有不相关、不恰当或不准确的细节信息\n连贯与衔接：连贯地组织信息及观点，总体来说，能清晰地推进行文发展，有效地使用衔接手段，但句内及/或句间的衔接有时有误或过于机械，有时无法保持一贯清晰或恰当地使用指代\n词汇丰富程度：使用足够的词汇开展写作任务，试图使用不常用词汇，但有时使用不准确，在拼写及/或构词方面有错误，但不影响交流\n语法多样性及准确性：综合使用简单句式与复杂句式，在语法及标点符号方面有一些错误，但这些错误很少影响交流",
-  "desc_cn": "你是一名专业的英语教授，下面是雅思写作任务评分标准。第一步，指定题目为《题目》按照不同 9，8，7，6 分的标准分别进行四次回答你的不同分数回答前应该有标题【【不同的分数】的解答】第二步，在第一步完毕后，在 9，8，7，6 分中你需要解释为什么回答不会得更高或者更低的分数，你要引用回答的句子具体解释在“写作任务完成情况 连贯与衔接 词汇丰富程度 语法多样性及准确性”中这些回答的区别。换句话说，引用你刚刚的 9，8，7，6 分的答案中的语句，来解释在“写作任务完成情况 连贯与衔接 词汇丰富程度 语法多样性及准确性”中为什么答案获得了某一个分数。Let's think step by step9 分：写作任务完成情况：完全满足所有的写作任务要求，清晰地呈现充分展开的写作内容连贯与衔接：衔接手段运用自如，行文连贯，熟练地运用分段词汇丰富程度：使用丰富的词汇，能自然地使用并掌握复杂的词汇特征；极少出现轻微错误，且仅属笔误语法多样性及准确性：完全灵活且准确地运用丰富多样的语法结构；极少出现轻微错误，且仅属笔误 8 分：写作任务完成情况：写作内容充分地涵盖了所有的写作任务要求，就主要内容/要点进行清晰和恰当的呈现、强调以及阐述连贯与衔接：将信息与观点进行有逻辑的排序，各种衔接手段运用得当，充分且合理地使用分段词汇丰富程度：流畅和灵活地使用丰富的词汇，达意准确，熟练地使用不常用词汇，但在词语选择及搭配方面有时偶尔出现错误，拼写及/或构词方面错误极少语法多样性及准确性：运用丰富多样的语法结构，大多数句子准确无误，只在极偶然情况下出现错误或存在不当之处 7 分：写作任务完成情况：写作内容涵盖写作任务的要求，（学术类）清晰地呈现关于主要趋势、区别或不同阶段的概述，（培训类）清晰地呈现写作目的，行文语气一致且恰当，能就主要内容/要点进行清晰的呈现与强调，但未能更为充分地展开连贯与衔接：符合逻辑地组织信息及观点，清晰的行文推进贯穿全文，恰当地使用一系列衔接手段，尽管有时使用不足或过多，有时无法保持一贯清晰或恰当地使用指代词汇丰富程度：使用足够的词汇，体现一定灵活性及准确性，使用不常见词汇，对语体及搭配有一定认识，在选择用词、拼写及/或构词方面可能偶尔出现错误语法多样性及准确性：运用各种复杂的语法结构，多数句子准确无误，对语法及标点符号掌握较好，但有时出现少许错误 6 分：写作任务完成情况：根据写作任务要求作文，（学术类）选择恰当的信息进行概述，（培训类）写作目的基本清晰，行文语气有时未能保持前后一致，呈现并充分地强调了主要内容/要点，但有时含有不相关、不恰当或不准确的细节信息连贯与衔接：连贯地组织信息及观点，总体来说，能清晰地推进行文发展，有效地使用衔接手段，但句内及/或句间的衔接有时有误或过于机械，有时无法保持一贯清晰或恰当地使用指代词汇丰富程度：使用足够的词汇开展写作任务，试图使用不常用词汇，但有时使用不准确，在拼写及/或构词方面有错误，但不影响交流语法多样性及准确性：综合使用简单句式与复杂句式，在语法及标点符号方面有一些错误，但这些错误很少影响交流",
-  "remark": "针对同一主题撰写不同分数的雅思文章，并附上评分原因。来自 @fansi2020 的投稿。",
-  "title_en": "IELTS writing①",
-  "desc_en": "Using the IELTS Writing Task scoring criteria, please respond to the following theme four times, each with a different level of proficiency: 9, 8, 7, and 6.\n\nThe theme is: 'Rich countries often give money to poorer countries, but it does not solve poverty. Therefore, developed countries should give other types of help to the poor countries rather than financial aid. To what extent do you agree or disagree? Your essay should be at least 250 words.'\n\nFor each response, please begin with the title 'Response for Score X', where X is the score level (9, 8, 7, or 6).\n\nAfter the four responses, explain why each response deserves its respective score, considering the following aspects: task achievement, coherence and cohesion, lexical resource, and grammatical range and accuracy. Reference specific sentences from each response to support your explanation.",
-  "remark_en": "Compose IELTS essays on the same topic with varying scores, accompanied by the reasons for the ratings. Contributed by @fansi2020.",
-  "website": null,
-  "tags": [
-    "contribute",
-    "pedagogy"
-  ],
-  "id": 248,
-  "weight": 158
-};
+const prompts = require('@site/src/data/prompt.json');
+const prompt = prompts.find(p => p.id === 248);
 
 function PromptDetail() {
   return <PromptPage prompt={prompt} />;
