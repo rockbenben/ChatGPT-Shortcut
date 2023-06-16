@@ -1,9 +1,9 @@
 {
-  "常用": {
-    "message": "一般的な使用方法"
+  "收藏": {
+    "message": "収集"
   },
   "showcase.tag.favorite.description": {
-    "message": "最も多く使用されたキュー・ワード"
+    "message": "収集"
   },
   "写作辅助": {
     "message": "ライティングエイド"
@@ -24,7 +24,7 @@
     "message": "プログラミングとありますが、ChatGPT では、必要に応じてプログラミングの手順をアドバイスしたり、テストとしてしか使えない簡単なサンプルコードで、やはりプログラマーが修正する必要があるものを紹介しています。"
   },
   "AI": {
-    "message": "エーアイ"
+    "message": "AI"
   },
   "showcase.tag.ai.description": {
     "message": "エーアイ"
@@ -156,7 +156,7 @@
     "message": "弁護士や茶道家など専門的な知識を必要とする職種"
   },
   "投稿": {
-    "message": "貢献度"
+    "message": "助ける"
   },
   "showcase.tag.contribute.description": {
     "message": "アイデアの開発にご協力いただける方からの投稿"
@@ -168,7 +168,7 @@
     "message": "個人的な非生産的な使用、情報提供のみ"
   },
   "Latest": {
-    "message": "最新情報"
+    "message": "最新"
   },
   "showcase.tag.latest.description": {
     "message": "最近追加されたキューワード"
@@ -303,7 +303,7 @@
     "message": "プライバシーポリシー"
   },
   "button.register": {
-    "message": "登録"
+    "message": "新規登録はこちら"
   },
   "placeholder.email": {
     "message": "メールボックス"
@@ -315,7 +315,7 @@
     "message": "ログイン"
   },
   "tabs.register": {
-    "message": "登録"
+    "message": "新規登録はこちら"
   },
   "tabs.forgotPassword": {
     "message": "パスワードをお忘れの方"
@@ -324,10 +324,10 @@
     "message": "ようこそ"
   },
   "已复制": {
-    "message": "コピペ"
+    "message": "コピーされました"
   },
   "复制": {
-    "message": "リプロダクト"
+    "message": "コピー"
   },
   "tooltip.switchLang": {
     "message": "クリックすると表示言語が切り替わります"
@@ -444,7 +444,7 @@
     "message": "ユーザーインターフェース"
   },
   "button.logout": {
-    "message": "キャンセルについて"
+    "message": "ログアウト"
   },
   "link.addprompt": {
     "message": "カスタムプロンプトを追加する"
@@ -460,9 +460,6 @@
   },
   "点击移除收藏": {
     "message": "クリックするとコレクションを削除します"
-  },
-  "收藏": {
-    "message": "コレクション"
   },
   "theme.ErrorPageContent.title": {
     "message": "エラーが発生しました",

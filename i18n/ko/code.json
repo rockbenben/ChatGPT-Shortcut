@@ -1,9 +1,9 @@
 {
-  "常用": {
-    "message": "일반적으로 사용"
+  "收藏": {
+    "message": "컬렉션"
   },
   "showcase.tag.favorite.description": {
-    "message": "가장 많이 사용되는 단서 단어"
+    "message": "컬렉션"
   },
   "写作辅助": {
     "message": "필기 보조 도구"
@@ -460,9 +460,6 @@
   },
   "点击移除收藏": {
     "message": "컬렉션을 제거하려면 클릭"
-  },
-  "收藏": {
-    "message": "컬렉션"
   },
   "theme.ErrorPageContent.title": {
     "message": "페이지에 오류가 발생하였습니다.",
