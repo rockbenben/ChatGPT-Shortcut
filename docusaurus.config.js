@@ -8,7 +8,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "AiShort(ChatGPT Shortcut)-Tag filtering, keyword search, and one-click copy prompts",
+  title:
+    "AiShort(ChatGPT Shortcut)-Tag filtering, keyword search, and one-click copy prompts",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
@@ -31,10 +32,16 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "zh-Hans",
-    locales: ["zh-Hans", "en"],
+    locales: ["zh-Hans", "en", "ja", "ko"],
     localeConfigs: {
       en: {
         htmlLang: "en-US",
+      },
+      ja: {
+        htmlLang: "ja-JP",
+      },
+      ko: {
+        htmlLang: "ko-KR",
       },
     },
   },
@@ -72,9 +79,9 @@ const config = {
       }),
     ],
     [
-      'docusaurus2-plugin-google-adsense',
+      "docusaurus2-plugin-google-adsense",
       {
-        dataAdClient: 'ca-pub-7585955822109216'
+        dataAdClient: "ca-pub-7585955822109216",
       },
     ],
     "./plugins/piwik.js",
@@ -107,45 +114,45 @@ const config = {
             position: "left",
           },
           {
-            type: 'dropdown',
-            label: '浏览器扩展',
-            position: 'left',
+            type: "dropdown",
+            label: "浏览器扩展",
+            position: "left",
             items: [
               {
                 label: "Chrome 扩展",
                 href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
               },
               {
-                label: 'Edge 扩展',
-                href: 'https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin',
+                label: "Edge 扩展",
+                href: "https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin",
               },
             ],
           },
           {
-            type: 'dropdown',
-            label: '其他工具',
-            position: 'left',
+            type: "dropdown",
+            label: "其他工具",
+            position: "left",
             items: [
               {
-                label: 'IMGPrompt',
-                href: 'https://prompt.newzone.top/',
+                label: "IMGPrompt",
+                href: "https://prompt.newzone.top/",
               },
               {
-                label: '文字处理',
-                href: 'https://tools.newzone.top/',
+                label: "文字处理",
+                href: "https://tools.newzone.top/",
               },
               {
-                label: '工具收藏',
-                href: 'https://nav.newzone.top',
+                label: "工具收藏",
+                href: "https://nav.newzone.top",
               },
               {
-                label: 'Find on Product Hunt',
-                href: 'https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut',
+                label: "Find on Product Hunt",
+                href: "https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut",
               },
             ],
           },
           {
-            to: "https://www.aishort.top/feedback",
+            to: "/feedback",
             label: "反馈",
             position: "left",
           },

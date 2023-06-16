@@ -89,19 +89,18 @@ function filterUsers(
   operator: Operator,
   searchName: string | null
 ) {
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split('-')[0];
   if (searchName) {
     const lowercaseSearchName = searchName.toLowerCase();
     // eslint-disable-next-line no-param-reassign
     // 搜索范围
-    users = users.filter((user) =>
+    users = users.filter((user) => 
       (
-        user.zh.title +
-        user.zh.prompt +
-        user.zh.description +
-        user.zh.remark +
-        user.en.title +
-        user.en.prompt +
-        user.en.remark
+        user[currentLanguage].title +
+        user[currentLanguage].prompt +
+        (user[currentLanguage].description ?? "")  +
+        user[currentLanguage].remark
       )
         .toLowerCase()
         .includes(lowercaseSearchName)
@@ -180,7 +179,7 @@ function ShowcaseFilters({ onToggleDescription }) {
   const filteredUsers = useFilteredUsers();
   const siteCountPlural = useCallback(useSiteCountPlural(), []);
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale;
+  const currentLanguage = i18n.currentLocale.split('-')[0];
   return (
     <section className="container margin-top--l margin-bottom--lg">
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
@@ -278,7 +277,7 @@ function SearchBar() {
   const location = useLocation();
 
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale;
+  const currentLanguage = i18n.currentLocale.split('-')[0];
   const [value, setValue] = useState<string | null>(null);
   useEffect(() => {
     setValue(readSearchName(location.search));
@@ -309,7 +308,7 @@ function SearchBar() {
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
     if (
-      currentLanguage === "zh-Hans" &&
+      currentLanguage === "zh" &&
       (window.innerWidth >= 768 ||
         (typeof chrome !== "undefined" && chrome.extension))
     ) {

@@ -67,28 +67,29 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
 function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split('-')[0];
+  const userTitle = user[currentLanguage].title;
+  const userRemark = user[currentLanguage].remark;
+
   const [paragraphText, setParagraphText] = useState(
-    isDescription ? user.zh.prompt : user.zh.description
+    isDescription ? user[currentLanguage].prompt : user[currentLanguage].description
   );
 
   useEffect(() => {
-    setParagraphText(isDescription ? user.zh.prompt : user.zh.description);
-  }, [isDescription, user.zh.prompt, user.zh.description]);
+    setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+  }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
 
-  // 点击显示中文文本
+  // 点击显示母语
   function handleParagraphClick() {
-    if (paragraphText === user.zh.prompt) {
-      setParagraphText(user.zh.description);
+    if (paragraphText === user[currentLanguage].prompt) {
+      setParagraphText(user[currentLanguage].description);
     } else {
-      setParagraphText(user.zh.prompt);
+      setParagraphText(user[currentLanguage].prompt);
     }
   }
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale;
-  const userTitle = currentLanguage === "en" ? user.en.title : user.zh.title;
-  const userRemark = currentLanguage === "en" ? user.en.remark : user.zh.remark;
-  const userDescription =
-    currentLanguage === "zh-Hans" ? paragraphText : user.en.prompt;
+  const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
+
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
@@ -102,7 +103,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   const handleCopyClick = useCallback(async () => {
     try {
-      if (user.zh.prompt) {
+      if (user[currentLanguage].prompt) {
         copy(userDescription);
       }
       const updatedCount = await updateCopyCount(user.id);
