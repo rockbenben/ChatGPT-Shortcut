@@ -2,17 +2,19 @@
 slug: /
 ---
 
-# AiShort Introductioon
+# AiShort Introduction
 
-🚀 **Simplified process**: AiShort provides a quick command table that can quickly filter and search for prompts suitable for different scenarios, helping users simplify the usage process.
+🚀 **Streamlining Processes**: AiShort presents an accessible list of instructions, enabling swift sorting and search of pertinent prompts for various situations, thereby assisting users in refining their operational procedure.
 
-💻 **Amplify productivity**: By using optimized prompts, users can get more accurate and useful replies, thereby improving productivity.
+💻 **Enhancing Productivity**: Users can benefit from more precise and practical feedback by utilizing our optimized prompts, thus augmenting their productive efficiency.
 
-🎓 **Beginner-friendly**: Even beginners only need to copy the prompt, make slight modifications and send it to ChatGPT to obtain the specified output.
+🌍 **Optimization for Non-English Languages**: Even though prompts are primarily displayed in English, we have integrated translations in Chinese, Japanese, Korean, and other languages. Furthermore, we support default responses in the current language, making it easier for non-native English speakers to comprehend and utilize.
 
-🆕 **Regular updates**: The prompts of AiShort come from network selection, submissions and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are regularly updated to provide users with new prompts and ideas.
+🎓 **Novice-Friendly**: For beginners, by simply copying and slightly adjusting the prompts before sending them to ChatGPT, the desired output can be readily obtained.
 
-📦 **Ready-to-use**: <https://aishort.top/en/>
+🆕 **Regular Updates**: The prompts of AiShort are derived from meticulously curated online selections, user submissions, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are updated periodically to provide users with fresh prompts and intellectual stimulation.
+
+📦 **Ready to Use**: Visit us at <https://www.aishort.top/en/>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />

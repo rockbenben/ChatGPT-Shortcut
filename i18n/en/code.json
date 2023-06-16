@@ -751,5 +751,8 @@
   },
   "comments.info": {
     "message": "Kindly provide your opinions, thoughts, or insights regarding the given prompt in the space below."
+  },
+  "tooltip.switchLang": {
+    "message": "Click to toggle the display language."
   }
 }

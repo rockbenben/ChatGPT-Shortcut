@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "AI Short",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "ChatGPT Shortcuts",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.使用说明": {
+    "message": "사용 지침",
+    "description": "Navbar item with label 使用说明"
+  },
+  "item.label.浏览器扩展": {
+    "message": "브라우저 확장",
+    "description": "Navbar item with label 浏览器扩展"
+  },
+  "item.label.其他工具": {
+    "message": "기타 도구",
+    "description": "Navbar item with label 其他工具"
+  },
+  "item.label.反馈": {
+    "message": "피드백",
+    "description": "Navbar item with label 反馈"
+  },
+  "item.label.Chrome 扩展": {
+    "message": "크롬 확장 프로그램",
+    "description": "Navbar item with label Chrome 扩展"
+  },
+  "item.label.Edge 扩展": {
+    "message": "가장자리 확장",
+    "description": "Navbar item with label Edge 扩展"
+  },
+  "item.label.IMGPrompt": {
+    "message": "IMG 프롬프트",
+    "description": "Navbar item with label IMGPrompt"
+  },
+  "item.label.文字处理": {
+    "message": "워드 프로세싱",
+    "description": "Navbar item with label 文字处理"
+  },
+  "item.label.工具收藏": {
+    "message": "도구 모음",
+    "description": "Navbar item with label 工具收藏"
+  },
+  "item.label.Find on Product Hunt": {
+    "message": "Find on Product Hunt",
+    "description": "Navbar item with label Find on Product Hunt"
+  }
+}

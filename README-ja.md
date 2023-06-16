@@ -2,7 +2,7 @@
 ⚡️AI Short
 </h1>
 <p align="center">
-    English | <a href="./README.md">中文</a> | <a href="./README-ja.md">日本語</a> | <a href="./README-ko.md">한국어</a>
+    <a href="./README-en.md">English</a> | <a href="./README.md">中文</a> | 日本語 | <a href="./README-ko.md">한국어</a>
 </p>
 <p align="center">
     <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
@@ -10,27 +10,27 @@
 
 ## Why use AiShort?
 
-🚀 **Streamlining Processes**: AiShort presents an accessible list of instructions, enabling swift sorting and search of pertinent prompts for various situations, thereby assisting users in refining their operational procedure.
+🚀 **プロセスの効率化**: AiShort は、使用者が業務手順を洗練する助けとなる、多様な状況に対応した適切なプロンプトの簡潔な指示リストを提示します。
 
-💻 **Enhancing Productivity**: Users can benefit from more precise and practical feedback by utilizing our optimized prompts, thus augmenting their productive efficiency.
+💻 **生産性の向上**: 最適化されたプロンプトを利用することで、ユーザーはより正確で実用的なフィードバックを得ることができ、生産効率が向上します。
 
-🌍 **Optimization for Non-English Languages**: Even though prompts are primarily displayed in English, we have integrated translations in Chinese, Japanese, Korean, and other languages. Furthermore, we support default responses in the current language, making it easier for non-native English speakers to comprehend and utilize.
+🌍 **非英語言語向けの最適化**: プロンプトは主に英語で表示されますが、中国語、日本語、韓国語など他の言語への翻訳を統合しています。さらに、現在の言語でのデフォルトの応答をサポートしており、非英語母語話者が理解し利用するのを容易にします。
 
-🎓 **Novice-Friendly**: For beginners, by simply copying and slightly adjusting the prompts before sending them to ChatGPT, the desired output can be readily obtained.
+🎓 **初心者に優しい**: 初心者のために、プロンプトを単純にコピーし、ChatGPT に送る前にわずかに調整するだけで、求めている出力を容易に得ることができます。
 
-🆕 **Regular Updates**: The prompts of AiShort are derived from meticulously curated online selections, user submissions, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). They are updated periodically to provide users with fresh prompts and intellectual stimulation.
+🆕 **定期的な更新**: AiShort のプロンプトは、厳選されたオンラインの選択肢、ユーザーの提出、そして[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)から派生しています。これらは定期的に更新され、ユーザーに新鮮なプロンプトと知的刺激を提供します。
 
-📦 **Ready to Use**: Visit us at <https://www.aishort.top/en/>
+📦 **すぐに使用可能**: 以下の URL からご覧ください <https://www.aishort.top/ja/>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-User Manual: <https://www.aishort.top/docs/en/guides/getting-started>
+User Manual: <https://www.aishort.top/docs/ja/guides/getting-started>
 
 ## Browser Extension
 
-ChatGPT Shortcut is compatible with both Chrome and Edge, offering functionality akin to the web iteration and receiving periodic updates.
+ChatGPT Shortcut は Chrome と Edge の両方と互換性があり、ウェブ版と同等の機能を提供し、定期的に更新されます。
 
 <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
