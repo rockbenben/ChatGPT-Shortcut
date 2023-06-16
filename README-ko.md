@@ -26,7 +26,7 @@
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-User Manual: <https://www.aishort.top/docs/ko/guides/getting-started>
+사용 지침: <https://www.aishort.top/ko/docs/guides/getting-started>
 
 ## Browser Extension
 
@@ -38,45 +38,45 @@ ChatGPT 단축키는 Chrome 과 Edge 모두와 호환되며, 웹 버전과 동�
 <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
 
-## Deploy
+## 배포
 
-### Deploy With Vercel
+### Vercel 을 통한 배포
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fgh-pages)
 
-### Installation
+### 설치
 
 ```shell
-# Installation
+# 설치하기
 yarn
 
-# Local Development
+# 로컬 개발 시작
 yarn start
 
-# Build: This command generates static content into the `build` directory
+# 빌드: 이 명령어는 `build` 디렉토리에 정적 컨텐츠를 생성합니다.
 yarn build
 ```
 
-## Synchronized Updates
+## 동기화된 업데이트
 
-If you have deployed your own project on Vercel with a single click, you might encounter an issue where updates are consistently indicated. This arises from Vercel's default behavior of creating a new project for you instead of forking the current project, thereby impeding proper update detection. It is recommended to follow the subsequent steps for re-deployment:
+한 번의 클릭으로 Vercel 에서 자체 프로젝트를 배포했다면, 일관성 있게 업데이트가 표시되는 문제에 부딪힐 수 있습니다. 이는 Vercel 이 기본적으로 현재 프로젝트를 포크하는 대신 새 프로젝트를 생성하기 때문에 발생하며, 이로 인해 적절한 업데이트 탐지가 방해받을 수 있습니다. 재배포를 위해 아래 단계를 따르는 것이 권장됩니다:
 
-1. Remove the previous repository.
-2. Utilize the "fork" button located in the upper right corner of the page to fork the current project.
-3. On the [Vercel New Project page](https://vercel.com/new), select the recently forked project from the Import Git Repository section and proceed with deployment.
+1. 이전 저장소를 제거합니다.
+2. 페이지 우측 상단에 위치한 "포크" 버튼을 이용해 현재 프로젝트를 포크합니다.
+3. [Vercel New Project page](https://vercel.com/new)에서 Import Git Repository 섹션을 통해 최근에 포크한 프로젝트를 선택하고 배포를 진행합니다.
 
-### Automatic Updates
+### 자동 업데이트
 
-> In the event of encountering an error during the execution of Upstream Sync, manually perform a single Sync Fork.
+> Upstream Sync 실행 중 오류가 발생한 경우, 수동으로 Sync Fork 를 한 번 실행하세요.
 
-Once you have forked the project, due to GitHub restrictions, it is necessary to manually enable Workflows on the Actions page of your forked project and activate the Upstream Sync Action. Upon activation, updates will be automatically executed on a daily basis.
+프로젝트를 포크한 후, GitHub 의 제한으로 인해, 포크한 프로젝트의 Actions 페이지에서 Workflows 를 수동으로 활성화하고 Upstream Sync Action 을 활성화해야 합니다. 활성화 후, 업데이트는 매일 자동으로 실행됩니다.
 
-![Automatic Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+![자동 업데이트](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
-![Enabling Automatic Updates](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+![자동 업데이트 활성화](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
-### Manual Updates
+### 수동 업데이트
 
-If you wish to manually update immediately, you can refer to [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to learn how to synchronize the forked project with the upstream code.
+즉시 수동 업데이트를 원한다면, [GitHub 의 문서](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)를 참조하여 포크한 프로젝트를 업스트림 코드와 동기화하는 방법을 알아볼 수 있습니다.
 
-Feel free to show support for this project by giving it a star/follow, or by following the author, to stay informed about timely notifications regarding new feature updates.
+이 프로젝트에 대한 지원을 보여주기 위해 별표/팔로우를 하거나, 작성자를 팔로우하여 새로운 기능 업데이트에 대한 실시간 알림을 받을 수 있습니다.

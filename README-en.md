@@ -26,7 +26,7 @@
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-User Manual: <https://www.aishort.top/docs/en/guides/getting-started>
+User Manual: <https://www.aishort.top/en/docs/guides/getting-started>
 
 ## Browser Extension
 

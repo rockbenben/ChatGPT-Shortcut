@@ -39,6 +39,4 @@ yarn build
 
 즉시 수동 업데이트를 원한다면, [GitHub 의 문서](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)를 참조하여 포크한 프로젝트를 업스트림 코드와 동기화하는 방법을 알아볼 수 있습니다.
 
-이 프로젝트에 대한 지원을 보여주기 위해 별표/팔로우를 하거나, 작성자를 팔로우
-
-하여 새로운 기능 업데이트에 대한 실시간 알림을 받을 수 있습니다.
+이 프로젝트에 대한 지원을 보여주기 위해 별표/팔로우를 하거나, 작성자를 팔로우하여 새로운 기능 업데이트에 대한 실시간 알림을 받을 수 있습니다.
