@@ -1,69 +1,69 @@
 {
   "常用": {
-    "message": "일반적으로 사용되는"
+    "message": "일반적으로 사용"
   },
   "showcase.tag.favorite.description": {
-    "message": "가장 많이 사용되는 프롬프트 단어"
+    "message": "가장 많이 사용되는 단서 단어"
   },
   "写作辅助": {
-    "message": "쓰기 지원"
+    "message": "필기 보조 도구"
   },
   "showcase.tag.write.description": {
-    "message": "작문을 마무리하는 데 도움이 되도록 에세이의 문법과 스타일을 다듬습니다."
+    "message": "글쓰기에 도움이 되는 문법과 스타일에 대한 수정 사항"
   },
   "文章/报告": {
-    "message": "기사/보고서"
+    "message": "기사 / 보고서"
   },
   "showcase.tag.article.description": {
-    "message": "소설, 에세이, 뉴스, 대본, 보고서 및 특정 스타일의 기타 기사"
+    "message": "소설, 에세이, 뉴스, 연극, 보고서 및 특정 스타일의 기타 기사"
   },
   "IT/编程": {
     "message": "IT/프로그래밍"
   },
   "showcase.tag.code.description": {
-    "message": "프로그래밍 중이지만 ChatGPT 는 필요에 따라 프로그래밍 단계 또는 간단한 샘플 코드에 대한 제안을 제공합니다. 이러한 코드는 테스트로만 사용할 수 있으며 여전히 프로그래머가 수정해야 합니다."
+    "message": "프로그래밍이라고는 하지만, ChatGPT 는 필요에 따라 프로그래밍 단계에 대한 조언을 제공하거나 테스트용으로만 사용할 수 있고 프로그래머가 수정해야 하는 간단한 샘플 코드를 제공합니다."
   },
   "AI": {
-    "message": "일체 포함"
+    "message": "AI"
   },
   "showcase.tag.ai.description": {
-    "message": "일체 포함"
+    "message": "AI"
   },
   "生活质量": {
     "message": "삶의 질"
   },
   "showcase.tag.living.description": {
-    "message": "피트니스, 영양, 셰프, 메이크업, 스타일링"
+    "message": "피트니스, 영양, 요리사, 메이크업, 스타일링"
   },
   "趣味知识": {
-    "message": "흥미로운 지식"
+    "message": "재미있는 사실"
   },
   "showcase.tag.interesting.description": {
-    "message": "흥미로운 지식"
+    "message": "재미있는 사실"
   },
   "自助百科": {
-    "message": "자조 백과사전"
+    "message": "셀프 도움말 백과사전"
   },
   "showcase.tag.life.description": {
-    "message": "생활지식/자조백과사전"
+    "message": "생활 지식 / 자조 백과사전"
   },
   "心理/社交": {
-    "message": "심리적/사회적"
+    "message": "심리/사회"
   },
   "showcase.tag.social.description": {
-    "message": "심리적/사회적"
+    "message": "심리/사회"
   },
   "哲学/宗教": {
-    "message": "철학/종교"
+    "message": "철학 / 종교"
   },
   "showcase.tag.philosophy.description": {
-    "message": "철학/종교"
+    "message": "철학 / 종교"
   },
   "发散思维": {
-    "message": "발산적 사고"
+    "message": "사고의 다양화"
   },
   "showcase.tag.mind.description": {
-    "message": "질문하기, 생각하기, 연결하기, 유도하기"
+    "message": "질문하기, 생각하기, 연결하기, 요약하기"
   },
   "教育/学生": {
     "message": "교육/학생"
@@ -72,10 +72,10 @@
     "message": "학생 교육 관련 콘텐츠"
   },
   "学术/教师": {
-    "message": "학업/교사"
+    "message": "학술/교사"
   },
   "showcase.tag.academic.description": {
-    "message": "학계 또는 학교와 관련된 인물 및 사물"
+    "message": "학업 또는 학교와 관련된 사람 및 사물"
   },
   "游戏": {
     "message": "게임"
@@ -90,40 +90,40 @@
     "message": "도구"
   },
   "终端/解释器": {
-    "message": "터미널/통역사"
+    "message": "단말기/통역사"
   },
   "showcase.tag.interpreter.description": {
-    "message": "터미널/통역사"
+    "message": "단말기/통역사"
   },
   "语言/翻译": {
-    "message": "언어 번역"
+    "message": "언어 / 번역"
   },
   "showcase.tag.language.description": {
-    "message": "언어 생성, 변환, 번역, 인식 등을 위한 다양한 도구"
+    "message": "언어 생성, 변환, 번역, 인식 등을 위한 다양한 도구를 제공합니다."
   },
   "辩论/演讲": {
-    "message": "토론/연설"
+    "message": "토론 / 프레젠테이션"
   },
   "showcase.tag.speech.description": {
-    "message": "토론/연설"
+    "message": "토론 / 프레젠테이션"
   },
   "点评/评鉴": {
-    "message": "검토/평가"
+    "message": "댓글/리뷰"
   },
   "showcase.tag.comments.description": {
-    "message": "검토/평가"
+    "message": "댓글/리뷰"
   },
   "文本/词语": {
-    "message": "텍스트/단어"
+    "message": "텍스트 / 단어"
   },
   "showcase.tag.text.description": {
-    "message": "텍스트/단어"
+    "message": "텍스트 / 단어"
   },
   "企业职位": {
     "message": "기업 채용"
   },
   "showcase.tag.company.description": {
-    "message": "일반 기업 채용"
+    "message": "일반 비즈니스 내 직책"
   },
   "SEO": {
     "message": "SEO"
@@ -138,10 +138,10 @@
     "message": "의사"
   },
   "金融顾问": {
-    "message": "금융 설계사"
+    "message": "재무 고문"
   },
   "showcase.tag.finance.description": {
-    "message": "금융 업계의 일자리"
+    "message": "금융 부문 채용 정보"
   },
   "音乐": {
     "message": "음악"
@@ -150,127 +150,127 @@
     "message": "음악"
   },
   "行业顾问": {
-    "message": "산업 컨설턴트"
+    "message": "업계 전문가"
   },
   "showcase.tag.professional.description": {
-    "message": "변호사, 차장인 등 전문지식을 요하는 직위"
+    "message": "변호사, 티 마스터 등 전문 지식이 필요한 직군"
   },
   "投稿": {
-    "message": "기여하다"
+    "message": "기여"
   },
   "showcase.tag.contribute.description": {
-    "message": "모든 사람의 기여는 우리가 아이디어를 개발하는 데 도움이 될 수 있습니다."
+    "message": "아이디어 개발에 도움을 줄 수 있는 분들의 기여"
   },
   "Personal": {
-    "message": "개인의"
+    "message": "개인"
   },
   "showcase.tag.personal.description": {
-    "message": "개인적인 비생산적 사용, 참고용으로만 사용"
+    "message": "개인적인 비생산적 사용, 정보 제공 목적으로만 사용"
   },
   "Latest": {
     "message": "최신"
   },
   "showcase.tag.latest.description": {
-    "message": "최근 추가된 힌트"
+    "message": "최근 추가된 단서 단어"
   },
   "feedback.title": {
     "message": "피드백 및 제안"
   },
   "feedback.description": {
-    "message": "귀하의 피드백은 우리에게 중요합니다!"
+    "message": "여러분의 피드백은 저희에게 소중합니다!"
   },
   "feedback.welcome": {
     "message": "피드백 환영",
     "description": "The welcome title on the feedback page"
   },
   "feedback.paragraph": {
-    "message": "ChatGPT Shortcut 을 지속적으로 개선하고 개인의 효율성과 생산성을 높이기 위한 제안, 아이디어 및 즉각적인 말을 환영합니다. 버그를 보고해야 하는 경우 문제의 링크 및 관련 상황을 제공하십시오. Prompt Word 콘텐츠의 경우 여러 언어로 콘텐츠를 제출하거나 Prompt Word 에 대한 생각을 간단히 설명할 수 있습니다. 우리는 생각을 확장하거나 고품질의 결과물을 만들어내는 즉각적인 단어를 찾습니다. 제출한 큐 단어가 게시되면 귀하의 기여가 페이지에 추가됩니다. 기여자의 이름 (사용자 이름) 을 검색하여 해당 항목을 찾을 수 있습니다.",
+    "message": "ChatGPT 바로가기를 지속적으로 개선하고 개인의 효율성과 생산성을 높일 수 있도록 제안, 아이디어, 당부의 말을 자유롭게 보내주세요. 버그에 대한 피드백이 필요한 경우, 문제가 발생한 위치와 주변 상황에 대한 링크를 제공해 주세요. 프롬프트 콘텐츠의 경우, 여러 언어로 콘텐츠를 제출하거나 프롬프트에 대한 아이디어를 간단히 설명할 수 있습니다. 저희는 생각을 확장하거나 고품질의 결과물을 만들어내는 프롬프트를 찾고 있습니다. 제출한 프롬프트가 게시되면 해당 페이지에 여러분의 기여가 추가됩니다. 기여자의 이름 (사용자 아이디) 을 검색하면 해당 항목을 찾을 수 있습니다.",
     "description": "The main paragraph on the feedback page"
   },
   "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT 바로가기) - 생산성을 두 배로 높여주는 사용하기 쉬운 ChatGPT 바로가기 테이블! 태그 필터링, 키워드 검색 및 원클릭 복사 프롬프트"
+    "message": "AiShort(ChatGPT 바로 가기) - 생산성을 배가시켜주는 사용하기 쉬운 ChatGPT 바로 가기 명령 양식! 태그 필터링, 키워드 검색 및 원클릭 복사 프롬프트"
   },
   "让生产力加倍的 ChatGPT 快捷指令": {
     "message": "생산성을 두 배로 높이는 ChatGPT 단축키"
   },
   "showcase.filters.resultCount": {
-    "message": "{sitesCount} 프롬프트",
+    "message": "{사이트 수} 프롬프트",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "showcase.filters.title": {
     "message": "필터"
   },
   "个人提示词": {
-    "message": "개인 프롬프트"
+    "message": "개인 알림"
   },
   "你的提示词": {
-    "message": "당신의 프롬프트"
+    "message": "프롬프트 단어"
   },
   "showcase.searchBar.placeholder": {
     "message": "프롬프트 검색..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 검색 결과가 없습니다. 검색어를 짧게 입력하세요."
+    "message": "😒 검색 결과가 없습니다. 검색어를 줄여주세요."
   },
   "showcase.favoritesList.title": {
-    "message": "우리가 가장 좋아하는 것"
+    "message": "즐겨 찾기"
   },
   "showcase.usersList.allUsers": {
     "message": "모든 프롬프트"
   },
   "message.resetPassword.success": {
-    "message": "비밀번호 재설정 성공!"
+    "message": "비밀번호 재설정에 성공했습니다!"
   },
   "error.resetPassword": {
-    "message": "비밀번호 재설정 오류:"
+    "message": "비밀번호 재설정 중 오류가 발생했습니다."
   },
   "message.resetPassword.error": {
-    "message": "암호 재설정에 실패했습니다. 나중에 다시 시도하십시오."
+    "message": "비밀번호 재설정에 실패했습니다. 나중에 다시 시도하세요."
   },
   "input.resetPassword.code": {
     "message": "재설정 코드를 입력하세요!"
   },
   "placeholder.resetPassword.code": {
-    "message": "재설정 코드"
+    "message": "코드 재설정"
   },
   "input.newPassword": {
-    "message": "새로운 비밀번호를 입력해주세요!"
+    "message": "새 비밀번호를 입력하세요!"
   },
   "placeholder.newPassword": {
     "message": "새 비밀번호"
   },
   "input.confirmPassword": {
-    "message": "새 비밀번호를 확인해주세요!"
+    "message": "새 비밀번호를 확인해 주세요!"
   },
   "placeholder.confirmPassword": {
     "message": "새 비밀번호 확인"
   },
   "button.resetPassword": {
-    "message": "암호를 재설정"
+    "message": "비밀번호 재설정"
   },
   "input.rules.username": {
-    "message": "사용자 이름 또는 등록된 이메일 주소를 입력하세요!"
+    "message": "사용자 이름 또는 등록된 이메일을 입력하세요!"
   },
   "input.rules.password": {
-    "message": "비밀번호를 입력해주세요!"
+    "message": "비밀번호를 입력하세요!"
   },
   "input.rules.email": {
-    "message": "이메일을 입력해주세요!"
+    "message": "이메일을 입력하세요!"
   },
   "message.error": {
-    "message": "항목 제출에 실패했습니다. 나중에 다시 시도하십시오."
+    "message": "워드 제출에 실패했습니다. 나중에 다시 시도하세요."
   },
   "message.loginSuccess": {
-    "message": "성공적 로그인!"
+    "message": "로그인 성공!"
   },
   "message.registerSuccess": {
     "message": "등록 성공!"
   },
   "message.forgotPassword": {
-    "message": "비밀번호 재설정을 위한 이메일이 귀하의 사서함으로 전송되었습니다."
+    "message": "비밀번호 재설정을 위한 이메일이 회원님의 이메일 주소로 전송되었습니다."
   },
   "input.username": {
-    "message": "사용자 이름/사서함"
+    "message": "사용자 이름/이메일"
   },
   "input.password": {
     "message": "비밀번호"
@@ -279,19 +279,19 @@
     "message": "로그인"
   },
   "button.forgotPassword": {
-    "message": "비밀번호를 잊어버리다"
+    "message": "비밀번호를 잊어버리셨나요?"
   },
   "input.register.username": {
     "message": "사용자 이름"
   },
   "input.email": {
-    "message": "이메일을 입력해주세요!"
+    "message": "이메일을 입력하세요!"
   },
   "agreement.rules": {
-    "message": "이용 전 이용약관 및 개인정보취급방침 동의"
+    "message": "이용하기 전에 서비스 약관 및 개인정보처리방침에 동의해야 합니다."
   },
   "agreement.text": {
-    "message": "동의하려면 여기를 클릭하십시오"
+    "message": "동의하려면 여기를 클릭하세요."
   },
   "agreement.terms": {
     "message": "서비스 약관"
@@ -300,13 +300,13 @@
     "message": "그리고"
   },
   "agreement.policy": {
-    "message": "개인 정보 정책"
+    "message": "개인정보 보호정책"
   },
   "button.register": {
-    "message": "등록하다"
+    "message": "등록"
   },
   "placeholder.email": {
-    "message": "우편"
+    "message": "사서함"
   },
   "button.sendResetEmail": {
     "message": "재설정 이메일 보내기"
@@ -315,43 +315,43 @@
     "message": "로그인"
   },
   "tabs.register": {
-    "message": "등록하다"
+    "message": "등록"
   },
   "tabs.forgotPassword": {
-    "message": "비밀번호를 잊어버리다"
+    "message": "비밀번호를 잊어버리셨나요?"
   },
   "card.welcome": {
     "message": "환영"
   },
   "已复制": {
-    "message": "복사"
+    "message": "복사됨"
   },
   "复制": {
-    "message": "복사"
+    "message": "복제"
   },
   "tooltip.switchLang": {
-    "message": "표시 언어를 전환하려면 클릭하세요."
+    "message": "클릭하여 표시 언어 전환"
   },
   "comments.info": {
-    "message": "이 프롬프트 단어에 대한 귀하의 의견, 생각 또는 공유를 아래에 회신해 주십시오."
+    "message": "이 메시지에 대한 의견, 생각 또는 공유 내용을 아래에 댓글로 남겨 주세요."
   },
   "message.changePassword.success": {
-    "message": "비밀번호 재설정 완료!"
+    "message": "비밀번호 변경 성공!"
   },
   "error.changePassword": {
-    "message": "비밀번호 변경 오류:"
+    "message": "비밀번호 변경 중 오류가 발생했습니다."
   },
   "message.changePassword.error": {
-    "message": "비밀번호 수정에 실패했습니다. 나중에 다시 시도해 주세요."
+    "message": "비밀번호 변경에 실패했습니다. 나중에 다시 시도하세요."
   },
   "message.forgotPassword.success": {
-    "message": "비밀번호 재설정 이메일을 보냈습니다!"
+    "message": "비밀번호 재설정 이메일이 전송되었습니다!"
   },
   "error.forgotPassword": {
-    "message": "비밀번호 분실 이메일 전송 오류:"
+    "message": "비밀번호 분실 이메일 전송 중 오류가 발생했습니다."
   },
   "message.forgotPassword.error": {
-    "message": "비밀번호 재설정 이메일을 보내지 못했습니다. 나중에 다시 시도해 주세요."
+    "message": "비밀번호 재설정 이메일 전송에 실패했습니다. 나중에 다시 시도하세요."
   },
   "message.loading": {
     "message": "로드 중..."
@@ -360,7 +360,7 @@
     "message": "비밀번호 변경"
   },
   "input.currentPassword": {
-    "message": "현재 비밀번호를 입력해주세요!"
+    "message": "현재 비밀번호를 입력하세요!"
   },
   "placeholder.currentPassword": {
     "message": "현재 비밀번호"
@@ -369,10 +369,10 @@
     "message": "비밀번호 변경"
   },
   "label.forgotPassword": {
-    "message": "비밀번호를 잊어버리다"
+    "message": "비밀번호를 잊어버리셨나요?"
   },
   "link.home": {
-    "message": "귀국"
+    "message": "맨 위로 가기"
   },
   "title.userInfo": {
     "message": "사용자 정보"
@@ -381,10 +381,10 @@
     "message": "사용자 이름:"
   },
   "userInfo.email": {
-    "message": "우편:"
+    "message": "이메일:"
   },
   "message.success": {
-    "message": "항목이 성공적으로 제출되었습니다!"
+    "message": "단어가 성공적으로 제출되었습니다!"
   },
   "message.deletePrompt.confirm.title": {
     "message": "삭제 확인"
@@ -396,7 +396,7 @@
     "message": "프롬프트가 성공적으로 삭제되었습니다!"
   },
   "message.deletePrompt.error": {
-    "message": "메시지를 삭제하지 못했습니다. 나중에 다시 시도해 주세요."
+    "message": "메시지를 삭제하지 못했습니다. 나중에 다시 시도하세요."
   },
   "tooltip.deleteprompt": {
     "message": "삭제"
@@ -405,64 +405,64 @@
     "message": "삭제"
   },
   "tooltip.updateprompt": {
-    "message": "개정하다"
+    "message": "수정 사항"
   },
   "link.updateprompt": {
-    "message": "개정하다"
+    "message": "수정 사항"
   },
   "modal.updateprompt.title": {
     "message": "현재 프롬프트 업데이트"
   },
   "message.addprompt.requiredTitle": {
-    "message": "프롬프트 단어 제목을 입력하십시오!"
+    "message": "큐 제목을 입력하세요!"
   },
   "input.addprompt.title": {
-    "message": "프롬프트 단어 이름"
+    "message": "큐 단어 이름"
   },
   "message.addprompt.requiredDescription": {
-    "message": "프롬프트 단어 내용을 입력하십시오!"
+    "message": "프롬프트의 내용을 입력하세요!"
   },
   "input.addprompt.description": {
-    "message": "신속한 단어 콘텐츠"
+    "message": "프롬프트의 내용"
   },
   "input.addprompt.remark": {
-    "message": "프롬프트 워드 기능 (옵션)"
+    "message": "프롬프트 역할 (필수 사항 아님)"
   },
   "input.addprompt.notes": {
-    "message": "비고 (선택 사항): 여기에서 프롬프트 단어의 다른 언어 버전뿐만 아니라 프롬프트 단어의 출처에 대한 설명을 제공할 수 있습니다. 또한 프롬프트 단어를 확장하기 위한 아이디어나 요구 사항이 있으면 여기에 설명하십시오."
+    "message": "참고 (필수 입력 사항은 아님): 여기에 프롬프트의 출처와 프롬프트의 다른 언어 버전에 대한 설명을 입력할 수 있습니다. 또한 프롬프트에 대한 아이디어나 추가 요청이 있는 경우 여기에 표시해 주세요."
   },
   "message.addprompt.submission": {
-    "message": "당사는 귀하가 제출한 프롬프트 단어를 적절하게 수정 및 번역하고 공개 페이지에서 공유하고 항목에 귀하의 사용자 이름을 기록할 수 있습니다. 여러분의 공유와 이해에 감사드립니다."
+    "message": "트위터에서는 제출된 힌트를 적절히 변경하고 번역하여 공개 페이지에 사용자 이름과 함께 공유할 수 있습니다. 여러분의 공유와 이해에 감사드립니다."
   },
   "button.updateprompt": {
-    "message": "프롬프트 업데이트"
+    "message": "업데이트 프롬프트"
   },
   "message.success1": {
-    "message": "추가된 사용자 정의 프롬프트를 보려면 &quot;Your Prompts&quot; 탭을 클릭하십시오."
+    "message": "추가된 사용자 지정 프롬프트를 보려면 '사용자 지정 프롬프트' 탭을 클릭합니다."
   },
   "link.user": {
     "message": "사용자 인터페이스"
   },
   "button.logout": {
-    "message": "로그 아웃"
+    "message": "취소"
   },
   "link.addprompt": {
     "message": "사용자 지정 프롬프트 추가"
   },
   "modal.addprompt.title": {
-    "message": "프롬프트 공유 (이 콘텐츠는 &quot;귀하의 프롬프트 단어&quot; 탭에 나타납니다)"
+    "message": "공유 프롬프트 (이 콘텐츠는 '내 프롬프트' 탭에 표시됨)"
   },
   "button.addPrompt": {
     "message": "프롬프트 추가"
   },
   "showcase.header.button": {
-    "message": "🙏 프롬프트 단어를 추가하십시오"
+    "message": "🙏 큐 단어를 추가하세요."
   },
   "点击移除收藏": {
-    "message": "즐겨찾기를 제거하려면 클릭하세요."
+    "message": "컬렉션을 제거하려면 클릭"
   },
   "收藏": {
-    "message": "모으다"
+    "message": "컬렉션"
   },
   "theme.ErrorPageContent.title": {
     "message": "페이지에 오류가 발생하였습니다.",
@@ -500,6 +500,10 @@
     "message": "주의",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "맨 위로 스크롤하기",
+    "description": "The ARIA label for the back to top button"
+  },
   "theme.blog.archive.title": {
     "message": "게시물 목록",
     "description": "The page & hero title of the blog archive page"
@@ -507,10 +511,6 @@
   "theme.blog.archive.description": {
     "message": "게시물 목록",
     "description": "The page & hero description of the blog archive page"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "맨 위로 스크롤하기",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "블로그 게시물 목록 탐색",
@@ -560,13 +560,13 @@
     "message": "밝은 모드",
     "description": "The name for the light color mode"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} 항목",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} 항목",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "문서 페이지",
@@ -643,10 +643,6 @@
     "message": "최근 블로그 문서 둘러보기",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "줄 바꿈 전환",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
   "theme.CodeBlock.copied": {
     "message": "복사했습니다",
     "description": "The copied button label on code blocks"
@@ -659,6 +655,10 @@
     "message": "복사",
     "description": "The copy button label on code blocks"
   },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "줄 바꿈 전환",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
   "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
     "message": "접을 수 있는 사이드바 분류 '{label}' 접기 (펼치기)",
     "description": "The ARIA label to toggle the collapsible sidebar category"
@@ -667,13 +667,13 @@
     "message": "Main",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "이 페이지에서",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
     "message": "언어",
     "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "이 페이지에서",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readMore": {
     "message": "자세히 보기",
@@ -707,13 +707,13 @@
     "message": "Close navigation bar",
     "description": "The ARIA label for close button of mobile sidebar"
   },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← 메인 메뉴로 돌아가기",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "사이드바 열기",

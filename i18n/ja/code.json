@@ -1,23 +1,197 @@
 {
+  "常用": {
+    "message": "一般的な使用方法"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "最も多く使用されたキュー・ワード"
+  },
+  "写作辅助": {
+    "message": "ライティングエイド"
+  },
+  "showcase.tag.write.description": {
+    "message": "文法やスタイルのタッチアップで、ライティングに役立てます"
+  },
+  "文章/报告": {
+    "message": "記事・レポート"
+  },
+  "showcase.tag.article.description": {
+    "message": "小説、エッセイ、ニュース、演劇、レポートなど、一定のスタイルを持つ記事"
+  },
+  "IT/编程": {
+    "message": "IT・プログラミング"
+  },
+  "showcase.tag.code.description": {
+    "message": "プログラミングとありますが、ChatGPT では、必要に応じてプログラミングの手順をアドバイスしたり、テストとしてしか使えない簡単なサンプルコードで、やはりプログラマーが修正する必要があるものを紹介しています。"
+  },
+  "AI": {
+    "message": "エーアイ"
+  },
+  "showcase.tag.ai.description": {
+    "message": "エーアイ"
+  },
+  "生活质量": {
+    "message": "クオリティ・オブ・ライフ"
+  },
+  "showcase.tag.living.description": {
+    "message": "フィットネス、栄養学、シェフ、メイクアップ、スタイリング"
+  },
+  "趣味知识": {
+    "message": "ファンファクト"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "ファンファクト"
+  },
+  "自助百科": {
+    "message": "自己啓発百科事典"
+  },
+  "showcase.tag.life.description": {
+    "message": "生活知識／自己啓発百科事典"
+  },
+  "心理/社交": {
+    "message": "心理的／社会的"
+  },
+  "showcase.tag.social.description": {
+    "message": "心理的／社会的"
+  },
+  "哲学/宗教": {
+    "message": "哲学・宗教"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "哲学・宗教"
+  },
+  "发散思维": {
+    "message": "分散型思考"
+  },
+  "showcase.tag.mind.description": {
+    "message": "質問する、考える、連想する、要約する"
+  },
+  "教育/学生": {
+    "message": "教育・学生"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "学生教育に関する内容"
+  },
+  "学术/教师": {
+    "message": "アカデミック/ティーチャー"
+  },
+  "showcase.tag.academic.description": {
+    "message": "学業や学校に関する人・もの"
+  },
+  "游戏": {
+    "message": "ゲーム"
+  },
+  "showcase.tag.games.description": {
+    "message": "ゲーム"
+  },
+  "工具": {
+    "message": "ツール"
+  },
+  "showcase.tag.tool.description": {
+    "message": "ツール"
+  },
+  "终端/解释器": {
+    "message": "端末／インタープリター"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "端末／インタープリター"
+  },
+  "语言/翻译": {
+    "message": "言語／翻訳"
+  },
+  "showcase.tag.language.description": {
+    "message": "言語生成、変換、翻訳、認識などのための複数のツール。"
+  },
+  "辩论/演讲": {
+    "message": "討論会・発表会"
+  },
+  "showcase.tag.speech.description": {
+    "message": "討論会・発表会"
+  },
+  "点评/评鉴": {
+    "message": "コメント/レビュー"
+  },
+  "showcase.tag.comments.description": {
+    "message": "コメント/レビュー"
+  },
+  "文本/词语": {
+    "message": "テキスト／ワード"
+  },
+  "showcase.tag.text.description": {
+    "message": "テキスト／ワード"
+  },
+  "企业职位": {
+    "message": "コーポレート職"
+  },
+  "showcase.tag.company.description": {
+    "message": "一般事業における役職"
+  },
+  "SEO": {
+    "message": "SEO 対策"
+  },
+  "showcase.tag.seo.description": {
+    "message": "テキスト/キーワード展開生成"
+  },
+  "医生": {
+    "message": "ドクター"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "ドクター"
+  },
+  "金融顾问": {
+    "message": "ファイナンシャル・アドバイザー"
+  },
+  "showcase.tag.finance.description": {
+    "message": "金融業界の求人情報"
+  },
+  "音乐": {
+    "message": "音楽"
+  },
+  "showcase.tag.music.description": {
+    "message": "音楽"
+  },
+  "行业顾问": {
+    "message": "インダストリーアドバイザー"
+  },
+  "showcase.tag.professional.description": {
+    "message": "弁護士や茶道家など専門的な知識を必要とする職種"
+  },
+  "投稿": {
+    "message": "貢献度"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "アイデアの開発にご協力いただける方からの投稿"
+  },
+  "Personal": {
+    "message": "パーソナル"
+  },
+  "showcase.tag.personal.description": {
+    "message": "個人的な非生産的な使用、情報提供のみ"
+  },
+  "Latest": {
+    "message": "最新情報"
+  },
+  "showcase.tag.latest.description": {
+    "message": "最近追加されたキューワード"
+  },
   "feedback.title": {
-    "message": "フィードバックと提案"
+    "message": "ご意見・ご感想"
   },
   "feedback.description": {
-    "message": "あなたのフィードバックは私たちにとって重要です！"
+    "message": "お客様の声は、私たちにとって大切なものです！"
   },
   "feedback.welcome": {
     "message": "フィードバック歓迎",
     "description": "The welcome title on the feedback page"
   },
   "feedback.paragraph": {
-    "message": "ChatGPT ショートカットを継続的に改善し、個人の効率と生産性を向上させるために、提案、アイデア、即興の言葉を歓迎します。バグを報告する必要がある場合は、リンクと問題の関連状況を提供してください。プロンプト ワード コンテンツについては、複数の言語でコンテンツを送信したり、プロンプト ワードについての考えを単に説明したりすることができます。私たちは、思考を広げたり、質の高い成果を生み出したりする即効性のある言葉を探します。送信したキューワードが公開されると、投稿がページに追加されます。投稿者の名前 (ユーザー名) を検索すると、該当するエントリが見つかります。",
+    "message": "ChatGPT Shortcut を継続的に改善し、個人の効率と生産性を高めるために、提案、アイデア、促音語を自由に与えてください。バグに関するフィードバックが必要な場合は、問題が発生した場所とそれにまつわる状況へのリンクを提供してください。プロンプトの内容については、多言語で投稿することもできますし、プロンプトのアイデアを記述するだけでもかまいません。私たちは、思考を広げ、質の高いアウトプットを生み出すプロンプトを求めます。投稿したプロンプトが公開されると、あなたの投稿はページに追加されます。投稿者の名前（ユーザー名）を検索すると、該当するエントリーを見つけることができます。",
     "description": "The main paragraph on the feedback page"
   },
   "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT ショートカット) - 生産性を 2 倍にする使いやすい ChatGPT ショートカット テーブル！タグフィルタリング、キーワード検索、ワンクリックコピープロンプト"
+    "message": "AiShort (ChatGPT Shortcut) - 生産性を倍増させる、使いやすい ChatGPT ショートカットコマンドフォーム！タグフィルタリング、キーワード検索、ワンクリックでコピーできるプロンプト"
   },
   "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "生産性を 2 倍にする ChatGPT ショートカット"
+    "message": "生産性を倍増させる ChatGPT のショートカット"
   },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} プロンプト",
@@ -27,16 +201,16 @@
     "message": "フィルター"
   },
   "个人提示词": {
-    "message": "個人的なプロンプト"
+    "message": "パーソナルリマインダー"
   },
   "你的提示词": {
-    "message": "あなたのプロンプト"
+    "message": "あなたのプロンプトワード"
   },
   "showcase.searchBar.placeholder": {
-    "message": "プロンプトを検索..."
+    "message": "プロンプトを検索する..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 結果が見つかりませんでした。検索語を短くしてください"
+    "message": "😒 検索結果が見つかりません、検索語を短くしてください"
   },
   "showcase.favoritesList.title": {
     "message": "私たちのお気に入り"
@@ -45,232 +219,58 @@
     "message": "すべてのプロンプト"
   },
   "message.resetPassword.success": {
-    "message": "パスワードのリセットが成功しました。"
+    "message": "パスワードのリセットに成功しました！"
   },
   "error.resetPassword": {
-    "message": "パスワードのリセット中にエラーが発生しました："
+    "message": "パスワードの再設定に失敗しました。"
   },
   "message.resetPassword.error": {
-    "message": "パスワードのリセットに失敗しました。後でもう一度試してください"
+    "message": "パスワードのリセットに失敗しました、後でもう一度試してください"
   },
   "input.resetPassword.code": {
-    "message": "リセット コードを入力してください。"
+    "message": "リセットコードを入力してください！"
   },
   "placeholder.resetPassword.code": {
     "message": "リセットコード"
   },
   "input.newPassword": {
-    "message": "新しいパスワードを入力してください。"
+    "message": "新しいパスワードを入力してください！"
   },
   "placeholder.newPassword": {
-    "message": "新しいパスワード"
+    "message": "新パスワード"
   },
   "input.confirmPassword": {
-    "message": "新しいパスワードを確認してください。"
+    "message": "新しいパスワードを確認してください！"
   },
   "placeholder.confirmPassword": {
-    "message": "新しいパスワードを確認します"
+    "message": "新しいパスワードの確認"
   },
   "button.resetPassword": {
-    "message": "パスワードを再設定する"
-  },
-  "常用": {
-    "message": "よく使われる"
-  },
-  "showcase.tag.favorite.description": {
-    "message": "最もよく使われるプロンプトワード"
-  },
-  "写作辅助": {
-    "message": "筆記用具"
-  },
-  "showcase.tag.write.description": {
-    "message": "エッセイの文法とスタイルを磨き、文章を完成させましょう"
-  },
-  "文章/报告": {
-    "message": "論文・レポート"
-  },
-  "showcase.tag.article.description": {
-    "message": "小説、エッセイ、ニュース、脚本、レポート、その他一定のスタイルの記事"
-  },
-  "IT/编程": {
-    "message": "IT・プログラミング"
-  },
-  "showcase.tag.code.description": {
-    "message": "ChatGPT はプログラミングではありますが、必要に応じてプログラミング手順や簡単なサンプル コードを提案します。これらのコードはテストとしてのみ使用でき、プログラマーによる修正が必要です。"
-  },
-  "AI": {
-    "message": "AI"
-  },
-  "showcase.tag.ai.description": {
-    "message": "AI"
-  },
-  "生活质量": {
-    "message": "生活の質"
-  },
-  "showcase.tag.living.description": {
-    "message": "フィットネス、栄養、シェフ、メイクアップ、スタイリング"
-  },
-  "趣味知识": {
-    "message": "興味深い知識"
-  },
-  "showcase.tag.interesting.description": {
-    "message": "興味深い知識"
-  },
-  "自助百科": {
-    "message": "自助百科事典"
-  },
-  "showcase.tag.life.description": {
-    "message": "生活知識・自己啓発事典"
-  },
-  "心理/社交": {
-    "message": "心理的/社会的"
-  },
-  "showcase.tag.social.description": {
-    "message": "心理的/社会的"
-  },
-  "哲学/宗教": {
-    "message": "哲学/宗教"
-  },
-  "showcase.tag.philosophy.description": {
-    "message": "哲学/宗教"
-  },
-  "发散思维": {
-    "message": "多様な考え方"
-  },
-  "showcase.tag.mind.description": {
-    "message": "質問する、考える、結び付ける、誘導する"
-  },
-  "教育/学生": {
-    "message": "教育/学生"
-  },
-  "showcase.tag.pedagogy.description": {
-    "message": "学生教育に関する内容"
-  },
-  "学术/教师": {
-    "message": "学者/教師"
-  },
-  "showcase.tag.academic.description": {
-    "message": "学問や学校に関係する人や物"
-  },
-  "游戏": {
-    "message": "ゲーム"
-  },
-  "showcase.tag.games.description": {
-    "message": "ゲーム"
-  },
-  "工具": {
-    "message": "道具"
-  },
-  "showcase.tag.tool.description": {
-    "message": "道具"
-  },
-  "终端/解释器": {
-    "message": "端末/通訳"
-  },
-  "showcase.tag.interpreter.description": {
-    "message": "端末/通訳"
-  },
-  "语言/翻译": {
-    "message": "言語翻訳"
-  },
-  "showcase.tag.language.description": {
-    "message": "言語生成、変換、翻訳、認識などのためのさまざまなツール。"
-  },
-  "辩论/演讲": {
-    "message": "討論/スピーチ"
-  },
-  "showcase.tag.speech.description": {
-    "message": "討論/スピーチ"
-  },
-  "点评/评鉴": {
-    "message": "レビュー・評価"
-  },
-  "showcase.tag.comments.description": {
-    "message": "レビュー・評価"
-  },
-  "文本/词语": {
-    "message": "テキスト/単語"
-  },
-  "showcase.tag.text.description": {
-    "message": "テキスト/単語"
-  },
-  "企业职位": {
-    "message": "企業の仕事"
-  },
-  "showcase.tag.company.description": {
-    "message": "一般企業の仕事"
-  },
-  "SEO": {
-    "message": "SEO"
-  },
-  "showcase.tag.seo.description": {
-    "message": "テキスト/キーワード展開生成"
-  },
-  "医生": {
-    "message": "医者"
-  },
-  "showcase.tag.doctor.description": {
-    "message": "医者"
-  },
-  "金融顾问": {
-    "message": "財務顧問"
-  },
-  "showcase.tag.finance.description": {
-    "message": "金融業界の仕事"
-  },
-  "音乐": {
-    "message": "音楽"
-  },
-  "showcase.tag.music.description": {
-    "message": "音楽"
-  },
-  "行业顾问": {
-    "message": "業界コンサルタント"
-  },
-  "showcase.tag.professional.description": {
-    "message": "弁護士、お茶職人など専門知識を必要とする職種"
-  },
-  "投稿": {
-    "message": "助ける"
-  },
-  "showcase.tag.contribute.description": {
-    "message": "皆様からの貢献がアイデアの開発に役立ちます"
-  },
-  "Personal": {
-    "message": "個人的"
-  },
-  "showcase.tag.personal.description": {
-    "message": "個人的な非生産的な使用、参照のみ"
-  },
-  "Latest": {
-    "message": "最新"
-  },
-  "showcase.tag.latest.description": {
-    "message": "最近追加されたヒント"
+    "message": "パスワードの再設定"
   },
   "input.rules.username": {
-    "message": "ユーザー名または登録したメールアドレスを入力してください。"
+    "message": "ユーザー名または登録した E メールを入力してください！"
   },
   "input.rules.password": {
     "message": "パスワードを入力してください！"
   },
   "input.rules.email": {
-    "message": "メールアドレスを入力してください！"
+    "message": "E メールを入力してください！"
   },
   "message.error": {
-    "message": "エントリーの送信に失敗しました。後でもう一度お試しください。"
+    "message": "Word の送信に失敗しました、後でもう一度試してください"
   },
   "message.loginSuccess": {
-    "message": "ログイン成功！"
+    "message": "ログインに成功しました！"
   },
   "message.registerSuccess": {
-    "message": "登録完了！"
+    "message": "登録に成功しました！"
   },
   "message.forgotPassword": {
-    "message": "パスワードをリセットするための電子メールがメールボックスに送信されました。"
+    "message": "パスワードをリセットするためのメールが、お客様の E メールアドレスに送信されました。"
   },
   "input.username": {
-    "message": "ユーザー名/メールボックス"
+    "message": "ユーザー名/E メール"
   },
   "input.password": {
     "message": "パスワード"
@@ -279,19 +279,19 @@
     "message": "ログイン"
   },
   "button.forgotPassword": {
-    "message": "パスワードを忘れる"
+    "message": "パスワードをお忘れの方"
   },
   "input.register.username": {
     "message": "ユーザー名"
   },
   "input.email": {
-    "message": "あなたのメールアドレスを入力してください！"
+    "message": "E メールを入力してください！"
   },
   "agreement.rules": {
-    "message": "ご利用前に利用規約とプライバシーポリシーに同意してください"
+    "message": "ご利用前に利用規約とプライバシーポリシーへの同意が必要です"
   },
   "agreement.text": {
-    "message": "同意するにはここをクリックしてください"
+    "message": "同意する場合はこちらをクリック"
   },
   "agreement.terms": {
     "message": "利用規約"
@@ -306,7 +306,7 @@
     "message": "登録"
   },
   "placeholder.email": {
-    "message": "郵便"
+    "message": "メールボックス"
   },
   "button.sendResetEmail": {
     "message": "リセットメールを送信する"
@@ -318,151 +318,151 @@
     "message": "登録"
   },
   "tabs.forgotPassword": {
-    "message": "パスワードを忘れる"
+    "message": "パスワードをお忘れの方"
   },
   "card.welcome": {
-    "message": "いらっしゃいませ"
+    "message": "ようこそ"
   },
   "已复制": {
-    "message": "コピーされました"
+    "message": "コピペ"
   },
   "复制": {
-    "message": "コピー"
+    "message": "リプロダクト"
   },
   "tooltip.switchLang": {
-    "message": "クリックして表示言語を切り替えます"
+    "message": "クリックすると表示言語が切り替わります"
   },
   "comments.info": {
-    "message": "このプロンプトワードに関するコメント、ご意見、または共有を以下に返信してください。"
+    "message": "このプロンプトに対するあなたのコメント、考え、シェアを以下に返信してください。"
   },
   "message.changePassword.success": {
-    "message": "パスワードのリセットが完了しました！"
+    "message": "パスワードの変更に成功しました！"
   },
   "error.changePassword": {
-    "message": "パスワード変更時のエラー:"
+    "message": "パスワードの変更に失敗しました。"
   },
   "message.changePassword.error": {
-    "message": "パスワードの変更に失敗しました。後でもう一度試してください"
+    "message": "パスワードの変更に失敗しました、後でもう一度やり直してください"
   },
   "message.forgotPassword.success": {
-    "message": "パスワードリセットメールを送信しました！"
+    "message": "パスワードリセットメールが送信されました！"
   },
   "error.forgotPassword": {
-    "message": "パスワードを忘れた場合のメール送信エラー:"
+    "message": "パスワード忘れメール送信エラー。"
   },
   "message.forgotPassword.error": {
-    "message": "パスワードリセットメールの送信に失敗しました。後でもう一度試してください"
+    "message": "パスワードリセットメールの送信に失敗しました、後で再試行してください"
   },
   "message.loading": {
     "message": "読み込み中..."
   },
   "label.changePassword": {
-    "message": "パスワードを変更する"
+    "message": "パスワードの変更"
   },
   "input.currentPassword": {
-    "message": "現在のパスワードを入力してください。"
+    "message": "現在のパスワードを入力してください！"
   },
   "placeholder.currentPassword": {
     "message": "現在のパスワード"
   },
   "button.changePassword": {
-    "message": "パスワードを変更する"
+    "message": "パスワードの変更"
   },
   "label.forgotPassword": {
-    "message": "パスワードを忘れる"
+    "message": "パスワードをお忘れの方"
   },
   "link.home": {
-    "message": "帰宅"
+    "message": "このページのトップへ戻る"
   },
   "title.userInfo": {
     "message": "ユーザー情報"
   },
   "userInfo.username": {
-    "message": "ユーザー名："
+    "message": "ユーザー名です："
   },
   "userInfo.email": {
-    "message": "郵便："
+    "message": "電子メール"
   },
   "message.success": {
-    "message": "エントリーは無事に提出されました！"
+    "message": "ワードが正常に送信されました！"
   },
   "message.deletePrompt.confirm.title": {
     "message": "削除の確認"
   },
   "message.deletePrompt.confirm.content": {
-    "message": "このプロンプトを削除してもよろしいですか？"
+    "message": "このプロンプトを本当に削除していいのですか？"
   },
   "message.deletePrompt.success": {
-    "message": "プロンプトは正常に削除されました。"
+    "message": "プロンプトは正常に削除されました！"
   },
   "message.deletePrompt.error": {
-    "message": "プロンプトを削除できませんでした。後でもう一度お試しください。"
+    "message": "プロンプトの削除に失敗しました、後でもう一度試してください。"
   },
   "tooltip.deleteprompt": {
-    "message": "消去"
+    "message": "削除"
   },
   "link.deleteprompt": {
-    "message": "消去"
+    "message": "削除"
   },
   "tooltip.updateprompt": {
-    "message": "改訂"
+    "message": "修正内容"
   },
   "link.updateprompt": {
-    "message": "改訂"
+    "message": "修正内容"
   },
   "modal.updateprompt.title": {
     "message": "現在のプロンプトを更新する"
   },
   "message.addprompt.requiredTitle": {
-    "message": "プロンプトワードのタイトルを入力してください。"
+    "message": "キュータイトルを入力してください！"
   },
   "input.addprompt.title": {
-    "message": "プロンプトワード名"
+    "message": "キューワード名"
   },
   "message.addprompt.requiredDescription": {
-    "message": "プロンプトワードの内容を入力してください。"
+    "message": "プロンプトの内容を入力してください！"
   },
   "input.addprompt.description": {
-    "message": "プロンプトワードの内容"
+    "message": "プロンプトの内容"
   },
   "input.addprompt.remark": {
-    "message": "プロンプトワード機能（オプション）"
+    "message": "プロンプト役（必須ではありません）"
   },
   "input.addprompt.notes": {
-    "message": "備考 (オプション): ここでは、プロンプト単語のソースの説明と、プロンプト単語の他の言語バージョンを指定できます。また、プロンプトワードの拡充に関するアイデアやニーズがありましたら、こちらでご説明ください。"
+    "message": "備考（必須ではありません）：ここには、プロンプトのソースや、プロンプトの他の言語バージョンについての説明を記載することができます。また、プロンプトを拡張するためのアイデアや要望があれば、ここに記入してください。"
   },
   "message.addprompt.submission": {
-    "message": "当社は、お客様が送信したプロンプトワードを適切に修正および翻訳し、公開ページで共有し、エントリーにお客様のユーザー名を記録する場合があります。ご理解と共有をよろしくお願いいたします。"
+    "message": "投稿されたヒントに適切な変更や翻訳を加え、応募作品にユーザー名を記した上で公開ページで共有することがあります。ご理解とご協力をお願いいたします。"
   },
   "button.updateprompt": {
-    "message": "更新プロンプト"
+    "message": "アップデートプロンプト"
   },
   "message.success1": {
-    "message": "「プロンプト」タブをクリックして、追加されたカスタム プロンプトを表示します。"
+    "message": "タブ「Your Prompt」をクリックすると、追加されたカスタムプロンプトが表示されます。"
   },
   "link.user": {
     "message": "ユーザーインターフェース"
   },
   "button.logout": {
-    "message": "ログアウト"
+    "message": "キャンセルについて"
   },
   "link.addprompt": {
     "message": "カスタムプロンプトを追加する"
   },
   "modal.addprompt.title": {
-    "message": "プロンプトを共有 (このコンテンツは「プロンプトの言葉」タブに表示されます)"
+    "message": "プロンプトを共有する（このコンテンツは、「あなたのプロンプト」タブに表示されます。）"
   },
   "button.addPrompt": {
-    "message": "プロンプトの追加"
+    "message": "プロンプトを追加する"
   },
   "showcase.header.button": {
-    "message": "🙏 プロンプトの言葉を追加してください"
+    "message": "🙏 あなたのキューワードを追加してください。"
   },
   "点击移除收藏": {
-    "message": "クリックしてお気に入りを削除します"
+    "message": "クリックするとコレクションを削除します"
   },
   "收藏": {
-    "message": "収集"
+    "message": "コレクション"
   },
   "theme.ErrorPageContent.title": {
     "message": "エラーが発生しました",
@@ -500,6 +500,10 @@
     "message": "注意",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "先頭へ戻る",
+    "description": "The ARIA label for the back to top button"
+  },
   "theme.blog.archive.title": {
     "message": "アーカイブ",
     "description": "The page & hero title of the blog archive page"
@@ -507,10 +511,6 @@
   "theme.blog.archive.description": {
     "message": "アーカイブ",
     "description": "The page & hero description of the blog archive page"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "先頭へ戻る",
-    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "ブログ記事一覧のナビゲーション",
@@ -671,10 +671,6 @@
     "message": "このページの見出し",
     "description": "The label used by the button on the collapsible TOC component"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "他の言語",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.blog.post.readMore": {
     "message": "もっと見る",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -683,17 +679,17 @@
     "message": "{title}についてもっと見る",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "約{readingTime}分",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "他の言語",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "ホームページ",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
+  "theme.blog.post.readingTime.plurals": {
+    "message": "約{readingTime}分",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "サイドバーを隠す",
@@ -703,17 +699,13 @@
     "message": "サイドバーを隠す",
     "description": "The title attribute for collapse button of doc sidebar"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "Close navigation bar",
     "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← メインメニューに戻る",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "サイドバーを開く",
@@ -722,6 +714,14 @@
   "theme.docs.sidebar.expandButtonAriaLabel": {
     "message": "サイドバーを開く",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← メインメニューに戻る",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.IdealImageMessage.loading": {
     "message": "読み込み中...",
