@@ -68,27 +68,27 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
   const [paragraphText, setParagraphText] = useState(
-    isDescription ? user.prompt_zh : user.desc_zh
+    isDescription ? user.zh.prompt : user.zh.description
   );
 
   useEffect(() => {
-    setParagraphText(isDescription ? user.prompt_zh : user.desc_zh);
-  }, [isDescription, user.prompt_zh, user.desc_zh]);
+    setParagraphText(isDescription ? user.zh.prompt : user.zh.description);
+  }, [isDescription, user.zh.prompt, user.zh.description]);
 
   // 点击显示中文文本
   function handleParagraphClick() {
-    if (paragraphText === user.prompt_zh) {
-      setParagraphText(user.desc_zh);
+    if (paragraphText === user.zh.prompt) {
+      setParagraphText(user.zh.description);
     } else {
-      setParagraphText(user.prompt_zh);
+      setParagraphText(user.zh.prompt);
     }
   }
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
-  const userTitle = currentLanguage === "en" ? user.title_en : user.title_zh;
-  const userRemark = currentLanguage === "en" ? user.remark_en : user.remark_zh;
+  const userTitle = currentLanguage === "en" ? user.en.title : user.zh.title;
+  const userRemark = currentLanguage === "en" ? user.en.remark : user.zh.remark;
   const userDescription =
-    currentLanguage === "zh-Hans" ? paragraphText : user.prompt_en;
+    currentLanguage === "zh-Hans" ? paragraphText : user.en.prompt;
   //const image = getCardImage(user);
   // 复制
   const [copied, setShowCopied] = useState(false);
@@ -102,10 +102,10 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   const handleCopyClick = useCallback(async () => {
     try {
-      const updatedCount = await updateCopyCount(user.id);
-      if (user.prompt_zh) {
+      if (user.zh.prompt) {
         copy(userDescription);
       }
+      const updatedCount = await updateCopyCount(user.id);
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
       // Notify parent component to update the copy count

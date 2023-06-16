@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Card, Typography, Tag, Space, Badge, Row, Col } from "antd";
+import { Card, Typography, Tag, Tooltip, Space, Badge, Row, Col } from "antd";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -15,9 +15,9 @@ function PromptPage({ prompt }) {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
-  const title = currentLanguage === "en" ? prompt.title_en : prompt.title_zh;
+  const title = currentLanguage === "en" ? prompt.en.title : prompt.zh.title;
   const [description, setDescription] = useState(
-    currentLanguage === "zh" ? prompt.prompt_zh : prompt.prompt_en
+    currentLanguage === "zh" ? prompt.zh.prompt : prompt.en.prompt
   );
 
   // Switching between the native language and English
@@ -25,14 +25,14 @@ function PromptPage({ prompt }) {
     // If the current language is English, do nothing
     if (currentLanguage === "en") return;
 
-    if (description === prompt.prompt_zh) {
-      setDescription(prompt.desc_zh);
+    if (description === prompt.zh.prompt) {
+      setDescription(prompt.zh.description);
     } else {
-      setDescription(prompt.prompt_zh);
+      setDescription(prompt.zh.prompt);
     }
   }
 
-  const remark = currentLanguage === "en" ? prompt.remark_en : prompt.remark_zh;
+  const remark = currentLanguage === "en" ? prompt.en.remark : prompt.zh.remark;
   const weight = prompt.weight;
   const website = prompt.website;
   const tags = prompt.tags;
@@ -41,10 +41,10 @@ function PromptPage({ prompt }) {
   const [copied, setShowCopied] = useState(false);
   const handleCopyClick = useCallback(async () => {
     try {
-      await updateCopyCount(prompt.id);
       if (description) {
         copy(description);
       }
+      await updateCopyCount(prompt.id);
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
     } catch (error) {
@@ -97,13 +97,21 @@ function PromptPage({ prompt }) {
               }
             >
               <p className={styles.showcaseCardBody}>👉 {remark}</p>
-              <p
-                onClick={handleParagraphClick}
-                className={styles.showcaseCardBody}
-                style={{ cursor: "pointer" }}
+              <Tooltip
+                title={
+                  <Translate id="tooltip.switchLang">
+                    点击切换显示语言
+                  </Translate>
+                }
               >
-                {description}
-              </p>
+                <p
+                  onClick={handleParagraphClick}
+                  className={styles.showcaseCardBody}
+                  style={{ cursor: "pointer" }}
+                >
+                  {description}
+                </p>
+              </Tooltip>
               <Space wrap>
                 {tags.map((tag) => (
                   <Link to={"/?tags=" + tag}>
