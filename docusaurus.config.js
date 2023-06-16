@@ -71,6 +71,12 @@ const config = {
         disableInDev: true,
       }),
     ],
+    [
+      'docusaurus2-plugin-google-adsense',
+      {
+        dataAdClient: 'ca-pub-7585955822109216'
+      },
+    ],
     "./plugins/piwik.js",
     "./plugins/instantpage.js",
   ],
