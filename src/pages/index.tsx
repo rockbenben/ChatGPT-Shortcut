@@ -36,8 +36,8 @@ import ShowcaseTooltip from "./_components/ShowcaseTooltip";
 import ShowcaseCard from "./_components/ShowcaseCard";
 import UserStatus from "./_components/UserStatus";
 import UserPrompts from "./_components/UserPrompts";
-import { AuthContext, AuthProvider } from './_components/AuthContext';
-import { fetchAllCopyCounts} from "@site/src/api";
+import { AuthContext, AuthProvider } from "./_components/AuthContext";
+import { fetchAllCopyCounts } from "@site/src/api";
 
 import styles from "./styles.module.css";
 
@@ -90,16 +90,16 @@ function filterUsers(
   searchName: string | null
 ) {
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split('-')[0];
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   if (searchName) {
     const lowercaseSearchName = searchName.toLowerCase();
     // eslint-disable-next-line no-param-reassign
     // 搜索范围
-    users = users.filter((user) => 
+    users = users.filter((user) =>
       (
         user[currentLanguage].title +
         user[currentLanguage].prompt +
-        (user[currentLanguage].description ?? "")  +
+        (user[currentLanguage].description ?? "") +
         user[currentLanguage].remark
       )
         .toLowerCase()
@@ -173,13 +173,13 @@ function ShowcaseFilters({ onToggleDescription }) {
   const [showUserPrompts, setShowUserPrompts] = useState(false);
   const handleClick = () => {
     setShowUserPrompts(!showUserPrompts);
-  }
+  };
 
   const { userAuth } = useContext(AuthContext);
   const filteredUsers = useFilteredUsers();
   const siteCountPlural = useCallback(useSiteCountPlural(), []);
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split('-')[0];
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   return (
     <section className="container margin-top--l margin-bottom--lg">
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
@@ -189,13 +189,16 @@ function ShowcaseFilters({ onToggleDescription }) {
           </Heading>
           <span>{siteCountPlural(filteredUsers.length)}</span>
         </div>
-        {currentLanguage === "zh-Hans" && (
+        {["zh", "ja", "ko"].includes(currentLanguage) && (
           <button
             onClick={onToggleDescription}
             className={styles.onToggleButton}
-            title="更改提示词的显示语言，支持中英文的切换"
+            title={translate({
+              id: "toggle_prompt_language_description",
+              message: "更改提示词的显示语言，在英语和页面当前语言之间切换。",
+            })}
           >
-            切换 Prompt 语言
+            <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>
           </button>
         )}
         <ShowcaseFilterToggle />
@@ -203,20 +206,20 @@ function ShowcaseFilters({ onToggleDescription }) {
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
         {userAuth && (
-        <li className={styles.checkboxListItem} onClick={handleClick}>
-          <ShowcaseTooltip
-            text={translate({
-              message: "个人提示词",
-            })}
-            anchorEl="#__docusaurus"
-          >
-            <ShowcaseTagSelect
-              tag="yourprompt"
-              label={translate({
-                message: "你的提示词",
+          <li className={styles.checkboxListItem} onClick={handleClick}>
+            <ShowcaseTooltip
+              text={translate({
+                message:
+                  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
               })}
-              icon={
-                (
+              anchorEl="#__docusaurus"
+            >
+              <ShowcaseTagSelect
+                tag="yourprompt"
+                label={translate({
+                  message: "你的提示词",
+                })}
+                icon={
                   <span
                     style={{
                       backgroundColor: "#a2222a",
@@ -226,11 +229,11 @@ function ShowcaseFilters({ onToggleDescription }) {
                       marginLeft: 8,
                     }}
                   />
-                )
-              }
-            />
-          </ShowcaseTooltip>
-        </li>)}
+                }
+              />
+            </ShowcaseTooltip>
+          </li>
+        )}
         {TagList.map((tag, i) => {
           const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
@@ -277,7 +280,7 @@ function SearchBar() {
   const location = useLocation();
 
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split('-')[0];
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   const [value, setValue] = useState<string | null>(null);
   useEffect(() => {
     setValue(readSearchName(location.search));
@@ -349,7 +352,9 @@ function SearchBar() {
 function ShowcaseCards({ isDescription }) {
   const [copyCounts, setCopyCounts] = useState({});
   const { userAuth } = useContext(AuthContext);
-  const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
+  const [userLoves, setUserLoves] = useState(
+    () => userAuth?.data?.favorites?.loves || []
+  );
 
   // 当 userAuth 改变时，更新 userLoves 的值
   useEffect(() => {
@@ -367,9 +372,13 @@ function ShowcaseCards({ isDescription }) {
           }
         }
       }
-      if (userLoves && userLoves.includes(user.id) && !user.tags.includes("favorite")) {
+      if (
+        userLoves &&
+        userLoves.includes(user.id) &&
+        !user.tags.includes("favorite")
+      ) {
         //user.weight += 100000; // If user is loved by current user, add a very large number to its weight
-        user.tags.push("favorite"); 
+        user.tags.push("favorite");
       }
       if (user.tags.includes("favorite")) {
         favorites.push(user);
@@ -389,7 +398,7 @@ function ShowcaseCards({ isDescription }) {
       const counts = await fetchAllCopyCounts();
       setCopyCounts(counts);
     };
-  
+
     fetchData();
   }, []);
 
