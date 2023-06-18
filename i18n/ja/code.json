@@ -200,9 +200,6 @@
   "showcase.filters.title": {
     "message": "フィルター"
   },
-  "个人提示词": {
-    "message": "パーソナルリマインダー"
-  },
   "你的提示词": {
     "message": "あなたのプロンプトワード"
   },
@@ -751,5 +748,14 @@
   "theme.tags.tagsPageTitle": {
     "message": "タグ",
     "description": "The title of the tag list page"
+  },
+  "toggle_prompt_language_description": {
+    "message": "プロンプトの表示言語を変更する。英語と現在のページの言語が切り替わります。"
+  },
+  "toggle_prompt_language": {
+    "message": "プロンプト言語の切り替え"
+  },
+  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
+    "message": "追加・作成したパーソナルプロンプトは、AiShort 以外のプロンプトの保存に利用できます。"
   }
 }
