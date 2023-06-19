@@ -311,9 +311,10 @@ function SearchBar() {
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
     if (
-      currentLanguage === "zh" &&
+      ["zh", "ja", "ko"].includes(currentLanguage) &&
       (window.innerWidth >= 768 ||
-        (typeof chrome !== "undefined" && chrome.extension))
+        (typeof chrome !== "undefined" && chrome.extension) ||
+        (typeof browser !== "undefined" && browser.extension))
     ) {
       // PC 端或插件版
       setValue(e.currentTarget.value);
