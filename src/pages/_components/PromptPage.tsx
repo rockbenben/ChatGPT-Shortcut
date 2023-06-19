@@ -49,10 +49,17 @@ function PromptPage({ prompt }) {
     }
   }, [prompt.id, mainPrompt]);
 
+  let walineLang = currentLanguage;
+  if (["ko"].includes(currentLanguage)) {
+    walineLang = "en";
+  }
+
   const walineOptions = {
     serverURL: "https://waline.newzone.top",
     path: "/prompt/" + prompt.id,
-    lang: "en", // 设置为英文
+    login: "force",
+    wordLimit: 2000,
+    lang: walineLang, //支持 zh、ja、en
   };
 
   return (

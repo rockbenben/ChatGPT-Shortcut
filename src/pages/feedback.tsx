@@ -1,16 +1,24 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import { Waline } from "@site/src/components/waline";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Card, Typography } from 'antd';
 import Translate, { translate } from '@docusaurus/Translate';
 
 const { Title, Paragraph } = Typography;
 
 const FeedbackPage = () => {
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
+  
+  let walineLang = currentLanguage;
+  if (["ko"].includes(currentLanguage)) {
+    walineLang = "en";
+  }
   const walineOptions = {
     serverURL: 'https://waline.newzone.top',
     path: '/feedback',
-    lang: 'en', // 设置为英文
+    lang: walineLang, //支持 zh、ja、en
   };
   return (
     <Layout title={translate({ id: 'feedback.title', message: "反馈与建议" })} description={translate({ id: 'feedback.description', message: "您的反馈对我们很重要！" })}>

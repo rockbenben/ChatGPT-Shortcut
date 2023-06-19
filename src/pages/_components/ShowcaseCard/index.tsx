@@ -68,7 +68,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split('-')[0];
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
 
