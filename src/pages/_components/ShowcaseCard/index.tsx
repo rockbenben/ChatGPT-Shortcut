@@ -235,7 +235,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)}>
         <ShowcaseCardTag tags={user.tags} />
-        {user.website ? <a href={user.website} style={{ marginLeft: 'auto' }}><LinkOutlined /></a> : null}
+        {user.website ? <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto' }}><LinkOutlined /></a> : null}
       </ul>
     </li>
   );

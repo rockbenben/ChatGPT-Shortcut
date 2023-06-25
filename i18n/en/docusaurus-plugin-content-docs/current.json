@@ -3,12 +3,12 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.docs.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar docs"
+  },
   "sidebar.docs.category.Policies": {
     "message": "Policies",
     "description": "The label for category Policies in sidebar docs"
-  },
-  "sidebar.docs.category.指南": {
-    "message": "Guides",
-    "description": "The label for category 指南 in sidebar docs"
   }
 }

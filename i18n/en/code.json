@@ -445,26 +445,6 @@
     "message": "Expand sidebar",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
-  "theme.IdealImageMessage.loading": {
-    "message": "Loading...",
-    "description": "When the full-scale image is loading"
-  },
-  "theme.IdealImageMessage.load": {
-    "message": "Click to load{sizeMessage}",
-    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
-  },
-  "theme.IdealImageMessage.offline": {
-    "message": "Your browser is offline. Image not loaded",
-    "description": "When the user is viewing an offline document"
-  },
-  "theme.IdealImageMessage.404error": {
-    "message": "404. Image not found",
-    "description": "When the image is not found"
-  },
-  "theme.IdealImageMessage.error": {
-    "message": "Error. Click to reload",
-    "description": "When the image fails to load for unknown error"
-  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Try again",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"

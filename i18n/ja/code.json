@@ -717,26 +717,6 @@
     "message": "Toggle navigation bar",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
-  "theme.IdealImageMessage.loading": {
-    "message": "読み込み中...",
-    "description": "When the full-scale image is loading"
-  },
-  "theme.IdealImageMessage.load": {
-    "message": "クリックして読み込む{sizeMessage}",
-    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
-  },
-  "theme.IdealImageMessage.offline": {
-    "message": "オフライン中は画像は読み込まれません",
-    "description": "When the user is viewing an offline document"
-  },
-  "theme.IdealImageMessage.404error": {
-    "message": "画像が存在しません",
-    "description": "When the image is not found"
-  },
-  "theme.IdealImageMessage.error": {
-    "message": "画像の読み込みに失敗しました",
-    "description": "When the image fails to load for unknown error"
-  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "もう一度試してください",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"

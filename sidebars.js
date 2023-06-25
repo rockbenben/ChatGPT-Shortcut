@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "指南",
+      label: "Guides",
       link: {
         type: 'generated-index',
       },

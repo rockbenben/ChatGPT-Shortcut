@@ -1,14 +1,14 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "次のページ",
     "description": "The label for version current"
   },
-  "sidebar.docs.category.指南": {
-    "message": "Guides",
-    "description": "The label for category 指南 in sidebar docs"
+  "sidebar.docs.category.Guides": {
+    "message": "ガイド",
+    "description": "The label for category Guides in sidebar docs"
   },
   "sidebar.docs.category.Policies": {
-    "message": "Policies",
+    "message": "ポリシー",
     "description": "The label for category Policies in sidebar docs"
   }
 }

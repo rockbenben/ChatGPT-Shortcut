@@ -717,26 +717,6 @@
     "message": "사이드바 열기",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
-  "theme.IdealImageMessage.loading": {
-    "message": "로딩",
-    "description": "When the full-scale image is loading"
-  },
-  "theme.IdealImageMessage.load": {
-    "message": "클릭하여 {sizeMessage} 로드하기",
-    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
-  },
-  "theme.IdealImageMessage.offline": {
-    "message": "오프라인 상태. 이미지를 로드하지 않았습니다.",
-    "description": "When the user is viewing an offline document"
-  },
-  "theme.IdealImageMessage.404error": {
-    "message": "404. 이미지를 찾을 수 없습니다",
-    "description": "When the image is not found"
-  },
-  "theme.IdealImageMessage.error": {
-    "message": "에러. 클릭해서 새로고치기",
-    "description": "When the image fails to load for unknown error"
-  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "다시 시도해 보세요",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
