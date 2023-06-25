@@ -3078,10 +3078,10 @@ ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-antd@^5.5.1:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.6.1.tgz#ded8aa4431c41e09c7065f8202ba2f8fdd13153e"
-  integrity sha512-ZuY6MATmONRCrHL53BwM3t/GruwhNcPJsKtRQLyo6TWJFkdPBd4gASfHsgKWRlXnN767IG8ioxDS5hlV6GsGHg==
+antd@^5.6.3:
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.6.3.tgz#18ac8a7245949ff972a01fad7b841f9292c75597"
+  integrity sha512-SbZ1rX/eNXiSerF0V048wmh3tdTJdJpP4OsQS2sNH5f+WjZHgC92M7Qqp5YKOM4Rs8GYq63aePpk7SITl85Jqg==
   dependencies:
     "@ant-design/colors" "^7.0.0"
     "@ant-design/cssinjs" "^1.10.1"
@@ -3098,7 +3098,7 @@ antd@^5.5.1:
     dayjs "^1.11.1"
     qrcode.react "^3.1.0"
     rc-cascader "~3.12.0"
-    rc-checkbox "~3.0.0"
+    rc-checkbox "~3.1.0"
     rc-collapse "~3.7.0"
     rc-dialog "~9.1.0"
     rc-drawer "~6.2.0"
@@ -3112,7 +3112,7 @@ antd@^5.5.1:
     rc-motion "^2.7.3"
     rc-notification "~5.0.4"
     rc-pagination "~3.5.0"
-    rc-picker "~3.8.0"
+    rc-picker "~3.8.2"
     rc-progress "~3.4.1"
     rc-rate "~2.12.0"
     rc-resize-observer "^1.2.0"
@@ -8397,10 +8397,10 @@ rc-cascader@~3.12.0:
     rc-tree "~5.7.0"
     rc-util "^5.6.1"
 
-rc-checkbox@~3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/rc-checkbox/-/rc-checkbox-3.0.1.tgz#f978771329be339d479cd81465eb2e2f8c82bc87"
-  integrity sha512-k7nxDWxYF+jDI0ZcCvuvj71xONmWRVe5+1MKcERRR9MRyP3tZ69b+yUCSXXh+sik4/Hc9P5wHr2nnUoGS2zBjA==
+rc-checkbox@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/rc-checkbox/-/rc-checkbox-3.1.0.tgz#6be0d9d8de2cc96fb5e37f9036a1c3e360d0a42d"
+  integrity sha512-PAwpJFnBa3Ei+5pyqMMXdcKYKNBMS+TvSDiLdDnARnMJHC8ESxwPfm4Ao1gJiKtWLdmGfigascnCpwrHFgoOBQ==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.3.2"
@@ -8551,7 +8551,7 @@ rc-pagination@~3.5.0:
     classnames "^2.2.1"
     rc-util "^5.32.2"
 
-rc-picker@~3.8.0:
+rc-picker@~3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-3.8.2.tgz#1dc377a628cd94416e03974483daa36940a411b0"
   integrity sha512-q6jnMwBoOi6tFA4xohrKIhzq80Fc3dH0Kiw5VRx6Tf1db7y27PBFCLwu6f66niXidZKD8F4R0M9VIui/jkL4cg==
