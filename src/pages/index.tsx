@@ -8,6 +8,8 @@ import React, {
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { Button, Space } from "antd";
+import { ArrowDownOutlined } from "@ant-design/icons";
 
 import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
@@ -143,8 +145,8 @@ function useFilteredUsers() {
 
 function ShowcaseHeader() {
   return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">AI Short</Heading>
+    <section className={styles.mobileMarginAdjust + " text--center"}>
+      <Heading as="h1" className={styles.hideOnMobile}>AI Short</Heading>
       <p>{DESCRIPTION}</p>
       <UserStatus />
     </section>
@@ -187,7 +189,9 @@ function ShowcaseFilters({ onToggleDescription }) {
           <Heading as="h2">
             <Translate id="showcase.filters.title">Filters</Translate>
           </Heading>
-          <span>{siteCountPlural(filteredUsers.length)}</span>
+          <div className={styles.hideOnMobile}>
+            <span>{siteCountPlural(filteredUsers.length)}</span>
+          </div>
         </div>
         {["zh", "ja", "ko"].includes(currentLanguage) && (
           <button
@@ -201,7 +205,9 @@ function ShowcaseFilters({ onToggleDescription }) {
             <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>
           </button>
         )}
-        <ShowcaseFilterToggle />
+        <div className={styles.hideOnMobile}>
+          <ShowcaseFilterToggle />
+        </div>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
@@ -356,40 +362,47 @@ function ShowcaseCards({ isDescription }) {
   const [userLoves, setUserLoves] = useState(
     () => userAuth?.data?.favorites?.loves || []
   );
+  const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
   // 当 userAuth 改变时，更新 userLoves 的值
   useEffect(() => {
     setUserLoves(userAuth?.data?.favorites?.loves || []);
   }, [userAuth]);
 
-  const [favoriteUsers, otherUsers] = sortedUsers.reduce(
-    ([favorites, others], user) => {
-      //登陆后移除默认的收藏标签
-      if (userAuth) {
-        if (user.tags.includes("favorite")) {
-          const index = user.tags.indexOf("favorite");
-          if (index > -1) {
-            user.tags.splice(index, 1);
+  const [favoriteUsers, otherUsers] = useMemo(() => {
+    return sortedUsers.reduce(
+      ([favorites, others], user) => {
+        // 登陆后移除默认的收藏标签
+        if (userAuth) {
+          if (user.tags.includes("favorite")) {
+            const index = user.tags.indexOf("favorite");
+            if (index > -1) {
+              user.tags.splice(index, 1);
+            }
           }
         }
-      }
-      if (
-        userLoves &&
-        userLoves.includes(user.id) &&
-        !user.tags.includes("favorite")
-      ) {
-        //user.weight += 100000; // If user is loved by current user, add a very large number to its weight
-        user.tags.push("favorite");
-      }
-      if (user.tags.includes("favorite")) {
-        favorites.push(user);
-      } else {
-        others.push(user);
-      }
-      return [favorites, others];
-    },
-    [[], []]
-  );
+        if (
+          userLoves &&
+          userLoves.includes(user.id) &&
+          !user.tags.includes("favorite")
+        ) {
+          user.tags.push("favorite");
+        }
+        if (user.tags.includes("favorite")) {
+          favorites.push(user);
+        } else {
+          others.push(user);
+        }
+        return [favorites, others];
+      },
+      [[], []]
+    );
+  }, [sortedUsers, userAuth, userLoves]);
+  const ShowcaseCardMemo = React.memo(ShowcaseCard);
+
+  const displayedOtherUsers = showAllOtherUsers
+    ? otherUsers
+    : otherUsers.slice(0, 24);
 
   favoriteUsers.sort((a, b) => b.weight - a.weight);
   otherUsers.sort((a, b) => b.weight - a.weight);
@@ -449,7 +462,7 @@ function ShowcaseCards({ isDescription }) {
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCard
+                  <ShowcaseCardMemo
                     key={user.zh.title}
                     user={user}
                     isDescription={isDescription}
@@ -468,8 +481,8 @@ function ShowcaseCards({ isDescription }) {
               </Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {otherUsers.map((user) => (
-                <ShowcaseCard
+              {displayedOtherUsers.map((user) => (
+                <ShowcaseCardMemo
                   key={user.zh.title}
                   user={user}
                   isDescription={isDescription}
@@ -479,6 +492,18 @@ function ShowcaseCards({ isDescription }) {
                 />
               ))}
             </ul>
+            {!showAllOtherUsers && otherUsers.length > 50 && (
+              <Space direction="vertical" style={{ width: "100%" }}>
+                <Button
+                  size="large"
+                  icon={<ArrowDownOutlined />}
+                  onClick={() => setShowAllOtherUsers(true)}
+                  block
+                >
+                  <Translate>加载更多</Translate>
+                </Button>
+              </Space>
+            )}
           </div>
         </>
       ) : (
@@ -490,7 +515,7 @@ function ShowcaseCards({ isDescription }) {
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
-              <ShowcaseCard
+              <ShowcaseCardMemo
                 key={user.zh.title}
                 user={user}
                 isDescription={isDescription}

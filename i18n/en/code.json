@@ -737,5 +737,8 @@
   },
   "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
     "message": "Personal prompts you have added or made can be used to store prompts other than AiShort."
+  },
+  "加载更多": {
+    "message": "Load More"
   }
 }

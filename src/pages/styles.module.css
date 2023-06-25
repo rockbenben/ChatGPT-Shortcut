@@ -5,6 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+.hideOnMobile {
+  display: none;
+}
+
+.mobileMarginAdjust {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .hideOnMobile {
+    display: block;
+  }
+  .mobileMarginAdjust {
+    margin-top: var(--ifm-spacing-large);
+    margin-bottom: var(--ifm-spacing-large);
+  }
+}
+
 .filterCheckbox {
   justify-content: space-between;
 }
