@@ -39,6 +39,7 @@ import ShowcaseCard from "./_components/ShowcaseCard";
 import UserStatus from "./_components/UserStatus";
 import UserPrompts from "./_components/UserPrompts";
 import { AuthContext, AuthProvider } from "./_components/AuthContext";
+import ShareButtons from "./_components/ShareButtons";
 import { fetchAllCopyCounts } from "@site/src/api";
 
 import styles from "./styles.module.css";
@@ -146,7 +147,9 @@ function useFilteredUsers() {
 function ShowcaseHeader() {
   return (
     <section className={styles.mobileMarginAdjust + " text--center"}>
-      <Heading as="h1" className={styles.hideOnMobile}>AI Short</Heading>
+      <Heading as="h1" className={styles.hideOnMobile}>
+        AI Short
+      </Heading>
       <p>{DESCRIPTION}</p>
       <UserStatus />
     </section>
@@ -179,9 +182,16 @@ function ShowcaseFilters({ onToggleDescription }) {
 
   const { userAuth } = useContext(AuthContext);
   const filteredUsers = useFilteredUsers();
-  const siteCountPlural = useCallback(useSiteCountPlural(), []);
+  const siteCountPlural = useSiteCountPlural();
+
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
+
+  // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
+  const togglePromptLanguage = (
+    <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>
+  );
+
   return (
     <section className="container margin-top--l margin-bottom--lg">
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
@@ -202,7 +212,7 @@ function ShowcaseFilters({ onToggleDescription }) {
               message: "更改提示词的显示语言，在英语和页面当前语言之间切换。",
             })}
           >
-            <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>
+            {togglePromptLanguage}
           </button>
         )}
         <div className={styles.hideOnMobile}>
@@ -544,6 +554,11 @@ export default function Showcase(): JSX.Element {
           <ShowcaseFilters onToggleDescription={toggleDescription} />
           <ShowcaseCards isDescription={isDescription} />
         </AuthProvider>
+        <ShareButtons
+          shareUrl={window.location.href}
+          title={TITLE}
+          popOver={false}
+        />
       </main>
     </Layout>
   );

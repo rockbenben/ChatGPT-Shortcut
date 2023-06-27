@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -19,7 +19,7 @@
     "@docusaurus/preset-classic": "^2.4.1",
     "@mdx-js/react": "^1.6.22",
     "@popperjs/core": "^2.11.6",
-    "@waline/vercel": "^1.31.1",
+    "@waline/vercel": "^1.31.2",
     "antd": "^5.6.3",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
@@ -30,7 +30,8 @@
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.2",
-    "react-popper": "^2.2.5"
+    "react-popper": "^2.2.5",
+    "react-share": "^4.4.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.4.1",

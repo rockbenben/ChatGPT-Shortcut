@@ -10,6 +10,7 @@ import copy from "copy-text-to-clipboard";
 import styles from "./ShowcaseCard/styles.module.css";
 import { updateCopyCount } from "@site/src/api";
 import { Waline } from "@site/src/components/waline";
+import ShareButtons from './ShareButtons';
 
 function PromptPage({ prompt }) {
   const { i18n } = useDocusaurusContext();
@@ -132,6 +133,7 @@ function PromptPage({ prompt }) {
                   请在下方回复您对本提示词的意见、想法或分享。
                 </Translate>
               </Typography.Paragraph>{" "}
+              <ShareButtons shareUrl={window.location.href} title={`${title}: ${remark}`} popOver={true}/>
               <Waline {...walineOptions} />
             </Card>
           </li>
