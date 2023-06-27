@@ -1,6 +1,6 @@
 import React from "react";
-import { AuthProvider } from './_components/AuthContext';
-import UserProfile from './_components/UserProfile';
+import { AuthProvider } from "./_components/AuthContext";
+import UserProfile from "./_components/UserProfile";
 
 function UserPage() {
   return (

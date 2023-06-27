@@ -49,9 +49,8 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
           <Tooltip
             key={index}
             text={tagObject.description}
-            anchorEl="#__docusaurus"
-            id={id}
-          >
+            anchorEl='#__docusaurus'
+            id={id}>
             <TagComp key={index} {...tagObject} />
           </Tooltip>
         );
@@ -175,17 +174,16 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   }, [user.id, onLove, userAuth, refreshUserAuth]);
 
   return (
-    <li key={userTitle} className="card shadow--md">
+    <li key={userTitle} className='card shadow--md'>
       {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
         <Image img={image} alt={user.title} />
       </div> */}
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
-          <Heading as="h4" className={styles.showcaseCardTitle}>
+          <Heading as='h4' className={styles.showcaseCardTitle}>
             <Link
               href={"/prompt/" + user.id}
-              className={styles.showcaseCardLink}
-            >
+              className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>
@@ -194,10 +192,9 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </Heading>
           {user.tags.includes("favorite") && (
             <Tooltip
-              title={userAuth ? <Translate>点击移除收藏</Translate> : ""}
-            >
+              title={userAuth ? <Translate>点击移除收藏</Translate> : ""}>
               <div onClick={userAuth ? removeFavorite : null}>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
+                <FavoriteIcon svgClass={styles.svgIconFavorite} size='small' />
               </div>
             </Tooltip>
           )}
@@ -217,9 +214,8 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
                 "button button--secondary button--sm",
                 styles.showcaseCardSrcBtn
               )}
-              type="button"
-              onClick={handleLove}
-            >
+              type='button'
+              onClick={handleLove}>
               <Translate>收藏</Translate>
             </button>
           )}
@@ -228,9 +224,8 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
               "button button--secondary button--sm",
               styles.showcaseCardSrcBtn
             )}
-            type="button"
-            onClick={handleCopyClick}
-          >
+            type='button'
+            onClick={handleCopyClick}>
             {copied ? (
               <Translate>已复制</Translate>
             ) : (
@@ -242,16 +237,17 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
         <p
           onClick={handleParagraphClick}
           className={styles.showcaseCardBody}
-          style={{ cursor: "pointer" }}
-        >
+          style={{ cursor: "pointer" }}>
           {userDescription}
         </p>
       </div>
-      <ul className={clsx("card__footer", styles.cardFooter)} style={{listStyle: 'none'}}>
+      <ul
+        className={clsx("card__footer", styles.cardFooter)}
+        style={{ listStyle: "none" }}>
         <ShowcaseCardTag tags={user.tags} />
         {user.website ? (
           <li style={{ marginLeft: "auto" }}>
-            <a href={user.website} target="_blank" rel="noopener noreferrer">
+            <a href={user.website} target='_blank' rel='noopener noreferrer'>
               <LinkOutlined />
             </a>
           </li>

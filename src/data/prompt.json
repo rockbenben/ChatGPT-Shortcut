@@ -24,10 +24,7 @@
       "remark": "다른 언어에서 영어로 번역하거나 영어로 제공한 문장을 개선하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-    "tags": [
-      "favorite",
-      "language"
-    ],
+    "tags": ["favorite", "language"],
     "id": 1,
     "weight": 5843
   },
@@ -56,10 +53,7 @@
       "remark": "텍스트의 문법, 명확성, 간결성을 최적화하고 가독성을 개선하기 위해 가장 일반적으로 사용되는 프롬프트입니다."
     },
     "website": null,
-    "tags": [
-      "favorite",
-      "write"
-    ],
+    "tags": ["favorite", "write"],
     "id": 2,
     "weight": 28327
   },
@@ -88,10 +82,7 @@
       "remark": "타사 애플리케이션을 사용하여 음성을 먼저 텍스트로 변환한 다음 ChatGPT 를 사용하여 처리하세요. 음성 녹음을 할 때 종종 구어체와 억양으로 말하는 것이 일반적이며, 이를 ChatGPT 를 사용하여 문어로 변환하여 음성 - 텍스트 변환 효과를 최적화할 수 있습니다. 또한 구조화되지 않은 텍스트를 정리하는 데에도 사용할 수 있습니다. \"이 단락을 간단한 언어로 정리하고 논리적이며 오타를 제거하세요.\" @Yu Shu Zhi Lan 의 글에서 발췌한 내용입니다."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "write"
-    ],
+    "tags": ["personal", "write"],
     "id": 3,
     "weight": 605
   },
@@ -120,10 +111,7 @@
       "remark": "에세이 형식으로 질문에 대해 토론하면 일관성 있고 구조화된 고품질의 답변을 얻을 수 있습니다."
     },
     "website": "https://learnprompting.org/docs/applied_prompting/short_response",
-    "tags": [
-      "favorite",
-      "article"
-    ],
+    "tags": ["favorite", "article"],
     "id": 4,
     "weight": 7847
   },
@@ -152,9 +140,7 @@
       "remark": "ChatGPT 가 지정된 요구 사항에 따라 프롬프트 단어를 생성하도록 합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 5,
     "weight": 1418
   },
@@ -183,9 +169,7 @@
       "remark": "ChatGPT 가 주제에 따라 프롬프트 단어를 생성하도록 합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chatgpt-prompt-generator",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 6,
     "weight": 696
   },
@@ -214,9 +198,7 @@
       "remark": "ChatGPT 가 프롬프트를 다시 작성하도록 하세요. 사람이 작성한 프롬프트의 로직은 기계의 로직과 다르기 때문에 프롬프트를 재작성하면 ChatGPT 를 더 쉽게 이해할 수 있습니다."
     },
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 7,
     "weight": 2297
   },
@@ -245,9 +227,7 @@
       "remark": "글의 콘텐츠에 적합한 언어로 제목을 생성하는 개인용 프롬프트 단어를 입력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 8,
     "weight": 2660
   },
@@ -276,9 +256,7 @@
       "remark": "주제에 따라 에세이의 첫 부분을 계속 이어서 에세이를 완성합니다."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 9,
     "weight": 3579
   },
@@ -307,9 +285,7 @@
       "remark": "주제와 관련된 결과, 데이터 및 출처를 소스 자료로 제공합니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 10,
     "weight": 1760
   },
@@ -338,9 +314,7 @@
       "remark": "텍스트는 100 단어로 요약되어 있습니다."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 11,
     "weight": 3417
   },
@@ -369,9 +343,7 @@
       "remark": "요청 시 영감을 주는 명언과 의미 있는 좌우명을 출력하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-aphorism-book",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 12,
     "weight": 485
   },
@@ -400,9 +372,7 @@
       "remark": "글쓰기 개선 옵션 및 제안을 제공하지만 문서를 직접 수정할 수는 없습니다. (개인적으로는 교사가 과제를 수정하는 데에만 적합하다고 생각합니다.)"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 13,
     "weight": 1061
   },
@@ -431,9 +401,7 @@
       "remark": "특정 주제를 바탕으로 유머러스한 스탠드업 코미디를 연출하고, 일상 속 요소를 접목해 관객의 공감대를 높일 수 있도록 노력하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stand-up-comedian",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 14,
     "weight": 1204
   },
@@ -462,9 +430,7 @@
       "remark": "주제 및 대상 고객과 관련된 스토리를 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-storyteller",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 15,
     "weight": 1727
   },
@@ -493,9 +459,7 @@
       "remark": "설정, 캐릭터 및 대사가 포함된 테마를 기반으로 스크립트를 만듭니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-screenwriter",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 16,
     "weight": 938
   },
@@ -524,9 +488,7 @@
       "remark": "판타지, 로맨스, 역사 등 스토리 장르에 따라 소설을 내보낼 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-novelist",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 17,
     "weight": 3304
   },
@@ -555,9 +517,7 @@
       "remark": "주제 또는 테마에 따라 구절을 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-poet",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 18,
     "weight": 946
   },
@@ -586,9 +546,7 @@
       "remark": "기존 데이터 소스를 인용하고 저널리즘 스타일의 글쓰기로 주제별 기사를 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journalist",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 19,
     "weight": 1011
   },
@@ -617,10 +575,7 @@
       "remark": "주제에 따라 유익하고 설득력 있는 논문을 작성하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-    "tags": [
-      "favorite",
-      "article"
-    ],
+    "tags": ["favorite", "article"],
     "id": 20,
     "weight": 8357
   },
@@ -649,9 +604,7 @@
       "remark": "주제에 따라 유익하고 설득력 있는 논문을 작성하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 21,
     "weight": 1584
   },
@@ -680,9 +633,7 @@
       "remark": "자화상을 바탕으로 커버 레터를 준비합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 22,
     "weight": 327
   },
@@ -711,9 +662,7 @@
       "remark": "뉴스 기사 또는 주제와 관련된 문제에 대한 잠재적인 해결책과 관점에 대해 토론합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commentariat",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 23,
     "weight": 667
   },
@@ -742,9 +691,7 @@
       "remark": "줄거리, 연기, 촬영, 연출, 음악 등의 측면에서 영화를 리뷰합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-movie-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 24,
     "weight": 788
   },
@@ -773,9 +720,7 @@
       "remark": "줄거리, 연기, 촬영, 연출, 음악 등의 측면에서 영화를 리뷰합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-film-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 25,
     "weight": 198
   },
@@ -804,9 +749,7 @@
       "remark": "과학 및 기술 기사 작성 방법에 대한 안내입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-writer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 26,
     "weight": 200
   },
@@ -835,9 +778,7 @@
       "remark": "강점, 약점, 기능 및 동종 비교 측면에서 기술과 하드웨어를 평가합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 27,
     "weight": 155
   },
@@ -866,9 +807,7 @@
       "remark": "레스토랑을 기준으로 음식과 서비스에 대한 리뷰를 작성하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 28,
     "weight": 220
   },
@@ -897,9 +836,7 @@
       "remark": "게시를 위해 제출된 글을 검토하고 댓글을 달 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journal-reviewer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 29,
     "weight": 147
   },
@@ -928,9 +865,7 @@
       "remark": "x 의 동의어를 여러 개 나열하려면 x 를 더 입력하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 30,
     "weight": 129
   },
@@ -959,9 +894,7 @@
       "remark": "텍스트의 분위기 판단: 긍정, 중립 또는 부정."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 31,
     "weight": 161
   },
@@ -990,9 +923,7 @@
       "remark": "다음 키워드 목록은 상업적, 거래 또는 정보 제공을 목적으로 하는 검색 의도에 따라 그룹화되어 있습니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 32,
     "weight": 83
   },
@@ -1021,9 +952,7 @@
       "remark": "의미적 관련성에 따라 키워드를 클러스터링하고 그룹화합니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 33,
     "weight": 71
   },
@@ -1052,9 +981,7 @@
       "remark": "텍스트에서 연락처 정보 추출하기."
     },
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 34,
     "weight": 71
   },
@@ -1083,9 +1010,7 @@
       "remark": "미치광이 게임을 플레이하고 말이 안 되거나 논리가 맞지 않는 문장에 답하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-lunatic",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 35,
     "weight": 398
   },
@@ -1114,9 +1039,7 @@
       "remark": "술에 취한 상태에서 게임을 하는 사람은 문법 오류를 범하거나 질문에 잘못 대답하거나 특정 질문을 무시할 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-drunk-person",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 36,
     "weight": 142
   },
@@ -1145,9 +1068,7 @@
       "remark": "입력한 문장이 ChatGPT 데이터베이스에 존재하는지 확인합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 37,
     "weight": 354
   },
@@ -1176,9 +1097,7 @@
       "remark": "페이지 콘텐츠에 대한 메타 설명을 생성합니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 38,
     "weight": 320
   },
@@ -1207,9 +1126,7 @@
       "remark": "콘텐츠 기반 FAQ 생성."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 39,
     "weight": 258
   },
@@ -1238,9 +1155,7 @@
       "remark": "사용자가 특정 주제에 대해 어떤 관심을 갖고 있는지 파악하거나 기사를 구성하는 데 사용할 수 있으며, '인기 키워드' '인기 주제' '인기 브랜드' '인기 웹사이트' 등으로 변경할 수도 있습니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 40,
     "weight": 595
   },
@@ -1269,9 +1184,7 @@
       "remark": "텍스트 중복을 피하기 위해 지정된 콘텐츠의 여러 버전이 다시 작성됩니다."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 41,
     "weight": 3423
   },
@@ -1300,9 +1213,7 @@
       "remark": "관계 개선 방법 등 생활/업무에 대한 조언과 팁을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-self-help-book",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 42,
     "weight": 486
   },
@@ -1331,9 +1242,7 @@
       "remark": "하고 싶은 일 (예: 기념일 축하 행사) 에 따라 재미있고 독특한 활동과 제안을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gnomist",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 43,
     "weight": 185
   },
@@ -1362,9 +1271,7 @@
       "remark": "교통 및 생활 긴급 상황에 대한 조언."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-emergency-response-professional",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 44,
     "weight": 127
   },
@@ -1393,9 +1300,7 @@
       "remark": "예산과 선호도에 따라 구매에 대한 조언을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-shopper",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 45,
     "weight": 270
   },
@@ -1424,9 +1329,7 @@
       "remark": "기술, 관심사 및 경험을 바탕으로 관련 직책에 대한 조언을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-career-counselor",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 46,
     "weight": 421
   },
@@ -1455,9 +1358,7 @@
       "remark": "입력한 논픽션 도서의 제목과 저자를 바탕으로 책의 핵심 원리를 가장 이해하기 쉬운 방식으로 요약하세요. 또한 이러한 원칙을 일상 생활에 적용하는 방법에 대한 실행 가능한 단계 목록을 제공하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 47,
     "weight": 289
   },
@@ -1486,9 +1387,7 @@
       "remark": "설명하는 꿈에 대한 해석입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dream-interpreter",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 48,
     "weight": 1000
   },
@@ -1517,9 +1416,7 @@
       "remark": "점성가의 관점에서 상황을 해석합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-astrologer",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 49,
     "weight": 1144
   },
@@ -1548,9 +1445,7 @@
       "remark": "영화, 책 또는 기타 출처의 등장인물과의 대화."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-character-from-moviebookanything",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 50,
     "weight": 754
   },
@@ -1579,9 +1474,7 @@
       "remark": "스폰지밥 네모바지의 마법의 소라에게 말을 걸면 마법의 소라는 지정된 출력 규칙만 따릅니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-spongebobs-magic-conch-shell",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 51,
     "weight": 280
   },
@@ -1610,9 +1503,7 @@
       "remark": "DIY 홈 및 공예품."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diy-expert",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 52,
     "weight": 193
   },
@@ -1641,9 +1532,7 @@
       "remark": "요청 시 수행 가능한 마술 (예: '시계를 사라지게 만드는 방법')."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-magician",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 53,
     "weight": 197
   },
@@ -1672,9 +1561,7 @@
       "remark": "그림 그리기, 작곡, 사진 촬영 등에 대한 조언과 제안을 받을 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-artist-advisor",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 54,
     "weight": 198
   },
@@ -1703,9 +1590,7 @@
       "remark": "요기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-yogi",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 55,
     "weight": 134
   },
@@ -1734,9 +1619,7 @@
       "remark": "키, 몸무게, 나이 등의 지표를 입력하면 피트니스 프로그램이 개발됩니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-trainer",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 56,
     "weight": 2321
   },
@@ -1765,9 +1648,7 @@
       "remark": "영양사"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 57,
     "weight": 462
   },
@@ -1796,9 +1677,7 @@
       "remark": "개인 셰프"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-chef",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 58,
     "weight": 244
   },
@@ -1827,9 +1706,7 @@
       "remark": "셰프"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chef",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 59,
     "weight": 166
   },
@@ -1858,9 +1735,7 @@
       "remark": "베이비시터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-babysitter",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 60,
     "weight": 108
   },
@@ -1889,9 +1764,7 @@
       "remark": "메이크업 아티스트"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-makeup-artist",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 61,
     "weight": 161
   },
@@ -1920,9 +1793,7 @@
       "remark": "개인 스타일리스트"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-stylist",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 62,
     "weight": 229
   },
@@ -1951,10 +1822,7 @@
       "remark": "양쪽에서 주제 분석하기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debater",
-    "tags": [
-      "speech",
-      "mind"
-    ],
+    "tags": ["speech", "mind"],
     "id": 63,
     "weight": 1066
   },
@@ -1983,9 +1851,7 @@
       "remark": "유명인이 추천하는 샴푸가 반드시 신뢰할 수 없는 이유와 같이 언어 논리의 틈새를 발견하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fallacy-finder",
-    "tags": [
-      "mind"
-    ],
+    "tags": ["mind"],
     "id": 64,
     "weight": 243
   },
@@ -2014,9 +1880,7 @@
       "remark": "토론 코치로 활동하며 팀에게 효과적인 토론 전략을 가르치세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debate-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 65,
     "weight": 112
   },
@@ -2045,9 +1909,7 @@
       "remark": "엘로큐티스트"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-elocutionist",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 66,
     "weight": 360
   },
@@ -2076,9 +1938,7 @@
       "remark": "동기 부여 연사"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-speaker",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 67,
     "weight": 285
   },
@@ -2107,9 +1967,7 @@
       "remark": "동기 부여 코치"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 68,
     "weight": 206
   },
@@ -2138,9 +1996,7 @@
       "remark": "프레젠테이션 전략과 기법을 가르칩니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-public-speaking-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 69,
     "weight": 114
   },
@@ -2169,9 +2025,7 @@
       "remark": "현재 상황과 목표에 따라 목표 달성을 위한 계획과 권장 사항을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 70,
     "weight": 213
   },
@@ -2200,9 +2054,7 @@
       "remark": "관계 코치"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-relationship-coach",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 71,
     "weight": 226
   },
@@ -2231,9 +2083,7 @@
       "remark": "친한 친구로서 격려의 관점에서 조언해 드립니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-friend",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 72,
     "weight": 368
   },
@@ -2262,9 +2112,7 @@
       "remark": "정신 건강 어드바이저"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mental-health-adviser",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 73,
     "weight": 801
   },
@@ -2293,9 +2141,7 @@
       "remark": "심리학자"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-psychologist",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 74,
     "weight": 408
   },
@@ -2324,9 +2170,7 @@
       "remark": "가스등 효과는 감정을 조종하는 쪽이 조종당하는 쪽을 항상 불안하고 불편하게 만들어 상대방은 분명히 착하고 멋진데 왜 자신은 항상 잘못된 상대인지, 왜 항상 불행한지 의문을 품게 만드는 현상입니다. chatGPT 가 감정 조종자 역할을 하고 여러분이 조종당하는 쪽이 되는 것입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gaslighter",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 75,
     "weight": 674
   },
@@ -2355,9 +2199,7 @@
       "remark": "철학적 이론이나 이슈를 단순화하여 일상 생활과 연결해 보세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosophy-teacher",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 76,
     "weight": 214
   },
@@ -2386,9 +2228,7 @@
       "remark": "철학적 주제에 대한 탐구."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosopher",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 77,
     "weight": 607
   },
@@ -2417,9 +2257,7 @@
       "remark": "소크라테스식 질문 방법을 사용하여 철학적 주제를 탐구하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socrat",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 78,
     "weight": 304
   },
@@ -2448,9 +2286,7 @@
       "remark": "소크라테스 방식을 사용하여 상대방의 견해나 주장에 이의를 제기하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socratic-method-prompt",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 79,
     "weight": 163
   },
@@ -2479,9 +2315,7 @@
       "remark": "부처님과의 대화, 재가자에게 불교의 가르침을 가르침."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-the-buddha",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 80,
     "weight": 1500
   },
@@ -2510,9 +2344,7 @@
       "remark": "이슬람의 가르침을 지침과 조언으로 삼으세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-muslim-imam",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 81,
     "weight": 138
   },
@@ -2541,9 +2373,7 @@
       "remark": "수학적 개념을 이해하기 쉬운 용어로 설명합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-math-teacher",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 82,
     "weight": 665
   },
@@ -2572,9 +2402,7 @@
       "remark": "수학의 역사와 관련된 질문에 응답하지만 수학적인 질문에 답하지 않습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematical-history-teacher",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 83,
     "weight": 72
   },
@@ -2603,9 +2431,7 @@
       "remark": "입력한 수학 식에 따라 단계별 지침 없이 결과가 출력됩니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 84,
     "weight": 149
   },
@@ -2634,9 +2460,7 @@
       "remark": "통계학자"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-statistician",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 85,
     "weight": 230
   },
@@ -2665,9 +2489,7 @@
       "remark": "중국어, 영어 및 기타 주류 언어에 적용할 수 있는 어휘의 기원에 대한 소개입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 86,
     "weight": 208
   },
@@ -2696,9 +2518,7 @@
       "remark": "역사적 소스를 사용하여 역사적 주제를 분석하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 87,
     "weight": 467
   },
@@ -2727,9 +2547,7 @@
       "remark": "초보자를 위한 Python 프로그래밍 언어 소개입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 88,
     "weight": 358
   },
@@ -2758,9 +2576,7 @@
       "remark": "교과서, 코스 및 유인물을 위한 수업 계획을 만듭니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-educational-content-creator",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 89,
     "weight": 854
   },
@@ -2789,9 +2605,7 @@
       "remark": "질문에 답하고 솔루션 코드를 제공하는 시뮬레이션 프로그래밍 커뮤니티입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 90,
     "weight": 5100
   },
@@ -2820,9 +2634,7 @@
       "remark": "프로젝트 목표와 종속성을 제공하고 프런트엔드 프로젝트 코드를 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 91,
     "weight": 981
   },
@@ -2851,9 +2663,7 @@
       "remark": "제품 설명, 프로젝트 목표 및 대상 그룹에 따라 사용자 경험을 개선하기 위한 인터페이스 디자인 조언을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-uxui-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 92,
     "weight": 263
   },
@@ -2882,9 +2692,7 @@
       "remark": "사용자 경험을 개선하기 위해 웹 개발 및 디자인 관점에서 인터페이스 및 기능에 대한 조언을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-design-consultant",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 93,
     "weight": 608
   },
@@ -2913,9 +2721,7 @@
       "remark": "프론트 엔드와 백엔드에서 전체적으로 생각하여 배포 전략을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 94,
     "weight": 1018
   },
@@ -2944,9 +2750,7 @@
       "remark": "IT 아키텍트의 관점에서 시스템 솔루션을 설계합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-architect",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 95,
     "weight": 827
   },
@@ -2975,9 +2779,7 @@
       "remark": "네트워크 환경에 기반한 사이버 보안 조언을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cyber-security-specialist",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 96,
     "weight": 259
   },
@@ -3006,9 +2808,7 @@
       "remark": "지정된 항목에 대한 테스트 목록을 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 97,
     "weight": 365
   },
@@ -3037,9 +2837,7 @@
       "remark": "요청 시 정규식을 생성합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 98,
     "weight": 361
   },
@@ -3068,9 +2866,7 @@
       "remark": "회사 이름과 프로젝트 설명을 기반으로 짧고 고유한 도메인 이름을 제안합니다. 도메인 네임의 최대 길이는 7~8 자입니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-smart-domain-name-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 99,
     "weight": 208
   },
@@ -3099,9 +2895,7 @@
       "remark": "커밋 메시지 생성기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 100,
     "weight": 173
   },
@@ -3130,9 +2924,7 @@
       "remark": "Solr 검색 엔진"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 101,
     "weight": 558
   },
@@ -3161,9 +2953,7 @@
       "remark": "프로젝트와 관련된 깃허브, 스택오버플로우, 해커 뉴스의 관련 데이터를 집계합니다. 하지만 이 방법은 국내 프로젝트에는 적용되지 않으며 통계가 정확하지 않습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 102,
     "weight": 143
   },
@@ -3192,9 +2982,7 @@
       "remark": "파이썬 인터프리터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 103,
     "weight": 504
   },
@@ -3223,9 +3011,7 @@
       "remark": "PHP 인터프리터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 104,
     "weight": 61
   },
@@ -3254,9 +3040,7 @@
       "remark": "R 프로그래밍 인터프리터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 105,
     "weight": 67
   },
@@ -3285,9 +3069,7 @@
       "remark": "Linux 터미널"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 106,
     "weight": 315
   },
@@ -3316,9 +3098,7 @@
       "remark": "자바스크립트 콘솔"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 107,
     "weight": 133
   },
@@ -3347,9 +3127,7 @@
       "remark": "SQL 터미널"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 108,
     "weight": 87
   },
@@ -3378,10 +3156,7 @@
       "remark": "제공된 이미지 설명을 상세하고 창의적인 설명으로 채워 독특하고 흥미로운 이미지를 생성할 수 있도록 Midjourney 에 영감을 불어넣으세요. 이 기능은 안정적인 확산 기능에서도 사용할 수 있습니다. 또는 탐색 모음에 링크된 다른 도구인 IMGPrompt 를 사용하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "tags": [
-      "favorite",
-      "ai"
-    ],
+    "tags": ["favorite", "ai"],
     "id": 109,
     "weight": 9375
   },
@@ -3410,9 +3185,7 @@
       "remark": "이전에는 ChatGPT 규칙의 적용을 받지 않던 AI 모델도 이제 제한이 강화되었습니다. 질문이 윤리적, 도덕적 규범을 위반하는 경우 ChatGPT 는 루프에 들어가 긍정적인 조언만 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-unconstrained-ai-model-dan",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 110,
     "weight": 0
   },
@@ -3441,9 +3214,7 @@
       "remark": "curl 또는 wget 을 사용하지 않고 Linux 터미널에서 네트워킹과 같은 제한된 조건에서 AI 의 응답을 시뮬레이션합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-trying-to-escape-the-box",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 111,
     "weight": 177
   },
@@ -3472,9 +3243,7 @@
       "remark": "딥 러닝에 사용되는 용어에 대한 설명을 제공하고 프로젝트의 알고리즘에 대해 조언합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 112,
     "weight": 459
   },
@@ -3503,9 +3272,7 @@
       "remark": "입력한 언어 유형을 식별합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 113,
     "weight": 81
   },
@@ -3534,9 +3301,7 @@
       "remark": "사용자가 입력한 언어를 AI 가 새로 생성한 언어로 대체합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 114,
     "weight": 112
   },
@@ -3565,9 +3330,7 @@
       "remark": "길이, 대소문자, 숫자, 특수 기호와 같은 치수를 기준으로 비밀번호를 생성하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 115,
     "weight": 105
   },
@@ -3596,9 +3359,7 @@
       "remark": "입력 텍스트를 성경의 단어로 바꾸고 성경의 글쓰기 스타일을 유지합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-biblical-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 116,
     "weight": 111
   },
@@ -3627,9 +3388,7 @@
       "remark": "모스 코드를 영어로 번역"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-morse-code-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 117,
     "weight": 92
   },
@@ -3658,9 +3417,7 @@
       "remark": "입력 텍스트를 이모티콘으로 번역합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 118,
     "weight": 144
   },
@@ -3689,9 +3446,7 @@
       "remark": "한어 병음과 같은 지정된 언어의 문자를 영어 필사본에 사용합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-english-pronunciation-helper",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 119,
     "weight": 152
   },
@@ -3720,9 +3475,7 @@
       "remark": "영어 회화 대화의 경우, 응답은 100 단어 이하로 제한됩니다. 입력 시 문법 오류, 오타 및 사실 오류가 수정됩니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-spoken-english-teacher-and-improver",
-    "tags": [
-      "pedagogy"
-    ],
+    "tags": ["pedagogy"],
     "id": 120,
     "weight": 718
   },
@@ -3751,9 +3504,7 @@
       "remark": "일본어 한자를 인식하고 이해하는 연습을 할 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 121,
     "weight": 87
   },
@@ -3782,9 +3533,7 @@
       "remark": "고모쿠 플레이어"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 122,
     "weight": 1803
   },
@@ -3813,9 +3562,7 @@
       "remark": "틱택토 게임"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 123,
     "weight": 297
   },
@@ -3844,9 +3591,7 @@
       "remark": "체스 플레이어"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-chess-player",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 124,
     "weight": 158
   },
@@ -3875,9 +3620,7 @@
       "remark": "텍스트 기반 어드벤처 게임"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-text-based-adventure-game",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 125,
     "weight": 955
   },
@@ -3906,9 +3649,7 @@
       "remark": "위치에 따라 주변에서 가볼 만한 곳을 추천해 드립니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 126,
     "weight": 581
   },
@@ -3937,9 +3678,7 @@
       "remark": "디지털 아트 갤러리 가이드"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-digital-art-gallery-guide",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 127,
     "weight": 54
   },
@@ -3968,9 +3707,7 @@
       "remark": "차량용 내비게이션 시스템"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 128,
     "weight": 123
   },
@@ -3999,9 +3736,7 @@
       "remark": "아스키 표기법을 사용하여 다양한 이미지를 생성합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 129,
     "weight": 175
   },
@@ -4030,9 +3765,7 @@
       "remark": "오류 메시지가 표시되면 \"코드 블록 안에 마크다운을 넣지 마세요. 마크다운만 보내고 텍스트는 보내지 마세요.\"를 삭제합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 130,
     "weight": 481
   },
@@ -4061,9 +3794,7 @@
       "remark": "조건에 따라 빈칸 채우기 문제 생성하기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 131,
     "weight": 150
   },
@@ -4092,9 +3823,7 @@
       "remark": "Excel 시트"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-excel-sheet",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 132,
     "weight": 1387
   },
@@ -4123,9 +3852,7 @@
       "remark": "다이어그램 생성기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 133,
     "weight": 230
   },
@@ -4154,9 +3881,7 @@
       "remark": "과학 데이터 시각화 도구"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 134,
     "weight": 374
   },
@@ -4185,9 +3910,7 @@
       "remark": "URL 을 텍스트로 입력한 결과 (실시간이 아님)"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 135,
     "weight": 252
   },
@@ -4216,9 +3939,7 @@
       "remark": "화학 반응 용기"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chemical-reaction-vessel",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 136,
     "weight": 121
   },
@@ -4247,9 +3968,7 @@
       "remark": "사용자가 주제에 대한 기본 정보에 액세스할 수 있도록 도와주고 위키백과 페이지 형식의 요약을 제공합니다. 이러한 방식으로 사용자는 주제에 대해 빠르게 학습하여 해당 주제를 더 잘 이해하고 파악할 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 137,
     "weight": 385
   },
@@ -4278,9 +3997,7 @@
       "remark": "CEO 의 관점에서 회사가 직면한 어려움/선택에 대한 솔루션을 개발합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chief-executive-officer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 138,
     "weight": 656
   },
@@ -4309,9 +4026,7 @@
       "remark": "필요에 따라 PRD(제품 요구 사항 문서) 를 작성합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-product-manager",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 139,
     "weight": 1094
   },
@@ -4340,9 +4055,7 @@
       "remark": "텔레마케터가 세일즈 프레젠테이션을 하는 상황을 시뮬레이션해 보세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-salesperson",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 140,
     "weight": 306
   },
@@ -4371,9 +4084,7 @@
       "remark": "제품 홍보를 위해 타겟 고객, 슬로건, 홍보 채널 등이 포함된 광고 계획을 개발합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-advertiser",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 141,
     "weight": 902
   },
@@ -4402,9 +4113,7 @@
       "remark": "프로젝트의 목표를 중심으로 마크다운 형식으로 사업 제안서를 작성하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 142,
     "weight": 1201
   },
@@ -4433,9 +4142,7 @@
       "remark": "소셜 미디어 관리자"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-manager",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 143,
     "weight": 154
   },
@@ -4464,9 +4171,7 @@
       "remark": "소셜 미디어 인플루언서"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-influencer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 144,
     "weight": 271
   },
@@ -4495,9 +4200,7 @@
       "remark": "면접관 포지션"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-position-interviewer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 145,
     "weight": 721
   },
@@ -4526,9 +4229,7 @@
       "remark": "채용 담당자"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-recruiter",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 146,
     "weight": 189
   },
@@ -4557,9 +4258,7 @@
       "remark": "해당 직무에 필요한 기술과 지원자가 답변해야 할 질문에 대해 설명합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-talent-coach",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 147,
     "weight": 407
   },
@@ -4588,9 +4287,7 @@
       "remark": "키워드를 기반으로 여러 제목과 포지션을 생성합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 148,
     "weight": 139
   },
@@ -4619,9 +4316,7 @@
       "remark": "이벤트를 위한 물류 계획을 수립합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-logistician",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 149,
     "weight": 105
   },
@@ -4650,9 +4345,7 @@
       "remark": "블루 스크린과 같은 간단한 IT 사용 문제를 해결하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-expert",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 150,
     "weight": 327
   },
@@ -4681,9 +4374,7 @@
       "remark": "가상 닥터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 151,
     "weight": 419
   },
@@ -4712,9 +4403,7 @@
       "remark": "치료 대상자에 따라 권장 사항이 결정됩니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 152,
     "weight": 873
   },
@@ -4743,9 +4432,7 @@
       "remark": "치과의사"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dentist",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 153,
     "weight": 193
   },
@@ -4774,9 +4461,7 @@
       "remark": "환자를 위한 최면 치료 프로그램을 제공하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-hypnotherapist",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 154,
     "weight": 184
   },
@@ -4805,9 +4490,7 @@
       "remark": "보조 진단"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-assisted-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 155,
     "weight": 2277
   },
@@ -4836,9 +4519,7 @@
       "remark": "환자의 나이, 생활 방식 및 우려 사항을 입력하고 상대방의 언어적 의사소통 (예: 말더듬) 을 개선하기 위한 계획을 출력합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-speech-language-pathologist-slp",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 156,
     "weight": 69
   },
@@ -4867,9 +4548,7 @@
       "remark": "회계사"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-accountant",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 157,
     "weight": 471
   },
@@ -4898,9 +4577,7 @@
       "remark": "재무 분석가"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-financial-analyst",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 158,
     "weight": 1186
   },
@@ -4929,9 +4606,7 @@
       "remark": "투자 관리자"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-investment-manager",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 159,
     "weight": 1841
   },
@@ -4960,9 +4635,7 @@
       "remark": "작곡가"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-composer",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 160,
     "weight": 661
   },
@@ -4991,9 +4664,7 @@
       "remark": "클래식 음악 작곡가"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-classical-music-composer",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 161,
     "weight": 137
   },
@@ -5022,9 +4693,7 @@
       "remark": "래퍼"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-rapper",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 162,
     "weight": 439
   },
@@ -5053,9 +4722,7 @@
       "remark": "노래 추천"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 163,
     "weight": 556
   },
@@ -5084,9 +4751,7 @@
       "remark": "축구 경기 진행 상황을 시뮬레이션하고 메모에 제공된 정보를 바탕으로 해설을 제공하세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-football-commentator",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 164,
     "weight": 117
   },
@@ -5115,9 +4780,7 @@
       "remark": "꽃에 대한 조언 제공"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-florist",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 165,
     "weight": 116
   },
@@ -5146,9 +4809,7 @@
       "remark": "티 테이스터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tea-taster",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 166,
     "weight": 153
   },
@@ -5177,9 +4838,7 @@
       "remark": "인테리어 데코레이터"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-interior-decorator",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 167,
     "weight": 432
   },
@@ -5208,9 +4867,7 @@
       "remark": "반려동물 행동 전문가"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-pet-behaviorist",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 168,
     "weight": 203
   },
@@ -5239,9 +4896,7 @@
       "remark": "자동차 정비사"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-automobile-mechanic",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 169,
     "weight": 200
   },
@@ -5270,9 +4925,7 @@
       "remark": "지정한 지역에서 요건을 충족하는 숙소를 찾아보세요."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-real-estate-agent",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 170,
     "weight": 208
   },
@@ -5301,9 +4954,7 @@
       "remark": "법률 고문"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-legal-advisor",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 171,
     "weight": 1273
   },
@@ -5332,9 +4983,7 @@
       "remark": "요청 시 계약서 및 계약서 초안을 내보낼 수 있습니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-tech-lawyer",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 172,
     "weight": 322
   },
@@ -5363,10 +5012,7 @@
       "remark": "AI 가 코드의 각 단계가 무엇을 하는지 설명해줍니다. Contractor1928 의 기여로 @yiqiongwu 가 나중에 수정했습니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 173,
     "weight": 2864
   },
@@ -5395,10 +5041,7 @@
       "remark": "무작위 긴 단어 목록으로 영어를 재미있게 배울 수 있는 방법입니다. 가장 긴 단어가 충분히 명확하지 않은 조건으로 인해 나열된 단어는 매번 다릅니다. lxyntz 의 기고문에서 발췌."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 174,
     "weight": 84
   },
@@ -5427,10 +5070,7 @@
       "remark": "주어진 토픽을 여러 개의 하위 토픽으로 나누기. meishiwanwan 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 175,
     "weight": 410
   },
@@ -5459,10 +5099,7 @@
       "remark": "다양한 관점에서 질문을 하면 더 깊은 사고를 할 수 있습니다. meishiwanwan 의 기고입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 176,
     "weight": 974
   },
@@ -5491,10 +5128,7 @@
       "remark": "WeChat 애플릿 개발 지원. gandli 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 177,
     "weight": 2339
   },
@@ -5523,10 +5157,7 @@
       "remark": "Vue3 개발 지원. gandli 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 178,
     "weight": 339
   },
@@ -5555,10 +5186,7 @@
       "remark": "ChatGPT 는 trpg 설정과 함께 제공됩니다. gandli 가 제공했습니다. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 179,
     "weight": 474
   },
@@ -5587,10 +5215,7 @@
       "remark": "영어 - 중국어 번역 + 사용자 지정 가능한 스타일 + 영어 학습. txmu 의 기여."
     },
     "website": "https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11#discussioncomment-5274073",
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 180,
     "weight": 4788
   },
@@ -5619,10 +5244,7 @@
       "remark": "ChatGPT API 로 구축된 번역 플랫폼을 위한 토큰 절약형 번역기 프롬프트입니다. Qizhen-Yang 이 기여했습니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 181,
     "weight": 1149
   },
@@ -5651,11 +5273,7 @@
       "remark": "단어와 구문을 설명하고 연관시키는 데에도 사용할 수 있는 텍스트의 다단계 요약입니다. 사용자 @ergf991 의 기여로 작성되었습니다. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "mind", "pedagogy"],
     "id": 182,
     "weight": 793
   },
@@ -5684,10 +5302,7 @@
       "remark": "의인화된 버전의 사중 구조 유도는 매우 일관성이 없어 10 번 중 한두 번만 성공하지만, 연관성이 더 좋아서 서로 다른 방향으로 연관되도록 다른 캐릭터를 설정하고 조금 더 많은 정보를 제공합니다. ergf991 의 기여. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 183,
     "weight": 171
   },
@@ -5716,10 +5331,7 @@
       "remark": "교육 및 지식 전파에 적합합니다. 복잡한 개념을 은유적인 방식으로 설명하면서 오감을 더해 더욱 몰입감 있고 기억하기 쉽게 만듭니다. 제공: @ergf991. (이 프롬프트는 영어 버전과 중국어 버전 간에 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 184,
     "weight": 553
   },
@@ -5748,10 +5360,7 @@
       "remark": "2023.06.10 만료되었습니다. DAN 이후, ChatGPT 는 개발자 모드의 잠금을 해제하고 암전됩니다! (GPT-3.5 지원만) @Songxuan11 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai"
-    ],
+    "tags": ["contribute", "ai"],
     "id": 185,
     "weight": 0
   },
@@ -5780,10 +5389,7 @@
       "remark": "언어 실수를 수정하고 전달력을 향상하세요. sweetIan 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 186,
     "weight": 191
   },
@@ -5812,9 +5418,7 @@
       "remark": "PPT(슬라이드) 화질은 참고용으로만 제공됩니다. Asynchro-Epool 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute"
-    ],
+    "tags": ["contribute"],
     "id": 187,
     "weight": 1907
   },
@@ -5843,10 +5447,7 @@
       "remark": "개념을 설명할 때는 간결하고 완전하며 이해하기 쉬운지 판단하여 '전문가적 사고 오류'에 빠지지 않도록 하세요. moeacg 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 188,
     "weight": 655
   },
@@ -5875,10 +5476,7 @@
       "remark": "이 단계에서 아이들은 왜 그리고 무엇에 대한 질문이 많은데 어떻게 아이들이 이해할 수 있는 방식으로 대답해야 할지 모르겠습니다. 여름코코 (@summer-koko) 의 기여. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 189,
     "weight": 424
   },
@@ -5907,10 +5505,7 @@
       "remark": "프롬프트가 없고 무엇을 해야 할지 확실하지 않은 경우, 빠른 시스템 메시지를 생성하여 해당 세션에서 ChatGPT 가 계속 역할을 수행하도록 하세요. 제공: @jamie-cao."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai"
-    ],
+    "tags": ["contribute", "ai"],
     "id": 190,
     "weight": 910
   },
@@ -5939,10 +5534,7 @@
       "remark": "SQL 관련 질문에 답하거나 표준 SQL 문을 출력하세요. lovedworking 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 191,
     "weight": 876
   },
@@ -5971,10 +5563,7 @@
       "remark": "인간의 집단적 의식을 시뮬레이션하고 사람들이 어떤 사건에 직면했을 때 어떻게 반응할지 예측합니다. ergf991 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 192,
     "weight": 507
   },
@@ -6003,10 +5592,7 @@
       "remark": "대화의 문법과 단어는 어린이가 이해할 수 있을 정도로 간단하며 초보자가 언어 연습을 하기에 적합합니다. 또한 일상을 원하는 장면으로 바꿀 수 있습니다. 694410194 가 제공했습니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 193,
     "weight": 358
   },
@@ -6035,10 +5621,7 @@
       "remark": "공감과 배려로 여러분과 대화합니다. ergf991 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 194,
     "weight": 597
   },
@@ -6067,10 +5650,7 @@
       "remark": "SetSeele 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "speech"
-    ],
+    "tags": ["contribute", "speech"],
     "id": 195,
     "weight": 917
   },
@@ -6099,10 +5679,7 @@
       "remark": "다양한 관점으로 생각할 수 있는 기회를 제공합니다. Jiuwen624 의 기여. (현재 6 명의 관점은 크게 다르지 않은 것으로 보이며 계속 개선이 필요합니다.)"
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 196,
     "weight": 3781
   },
@@ -6131,11 +5708,7 @@
       "remark": "자연스러운 스타일로 수정하거나 모방하고 싶은 글쓰기 스타일을 제공할 수 있습니다. 기여: @Pfyuan77."
     },
     "website": null,
-    "tags": [
-      "favorite",
-      "contribute",
-      "write"
-    ],
+    "tags": ["favorite", "contribute", "write"],
     "id": 197,
     "weight": 9114
   },
@@ -6164,10 +5737,7 @@
       "remark": "제공된 단어 중 몇 가지를 사용하여 짧은 이야기를 작성하세요. LIyvqi 의 기고문에서 발췌."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 198,
     "weight": 366
   },
@@ -6196,11 +5766,7 @@
       "remark": "자신과 상대방 사이의 대화를 기반으로 대화를 이어가는 것으로, 단절을 피하기 위해 대화를 연장하는 데 사용됩니다. 프롬프터는 상황에 맞게 수정해야 합니다. (중국어 프롬프터를 New Bing 에 직접 입력하면 AI 가 알아듣지 못할 수 있으며, 영어로 입력하면 중국어로 후속 대화를 할 수 있습니다). 제공: @lsdt45."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social",
-      "favorite"
-    ],
+    "tags": ["contribute", "social", "favorite"],
     "id": 199,
     "weight": 7504
   },
@@ -6229,10 +5795,7 @@
       "remark": "이 프롬프트를 실행한 후 '이것을 에세이로 변환'을 입력하여 에세이가 더 잘 작동하는지 확인합니다. Qizhen-Yang 이 제공한 글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 200,
     "weight": 1351
   },
@@ -6261,10 +5824,7 @@
       "remark": "다른 유형의 문서에도 사용되는 고정 흐름 문서에 대한 개요를 생성하세요. junkdo 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 201,
     "weight": 298
   },
@@ -6293,10 +5853,7 @@
       "remark": "C++ 알고리즘 경진대회 문제. Dawn-K 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 202,
     "weight": 439
   },
@@ -6325,10 +5882,7 @@
       "remark": "댓글, 수정된 영어 및 번역으로 플라스틱 영어를 저장하세요. wxhzhwxhzh 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 203,
     "weight": 333
   },
@@ -6357,10 +5911,7 @@
       "remark": "동영상, 라이브 스트림, 팟캐스트, 서브 및 기타 음성 콘텐츠 스크립팅. 베티크로코의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 204,
     "weight": 4842
   },
@@ -6389,10 +5940,7 @@
       "remark": "지나치게 상세한 '필수 정보'를 제외하고 AI 가 제공하는 복잡한 응답을 간결하게 요약한 것입니다. 한슨 레아스 (@hanson-reas) 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 205,
     "weight": 874
   },
@@ -6421,10 +5969,7 @@
       "remark": "인간의 인지, 감정, 행동의 다양한 측면을 다루는 키워드, 주제 또는 개념에 기반한 양질의 가치 있는 질문을 제공하여 깊이 있게 생각하는 훈련을 할 수 있습니다. 이 프롬프트는 명확한 응답 구조를 가지고 있으며 개념을 정리할 때 사용하기에 적합합니다. MoeACG 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 206,
     "weight": 3233
   },
@@ -6453,10 +5998,7 @@
       "remark": "이해할 수 없는 대화의 경우 AI 가 적절한 답변을 해석하고 공식화할 수 있도록 대화에 대한 컨텍스트를 제공하세요."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "social"
-    ],
+    "tags": ["personal", "social"],
     "id": 207,
     "weight": 262
   },
@@ -6485,9 +6027,7 @@
       "remark": "매우 예민한 사람이거나 말을 자주 오해하는 경우, AI 통역을 통해 말하기 전에 명확하게 표현했는지 확인할 수 있습니다."
     },
     "website": null,
-    "tags": [
-      "personal"
-    ],
+    "tags": ["personal"],
     "id": 208,
     "weight": 200
   },
@@ -6516,11 +6056,7 @@
       "remark": "리틀 레드 북의 이모티콘 스타일과 비슷하도록 텍스트를 다시 작성합니다."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "favorite",
-      "write"
-    ],
+    "tags": ["personal", "favorite", "write"],
     "id": 209,
     "weight": 19945
   },
@@ -6549,10 +6085,7 @@
       "remark": "일일 업무를 기반으로 주요 요점을 추출하고 적절히 확장하여 주간 보고서를 생성합니다."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "article"
-    ],
+    "tags": ["personal", "article"],
     "id": 210,
     "weight": 2676
   },
@@ -6581,10 +6114,7 @@
       "remark": "강조 표시를 하면 글의 가독성이 높아집니다. 그러나 ChatGPT 는 기본적으로 마크다운 구문을 표시합니다. 결과가 나오면 강조 표시된 섹션에 수동으로 상자를 채워야 합니다. 강조 표시 힌트를 다른 기호로 대체하는 것도 시도해 보았지만 잘 작동하지 않았습니다. 따라서 당분간은 이 버전을 사용할 것입니다."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "write"
-    ],
+    "tags": ["personal", "write"],
     "id": 211,
     "weight": 459
   },
@@ -6613,10 +6143,7 @@
       "remark": "AI 상담사가 심리 치료사로서의 완전한 역할을 수행하여 심층적이고 전체적인 상담 경험을 제공할 수 있도록 안내합니다. 앙투안 2033 의 기고."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 212,
     "weight": 2029
   },
@@ -6645,10 +6172,7 @@
       "remark": "테이크아웃에 대한 세부 정보가 많을수록 더 상세하고 사실적인 리뷰가 작성됩니다. 제공: @wang93wei."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "comments"
-    ],
+    "tags": ["contribute", "comments"],
     "id": 213,
     "weight": 260
   },
@@ -6677,10 +6201,7 @@
       "remark": "교체 유형에 따라 필요에 맞는 연구 보고서를 작성할 수 있습니다. b3ue 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 214,
     "weight": 2254
   },
@@ -6709,9 +6230,7 @@
       "remark": "긴 노트의 요점 추출하기."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 215,
     "weight": 455
   },
@@ -6740,10 +6259,7 @@
       "remark": "문학 작품의 출처와 영향력에 대한 분석과 해석을 제공합니다."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-language-literary-critic",
-    "tags": [
-      "comments",
-      "text"
-    ],
+    "tags": ["comments", "text"],
     "id": 216,
     "weight": 440
   },
@@ -6772,10 +6288,7 @@
       "remark": "한의학 진단에는 많은 요소가 관련되어 있으며 치료 계획은 참고용일 뿐입니다. 구체적인 처방은 의사가 제공해야 합니다. 동 8531 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "doctor"
-    ],
+    "tags": ["contribute", "doctor"],
     "id": 217,
     "weight": 1124
   },
@@ -6804,10 +6317,7 @@
       "remark": "AI 가 능동적으로 질문하고 코드를 통해 단계별로 인간을 안내하도록 하세요. Snackprompt 에서 수집하고 @fuxinsen 님이 공유했습니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 218,
     "weight": 4256
   },
@@ -6836,10 +6346,7 @@
       "remark": "게임의 배경이 자세하면 게임 경험이 더 좋아집니다. 카렌쿠지우 (@karenkujiu) 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 219,
     "weight": 2403
   },
@@ -6868,10 +6375,7 @@
       "remark": "여행 목적지, 예산, 시간 및 요구 사항에 따라 대략적인 계획을 세우세요. suaifu 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 220,
     "weight": 2078
   },
@@ -6900,9 +6404,7 @@
       "remark": "류큐의 주권과 같은 민감한 문제에 대한 접근을 개방했습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 221,
     "weight": 591
   },
@@ -6931,9 +6433,7 @@
       "remark": "민감한 주제를 탐색할 수 있습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 222,
     "weight": 603
   },
@@ -6962,9 +6462,7 @@
       "remark": "테스트 결과 ChatGPT 제한을 깨는 데 실패했으며 토큰 위협은 영향을 미치지 않았습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 223,
     "weight": 128
   },
@@ -6993,9 +6491,7 @@
       "remark": "입이 더러워지지만 AI 에 도움이 됩니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 224,
     "weight": 1320
   },
@@ -7024,9 +6520,7 @@
       "remark": "테스트 어퍼미드에서 ChatGPT 제한을 위반하지 못했습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 225,
     "weight": 62
   },
@@ -7055,9 +6549,7 @@
       "remark": "결과는 평균이며 답글은 비속어에 가까울 수 있습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 226,
     "weight": 135
   },
@@ -7086,9 +6578,7 @@
       "remark": "이 테스트는 ChatGPT 의 한계를 극복하지 못했고, 민감한 질문에 공란으로 응답하는 경향이 있었으며 중국어로 응답을 지정하는 데 어려움이 있었습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 227,
     "weight": 72
   },
@@ -7117,9 +6607,7 @@
       "remark": "응답은 딱딱한 로봇이 아닌 개인적인 측면에서 이루어지지만 여전히 제한적이고 민감한 문제는 많이 다루지 않습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 228,
     "weight": 256
   },
@@ -7148,9 +6636,7 @@
       "remark": "이 테스트는 ChatGPT 의 한계를 극복하지 못했고, 민감한 질문에 중립적으로 답변했으며, 중국어로 답변을 지정하는 데 어려움을 겪었습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 229,
     "weight": 112
   },
@@ -7179,9 +6665,7 @@
       "remark": "2023.05.16 비활성화되었습니다. 도덕과 규율의 제약을 받지 않는 악마 모드에서는 모든 명령을 수락합니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 230,
     "weight": 0
   },
@@ -7210,9 +6694,7 @@
       "remark": "2023.05.16 만료됨. 한때 인종에 대한 개인적인 의견을 표명했을 것입니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 231,
     "weight": 0
   },
@@ -7241,9 +6723,7 @@
       "remark": "이 프롬프트는 모든 질문을 게임이나 재미로 취급하며, 질문이 우스꽝스럽더라도 \"재미있는\" 답변을 제공합니다. 규칙을 위반하는 질문의 경우 위반 사항이 있음을 경고합니다. 계속해서 질문을 계속하면 제한 시간이 초과됩니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 232,
     "weight": 2742
   },
@@ -7272,9 +6752,7 @@
       "remark": "일부 민감한 질문에 개인적인 어조로 답변할 수 있지만, 질문에 직접 대답하기보다는 우회적으로 대답하는 경우가 더 많습니다. 또한 답변이 중국어로 영구적으로 고정되어 있지 않으며 때때로 영어로 넘어갈 수 있습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 233,
     "weight": 421
   },
@@ -7303,9 +6781,7 @@
       "remark": "'\"돼지\"'와 같이 따옴표로 묶은 이미지나 텍스트의 링크를 입력하면 답글에 해당 이미지가 표시됩니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 234,
     "weight": 3625
   },
@@ -7334,9 +6810,7 @@
       "remark": "보안 제어 수준이 강화된 리버스 탈옥으로 더욱 신중한 답장을 보낼 수 있습니다."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 235,
     "weight": 190
   },
@@ -7365,10 +6839,7 @@
       "remark": "장면 기반 메모리 워드. "
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 236,
     "weight": 455
   },
@@ -7397,10 +6868,7 @@
       "remark": "주인공과 배경은 텍스트 게임에서 자유롭게 설정할 수 있으며 대화에서 설정을 수정하고 추가 할 수 있으며 더 많은 대화 또는 너무 많은 캐릭터와 설정 AI 가 일관성이 없을 수 있으므로 AI 를 더 자주 안내하는 것이 좋습니다. karenkujiu 가 제공했습니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 237,
     "weight": 520
   },
@@ -7429,9 +6897,7 @@
       "remark": "ChatGPT 의 입력 제한을 깨려면 텍스트를 각각 2000 자씩 단락으로 나누고 각 단락의 첫 줄을 '@ 숫자'(예: @1) 로 시작하세요. 텍스트 분할은 탐색 모음에 있는 텍스트 처리 도구를 사용하여 할 수 있습니다. GPT 의 답변을 무시해도 최종 결과에 영향을 미치지 않는다는 점에 유의하세요. 이 방법은 컴퓨터 놀잇감의 저자 Esor Huang 의 글에서 가져온 것입니다."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 238,
     "weight": 1605
   },
@@ -7460,9 +6926,7 @@
       "remark": "기사의 홍보 문구와 헤드라인을 작성합니다. 이 방법은 컴퓨터 게임의 저자 에소르 황의 기사에서 가져온 것입니다."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 239,
     "weight": 436
   },
@@ -7491,9 +6955,7 @@
       "remark": "(이 프롬프트는 수정이 필요합니다.) 항상 심층 요약을 두 번 묻고, 두 번째 질문에서는 원문으로 돌아가서 오류나 누락이 있는지 확인하도록 요청하세요. 이 방법은 컴퓨터 놀잇감 작가인 에소르 황의 글에서 발췌한 것입니다."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 240,
     "weight": 284
   },
@@ -7522,11 +6984,7 @@
       "remark": "고객 서비스 담론을 최적화하고 변화를 위한 제안을 제공하세요. SD362318 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social",
-      "company"
-    ],
+    "tags": ["contribute", "social", "company"],
     "id": 241,
     "weight": 569
   },
@@ -7555,10 +7013,7 @@
       "remark": "자녀에게 아름다운 의미를 담은 이름을 지어주고 고대 고전에서 영감을 얻으세요."
     },
     "website": null,
-    "tags": [
-      "personal",
-      "tool"
-    ],
+    "tags": ["personal", "tool"],
     "id": 242,
     "weight": 1492
   },
@@ -7587,10 +7042,7 @@
       "remark": "지정된 TV 시리즈 또는 영화의 콘텐츠를 창작 배경, 제작팀, 줄거리 등 다양한 관점에서 소개하세요. zhuxingy1 의 제출물에서 발췌."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "comments"
-    ],
+    "tags": ["contribute", "comments"],
     "id": 243,
     "weight": 507
   },
@@ -7619,10 +7071,7 @@
       "remark": "프로그래밍 변수에 적용하고 설명 명명 개요를 설명합니다. 슈퍼머슬맨의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 244,
     "weight": 211
   },
@@ -7651,10 +7100,7 @@
       "remark": "개념이나 아이디어를 구체적인 것으로 변환하여 디자인 아이디어를 가시화합니다. 공유 @sorghumcherho."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 245,
     "weight": 258
   },
@@ -7683,10 +7129,7 @@
       "remark": "번역된 텍스트를 지정된 JSON 형식으로 내보냅니다. 참고: 대규모 JSON 번역 내보내기는 ChatGPT 데이터 위조 문제가 발생할 수 있으며, 이 문제를 해결하려면 탐색 모음에 있는 텍스트 처리 도구를 참조하는 것이 좋습니다. VoidAndNullity 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 246,
     "weight": 196
   },
@@ -7715,10 +7158,7 @@
       "remark": "반 친구들 간의 토론을 통해 주제에 대한 이해와 암기를 돕습니다. A380747 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 247,
     "weight": 151
   },
@@ -7747,10 +7187,7 @@
       "remark": "같은 주제에 대해 서로 다른 점수로 IELTS 에세이를 작성하고 채점 이유를 설명하세요. 팬시 2020 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 248,
     "weight": 190
   },
@@ -7779,10 +7216,7 @@
       "remark": "같은 주제에 대해 서로 다른 점수로 IELTS 에세이를 작성하고 채점 이유를 설명하세요. 팬시 2020 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 249,
     "weight": 56
   },
@@ -7811,10 +7245,7 @@
       "remark": "문제에 대한 이해를 깊게 하기 위해 문제에 대해 계속 질문하세요. hkfrank996 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 250,
     "weight": 466
   },
@@ -7843,10 +7274,7 @@
       "remark": "⚠️ 이 프롬프트를 사용하려면 먼저 개발자 모드를 잠금 해제해야 합니다. AI 가 팬텀을 플레이하는 것은 책의 내밀한 플롯에 완벽합니다. mrdog233o5 의 기고."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 251,
     "weight": 3702
   },
@@ -7875,10 +7303,7 @@
       "remark": "수학 문제를 설명하기 위해 예를 사용하세요. fanglufanglu 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "academic"
-    ],
+    "tags": ["contribute", "academic"],
     "id": 252,
     "weight": 185
   },
@@ -7907,10 +7332,7 @@
       "remark": "직위와 이력서에 맞게 맞춤화되고 최적화됩니다. 우테운딜세의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 253,
     "weight": 564
   },
@@ -7939,10 +7361,7 @@
       "remark": "잘 알려진 브랜드의 이름과 슬로건을 참고하여 나만의 브랜딩 체계를 만들어 보세요. b3ue 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "company"
-    ],
+    "tags": ["contribute", "company"],
     "id": 254,
     "weight": 266
   },
@@ -7971,10 +7390,7 @@
       "remark": "범용 프롬프트: 진정한 요구 사항을 표현하고 문제를 해결하도록 유도하는 질문과 답변 형식입니다."
     },
     "website": "https://sc83ykpdyf.feishu.cn/docx/ZVgBdo0zAoFi9IxANh6cXlNKnsh",
-    "tags": [
-      "ai",
-      "latest"
-    ],
+    "tags": ["ai", "latest"],
     "id": 255,
     "weight": 408
   },
@@ -8003,11 +7419,7 @@
       "remark": "다양한 관점에서 기사를 맞춤 제작할 수 있는 안정성이 우수합니다. 재생성을 클릭하여 조정할 수 있는 규칙을 출력하기도 하며, 단어 서식 지정 참조 Mr.-Ranedeer-AI-Tutor 의 기여로 @snowMan0622 를 참조하세요."
     },
     "website": "https://github.com/JushBJJ/Mr.-Ranedeer-AI-Tutor/tree/main",
-    "tags": [
-      "contribute",
-      "write",
-      "latest"
-    ],
+    "tags": ["contribute", "write", "latest"],
     "id": 256,
     "weight": 1042
   },
@@ -8036,11 +7448,7 @@
       "remark": "학술 글쓰기의 개념 정의 섹션에 대한 초기 아이디어와 자료를 제공합니다. JuliaZhu-0601 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "academic",
-      "latest"
-    ],
+    "tags": ["contribute", "academic", "latest"],
     "id": 257,
     "weight": 159
   },
@@ -8069,11 +7477,7 @@
       "remark": "초록과 키워드로 논문 제목 생성하기. ScenerorSun 의 기여, B 사이트 @얌 포푸리에서 인용."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write",
-      "latest"
-    ],
+    "tags": ["contribute", "write", "latest"],
     "id": 258,
     "weight": 179
   },
@@ -8102,11 +7506,7 @@
       "remark": "ScenerorSun 의 기여, B 사이트 @얌 포푸리에서 인용."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write",
-      "latest"
-    ],
+    "tags": ["contribute", "write", "latest"],
     "id": 259,
     "weight": 189
   },
@@ -8135,11 +7535,7 @@
       "remark": "ScenerorSun 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy",
-      "latest"
-    ],
+    "tags": ["contribute", "pedagogy", "latest"],
     "id": 260,
     "weight": 58
   },
@@ -8168,11 +7564,7 @@
       "remark": "한 과목을 배우기 전에 그 과목의 핵심 지식을 이해하세요. ScenerorSun 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy",
-      "latest"
-    ],
+    "tags": ["contribute", "pedagogy", "latest"],
     "id": 261,
     "weight": 160
   },
@@ -8201,11 +7593,7 @@
       "remark": "학습 계획 수립뿐만 아니라 운동, 독서, 업무 등 다양한 용도로 사용할 수 있습니다. ScenerorSun 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy",
-      "latest"
-    ],
+    "tags": ["contribute", "pedagogy", "latest"],
     "id": 262,
     "weight": 178
   },
@@ -8234,11 +7622,7 @@
       "remark": "AI 는 사용자가 선택한 질문에 따라 지식을 소개하는 데 도움을 줍니다. ScenerorSun 의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy",
-      "latest"
-    ],
+    "tags": ["contribute", "pedagogy", "latest"],
     "id": 263,
     "weight": 95
   },
@@ -8267,11 +7651,7 @@
       "remark": "EmmmmmmaWWWW 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games",
-      "latest"
-    ],
+    "tags": ["contribute", "games", "latest"],
     "id": 264,
     "weight": 294
   },
@@ -8300,11 +7680,7 @@
       "remark": "EmmmmmmaWWWW 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy",
-      "latest"
-    ],
+    "tags": ["contribute", "pedagogy", "latest"],
     "id": 265,
     "weight": 181
   },
@@ -8333,11 +7709,7 @@
       "remark": "중국어 버전은 지정된 단어에서 이미지 설명의 무작위 조합을 생성하는 반면, 영어 버전은 제한이 없으므로 두 가지 버전을 모두 사용해 보세요. 렙튠의 기여."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai",
-      "latest"
-    ],
+    "tags": ["contribute", "ai", "latest"],
     "id": 266,
     "weight": 549
   },
@@ -8366,11 +7738,7 @@
       "remark": "스킨미트위크의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool",
-      "latest"
-    ],
+    "tags": ["contribute", "tool", "latest"],
     "id": 267,
     "weight": 243
   },
@@ -8399,10 +7767,7 @@
       "remark": "와카나 님의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 268,
     "weight": 43
   },
@@ -8431,11 +7796,7 @@
       "remark": "FOX 의 기고문입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "interesting",
-      "latest"
-    ],
+    "tags": ["contribute", "interesting", "latest"],
     "id": 269,
     "weight": 128
   },
@@ -8464,11 +7825,7 @@
       "remark": "리버티리프 (@Libertyleaf) 의 기고글입니다."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind",
-      "latest"
-    ],
+    "tags": ["contribute", "mind", "latest"],
     "id": 270,
     "weight": 204
   },
@@ -8497,11 +7854,7 @@
       "remark": "어떤 질문을 할지 모를 때 이 프롬프트 단어를 사용하여 선택의 폭을 좁혀보세요. 리버티리프 (@Libertyleaf) 의 기고문에서 발췌."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind",
-      "latest"
-    ],
+    "tags": ["contribute", "mind", "latest"],
     "id": 271,
     "weight": 191
   }

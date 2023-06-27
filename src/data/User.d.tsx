@@ -1,14 +1,19 @@
-export type User = {
+export type LanguageData = {
   title: string;
-  description: string;
-  desc_cn: string;
+  prompt: string;
+  description?: string;
   remark: string;
-  title_en: string;
-  desc_en: string;
-  remark_en: string;
+};
+
+export type User = {
+  zh: LanguageData;
+  en: LanguageData;
+  ja: LanguageData;
+  ko: LanguageData;
   website: string | null;
   tags: TagType[];
   id: number;
+  weight: number;
 };
 
 export type TagType =

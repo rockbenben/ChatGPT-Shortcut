@@ -1,18 +1,7 @@
 import React from "react";
 import { FloatButton } from "antd";
 import { ShareAltOutlined } from "@ant-design/icons";
-import {
-  FacebookShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-  WeiboShareButton,
-  FacebookIcon,
-  TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
-  WeiboIcon,
-} from "react-share";
+import { FacebookShareButton, TelegramShareButton, TumblrShareButton, TwitterShareButton, WeiboShareButton, FacebookIcon, TelegramIcon, TumblrIcon, TwitterIcon, WeiboIcon } from "react-share";
 
 function ShareButtons({ shareUrl, title, popOver }) {
   const buttons = (
@@ -36,12 +25,7 @@ function ShareButtons({ shareUrl, title, popOver }) {
   );
 
   const floatButtons = (
-    <FloatButton.Group
-      trigger="hover"
-      type="primary"
-      style={{ right: 24 }}
-      icon={<ShareAltOutlined />}
-    >
+    <FloatButton.Group trigger='hover' type='primary' style={{ right: 24 }} icon={<ShareAltOutlined />}>
       {buttons}
     </FloatButton.Group>
   );

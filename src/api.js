@@ -78,10 +78,7 @@ export async function updatePrompt(id, values) {
 }
 
 export async function deletePrompt(id) {
-  return axios.delete(
-    `${API_URL}/userprompts/${id}`,
-    config
-  );
+  return axios.delete(`${API_URL}/userprompts/${id}`, config);
 }
 
 export async function login(values) {
@@ -146,14 +143,11 @@ export async function fetchUserData() {
 // 重置用户密码
 export async function resetPassword(values) {
   try {
-    const response = await axios.post(
-      `${API_URL}/auth/reset-password`,
-      {
-        code: values.code,
-        password: values.newPassword,
-        passwordConfirmation: values.confirmPassword,
-      }
-    );
+    const response = await axios.post(`${API_URL}/auth/reset-password`, {
+      code: values.code,
+      password: values.newPassword,
+      passwordConfirmation: values.confirmPassword,
+    });
     return response.data;
   } catch (error) {
     console.error("Error resetting password:", error);
@@ -164,9 +158,7 @@ export async function resetPassword(values) {
 // copy count api
 export async function fetchAllCopyCounts() {
   try {
-    const response = await axios.get(
-      "https://api-count.newzone.top/api/cards/allcounts"
-    );
+    const response = await axios.get("https://api-count.newzone.top/api/cards/allcounts");
     const counts = response.data.reduce((acc, item) => {
       acc[item.card_id] = item.count;
       return acc;
@@ -179,9 +171,7 @@ export async function fetchAllCopyCounts() {
 }
 export async function updateCopyCount(cardId) {
   try {
-    const response = await axios.post(
-      `https://api-count.newzone.top/api/cards/${cardId}/copy`
-    );
+    const response = await axios.post(`https://api-count.newzone.top/api/cards/${cardId}/copy`);
     const updatedCount = response.data.copyCount;
     return updatedCount;
   } catch (error) {

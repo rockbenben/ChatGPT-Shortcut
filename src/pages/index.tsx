@@ -147,7 +147,7 @@ function useFilteredUsers() {
 function ShowcaseHeader() {
   return (
     <section className={styles.mobileMarginAdjust + " text--center"}>
-      <Heading as="h1" className={styles.hideOnMobile}>
+      <Heading as='h1' className={styles.hideOnMobile}>
         AI Short
       </Heading>
       <p>{DESCRIPTION}</p>
@@ -189,15 +189,15 @@ function ShowcaseFilters({ onToggleDescription }) {
 
   // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
   const togglePromptLanguage = (
-    <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>
+    <Translate id='toggle_prompt_language'>切换 Prompt 语言</Translate>
   );
 
   return (
-    <section className="container margin-top--l margin-bottom--lg">
+    <section className='container margin-top--l margin-bottom--lg'>
       <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
         <div>
-          <Heading as="h2">
-            <Translate id="showcase.filters.title">Filters</Translate>
+          <Heading as='h2'>
+            <Translate id='showcase.filters.title'>Filters</Translate>
           </Heading>
           <div className={styles.hideOnMobile}>
             <span>{siteCountPlural(filteredUsers.length)}</span>
@@ -210,8 +210,7 @@ function ShowcaseFilters({ onToggleDescription }) {
             title={translate({
               id: "toggle_prompt_language_description",
               message: "更改提示词的显示语言，在英语和页面当前语言之间切换。",
-            })}
-          >
+            })}>
             {togglePromptLanguage}
           </button>
         )}
@@ -228,10 +227,9 @@ function ShowcaseFilters({ onToggleDescription }) {
                 message:
                   "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
               })}
-              anchorEl="#__docusaurus"
-            >
+              anchorEl='#__docusaurus'>
               <ShowcaseTagSelect
-                tag="yourprompt"
+                tag='yourprompt'
                 label={translate({
                   message: "你的提示词",
                 })}
@@ -259,8 +257,7 @@ function ShowcaseFilters({ onToggleDescription }) {
               <ShowcaseTooltip
                 id={id}
                 text={description}
-                anchorEl="#__docusaurus"
-              >
+                anchorEl='#__docusaurus'>
                 <ShowcaseTagSelect
                   tag={tag}
                   id={id}
@@ -354,7 +351,7 @@ function SearchBar() {
   return (
     <div className={styles.searchContainer}>
       <input
-        id="searchbar"
+        id='searchbar'
         placeholder={translate({
           message: "Search for prompts...",
           id: "showcase.searchBar.placeholder",
@@ -437,10 +434,10 @@ function ShowcaseCards({ isDescription }) {
 
   if (filteredUsers.length === 0) {
     return (
-      <section className="margin-top--lg margin-bottom--xl">
-        <div className="container padding-vert--md text--center">
-          <Heading as="h2">
-            <Translate id="showcase.usersList.noResult">
+      <section className='margin-top--lg margin-bottom--xl'>
+        <div className='container padding-vert--md text--center'>
+          <Heading as='h2'>
+            <Translate id='showcase.usersList.noResult'>
               😒 找不到结果，请缩短搜索词
             </Translate>
           </Heading>
@@ -451,19 +448,18 @@ function ShowcaseCards({ isDescription }) {
   }
 
   return (
-    <section className="margin-top--lg margin-bottom--xl">
+    <section className='margin-top--lg margin-bottom--xl'>
       {filteredUsers.length === sortedUsers.length ? (
         <>
           <div className={styles.showcaseFavorite}>
-            <div className="container">
+            <div className='container'>
               <div
                 className={clsx(
                   "margin-bottom--md",
                   styles.showcaseFavoriteHeader
-                )}
-              >
-                <Heading as="h2">
-                  <Translate id="showcase.favoritesList.title">
+                )}>
+                <Heading as='h2'>
+                  <Translate id='showcase.favoritesList.title'>
                     Our favorites
                   </Translate>
                 </Heading>
@@ -484,9 +480,9 @@ function ShowcaseCards({ isDescription }) {
               </ul>
             </div>
           </div>
-          <div className="container margin-top--lg">
-            <Heading as="h2" className={styles.showcaseHeader}>
-              <Translate id="showcase.usersList.allUsers">
+          <div className='container margin-top--lg'>
+            <Heading as='h2' className={styles.showcaseHeader}>
+              <Translate id='showcase.usersList.allUsers'>
                 All prompts
               </Translate>
             </Heading>
@@ -503,13 +499,12 @@ function ShowcaseCards({ isDescription }) {
               ))}
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
-              <Space direction="vertical" style={{ width: "100%" }}>
+              <Space direction='vertical' style={{ width: "100%" }}>
                 <Button
-                  size="large"
+                  size='large'
                   icon={<ArrowDownOutlined />}
                   onClick={() => setShowAllOtherUsers(true)}
-                  block
-                >
+                  block>
                   <Translate>加载更多</Translate>
                 </Button>
               </Space>
@@ -517,10 +512,12 @@ function ShowcaseCards({ isDescription }) {
           </div>
         </>
       ) : (
-        <div className="container">
+        <div className='container'>
           <div
-            className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}
-          >
+            className={clsx(
+              "margin-bottom--md",
+              styles.showcaseFavoriteHeader
+            )}>
             <SearchBar />
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
@@ -552,7 +549,7 @@ export default function Showcase(): JSX.Element {
   }, []);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className="margin-vert--lg">
+      <main className='margin-vert--lg'>
         <AuthProvider>
           <ShowcaseHeader />
           <ShowcaseFilters onToggleDescription={toggleDescription} />
