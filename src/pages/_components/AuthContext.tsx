@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useCallback } from "react";
 import { getUserAllInfo } from "@site/src/api";
 
 export const AuthContext = createContext();
@@ -6,11 +6,7 @@ export const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [userAuth, setUserAuth] = useState(null);
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  const fetchUser = async () => {
+  const fetchUser = useCallback(async () => {
     try {
       const userAuth = await getUserAllInfo();
       setUserAuth(userAuth);
@@ -18,7 +14,11 @@ export function AuthProvider({ children }) {
       // 这里可以进行错误处理，比如重定向到登录页面
     } finally {
     }
-  };
+  }, []); // 确保函数只在组件首次渲染时创建
+
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
 
   const value = {
     userAuth,

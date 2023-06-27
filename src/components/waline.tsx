@@ -28,5 +28,3 @@ export const Waline = (props: WalineOptions) => {
 
   return <div ref={containerRef} />;
 };
-
-export default Waline;

@@ -1,4 +1,4 @@
-import React, { useContext,useState, useEffect, useCallback } from "react";
+import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import { message, Tooltip } from "antd";
 import Link from "@docusaurus/Link";
@@ -18,12 +18,8 @@ import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
 //import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
-import {
-  updateCopyCount,
-  createFavorite,
-  updateFavorite,
-} from "@site/src/api";
-import { AuthContext } from '../AuthContext';
+import { updateCopyCount, createFavorite, updateFavorite } from "@site/src/api";
+import { AuthContext } from "../AuthContext";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
@@ -73,12 +69,22 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const userRemark = user[currentLanguage].remark;
 
   const [paragraphText, setParagraphText] = useState(
-    isDescription ? user[currentLanguage].prompt : user[currentLanguage].description
+    isDescription
+      ? user[currentLanguage].prompt
+      : user[currentLanguage].description
   );
 
   useEffect(() => {
-    setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
-  }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
+    setParagraphText(
+      isDescription
+        ? user[currentLanguage].prompt
+        : user[currentLanguage].description
+    );
+  }, [
+    isDescription,
+    user[currentLanguage].prompt,
+    user[currentLanguage].description,
+  ]);
 
   // 点击显示母语
   function handleParagraphClick() {
@@ -88,7 +94,8 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       setParagraphText(user[currentLanguage].prompt);
     }
   }
-  const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
+  const userDescription =
+    currentLanguage === "en" ? user.en.prompt : paragraphText;
 
   //const image = getCardImage(user);
   // 复制
@@ -175,7 +182,10 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as="h4" className={styles.showcaseCardTitle}>
-            <Link href={"/prompt/"+ user.id} className={styles.showcaseCardLink}>
+            <Link
+              href={"/prompt/" + user.id}
+              className={styles.showcaseCardLink}
+            >
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>
@@ -229,13 +239,23 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </button>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
+        <p
+          onClick={handleParagraphClick}
+          className={styles.showcaseCardBody}
+          style={{ cursor: "pointer" }}
+        >
           {userDescription}
         </p>
       </div>
-      <ul className={clsx("card__footer", styles.cardFooter)}>
+      <ul className={clsx("card__footer", styles.cardFooter)} style={{listStyle: 'none'}}>
         <ShowcaseCardTag tags={user.tags} />
-        {user.website ? <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto' }}><LinkOutlined /></a> : null}
+        {user.website ? (
+          <li style={{ marginLeft: "auto" }}>
+            <a href={user.website} target="_blank" rel="noopener noreferrer">
+              <LinkOutlined />
+            </a>
+          </li>
+        ) : null}
       </ul>
     </li>
   );
