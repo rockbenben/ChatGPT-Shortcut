@@ -542,6 +542,10 @@ function ShowcaseCards({ isDescription }) {
 }
 
 export default function Showcase(): JSX.Element {
+  const [Shareurl, setShareUrl] = useState("");
+  useEffect(() => {
+    setShareUrl(window.location.href);
+  }, []);
   const [isDescription, setIsDescription] = useState(true);
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
@@ -554,11 +558,7 @@ export default function Showcase(): JSX.Element {
           <ShowcaseFilters onToggleDescription={toggleDescription} />
           <ShowcaseCards isDescription={isDescription} />
         </AuthProvider>
-        <ShareButtons
-          shareUrl={window.location.href}
-          title={TITLE}
-          popOver={false}
-        />
+        <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
     </Layout>
   );
