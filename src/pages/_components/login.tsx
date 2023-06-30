@@ -6,13 +6,35 @@ import { login, register, forgotPassword } from "@site/src/api";
 import { AuthContext } from "./AuthContext";
 
 const rules = {
-  username: [{ required: true, message: translate({ id: "input.rules.username", message: "请输入用户名或注册邮箱！" }) }],
-  password: [{ required: true, message: translate({ id: "input.rules.password", message: "请输入密码！" }) }],
-  email: [{ required: true, message: translate({ id: "input.rules.email", message: "请输入邮箱！" }) }],
+  username: [
+    {
+      required: true,
+      message: translate({
+        id: "input.rules.username",
+        message: "请输入用户名或注册邮箱！",
+      }),
+    },
+  ],
+  password: [
+    {
+      required: true,
+      message: translate({
+        id: "input.rules.password",
+        message: "请输入密码！",
+      }),
+    },
+  ],
+  email: [
+    {
+      required: true,
+      message: translate({ id: "input.rules.email", message: "请输入邮箱！" }),
+    },
+  ],
 };
 
 const LoginPage = () => {
   const { setUserAuth } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const handleSuccess = (username, jwt) => {
     Cookies.set("auth_token", jwt, { expires: 365 });
@@ -24,42 +46,51 @@ const LoginPage = () => {
   };
 
   const handleErrors = (err) => {
-    if (err.response.status === 400) {
-      message.error(err.response.data.error.message);
-    } else {
-      message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));
+    try {
+      if (err.response.status === 400) {
+        message.error(err.response.data.error.message);
+      } else {
+        message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));
+      }
+    } catch (err) {
+      message.error(translate({ id: "message.error", message: "处理错误时发生错误" }));
+    }
+  };
+
+  const handleAuth = async (values, authFunction, successMessage) => {
+    setLoading(true);
+    try {
+      const response = await authFunction(values);
+      handleSuccess(response.data.user.username, response.data.jwt);
+      message.success(successMessage);
+    } catch (err) {
+      handleErrors(err);
+    } finally {
+      setLoading(false);
     }
   };
 
   const onFinishLogin = async (values) => {
-    try {
-      const response = await login(values);
-      handleSuccess(response.data.user.username, response.data.jwt);
-      message.success(<Translate id='message.loginSuccess'>登录成功！</Translate>);
-    } catch (err) {
-      handleErrors(err);
-    }
+    handleAuth(values, login, <Translate id='message.loginSuccess'>登录成功！</Translate>);
   };
 
   const onFinishRegister = async (values) => {
-    try {
-      const response = await register(values);
-      handleSuccess(response.data.user.username, response.data.jwt);
-      message.success(<Translate id='message.registerSuccess'>注册成功！</Translate>);
-    } catch (err) {
-      handleErrors(err);
-    }
+    handleAuth(values, register, <Translate id='message.registerSuccess'>注册成功！</Translate>);
   };
+
   const handleForgotPassword = async (values) => {
+    setLoading(true);
     try {
-      const response = await forgotPassword(values.email);
-      if (response) {
-        message.success(<Translate id='message.forgotPassword'>重置密码的电子邮件已经发到你的邮箱。</Translate>);
-      }
-    } catch (err) {
-      handleErrors(err);
+      await forgotPassword(values.email);
+      message.success(<Translate id='message.forgotPassword.success'>密码重置邮件已发送！</Translate>);
+    } catch (error) {
+      console.error(translate({ id: "error.forgotPassword", message: "Error sending forgot password email:" }), error);
+      message.error(<Translate id='message.forgotPassword.error'>发送密码重置邮件失败，请稍后重试</Translate>);
+    } finally {
+      setLoading(false);
     }
   };
+
   // Add a new state value to track the active tab
   const [activeTab, setActiveTab] = useState("1");
   const handleForgotPasswordClick = () => {
@@ -68,14 +99,19 @@ const LoginPage = () => {
   const loginForm = (
     <Form onFinish={onFinishLogin}>
       <Form.Item name='username' rules={rules.username}>
-        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
+        <Input
+          placeholder={translate({
+            id: "input.username",
+            message: "用户名/邮箱",
+          })}
+        />
       </Form.Item>
       <Form.Item name='password' rules={rules.password}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item>
         <Space size='middle'>
-          <Button htmlType='submit'>
+          <Button htmlType='submit' loading={loading}>
             <Translate id='button.login'>登录</Translate>
           </Button>
           <Button onClick={handleForgotPasswordClick}>
@@ -89,7 +125,12 @@ const LoginPage = () => {
   const registerForm = (
     <Form onFinish={onFinishRegister}>
       <Form.Item name='username' rules={rules.username}>
-        <Input placeholder={translate({ id: "input.register.username", message: "用户名" })} />
+        <Input
+          placeholder={translate({
+            id: "input.register.username",
+            message: "用户名",
+          })}
+        />
       </Form.Item>
       <Form.Item name='email' rules={rules.email}>
         <Input placeholder={translate({ id: "input.email", message: "邮箱" })} />
@@ -102,7 +143,17 @@ const LoginPage = () => {
         valuePropName='checked'
         rules={[
           {
-            validator: (_, value) => (value ? Promise.resolve() : Promise.reject(new Error(translate({ id: "agreement.rules", message: "使用前须同意服务条款和隐私政策" })))),
+            validator: (_, value) =>
+              value
+                ? Promise.resolve()
+                : Promise.reject(
+                    new Error(
+                      translate({
+                        id: "agreement.rules",
+                        message: "使用前须同意服务条款和隐私政策",
+                      })
+                    )
+                  ),
           },
         ]}>
         <Checkbox>
@@ -118,7 +169,7 @@ const LoginPage = () => {
         </Checkbox>
       </Form.Item>
       <Form.Item>
-        <Button htmlType='submit'>
+        <Button htmlType='submit' loading={loading}>
           <Translate id='button.register'>注册</Translate>
         </Button>
       </Form.Item>
@@ -127,11 +178,21 @@ const LoginPage = () => {
 
   const forgotForm = (
     <Form onFinish={handleForgotPassword}>
-      <Form.Item name='email' rules={[{ required: true, message: translate({ id: "input.email", message: "请输入您的邮箱！" }) }]}>
+      <Form.Item
+        name='email'
+        rules={[
+          {
+            required: true,
+            message: translate({
+              id: "input.email",
+              message: "请输入您的邮箱！",
+            }),
+          },
+        ]}>
         <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
-        <Button htmlType='submit'>
+        <Button htmlType='submit' loading={loading}>
           <Translate id='button.sendResetEmail'>发送重置邮件</Translate>
         </Button>
       </Form.Item>
