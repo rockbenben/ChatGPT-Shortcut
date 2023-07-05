@@ -30,7 +30,7 @@ const prompt = {
     "professional"
   ],
   "id": 165,
-  "weight": 116
+  "weight": 130
 };
 
 function PromptDetail() {

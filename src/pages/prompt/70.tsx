@@ -30,7 +30,7 @@ const prompt = {
     "social"
   ],
   "id": 70,
-  "weight": 213
+  "weight": 229
 };
 
 function PromptDetail() {

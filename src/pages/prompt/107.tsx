@@ -30,7 +30,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 107,
-  "weight": 133
+  "weight": 155
 };
 
 function PromptDetail() {

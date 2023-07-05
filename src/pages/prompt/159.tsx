@@ -30,7 +30,7 @@ const prompt = {
     "finance"
   ],
   "id": 159,
-  "weight": 1841
+  "weight": 2017
 };
 
 function PromptDetail() {

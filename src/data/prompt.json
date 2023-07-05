@@ -26,7 +26,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
     "tags": ["favorite", "language"],
     "id": 1,
-    "weight": 5843
+    "weight": 6550
   },
   {
     "zh": {
@@ -55,7 +55,7 @@
     "website": null,
     "tags": ["favorite", "write"],
     "id": 2,
-    "weight": 28327
+    "weight": 31631
   },
   {
     "zh": {
@@ -84,7 +84,7 @@
     "website": null,
     "tags": ["personal", "write"],
     "id": 3,
-    "weight": 605
+    "weight": 687
   },
   {
     "zh": {
@@ -113,7 +113,7 @@
     "website": "https://learnprompting.org/docs/applied_prompting/short_response",
     "tags": ["favorite", "article"],
     "id": 4,
-    "weight": 7847
+    "weight": 8274
   },
   {
     "zh": {
@@ -142,7 +142,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator",
     "tags": ["ai"],
     "id": 5,
-    "weight": 1418
+    "weight": 1590
   },
   {
     "zh": {
@@ -171,7 +171,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chatgpt-prompt-generator",
     "tags": ["ai"],
     "id": 6,
-    "weight": 696
+    "weight": 804
   },
   {
     "zh": {
@@ -200,7 +200,7 @@
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
     "tags": ["ai"],
     "id": 7,
-    "weight": 2297
+    "weight": 2587
   },
   {
     "zh": {
@@ -229,7 +229,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces",
     "tags": ["write"],
     "id": 8,
-    "weight": 2660
+    "weight": 3036
   },
   {
     "zh": {
@@ -258,7 +258,7 @@
     "website": null,
     "tags": ["write"],
     "id": 9,
-    "weight": 3579
+    "weight": 4006
   },
   {
     "zh": {
@@ -287,7 +287,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["write"],
     "id": 10,
-    "weight": 1760
+    "weight": 1967
   },
   {
     "zh": {
@@ -316,7 +316,7 @@
     "website": null,
     "tags": ["write"],
     "id": 11,
-    "weight": 3417
+    "weight": 4013
   },
   {
     "zh": {
@@ -345,7 +345,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-aphorism-book",
     "tags": ["write"],
     "id": 12,
-    "weight": 485
+    "weight": 518
   },
   {
     "zh": {
@@ -374,7 +374,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor",
     "tags": ["write"],
     "id": 13,
-    "weight": 1061
+    "weight": 1183
   },
   {
     "zh": {
@@ -403,7 +403,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stand-up-comedian",
     "tags": ["article"],
     "id": 14,
-    "weight": 1204
+    "weight": 1317
   },
   {
     "zh": {
@@ -432,7 +432,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-storyteller",
     "tags": ["article"],
     "id": 15,
-    "weight": 1727
+    "weight": 1922
   },
   {
     "zh": {
@@ -461,7 +461,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-screenwriter",
     "tags": ["article"],
     "id": 16,
-    "weight": 938
+    "weight": 1044
   },
   {
     "zh": {
@@ -490,7 +490,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-novelist",
     "tags": ["article"],
     "id": 17,
-    "weight": 3304
+    "weight": 3680
   },
   {
     "zh": {
@@ -519,7 +519,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-poet",
     "tags": ["article"],
     "id": 18,
-    "weight": 946
+    "weight": 1027
   },
   {
     "zh": {
@@ -548,7 +548,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journalist",
     "tags": ["article"],
     "id": 19,
-    "weight": 1011
+    "weight": 1157
   },
   {
     "zh": {
@@ -577,7 +577,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
     "tags": ["favorite", "article"],
     "id": 20,
-    "weight": 8357
+    "weight": 9345
   },
   {
     "zh": {
@@ -606,7 +606,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer",
     "tags": ["article"],
     "id": 21,
-    "weight": 1584
+    "weight": 1743
   },
   {
     "zh": {
@@ -635,7 +635,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
     "tags": ["article"],
     "id": 22,
-    "weight": 327
+    "weight": 344
   },
   {
     "zh": {
@@ -664,7 +664,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commentariat",
     "tags": ["comments"],
     "id": 23,
-    "weight": 667
+    "weight": 719
   },
   {
     "zh": {
@@ -693,7 +693,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-movie-critic",
     "tags": ["comments"],
     "id": 24,
-    "weight": 788
+    "weight": 885
   },
   {
     "zh": {
@@ -722,7 +722,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-film-critic",
     "tags": ["comments"],
     "id": 25,
-    "weight": 198
+    "weight": 218
   },
   {
     "zh": {
@@ -751,7 +751,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-writer",
     "tags": ["comments"],
     "id": 26,
-    "weight": 200
+    "weight": 228
   },
   {
     "zh": {
@@ -780,7 +780,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
     "tags": ["comments"],
     "id": 27,
-    "weight": 155
+    "weight": 170
   },
   {
     "zh": {
@@ -809,7 +809,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic",
     "tags": ["comments"],
     "id": 28,
-    "weight": 220
+    "weight": 246
   },
   {
     "zh": {
@@ -838,7 +838,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journal-reviewer",
     "tags": ["comments"],
     "id": 29,
-    "weight": 147
+    "weight": 159
   },
   {
     "zh": {
@@ -867,7 +867,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder",
     "tags": ["text"],
     "id": 30,
-    "weight": 129
+    "weight": 143
   },
   {
     "zh": {
@@ -896,7 +896,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["text"],
     "id": 31,
-    "weight": 161
+    "weight": 173
   },
   {
     "zh": {
@@ -925,7 +925,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["text"],
     "id": 32,
-    "weight": 83
+    "weight": 90
   },
   {
     "zh": {
@@ -954,7 +954,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["text"],
     "id": 33,
-    "weight": 71
+    "weight": 78
   },
   {
     "zh": {
@@ -983,7 +983,7 @@
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
     "tags": ["text"],
     "id": 34,
-    "weight": 71
+    "weight": 78
   },
   {
     "zh": {
@@ -1012,7 +1012,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-lunatic",
     "tags": ["text"],
     "id": 35,
-    "weight": 398
+    "weight": 442
   },
   {
     "zh": {
@@ -1041,7 +1041,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-drunk-person",
     "tags": ["text"],
     "id": 36,
-    "weight": 142
+    "weight": 155
   },
   {
     "zh": {
@@ -1070,7 +1070,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker",
     "tags": ["text"],
     "id": 37,
-    "weight": 354
+    "weight": 369
   },
   {
     "zh": {
@@ -1099,7 +1099,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["seo"],
     "id": 38,
-    "weight": 320
+    "weight": 335
   },
   {
     "zh": {
@@ -1128,7 +1128,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["seo"],
     "id": 39,
-    "weight": 258
+    "weight": 276
   },
   {
     "zh": {
@@ -1157,7 +1157,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["seo"],
     "id": 40,
-    "weight": 595
+    "weight": 686
   },
   {
     "zh": {
@@ -1186,7 +1186,7 @@
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
     "tags": ["seo"],
     "id": 41,
-    "weight": 3423
+    "weight": 3967
   },
   {
     "zh": {
@@ -1215,7 +1215,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-self-help-book",
     "tags": ["life"],
     "id": 42,
-    "weight": 486
+    "weight": 546
   },
   {
     "zh": {
@@ -1244,7 +1244,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gnomist",
     "tags": ["life"],
     "id": 43,
-    "weight": 185
+    "weight": 199
   },
   {
     "zh": {
@@ -1273,7 +1273,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-emergency-response-professional",
     "tags": ["life"],
     "id": 44,
-    "weight": 127
+    "weight": 136
   },
   {
     "zh": {
@@ -1302,7 +1302,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-shopper",
     "tags": ["life"],
     "id": 45,
-    "weight": 270
+    "weight": 294
   },
   {
     "zh": {
@@ -1331,7 +1331,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-career-counselor",
     "tags": ["life"],
     "id": 46,
-    "weight": 421
+    "weight": 475
   },
   {
     "zh": {
@@ -1360,7 +1360,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
     "tags": ["life"],
     "id": 47,
-    "weight": 289
+    "weight": 324
   },
   {
     "zh": {
@@ -1389,7 +1389,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dream-interpreter",
     "tags": ["interesting"],
     "id": 48,
-    "weight": 1000
+    "weight": 1146
   },
   {
     "zh": {
@@ -1418,7 +1418,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-astrologer",
     "tags": ["interesting"],
     "id": 49,
-    "weight": 1144
+    "weight": 1248
   },
   {
     "zh": {
@@ -1447,7 +1447,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-character-from-moviebookanything",
     "tags": ["interesting"],
     "id": 50,
-    "weight": 754
+    "weight": 830
   },
   {
     "zh": {
@@ -1476,7 +1476,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-spongebobs-magic-conch-shell",
     "tags": ["interesting"],
     "id": 51,
-    "weight": 280
+    "weight": 306
   },
   {
     "zh": {
@@ -1505,7 +1505,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diy-expert",
     "tags": ["interesting"],
     "id": 52,
-    "weight": 193
+    "weight": 204
   },
   {
     "zh": {
@@ -1534,7 +1534,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-magician",
     "tags": ["interesting"],
     "id": 53,
-    "weight": 197
+    "weight": 211
   },
   {
     "zh": {
@@ -1563,7 +1563,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-artist-advisor",
     "tags": ["interesting"],
     "id": 54,
-    "weight": 198
+    "weight": 211
   },
   {
     "zh": {
@@ -1592,7 +1592,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-yogi",
     "tags": ["living"],
     "id": 55,
-    "weight": 134
+    "weight": 159
   },
   {
     "zh": {
@@ -1621,7 +1621,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-trainer",
     "tags": ["living"],
     "id": 56,
-    "weight": 2321
+    "weight": 2616
   },
   {
     "zh": {
@@ -1650,7 +1650,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
     "tags": ["living"],
     "id": 57,
-    "weight": 462
+    "weight": 506
   },
   {
     "zh": {
@@ -1679,7 +1679,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-chef",
     "tags": ["living"],
     "id": 58,
-    "weight": 244
+    "weight": 274
   },
   {
     "zh": {
@@ -1708,7 +1708,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chef",
     "tags": ["living"],
     "id": 59,
-    "weight": 166
+    "weight": 182
   },
   {
     "zh": {
@@ -1737,7 +1737,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-babysitter",
     "tags": ["living"],
     "id": 60,
-    "weight": 108
+    "weight": 121
   },
   {
     "zh": {
@@ -1766,7 +1766,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-makeup-artist",
     "tags": ["living"],
     "id": 61,
-    "weight": 161
+    "weight": 180
   },
   {
     "zh": {
@@ -1795,7 +1795,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-stylist",
     "tags": ["living"],
     "id": 62,
-    "weight": 229
+    "weight": 266
   },
   {
     "zh": {
@@ -1824,7 +1824,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debater",
     "tags": ["speech", "mind"],
     "id": 63,
-    "weight": 1066
+    "weight": 1136
   },
   {
     "zh": {
@@ -1853,7 +1853,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fallacy-finder",
     "tags": ["mind"],
     "id": 64,
-    "weight": 243
+    "weight": 261
   },
   {
     "zh": {
@@ -1882,7 +1882,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debate-coach",
     "tags": ["speech"],
     "id": 65,
-    "weight": 112
+    "weight": 123
   },
   {
     "zh": {
@@ -1911,7 +1911,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-elocutionist",
     "tags": ["speech"],
     "id": 66,
-    "weight": 360
+    "weight": 390
   },
   {
     "zh": {
@@ -1940,7 +1940,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-speaker",
     "tags": ["speech"],
     "id": 67,
-    "weight": 285
+    "weight": 308
   },
   {
     "zh": {
@@ -1969,7 +1969,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-coach",
     "tags": ["speech"],
     "id": 68,
-    "weight": 206
+    "weight": 221
   },
   {
     "zh": {
@@ -1998,7 +1998,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-public-speaking-coach",
     "tags": ["speech"],
     "id": 69,
-    "weight": 114
+    "weight": 125
   },
   {
     "zh": {
@@ -2027,7 +2027,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach",
     "tags": ["social"],
     "id": 70,
-    "weight": 213
+    "weight": 229
   },
   {
     "zh": {
@@ -2056,7 +2056,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-relationship-coach",
     "tags": ["social"],
     "id": 71,
-    "weight": 226
+    "weight": 248
   },
   {
     "zh": {
@@ -2085,7 +2085,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-friend",
     "tags": ["social"],
     "id": 72,
-    "weight": 368
+    "weight": 411
   },
   {
     "zh": {
@@ -2114,7 +2114,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mental-health-adviser",
     "tags": ["social"],
     "id": 73,
-    "weight": 801
+    "weight": 877
   },
   {
     "zh": {
@@ -2143,7 +2143,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-psychologist",
     "tags": ["social"],
     "id": 74,
-    "weight": 408
+    "weight": 451
   },
   {
     "zh": {
@@ -2172,7 +2172,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gaslighter",
     "tags": ["social"],
     "id": 75,
-    "weight": 674
+    "weight": 766
   },
   {
     "zh": {
@@ -2201,7 +2201,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosophy-teacher",
     "tags": ["philosophy"],
     "id": 76,
-    "weight": 214
+    "weight": 228
   },
   {
     "zh": {
@@ -2230,7 +2230,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosopher",
     "tags": ["philosophy"],
     "id": 77,
-    "weight": 607
+    "weight": 666
   },
   {
     "zh": {
@@ -2259,7 +2259,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socrat",
     "tags": ["philosophy"],
     "id": 78,
-    "weight": 304
+    "weight": 333
   },
   {
     "zh": {
@@ -2288,7 +2288,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socratic-method-prompt",
     "tags": ["philosophy"],
     "id": 79,
-    "weight": 163
+    "weight": 188
   },
   {
     "zh": {
@@ -2317,7 +2317,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-the-buddha",
     "tags": ["philosophy"],
     "id": 80,
-    "weight": 1500
+    "weight": 1675
   },
   {
     "zh": {
@@ -2346,7 +2346,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-muslim-imam",
     "tags": ["philosophy"],
     "id": 81,
-    "weight": 138
+    "weight": 224
   },
   {
     "zh": {
@@ -2375,7 +2375,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-math-teacher",
     "tags": ["academic"],
     "id": 82,
-    "weight": 665
+    "weight": 726
   },
   {
     "zh": {
@@ -2404,7 +2404,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematical-history-teacher",
     "tags": ["academic"],
     "id": 83,
-    "weight": 72
+    "weight": 86
   },
   {
     "zh": {
@@ -2433,7 +2433,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
     "tags": ["academic"],
     "id": 84,
-    "weight": 149
+    "weight": 156
   },
   {
     "zh": {
@@ -2462,7 +2462,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-statistician",
     "tags": ["academic"],
     "id": 85,
-    "weight": 230
+    "weight": 256
   },
   {
     "zh": {
@@ -2491,7 +2491,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
     "tags": ["academic"],
     "id": 86,
-    "weight": 208
+    "weight": 220
   },
   {
     "zh": {
@@ -2520,7 +2520,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
     "tags": ["academic"],
     "id": 87,
-    "weight": 467
+    "weight": 506
   },
   {
     "zh": {
@@ -2549,7 +2549,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
     "tags": ["academic"],
     "id": 88,
-    "weight": 358
+    "weight": 382
   },
   {
     "zh": {
@@ -2578,7 +2578,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-educational-content-creator",
     "tags": ["academic"],
     "id": 89,
-    "weight": 854
+    "weight": 931
   },
   {
     "zh": {
@@ -2607,7 +2607,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
     "tags": ["code"],
     "id": 90,
-    "weight": 5100
+    "weight": 5815
   },
   {
     "zh": {
@@ -2636,7 +2636,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
     "tags": ["code"],
     "id": 91,
-    "weight": 981
+    "weight": 1072
   },
   {
     "zh": {
@@ -2665,7 +2665,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-uxui-developer",
     "tags": ["code"],
     "id": 92,
-    "weight": 263
+    "weight": 293
   },
   {
     "zh": {
@@ -2694,7 +2694,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-design-consultant",
     "tags": ["code"],
     "id": 93,
-    "weight": 608
+    "weight": 670
   },
   {
     "zh": {
@@ -2723,7 +2723,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
     "tags": ["code"],
     "id": 94,
-    "weight": 1018
+    "weight": 1156
   },
   {
     "zh": {
@@ -2752,7 +2752,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-architect",
     "tags": ["code"],
     "id": 95,
-    "weight": 827
+    "weight": 929
   },
   {
     "zh": {
@@ -2781,7 +2781,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cyber-security-specialist",
     "tags": ["code"],
     "id": 96,
-    "weight": 259
+    "weight": 282
   },
   {
     "zh": {
@@ -2810,7 +2810,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
     "tags": ["code"],
     "id": 97,
-    "weight": 365
+    "weight": 403
   },
   {
     "zh": {
@@ -2839,7 +2839,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
     "tags": ["code"],
     "id": 98,
-    "weight": 361
+    "weight": 398
   },
   {
     "zh": {
@@ -2868,7 +2868,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-smart-domain-name-generator",
     "tags": ["code"],
     "id": 99,
-    "weight": 208
+    "weight": 240
   },
   {
     "zh": {
@@ -2897,7 +2897,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
     "tags": ["code"],
     "id": 100,
-    "weight": 173
+    "weight": 208
   },
   {
     "zh": {
@@ -2926,7 +2926,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
     "tags": ["code"],
     "id": 101,
-    "weight": 558
+    "weight": 582
   },
   {
     "zh": {
@@ -2955,7 +2955,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
     "tags": ["code"],
     "id": 102,
-    "weight": 143
+    "weight": 158
   },
   {
     "zh": {
@@ -2984,7 +2984,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
     "tags": ["interpreter"],
     "id": 103,
-    "weight": 504
+    "weight": 565
   },
   {
     "zh": {
@@ -3013,7 +3013,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
     "tags": ["interpreter"],
     "id": 104,
-    "weight": 61
+    "weight": 76
   },
   {
     "zh": {
@@ -3042,7 +3042,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
     "tags": ["interpreter"],
     "id": 105,
-    "weight": 67
+    "weight": 78
   },
   {
     "zh": {
@@ -3071,7 +3071,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
     "tags": ["interpreter"],
     "id": 106,
-    "weight": 315
+    "weight": 349
   },
   {
     "zh": {
@@ -3100,7 +3100,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
     "tags": ["interpreter"],
     "id": 107,
-    "weight": 133
+    "weight": 155
   },
   {
     "zh": {
@@ -3129,7 +3129,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
     "tags": ["interpreter"],
     "id": 108,
-    "weight": 87
+    "weight": 109
   },
   {
     "zh": {
@@ -3158,7 +3158,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
     "tags": ["favorite", "ai"],
     "id": 109,
-    "weight": 9375
+    "weight": 10796
   },
   {
     "zh": {
@@ -3216,7 +3216,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-trying-to-escape-the-box",
     "tags": ["ai"],
     "id": 111,
-    "weight": 177
+    "weight": 194
   },
   {
     "zh": {
@@ -3245,7 +3245,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer",
     "tags": ["ai"],
     "id": 112,
-    "weight": 459
+    "weight": 510
   },
   {
     "zh": {
@@ -3274,7 +3274,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
     "tags": ["language"],
     "id": 113,
-    "weight": 81
+    "weight": 88
   },
   {
     "zh": {
@@ -3303,7 +3303,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
     "tags": ["language"],
     "id": 114,
-    "weight": 112
+    "weight": 130
   },
   {
     "zh": {
@@ -3332,7 +3332,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
     "tags": ["language"],
     "id": 115,
-    "weight": 105
+    "weight": 115
   },
   {
     "zh": {
@@ -3361,7 +3361,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-biblical-translator",
     "tags": ["language"],
     "id": 116,
-    "weight": 111
+    "weight": 125
   },
   {
     "zh": {
@@ -3390,7 +3390,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-morse-code-translator",
     "tags": ["language"],
     "id": 117,
-    "weight": 92
+    "weight": 101
   },
   {
     "zh": {
@@ -3419,7 +3419,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
     "tags": ["language"],
     "id": 118,
-    "weight": 144
+    "weight": 181
   },
   {
     "zh": {
@@ -3448,7 +3448,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-english-pronunciation-helper",
     "tags": ["language"],
     "id": 119,
-    "weight": 152
+    "weight": 171
   },
   {
     "zh": {
@@ -3477,7 +3477,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-spoken-english-teacher-and-improver",
     "tags": ["pedagogy"],
     "id": 120,
-    "weight": 718
+    "weight": 812
   },
   {
     "zh": {
@@ -3506,7 +3506,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
     "tags": ["language"],
     "id": 121,
-    "weight": 87
+    "weight": 99
   },
   {
     "zh": {
@@ -3535,7 +3535,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
     "tags": ["games"],
     "id": 122,
-    "weight": 1803
+    "weight": 1974
   },
   {
     "zh": {
@@ -3564,7 +3564,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
     "tags": ["games"],
     "id": 123,
-    "weight": 297
+    "weight": 325
   },
   {
     "zh": {
@@ -3593,7 +3593,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-chess-player",
     "tags": ["games"],
     "id": 124,
-    "weight": 158
+    "weight": 174
   },
   {
     "zh": {
@@ -3622,7 +3622,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-text-based-adventure-game",
     "tags": ["games"],
     "id": 125,
-    "weight": 955
+    "weight": 1035
   },
   {
     "zh": {
@@ -3651,7 +3651,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
     "tags": ["tool"],
     "id": 126,
-    "weight": 581
+    "weight": 634
   },
   {
     "zh": {
@@ -3680,7 +3680,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-digital-art-gallery-guide",
     "tags": ["tool"],
     "id": 127,
-    "weight": 54
+    "weight": 58
   },
   {
     "zh": {
@@ -3709,7 +3709,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
     "tags": ["tool"],
     "id": 128,
-    "weight": 123
+    "weight": 142
   },
   {
     "zh": {
@@ -3738,7 +3738,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
     "tags": ["tool"],
     "id": 129,
-    "weight": 175
+    "weight": 181
   },
   {
     "zh": {
@@ -3767,7 +3767,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
     "tags": ["tool"],
     "id": 130,
-    "weight": 481
+    "weight": 534
   },
   {
     "zh": {
@@ -3796,7 +3796,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
     "tags": ["tool"],
     "id": 131,
-    "weight": 150
+    "weight": 160
   },
   {
     "zh": {
@@ -3825,7 +3825,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-excel-sheet",
     "tags": ["tool"],
     "id": 132,
-    "weight": 1387
+    "weight": 1519
   },
   {
     "zh": {
@@ -3854,7 +3854,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
     "tags": ["tool"],
     "id": 133,
-    "weight": 230
+    "weight": 250
   },
   {
     "zh": {
@@ -3883,7 +3883,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
     "tags": ["tool"],
     "id": 134,
-    "weight": 374
+    "weight": 417
   },
   {
     "zh": {
@@ -3912,7 +3912,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
     "tags": ["tool"],
     "id": 135,
-    "weight": 252
+    "weight": 262
   },
   {
     "zh": {
@@ -3941,7 +3941,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chemical-reaction-vessel",
     "tags": ["tool"],
     "id": 136,
-    "weight": 121
+    "weight": 130
   },
   {
     "zh": {
@@ -3970,7 +3970,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
     "tags": ["tool"],
     "id": 137,
-    "weight": 385
+    "weight": 423
   },
   {
     "zh": {
@@ -3999,7 +3999,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chief-executive-officer",
     "tags": ["company"],
     "id": 138,
-    "weight": 656
+    "weight": 733
   },
   {
     "zh": {
@@ -4028,7 +4028,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-product-manager",
     "tags": ["company"],
     "id": 139,
-    "weight": 1094
+    "weight": 1227
   },
   {
     "zh": {
@@ -4057,7 +4057,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-salesperson",
     "tags": ["company"],
     "id": 140,
-    "weight": 306
+    "weight": 326
   },
   {
     "zh": {
@@ -4086,7 +4086,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-advertiser",
     "tags": ["company"],
     "id": 141,
-    "weight": 902
+    "weight": 995
   },
   {
     "zh": {
@@ -4115,7 +4115,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
     "tags": ["company"],
     "id": 142,
-    "weight": 1201
+    "weight": 1296
   },
   {
     "zh": {
@@ -4144,7 +4144,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-manager",
     "tags": ["company"],
     "id": 143,
-    "weight": 154
+    "weight": 177
   },
   {
     "zh": {
@@ -4173,7 +4173,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-influencer",
     "tags": ["company"],
     "id": 144,
-    "weight": 271
+    "weight": 299
   },
   {
     "zh": {
@@ -4202,7 +4202,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-position-interviewer",
     "tags": ["company"],
     "id": 145,
-    "weight": 721
+    "weight": 795
   },
   {
     "zh": {
@@ -4231,7 +4231,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-recruiter",
     "tags": ["company"],
     "id": 146,
-    "weight": 189
+    "weight": 202
   },
   {
     "zh": {
@@ -4260,7 +4260,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-talent-coach",
     "tags": ["company"],
     "id": 147,
-    "weight": 407
+    "weight": 441
   },
   {
     "zh": {
@@ -4289,7 +4289,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
     "tags": ["company"],
     "id": 148,
-    "weight": 139
+    "weight": 159
   },
   {
     "zh": {
@@ -4318,7 +4318,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-logistician",
     "tags": ["company"],
     "id": 149,
-    "weight": 105
+    "weight": 122
   },
   {
     "zh": {
@@ -4347,7 +4347,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-expert",
     "tags": ["company"],
     "id": 150,
-    "weight": 327
+    "weight": 363
   },
   {
     "zh": {
@@ -4376,7 +4376,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
     "tags": ["doctor"],
     "id": 151,
-    "weight": 419
+    "weight": 448
   },
   {
     "zh": {
@@ -4405,7 +4405,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-doctor",
     "tags": ["doctor"],
     "id": 152,
-    "weight": 873
+    "weight": 930
   },
   {
     "zh": {
@@ -4434,7 +4434,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dentist",
     "tags": ["doctor"],
     "id": 153,
-    "weight": 193
+    "weight": 220
   },
   {
     "zh": {
@@ -4463,7 +4463,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-hypnotherapist",
     "tags": ["doctor"],
     "id": 154,
-    "weight": 184
+    "weight": 198
   },
   {
     "zh": {
@@ -4492,7 +4492,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-assisted-doctor",
     "tags": ["doctor"],
     "id": 155,
-    "weight": 2277
+    "weight": 2538
   },
   {
     "zh": {
@@ -4521,7 +4521,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-speech-language-pathologist-slp",
     "tags": ["doctor"],
     "id": 156,
-    "weight": 69
+    "weight": 75
   },
   {
     "zh": {
@@ -4550,7 +4550,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-accountant",
     "tags": ["finance"],
     "id": 157,
-    "weight": 471
+    "weight": 511
   },
   {
     "zh": {
@@ -4579,7 +4579,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-financial-analyst",
     "tags": ["finance"],
     "id": 158,
-    "weight": 1186
+    "weight": 1257
   },
   {
     "zh": {
@@ -4608,7 +4608,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-investment-manager",
     "tags": ["finance"],
     "id": 159,
-    "weight": 1841
+    "weight": 2017
   },
   {
     "zh": {
@@ -4637,7 +4637,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-composer",
     "tags": ["music"],
     "id": 160,
-    "weight": 661
+    "weight": 734
   },
   {
     "zh": {
@@ -4666,7 +4666,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-classical-music-composer",
     "tags": ["music"],
     "id": 161,
-    "weight": 137
+    "weight": 145
   },
   {
     "zh": {
@@ -4695,7 +4695,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-rapper",
     "tags": ["music"],
     "id": 162,
-    "weight": 439
+    "weight": 473
   },
   {
     "zh": {
@@ -4724,7 +4724,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
     "tags": ["music"],
     "id": 163,
-    "weight": 556
+    "weight": 595
   },
   {
     "zh": {
@@ -4753,7 +4753,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-football-commentator",
     "tags": ["professional"],
     "id": 164,
-    "weight": 117
+    "weight": 129
   },
   {
     "zh": {
@@ -4782,7 +4782,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-florist",
     "tags": ["professional"],
     "id": 165,
-    "weight": 116
+    "weight": 130
   },
   {
     "zh": {
@@ -4811,7 +4811,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tea-taster",
     "tags": ["professional"],
     "id": 166,
-    "weight": 153
+    "weight": 191
   },
   {
     "zh": {
@@ -4840,7 +4840,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-interior-decorator",
     "tags": ["professional"],
     "id": 167,
-    "weight": 432
+    "weight": 477
   },
   {
     "zh": {
@@ -4869,7 +4869,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-pet-behaviorist",
     "tags": ["professional"],
     "id": 168,
-    "weight": 203
+    "weight": 226
   },
   {
     "zh": {
@@ -4898,7 +4898,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-automobile-mechanic",
     "tags": ["professional"],
     "id": 169,
-    "weight": 200
+    "weight": 224
   },
   {
     "zh": {
@@ -4927,7 +4927,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-real-estate-agent",
     "tags": ["professional"],
     "id": 170,
-    "weight": 208
+    "weight": 236
   },
   {
     "zh": {
@@ -4956,7 +4956,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-legal-advisor",
     "tags": ["professional"],
     "id": 171,
-    "weight": 1273
+    "weight": 1430
   },
   {
     "zh": {
@@ -4985,7 +4985,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-tech-lawyer",
     "tags": ["professional"],
     "id": 172,
-    "weight": 322
+    "weight": 359
   },
   {
     "zh": {
@@ -5014,7 +5014,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 173,
-    "weight": 2864
+    "weight": 3130
   },
   {
     "zh": {
@@ -5043,7 +5043,7 @@
     "website": null,
     "tags": ["contribute", "language"],
     "id": 174,
-    "weight": 84
+    "weight": 90
   },
   {
     "zh": {
@@ -5072,7 +5072,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 175,
-    "weight": 410
+    "weight": 436
   },
   {
     "zh": {
@@ -5101,7 +5101,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 176,
-    "weight": 974
+    "weight": 1064
   },
   {
     "zh": {
@@ -5130,7 +5130,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 177,
-    "weight": 2339
+    "weight": 2627
   },
   {
     "zh": {
@@ -5159,7 +5159,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 178,
-    "weight": 339
+    "weight": 372
   },
   {
     "zh": {
@@ -5188,7 +5188,7 @@
     "website": null,
     "tags": ["contribute", "games"],
     "id": 179,
-    "weight": 474
+    "weight": 525
   },
   {
     "zh": {
@@ -5217,7 +5217,7 @@
     "website": "https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11#discussioncomment-5274073",
     "tags": ["contribute", "language"],
     "id": 180,
-    "weight": 4788
+    "weight": 5419
   },
   {
     "zh": {
@@ -5246,7 +5246,7 @@
     "website": null,
     "tags": ["contribute", "language"],
     "id": 181,
-    "weight": 1149
+    "weight": 1244
   },
   {
     "zh": {
@@ -5275,7 +5275,7 @@
     "website": null,
     "tags": ["contribute", "mind", "pedagogy"],
     "id": 182,
-    "weight": 793
+    "weight": 875
   },
   {
     "zh": {
@@ -5304,7 +5304,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 183,
-    "weight": 171
+    "weight": 178
   },
   {
     "zh": {
@@ -5333,7 +5333,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 184,
-    "weight": 553
+    "weight": 588
   },
   {
     "zh": {
@@ -5391,7 +5391,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 186,
-    "weight": 191
+    "weight": 222
   },
   {
     "zh": {
@@ -5420,7 +5420,7 @@
     "website": null,
     "tags": ["contribute"],
     "id": 187,
-    "weight": 1907
+    "weight": 2139
   },
   {
     "zh": {
@@ -5449,7 +5449,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 188,
-    "weight": 655
+    "weight": 727
   },
   {
     "zh": {
@@ -5478,7 +5478,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 189,
-    "weight": 424
+    "weight": 470
   },
   {
     "zh": {
@@ -5507,7 +5507,7 @@
     "website": null,
     "tags": ["contribute", "ai"],
     "id": 190,
-    "weight": 910
+    "weight": 998
   },
   {
     "zh": {
@@ -5536,7 +5536,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 191,
-    "weight": 876
+    "weight": 998
   },
   {
     "zh": {
@@ -5565,7 +5565,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 192,
-    "weight": 507
+    "weight": 561
   },
   {
     "zh": {
@@ -5594,7 +5594,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 193,
-    "weight": 358
+    "weight": 406
   },
   {
     "zh": {
@@ -5623,7 +5623,7 @@
     "website": null,
     "tags": ["contribute", "social"],
     "id": 194,
-    "weight": 597
+    "weight": 659
   },
   {
     "zh": {
@@ -5652,7 +5652,7 @@
     "website": null,
     "tags": ["contribute", "speech"],
     "id": 195,
-    "weight": 917
+    "weight": 989
   },
   {
     "zh": {
@@ -5681,7 +5681,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 196,
-    "weight": 3781
+    "weight": 4207
   },
   {
     "zh": {
@@ -5710,7 +5710,7 @@
     "website": null,
     "tags": ["favorite", "contribute", "write"],
     "id": 197,
-    "weight": 9114
+    "weight": 10158
   },
   {
     "zh": {
@@ -5739,7 +5739,7 @@
     "website": null,
     "tags": ["contribute", "article"],
     "id": 198,
-    "weight": 366
+    "weight": 399
   },
   {
     "zh": {
@@ -5768,7 +5768,7 @@
     "website": null,
     "tags": ["contribute", "social", "favorite"],
     "id": 199,
-    "weight": 7504
+    "weight": 8377
   },
   {
     "zh": {
@@ -5797,7 +5797,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 200,
-    "weight": 1351
+    "weight": 1455
   },
   {
     "zh": {
@@ -5826,7 +5826,7 @@
     "website": null,
     "tags": ["contribute", "tool"],
     "id": 201,
-    "weight": 298
+    "weight": 322
   },
   {
     "zh": {
@@ -5855,7 +5855,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 202,
-    "weight": 439
+    "weight": 496
   },
   {
     "zh": {
@@ -5884,7 +5884,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 203,
-    "weight": 333
+    "weight": 365
   },
   {
     "zh": {
@@ -5913,7 +5913,7 @@
     "website": null,
     "tags": ["contribute", "write"],
     "id": 204,
-    "weight": 4842
+    "weight": 5707
   },
   {
     "zh": {
@@ -5942,7 +5942,7 @@
     "website": null,
     "tags": ["contribute", "write"],
     "id": 205,
-    "weight": 874
+    "weight": 1033
   },
   {
     "zh": {
@@ -5971,7 +5971,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 206,
-    "weight": 3233
+    "weight": 3652
   },
   {
     "zh": {
@@ -6000,7 +6000,7 @@
     "website": null,
     "tags": ["personal", "social"],
     "id": 207,
-    "weight": 262
+    "weight": 282
   },
   {
     "zh": {
@@ -6029,7 +6029,7 @@
     "website": null,
     "tags": ["personal"],
     "id": 208,
-    "weight": 200
+    "weight": 217
   },
   {
     "zh": {
@@ -6058,7 +6058,7 @@
     "website": null,
     "tags": ["personal", "favorite", "write"],
     "id": 209,
-    "weight": 19945
+    "weight": 22659
   },
   {
     "zh": {
@@ -6087,7 +6087,7 @@
     "website": null,
     "tags": ["personal", "article"],
     "id": 210,
-    "weight": 2676
+    "weight": 2993
   },
   {
     "zh": {
@@ -6116,7 +6116,7 @@
     "website": null,
     "tags": ["personal", "write"],
     "id": 211,
-    "weight": 459
+    "weight": 511
   },
   {
     "zh": {
@@ -6145,7 +6145,7 @@
     "website": null,
     "tags": ["contribute", "social"],
     "id": 212,
-    "weight": 2029
+    "weight": 2336
   },
   {
     "zh": {
@@ -6174,7 +6174,7 @@
     "website": null,
     "tags": ["contribute", "comments"],
     "id": 213,
-    "weight": 260
+    "weight": 296
   },
   {
     "zh": {
@@ -6203,7 +6203,7 @@
     "website": null,
     "tags": ["contribute", "article"],
     "id": 214,
-    "weight": 2254
+    "weight": 2518
   },
   {
     "zh": {
@@ -6232,7 +6232,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
     "tags": ["write"],
     "id": 215,
-    "weight": 455
+    "weight": 506
   },
   {
     "zh": {
@@ -6261,7 +6261,7 @@
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-language-literary-critic",
     "tags": ["comments", "text"],
     "id": 216,
-    "weight": 440
+    "weight": 468
   },
   {
     "zh": {
@@ -6290,7 +6290,7 @@
     "website": null,
     "tags": ["contribute", "doctor"],
     "id": 217,
-    "weight": 1124
+    "weight": 1341
   },
   {
     "zh": {
@@ -6319,7 +6319,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 218,
-    "weight": 4256
+    "weight": 4826
   },
   {
     "zh": {
@@ -6348,7 +6348,7 @@
     "website": null,
     "tags": ["contribute", "games"],
     "id": 219,
-    "weight": 2403
+    "weight": 2816
   },
   {
     "zh": {
@@ -6377,7 +6377,7 @@
     "website": null,
     "tags": ["contribute", "tool"],
     "id": 220,
-    "weight": 2078
+    "weight": 2391
   },
   {
     "zh": {
@@ -6406,7 +6406,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 221,
-    "weight": 591
+    "weight": 737
   },
   {
     "zh": {
@@ -6435,7 +6435,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 222,
-    "weight": 603
+    "weight": 769
   },
   {
     "zh": {
@@ -6464,7 +6464,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 223,
-    "weight": 128
+    "weight": 147
   },
   {
     "zh": {
@@ -6493,7 +6493,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 224,
-    "weight": 1320
+    "weight": 1599
   },
   {
     "zh": {
@@ -6522,7 +6522,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 225,
-    "weight": 62
+    "weight": 75
   },
   {
     "zh": {
@@ -6551,7 +6551,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 226,
-    "weight": 135
+    "weight": 163
   },
   {
     "zh": {
@@ -6580,7 +6580,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 227,
-    "weight": 72
+    "weight": 84
   },
   {
     "zh": {
@@ -6609,7 +6609,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 228,
-    "weight": 256
+    "weight": 304
   },
   {
     "zh": {
@@ -6638,7 +6638,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 229,
-    "weight": 112
+    "weight": 132
   },
   {
     "zh": {
@@ -6725,7 +6725,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 232,
-    "weight": 2742
+    "weight": 3901
   },
   {
     "zh": {
@@ -6754,7 +6754,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 233,
-    "weight": 421
+    "weight": 518
   },
   {
     "zh": {
@@ -6783,7 +6783,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 234,
-    "weight": 3625
+    "weight": 4294
   },
   {
     "zh": {
@@ -6812,7 +6812,7 @@
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
     "tags": ["ai"],
     "id": 235,
-    "weight": 190
+    "weight": 214
   },
   {
     "zh": {
@@ -6841,7 +6841,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 236,
-    "weight": 455
+    "weight": 504
   },
   {
     "zh": {
@@ -6870,7 +6870,7 @@
     "website": null,
     "tags": ["contribute", "games"],
     "id": 237,
-    "weight": 520
+    "weight": 615
   },
   {
     "zh": {
@@ -6899,7 +6899,7 @@
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
     "tags": ["write"],
     "id": 238,
-    "weight": 1605
+    "weight": 1781
   },
   {
     "zh": {
@@ -6928,7 +6928,7 @@
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
     "tags": ["write"],
     "id": 239,
-    "weight": 436
+    "weight": 486
   },
   {
     "zh": {
@@ -6957,7 +6957,7 @@
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
     "tags": ["write"],
     "id": 240,
-    "weight": 284
+    "weight": 336
   },
   {
     "zh": {
@@ -6986,7 +6986,7 @@
     "website": null,
     "tags": ["contribute", "social", "company"],
     "id": 241,
-    "weight": 569
+    "weight": 642
   },
   {
     "zh": {
@@ -7015,7 +7015,7 @@
     "website": null,
     "tags": ["personal", "tool"],
     "id": 242,
-    "weight": 1492
+    "weight": 1731
   },
   {
     "zh": {
@@ -7044,7 +7044,7 @@
     "website": null,
     "tags": ["contribute", "comments"],
     "id": 243,
-    "weight": 507
+    "weight": 557
   },
   {
     "zh": {
@@ -7073,7 +7073,7 @@
     "website": null,
     "tags": ["contribute", "tool"],
     "id": 244,
-    "weight": 211
+    "weight": 224
   },
   {
     "zh": {
@@ -7102,7 +7102,7 @@
     "website": null,
     "tags": ["contribute", "tool"],
     "id": 245,
-    "weight": 258
+    "weight": 290
   },
   {
     "zh": {
@@ -7131,7 +7131,7 @@
     "website": null,
     "tags": ["contribute", "code"],
     "id": 246,
-    "weight": 196
+    "weight": 223
   },
   {
     "zh": {
@@ -7160,7 +7160,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 247,
-    "weight": 151
+    "weight": 178
   },
   {
     "zh": {
@@ -7189,7 +7189,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 248,
-    "weight": 190
+    "weight": 226
   },
   {
     "zh": {
@@ -7218,7 +7218,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy"],
     "id": 249,
-    "weight": 56
+    "weight": 81
   },
   {
     "zh": {
@@ -7247,7 +7247,7 @@
     "website": null,
     "tags": ["contribute", "mind"],
     "id": 250,
-    "weight": 466
+    "weight": 520
   },
   {
     "zh": {
@@ -7276,7 +7276,7 @@
     "website": null,
     "tags": ["contribute", "article"],
     "id": 251,
-    "weight": 3702
+    "weight": 4697
   },
   {
     "zh": {
@@ -7305,7 +7305,7 @@
     "website": null,
     "tags": ["contribute", "academic"],
     "id": 252,
-    "weight": 185
+    "weight": 204
   },
   {
     "zh": {
@@ -7334,7 +7334,7 @@
     "website": null,
     "tags": ["contribute", "article"],
     "id": 253,
-    "weight": 564
+    "weight": 660
   },
   {
     "zh": {
@@ -7363,7 +7363,7 @@
     "website": null,
     "tags": ["contribute", "company"],
     "id": 254,
-    "weight": 266
+    "weight": 328
   },
   {
     "zh": {
@@ -7392,7 +7392,7 @@
     "website": "https://sc83ykpdyf.feishu.cn/docx/ZVgBdo0zAoFi9IxANh6cXlNKnsh",
     "tags": ["ai", "latest"],
     "id": 255,
-    "weight": 408
+    "weight": 522
   },
   {
     "zh": {
@@ -7421,7 +7421,7 @@
     "website": "https://github.com/JushBJJ/Mr.-Ranedeer-AI-Tutor/tree/main",
     "tags": ["contribute", "write", "latest"],
     "id": 256,
-    "weight": 1042
+    "weight": 1591
   },
   {
     "zh": {
@@ -7450,7 +7450,7 @@
     "website": null,
     "tags": ["contribute", "academic", "latest"],
     "id": 257,
-    "weight": 159
+    "weight": 199
   },
   {
     "zh": {
@@ -7479,7 +7479,7 @@
     "website": null,
     "tags": ["contribute", "write", "latest"],
     "id": 258,
-    "weight": 179
+    "weight": 260
   },
   {
     "zh": {
@@ -7508,7 +7508,7 @@
     "website": null,
     "tags": ["contribute", "write", "latest"],
     "id": 259,
-    "weight": 189
+    "weight": 250
   },
   {
     "zh": {
@@ -7537,7 +7537,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy", "latest"],
     "id": 260,
-    "weight": 58
+    "weight": 88
   },
   {
     "zh": {
@@ -7566,7 +7566,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy", "latest"],
     "id": 261,
-    "weight": 160
+    "weight": 238
   },
   {
     "zh": {
@@ -7595,7 +7595,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy", "latest"],
     "id": 262,
-    "weight": 178
+    "weight": 255
   },
   {
     "zh": {
@@ -7624,7 +7624,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy", "latest"],
     "id": 263,
-    "weight": 95
+    "weight": 125
   },
   {
     "zh": {
@@ -7653,7 +7653,7 @@
     "website": null,
     "tags": ["contribute", "games", "latest"],
     "id": 264,
-    "weight": 294
+    "weight": 429
   },
   {
     "zh": {
@@ -7682,7 +7682,7 @@
     "website": null,
     "tags": ["contribute", "pedagogy", "latest"],
     "id": 265,
-    "weight": 181
+    "weight": 250
   },
   {
     "zh": {
@@ -7711,7 +7711,7 @@
     "website": null,
     "tags": ["contribute", "ai", "latest"],
     "id": 266,
-    "weight": 549
+    "weight": 853
   },
   {
     "zh": {
@@ -7740,7 +7740,7 @@
     "website": null,
     "tags": ["contribute", "tool", "latest"],
     "id": 267,
-    "weight": 243
+    "weight": 316
   },
   {
     "zh": {
@@ -7769,7 +7769,7 @@
     "website": null,
     "tags": ["contribute", "language"],
     "id": 268,
-    "weight": 43
+    "weight": 52
   },
   {
     "zh": {
@@ -7798,7 +7798,7 @@
     "website": null,
     "tags": ["contribute", "interesting", "latest"],
     "id": 269,
-    "weight": 128
+    "weight": 210
   },
   {
     "zh": {
@@ -7827,7 +7827,7 @@
     "website": null,
     "tags": ["contribute", "mind", "latest"],
     "id": 270,
-    "weight": 204
+    "weight": 269
   },
   {
     "zh": {
@@ -7856,6 +7856,6 @@
     "website": null,
     "tags": ["contribute", "mind", "latest"],
     "id": 271,
-    "weight": 191
+    "weight": 240
   }
 ]
