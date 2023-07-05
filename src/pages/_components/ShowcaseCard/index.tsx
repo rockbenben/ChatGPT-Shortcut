@@ -11,9 +11,8 @@ import {
   Tags,
   TagList,
   type TagType,
-  type User,
   type Tag,
-} from "@site/src/data/users";
+} from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
 //import Tooltip from "../ShowcaseTooltip";

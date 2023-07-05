@@ -6,10 +6,10 @@ export type LanguageData = {
 };
 
 export type User = {
-  zh: LanguageData;
-  en: LanguageData;
-  ja: LanguageData;
-  ko: LanguageData;
+  zh?: LanguageData;
+  en?: LanguageData;
+  ja?: LanguageData;
+  ko?: LanguageData;
   website: string | null;
   tags: TagType[];
   id: number;

@@ -1,7 +1,5 @@
 import { translate } from "@docusaurus/Translate";
-import { sortBy } from "@site/src/utils/jsUtils";
-import { User, TagType, Tag } from "./User.d";
-import UsersData from "./prompt.json";
+import { User, TagType, Tag } from './User.d';
 
 export const Tags: { [type in TagType]: Tag } = {
   favorite: {
@@ -267,17 +265,4 @@ export const Tags: { [type in TagType]: Tag } = {
   },
 };
 
-const Users: User[] = UsersData as User[];
 export const TagList = Object.keys(Tags) as TagType[];
-function sortUsers() {
-  let result = Users;
-  // Sort by prompt weight
-  result = sortBy(result, (user) => -user.weight);
-  // Sort by prompt title
-  //result = sortBy(result, (user) => user.zh.title.toLowerCase());
-  // Sort by favorite tag, favorites first
-  result = sortBy(result, (user) => !user.tags.includes("favorite"));
-  return result;
-}
-
-export const sortedUsers = sortUsers();

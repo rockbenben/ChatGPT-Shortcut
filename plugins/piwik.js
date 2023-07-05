@@ -4,6 +4,17 @@ module.exports = function () {
     name: "piwik",
     injectHtmlTags() {
       return {
+        headTags: [
+          {
+            tagName: "script",
+            attributes: {
+              type: "text/javascript",
+              charset: "UTF-8",
+              src: "https://cdn.wwads.cn/js/makemoney.js",
+              async: true,
+            },
+          },
+        ],
         postBodyTags: [
           {
             tagName: "script",

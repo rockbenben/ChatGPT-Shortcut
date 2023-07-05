@@ -107,6 +107,9 @@ function PromptPage({ prompt }) {
               <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
                 <Translate id='comments.info'>请在下方回复您对本提示词的意见、想法或分享。</Translate>
               </Typography.Paragraph>{" "}
+              {["zh"].includes(currentLanguage) && (
+                <div className="wwads-cn wwads-vertical wwads-sticky" data-id="256" style={{ maxWidth: '180px' }}></div>
+              )}
               <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
               <Waline {...walineOptions} />
             </Card>
