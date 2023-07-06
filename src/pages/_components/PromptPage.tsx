@@ -55,7 +55,7 @@ function PromptPage({ prompt }) {
   }, [prompt.id, mainPrompt]);
 
   let walineLang = currentLanguage;
-  if (["ko"].includes(currentLanguage)) {
+  if (!["zh", "ja", "en"].includes(currentLanguage)) {
     walineLang = "en";
   }
 
@@ -107,10 +107,10 @@ function PromptPage({ prompt }) {
               <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
                 <Translate id='comments.info'>请在下方回复您对本提示词的意见、想法或分享。</Translate>
               </Typography.Paragraph>{" "}
+              <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
               {["zh"].includes(currentLanguage) && (
                 <div className="wwads-cn wwads-vertical wwads-sticky" data-id="256" style={{ maxWidth: '180px' }}></div>
               )}
-              <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
               <Waline {...walineOptions} />
             </Card>
           </li>
