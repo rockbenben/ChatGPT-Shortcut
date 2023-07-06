@@ -16,7 +16,6 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { usePluralForm } from "@docusaurus/theme-common";
 import { debounce } from "lodash";
 
-//import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";

@@ -1,9 +1,11 @@
 import json
 import os
+import shutil
 from pathlib import Path
 
+# 将 prompt.json 按语言分割成多个文件
 # 获取当前目录的路径
-current_dir = os.getcwd()
+current_dir = os.path.join(os.getcwd(), 'src', 'data')
 
 # 指定输入文件的路径
 input_path = os.path.join(current_dir, 'prompt.json')
@@ -59,11 +61,9 @@ for lang in languages:
     with open(output_path, 'w', encoding='utf-8') as file:
         json.dump(output_data[lang], file, ensure_ascii=False, indent=2)
 
-
-# Convert JSON to React JSX files (like the PowerShell script)
-
+# 更新 Prompt Page 页面的 prompt 内容
 # Define the path to the output directory
-react_jsx_dir = Path('../pages/prompt')
+react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
 
 # Ensure the output directory exists
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
@@ -90,3 +90,26 @@ export default PromptDetail;
     with open(react_jsx_dir / f"{prompt['id']}.tsx", 'w', encoding='utf-8') as file:
         file.write(content)
 
+# 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
+def replace_and_write(source_file, destination_file, original_text, replacement_text):
+    with open(source_file, 'r', encoding='utf-8') as file:
+        file_data = file.read()
+        
+    file_data = file_data.replace(original_text, replacement_text)
+    
+    with open(destination_file, 'w', encoding='utf-8') as file:
+        file.write(file_data)
+
+# This is the file we want to copy
+source_file = os.path.join(os.getcwd(), 'src', 'pages', 'index.tsx')
+
+for lang in languages[1:]:
+    # Specify the path to the target file
+    target_file = os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'index.tsx')
+    
+    # If the target file exists, remove it
+    if os.path.exists(target_file):
+        os.remove(target_file)
+    
+    # Replace 'users.zh' with 'users.{lang}' and write to the target file
+    replace_and_write(source_file, target_file, 'users.zh', f'users.{lang}')

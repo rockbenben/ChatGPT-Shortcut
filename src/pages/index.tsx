@@ -16,7 +16,6 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { usePluralForm } from "@docusaurus/theme-common";
 import { debounce } from "lodash";
 
-//import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
@@ -545,8 +544,6 @@ export default function Showcase(): JSX.Element {
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className='margin-vert--lg'>
@@ -555,9 +552,6 @@ export default function Showcase(): JSX.Element {
           <ShowcaseFilters onToggleDescription={toggleDescription} />
           <ShowcaseCards isDescription={isDescription} />
         </AuthProvider>
-        {/* {["zh"].includes(currentLanguage) && (
-          <div className="wwads-cn wwads-vertical wwads-sticky" data-id="256" style={{ maxWidth: '180px' }}></div>
-        )} */}
         <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
     </Layout>
