@@ -108,9 +108,9 @@ function PromptPage({ prompt }) {
                 <Translate id='comments.info'>请在下方回复您对本提示词的意见、想法或分享。</Translate>
               </Typography.Paragraph>{" "}
               <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
-              {/* {["zh"].includes(currentLanguage) && (
+              {["zh"].includes(currentLanguage) && (
                 <div className="wwads-cn wwads-horizontal wwads-sticky" data-id="256" style={{ maxWidth: '350px' }}></div>
-              )} */}
+              )}
               <Waline {...walineOptions} />
             </Card>
           </li>
