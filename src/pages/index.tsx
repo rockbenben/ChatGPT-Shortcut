@@ -555,9 +555,9 @@ export default function Showcase(): JSX.Element {
           <ShowcaseFilters onToggleDescription={toggleDescription} />
           <ShowcaseCards isDescription={isDescription} />
         </AuthProvider>
-        {["zh"].includes(currentLanguage) && (
+        {/* {["zh"].includes(currentLanguage) && (
           <div className="wwads-cn wwads-vertical wwads-sticky" data-id="256" style={{ maxWidth: '180px' }}></div>
-        )}
+        )} */}
         <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
     </Layout>
