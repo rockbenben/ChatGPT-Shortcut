@@ -10,7 +10,7 @@
   overflow-y: auto;
   font-size: smaller;
   line-height: 1.66;
-  
+
   /* Scrollbar styles */
   scrollbar-width: thin;
   scrollbar-color: transparent transparent; /* transparent scrollbar until hovered over */
@@ -38,6 +38,15 @@
   background-color: rgba(0, 0, 0, 0.5); /* Show scrollbar when hovering over the element */
 }
 
+.showcaseCardBodyActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showcaseCardBodyActions .button {
+  margin-right: 5px;
+}
 
 .showcaseCardImage {
   overflow: hidden;

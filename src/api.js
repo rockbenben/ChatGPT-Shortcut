@@ -13,13 +13,18 @@ const config = {
 
 // 登陆用户获取
 export async function getUserAllInfo() {
-  // 检查 authToken 是否存在
-  if (!authToken) {
-    // 如果 authToken 不存在，直接返回 null 或者抛出错误
-    // return null;
-    throw new Error("Auth token not provided");
+  try {
+    if (!authToken) {
+      throw new Error("Auth token not provided");
+    }
+    return await axios.get(
+      `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[userprompts]=*`,
+      config
+    );
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    throw error;
   }
-  return axios.get(`${API_URL}/users/me?populate=*`, config);
 }
 
 export async function createFavorite(loves) {
@@ -46,7 +51,26 @@ export async function updateFavorite(favoriteId, loves) {
   );
 }
 
+// 获取 userprompts
+export async function getUserPrompts(
+  page,
+  pageSize,
+  sortField,
+  sortOrder,
+  searchTerm
+) {
+  let url = `${API_URL}/userprompts?filters[share]=true&filters[promptLength][$gt]=30&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
+
+  // 如果存在搜索关键字，那么添加到 URL 中
+  if (searchTerm) {
+    url += `&filters[description][$containsi]=${searchTerm}&filters[title][$containsi]=${searchTerm}&filters[remark][$containsi]=${searchTerm}`;
+  }
+
+  return axios.get(url);
+}
+
 export async function submitPrompt(values) {
+  console.log(values);
   return axios.post(
     `${API_URL}/userprompts`,
     {
@@ -55,6 +79,8 @@ export async function submitPrompt(values) {
         description: values.description,
         remark: values.remark,
         notes: values.notes,
+        share: values.share,
+        promptLength: values.description.length,
       },
     },
     config
@@ -63,6 +89,7 @@ export async function submitPrompt(values) {
 
 // 更新 updatePrompt 函数，让它接受两个参数：id 和 values
 export async function updatePrompt(id, values) {
+  console.log(values);
   return axios.put(
     `${API_URL}/userprompts/${id}`,
     {
@@ -71,6 +98,8 @@ export async function updatePrompt(id, values) {
         description: values.description,
         remark: values.remark,
         notes: values.notes,
+        share: values.share,
+        promptLength: values.description.length,
       },
     },
     config
@@ -79,6 +108,26 @@ export async function updatePrompt(id, values) {
 
 export async function deletePrompt(id) {
   return axios.delete(`${API_URL}/userprompts/${id}`, config);
+}
+
+// 投票用户提示
+export async function voteOnUserPrompt(promptId, action) {
+  try {
+    if (!authToken) {
+      throw new Error("Auth token not provided");
+    }
+    if (!["upvote", "downvote"].includes(action)) {
+      throw new Error("Invalid vote action");
+    }
+    return await axios.post(
+      `${API_URL}/userprompts/${promptId}/vote`,
+      { action: action },
+      config
+    );
+  } catch (error) {
+    console.error("Error voting on user prompt:", error);
+    throw error;
+  }
 }
 
 export async function login(values) {
@@ -126,20 +175,6 @@ export async function forgotPassword(email) {
   }
 }
 
-// user
-export async function fetchUserData() {
-  try {
-    if (!authToken) {
-      throw new Error("Auth token not provided");
-    }
-    const response = await axios.get(`${API_URL}/users/me`, config);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-    throw error;
-  }
-}
-
 // 重置用户密码
 export async function resetPassword(values) {
   try {
@@ -158,7 +193,9 @@ export async function resetPassword(values) {
 // copy count api
 export async function fetchAllCopyCounts() {
   try {
-    const response = await axios.get("https://api-count.newzone.top/api/cards/allcounts");
+    const response = await axios.get(
+      "https://api-count.newzone.top/api/cards/allcounts"
+    );
     const counts = response.data.reduce((acc, item) => {
       acc[item.card_id] = item.count;
       return acc;
@@ -171,7 +208,9 @@ export async function fetchAllCopyCounts() {
 }
 export async function updateCopyCount(cardId) {
   try {
-    const response = await axios.post(`https://api-count.newzone.top/api/cards/${cardId}/copy`);
+    const response = await axios.post(
+      `https://api-count.newzone.top/api/cards/${cardId}/copy`
+    );
     const updatedCount = response.data.copyCount;
     return updatedCount;
   } catch (error) {
