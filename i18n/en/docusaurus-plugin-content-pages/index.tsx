@@ -15,7 +15,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { usePluralForm } from "@docusaurus/theme-common";
 import { debounce } from "lodash";
-
+import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
@@ -279,6 +279,33 @@ function ShowcaseFilters({ onToggleDescription }) {
             </li>
           );
         })}
+        <Link to='/community-prompts'>
+          <li className={styles.checkboxListItem}>
+            <ShowcaseTooltip
+              text={translate({
+                message: "分享到社区的提示词",
+              })}
+              anchorEl='#__docusaurus'>
+              <ShowcaseTagSelect
+                tag='communityprompt'
+                label={translate({
+                  message: "社区提示词",
+                })}
+                icon={
+                  <span
+                    style={{
+                      backgroundColor: "#a2222a",
+                      width: 10,
+                      height: 10,
+                      borderRadius: "50%",
+                      marginLeft: 8,
+                    }}
+                  />
+                }
+              />
+            </ShowcaseTooltip>
+          </li>
+        </Link>
       </ul>
       {showUserPrompts && <UserPrompts />}
     </section>

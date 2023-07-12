@@ -226,9 +226,9 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
             type='button'
             onClick={handleCopyClick}>
             {copied ? (
-              <Translate>已复制</Translate>
+              <Translate id='copy.done'>已复制</Translate>
             ) : (
-              <Translate>复制</Translate>
+              <Translate id='copy.button'>复制</Translate>
             )}
           </button>
         </div>

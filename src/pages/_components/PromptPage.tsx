@@ -77,7 +77,7 @@ function PromptPage({ prompt }) {
                 <span>
                   {title} <Badge count={"Weight: " + weight} style={{ backgroundColor: "#52c41a" }} />
                   <button className={clsx("button button--secondary button--sm", styles.showcaseCardSrcBtn)} type='button' onClick={handleCopyClick}>
-                    {copied ? <Translate>已复制</Translate> : <Translate>复制</Translate>}
+                    {copied ? <Translate id='copy.done'>已复制</Translate> : <Translate id='copy.button'>复制</Translate>}
                   </button>
                   {/* <Button type="text" icon={<HeartOutlined />} /> */}
                 </span>
