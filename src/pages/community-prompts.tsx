@@ -5,6 +5,7 @@ import copy from "copy-text-to-clipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
 import { getUserPrompts, voteOnUserPrompt } from "@site/src/api";
+import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import Layout from "@theme/Layout";
 import {
   Typography,
@@ -27,6 +28,10 @@ const { Search } = Input;
 const { Text } = Typography;
 
 export default function CommunityPrompts() {
+  const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
+  const DESCRIPTION = translate({
+    message: "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+  });
   const [userprompts, setUserPrompts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
@@ -35,6 +40,10 @@ export default function CommunityPrompts() {
   const [copiedIndex, setCopiedIndex] = useState(null);
   // 新增一个用于保存搜索关键字的 state
   const [searchTerm, setSearchTerm] = useState("");
+  const [Shareurl, setShareUrl] = useState("");
+  useEffect(() => {
+    setShareUrl(window.location.href);
+  }, []);
 
   const pageSize = 12;
 
@@ -139,7 +148,7 @@ export default function CommunityPrompts() {
   };
 
   return (
-    <Layout title='社区提示词' description='社区提示词'>
+    <Layout title={TITLE} description={DESCRIPTION}>
       <main
         className='margin-vert--lg'
         style={{ maxWidth: "1200px", margin: "auto" }}>
@@ -267,6 +276,7 @@ export default function CommunityPrompts() {
             })}
           </Text>
         </div>
+        <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
     </Layout>
   );
