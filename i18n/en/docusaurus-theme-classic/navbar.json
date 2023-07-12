@@ -7,13 +7,21 @@
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Find on Product Hunt": {
-    "message": "Find on Product Hunt",
-    "description": "Navbar item with label Find on Product Hunt"
+  "item.label.📘 使用说明": {
+    "message": "📘 User Manual",
+    "description": "Navbar item with label 📘 使用说明"
   },
-  "item.label.其他工具": {
-    "message": "Tools",
-    "description": "Navbar item with label 其他工具"
+  "item.label.🏘️ 社区提示词": {
+    "message": "🏘️ Community Prompts",
+    "description": "Navbar item with label 🏘️ 社区提示词"
+  },
+  "item.label.🛠️ 应用工具": {
+    "message": "🛠️ Tools",
+    "description": "Navbar item with label 🛠️ 应用工具"
+  },
+  "item.label.反馈": {
+    "message": "Feedback",
+    "description": "Navbar item with label 反馈"
   },
   "item.label.IMGPrompt": {
     "message": "IMGPrompt",
@@ -27,18 +35,6 @@
     "message": "Tool collection",
     "description": "Navbar item with label 工具收藏"
   },
-  "item.label.反馈": {
-    "message": "Feedback",
-    "description": "Navbar item with label 反馈"
-  },
-  "item.label.使用说明": {
-    "message": "User Manual",
-    "description": "Navbar item with label 使用说明"
-  },
-  "item.label.浏览器扩展": {
-    "message": "Browser Extension",
-    "description": "Navbar item with label 浏览器扩展"
-  },
   "item.label.Chrome 扩展": {
     "message": "Chrome Extension",
     "description": "Navbar item with label Chrome 扩展"
@@ -46,5 +42,9 @@
   "item.label.Edge 扩展": {
     "message": "Edge Extension",
     "description": "Navbar item with label Edge 扩展"
+  },
+  "item.label.Find on Product Hunt": {
+    "message": "Find on Product Hunt",
+    "description": "Navbar item with label Find on Product Hunt"
   }
 }

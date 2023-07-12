@@ -110,27 +110,17 @@ const config = {
         items: [
           {
             to: "docs",
-            label: "使用说明",
+            label: "📘 使用说明",
+            position: "left",
+          },
+          {
+            to: "/community-prompts",
+            label: "🏘️ 社区提示词",
             position: "left",
           },
           {
             type: "dropdown",
-            label: "浏览器扩展",
-            position: "left",
-            items: [
-              {
-                label: "Chrome 扩展",
-                href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
-              },
-              {
-                label: "Edge 扩展",
-                href: "https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin",
-              },
-            ],
-          },
-          {
-            type: "dropdown",
-            label: "其他工具",
+            label: "🛠️ 应用工具",
             position: "left",
             items: [
               {
@@ -144,6 +134,14 @@ const config = {
               {
                 label: "工具收藏",
                 href: "https://nav.newzone.top",
+              },
+              {
+                label: "Chrome 扩展",
+                href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
+              },
+              {
+                label: "Edge 扩展",
+                href: "https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin",
               },
               {
                 label: "Find on Product Hunt",

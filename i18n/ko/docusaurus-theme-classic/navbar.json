@@ -7,17 +7,17 @@
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
-  "item.label.使用说明": {
-    "message": "사용 지침",
-    "description": "Navbar item with label 使用说明"
+  "item.label.📘 使用说明": {
+    "message": "📘 사용 지침",
+    "description": "Navbar item with label 📘 使用说明"
   },
-  "item.label.浏览器扩展": {
-    "message": "브라우저 확장",
-    "description": "Navbar item with label 浏览器扩展"
+  "item.label.🏘️ 社区提示词": {
+    "message": "🏘️ 커뮤니티 단서",
+    "description": "Navbar item with label 🏘️ 社区提示词"
   },
-  "item.label.其他工具": {
-    "message": "기타 도구",
-    "description": "Navbar item with label 其他工具"
+  "item.label.🛠️ 应用工具": {
+    "message": "🛠️ 도구",
+    "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.反馈": {
     "message": "피드백",
