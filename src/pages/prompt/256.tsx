@@ -28,11 +28,10 @@ const prompt = {
   "website": "https://github.com/JushBJJ/Mr.-Ranedeer-AI-Tutor/tree/main",
   "tags": [
     "contribute",
-    "write",
-    "latest"
+    "write"
   ],
   "id": 256,
-  "weight": 1591
+  "weight": 1791
 };
 
 function PromptDetail() {

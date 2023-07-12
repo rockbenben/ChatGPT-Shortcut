@@ -31,7 +31,7 @@ const prompt = {
     "mind"
   ],
   "id": 206,
-  "weight": 3652
+  "weight": 3844
 };
 
 function PromptDetail() {

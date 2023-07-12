@@ -27,10 +27,11 @@ const prompt = {
   },
   "website": null,
   "tags": [
-    "personal"
+    "personal",
+    "social"
   ],
   "id": 208,
-  "weight": 217
+  "weight": 227
 };
 
 function PromptDetail() {

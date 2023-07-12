@@ -28,11 +28,10 @@ const prompt = {
   "website": null,
   "tags": [
     "contribute",
-    "mind",
-    "latest"
+    "mind"
   ],
   "id": 270,
-  "weight": 269
+  "weight": 301
 };
 
 function PromptDetail() {

@@ -31,7 +31,7 @@ const prompt = {
     "doctor"
   ],
   "id": 217,
-  "weight": 1341
+  "weight": 1429
 };
 
 function PromptDetail() {

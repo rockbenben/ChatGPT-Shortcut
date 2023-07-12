@@ -27,11 +27,10 @@ const prompt = {
   },
   "website": "https://sc83ykpdyf.feishu.cn/docx/ZVgBdo0zAoFi9IxANh6cXlNKnsh",
   "tags": [
-    "ai",
-    "latest"
+    "ai"
   ],
   "id": 255,
-  "weight": 522
+  "weight": 643
 };
 
 function PromptDetail() {
