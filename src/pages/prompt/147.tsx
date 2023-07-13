@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "人事部長",
-    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Janpanese. My first job title is ",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Janpanese. My first job title is ..",
     "description": "面接を担当するのはあなたです。私が職種を伝え、あなたがその職種に必要なスキルや経験、候補者が答えるべき質問を伝える。",
     "remark": "ポジションに必要なスキルと、候補者が答える必要のある質問について説明する。"
   },
   "ko": {
     "title": "인사 책임자",
-    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Korean. My first job title is ",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Korean. My first job title is ..",
     "description": "귀하가 면접 담당자입니다. 제가 직책을 알려드리면 해당 직책에 필요한 기술과 경험, 지원자가 답변해야 하는 질문을 알려주세요.",
     "remark": "해당 직무에 필요한 기술과 지원자가 답변해야 할 질문에 대해 설명합니다."
+  },
+  "es": {
+    "title": "gerente de personal",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Spanish. My first job title is .",
+    "description": "Usted es la persona a cargo de la entrevista. Le doy un título de trabajo, y usted da las habilidades y la experiencia necesarias para el puesto, y qué preguntas debe responder el candidato.",
+    "remark": "Describa las habilidades requeridas para un puesto y las preguntas que los candidatos deben responder."
+  },
+  "fr": {
+    "title": "Chef du personnel",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in French. My first job title is ..",
+    "description": "Vous êtes la personne qui supervise l'entretien. Je vous donne un titre de poste et vous indiquez les compétences et l'expérience requises pour le poste ainsi que les questions auxquelles le candidat doit répondre.",
+    "remark": "Décrivez les compétences requises pour un poste et les questions auxquelles le candidat doit répondre."
+  },
+  "de": {
+    "title": "Leiter der Personalabteilung",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in German. My first job title is ..",
+    "description": "Sie sind die Person, die das Vorstellungsgespräch leitet. Ich nenne Ihnen eine Stellenbezeichnung, und Sie geben an, welche Fähigkeiten und Erfahrungen für die Stelle erforderlich sind und welche Fragen der Bewerber beantworten muss.",
+    "remark": "Beschreiben Sie die für eine Stelle erforderlichen Fähigkeiten und die Fragen, die der Bewerber beantworten muss."
+  },
+  "it": {
+    "title": "Responsabile del personale",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Italian. My first job title is ..",
+    "description": "Tu sei la persona incaricata del colloquio. Ti do un titolo di lavoro e tu fornisci le competenze e l&#39;esperienza necessarie per la posizione e a quali domande il candidato deve rispondere.",
+    "remark": "Descrivi le competenze richieste per una posizione e le domande a cui i candidati devono rispondere."
+  },
+  "ru": {
+    "title": "Личный менеджер",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Russian. My first job title is ..",
+    "description": "Вы ответственный за интервью. Я даю вам название должности, а вы указываете навыки и опыт, необходимые для этой должности, а также вопросы, на которые должен ответить кандидат.",
+    "remark": "Опишите навыки, необходимые для должности, и вопросы, на которые кандидаты должны ответить."
+  },
+  "pt": {
+    "title": "Gestor de pessoas",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Portuguese. My first job title is ..",
+    "description": "Você é o responsável pela entrevista. Eu dou a você um cargo e você fornece as habilidades e a experiência necessárias para o cargo e quais perguntas o candidato precisa responder.",
+    "remark": "Descreva as habilidades necessárias para um cargo e as perguntas que os candidatos precisam responder."
+  },
+  "hi": {
+    "title": "कार्मिक प्रबंधक",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Hindi. My first job title is ..",
+    "description": "आप साक्षात्कार के प्रभारी व्यक्ति हैं. मैं आपको नौकरी का शीर्षक देता हूं, और आप उस पद के लिए आवश्यक कौशल और अनुभव देते हैं, और उम्मीदवार को किन सवालों के जवाब देने की आवश्यकता है।",
+    "remark": "किसी पद के लिए आवश्यक कौशल और उन प्रश्नों का वर्णन करें जिनका उम्मीदवारों को उत्तर देना होगा।"
+  },
+  "ar": {
+    "title": "مدير شؤون الموظفين",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Arabic. My first job title is ..",
+    "description": "أنت الشخص المسؤول عن المقابلة. أعطيك المسمى الوظيفي ، وأنت تعطي المهارات والخبرات اللازمة للمنصب ، وما هي الأسئلة التي يحتاج المرشح للإجابة عليها.",
+    "remark": "صِف المهارات المطلوبة لشغل منصب والأسئلة التي يحتاج المرشحون للإجابة عليها."
+  },
+  "bn": {
+    "title": "পার্সোনাল ম্যানেজার",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Bengali. My first job title is ..",
+    "description": "আপনি সাক্ষাৎকারের দায়িত্বে থাকা ব্যক্তি। আমি আপনাকে একটি কাজের শিরোনাম দিই, এবং আপনি পদের জন্য প্রয়োজনীয় দক্ষতা এবং অভিজ্ঞতা দেন এবং প্রার্থীকে কোন প্রশ্নের উত্তর দিতে হবে।",
+    "remark": "একটি পদের জন্য প্রয়োজনীয় দক্ষতা এবং প্রার্থীদের যে প্রশ্নগুলির উত্তর দিতে হবে তা বর্ণনা করুন।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-talent-coach",
   "tags": [
     "company"
   ],
   "id": 147,
-  "weight": 464
+  "weight": 466
 };
 
 function PromptDetail() {

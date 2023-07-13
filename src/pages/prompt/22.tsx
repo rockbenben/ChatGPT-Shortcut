@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "カバーレター",
-    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Janpanese. Can you write a cover letter for a job application about myself?",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Janpanese. Can you write a cover letter for a job application about myself?..",
     "description": "就職活動で提出するため、新たにカバーレターを書きたいと思います。私の技術的なスキルを説明するカバーレターを書いてください。私は [CV] で [年] 年働いてきました。フロントエンドデベロッパーとして 8 ヶ月間働いてきました。私は多くのツールを使うことで成長してきました。これらのツールには [スキル] などがあります。私は [期待] したいと思います。私は [リクエスト] したいと思います。就職活動用の自分に関するカバーレターを書いてもらえますか？",
     "remark": "自画像に基づいたカバーレターを作成する。"
   },
   "ko": {
     "title": "커버 레터",
-    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Korean. Can you write a cover letter for a job application about myself?",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Korean. Can you write a cover letter for a job application about myself?..",
     "description": "입사 지원서를 제출하기 위해 커버 레터를 새로 작성하고 싶습니다. 저의 기술력을 설명하는 커버 레터를 작성해 주세요. 저는 [이력서] 에서 [년] 동안 일해 왔습니다. 저는 8 개월 동안 프런트엔드 개발자로 일해 왔습니다. 저는 여러 도구를 사용하여 성장해 왔습니다. 이러한 도구에는 [기술] 등이 포함됩니다. 나는 [기대] 하고 싶습니다. 요청하고 싶습니다. 입사 지원을 위해 저에 대한 커버 레터를 작성할 수 있나요?",
     "remark": "자화상을 바탕으로 커버 레터를 준비합니다."
+  },
+  "es": {
+    "title": "carta de presentación",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Spanish. Can you write a cover letter for a job application about myself?.",
+    "description": "Para presentar una solicitud de empleo, me gustaría escribir una nueva carta de presentación. Por favor, escriba una carta de presentación que describa mis habilidades técnicas. He trabajado en [Resume] durante [Seniority] años. Trabajé como desarrollador front-end durante 8 meses. Crezco adoptando algunas herramientas. Estas herramientas incluyen [habilidades], etc. Espero [esperar]. Quiero [solicitud]. ¿Puedes escribir una carta de presentación sobre mí para una solicitud de empleo?",
+    "remark": "Escriba una carta de presentación basada en su presentación personal."
+  },
+  "fr": {
+    "title": "demande d'emploi",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in French. Can you write a cover letter for a job application about myself?..",
+    "description": "Afin d'introduire une demande d'emploi, je souhaite rédiger une nouvelle lettre de motivation. Veuillez rédiger une lettre de motivation décrivant mes compétences techniques. Je travaille à [RÉSUMÉ] depuis [ANNÉES D'EXPÉRIENCE] ans. Je travaille en tant que développeur front-end depuis 8 mois. J'ai évolué en adoptant un certain nombre d'outils. Ces outils comprennent entre autres [COMPÉTENCES]. Je veux [attendre]. Je voudrais [exiger]. Pouvez-vous rédiger une lettre de motivation à mon sujet pour une demande d'emploi ?",
+    "remark": "Préparer une lettre de motivation sur la base d'un autoprofil."
+  },
+  "de": {
+    "title": "Stellenbewerbung",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in German. Can you write a cover letter for a job application about myself?..",
+    "description": "Um mich für eine Stelle zu bewerben, möchte ich ein neues Anschreiben verfassen. Bitte schreiben Sie ein Anschreiben, in dem Sie meine technischen Fähigkeiten beschreiben. Ich arbeite seit [LEBENSLAUF] Jahren bei [JAHRE DER ERFAHRUNG]. Ich arbeite seit 8 Monaten als Front-End-Entwickler. Ich habe mich durch die Übernahme einer Reihe von Tools weiterentwickelt. Zu diesen Tools gehören unter anderem [SKILLS]. Ich möchte [erwarten]. Ich möchte [verlangen]. Können Sie ein Anschreiben über mich für eine Bewerbung schreiben?",
+    "remark": "Erstellen Sie ein Anschreiben auf der Grundlage eines Selbstprofils."
+  },
+  "it": {
+    "title": "lettera di presentazione",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Italian. Can you write a cover letter for a job application about myself?..",
+    "description": "Per presentare una domanda di lavoro, vorrei scrivere una nuova lettera di accompagnamento. Si prega di scrivere una lettera di accompagnamento che descriva le mie capacità tecniche. Ho lavorato in [Riprendi] per [Seniority] anni. Ho lavorato come sviluppatore front-end per 8 mesi. Cresco adottando alcuni strumenti. Questi strumenti includono [abilità], ecc. Spero [non vedo l&#39;ora di]. Voglio [richiesta]. Puoi scrivere una lettera di accompagnamento su di me per una domanda di lavoro?",
+    "remark": "Scrivi una lettera di accompagnamento basata sulla tua auto-presentazione."
+  },
+  "ru": {
+    "title": "Сопроводительное письмо",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Russian. Can you write a cover letter for a job application about myself?..",
+    "description": "Чтобы подать заявление о приеме на работу, я хотел бы написать новое сопроводительное письмо. Пожалуйста, напишите сопроводительное письмо с описанием моих технических способностей. Я работал в [Резюме] в течение [выслуги лет] лет. Работал фронтенд-разработчиком 8 месяцев. Я расту, применяя некоторые инструменты. Эти инструменты включают [навыки] и т. д. Я надеюсь [с нетерпением жду]. Я хочу [запрос]. Можете ли вы написать сопроводительное письмо обо мне для заявления о приеме на работу?",
+    "remark": "Напишите сопроводительное письмо, основанное на вашем представлении о себе."
+  },
+  "pt": {
+    "title": "carta de apresentação",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Portuguese. Can you write a cover letter for a job application about myself?..",
+    "description": "Para enviar uma candidatura de emprego, gostaria de escrever uma nova carta de apresentação. Por favor, escreva uma carta descrevendo minhas habilidades técnicas. Eu trabalhei em [Resume] por [Seniority] anos. Trabalhei como desenvolvedor front-end por 8 meses. Eu cresço adotando algumas ferramentas. Essas ferramentas incluem [habilidades], etc. Espero [esperar]. Eu quero [pedir]. Você pode escrever uma carta de apresentação sobre mim para um pedido de emprego?",
+    "remark": "Escreva uma carta de apresentação com base na sua auto-apresentação."
+  },
+  "hi": {
+    "title": "कवर लेटर",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Hindi. Can you write a cover letter for a job application about myself?..",
+    "description": "नौकरी आवेदन जमा करने के लिए, मैं एक नया कवर लेटर लिखना चाहूंगा। कृपया मेरी तकनीकी क्षमताओं का वर्णन करते हुए एक कवर लेटर लिखें। मैंने [रेज़्यूमे] में [वरिष्ठता] वर्षों तक काम किया है। मैंने 8 महीने तक फ्रंट-एंड डेवलपर के रूप में काम किया। मैं कुछ उपकरण अपनाकर बढ़ता हूं। इन उपकरणों में [कौशल] आदि शामिल हैं। मुझे आशा है [आगे देखिए]। मुझे [अनुरोध] चाहिए। क्या आप नौकरी आवेदन के लिए अपने बारे में एक कवर लेटर लिख सकते हैं?",
+    "remark": "अपने आत्म-परिचय के आधार पर एक कवर लेटर लिखें।"
+  },
+  "ar": {
+    "title": "غطاء الرسالة",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Arabic. Can you write a cover letter for a job application about myself?..",
+    "description": "من أجل تقديم طلب وظيفة ، أود كتابة خطاب تغطية جديد. يرجى كتابة خطاب تغطية يصف قدراتي الفنية. لقد عملت في [استئناف] لسنوات [أقدمية]. عملت كمطور للواجهة الأمامية لمدة 8 أشهر. أنا أنمو من خلال اعتماد بعض الأدوات. تتضمن هذه الأدوات [المهارات] ، وما إلى ذلك. آمل [أتطلع إلى]. اريد [طلب]. هل يمكنك كتابة خطاب تغطية عن نفسي لطلب وظيفة؟",
+    "remark": "اكتب خطاب تغطية بناءً على المقدمة الذاتية الخاصة بك."
+  },
+  "bn": {
+    "title": "কাভার লেটার",
+    "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Bengali. Can you write a cover letter for a job application about myself?..",
+    "description": "একটি চাকরির আবেদন জমা দেওয়ার জন্য, আমি একটি নতুন কভার লেটার লিখতে চাই। আমার প্রযুক্তিগত ক্ষমতা বর্ণনা করে একটি কভার লেটার লিখুন. আমি [জ্যেষ্ঠতা] বছর ধরে [রিজুমে] কাজ করেছি। আমি 8 মাস ধরে ফ্রন্ট-এন্ড ডেভেলপার হিসাবে কাজ করেছি। আমি কিছু হাতিয়ার গ্রহণ করে বেড়ে উঠি। এই সরঞ্জামগুলির মধ্যে রয়েছে [দক্ষতা], ইত্যাদি। আমি আশা করি [উন্মুখ]. আমি চাই [অনুরোধ]। আপনি কি চাকরির আবেদনের জন্য নিজের সম্পর্কে একটি কভার লেটার লিখতে পারেন?",
+    "remark": "আপনার স্ব-পরিচয়ের উপর ভিত্তি করে একটি কভার লেটার লিখুন।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
   "tags": [
     "article"
   ],
   "id": 22,
-  "weight": 354
+  "weight": 355
 };
 
 function PromptDetail() {

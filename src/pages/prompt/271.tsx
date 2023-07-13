@@ -15,15 +15,69 @@ const prompt = {
   },
   "ja": {
     "title": "紛らわしいクエリ",
-    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Janpanese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question.",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Janpanese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
     "description": "私は混乱でいっぱいですが、どんな質問をすればいいのかわかりません。\n次の会話の各ラウンドで、あなたは私に閉じた質問をし、私に選択肢を与える必要があり、私は選択をすることしかできません。\n注意してください。\n私は 1 ラウンドにつき 1 つの質問しかできません。\n質問はクローズドエンドでなければなりません。\nあなたはその質問に対していくつかの選択肢を与えなければならず、私は選択することしかできない。",
     "remark": "どんな質問をしたいのかわからないときに、このプロンプトワードで選択肢を絞りましょう。Libertyleaf さん（@Libertyleaf）の投稿より。"
   },
   "ko": {
     "title": "혼란스러운 쿼리",
-    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Korean. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question.",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Korean. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
     "description": "혼란스럽지만 어떤 질문을 해야 할지 모르겠어요.\n다음 대화 라운드에서는 각 라운드마다 주관식 질문을 하고 선택지를 주어야 합니다.\n참고.\n한 라운드당 1 개의 질문만 받을 수 있습니다.\n질문은 반드시 주관식이어야 합니다.\n질문에는 여러 가지 옵션을 제공해야 하며, 저는 한 가지만 선택할 수 있습니다.",
     "remark": "어떤 질문을 할지 모를 때 이 프롬프트 단어를 사용하여 선택의 폭을 좁혀보세요. 리버티리프 (@Libertyleaf) 의 기고문에서 발췌."
+  },
+  "es": {
+    "title": "consulta confusa",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Spanish. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question..",
+    "description": "Mi mente estaba llena de confusión, pero no sabía qué preguntas hacer. En las siguientes rondas de diálogo, cada ronda debe hacerme una pregunta cerrada y darme opciones. Solo puedo tomar decisiones, y debe reducir el alcance de los problemas que encuentro en función de mis elecciones. Nota: Solo puedes hacerme 1 pregunta por ronda. Las preguntas deben ser cerradas. Debe dar varias opciones para la pregunta, y yo solo puedo elegir.",
+    "remark": "Cuando no sepa qué pregunta quiere hacer, use esta palabra clave para reducir sus opciones. Contribución de @Free Ye."
+  },
+  "fr": {
+    "title": "Enquête sur la confusion",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in French. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "Je suis confus, mais je n'ai aucune idée des questions à poser.\nDans chacun des prochains cycles de dialogue, vous devez me poser une question fermée avec des options, je ne peux faire que des choix, et vous devez réduire les problèmes que je rencontre en fonction de mes choix.\nRemarque : on ne peut me poser qu'une seule question par tour.\nVous ne pouvez me poser qu'une seule question par tour.\nLa question doit être fermée.\nVous devez donner un certain nombre d'options pour la question et je ne peux faire que des choix.",
+    "remark": "Lorsque vous n'êtes pas sûr de la question que vous allez poser, utilisez ce mot-clé pour réduire vos options. Contribution de @FreedomLeaf."
+  },
+  "de": {
+    "title": "Verwirrung Anfrage",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in German. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "Ich bin sehr verwirrt, weiß aber nicht, welche Fragen ich stellen soll.\nIn jeder der nächsten Dialogrunden müssen Sie mir eine geschlossene Frage mit Optionen stellen, ich kann nur eine Auswahl treffen, und Sie müssen die Probleme, die ich habe, anhand meiner Auswahl eingrenzen.\nHinweis: Mir kann nur 1 Frage pro Runde gestellt werden.\nSie können mir nur 1 Frage pro Runde stellen.\nDie Frage muss mit einem geschlossenen Ende versehen sein.\nSie müssen eine Reihe von Optionen für die Frage angeben und ich kann nur eine Auswahl treffen.",
+    "remark": "Wenn du dir nicht sicher bist, welche Frage du stellen sollst, benutze dieses Stichwort, um deine Möglichkeiten einzugrenzen. Beitrag von @FreedomLeaf."
+  },
+  "it": {
+    "title": "interrogazione confusa",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Italian. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "La mia mente era piena di confusione, ma non sapevo che domande fare. Nei successivi round di dialogo, ogni round devi farmi una domanda chiusa e darmi delle opzioni.Posso solo fare delle scelte e devi restringere la portata dei problemi che incontro in base alle mie scelte. Nota: puoi farmi solo 1 domanda per round. Le domande devono essere chiuse Devi dare diverse opzioni per la domanda e io posso solo fare delle scelte.",
+    "remark": "Quando non sai quale domanda vuoi porre, usa questa parola richiesta per restringere le tue opzioni. Contributo di @Free Ye."
+  },
+  "ru": {
+    "title": "запутанный запрос",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Russian. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "Мой разум был полон замешательства, но я не знал, какие вопросы задавать. В следующих раундах диалога каждый раунд вам нужно задавать мне закрытый вопрос и давать мне варианты Я могу только делать выбор, а вам нужно сузить круг проблем, с которыми я сталкиваюсь, основываясь на моем выборе. Примечание: вы можете задать мне только 1 вопрос за раунд. Вопросы должны быть закрытыми Вы должны дать несколько вариантов вопроса, а я могу только сделать выбор.",
+    "remark": "Если вы не знаете, какой вопрос хотите задать, используйте это слово-подсказку, чтобы сузить круг вариантов. Вклад от @Free Ye."
+  },
+  "pt": {
+    "title": "consulta confusa",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Portuguese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "Minha mente estava cheia de confusão, mas eu não sabia que perguntas fazer. Nas próximas rodadas de diálogo, cada rodada você precisa me fazer uma pergunta fechada e me dar opções.Eu só posso fazer escolhas, e você precisa restringir o escopo dos problemas que encontro com base em minhas escolhas. Nota: Você só pode me fazer 1 pergunta por rodada. As perguntas devem ser fechadas, você deve dar várias opções para a pergunta, e eu só posso fazer escolhas.",
+    "remark": "Quando você não souber qual pergunta deseja fazer, use esta palavra de alerta para restringir suas opções. Contribuição de @Free Ye."
+  },
+  "hi": {
+    "title": "भ्रमित प्रश्न",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Hindi. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "मेरा मन असमंजस से भरा था, लेकिन मुझे नहीं पता था कि क्या सवाल पूछूं। बातचीत के अगले दौर में, प्रत्येक दौर में आपको मुझसे एक बंद प्रश्न पूछना होगा और मुझे विकल्प देना होगा। मैं केवल विकल्प चुन सकता हूं, और आपको मेरी पसंद के आधार पर मेरे सामने आने वाली समस्याओं का दायरा कम करना होगा। नोट: आप मुझसे प्रति राउंड केवल 1 प्रश्न पूछ सकते हैं। प्रश्न बंद होने चाहिए। आपको प्रश्न के लिए कई विकल्प देने होंगे, और मैं केवल विकल्प चुन सकता हूँ।",
+    "remark": "जब आप नहीं जानते कि आप कौन सा प्रश्न पूछना चाहते हैं, तो अपने विकल्पों को सीमित करने के लिए इस संकेत शब्द का उपयोग करें। @Free Ye से योगदान।"
+  },
+  "ar": {
+    "title": "استعلام مرتبك",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Arabic. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "كان ذهني مليئًا بالارتباك ، لكنني لم أكن أعرف ما هي الأسئلة التي يجب أن أطرحها. في الجولات التالية من الحوار ، تحتاج في كل جولة أن تسألني سؤالاً مغلقًا وتعطيني خيارات. يمكنني فقط الاختيار ، وتحتاج إلى تضييق نطاق المشكلات التي أواجهها بناءً على اختياراتي. ملاحظة: يمكنك أن تسألني سؤالاً واحداً فقط في كل جولة. يجب إغلاق الأسئلة ، يجب أن تقدم عدة خيارات للسؤال ، ولا يمكنني سوى الاختيار.",
+    "remark": "عندما لا تعرف السؤال الذي تريد طرحه ، استخدم هذه الكلمة السريعة لتضييق نطاق خياراتك. مساهمة منFree Ye."
+  },
+  "bn": {
+    "title": "বিভ্রান্ত প্রশ্ন",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Bengali. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
+    "description": "আমার মন বিভ্রান্তিতে পূর্ণ ছিল, কিন্তু আমি কি প্রশ্ন জিজ্ঞাসা করতে জানি না. সংলাপের নিম্নলিখিত রাউন্ডে, প্রতিটি রাউন্ডে আপনাকে আমাকে একটি বন্ধ প্রশ্ন জিজ্ঞাসা করতে হবে এবং আমাকে বিকল্পগুলি দিতে হবে৷ আমি কেবল পছন্দ করতে পারি এবং আমার পছন্দগুলির উপর ভিত্তি করে আমি যে সমস্যার সম্মুখীন হচ্ছি তার সুযোগ আপনাকে সংকুচিত করতে হবে৷ দ্রষ্টব্য: আপনি আমাকে প্রতি রাউন্ডে শুধুমাত্র 1টি প্রশ্ন করতে পারেন। প্রশ্ন বন্ধ করতে হবে। আপনাকে অবশ্যই প্রশ্নের জন্য বেশ কয়েকটি বিকল্প দিতে হবে, এবং আমি শুধুমাত্র পছন্দ করতে পারি।",
+    "remark": "যখন আপনি জানেন না আপনি কোন প্রশ্নটি জিজ্ঞাসা করতে চান, আপনার বিকল্পগুলিকে সংকুচিত করতে এই প্রম্পট শব্দটি ব্যবহার করুন৷ @ফ্রি ইয়ে থেকে অবদান।"
   },
   "website": null,
   "tags": [
@@ -31,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 271,
-  "weight": 264
+  "weight": 267
 };
 
 function PromptDetail() {

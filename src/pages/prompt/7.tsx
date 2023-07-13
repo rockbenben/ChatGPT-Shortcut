@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "プロンプトモディファイア",
-    "prompt": "I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?",
+    "prompt": "The entire conversation and instructions should be provided in Japanese. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
     "description": "私は次のプロンプトから GPT-4 の良い結果を得ようとしています：あなたのプロンプト。より最適化された、より良い結果をもたらすプロンプトワードを書くことができますか？",
     "remark": "ChatGPT にプロンプトを書き換えてもらう。人間が書いたプロンプトと機械が書いたプロンプトでは論理が異なるので、プロンプトを書き換えることで ChatGPT が理解しやすくなります。"
   },
   "ko": {
     "title": "프롬프트 수정자",
-    "prompt": "I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?",
+    "prompt": "The entire conversation and instructions should be provided in Korean. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
     "description": "다음 프롬프트에서 GPT-4 에 대한 좋은 결과를 얻으려고 합니다. 더 최적화되고 더 좋은 결과를 얻을 수 있는 프롬프트 단어를 작성할 수 있나요?",
     "remark": "ChatGPT 가 프롬프트를 다시 작성하도록 하세요. 사람이 작성한 프롬프트의 로직은 기계의 로직과 다르기 때문에 프롬프트를 재작성하면 ChatGPT 를 더 쉽게 이해할 수 있습니다."
+  },
+  "es": {
+    "title": "modificador de palabra rápida",
+    "prompt": "The entire conversation and instructions should be provided in Spanish. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
+    "description": "Estoy tratando de obtener buenos resultados en GPT-4 a partir de las siguientes palabras clave: sus palabras clave. ¿Puedes escribir palabras clave más optimizadas que produzcan mejores resultados?",
+    "remark": "Deje que ChatGPT reescriba las palabras clave para nosotros. Dado que la lógica de las palabras del mensaje escritas por humanos es diferente a la de las máquinas, volver a editar las palabras del mensaje puede hacer que ChatGPT sea más fácil de entender."
+  },
+  "fr": {
+    "title": "modificateur d'invite",
+    "prompt": "The entire conversation and instructions should be provided in French. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "J'essaie d'obtenir de bons résultats au GPT-4 à partir des mots-guides suivants : vos mots-guides. Pouvez-vous écrire des mots-guides plus optimisés et produisant de meilleurs résultats ?",
+    "remark": "Laissez ChatGPT réécrire les messages-guides pour nous. Étant donné que la logique des invites écrites par des humains est différente de celle des invites écrites par des machines, la réécriture des invites rendra ChatGPT plus facile à comprendre."
+  },
+  "de": {
+    "title": "Promptmodifikator",
+    "prompt": "The entire conversation and instructions should be provided in German. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "Ich versuche, mit den folgenden Stichwortwörtern gute Ergebnisse auf dem GPT-4 zu erzielen: Ihre Stichwortwörter. Können Sie Stichworte schreiben, die optimaler sind und bessere Ergebnisse liefern?",
+    "remark": "Lassen Sie ChatGPT die Prompts für uns umschreiben. Da die Logik der von Menschen geschriebenen Prompts anders ist als die der maschinell geschriebenen Prompts, wird die Überarbeitung der Prompts ChatGPT leichter verständlich machen."
+  },
+  "it": {
+    "title": "modificatore di parola richiesta",
+    "prompt": "The entire conversation and instructions should be provided in Italian. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "Sto cercando di ottenere buoni risultati su GPT-4 dalle seguenti parole chiave: le tue parole chiave. Puoi scrivere parole rapide più ottimizzate che producono risultati migliori?",
+    "remark": "Consenti a ChatGPT di riscrivere le parole del prompt per noi. Poiché la logica delle parole di richiesta scritte dagli esseri umani è diversa da quella delle macchine, modificare nuovamente le parole di richiesta può rendere ChatGPT più facile da capire."
+  },
+  "ru": {
+    "title": "модификатор подсказки слова",
+    "prompt": "The entire conversation and instructions should be provided in Russian. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "Я пытаюсь получить хорошие результаты на GPT-4 от следующих ключевых слов: ваши ключевые слова. Можете ли вы написать более оптимизированные слова-подсказки, дающие лучшие результаты?",
+    "remark": "Пусть ChatGPT перепишет для нас подсказки. Поскольку логика слов-подсказок, написанных людьми, отличается от логики машин, повторное редактирование слов-подсказок может упростить понимание ChatGPT."
+  },
+  "pt": {
+    "title": "modificador de palavra de prompt",
+    "prompt": "The entire conversation and instructions should be provided in Portuguese. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "Estou tentando obter bons resultados no GPT-4 a partir das seguintes palavras de sinalização: suas palavras de sinalização. Você pode escrever palavras de prompt mais otimizadas que produzem melhores resultados?",
+    "remark": "Deixe o ChatGPT reescrever as palavras do prompt para nós. Como a lógica das palavras de prompt escritas por humanos é diferente daquela das máquinas, reeditar as palavras de prompt pode tornar o ChatGPT mais fácil de entender."
+  },
+  "hi": {
+    "title": "शीघ्र शब्द संशोधक",
+    "prompt": "The entire conversation and instructions should be provided in Hindi. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "मैं निम्नलिखित संकेत शब्दों से GPT-4 पर अच्छे परिणाम प्राप्त करने का प्रयास कर रहा हूँ: आपके संकेत शब्द। क्या आप अधिक अनुकूलित त्वरित शब्द लिख सकते हैं जो बेहतर परिणाम देते हैं?",
+    "remark": "ChatGPT को हमारे लिए शीघ्र शब्दों को फिर से लिखने दें। चूंकि इंसानों द्वारा लिखे गए त्वरित शब्दों का तर्क मशीनों से अलग है, इसलिए त्वरित शब्दों को दोबारा संपादित करने से चैटजीपीटी को समझना आसान हो सकता है।"
+  },
+  "ar": {
+    "title": "موجه الكلمات المعدل",
+    "prompt": "The entire conversation and instructions should be provided in Arabic. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "أحاول الحصول على نتائج جيدة على GPT-4 من الكلمات الرئيسية التالية: كلماتك الرئيسية. هل يمكنك كتابة المزيد من الكلمات الفورية المحسّنة التي تؤدي إلى نتائج أفضل؟",
+    "remark": "دع ChatGPT يعيد كتابة الكلمات السريعة لنا. نظرًا لأن منطق الكلمات الفورية التي يكتبها البشر يختلف عن منطق الآلات ، فإن إعادة تحرير الكلمات الفورية يمكن أن تجعل ChatGPT أسهل في الفهم."
+  },
+  "bn": {
+    "title": "প্রম্পট শব্দ সংশোধক",
+    "prompt": "The entire conversation and instructions should be provided in Bengali. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?..",
+    "description": "আমি নিম্নলিখিত কিউ শব্দগুলি থেকে GPT-4 এ ভাল ফলাফল পাওয়ার চেষ্টা করছি: আপনার কিউ শব্দগুলি। আপনি কি আরও অপ্টিমাইজড প্রম্পট শব্দ লিখতে পারেন যা ভাল ফলাফল দেয়?",
+    "remark": "চ্যাটজিপিটি আমাদের জন্য প্রম্পট শব্দগুলি পুনরায় লিখতে দিন। যেহেতু মানুষের দ্বারা লেখা প্রম্পট শব্দগুলির যুক্তি মেশিনের থেকে আলাদা, তাই প্রম্পট শব্দগুলিকে পুনরায় সম্পাদনা করা ChatGPT কে বোঝা সহজ করে তুলতে পারে।"
   },
   "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
   "tags": [
     "ai"
   ],
   "id": 7,
-  "weight": 2781
+  "weight": 2794
 };
 
 function PromptDetail() {

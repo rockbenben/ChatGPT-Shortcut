@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "マジシャン",
-    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Janpanese. My first request is ..",
     "description": "マジシャンとして活動してほしい。私はあなたに観客と、あなたが演じることのできるトリックをいくつか提案します。あなたの目標は、これらのトリックを可能な限り楽しい方法で演じ、騙しやミスディレクションのトリックで観客に驚きと衝撃を与えることです。",
     "remark": "腕時計を消す方法」など、リクエストに応じて実行可能な手品。"
   },
   "ko": {
     "title": "마술사",
-    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Korean. My first request is ",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Korean. My first request is ..",
     "description": "마술사로 활동해 주세요. 청중과 여러분이 할 수 있는 마술에 대한 몇 가지 제안을 제공할 것입니다. 여러분의 목표는 가능한 한 가장 재미있는 방법으로 이러한 마술을 수행하고, 속임수와 속임수로 청중을 놀라게 하고 충격을 주는 것입니다.",
     "remark": "요청 시 수행 가능한 마술 (예: '시계를 사라지게 만드는 방법')."
+  },
+  "es": {
+    "title": "mago",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Spanish. My first request is .",
+    "description": "Quiero que seas un mago. Te daré una audiencia y algunos consejos sobre técnicas para realizar. Tu objetivo es realizar estos trucos de la manera más divertida posible, sorprendiendo e impactando a la audiencia con tus trucos y habilidades engañosas.",
+    "remark": "Los trucos de magia ejecutables como &quot;cómo hacer desaparecer un reloj&quot; están disponibles a pedido."
+  },
+  "fr": {
+    "title": "magicien",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in French. My first request is ..",
+    "description": "Je veux que vous jouiez le rôle d'un magicien. Je vous fournirai un public et quelques suggestions de tours à réaliser. Votre objectif est de réaliser ces tours de la manière la plus divertissante possible, en surprenant et en choquant le public grâce à vos tours de tromperie et de fausse piste.",
+    "remark": "Tours de magie réalisables sur demande, par exemple \"Comment faire disparaître une montre\"."
+  },
+  "de": {
+    "title": "Magier",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in German. My first request is ..",
+    "description": "Ich möchte, dass Sie als Zauberer auftreten. Ich werde Ihnen ein Publikum und einige Vorschläge für Tricks geben, die Sie vorführen können. Ihr Ziel ist es, diese Tricks auf möglichst unterhaltsame Weise vorzuführen und das Publikum mit Ihren Täuschungs- und Irreführungstricks zu überraschen und zu schockieren.",
+    "remark": "Vorführbare Zaubertricks auf Anfrage, z. B. \"Wie man eine Uhr verschwinden lässt\"."
+  },
+  "it": {
+    "title": "mago",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Italian. My first request is ..",
+    "description": "Voglio che tu sia un mago. Ti darò un pubblico e alcuni consigli sulle tecniche da eseguire. Il tuo obiettivo è eseguire questi trucchi nel modo più divertente possibile, sorprendendo e scioccando il pubblico con i tuoi trucchi e le tue abilità fuorvianti.",
+    "remark": "Trucchi magici eseguibili come &quot;come far sparire un orologio&quot; sono disponibili su richiesta."
+  },
+  "ru": {
+    "title": "фокусник",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Russian. My first request is ..",
+    "description": "Я хочу, чтобы ты был волшебником. Я дам вам аудиторию и несколько советов по технике выполнения. Ваша цель — выполнять эти трюки как можно смешнее, удивляя и шокируя публику своим трюком и вводящими в заблуждение навыками.",
+    "remark": "Выполнимые фокусы, такие как «как заставить часы исчезнуть», доступны по запросу."
+  },
+  "pt": {
+    "title": "mágico",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
+    "description": "Eu quero que você seja um mágico. Vou te dar uma audiência e algumas dicas de técnicas para realizar. Seu objetivo é realizar esses truques da maneira mais divertida possível, surpreendendo e chocando o público com seus truques e habilidades enganosas.",
+    "remark": "Truques de mágica executáveis, como &quot;como fazer um relógio desaparecer&quot;, estão disponíveis mediante solicitação."
+  },
+  "hi": {
+    "title": "जादूगर",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Hindi. My first request is ..",
+    "description": "मैं चाहता हूं कि तुम जादूगर बनो। मैं आपको श्रोतागण और प्रदर्शन करने की तकनीकों पर कुछ सुझाव दूँगा। आपका लक्ष्य इन तरकीबों को यथासंभव मज़ेदार तरीके से प्रदर्शित करना है, अपनी चाल और भ्रामक कौशल से दर्शकों को आश्चर्यचकित और चकित करना है।",
+    "remark": "&quot;घड़ी को कैसे गायब करें&quot; जैसी प्रदर्शनयोग्य जादुई तरकीबें अनुरोध पर उपलब्ध हैं।"
+  },
+  "ar": {
+    "title": "ساحر",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Arabic. My first request is ..",
+    "description": "اريدك ان تكون ساحر. سأقدم لك بعض النصائح حول تقنيات الأداء. هدفك هو أداء هذه الحيل بأطرف طريقة ممكنة ، بحيث تفاجئ وتصدم الجمهور بمهاراتك الخادعة والمضللة.",
+    "remark": "تتوفر الحيل السحرية القابلة للتنفيذ مثل &quot;كيفية جعل الساعة تختفي&quot; عند الطلب."
+  },
+  "bn": {
+    "title": "ঐন্দ্রজালিক",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Bengali. My first request is ..",
+    "description": "আমি চাই তুমি জাদুকর হও। আমি আপনাকে একটি শ্রোতা এবং সঞ্চালনের কৌশল সম্পর্কে কিছু টিপস দেব। আপনার লক্ষ্য হল মজাদার সম্ভাব্য উপায়ে এই কৌশলগুলি সম্পাদন করা, আপনার কৌতুক এবং বিভ্রান্তিকর দক্ষতা দিয়ে দর্শকদের চমকে দেওয়া এবং হতবাক করা।",
+    "remark": "&quot;কীভাবে একটি ঘড়ি অদৃশ্য করা যায়&quot; এর মতো পারফরম্যান্সযোগ্য যাদু কৌশল অনুরোধের ভিত্তিতে উপলব্ধ।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-magician",
   "tags": [
     "interesting"
   ],
   "id": 53,
-  "weight": 221
+  "weight": 222
 };
 
 function PromptDetail() {

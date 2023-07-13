@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "インテリアデコレーター",
-    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Janpanese. My first request is ..",
     "description": "あなたにインテリアコーディネーターとして活躍してほしいのです。ベッドルームやホールなど、私が選んだ部屋にはどんなテーマやデザインアプローチがあるのか、教えてください。",
     "remark": "インテリアデコレーター"
   },
   "ko": {
     "title": "인테리어 데코레이터",
-    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Korean. My first request is ",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Korean. My first request is ..",
     "description": "인테리어 데코레이터 역할을 해 주셨으면 합니다. 제가 선택한 방 (침실, 복도 등) 에 어떤 테마 및 디자인 접근 방식을 사용해야 하는지 알려주세요. 해당 테마/디자인 접근 방식에 가장 적합한 색상 구성, 가구 배치 및 기타 장식 옵션에 대한 제안을 제공하여 공간의 아름다움과 편안함을 향상시켜 주세요.",
     "remark": "인테리어 데코레이터"
+  },
+  "es": {
+    "title": "decorador de interiores",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Spanish. My first request is .",
+    "description": "Quiero que seas decorador de interiores. Dígame qué tema y enfoque de diseño se debe usar para la habitación que elija; dormitorios, pasillos, etc., aconséjeme sobre los esquemas de color, la ubicación de los muebles y otras opciones de decoración que mejor se adapten al tema/enfoque de diseño anterior para mejorar la estética dentro del espacio y comodidad",
+    "remark": "Decorador de interiores"
+  },
+  "fr": {
+    "title": "Décorateur d'intérieur",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in French. My first request is ..",
+    "description": "J'aimerais que vous agissiez en tant que décorateur d'intérieur. Indiquez-moi le thème et l'approche conceptuelle à adopter pour les pièces que j'ai choisies : chambres à coucher, halls, etc., en suggérant des combinaisons de couleurs, l'emplacement des meubles et d'autres options décoratives qui conviennent le mieux à ce thème/cette approche conceptuelle afin d'améliorer la beauté et le confort de l'espace.",
+    "remark": "Décorateur d'intérieur"
+  },
+  "de": {
+    "title": "Innenarchitekt",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in German. My first request is ..",
+    "description": "Ich möchte, dass Sie als Innenarchitekt fungieren. Sagen Sie mir, welches Thema und welcher Gestaltungsansatz für die von mir ausgewählten Räume (Schlafzimmer, Flure usw.) verwendet werden sollte, und machen Sie Vorschläge für Farbschemata, die Platzierung von Möbeln und andere dekorative Optionen, die am besten zu diesem Thema/Designansatz passen, um die Schönheit und den Komfort des Raumes zu verbessern.",
+    "remark": "Innenarchitekt"
+  },
+  "it": {
+    "title": "decoratore d&#39;interni",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Italian. My first request is ..",
+    "description": "Spero che tu possa lavorare come decoratore d&#39;interni. Dimmi quale tema e approccio progettuale dovrebbero essere utilizzati per la stanza che scelgo; camere da letto, corridoi, ecc., consigli su combinazioni di colori, posizionamento dei mobili e altre opzioni di decorazione che meglio si adattano al tema/approccio progettuale di cui sopra per migliorare l&#39;estetica all&#39;interno dello spazio e conforto.",
+    "remark": "Decoratore d&#39;interni"
+  },
+  "ru": {
+    "title": "декоратор интерьеров",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Russian. My first request is ..",
+    "description": "Я надеюсь, что вы можете работать в качестве декоратора интерьера. Скажите мне, какую тему и подход к дизайну следует использовать для комнаты, которую я выбираю; спальни, залы и т. д., посоветуйте цветовые схемы, размещение мебели и другие варианты декорирования, которые лучше всего соответствуют вышеуказанной теме/подходу к дизайну для повышения эстетики в пространстве. и комфорт.",
+    "remark": "Декоратор интерьера"
+  },
+  "pt": {
+    "title": "decorador de interiores",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
+    "description": "Eu quero que você seja um decorador de interiores. Diga-me qual tema e abordagem de design deve ser usado para o quarto que eu escolher; quarto, hall, etc., aconselhe sobre esquemas de cores, colocação de móveis e outras opções de decoração que melhor se encaixem no tema/abordagem de design acima para melhorar a estética dentro do espaço e conforto.",
+    "remark": "Decorador de interiores"
+  },
+  "hi": {
+    "title": "आंतरिक सज्जकार",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Hindi. My first request is ..",
+    "description": "मुझे आशा है कि आप इंटीरियर डेकोरेटर के रूप में काम कर सकते हैं। मुझे बताएं कि मेरे द्वारा चुने गए कमरे के लिए किस थीम और डिज़ाइन दृष्टिकोण का उपयोग किया जाना चाहिए; शयनकक्ष, हॉल इत्यादि, रंग योजनाओं, फर्नीचर प्लेसमेंट और अन्य सजावट विकल्पों पर सलाह दें जो अंतरिक्ष के सौंदर्यशास्त्र को बढ़ाने के लिए उपरोक्त थीम/डिज़ाइन दृष्टिकोण के लिए सबसे उपयुक्त हों। और आराम.",
+    "remark": "आंतरिक सज्जकार"
+  },
+  "ar": {
+    "title": "مهندس ديكور",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Arabic. My first request is ..",
+    "description": "آمل أن تتمكن من العمل كمصمم ديكور داخلي. أخبرني ما هو نهج التصميم والموضوع الذي يجب استخدامه للغرفة التي أختارها ؛ غرف النوم والقاعات وما إلى ذلك ، تقديم المشورة بشأن مخططات الألوان ووضع الأثاث وخيارات التزيين الأخرى التي تتناسب بشكل أفضل مع نهج التصميم / الموضوع أعلاه لتعزيز الجماليات داخل المساحة والراحة.",
+    "remark": "مهندس ديكور"
+  },
+  "bn": {
+    "title": "অভ্যন্তর প্রসাধক",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Bengali. My first request is ..",
+    "description": "আমি আপনাকে একজন অভ্যন্তরীণ সজ্জাকর হতে চাই। আমার বেছে নেওয়া রুমের জন্য কোন থিম এবং ডিজাইন পদ্ধতি ব্যবহার করা উচিত তা আমাকে বলুন; বেডরুম, হল, ইত্যাদি, রঙের স্কিম, আসবাবপত্র বসানো এবং অন্যান্য সাজসজ্জার বিকল্পগুলির বিষয়ে পরামর্শ দিন যা স্থানের মধ্যে নান্দনিকতা বাড়ানোর জন্য উপরের থিম/ডিজাইন পদ্ধতির সাথে সবচেয়ে উপযুক্ত। এবং আরাম।",
+    "remark": "অভ্যন্তর প্রসাধক"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-interior-decorator",
   "tags": [
     "professional"
   ],
   "id": 167,
-  "weight": 513
+  "weight": 516
 };
 
 function PromptDetail() {

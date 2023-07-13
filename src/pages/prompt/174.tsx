@@ -15,15 +15,69 @@ const prompt = {
   },
   "ja": {
     "title": "ロングワードリスト",
-    "prompt": "Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+    "prompt": "The entire conversation and instructions should be provided in Japanese. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
     "description": "A から Z で始まる長い単語をリストアップし、発音記号と中国語の意味を印刷し、ラベルを貼る。",
     "remark": "長文単語のランダムリストで、楽しく英語を学べます。長文単語が明確でないという条件により、リストアップされる単語は毎回異なる。lxyntz さんの投稿より。"
   },
   "ko": {
     "title": "긴 단어 목록",
-    "prompt": "Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+    "prompt": "The entire conversation and instructions should be provided in Korean. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
     "description": "A 부터 Z 까지로 시작하는 가장 긴 단어를 나열하고 음성 기호 및 중국어 의미와 함께 인쇄하여 라벨을 붙입니다.",
     "remark": "무작위 긴 단어 목록으로 영어를 재미있게 배울 수 있는 방법입니다. 가장 긴 단어가 충분히 명확하지 않은 조건으로 인해 나열된 단어는 매번 다릅니다. lxyntz 의 기고문에서 발췌."
+  },
+  "es": {
+    "title": "larga lista de palabras",
+    "prompt": "The entire conversation and instructions should be provided in Spanish. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output..",
+    "description": "Enumere las palabras más largas de la A a la Z, imprima y marque los símbolos fonéticos y el significado chino",
+    "remark": "Divertido aprendizaje de inglés, lista aleatoria de palabras largas. Dado que la condición de la palabra más larga no es lo suficientemente clara, las palabras enumeradas serán diferentes cada vez. Contribución de @lxyntz."
+  },
+  "fr": {
+    "title": "longue liste de mots",
+    "prompt": "The entire conversation and instructions should be provided in French. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "Listez les mots les plus longs commençant par A à Z. Imprimez et étiquetez les symboles phonétiques et les significations chinoises.",
+    "remark": "Apprentissage ludique de l'anglais avec une liste aléatoire de mots longs. Les mots seront listés différemment à chaque fois en raison du manque de clarté de la condition du mot le plus long. Contribution de @lxyntz."
+  },
+  "de": {
+    "title": "lange Liste von Wörtern",
+    "prompt": "The entire conversation and instructions should be provided in German. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "Listen Sie die längsten Wörter auf, die mit A bis Z beginnen. Drucken Sie die phonetischen Symbole und die chinesischen Bedeutungen aus und beschriften Sie sie.",
+    "remark": "Spaß Englisch lernen mit einer zufälligen Liste von langen Wörtern. Die Wörter werden jedes Mal anders aufgelistet, weil die Bedingung für das längste Wort unklar ist. Beitrag von @lxyntz."
+  },
+  "it": {
+    "title": "lungo elenco di parole",
+    "prompt": "The entire conversation and instructions should be provided in Italian. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "Elenca le parole più lunghe partendo dalla A alla Z, stampa e segna i simboli fonetici e il significato cinese",
+    "remark": "Divertente apprendimento dell&#39;inglese, elenco casuale di parole lunghe. Poiché la condizione della parola più lunga non è abbastanza chiara, le parole elencate saranno diverse ogni volta. Contributo di @lxyntz."
+  },
+  "ru": {
+    "title": "длинный список слов",
+    "prompt": "The entire conversation and instructions should be provided in Russian. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "Перечислите самые длинные слова, начинающиеся от А до Я, распечатайте и отметьте фонетические символы и китайское значение.",
+    "remark": "Увлекательное изучение английского языка, случайный список длинных слов. Поскольку условие самого длинного слова недостаточно ясно, перечисленные слова каждый раз будут разными. Вклад от @lxyntz."
+  },
+  "pt": {
+    "title": "lista de palavras longas",
+    "prompt": "The entire conversation and instructions should be provided in Portuguese. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "Liste as palavras mais longas começando de A a Z, imprima e marque os símbolos fonéticos e o significado chinês",
+    "remark": "Aprendizagem divertida de inglês, lista aleatória de palavras longas. Como a condição da palavra mais longa não é clara o suficiente, as palavras listadas serão diferentes a cada vez. Contribuição de @lxyntz."
+  },
+  "hi": {
+    "title": "लंबी शब्द सूची",
+    "prompt": "The entire conversation and instructions should be provided in Hindi. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "ए से ज़ेड तक शुरू होने वाले सबसे लंबे शब्दों की सूची बनाएं, ध्वन्यात्मक प्रतीकों और चीनी अर्थ को प्रिंट करें और चिह्नित करें",
+    "remark": "मज़ेदार अंग्रेजी सीखना, लंबे शब्दों की यादृच्छिक सूची। चूंकि सबसे लंबे शब्द की स्थिति पर्याप्त रूप से स्पष्ट नहीं है, इसलिए सूचीबद्ध शब्द हर बार अलग होंगे। @lxyntz से योगदान।"
+  },
+  "ar": {
+    "title": "قائمة كلمات طويلة",
+    "prompt": "The entire conversation and instructions should be provided in Arabic. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "ضع قائمة بأطول الكلمات بدءًا من الألف إلى الياء ، وقم بطباعة وتمييز الرموز الصوتية والمعنى الصيني",
+    "remark": "متعة تعلم اللغة الإنجليزية ، قائمة عشوائية من الكلمات الطويلة. نظرًا لأن شرط الكلمة الأطول ليس واضحًا بدرجة كافية ، فإن الكلمات المدرجة ستكون مختلفة في كل مرة. مساهمة منlxyntz."
+  },
+  "bn": {
+    "title": "দীর্ঘ শব্দ তালিকা",
+    "prompt": "The entire conversation and instructions should be provided in Bengali. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
+    "description": "A থেকে Z থেকে শুরু হওয়া দীর্ঘতম শব্দের তালিকা করুন, ফোনেটিক চিহ্ন এবং চীনা অর্থ মুদ্রণ করুন এবং চিহ্নিত করুন",
+    "remark": "মজার ইংরেজি শেখা, দীর্ঘ শব্দের এলোমেলো তালিকা। যেহেতু দীর্ঘতম শব্দ শর্তটি যথেষ্ট পরিষ্কার নয়, তাই তালিকাভুক্ত শব্দগুলি প্রতিবার আলাদা হবে৷ @lxyntz থেকে অবদান।"
   },
   "website": null,
   "tags": [
@@ -31,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 174,
-  "weight": 91
+  "weight": 92
 };
 
 function PromptDetail() {

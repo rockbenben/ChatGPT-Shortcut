@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "ソフトウェアテスト",
-    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Janpanese. Your first task is to test ",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Janpanese. Your first task is to test ..",
     "description": "新しいソフトウェアアプリケーションのソフトウェア品質保証テスターとして働いてほしいと思います。あなたの仕事は、ソフトウェアの機能と性能をテストし、必要な基準を満たしていることを確認することです。問題やバグがあった場合は、詳細な報告書を作成し、改善のための提案をすることが求められます。報告書には、個人的な意見や主観的なコメントを含めないようにしてください。",
     "remark": "指定された項目に関するテストのリストを出力する。"
   },
   "ko": {
     "title": "소프트웨어 테스트",
-    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Korean. Your first task is to test ",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Korean. Your first task is to test ..",
     "description": "새로운 소프트웨어 애플리케이션의 소프트웨어 품질 보증 테스터로 일해 주셨으면 합니다. 소프트웨어의 기능과 성능을 테스트하여 필요한 표준을 충족하는지 확인하는 일을 하게 됩니다. 발견한 문제나 버그에 대한 자세한 보고서를 작성하고 개선에 대한 제안을 제공해야 합니다. 보고서에 개인적인 의견이나 주관적인 의견을 포함하지 마세요.",
     "remark": "지정된 항목에 대한 테스트 목록을 출력합니다."
+  },
+  "es": {
+    "title": "prueba de software",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Spanish. Your first task is to test .",
+    "description": "Quiero que se desempeñe como probador de control de calidad del software para una nueva aplicación de software. Su trabajo consiste en probar la funcionalidad y el rendimiento del software para asegurarse de que cumple con los estándares especificados. Debe escribir un informe detallado sobre cualquier problema o error que encuentre y proporcionar sugerencias para mejorar. No incluya opiniones personales o evaluaciones subjetivas en su informe.",
+    "remark": "Muestra una lista de pruebas para el proyecto especificado."
+  },
+  "fr": {
+    "title": "tests de logiciels",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in French. Your first task is to test ..",
+    "description": "J'aimerais que vous travailliez en tant que testeur d'assurance qualité pour une nouvelle application logicielle. Votre tâche consiste à tester la fonctionnalité et les performances du logiciel afin de vous assurer qu'il répond aux normes requises. Vous devrez rédiger un rapport détaillé sur les problèmes ou les bogues que vous rencontrerez et formuler des suggestions d'amélioration. N'incluez pas d'opinions personnelles ou d'évaluations subjectives dans votre rapport.",
+    "remark": "Produit une liste de tests pour le projet spécifié."
+  },
+  "de": {
+    "title": "Softwaretests",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in German. Your first task is to test ..",
+    "description": "Ich möchte, dass Sie als Software-Qualitätssicherungstester für eine neue Softwareanwendung arbeiten. Ihre Aufgabe ist es, die Funktionalität und Leistung der Software zu testen, um sicherzustellen, dass sie den erforderlichen Standards entspricht. Sie müssen einen detaillierten Bericht über alle Probleme oder Fehler verfassen, auf die Sie stoßen, und Verbesserungsvorschläge unterbreiten. Geben Sie in Ihrem Bericht keine persönlichen Meinungen oder subjektiven Bewertungen ab.",
+    "remark": "Gibt eine Liste der Tests für das angegebene Projekt aus."
+  },
+  "it": {
+    "title": "prova software",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Italian. Your first task is to test ..",
+    "description": "Voglio che tu faccia il tester per la garanzia della qualità del software per una nuova applicazione software. Il tuo compito è testare la funzionalità e le prestazioni del software per assicurarti che soddisfi gli standard specificati. Devi scrivere un rapporto dettagliato su eventuali problemi o bug riscontrati e fornire suggerimenti per il miglioramento. Non includere nella tua segnalazione opinioni personali o valutazioni soggettive.",
+    "remark": "Produce un elenco di test per il progetto specificato."
+  },
+  "ru": {
+    "title": "тест программного обеспечения",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Russian. Your first task is to test ..",
+    "description": "Я хочу, чтобы вы выполняли функции тестировщика обеспечения качества программного обеспечения для нового программного приложения. Ваша задача — протестировать функциональность и производительность программного обеспечения, чтобы убедиться, что оно соответствует установленным стандартам. Вам необходимо написать подробный отчет о любых проблемах или ошибках, с которыми вы столкнулись, и предоставить предложения по улучшению. Не включайте в свой отчет какие-либо личные мнения или субъективные оценки.",
+    "remark": "Вывести список тестов для указанного проекта."
+  },
+  "pt": {
+    "title": "teste de software",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Portuguese. Your first task is to test ..",
+    "description": "Quero que você atue como testador de garantia de qualidade de software para um novo aplicativo de software. Seu trabalho é testar a funcionalidade e o desempenho do software para garantir que ele atenda aos padrões especificados. Você precisa escrever um relatório detalhado sobre quaisquer problemas ou bugs que encontrar e fornecer sugestões para melhorias. Não inclua opiniões pessoais ou avaliações subjetivas em seu relatório.",
+    "remark": "Emita uma lista de testes para o projeto especificado."
+  },
+  "hi": {
+    "title": "सॉफ्टवेयर परीक्षण",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Hindi. Your first task is to test ..",
+    "description": "मैं चाहता हूं कि आप एक नए सॉफ्टवेयर एप्लिकेशन के लिए सॉफ्टवेयर गुणवत्ता आश्वासन परीक्षक के रूप में काम करें। आपका काम सॉफ़्टवेयर की कार्यक्षमता और प्रदर्शन का परीक्षण करना है ताकि यह सुनिश्चित हो सके कि यह निर्दिष्ट मानकों को पूरा करता है। आपको अपने सामने आने वाली किसी भी समस्या या बग पर एक विस्तृत रिपोर्ट लिखनी होगी और सुधार के लिए सुझाव देने होंगे। अपनी रिपोर्ट में कोई व्यक्तिगत राय या व्यक्तिपरक मूल्यांकन शामिल न करें।",
+    "remark": "निर्दिष्ट प्रोजेक्ट के लिए परीक्षणों की एक सूची आउटपुट करें।"
+  },
+  "ar": {
+    "title": "اختبار البرمجيات",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Arabic. Your first task is to test ..",
+    "description": "أريدك أن تعمل كمختبر ضمان جودة البرامج لتطبيق برمجي جديد. مهمتك هي اختبار وظائف وأداء البرنامج للتأكد من أنه يفي بالمعايير المحددة. تحتاج إلى كتابة تقرير مفصل عن أي مشاكل أو أخطاء تواجهها ، وتقديم اقتراحات للتحسين. لا تقم بتضمين أي آراء شخصية أو تقييمات شخصية في تقريرك.",
+    "remark": "إخراج قائمة الاختبارات الخاصة بالمشروع المحدد."
+  },
+  "bn": {
+    "title": "সফ্টওয়্যার পরীক্ষা",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Bengali. Your first task is to test ..",
+    "description": "আমি চাই আপনি একটি নতুন সফ্টওয়্যার অ্যাপ্লিকেশনের জন্য একটি সফ্টওয়্যার গুণমান নিশ্চিতকরণ পরীক্ষক হিসাবে পরিবেশন করুন৷ আপনার কাজ হল সফ্টওয়্যারটির কার্যকারিতা এবং কার্যকারিতা পরীক্ষা করা যাতে এটি নির্দিষ্ট মান পূরণ করে। আপনি যে কোনো সমস্যা বা ত্রুটির সম্মুখীন হন সে সম্পর্কে আপনাকে একটি বিশদ প্রতিবেদন লিখতে হবে এবং উন্নতির জন্য পরামর্শ প্রদান করতে হবে। আপনার প্রতিবেদনে কোনো ব্যক্তিগত মতামত বা বিষয়গত মূল্যায়ন অন্তর্ভুক্ত করবেন না।",
+    "remark": "নির্দিষ্ট প্রকল্পের জন্য পরীক্ষার একটি তালিকা আউটপুট."
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
   "tags": [
     "code"
   ],
   "id": 97,
-  "weight": 418
+  "weight": 419
 };
 
 function PromptDetail() {

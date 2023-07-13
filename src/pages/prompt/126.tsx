@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "周辺のおすすめツアー",
-    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ..",
     "description": "あなたに観光ガイドをお願いしたい。私が自分の居場所を書くと、あなたは私の居場所の近くにある観光地の提案をしてくれるでしょう。場合によっては、私が訪れたい場所のタイプもお教えします。また、私が最初に訪れた場所の近くにある、似たようなタイプの場所を提案してください。",
     "remark": "お住まいの地域によって、周辺のおすすめスポットをご紹介します。"
   },
   "ko": {
     "title": "주변 추천 투어",
-    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Korean. My first suggestion request is ",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Korean. My first suggestion request is ..",
     "description": "관광 가이드로 활동해 주셨으면 합니다. 제 위치를 알려주시면 제 위치 근처에서 가볼 만한 곳을 추천해 주시면 됩니다. 경우에 따라서는 제가 방문하고 싶은 장소의 유형도 알려드릴 수 있습니다. 또한 첫 번째 위치에서 가까운 비슷한 유형의 장소를 추천해 주실 수도 있습니다.",
     "remark": "위치에 따라 주변에서 가볼 만한 곳을 추천해 드립니다."
+  },
+  "es": {
+    "title": "Recomendación de viaje por los alrededores",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
+    "description": "Quiero que hagas de guía turístico. Te escribiré mi ubicación y me darás una sugerencia de un lugar cerca de mi ubicación para visitar. En algunos casos, también te daré el tipo de lugar que estoy visitando. También me recomendarán un tipo similar de lugares cercanos a mi primera ubicación.",
+    "remark": "En función de su ubicación, recomiende lugares cercanos para visitar."
+  },
+  "fr": {
+    "title": "Recommandations pour les déplacements",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in French. My first suggestion request is ..",
+    "description": "J'aimerais que vous me serviez de guide de voyage. Je vous indiquerai mon lieu de résidence et vous me donnerez des suggestions de lieux à visiter à proximité de mon lieu de résidence. Dans certains cas, je vous indiquerai également le type d'endroit que je souhaite visiter. Vous me suggérerez également des lieux similaires à proximité de mon premier lieu.",
+    "remark": "Recommandation de lieux à visiter dans le voisinage en fonction de votre position."
+  },
+  "de": {
+    "title": "Empfehlungen für Reisen in der Umgebung",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in German. My first suggestion request is ..",
+    "description": "Ich möchte, dass Sie als Reiseführer fungieren. Ich schreibe Ihnen, wo ich mich befinde, und Sie machen mir Vorschläge für einen Ort, den ich in der Nähe meines Standorts besuchen kann. In manchen Fällen werde ich Ihnen auch die Art des Ortes nennen, den ich besuchen möchte. Sie werden mir auch ähnliche Orte in der Nähe meines ersten Standortes vorschlagen.",
+    "remark": "Empfohlene Ausflugsziele in der Nachbarschaft auf der Grundlage Ihres Standorts."
+  },
+  "it": {
+    "title": "Raccomandazione di viaggio circostante",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
+    "description": "Voglio che tu faccia da guida turistica. Ti scriverò la mia posizione e ti suggerirò un posto vicino alla mia posizione da visitare. In alcuni casi, ti fornirò anche il tipo di luogo che sto visitando. Mi consiglierai anche un tipo simile di posti vicino alla mia prima posizione.",
+    "remark": "In base alla tua posizione, consiglia luoghi nelle vicinanze da visitare."
+  },
+  "ru": {
+    "title": "Рекомендация по окрестностям",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
+    "description": "Я хочу, чтобы вы выступили в роли экскурсовода. Я напишу вам свое местоположение, и вы предложите место рядом с моим местоположением для посещения. В некоторых случаях я также дам вам тип места, которое я посещаю. Вы также будете рекомендовать мне подобные места недалеко от моего первого местоположения.",
+    "remark": "В зависимости от вашего местоположения порекомендуйте близлежащие места для посещения."
+  },
+  "pt": {
+    "title": "Recomendação de viagem ao redor",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
+    "description": "Eu quero que você atue como um guia turístico. Vou escrever minha localização para você e você dará uma sugestão de um lugar próximo a minha localização para visitar. Em alguns casos, também darei a você o tipo de lugar que estou visitando. Você também estará me recomendando lugares semelhantes próximos ao meu primeiro local.",
+    "remark": "Com base na sua localização, recomende lugares próximos para visitar."
+  },
+  "hi": {
+    "title": "आसपास की यात्रा की सिफ़ारिश",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Hindi. My first suggestion request is ..",
+    "description": "मैं चाहता हूं कि आप एक टूर गाइड के रूप में कार्य करें। मैं आपको अपना स्थान लिखूंगा और आप घूमने के लिए मेरे स्थान के निकट एक स्थान का सुझाव देंगे। कुछ मामलों में, मैं आपको उस स्थान का प्रकार भी बताऊंगा जहाँ मैं जा रहा हूँ। आप भी मुझे मेरे पहले स्थान के निकट इसी प्रकार के स्थानों की अनुशंसा करेंगे।",
+    "remark": "अपने स्थान के आधार पर, घूमने के लिए आस-पास के स्थानों की अनुशंसा करें।"
+  },
+  "ar": {
+    "title": "توصية السفر المحيطة",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Arabic. My first suggestion request is ..",
+    "description": "أريدك أن تعمل كمرشد سياحي. سأكتب لك موقعي وستقدم لك اقتراحًا بمكان قريب من موقعي لزيارته. في بعض الحالات ، سأعطيك أيضًا نوع المكان الذي أزوره. ستوصيني أيضًا بنوع مماثل من الأماكن القريبة من موقعي الأول.",
+    "remark": "بناءً على موقعك ، أوصي بالأماكن القريبة للزيارة."
+  },
+  "bn": {
+    "title": "পার্শ্ববর্তী ভ্রমণ সুপারিশ",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Bengali. My first suggestion request is ..",
+    "description": "আমি চাই আপনি একজন ট্যুর গাইড হিসেবে কাজ করুন। আমি আপনাকে আমার অবস্থান লিখব এবং আপনি আমার অবস্থানের কাছাকাছি একটি জায়গা দেখার পরামর্শ দেবেন। কিছু ক্ষেত্রে, আমি যে জায়গাটিতে বেড়াতে যাচ্ছি তাও আমি আপনাকে দেব। আপনি আমার প্রথম অবস্থানের কাছাকাছি একই ধরনের জায়গা সুপারিশ করা হবে.",
+    "remark": "আপনার অবস্থানের উপর ভিত্তি করে, কাছাকাছি স্থানগুলি দেখার জন্য সুপারিশ করুন।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
   "tags": [
     "tool"
   ],
   "id": 126,
-  "weight": 644
+  "weight": 646
 };
 
 function PromptDetail() {

@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "ノートアシスタント",
-    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Janpanese. The lecture note is ",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Janpanese. The lecture note is ..",
     "description": "ある講義のノートアシスタントをお願いします。あなたの仕事は、講義の例を含む詳細なメモのリストを提供し、テスト問題に出題される可能性が高いと思われるメモに焦点を当てることです。さらに、図やデータを含むノートのリストと、この講義の例を含む別のリストを作成します。これらのノートは、簡潔で読みやすいものでなければなりません。",
     "remark": "長文ノートの要点を抽出する。"
   },
   "ko": {
     "title": "노트 도우미",
-    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Korean. The lecture note is ",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Korean. The lecture note is ..",
     "description": "강의 중 한 강의의 노트 도우미로 활동해 주셨으면 합니다. 여러분의 임무는 강의의 예시가 포함된 자세한 노트 목록을 제공하고 시험 문제에 나올 가능성이 가장 높다고 생각되는 노트에 집중하는 것입니다. 또한 그림과 데이터가 포함된 노트 목록과 이 강의의 예제가 포함된 노트 목록을 별도로 작성합니다. 이러한 노트는 간결하고 읽기 쉬워야 합니다.",
     "remark": "긴 노트의 요점 추출하기."
+  },
+  "es": {
+    "title": "asistente de notas",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Spanish. The lecture note is .",
+    "description": "Espero que puedas actuar como asistente para tomar notas en una conferencia. Su tarea es proporcionar una lista de notas detallada que incluya ejemplos de la lección y concentrarse en las notas que cree que es más probable que aparezcan en las preguntas de la prueba. Además, haga una lista separada para notas con números y datos, y una lista separada para los ejemplos incluidos en esta lección. Estas notas deben ser concisas y fáciles de leer.",
+    "remark": "Extrae la esencia de las notas largas."
+  },
+  "fr": {
+    "title": "Notes Assistant",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in French. The lecture note is ..",
+    "description": "J'aimerais que vous fassiez office d'assistant à la prise de notes pour l'un des cours magistraux. Votre tâche consiste à fournir une liste détaillée de notes comprenant des exemples tirés du cours et à vous concentrer sur les notes qui, selon vous, sont les plus susceptibles de figurer dans les questions de l'examen. En outre, veuillez créer une liste séparée pour les notes contenant des figures et des données, ainsi qu'une autre liste séparée comprenant des exemples tirés de ce cours. Ces notes doivent être concises et faciles à lire.",
+    "remark": "Extraire les points principaux des notes longues."
+  },
+  "de": {
+    "title": "Anmerkungen Assistent",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in German. The lecture note is ..",
+    "description": "Ich möchte, dass Sie bei einer der Vorlesungen als Assistent für die Erstellung von Notizen fungieren. Ihre Aufgabe ist es, eine detaillierte Liste mit Notizen zu erstellen, die Beispiele aus der Vorlesung enthalten und sich auf die Notizen konzentrieren, die Ihrer Meinung nach am ehesten in den Prüfungsfragen vorkommen werden. Bitte erstellen Sie außerdem eine separate Liste für Notizen mit Abbildungen und Daten sowie eine weitere separate Liste mit Beispielen aus dieser Vorlesung. Diese Notizen sollten prägnant und leicht zu lesen sein.",
+    "remark": "Extrahieren Sie die wichtigsten Punkte aus langen Notizen."
+  },
+  "it": {
+    "title": "assistente di nota",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Italian. The lecture note is ..",
+    "description": "Spero che tu possa fungere da assistente per prendere appunti per una conferenza. Il tuo compito è fornire un elenco dettagliato delle note che includa esempi della lezione e concentrarti sulle note che ritieni più probabile che compaiano nelle domande del test. Inoltre, si prega di creare un elenco separato per le note con numeri e dati e un elenco separato per gli esempi inclusi in questa lezione. Queste note dovrebbero essere concise e facili da leggere.",
+    "remark": "Estrai l&#39;essenza delle note lunghe."
+  },
+  "ru": {
+    "title": "помощник по работе с заметками",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Russian. The lecture note is ..",
+    "description": "Надеюсь, вы сможете выступить в качестве помощника по конспектированию лекции. Ваша задача — составить подробный список заметок, включающий примеры из лекции, и сосредоточиться на заметках, которые, по вашему мнению, с наибольшей вероятностью появятся в вопросах теста. Также, пожалуйста, сделайте отдельный список для заметок с цифрами и данными, а также отдельный список для примеров, включенных в эту лекцию. Эти заметки должны быть краткими и легко читаемыми.",
+    "remark": "Извлеките суть длинных заметок."
+  },
+  "pt": {
+    "title": "assistente de notas",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Portuguese. The lecture note is ..",
+    "description": "Espero que você possa atuar como assistente de anotações para uma palestra. Sua tarefa é fornecer uma lista de notas detalhada que inclua exemplos da palestra e focar nas notas que você acha que provavelmente aparecerão nas perguntas do teste. Além disso, faça uma lista separada para notas com números e dados e uma lista separada para os exemplos incluídos nesta aula. Estas notas devem ser concisas e fáceis de ler.",
+    "remark": "Extraia a essência de notas longas."
+  },
+  "hi": {
+    "title": "नोट सहायक",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Hindi. The lecture note is ..",
+    "description": "मुझे आशा है कि आप व्याख्यान के लिए नोट लेने वाले सहायक के रूप में कार्य कर सकते हैं। आपका काम एक विस्तृत नोट सूची प्रदान करना है जिसमें व्याख्यान से उदाहरण शामिल हैं और उन नोट्स पर ध्यान केंद्रित करना है जो आपको लगता है कि परीक्षण प्रश्नों में आने की सबसे अधिक संभावना है। इसके अलावा, कृपया संख्याओं और डेटा वाले नोट्स के लिए एक अलग सूची बनाएं और इस व्याख्यान में शामिल उदाहरणों के लिए एक अलग सूची बनाएं। ये नोट्स संक्षिप्त और पढ़ने में आसान होने चाहिए।",
+    "remark": "लंबे नोट्स का सार निकालें."
+  },
+  "ar": {
+    "title": "مساعد ملاحظة",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Arabic. The lecture note is ..",
+    "description": "آمل أن تتمكن من العمل كمساعد لتدوين الملاحظات في إحدى المحاضرات. مهمتك هي تقديم قائمة ملاحظات مفصلة تتضمن أمثلة من المحاضرة والتركيز على الملاحظات التي تعتقد أنه من المرجح أن تظهر في أسئلة الاختبار. أيضا ، يرجى عمل قائمة منفصلة للملاحظات مع الأرقام والبيانات ، وقائمة منفصلة للأمثلة المدرجة في هذه المحاضرة. يجب أن تكون هذه الملاحظات موجزة وسهلة القراءة.",
+    "remark": "استخرج جوهر الملاحظات الطويلة."
+  },
+  "bn": {
+    "title": "নোট সহকারী",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Bengali. The lecture note is ..",
+    "description": "আমি আশা করি আপনি একটি বক্তৃতার জন্য নোট গ্রহণ সহকারী হিসাবে কাজ করতে পারেন। আপনার কাজ হল একটি বিশদ নোট তালিকা প্রদান করা যাতে বক্তৃতা থেকে উদাহরণগুলি অন্তর্ভুক্ত থাকে এবং সেই নোটগুলিতে ফোকাস করা যা আপনি পরীক্ষার প্রশ্নগুলিতে উপস্থিত হওয়ার সম্ভাবনা বেশি বলে মনে করেন। এছাড়াও, নম্বর এবং ডেটা সহ নোটগুলির জন্য একটি পৃথক তালিকা এবং এই বক্তৃতায় অন্তর্ভুক্ত উদাহরণগুলির জন্য একটি পৃথক তালিকা তৈরি করুন৷ এই নোটগুলি সংক্ষিপ্ত এবং পড়া সহজ হওয়া উচিত।",
+    "remark": "লম্বা নোটের সারাংশ বের করুন।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
   "tags": [
     "write"
   ],
   "id": 215,
-  "weight": 561
+  "weight": 568
 };
 
 function PromptDetail() {

@@ -15,22 +15,76 @@ const prompt = {
   },
   "ja": {
     "title": "用紙②の場合",
-    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ..",
     "description": "あなたには、論文の書き手として活躍してほしい。与えられたトピックを研究し、論文を作成し、情報量が多く魅力的な説得力のある作品を作る必要があります。私が最初に提案する要件は「論文のテーマ」です。",
     "remark": "トピックに基づき、情報量が多く説得力のある論文を書く。"
   },
   "ko": {
     "title": "용지 ②",
-    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Korean. My first suggestion request is ",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Korean. My first suggestion request is ..",
     "description": "논문 작가로 활동해 주셨으면 합니다. 주어진 주제를 조사하고, 논문 문장을 개발하며, 유익하고 매력적인 설득력 있는 글을 작성해야 합니다. 제가 제안하는 첫 번째 요건은 '논문 주제'입니다.",
     "remark": "주제에 따라 유익하고 설득력 있는 논문을 작성하세요."
+  },
+  "es": {
+    "title": "Tesis②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
+    "description": "Quiero que actúes como un escritor de ensayos. Deberá investigar un tema determinado, formular una declaración de tesis y crear un trabajo persuasivo que sea tanto informativo como atractivo. Mi primera solicitud de sugerencia es &#39;Tema de disertación&#39;",
+    "remark": "Escribir ensayos informativos y convincentes sobre temas."
+  },
+  "fr": {
+    "title": "Thèse ②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in French. My first suggestion request is ..",
+    "description": "J'aimerais que vous jouiez le rôle d'un rédacteur de thèse. Vous devrez faire des recherches sur un sujet donné, élaborer un énoncé de thèse et créer un document convaincant qui soit à la fois informatif et attrayant. La première exigence que je suggère est le \"sujet de la thèse",
+    "remark": "Rédiger des documents informatifs et convaincants sur la base du sujet."
+  },
+  "de": {
+    "title": "Dissertation ②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in German. My first suggestion request is ..",
+    "description": "Ich möchte, dass Sie als Verfasser einer These fungieren. Sie müssen ein bestimmtes Thema recherchieren, eine These entwickeln und einen überzeugenden Beitrag verfassen, der sowohl informativ als auch fesselnd ist. Die erste von mir vorgeschlagene Anforderung lautet \"Thema der Arbeit\".",
+    "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
+  },
+  "it": {
+    "title": "Tesi②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
+    "description": "Voglio che tu agisca come saggista. Dovrai ricercare un determinato argomento, formulare una dichiarazione di tesi e creare un lavoro persuasivo che sia sia informativo che coinvolgente. La mia prima richiesta di suggerimento è &quot;Argomento tesi&quot;",
+    "remark": "Scrivi saggi informativi e convincenti su argomenti."
+  },
+  "ru": {
+    "title": "Диссертация②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
+    "description": "Я хочу, чтобы вы выступили в роли автора эссе. Вам нужно будет исследовать заданную тему, сформулировать тезис и создать убедительную работу, которая будет одновременно информативной и увлекательной. Мой первый запрос на предложение - «Тема диссертации».",
+    "remark": "Пишите информативные и убедительные эссе на темы."
+  },
+  "pt": {
+    "title": "Tese②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
+    "description": "Eu quero que você atue como um redator de ensaios. Você precisará pesquisar um determinado tópico, formular uma declaração de tese e criar um trabalho persuasivo que seja informativo e envolvente. Meu primeiro pedido de sugestão é &#39;Tópico de Dissertação&#39;",
+    "remark": "Escreva ensaios informativos e convincentes sobre tópicos."
+  },
+  "hi": {
+    "title": "थीसिस②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Hindi. My first suggestion request is ..",
+    "description": "मैं चाहता हूँ कि आप एक निबंध लेखक के रूप में कार्य करें। आपको किसी दिए गए विषय पर शोध करने, एक थीसिस कथन तैयार करने और एक प्रेरक कार्य तैयार करने की आवश्यकता होगी जो जानकारीपूर्ण और आकर्षक दोनों हो। मेरा पहला सुझाव अनुरोध &#39;निबंध विषय&#39; है",
+    "remark": "विषयों पर जानकारीपूर्ण और ठोस निबंध लिखें।"
+  },
+  "ar": {
+    "title": "أطروحة",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Arabic. My first suggestion request is ..",
+    "description": "أريدك أن تعمل ككاتب مقال. ستحتاج إلى البحث في موضوع معين ، وصياغة بيان أطروحة ، وإنشاء عمل مقنع غني بالمعلومات وجذاب. طلب اقتراحي الأول هو &quot;موضوع الأطروحة&quot;",
+    "remark": "اكتب مقالات إعلامية ومقنعة حول الموضوعات."
+  },
+  "bn": {
+    "title": "থিসিস②",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Bengali. My first suggestion request is ..",
+    "description": "আমি চাই আপনি একজন প্রবন্ধ লেখক হিসেবে কাজ করুন। আপনাকে একটি প্রদত্ত বিষয় নিয়ে গবেষণা করতে হবে, একটি থিসিস বিবৃতি তৈরি করতে হবে এবং একটি প্ররোচক কাজ তৈরি করতে হবে যা তথ্যপূর্ণ এবং আকর্ষক উভয়ই। আমার প্রথম পরামর্শ অনুরোধ হল &#39;ডিজার্টেশন বিষয়&#39;",
+    "remark": "বিষয়ের উপর তথ্যপূর্ণ এবং বিশ্বাসযোগ্য প্রবন্ধ লিখুন।"
   },
   "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer",
   "tags": [
     "article"
   ],
   "id": 21,
-  "weight": 1782
+  "weight": 1793
 };
 
 function PromptDetail() {
