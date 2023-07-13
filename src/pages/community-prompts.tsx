@@ -219,9 +219,9 @@ export default function CommunityPrompts() {
                     type='default'
                     onClick={() => handleCopyClick(index)}>
                     {copiedIndex === index ? (
-                      <Translate id='copy.done'>已复制</Translate>
+                      <Translate id='theme.CodeBlock.copied'>已复制</Translate>
                     ) : (
-                      <Translate id='copy.button'>复制</Translate>
+                      <Translate id='theme.CodeBlock.copy'>复制</Translate>
                     )}
                   </Button>
                   <Space>

@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "AI Short",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "ChatGPT Shortcut",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.📘 使用说明": {
+    "message": "📘 ব্যবহারের জন্য নির্দেশাবলী",
+    "description": "Navbar item with label 📘 使用说明"
+  },
+  "item.label.🏘️ 社区提示词": {
+    "message": "🏘️ কমিউনিটি প্রম্পট",
+    "description": "Navbar item with label 🏘️ 社区提示词"
+  },
+  "item.label.🛠️ 应用工具": {
+    "message": "🛠️ অ্যাপস",
+    "description": "Navbar item with label 🛠️ 应用工具"
+  },
+  "item.label.反馈": {
+    "message": "প্রতিক্রিয়া",
+    "description": "Navbar item with label 反馈"
+  },
+  "item.label.IMGPrompt": {
+    "message": "আইএমজি প্রম্পট",
+    "description": "Navbar item with label IMGPrompt"
+  },
+  "item.label.文字处理": {
+    "message": "শব্দ প্রক্রিয়াকরণ",
+    "description": "Navbar item with label 文字处理"
+  },
+  "item.label.工具收藏": {
+    "message": "টুল সংগ্রহ",
+    "description": "Navbar item with label 工具收藏"
+  },
+  "item.label.Chrome 扩展": {
+    "message": "ক্রোম এক্সটেনশন",
+    "description": "Navbar item with label Chrome 扩展"
+  },
+  "item.label.Edge 扩展": {
+    "message": "প্রান্ত এক্সটেনশন",
+    "description": "Navbar item with label Edge 扩展"
+  },
+  "item.label.Find on Product Hunt": {
+    "message": "পণ্য হান্ট এ খুঁজুন",
+    "description": "Navbar item with label Find on Product Hunt"
+  }
+}

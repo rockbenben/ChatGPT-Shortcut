@@ -1,0 +1,777 @@
+{
+  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
+    "message": "Aishort ব্যবহারকারীদের দ্বারা শেয়ার করা উদ্ভাবনী প্রম্পট শব্দগুলির একটি সংগ্রহ অন্বেষণ করুন৷ এই অনন্য এবং আকর্ষণীয় প্রম্পট শব্দগুলি আপনাকে ছোট ভিডিও, উপন্যাস, গেম এবং আরও অনেক কিছু তৈরি করার সময় অনুপ্রাণিত করতে পারে৷ আপনার প্রিয় টিপসের জন্য ভোট দিন, সেগুলি কপি করুন এবং আপনার বন্ধুদের সাথে শেয়ার করুন৷ আইশর্ট আপনাকে সৃজনশীলতার দরজা খুলতে এবং একসাথে দুর্দান্ত কাজ তৈরি করতে সহায়তা করতে দিন।"
+  },
+  "field.id": {
+    "message": "মুক্তির সময়"
+  },
+  "field.upvoteDifference": {
+    "message": "সমর্থন"
+  },
+  "order.ascending": {
+    "message": "উর্দ্ধক্রমানুসারে"
+  },
+  "order.descending": {
+    "message": "অবরোহী ক্রম"
+  },
+  "link.home": {
+    "message": "বাড়িতে ফিরে"
+  },
+  "copy.done": {
+    "message": "অনুলিপি করা"
+  },
+  "copy.button": {
+    "message": "অনুলিপি"
+  },
+  "upvote": {
+    "message": "থাম্বস আপ"
+  },
+  "downvote": {
+    "message": "ধাপে"
+  },
+  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+    "message": "এই পৃষ্ঠায় প্রদর্শিত প্রম্পট শব্দগুলি নেটিজেনদের দ্বারা শেয়ার করা এবং আপলোড করা হয়৷ আমরা বিষয়বস্তুর নির্ভুলতা, গুণমান বা সম্পূর্ণতার গ্যারান্টি দিতে পারি না এবং বিষয়বস্তু থেকে উদ্ভূত কোনো আইনি দায়বদ্ধতার জন্য আমরা দায়ী থাকব না৷ আপনি যদি কোন লঙ্ঘন বা অন্যান্য সমস্যা খুঁজে পান, আপনি এটি মোকাবেলা করতে আমাদের সাথে যোগাযোগ করতে পারেন। আমাদের জানানোর সাথে সাথে আমরা এটি মোকাবেলা করব।"
+  },
+  "feedback.title": {
+    "message": "প্রতিক্রিয়া এবং পরামর্শ"
+  },
+  "feedback.description": {
+    "message": "আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ!"
+  },
+  "feedback.welcome": {
+    "message": "প্রতিক্রিয়া স্বাগত জানাই",
+    "description": "The welcome title on the feedback page"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT শর্টকাট ক্রমাগত উন্নত করতে এবং ব্যক্তিগত দক্ষতা ও উৎপাদনশীলতা বাড়াতে পরামর্শ, ধারণা এবং প্রম্পট শব্দগুলিকে স্বাগত জানানো হয়। আপনি যদি একটি বাগ রিপোর্ট করতে চান, তাহলে সমস্যাটির লিঙ্ক এবং সম্পর্কিত পরিস্থিতি প্রদান করুন। প্রম্পট শব্দ সামগ্রীর জন্য, আপনি একাধিক ভাষায় সামগ্রী জমা দিতে পারেন, বা প্রম্পট শব্দে আপনার চিন্তাভাবনা বর্ণনা করতে পারেন। আমরা প্রম্পট শব্দগুলি সন্ধান করি যা চিন্তাকে প্রসারিত করে বা উচ্চ-মানের আউটপুট তৈরি করে। আপনার জমা দেওয়া কিউ শব্দ প্রকাশিত হলে, আপনার অবদান পৃষ্ঠায় যোগ করা হবে। আপনি অবদানকারীর নাম (ব্যবহারকারীর নাম) অনুসন্ধান করে সংশ্লিষ্ট এন্ট্রি খুঁজে পেতে পারেন।",
+    "description": "The main paragraph on the feedback page"
+  },
+  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
+    "message": "AiShort (ChatGPT শর্টকাট) - একটি সহজে ব্যবহারযোগ্য ChatGPT শর্টকাট টেবিল যা আপনার উৎপাদনশীলতাকে দ্বিগুণ করে! ট্যাগ ফিল্টারিং, কীওয়ার্ড অনুসন্ধান এবং এক-ক্লিক কপি প্রম্পট"
+  },
+  "让生产力加倍的 ChatGPT 快捷指令": {
+    "message": "আপনার উৎপাদনশীলতা দ্বিগুণ করতে ChatGPT শর্টকাট"
+  },
+  "showcase.filters.resultCount": {
+    "message": "{sitesCount} প্রম্পট",
+    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "toggle_prompt_language": {
+    "message": "প্রম্পট ভাষা পরিবর্তন করুন"
+  },
+  "showcase.filters.title": {
+    "message": "ফিল্টার"
+  },
+  "toggle_prompt_language_description": {
+    "message": "প্রম্পট শব্দের প্রদর্শন ভাষা পরিবর্তন করুন, ইংরেজি এবং পৃষ্ঠার বর্তমান ভাষার মধ্যে স্যুইচ করুন।"
+  },
+  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
+    "message": "আপনি যে ব্যক্তিগত প্রম্পটগুলি যোগ করেছেন বা তৈরি করেছেন তা AiShort ছাড়া অন্য প্রম্পটগুলি সংরক্ষণ করতে ব্যবহার করা যেতে পারে।"
+  },
+  "你的提示词": {
+    "message": "আপনার প্রম্পট"
+  },
+  "分享到社区的提示词": {
+    "message": "সম্প্রদায়ের সাথে ভাগ করার জন্য টিপস"
+  },
+  "社区提示词": {
+    "message": "সম্প্রদায় প্রম্পট"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "প্রম্পটগুলির জন্য অনুসন্ধান করুন..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "😒 কোন ফলাফল পাওয়া যায়নি, অনুগ্রহ করে আপনার অনুসন্ধান শব্দটি ছোট করুন"
+  },
+  "showcase.favoritesList.title": {
+    "message": "আমাদের প্রিয়"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "সব প্রম্পট"
+  },
+  "加载更多": {
+    "message": "আর ঢুকাও"
+  },
+  "message.resetPassword.success": {
+    "message": "পাসওয়ার্ড রিসেট সফল!"
+  },
+  "error.resetPassword": {
+    "message": "পাসওয়ার্ড রিসেট করার সময় ত্রুটি:"
+  },
+  "message.resetPassword.error": {
+    "message": "পাসওয়ার্ড রিসেট ব্যর্থ হয়েছে, পরে আবার চেষ্টা করুন"
+  },
+  "input.resetPassword.code": {
+    "message": "আপনার রিসেট কোড লিখুন দয়া করে!"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "কোড আবার ঠিক করুন"
+  },
+  "input.newPassword": {
+    "message": "একটি নতুন পাসওয়ার্ড লিখুন দয়া করে!"
+  },
+  "placeholder.newPassword": {
+    "message": "নতুন পাসওয়ার্ড"
+  },
+  "input.confirmPassword": {
+    "message": "নতুন পাসওয়ার্ড নিশ্চিত করুন!"
+  },
+  "placeholder.confirmPassword": {
+    "message": "নতুন পাসওয়ার্ড নিশ্চিত করুন"
+  },
+  "button.resetPassword": {
+    "message": "পাসওয়ার্ড রিসেট করুন"
+  },
+  "收藏": {
+    "message": "সংগ্রহ করা"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "সংগ্রহ করা"
+  },
+  "写作辅助": {
+    "message": "লেখার সাহায্য"
+  },
+  "showcase.tag.write.description": {
+    "message": "আপনার লেখা শেষ করতে সাহায্য করার জন্য প্রবন্ধের ব্যাকরণ এবং শৈলী পোলিশ করুন"
+  },
+  "文章/报告": {
+    "message": "প্রবন্ধ/প্রতিবেদন"
+  },
+  "showcase.tag.article.description": {
+    "message": "একটি নির্দিষ্ট শৈলী সহ উপন্যাস, প্রবন্ধ, সংবাদ, স্ক্রিপ্ট, প্রতিবেদন এবং অন্যান্য নিবন্ধ"
+  },
+  "IT/编程": {
+    "message": "আইটি/প্রোগ্রামিং"
+  },
+  "showcase.tag.code.description": {
+    "message": "যদিও এটি প্রোগ্রামিং, ChatGPT প্রোগ্রামিং ধাপ বা সাধারণ নমুনা কোডের বিষয়ে পরামর্শ দেয়।"
+  },
+  "AI": {
+    "message": "এআই"
+  },
+  "showcase.tag.ai.description": {
+    "message": "এআই"
+  },
+  "生活质量": {
+    "message": "জীবনের মানের"
+  },
+  "showcase.tag.living.description": {
+    "message": "ফিটনেস, পুষ্টি, শেফ, মেকআপ, স্টাইলিং"
+  },
+  "趣味知识": {
+    "message": "আকর্ষণীয় জ্ঞান"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "আকর্ষণীয় জ্ঞান"
+  },
+  "自助百科": {
+    "message": "স্ব-সহায়তা বিশ্বকোষ"
+  },
+  "showcase.tag.life.description": {
+    "message": "জীবন জ্ঞান/স্ব-সহায়তা বিশ্বকোষ"
+  },
+  "心理/社交": {
+    "message": "মনস্তাত্ত্বিক/সামাজিক"
+  },
+  "showcase.tag.social.description": {
+    "message": "মনস্তাত্ত্বিক/সামাজিক"
+  },
+  "哲学/宗教": {
+    "message": "দর্শন/ধর্ম"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "দর্শন/ধর্ম"
+  },
+  "发散思维": {
+    "message": "বিপথগামী চিন্তা"
+  },
+  "showcase.tag.mind.description": {
+    "message": "প্রশ্ন করা, চিন্তা করা, সহযোগী করা, সারসংক্ষেপ করা"
+  },
+  "教育/学生": {
+    "message": "শিক্ষা/ছাত্র"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "ছাত্র শিক্ষার সাথে সম্পর্কিত বিষয়বস্তু"
+  },
+  "学术/教师": {
+    "message": "একাডেমিক/শিক্ষক"
+  },
+  "showcase.tag.academic.description": {
+    "message": "শিক্ষাবিদ বা স্কুলের সাথে সম্পর্কিত ব্যক্তি এবং জিনিস"
+  },
+  "游戏": {
+    "message": "খেলা"
+  },
+  "showcase.tag.games.description": {
+    "message": "খেলা"
+  },
+  "工具": {
+    "message": "টুল"
+  },
+  "showcase.tag.tool.description": {
+    "message": "টুল"
+  },
+  "终端/解释器": {
+    "message": "টার্মিনাল/দোভাষী"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "টার্মিনাল/দোভাষী"
+  },
+  "语言/翻译": {
+    "message": "ভাষা অনুবাদ"
+  },
+  "showcase.tag.language.description": {
+    "message": "ভাষা তৈরি, রূপান্তর, অনুবাদ, স্বীকৃতি ইত্যাদির জন্য বিভিন্ন সরঞ্জাম।"
+  },
+  "辩论/演讲": {
+    "message": "বিতর্ক/বক্তৃতা"
+  },
+  "showcase.tag.speech.description": {
+    "message": "বিতর্ক/বক্তৃতা"
+  },
+  "点评/评鉴": {
+    "message": "পর্যালোচনা/মূল্যায়ন"
+  },
+  "showcase.tag.comments.description": {
+    "message": "পর্যালোচনা/মূল্যায়ন"
+  },
+  "文本/词语": {
+    "message": "পাঠ্য/শব্দ"
+  },
+  "showcase.tag.text.description": {
+    "message": "পাঠ্য/শব্দ"
+  },
+  "企业职位": {
+    "message": "কর্পোরেট চাকরি"
+  },
+  "showcase.tag.company.description": {
+    "message": "সাধারণ কর্পোরেট চাকরি"
+  },
+  "SEO": {
+    "message": "এসইও"
+  },
+  "showcase.tag.seo.description": {
+    "message": "টেক্সট/কীওয়ার্ড এক্সপেনশন জেনারেশন"
+  },
+  "医生": {
+    "message": "ডাক্তার"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "ডাক্তার"
+  },
+  "金融顾问": {
+    "message": "আর্থিক উপদেষ্টা"
+  },
+  "showcase.tag.finance.description": {
+    "message": "আর্থিক শিল্পে চাকরি"
+  },
+  "音乐": {
+    "message": "সঙ্গীত"
+  },
+  "showcase.tag.music.description": {
+    "message": "সঙ্গীত"
+  },
+  "行业顾问": {
+    "message": "শিল্প পরামর্শদাতা"
+  },
+  "showcase.tag.professional.description": {
+    "message": "আইনজীবী, চা কারিগর এবং অন্যান্য পদে পেশাগত জ্ঞান প্রয়োজন"
+  },
+  "投稿": {
+    "message": "অবদান"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "প্রত্যেকের অবদান আমাদের ধারণা বিকাশে সাহায্য করতে পারে"
+  },
+  "Personal": {
+    "message": "ব্যক্তিগত"
+  },
+  "showcase.tag.personal.description": {
+    "message": "ব্যক্তিগত অ-উৎপাদনশীল ব্যবহার, শুধুমাত্র রেফারেন্সের জন্য"
+  },
+  "Latest": {
+    "message": "সর্বশেষ"
+  },
+  "showcase.tag.latest.description": {
+    "message": "সম্প্রতি যোগ করা ইঙ্গিত"
+  },
+  "input.rules.username": {
+    "message": "অনুগ্রহ করে আপনার ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল ঠিকানা লিখুন!"
+  },
+  "input.rules.password": {
+    "message": "আপনার পাসওয়ার্ড দিন!"
+  },
+  "input.rules.email": {
+    "message": "আপনার ইমেইল ইনপুট করুন!"
+  },
+  "message.error": {
+    "message": "এন্ট্রি জমা ব্যর্থ হয়েছে, পরে আবার চেষ্টা করুন"
+  },
+  "message.loginSuccess": {
+    "message": "সফল লগইন!"
+  },
+  "message.registerSuccess": {
+    "message": "নিবন্ধন সাফল্য!"
+  },
+  "message.forgotPassword.success": {
+    "message": "পাসওয়ার্ড রিসেট ইমেইল পাঠানো হয়েছে!"
+  },
+  "error.forgotPassword": {
+    "message": "পাসওয়ার্ড ভুলে যাওয়া ইমেল পাঠানোর সময় ত্রুটি:"
+  },
+  "message.forgotPassword.error": {
+    "message": "পাসওয়ার্ড রিসেট ইমেল পাঠাতে ব্যর্থ, পরে আবার চেষ্টা করুন"
+  },
+  "input.username": {
+    "message": "ব্যবহারকারীর নাম / মেইলবক্স"
+  },
+  "input.password": {
+    "message": "পাসওয়ার্ড"
+  },
+  "button.login": {
+    "message": "প্রবেশ করুন"
+  },
+  "button.forgotPassword": {
+    "message": "পাসওয়ার্ড ভুলে যান"
+  },
+  "input.register.username": {
+    "message": "ব্যবহারকারীর নাম"
+  },
+  "input.email": {
+    "message": "আপনার ইমেল ঠিকানা লিখুন দয়া করে!"
+  },
+  "agreement.rules": {
+    "message": "ব্যবহারের আগে পরিষেবার শর্তাবলী এবং গোপনীয়তা নীতিতে সম্মত হন"
+  },
+  "agreement.text": {
+    "message": "সম্মত হতে এখানে ক্লিক করুন"
+  },
+  "agreement.terms": {
+    "message": "সেবা পাবার শর্ত"
+  },
+  "agreement.and": {
+    "message": "এবং"
+  },
+  "agreement.policy": {
+    "message": "গোপনীয়তা নীতি"
+  },
+  "button.register": {
+    "message": "নিবন্ধন"
+  },
+  "placeholder.email": {
+    "message": "মেইল"
+  },
+  "button.sendResetEmail": {
+    "message": "রিসেট ইমেল পাঠান"
+  },
+  "tabs.login": {
+    "message": "প্রবেশ করুন"
+  },
+  "tabs.register": {
+    "message": "নিবন্ধন"
+  },
+  "tabs.forgotPassword": {
+    "message": "পাসওয়ার্ড ভুলে যান"
+  },
+  "card.welcome": {
+    "message": "স্বাগত"
+  },
+  "tooltip.switchLang": {
+    "message": "প্রদর্শন ভাষা পরিবর্তন করতে ক্লিক করুন"
+  },
+  "comments.info": {
+    "message": "এই প্রম্পট শব্দ সম্পর্কে আপনার মন্তব্য, চিন্তা বা ভাগ করে নিচে উত্তর দিন."
+  },
+  "message.changePassword.success": {
+    "message": "পাসওয়ার্ড রিসেট সম্পূর্ণ!"
+  },
+  "error.changePassword": {
+    "message": "পাসওয়ার্ড পরিবর্তনে ত্রুটি:"
+  },
+  "message.changePassword.error": {
+    "message": "পাসওয়ার্ড পরিবর্তন ব্যর্থ হয়েছে, পরে আবার চেষ্টা করুন"
+  },
+  "message.loading": {
+    "message": "লোড হচ্ছে..."
+  },
+  "label.changePassword": {
+    "message": "পাসওয়ার্ড পরিবর্তন করুন"
+  },
+  "input.currentPassword": {
+    "message": "বর্তমান পাসওয়ার্ড লিখুন দয়া করে!"
+  },
+  "placeholder.currentPassword": {
+    "message": "বর্তমান পাসওয়ার্ড"
+  },
+  "button.changePassword": {
+    "message": "পাসওয়ার্ড পরিবর্তন করুন"
+  },
+  "label.forgotPassword": {
+    "message": "পাসওয়ার্ড ভুলে যান"
+  },
+  "title.userInfo": {
+    "message": "ব্যবহারকারীর তথ্য"
+  },
+  "userInfo.username": {
+    "message": "ব্যবহারকারীর নাম:"
+  },
+  "userInfo.email": {
+    "message": "মেইল:"
+  },
+  "message.success": {
+    "message": "এন্ট্রি সফলভাবে জমা!"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "নিশ্চিত বাতিল"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "আপনি কি এই প্রম্পট মুছতে চান?"
+  },
+  "message.deletePrompt.success": {
+    "message": "প্রম্পট সফলভাবে মুছে ফেলা হয়েছে!"
+  },
+  "message.deletePrompt.error": {
+    "message": "প্রম্পট মুছে ফেলতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
+  },
+  "tooltip.deleteprompt": {
+    "message": "মুছে ফেলা"
+  },
+  "link.deleteprompt": {
+    "message": "মুছে ফেলা"
+  },
+  "tooltip.updateprompt": {
+    "message": "সংশোধন করুন"
+  },
+  "link.updateprompt": {
+    "message": "সংশোধন করুন"
+  },
+  "modal.updateprompt.title": {
+    "message": "বর্তমান প্রম্পট আপডেট করুন"
+  },
+  "message.addprompt.requiredTitle": {
+    "message": "অনুগ্রহ করে প্রম্পট শব্দ শিরোনাম লিখুন!"
+  },
+  "input.addprompt.title": {
+    "message": "প্রম্পট শব্দের নাম"
+  },
+  "message.addprompt.requiredDescription": {
+    "message": "প্রম্পট শব্দ বিষয়বস্তু লিখুন দয়া করে!"
+  },
+  "input.addprompt.description": {
+    "message": "প্রম্পট শব্দ বিষয়বস্তু"
+  },
+  "input.addprompt.remark": {
+    "message": "প্রম্পট শব্দ ফাংশন (ঐচ্ছিক)"
+  },
+  "input.addprompt.notes": {
+    "message": "মন্তব্য (ঐচ্ছিক): এখানে আপনি প্রম্পট শব্দের উৎসের বিবরণ, সেইসাথে প্রম্পট শব্দের অন্যান্য ভাষার সংস্করণ প্রদান করতে পারেন। উপরন্তু, প্রম্পট শব্দটি প্রসারিত করার জন্য আপনার যদি কোন ধারণা এবং প্রয়োজন থাকে তবে দয়া করে এখানে ব্যাখ্যা করুন।"
+  },
+  "message.addprompt.submission": {
+    "message": "আপনি কি সর্বজনীন পৃষ্ঠায় প্রম্পট শব্দটি ভাগ করতে চান?"
+  },
+  "button.updateprompt": {
+    "message": "আপডেট প্রম্পট"
+  },
+  "message.success1": {
+    "message": "যোগ করা কাস্টম প্রম্পট দেখতে &quot;আপনার অনুরোধ&quot; ট্যাবে ক্লিক করুন।"
+  },
+  "link.user": {
+    "message": "ব্যবহারকারী ইন্টারফেস"
+  },
+  "button.logout": {
+    "message": "প্রস্থান"
+  },
+  "link.addprompt": {
+    "message": "একটি কাস্টম প্রম্পট যোগ করুন"
+  },
+  "modal.addprompt.title": {
+    "message": "শেয়ার প্রম্পট (এই বিষয়বস্তু &quot;আপনার প্রম্পট শব্দ&quot; ট্যাবে প্রদর্শিত হবে)"
+  },
+  "input.addprompt.share.checked": {
+    "message": "হ্যাঁ"
+  },
+  "input.addprompt.share.unchecked": {
+    "message": "না"
+  },
+  "button.addPrompt": {
+    "message": "প্রম্পট যোগ করুন"
+  },
+  "showcase.header.button": {
+    "message": "🙏 আপনার প্রম্পট শব্দ যোগ করুন"
+  },
+  "点击移除收藏": {
+    "message": "প্রিয় অপসারণ করতে ক্লিক করুন"
+  },
+  "theme.NotFound.title": {
+    "message": "পেজটি খুঁজে পাওয়া যায়নি",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "আপনি যা খুঁজছিলেন তা আমরা খুঁজে পাইনি।",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "দয়া করে সাইটের মালিকের সাথে যোগাযোগ করুন যা আপনাকে মূল URL এর সাথে যুক্ত করেছে এবং তাদের লিঙ্কটি ভাঙ্গা রয়েছে তা তাদের জানান।",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ব্লগ তালিকা পেজ নেভিগেশন",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "নতুন এন্ট্রি",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "পুরানো এন্ট্রি",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ব্লগ পোস্ট পেজ নেভিগেশন",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "নতুন পোস্ট",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "পুরানো পোস্ট",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "একটি পোস্ট|{count} পোস্টস",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} সঙ্গে ট্যাগ্গেড \"{tagName}\" ",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "সমস্ত ট্যাগ্স দেখুন",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "ডক্স পেজ",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "পূর্ববর্তী",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "পরবর্তী",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "এটি {siteTitle} {versionLabel} এর জন্যে অপ্রকাশিত ডকুমেন্টেশন।",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "এটি {siteTitle} {versionLabel} এর জন্যে ডকুমেন্টেশন, যা আর সক্রিয়ভাবে রক্ষণাবেক্ষণ করা হয় না।",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "আপ-টু-ডেট ডকুমেন্টেশনের জন্য, {latestVersionLink} ({versionLabel}) দেখুন।",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "লেটেস্ট ভার্সন",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "এই পেজটি এডিট করুন",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} এর সঙ্গে সরাসরি লিংকড",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date} তারিখে",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "{user} দ্বারা",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "সর্বশেষ সংষ্করণ{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "ট্যাগ্স:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "বন্ধ করুন",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "সাম্প্রতিক ব্লগ পোস্ট নেভিগেশন",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "কপিড",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "ক্লিপবোর্ডে কোড কপি করুন",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "কপি",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "Toggle the collapsible sidebar category '{label}'",
+    "description": "The ARIA label to toggle the collapsible sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "এই পেজ এ রয়েছে",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "এক মিনিট পড়া|{readingTime} মিনিট পড়া",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "আরও পড়ুন",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "সাইডবারটি সঙ্কুচিত করুন",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "সাইডবারটি সঙ্কুচিত করুন",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← মেন মেনুতে যান",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "সাইডবারটি প্রসারিত করুন",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "সাইডবারটি প্রসারিত করুন",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "স্কিপ করে মূল কন্টেন্ট এ যান",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "ট্যাগ্স",
+    "description": "The title of the tag list page"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  }
+}

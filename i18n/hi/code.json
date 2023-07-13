@@ -1,0 +1,777 @@
+{
+  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
+    "message": "Aishort उपयोगकर्ताओं द्वारा साझा किए गए नवीन त्वरित शब्दों के संग्रह का अन्वेषण करें। लघु वीडियो, उपन्यास, गेम और बहुत कुछ बनाते समय ये अद्वितीय और दिलचस्प त्वरित शब्द आपको प्रेरित कर सकते हैं। अपने पसंदीदा सुझावों के लिए वोट करें, उन्हें कॉपी करें और अपने दोस्तों के साथ साझा करें। एशॉर्ट को रचनात्मकता के द्वार खोलने और एक साथ मिलकर बेहतरीन काम करने में आपकी मदद करने दें।"
+  },
+  "field.id": {
+    "message": "जारी करने का समय"
+  },
+  "field.upvoteDifference": {
+    "message": "सहायता"
+  },
+  "order.ascending": {
+    "message": "आरोही क्रम"
+  },
+  "order.descending": {
+    "message": "अवरोही क्रम"
+  },
+  "link.home": {
+    "message": "घर लौटना"
+  },
+  "copy.done": {
+    "message": "की नकल की"
+  },
+  "copy.button": {
+    "message": "कॉपी"
+  },
+  "upvote": {
+    "message": "थम्स अप"
+  },
+  "downvote": {
+    "message": "कदम बढाएं"
+  },
+  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+    "message": "इस पृष्ठ पर प्रदर्शित त्वरित शब्द नेटिज़न्स द्वारा साझा और अपलोड किए जाते हैं। हम सामग्री की सटीकता, गुणवत्ता या पूर्णता की गारंटी नहीं दे सकते हैं, और हम सामग्री से उत्पन्न होने वाले किसी भी कानूनी दायित्व के लिए जिम्मेदार नहीं होंगे। यदि आपको कोई उल्लंघन या अन्य समस्या मिलती है, तो आप उससे निपटने के लिए हमसे संपर्क कर सकते हैं। जैसे ही हमें सूचित किया जाएगा हम इससे निपट लेंगे।"
+  },
+  "feedback.title": {
+    "message": "प्रतिक्रिया और सुझाव"
+  },
+  "feedback.description": {
+    "message": "आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है!"
+  },
+  "feedback.welcome": {
+    "message": "प्रतिक्रिया का स्वागत है",
+    "description": "The welcome title on the feedback page"
+  },
+  "feedback.paragraph": {
+    "message": "चैटजीपीटी शॉर्टकट को लगातार बेहतर बनाने और व्यक्तिगत दक्षता और उत्पादकता बढ़ाने के लिए सुझावों, विचारों और त्वरित शब्दों का स्वागत है। यदि आपको किसी बग की रिपोर्ट करने की आवश्यकता है, तो कृपया समस्या का लिंक और संबंधित परिस्थितियाँ प्रदान करें। त्वरित शब्द सामग्री के लिए, आप कई भाषाओं में सामग्री सबमिट कर सकते हैं, या बस त्वरित शब्द पर अपने विचारों का वर्णन कर सकते हैं। हम ऐसे त्वरित शब्दों की तलाश करते हैं जो सोच का विस्तार करें या उच्च गुणवत्ता वाले आउटपुट उत्पन्न करें। एक बार आपका सबमिट किया गया संकेत शब्द प्रकाशित हो जाने पर, आपका योगदान पृष्ठ पर जोड़ दिया जाएगा। आप योगदानकर्ता का नाम (उपयोगकर्ता नाम) खोजकर संबंधित प्रविष्टि पा सकते हैं।",
+    "description": "The main paragraph on the feedback page"
+  },
+  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
+    "message": "एआईशॉर्ट (चैटजीपीटी शॉर्टकट) - उपयोग में आसान चैटजीपीटी शॉर्टकट तालिका जो आपकी उत्पादकता को दोगुना कर देती है! टैग फ़िल्टरिंग, कीवर्ड खोज और एक-क्लिक कॉपी संकेत"
+  },
+  "让生产力加倍的 ChatGPT 快捷指令": {
+    "message": "आपकी उत्पादकता को दोगुना करने के लिए ChatGPT शॉर्टकट"
+  },
+  "showcase.filters.resultCount": {
+    "message": "{साइट्सकाउंट} संकेत देता है",
+    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "toggle_prompt_language": {
+    "message": "शीघ्र भाषा बदलें"
+  },
+  "showcase.filters.title": {
+    "message": "फिल्टर"
+  },
+  "toggle_prompt_language_description": {
+    "message": "शीघ्र शब्दों की प्रदर्शन भाषा बदलें, अंग्रेजी और पृष्ठ की वर्तमान भाषा के बीच स्विच करें।"
+  },
+  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
+    "message": "आपके द्वारा जोड़े गए या बनाए गए व्यक्तिगत संकेतों का उपयोग AiShort के अलावा अन्य संकेतों को संग्रहीत करने के लिए किया जा सकता है।"
+  },
+  "你的提示词": {
+    "message": "आपका संकेत"
+  },
+  "分享到社区的提示词": {
+    "message": "समुदाय के साथ साझा करने के लिए युक्तियाँ"
+  },
+  "社区提示词": {
+    "message": "समुदाय संकेत देता है"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "संकेत खोजें..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "😒 कोई परिणाम नहीं मिला, कृपया अपना खोज शब्द छोटा करें"
+  },
+  "showcase.favoritesList.title": {
+    "message": "हमारे पसंदीदा"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "सभी संकेत"
+  },
+  "加载更多": {
+    "message": "और लोड करें"
+  },
+  "message.resetPassword.success": {
+    "message": "पासवर्ड रीसेट सफल!"
+  },
+  "error.resetPassword": {
+    "message": "पासवर्ड रीसेट करने में त्रुटि:"
+  },
+  "message.resetPassword.error": {
+    "message": "पासवर्ड रीसेट विफल रहा, कृपया बाद में पुनः प्रयास करें"
+  },
+  "input.resetPassword.code": {
+    "message": "कृपया अपना रीसेट कोड दर्ज करें!"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "कोड फिर ठीक करें"
+  },
+  "input.newPassword": {
+    "message": "कृपया नया पासवर्ड दर्ज करें!"
+  },
+  "placeholder.newPassword": {
+    "message": "नया पासवर्ड"
+  },
+  "input.confirmPassword": {
+    "message": "कृपया नये पासवर्ड की पुष्टि करें!"
+  },
+  "placeholder.confirmPassword": {
+    "message": "नये पासवर्ड की पुष्टि करें"
+  },
+  "button.resetPassword": {
+    "message": "पासवर्ड रीसेट"
+  },
+  "收藏": {
+    "message": "इकट्ठा करना"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "इकट्ठा करना"
+  },
+  "写作辅助": {
+    "message": "लेखन सहायता"
+  },
+  "showcase.tag.write.description": {
+    "message": "अपना लेखन पूरा करने में मदद के लिए निबंध के व्याकरण और शैली को निखारें"
+  },
+  "文章/报告": {
+    "message": "आलेख/रिपोर्ट"
+  },
+  "showcase.tag.article.description": {
+    "message": "एक निश्चित शैली के उपन्यास, निबंध, समाचार, स्क्रिप्ट, रिपोर्ट और अन्य लेख"
+  },
+  "IT/编程": {
+    "message": "आईटी/प्रोग्रामिंग"
+  },
+  "showcase.tag.code.description": {
+    "message": "हालाँकि यह प्रोग्रामिंग है, चैटजीपीटी आवश्यकतानुसार प्रोग्रामिंग चरणों या सरल नमूना कोड पर सुझाव देता है। इन कोडों का उपयोग केवल परीक्षण के रूप में किया जा सकता है और फिर भी प्रोग्रामर द्वारा संशोधित करने की आवश्यकता होती है।"
+  },
+  "AI": {
+    "message": "ऐ"
+  },
+  "showcase.tag.ai.description": {
+    "message": "ऐ"
+  },
+  "生活质量": {
+    "message": "जीवन स्तर"
+  },
+  "showcase.tag.living.description": {
+    "message": "फिटनेस, पोषण, शेफ, मेकअप, स्टाइलिंग"
+  },
+  "趣味知识": {
+    "message": "रोचक ज्ञान"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "रोचक ज्ञान"
+  },
+  "自助百科": {
+    "message": "स्व-सहायता विश्वकोश"
+  },
+  "showcase.tag.life.description": {
+    "message": "जीवन ज्ञान/स्वयं सहायता विश्वकोश"
+  },
+  "心理/社交": {
+    "message": "मनोवैज्ञानिक/सामाजिक"
+  },
+  "showcase.tag.social.description": {
+    "message": "मनोवैज्ञानिक/सामाजिक"
+  },
+  "哲学/宗教": {
+    "message": "दर्शन/धर्म"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "दर्शन/धर्म"
+  },
+  "发散思维": {
+    "message": "अलग सोच"
+  },
+  "showcase.tag.mind.description": {
+    "message": "प्रश्न करना, सोचना, संगति करना, प्रेरित करना"
+  },
+  "教育/学生": {
+    "message": "शिक्षा/छात्र"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "छात्र शिक्षा से संबंधित सामग्री"
+  },
+  "学术/教师": {
+    "message": "शैक्षणिक/शिक्षक"
+  },
+  "showcase.tag.academic.description": {
+    "message": "शिक्षाविदों या स्कूलों से संबंधित लोग और चीज़ें"
+  },
+  "游戏": {
+    "message": "खेल"
+  },
+  "showcase.tag.games.description": {
+    "message": "खेल"
+  },
+  "工具": {
+    "message": "औजार"
+  },
+  "showcase.tag.tool.description": {
+    "message": "औजार"
+  },
+  "终端/解释器": {
+    "message": "टर्मिनल/दुभाषिया"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "टर्मिनल/दुभाषिया"
+  },
+  "语言/翻译": {
+    "message": "भाषा का अनुवाद"
+  },
+  "showcase.tag.language.description": {
+    "message": "भाषा निर्माण, रूपांतरण, अनुवाद, पहचान आदि के लिए विभिन्न उपकरण।"
+  },
+  "辩论/演讲": {
+    "message": "बहस/भाषण"
+  },
+  "showcase.tag.speech.description": {
+    "message": "बहस/भाषण"
+  },
+  "点评/评鉴": {
+    "message": "समीक्षा/मूल्यांकन"
+  },
+  "showcase.tag.comments.description": {
+    "message": "समीक्षा/मूल्यांकन"
+  },
+  "文本/词语": {
+    "message": "पाठ/शब्द"
+  },
+  "showcase.tag.text.description": {
+    "message": "पाठ/शब्द"
+  },
+  "企业职位": {
+    "message": "कॉर्पोरेट नौकरियाँ"
+  },
+  "showcase.tag.company.description": {
+    "message": "सामान्य कॉर्पोरेट नौकरियाँ"
+  },
+  "SEO": {
+    "message": "एसईओ"
+  },
+  "showcase.tag.seo.description": {
+    "message": "टेक्स्ट/कीवर्ड विस्तार जनरेशन"
+  },
+  "医生": {
+    "message": "चिकित्सक"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "चिकित्सक"
+  },
+  "金融顾问": {
+    "message": "वित्तीय सलाहकार"
+  },
+  "showcase.tag.finance.description": {
+    "message": "वित्तीय उद्योग में नौकरियाँ"
+  },
+  "音乐": {
+    "message": "संगीत"
+  },
+  "showcase.tag.music.description": {
+    "message": "संगीत"
+  },
+  "行业顾问": {
+    "message": "उद्योग सलाहकार"
+  },
+  "showcase.tag.professional.description": {
+    "message": "वकील, चाय कारीगर और अन्य पदों पर पेशेवर ज्ञान की आवश्यकता होती है"
+  },
+  "投稿": {
+    "message": "योगदान देना"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "हर किसी का योगदान हमें विचार विकसित करने में मदद कर सकता है"
+  },
+  "Personal": {
+    "message": "निजी"
+  },
+  "showcase.tag.personal.description": {
+    "message": "व्यक्तिगत गैर-उत्पादक उपयोग, केवल संदर्भ के लिए"
+  },
+  "Latest": {
+    "message": "नवीनतम"
+  },
+  "showcase.tag.latest.description": {
+    "message": "हाल ही में संकेत जोड़े गए"
+  },
+  "input.rules.username": {
+    "message": "कृपया अपना उपयोगकर्ता नाम या पंजीकृत ईमेल पता दर्ज करें!"
+  },
+  "input.rules.password": {
+    "message": "अपना पासवर्ड दर्ज करें!"
+  },
+  "input.rules.email": {
+    "message": "कृपया अपना ईमेल इनपुट करें!"
+  },
+  "message.error": {
+    "message": "प्रविष्टि सबमिशन विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.loginSuccess": {
+    "message": "लॉग इन सफल!"
+  },
+  "message.registerSuccess": {
+    "message": "पंजीकरण सफलता!"
+  },
+  "message.forgotPassword.success": {
+    "message": "पासवर्ड रीसेट ईमेल भेजा गया!"
+  },
+  "error.forgotPassword": {
+    "message": "पासवर्ड भूल गए ईमेल भेजने में त्रुटि:"
+  },
+  "message.forgotPassword.error": {
+    "message": "पासवर्ड रीसेट ईमेल भेजने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "input.username": {
+    "message": "उपयोगकर्ता नाम/मेलबॉक्स"
+  },
+  "input.password": {
+    "message": "पासवर्ड"
+  },
+  "button.login": {
+    "message": "लॉग इन करें"
+  },
+  "button.forgotPassword": {
+    "message": "पासवर्ड भूल जाओ"
+  },
+  "input.register.username": {
+    "message": "उपयोगकर्ता नाम"
+  },
+  "input.email": {
+    "message": "अपना ईमेल दर्ज करें!"
+  },
+  "agreement.rules": {
+    "message": "उपयोग से पहले सेवा की शर्तों और गोपनीयता नीति से सहमत हों"
+  },
+  "agreement.text": {
+    "message": "सहमत होने के लिए यहां क्लिक करें"
+  },
+  "agreement.terms": {
+    "message": "सेवा की शर्तें"
+  },
+  "agreement.and": {
+    "message": "और"
+  },
+  "agreement.policy": {
+    "message": "गोपनीयता नीति"
+  },
+  "button.register": {
+    "message": "पंजीकरण करवाना"
+  },
+  "placeholder.email": {
+    "message": "मेल"
+  },
+  "button.sendResetEmail": {
+    "message": "रीसेट ईमेल भेजें"
+  },
+  "tabs.login": {
+    "message": "लॉग इन करें"
+  },
+  "tabs.register": {
+    "message": "पंजीकरण करवाना"
+  },
+  "tabs.forgotPassword": {
+    "message": "पासवर्ड भूल जाओ"
+  },
+  "card.welcome": {
+    "message": "स्वागत"
+  },
+  "tooltip.switchLang": {
+    "message": "प्रदर्शन भाषा बदलने के लिए क्लिक करें"
+  },
+  "comments.info": {
+    "message": "कृपया नीचे अपनी टिप्पणियों, विचारों या इस त्वरित शब्द के बारे में साझा करके उत्तर दें।"
+  },
+  "message.changePassword.success": {
+    "message": "पासवर्ड रीसेट पूरा!"
+  },
+  "error.changePassword": {
+    "message": "पासवर्ड बदलने में त्रुटि:"
+  },
+  "message.changePassword.error": {
+    "message": "पासवर्ड संशोधन विफल रहा, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "label.changePassword": {
+    "message": "पासवर्ड बदलें"
+  },
+  "input.currentPassword": {
+    "message": "कृपया वर्तमान पासवर्ड दर्ज करें!"
+  },
+  "placeholder.currentPassword": {
+    "message": "वर्तमान पासवर्ड"
+  },
+  "button.changePassword": {
+    "message": "पासवर्ड बदलें"
+  },
+  "label.forgotPassword": {
+    "message": "पासवर्ड भूल जाओ"
+  },
+  "title.userInfo": {
+    "message": "उपयोगकर्ता जानकारी"
+  },
+  "userInfo.username": {
+    "message": "उपयोगकर्ता नाम:"
+  },
+  "userInfo.email": {
+    "message": "मेल:"
+  },
+  "message.success": {
+    "message": "प्रविष्टि सफलतापूर्वक सबमिट की गई!"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "हटाने की पुष्टि करें"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "क्या आप वाकई इस संकेत को हटाना चाहते हैं?"
+  },
+  "message.deletePrompt.success": {
+    "message": "संकेत सफलतापूर्वक हटा दिया गया!"
+  },
+  "message.deletePrompt.error": {
+    "message": "संकेत हटाने में विफल, कृपया बाद में पुनः प्रयास करें।"
+  },
+  "tooltip.deleteprompt": {
+    "message": "मिटाना"
+  },
+  "link.deleteprompt": {
+    "message": "मिटाना"
+  },
+  "tooltip.updateprompt": {
+    "message": "दोहराना"
+  },
+  "link.updateprompt": {
+    "message": "दोहराना"
+  },
+  "modal.updateprompt.title": {
+    "message": "वर्तमान संकेत अद्यतन करें"
+  },
+  "message.addprompt.requiredTitle": {
+    "message": "कृपया शीघ्र शब्द शीर्षक दर्ज करें!"
+  },
+  "input.addprompt.title": {
+    "message": "शीघ्र शब्द का नाम"
+  },
+  "message.addprompt.requiredDescription": {
+    "message": "कृपया शीघ्र शब्द सामग्री दर्ज करें!"
+  },
+  "input.addprompt.description": {
+    "message": "शीघ्र शब्द सामग्री"
+  },
+  "input.addprompt.remark": {
+    "message": "शीघ्र शब्द फ़ंक्शन (वैकल्पिक)"
+  },
+  "input.addprompt.notes": {
+    "message": "टिप्पणियाँ (वैकल्पिक): यहां आप प्रॉम्प्ट शब्द के स्रोत का विवरण, साथ ही प्रॉम्प्ट शब्द के अन्य भाषा संस्करण भी प्रदान कर सकते हैं। इसके अलावा, यदि आपके पास प्रॉम्प्ट शब्द का विस्तार करने के लिए कोई विचार और आवश्यकता है, तो कृपया इसे यहां समझाएं।"
+  },
+  "message.addprompt.submission": {
+    "message": "क्या आप शीघ्र शब्द को सार्वजनिक पृष्ठ पर साझा करना चाहेंगे?"
+  },
+  "button.updateprompt": {
+    "message": "अद्यतन संकेत"
+  },
+  "message.success1": {
+    "message": "जोड़े गए कस्टम संकेतों को देखने के लिए &quot;आपके संकेत&quot; टैब पर क्लिक करें।"
+  },
+  "link.user": {
+    "message": "प्रयोक्ता इंटरफ़ेस"
+  },
+  "button.logout": {
+    "message": "लॉग आउट"
+  },
+  "link.addprompt": {
+    "message": "एक कस्टम प्रॉम्प्ट जोड़ें"
+  },
+  "modal.addprompt.title": {
+    "message": "शेयर प्रॉम्प्ट (यह सामग्री &quot;आपके प्रॉम्प्ट शब्द&quot; टैब में दिखाई देगी)"
+  },
+  "input.addprompt.share.checked": {
+    "message": "हाँ"
+  },
+  "input.addprompt.share.unchecked": {
+    "message": "नहीं"
+  },
+  "button.addPrompt": {
+    "message": "संकेत जोड़ें"
+  },
+  "showcase.header.button": {
+    "message": "🙏 कृपया अपने शीघ्र शब्द जोड़ें"
+  },
+  "点击移除收藏": {
+    "message": "पसंदीदा हटाने के लिए क्लिक करें"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "यह पेज क्रैश हो गया.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.NotFound.title": {
+    "message": "पेज नहीं मिला",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "हमें वह नहीं मिला, जिसकी आपको तलाश थी।",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "कृपया उस साइट के मालिक से संपर्क करें जिसने आपको मूल URL से जोड़ा है और उन्हें बताएं कि उनका लिंक टूट गया है।",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ब्लॉग सूची पेज नेविगेशन",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "नए एंट्रीज़",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "पुराने एंट्रीज़",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.plurals": {
+    "message": "एक पोस्ट|{count} पोस्ट",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} पोस्ट \"{tagName}\" टैग के साथ",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "सारे टैग देखें",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ब्लॉग पोस्ट पेज नेविगेशन",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "नए पोस्ट",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "पुराने पोस्ट",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "डॉक्स पेज",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "पिछ्ला",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "अगला",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "यह {siteTitle} {versionLabel} वर्जन के लिए प्रकाशित डॉक्यूमेंटेशन है।",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "यह {siteTitle} {versionLabel} के लिए डॉक्यूमेंटेशन है, जिसे अब सक्रिय रूप से नहीं बनाए रखा गया है।",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "अप-टू-डेट डॉक्यूमेंटेशन के लिए {latestVersionLink} ({versionLabel}) देखें।",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "सबसे नया वर्जन",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "इस पेज को बदलें",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} का सीधा लिंक",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date} पर",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " {user} द्वारा",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "आखरी अपडेट{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "टैग:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "बंद करे",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "नया ब्लॉग पोस्ट नेविगेशन",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "कॉपीड",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "क्लिपबोर्ड पर कोड कॉपी करें",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "कॉपी",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "Toggle the collapsible sidebar category '{label}'",
+    "description": "The ARIA label to toggle the collapsible sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "इस पेज पर",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "और पढ़ें",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "एक मिनट में पढ़ें|{readingTime} मिनट में पढ़ें",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "साइडबार बंद करें",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "साइडबार बंद करें",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← मुख्य मेनू में वापस जाएं",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "साइडबार खोलें",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "साइडबार खोलें",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "मुख्य कंटेंट तक स्किप करें",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "टैग",
+    "description": "The title of the tag list page"
+  }
+}

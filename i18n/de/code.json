@@ -1,0 +1,777 @@
+{
+  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
+    "message": "Entdecken Sie die Sammlung innovativer, von Aishort-Nutzern geteilter Prompts. Diese einzigartigen und lustigen Prompts können Sie beim Erstellen von kurzen Videos, Romanen, Spielen und mehr inspirieren. Stimmen Sie für Ihre Lieblingsprompts, kopieren Sie sie und teilen Sie sie mit Ihren Freunden. Lassen Sie Aishort Ihnen helfen, die Tür zur Kreativität zu öffnen und gemeinsam großartige Werke zu schaffen."
+  },
+  "field.id": {
+    "message": "Freigabezeit"
+  },
+  "field.upvoteDifference": {
+    "message": "Grad der Unterstützung"
+  },
+  "order.ascending": {
+    "message": "aufsteigende Reihenfolge"
+  },
+  "order.descending": {
+    "message": "absteigende Reihenfolge"
+  },
+  "link.home": {
+    "message": "Zurück zur Hauptseite"
+  },
+  "copy.done": {
+    "message": "kopiert"
+  },
+  "copy.button": {
+    "message": "Kopieren"
+  },
+  "upvote": {
+    "message": "Upvote"
+  },
+  "downvote": {
+    "message": "abstimmen"
+  },
+  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+    "message": "Die auf dieser Seite angezeigten Prompts werden von Netizens geteilt und hochgeladen, wir können nicht für die Richtigkeit, Qualität oder Vollständigkeit des Inhalts garantieren und wir übernehmen auch keine Verantwortung für jegliche rechtliche Haftung, die aus dem Inhalt entsteht. Wenn Sie Verstöße oder andere Probleme feststellen, können Sie sich mit uns in Verbindung setzen, um diese zu lösen. Wir werden uns so schnell wie möglich nach Erhalt der Meldung darum kümmern."
+  },
+  "feedback.title": {
+    "message": "Feedback und Vorschläge"
+  },
+  "feedback.description": {
+    "message": "Ihr Feedback ist für uns wichtig!"
+  },
+  "feedback.welcome": {
+    "message": "Rückmeldungen sind willkommen!",
+    "description": "The welcome title on the feedback page"
+  },
+  "feedback.paragraph": {
+    "message": "Vorschläge, Ideen und Anregungen sind willkommen, um ChatGPT Shortcut kontinuierlich zu verbessern und die persönliche Effizienz und Produktivität zu steigern. Wenn Sie ein Feedback zu einem Fehler geben möchten, geben Sie bitte einen Link an, wo das Problem aufgetreten ist und welche Umstände es verursacht hat. Für Prompt-Inhalte können Sie Inhalte in mehreren Sprachen einreichen oder einfach Ihre Idee für einen Prompt beschreiben. Wir sind auf der Suche nach Prompts, die den Geist anregen oder qualitativ hochwertige Ergebnisse hervorbringen. Sobald der von Ihnen eingereichte Prompt veröffentlicht wird, wird Ihr Beitrag der Seite hinzugefügt. Sie können den entsprechenden Eintrag finden, indem Sie nach dem Namen des Beitragenden (Benutzernamen) suchen.",
+    "description": "The main paragraph on the feedback page"
+  },
+  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
+    "message": "AiShort (ChatGPT Shortcut) - Einfach zu verwendendes ChatGPT Shortcut-Befehlsblatt, das die Produktivität vervielfacht! Tag-Filterung, Stichwortsuche und Ein-Klick-Kopieren Prompts"
+  },
+  "让生产力加倍的 ChatGPT 快捷指令": {
+    "message": "ChatGPT-Verknüpfungsbefehle, die die Produktivität verdoppeln"
+  },
+  "showcase.filters.resultCount": {
+    "message": "{sitesCount} Eingabeaufforderungen",
+    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "toggle_prompt_language": {
+    "message": "Wechsel der Prompt-Sprache"
+  },
+  "showcase.filters.title": {
+    "message": "Filter"
+  },
+  "toggle_prompt_language_description": {
+    "message": "Ändert die Sprache, in der die Eingabeaufforderungen angezeigt werden, und wechselt zwischen Englisch und der aktuellen Sprache der Seite."
+  },
+  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
+    "message": "Persönliche Stichwörter, die Sie hinzugefügt oder erstellt haben, können verwendet werden, um andere Stichwörter als AiShort zu speichern."
+  },
+  "你的提示词": {
+    "message": "Ihr Stichwort."
+  },
+  "分享到社区的提示词": {
+    "message": "Tipps für die Weitergabe an die Gemeinschaft"
+  },
+  "社区提示词": {
+    "message": "Gemeinschaftliche Stichwörter"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "Suche nach Prompts..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "😒 Keine Ergebnisse gefunden, bitte Suchbegriff verkürzen"
+  },
+  "showcase.favoritesList.title": {
+    "message": "Unsere Favoriten"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "Alle Eingabeaufforderungen"
+  },
+  "加载更多": {
+    "message": "Mehr laden"
+  },
+  "message.resetPassword.success": {
+    "message": "Das Zurücksetzen des Passworts war erfolgreich!"
+  },
+  "error.resetPassword": {
+    "message": "Fehler beim Zurücksetzen des Passworts."
+  },
+  "message.resetPassword.error": {
+    "message": "Passwortrücksetzung fehlgeschlagen, bitte versuchen Sie es später erneut."
+  },
+  "input.resetPassword.code": {
+    "message": "Bitte geben Sie Ihren Reset-Code ein!"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "Rückstellcode"
+  },
+  "input.newPassword": {
+    "message": "Bitte geben Sie ein neues Passwort ein!"
+  },
+  "placeholder.newPassword": {
+    "message": "neues Passwort"
+  },
+  "input.confirmPassword": {
+    "message": "Bitte bestätigen Sie das neue Passwort!"
+  },
+  "placeholder.confirmPassword": {
+    "message": "Bestätigen Sie das neue Passwort"
+  },
+  "button.resetPassword": {
+    "message": "Passwort zurücksetzen"
+  },
+  "收藏": {
+    "message": "sammeln"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "sammeln"
+  },
+  "写作辅助": {
+    "message": "Schreibhilfe"
+  },
+  "showcase.tag.write.description": {
+    "message": "Der letzte Schliff für Grammatik und Stil, um Ihnen beim Schreiben zu helfen"
+  },
+  "文章/报告": {
+    "message": "Artikel/Berichte"
+  },
+  "showcase.tag.article.description": {
+    "message": "Belletristik, Essays, Nachrichten, Drehbücher, Berichte usw. mit einem bestimmten Schreibstil"
+  },
+  "IT/编程": {
+    "message": "IT/Programmierung"
+  },
+  "showcase.tag.code.description": {
+    "message": "Obwohl es heißt, dass es sich um eine Programmierung handelt, gibt ChatGPT wie gewünscht Vorschläge für Programmierschritte oder einfachen Beispielcode, der nur als Test verwendet werden kann und vom Programmierer noch geändert werden muss."
+  },
+  "AI": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "AI"
+  },
+  "生活质量": {
+    "message": "Lebensqualität"
+  },
+  "showcase.tag.living.description": {
+    "message": "Fitness, Ernährung, Chefkoch, Make-up, Styling"
+  },
+  "趣味知识": {
+    "message": "Interessantes Wissen"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "Interessantes Wissen"
+  },
+  "自助百科": {
+    "message": "Selbsthilfe-Enzyklopädie"
+  },
+  "showcase.tag.life.description": {
+    "message": "Kenntnis des Lebens/Selbsthilfelexikons"
+  },
+  "心理/社交": {
+    "message": "Psychologisch/sozial"
+  },
+  "showcase.tag.social.description": {
+    "message": "Psychologisch/sozial"
+  },
+  "哲学/宗教": {
+    "message": "Philosophie/Religion"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "Philosophie/Religion"
+  },
+  "发散思维": {
+    "message": "divergentes Denken"
+  },
+  "showcase.tag.mind.description": {
+    "message": "Hinterfragen, Denken, Assoziieren, Verallgemeinern"
+  },
+  "教育/学生": {
+    "message": "Bildung/Studenten"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "Inhalte im Zusammenhang mit der Ausbildung von Studenten"
+  },
+  "学术/教师": {
+    "message": "Akademiker/Lehrer"
+  },
+  "showcase.tag.academic.description": {
+    "message": "Menschen und Dinge, die mit Wissenschaft oder Schule zu tun haben"
+  },
+  "游戏": {
+    "message": "spielen"
+  },
+  "showcase.tag.games.description": {
+    "message": "spielen"
+  },
+  "工具": {
+    "message": "Artefakt"
+  },
+  "showcase.tag.tool.description": {
+    "message": "Artefakt"
+  },
+  "终端/解释器": {
+    "message": "Terminal/Dolmetscher"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "Terminal/Dolmetscher"
+  },
+  "语言/翻译": {
+    "message": "Sprachen/Übersetzung"
+  },
+  "showcase.tag.language.description": {
+    "message": "Mehrere Werkzeuge für Spracherzeugung, Konvertierung, Übersetzung, Erkennung usw."
+  },
+  "辩论/演讲": {
+    "message": "Debatten/Reden"
+  },
+  "showcase.tag.speech.description": {
+    "message": "Debatten/Reden"
+  },
+  "点评/评鉴": {
+    "message": "Kommentare/Rezensionen"
+  },
+  "showcase.tag.comments.description": {
+    "message": "Kommentare/Rezensionen"
+  },
+  "文本/词语": {
+    "message": "Text/Phrasen"
+  },
+  "showcase.tag.text.description": {
+    "message": "Text/Phrasen"
+  },
+  "企业职位": {
+    "message": "Unternehmenspositionen"
+  },
+  "showcase.tag.company.description": {
+    "message": "Positionen innerhalb des allgemeinen Geschäfts"
+  },
+  "SEO": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "Generierung von Text-/Schlüsselworterweiterungen"
+  },
+  "医生": {
+    "message": "Chirurg"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "Chirurg"
+  },
+  "金融顾问": {
+    "message": "Finanzberaterin"
+  },
+  "showcase.tag.finance.description": {
+    "message": "Positionen im Finanzsektor"
+  },
+  "音乐": {
+    "message": "Konzert"
+  },
+  "showcase.tag.music.description": {
+    "message": "Konzert"
+  },
+  "行业顾问": {
+    "message": "Industrie-Beratung"
+  },
+  "showcase.tag.professional.description": {
+    "message": "Juristen, Teemeister und andere Positionen, die Fachwissen erfordern"
+  },
+  "投稿": {
+    "message": "etw. beisteuern"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "Beiträge von Ihnen allen können uns helfen, Ideen zu entwickeln"
+  },
+  "Personal": {
+    "message": "Persönlich"
+  },
+  "showcase.tag.personal.description": {
+    "message": "Nur für den persönlichen, nicht produktiven Gebrauch"
+  },
+  "Latest": {
+    "message": "Neueste"
+  },
+  "showcase.tag.latest.description": {
+    "message": "Kürzlich hinzugefügte Stichwörter"
+  },
+  "input.rules.username": {
+    "message": "Bitte geben Sie Ihren Benutzernamen oder Ihre registrierte E-Mail-Adresse ein!"
+  },
+  "input.rules.password": {
+    "message": "Bitte geben Sie Ihr Passwort ein!"
+  },
+  "input.rules.email": {
+    "message": "Bitte geben Sie Ihre E-Mail Adresse ein!"
+  },
+  "message.error": {
+    "message": "Eingabe fehlgeschlagen, bitte versuchen Sie es später noch einmal."
+  },
+  "message.loginSuccess": {
+    "message": "Erfolgreich eingeloggt!"
+  },
+  "message.registerSuccess": {
+    "message": "Die Registrierung war erfolgreich!"
+  },
+  "message.forgotPassword.success": {
+    "message": "Die E-Mail zum Zurücksetzen des Passworts wurde verschickt!"
+  },
+  "error.forgotPassword": {
+    "message": "Fehler beim Senden einer E-Mail mit vergessenem Passwort."
+  },
+  "message.forgotPassword.error": {
+    "message": "E-Mail zum Zurücksetzen des Passworts konnte nicht gesendet werden, bitte versuchen Sie es später erneut."
+  },
+  "input.username": {
+    "message": "Benutzername/E-Mail"
+  },
+  "input.password": {
+    "message": "kryptographisch"
+  },
+  "button.login": {
+    "message": "sich anmelden"
+  },
+  "button.forgotPassword": {
+    "message": "Passwort vergessen?"
+  },
+  "input.register.username": {
+    "message": "Benutzer-ID"
+  },
+  "input.email": {
+    "message": "Bitte geben Sie Ihre E-Mail Adresse ein!"
+  },
+  "agreement.rules": {
+    "message": "Vor der Nutzung den Nutzungsbedingungen und der Datenschutzrichtlinie zustimmen"
+  },
+  "agreement.text": {
+    "message": "Klicken Sie hier, um zuzustimmen"
+  },
+  "agreement.terms": {
+    "message": "Servicebedingungen"
+  },
+  "agreement.and": {
+    "message": "im Gesang antworten"
+  },
+  "agreement.policy": {
+    "message": "Datenschutzbestimmungen"
+  },
+  "button.register": {
+    "message": "Einschreibung"
+  },
+  "placeholder.email": {
+    "message": "Posteingang"
+  },
+  "button.sendResetEmail": {
+    "message": "Reset-E-Mail senden"
+  },
+  "tabs.login": {
+    "message": "sich anmelden"
+  },
+  "tabs.register": {
+    "message": "Einschreibung"
+  },
+  "tabs.forgotPassword": {
+    "message": "Passwort vergessen?"
+  },
+  "card.welcome": {
+    "message": "herzlich willkommen"
+  },
+  "tooltip.switchLang": {
+    "message": "Klicken Sie auf , um die Anzeigesprache zu wechseln"
+  },
+  "comments.info": {
+    "message": "Bitte antworten Sie unten mit Ihren Kommentaren, Gedanken oder Mitteilungen zu dieser Aufforderung."
+  },
+  "message.changePassword.success": {
+    "message": "Passwort erfolgreich geändert!"
+  },
+  "error.changePassword": {
+    "message": "Fehler beim Ändern des Passworts."
+  },
+  "message.changePassword.error": {
+    "message": "Passwortänderung fehlgeschlagen, bitte versuchen Sie es später noch einmal"
+  },
+  "message.loading": {
+    "message": "Laden..."
+  },
+  "label.changePassword": {
+    "message": "Ihr Passwort ändern"
+  },
+  "input.currentPassword": {
+    "message": "Bitte geben Sie das aktuelle Passwort ein!"
+  },
+  "placeholder.currentPassword": {
+    "message": "aktuelles Kennwort"
+  },
+  "button.changePassword": {
+    "message": "Ihr Passwort ändern"
+  },
+  "label.forgotPassword": {
+    "message": "Passwort vergessen?"
+  },
+  "title.userInfo": {
+    "message": "Benutzerinformationen"
+  },
+  "userInfo.username": {
+    "message": "Benutzername:"
+  },
+  "userInfo.email": {
+    "message": "Briefkasten:"
+  },
+  "message.success": {
+    "message": "Der Eintrag wurde erfolgreich übermittelt!"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "Bestätigen Löschen"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "Sind Sie sicher, dass Sie diese Eingabeaufforderung löschen möchten?"
+  },
+  "message.deletePrompt.success": {
+    "message": "Eingabeaufforderung erfolgreich gelöscht!"
+  },
+  "message.deletePrompt.error": {
+    "message": "Aufforderung zum Löschen fehlgeschlagen, bitte versuchen Sie es später noch einmal."
+  },
+  "tooltip.deleteprompt": {
+    "message": "entfernen"
+  },
+  "link.deleteprompt": {
+    "message": "entfernen"
+  },
+  "tooltip.updateprompt": {
+    "message": "Änderungen"
+  },
+  "link.updateprompt": {
+    "message": "Änderungen"
+  },
+  "modal.updateprompt.title": {
+    "message": "Aktualisieren Sie die aktuelle Eingabeaufforderung"
+  },
+  "message.addprompt.requiredTitle": {
+    "message": "Bitte geben Sie einen Stichworttitel ein!"
+  },
+  "input.addprompt.title": {
+    "message": "Stichwort Name"
+  },
+  "message.addprompt.requiredDescription": {
+    "message": "Bitte geben Sie den Inhalt des Aufforderungswortes ein!"
+  },
+  "input.addprompt.description": {
+    "message": "Inhalt des Stichworts"
+  },
+  "input.addprompt.remark": {
+    "message": "Cue word role (nicht erforderlich)"
+  },
+  "input.addprompt.notes": {
+    "message": "Bemerkungen (optional): Hier können Sie eine Beschreibung der Quelle der Aufforderung sowie andere Sprachversionen der Aufforderung angeben. Wenn Sie darüber hinaus Ideen oder Bedarf für eine Erweiterung des Prompts haben, geben Sie diese bitte hier an."
+  },
+  "message.addprompt.submission": {
+    "message": "Möchten Sie die Aufforderung auf einer öffentlichen Seite veröffentlichen?"
+  },
+  "button.updateprompt": {
+    "message": "Aufforderung zur Aktualisierung"
+  },
+  "message.success1": {
+    "message": "Klicken Sie auf die Registerkarte \"Ihre Stichwörter\", um die hinzugefügten benutzerdefinierten Stichwörter anzuzeigen."
+  },
+  "link.user": {
+    "message": "Benutzer"
+  },
+  "button.logout": {
+    "message": "stornieren"
+  },
+  "link.addprompt": {
+    "message": "Hinzufügen einer benutzerdefinierten Eingabeaufforderung"
+  },
+  "modal.addprompt.title": {
+    "message": "Share Prompt (Dieser Inhalt erscheint auf der Registerkarte \"Your Prompt Words\")"
+  },
+  "input.addprompt.share.checked": {
+    "message": "sein"
+  },
+  "input.addprompt.share.unchecked": {
+    "message": "Verstopft"
+  },
+  "button.addPrompt": {
+    "message": "Eingabeaufforderung hinzufügen"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Bitte fügen Sie Ihr Stichwort hinzu!"
+  },
+  "点击移除收藏": {
+    "message": "Zum Entfernen von Favoriten anklicken"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Die Seite ist abgestürzt.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.NotFound.title": {
+    "message": "Seite nicht gefunden",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "Wir konnten nicht finden, wonach Sie gesucht haben.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Bitte kontaktieren Sie den Besitzer der Seite, die Sie mit der ursprünglichen URL verlinkt hat, und teilen Sie ihm mit, dass der Link nicht mehr funktioniert.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Zurück nach oben scrollen",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archiv",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archiv",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Navigation der Blog-Listenseite",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Neuere Einträge",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Ältere Einträge",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog Post Seiten Navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Neuer Post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Älterer Post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Ein Post|{count} Posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} getaggt mit \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Alle Tags anzeigen",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Umschalten zwischen dunkler und heller Ansicht (momentan {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dunkler Modus",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "heller Modus",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} Einträge",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Dokumentation Seiten",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Zurück",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Weiter",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Ein doc getaggt|{count} docs getaggt",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} mit \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.common.editThisPage": {
+    "message": "Diese Seite bearbeiten",
+    "description": "The link label to edit the current page"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Das ist die unveröffentlichte Dokumentation für {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Das ist die Dokumentation für {siteTitle} {versionLabel} und wird nicht weiter gewartet.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Für die aktuellste Dokumentation bitte auf {latestVersionLink} ({versionLabel}) gehen.",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "letzte Version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direkter Link zur {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " am {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " von {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Letztes Update{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versionen",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Schließen",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Navigation der letzten Beiträge im Blog",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Kopiert",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "In die Zwischenablage kopieren",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Kopieren",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "Umschalten der Seitenleiste mit einklappbarer Kategorie '{label}'",
+    "description": "The ARIA label to toggle the collapsible sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Sprachen",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Auf dieser Seite",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Mehr lesen",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Mehr lesen über {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Eine Minute Lesezeit|{readingTime} Minuten Lesezeit",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Seitenleiste einklappen",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Seitenleiste einklappen",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Zurück zum Hauptmenü",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Seitenleiste ausklappen",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Seitenleiste ausklappen",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Nochmal versuchen",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Zum Hauptinhalt springen",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  }
+}

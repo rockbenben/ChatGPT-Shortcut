@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "AI Short",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Scorciatoie ChatGPT",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.📘 使用说明": {
+    "message": "📘 Istruzioni per l'uso",
+    "description": "Navbar item with label 📘 使用说明"
+  },
+  "item.label.🏘️ 社区提示词": {
+    "message": "🏘️ Promemoria della comunità",
+    "description": "Navbar item with label 🏘️ 社区提示词"
+  },
+  "item.label.🛠️ 应用工具": {
+    "message": "🛠️ Strumenti applicativi",
+    "description": "Navbar item with label 🛠️ 应用工具"
+  },
+  "item.label.反馈": {
+    "message": "rispedire le informazioni",
+    "description": "Navbar item with label 反馈"
+  },
+  "item.label.IMGPrompt": {
+    "message": "IMGPrompt",
+    "description": "Navbar item with label IMGPrompt"
+  },
+  "item.label.文字处理": {
+    "message": "elaborazione testi",
+    "description": "Navbar item with label 文字处理"
+  },
+  "item.label.工具收藏": {
+    "message": "Collezione di strumenti",
+    "description": "Navbar item with label 工具收藏"
+  },
+  "item.label.Chrome 扩展": {
+    "message": "Estensione per Chrome",
+    "description": "Navbar item with label Chrome 扩展"
+  },
+  "item.label.Edge 扩展": {
+    "message": "Estensione del bordo",
+    "description": "Navbar item with label Edge 扩展"
+  },
+  "item.label.Find on Product Hunt": {
+    "message": "Trova su Product Hunt",
+    "description": "Navbar item with label Find on Product Hunt"
+  }
+}

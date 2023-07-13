@@ -429,7 +429,6 @@ function ShowcaseCards({ isDescription }) {
       [[], []]
     );
   }, [sortedUsers, userAuth, userLoves]);
-  const ShowcaseCardMemo = React.memo(ShowcaseCard);
 
   const displayedOtherUsers = showAllOtherUsers
     ? otherUsers
@@ -447,10 +446,10 @@ function ShowcaseCards({ isDescription }) {
     fetchData();
   }, []);
 
-  const handleCardCopy = useCallback((cardId, updatedCount) => {
+  const handleCardCopy = useCallback((cardId) => {
     setCopyCounts((prevCopyCounts) => ({
       ...prevCopyCounts,
-      [cardId]: updatedCount,
+      [cardId]: (prevCopyCounts[cardId] || 0) + 1,
     }));
   }, []);
 
@@ -492,7 +491,7 @@ function ShowcaseCards({ isDescription }) {
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCardMemo
+                  <ShowcaseCard
                     key={user.id}
                     user={user}
                     isDescription={isDescription}
@@ -512,7 +511,7 @@ function ShowcaseCards({ isDescription }) {
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {displayedOtherUsers.map((user) => (
-                <ShowcaseCardMemo
+                <ShowcaseCard
                   key={user.id}
                   user={user}
                   isDescription={isDescription}
@@ -546,7 +545,7 @@ function ShowcaseCards({ isDescription }) {
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
-              <ShowcaseCardMemo
+              <ShowcaseCard
                 key={user.id}
                 user={user}
                 isDescription={isDescription}

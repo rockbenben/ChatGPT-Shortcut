@@ -18,7 +18,7 @@ with open(input_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # 这是我们要提取的语言列表
-languages = ['zh', 'en', 'ja', 'ko']
+languages = ['zh', 'en', 'ja', 'ko', 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
 
 # 对于每种语言，我们创建一个新的列表来保存该语言的元素
 output_data = {lang: [] for lang in languages}
@@ -60,6 +60,26 @@ for lang in languages:
     # 写入数据
     with open(output_path, 'w', encoding='utf-8') as file:
         json.dump(output_data[lang], file, ensure_ascii=False, indent=2)
+
+# 在 # 更新 Prompt Page 页面的 prompt 内容 的步骤前，将 os.path.join(current_dir, 'users.zh.tsx') 复制到同路径的 'users.{lang}.tsx'
+# 遍历每个语言
+for lang in languages[1:]:
+    # 指定原始文件路径
+    original_file_path = os.path.join(current_dir, 'users.zh.tsx')
+    # 指定新文件路径
+    new_file_path = os.path.join(current_dir, f'users.{lang}.tsx')
+    # 如果新文件已存在，则先删除它
+    if os.path.exists(new_file_path):
+        os.remove(new_file_path)
+    # 复制并修改文件内容
+    with open(original_file_path, 'r', encoding='utf-8') as original_file:
+        with open(new_file_path, 'w', encoding='utf-8') as new_file:
+            # 读取原始文件内容
+            original_content = original_file.read()
+            # 将内容中的 'prompt_zh.json' 替换为 'prompt_{lang}.json'
+            new_content = original_content.replace('prompt_zh.json', f'prompt_{lang}.json')
+            # 写入新的内容到新文件中
+            new_file.write(new_content)
 
 # 更新 Prompt Page 页面的 prompt 内容
 # Define the path to the output directory

@@ -1,0 +1,777 @@
+{
+  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
+    "message": "استكشف مجموعة من الكلمات السريعة المبتكرة التي يشاركها مستخدمو Aishort. يمكن أن تلهمك هذه الكلمات السريعة الفريدة والممتعة عند إنشاء مقاطع فيديو قصيرة وروايات وألعاب والمزيد. صوّت لنصائحك المفضلة ، انسخها وشاركها مع أصدقائك. دع Aishort يساعدك على فتح الباب للإبداع وخلق عمل رائع معًا."
+  },
+  "field.id": {
+    "message": "وقت الافراج"
+  },
+  "field.upvoteDifference": {
+    "message": "يدعم"
+  },
+  "order.ascending": {
+    "message": "ترتيب تصاعدي"
+  },
+  "order.descending": {
+    "message": "تنازليا"
+  },
+  "link.home": {
+    "message": "العودة للمنزل"
+  },
+  "copy.done": {
+    "message": "نسخ"
+  },
+  "copy.button": {
+    "message": "ينسخ"
+  },
+  "upvote": {
+    "message": "ممتاز"
+  },
+  "downvote": {
+    "message": "تقدم"
+  },
+  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+    "message": "الكلمات السريعة المعروضة على هذه الصفحة يتم مشاركتها وتحميلها بواسطة مستخدمي الإنترنت ، ولا يمكننا ضمان دقة أو جودة أو اكتمال المحتوى ، ولن نتحمل أي مسؤولية قانونية تنشأ عن المحتوى. إذا وجدت أي انتهاك أو مشاكل أخرى ، يمكنك الاتصال بنا للتعامل معها. سنتعامل معها بمجرد إخطارنا بذلك."
+  },
+  "feedback.title": {
+    "message": "ردود الفعل والاقتراحات"
+  },
+  "feedback.description": {
+    "message": "ملاحظاتك مهمة بالنسبة لنا!"
+  },
+  "feedback.welcome": {
+    "message": "نرحب بالتعليقات",
+    "description": "The welcome title on the feedback page"
+  },
+  "feedback.paragraph": {
+    "message": "نرحب بالاقتراحات والأفكار والكلمات السريعة لتحسين اختصار ChatGPT وزيادة الكفاءة الشخصية والإنتاجية. إذا كنت بحاجة إلى الإبلاغ عن خطأ ، فيرجى تقديم الرابط والظروف ذات الصلة بالمشكلة. للحصول على محتوى كلمة سريع ، يمكنك إرسال محتوى بلغات متعددة ، أو ببساطة وصف أفكارك في الكلمة السريعة. نحن نبحث عن الكلمات السريعة التي توسع التفكير أو تنتج مخرجات عالية الجودة. بمجرد نشر الكلمة الرئيسية التي قدمتها ، ستتم إضافة مساهمتك إلى الصفحة. يمكنك العثور على الإدخال المقابل من خلال البحث عن اسم المساهم (اسم المستخدم).",
+    "description": "The main paragraph on the feedback page"
+  },
+  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
+    "message": "AiShort (اختصار ChatGPT) - جدول اختصار ChatGPT سهل الاستخدام يضاعف إنتاجيتك! تصفية العلامات والبحث عن الكلمات الأساسية ومطالبات النسخ بنقرة واحدة"
+  },
+  "让生产力加倍的 ChatGPT 快捷指令": {
+    "message": "اختصارات ChatGPT لمضاعفة إنتاجيتك"
+  },
+  "showcase.filters.resultCount": {
+    "message": "{sitesCount} من المطالبات",
+    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "toggle_prompt_language": {
+    "message": "تبديل لغة المطالبة"
+  },
+  "showcase.filters.title": {
+    "message": "المرشحات"
+  },
+  "toggle_prompt_language_description": {
+    "message": "قم بتغيير لغة عرض الكلمات السريعة ، والتبديل بين اللغة الإنجليزية واللغة الحالية للصفحة."
+  },
+  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
+    "message": "يمكن استخدام المطالبات الشخصية التي أضفتها أو قدمتها لتخزين المطالبات بخلاف AiShort."
+  },
+  "你的提示词": {
+    "message": "موجه الخاص بك"
+  },
+  "分享到社区的提示词": {
+    "message": "نصائح للمشاركة مع المجتمع"
+  },
+  "社区提示词": {
+    "message": "يطالب المجتمع"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "البحث عن المطالبات ..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "😒 لم يتم العثور على نتائج ، يرجى تقصير مصطلح البحث"
+  },
+  "showcase.favoritesList.title": {
+    "message": "المفضلة لدينا"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "كل المطالبات"
+  },
+  "加载更多": {
+    "message": "تحميل المزيد"
+  },
+  "message.resetPassword.success": {
+    "message": "تمت إعادة تعيين كلمة المرور بنجاح!"
+  },
+  "error.resetPassword": {
+    "message": "خطأ في إعادة تعيين كلمة المرور:"
+  },
+  "message.resetPassword.error": {
+    "message": "فشل إعادة تعيين كلمة المرور ، يرجى المحاولة مرة أخرى في وقت لاحق"
+  },
+  "input.resetPassword.code": {
+    "message": "الرجاء إدخال رمز إعادة تعيين الخاص بك!"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "إعادة تعيين الرمز"
+  },
+  "input.newPassword": {
+    "message": "الرجاء إدخال كلمة مرور جديدة!"
+  },
+  "placeholder.newPassword": {
+    "message": "كلمة المرور الجديدة"
+  },
+  "input.confirmPassword": {
+    "message": "الرجاء تأكيد كلمة المرور الجديدة!"
+  },
+  "placeholder.confirmPassword": {
+    "message": "قم بتأكيد كلمة المرور الجديدة"
+  },
+  "button.resetPassword": {
+    "message": "إعادة تعيين كلمة المرور"
+  },
+  "收藏": {
+    "message": "يجمع"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "يجمع"
+  },
+  "写作辅助": {
+    "message": "كتابة المساعدة"
+  },
+  "showcase.tag.write.description": {
+    "message": "صقل قواعد المقال وأسلوبه لمساعدتك على إنهاء كتابتك"
+  },
+  "文章/报告": {
+    "message": "مقال / تقرير"
+  },
+  "showcase.tag.article.description": {
+    "message": "الروايات والمقالات والأخبار والنصوص والتقارير وغيرها من المقالات بأسلوب معين"
+  },
+  "IT/编程": {
+    "message": "تكنولوجيا المعلومات / البرمجة"
+  },
+  "showcase.tag.code.description": {
+    "message": "على الرغم من كونه برمجة ، فإن ChatGPT يقدم اقتراحات حول خطوات البرمجة أو نماذج رموز بسيطة كما هو مطلوب.يمكن استخدام هذه الرموز فقط كاختبارات ولا تزال بحاجة إلى تعديل من قبل المبرمجين."
+  },
+  "AI": {
+    "message": "منظمة العفو الدولية"
+  },
+  "showcase.tag.ai.description": {
+    "message": "منظمة العفو الدولية"
+  },
+  "生活质量": {
+    "message": "جودة الحياة"
+  },
+  "showcase.tag.living.description": {
+    "message": "اللياقة ، التغذية ، الشيف ، المكياج ، التصميم"
+  },
+  "趣味知识": {
+    "message": "معرفة مثيرة للاهتمام"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "معرفة مثيرة للاهتمام"
+  },
+  "自助百科": {
+    "message": "موسوعة المساعدة الذاتية"
+  },
+  "showcase.tag.life.description": {
+    "message": "موسوعة المعرفة الحياتية / المساعدة الذاتية"
+  },
+  "心理/社交": {
+    "message": "نفسية / اجتماعية"
+  },
+  "showcase.tag.social.description": {
+    "message": "نفسية / اجتماعية"
+  },
+  "哲学/宗教": {
+    "message": "الفلسفة / الدين"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "الفلسفة / الدين"
+  },
+  "发散思维": {
+    "message": "تفكير متشعب"
+  },
+  "showcase.tag.mind.description": {
+    "message": "التساؤل والتفكير والربط والتلخيص"
+  },
+  "教育/学生": {
+    "message": "التعليم / الطالب"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "المحتوى المتعلق بتعليم الطلاب"
+  },
+  "学术/教师": {
+    "message": "أكاديمي / مدرس"
+  },
+  "showcase.tag.academic.description": {
+    "message": "الأشخاص والأشياء المتعلقة بالأكاديميين أو المدارس"
+  },
+  "游戏": {
+    "message": "لعبة"
+  },
+  "showcase.tag.games.description": {
+    "message": "لعبة"
+  },
+  "工具": {
+    "message": "أداة"
+  },
+  "showcase.tag.tool.description": {
+    "message": "أداة"
+  },
+  "终端/解释器": {
+    "message": "محطة / مترجم"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "محطة / مترجم"
+  },
+  "语言/翻译": {
+    "message": "ترجمة اللغة"
+  },
+  "showcase.tag.language.description": {
+    "message": "أدوات متنوعة لتوليد اللغة وتحويلها وترجمتها وتمييزها وما إلى ذلك."
+  },
+  "辩论/演讲": {
+    "message": "النقاش / الكلام"
+  },
+  "showcase.tag.speech.description": {
+    "message": "النقاش / الكلام"
+  },
+  "点评/评鉴": {
+    "message": "المراجعة / التقييم"
+  },
+  "showcase.tag.comments.description": {
+    "message": "المراجعة / التقييم"
+  },
+  "文本/词语": {
+    "message": "نص / كلمة"
+  },
+  "showcase.tag.text.description": {
+    "message": "نص / كلمة"
+  },
+  "企业职位": {
+    "message": "وظائف الشركات"
+  },
+  "showcase.tag.company.description": {
+    "message": "وظائف الشركات العامة"
+  },
+  "SEO": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "توليد النص / الكلمات الرئيسية"
+  },
+  "医生": {
+    "message": "طبيب"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "طبيب"
+  },
+  "金融顾问": {
+    "message": "المستشار المالي"
+  },
+  "showcase.tag.finance.description": {
+    "message": "وظائف في الصناعة المالية"
+  },
+  "音乐": {
+    "message": "موسيقى"
+  },
+  "showcase.tag.music.description": {
+    "message": "موسيقى"
+  },
+  "行业顾问": {
+    "message": "مستشار الصناعة"
+  },
+  "showcase.tag.professional.description": {
+    "message": "المحامون وحرفيو الشاي والمناصب الأخرى التي تتطلب معرفة مهنية"
+  },
+  "投稿": {
+    "message": "يساهم"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "يمكن أن تساعدنا مساهمات الجميع في تطوير الأفكار"
+  },
+  "Personal": {
+    "message": "شخصي"
+  },
+  "showcase.tag.personal.description": {
+    "message": "الاستخدام الشخصي غير المنتج ، للإشارة فقط"
+  },
+  "Latest": {
+    "message": "أحدث"
+  },
+  "showcase.tag.latest.description": {
+    "message": "التلميحات المضافة حديثًا"
+  },
+  "input.rules.username": {
+    "message": "الرجاء إدخال اسم المستخدم الخاص بك أو عنوان البريد الإلكتروني المسجل!"
+  },
+  "input.rules.password": {
+    "message": "من فضلك أدخل رقمك السري!"
+  },
+  "input.rules.email": {
+    "message": "الرجاء إدخال البريد الإلكتروني الخاص بك!"
+  },
+  "message.error": {
+    "message": "فشل تقديم الإدخال ، يرجى المحاولة مرة أخرى في وقت لاحق"
+  },
+  "message.loginSuccess": {
+    "message": "تم تسجيل الدخول بنجاح!"
+  },
+  "message.registerSuccess": {
+    "message": "نجاح التسجيل!"
+  },
+  "message.forgotPassword.success": {
+    "message": "تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور!"
+  },
+  "error.forgotPassword": {
+    "message": "خطأ في إرسال بريد إلكتروني نسيت كلمة المرور:"
+  },
+  "message.forgotPassword.error": {
+    "message": "فشل في إرسال بريد إلكتروني لإعادة تعيين كلمة المرور ، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "input.username": {
+    "message": "اسم المستخدم / صندوق البريد"
+  },
+  "input.password": {
+    "message": "كلمة المرور"
+  },
+  "button.login": {
+    "message": "تسجيل الدخول"
+  },
+  "button.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "input.register.username": {
+    "message": "اسم المستخدم"
+  },
+  "input.email": {
+    "message": "رجاءا أدخل بريدك الإلكتروني!"
+  },
+  "agreement.rules": {
+    "message": "وافق على شروط الخدمة وسياسة الخصوصية قبل الاستخدام"
+  },
+  "agreement.text": {
+    "message": "انقر هنا للموافقة"
+  },
+  "agreement.terms": {
+    "message": "شروط الخدمة"
+  },
+  "agreement.and": {
+    "message": "و"
+  },
+  "agreement.policy": {
+    "message": "سياسة الخصوصية"
+  },
+  "button.register": {
+    "message": "يسجل"
+  },
+  "placeholder.email": {
+    "message": "بريد"
+  },
+  "button.sendResetEmail": {
+    "message": "إرسال بريد إلكتروني لإعادة التعيين"
+  },
+  "tabs.login": {
+    "message": "تسجيل الدخول"
+  },
+  "tabs.register": {
+    "message": "يسجل"
+  },
+  "tabs.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "card.welcome": {
+    "message": "مرحباً"
+  },
+  "tooltip.switchLang": {
+    "message": "انقر لتبديل لغة العرض"
+  },
+  "comments.info": {
+    "message": "يرجى الرد أدناه بتعليقاتك أو أفكارك أو مشاركتك حول هذه الكلمة السريعة."
+  },
+  "message.changePassword.success": {
+    "message": "اكتملت إعادة تعيين كلمة المرور!"
+  },
+  "error.changePassword": {
+    "message": "خطأ في تغيير كلمة المرور:"
+  },
+  "message.changePassword.error": {
+    "message": "فشل تعديل كلمة المرور ، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.loading": {
+    "message": "تحميل..."
+  },
+  "label.changePassword": {
+    "message": "تغيير كلمة المرور"
+  },
+  "input.currentPassword": {
+    "message": "الرجاء إدخال كلمة المرور الحالية!"
+  },
+  "placeholder.currentPassword": {
+    "message": "كلمة السر الحالية"
+  },
+  "button.changePassword": {
+    "message": "تغيير كلمة المرور"
+  },
+  "label.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "title.userInfo": {
+    "message": "معلومات المستخدم"
+  },
+  "userInfo.username": {
+    "message": "اسم المستخدم:"
+  },
+  "userInfo.email": {
+    "message": "بريد:"
+  },
+  "message.success": {
+    "message": "تم تقديم الإدخال بنجاح!"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "تأكيد الحذف"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "هل أنت متأكد أنك تريد حذف هذه المطالبة؟"
+  },
+  "message.deletePrompt.success": {
+    "message": "تم حذف المطالبة بنجاح!"
+  },
+  "message.deletePrompt.error": {
+    "message": "فشل حذف المطالبة ، يرجى المحاولة مرة أخرى في وقت لاحق."
+  },
+  "tooltip.deleteprompt": {
+    "message": "يمسح"
+  },
+  "link.deleteprompt": {
+    "message": "يمسح"
+  },
+  "tooltip.updateprompt": {
+    "message": "يراجع"
+  },
+  "link.updateprompt": {
+    "message": "يراجع"
+  },
+  "modal.updateprompt.title": {
+    "message": "قم بتحديث الموجه الحالي"
+  },
+  "message.addprompt.requiredTitle": {
+    "message": "الرجاء إدخال عنوان كلمة موجه!"
+  },
+  "input.addprompt.title": {
+    "message": "موجه اسم الكلمة"
+  },
+  "message.addprompt.requiredDescription": {
+    "message": "الرجاء إدخال محتوى كلمة موجه!"
+  },
+  "input.addprompt.description": {
+    "message": "محتوى كلمة سريع"
+  },
+  "input.addprompt.remark": {
+    "message": "وظيفة كلمة سريعة (اختياري)"
+  },
+  "input.addprompt.notes": {
+    "message": "ملاحظات (اختياري): هنا يمكنك تقديم وصف لمصدر كلمة المطالبة ، بالإضافة إلى إصدارات اللغات الأخرى لكلمة المطالبة. بالإضافة إلى ذلك ، إذا كانت لديك أية أفكار واحتياجات لتوسيع الكلمة السريعة ، يرجى شرحها هنا."
+  },
+  "message.addprompt.submission": {
+    "message": "هل ترغب في مشاركة كلمة المطالبة في الصفحة العامة؟"
+  },
+  "button.updateprompt": {
+    "message": "موجهات التحديث"
+  },
+  "message.success1": {
+    "message": "انقر فوق علامة التبويب &quot;مطالباتك&quot; لعرض المطالبات المخصصة التي تمت إضافتها."
+  },
+  "link.user": {
+    "message": "واجهة المستخدم"
+  },
+  "button.logout": {
+    "message": "تسجيل خروج"
+  },
+  "link.addprompt": {
+    "message": "أضف موجهًا مخصصًا"
+  },
+  "modal.addprompt.title": {
+    "message": "موجه المشاركة (سيظهر هذا المحتوى في علامة التبويب &quot;كلماتك الفورية&quot;)"
+  },
+  "input.addprompt.share.checked": {
+    "message": "نعم"
+  },
+  "input.addprompt.share.unchecked": {
+    "message": "لا"
+  },
+  "button.addPrompt": {
+    "message": "إضافة موجه"
+  },
+  "showcase.header.button": {
+    "message": "🙏 يرجى إضافة كلماتك السريعة"
+  },
+  "点击移除收藏": {
+    "message": "انقر لإزالة المفضلة"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "هذه الصفحة لا تستجيب.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.NotFound.title": {
+    "message": "الصفحة غير موجودة",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "لم نتمكن من العثور على ما كنت تبحث عنه.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "يرجى الاتصال بمالك الموقع الذي ربطك بعنوان URL الأصلي وإخباره بأن الارتباط الخاص به معطل.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.admonition.note": {
+    "message": "ملاحظة",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "تلميح",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.danger": {
+    "message": "خطر",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "معلومات",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.caution": {
+    "message": "حذر",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.blog.archive.title": {
+    "message": "أرشيف",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "أرشيف",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "أنتقل للأعلى",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "التنقل في صفحة قائمة المدونة",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "إدخالات أحدث",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "إدخالات أقدم",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "التنقل في صفحة مقالات المدونة",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "مقالات أحدث",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "مقالات أقدم",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "مقاله واحده|{count} مقالات",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} موسومة ب \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "عرض كل الوسوم",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "التبديل بين الوضع الداكن والفاتح (الحالي {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "الوضع الداكن",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "الوضع الفاتح",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "التنقل التفصيلي",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} مواد",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "صفحة التوثيق",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "السابق",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "التالي",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "مستند موسوم واحد|{count} مستندات موسومة",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} مستند موسوم بـ \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "الأصدار: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "هذه وثائق لم يتم طرحها للإصدار {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "هذه هي وثائق {siteTitle} {versionLabel}، التي لم تعد تتم صيانتها بشكل نشط.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "للحصول على أحدث الوثائق، راجع {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "احدث اصدار",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "تعديل هذه الصفحة",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "ارتباط مباشر بالعنوان {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " في {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " بواسطة {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "آخر تحديث{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "إصدارات",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "الوسوم:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "إغلاق",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "أحدث مشاركات المدونة",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "تم النسخ",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "نسخ الرمز إلى الحافظة",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "نسخ",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "تبديل التفاف النص",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "تبديل فئة الشريط الجاني القابل للاغلاق '{label}'",
+    "description": "The ARIA label to toggle the collapsible sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "اللغات",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "محتويات هذه الصفحة",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "اقرأ المزيد",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "اقراء المزيد {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "{readingTime} دقائق قراءة|{readingTime} دقائق قراءة",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "الرئيسية",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "طي الشريط الجانبي",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "طي الشريط الجانبي",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "→ العودة إلى القائمة الرئيسية",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "توسيع الشريط الجانبي",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "توسيع الشريط الجانبي",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "المحاولة مجددا",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "انتقل إلى المحتوى الرئيسي",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "الوسوم",
+    "description": "The title of the tag list page"
+  }
+}

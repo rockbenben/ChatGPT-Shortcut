@@ -15,7 +15,7 @@ const config = {
 export async function getUserAllInfo() {
   try {
     if (!authToken) {
-      throw new Error("Auth token not provided");
+      throw new Error("Please log in to gain access.");
     }
     return await axios.get(
       `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[userprompts]=*`,
@@ -114,7 +114,7 @@ export async function deletePrompt(id) {
 export async function voteOnUserPrompt(promptId, action) {
   try {
     if (!authToken) {
-      throw new Error("Auth token not provided");
+      throw new Error("Kindly proceed with casting your vote after logging in.");
     }
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
