@@ -200,7 +200,7 @@ function ShowcaseFilters({ onToggleDescription }) {
             <span>{siteCountPlural(filteredUsers.length)}</span>
           </div>
         </div>
-        {["zh", "ja", "ko"].includes(currentLanguage) && (
+        {currentLanguage !== "en" && (
           <button
             onClick={onToggleDescription}
             className={styles.onToggleButton}
@@ -348,7 +348,7 @@ function SearchBar() {
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
     if (
-      ["zh", "ja", "ko"].includes(currentLanguage) &&
+      currentLanguage !== "en" &&
       (window.innerWidth >= 768 ||
         (typeof chrome !== "undefined" && chrome.extension) ||
         (typeof browser !== "undefined" && browser.extension))

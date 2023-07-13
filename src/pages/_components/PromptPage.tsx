@@ -55,7 +55,7 @@ function PromptPage({ prompt }) {
   }, [prompt.id, mainPrompt]);
 
   let walineLang = currentLanguage;
-  if (!["zh", "ja", "en"].includes(currentLanguage)) {
+  if (!["zh", "ja"].includes(currentLanguage)) {
     walineLang = "en";
   }
 
