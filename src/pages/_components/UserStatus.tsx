@@ -52,9 +52,9 @@ const UserStatus = () => {
         <Link to='/user' style={{ marginRight: "10px" }}>
           <Translate id='link.user'>用户界面</Translate>
         </Link>
-        <Button onClick={handleLogout} style={{ marginRight: "10px" }}>
+        <Link className='button button--secondary' onClick={handleLogout} style={{ marginRight: "10px" }}>
           <Translate id='button.logout'>注销</Translate>
-        </Button>
+        </Link>
         <Link className='button button--primary' onClick={() => setOpen(true)}>
           <Translate id='link.addprompt'>添加自定义提示词</Translate>
         </Link>
@@ -159,9 +159,9 @@ const UserStatus = () => {
   } else {
     return (
       <div>
-        <Button onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+        <Link className='button button--secondary' onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id='button.login'>登录</Translate>
-        </Button>
+        </Link>
         <Link
           className='button button--primary'
           to='https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11'>
