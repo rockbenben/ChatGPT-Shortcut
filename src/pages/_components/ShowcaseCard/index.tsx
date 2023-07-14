@@ -4,7 +4,6 @@ import { message, Tooltip } from "antd";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-//import Image from '@theme/IdealImage';
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import { LinkOutlined } from "@ant-design/icons";
 import {

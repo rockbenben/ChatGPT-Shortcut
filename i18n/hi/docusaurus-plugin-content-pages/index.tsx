@@ -8,7 +8,6 @@ import React, {
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Button, Space } from "antd";
 import { ArrowDownOutlined } from "@ant-design/icons";
 
 import Translate, { translate } from "@docusaurus/Translate";
@@ -48,8 +47,6 @@ const TITLE = translate({
 const DESCRIPTION = translate({
   message: "让生产力加倍的 ChatGPT 快捷指令",
 });
-const SUBMIT_URL =
-  "https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11";
 
 type UserState = {
   scrollTopPosition: number;
@@ -522,15 +519,13 @@ function ShowcaseCards({ isDescription }) {
               ))}
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
-              <Space direction='vertical' style={{ width: "100%" }}>
-                <Button
-                  size='large'
-                  icon={<ArrowDownOutlined />}
-                  onClick={() => setShowAllOtherUsers(true)}
-                  block>
-                  <Translate>加载更多</Translate>
-                </Button>
-              </Space>
+              <Link
+                className='button button--secondary'
+                style={{ width: "100%" }}
+                onClick={() => setShowAllOtherUsers(true)}>
+                {<ArrowDownOutlined />}
+                <Translate>加载更多</Translate>
+              </Link>
             )}
           </div>
         </>

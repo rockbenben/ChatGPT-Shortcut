@@ -81,7 +81,6 @@ const prompt = {
   },
   "website": null,
   "tags": [
-    "personal",
     "write"
   ],
   "id": 211,
