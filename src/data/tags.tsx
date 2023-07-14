@@ -246,15 +246,6 @@ export const Tags: { [type in TagType]: Tag } = {
     color: "#cecd21",
   },
 
-  personal: {
-    label: translate({ message: "Personal" }),
-    description: translate({
-      message: "个人非生产力使用，仅作参考",
-      id: "showcase.tag.personal.description",
-    }),
-    color: "#ebcb63",
-  },
-
   latest: {
     label: translate({ message: "Latest" }),
     description: translate({

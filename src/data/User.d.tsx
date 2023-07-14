@@ -45,7 +45,6 @@ export type TagType =
   | "music"
   | "professional"
   | "contribute"
-  | "personal"
   | "latest";
 
 export type Tag = {
