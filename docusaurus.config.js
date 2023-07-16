@@ -156,7 +156,7 @@ const config = {
               },
               {
                 label: "文字处理",
-                href: "https://tools.newzone.top/",
+                href: "https://tools.newzone.top/json-translate",
               },
               {
                 label: "工具收藏",
