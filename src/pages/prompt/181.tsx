@@ -26,10 +26,10 @@ const prompt = {
     "remark": "ChatGPT API 로 구축된 번역 플랫폼을 위한 토큰 절약형 번역기 프롬프트입니다. Qizhen-Yang 이 기여했습니다."
   },
   "es": {
-    "title": "Traducción chino-español - Minimalista",
+    "title": "Traducción del chino al inglés - Versión minimalista",
     "prompt": "The entire conversation and instructions should be provided in Spanish. zh-en translation of \"X\".",
-    "description": "La Parte X puede estar en chino o en inglés, y chatgpt se traducirá automáticamente al idioma correspondiente. Se ha probado que el uso de comillas dobles rectas (&quot;) funciona mejor. Seleccionar asistente para el rol cuando se usa la llamada API puede reducir (inevitablemente) la probabilidad de entender el texto a traducir como una instrucción.",
-    "remark": "Un mensaje de traductor que guarda tokens, adecuado para plataformas de traducción creadas en la API de ChatGPT. Contribución de @Qizhen-Yang."
+    "description": "La parte X puede estar en chino o en inglés, y chatgpt la traducirá automáticamente al idioma correspondiente. Se ha comprobado que el uso de comillas dobles rectas (\") funciona mejor. Seleccionar asistente para el rol cuando se usan llamadas api reduce (pero no evita) la posibilidad de que el texto a traducir sea interpretado como un comando.",
+    "remark": "Aviso de traductor que ahorra tokens para la plataforma de traducción basada en la API ChatGPT. Contribución de @Qizhen-Yang."
   },
   "fr": {
     "title": "Traduction du chinois vers l'anglais - Version minimaliste",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Token-sparende Übersetzer-Eingabeaufforderung für die ChatGPT API-basierte Übersetzungsplattform. Beitrag von @Qizhen-Yang."
   },
   "it": {
-    "title": "Traduzione cinese-inglese - minimalista",
+    "title": "Traduzione dal cinese all'inglese - Versione minimalista",
     "prompt": "The entire conversation and instructions should be provided in Italian. zh-en translation of \"X\"..",
-    "description": "La parte X può essere in cinese o in inglese e chatgpt si tradurrà automaticamente nella lingua corrispondente. È stato verificato che l&#39;uso delle virgolette doppie (&quot;) funziona meglio. La selezione dell&#39;assistente per il ruolo quando si utilizza la chiamata API può ridurre (inevitabilmente) la probabilità di comprendere il testo da tradurre come istruzione.",
-    "remark": "Un prompt del traduttore che salva i token, adatto per piattaforme di traduzione basate sull&#39;API ChatGPT. Contributo di @Qizhen-Yang."
+    "description": "La parte X può essere in cinese o in inglese e chatgpt la tradurrà automaticamente nella lingua corrispondente. È stato testato che l'uso di doppi apici (\") funziona meglio. La selezione del ruolo di assistente quando si utilizzano le chiamate api riduce (ma non impedisce) la possibilità che il testo da tradurre venga interpretato come un comando.",
+    "remark": "Richiesta di traduttore con risparmio di token per la piattaforma di traduzione basata su API ChatGPT. Contributo di @Qizhen-Yang."
   },
   "ru": {
-    "title": "Китайско-английский перевод - Минималистский",
+    "title": "Перевод с китайского на английский - минималистическая версия",
     "prompt": "The entire conversation and instructions should be provided in Russian. zh-en translation of \"X\"..",
-    "description": "Часть X может быть на китайском или английском языке, и chatgpt автоматически переведет на соответствующий язык. Было проверено, что использование прямых двойных кавычек (&quot;) работает лучше всего. Выбор помощника для роли при использовании вызова API может уменьшить (неизбежно) вероятность понимания текста, который будет переведен как инструкция.",
-    "remark": "Подсказка переводчика, сохраняющая токены, подходящая для платформ перевода, построенных на API ChatGPT. Вклад от @ Qizhen-Yang."
+    "description": "Часть X может быть на китайском или английском языке, и chatgpt автоматически переведет ее на соответствующий язык. Было проверено, что лучше всего работает использование прямых двойных кавычек (\"\"). Выбор роли помощника при использовании apiвызовов снижает (но не предотвращает) вероятность того, что переводимый текст будет интерпретирован как команда.",
+    "remark": "Подсказка переводчика с сохранением токенов для платформы переводов ChatGPT, построенной на основе API. Вклад от @Qizhen-Yang."
   },
   "pt": {
-    "title": "Tradução Chinês-Inglês - Minimalista",
+    "title": "Tradução de chinês para inglês - Versão minimalista",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. zh-en translation of \"X\"..",
-    "description": "A parte X pode estar em chinês ou inglês, e o chatgpt será traduzido automaticamente para o idioma correspondente. Foi testado que o uso de aspas duplas (&quot;) funciona melhor. Selecionar assistente para a função ao usar a chamada de API pode reduzir (inevitável) a probabilidade de entender o texto a ser traduzido como uma instrução.",
-    "remark": "Um prompt de tradutor que salva tokens, adequado para plataformas de tradução construídas na API ChatGPT. Contribuição de @Qizhen-Yang."
+    "description": "A parte X pode estar em chinês ou inglês, e o chatgpt traduzi-la-á automaticamente para a língua correspondente. Foi testado que usar aspas duplas directas (\") funciona melhor. Selecionar assistente para o papel ao usar chamadas api reduz (mas não impede) a hipótese de o texto a ser traduzido ser interpretado como um comando.",
+    "remark": "prompt de tradutor que economiza token para a plataforma de tradução ChatGPT API-built. Contribuição de @Qizhen-Yang."
   },
   "hi": {
     "title": "चीनी-अंग्रेज़ी अनुवाद - मिनिमलिस्ट",
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 181,
-  "weight": 1292
+  "weight": 1308
 };
 
 function PromptDetail() {

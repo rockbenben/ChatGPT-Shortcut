@@ -26,9 +26,9 @@ const prompt = {
     "remark": "콘텐츠 기반 FAQ 생성."
   },
   "es": {
-    "title": "Generador de preguntas frecuentes",
+    "title": "Generador de FAQs",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Generate a list of 10 frequently asked questions based on the following content: [内容].",
-    "description": "Genere una lista de 10 preguntas frecuentes basadas en: [contenido]",
+    "description": "Genera una lista de 10 preguntas frecuentes basadas en lo siguiente:[Contenido]",
     "remark": "Genere preguntas frecuentes basadas en el contenido."
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generieren Sie FAQs auf der Grundlage von Inhalten."
   },
   "it": {
-    "title": "Generatore di domande frequenti",
+    "title": "FAQ Generatore",
     "prompt": "The entire conversation and instructions should be provided in Italian. Generate a list of 10 frequently asked questions based on the following content: [内容]..",
-    "description": "Genera un elenco di 10 domande frequenti basato su: [contenuto]",
-    "remark": "Genera domande frequenti in base al contenuto."
+    "description": "Generare un elenco di 10 domande frequenti basate su quanto segue:[Contents]",
+    "remark": "Generare FAQ in base al contenuto."
   },
   "ru": {
     "title": "Генератор часто задаваемых вопросов",
     "prompt": "The entire conversation and instructions should be provided in Russian. Generate a list of 10 frequently asked questions based on the following content: [内容]..",
-    "description": "Создайте список из 10 часто задаваемых вопросов на основе: [контента]",
-    "remark": "Создание часто задаваемых вопросов на основе контента."
+    "description": "Сформировать список из 10 часто задаваемых вопросов на основе следующего:[Содержание]",
+    "remark": "Генерировать часто задаваемые вопросы на основе контента."
   },
   "pt": {
-    "title": "gerador de perguntas frequentes",
+    "title": "Gerador de FAQs",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Generate a list of 10 frequently asked questions based on the following content: [内容]..",
-    "description": "Gere uma lista de 10 perguntas frequentes com base em: [conteúdo]",
-    "remark": "Gere perguntas frequentes com base no conteúdo."
+    "description": "Gerar uma lista de 10 perguntas frequentes com base no seguinte:[Conteúdo]",
+    "remark": "Gerar FAQs com base no conteúdo."
   },
   "hi": {
     "title": "अक्सर पूछे जाने वाले प्रश्न जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "seo"
   ],
   "id": 39,
-  "weight": 312
+  "weight": 323
 };
 
 function PromptDetail() {

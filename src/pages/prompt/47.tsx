@@ -26,10 +26,10 @@ const prompt = {
     "remark": "입력한 논픽션 도서의 제목과 저자를 바탕으로 책의 핵심 원리를 가장 이해하기 쉬운 방식으로 요약하세요. 또한 이러한 원칙을 일상 생활에 적용하는 방법에 대한 실행 가능한 단계 목록을 제공하세요."
   },
   "es": {
-    "title": "Resumen del libro de no ficción",
+    "title": "Resumen de libros de no ficción",
     "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Spanish. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
-    "description": "Quiero que actúes como un entrenador de vida. Resuma el libro de no ficción [título] de [autor]. Simplifique los principios básicos de una manera que un niño pueda entender. Además, ¿me puede dar una lista de pasos prácticos sobre cómo implementar estos principios en mi vida diaria?",
-    "remark": "Según el título y el autor del libro de no ficción ingresado, resuma los principios básicos del libro de la manera más digerible posible. Al mismo tiempo, se proporciona una lista de pasos prácticos sobre cómo aplicar estos principios en la vida cotidiana."
+    "description": "Quiero que actúes como coach de vida. Por favor, resuma este libro de no ficción [título] de [autor]. Simplifique los principios básicos de forma que un niño pueda entenderlos. Además, ¿puede darme una lista de medidas prácticas para aplicar estos principios en mi vida diaria?",
+    "remark": "Resuma los principios fundamentales del libro de no ficción de la forma más accesible posible, basándose en el título y el autor del libro de no ficción introducido. Asimismo, facilite una lista de medidas prácticas para aplicar estos principios a la vida cotidiana."
   },
   "fr": {
     "title": "Résumé des livres de non-fiction",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Fassen Sie die Kernprinzipien des Sachbuchs auf möglichst verständliche Weise zusammen, basierend auf dem Titel und dem Autor des angegebenen Sachbuchs. Geben Sie auch eine Liste von Schritten an, wie Sie diese Grundsätze im Alltag anwenden können."
   },
   "it": {
-    "title": "Riassunto del libro di saggistica",
+    "title": "Riassunto dei libri di saggistica",
     "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Italian. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?..",
-    "description": "Voglio che tu faccia da life coach. Si prega di riassumere il libro di saggistica [titolo] di [autore]. Semplifica i principi fondamentali in modo che un bambino possa capirli. Inoltre, puoi fornirmi un elenco di passaggi attuabili su come implementare questi principi nella mia vita quotidiana?",
-    "remark": "Sulla base del titolo e dell&#39;autore del libro di saggistica inserito, riassumi i principi fondamentali del libro nel modo più comprensibile possibile. Allo stesso tempo, viene fornito un elenco di azioni attuabili su come applicare questi principi nella vita di tutti i giorni."
+    "description": "Voglio che tu faccia da life coach. Per favore, riassumi questo libro di saggistica [titolo] di [autore]. Semplifica i principi fondamentali in un modo che un bambino possa capire. Inoltre, puoi darmi un elenco di passi praticabili su come implementare questi principi nella mia vita quotidiana?",
+    "remark": "Riassumere i principi fondamentali del libro di saggistica nel modo più accessibile possibile, in base al titolo e all'autore del libro di saggistica inserito. Inoltre, fornite un elenco di passi praticabili su come applicare questi principi alla vita di tutti i giorni."
   },
   "ru": {
-    "title": "Краткое содержание документальной книги",
+    "title": "Краткое содержание нехудожественных книг",
     "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Russian. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?..",
-    "description": "Я хочу, чтобы вы выступили в роли лайф-коуча. Пожалуйста, кратко о научно-популярной книге [название] [автора]. Упростите основные принципы так, чтобы ребенок мог их понять. Кроме того, не могли бы вы дать мне список практических шагов по внедрению этих принципов в мою повседневную жизнь?",
-    "remark": "Основываясь на названии и авторе заявленной научно-популярной книги, обобщите основные принципы книги в наиболее удобоваримой форме. В то же время приводится список практических шагов по применению этих принципов в повседневной жизни."
+    "description": "Я хочу, чтобы вы выступили в роли лайф-коуча. Пожалуйста, кратко опишите эту нехудожественную книгу [название] [автор]. Упростите основные принципы таким образом, чтобы их мог понять ребенок. Кроме того, не могли бы Вы дать мне список практических шагов по внедрению этих принципов в мою повседневную жизнь?",
+    "remark": "Кратко изложите основные принципы нехудожественной книги в наиболее доступной форме, исходя из названия и автора введенной нехудожественной книги. Кроме того, приведите список практических шагов по применению этих принципов в повседневной жизни."
   },
   "pt": {
-    "title": "Resumo do livro de não ficção",
+    "title": "Resumo de livros de não ficção",
     "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Portuguese. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?..",
-    "description": "Eu quero que você aja como um treinador de vida. Por favor, resuma o livro de não ficção [título] de [autor]. Simplifique os princípios fundamentais de uma forma que uma criança possa entender. Além disso, você pode me dar uma lista de etapas práticas sobre como implementar esses princípios em minha vida diária?",
-    "remark": "Com base no título e no autor do livro de não ficção inscrito, resuma os princípios básicos do livro da maneira mais digerível possível. Ao mesmo tempo, é fornecida uma lista de etapas acionáveis sobre como aplicar esses princípios na vida cotidiana."
+    "description": "Quero que actue como um treinador de vida. Por favor, faça um resumo deste livro de não ficção [título] de [autor]. Simplifique os princípios fundamentais de uma forma que uma criança possa compreender. Além disso, pode dar-me uma lista de passos práticos sobre como implementar estes princípios na minha vida quotidiana?",
+    "remark": "Resumir os princípios fundamentais do livro de não ficção da forma mais acessível possível, com base no título e no autor do livro de não ficção introduzido. Forneça também uma lista de passos práticos sobre a forma de aplicar estes princípios à vida quotidiana."
   },
   "hi": {
     "title": "नॉनफिक्शन पुस्तक सारांश",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 47,
-  "weight": 347
+  "weight": 366
 };
 
 function PromptDetail() {

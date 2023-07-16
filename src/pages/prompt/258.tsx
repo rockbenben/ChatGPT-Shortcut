@@ -26,10 +26,10 @@ const prompt = {
     "remark": "초록과 키워드로 논문 제목 생성하기. ScenerorSun 의 기여, B 사이트 @얌 포푸리에서 인용."
   },
   "es": {
-    "title": "Generación de títulos de papel",
+    "title": "Generación de títulos de tesis",
     "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Spanish. My abstract is \"XXX\", my key words are \"XXX\".",
-    "description": "Le proporcionaré el resumen y las palabras clave de un artículo científico en cualquier idioma y usted detectará el idioma y responderá en el mismo idioma. Su tarea es proporcionarme títulos de artículos científicos en el mismo idioma basados en resúmenes y palabras clave. El título de un artículo científico debe ser conciso, claro e informativo. Debe evitar palabras como investigación, investigación, desarrollo u observación. Asegúrate de que el titular capte el corazón de tu audiencia de inmediato.",
-    "remark": "Genere un título de tesis basado en el resumen y las palabras clave. Contribución de @ScenerorSun, citado de Station B @沙蜜粥巴。"
+    "description": "Le proporcionaré el resumen y las palabras clave de un artículo científico en cualquier idioma, y usted detectará ese idioma y responderá en el mismo idioma. Su tarea consiste en proporcionarme el título del artículo científico basándose en el resumen y las palabras clave en el mismo idioma. El título del artículo científico debe ser conciso, claro e informativo. Debe evitar el uso de palabras como investigación, desarrollo u observación. Asegúrese de que el título capte inmediatamente la atención del público.",
+    "remark": "Generar un título de artículo basado en el resumen y las palabras clave. Contribución de @ScenerorSun, citada en el sitio web B @Yams Potpourri."
   },
   "fr": {
     "title": "Génération d'un titre de thèse",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generieren Sie einen Titel für einen Artikel auf der Grundlage der Zusammenfassung und der Schlüsselwörter. Beitrag von @ScenerorSun, zitiert auf Website B @Yams Potpourri."
   },
   "it": {
-    "title": "Generazione del titolo della carta",
+    "title": "Generazione del titolo della tesi",
     "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Italian. My abstract is \"XXX\", my key words are \"XXX\"..",
-    "description": "Ti fornirò l&#39;abstract e le parole chiave di un articolo scientifico in qualsiasi lingua e tu rileverai la lingua e risponderai nella stessa lingua. Il tuo compito è fornirmi titoli di articoli scientifici nella stessa lingua sulla base di abstract e parole chiave. Il titolo di un articolo scientifico dovrebbe essere conciso, chiaro e informativo. Dovresti evitare parole come ricerca, indagine, sviluppo o osservazione. Assicurati che il titolo catturi immediatamente il cuore del tuo pubblico.",
-    "remark": "Genera un titolo di tesi basato sull&#39;abstract e sulle parole chiave. Contributo di @ScenerorSun, citato da Station B @沙蜜粥巴。"
+    "description": "Vi fornirò l'abstract e le parole chiave di un articolo scientifico in qualsiasi lingua, e voi individuerete quella lingua e risponderete nella stessa lingua. Il vostro compito è quello di fornirmi il titolo dell'articolo scientifico sulla base dell'abstract e delle parole chiave nella stessa lingua. Il titolo dell'articolo scientifico deve essere conciso, chiaro e informativo. Dovete evitare di usare parole come ricerca, indagine, sviluppo o osservazione. Assicuratevi che il titolo catturi immediatamente il pubblico.",
+    "remark": "Generare un titolo di carta in base all'abstract e alle parole chiave. Contributo di @ScenerorSun, citato sul sito web B @Yams Potpourri."
   },
   "ru": {
-    "title": "Генерация заголовка статьи",
+    "title": "Формирование названия диссертации",
     "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Russian. My abstract is \"XXX\", my key words are \"XXX\"..",
-    "description": "Я предоставлю вам аннотацию и ключевые слова научной статьи на любом языке, а вы определите язык и ответите на том же языке. Ваша задача предоставить мне названия научных работ на том же языке на основе аннотаций и ключевых слов. Название научной работы должно быть кратким, четким и информативным. Вам следует избегать таких слов, как исследование, расследование, разработка или наблюдение. Убедитесь, что заголовок сразу же захватывает сердце вашей аудитории.",
-    "remark": "Создайте название диссертации на основе аннотации и ключевых слов. Вклад от @ScenerorSun, цитата из Station B @沙蜜粥巴。"
+    "description": "Я предоставлю Вам аннотацию и ключевые слова научной статьи на любом языке, а Вы определите этот язык и ответите на том же языке. Ваша задача - на основе аннотации и ключевых слов на том же языке придумать название научной статьи. Название научной статьи должно быть кратким, четким и информативным. Следует избегать использования таких слов, как исследование, изучение, разработка или наблюдение. Убедитесь, что название сразу же привлекает внимание аудитории.",
+    "remark": "Сгенерировать название статьи на основе аннотации и ключевых слов. Вклад @ScenerorSun, цитируется по сайту B @Yams Potpourri."
   },
   "pt": {
-    "title": "Geração de título de papel",
+    "title": "Geração do título da tese",
     "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Portuguese. My abstract is \"XXX\", my key words are \"XXX\"..",
-    "description": "Fornecerei a você o resumo e as palavras-chave de um artigo científico em qualquer idioma e você detectará o idioma e responderá no mesmo idioma. Sua tarefa é me fornecer títulos de artigos científicos no mesmo idioma com base no resumo e palavras-chave. O título de um artigo científico deve ser conciso, claro e informativo. Você deve evitar palavras como pesquisa, investigação, desenvolvimento ou observação. Certifique-se de que o título prenda o coração do seu público imediatamente.",
-    "remark": "Gere um título de tese com base no resumo e nas palavras-chave. Contribuição de @ScenerorSun, citado da Estação B @沙蜜粥巴。"
+    "description": "Vou fornecer-lhe o resumo e as palavras-chave de um artigo científico em qualquer língua, e você vai detetar essa língua e responder na mesma língua. A sua tarefa é fornecer-me o título do artigo científico com base no resumo e nas palavras-chave na mesma língua. O título do artigo científico deve ser conciso, claro e informativo. Deve evitar usar palavras como pesquisa, investigação, desenvolvimento ou observação. Certifique-se de que o título capta imediatamente a atenção do público.",
+    "remark": "Gerar um título de artigo com base no resumo e nas palavras-chave. Contribuição de @ScenerorSun, citada no Website B @Yams Potpourri."
   },
   "hi": {
     "title": "पेपर शीर्षक जनरेशन",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 258,
-  "weight": 293
+  "weight": 312
 };
 
 function PromptDetail() {

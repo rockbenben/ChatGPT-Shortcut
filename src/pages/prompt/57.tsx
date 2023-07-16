@@ -26,10 +26,10 @@ const prompt = {
     "remark": "영양사"
   },
   "es": {
-    "title": "nutricionista",
+    "title": "dietistas",
     "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Spanish. Can you please provide a suggestion?.",
-    "description": "Como nutricionista, me gustaría crear una receta vegetariana para [sujeto] con [requisitos]. ¿Puede por favor proporcionar una sugerencia?",
-    "remark": "dietistas"
+    "description": "Como dietista, me gustaría diseñar una receta vegetariana con [requisitos] para [tema]. ¿Podría proporcionarme una sugerencia?",
+    "remark": "Dietista"
   },
   "fr": {
     "title": "diététiciens",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Diätassistent"
   },
   "it": {
-    "title": "nutrizionista",
+    "title": "dietisti",
     "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Italian. Can you please provide a suggestion?..",
-    "description": "Come nutrizionista, vorrei creare una ricetta vegetariana per [soggetto] con [requisiti]. Potete per favore fornire un suggerimento?",
-    "remark": "Dietisti"
+    "description": "In qualità di dietista, vorrei ideare una ricetta vegetariana con [requisiti] per [argomento]. Potreste fornirmi un suggerimento?",
+    "remark": "Dietista"
   },
   "ru": {
-    "title": "диетолог",
+    "title": "врачи-диетологи",
     "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Russian. Can you please provide a suggestion?..",
-    "description": "Как диетолог, я хотел бы создать вегетарианский рецепт для [субъекта] с [требованиями]. Не могли бы вы дать предложение?",
-    "remark": "диетологи"
+    "description": "Как врач-диетолог, я хотел бы разработать вегетарианский рецепт с [требования] для [тема]. Не могли бы вы дать предложение?",
+    "remark": "Врач-диетолог"
   },
   "pt": {
-    "title": "nutricionista",
+    "title": "dietistas",
     "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Portuguese. Can you please provide a suggestion?..",
-    "description": "Como nutricionista, gostaria de criar uma receita vegetariana para [assunto] com [requisitos]. Você pode, por favor, fornecer uma sugestão?",
-    "remark": "nutricionistas"
+    "description": "Como dietista, gostaria de conceber uma receita vegetariana com [requisitos] para [assunto]. Poderiam dar-me uma sugestão?",
+    "remark": "Dietista"
   },
   "hi": {
     "title": "पोषण",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 57,
-  "weight": 547
+  "weight": 575
 };
 
 function PromptDetail() {

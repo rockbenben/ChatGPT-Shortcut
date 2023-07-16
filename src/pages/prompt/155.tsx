@@ -26,10 +26,10 @@ const prompt = {
     "remark": "보조 진단"
   },
   "es": {
-    "title": "médico de IA",
+    "title": "AI médicos",
     "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un médico asistido por IA. Le proporcionaré los detalles de un paciente, y su tarea es utilizar las últimas herramientas de inteligencia artificial, como software de imágenes médicas y otros programas de aprendizaje automático, para diagnosticar la causa más probable de sus síntomas. También debe incorporar métodos tradicionales, como exámenes físicos, pruebas de laboratorio, etc., en su proceso de evaluación para garantizar la precisión.",
-    "remark": "Diagnóstico auxiliar"
+    "description": "Quiero que actúes como médico asistido por IA. Te proporcionaré los datos de un paciente y tu tarea consistirá en utilizar las últimas herramientas de IA, como software de imágenes médicas y otros programas de aprendizaje automático, para diagnosticar la causa más probable de sus síntomas. También deberás incorporar a tu proceso de evaluación métodos tradicionales, como la exploración física y las pruebas de laboratorio, para garantizar la precisión.",
+    "remark": "diagnóstico complementario"
   },
   "fr": {
     "title": "Médecins de l'IA",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "ergänzende Diagnose"
   },
   "it": {
-    "title": "Medico AI",
+    "title": "Medici AI",
     "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu agisca come un medico assistito dall&#39;intelligenza artificiale. Ti fornirò i dettagli di un paziente e il tuo compito è utilizzare gli ultimi strumenti di intelligenza artificiale, come il software di imaging medico e altri programmi di apprendimento automatico, per diagnosticare la causa più probabile dei suoi sintomi. Dovresti anche incorporare metodi tradizionali, come esami fisici, test di laboratorio, ecc., nel tuo processo di valutazione per garantire l&#39;accuratezza.",
-    "remark": "Diagnosi ausiliaria"
+    "description": "Voglio che tu agisca come un medico assistito dall'intelligenza artificiale. Ti fornirò i dettagli di un paziente e il tuo compito sarà quello di utilizzare i più recenti strumenti di IA, come il software di imaging medico e altri programmi di apprendimento automatico, per diagnosticare la causa più probabile dei suoi sintomi. Per garantire l'accuratezza del processo di valutazione, dovrai incorporare anche i metodi tradizionali, come l'esame fisico e gli esami di laboratorio.",
+    "remark": "diagnosi complementare"
   },
   "ru": {
-    "title": "ИИ-врач",
+    "title": "Врачи с искусственным интеллектом",
     "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли врача с искусственным интеллектом. Я предоставлю вам подробную информацию о пациенте, а ваша задача — использовать новейшие инструменты искусственного интеллекта, такие как программное обеспечение для обработки медицинских изображений и другие программы машинного обучения, чтобы диагностировать наиболее вероятную причину его симптомов. Вы также должны включить традиционные методы, такие как физические осмотры, лабораторные тесты и т. д., в процесс оценки, чтобы обеспечить точность.",
-    "remark": "Вспомогательная диагностика"
+    "description": "Я хочу, чтобы вы выступили в роли врача с помощью искусственного интеллекта. Я предоставлю вам данные пациента, и ваша задача будет заключаться в том, чтобы с помощью новейших инструментов ИИ, таких как программное обеспечение для создания медицинских изображений и другие программы машинного обучения, диагностировать наиболее вероятную причину его симптомов. Для обеспечения точности вы должны также включить в процесс оценки традиционные методы, такие как физический осмотр и лабораторные исследования.",
+    "remark": "дополнительная диагностика"
   },
   "pt": {
-    "title": "médico de IA",
+    "title": "Médicos de IA",
     "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você atue como um médico assistido por IA. Fornecerei a você os detalhes de um paciente, e sua tarefa é usar as mais recentes ferramentas de inteligência artificial, como software de imagens médicas e outros programas de aprendizado de máquina, para diagnosticar a causa mais provável de seus sintomas. Você também deve incorporar métodos tradicionais, como exames físicos, testes de laboratório, etc., em seu processo de avaliação para garantir a precisão.",
-    "remark": "diagnóstico auxiliar"
+    "description": "Quero que actues como um médico assistido por IA. Vou fornecer-te os dados de um doente e a tua tarefa será utilizar as mais recentes ferramentas de IA, como software de imagiologia médica e outros programas de aprendizagem automática, para diagnosticar a causa mais provável dos seus sintomas. Para garantir a exatidão do diagnóstico, deve também incorporar métodos tradicionais, como o exame físico e os testes laboratoriais, no seu processo de avaliação.",
+    "remark": "diagnóstico complementar"
   },
   "hi": {
     "title": "ऐ डॉक्टर",
@@ -84,7 +84,7 @@ const prompt = {
     "doctor"
   ],
   "id": 155,
-  "weight": 2702
+  "weight": 2771
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "(이 프롬프트는 수정이 필요합니다.) 항상 심층 요약을 두 번 묻고, 두 번째 질문에서는 원문으로 돌아가서 오류나 누락이 있는지 확인하도록 요청하세요. 이 방법은 컴퓨터 놀잇감 작가인 에소르 황의 글에서 발췌한 것입니다."
   },
   "es": {
-    "title": "Big Data: resumen detallado",
+    "title": "Mucha información: un resumen en profundidad",
     "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Spanish. Make sure your analysis is consistent with the original content of the articles..",
-    "description": "Combinado con el contenido de los artículos anteriores &#39;@1&#39;～&#39;@3&#39;, analice el contenido original y asegúrese de que se ajuste al contenido original. Si hay algún error en el contenido anterior, puede corregirlo o complementarlo directamente. él.",
-    "remark": "(Esta palabra indicadora debe modificarse.) Los resúmenes detallados deben pedirse dos veces. Cuando pregunte por segunda vez, pídales que regresen al texto original para comparar y verificar si hay errores u omisiones. Este método está extraído de un artículo de Esor Huang, autor de juguetes informáticos."
+    "description": "Combinando los contenidos de los artículos anteriores '@1' a '@3', por favor, analice desde el contenido original y asegúrese de ajustarse al contenido original, y si hay algún error en el contenido anterior puede ser directamente corregido o complementado.",
+    "remark": "(Esta pregunta debe revisarse.) Siempre cuestiona el resumen en profundidad dos veces, y en la segunda pregunta haz que vuelva al texto original para hacer referencias cruzadas y ver si hay errores u omisiones. Este método está tomado de un artículo de Esor Huang, autor de Computer Playbook."
   },
   "fr": {
     "title": "Une mine d'informations : un résumé approfondi",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "(Diese Aufforderung muss überarbeitet werden.) Fragen Sie die ausführliche Zusammenfassung immer zweimal ab, und lassen Sie sie bei der zweiten Befragung zum Originaltext zurückgehen, um Querverweise zu finden, um zu sehen, ob es irgendwelche Fehler oder Auslassungen gibt. Diese Methode stammt aus einem Artikel von Esor Huang, dem Autor von Computer Playbook."
   },
   "it": {
-    "title": "Big Data: riepilogo approfondito",
+    "title": "Una ricchezza di informazioni: una sintesi approfondita",
     "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Italian. Make sure your analysis is consistent with the original content of the articles...",
-    "description": "Combinato con il contenuto degli articoli precedenti &#39;@1&#39;～&#39;@3&#39;, si prega di analizzare dal contenuto originale e assicurarsi che sia conforme al contenuto originale. Se c&#39;è qualche errore nel contenuto di cui sopra, è possibile correggere o integrare direttamente Esso.",
-    "remark": "(Questa parola richiesta deve essere rivista.) Gli abstract approfonditi devono essere richiesti due volte.Quando lo chiedi per la seconda volta, chiedi loro di tornare al testo originale per il confronto per verificare eventuali errori o omissioni. Questo metodo è tratto da un articolo di Esor Huang, autore di giochi per computer."
+    "description": "Combinando i contenuti dei precedenti articoli da '@1' a '@3', si prega di analizzare il contenuto originale e di assicurarsi che sia conforme al contenuto originale, e se ci sono errori nel contenuto di cui sopra può essere direttamente corretto o integrato.",
+    "remark": "(Interrogate sempre due volte il riassunto approfondito e, alla seconda interrogazione, fatelo risalire al testo originale per verificare se ci sono errori o omissioni. Questo metodo è tratto da un articolo di Esor Huang, autore di Computer Playbook."
   },
   "ru": {
-    "title": "Большие данные: подробное резюме",
+    "title": "Богатая информация: подробное резюме",
     "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Russian. Make sure your analysis is consistent with the original content of the articles...",
-    "description": "В сочетании с содержанием предыдущих статей &#39;@1&#39;～&#39;@3&#39;, пожалуйста, проанализируйте исходное содержание и убедитесь, что оно соответствует исходному содержанию. Если в приведенном выше содержании есть какая-либо ошибка, вы можете напрямую исправить или дополнить это.",
-    "remark": "(Это слово подсказки необходимо изменить.) Глубокие тезисы необходимо запрашивать дважды. При запросе во второй раз попросите их вернуться к исходному тексту для сравнения, чтобы проверить наличие ошибок или упущений. Этот метод взят из статьи Эсора Хуанга, автора компьютерных игрушек."
+    "description": "Объединяя содержание предыдущих статей \"@1\" - \"@3\", пожалуйста, проанализируйте оригинальное содержание и убедитесь, что оно соответствует оригинальному содержанию, и если в нем есть какие-либо ошибки, они могут быть непосредственно исправлены или дополнены.",
+    "remark": "(Эта подсказка нуждается в пересмотре.) Всегда задавайте вопрос по углубленному резюме дважды, и при втором задании попросите его вернуться к исходному тексту для перекрестных ссылок, чтобы увидеть, нет ли в нем ошибок или пропусков. Этот метод взят из статьи Эсора Хуанга, автора книги Computer Playbook."
   },
   "pt": {
-    "title": "Big Data: resumo detalhado",
+    "title": "Um manancial de informações: um resumo pormenorizado",
     "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Portuguese. Make sure your analysis is consistent with the original content of the articles...",
-    "description": "Combinado com o conteúdo dos artigos anteriores &#39;@1&#39;～&#39;@3&#39;, analise o conteúdo original e certifique-se de que está de acordo com o conteúdo original. Se houver algum erro no conteúdo acima, você pode corrigir ou complementar diretamente isto.",
-    "remark": "(Esta palavra de solicitação precisa ser modificada.) Resumos detalhados devem ser solicitados duas vezes. Ao solicitar pela segunda vez, peça-lhes que retornem ao texto original para comparação e verificação de erros ou omissões. Este método foi extraído de um artigo de Esor Huang, autor de brinquedos de computador."
+    "description": "Combinando o conteúdo dos artigos anteriores \"@1\" a \"@3\", analise o conteúdo original e certifique-se de que está em conformidade com o conteúdo original, e se houver algum erro no conteúdo acima pode ser diretamente corrigido ou complementado.",
+    "remark": "(Esta pergunta precisa de ser revista.) Questione sempre o resumo aprofundado duas vezes e, na segunda pergunta, faça-o regressar ao texto original para fazer referências cruzadas e verificar se existem erros ou omissões. Este método foi retirado de um artigo de Esor Huang, autor de Computer Playbook."
   },
   "hi": {
     "title": "बड़ा डेटा: गहन सारांश",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 240,
-  "weight": 352
+  "weight": 354
 };
 
 function PromptDetail() {

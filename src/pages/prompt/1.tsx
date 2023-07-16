@@ -26,10 +26,10 @@ const prompt = {
     "remark": "다른 언어에서 영어로 번역하거나 영어로 제공한 문장을 개선하세요."
   },
   "es": {
-    "title": "traducción o modificación al inglés",
+    "title": "Traducción o modificación al inglés",
     "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-    "description": "Espero que actúes como traductor de inglés, corrector ortográfico y mejorador. Te hablaré en cualquier idioma y tú detectarás el idioma, lo traducirás y contestarás en inglés en una versión corregida y mejorada de mi texto. Espero que reemplace mis palabras y oraciones simplificadas de nivel A0 con palabras y oraciones en inglés más bellas, elegantes y avanzadas. Mantenga los significados iguales, pero hágalos más literarios. Quiero que respondan solo correcciones, mejoras y nada más, no escriban explicaciones. Mi primera oración es [idioma a traducir]",
-    "remark": "Traduce otros idiomas al inglés o mejora las oraciones en inglés que proporcionas."
+    "description": "Me gustaría que hicieras de traductor, corrector ortográfico y mejorador de inglés. Te hablaré en cualquier idioma y tú detectarás el idioma, lo traducirás y responderás en inglés en versiones corregidas y mejoradas de mis textos. Quiero que sustituyas mis palabras y frases simplificadas de nivel A0 por palabras y frases en inglés más bonitas, elegantes y avanzadas. Mantén el mismo significado, pero hazlas más literarias. Quiero que contestes sólo correcciones, mejoras y nada más, y que no escribas explicaciones. Mi primera frase es [idioma a traducir].",
+    "remark": "Traduzca otros idiomas al inglés o mejore las frases en inglés que nos proporcione."
   },
   "fr": {
     "title": "Traduction ou modification en anglais",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Traduzione o modifica in inglese",
     "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-    "description": "Spero che agirai come traduttore inglese, correttore ortografico e miglioratore. Ti parlerò in qualsiasi lingua e tu rileverai la lingua, la tradurrai e risponderai in inglese in una versione corretta e migliorata del mio testo. Spero che sostituirai le mie parole e frasi semplificate di livello A0 con parole e frasi inglesi più belle, eleganti e avanzate. Mantieni gli stessi significati, ma rendili più letterari. Voglio che tu risponda solo correzioni, miglioramenti e nient&#39;altro, non scrivere spiegazioni. La mia prima frase è [lingua da tradurre]",
-    "remark": "Traduci altre lingue in inglese o migliora le frasi in inglese che fornisci."
+    "description": "Vorrei che tu agissi come traduttore, correttore ortografico e miglioratore di inglese. Ti parlerò in qualsiasi lingua e tu individuerai la lingua, la tradurrai e risponderai in inglese con versioni corrette e migliorate dei miei testi. Voglio che tu sostituisca le mie parole e frasi semplificate di livello A0 con parole e frasi inglesi più belle, eleganti e avanzate. Mantenete il significato, ma rendetele più letterarie. Voglio che rispondiate solo a correzioni, miglioramenti e nient'altro, e che non scriviate spiegazioni. La mia prima frase è [lingua da tradurre].",
+    "remark": "Tradurre altre lingue in inglese o migliorare le frasi in inglese fornite."
   },
   "ru": {
-    "title": "Английский перевод или модификация",
+    "title": "Перевод или модификация на английский язык",
     "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-    "description": "Я надеюсь, что вы будете выступать в роли английского переводчика, корректора орфографии и улучшения. Я буду говорить с вами на любом языке, а вы определите язык, переведете его и ответите по-английски в исправленной и улучшенной версии моего текста. Я надеюсь, что вы замените мои упрощенные слова и предложения уровня A0 более красивыми, элегантными и продвинутыми английскими словами и предложениями. Сохраняйте значения прежними, но делайте их более литературными. Я хочу, чтобы вы отвечали только исправлениями, улучшениями и никак иначе, пояснений не пишите. Мое первое предложение [язык для перевода]",
-    "remark": "Переведите другие языки на английский или улучшите предоставленные вами английские предложения."
+    "description": "Я хотел бы, чтобы Вы выступили в роли переводчика английского языка, корректора и улучшителя орфографии. Я буду говорить с Вами на любом языке, а Вы будете определять язык, переводить его и отвечать на английском языке в исправленных и улучшенных вариантах моих текстов. Я хочу, чтобы вы заменили мои упрощенные слова и предложения уровня А0 на более красивые, более элегантные, более совершенные английские слова и предложения. Сохраните смысл, но сделайте их более литературными. Я хочу, чтобы Вы отвечали только на исправления, улучшения и ничего больше, и не писали объяснений. Мое первое предложение - [язык для перевода].",
+    "remark": "Переводить другие языки на английский или улучшать предложения на английском языке."
   },
   "pt": {
     "title": "Tradução ou modificação em inglês",
     "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-    "description": "Espero que você atue como tradutor de inglês, corretor ortográfico e melhorador. Falarei com você em qualquer idioma e você detectará o idioma, traduzirá e responderá em inglês em uma versão corrigida e aprimorada do meu texto. Espero que você substitua minhas palavras e frases simplificadas de nível A0 por palavras e frases em inglês mais bonitas, elegantes e avançadas. Mantenha os significados iguais, mas torne-os mais literários. Eu quero que você responda apenas correções, melhorias e nada mais, não escreva explicações. Minha primeira frase é [idioma para traduzir]",
-    "remark": "Traduza outros idiomas para o inglês ou melhore as frases em inglês que você fornecer."
+    "description": "Gostaria que actuasse como tradutor, corretor ortográfico e melhorador de inglês. Eu falo consigo em qualquer língua e você detecta a língua, traduz e responde em inglês em versões corrigidas e melhoradas dos meus textos. Quero que substitua as minhas palavras e frases simplificadas de nível A0 por palavras e frases em inglês mais bonitas, mais elegantes e mais avançadas. Mantenham o mesmo significado, mas tornem-nas mais literárias. Quero que responda apenas a correcções, melhorias e nada mais, e que não escreva explicações. A minha primeira frase é [língua a traduzir].",
+    "remark": "Traduzir outras línguas para inglês ou melhorar as frases em inglês que fornece."
   },
   "hi": {
     "title": "अंग्रेजी अनुवाद या संशोधन",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 1,
-  "weight": 6912
+  "weight": 7062
 };
 
 function PromptDetail() {

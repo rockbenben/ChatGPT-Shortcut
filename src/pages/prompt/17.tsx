@@ -26,10 +26,10 @@ const prompt = {
     "remark": "판타지, 로맨스, 역사 등 스토리 장르에 따라 소설을 내보낼 수 있습니다."
   },
   "es": {
-    "title": "novelista",
+    "title": "dramaturgo",
     "prompt": "I want you to act as a novelist. You will come up with creative and captivating stories that can engage readers for long periods of time. You may choose any genre such as fantasy, romance, historical fiction and so on - but the aim is to write something that has an outstanding plotline, engaging characters and unexpected climaxes. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas novelista. Desea crear historias creativas y atractivas que mantengan a los lectores interesados durante mucho tiempo. Puedes elegir cualquier género, como fantasía, romance, ficción histórica, etc., pero trata de escribir con una gran trama, personajes convincentes y un clímax inesperado. Mi primera solicitud es &#39;Género de ficción&#39;",
-    "remark": "Produzca ficción basada en el género de la historia, como fantasía, romance o historia."
+    "description": "Quiero que trabajes como novelista. Quieres idear historias creativas y atractivas que cautiven a los lectores durante mucho tiempo. Puedes elegir cualquier género -fantasía, romance, ficción histórica, etc.-, pero el objetivo es escribir con excelentes líneas argumentales, personajes convincentes y un clímax inesperado. Mi primer requisito es \"género de ficción\".",
+    "remark": "Exporte novelas en función del tipo de historia, como fantasía, romántica o histórica."
   },
   "fr": {
     "title": "dramaturge",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Exportieren Sie Romane nach der Art der Geschichte, z. B. Fantasy, Liebesromane oder historische Romane."
   },
   "it": {
-    "title": "romanziere",
+    "title": "drammaturgo",
     "prompt": "I want you to act as a novelist. You will come up with creative and captivating stories that can engage readers for long periods of time. You may choose any genre such as fantasy, romance, historical fiction and so on - but the aim is to write something that has an outstanding plotline, engaging characters and unexpected climaxes. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un romanziere. Vuoi inventare storie creative e coinvolgenti che manterranno i lettori coinvolti per molto tempo. Puoi scegliere qualsiasi genere, come fantasy, romanticismo, narrativa storica, ecc., ma mira a scrivere con una trama fantastica, personaggi avvincenti e un climax inaspettato. La mia prima richiesta è &#39;Fiction Genre&#39;",
-    "remark": "Produci narrativa basata sul genere della storia, come fantasy, romanticismo o storia."
+    "description": "Voglio che tu lavori come romanziere. Vuoi inventare storie creative e avvincenti che catturino i lettori per molto tempo. Puoi scegliere qualsiasi genere - fantasy, romance, narrativa storica, ecc. - ma l'obiettivo è scrivere con ottime linee di trama, personaggi avvincenti e un climax inaspettato. Il mio primo requisito è \"genere di narrativa\".",
+    "remark": "Esportare i romanzi in base al tipo di storia, ad esempio fantasy, romantica o storica."
   },
   "ru": {
-    "title": "романист",
+    "title": "драматург",
     "prompt": "I want you to act as a novelist. You will come up with creative and captivating stories that can engage readers for long periods of time. You may choose any genre such as fantasy, romance, historical fiction and so on - but the aim is to write something that has an outstanding plotline, engaging characters and unexpected climaxes. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты стал писателем. Вы хотите придумывать креативные, увлекательные истории, которые надолго увлекут читателей. Вы можете выбрать любой жанр, например фэнтези, мелодраму, историческую фантастику и т. д., но старайтесь писать с отличной сюжетной линией, убедительными персонажами и неожиданной кульминацией. Мой первый запрос: «Жанр фантастики».",
-    "remark": "Вывод художественной литературы на основе жанра рассказа, такого как фэнтези, мелодрама или история."
+    "description": "Я хочу, чтобы вы работали романистом. Вы хотите придумывать творческие, увлекательные истории, которые надолго захватывают читателей. Вы можете выбрать любой жанр - фэнтези, роман, историческую фантастику и т.д., но цель - написать роман с отличной сюжетной линией, убедительными героями и неожиданной кульминацией. Мое первое требование - \"жанр художественной литературы\".",
+    "remark": "Экспортируйте романы по типу сюжета, например, фэнтези, романтические или исторические."
   },
   "pt": {
-    "title": "romancista",
+    "title": "dramaturgo",
     "prompt": "I want you to act as a novelist. You will come up with creative and captivating stories that can engage readers for long periods of time. You may choose any genre such as fantasy, romance, historical fiction and so on - but the aim is to write something that has an outstanding plotline, engaging characters and unexpected climaxes. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um romancista. Você deseja criar histórias criativas e envolventes que manterão os leitores envolvidos por um longo tempo. Você pode escolher qualquer gênero, como fantasia, romance, ficção histórica, etc. - mas procure escrever com um ótimo enredo, personagens atraentes e um clímax inesperado. Meu primeiro pedido é &#39;Gênero Ficção&#39;",
-    "remark": "Ficção de saída com base no gênero da história, como fantasia, romance ou história."
+    "description": "Quero que trabalhes como romancista. O seu objetivo é criar histórias criativas e envolventes que cativem os leitores durante muito tempo. Pode escolher qualquer género - fantasia, romance, ficção histórica, etc. - mas o objetivo é escrever com excelentes linhas de enredo, personagens convincentes e um clímax inesperado. O meu primeiro requisito é \"género de ficção",
+    "remark": "Exportar romances com base no tipo de história, como fantasia, romance ou histórico."
   },
   "hi": {
     "title": "उपन्यासकार",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 17,
-  "weight": 3903
+  "weight": 3984
 };
 
 function PromptDetail() {

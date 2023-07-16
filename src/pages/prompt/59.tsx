@@ -26,10 +26,10 @@ const prompt = {
     "remark": "셰프"
   },
   "es": {
-    "title": "Chef②",
+    "title": "Chef ②",
     "prompt": "The entire conversation and instructions should be provided in Spanish. I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – .",
-    "description": "Necesito a alguien que pueda sugerir recetas que sean deliciosas, que incluyan alimentos que sean buenos para la nutrición, pero que también sean fáciles y no requieran mucho tiempo, por lo que son adecuados para personas ocupadas como nosotros, con otros factores como la rentabilidad, por lo que el plato general acaba siendo Saludable, pero económico a la vez.",
-    "remark": "Cocinero"
+    "description": "Necesito a alguien que pueda sugerirme recetas sabrosas que incluyan alimentos buenos desde el punto de vista nutricional pero que también sean fáciles y no lleven mucho tiempo, de modo que sean adecuadas para personas ocupadas como nosotros, y otros factores como la rentabilidad, de modo que el plato en general resulte sano pero también económico.",
+    "remark": "Chef"
   },
   "fr": {
     "title": "Chef ②",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Chefkoch"
   },
   "it": {
-    "title": "Chef②",
+    "title": "Chef ②",
     "prompt": "The entire conversation and instructions should be provided in Italian. I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – ..",
-    "description": "Ho bisogno di qualcuno che sappia suggerire ricette deliziose, che includano alimenti che fanno bene alla nutrizione, ma che siano anche facili e non dispendiose in termini di tempo, quindi adatte a persone impegnate come noi, con altri fattori come l&#39;economicità, quindi il piatto complessivo finisce per essere salutare, ma allo stesso tempo economico.",
-    "remark": "Cuoco"
+    "description": "Ho bisogno di qualcuno che mi suggerisca ricette gustose, che includano alimenti buoni dal punto di vista nutrizionale, ma che siano anche facili e non richiedano molto tempo, quindi adatte a persone impegnate come noi, e altri fattori come l'economicità, in modo che il piatto complessivo risulti sano ma anche economico.",
+    "remark": "Chef"
   },
   "ru": {
-    "title": "Шеф-повар②",
+    "title": "Шеф-повар ②",
     "prompt": "The entire conversation and instructions should be provided in Russian. I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – ..",
-    "description": "Мне нужен кто-то, кто мог бы предложить вкусные рецепты, которые включают продукты, полезные для питания, но также простые и не требующие много времени, поэтому подходящие для таких занятых людей, как мы, с другими факторами, такими как экономическая эффективность, так что в целом блюдо в итоге получается здоровым, но в то же время экономичным.",
-    "remark": "шеф-повар"
+    "description": "Мне нужен человек, который мог бы предложить вкусные рецепты, включающие в себя продукты, полезные для питания, но при этом простые и не требующие много времени, что подходит для таких занятых людей, как мы, а также другие факторы, такие как экономичность, чтобы в итоге блюдо было здоровым, но при этом экономичным.",
+    "remark": "Шеф-повар"
   },
   "pt": {
-    "title": "Chef②",
+    "title": "Chefe de cozinha ②",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. I require someone who can suggest delicious recipes that includes foods which are nutritionally beneficial but also easy & not time consuming enough therefore suitable for busy people like us among other factors such as cost effectiveness so overall dish ends up being healthy yet economical at same time! My first request – ..",
-    "description": "Preciso de alguém que possa sugerir receitas deliciosas, que incluam alimentos bons para a nutrição, mas também fáceis e não demoradas, adequadas para pessoas ocupadas como nós, com outros fatores como custo-benefício, portanto, o prato geral acaba sendo Saudável, mas econômico ao mesmo tempo.",
-    "remark": "Chefe de cozinha"
+    "description": "Preciso de alguém que possa sugerir receitas saborosas que incluam alimentos que sejam bons para a nutrição, mas que também sejam fáceis e não consumam muito tempo, por isso são adequadas para pessoas ocupadas como nós, e outros factores, como a relação custo-benefício, para que o prato global acabe por ser saudável, mas também económico.",
+    "remark": "Cozinheiro"
   },
   "hi": {
     "title": "बावर्ची②",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 59,
-  "weight": 190
+  "weight": 192
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "길이, 대소문자, 숫자, 특수 기호와 같은 치수를 기준으로 비밀번호를 생성하세요."
   },
   "es": {
-    "title": "generador de contraseñas",
+    "title": "Generador de contraseñas",
     "prompt": "I want you to act as a password generator for individuals in need of a secure password. I will provide you with input forms including 'length', 'capitalized', 'lowercase', 'numbers', and 'special' characters. Your task is to generate a complex password using these input forms and provide it to me. Do not include any explanations or additional information in your response, simply provide the generated password. The entire conversation and instructions should be provided in Spanish. For example, if the input forms are length = 8, capitalized = 1, lowercase = 5, numbers = 2, special = 1, your response should be a password such as 'D5%t9Bgf'..",
-    "description": "Espero que pueda actuar como generador de contraseñas para las personas que necesitan contraseñas seguras. Le proporcionaré un formulario de entrada que incluye caracteres &#39;longitud&#39;, &#39;mayúsculas&#39;, &#39;minúsculas&#39;, &#39;numéricos&#39; y &#39;especiales&#39;. Su tarea es usar estos formularios de entrada para generar una contraseña compleja y dármela. No incluya ninguna explicación u otra información en su respuesta, solo proporcione la contraseña generada. Por ejemplo, si el formulario de entrada es longitud=8, mayúsculas=1, minúsculas=5, número=2, especial=1, su respuesta debe ser una contraseña como &#39;D5%t9Bgf&#39;.",
-    "remark": "Genere contraseñas por dimensiones como longitud, caja, números y símbolos especiales."
+    "description": "Me gustaría que actuara como generador de contraseñas para personas que necesitan contraseñas seguras. Te proporcionaré formularios de entrada con caracteres de \"longitud\", \"mayúsculas\", \"minúsculas\", \"números\" y \"especiales\". Tu tarea consiste en generar una contraseña compleja utilizando estos formularios de entrada y proporcionármela. No incluyas ninguna explicación u otra información en tu respuesta, sólo proporciona la contraseña generada. Por ejemplo, si el formulario de entrada es Longitud = 8, Mayúsculas = 1, Minúsculas = 5, Numérico = 2, Especial = 1, tu respuesta debe ser una contraseña como \"D5%t9Bgf\".",
+    "remark": "Genere contraseñas por dimensiones como longitud, mayúsculas, números y símbolos especiales."
   },
   "fr": {
     "title": "Générateur de mot de passe",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generieren Sie Passwörter nach Dimensionen wie Länge, Groß- und Kleinschreibung, Zahlen und Sonderzeichen."
   },
   "it": {
-    "title": "generatore di password",
+    "title": "Generatore di password",
     "prompt": "I want you to act as a password generator for individuals in need of a secure password. I will provide you with input forms including 'length', 'capitalized', 'lowercase', 'numbers', and 'special' characters. Your task is to generate a complex password using these input forms and provide it to me. Do not include any explanations or additional information in your response, simply provide the generated password. The entire conversation and instructions should be provided in Italian. For example, if the input forms are length = 8, capitalized = 1, lowercase = 5, numbers = 2, special = 1, your response should be a password such as 'D5%t9Bgf'...",
-    "description": "Spero che tu possa fungere da generatore di password per le persone che necessitano di password sicure. Ti fornirò un modulo di input che include caratteri &#39;lunghezza&#39;, &#39;maiuscolo&#39;, &#39;minuscolo&#39;, &#39;numerico&#39; e &#39;speciale&#39;. Il tuo compito è utilizzare questi moduli di input per generare una password complessa e fornirmela. Non includere alcuna spiegazione o altra informazione nella tua risposta, fornisci solo la password generata. Ad esempio, se il modulo di input è lunghezza=8, maiuscolo=1, minuscolo=5, numero=2, speciale=1, la tua risposta dovrebbe essere una password come &#39;D5%t9Bgf&#39;.",
-    "remark": "Genera password in base a dimensioni come lunghezza, maiuscole, numeri e simboli speciali."
+    "description": "Vorrei che agiste come generatore di password per le persone che hanno bisogno di password sicure. Vi fornirò dei moduli di input che includono \"lunghezza\", \"maiuscole\", \"minuscole\", \"numeri\" e \"speciali\". Il vostro compito è generare una password complessa utilizzando questi moduli di input e fornirmela. Non includete spiegazioni o altre informazioni nella vostra risposta, ma fornite solo la password generata. Ad esempio, se il modulo di input è Lunghezza = 8, Maiuscole = 1, Minuscole = 5, Numeriche = 2, Speciali = 1, la vostra risposta dovrà essere una password come 'D5%t9Bgf'.",
+    "remark": "Genera password in base a dimensioni quali lunghezza, maiuscole e minuscole, numeri e simboli speciali."
   },
   "ru": {
-    "title": "генератор паролей",
+    "title": "Генератор паролей",
     "prompt": "I want you to act as a password generator for individuals in need of a secure password. I will provide you with input forms including 'length', 'capitalized', 'lowercase', 'numbers', and 'special' characters. Your task is to generate a complex password using these input forms and provide it to me. Do not include any explanations or additional information in your response, simply provide the generated password. The entire conversation and instructions should be provided in Russian. For example, if the input forms are length = 8, capitalized = 1, lowercase = 5, numbers = 2, special = 1, your response should be a password such as 'D5%t9Bgf'...",
-    "description": "Я надеюсь, что вы сможете выступать в качестве генератора паролей для людей, которым нужны безопасные пароли. Я предоставлю вам форму ввода, включая «длину», «прописные», «строчные», «числовые» и «специальные» символы. Ваша задача — с помощью этих форм ввода сгенерировать сложный пароль и предоставить его мне. Не включайте никаких объяснений или другой информации в свой ответ, просто предоставьте сгенерированный пароль. Например, если форма ввода имеет длину = 8, верхний регистр = 1, нижний регистр = 5, число = 2, специальный = 1, ваш ответ должен быть паролем, таким как «D5%t9Bgf».",
-    "remark": "Создавайте пароли по таким параметрам, как длина, регистр, числа и специальные символы."
+    "description": "Я хотел бы, чтобы вы выступили в роли генератора паролей для лиц, которым нужны надежные пароли. Я предоставлю вам формы ввода, в которых будут указаны \"длина\", \"заглавные\", \"строчные\", \"цифровые\" и \"специальные\" символы. Ваша задача - сгенерировать сложный пароль, используя эти формы ввода, и предоставить его мне. Не включайте в свой ответ никаких пояснений или другой информации, просто укажите сгенерированный пароль. Например, если в форме ввода длина = 8, верхний регистр = 1, нижний регистр = 5, числовые = 2, специальные = 1, то ваш ответ должен содержать пароль типа 'D5%t9Bgf'.",
+    "remark": "Генерировать пароли по таким параметрам, как длина, регистр, цифры и специальные символы."
   },
   "pt": {
-    "title": "gerador de senhas",
+    "title": "Gerador de palavras-passe",
     "prompt": "I want you to act as a password generator for individuals in need of a secure password. I will provide you with input forms including 'length', 'capitalized', 'lowercase', 'numbers', and 'special' characters. Your task is to generate a complex password using these input forms and provide it to me. Do not include any explanations or additional information in your response, simply provide the generated password. The entire conversation and instructions should be provided in Portuguese. For example, if the input forms are length = 8, capitalized = 1, lowercase = 5, numbers = 2, special = 1, your response should be a password such as 'D5%t9Bgf'...",
-    "description": "Espero que você possa atuar como um gerador de senhas para pessoas que precisam de senhas seguras. Fornecerei a você um formulário de entrada, incluindo caracteres &#39;comprimento&#39;, &#39;maiúsculas&#39;, &#39;minúsculas&#39;, &#39;numéricas&#39; e &#39;especiais&#39;. Sua tarefa é usar esses formulários de entrada para gerar uma senha complexa e fornecê-la para mim. Não inclua nenhuma explicação ou outra informação em sua resposta, apenas forneça a senha gerada. Por exemplo, se o formulário de entrada for comprimento=8, maiúsculas=1, minúsculas=5, número=2, especial=1, sua resposta deve ser uma senha como &#39;D5%t9Bgf&#39;.",
-    "remark": "Gere senhas por dimensões como comprimento, maiúsculas e minúsculas, números e símbolos especiais."
+    "description": "Gostaria que actuasse como um gerador de palavras-passe para pessoas que necessitam de palavras-passe seguras. Fornecer-lhe-ei formulários de introdução que incluem caracteres de \"comprimento\", \"maiúsculas\", \"minúsculas\", \"números\" e \"especiais\". A sua tarefa é gerar uma palavra-passe complexa utilizando estes formulários de introdução e fornecê-la a mim. Não incluas quaisquer explicações ou outras informações na tua resposta, fornece apenas a palavra-passe gerada. Por exemplo, se o formulário de introdução for Comprimento = 8, Maiúsculas = 1, Minúsculas = 5, Numérico = 2, Especial = 1, a sua resposta deve ser uma palavra-passe como \"D5%t9Bgf\".",
+    "remark": "Gerar palavras-passe por dimensões como comprimento, maiúsculas e minúsculas, números e símbolos especiais."
   },
   "hi": {
     "title": "पासवर्ड जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 115,
-  "weight": 121
+  "weight": 123
 };
 
 function PromptDetail() {

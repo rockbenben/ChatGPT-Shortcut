@@ -26,10 +26,10 @@ const prompt = {
     "remark": "줄거리, 연기, 촬영, 연출, 음악 등의 측면에서 영화를 리뷰합니다."
   },
   "es": {
-    "title": "Crítica de la película②",
+    "title": "Crítica de cine②",
     "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que seas crítico de cine. Debe ver una película y revisarla de manera clara, dando comentarios positivos y negativos sobre la trama, la actuación, la fotografía, la dirección, la música, etc. Mi primera solicitud de sugerencia es &#39;ángulo de revisión de la película&#39;",
-    "remark": "Revise películas en términos de trama, actuación, cinematografía, dirección, música y más."
+    "description": "Quiero que hagas de crítico de cine. Tienes que ver una película y hacer una crítica clara, con comentarios positivos y negativos sobre el argumento, la interpretación, la fotografía, la dirección, la música, etc. El primer requisito que te propongo es \"Perspectiva de crítico de cine\".",
+    "remark": "Reseña de películas desde el punto de vista del argumento, la interpretación, la fotografía, la dirección y la música."
   },
   "fr": {
     "title": "Film Review②",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Recensione del film②",
     "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu diventi un critico cinematografico. Devi guardare un film e recensirlo in modo chiaro, dando feedback positivi e negativi sulla trama, sulla recitazione, sulla fotografia, sulla regia, sulla musica, ecc. La mia prima richiesta di suggerimento è &quot;angolo di revisione del film&quot;",
-    "remark": "Recensisci i film in termini di trama, recitazione, cinematografia, regia, musica e altro ancora."
+    "description": "Voglio che vi comportiate come un critico cinematografico. Dovete guardare un film e recensirlo in modo chiaro, fornendo un feedback sia positivo che negativo su trama, recitazione, fotografia, regia, musica, ecc. Il primo requisito suggerito è \"Prospettiva del critico cinematografico\".",
+    "remark": "Recensisce i film in termini di trama, recitazione, fotografia, regia e musica."
   },
   "ru": {
-    "title": "Обзор фильма②",
+    "title": "Рецензия на фильм②",
     "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы ты стал кинокритиком. Вам нужно посмотреть фильм и четко оценить его, давая положительные и отрицательные отзывы о сюжете, актерской игре, фотографии, режиссуре, музыке и т. д. Мой первый запрос на предложение — «ракурс просмотра фильма».",
-    "remark": "Оценивайте фильмы с точки зрения сюжета, актерской игры, кинематографии, режиссуры, музыки и многого другого."
+    "description": "Я хочу, чтобы вы выступили в роли кинокритика. Вам необходимо посмотреть фильм и дать на него четкую рецензию, содержащую как положительные, так и отрицательные отзывы о сюжете, игре актеров, кинематографе, режиссуре, музыке и т.д. Первое предлагаемое мной требование - \"Перспектива кинокритика\".",
+    "remark": "Рецензирует фильмы с точки зрения сюжета, актерской игры, кинематографа, режиссуры и музыки."
   },
   "pt": {
-    "title": "Crítica do filme②",
+    "title": "Revisão do filme②",
     "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você seja um crítico de cinema. Você precisa assistir a um filme e revê-lo de forma clara, dando feedback positivo e negativo sobre o enredo, atuação, fotografia, direção, música, etc. Meu primeiro pedido de sugestão é &#39;ângulo de revisão de filme&#39;",
-    "remark": "Revise os filmes em termos de enredo, atuação, cinematografia, direção, música e muito mais."
+    "description": "Quero que desempenhes o papel de um crítico de cinema. Tens de ver um filme e avaliá-lo de forma clara, dando opiniões positivas e negativas sobre o enredo, a representação, a cinematografia, a realização, a música, etc. O meu primeiro requisito sugerido é \"Perspetiva de crítico de cinema",
+    "remark": "Analisa filmes em termos de enredo, representação, cinematografia, realização e música."
   },
   "hi": {
     "title": "मूवी समीक्षा②",

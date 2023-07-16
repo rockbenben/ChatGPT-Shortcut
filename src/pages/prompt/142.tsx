@@ -26,10 +26,10 @@ const prompt = {
     "remark": "프로젝트의 목표를 중심으로 마크다운 형식으로 사업 제안서를 작성하세요."
   },
   "es": {
-    "title": "plan de negocios",
+    "title": "Planificación empresarial",
     "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Spanish. Write the result in a markdown table..",
-    "description": "Generar ideas para startups digitales basadas en los deseos de las personas. Por ejemplo, cuando digo [objetivo comercial], está generando un plan de negocios para una startup digital que incluye un nombre creativo, una palabra corta, personas objetivo del usuario, puntos débiles del usuario para resolver, propuestas de valor clave, canales de ventas y marketing, fuentes de ingresos, estructura de costos, actividades clave, recursos clave, socios clave, pasos de validación de ideas, costos operativos estimados para el primer año y posibles desafíos comerciales a tener en cuenta. Escriba el resultado en una tabla de fichas.",
-    "remark": "Alrededor de los objetivos de planificación, escriba un plan de negocios en forma de descuento."
+    "description": "Generar ideas para startups digitales basadas en lo que la gente quiere. Por ejemplo, cuando digo [objetivo del plan de negocio], lo que quieres es generar un plan de negocio para una startup digital que incluya el nombre de la idea, un breve esbozo, los usuarios objetivo, los puntos de dolor de los usuarios que hay que resolver, las propuestas de valor clave, los canales de ventas y marketing, las fuentes de ingresos, la estructura de costes, las actividades clave, los recursos clave, los socios clave, los pasos de validación de la idea, los costes previstos para el primer año de funcionamiento y la necesidad de buscar posibles retos empresariales. Escriba los resultados en una hoja de marcado.",
+    "remark": "Redacte un plan de empresa en formato markdown en torno a los objetivos del plan."
   },
   "fr": {
     "title": "Planification des activités",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie einen Geschäftsplan in Stichpunkten zu den Zielen des Plans."
   },
   "it": {
-    "title": "piano aziendale",
+    "title": "Pianificazione aziendale",
     "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Italian. Write the result in a markdown table...",
-    "description": "Genera idee per startup digitali basate sui desideri delle persone. Ad esempio, quando dico [obiettivo aziendale], stai generando un piano aziendale per una startup digitale che include un nome creativo, una breve parola, personaggi utente target, punti deboli dell&#39;utente da risolvere, proposte di valore chiave, canali di vendita e marketing, fonti di reddito, struttura dei costi, attività chiave, risorse chiave, partner chiave, passaggi di convalida dell&#39;idea, costi operativi stimati per il primo anno e potenziali sfide aziendali da cercare. Scrivi il risultato in una tabella di token.",
-    "remark": "Intorno agli obiettivi di pianificazione, scrivi un business plan sotto forma di markdown."
+    "description": "Generare idee per startup digitali basate su ciò che le persone vogliono. Per esempio, quando dico [obiettivo del business plan], volete generare un business plan per una startup digitale che includa il nome dell'idea, un breve one-liner, le personas degli utenti target, i punti dolenti degli utenti da risolvere, le proposte di valore chiave, i canali di vendita e di marketing, i flussi di entrate, la struttura dei costi, le attività chiave, le risorse chiave, i partner chiave, le fasi di convalida dell'idea, i costi previsti per il primo anno di attività e la necessità di di cercare potenziali sfide di business. Scrivete i risultati in un foglio di markup.",
+    "remark": "Scrivere un business plan in forma di markdown intorno agli obiettivi del piano."
   },
   "ru": {
-    "title": "бизнес-план",
+    "title": "Бизнес-планирование",
     "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Russian. Write the result in a markdown table...",
-    "description": "Генерируйте идеи для цифровых стартапов на основе желаний людей. Например, когда я говорю [бизнес-цель], вы создаете бизнес-план для цифрового стартапа, который включает в себя креативное имя, короткое слово, целевые персонажи пользователей, болевые точки пользователей, которые необходимо решить, ключевые ценностные предложения, каналы продаж и маркетинга, источники дохода, структура затрат, ключевые виды деятельности, ключевые ресурсы, ключевые партнеры, этапы проверки идеи, предполагаемые операционные расходы в первый год и потенциальные бизнес-задачи, на которые следует обратить внимание. Запишите результат в таблицу токенов.",
-    "remark": "Вокруг целей планирования напишите бизнес-план в уценочной форме."
+    "description": "Генерируйте идеи для цифровых стартапов на основе того, что нужно людям. Например, когда я говорю [цель бизнес-плана], вы хотите составить бизнес-план цифрового стартапа, включающий название идеи, короткую односложную фразу, персоны целевых пользователей, решаемые болевые точки пользователей, ключевые ценностные предложения, каналы продаж и маркетинга, потоки доходов, структуру затрат, ключевые виды деятельности, ключевые ресурсы, ключевых партнеров, этапы проверки идеи, прогнозируемые затраты на первый год работы, а также необходимость поиск потенциальных бизнес-задач. Запишите результаты в лист разметки.",
+    "remark": "Напишите бизнес-план в формате markdown вокруг целей плана."
   },
   "pt": {
-    "title": "plano de negócios",
+    "title": "Planeamento empresarial",
     "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Portuguese. Write the result in a markdown table...",
-    "description": "Gere ideias para startups digitais com base nos desejos das pessoas. Por exemplo, quando digo [objetivo de negócios], você está gerando um plano de negócios para uma startup digital que inclui um nome criativo, uma palavra curta, personas de usuário-alvo, pontos problemáticos do usuário para resolver, proposições de valor-chave, canais de vendas e marketing, fontes de receita, estrutura de custos, atividades-chave, recursos-chave, parceiros-chave, etapas de validação de ideias, custos operacionais estimados para o primeiro ano e possíveis desafios de negócios a serem observados. Escreva o resultado em uma tabela de tokens.",
-    "remark": "Em torno das metas de planejamento, escreva um plano de negócios em forma de remarcação."
+    "description": "Gerar ideias para empresas digitais com base no que as pessoas querem. Por exemplo, quando digo [objetivo do plano de negócios], pretende gerar um plano de negócios para uma empresa digital em fase de arranque que inclua o nome da ideia, uma breve frase, as personas dos utilizadores-alvo, os pontos problemáticos dos utilizadores a resolver, as principais propostas de valor, os canais de vendas e marketing, os fluxos de receitas, a estrutura de custos, as principais actividades, os principais recursos, os principais parceiros, as etapas de validação da ideia, os custos previstos para o primeiro ano de funcionamento e a necessidade de procurar potenciais desafios comerciais. Escreva os resultados numa folha de marcação.",
+    "remark": "Redigir um plano de negócios em formato markdown em torno dos objectivos do plano."
   },
   "hi": {
     "title": "व्यापार की योजना",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 142,
-  "weight": 1365
+  "weight": 1385
 };
 
 function PromptDetail() {

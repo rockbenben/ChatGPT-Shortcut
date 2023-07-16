@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "intérprete de código",
     "prompt": "The entire conversation and instructions should be provided in Spanish. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line..",
-    "description": "Espero que pueda actuar como intérprete de código, aclarando la sintaxis y la semántica del código.",
-    "remark": "Deje que AI explique qué hace cada paso del código. Contribución de @Tractor1928, modificada por @yiqiongwu."
+    "description": "Espero que actúes como intérprete de código, aclarando la sintaxis y la semántica del código.",
+    "remark": "Deja que la IA explique qué hace cada paso del código. Contribución de @Tractor1928, modificada posteriormente por @yiqiongwu."
   },
   "fr": {
     "title": "interprète de code",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "interprete di codice",
     "prompt": "The entire conversation and instructions should be provided in Italian. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line...",
-    "description": "Spero che tu possa agire come interprete del codice, chiarendo la sintassi e la semantica del codice.",
-    "remark": "Lascia che l&#39;intelligenza artificiale spieghi cosa fa ogni passaggio del codice. Contributo di @Tractor1928, modificato da @yiqiongwu."
+    "description": "Mi aspetto che tu agisca come interprete del codice, chiarendo la sintassi e la semantica del codice.",
+    "remark": "Lasciare che l'intelligenza artificiale spieghi cosa fa ogni passo del codice. Contributo di @Tractor1928, successivamente modificato da @yiqiongwu."
   },
   "ru": {
     "title": "интерпретатор кода",
     "prompt": "The entire conversation and instructions should be provided in Russian. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line...",
-    "description": "Надеюсь, вы сможете выступать в роли интерпретатора кода, разъясняя синтаксис и семантику кода.",
-    "remark": "Пусть ИИ объяснит, что делает каждый шаг кода. Вклад от @Tractor1928, измененный @yiqiongwu."
+    "description": "Я ожидаю, что вы будете выступать в роли интерпретатора кода, разъясняя синтаксис и семантику кода.",
+    "remark": "Пусть ИИ объяснит, что делает каждый шаг кода. Вклад @Tractor1928, позже изменен @yiqiongwu."
   },
   "pt": {
-    "title": "intérprete de código",
+    "title": "interpretador de código",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line...",
-    "description": "Espero que você possa atuar como um intérprete de código, esclarecendo a sintaxe e a semântica do código.",
-    "remark": "Deixe a IA explicar o que cada etapa do código faz. Contribuição de @Tractor1928, modificado por @yiqiongwu."
+    "description": "Espero que actue como um intérprete de código, esclarecendo a sintaxe e a semântica do código.",
+    "remark": "Deixa a IA explicar o que cada passo do código faz. Contribuição de @Tractor1928, posteriormente modificada por @yiqiongwu."
   },
   "hi": {
     "title": "कोड दुभाषिया",
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 173,
-  "weight": 3283
+  "weight": 3355
 };
 
 function PromptDetail() {

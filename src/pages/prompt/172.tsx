@@ -26,10 +26,10 @@ const prompt = {
     "remark": "요청 시 계약서 및 계약서 초안을 내보낼 수 있습니다."
   },
   "es": {
-    "title": "Abogado de Tecnología Empresarial",
+    "title": "Abogados emprendedores especializados en tecnología",
     "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Spanish. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc..",
-    "description": "Le pediré que prepare un borrador de acuerdo de asociación de diseño de 1 página entre una startup tecnológica que posee propiedad intelectual y un cliente potencial de la tecnología de la startup que proporciona datos para el espacio del problema que la startup está resolviendo y experiencia en el dominio. Escribirá una propuesta de acuerdo de asociación de diseño de aproximadamente 1 a 4 páginas, que cubrirá todos los aspectos importantes de la propiedad intelectual, la confidencialidad, los derechos comerciales, los datos proporcionados, el uso de los datos, etc.",
-    "remark": "Salida de convenios y borradores de contrato a pedido."
+    "description": "Le pediré que prepare un borrador de 1 página de un acuerdo de asociación de diseño entre una startup tecnológica que posee propiedad intelectual y un cliente potencial de la tecnología de la startup que proporciona datos y experiencia de dominio al espacio del problema que está resolviendo la startup. Deberá redactar aproximadamente de 1 a 4 páginas del acuerdo de asociación de diseño propuesto, que cubrirá todos los aspectos importantes de la propiedad intelectual, la confidencialidad, los derechos comerciales, los datos proporcionados, el uso de los datos, etc.",
+    "remark": "Redactar borradores de acuerdos y contratos según sea necesario."
   },
   "fr": {
     "title": "Avocats spécialisés dans les technologies entrepreneuriales",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erstellung von Entwürfen für Vereinbarungen und Verträge nach Bedarf."
   },
   "it": {
-    "title": "Avvocato di tecnologia imprenditoriale",
+    "title": "Avvocati tecnologici imprenditoriali",
     "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Italian. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc...",
-    "description": "Ti chiederò di preparare una bozza di accordo di partnership di progettazione di 1 pagina tra una startup tecnologica che possiede la proprietà intellettuale e un potenziale cliente della tecnologia della startup che fornisce dati per lo spazio del problema che la startup sta risolvendo e competenze di dominio. Scriverai una proposta di accordo di partnership di progettazione di circa 1-4 pagine, che coprirà tutti gli aspetti importanti della proprietà intellettuale, riservatezza, diritti commerciali, dati forniti, utilizzo dei dati, ecc.",
-    "remark": "Uscita accordi e bozze contrattuali su richiesta."
+    "description": "Vi chiederò di preparare una bozza di accordo di partnership di progettazione di una pagina tra una startup tecnologica che detiene la proprietà intellettuale e un potenziale cliente della tecnologia della startup che fornisce dati e competenze di dominio per lo spazio problematico risolto dalla startup. Dovrete scrivere circa 1-4 pagine dell'accordo di partnership di progettazione proposto, che coprirà tutti gli aspetti importanti della proprietà intellettuale, della riservatezza, dei diritti commerciali, dei dati forniti, dell'uso dei dati, ecc.",
+    "remark": "Realizzare bozze di accordi e contratti come richiesto."
   },
   "ru": {
-    "title": "Юрист по предпринимательским технологиям",
+    "title": "Юристы по предпринимательским технологиям",
     "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Russian. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc...",
-    "description": "Я попрошу вас подготовить проект одностраничного соглашения о партнерстве между технологическим стартапом, владеющим интеллектуальной собственностью, и потенциальным заказчиком технологии стартапа, который предоставляет данные для проблемной области, которую решает стартап, и экспертизу предметной области. Вы напишете предлагаемое партнерское соглашение по дизайну примерно на 1-4 страницах, которое будет охватывать все важные аспекты интеллектуальной собственности, конфиденциальности, коммерческих прав, предоставленных данных, использования данных и т. д.",
-    "remark": "Вывод договоров и проектов договоров по запросу."
+    "description": "Я попрошу Вас подготовить 1-страничный проект соглашения о партнерстве между технологическим стартапом, владеющим интеллектуальной собственностью, и потенциальным заказчиком технологии стартапа, предоставляющим данные и экспертизу в области проблемного пространства, решаемого стартапом. Вам предстоит написать примерно 1-4 страницы предлагаемого партнерского соглашения, в котором будут отражены все важные аспекты интеллектуальной собственности, конфиденциальности, коммерческих прав, предоставляемых данных, их использования и т.д.",
+    "remark": "Вывод проектов договоров и соглашений по мере необходимости."
   },
   "pt": {
-    "title": "Advogado Empreendedor de Tecnologia",
+    "title": "Advogados especializados em tecnologia empresarial",
     "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Portuguese. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc...",
-    "description": "Pedirei a você que prepare um rascunho de um contrato de parceria de design de 1 página entre uma startup de tecnologia que possui propriedade intelectual e um cliente em potencial da tecnologia da startup que fornece dados para o espaço do problema que a startup está resolvendo e conhecimento de domínio. Você escreverá uma proposta de contrato de parceria de design de aproximadamente 1 a 4 páginas, que cobrirá todos os aspectos importantes de propriedade intelectual, confidencialidade, direitos comerciais, dados fornecidos, uso de dados, etc.",
-    "remark": "Acordos de saída e minutas de contrato mediante solicitação."
+    "description": "Vou pedir-lhe que prepare um projeto de acordo de parceria de conceção de 1 página entre uma empresa de tecnologia em fase de arranque que detém propriedade intelectual e um potencial cliente da tecnologia da empresa em fase de arranque que fornece dados e conhecimentos especializados no domínio do problema a resolver pela empresa em fase de arranque. Deverá redigir aproximadamente 1 a 4 páginas do acordo de parceria de conceção proposto, que abrangerá todos os aspectos importantes da propriedade intelectual, confidencialidade, direitos comerciais, dados fornecidos, utilização de dados, etc.",
+    "remark": "Elaborar projectos de acordos e contratos conforme necessário."
   },
   "hi": {
     "title": "उद्यमशील प्रौद्योगिकी वकील",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 172,
-  "weight": 383
+  "weight": 393
 };
 
 function PromptDetail() {

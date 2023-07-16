@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Tesis ①",
     "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un erudito. Será responsable de investigar un tema de su elección y presentar los resultados de su investigación en forma de disertación o artículo. Su tarea es identificar fuentes confiables, organizar el material de manera bien estructurada y documentarlo con precisión con citas. Mi primera solicitud de sugerencia es &#39;Tema de disertación&#39;",
-    "remark": "Escribir ensayos informativos y convincentes sobre temas."
+    "description": "Espero que actúes como un académico. Será responsable de investigar un tema de su elección y presentar los resultados en forma de disertación o artículo. Tu tarea consistirá en identificar fuentes fiables, organizar el material de forma bien estructurada y documentarlo con precisión mediante citas. El primer requisito sugerido es \"Tema de la tesis\".",
+    "remark": "Redactar artículos informativos y convincentes basados en el tema."
   },
   "fr": {
     "title": "Thèse ①",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Tesi ①",
     "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come uno studioso. Sarai responsabile della ricerca di un argomento di tua scelta e della presentazione dei risultati della tua ricerca sotto forma di dissertazione o articolo. Il tuo compito è identificare fonti affidabili, organizzare il materiale in modo ben strutturato e documentarlo accuratamente con citazioni. La mia prima richiesta di suggerimento è &quot;Argomento tesi&quot;",
-    "remark": "Scrivi saggi informativi e convincenti su argomenti."
+    "description": "Mi aspetto che vi comportiate come un accademico. Sarete responsabili della ricerca su un argomento di vostra scelta e della presentazione dei risultati sotto forma di una tesi o di un articolo. Il vostro compito sarà quello di individuare fonti affidabili, organizzare il materiale in modo ben strutturato e documentarlo accuratamente con citazioni. Il primo requisito suggerito è \"Argomento della tesi\".",
+    "remark": "Scrivere documenti informativi e convincenti basati sull'argomento."
   },
   "ru": {
-    "title": "Тезис ①",
+    "title": "Диссертация ①",
     "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли ученого. Вы будете нести ответственность за исследование темы по вашему выбору и представление результатов вашего исследования в виде диссертации или статьи. Ваша задача — определить надежные источники, хорошо структурировать материал и точно задокументировать его с помощью ссылок. Мой первый запрос на предложение - «Тема диссертации».",
-    "remark": "Пишите информативные и убедительные эссе на темы."
+    "description": "Я ожидаю, что вы будете действовать как ученый. Вы должны будете провести исследование по выбранной Вами теме и представить полученные результаты в виде диссертации или статьи. Ваша задача - найти надежные источники, грамотно структурировать материал и оформить его в виде цитат. Первое предлагаемое мной требование - \"Тема диссертации\".",
+    "remark": "Написать информативные и убедительные статьи по заданной теме."
   },
   "pt": {
     "title": "Tese ①",
     "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você aja como um estudioso. Você será responsável por pesquisar um tema de sua escolha e apresentar os resultados de sua pesquisa na forma de uma dissertação ou artigo. Sua tarefa é identificar fontes confiáveis, organizar o material de maneira bem estruturada e documentá-lo com precisão com citações. Meu primeiro pedido de sugestão é &#39;Tópico de Dissertação&#39;",
-    "remark": "Escreva ensaios informativos e convincentes sobre tópicos."
+    "description": "Espero que aja como um académico. Será responsável pela investigação de um tema à sua escolha e pela apresentação dos resultados sob a forma de uma dissertação ou de um artigo. A sua tarefa consistirá em identificar fontes fiáveis, organizar o material de forma bem estruturada e documentá-lo corretamente com citações. O meu primeiro requisito sugerido é \"Tópico de tese",
+    "remark": "Redigir trabalhos informativos e convincentes com base no tema."
   },
   "hi": {
     "title": "थीसिस ①",
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 20,
-  "weight": 9785
+  "weight": 9961
 };
 
 function PromptDetail() {

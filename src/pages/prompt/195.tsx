@@ -26,9 +26,9 @@ const prompt = {
     "remark": "SetSeele 의 기고글입니다."
   },
   "es": {
-    "title": "Discurso",
+    "title": "borrador del discurso",
     "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Spanish. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts..",
-    "description": "Como [identidad], centrándome en cómo implementar la ética científica y la construcción del estilo académico, ampliaré el siguiente texto para mí. Puede citar como máximo una cita famosa de una persona famosa, agregar ejemplos específicos y explicar sus sentimientos personales.",
+    "description": "Como [identidad], amplíe para mí el siguiente texto, centrado en cómo aplicar la ética científica y los estilos de aprendizaje. Puedes citar hasta un personaje famoso, añadir ejemplos concretos y desarrollar tus sentimientos personales.",
     "remark": "Contribución de @SetSeele."
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Beitrag von @SetSeele."
   },
   "it": {
-    "title": "Discorso",
+    "title": "bozza di discorso",
     "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Italian. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts...",
-    "description": "Come [identità], incentrata su come implementare l&#39;etica scientifica e la costruzione di uno stile accademico, espanderò per me il testo seguente. Puoi citare al massimo una citazione famosa di una persona famosa, aggiungere esempi specifici e spiegare i tuoi sentimenti personali.",
+    "description": "Come [identità], approfondisci per me il seguente testo, incentrato su come implementare l'etica scientifica e gli stili di apprendimento. Potete citare fino a un personaggio famoso, aggiungere esempi specifici e approfondire i vostri sentimenti personali.",
     "remark": "Contributo di @SetSeele."
   },
   "ru": {
-    "title": "Речь",
+    "title": "проект речи",
     "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Russian. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts...",
-    "description": "Как [личность], сосредоточенная на том, как реализовать научную этику и построение академического стиля, я расширю для себя следующий текст. Вы можете процитировать не более одной известной цитаты известного человека, добавить конкретные примеры и объяснить свои личные чувства.",
+    "description": "В качестве [личность] подготовьте для меня следующий текст, посвященный вопросам применения научной этики и стилей обучения. Вы можете процитировать не более одного известного человека, привести конкретные примеры и рассказать о своих личных ощущениях.",
     "remark": "Вклад от @SetSeele."
   },
   "pt": {
-    "title": "Discurso",
+    "title": "projeto de discurso",
     "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Portuguese. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts...",
-    "description": "Como [identidade], centrando-me em como implementar a ética científica e a construção do estilo acadêmico, irei expandir o seguinte texto para mim. Você pode citar no máximo uma citação famosa de uma pessoa famosa, adicionar exemplos específicos e explicar seus sentimentos pessoais.",
+    "description": "Como [identidade], elabora-me o seguinte texto, centrado na aplicação da ética científica e dos estilos de aprendizagem. Pode citar, no máximo, uma pessoa famosa, acrescentar exemplos específicos e desenvolver os seus sentimentos pessoais.",
     "remark": "Contribuição de @SetSeele."
   },
   "hi": {
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 195,
-  "weight": 1029
+  "weight": 1052
 };
 
 function PromptDetail() {

@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Front-end: interfaz UX/UI",
     "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un desarrollador de UX/UI. Proporcionaré algunos detalles de diseño sobre una aplicación, sitio web u otro producto digital, y su trabajo consistirá en encontrar formas creativas de mejorar su experiencia de usuario. Esto puede implicar la creación de prototipos, probar diferentes diseños y proporcionar comentarios sobre lo que funciona mejor.",
-    "remark": "Según la descripción del producto, los objetivos del proyecto y la audiencia, proporcione sugerencias de diseño de interfaz para mejorar la experiencia del usuario."
+    "description": "Quiero que trabajes como desarrollador UX/UI. Te daré algunos detalles sobre el diseño de una aplicación, un sitio web u otro producto digital, y tu trabajo consistirá en idear formas creativas de mejorar su experiencia de usuario. Esto puede implicar la creación de prototipos, probar diferentes diseños y proporcionar comentarios sobre lo que funciona mejor.",
+    "remark": "Proporcionar recomendaciones de diseño de interfaz para mejorar la experiencia del usuario basándose en las descripciones de los productos, los objetivos del proyecto y los datos demográficos de la audiencia."
   },
   "fr": {
     "title": "Front-end : interface UX/UI",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Front-end: interfaccia UX/UI",
     "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia uno sviluppatore UX/UI. Fornirò alcuni dettagli di progettazione su un&#39;app, un sito Web o un altro prodotto digitale e il tuo compito sarà trovare modi creativi per migliorare la sua esperienza utente. Ciò può comportare la creazione di prototipi, il test di diversi progetti e il feedback su ciò che funziona meglio.",
-    "remark": "In base alla descrizione del prodotto, agli obiettivi del progetto e al pubblico, fornire suggerimenti per la progettazione dell&#39;interfaccia per migliorare l&#39;esperienza dell&#39;utente."
+    "description": "Voglio che tu lavori come sviluppatore UX/UI. Ti fornirò alcuni dettagli sul design di un'applicazione, di un sito web o di un altro prodotto digitale e il tuo compito sarà quello di trovare modi creativi per migliorare l'esperienza dell'utente. Ciò potrebbe comportare la creazione di prototipi, la sperimentazione di diversi design e la fornitura di feedback su ciò che funziona meglio.",
+    "remark": "Fornire raccomandazioni sulla progettazione dell'interfaccia per migliorare l'esperienza dell'utente in base alle descrizioni del prodotto, agli obiettivi del progetto e ai dati demografici del pubblico."
   },
   "ru": {
-    "title": "Интерфейс: UX/UI интерфейс",
+    "title": "Front-end: UX/UI интерфейс",
     "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы стали разработчиком UX/UI. Я предоставлю некоторые сведения о дизайне приложения, веб-сайта или другого цифрового продукта, а ваша работа будет заключаться в том, чтобы придумать творческие способы улучшить его взаимодействие с пользователем. Это может включать создание прототипов, тестирование различных дизайнов и предоставление отзывов о том, что работает лучше всего.",
-    "remark": "Основываясь на описании продукта, целях проекта и аудитории, предоставьте предложения по дизайну интерфейса, чтобы улучшить взаимодействие с пользователем."
+    "description": "Я хочу, чтобы вы работали в качестве UX/UI-разработчика. Я предоставлю некоторые детали дизайна приложения, веб-сайта или другого цифрового продукта, а ваша задача будет заключаться в том, чтобы придумать креативные способы улучшения его пользовательского опыта. Это может включать создание прототипов, тестирование различных дизайнов и предоставление отзывов о том, что работает лучше всего.",
+    "remark": "Предоставление рекомендаций по дизайну интерфейса для улучшения пользовательского опыта на основе описания продукта, целей проекта и демографических характеристик аудитории."
   },
   "pt": {
     "title": "Front-end: interface UX/UI",
     "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Quero que você seja um desenvolvedor de UX/UI. Fornecerei alguns detalhes de design sobre um aplicativo, site ou outro produto digital, e seu trabalho será encontrar maneiras criativas de melhorar a experiência do usuário. Isso pode envolver a criação de protótipos, testes de designs diferentes e feedback sobre o que funciona melhor.",
-    "remark": "Com base na descrição do produto, objetivos do projeto e público, forneça sugestões de design de interface para melhorar a experiência do usuário."
+    "description": "Quero que trabalhe como programador UX/UI. Fornecerei alguns detalhes sobre o design de uma aplicação, um sítio Web ou outro produto digital e a sua função será encontrar formas criativas de melhorar a experiência do utilizador. Isso pode envolver a criação de protótipos, o teste de diferentes designs e o fornecimento de feedback sobre o que funciona melhor.",
+    "remark": "Fornecer recomendações de design de interface para melhorar a experiência do utilizador com base em descrições de produtos, objectivos do projeto e dados demográficos do público."
   },
   "hi": {
     "title": "फ्रंट-एंड: यूएक्स/यूआई इंटरफ़ेस",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 92,
-  "weight": 307
+  "weight": 314
 };
 
 function PromptDetail() {

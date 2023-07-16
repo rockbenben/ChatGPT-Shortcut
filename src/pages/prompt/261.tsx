@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Puntos básicos de conocimiento",
     "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Spanish. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter..",
-    "description": "Para aprender [programación en Python] de manera eficiente, proporcione los puntos de conocimiento básicos en este campo, cubriendo el 20% superior del contenido importante. Estos conocimientos clave me proporcionarán una comprensión integral y una base sólida del 80 % del campo.",
-    "remark": "Antes de aprender un tema, primero comprenda sus puntos básicos de conocimiento. Contribución de @ScenerorSun."
+    "description": "Con el fin de aprender [programación python] de manera eficiente, por favor proporcione los puntos clave de conocimiento del campo, cubriendo el 20% del contenido en términos de importancia. Estos conocimientos clave me proporcionarán una comprensión profunda y una base sólida del 80% del contenido del campo.",
+    "remark": "Antes de estudiar una asignatura, comprende sus conocimientos básicos. Contribución de @ScenerorSun."
   },
   "fr": {
     "title": "Points de connaissance de base",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bevor man ein Fach studiert, sollte man sein Kernwissen verstehen. Beitrag von @ScenerorSun."
   },
   "it": {
-    "title": "Punti di conoscenza di base",
+    "title": "Punti di conoscenza fondamentali",
     "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Italian. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter...",
-    "description": "Per imparare [la programmazione Python] in modo efficiente, fornisci i punti di conoscenza di base in questo campo, coprendo il 20% superiore del contenuto importante. Queste conoscenze chiave mi forniranno una comprensione completa e una solida base dell&#39;80% del campo.",
-    "remark": "Prima di imparare una materia, prima capisci i suoi punti di conoscenza di base. Contributo di @SceneroSun."
+    "description": "Al fine di imparare [programmazione python] in modo efficiente, si prega di fornire le conoscenze fondamentali del campo, coprendo il 20% dei contenuti in termini di importanza. Queste conoscenze chiave mi forniranno una comprensione approfondita e solide basi dell'80% dei contenuti del campo.",
+    "remark": "Prima di studiare una materia, comprendi le sue conoscenze fondamentali. Contributo di @ScenerorSun."
   },
   "ru": {
-    "title": "Основные очки знаний",
+    "title": "Основные пункты знаний",
     "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Russian. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter...",
-    "description": "Чтобы эффективно изучать [программирование на Python], предоставьте основные знания в этой области, охватывающие 20 % наиболее важного контента. Эти ключевые знания дадут мне всестороннее понимание и прочную основу в 80% области.",
-    "remark": "Прежде чем изучать предмет, сначала поймите его основные точки знаний. Вклад от @ScenerorSun."
+    "description": "Для эффективного изучения [программирования на языке python], пожалуйста, предоставьте основные знания в этой области, охватывающие 20% содержания по степени важности. Эти ключевые знания обеспечат мне глубокое понимание и прочную основу 80% содержания данной области.",
+    "remark": "Прежде чем изучать предмет, поймите его суть. Материал предоставлен @ScenerorSun."
   },
   "pt": {
-    "title": "Pontos básicos de conhecimento",
+    "title": "Pontos de conhecimento básico",
     "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Portuguese. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter...",
-    "description": "Para aprender [programação python] com eficiência, forneça os principais pontos de conhecimento neste campo, cobrindo os 20% principais do conteúdo importante. Esses conhecimentos-chave me fornecerão uma compreensão abrangente e uma base sólida de 80% do campo.",
-    "remark": "Antes de aprender um assunto, primeiro entenda seus principais pontos de conhecimento. Contribuição de @ScenerorSun."
+    "description": "Para aprender [programação em python] de forma eficiente, indique os conhecimentos fundamentais da área, cobrindo os 20% mais importantes em termos de importância. Estes conhecimentos essenciais proporcionar-me-ão uma compreensão profunda e uma base sólida de 80% do conteúdo da área.",
+    "remark": "Antes de estudares uma matéria, compreende os seus conhecimentos fundamentais. Contribuição de @ScenerorSun."
   },
   "hi": {
     "title": "मूल ज्ञान बिंदु",
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 261,
-  "weight": 276
+  "weight": 286
 };
 
 function PromptDetail() {

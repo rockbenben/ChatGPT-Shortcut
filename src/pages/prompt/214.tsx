@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Asistente de informes de investigación",
     "prompt": "Please write a research report on a topic of [Topic]. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. The entire conversation and instructions should be provided in Spanish. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points..",
-    "description": "Escriba un informe de investigación de [Tema de informe] de acuerdo con los siguientes consejos. Usted es libre de usar su área de investigación, pero asegúrese de que su informe tenga las siguientes características: 1. tiene una declaración clara del problema y el propósito de la investigación, 2. contiene un análisis y una revisión exhaustivos de la literatura y los datos existentes, 3. usa los 4 apropiados Proporcionar conclusiones y recomendaciones precisas para responder preguntas de investigación y abordar los objetivos de la investigación.",
-    "remark": "De acuerdo con la sustitución de diferentes tipos, para producir un informe de investigación que se adapte a sus necesidades. Contribución de @b3ue."
+    "description": "Redacte un informe de investigación [Tema del informe] basado en las siguientes indicaciones. Puede hacerlo libremente según su área de investigación, pero asegúrese de que su informe presenta las siguientes características: 1. tiene un planteamiento del problema y unos objetivos de investigación claros; 2. contiene un análisis y una síntesis exhaustivos de la bibliografía y los datos existentes; 3. utiliza métodos y técnicas adecuados para la recopilación y el análisis de datos; y 4. ofrece conclusiones y recomendaciones precisas para responder a las preguntas de investigación y abordar los objetivos de investigación.",
+    "remark": "En función del tipo de sustitución para elaborar un informe de investigación que se adapte a sus necesidades. Contribución de @b3ue."
   },
   "fr": {
     "title": "Assistant au rapport de recherche",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Abhängig von der Art der Ersetzung, um einen Forschungsbericht zu erstellen, der Ihren Bedürfnissen entspricht. Beitrag von @b3ue."
   },
   "it": {
-    "title": "Assistente ai rapporti di ricerca",
+    "title": "Assistente per i rapporti di ricerca",
     "prompt": "Please write a research report on a topic of [Topic]. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. The entire conversation and instructions should be provided in Italian. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points...",
-    "description": "Si prega di scrivere un rapporto di ricerca [Segnala argomento] secondo i seguenti suggerimenti. Siete liberi di utilizzare la vostra area di ricerca, ma assicuratevi che il vostro rapporto abbia le seguenti caratteristiche: 1. abbia una chiara definizione del problema e uno scopo di ricerca; 2. contenga un&#39;analisi completa e una revisione della letteratura e dei dati esistenti; 3. usi appropriati 4 Fornire conclusioni e raccomandazioni accurate per rispondere alle domande della ricerca e indirizzare gli obiettivi della ricerca.",
-    "remark": "In base alla sostituzione di diversi tipi, per produrre un rapporto di ricerca adatto alle tue esigenze. Contributo di @b3ue."
+    "description": "Scrivete una relazione di ricerca [argomento della relazione] basata sui seguenti suggerimenti. Siete liberi di farlo in base alla vostra area di ricerca, ma assicuratevi che il vostro rapporto abbia le seguenti caratteristiche: 1. abbia una chiara dichiarazione del problema e degli obiettivi di ricerca; 2. contenga un'analisi e una sintesi completa della letteratura e dei dati esistenti; 3. utilizzi metodi e tecniche appropriate per la raccolta e l'analisi dei dati; 4. fornisca conclusioni e raccomandazioni accurate per rispondere alle domande di ricerca e affrontare gli obiettivi di ricerca.",
+    "remark": "A seconda del tipo di sostituzione, per produrre un rapporto di ricerca adatto alle vostre esigenze. Contributo di @b3ue."
   },
   "ru": {
-    "title": "Помощник по исследовательскому отчету",
+    "title": "Ассистент по подготовке исследовательских отчетов",
     "prompt": "Please write a research report on a topic of [Topic]. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. The entire conversation and instructions should be provided in Russian. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points...",
-    "description": "Пожалуйста, напишите исследовательский отчет [Report Topic] в соответствии со следующими советами. Вы можете свободно использовать свою область исследования, но, пожалуйста, убедитесь, что ваш отчет имеет следующие характеристики: 1. имеет четкую постановку проблемы и цель исследования, 2. содержит всесторонний анализ и обзор существующей литературы и данных, 3. использует соответствующие 4 , Предоставьте точные выводы и рекомендации, чтобы ответить на вопросы исследования и решить задачи исследования.",
-    "remark": "Согласно замене различных типов, чтобы подготовить исследовательский отчет, который соответствует вашим потребностям. Вклад от @b3ue."
+    "description": "Напишите, пожалуйста, исследовательский отчет [Тема отчета], основываясь на следующих предложениях. Вы можете сделать это в соответствии со своей областью исследований, но, пожалуйста, убедитесь, что Ваш отчет обладает следующими характеристиками: 1. имеет четкую постановку проблемы и цели исследования; 2. содержит всесторонний анализ и синтез существующей литературы и данных; 3. использует соответствующие методы и приемы сбора и анализа данных; 4. содержит точные выводы и рекомендации для ответа на вопросы исследования и решения поставленных задач.",
+    "remark": "В зависимости от типа замены для подготовки исследовательского отчета, который соответствует вашим потребностям. Вклад от @b3ue."
   },
   "pt": {
-    "title": "Assistente de relatório de pesquisa",
+    "title": "Assistente de relatório de investigação",
     "prompt": "Please write a research report on a topic of [Topic]. Ensure that your report includes the following features:\n\n1. A clear problem statement and research objective;\n2. A comprehensive analysis and review of existing literature and data;\n3. The use of appropriate methods and techniques for data collection and analysis;\n4. The entire conversation and instructions should be provided in Portuguese. Accurate conclusions and recommendations to answer the research question and address the research objective.\n\nPlease keep the report concise and well-structured, using relevant examples to illustrate your points...",
-    "description": "Por favor, escreva um relatório de pesquisa [Report Topic] de acordo com as dicas a seguir. Você é livre para usar sua área de pesquisa, mas certifique-se de que seu relatório tenha as seguintes características: 1. tenha uma declaração clara do problema e propósito de pesquisa; 2. contenha uma análise abrangente e revisão da literatura e dados existentes; 3. use apropriadamente 4 .Fornecer conclusões precisas e recomendações para responder a perguntas de pesquisa e abordar os objetivos da pesquisa.",
-    "remark": "De acordo com a substituição de diferentes tipos, para produzir um relatório de pesquisa que atenda às suas necessidades. Contribuição de @b3ue."
+    "description": "Escreva um relatório de investigação [Tema do relatório] com base nas seguintes sugestões. É livre de o fazer de acordo com a sua área de investigação, mas certifique-se de que o seu relatório tem as seguintes características: 1. tem uma declaração clara do problema e objectivos de investigação; 2. contém uma análise e síntese abrangentes da literatura e dos dados existentes; 3. utiliza métodos e técnicas adequados para a recolha e análise de dados; e 4. apresenta conclusões e recomendações precisas para responder às questões de investigação e abordar os objectivos de investigação.",
+    "remark": "Em função do tipo de substituição, para elaborar um relatório de investigação adaptado às suas necessidades. Contribuição de @b3ue."
   },
   "hi": {
     "title": "अनुसंधान रिपोर्ट सहायक",
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 214,
-  "weight": 2682
+  "weight": 2730
 };
 
 function PromptDetail() {

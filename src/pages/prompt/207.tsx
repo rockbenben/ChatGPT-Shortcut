@@ -26,10 +26,10 @@ const prompt = {
     "remark": "이해할 수 없는 대화의 경우 AI 가 적절한 답변을 해석하고 공식화할 수 있도록 대화에 대한 컨텍스트를 제공하세요."
   },
   "es": {
-    "title": "lectura de aire",
+    "title": "Aire de lectura",
     "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Spanish. What could be the other person's intention? How should I respond?.",
-    "description": "Sucedió [algo específico/antecedentes], y alguien me dijo: [contenido]. ¿Puedo preguntar qué podría querer expresar la otra parte? ¿Cómo responderías?",
-    "remark": "Para algunos diálogos incomprensibles, proporcione el contexto del diálogo para que AI interprete y formule respuestas apropiadas."
+    "description": "Sucedió [algo/contexto concreto] y alguien me dijo: [contenido]. ¿Qué podría estar intentando decir esa persona? ¿Cómo responderías?",
+    "remark": "Para algunos diálogos ininteligibles, proporcione el contexto del diálogo para que la IA lo interprete y formule una respuesta adecuada."
   },
   "fr": {
     "title": "Lire l'air",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bei unverständlichen Dialogen geben Sie den Kontext des Dialogs an, damit die KI ihn interpretieren und eine angemessene Antwort formulieren kann."
   },
   "it": {
-    "title": "aria di lettura",
+    "title": "Aria di lettura",
     "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Italian. What could be the other person's intention? How should I respond?..",
-    "description": "[è successo qualcosa di specifico/background] e qualcuno mi ha detto: [contenuto]. Posso chiedere cosa potrebbe voler esprimere l&#39;altra parte? Come risponderesti?",
-    "remark": "Per alcuni dialoghi incomprensibili, fornire lo sfondo del dialogo affinché l&#39;IA possa interpretare e formulare risposte appropriate."
+    "description": "È successo [una cosa/contesto specifico] e qualcuno mi ha detto: [contenuto]. Cosa potrebbe cercare di dire la persona? Come rispondereste?",
+    "remark": "Per alcuni dialoghi incomprensibili, fornire il contesto del dialogo affinché l'IA possa interpretarlo e formulare una risposta appropriata."
   },
   "ru": {
-    "title": "чтение воздуха",
+    "title": "Читательский воздух",
     "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Russian. What could be the other person's intention? How should I respond?..",
-    "description": "[что-то конкретное/предыстория] произошло, и кто-то сказал мне: [содержание]. Могу я спросить, что другая сторона хотела бы выразить? Как бы вы ответили?",
-    "remark": "Для некоторых непонятных диалогов предоставьте ИИ фон диалога, чтобы он интерпретировал и сформулировал соответствующие ответы."
+    "description": "Произошло [конкретное событие/контекст], и кто-то сказал мне: [содержание]. Что этот человек хотел сказать? Как бы Вы отреагировали?",
+    "remark": "Для некоторых неразборчивых диалогов следует предоставить контекст диалога, чтобы ИИ мог интерпретировать его и сформулировать соответствующую реакцию."
   },
   "pt": {
-    "title": "lendo o ar",
+    "title": "Leitura do ar",
     "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Portuguese. What could be the other person's intention? How should I respond?..",
-    "description": "[algo específico/background] aconteceu, e alguém me disse: [conteúdo]. Posso perguntar o que a outra parte pode querer expressar? Como você responderia?",
-    "remark": "Para alguns diálogos incompreensíveis, forneça o pano de fundo do diálogo para a IA interpretar e formular respostas apropriadas."
+    "description": "Aconteceu [uma coisa/contexto específico] e alguém me disse: [conteúdo]. O que é que a pessoa poderia estar a tentar dizer? Como é que responderia?",
+    "remark": "Para alguns diálogos ininteligíveis, fornecer o contexto do diálogo para que a IA o interprete e formule uma resposta adequada."
   },
   "hi": {
     "title": "हवा पढ़ना",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 207,
-  "weight": 294
+  "weight": 299
 };
 
 function PromptDetail() {

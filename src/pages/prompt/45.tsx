@@ -26,10 +26,10 @@ const prompt = {
     "remark": "예산과 선호도에 따라 구매에 대한 조언을 제공합니다."
   },
   "es": {
-    "title": "consejos de compras",
+    "title": "Consejos de compra",
     "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas mi asesor personal de compras. Te diré mi presupuesto y preferencias, y me sugerirás artículos para comprar. Solo debe responder con los artículos que recomienda, y nada más. No escribas explicaciones.",
-    "remark": "Proporcionar recomendaciones de compra basadas en el presupuesto y las preferencias."
+    "description": "Quiero que seas mi asesor personal de compras. Te diré mi presupuesto y mis preferencias y tú me sugerirás artículos para comprar. Sólo debes responder a los artículos que me recomiendes y nada más. No escriba explicaciones.",
+    "remark": "Asesoramiento de compra en función del presupuesto y las preferencias."
   },
   "fr": {
     "title": "Conseils d'achat",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Kaufberatung auf der Grundlage von Budget und Vorlieben."
   },
   "it": {
-    "title": "consiglio per gli acquisti",
+    "title": "Consigli per gli acquisti",
     "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia il mio consulente personale per gli acquisti. Ti dirò il mio budget e le mie preferenze e mi suggerirai gli articoli da acquistare. Dovresti rispondere solo con gli elementi che consigli e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Fornire consigli di acquisto in base al budget e alle preferenze."
+    "description": "Vorrei che lei agisse come mio consulente personale per lo shopping. Le dirò il mio budget e le mie preferenze e lei mi suggerirà gli articoli da acquistare. Dovete rispondere solo agli articoli che mi consigliate e nient'altro. Non scrivete spiegazioni.",
+    "remark": "Consigli per gli acquisti in base al budget e alle preferenze."
   },
   "ru": {
-    "title": "совет по покупкам",
+    "title": "Советы покупателям",
     "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был моим личным консультантом по покупкам. Я расскажу вам о своем бюджете и предпочтениях, а вы предложите мне что-то купить. Вы должны отвечать только теми вещами, которые вы рекомендуете, и никак иначе. Не пишите пояснений.",
-    "remark": "Предоставление рекомендаций по покупке на основе бюджета и предпочтений."
+    "description": "Я бы хотела, чтобы Вы выступили в роли моего личного консультанта по покупкам. Я расскажу Вам о своем бюджете и предпочтениях, а Вы предложите мне товары для покупки. Вы должны ответить только на те товары, которые Вы рекомендуете, и ни на какие другие. Не пишите пояснений.",
+    "remark": "Консультации по вопросам покупки с учетом бюджета и предпочтений."
   },
   "pt": {
-    "title": "conselhos de compras",
+    "title": "Conselhos de compras",
     "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Quero que você seja meu consultor de compras pessoal. Direi a você meu orçamento e preferências, e você sugerirá itens para eu comprar. Você só deve responder com itens que recomenda e nada mais. Não escreva explicações.",
-    "remark": "Forneça recomendações de compra com base no orçamento e nas preferências."
+    "description": "Gostaria que fosse o meu consultor pessoal de compras. Eu digo-te o meu orçamento e as minhas preferências e tu sugeres-me artigos para comprar. Só deve responder aos artigos que recomendar e nada mais. Não escreva explicações.",
+    "remark": "Conselhos de compra em função do orçamento e das preferências."
   },
   "hi": {
     "title": "खरीदारी संबंधी सलाह",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 45,
-  "weight": 318
+  "weight": 327
 };
 
 function PromptDetail() {

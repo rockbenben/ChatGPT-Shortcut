@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Sugerencias de nombres de funciones",
     "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Spanish. The English name should be in camel case format..",
-    "description": "Estoy buscando sugerencias de nombres en inglés y chino que se ajusten mucho a la descripción que he proporcionado. Como lingüista bilingüe, ayúdame a generar nombres propios en ambos idiomas. Los nombres en inglés deben estar en formato camello.",
-    "remark": "Adecuado para la programación de variables y descripción general de nombres. Contribución de @SuperMuscleMan."
+    "description": "Busco sugerencias de nombres en inglés y chino que se ajusten a la descripción que he proporcionado. Como lingüista bilingüe, por favor ayúdeme a generar nombres apropiados en ambos idiomas. El nombre en inglés debe tener formato de letra de camello.",
+    "remark": "Se aplica a las variables de programación y describe la nomenclatura de las descripciones. Contribución de @SuperMuscleMan."
   },
   "fr": {
     "title": "Suggestions de noms de fonctions",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Gilt für die Programmierung von Variablen und umreißt die Benennung von Beschreibungen. Beitrag von @SuperMuscleMan."
   },
   "it": {
-    "title": "Suggerimenti per la denominazione delle funzioni",
+    "title": "Suggerimenti sui nomi delle funzioni",
     "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Italian. The English name should be in camel case format...",
-    "description": "Sto cercando suggerimenti per nomi inglesi e cinesi che si adattino perfettamente alla descrizione che ho fornito. In qualità di linguista bilingue, aiutami a generare nomi propri in entrambe le lingue. I nomi inglesi dovrebbero essere in formato cammello.",
-    "remark": "Adatto per la programmazione di variabili e la denominazione della descrizione panoramica. Contributo di @SuperMuscleMan."
+    "description": "Sono alla ricerca di suggerimenti per nomi inglesi e cinesi che siano altamente adatti alla descrizione che ho fornito. In qualità di linguista bilingue, vi prego di aiutarmi a generare nomi appropriati in entrambe le lingue. Il nome inglese dovrebbe essere in formato lettera di cammello.",
+    "remark": "Si applica alle variabili di programmazione e delinea la denominazione delle descrizioni. Contributo di @SuperMuscleMan."
   },
   "ru": {
-    "title": "Предложения по именованию функций",
+    "title": "Предложения по наименованию функций",
     "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Russian. The English name should be in camel case format...",
-    "description": "Я ищу предложения для английских и китайских имен, которые бы точно соответствовали описанию, которое я предоставил. Как двуязычный лингвист, пожалуйста, помогите мне составить имена собственные на обоих языках. Английские имена должны быть в формате верблюда.",
-    "remark": "Подходит для программирования переменных и именования обзорных описаний. Вклад от @SuperMuscleMan."
+    "description": "Мне нужны предложения по английским и китайским именам, которые в наибольшей степени соответствуют представленному мной описанию. Как лингвист, владеющий двумя языками, прошу помочь мне подобрать подходящие имена на обоих языках. Английское имя должно быть написано в формате camel letter.",
+    "remark": "Применяется для программирования переменных и описывает именование описаний. Вклад от @SuperMuscleMan."
   },
   "pt": {
-    "title": "Sugestões de nomes de recursos",
+    "title": "Sugestões de nomes de funções",
     "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Portuguese. The English name should be in camel case format...",
-    "description": "Estou procurando sugestões de nomes em inglês e chinês que se encaixem perfeitamente na descrição que forneci. Como linguista bilíngue, ajude-me a gerar nomes próprios nos dois idiomas. Os nomes em inglês devem estar no formato camel.",
-    "remark": "Adequado para variáveis de programação e nomenclatura de descrição geral. Contribuição de @SuperMuscleMan."
+    "description": "Estou à procura de sugestões de nomes ingleses e chineses que sejam altamente adequados à descrição que forneci. Como linguista bilingue, ajude-me a criar nomes adequados em ambas as línguas. O nome em inglês deve ser em formato de letra de camelo.",
+    "remark": "Aplica-se a variáveis de programação e descreve a nomeação de descrições. Contribuição de @SuperMuscleMan."
   },
   "hi": {
     "title": "फ़ीचर नामकरण सुझाव",
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 244,
-  "weight": 234
+  "weight": 236
 };
 
 function PromptDetail() {

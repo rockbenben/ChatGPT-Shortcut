@@ -26,10 +26,10 @@ const prompt = {
     "remark": "고모쿠 플레이어"
   },
   "es": {
-    "title": "chaquete",
+    "title": "backgammon",
     "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Spanish. Now make the first move..",
-    "description": "Juguemos al backgammon. El objetivo de este juego es conseguir 5 en raya (horizontal, vertical o diagonal) en un tablero de 9x9. Imprima el tablero de ajedrez (eje ABCDEFGHI/123456789) después de cada movimiento (x y o para movimientos, - para espacios en blanco). Tú y yo nos turnamos para jugar al ajedrez, es decir, jugar el tuyo después de cada una de mis jugadas. No puede colocar peones encima de otros peones. No modifique el tablero original antes de jugar al ajedrez. Ahora juega el primer movimiento.",
-    "remark": "jugador gomoku"
+    "description": "Vamos a jugar al Backgammon. El objetivo de este juego es conseguir 5 en fila (horizontal, vertical o diagonalmente) en un tablero de 9x9. Imprime el tablero (en el eje ABCDEFGHI/123456789) después de cada jugada (con x y o para las jugadas, - para el espacio en blanco). Tú y yo nos turnamos, es decir, juegas tu jugada después de cada una de las mías. No puedes colocar un disco encima de otro. No modifiques el tablero original antes de jugar. Ahora haz tu primer movimiento.",
+    "remark": "Jugador de Gomoku"
   },
   "fr": {
     "title": "backgammon",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "backgammon",
     "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Italian. Now make the first move...",
-    "description": "Giochiamo a backgammon. L&#39;obiettivo di questo gioco è ottenere 5 di fila (orizzontalmente, verticalmente o diagonalmente) su una tavola 9x9. Stampa la scacchiera (asse ABCDEFGHI/123456789) dopo ogni mossa (x e o per le mosse, - per gli spazi). Io e te giochiamo a turno a scacchi, cioè giochiamo i tuoi dopo ogni mia mossa. Non puoi posizionare pedine sopra altre pedine. Non modificare la scacchiera originale prima di giocare a scacchi. Ora gioca la prima mossa.",
-    "remark": "Giocatore di gomoku"
+    "description": "Giochiamo a Backgammon. L'obiettivo di questo gioco è di ottenere 5 in fila (in orizzontale, in verticale o in diagonale) su una tavola 9x9. Stampate il tabellone (sull'asse ABCDEFGHI/123456789) dopo ogni mossa (con x e o per le mosse, - per il vuoto). Io e voi ci alterniamo, cioè giocate la vostra mossa dopo ogni mia. Non si può mettere un disco sopra un altro disco. Non modificate il tabellone originale prima di giocare. Ora fate la vostra prima mossa.",
+    "remark": "Giocatore di Gomoku"
   },
   "ru": {
     "title": "нарды",
     "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Russian. Now make the first move...",
-    "description": "Давайте играть в нарды. Цель этой игры состоит в том, чтобы собрать 5 фишек в ряд (по горизонтали, вертикали или диагонали) на доске 9x9. Распечатайте шахматную доску (ось ABCDEFGHI/123456789) после каждого хода (x и o для ходов, - для пробелов). Мы с тобой по очереди играем в шахматы, то есть играем в твои после каждого моего хода. Вы не можете ставить пешки поверх других пешек. Не изменяйте исходную доску перед игрой в шахматы. Теперь сыграйте первый ход.",
-    "remark": "игрок в гомоку"
+    "description": "Давайте поиграем в нарды. Цель этой игры - собрать на доске 9x9 5 фигур в ряд (по горизонтали, вертикали или диагонали). Распечатайте доску (на оси ABCDEFGHI/123456789) после каждого хода (символами x и o обозначены ходы, - - пробел). Мы с Вами ходим по очереди, т.е. после каждого моего хода играете свой. Нельзя класть диск на другой диск. Не изменяйте исходную доску перед игрой. Теперь сделайте свой первый ход.",
+    "remark": "Игрок в гомоку"
   },
   "pt": {
     "title": "gamão",
     "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Portuguese. Now make the first move...",
-    "description": "Vamos jogar gamão. O objetivo deste jogo é conseguir 5 em linha (horizontalmente, verticalmente ou diagonalmente) em um tabuleiro de 9x9. Imprima o tabuleiro de damas (eixo ABCDEFGHI/123456789) após cada jogada (x e o para jogadas, - para espaços em branco). Você e eu nos revezamos jogando xadrez, ou seja, jogando o seu depois de cada uma das minhas jogadas. Você não pode colocar peões em cima de outros peões. Não modifique o tabuleiro original antes de jogar xadrez. Agora jogue o primeiro movimento.",
-    "remark": "Gomoku jogador"
+    "description": "Vamos jogar Gamão. O objetivo deste jogo é obter 5 cartas seguidas (na horizontal, na vertical ou na diagonal) num tabuleiro 9x9. Imprime o tabuleiro (no eixo ABCDEFGHI/123456789) depois de cada jogada (com x e o para as jogadas, - para o espaço em branco). Eu e tu jogamos à vez, ou seja, fazes a tua jogada depois de cada uma das minhas. Não podes colocar um disco em cima de outro disco. Não alteres o tabuleiro original antes de jogares. Agora faz a tua primeira jogada.",
+    "remark": "Jogador de Gomoku"
   },
   "hi": {
     "title": "चौसर",
@@ -84,7 +84,7 @@ const prompt = {
     "games"
   ],
   "id": 122,
-  "weight": 2047
+  "weight": 2074
 };
 
 function PromptDetail() {

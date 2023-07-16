@@ -35,8 +35,13 @@ import {
   AuthContext,
   AuthProvider,
 } from "@site/src/pages/_components/AuthContext";
-import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import { fetchAllCopyCounts } from "@site/src/api";
+// import ShareButtons from "@site/src/pages/_components/ShareButtons";
+import Loadable from "@docusaurus/react-loadable";
+const ShareButtons = Loadable({
+  loader: () => import("@site/src/pages/_components/ShareButtons"),
+  loading: () => <div>Loading ShareButtons...</div>,
+});
 
 import styles from "@site/src/pages/styles.module.css";
 
@@ -276,13 +281,13 @@ function ShowcaseFilters({ onToggleDescription }) {
             </li>
           );
         })}
-        <Link to='/community-prompts'>
-          <li className={styles.checkboxListItem}>
-            <ShowcaseTooltip
-              text={translate({
-                message: "分享到社区的提示词",
-              })}
-              anchorEl='#__docusaurus'>
+        <li className={styles.checkboxListItem}>
+          <ShowcaseTooltip
+            text={translate({
+              message: "分享到社区的提示词",
+            })}
+            anchorEl='#__docusaurus'>
+            <Link to='/community-prompts'>
               <ShowcaseTagSelect
                 tag='communityprompt'
                 label={translate({
@@ -300,9 +305,9 @@ function ShowcaseFilters({ onToggleDescription }) {
                   />
                 }
               />
-            </ShowcaseTooltip>
-          </li>
-        </Link>
+            </Link>
+          </ShowcaseTooltip>
+        </li>
       </ul>
       {showUserPrompts && <UserPrompts />}
     </section>

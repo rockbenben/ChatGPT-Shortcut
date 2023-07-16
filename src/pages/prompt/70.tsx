@@ -26,10 +26,10 @@ const prompt = {
     "remark": "현재 상황과 목표에 따라 목표 달성을 위한 계획과 권장 사항을 제공합니다."
   },
   "es": {
-    "title": "Entrenador vital",
+    "title": "coach de vida",
     "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un entrenador de vida. Proporcionaré algunos detalles sobre mi situación actual y mis objetivos, y su trabajo es idear estrategias que me ayuden a tomar mejores decisiones y alcanzar esos objetivos. Esto puede implicar dar consejos sobre una variedad de temas, como desarrollar un plan para lograr el éxito o lidiar con emociones difíciles.",
-    "remark": "Con base en la situación actual y los objetivos, proporcione planes y sugerencias para lograr los objetivos."
+    "description": "Quiero que actúes como coach de vida. Te daré algunos detalles sobre mi situación actual y mis objetivos, y tu trabajo consistirá en idear estrategias que me ayuden a tomar mejores decisiones y alcanzar esos objetivos. Esto puede implicar dar consejos sobre diversos temas, como elaborar un plan para alcanzar el éxito o afrontar emociones difíciles.",
+    "remark": "Proporcionar planes y recomendaciones para alcanzar las metas basándose en las condiciones y objetivos actuales."
   },
   "fr": {
     "title": "coach de vie",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erstellung von Plänen und Empfehlungen zur Erreichung der Ziele auf der Grundlage der aktuellen Bedingungen und Ziele."
   },
   "it": {
-    "title": "maestro di vita",
+    "title": "life coach",
     "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia da life coach. Fornirò alcuni dettagli sulla mia situazione attuale e sui miei obiettivi, e il tuo compito è elaborare strategie che mi aiutino a prendere decisioni migliori e raggiungere tali obiettivi. Ciò può comportare dare consigli su una varietà di argomenti, come lo sviluppo di un piano per raggiungere il successo o affrontare emozioni difficili.",
-    "remark": "Sulla base della situazione e degli obiettivi attuali, fornire piani e suggerimenti per raggiungere gli obiettivi."
+    "description": "Voglio che lei agisca come life coach. Le fornirò alcuni dettagli sulla mia situazione attuale e sui miei obiettivi, e il suo compito sarà quello di elaborare strategie che mi aiutino a prendere decisioni migliori e a raggiungere tali obiettivi. Ciò può comportare la fornitura di consigli su una serie di argomenti, come lo sviluppo di un piano per raggiungere il successo o la gestione di emozioni difficili.",
+    "remark": "Fornire piani e raccomandazioni per raggiungere gli obiettivi sulla base delle condizioni attuali e degli obiettivi."
   },
   "ru": {
-    "title": "тренер по жизни",
+    "title": "лайф-коуч",
     "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли лайф-коуча. Я предоставлю некоторые подробности о своей текущей ситуации и целях, а ваша задача — придумать стратегии, которые помогут мне принимать более правильные решения и достигать этих целей. Это может включать в себя предоставление советов по различным темам, таким как разработка плана достижения успеха или преодоление сложных эмоций.",
-    "remark": "Исходя из текущей ситуации и целей, предоставьте планы и предложения по достижению целей."
+    "description": "Я хочу, чтобы вы выступили в роли лайф-коуча. Я расскажу о своей текущей ситуации и целях, а Вы должны будете разработать стратегии, которые помогут мне принимать более правильные решения и достигать поставленных целей. Это может включать в себя консультирование по различным вопросам, таким как разработка плана достижения успеха или работа с трудными эмоциями.",
+    "remark": "Предоставление планов и рекомендаций по достижению целей, исходя из текущих условий и задач."
   },
   "pt": {
     "title": "treinador de vida",
     "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um treinador de vida. Fornecerei alguns detalhes sobre minha situação atual e meus objetivos, e seu trabalho é criar estratégias que me ajudem a tomar melhores decisões e atingir esses objetivos. Isso pode envolver dar conselhos sobre uma variedade de tópicos, como desenvolver um plano para alcançar o sucesso ou lidar com emoções difíceis.",
-    "remark": "Com base na situação atual e nas metas, forneça planos e sugestões para atingir as metas."
+    "description": "Quero que actue como um orientador de vida. Fornecerei alguns pormenores sobre a minha situação atual e os meus objectivos e caberá a si apresentar estratégias que me ajudem a tomar melhores decisões e a atingir esses objectivos. Isto pode implicar dar conselhos sobre uma variedade de tópicos, tais como desenvolver um plano para alcançar o sucesso ou lidar com emoções difíceis.",
+    "remark": "Fornecer planos e recomendações para atingir as metas com base nas condições e objectivos actuais."
   },
   "hi": {
     "title": "जीवन का कोच",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 70,
-  "weight": 246
+  "weight": 250
 };
 
 function PromptDetail() {

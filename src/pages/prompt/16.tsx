@@ -26,10 +26,10 @@ const prompt = {
     "remark": "설정, 캐릭터 및 대사가 포함된 테마를 기반으로 스크립트를 만듭니다."
   },
   "es": {
-    "title": "guionista",
+    "title": "cinematógrafo",
     "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas guionista. Desarrollarás un guión innovador para un largometraje o serie web que cautivará al público. Comience por pensar en personajes interesantes, el trasfondo de la historia, el diálogo entre los personajes, etc. Una vez que se complete el desarrollo de su personaje, cree una historia emocionante, llena de giros y vueltas, que mantendrá a la audiencia en suspenso hasta el final. Mi primera solicitud es &#39;tema de script&#39;",
-    "remark": "Cree un guión que incluya antecedentes, personajes y diálogos basados en el tema."
+    "description": "Quiero que trabajes como guionista. Desarrollarás un guión creativo para un largometraje o una serie web que atraiga al público. Empieza por idear personajes interesantes, el escenario de la historia, el diálogo entre los personajes, etc. Una vez que hayas desarrollado los personajes, crea un argumento emocionante lleno de giros y sorpresas que mantenga al público en vilo hasta el final. Mi primer requisito es \"el tema del guión\".",
+    "remark": "Crea un guión basado en el tema que incluya el escenario, los personajes y el diálogo."
   },
   "fr": {
     "title": "directeur de la photographie",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erstellen Sie ein Skript zum Thema, das den Schauplatz, die Figuren und den Dialog enthält."
   },
   "it": {
-    "title": "sceneggiatore",
+    "title": "direttore della fotografia",
     "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu diventi uno sceneggiatore. Svilupperai una sceneggiatura innovativa per un lungometraggio o una serie web che affascinerà il pubblico. Inizia inventando personaggi interessanti, lo sfondo della storia, il dialogo tra i personaggi, ecc. Una volta completato lo sviluppo del tuo personaggio, crea una trama emozionante, piena di colpi di scena, che manterrà il pubblico con il fiato sospeso fino alla fine. La mia prima richiesta è &quot;tema script&quot;",
-    "remark": "Crea una sceneggiatura che includa background, personaggi e dialoghi basati sul tema."
+    "description": "Voglio che tu lavori come sceneggiatore. Dovrai sviluppare una sceneggiatura creativa per un lungometraggio o una serie web che sia interessante per il pubblico. Iniziate con l'ideazione di personaggi interessanti, l'ambientazione della storia, i dialoghi tra i personaggi, ecc. Una volta completato lo sviluppo dei personaggi, create una trama emozionante e ricca di colpi di scena che tenga il pubblico con il fiato sospeso fino alla fine. Il mio primo requisito è \"il tema della sceneggiatura\".",
+    "remark": "Creare una sceneggiatura basata sul tema che includa l'ambientazione, i personaggi e il dialogo."
   },
   "ru": {
-    "title": "сценарист",
+    "title": "кинематографист",
     "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты стал сценаристом. Вы разработаете инновационный сценарий полнометражного фильма или веб-сериала, который покорит зрителей. Начните с придумывания интересных персонажей, предыстории истории, диалогов между персонажами и т. д. Как только развитие вашего персонажа будет завершено, создайте захватывающую сюжетную линию, полную поворотов и поворотов, которая будет держать зрителей в напряжении до самого конца. Мой первый запрос — «тема сценария».",
-    "remark": "Создайте сценарий, включающий фон, персонажей и диалоги на основе темы."
+    "description": "Я хочу, чтобы вы работали сценаристом. Вам предстоит разработать креативный сценарий для художественного фильма или веб-сериала, который будет интересен аудитории. Начните с придумывания интересных персонажей, места действия, диалогов между героями и т.д. После завершения разработки персонажей создайте захватывающую сюжетную линию, полную поворотов, которая будет держать зрителей в напряжении до самого конца. Мое первое требование - \"тема сценария\".",
+    "remark": "Создать сценарий по теме, включающий обстановку, персонажей и диалог."
   },
   "pt": {
-    "title": "roteirista",
+    "title": "diretor de fotografia",
     "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um roteirista. Você desenvolverá um roteiro inovador para um longa-metragem ou série da web que cativará o público. Comece criando personagens interessantes, o pano de fundo da história, o diálogo entre os personagens, etc. Assim que o desenvolvimento do seu personagem estiver completo - crie um enredo emocionante, cheio de reviravoltas, que manterá o público em suspense até o fim. Meu primeiro pedido é &#39;tema do script&#39;",
-    "remark": "Crie um roteiro que inclua fundo, personagens e diálogos baseados no tema."
+    "description": "Quero que trabalhe como argumentista. Vais desenvolver um guião criativo para uma longa-metragem ou uma série na Web que atraia um público. Comece por criar personagens interessantes, o cenário da história, o diálogo entre as personagens, etc. Quando o desenvolvimento das personagens estiver concluído, cria uma história emocionante, cheia de reviravoltas, que mantenha o público em suspense até ao fim. O meu primeiro requisito é \"o tema do guião",
+    "remark": "Criar um guião baseado no tema que inclua o cenário, as personagens e o diálogo."
   },
   "hi": {
     "title": "पटकथा लेखक",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 16,
-  "weight": 1091
+  "weight": 1115
 };
 
 function PromptDetail() {

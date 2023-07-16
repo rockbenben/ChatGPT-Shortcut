@@ -26,10 +26,10 @@ const prompt = {
     "remark": "텍스트의 분위기 판단: 긍정, 중립 또는 부정."
   },
   "es": {
-    "title": "Análisis de sentimiento de texto",
+    "title": "Análisis del sentimiento del texto",
     "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Spanish. Generate the results in column, including the titles in the first one, and their sentiment in the second: .",
-    "description": "Especifica la opinión de los siguientes encabezados, dándoles un valor: positivo, neutral o negativo. Genera una columna de resultados, incluido el título en la primera columna y el sentimiento en la segunda columna: [contenido].",
-    "remark": "Determine el sentimiento del texto: positivo, neutral o negativo."
+    "description": "Especifica los sentimientos para los siguientes títulos, asignándoles los valores: positivo, neutro o negativo. Genera una columna de resultados con los títulos en la primera columna y los sentimientos en la segunda columna: [contenido] .",
+    "remark": "Juzga el estado de ánimo del texto: positivo, neutro o negativo."
   },
   "fr": {
     "title": "Analyse des sentiments dans le texte",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Analisi del sentimento del testo",
     "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Italian. Generate the results in column, including the titles in the first one, and their sentiment in the second: ..",
-    "description": "Specifica il sentimento per le seguenti intestazioni, assegnando loro un valore: positivo, neutro o negativo. Genera una colonna di risultati, incluso il titolo nella prima colonna e il sentimento nella seconda colonna: [contenuto].",
-    "remark": "Giudica il sentimento del testo: positivo, neutro o negativo."
+    "description": "Specifica i sentimenti per le seguenti voci, assegnando loro i valori: positivo, neutro o negativo. Genera una colonna di risultati con i titoli nella prima colonna e i sentimenti nella seconda colonna: [content] .",
+    "remark": "Giudicare l'umore del testo: positivo, neutro o negativo."
   },
   "ru": {
-    "title": "Анализ тональности текста",
+    "title": "Анализ текстовых настроений",
     "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Russian. Generate the results in column, including the titles in the first one, and their sentiment in the second: ..",
-    "description": "Определяет тональность для следующих заголовков, присваивая им значение: положительное, нейтральное или отрицательное. Создает столбец результатов, включая заголовок в первом столбце и настроение во втором столбце: [content].",
-    "remark": "Оцените настроение текста: положительное, нейтральное или отрицательное."
+    "description": "Задайте настроения для следующих заголовков, присвоив им значения: положительный, нейтральный или отрицательный. Сформировать столбец результатов с заголовками в первом столбце и настроениями во втором: [content] .",
+    "remark": "Оцените настроение текста: позитивное, нейтральное или негативное."
   },
   "pt": {
-    "title": "Análise de sentimento de texto",
+    "title": "Análise do sentimento do texto",
     "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Portuguese. Generate the results in column, including the titles in the first one, and their sentiment in the second: ..",
-    "description": "Especifica o sentimento para os seguintes títulos, atribuindo-lhes um valor: positivo, neutro ou negativo. Gera uma coluna de resultados, incluindo o título na primeira coluna e o sentimento na segunda coluna: [conteúdo].",
-    "remark": "Julgue o sentimento do texto: positivo, neutro ou negativo."
+    "description": "Especifica os sentimentos para os seguintes títulos, atribuindo-lhes os valores: positivo, neutro ou negativo. Gera uma coluna de resultados com os títulos na primeira coluna e os sentimentos na segunda coluna: [content] .",
+    "remark": "Avaliar o estado de espírito do texto: positivo, neutro ou negativo."
   },
   "hi": {
     "title": "पाठ भावना विश्लेषण",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 31,
-  "weight": 187
+  "weight": 188
 };
 
 function PromptDetail() {

@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "orador",
     "prompt": "I want you to act as an elocutionist. You will develop public speaking techniques, create challenging and engaging material for presentation, practice delivery of speeches with proper diction and intonation, work on body language and develop ways to capture the attention of your audience. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un elocuente. Desarrollará habilidades para hablar en público, creará material desafiante y atractivo para presentaciones, practicará la realización de presentaciones con la dicción y la entonación correctas, practicará el lenguaje corporal y desarrollará métodos para captar la atención de su audiencia.",
-    "remark": "elocucionista"
+    "description": "Espero que actúes como elocucionista. Desarrollarás habilidades para hablar en público, crearás material estimulante y atractivo para tus discursos, practicarás cómo pronunciarlos con el fraseo y la entonación adecuados, practicarás el lenguaje corporal y desarrollarás formas de captar la atención de tu público.",
+    "remark": "Elocucionista"
   },
   "fr": {
     "title": "orateur",
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "oratore",
     "prompt": "I want you to act as an elocutionist. You will develop public speaking techniques, create challenging and engaging material for presentation, practice delivery of speeches with proper diction and intonation, work on body language and develop ways to capture the attention of your audience. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come un eloquente. Svilupperai capacità di parlare in pubblico, creerai materiale stimolante e coinvolgente per presentazioni, eserciterai presentazioni con dizione e intonazione corrette, eserciterai il linguaggio del corpo e svilupperai metodi per attirare l&#39;attenzione del tuo pubblico.",
-    "remark": "Elocutore"
+    "description": "Mi aspetto che vi comportiate da elocutori. Svilupperete le capacità di parlare in pubblico, creerete materiale stimolante e coinvolgente per i discorsi, vi eserciterete a pronunciare discorsi con il giusto fraseggio e la giusta intonazione, vi eserciterete sul linguaggio del corpo e svilupperete modi per catturare l'attenzione del vostro pubblico.",
+    "remark": "Elocuzionista"
   },
   "ru": {
     "title": "оратор",
     "prompt": "I want you to act as an elocutionist. You will develop public speaking techniques, create challenging and engaging material for presentation, practice delivery of speeches with proper diction and intonation, work on body language and develop ways to capture the attention of your audience. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы ты выступил в роли красноречивого. Вы будете развивать навыки публичных выступлений, создавать сложные и увлекательные материалы для презентаций, практиковаться в проведении презентаций с правильной дикцией и интонацией, практиковать язык тела и разрабатывать методы привлечения внимания вашей аудитории.",
-    "remark": "красноречивый"
+    "description": "Я ожидаю, что вы выступите в роли элокуциониста. Вы будете развивать навыки публичных выступлений, создавать интересный и увлекательный материал для речей, практиковаться в произнесении речей с правильной фразировкой и интонацией, отрабатывать язык жестов и разрабатывать способы захвата внимания аудитории.",
+    "remark": "Элоквенция"
   },
   "pt": {
-    "title": "locutor",
+    "title": "orador",
     "prompt": "I want you to act as an elocutionist. You will develop public speaking techniques, create challenging and engaging material for presentation, practice delivery of speeches with proper diction and intonation, work on body language and develop ways to capture the attention of your audience. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você aja como um eloquente. Você desenvolverá habilidades de falar em público, criará material desafiador e envolvente para apresentações, praticará apresentações com dicção e entonação corretas, praticará linguagem corporal e desenvolverá métodos para atrair a atenção de seu público.",
+    "description": "Espero que actues como um elocucionista. Desenvolverá as suas capacidades de falar em público, criará material desafiante e cativante para os seus discursos, praticará a sua apresentação com o fraseado e a entoação correctos, praticará a linguagem corporal e desenvolverá formas de captar a atenção do seu público.",
     "remark": "Elocucionista"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "speech"
   ],
   "id": 66,
-  "weight": 415
+  "weight": 433
 };
 
 function PromptDetail() {

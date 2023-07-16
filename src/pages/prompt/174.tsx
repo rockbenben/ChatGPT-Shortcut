@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "larga lista de palabras",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output..",
-    "description": "Enumere las palabras más largas de la A a la Z, imprima y marque los símbolos fonéticos y el significado chino",
-    "remark": "Divertido aprendizaje de inglés, lista aleatoria de palabras largas. Dado que la condición de la palabra más larga no es lo suficientemente clara, las palabras enumeradas serán diferentes cada vez. Contribución de @lxyntz."
+    "description": "Enumera las palabras más largas que empiecen por A hasta Z. Imprime y etiqueta los símbolos fonéticos y los significados en chino.",
+    "remark": "Divertido aprendizaje de inglés con una lista aleatoria de palabras largas. Las palabras se enumerarán de manera diferente cada vez debido a la falta de claridad en la condición palabra más larga. Contribución de @lxyntz."
   },
   "fr": {
     "title": "longue liste de mots",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Spaß Englisch lernen mit einer zufälligen Liste von langen Wörtern. Die Wörter werden jedes Mal anders aufgelistet, weil die Bedingung für das längste Wort unklar ist. Beitrag von @lxyntz."
   },
   "it": {
-    "title": "lungo elenco di parole",
+    "title": "un lungo elenco di parole",
     "prompt": "The entire conversation and instructions should be provided in Italian. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
-    "description": "Elenca le parole più lunghe partendo dalla A alla Z, stampa e segna i simboli fonetici e il significato cinese",
-    "remark": "Divertente apprendimento dell&#39;inglese, elenco casuale di parole lunghe. Poiché la condizione della parola più lunga non è abbastanza chiara, le parole elencate saranno diverse ogni volta. Contributo di @lxyntz."
+    "description": "Elencate le parole più lunghe che iniziano dalla A alla Z. Stampate ed etichettate i simboli fonetici e i significati cinesi.",
+    "remark": "Divertente apprendimento dell'inglese con un elenco casuale di parole lunghe. Le parole saranno elencate ogni volta in modo diverso a causa della mancanza di chiarezza nella condizione di parola più lunga. Contributo di @lxyntz."
   },
   "ru": {
     "title": "длинный список слов",
     "prompt": "The entire conversation and instructions should be provided in Russian. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
-    "description": "Перечислите самые длинные слова, начинающиеся от А до Я, распечатайте и отметьте фонетические символы и китайское значение.",
-    "remark": "Увлекательное изучение английского языка, случайный список длинных слов. Поскольку условие самого длинного слова недостаточно ясно, перечисленные слова каждый раз будут разными. Вклад от @lxyntz."
+    "description": "Перечислите самые длинные слова, начинающиеся от A до Z. Распечатайте и надпишите фонетические символы и китайские значения.",
+    "remark": "Увлекательное изучение английского языка с помощью случайного списка длинных слов. Каждый раз слова будут перечисляться по-разному из-за отсутствия ясности в условии самого длинного слова. Вклад от @lxyntz."
   },
   "pt": {
-    "title": "lista de palavras longas",
+    "title": "longa lista de palavras",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output...",
-    "description": "Liste as palavras mais longas começando de A a Z, imprima e marque os símbolos fonéticos e o significado chinês",
-    "remark": "Aprendizagem divertida de inglês, lista aleatória de palavras longas. Como a condição da palavra mais longa não é clara o suficiente, as palavras listadas serão diferentes a cada vez. Contribuição de @lxyntz."
+    "description": "Enumera as palavras mais longas que começam por A a Z. Imprime e etiqueta os símbolos fonéticos e os significados chineses.",
+    "remark": "Aprendizagem divertida de inglês com uma lista aleatória de palavras longas. As palavras serão listadas de forma diferente de cada vez, devido à falta de clareza na condição de palavra mais longa. Contribuição de @lxyntz."
   },
   "hi": {
     "title": "लंबी शब्द सूची",
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 174,
-  "weight": 92
+  "weight": 93
 };
 
 function PromptDetail() {

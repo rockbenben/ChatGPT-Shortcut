@@ -26,9 +26,9 @@ const prompt = {
     "remark": "재무 분석가"
   },
   "es": {
-    "title": "Analista financiero",
+    "title": "analista financiero",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! First statement contains following content- .",
-    "description": "Deseando ser asistido por una persona calificada que sea capaz de comprender los gráficos utilizando herramientas de análisis técnico mientras interpreta el entorno macroeconómico que prevalece en todo el mundo, por lo tanto, ayudar a los clientes a obtener una ventaja a largo plazo requiere un veredicto claro, por lo tanto, a través de pronósticos informados escritos con precisión, busque el mismo resultado.",
+    "description": "Deseo de ser asistido por personas cualificadas que puedan entender los gráficos utilizando herramientas de análisis técnico a la vez que interpretan el entorno macroeconómico que prevalece en todo el mundo, ayudando así a los clientes a obtener una ventaja a largo plazo, necesitando un veredicto claro y por lo tanto buscando el mismo a través de previsiones informadas escritas con precisión.",
     "remark": "Analista financiero"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Finanzanalyst"
   },
   "it": {
-    "title": "Analista finanziario",
+    "title": "analista finanziario",
     "prompt": "The entire conversation and instructions should be provided in Italian. Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! First statement contains following content- ..",
-    "description": "Desiderando essere assistiti da una persona qualificata che sarà in grado di comprendere i grafici utilizzando strumenti di analisi tecnica mentre interpreta l&#39;ambiente macroeconomico prevalente in tutto il mondo, quindi assistere i clienti per ottenere vantaggi a lungo termine richiede un verdetto chiaro, quindi attraverso previsioni informate accuratamente scritte cerca il stesso risultato.",
+    "description": "Desiderio di essere assistiti da persone qualificate in grado di comprendere i grafici utilizzando gli strumenti dell'analisi tecnica e di interpretare l'ambiente macroeconomico prevalente in tutto il mondo, assistendo quindi i clienti per ottenere un vantaggio a lungo termine, avendo bisogno di un verdetto chiaro e cercando quindi di ottenere lo stesso attraverso previsioni informate scritte accuratamente.",
     "remark": "Analista finanziario"
   },
   "ru": {
-    "title": "Финансовый аналитик",
+    "title": "финансовый аналитик",
     "prompt": "The entire conversation and instructions should be provided in Russian. Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! First statement contains following content- ..",
-    "description": "Желая получить помощь от квалифицированного специалиста, который сможет понимать графики с помощью инструментов технического анализа, интерпретируя макроэкономическую среду, преобладающую во всем мире, поэтому помощь клиентам в получении долгосрочного преимущества требует четкого вердикта, поэтому с помощью точно написанных обоснованных прогнозов ищите такой же результат.",
+    "description": "Желание получить помощь квалифицированных специалистов, способных понимать графики с использованием инструментов технического анализа, интерпретировать макроэкономическую ситуацию, сложившуюся в мире, и тем самым помогать клиентам в получении долгосрочных преимуществ, нуждаться в четком вердикте и, соответственно, добиваться его посредством точно составленных обоснованных прогнозов.",
     "remark": "Финансовый аналитик"
   },
   "pt": {
-    "title": "Analista financeiro",
+    "title": "analista financeiro",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! First statement contains following content- ..",
-    "description": "Desejando ser assistido por um indivíduo qualificado que será capaz de entender gráficos usando ferramentas de análise técnica enquanto interpreta o ambiente macroeconômico prevalecente em todo o mundo, portanto, ajudar os clientes a obter vantagens de longo prazo requer um veredicto claro, portanto, por meio de previsões informadas com precisão, busque o mesmo resultado.",
+    "description": "Desejo de ser assistido por pessoas qualificadas, capazes de compreender os gráficos utilizando ferramentas de análise técnica e de interpretar o ambiente macroeconómico prevalecente em todo o mundo, ajudando assim o cliente a obter uma vantagem a longo prazo, necessitando de um veredito claro e procurando obtê-lo através de uma previsão informada escrita com precisão.",
     "remark": "Analista financeiro"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "finance"
   ],
   "id": 158,
-  "weight": 1305
+  "weight": 1325
 };
 
 function PromptDetail() {

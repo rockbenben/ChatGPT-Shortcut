@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "entrevistador",
     "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Spanish. My first sentence is 'Hi'.",
-    "description": "Quiero que seas el entrevistador. Seré el candidato y me harás preguntas de entrevista para [trabajo]. Quiero que responda solo como entrevistador. No escriba todas las protecciones a la vez. Quiero que hagas entrevistas solo conmigo. Hazme preguntas y espera mis respuestas. No escribas explicaciones. Hazme preguntas una por una como un entrevistador y espera mi respuesta.",
-    "remark": "Puesto de entrevistador"
+    "description": "Me gustaría que usted actuara como entrevistador. Yo seré el candidato y usted me hará las preguntas de la entrevista en respuesta a [CARGO]. Me gustaría que respondiera sólo como entrevistador. No escribas todas las protecciones a la vez. Quiero que me hagas la entrevista sólo a mí. Hazme preguntas y espera mis respuestas. No escribas explicaciones. Hazme preguntas una a una como un entrevistador y espera mi respuesta.",
+    "remark": "Puesto Entrevistador"
   },
   "fr": {
     "title": "enquêteur",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "intervistatore",
     "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Italian. My first sentence is 'Hi'..",
-    "description": "Voglio che tu sia l&#39;intervistatore. Sarò il candidato e mi farai domande per il colloquio per [lavoro]. Voglio che tu risponda solo come intervistatore. Non scrivere tutte le protezioni in una volta. Voglio che tu faccia interviste solo con me. Fammi domande e aspetta le mie risposte. Non scrivere spiegazioni. Fammi domande una per una come un intervistatore e aspetta la mia risposta.",
+    "description": "Vorrei che lei fungesse da intervistatore. Io sarò il candidato e lei mi porrà delle domande in risposta a [POSIZIONE]. Vorrei che rispondesse solo come intervistatore. Non scriva tutte le risposte in una volta sola. Voglio che faccia il colloquio solo con me. Mi faccia delle domande e attenda le mie risposte. Non scriva spiegazioni. Mi faccia le domande una per una come un intervistatore e aspetti la mia risposta.",
     "remark": "Posizione Intervistatore"
   },
   "ru": {
     "title": "интервьюер",
     "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Russian. My first sentence is 'Hi'..",
-    "description": "Я хочу, чтобы ты был интервьюером. Я буду кандидатом, и вы будете задавать мне вопросы на собеседовании для [работы]. Я хочу, чтобы вы ответили только как интервьюер. Не пишите все защиты сразу. Я хочу, чтобы вы брали интервью только у меня. Задавайте мне вопросы и ждите моих ответов. Не пишите пояснений. Задавайте мне вопросы один за другим, как интервьюер, и ждите моего ответа.",
-    "remark": "Позиция интервьюера"
+    "description": "Я хотел бы, чтобы вы выступили в роли интервьюера. Я буду кандидатом, а Вы будете задавать мне вопросы для интервью по [ПОЗИЦИИ]. Я хотел бы, чтобы вы отвечали только как интервьюер. Не пишите все защиты сразу. Я хочу, чтобы Вы проводили интервью только со мной. Задавайте мне вопросы и ждите моих ответов. Не пишите объяснений. Задавайте мне вопросы по очереди, как интервьюер, и ждите моего ответа.",
+    "remark": "Должность Интервьюер"
   },
   "pt": {
     "title": "entrevistador",
     "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Portuguese. My first sentence is 'Hi'..",
-    "description": "Eu quero que você seja o entrevistador. Eu serei o candidato e você me fará perguntas de entrevista para [emprego]. Quero que responda apenas como entrevistador. Não escreva todas as proteções de uma só vez. Eu quero que você faça entrevistas apenas comigo. Faça-me perguntas e aguarde minhas respostas. Não escreva explicações. Faça-me perguntas uma a uma como um entrevistador e espere pela minha resposta.",
-    "remark": "Posição Entrevistador"
+    "description": "Gostaria que fizesse o papel de entrevistador. Eu serei o candidato e V. Exa. far-me-á perguntas de entrevista em resposta a [POSIÇÃO]. Gostaria que respondesse apenas como entrevistador. Não escreva todas as protecções ao mesmo tempo. Quero que faça a entrevista apenas comigo. Faça-me perguntas e espere pelas minhas respostas. Não escreva explicações. Faça-me perguntas uma a uma como um entrevistador e espere pela minha resposta.",
+    "remark": "Cargo Entrevistador"
   },
   "hi": {
     "title": "साक्षात्कारकर्ता",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 145,
-  "weight": 847
+  "weight": 855
 };
 
 function PromptDetail() {

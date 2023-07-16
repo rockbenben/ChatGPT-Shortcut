@@ -26,10 +26,10 @@ const prompt = {
     "remark": "틱택토 게임"
   },
   "es": {
-    "title": "tres en raya",
+    "title": "Tic-Tac-Logic (juego)",
     "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Spanish. To start, I will make the first move by placing an X in the top left corner of the game board..",
-    "description": "Quiero que hagas el papel de un juego de tres en raya. Yo estoy a cargo de los movimientos y usted está a cargo de actualizar el tablero para reflejar mis movimientos y decidir si hay un ganador o un empate. Use una X para mi acción y una O para la acción de la computadora. No proporcione otras explicaciones o instrucciones que no sean actualizar el tablero y determinar el resultado del juego. Al principio pondré una X en la esquina superior izquierda del tablero como primer movimiento.",
-    "remark": "Juego de tres en raya"
+    "description": "Quiero que desempeñes el papel de un juego de tres en raya. Yo hago los movimientos y tú actualizas el tablero para reflejar mis acciones y decidir si hay un ganador o un empate. Utiliza X para mis movimientos y O para los movimientos del ordenador. No des más explicaciones ni instrucciones que las de actualizar el tablero y determinar el resultado de la partida. Para empezar, colocaré una X en la esquina superior izquierda del tablero como primer movimiento.",
+    "remark": "Juego Tic-Tac-Toe"
   },
   "fr": {
     "title": "Tic-Tac-Logic (jeu)",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Tic-Tac-Toe-Spiel"
   },
   "it": {
-    "title": "Tic Tac Toe",
+    "title": "Tic-Tac-Logic (gioco)",
     "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Italian. To start, I will make the first move by placing an X in the top left corner of the game board...",
-    "description": "Voglio che tu interpreti il ruolo di un tris. Io sono responsabile delle mosse e tu hai il compito di aggiornare il tabellone per riflettere le mie mosse e decidere se c&#39;è un vincitore o un pareggio. Usa una X per la mia azione e una O per l&#39;azione del computer. Non fornire altre spiegazioni o istruzioni diverse dall&#39;aggiornamento del tabellone e dalla determinazione dell&#39;esito del gioco. All&#39;inizio, metterò una X nell&#39;angolo in alto a sinistra del tabellone come prima mossa.",
+    "description": "Voglio che giochiate il ruolo di una partita a tris. Io faccio le mosse e voi aggiornate il tabellone per riflettere le mie azioni e decidere se c'è un vincitore o un pareggio. Usate X per le mie mosse e O per le mosse del computer. Non fornite spiegazioni o istruzioni se non per aggiornare il tabellone e determinare il risultato della partita. Per iniziare, come prima mossa posizionerò una X nell'angolo in alto a sinistra del tabellone.",
     "remark": "Gioco del tris"
   },
   "ru": {
-    "title": "Крестики-нолики",
+    "title": "Тик-Так-Логика (игра)",
     "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Russian. To start, I will make the first move by placing an X in the top left corner of the game board...",
-    "description": "Я хочу, чтобы вы сыграли роль в игре крестики-нолики. Я отвечаю за ходы, а вы отвечаете за обновление доски, чтобы отразить мои ходы и решить, есть ли победитель или ничья. Используйте X для моего действия и O для действия компьютера. Не давайте никаких других объяснений или инструкций, кроме обновления доски и определения исхода игры. Вначале я поставлю крестик в левом верхнем углу доски в качестве первого хода.",
-    "remark": "Крестики-нолики"
+    "description": "Я хочу, чтобы вы сыграли роль игрока в игру \"Крестики-нолики\". Я делаю ходы, а вы обновляете доску, отражая мои действия, и решаете, будет ли победа или ничья. Используйте X для обозначения моих ходов и O для обозначения ходов компьютера. Не давайте никаких объяснений или инструкций, кроме обновления доски и определения результата игры. Для начала я поставлю X в левом верхнем углу доски в качестве первого хода.",
+    "remark": "Игра \"Крестики-нолики"
   },
   "pt": {
-    "title": "Jogo da velha",
+    "title": "Tic-Tac-Logic (jogo)",
     "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Portuguese. To start, I will make the first move by placing an X in the top left corner of the game board...",
-    "description": "Eu quero que você faça o papel de um jogo da velha. Eu estou encarregado dos movimentos e você está encarregado de atualizar o quadro para refletir meus movimentos e decidir se há um vencedor ou empate. Use um X para minha ação e um O para a ação do computador. Não forneça outras explicações ou instruções além de atualizar o tabuleiro e determinar o resultado do jogo. No início, colocarei um X no canto superior esquerdo do tabuleiro como primeiro movimento.",
-    "remark": "jogo da velha"
+    "description": "Quero que desempenhes o papel de um jogo do galo. Eu faço as jogadas e tu actualizas o tabuleiro para refletir as minhas acções e decidir se há um vencedor ou um empate. Utilize X para as minhas jogadas e O para as jogadas do computador. Não dê quaisquer explicações ou instruções para além de atualizar o tabuleiro e determinar o resultado do jogo. Para começar, vou colocar um X no canto superior esquerdo do tabuleiro como primeira jogada.",
+    "remark": "Jogo do galo"
   },
   "hi": {
     "title": "टिक टीएसी को पैर की अंगुली",
@@ -84,7 +84,7 @@ const prompt = {
     "games"
   ],
   "id": 123,
-  "weight": 337
+  "weight": 344
 };
 
 function PromptDetail() {

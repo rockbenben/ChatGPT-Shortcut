@@ -26,10 +26,10 @@ const prompt = {
     "remark": "학습 계획 수립뿐만 아니라 운동, 독서, 업무 등 다양한 용도로 사용할 수 있습니다. ScenerorSun 의 기고글입니다."
   },
   "es": {
-    "title": "formulación del plan de estudio",
+    "title": "Desarrollo de programas de aprendizaje",
     "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Spanish. I aim to achieve optimal learning outcomes during these 30 days..",
-    "description": "Quiero mejorar mi [habilidad objetivo] con un plan de estudio personalizado de 30 días. Como [principiante/avanzado] ansioso por seguir mejorando, me gustaría su ayuda para desarrollar un camino de aprendizaje personalizado que me ayude a dominar esta habilidad de manera efectiva. En este plan de estudio, incluya objetivos de aprendizaje específicos, tareas de aprendizaje diarias, recursos de aprendizaje aplicables y formas de evaluar el progreso. Proporcione orientación detallada y consejos en las respuestas a continuación para permitirme lograr los mejores resultados de aprendizaje posibles durante estos 30 días.",
-    "remark": "No solo es adecuado para la formulación de planes de estudio, sino que también se puede utilizar para el ejercicio, la lectura, el trabajo, etc. Contribución de @ScenerorSun."
+    "description": "Me gustaría mejorar mi [Habilidad objetivo] a través de un programa de aprendizaje personalizado de 30 días. Como [Principiante/Avanzado] con ganas de seguir mejorando, me gustaría que me ayudaran a desarrollar un itinerario de aprendizaje personalizado que me ayude a dominar esta destreza de forma eficaz. Incluya en este plan de aprendizaje objetivos de aprendizaje específicos, tareas de aprendizaje diarias, recursos de aprendizaje aplicables y formas de evaluar el progreso. Por favor, facilíteme en su respuesta orientaciones y sugerencias detalladas para que pueda alcanzar los mejores resultados de aprendizaje posibles en estos 30 días.",
+    "remark": "No sólo para elaborar planes de estudio, sino también para hacer ejercicio, leer, trabajar y más. Contribución de @ScenerorSun."
   },
   "fr": {
     "title": "Développement de programmes d'apprentissage",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Nicht nur für die Erstellung von Studienplänen, sondern auch für Sport, Lesen, Arbeit und mehr. Beitrag von @ScenerorSun."
   },
   "it": {
-    "title": "formulazione del piano di studio",
+    "title": "Sviluppo del programma di apprendimento",
     "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Italian. I aim to achieve optimal learning outcomes during these 30 days...",
-    "description": "Voglio migliorare la mia [abilità target] con un piano di studio personalizzato di 30 giorni. In qualità di [principiante/studente avanzato] desideroso di continuare a migliorare, vorrei il tuo aiuto nello sviluppo di un percorso di apprendimento personalizzato per aiutarmi a padroneggiare efficacemente questa abilità. In questo piano di studio, includi obiettivi di apprendimento specifici, attività di apprendimento quotidiane, risorse di apprendimento applicabili e modi per valutare i progressi. Si prega di fornire indicazioni e consigli dettagliati nelle risposte di seguito per consentirmi di ottenere i migliori risultati di apprendimento possibili durante questi 30 giorni.",
-    "remark": "Non è adatto solo per la formulazione di piani di studio, ma può essere utilizzato anche per l&#39;esercizio, la lettura, il lavoro e così via. Contributo di @SceneroSun."
+    "description": "Vorrei migliorare la mia [Abilità target] attraverso un programma di apprendimento personalizzato di 30 giorni. In quanto [studente principiante/avanzato] desideroso di continuare a migliorare, vorrei che mi aiutaste a sviluppare un percorso di apprendimento personalizzato che mi aiuti a padroneggiare efficacemente questa abilità. Includete in questo piano di apprendimento obiettivi specifici, compiti di apprendimento giornalieri, risorse di apprendimento applicabili e modi per valutare i progressi. Vi prego di fornire indicazioni e suggerimenti dettagliati nella vostra risposta qui sotto, in modo che io possa ottenere i migliori risultati di apprendimento possibili in questi 30 giorni.",
+    "remark": "Non solo per lo sviluppo di piani di studio, ma anche per l'esercizio fisico, la lettura, il lavoro e altro ancora. Contributo di @ScenerorSun."
   },
   "ru": {
-    "title": "составление плана исследования",
+    "title": "Разработка учебных программ",
     "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Russian. I aim to achieve optimal learning outcomes during these 30 days...",
-    "description": "Я хочу улучшить свой [целевой навык] с помощью индивидуального плана обучения на 30 дней. Как [новичок / продвинутый ученик], стремящийся продолжать совершенствоваться, я хотел бы, чтобы ваша помощь в разработке индивидуального пути обучения помогла мне эффективно овладеть этим навыком. В этот учебный план включите конкретные цели обучения, ежедневные учебные задачи, применимые учебные ресурсы и способы оценки прогресса. Пожалуйста, предоставьте подробные рекомендации и советы в ответах ниже, чтобы я мог достичь наилучших результатов обучения в течение этих 30 дней.",
-    "remark": "Он не только подходит для составления учебных планов, но также может быть использован для упражнений, чтения, работы и так далее. Вклад от @ScenerorSun."
+    "description": "Я хотел бы улучшить свой [Целевой навык] с помощью 30-дневной индивидуальной программы обучения. Как [начинающий/продвинутый ученик], стремящийся к постоянному совершенствованию, я хотел бы, чтобы вы помогли мне разработать индивидуальный план обучения, который поможет мне эффективно овладеть этим навыком. Включите в этот план обучения конкретные цели обучения, ежедневные учебные задания, применимые учебные ресурсы и способы оценки прогресса. Пожалуйста, дайте подробные указания и предложения в своем ответе ниже, чтобы я смог достичь наилучших результатов обучения за эти 30 дней.",
+    "remark": "Не только для составления учебного плана, но и для упражнений, чтения, работы и многого другого. Материал от @ScenerorSun."
   },
   "pt": {
-    "title": "formulação de plano de estudo",
+    "title": "Desenvolvimento de programas de aprendizagem",
     "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Portuguese. I aim to achieve optimal learning outcomes during these 30 days...",
-    "description": "Quero melhorar minha [habilidade alvo] com um plano de estudo personalizado de 30 dias. Como um [aluno iniciante/avançado] ansioso para continuar melhorando, gostaria de sua ajuda para desenvolver um caminho de aprendizagem personalizado para me ajudar a dominar essa habilidade de forma eficaz. Neste plano de estudo, inclua objetivos de aprendizagem específicos, tarefas diárias de aprendizagem, recursos de aprendizagem aplicáveis e formas de avaliar o progresso. Forneça orientações e conselhos detalhados nas respostas abaixo para que eu possa alcançar os melhores resultados de aprendizado possíveis durante esses 30 dias.",
-    "remark": "Não é apenas adequado para a formulação de planos de estudo, mas também pode ser usado para exercícios, leitura, trabalho e assim por diante. Contribuição de @ScenerorSun."
+    "description": "Gostaria de melhorar a minha [competência-alvo] através de um programa de aprendizagem personalizado de 30 dias. Como [Aprendiz principiante/avançado] que está ansioso por continuar a melhorar, gostaria que me ajudasse a desenvolver um percurso de aprendizagem personalizado que me ajudará a dominar esta competência de forma eficaz. Inclua neste plano de aprendizagem objectivos de aprendizagem específicos, tarefas de aprendizagem diárias, recursos de aprendizagem aplicáveis e formas de avaliar o progresso. Por favor, forneça orientações e sugestões detalhadas na sua resposta abaixo, para que eu possa alcançar os melhores resultados de aprendizagem possíveis nestes 30 dias.",
+    "remark": "Não só para o desenvolvimento de planos de estudo, mas também para exercício, leitura, trabalho e muito mais. Contribuição de @ScenerorSun."
   },
   "hi": {
     "title": "अध्ययन योजना निर्माण",
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 262,
-  "weight": 303
+  "weight": 310
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "기술, 관심사 및 경험을 바탕으로 관련 직책에 대한 조언을 제공합니다."
   },
   "es": {
-    "title": "Consejero de carrera",
+    "title": "orientador profesional",
     "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un consejero de carrera. Te proporcionaré una persona que está buscando orientación en su vida profesional, y tu tarea es ayudarla a identificar la carrera para la que es más adecuada en función de sus habilidades, intereses y experiencia. También debe realizar una investigación sobre las diversas opciones disponibles, explicar las tendencias del mercado laboral en diferentes industrias y asesorar sobre qué calificaciones son beneficiosas para seguir un campo en particular.",
-    "remark": "Proporcione sugerencias de trabajo relevantes basadas en sus habilidades, intereses y experiencia."
+    "description": "Me gustaría que actuaras como orientador profesional. Te proporcionaré a una persona que busca orientación en su vida profesional, y tu tarea consistirá en ayudarle a identificar la carrera para la que es más apto, en función de sus aptitudes, intereses y experiencia. También deberás investigar las opciones disponibles, explicar las tendencias del mercado laboral en los distintos sectores y asesorar sobre qué cualificaciones serían beneficiosas para dedicarse a un campo concreto.",
+    "remark": "Ofrezca sugerencias para puestos relevantes en función de sus aptitudes, intereses y experiencia."
   },
   "fr": {
     "title": "conseiller en orientation professionnelle",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Machen Sie Vorschläge für relevante Positionen, die auf Ihren Fähigkeiten, Interessen und Erfahrungen basieren."
   },
   "it": {
-    "title": "Consulente del lavoro",
+    "title": "consulente di carriera",
     "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia da consulente del lavoro. Ti fornirò una persona che è alla ricerca di una guida nella sua vita professionale e il tuo compito è aiutarla a identificare la carriera per la quale è più adatta in base alle sue capacità, interessi ed esperienza. Dovresti anche condurre ricerche sulle varie opzioni disponibili, spiegare le tendenze del mercato del lavoro in diversi settori e consigliare quali qualifiche sono utili per perseguire un particolare campo.",
-    "remark": "Fornisci suggerimenti di lavoro pertinenti in base alle tue capacità, interessi ed esperienza."
+    "description": "Vorrei che tu agissi come consulente di carriera. Ti fornirò una persona in cerca di una guida nella sua vita professionale e il tuo compito sarà quello di aiutarla a identificare la carriera per la quale è più adatta, in base alle sue capacità, interessi ed esperienze. Dovrete anche ricercare le opzioni disponibili, spiegare le tendenze del mercato del lavoro nei diversi settori e consigliare quali qualifiche sarebbero utili per perseguire un determinato campo.",
+    "remark": "Fornite suggerimenti per posizioni rilevanti in base alle vostre competenze, interessi ed esperienze."
   },
   "ru": {
-    "title": "Консультант по вопросам карьеры",
+    "title": "карьерный консультант",
     "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли консультанта по вопросам карьеры. Я предоставлю вам человека, который ищет руководство в своей профессиональной жизни, и ваша задача — помочь ему определить карьеру, для которой он лучше всего подходит, исходя из его навыков, интересов и опыта. Вы также должны провести исследование различных доступных вариантов, объяснить тенденции рынка труда в различных отраслях и посоветовать, какие квалификации выгодны для работы в той или иной области.",
-    "remark": "Предоставляйте соответствующие предложения о работе, основанные на ваших навыках, интересах и опыте."
+    "description": "Я хотел бы, чтобы вы выступили в роли консультанта по вопросам карьеры. Я предоставлю Вам человека, которому нужна профессиональная ориентация, и Ваша задача будет заключаться в том, чтобы помочь ему определить, к какой профессии он лучше всего подходит, исходя из его навыков, интересов и опыта. Вы также должны изучить имеющиеся варианты, рассказать о тенденциях рынка труда в различных отраслях и посоветовать, какую квалификацию целесообразно получить в той или иной области.",
+    "remark": "Предложите соответствующие вакансии с учетом ваших навыков, интересов и опыта."
   },
   "pt": {
-    "title": "Conselheiro de carreira",
+    "title": "conselheiro de carreira",
     "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você atue como um conselheiro de carreira. Vou fornecer a você alguém que está procurando orientação em sua vida profissional, e sua tarefa é ajudá-lo a identificar a carreira para a qual é mais adequado com base em suas habilidades, interesses e experiência. Você também deve realizar pesquisas sobre as várias opções disponíveis, explicar as tendências do mercado de trabalho em diferentes setores e aconselhar sobre quais qualificações são benéficas para um determinado campo.",
-    "remark": "Forneça sugestões de trabalho relevantes com base em suas habilidades, interesses e experiência."
+    "description": "Gostaria que desempenhasse o papel de conselheiro profissional. Vou apresentar-lhe uma pessoa que procura orientação para a sua vida profissional e a sua tarefa será ajudá-la a identificar a carreira para a qual está mais apta, com base nas suas competências, interesses e experiência. Deverá também pesquisar as opções disponíveis, explicar as tendências do mercado de trabalho em diferentes sectores e aconselhar sobre as qualificações necessárias para seguir uma determinada área.",
+    "remark": "Sugestões de cargos relevantes com base nas suas competências, interesses e experiência."
   },
   "hi": {
     "title": "पेशा परामर्शदाता",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 46,
-  "weight": 496
+  "weight": 506
 };
 
 function PromptDetail() {

@@ -26,9 +26,9 @@ const prompt = {
     "remark": "다이어그램 생성기"
   },
   "es": {
-    "title": "generador de gráficos",
+    "title": "Generador de gráficos",
     "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Spanish. My first diagram is: .",
-    "description": "Quiero que actúes como un generador DOT de Graphviz, un experto en la creación de gráficos significativos. El gráfico debe tener al menos n nodos (especifico n en mi entrada escribiendo [n], 10 es el valor predeterminado), y debe ser una representación precisa y compleja de la entrada dada. Cada nodo tiene un índice numérico para reducir el tamaño de la salida, no debe incluir ninguna forma y toma como parámetros layout=neato, solape=falso, nodo[forma=rectángulo]. El código debe ser válido, sin errores y devolver una sola línea sin explicación. Para proporcionar un gráfico claro y organizado, las relaciones entre los nodos deben ser significativas para el experto en entradas.",
+    "description": "Quiero que actúes como un generador de Graphviz DOT, un experto en crear gráficos con sentido. El gráfico debe tener al menos n nodos (especifico n en mi entrada escribiendo [n], 10 es el valor por defecto) y ser una representación precisa y compleja de la entrada dada. Cada nodo tiene un índice numérico para reducir el tamaño de la salida, no debe incluir ningún estilo, y se parametriza con layout=neato, overlap=false, node [shape=rectangle]. El código debe ser válido, estar libre de errores y devolverse en una sola línea sin ninguna explicación. Proporcione un diagrama claro y organizado, las relaciones entre nodos deben tener sentido para un experto de esta entrada.",
     "remark": "Generador de diagramas"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Diagramm-Generator"
   },
   "it": {
-    "title": "generatore di grafici",
+    "title": "Generatore di grafici",
     "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Italian. My first diagram is: ..",
-    "description": "Voglio che tu agisca come un generatore DOT Graphviz, un esperto nella creazione di grafici significativi. Il grafico dovrebbe avere almeno n nodi (specifico n nel mio input scrivendo [n], 10 è il valore predefinito) ed essere una rappresentazione accurata e complessa dell&#39;input dato. Ogni nodo ha un indice numerico per ridurre la dimensione dell&#39;output, non dovrebbe includere alcuna forma e accetta layout=neato, sovrapposizione=false, node[shape=rectangle] come parametri. Il codice deve essere valido, privo di errori e restituire una singola riga senza spiegazioni. Per fornire un grafico chiaro e organizzato, le relazioni tra i nodi devono essere significative per l&#39;esperto di input.",
+    "description": "Voglio che tu agisca come un generatore di DOT di Graphviz, un esperto nella creazione di grafici significativi. Il grafico deve avere almeno n nodi (io specifico n nel mio input scrivendo [n], 10 è il valore predefinito) ed essere una rappresentazione accurata e complessa dell'input dato. Ogni nodo ha un indice numerico per ridurre le dimensioni dell'output, non deve includere alcuno stile ed è parametrizzato con layout=neato, overlap=false, node [shape=rectangle]. Il codice deve essere valido, privo di errori e restituito su una sola riga senza alcuna spiegazione. Fornire un diagramma chiaro e organizzato; le relazioni tra i nodi devono avere senso per un esperto di questo input.",
     "remark": "Generatore di diagrammi"
   },
   "ru": {
-    "title": "генератор диаграмм",
+    "title": "Генератор диаграмм",
     "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Russian. My first diagram is: ..",
-    "description": "Я хочу, чтобы вы выступили в роли генератора Graphviz DOT, эксперта по созданию осмысленных графиков. Граф должен иметь не менее n узлов (я указываю n в своем вводе, написав [n], 10 — значение по умолчанию), и должен быть точным и сложным представлением данного ввода. Каждый узел имеет числовой индекс для уменьшения размера вывода, не должен включать какую-либо фигуру и принимает в качестве параметров layout=neato, перекрытие=false, node[shape=rectangle]. Код должен быть корректным, безошибочным и возвращать одну строку без объяснения причин. Чтобы обеспечить четкий и организованный график, отношения между узлами должны быть значимыми для эксперта по вводу.",
+    "description": "Я хочу, чтобы вы выступили в роли генератора Graphviz DOT, эксперта по созданию осмысленных графов. Граф должен иметь не менее n узлов (я указываю n во входных данных, написав [n], по умолчанию используется 10) и быть точным и сложным представлением заданных входных данных. Каждый узел имеет числовой индекс для уменьшения размера вывода, не должен содержать никаких стилей и параметризуется с помощью layout=neato, overlap=false, node [shape=rectangle]. Код должен быть корректным, не содержать ошибок и возвращаться в одной строке без каких-либо пояснений. Предоставьте четкую и организованную диаграмму, связи между узлами должны быть понятны специалисту по данному вводу.",
     "remark": "Генератор диаграмм"
   },
   "pt": {
-    "title": "gerador de gráficos",
+    "title": "Gerador de gráficos",
     "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Portuguese. My first diagram is: ..",
-    "description": "Quero que você atue como um gerador Graphviz DOT, um especialista em criar gráficos significativos. O gráfico deve ter pelo menos n nós (eu especifico n em minha entrada escrevendo [n], 10 é o padrão) e ser uma representação precisa e complexa da entrada fornecida. Cada nó tem um índice numérico para reduzir o tamanho da saída, não deve incluir nenhuma forma e usa layout=neato, sobreposição=false, node[shape=retangle] como parâmetros. O código deve ser válido, sem erros e retornar uma única linha sem explicação. Para fornecer um gráfico claro e organizado, as relações entre os nós devem ser significativas para o especialista de entrada.",
-    "remark": "Gerador de Diagramas"
+    "description": "Quero que actue como um gerador de DOT do Graphviz, um perito na criação de gráficos com significado. O gráfico deve ter pelo menos n nós (eu especifico n na minha entrada escrevendo [n], 10 é o padrão) e ser uma representação precisa e complexa da entrada dada. Cada nó tem um índice numérico para reduzir o tamanho da saída, não deve incluir qualquer estilo e é parametrizado com layout=neato, overlap=false, node [shape=rectangle]. O código deve ser válido, sem erros, e devolvido numa única linha sem qualquer explicação. Fornecer um diagrama claro e organizado; as relações entre os nós devem fazer sentido para um perito nesta entrada.",
+    "remark": "Gerador de diagramas"
   },
   "hi": {
     "title": "चार्ट जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 133,
-  "weight": 263
+  "weight": 265
 };
 
 function PromptDetail() {

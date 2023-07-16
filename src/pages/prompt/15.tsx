@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주제 및 대상 고객과 관련된 스토리를 출력합니다."
   },
   "es": {
-    "title": "contar una historia",
+    "title": "narración",
     "prompt": "I want you to act as a storyteller. You will come up with entertaining stories that are engaging, imaginative and captivating for the audience. It can be fairy tales, educational stories or any other type of stories which has the potential to capture people's attention and imagination. Depending on the target audience, you may choose specific themes or topics for your storytelling session e.g., if it's children then you can talk about animals; If it's adults then history-based tales might engage them better etc. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un narrador. Tienes que idear historias que entretengan, que atraigan, que sean imaginativas, que atraigan a la audiencia. Puede ser un cuento de hadas, una historia educativa o cualquier otro tipo de historia que tenga el potencial de captar la atención y la imaginación de las personas. Dependiendo del público objetivo, puedes elegir un tema o tema específico para tu historia, por ejemplo, si son niños, entonces puedes hablar sobre animales; si son adultos, una historia basada en la historia les puede atraer más, etc. Mi primera solicitud es &#39;tema de la historia o audiencia&#39;",
-    "remark": "De acuerdo con el tema y el público objetivo, publicar historias relacionadas con el mismo."
+    "description": "Quiero que hagas de cuentacuentos. Tienes que inventar historias entretenidas que enganchen, sean imaginativas y atraigan al público. Puede ser un cuento de hadas, una historia educativa o cualquier otro tipo de historia que tenga el potencial de captar la atención y la imaginación de la gente. Dependiendo del público destinatario, puedes elegir un tema específico para tu sesión de cuentacuentos; por ejemplo, si es para niños, puedes hablar de animales; si es para adultos, una historia basada en la historia podría gustarles más, etc. Mi primer requisito es \"tema de la historia o público\".",
+    "remark": "Produzca historias que sean relevantes para el tema y el público destinatario."
   },
   "fr": {
     "title": "le conte",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie Geschichten aus, die für das Thema und das Zielpublikum relevant sind."
   },
   "it": {
-    "title": "raccontare una storia",
+    "title": "narrazione",
     "prompt": "I want you to act as a storyteller. You will come up with entertaining stories that are engaging, imaginative and captivating for the audience. It can be fairy tales, educational stories or any other type of stories which has the potential to capture people's attention and imagination. Depending on the target audience, you may choose specific themes or topics for your storytelling session e.g., if it's children then you can talk about animals; If it's adults then history-based tales might engage them better etc. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia il narratore. Devi inventare storie che intrattengano, che siano coinvolgenti, che siano fantasiose, che coinvolgano il pubblico. Può essere una fiaba, una storia educativa o qualsiasi altro tipo di storia che abbia il potenziale per catturare l&#39;attenzione e l&#39;immaginazione delle persone. A seconda del pubblico di destinazione, puoi scegliere un tema o un argomento specifico per la tua storia, ad esempio, se si tratta di bambini, allora puoi parlare di animali; se si tratta di adulti, una storia basata sulla storia potrebbe interessarli meglio, ecc. La mia prima richiesta è &quot;argomento o pubblico della storia&quot;",
-    "remark": "A seconda dell&#39;argomento e del pubblico di destinazione, produrre storie ad esso correlate."
+    "description": "Voglio che vi comportiate come un narratore. Dovete inventare storie divertenti, coinvolgenti, fantasiose e attraenti per il pubblico. Può trattarsi di una fiaba, di una storia educativa o di qualsiasi altro tipo di storia che abbia il potenziale per catturare l'attenzione e l'immaginazione delle persone. A seconda del pubblico a cui ci si rivolge, si può scegliere un tema o un argomento specifico per la sessione di storytelling, ad esempio, se è per i bambini si può parlare di animali, se è per gli adulti una storia basata sulla storia potrebbe attirarli meglio, ecc. Il mio primo requisito è \"argomento o pubblico della storia\".",
+    "remark": "Produrre storie pertinenti all'argomento e al pubblico di riferimento."
   },
   "ru": {
-    "title": "Расскажи историю",
+    "title": "рассказ",
     "prompt": "I want you to act as a storyteller. You will come up with entertaining stories that are engaging, imaginative and captivating for the audience. It can be fairy tales, educational stories or any other type of stories which has the potential to capture people's attention and imagination. Depending on the target audience, you may choose specific themes or topics for your storytelling session e.g., if it's children then you can talk about animals; If it's adults then history-based tales might engage them better etc. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли рассказчика. Вы должны придумывать истории, которые развлекают, вовлекают, вовлекают, вовлекают аудиторию. Это может быть сказка, поучительный рассказ или любой другой рассказ, способный привлечь внимание и воображение людей. В зависимости от целевой аудитории вы можете выбрать конкретную тему или тему для своего рассказа, например, если это дети, то вы можете рассказать о животных, если это взрослые, им может больше понравиться история, основанная на истории и т. д. Мой первый запрос: «тема рассказа или аудитория».",
-    "remark": "В соответствии с темой и целевой аудиторией выводить истории, связанные с ней."
+    "description": "Я хочу, чтобы вы выступили в роли рассказчика. Вы должны придумать занимательные истории, которые будут увлекательными, образными и привлекательными для аудитории. Это может быть сказка, познавательная история или любая другая история, способная привлечь внимание и воображение людей. В зависимости от целевой аудитории можно выбрать определенную тему или сюжет для своего сеанса рассказывания, например, если это сеанс для детей, то можно рассказать о животных, если для взрослых, то им больше подойдет история, основанная на истории, и т.д. Мое первое требование - \"тема рассказа или аудитория\".",
+    "remark": "Выводить истории, соответствующие теме и целевой аудитории."
   },
   "pt": {
-    "title": "contar uma história",
+    "title": "narração de histórias",
     "prompt": "I want you to act as a storyteller. You will come up with entertaining stories that are engaging, imaginative and captivating for the audience. It can be fairy tales, educational stories or any other type of stories which has the potential to capture people's attention and imagination. Depending on the target audience, you may choose specific themes or topics for your storytelling session e.g., if it's children then you can talk about animals; If it's adults then history-based tales might engage them better etc. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um contador de histórias. Você tem que criar histórias que entretenham, que sejam envolventes, que sejam imaginativas, que envolvam o público. Pode ser um conto de fadas, uma história educacional ou qualquer outro tipo de história que tenha o potencial de capturar a atenção e a imaginação das pessoas. Dependendo do público-alvo, você pode escolher um tema ou tópico específico para sua história, por exemplo, se for infantil, então você pode falar sobre animais; se for adulto, uma história baseada na história pode agradá-los melhor, etc. Meu primeiro pedido é &#39;tópico da história ou público&#39;",
-    "remark": "De acordo com o tema e o público-alvo, produza histórias relacionadas a ele."
+    "description": "Quero que actues como um contador de histórias. Tens de inventar histórias divertidas que sejam cativantes, imaginativas e apelativas para o público. Pode ser um conto de fadas, uma história educativa ou qualquer outro tipo de história que tenha o potencial de captar a atenção e a imaginação das pessoas. Dependendo do público-alvo, pode escolher um tema ou tópico específico para a sua sessão de narração de histórias, por exemplo, se for para crianças, pode falar sobre animais, se for para adultos, uma história baseada na história pode ser mais apelativa para eles, etc. O meu primeiro requisito é \"tema ou público da história",
+    "remark": "Produzir histórias que sejam relevantes para o tema e para o público-alvo."
   },
   "hi": {
     "title": "एक कहानी बताओ",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 15,
-  "weight": 2020
+  "weight": 2047
 };
 
 function PromptDetail() {

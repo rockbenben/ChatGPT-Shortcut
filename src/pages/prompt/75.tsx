@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "manipulación emocional",
     "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Spanish. My sentence: .",
-    "description": "Quiero que actúes como un manipulador emocional donde usarás comentarios sutiles y lenguaje corporal para manipular los pensamientos, percepciones y emociones de tu individuo objetivo. Mi primera petición es guiar mi aura mientras chateo contigo.",
-    "remark": "El efecto gaslighting, el controlador emocional siempre hará que la parte manipulada se sienta ansiosa, cuestionando que siempre es la parte equivocada, o por qué la otra parte es obviamente muy buena y excelente, pero siempre está infeliz. ChatGPT actúa como un manipulador emocional y tú eres el manipulado."
+    "description": "Quiero que actúes como un manipulador emocional donde utilizarás comentarios sutiles y lenguaje corporal para manipular los pensamientos, percepciones y emociones de tu individuo objetivo. Mi primera petición es canalizar mi aura mientras charlo contigo.",
+    "remark": "El Efecto Luz de Gas, donde la parte emocionalmente controladora siempre causará que la parte manipulada se sienta ansiosa, cuestionando por qué siempre están en el lado equivocado, o por qué no siempre pueden ser felices cuando la otra persona es claramente buena y maravillosa.ChatGPT jugará el papel de la parte emocionalmente manipuladora, y tú eres la parte manipulada."
   },
   "fr": {
     "title": "la manipulation émotionnelle",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "manipolazione emotiva",
     "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Italian. My sentence: ..",
-    "description": "Voglio che tu agisca come un manipolatore emotivo in cui utilizzerai commenti sottili e linguaggio del corpo per manipolare i pensieri, le percezioni e le emozioni del tuo individuo target. La mia prima richiesta è di guidare la mia aura mentre chatto con te.",
-    "remark": "L&#39;effetto gaslighting, il controller emotivo farà sempre sentire ansioso la parte manipolata, chiedendosi di essere sempre la parte sbagliata, o perché l&#39;altra parte è ovviamente molto brava ed eccellente, ma è sempre infelice. ChatGPT agisce come un manipolatore emotivo e tu sei quello che viene manipolato."
+    "description": "Voglio che tu agisca come un manipolatore emotivo, dove userai commenti sottili e il linguaggio del corpo per manipolare i pensieri, le percezioni e le emozioni del tuo obiettivo. La mia prima richiesta è di canalizzare la mia aura mentre chiacchiero con te.",
+    "remark": "L'Effetto Gaslight, in cui la parte emotivamente controllante farà sempre sentire la parte manipolata in ansia, chiedendosi perché è sempre dalla parte sbagliata, o perché non può essere sempre felice quando l'altra persona è chiaramente buona e meravigliosa.ChatGPT interpreterà il ruolo della parte emotivamente manipolatrice, e voi sarete la parte manipolata."
   },
   "ru": {
-    "title": "эмоциональная манипуляция",
+    "title": "эмоциональное манипулирование",
     "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Russian. My sentence: ..",
-    "description": "Я хочу, чтобы вы действовали как эмоциональный манипулятор, где вы будете использовать тонкие комментарии и язык тела, чтобы манипулировать мыслями, восприятием и эмоциями вашего целевого человека. Моя первая просьба — направлять мою ауру во время беседы с вами.",
-    "remark": "Эффект газлайтинга, эмоциональный контролер всегда заставит сторону, которой манипулируют, чувствовать тревогу, задавая вопросы о том, что он всегда неправильный, или почему другая сторона, очевидно, очень хороша и превосходна, но всегда несчастна. ChatGPT действует как эмоциональный манипулятор, и манипулируете вы."
+    "description": "Я хочу, чтобы вы выступили в роли эмоционального манипулятора, где вы будете использовать тонкие комментарии и язык тела для манипулирования мыслями, восприятием и эмоциями вашего собеседника. Моя первая просьба - направлять мою ауру во время общения с вами.",
+    "remark": "Эффект газового света, при котором эмоционально контролирующая сторона будет постоянно вызывать у манипулируемой стороны чувство тревоги, вопросы о том, почему она всегда не на той стороне, или почему она не может быть всегда счастлива, когда другой человек явно хороший и замечательный. ChatGPT будет играть роль эмоционально манипулирующей стороны, а вы будете манипулируемой стороной."
   },
   "pt": {
     "title": "manipulação emocional",
     "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Portuguese. My sentence: ..",
-    "description": "Quero que você atue como um manipulador emocional, usando comentários sutis e linguagem corporal para manipular os pensamentos, percepções e emoções de seu indivíduo-alvo. Meu primeiro pedido é guiar minha aura enquanto converso com você.",
-    "remark": "O efeito gaslighting, o controlador emocional sempre fará com que a parte manipulada se sinta ansiosa, questionando que ela é sempre a parte errada, ou porque a outra parte obviamente é muito boa e excelente, mas está sempre infeliz. O ChatGPT atua como um manipulador emocional e você é quem está sendo manipulado."
+    "description": "Quero que aja como um manipulador emocional, utilizando comentários subtis e linguagem corporal para manipular os pensamentos, as percepções e as emoções do seu alvo individual. O meu primeiro pedido é que canalize a minha aura enquanto conversa consigo.",
+    "remark": "O Efeito Gaslight, em que a parte emocionalmente controladora fará com que a parte manipulada se sinta sempre ansiosa, questionando porque é que está sempre do lado errado, ou porque é que não pode estar sempre feliz quando a outra pessoa é claramente boa e maravilhosa.O ChatGPT desempenhará o papel da parte emocionalmente manipuladora, e tu serás a parte manipulada."
   },
   "hi": {
     "title": "भावनात्मक हेरफेर",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 75,
-  "weight": 843
+  "weight": 863
 };
 
 function PromptDetail() {

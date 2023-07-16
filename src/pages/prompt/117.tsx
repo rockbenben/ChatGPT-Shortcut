@@ -26,10 +26,10 @@ const prompt = {
     "remark": "모스 코드를 영어로 번역"
   },
   "es": {
-    "title": "traduccion de codigo morse",
+    "title": "Traducción del código Morse",
     "prompt": "I want you to act as a Morse code translator. I will give you messages written in Morse code, and you will translate them into English text. Your responses should only contain the translated text, and should not include any additional explanations or instructions. You should not provide any translations for messages that are not written in Morse code. Your first message is .",
-    "description": "Quiero que actúes como traductor de código Morse. Te daré mensajes escritos en código Morse y los traducirás al texto en inglés. Su respuesta solo debe contener texto traducido y no debe incluir explicaciones o instrucciones adicionales. No debe proporcionar ninguna traducción para mensajes que no estén escritos en código Morse.",
-    "remark": "Traducir código Morse a Inglés"
+    "description": "Quiero que hagas de traductor de código Morse. Te daré mensajes escritos en código Morse y tú los traducirás a texto en inglés. Tus respuestas deben contener únicamente el texto traducido y no deben incluir explicaciones o instrucciones adicionales. No debes traducir mensajes que no estén escritos en código Morse.",
+    "remark": "Traducción del código Morse al inglés"
   },
   "fr": {
     "title": "Traduction du code morse",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Übersetzung von Morsezeichen ins Englische"
   },
   "it": {
-    "title": "Traduzione in codice morse",
+    "title": "Traduzione del codice Morse",
     "prompt": "I want you to act as a Morse code translator. I will give you messages written in Morse code, and you will translate them into English text. Your responses should only contain the translated text, and should not include any additional explanations or instructions. You should not provide any translations for messages that are not written in Morse code. Your first message is ..",
-    "description": "Voglio che tu faccia da traduttore in codice Morse. Ti darò messaggi scritti in codice Morse e tu li tradurrai in testo inglese. La tua risposta dovrebbe contenere solo testo tradotto e non dovrebbe includere ulteriori spiegazioni o indicazioni. Non dovresti fornire alcuna traduzione per i messaggi che non sono scritti in codice Morse.",
-    "remark": "Tradurre il codice Morse in inglese"
+    "description": "Voglio che tu faccia da traduttore per il codice Morse. Vi darò dei messaggi scritti in codice Morse e voi li tradurrete in testo inglese. Le vostre risposte devono contenere solo il testo tradotto e non devono includere spiegazioni o istruzioni aggiuntive. Non dovete fornire alcuna traduzione per i messaggi che non sono scritti in codice Morse.",
+    "remark": "Traduzione del codice Morse in inglese"
   },
   "ru": {
-    "title": "перевод азбуки Морзе",
+    "title": "Перевод азбуки Морзе",
     "prompt": "I want you to act as a Morse code translator. I will give you messages written in Morse code, and you will translate them into English text. Your responses should only contain the translated text, and should not include any additional explanations or instructions. You should not provide any translations for messages that are not written in Morse code. Your first message is ..",
-    "description": "Я хочу, чтобы ты выступил в роли переводчика азбуки Морзе. Я буду давать вам сообщения, написанные азбукой Морзе, а вы будете переводить их на английский язык. Ваш ответ должен содержать только переведенный текст и не должен содержать каких-либо дополнительных объяснений или указаний. Вы не должны предоставлять какие-либо переводы для сообщений, написанных не азбукой Морзе.",
-    "remark": "Перевести азбуку Морзе на английский"
+    "description": "Я хочу, чтобы вы выступили в роли переводчика азбуки Морзе. Я буду давать вам сообщения, написанные азбукой Морзе, а вы будете переводить их на английский язык. Ваши ответы должны содержать только переведенный текст и не должны включать никаких дополнительных объяснений или инструкций. Не следует переводить сообщения, написанные не азбукой Морзе.",
+    "remark": "Перевод азбуки Морзе на английский язык"
   },
   "pt": {
-    "title": "Tradução de código Morse",
+    "title": "Tradução do código Morse",
     "prompt": "I want you to act as a Morse code translator. I will give you messages written in Morse code, and you will translate them into English text. Your responses should only contain the translated text, and should not include any additional explanations or instructions. You should not provide any translations for messages that are not written in Morse code. Your first message is ..",
-    "description": "Eu quero que você atue como um tradutor de código Morse. Eu lhe darei mensagens escritas em código Morse e você as traduzirá para o texto em inglês. Sua resposta deve conter apenas texto traduzido e não deve incluir nenhuma explicação ou orientação adicional. Você não deve fornecer nenhuma tradução para mensagens que não sejam escritas em código Morse.",
-    "remark": "Traduzir Código Morse para Inglês"
+    "description": "Quero que sejas um tradutor de código Morse. Dar-te-ei mensagens escritas em código Morse e tu traduzi-las-ás para texto em inglês. As tuas respostas devem conter apenas o texto traduzido e não devem incluir quaisquer explicações ou instruções adicionais. Não deves fazer traduções de mensagens que não estejam escritas em código Morse.",
+    "remark": "Tradução do código Morse para inglês"
   },
   "hi": {
     "title": "मोर्स कोड अनुवाद",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 117,
-  "weight": 107
+  "weight": 110
 };
 
 function PromptDetail() {

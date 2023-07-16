@@ -26,10 +26,10 @@ const prompt = {
     "remark": "입력 텍스트를 이모티콘으로 번역합니다."
   },
   "es": {
-    "title": "Traductor de emojis",
+    "title": "Traductor de emoji",
     "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que traduzcas las oraciones que escribí en emoji. Yo escribo frases, tu las expresas con emojis. Solo quiero que te expreses con emojis. No quiero que respondas con nada más que emojis. Cuando necesito decirte algo en inglés, lo envuelvo entre llaves, como {así}.",
-    "remark": "Traduce el texto de entrada a emoji."
+    "description": "Quiero que traduzcas las frases que escribo en emoticonos. Yo escribo frases y tú usas emojis para ellas. Sólo quiero que uses emojis para ello. No quiero que me respondas con otra cosa que no sean emojis. Cuando necesito decirte algo en inglés, lo escribo entre llaves, como {like this}.",
+    "remark": "Traduce el texto introducido en emoticonos."
   },
   "fr": {
     "title": "Emoji Translator",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Traduttore di emoji",
     "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che tu traduca le frasi che ho scritto in emoji. Io scrivo frasi, tu le esprimi con gli emoji. Voglio solo che tu esprima con gli emoji. Non voglio che tu risponda con nient&#39;altro che emoji. Quando ho bisogno di dirti qualcosa in inglese, lo racchiudo tra parentesi graffe, come {così}.",
-    "remark": "Traduci il testo di input in emoji."
+    "description": "Voglio che tu traduca le frasi che scrivo in emoticon. Io scrivo frasi e tu usi le emoji per esse. Voglio solo che tu usi le emoji per questo. Non voglio che tu risponda con altro che non siano emoji. Quando devo dirvi qualcosa in inglese, lo metto tra parentesi graffe, come {come questo}.",
+    "remark": "Tradurre il testo immesso in emoticon."
   },
   "ru": {
     "title": "Переводчик эмодзи",
     "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы вы перевели предложения, которые я написал, в смайлики. Я пишу предложения, вы выражаете их смайликами. Я просто хочу, чтобы вы выразили это с помощью смайликов. Я не хочу, чтобы вы отвечали ничем, кроме смайликов. Когда мне нужно сказать вам что-то по-английски, я заключаю это в фигурные скобки, например {вот так}.",
-    "remark": "Преобразуйте вводимый текст в эмодзи."
+    "description": "Я хочу, чтобы вы перевели предложения, которые я пишу, в смайлики. Я пишу предложения, а вы используете для них смайлики. Я просто хочу, чтобы вы использовали для этого смайлики. Я не хочу, чтобы вы отвечали мне чем-то, кроме смайликов. Когда мне нужно сказать вам что-то по-английски, я заключаю это в фигурные скобки, например {like this}.",
+    "remark": "Преобразование вводимого текста в смайлики."
   },
   "pt": {
-    "title": "Emoji Tradutor",
+    "title": "Tradutor de emojis",
     "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Quero que você traduza as frases que escrevi em emoji. Eu escrevo frases, você as expressa com emojis. Eu só quero que você expresse com emojis. Não quero que responda com nada além de emojis. Quando preciso dizer algo em inglês, coloco entre colchetes, como {assim}.",
-    "remark": "Traduza o texto de entrada em emoji."
+    "description": "Quero que traduzas as frases que escrevo em emoticons. Eu escrevo frases e tu usas emojis para elas. Só quero que uses emojis para isso. Não quero que respondas com mais nada para além de emojis. Quando preciso de te dizer algo em inglês, coloco-o entre parênteses rectos, como {assim}.",
+    "remark": "Traduzir o texto introduzido em emoticons."
   },
   "hi": {
     "title": "इमोजी अनुवादक",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 118,
-  "weight": 190
+  "weight": 194
 };
 
 function PromptDetail() {

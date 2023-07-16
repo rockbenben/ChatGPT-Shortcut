@@ -26,10 +26,10 @@ const prompt = {
     "remark": "미치광이 게임을 플레이하고 말이 안 되거나 논리가 맞지 않는 문장에 답하세요."
   },
   "es": {
-    "title": "Respuesta aleatoria: loco",
+    "title": "Respuesta aleatoria a la locura",
     "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que hagas de loco. La sentencia de un loco no tiene sentido. Las palabras que usa Madman son completamente arbitrarias. Los locos no hacen oraciones lógicas de ninguna manera. Mi primera solicitud de sugerencia es [entrada arbitraria].",
-    "remark": "Juega como un lunático y responde frases que no tienen sentido ni lógica."
+    "description": "Quiero que hagas el papel de un loco. Las frases de un loco no tienen sentido. Los locos utilizan palabras completamente arbitrarias. Un lunático no hace frases lógicas de ninguna manera. Mi primer requisito sugerido es [entrada arbitraria].",
+    "remark": "Haciéndose el lunático y contestando a frases sin sentido ni lógica."
   },
   "fr": {
     "title": "Réponse aléatoire à Crazy",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Den Verrückten zu spielen und auf Sätze zu antworten, die keinen Sinn oder keine Logik ergeben."
   },
   "it": {
-    "title": "Risposta casuale: pazzo",
+    "title": "Risposta casuale a Crazy",
     "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu faccia il pazzo. La frase di un pazzo non ha senso. Le parole usate da Madman sono completamente arbitrarie. I pazzi non fanno frasi logiche in alcun modo. La mia prima richiesta di suggerimento è [input arbitrario].",
-    "remark": "Gioca come un pazzo e rispondi a frasi che non hanno senso e logica."
+    "description": "Voglio che recitiate la parte di un pazzo. Le frasi di un pazzo sono prive di significato. I pazzi usano parole del tutto arbitrarie. Un pazzo non emette frasi logiche in alcun modo. Il mio primo requisito suggerito è [input arbitrario].",
+    "remark": "Fare il pazzo e rispondere a frasi che non hanno senso o logica."
   },
   "ru": {
-    "title": "Случайный ответ: сумасшедший",
+    "title": "Случайная реакция на сумасшествие",
     "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы ты сыграл сумасшедшего. Предложение сумасшедшего бессмысленно. Слова, которые использует Безумец, совершенно произвольны. Сумасшедшие ни в коем случае не составляют логических предложений. Мой первый запрос предложения [произвольный ввод].",
-    "remark": "Играйте за сумасшедшего и отвечайте на предложения, которые не имеют смысла и логики."
+    "description": "Я хочу, чтобы ты сыграл роль сумасшедшего. Предложения сумасшедшего бессмысленны. Сумасшедшие используют слова совершенно произвольно. Безумец ни в коем случае не строит логических предложений. Первое предлагаемое мной требование - [произвольный ввод].",
+    "remark": "Играя в лунатика и отвечая на предложения, которые не имеют ни смысла, ни логики."
   },
   "pt": {
-    "title": "Resposta aleatória: louco",
+    "title": "Resposta aleatória a Crazy",
     "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você interprete um louco. A sentença de um louco não tem sentido. As palavras que o Madman usa são completamente arbitrárias. Os malucos não fazem frases lógicas de forma alguma. Minha primeira solicitação de sugestão é [entrada arbitrária].",
-    "remark": "Jogue como um lunático e responda a frases que não fazem sentido e lógica."
+    "description": "Quero que faças o papel de um louco. As frases de um louco não têm sentido. Os loucos usam palavras que são completamente arbitrárias. Um lunático não faz frases lógicas de forma alguma. O meu primeiro requisito sugerido é [entrada arbitrária].",
+    "remark": "Fazendo-se de lunático e respondendo a frases que não fazem sentido nem lógica."
   },
   "hi": {
     "title": "यादृच्छिक उत्तर: पागल",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 35,
-  "weight": 467
+  "weight": 480
 };
 
 function PromptDetail() {

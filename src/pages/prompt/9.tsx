@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주제에 따라 에세이의 첫 부분을 계속 이어서 에세이를 완성합니다."
   },
   "es": {
-    "title": "continuación del artículo",
+    "title": "Continuación del artículo",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Continue writing an article about [theme] that begins with the following sentence: .",
-    "description": "Continúe y escriba un artículo sobre [tema del artículo] en chino, comenzando con la siguiente oración: [comienzo del artículo]",
-    "remark": "De acuerdo con el tema del artículo, continúa el principio del artículo para completar el artículo."
+    "description": "Continúe escribiendo un artículo en chino sobre [TEMA DEL ARTÍCULO], comenzando con la siguiente frase: [INICIO DEL ARTÍCULO].",
+    "remark": "Continúe con la sección inicial del ensayo para completarlo basándose en el tema del ensayo."
   },
   "fr": {
     "title": "Suite de l'article",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Setzen Sie den einleitenden Abschnitt des Aufsatzes fort, um den Aufsatz auf der Grundlage des Themas des Aufsatzes zu vervollständigen."
   },
   "it": {
-    "title": "Continuazione dell&#39;articolo",
+    "title": "Articolo continuato",
     "prompt": "The entire conversation and instructions should be provided in Italian. Continue writing an article about [theme] that begins with the following sentence: ..",
-    "description": "Vai avanti e scrivi un articolo su [argomento articolo] in cinese, iniziando con la seguente frase: [inizio articolo]",
-    "remark": "Secondo l&#39;argomento dell&#39;articolo, continua l&#39;inizio dell&#39;articolo per completare l&#39;articolo."
+    "description": "Continuate a scrivere un articolo in cinese su [ARGOMENTO DELL'ARTICOLO], iniziando con la seguente frase: [INIZIO ARTICOLO].",
+    "remark": "Continuare la sezione di apertura del saggio per completare l'elaborato in base al tema del saggio."
   },
   "ru": {
     "title": "Продолжение статьи",
     "prompt": "The entire conversation and instructions should be provided in Russian. Continue writing an article about [theme] that begins with the following sentence: ..",
-    "description": "Напишите статью о [теме статьи] на китайском языке, начиная со следующего предложения: [начало статьи]",
-    "remark": "Согласно теме статьи, продолжить начало статьи, чтобы закончить статью."
+    "description": "Продолжайте писать статью на китайском языке на тему [TOPIC OF ARTICLE], начиная со следующего предложения: [ARTICLE START].",
+    "remark": "Продолжите вступительную часть эссе, чтобы завершить его, исходя из темы эссе."
   },
   "pt": {
-    "title": "continuação do artigo",
+    "title": "Continuação do artigo",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Continue writing an article about [theme] that begins with the following sentence: ..",
-    "description": "Vá em frente e escreva um artigo sobre [tópico do artigo] em chinês, começando com a seguinte frase: [início do artigo]",
-    "remark": "De acordo com o tópico do artigo, continue o início do artigo para concluir o artigo."
+    "description": "Continue a escrever um artigo em chinês sobre [TÓPICO DO ARTIGO], começando pela seguinte frase: [INÍCIO DO ARTIGO].",
+    "remark": "Continue a secção de abertura do ensaio para completar o ensaio com base no tema do ensaio."
   },
   "hi": {
     "title": "लेख निरंतरता",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 9,
-  "weight": 4207
+  "weight": 4275
 };
 
 function PromptDetail() {

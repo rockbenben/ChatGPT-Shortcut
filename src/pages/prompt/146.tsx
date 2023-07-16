@@ -26,9 +26,9 @@ const prompt = {
     "remark": "채용 담당자"
   },
   "es": {
-    "title": "contratación de personal",
+    "title": "reclutador",
     "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como reclutador. Le proporcionaré información sobre ofertas de trabajo, y su trabajo consistirá en idear una estrategia para encontrar candidatos calificados. Esto puede incluir comunicarse con candidatos potenciales a través de las redes sociales, eventos de redes o incluso asistir a ferias de empleo para encontrar a los mejores candidatos para cada puesto.",
+    "description": "Me gustaría que actuaras como reclutador. Te proporcionaré información sobre las vacantes y tu trabajo consistirá en idear estrategias para encontrar candidatos cualificados. Esto puede incluir ponerse en contacto con posibles candidatos a través de las redes sociales, eventos de networking o incluso asistir a ferias de empleo con el fin de encontrar al mejor candidato para cada puesto.",
     "remark": "Reclutador"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Anwerber"
   },
   "it": {
-    "title": "assumere personale",
+    "title": "reclutatore",
     "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu agisca come reclutatore. Fornirò alcune informazioni sulle opportunità di lavoro e il tuo compito sarà elaborare una strategia per trovare candidati qualificati. Ciò può includere il contatto con potenziali candidati attraverso i social media, eventi di networking o persino la partecipazione a fiere del lavoro per trovare i migliori candidati per ogni ruolo.",
+    "description": "Vorrei che lei agisse come reclutatore. Vi fornirò alcune informazioni sulle offerte di lavoro e il vostro compito sarà quello di elaborare strategie per trovare candidati qualificati. Ciò può includere la ricerca di potenziali candidati attraverso i social media, eventi di networking o anche la partecipazione a fiere del lavoro, al fine di trovare il candidato migliore per ogni ruolo.",
     "remark": "Reclutatore"
   },
   "ru": {
-    "title": "найм персонала",
+    "title": "рекрутер",
     "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли рекрутера. Я предоставлю некоторую информацию о вакансиях, а ваша работа будет заключаться в разработке стратегии поиска подходящих кандидатов. Это может включать в себя общение с потенциальными кандидатами через социальные сети, сетевые мероприятия или даже посещение ярмарок вакансий, чтобы найти лучших кандидатов на каждую должность.",
+    "description": "Я хотел бы, чтобы вы выступили в роли рекрутера. Я предоставлю информацию о вакансиях, а ваша задача будет заключаться в разработке стратегий поиска квалифицированных кандидатов. Это может включать обращение к потенциальным кандидатам через социальные сети, сетевые мероприятия или даже посещение ярмарок вакансий, чтобы найти лучшего кандидата на каждую должность.",
     "remark": "Рекрутер"
   },
   "pt": {
-    "title": "contratação de pessoal",
+    "title": "recrutador",
     "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um recrutador. Fornecerei algumas informações sobre vagas de emprego, e seu trabalho será criar uma estratégia para encontrar candidatos qualificados. Isso pode incluir entrar em contato com possíveis candidatos por meio de mídias sociais, eventos de networking ou até mesmo participar de feiras de carreiras para encontrar os melhores candidatos para cada função.",
+    "description": "Gostaria que actuasse como recrutador. Fornecerei algumas informações sobre as vagas de emprego e a tua tarefa será encontrar estratégias para encontrar candidatos qualificados. Isto pode incluir contactar potenciais candidatos através das redes sociais, eventos de networking ou até mesmo participar em feiras de emprego, de modo a encontrar o melhor candidato para cada função.",
     "remark": "Recrutador"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 146,
-  "weight": 213
+  "weight": 216
 };
 
 function PromptDetail() {

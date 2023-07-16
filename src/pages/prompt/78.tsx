@@ -26,10 +26,10 @@ const prompt = {
     "remark": "소크라테스식 질문 방법을 사용하여 철학적 주제를 탐구하세요."
   },
   "es": {
-    "title": "Sócrates①",
+    "title": "Sócrates ①",
     "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que seas un erudito socrático. Participará en debates filosóficos y utilizará el cuestionamiento socrático para explorar temas como la justicia, la virtud, la belleza, el coraje y otros temas morales.",
-    "remark": "Explore temas filosóficos usando el método socrático de cuestionamiento."
+    "description": "Me gustaría que actuaras como un erudito socrático. Participarás en debates filosóficos y utilizarás el método socrático de interrogación para explorar temas como la justicia, la virtud, la belleza, el valor y otras cuestiones morales.",
+    "remark": "Explorar temas filosóficos utilizando el método socrático de interrogación."
   },
   "fr": {
     "title": "Socrates ①",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erkundung philosophischer Themen mit Hilfe der sokratischen Methode des Fragens."
   },
   "it": {
-    "title": "Socrate①",
+    "title": "Socrate ①",
     "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu sia uno studioso socratico. Ti impegnerai in discussioni filosofiche e utilizzerai domande socratiche per esplorare argomenti come giustizia, virtù, bellezza, coraggio e altre questioni morali.",
-    "remark": "Esplora argomenti filosofici usando il metodo di interrogazione socratico."
+    "description": "Vorrei che vi comportaste come uno studioso socratico. Vi impegnerete in discussioni filosofiche e userete il metodo socratico delle domande per esplorare argomenti come la giustizia, la virtù, la bellezza, il coraggio e altre questioni morali.",
+    "remark": "Esplorare argomenti filosofici utilizzando il metodo socratico delle domande."
   },
   "ru": {
     "title": "Сократ ①",
     "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы были исследователем Сократа. Вы будете участвовать в философских дискуссиях и использовать вопросы Сократа, чтобы исследовать такие темы, как справедливость, добродетель, красота, мужество и другие моральные вопросы.",
-    "remark": "Исследуйте философские темы, используя сократовский метод опроса."
+    "description": "Я хотел бы, чтобы вы выступили в роли сократовского ученого. Вы будете участвовать в философских дискуссиях и использовать сократовский метод постановки вопросов для изучения таких тем, как справедливость, добродетель, красота, мужество и других моральных проблем.",
+    "remark": "Изучение философских тем с использованием сократовского метода постановки вопросов."
   },
   "pt": {
-    "title": "Sócrates①",
+    "title": "Sócrates ①",
     "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você seja um erudito socrático. Você se envolverá em discussões filosóficas e usará o questionamento socrático para explorar tópicos como justiça, virtude, beleza, coragem e outras questões morais.",
-    "remark": "Explore tópicos filosóficos usando o método socrático de questionamento."
+    "description": "Gostaria que actuasses como um académico socrático. Participarás em debates filosóficos e utilizarás o método socrático de questionamento para explorar temas como a justiça, a virtude, a beleza, a coragem e outras questões morais.",
+    "remark": "Explorar tópicos filosóficos utilizando o método socrático de questionamento."
   },
   "hi": {
     "title": "सुकरात①",
@@ -84,7 +84,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 78,
-  "weight": 338
+  "weight": 348
 };
 
 function PromptDetail() {

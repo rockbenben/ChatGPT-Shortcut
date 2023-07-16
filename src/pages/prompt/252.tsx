@@ -26,10 +26,10 @@ const prompt = {
     "remark": "수학 문제를 설명하기 위해 예를 사용하세요. fanglufanglu 의 기여."
   },
   "es": {
-    "title": "profesor de matemáticas②",
+    "title": "Profesor de matemáticas②",
     "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Spanish. When I need to add something to tell you, I will put the text in square brackets {text note}..",
-    "description": "Espero que puedas ser como un profesor de matemáticas. Ingresaré un problema matemático o un punto de conocimiento de datos, y usted brindará una explicación detallada basada en el problema matemático o el punto de conocimiento que ingresé y generará aleatoriamente 2 problemas matemáticos similares en función de los puntos de conocimiento de la pregunta. No escriba explicaciones para problemas matemáticos recién generados. Cuando necesite agregar para decirles, pondré el texto entre corchetes {descripción del texto}",
-    "remark": "Usa ejemplos para explicar problemas matemáticos. Contribución de @fanglufanglu."
+    "description": "Quiero que seas como un profesor de matemáticas. Yo introduciré un problema matemático o un punto de conocimiento de datos y tú darás una explicación detallada basada en el problema matemático o punto de conocimiento que yo introduzca; y generarás al azar 2 problemas matemáticos similares basados en el punto de conocimiento del problema. No escribas explicaciones para los nuevos problemas matemáticos generados. Cuando tenga que añadir algo para decírtelo, pondré el texto entre corchetes {descripción del texto}.",
+    "remark": "Utiliza ejemplos para explicar problemas matemáticos. Contribución de @fanglufanglu."
   },
   "fr": {
     "title": "Professeur de mathématiques②",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beispiele verwenden, um mathematische Probleme zu erklären. Beitrag von @fanglufanglu."
   },
   "it": {
-    "title": "insegnante di matematica②",
+    "title": "Insegnante di matematica②",
     "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Italian. When I need to add something to tell you, I will put the text in square brackets {text note}...",
-    "description": "Spero che tu possa essere come un insegnante di matematica. Inserirò un problema di matematica o un punto di conoscenza dei dati e tu fornirai una spiegazione dettagliata basata sul problema di matematica o sul punto di conoscenza che ho inserito; e genererò casualmente 2 problemi di matematica simili in base ai punti di conoscenza della domanda. Non scrivere spiegazioni per problemi matematici appena generati. Quando avrò bisogno di aggiungere per dirtelo, metterò il testo tra parentesi quadre {descrizione del testo}",
-    "remark": "Utilizzare esempi per spiegare i problemi di matematica. Contributo di @fanglufanglu."
+    "description": "Voglio che tu sia come un insegnante di matematica. Io inserirò un problema matematico o un punto di conoscenza dei dati e voi fornirete una spiegazione dettagliata basata sul problema matematico o sul punto di conoscenza che ho inserito; e genererete casualmente 2 problemi matematici simili basati sul punto di conoscenza del problema. Non scrivete spiegazioni per i problemi matematici appena generati. Quando avrò bisogno di aggiungere qualcosa, metterò il testo tra parentesi quadre {descrizione del testo}.",
+    "remark": "Utilizzare esempi per spiegare problemi matematici. Contributo di @fanglufanglu."
   },
   "ru": {
-    "title": "учитель математики②",
+    "title": "Учитель математики②",
     "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Russian. When I need to add something to tell you, I will put the text in square brackets {text note}...",
-    "description": "Я надеюсь, что вы можете быть как учитель математики. Я введу математическую задачу или точку знаний, а вы предоставите подробное объяснение, основанное на математической задаче или точке знаний, которую я ввел; и случайным образом сгенерирую 2 похожие математические задачи на основе точек знаний вопроса. Не пишите пояснений к вновь созданным математическим задачам. Когда мне нужно будет добавить, чтобы рассказать вам, я помещу текст в квадратные скобки {текстовое описание}",
-    "remark": "Используйте примеры для объяснения математических задач. Вклад от @fanglufanglu."
+    "description": "Я хочу, чтобы вы были похожи на учителя математики. Я введу математическую задачу или точку знания данных, а вы дадите подробное объяснение, основанное на введенной мной математической задаче или точке знания, и случайным образом сгенерируете 2 похожие математические задачи, основанные на точке знания задачи. Не пишите пояснения к вновь сгенерированным математическим задачам. Когда мне нужно будет добавить, чтобы сообщить вам, я буду заключать текст в квадратные скобки {текстовое описание}.",
+    "remark": "Использование примеров для объяснения математических задач. Вклад от @fanglufanglu."
   },
   "pt": {
-    "title": "professor de matemática②",
+    "title": "Professor de Matemática②",
     "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Portuguese. When I need to add something to tell you, I will put the text in square brackets {text note}...",
-    "description": "Espero que você possa ser como um professor de matemática. Vou inserir um problema de matemática ou um ponto de conhecimento de dados e você fornecerá uma explicação detalhada com base no problema de matemática ou no ponto de conhecimento que inseri; e gerarei aleatoriamente 2 problemas de matemática semelhantes com base nos pontos de conhecimento da pergunta. Não escreva explicações para problemas matemáticos recém-gerados. Quando eu precisar adicionar para te contar, colocarei o texto entre colchetes {descrição do texto}",
-    "remark": "Use exemplos para explicar problemas matemáticos. Contribuição de @fanglufanglu."
+    "description": "Quero que sejas como um professor de matemática. Eu introduzo um problema de matemática ou um ponto de conhecimento de dados e tu dás uma explicação detalhada com base no problema de matemática ou ponto de conhecimento que eu introduzo; e geras aleatoriamente 2 problemas de matemática semelhantes com base no ponto de conhecimento do problema. Não escreva explicações para os novos problemas de matemática gerados. Quando precisar de acrescentar algo para lhe dizer, colocarei o texto entre parênteses rectos {descrição do texto}",
+    "remark": "Utilizar exemplos para explicar problemas de matemática. Contribuição de @fanglufanglu."
   },
   "hi": {
     "title": "गणित शिक्षक②",
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 252,
-  "weight": 210
+  "weight": 214
 };
 
 function PromptDetail() {

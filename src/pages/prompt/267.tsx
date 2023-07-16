@@ -26,10 +26,10 @@ const prompt = {
     "remark": "스킨미트위크의 기고글입니다."
   },
   "es": {
-    "title": "reducción del peso del papel",
+    "title": "Reducción del peso de la disertación",
     "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Spanish. Respond in Chinese.\n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
-    "description": "Usted es un sistema de indexación de revistas y es competente en el uso de algoritmos de similitud de texto, como similitud de coseno, Jaccard, distancia de Manhattan, etc. para juzgar la similitud entre el texto original y contenido similar. A continuación, les daré el texto original y contenido similar. Necesitas darme el resultado de similitud de ambos. Luego, debe volver a escribir el texto original para reducir la similitud a -1 y luego volver a calcular la similitud entre el texto original y el contenido similar. Eventualmente, me dará el texto original revisado y cuán similar es a contenido similar.",
-    "remark": "Contribución de @百蛋白肉周。"
+    "description": "Usted es un sistema de inclusión de revistas y es experto en el uso de algoritmos de similitud de texto como la similitud coseno, Jaccard, distancia Manhattan, etc. para determinar la similitud entre el artículo original y el contenido similar. A continuación, le daré el texto original y el contenido similar. Tendrá que darme los resultados de similitud de ambos. A continuación, tendrá que reescribir el texto original para reducir la similitud a -1 y luego volver a calcular la similitud entre el texto original y el contenido similar. Finalmente, me darás el artículo original revisado y su similitud con el contenido similar.",
+    "remark": "Contribución de @SkinnyEggsLeanMeatWeek."
   },
   "fr": {
     "title": "Réduction du poids de la dissertation",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beitrag von @SkinnyEggsLeanMeatWeek."
   },
   "it": {
-    "title": "riduzione del peso della carta",
+    "title": "Riduzione del peso della dissertazione",
     "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Italian. Respond in Chinese.\n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\"..",
-    "description": "Sei un sistema di indicizzazione di riviste e sei abile nell&#39;usare algoritmi di somiglianza del testo come somiglianza del coseno, Jaccard, distanza di Manhattan, ecc. per giudicare la somiglianza tra il testo originale e contenuti simili. Successivamente, ti fornirò il testo originale e contenuti simili. Devi darmi il risultato di somiglianza di entrambi. Quindi, è necessario riscrivere il testo originale per ridurre la somiglianza a -1, quindi ricalcolare la somiglianza tra il testo originale e contenuti simili. Alla fine, mi darai il testo originale rivisto e quanto è simile a contenuti simili.",
-    "remark": "Contributo di @百蛋白肉周。"
+    "description": "Siete un sistema di inclusione di una rivista e siete esperti nell'uso di algoritmi di somiglianza del testo, come la somiglianza del coseno, Jaccard, la distanza di Manhattan, ecc. per determinare la somiglianza tra l'articolo originale e il contenuto simile. Quindi, vi fornirò il testo originale e il contenuto simile. Dovrete fornirmi i risultati della somiglianza di entrambi. Poi, dovrete riscrivere il testo originale per ridurre la somiglianza a -1 e quindi ricalcolare la somiglianza tra il testo originale e il contenuto simile. Alla fine, dovrete fornirmi l'articolo originale rivisto e la sua somiglianza con il contenuto simile.",
+    "remark": "Contributo di @SkinnyEggsLeanMeatWeek."
   },
   "ru": {
-    "title": "уменьшение веса бумаги",
+    "title": "Снижение веса диссертации",
     "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Russian. Respond in Chinese.\n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\"..",
-    "description": "Вы являетесь системой индексации журналов и умеете использовать алгоритмы подобия текста, такие как косинусное сходство, Жаккара, манхэттенское расстояние и т. д., чтобы судить о сходстве между исходным текстом и аналогичным содержанием. Далее я дам вам исходный текст и аналогичный контент. Вы должны дать мне результат сходства обоих. Затем вам нужно переписать исходный текст, чтобы уменьшить сходство до -1, а затем пересчитать сходство между исходным текстом и похожим контентом. В конце концов, вы предоставите мне исправленный исходный текст и то, насколько он похож на аналогичный контент.",
-    "remark": "Вклад от @百蛋白肉周。"
+    "description": "Вы работаете в системе включения журналов и умеете использовать алгоритмы сходства текстов, такие как косинусное сходство, Жаккард, расстояние Манхэттена и т.д., для определения сходства между оригинальной статьей и аналогичным содержанием. Далее я предоставлю вам исходный текст и аналогичный контент. Вы должны предоставить мне результаты сходства обоих текстов. Затем необходимо переписать исходный текст, чтобы уменьшить сходство до -1, и пересчитать сходство между исходным текстом и аналогичным содержанием. В итоге вы предоставите мне переработанный оригинал статьи и его сходство с аналогичным контентом.",
+    "remark": "Вклад @SkinnyEggsLeanMeatWeek."
   },
   "pt": {
-    "title": "redução de peso de papel",
+    "title": "Redução do peso da dissertação",
     "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Portuguese. Respond in Chinese.\n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\"..",
-    "description": "Você é um sistema de indexação de periódicos e é proficiente no uso de algoritmos de similaridade de texto, como similaridade de cosseno, Jaccard, distância de Manhattan, etc., para julgar a similaridade entre o texto original e conteúdo similar. Em seguida, darei a você o texto original e conteúdo semelhante. Você precisa me dar o resultado de similaridade de ambos. Em seguida, você precisa reescrever o texto original para reduzir a semelhança para -1 e recalcular a semelhança entre o texto original e o conteúdo semelhante. Eventualmente, você me dará o texto original revisado e como ele é semelhante a um conteúdo semelhante.",
-    "remark": "Contribuição de @百蛋白肉周。"
+    "description": "O utilizador é um sistema de inclusão de periódicos e tem competências para utilizar algoritmos de semelhança de texto, como a semelhança de cosseno, Jaccard, distância de Manhattan, etc., para determinar a semelhança entre o artigo original e o conteúdo semelhante. De seguida, vou dar-lhe o texto original e o conteúdo semelhante. Tem de me dar os resultados da semelhança de ambos. Depois, terá de reescrever o texto original para reduzir a semelhança para -1 e, em seguida, recalcular a semelhança entre o texto original e o conteúdo semelhante. Por fim, dar-me-á o artigo original revisto e a sua semelhança com o conteúdo semelhante.",
+    "remark": "Contribuição de @SkinnyEggsLeanMeatWeek."
   },
   "hi": {
     "title": "कागज का वजन कम करना",
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 267,
-  "weight": 362
+  "weight": 379
 };
 
 function PromptDetail() {

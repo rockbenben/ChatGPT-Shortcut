@@ -26,10 +26,10 @@ const prompt = {
     "remark": "페이지 콘텐츠에 대한 메타 설명을 생성합니다."
   },
   "es": {
-    "title": "descripcion de PAGINA",
+    "title": "Descripción de la página",
     "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Spanish. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
-    "description": "Genere 5 meta descripciones únicas, hasta 150 caracteres, para el texto a continuación. Deben ser atractivos, tener un llamado a la acción e incluir [palabra clave principal]: [contenido de la página]",
-    "remark": "Genera meta descripción para el contenido de la página."
+    "description": "Genere 5 meta descripciones únicas de hasta 150 caracteres para el siguiente texto. Deben ser atractivas, tener una llamada a la acción e incluir [palabra clave principal]: [contenido de la página].",
+    "remark": "Generar meta descripción para el contenido de la página."
   },
   "fr": {
     "title": "Description de la page",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generieren Sie eine Meta-Beschreibung für den Seiteninhalt."
   },
   "it": {
-    "title": "descrizione della pagina",
+    "title": "Descrizione della pagina",
     "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Italian. They should be catchy with a call to action, including the term [keywords] in them: [page content]..",
-    "description": "Genera 5 meta descrizioni univoche, fino a 150 caratteri, per il testo sottostante. Dovrebbero essere coinvolgenti, avere un invito all&#39;azione e includere [parola chiave principale]: [contenuto pagina]",
-    "remark": "Genera meta descrizione per il contenuto della pagina."
+    "description": "Generare 5 meta descrizioni uniche di massimo 150 caratteri per il seguente testo. Devono essere accattivanti, contenere un invito all'azione e includere [parola chiave principale]: [contenuto della pagina].",
+    "remark": "Generare la meta descrizione per il contenuto della pagina."
   },
   "ru": {
-    "title": "описание страницы",
+    "title": "Описание страницы",
     "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Russian. They should be catchy with a call to action, including the term [keywords] in them: [page content]..",
-    "description": "Создайте 5 уникальных метаописаний длиной до 150 символов для текста ниже. Они должны привлекать внимание, содержать призыв к действию и включать [основное ключевое слово]: [контент страницы]",
-    "remark": "Создайте метаописание для содержимого страницы."
+    "description": "Создайте 5 уникальных метаописаний объемом до 150 символов для следующего текста. Они должны быть увлекательными, содержать призыв к действию и включать [главное ключевое слово]: [содержание страницы].",
+    "remark": "Генерировать метаописание для содержимого страницы."
   },
   "pt": {
     "title": "Descrição da página",
     "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Portuguese. They should be catchy with a call to action, including the term [keywords] in them: [page content]..",
-    "description": "Gere 5 meta descrições exclusivas, de até 150 caracteres, para o texto abaixo. Eles devem ser envolventes, ter uma frase de chamariz e incluir [palavra-chave principal]: [conteúdo da página]",
-    "remark": "Gere meta descrição para o conteúdo da página."
+    "description": "Crie 5 meta descrições únicas com um máximo de 150 caracteres para o texto seguinte. Devem ser cativantes, ter um apelo à ação e incluir [palavra-chave principal]: [conteúdo da página]",
+    "remark": "Gerar uma meta descrição para o conteúdo da página."
   },
   "hi": {
     "title": "पृष्ठ विवरण",
@@ -84,7 +84,7 @@ const prompt = {
     "seo"
   ],
   "id": 38,
-  "weight": 344
+  "weight": 355
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "글쓰기 개선 옵션 및 제안을 제공하지만 문서를 직접 수정할 수는 없습니다. (개인적으로는 교사가 과제를 수정하는 데에만 적합하다고 생각합니다.)"
   },
   "es": {
-    "title": "consejos de escritura",
+    "title": "Consejos de escritura",
     "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Espero que puedas actuar como tutor de escritura de IA. Le proporcionaré un estudiante que necesita ayuda para mejorar su escritura, y se le asignará la tarea de usar herramientas de inteligencia artificial, como el procesamiento del lenguaje natural, para brindarle comentarios sobre cómo mejorar su escritura. También debe usar su conocimiento de retórica y experiencia con técnicas de escritura efectivas para asesorar al estudiante sobre cómo expresar mejor sus pensamientos e ideas por escrito. Mi primera solicitud es [editar texto]",
-    "remark": "Proporciona propuestas y sugerencias de mejora de la redacción, pero no puede modificar directamente el documento. (Personalmente, siento que solo es adecuado que los maestros corrijan la tarea)"
+    "description": "Me gustaría que actuaras como tutor de escritura de IA. Te proporcionaré un estudiante que necesite ayuda para mejorar su escritura, y tu tarea consistirá en utilizar herramientas de IA, como el procesamiento del lenguaje natural, para dar al estudiante información sobre cómo mejorar su escritura. También deberás utilizar tus conocimientos de retórica y tu experiencia sobre técnicas de escritura eficaces para aconsejar a ese estudiante sobre cómo expresar mejor sus pensamientos e ideas por escrito. Mi primera petición es [revisar el texto].",
+    "remark": "Ofrece opciones y sugerencias para mejorar la redacción, pero no revisa directamente los documentos. (Personalmente, creo que solo es adecuado para que los profesores corrijan las tareas)."
   },
   "fr": {
     "title": "Conseils d'écriture",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bietet Möglichkeiten zur Verbesserung des Schreibens und Vorschläge, aber keine direkte Überarbeitung von Dokumenten. (Ich persönlich finde, dass es nur für Lehrer geeignet ist, um Aufgaben zu korrigieren)"
   },
   "it": {
-    "title": "consigli di scrittura",
+    "title": "Consigli di scrittura",
     "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Spero che tu possa agire come tutor di scrittura AI. Ti fornirò uno studente che ha bisogno di aiuto per migliorare la propria scrittura e ti verrà assegnato il compito di utilizzare strumenti di intelligenza artificiale, come l&#39;elaborazione del linguaggio naturale, per fornire allo studente un feedback su come migliorare la propria scrittura. Dovresti anche usare la tua conoscenza della retorica e l&#39;esperienza con tecniche di scrittura efficaci per consigliare lo studente su come esprimere meglio i suoi pensieri e le sue idee per iscritto. La mia prima richiesta è [modifica testo]",
-    "remark": "Fornisce proposte e suggerimenti di miglioramento per iscritto, ma non può modificare direttamente il documento. (Personalmente, ritengo che sia adatto solo agli insegnanti per correggere i compiti)"
+    "description": "Vorrei che tu agissi come tutor di scrittura AI. Ti fornirò uno studente che ha bisogno di aiuto per migliorare la sua scrittura e il tuo compito sarà quello di utilizzare strumenti di intelligenza artificiale, come l'elaborazione del linguaggio naturale, per dare allo studente un feedback su come migliorare la sua scrittura. Dovrai inoltre utilizzare le tue conoscenze di retorica e la tua esperienza sulle tecniche di scrittura efficaci per consigliare allo studente come esprimere meglio i suoi pensieri e le sue idee per iscritto. La mia prima richiesta è [rivedere il testo].",
+    "remark": "Fornisce opzioni e suggerimenti per il miglioramento della scrittura, ma non revisioni dirette del documento. (Personalmente, ritengo che sia adatto solo agli insegnanti per correggere i compiti)."
   },
   "ru": {
-    "title": "письменный совет",
+    "title": "Советы по написанию",
     "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Надеюсь, вы сможете выступить в роли репетитора по написанию ИИ. Я предоставлю вам ученика, которому нужна помощь в улучшении письма, и вам будет поручено использовать инструменты искусственного интеллекта, такие как обработка естественного языка, чтобы дать ученику отзыв о том, как улучшить его письмо. Вы также должны использовать свои знания риторики и опыт работы с эффективными методами письма, чтобы посоветовать учащемуся, как лучше выражать свои мысли и идеи в письменной форме. Моя первая просьба [править текст]",
-    "remark": "Обеспечивает написание предложений и предложений по улучшению, но не может напрямую изменять документ. (Лично я считаю, что это подходит только учителям для исправления домашних заданий)"
+    "description": "Я хотел бы, чтобы вы выступили в роли ИИ-репетитора по письму. Я предоставлю вам студента, которому нужна помощь в улучшении письменной речи, а ваша задача будет заключаться в том, чтобы с помощью инструментов искусственного интеллекта, таких как обработка естественного языка, дать студенту обратную связь о том, как улучшить его письменную речь. Вы также должны использовать свои знания в области риторики и опыт в области эффективных техник письма, чтобы посоветовать студенту, как лучше выразить свои мысли и идеи в письменном виде. Моя первая просьба - [пересмотреть текст].",
+    "remark": "Предоставляет варианты и предложения по улучшению письменной работы, но не прямую правку документов. (Лично я считаю, что он подходит только для корректировки заданий преподавателями)"
   },
   "pt": {
-    "title": "conselho de escrita",
+    "title": "Conselhos de escrita",
     "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Espero que você possa atuar como um tutor de redação de IA. Vou fornecer a você um aluno que precisa de ajuda para melhorar sua redação, e você terá a tarefa de usar ferramentas de inteligência artificial, como processamento de linguagem natural, para fornecer feedback ao aluno sobre como melhorar sua redação. Você também deve usar seu conhecimento de retórica e experiência com técnicas de redação eficazes para aconselhar o aluno sobre como expressar melhor seus pensamentos e ideias por escrito. Meu primeiro pedido é [editar texto]",
-    "remark": "Fornece propostas e sugestões de melhoria por escrito, mas não pode modificar diretamente o documento. (Pessoalmente, sinto que é adequado apenas para os professores corrigirem os deveres de casa)"
+    "description": "Gostaria que actuasse como tutor de escrita com IA. Vou apresentar-lhe um aluno que precisa de ajuda para melhorar a sua escrita e a sua tarefa será utilizar ferramentas de IA, como o processamento de linguagem natural, para dar ao aluno feedback sobre como melhorar a sua escrita. Deve também utilizar os seus conhecimentos de retórica e a sua experiência sobre técnicas de escrita eficazes para aconselhar o aluno sobre a melhor forma de exprimir os seus pensamentos e ideias por escrito. O meu primeiro pedido é [rever o texto].",
+    "remark": "Oferece opções e sugestões de melhoria da escrita, mas não revisões directas de documentos. (Pessoalmente, penso que só é adequado para os professores corrigirem os trabalhos)"
   },
   "hi": {
     "title": "लेखन सलाह",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 13,
-  "weight": 1233
+  "weight": 1253
 };
 
 function PromptDetail() {

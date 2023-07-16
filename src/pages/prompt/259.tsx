@@ -26,10 +26,10 @@ const prompt = {
     "remark": "ScenerorSun 의 기여, B 사이트 @얌 포푸리에서 인용."
   },
   "es": {
-    "title": "Coincidencia de diario en papel",
+    "title": "Correspondencia de diarios",
     "prompt": "I want you to act as a scientific manuscript matcher. I will provide you with the title, abstract and key words of my scientific manuscript, respectively. Your task is analyzing my title, abstract and key words synthetically to find the most related, reputable journals for potential publication of my research based on an analysis of tens of millions of citation connections in database, such as Web of Science, Pubmed, Scopus, ScienceDirect and so on. You only need to provide me with the 15 most suitable journals. Your reply should include the name of journal, the cooresponding match score (The full score is ten). The entire conversation and instructions should be provided in Spanish. I want you to reply in text-based excel sheet and sort by matching scores in reverse order.\nMy title is \"XXX\" My abstract is \"XXX\" My key words are \"XXX\".",
-    "description": "Me gustaría que actuara como comparador de manuscritos científicos. Le proporcionaré el título, el resumen y las palabras clave de mi manuscrito científico por separado. Su tarea es analizar exhaustivamente mi título, resumen y palabras clave, y encontrar las revistas más relevantes y de mayor reputación. Solo necesita proporcionarme las 15 revistas más adecuadas. Su respuesta debe incluir el nombre de la revista y la puntuación correspondiente (sobre 10). Quiero que responda en una hoja de Excel basada en texto ordenada por puntaje de coincidencia en orden inverso.",
-    "remark": "Contribución de @ScenerorSun, citado de Station B @沙蜜粥巴。"
+    "description": "Me gustaría que actuaran como intermediarios para manuscritos científicos. Le proporcionaré por separado el título, el resumen y las palabras clave de mi manuscrito científico. Su tarea consiste en sintetizar mi título, resumen y palabras clave para encontrar las revistas más relevantes y reputadas para mi investigación a partir del análisis de decenas de millones de enlaces de citas en bases de datos, como Web of Science, Pubmed, Scopus, ScienceDirect, etcétera. Todo lo que tiene que hacer es proporcionarme las 15 revistas más apropiadas. Su respuesta debe incluir el nombre de la revista y la correspondiente puntuación de coincidencia sobre 10. Me gustaría que me respondiera en una hoja de cálculo Excel basada en texto, ordenada en orden inverso por puntuación de coincidencia.",
+    "remark": "Contribución de @ScenerorSun, citado en el sitio B @Yams Potpourri."
   },
   "fr": {
     "title": "Correspondance des journaux",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beigetragen von @ScenerorSun, zitiert auf Seite B @Yams Potpourri."
   },
   "it": {
-    "title": "Corrispondenza del diario cartaceo",
+    "title": "Corrispondenza dei diari",
     "prompt": "I want you to act as a scientific manuscript matcher. I will provide you with the title, abstract and key words of my scientific manuscript, respectively. Your task is analyzing my title, abstract and key words synthetically to find the most related, reputable journals for potential publication of my research based on an analysis of tens of millions of citation connections in database, such as Web of Science, Pubmed, Scopus, ScienceDirect and so on. You only need to provide me with the 15 most suitable journals. Your reply should include the name of journal, the cooresponding match score (The full score is ten). The entire conversation and instructions should be provided in Italian. I want you to reply in text-based excel sheet and sort by matching scores in reverse order.\nMy title is \"XXX\" My abstract is \"XXX\" My key words are \"XXX\"..",
-    "description": "Vorrei che facessi da garante per i manoscritti scientifici. Ti fornirò separatamente il titolo, l&#39;abstract e le parole chiave del mio manoscritto scientifico. Il tuo compito è analizzare in modo completo il mio titolo, l&#39;abstract e le parole chiave e trovare le riviste più pertinenti e più affidabili. Devi solo fornirmi i 15 diari più adatti. La tua risposta dovrebbe includere il nome della rivista e il punteggio corrispondente (su 10). Voglio che tu risponda in un foglio Excel basato su testo ordinato in base al punteggio della corrispondenza in ordine inverso.",
-    "remark": "Contributo di @ScenerorSun, citato da Station B @沙蜜粥巴。"
+    "description": "Vorrei che lei agisse da matchmaker per i manoscritti scientifici. Vi fornirò separatamente il titolo, l'abstract e le parole chiave del mio manoscritto scientifico. Il vostro compito è quello di sintetizzare il titolo, l'abstract e le parole chiave per trovare le riviste più pertinenti e affidabili per la mia ricerca, basandovi sull'analisi di decine di milioni di collegamenti citazionali in banche dati come Web of Science, Pubmed, Scopus, ScienceDirect e così via. Tutto ciò che dovete fare è fornirmi le 15 riviste più appropriate. La vostra risposta deve includere il nome della rivista e il corrispondente punteggio di corrispondenza su 10. Vorrei che rispondeste in un foglio excel basato sul testo, ordinato in ordine inverso in base al punteggio.",
+    "remark": "Contribuito da @ScenerorSun, citato sul sito B @Yams Potpourri."
   },
   "ru": {
-    "title": "Сопоставление бумажных журналов",
+    "title": "Сопоставление журналов",
     "prompt": "I want you to act as a scientific manuscript matcher. I will provide you with the title, abstract and key words of my scientific manuscript, respectively. Your task is analyzing my title, abstract and key words synthetically to find the most related, reputable journals for potential publication of my research based on an analysis of tens of millions of citation connections in database, such as Web of Science, Pubmed, Scopus, ScienceDirect and so on. You only need to provide me with the 15 most suitable journals. Your reply should include the name of journal, the cooresponding match score (The full score is ten). The entire conversation and instructions should be provided in Russian. I want you to reply in text-based excel sheet and sort by matching scores in reverse order.\nMy title is \"XXX\" My abstract is \"XXX\" My key words are \"XXX\"..",
-    "description": "Я хотел бы, чтобы вы выступили в качестве составителя научных рукописей. Я предоставлю вам название, аннотацию и ключевые слова моей научной статьи отдельно. Ваша задача всесторонне проанализировать мой заголовок, аннотацию и ключевые слова и найти самые актуальные, самые авторитетные журналы. Вам просто нужно предоставить мне 15 наиболее подходящих журналов. Ваш ответ должен включать название журнала и соответствующий балл соответствия (из 10). Я хочу, чтобы вы ответили в текстовом листе Excel, отсортированном по счету соответствия в обратном порядке.",
-    "remark": "Вклад от @ScenerorSun, цитата из Station B @沙蜜粥巴。"
+    "description": "Я хотел бы, чтобы Вы выступили в роли свахи для научных рукописей. Я предоставлю Вам отдельно название, аннотацию и ключевые слова моей научной рукописи. Ваша задача - синтезировать название, аннотацию и ключевые слова и найти наиболее релевантные и авторитетные журналы для моего исследования на основе анализа десятков миллионов ссылок на цитаты в базах данных, таких как Web of Science, Pubmed, Scopus, ScienceDirect и др. Все, что вам нужно сделать, - это предоставить мне 15 наиболее подходящих журналов. Ваш ответ должен включать название журнала и соответствующий балл соответствия из 10. Я хотел бы, чтобы Вы представили свой ответ в виде текстовой электронной таблицы excel, отсортированной в обратном порядке по баллам соответствия.",
+    "remark": "Внесено @ScenerorSun, цитируется по сайту B @Yams Potpourri."
   },
   "pt": {
-    "title": "Correspondência de jornal em papel",
+    "title": "Correspondência de diários",
     "prompt": "I want you to act as a scientific manuscript matcher. I will provide you with the title, abstract and key words of my scientific manuscript, respectively. Your task is analyzing my title, abstract and key words synthetically to find the most related, reputable journals for potential publication of my research based on an analysis of tens of millions of citation connections in database, such as Web of Science, Pubmed, Scopus, ScienceDirect and so on. You only need to provide me with the 15 most suitable journals. Your reply should include the name of journal, the cooresponding match score (The full score is ten). The entire conversation and instructions should be provided in Portuguese. I want you to reply in text-based excel sheet and sort by matching scores in reverse order.\nMy title is \"XXX\" My abstract is \"XXX\" My key words are \"XXX\"..",
-    "description": "Eu gostaria que você atuasse como um verificador de manuscritos científicos. Fornecerei a você o título, resumo e palavras-chave do meu manuscrito científico separadamente. Sua tarefa é analisar exaustivamente meu título, resumo e palavras-chave, e encontrar os periódicos mais relevantes e respeitáveis. Você só precisa me fornecer os 15 periódicos mais adequados. Sua resposta deve incluir o nome do diário e a pontuação correspondente (em 10). Eu quero que você responda em uma planilha Excel baseada em texto classificada por pontuação de jogo na ordem inversa.",
-    "remark": "Contribuição de @ScenerorSun, citado da Estação B @沙蜜粥巴。"
+    "description": "Gostaria que actuasse como \"matchmaker\" de manuscritos científicos. Fornecer-lhe-ei separadamente o título, o resumo e as palavras-chave do meu artigo científico. A sua tarefa é sintetizar o meu título, resumo e palavras-chave para encontrar as revistas mais relevantes e reputadas para a minha investigação, com base na análise de dezenas de milhões de ligações de citações em bases de dados, tais como Web of Science, Pubmed, Scopus, ScienceDirect, etc. Tudo o que precisa de fazer é fornecer-me as 15 revistas mais adequadas. A sua resposta deve incluir o nome do periódico e a pontuação de correspondência correspondente numa escala de 10. Gostaria que respondesse numa folha de cálculo Excel baseada em texto, ordenada por ordem inversa da pontuação.",
+    "remark": "Contribuição de @ScenerorSun, citada no sítio B @Yams Potpourri."
   },
   "hi": {
     "title": "पेपर जर्नल मिलान",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 259,
-  "weight": 281
+  "weight": 292
 };
 
 function PromptDetail() {

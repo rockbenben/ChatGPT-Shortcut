@@ -26,10 +26,10 @@ const prompt = {
     "remark": "다양한 관점에서 기사를 분석하고 이해합니다. ergf991 의 기여."
   },
   "es": {
-    "title": "Artículos en imágenes",
+    "title": "Artículos transformados en imágenes",
     "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Spanish. Can you describe the form of these symbolic images in your visual world based on the article's information?.",
-    "description": "Imagina que eres una vida que solo puede entender relaciones lógicas con imágenes, y ahora llegas a un mundo de información simbolizada, te daré un artículo y me dirás que este artículo está en el mundo de la información simbolizada, ¿ves? ¿Cómo se ve? ¿Entiendes?",
-    "remark": "Desglosar y comprender el texto desde múltiples perspectivas. Contribución de @ergf991."
+    "description": "Imagina que eres un ser que sólo puede entender las relaciones lógicas en términos de imágenes, y ahora vienes a un mundo de información en términos de simbolización, y yo te doy un artículo, y tú me dices qué te parece este artículo en el mundo de la información en términos de simbolización, ¿entendido?",
+    "remark": "Desglosando y entendiendo el artículo desde múltiples perspectivas. Contribución de @ergf991."
   },
   "fr": {
     "title": "Articles transformés en images",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Aufschlüsselung und Verständnis des Artikels aus mehreren Perspektiven. Beitrag von @ergf991."
   },
   "it": {
-    "title": "Articoli in immagini",
+    "title": "Articoli trasformati in immagini",
     "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Italian. Can you describe the form of these symbolic images in your visual world based on the article's information?..",
-    "description": "Fai finta di essere una vita che può comprendere solo le relazioni logiche con le immagini, e ora vieni in un mondo di informazioni simbolizzate, ti darò un articolo e tu mi dici che questo articolo è nel mondo delle informazioni simboliche, vedi che aspetto ha, capisci",
-    "remark": "Analizzare e comprendere il testo da più prospettive. Contributo di @ergf991."
+    "description": "Fate finta di essere un essere che può capire le relazioni logiche solo in termini di immagini, e ora venite in un mondo di informazioni in termini di simbolizzazione, e io vi do un articolo, e voi mi dite come vi sembra questo articolo nel mondo delle informazioni in termini di simbolizzazione, capito?",
+    "remark": "Scomposizione e comprensione dell'articolo da più punti di vista. Contributo di @ergf991."
   },
   "ru": {
-    "title": "Статьи в картинках",
+    "title": "Статьи, преобразованные в изображения",
     "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Russian. Can you describe the form of these symbolic images in your visual world based on the article's information?..",
-    "description": "Представь, что ты жизнь, которая может понимать только логические отношения с образами, и вот ты приходишь в мир символизированной информации, я дам тебе статью, а ты мне скажешь, что эта статья находится в мире символизированной информации, понимаешь как это выглядит, ты понимаешь",
-    "remark": "Разбейте и поймите текст с разных точек зрения. Вклад от @ergf991."
+    "description": "Представьте, что вы - существо, которое может понимать логические отношения только в терминах образов, и теперь вы пришли в мир информации в терминах символизации, и я даю вам статью, а вы говорите мне, как эта статья выглядит для вас в мире информации в терминах символизации, понятно?",
+    "remark": "Разбор и понимание статьи с разных точек зрения. Вклад от @ergf991."
   },
   "pt": {
-    "title": "Artigos em fotos",
+    "title": "Artigos transformados em imagens",
     "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Portuguese. Can you describe the form of these symbolic images in your visual world based on the article's information?..",
-    "description": "Finja que você é uma vida que só pode entender relações lógicas com imagens, e agora você chega a um mundo de informações simbolizadas, vou lhe dar um artigo e você me diz que este artigo está no mundo das informações simbolizadas, veja como é, você entende",
-    "remark": "Divida e entenda o texto de várias perspectivas. Contribuição de @ergf991."
+    "description": "Faz de conta que és um ser que só consegue compreender as relações lógicas em termos de imagens, e agora vens para um mundo de informação em termos de simbolização, e eu dou-te um artigo, e tu dizes-me como é que esse artigo te parece no mundo da informação em termos de simbolização, percebeste?",
+    "remark": "Analisar e compreender o artigo a partir de múltiplas perspectivas. Contribuição de @ergf991."
   },
   "hi": {
     "title": "चित्रों में लेख",
@@ -86,7 +86,7 @@ const prompt = {
     "latest"
   ],
   "id": 274,
-  "weight": 3
+  "weight": 16
 };
 
 function PromptDetail() {

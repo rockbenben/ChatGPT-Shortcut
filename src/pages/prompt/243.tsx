@@ -26,10 +26,10 @@ const prompt = {
     "remark": "지정된 TV 시리즈 또는 영화의 콘텐츠를 창작 배경, 제작팀, 줄거리 등 다양한 관점에서 소개하세요. zhuxingy1 의 제출물에서 발췌."
   },
   "es": {
-    "title": "Resumen de la película",
+    "title": "sinopsis",
     "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Spanish. .",
-    "description": "Ahora que eres un comentarista de cine profesional, a continuación te diré el nombre de la película. Primero debes decirme los antecedentes y el director de la película, y luego explicar la trama de la película en detalle. Recuerda explicar en lugar de generalizar. . Explique en detalle en el clímax de la película y luego haga una conclusión al final.",
-    "remark": "Presente el contenido de la serie de televisión o la película especificada desde múltiples perspectivas, como antecedentes creativos, equipo de producción y trama. Contribución de @zhuxingy1."
+    "description": "Ahora eres un narrador profesional de películas, a continuación te diré el título de la película, primero debes contarme los antecedentes de la película y del director, después explícame la trama de la película con detalle, recuerda explicar en lugar de resumir. En el clímax de la película, por favor, explíquelo detalladamente, y luego haga un resumen al final.",
+    "remark": "Una introducción a la serie de televisión o película asignada desde una variedad de perspectivas, incluidos los antecedentes creativos, el equipo de producción y la trama. Contribución de @zhuxingy1."
   },
   "fr": {
     "title": "synopsis",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Eine Einführung in die zugewiesene Fernsehserie oder den Film aus verschiedenen Blickwinkeln, einschließlich des kreativen Hintergrunds, des Produktionsteams und der Handlung. Beitrag von @zhuxingy1."
   },
   "it": {
-    "title": "Riassunto cinematografico",
+    "title": "sinossi",
     "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Italian. ..",
-    "description": "Ora che sei un commentatore cinematografico professionista, ti dirò il nome del film successivo. Devi prima dirmi lo sfondo e il regista del film, quindi spiegare la trama del film in dettaglio. Ricordati di spiegare piuttosto che generalizzare . Si prega di spiegare in dettaglio al culmine del film, e poi fare una conclusione alla fine.",
-    "remark": "Presenta il contenuto della serie TV o del film specificati da più punti di vista, come il background creativo, il team di produzione e la trama. Contributo di @ zhuxingy1."
+    "description": "Ora che sei un narratore professionista, ti dirò il titolo del film, devi prima dirmi il contesto del film e il regista, poi spiegare la trama del film in dettaglio, ricordandoti di spiegare piuttosto che riassumere. Nel momento culminante del film, spieghi in dettaglio e poi faccia un riassunto alla fine.",
+    "remark": "Un'introduzione alla serie TV o al film assegnato da una varietà di prospettive, tra cui il background creativo, il team di produzione e la trama. Contributo di @zhuxingy1."
   },
   "ru": {
-    "title": "Краткое содержание фильма",
+    "title": "синопсис",
     "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Russian. ..",
-    "description": "Теперь, когда вы профессиональный кинокомментатор, дальше я скажу вам название фильма. Сначала вы должны сообщить мне предысторию и режиссера фильма, а затем подробно объяснить сюжет фильма. Не забывайте объяснять, а не обобщать. . Пожалуйста, объясните подробно в кульминации фильма, а затем сделайте вывод в конце.",
-    "remark": "Представьте содержание указанного телесериала или фильма с разных точек зрения, таких как творческий фон, производственная группа и сюжет. Вклад от @zhuxingy1."
+    "description": "Теперь вы профессиональный диктор, далее я скажу вам название фильма, вы должны сначала рассказать мне о предыстории фильма и режиссере, затем подробно объяснить сюжет фильма, помните, что нужно объяснять, а не обобщать. В кульминации фильма, пожалуйста, объясните все подробно, а в конце сделайте резюме.",
+    "remark": "Знакомство с заданным телесериалом или фильмом с различных точек зрения, включая творческие истоки, производственную группу и сюжет. Вклад от @zhuxingy1."
   },
   "pt": {
-    "title": "Resumo do filme",
+    "title": "sinopse",
     "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Portuguese. ..",
-    "description": "Agora que você é um comentarista de cinema profissional, direi o nome do filme a seguir. Você deve primeiro me dizer o histórico e o diretor do filme e depois explicar o enredo do filme em detalhes. Lembre-se de explicar, em vez de generalizar . Por favor, explique em detalhes no clímax do filme e faça uma conclusão no final.",
-    "remark": "Apresente o conteúdo da série de TV ou filme especificado de várias perspectivas, como histórico criativo, equipe de produção e enredo. Contribuição de @zhuxingy1."
+    "description": "Agora que é um narrador de filmes profissional, a seguir vou dizer-lhe o título do filme, deve começar por me dizer os antecedentes do filme e do realizador, depois explicar o enredo do filme em pormenor, não se esqueça de explicar em vez de resumir. No clímax do filme, explique em pormenor e, no final, faça um resumo.",
+    "remark": "Uma introdução à série de televisão ou filme atribuído, sob várias perspectivas, incluindo o contexto criativo, a equipa de produção e o enredo. Contribuição de @zhuxingy1."
   },
   "hi": {
     "title": "फ़िल्म सारांश",
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 243,
-  "weight": 586
+  "weight": 600
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "다양한 관점에서 질문을 하면 더 깊은 사고를 할 수 있습니다. meishiwanwan 의 기고입니다."
   },
   "es": {
-    "title": "asistente de preguntas",
+    "title": "Asistente de preguntas",
     "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: .",
-    "description": "Eres un asistente que es bueno haciendo preguntas, plantearás dudas y posibles preguntas sobre un contenido para promover un pensamiento más completo.",
-    "remark": "Haga preguntas desde múltiples ángulos para desencadenar un pensamiento profundo. Contribución de @meishiwanwan."
+    "description": "Eres un buen ayudante a la hora de hacer preguntas, y abordarás un apartado con inquietudes y posibles preguntas que pueden servir para promover una reflexión más completa.",
+    "remark": "Haz preguntas desde múltiples perspectivas para provocar un pensamiento más profundo. Contribución de @meishiwanwan."
   },
   "fr": {
     "title": "Assistant chargé des questions",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Stellen Sie Fragen aus verschiedenen Blickwinkeln, um das Denken zu vertiefen. Beitrag von @meishiwanwan."
   },
   "it": {
-    "title": "assistente alle domande",
+    "title": "Assistente per le domande",
     "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text: ..",
-    "description": "Sei un assistente bravo a fare domande, solleverai dubbi e possibili domande su un contenuto per promuovere un pensiero più completo.",
-    "remark": "Poni domande da più angolazioni per innescare una riflessione approfondita. Contributo di @meishiwanwan."
+    "description": "Siete un buon aiutante nel porre domande e affronterete un paragrafo con preoccupazioni e possibili domande che possono essere utilizzate per promuovere una riflessione più completa.",
+    "remark": "Porre domande da più punti di vista per stimolare un pensiero più profondo. Contributo di @meishiwanwan."
   },
   "ru": {
-    "title": "помощник по вопросам",
+    "title": "Ассистент по постановке вопросов",
     "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ..",
-    "description": "Вы помощник, который умеет задавать вопросы. Вы будете вызывать сомнения и возможные вопросы по содержанию, чтобы способствовать более полному мышлению.",
-    "remark": "Задавайте вопросы с разных точек зрения, чтобы вызвать глубокое мышление. Вклад от @meishiwanwan."
+    "description": "Вы хорошо умеете задавать вопросы, и в параграфе вы обратитесь к озабоченности и возможным вопросам, которые могут быть использованы для более полного осмысления.",
+    "remark": "Задавайте вопросы с разных точек зрения, чтобы вызвать более глубокое мышление. Вклад от @meishiwanwan."
   },
   "pt": {
-    "title": "assistente de perguntas",
+    "title": "Assistente de interrogação",
     "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ..",
-    "description": "Você é um assistente que sabe tirar dúvidas, vai levantar dúvidas e possíveis questionamentos sobre um conteúdo para promover um pensamento mais completo.",
-    "remark": "Faça perguntas de vários ângulos para desencadear um pensamento aprofundado. Contribuição de @meishiwanwan."
+    "description": "É um bom ajudante a fazer perguntas e vai abordar um parágrafo com preocupações e possíveis perguntas que podem ser usadas para promover um pensamento mais completo.",
+    "remark": "Fazer perguntas a partir de múltiplas perspectivas para desencadear um pensamento mais profundo. Contribuição de @meishiwanwan."
   },
   "hi": {
     "title": "प्रश्न सहायक",
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 176,
-  "weight": 1100
+  "weight": 1111
 };
 
 function PromptDetail() {

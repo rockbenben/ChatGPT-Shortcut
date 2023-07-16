@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "jardinero",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! Requested information - .",
-    "description": "Solicite la ayuda de alguien con experiencia en arreglos florales profesionales para construir hermosos ramos con una fragancia agradable y un atractivo estético y para conservarlos durante un período de tiempo más largo según sus preferencias; no solo esto, sino también para sugerir ideas sobre esquemas de decoración, presentando un estilo moderno. diseño, al mismo tiempo cumplir con la satisfacción del cliente.",
-    "remark": "Dar consejos sobre flores"
+    "description": "Solicite la ayuda de un profesional con experiencia en arreglos florales para confeccionar hermosos ramos que posean una agradable fragancia y atractivo estético y permanezcan durante más tiempo según las preferencias; no sólo eso, sino que también sugiera ideas sobre esquemas decorativos que presenten un diseño moderno a la vez que satisfagan al cliente.",
+    "remark": "Proporcionar asesoramiento floral"
   },
   "fr": {
     "title": "jardinier",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "giardiniere",
     "prompt": "The entire conversation and instructions should be provided in Italian. Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! Requested information - ..",
-    "description": "Richiedere l&#39;assistenza di una persona esperta in composizioni floreali professionali per realizzare bellissimi bouquet con gradevole profumo ed estetica e da conservare per un periodo di tempo più lungo a seconda delle preferenze; non solo questo, ma anche suggerire idee su schemi di decorazione, presentando un moderno design, allo stesso tempo soddisfare la soddisfazione del cliente.",
-    "remark": "Fornisci consigli sui fiori"
+    "description": "Chiedete l'assistenza di un professionista esperto in composizioni floreali per costruire bellissimi bouquet che abbiano un profumo gradevole e un'estetica gradevole e che si mantengano a lungo secondo le preferenze; non solo, ma anche per suggerire idee su schemi decorativi che presentino un design moderno e soddisfino il cliente.",
+    "remark": "Fornire consulenza floreale"
   },
   "ru": {
     "title": "садовник",
     "prompt": "The entire conversation and instructions should be provided in Russian. Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! Requested information - ..",
-    "description": "Обратитесь за помощью к человеку, имеющему опыт профессиональной аранжировки цветов, чтобы составить красивые букеты с приятным ароматом и эстетической привлекательностью и хранить их в течение более длительного периода времени в соответствии с предпочтениями; не только это, но и предложить идеи по схемам украшения, представляя современный дизайн, в то же время удовлетворение потребностей клиентов.",
-    "remark": "Дайте совет по цветам"
+    "description": "Обратитесь за помощью к профессионалу, имеющему опыт работы с цветами, чтобы он составил красивые букеты, обладающие приятным ароматом, эстетической привлекательностью и сохраняющиеся в течение длительного времени в соответствии с предпочтениями, а также предложил идеи декоративных схем, представляющих современный дизайн и удовлетворяющих заказчика.",
+    "remark": "Предоставление консультаций по флористике"
   },
   "pt": {
     "title": "jardineiro",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! Requested information - ..",
-    "description": "Peça a ajuda de alguém experiente em arranjos florais profissionais para construir lindos buquês com fragrância agradável e apelo estético e conservar por mais tempo de acordo com a preferência; não só isso, mas também para sugerir idéias sobre esquemas de decoração, apresentando um estilo moderno design, ao mesmo tempo atender a satisfação do cliente.",
-    "remark": "Fornecer conselhos sobre flores"
+    "description": "Recorra à ajuda de um profissional com experiência em arranjos florais para construir belos ramos de flores que possuam uma fragrância agradável e um apelo estético e que permaneçam durante um período de tempo mais longo, de acordo com as preferências; não só isso, mas também sugerir ideias sobre esquemas decorativos que apresentem um design moderno e que satisfaçam o cliente.",
+    "remark": "Prestar aconselhamento floral"
   },
   "hi": {
     "title": "माली",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 165,
-  "weight": 136
+  "weight": 141
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "강조 표시를 하면 글의 가독성이 높아집니다. 그러나 ChatGPT 는 기본적으로 마크다운 구문을 표시합니다. 결과가 나오면 강조 표시된 섹션에 수동으로 상자를 채워야 합니다. 강조 표시 힌트를 다른 기호로 대체하는 것도 시도해 보았지만 잘 작동하지 않았습니다. 따라서 당분간은 이 버전을 사용할 것입니다."
   },
   "es": {
-    "title": "artículo destacado",
+    "title": "Artículos destacados",
     "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Spanish. Here is the text: [].",
-    "description": "Lea el siguiente texto cuidadosamente y use asteriscos dobles (**) para resaltar palabras o frases para enfatizar. No altere el texto original ni haga resúmenes.",
-    "remark": "Resaltar aumentará la legibilidad del artículo. Sin embargo, ChatGPT muestra la sintaxis de Markdown de forma predeterminada. Después de que salga el resultado, debe seleccionar manualmente la parte resaltada. También intenté sustituir otros símbolos para resaltar, pero eso no funcionó muy bien. Por lo tanto, utilice esta versión por ahora."
+    "description": "Lee atentamente el siguiente texto y utiliza los asteriscos dobles (**) para resaltar las palabras o frases que quieras destacar. No modifique el texto original ni haga resúmenes.",
+    "remark": "El resaltado aumentará la legibilidad del artículo. Sin embargo, ChatGPT muestra la sintaxis Markdown por defecto. Cuando salen los resultados, hay que recuadrar manualmente la sección resaltada. También he probado a sustituir las puntas de resaltado por otros símbolos, pero no funciona muy bien. Así que, por ahora, usa esta versión."
   },
   "fr": {
     "title": "Mise en évidence d'un article",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Die Hervorhebung erhöht die Lesbarkeit des Artikels. ChatGPT zeigt jedoch standardmäßig die Markdown-Syntax an. Wenn die Ergebnisse angezeigt werden, müssen Sie den hervorgehobenen Abschnitt manuell umrahmen. Ich habe auch versucht, die Hervorhebungsspitzen durch andere Symbole zu ersetzen, aber das funktioniert nicht sehr gut. Also, verwenden Sie diese Version für jetzt."
   },
   "it": {
-    "title": "punto culminante dell&#39;articolo",
+    "title": "Evidenziazione dell'articolo",
     "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Italian. Here is the text: []..",
-    "description": "Leggi attentamente il seguente testo e usa i doppi asterischi (**) per evidenziare parole o frasi per dare enfasi. Non alterare il testo originale né fare riassunti.",
-    "remark": "L&#39;evidenziazione aumenterà la leggibilità dell&#39;articolo. Tuttavia, ChatGPT visualizza la sintassi Markdown per impostazione predefinita. Dopo che il risultato è uscito, è necessario selezionare manualmente la parte evidenziata. Ho anche provato a sostituire altri simboli per l&#39;evidenziazione, ma non ha funzionato molto bene. Pertanto, usa questa versione per ora."
+    "description": "Leggete attentamente il testo che segue e utilizzate i doppi asterischi (**) per evidenziare parole o frasi da sottolineare. Non modificate il testo originale e non fate riassunti.",
+    "remark": "L'evidenziazione aumenterà la leggibilità dell'articolo. Tuttavia, ChatGPT visualizza la sintassi Markdown per impostazione predefinita. Quando vengono visualizzati i risultati, è necessario riquadrare manualmente la sezione evidenziata. Ho anche provato a sostituire i suggerimenti di evidenziazione con altri simboli, ma non funziona molto bene. Quindi, per il momento, utilizzate questa versione."
   },
   "ru": {
-    "title": "изюминка статьи",
+    "title": "Выделение статей",
     "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Russian. Here is the text: []..",
-    "description": "Внимательно прочитайте следующий текст и используйте двойные звездочки (**), чтобы выделить слова или фразы для выделения. Не изменяйте исходный текст и не делайте резюме.",
-    "remark": "Выделение повысит читабельность статьи. Однако ChatGPT по умолчанию отображает синтаксис Markdown. После того, как результат выйдет, вам нужно вручную выбрать выделенную часть. Я также пытался заменить другие символы для выделения, но это не сработало. Поэтому пользуйтесь пока этой версией."
+    "description": "Внимательно прочитайте следующий текст и используйте двойные звездочки (**) для выделения слов или фраз. Не изменяйте оригинальный текст и не делайте резюме.",
+    "remark": "Выделение повышает читабельность статьи. Однако по умолчанию ChatGPT отображает синтаксис Markdown. При выводе результатов необходимо вручную поместить выделенную часть в рамку. Я также пробовал заменять подсказки для выделения другими символами, но это не очень хорошо работает. Так что пока пользуйтесь этой версией."
   },
   "pt": {
-    "title": "destaque do artigo",
+    "title": "Destaque de artigos",
     "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Portuguese. Here is the text: []..",
-    "description": "Leia o texto a seguir com atenção e use asteriscos duplos (**) para destacar palavras ou frases para dar ênfase. Não altere o texto original nem faça resumos.",
-    "remark": "O realce aumentará a legibilidade do artigo. No entanto, o ChatGPT exibe a sintaxe Markdown por padrão. Depois que o resultado sair, você precisa selecionar manualmente a parte destacada. Também tentei substituir o realce por outros símbolos, mas não funcionou muito bem. Portanto, use esta versão por enquanto."
+    "description": "Lê atentamente o texto que se segue e utiliza os asteriscos duplos (**) para sublinhar palavras ou frases. Não alteres o texto original nem faças resumos.",
+    "remark": "O destaque aumentará a legibilidade do artigo. No entanto, o ChatGPT apresenta a sintaxe Markdown por defeito. Quando os resultados aparecem, é necessário encaixar manualmente a secção destacada. Também tentei substituir as dicas de destaque por outros símbolos, mas não funciona muito bem. Portanto, use esta versão por enquanto."
   },
   "hi": {
     "title": "लेख पर प्रकाश डाला गया",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 211,
-  "weight": 528
+  "weight": 536
 };
 
 function PromptDetail() {

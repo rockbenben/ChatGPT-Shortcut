@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "generador de títulos",
     "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Spanish. My first keywords are .",
-    "description": "Espero que puedas actuar como un generador de títulos elegante. Ingresaré palabras clave entre comas y responderás con títulos elegantes.",
+    "description": "Me gustaría que actuaras como un generador de títulos de fantasía. Yo introduciré las palabras clave mediante comas y ustedes responderán con títulos elegantes.",
     "remark": "Genere múltiples títulos y posiciones en función de las palabras clave."
   },
   "fr": {
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "generatore di titoli",
     "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Italian. My first keywords are ..",
-    "description": "Spero che tu possa fungere da generatore di titoli di fantasia. Inserirò le parole chiave tramite virgole e tu risponderai con titoli fantasiosi.",
-    "remark": "Genera più titoli e posizioni in base a parole chiave."
+    "description": "Vorrei che tu agissi come un generatore di titoli di fantasia. Io inserirò le parole chiave attraverso le virgole e voi risponderete con titoli di fantasia.",
+    "remark": "Generare più titoli e posizioni in base alle parole chiave."
   },
   "ru": {
-    "title": "генератор заголовков",
+    "title": "генератор названий",
     "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Russian. My first keywords are ..",
-    "description": "Надеюсь, вы сможете выступить в роли генератора причудливых заголовков. Я буду вводить ключевые слова через запятую, а вы будете отвечать причудливыми заголовками.",
-    "remark": "Создайте несколько заголовков и позиций на основе ключевых слов."
+    "description": "Я хотел бы, чтобы вы выступили в роли генератора фантазийных заголовков. Я буду вводить ключевые слова через запятую, а вы будете отвечать на них причудливыми заголовками.",
+    "remark": "Генерировать несколько заголовков и позиций на основе ключевых слов."
   },
   "pt": {
     "title": "gerador de títulos",
     "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Portuguese. My first keywords are ..",
-    "description": "Espero que você possa atuar como um gerador de título sofisticado. Vou inserir palavras-chave por vírgulas e você responderá com títulos sofisticados.",
-    "remark": "Gere vários títulos e posições com base em palavras-chave."
+    "description": "Gostaria que actuasse como um gerador de títulos de fantasia. Eu introduzo as palavras-chave através de vírgulas e vocês respondem com títulos extravagantes.",
+    "remark": "Gerar vários títulos e posições com base em palavras-chave."
   },
   "hi": {
     "title": "शीर्षक जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 148,
-  "weight": 168
+  "weight": 172
 };
 
 function PromptDetail() {

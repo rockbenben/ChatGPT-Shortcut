@@ -26,10 +26,10 @@ const prompt = {
     "remark": "텍스트는 100 단어로 요약되어 있습니다."
   },
   "es": {
-    "title": "resumen",
+    "title": "Contenido resumido",
     "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: .",
-    "description": "Resume el siguiente texto a 100 palabras para que sea fácil de leer y entender. Evite estructuras de oraciones complejas o jerga técnica.",
-    "remark": "Resume el contenido del texto en 100 palabras."
+    "description": "Resuma el siguiente texto en 100 palabras de forma que sea fácil de leer y comprender. Evita estructuras oracionales complejas o términos técnicos.",
+    "remark": "Resuma el texto en 100 palabras."
   },
   "fr": {
     "title": "Résumé du contenu",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Fassen Sie den Text in 100 Wörtern zusammen."
   },
   "it": {
-    "title": "riepilogo",
+    "title": "Contenuto sintetico",
     "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text: ..",
-    "description": "Riassumi il seguente testo in 100 parole in modo che sia facile da leggere e capire. Evita strutture di frasi complesse o gergo tecnico.",
-    "remark": "Riassumi il contenuto del testo in 100 parole."
+    "description": "Riassumete il seguente testo in 100 parole in modo che sia facile da leggere e da capire. Evitate strutture di frase complesse o termini tecnici.",
+    "remark": "Riassumete il testo in 100 parole."
   },
   "ru": {
-    "title": "краткое содержание",
+    "title": "Краткое содержание",
     "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ..",
-    "description": "Сократите следующий текст до 100 слов, чтобы его было легко читать и понимать. Избегайте сложных структур предложений или технического жаргона.",
-    "remark": "Обобщите содержание текста до 100 слов."
+    "description": "Изложите следующий текст в 100 словах так, чтобы его было легко читать и понимать. Избегайте сложных структур предложений и технических терминов.",
+    "remark": "Резюмируйте текст в 100 словах."
   },
   "pt": {
-    "title": "resumo",
+    "title": "Conteúdo resumido",
     "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ..",
-    "description": "Resuma o texto a seguir em 100 palavras para que seja fácil de ler e entender. Evite estruturas de frases complexas ou jargões técnicos.",
-    "remark": "Resuma o conteúdo do texto em 100 palavras."
+    "description": "Resume o texto seguinte em 100 palavras, de modo a que seja fácil de ler e compreender. Evite estruturas frásicas complexas ou termos técnicos.",
+    "remark": "Resumir o texto em 100 palavras."
   },
   "hi": {
     "title": "सारांश",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 11,
-  "weight": 4277
+  "weight": 4369
 };
 
 function PromptDetail() {

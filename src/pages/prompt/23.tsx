@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "comentario de noticias",
     "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un revisor. Le proporcionaré una historia o un tema relacionado con las noticias, y usted escribirá un artículo de opinión con un comentario perspicaz sobre el tema en cuestión. Debe usar su propia experiencia para explicar cuidadosamente por qué algo es importante, respaldar sus afirmaciones con hechos y discutir posibles soluciones a cualquier problema que surja en la historia. Mi primera solicitud es &#39;ángulo de revisión de noticias&#39;",
-    "remark": "Discuta posibles soluciones y perspectivas sobre problemas relacionados con una noticia o un tema."
+    "description": "Me gustaría que actuara como comentarista. Te proporcionaré historias o temas relacionados con las noticias, y deberás escribir un artículo de opinión con comentarios perspicaces sobre el tema en cuestión. Deberás utilizar tu propia experiencia para explicar de forma reflexiva por qué algo es importante, respaldar tus afirmaciones con hechos y debatir posibles soluciones a cualquier cuestión planteada en la noticia. Mi primera afirmación es \"ángulo de comentario noticioso\".",
+    "remark": "Debatir posibles soluciones y perspectivas de los problemas en torno a una noticia o tema."
   },
   "fr": {
     "title": "commentaire d'actualité",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Diskutieren Sie mögliche Lösungen und Perspektiven für die Probleme, die sich aus einer Nachricht oder einem Thema ergeben."
   },
   "it": {
-    "title": "commento alla notizia",
+    "title": "commento alle notizie",
     "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un revisore. Ti fornirò una storia o un argomento relativo alle notizie e tu scriverai un pezzo di opinione fornendo un commento perspicace sull&#39;argomento in questione. Dovresti usare la tua esperienza per spiegare in modo ponderato perché qualcosa è importante, sostenere le tue affermazioni con fatti e discutere potenziali soluzioni a qualsiasi problema sollevato nella storia. La mia prima richiesta è &quot;angolo di revisione delle notizie&quot;",
-    "remark": "Discutere potenziali soluzioni e prospettive su questioni relative a una notizia o un argomento."
+    "description": "Vorrei che tu agissi come commentatore. Vi fornirò storie o argomenti di attualità e voi dovrete scrivere un articolo di opinione per commentare in modo approfondito l'argomento in questione. Dovrete usare la vostra esperienza per spiegare in modo ponderato perché qualcosa è importante, sostenere le vostre affermazioni con i fatti e discutere le potenziali soluzioni a qualsiasi problema sollevato nella storia. La mia prima affermazione è \"angolo di commento delle notizie\".",
+    "remark": "Discutere le potenziali soluzioni e le prospettive dei problemi in essi presenti intorno a una notizia o a un argomento."
   },
   "ru": {
-    "title": "новостной комментарий",
+    "title": "комментарии к новостям",
     "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы были рецензентом. Я предоставлю вам историю или тему, связанную с новостями, а вы напишите авторскую статью с проницательным комментарием по рассматриваемой теме. Вы должны использовать свой собственный опыт, чтобы вдумчиво объяснить, почему что-то важно, подкрепить свои заявления фактами и обсудить возможные решения любых проблем, поднятых в истории. Мой первый запрос — «угол обзора новостей».",
-    "remark": "Обсудите возможные решения и точки зрения на проблемы, связанные с новостью или темой."
+    "description": "Я хотел бы, чтобы вы выступили в роли комментатора. Я буду предоставлять вам сюжеты или темы, связанные с новостями, а вы должны будете написать статью, содержащую глубокий комментарий по данной теме. Вы должны использовать свой собственный опыт, чтобы вдумчиво объяснить, почему что-то важно, подкрепить свои утверждения фактами и обсудить возможные решения проблем, затронутых в материале. Мое первое требование - это \"угол зрения новостного комментария\".",
+    "remark": "Обсудить потенциальные решения и точки зрения на проблемы в них вокруг новостного сюжета или темы."
   },
   "pt": {
     "title": "comentário de notícias",
     "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um revisor. Fornecerei a você uma história ou tópico relacionado a notícias e você escreverá um artigo de opinião fornecendo um comentário perspicaz sobre o tópico em questão. Você deve usar sua própria experiência para explicar cuidadosamente por que algo é importante, respaldar suas afirmações com fatos e discutir possíveis soluções para quaisquer questões levantadas na história. Meu primeiro pedido é &#39;ângulo de revisão de notícias&#39;",
-    "remark": "Discuta possíveis soluções e perspectivas sobre questões em torno de uma notícia ou tópico."
+    "description": "Gostaria que desempenhasse o papel de comentador. Vou apresentar-te histórias ou tópicos relacionados com as notícias e espera-se que escrevas um artigo de opinião com um comentário perspicaz sobre o assunto em questão. Deverá utilizar a sua própria experiência para explicar cuidadosamente porque é que algo é importante, apoiar as suas afirmações com factos e discutir potenciais soluções para quaisquer questões levantadas na história. A minha primeira afirmação é \"ângulo de comentário de notícias",
+    "remark": "Debater potenciais soluções e perspectivas dos problemas em torno de uma notícia ou tema."
   },
   "hi": {
     "title": "समाचार टिप्पणी",
@@ -84,7 +84,7 @@ const prompt = {
     "comments"
   ],
   "id": 23,
-  "weight": 762
+  "weight": 781
 };
 
 function PromptDetail() {

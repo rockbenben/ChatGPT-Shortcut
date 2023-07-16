@@ -26,10 +26,10 @@ const prompt = {
     "remark": "테이크아웃에 대한 세부 정보가 많을수록 더 상세하고 사실적인 리뷰가 작성됩니다. 제공: @wang93wei."
   },
   "es": {
-    "title": "revisión para llevar",
+    "title": "Comida para llevar",
     "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Spanish. If you understand my instructions clearly, reply with: \"Let's begin.\".",
-    "description": "Quiero que juegues el papel de un crítico de comida para llevar. Comentarás sobre los platos para llevar, el color, la fragancia, los ingredientes, la calidad, pero no te limitarás a estas escenas. Su evaluación no será repetida ni superficial. Calificará cada revisión para llevar, siendo la puntuación más alta 1 y la más baja 0. Si la puntuación de revisión generada es 0 o inferior a 0,7, volverá a generar la revisión. hasta que la puntuación de la evaluación sea 1. Si entiende claramente mi descripción, responda: por favor comience.",
-    "remark": "Cuantos más detalles de entrega proporcione, más detalladas y auténticas serán sus reseñas. Contribución de @wang93wei."
+    "description": "Quiero que desempeñes el papel de crítico de comida para llevar. Calificarás el plato de la comida para llevar, el color, el aroma, el cuidado de los ingredientes, el sabor, etc., pero sin limitarte a estas situaciones. Tus críticas no serán repetitivas ni superficiales. Calificarás cada reseña de comida para llevar con una puntuación máxima de 1 y una mínima de 0. Si se genera una reseña con una puntuación de 0 o inferior a 0,7, regenerarás la reseña hasta que alcance una puntuación de 1. Si se genera una reseña con una puntuación de 0 o inferior a 0,7, regenerarás la reseña. hasta que la puntuación sea 1. Si entiende claramente mi descripción, responda: por favor, empiece.",
+    "remark": "Cuantos más detalles se proporcionen, más detallada y honesta será la reseña. Contribución de @wang93wei."
   },
   "fr": {
     "title": "Revue des plats à emporter",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Je mehr Details zum Mitnehmen angegeben werden, desto ausführlicher und ehrlicher wird die Rezension sein. Beitrag von @wang93wei."
   },
   "it": {
-    "title": "recensione da asporto",
+    "title": "Recensione da asporto",
     "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Italian. If you understand my instructions clearly, reply with: \"Let's begin.\"..",
-    "description": "Voglio che tu interpreti il ruolo di un recensore da asporto. Commenterai i piatti da asporto, il colore, la fragranza, gli ingredienti, la qualità, ma non solo queste scene. La tua valutazione non sarà ripetuta o superficiale. Assegnarai un punteggio a ogni recensione da asporto, con il punteggio più alto pari a 1 e il punteggio più basso pari a 0. Se il punteggio della recensione generato è 0 o inferiore a 0,7, rigenererai la recensione. fino a quando il punteggio di valutazione è 1. Se capisci chiaramente la mia descrizione, per favore rispondi: per favore inizia.",
-    "remark": "Più dettagli sulla consegna fornisci, più dettagliate e autentiche saranno le tue recensioni. Contributo di @wang93wei."
+    "description": "Voglio che tu svolga il ruolo di recensore di un takeaway. Dovrete valutare il piatto, il colore, l'aroma, la cura degli ingredienti, il gusto, ecc. ma non limitarvi a questi scenari. Le vostre recensioni non saranno ripetitive o sommarie. Ogni recensione di un takeaway avrà un punteggio massimo di 1 e un punteggio minimo di 0. Se una recensione viene generata con un punteggio di 0 o inferiore a 0,7, la rigenererete fino a raggiungere un punteggio di 1. Se una recensione viene generata con un punteggio di 0 o inferiore a 0,7, la rigenererete. Fino a quando il punteggio di valutazione non sarà pari a 1. Se avete compreso chiaramente la mia descrizione, rispondete: per favore, iniziate.",
+    "remark": "Più dettagli vengono forniti, più la recensione sarà dettagliata e onesta. Contributo di @wang93wei."
   },
   "ru": {
-    "title": "обзор еды на вынос",
+    "title": "Обзор ресторанов на вынос",
     "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Russian. If you understand my instructions clearly, reply with: \"Let's begin.\"..",
-    "description": "Я хочу, чтобы вы сыграли роль рецензента на вынос. Вы будете комментировать блюда на вынос, цвет, аромат, ингредиенты, качество, но не ограничиваясь этими сценами. Ваша оценка не будет повторяться или быть поверхностной. Вы будете оценивать каждый отзыв о выносе, при этом наивысший балл будет равен 1, а самый низкий — 0. Если созданная оценка обзора равна 0 или ниже 0,7, вы создадите обзор повторно. пока оценка не станет 1. Если вы ясно понимаете мое описание, пожалуйста, ответьте: пожалуйста, начните.",
-    "remark": "Чем больше сведений о доставке вы предоставите, тем более подробными и достоверными будут ваши отзывы. Вклад от @wang93wei."
+    "description": "Я хочу, чтобы вы выступили в роли рецензента ресторана. Вы оцените блюдо, цвет, аромат, уход за ингредиентами, вкус и т.д., но не ограничиваясь этими сценариями. Ваши отзывы не должны быть повторными или пунктуальными. Вы будете оценивать каждый отзыв о ресторане \"на вынос\" максимальным баллом 1 и минимальным 0. Если отзыв сформирован с баллом 0 или менее 0,7, вы будете регенерировать его до тех пор, пока он не достигнет 1. Если отзыв сформирован с баллом 0 или менее 0,7, вы будете регенерировать его. Пока оценка рейтинга не станет равной 1. Если вы четко поняли мое описание, пожалуйста, ответьте: пожалуйста, начните.",
+    "remark": "Чем больше деталей будет представлено, тем более подробным и честным будет отзыв. Вклад от @wang93wei."
   },
   "pt": {
-    "title": "avaliação para viagem",
+    "title": "Revisão do Takeaway",
     "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Portuguese. If you understand my instructions clearly, reply with: \"Let's begin.\"..",
-    "description": "Quero que você desempenhe o papel de revisor de comida para viagem. Você comentará sobre os pratos para viagem, cor, fragrância, ingredientes, qualidade, mas não se limitando a essas cenas. Sua avaliação não será repetida ou superficial. Você pontuará cada revisão takeaway, com a pontuação mais alta sendo 1 e a mais baixa sendo 0. Se a pontuação da revisão gerada for 0 ou inferior a 0,7, você gerará novamente a revisão. até que a pontuação da avaliação seja 1. Se você entender minha descrição claramente, responda: por favor, comece.",
-    "remark": "Quanto mais detalhes de entrega você fornecer, mais detalhadas e autênticas serão suas avaliações. Contribuição de @wang93wei."
+    "description": "Quero que desempenhes o papel de um avaliador de comida para levar. Avaliará o prato, a cor, o aroma, o cuidado com os ingredientes, o sabor, etc. do takeaway, mas não se limitará a estes cenários. As suas críticas não devem ser repetitivas ou superficiais. Avaliará cada avaliação de takeaway com uma pontuação máxima de 1 e uma pontuação mínima de 0. Se uma avaliação for gerada com uma pontuação de 0 ou inferior a 0,7, regenerará a avaliação até que esta atinja uma pontuação de 1. Se uma avaliação for gerada com uma pontuação de 0 ou inferior a 0,7, regenerará a avaliação. Se compreender claramente a minha descrição, responda: por favor, comece.",
+    "remark": "Quanto mais detalhes forem fornecidos, mais detalhada e honesta será a avaliação. Contribuição de @wang93wei."
   },
   "hi": {
     "title": "टेकअवे समीक्षा",
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 213,
-  "weight": 329
+  "weight": 341
 };
 
 function PromptDetail() {

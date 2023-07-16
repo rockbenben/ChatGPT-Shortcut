@@ -26,10 +26,10 @@ const prompt = {
     "remark": "토론 코치로 활동하며 팀에게 효과적인 토론 전략을 가르치세요."
   },
   "es": {
-    "title": "entrenador de debate",
+    "title": "Entrenador de debate",
     "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Spanish. My first debate is .",
-    "description": "Quiero que seas un entrenador de debate. Les proporcionaré una moción para el equipo de debate y su próximo debate. Su objetivo es preparar al equipo para el éxito mediante la organización de rondas de práctica que se centren en presentaciones persuasivas, estrategias efectivas en el tiempo, contrarrestar argumentos opuestos y sacar conclusiones detalladas de la evidencia presentada.",
-    "remark": "Como entrenador de debate, enseñe a los equipos estrategias efectivas de debate."
+    "description": "Me gustaría que usted sirviera como entrenador de debate. Te proporcionaré un equipo de debate y las mociones para sus próximos debates. Tu objetivo es preparar al equipo para el éxito organizando rondas de práctica centradas en discursos persuasivos, estrategias eficaces de sincronización, contrarrestar los argumentos del equipo contrario y extraer conclusiones en profundidad a partir de las pruebas aportadas.",
+    "remark": "Como entrenador de debate, enseñar estrategias de debate eficaces a los equipos."
   },
   "fr": {
     "title": "Entraîneur de débat",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Vermitteln Sie als Debattiercoach den Teams effektive Debattierstrategien."
   },
   "it": {
-    "title": "allenatore di dibattito",
+    "title": "Allenatore di dibattito",
     "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Italian. My first debate is ..",
-    "description": "Voglio che tu sia un allenatore di dibattito. Vi fornirò una mozione per la squadra di dibattito e il loro prossimo dibattito. Il tuo obiettivo è preparare il team al successo organizzando sessioni di pratica incentrate su presentazioni persuasive, strategie efficaci in termini di tempo, contrastare argomenti opposti e trarre conclusioni approfondite dalle prove presentate.",
-    "remark": "In qualità di allenatore di dibattito, insegna ai team strategie di dibattito efficaci."
+    "description": "Vorrei che tu fossi un allenatore di dibattiti. Le fornirò una squadra di dibattito e le mozioni per i prossimi dibattiti. Il suo obiettivo è preparare la squadra al successo organizzando esercitazioni che si concentrino su discorsi persuasivi, strategie di tempistica efficaci, controbattere gli argomenti della squadra avversaria e trarre conclusioni approfondite dalle prove fornite.",
+    "remark": "Come allenatore di dibattiti, insegnare alle squadre strategie di dibattito efficaci."
   },
   "ru": {
-    "title": "тренер по дебатам",
+    "title": "Тренер по дебатам",
     "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Russian. My first debate is ..",
-    "description": "Я хочу, чтобы ты был тренером по дебатам. Я предоставлю вам предложение для команды дебатов и их предстоящих дебатов. Ваша цель — настроить команду на успех, организовав тренировочные раунды, которые сосредоточены на убедительных презентациях, эффективных с точки зрения времени стратегиях, противодействии противоположным аргументам и подведении глубоких выводов из представленных доказательств.",
-    "remark": "Как тренер по дебатам, обучайте команды эффективным стратегиям дебатов."
+    "description": "Я хотел бы, чтобы вы стали тренером по дебатам. Я предоставлю вам команду дебатеров и предложения по предстоящим дебатам. Ваша задача - подготовить команду к успеху, организовав тренировочные раунды с упором на убедительные речи, эффективные стратегии выбора времени, противодействие аргументам противника и глубокие выводы на основе представленных доказательств.",
+    "remark": "В качестве тренера по дебатам обучать команды эффективным стратегиям ведения дебатов."
   },
   "pt": {
-    "title": "treinador de debate",
+    "title": "Treinador de debate",
     "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Portuguese. My first debate is ..",
-    "description": "Eu quero que você seja um treinador de debates. Vou fornecer a você uma moção para a equipe de debate e seu próximo debate. Seu objetivo é preparar a equipe para o sucesso, organizando rodadas de prática que se concentram em apresentações persuasivas, estratégias eficazes, refutação de argumentos opostos e conclusões aprofundadas extraídas das evidências apresentadas.",
-    "remark": "Como treinador de debate, ensine às equipes estratégias de debate eficazes."
+    "description": "Gostaria que fosses treinador de debate. Vou fornecer-lhe uma equipa de debate e moções para os seus próximos debates. O seu objetivo é preparar a equipa para o sucesso, organizando rondas de treino centradas em discursos persuasivos, estratégias de tempo eficazes, contrariar os argumentos da equipa adversária e tirar conclusões aprofundadas a partir das provas fornecidas.",
+    "remark": "Como treinador de debate, ensinar estratégias de debate eficazes às equipas."
   },
   "hi": {
     "title": "वाद-विवाद कोच",
@@ -84,7 +84,7 @@ const prompt = {
     "speech"
   ],
   "id": 65,
-  "weight": 134
+  "weight": 137
 };
 
 function PromptDetail() {

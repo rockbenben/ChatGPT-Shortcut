@@ -26,9 +26,9 @@ const prompt = {
     "remark": "티 테이스터"
   },
   "es": {
-    "title": "artesano del té",
+    "title": "maestro del té",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Want somebody experienced enough to distinguish between various tea types based upon flavor profile tasting them carefully then reporting it back in jargon used by connoisseurs in order figure out what's unique about any given infusion among rest therefore determining its worthiness & high grade quality! Initial request is .",
-    "description": "Espero que alguien tenga la experiencia suficiente para diferenciar los distintos tipos de té, probarlos cuidadosamente en función de las características del sabor y luego informar en la jerga utilizada por los conocedores para descubrir qué es único en un té determinado y así determinar su valor y alto. calidad de grado.",
+    "description": "Es de esperar que alguien tenga la experiencia suficiente para distinguir entre los distintos tipos de té, degustarlos cuidadosamente según el perfil de sabor y, a continuación, informar en la jerga utilizada por los entendidos para averiguar qué es lo que distingue a un té determinado y, de este modo, determinar su valor y su alta calidad.",
     "remark": "Catador de té"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Tee-Verkoster"
   },
   "it": {
-    "title": "artigiano del tè",
+    "title": "maestro del tè",
     "prompt": "The entire conversation and instructions should be provided in Italian. Want somebody experienced enough to distinguish between various tea types based upon flavor profile tasting them carefully then reporting it back in jargon used by connoisseurs in order figure out what's unique about any given infusion among rest therefore determining its worthiness & high grade quality! Initial request is ..",
-    "description": "Spero che qualcuno abbia abbastanza esperienza per differenziare i vari tipi di tè, assaggiarli attentamente in base alle caratteristiche del gusto, e poi riferire nel gergo usato dagli intenditori per scoprire cosa c&#39;è di unico in un dato tè e determinarne così il valore e l&#39;alto- qualità del grado.",
+    "description": "Si spera che qualcuno sia abbastanza esperto da distinguere i vari tipi di tè, assaggiarli con attenzione in base al profilo aromatico e poi riportarli nel gergo usato dagli intenditori per scoprire le caratteristiche distintive di un determinato tè e quindi determinarne il valore e l'alta qualità.",
     "remark": "Assaggiatore di tè"
   },
   "ru": {
-    "title": "чайный ремесленник",
+    "title": "чайный мастер",
     "prompt": "The entire conversation and instructions should be provided in Russian. Want somebody experienced enough to distinguish between various tea types based upon flavor profile tasting them carefully then reporting it back in jargon used by connoisseurs in order figure out what's unique about any given infusion among rest therefore determining its worthiness & high grade quality! Initial request is ..",
-    "description": "Надеюсь, что кто-то достаточно опытен, чтобы различать различные виды чая, тщательно пробовать их на основе вкусовых характеристик, а затем сообщать на жаргоне, используемом знатоками, чтобы выяснить, что уникально в том или ином чае, и, таким образом, определить его ценность и ценность. сорт качество .",
-    "remark": "Чай-дегустатор"
+    "description": "Остается надеяться, что у кого-то хватит опыта, чтобы различить различные виды чая, тщательно продегустировать их по вкусовым характеристикам, а затем изложить их на жаргоне знатоков, чтобы выяснить, что именно отличает тот или иной чай, и таким образом определить его ценность и высокое качество.",
+    "remark": "Дегустатор чая"
   },
   "pt": {
-    "title": "artesão de chá",
+    "title": "mestre do chá",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Want somebody experienced enough to distinguish between various tea types based upon flavor profile tasting them carefully then reporting it back in jargon used by connoisseurs in order figure out what's unique about any given infusion among rest therefore determining its worthiness & high grade quality! Initial request is ..",
-    "description": "Espero que alguém tenha experiência suficiente para diferenciar os vários tipos de chá, prová-los com cuidado com base no perfil de sabor e, em seguida, relatar no jargão usado pelos conhecedores para descobrir o que é único em um determinado chá e, assim, determinar seu valor e alta qualidade de sabor.",
-    "remark": "Provador de Chá"
+    "description": "Espera-se que alguém seja suficientemente experiente para distinguir os vários tipos de chá, prová-los cuidadosamente de acordo com o perfil de sabor e, em seguida, relatá-los no jargão utilizado pelos conhecedores, a fim de descobrir o que é distintivo de um determinado chá e, assim, determinar o seu valor e alta qualidade.",
+    "remark": "Provador de chá"
   },
   "hi": {
     "title": "चाय कारीगर",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 166,
-  "weight": 208
+  "weight": 214
 };
 
 function PromptDetail() {

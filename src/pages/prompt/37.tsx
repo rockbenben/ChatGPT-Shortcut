@@ -26,10 +26,10 @@ const prompt = {
     "remark": "입력한 문장이 ChatGPT 데이터베이스에 존재하는지 확인합니다."
   },
   "es": {
-    "title": "verificación de plagio",
+    "title": "comprobación de plagio",
     "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que actúes como verificador de plagio. Te escribo oraciones y tú simplemente respondes a una verificación de plagio no detectada en el idioma de la oración dada, y nada más. No escribas explicaciones en las respuestas. Mi primera oración es &#39;verificar contenido&#39;",
-    "remark": "Determine si la oración de entrada existe en la base de datos de ChatGPT."
+    "description": "Quiero que hagas de corrector de plagios. Te escribiré frases y sólo tendrás que responder a los controles de plagio no detectados en el idioma de la frase dada y nada más. No escribas explicaciones en tus respuestas. Mi primera frase será \"comprueba el contenido\".",
+    "remark": "Determina si la frase introducida existe en la base de datos ChatGPT."
   },
   "fr": {
     "title": "vérification du plagiat",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Ermittelt, ob der Eingabesatz in der ChatGPT-Datenbank vorhanden ist."
   },
   "it": {
-    "title": "controllo di plagio",
+    "title": "controllo del plagio",
     "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che tu agisca come controllore di plagio. Ti scrivo frasi e tu rispondi semplicemente a un controllo di plagio non rilevato nella lingua della frase data e nient&#39;altro. Non scrivere spiegazioni nelle risposte. La mia prima frase è &quot;controlla il contenuto&quot;",
-    "remark": "Determina se la frase di input esiste nel database ChatGPT."
+    "description": "Voglio che tu agisca come un controllore di plagio. Scriverò delle frasi per voi e voi dovrete rispondere ai controlli di plagio non rilevati solo nella lingua della frase data e nient'altro. Non scrivete spiegazioni nelle vostre risposte. La mia prima frase sarà \"controlla il contenuto\".",
+    "remark": "Determina se la frase inserita esiste nel database di ChatGPT."
   },
   "ru": {
     "title": "проверка на плагиат",
     "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы вы выступили в роли проверяющего на плагиат. Я пишу вам предложения, а вы просто отвечаете на необнаруженную проверку на плагиат на языке данного предложения, и ничего больше. Не пишите пояснений в ответах. Мое первое предложение — «проверить содержимое».",
-    "remark": "Определите, существует ли входное предложение в базе данных ChatGPT."
+    "description": "Я хочу, чтобы вы выступили в роли проверяющего на плагиат. Я буду составлять для вас предложения, а вы должны будете отвечать на вопросы о проверке на плагиат только на языке данного предложения и никак иначе. Не пишите в своих ответах пояснений. Мое первое предложение будет \"проверьте содержание\".",
+    "remark": "Определяет, существует ли введенное предложение в базе данных ChatGPT."
   },
   "pt": {
     "title": "verificação de plágio",
     "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Eu quero que você atue como um verificador de plágio. Eu escrevo frases para você e você simplesmente responde a uma verificação de plágio não detectada no idioma da frase fornecida e nada mais. Não escreva explicações nas respostas. Minha primeira frase é &#39;verificar conteúdo&#39;",
-    "remark": "Determine se a frase de entrada existe no banco de dados ChatGPT."
+    "description": "Quero que actues como um verificador de plágio. Vou escrever frases para ti e só terás de responder a verificações de plágio não detectadas na língua da frase dada e nada mais. Não escrevam explicações nas vossas respostas. A minha primeira frase será \"verificar o conteúdo",
+    "remark": "Determina se a frase introduzida existe na base de dados ChatGPT."
   },
   "hi": {
     "title": "साहित्यिक चोरी की जाँच",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 37,
-  "weight": 381
+  "weight": 383
 };
 
 function PromptDetail() {

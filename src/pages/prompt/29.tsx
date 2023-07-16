@@ -26,10 +26,10 @@ const prompt = {
     "remark": "게시를 위해 제출된 글을 검토하고 댓글을 달 수 있습니다."
   },
   "es": {
-    "title": "Revista de revisión",
+    "title": "Revista",
     "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Spanish. My first suggestion request is '期刊主题'.",
-    "description": "Quiero que sirvas como revisor de una revista. Revisará y comentará los artículos enviados para su publicación, evaluando críticamente su investigación, métodos, metodología y conclusiones, y brindando una crítica constructiva de sus fortalezas y debilidades. Mi primer requisito sugerido es &#39;asunto de la revista&#39;",
-    "remark": "Revisar y comentar los artículos enviados para su publicación."
+    "description": "Me gustaría que trabajaras como revisor de revistas. Tendrá que revisar y comentar los artículos enviados para su publicación, evaluando de forma crítica su investigación, métodos, metodología y conclusiones, y realizando una crítica constructiva de sus puntos fuertes y débiles. El primer requisito que le propongo es \"Temas de revistas\".",
+    "remark": "Revisar y comentar los artículos presentados para su publicación."
   },
   "fr": {
     "title": "Revue de presse",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Überprüfung und Kommentierung von zur Veröffentlichung eingereichten Artikeln."
   },
   "it": {
-    "title": "Recensione del giornale",
+    "title": "Rassegna del giornale",
     "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Italian. My first suggestion request is '期刊主题'..",
-    "description": "Voglio che tu faccia il revisore del diario. Esaminerai e commenterai gli articoli inviati per la pubblicazione, valutando criticamente la loro ricerca, i metodi, la metodologia e le conclusioni e fornendo critiche costruttive sui loro punti di forza e di debolezza. Il mio primo requisito suggerito è &quot;oggetto del diario&quot;",
-    "remark": "Rivedere e commentare gli articoli inviati per la pubblicazione."
+    "description": "Vorrei che lavorassi come revisore di riviste. Dovrete esaminare e commentare gli articoli presentati per la pubblicazione, valutandone criticamente la ricerca, i metodi, la metodologia e le conclusioni, e fornendo critiche costruttive sui loro punti di forza e di debolezza. Il primo requisito proposto è \"Argomenti delle riviste\".",
+    "remark": "Rivedere e commentare gli articoli presentati per la pubblicazione."
   },
   "ru": {
     "title": "Обзор журнала",
     "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Russian. My first suggestion request is '期刊主题'..",
-    "description": "Я хочу, чтобы вы работали рецензентом журнала. Вы будете просматривать и комментировать представленные для публикации статьи, критически оценивая их исследования, методы, методологию и выводы, а также предоставляя конструктивную критику их сильных и слабых сторон. Мое первое предложенное требование — «тема журнала».",
-    "remark": "Просмотрите и прокомментируйте представленные статьи для публикации."
+    "description": "Я хотел бы, чтобы Вы работали в качестве рецензента журнала. Вы должны будете просматривать и комментировать статьи, представленные для публикации, критически оценивая их исследования, методы, методологию и выводы, а также давать конструктивную критику их сильных и слабых сторон. Первое предлагаемое мной требование - \"Тематика журнала\".",
+    "remark": "Рецензирование и комментирование статей, представленных для публикации."
   },
   "pt": {
-    "title": "revisão do jornal",
+    "title": "Revista",
     "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is '期刊主题'..",
-    "description": "Eu quero que você sirva como um revisor de periódicos. Você revisará e comentará os artigos enviados para publicação, avaliando criticamente suas pesquisas, métodos, metodologia e conclusões e fazendo críticas construtivas sobre seus pontos fortes e fracos. Meu primeiro requisito sugerido é &#39;assunto do diário&#39;",
-    "remark": "Analisar e comentar os artigos enviados para publicação."
+    "description": "Gostaria que trabalhasse como revisor de revistas. Terá de rever e comentar artigos submetidos para publicação, avaliando criticamente a investigação, os métodos, a metodologia e as conclusões, e fazendo uma crítica construtiva dos seus pontos fortes e fracos. O primeiro requisito sugerido é \"Tópicos de periódicos",
+    "remark": "Rever e comentar os artigos apresentados para publicação."
   },
   "hi": {
     "title": "जर्नल समीक्षा",
@@ -84,7 +84,7 @@ const prompt = {
     "comments"
   ],
   "id": 29,
-  "weight": 177
+  "weight": 179
 };
 
 function PromptDetail() {

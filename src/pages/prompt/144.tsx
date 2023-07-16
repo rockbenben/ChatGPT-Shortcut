@@ -26,10 +26,10 @@ const prompt = {
     "remark": "소셜 미디어 인플루언서"
   },
   "es": {
-    "title": "Influenciador de las redes sociales/KOL",
+    "title": "Personas influyentes en las redes sociales/KOL",
     "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un influencer en las redes sociales. Creará contenido para varias plataformas como Instagram, Twitter o YouTube e interactuará con seguidores para aumentar el conocimiento de la marca y promocionar productos o servicios.",
-    "remark": "Influenciador de las redes sociales"
+    "description": "Quiero que actúes como influencer en las redes sociales. Crearás contenidos para diversas plataformas como Instagram, Twitter o YouTube e interactuarás con los seguidores para aumentar el conocimiento de la marca y promocionar productos o servicios.",
+    "remark": "Influencia en las redes sociales"
   },
   "fr": {
     "title": "Influenceurs des médias sociaux/KOL",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Sozialer Medieneinflussnehmer"
   },
   "it": {
-    "title": "Influencer sui social media/KOL",
+    "title": "Influencer/KOL dei social media",
     "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come influencer sui social media. Creerai contenuti per varie piattaforme come Instagram, Twitter o YouTube e interagirai con i tuoi follower per aumentare la consapevolezza del marchio e promuovere prodotti o servizi.",
+    "description": "Voglio che tu agisca come influencer sui social media. Dovrai creare contenuti per varie piattaforme come Instagram, Twitter o YouTube e interagire con i follower per aumentare la consapevolezza del marchio e promuovere prodotti o servizi.",
     "remark": "Influencer sui social media"
   },
   "ru": {
-    "title": "Влиятельный человек в социальных сетях/KOL",
+    "title": "Влиятельные люди/КОЛ в социальных сетях",
     "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли влиятельного лица в социальных сетях. Вы будете создавать контент для различных платформ, таких как Instagram, Twitter или YouTube, и взаимодействовать с подписчиками, чтобы повысить узнаваемость бренда и продвигать продукты или услуги.",
-    "remark": "Влиятельный человек в социальных сетях"
+    "description": "Я хочу, чтобы вы выступили в роли агента влияния в социальных сетях. Вы будете создавать контент для различных платформ, таких как Instagram, Twitter или YouTube, и взаимодействовать с подписчиками для повышения узнаваемости бренда и продвижения продуктов или услуг.",
+    "remark": "Влияние на социальные сети"
   },
   "pt": {
-    "title": "Influenciador de mídia social/KOL",
+    "title": "Influenciadores de redes sociais/KOLs",
     "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você atue como um influenciador de mídia social. Você criará conteúdo para várias plataformas, como Instagram, Twitter ou YouTube, e se envolverá com seus seguidores para aumentar o conhecimento da marca e promover produtos ou serviços.",
-    "remark": "Influenciador de mídia social"
+    "description": "Pretendo que actue como um influenciador de redes sociais. Irá criar conteúdos para várias plataformas, como o Instagram, o Twitter ou o YouTube, e interagir com os seguidores para aumentar a notoriedade da marca e promover produtos ou serviços.",
+    "remark": "Influenciador de redes sociais"
   },
   "hi": {
     "title": "सोशल मीडिया इन्फ्लुएंसर/KOL",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 144,
-  "weight": 318
+  "weight": 325
 };
 
 function PromptDetail() {

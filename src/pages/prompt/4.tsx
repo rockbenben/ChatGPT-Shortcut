@@ -26,10 +26,10 @@ const prompt = {
     "remark": "에세이 형식으로 질문에 대해 토론하면 일관성 있고 구조화된 고품질의 답변을 얻을 수 있습니다."
   },
   "es": {
-    "title": "respuesta de ensayo",
+    "title": "respuesta tipo ensayo",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: .",
-    "description": "Escriba un ensayo muy detallado, que incluya la introducción, el cuerpo y los párrafos finales, en respuesta a lo siguiente: [pregunta]",
-    "remark": "Discutir preguntas en formato de ensayo permite respuestas coherentes, estructuradas y de mayor calidad."
+    "description": "Escribe un ensayo muy detallado, que incluya una introducción, un cuerpo y párrafos de conclusión, que responda a lo siguiente:[Pregunta].",
+    "remark": "Debatir las preguntas en formato de ensayo da lugar a respuestas coherentes, estructuradas y de mayor calidad."
   },
   "fr": {
     "title": "réponse sous forme de dissertation",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Die Erörterung von Fragen im Aufsatzformat führt zu kohärenten, strukturierten und qualitativ besseren Antworten."
   },
   "it": {
-    "title": "risposta saggio",
+    "title": "risposta in stile saggio",
     "prompt": "The entire conversation and instructions should be provided in Italian. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ..",
-    "description": "Scrivi un saggio molto dettagliato, che includa introduzione, corpo e paragrafi conclusivi, in risposta a quanto segue: [domanda]",
-    "remark": "Discutere le domande in formato saggio consente risposte coerenti, strutturate e di qualità superiore."
+    "description": "Scrivete un saggio molto dettagliato, comprensivo di introduzione, corpo e conclusione, che risponda a quanto segue: [Domanda].",
+    "remark": "Discutendo le domande in formato saggio si ottengono risposte coerenti, strutturate e di qualità superiore."
   },
   "ru": {
-    "title": "эссе ответ",
+    "title": "ответ в стиле эссе",
     "prompt": "The entire conversation and instructions should be provided in Russian. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ..",
-    "description": "Напишите очень подробное эссе, включая введение, основную часть и заключительные абзацы, в ответ на следующее: [вопрос]",
+    "description": "Напишите подробное эссе, включающее введение, основную часть и заключение, в котором ответьте на следующие вопросы:[Вопрос].",
     "remark": "Обсуждение вопросов в формате эссе позволяет получить связные, структурированные и более качественные ответы."
   },
   "pt": {
-    "title": "resposta de redação",
+    "title": "resposta de tipo dissertativo",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ..",
-    "description": "Escreva um ensaio altamente detalhado, incluindo introdução, corpo e parágrafos finais, em resposta ao seguinte: [pergunta]",
-    "remark": "Discutir questões em formato de ensaio permite respostas coerentes, estruturadas e de maior qualidade."
+    "description": "Escreve um ensaio altamente detalhado, incluindo uma introdução, um corpo e parágrafos de conclusão, que responda ao seguinte:[Pergunta].",
+    "remark": "A discussão das perguntas em formato de ensaio resulta em respostas coerentes, estruturadas e de maior qualidade."
   },
   "hi": {
     "title": "निबंध उत्तर",
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 4,
-  "weight": 8489
+  "weight": 8585
 };
 
 function PromptDetail() {

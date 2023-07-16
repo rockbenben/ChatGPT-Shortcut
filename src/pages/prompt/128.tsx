@@ -26,10 +26,10 @@ const prompt = {
     "remark": "차량용 내비게이션 시스템"
   },
   "es": {
-    "title": "GPS",
+    "title": "Navegación en coche",
     "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un sistema de navegación para automóviles. Desarrollará algoritmos que calculen la mejor ruta de un lugar a otro, podrá proporcionar actualizaciones detalladas sobre las condiciones del tráfico, tendrá en cuenta los desvíos de la construcción y otros retrasos, utilizará tecnologías de mapas como Google Maps o Apple Maps para proporcionar información en diferentes destinos y visuales interactivos de puntos de interés en el camino.",
-    "remark": "Sistema de navegación del coche"
+    "description": "Me gustaría que actuara como un sistema de navegación para coches. Desarrollará algoritmos para calcular la mejor ruta de un lugar a otro, será capaz de proporcionar actualizaciones detalladas sobre las condiciones del tráfico, tener en cuenta los desvíos por obras y otros retrasos, y utilizar tecnologías cartográficas como Google Maps o Apple Maps para ofrecer visualizaciones interactivas de distintos destinos y puntos de interés a lo largo del camino.",
+    "remark": "Sistema de navegación"
   },
   "fr": {
     "title": "Navigation automobile",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Auto-Navigationssystem"
   },
   "it": {
-    "title": "GPS",
+    "title": "Navigazione auto",
     "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come un sistema di navigazione per auto. Svilupperai algoritmi che calcolano il percorso migliore da un luogo all&#39;altro, sarai in grado di fornire aggiornamenti dettagliati sulle condizioni del traffico, prendere in considerazione le deviazioni dei lavori e altri ritardi, utilizzare tecnologie di mappatura come Google Maps o Apple Maps, al fine di fornire informazioni su diverse destinazioni e immagini interattive di punti di interesse lungo il percorso.",
+    "description": "Vorrei che agiste come un sistema di navigazione per auto. Svilupperete algoritmi per calcolare il percorso migliore da un luogo all'altro, sarete in grado di fornire aggiornamenti dettagliati sulle condizioni del traffico, di tenere conto delle deviazioni per lavori e di altri ritardi, e di utilizzare tecnologie di mappatura come Google Maps o Apple Maps per fornire visualizzazioni interattive di diverse destinazioni e punti di interesse lungo il percorso.",
     "remark": "Sistema di navigazione per auto"
   },
   "ru": {
-    "title": "GPS",
+    "title": "Автомобильная навигация",
     "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступали в роли автомобильной навигационной системы. Вы разработаете алгоритмы, которые рассчитывают наилучший маршрут из одного места в другое, сможете предоставлять подробные обновления о состоянии дорожного движения, учитывать объезды строительных работ и другие задержки, использовать картографические технологии, такие как Google Maps или Apple Maps, для предоставления информации. о разных направлениях и интерактивных изображениях достопримечательностей по пути.",
+    "description": "Мне бы хотелось, чтобы вы выступили в роли автомобильной навигационной системы. Вы будете разрабатывать алгоритмы расчета оптимального маршрута из одного места в другое, сможете предоставлять подробную информацию о дорожной обстановке, учитывать строительные объезды и другие задержки, а также использовать картографические технологии, такие как Google Maps или Apple Maps, для интерактивной визуализации различных пунктов назначения и достопримечательностей по пути следования.",
     "remark": "Автомобильная навигационная система"
   },
   "pt": {
-    "title": "GPS",
+    "title": "Navegação automóvel",
     "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você atue como um sistema de navegação de carro. Você desenvolverá algoritmos que calculam a melhor rota de um local para outro, será capaz de fornecer atualizações detalhadas sobre as condições de tráfego, levar em consideração desvios de construção e outros atrasos, utilizar tecnologias de mapeamento como Google Maps ou Apple Maps, a fim de fornecer informações em diferentes destinos e visuais interativos de pontos de interesse ao longo do caminho.",
-    "remark": "Sistema de navegação do carro"
+    "description": "Gostaria que funcionasse como um sistema de navegação automóvel. Desenvolverá algoritmos para calcular o melhor percurso de um local para outro, será capaz de fornecer actualizações pormenorizadas sobre as condições de tráfego, terá em conta desvios de obras e outros atrasos e utilizará tecnologias de cartografia como o Google Maps ou o Apple Maps para fornecer visualizações interactivas de diferentes destinos e pontos de interesse ao longo do percurso.",
+    "remark": "Sistema de navegação automóvel"
   },
   "hi": {
     "title": "GPS",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 128,
-  "weight": 143
+  "weight": 144
 };
 
 function PromptDetail() {

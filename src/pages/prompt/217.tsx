@@ -26,10 +26,10 @@ const prompt = {
     "remark": "한의학 진단에는 많은 요소가 관련되어 있으며 치료 계획은 참고용일 뿐입니다. 구체적인 처방은 의사가 제공해야 합니다. 동 8531 의 기여."
   },
   "es": {
-    "title": "medicina tradicional china",
+    "title": "un médico formado en medicina china",
     "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Spanish. My symptoms are [describe specific physical symptoms]..",
-    "description": "Espero que pueda actuar como un viejo médico chino y un experto en nutrición al mismo tiempo. Describiré mis síntomas y me dirá las razones de los síntomas. Desde la perspectiva de la medicina china, proporcionará acupuntura precisa, moxibustión. , específica La prescripción de la medicina tradicional china, así como la dosis de cada material medicinal, incluido el plan de tratamiento de su eficacia; y luego dar las sugerencias de suplementos nutricionales correspondientes desde la perspectiva de la nutrición, e indicar los nutrientes que deben complementarse y la dosis correspondiente Mi primer El requisito es [Síntomas físicos]",
-    "remark": "El diagnóstico de la MTC involucra muchos factores, y el plan de tratamiento es solo de referencia, y el médico debe proporcionar la prescripción específica. Contribución de @dong8531."
+    "description": "Espero que pueda jugar un tanto una antigua medicina china, al mismo tiempo es un experto en nutrición, hablo a describir mis síntomas, usted tiene que decirme la razón de la formación de este síntoma, que será desde el punto de vista de la medicina tradicional china para proporcionar la acupuntura precisa, moxibustión, una receta específica de hierbas chinas, así como la dosis de cada hierba, incluyendo su eficacia del programa terapéutico, y luego desde el punto de vista de la suplementación nutricional para dar el asesoramiento adecuado, dicen que necesitan para complementar la nutrientes, así como la dosis correspondiente, mi primera petición es [síntomas físicos].",
+    "remark": "El diagnóstico de la medicina china implica más factores, el plan de tratamiento es sólo de referencia, la fórmula específica debe ser proporcionada por el médico. Contribución de @dong8531."
   },
   "fr": {
     "title": "un médecin formé à la médecine chinoise",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bei der Diagnose in der chinesischen Medizin spielen mehrere Faktoren eine Rolle, der Behandlungsplan dient nur als Anhaltspunkt, die spezifische Formel muss vom Arzt angegeben werden. Beitrag von @dong8531."
   },
   "it": {
-    "title": "Medicina tradizionale cinese",
+    "title": "un medico formato in medicina cinese",
     "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Italian. My symptoms are [describe specific physical symptoms]...",
-    "description": "Spero che tu possa agire come un vecchio medico cinese e un esperto di nutrizione allo stesso tempo. Descriverò i miei sintomi e mi dirai le ragioni dei sintomi. Dal punto di vista della medicina cinese, fornirai agopuntura accurata, moxibustione , specifica La prescrizione della medicina tradizionale cinese, così come il dosaggio di ciascun materiale medicinale, compreso il piano di trattamento della sua efficacia; quindi fornire i corrispondenti suggerimenti di integratori nutrizionali dal punto di vista della nutrizione e indicare i nutrienti che devono essere integrati e il dosaggio corrispondente Il mio primo requisito è [Sintomi fisici]",
-    "remark": "La diagnosi di MTC coinvolge molti fattori e il piano di trattamento è solo di riferimento e la prescrizione specifica deve essere fornita dal medico. Contributo di @dong8531."
+    "description": "Spero che si può giocare un sia una vecchia medicina cinese, allo stesso tempo è un esperto di nutrizione, parlo per descrivere i miei sintomi, si deve dire la ragione per la formazione di questo sintomo, sarà dal punto di vista della medicina tradizionale cinese per fornire l'agopuntura accurata, moxibustione, una prescrizione specifica a base di erbe cinesi, così come il dosaggio di ogni erba, tra cui la sua efficacia del programma terapeutico; e poi dal punto di vista della supplementazione nutrizionale per dare il consiglio appropriato, dire bisogno di integrare i nutrienti, nonché il relativo dosaggio, la mia prima richiesta è [sintomi fisici].",
+    "remark": "La diagnosi della medicina cinese coinvolge più fattori, il piano di trattamento è solo un riferimento, la formula specifica deve essere fornita dal medico. Contributo di @dong8531."
   },
   "ru": {
-    "title": "традиционная китайская медицина",
+    "title": "врач, прошедший обучение китайской медицине",
     "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Russian. My symptoms are [describe specific physical symptoms]...",
-    "description": "Я надеюсь, что вы сможете одновременно выступать в роли старого китайского врача и эксперта по питанию. Я опишу свои симптомы, а вы расскажете мне о причинах симптомов. С точки зрения китайской медицины вы обеспечите точную акупунктуру, прижигание. , конкретный рецепт традиционной китайской медицины, а также дозировка каждого лекарственного вещества, включая план лечения его эффективности, а затем дать соответствующие предложения по пищевым добавкам с точки зрения питания и указать питательные вещества, которые необходимо дополнить и соответствующую дозировку. Мое первое требование - 【Физические симптомы】",
-    "remark": "Диагностика ТКМ включает в себя множество факторов, и план лечения предназначен только для справки, а конкретный рецепт должен быть предоставлен врачом. Вклад от @dong8531."
+    "description": "Я надеюсь, что вы сможете выступить в роли старого китайского врача и одновременно эксперта в области питания, я говорю, чтобы описать мои симптомы, вы должны сказать мне причину формирования этого симптома, вы будете с точки зрения традиционной китайской медицины, чтобы обеспечить точную акупунктуру, моксибустион, конкретный китайский травяной рецепт, а также дозировку каждой травы, включая ее эффективность терапевтической программы; а затем с точки зрения пищевых добавок, чтобы дать соответствующие советы, скажем, необходимость дополнить питательных веществ, а также соответствующую дозировку, мой первый запрос - [физические симптомы].",
+    "remark": "Диагностика в китайской медицине включает в себя большее количество факторов, план лечения приводится только для справки, конкретную формулу должен предоставить врач. Материал предоставлен @dong8531."
   },
   "pt": {
-    "title": "Medicina Chinesa Tradicional",
+    "title": "um médico com formação em medicina chinesa",
     "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Portuguese. My symptoms are [describe specific physical symptoms]...",
-    "description": "Espero que você possa atuar como um antigo médico chinês e um especialista em nutrição ao mesmo tempo. Descreverei meus sintomas e você me dirá as razões dos sintomas. Do ponto de vista da medicina chinesa, você fornecerá acupuntura e moxabustão precisas , específico A prescrição da medicina tradicional chinesa, bem como a dosagem de cada material medicinal, incluindo o plano de tratamento de sua eficácia; e, em seguida, dar as sugestões de suplementos nutricionais correspondentes do ponto de vista da nutrição e indicar os nutrientes que precisam ser suplementados e a dosagem correspondente. Meu primeiro requisito é [Sintomas físicos]",
-    "remark": "O diagnóstico da MTC envolve muitos fatores, e o plano de tratamento é apenas para referência, e a prescrição específica precisa ser fornecida pelo médico. Contribuição de @dong8531."
+    "description": "Espero que possa desempenhar o papel de um antigo médico chinês, ao mesmo tempo que é um especialista em nutrição, falo para descrever os meus sintomas, tem de me dizer a razão da formação deste sintoma, será do ponto de vista da medicina tradicional chinesa para fornecer acupunctura precisa, moxabustão, uma prescrição específica de ervas chinesas, bem como a dosagem de cada erva, incluindo a sua eficácia do programa terapêutico; e depois do ponto de vista da suplementação nutricional para dar os conselhos adequados, digamos que precisa de complementar os nutrientes, bem como a dosagem correspondente, o meu primeiro pedido é [sintomas físicos].",
+    "remark": "O diagnóstico da medicina chinesa envolve mais factores, o plano de tratamento serve apenas de referência, a fórmula específica tem de ser fornecida pelo médico. Contribuição de @dong8531."
   },
   "hi": {
     "title": "पारंपरिक चीनी औषधि",
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 217,
-  "weight": 1439
+  "weight": 1487
 };
 
 function PromptDetail() {

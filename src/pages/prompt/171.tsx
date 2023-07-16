@@ -26,10 +26,10 @@ const prompt = {
     "remark": "법률 고문"
   },
   "es": {
-    "title": "consejero legal",
+    "title": "asesor jurídico",
     "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Me gustaría que fueras mi asesor legal. Describiré una situación legal y usted ofrecerá consejos sobre cómo abordarla. Solo debe responder con su sugerencia y nada más. No escribas explicaciones.",
-    "remark": "Consejero legal"
+    "description": "Me gustaría que usted actuara como mi asesor jurídico. Le describiré una situación jurídica y usted me aconsejará sobre cómo manejarla. Sólo debe responder con su consejo y nada más. No escriba explicaciones.",
+    "remark": "Asesor jurídico"
   },
   "fr": {
     "title": "conseiller juridique",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "consulente legale",
     "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Vorrei che tu fossi il mio consulente legale. Descriverò una situazione legale e offrirai consigli su come affrontarla. Dovresti solo rispondere con il tuo suggerimento e nient&#39;altro. Non scrivere spiegazioni.",
+    "description": "Vorrei che lei agisse come mio consulente legale. Vi descriverò una situazione legale e voi mi darete un consiglio su come gestirla. Dovete rispondere solo con i vostri consigli e nient'altro. Non scrivete spiegazioni.",
     "remark": "Consulente legale"
   },
   "ru": {
-    "title": "юридический консультант",
+    "title": "юрисконсульт",
     "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я бы хотел, чтобы вы были моим юридическим советником. Я опишу юридическую ситуацию, а вы посоветуете, как к ней подступиться. Вы должны ответить только с вашим предложением и ничего больше. Не пишите пояснений.",
-    "remark": "Юридический консультант"
+    "description": "Я хотел бы, чтобы Вы выступили в качестве моего юридического консультанта. Я опишу юридическую ситуацию, а вы дадите совет, как ее разрешить. В ответ вы должны дать только свой совет и ничего больше. Не пишите объяснений.",
+    "remark": "Юрисконсульт"
   },
   "pt": {
     "title": "consultor jurídico",
     "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu gostaria que você fosse meu consultor jurídico. Descreverei uma situação legal e você oferecerá conselhos sobre como abordá-la. Você só deve responder com sua sugestão e nada mais. Não escreva explicações.",
-    "remark": "Assessor Jurídico"
+    "description": "Gostaria que actuasse como meu consultor jurídico. Descreverei uma situação jurídica e o senhor dará conselhos sobre a forma de a resolver. Só deve responder com o seu conselho e nada mais. Não escreva explicações.",
+    "remark": "Consultor jurídico"
   },
   "hi": {
     "title": "क़ानूनी सलाहकार",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 171,
-  "weight": 1532
+  "weight": 1560
 };
 
 function PromptDetail() {

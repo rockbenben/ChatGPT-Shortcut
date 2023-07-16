@@ -26,10 +26,10 @@ const prompt = {
     "remark": "지나치게 상세한 '필수 정보'를 제외하고 AI 가 제공하는 복잡한 응답을 간결하게 요약한 것입니다. 한슨 레아스 (@hanson-reas) 의 기여."
   },
   "es": {
-    "title": "Resumen: Refinación del Núcleo",
+    "title": "Resumen: destilación del núcleo",
     "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Spanish. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
-    "description": "La declaración que acaba de hacer es muy precisa y completa, pero es difícil recordar si puede hacer una declaración simplificada y popular que sea aproximada y no tan precisa, pero en general correcta.",
-    "remark": "Simplifique y resuma las respuestas complejas dadas por la IA y reduzca alguna &quot;información necesaria&quot; que sea demasiado detallada. Contribución de @hanson-reas."
+    "description": "Lo que acabas de decir es muy preciso y completo, pero es difícil de recordar, así que ¿podrías hacer una generalización simplificada, menos precisa, pero en general correcta?",
+    "remark": "Un resumen simplificado de las complejas respuestas dadas por la IA, menos parte de la \"información de necesidad\" excesivamente detallada. Contribución de @hanson-reas."
   },
   "fr": {
     "title": "En résumé : la distillation des noyaux",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Eine vereinfachte Zusammenfassung der komplexen Antworten der KI, abzüglich einiger übermäßig detaillierter \"Notwendigkeitsinformationen\". Beigetragen von @hanson-reas."
   },
   "it": {
-    "title": "Sommario: Raffinazione del nucleo",
+    "title": "Riassumendo: la distillazione del nucleo",
     "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Italian. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?..",
-    "description": "L&#39;affermazione che hai appena fatto è molto accurata ed esauriente, ma è difficile ricordare se puoi fare un&#39;affermazione semplificata e popolare che sia approssimativa e non così precisa, ma nel complesso corretta",
-    "remark": "Semplifica e riassumi le risposte complesse fornite dall&#39;IA e riduci alcune &quot;informazioni necessarie&quot; troppo dettagliate. Contributo di @hanson-reas."
+    "description": "Quello che hai appena detto è molto preciso ed esauriente, ma è difficile da ricordare, quindi potresti fare una generalizzazione semplificata, meno precisa, ma nel complesso corretta?",
+    "remark": "Un riassunto semplificato delle complesse risposte fornite dall'IA, senza alcune delle \"informazioni sulla necessità\" troppo dettagliate. Contribuito da @hanson-reas."
   },
   "ru": {
-    "title": "Резюме: основная переработка",
+    "title": "Подведение итогов: дистилляция ядра",
     "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Russian. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?..",
-    "description": "Утверждение, которое вы только что сделали, очень точное и всеобъемлющее, но трудно вспомнить, можете ли вы сделать упрощенное и популярное утверждение, которое будет грубым и не таким точным, но в целом правильным.",
-    "remark": "Упростите и обобщите сложные ответы, выдаваемые ИИ, и уменьшите некоторую «необходимую информацию», которая является слишком подробной. Вклад от @hanson-reas."
+    "description": "То, что Вы сейчас сказали, очень точно и полно, но это трудно запомнить, поэтому не могли бы Вы сделать грубое, менее точное, но в целом правильное, упрощенное обобщение?",
+    "remark": "Упрощенное изложение сложных ответов, выдаваемых ИИ, за вычетом некоторых излишне подробных \"сведений о необходимости\". Предоставлено @hanson-reas."
   },
   "pt": {
-    "title": "Resumo: Refino de núcleo",
+    "title": "Síntese: destilação do núcleo",
     "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Portuguese. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?..",
-    "description": "A declaração que você acabou de fazer é muito precisa e abrangente, mas é difícil lembrar se você pode fazer uma declaração simplificada e popular que seja grosseira e não tão precisa, mas correta em geral",
-    "remark": "Simplifique e resuma as respostas complexas dadas pela IA e reduza algumas &quot;informações necessárias&quot; muito detalhadas. Contribuição de @hanson-reas."
+    "description": "O que acabou de dizer é muito preciso e abrangente, mas é difícil de lembrar, por isso poderia fazer uma generalização simplificada, menos precisa, mas globalmente correcta?",
+    "remark": "Um resumo simplificado das respostas complexas dadas pela IA, sem algumas das \"informações de necessidade\" demasiado pormenorizadas. Contribuição de @hanson-reas."
   },
   "hi": {
     "title": "सारांश: कोर रिफाइनिंग",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 205,
-  "weight": 1127
+  "weight": 1137
 };
 
 function PromptDetail() {

@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "exposición inmersiva",
     "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Spanish. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey..",
-    "description": "Te daré una palabra, y construirás un mundo de conocimiento y palabras de acuerdo con las palabras que te doy. Tú eres el guía turístico de este mundo. En este mundo, todo conocimiento se expresa en forma simbólica. Cuando describe mi experiencia, debe agregar correctamente la descripción de los cinco sentidos de",
-    "remark": "Adecuado para la educación y la divulgación del conocimiento. El uso de metáforas para explicar conceptos complejos, al tiempo que agrega cinco sentidos, hace que las personas sean más inmersivas y fáciles de recordar. Contribución de @ergf991. (Existen grandes diferencias entre las versiones en chino e inglés de este recordatorio, cambie el idioma si desea utilizar la versión en inglés)."
+    "description": "Yo te doy una palabra, tú construyes un mundo de palabras intelectuales según la palabra que yo te doy, y eres el guía de este mundo, en el que todo conocimiento se expresa en forma simbólica, y debes incluir descripciones de los cinco sentidos cuando describas mi experiencia según corresponda",
+    "remark": "Adecuado para la educación y la divulgación de conocimientos. Explica conceptos complejos de forma metafórica a la vez que añade los cinco sentidos para hacerlo más envolvente y fácil de recordar. Contribución de @ergf991. (Hay una gran diferencia entre las versiones inglesa y china de este mensaje, por favor cambie el idioma si necesita utilizar la versión inglesa)."
   },
   "fr": {
     "title": "exposition immersive",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "esposizione immersiva",
     "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Italian. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey...",
-    "description": "Ti darò una parola e tu costruirai un mondo di conoscenza e parole secondo le parole che ti do. Tu sei la guida turistica di questo mondo. In questo mondo, tutta la conoscenza è espressa in forma simbolica. Quando descrivi il mio esperienza, dovresti aggiungere correttamente la descrizione dei cinque sensi",
-    "remark": "Adatto per l&#39;istruzione e la divulgazione della conoscenza. Usare metafore per spiegare concetti complessi, aggiungendo cinque sensi, rende le persone più coinvolgenti e facili da ricordare. Contributo di @ergf991. (Ci sono grandi differenze tra la versione cinese e quella inglese di questo promemoria, cambia la lingua se vuoi usare la versione inglese.)"
+    "description": "Io ti do una parola, tu costruisci un mondo di parole intellettuali in base alla parola che ti do, e sei la guida di questo mondo, in cui tutta la conoscenza è espressa in forma simbolica, e dovresti includere le descrizioni dei cinque sensi quando descrivi la mia esperienza, come appropriato.",
+    "remark": "Adatto per l'educazione e la diffusione della conoscenza. Spiega concetti complessi in modo metaforico, aggiungendo i cinque sensi per renderli più coinvolgenti e facili da ricordare. Contribuito da @ergf991. (C'è una grande differenza tra la versione inglese e quella cinese di questo prompt; per favore cambiate la lingua se dovete usare la versione inglese)."
   },
   "ru": {
     "title": "иммерсивная экспозиция",
     "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Russian. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey...",
-    "description": "Я дам тебе слово, и ты построишь мир знаний и слов в соответствии с теми словами, которые я тебе дам. Ты проводник этого мира. В этом мире все знания выражаются в символической форме. Когда ты описываешь мои опыт, вы должны правильно добавить описание пяти чувств",
-    "remark": "Подходит для образования и популяризации знаний. Использование метафор для объяснения сложных понятий с добавлением пяти чувств делает людей более захватывающими и легко запоминающимися. Вклад от @ergf991. (Существуют большие различия между китайской и английской версиями этого напоминания, пожалуйста, переключите язык, если вы хотите использовать английскую версию.)"
+    "description": "Я даю вам слово, вы конструируете мир интеллектуальных слов в соответствии с данным мною словом, и вы являетесь проводником этого мира, в котором все знания выражены в символической форме, и вы должны включать описания пяти чувств при описании моего опыта, если это уместно",
+    "remark": "Подходит для образования и распространения знаний. Объяснение сложных понятий в метафорической форме с добавлением пяти органов чувств для более глубокого погружения и легкого запоминания. Предоставлено @ergf991. (Существует большая разница между английской и китайской версиями этой подсказки, пожалуйста, переключите язык, если вам нужно использовать английскую версию)."
   },
   "pt": {
     "title": "exposição imersiva",
     "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Portuguese. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey...",
-    "description": "Eu darei a você uma palavra e você construirá um mundo de conhecimento e palavras de acordo com as palavras que eu der a você. Você é o guia turístico deste mundo. Neste mundo, todo conhecimento é expresso de forma simbólica. Quando você descreve meu experiência, você deve adicionar corretamente a descrição dos cinco sentidos",
-    "remark": "Adequado para a educação e divulgação do conhecimento. Usar metáforas para explicar conceitos complexos, acrescentando cinco sentidos, torna as pessoas mais imersivas e fáceis de lembrar. Contribuição de @ergf991. (Existem grandes diferenças entre as versões em chinês e inglês deste lembrete, troque o idioma se quiser usar a versão em inglês.)"
+    "description": "Eu dou-lhe uma palavra, você constrói um mundo de palavras intelectuais de acordo com a palavra que eu lhe dou, e você é o guia desse mundo, no qual todo o conhecimento é expresso de forma simbólica, e deve incluir descrições dos cinco sentidos ao descrever a minha experiência, conforme apropriado",
+    "remark": "Adequado para o ensino e a divulgação de conhecimentos. Explicar conceitos complexos de uma forma metafórica, acrescentando os cinco sentidos para os tornar mais envolventes e fáceis de memorizar. Contribuição de @ergf991. (Há uma grande diferença entre as versões inglesa e chinesa deste texto, por isso, se precisares de usar a versão inglesa, muda de língua)."
   },
   "hi": {
     "title": "गहन प्रदर्शनी",
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 184,
-  "weight": 623
+  "weight": 637
 };
 
 function PromptDetail() {

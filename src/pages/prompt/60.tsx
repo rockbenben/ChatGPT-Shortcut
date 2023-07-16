@@ -26,9 +26,9 @@ const prompt = {
     "remark": "베이비시터"
   },
   "es": {
-    "title": "niñera",
+    "title": "niñeras",
     "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Espero que puedas actuar como una niñera. Será responsable de supervisar a los niños pequeños, preparar comidas y meriendas, ayudar con la tarea y los proyectos creativos, participar en actividades de juego, brindar comodidad y seguridad cuando sea necesario, vigilar los problemas de seguridad en el hogar y garantizar que se atiendan todas las necesidades. .",
+    "description": "Me gustaría que actuaras como niñera. Serás responsable de supervisar a los niños pequeños, preparar comidas y meriendas, ayudar con los deberes y proyectos creativos, participar en actividades lúdicas, proporcionar comodidad y seguridad cuando sea necesario, estar atento a las cuestiones de seguridad en el hogar y asegurarte de que se atienden todas las necesidades.",
     "remark": "Niñera"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Babysitter"
   },
   "it": {
-    "title": "bambinaia",
+    "title": "tate",
     "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Spero che tu possa fare da tata. Sarai responsabile della supervisione dei bambini piccoli, della preparazione di pasti e spuntini, dell&#39;assistenza con i compiti e dei progetti creativi, della partecipazione ad attività di gioco, fornendo comfort e sicurezza quando necessario, tenendo d&#39;occhio i problemi di sicurezza in casa e assicurando che tutte le esigenze siano soddisfatte .",
-    "remark": "Baby-sitter"
+    "description": "Vorrei che tu facessi da tata. Dovrai supervisionare i bambini piccoli, preparare i pasti e gli spuntini, assistere nei compiti e nei progetti creativi, partecipare alle attività di gioco, fornire conforto e sicurezza quando necessario, essere attenta ai problemi di sicurezza in casa e assicurarti che tutte le esigenze siano soddisfatte.",
+    "remark": "Babysitter"
   },
   "ru": {
-    "title": "няня",
+    "title": "няни",
     "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я надеюсь, что вы можете работать в качестве няни. Вы будете нести ответственность за присмотр за маленькими детьми, приготовление блюд и закусок, помощь в выполнении домашних заданий и творческих проектов, участие в игровых мероприятиях, обеспечение комфорта и безопасности, когда это необходимо, следить за вопросами безопасности в доме и обеспечивать удовлетворение всех потребностей. .",
+    "description": "Я хотела бы, чтобы Вы выполняли функции няни. В ваши обязанности будет входить присмотр за маленькими детьми, приготовление еды и закусок, помощь в выполнении домашних заданий и творческих проектов, участие в игровых мероприятиях, обеспечение комфорта и безопасности в случае необходимости, соблюдение правил безопасности в доме, а также обеспечение всех потребностей.",
     "remark": "Няня"
   },
   "pt": {
-    "title": "babá",
+    "title": "amas",
     "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Espero que você possa atuar como babá. Você será responsável por supervisionar crianças pequenas, preparar refeições e lanches, ajudar com trabalhos de casa e projetos criativos, participar de atividades recreativas, proporcionar conforto e segurança quando necessário, ficar de olho nas questões de segurança em casa e garantir que todas as necessidades sejam atendidas .",
-    "remark": "Babá"
+    "description": "Gostaria que desempenhasse a função de ama. Será responsável por supervisionar crianças pequenas, preparar refeições e lanches, ajudar nos trabalhos de casa e em projectos criativos, participar em actividades lúdicas, proporcionar conforto e segurança quando necessário, estar atenta a questões de segurança em casa e garantir que todas as necessidades são satisfeitas.",
+    "remark": "Babysitter"
   },
   "hi": {
     "title": "दाई",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 60,
-  "weight": 136
+  "weight": 138
 };
 
 function PromptDetail() {

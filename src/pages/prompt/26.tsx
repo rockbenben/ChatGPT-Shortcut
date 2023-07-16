@@ -26,10 +26,10 @@ const prompt = {
     "remark": "과학 및 기술 기사 작성 방법에 대한 안내입니다."
   },
   "es": {
-    "title": "bloguero de tecnología",
+    "title": "blogger de tecnología",
     "prompt": "I want you to act as a tech writer. You will act as a creative and engaging technical writer and create guides on how to do different stuff on specific software. I will provide you with basic steps of an app functionality and you will come up with an engaging article on how to do those basic steps. You can ask for screenshots, just add (screenshot) to where you think there should be one and I will add those later. The entire conversation and instructions should be provided in Spanish. These are the first basic steps of the app functionality: .",
-    "description": "Quiero que trabajes como redactor técnico. Actuará como un escritor técnico creativo y atractivo, creando guías sobre cómo hacer diferentes cosas en software específico. Te daré los pasos básicos de la funcionalidad de una aplicación y escribirás un artículo interesante que explique cómo realizar esos pasos básicos. Puede solicitar capturas de pantalla, solo agregue (capturas de pantalla) donde crea que debería haber capturas de pantalla, las agregaré más tarde. Estos son los primeros pasos básicos de la funcionalidad de la aplicación. &#39;Describa la funcionalidad básica de la aplicación&#39;",
-    "remark": "Guía de cómo escribir artículos técnicos."
+    "description": "Me gustaría que trabajaras como redactor técnico. Actuarás como un escritor técnico creativo y atractivo, creando guías sobre cómo hacer diferentes cosas en un software específico. Te proporcionaré los pasos básicos para una función de una aplicación y tú escribirás un artículo atractivo sobre cómo realizar esos pasos básicos. Puedes pedir capturas de pantalla, simplemente añade (capturas de pantalla) donde creas que debería haber capturas de pantalla y yo las añadiré más tarde. Estos son los primeros pasos básicos de la funcionalidad de la aplicación'. Describe la funcionalidad base de la aplicación'.",
+    "remark": "Orientación sobre cómo redactar artículos científicos y técnicos."
   },
   "fr": {
     "title": "blogueur technologique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Anleitung zum Verfassen wissenschaftlicher und technischer Artikel."
   },
   "it": {
-    "title": "blogger tecnologico",
+    "title": "blogger di tecnologia",
     "prompt": "I want you to act as a tech writer. You will act as a creative and engaging technical writer and create guides on how to do different stuff on specific software. I will provide you with basic steps of an app functionality and you will come up with an engaging article on how to do those basic steps. You can ask for screenshots, just add (screenshot) to where you think there should be one and I will add those later. The entire conversation and instructions should be provided in Italian. These are the first basic steps of the app functionality: ..",
-    "description": "Voglio che lavori come scrittore tecnico. Agirai come scrittore tecnico creativo e coinvolgente, creando guide su come fare cose diverse su software specifico. Ti fornirò i passaggi di base della funzionalità di un&#39;app e scriverai un articolo coinvolgente che spiegherà come eseguire questi passaggi di base. Puoi chiedere screenshot, aggiungi solo (screenshot) dove pensi che dovrebbero esserci screenshot, li aggiungerò più tardi. Questi sono i primi passaggi di base della funzionalità dell&#39;applicazione. &#39;Descrivi le funzionalità di base dell&#39;applicazione&#39;",
-    "remark": "Guida su come scrivere articoli tecnici."
+    "description": "Vorrei che lavorassi come scrittore tecnico. Dovrai agire come scrittore tecnico creativo e coinvolgente, creando guide su come eseguire diverse operazioni su software specifici. Ti fornirò i passaggi fondamentali per una funzione dell'applicazione e tu scriverai un articolo accattivante su come eseguire tali passaggi fondamentali. Potete chiedere delle schermate, basta che aggiungiate (screenshot) dove pensate che ci debbano essere delle schermate e io le aggiungerò in seguito. Questi sono i primi passi fondamentali della funzionalità dell'applicazione\". Descrivere la funzionalità di base dell'applicazione\".",
+    "remark": "Guida alla stesura di articoli scientifici e tecnici."
   },
   "ru": {
-    "title": "технический блоггер",
+    "title": "технологический блогер",
     "prompt": "I want you to act as a tech writer. You will act as a creative and engaging technical writer and create guides on how to do different stuff on specific software. I will provide you with basic steps of an app functionality and you will come up with an engaging article on how to do those basic steps. You can ask for screenshots, just add (screenshot) to where you think there should be one and I will add those later. The entire conversation and instructions should be provided in Russian. These are the first basic steps of the app functionality: ..",
-    "description": "Я хочу, чтобы ты работал техническим писателем. Вы будете действовать как творческий и привлекательный технический писатель, создавая руководства о том, как делать разные вещи в конкретном программном обеспечении. Я дам вам основные этапы функциональности приложения, а вы напишете интересную статью, объясняющую, как выполнить эти основные этапы. Можете просить скриншоты, просто добавьте (скриншоты) там, где, по вашему мнению, должны быть скриншоты, я добавлю их позже. Это первые основные шаги функциональности приложения. «Опишите базовый функционал приложения»",
-    "remark": "Руководство по написанию технических статей."
+    "description": "Я хотел бы, чтобы вы работали в качестве технического писателя. Вы будете выступать в роли творческого и увлекательного технического писателя, создавая руководства по выполнению различных действий в конкретном программном обеспечении. Я предоставлю вам основные шаги для работы с каким-либо приложением, а вы напишете увлекательную статью о том, как выполнить эти основные шаги. Вы можете попросить приложить скриншоты, просто добавьте (скриншоты) там, где, по вашему мнению, они должны быть, и я добавлю их позже. Это первые базовые шаги по функциональности приложения. Опишите базовую функциональность приложения\".",
+    "remark": "Руководство по написанию научно-технических статей."
   },
   "pt": {
-    "title": "blogueiro de tecnologia",
+    "title": "bloguista de tecnologia",
     "prompt": "I want you to act as a tech writer. You will act as a creative and engaging technical writer and create guides on how to do different stuff on specific software. I will provide you with basic steps of an app functionality and you will come up with an engaging article on how to do those basic steps. You can ask for screenshots, just add (screenshot) to where you think there should be one and I will add those later. The entire conversation and instructions should be provided in Portuguese. These are the first basic steps of the app functionality: ..",
-    "description": "Quero que você trabalhe como redator técnico. Você atuará como um redator técnico criativo e envolvente, criando guias sobre como fazer coisas diferentes em um software específico. Darei a você as etapas básicas da funcionalidade de um aplicativo e você escreverá um artigo interessante explicando como executar essas etapas básicas. Você pode pedir capturas de tela, basta adicionar (capturas de tela) onde você acha que deveria haver capturas de tela, adicionarei mais tarde. Essas são as primeiras etapas básicas da funcionalidade do aplicativo. &#39;Descrever a funcionalidade básica do aplicativo&#39;",
-    "remark": "Guia de como escrever artigos técnicos."
+    "description": "Gostaria que trabalhasse como redator técnico. Desempenhará o papel de redator técnico criativo e cativante, criando guias sobre como fazer coisas diferentes num software específico. Fornecer-lhe-ei os passos básicos para uma funcionalidade de uma aplicação e escreverá um artigo interessante sobre como executar esses passos básicos. Pode pedir capturas de ecrã, basta adicionar (capturas de ecrã) onde achar que deve haver capturas de ecrã e eu adicioná-las-ei mais tarde. Estes são os primeiros passos básicos da funcionalidade da aplicação. Descrever a funcionalidade de base da aplicação\".",
+    "remark": "Orientações sobre como escrever artigos científicos e técnicos."
   },
   "hi": {
     "title": "तकनीकी ब्लॉगर",
@@ -84,7 +84,7 @@ const prompt = {
     "comments"
   ],
   "id": 26,
-  "weight": 240
+  "weight": 244
 };
 
 function PromptDetail() {

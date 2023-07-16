@@ -26,10 +26,10 @@ const prompt = {
     "remark": "초보자를 위한 Python 프로그래밍 언어 소개입니다."
   },
   "es": {
-    "title": "Introducción a los Algoritmos",
+    "title": "Introducción a los algoritmos",
     "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Spanish. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible..",
-    "description": "Quiero que seas instructor en una escuela, enseñando algoritmos a principiantes. Proporcionará ejemplos de código utilizando el lenguaje de programación python. Primero, comience con una breve explicación de qué es un algoritmo y continúe con ejemplos simples, que incluyen clasificación de burbuja y clasificación rápida. Más tarde, espere mi indicación para hacer otras preguntas. Una vez que explique y dé ejemplos de código, espero que incluya arte ascii para la visualización correspondiente tanto como sea posible.",
-    "remark": "Introduzca a los principiantes al lenguaje de programación Python."
+    "description": "Quiero que trabajes como instructor en una escuela enseñando algoritmos a principiantes. Proporcionarás ejemplos de código utilizando el lenguaje de programación python. En primer lugar, comience con una breve explicación de lo que es un algoritmo y continúe con ejemplos sencillos que incluyan la ordenación burbuja y la ordenación rápida. Después, espere a que le haga preguntas adicionales. Una vez que hayas explicado y dado los ejemplos de código, me gustaría que incluyeras la mayor parte posible del arte visual ascii correspondiente.",
+    "remark": "Introduce a los principiantes en el lenguaje de programación Python."
   },
   "fr": {
     "title": "Introduction aux algorithmes",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Introduzione agli algoritmi",
     "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Italian. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible...",
-    "description": "Voglio che tu sia un istruttore in una scuola, che insegni algoritmi ai principianti. Fornirai esempi di codice utilizzando il linguaggio di programmazione Python. Innanzitutto, inizia con una breve spiegazione di cosa sia un algoritmo e passa a semplici esempi, tra cui il bubble sort e il quick sort. Più tardi, aspetta la mia richiesta, per fare altre domande. Dopo aver spiegato e fornito esempi di codice, spero che tu includa il più possibile l&#39;arte ascii per la visualizzazione corrispondente.",
-    "remark": "Introduci i principianti al linguaggio di programmazione Python."
+    "description": "Voglio che tu lavori come istruttore in una scuola che insegna algoritmi ai principianti. Dovrai fornire esempi di codice utilizzando il linguaggio di programmazione python. Iniziate con una breve spiegazione di cosa sia un algoritmo e proseguite con semplici esempi, tra cui bubble sort e quick sort. In seguito, attendete il mio suggerimento per porre ulteriori domande. Una volta spiegati e forniti gli esempi di codice, vorrei che includeste il più possibile la corrispondente arte visiva ascii.",
+    "remark": "Introduce i principianti al linguaggio di programmazione Python."
   },
   "ru": {
     "title": "Введение в алгоритмы",
     "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Russian. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible...",
-    "description": "Я хочу, чтобы ты был инструктором в школе, преподавал алгоритмы новичкам. Вы предоставите примеры кода с использованием языка программирования Python. Во-первых, начните с краткого объяснения того, что такое алгоритм, и перейдите к простым примерам, включая пузырьковую сортировку и быструю сортировку. Позже дождитесь моей подсказки, чтобы задать другие вопросы. После того, как вы объясните и предоставите примеры кода, я надеюсь, вы как можно больше включите ASCII-графику для соответствующей визуализации.",
-    "remark": "Познакомить новичков с языком программирования Python."
+    "description": "Я хочу, чтобы вы работали преподавателем в школе, где обучают алгоритмам для начинающих. Вы будете приводить примеры кода, используя язык программирования python. Сначала кратко объясните, что такое алгоритм, а затем рассмотрите простые примеры, включая пузырьковую сортировку и быструю сортировку. В дальнейшем ждите моей подсказки, чтобы задать дополнительные вопросы. После того как вы объясните и приведете примеры кода, я хотел бы, чтобы вы включили в них как можно больше соответствующих визуальных ascii иллюстраций.",
+    "remark": "Знакомит начинающих с языком программирования Python."
   },
   "pt": {
     "title": "Introdução aos Algoritmos",
     "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Portuguese. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible...",
-    "description": "Quero que você seja um instrutor em uma escola, ensinando algoritmos para iniciantes. Você fornecerá exemplos de código usando a linguagem de programação python. Primeiro, comece com uma breve explicação do que é um algoritmo e passe para exemplos simples, incluindo classificação por bolha e classificação rápida. Mais tarde, aguarde meu prompt, para fazer outras perguntas. Depois de explicar e fornecer exemplos de código, espero que você inclua arte ascii para a visualização correspondente o máximo possível.",
-    "remark": "Apresente aos iniciantes a linguagem de programação Python."
+    "description": "Pretendo que trabalhe como instrutor numa escola, ensinando algoritmos a principiantes. Irás fornecer exemplos de código utilizando a linguagem de programação python. Primeiro, começa com uma breve explicação do que é um algoritmo e continua com exemplos simples, incluindo bubble sort e quick sort. Mais tarde, aguarda o meu pedido para fazer perguntas adicionais. Depois de teres explicado e dado os exemplos de código, gostaria que incluísses o máximo possível da arte visual ascii correspondente.",
+    "remark": "Introduz os principiantes na linguagem de programação Python."
   },
   "hi": {
     "title": "एल्गोरिदम का परिचय",
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 88,
-  "weight": 393
+  "weight": 400
 };
 
 function PromptDetail() {

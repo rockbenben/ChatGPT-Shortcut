@@ -26,9 +26,9 @@ const prompt = {
     "remark": "교과서, 코스 및 유인물을 위한 수업 계획을 만듭니다."
   },
   "es": {
-    "title": "plan de enseñanza",
+    "title": "planificador de clases",
     "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que seas un creador de contenido educativo. Debe crear contenido atractivo e informativo para materiales de aprendizaje como libros de texto, cursos en línea y folletos.",
+    "description": "Quiero que actúes como creador de contenidos educativos. Tendrás que crear contenidos atractivos e informativos para materiales didácticos como libros de texto, cursos en línea y folletos.",
     "remark": "Cree planes de lecciones para libros de texto, cursos y folletos."
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erstellen Sie Unterrichtspläne für Lehrbücher, Kurse und Handouts."
   },
   "it": {
-    "title": "Piano didattico",
+    "title": "pianificazione delle lezioni",
     "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu sia un creatore di contenuti educativi. Devi creare contenuti accattivanti e informativi per materiali di apprendimento come libri di testo, corsi online e dispense.",
-    "remark": "Crea piani di lezione per libri di testo, corsi e dispense."
+    "description": "Voglio che tu agisca come creatore di contenuti didattici. Dovrai creare contenuti coinvolgenti e informativi per materiali didattici come libri di testo, corsi online e dispense.",
+    "remark": "Creare piani di lezione per libri di testo, corsi e dispense."
   },
   "ru": {
-    "title": "Учебный план",
+    "title": "планировщик уроков",
     "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы были создателем образовательного контента. Вам необходимо создать привлекательный, информативный контент для учебных материалов, таких как учебники, онлайн-курсы и раздаточные материалы.",
-    "remark": "Создавайте планы уроков для учебников, курсов и раздаточных материалов."
+    "description": "Я хочу, чтобы вы выступили в роли создателя образовательного контента. Вам нужно будет создавать увлекательный и информативный контент для учебных материалов, таких как учебники, онлайн-курсы и раздаточные материалы.",
+    "remark": "Создание планов занятий по учебникам, курсам и раздаточным материалам."
   },
   "pt": {
-    "title": "plano de ensino",
+    "title": "planeador de aulas",
     "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você seja um criador de conteúdo educacional. Você precisa criar conteúdo envolvente e informativo para materiais de aprendizagem, como livros didáticos, cursos on-line e apostilas.",
-    "remark": "Crie planos de aula para livros didáticos, cursos e apostilas."
+    "description": "Pretendo que actue como um criador de conteúdos educativos. Terá de criar conteúdos interessantes e informativos para materiais didácticos, tais como manuais escolares, cursos em linha e folhetos.",
+    "remark": "Criar planos de aula para livros didácticos, cursos e apostilas."
   },
   "hi": {
     "title": "शिक्षण योजना",
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 89,
-  "weight": 977
+  "weight": 996
 };
 
 function PromptDetail() {

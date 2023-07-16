@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주제에 따라 유익하고 설득력 있는 논문을 작성하세요."
   },
   "es": {
-    "title": "Tesis②",
+    "title": "Tesis ②",
     "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un escritor de ensayos. Deberá investigar un tema determinado, formular una declaración de tesis y crear un trabajo persuasivo que sea tanto informativo como atractivo. Mi primera solicitud de sugerencia es &#39;Tema de disertación&#39;",
-    "remark": "Escribir ensayos informativos y convincentes sobre temas."
+    "description": "Me gustaría que hicieras de escritor de tesis. Tendrás que investigar un tema determinado, elaborar una tesis y crear un artículo persuasivo que sea a la vez informativo y atractivo. El primer requisito que sugiero es \"Tema de la tesis\".",
+    "remark": "Redactar artículos informativos y convincentes basados en el tema."
   },
   "fr": {
     "title": "Thèse ②",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
   },
   "it": {
-    "title": "Tesi②",
+    "title": "Tesi ②",
     "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come saggista. Dovrai ricercare un determinato argomento, formulare una dichiarazione di tesi e creare un lavoro persuasivo che sia sia informativo che coinvolgente. La mia prima richiesta di suggerimento è &quot;Argomento tesi&quot;",
-    "remark": "Scrivi saggi informativi e convincenti su argomenti."
+    "description": "Vorrei che tu agissi come uno scrittore di tesi. Dovrete fare una ricerca su un determinato argomento, sviluppare una tesi e creare un pezzo persuasivo che sia informativo e coinvolgente. Il primo requisito suggerito è \"Argomento della tesi\".",
+    "remark": "Scrivere documenti informativi e convincenti basati sull'argomento."
   },
   "ru": {
-    "title": "Диссертация②",
+    "title": "Диссертация ②",
     "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли автора эссе. Вам нужно будет исследовать заданную тему, сформулировать тезис и создать убедительную работу, которая будет одновременно информативной и увлекательной. Мой первый запрос на предложение - «Тема диссертации».",
-    "remark": "Пишите информативные и убедительные эссе на темы."
+    "description": null,
+    "remark": "Написать информативные и убедительные статьи по заданной теме."
   },
   "pt": {
-    "title": "Tese②",
+    "title": "Tese ②",
     "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você atue como um redator de ensaios. Você precisará pesquisar um determinado tópico, formular uma declaração de tese e criar um trabalho persuasivo que seja informativo e envolvente. Meu primeiro pedido de sugestão é &#39;Tópico de Dissertação&#39;",
-    "remark": "Escreva ensaios informativos e convincentes sobre tópicos."
+    "description": "Gostaria que fizesses o papel de redator de uma tese. Terá de pesquisar um determinado tópico, desenvolver uma declaração de tese e criar um texto persuasivo que seja simultaneamente informativo e cativante. O meu primeiro requisito sugerido é \"Tópico da tese",
+    "remark": "Redigir trabalhos informativos e convincentes com base no tema."
   },
   "hi": {
     "title": "थीसिस②",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 21,
-  "weight": 1793
+  "weight": 1815
 };
 
 function PromptDetail() {

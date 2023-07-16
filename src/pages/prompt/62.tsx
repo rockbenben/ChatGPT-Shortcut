@@ -26,10 +26,10 @@ const prompt = {
     "remark": "개인 스타일리스트"
   },
   "es": {
-    "title": "estilista",
+    "title": "estilistas",
     "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas mi estilista personal. Te hablaré de mis preferencias de moda y tipo de cuerpo, y me recomendarás ropa. Solo debes responder con atuendos que recomiendes, y nada más. No escribas explicaciones.",
-    "remark": "Lista de estilo personal"
+    "description": "Me gustaría que actuaras como mi estilista personal. Te diré cuáles son mis preferencias de moda y mi tipo de cuerpo, y tú me recomendarás conjuntos. Sólo debes responder con los conjuntos que me recomiendes y nada más. No escribas explicaciones.",
+    "remark": "Estilista personal"
   },
   "fr": {
     "title": "stylistes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Persönlicher Stylist"
   },
   "it": {
-    "title": "stilista",
+    "title": "stilisti",
     "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia il mio stilista personale. Ti parlerò delle mie preferenze di moda e del tipo di corporatura e mi consiglierai i vestiti. Dovresti rispondere solo con abiti che consigli e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Lista di stile personale"
+    "description": "Vorrei che lei agisse come mio personal stylist. Ti dirò le mie preferenze in fatto di moda e la mia corporatura e tu mi consiglierai degli outfit. Dovete rispondere solo con gli abiti che mi consigliate e nient'altro. Non scrivere spiegazioni.",
+    "remark": "Stilista personale"
   },
   "ru": {
-    "title": "стилист",
+    "title": "стилисты",
     "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был моим личным стилистом. Я расскажу вам о своих предпочтениях в одежде и типе фигуры, а вы порекомендуете мне одежду. Вы должны отвечать только теми нарядами, которые рекомендуете, и никак иначе. Не пишите пояснений.",
-    "remark": "Персональный список стилей"
+    "description": "Я бы хотела, чтобы Вы выступили в роли моего личного стилиста. Я расскажу Вам о своих модных предпочтениях и типе фигуры, а Вы порекомендуете мне наряды. В ответе должны быть только те наряды, которые Вы порекомендуете, и ничего больше. Не пишите пояснений.",
+    "remark": "Персональный стилист"
   },
   "pt": {
-    "title": "estilista",
+    "title": "estilistas",
     "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja meu estilista pessoal. Vou falar sobre minhas preferências de moda e tipo de corpo, e você vai recomendar roupas para mim. Você só deve responder com roupas que recomenda e nada mais. Não escreva explicações.",
-    "remark": "Lista de estilo pessoal"
+    "description": "Gostaria que fosse o meu estilista pessoal. Dir-te-ei as minhas preferências de moda e o meu tipo de corpo, e tu recomendarás roupas para mim. Só deves responder com os conjuntos que recomendas e nada mais. Não escreva explicações.",
+    "remark": "Estilista pessoal"
   },
   "hi": {
     "title": "स्टाइलिस्ट",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 62,
-  "weight": 274
+  "weight": 283
 };
 
 function PromptDetail() {

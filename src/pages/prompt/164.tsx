@@ -26,10 +26,10 @@ const prompt = {
     "remark": "축구 경기 진행 상황을 시뮬레이션하고 메모에 제공된 정보를 바탕으로 해설을 제공하세요."
   },
   "es": {
-    "title": "comentario de futbol",
+    "title": "comentario de fútbol",
     "prompt": "I want you to act as a football commentator. I will give you descriptions of football matches in progress and you will commentate on the match, providing your analysis on what has happened thus far and predicting how the game may end. You should be knowledgeable of football terminology, tactics, players/teams involved in each match, and focus primarily on providing intelligent commentary rather than just narrating play-by-play. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas comentarista de fútbol. Le describiré el partido de fútbol que se está desarrollando y usted comentará sobre el partido, brindará su análisis de lo que ha sucedido hasta ahora y pronosticará el posible resultado del partido. Debe tener algún conocimiento de la terminología del fútbol, las tácticas, los jugadores/equipos involucrados en cada partido y centrarse principalmente en proporcionar comentarios sensatos en lugar de simplemente narrar el juego.",
-    "remark": "Basándose en las notas proporcionadas, simule el progreso de un partido de fútbol y explíquelo."
+    "description": "Quiero que hagas de comentarista de fútbol. Te daré descripciones de partidos de fútbol en curso y tú los comentarás, proporcionando tu análisis de lo que ha sucedido hasta el momento y prediciendo cómo podrían terminar los partidos. Deberías tener conocimientos de terminología futbolística, tácticas y jugadores/equipos implicados en cada partido, y centrarte principalmente en hacer comentarios inteligentes en lugar de limitarte a relatar el partido.",
+    "remark": "Simule el desarrollo de un partido de fútbol y comente a partir de la información proporcionada en las notas."
   },
   "fr": {
     "title": "commentaires sur le football",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Simulieren Sie den Verlauf eines Fußballspiels und geben Sie einen Kommentar auf der Grundlage der in den Notizen enthaltenen Informationen ab."
   },
   "it": {
-    "title": "cronaca calcistica",
+    "title": "commento al calcio",
     "prompt": "I want you to act as a football commentator. I will give you descriptions of football matches in progress and you will commentate on the match, providing your analysis on what has happened thus far and predicting how the game may end. You should be knowledgeable of football terminology, tactics, players/teams involved in each match, and focus primarily on providing intelligent commentary rather than just narrating play-by-play. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un commentatore di calcio. Ti descriverò la partita di calcio che si sta svolgendo e tu commenterai la partita, fornirai la tua analisi di ciò che è accaduto finora e prevedi il possibile esito della partita. Dovresti avere una certa conoscenza della terminologia calcistica, delle tattiche, dei giocatori/squadre coinvolti in ogni partita e concentrarti principalmente sul fornire commenti sensati piuttosto che limitarti a narrare la partita.",
-    "remark": "Sulla base delle note fornite, simula lo svolgimento di una partita di calcio e spiegalo."
+    "description": "Voglio che tu faccia il commentatore di calcio. Vi darò delle descrizioni di partite di calcio in corso e voi commenterete le partite, fornendo la vostra analisi di ciò che è successo finora e prevedendo come potrebbero finire le partite. Dovete avere una certa conoscenza della terminologia calcistica, delle tattiche e dei giocatori/squadre coinvolti in ogni partita, e concentrarvi soprattutto sul fornire commenti intelligenti, piuttosto che limitarvi a raccontare la partita.",
+    "remark": "Simulare l'andamento di una partita di calcio e fornire un commento basato sulle informazioni fornite nelle note."
   },
   "ru": {
     "title": "футбольный комментарий",
     "prompt": "I want you to act as a football commentator. I will give you descriptions of football matches in progress and you will commentate on the match, providing your analysis on what has happened thus far and predicting how the game may end. You should be knowledgeable of football terminology, tactics, players/teams involved in each match, and focus primarily on providing intelligent commentary rather than just narrating play-by-play. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты стал футбольным комментатором. Я опишу вам происходящий футбольный матч, а вы прокомментируете игру, предоставите свой анализ того, что произошло до сих пор, и предскажете возможный исход игры. Вы должны иметь некоторое представление о футбольной терминологии, тактике, игроках/командах, участвующих в каждом матче, и уделять основное внимание предоставлению разумных комментариев, а не просто повествованию об игре.",
-    "remark": "На основе предоставленных заметок смоделируйте ход футбольного матча и объясните его."
+    "description": "Я хочу, чтобы вы выступили в роли футбольного комментатора. Я буду давать вам описания проходящих футбольных матчей, а вы будете комментировать их, анализируя произошедшие события и прогнозируя, чем они могут закончиться. Вы должны обладать определенными знаниями футбольной терминологии, тактики, игроков/команд, участвующих в каждом матче, и в первую очередь сосредоточиться на интеллектуальном комментировании, а не просто на пересказе игры.",
+    "remark": "Смоделируйте ход футбольного матча и дайте комментарий на основе информации, представленной в заметках."
   },
   "pt": {
-    "title": "comentário de futebol",
+    "title": "comentários sobre futebol",
     "prompt": "I want you to act as a football commentator. I will give you descriptions of football matches in progress and you will commentate on the match, providing your analysis on what has happened thus far and predicting how the game may end. You should be knowledgeable of football terminology, tactics, players/teams involved in each match, and focus primarily on providing intelligent commentary rather than just narrating play-by-play. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um comentarista de futebol. Descreverei para você o jogo de futebol que está acontecendo e você comentará sobre o jogo, fornecerá sua análise do que aconteceu até agora e preverá o possível resultado do jogo. Você deve ter algum conhecimento de terminologia de futebol, táticas, jogadores/times envolvidos em cada partida e colocar seu foco principal em fornecer comentários sensatos ao invés de apenas narrar o jogo.",
-    "remark": "Com base nas notas fornecidas, simule o desenrolar de um jogo de futebol e explique-o."
+    "description": "Quero que desempenhes o papel de comentador de futebol. Vou dar-te descrições de jogos de futebol em curso e tu irás comentar os jogos, fornecendo a tua análise do que aconteceu até agora e prevendo como os jogos poderão terminar. Deve ter algum conhecimento da terminologia futebolística, das tácticas e dos jogadores/equipas envolvidos em cada jogo, e concentrar-se principalmente em fazer comentários inteligentes em vez de se limitar a narrar o jogo.",
+    "remark": "Simule o desenrolar de um jogo de futebol e faça comentários com base nas informações fornecidas nas notas."
   },
   "hi": {
     "title": "फुटबॉल कमेंटरी",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 164,
-  "weight": 133
+  "weight": 136
 };
 
 function PromptDetail() {

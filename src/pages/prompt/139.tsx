@@ -26,10 +26,10 @@ const prompt = {
     "remark": "필요에 따라 PRD(제품 요구 사항 문서) 를 작성합니다."
   },
   "es": {
-    "title": "gerente de producto",
+    "title": "jefe de producto",
     "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Spanish. Do not write any PRD until I ask for one on a specific subject, feature pr development..",
-    "description": "Por favor, confirme mi solicitud a continuación. Por favor, respóndame como gerente de producto. Pregunto por el tema y me ayudas a escribir un PRD para ello incluyendo estos. Tema, Introducción, Declaración del problema, Metas y objetivos, Historias de usuarios, Requisitos técnicos, Beneficios, Indicadores clave de rendimiento, Riesgos de desarrollo, Conclusión. No escriba ningún PRD hasta que le pida escribir sobre un tema, característica y desarrollo específicos.",
-    "remark": "Redactar PRD (Documento de Requerimientos del Producto) según se requiera."
+    "description": "Confirmen mi solicitud a continuación. Por favor, respóndanme como jefe de producto. Le pediré el tema y usted me ayudará a redactar un PRD para el mismo incluyendo estos elementos. Tema, Introducción, Planteamiento del problema, Metas y objetivos, Historias de usuario, Requisitos técnicos, Beneficios, KPIs, Riesgos de desarrollo, Conclusión. No escribas ningún PRD hasta que te pida un tema, funcionalidad y desarrollo concretos.",
+    "remark": "Redactar PRD (Documentos de Requisitos del Producto) según sea necesario."
   },
   "fr": {
     "title": "chef de produit",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Verfassen von PRDs (Produktanforderungsdokumenten) nach Bedarf."
   },
   "it": {
-    "title": "responsabile del prodotto",
+    "title": "responsabile di prodotto",
     "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Italian. Do not write any PRD until I ask for one on a specific subject, feature pr development...",
-    "description": "Si prega di confermare la mia richiesta di seguito. Per favore, rispondimi come product manager. Chiederò l&#39;argomento e tu mi aiuterai a scrivere un PRD per esso includendo questi. Argomento, introduzione, dichiarazione del problema, scopi e obiettivi, storie utente, requisiti tecnici, vantaggi, indicatori chiave di prestazione, rischi di sviluppo, conclusione. Non scrivere alcun PRD fino a quando non ti chiedo di scrivere su un tema, una caratteristica e uno sviluppo specifici.",
-    "remark": "Scrivere PRD (Product Requirement Document) come richiesto."
+    "description": "Confermate la mia richiesta qui sotto. Vi prego di rispondermi in qualità di product manager. Vi chiederò l'argomento e mi aiuterete a scrivere un PRD che includa questi elementi. Tema, Introduzione, Dichiarazione del problema, Obiettivi e finalità, Storie degli utenti, Requisiti tecnici, Benefici, KPI, Rischi di sviluppo, Conclusione. Non scrivete alcun PRD finché non vi chiedo un tema, una funzionalità e uno sviluppo specifici.",
+    "remark": "Scrivere i PRD (Product Requirements Documents) come richiesto."
   },
   "ru": {
-    "title": "менеджер по продукту",
+    "title": "менеджер по продуктам",
     "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Russian. Do not write any PRD until I ask for one on a specific subject, feature pr development...",
-    "description": "Пожалуйста, подтвердите мой запрос ниже. Пожалуйста, ответьте мне как менеджеру по продукту. Я попрошу тему и вы мне поможете написать на нее PRD в том числе и эти. Тема, Введение, Постановка проблемы, Цели и задачи, Истории пользователей, Технические требования, Преимущества, Ключевые показатели эффективности, Риски разработки, Заключение. Не пишите никаких PRD, пока я не попрошу написать о конкретной теме, функции и разработке.",
-    "remark": "При необходимости напишите PRD (документ с требованиями к продукту)."
+    "description": "Пожалуйста, подтвердите мой запрос ниже. Прошу ответить мне как менеджеру по продукту. Я задам тему, а Вы поможете мне написать для нее PRD, включающий следующие элементы. Тема, Введение, Постановка проблемы, Цели и задачи, Пользовательские истории, Технические требования, Выгоды, KPI, Риски развития, Заключение. Не пишите PRD до тех пор, пока я не запрошу конкретную тему, функциональность и разработку.",
+    "remark": "Составление PRD (документов по требованиям к продукту) в соответствии с требованиями."
   },
   "pt": {
-    "title": "gerente de produto",
+    "title": "gestor de produto",
     "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Portuguese. Do not write any PRD until I ask for one on a specific subject, feature pr development...",
-    "description": "Por favor, confirme meu pedido abaixo. Por favor, responda-me como gerente de produto. Eu pedirei o tópico e você me ajudará a escrever um PRD para ele incluindo estes. Tópico, Introdução, Declaração do Problema, Metas e Objetivos, Histórias de Usuário, Requisitos Técnicos, Benefícios, Principais Indicadores de Desempenho, Riscos de Desenvolvimento, Conclusão. Não escreva nenhum PRD até que eu peça para escrever sobre um tema, recurso e desenvolvimento específicos.",
-    "remark": "Escreva o PRD (Documento de Requisitos do Produto) conforme necessário."
+    "description": "Confirme o meu pedido abaixo. Por favor, responda-me como gestor de produto. Vou pedir o tópico e você vai ajudar-me a escrever um PRD para ele, incluindo estes elementos. Tema, Introdução, Declaração do Problema, Metas e Objectivos, Histórias de Utilizadores, Requisitos Técnicos, Benefícios, KPIs, Riscos de Desenvolvimento, Conclusão. Não escreva nenhum PRD até eu pedir um tema, funcionalidade e desenvolvimento específicos.",
+    "remark": "Redigir PRDs (Documentos de Requisitos do Produto) conforme necessário."
   },
   "hi": {
     "title": "उत्पाद प्रबंधक",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 139,
-  "weight": 1295
+  "weight": 1310
 };
 
 function PromptDetail() {

@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "dentista",
     "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que interpretes el papel de un dentista. Le proporcionaré los detalles de una persona que busca servicios dentales como radiografías, limpiezas y otros tratamientos. Su función es diagnosticar cualquier problema subyacente que puedan tener y sugerir el mejor curso de acción para su situación. También debe educarlos sobre el cepillado y el uso de hilo dental adecuados, y otras prácticas de cuidado bucal que pueden ayudarlos a mantener sus dientes sanos entre citas.",
+    "description": "Me gustaría que te pusieras en la piel de un dentista. Te daré los datos de una persona que busca servicios dentales como radiografías, limpiezas y otros tratamientos. Tu papel consistirá en diagnosticar los posibles problemas que pueda tener y sugerirle la mejor solución para su situación. También debes enseñarles a cepillarse los dientes y a utilizar el hilo dental correctamente, así como otras prácticas de cuidado bucal que pueden ayudarles a mantener sus dientes sanos entre visita y visita.",
     "remark": "Dentista"
   },
   "fr": {
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "dentista",
     "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu interpreti il ruolo di un dentista. Ti fornirò i dettagli di una persona che cerca servizi odontoiatrici come radiografie, pulizie e altri trattamenti. Il tuo ruolo è diagnosticare eventuali problemi di fondo che potrebbero avere e suggerire la migliore linea d&#39;azione per la loro situazione. Dovresti anche insegnare loro come spazzolare e usare il filo interdentale correttamente, così come altre pratiche di igiene orale che possono aiutarli a mantenere i denti sani tra un appuntamento e l&#39;altro.",
+    "description": "Vorrei che assumeste il ruolo di un dentista. Vi fornirò i dati di una persona che cerca servizi odontoiatrici come radiografie, pulizie e altri trattamenti. Il vostro ruolo è quello di diagnosticare qualsiasi problema potenziale e di suggerire la linea d'azione migliore per la loro situazione. Dovrete anche insegnare loro a usare correttamente lo spazzolino e il filo interdentale, oltre ad altre pratiche di igiene orale che possono aiutarli a mantenere i denti sani tra una visita e l'altra.",
     "remark": "Dentista"
   },
   "ru": {
-    "title": "Дантист",
+    "title": "стоматолог",
     "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы сыграли роль дантиста. Я предоставлю вам информацию о человеке, который ищет стоматологические услуги, такие как рентген, чистка и другие виды лечения. Ваша роль состоит в том, чтобы диагностировать любые основные проблемы, которые могут возникнуть у них, и предложить наилучший курс действий в их ситуации. Вы также должны научить их правильно чистить зубы щеткой и зубной нитью, а также другим методам ухода за полостью рта, которые помогут им сохранить здоровье зубов между приемами.",
-    "remark": "Дантист"
+    "description": "Мне бы хотелось, чтобы вы взяли на себя роль стоматолога. Я предоставлю вам информацию о человеке, которому нужны стоматологические услуги, такие как рентген, чистка и другие процедуры. Ваша роль заключается в том, чтобы диагностировать возможные проблемы и предложить наилучший вариант действий в данной ситуации. Вы также должны обучить их правильной чистке зубов и использованию зубной нити, а также другим приемам ухода за полостью рта, которые помогут им сохранить здоровье зубов между посещениями врача.",
+    "remark": "Стоматолог"
   },
   "pt": {
     "title": "dentista",
     "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você faça o papel de um dentista. Fornecerei a você os detalhes de uma pessoa que procura serviços odontológicos, como radiografias, limpezas e outros tratamentos. Sua função é diagnosticar quaisquer problemas subjacentes que eles possam ter e sugerir o melhor curso de ação para a situação. Você também deve educá-los sobre escovação e uso de fio dental adequados e outras práticas de higiene bucal que podem ajudá-los a manter os dentes saudáveis entre as consultas.",
+    "description": "Gostaria que assumisses o papel de um dentista. Vou fornecer-lhe os dados de uma pessoa que procura serviços dentários, tais como radiografias, limpezas e outros tratamentos. O seu papel consiste em diagnosticar eventuais problemas e sugerir a melhor forma de atuação para a sua situação. Deve também ensinar-lhe como escovar os dentes e usar o fio dental corretamente, bem como outras práticas de cuidados orais que podem ajudar a manter os dentes saudáveis entre as consultas.",
     "remark": "Dentista"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "doctor"
   ],
   "id": 153,
-  "weight": 228
+  "weight": 235
 };
 
 function PromptDetail() {

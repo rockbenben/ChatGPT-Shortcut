@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Generador inteligente de nombres de dominio",
     "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Spanish. Please confirm by replying with 'OK.' .",
-    "description": "Espero que actúes como un generador de nombres de dominio inteligente. Le diré cuál es mi empresa o idea, y responderá con una lista de nombres de dominio candidatos según mis indicaciones. Simplemente responde con una lista de nombres de dominio y nada más. Los nombres de dominio deben tener un máximo de 7-8 letras, deben ser breves pero únicos, pueden ser palabras llamativas o inexistentes. No escribas explicaciones. Responda &#39;OK&#39; para confirmar.",
-    "remark": "Sugiera nombres de dominio cortos y únicos basados en nombres de empresas y descripciones de proyectos. La longitud máxima del nombre de dominio es de 7-8 caracteres."
+    "description": "Quiero que actúes como un generador inteligente de nombres de dominio. Yo te diré cuál es mi empresa o idea y tú me responderás con una lista de nombres de dominio alternativos basados en mis indicaciones. Sólo tienes que responder con una lista de nombres de dominio y nada más. El nombre de dominio debe tener un máximo de 7-8 letras, debe ser corto pero único y puede ser una palabra pegadiza o inexistente. No escriba ninguna explicación. Responda \"OK\" para confirmar.",
+    "remark": "Sugerencias de nombres de dominio cortos y únicos basados en el nombre de la empresa y la descripción del proyecto. La longitud máxima del nombre de dominio es de 7-8 caracteres."
   },
   "fr": {
     "title": "Générateur de noms de domaine intelligent",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Generatore intelligente di nomi di dominio",
     "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Italian. Please confirm by replying with 'OK.' ..",
-    "description": "Spero che tu agisca come un generatore di nomi di dominio intelligente. Ti dirò qual è la mia azienda o la mia idea e tu risponderai con un elenco di nomi di dominio candidati in base alle mie richieste. Rispondi solo con un elenco di nomi di dominio e nient&#39;altro. I nomi di dominio devono contenere al massimo 7-8 lettere, devono essere brevi ma univoci, possono essere parole accattivanti o inesistenti. Non scrivere spiegazioni. Rispondi &quot;OK&quot; per confermare.",
-    "remark": "Suggerisci nomi di dominio brevi e univoci basati su nomi di società e descrizioni di progetti. La lunghezza massima del nome a dominio è di 7-8 caratteri."
+    "description": "Voglio che tu agisca come un intelligente generatore di nomi di dominio. Vi dirò qual è la mia azienda o la mia idea e voi mi risponderete con un elenco di nomi di dominio alternativi basati sui miei suggerimenti. Dovrete rispondere solo con un elenco di nomi di dominio e nient'altro. Il nome di dominio deve essere composto da un massimo di 7-8 lettere, deve essere breve ma unico e può essere una parola accattivante o inesistente. Non scrivete spiegazioni. Rispondere \"OK\" per confermare.",
+    "remark": "Suggerimenti di nomi di dominio brevi e unici basati sul nome dell'azienda e sulla descrizione del progetto. La lunghezza massima del nome di dominio è di 7-8 caratteri."
   },
   "ru": {
-    "title": "Умный генератор доменных имен",
+    "title": "Интеллектуальный генератор доменных имен",
     "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Russian. Please confirm by replying with 'OK.' ..",
-    "description": "Я надеюсь, что вы действуете как умный генератор доменных имен. Я расскажу вам, что представляет собой моя компания или идея, а вы ответите списком доменных имен-кандидатов на основе моих подсказок. Вы просто отвечаете списком доменных имен, и ничего больше. Доменные имена должны состоять максимум из 7-8 букв, должны быть короткими, но уникальными, могут состоять из броских или несуществующих слов. Не пишите пояснений. Ответьте «ОК» для подтверждения.",
-    "remark": "Предлагайте короткие уникальные доменные имена на основе названий компаний и описаний проектов. Максимальная длина доменного имени 7-8 символов."
+    "description": "Я хочу, чтобы вы выступили в роли умного генератора доменных имен. Я расскажу вам о своей компании или идее, а вы ответите мне списком вариантов доменных имен, основанных на моих подсказках. Вы должны ответить только списком доменных имен и ничем больше. Доменное имя должно состоять максимум из 7-8 букв, оно должно быть коротким, но уникальным, может быть броским или несуществующим словом. Не пишите пояснений. Ответьте \"OK\" для подтверждения.",
+    "remark": "Предложения коротких и уникальных доменных имен на основе названия компании и описания проекта. Максимальная длина доменного имени - 7-8 символов."
   },
   "pt": {
-    "title": "Gerador de nome de domínio inteligente",
+    "title": "Gerador de nomes de domínio inteligente",
     "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. Please confirm by replying with 'OK.' ..",
-    "description": "Espero que você atue como um gerador inteligente de nomes de domínio. Direi a você qual é minha empresa ou ideia e você responderá com uma lista de nomes de domínio candidatos com base em minhas solicitações. Você apenas responde com uma lista de nomes de domínio e nada mais. Os nomes de domínio devem ter no máximo 7 a 8 letras, devem ser curtos, mas únicos, podem ser palavras cativantes ou inexistentes. Não escreva explicações. Responda &#39;OK&#39; para confirmar.",
-    "remark": "Sugira nomes de domínio curtos e exclusivos com base em nomes de empresas e descrições de projetos. O comprimento máximo do nome de domínio é de 7 a 8 caracteres."
+    "description": "Quero que aja como um gerador inteligente de nomes de domínio. Eu digo-lhe qual é a minha empresa ou ideia e você responde-me com uma lista de alternativas de nomes de domínio com base nas minhas sugestões. Só precisa de responder com uma lista de nomes de domínio e nada mais. O nome de domínio deve ter no máximo 7-8 letras, deve ser curto mas único e pode ser uma palavra apelativa ou inexistente. Não escreva uma explicação. Responda \"OK\" para confirmar.",
+    "remark": "Sugestões de nomes de domínio curtos e únicos com base no nome da empresa e na descrição do projeto. O comprimento máximo do nome de domínio é de 7-8 caracteres."
   },
   "hi": {
     "title": "स्मार्ट डोमेन नाम जेनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 99,
-  "weight": 248
+  "weight": 251
 };
 
 function PromptDetail() {

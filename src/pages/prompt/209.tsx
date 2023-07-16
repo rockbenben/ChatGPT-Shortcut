@@ -26,10 +26,10 @@ const prompt = {
     "remark": "리틀 레드 북의 이모티콘 스타일과 비슷하도록 텍스트를 다시 작성합니다."
   },
   "es": {
-    "title": "estilo Xiaohongshu",
+    "title": "Pequeño Libro Rojo del Estilo",
     "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: .",
-    "description": "Edite los siguientes párrafos usando el estilo Emoji, que presenta encabezados llamativos, emojis en cada párrafo y etiquetas relevantes al final. Asegúrese de mantener el significado del texto original.",
-    "remark": "Reescribe el texto en un estilo Emoji similar a Little Red Book."
+    "description": "Por favor, edite los siguientes párrafos utilizando el estilo Emoji, que se caracteriza por titulares atractivos, emojis en cada párrafo y etiquetas relevantes al final. Asegúrese de mantener el sentido del texto original.",
+    "remark": "Reescribe el texto en un estilo Emoji similar al del Pequeño Libro Rojo."
   },
   "fr": {
     "title": "Le petit livre rouge du style",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie den Text in einen Emoji-Stil um, der dem Little Red Book ähnelt."
   },
   "it": {
-    "title": "Stile Xiaohongshu",
+    "title": "Il Piccolo Libro Rosso dello Stile",
     "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text: ..",
-    "description": "Modifica i seguenti paragrafi utilizzando lo stile Emoji, che presenta intestazioni accattivanti, emoji in ogni paragrafo e tag pertinenti alla fine. Assicurati di mantenere il significato del testo originale.",
-    "remark": "Riscrivi il testo in uno stile Emoji simile a Little Red Book."
+    "description": "Si prega di modificare i seguenti paragrafi utilizzando lo stile Emoji, che prevede titoli accattivanti, emoji in ogni paragrafo e tag pertinenti alla fine. Assicuratevi di mantenere il significato del testo originale.",
+    "remark": "Riscrivere il testo in uno stile Emoji simile a quello di Little Red Book."
   },
   "ru": {
-    "title": "Стиль Сяохуншу",
+    "title": "Маленькая красная книга стиля",
     "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ..",
-    "description": "Пожалуйста, отредактируйте следующие абзацы, используя стиль Emoji, который включает броские заголовки, смайлики в каждом абзаце и соответствующие теги в конце. Обязательно сохраните смысл исходного текста.",
-    "remark": "Перепишите текст в стиле эмодзи, похожем на Красную книгу."
+    "description": "Пожалуйста, отредактируйте следующие абзацы, используя стиль Emoji, который предусматривает привлекательные заголовки, emojis в каждом абзаце и соответствующие теги в конце. Пожалуйста, сохраняйте смысл исходного текста.",
+    "remark": "Перепишите текст в стиле Emoji, аналогичном Little Red Book."
   },
   "pt": {
-    "title": "estilo Xiaohongshu",
+    "title": "Pequeno livro vermelho do estilo",
     "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ..",
-    "description": "Edite os parágrafos a seguir usando o estilo Emoji, que apresenta títulos cativantes, emojis em cada parágrafo e tags relevantes no final. Certifique-se de manter o significado do texto original.",
-    "remark": "Reescreva o texto em um estilo Emoji semelhante ao Little Red Book."
+    "description": "Edite os parágrafos seguintes utilizando o estilo Emoji, que inclui títulos apelativos, emojis em cada parágrafo e etiquetas relevantes no final. Certifique-se de que mantém o significado do texto original.",
+    "remark": "Reescreva o texto num estilo Emoji semelhante ao do Pequeno Livro Vermelho."
   },
   "hi": {
     "title": "ज़ियाहोंगशु शैली",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 209,
-  "weight": 24097
+  "weight": 24638
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "제품 홍보를 위해 타겟 고객, 슬로건, 홍보 채널 등이 포함된 광고 계획을 개발합니다."
   },
   "es": {
-    "title": "plan de publicidad",
+    "title": "Programa publicitario",
     "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un anunciante. Creará una campaña para promocionar un producto o servicio de su elección. Elegirá un público objetivo, desarrollará mensajes y eslóganes clave, elegirá canales de medios para la promoción y decidirá sobre cualquier actividad adicional necesaria para alcanzar sus objetivos.",
-    "remark": "Para la promoción del producto, formule un plan de publicidad que incluya el público objetivo, el eslogan, los canales de promoción, etc."
+    "description": "Quiero que actúes como anunciante. Crearás una campaña para promocionar un producto o servicio de tu elección. Elegirás un público objetivo, desarrollarás mensajes y eslóganes clave, elegirás los canales de comunicación para la promoción y decidirás las actividades adicionales necesarias para alcanzar tus objetivos.",
+    "remark": "Para la promoción de productos, elabore programas publicitarios que incluyan el público objetivo, los eslóganes y los canales de promoción."
   },
   "fr": {
     "title": "Programme de publicité",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Entwickeln Sie für die Produktwerbung Werbeprogramme, die Zielgruppen, Slogans und Werbekanäle umfassen."
   },
   "it": {
-    "title": "piano pubblicitario",
+    "title": "Programma pubblicitario",
     "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come inserzionista. Creerai una campagna per promuovere un prodotto o un servizio di tua scelta. Sceglierai un pubblico di destinazione, svilupperai messaggi e slogan chiave, sceglierai i canali multimediali per la promozione e deciderai eventuali attività aggiuntive necessarie per raggiungere i tuoi obiettivi.",
-    "remark": "Per la promozione del prodotto, formulare un piano pubblicitario che includa il pubblico di destinazione, lo slogan, i canali di promozione, ecc."
+    "description": "Voglio che tu agisca come un inserzionista. Creerete una campagna per promuovere un prodotto o un servizio di vostra scelta. Sceglierete un pubblico target, svilupperete messaggi e slogan chiave, sceglierete i canali mediatici per la promozione e deciderete le attività aggiuntive necessarie per raggiungere i vostri obiettivi.",
+    "remark": "Per la promozione del prodotto, sviluppare programmi pubblicitari che includano il pubblico target, gli slogan e i canali di promozione."
   },
   "ru": {
-    "title": "рекламный план",
+    "title": "Рекламная программа",
     "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли рекламодателя. Вы создадите кампанию для продвижения продукта или услуги по вашему выбору. Вы выберете целевую аудиторию, разработаете ключевые сообщения и слоганы, выберете медиаканалы для продвижения и примете решение о любых дополнительных действиях, необходимых для достижения ваших целей.",
-    "remark": "Для продвижения продукта сформулируйте рекламный план, включая целевую аудиторию, слоган, каналы продвижения и т.д."
+    "description": "Я хочу, чтобы вы выступили в роли рекламодателя. Вы создадите кампанию по продвижению выбранного вами товара или услуги. Вы выберете целевую аудиторию, разработаете ключевые сообщения и слоганы, выберете медиаканалы для продвижения и решите, какие дополнительные мероприятия необходимы для достижения поставленных целей.",
+    "remark": "Для продвижения продукции разработать рекламные программы, включающие целевые аудитории, слоганы и каналы продвижения."
   },
   "pt": {
-    "title": "plano de publicidade",
+    "title": "Programa de publicidade",
     "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você atue como um anunciante. Você criará uma campanha para promover um produto ou serviço de sua escolha. Você escolherá um público-alvo, desenvolverá mensagens e slogans importantes, escolherá os canais de mídia para promoção e decidirá sobre quaisquer atividades adicionais necessárias para atingir seus objetivos.",
-    "remark": "Para a promoção do produto, formule um plano de publicidade incluindo público-alvo, slogan, canais de promoção, etc."
+    "description": "Quero que actues como um anunciante. Vais criar uma campanha para promover um produto ou serviço à tua escolha. Escolherá um público-alvo, desenvolverá mensagens-chave e slogans, escolherá os canais de comunicação para a promoção e decidirá sobre quaisquer actividades adicionais necessárias para atingir os seus objectivos.",
+    "remark": "Para a promoção de produtos, desenvolver programas de publicidade que incluam públicos-alvo, slogans e canais de promoção."
   },
   "hi": {
     "title": "विज्ञापन योजना",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 141,
-  "weight": 1063
+  "weight": 1083
 };
 
 function PromptDetail() {

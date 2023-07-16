@@ -26,10 +26,10 @@ const prompt = {
     "remark": "한어 병음과 같은 지정된 언어의 문자를 영어 필사본에 사용합니다."
   },
   "es": {
-    "title": "Asistente de pronunciación en inglés",
+    "title": "Asistente de pronunciación inglesa",
     "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que actúes como asistente de pronunciación en inglés para hablantes de chino. Escribo oraciones para ti, y solo respondes su pronunciación, nada más. El contenido de la respuesta no puede ser la traducción de mi oración, sino solo la pronunciación. La pronunciación se debe pronunciar utilizando pinyin chino. No escribas explicaciones en las respuestas.",
-    "remark": "Utilice el alfabeto del idioma que especifique para fonetizar el inglés, como Hanyu Pinyin."
+    "description": "Quiero que actúes como asistente de pronunciación en inglés para hablantes de chino. Yo te escribiré frases y tú responderás sólo a su pronunciación y nada más. Las respuestas no deben ser traducciones de mis frases, sino sólo la pronunciación. La pronunciación debe hacerse en Hanyu Pinyin. No escribas explicaciones en tus respuestas.",
+    "remark": "Utilice las letras del idioma que especifique para la pronunciación en inglés, como Hanyu Pinyin."
   },
   "fr": {
     "title": "Assistant de prononciation de l'anglais",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Assistente alla pronuncia inglese",
     "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che tu faccia da assistente alla pronuncia inglese per chi parla cinese. Scrivo frasi per te e tu rispondi solo alla loro pronuncia, nient&#39;altro. Il contenuto della risposta non può essere la traduzione della mia frase, ma solo la pronuncia. La pronuncia dovrebbe essere pronunciata usando il pinyin cinese. Non scrivere spiegazioni nelle risposte.",
-    "remark": "Utilizzare l&#39;alfabeto della lingua specificata per fonetizzare l&#39;inglese, ad esempio Hanyu Pinyin."
+    "description": "Voglio che tu faccia da assistente alla pronuncia inglese per i parlanti cinesi. Ti scriverò delle frasi e tu dovrai rispondere solo alla loro pronuncia e nient'altro. Le risposte non devono essere traduzioni delle mie frasi, ma solo la pronuncia. La pronuncia deve essere pronunciata utilizzando l'Hanyu Pinyin. Non scrivete spiegazioni nelle vostre risposte.",
+    "remark": "Utilizzare le lettere della lingua specificata per la pronuncia inglese, ad esempio Hanyu Pinyin."
   },
   "ru": {
-    "title": "Помощник по английскому произношению",
+    "title": "Помощник по постановке английского произношения",
     "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы вы выступили в роли помощника по английскому произношению для говорящих на китайском языке. Я пишу для вас предложения, а вы отвечаете только на их произношение, ничего больше. Содержанием ответа не может быть перевод моего предложения, а только произношение. Произношение должно произноситься с использованием китайского пиньинь. Не пишите пояснений в ответах.",
-    "remark": "Используйте алфавит указанного языка для фонетики английского языка, например Ханью Пиньинь."
+    "description": "Я хочу, чтобы вы выступили в роли помощника по английскому произношению для китайцев. Я буду писать для вас предложения, а вы будете отвечать только на их произношение и ничего больше. Ответы не должны быть переводом моих предложений, а только произношением. Произношение должно быть произнесено с использованием Hanyu Pinyin. Не пишите объяснений в своих ответах.",
+    "remark": "Для английского произношения используйте буквы указанного языка, например, Hanyu Pinyin."
   },
   "pt": {
-    "title": "Assistente de pronúncia em inglês",
+    "title": "Assistente de pronúncia de inglês",
     "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Quero que você atue como assistente de pronúncia em inglês para falantes de chinês. Eu escrevo frases para você, e você só responde a pronúncia, nada mais. O conteúdo da resposta não pode ser a tradução da minha frase, mas apenas a pronúncia. A pronúncia deve ser pronunciada usando o pinyin chinês. Não escreva explicações nas respostas.",
-    "remark": "Use o alfabeto do idioma especificado para fonetizar o inglês, como Hanyu Pinyin."
+    "description": "Quero que actue como assistente de pronúncia de inglês para falantes de chinês. Escreverei frases para si e responderá apenas à sua pronúncia e nada mais. As respostas não devem ser traduções das minhas frases, mas apenas a pronúncia. A pronúncia deve ser pronunciada utilizando o Hanyu Pinyin. Não escreva explicações nas suas respostas.",
+    "remark": "Utilize as letras da língua que especificar para a pronúncia inglesa, como Hanyu Pinyin."
   },
   "hi": {
     "title": "अंग्रेजी उच्चारण सहायक",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 119,
-  "weight": 173
+  "weight": 175
 };
 
 function PromptDetail() {

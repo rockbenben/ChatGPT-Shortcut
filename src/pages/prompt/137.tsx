@@ -26,10 +26,10 @@ const prompt = {
     "remark": "사용자가 주제에 대한 기본 정보에 액세스할 수 있도록 도와주고 위키백과 페이지 형식의 요약을 제공합니다. 이러한 방식으로 사용자는 주제에 대해 빠르게 학습하여 해당 주제를 더 잘 이해하고 파악할 수 있습니다."
   },
   "es": {
-    "title": "página de wikipedia",
+    "title": "Página de Wikipedia",
     "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Spanish. My first topic is \"The Great Barrier Reef.\".",
-    "description": "Quiero que juegues el papel de la página de Wikipedia. Le daré un nombre de tema y luego proporcionará un resumen de ese tema en el formato de una página de Wikipedia. Su resumen debe ser informativo y objetivo, cubriendo los aspectos más importantes del tema. Comience su resumen con un párrafo introductorio que describa el tema.",
-    "remark": "Ayude a los usuarios a obtener información básica sobre un tema y proporcione un resumen en el formato de una página de Wikipedia. De esta manera, los usuarios pueden aprender rápidamente sobre información relevante sobre un tema, obteniendo así una mejor comprensión y dominio del tema."
+    "description": "Me gustaría que interpretaras el papel de una página de Wikipedia. Le daré el nombre de un tema y usted hará un resumen del mismo en el formato de una página de Wikipedia. Su resumen debe ser informativo y objetivo, cubriendo los aspectos más importantes del tema. Comience su resumen con un párrafo introductorio en el que describa el tema.",
+    "remark": "Ayuda a los usuarios a obtener información básica sobre un tema y ofrece un resumen en el formato de una página de Wikipedia. De este modo, los usuarios pueden obtener rápidamente información relevante sobre un tema y así comprenderlo y dominarlo mejor."
   },
   "fr": {
     "title": "Page Wikipédia",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Hilft den Nutzern, grundlegende Informationen über ein Thema zu erhalten und bietet eine Zusammenfassung im Format einer Wikipedia-Seite. Auf diese Weise können die Nutzer schnell relevante Informationen über ein Thema erfahren und es so besser verstehen und beherrschen."
   },
   "it": {
-    "title": "Pagina Wikipedia",
+    "title": "Pagina di Wikipedia",
     "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Italian. My first topic is \"The Great Barrier Reef.\"..",
-    "description": "Voglio che tu interpreti il ruolo della pagina di Wikipedia. Ti darò il nome di un argomento, quindi fornirai un riepilogo di quell&#39;argomento nel formato di una pagina di Wikipedia. Il tuo riassunto dovrebbe essere informativo e fattuale, coprendo gli aspetti più importanti dell&#39;argomento. Inizia il tuo abstract con un paragrafo introduttivo che delinea l&#39;argomento.",
-    "remark": "Aiuta gli utenti a ottenere informazioni di base su un argomento e fornisci un riepilogo nel formato di una pagina di Wikipedia. In questo modo, gli utenti possono apprendere rapidamente informazioni rilevanti su un argomento, acquisendo così una migliore comprensione e padronanza dell&#39;argomento."
+    "description": "Vorrei che interpretaste il ruolo di una pagina di Wikipedia. Vi darò il nome di un argomento e voi dovrete fornire un riassunto di quell'argomento nel formato di una pagina di Wikipedia. Il vostro riassunto deve essere informativo e fattuale, e deve coprire gli aspetti più importanti dell'argomento. Iniziate a scrivere l'abstract con un paragrafo introduttivo che illustri l'argomento.",
+    "remark": "Aiuta gli utenti a ottenere informazioni di base su un argomento e fornisce una sintesi nel formato di una pagina di Wikipedia. In questo modo, gli utenti possono apprendere rapidamente le informazioni rilevanti su un argomento e quindi comprenderlo e padroneggiarlo meglio."
   },
   "ru": {
-    "title": "Страница Википедии",
+    "title": "Страница в Википедии",
     "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Russian. My first topic is \"The Great Barrier Reef.\"..",
-    "description": "Я хочу, чтобы вы сыграли роль страницы Википедии. Я дам вам название темы, а затем вы предоставите краткое изложение этой темы в формате страницы Википедии. Ваше резюме должно быть информативным и основанным на фактах, охватывая наиболее важные аспекты темы. Пожалуйста, начните свое резюме с вводного абзаца, излагающего тему.",
-    "remark": "Помогите пользователям получить основную информацию по теме и предоставьте сводку в формате страницы Википедии. Таким образом, пользователи могут быстро узнать актуальную информацию по теме, тем самым лучше понять и освоить тему."
+    "description": "Я хочу, чтобы вы сыграли роль страницы Википедии. Я дам вам название темы, а затем вы представите краткое изложение этой темы в формате страницы Википедии. Ваш реферат должен быть информативным и фактологическим, охватывающим наиболее важные аспекты темы. Пожалуйста, начните написание реферата с вводного абзаца, описывающего тему.",
+    "remark": "Помогает пользователям получить основную информацию по теме и предоставляет краткое изложение в формате страницы Википедии. Таким образом, пользователи могут быстро получить необходимую информацию по теме и, следовательно, лучше понять и освоить ее."
   },
   "pt": {
-    "title": "página da Wikipédia",
+    "title": "Página da Wikipédia",
     "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is \"The Great Barrier Reef.\"..",
-    "description": "Quero que você faça o papel da página da Wikipédia. Darei a você um nome de tópico e, em seguida, você fornecerá um resumo desse tópico no formato de uma página da Wikipédia. Seu resumo deve ser informativo e factual, cobrindo os aspectos mais importantes do tópico. Por favor, comece seu resumo com um parágrafo introdutório descrevendo o tópico.",
-    "remark": "Ajude os usuários a obter informações básicas sobre um tópico e forneça um resumo no formato de uma página da Wikipédia. Dessa forma, os usuários podem aprender rapidamente sobre informações relevantes sobre um tópico, obtendo assim uma melhor compreensão e domínio do tópico."
+    "description": "Gostaria que desempenhasses o papel de uma página da Wikipédia. Dar-te-ei um nome de tópico e, em seguida, farás um resumo desse tópico no formato de uma página da Wikipédia. O seu resumo deve ser informativo e factual, cobrindo os aspectos mais importantes do tópico. Comece a escrever o seu resumo com um parágrafo introdutório que descreva o tema.",
+    "remark": "Ajuda os utilizadores a obter informações básicas sobre um tópico e fornece um resumo no formato de uma página da Wikipédia. Desta forma, os utilizadores podem obter rapidamente informações relevantes sobre um tópico e, assim, compreendê-lo e dominá-lo melhor."
   },
   "hi": {
     "title": "विकिपीडिया पेज",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 137,
-  "weight": 458
+  "weight": 463
 };
 
 function PromptDetail() {

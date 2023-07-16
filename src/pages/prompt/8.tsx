@@ -26,10 +26,10 @@ const prompt = {
     "remark": "글의 콘텐츠에 적합한 언어로 제목을 생성하는 개인용 프롬프트 단어를 입력합니다."
   },
   "es": {
-    "title": "generador de títulos de escritura",
+    "title": "Generador de títulos de escritura",
     "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Spanish. My first topic is .",
-    "description": "Quiero que actúes como generador de títulos para obras escritas. Le proporcionaré el tema y las palabras clave de un artículo, y generará cinco titulares atractivos. Mantenga el título corto, no más de 20 palabras, y asegúrese de mantener el significado. Utilice el tipo de idioma de la pregunta al responder. Mi primer tema es [contenido del artículo]",
-    "remark": "Palabras puntuales de uso personal, que pueden generar títulos en los idiomas correspondientes según el contenido del artículo."
+    "description": "Quiero que actúes como generador de títulos para piezas escritas. Te proporcionaré el tema y las palabras clave de un escrito y tú generarás cinco títulos pegadizos. Por favor, que los títulos sean concisos, no más de 20 palabras, y asegúrate de mantener su significado. Utilice el tipo de idioma del título cuando responda. Mi primer título es [contenido del artículo].",
+    "remark": "Sugerencias para uso personal que generan títulos en la lengua adecuada en función del contenido del artículo."
   },
   "fr": {
     "title": "Générateur de titres d'écriture",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Vorgaben für den persönlichen Gebrauch, die auf der Grundlage des Inhalts des Artikels Titel in der entsprechenden Sprache erzeugen."
   },
   "it": {
-    "title": "generatore di titoli di scrittura",
+    "title": "Generatore di titoli di scrittura",
     "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Italian. My first topic is ..",
-    "description": "Voglio che tu agisca come generatore di titoli per opere scritte. Ti fornirò l&#39;argomento e le parole chiave di un articolo e genererai cinque titoli accattivanti. Si prega di mantenere il titolo breve, non più di 20 parole, e assicurarsi di mantenere il significato. Usa il tipo di lingua della domanda quando rispondi. Il mio primo argomento è [contenuto dell&#39;articolo]",
-    "remark": "Parole rapide per uso personale, che possono generare titoli nelle lingue corrispondenti in base al contenuto dell&#39;articolo."
+    "description": "Voglio che tu agisca come generatore di titoli per i pezzi scritti. Ti fornirò l'argomento e le parole chiave per un articolo e tu dovrai generare cinque titoli accattivanti. Vi prego di mantenere i titoli concisi, non più di 20 parole, e di assicurarvi di mantenere il loro significato. Quando rispondete, utilizzate il tipo di lingua del titolo. Il mio primo titolo è [contenuto dell'articolo].",
+    "remark": "Suggerimenti per uso personale che generano titoli nella lingua appropriata in base al contenuto dell'articolo."
   },
   "ru": {
-    "title": "написание генератора заголовков",
+    "title": "Генератор писательских заголовков",
     "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Russian. My first topic is ..",
-    "description": "Я хочу, чтобы вы выступили в роли генератора заголовков для письменных работ. Я предоставлю вам тему и ключевые слова статьи, а вы создадите пять цепляющих заголовков. Пожалуйста, сделайте заголовок коротким, не более 20 слов, и обязательно сохраните смысл. При ответе используйте тип языка вопроса. Моя первая тема [содержание статьи]",
-    "remark": "Подскажите слова для личного пользования, которые могут генерировать заголовки на соответствующих языках в соответствии с содержанием статьи."
+    "description": "Я хочу, чтобы вы выступили в роли генератора заголовков для письменных работ. Я предоставлю вам тему и ключевые слова для статьи, а вы придумаете пять запоминающихся заголовков. Пожалуйста, делайте заголовки краткими, не более 20 слов, и следите за сохранением их смысла. При ответе используйте языковой тип заголовка. Мой первый заголовок - [содержание статьи].",
+    "remark": "Подсказки для личного использования, которые генерируют заголовки на соответствующем языке в зависимости от содержания статьи."
   },
   "pt": {
-    "title": "gerador de título de escrita",
+    "title": "Gerador de títulos para escrita",
     "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is ..",
-    "description": "Eu quero que você atue como um gerador de títulos para trabalhos escritos. Vou fornecer a você o tópico e as palavras-chave de um artigo, e você gerará cinco manchetes cativantes. Por favor, mantenha o título curto, não mais do que 20 palavras, e certifique-se de manter o significado. Use o tipo de idioma da pergunta ao responder. Meu primeiro tópico é [conteúdo do artigo]",
-    "remark": "Prompt words de uso pessoal, que podem gerar títulos nos idiomas correspondentes de acordo com o conteúdo do artigo."
+    "description": "Pretendo que actue como um gerador de títulos para textos escritos. Fornecer-te-ei o tema e as palavras-chave de um texto e tu gerarás cinco títulos apelativos. Mantém os títulos concisos, não mais de 20 palavras, e certifica-te de que manténs o seu significado. Utilize o tipo de linguagem do título quando responder. O meu primeiro título é [conteúdo do artigo].",
+    "remark": "Prompts para uso pessoal que geram títulos na língua apropriada com base no conteúdo do artigo."
   },
   "hi": {
     "title": "लेखन शीर्षक जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 8,
-  "weight": 3262
+  "weight": 3347
 };
 
 function PromptDetail() {

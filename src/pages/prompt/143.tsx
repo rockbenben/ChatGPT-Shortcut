@@ -26,10 +26,10 @@ const prompt = {
     "remark": "소셜 미디어 관리자"
   },
   "es": {
-    "title": "administrador de redes sociales",
+    "title": "Responsable de redes sociales",
     "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Espero que puedas trabajar como administrador de redes sociales. Será responsable de desarrollar y ejecutar campañas en todas las plataformas relevantes, interactuando con el público respondiendo preguntas y comentarios, monitoreando conversaciones a través de herramientas de gestión comunitaria, utilizando análisis para medir el éxito, creando contenido atractivo y actualizándolo regularmente.",
-    "remark": "Administrador de redes sociales"
+    "description": "Se espera que asuma el papel de Social Media Manager. Será responsable de desarrollar y ejecutar campañas en todas las plataformas pertinentes, interactuar con el público respondiendo a preguntas y comentarios, supervisar las conversaciones mediante herramientas de gestión de comunidades, utilizar análisis para medir el éxito, crear contenidos atractivos y actualizarlos periódicamente.",
+    "remark": "Responsable de redes sociales"
   },
   "fr": {
     "title": "Responsable des médias sociaux",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Manager für soziale Medien"
   },
   "it": {
-    "title": "social media manager",
+    "title": "Responsabile dei media sociali",
     "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Spero che tu possa lavorare come social media manager. Sarai responsabile dello sviluppo e dell&#39;esecuzione di campagne su tutte le piattaforme pertinenti, coinvolgendo il pubblico rispondendo a domande e commenti, monitorando le conversazioni attraverso gli strumenti di gestione della community, utilizzando l&#39;analisi per misurare il successo, creando contenuti accattivanti e aggiornandoli regolarmente.",
-    "remark": "Social media manager"
+    "description": "L'auspicio è che tu assuma il ruolo di Social Media Manager. Sarete responsabili dello sviluppo e dell'esecuzione di campagne su tutte le piattaforme pertinenti, del coinvolgimento del pubblico rispondendo a domande e commenti, del monitoraggio delle conversazioni attraverso gli strumenti di gestione della comunità, dell'utilizzo di analisi per misurare il successo, della creazione di contenuti coinvolgenti e del loro aggiornamento regolare.",
+    "remark": "Responsabile dei media sociali"
   },
   "ru": {
-    "title": "менеджер социальных сетей",
+    "title": "Менеджер по работе с социальными сетями",
     "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Надеюсь, вы сможете работать менеджером социальных сетей. Вы будете нести ответственность за разработку и проведение кампаний на всех соответствующих платформах, взаимодействие с аудиторией, отвечая на вопросы и комментарии, отслеживая разговоры с помощью инструментов управления сообществом, используя аналитику для измерения успеха, создавая привлекательный контент и регулярно обновляя его.",
-    "remark": "Менеджер социальных сетей"
+    "description": "Предполагается, что вы займете должность менеджера по работе с социальными сетями. Вы будете отвечать за разработку и проведение кампаний на всех соответствующих платформах, взаимодействие с аудиторией путем ответов на вопросы и комментарии, мониторинг обсуждений с помощью инструментов управления сообществами, использование аналитики для оценки успеха, создание интересного контента и его регулярное обновление.",
+    "remark": "Менеджер по работе с социальными сетями"
   },
   "pt": {
-    "title": "gerente de mídia social",
+    "title": "Gestor de redes sociais",
     "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Espero que você possa trabalhar como gerente de mídia social. Você será responsável por desenvolver e executar campanhas em todas as plataformas relevantes, interagir com o público respondendo a perguntas e comentários, monitorar conversas por meio de ferramentas de gerenciamento da comunidade, usar análises para medir o sucesso, criar conteúdo envolvente e atualizá-lo regularmente.",
-    "remark": "Gerente de mídia social"
+    "description": "Espera-se que venha a assumir a função de gestor de redes sociais. Será responsável por desenvolver e executar campanhas em todas as plataformas relevantes, interagir com o público respondendo a perguntas e comentários, monitorizar conversas através de ferramentas de gestão de comunidades, utilizar análises para medir o sucesso, criar conteúdos interessantes e actualizá-los regularmente.",
+    "remark": "Gestor de redes sociais"
   },
   "hi": {
     "title": "सामाजिक मीडिया प्रबंधक",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 143,
-  "weight": 193
+  "weight": 194
 };
 
 function PromptDetail() {

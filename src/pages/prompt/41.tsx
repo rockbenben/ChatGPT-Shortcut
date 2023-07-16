@@ -26,10 +26,10 @@ const prompt = {
     "remark": "텍스트 중복을 피하기 위해 지정된 콘텐츠의 여러 버전이 다시 작성됩니다."
   },
   "es": {
-    "title": "Reescritura pseudooriginal",
+    "title": "Reescritura falsa",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: .",
-    "description": "Reescribe el siguiente párrafo de 5 maneras diferentes para evitar repeticiones manteniendo su significado: [texto editado].",
-    "remark": "Vuelva a escribir varias versiones del contenido especificado para evitar la duplicación de texto."
+    "description": "Reescriba el siguiente párrafo de 5 formas diferentes para evitar repeticiones y conservar su significado: [cambiar el texto",
+    "remark": "Reescribe varias versiones del contenido especificado para evitar la duplicación de texto."
   },
   "fr": {
     "title": "Fausse réécriture",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie mehrere Versionen des angegebenen Inhalts neu, um Textduplikate zu vermeiden."
   },
   "it": {
-    "title": "Riscrittura pseudo-originale",
+    "title": "Riscrittura fittizia",
     "prompt": "The entire conversation and instructions should be provided in Italian. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ..",
-    "description": "Riscrivi il seguente paragrafo in 5 modi diversi per evitare ripetizioni pur mantenendone il significato: [testo modificato].",
-    "remark": "Riscrivi più versioni del contenuto specificato per evitare la duplicazione del testo."
+    "description": "Riscrivete il seguente paragrafo in 5 modi diversi per evitare le ripetizioni e preservarne il significato: [modifica del testo",
+    "remark": "Riscrive più versioni del contenuto specificato per evitare la duplicazione del testo."
   },
   "ru": {
-    "title": "Псевдооригинальный рерайтинг",
+    "title": "Поддельная перепись",
     "prompt": "The entire conversation and instructions should be provided in Russian. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ..",
-    "description": "Перепишите следующий абзац 5 различными способами, чтобы избежать повторения, сохранив его смысл: [отредактированный текст].",
-    "remark": "Перепишите несколько версий указанного контента, чтобы избежать дублирования текста."
+    "description": "Перепишите следующий абзац 5 разными способами, чтобы избежать повторов и сохранить смысл: [изменить текст",
+    "remark": "Перепишите несколько версий указанного содержимого, чтобы избежать дублирования текста."
   },
   "pt": {
-    "title": "reescrita pseudo-original",
+    "title": "Reescrita falsa",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ..",
-    "description": "Reescreva o parágrafo a seguir de 5 maneiras diferentes para evitar repetições, mantendo seu significado: [texto editado].",
-    "remark": "Reescreva várias versões do conteúdo especificado para evitar a duplicação de texto."
+    "description": "Reescreve o seguinte parágrafo de 5 formas diferentes para evitar repetições e preservar o seu significado: [alterar texto",
+    "remark": "Reescreve várias versões do conteúdo especificado para evitar a duplicação de texto."
   },
   "hi": {
     "title": "छद्म-मूल पुनर्लेखन",
@@ -84,7 +84,7 @@ const prompt = {
     "seo"
   ],
   "id": 41,
-  "weight": 4275
+  "weight": 4410
 };
 
 function PromptDetail() {

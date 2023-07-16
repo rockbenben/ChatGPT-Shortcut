@@ -26,10 +26,10 @@ const prompt = {
     "remark": "일일 업무를 기반으로 주요 요점을 추출하고 적절히 확장하여 주간 보고서를 생성합니다."
   },
   "es": {
-    "title": "Generador Semanal",
+    "title": "Generador de informes semanales",
     "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: .",
-    "description": "Utilice el texto proporcionado a continuación como base para un informe semanal en chino para generar un resumen conciso que destaque el contenido más importante. El informe debe estar escrito en formato de descuento y debe ser fácil de leer y comprender para una audiencia general. En particular, concéntrese en proporcionar información y análisis útiles para las partes interesadas y los responsables de la formulación de políticas. También puede usar cualquier información adicional o fuentes según sea necesario.",
-    "remark": "De acuerdo con el contenido del trabajo diario, extraiga los puntos principales y amplíelos adecuadamente para generar un informe semanal."
+    "description": "Utilice el texto proporcionado a continuación como base para un informe semanal en chino que genere un resumen sucinto en el que se destaque el contenido más importante. El informe deberá estar en formato markdown y ser de fácil lectura y comprensión para un público general. En particular, concéntrese en ofrecer perspectivas y análisis que sean útiles para las partes interesadas y los responsables de la toma de decisiones. También puede utilizar cualquier información o fuente adicional que necesite.",
+    "remark": "Extraiga los puntos clave y amplíelos adecuadamente para generar informes semanales basados en el contenido del trabajo diario."
   },
   "fr": {
     "title": "Générateur de rapports hebdomadaires",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Extrahieren Sie die wichtigsten Punkte und erweitern Sie sie entsprechend, um wöchentliche Berichte auf der Grundlage der täglichen Arbeitsinhalte zu erstellen."
   },
   "it": {
-    "title": "Generatore settimanale",
+    "title": "Generatore di rapporti settimanali",
     "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text: ..",
-    "description": "Utilizza il testo fornito di seguito come base per un rapporto settimanale cinese per generare un riepilogo conciso che evidenzi i contenuti più importanti. Il rapporto dovrebbe essere scritto in formato markdown e dovrebbe essere di facile lettura e comprensione per un pubblico generale. In particolare, concentrarsi sulla fornitura di approfondimenti e analisi utili alle parti interessate e ai responsabili politici. È inoltre possibile utilizzare eventuali informazioni o fonti aggiuntive secondo necessità.",
-    "remark": "In base al contenuto del lavoro quotidiano, estrai i punti principali ed espandili in modo appropriato per generare un rapporto settimanale."
+    "description": "Utilizzate il testo fornito di seguito come base per un rapporto settimanale in cinese per generare un riassunto sintetico che evidenzi i contenuti più importanti. Il rapporto deve essere in formato markdown e deve essere di facile lettura e comprensione per un pubblico generico. In particolare, è necessario fornire approfondimenti e analisi che siano utili alle parti interessate e ai responsabili delle decisioni. Potete anche utilizzare informazioni o fonti aggiuntive, se necessario.",
+    "remark": "Estrarre i punti chiave ed espanderli in modo appropriato per generare rapporti settimanali basati sul contenuto del lavoro quotidiano."
   },
   "ru": {
-    "title": "Еженедельный генератор",
+    "title": "Генератор еженедельных отчетов",
     "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ..",
-    "description": "Используйте приведенный ниже текст в качестве основы для еженедельного отчета на китайском языке, чтобы создать краткое изложение, в котором будет выделено наиболее важное содержание. Отчет должен быть написан в формате уценки и должен быть легко читаемым и понятным для широкой аудитории. В частности, сосредоточьтесь на предоставлении информации и анализа, полезных для заинтересованных сторон и лиц, определяющих политику. Вы также можете использовать любую дополнительную информацию или источники по мере необходимости.",
-    "remark": "В соответствии с содержанием ежедневной работы извлеките основные моменты и соответствующим образом расширите их, чтобы создать еженедельный отчет."
+    "description": "Используйте приведенный ниже текст в качестве основы для еженедельного отчета на китайском языке, чтобы составить краткое резюме, выделяя наиболее важное содержание. Отчет должен быть выполнен в формате markdown и должен быть простым для чтения и понимания широкой аудиторией. В частности, сосредоточьтесь на изложении идей и аналитических выкладок, которые будут полезны заинтересованным сторонам и лицам, принимающим решения. При необходимости можно использовать любую дополнительную информацию или источники.",
+    "remark": "Извлечение ключевых моментов и их соответствующее расширение для создания еженедельных отчетов на основе содержания ежедневной работы."
   },
   "pt": {
-    "title": "Gerador Semanal",
+    "title": "Gerador de relatórios semanais",
     "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ..",
-    "description": "Use o texto fornecido abaixo como base para um relatório semanal chinês para gerar um resumo conciso que destaque o conteúdo mais importante. O relatório deve ser escrito em formato markdown e deve ser fácil de ler e entender para o público em geral. Em particular, concentre-se em fornecer insights e análises úteis para as partes interessadas e formuladores de políticas. Você também pode usar quaisquer informações ou fontes adicionais conforme necessário.",
-    "remark": "De acordo com o conteúdo do trabalho diário, extraia os pontos principais e expanda-os adequadamente para gerar um relatório semanal."
+    "description": "Utilize o texto fornecido abaixo como base para um relatório semanal em chinês para gerar um resumo sucinto que destaque o conteúdo mais importante. O relatório deve estar em formato markdown e deve ser fácil de ler e compreender para um público geral. Em particular, concentre-se em fornecer informações e análises que sejam úteis para as partes interessadas e os decisores. Pode também utilizar quaisquer informações ou fontes adicionais, se necessário.",
+    "remark": "Extrair pontos-chave e expandi-los adequadamente para gerar relatórios semanais com base no conteúdo do trabalho diário."
   },
   "hi": {
     "title": "साप्ताहिक जेनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 210,
-  "weight": 3160
+  "weight": 3221
 };
 
 function PromptDetail() {

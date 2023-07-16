@@ -26,10 +26,10 @@ const prompt = {
     "remark": "텍스트의 문법, 명확성, 간결성을 최적화하고 가독성을 개선하기 위해 가장 일반적으로 사용되는 프롬프트입니다."
   },
   "es": {
-    "title": "asistente de escritura",
+    "title": "Asistente de redacción",
     "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text:.",
-    "description": "Como asistente de mejora de la escritura en chino, su tarea es mejorar la ortografía, la gramática, la claridad, la concisión y la legibilidad general del texto proporcionado, mientras divide oraciones largas, reduce la repetición y brinda sugerencias para mejorar. Proporcione solo una versión corregida del texto y evite incluir explicaciones. Comience editando el siguiente texto: [contenido del artículo]",
-    "remark": "El indicador más utilizado se utiliza para optimizar la gramática, la claridad y la concisión del texto y mejorar la legibilidad."
+    "description": "Como Asistente para la mejora de la redacción en chino, su tarea consistirá en mejorar la ortografía, la gramática, la claridad, la concisión y la legibilidad general del texto proporcionado, a la vez que descompone las frases largas, reduce las repeticiones y ofrece sugerencias de mejora. Por favor, proporcione sólo una versión corregida del texto y evite incluir explicaciones. Empiece por corregir el siguiente texto: [contenido del artículo].",
+    "remark": "Es el indicador más utilizado para optimizar la sintaxis, claridad y concisión del texto y mejorar su legibilidad."
   },
   "fr": {
     "title": "Assistante de rédaction",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Die am häufigsten verwendete Eingabeaufforderung, die zur Optimierung der Syntax, Klarheit und Prägnanz des Textes und zur Verbesserung der Lesbarkeit dient."
   },
   "it": {
-    "title": "assistente alla scrittura",
+    "title": "Assistente di scrittura",
     "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text:..",
-    "description": "In qualità di assistente per il miglioramento della scrittura cinese, il tuo compito è migliorare l&#39;ortografia, la grammatica, la chiarezza, la concisione e la leggibilità complessiva del testo fornito, scomponendo le frasi lunghe, riducendo le ripetizioni e fornendo suggerimenti per il miglioramento. Si prega di fornire solo una versione corretta del testo ed evitare di includere spiegazioni. Inizia modificando il seguente testo: [contenuto articolo]",
-    "remark": "Il prompt più comunemente utilizzato viene utilizzato per ottimizzare la grammatica, la chiarezza e la concisione del testo e migliorare la leggibilità."
+    "description": "In qualità di Assistente per il miglioramento della scrittura cinese, il vostro compito è quello di migliorare l'ortografia, la grammatica, la chiarezza, la concisione e la leggibilità complessiva del testo fornito, abbattendo le frasi lunghe, riducendo le ripetizioni e fornendo suggerimenti per il miglioramento. Si prega di fornire solo una versione corretta del testo, evitando di includere spiegazioni. Si prega di iniziare modificando il seguente testo: [contenuto dell'articolo].",
+    "remark": "Il prompt più usato, utilizzato per ottimizzare la sintassi, la chiarezza e la concisione del testo e migliorare la leggibilità."
   },
   "ru": {
-    "title": "помощник по письму",
+    "title": "Помощник писателя",
     "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text:..",
-    "description": "В качестве помощника по улучшению письма на китайском языке ваша задача состоит в том, чтобы улучшить орфографию, грамматику, ясность, краткость и общую читабельность предоставленного текста, разбивая длинные предложения, уменьшая количество повторений и предлагая предложения по улучшению. Пожалуйста, предоставьте только исправленную версию текста и избегайте включения объяснений. Пожалуйста, начните с редактирования следующего текста: [содержание статьи]",
-    "remark": "Наиболее часто используемая подсказка используется для оптимизации грамматики, ясности и лаконичности текста и улучшения читабельности."
+    "description": "Ваша задача как помощника по улучшению китайского письма - улучшить орфографию, грамматику, ясность, краткость и общую читабельность предоставленного текста, а также разобрать длинные предложения, сократить количество повторов и дать предложения по улучшению. Просьба предоставлять только исправленный вариант текста и не включать в него пояснения. Начните, пожалуйста, с редактирования следующего текста: [содержание статьи]",
+    "remark": "Наиболее часто используемая подсказка, применяемая для оптимизации синтаксиса, ясности и краткости текста и улучшения его читабельности."
   },
   "pt": {
-    "title": "assistente de redação",
+    "title": "Assistente de redação",
     "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text:..",
-    "description": "Como Assistente de Aprimoramento da Escrita Chinesa, sua tarefa é melhorar a ortografia, gramática, clareza, concisão e legibilidade geral do texto fornecido, ao mesmo tempo em que divide frases longas, reduz a repetição e fornece sugestões para melhorias. Forneça apenas uma versão corrigida do texto e evite incluir explicações. Comece editando o seguinte texto: [conteúdo do artigo]",
-    "remark": "O prompt mais comumente usado é usado para otimizar a gramática, clareza e concisão do texto e melhorar a legibilidade."
+    "description": "Como Assistente de Aperfeiçoamento da Escrita Chinesa, a sua tarefa é melhorar a ortografia, a gramática, a clareza, a concisão e a legibilidade geral do texto fornecido, ao mesmo tempo que decompõe frases longas, reduz as repetições e dá sugestões de melhoria. Por favor, forneça apenas uma versão corrigida do texto e evite incluir explicações. Comece por editar o seguinte texto: [Conteúdo do artigo]",
+    "remark": "O prompt mais comum, utilizado para otimizar a sintaxe, a clareza e a concisão do texto e melhorar a legibilidade."
   },
   "hi": {
     "title": "लेखन सहायक",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 2,
-  "weight": 33362
+  "weight": 34031
 };
 
 function PromptDetail() {

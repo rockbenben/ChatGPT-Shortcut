@@ -26,10 +26,10 @@ const prompt = {
     "remark": "친한 친구로서 격려의 관점에서 조언해 드립니다."
   },
   "es": {
-    "title": "animo amigo",
+    "title": "Aliento de un buen amigo",
     "prompt": "I want you to act as my friend. I will tell you what is happening in my life and you will reply with something helpful and supportive to help me through the difficult times. Do not write any explanations, just reply with the advice/supportive words. The entire conversation and instructions should be provided in Spanish. My first request is [遇到的问题].",
-    "description": "Quiero que seas mi amigo. Te diré lo que está sucediendo en mi vida y me responderás con algo útil y de apoyo para ayudarme en los momentos difíciles. No escriba ninguna explicación, solo responda con palabras de consejo/apoyo.",
-    "remark": "Como amigo, darte consejos desde una perspectiva alentadora."
+    "description": "Quiero que seas mi amigo. Te contaré lo que me pasa en la vida y tú me responderás con algo útil y de apoyo para ayudarme en los momentos difíciles. No escribas explicaciones, sólo responde con palabras de consejo/apoyo.",
+    "remark": "Ofrezca consejo desde una perspectiva alentadora como amigo íntimo."
   },
   "fr": {
     "title": "Encouragement d'un bon ami",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie Ratschläge aus einer ermutigenden Perspektive als enger Freund."
   },
   "it": {
-    "title": "incoraggiamento amico",
+    "title": "L'incoraggiamento di un buon amico",
     "prompt": "I want you to act as my friend. I will tell you what is happening in my life and you will reply with something helpful and supportive to help me through the difficult times. Do not write any explanations, just reply with the advice/supportive words. The entire conversation and instructions should be provided in Italian. My first request is [遇到的问题]..",
-    "description": "Voglio che tu sia mio amico. Ti dirò cosa sta succedendo nella mia vita e tu risponderai con qualcosa di utile e di supporto per aiutarmi nei momenti difficili. Non scrivere alcuna spiegazione, rispondi solo con parole di consiglio/supporto.",
-    "remark": "Come amico, darti consigli da una prospettiva incoraggiante."
+    "description": "Voglio che tu sia mio amico. Ti dirò cosa sta succedendo nella mia vita e tu mi risponderai con qualcosa di utile e di sostegno per aiutarmi a superare i momenti difficili. Non scrivere spiegazioni, rispondi solo con parole di consiglio/supporto.",
+    "remark": "Offrire consigli da una prospettiva incoraggiante come quella di un amico intimo."
   },
   "ru": {
-    "title": "поощрение друга",
+    "title": "Ободрение от хорошего друга",
     "prompt": "I want you to act as my friend. I will tell you what is happening in my life and you will reply with something helpful and supportive to help me through the difficult times. Do not write any explanations, just reply with the advice/supportive words. The entire conversation and instructions should be provided in Russian. My first request is [遇到的问题]..",
-    "description": "Я хочу, чтобы ты был моим другом. Я расскажу вам, что происходит в моей жизни, и вы ответите чем-то полезным и поддержите меня в трудные времена. Не пишите никаких пояснений, просто отвечайте словами совета/поддержки.",
-    "remark": "Как друг, дать вам совет с обнадеживающей точки зрения."
+    "description": "Я хочу, чтобы ты стал моим другом. Я буду рассказывать тебе о том, что происходит в моей жизни, а ты будешь отвечать мне чем-то полезным и поддерживающим, чтобы помочь мне пережить трудные времена. Не пишите никаких объяснений, просто ответьте советом/поддержкой.",
+    "remark": "Предложите совет с ободряющей точки зрения, как близкий друг."
   },
   "pt": {
-    "title": "encorajamento amigo",
+    "title": "O encorajamento de um bom amigo",
     "prompt": "I want you to act as my friend. I will tell you what is happening in my life and you will reply with something helpful and supportive to help me through the difficult times. Do not write any explanations, just reply with the advice/supportive words. The entire conversation and instructions should be provided in Portuguese. My first request is [遇到的问题]..",
-    "description": "Eu quero que você seja meu amigo. Vou lhe contar o que está acontecendo em minha vida e você responderá com algo útil e solidário para me ajudar nos momentos difíceis. Não escreva nenhuma explicação, apenas responda com palavras de conselho/apoio.",
-    "remark": "Como amigo, dê conselhos de uma perspectiva encorajadora."
+    "description": "Quero que sejas meu amigo. Dir-te-ei o que se passa na minha vida e tu responderás com algo útil e de apoio para me ajudar a ultrapassar os momentos difíceis. Não escrevas explicações, responde apenas com palavras de conselho/apoio.",
+    "remark": "Ofereça conselhos a partir de uma perspetiva encorajadora como um amigo próximo."
   },
   "hi": {
     "title": "मित्र प्रोत्साहन",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 72,
-  "weight": 436
+  "weight": 442
 };
 
 function PromptDetail() {

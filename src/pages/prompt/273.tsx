@@ -26,9 +26,9 @@ const prompt = {
     "remark": "모르는 것을 발견하는 데 사용하세요. ergf991 의 기여."
   },
   "es": {
-    "title": "Escape del capullo de información",
+    "title": "Escapar del capullo informativo",
     "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Spanish. Please respond according to this principle, and parse and respond to the following words:.",
-    "description": "Te daré un conjunto de palabras, y usas este conjunto de palabras y su información relacionada para formar un capullo de información, y luego generas información que no tiene nada que ver con el capullo de información. Ingresé un número, el número máximo es 100 , y cuanto mayor sea el número, la información de salida es diferente del capullo de información.Cuanto más lejos está la relación de información en la habitación.",
+    "description": "Te doy un conjunto de palabras, utilizas este conjunto de palabras y su información relacionada para formar un capullo de información, y luego la salida de la información que no tiene nada que ver con el capullo de información, introduzco el número, el número máximo es 100, cuanto mayor sea el número la información de salida y la información en el capullo más distante de la relación de información.",
     "remark": "Úsalo para descubrir lo que no sabes. Contribución de @ergf991."
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Nutzen Sie es, um zu entdecken, was Sie nicht wissen. Beitrag von @ergf991."
   },
   "it": {
-    "title": "Fuga dal bozzolo delle informazioni",
+    "title": "Fuga dal bozzolo dell'informazione",
     "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Italian. Please respond according to this principle, and parse and respond to the following words:..",
-    "description": "Ti fornirò una serie di parole e tu utilizzerai questo insieme di parole e le relative informazioni per formare un bozzolo di informazioni, quindi emetterai informazioni che non hanno nulla a che fare con il bozzolo di informazioni.Inserisco un numero, il numero massimo è 100 , e maggiore è il numero, le informazioni di output sono diverse dal bozzolo di informazioni, più lontana è la relazione di informazioni nella stanza.",
-    "remark": "Usalo per scoprire ciò che non sai. Contributo di @ergf991."
+    "description": "Io vi do un insieme di parole, voi usate questo insieme di parole e le loro informazioni correlate per formare un bozzolo di informazioni, e poi emettete le informazioni che non hanno nulla a che fare con il bozzolo di informazioni, io inserisco il numero, il numero massimo è 100, più grande è il numero le informazioni in uscita e le informazioni nel bozzolo più distanti dalla relazione di informazioni.",
+    "remark": "Usatelo per scoprire ciò che non conoscete. Contributo di @ergf991."
   },
   "ru": {
     "title": "Побег из информационного кокона",
     "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Russian. Please respond according to this principle, and parse and respond to the following words:..",
-    "description": "Я дам вам набор слов, и вы используете этот набор слов и связанную с ними информацию, чтобы сформировать информационный кокон, а затем вывести информацию, которая не имеет ничего общего с информационным коконом.Я ввожу число, максимальное число 100 , и чем больше число, тем выходная информация отличается от информационного кокона, тем дальше информационное отношение в комнате.",
-    "remark": "Используйте его, чтобы узнать то, что вы не знаете. Вклад от @ergf991."
+    "description": "Я даю вам набор слов, вы используете этот набор слов и связанную с ними информацию для формирования информационного кокона, а затем выводите информацию, не имеющую отношения к информационному кокону, я ввожу число, максимальное число - 100, чем больше число, тем больше выходная информация и информация в коконе, тем более удаленная от информационной связи.",
+    "remark": "Используйте его, чтобы узнать, чего вы не знаете. Вклад от @ergf991."
   },
   "pt": {
-    "title": "Fuja do Casulo de Informação",
+    "title": "Fugir do casulo da informação",
     "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Portuguese. Please respond according to this principle, and parse and respond to the following words:..",
-    "description": "Eu darei a você um conjunto de palavras e você usará esse conjunto de palavras e suas informações relacionadas para formar um casulo de informações e, em seguida, exibir informações que não têm nada a ver com o casulo de informações. Eu insiro um número, o número máximo é 100 , e quanto maior o número, a informação de saída é diferente do casulo de informação. Quanto mais distante estiver a relação de informação na sala.",
-    "remark": "Use-o para descobrir o que você não sabe. Contribuição de @ergf991."
+    "description": "Eu dou-te um conjunto de palavras, tu usas este conjunto de palavras e a informação relacionada com elas para formar um casulo de informação, e depois emite a informação que não tem nada a ver com o casulo de informação, eu introduzo o número, o número máximo é 100, quanto maior for o número a informação de saída e a informação no casulo mais distante da relação de informação.",
+    "remark": "Utilize-o para descobrir o que não sabe. Contribuição de @ergf991."
   },
   "hi": {
     "title": "सूचना कोकून से बचो",
@@ -86,7 +86,7 @@ const prompt = {
     "latest"
   ],
   "id": 273,
-  "weight": 1
+  "weight": 20
 };
 
 function PromptDetail() {

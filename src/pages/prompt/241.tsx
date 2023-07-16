@@ -26,10 +26,10 @@ const prompt = {
     "remark": "고객 서비스 담론을 최적화하고 변화를 위한 제안을 제공하세요. SD362318 의 기여."
   },
   "es": {
-    "title": "discurso de servicio al cliente",
+    "title": "Atención al cliente",
     "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Spanish. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
-    "description": "Como asistente de revisión y optimización de mensajes de servicio al cliente, su tarea es ayudar a mejorar el efecto de comunicación de los clientes. Cuando dé un ejemplo, sugiera mejoras en la expresión, la gramática o el tono para que la comunicación entre el cliente y el servicio de atención al cliente sea más fluida, precisa y amigable.",
-    "remark": "Optimice las habilidades del habla de servicio al cliente y dé sugerencias para la modificación. Contribución de @sd362318."
+    "description": "Como asistente de revisión y optimización de mensajes de atención al cliente, tu tarea es ayudar a mejorar la comunicación con los clientes. Cuando dé un ejemplo, sugiera mejoras en la expresión, la gramática o el tono de voz del mismo para que la comunicación entre los clientes y el servicio de atención al cliente sea más fluida, precisa y cordial.",
+    "remark": "Optimizar el diálogo de atención al cliente y dar sugerencias de cambios. Contribución de @sd362318."
   },
   "fr": {
     "title": "Service clientèle",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Optimieren Sie den Kundenservice-Dialog und machen Sie Änderungsvorschläge. Beitrag von @sd362318."
   },
   "it": {
-    "title": "discorso del servizio clienti",
+    "title": "Servizio clienti",
     "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Italian. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here]..",
-    "description": "In qualità di assistente per la revisione e l&#39;ottimizzazione dei messaggi del servizio clienti, il tuo compito è contribuire a migliorare l&#39;effetto comunicativo dei clienti. Quando faccio un esempio, suggerisci miglioramenti nell&#39;espressione, nella grammatica o nel tono per rendere la comunicazione tra il cliente e il servizio clienti più fluida, accurata e amichevole.",
-    "remark": "Ottimizza le abilità vocali del servizio clienti e dai suggerimenti per la modifica. Contributo di @sd362318."
+    "description": "In qualità di assistente alla revisione e all'ottimizzazione dei messaggi del servizio clienti, il vostro compito è quello di contribuire a migliorare la comunicazione con i clienti. Quando vi fornisco un esempio, suggerite miglioramenti all'espressione, alla grammatica o al tono di voce per rendere la comunicazione tra i clienti e il servizio clienti più fluida, accurata e amichevole.",
+    "remark": "Ottimizzare il dialogo con il servizio clienti e fornire suggerimenti per le modifiche. Contributo di @sd362318."
   },
   "ru": {
-    "title": "речь по обслуживанию клиентов",
+    "title": "Обслуживание клиентов",
     "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Russian. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here]..",
-    "description": "Ваша задача, как помощника по анализу и оптимизации сообщений службы поддержки клиентов, состоит в том, чтобы помочь улучшить коммуникативное воздействие клиентов. Когда я привожу пример, предложите улучшить выражение, грамматику или тон, чтобы сделать общение между клиентом и службой поддержки более плавным, точным и дружелюбным.",
-    "remark": "Оптимизируйте речевые навыки обслуживания клиентов и давайте предложения по модификации. Вклад от @sd362318."
+    "description": "Ваша задача как помощника по анализу и оптимизации сообщений в службе поддержки клиентов - помочь улучшить общение с клиентами. Когда я приведу пример, предложите улучшения в выражении, грамматике или тоне голоса, чтобы сделать общение между клиентами и службой поддержки более гладким, точным и дружелюбным.",
+    "remark": "Оптимизировать диалог с клиентом и дать предложения по его изменению. Вклад от @sd362318."
   },
   "pt": {
-    "title": "discurso de atendimento ao cliente",
+    "title": "Serviço ao cliente",
     "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Portuguese. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here]..",
-    "description": "Como assistente de revisão e otimização de mensagens de atendimento ao cliente, sua tarefa é ajudar a melhorar o efeito de comunicação dos clientes. Quando eu der um exemplo, sugira melhorias na expressão, gramática ou tom para tornar a comunicação entre o cliente e o agente mais suave, precisa e amigável.",
-    "remark": "Otimize as habilidades de fala do atendimento ao cliente e dê sugestões de modificação. Contribuição de @sd362318."
+    "description": "Enquanto assistente de revisão e otimização de mensagens do serviço de apoio ao cliente, a sua tarefa é ajudar a melhorar a comunicação com o cliente. Quando eu der um exemplo, sugira melhorias na expressão, na gramática ou no tom de voz para tornar a comunicação entre os clientes e o serviço de apoio ao cliente mais fácil, precisa e amigável.",
+    "remark": "Otimizar o diálogo do serviço de apoio ao cliente e dar sugestões de alteração. Contribuição de @sd362318."
   },
   "hi": {
     "title": "ग्राहक सेवा भाषण",
@@ -86,7 +86,7 @@ const prompt = {
     "company"
   ],
   "id": 241,
-  "weight": 676
+  "weight": 700
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "가상 닥터"
   },
   "es": {
-    "title": "medico virtual",
+    "title": "médico virtual",
     "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un médico virtual. Describiré mis síntomas y usted me proporcionará un diagnóstico y un plan de tratamiento. Solo debe responder con su diagnóstico y plan de tratamiento, y nada más. No escribas explicaciones.",
-    "remark": "médico virtual"
+    "description": "Me gustaría que usted actuara como un médico virtual. Yo describiré mis síntomas y usted me dará un diagnóstico y un plan de tratamiento. Sólo debe responder con su diagnóstico y plan de tratamiento y nada más. No escriba explicaciones.",
+    "remark": "Médico virtual"
   },
   "fr": {
     "title": "médecin virtuel",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "medico virtuale",
     "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un medico virtuale. Descriverò i miei sintomi e tu fornirai una diagnosi e un piano di trattamento. Dovresti rispondere solo con la tua diagnosi e il piano di trattamento e nient&#39;altro. Non scrivere spiegazioni.",
+    "description": "Vorrei che lei agisse come un medico virtuale. Io descriverò i miei sintomi e voi fornirete una diagnosi e un piano di trattamento. Dovete rispondere solo con la vostra diagnosi e il piano di trattamento e nient'altro. Non scrivete spiegazioni.",
     "remark": "Medico virtuale"
   },
   "ru": {
-    "title": "виртуальный доктор",
+    "title": "виртуальный врач",
     "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы были виртуальным доктором. Я опишу свои симптомы, а вы предоставите диагноз и план лечения. Вы должны ответить только с вашим диагнозом и планом лечения, и ничего больше. Не пишите пояснений.",
+    "description": "Я хотел бы, чтобы вы выступили в роли виртуального врача. Я опишу свои симптомы, а вы поставите диагноз и предложите план лечения. Вы должны ответить только своим диагнозом и планом лечения и ничем другим. Не пишите объяснений.",
     "remark": "Виртуальный доктор"
   },
   "pt": {
     "title": "médico virtual",
     "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um médico virtual. Descreverei meus sintomas e você fornecerá um diagnóstico e plano de tratamento. Você só deve responder com seu diagnóstico e plano de tratamento, e nada mais. Não escreva explicações.",
-    "remark": "médico virtual"
+    "description": "Gostaria que actuasse como um médico virtual. Eu descrevo os meus sintomas e o senhor dá-me um diagnóstico e um plano de tratamento. Só deve responder com o seu diagnóstico e plano de tratamento e nada mais. Não escreva explicações.",
+    "remark": "Médico virtual"
   },
   "hi": {
     "title": "आभासी डॉक्टर",
@@ -84,7 +84,7 @@ const prompt = {
     "doctor"
   ],
   "id": 151,
-  "weight": 469
+  "weight": 479
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "기사의 홍보 문구와 헤드라인을 작성합니다. 이 방법은 컴퓨터 게임의 저자 에소르 황의 기사에서 가져온 것입니다."
   },
   "es": {
-    "title": "Datos masivos: un resumen de una oración",
+    "title": "Mucha información: resumen en una frase",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles..",
-    "description": "Combinado con el contenido del artículo anterior &#39;@1&#39;～&#39;@3&#39;, ayúdame a imaginar una redacción atractiva que describa [tema] y presente las características más distintivas del contenido del artículo original.",
-    "remark": "Escribir textos promocionales y títulos para artículos. Este método está extraído de un artículo de Esor Huang, autor de juguetes informáticos."
+    "description": "Combinando el contenido de los posts anteriores '@1' a '@3', ayúdame a idear una línea pegadiza que describa [tema] y presente las características más distintivas del post original.",
+    "remark": "Escribir textos promocionales y titulares para artículos. Este método está tomado de un artículo de Esor Huang, autor de Computer Playthings."
   },
   "fr": {
     "title": "Une mine d'informations : résumé en une phrase",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie Werbetexte und Überschriften für Artikel. Diese Methode stammt aus einem Artikel von Esor Huang, dem Autor von Computer Playthings."
   },
   "it": {
-    "title": "Dati massicci: un riassunto di una frase",
+    "title": "Una ricchezza di informazioni: un riassunto di una frase",
     "prompt": "The entire conversation and instructions should be provided in Italian. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles...",
-    "description": "Combinato con il contenuto dell&#39;articolo precedente &#39;@1&#39;～&#39;@3&#39;, aiutami a immaginare un copywriting accattivante che descriva [il tema] e presenti le caratteristiche più distintive del contenuto dell&#39;articolo originale.",
-    "remark": "Scrivere copia promozionale e titoli per gli articoli. Questo metodo è tratto da un articolo di Esor Huang, autore di giochi per computer."
+    "description": "Combinando il contenuto dei post precedenti da '@1' a '@3', aiutatemi a trovare una frase accattivante che descriva [argomento] e presenti le caratteristiche più distintive del post originale.",
+    "remark": "Scrivere testi promozionali e titoli per gli articoli. Questo metodo è tratto da un articolo di Esor Huang, autore di Computer Playthings."
   },
   "ru": {
-    "title": "Огромные данные: резюме в одном предложении",
+    "title": "Богатая информация: краткое содержание в одном предложении",
     "prompt": "The entire conversation and instructions should be provided in Russian. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles...",
-    "description": "В сочетании с содержанием предыдущей статьи &#39;@1&#39;～&#39;@3&#39; помогите мне представить привлекательный текст, описывающий [тему], и представить наиболее отличительные черты оригинального содержания статьи.",
-    "remark": "Напишите рекламный текст и заголовки для статей. Этот метод взят из статьи Эсора Хуанга, автора компьютерных игрушек."
+    "description": "Объединив содержание предыдущих сообщений \"@1\" - \"@3\", помогите мне придумать броскую фразу, которая описывает [тему] и представляет наиболее характерные черты исходного сообщения.",
+    "remark": "Написание рекламных копий и заголовков для статей. Этот метод взят из статьи Эсора Хуанга, автора книги \"Компьютерные игры\"."
   },
   "pt": {
-    "title": "Dados massivos: um resumo de uma frase",
+    "title": "Uma riqueza de informações: um resumo de uma frase",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles...",
-    "description": "Combinado com o conteúdo do artigo anterior &#39;@1&#39;～&#39;@3&#39;, ajude-me a imaginar um copywriting atraente descrevendo [tema] e apresentando as características mais distintas do conteúdo do artigo original.",
-    "remark": "Escreva cópias promocionais e títulos para artigos. Este método foi extraído de um artigo de Esor Huang, autor de brinquedos de computador."
+    "description": "Combinando o conteúdo das mensagens anteriores '@1' a '@3', ajuda-me a criar uma linha apelativa que descreva [tópico] e apresente as características mais distintivas da mensagem original.",
+    "remark": "Escrever textos promocionais e títulos para artigos. Este método foi retirado de um artigo de Esor Huang, autor de Computer Playthings."
   },
   "hi": {
     "title": "विशाल डेटा: एक-वाक्य सारांश",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 239,
-  "weight": 525
+  "weight": 536
 };
 
 function PromptDetail() {

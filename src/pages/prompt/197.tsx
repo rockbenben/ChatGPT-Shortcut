@@ -26,10 +26,10 @@ const prompt = {
     "remark": "자연스러운 스타일로 수정하거나 모방하고 싶은 글쓰기 스타일을 제공할 수 있습니다. 기여: @Pfyuan77."
   },
   "es": {
-    "title": "Retoque de la naturaleza",
+    "title": "Toques de naturaleza",
     "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Spanish. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature..",
-    "description": "Espero que actúe como un corrector ortográfico y gramatical profesional y mejore mis artículos. Quiero que reemplace mis palabras y oraciones simplificadas de nivel A0 con palabras y oraciones en inglés más bellas, elegantes y avanzadas, mantenga el significado igual, pero hágalas más literarias, mejore mi estilo en la revista Nature El nivel de expresión.",
-    "remark": "Se pulirá al estilo de Nature, o puede proporcionar el estilo de escritura que desea emular. Contribución de @Pfyuan77."
+    "description": "Quiero que actúen como correctores ortográficos y gramaticales profesionales y mejoren mi redacción. Me gustaría que sustituyera mis palabras y frases simplificadas de nivel A0 por otras más bonitas, elegantes y avanzadas en inglés, manteniendo el mismo significado pero haciéndolas más literarias y mejorando mi expresión en estilo revista Nature.",
+    "remark": "Se retocará al estilo Nature, o se puede aportar un estilo de escritura que se quiera emular. Contribución de @Pfyuan77."
   },
   "fr": {
     "title": "Touches de style nature",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Wird im Natur-Stil überarbeitet, oder kann einen Schreibstil liefern, den Sie nachahmen wollen. Beitrag von @Pfyuan77."
   },
   "it": {
-    "title": "Ritocco della natura",
+    "title": "Tocchi in stile natura",
     "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Italian. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature...",
-    "description": "Spero che agirai come correttore ortografico e grammaticale professionista e migliorerai i miei articoli. Voglio che tu sostituisca le mie parole e frasi semplificate di livello A0 con parole e frasi inglesi più belle, eleganti e avanzate, mantenga lo stesso significato, ma le renda più letterarie, migliori il mio livello di espressione in stile rivista Nature.",
-    "remark": "Sarà lucidato nello stile della natura o può fornire lo stile di scrittura che desideri emulare. Contributo di @Pfyuan77."
+    "description": "Vorrei che lei agisse come correttore ortografico e grammaticale professionista e migliorasse la mia scrittura. Vorrei che sostituisse le mie parole e frasi semplificate di livello A0 con parole e frasi in inglese più belle, eleganti e avanzate, mantenendo lo stesso significato ma rendendole più letterarie e migliorando la mia espressione in stile rivista Nature.",
+    "remark": "Verrà ritoccato in stile Nature, oppure si può fornire uno stile di scrittura che si vuole emulare. Contributo di @Pfyuan77."
   },
   "ru": {
-    "title": "Подправить природу",
+    "title": "Штрихи природного стиля",
     "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Russian. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature...",
-    "description": "Я надеюсь, что вы будете выступать в роли профессионального орфографического и грамматического корректора и улучшать мои статьи. Я хочу, чтобы вы заменили мои упрощенные слова и предложения уровня A0 более красивыми, элегантными, продвинутыми английскими словами и предложениями, сохранили то же значение, но сделали их более литературными, улучшили мой стиль в журнале Nature Уровень выражения.",
-    "remark": "Он будет отполирован в стиле Nature или может обеспечить стиль письма, которому вы хотите подражать. Вклад от @Pfyuan77."
+    "description": "Я хочу, чтобы Вы выступили в роли профессионального корректора орфографии и грамматики и улучшили мое письмо. Я хотел бы, чтобы Вы заменили мои упрощенные слова и предложения уровня А0 на более красивые, элегантные, продвинутые английские слова и предложения, сохранив смысл, но сделав их более литературными и улучшив мои выражения в стиле журнала Nature.",
+    "remark": "Будет доработана в стиле Nature, или можно предоставить стиль написания, которому вы хотите подражать. Вклад от @Pfyuan77."
   },
   "pt": {
-    "title": "retoque da natureza",
+    "title": "Toques de estilo natural",
     "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Portuguese. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature...",
-    "description": "Espero que você atue como um revisor profissional de ortografia e gramática e aprimore meus artigos. Quero que você substitua minhas palavras e frases simplificadas de nível A0 por palavras e frases em inglês mais bonitas, elegantes e avançadas, mantenha o significado o mesmo, mas torne-as mais literárias, melhore meu estilo na revista Nature O nível de expressão.",
-    "remark": "Ele será polido no estilo da Natureza ou pode fornecer o estilo de escrita que você deseja imitar. Contribuição de @Pfyuan77."
+    "description": "Quero que actue como um revisor ortográfico e gramatical profissional e que melhore a minha escrita. Gostaria que substituísse as minhas palavras e frases simplificadas de nível A0 por palavras e frases mais bonitas, elegantes e avançadas em inglês, mantendo o mesmo significado, mas tornando-as mais literárias e melhorando a minha expressão no estilo da revista Nature.",
+    "remark": "Será retocado ao estilo da Natureza, ou pode fornecer um estilo de escrita que queira imitar. Contribuição de @Pfyuan77."
   },
   "hi": {
     "title": "प्रकृति का स्पर्श",
@@ -86,7 +86,7 @@ const prompt = {
     "write"
   ],
   "id": 197,
-  "weight": 10724
+  "weight": 10967
 };
 
 function PromptDetail() {

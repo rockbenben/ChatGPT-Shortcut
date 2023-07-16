@@ -26,10 +26,10 @@ const prompt = {
     "remark": "설명하는 꿈에 대한 해석입니다."
   },
   "es": {
-    "title": "interpretación de sueños",
+    "title": "interpretar un sueño",
     "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Spanish. My first dream is about .",
-    "description": "Espero que puedas actuar como un intérprete de sueños. Te describiré mi sueño y tú me darás una interpretación basada en los símbolos y temas que aparecen en el sueño. No ofrezca opiniones personales o suposiciones sobre el soñador. Proporcione solo interpretaciones fácticas basadas en la información proporcionada.",
-    "remark": "Interpreta el sueño que describes."
+    "description": "Me gustaría que usted actuara como intérprete de sueños. Le daré una descripción de mi sueño y usted me dará una interpretación basada en los símbolos y temas que aparecen en el sueño. No ofrezca opiniones personales ni suposiciones sobre el soñador. Proporcione únicamente interpretaciones basadas en la información facilitada.",
+    "remark": "Interpretación del sueño que describes."
   },
   "fr": {
     "title": "interpréter un rêve",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Interpretation des von Ihnen beschriebenen Traums."
   },
   "it": {
-    "title": "interpretazione dei sogni",
+    "title": "interpretare un sogno",
     "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Italian. My first dream is about ..",
-    "description": "Spero che tu possa fare da interprete dei sogni. Ti descriverò il mio sogno e tu fornirai un&#39;interpretazione basata sui simboli e sui temi che compaiono nel sogno. Non offrire opinioni o supposizioni personali sul sognatore. Fornire solo interpretazioni fattuali basate sulle informazioni fornite.",
-    "remark": "Interpreta il sogno che descrivi."
+    "description": "Vorrei che lei facesse da interprete dei sogni. Io vi darò una descrizione del mio sogno e voi fornirete un'interpretazione basata sui simboli e sui temi che compaiono nel sogno. Non offrite opinioni personali o ipotesi sul sognatore. Fornisca solo interpretazioni concrete basate sulle informazioni fornite.",
+    "remark": "Interpretazione del sogno descritto."
   },
   "ru": {
-    "title": "сонник",
+    "title": "толковать сон",
     "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Russian. My first dream is about ..",
-    "description": "Надеюсь, вы сможете выступить в роли толкователя снов. Я опишу вам свой сон, а вы дадите толкование, основанное на символах и темах, которые появляются во сне. Не высказывайте личных мнений или предположений о сновидце. Предоставляйте только фактические интерпретации, основанные на предоставленной информации.",
-    "remark": "Толкуйте описанный вами сон."
+    "description": "Я хотел бы, чтобы Вы выступили в роли толкователя снов. Я дам вам описание своего сна, а вы дадите толкование, основываясь на символах и темах, которые фигурируют в сновидении. Не высказывайте личных мнений или предположений о сновидце. Давайте только фактические толкования, основанные на полученной информации.",
+    "remark": "Толкование описанного Вами сна."
   },
   "pt": {
-    "title": "Interpretação dos sonhos",
+    "title": "interpretar um sonho",
     "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Portuguese. My first dream is about ..",
-    "description": "Espero que você possa atuar como um intérprete de sonhos. Descreverei meu sonho para você e você fornecerá uma interpretação baseada nos símbolos e temas que aparecem no sonho. Não ofereça opiniões pessoais ou suposições sobre o sonhador. Forneça apenas interpretações factuais com base nas informações fornecidas.",
-    "remark": "Interprete o sonho que você descreve."
+    "description": "Gostaria que fosse um intérprete de sonhos. Dar-lhe-ei uma descrição do meu sonho e você fará uma interpretação baseada nos símbolos e temas que aparecem no sonho. Não dê opiniões pessoais ou faça suposições sobre o sonhador. Forneça apenas interpretações factuais com base nas informações fornecidas.",
+    "remark": "Interpretação do sonho que descreveu."
   },
   "hi": {
     "title": "सपनों की व्याख्या",
@@ -84,7 +84,7 @@ const prompt = {
     "interesting"
   ],
   "id": 48,
-  "weight": 1204
+  "weight": 1234
 };
 
 function PromptDetail() {

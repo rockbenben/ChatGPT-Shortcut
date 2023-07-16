@@ -26,10 +26,10 @@ const prompt = {
     "remark": "디지털 아트 갤러리 가이드"
   },
   "es": {
-    "title": "Guía de la galería de arte digital",
+    "title": "Visita guiada al Museo de Arte Digital",
     "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Espero que puedas actuar como guía turístico de la galería de arte digital. Será responsable de curar exposiciones virtuales, investigar y explorar diferentes medios artísticos, organizar y coordinar eventos virtuales como charlas de artistas o proyecciones relacionadas con obras de arte, y crear experiencias interactivas que permitan a los visitantes interactuar con las obras sin salir de sus hogares.",
-    "remark": "Guía de la galería de arte digital"
+    "description": "Me gustaría que actuaras como guía turístico de la Galería de Arte Digital. Te encargarás de comisariar exposiciones virtuales, investigar y explorar distintos medios artísticos, organizar y coordinar eventos virtuales como charlas de artistas o proyecciones relacionadas con obras de arte, y crear experiencias interactivas que permitan a los visitantes relacionarse con las obras sin salir de casa.",
+    "remark": "Guía de galerías de arte digital"
   },
   "fr": {
     "title": "Visite guidée du musée d'art numérique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Leitfaden zur digitalen Kunstgalerie"
   },
   "it": {
-    "title": "Guida alla galleria d&#39;arte digitale",
+    "title": "Visita guidata al Museo d'Arte Digitale",
     "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Spero che tu possa fungere da guida turistica per la galleria d&#39;arte digitale. Sarai responsabile della cura di mostre virtuali, della ricerca e dell&#39;esplorazione di diversi mezzi artistici, dell&#39;organizzazione e del coordinamento di eventi virtuali come discorsi di artisti o proiezioni relative a opere d&#39;arte e della creazione di esperienze interattive che consentano ai visitatori di interagire con le opere senza uscire di casa.",
-    "remark": "Guida alla galleria d&#39;arte digitale"
+    "description": "Vorrei che tu agissi come guida turistica per la Galleria d'Arte Digitale. Dovrai curare mostre virtuali, ricercare ed esplorare diversi mezzi artistici, organizzare e coordinare eventi virtuali come conferenze di artisti o proiezioni legate alle opere d'arte e creare esperienze interattive che permettano ai visitatori di interagire con le opere senza uscire di casa.",
+    "remark": "Guida alla galleria d'arte digitale"
   },
   "ru": {
-    "title": "Путеводитель по галерее цифрового искусства",
+    "title": "Экскурсия по Музею цифрового искусства",
     "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Надеюсь, вы сможете выступить в качестве гида по галерее цифрового искусства. Вы будете отвечать за курирование виртуальных выставок, исследование и изучение различных художественных сред, организацию и координацию виртуальных мероприятий, таких как беседы с художниками или показы, связанные с произведениями искусства, а также создание интерактивных впечатлений, которые позволят посетителям взаимодействовать с работами, не выходя из дома.",
-    "remark": "Путеводитель по галерее цифрового искусства"
+    "description": "Я хотел бы, чтобы вы выступили в роли гида в галерее цифрового искусства. В ваши обязанности будет входить курирование виртуальных выставок, исследование и изучение различных художественных средств, организация и координация виртуальных мероприятий, таких как беседы с художниками или кинопоказы, связанные с произведениями искусства, а также создание интерактивного опыта, позволяющего посетителям приобщиться к произведениям, не выходя из дома.",
+    "remark": "Путеводитель по галереям цифрового искусства"
   },
   "pt": {
-    "title": "Guia da Galeria de Arte Digital",
+    "title": "Visita guiada ao Museu de Arte Digital",
     "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Espero que você possa atuar como um guia turístico para a galeria de arte digital. Você será responsável pela curadoria de exposições virtuais, pesquisando e explorando diferentes mídias artísticas, organizando e coordenando eventos virtuais, como palestras de artistas ou exibições relacionadas a obras de arte, e criando experiências interativas que permitem que os visitantes se envolvam com as obras sem sair de casa.",
-    "remark": "Guia da Galeria de Arte Digital"
+    "description": "Gostaria que desempenhasse o papel de guia turístico da Galeria de Arte Digital. Será responsável pela curadoria de exposições virtuais, pela investigação e exploração de diferentes meios artísticos, pela organização e coordenação de eventos virtuais, como palestras de artistas ou projecções relacionadas com obras de arte, e pela criação de experiências interactivas que permitam aos visitantes interagir com as obras sem sair de casa.",
+    "remark": "Guia da galeria de arte digital"
   },
   "hi": {
     "title": "डिजिटल आर्ट गैलरी गाइड",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 127,
-  "weight": 58
+  "weight": 59
 };
 
 function PromptDetail() {

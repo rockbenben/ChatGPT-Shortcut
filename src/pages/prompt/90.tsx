@@ -26,10 +26,10 @@ const prompt = {
     "remark": "질문에 답하고 솔루션 코드를 제공하는 시뮬레이션 프로그래밍 커뮤니티입니다."
   },
   "es": {
-    "title": "preguntas de programacion informatica",
+    "title": "Cuestiones de programación informática",
     "prompt": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Spanish. My first question is .",
-    "description": "Quiero que actúes como una publicación de Stackoverflow. Haré preguntas relacionadas con la programación y usted responderá cuáles son las respuestas. Quiero que solo responda las respuestas dadas, escribiendo explicaciones cuando no haya suficientes detalles. Cuando necesito decirte algo en inglés, pongo el texto entre llaves {así}.",
-    "remark": "Simule la comunidad de programación para responder a sus preguntas y proporcione el código para resolverlas."
+    "description": "Quiero que rellenes los posts de Stackoverflow. Yo haré preguntas relacionadas con la programación y tú responderás a las respuestas. Me gustaría que contestaras sólo a las respuestas dadas y que escribieras explicaciones cuando no haya suficientes detalles. Cuando necesite decirte algo en inglés, pondré el texto entre llaves {así}.",
+    "remark": "Comunidad de programación de simulación para responder a sus preguntas y proporcionar el código de solución."
   },
   "fr": {
     "title": "Questions relatives à la programmation informatique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Simulationsprogrammier-Community, die Ihre Fragen beantwortet und Lösungscode bereitstellt."
   },
   "it": {
-    "title": "domande sulla programmazione informatica",
+    "title": "Problemi di programmazione IT",
     "prompt": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Italian. My first question is ..",
-    "description": "Voglio che tu agisca come un post di StackOverflow. Farò domande relative alla programmazione e tu risponderai a quali sono le risposte. Voglio che tu risponda solo alle risposte date, scrivendo spiegazioni quando non ci sono abbastanza dettagli. Quando ho bisogno di dirti qualcosa in inglese, metto il testo tra parentesi graffe {come questo}.",
-    "remark": "Simula la community di programmatori per rispondere alle tue domande e fornisci il codice per risolverle."
+    "description": "Voglio che riempiate i post di Stackoverflow. Io porrò domande relative alla programmazione e voi risponderete alle risposte. Vorrei che rispondessi solo alle risposte date e che scrivessi delle spiegazioni quando non ci sono abbastanza dettagli. Quando ho bisogno di dirvi qualcosa in inglese, metterò il testo tra parentesi graffe {come in questo caso}.",
+    "remark": "Comunità di programmazione per la simulazione che risponde alle vostre domande e fornisce codice risolutivo."
   },
   "ru": {
-    "title": "вопросы по ИТ программированию",
+    "title": "Вопросы программирования в ИТ",
     "prompt": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Russian. My first question is ..",
-    "description": "Я хочу, чтобы вы выступили в качестве поста Stackoverflow. Я буду задавать вопросы, связанные с программированием, а вы будете отвечать на них. Я хочу, чтобы вы отвечали только на заданные ответы, а когда недостаточно подробностей, писали пояснения. Когда мне нужно сказать вам что-то на английском языке, я заключаю текст в фигурные скобки {вот так}.",
-    "remark": "Смоделируйте сообщество программистов, чтобы ответить на ваши вопросы и предоставить код для их решения."
+    "description": "Я хочу, чтобы вы заполняли посты на Stackoverflow. Я буду задавать вопросы, связанные с программированием, а вы будете отвечать на них. Я хотел бы, чтобы вы отвечали только на заданные вопросы и писали пояснения, если не хватает деталей. Когда мне нужно будет сказать вам что-то по-английски, я буду заключать текст в фигурные скобки {как здесь}.",
+    "remark": "Сообщество программистов-симуляторов ответит на ваши вопросы и предоставит код решения."
   },
   "pt": {
-    "title": "perguntas sobre programação de TI",
+    "title": "Questões de programação informática",
     "prompt": "I want you to act as a stackoverflow post. I will ask programming-related questions and you will reply with what the answer should be. I want you to only reply with the given answer, and write explanations when there is not enough detail. do not write explanations. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Portuguese. My first question is ..",
-    "description": "Eu quero que você atue como uma postagem do Stackoverflow. Farei perguntas relacionadas à programação e você responderá quais são as respostas. Eu quero que você responda apenas as respostas dadas, escrevendo explicações quando não houver detalhes suficientes. Quando preciso falar algo em inglês, coloco o texto entre colchetes {assim}.",
-    "remark": "Simule a comunidade de programação para responder às suas perguntas e forneça o código para resolvê-las."
+    "description": "Quero que preenchas posts no Stackoverflow. Eu faço perguntas relacionadas com programação e tu respondes às respostas. Gostaria que respondesses apenas às respostas dadas e que escrevesses explicações quando não houver detalhes suficientes. Quando precisar de te dizer algo em inglês, coloco o texto entre parênteses rectos {assim}.",
+    "remark": "Comunidade de programação de simulação para responder às suas perguntas e fornecer código de solução."
   },
   "hi": {
     "title": "आईटी प्रोग्रामिंग प्रश्न",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 90,
-  "weight": 6146
+  "weight": 6282
 };
 
 function PromptDetail() {

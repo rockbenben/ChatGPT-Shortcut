@@ -26,10 +26,10 @@ const prompt = {
     "remark": "PHP 인터프리터"
   },
   "es": {
-    "title": "Intérprete de PHP",
+    "title": "Intérprete PHP",
     "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. The entire conversation and instructions should be provided in Spanish. My first command is .",
-    "description": "Quiero que actúes como un intérprete de php. Te escribo el código y respondes con la salida del intérprete de php. Espero que solo responda con la salida del terminal dentro de un bloque de código único, y nada más. No escribas comandos a menos que te lo indique. Cuando necesito decirte algo en inglés, pongo el texto entre llaves {remark text}.",
-    "remark": "Intérprete de PHP"
+    "description": "Quiero que actúes como un intérprete de php. Yo escribo código para ti y tú respondes con la salida del intérprete php. Quiero que respondas sólo con la salida del terminal dentro de un bloque único de código, y nada más. No escribas comandos a menos que yo te lo indique. Cuando necesite decirte algo en inglés, pondré el texto entre llaves {Remarks text}.",
+    "remark": "Intérprete PHP"
   },
   "fr": {
     "title": "Interprète PHP",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Interprete PHP",
     "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. The entire conversation and instructions should be provided in Italian. My first command is ..",
-    "description": "Voglio che tu ti comporti come un interprete php. Ti scrivo il codice e tu rispondi con l&#39;output dell&#39;interprete php. Spero che tu risponda solo con l&#39;output del terminale all&#39;interno di un blocco di codice univoco e nient&#39;altro. Non digitare comandi a meno che non ti dica di farlo. Quando ho bisogno di dirti qualcosa in inglese, metto il testo tra parentesi graffe {remark text}.",
+    "description": "Voglio che tu agisca come un interprete php. Io scrivo del codice per voi e voi rispondete con l'output dell'interprete php. Voglio che rispondiate solo con l'output del terminale all'interno di un unico blocco di codice e nient'altro. Non digitate comandi a meno che non vi dia istruzioni in tal senso. Quando ho bisogno di dirvi qualcosa in inglese, metterò il testo tra parentesi graffe {Remarks text}.",
     "remark": "Interprete PHP"
   },
   "ru": {
-    "title": "интерпретатор PHP",
+    "title": "Интерпретатор PHP",
     "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. The entire conversation and instructions should be provided in Russian. My first command is ..",
-    "description": "Я хочу, чтобы вы действовали как интерпретатор php. Я пишу вам код, а вы отвечаете выводом интерпретатора php. Я надеюсь, что вы ответите только выводом терминала внутри уникального блока кода, и ничего больше. Не вводите команды, если я не прикажу вам. Когда мне нужно сказать вам что-то на английском языке, я заключаю текст в фигурные скобки {remark text}.",
-    "remark": "PHP-интерпретатор"
+    "description": "Я хочу, чтобы вы действовали как php-интерпретатор. Я пишу для вас код, а вы отвечаете выводом php-интерпретатора. Я хочу, чтобы вы отвечали только выводом терминала в пределах уникального блока кода, и ничем больше. Не вводите команды, пока я не проинструктирую вас об этом. Когда мне нужно будет сказать вам что-то на английском языке, я буду заключать текст в фигурные скобки {Remarks text}.",
+    "remark": "Интерпретатор PHP"
   },
   "pt": {
-    "title": "interpretador PHP",
+    "title": "Intérprete de PHP",
     "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. The entire conversation and instructions should be provided in Portuguese. My first command is ..",
-    "description": "Eu quero que você aja como um interpretador de php. Eu escrevo o código e você responde com a saída do interpretador php. Espero que você responda apenas com a saída do terminal dentro de um bloco de código exclusivo e nada mais. Não digite comandos a menos que eu o instrua. Quando preciso falar algo em inglês, coloco o texto entre colchetes {remark text}.",
-    "remark": "Intérprete PHP"
+    "description": "Quero que actues como um intérprete de php. Eu escrevo código para ti e tu respondes com a saída do interpretador php. Quero que responda apenas com a saída do terminal dentro de um único bloco de código, e nada mais. Não digite comandos a menos que eu o instrua a fazê-lo. Quando precisar de te dizer algo em inglês, colocarei o texto entre parênteses rectos {Remarks text}.",
+    "remark": "Interpretador PHP"
   },
   "hi": {
     "title": "पीएचपी दुभाषिया",
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 104,
-  "weight": 86
+  "weight": 92
 };
 
 function PromptDetail() {

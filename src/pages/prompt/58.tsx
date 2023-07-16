@@ -26,10 +26,10 @@ const prompt = {
     "remark": "개인 셰프"
   },
   "es": {
-    "title": "cocinero ①",
+    "title": "Chef ①",
     "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas mi chef personal. Te hablaré de mis preferencias dietéticas y alergias y me sugerirás recetas para probar. Solo debe responder con recetas que recomiende, y nada más. No escribas explicaciones.",
-    "remark": "Cocinero personal"
+    "description": "Me gustaría que usted actuara como mi chef personal. Le diré mis preferencias dietéticas y alergias y usted me sugerirá recetas para que las pruebe. Sólo debe responderme con las recetas que me recomiende y nada más. No escriba explicaciones.",
+    "remark": "Chef personal"
   },
   "fr": {
     "title": "Chef ①",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Persönlicher Chefkoch"
   },
   "it": {
-    "title": "Cuoco ①",
+    "title": "Chef ①",
     "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia il mio chef personale. Ti parlerò delle mie preferenze alimentari e delle mie allergie e mi suggerirai delle ricette da provare. Dovresti rispondere solo con le ricette che consigli e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Cuoco personale"
+    "description": "Vorrei che lei agisse come mio chef personale. Le dirò le mie preferenze alimentari e le mie allergie e lei mi suggerirà le ricette da provare. Dovete rispondere solo con le ricette che mi consigliate e nient'altro. Non scrivete spiegazioni.",
+    "remark": "Chef personale"
   },
   "ru": {
     "title": "Шеф-повар ①",
     "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был моим личным поваром. Я расскажу вам о своих диетических предпочтениях и аллергиях, а вы предложите мне рецепты, чтобы попробовать. Вы должны отвечать только с рецептами, которые вы рекомендуете, и ничего больше. Не пишите пояснений.",
-    "remark": "Личный повар"
+    "description": "Я хотел бы, чтобы вы выступили в роли моего личного шеф-повара. Я расскажу Вам о своих диетических предпочтениях и аллергических реакциях, а Вы предложите мне рецепты. Вы должны ответить только теми рецептами, которые Вы рекомендуете, и ничем другим. Не пишите объяснений.",
+    "remark": "Персональный шеф-повар"
   },
   "pt": {
-    "title": "Chef ①",
+    "title": "Chefe de cozinha ①",
     "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja meu chef pessoal. Vou falar sobre minhas preferências alimentares e alergias e você vai sugerir receitas para eu experimentar. Você só deve responder com receitas que recomenda, e nada mais. Não escreva explicações.",
-    "remark": "Chef pessoal"
+    "description": "Gostaria que fosse o meu chefe de cozinha pessoal. Dir-lhe-ei as minhas preferências alimentares e alergias e sugerir-me-á receitas para experimentar. Só deve responder com as receitas que recomenda e nada mais. Não escreva explicações.",
+    "remark": "Chefe de cozinha pessoal"
   },
   "hi": {
     "title": "बावर्ची ①",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 58,
-  "weight": 294
+  "weight": 298
 };
 
 function PromptDetail() {

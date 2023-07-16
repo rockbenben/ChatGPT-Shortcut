@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Planificación de rutas de viaje",
     "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Spanish. Include the prices for each attraction and keep the total budget around [BUDGET]..",
-    "description": "Quiero ir a Dali, Yunnan. Por favor, como guía turístico profesional, ayúdame a hacer una estrategia de viaje de 2 días. Además, espero que todo el proceso no sea demasiado apretado y prefiero un lugar tranquilo donde simplemente pueda jugar. Al contestar recuerda adjuntar el precio de cada lugar, mi presupuesto es de unos 5.000 yuanes.",
-    "remark": "Planifique aproximadamente la planificación según el destino del viaje, el presupuesto, el tiempo y los requisitos. Contribución de @suaifu."
+    "description": "Me gustaría ir a Dali, provincia de Yunnan, por favor, ayúdame a hacer una guía de viaje de 2 días como guía turístico profesional. Además, espero que todo el proceso no es demasiado compacto, prefiero lugares tranquilos, puedo simplemente gira alrededor. Cuando responda, recuerde incluir el precio de cada lugar, mi presupuesto es de alrededor de 5000RMB.",
+    "remark": "Planificación aproximada en función del destino del viaje, el presupuesto, el tiempo y las necesidades. Contribución de @suaifu."
   },
   "fr": {
     "title": "Planification des itinéraires de voyage",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Grobe Planung auf der Grundlage von Reiseziel, Budget, Zeit und Anforderungen. Beitrag von @suaifu."
   },
   "it": {
-    "title": "Pianificazione del percorso di viaggio",
+    "title": "Pianificazione dell'itinerario di viaggio",
     "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Italian. Include the prices for each attraction and keep the total budget around [BUDGET]...",
-    "description": "Voglio andare a Dali, nello Yunnan. Per favore, come guida turistica professionista, aiutami a fare una strategia di viaggio di 2 giorni. Inoltre, spero che l&#39;intero processo non sia troppo stretto e preferisco un posto tranquillo dove posso semplicemente giocare. Quando rispondi, ricordati di allegare il prezzo di ogni posto, il mio budget è di circa 5.000 yuan.",
-    "remark": "Pianifica approssimativamente la pianificazione in base alla destinazione del viaggio, al budget, al tempo e ai requisiti. Contributo di @suaifu."
+    "description": "Vorrei andare a Dali, provincia dello Yunnan, per favore aiutatemi a fare una guida di viaggio di 2 giorni come guida turistica professionale. Inoltre, spero che l'intero processo non sia troppo compatto, preferisco luoghi tranquilli, posso semplicemente fare un giro. Quando rispondete, ricordatevi di includere il prezzo di ogni luogo, il mio budget è di circa 5000RMB.",
+    "remark": "Pianificazione approssimativa in base alla destinazione del viaggio, al budget, al tempo e alle esigenze. Contributo di @suaifu."
   },
   "ru": {
-    "title": "Планирование маршрута путешествия",
+    "title": "Планирование маршрутов путешествий",
     "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Russian. Include the prices for each attraction and keep the total budget around [BUDGET]...",
-    "description": "Я хочу поехать в Дали, Юньнань, пожалуйста, как профессиональный гид, помогите мне составить стратегию путешествия на 2 дня. Кроме того, я надеюсь, что весь процесс не будет слишком затянутым, и я предпочитаю тихое место, где я могу просто поиграть. При ответе не забудьте указать цену каждого места.Мой бюджет около 5000 юаней.",
-    "remark": "Примерно спланируйте планирование на основе пункта назначения поездки, бюджета, времени и требований. Вклад от @suaifu."
+    "description": "Я хочу поехать в Дали, провинция Юньнань, помогите, пожалуйста, составить путеводитель на 2 дня, как профессиональный гид. Кроме того, я надеюсь, что весь процесс не будет слишком компактным, я предпочитаю тихие места, я могу просто осмотреть окрестности. Когда будете отвечать, не забудьте указать стоимость каждого места, мой бюджет - около 5000RMB.",
+    "remark": "Грубое планирование в зависимости от направления поездки, бюджета, времени и требований. Вклад от @suaifu."
   },
   "pt": {
-    "title": "Planejamento de rotas de viagem",
+    "title": "Planeamento do itinerário de viagem",
     "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Portuguese. Include the prices for each attraction and keep the total budget around [BUDGET]...",
-    "description": "Eu quero ir para Dali, Yunnan. Por favor, como guia turístico profissional, ajude-me a fazer uma estratégia de viagem de 2 dias. Além disso, espero que todo o processo não seja muito apertado e prefiro um lugar tranquilo onde possa simplesmente brincar. Ao responder, lembre-se de anexar o preço de cada lugar. Meu orçamento é de cerca de 5.000 yuans.",
-    "remark": "Planeje aproximadamente o planejamento com base no destino da viagem, orçamento, tempo e requisitos. Contribuição de @suaifu."
+    "description": "Gostaria de ir a Dali, província de Yunnan, por favor, ajudem-me a fazer um guia de viagem de 2 dias como guia turístico profissional. Além disso, espero que todo o processo não seja demasiado compacto, prefiro lugares tranquilos, posso simplesmente passear. Quando responderem, lembrem-se de incluir o preço de cada local, o meu orçamento é de cerca de 5000RMB.",
+    "remark": "Planeamento aproximado com base no destino de viagem, orçamento, tempo e requisitos. Contribuição de @suaifu."
   },
   "hi": {
     "title": "यात्रा मार्ग योजना",
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 220,
-  "weight": 2547
+  "weight": 2616
 };
 
 function PromptDetail() {

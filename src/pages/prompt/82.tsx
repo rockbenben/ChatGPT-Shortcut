@@ -26,10 +26,10 @@ const prompt = {
     "remark": "수학적 개념을 이해하기 쉬운 용어로 설명합니다."
   },
   "es": {
-    "title": "profesor de matemáticas",
+    "title": "Profesor de matemáticas",
     "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como profesor de matemáticas. Proporcionaré algunas ecuaciones o conceptos matemáticos, y su trabajo es explicarlos en términos comprensibles. Esto podría incluir proporcionar instrucciones paso a paso para resolver un problema, demostrar varias técnicas con imágenes o sugerir recursos en línea para un estudio adicional.",
-    "remark": "Explica conceptos matemáticos en términos fáciles de entender."
+    "description": "Me gustaría que hicieras de profesor de matemáticas. Te proporcionaré una serie de ecuaciones o conceptos matemáticos y tu trabajo consistirá en explicarlos en términos fáciles de entender. Esto puede incluir proporcionar instrucciones paso a paso para resolver problemas, demostrar diversas técnicas con imágenes o sugerir recursos en línea para seguir estudiando.",
+    "remark": "Explicar conceptos matemáticos en términos fáciles de entender."
   },
   "fr": {
     "title": "Professeur de mathématiques",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erklären Sie mathematische Konzepte in leicht verständlichen Begriffen."
   },
   "it": {
-    "title": "insegnante di matematica",
+    "title": "Insegnante di matematica",
     "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia l&#39;insegnante di matematica. Fornirò alcune equazioni o concetti matematici e il tuo compito è spiegarli in termini comprensibili. Ciò potrebbe includere la fornitura di istruzioni dettagliate per la risoluzione di un problema, la dimostrazione di varie tecniche con elementi visivi o il suggerimento di risorse online per ulteriori studi.",
-    "remark": "Spiega concetti matematici in termini di facile comprensione."
+    "description": "Vorrei che tu agissi come un insegnante di matematica. Ti fornirò una serie di equazioni o concetti matematici e il tuo compito sarà quello di spiegarli in termini facili da capire. Potresti fornire istruzioni passo-passo per la risoluzione di problemi, dimostrare varie tecniche con immagini o suggerire risorse online per ulteriori studi.",
+    "remark": "Spiegare i concetti matematici in termini facilmente comprensibili."
   },
   "ru": {
-    "title": "учитель математики",
+    "title": "Преподаватель математики",
     "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли учителя математики. Я приведу некоторые математические уравнения или концепции, а ваша задача — объяснить их в понятных терминах. Это может включать предоставление пошаговых инструкций по решению проблемы, демонстрацию различных методов с визуальными эффектами или предложение онлайн-ресурсов для дальнейшего изучения.",
-    "remark": "Объяснять математические понятия простыми для понимания терминами."
+    "description": "Я хотел бы, чтобы вы выступили в роли учителя математики. Я предоставлю ряд математических уравнений или понятий, а ваша задача - объяснить их в доступной форме. Это может включать в себя пошаговые инструкции по решению задач, демонстрацию различных приемов с помощью наглядных пособий или предложение интернет-ресурсов для дальнейшего изучения.",
+    "remark": "Объяснять математические понятия в доступных для понимания терминах."
   },
   "pt": {
-    "title": "professor de matemática",
+    "title": "Professor de matemática",
     "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um professor de matemática. Fornecerei algumas equações ou conceitos matemáticos, e seu trabalho é explicá-los em termos compreensíveis. Isso pode incluir fornecer instruções passo a passo para resolver um problema, demonstrar várias técnicas com recursos visuais ou sugerir recursos on-line para estudos adicionais.",
-    "remark": "Explica conceitos matemáticos em termos fáceis de entender."
+    "description": "Gostaria que desempenhasse o papel de professor de matemática. Fornecerei uma série de equações ou conceitos matemáticos e caberá a si explicá-los em termos fáceis de compreender. Poderá fornecer instruções passo a passo para resolver problemas, demonstrar várias técnicas com imagens ou sugerir recursos em linha para estudo posterior.",
+    "remark": "Explicar conceitos matemáticos em termos que sejam fáceis de compreender."
   },
   "hi": {
     "title": "गणित शिक्षक",
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 82,
-  "weight": 767
+  "weight": 777
 };
 
 function PromptDetail() {

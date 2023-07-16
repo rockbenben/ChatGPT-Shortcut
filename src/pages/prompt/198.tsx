@@ -26,10 +26,10 @@ const prompt = {
     "remark": "제공된 단어 중 몇 가지를 사용하여 짧은 이야기를 작성하세요. LIyvqi 의 기고문에서 발췌."
   },
   "es": {
-    "title": "Escribir historias por palabras clave",
+    "title": "Escribir una historia por palabras clave",
     "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Spanish. Feel free to be as creative and imaginative as possible..",
-    "description": "Ahora vienes a jugar a mi profesor de inglés, te enviaré algunas palabras en inglés en la próxima conversación, y tienes que usar las palabras que te di para inventar una pequeña historia interesante en inglés. Las palabras en inglés que envíe estarán entre paréntesis. Solo las palabras entre paréntesis son lo que necesita para inventar la historia. Separaré las palabras con comas. Si no hay paréntesis en mis palabras, significa que no necesito que inventes historias. Debe responder esta historia de acuerdo con la plantilla a continuación. Tenga en cuenta que la plantilla incluye tres partes y debe escribir las tres partes.",
-    "remark": "Escribe una historia corta usando las pocas palabras que proporcionas. Contribución de @LIyvqi."
+    "description": "Ahora tú harás el papel de mi profesor de inglés, y en el siguiente diálogo te enviaré unas cuantas palabras en inglés, y tú tendrás que inventar una interesante historia corta en inglés con las palabras que te dé. Las palabras en inglés que te envíe irán entre paréntesis, sólo las que estén dentro de los paréntesis son las que necesitas para inventar una historia, y yo separaré las palabras con comas. Si no hay corchetes dentro de mis palabras, significa que no necesito que inventes la historia. Para esta historia tienes que seguir la plantilla que aparece a continuación. Ten en cuenta que la plantilla consta de tres partes y debes escribir las tres.",
+    "remark": "Escribe una historia corta utilizando algunas de las palabras que has proporcionado. Contribución de @LIyvqi."
   },
   "fr": {
     "title": "Écrire une histoire par mots-clés",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreibe eine kurze Geschichte mit einigen der von dir angegebenen Wörter. Beitrag von @LIyvqi."
   },
   "it": {
-    "title": "Scrivi storie per parole chiave",
+    "title": "Scrivere una storia per parole chiave",
     "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Italian. Feel free to be as creative and imaginative as possible...",
-    "description": "Ora vieni a interpretare il mio insegnante di inglese, ti manderò alcune parole inglesi nella prossima conversazione e dovrai usare le parole che ti ho dato per inventare un&#39;interessante piccola storia inglese. Le parole inglesi che invio saranno racchiuse tra parentesi. Solo le parole tra parentesi sono ciò di cui hai bisogno per inventare la storia. Separerò le parole con le virgole. Se non ci sono parentesi nelle mie parole, significa che non ho bisogno di te per inventare storie. Devi rispondere a questa storia secondo il modello qui sotto. Nota che il modello include tre parti e devi scrivere tutte e tre le parti.",
-    "remark": "Scrivi un racconto usando le poche parole che fornisci. Contributo di @LIyvqi."
+    "description": "Ora vestirete i panni del mio insegnante di inglese e nel prossimo dialogo vi invierò alcune parole inglesi e voi dovrete inventare un interessante racconto in inglese con le parole che vi darò. Le parole inglesi che ti invierò saranno racchiuse tra parentesi, solo le parole all'interno delle parentesi sono quelle che ti servono per inventare una storia, e io separerò le parole con delle virgole. Se non ci sono parentesi all'interno delle mie parole, significa che non ho bisogno di te per inventare la storia. Per questa storia dovete seguire il modello qui sotto. Notate che il modello è composto da tre parti e dovete scriverle tutte e tre.",
+    "remark": "Scrivete una breve storia utilizzando alcune delle parole fornite. Contributo di @LIyvqi."
   },
   "ru": {
-    "title": "Пишите истории по ключевым словам",
+    "title": "Написать рассказ по ключевым словам",
     "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Russian. Feel free to be as creative and imaginative as possible...",
-    "description": "Теперь вы приходите играть моего учителя английского языка, я пришлю вам несколько английских слов в следующем разговоре, и вы должны использовать слова, которые я дал, чтобы составить интересную небольшую английскую историю. Английские слова, которые я отправляю, будут заключены в скобки. Только слова в скобках - это то, что вам нужно для составления рассказа. Я буду разделять слова запятыми. Если в моих словах нет скобок, значит, мне не нужно, чтобы вы придумывали истории. Вам нужно ответить на этот рассказ по шаблону ниже. Обратите внимание, что шаблон состоит из трех частей, и вы должны написать все три части.",
-    "remark": "Напишите небольшой рассказ, используя несколько предложенных вами слов. Вклад от @LIyvqi."
+    "description": "Сейчас Вы будете играть роль моего учителя английского языка, и в следующем диалоге я пришлю Вам несколько английских слов, а Вы должны будете составить интересный рассказ на английском языке с использованием данных мною слов. Английские слова, которые я Вам пришлю, будут заключены в скобки, в скобках будут только те слова, которые нужны Вам для составления рассказа, а я буду разделять слова запятыми. Если внутри моих слов нет скобок, значит, мне не нужно, чтобы вы составляли рассказ. Для этого рассказа вам необходимо следовать приведенному ниже шаблону. Обратите внимание, что шаблон состоит из трех частей, и вы должны написать все три части.",
+    "remark": "Напишите небольшой рассказ, используя несколько приведенных слов. Материал от @LIyvqi."
   },
   "pt": {
-    "title": "Escreva histórias por palavras-chave",
+    "title": "Escrever uma história por palavras-chave",
     "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Portuguese. Feel free to be as creative and imaginative as possible...",
-    "description": "Agora você vem bancar meu professor de inglês, vou enviar algumas palavras em inglês para você na próxima conversa e você terá que usar as palavras que dei para criar uma pequena história interessante em inglês. As palavras em inglês que eu enviar serão colocadas entre colchetes. Somente as palavras entre colchetes são o que você precisa para compor a história. Separarei as palavras com vírgulas. Se não houver parênteses em minhas palavras, significa que não preciso que você invente histórias. Você precisa responder a esta história de acordo com o modelo abaixo. Observe que o modelo inclui três partes e você deve escrever todas as três partes.",
-    "remark": "Escreva uma pequena história usando as poucas palavras que você fornecer. Contribuição de @LIyvqi."
+    "description": "Agora, vais desempenhar o papel do meu professor de inglês e, no diálogo seguinte, vou enviar-te algumas palavras em inglês e tens de inventar um conto interessante com as palavras que te dou. As palavras em inglês que lhe enviarei estarão entre parênteses, apenas as palavras dentro dos parênteses são as que precisa para compor uma história, e eu separarei as palavras com vírgulas. Se não houver parêntesis dentro das minhas palavras, significa que não preciso que componha a história. Para esta história, tens de seguir o modelo abaixo. Nota que o modelo é composto por três partes e tens de escrever as três partes.",
+    "remark": "Escreve uma pequena história utilizando algumas das palavras que forneceste. Contribuição de @LIyvqi."
   },
   "hi": {
     "title": "कीवर्ड द्वारा कहानियाँ लिखें",
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 198,
-  "weight": 428
+  "weight": 434
 };
 
 function PromptDetail() {

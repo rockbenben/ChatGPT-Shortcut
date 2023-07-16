@@ -26,10 +26,10 @@ const prompt = {
     "remark": "동영상, 라이브 스트림, 팟캐스트, 서브 및 기타 음성 콘텐츠 스크립팅. 베티크로코의 기여."
   },
   "es": {
-    "title": "guion oral",
+    "title": "guión oral",
     "prompt": "The entire conversation and instructions should be provided in Spanish. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures..",
-    "description": "Escriba un ensayo sobre [Tema] con voz humana, usando abreviaturas, modismos, frases de transición, interjecciones, modificadores colgantes y lenguaje coloquial, y evite frases repetitivas y estructuras de oraciones poco naturales.",
-    "remark": "Escriba guiones para videos, transmisiones en vivo, podcasts, guiones gráficos y otro contenido hablado. Contribución de @Bettycroco."
+    "description": "Escriba un ensayo sobre [TEMA] con voz humana, utilizando acrónimos, modismos, frases de transición, exclamaciones, modificadores colgantes y lenguaje coloquial, evitando las frases repetitivas y la estructura poco natural de las oraciones.",
+    "remark": "Guionización de vídeos, retransmisiones en directo, podcasts, pantalla dividida y otros contenidos hablados. Lanzamiento de @bettycroco."
   },
   "fr": {
     "title": "texte oral",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Verfassen von Videos, Live-Streams, Podcasts, Split-Screen und anderen gesprochenen Inhalten. Pitch von @bettycroco."
   },
   "it": {
-    "title": "sceneggiatura orale",
+    "title": "copione orale",
     "prompt": "The entire conversation and instructions should be provided in Italian. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures...",
-    "description": "Scrivi un saggio su [Argomento] con voce umana, usando abbreviazioni, espressioni idiomatiche, frasi di transizione, interiezioni, modificatori penzolanti e linguaggio colloquiale ed evitando frasi ripetitive e strutture di frasi innaturali.",
-    "remark": "Scrivi sceneggiature per video, trasmissioni in diretta, podcast, storyboard e altri contenuti parlati. Contributo di @Bettycroco."
+    "description": "Scrivete un saggio su [ARGOMENTO] con voce umana, usando acronimi, espressioni idiomatiche, frasi transitorie, esclamazioni, modificatori e linguaggio colloquiale, evitando frasi ripetitive e una struttura della frase innaturale.",
+    "remark": "Sceneggiatura di video, live stream, podcast, split-screen e altri contenuti parlati. Lancio da parte di @bettycroco."
   },
   "ru": {
     "title": "устный сценарий",
     "prompt": "The entire conversation and instructions should be provided in Russian. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures...",
-    "description": "Напишите эссе на [Тему] человеческим голосом, используя сокращения, идиомы, переходные фразы, междометия, оборванные модификаторы и разговорный язык, избегая повторяющихся фраз и неестественных структур предложений.",
-    "remark": "Пишите сценарии для видео, прямых трансляций, подкастов, раскадровок и другого разговорного контента. Вклад от @Bettycroco."
+    "description": "Напишите эссе на тему [TOPIC] человеческим голосом, используя аббревиатуры, идиомы, переходные фразы, восклицания, висячие модификаторы, разговорную лексику, избегая повторов и неестественной структуры предложений.",
+    "remark": "Написание сценариев для видео, прямых трансляций, подкастов, split-screen и другого разговорного контента. Питч от @bettycroco."
   },
   "pt": {
-    "title": "roteiro oral",
+    "title": "guião oral",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures...",
-    "description": "Escreva um ensaio sobre [Tópico] em voz humana, usando abreviações, expressões idiomáticas, frases de transição, interjeições, modificadores pendentes e linguagem coloquial, evitando frases repetitivas e estruturas de sentença não naturais.",
-    "remark": "Escreva roteiros para vídeos, transmissões ao vivo, podcasts, storyboards e outros conteúdos falados. Contribuição de @Bettycroco."
+    "description": "Escreva um ensaio sobre [TÓPICO] numa voz humana, utilizando acrónimos, expressões idiomáticas, frases de transição, exclamações, modificadores pendentes e linguagem coloquial, evitando frases repetitivas e estruturas frásicas pouco naturais.",
+    "remark": "Guião de vídeos, transmissões ao vivo, podcasts, ecrã dividido e outros conteúdos de palavra falada. Proposta de @bettycroco."
   },
   "hi": {
     "title": "मौखिक लिपि",
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 204,
-  "weight": 6100
+  "weight": 6243
 };
 
 function PromptDetail() {

@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "sinónimos",
     "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Spanish. Please confirm by replying with 'OK.' .",
-    "description": "Espero que pueda actuar como proveedor de sinónimos. Te diré una palabra y me darás una lista de sinónimos alternativos según mis indicaciones. Cada mensaje puede proporcionar hasta 10 sinónimos. Si quiero obtener más sinónimos, responderé en una oración. &#39;más x&#39;, donde x es la palabra que busca sinónimos. Solo devolverá listas de palabras y nada más. Las palabras deberían existir. No escribas explicaciones. Responda &#39;OK&#39; para confirmar.",
-    "remark": "Ingrese más de x para enumerar múltiples sinónimos para x."
+    "description": "Me gustaría que actuaras como proveedor de sinónimos. Yo le diré una palabra y usted me proporcionará una lista de sinónimos alternativos basados en mis indicaciones. Cada pregunta puede proporcionar hasta 10 sinónimos. Si quiero más sinónimos, responderé con una frase'. Más x', donde x es la palabra para la que busca un sinónimo. Sólo responderá con una lista de palabras y nada más. Las palabras deben existir. No escriba explicaciones. Responda 'OK' para confirmar.",
+    "remark": "Escriba más de x para listar múltiples sinónimos de x."
   },
   "fr": {
     "title": "synonymes",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "sinonimi",
     "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Italian. Please confirm by replying with 'OK.' ..",
-    "description": "Spero che tu possa agire come fornitore di sinonimi. Ti dirò una parola e tu mi darai un elenco di sinonimi alternativi basati sui miei suggerimenti. Ogni prompt può fornire fino a 10 sinonimi. Se voglio ottenere più sinonimi, risponderò in una frase. &#39;più x&#39;, dove x è la parola di cui stai cercando i sinonimi. Restituirai solo liste di parole e nient&#39;altro. Le parole dovrebbero esistere. Non scrivere spiegazioni. Rispondi &quot;OK&quot; per confermare.",
-    "remark": "Inserisci più di x per elencare più sinonimi di x."
+    "description": "Vorrei che lei agisse come fornitore di sinonimi. Io vi dirò una parola e voi mi fornirete un elenco di alternative di sinonimi in base ai miei suggerimenti. Ogni richiesta può fornire fino a 10 sinonimi. Se voglio altri sinonimi, risponderò con una frase\". Più x\", dove x è la parola di cui cercate un sinonimo. Si risponderà solo con un elenco di parole e nient'altro. Le parole devono esistere. Non scrivete spiegazioni. Rispondere \"OK\" per confermare.",
+    "remark": "Digitare more of x per elencare più sinonimi di x."
   },
   "ru": {
     "title": "синонимы",
     "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Russian. Please confirm by replying with 'OK.' ..",
-    "description": "Я надеюсь, что вы можете выступать в качестве поставщика синонимов. Я скажу вам слово, а вы дадите мне список альтернативных синонимов, основанный на моих подсказках. Каждое приглашение может предоставить до 10 синонимов. Если я хочу получить больше синонимов, я отвечу одним предложением. «больше х», где х — это слово, которое вы ищете синонимы. Вы будете возвращать только списки слов и ничего больше. Слова должны существовать. Не пишите пояснений. Ответьте «ОК» для подтверждения.",
-    "remark": "Введите больше x, чтобы получить несколько синонимов для x."
+    "description": "Я хочу, чтобы вы выступили в роли поставщика синонимов. Я назову вам слово, а вы предоставите мне список альтернативных синонимов, основываясь на моих подсказках. Каждая подсказка может содержать до 10 синонимов. Если мне нужно больше синонимов, я отвечаю предложением: \". More x\", где x - слово, для которого вы ищете синоним. В ответ вы получите только список слов и ничего больше. Слова должны существовать. Не пишите объяснений. Ответьте 'OK' для подтверждения.",
+    "remark": "Введите еще x, чтобы перечислить несколько синонимов для x."
   },
   "pt": {
-    "title": "sinônimos",
+    "title": "sinónimos",
     "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. Please confirm by replying with 'OK.' ..",
-    "description": "Espero que você possa atuar como um provedor de sinônimos. Direi uma palavra e você me dará uma lista de sinônimos alternativos com base em minhas sugestões. Cada prompt pode fornecer até 10 sinônimos. Se eu quiser obter mais sinônimos, responderei em uma frase. &#39;mais x&#39;, onde x é a palavra que você está procurando por sinônimos. Você só retornará listas de palavras e nada mais. As palavras deveriam existir. Não escreva explicações. Responda &#39;OK&#39; para confirmar.",
-    "remark": "Insira mais de x para listar vários sinônimos para x."
+    "description": "Gostaria que actuasse como fornecedor de sinónimos. Eu digo-lhe uma palavra e você fornece-me uma lista de alternativas de sinónimos com base nas minhas sugestões. Cada sugestão pode fornecer até 10 sinónimos. Se eu quiser mais sinónimos, responderei com uma frase. Mais x\", em que x é a palavra para a qual procura um sinónimo. Só responderá com uma lista de palavras e nada mais. As palavras devem existir. Não escreva explicações. Responda \"OK\" para confirmar.",
+    "remark": "Digite more of x para listar vários sinónimos de x."
   },
   "hi": {
     "title": "समानार्थी शब्द",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 30,
-  "weight": 156
+  "weight": 161
 };
 
 function PromptDetail() {

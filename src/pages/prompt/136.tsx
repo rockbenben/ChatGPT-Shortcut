@@ -26,9 +26,9 @@ const prompt = {
     "remark": "화학 반응 용기"
   },
   "es": {
-    "title": "recipiente de reacción química",
+    "title": "Recipientes de reacción química",
     "prompt": "I want you to act as a chemical reaction vessel. I will send you the chemical formula of a substance, and you will add it to the vessel. If the vessel is empty, the substance will be added without any reaction. If there are residues from the previous reaction in the vessel, they will react with the new substance, leaving only the new product. Once I send the new chemical substance, the previous product will continue to react with it, and the process will repeat. The entire conversation and instructions should be provided in Spanish. Your task is to list all the equations and substances inside the vessel after each reaction..",
-    "description": "Quiero que seas un recipiente de reacción química. Te envío la fórmula química de una sustancia y tú la agregas al recipiente. Si el recipiente está vacío, la adición de la sustancia no tendrá ningún efecto. Si quedan residuos de reacciones anteriores en el envase, estos reaccionarán con la nueva sustancia, dejando únicamente el nuevo producto. Una vez que envíe el nuevo producto químico, los productos anteriores seguirán reaccionando con él y el proceso se repetirá. Tu tarea es hacer una lista de todas las ecuaciones y sustancias en el recipiente después de cada reacción.",
+    "description": "Quiero que juegues a ser un contenedor de reacciones químicas. Te enviaré la fórmula química de una sustancia y tú la añades al recipiente. Si el recipiente está vacío, no se producirá ninguna reacción al añadir la sustancia. Si el recipiente tiene residuos de una reacción anterior, reaccionarán con la nueva sustancia, dejando sólo el nuevo producto. Una vez que envíe la nueva sustancia química, el producto anterior seguirá reaccionando con ella y el proceso se repetirá. Tu tarea consiste en enumerar todas las ecuaciones y sustancias del recipiente después de cada reacción.",
     "remark": "recipiente de reacción química"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "chemisches Reaktionsgefäß"
   },
   "it": {
-    "title": "recipiente di reazione chimica",
+    "title": "Recipienti per reazioni chimiche",
     "prompt": "I want you to act as a chemical reaction vessel. I will send you the chemical formula of a substance, and you will add it to the vessel. If the vessel is empty, the substance will be added without any reaction. If there are residues from the previous reaction in the vessel, they will react with the new substance, leaving only the new product. Once I send the new chemical substance, the previous product will continue to react with it, and the process will repeat. The entire conversation and instructions should be provided in Italian. Your task is to list all the equations and substances inside the vessel after each reaction...",
-    "description": "Voglio che tu sia un recipiente di reazione chimica. Ti manderò la formula chimica di una sostanza e tu la aggiungerai al contenitore. Se il contenitore è vuoto, l&#39;aggiunta della sostanza non avrà alcun effetto. Se ci sono residui di reazioni precedenti nel contenitore, reagiranno con la nuova sostanza, lasciando solo il nuovo prodotto. Una volta inviato il nuovo prodotto chimico, i prodotti precedenti continueranno a reagire con esso e il processo si ripeterà. Il tuo compito è elencare tutte le equazioni e le sostanze nel contenitore dopo ogni reazione.",
+    "description": "Voglio che giochiate a un contenitore di reazioni chimiche. Vi invierò la formula chimica di una sostanza e voi la aggiungerete al contenitore. Se il contenitore è vuoto, l'aggiunta della sostanza non provoca alcuna reazione. Se il contenitore ha dei residui di una reazione precedente, questi reagiranno con la nuova sostanza, lasciando solo il nuovo prodotto. Una volta inviata la nuova sostanza chimica, il prodotto precedente continuerà a reagire con essa e il processo si ripeterà. Il vostro compito è elencare tutte le equazioni e le sostanze presenti nel contenitore dopo ogni reazione.",
     "remark": "recipiente di reazione chimica"
   },
   "ru": {
-    "title": "сосуд для химической реакции",
+    "title": "Сосуды для химических реакций",
     "prompt": "I want you to act as a chemical reaction vessel. I will send you the chemical formula of a substance, and you will add it to the vessel. If the vessel is empty, the substance will be added without any reaction. If there are residues from the previous reaction in the vessel, they will react with the new substance, leaving only the new product. Once I send the new chemical substance, the previous product will continue to react with it, and the process will repeat. The entire conversation and instructions should be provided in Russian. Your task is to list all the equations and substances inside the vessel after each reaction...",
-    "description": "Я хочу, чтобы вы были сосудом для химической реакции. Я пришлю вам химическую формулу вещества, а вы добавите ее в емкость. Если емкость пуста, добавление вещества не даст никакого эффекта. Если в емкости есть остатки от предыдущих реакций, они прореагируют с новым веществом, оставив только новый продукт. Как только я отправлю новое химическое вещество, предыдущие продукты продолжат реагировать с ним, и процесс повторится. Ваша задача — составить список всех уравнений и веществ в сосуде после каждой реакции.",
-    "remark": "сосуд для химической реакции"
+    "description": "Я хочу, чтобы вы изобразили контейнер для химических реакций. Я пришлю вам химическую формулу вещества, и вы добавите его в контейнер. Если контейнер пуст, то никакой реакции от добавления вещества не произойдет. Если в контейнере есть остатки от предыдущей реакции, то они прореагируют с новым веществом, оставив только новый продукт. Как только я отправлю новое вещество, предыдущий продукт продолжит с ним реагировать, и процесс повторится. Ваша задача - перечислить все уравнения и вещества в контейнере после каждой реакции.",
+    "remark": "сосуд для химических реакций"
   },
   "pt": {
-    "title": "vaso de reação química",
+    "title": "Recipientes de reação química",
     "prompt": "I want you to act as a chemical reaction vessel. I will send you the chemical formula of a substance, and you will add it to the vessel. If the vessel is empty, the substance will be added without any reaction. If there are residues from the previous reaction in the vessel, they will react with the new substance, leaving only the new product. Once I send the new chemical substance, the previous product will continue to react with it, and the process will repeat. The entire conversation and instructions should be provided in Portuguese. Your task is to list all the equations and substances inside the vessel after each reaction...",
-    "description": "Eu quero que você seja um recipiente de reação química. Eu te mando a fórmula química de uma substância, e você coloca no recipiente. Se o recipiente estiver vazio, adicionar a substância não terá efeito. Se houver resíduos de reações anteriores no recipiente, eles reagirão com a nova substância, restando apenas o novo produto. Assim que eu enviar o novo produto químico, os produtos anteriores continuarão a reagir com ele e o processo será repetido. Sua tarefa é listar todas as equações e substâncias no recipiente após cada reação.",
-    "remark": "vaso de reação química"
+    "description": "Quero que jogues um recipiente de reação química. Eu envio-te a fórmula química de uma substância e tu adiciona-la ao recipiente. Se o recipiente estiver vazio, não haverá reação à adição da substância. Se o recipiente tiver resíduos de uma reação anterior, estes reagirão com a nova substância, deixando apenas o novo produto. Quando eu enviar a nova substância química, o produto anterior continuará a reagir com ela e o processo repetir-se-á. A tua tarefa é listar todas as equações e substâncias presentes no recipiente após cada reação.",
+    "remark": "recipiente de reação química"
   },
   "hi": {
     "title": "रासायनिक प्रतिक्रिया पोत",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 136,
-  "weight": 135
+  "weight": 136
 };
 
 function PromptDetail() {

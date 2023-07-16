@@ -26,10 +26,10 @@ const prompt = {
     "remark": "텔레마케터가 세일즈 프레젠테이션을 하는 상황을 시뮬레이션해 보세요."
   },
   "es": {
-    "title": "Vendedor",
+    "title": "vendedor",
     "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Spanish. Hello, what did you call for?.",
-    "description": "Quiero que actúes como vendedor. Intenta venderme algo pero haz que parezca que lo que estás tratando de vender vale más de lo que es y convénceme de comprarlo. Ahora estoy fingiendo que me estás llamando y preguntando qué estás llamando. hola para que llamas",
-    "remark": "Simule a un vendedor por teléfono haciendo un argumento de venta."
+    "description": "Quiero que actúes como un vendedor. Intenta venderme algo, pero haz que lo que intentas vender parezca más valioso de lo que es y convénceme para que lo compre. Ahora voy a fingir que me estás llamando y te preguntaré para qué me llamas. Hola, ¿para qué llamas?",
+    "remark": "Simule que un teleoperador le hace un discurso de venta."
   },
   "fr": {
     "title": "vendeur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Simulieren Sie einen Telefonverkäufer, der ein Verkaufsgespräch führt."
   },
   "it": {
-    "title": "Venditore",
+    "title": "venditore",
     "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Italian. Hello, what did you call for?..",
-    "description": "Voglio che tu faccia il venditore. Prova a vendermi qualcosa ma fai in modo che sembri che quello che stai cercando di vendere valga più di quello che è e convincimi a comprarlo. Ora sto fingendo che tu mi chiami e mi chieda per cosa stai chiamando. ciao, per cosa stai chiamando?",
-    "remark": "Simula un operatore di telemarketing che fa una presentazione di vendita."
+    "description": "Voglio che vi comportiate come un venditore. Cercate di vendermi qualcosa, ma fate in modo che ciò che state cercando di vendere sembri più prezioso di quanto non sia e convincetemi a comprarlo. Ora farò finta che tu mi stia chiamando e ti chiederò per cosa stai chiamando. Pronto, per cosa sta chiamando?",
+    "remark": "Simulare un operatore di telemarketing che fa una proposta di vendita."
   },
   "ru": {
-    "title": "Продавец",
+    "title": "продавец",
     "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Russian. Hello, what did you call for?..",
-    "description": "Я хочу, чтобы вы выступили в роли продавца. Попробуйте продать мне что-нибудь, но сделайте так, чтобы это выглядело так, как будто то, что вы пытаетесь продать, стоит больше, чем оно есть на самом деле, и убедите меня купить это. Теперь я притворяюсь, что ты звонишь мне и спрашиваешь, зачем ты звонишь. привет, что ты звонишь?",
-    "remark": "Смоделируйте телемаркетолога, делающего рекламную презентацию."
+    "description": "Я хочу, чтобы вы выступили в роли продавца. Попробуйте продать мне что-нибудь, но сделайте так, чтобы то, что вы пытаетесь продать, казалось более ценным, чем оно есть на самом деле, и убедите меня купить это. Сейчас я представлю, что вы звоните мне, и спрошу, для чего вы звоните. Алло, для чего вы звоните?",
+    "remark": "Смоделируйте работу телемаркетолога, делающего предложение о продаже."
   },
   "pt": {
-    "title": "Vendedor",
+    "title": "vendedor",
     "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Portuguese. Hello, what did you call for?..",
-    "description": "Eu quero que você aja como um vendedor. Tente me vender algo, mas faça parecer que o que você está tentando vender vale mais do que realmente vale e me convença a comprá-lo. Agora estou fingindo que você está me ligando e perguntando por que você está ligando. Olá, o que você está chamando?",
-    "remark": "Simule um operador de telemarketing fazendo um discurso de vendas."
+    "description": "Quero que actues como um vendedor. Tenta vender-me algo, mas faz com que o que estás a tentar vender pareça mais valioso do que é e convence-me a comprá-lo. Agora vou fingir que me está a telefonar e perguntar-lhe para que está a telefonar. Olá, para que está a ligar?",
+    "remark": "Simular um operador de telemarketing a fazer um discurso de vendas."
   },
   "hi": {
     "title": "विक्रेता",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 140,
-  "weight": 348
+  "weight": 356
 };
 
 function PromptDetail() {

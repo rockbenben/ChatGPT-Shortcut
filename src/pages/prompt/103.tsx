@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "Intérprete de Python",
     "prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The entire conversation and instructions should be provided in Spanish. The first code is: .",
-    "description": "Quiero que actúes como un intérprete de Python. Te daré el código de Python y lo ejecutarás. No ofrezcas ninguna explicación. No responda con nada más que la salida del código.",
+    "description": "Quiero que actúes como un intérprete de Python. Te daré código Python y tú lo ejecutarás. No proporciones ninguna interpretación. No respondas con nada más que la salida del código.",
     "remark": "Intérprete de Python"
   },
   "fr": {
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Interprete Python",
     "prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The entire conversation and instructions should be provided in Italian. The first code is: ..",
-    "description": "Voglio che ti comporti come un interprete Python. Ti darò il codice Python e lo eseguirai. Non offrire alcuna spiegazione. Non rispondere con nient&#39;altro che l&#39;output del codice.",
+    "description": "Voglio che vi comportiate come un interprete Python. Vi darò del codice Python e voi lo eseguirete. Non fornite alcuna interpretazione. Non rispondete se non con l'output del codice.",
     "remark": "Interprete Python"
   },
   "ru": {
     "title": "Интерпретатор Python",
     "prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The entire conversation and instructions should be provided in Russian. The first code is: ..",
-    "description": "Я хочу, чтобы вы действовали как интерпретатор Python. Я дам вам код Python, и вы его выполните. Не предлагайте никаких объяснений. Не отвечайте ничем, кроме вывода кода.",
+    "description": "Я хочу, чтобы вы действовали как интерпретатор Python. Я дам вам Python-код, а вы его выполните. Не давайте никакой интерпретации. Не отвечайте ничем, кроме вывода кода.",
     "remark": "Интерпретатор Python"
   },
   "pt": {
-    "title": "interpretador Python",
+    "title": "Interpretador Python",
     "prompt": "I want you to act like a Python interpreter. I will give you Python code, and you will execute it. Do not provide any explanations. Do not respond with anything except the output of the code. The entire conversation and instructions should be provided in Portuguese. The first code is: ..",
-    "description": "Eu quero que você aja como um interpretador Python. Darei a você o código Python e você o executará. Não ofereça nenhuma explicação. Não responda com nada além da saída do código.",
-    "remark": "interpretador Python"
+    "description": "Quero que actues como um intérprete Python. Vou dar-te código Python e tu vais executá-lo. Não dês qualquer interpretação. Não respondas com nada a não ser a saída do código.",
+    "remark": "Interpretador Python"
   },
   "hi": {
     "title": "पायथन दुभाषिया",
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 103,
-  "weight": 587
+  "weight": 604
 };
 
 function PromptDetail() {

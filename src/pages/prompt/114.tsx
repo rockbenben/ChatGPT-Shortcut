@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "generador de idiomas",
     "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que traduzcas las oraciones que escribí a un nuevo idioma. Yo escribo la oración y tú la expresas en este nuevo idioma. Solo quiero que lo expreses en un lenguaje nuevo. No quiero que responda con nada más que un lenguaje recién inventado. Cuando necesito decirte algo en inglés, lo envuelvo entre llaves, como {así}.",
-    "remark": "Reemplace el idioma que proporciona con el nuevo idioma creado por AI."
+    "description": "Quiero que traduzcas las frases que escribo a un nuevo idioma inventado. Yo escribo la frase y tú la expresas en esta nueva lengua inventada. Sólo quiero que la expreses en un lenguaje recién inventado. No quiero que respondas en otra lengua que no sea la recién codificada. Cuando tengo que decirte algo en inglés, lo escribo entre llaves, como {like this}.",
+    "remark": "Sustituye el idioma que le des por el recién creado por la IA."
   },
   "fr": {
     "title": "générateur de langue",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Ersetzen Sie die von Ihnen angegebene Sprache durch die neu erstellte Sprache der KI."
   },
   "it": {
-    "title": "generatore di lingue",
+    "title": "generatore di lingua",
     "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che tu traduca le frasi che ho scritto in una nuova lingua. Io scrivo la frase e tu la esprimi in questa nuova lingua. Voglio solo che tu lo esprima in un linguaggio nuovo. Non voglio che tu risponda con nient&#39;altro che un linguaggio appena inventato. Quando ho bisogno di dirti qualcosa in inglese, lo racchiudo tra parentesi graffe, come {così}.",
-    "remark": "Sostituisci la lingua che fornisci con la nuova lingua creata da AI."
+    "description": "Voglio che traduciate le frasi che scrivo in una nuova lingua inventata. Io scrivo la frase e tu la esprimi in questa nuova lingua inventata. Voglio solo che la esprimiate in una lingua inventata di recente. Non voglio che tu risponda in altro modo che non sia il nuovo linguaggio codificato. Quando devo dirvi qualcosa in inglese, lo racchiudo tra parentesi graffe, come {come questo}.",
+    "remark": "Sostituire la lingua fornita dall'utente con la nuova lingua creata dall'IA."
   },
   "ru": {
     "title": "генератор языка",
     "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы вы перевели предложения, которые я написал, на новый язык. Я пишу предложение, а вы выражаете его на этом новом языке. Я просто хочу, чтобы вы выразили это новым языком. Я не хочу, чтобы вы отвечали ничем, кроме новопридуманного языка. Когда мне нужно сказать вам что-то по-английски, я заключаю это в фигурные скобки, например {вот так}.",
-    "remark": "Замените язык, который вы даете, новым языком, созданным ИИ."
+    "description": "Я хочу, чтобы вы перевели предложения, которые я пишу, на новый выдуманный язык. Я пишу предложение, а вы выражаете его на этом новом выдуманном языке. Я просто хочу, чтобы вы выразили его на новом закодированном языке. Я не хочу, чтобы вы отвечали на что-то, кроме вновь закодированного языка. Когда мне нужно сказать вам что-то по-английски, я заключаю это в фигурные скобки, например {like this}.",
+    "remark": "Замените заданный вами язык на вновь созданный ИИ."
   },
   "pt": {
-    "title": "gerador de linguagem",
+    "title": "gerador de línguas",
     "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Quero que traduza as frases que escrevi para um novo idioma. Eu escrevo a frase e você a expressa neste novo idioma. Eu só quero que você expresse isso em uma linguagem recém-criada. Não quero que responda com nada além de uma linguagem inventada. Quando preciso dizer algo em inglês, coloco entre colchetes, como {assim}.",
-    "remark": "Substitua o idioma fornecido pelo novo idioma criado pela IA."
+    "description": "Quero que traduzas as frases que escrevo para uma nova língua inventada. Eu escrevo a frase e tu expressa-la nesta nova linguagem inventada. Só quero que a expresses numa língua inventada de novo. Não quero que respondas em nada que não seja a nova linguagem codificada. Quando preciso de te dizer algo em inglês, coloco-o entre parênteses rectos, como {assim}.",
+    "remark": "Substituir o idioma que deu pelo novo idioma criado pela IA."
   },
   "hi": {
     "title": "भाषा जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 114,
-  "weight": 133
+  "weight": 136
 };
 
 function PromptDetail() {

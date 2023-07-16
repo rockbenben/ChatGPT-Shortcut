@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "Generador de mensajes de confirmación",
     "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in Spanish. Do not write any explanations or other words, just reply with the commit message..",
-    "description": "Quiero que actúes como generador de confirmaciones. Le proporcionaré la información de la tarea y el prefijo del código de la tarea, y espero que pueda generar un mensaje de envío adecuado en el formato de envío normal. No escriba ninguna explicación u otro texto, solo responda al mensaje de confirmación.",
+    "description": "Quiero que actúes como generador de mensajes de envío. Le proporcionaré información sobre la tarea y un prefijo para el código de la tarea, y quiero que genere un mensaje de envío adecuado utilizando el formato de envío habitual. No escribas ninguna explicación u otro texto, sólo responde al mensaje de envío.",
     "remark": "Generador de mensajes de confirmación"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Commit Message Generator"
   },
   "it": {
-    "title": "Generatore di messaggi di commit",
+    "title": "Generatore di messaggi di impegno",
     "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in Italian. Do not write any explanations or other words, just reply with the commit message...",
-    "description": "Voglio che tu agisca come generatore di commit. Ti fornirò le informazioni sull&#39;attività e il prefisso del codice dell&#39;attività e spero che tu possa generare un messaggio di invio adeguato nel normale formato di invio. Non scrivere alcuna spiegazione o altro testo, rispondi semplicemente al messaggio di commit.",
-    "remark": "Generatore di messaggi di commit"
+    "description": "Voglio che tu agisca come generatore di messaggi di invio. Vi fornirò informazioni sull'incarico e un prefisso per il codice dell'incarico, e voglio che generiate un messaggio di invio appropriato usando il normale formato di invio. Non scrivete spiegazioni o altro testo, rispondete solo al messaggio di invio.",
+    "remark": "Generatore di messaggi di impegno"
   },
   "ru": {
-    "title": "Генератор коммит-сообщений",
+    "title": "Генератор сообщений о фиксации",
     "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in Russian. Do not write any explanations or other words, just reply with the commit message...",
-    "description": "Я хочу, чтобы вы выступили в роли генератора коммитов. Я предоставлю вам информацию о задаче и префикс кода задачи, и я надеюсь, что вы сможете сгенерировать подходящее сообщение о представлении в обычном формате представления. Не пишите никаких объяснений или другого текста, просто ответьте на сообщение коммита.",
-    "remark": "Генератор сообщений фиксации"
+    "description": "Я хочу, чтобы вы выступили в роли генератора сообщений для отправки. Я предоставлю вам информацию о задаче и префикс для кода задачи, а вы должны будете сгенерировать соответствующее сообщение, используя обычный формат отправки. Не пишите никаких пояснений или других текстов, просто ответьте на сообщение.",
+    "remark": "Генератор сообщений о фиксации"
   },
   "pt": {
-    "title": "Gerador de mensagem de confirmação",
+    "title": "Gerador de mensagens de autorização",
     "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in Portuguese. Do not write any explanations or other words, just reply with the commit message...",
-    "description": "Eu quero que você atue como um gerador de confirmação. Fornecerei a você as informações da tarefa e o prefixo do código da tarefa e espero que você possa gerar uma mensagem de envio adequada no formato de envio normal. Não escreva nenhuma explicação ou outro texto, apenas responda à mensagem de confirmação.",
-    "remark": "Gerador de Mensagem de Confirmação"
+    "description": "Pretendo que actue como um gerador de mensagens de envio. Vou fornecer-lhe informações sobre a tarefa e um prefixo para o código da tarefa e quero que gere uma mensagem de envio adequada utilizando o formato de envio normal. Não escreva explicações ou outro texto, responda apenas à mensagem de envio.",
+    "remark": "Gerador de mensagens de autorização"
   },
   "hi": {
     "title": "प्रतिबद्ध संदेश जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 100,
-  "weight": 217
+  "weight": 228
 };
 
 function PromptDetail() {

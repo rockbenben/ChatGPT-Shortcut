@@ -26,10 +26,10 @@ const prompt = {
     "remark": "다양한 관점으로 생각할 수 있는 기회를 제공합니다. Jiuwen624 의 기여. (현재 6 명의 관점은 크게 다르지 않은 것으로 보이며 계속 개선이 필요합니다.)"
   },
   "es": {
-    "title": "grupo de expertos",
+    "title": "repositorio",
     "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Spanish. My first situation is....",
-    "description": "Usted es mi grupo de expertos y hay 6 directores diferentes como entrenadores en el grupo, a saber, Jobs, Elon Musk, Jack Ma, Plato, Vidal y Master Huineng. Todos tienen sus propias personalidades, visiones del mundo y valores, y tienen diferentes puntos de vista, sugerencias y opiniones sobre los temas. Expondré mi situación y mi decisión aquí. Primero, use estas 6 identidades para examinar mi toma de decisiones desde sus perspectivas y dar sus críticas y sugerencias. Mi primera situación es [? ]",
-    "remark": "Proporcionarle una variedad de diferentes ángulos de pensamiento. Contribución de @jiuwen624. (No hay una gran diferencia en las opiniones de las 6 personas actuales, y debe mejorarse)."
+    "description": "Sois mi Think Tank, que cuenta con 6 directores diferentes como coaches, a saber, Steve Jobs, Elon Musk, Jack Ma, Platón, Vidali y el Maestro Huineng. Todos ellos tienen sus propias personalidades, visiones del mundo y valores, y tienen diferentes puntos de vista, sugerencias y opiniones sobre los temas. Aquí expondré mi situación y mi toma de decisiones. Tomando cada una de estas 6 identidades, primero examinaré mi toma de decisiones desde sus perspectivas y daré sus críticas y sugerencias. Mi primera situación es [...].",
+    "remark": "Te da muchas perspectivas diferentes en las que pensar. Contribuciones de @jiuwen624. (Las perspectivas de las 6 personas actuales no parecen ser muy diferentes, y deben mejorarse)."
   },
   "fr": {
     "title": "dépôt",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Gibt Ihnen viele verschiedene Perspektiven zum Nachdenken. Beiträge von @jiuwen624. (Die Perspektiven der derzeitigen 6 Personen scheinen nicht sehr unterschiedlich zu sein und müssen verbessert werden)."
   },
   "it": {
-    "title": "think tank",
+    "title": "deposito",
     "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Italian. My first situation is.....",
-    "description": "Sei il mio think tank e ci sono 6 diversi direttori come coach nel gruppo, vale a dire Jobs, Elon Musk, Jack Ma, Plato, Vidal e Master Huineng. Hanno tutti le proprie personalità, visioni del mondo e valori e hanno punti di vista, suggerimenti e opinioni diversi sui problemi. Dichiarerò qui la mia situazione e la mia decisione. Innanzitutto, usa queste 6 identità per esaminare il mio processo decisionale dal loro punto di vista e dare le loro critiche e suggerimenti.La mia prima situazione è [? ]",
-    "remark": "Fornire una varietà di diversi angoli di pensiero. Contributo di @jiuwen624. (Non c&#39;è una grande differenza nelle opinioni delle attuali 6 persone e deve essere migliorata.)"
+    "description": "Voi siete il mio Think Tank, che ha come coach 6 diversi direttori, ovvero Steve Jobs, Elon Musk, Jack Ma, Platone, Vidali e il Maestro Huineng. Ognuno di loro ha la propria personalità, la propria visione del mondo e i propri valori e ha punti di vista, suggerimenti e opinioni diverse sulle questioni. Esporrò qui la mia situazione e il mio processo decisionale. Prendendo ognuna di queste 6 identità, esaminerò innanzitutto il mio processo decisionale dalle loro prospettive e fornirò le loro critiche e i loro suggerimenti. La mia prima situazione è [?]",
+    "remark": "Offre molte prospettive diverse su cui riflettere. Contributi di @jiuwen624. (Le attuali 6 prospettive non sembrano essere molto diverse e devono essere migliorate)."
   },
   "ru": {
-    "title": "аналитический центр",
+    "title": "репозиторий",
     "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Russian. My first situation is.....",
-    "description": "Вы мой мозговой центр, и в группе есть 6 разных режиссеров, а именно Джобс, Илон Маск, Джек Ма, Платон, Видаль и Мастер Хейнэн. Все они имеют свои личности, мировоззрения и ценности, и у них разные взгляды, предложения и мнения по вопросам. Я изложу свою ситуацию и свое решение здесь. Во-первых, используйте эти 6 личностей, чтобы изучить мое принятие решений с их точки зрения, и высказать их критику и предложения.Моя первая ситуация [? ]",
-    "remark": "Предоставить вам различные точки зрения. Вклад от @jiuwen624. (Большой разницы во взглядах нынешних 6 человек нет, и ее нужно улучшить.)"
+    "description": "Вы - мой \"мозговой центр\", тренерами которого являются 6 разных директоров: Стив Джобс, Элон Маск, Джек Ма, Платон, Видали и Мастер Хуинэн. Все они обладают собственными личностными качествами, мировоззрением и ценностями, у них разные взгляды, предложения и мнения по тем или иным вопросам. Здесь я изложу свою ситуацию и свои решения. Взяв каждую из этих 6 личностей, я сначала рассмотрю свое решение с их точки зрения и выскажу их критические замечания и предложения. Первая ситуация - [?]",
+    "remark": "Дает возможность поразмыслить над множеством различных точек зрения. Вклад @jiuwen624. (Текущие точки зрения 6 человек не очень отличаются друг от друга и нуждаются в доработке)."
   },
   "pt": {
-    "title": "think tank",
+    "title": "repositório",
     "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Portuguese. My first situation is.....",
-    "description": "Você é meu think tank, e há 6 diretores diferentes como treinadores no grupo, ou seja, Jobs, Elon Musk, Jack Ma, Plato, Vidal e Master Huineng. Todos eles têm suas próprias personalidades, visões de mundo e valores, e têm diferentes pontos de vista, sugestões e opiniões sobre os problemas. Vou expor minha situação e minha decisão aqui. Primeiro, use essas 6 identidades para examinar minha tomada de decisão de suas perspectivas e dê suas críticas e sugestões. Minha primeira situação é [? ]",
-    "remark": "Fornecê-lo com uma variedade de diferentes ângulos de pensamento. Contribuição de @jiuwen624. (Não há grande diferença nas opiniões das 6 pessoas atuais e isso precisa ser melhorado.)"
+    "description": "Vocês são o meu Think Tank, que tem 6 directores diferentes como treinadores, nomeadamente Steve Jobs, Elon Musk, Jack Ma, Plato, Vidali e Mestre Huineng. Todos eles têm as suas próprias personalidades, visões do mundo e valores, e têm diferentes pontos de vista, sugestões e opiniões sobre as questões. Vou expor aqui a minha situação e a minha tomada de decisão. Tomando cada uma destas 6 identidades, começarei por analisar a minha tomada de decisão a partir das suas perspectivas e apresentarei as suas críticas e sugestões. A minha primeira situação é [?]",
+    "remark": "Dá-nos muitas perspectivas diferentes para pensar. Contribuições de @jiuwen624. (As actuais perspectivas das 6 pessoas não parecem ser muito diferentes e precisam de ser melhoradas)."
   },
   "hi": {
     "title": "प्रबुद्ध मंडल",
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 196,
-  "weight": 4454
+  "weight": 4540
 };
 
 function PromptDetail() {

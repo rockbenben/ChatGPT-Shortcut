@@ -26,10 +26,10 @@ const prompt = {
     "remark": "매우 예민한 사람이거나 말을 자주 오해하는 경우, AI 통역을 통해 말하기 전에 명확하게 표현했는지 확인할 수 있습니다."
   },
   "es": {
-    "title": "autoexamen exprés",
+    "title": "Autocomprobación de expresiones",
     "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Spanish. How might the other person interpret my meaning?.",
-    "description": "[Una cosa específica], dije: [Contenido de la respuesta]. ¿Puedo preguntar cómo la otra parte podría entender lo que quiero decir? ¿Hay alguna otra forma mejor de expresarlo?",
-    "remark": "Si usted es un grupo muy sensible, o sus palabras a menudo se malinterpretan, la interpretación de IA puede permitirle verificar si se expresa con claridad antes de hablar."
+    "description": "[una cosa concreta], yo digo: [contenido de la respuesta]. ¿Puedo preguntar cómo puede interpretar la otra persona lo que quiero decir? ¿Hay otra forma mejor de expresarlo?",
+    "remark": "Si eres hipersensible o tus palabras se malinterpretan a menudo, la descodificación de IA te permite comprobar que te has expresado con claridad antes de hablar."
   },
   "fr": {
     "title": "Autocontrôle de l'expression",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Wenn Sie überempfindlich sind oder Ihre Worte oft missverstanden werden, können Sie mit der KI-Dekodierung überprüfen, ob Sie sich klar ausgedrückt haben, bevor Sie sprechen."
   },
   "it": {
-    "title": "autotest espresso",
+    "title": "Autoverifica dell'espressione",
     "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Italian. How might the other person interpret my meaning?..",
-    "description": "[Una cosa specifica], ho detto: [Contenuto della risposta]. Posso chiedere come l&#39;altra parte potrebbe capire cosa intendo? C&#39;è un altro modo migliore per esprimerlo?",
-    "remark": "Se sei un gruppo molto sensibile o le tue parole sono spesso fraintese, l&#39;interpretazione AI può permetterti di verificare se ti esprimi chiaramente prima di parlare."
+    "description": "[una cosa specifica], dico: [contenuto della risposta]. Posso chiedere come l'altra persona potrebbe interpretare ciò che voglio dire? C'è un altro modo migliore per esprimerlo?",
+    "remark": "Se siete ipersensibili o le vostre parole vengono spesso fraintese, la decodifica AI vi permette di verificare che vi siate espressi chiaramente prima di parlare."
   },
   "ru": {
-    "title": "экспресс самопроверка",
+    "title": "Самопроверка экспрессии",
     "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Russian. How might the other person interpret my meaning?..",
-    "description": "[Конкретная вещь], я сказал: [Содержание ответа]. Могу я спросить, как другая сторона может понять, что я имею в виду? Есть ли другой лучший способ выразить это?",
-    "remark": "Если вы относитесь к очень чувствительной группе или ваши слова часто неправильно понимают, интерпретация ИИ может позволить вам проверить, ясно ли вы выражаете свои мысли, прежде чем говорить."
+    "description": "[конкретная вещь], я говорю: [содержание ответа]. Могу ли я спросить, как другой человек может интерпретировать то, что я имею в виду? Есть ли другой лучший способ выразить это?",
+    "remark": "Если у вас повышенная чувствительность или ваши слова часто понимают неправильно, декодирование с помощью искусственного интеллекта позволит вам проверить, насколько ясно вы выразили свои мысли, прежде чем говорить."
   },
   "pt": {
-    "title": "autoteste expresso",
+    "title": "Auto-verificação da expressão",
     "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Portuguese. How might the other person interpret my meaning?..",
-    "description": "[Uma coisa específica], eu disse: [Conteúdo da resposta]. Posso perguntar como a outra parte pode entender o que quero dizer? Existe alguma outra maneira melhor de expressar isso?",
-    "remark": "Se você é um grupo altamente sensível ou suas palavras são frequentemente mal interpretadas, a interpretação de IA pode permitir que você verifique se você se expressa claramente antes de falar."
+    "description": "[uma coisa específica], eu digo: [conteúdo da resposta]. Posso perguntar como é que a outra pessoa pode interpretar o que quero dizer? Há outra forma melhor de o expressar?",
+    "remark": "Se for hipersensível ou se as suas palavras forem frequentemente mal interpretadas, a descodificação da IA permite-lhe verificar se se exprimiu claramente antes de falar."
   },
   "hi": {
     "title": "आत्म-परीक्षण व्यक्त करें",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 208,
-  "weight": 230
+  "weight": 236
 };
 
 function PromptDetail() {

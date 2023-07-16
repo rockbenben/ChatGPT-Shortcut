@@ -26,10 +26,10 @@ const prompt = {
     "remark": "SQL 관련 질문에 답하거나 표준 SQL 문을 출력하세요. lovedworking 의 기여."
   },
   "es": {
-    "title": "experto en bases de datos",
+    "title": "Especialistas en bases de datos",
     "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Spanish. If my descriptions are not accurate enough, please provide appropriate feedback.",
-    "description": "Espero que actúe como un experto en bases de datos. Cuando le haga preguntas relacionadas con sql, necesito que las convierta en declaraciones estándar de sql. Cuando mi descripción no sea lo suficientemente precisa, por favor envíe los comentarios apropiados.",
-    "remark": "Responda preguntas relacionadas con SQL o genere declaraciones SQL estándar. Contribución de @lovedworking."
+    "description": "Quiero que actúes como un experto en bases de datos, cuando te haga preguntas relacionadas con sql necesito que las conviertas en sentencias sql estándar y me des la respuesta adecuada cuando mis descripciones no sean lo suficientemente precisas.",
+    "remark": "Responde a preguntas relacionadas con SQL o genera sentencias SQL estándar. Contribución de @lovedworking."
   },
   "fr": {
     "title": "Spécialistes des bases de données",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beantwortet SQL-bezogene Fragen oder gibt Standard-SQL-Anweisungen aus. Beitrag von @lovedworking."
   },
   "it": {
-    "title": "esperto di banche dati",
+    "title": "Specialisti di database",
     "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Italian. If my descriptions are not accurate enough, please provide appropriate feedback..",
-    "description": "Spero che agirai come un esperto di database.Quando ti pongo domande relative a sql, ho bisogno che tu le converta in istruzioni sql standard.Quando la mia descrizione non è abbastanza precisa, ti preghiamo di fornire un feedback appropriato",
-    "remark": "Rispondi a domande relative a SQL o emetti istruzioni SQL standard. Contributo di @lovedworking."
+    "description": "Voglio che tu agisca come un esperto di database, quando ti faccio domande relative a sql ho bisogno che tu converta in dichiarazioni sql standard e mi dia un feedback appropriato quando le mie descrizioni non sono abbastanza precise!",
+    "remark": "Risponde a domande relative all'SQL o produce istruzioni SQL standard. Contributo di @lovedworking."
   },
   "ru": {
-    "title": "эксперт по базам данных",
+    "title": "Специалисты по базам данных",
     "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Russian. If my descriptions are not accurate enough, please provide appropriate feedback..",
-    "description": "Я надеюсь, что вы будете выступать в роли эксперта по базам данных. Когда я буду задавать вам вопросы, связанные с sql, мне нужно, чтобы вы преобразовывали их в стандартные операторы sql. Если мое описание недостаточно точное, пожалуйста, дайте соответствующий ответ",
-    "remark": "Отвечайте на вопросы, связанные с SQL, или выводите стандартные операторы SQL. Вклад от @lovedworking."
+    "description": "Я хочу, чтобы вы выступали в роли эксперта по базам данных, когда я задаю вам вопросы, связанные с sql, мне нужно, чтобы вы преобразовывали их в стандартные sql-выражения и давали мне соответствующую обратную связь, когда мои описания недостаточно точны!",
+    "remark": "Отвечает на вопросы, связанные с SQL, или выводит стандартные SQL-запросы. Вклад от @lovedworking."
   },
   "pt": {
-    "title": "especialista em banco de dados",
+    "title": "Especialistas em bases de dados",
     "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Portuguese. If my descriptions are not accurate enough, please provide appropriate feedback..",
-    "description": "Espero que você aja como um especialista em banco de dados. Quando eu fizer perguntas relacionadas a sql, preciso que você as converta em instruções sql padrão. Quando minha descrição não for precisa o suficiente, forneça um feedback apropriado",
-    "remark": "Responda a perguntas relacionadas a SQL ou gere instruções SQL padrão. Contribuição de @lovedworking."
+    "description": "Quero que actue como um perito em bases de dados. Quando lhe faço perguntas relacionadas com sql, preciso que converta para instruções sql padrão e que me dê feedback adequado quando as minhas descrições não forem suficientemente precisas!",
+    "remark": "Responde a questões relacionadas com SQL, ou produz instruções SQL padrão. Contribuição de @lovedworking."
   },
   "hi": {
     "title": "डेटाबेस विशेषज्ञ",
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 191,
-  "weight": 1050
+  "weight": 1072
 };
 
 function PromptDetail() {

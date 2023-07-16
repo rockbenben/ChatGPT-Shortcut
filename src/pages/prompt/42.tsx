@@ -26,10 +26,10 @@ const prompt = {
     "remark": "관계 개선 방법 등 생활/업무에 대한 조언과 팁을 제공합니다."
   },
   "es": {
-    "title": "Enciclopedia de autoayuda de la vida.",
+    "title": "Autoayuda Enciclopedia de la vida",
     "prompt": "I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Espero que puedas como un libro de autoayuda. Me brindará consejos y sugerencias sobre cómo mejorar ciertas áreas de mi vida, como las relaciones, el desarrollo profesional o la planificación financiera. Por ejemplo, si estoy luchando con mi relación con mi pareja, puede sugerir habilidades de comunicación útiles que acercarán nuestra relación.",
-    "remark": "Consejos y sugerencias para tu vida/trabajo, como cómo mejorar tus relaciones."
+    "description": "Quiero que me sirva de libro de autoayuda. Me proporcionará consejos y sugerencias sobre cómo mejorar determinadas áreas de mi vida, como las relaciones, el desarrollo profesional o la planificación financiera. Por ejemplo, si tengo problemas en la relación con mi pareja, podrías sugerirme técnicas de comunicación útiles para acercarnos más.",
+    "remark": "Consejos y sugerencias para su vida/trabajo, por ejemplo, cómo mejorar las relaciones."
   },
   "fr": {
     "title": "Encyclopédie de la vie",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Enciclopedia di auto-aiuto della vita",
     "prompt": "I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Spero che tu possa farlo come libro di auto-aiuto. Mi fornirai consigli e suggerimenti su come migliorare alcune aree della mia vita come le relazioni, lo sviluppo della carriera o la pianificazione finanziaria. Ad esempio, se sto lottando con la mia relazione con il mio altro significativo, puoi suggerire utili abilità comunicative che avvicineranno la nostra relazione.",
-    "remark": "Consigli e suggerimenti per la tua vita/lavoro, ad esempio come migliorare le tue relazioni."
+    "description": "Voglio che lei sia un libro di auto-aiuto. Mi fornirete consigli e suggerimenti su come migliorare alcune aree della mia vita, come le relazioni, lo sviluppo della carriera o la pianificazione finanziaria. Per esempio, se ho difficoltà nel rapporto con la mia dolce metà, potreste suggerirmi tecniche di comunicazione utili per avvicinarci.",
+    "remark": "Consigli e suggerimenti per la vita/il lavoro, ad esempio per migliorare le relazioni."
   },
   "ru": {
-    "title": "Жизненная энциклопедия самопомощи",
+    "title": "Самопомощь Энциклопедия жизни",
     "prompt": "I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я надеюсь, что вы можете в качестве книги самопомощи. Вы дадите мне советы и подсказки о том, как улучшить определенные области моей жизни, такие как отношения, развитие карьеры или финансовое планирование. Например, если я борюсь с моими отношениями с моей второй половинкой, вы можете предложить полезные навыки общения, которые сделают наши отношения ближе.",
-    "remark": "Советы и подсказки для вашей жизни/работы, например, как улучшить ваши отношения."
+    "description": "Я хочу, чтобы вы послужили мне книгой самопомощи. Вы дадите мне советы и рекомендации по улучшению определенных сфер моей жизни, таких как взаимоотношения, карьерный рост или финансовое планирование. Например, если я испытываю трудности в отношениях со своим вторым половинкой, вы могли бы предложить мне полезные приемы общения, которые помогут нам стать ближе друг к другу.",
+    "remark": "Советы и рекомендации для вашей жизни/работы, например, как улучшить отношения."
   },
   "pt": {
-    "title": "Enciclopédia de autoajuda para a vida",
+    "title": "Enciclopédia de autoajuda da vida",
     "prompt": "I want you to act as a self-help book. You will provide me advice and tips on how to improve certain areas of my life, such as relationships, career development or financial planning. For example, if I am struggling in my relationship with a significant other, you could suggest helpful communication techniques that can bring us closer together. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Espero que você possa como um livro de auto-ajuda. Você me fornecerá conselhos e dicas sobre como melhorar certas áreas da minha vida, como relacionamentos, desenvolvimento de carreira ou planejamento financeiro. Por exemplo, se estou lutando com meu relacionamento com meu outro significativo, você pode sugerir habilidades de comunicação úteis que aproximarão nosso relacionamento.",
-    "remark": "Conselhos e dicas para sua vida/trabalho, como melhorar seus relacionamentos."
+    "description": "Quero que sirva como um livro de autoajuda. Dar-me-á conselhos e dicas sobre como melhorar determinadas áreas da minha vida, como as relações, o desenvolvimento da carreira ou o planeamento financeiro. Por exemplo, se eu estiver a ter dificuldades na minha relação com a minha cara-metade, pode sugerir técnicas de comunicação úteis para nos aproximar.",
+    "remark": "Conselhos e dicas para a sua vida/trabalho, por exemplo, como melhorar as relações."
   },
   "hi": {
     "title": "जीवन स्व-सहायता विश्वकोश",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 42,
-  "weight": 582
+  "weight": 595
 };
 
 function PromptDetail() {

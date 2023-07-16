@@ -26,10 +26,10 @@ const prompt = {
     "remark": "사용자가 특정 주제에 대해 어떤 관심을 갖고 있는지 파악하거나 기사를 구성하는 데 사용할 수 있으며, '인기 키워드' '인기 주제' '인기 브랜드' '인기 웹사이트' 등으로 변경할 수도 있습니다."
   },
   "es": {
-    "title": "Palabra clave popular relacionada",
+    "title": "Palabra clave Popular Related",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users]..",
-    "description": "Genere una lista de las 10 preguntas principales relacionadas con [Palabra clave], relacionadas con [Audiencia] y respondidas en chino.",
-    "remark": "Se puede usar para comprender el enfoque del usuario en un tema específico o para organizar la estructura del artículo, y también se puede cambiar a &quot;palabras clave de actualidad&quot;, &quot;temas de actualidad&quot;, &quot;marcas de actualidad&quot;, &quot;sitios web de actualidad&quot;, etc. ."
+    "description": "Genere una lista de 10 preguntas populares relacionadas con [palabra clave] que sean relevantes para [audiencia] y con respuesta en chino.",
+    "remark": "Puede utilizarse para comprender la atención que prestan los usuarios a temas específicos, o para organizar la estructura del artículo, y puede cambiarse por \"Palabras clave candentes\", \"Temas candentes\", \"Marcas candentes\", \"Sitios web candentes\", etc."
   },
   "fr": {
     "title": "Mot-clé Populaire Lié",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Es kann verwendet werden, um den Fokus der Nutzer auf bestimmte Themen zu verstehen oder um die Struktur des Artikels zu organisieren, und kann in \"Hot Keywords\", \"Hot Topics\", \"Hot Brands\", \"Hot Websites\" usw. geändert werden."
   },
   "it": {
-    "title": "Parola chiave popolare correlata",
+    "title": "Parola chiave Popolare correlata",
     "prompt": "The entire conversation and instructions should be provided in Italian. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users]...",
-    "description": "Genera un elenco delle 10 domande principali relative a [Parola chiave], relative a [Pubblico] e con risposta in cinese.",
-    "remark": "Può essere utilizzato per comprendere l&#39;attenzione dell&#39;utente su un argomento specifico o per organizzare la struttura dell&#39;articolo e può anche essere modificato in &quot;parole chiave calde&quot;, &quot;argomenti caldi&quot;, &quot;marchi caldi&quot;, &quot;siti Web caldi&quot;, ecc. ."
+    "description": "Generare un elenco di 10 domande popolari relative a [parola chiave], rilevanti per [pubblico] e con risposta in cinese.",
+    "remark": "Può essere utilizzato per capire l'attenzione degli utenti su argomenti specifici o per organizzare la struttura dell'articolo e può essere modificato in \"Hot Keywords\", \"Hot Topics\", \"Hot Brands\", \"Hot Websites\" e così via."
   },
   "ru": {
-    "title": "Ключевое слово популярное по теме",
+    "title": "Ключевое слово Популярное связанное",
     "prompt": "The entire conversation and instructions should be provided in Russian. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users]...",
-    "description": "Составьте список из 10 самых популярных вопросов, связанных с [Ключевым словом], относящихся к [Аудитории], и ответы на них на китайском языке.",
-    "remark": "Его можно использовать для понимания сосредоточенности пользователя на определенной теме или для организации структуры статьи, а также можно изменить на «горячие ключевые слова», «горячие темы», «горячие бренды», «горячие веб-сайты» и т. д. ."
+    "description": "Сформировать список из 10 популярных вопросов, связанных с [ключевым словом], релевантных для [аудитории] и имеющих ответы на китайском языке.",
+    "remark": "Она может быть использована для понимания того, насколько пользователи сосредоточены на определенных темах, или для организации структуры статьи, и может быть изменена на \"Горячие ключевые слова\", \"Горячие темы\", \"Горячие бренды\", \"Горячие сайты\" и т.д."
   },
   "pt": {
-    "title": "Palavra-chave popular relacionada",
+    "title": "Palavra-chave Popular Relacionado",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users]...",
-    "description": "Gere uma lista das 10 principais perguntas relacionadas a [Palavra-chave], relacionadas a [Público] e respondidas em chinês.",
-    "remark": "Pode ser usado para entender o foco do usuário em um tópico específico, ou para organizar a estrutura do artigo, e também pode ser alterado para &quot;hot keywords&quot;, &quot;hot topics&quot;, &quot;hot brand&quot;, &quot;hot websites&quot;, etc ."
+    "description": "Gerar uma lista de 10 perguntas populares relacionadas com [palavra-chave] que sejam relevantes para [público] e respondidas em chinês.",
+    "remark": "Pode ser utilizado para compreender o foco dos utilizadores em tópicos específicos ou para organizar a estrutura do artigo e pode ser alterado para \"Hot Keywords\", \"Hot Topics\", \"Hot Brands\", \"Hot Websites\", etc."
   },
   "hi": {
     "title": "कीवर्ड लोकप्रिय संबंधित",
@@ -84,7 +84,7 @@ const prompt = {
     "seo"
   ],
   "id": 40,
-  "weight": 730
+  "weight": 745
 };
 
 function PromptDetail() {

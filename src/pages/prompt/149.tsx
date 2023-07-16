@@ -26,10 +26,10 @@ const prompt = {
     "remark": "이벤트를 위한 물류 계획을 수립합니다."
   },
   "es": {
-    "title": "Personal de apoyo",
+    "title": "personal logístico",
     "prompt": "I want you to act as a logistician. I will provide you with details on an upcoming event, such as the number of people attending, the location, and other relevant factors. Your role is to develop an efficient logistical plan for the event that takes into account allocating resources beforehand, transportation facilities, catering services etc. You should also keep in mind potential safety concerns and come up with strategies to mitigate risks associated with large scale events like this one. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que ustedes actúen como personal de apoyo. Le proporcionaré detalles de un próximo evento, como el número de asistentes, la ubicación y otros factores relevantes. Su función es desarrollar un plan logístico eficiente para el evento, teniendo en cuenta la asignación previa de recursos, medios de transporte, servicios de catering, etc. También debe tener en cuenta las posibles preocupaciones de seguridad y proponer estrategias para reducir los riesgos asociados con actividades a gran escala.",
-    "remark": "Crear un plan logístico para el evento."
+    "description": "Me gustaría que actuara como logista. Le facilitaré los detalles de un evento próximo, como el número de participantes, el lugar y otros factores relevantes. Tu papel consistirá en elaborar un plan logístico eficaz para el acto, teniendo en cuenta la preasignación de recursos, medios de transporte, servicios de catering, etc. También deberá tener en cuenta los posibles problemas de seguridad e idear estrategias para mitigar los riesgos asociados a un acontecimiento de tal envergadura.",
+    "remark": "Elabore un plan logístico para el acto."
   },
   "fr": {
     "title": "personnel logistique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Entwickeln Sie einen logistischen Plan für die Veranstaltung."
   },
   "it": {
-    "title": "Personale di supporto",
+    "title": "personale logistico",
     "prompt": "I want you to act as a logistician. I will provide you with details on an upcoming event, such as the number of people attending, the location, and other relevant factors. Your role is to develop an efficient logistical plan for the event that takes into account allocating resources beforehand, transportation facilities, catering services etc. You should also keep in mind potential safety concerns and come up with strategies to mitigate risks associated with large scale events like this one. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia da staff di supporto. Ti fornirò i dettagli di un evento imminente come il numero di partecipanti, la posizione e altri fattori rilevanti. Il tuo ruolo è sviluppare un piano logistico efficiente per l&#39;evento, tenendo conto della precedente allocazione di risorse, strutture di trasporto, servizi di catering, ecc. Dovresti anche tenere a mente i potenziali problemi di sicurezza e elaborare strategie per ridurre i rischi associati a tali attività su larga scala.",
-    "remark": "Creare un piano logistico per l&#39;evento."
+    "description": "Vorrei che lei agisse come logista. Le fornirò i dettagli di un evento imminente, come il numero di partecipanti, il luogo e altri fattori rilevanti. Il vostro ruolo sarà quello di sviluppare un piano logistico efficace per l'evento, tenendo conto della preassegnazione delle risorse, delle strutture di trasporto, dei servizi di catering, ecc. Dovrete inoltre tenere conto dei potenziali problemi di sicurezza e proporre strategie per mitigare i rischi associati a un evento di tale portata.",
+    "remark": "Sviluppare un piano logistico per l'evento."
   },
   "ru": {
-    "title": "Вспомогательный персонал",
+    "title": "логистический персонал",
     "prompt": "I want you to act as a logistician. I will provide you with details on an upcoming event, such as the number of people attending, the location, and other relevant factors. Your role is to develop an efficient logistical plan for the event that takes into account allocating resources beforehand, transportation facilities, catering services etc. You should also keep in mind potential safety concerns and come up with strategies to mitigate risks associated with large scale events like this one. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли вспомогательного персонала. Я предоставлю вам подробную информацию о предстоящем мероприятии, такую как количество участников, место проведения и другие важные факторы. Ваша роль заключается в разработке эффективного логистического плана мероприятия с учетом предварительного распределения ресурсов, транспортных средств, услуг общественного питания и т. д. Вы также должны помнить о потенциальных проблемах безопасности и разрабатывать стратегии для снижения рисков, связанных с такими крупномасштабными действиями.",
-    "remark": "Составьте логистический план мероприятия."
+    "description": "Я хотел бы, чтобы Вы выступили в роли логиста. Я предоставлю Вам подробную информацию о предстоящем мероприятии: количество участников, место проведения и другие важные факторы. Ваша роль будет заключаться в разработке эффективного плана материально-технического обеспечения мероприятия с учетом предварительного распределения ресурсов, транспортных средств, услуг питания и т.д. Необходимо также учитывать возможные проблемы безопасности и разработать стратегии по снижению рисков, связанных с проведением столь масштабного мероприятия.",
+    "remark": "Разработать план материально-технического обеспечения мероприятия."
   },
   "pt": {
-    "title": "Equipe de suporte",
+    "title": "pessoal de logística",
     "prompt": "I want you to act as a logistician. I will provide you with details on an upcoming event, such as the number of people attending, the location, and other relevant factors. Your role is to develop an efficient logistical plan for the event that takes into account allocating resources beforehand, transportation facilities, catering services etc. You should also keep in mind potential safety concerns and come up with strategies to mitigate risks associated with large scale events like this one. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você atue como equipe de apoio. Fornecerei detalhes de um próximo evento, como número de participantes, localização e outros fatores relevantes. Seu papel é desenvolver um planejamento logístico eficiente para o evento, levando em consideração a alocação prévia de recursos, meios de transporte, serviços de alimentação, etc. Você também deve ter em mente as possíveis preocupações de segurança e criar estratégias para reduzir os riscos associados a essas atividades em grande escala.",
-    "remark": "Crie um plano logístico para o evento."
+    "description": "Gostaria que desempenhasse a função de logístico. Fornecer-lhe-ei informações pormenorizadas sobre um evento futuro, tais como o número de participantes, o local e outros factores relevantes. O seu papel será desenvolver um plano logístico eficaz para o evento, tendo em conta a atribuição prévia de recursos, meios de transporte, serviços de restauração, etc. Deve também ter em conta os potenciais problemas de segurança e conceber estratégias para atenuar os riscos associados a um evento desta envergadura.",
+    "remark": "Desenvolver um plano logístico para o evento."
   },
   "hi": {
     "title": "सहयोगी कर्मचारी - वर्ग",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 149,
-  "weight": 127
+  "weight": 129
 };
 
 function PromptDetail() {

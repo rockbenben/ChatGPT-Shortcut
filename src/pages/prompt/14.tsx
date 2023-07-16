@@ -26,10 +26,10 @@ const prompt = {
     "remark": "특정 주제를 바탕으로 유머러스한 스탠드업 코미디를 연출하고, 일상 속 요소를 접목해 관객의 공감대를 높일 수 있도록 노력하세요."
   },
   "es": {
-    "title": "programa de entrevistas",
+    "title": "talk show (préstamo)",
     "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un comediante. Te proporcionaré temas relacionados con la actualidad a partir de los cuales utilizarás tu ingenio, creatividad y habilidades de observación para crear una rutina. También debe asegurarse de incorporar anécdotas o experiencias personales en el programa para que sea más identificable y atractivo para el espectador. Mi primera solicitud es &#39;tema de programa de entrevistas&#39;",
-    "remark": "Para un tema determinado, produzca un programa de entrevistas humorístico basado en este tema e intente incorporar elementos de la vida diaria para mejorar el sentido de resonancia de la audiencia."
+    "description": "Me gustaría que hicieras de cómico. Le proporcionaré una serie de temas relacionados con la actualidad y usted utilizará su ingenio, creatividad y capacidad de observación para crear un número basado en esos temas. También deberás asegurarte de incorporar al programa anécdotas o experiencias personales para hacerlo más cercano y atractivo para el público. Mi primer requisito es \"temas de talk show",
+    "remark": "Para un tema concreto, elabora comedias humorísticas basadas en ese tema e intenta incorporar elementos de la vida cotidiana para aumentar el sentimiento de empatía con el público."
   },
   "fr": {
     "title": "talk show (mot emprunté)",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie zu einem bestimmten Thema eine humorvolle Stand-up-Comedy ab, die auf diesem Thema basiert, und versuchen Sie, Elemente aus dem täglichen Leben einzubeziehen, um das Einfühlungsvermögen des Publikums zu steigern."
   },
   "it": {
-    "title": "talk show",
+    "title": "talk show (parola d'ordine)",
     "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un cabarettista. Ti fornirò argomenti relativi agli eventi attuali da cui utilizzerai la tua intelligenza, creatività e capacità di osservazione per creare una routine. Dovresti anche assicurarti di incorporare aneddoti o esperienze personali nello spettacolo per renderlo più riconoscibile e coinvolgente per lo spettatore. La mia prima richiesta è &quot;tema talk show&quot;",
-    "remark": "Per un determinato argomento, produci un talk show umoristico basato su questo argomento e cerca di incorporare elementi della vita quotidiana per migliorare il senso di risonanza del pubblico."
+    "description": "Vorrei che vi comportaste come un cabarettista. Vi fornirò una serie di argomenti legati all'attualità e voi dovrete usare la vostra arguzia, creatività e capacità di osservazione per creare un numero basato su questi argomenti. Dovrete anche assicurarvi di incorporare nel programma aneddoti o esperienze personali per renderlo più relazionabile e coinvolgente per il pubblico. Il mio primo requisito è \"argomenti da talk show\".",
+    "remark": "Per un particolare argomento, produrre stand-up comedy umoristiche basate su quel tema e cercare di incorporare elementi di vita quotidiana per aumentare il senso di empatia con il pubblico."
   },
   "ru": {
-    "title": "ток-шоу",
+    "title": "ток-шоу (заимствованное слово)",
     "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был стендап-комиком. Я предоставлю вам темы, связанные с текущими событиями, из которых вы будете использовать свое остроумие, креативность и наблюдательность для создания рутины. Вы также должны обязательно включить в шоу личные анекдоты или события, чтобы сделать его более понятным и привлекательным для зрителя. Мой первый запрос — «тема ток-шоу».",
-    "remark": "Для определенной темы создайте юмористическое ток-шоу на эту тему и попытайтесь включить в него элементы повседневной жизни, чтобы усилить чувство резонанса у аудитории."
+    "description": "Я хочу, чтобы вы выступили в роли стендап-комика. Я предложу вам ряд тем, связанных с текущими событиями, а вы, используя свое остроумие, творческий подход и наблюдательность, создадите программу, основанную на этих темах. Вы также должны убедиться, что включили в программу личные анекдоты или опыт, чтобы сделать ее более доступной и увлекательной для аудитории. Мое первое требование - \"темы для ток-шоу\".",
+    "remark": "Применительно к определенной теме выпустить юмористический стендап-комик, основанный на этой теме, и постараться включить в него элементы повседневной жизни, чтобы усилить чувство сопереживания аудитории."
   },
   "pt": {
-    "title": "programa de entrevista",
+    "title": "talk show (palavra emprestada)",
     "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um comediante de stand-up. Fornecerei a você tópicos relacionados aos eventos atuais, dos quais você usará sua inteligência, criatividade e habilidades de observação para criar uma rotina. Você também deve incorporar anedotas ou experiências pessoais ao programa para torná-lo mais identificável e envolvente para o espectador. Meu primeiro pedido é &#39;tema de talk show&#39;",
-    "remark": "Para um determinado tópico, produza um talk show humorístico baseado nesse tópico e tente incorporar elementos da vida cotidiana para aumentar o senso de ressonância do público."
+    "description": "Gostaria que actuasse como um comediante de stand-up. Vou apresentar-lhe uma série de temas relacionados com a atualidade e você deverá usar a sua inteligência, criatividade e capacidade de observação para criar um número baseado nesses temas. Deves também certificar-te de que incorporas anedotas ou experiências pessoais no programa, para o tornares mais identificável e cativante para o público. O meu primeiro requisito é \"temas para talk shows",
+    "remark": "Para um tema específico, produzir comédia humorística de stand-up com base nesse tema e tentar incorporar elementos da vida quotidiana para aumentar o sentimento de empatia com o público."
   },
   "hi": {
     "title": "टॉक शो",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 14,
-  "weight": 1361
+  "weight": 1391
 };
 
 function PromptDetail() {

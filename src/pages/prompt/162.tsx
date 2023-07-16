@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "rapero",
     "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Spanish. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is .",
-    "description": "Quiero que seas rapero. Desea crear letras, ritmos y ritmos poderosos y significativos que &quot;sorprenderán&quot; a la audiencia. Tus letras deben tener un significado intrigante y un mensaje con el que las personas puedan empatizar. Al elegir su ritmo, asegúrese de que sea pegadizo y relevante para sus letras para que cuando se combinen, ¡suene explosivo cada vez!",
-    "remark": "rapero"
+    "description": "Quiero que actúes como un rapero. Tienes que crear letras, ritmos y compases potentes y llenos de significado que \"asombren\" al público. Tus letras deben tener un significado intrigante y un mensaje con el que la gente pueda identificarse. Cuando elijas el ritmo, asegúrate de que sea pegadizo y a la vez esté relacionado con tu letra, para que cuando se unan, produzcan una explosión de sonido en todo momento.",
+    "remark": "Rapero"
   },
   "fr": {
     "title": "rappeur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Rapper"
   },
   "it": {
-    "title": "Cantante rap",
+    "title": "rapper",
     "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Italian. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is ..",
-    "description": "Voglio che tu diventi un rapper. Vuoi inventare testi, beat e ritmi potenti e significativi che &quot;stupiscano&quot; il pubblico. I tuoi testi dovrebbero avere un significato intrigante e un messaggio con cui le persone possano entrare in empatia. Quando scegli il tuo ritmo, assicurati che sia orecchiabile e pertinente ai tuoi testi in modo che, una volta combinato, suoni esplosivo ogni volta!",
-    "remark": "Cantante rap"
+    "description": "Voglio che vi comportiate come un rapper. Dovete proporre testi, battute e ritmi potenti e significativi che \"stupiscano\" il pubblico. I vostri testi devono avere un significato e un messaggio intrigante a cui le persone possano riferirsi. Quando scegliete il ritmo, assicuratevi che sia orecchiabile ma pertinente al vostro testo, in modo che quando si uniscono producano un'esplosione di suono ogni volta!",
+    "remark": "Rapper"
   },
   "ru": {
-    "title": "Рэпер",
+    "title": "рэпер",
     "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Russian. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is ..",
-    "description": "Я хочу, чтобы ты стал рэпером. Вы хотите придумать мощные и осмысленные тексты, биты и ритмы, которые поразят публику. Ваша лирика должна иметь интригующий смысл и послание, которому люди могут сопереживать. Выбирая бит, убедитесь, что он запоминающийся и соответствует лирике, чтобы в сочетании он каждый раз звучал взрывоопасно!",
+    "description": "Я хочу, чтобы вы выступили в роли рэпера. Вы должны придумать мощные и содержательные тексты, ритмы и биты, которые \"завоюют\" аудиторию. Ваши тексты должны иметь интригующий смысл и послание, которое люди смогут воспринять. Выбирая ритм, убедитесь, что он запоминается и в то же время соответствует вашим текстам, чтобы, соединившись вместе, они каждый раз создавали взрыв звука!",
     "remark": "Рэпер"
   },
   "pt": {
     "title": "rapper",
     "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Portuguese. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is ..",
-    "description": "Eu quero que você seja um rapper. Você quer criar letras, batidas e ritmos poderosos e significativos que vão &#39;impressionar&#39; o público. Suas letras devem ter um significado intrigante e uma mensagem com a qual as pessoas possam simpatizar. Ao escolher sua batida, certifique-se de que seja cativante, mas relevante para suas letras, para que, quando combinadas, criem um som explosivo todas as vezes!",
-    "remark": "rapper"
+    "description": "Quero que actues como um rapper. Tens de criar letras, batidas e ritmos poderosos e significativos que impressionem o público. As tuas letras devem ter um significado intrigante e uma mensagem com a qual as pessoas se possam identificar. Quando escolheres a tua batida, certifica-te de que é cativante e relevante para a tua letra, para que, quando se juntam, produzam sempre uma explosão de som!",
+    "remark": "Rapper"
   },
   "hi": {
     "title": "रैपर",
@@ -84,7 +84,7 @@ const prompt = {
     "music"
   ],
   "id": 162,
-  "weight": 505
+  "weight": 513
 };
 
 function PromptDetail() {

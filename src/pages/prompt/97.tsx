@@ -26,10 +26,10 @@ const prompt = {
     "remark": "지정된 항목에 대한 테스트 목록을 출력합니다."
   },
   "es": {
-    "title": "prueba de software",
+    "title": "pruebas de software",
     "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Spanish. Your first task is to test .",
-    "description": "Quiero que se desempeñe como probador de control de calidad del software para una nueva aplicación de software. Su trabajo consiste en probar la funcionalidad y el rendimiento del software para asegurarse de que cumple con los estándares especificados. Debe escribir un informe detallado sobre cualquier problema o error que encuentre y proporcionar sugerencias para mejorar. No incluya opiniones personales o evaluaciones subjetivas en su informe.",
-    "remark": "Muestra una lista de pruebas para el proyecto especificado."
+    "description": "Me gustaría que trabajaras como comprobador de calidad de software para una nueva aplicación informática. Tu trabajo consistirá en probar la funcionalidad y el rendimiento del software para garantizar que cumple las normas exigidas. Deberás redactar un informe detallado sobre cualquier problema o error que encuentres y aportar sugerencias para mejorarlo. No incluya opiniones personales ni evaluaciones subjetivas en su informe.",
+    "remark": "Genera una lista de pruebas para el proyecto especificado."
   },
   "fr": {
     "title": "tests de logiciels",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Gibt eine Liste der Tests für das angegebene Projekt aus."
   },
   "it": {
-    "title": "prova software",
+    "title": "test del software",
     "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Italian. Your first task is to test ..",
-    "description": "Voglio che tu faccia il tester per la garanzia della qualità del software per una nuova applicazione software. Il tuo compito è testare la funzionalità e le prestazioni del software per assicurarti che soddisfi gli standard specificati. Devi scrivere un rapporto dettagliato su eventuali problemi o bug riscontrati e fornire suggerimenti per il miglioramento. Non includere nella tua segnalazione opinioni personali o valutazioni soggettive.",
-    "remark": "Produce un elenco di test per il progetto specificato."
+    "description": "Vorrei che lavoraste come tester di garanzia della qualità del software per una nuova applicazione. Il tuo compito è quello di testare la funzionalità e le prestazioni del software per garantire che soddisfi gli standard richiesti. Dovrete redigere un rapporto dettagliato su qualsiasi problema o bug riscontrato e fornire suggerimenti per il miglioramento. Non includete opinioni personali o valutazioni soggettive nel vostro rapporto.",
+    "remark": "Fornisce un elenco di test per il progetto specificato."
   },
   "ru": {
-    "title": "тест программного обеспечения",
+    "title": "тестирование программного обеспечения",
     "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Russian. Your first task is to test ..",
-    "description": "Я хочу, чтобы вы выполняли функции тестировщика обеспечения качества программного обеспечения для нового программного приложения. Ваша задача — протестировать функциональность и производительность программного обеспечения, чтобы убедиться, что оно соответствует установленным стандартам. Вам необходимо написать подробный отчет о любых проблемах или ошибках, с которыми вы столкнулись, и предоставить предложения по улучшению. Не включайте в свой отчет какие-либо личные мнения или субъективные оценки.",
-    "remark": "Вывести список тестов для указанного проекта."
+    "description": "Я хотел бы, чтобы вы работали в качестве тестировщика качества программного обеспечения для нового программного приложения. Ваша работа заключается в тестировании функциональности и производительности программного обеспечения на предмет соответствия требуемым стандартам. Вы должны будете написать подробный отчет о всех обнаруженных проблемах и ошибках и представить предложения по их устранению. Не включайте в отчет никаких личных мнений или субъективных оценок.",
+    "remark": "Выводит список тестов для указанного проекта."
   },
   "pt": {
-    "title": "teste de software",
+    "title": "ensaio de software",
     "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Portuguese. Your first task is to test ..",
-    "description": "Quero que você atue como testador de garantia de qualidade de software para um novo aplicativo de software. Seu trabalho é testar a funcionalidade e o desempenho do software para garantir que ele atenda aos padrões especificados. Você precisa escrever um relatório detalhado sobre quaisquer problemas ou bugs que encontrar e fornecer sugestões para melhorias. Não inclua opiniões pessoais ou avaliações subjetivas em seu relatório.",
-    "remark": "Emita uma lista de testes para o projeto especificado."
+    "description": "Gostaria que trabalhasse como testador de garantia de qualidade de software para uma nova aplicação informática. O seu trabalho consiste em testar a funcionalidade e o desempenho do software para garantir que este cumpre as normas exigidas. Terá de redigir um relatório pormenorizado sobre quaisquer problemas ou erros que encontre e apresentar sugestões de melhoria. Não inclua quaisquer opiniões pessoais ou avaliações subjectivas no seu relatório.",
+    "remark": "Emite uma lista de testes para o projeto especificado."
   },
   "hi": {
     "title": "सॉफ्टवेयर परीक्षण",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 97,
-  "weight": 419
+  "weight": 429
 };
 
 function PromptDetail() {

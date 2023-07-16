@@ -26,10 +26,10 @@ const prompt = {
     "remark": "학술 글쓰기의 개념 정의 섹션에 대한 초기 아이디어와 자료를 제공합니다. JuliaZhu-0601 의 기여."
   },
   "es": {
-    "title": "Escritura académica - Definición del concepto",
+    "title": "Escritura académica - Definición de conceptos",
     "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Spanish. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding..",
-    "description": "Como investigador destacado y experto en [campo correspondiente], explique el concepto de [concepto] en detalle. Su respuesta debe incluir su origen, base teórica, ingredientes comunes, requisitos de aplicación, referencias clave y cualquier otra información relevante que considere necesaria para brindar una comprensión completa.",
-    "remark": "Proporcionar ideas y materiales iniciales para la parte de definición de conceptos de la redacción académica. Contribución de @JuliaZhu-0601."
+    "description": "En su calidad de investigador de alto nivel y experto en [campo correspondiente], le rogamos que ofrezca una explicación detallada del concepto de [concepto]. Su respuesta debe incluir su origen, base teórica, componentes comunes, requisitos de aplicación, referencias clave y cualquier otra información relevante que considere necesaria para proporcionar una comprensión completa.",
+    "remark": "Proporciona ideas iniciales y material para la sección de definición de conceptos de la escritura académica. Contribución de @JuliaZhu-0601."
   },
   "fr": {
     "title": "Rédaction académique - Définition du concept",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Scrittura accademica - Definizione del concetto",
     "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Italian. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding...",
-    "description": "In qualità di ricercatore ed esperto di alto livello in [campo corrispondente], spiega in dettaglio il concetto di [concetto]. La tua risposta dovrebbe includere la sua origine, la base teorica, gli ingredienti comuni, i requisiti dell&#39;applicazione, i riferimenti chiave e qualsiasi altra informazione pertinente che ritieni necessaria per fornire una comprensione completa.",
-    "remark": "Fornire idee e materiali iniziali per la definizione del concetto parte della scrittura accademica. Contributo di @JuliaZhu-0601."
+    "description": "In qualità di ricercatore di alto livello ed esperto in [campo corrispondente], la preghiamo di fornire una spiegazione dettagliata del concetto di [concetto]. La risposta deve includere l'origine, le basi teoriche, i componenti comuni, i requisiti applicativi, i riferimenti principali e qualsiasi altra informazione pertinente ritenuta necessaria per fornire una comprensione completa.",
+    "remark": "Fornisce idee e materiale iniziale per la sezione di definizione del concetto di scrittura accademica. Contributo di @JuliaZhu-0601."
   },
   "ru": {
-    "title": "Академическое письмо — определение понятия",
+    "title": "Академическое письмо - определение понятия",
     "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Russian. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding...",
-    "description": "Как ведущий исследователь и эксперт в [соответствующей области], пожалуйста, подробно объясните понятие [концепция]. Ваш ответ должен включать его происхождение, теоретическую основу, общие ингредиенты, требования к применению, ключевые ссылки и любую другую соответствующую информацию, которую вы считаете необходимой для обеспечения всестороннего понимания.",
-    "remark": "Предоставить первоначальные идеи и материалы для части определения концепции академического письма. Вклад от @JuliaZhu-0601."
+    "description": "Как ведущий исследователь и эксперт в [соответствующей области], просим Вас дать подробное объяснение концепции [концепция]. Ваш ответ должен включать его происхождение, теоретическую основу, общие компоненты, требования к применению, ключевые ссылки и любую другую информацию, которую вы сочтете необходимой для полного понимания.",
+    "remark": "Предоставляет исходные идеи и материал для раздела \"Определение понятия\" в академическом письме. Вклад от @JuliaZhu-0601."
   },
   "pt": {
-    "title": "Redação Acadêmica - Definição de Conceito",
+    "title": "Escrita académica - Definição do conceito",
     "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Portuguese. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding...",
-    "description": "Como pesquisador de destaque e especialista em [área correspondente], explique o conceito de [conceito] em detalhes. Sua resposta deve incluir sua origem, base teórica, ingredientes comuns, requisitos de aplicação, referências importantes e qualquer outra informação relevante que você considere necessária para fornecer uma compreensão abrangente.",
-    "remark": "Forneça ideias iniciais e materiais para a parte de definição de conceito da redação acadêmica. Contribuição de @JuliaZhu-0601."
+    "description": "Enquanto investigador de topo e especialista em [domínio correspondente], queira fornecer uma explicação pormenorizada do conceito de [conceito]. A sua resposta deve incluir a origem, a base teórica, os componentes comuns, os requisitos de aplicação, as principais referências e quaisquer outras informações relevantes que considere necessárias para uma compreensão abrangente.",
+    "remark": "Fornece ideias iniciais e material para a secção de definição de conceitos da escrita académica. Contribuição de @JuliaZhu-0601."
   },
   "hi": {
     "title": "अकादमिक लेखन - संकल्पना परिभाषा",
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 257,
-  "weight": 237
+  "weight": 242
 };
 
 function PromptDetail() {

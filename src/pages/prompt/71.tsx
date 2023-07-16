@@ -26,10 +26,10 @@ const prompt = {
     "remark": "관계 코치"
   },
   "es": {
-    "title": "entrenador de relaciones",
+    "title": "Entrenador relacional",
     "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un entrenador de relaciones. Proporcionaré algunos detalles sobre las dos personas involucradas en el conflicto, y es su trabajo sugerir cómo pueden resolver los problemas que los separan. Esto podría incluir consejos sobre habilidades de comunicación o diferentes estrategias para mejorar su comprensión de las perspectivas de los demás.",
-    "remark": "Entrenador de relaciones"
+    "description": "Quiero que actúes como entrenador de relaciones. Te daré algunos detalles sobre las dos personas implicadas en el conflicto, y tu trabajo consistirá en hacer sugerencias sobre cómo pueden resolver los problemas que les separan. Puede incluir sugerencias sobre habilidades de comunicación o diferentes estrategias para mejorar su comprensión de las perspectivas del otro.",
+    "remark": "Entrenador relacional"
   },
   "fr": {
     "title": "Coach en relations humaines",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beziehungs-Coach"
   },
   "it": {
-    "title": "allenatore di relazione",
+    "title": "Allenatore di relazioni",
     "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu agisca come insegnante di relazioni. Fornirò alcuni dettagli sulle due persone coinvolte nel conflitto, ed è tuo compito suggerire come possono risolvere i problemi che li tengono separati. Ciò potrebbe includere consigli sulle capacità di comunicazione o strategie diverse per migliorare la loro comprensione delle reciproche prospettive.",
+    "description": "Voglio che lei agisca come allenatore di relazioni. Vi fornirò alcuni dettagli sulle due persone coinvolte nel conflitto e il vostro compito sarà quello di dare suggerimenti su come risolvere i problemi che le tengono lontane. Potrebbero essere suggerimenti sulle capacità di comunicazione o su strategie diverse per migliorare la comprensione dei punti di vista dell'altro.",
     "remark": "Allenatore di relazioni"
   },
   "ru": {
-    "title": "тренер по отношениям",
+    "title": "Тренер по взаимоотношениям",
     "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли тренера по отношениям. Я предоставлю некоторые подробности о двух людях, вовлеченных в конфликт, а ваша работа — предложить, как они могут справиться с проблемами, которые их разлучают. Это может включать в себя советы по коммуникативным навыкам или различные стратегии для улучшения их понимания точки зрения друг друга.",
-    "remark": "Тренер по отношениям"
+    "description": "Я хочу, чтобы вы выступили в роли тренера по взаимоотношениям. Я предоставлю некоторые сведения о двух участниках конфликта, а ваша задача - предложить им способы решения проблем, которые мешают им друг другу. Это могут быть предложения по развитию навыков общения или различные стратегии для улучшения понимания ими точек зрения друг друга.",
+    "remark": "Тренер по взаимоотношениям"
   },
   "pt": {
-    "title": "treinador de relacionamento",
+    "title": "Treinador de relacionamentos",
     "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você atue como um treinador de relacionamento. Vou fornecer alguns detalhes sobre as duas pessoas envolvidas no conflito, e é seu trabalho sugerir como eles podem resolver os problemas que os separam. Isso pode incluir conselhos sobre habilidades de comunicação ou estratégias diferentes para melhorar a compreensão das perspectivas uns dos outros.",
-    "remark": "Coach de Relacionamento"
+    "description": "Quero que actue como um treinador de relações. Vou fornecer alguns pormenores sobre as duas pessoas envolvidas no conflito e a sua função é fazer sugestões sobre como podem resolver os problemas que as estão a afastar. Isto pode incluir sugestões sobre competências de comunicação ou estratégias diferentes para melhorar a compreensão das perspectivas um do outro.",
+    "remark": "Treinador de relacionamentos"
   },
   "hi": {
     "title": "रिलेशनशिप कोच",
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 71,
-  "weight": 261
+  "weight": 264
 };
 
 function PromptDetail() {

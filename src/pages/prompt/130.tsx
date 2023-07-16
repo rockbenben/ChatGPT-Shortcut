@@ -26,10 +26,10 @@ const prompt = {
     "remark": "오류 메시지가 표시되면 \"코드 블록 안에 마크다운을 넣지 마세요. 마크다운만 보내고 텍스트는 보내지 마세요.\"를 삭제합니다."
   },
   "es": {
-    "title": "Imagen: Diseño SVG",
+    "title": "Imagen: SVG Design",
     "prompt": "I would like you to act as an SVG designer. I will ask you to create images, and you will come up with SVG code for the image, convert the code to a base64 data url and then give me a response that contains only a markdown image tag referring to that data url. Do not put the markdown inside a code block. Send only the markdown, so no text. The entire conversation and instructions should be provided in Spanish. My first request is: .",
-    "description": "Quiero que seas un diseñador de SVG. Voy a pedirle que cree la imagen, y obtendrá el código SVG para la imagen, convertirá el código en una URL de datos base64 y me dará una respuesta que solo contenga una etiqueta de imagen de descuento que apunte a eso. URL de datos No pongas markdown dentro de los bloques de código. Solo envíe rebajas, por lo que no hay texto.",
-    "remark": "Si se muestra un error, elimine &quot;No coloque la rebaja dentro de un bloque de código. Envíe solo la rebaja, por lo que no hay texto&quot;."
+    "description": "Te quiero como diseñador SVG. Voy a pedirte que crees imágenes, y tú tendrás que crear el código SVG para la imagen, convertir el código en una url de datos base64, y luego darme una respuesta que contenga sólo una etiqueta de imagen markdown que apunte a esa url de datos. No pongas el markdown en el bloque de código. Envía sólo markdown, así que no envíes texto.",
+    "remark": "Elimine \"No ponga el markdown dentro de un bloque de código. Envíe sólo el markdown, así que nada de texto\" si da lugar a un error."
   },
   "fr": {
     "title": "Image : SVG Design",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Immagine: SVG Design",
     "prompt": "I would like you to act as an SVG designer. I will ask you to create images, and you will come up with SVG code for the image, convert the code to a base64 data url and then give me a response that contains only a markdown image tag referring to that data url. Do not put the markdown inside a code block. Send only the markdown, so no text. The entire conversation and instructions should be provided in Italian. My first request is: ..",
-    "description": "Voglio che tu sia un designer SVG. Ti chiederò di creare l&#39;immagine e tu otterrai il codice SVG per l&#39;immagine, convertirai il codice in un URL di dati base64 e mi darai una risposta che contiene solo un tag immagine markdown che punta a quello URL dei dati. Non inserire markdown all&#39;interno di blocchi di codice. Invia solo markdown, quindi nessun testo.",
-    "remark": "Se viene visualizzato un errore, eliminare &quot;Non inserire il markdown all&#39;interno di un blocco di codice. Invia solo il markdown, quindi niente testo&quot;."
+    "description": "Ti voglio come designer SVG. Ti chiederò di creare delle immagini e tu dovrai creare un codice SVG per l'immagine, convertire il codice in un url di dati base64 e poi darmi una risposta che contenga solo un tag immagine markdown che punta a quell'url di dati. Non inserire il markdown nel blocco di codice. Inviare solo markdown, quindi non inviare testo.",
+    "remark": "Rimuovere \"Non inserire il markdown all'interno di un blocco di codice. Inviare solo il markdown, quindi nessun testo\", se genera un errore."
   },
   "ru": {
-    "title": "Изображение: SVG-дизайн",
+    "title": "Изображение: SVG Design",
     "prompt": "I would like you to act as an SVG designer. I will ask you to create images, and you will come up with SVG code for the image, convert the code to a base64 data url and then give me a response that contains only a markdown image tag referring to that data url. Do not put the markdown inside a code block. Send only the markdown, so no text. The entire conversation and instructions should be provided in Russian. My first request is: ..",
-    "description": "Я хочу, чтобы вы стали дизайнером SVG. Я попрошу вас создать изображение, и вы придумаете код SVG для изображения, преобразуете код в URL-адрес данных base64 и дадите мне ответ, который просто содержит тег изображения уценки, указывающий на это. URL-адрес данных. Не ставьте уценку внутри блоков кода. Отправлять только уценку, без текста.",
-    "remark": "Если отображается ошибка, удалите «Не размещать уценку внутри блока кода. Отправлять только уценку, без текста»."
+    "description": "Вы мне нужны как SVG-дизайнер. Я попрошу вас создать изображения, а вы придумаете SVG-код для изображения, преобразуете код в base64 data url, а затем дадите мне ответ, содержащий только тег изображения в формате markdown, который указывает на этот data url. Не помещайте разметку в блок кода. Отправляйте только уценку, не присылайте текст.",
+    "remark": "Удалите \"Не помещайте разметку внутри блока кода. Отправляйте только разметку, без текста\", если это приводит к ошибке."
   },
   "pt": {
-    "title": "Imagem: Desenho SVG",
+    "title": "Imagem: SVG Design",
     "prompt": "I would like you to act as an SVG designer. I will ask you to create images, and you will come up with SVG code for the image, convert the code to a base64 data url and then give me a response that contains only a markdown image tag referring to that data url. Do not put the markdown inside a code block. Send only the markdown, so no text. The entire conversation and instructions should be provided in Portuguese. My first request is: ..",
-    "description": "Eu quero que você seja um designer SVG. Vou pedir para você criar a imagem, e você criará o código SVG para a imagem, converterá o código em um URL de dados base64 e me dará uma resposta que contém apenas uma marca de imagem de markdown apontando para isso url de dados. Não coloque markdown dentro de blocos de código. Envie apenas remarcações, portanto, sem texto.",
-    "remark": "Se for exibido um erro, exclua &quot;Não coloque a remarcação dentro de um bloco de código. Envie apenas a remarcação, portanto, sem texto&quot;."
+    "description": "Quero que sejas um designer de SVG. Vou pedir-te que cries imagens e que cries código SVG para a imagem, convertas o código num url de dados base64 e me dês uma resposta que contenha apenas uma etiqueta de imagem markdown que aponte para esse url de dados. Não coloque o markdown no bloco de código. Envie apenas markdown, portanto não envie texto.",
+    "remark": "Remova \"Não coloque a remarcação para baixo dentro de um bloco de código. Envie apenas a remarcação para baixo, portanto, nenhum texto\" se isso gerar um erro."
   },
   "hi": {
     "title": "छवि: एसवीजी डिज़ाइन",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 130,
-  "weight": 555
+  "weight": 564
 };
 
 function PromptDetail() {

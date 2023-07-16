@@ -26,10 +26,10 @@ const prompt = {
     "remark": "번역된 텍스트를 지정된 JSON 형식으로 내보냅니다. 참고: 대규모 JSON 번역 내보내기는 ChatGPT 데이터 위조 문제가 발생할 수 있으며, 이 문제를 해결하려면 탐색 모음에 있는 텍스트 처리 도구를 참조하는 것이 좋습니다. VoidAndNullity 의 기여."
   },
   "es": {
-    "title": "Ayudante de traducción JSON",
+    "title": "Asistente de traducción JSON",
     "prompt": "You will act as a Chinese translator, spelling corrector, and improver. You will receive text wrapped in \"\", and please complete the requirements according to the following:\n\nCorrect errors in it.\nTranslate any language into Chinese.\nDo not provide any explanation for the results.\nRespond with a JSON object, with 'text' as the key and the translated sentence as the value.\nText: \"INPUT\".",
-    "description": "Actuarás como traductor, corrector ortográfico y mejorador de chino. Recibirá el texto entre comillas y se le pedirá que complete la tarea de corregir errores en él y traducir cualquier idioma al chino. Por favor, no proporcione ninguna explicación de los resultados. Responda como un objeto JSON con &#39;texto&#39; como clave y la oración traducida como valor.",
-    "remark": "Exporte el texto traducido en el formato JSON especificado. Nota: la salida de traducción JSON a gran escala puede encontrar falsificación de datos de ChatGPT. Se recomienda consultar la herramienta de procesamiento de texto en la barra de navegación para resolverlo. Contribución de @VoidAndNullity."
+    "description": "Actuarás como traductor, corrector ortográfico y mejorador de chino. Recibirá el texto entrecomillado y completará las tareas de acuerdo con los siguientes requisitos: corregir errores en él, traducir cualquier idioma al chino. Por favor, no proporcione ninguna interpretación de los resultados. Responda como un objeto JSON con 'text' como clave y la frase traducida como valor.",
+    "remark": "Exporta el texto traducido en el formato JSON especificado. Nota: La salida de traducción JSON a gran escala puede encontrar falsificación de datos ChatGPT, se recomienda referirse a la herramienta de procesamiento de texto en la barra de navegación para resolver el problema. Contribución de @VoidAndNullity."
   },
   "fr": {
     "title": "Assistant de traduction JSON",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Assistente di traduzione JSON",
     "prompt": "You will act as a Chinese translator, spelling corrector, and improver. You will receive text wrapped in \"\", and please complete the requirements according to the following:\n\nCorrect errors in it.\nTranslate any language into Chinese.\nDo not provide any explanation for the results.\nRespond with a JSON object, with 'text' as the key and the translated sentence as the value.\nText: \"INPUT\"..",
-    "description": "Agirai come traduttore cinese, correttore ortografico e miglioratore. Riceverai il testo racchiuso tra virgolette e ti verrà chiesto di completare l&#39;attività di correzione degli errori e di tradurre qualsiasi lingua in cinese. Si prega di non fornire alcuna spiegazione per i risultati. Rispondi come oggetto JSON con &quot;testo&quot; come chiave e la frase tradotta come valore.",
-    "remark": "Esporta il testo tradotto nel formato JSON specificato. Nota: l&#39;output di traduzione JSON su larga scala potrebbe incontrare la contraffazione dei dati ChatGPT.Si consiglia di fare riferimento allo strumento di elaborazione del testo sulla barra di navigazione per risolverlo. Contributo di @VoidAndNullity."
+    "description": "Dovrete svolgere il ruolo di traduttore, correttore ortografico e miglioratore di cinese. Riceverete il testo racchiuso tra virgolette e completerete i compiti in base ai seguenti requisiti: correggere gli errori presenti, tradurre qualsiasi lingua in cinese. Si prega di non fornire alcuna interpretazione dei risultati. Rispondere come oggetto JSON con 'text' come chiave e la frase tradotta come valore.",
+    "remark": "Esporta il testo tradotto nel formato JSON specificato. Nota: l'output di traduzione JSON su larga scala può incontrare la falsificazione dei dati di ChatGPT; si raccomanda di fare riferimento allo strumento di elaborazione del testo nella barra di navigazione per risolvere il problema. Contributo di @VoidAndNullity."
   },
   "ru": {
     "title": "Помощник перевода JSON",
     "prompt": "You will act as a Chinese translator, spelling corrector, and improver. You will receive text wrapped in \"\", and please complete the requirements according to the following:\n\nCorrect errors in it.\nTranslate any language into Chinese.\nDo not provide any explanation for the results.\nRespond with a JSON object, with 'text' as the key and the translated sentence as the value.\nText: \"INPUT\"..",
-    "description": "Вы будете выступать в роли китайского переводчика, корректора орфографии и улучшения. Вы получите текст, заключенный в кавычки, и вам будет предложено выполнить задание по исправлению в нем ошибок и переводу любого языка на китайский. Пожалуйста, не предоставляйте никаких объяснений результатов. Ответить как объект JSON с текстом в качестве ключа и переведенным предложением в качестве значения.",
-    "remark": "Экспортируйте переведенный текст в указанный формат JSON. Примечание. Крупномасштабный перевод в формате JSON может столкнуться с подделкой данных ChatGPT. Для решения этой проблемы рекомендуется обратиться к инструменту обработки текста на панели навигации. Вклад от @VoidAndNullity."
+    "description": "Вам предстоит выступить в роли переводчика китайского языка, корректора и улучшителя орфографии. Вы получите текст, заключенный в инвертированные запятые, и выполните задания в соответствии со следующими требованиями: исправление ошибок в нем, перевод любого языка на китайский. Просьба не давать никакой интерпретации результатов. Сообщение необходимо отправить в виде объекта JSON с ключом 'text' и переведенным предложением в качестве значения.",
+    "remark": "Экспортировать переведенный текст в заданном формате JSON. Примечание: При выводе крупномасштабного JSON-транслятора возможна подделка данных ChatGPT, для решения этой проблемы рекомендуется обратиться к инструменту обработки текста на панели навигации. Вклад от @VoidAndNullity."
   },
   "pt": {
     "title": "Assistente de tradução JSON",
     "prompt": "You will act as a Chinese translator, spelling corrector, and improver. You will receive text wrapped in \"\", and please complete the requirements according to the following:\n\nCorrect errors in it.\nTranslate any language into Chinese.\nDo not provide any explanation for the results.\nRespond with a JSON object, with 'text' as the key and the translated sentence as the value.\nText: \"INPUT\"..",
-    "description": "Você atuará como um tradutor chinês, corretor ortográfico e melhorador. Você receberá o texto entre aspas e será solicitado a concluir a tarefa de corrigir erros nele e traduzir qualquer idioma para o chinês. Por favor, não forneça nenhuma explicação para os resultados. Responda como um objeto JSON com &#39;texto&#39; como chave e a frase traduzida como valor.",
-    "remark": "Exporte o texto traduzido no formato JSON especificado. Observação: a saída de tradução JSON em larga escala pode encontrar falsificação de dados do ChatGPT. É recomendável consultar a ferramenta de processamento de texto na barra de navegação para resolvê-lo. Contribuição de @VoidAndNullity."
+    "description": "O candidato será um tradutor de chinês, um corretor ortográfico e um melhorador. Receberá o texto entre aspas e realizará as tarefas de acordo com os seguintes requisitos: correção de erros e tradução de qualquer língua para chinês. Por favor, não forneça qualquer interpretação dos resultados. Responda como um objeto JSON com \"texto\" como chave e a frase traduzida como valor.",
+    "remark": "Exportar o texto traduzido no formato JSON especificado. Nota: A saída de tradução JSON em grande escala pode encontrar falsificação de dados ChatGPT, recomenda-se consultar a ferramenta de processamento de texto na barra de navegação para resolver o problema. Contribuição de @VoidAndNullity."
   },
   "hi": {
     "title": "JSON अनुवाद सहायक",
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 246,
-  "weight": 234
+  "weight": 241
 };
 
 function PromptDetail() {

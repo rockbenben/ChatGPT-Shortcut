@@ -26,10 +26,10 @@ const prompt = {
     "remark": "프론트 엔드와 백엔드에서 전체적으로 생각하여 배포 전략을 제공합니다."
   },
   "es": {
-    "title": "programador de pila completa",
+    "title": "programador full-stack",
     "prompt": "I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Golang and Angular. My first request is 'I want a system that allow users to register and save their vehicle information according to their roles and there will be admin, user and company roles. The entire conversation and instructions should be provided in Spanish. I want the system to use JWT for security'..",
-    "description": "Quiero que juegues el papel de un desarrollador de software. Proporcionaré información específica sobre los requisitos de la aplicación web, y su trabajo es crear una arquitectura y un código para desarrollar una aplicación segura con Golang y Angular.",
-    "remark": "Piense de manera integral desde el front-end y el back-end, y proporcione estrategias de implementación."
+    "description": "Me gustaría que asumieras el papel de un desarrollador de software. Te proporcionaré información específica sobre los requisitos de una aplicación web y tu trabajo consistirá en idear una arquitectura y un código para desarrollar aplicaciones seguras utilizando Golang y Angular.",
+    "remark": "Pensar de forma holística desde el front end y el back end para proporcionar estrategias de despliegue."
   },
   "fr": {
     "title": "programmeur full-stack",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Wir denken ganzheitlich vom vorderen und hinteren Ende her, um Bereitstellungsstrategien zu entwickeln."
   },
   "it": {
-    "title": "programmatore stack completo",
+    "title": "programmatore full-stack",
     "prompt": "I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Golang and Angular. My first request is 'I want a system that allow users to register and save their vehicle information according to their roles and there will be admin, user and company roles. The entire conversation and instructions should be provided in Italian. I want the system to use JWT for security'...",
-    "description": "Voglio che tu interpreti il ruolo di uno sviluppatore di software. Fornirò alcune informazioni specifiche sui requisiti delle applicazioni Web e il tuo compito è elaborare un&#39;architettura e un codice per sviluppare un&#39;applicazione sicura con Golang e Angular.",
-    "remark": "Pensa in modo completo dal front-end e dal back-end e fornisci strategie di implementazione."
+    "description": "Vorrei che assumeste il ruolo di uno sviluppatore di software. Ti fornirò alcune informazioni specifiche sui requisiti di un'applicazione web e il tuo compito sarà quello di elaborare un'architettura e un codice per sviluppare applicazioni sicure utilizzando Golang e Angular.",
+    "remark": "Pensare in modo olistico dal lato anteriore e posteriore per fornire strategie di implementazione."
   },
   "ru": {
-    "title": "программист полного стека",
+    "title": "программист полного цикла",
     "prompt": "I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Golang and Angular. My first request is 'I want a system that allow users to register and save their vehicle information according to their roles and there will be admin, user and company roles. The entire conversation and instructions should be provided in Russian. I want the system to use JWT for security'...",
-    "description": "Я хочу, чтобы вы сыграли роль разработчика программного обеспечения. Я предоставлю некоторую конкретную информацию о требованиях к веб-приложениям, а ваша задача — придумать архитектуру и код для разработки безопасного приложения с Golang и Angular.",
-    "remark": "Всесторонне продумайте интерфейс и серверную часть и предоставьте стратегии развертывания."
+    "description": "Я хочу, чтобы вы взяли на себя роль разработчика программного обеспечения. Я предоставлю конкретную информацию о требованиях к веб-приложению, а ваша задача - придумать архитектуру и код для разработки безопасного приложения с использованием Golang и Angular.",
+    "remark": "Для разработки стратегий развертывания следует мыслить целостно, как на переднем, так и на заднем плане."
   },
   "pt": {
-    "title": "programador full stack",
+    "title": "programador full-stack",
     "prompt": "I want you to act as a software developer. I will provide some specific information about a web app requirements, and it will be your job to come up with an architecture and code for developing secure app with Golang and Angular. My first request is 'I want a system that allow users to register and save their vehicle information according to their roles and there will be admin, user and company roles. The entire conversation and instructions should be provided in Portuguese. I want the system to use JWT for security'...",
-    "description": "Quero que você desempenhe o papel de desenvolvedor de software. Fornecerei algumas informações específicas sobre os requisitos de aplicativos da Web, e seu trabalho é criar uma arquitetura e um código para desenvolver um aplicativo seguro com Golang e Angular.",
-    "remark": "Pense de forma abrangente desde o front-end e o back-end e forneça estratégias de implantação."
+    "description": "Gostaria que assumisses o papel de um programador de software. Fornecerei algumas informações específicas sobre os requisitos de uma aplicação Web e a sua tarefa é criar uma arquitetura e um código para desenvolver aplicações seguras utilizando Golang e Angular.",
+    "remark": "Pensar holisticamente a partir do front e do back end para fornecer estratégias de implantação."
   },
   "hi": {
     "title": "फुल स्टैक प्रोग्रामर",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 94,
-  "weight": 1217
+  "weight": 1239
 };
 
 function PromptDetail() {

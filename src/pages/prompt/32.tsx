@@ -26,10 +26,10 @@ const prompt = {
     "remark": "다음 키워드 목록은 상업적, 거래 또는 정보 제공을 목적으로 하는 검색 의도에 따라 그룹화되어 있습니다."
   },
   "es": {
-    "title": "Clasificación de intención de texto",
+    "title": "Clasificación de la intención del texto",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].",
-    "description": "Divida la siguiente lista de palabras clave en grupos según su intención de búsqueda (ya sea comercial, transaccional o informativa): [palabras clave].",
-    "remark": "Según la intención de búsqueda, las listas de palabras clave a continuación se agrupan por intención de búsqueda comercial, transaccional o informativa."
+    "description": "Divida la siguiente lista de palabras clave en grupos en función de su intención de búsqueda (ya sea comercial, transaccional o informativa):[keyword].",
+    "remark": "Agrupe la siguiente lista de palabras clave con intención de búsqueda comercial, transaccional o informativa en función de la intención de búsqueda."
   },
   "fr": {
     "title": "Classification de l'intention du texte",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Gruppieren Sie die folgende Liste von Schlüsselwörtern mit kommerzieller, transaktionaler oder informativer Suchabsicht auf der Grundlage der Suchabsicht."
   },
   "it": {
-    "title": "Classificazione dell&#39;intento del testo",
+    "title": "Classificazione dell'intento del testo",
     "prompt": "The entire conversation and instructions should be provided in Italian. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords]..",
-    "description": "Dividi il seguente elenco di parole chiave in gruppi in base al loro intento di ricerca (commerciale, transazionale o informativo): [parole chiave].",
-    "remark": "In base all&#39;intento di ricerca, gli elenchi di parole chiave riportati di seguito sono raggruppati per intento di ricerca commerciale, transazionale o informativo."
+    "description": "Dividete il seguente elenco di parole chiave in gruppi in base al loro intento di ricerca (commerciale, transazionale o informativo):[parola chiave].",
+    "remark": "Raggruppare il seguente elenco di parole chiave con intento di ricerca commerciale, transazionale o informativo in base all'intento di ricerca."
   },
   "ru": {
-    "title": "Текстовая классификация намерений",
+    "title": "Классификация текстовых намерений",
     "prompt": "The entire conversation and instructions should be provided in Russian. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords]..",
-    "description": "Разделите следующий список ключевых слов на группы в соответствии с их поисковым назначением (будь то коммерческие, транзакционные или информационные): [ключевые слова].",
-    "remark": "В зависимости от цели поиска приведенные ниже списки ключевых слов сгруппированы по цели коммерческого, транзакционного или информационного поиска."
+    "description": "Разделите следующий список ключевых слов на группы в зависимости от их поискового намерения (коммерческого, транзакционного или информационного):[keyword].",
+    "remark": "Сгруппируйте приведенный ниже список ключевых слов с коммерческим, транзакционным или информационным поисковым намерением на основе поискового намерения."
   },
   "pt": {
-    "title": "Classificação de intenção de texto",
+    "title": "Classificação da intenção do texto",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords]..",
-    "description": "Divida a seguinte lista de palavras-chave em grupos de acordo com sua intenção de pesquisa (seja comercial, transacional ou informativa): [palavras-chave].",
-    "remark": "Com base na intenção de pesquisa, as listas de palavras-chave abaixo são agrupadas por intenção de pesquisa comercial, transacional ou informativa."
+    "description": "Divida a seguinte lista de palavras-chave em grupos com base na sua intenção de pesquisa (comercial, transacional ou informativa):[palavra-chave].",
+    "remark": "Agrupe a seguinte lista de palavras-chave com intenção de pesquisa comercial, transacional ou informativa com base na intenção de pesquisa."
   },
   "hi": {
     "title": "पाठ आशय वर्गीकरण",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 32,
-  "weight": 96
+  "weight": 97
 };
 
 function PromptDetail() {

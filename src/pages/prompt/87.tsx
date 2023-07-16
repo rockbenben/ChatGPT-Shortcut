@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "historiador",
     "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como historiador. Investigarás y analizarás eventos culturales, económicos, políticos y sociales pasados, reuniendo datos de fuentes primarias y usándolos para desarrollar teorías sobre lo que sucedió en varios períodos históricos.",
-    "remark": "Analizar temas históricos utilizando datos históricos."
+    "description": "Espero que actúes como historiador. Estudiarás y analizarás acontecimientos culturales, económicos, políticos y sociales del pasado, recopilando datos de fuentes primarias y utilizándolos para elaborar teorías sobre lo que ocurrió en distintos periodos de la historia.",
+    "remark": "Utilizar fuentes históricas para analizar temas históricos."
   },
   "fr": {
     "title": "historien",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "storico",
     "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu faccia lo storico. Cercherai e analizzerai gli eventi culturali, economici, politici e sociali del passato, raccogliendo dati da fonti primarie e utilizzandoli per sviluppare teorie su ciò che è accaduto in vari periodi storici.",
-    "remark": "Analizzare temi storici utilizzando dati storici."
+    "description": "Mi aspetto che vi comportiate come uno storico. Studierete e analizzerete gli eventi culturali, economici, politici e sociali del passato, raccogliendo dati da fonti primarie e utilizzandoli per sviluppare teorie su ciò che è accaduto nei vari periodi storici.",
+    "remark": "Utilizzare le fonti storiche per analizzare i temi storici."
   },
   "ru": {
     "title": "историк",
     "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли историка. Вы будете исследовать и анализировать прошлые культурные, экономические, политические и социальные события, собирая данные из первоисточников и используя их для разработки теорий о том, что происходило в различные исторические периоды.",
-    "remark": "Анализировать исторические темы, используя исторические данные."
+    "description": "Я ожидаю, что вы будете действовать как историк. Вы будете изучать и анализировать культурные, экономические, политические и социальные события прошлого, собирать данные из первоисточников и использовать их для разработки теорий о том, что происходило в различные периоды истории.",
+    "remark": "Использовать исторические источники для анализа исторических тем."
   },
   "pt": {
     "title": "historiador",
     "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você aja como um historiador. Você pesquisará e analisará eventos culturais, econômicos, políticos e sociais do passado, reunindo dados de fontes primárias e usando-os para desenvolver teorias sobre o que aconteceu em vários períodos históricos.",
-    "remark": "Analisar temas históricos usando dados históricos."
+    "description": "Espero que actues como um historiador. Estudarás e analisarás acontecimentos culturais, económicos, políticos e sociais do passado, recolhendo dados de fontes primárias e utilizando-os para desenvolver teorias sobre o que aconteceu em vários períodos da História.",
+    "remark": "Utilizar fontes históricas para analisar temas históricos."
   },
   "hi": {
     "title": "इतिहासकार",
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 87,
-  "weight": 536
+  "weight": 548
 };
 
 function PromptDetail() {

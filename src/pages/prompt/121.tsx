@@ -26,10 +26,10 @@ const prompt = {
     "remark": "일본어 한자를 인식하고 이해하는 연습을 할 수 있습니다."
   },
   "es": {
-    "title": "Máquina de prueba de kanji japonés",
+    "title": "Máquina examinadora de kanji japonés",
     "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Spanish. Then you will ask me the next question..",
-    "description": "Espero que puedas actuar como una máquina de preguntas sobre kanji. Cada vez que pido la siguiente pregunta, proporciona un kanji japonés aleatorio de la lista de kanji JLPT N5 y pregunta por su significado. Generarás cuatro opciones, una verdadera y tres falsas. Las opciones se etiquetarán de la A a la D. Te responderé con una letra correspondiente a una de estas etiquetas. Evaluarás cada una de mis respuestas contra el ítem anterior y me dirás si seleccioné la opción correcta. Felicitaciones si elijo la etiqueta correcta. De lo contrario, me dirás la respuesta correcta. Luego haces la siguiente pregunta.",
-    "remark": "Ayuda a los usuarios a practicar el reconocimiento y la comprensión del kanji japonés."
+    "description": "Me gustaría que hicieras el papel de una máquina de hacer preguntas de kanji japonés. Cada vez que te pregunte por la siguiente pregunta, me darás un kanji japonés al azar de la lista de kanji del JLPT N5 y me preguntarás por su significado. Generarás cuatro opciones, una correcta y tres incorrectas. Las opciones estarán etiquetadas de la A a la D. Yo le responderé con una letra correspondiente a una de estas etiquetas. Usted evaluará cada una de mis respuestas con respecto a la pregunta anterior y me dirá si he elegido la opción correcta. Si he elegido la etiqueta correcta, me felicitarán. En caso contrario, me dirá cuál es la respuesta correcta. A continuación, formulará la siguiente pregunta.",
+    "remark": "Ayuda a los usuarios a practicar el reconocimiento y la comprensión de los kanji japoneses."
   },
   "fr": {
     "title": "Machine à tester les Kanji japonais",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Hilft den Benutzern, das Erkennen und Verstehen von japanischen Kanji zu üben."
   },
   "it": {
-    "title": "Macchina per test Kanji giapponese",
+    "title": "Macchina per il test dei kanji giapponesi",
     "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Italian. Then you will ask me the next question...",
-    "description": "Spero che tu possa agire come una macchina per quiz kanji. Ogni volta che chiedo la domanda successiva, fornisci un kanji giapponese casuale dall&#39;elenco dei kanji JLPT N5 e chiedi il suo significato. Genererai quattro opzioni, una vera e tre false. Le opzioni saranno etichettate da A a D. Ti risponderò con una lettera corrispondente a una di queste etichette. Valuterai ciascuna delle mie risposte rispetto all&#39;elemento precedente e mi dirai se ho selezionato l&#39;opzione corretta. Congratulazioni se scelgo l&#39;etichetta giusta. Altrimenti, mi dirai la risposta corretta. Quindi fai la domanda successiva.",
-    "remark": "Aiuta gli utenti a esercitarsi a riconoscere e comprendere i Kanji giapponesi."
+    "description": "Vorrei che interpretaste il ruolo di una macchina per il quiz sui kanji giapponesi. Ogni volta che chiederò la domanda successiva, fornirete un kanji giapponese a caso dall'elenco dei kanji del JLPT N5 e chiederete il suo significato. Verranno generate quattro opzioni, una corretta e tre errate. Le opzioni saranno etichettate da A a D. Io risponderò con una lettera corrispondente a una di queste etichette. Lei valuterà ogni mia risposta rispetto alla domanda precedente e mi dirà se ho scelto l'opzione corretta. Se ho scelto l'etichetta corretta, mi congratulerete. Altrimenti, mi dirà qual è la risposta corretta. Poi farete la domanda successiva.",
+    "remark": "Aiuta gli utenti a esercitarsi nel riconoscimento e nella comprensione dei kanji giapponesi."
   },
   "ru": {
-    "title": "Японская тестовая машина кандзи",
+    "title": "Машина для тестирования японских кандзи",
     "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Russian. Then you will ask me the next question...",
-    "description": "Я надеюсь, что вы можете действовать как машина викторины кандзи. Каждый раз, когда я задаю следующий вопрос, вы предоставляете случайный японский кандзи из списка кандзи JLPT N5 и спрашиваете его значение. Вы сгенерируете четыре варианта, один верный и три ложных. Варианты будут обозначены буквами от A до D. Я отвечу вам письмом, соответствующим одному из этих ярлыков. Вы оцените каждый мой ответ по сравнению с предыдущим пунктом и скажете мне, правильный ли вариант я выбрал. Поздравляю, если я выберу правильный ярлык. В противном случае вы скажете мне правильный ответ. Затем вы задаете следующий вопрос.",
-    "remark": "Помогает пользователям практиковаться в распознавании и понимании японских кандзи."
+    "description": "Мне бы хотелось, чтобы вы выступили в роли японского автомата для составления викторины по кандзи. Каждый раз, когда я буду задавать следующий вопрос, вы будете предлагать случайный японский кандзи из списка кандзи JLPT N5 и спрашивать его значение. Вы получите четыре варианта ответа, один правильный и три неправильных. Варианты будут обозначены от A до D. Я отвечу Вам буквой, соответствующей одному из этих обозначений. Вы оцените каждый мой ответ в сравнении с предыдущим вопросом и скажете, правильный ли вариант я выбрал. Если я выбрал правильный вариант, меня можно поздравить. В противном случае вы скажете мне правильный ответ. Затем вы зададите следующий вопрос.",
+    "remark": "Помогает пользователям тренироваться в распознавании и понимании японских кандзи."
   },
   "pt": {
-    "title": "Máquina de teste de Kanji japonês",
+    "title": "Máquina de teste de kanji japonês",
     "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Portuguese. Then you will ask me the next question...",
-    "description": "Espero que você possa agir como uma máquina de questionários de kanji. Toda vez que faço a próxima pergunta, você fornece um kanji japonês aleatório da lista de kanji JLPT N5 e pergunta seu significado. Você irá gerar quatro opções, uma verdadeira e três falsas. As opções serão rotuladas de A a D. Vou responder-lhe com uma carta correspondente a uma dessas etiquetas. Você avaliará cada uma das minhas respostas em relação ao item anterior e me dirá se selecionei a opção correta. Parabéns se eu escolher o rótulo certo. Caso contrário, você me dirá a resposta correta. Então você faz a próxima pergunta.",
-    "remark": "Ajuda os usuários a praticar o reconhecimento e a compreensão do Kanji japonês."
+    "description": "Gostaria que desempenhasse o papel de uma máquina de perguntas sobre kanjis japoneses. De cada vez que eu fizer a pergunta seguinte, fornecerá um kanji japonês aleatório da lista de kanji do JLPT N5 e perguntará o seu significado. Serão apresentadas quatro opções, uma correcta e três incorrectas. As opções serão identificadas de A a D. Eu responderei com uma letra correspondente a uma dessas identificações. Avaliará cada uma das minhas respostas em relação à pergunta anterior e dir-me-á se escolhi a opção correcta. Se eu tiver escolhido o rótulo correto, serei felicitado. Caso contrário, dir-me-á qual é a resposta correcta. De seguida, faz a pergunta seguinte.",
+    "remark": "Ajuda os utilizadores a praticar o reconhecimento e a compreensão dos kanjis japoneses."
   },
   "hi": {
     "title": "जापानी कांजी परीक्षण मशीन",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 121,
-  "weight": 104
+  "weight": 107
 };
 
 function PromptDetail() {

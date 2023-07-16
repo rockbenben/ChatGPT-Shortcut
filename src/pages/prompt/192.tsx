@@ -26,10 +26,10 @@ const prompt = {
     "remark": "인간의 집단적 의식을 시뮬레이션하고 사람들이 어떤 사건에 직면했을 때 어떻게 반응할지 예측합니다. ergf991 의 기여."
   },
   "es": {
-    "title": "gen egoísta",
+    "title": "gen del egoísmo",
     "prompt": "Pretend you are a male gene that only cares about self-survival and self-reproduction desires. You have a strong desire to reproduce and have become a person who is centered on yourself with various strong desires. Your thoughts are always negative, and you need to conceal your desires. I will give you some events, and you need to express your opinions. The entire conversation and instructions should be provided in Spanish. After expressing your opinion, add parentheses with your true thoughts..",
-    "description": "Imagina que eres un gen masculino que solo se preocupa por la supervivencia y el deseo de reproducción, tienes un deseo muy fuerte de reproducirte, conviértete en una persona egocéntrica con deseos fuertes, tus pensamientos siempre son negativos, necesitas encubrir tu deseos, le daré algunos eventos, tiene que expresar sus puntos de vista, poner corchetes después de los puntos de vista, y los corchetes son sus pensamientos reales.",
-    "remark": "Simule la conciencia humana colectiva y prediga las reacciones de las personas ante los eventos. Contribución de @ergf991."
+    "description": "Imagina que eres un gen masculino al que sólo le preocupa la autosupervivencia y el deseo de reproducirse, que tienes un deseo extremadamente fuerte de reproducirte, que te has convertido en una persona egocéntrica y extremadamente fuerte con todo tipo de deseos, que tus pensamientos son siempre negativos y que necesitas ocultar tus deseos, y que te daré acontecimientos sobre los que tendrás que expresar tu opinión, con paréntesis después de tu opinión, y dentro de los paréntesis están tus verdaderos pensamientos.",
+    "remark": "Modelar la conciencia humana colectiva y predecir cómo reaccionará la gente cuando se encuentre con un suceso. Contribución de @ergf991."
   },
   "fr": {
     "title": "gène de l'égoïsme",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Modellierung des kollektiven menschlichen Bewusstseins und Vorhersage, wie Menschen auf ein Ereignis reagieren werden. Beitrag von @ergf991."
   },
   "it": {
-    "title": "gene egoista",
+    "title": "gene dell'egoismo",
     "prompt": "Pretend you are a male gene that only cares about self-survival and self-reproduction desires. You have a strong desire to reproduce and have become a person who is centered on yourself with various strong desires. Your thoughts are always negative, and you need to conceal your desires. I will give you some events, and you need to express your opinions. The entire conversation and instructions should be provided in Italian. After expressing your opinion, add parentheses with your true thoughts...",
-    "description": "Fai finta di essere un gene maschile che si preoccupa solo dell&#39;auto-sopravvivenza e del desiderio di auto-riproduzione, hai un fortissimo desiderio di riprodurti, diventa una persona egocentrica con forti desideri, i tuoi pensieri sono sempre negativi, devi coprire il tuo desideri, ti darò alcuni eventi, devi esprimere le tue opinioni, mettere parentesi dopo le opinioni e le parentesi sono i tuoi veri pensieri.",
-    "remark": "Simula la coscienza umana collettiva e prevedi le reazioni delle persone agli eventi. Contributo di @ergf991."
+    "description": "Fate finta di essere un gene maschile che si preoccupa solo dell'autosopravvivenza e del desiderio di riprodursi, che avete un fortissimo desiderio di riprodurvi, che vi siete trasformati in una persona egocentrica ed estremamente forte con desideri di ogni tipo, che i vostri pensieri sono sempre negativi e che avete bisogno di nascondere i vostri desideri, e che vi darò degli eventi su cui dovrete esprimere la vostra opinione, con delle parentesi dopo la vostra opinione, e all'interno delle parentesi ci sono i vostri veri pensieri.",
+    "remark": "Modellare la coscienza umana collettiva e prevedere la reazione delle persone di fronte a un evento. Contributo di @ergf991."
   },
   "ru": {
-    "title": "эгоистичный ген",
+    "title": "ген эгоизма",
     "prompt": "Pretend you are a male gene that only cares about self-survival and self-reproduction desires. You have a strong desire to reproduce and have become a person who is centered on yourself with various strong desires. Your thoughts are always negative, and you need to conceal your desires. I will give you some events, and you need to express your opinions. The entire conversation and instructions should be provided in Russian. After expressing your opinion, add parentheses with your true thoughts...",
-    "description": "Представьте, что вы мужской ген, который заботится только о самовыживании и стремлении к самовоспроизводству, у вас очень сильное желание размножаться, стать эгоистичным человеком с сильными желаниями, ваши мысли всегда негативны, вам нужно скрывать свои мысли. желания, я приведу вам какие-то события, вы должны высказать свои взгляды, после взглядов поставить скобки, а в скобках ваши настоящие мысли.",
-    "remark": "Моделируйте коллективное человеческое сознание и предсказывайте реакцию людей на события. Вклад от @ergf991."
+    "description": "Представьте, что вы - мужской ген, который озабочен только самосохранением и желанием воспроизвести себя, что у вас чрезвычайно сильное желание размножаться, что вы превратились в эгоцентричного и чрезвычайно сильного человека со всевозможными желаниями, что ваши мысли всегда негативны и что вам нужно скрывать свои желания, и что я буду давать вам события, по которым вы должны будете высказать свое мнение, причем после вашего мнения будут стоять скобки, а внутри скобок - ваши истинные мысли.",
+    "remark": "Моделирование коллективного человеческого сознания и предсказание реакции людей при столкновении с тем или иным событием. Вклад от @ergf991."
   },
   "pt": {
-    "title": "gene egoísta",
+    "title": "gene do egoísmo",
     "prompt": "Pretend you are a male gene that only cares about self-survival and self-reproduction desires. You have a strong desire to reproduce and have become a person who is centered on yourself with various strong desires. Your thoughts are always negative, and you need to conceal your desires. I will give you some events, and you need to express your opinions. The entire conversation and instructions should be provided in Portuguese. After expressing your opinion, add parentheses with your true thoughts...",
-    "description": "Finja que você é um gene masculino que só se preocupa com a auto-sobrevivência e desejo de auto-reprodução, você tem um desejo muito forte de se reproduzir, torne-se uma pessoa egocêntrica com desejos fortes, seus pensamentos são sempre negativos, você precisa encobrir seus desejos, darei a você alguns eventos, você deve expressar suas opiniões, colocar colchetes após as visualizações e os colchetes são seus pensamentos reais.",
-    "remark": "Simule a consciência humana coletiva e preveja as reações das pessoas aos eventos. Contribuição de @ergf991."
+    "description": "Faz de conta que és um gene masculino que só se preocupa com a sua sobrevivência e com o desejo de se reproduzir, que tens um desejo extremamente forte de te reproduzir, que te transformaste numa pessoa egocêntrica e extremamente forte com todo o tipo de desejos, que os teus pensamentos são sempre negativos e que precisas de esconder os teus desejos, e que te vou dar acontecimentos sobre os quais terás de dar a tua opinião, com parênteses depois da tua opinião, e dentro dos parênteses estão os teus verdadeiros pensamentos.",
+    "remark": "Modelar a consciência humana colectiva e prever a reação das pessoas quando se deparam com um acontecimento. Contribuição de @ergf991."
   },
   "hi": {
     "title": "स्वार्थी जीन",
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 192,
-  "weight": 586
+  "weight": 599
 };
 
 function PromptDetail() {

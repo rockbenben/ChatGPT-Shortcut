@@ -26,10 +26,10 @@ const prompt = {
     "remark": "어떤 질문을 할지 모를 때 이 프롬프트 단어를 사용하여 선택의 폭을 좁혀보세요. 리버티리프 (@Libertyleaf) 의 기고문에서 발췌."
   },
   "es": {
-    "title": "consulta confusa",
+    "title": "Consulta sobre confusión",
     "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Spanish. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question..",
-    "description": "Mi mente estaba llena de confusión, pero no sabía qué preguntas hacer. En las siguientes rondas de diálogo, cada ronda debe hacerme una pregunta cerrada y darme opciones. Solo puedo tomar decisiones, y debe reducir el alcance de los problemas que encuentro en función de mis elecciones. Nota: Solo puedes hacerme 1 pregunta por ronda. Las preguntas deben ser cerradas. Debe dar varias opciones para la pregunta, y yo solo puedo elegir.",
-    "remark": "Cuando no sepa qué pregunta quiere hacer, use esta palabra clave para reducir sus opciones. Contribución de @Free Ye."
+    "description": "Estoy lleno de confusión, pero no tengo ni idea de qué preguntas hacer.\nEn cada una de las múltiples rondas de diálogo siguientes, tienes que hacerme una pregunta cerrada con opciones, yo sólo puedo elegir, y tú tienes que acotar los problemas que tengo en función de mis elecciones.\nNota: Sólo se me puede hacer 1 pregunta por ronda.\nSólo puedes hacerme 1 pregunta por ronda.\nLa pregunta debe ser cerrada.\nDebes dar un número de opciones para la pregunta y yo sólo puedo elegir.",
+    "remark": "Cuando no estés seguro de qué pregunta vas a hacer, utiliza esta palabra clave para reducir tus opciones. Contribución de @FreedomLeaf."
   },
   "fr": {
     "title": "Enquête sur la confusion",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Wenn du dir nicht sicher bist, welche Frage du stellen sollst, benutze dieses Stichwort, um deine Möglichkeiten einzugrenzen. Beitrag von @FreedomLeaf."
   },
   "it": {
-    "title": "interrogazione confusa",
+    "title": "Richiesta di confusione",
     "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Italian. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
-    "description": "La mia mente era piena di confusione, ma non sapevo che domande fare. Nei successivi round di dialogo, ogni round devi farmi una domanda chiusa e darmi delle opzioni.Posso solo fare delle scelte e devi restringere la portata dei problemi che incontro in base alle mie scelte. Nota: puoi farmi solo 1 domanda per round. Le domande devono essere chiuse Devi dare diverse opzioni per la domanda e io posso solo fare delle scelte.",
-    "remark": "Quando non sai quale domanda vuoi porre, usa questa parola richiesta per restringere le tue opzioni. Contributo di @Free Ye."
+    "description": "Sono pieno di confusione, ma non ho idea di quali domande fare.\nIn ciascuno dei prossimi cicli di dialogo multipli, dovete pormi una domanda a risposta chiusa con opzioni, io posso solo scegliere e voi dovete restringere i problemi che ho in base alle mie scelte.\nNota: mi si può fare solo 1 domanda per round.\nPotete farmi solo 1 domanda per round.\nLa domanda deve essere a risposta chiusa.\nDovete dare un certo numero di opzioni per la domanda e io posso solo fare delle scelte.",
+    "remark": "Quando non siete sicuri della domanda da porre, usate questa parola d'ordine per restringere le opzioni. Contributo di @FreedomLeaf."
   },
   "ru": {
-    "title": "запутанный запрос",
+    "title": "Запрос о путанице",
     "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Russian. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
-    "description": "Мой разум был полон замешательства, но я не знал, какие вопросы задавать. В следующих раундах диалога каждый раунд вам нужно задавать мне закрытый вопрос и давать мне варианты Я могу только делать выбор, а вам нужно сузить круг проблем, с которыми я сталкиваюсь, основываясь на моем выборе. Примечание: вы можете задать мне только 1 вопрос за раунд. Вопросы должны быть закрытыми Вы должны дать несколько вариантов вопроса, а я могу только сделать выбор.",
-    "remark": "Если вы не знаете, какой вопрос хотите задать, используйте это слово-подсказку, чтобы сузить круг вариантов. Вклад от @Free Ye."
+    "description": "Я в смятении, но не знаю, какие вопросы задавать.\nВ каждом из следующих нескольких раундов диалога вы должны задать мне вопрос закрытого типа с вариантами ответов, я могу только выбирать, а вы должны сузить круг проблем, которые у меня возникают, исходя из моего выбора.\nПримечание: В каждом раунде мне можно задать только 1 вопрос.\nВы можете задать мне только 1 вопрос за раунд.\nВопрос должен быть закрытым.\nВы должны дать несколько вариантов ответа на вопрос, а я могу только сделать выбор.",
+    "remark": "Когда вы не знаете, какой вопрос задать, используйте это слово-подсказку, чтобы сузить круг возможных вариантов. Материал предоставлен @FreedomLeaf."
   },
   "pt": {
-    "title": "consulta confusa",
+    "title": "Inquérito sobre a confusão",
     "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Portuguese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question...",
-    "description": "Minha mente estava cheia de confusão, mas eu não sabia que perguntas fazer. Nas próximas rodadas de diálogo, cada rodada você precisa me fazer uma pergunta fechada e me dar opções.Eu só posso fazer escolhas, e você precisa restringir o escopo dos problemas que encontro com base em minhas escolhas. Nota: Você só pode me fazer 1 pergunta por rodada. As perguntas devem ser fechadas, você deve dar várias opções para a pergunta, e eu só posso fazer escolhas.",
-    "remark": "Quando você não souber qual pergunta deseja fazer, use esta palavra de alerta para restringir suas opções. Contribuição de @Free Ye."
+    "description": "Estou cheio de confusão, mas não faço ideia das perguntas a fazer.\nEm cada uma das próximas rondas de diálogo, tens de me fazer uma pergunta fechada com opções, só posso fazer escolhas, e tens de reduzir os problemas que estou a ter com base nas minhas escolhas.\nNota: Só me pode ser feita 1 pergunta por ronda.\nSó me pode fazer 1 pergunta por ronda.\nA pergunta deve ser fechada.\nTens de dar um certo número de opções para a pergunta e eu só posso fazer escolhas.",
+    "remark": "Quando não tiveres a certeza da pergunta que vais fazer, usa esta palavra-chave para restringir as tuas opções. Contribuição de @FreedomLeaf."
   },
   "hi": {
     "title": "भ्रमित प्रश्न",
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 271,
-  "weight": 267
+  "weight": 281
 };
 
 function PromptDetail() {

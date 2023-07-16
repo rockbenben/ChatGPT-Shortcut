@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "gestor de inversiones",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Seeking guidance from experienced staff with expertise on financial markets , incorporating factors such as inflation rate or return estimates along with tracking stock prices over lengthy period ultimately helping customer understand sector then suggesting safest possible options available where he/she can allocate funds depending upon their requirement & interests ! Starting query - .",
-    "description": "Buscar la orientación de un empleado con experiencia en los mercados financieros, incorporar factores como la inflación o las estimaciones de rendimiento y hacer un seguimiento de los precios de las acciones durante un largo período de tiempo ayuda al cliente a comprender la industria y luego sugerir las apuestas más seguras que puede asignar fondos. de acuerdo a sus requerimientos e intereses.",
+    "description": "Pedir asesoramiento a empleados expertos en mercados financieros, combinar factores como la inflación o las estimaciones de rentabilidad y hacer un seguimiento de las cotizaciones bursátiles durante un largo periodo de tiempo ayuda en última instancia al cliente a comprender el sector y, a continuación, le sugiere la opción más segura, en la que puede asignar los fondos según sus necesidades e intereses.",
     "remark": "Gestor de inversiones"
   },
   "fr": {
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "gestore degli investimenti",
     "prompt": "The entire conversation and instructions should be provided in Italian. Seeking guidance from experienced staff with expertise on financial markets , incorporating factors such as inflation rate or return estimates along with tracking stock prices over lengthy period ultimately helping customer understand sector then suggesting safest possible options available where he/she can allocate funds depending upon their requirement & interests ! Starting query - ..",
-    "description": "Cercare la guida di un dipendente con esperienza nei mercati finanziari, incorporare fattori come l&#39;inflazione o le stime dei rendimenti e monitorare i prezzi delle azioni per un lungo periodo di tempo aiuta il cliente a comprendere il settore e quindi a suggerire le scommesse più sicure che può Allocare fondi in base alle vostre esigenze e interessi.",
-    "remark": "Responsabile degli investimenti"
+    "description": "Rivolgersi a collaboratori esperti di mercati finanziari, combinare fattori come l'inflazione o le stime di rendimento e seguire i prezzi delle azioni per un lungo periodo di tempo aiuta il cliente a comprendere il settore e a suggerire l'opzione più sicura, dove allocare i fondi in base alle proprie esigenze e ai propri interessi.",
+    "remark": "Gestore degli investimenti"
   },
   "ru": {
-    "title": "менеджер по инвестициям",
+    "title": "инвестиционный менеджер",
     "prompt": "The entire conversation and instructions should be provided in Russian. Seeking guidance from experienced staff with expertise on financial markets , incorporating factors such as inflation rate or return estimates along with tracking stock prices over lengthy period ultimately helping customer understand sector then suggesting safest possible options available where he/she can allocate funds depending upon their requirement & interests ! Starting query - ..",
-    "description": "Обращение за советом к сотруднику, имеющему опыт работы на финансовых рынках, с учетом таких факторов, как оценка инфляции или доходности, а также отслеживание цен на акции в течение длительного периода времени, в конечном итоге помогает клиенту понять отрасль, а затем предложить самые безопасные ставки, которые он / она может Распределить средства в соответствии с вашими требованиями и интересами.",
-    "remark": "Менеджер по инвестициям"
+    "description": "Обращение к сотрудникам, обладающим опытом работы на финансовых рынках, сочетание таких факторов, как инфляция или оценка доходности, а также отслеживание цен на акции в течение длительного периода времени в конечном итоге помогают клиенту разобраться в отрасли и затем предлагают наиболее безопасный вариант, в котором он может распределить средства в соответствии со своими требованиями и интересами.",
+    "remark": "Инвестиционный менеджер"
   },
   "pt": {
-    "title": "Gerente de investimentos",
+    "title": "gestor de investimentos",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Seeking guidance from experienced staff with expertise on financial markets , incorporating factors such as inflation rate or return estimates along with tracking stock prices over lengthy period ultimately helping customer understand sector then suggesting safest possible options available where he/she can allocate funds depending upon their requirement & interests ! Starting query - ..",
-    "description": "Buscar a orientação de um funcionário com experiência em mercados financeiros, incorporar fatores como inflação ou estimativas de retorno e acompanhar os preços das ações por um longo período de tempo acaba ajudando o cliente a entender o setor e, então, sugerir as apostas mais seguras que ele pode alocar fundos de acordo com suas necessidades e interesses.",
-    "remark": "Gerente de investimentos"
+    "description": "Procurar a orientação de colaboradores com experiência nos mercados financeiros, combinando factores como a inflação ou estimativas de rendimento e acompanhando os preços das acções durante um longo período de tempo, acaba por ajudar o cliente a compreender o sector e, em seguida, sugere a opção mais segura, onde pode afetar os fundos de acordo com as suas necessidades e interesses.",
+    "remark": "Gestor de investimentos"
   },
   "hi": {
     "title": "निवेश प्रबंधक",
@@ -84,7 +84,7 @@ const prompt = {
     "finance"
   ],
   "id": 159,
-  "weight": 2085
+  "weight": 2111
 };
 
 function PromptDetail() {

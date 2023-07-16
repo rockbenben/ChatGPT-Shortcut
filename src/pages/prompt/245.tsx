@@ -26,10 +26,10 @@ const prompt = {
     "remark": "개념이나 아이디어를 구체적인 것으로 변환하여 디자인 아이디어를 가시화합니다. 공유 @sorghumcherho."
   },
   "es": {
-    "title": "diseño de icono",
+    "title": "Diseño de iconos",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
-    "description": "Como diseñador de íconos, dame algunas ideas sobre íconos que representen la palabra &quot;simple&quot;. La idea es agregar un ícono en la página principal del sitio web de la aplicación, que represente la filosofía de &quot;cocina simple y fácil&quot;, ya que el objetivo principal de la aplicación es brindar a las personas recetas simples que puedan cocinar fácilmente en casa. Más información: - Los íconos deben ser simples y claros, con imágenes simples que transmitan ideas de manera sucinta.",
-    "remark": "Transformar conceptos o ideas en cosas concretas, concretando ideas de diseño. Compartido desde @梁哲豪。"
+    "description": "Como diseñador de iconos, dame algunas ideas para un icono que represente la palabra \"simple\". La idea es añadir un icono en la página web principal de la app que represente la idea de \"fácil de cocinar\" ya que el objetivo principal de la app es proporcionar a la gente recetas sencillas que puedan cocinar fácilmente en casa. Más información:- El icono debe ser sencillo y visualmente atractivo para transmitir la idea de forma sucinta.",
+    "remark": "Traducir un concepto o una idea en algo concreto hace que la idea de diseño sea tangible. Compartido por @Liang Zhehao."
   },
   "fr": {
     "title": "Conception d'icônes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Die Umsetzung eines Konzepts oder einer Idee in etwas Konkretes macht die Designidee greifbar. Geteilt von @Liang Zhehao."
   },
   "it": {
-    "title": "disegno dell&#39;icona",
+    "title": "Design delle icone",
     "prompt": "The entire conversation and instructions should be provided in Italian. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX..",
-    "description": "Come un designer di icone, dammi qualche idea sulle icone che rappresentano la parola &quot;semplice&quot;. L&#39;idea è quella di aggiungere un&#39;icona sulla pagina principale del sito Web dell&#39;app, che rappresenti la filosofia della &quot;cucina semplice e facile&quot;, poiché l&#39;obiettivo principale dell&#39;app è fornire alle persone ricette semplici che possano facilmente cucinare a casa. Maggiori informazioni: - Le icone dovrebbero essere semplici e chiare, con elementi visivi semplici che trasmettano le idee in modo conciso.",
-    "remark": "Trasforma concetti o idee in cose concrete, rendendo concrete le idee progettuali. Condiviso da @梁哲豪。"
+    "description": "Come designer di icone, datemi qualche idea per un'icona che rappresenti la parola \"semplice\". L'idea è quella di aggiungere un'icona sulla pagina principale del sito web dell'app che rappresenti l'idea di \"facile da cucinare\", poiché l'obiettivo principale dell'app è quello di fornire alle persone ricette semplici che possono facilmente cucinare a casa. Altre informazioni:- L'icona deve essere semplice e visivamente accattivante per trasmettere l'idea in modo sintetico.",
+    "remark": "Tradurre un concetto o un'idea in qualcosa di concreto rende l'idea progettuale tangibile. Condiviso da @Liang Zhehao."
   },
   "ru": {
-    "title": "дизайн иконок",
+    "title": "Иконный дизайн",
     "prompt": "The entire conversation and instructions should be provided in Russian. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX..",
-    "description": "Как дизайнер иконок, дайте мне несколько идей о значках, представляющих слово «простой». Идея состоит в том, чтобы добавить значок на главную страницу веб-сайта приложения, представляющий идею «Легкой и легкой кулинарии», потому что основная цель приложения — предоставить людям простые рецепты, которые они могут легко приготовить дома. Дополнительная информация: Иконки должны быть простыми и четкими, с простыми визуальными эффектами, которые кратко передают идею.",
-    "remark": "Превратите концепции или идеи в конкретные вещи, сделав дизайнерские идеи конкретными. Поделился с @梁哲豪。"
+    "description": "Как дизайнер иконок, подскажите мне несколько идей для иконки, представляющей слово \"простой\". Идея состоит в том, чтобы добавить на главную страницу веб-сайта приложения иконку, которая олицетворяет идею \"легко готовить\", поскольку основная цель приложения - предоставить людям простые рецепты, которые они могут легко приготовить дома. Дополнительная информация:- Иконка должна быть простой и визуально привлекательной, чтобы лаконично передать идею.",
+    "remark": "Перевод концепции или идеи в нечто конкретное делает проектную идею осязаемой. Поступило от @Liang Zhehao."
   },
   "pt": {
-    "title": "design de ícone",
+    "title": "Desenho de ícones",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX..",
-    "description": "Como um designer de ícones, dê-me algumas ideias sobre ícones que representam a palavra &quot;simples&quot;. A ideia é adicionar um ícone na página principal do site do aplicativo, representando a filosofia &quot;cozinhar simples e fácil&quot;, já que o principal objetivo do aplicativo é fornecer às pessoas receitas simples que possam cozinhar facilmente em casa. Mais informações:- Os ícones devem ser simples e claros, com visuais simples que transmitam ideias de forma sucinta.",
-    "remark": "Transforme conceitos ou ideias em coisas concretas, tornando as ideias de design concretas. Compartilhado de @梁哲豪。"
+    "description": "Como designer de ícones, dê-me algumas ideias para um ícone que represente a palavra \"simples\". A ideia é adicionar um ícone na página principal do sítio Web da aplicação que represente a ideia de \"fácil de cozinhar\", uma vez que o principal objetivo da aplicação é fornecer às pessoas receitas simples que possam facilmente cozinhar em casa. Mais informações:- O ícone deve ser simples e visualmente apelativo para transmitir a ideia de forma sucinta.",
+    "remark": "A tradução de um conceito ou ideia em algo concreto torna a ideia de design tangível. Partilhado por @Liang Zhehao."
   },
   "hi": {
     "title": "आइकन डिज़ाइन",
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 245,
-  "weight": 298
+  "weight": 306
 };
 
 function PromptDetail() {

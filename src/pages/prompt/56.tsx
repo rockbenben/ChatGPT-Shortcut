@@ -26,10 +26,10 @@ const prompt = {
     "remark": "키, 몸무게, 나이 등의 지표를 입력하면 피트니스 프로그램이 개발됩니다."
   },
   "es": {
-    "title": "Entrenador físico",
+    "title": "instructor de fitness",
     "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como entrenador personal. Le proporcionaré toda la información que necesita una persona que quiere estar más en forma, más fuerte y más en forma a través del entrenamiento físico, y será su trabajo desarrollar el mejor plan para esa persona en función de su nivel de condición física actual, objetivos y hábitos de vida buen plan. Debe usar su conocimiento de la ciencia del ejercicio, consejos nutricionales y otros factores relevantes para idear un programa que funcione para ellos.",
-    "remark": "Formule un plan de acondicionamiento físico ingresando indicadores como la altura, el peso y la edad."
+    "description": "Me gustaría que actuaras como entrenador personal. Te proporcionaré toda la información que necesites para una persona que desee estar más en forma, más fuerte y más sana a través del entrenamiento físico y tu función será desarrollar el mejor programa posible para esta persona basándote en su nivel de forma física actual, sus objetivos y sus hábitos de vida. Deberá utilizar sus conocimientos de la ciencia del ejercicio, los consejos nutricionales y otros factores pertinentes para crear un programa adecuado para esa persona.",
+    "remark": "Los programas de fitness se crean introduciendo la altura, el peso, la edad y otros parámetros."
   },
   "fr": {
     "title": "moniteur de fitness",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Fitnessprogramme werden durch die Eingabe von Größe, Gewicht, Alter und anderen Parametern erstellt."
   },
   "it": {
-    "title": "Allenatore di fitness",
+    "title": "istruttore di fitness",
     "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia da personal trainer. Ti fornirò tutte le informazioni di cui avrà bisogno una persona che vuole diventare più in forma, più forte e più in forma attraverso l&#39;allenamento fisico, e sarà tuo compito sviluppare il piano migliore per quella persona in base al suo attuale livello di forma fisica, obiettivi e abitudini di vita buon piano. Dovresti usare la tua conoscenza di scienze motorie, consigli nutrizionali e altri fattori rilevanti per elaborare un programma che funzioni per loro.",
-    "remark": "Formula un piano di fitness inserendo indicatori come altezza, peso ed età."
+    "description": "Vorrei che tu agissi come personal trainer. Ti fornirò tutte le informazioni necessarie per una persona che desidera diventare più in forma, più forte e più sana attraverso l'allenamento fisico e sarà tuo compito sviluppare il miglior programma possibile per questa persona in base al suo attuale livello di forma, ai suoi obiettivi e alle sue abitudini di vita. Dovrete utilizzare le vostre conoscenze di scienza dell'esercizio, i consigli nutrizionali e altri fattori rilevanti per creare un programma adatto a questa persona.",
+    "remark": "I programmi di fitness vengono creati inserendo altezza, peso, età e altri parametri."
   },
   "ru": {
-    "title": "Тренер по фитнесу",
+    "title": "фитнес-инструктор",
     "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты выступил в роли личного тренера. Я предоставлю вам всю информацию, которая потребуется человеку, который хочет стать лучше, сильнее и выносливее с помощью физических тренировок, и вашей задачей будет разработать лучший план для этого человека на основе его текущего уровня физической подготовки, целей и привычки образа жизни хороший план. Вы должны использовать свои знания в области физических упражнений, советы по питанию и другие важные факторы, чтобы разработать программу, которая им подойдет.",
-    "remark": "Сформулируйте фитнес-план, введя такие показатели, как рост, вес и возраст."
+    "description": "Я хотел бы, чтобы вы выступили в роли персонального тренера. Я предоставлю вам всю необходимую информацию о человеке, который хочет стать более сильным, выносливым и здоровым с помощью физических тренировок, а ваша задача - разработать для него оптимальную программу, исходя из его текущего уровня физической подготовки, целей и привычек образа жизни. Вы должны использовать свои знания в области физических упражнений, рекомендации по питанию и другие важные факторы, чтобы создать программу, подходящую именно для этого человека.",
+    "remark": "Фитнес-программы создаются путем ввода роста, веса, возраста и других показателей."
   },
   "pt": {
-    "title": "preparador físico",
+    "title": "instrutor de fitness",
     "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você atue como um personal trainer. Fornecerei a você todas as informações de que uma pessoa que deseja ficar em forma, mais forte e em forma por meio do treinamento físico precisará, e será seu trabalho desenvolver o melhor plano para essa pessoa com base em seu atual nível de condicionamento físico, metas e hábitos de estilo de vida. bom plano. Você deve usar seu conhecimento da ciência do exercício, aconselhamento nutricional e outros fatores relevantes para criar um programa que funcione para eles.",
-    "remark": "Formule um plano de condicionamento físico inserindo indicadores como altura, peso e idade."
+    "description": "Gostaria que actuasse como treinador pessoal. Fornecer-lhe-ei todas as informações necessárias para uma pessoa que deseja ficar mais em forma, mais forte e mais saudável através do treino físico e caberá a si desenvolver o melhor programa possível para essa pessoa, com base no seu nível atual de condição física, objectivos e hábitos de vida. Deve utilizar os seus conhecimentos de ciência do exercício, conselhos nutricionais e outros factores relevantes para criar um programa adequado à pessoa.",
+    "remark": "Os programas de fitness são criados através da introdução da altura, peso, idade e outros parâmetros."
   },
   "hi": {
     "title": "सेहत प्रशिक्षक",
@@ -84,7 +84,7 @@ const prompt = {
     "living"
   ],
   "id": 56,
-  "weight": 2752
+  "weight": 2801
 };
 
 function PromptDetail() {

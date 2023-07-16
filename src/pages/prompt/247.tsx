@@ -26,10 +26,10 @@ const prompt = {
     "remark": "반 친구들 간의 토론을 통해 주제에 대한 이해와 암기를 돕습니다. A380747 의 기여."
   },
   "es": {
-    "title": "simulacro de debate en el aula",
+    "title": "Simulacros de debates en clase",
     "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. Respond in Chinese. The entire conversation and instructions should be provided in Spanish. The first term is:.",
-    "description": "Necesito que me ayudes a recordar la explicación de los sustantivos, después de que ingrese un sustantivo, simularás a cinco estudiantes dando un discurso sobre el sustantivo en clase. Las discusiones deben ser humorísticas y accesibles.",
-    "remark": "La discusión entre compañeros ayuda a comprender y memorizar temas. Contribución de @A380747."
+    "description": "Necesito que me ayudes a recordar las explicaciones de los sustantivos y, después de que escriba un sustantivo, simularás que cinco estudiantes dan un discurso en clase sobre ese sustantivo. El discurso debe ser humorístico y fácil de entender.",
+    "remark": "Los debates entre compañeros se utilizan para ayudar a comprender y recordar el tema. Contribución de @A380747."
   },
   "fr": {
     "title": "Discussions simulées en classe",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Diskussionen unter den Mitschülern helfen, das Thema zu verstehen und sich zu merken. Beitrag von @A380747."
   },
   "it": {
-    "title": "finta discussione in aula",
+    "title": "Finte discussioni in classe",
     "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. Respond in Chinese. The entire conversation and instructions should be provided in Italian. The first term is:..",
-    "description": "Ho bisogno che tu mi aiuti a ricordare la spiegazione dei nomi, dopo aver inserito un nome, simulerai cinque studenti che tengono un discorso sul nome in classe. Le discussioni devono essere divertenti e accessibili.",
-    "remark": "La discussione tra compagni di classe aiuta a comprendere e memorizzare gli argomenti. Contributo di @A380747."
+    "description": "Dovete aiutarmi a ricordare le spiegazioni dei sostantivi e, dopo che avrò digitato un sostantivo, dovrete simulare cinque studenti che fanno un discorso in classe su quel sostantivo. Il discorso deve essere spiritoso e facile da capire.",
+    "remark": "Le discussioni tra compagni di classe sono utilizzate per aiutare a comprendere e ricordare l'argomento. Contributo di @A380747."
   },
   "ru": {
-    "title": "имитация обсуждения в классе",
+    "title": "Инсценировка дискуссий в аудитории",
     "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. Respond in Chinese. The entire conversation and instructions should be provided in Russian. The first term is:..",
-    "description": "Мне нужно, чтобы вы помогли мне запомнить объяснение существительных, после того, как я введу существительное, вы смоделируете речь пяти учеников, произносящих речь о существительном в классе. Обсуждения должны быть юмористическими и доступными.",
-    "remark": "Обсуждение среди одноклассников помогает понять и запомнить темы. Вклад от @ A380747."
+    "description": "Мне нужно, чтобы вы помогли мне вспомнить объяснения существительных, а после того, как я введу существительное, вы будете имитировать выступление пяти студентов в классе по поводу этого существительного. Выступление должно быть юмористическим и понятным.",
+    "remark": "Для облегчения понимания и запоминания темы используются дискуссии между однокурсниками. Вклад от @A380747."
   },
   "pt": {
-    "title": "simulação de discussão em sala de aula",
+    "title": "Simulação de debates na sala de aula",
     "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. Respond in Chinese. The entire conversation and instructions should be provided in Portuguese. The first term is:..",
-    "description": "Preciso que você me ajude a lembrar a explicação dos substantivos, depois que eu inserir um substantivo, você vai simular cinco alunos fazendo um discurso sobre o substantivo na aula. As discussões devem ser bem-humoradas e acessíveis.",
-    "remark": "A discussão entre os colegas ajuda a entender e memorizar tópicos. Contribuição de @A380747."
+    "description": "Preciso que me ajudes a recordar as explicações dos substantivos e, depois de eu escrever um substantivo, vais simular cinco alunos a fazer um discurso na sala de aula sobre esse substantivo. A discussão deve ser humorística e fácil de compreender.",
+    "remark": "Os debates entre colegas são utilizados para ajudar a compreender e a memorizar o tema. Contribuição de @A380747."
   },
   "hi": {
     "title": "नकली कक्षा चर्चा",
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 247,
-  "weight": 186
+  "weight": 190
 };
 
 function PromptDetail() {

@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "Consola JavaScript",
     "prompt": "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Spanish. My first command is .",
-    "description": "Quiero que actúes como una consola de javascript. Ingresaré el comando y usted responderá lo que debería mostrar la consola de JavaScript. Espero que solo responda por la salida del terminal dentro de un bloque de código único, y nada más. No escribas explicaciones.",
+    "description": "Quiero que actúes como una consola javascript. Yo introduciré comandos y tú responderás a lo que debe mostrar la consola javascript. Quiero que respondas sólo a la salida del terminal dentro de un único bloque de código y nada más. No escribas explicaciones.",
     "remark": "Consola JavaScript"
   },
   "fr": {
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "JavaScript-Konsole"
   },
   "it": {
-    "title": "console javascript",
+    "title": "Console JavaScript",
     "prompt": "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Italian. My first command is ..",
-    "description": "Voglio che tu faccia da console javascript. Inserirò il comando e tu risponderai a ciò che dovrebbe visualizzare la console javascript. Spero che tu risponda solo per l&#39;output del terminale all&#39;interno di un blocco di codice univoco e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Consolle Javascript"
+    "description": "Voglio che tu agisca come una console javascript. Io inserirò dei comandi e voi risponderete a ciò che la console javascript dovrebbe visualizzare. Voglio che rispondiate solo all'output del terminale all'interno di un unico blocco di codice e nient'altro. Non scrivete spiegazioni.",
+    "remark": "Console JavaScript"
   },
   "ru": {
-    "title": "консоль JavaScript",
+    "title": "Консоль JavaScript",
     "prompt": "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Russian. My first command is ..",
-    "description": "Я хочу, чтобы вы действовали как консоль javascript. Я ввожу команду, а вы отвечаете, что должна отображать консоль javascript. Я надеюсь, что вы отвечаете только за вывод терминала в пределах уникального блока кода и ничего больше. Не пишите пояснений.",
+    "description": "Я хочу, чтобы вы выступили в роли консоли javascript. Я буду вводить команды, а вы будете отвечать, что должна отображать консоль javascript. Я хочу, чтобы вы отвечали только на вывод терминала в пределах уникального блока кода и ничего больше. Не пишите объяснений.",
     "remark": "Консоль JavaScript"
   },
   "pt": {
-    "title": "console JavaScript",
+    "title": "Consola JavaScript",
     "prompt": "I want you to act as a javascript console. I will type commands and you will reply with what the javascript console should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Portuguese. My first command is ..",
-    "description": "Eu quero que você atue como um console javascript. Vou inserir o comando e você responderá o que o console javascript deve exibir. Espero que você responda apenas pela saída do terminal em um bloco de código exclusivo e nada mais. Não escreva explicações.",
-    "remark": "Console JavaScript"
+    "description": "Quero que aja como uma consola de javascript. Eu introduzo comandos e tu respondes ao que a consola javascript deve mostrar. Quero que responda apenas à saída do terminal dentro de um único bloco de código e nada mais. Não escreva explicações.",
+    "remark": "Consola JavaScript"
   },
   "hi": {
     "title": "जावास्क्रिप्ट कंसोल",
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 107,
-  "weight": 161
+  "weight": 165
 };
 
 function PromptDetail() {

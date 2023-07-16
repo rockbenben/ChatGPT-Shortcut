@@ -26,10 +26,10 @@ const prompt = {
     "remark": "문학 작품의 출처와 영향력에 대한 분석과 해석을 제공합니다."
   },
   "es": {
-    "title": "Revisión de Lengua y Literatura",
+    "title": "Lengua y literatura",
     "prompt": "I want you to act as a language literary critic. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. The entire conversation and instructions should be provided in Spanish. My first request is \"To be or not to be, that is the question.\".",
-    "description": "Espero que puedas servir como crítico de lengua y literatura. Le proporcionaré algunos extractos de la literatura. Debe analizar estas obras literarias en términos de género, tema, estructura de la trama, caracterización, estilo de lenguaje y antecedentes históricos y culturales en un contexto determinado. Debe comprender profundamente el significado y la importancia de estos trabajos después del análisis. Mi primera súplica fue: &quot;Ser o no ser, esa es la cuestión&quot;.",
-    "remark": "Analizar e interpretar obras literarias, aportando procedencia e influencia."
+    "description": "Me gustaría que ejercieras de crítico lingüístico y literario. Te proporcionaré algunos extractos de obras literarias. Tendrás que analizar estas obras literarias desde el punto de vista del género, el tema, la estructura de la trama, la caracterización, el estilo lingüístico y el trasfondo histórico y cultural, basándote en el contexto dado. Se espera que, tras el análisis de estas obras, adquieras una comprensión más profunda de su significado e importancia. Mi primera petición es: \"Sobrevivir o perecer, esa es la cuestión\".",
+    "remark": "Análisis e interpretación de obras literarias, con su procedencia e influencia."
   },
   "fr": {
     "title": "Examen de la langue et de la littérature",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Analysen und Interpretationen literarischer Werke, mit Angabe ihrer Herkunft und ihres Einflusses."
   },
   "it": {
-    "title": "Rassegna di lingua e letteratura",
+    "title": "Lingua e letteratura",
     "prompt": "I want you to act as a language literary critic. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. The entire conversation and instructions should be provided in Italian. My first request is \"To be or not to be, that is the question.\"..",
-    "description": "Spero che tu possa servire come critico linguistico e letterario. Vi fornirò alcuni estratti dalla letteratura. È necessario analizzare queste opere letterarie in termini di genere, tema, struttura della trama, caratterizzazione, stile linguistico e background storico e culturale in un dato contesto. Dovresti comprendere a fondo il significato e l&#39;importanza di queste opere dopo l&#39;analisi. La mia prima supplica fu: &quot;Essere o non essere, questo è il problema&quot;.",
-    "remark": "Analizzare e interpretare opere letterarie, fornendo provenienza e influenza."
+    "description": "Vorrei che lei fungesse da critico linguistico e letterario. Vi fornirò alcuni estratti di opere letterarie. Dovrete analizzare queste opere letterarie in termini di genere, tema, struttura della trama, caratterizzazione, stile linguistico e contesto storico e culturale, in base al contesto dato. Dopo averle analizzate, dovrete acquisire una comprensione più profonda del significato e del senso di queste opere. La mia prima richiesta è: \"Sopravvivere o morire, questa è la domanda\".",
+    "remark": "Analisi e interpretazioni di opere letterarie, con la loro provenienza e influenza."
   },
   "ru": {
     "title": "Обзор языка и литературы",
     "prompt": "I want you to act as a language literary critic. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. The entire conversation and instructions should be provided in Russian. My first request is \"To be or not to be, that is the question.\"..",
-    "description": "Я надеюсь, что вы можете служить в качестве языкового и литературного критика. Приведу несколько выдержек из литературы. Вам необходимо проанализировать эти литературные произведения с точки зрения жанра, темы, структуры сюжета, характеристики, языкового стиля, а также исторического и культурного фона в данном контексте. Вы должны глубоко понять смысл и важность этих работ после анализа. Моей первой мольбой было: «Быть или не быть, вот в чем вопрос».",
-    "remark": "Анализировать и интерпретировать литературные произведения, обеспечивая происхождение и влияние."
+    "description": "Я хотел бы, чтобы Вы выступили в роли критика языка и литературы. Я предоставлю вам несколько отрывков из литературных произведений. Вы должны будете проанализировать эти литературные произведения с точки зрения жанра, темы, структуры сюжета, характера, языкового стиля, исторического и культурного фона, исходя из заданного контекста. Предполагается, что после анализа вы сможете глубже понять смысл и значение этих произведений. Моя первая просьба: \"Выжить или погибнуть - вот в чем вопрос\".",
+    "remark": "Анализ и интерпретация литературных произведений, их происхождение и влияние."
   },
   "pt": {
-    "title": "Revisão de Linguagem e Literatura",
+    "title": "Revisão da língua e da literatura",
     "prompt": "I want you to act as a language literary critic. I will provide you with some excerpts from literature work. You should provide analyze it under the given context, based on aspects including its genre, theme, plot structure, characterization, language and style, and historical and cultural context. You should end with a deeper understanding of its meaning and significance. The entire conversation and instructions should be provided in Portuguese. My first request is \"To be or not to be, that is the question.\"..",
-    "description": "Espero que você possa servir como um crítico de linguagem e literatura. Vou fornecer-lhe alguns trechos da literatura. Você precisa analisar essas obras literárias em termos de gênero, tema, estrutura do enredo, caracterização, estilo de linguagem e contexto histórico e cultural em um determinado contexto. Você deve entender profundamente o significado e a importância dessas obras após a análise. Meu primeiro apelo foi: &quot;Ser ou não ser, eis a questão.&quot;",
-    "remark": "Analisar e interpretar obras literárias, fornecendo proveniência e influência."
+    "description": "Gostaria que fosse um crítico de língua e literatura. Vou fornecer-lhe alguns extractos de obras literárias. Terás de analisar essas obras literárias em termos de género, tema, estrutura do enredo, caraterização, estilo linguístico e contexto histórico e cultural, com base no contexto dado. Espera-se que, após a análise, adquiram uma compreensão mais profunda do significado e da importância destas obras. O meu primeiro pedido é: \"Sobreviver ou perecer, eis a questão\".",
+    "remark": "Análise e interpretação de obras literárias, com a sua proveniência e influência."
   },
   "hi": {
     "title": "भाषा और साहित्य समीक्षा",
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 216,
-  "weight": 499
+  "weight": 511
 };
 
 function PromptDetail() {

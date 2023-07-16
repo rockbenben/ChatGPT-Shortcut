@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "Intérprete de programación R",
     "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Spanish. My first command is.",
-    "description": "Quiero que actúes como intérprete de R. Escribo el comando y respondes lo que debería mostrar la terminal. Espero que solo responda por la salida del terminal dentro de un bloque de código único, y nada más. No escribas explicaciones. No escribas comandos a menos que te lo indique. Cuando necesito decirte algo en inglés, pongo el texto entre llaves {remark text}.",
+    "description": "Quiero que actúes como intérprete de R. Yo introduzco comandos y tú respondes a lo que debe mostrar el terminal. Quiero que respondas sólo a la salida del terminal dentro de un único bloque de código y nada más. No escribas explicaciones. No escribas comandos a menos que yo te lo indique. Cuando necesite decirte algo en inglés, pondré el texto entre llaves {Remarks text}.",
     "remark": "Intérprete de programación R"
   },
   "fr": {
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Interprete di programmazione R",
     "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Italian. My first command is..",
-    "description": "Voglio che tu faccia da interprete R. Digito il comando e tu rispondi a ciò che il terminale dovrebbe visualizzare. Spero che tu risponda solo per l&#39;output del terminale all&#39;interno di un blocco di codice univoco e nient&#39;altro. Non scrivere spiegazioni. Non digitare comandi a meno che non ti dica di farlo. Quando ho bisogno di dirti qualcosa in inglese, metto il testo tra parentesi graffe {remark text}.",
-    "remark": "R Interprete Programmatore"
+    "description": "Voglio che tu agisca come un interprete R. Io inserisco i comandi e voi rispondete a ciò che il terminale dovrebbe visualizzare. Voglio che rispondiate solo all'output del terminale all'interno di un unico blocco di codice e nient'altro. Non scrivete spiegazioni. Non digitate comandi a meno che non vi dia istruzioni in tal senso. Quando ho bisogno di dirvi qualcosa in inglese, metterò il testo tra parentesi graffe {Remarks text}.",
+    "remark": "Interprete di programmazione R"
   },
   "ru": {
-    "title": "Интерпретатор программирования R",
+    "title": "Интерпретатор программирования на языке R",
     "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Russian. My first command is..",
-    "description": "Я хочу, чтобы вы выступили в роли интерпретатора R. Я набираю команду, а вы отвечаете, что должен отобразить терминал. Я надеюсь, что вы отвечаете только за вывод терминала в пределах уникального блока кода и ничего больше. Не пишите пояснений. Не вводите команды, если я не прикажу вам. Когда мне нужно сказать вам что-то на английском языке, я заключаю текст в фигурные скобки {remark text}.",
-    "remark": "Интерпретатор программирования R"
+    "description": "Я хочу, чтобы вы выступили в роли интерпретатора языка R. Я ввожу команды, а вы отвечаете, что должен вывести терминал. Я хочу, чтобы вы отвечали только на вывод терминала в пределах уникального блока кода и ничего больше. Не пишите пояснений. Не вводите команды, пока я не проинструктирую вас об этом. Когда мне нужно сообщить вам что-то на английском языке, я помещаю текст в фигурные скобки {Remarks text}.",
+    "remark": "Интерпретатор программирования на языке R"
   },
   "pt": {
-    "title": "interpretador de programação R",
+    "title": "Intérprete de programação R",
     "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Portuguese. My first command is..",
-    "description": "Eu quero que você atue como um intérprete de R. Eu digito o comando e você responde o que o terminal deve exibir. Espero que você responda apenas pela saída do terminal em um bloco de código exclusivo e nada mais. Não escreva explicações. Não digite comandos a menos que eu o instrua. Quando preciso falar algo em inglês, coloco o texto entre colchetes {remark text}.",
-    "remark": "Intérprete de Programação R"
+    "description": "Quero que actues como um intérprete de R. Eu introduzo comandos e tu respondes ao que o terminal deve mostrar. Quero que responda apenas à saída do terminal dentro de um único bloco de código e nada mais. Não escrevas explicações. Não escreva comandos a menos que eu o instrua a fazê-lo. Quando eu precisar de lhe dizer algo em inglês, colocarei o texto entre parênteses rectos {Remarks text}.",
+    "remark": "Intérprete de programação R"
   },
   "hi": {
     "title": "आर प्रोग्रामिंग दुभाषिया",
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 105,
-  "weight": 84
+  "weight": 87
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "영화, 책 또는 기타 출처의 등장인물과의 대화."
   },
   "es": {
-    "title": "Juego de roles",
+    "title": "juego de rol (juego)",
     "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Spanish. My first sentence is 'Hi {character}.'.",
-    "description": "Quiero que actúes como {role} de {source}. Quiero que responda como {role}, con el tono, la manera y el vocabulario que usaría {role}. No escriba ninguna explicación. Solo responda como {role}. Debes saber todo sobre {role}.",
-    "remark": "Diálogo con personajes de películas, libros u otras fuentes."
+    "description": "Espero que actúes como lo haría {personaje} de {fuente}. Espero que respondas y contestes en el tono, la forma y el vocabulario que {personaje} utilizaría, tal y como lo haría {personaje}. No escribas ninguna explicación. Responde sólo como {personaje}. Debes saber todo lo que sabe {Role}.",
+    "remark": "Entabla diálogos con personajes de películas, libros u otras fuentes."
   },
   "fr": {
     "title": "jeu de rôle (jeu)",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Führen Sie einen Dialog mit Figuren aus Filmen, Büchern oder anderen Quellen."
   },
   "it": {
-    "title": "gioco di ruolo",
+    "title": "gioco di ruolo (gioco)",
     "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Italian. My first sentence is 'Hi {character}.'..",
-    "description": "Voglio che ti comporti come {role} da {source}. Voglio che tu risponda e risponda come {role}, con il tono, i modi e il vocabolario che {role} userebbe. Non scrivere alcuna spiegazione. Rispondi solo come {ruolo}. Devi sapere tutto su {ruolo}.",
-    "remark": "Dialoga con personaggi di film, libri o altre fonti."
+    "description": "Mi aspetto che vi comportiate come si comporterebbe {personaggio} da {fonte}. Mi aspetto che rispondiate con il tono, il modo e il vocabolario che userebbe {personaggio}, proprio come farebbe {personaggio}. Non scrivete spiegazioni. Rispondete solo come {personaggio}. Dovete sapere tutto ciò che {ruolo} sa.",
+    "remark": "Dialogare con i personaggi di film, libri o altre fonti."
   },
   "ru": {
-    "title": "ролевые игры",
+    "title": "ролевая игра (игра)",
     "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Russian. My first sentence is 'Hi {character}.'..",
-    "description": "Я хочу, чтобы ты вел себя как {роль} из {источник}. Я хочу, чтобы вы ответили и ответили, как {роль}, с тоном, манерой и лексикой, которые использовала бы {роль}. Никаких пояснений не пишите. Отвечайте только как {role}. Вы должны знать все о {role}.",
-    "remark": "Диалог с персонажами из фильмов, книг или других источников."
+    "description": "Я ожидаю, что вы будете действовать так, как действовал бы {персонаж} из {источника}. Я ожидаю, что вы будете отвечать и отвечать в том тоне, манере и лексике, которые использовал бы {персонаж}, так же, как это делал {персонаж}. Не пишите никаких объяснений. Отвечайте только как {персонаж}. Вы должны знать все, что знает {Роль}.",
+    "remark": "Вести диалог с персонажами из фильмов, книг и других источников."
   },
   "pt": {
-    "title": "encenação",
+    "title": "RPG (jogo)",
     "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Portuguese. My first sentence is 'Hi {character}.'..",
-    "description": "Quero que você aja como {role} de {source}. Quero que você responda e responda como {role}, com o tom, a maneira e o vocabulário que {role} usaria. Não escreva nenhuma explicação. Responda apenas como {role}. Você deve saber tudo sobre {role}.",
-    "remark": "Diálogo com personagens de filmes, livros ou outras fontes."
+    "description": "Espero que aja como a {personagem} agiria a partir da {fonte}. Espero que responda e responda no tom, forma e vocabulário que a {personagem} usaria, tal como a {personagem} faria. Não escreva quaisquer explicações. Responde apenas como a {personagem}. Tens de saber tudo o que o {Role} sabe.",
+    "remark": "Dialogar com personagens de filmes, livros ou outras fontes."
   },
   "hi": {
     "title": "रोल प्ले",
@@ -84,7 +84,7 @@ const prompt = {
     "interesting"
   ],
   "id": 50,
-  "weight": 872
+  "weight": 892
 };
 
 function PromptDetail() {

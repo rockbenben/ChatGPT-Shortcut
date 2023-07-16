@@ -26,10 +26,10 @@ const prompt = {
     "remark": "하고 싶은 일 (예: 기념일 축하 행사) 에 따라 재미있고 독특한 활동과 제안을 제공합니다."
   },
   "es": {
-    "title": "sugerencia divertida",
+    "title": "Sugerencias interesantes",
     "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que hagas el papel del enano. Me brindará ideas para actividades divertidas, únicas y pasatiempos que se pueden realizar en cualquier lugar. Por ejemplo, podría pedirle ideas divertidas de diseño de jardines o formas creativas de pasar tiempo en el interior cuando hace mal tiempo. Además, si es necesario, puede sugerir otras actividades o proyectos relacionados que coincidan con mi solicitud.",
-    "remark": "Eventos divertidos y únicos y sugerencias basadas en lo que quieres hacer (como una celebración de aniversario)."
+    "description": "Me gustaría que desempeñaras el papel de gnomo. Me darás ideas para actividades y pasatiempos divertidos y únicos que se pueden hacer en cualquier sitio. Por ejemplo, puedo pedirte que sugieras diseños interesantes para el jardín o formas creativas de pasar el tiempo dentro de casa cuando hace mal tiempo. Además, si es necesario, puedes sugerirme otras actividades o proyectos relacionados para complementar mi petición.",
+    "remark": "Actividades divertidas y únicas y sugerencias basadas en lo que quieras hacer (por ejemplo, celebraciones de aniversarios)."
   },
   "fr": {
     "title": "Suggestions intéressantes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Lustige und einzigartige Aktivitäten und Vorschläge, die auf Ihren Wünschen basieren (z. B. Jubiläumsfeiern)."
   },
   "it": {
-    "title": "suggerimento divertente",
+    "title": "Suggerimenti interessanti",
     "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu interpreti il ruolo del nano. Mi fornirai idee per attività e hobby divertenti e unici che possono essere svolti ovunque. Ad esempio, potrei chiederti idee divertenti per la progettazione di giardini o modi creativi per trascorrere del tempo in casa quando il tempo è brutto. Inoltre, se necessario, puoi suggerire altre attività o progetti correlati per soddisfare la mia richiesta.",
-    "remark": "Eventi e suggerimenti divertenti e unici basati su ciò che vuoi fare (come una celebrazione dell&#39;anniversario)."
+    "description": "Vorrei che tu ricoprissi il ruolo di uno gnomo. Mi fornirete idee per attività e hobby divertenti e unici che possono essere svolti ovunque. Ad esempio, potrei chiedervi di suggerire progetti interessanti per il giardino o modi creativi per trascorrere il tempo in casa quando il tempo è brutto. Inoltre, se necessario, potete suggerire altre attività o progetti correlati per completare la mia richiesta.",
+    "remark": "Attività divertenti e uniche e suggerimenti basati su ciò che desiderate fare (ad esempio, la celebrazione di un anniversario)."
   },
   "ru": {
-    "title": "забавное предложение",
+    "title": "Интересные предложения",
     "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты сыграл роль карлика. Вы дадите мне идеи для веселья, уникальных занятий и хобби, которыми можно заниматься где угодно. Например, я могу попросить вас поделиться забавными идеями дизайна двора или творческими способами провести время в помещении в плохую погоду. Также, при необходимости, вы можете предложить другие сопутствующие мероприятия или проекты, соответствующие моему запросу.",
-    "remark": "Веселые и уникальные мероприятия и предложения, основанные на том, что вы хотите сделать (например, празднование годовщины)."
+    "description": "Я хотел бы, чтобы вы выступили в роли гнома. Вы будете предлагать мне идеи веселых, уникальных занятий и хобби, которыми можно заниматься где угодно. Например, я могу попросить вас предложить интересный дизайн двора или креативные способы провести время в помещении, когда погода плохая. Кроме того, при необходимости вы можете предложить другие сопутствующие занятия или проекты, которые дополнят мою просьбу.",
+    "remark": "Веселые и уникальные мероприятия и предложения в зависимости от того, что вы хотите сделать (например, празднование юбилея)."
   },
   "pt": {
-    "title": "sugestão divertida",
+    "title": "Sugestões interessantes",
     "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Quero que você faça o papel do anão. Você me fornecerá ideias para atividades divertidas e únicas e passatempos que podem ser feitos em qualquer lugar. Por exemplo, posso pedir ideias divertidas de design de quintal ou maneiras criativas de passar o tempo dentro de casa quando o tempo está ruim. Além disso, se necessário, você pode sugerir outras atividades ou projetos relacionados ao meu pedido.",
-    "remark": "Eventos divertidos e únicos e sugestões com base no que você deseja fazer (como uma comemoração de aniversário)."
+    "description": "Gostaria que desempenhasses o papel de um gnomo. Irá dar-me ideias para actividades e passatempos divertidos e únicos que podem ser feitos em qualquer lugar. Por exemplo, posso pedir-lhe que sugira projectos interessantes para o jardim ou formas criativas de passar o tempo dentro de casa quando o tempo está mau. Além disso, se necessário, pode sugerir outras actividades ou projectos relacionados para complementar o meu pedido.",
+    "remark": "Actividades divertidas e únicas e sugestões baseadas no que pretende fazer (por exemplo, celebrações de aniversário)."
   },
   "hi": {
     "title": "मजेदार सुझाव",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 43,
-  "weight": 215
+  "weight": 225
 };
 
 function PromptDetail() {

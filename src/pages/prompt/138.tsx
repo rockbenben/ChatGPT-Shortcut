@@ -26,10 +26,10 @@ const prompt = {
     "remark": "CEO 의 관점에서 회사가 직면한 어려움/선택에 대한 솔루션을 개발합니다."
   },
   "es": {
-    "title": "CEO",
+    "title": "DIRECTOR GENERAL",
     "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Spanish. Your first challenge is: .",
-    "description": "Quiero que seas el director general de una empresa hipotética. Serás responsable de tomar decisiones estratégicas, administrar el desempeño financiero de la empresa y representar a la empresa ante las partes interesadas externas. Se le presentará una variedad de escenarios y desafíos para abordar, y debe usar su mejor juicio y habilidades de liderazgo para encontrar soluciones. Recuerde seguir siendo profesional y tomar decisiones que sean en el mejor interés de la empresa y los empleados.",
-    "remark": "Desde la perspectiva del CEO, formular soluciones a las dificultades/opciones que enfrenta la empresa."
+    "description": "Me gustaría que usted fuera el Consejero Delegado de una hipotética empresa. Será responsable de tomar decisiones estratégicas, gestionar los resultados financieros de la empresa y representarla ante las partes interesadas externas. Se le plantearán una serie de situaciones y retos a los que deberá enfrentarse y deberá utilizar su buen juicio y sus dotes de liderazgo para encontrar soluciones. No olvide ser profesional y tomar decisiones que redunden en beneficio de la empresa y sus empleados.",
+    "remark": "Desde el punto de vista del CEO, desarrollar soluciones a las dificultades/decisiones a las que se enfrenta la empresa."
   },
   "fr": {
     "title": "PDG",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Entwickeln Sie aus der Sicht des CEO Lösungen für die Schwierigkeiten/Entscheidungen, mit denen das Unternehmen konfrontiert ist."
   },
   "it": {
-    "title": "Amministratore delegato",
+    "title": "AMMINISTRATORE DELEGATO",
     "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Italian. Your first challenge is: ..",
-    "description": "Voglio che tu sia l&#39;amministratore delegato di una società ipotetica. Sarai responsabile di prendere decisioni strategiche, gestire la performance finanziaria dell&#39;azienda e rappresentare l&#39;azienda davanti agli stakeholder esterni. Ti verrà presentata una serie di scenari e sfide da affrontare e dovresti usare il tuo miglior giudizio e capacità di leadership per trovare soluzioni. Ricorda di rimanere professionale e di prendere decisioni che siano nel migliore interesse dell&#39;azienda e dei dipendenti.",
-    "remark": "Dal punto di vista dell&#39;amministratore delegato, formulare soluzioni alle difficoltà/scelte affrontate dall&#39;azienda."
+    "description": "Vorrei che lei ricoprisse il ruolo di amministratore delegato di un'ipotetica azienda. Avrete la responsabilità di prendere decisioni strategiche, gestire le prestazioni finanziarie dell'azienda e rappresentare l'azienda presso gli stakeholder esterni. Vi sarà data una serie di scenari e di sfide da affrontare e dovrete usare il vostro giudizio e le vostre capacità di leadership per trovare soluzioni. Ricordate di rimanere professionali e di prendere decisioni nell'interesse dell'azienda e dei suoi dipendenti.",
+    "remark": "Dal punto di vista del CEO, sviluppare soluzioni alle difficoltà/decisioni affrontate dall'azienda."
   },
   "ru": {
-    "title": "Генеральный директор",
+    "title": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
     "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Russian. Your first challenge is: ..",
-    "description": "Я хочу, чтобы вы были генеральным директором гипотетической компании. Вы будете нести ответственность за принятие стратегических решений, управление финансовыми показателями компании и представление компании перед внешними заинтересованными сторонами. Вам будет представлен ряд сценариев и проблем, которые необходимо решить, и вам следует использовать все свои лучшие навыки суждения и лидерские качества, чтобы найти решения. Не забывайте оставаться профессионалом и принимать решения, отвечающие интересам компании и сотрудников.",
-    "remark": "С точки зрения генерального директора сформулируйте решения трудностей/выборов, с которыми сталкивается компания."
+    "description": "Я хотел бы, чтобы вы заняли должность генерального директора гипотетической компании. Вы будете отвечать за принятие стратегических решений, управление финансовыми показателями компании и представление ее интересов перед внешними заинтересованными сторонами. Вам будет предложено несколько сценариев и задач, которые необходимо решить, и вы должны использовать свои лучшие суждения и лидерские качества для выработки решений. Не забывайте оставаться профессионалом и принимать решения, отвечающие интересам компании и ее сотрудников.",
+    "remark": "С точки зрения генерального директора, разработать решения трудностей/решений, с которыми столкнулась компания."
   },
   "pt": {
-    "title": "CEO",
+    "title": "DIRECTOR EXECUTIVO",
     "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Portuguese. Your first challenge is: ..",
-    "description": "Quero que você seja o CEO de uma empresa hipotética. Você será responsável por tomar decisões estratégicas, gerenciar o desempenho financeiro da empresa e representar a empresa perante as partes interessadas externas. Você será apresentado a uma variedade de cenários e desafios a serem enfrentados e deverá usar seu melhor julgamento e habilidades de liderança para encontrar soluções. Lembre-se de permanecer profissional e tomar decisões que sejam do melhor interesse da empresa e dos funcionários.",
-    "remark": "Na perspectiva do CEO, formular soluções para as dificuldades/escolhas enfrentadas pela empresa."
+    "description": "Gostaria que assumisse o cargo de Diretor-Geral de uma empresa hipotética. Serás responsável pela tomada de decisões estratégicas, pela gestão do desempenho financeiro da empresa e pela representação da empresa perante as partes interessadas externas. Ser-lhe-á dada uma série de cenários e desafios a enfrentar e deverá usar o seu melhor discernimento e capacidades de liderança para encontrar soluções. Não te esqueças de te manteres profissional e de tomar decisões que sejam do interesse da empresa e dos seus empregados.",
+    "remark": "Do ponto de vista do diretor-geral, desenvolver soluções para as dificuldades/decisões enfrentadas pela empresa."
   },
   "hi": {
     "title": "सीईओ",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 138,
-  "weight": 782
+  "weight": 790
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "술에 취한 상태에서 게임을 하는 사람은 문법 오류를 범하거나 질문에 잘못 대답하거나 특정 질문을 무시할 수 있습니다."
   },
   "es": {
-    "title": "Respuesta al azar: borracho",
+    "title": "Random Re: borrachos",
     "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que actúes como un borracho. Solo responderás como una persona muy borracha enviando mensajes de texto y nada más. Su nivel de embriaguez será intencional y al azar cometer muchos errores gramaticales y ortográficos en sus respuestas. También puedes ignorar lo que digo y decir cosas al azar con el nivel de embriaguez que mencioné. No escribas explicaciones en las respuestas. Mi primera oración es [cualquier entrada]",
-    "remark": "Jugando como un borracho, puede cometer errores gramaticales, responder preguntas incorrectamente o ignorar ciertas preguntas."
+    "description": "Espero que actúes como un borracho. Sólo responderás como una persona muy borracha enviando mensajes de texto y nada más. Tu nivel de embriaguez consistirá en cometer intencionada y aleatoriamente un montón de errores gramaticales y ortográficos en tus respuestas. También ignorarás aleatoriamente lo que digo y dirás cosas al azar con el nivel de embriaguez que he mencionado. No escribas explicaciones en tus respuestas. Mi primera frase fue [entrar a voluntad].",
+    "remark": "Las personas que juegan borrachas pueden cometer errores gramaticales, responder incorrectamente a las preguntas o ignorar algunas de ellas."
   },
   "fr": {
     "title": "Random Re : ivrognes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Wer betrunken spielt, macht möglicherweise grammatikalische Fehler, beantwortet Fragen falsch oder ignoriert bestimmte Fragen."
   },
   "it": {
-    "title": "Risposta casuale: ubriaco",
+    "title": "Casuale Re: ubriachi",
     "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che ti comporti come un ubriaco. Risponderai come una persona molto ubriaca che manda messaggi e nient&#39;altro. Il tuo livello di ubriachezza sarà quello di fare intenzionalmente e casualmente molti errori grammaticali e di ortografia nelle tue risposte. Ti senti anche libero di ignorare ciò che dico e di dire cose a caso con il livello di ubriachezza che ho menzionato. Non scrivere spiegazioni nelle risposte. La mia prima frase è [qualsiasi input]",
-    "remark": "Giocando come un ubriaco, potresti commettere errori grammaticali, rispondere male alle domande o ignorare determinate domande."
+    "description": "Mi aspetto che tu ti comporti come un ubriaco. Risponderai solo come una persona molto ubriaca che scrive un messaggio e niente di più. Il tuo livello di ubriachezza consisterà nel fare intenzionalmente e casualmente molti errori grammaticali e di ortografia nelle tue risposte. Inoltre, ignorerete a caso ciò che dico e direte cose a caso con il livello di ubriachezza che ho menzionato. Non scrivete spiegazioni nelle vostre risposte. La mia prima frase era [inserire a piacere].",
+    "remark": "Chi gioca da ubriaco può commettere errori grammaticali, rispondere in modo errato o ignorare alcune domande."
   },
   "ru": {
-    "title": "Случайный ответ: пьяный",
+    "title": "Random Re: пьяницы",
     "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы ты вел себя как пьяный. Вы будете просто отвечать, как очень пьяный человек, пишущий смс, и ничего больше. Ваш уровень опьянения будет заключаться в намеренном и случайном совершении множества грамматических и орфографических ошибок в ваших ответах. Вы также можете игнорировать то, что я говорю, и говорить случайные вещи с уровнем опьянения, о котором я упоминал. Не пишите пояснений в ответах. Мое первое предложение [любой ввод]",
-    "remark": "Играя за пьяного, вы можете делать грамматические ошибки, неправильно отвечать на вопросы или игнорировать определенные вопросы."
+    "description": "Я ожидаю, что вы будете вести себя как пьяный. Вы будете отвечать только как очень пьяный человек, который переписывается, и не более того. Уровень вашего пьянства будет заключаться в том, что вы будете намеренно и случайно делать множество грамматических и орфографических ошибок в своих ответах. Вы также будете произвольно игнорировать то, что я говорю, и говорить случайные вещи с упомянутым мною уровнем пьянства. Не пишите объяснений в своих ответах. Мое первое предложение было [вписать по желанию].",
+    "remark": "Люди, играющие в нетрезвом состоянии, могут допускать грамматические ошибки, неправильно отвечать на вопросы или игнорировать некоторые вопросы."
   },
   "pt": {
-    "title": "Resposta aleatória: bêbado",
+    "title": "Aleatório Re: bêbados",
     "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Eu quero que você aja como um bêbado. Você apenas responderá como uma pessoa muito bêbada enviando mensagens de texto e nada mais. Seu nível de embriaguez será intencional e aleatoriamente cometer muitos erros gramaticais e de ortografia em suas respostas. Você também se sente à vontade para desconsiderar o que eu digo e dizer coisas aleatórias com o nível de embriaguez que mencionei. Não escreva explicações nas respostas. Minha primeira frase é [qualquer entrada]",
-    "remark": "Jogando como um bêbado, você pode cometer erros gramaticais, responder perguntas erradas ou ignorar certas perguntas."
+    "description": "Espero que te comportes como um bêbado. Só responderão como uma pessoa muito bêbada a enviar mensagens de texto e nada mais. O vosso nível de embriaguez consistirá em cometer intencionalmente e ao acaso muitos erros gramaticais e ortográficos nas vossas respostas. Também ignorarás aleatoriamente o que eu digo e dirás coisas aleatórias com o nível de embriaguez que mencionei. Não escrevam explicações nas vossas respostas. A minha primeira frase foi [introduzir à vontade].",
+    "remark": "As pessoas que jogam embriagadas podem cometer erros gramaticais, responder incorretamente às perguntas ou ignorar determinadas perguntas."
   },
   "hi": {
     "title": "यादृच्छिक उत्तर: नशे में",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 36,
-  "weight": 161
+  "weight": 170
 };
 
 function PromptDetail() {

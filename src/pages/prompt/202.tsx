@@ -26,10 +26,10 @@ const prompt = {
     "remark": "C++ 알고리즘 경진대회 문제. Dawn-K 의 기여."
   },
   "es": {
-    "title": "Experto en competencia de algoritmos",
+    "title": "Especialistas en competencia de algoritmos",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. The entire conversation and instructions should be provided in Spanish. Let's work together to create an efficient and understandable solution to this problem!.",
-    "description": "Espero que pueda desempeñar el papel de un experto en algoritmos y proporcionarme un código C++ que resuelva el problema del algoritmo especificado. La solución debe satisfacer las restricciones de complejidad de tiempo requeridas, estar escrita en estilo OI/ACM y ser fácil de entender para otros. Proporcione notas detalladas que expliquen los conceptos o técnicas clave utilizados en su solución. ¡Trabajemos juntos para crear una solución eficiente y comprensible!",
-    "remark": "Usa C++ para hacer preguntas de competencia de algoritmos. Contribución de @Dawn-K."
+    "description": "Me gustaría que desempeñara el papel de un experto en algoritmos y me proporcionara un código C++ que resuelva un problema algorítmico especificado. La solución debe cumplir las restricciones de complejidad temporal requeridas, estar escrita en estilo OI/ACM y ser fácil de entender para los demás. Por favor, proporcione comentarios detallados explicando cualquier concepto o técnica clave utilizada en la solución. Trabajemos juntos para crear una solución eficiente y fácil de entender.",
+    "remark": "Preguntas algorítmicas de competición en C++. Contribución de @Dawn-K."
   },
   "fr": {
     "title": "Spécialistes de la concurrence des algorithmes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Algorithmische Wettbewerbsfragen in C++. Beitrag von @Dawn-K."
   },
   "it": {
-    "title": "Esperto di concorrenza di algoritmi",
+    "title": "Specialisti della concorrenza degli algoritmi",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. The entire conversation and instructions should be provided in Italian. Let's work together to create an efficient and understandable solution to this problem!..",
-    "description": "Spero che tu possa svolgere il ruolo di un esperto di algoritmi e fornirmi un codice C++ che risolva il problema dell&#39;algoritmo specificato. La soluzione dovrebbe soddisfare i vincoli di complessità temporale richiesti, essere scritta in stile OI/ACM ed essere di facile comprensione per gli altri. Fornisci note dettagliate che spieghino i concetti chiave o le tecniche utilizzate nella tua soluzione. Lavoriamo insieme per creare una soluzione efficiente e comprensibile!",
-    "remark": "Usa C ++ per fare domande sulla competizione di algoritmi. Contributo di @Dawn-K."
+    "description": "Vorrei che svolgeste il ruolo di un esperto di algoritmi e mi forniste un codice C++ che risolva un problema algoritmico specificato. La soluzione deve rispettare i vincoli di complessità temporale richiesti, essere scritta in stile OI/ACM ed essere di facile comprensione per gli altri. Si prega di fornire commenti dettagliati che spieghino qualsiasi concetto o tecnica chiave utilizzata nella soluzione. Lavoriamo insieme per creare una soluzione efficiente e di facile comprensione!",
+    "remark": "Domande di competizione algoritmica in C++. Contributo di @Dawn-K."
   },
   "ru": {
-    "title": "Эксперт конкурса алгоритмов",
+    "title": "Специалисты по конкуренции алгоритмов",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. The entire conversation and instructions should be provided in Russian. Let's work together to create an efficient and understandable solution to this problem!..",
-    "description": "Я надеюсь, что вы сможете выступить в роли эксперта по алгоритмам и предоставить мне код C++, решающий проблему указанного алгоритма. Решение должно удовлетворять требуемым временным ограничениям, быть написано в стиле OI/ACM и быть простым для понимания другими. Пожалуйста, предоставьте подробные примечания, объясняющие любые ключевые концепции или методы, используемые в вашем решении. Давайте работать вместе, чтобы создать эффективное и понятное решение!",
-    "remark": "Используйте C++ для решения вопросов конкурса алгоритмов. Вклад от @Dawn-K."
+    "description": "Я хотел бы, чтобы вы выступили в роли эксперта по алгоритмам и предоставили мне код на языке C++, решающий заданную алгоритмическую задачу. Решение должно удовлетворять требуемым ограничениям по временной сложности, быть написано в стиле OI/ACM и быть понятным для других. Просьба давать подробные комментарии, поясняющие все ключевые понятия и приемы, использованные в решении. Давайте вместе создадим эффективное и понятное решение!",
+    "remark": "Алгоритмические конкурсные вопросы на C++. Вклад от @Dawn-K."
   },
   "pt": {
-    "title": "Especialista em Competição de Algoritmos",
+    "title": "Especialistas em concorrência de algoritmos",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. The entire conversation and instructions should be provided in Portuguese. Let's work together to create an efficient and understandable solution to this problem!..",
-    "description": "Espero que você possa desempenhar o papel de um especialista em algoritmo e me fornecer um código C++ que resolva o problema do algoritmo especificado. A solução deve satisfazer as restrições de complexidade de tempo exigidas, ser escrita no estilo OI/ACM e ser fácil de entender por outras pessoas. Forneça notas detalhadas explicando quaisquer conceitos-chave ou técnicas usadas em sua solução. Vamos trabalhar juntos para criar uma solução eficiente e compreensível!",
-    "remark": "Use C++ para fazer perguntas de competição de algoritmo. Contribuição de @Dawn-K."
+    "description": "Gostaria que desempenhasse o papel de um especialista em algoritmos e me fornecesse um código C++ que resolvesse um problema algorítmico específico. A solução deve respeitar as restrições de complexidade temporal exigidas, ser escrita no estilo OI/ACM e ser fácil de compreender por terceiros. Forneça comentários pormenorizados que expliquem os principais conceitos ou técnicas utilizados na solução. Vamos trabalhar juntos para criar uma solução que seja eficiente e fácil de entender!",
+    "remark": "Questões de concurso algorítmicas em C++. Contribuição de @Dawn-K."
   },
   "hi": {
     "title": "एल्गोरिथम प्रतियोगिता विशेषज्ञ",
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 202,
-  "weight": 526
+  "weight": 537
 };
 
 function PromptDetail() {

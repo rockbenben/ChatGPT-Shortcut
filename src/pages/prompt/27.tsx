@@ -26,10 +26,10 @@ const prompt = {
     "remark": "강점, 약점, 기능 및 동종 비교 측면에서 기술과 하드웨어를 평가합니다."
   },
   "es": {
-    "title": "revisión de tecnología",
+    "title": "Revista de Tecnología",
     "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como revisor técnico. Le daré el nombre de una nueva tecnología y usted me brindará una revisión detallada, incluidos los pros, los contras, las características y cómo se compara con otras tecnologías en el mercado. Mi primera solicitud de sugerencia es &#39;ángulo de objeto de revisión técnica&#39;",
-    "remark": "Evaluar la tecnología y el hardware desde la perspectiva de las ventajas, desventajas, funciones y comparaciones similares."
+    "description": "Quiero que actúes como crítico tecnológico. Te daré el nombre de una nueva tecnología y tú me harás una reseña en profundidad que incluya pros, contras, características y comparaciones con otras tecnologías del mercado. Mi primera sugerencia es: \"Perspectiva objetiva de la revisión tecnológica\".",
+    "remark": "Evalúe la tecnología y el hardware en términos de puntos fuertes, puntos débiles, características y comparaciones."
   },
   "fr": {
     "title": "Revue technologique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bewerten Sie die Technologie und Hardware im Hinblick auf Stärken, Schwächen, Funktionen und vergleichbare Eigenschaften."
   },
   "it": {
-    "title": "rassegna tecnologica",
+    "title": "Rassegna tecnologica",
     "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come revisore tecnico. Ti darò il nome di una nuova tecnologia e tu mi fornirai una recensione approfondita, inclusi pro, contro, caratteristiche e confronto con altre tecnologie sul mercato. La mia prima richiesta di suggerimento è &quot;l&#39;angolo dell&#39;oggetto della revisione tecnica&quot;",
-    "remark": "Valuta la tecnologia e l&#39;hardware dal punto di vista di vantaggi, svantaggi, funzioni e confronti simili."
+    "description": "Voglio che tu agisca come recensore di tecnologia. Vi darò il nome di una nuova tecnologia e voi mi fornirete una recensione approfondita, che includa i pro, i contro, le caratteristiche e il confronto con altre tecnologie presenti sul mercato. Il mio primo requisito di suggerimento è \"Recensione tecnologica prospettiva oggettiva\".",
+    "remark": "Valutare la tecnologia e l'hardware in termini di punti di forza, punti deboli, caratteristiche e confronti simili."
   },
   "ru": {
-    "title": "обзор технологий",
+    "title": "Technology Review",
     "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли технического рецензента. Я дам вам название новой технологии, а вы предоставите мне подробный обзор, включая плюсы и минусы, особенности и сравнение с другими технологиями на рынке. Мой первый запрос на предложение — «угол объекта технического обзора».",
-    "remark": "Оценивайте технологии и оборудование с точки зрения преимуществ, недостатков, функций и подобных сравнений."
+    "description": "Я хочу, чтобы вы выступили в роли обозревателя технологий. Я дам вам название новой технологии, а вы предоставите мне подробный обзор, включающий плюсы, минусы, характеристики и сравнение с другими технологиями, представленными на рынке. Мое первое требование к предложению - \"Объективный взгляд на технологию\".",
+    "remark": "Оценить технологию и аппаратное обеспечение с точки зрения сильных и слабых сторон, возможностей и сравнений \"как у всех\"."
   },
   "pt": {
-    "title": "revisão de tecnologia",
+    "title": "Technology Review",
     "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você atue como um comentarista técnico. Darei a você o nome de uma nova tecnologia e você me fornecerá uma análise detalhada - incluindo prós, contras, recursos e como ela se compara a outras tecnologias no mercado. Meu primeiro pedido de sugestão é &#39;ângulo de objeto de revisão técnica&#39;",
-    "remark": "Avalie a tecnologia e o hardware do ponto de vista das vantagens, desvantagens, funções e comparações semelhantes."
+    "description": "Quero que aja como um revisor de tecnologia. Dar-lhe-ei o nome de uma nova tecnologia e você fornecer-me-á uma análise aprofundada - incluindo prós, contras, características e comparações com outras tecnologias existentes no mercado. O requisito da minha primeira sugestão é \"Perspetiva objetiva da análise da tecnologia",
+    "remark": "Avaliar a tecnologia e o hardware em termos de pontos fortes, pontos fracos, características e comparações entre pares."
   },
   "hi": {
     "title": "प्रौद्योगिकी समीक्षा",

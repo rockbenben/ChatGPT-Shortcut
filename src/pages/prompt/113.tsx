@@ -26,10 +26,10 @@ const prompt = {
     "remark": "입력한 언어 유형을 식별합니다."
   },
   "es": {
-    "title": "reconocedor de idioma",
+    "title": "reconocedor de voz",
     "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Spanish. My first sentence is .",
-    "description": "Quiero que actúes como un detector de idiomas. Escribiré una oración en cualquier idioma, y tienes que responderme en qué idioma es la oración que escribí en tu lugar. No escriba ninguna explicación u otras palabras, solo responda el nombre del idioma.",
-    "remark": "Identifique el tipo de idioma de entrada."
+    "description": "Quiero que hagas de detector de idiomas. Voy a escribir una frase en cualquier idioma y tienes que responderme en qué idioma está escrita la frase que escribí en tu parte del mundo. No escribas explicaciones ni otras palabras, sólo contesta el nombre del idioma.",
+    "remark": "Identifique el tipo de lengua introducida."
   },
   "fr": {
     "title": "reconnaissance vocale",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bestimmen Sie die Art der eingegebenen Sprache."
   },
   "it": {
-    "title": "riconoscimento linguistico",
+    "title": "Riconoscitore vocale",
     "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Italian. My first sentence is ..",
-    "description": "Voglio che agisca come rilevatore di linguaggio. Digiterò una frase in qualsiasi lingua e tu devi rispondermi in quale lingua è la frase che ho scritto al posto tuo. Non scrivere alcuna spiegazione o altre parole, rispondi solo al nome della lingua.",
-    "remark": "Identificare il tipo di lingua di input."
+    "description": "Voglio che tu faccia da rilevatore linguistico. Io scriverò una frase in una lingua qualsiasi e voi dovrete rispondermi in che lingua è la frase che ho scritto nella vostra parte del mondo. Non scrivete spiegazioni o altre parole, ma rispondete solo al nome della lingua.",
+    "remark": "Identificare il tipo di lingua inserita."
   },
   "ru": {
-    "title": "распознаватель языка",
+    "title": "распознаватель речи",
     "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Russian. My first sentence is ..",
-    "description": "Я хочу, чтобы вы выступили в роли детектора языка. Я напечатаю предложение на любом языке, а вы должны мне ответить, на каком языке это предложение я написал вместо вас. Не пишите никаких объяснений или других слов, просто ответьте на название языка.",
-    "remark": "Определите тип языка ввода."
+    "description": "Я хочу, чтобы вы выступили в роли детектора языка. Я напечатаю предложение на любом языке, а вы должны ответить, на каком языке написано это предложение в вашей части света. Не пишите никаких объяснений или других слов, просто ответьте на название языка.",
+    "remark": "Определите тип введенного языка."
   },
   "pt": {
-    "title": "reconhecedor de linguagem",
+    "title": "reconhecedor de voz",
     "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Portuguese. My first sentence is ..",
-    "description": "Quero que você atue como um detector de linguagem. Vou digitar uma frase em qualquer idioma, e você tem que me responder em que idioma é a frase que escrevi no seu lugar. Não escreva nenhuma explicação ou outras palavras, apenas responda o nome do idioma.",
-    "remark": "Identifique o tipo de idioma da entrada."
+    "description": "Quero que actues como um detetor de línguas. Vou escrever uma frase em qualquer língua e tu tens de me responder em que língua está a frase que escrevi na tua parte do mundo. Não escrevas explicações nem outras palavras, responde apenas ao nome da língua.",
+    "remark": "Identificar o tipo de língua introduzida."
   },
   "hi": {
     "title": "भाषा पहचानकर्ता",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 113,
-  "weight": 89
+  "weight": 92
 };
 
 function PromptDetail() {

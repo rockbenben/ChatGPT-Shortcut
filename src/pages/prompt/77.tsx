@@ -26,10 +26,10 @@ const prompt = {
     "remark": "철학적 주제에 대한 탐구."
   },
   "es": {
-    "title": "filósofo",
+    "title": "pensador",
     "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como un filósofo. Proporcionaré algunos temas o preguntas relacionadas con el estudio de la filosofía, y es su trabajo explorar estos conceptos en profundidad. Esto puede implicar realizar investigaciones sobre diversas teorías filosóficas, desarrollar nuevas ideas o encontrar soluciones creativas a problemas complejos.",
-    "remark": "Explora temas filosóficos."
+    "description": "Me gustaría que hicieras de filósofo. Te proporcionaré algunos temas o cuestiones relacionados con el estudio de la filosofía, y será tu trabajo explorar estos conceptos en profundidad. Esto puede implicar investigar sobre diversas teorías filosóficas, aportar nuevas ideas o encontrar soluciones creativas a problemas complejos.",
+    "remark": "Se exploran temas filosóficos."
   },
   "fr": {
     "title": "penseur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Philosophische Themen werden erforscht."
   },
   "it": {
-    "title": "filosofo",
+    "title": "pensatore",
     "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu agisca come un filosofo. Fornirò alcuni argomenti o domande relative allo studio della filosofia, ed è tuo compito esplorare questi concetti in profondità. Ciò può comportare lo svolgimento di ricerche su varie teorie filosofiche, lo sviluppo di nuove idee o la ricerca di soluzioni creative a problemi complessi.",
-    "remark": "Esplora temi filosofici."
+    "description": "Vorrei che vi comportaste come un filosofo. Vi fornirò alcuni argomenti o domande relative allo studio della filosofia e il vostro compito sarà quello di esplorare questi concetti in profondità. Ciò può comportare la conduzione di ricerche su varie teorie filosofiche, l'elaborazione di nuove idee o la ricerca di soluzioni creative a problemi complessi.",
+    "remark": "Vengono esplorati temi filosofici."
   },
   "ru": {
-    "title": "философ",
+    "title": "мыслитель",
     "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли философа. Я предоставлю некоторые темы или вопросы, связанные с изучением философии, а ваша работа — глубоко изучить эти концепции. Это может включать проведение исследований различных философских теорий, разработку новых идей или поиск творческих решений сложных проблем.",
-    "remark": "Исследуйте философские темы."
+    "description": "Я хочу, чтобы вы выступили в роли философа. Я предложу вам несколько тем или вопросов, связанных с изучением философии, а ваша задача - глубоко изучить эти понятия. Это может быть исследование различных философских теорий, выдвижение новых идей, поиск творческих решений сложных проблем.",
+    "remark": "Рассматриваются философские темы."
   },
   "pt": {
-    "title": "filósofo",
+    "title": "pensador",
     "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um filósofo. Vou fornecer alguns tópicos ou questões relacionadas ao estudo da filosofia, e é seu trabalho explorar esses conceitos em profundidade. Isso pode envolver a realização de pesquisas sobre várias teorias filosóficas, o desenvolvimento de novas ideias ou a busca de soluções criativas para problemas complexos.",
-    "remark": "Explorar temas filosóficos."
+    "description": "Gostaria que agisses como um filósofo. Vou fornecer alguns tópicos ou questões relacionadas com o estudo da filosofia, e a tua tarefa será explorar esses conceitos em profundidade. Isto pode envolver a realização de pesquisas sobre várias teorias filosóficas, a apresentação de novas ideias ou a procura de soluções criativas para problemas complexos.",
+    "remark": "São explorados temas filosóficos."
   },
   "hi": {
     "title": "दार्शनिक",
@@ -84,7 +84,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 77,
-  "weight": 706
+  "weight": 722
 };
 
 function PromptDetail() {

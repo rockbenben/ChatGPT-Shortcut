@@ -26,10 +26,10 @@ const prompt = {
     "remark": "ChatGPT 의 입력 제한을 깨려면 텍스트를 각각 2000 자씩 단락으로 나누고 각 단락의 첫 줄을 '@ 숫자'(예: @1) 로 시작하세요. 텍스트 분할은 탐색 모음에 있는 텍스트 처리 도구를 사용하여 할 수 있습니다. GPT 의 답변을 무시해도 최종 결과에 영향을 미치지 않는다는 점에 유의하세요. 이 방법은 컴퓨터 놀잇감의 저자 Esor Huang 의 글에서 가져온 것입니다."
   },
   "es": {
-    "title": "Datos masivos: entrada",
+    "title": "Cantidad masiva de información: entrada",
     "prompt": "Let's start a new round of questions and answers. Respond in Chinese. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Spanish. Are you ready?.",
-    "description": "Hagamos otra ronda de preguntas y respuestas, y les daré el contenido del artículo con el número &quot;@&quot; en varias conversaciones, recuerden primero, pero no un resumen, ¿de acuerdo?",
-    "remark": "Para superar el límite de entrada de ChatGPT, puede dividir el artículo en varios párrafos cada 2000 caracteres y comenzar con &quot;número @&quot; en la primera línea de cada párrafo, por ejemplo: @1. La segmentación de texto se puede hacer con las herramientas de procesamiento de texto en la barra de navegación. Tenga en cuenta que no se moleste con la respuesta de GPT, no afectará su uso final. Este método está extraído de un artículo de Esor Huang, autor de juguetes informáticos."
+    "description": "Empecemos de nuevo la ronda de preguntas y respuestas, voy a facilitarte el contenido de los artículos numerados con una \"@\" en varias conversaciones, así que recuérdalo antes, pero no lo resumas, ¿vale?",
+    "remark": "Para superar las limitaciones de entrada de ChatGPT, divida el artículo en párrafos cada 2000 caracteres y comience la primera línea de cada párrafo con un \"número @\", por ejemplo @1. La división del texto puede hacerse con ayuda de la herramienta de procesamiento de texto de la barra de navegación. Tenga en cuenta que no tener en cuenta la respuesta de GPT no afectará a sus resultados finales. Este método está extraído de un artículo de Esor Huang, autor de Computer Playbook."
   },
   "fr": {
     "title": "Quantité massive d'informations : entrée",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Um die Eingabebeschränkungen von ChatGPT zu umgehen, teilen Sie den Artikel alle 2000 Zeichen in Absätze auf und beginnen Sie die erste Zeile jedes Absatzes mit einer \"@-Nummer\", z.B. @1. Die Textaufteilung kann mit Hilfe des Textverarbeitungswerkzeugs in der Navigationsleiste vorgenommen werden. Bitte beachten Sie, dass die Nichtbeachtung der Antwort von GPT keinen Einfluss auf Ihr Endergebnis hat. Diese Methode stammt aus einem Artikel von Esor Huang, dem Autor von Computer Playbook."
   },
   "it": {
-    "title": "Dati di massa: input",
+    "title": "Quantità enorme di informazioni: input",
     "prompt": "Let's start a new round of questions and answers. Respond in Chinese. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Italian. Are you ready?..",
-    "description": "Facciamo un altro giro di domande e risposte e ti fornirò il contenuto dell&#39;articolo numerato &quot;@&quot; in più conversazioni, per favore ricorda prima, ma nessun riepilogo, ok?",
-    "remark": "Per superare il limite di input di ChatGPT, puoi dividere l&#39;articolo in più paragrafi ogni 2000 caratteri e iniziare con &quot;@ numero&quot; nella prima riga di ogni paragrafo, ad esempio: @1. La segmentazione del testo può essere eseguita con gli strumenti di elaborazione del testo sulla barra di navigazione. Tieni presente che non preoccuparti della risposta di GPT, non influirà sul tuo utilizzo finale. Questo metodo è tratto da un articolo di Esor Huang, autore di giochi per computer."
+    "description": "Ricominciamo il giro di domande e risposte, vi fornirò il contenuto degli articoli numerati con una \"@\" in più conversazioni, quindi per favore ricordatevi prima di tutto questo, ma non riassumetelo, ok?",
+    "remark": "Per superare le limitazioni di input di ChatGPT, dividete l'articolo in paragrafi ogni 2000 caratteri e iniziate la prima riga di ogni paragrafo con un \"numero @\", ad esempio @1. La suddivisione del testo può essere effettuata con l'aiuto dello strumento di elaborazione del testo nella barra di navigazione. Si noti che l'inosservanza della risposta di GPT non influisce sui risultati finali. Questo metodo è estratto da un articolo di Esor Huang, autore di Computer Playbook."
   },
   "ru": {
-    "title": "Массовые данные: ввод",
+    "title": "Массивный объем информации: ввод",
     "prompt": "Let's start a new round of questions and answers. Respond in Chinese. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Russian. Are you ready?..",
-    "description": "Давайте проведем еще один раунд вопросов и ответов, и я собираюсь дать вам содержание статьи с номером «@» в нескольких беседах, пожалуйста, сначала запомните, но без резюме, хорошо?",
-    "remark": "Чтобы обойти ограничение ввода ChatGPT, вы можете разделить статью на несколько абзацев через каждые 2000 символов и начать с «@ number» в первой строке каждого абзаца, например: @1. Сегментация текста может быть выполнена с помощью инструментов обработки текста на панели навигации. Обратите внимание, не беспокойтесь об ответе GPT, это не повлияет на ваше окончательное использование. Этот метод взят из статьи Эсора Хуанга, автора компьютерных игрушек."
+    "description": "Давайте начнем раунд вопросов и ответов заново, я буду приводить содержание статей, пронумерованных буквой \"@\" в нескольких беседах, поэтому, пожалуйста, сначала запомните это, но не обобщайте, хорошо?",
+    "remark": "Чтобы преодолеть ограничения ChatGPT по вводу текста, разбейте статью на абзацы через каждые 2000 символов и начинайте первую строку каждого абзаца с символа \"@\", например, @1. Разбить текст на абзацы можно с помощью инструмента обработки текста на панели навигации. Обратите внимание, что игнорирование ответа GPT не повлияет на конечный результат. Данный метод взят из статьи Эсора Хуанга, автора книги Computer Playbook."
   },
   "pt": {
-    "title": "Dados em massa: entrada",
+    "title": "Grande quantidade de informação: entrada",
     "prompt": "Let's start a new round of questions and answers. Respond in Chinese. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Portuguese. Are you ready?..",
-    "description": "Vamos fazer outra rodada de perguntas e respostas, e vou dar a vocês o conteúdo do artigo numerado &quot;@&quot; em várias conversas, lembre-se primeiro, mas sem resumo, ok?",
-    "remark": "Para ultrapassar o limite de entrada do ChatGPT, você pode dividir o artigo em vários parágrafos a cada 2.000 caracteres e começar com &quot;@ número&quot; na primeira linha de cada parágrafo, por exemplo: @1. A segmentação de texto pode ser feita com as ferramentas de processamento de texto na barra de navegação. Observe, não se preocupe com a resposta do GPT, isso não afetará seu uso final. Este método foi extraído de um artigo de Esor Huang, autor de brinquedos de computador."
+    "description": "Vamos recomeçar a ronda de perguntas e respostas, vou fornecer-vos o conteúdo dos artigos numerados com um \"@\" em várias conversas, por isso lembrem-se disso primeiro, mas não o resumam, está bem?",
+    "remark": "Para ultrapassar as limitações de entrada do ChatGPT, divida o artigo em parágrafos a cada 2000 caracteres e comece a primeira linha de cada parágrafo com um \"número @\", por exemplo, @1. A divisão do texto pode ser feita com a ajuda da ferramenta de processamento de texto na barra de navegação. Tenha em atenção que ignorar a resposta do GPT não afectará os seus resultados finais. Este método foi extraído de um artigo de Esor Huang, autor de Computer Playbook."
   },
   "hi": {
     "title": "मास डेटा: इनपुट",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 238,
-  "weight": 1867
+  "weight": 1902
 };
 
 function PromptDetail() {

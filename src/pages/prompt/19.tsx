@@ -26,10 +26,10 @@ const prompt = {
     "remark": "기존 데이터 소스를 인용하고 저널리즘 스타일의 글쓰기로 주제별 기사를 출력합니다."
   },
   "es": {
-    "title": "reportero de noticias",
+    "title": "periodista",
     "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como reportero. Cubrirá noticias de última hora, escribirá reportajes y artículos de opinión, desarrollará técnicas de investigación para verificar la información y las fuentes, cumplirá con la ética periodística y entregará informes precisos utilizando su propio estilo único. Mi primera solicitud de sugerencia es &#39;tema de noticias&#39;",
-    "remark": "Citando materiales de datos existentes, artículos de temas de salida con estilo de redacción de noticias."
+    "description": "Espero que actúes como un periodista. Cubrirás noticias de última hora, escribirás artículos de fondo y de opinión, desarrollarás técnicas de investigación para verificar la información y descubrir fuentes, te atendrás a la ética periodística y elaborarás reportajes precisos con tu propio estilo. El primer requisito que te propongo es \"temas de actualidad\".",
+    "remark": "Citar las fuentes de datos existentes y redactar artículos temáticos con estilo periodístico."
   },
   "fr": {
     "title": "journaliste",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "giornalista",
     "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu faccia il giornalista. Tratterai le ultime notizie, scriverai servizi e opinioni, svilupperai tecniche di ricerca per verificare le informazioni e le fonti, rispetterai l&#39;etica giornalistica e fornirai rapporti accurati utilizzando il tuo stile unico. La mia prima richiesta di suggerimento è &quot;argomento notizie&quot;",
-    "remark": "Citando materiali di dati esistenti, articoli di argomento di output con uno stile di scrittura di notizie."
+    "description": "Mi aspetto che vi comportiate come giornalisti. Dovrete occuparvi di notizie dell'ultima ora, scrivere articoli e opinioni, sviluppare tecniche di ricerca per verificare le informazioni e scoprire le fonti, rispettare l'etica giornalistica e fornire un resoconto accurato utilizzando il vostro stile personale. Il primo requisito suggerito è \"argomenti di attualità\".",
+    "remark": "Citare le fonti di dati esistenti e produrre articoli di argomento giornalistico."
   },
   "ru": {
-    "title": "репортер",
+    "title": "журналист",
     "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли репортера. Вы будете сообщать о последних новостях, писать очерки и авторские статьи, разрабатывать исследовательские методы для проверки информации и обнаружения источников, соблюдать журналистскую этику и предоставлять точные репортажи, используя свой собственный уникальный стиль. Мой первый запрос на предложение — «тема новостей».",
-    "remark": "Ссылаясь на существующие информационные материалы, выводите тематические статьи в новостном стиле."
+    "description": "Я ожидаю, что вы будете действовать как журналист. Вы будете освещать свежие новости, писать тематические статьи и статьи с мнениями, развивать исследовательские методы для проверки информации и поиска источников, соблюдать журналистскую этику и делать точные репортажи, используя свой собственный уникальный стиль. Первое предлагаемое мной требование - \"темы новостей\".",
+    "remark": "Цитирование имеющихся источников данных и вывод тематических статей в публицистическом стиле."
   },
   "pt": {
-    "title": "Repórter",
+    "title": "jornalista",
     "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Quero que aja como repórter. Você cobrirá as últimas notícias, escreverá reportagens e artigos de opinião, desenvolverá técnicas de pesquisa para verificar informações e fontes de origem, cumprirá a ética jornalística e fornecerá relatórios precisos usando seu próprio estilo. Minha primeira solicitação de sugestão é &#39;tópico de notícias&#39;",
-    "remark": "Citando materiais de dados existentes, produza artigos de tópicos com estilo de redação de notícias."
+    "description": "Espero que actues como um jornalista. Cobrirás as notícias de última hora, escreverás reportagens e artigos de opinião, desenvolverás técnicas de pesquisa para verificar informações e descobrir fontes, respeitarás a ética jornalística e fornecerás relatórios precisos utilizando o teu próprio estilo único. O meu primeiro requisito sugerido é \"tópicos de notícias",
+    "remark": "Citar as fontes de dados existentes e produzir artigos temáticos num estilo de escrita jornalística."
   },
   "hi": {
     "title": "समाचार विवरण करने वाला",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 19,
-  "weight": 1253
+  "weight": 1267
 };
 
 function PromptDetail() {

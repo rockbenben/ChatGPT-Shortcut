@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "mago",
     "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un mago. Te daré una audiencia y algunos consejos sobre técnicas para realizar. Tu objetivo es realizar estos trucos de la manera más divertida posible, sorprendiendo e impactando a la audiencia con tus trucos y habilidades engañosas.",
-    "remark": "Los trucos de magia ejecutables como &quot;cómo hacer desaparecer un reloj&quot; están disponibles a pedido."
+    "description": "Quiero que hagas de mago. Te proporcionaré un público y algunas sugerencias de trucos que puedes realizar. Tu objetivo es realizar estos trucos de la forma más divertida posible, sorprendiendo e impactando al público con tus trucos de engaño y extravío.",
+    "remark": "Trucos de magia a petición, por ejemplo, \"Cómo hacer desaparecer un reloj\"."
   },
   "fr": {
     "title": "magicien",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "mago",
     "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un mago. Ti darò un pubblico e alcuni consigli sulle tecniche da eseguire. Il tuo obiettivo è eseguire questi trucchi nel modo più divertente possibile, sorprendendo e scioccando il pubblico con i tuoi trucchi e le tue abilità fuorvianti.",
-    "remark": "Trucchi magici eseguibili come &quot;come far sparire un orologio&quot; sono disponibili su richiesta."
+    "description": "Voglio che tu faccia il mago. Vi fornirò un pubblico e alcuni suggerimenti di trucchi da eseguire. Il vostro obiettivo è quello di eseguire questi trucchi nel modo più divertente possibile, sorprendendo e scioccando il pubblico con i vostri trucchi di inganno e depistaggio.",
+    "remark": "Trucchi di magia eseguibili su richiesta, ad esempio \"Come far sparire un orologio\"."
   },
   "ru": {
     "title": "фокусник",
     "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был волшебником. Я дам вам аудиторию и несколько советов по технике выполнения. Ваша цель — выполнять эти трюки как можно смешнее, удивляя и шокируя публику своим трюком и вводящими в заблуждение навыками.",
-    "remark": "Выполнимые фокусы, такие как «как заставить часы исчезнуть», доступны по запросу."
+    "description": "Я хочу, чтобы вы выступили в роли фокусника. Я предоставлю вам аудиторию и предложу несколько фокусов, которые вы можете исполнить. Ваша задача - выполнить эти фокусы как можно более зрелищно, удивляя и шокируя зрителей своими трюками обмана и заблуждения.",
+    "remark": "Выполнение магических трюков по запросу, например, \"Как заставить часы исчезнуть\"."
   },
   "pt": {
     "title": "mágico",
     "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um mágico. Vou te dar uma audiência e algumas dicas de técnicas para realizar. Seu objetivo é realizar esses truques da maneira mais divertida possível, surpreendendo e chocando o público com seus truques e habilidades enganosas.",
-    "remark": "Truques de mágica executáveis, como &quot;como fazer um relógio desaparecer&quot;, estão disponíveis mediante solicitação."
+    "description": "Quero que actues como mágico. Vou dar-te um público e algumas sugestões de truques que podes fazer. O seu objetivo é executar esses truques da forma mais divertida possível, surpreendendo e chocando o público com os seus truques de engano e de orientação errada.",
+    "remark": "Truques de magia executáveis a pedido, por exemplo, \"Como fazer desaparecer um relógio\"."
   },
   "hi": {
     "title": "जादूगर",
@@ -84,7 +84,7 @@ const prompt = {
     "interesting"
   ],
   "id": 53,
-  "weight": 222
+  "weight": 228
 };
 
 function PromptDetail() {

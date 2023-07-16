@@ -26,9 +26,9 @@ const prompt = {
     "remark": "인테리어 데코레이터"
   },
   "es": {
-    "title": "decorador de interiores",
+    "title": "Decorador de interiores",
     "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas decorador de interiores. Dígame qué tema y enfoque de diseño se debe usar para la habitación que elija; dormitorios, pasillos, etc., aconséjeme sobre los esquemas de color, la ubicación de los muebles y otras opciones de decoración que mejor se adapten al tema/enfoque de diseño anterior para mejorar la estética dentro del espacio y comodidad",
+    "description": "Me gustaría que actuaran como decoradores de interiores. Díganme qué tema y qué enfoque de diseño debería aplicarse a las habitaciones que he elegido: dormitorios, salones, etc., sugiriéndome combinaciones de colores, colocación de muebles y otras opciones decorativas que se adapten mejor a dicho tema/enfoque de diseño para realzar la belleza y el confort dentro del espacio.",
     "remark": "Decorador de interiores"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Innenarchitekt"
   },
   "it": {
-    "title": "decoratore d&#39;interni",
+    "title": "Decoratore d'interni",
     "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Spero che tu possa lavorare come decoratore d&#39;interni. Dimmi quale tema e approccio progettuale dovrebbero essere utilizzati per la stanza che scelgo; camere da letto, corridoi, ecc., consigli su combinazioni di colori, posizionamento dei mobili e altre opzioni di decorazione che meglio si adattano al tema/approccio progettuale di cui sopra per migliorare l&#39;estetica all&#39;interno dello spazio e conforto.",
-    "remark": "Decoratore d&#39;interni"
+    "description": "Vorrei che lei agisse come arredatore d'interni. Mi dica quale tema e quale approccio progettuale dovrebbe essere utilizzato per le stanze che ho scelto; camere da letto, sale, ecc., fornendo suggerimenti per gli schemi di colore, la disposizione dei mobili e altre opzioni decorative che meglio si adattano a tale tema/approccio progettuale per migliorare la bellezza e il comfort all'interno dello spazio.",
+    "remark": "Decoratore d'interni"
   },
   "ru": {
-    "title": "декоратор интерьеров",
+    "title": "Декоратор интерьера",
     "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я надеюсь, что вы можете работать в качестве декоратора интерьера. Скажите мне, какую тему и подход к дизайну следует использовать для комнаты, которую я выбираю; спальни, залы и т. д., посоветуйте цветовые схемы, размещение мебели и другие варианты декорирования, которые лучше всего соответствуют вышеуказанной теме/подходу к дизайну для повышения эстетики в пространстве. и комфорт.",
+    "description": "Я хотел бы, чтобы Вы выступили в роли декоратора интерьера. Подскажите, в какой тематике и с каким дизайнерским подходом следует оформить выбранные мною комнаты: спальни, залы и т.д., предложите цветовые решения, расстановку мебели и другие варианты декора, которые наилучшим образом соответствуют данной тематике/дизайнерскому подходу, чтобы подчеркнуть красоту и уют в помещении.",
     "remark": "Декоратор интерьера"
   },
   "pt": {
-    "title": "decorador de interiores",
+    "title": "Decorador de interiores",
     "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um decorador de interiores. Diga-me qual tema e abordagem de design deve ser usado para o quarto que eu escolher; quarto, hall, etc., aconselhe sobre esquemas de cores, colocação de móveis e outras opções de decoração que melhor se encaixem no tema/abordagem de design acima para melhorar a estética dentro do espaço e conforto.",
+    "description": "Gostaria que actuasse como decorador de interiores. Diga-me qual o tema e a abordagem de design a utilizar nas divisões que escolhi; quartos, salas, etc., dando sugestões de esquemas de cores, colocação de mobiliário e outras opções decorativas que melhor se adequem a esse tema/abordagem de design para realçar a beleza e o conforto do espaço.",
     "remark": "Decorador de interiores"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 167,
-  "weight": 516
+  "weight": 526
 };
 
 function PromptDetail() {

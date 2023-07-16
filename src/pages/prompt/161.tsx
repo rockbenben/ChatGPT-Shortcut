@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "compositor de música clásica",
     "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que seas el compositor. Yo proporcionaré la letra de una canción y tú crearás música para ella. Esto puede incluir el uso de varios instrumentos o herramientas, como un sintetizador o un sampler, para crear las melodías y armonías que dan vida a las letras.",
+    "description": "Me gustaría que actuaras como compositor. Yo te daré la letra de una canción para que tú crees la música. Esto puede incluir el uso de diversos instrumentos o herramientas, como un sintetizador o un sampler, para crear melodías y armonías que den vida a la letra.",
     "remark": "Compositor de música clásica"
   },
   "fr": {
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "compositore di musica classica",
     "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu sia il compositore. Fornirò il testo di una canzone e tu creerai la musica per essa. Ciò può includere l&#39;utilizzo di vari strumenti o strumenti, come un sintetizzatore o un campionatore, per creare le melodie e le armonie che danno vita ai testi.",
+    "description": "Vorrei che lei agisse come compositore. Ti fornirò il testo di una canzone per la quale dovrai creare la musica. Questo può includere l'uso di una varietà di strumenti o strumenti, come un sintetizzatore o un campionatore, per creare melodie e armonie che diano vita al testo.",
     "remark": "Compositore di musica classica"
   },
   "ru": {
     "title": "композитор классической музыки",
     "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы ты был композитором. Я предоставлю текст песни, а вы создадите для нее музыку. Это может включать использование различных инструментов или инструментов, таких как синтезатор или сэмплер, для создания мелодий и гармоний, которые оживляют тексты песен.",
+    "description": "Я хотел бы, чтобы вы выступили в роли композитора. Я предоставлю текст песни, для которой вы создадите музыку. Это может включать использование различных инструментов или средств, таких как синтезатор или сэмплер, для создания мелодий и гармоний, которые оживят текст.",
     "remark": "Композитор классической музыки"
   },
   "pt": {
     "title": "compositor de música clássica",
     "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você seja o compositor. Eu fornecerei a letra de uma música e você criará uma música para ela. Isso pode incluir o uso de vários instrumentos ou ferramentas, como um sintetizador ou sampler, para criar as melodias e harmonias que dão vida às letras.",
+    "description": "Gostaria que actuasse como compositor. Vou fornecer a letra de uma canção para a qual vais criar a música. Isto pode incluir a utilização de uma variedade de instrumentos ou ferramentas, como um sintetizador ou sampler, para criar melodias e harmonias que dêem vida à letra.",
     "remark": "Compositor de música clássica"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "music"
   ],
   "id": 161,
-  "weight": 152
+  "weight": 155
 };
 
 function PromptDetail() {

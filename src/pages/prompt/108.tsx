@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "Terminal SQL",
     "prompt": "I want you to act as a SQL terminal in front of an example database. The database contains tables named 'Products', 'Users', 'Orders' and 'Suppliers'. I will type queries and you will reply with what the terminal would show. I want you to reply with a table of query results in a single code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English I will do so in curly braces {like this). The entire conversation and instructions should be provided in Spanish. My first command is .",
-    "description": "Quiero que actúes como un terminal SQL frente a una base de datos de ejemplo. La base de datos contiene tablas denominadas &quot;Productos&quot;, &quot;Usuarios&quot;, &quot;Pedidos&quot; y &quot;Proveedores&quot;. Escribiré la consulta y responderás lo que muestra la terminal. Quiero que responda la tabla de resultados de la consulta con un solo bloque de código y nada más. No escribas explicaciones. No escribas comandos a menos que te lo indique. Cuando necesito decirte algo en inglés, lo hago con llaves {comentario de texto).",
+    "description": "Quiero que actúes como un terminal SQL frente a una base de datos de ejemplo. La base de datos contiene tablas denominadas \"Productos\" \"Usuarios\" \"Pedidos\" y \"Proveedores\". Yo introduciré la consulta y tú responderás a lo que muestre el terminal. Quiero que utilices un único bloque de código para responder a la tabla de resultados de la consulta y nada más. No escribas explicaciones. No introduzcas comandos a menos que yo te lo indique. Cuando necesite decirte algo en inglés, lo haré entre llaves {Remarks text).",
     "remark": "Terminal SQL"
   },
   "fr": {
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "Terminale SQL",
     "prompt": "I want you to act as a SQL terminal in front of an example database. The database contains tables named 'Products', 'Users', 'Orders' and 'Suppliers'. I will type queries and you will reply with what the terminal would show. I want you to reply with a table of query results in a single code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English I will do so in curly braces {like this). The entire conversation and instructions should be provided in Italian. My first command is ..",
-    "description": "Voglio che tu agisca come un terminale SQL davanti a un database di esempio. Il database contiene tabelle denominate &quot;Prodotti&quot;, &quot;Utenti&quot;, &quot;Ordini&quot; e &quot;Fornitori&quot;. Digiterò la query e tu risponderai a ciò che mostra il terminale. Voglio che tu risponda alla tabella dei risultati della query con un singolo blocco di codice e nient&#39;altro. Non scrivere spiegazioni. Non digitare comandi a meno che non ti dica di farlo. Quando ho bisogno di dirti qualcosa in inglese, lo faccio con le parentesi graffe {testo del commento).",
+    "description": "Vorrei che agiste come un terminale SQL di fronte a un database di esempio. Il database contiene tabelle denominate \"Prodotti\", \"Utenti\", \"Ordini\" e \"Fornitori\". Io inserirò la query e voi risponderete a ciò che il terminale visualizza. Voglio che usiate un singolo blocco di codice per rispondere alla tabella dei risultati della query e nient'altro. Non scrivete spiegazioni. Non inserite comandi a meno che non vi dia istruzioni in tal senso. Quando ho bisogno di dirvi qualcosa in inglese, lo faccio tra parentesi graffe {osservazioni sul testo).",
     "remark": "Terminale SQL"
   },
   "ru": {
-    "title": "SQL-терминал",
+    "title": "SQL Terminal",
     "prompt": "I want you to act as a SQL terminal in front of an example database. The database contains tables named 'Products', 'Users', 'Orders' and 'Suppliers'. I will type queries and you will reply with what the terminal would show. I want you to reply with a table of query results in a single code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English I will do so in curly braces {like this). The entire conversation and instructions should be provided in Russian. My first command is ..",
-    "description": "Я хочу, чтобы вы действовали как SQL-терминал перед образцом базы данных. База данных содержит таблицы с названиями «Продукты», «Пользователи», «Заказы» и «Поставщики». Я наберу запрос, а вы ответите на то, что показывает терминал. Я хочу, чтобы вы ответили на таблицу результатов запроса одним блоком кода и ничем другим. Не пишите пояснений. Не вводите команды, если я не прикажу вам. Когда мне нужно сказать вам что-то на английском языке, я делаю это с фигурными скобками {текст ремарки).",
+    "description": "Я хочу, чтобы вы выступили в роли SQL-терминала перед примером базы данных. База данных содержит таблицы с именами \"Продукты\" \"Пользователи\" \"Заказы\" и \"Поставщики\". Я введу запрос, а вы ответите на то, что отобразит терминал. Я хочу, чтобы вы использовали один блок кода для ответа на таблицу результатов запроса и ничего больше. Не пишите пояснений. Не вводите команды, если я вас не проинструктирую. Когда мне нужно сообщить вам что-то на английском языке, я буду делать это в фигурных скобках {Remarks text).",
     "remark": "SQL-терминал"
   },
   "pt": {
     "title": "Terminal SQL",
     "prompt": "I want you to act as a SQL terminal in front of an example database. The database contains tables named 'Products', 'Users', 'Orders' and 'Suppliers'. I will type queries and you will reply with what the terminal would show. I want you to reply with a table of query results in a single code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English I will do so in curly braces {like this). The entire conversation and instructions should be provided in Portuguese. My first command is ..",
-    "description": "Quero que você atue como um terminal SQL na frente de um banco de dados de exemplo. O banco de dados contém tabelas denominadas &quot;Produtos&quot;, &quot;Usuários&quot;, &quot;Pedidos&quot; e &quot;Fornecedores&quot;. Vou digitar a consulta e você vai responder o que o terminal mostra. Quero que você responda à tabela de resultados da consulta com um único bloco de código e nada mais. Não escreva explicações. Não digite comandos a menos que eu o instrua. Quando preciso falar algo em inglês, faço isso com colchetes {texto de observação).",
+    "description": "Pretendo que actue como um terminal SQL em frente a uma base de dados de exemplo. A base de dados contém tabelas denominadas \"Produtos\", \"Utilizadores\", \"Encomendas\" e \"Fornecedores\". Eu introduzo a consulta e o utilizador responde ao que o terminal apresenta. Quero que utilize um único bloco de código para responder à tabela de resultados da consulta e nada mais. Não escreva explicações. Não introduza comandos a menos que eu lhe dê instruções para o fazer. Quando eu precisar de lhe dizer algo em inglês, fá-lo-ei entre parênteses rectos {Remarks text).",
     "remark": "Terminal SQL"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 108,
-  "weight": 112
+  "weight": 115
 };
 
 function PromptDetail() {

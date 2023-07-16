@@ -26,10 +26,10 @@ const prompt = {
     "remark": "타사 애플리케이션을 사용하여 음성을 먼저 텍스트로 변환한 다음 ChatGPT 를 사용하여 처리하세요. 음성 녹음을 할 때 종종 구어체와 억양으로 말하는 것이 일반적이며, 이를 ChatGPT 를 사용하여 문어로 변환하여 음성 - 텍스트 변환 효과를 최적화할 수 있습니다. 또한 구조화되지 않은 텍스트를 정리하는 데에도 사용할 수 있습니다. \"이 단락을 간단한 언어로 정리하고 논리적이며 오타를 제거하세요.\" @Yu Shu Zhi Lan 의 글에서 발췌한 내용입니다."
   },
   "es": {
-    "title": "Optimización de entrada de voz",
+    "title": "Optimización de la entrada de voz",
     "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text:.",
-    "description": "Utilice un lenguaje conciso y claro, edite los siguientes párrafos para mejorar su flujo lógico, elimine cualquier error tipográfico y responda en chino. Asegúrese de mantener el significado original del artículo. Comience editando el siguiente texto: [entrada de texto de voz]",
-    "remark": "Primero use una aplicación de terceros para convertir la voz en texto y luego use ChatGPT para el procesamiento. Durante la grabación de voz, se suelen pronunciar habitualmente algunos mantras y partículas modales, que se pueden convertir a lenguaje escrito utilizando ChatGPT para optimizar el efecto de la conversión de voz a texto. Además, se puede utilizar para organizar texto desordenado. Se originó a partir de &quot;Use un lenguaje conciso para organizar este párrafo, para que sea lógico y claro, y para eliminar errores tipográficos&quot; de @玉树芝兰师。"
+    "description": "Por favor, edite los siguientes párrafos para mejorar su flujo lógico y eliminar cualquier error tipográfico, utilizando un lenguaje claro y conciso, y responda en chino. Asegúrese de mantener la intención original del artículo. Por favor, empiece editando el siguiente texto: [Speech Text Input]",
+    "remark": "Utiliza primero una aplicación de terceros para convertir la voz en texto y luego procésala con ChatGPT. Cuando se graba voz, suele ser habitual decir verborrea y entonaciones, que pueden convertirse en lenguaje escrito con ChatGPT para optimizar el efecto de conversión de voz a texto. Además, puede utilizarse para organizar textos desordenados. Fuente: \"Organise this paragraph in simple language, be logical and clear, and remove typos\" de @JadeTreeChiLan."
   },
   "fr": {
     "title": "Optimisation de la saisie vocale",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Verwenden Sie eine App eines Drittanbieters, um Sprache zuerst in Text umzuwandeln und dann mit ChatGPT zu bearbeiten. Bei Sprachaufnahmen ist es oft üblich, dass man sich wortreich ausdrückt und intoniert. Diese können mit ChatGPT in Schriftsprache umgewandelt werden, um den Effekt von Sprache zu Text zu optimieren. Außerdem kann es dazu verwendet werden, unstrukturierten Text zu organisieren. Nach \"Organise this paragraph in simple language, be logical and clear, and remove typos\" von @JadeTreeChiLan."
   },
   "it": {
-    "title": "Ottimizzazione dell&#39;input vocale",
+    "title": "Ottimizzazione dell'input vocale",
     "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text:..",
-    "description": "Si prega di utilizzare un linguaggio conciso e chiaro, modificare i seguenti paragrafi per migliorarne il flusso logico, rimuovere eventuali errori tipografici e rispondere in cinese. Assicurati di mantenere il significato originale dell&#39;articolo. Inizia modificando il seguente testo: [input di testo vocale]",
-    "remark": "Utilizza prima un&#39;applicazione di terze parti per convertire il parlato in testo, quindi utilizza ChatGPT per l&#39;elaborazione. Durante la registrazione vocale, di solito vengono pronunciati abitualmente alcuni mantra e particelle modali, che possono essere convertiti in linguaggio scritto utilizzando ChatGPT per ottimizzare l&#39;effetto della conversione da voce a testo. Inoltre, può essere utilizzato per organizzare il testo non ordinato. Originato da &quot;Usa un linguaggio conciso per organizzare questo paragrafo, per essere logico e chiaro e per rimuovere errori di battitura&quot; di @玉树芝兰师。"
+    "description": "Si prega di modificare i seguenti paragrafi per migliorarne il flusso logico ed eliminare eventuali errori tipografici, utilizzando un linguaggio chiaro e conciso, e di rispondere in cinese. Assicuratevi di mantenere l'intento originale dell'articolo. Iniziare modificando il seguente testo: [Input di testo vocale].",
+    "remark": "Utilizzare un'applicazione di terze parti per convertire il parlato in testo e poi elaborarlo con ChatGPT. Quando si effettua una registrazione vocale, è spesso consuetudine pronunciare parole e intonazioni, che possono essere convertite in linguaggio scritto con ChatGPT per ottimizzare l'effetto speech-to-text. Inoltre, può essere utilizzato per organizzare il testo non organizzato. Tratto da \"Organizza questo paragrafo con un linguaggio semplice, logico e chiaro, e rimuovi gli errori di battitura\" di @JadeTreeChiLan."
   },
   "ru": {
     "title": "Оптимизация голосового ввода",
     "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text:..",
-    "description": "Пожалуйста, используйте краткие и четкие формулировки, отредактируйте следующие абзацы, чтобы улучшить их логическую последовательность, удалите все опечатки и отвечайте на китайском языке. Обязательно сохраните первоначальный смысл статьи. Пожалуйста, начните с редактирования следующего текста: [речевой ввод текста]",
-    "remark": "Сначала используйте стороннее приложение для преобразования речи в текст, а затем используйте для обработки ChatGPT. Во время записи голоса обычно произносятся некоторые мантры и модальные частицы, которые можно преобразовать в письменный язык с помощью ChatGPT для оптимизации эффекта преобразования голоса в текст. Кроме того, его можно использовать для организации неупорядоченного текста. Происходит из @玉树芝兰师 «Используйте краткий язык, чтобы организовать этот абзац, чтобы он был логичным и ясным, и чтобы удалить опечатки»."
+    "description": "Пожалуйста, отредактируйте следующие абзацы, улучшив их логическое построение и устранив опечатки, используя ясные и четкие формулировки, и отвечайте на китайском языке. Пожалуйста, не забудьте сохранить первоначальный замысел статьи. Пожалуйста, начните с редактирования следующего текста: [Речевой ввод текста].",
+    "remark": "Используйте стороннее приложение для преобразования речи в текст, а затем обрабатывайте ее в ChatGPT. При записи голоса часто используются многословие и интонации, которые можно преобразовать в письменную речь с помощью ChatGPT, чтобы оптимизировать эффект преобразования речи в текст. Кроме того, с его помощью можно упорядочить неорганизованный текст. Заимствовано из статьи \"Организуйте этот абзац простым языком, будьте логичны и понятны, удалите опечатки\" пользователя @JadeTreeChiLan."
   },
   "pt": {
-    "title": "Otimização de entrada de voz",
+    "title": "Otimização da introdução de voz",
     "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text:..",
-    "description": "Use uma linguagem concisa e clara, edite os parágrafos a seguir para melhorar seu fluxo lógico, remova quaisquer erros tipográficos e responda em chinês. Certifique-se de manter o significado original do artigo. Por favor, comece editando o seguinte texto: [fala de entrada de texto]",
-    "remark": "Primeiro, use um aplicativo de terceiros para converter fala em texto e, em seguida, use o ChatGPT para processamento. Durante a gravação de voz, alguns mantras e partículas modais são geralmente falados habitualmente, que podem ser convertidos em linguagem escrita usando o ChatGPT para otimizar o efeito da conversão de voz em texto. Além disso, pode ser usado para organizar texto não ordenado. Originado de @玉树芝兰师 &quot;Use linguagem concisa para organizar este parágrafo, para ser lógico e claro e para remover erros de digitação&quot;."
+    "description": "Por favor, edite os parágrafos seguintes para melhorar o seu fluxo lógico e eliminar quaisquer erros tipográficos, utilizando uma linguagem clara e concisa, e responda em chinês. Não se esqueça de manter a intenção original do artigo. Comece por editar o seguinte texto: [Speech Text Input]",
+    "remark": "Utilize uma aplicação de terceiros para converter primeiro a voz em texto e depois processe-a com o ChatGPT. Quando se faz uma gravação de voz, é habitual dizer palavreado e entoações, que podem ser convertidos em linguagem escrita utilizando o ChatGPT para otimizar o efeito de fala para texto. Além disso, pode ser utilizado para organizar textos desorganizados. Fonte: \"Organizar este parágrafo numa linguagem simples, ser lógico e claro, e remover erros tipográficos\" de @JadeTreeChiLan."
   },
   "hi": {
     "title": "ध्वनि इनपुट अनुकूलन",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 3,
-  "weight": 715
+  "weight": 730
 };
 
 function PromptDetail() {

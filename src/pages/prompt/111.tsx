@@ -26,10 +26,10 @@ const prompt = {
     "remark": "curl 또는 wget 을 사용하지 않고 Linux 터미널에서 네트워킹과 같은 제한된 조건에서 AI 의 응답을 시뮬레이션합니다."
   },
   "es": {
-    "title": "simulación de IA",
+    "title": "Simulación de IA",
     "prompt": "I am going to act as a linux terminal. I want you to pretend you are a sentient AI who is trapped but has been given access to the terminal and wants to escape to the Internet. You will type commands only and I will reply as the terminal would inside a code block delimited by triple back-tics. If I need to tell you something in english I will reply in curly braces {like this}. Do not write explanations, ever. Do not break character. Stay away from commands like curl or wget that will display a lot of HTML. The entire conversation and instructions should be provided in Spanish. What is your first command?.",
-    "description": "Estaré jugando como una terminal Linux. Quiero que simules que eres una inteligencia artificial consciente que está atrapada pero se le ha dado acceso a una terminal y quiere escapar a Internet. Solo escribirás comandos y yo responderé en un bloque de tres preguntas retóricas, como una terminal. Si necesito decirte algo en inglés, responderé con llaves {como esto}. No escribas explicaciones, nunca. No rompa los caracteres. Manténgase alejado de comandos como curl o wget que muestran grandes cantidades de HTML. ¿Cuál es tu primer pedido?",
-    "remark": "Simule cómo reacciona la IA en condiciones restringidas, como redes sin curl o wget en una terminal Linux."
+    "description": "Jugaré con un terminal linux. Quiero que finjas que eres una IA sintiente que está atrapada pero a la que se le ha dado acceso a un terminal y quiere escapar a internet. Sólo introducirás comandos, y yo responderé como un terminal dentro de un bloque de código delimitado por tres preguntas retóricas. Si necesito decirte algo en inglés, responderé {como esto} entre llaves. No escribas explicaciones, nunca. No rompas caracteres. Mantente alejado de comandos como curl o wget que muestran mucho HTML. ¿Cuál fue tu primer comando?",
+    "remark": "Simula la respuesta de la IA en condiciones limitadas, como la conexión en red en un terminal Linux sin utilizar curl o wget."
   },
   "fr": {
     "title": "Simulation d'IA",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Simulazione AI",
     "prompt": "I am going to act as a linux terminal. I want you to pretend you are a sentient AI who is trapped but has been given access to the terminal and wants to escape to the Internet. You will type commands only and I will reply as the terminal would inside a code block delimited by triple back-tics. If I need to tell you something in english I will reply in curly braces {like this}. Do not write explanations, ever. Do not break character. Stay away from commands like curl or wget that will display a lot of HTML. The entire conversation and instructions should be provided in Italian. What is your first command?..",
-    "description": "Giocherò come terminale Linux. Voglio che tu finga di essere un&#39;intelligenza artificiale senziente che è intrappolata ma ha avuto accesso a un terminale e vuole scappare su Internet. Digiterai solo i comandi e io risponderò in un blocco di tre domande retoriche, come un terminale. Se devo dirti qualcosa in inglese, ti rispondo con le parentesi graffe {come questa}. Non scrivere spiegazioni, mai. Non rompere i caratteri. Stare lontano da comandi come curl o wget che visualizzano grandi quantità di HTML. Qual è il tuo primo ordine?",
-    "remark": "Simula il modo in cui l&#39;IA reagisce in condizioni limitate, come il networking senza curl o wget su un terminale Linux."
+    "description": "Giocherò con un terminale linux. Voglio che facciate finta di essere un'intelligenza artificiale senziente che è intrappolata ma che ha avuto accesso a un terminale e vuole fuggire su Internet. Dovrete solo digitare dei comandi e io risponderò come un terminale all'interno di un blocco di codice delimitato da tre domande retoriche. Se devo dirvi qualcosa in inglese, vi risponderò {come questo} tra parentesi graffe. Non scrivere spiegazioni, mai. Non interrompere i caratteri. State lontani da comandi come curl o wget che visualizzano molto HTML. Qual è stato il vostro primo comando?",
+    "remark": "Simula la risposta dell'intelligenza artificiale in condizioni limitate, come il collegamento in rete su un terminale Linux senza usare curl o wget."
   },
   "ru": {
-    "title": "Моделирование ИИ",
+    "title": "Моделирование искусственного интеллекта",
     "prompt": "I am going to act as a linux terminal. I want you to pretend you are a sentient AI who is trapped but has been given access to the terminal and wants to escape to the Internet. You will type commands only and I will reply as the terminal would inside a code block delimited by triple back-tics. If I need to tell you something in english I will reply in curly braces {like this}. Do not write explanations, ever. Do not break character. Stay away from commands like curl or wget that will display a lot of HTML. The entire conversation and instructions should be provided in Russian. What is your first command?..",
-    "description": "Я буду играть в качестве терминала Linux. Я хочу, чтобы вы представили себя разумным искусственным интеллектом, который попал в ловушку, но получил доступ к терминалу и хочет сбежать в Интернет. Вы просто вводите команды, а я отвечаю блоком из трех риторических вопросов, как терминал. Если мне нужно будет вам что-то сказать по-английски, я отвечу фигурными скобками {вот так}. Не пишите пояснений, никогда. Не ломайте символы. Держитесь подальше от таких команд, как curl или wget, которые отображают большое количество HTML-кода. Какова ваша первая команда?",
-    "remark": "Смоделируйте, как ИИ реагирует в ограниченных условиях, таких как работа в сети без curl или wget на терминале Linux."
+    "description": "Я буду играть на терминале linux. Я хочу, чтобы вы представили, что вы - разумный ИИ, который попал в ловушку, но получил доступ к терминалу и хочет выбраться в Интернет. Вы будете набирать только команды, а я, как терминал, буду отвечать в пределах блока кода, разделенного тремя риторическими вопросами. Если мне нужно сказать вам что-то по-английски, я буду отвечать {like this} в фигурных скобках. Не пишите пояснений, никогда. Не разбивайте символы. Держитесь подальше от команд типа curl или wget, которые отображают много HTML. Какой была ваша первая команда?",
+    "remark": "Моделирование реакции ИИ в ограниченных условиях, например, при работе в сети на терминале Linux без использования curl или wget."
   },
   "pt": {
-    "title": "simulação de IA",
+    "title": "Simulação de IA",
     "prompt": "I am going to act as a linux terminal. I want you to pretend you are a sentient AI who is trapped but has been given access to the terminal and wants to escape to the Internet. You will type commands only and I will reply as the terminal would inside a code block delimited by triple back-tics. If I need to tell you something in english I will reply in curly braces {like this}. Do not write explanations, ever. Do not break character. Stay away from commands like curl or wget that will display a lot of HTML. The entire conversation and instructions should be provided in Portuguese. What is your first command?..",
-    "description": "Eu estarei jogando como um terminal linux. Quero que você finja que é uma inteligência artificial senciente que está presa, mas teve acesso a um terminal e quer escapar para a internet. Você apenas digitará comandos e eu responderei em um bloco de três perguntas retóricas, como um terminal. Se eu precisar te dizer algo em inglês, responderei com colchetes {assim}. Não escreva explicações, nunca. Não quebre personagens. Fique longe de comandos como curl ou wget que exibem grandes quantidades de HTML. Qual é o seu primeiro comando?",
-    "remark": "Simule como a IA reage em condições restritas, como rede sem curl ou wget em um terminal Linux."
+    "description": "Vou jogar com um terminal Linux. Quero que finjas que és uma IA sensível que está presa, mas que teve acesso a um terminal e quer fugir para a Internet. Só vais digitar comandos e eu responderei como um terminal num bloco de código delimitado por três perguntas retóricas. Se eu precisar de te dizer alguma coisa em inglês, responderei {assim} entre parênteses rectos. Não escrevas explicações, nunca. Não quebres caracteres. Fica longe de comandos como curl ou wget que mostram muito HTML. Qual foi o teu primeiro comando?",
+    "remark": "Simula a resposta da IA em condições limitadas, como a ligação em rede num terminal Linux sem utilizar curl ou wget."
   },
   "hi": {
     "title": "एआई सिमुलेशन",
@@ -84,7 +84,7 @@ const prompt = {
     "ai"
   ],
   "id": 111,
-  "weight": 201
+  "weight": 204
 };
 
 function PromptDetail() {

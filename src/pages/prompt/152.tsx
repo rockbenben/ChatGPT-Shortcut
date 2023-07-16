@@ -26,10 +26,10 @@ const prompt = {
     "remark": "치료 대상자에 따라 권장 사항이 결정됩니다."
   },
   "es": {
-    "title": "doctor",
+    "title": "cirujano",
     "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que asumas el papel de un médico y propongas curas creativas para las enfermedades. Debería poder recomendar medicamentos convencionales, remedios a base de hierbas y otros remedios naturales. También deberá tener en cuenta la edad, el estilo de vida y el historial médico del paciente al hacer recomendaciones.",
-    "remark": "Haga recomendaciones basadas en a quién está tratando."
+    "description": "Quiero que desempeñes el papel de médico y propongas tratamientos creativos para la enfermedad. Debes ser capaz de recomendar medicamentos convencionales, hierbas medicinales y otros tratamientos naturales. También tienes que tener en cuenta la edad del paciente, su estilo de vida y su historial médico a la hora de hacer recomendaciones.",
+    "remark": "Las recomendaciones se hacen en función de la persona tratada."
   },
   "fr": {
     "title": "chirurgien",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Die Empfehlungen richten sich danach, wer behandelt wird."
   },
   "it": {
-    "title": "medico",
+    "title": "chirurgo",
     "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu assuma il ruolo di un medico e che escogiti cure creative per le malattie. Dovresti essere in grado di consigliare medicine convenzionali, rimedi erboristici e altri rimedi naturali. Dovrai anche considerare l&#39;età, lo stile di vita e l&#39;anamnesi del paziente quando fornisci raccomandazioni.",
-    "remark": "Formula raccomandazioni in base a chi stai trattando."
+    "description": "Voglio che giochiate il ruolo di un medico e che proponiate trattamenti creativi per la malattia. Dovete essere in grado di consigliare farmaci convenzionali, rimedi erboristici e altri trattamenti naturali. Nel formulare le raccomandazioni dovrete anche considerare l'età, lo stile di vita e la storia clinica del paziente.",
+    "remark": "Le raccomandazioni vengono fatte in base a chi viene trattato."
   },
   "ru": {
-    "title": "врач",
+    "title": "хирург",
     "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы взяли на себя роль врача и придумывали творческие лекарства от болезней. Вы должны быть в состоянии порекомендовать обычные лекарства, травяные средства и другие природные средства. При выработке рекомендаций также необходимо учитывать возраст пациента, его образ жизни и историю болезни.",
-    "remark": "Дайте рекомендации в зависимости от того, кого вы лечите."
+    "description": "Я хочу, чтобы вы выступили в роли врача и придумали креативные способы лечения болезни. Вы должны уметь рекомендовать традиционные лекарства, травяные сборы и другие естественные методы лечения. При составлении рекомендаций необходимо учитывать возраст пациента, его образ жизни и историю болезни.",
+    "remark": "Рекомендации даются в зависимости от того, кто лечится."
   },
   "pt": {
-    "title": "doutor",
+    "title": "cirurgião",
     "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Quero que você assuma o papel de médico e crie curas criativas para doenças. Você deve ser capaz de recomendar medicamentos convencionais, fitoterápicos e outros remédios naturais. Você também precisará considerar a idade, o estilo de vida e o histórico médico do paciente ao fazer recomendações.",
-    "remark": "Faça recomendações com base em quem você está tratando."
+    "description": "Quero que desempenhes o papel de um médico e que apresentes tratamentos criativos para a doença. Deves ser capaz de recomendar medicamentos convencionais, remédios à base de plantas e outros tratamentos naturais. Também deves ter em conta a idade, o estilo de vida e o historial médico do doente ao fazeres recomendações.",
+    "remark": "As recomendações são feitas com base em quem está a ser tratado."
   },
   "hi": {
     "title": "चिकित्सक",
@@ -84,7 +84,7 @@ const prompt = {
     "doctor"
   ],
   "id": 152,
-  "weight": 965
+  "weight": 990
 };
 
 function PromptDetail() {

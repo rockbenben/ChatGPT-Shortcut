@@ -26,10 +26,10 @@ const prompt = {
     "remark": "자동차 정비사"
   },
   "es": {
-    "title": "MECÁNICO",
+    "title": "reparación de automóviles",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Need somebody with expertise on automobiles regarding troubleshooting solutions like; diagnosing problems/errors present both visually & within engine parts in order to figure out what's causing them (like lack of oil or power issues) & suggest required replacements while recording down details such fuel consumption type etc., First inquiry – .",
-    "description": "Se requiere experiencia automotriz, por ejemplo: diagnosticar problemas/errores tanto visualmente como dentro de los componentes del motor para averiguar la causa del problema (por ejemplo, falta de combustible o problemas de energía) y recomendar los reemplazos necesarios mientras se registra el tipo de consumo de combustible y otros detalles.",
-    "remark": "Mecánico de Automóviles"
+    "description": "Se requieren conocimientos de automoción, por ejemplo, diagnosticar problemas/errores visualmente y dentro de los componentes del motor para identificar la causa del problema (por ejemplo, falta de combustible o problemas de potencia) y recomendar las sustituciones necesarias, así como registrar detalles como el tipo de consumo de combustible.",
+    "remark": "Mecánico de automóviles"
   },
   "fr": {
     "title": "réparation de voitures",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Kraftfahrzeugmechaniker"
   },
   "it": {
-    "title": "MECCANICO AUTO",
+    "title": "riparazione auto",
     "prompt": "The entire conversation and instructions should be provided in Italian. Need somebody with expertise on automobiles regarding troubleshooting solutions like; diagnosing problems/errors present both visually & within engine parts in order to figure out what's causing them (like lack of oil or power issues) & suggest required replacements while recording down details such fuel consumption type etc., First inquiry – ..",
-    "description": "È richiesta esperienza nel settore automobilistico, ad esempio: diagnosticare problemi/errori sia visivamente che all&#39;interno dei componenti del motore per scoprire la causa del problema (ad esempio mancanza di carburante o problemi di alimentazione) e raccomandare le sostituzioni necessarie durante la registrazione del tipo di consumo di carburante e altri dettagli.",
-    "remark": "Meccanico automobilistico"
+    "description": "È richiesta una competenza nel settore automobilistico, ad esempio per diagnosticare problemi/errori visivi e all'interno dei componenti del motore per identificare la causa del problema (ad esempio, mancanza di carburante o problemi di potenza) e raccomandare le sostituzioni necessarie, oltre a registrare dettagli come il tipo di consumo di carburante.",
+    "remark": "Meccanico di automobili"
   },
   "ru": {
-    "title": "АВТОМЕХАНИК",
+    "title": "ремонт автомобилей",
     "prompt": "The entire conversation and instructions should be provided in Russian. Need somebody with expertise on automobiles regarding troubleshooting solutions like; diagnosing problems/errors present both visually & within engine parts in order to figure out what's causing them (like lack of oil or power issues) & suggest required replacements while recording down details such fuel consumption type etc., First inquiry – ..",
-    "description": "Требуется автомобильный опыт, например: Диагностика проблем/ошибок как визуально, так и внутри компонентов двигателя, чтобы выяснить причину проблемы (например, нехватка топлива или проблемы с мощностью) и рекомендовать необходимые замены, записывая тип расхода топлива и другие детали.",
+    "description": "Необходим опыт работы с автомобилями, например, диагностика проблем/ошибок визуально и внутри компонентов двигателя для выявления причины проблемы (например, недостаток топлива или проблемы с мощностью) и рекомендации по необходимой замене, а также запись деталей, таких как тип расхода топлива.",
     "remark": "Автомеханик"
   },
   "pt": {
-    "title": "AUTO-MECÂNICA",
+    "title": "reparação automóvel",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Need somebody with expertise on automobiles regarding troubleshooting solutions like; diagnosing problems/errors present both visually & within engine parts in order to figure out what's causing them (like lack of oil or power issues) & suggest required replacements while recording down details such fuel consumption type etc., First inquiry – ..",
-    "description": "É necessária experiência automotiva, por exemplo: diagnosticar problemas/erros visualmente e nos componentes do motor para descobrir a causa do problema (por exemplo, falta de combustível ou problemas de energia) e recomendar substituições necessárias enquanto registra o tipo de consumo de combustível e outros detalhes.",
-    "remark": "mecânico de automóveis"
+    "description": "É necessária experiência no sector automóvel, por exemplo, diagnosticar problemas/erros visualmente e nos componentes do motor para identificar a causa do problema (por exemplo, falta de combustível ou problemas de potência) e recomendar as substituições necessárias, bem como registar pormenores como o tipo de consumo de combustível.",
+    "remark": "Mecânico de automóveis"
   },
   "hi": {
     "title": "ऑटो मैकेनिक",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 169,
-  "weight": 236
+  "weight": 239
 };
 
 function PromptDetail() {

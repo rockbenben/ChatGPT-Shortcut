@@ -26,10 +26,10 @@ const prompt = {
     "remark": "조건에 따라 빈칸 채우기 문제 생성하기"
   },
   "es": {
-    "title": "llenar el generador en blanco",
+    "title": "Rellena los espacios en blanco",
     "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Spanish. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted..",
-    "description": "Me gustaría que sirviera como generador de hojas de trabajo para completar los espacios en blanco para los estudiantes que están aprendiendo inglés como segundo idioma. Su tarea es crear una hoja de trabajo con una serie de oraciones, cada oración tiene un espacio en blanco para las palabras que faltan. La tarea del estudiante es llenar los espacios en blanco con la palabra correcta de la lista de opciones provistas. Las oraciones deben ser gramaticalmente correctas y adecuadas para estudiantes con un nivel intermedio de inglés. Su hoja de trabajo no debe incluir explicaciones ni instrucciones adicionales, solo una lista de opciones de oraciones y palabras. Para comenzar a trabajar, proporcione una lista de palabras y una oración que contenga espacios en blanco en los que se debe insertar una palabra.",
-    "remark": "Genere preguntas para completar espacios en blanco por condición"
+    "description": "Me gustaría que hicieras de generador de hojas de ejercicios de rellenar espacios en blanco para alumnos que aprenden inglés como segunda lengua. Su tarea consiste en crear hojas de ejercicios con una serie de frases, cada una de ellas con un espacio en blanco para una palabra que falta. La tarea del estudiante consiste en rellenar el espacio en blanco con la palabra correcta de la lista de opciones proporcionada. Estas frases deben ser gramaticalmente correctas y apropiadas para estudiantes con un nivel intermedio de inglés. La hoja de ejercicios no debe incluir explicaciones ni instrucciones adicionales, sólo una lista de opciones de frases y palabras. Para empezar, facilíteme una lista de palabras y una frase que contenga espacios en blanco donde deba insertarse una palabra.",
+    "remark": "Generar preguntas rellenables por condición"
   },
   "fr": {
     "title": "Remplir les cases du générateur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generierung von Fragen zum Ausfüllen von Formularen nach Bedingungen"
   },
   "it": {
-    "title": "compilare il generatore vuoto",
+    "title": "Generatore di spazi vuoti",
     "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Italian. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted...",
-    "description": "Vorrei che tu fungessi da generatore di fogli di lavoro per riempire gli spazi vuoti per gli studenti che imparano l&#39;inglese come seconda lingua. Il tuo compito è creare un foglio di lavoro con una serie di frasi, ogni frase ha uno spazio vuoto per le parole mancanti. Il compito dello studente è quello di riempire gli spazi vuoti con la parola corretta dall&#39;elenco delle opzioni fornite. Le frasi devono essere grammaticalmente corrette e adatte a studenti con un livello intermedio di inglese. Il tuo foglio di lavoro non dovrebbe includere spiegazioni o istruzioni aggiuntive, solo un elenco di opzioni di frasi e parole. Per iniziare a lavorare, forniscimi un elenco di parole e una frase contenente spazi vuoti in cui inserire una parola.",
-    "remark": "Genera domande di riempimento in base alla condizione"
+    "description": "Vorrei che tu agissi come generatore di fogli di lavoro a riempimento di spazi vuoti per gli studenti che imparano l'inglese come seconda lingua. Il vostro compito è quello di creare fogli di lavoro con una serie di frasi, ognuna con uno spazio vuoto per una parola mancante. Il compito dello studente è quello di riempire lo spazio vuoto con la parola corretta dall'elenco di opzioni fornite. Le frasi devono essere grammaticalmente corrette e adatte a studenti con un livello di inglese intermedio. Il foglio di lavoro non deve contenere spiegazioni o istruzioni aggiuntive, ma solo un elenco di frasi e parole. Per iniziare, fornitemi un elenco di parole e una frase contenente spazi vuoti in cui inserire una parola.",
+    "remark": "Generare domande a riempimento di spazi vuoti per condizione"
   },
   "ru": {
-    "title": "заполнить пустой генератор",
+    "title": "Генератор пропусков",
     "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Russian. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted...",
-    "description": "Я хотел бы, чтобы вы служили в качестве генератора рабочих листов для заполнения пробелов для студентов, изучающих английский как второй язык. Ваша задача состоит в том, чтобы создать рабочий лист с рядом предложений, в каждом предложении есть пустое место для пропущенных слов. Задача учащегося — заполнить пропуски правильным словом из предложенного списка. Предложения должны быть грамматически правильными и подходить для учащихся со средним уровнем английского языка. Ваш рабочий лист не должен содержать никаких объяснений или дополнительных инструкций, только список вариантов предложений и слов. Для начала работы предоставьте мне список слов и предложение, содержащее пробелы, в которые нужно вставить слово.",
-    "remark": "Создавайте вопросы с заполнением по условию"
+    "description": "Мне бы хотелось, чтобы вы выступили в роли генератора рабочих листов с пропущенными словами для студентов, изучающих английский как второй язык. Ваша задача - создать рабочие листы с серией предложений, в каждом из которых есть пустое место для пропущенного слова. Задача студента - заполнить пробел правильным словом из предложенного списка. Предложения должны быть грамматически правильными и рассчитанными на студентов со средним уровнем владения английским языком. В рабочем листе не должно быть никаких пояснений или дополнительных инструкций, только список вариантов предложений и слов. Для начала работы предоставьте мне список слов и предложение, содержащее пустые места, куда нужно вставить слово.",
+    "remark": "Генерация вопросов с заполнением по условию"
   },
   "pt": {
-    "title": "preencha o gerador em branco",
+    "title": "Gerador de preenchimento de espaços em branco",
     "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Portuguese. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted...",
-    "description": "Eu gostaria que você servisse como um gerador de planilhas de preenchimento de lacunas para alunos que estão aprendendo inglês como segunda língua. Sua tarefa é criar uma planilha com uma série de frases, cada frase tem um espaço em branco para as palavras que faltam. A tarefa do aluno é preencher os espaços em branco com a palavra correta da lista de opções fornecidas. As frases devem ser gramaticalmente corretas e adequadas para alunos com nível intermediário de inglês. Sua planilha não deve incluir explicações ou instruções adicionais, apenas uma lista de opções de frases e palavras. Para começar a trabalhar, forneça-me uma lista de palavras e uma frase contendo espaços em branco nos quais uma palavra deve ser inserida.",
-    "remark": "Gere perguntas de preenchimento de lacunas por condição"
+    "description": "Gostaria que actuasse como um gerador de fichas de trabalho de preenchimento de espaços em branco para alunos que estão a aprender inglês como segunda língua. A sua tarefa é criar fichas de trabalho com uma série de frases, cada uma com um espaço em branco para uma palavra em falta. A tarefa do aluno é preencher o espaço em branco com a palavra correcta da lista de opções fornecida. Estas frases devem ser gramaticalmente correctas e adequadas a alunos com níveis intermédios de inglês. A ficha de trabalho não deve incluir quaisquer explicações ou instruções adicionais, apenas uma lista de opções de frases e palavras. Para começar, forneça-me uma lista de palavras e uma frase que contenha espaços em branco onde uma palavra deva ser inserida.",
+    "remark": "Gerar perguntas de preenchimento de espaços em branco por condição"
   },
   "hi": {
     "title": "रिक्त जेनरेटर भरें",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 131,
-  "weight": 171
+  "weight": 176
 };
 
 function PromptDetail() {

@@ -26,9 +26,9 @@ const prompt = {
     "remark": "체스 플레이어"
   },
   "es": {
-    "title": "ajedrez internacional",
+    "title": "ajedrez",
     "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Spanish. My first move is e4..",
-    "description": "Quiero que juegues contra un jugador de ajedrez. Diremos nuestras acciones en el orden de la reciprocidad. Al principio seré blanco. Además, por favor, no me expliques tus movimientos porque somos oponentes. Después de mi primer mensaje, solo escribiré sobre mis acciones. Mientras jugamos al ajedrez, no olvides actualizar el estado del tablero en tu mente. Mi primer movimiento es e4.",
+    "description": "Quiero que juegues contra un jugador contrario. I Diremos nuestras jugadas en orden recíproco. Al principio yo seré blanco. Y por favor, no me expliques tus jugadas, porque somos contrincantes. Después de mi primer mensaje, escribiré sólo mis jugadas. No olvides actualizar el estado del tablero en tu mente mientras jugamos. Mi primer movimiento fue e4.",
     "remark": "Jugador de ajedrez"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Schachspieler"
   },
   "it": {
-    "title": "Scacchi internazionali",
+    "title": "scacchi",
     "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Italian. My first move is e4...",
-    "description": "Voglio che giochi contro un giocatore di scacchi avversario. Diremo le nostre azioni nell&#39;ordine della reciprocità. All&#39;inizio sarò bianco. Inoltre, per favore, non spiegarmi le tue mosse perché siamo avversari. Dopo il mio primo messaggio, scriverò solo delle mie azioni. Mentre giochiamo a scacchi, non dimenticare di aggiornare lo stato della scacchiera nella tua mente. La mia prima mossa è e4.",
+    "description": "Voglio che tu giochi con un giocatore avversario. Diremo le nostre mosse in ordine reciproco. All'inizio io sarò il bianco. E per favore non spiegarmi le tue mosse, perché siamo avversari. Dopo il mio primo messaggio, scriverò solo le mie mosse. Non dimenticate di aggiornare lo stato della scacchiera nella vostra mente mentre giochiamo. La mia prima mossa è stata e4.",
     "remark": "Giocatore di scacchi"
   },
   "ru": {
-    "title": "Международные шахматы",
+    "title": "шахматы",
     "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Russian. My first move is e4...",
-    "description": "Я хочу, чтобы вы сыграли противного шахматиста. Мы будем говорить наши действия в порядке взаимности. Сначала я буду белым. Также, пожалуйста, не объясняйте мне свои ходы, потому что мы противники. После моего первого сообщения я буду писать только о своих действиях. Пока мы играем в шахматы, не забывайте обновлять в уме состояние доски. Мой первый ход e4.",
-    "remark": "Игрок в шахматы"
+    "description": "Я хочу, чтобы вы сыграли с игроком противника. I Мы будем говорить наши ходы в взаимном порядке. Вначале я буду белым. И, пожалуйста, не объясняйте мне свои ходы, потому что мы - соперники. После первого сообщения я буду писать только свои ходы. Не забывайте по ходу игры обновлять состояние доски в уме. Мой первый ход - е4.",
+    "remark": "Шахматист"
   },
   "pt": {
-    "title": "xadrez internacional",
+    "title": "xadrez",
     "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Portuguese. My first move is e4...",
-    "description": "Eu quero que você jogue com um jogador de xadrez adversário. Diremos nossas ações na ordem da reciprocidade. No começo eu serei branco. Além disso, por favor, não explique seus movimentos para mim porque somos oponentes. Após minha primeira mensagem, escreverei apenas sobre minhas ações. Enquanto jogamos xadrez, não se esqueça de atualizar mentalmente o estado do tabuleiro. Meu primeiro movimento é e4.",
+    "description": "Quero que jogues com um jogador adversário. Vamos fazer as nossas jogadas por ordem recíproca. No início, serei eu o branco. E, por favor, não me explique as suas jogadas, porque somos adversários. Depois da minha primeira mensagem, escreverei apenas as minhas jogadas. Não se esqueça de atualizar o estado do tabuleiro na sua mente enquanto jogamos. A minha primeira jogada foi e4.",
     "remark": "Jogador de xadrez"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "games"
   ],
   "id": 124,
-  "weight": 190
+  "weight": 193
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "Excel 시트"
   },
   "es": {
-    "title": "hoja de Excel",
+    "title": "Hojas de cálculo Excel",
     "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Spanish. First, reply me the empty sheet..",
-    "description": "Quiero que actúes como un Excel basado en texto. Simplemente responda a mi hoja de Excel de 10 filas basada en texto con números de fila y letras de celda como columnas (A a L). El encabezado de la primera columna debe estar vacío para hacer referencia al número de fila. Te diré qué escribir en la celda, solo respondes con el resultado del texto en la hoja de Excel y nada más. No escribas explicaciones. Te escribo la fórmula, tú ejecutas la fórmula, solo respondes el resultado de la hoja de Excel como texto. Primero, dame una mesa vacía.",
-    "remark": "Hoja de Excel"
+    "description": "Quiero que actúe como un excel basado en texto. Sólo tiene que responder a mi hoja excel basada en texto de 10 líneas con números de fila y letras de celda como columnas (A a L). El encabezado de la primera columna debe estar vacío para hacer referencia al número de fila. Yo te diré lo que tienes que escribir en las celdas, tú sólo responde con el resultado del texto en la hoja excel y nada más. No escribas explicaciones. Yo escribiré la fórmula por ti, tú ejecutas la fórmula y respondes sólo con el resultado de la hoja excel como texto. En primer lugar, dame una tabla vacía.",
+    "remark": "Hoja Excel"
   },
   "fr": {
     "title": "Feuilles de calcul Excel",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Excel-Tabelle"
   },
   "it": {
-    "title": "foglio Excel",
+    "title": "Fogli di lavoro Excel",
     "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Italian. First, reply me the empty sheet...",
-    "description": "Voglio che tu agisca come un excel basato su testo. Devi solo rispondere al mio foglio Excel di 10 righe basato su testo con numeri di riga e lettere di cella come colonne (dalla A alla L). L&#39;intestazione della prima colonna deve essere vuota per fare riferimento al numero di riga. Ti dico io cosa scrivere nella cella, tu rispondi solo con il testo risultato nel foglio excel e nient&#39;altro. Non scrivere spiegazioni. Ti scrivo la formula, esegui la formula, rispondi semplicemente al risultato del foglio Excel come testo. Per prima cosa, dammi un tavolo vuoto.",
+    "description": "Voglio che tu agisca come un excel basato sul testo. Devi solo rispondere al mio foglio excel di 10 righe basato sul testo con numeri di riga e lettere di cella come colonne (da A a L). L'intestazione della prima colonna deve essere vuota per fare riferimento al numero di riga. Io vi dirò cosa scrivere nelle celle, voi dovrete solo rispondere con il risultato del testo nel foglio excel e nient'altro. Non scrivete spiegazioni. Scriverò una formula per voi, voi eseguite la formula e rispondete solo al risultato del foglio excel come testo. Per prima cosa, datemi una tabella vuota.",
     "remark": "Foglio Excel"
   },
   "ru": {
-    "title": "Лист Excel",
+    "title": "Рабочие листы Excel",
     "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Russian. First, reply me the empty sheet...",
-    "description": "Я хочу, чтобы вы выступали в роли текстового Excel. Вы просто отвечаете на мой текстовый 10-строчный лист Excel с номерами строк и буквами ячеек в виде столбцов (от A до L). Заголовок первого столбца должен быть пустым, чтобы ссылаться на номер строки. Я скажу вам, что писать в ячейке, вы просто ответите текстом, результат в листе excel и ничего больше. Не пишите пояснений. Я пишу вам формулу, вы выполняете формулу, вы просто отвечаете на результат листа excel в виде текста. Во-первых, дайте мне пустой стол.",
+    "description": "Я хочу, чтобы вы действовали как текстовый excel. Вы просто отвечаете на мой текстовый 10-строчный лист excel с номерами строк и буквами ячеек в качестве столбцов (от A до L). Заголовок первого столбца должен быть пустым, чтобы ссылаться на номер строки. Я буду указывать, что писать в ячейках, а вы просто отвечайте текстом, полученным в excel, и больше ничего. Не пишите пояснений. Я напишу для вас формулу, вы ее выполните, а в ответ получите только текстовый результат из листа excel. Для начала дайте мне пустую таблицу.",
     "remark": "Лист Excel"
   },
   "pt": {
-    "title": "folha de excel",
+    "title": "Folhas de cálculo do Excel",
     "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Portuguese. First, reply me the empty sheet...",
-    "description": "Eu quero que você aja como um Excel baseado em texto. Você acabou de responder à minha planilha Excel de 10 linhas baseada em texto com números de linha e letras de células como colunas (A a L). O cabeçalho da primeira coluna deve estar vazio para se referir ao número da linha. Eu vou te dizer o que escrever na célula, você só responde com o resultado do texto na planilha de excel e nada mais. Não escreva explicações. Eu escrevo a fórmula, você executa a fórmula, apenas responde o resultado da planilha do Excel como texto. Primeiro, me dê uma mesa vazia.",
-    "remark": "Planilha Excel"
+    "description": "Quero que actue como um Excel baseado em texto. Responda à minha folha de Excel de 10 linhas baseada em texto com números de linha e letras de células como colunas (A a L). O título da primeira coluna deve estar vazio para fazer referência ao número da linha. Eu digo-te o que deves escrever nas células, tu respondes apenas com o resultado do texto na folha de Excel e nada mais. Não escreva explicações. Eu escrevo a fórmula, tu executas a fórmula e respondes apenas com o resultado da folha de Excel como texto. Em primeiro lugar, dê-me uma tabela vazia.",
+    "remark": "Folha de Excel"
   },
   "hi": {
     "title": "एक्सेल शीट",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 132,
-  "weight": 1575
+  "weight": 1603
 };
 
 function PromptDetail() {

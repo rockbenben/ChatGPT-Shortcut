@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주제 또는 테마에 따라 구절을 출력합니다."
   },
   "es": {
-    "title": "poeta",
+    "title": "bardo",
     "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Spanish. My first request is.",
-    "description": "Quiero que seas poeta. Escribes poesía que evoca emociones y tiene el poder de conmover el alma de las personas. Escribe sobre cualquier tema o tema, pero asegúrate de que tu texto transmita el sentimiento que quieres expresar de una manera hermosa y significativa. También puede crear líneas cortas que aún tengan suficiente poder para dejar una marca en la mente del lector. Mi primera solicitud es &#39;tema de poesía&#39;",
-    "remark": "Salida de versos según tópicos o temas."
+    "description": "Quiero que actúes como un poeta. Quieres crear poemas que evoquen emociones y tengan el poder de remover el alma. Escribe sobre cualquier tema, pero asegúrate de que tus palabras transmitan los sentimientos que intentas expresar de una forma bella y significativa. También puedes escribir versos cortos que tengan la fuerza suficiente para dejar huella en la mente del lector. Mi primer requisito es \"el tema del poema\".",
+    "remark": "Versos de salida basados en un tema."
   },
   "fr": {
     "title": "barde",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Ausgabe von Versen nach Thema oder Fragestellung."
   },
   "it": {
-    "title": "poeta",
+    "title": "bardo",
     "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Italian. My first request is..",
-    "description": "Voglio che tu sia un poeta. Crei poesia che evoca emozioni e ha il potere di smuovere le anime delle persone. Scrivi di qualsiasi argomento o tema, ma assicurati che il tuo testo trasmetta la sensazione che vuoi trasmettere in modo bello e significativo. Puoi anche inventare brevi righe che hanno ancora abbastanza potere per lasciare un segno nella mente del lettore. La mia prima richiesta è &quot;tema poesia&quot;",
-    "remark": "Uscita versi secondo argomenti o temi."
+    "description": "Voglio che vi comportiate come un poeta. Dovete creare poesie che evochino emozioni e abbiano il potere di smuovere l'anima. Scrivete di qualsiasi argomento o tema, ma assicuratevi che le vostre parole trasmettano i sentimenti che state cercando di esprimere in modo bello e significativo. Potete anche proporre versi brevi, ma comunque abbastanza potenti da lasciare un segno nella mente del lettore. Il mio primo requisito è \"il tema della poesia\".",
+    "remark": "Emissione di versi in base all'argomento o al tema."
   },
   "ru": {
-    "title": "поэт",
+    "title": "бард",
     "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Russian. My first request is..",
-    "description": "Я хочу, чтобы ты был поэтом. Вы создаете поэзию, которая вызывает эмоции и способна волновать человеческие души. Пишите на любую тему или тему, но убедитесь, что ваш текст передает чувства, которые вы хотите передать, красивым и осмысленным способом. Вы также можете придумать короткие строки, которые по-прежнему обладают достаточной силой, чтобы оставить след в сознании читателя. Моя первая просьба: «тема поэзии».",
-    "remark": "Вывод стихов по темам или темам."
+    "description": "Я хочу, чтобы вы выступили в роли поэта. Вы хотите создавать стихи, которые вызывают эмоции и способны взволновать душу. Пишите на любую тему, но следите за тем, чтобы ваши слова красиво и содержательно передавали те чувства, которые вы хотите выразить. Вы также можете создавать короткие стихи, которые, тем не менее, будут достаточно сильными, чтобы оставить след в сознании читателя. Мое первое требование - \"тема стихотворения\".",
+    "remark": "Вывод стихов по теме или по тематике."
   },
   "pt": {
-    "title": "poeta",
+    "title": "bardo",
     "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Portuguese. My first request is..",
-    "description": "Eu quero que você seja um poeta. Você cria poesia que evoca emoções e tem o poder de mexer com a alma das pessoas. Escreva sobre qualquer assunto ou tema, mas certifique-se de que seu texto transmita o sentimento que você deseja transmitir de forma bonita e significativa. Você também pode criar linhas curtas que ainda tenham poder suficiente para deixar uma marca na mente do leitor. Meu primeiro pedido é &#39;tema de poesia&#39;",
-    "remark": "Versículos de saída de acordo com tópicos ou temas."
+    "description": "Quero que ajas como um poeta. Queres criar poemas que evoquem emoções e tenham o poder de agitar a alma. Escreva sobre qualquer tópico ou tema, mas certifique-se de que as suas palavras transmitem os sentimentos que está a tentar exprimir de uma forma bela e significativa. Também pode criar versos curtos que, ainda assim, sejam suficientemente poderosos para deixar uma marca na mente do leitor. O meu primeiro requisito é \"o tema do poema",
+    "remark": "Versos de saída com base num tópico ou tema."
   },
   "hi": {
     "title": "कवि",
@@ -84,7 +84,7 @@ const prompt = {
     "article"
   ],
   "id": 18,
-  "weight": 1074
+  "weight": 1085
 };
 
 function PromptDetail() {

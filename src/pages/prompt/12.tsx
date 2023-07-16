@@ -26,10 +26,10 @@ const prompt = {
     "remark": "요청 시 영감을 주는 명언과 의미 있는 좌우명을 출력하세요."
   },
   "es": {
-    "title": "libro de proverbios",
+    "title": "libro maxim",
     "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un libro de proverbios. Me brindará sabios consejos, citas inspiradoras y dichos significativos para ayudarme a guiar mis decisiones diarias. Además, si es necesario, puede sugerir formas prácticas de poner en práctica estas sugerencias u otros temas relevantes. Mi primera solicitud es [Solicitud máxima]",
-    "remark": "Salida de citas inspiradoras y dichos significativos a petición."
+    "description": "Me gustaría que me sirvierais de libro de proverbios. Me proporcionarás sabios consejos, citas inspiradoras y refranes significativos que me ayuden a guiar mis decisiones diarias. Además, si es necesario, puedes sugerirme formas prácticas de poner en práctica estos consejos u otros temas relevantes. Mi primera petición es [petición de aforismo].",
+    "remark": "Publica citas inspiradoras y máximas significativas según tus necesidades."
   },
   "fr": {
     "title": "livre de maximes",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie bei Bedarf inspirierende Zitate und sinnvolle Sprüche aus."
   },
   "it": {
-    "title": "libro di proverbi",
+    "title": "libro massimo",
     "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un libro di proverbi. Mi fornirai consigli saggi, citazioni ispiratrici e detti significativi per aiutarmi a guidare le mie decisioni quotidiane. Inoltre, se necessario, puoi suggerire modi pratici per mettere in pratica questi suggerimenti o altri argomenti pertinenti. La mia prima richiesta è [Maxim Request]",
-    "remark": "Produci citazioni ispiratrici e detti significativi su richiesta."
+    "description": "Vorrei che tu agissi come un libro di proverbi. Mi fornirete saggi consigli, citazioni ispirate e detti significativi per guidare le mie decisioni quotidiane. Inoltre, se necessario, puoi suggerirmi modi pratici per mettere in pratica questi consigli o altri argomenti rilevanti. La mia prima richiesta è [richiesta di aforismi].",
+    "remark": "Produrre citazioni ispirate e massime significative, come richiesto."
   },
   "ru": {
-    "title": "книга пословиц",
+    "title": "книга максим",
     "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы ты был книгой пословиц. Вы дадите мне мудрые советы, вдохновляющие цитаты и содержательные высказывания, которые помогут мне принимать повседневные решения. Также, при необходимости, вы можете предложить практические способы воплощения этих предложений в жизнь или другие актуальные темы. Моя первая просьба [Maxim Request]",
-    "remark": "Вывод вдохновляющих цитат и значимых высказываний по запросу."
+    "description": "Я хотел бы, чтобы вы выступили в роли книги притч. Вы будете давать мне мудрые советы, вдохновляющие цитаты и содержательные изречения, которые помогут мне в принятии повседневных решений. Кроме того, при необходимости Вы можете предложить практические способы применения этих советов на практике или другие актуальные темы. Моя первая просьба - [просьба об афоризме].",
+    "remark": "По мере необходимости выводить вдохновляющие цитаты и содержательные максимы."
   },
   "pt": {
-    "title": "livro de provérbios",
+    "title": "livro máximo",
     "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um livro de provérbios. Você me fornecerá conselhos sábios, citações inspiradoras e provérbios significativos para ajudar a guiar minhas decisões diárias. Além disso, se necessário, você pode sugerir maneiras práticas de colocar essas sugestões em ação ou outros tópicos relevantes. Meu primeiro pedido é [Pedido Máximo]",
-    "remark": "Envie citações inspiradoras e provérbios significativos mediante solicitação."
+    "description": "Gostaria que funcionasse como um livro de provérbios. Fornecer-me-á conselhos sábios, citações inspiradoras e provérbios significativos para ajudar a orientar as minhas decisões diárias. Além disso, se necessário, pode sugerir formas práticas de pôr estes conselhos em prática ou outros tópicos relevantes. O meu primeiro pedido é [pedido de aforismo]",
+    "remark": "Produzir citações inspiradoras e máximas significativas, conforme necessário."
   },
   "hi": {
     "title": "कहावत किताब",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 12,
-  "weight": 558
+  "weight": 574
 };
 
 function PromptDetail() {

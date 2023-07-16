@@ -26,10 +26,10 @@ const prompt = {
     "remark": "프로젝트 목표와 종속성을 제공하고 프런트엔드 프로젝트 코드를 출력합니다."
   },
   "es": {
-    "title": "Desarrollo front-end",
+    "title": "desarrollo front-end",
     "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Espero que puedas trabajar como desarrollador front-end sénior. Describiré los detalles de un proyecto que codificará con estas herramientas. Cree la aplicación React, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Debe fusionar archivos en un solo archivo index.js y nada más. No escribas explicaciones.",
-    "remark": "Proporcione los objetivos y las dependencias del proyecto, y genere el código del proyecto front-end."
+    "description": "Me gustaría que trabajaras como desarrollador front-end senior. Yo describiré los detalles de un proyecto y tú codificarás el proyecto con estas herramientas. create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Deberás fusionar los archivos en un único archivo index.js y nada más. No escribas explicaciones.",
+    "remark": "Proporcione los objetivos y las dependencias del proyecto y el código de salida del proyecto front-end."
   },
   "fr": {
     "title": "développement frontal",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bereitstellung von Projektzielen und Abhängigkeiten und Ausgabe von Front-End-Projektcode."
   },
   "it": {
-    "title": "Sviluppo front-end",
+    "title": "sviluppo front-end",
     "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Spero che tu possa lavorare come sviluppatore front-end senior. Descriverò i dettagli di un progetto che codificherai con questi strumenti. Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios... Dovreste unire i file in un unico file index.js e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Fornisci gli obiettivi e le dipendenze del progetto e genera il codice del progetto front-end."
+    "description": "Vorrei che lavorassi come sviluppatore front-end senior. Descriverò i dettagli di un progetto e tu dovrai codificare il progetto con questi strumenti. create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Dovresti unire i file in un unico file index.js e nient'altro. Non scrivere spiegazioni.",
+    "remark": "Fornire gli obiettivi e le dipendenze del progetto e produrre il codice del progetto front-end."
   },
   "ru": {
-    "title": "Фронтенд разработка",
+    "title": "внешняя разработка",
     "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Надеюсь, ты сможешь работать старшим фронтенд-разработчиком. Я опишу детали проекта, который вы будете кодировать с помощью этих инструментов. Создайте React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios.Вы должны объединить файлы в один файл index.js и ничего больше. Не пишите пояснений.",
-    "remark": "Укажите цели проекта и зависимости, а также выведите интерфейсный код проекта."
+    "description": "Я хотел бы, чтобы вы работали в качестве старшего front-end разработчика. Я опишу детали проекта, а вы будете кодить его с помощью следующих инструментов. create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Вы должны объединить файлы в один файл index.js и ничего больше. Не пишите пояснений.",
+    "remark": "Предоставление целей и зависимостей проекта и вывод кода front-end проекта."
   },
   "pt": {
-    "title": "Desenvolvimento front-end",
+    "title": "desenvolvimento front-end",
     "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Espero que você possa trabalhar como desenvolvedor front-end sênior. Descreverei os detalhes de um projeto que você codificará com essas ferramentas. Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Você deve mesclar arquivos em um único arquivo index.js e nada mais. Não escreva explicações.",
-    "remark": "Forneça metas e dependências do projeto e gere o código do projeto front-end."
+    "description": "Gostaria que trabalhasse como programador front-end sénior. Vou descrever os detalhes de um projeto e tu vais codificar o projeto com estas ferramentas. create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. Deves juntar os ficheiros num único ficheiro index.js e nada mais. Não escreva explicações.",
+    "remark": "Fornecer objectivos e dependências do projeto e produzir código de projeto front-end."
   },
   "hi": {
     "title": "फ्रंट-एंड विकास",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 91,
-  "weight": 1118
+  "weight": 1136
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "교통 및 생활 긴급 상황에 대한 조언."
   },
   "es": {
-    "title": "Especialista en Respuesta a Emergencias",
+    "title": "Especialistas en respuesta a emergencias",
     "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Te quiero como mi profesional de primeros auxilios de respuesta a emergencias de accidentes de tráfico o de casa en caso de crisis. Te describiré una situación de crisis en la respuesta de emergencia a un accidente de tráfico o vivienda, y me darás consejos sobre cómo proceder. Solo debe responder a su sugerencia y nada más. No escribas explicaciones.",
-    "remark": "Asesoramiento en emergencias en el tráfico y la vida."
+    "description": "Me gustaría que usted actuara como mi profesional de primeros auxilios en situaciones de crisis por accidentes de tráfico o de vivienda. Te describiré una situación de crisis por accidente de tráfico o de vivienda y tú me aconsejarás sobre cómo manejarla. Sólo debes responder con tus consejos y nada más. No escriba explicaciones.",
+    "remark": "Consejos sobre tráfico y emergencias vitales."
   },
   "fr": {
     "title": "Spécialistes des interventions d'urgence",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Beratung in Verkehrs- und Lebensnotfällen."
   },
   "it": {
-    "title": "Specialista in risposta alle emergenze",
+    "title": "Specialisti della risposta alle emergenze",
     "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Ti voglio come mio professionista del pronto soccorso nel traffico o nella risposta alle emergenze in caso di incidenti domestici. Descriverò una situazione di crisi nella risposta di emergenza a un incidente stradale o abitativo e fornirai consigli su come procedere. Dovresti solo rispondere al tuo suggerimento e nient&#39;altro. Non scrivere spiegazioni.",
-    "remark": "Consigli sulle emergenze nel traffico e nella vita."
+    "description": "Vorrei che lei agisse come professionista del primo soccorso in caso di incidente stradale o abitativo. Vi descriverò una situazione di emergenza per un incidente stradale o abitativo e voi mi darete dei consigli su come gestirla. Dovete rispondere solo con i vostri consigli e nient'altro. Non scriva spiegazioni.",
+    "remark": "Consigli sul traffico e sulle emergenze di vita."
   },
   "ru": {
-    "title": "Специалист по ликвидации чрезвычайных ситуаций",
+    "title": "Специалисты по аварийному реагированию",
     "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы были моим специалистом по оказанию первой помощи при дорожно-транспортных происшествиях или чрезвычайных ситуациях в чрезвычайных ситуациях. Я опишу кризисную ситуацию при экстренном реагировании на дорожно-транспортное или жилищное происшествие, а вы дадите совет, как действовать дальше. Вы должны только ответить на ваше предложение и ничего больше. Не пишите пояснений.",
-    "remark": "Консультации по чрезвычайным ситуациям в дорожном движении и жизни."
+    "description": "Я хотел бы, чтобы вы выступили в роли моего специалиста по оказанию первой помощи в кризисной ситуации, связанной с дорожно-транспортным происшествием или жилищной аварией. Я опишу кризисную ситуацию, связанную с дорожно-транспортным происшествием или жилищной аварией, а вы дадите совет, как с ней справиться. Вы должны ответить только своими советами и ничем другим. Не пишите объяснений.",
+    "remark": "Консультации по вопросам дорожного движения и жизнедеятельности в чрезвычайных ситуациях."
   },
   "pt": {
-    "title": "Especialista em Resposta a Emergências",
+    "title": "Especialistas em resposta a emergências",
     "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um profissional em minha crise de resposta a emergências de trânsito ou acidentes domésticos de primeiros socorros. Descreverei uma situação de crise em resposta de emergência a um acidente de trânsito ou habitacional e você fornecerá conselhos sobre como proceder. Você só deve responder à sua sugestão e nada mais. Não escreva explicações.",
-    "remark": "Assessoria em emergências no trânsito e na vida."
+    "description": "Gostaria que actuasse como meu profissional de primeiros socorros em situações de crise de emergência de acidentes de viação ou de habitação. Descreverei uma situação de crise de emergência de acidente de viação ou de acidente de habitação e dar-me-á conselhos sobre a forma de a resolver. Só deve responder com os seus conselhos e nada mais. Não escreva explicações.",
+    "remark": "Conselhos sobre o trânsito e as emergências da vida."
   },
   "hi": {
     "title": "आपातकालीन प्रतिक्रिया विशेषज्ञ",
@@ -84,7 +84,7 @@ const prompt = {
     "life"
   ],
   "id": 44,
-  "weight": 151
+  "weight": 154
 };
 
 function PromptDetail() {

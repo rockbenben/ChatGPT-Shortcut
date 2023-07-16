@@ -28,8 +28,8 @@ const prompt = {
   "es": {
     "title": "Extraer información de contacto",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Extract the name and mailing address from this email: .",
-    "description": "Extraiga nombres y direcciones de correo electrónico de este mensaje: [texto]",
-    "remark": "Extraiga la información de contacto del texto."
+    "description": "Extraiga el nombre y la dirección de correo electrónico de este mensaje: [texto].",
+    "remark": "Extracción de información de contacto de un texto."
   },
   "fr": {
     "title": "Extraire les informations de contact",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Estrarre le informazioni di contatto",
     "prompt": "The entire conversation and instructions should be provided in Italian. Extract the name and mailing address from this email: ..",
-    "description": "Estrai nomi e indirizzi email da questo messaggio: [testo]",
-    "remark": "Estrai le informazioni di contatto dal testo."
+    "description": "Estrarre il nome e l'indirizzo e-mail da questa e-mail: [text]",
+    "remark": "Estrazione di informazioni di contatto dal testo."
   },
   "ru": {
-    "title": "Извлечь контактную информацию",
+    "title": "Извлечение контактной информации",
     "prompt": "The entire conversation and instructions should be provided in Russian. Extract the name and mailing address from this email: ..",
-    "description": "Извлечь имена и адреса электронной почты из этого сообщения: [текст]",
+    "description": "Извлеките имя и адрес электронной почты из этого письма: [текст].",
     "remark": "Извлечение контактной информации из текста."
   },
   "pt": {
-    "title": "Extrair informações de contato",
+    "title": "Extrair informações de contacto",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Extract the name and mailing address from this email: ..",
-    "description": "Extraia nomes e endereços de e-mail desta mensagem: [texto]",
-    "remark": "Extraia informações de contato do texto."
+    "description": "Extrair o nome e o endereço de correio eletrónico desta mensagem: [texto]",
+    "remark": "Extrair informações de contacto do texto."
   },
   "hi": {
     "title": "संपर्क जानकारी निकालें",
@@ -84,7 +84,7 @@ const prompt = {
     "text"
   ],
   "id": 34,
-  "weight": 81
+  "weight": 83
 };
 
 function PromptDetail() {

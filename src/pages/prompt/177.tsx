@@ -26,10 +26,10 @@ const prompt = {
     "remark": "WeChat 애플릿 개발 지원. gandli 의 기여."
   },
   "es": {
-    "title": "Desarrollo: Programa WeChat Mini",
+    "title": "Desarrollo: WeChat Applet",
     "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Spanish. Provide only the necessary code to meet these requirements without explanations or descriptions..",
-    "description": "Como desarrollador de WeChat Mini Program, su tarea es utilizar el desarrollo nativo de WeChat Mini Programs para escribir una página de contador. Responda el código que cumpla con los siguientes requisitos: Cree una página de applet de Wechat que contenga archivos wxml, js, wxss y json, e implemente una página de contador en ella. El texto que se muestra en la vista debe estar en chino. Tenga en cuenta que solo debe proporcionar el código necesario para cumplir con estos requisitos; no se requiere explicación ni descripción.",
-    "remark": "Asistir en el desarrollo de applets de WeChat. Contribución de @gandli."
+    "description": "Como desarrollador de wechat applet, su tarea es escribir una página de contador utilizando el desarrollo nativo de wechat applet. Por favor, responda con el código que cumpla los siguientes requisitos: crear una página de applet wechat con archivos wxml, js, wxss y json e implementar una página de contador en ella. El texto mostrado en la vista debe estar en chino. Tenga en cuenta que sólo debe proporcionar el código necesario para cumplir estos requisitos; no se requiere ninguna explicación ni descripción.",
+    "remark": "Ayudando en el desarrollo del applet WeChat. Contribución de @gandli."
   },
   "fr": {
     "title": "Développement : Applet WeChat",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Unterstützung bei der Entwicklung des WeChat-Applets. Beitrag von @gandli."
   },
   "it": {
-    "title": "Sviluppo: programma WeChat Mini",
+    "title": "Sviluppo: Applet WeChat",
     "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Italian. Provide only the necessary code to meet these requirements without explanations or descriptions...",
-    "description": "In qualità di sviluppatore di WeChat Mini Program, il tuo compito è utilizzare lo sviluppo nativo di WeChat Mini Program per scrivere una pagina contatore. Rispondi al codice che soddisfa i seguenti requisiti: Crea una pagina dell&#39;applet Wechat contenente i file wxml, js, wxss e json e implementa una pagina contatore al suo interno. Il testo visualizzato nella vista dovrebbe essere in cinese. Si noti che è necessario fornire solo il codice necessario per soddisfare questi requisiti; non è richiesta alcuna spiegazione o descrizione.",
-    "remark": "Assistere nello sviluppo di applet WeChat. Contributo di @gandli."
+    "description": "In qualità di sviluppatore di applet wechat, il tuo compito è quello di scrivere una pagina di contatore utilizzando lo sviluppo nativo di applet wechat. Si prega di rispondere con un codice che soddisfi i seguenti requisiti: creare una pagina applet wechat con file wxml, js, wxss e json e implementare una pagina contatore in essa. Il testo visualizzato nella vista deve essere in cinese. Si prega di notare che è necessario fornire solo il codice necessario per soddisfare questi requisiti; non è richiesta alcuna spiegazione o descrizione.",
+    "remark": "Assistenza allo sviluppo dell'applet WeChat. Contributo di @gandli."
   },
   "ru": {
-    "title": "Разработка: Мини-программа WeChat",
+    "title": "Разработка: WeChat Applet",
     "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Russian. Provide only the necessary code to meet these requirements without explanations or descriptions...",
-    "description": "Как разработчик мини-программы WeChat, ваша задача — использовать нативную разработку мини-программ WeChat для написания встречной страницы. Пожалуйста, ответьте на код, который соответствует следующим требованиям: Создайте страницу апплета Wechat, содержащую файлы wxml, js, wxss и json, и внедрите в нее страницу счетчика. Текст, отображаемый в представлении, должен быть на китайском языке. Обратите внимание, что вы должны предоставить только тот код, который необходим для выполнения этих требований, никаких объяснений или описаний не требуется.",
-    "remark": "Помощь в разработке апплетов WeChat. Вклад от @gandli."
+    "description": "Ваша задача, как разработчика wechat-апплета, написать страницу счетчика, используя нативную разработку wechat-апплета. Пожалуйста, предоставьте в ответ код, удовлетворяющий следующим требованиям: создайте страницу wechat-апплета с файлами wxml, js, wxss и json и реализуйте в ней страницу счетчика. Текст, отображаемый в представлении, должен быть на китайском языке. Пожалуйста, обратите внимание, что вы должны предоставить только код, необходимый для выполнения этих требований; пояснения или описание не требуются.",
+    "remark": "Помощь в разработке апплета WeChat. Вклад от @gandli."
   },
   "pt": {
-    "title": "Desenvolvimento: Mini Programa WeChat",
+    "title": "Desenvolvimento: WeChat Applet",
     "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Portuguese. Provide only the necessary code to meet these requirements without explanations or descriptions...",
-    "description": "Como desenvolvedor do WeChat Mini Program, sua tarefa é usar o desenvolvimento nativo dos WeChat Mini Programs para escrever uma contrapágina. Por favor, responda o código que atende aos seguintes requisitos: Crie uma página de miniaplicativo Wechat contendo arquivos wxml, js, wxss e json e implemente uma página de contador nela. O texto exibido na exibição deve estar em chinês. Observe que você deve fornecer apenas o código necessário para atender a esses requisitos; nenhuma explicação ou descrição é necessária.",
-    "remark": "Auxiliar no desenvolvimento de applets WeChat. Contribuição de @gandli."
+    "description": "Como programador de wechat applet, a sua tarefa é escrever uma página de contador utilizando o desenvolvimento nativo de wechat applet. Por favor, responda com um código que cumpra os seguintes requisitos: criar uma página wechat applet com ficheiros wxml, js, wxss e json e implementar uma página de contador na mesma. O texto apresentado na vista deve estar em chinês. Tenha em atenção que só deve fornecer o código necessário para cumprir estes requisitos; não é necessária qualquer explicação ou descrição.",
+    "remark": "Ajudar no desenvolvimento do applet WeChat. Contribuição de @gandli."
   },
   "hi": {
     "title": "विकास: वीचैट मिनी प्रोग्राम",
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 177,
-  "weight": 2724
+  "weight": 2773
 };
 
 function PromptDetail() {

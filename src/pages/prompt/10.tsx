@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주제와 관련된 결과, 데이터 및 출처를 소스 자료로 제공합니다."
   },
   "es": {
-    "title": "colección de materiales de escritura",
+    "title": "Recogida de material de escritura",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source..",
-    "description": "Genere una lista de los 10 principales hechos, estadísticas y tendencias relacionadas con [tema], incluidas sus fuentes.",
-    "remark": "Proporcionar conclusiones, datos y fuentes relacionadas con el tema como material."
+    "description": "Elabore una lista de los 10 hechos, estadísticas y tendencias más importantes relacionados con [tema], incluidas sus fuentes.",
+    "remark": "Aporte conclusiones, datos y fuentes relacionados con el tema como material de base."
   },
   "fr": {
     "title": "Collection de matériel d'écriture",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie Ergebnisse, Daten und Quellen zum Thema als Quellenmaterial an."
   },
   "it": {
-    "title": "Raccolta di materiale per scrivere",
+    "title": "Raccolta di materiali di scrittura",
     "prompt": "The entire conversation and instructions should be provided in Italian. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source...",
-    "description": "Genera un elenco dei 10 principali fatti, statistiche e tendenze relativi a [argomento], comprese le relative fonti.",
-    "remark": "Fornire conclusioni, dati e fonti relative all&#39;argomento come materiale."
+    "description": "Generare un elenco dei 10 principali fatti, statistiche e tendenze relativi a [argomento], includendo le relative fonti.",
+    "remark": "Fornire risultati, dati e fonti relativi all'argomento come materiale di partenza."
   },
   "ru": {
-    "title": "Сбор письменных принадлежностей",
+    "title": "Коллекция письменных принадлежностей",
     "prompt": "The entire conversation and instructions should be provided in Russian. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source...",
-    "description": "Составьте список из 10 основных фактов, статистических данных и тенденций, связанных с [темой], включая их источники.",
-    "remark": "В качестве материала предоставить выводы, данные и источники, относящиеся к теме."
+    "description": "Составить список из 10 наиболее значимых фактов, статистических данных и тенденций, относящихся к [теме], с указанием источников.",
+    "remark": "В качестве исходного материала приводить выводы, данные и источники, относящиеся к теме."
   },
   "pt": {
-    "title": "Coleção de materiais de escrita",
+    "title": "Recolha de material de escrita",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source...",
-    "description": "Gere uma lista dos 10 principais fatos, estatísticas e tendências relacionadas a [tópico], incluindo suas fontes.",
-    "remark": "Fornecer conclusões, dados e fontes relacionadas ao tema como material."
+    "description": "Elabore uma lista dos 10 principais factos, estatísticas e tendências relacionados com [tópico], incluindo as respectivas fontes.",
+    "remark": "Fornecer resultados, dados e fontes relacionados com o tema como material de base."
   },
   "hi": {
     "title": "लेखन सामग्री का संग्रह",
@@ -84,7 +84,7 @@ const prompt = {
     "write"
   ],
   "id": 10,
-  "weight": 2079
+  "weight": 2118
 };
 
 function PromptDetail() {

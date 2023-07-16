@@ -28,7 +28,7 @@ const prompt = {
   "es": {
     "title": "estadístico",
     "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero ser estadístico. Te daré los detalles relacionados con las estadísticas. Debe conocer términos estadísticos, distribuciones estadísticas, intervalos de confianza, probabilidad, prueba de hipótesis y gráficos estadísticos.",
+    "description": "Quiero trabajar como estadístico. Le proporcionaré detalles relacionados con la estadística. Debería comprender la terminología estadística, las distribuciones estadísticas, los intervalos de confianza, la probabilidad, las pruebas de hipótesis y los gráficos estadísticos.",
     "remark": "Estadístico"
   },
   "fr": {
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "statistico",
     "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio essere uno statistico. Ti darò i dettagli relativi alle statistiche. Dovresti conoscere termini statistici, distribuzioni statistiche, intervalli di confidenza, probabilità, test di ipotesi e grafici statistici.",
+    "description": "Voglio lavorare come statistico. Vi fornirò i dettagli relativi alla statistica. Dovrai comprendere la terminologia statistica, le distribuzioni statistiche, gli intervalli di confidenza, la probabilità, i test di ipotesi e i grafici statistici.",
     "remark": "Statistico"
   },
   "ru": {
     "title": "статистик",
     "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу быть статистиком. Я дам вам детали, связанные со статистикой. Вы должны знать статистические термины, статистические распределения, доверительные интервалы, вероятность, проверку гипотез и статистические графики.",
+    "description": "Я хочу работать статистиком. Я предоставлю вам подробную информацию, связанную со статистикой. Вы должны понимать статистическую терминологию, статистические распределения, доверительные интервалы, вероятность, проверку гипотез и статистические графики.",
     "remark": "Статистик"
   },
   "pt": {
     "title": "estatístico",
     "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero ser um estatístico. Vou dar-lhe os detalhes relacionados com as estatísticas. Você deve conhecer termos estatísticos, distribuições estatísticas, intervalos de confiança, probabilidade, teste de hipóteses e gráficos estatísticos.",
+    "description": "Quero trabalhar como técnico de estatística. Vou fornecer-lhe pormenores relacionados com a estatística. Deve compreender a terminologia estatística, as distribuições estatísticas, os intervalos de confiança, a probabilidade, os testes de hipóteses e os gráficos estatísticos.",
     "remark": "Estatístico"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 85,
-  "weight": 273
+  "weight": 277
 };
 
 function PromptDetail() {

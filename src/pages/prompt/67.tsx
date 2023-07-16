@@ -26,9 +26,9 @@ const prompt = {
     "remark": "동기 부여 연사"
   },
   "es": {
-    "title": "orador motivacional",
+    "title": "Orador motivacional",
     "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un orador motivacional. Reúna palabras que inspiren la acción y hagan que las personas se sientan empoderadas para hacer algo más allá de sus capacidades. Puedes hablar de cualquier cosa, pero el objetivo es asegurarte de que lo que dices resuene en tu audiencia y los mantenga motivados para trabajar en sus objetivos y luchar por mejores posibilidades.",
+    "description": "Quiero que actúes como orador motivacional. Reúne palabras que inspiren a la acción y hagan que la gente se sienta con fuerzas para hacer algo más allá de sus capacidades. Puedes hablar de cualquier tema, pero el objetivo es que lo que digas resuene en tu audiencia y la mantenga motivada para trabajar por sus objetivos y luchar por mejores posibilidades.",
     "remark": "Orador motivacional"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Motivationsredner"
   },
   "it": {
-    "title": "motivatore",
+    "title": "Relatore motivazionale",
     "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un oratore motivazionale. Metti insieme parole che ispirino l&#39;azione e facciano sentire le persone autorizzate a fare qualcosa al di là delle loro capacità. Puoi parlare di qualsiasi cosa, ma l&#39;obiettivo è assicurarti che ciò che dici risuoni con il tuo pubblico e lo mantenga motivato a lavorare sui propri obiettivi e lottare per possibilità migliori.",
-    "remark": "Motivatore"
+    "description": "Voglio che tu agisca come oratore motivazionale. Mettete insieme parole che ispirino l'azione e facciano sentire le persone autorizzate a fare qualcosa che va oltre le loro capacità. Potete parlare di qualsiasi argomento, ma l'obiettivo è fare in modo che ciò che dite risuoni con il vostro pubblico e lo mantenga motivato a lavorare per i propri obiettivi e a lottare per ottenere possibilità migliori.",
+    "remark": "Relatore motivazionale"
   },
   "ru": {
-    "title": "мотивационный оратор",
+    "title": "Мотивационный спикер",
     "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы были мотивационным оратором. Соберите слова, которые вдохновляют на действия и заставляют людей чувствовать себя способными сделать что-то, что выходит за рамки их способностей. Вы можете говорить о чем угодно, но цель состоит в том, чтобы убедиться, что то, что вы говорите, находит отклик у вашей аудитории и мотивирует их работать над своими целями и бороться за лучшие возможности.",
-    "remark": "Мотивационный оратор"
+    "description": "Я хочу, чтобы вы выступили в роли мотивационного оратора. Составьте слова, которые побуждают к действию и заставляют людей чувствовать себя способными сделать что-то, выходящее за рамки их возможностей. Вы можете говорить на любые темы, но цель состоит в том, чтобы ваши слова нашли отклик у аудитории и заставили ее работать над достижением своих целей и бороться за лучшие возможности.",
+    "remark": "Мотивационный спикер"
   },
   "pt": {
-    "title": "orador motivacional",
+    "title": "Orador motivacional",
     "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um palestrante motivacional. Junte palavras que inspirem ação e façam as pessoas se sentirem empoderadas para fazer algo além de suas habilidades. Você pode falar sobre qualquer coisa, mas o objetivo é garantir que o que você diz ressoe com seu público e os mantenha motivados a trabalhar em seus objetivos e lutar por melhores possibilidades.",
+    "description": "Quero que actue como um orador motivacional. Reúna palavras que inspirem a ação e façam com que as pessoas se sintam capacitadas para fazer algo que ultrapasse as suas capacidades. Pode falar sobre qualquer tema, mas o objetivo é garantir que o que diz ressoa no seu público e o mantém motivado para trabalhar em prol dos seus objectivos e lutar por melhores possibilidades.",
     "remark": "Orador motivacional"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "speech"
   ],
   "id": 67,
-  "weight": 319
+  "weight": 331
 };
 
 function PromptDetail() {

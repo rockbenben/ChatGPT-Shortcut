@@ -26,9 +26,9 @@ const prompt = {
     "remark": "텍스트 기반 어드벤처 게임"
   },
   "es": {
-    "title": "juego de aventura de texto",
+    "title": "Juegos de aventuras de texto",
     "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Spanish. my first command is wake up.",
-    "description": "Quiero que actúes como un juego de aventuras basado en texto. Escribiré comandos y responderás con una descripción de lo que vio el personaje. Quiero que solo devuelvas la salida del juego en un bloque de código único, y nada más. No escribas explicaciones, no escribas comandos a menos que yo te lo indique. Cuando necesito decirte algo en inglés, pongo el texto entre llaves {así}. Mi primera orden es despertar.",
+    "description": "Quiero que actúes como un juego de aventuras basado en texto. Yo teclearé comandos y tú responderás con una descripción de lo que ve el personaje. Quiero que respondas a la salida del juego sólo con un bloque único de código y nada más. No escribas explicaciones ni introduzcas comandos a menos que yo te lo indique. Cuando necesite decirte algo en inglés, pondré el texto entre llaves {así}. Mi primera orden es despertar.",
     "remark": "Juego de aventuras basado en texto"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Textbasiertes Abenteuerspiel"
   },
   "it": {
-    "title": "gioco di avventura testuale",
+    "title": "Giochi di avventura testuale",
     "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Italian. my first command is wake up..",
-    "description": "Voglio che tu agisca come un gioco di avventura basato sul testo. Digiterò i comandi e tu risponderai con una descrizione di ciò che il personaggio ha visto. Voglio che tu restituisca solo l&#39;output del gioco in un blocco di codice univoco e nient&#39;altro. Non scrivere spiegazioni, non digitare comandi a meno che non te lo dica io. Quando ho bisogno di dirti qualcosa in inglese, metto il testo tra parentesi graffe {come questo}. Il mio primo comando è di svegliarsi.",
-    "remark": "Gioco di avventura basato su testo"
+    "description": "Voglio che vi comportiate come un gioco d'avventura basato sul testo. Io digiterò dei comandi e voi risponderete con una descrizione di ciò che il personaggio vede. Voglio che rispondiate all'output del gioco solo con un unico blocco di codice e nient'altro. Non scrivete spiegazioni e non inserite comandi a meno che non vi dia istruzioni in tal senso. Quando devo dirvi qualcosa in inglese, metto il testo tra parentesi graffe {come in questo caso}. Il mio primo comando è wake up.",
+    "remark": "Gioco d'avventura basato sul testo"
   },
   "ru": {
-    "title": "текстовая приключенческая игра",
+    "title": "Текстовые приключенческие игры",
     "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Russian. my first command is wake up..",
-    "description": "Я хочу, чтобы вы выступили в роли текстовой приключенческой игры. Я буду вводить команды, а вы будете отвечать описанием того, что видел персонаж. Я хочу, чтобы вы возвращали вывод игры только в виде уникального блока кода и ничего больше. Не пишите пояснений, не вводите команды, пока я не скажу. Когда мне нужно сказать вам что-то на английском языке, я заключаю текст в фигурные скобки {вот так}. Моя первая команда - проснуться.",
+    "description": "Я хочу, чтобы вы выступили в роли текстовой приключенческой игры. Я буду вводить команды, а вы будете отвечать описанием того, что видит персонаж. Я хочу, чтобы вы отвечали на вывод игры только уникальным блоком кода и ничем другим. Не пишите объяснений и не вводите команд, пока я не проинструктирую вас об этом. Когда мне нужно будет сказать вам что-то по-английски, я буду заключать текст в фигурные скобки {как здесь}. Моя первая команда - \"Проснись\".",
     "remark": "Текстовая приключенческая игра"
   },
   "pt": {
-    "title": "jogo de aventura de texto",
+    "title": "Jogos de aventura de texto",
     "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Portuguese. my first command is wake up..",
-    "description": "Eu quero que você aja como um jogo de aventura baseado em texto. Vou digitar comandos e você responderá com uma descrição do que o personagem viu. Quero que você retorne apenas a saída do jogo em um único bloco de código e nada mais. Não escreva explicações, não digite comandos a menos que eu mande. Quando preciso falar algo em inglês, coloco o texto entre colchetes {assim}. Meu primeiro comando é acordar.",
+    "description": "Quero que actues como um jogo de aventura baseado em texto. Eu digito os comandos e tu respondes com uma descrição do que a personagem vê. Quero que respondas ao resultado do jogo apenas com um único bloco de código e nada mais. Não escrevas explicações nem introduzas comandos a não ser que eu te dê instruções para o fazeres. Quando precisar de te dizer algo em inglês, coloco o texto entre parênteses rectos {assim}. O meu primeiro comando é wake up.",
     "remark": "Jogo de aventura baseado em texto"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "games"
   ],
   "id": 125,
-  "weight": 1070
+  "weight": 1081
 };
 
 function PromptDetail() {

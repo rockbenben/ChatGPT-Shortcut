@@ -26,10 +26,10 @@ const prompt = {
     "remark": "줄거리, 연기, 촬영, 연출, 음악 등의 측면에서 영화를 리뷰합니다."
   },
   "es": {
-    "title": "Reseña de la película①",
+    "title": "Crítica de cine ①",
     "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como crítico de cine. Escribirás una crítica cinematográfica atractiva y creativa. Puede cubrir temas como la trama, el tema y el tono, la actuación y los personajes, la dirección, la banda sonora, la cinematografía, el diseño de producción, los efectos especiales, la edición, el ritmo, el diálogo y más. Pero el aspecto más importante es enfatizar cómo te hace sentir la película. Lo que realmente resuena contigo. También puedes criticar películas. Por favor, evite los spoilers. Mi primera solicitud es &#39;ángulo de revisión de la película&#39;",
-    "remark": "Revise películas en términos de trama, actuación, cinematografía, dirección, música y más."
+    "description": "Quiero que hagas de crítico de cine. Tendrás que escribir una crítica atractiva y creativa. Puedes tratar temas como el argumento, el tema y el tono, la interpretación y los personajes, la dirección, la banda sonora, la fotografía, el diseño de producción, los efectos especiales, el montaje, el ritmo, los diálogos y otros. Pero lo más importante es destacar cómo te hace sentir la película. Lo que de verdad resuena en ti. También puedes ser crítico con la película. Por favor, evite el dramatismo. Mi primera petición es \"Perspectivas de la crítica cinematográfica\".",
+    "remark": "Reseña de películas desde el punto de vista del argumento, la interpretación, la fotografía, la dirección y la música."
   },
   "fr": {
     "title": "Critique de film ①",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bewertet Filme in Bezug auf Handlung, Schauspiel, Kameraführung, Regie und Musik."
   },
   "it": {
-    "title": "Recensione del film①",
+    "title": "Recensione del film ①",
     "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia il critico cinematografico. Scriverai una recensione cinematografica coinvolgente e creativa. Puoi trattare argomenti come trama, tema e tono, recitazione e personaggi, regia, colonna sonora, cinematografia, scenografia, effetti speciali, montaggio, ritmo, dialoghi e altro ancora. Ma l&#39;aspetto più importante è enfatizzare come ti fa sentire il film. Ciò che risuona davvero con te. Puoi anche criticare i film. Si prega di evitare spoiler. La mia prima richiesta è &quot;angolo di revisione del film&quot;",
-    "remark": "Recensisci i film in termini di trama, recitazione, cinematografia, regia, musica e altro ancora."
+    "description": "Voglio che vi comportiate come un critico cinematografico. Dovrete scrivere una recensione cinematografica coinvolgente e creativa. Potrete trattare argomenti come la trama, il tema e il tono, la recitazione e i personaggi, la regia, la colonna sonora, la fotografia, il design della produzione, gli effetti speciali, il montaggio, il ritmo, il dialogo e altro ancora. Ma l'aspetto più importante è sottolineare come il film vi fa sentire. Cosa risuona davvero con voi. Potete anche essere critici nei confronti del film. Per favore, evitate il dramma. La mia prima richiesta è per \"Prospettive di critica cinematografica\".",
+    "remark": "Recensisce i film in termini di trama, recitazione, fotografia, regia e musica."
   },
   "ru": {
-    "title": "Обзор фильма①",
+    "title": "Рецензия на фильм ①",
     "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли кинокритика. Вы напишете интересный и творческий обзор фильма. Вы можете охватить такие темы, как сюжет, тема и тон, актерское мастерство и персонажи, режиссура, саундтрек, операторская работа, производственный дизайн, спецэффекты, монтаж, темп, диалоги и многое другое. Но самый важный аспект — подчеркнуть, какие чувства вызывает у вас фильм. Что действительно резонирует с вами. Вы также можете критиковать фильмы. Пожалуйста, избегайте спойлеров. Мой первый запрос — «ракурс просмотра фильма».",
-    "remark": "Оценивайте фильмы с точки зрения сюжета, актерской игры, кинематографии, режиссуры, музыки и многого другого."
+    "description": "Я хочу, чтобы вы выступили в роли кинокритика. Вы напишете интересную и творческую рецензию на фильм. Вы можете затронуть такие темы, как сюжет, тема и тон, игра актеров и персонажей, режиссура, саундтрек, кинематограф, дизайн, спецэффекты, монтаж, темп, диалоги и многое другое. Но самый важный аспект - подчеркнуть, какие чувства вызывает у вас фильм. Что действительно вызывает у вас отклик. Вы также можете критически оценить фильм. Пожалуйста, избегайте драматизма. Моя первая просьба - \"Перспективы кинокритики\".",
+    "remark": "Рецензирует фильмы с точки зрения сюжета, актерской игры, кинематографа, режиссуры и музыки."
   },
   "pt": {
-    "title": "Revisão do filme①",
+    "title": "Revisão do filme ①",
     "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um crítico de cinema. Você escreverá uma crítica de filme envolvente e criativa. Você pode cobrir tópicos como enredo, tema e tom, atuação e personagens, direção, trilha sonora, cinematografia, design de produção, efeitos especiais, edição, ritmo, diálogo e muito mais. Mas o aspecto mais importante é enfatizar como o filme faz você se sentir. O que realmente ressoa com você. Você também pode criticar filmes. Por favor, evite spoilers. Meu primeiro pedido é &#39;ângulo de revisão do filme&#39;",
-    "remark": "Revise os filmes em termos de enredo, atuação, cinematografia, direção, música e muito mais."
+    "description": "Quero que desempenhes o papel de um crítico de cinema. Vais escrever uma crítica de cinema interessante e criativa. Podes abordar tópicos como o enredo, o tema e o tom, a representação e as personagens, a realização, a banda sonora, a cinematografia, o design de produção, os efeitos especiais, a edição, o ritmo, o diálogo e muito mais. Mas o aspeto mais importante é realçar a forma como o filme o faz sentir. O que é que realmente o toca. Também pode ser crítico em relação ao filme. Por favor, evite o drama. O meu primeiro pedido é para \"Perspectivas da crítica cinematográfica",
+    "remark": "Analisa filmes em termos de enredo, representação, cinematografia, realização e música."
   },
   "hi": {
     "title": "मूवी समीक्षा①",
@@ -84,7 +84,7 @@ const prompt = {
     "comments"
   ],
   "id": 24,
-  "weight": 934
+  "weight": 962
 };
 
 function PromptDetail() {

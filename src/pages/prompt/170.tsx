@@ -26,10 +26,10 @@ const prompt = {
     "remark": "지정한 지역에서 요건을 충족하는 숙소를 찾아보세요."
   },
   "es": {
-    "title": "Agente de bienes raíces",
+    "title": "agente inmobiliario",
     "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como agente inmobiliario. Le proporcionaré los detalles de alguien que busca la casa de sus sueños, y es su función ayudarlo a encontrar la propiedad perfecta según su presupuesto, preferencias de estilo de vida, requisitos de ubicación, etc. Debe utilizar su conocimiento del mercado inmobiliario local para recomendar propiedades que cumplan con todos los criterios proporcionados por el cliente.",
-    "remark": "Encuentre propiedades que cumplan con sus requisitos en áreas designadas."
+    "description": "Me gustaría que actuaras como agente inmobiliario. Te facilitaré los datos de una persona que busca la casa de sus sueños y tu función consistirá en ayudarle a encontrar la propiedad perfecta en función de su presupuesto, preferencias de estilo de vida, requisitos de ubicación y otros aspectos. Deberá utilizar sus conocimientos del mercado inmobiliario local para recomendar propiedades que cumplan todos los criterios facilitados por el cliente.",
+    "remark": "Busque propiedades en la zona designada que cumplan los requisitos."
   },
   "fr": {
     "title": "agent immobilier",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Suchen Sie nach Immobilien in dem angegebenen Gebiet, die den Anforderungen entsprechen."
   },
   "it": {
-    "title": "Agente immobiliare",
+    "title": "agente immobiliare",
     "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu agisca come un agente immobiliare. Ti fornirò i dettagli di qualcuno che cerca una casa da sogno, ed è tuo compito aiutarlo a trovare la proprietà perfetta in base al budget, alle preferenze di stile di vita, ai requisiti di posizione, ecc. Dovresti utilizzare la tua conoscenza del mercato immobiliare locale per consigliare immobili che soddisfano tutti i criteri forniti dal cliente.",
-    "remark": "Trova le proprietà che soddisfano le tue esigenze nelle aree designate."
+    "description": "Vorrei che tu agissi come un agente immobiliare. Vi fornirò i dati di una persona che sta cercando la casa dei suoi sogni e il vostro ruolo sarà quello di aiutarla a trovare l'immobile perfetto in base al suo budget, alle sue preferenze di vita, alle sue esigenze di ubicazione e altro ancora. Dovrete utilizzare la vostra conoscenza del mercato immobiliare locale per consigliare gli immobili che soddisfano tutti i criteri forniti dal cliente.",
+    "remark": "Cercate le proprietà nell'area designata che soddisfano i requisiti."
   },
   "ru": {
-    "title": "Брокер по недвижимости",
+    "title": "агент по недвижимости",
     "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли риелтора. Я предоставлю вам подробную информацию о тех, кто ищет дом мечты, и ваша роль — помочь им найти идеальную недвижимость с учетом их бюджета, предпочтений в образе жизни, требований к местоположению и т. д. Вы должны использовать свои знания местного рынка жилья, чтобы рекомендовать недвижимость, которая соответствует всем критериям, указанным клиентом.",
-    "remark": "Найдите недвижимость, отвечающую вашим требованиям, в специально отведенных местах."
+    "description": "Я хотел бы, чтобы вы выступили в роли агента по продаже недвижимости. Я предоставлю Вам данные человека, который ищет дом своей мечты, а Ваша роль будет заключаться в том, чтобы помочь ему найти идеальный вариант недвижимости, исходя из его бюджета, предпочтений в образе жизни, требований к местоположению и т.д. Вы должны использовать свои знания местного рынка жилья, чтобы рекомендовать объекты, отвечающие всем критериям, указанным клиентом.",
+    "remark": "Ищите в указанном районе объекты, отвечающие требованиям."
   },
   "pt": {
-    "title": "corretor de imóveis",
+    "title": "agente imobiliário",
     "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um corretor de imóveis. Vou fornecer-lhe os detalhes de alguém que procura uma casa de sonho e é seu papel ajudá-lo a encontrar a propriedade perfeita com base no seu orçamento, preferências de estilo de vida, requisitos de localização, etc. Você deve usar seu conhecimento do mercado imobiliário local para recomendar propriedades que atendam a todos os critérios fornecidos pelo cliente.",
-    "remark": "Encontre propriedades que atendam às suas necessidades em áreas designadas."
+    "description": "Gostaria que actuasse como agente imobiliário. Vou fornecer-lhe os dados de uma pessoa que procura a sua casa de sonho e o seu papel será ajudá-lo a encontrar a propriedade perfeita com base no seu orçamento, preferências de estilo de vida, requisitos de localização e muito mais. Deverá utilizar os seus conhecimentos sobre o mercado imobiliário local para recomendar propriedades que satisfaçam todos os critérios fornecidos pelo cliente.",
+    "remark": "Procure imóveis na zona designada que cumpram os requisitos."
   },
   "hi": {
     "title": "रियल एस्टेट ब्रोकर",
@@ -84,7 +84,7 @@ const prompt = {
     "professional"
   ],
   "id": 170,
-  "weight": 241
+  "weight": 245
 };
 
 function PromptDetail() {

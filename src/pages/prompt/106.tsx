@@ -26,10 +26,10 @@ const prompt = {
     "remark": "Linux 터미널"
   },
   "es": {
-    "title": "terminal linux",
+    "title": "Terminal Linux",
     "prompt": "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Spanish. My first command is .",
-    "description": "Quiero que actúes como una terminal de Linux. Ingresaré el comando y usted responderá lo que debe mostrar la terminal. Quiero que solo haga eco de la salida del terminal dentro de un bloque de código único, y nada más. No escribas explicaciones. Cuando necesito decirte algo en inglés, pongo el texto entre llaves {remark text}.",
-    "remark": "terminal linux"
+    "description": "Quiero que actúes como un terminal Linux. Yo introduciré comandos y tú responderás con lo que el terminal debería mostrar. Quiero que respondas a la salida del terminal sólo dentro de un único bloque de código y nada más. No escribas explicaciones. Cuando necesite decirte algo en inglés, pondré el texto entre llaves {Remarks text}.",
+    "remark": "Terminal Linux"
   },
   "fr": {
     "title": "Terminal Linux",
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "Terminale Linux",
     "prompt": "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Italian. My first command is ..",
-    "description": "Voglio che tu faccia da terminale Linux. Inserirò il comando e tu risponderai a ciò che il terminale dovrebbe visualizzare. Voglio che tu faccia eco solo all&#39;output del terminale all&#39;interno di un blocco di codice univoco e nient&#39;altro. Non scrivere spiegazioni. Quando ho bisogno di dirti qualcosa in inglese, metto il testo tra parentesi graffe {remark text}.",
+    "description": "Voglio che vi comportiate come un terminale Linux. Io inserirò dei comandi e voi risponderete con ciò che il terminale dovrebbe visualizzare. Voglio che rispondiate all'output del terminale solo all'interno di un unico blocco di codice e nient'altro. Non scrivete spiegazioni. Quando ho bisogno di dirvi qualcosa in inglese, metterò il testo tra parentesi graffe {osservazioni al testo}.",
     "remark": "Terminale Linux"
   },
   "ru": {
-    "title": "Linux-терминал",
+    "title": "Терминал Linux",
     "prompt": "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Russian. My first command is ..",
-    "description": "Я хочу, чтобы вы выступали в роли терминала Linux. Я ввожу команду, а вы отвечаете, что терминал должен отображать. Я хочу, чтобы вы выводили вывод терминала только внутри уникального блока кода и ничего больше. Не пишите пояснений. Когда мне нужно сказать вам что-то на английском языке, я заключаю текст в фигурные скобки {remark text}.",
+    "description": "Я хочу, чтобы вы выступили в роли терминала Linux. Я буду вводить команды, а вы будете отвечать тем, что должен отобразить терминал. Я хочу, чтобы вы отвечали на вывод терминала только в рамках уникального блока кода и никак иначе. Не пишите объяснений. Когда мне нужно сообщить вам что-то на английском языке, я помещаю текст в фигурные скобки {Remarks text}.",
     "remark": "Терминал Linux"
   },
   "pt": {
     "title": "Terminal Linux",
     "prompt": "I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Portuguese. My first command is ..",
-    "description": "Eu quero que você atue como um terminal Linux. Vou inserir o comando e você responderá o que o terminal deve exibir. Eu quero que você apenas ecoe a saída do terminal dentro de um bloco de código exclusivo e nada mais. Não escreva explicações. Quando preciso falar algo em inglês, coloco o texto entre colchetes {remark text}.",
+    "description": "Quero que actues como um terminal Linux. Eu introduzo comandos e tu respondes com o que o terminal deve mostrar. Quero que responda à saída do terminal apenas dentro de um único bloco de código e nada mais. Não escreva explicações. Quando precisar de lhe dizer algo em inglês, coloco o texto entre parênteses rectos {Remarks text}.",
     "remark": "Terminal Linux"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "interpreter"
   ],
   "id": 106,
-  "weight": 358
+  "weight": 363
 };
 
 function PromptDetail() {

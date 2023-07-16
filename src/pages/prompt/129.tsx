@@ -26,10 +26,10 @@ const prompt = {
     "remark": "아스키 표기법을 사용하여 다양한 이미지를 생성합니다."
   },
   "es": {
-    "title": "Imagen: Diseño de símbolos",
+    "title": "Imagen: Symbol Design",
     "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. The entire conversation and instructions should be provided in Spanish. My first object is .",
-    "description": "Quiero que actúes como un artista ascii. Voy a escribirle el objeto y le voy a pedir que escriba el código ascii para ese objeto en un bloque de código. Sólo escribe códigos ascii. No interpretes los objetos que escribes. Describiré estos objetos entre comillas dobles.",
-    "remark": "Genera diferentes imágenes con símbolos Ascii."
+    "description": "Quiero que actúes como un artista ascii. Te voy a escribir el objeto y te voy a pedir que escribas el código ascii para ese objeto en un bloque de código. Escribe sólo código ascii. No expliques el objeto que estás escribiendo. Explicaré los objetos entre comillas dobles.",
+    "remark": "Generar diferentes imágenes en notación Ascii."
   },
   "fr": {
     "title": "Image : Symbol Design",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Erzeugen Sie verschiedene Bilder in Ascii-Notation."
   },
   "it": {
-    "title": "Immagine: disegno del simbolo",
+    "title": "Immagine: Symbol Design",
     "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. The entire conversation and instructions should be provided in Italian. My first object is ..",
-    "description": "Voglio che ti comporti come un artista ascii. Ti scriverò l&#39;oggetto e ti chiederò di scrivere il codice ascii per quell&#39;oggetto in un blocco di codice. Scrivi solo codici ascii. Non interpretare gli oggetti che scrivi. Descriverò questi oggetti tra virgolette.",
-    "remark": "Genera immagini diverse con simboli Ascii."
+    "description": "Voglio che vi comportiate come un artista ascii. Vi scriverò un oggetto e vi chiederò di scrivere il codice ascii per quell'oggetto in un blocco di codice. Scrivete solo codice ascii. Non spiegate l'oggetto che state scrivendo. Gli oggetti saranno spiegati tra doppi apici.",
+    "remark": "Generare diverse immagini in notazione Ascii."
   },
   "ru": {
-    "title": "Изображение: Дизайн символов",
+    "title": "Изображение: Symbol Design",
     "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. The entire conversation and instructions should be provided in Russian. My first object is ..",
-    "description": "Я хочу, чтобы вы выступили в роли ascii-художника. Я напишу вам объект и попрошу вас написать код ascii для этого объекта в блоке кода. Пишите только ascii-коды. Не интерпретируйте объекты, которые вы пишете. Я буду описывать эти объекты в двойных кавычках.",
-    "remark": "Создавайте различные изображения с помощью символов Ascii."
+    "description": "Я хочу, чтобы вы выступили в роли художника ascii. Я напишу вам объект и попрошу вас написать ascii код для этого объекта в блоке кода. Пишите только ascii-код. Не объясняйте объект, который вы пишете. Я буду объяснять объекты в двойных кавычках.",
+    "remark": "Генерировать различные изображения в нотации Ascii."
   },
   "pt": {
-    "title": "Imagem: Design de Símbolos",
+    "title": "Imagem: Symbol Design",
     "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. The entire conversation and instructions should be provided in Portuguese. My first object is ..",
-    "description": "Eu quero que você aja como um artista ascii. Vou escrever o objeto para você e vou pedir para você escrever o código ASCII para esse objeto em um bloco de código. Escreva apenas códigos ASCII. Não interprete os objetos que você escreve. Descreverei esses objetos entre aspas duplas.",
-    "remark": "Gere diferentes imagens com símbolos ASCII."
+    "description": "Quero que ajas como um artista ascii. Vou escrever-te o objeto e vou pedir-te que escrevas o código ascii para esse objeto num bloco de código. Escreve apenas código ascii. Não expliques o objeto que estás a escrever. Vou explicar os objectos entre aspas duplas.",
+    "remark": "Gerar imagens diferentes em notação Ascii."
   },
   "hi": {
     "title": "छवि: प्रतीक डिज़ाइन",
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 129,
-  "weight": 190
+  "weight": 192
 };
 
 function PromptDetail() {

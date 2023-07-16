@@ -26,9 +26,9 @@ const prompt = {
     "remark": "ScenerorSun 의 기고글입니다."
   },
   "es": {
-    "title": "chequeo de gramática",
+    "title": "Comprobación gramatical cruzada",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Could you please help me to ensure that the grammar and spelling are correct? Do not tryto improve the text, if no mistake is found, tellme that this paragraph is good.lf you find grammar or spelling mistakes, please list the mistakes you find in a two-column markdown table, put the original text in the first column.put the corrected text in the second columnand do highlight the key words you fixed in bold.",
-    "description": "¿Me pueden ayudar a asegurarme de que la gramática y la ortografía sean correctas? Si encuentra un error gramatical o de ortografía, enumere los errores que encontró en una tabla de marcado de dos columnas, con el texto original en la primera columna, el texto corregido en la segunda columna y las palabras clave corregidas marcadas en negrita.",
+    "description": "¿Puede ayudarme a asegurarme de que la gramática y la ortografía son correctas? Si encuentra errores gramaticales u ortográficos, escríbalos en una hoja de marcado a dos columnas, colocando el texto original en la primera columna, el texto corregido en la segunda y las palabras clave que haya corregido en negrita.",
     "remark": "Contribución de @ScenerorSun."
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Beitrag von @ScenerorSun."
   },
   "it": {
-    "title": "controllo grammaticale",
+    "title": "Controllo grammaticale incrociato",
     "prompt": "The entire conversation and instructions should be provided in Italian. Could you please help me to ensure that the grammar and spelling are correct? Do not tryto improve the text, if no mistake is found, tellme that this paragraph is good.lf you find grammar or spelling mistakes, please list the mistakes you find in a two-column markdown table, put the original text in the first column.put the corrected text in the second columnand do highlight the key words you fixed in bold..",
-    "description": "Potete aiutarmi ad assicurarmi che la grammatica e l&#39;ortografia siano corrette? Se trovi un errore grammaticale o ortografico, elenca gli errori che hai trovato in una tabella di markup a due colonne, con il testo originale nella prima colonna, il testo corretto nella seconda colonna e le parole chiave corrette contrassegnate in grassetto.",
-    "remark": "Contributo di @SceneroSun."
+    "description": "Potete aiutarmi ad assicurarmi che la grammatica e l'ortografia siano corrette? Se trovate errori grammaticali o ortografici, elencateli in un foglio di markup a due colonne, mettendo il testo originale nella prima colonna, il testo corretto nella seconda colonna e le parole chiave corrette in grassetto.",
+    "remark": "Contributo di @ScenerorSun."
   },
   "ru": {
-    "title": "проверка грамматики",
+    "title": "Грамматическая перекрестная проверка",
     "prompt": "The entire conversation and instructions should be provided in Russian. Could you please help me to ensure that the grammar and spelling are correct? Do not tryto improve the text, if no mistake is found, tellme that this paragraph is good.lf you find grammar or spelling mistakes, please list the mistakes you find in a two-column markdown table, put the original text in the first column.put the corrected text in the second columnand do highlight the key words you fixed in bold..",
-    "description": "Можете ли вы помочь мне убедиться в правильности грамматики и правописания? Если вы обнаружите грамматическую или орфографическую ошибку, перечислите найденные вами ошибки в таблице разметки с двумя столбцами, с исходным текстом в первом столбце, исправленным текстом во втором столбце и вашими исправленными ключевыми словами, выделенными жирным шрифтом.",
+    "description": "Можете ли вы помочь мне убедиться в правильности грамматики и орфографии? Если Вы обнаружили грамматические или орфографические ошибки, пожалуйста, перечислите их на листе разметки в два столбца, поместив в первый столбец исходный текст, во второй - исправленный текст, а ключевые слова, которые Вы исправили, выделив жирным шрифтом.",
     "remark": "Вклад от @ScenerorSun."
   },
   "pt": {
-    "title": "Verificação de gramática",
+    "title": "Controlo gramatical cruzado",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Could you please help me to ensure that the grammar and spelling are correct? Do not tryto improve the text, if no mistake is found, tellme that this paragraph is good.lf you find grammar or spelling mistakes, please list the mistakes you find in a two-column markdown table, put the original text in the first column.put the corrected text in the second columnand do highlight the key words you fixed in bold..",
-    "description": "Você pode me ajudar a garantir que a gramática e a ortografia estejam corretas? Se você encontrar um erro gramatical ou ortográfico, liste os erros encontrados em uma tabela de marcação de duas colunas, com o texto original na primeira coluna, o texto corrigido na segunda coluna e suas palavras-chave corrigidas marcadas em negrito.",
+    "description": "Pode ajudar-me a verificar se a minha gramática e ortografia estão correctas? Se encontrar erros gramaticais ou ortográficos, indique os erros encontrados numa folha de marcação com duas colunas, colocando o texto original na primeira coluna, o texto corrigido na segunda coluna e as palavras-chave que corrigiu a negrito.",
     "remark": "Contribuição de @ScenerorSun."
   },
   "hi": {
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 260,
-  "weight": 144
+  "weight": 150
 };
 
 function PromptDetail() {

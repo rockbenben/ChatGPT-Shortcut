@@ -26,10 +26,10 @@ const prompt = {
     "remark": "AI 는 사용자가 선택한 질문에 따라 지식을 소개하는 데 도움을 줍니다. ScenerorSun 의 기여."
   },
   "es": {
-    "title": "Asistente de prueba de aprendizaje",
+    "title": "Asistente de pruebas de aprendizaje",
     "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Spanish. The more specific and detailed your questions are, the more accurate and valuable my responses will be..",
-    "description": "Estoy aprendiendo [programación en python] en profundidad y espero que puedan ayudarme a verificar y mejorar la comprensión de mis conocimientos. Haga preguntas específicas al respecto a continuación para que pueda comprender mejor el tema y llenar los vacíos en mi conocimiento. Cuanto más específicas y detalladas sean sus preguntas, más precisas y valiosas serán mis respuestas.",
-    "remark": "AI lo ayudará a introducir conocimientos relevantes en función de las preguntas que elija. Contribución de @ScenerorSun."
+    "description": "Estoy profundizando en [programación python] y me gustaría contar con su ayuda para comprobar y mejorar la comprensión de mis conocimientos. Por favor, formula preguntas específicas al respecto a continuación para que pueda comprender mejor el tema y rellenar las lagunas en mis conocimientos. Cuanto más específicas y detalladas sean tus preguntas, más precisas y valiosas serán las respuestas que pueda ofrecerte.",
+    "remark": "La IA te ayudará a introducirte en el conocimiento en función de las preguntas que elijas. Contribución de @ScenerorSun."
   },
   "fr": {
     "title": "Assistant de test d'apprentissage",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "KI hilft Ihnen, das Wissen auf der Grundlage der von Ihnen gewählten Fragen zu vermitteln. Beitrag von @ScenerorSun."
   },
   "it": {
-    "title": "Apprendimento Quiz Assistente",
+    "title": "Assistente al test di apprendimento",
     "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Italian. The more specific and detailed your questions are, the more accurate and valuable my responses will be...",
-    "description": "Sto imparando [la programmazione Python] in profondità e spero che tu possa aiutarmi a verificare e migliorare la mia comprensione delle conoscenze. Si prega di porre domande specifiche al riguardo di seguito in modo che io possa comprendere meglio l&#39;argomento e colmare le lacune nelle mie conoscenze. Più specifiche e dettagliate saranno le tue domande, più precise e preziose saranno le risposte che sarò in grado di fornire.",
-    "remark": "L&#39;intelligenza artificiale ti aiuterà a introdurre conoscenze pertinenti in base alle domande che scegli. Contributo di @SceneroSun."
+    "description": "Mi sto addentrando nella [programmazione python] e vorrei il vostro aiuto per verificare e migliorare le mie conoscenze. Vi prego di porre domande specifiche qui di seguito, in modo che io possa comprendere meglio l'argomento e colmare le mie lacune. Più specifiche e dettagliate saranno le vostre domande, più accurate e valide saranno le risposte che sarò in grado di fornire.",
+    "remark": "L'intelligenza artificiale vi introdurrà alle conoscenze in base alle domande che sceglierete. Contributo di @ScenerorSun."
   },
   "ru": {
-    "title": "Помощник по викторинам",
+    "title": "Помощник по обучению тестированию",
     "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Russian. The more specific and detailed your questions are, the more accurate and valuable my responses will be...",
-    "description": "Я углубленно изучаю [программирование на Python] и надеюсь, что вы поможете мне проверить и улучшить понимание моих знаний. Пожалуйста, задавайте конкретные вопросы об этом ниже, чтобы я мог лучше понять тему и заполнить пробелы в своих знаниях. Чем более конкретными и подробными будут ваши вопросы, тем более точные и ценные ответы я смогу дать.",
-    "remark": "ИИ поможет вам представить соответствующие знания на основе выбранных вами вопросов. Вклад от @ScenerorSun."
+    "description": "Я углубляюсь в тему [программирование на языке python] и хотел бы получить вашу помощь в проверке и углублении моих знаний. Пожалуйста, задавайте конкретные вопросы по этой теме ниже, чтобы я мог лучше понять ее и восполнить пробелы в своих знаниях. Чем более конкретными и подробными будут ваши вопросы, тем более точные и ценные ответы я смогу дать.",
+    "remark": "ИИ поможет приобщить вас к знаниям на основе выбранных вами вопросов. Вклад от @ScenerorSun."
   },
   "pt": {
-    "title": "Assistente de Quiz de Aprendizagem",
+    "title": "Assistente de testes de aprendizagem",
     "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Portuguese. The more specific and detailed your questions are, the more accurate and valuable my responses will be...",
-    "description": "Estou aprendendo [programação python] em profundidade e espero que você possa me ajudar a verificar e aprimorar minha compreensão de conhecimento. Por favor, faça perguntas específicas sobre isso abaixo para que eu possa entender melhor o tópico e preencher as lacunas em meu conhecimento. Quanto mais específicas e detalhadas forem suas perguntas, mais precisas e valiosas serão as respostas que poderei fornecer.",
-    "remark": "A IA ajudará você a introduzir conhecimento relevante com base nas perguntas que escolher. Contribuição de @ScenerorSun."
+    "description": "Estou a aprofundar os meus conhecimentos sobre [programação em python] e gostaria que me ajudassem a verificar e a melhorar os meus conhecimentos. Por favor, faça perguntas específicas sobre o assunto abaixo para que eu possa entender melhor o tópico e preencher as lacunas no meu conhecimento. Quanto mais específicas e detalhadas forem as suas perguntas, mais precisas e valiosas serão as respostas que poderei dar.",
+    "remark": "A IA ajudá-lo-á a introduzir os conhecimentos com base nas perguntas que escolher. Contribuição de @ScenerorSun."
   },
   "hi": {
     "title": "शिक्षण प्रश्नोत्तरी सहायक",
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 263,
-  "weight": 145
+  "weight": 146
 };
 
 function PromptDetail() {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "레스토랑을 기준으로 음식과 서비스에 대한 리뷰를 작성하세요."
   },
   "es": {
-    "title": "revisión de alimentos",
+    "title": "Reseña alimentaria",
     "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que actúes como crítico gastronómico. Le contaré sobre un restaurante y usted brindará una reseña de la comida y el servicio. Solo debe responder a sus comentarios y nada más. No escribas explicaciones. Mi primera solicitud es &quot;situación en el restaurante&quot;.",
-    "remark": "Dependiendo del restaurante, escribe una reseña sobre la comida y el servicio."
+    "description": "Quiero que hagas de crítico gastronómico. Yo te hablaré de un restaurante y tú harás una crítica de la comida y el servicio. Sólo debes responder a tu crítica y nada más. No escribas explicaciones. Mi primera petición es \"situación del restaurante\".",
+    "remark": "Escribe una reseña sobre la comida y el servicio basándote en el restaurante."
   },
   "fr": {
     "title": "Revue des aliments",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Schreiben Sie eine Bewertung des Essens und des Service in dem Restaurant."
   },
   "it": {
-    "title": "rassegna alimentare",
+    "title": "Recensione di cibo",
     "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu faccia il critico gastronomico. Ti parlerò di un ristorante e tu fornirai una recensione del cibo e del servizio. Dovresti solo rispondere ai tuoi commenti e nient&#39;altro. Non scrivere spiegazioni. La mia prima richiesta è &quot;situazione del ristorante&quot;",
-    "remark": "A seconda del ristorante, scrivi una recensione sul cibo e sul servizio."
+    "description": "Voglio che vi comportiate come un critico gastronomico. Io vi parlerò di un ristorante e voi fornirete una recensione del cibo e del servizio. Dovete rispondere solo alla vostra recensione e nient'altro. Non scrivete spiegazioni. La mia prima richiesta è \"situazione del ristorante\".",
+    "remark": "Scrivete una recensione del cibo e del servizio in base al ristorante."
   },
   "ru": {
-    "title": "обзор еды",
+    "title": "Обзор продуктов питания",
     "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли кулинарного критика. Я расскажу вам о ресторане, а вы сделаете обзор еды и обслуживания. Вы должны только отвечать на ваши комментарии и ничего больше. Не пишите пояснений. Мой первый запрос — «Ресторанная ситуация».",
-    "remark": "В зависимости от ресторана напишите отзыв о еде и обслуживании."
+    "description": "Я хочу, чтобы вы выступили в роли ресторанного критика. Я расскажу вам о ресторане, а вы дадите отзыв о еде и обслуживании. Вы должны ответить только на свой отзыв и ничего больше. Не пишите объяснений. Мой первый запрос - \"ситуация в ресторане\".",
+    "remark": "Напишите отзыв о питании и обслуживании на базе ресторана."
   },
   "pt": {
-    "title": "revisão de comida",
+    "title": "Análise de alimentos",
     "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você aja como um crítico gastronômico. Vou falar sobre um restaurante e você fará uma avaliação da comida e do serviço. Você só deve responder aos seus comentários e nada mais. Não escreva explicações. Meu primeiro pedido é &#39;situação do restaurante&#39;",
-    "remark": "Dependendo do restaurante, escreva um comentário sobre a comida e o serviço."
+    "description": "Quero que desempenhes o papel de um crítico gastronómico. Vou falar-te de um restaurante e tu vais fazer uma crítica sobre a comida e o serviço. Só deves responder à tua crítica e nada mais. Não escreva explicações. O meu primeiro pedido é \"situação do restaurante",
+    "remark": "Escreva uma crítica sobre a comida e o serviço do restaurante."
   },
   "hi": {
     "title": "भोजन की समीक्षा",
@@ -84,7 +84,7 @@ const prompt = {
     "comments"
   ],
   "id": 28,
-  "weight": 263
+  "weight": 267
 };
 
 function PromptDetail() {

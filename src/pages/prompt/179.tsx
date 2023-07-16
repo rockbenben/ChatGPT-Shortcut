@@ -26,10 +26,10 @@ const prompt = {
     "remark": "ChatGPT 는 trpg 설정과 함께 제공됩니다. gandli 가 제공했습니다. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
   },
   "es": {
-    "title": "juego de palabras de escritorio",
+    "title": "Juegos de palabras de escritorio",
     "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Spanish. If you understand, reply with \"Understood\" and begin the game..",
-    "description": "Imagina que eres el DM en trpg Dungeons &amp; Dragons, agrega la posibilidad de fallar al mod y coloca un paréntesis después de cada elección con sugerencias sobre la elección, y jugaré el papel del jugador. Si lo consigues, responde ok y comienza el juego.",
-    "remark": "ChatGPT viene con configuraciones trpg. Contribución de @gandli. (Existen grandes diferencias entre las versiones en chino e inglés de este recordatorio, cambie el idioma si desea utilizar la versión en inglés)."
+    "description": "Imagina que eres el dm en el trpg Dungeons & Dragons, añade la posibilidad de fallo al módulo y pon un paréntesis después de cada elección con una pista sobre la elección en el paréntesis y yo haré de jugador. Si lo consigues, contesta ok y empieza la partida.",
+    "remark": "ChatGPT viene con configuración trpg. Contribución de @gandli. (Hay una gran diferencia entre las versiones inglesa y china de este consejo, por favor cambia el idioma si quieres usar la versión inglesa)."
   },
   "fr": {
     "title": "Jeux de mots sur ordinateur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "ChatGPT kommt mit trpg-Einstellungen. Beitrag von @gandli. (Es gibt einen großen Unterschied zwischen der englischen und der chinesischen Version dieses Tipps, bitte wechseln Sie die Sprache, wenn Sie die englische Version verwenden möchten)."
   },
   "it": {
-    "title": "gioco di parole da tavolo",
+    "title": "Giochi di parole sul desktop",
     "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Italian. If you understand, reply with \"Understood\" and begin the game...",
-    "description": "Fai finta di essere il DM in trpg &quot;Dungeons &amp; Dragons&quot;, aggiungi la possibilità di fallimento alla mod e metti una parentesi dopo ogni scelta con un suggerimento sulla scelta, e io interpreterò il giocatore. Se lo ottieni, rispondi ok e avvia il gioco.",
-    "remark": "ChatGPT viene fornito con le impostazioni trpg. Contributo di @gandli. (Ci sono grandi differenze tra la versione cinese e quella inglese di questo promemoria, cambia la lingua se vuoi usare la versione inglese.)"
+    "description": "Fate finta di essere il dm del trpg Dungeons & Dragons, aggiungete la possibilità di fallimento al modulo e mettete una parentesi dopo ogni scelta con un suggerimento sulla scelta nella parentesi e io farò il giocatore. Se lo capite, rispondete ok e iniziate la partita.",
+    "remark": "ChatGPT è dotato di impostazioni trpg. Contributo di @gandli. (C'è una grande differenza tra la versione inglese e quella cinese di questo suggerimento, si prega di cambiare la lingua se si desidera utilizzare la versione inglese)."
   },
   "ru": {
-    "title": "настольная игра в слова",
+    "title": "Настольные словесные игры",
     "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Russian. If you understand, reply with \"Understood\" and begin the game...",
-    "description": "Представь, что ты ДМ в trpg Dungeons &amp; Dragons, добавь в мод возможность отказа, и поставь скобку после каждого выбора с подсказками о выборе, а я буду играть игроком. Если вы его получили, ответьте «ОК» и начните игру.",
-    "remark": "ChatGPT поставляется с настройками trpg. Вклад от @gandli. (Существуют большие различия между китайской и английской версиями этого напоминания, пожалуйста, переключите язык, если вы хотите использовать английскую версию.)"
+    "description": "Представьте, что вы - dm в trpg Dungeons & Dragons, добавьте в модуль возможность провала и поставьте скобку после каждого выбора с подсказкой о выборе в скобке, а я буду играть игроком. Если вы поняли, ответьте ok и начните игру.",
+    "remark": "ChatGPT поставляется с настройками trpg. Вклад от @gandli. (Существует большая разница между английской и китайской версиями этого совета, пожалуйста, переключите язык, если вы хотите использовать английскую версию)."
   },
   "pt": {
-    "title": "jogo de palavras de mesa",
+    "title": "Jogos de palavras no ambiente de trabalho",
     "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Portuguese. If you understand, reply with \"Understood\" and begin the game...",
-    "description": "Finja que você é o mestre em trpg Dungeons &amp; Dragons, adicione a possibilidade de falha ao mod e coloque um colchete após cada escolha com dicas sobre a escolha, e eu jogarei com o jogador. Se você conseguir, responda ok e inicie o jogo.",
-    "remark": "ChatGPT vem com configurações trpg. Contribuição de @gandli. (Existem grandes diferenças entre as versões em chinês e inglês deste lembrete, troque o idioma se quiser usar a versão em inglês.)"
+    "description": "Faz de conta que és o dm no trpg Dungeons & Dragons, acrescenta a possibilidade de falhar ao módulo e coloca um parêntesis a seguir a cada escolha com uma dica sobre a escolha no parêntesis e eu faço de jogador. Se perceberes, responde ok e começa o jogo.",
+    "remark": "O ChatGPT vem com definições de trpg. Contribuição de @gandli. (Há uma grande diferença entre as versões inglesa e chinesa desta dica, por favor muda de língua se quiseres usar a versão inglesa)."
   },
   "hi": {
     "title": "डेस्कटॉप शब्द का खेल",
@@ -85,7 +85,7 @@ const prompt = {
     "games"
   ],
   "id": 179,
-  "weight": 549
+  "weight": 551
 };
 
 function PromptDetail() {

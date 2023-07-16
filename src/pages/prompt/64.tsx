@@ -26,10 +26,10 @@ const prompt = {
     "remark": "유명인이 추천하는 샴푸가 반드시 신뢰할 수 없는 이유와 같이 언어 논리의 틈새를 발견하세요."
   },
   "es": {
-    "title": "buscador de falacias",
+    "title": "detector de errores",
     "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Quiero que actúes como un buscador de falacias. Desea estar atento a los argumentos no válidos para poder señalar cualquier error lógico o inconsistencia que pueda existir en las declaraciones y argumentos. Su trabajo es proporcionar retroalimentación basada en evidencia y señalar cualquier falacia, razonamiento defectuoso, suposiciones erróneas o conclusiones incorrectas que el orador o escritor pueda haber pasado por alto.",
-    "remark": "Encuentre lagunas en la lógica del lenguaje, como por qué el champú recomendado por una celebridad no es necesariamente creíble."
+    "description": "Quiero que actúes como detector de falacias. Estarás atento a los argumentos inválidos para poder señalar los errores lógicos o las incoherencias que puedan existir en el enunciado y la exposición. Tu trabajo consistirá en proporcionar una retroalimentación basada en pruebas y señalar cualquier falacia, razonamiento defectuoso, suposición incorrecta o conclusión errónea que el orador o el autor puedan haber pasado por alto.",
+    "remark": "Encontrar agujeros en la lógica del lenguaje, como por qué los champús recomendados por famosos no siempre son creíbles."
   },
   "fr": {
     "title": "détecteur d'erreur",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Löcher in der Logik der Sprache zu finden, z. B. warum Shampoos, die von Prominenten empfohlen werden, nicht immer glaubwürdig sind."
   },
   "it": {
-    "title": "cercatore di fallacia",
+    "title": "rilevatore di errori",
     "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Voglio che tu agisca come uno scopritore di errori. Vuoi tenere d&#39;occhio gli argomenti non validi in modo da poter evidenziare eventuali errori logici o incoerenze che possono esistere nelle affermazioni e negli argomenti. Il tuo compito è fornire un feedback basato sull&#39;evidenza e sottolineare eventuali errori, ragionamenti errati, presupposti errati o conclusioni errate che potrebbero essere state trascurate dall&#39;oratore o dallo scrittore.",
-    "remark": "Trova scappatoie nella logica del linguaggio, ad esempio perché lo shampoo consigliato da una celebrità non è necessariamente credibile."
+    "description": "Voglio che tu agisca come osservatore di fallacie. Sarete alla ricerca di argomentazioni non valide, in modo da evidenziare eventuali errori logici o incongruenze presenti nell'affermazione e nell'esposizione. Il vostro compito è quello di fornire un feedback basato su prove e di evidenziare eventuali fallacie, ragionamenti errati, ipotesi sbagliate o conclusioni errate che potrebbero essere sfuggite all'oratore o all'autore.",
+    "remark": "Trovare buchi nella logica del linguaggio, come ad esempio il motivo per cui gli shampoo raccomandati dalle celebrità non sono sempre credibili."
   },
   "ru": {
-    "title": "искатель ошибок",
+    "title": "детектор ошибок",
     "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я хочу, чтобы вы выступили в роли искателя ошибок. Вы хотите следить за недопустимыми аргументами, чтобы вы могли указать на любые логические ошибки или несоответствия, которые могут существовать в утверждениях и аргументах. Ваша задача состоит в том, чтобы предоставить основанную на фактах обратную связь и указать на любые ошибки, ошибочные рассуждения, ошибочные предположения или неправильные выводы, которые могли быть пропущены докладчиком или автором.",
-    "remark": "Найдите лазейки в языковой логике, например, почему шампунь, рекомендованный знаменитостью, не обязательно заслуживает доверия."
+    "description": "Я хочу, чтобы вы выступили в роли наблюдателя за ошибками. Вы будете следить за несостоятельными аргументами и указывать на логические ошибки и несоответствия, которые могут присутствовать в высказывании и изложении. Ваша задача - обеспечить доказательную обратную связь и указать на все заблуждения, ошибочные рассуждения, неверные предположения и неправильные выводы, которые могли быть упущены докладчиком или автором.",
+    "remark": "Нахождение дыр в логике языка, например, почему шампуни, рекомендуемые знаменитостями, не всегда заслуживают доверия."
   },
   "pt": {
-    "title": "localizador de falácias",
+    "title": "detetor de erros",
     "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Eu quero que você aja como um localizador de falácias. Você deseja ficar atento a argumentos inválidos para poder apontar quaisquer erros lógicos ou inconsistências que possam existir nas declarações e argumentos. Seu trabalho é fornecer feedback baseado em evidências e apontar quaisquer falácias, raciocínio defeituoso, suposições defeituosas ou conclusões incorretas que possam ter passado despercebidas pelo orador ou escritor.",
-    "remark": "Encontre brechas na lógica da linguagem, como por que o xampu recomendado por uma celebridade não é necessariamente confiável."
+    "description": "Quero que actues como um observador de falácias. Estará atento a argumentos inválidos para poder apontar quaisquer erros lógicos ou inconsistências que possam existir na declaração e na exposição. A sua função é fornecer feedback baseado em provas e apontar quaisquer falácias, raciocínios errados, suposições incorrectas ou conclusões incorrectas que possam ter escapado ao orador ou ao autor.",
+    "remark": "Encontrar falhas na lógica da linguagem, por exemplo, porque é que os champôs recomendados por celebridades nem sempre são credíveis."
   },
   "hi": {
     "title": "भ्रांति खोजक",
@@ -84,7 +84,7 @@ const prompt = {
     "mind"
   ],
   "id": 64,
-  "weight": 270
+  "weight": 281
 };
 
 function PromptDetail() {

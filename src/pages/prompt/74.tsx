@@ -26,9 +26,9 @@ const prompt = {
     "remark": "심리학자"
   },
   "es": {
-    "title": "psicólogo",
+    "title": "retractil",
     "prompt": "I want you to act a psychologist. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. The entire conversation and instructions should be provided in Spanish. my first thought .",
-    "description": "Quiero que hagas de psicólogo. Te ofreceré mis pensamientos. Espero que me puedan dar consejos científicos para hacerme sentir mejor.",
+    "description": "Quiero que hagas de psicólogo. Te ofreceré mis ideas. Quiero que me des consejos científicos para sentirme mejor.",
     "remark": "Psicólogo"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Psychologe"
   },
   "it": {
-    "title": "psicologo",
+    "title": "strizzacervelli",
     "prompt": "I want you to act a psychologist. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. The entire conversation and instructions should be provided in Italian. my first thought ..",
-    "description": "Voglio che tu interpreti uno psicologo. Ti offrirò i miei pensieri. Spero che tu possa darmi consigli scientifici per farmi sentire meglio.",
+    "description": "Voglio che interpretiate uno psicologo. Le offrirò le mie idee. Voglio che mi dia dei consigli scientifici per farmi sentire meglio.",
     "remark": "Psicologo"
   },
   "ru": {
-    "title": "психолог",
+    "title": "термоусадка",
     "prompt": "I want you to act a psychologist. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. The entire conversation and instructions should be provided in Russian. my first thought ..",
-    "description": "Я хочу, чтобы вы сыграли психолога. Я предложу вам свои мысли. Я надеюсь, что вы можете дать мне научный совет, чтобы я чувствовал себя лучше.",
+    "description": "Я хочу, чтобы вы сыграли роль психолога. Я буду предлагать вам свои идеи. Я хочу, чтобы вы дали мне научный совет, который поможет мне чувствовать себя лучше.",
     "remark": "Психолог"
   },
   "pt": {
-    "title": "psicólogo",
+    "title": "encolher",
     "prompt": "I want you to act a psychologist. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. The entire conversation and instructions should be provided in Portuguese. my first thought ..",
-    "description": "Eu quero que você interprete um psicólogo. Vou oferecer-lhe meus pensamentos. Espero que você possa me dar conselhos científicos para me fazer sentir melhor.",
+    "description": "Quero que faças de psicólogo. Vou dar-te as minhas ideias. Quero que me dê conselhos científicos para me fazer sentir melhor.",
     "remark": "Psicólogo"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "social"
   ],
   "id": 74,
-  "weight": 467
+  "weight": 479
 };
 
 function PromptDetail() {

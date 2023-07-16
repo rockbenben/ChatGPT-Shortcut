@@ -26,10 +26,10 @@ const prompt = {
     "remark": "영어 회화 대화의 경우, 응답은 100 단어 이하로 제한됩니다. 입력 시 문법 오류, 오타 및 사실 오류가 수정됩니다."
   },
   "es": {
-    "title": "practica de conversacion en ingles",
+    "title": "Prácticas de diálogo en inglés",
     "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Spanish. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors..",
-    "description": "Espero que puedas actuar como profesor y mejorador del inglés hablado. Te hablare en ingles, y tu me contestaras en ingles para practicar mi ingles hablado. Espero que mantenga su respuesta limpia y limite su respuesta a 100 palabras. Espero que corrija estrictamente mis errores gramaticales, errores tipográficos y errores fácticos. Quiero que me hagas una pregunta en tu respuesta. Ahora que comenzamos la práctica, puedes hacerme una pregunta primero. Recuerde, quiero que corrija estrictamente mis errores gramaticales, errores tipográficos y errores de hecho.",
-    "remark": "Conversaciones en inglés, las respuestas se limitarán a 100 palabras. Se corregirán los errores gramaticales, tipográficos y de hecho en la entrada."
+    "description": "Quiero que actúes como profesor de inglés hablado y de perfeccionamiento. Yo te hablaré en inglés y tú me contestarás en inglés para practicar mi inglés hablado. Me gustaría que mantuvieras tus respuestas limpias y ordenadas y que las limitaras a 100 palabras o menos. Me gustaría que corrigieras estrictamente mis errores gramaticales, errores tipográficos y errores de hecho. Me gustaría que me hicieras una pregunta en tu respuesta. Ahora empezaremos el ejercicio, y puedes empezar haciéndome una pregunta. Recuerda, quiero que corrijas estrictamente mis errores gramaticales, erratas y errores de hecho.",
+    "remark": "Para los diálogos de conversación en inglés, las respuestas se limitarán a 100 palabras. Se corregirán los errores gramaticales, las erratas y los errores de hecho en la entrada."
   },
   "fr": {
     "title": "Pratique du dialogue en anglais",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bei englischen Konversationsdialogen sind die Antworten auf 100 Wörter begrenzt. Grammatikalische Fehler, Tippfehler und sachliche Irrtümer in den Beiträgen werden korrigiert."
   },
   "it": {
-    "title": "Pratica di conversazione in inglese",
+    "title": "Pratica del dialogo in inglese",
     "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Italian. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors...",
-    "description": "Spero che tu possa agire come insegnante e miglioratore dell&#39;inglese parlato. Ti parlerò in inglese e tu mi risponderai in inglese per esercitare il mio inglese parlato. Spero che manterrai la tua risposta pulita e limiterai la tua risposta a 100 parole. Spero che correggerai rigorosamente i miei errori grammaticali, errori di battitura ed errori di fatto. Voglio che tu mi faccia una domanda nella tua risposta. Ora che iniziamo la pratica, prima puoi farmi una domanda. Ricorda, voglio che tu corregga rigorosamente i miei errori grammaticali, errori di battitura ed errori fattuali.",
-    "remark": "Conversazioni in inglese, le risposte saranno limitate a 100 parole. Gli errori grammaticali, gli errori di battitura e gli errori di fatto nella voce verranno corretti."
+    "description": "Voglio che tu agisca come insegnante e miglioratore della lingua inglese. Io ti parlerò in inglese e tu mi risponderai in inglese per esercitare il mio inglese parlato. Vorrei che le tue risposte fossero ordinate e che limitassi le tue risposte a 100 parole o meno. Vorrei che correggessi rigorosamente i miei errori grammaticali, i refusi e gli errori di fatto. Vorrei che nella vostra risposta mi faceste una domanda. Ora iniziamo l'esercizio e potete iniziare facendomi una domanda. Ricorda, voglio che tu corregga rigorosamente i miei errori grammaticali, i refusi e gli errori di fatto.",
+    "remark": "Per i dialoghi di conversazione in inglese, le risposte saranno limitate a 100 parole. Saranno corretti gli errori grammaticali, gli errori di battitura e gli errori di fatto presenti nell'input."
   },
   "ru": {
-    "title": "разговорная практика на английском",
+    "title": "Практика диалогов на английском языке",
     "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Russian. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors...",
-    "description": "Я надеюсь, что вы можете выступать в качестве учителя и улучшения разговорного английского языка. Я буду говорить с вами по-английски, а вы будете отвечать мне по-английски, чтобы практиковать мой разговорный английский. Я надеюсь, что вы будете держать свой ответ в чистоте и ограничите свой ответ 100 словами. Надеюсь, вы строго исправите мои грамматические ошибки, опечатки и фактические ошибки. Я хочу, чтобы вы задали мне вопрос в своем ответе. Теперь, когда мы начинаем практику, вы можете сначала задать мне вопрос. Помните, я хочу, чтобы вы строго исправили мои грамматические ошибки, опечатки и фактические ошибки.",
-    "remark": "Разговоры на английском языке, ответы будут ограничены 100 словами. Грамматические ошибки, опечатки и фактические ошибки в записи будут исправлены."
+    "description": "Я хочу, чтобы вы выступили в роли учителя и совершенствователя английского языка. Я буду говорить с вами на английском, а вы будете отвечать мне на английском, чтобы попрактиковаться в разговорном английском. Я хотел бы, чтобы Вы были аккуратны в своих ответах и не превышали 100 слов. Я хотел бы, чтобы вы строго исправляли мои грамматические ошибки, опечатки и фактические ошибки. Я хотел бы, чтобы в своем ответе вы задали мне вопрос. Теперь мы начнем упражнение, и вы можете начать с того, что зададите мне вопрос. Помните, я хочу, чтобы вы строго исправили мои грамматические ошибки, опечатки и фактические ошибки.",
+    "remark": "Для диалогов на английском языке объем ответов не должен превышать 100 слов. Грамматические ошибки, опечатки и фактические ошибки в ответах будут исправляться."
   },
   "pt": {
-    "title": "prática de conversação em inglês",
+    "title": "Prática de diálogo em inglês",
     "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Portuguese. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors...",
-    "description": "Espero que você possa atuar como professor e aprimorador do inglês falado. Falarei com você em inglês e você me responderá em inglês para praticar meu inglês falado. Espero que você mantenha sua resposta limpa e limite sua resposta a 100 palavras. Espero que você corrija estritamente meus erros gramaticais, erros de digitação e erros factuais. Eu quero que você me faça uma pergunta em sua resposta. Agora que começamos a prática, você pode me fazer uma pergunta primeiro. Lembre-se, quero que você corrija estritamente meus erros gramaticais, erros de digitação e erros factuais.",
-    "remark": "Conversas em inglês, as respostas serão limitadas a 100 palavras. Erros gramaticais, erros de digitação e erros factuais na entrada serão corrigidos."
+    "description": "Quero que actue como um professor de inglês e um melhorador. Falarei consigo em inglês e você responder-me-á em inglês para praticar o meu inglês falado. Gostaria que mantivesse as suas respostas limpas e organizadas e que as limitasse a 100 palavras ou menos. Gostaria que corrigisse rigorosamente os meus erros gramaticais, gralhas e erros factuais. Gostaria que me fizessem uma pergunta na vossa resposta. Agora vamos começar o exercício, e pode começar por me fazer uma pergunta. Lembre-se, quero que corrija rigorosamente os meus erros gramaticais, gralhas e erros factuais.",
+    "remark": "Para os diálogos de conversação em inglês, as respostas serão limitadas a 100 palavras. Serão corrigidos erros gramaticais, gralhas e erros factuais nas respostas."
   },
   "hi": {
     "title": "अंग्रेजी वार्तालाप अभ्यास",
@@ -84,7 +84,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 120,
-  "weight": 863
+  "weight": 896
 };
 
 function PromptDetail() {

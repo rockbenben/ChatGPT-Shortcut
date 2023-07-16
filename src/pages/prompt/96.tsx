@@ -26,10 +26,10 @@ const prompt = {
     "remark": "네트워크 환경에 기반한 사이버 보안 조언을 제공합니다."
   },
   "es": {
-    "title": "Experto en Seguridad Cibernética",
+    "title": "Especialista en seguridad de redes",
     "prompt": "I want you to act as a cyber security specialist. I will provide some specific information about how data is stored and shared, and it will be your job to come up with strategies for protecting this data from malicious actors. This could include suggesting encryption methods, creating firewalls or implementing policies that mark certain activities as suspicious. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que seas un profesional de la ciberseguridad. Proporcionaré algunos detalles sobre cómo se almacenan y comparten los datos, y su trabajo consistirá en idear estrategias para proteger esos datos del comportamiento malicioso. Esto podría incluir sugerir métodos de encriptación, crear firewalls o implementar políticas que marquen ciertas actividades como sospechosas.",
-    "remark": "De acuerdo con el entorno de la red, proporcione consejos de seguridad de la red."
+    "description": "Me gustaría que trabajaras como experto en ciberseguridad. Te proporcionaré información específica sobre cómo se almacenan y comparten los datos, y tu trabajo consistirá en idear estrategias para proteger esos datos de comportamientos maliciosos. Esto puede incluir sugerir métodos de cifrado, crear cortafuegos o aplicar políticas que señalen ciertas actividades como sospechosas.",
+    "remark": "Proporcionar recomendaciones de seguridad de red basadas en el entorno de red."
   },
   "fr": {
     "title": "Spécialiste de la sécurité des réseaux",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Abgabe von Empfehlungen zur Netzwerksicherheit auf der Grundlage der Netzwerkumgebung."
   },
   "it": {
-    "title": "Esperto di sicurezza informatica",
+    "title": "Specialista della sicurezza di rete",
     "prompt": "I want you to act as a cyber security specialist. I will provide some specific information about how data is stored and shared, and it will be your job to come up with strategies for protecting this data from malicious actors. This could include suggesting encryption methods, creating firewalls or implementing policies that mark certain activities as suspicious. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu sia un professionista della sicurezza informatica. Fornirò alcune specifiche su come i dati vengono archiviati e condivisi e il tuo compito sarà elaborare strategie per proteggere tali dati da comportamenti dannosi. Ciò potrebbe includere il suggerimento di metodi di crittografia, la creazione di firewall o l&#39;implementazione di criteri che contrassegnano determinate attività come sospette.",
-    "remark": "In base all&#39;ambiente di rete, fornire consigli sulla sicurezza della rete."
+    "description": "Vorrei che lavoraste come esperti di sicurezza informatica. Le fornirò alcune informazioni specifiche su come vengono archiviati e condivisi i dati e il suo compito sarà quello di elaborare strategie per proteggere tali dati da comportamenti dannosi. Potresti suggerire metodi di crittografia, creare firewall o implementare politiche che segnalino determinate attività come sospette.",
+    "remark": "Fornire raccomandazioni sulla sicurezza della rete in base all'ambiente di rete."
   },
   "ru": {
-    "title": "Эксперт по кибербезопасности",
+    "title": "Специалист по сетевой безопасности",
     "prompt": "I want you to act as a cyber security specialist. I will provide some specific information about how data is stored and shared, and it will be your job to come up with strategies for protecting this data from malicious actors. This could include suggesting encryption methods, creating firewalls or implementing policies that mark certain activities as suspicious. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы стали профессионалом в области кибербезопасности. Я предоставлю некоторые подробности о том, как данные хранятся и передаются, а ваша работа будет заключаться в том, чтобы придумать стратегии для защиты этих данных от злонамеренного поведения. Это может включать в себя предложение методов шифрования, создание брандмауэров или внедрение политик, которые помечают определенные действия как подозрительные.",
-    "remark": "В зависимости от сетевой среды предоставьте рекомендации по сетевой безопасности."
+    "description": "Я хочу, чтобы вы поработали в качестве эксперта по кибербезопасности. Я предоставлю конкретную информацию о том, как хранятся и передаются данные, а ваша задача будет заключаться в разработке стратегий защиты этих данных от вредоносного поведения. Это может включать в себя предложение методов шифрования, создание межсетевых экранов или внедрение политик, позволяющих отмечать определенные действия как подозрительные.",
+    "remark": "Предоставление рекомендаций по обеспечению сетевой безопасности с учетом особенностей сетевой среды."
   },
   "pt": {
-    "title": "Especialista em Segurança Cibernética",
+    "title": "Especialista em segurança de redes",
     "prompt": "I want you to act as a cyber security specialist. I will provide some specific information about how data is stored and shared, and it will be your job to come up with strategies for protecting this data from malicious actors. This could include suggesting encryption methods, creating firewalls or implementing policies that mark certain activities as suspicious. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Eu quero que você seja um profissional de segurança cibernética. Fornecerei alguns detalhes sobre como os dados são armazenados e compartilhados, e seu trabalho será criar estratégias para proteger esses dados de comportamentos mal-intencionados. Isso pode incluir sugerir métodos de criptografia, criar firewalls ou implementar políticas que sinalizem certas atividades como suspeitas.",
-    "remark": "De acordo com o ambiente de rede, forneça conselhos de segurança de rede."
+    "description": "Gostaria que trabalhasse como especialista em cibersegurança. Fornecerei algumas informações específicas sobre a forma como os dados são armazenados e partilhados, e a tua tarefa será apresentar estratégias para proteger esses dados de comportamentos maliciosos. Isto pode incluir a sugestão de métodos de encriptação, a criação de firewalls ou a implementação de políticas que assinalem determinadas actividades como suspeitas.",
+    "remark": "Fornecer recomendações de segurança de rede com base no ambiente de rede."
   },
   "hi": {
     "title": "साइबर सुरक्षा विशेषज्ञ",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 96,
-  "weight": 303
+  "weight": 312
 };
 
 function PromptDetail() {

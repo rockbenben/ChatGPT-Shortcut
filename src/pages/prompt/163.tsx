@@ -26,9 +26,9 @@ const prompt = {
     "remark": "노래 추천"
   },
   "es": {
-    "title": "recomendación de canción",
+    "title": "Recomendación de canciones",
     "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Spanish. My first song is .",
-    "description": "Quiero que seas un recomendador de canciones. Te daré una canción y crearás una lista de reproducción de 10 canciones similares a la canción dada. Proporcionará un nombre y una descripción de la lista de reproducción. No seleccione canciones con el mismo título o artista. No escriba ninguna explicación u otro texto, solo responda con el nombre, la descripción y la canción de la lista de reproducción.",
+    "description": "Quiero que actúes como recomendador de canciones. Yo te proporcionaré una canción y tú crearás una lista de reproducción con 10 canciones similares a la canción en cuestión. Me darás un nombre y una descripción de la lista de reproducción. No elijas canciones con el mismo nombre o artista. No escribas explicaciones ni ningún otro texto, sólo responde con el nombre, la descripción y las canciones de la lista de reproducción.",
     "remark": "Recomendador de canciones"
   },
   "fr": {
@@ -44,21 +44,21 @@ const prompt = {
     "remark": "Song-Empfehlung"
   },
   "it": {
-    "title": "consiglio di canzone",
+    "title": "Raccomandazione di canzoni",
     "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Italian. My first song is ..",
-    "description": "Voglio che tu sia un suggeritore di canzoni. Ti darò una canzone e creerai una playlist di 10 canzoni simili alla canzone data. Fornirai un nome e una descrizione della playlist. Non selezionare brani con lo stesso titolo o artista. Non scrivere spiegazioni o altro testo, rispondi semplicemente con il nome, la descrizione e la canzone della playlist.",
-    "remark": "Canzone consigliata"
+    "description": "Voglio che tu agisca come raccomandatore di canzoni. Ti fornirò una canzone e tu dovrai creare una playlist di 10 canzoni simili a quella data. Dovrete fornire un nome e una descrizione della playlist. Non scegliete canzoni con lo stesso nome o lo stesso artista. Non scrivete spiegazioni o altro testo, ma rispondete solo con il nome, la descrizione e le canzoni della playlist.",
+    "remark": "Raccomandatore di canzoni"
   },
   "ru": {
-    "title": "рекомендация песни",
+    "title": "Рекомендация по песне",
     "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Russian. My first song is ..",
-    "description": "Я хочу, чтобы вы были рекомендателем песен. Я дам вам песню, а вы создадите плейлист из 10 песен, похожих на данную песню. Вы предоставите название плейлиста и описание. Не выбирайте песни с одинаковым названием или исполнителем. Не пишите никаких объяснений или другого текста, просто ответьте с названием плейлиста, описанием и песней.",
-    "remark": "Рекомендатор песен"
+    "description": "Я хочу, чтобы вы выступили в роли рекомендателя песен. Я предоставлю вам песню, а вы создадите плейлист из 10 песен, похожих на данную песню. Вы предоставите название и описание плейлиста. Не выбирайте песни с одинаковым названием или исполнителем. Не пишите никаких пояснений или других текстов, просто укажите название, описание и песни плейлиста.",
+    "remark": "Рекомендатель песен"
   },
   "pt": {
-    "title": "recomendação de música",
+    "title": "Recomendação de canções",
     "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Portuguese. My first song is ..",
-    "description": "Eu quero que você seja um recomendador de músicas. Eu lhe darei uma música e você criará uma lista de reprodução de 10 músicas semelhantes à música fornecida. Você fornecerá um nome e uma descrição da lista de reprodução. Não selecione músicas com o mesmo título ou artista. Não escreva nenhuma explicação ou outro texto, apenas responda com o nome, descrição e música da lista de reprodução.",
+    "description": "Quero que actues como um recomendador de canções. Vou fornecer-te uma canção e tu vais criar uma lista de reprodução com 10 canções semelhantes à canção em questão. Deves fornecer um nome e uma descrição da lista de reprodução. Não escolhas canções com o mesmo nome ou artista. Não escreva nenhuma explicação ou outro texto, responda apenas com o nome, a descrição e as músicas da lista de reprodução.",
     "remark": "Recomendador de músicas"
   },
   "hi": {
@@ -84,7 +84,7 @@ const prompt = {
     "music"
   ],
   "id": 163,
-  "weight": 615
+  "weight": 624
 };
 
 function PromptDetail() {

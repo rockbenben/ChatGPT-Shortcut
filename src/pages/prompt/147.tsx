@@ -26,10 +26,10 @@ const prompt = {
     "remark": "해당 직무에 필요한 기술과 지원자가 답변해야 할 질문에 대해 설명합니다."
   },
   "es": {
-    "title": "gerente de personal",
+    "title": "Jefe de Personal",
     "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Spanish. My first job title is .",
-    "description": "Usted es la persona a cargo de la entrevista. Le doy un título de trabajo, y usted da las habilidades y la experiencia necesarias para el puesto, y qué preguntas debe responder el candidato.",
-    "remark": "Describa las habilidades requeridas para un puesto y las preguntas que los candidatos deben responder."
+    "description": "Tú eres la persona que supervisa la entrevista. Yo te diré un puesto de trabajo y tú darás las aptitudes y la experiencia necesarias para el puesto y qué preguntas debe responder el candidato.",
+    "remark": "Describa las competencias requeridas para un puesto y las preguntas que debe responder el candidato."
   },
   "fr": {
     "title": "Chef du personnel",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Responsabile del personale",
     "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Italian. My first job title is ..",
-    "description": "Tu sei la persona incaricata del colloquio. Ti do un titolo di lavoro e tu fornisci le competenze e l&#39;esperienza necessarie per la posizione e a quali domande il candidato deve rispondere.",
-    "remark": "Descrivi le competenze richieste per una posizione e le domande a cui i candidati devono rispondere."
+    "description": "Voi siete la persona che supervisiona il colloquio. Io vi indicherò un titolo di lavoro e voi fornirete le competenze e l'esperienza necessarie per la posizione e le domande a cui il candidato deve rispondere.",
+    "remark": "Descrivete le competenze richieste per una posizione e le domande a cui il candidato deve rispondere."
   },
   "ru": {
-    "title": "Личный менеджер",
+    "title": "Руководитель отдела кадров",
     "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Russian. My first job title is ..",
-    "description": "Вы ответственный за интервью. Я даю вам название должности, а вы указываете навыки и опыт, необходимые для этой должности, а также вопросы, на которые должен ответить кандидат.",
-    "remark": "Опишите навыки, необходимые для должности, и вопросы, на которые кандидаты должны ответить."
+    "description": "Вы - человек, руководящий проведением собеседования. Я назову вам название вакансии, а вы назовете навыки и опыт, необходимые для этой должности, и на какие вопросы должен ответить кандидат.",
+    "remark": "Опишите навыки, необходимые для работы в данной должности, и вопросы, на которые кандидат должен ответить."
   },
   "pt": {
-    "title": "Gestor de pessoas",
+    "title": "Chefe do pessoal",
     "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Portuguese. My first job title is ..",
-    "description": "Você é o responsável pela entrevista. Eu dou a você um cargo e você fornece as habilidades e a experiência necessárias para o cargo e quais perguntas o candidato precisa responder.",
-    "remark": "Descreva as habilidades necessárias para um cargo e as perguntas que os candidatos precisam responder."
+    "description": "Tu és a pessoa que supervisiona a entrevista. Eu digo-lhe o título de um emprego e você indica as competências e a experiência necessárias para o cargo e as perguntas a que o candidato tem de responder.",
+    "remark": "Descreva as competências exigidas para um cargo e as perguntas a que o candidato deve responder."
   },
   "hi": {
     "title": "कार्मिक प्रबंधक",
@@ -84,7 +84,7 @@ const prompt = {
     "company"
   ],
   "id": 147,
-  "weight": 466
+  "weight": 479
 };
 
 function PromptDetail() {

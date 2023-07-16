@@ -26,10 +26,10 @@ const prompt = {
     "remark": "ChatGPT 가 주제에 따라 프롬프트 단어를 생성하도록 합니다."
   },
   "es": {
-    "title": "Generador de palabras rápidas②",
+    "title": "Generador de tacos②",
     "prompt": "The entire conversation and instructions should be provided in Spanish. I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful..",
-    "description": "Espero que pueda actuar como un generador de avisos de ChatGPT, enviaré un tema y necesita generar un aviso de ChatGPT que comience con &quot;Espero que pueda actuar&quot; según el contenido del asunto. Adivina mi comportamiento y extiende esa pista para describir el tema para que sea más útil.",
-    "remark": "Deje que ChatGPT genere palabras rápidas basadas en el tema."
+    "description": "Me gustaría que hicieras de generador de mensajes ChatGPT. Te enviaré un tema y tendrás que generar un mensaje ChatGPT que empiece por \"Me gustaría que hicieras de\" basándote en el contenido del tema. Adivina mi comportamiento y amplía ese mensaje para describir el contenido del tema y hacerlo más útil.",
+    "remark": "Haz que ChatGPT genere palabras de aviso basadas en el tema."
   },
   "fr": {
     "title": "Générateur de repères②",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Lassen Sie ChatGPT auf der Grundlage des Themas Aufforderungswörter generieren."
   },
   "it": {
-    "title": "Generatore di parole rapide②",
+    "title": "Generatore di stecche②",
     "prompt": "The entire conversation and instructions should be provided in Italian. I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful...",
-    "description": "Spero che tu possa agire come generatore di prompt ChatGPT, invierò un argomento e devi generare un prompt ChatGPT che inizia con &quot;Spero che tu possa agire&quot; in base al contenuto dell&#39;oggetto. Prova a indovinare il mio comportamento ed estendi quel suggerimento per descrivere l&#39;argomento per renderlo più utile.",
-    "remark": "Consenti a ChatGPT di generare parole rapide in base all&#39;argomento."
+    "description": "Vorrei che tu agissi come un generatore di messaggi ChatGPT, io invierò un argomento e tu dovrai generare un messaggio ChatGPT che inizia con \"Vorrei che tu agissi come\" in base al contenuto dell'argomento. Provate a indovinare il mio comportamento ed espandete il prompt per descrivere il contenuto dell'argomento e renderlo più utile.",
+    "remark": "Chiedete a ChatGPT di generare delle parole di richiesta in base all'argomento."
   },
   "ru": {
-    "title": "Генератор слов-подсказок②",
+    "title": "Генератор кия②",
     "prompt": "The entire conversation and instructions should be provided in Russian. I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful...",
-    "description": "Я надеюсь, что вы можете действовать как генератор подсказок ChatGPT, я отправлю тему, и вам нужно сгенерировать подсказку ChatGPT, начинающуюся с «Надеюсь, вы можете действовать» на основе содержания темы. Сделайте предположение о моем поведении и расширьте эту подсказку, чтобы описать предмет, чтобы сделать его более полезным.",
-    "remark": "Разрешите ChatGPT генерировать подсказки в зависимости от темы."
+    "description": "Я хочу, чтобы вы выступили в роли генератора подсказок ChatGPT: я пришлю тему, а вы должны будете сгенерировать подсказку ChatGPT, начинающуюся со слов \"Я бы хотел, чтобы вы выступили в роли\", основываясь на содержании темы. Угадайте мое поведение и расширьте эту подсказку, описав содержание темы, чтобы сделать ее более полезной.",
+    "remark": "Попросите ChatGPT сгенерировать слова-подсказки по теме."
   },
   "pt": {
-    "title": "Gerador de palavras de prompt②",
+    "title": "Gerador de sinais②",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful...",
-    "description": "Espero que você possa atuar como um gerador de prompt do ChatGPT, enviarei um tópico e você precisará gerar um prompt do ChatGPT começando com &quot;Espero que você possa agir&quot; com base no conteúdo do assunto. Adivinhe meu comportamento e estenda essa dica para descrever o assunto para torná-lo mais útil.",
-    "remark": "Deixe o ChatGPT gerar palavras de prompt com base no tópico."
+    "description": "Gostaria que agisses como um gerador de mensagens ChatGPT. Vou enviar um tópico e terás de gerar uma mensagem ChatGPT que comece por \"Gostaria que agisses como\" com base no conteúdo do tópico. Adivinha o meu comportamento e expande essa pergunta para descrever o conteúdo do tópico e torná-la mais útil.",
+    "remark": "Faça com que o ChatGPT gere palavras de incentivo com base no tópico."
   },
   "hi": {
     "title": "शीघ्र शब्द जनरेटर②",
@@ -84,7 +84,7 @@ const prompt = {
     "ai"
   ],
   "id": 6,
-  "weight": 854
+  "weight": 859
 };
 
 function PromptDetail() {

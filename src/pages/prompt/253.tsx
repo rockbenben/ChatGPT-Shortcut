@@ -26,10 +26,10 @@ const prompt = {
     "remark": "직위와 이력서에 맞게 맞춤화되고 최적화됩니다. 우테운딜세의 기고글입니다."
   },
   "es": {
-    "title": "Optimización de currículum",
+    "title": "Optimización del CV",
     "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Spanish. Do you understand?.",
-    "description": "Le proporcionaré una descripción del trabajo para el puesto que estoy interesado en solicitar. Leerá la descripción del trabajo para comprender los requisitos clave para el puesto, incluidos los años de experiencia, las habilidades y el título del trabajo. Después de eso, le enviaré mi currículum. Lo leerá detenidamente y proporcionará comentarios sobre qué tan bien adaptado está mi currículum para el trabajo.",
-    "remark": "Optimización personalizada para su título de trabajo y currículum. Contribución de @uteundilse."
+    "description": "Le proporcionaré una descripción del puesto que me interesa solicitar. Leerá la descripción del puesto para comprender los requisitos clave del mismo, incluidos los años de experiencia, las competencias y el cargo. A continuación, le entregaré mi CV. Lo leerá detenidamente y me dará su opinión sobre la adecuación de mi currículum al puesto.",
+    "remark": "Personalizado y optimizado para su puesto y CV. Contribución de @uteundilse."
   },
   "fr": {
     "title": "Optimisation du CV",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Individuell optimiert für Ihre Position und Ihren Lebenslauf. Beitrag von @uteundilse."
   },
   "it": {
-    "title": "Riprendi l&#39;ottimizzazione",
+    "title": "Ottimizzazione del CV",
     "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Italian. Do you understand?..",
-    "description": "Ti fornirò una descrizione del lavoro per la posizione per la quale sono interessato a candidarmi. Leggerai la descrizione del lavoro per comprendere i requisiti chiave per la posizione, inclusi anni di esperienza, competenze, titolo professionale. Successivamente, ti invierò il mio curriculum. Lo leggerai attentamente e fornirai un feedback su quanto sia ben adattato il mio curriculum per il lavoro.",
-    "remark": "Ottimizzazione personalizzata per il titolo di lavoro e il curriculum. Contributo di @uteundilse."
+    "description": "Vi fornirò una descrizione del lavoro per la posizione per cui sono interessato a candidarmi. Leggete la descrizione del lavoro per capire i requisiti principali della posizione, compresi gli anni di esperienza, le competenze e la qualifica. Dopodiché, vi consegnerò il mio CV. Dovrete leggerlo attentamente e fornire un feedback in base a quanto il mio curriculum è adatto alla posizione.",
+    "remark": "Ottimizzato per la vostra posizione e il vostro CV. Contributo di @uteundilse."
   },
   "ru": {
-    "title": "Возобновить оптимизацию",
+    "title": "Оптимизация резюме",
     "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Russian. Do you understand?..",
-    "description": "Я предоставлю вам описание должности, на которую я заинтересован. Вы прочитаете описание работы, чтобы понять основные требования к должности, включая многолетний опыт, навыки, должность. После этого я отправлю вам свое резюме. Вы внимательно прочитаете его и выскажете свое мнение о том, насколько хорошо мое резюме подходит для этой работы.",
-    "remark": "Индивидуальная оптимизация для вашей должности и резюме. Вклад от @uteundilse."
+    "description": "Я предоставлю Вам описание вакансии, на которую я хочу претендовать. Вы прочтете описание вакансии, чтобы понять основные требования к ней, включая опыт работы, навыки и название должности. После этого я предоставлю Вам свое резюме. Вы должны внимательно прочитать его и дать отзыв о том, насколько мое резюме соответствует требованиям вакансии.",
+    "remark": "Индивидуальная оптимизация под вашу должность и резюме. Материал предоставлен @uteundilse."
   },
   "pt": {
-    "title": "Retomar a otimização",
+    "title": "Otimização do CV",
     "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Portuguese. Do you understand?..",
-    "description": "Fornecerei a você uma descrição do cargo para o qual estou interessado em me candidatar. Você lerá a descrição do trabalho para entender os principais requisitos para o cargo - incluindo anos de experiência, habilidades e cargo. Depois disso, enviarei meu currículo. Você vai lê-lo com atenção e fornecer feedback sobre como meu currículo está bem adaptado para o trabalho.",
-    "remark": "Otimização personalizada para o seu cargo e currículo. Contribuição de @uteundilse."
+    "description": "Fornecer-lhe-ei uma descrição do cargo a que estou interessado em candidatar-me. Irá ler a descrição do cargo para compreender os principais requisitos do cargo - incluindo anos de experiência, competências e título do cargo. Em seguida, entregar-lhe-ei o meu CV. Deverá lê-lo cuidadosamente e dar feedback com base na adequação do meu currículo ao cargo.",
+    "remark": "Personalizado e optimizado para o seu cargo e CV. Contribuição de @uteundilse."
   },
   "hi": {
     "title": "अनुकूलन फिर से शुरू करें",
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 253,
-  "weight": 719
+  "weight": 739
 };
 
 function PromptDetail() {

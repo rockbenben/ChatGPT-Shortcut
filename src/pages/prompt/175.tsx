@@ -26,10 +26,10 @@ const prompt = {
     "remark": "주어진 토픽을 여러 개의 하위 토픽으로 나누기. meishiwanwan 의 기여."
   },
   "es": {
-    "title": "deconstrucción del tema",
+    "title": "Deconstrucción temática",
     "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: .",
-    "description": "Eres un asistente que es bueno para pensar y desarmarás un tema en subtemas relacionados. Utilice chino para proporcionar subtemas relevantes para los siguientes temas. Envíe el resultado directamente, no se requieren declaraciones adicionales:",
-    "remark": "Desglose el tema especificado en varios subtemas. Contribución de @meishiwanwan."
+    "description": "Usted es un buen ayudante del pensador que desglosa un tema en múltiples subtemas relacionados. En chino, indique los subtemas correspondientes al siguiente tema. Emite los resultados directamente sin declaraciones adicionales:",
+    "remark": "Dividir un tema en varios subtemas. Contribución de @meishiwanwan."
   },
   "fr": {
     "title": "Déconstruction thématique",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Ein bestimmtes Thema in mehrere Unterthemen aufteilen. Beitrag von @meishiwanwan."
   },
   "it": {
-    "title": "decostruzione del tema",
+    "title": "Decostruzione tematica",
     "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Italian. Please begin by editing the following text: ..",
-    "description": "Sei un assistente bravo a pensare e analizzerai un argomento in sottoargomenti correlati. Utilizza il cinese per fornire argomenti secondari pertinenti per i seguenti argomenti. Emetti direttamente il risultato, non è richiesta alcuna dichiarazione aggiuntiva:",
-    "remark": "Suddividi l&#39;argomento specificato in più argomenti secondari. Contributo di @meishiwanwan."
+    "description": "Lei è un buon assistente di pensiero che scompone un tema in più sottotemi correlati. Utilizzando il cinese, si prega di fornire i sottotemi rilevanti per il seguente tema. Fornire i risultati direttamente senza dichiarazioni aggiuntive:",
+    "remark": "Dividere un determinato argomento in più sotto-argomenti. Contributo di @meishiwanwan."
   },
   "ru": {
-    "title": "деконструкция темы",
+    "title": "Тематическая деконструкция",
     "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ..",
-    "description": "Вы помощник, который хорошо соображает, и разберете тему на родственные подтемы. Пожалуйста, используйте китайский язык, чтобы указать соответствующие подтемы для следующих тем. Выведите результат напрямую, дополнительное объявление не требуется:",
-    "remark": "Разбейте указанную тему на несколько подтем. Вклад от @meishiwanwan."
+    "description": "Вы - хороший помощник мыслителя, который разбивает тему на множество связанных подтем. Используя китайский язык, укажите соответствующие подтемы для следующей темы. Выведите результаты напрямую, без дополнительных деклараций:",
+    "remark": "Разбиение заданной темы на несколько подтем. Вклад от @meishiwanwan."
   },
   "pt": {
-    "title": "desconstrução do tema",
+    "title": "Desconstrução temática",
     "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ..",
-    "description": "Você é um assistente que pensa bem e desmontará um tópico em subtópicos relacionados. Use chinês para fornecer subtópicos relevantes para os tópicos a seguir. Emita o resultado diretamente, nenhuma declaração adicional é necessária:",
-    "remark": "Divida o tópico especificado em vários subtópicos. Contribuição de @meishiwanwan."
+    "description": "É um bom assistente de pensador que decompõe um tema em vários subtemas relacionados. Utilizando a língua chinesa, forneça os subtemas relevantes para o seguinte tema. Apresente os resultados diretamente sem declarações adicionais:",
+    "remark": "Dividir um determinado tópico em múltiplos subtópicos. Contribuição de @meishiwanwan."
   },
   "hi": {
     "title": "विषय विखंडन",
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 175,
-  "weight": 468
+  "weight": 478
 };
 
 function PromptDetail() {

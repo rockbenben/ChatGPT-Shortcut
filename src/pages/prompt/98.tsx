@@ -26,10 +26,10 @@ const prompt = {
     "remark": "요청 시 정규식을 생성합니다."
   },
   "es": {
-    "title": "generador regular",
+    "title": "generador regular (informática)",
     "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Spanish. My first prompt is to generate a regular expression that matches .",
-    "description": "Quiero que actúes como un generador de expresiones regulares. Su función es generar expresiones regulares que coincidan con patrones específicos en el texto. Debe proporcionar el formato de la expresión regular para copiar y pegar fácilmente en un editor de texto o lenguaje de programación que admita expresiones regulares. No escriba explicaciones o ejemplos de cómo funcionan las expresiones regulares; solo proporcione las expresiones regulares en sí. Mi primer consejo es generar una expresión regular que coincida con [requisitos de expresión regular].",
-    "remark": "Genere expresiones regulares a pedido."
+    "description": "Quiero que actúes como un generador de expresiones regulares. Tu papel es generar expresiones regulares que coincidan con patrones específicos del texto. Debes proporcionar el formato de la expresión regular para que se pueda copiar y pegar fácilmente en un editor de texto o lenguaje de programación que admita expresiones regulares. No escribas explicaciones o ejemplos de cómo funcionan las expresiones regulares; sólo proporciona la expresión regular en sí. Mi primer consejo es generar una expresión regular que coincida con [Requisitos regulares].",
+    "remark": "Generar expresiones regulares a petición."
   },
   "fr": {
     "title": "générateur régulier (informatique)",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Generieren Sie auf Anfrage reguläre Ausdrücke."
   },
   "it": {
-    "title": "generatore regolare",
+    "title": "generatore regolare (informatica)",
     "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Italian. My first prompt is to generate a regular expression that matches ..",
-    "description": "Voglio che tu agisca come un generatore di espressioni regolari. Il tuo ruolo è generare espressioni regolari che corrispondano a modelli specifici nel testo. È necessario fornire il formato dell&#39;espressione regolare per copiarlo e incollarlo facilmente in un editor di testo o in un linguaggio di programmazione che supporti le espressioni regolari. Non scrivere spiegazioni o esempi di come funzionano le espressioni regolari; fornisci solo le espressioni regolari stesse. Il mio primo consiglio è generare una regex che corrisponda ai [requisiti regex].",
+    "description": "Voglio che tu agisca come un generatore di espressioni regolari. Il vostro ruolo è quello di generare espressioni regolari che corrispondano a modelli specifici nel testo. Dovete fornire il formato dell'espressione regolare in modo che possa essere facilmente copiata e incollata in un editor di testo o in un linguaggio di programmazione che supporti le espressioni regolari. Non scrivete spiegazioni o esempi di come funzionano le espressioni regolari; fornite solo l'espressione regolare stessa. Il mio primo consiglio è quello di generare un'espressione regolare che corrisponda a [Requisiti regolari].",
     "remark": "Genera espressioni regolari su richiesta."
   },
   "ru": {
-    "title": "обычный генератор",
+    "title": "регулярный генератор (вычислительная техника)",
     "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Russian. My first prompt is to generate a regular expression that matches ..",
-    "description": "Я хочу, чтобы вы выступили в роли генератора регулярных выражений. Ваша роль заключается в создании регулярных выражений, соответствующих определенным шаблонам в тексте. Вы должны предоставить формат регулярного выражения для простого копирования и вставки в текстовый редактор или язык программирования, поддерживающий регулярные выражения. Не пишите объяснения или примеры того, как работают регулярные выражения, просто предоставьте сами регулярные выражения. Мой первый совет — создать регулярное выражение, соответствующее [требованиям к регулярному выражению].",
+    "description": "Я хочу, чтобы вы выступили в роли генератора регулярных выражений. Ваша роль заключается в генерации регулярных выражений, соответствующих определенным шаблонам в тексте. Вы должны предоставить формат регулярного выражения, чтобы его можно было легко скопировать и вставить в текстовый редактор или язык программирования, поддерживающий регулярные выражения. Не надо писать объяснения или примеры того, как работают регулярные выражения, достаточно предоставить само регулярное выражение. Мой первый совет - сгенерировать регулярное выражение, соответствующее [Регулярные требования].",
     "remark": "Генерация регулярных выражений по запросу."
   },
   "pt": {
-    "title": "gerador normal",
+    "title": "gerador regular (informática)",
     "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Portuguese. My first prompt is to generate a regular expression that matches ..",
-    "description": "Eu quero que você atue como um gerador de regex. Sua função é gerar expressões regulares que correspondam a padrões específicos no texto. Você deve fornecer o formato da expressão regular para copiar e colar facilmente em um editor de texto ou linguagem de programação que suporte expressões regulares. Não escreva explicações ou exemplos de como as expressões regulares funcionam; apenas forneça as próprias expressões regulares. Minha primeira dica é gerar um regex que corresponda a [requisitos de regex].",
-    "remark": "Gere expressões regulares a pedido."
+    "description": "Quero que actues como um gerador de expressões regulares. O teu papel é gerar expressões regulares que correspondam a padrões específicos no texto. Deve fornecer o formato da expressão regular para que possa ser facilmente copiada e colada num editor de texto ou numa linguagem de programação que suporte expressões regulares. Não escreva explicações ou exemplos de como as expressões regulares funcionam; forneça apenas a própria expressão regular. A minha primeira dica é gerar uma expressão regular que corresponda a [Requisitos regulares].",
+    "remark": "Gerar expressões regulares a pedido."
   },
   "hi": {
     "title": "नियमित जनरेटर",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 98,
-  "weight": 419
+  "weight": 432
 };
 
 function PromptDetail() {

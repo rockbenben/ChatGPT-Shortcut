@@ -26,10 +26,10 @@ const prompt = {
     "remark": "중국어, 영어 및 기타 주류 언어에 적용할 수 있는 어휘의 기원에 대한 소개입니다."
   },
   "es": {
-    "title": "etimologista",
+    "title": "etimólogo",
     "prompt": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable. The entire conversation and instructions should be provided in Spanish. My first request is 'I want to trace the origins of the word 'x'.'.",
-    "description": "Quiero que actúes como un etimólogo. Te daré una palabra, e investiga el origen de la palabra, rastrea sus antiguas raíces. Si corresponde, también debe proporcionar información sobre cómo ha cambiado el significado de la palabra con el tiempo. Mi primer requisito es que quiero rastrear el origen de [palabra]&#39;.",
-    "remark": "Introduce el origen del vocabulario, aplicable al chino, inglés y otros idiomas principales."
+    "description": "Quiero que hagas de etimólogo. Le daré una palabra y usted investigará su origen, remontándose a sus raíces antiguas. Si procede, también deberá proporcionar información sobre cómo ha cambiado el significado de la palabra a lo largo del tiempo. Mi primera petición es: \"Quiero rastrear los orígenes de [palabra]\".",
+    "remark": "Introducción a los orígenes del vocabulario, aplicable al chino, al inglés y a otras lenguas mayoritarias."
   },
   "fr": {
     "title": "étymologiste",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Eine Einführung in die Ursprünge des Wortschatzes, anwendbar auf Chinesisch, Englisch und andere gängige Sprachen."
   },
   "it": {
-    "title": "etimologista",
+    "title": "etimologo",
     "prompt": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable. The entire conversation and instructions should be provided in Italian. My first request is 'I want to trace the origins of the word 'x'.'..",
-    "description": "Voglio che tu agisca come un etimologo. Ti darò una parola, e tu cerchi l&#39;origine della parola, rintracci le sue antiche radici. Se applicabile, dovresti anche fornire informazioni su come il significato della parola è cambiato nel tempo. La mia prima esigenza è che voglio rintracciare l&#39;origine di [parola]&#39;.",
-    "remark": "Introduce l&#39;origine del vocabolario, applicabile a cinese, inglese e altre lingue tradizionali."
+    "description": "Voglio che tu agisca come un etimologo. Vi darò una parola e voi dovrete ricercarne l'origine, risalendo alle sue antiche radici. Se possibile, dovreste anche fornire informazioni su come il significato della parola è cambiato nel tempo. La mia prima richiesta è che voglio risalire alle origini di [parola]\".",
+    "remark": "Un'introduzione alle origini del vocabolario, applicabile al cinese, all'inglese e ad altre lingue principali."
   },
   "ru": {
     "title": "этимолог",
     "prompt": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable. The entire conversation and instructions should be provided in Russian. My first request is 'I want to trace the origins of the word 'x'.'..",
-    "description": "Я хочу, чтобы вы выступили в роли этимолога. Я дам вам слово, а вы исследуйте происхождение слова, проследите его древние корни. Если применимо, вы также должны предоставить информацию о том, как значение слова изменилось с течением времени. Мое первое требование состоит в том, что я хочу проследить происхождение [слова]».",
-    "remark": "Знакомит с происхождением лексики, применимой к китайскому, английскому и другим основным языкам."
+    "description": "Я хочу, чтобы вы выступили в роли этимолога. Я дам вам слово, а вы будете исследовать происхождение этого слова, прослеживая его древние корни. В случае необходимости вы также должны предоставить информацию о том, как менялось значение этого слова с течением времени. Моя первая просьба такова: \"Я хочу проследить происхождение [слова]\".",
+    "remark": "Введение в происхождение лексики, применительно к китайскому, английскому и другим основным языкам."
   },
   "pt": {
     "title": "etimologista",
     "prompt": "I want you to act as a etymologist. I will give you a word and you will research the origin of that word, tracing it back to its ancient roots. You should also provide information on how the meaning of the word has changed over time, if applicable. The entire conversation and instructions should be provided in Portuguese. My first request is 'I want to trace the origins of the word 'x'.'..",
-    "description": "Eu quero que você aja como um etimologista. Vou lhe dar uma palavra, e você pesquisa a origem da palavra, rastreia suas raízes antigas. Se aplicável, você também deve fornecer informações sobre como o significado da palavra mudou ao longo do tempo. Meu primeiro requisito é que eu queira rastrear a origem de [palavra]&#39;.",
-    "remark": "Apresenta a origem do vocabulário, aplicável ao chinês, inglês e outros idiomas tradicionais."
+    "description": "Quero que actues como um etimologista. Vou dar-te uma palavra e tu vais pesquisar a origem da palavra, rastreando-a até às suas raízes antigas. Se for caso disso, deve também fornecer informações sobre a forma como o significado da palavra mudou ao longo do tempo. O meu primeiro pedido é que quero descobrir as origens de [palavra]\".",
+    "remark": "Uma introdução às origens do vocabulário, aplicável ao chinês, ao inglês e a outras línguas correntes."
   },
   "hi": {
     "title": "शब्द-व्युपत्तिशास्री",
@@ -84,7 +84,7 @@ const prompt = {
     "academic"
   ],
   "id": 86,
-  "weight": 230
+  "weight": 233
 };
 
 function PromptDetail() {

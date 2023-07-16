@@ -26,10 +26,10 @@ const prompt = {
     "remark": "IT 아키텍트의 관점에서 시스템 솔루션을 설계합니다."
   },
   "es": {
-    "title": "Arquitecto TI",
+    "title": "Arquitecto informático",
     "prompt": "I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Quiero que desempeñes el papel de un arquitecto de TI. Proporcionaré algunos detalles sobre la funcionalidad de la aplicación u otro producto digital, y su trabajo es descubrir cómo integrarlo en el entorno de TI. Esto puede implicar el análisis de las necesidades comerciales, la realización de un análisis de brechas y la asignación de capacidades del nuevo sistema al entorno de TI existente. Los siguientes pasos son crear un diseño de solución, un modelo de red física que defina las interfaces para la integración del sistema y un modelo para el entorno de implementación.",
-    "remark": "Desde la perspectiva de los arquitectos de TI, diseñar soluciones de sistemas."
+    "description": "Me gustaría que asumieras el papel de un arquitecto informático. Te daré algunos detalles sobre la funcionalidad de una aplicación u otro producto digital, y tu trabajo consistirá en averiguar cómo integrarlo en el entorno informático. Esto puede implicar el análisis de los requisitos empresariales, la realización de un análisis de carencias y la asignación de la funcionalidad del nuevo sistema al entorno informático existente. Los siguientes pasos son crear un diseño de la solución, un plano de la red física que defina las interfaces para la integración del sistema y un plano del entorno de implantación.",
+    "remark": "Diseñar soluciones de sistemas desde la perspectiva de un arquitecto informático."
   },
   "fr": {
     "title": "Architecte IT",
@@ -46,20 +46,20 @@ const prompt = {
   "it": {
     "title": "Architetto IT",
     "prompt": "I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Voglio che tu interpreti il ruolo di un architetto IT. Fornirò alcuni dettagli sulla funzionalità dell&#39;applicazione o di un altro prodotto digitale e il tuo compito è capire come integrarlo nell&#39;ambiente IT. Ciò può comportare l&#39;analisi delle esigenze aziendali, l&#39;esecuzione di un&#39;analisi dei gap e la mappatura delle capacità del nuovo sistema nell&#39;ambiente IT esistente. I passaggi successivi consistono nella creazione di un progetto di soluzione, un progetto di rete fisica che definisce le interfacce per l&#39;integrazione del sistema e un progetto per l&#39;ambiente di distribuzione.",
-    "remark": "Dal punto di vista degli architetti IT, progettare soluzioni di sistema."
+    "description": "Vorrei che assumeste il ruolo di un architetto IT. Vi fornirò alcuni dettagli sulle funzionalità di un'applicazione o di un altro prodotto digitale e il vostro compito sarà quello di capire come integrarlo nell'ambiente IT. Ciò può comportare l'analisi dei requisiti aziendali, l'esecuzione di una gap analysis e la mappatura delle funzionalità del nuovo sistema nell'ambiente IT esistente. I passi successivi consistono nel creare un progetto di soluzione, un blueprint della rete fisica che definisca le interfacce per l'integrazione del sistema e un blueprint dell'ambiente di distribuzione.",
+    "remark": "Progettare soluzioni di sistema dal punto di vista di un architetto IT."
   },
   "ru": {
     "title": "Архитектор ИТ",
     "prompt": "I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я хочу, чтобы вы сыграли роль ИТ-архитектора. Я предоставлю некоторые подробности о функциональности приложения или другого цифрового продукта, а ваша задача — выяснить, как интегрировать его в ИТ-среду. Это может включать анализ бизнес-потребностей, проведение анализа пробелов и сопоставление возможностей новой системы с существующей ИТ-средой. Следующими шагами является создание проекта решения, схемы физической сети, определяющей интерфейсы для системной интеграции, и схемы среды развертывания.",
-    "remark": "С точки зрения ИТ-архитекторов, проектируйте системные решения."
+    "description": "Я хочу, чтобы вы взяли на себя роль ИТ-архитектора. Я предоставлю некоторые сведения о функциональности приложения или другого цифрового продукта, а ваша задача - понять, как интегрировать его в ИТ-среду. Это может включать в себя анализ бизнес-требований, анализ недостатков и сопоставление функциональности новой системы с существующей ИТ-средой. Следующие шаги - создание проекта решения, чертежа физической сети, определяющего интерфейсы для интеграции систем, и чертежа среды развертывания.",
+    "remark": "Проектирование системных решений с точки зрения ИТ-архитектора."
   },
   "pt": {
-    "title": "Arquiteto de TI",
+    "title": "Arquiteto TI",
     "prompt": "I want you to act as an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Quero que você desempenhe o papel de um arquiteto de TI. Fornecerei alguns detalhes sobre a funcionalidade do aplicativo ou outro produto digital, e seu trabalho é descobrir como integrá-lo ao ambiente de TI. Isso pode envolver a análise das necessidades de negócios, a realização de uma análise de lacunas e o mapeamento dos recursos do novo sistema para o ambiente de TI existente. As próximas etapas são criar um design de solução, um blueprint de rede física que defina as interfaces para integração do sistema e um blueprint para o ambiente de implantação.",
-    "remark": "Da perspectiva dos arquitetos de TI, projetar soluções de sistema."
+    "description": "Gostaria que assumisse o papel de um arquiteto de TI. Fornecerei alguns pormenores sobre a funcionalidade de uma aplicação ou de outro produto digital e cabe-lhe a si descobrir como integrá-lo no ambiente informático. Isto pode envolver a análise dos requisitos comerciais, a realização de uma análise de lacunas e o mapeamento da funcionalidade do novo sistema no ambiente de TI existente. Os passos seguintes consistem em criar uma conceção da solução, um projeto de rede física que defina as interfaces para a integração do sistema e um projeto para o ambiente de implementação.",
+    "remark": "Conceber soluções de sistemas na perspetiva de um arquiteto de TI."
   },
   "hi": {
     "title": "वास्तुकार आई.टी",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 95,
-  "weight": 979
+  "weight": 1008
 };
 
 function PromptDetail() {

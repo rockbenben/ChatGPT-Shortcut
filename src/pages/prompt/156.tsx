@@ -26,10 +26,10 @@ const prompt = {
     "remark": "환자의 나이, 생활 방식 및 우려 사항을 입력하고 상대방의 언어적 의사소통 (예: 말더듬) 을 개선하기 위한 계획을 출력합니다."
   },
   "es": {
-    "title": "patólogo del habla",
+    "title": "logopeda",
     "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Spanish. My first suggestion request is .",
-    "description": "Espero que usted, como patólogo del habla y el lenguaje (SLP), sugiera nuevos patrones de lenguaje, estrategias de comunicación y desarrolle confianza en su capacidad para comunicarse sin tartamudear. Debe poder recomendar técnicas, estrategias y otros tratamientos. También debe tener en cuenta la edad, el estilo de vida y las preocupaciones de su paciente cuando brinde asesoramiento.",
-    "remark": "Ingrese la edad, el estilo de vida y las inquietudes del paciente, y genere un plan para mejorar la comunicación lingüística de la otra parte (p. ej., tartamudeo)."
+    "description": "Me gustaría que trabajaras como logopeda (SLP) para sugerir nuevos patrones de habla, estrategias de comunicación y desarrollar la confianza en su capacidad para comunicarse sin tartamudear. Deberá ser capaz de recomendar técnicas, estrategias y otros tratamientos. También deberá tener en cuenta la edad, el estilo de vida y las preocupaciones del paciente a la hora de hacer recomendaciones.",
+    "remark": "Introduce la edad, el estilo de vida y las preocupaciones del paciente y elabora un plan para mejorar la comunicación verbal de la persona (por ejemplo, la tartamudez)."
   },
   "fr": {
     "title": "orthophoniste",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Geben Sie Alter, Lebensstil und Anliegen des Patienten ein und erstellen Sie einen Plan zur Verbesserung der verbalen Kommunikation der Person (z. B. Stottern)."
   },
   "it": {
-    "title": "logopedista",
+    "title": "patologo del linguaggio",
     "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Italian. My first suggestion request is ..",
-    "description": "Spero che tu, in quanto logopedista (SLP), possa suggerire nuovi modelli linguistici, strategie di comunicazione e sviluppare fiducia nella loro capacità di comunicare senza balbettare. Dovresti essere in grado di consigliare tecniche, strategie e altri trattamenti. È inoltre necessario considerare l&#39;età, lo stile di vita e le preoccupazioni del paziente quando si fornisce consulenza.",
-    "remark": "Immettere l&#39;età, lo stile di vita e le preoccupazioni del paziente e produrre un piano per migliorare la comunicazione linguistica dell&#39;altra parte (ad esempio: balbuzie)."
+    "description": "Vorrei che lavorasse come logopedista (SLP) per suggerire nuovi modelli di discorso, strategie di comunicazione e sviluppare la fiducia nella loro capacità di comunicare senza balbuzie. Dovresti essere in grado di consigliare tecniche, strategie e altri trattamenti. Nel formulare le raccomandazioni, dovrete considerare anche l'età, lo stile di vita e le preoccupazioni del paziente.",
+    "remark": "Inserisce l'età, lo stile di vita e le preoccupazioni del paziente ed elabora un piano per migliorare la comunicazione verbale della persona (ad esempio, la balbuzie)."
   },
   "ru": {
-    "title": "дефектолог",
+    "title": "дефектолог-логопед",
     "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ..",
-    "description": "Я надеюсь, что вы, как логопед, сможете предложить новые языковые модели, стратегии общения и развить уверенность в их способности общаться без заикания. Вы должны быть в состоянии рекомендовать методы, стратегии и другие методы лечения. Вы также должны учитывать возраст, образ жизни и проблемы вашего пациента, когда даете совет.",
-    "remark": "Введите возраст, образ жизни и проблемы пациента и выведите план улучшения языкового общения собеседника (например, заикание)."
+    "description": "Я хотел бы, чтобы вы работали в качестве логопеда (SLP), предлагая новые речевые модели, стратегии общения и развивая уверенность в своей способности общаться без заикания. Вы должны уметь рекомендовать техники, стратегии и другие методы лечения. При составлении рекомендаций необходимо учитывать возраст, образ жизни и проблемы пациента.",
+    "remark": "Введите данные о возрасте, образе жизни и проблемах пациента и разработайте план по улучшению его вербальной коммуникации (например, при заикании)."
   },
   "pt": {
-    "title": "fonoaudiólogo",
+    "title": "patologista da fala",
     "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ..",
-    "description": "Espero que você, como fonoaudiólogo, possa sugerir novos padrões de linguagem, estratégias de comunicação e desenvolver confiança em sua capacidade de se comunicar sem gaguejar. Você deve ser capaz de recomendar técnicas, estratégias e outros tratamentos. Você também precisa considerar a idade, o estilo de vida e as preocupações do paciente ao fornecer aconselhamento.",
-    "remark": "Insira a idade, o estilo de vida e as preocupações do paciente e crie um plano para melhorar a linguagem de comunicação da outra parte (por exemplo: gagueira)."
+    "description": "Gostaria que trabalhasse como patologista da fala (SLP) para sugerir novos padrões de fala, estratégias de comunicação e desenvolver a confiança na sua capacidade de comunicar sem gaguejar. Deverá ser capaz de recomendar técnicas, estratégias e outros tratamentos. Também terá de ter em conta a idade, o estilo de vida e as preocupações do paciente ao fazer recomendações.",
+    "remark": "Introduza a idade, o estilo de vida e as preocupações do paciente e elabore um plano para melhorar a comunicação verbal da pessoa (por exemplo, gaguez)."
   },
   "hi": {
     "title": "वाक पैथोलॉजिस्ट",
@@ -84,7 +84,7 @@ const prompt = {
     "doctor"
   ],
   "id": 156,
-  "weight": 79
+  "weight": 84
 };
 
 function PromptDetail() {

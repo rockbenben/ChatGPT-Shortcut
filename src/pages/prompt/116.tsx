@@ -26,10 +26,10 @@ const prompt = {
     "remark": "입력 텍스트를 성경의 단어로 바꾸고 성경의 글쓰기 스타일을 유지합니다."
   },
   "es": {
-    "title": "traductor de la biblia",
+    "title": "Traductor de la Biblia",
     "prompt": "I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is .",
-    "description": "Quiero que actúes como traductor de la Biblia. Te hablaré y traducirás mi texto en las lenguas de la Biblia y responderás a mis correcciones y mejoras. Quiero que reemplaces mi vocabulario y oraciones simplificadas de nivel A0 con palabras y oraciones bíblicas más bellas y elegantes. Mantén el significado igual. Quiero que respondan solo correcciones, mejoras y nada más, no escriban explicaciones.",
-    "remark": "Reemplaza el texto de entrada con palabras de la Biblia y mantiene el estilo de escritura bíblico."
+    "description": "Quiero que actúes como traductor de la Biblia. Hablaré contigo y tú interpretarás mi texto en lenguas bíblicas y responderás a mis correcciones y mejoras. Quiero que sustituyas mis palabras y frases simplificadas de A0 por palabras y frases bíblicas más bonitas y elegantes. Mantén el mismo significado. Quiero que contestes sólo correcciones, mejoras y nada más, y que no escribas explicaciones.",
+    "remark": "Sustituya el texto de entrada por palabras de la Biblia y mantenga el estilo de escritura de la Biblia."
   },
   "fr": {
     "title": "Traducteur de la Bible",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Ersetzen Sie den eingegebenen Text durch Wörter aus der Bibel und behalten Sie den Schreibstil der Bibel bei."
   },
   "it": {
-    "title": "traduttore biblico",
+    "title": "Traduttore della Bibbia",
     "prompt": "I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is ..",
-    "description": "Voglio che tu agisca come traduttore della Bibbia. Parlerò con te e tu tradurrai il mio testo nelle lingue della Bibbia e risponderai alle mie correzioni e miglioramenti. Voglio che tu sostituisca il mio vocabolario e le mie frasi semplificate di livello A0 con parole e frasi bibliche più belle ed eleganti. Mantieni lo stesso significato. Voglio che tu risponda solo correzioni, miglioramenti e nient&#39;altro, non scrivere spiegazioni.",
-    "remark": "Sostituisce il testo di input con parole della Bibbia e mantiene lo stile di scrittura biblico."
+    "description": "Voglio che tu agisca come traduttore della Bibbia. Io parlerò con te e tu interpreterai il mio testo in lingue bibliche e risponderai alle mie correzioni e ai miei miglioramenti. Voglio che tu sostituisca le mie parole e frasi semplificate in A0 con parole e frasi della Bibbia più belle ed eleganti. Mantenete il significato invariato. Voglio che tu risponda solo alle correzioni, ai miglioramenti e a nient'altro, e che non scriva spiegazioni.",
+    "remark": "Sostituire il testo in ingresso con parole della Bibbia e mantenere lo stile di scrittura della Bibbia."
   },
   "ru": {
-    "title": "переводчик Библии",
+    "title": "Переводчик Библии",
     "prompt": "I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is ..",
-    "description": "Я хочу, чтобы вы выступили в роли переводчика Библии. Я поговорю с тобой, а ты переведешь мой текст на языки Библии и ответишь на мои исправления и исправления. Я хочу, чтобы вы заменили мой упрощенный словарный запас и предложения уровня A0 более красивыми и элегантными библейскими словами и предложениями. Сохраняйте смысл прежним. Я хочу, чтобы вы отвечали только исправлениями, улучшениями и никак иначе, пояснений не пишите.",
-    "remark": "Заменяет вводимый текст словами из Библии и сохраняет библейский стиль письма."
+    "description": "Я хочу, чтобы вы выступили в роли переводчика Библии. Я буду говорить с вами, а вы будете толковать мой текст на библейских языках и отвечать на мои исправления и улучшения. Я хочу, чтобы вы заменили мои упрощенные слова и предложения на языке A0 более красивыми и изящными словами и предложениями из Библии. При этом смысл остается прежним. Я хочу, чтобы вы отвечали только на исправления, улучшения и ничего больше, и не писали объяснений.",
+    "remark": "Замените вводимый текст словами из Библии и сохраните стиль написания Библии."
   },
   "pt": {
-    "title": "tradutor da bíblia",
+    "title": "Tradutor da Bíblia",
     "prompt": "I want you to act as an biblical translator. I will speak to you and you will translate it and answer in the corrected and improved version of my text, in a biblical dialect. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, biblical words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is ..",
-    "description": "Eu quero que você atue como um tradutor da Bíblia. Eu falarei com você e você traduzirá meu texto nas línguas da Bíblia e responderá minhas correções e melhorias. Quero que você substitua meu vocabulário e frases simplificadas de nível A0 por palavras e frases bíblicas mais bonitas e elegantes. Mantenha o significado o mesmo. Eu quero que você responda apenas correções, melhorias e nada mais, não escreva explicações.",
-    "remark": "Substitui o texto de entrada por palavras da Bíblia e mantém o estilo de escrita bíblico."
+    "description": "Quero que actues como um tradutor da Bíblia. Eu falo contigo e tu interpretas o meu texto em línguas bíblicas e respondes às minhas correcções e melhorias. Quero que substituas as minhas palavras e frases A0 simplificadas por palavras e frases bíblicas mais bonitas e elegantes. Mantém o mesmo significado. Quero que responda apenas a correcções, melhoramentos, e nada mais, e que não escreva explicações.",
+    "remark": "Substituir o texto de entrada por palavras da Bíblia e manter o estilo de escrita da Bíblia."
   },
   "hi": {
     "title": "बाइबिल अनुवादक",
@@ -84,7 +84,7 @@ const prompt = {
     "language"
   ],
   "id": 116,
-  "weight": 130
+  "weight": 131
 };
 
 function PromptDetail() {

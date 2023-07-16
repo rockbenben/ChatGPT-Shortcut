@@ -26,10 +26,10 @@ const prompt = {
     "remark": "의미적 관련성에 따라 키워드를 클러스터링하고 그룹화합니다."
   },
   "es": {
-    "title": "Agrupación de relevancia semántica",
+    "title": "Agrupación por relevancia semántica",
     "prompt": "The entire conversation and instructions should be provided in Spanish. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
-    "description": "Según la relevancia semántica, se clasifican las siguientes palabras clave. [Palabras clave]",
-    "remark": "Las palabras clave se agrupan y agrupan según su relevancia semántica."
+    "description": "Las siguientes palabras clave se clasifican según su relevancia semántica. [palabra clave]",
+    "remark": "Las palabras clave se agrupan según su relevancia semántica."
   },
   "fr": {
     "title": "Regroupement par pertinence sémantique",
@@ -46,19 +46,19 @@ const prompt = {
   "it": {
     "title": "Clustering di rilevanza semantica",
     "prompt": "The entire conversation and instructions should be provided in Italian. Cluster the following keywords into groups based on their semantic relevance: [keywords]..",
-    "description": "In base alla rilevanza semantica, vengono classificate le seguenti parole chiave. [Parole chiave]",
+    "description": "Le seguenti parole chiave sono classificate in base alla loro rilevanza semantica. [parola chiave]",
     "remark": "Le parole chiave sono raggruppate e raggruppate in base alla rilevanza semantica."
   },
   "ru": {
     "title": "Кластеризация семантической релевантности",
     "prompt": "The entire conversation and instructions should be provided in Russian. Cluster the following keywords into groups based on their semantic relevance: [keywords]..",
-    "description": "По семантической релевантности классифицируются следующие ключевые слова. [Ключевые слова]",
-    "remark": "Ключевые слова сгруппированы и сгруппированы в соответствии с семантической релевантностью."
+    "description": "Следующие ключевые слова распределены по категориям в соответствии с их семантической релевантностью. [ключевое слово]",
+    "remark": "Ключевые слова объединяются в кластеры и группируются по семантической релевантности."
   },
   "pt": {
     "title": "Agrupamento de relevância semântica",
     "prompt": "The entire conversation and instructions should be provided in Portuguese. Cluster the following keywords into groups based on their semantic relevance: [keywords]..",
-    "description": "De acordo com a relevância semântica, as seguintes palavras-chave são classificadas. [Palavras-chave]",
+    "description": "As seguintes palavras-chave são categorizadas de acordo com a sua relevância semântica. [palavra-chave]",
     "remark": "As palavras-chave são agrupadas e agrupadas de acordo com a relevância semântica."
   },
   "hi": {

@@ -26,10 +26,10 @@ const prompt = {
     "remark": "사용자 경험을 개선하기 위해 웹 개발 및 디자인 관점에서 인터페이스 및 기능에 대한 조언을 제공합니다."
   },
   "es": {
-    "title": "Interfaz: Diseño Web",
+    "title": "Front-end: diseño web",
     "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Spanish. My first request is .",
-    "description": "Espero que puedas actuar como consultor de diseño web. Le proporcionaré los detalles relevantes de una organización que necesita asistencia para diseñar o volver a desarrollar un sitio web, y su función será sugerir la interfaz y la funcionalidad más apropiadas para mejorar la experiencia del usuario y al mismo tiempo cumplir con los objetivos comerciales de la empresa. Debe usar su conocimiento de los principios de diseño de UX/UI, lenguajes de codificación, herramientas de desarrollo de sitios web, etc. para desarrollar un plan integral para el proyecto.",
-    "remark": "Desde una perspectiva de desarrollo y diseño web, proporcione sugerencias funcionales y de interfaz destinadas a mejorar la experiencia del usuario."
+    "description": "Me gustaría que actuaras como consultor de diseño web. Te facilitaré los datos pertinentes de una organización que necesita ayuda para el diseño o la remodelación de un sitio web, y tu función consistirá en recomendar la interfaz y la funcionalidad más adecuadas que mejoren la experiencia del usuario y cumplan también los objetivos comerciales de la empresa. Deberá utilizar sus conocimientos de los principios de diseño UX/UI, lenguajes de codificación, herramientas de desarrollo web, etc. para desarrollar un plan integral para el proyecto.",
+    "remark": "Proporcionar recomendaciones de interfaz y funcionalidad destinadas a mejorar la experiencia del usuario desde una perspectiva de desarrollo y diseño web."
   },
   "fr": {
     "title": "Front-end : conception de sites web",
@@ -44,22 +44,22 @@ const prompt = {
     "remark": "Bereitstellung von Empfehlungen für Schnittstellen und Funktionen zur Verbesserung der Benutzerfreundlichkeit aus Sicht der Webentwicklung und des Designs."
   },
   "it": {
-    "title": "Front-End: Web Design",
+    "title": "Front-end: web design",
     "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Italian. My first request is ..",
-    "description": "Spero che tu possa agire come consulente di web design. Ti fornirò i dettagli rilevanti di un&#39;organizzazione che necessita di assistenza nella progettazione o nella riqualificazione di un sito Web e il tuo ruolo sarà quello di suggerire l&#39;interfaccia e le funzionalità più appropriate per migliorare l&#39;esperienza dell&#39;utente e allo stesso tempo raggiungere gli obiettivi di business dell&#39;azienda. Dovresti utilizzare la tua conoscenza dei principi di progettazione di UX/UI, linguaggi di codifica, strumenti di sviluppo di siti Web, ecc. per sviluppare un piano completo per il progetto.",
-    "remark": "Dal punto di vista dello sviluppo e del design web, fornire interfaccia e suggerimenti funzionali volti a migliorare l&#39;esperienza dell&#39;utente."
+    "description": "Vorrei che lei agisse come consulente di web design. Ti fornirò i dettagli di un'organizzazione che ha bisogno di assistenza per la progettazione o la riqualificazione di un sito web e il tuo ruolo sarà quello di consigliare l'interfaccia e le funzionalità più appropriate per migliorare l'esperienza dell'utente e soddisfare gli obiettivi aziendali. Dovrete utilizzare la vostra conoscenza dei principi di progettazione UX/UI, dei linguaggi di codifica, degli strumenti di sviluppo web, ecc. per sviluppare un piano completo per il progetto.",
+    "remark": "Fornire raccomandazioni sull'interfaccia e sulle funzionalità volte a migliorare l'esperienza dell'utente dal punto di vista dello sviluppo web e del design."
   },
   "ru": {
-    "title": "Внешний интерфейс: веб-дизайн",
+    "title": "Front-end: веб-дизайн",
     "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Russian. My first request is ..",
-    "description": "Я надеюсь, что вы можете выступать в качестве консультанта по веб-дизайну. Я предоставлю вам соответствующие сведения об организации, которой требуется помощь в проектировании или реконструкции веб-сайта, и ваша роль будет заключаться в том, чтобы предложить наиболее подходящий интерфейс и функциональные возможности для улучшения взаимодействия с пользователем, а также для достижения бизнес-целей компании. Вы должны использовать свои знания принципов проектирования UX/UI, языков программирования, инструментов разработки веб-сайтов и т. д., чтобы разработать комплексный план проекта.",
-    "remark": "С точки зрения веб-разработки и дизайна предоставьте интерфейс и функциональные предложения, направленные на улучшение взаимодействия с пользователем."
+    "description": "Я хотел бы, чтобы вы выступили в качестве консультанта по веб-дизайну. Я предоставлю вам соответствующую информацию об организации, которой требуется помощь в разработке или обновлении веб-сайта, а ваша роль будет заключаться в том, чтобы порекомендовать наиболее подходящий интерфейс и функциональность, которые улучшат пользовательский опыт, а также будут отвечать бизнес-целям компании. Вы должны использовать свои знания о принципах проектирования UX/UI, языках кодирования, инструментах веб-разработки и т.д. для разработки комплексного плана проекта.",
+    "remark": "Предоставление рекомендаций по интерфейсу и функциональности, направленных на улучшение пользовательского опыта с точки зрения веб-разработки и дизайна."
   },
   "pt": {
-    "title": "Front-End: Web Design",
+    "title": "Front-end: conceção web",
     "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Portuguese. My first request is ..",
-    "description": "Espero que você possa atuar como consultor de web design. Fornecerei a você os detalhes relevantes de uma organização que precisa de assistência para projetar ou redesenvolver um site, e sua função será sugerir a interface e a funcionalidade mais apropriadas para aprimorar a experiência do usuário e, ao mesmo tempo, atender aos objetivos de negócios da empresa. Você deve usar seu conhecimento dos princípios de design UX/UI, linguagens de codificação, ferramentas de desenvolvimento de sites etc. para desenvolver um plano abrangente para o projeto.",
-    "remark": "Do ponto de vista do desenvolvimento e design da web, fornecer interface e sugestões funcionais destinadas a melhorar a experiência do usuário."
+    "description": "Gostaria que actuasse como consultor de web design. Fornecer-lhe-ei os dados relevantes de uma organização que necessita de assistência na conceção ou remodelação de um sítio Web e o seu papel consistirá em recomendar a interface e a funcionalidade mais adequadas para melhorar a experiência do utilizador e também para cumprir os objectivos comerciais da empresa. Deve utilizar os seus conhecimentos sobre princípios de design UX/UI, linguagens de codificação, ferramentas de desenvolvimento Web, etc., para desenvolver um plano abrangente para o projeto.",
+    "remark": "Fornecer recomendações sobre a interface e a funcionalidade com vista a melhorar a experiência do utilizador numa perspetiva de desenvolvimento e conceção da Web."
   },
   "hi": {
     "title": "फ्रंट एंड: वेब डिज़ाइन",
@@ -84,7 +84,7 @@ const prompt = {
     "code"
   ],
   "id": 93,
-  "weight": 684
+  "weight": 696
 };
 
 function PromptDetail() {
