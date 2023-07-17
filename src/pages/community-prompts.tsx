@@ -28,9 +28,11 @@ const { Search } = Input;
 const { Text } = Typography;
 
 export default function CommunityPrompts() {
-  const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
+  const TITLE =
+    "AiShort Community Prompts - Share and find interesting prompts";
   const DESCRIPTION = translate({
-    message: "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+    message:
+      "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。",
   });
   const [userprompts, setUserPrompts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -147,6 +149,14 @@ export default function CommunityPrompts() {
     onClick: handleOrderClick,
   };
 
+  // 截取字符串的函数
+  const truncate = (str, num) => {
+    if (str.length <= num) {
+      return str;
+    }
+    return str.slice(0, num) + "...";
+  };
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main
@@ -210,7 +220,17 @@ export default function CommunityPrompts() {
                     </p>
                   )}
                   <p className={styles.showcaseCardBody}>
-                    {UserPrompt.attributes.description}
+                    {UserPrompt.attributes.notes && (
+                      <Tooltip
+                        placement='bottom'
+                        title={truncate(UserPrompt.attributes.notes, 300)}
+                        overlayStyle={{ maxWidth: 450 }}>
+                        <Text>{UserPrompt.attributes.description}</Text>
+                      </Tooltip>
+                    )}
+                    {!UserPrompt.attributes.notes && (
+                      <Text>{UserPrompt.attributes.description}</Text>
+                    )}
                   </p>
                 </div>
                 <div className={clsx(styles.showcaseCardBodyActions)}>
@@ -268,8 +288,15 @@ export default function CommunityPrompts() {
             onChange={onChangePage}
           />
         </div>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
-          <Text type='secondary' style={{ color: "var(--ifm-color-secondary)", fontSize: '10px' }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}>
+          <Text
+            type='secondary'
+            style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
             {translate({
               message:
                 "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
