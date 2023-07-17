@@ -8,7 +8,7 @@ import { submitPrompt } from "@site/src/api";
 import { AuthContext } from "./AuthContext";
 
 const UserStatus = () => {
-  const { userAuth, setUserAuth } = useContext(AuthContext);
+  const { userAuth, setUserAuth, refreshUserAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +26,8 @@ const UserStatus = () => {
     setLoading(true);
     try {
       await submitPrompt(values);
-      window.location.reload();
+      await refreshUserAuth();
+      //window.location.reload();
       message.success(
         <Translate id='message.success'>词条提交成功！</Translate>
       );
@@ -46,13 +47,19 @@ const UserStatus = () => {
     }
   };
 
-  if (userAuth && userAuth.data) {
+  if (userAuth === undefined) {
+    // 如果 userAuth 是 undefined，说明状态正在加载
+    return <div>Loading...</div>;
+  } else if (userAuth) {
     return (
       <div>
         <Link to='/user' style={{ marginRight: "10px" }}>
           <Translate id='link.user'>用户界面</Translate>
         </Link>
-        <Link className='button button--secondary' onClick={handleLogout} style={{ marginRight: "10px" }}>
+        <Link
+          className='button button--secondary'
+          onClick={handleLogout}
+          style={{ marginRight: "10px" }}>
           <Translate id='button.logout'>注销</Translate>
         </Link>
         <Link className='button button--primary' onClick={() => setOpen(true)}>
@@ -159,7 +166,10 @@ const UserStatus = () => {
   } else {
     return (
       <div>
-        <Link className='button button--secondary' onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+        <Link
+          className='button button--secondary'
+          onClick={() => setOpen(true)}
+          style={{ marginRight: "10px" }}>
           <Translate id='button.login'>登录</Translate>
         </Link>
         <Link

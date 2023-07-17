@@ -1,9 +1,17 @@
-import React, { useContext, useState } from "react";
-import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
+import React, { useState } from "react";
+import {
+  Button,
+  Card,
+  Form,
+  Input,
+  message,
+  Tabs,
+  Checkbox,
+  Space,
+} from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import Cookies from "js-cookie";
 import { login, register, forgotPassword } from "@site/src/api";
-import { AuthContext } from "./AuthContext";
 
 const rules = {
   username: [
@@ -33,13 +41,11 @@ const rules = {
 };
 
 const LoginPage = () => {
-  const { setUserAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const handleSuccess = (username, jwt) => {
     Cookies.set("auth_token", jwt, { expires: 365 });
     Cookies.set("username", username, { expires: 365 });
-    setUserAuth({ username, jwt });
     // 发送消息给扩展
     window.postMessage({ action: "login", username, jwt }, "*");
     window.location.reload();
@@ -50,10 +56,14 @@ const LoginPage = () => {
       if (err.response.status === 400) {
         message.error(err.response.data.error.message);
       } else {
-        message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));
+        message.error(
+          translate({ id: "message.error", message: "发生错误，请稍后再试" })
+        );
       }
     } catch (err) {
-      message.error(translate({ id: "message.error", message: "处理错误时发生错误" }));
+      message.error(
+        translate({ id: "message.error", message: "处理错误时发生错误" })
+      );
     }
   };
 
@@ -71,21 +81,43 @@ const LoginPage = () => {
   };
 
   const onFinishLogin = async (values) => {
-    handleAuth(values, login, <Translate id='message.loginSuccess'>登录成功！</Translate>);
+    handleAuth(
+      values,
+      login,
+      <Translate id='message.loginSuccess'>登录成功！</Translate>
+    );
   };
 
   const onFinishRegister = async (values) => {
-    handleAuth(values, register, <Translate id='message.registerSuccess'>注册成功！</Translate>);
+    handleAuth(
+      values,
+      register,
+      <Translate id='message.registerSuccess'>注册成功！</Translate>
+    );
   };
 
   const handleForgotPassword = async (values) => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(<Translate id='message.forgotPassword.success'>密码重置邮件已发送！</Translate>);
+      message.success(
+        <Translate id='message.forgotPassword.success'>
+          密码重置邮件已发送！
+        </Translate>
+      );
     } catch (error) {
-      console.error(translate({ id: "error.forgotPassword", message: "Error sending forgot password email:" }), error);
-      message.error(<Translate id='message.forgotPassword.error'>发送密码重置邮件失败，请稍后重试</Translate>);
+      console.error(
+        translate({
+          id: "error.forgotPassword",
+          message: "Error sending forgot password email:",
+        }),
+        error
+      );
+      message.error(
+        <Translate id='message.forgotPassword.error'>
+          发送密码重置邮件失败，请稍后重试
+        </Translate>
+      );
     } finally {
       setLoading(false);
     }
@@ -107,7 +139,9 @@ const LoginPage = () => {
         />
       </Form.Item>
       <Form.Item name='password' rules={rules.password}>
-        <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
+        <Input.Password
+          placeholder={translate({ id: "input.password", message: "密码" })}
+        />
       </Form.Item>
       <Form.Item>
         <Space size='middle'>
@@ -133,10 +167,14 @@ const LoginPage = () => {
         />
       </Form.Item>
       <Form.Item name='email' rules={rules.email}>
-        <Input placeholder={translate({ id: "input.email", message: "邮箱" })} />
+        <Input
+          placeholder={translate({ id: "input.email", message: "邮箱" })}
+        />
       </Form.Item>
       <Form.Item name='password' rules={rules.password}>
-        <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
+        <Input.Password
+          placeholder={translate({ id: "input.password", message: "密码" })}
+        />
       </Form.Item>
       <Form.Item
         name='agreement'
@@ -189,7 +227,9 @@ const LoginPage = () => {
             }),
           },
         ]}>
-        <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
+        <Input
+          placeholder={translate({ id: "placeholder.email", message: "邮箱" })}
+        />
       </Form.Item>
       <Form.Item>
         <Button htmlType='submit' loading={loading}>
@@ -217,8 +257,15 @@ const LoginPage = () => {
   ];
 
   return (
-    <Card title={<Translate id='card.welcome'>欢迎</Translate>} bordered={false}>
-      <Tabs defaultActiveKey='1' activeKey={activeTab} onChange={setActiveTab} items={items} />
+    <Card
+      title={<Translate id='card.welcome'>欢迎</Translate>}
+      bordered={false}>
+      <Tabs
+        defaultActiveKey='1'
+        activeKey={activeTab}
+        onChange={setActiveTab}
+        items={items}
+      />
     </Card>
   );
 };

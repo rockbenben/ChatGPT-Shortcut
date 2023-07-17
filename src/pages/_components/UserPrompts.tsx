@@ -26,7 +26,7 @@ import {
 } from "@ant-design/icons";
 
 export default function UserPromptsPage() {
-  const userAuth = useContext(AuthContext);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
@@ -35,8 +35,9 @@ export default function UserPromptsPage() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (userAuth && userAuth.userAuth.data.userprompts) {
-      setUserPrompts(userAuth.userAuth.data.userprompts);
+    console.log('userAuth:', userAuth); // 输出 userAuth 的内容
+    if (userAuth && userAuth.data.userprompts) {
+      setUserPrompts(userAuth.data.userprompts);
     }
   }, [userAuth]);
 
@@ -63,7 +64,8 @@ export default function UserPromptsPage() {
     setLoading(true);
     try {
       await updatePrompt(editingPromptId, values);
-      window.location.reload();
+      await refreshUserAuth();
+      //window.location.reload();
       message.success(
         <Translate id='message.success'>词条更新成功！</Translate>
       );
@@ -94,7 +96,8 @@ export default function UserPromptsPage() {
         setLoading(true);
         try {
           await deletePrompt(id);
-          window.location.reload();
+          await refreshUserAuth();
+          //window.location.reload();
           message.success(
             <Translate id='message.deletePrompt.success'>
               Prompt successfully deleted!
