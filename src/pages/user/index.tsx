@@ -1,11 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AuthContext } from "./AuthContext";
 import Layout from "@theme/Layout";
-import { Card, Form, Input, Button, message, Tabs, Spin } from "antd";
+import { Card, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { changePassword, forgotPassword } from "@site/src/api";
-import { HomeOutlined } from "@ant-design/icons";
+import { HomeOutlined, StarOutlined } from "@ant-design/icons";
+import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
   const { userAuth } = useContext(AuthContext);
@@ -185,9 +185,14 @@ const UserProfile = () => {
   return (
     <Layout>
       <div style={{ width: 600, margin: "auto", padding: "50px 0" }}>
+      <Space>
         <Link to='/'>
           <HomeOutlined /> <Translate id='link.home'>返回首页</Translate>
         </Link>
+        <Link to='/user/favorite'>
+          <StarOutlined /> <Translate id='link.myfavorite'>我的收藏</Translate>
+        </Link>
+        </Space>
         <Card title={translate({ id: "title.userInfo", message: "用户信息" })}>
           <p>
             <Translate id='userInfo.username'>用户名：</Translate>{" "}
@@ -206,4 +211,11 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default function UserPapge() {
+  return (
+    <AuthProvider>
+      <UserProfile />
+    </AuthProvider>
+  );
+}
+

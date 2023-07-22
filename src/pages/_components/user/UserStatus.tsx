@@ -1,13 +1,24 @@
 import React, { useContext, useState } from "react";
 import Cookies from "js-cookie";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  message,
+  Modal,
+  Typography,
+  Switch,
+  Space,
+} from "antd";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt } from "@site/src/api";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "../AuthContext";
 
-const UserStatus = () => {
+const UserStatus = ({
+  hideLinks = { userCenter: false, myFavorite: false },
+}) => {
   const { userAuth, setUserAuth, refreshUserAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -53,18 +64,26 @@ const UserStatus = () => {
   } else if (userAuth) {
     return (
       <div>
-        <Link to='/user' style={{ marginRight: "10px" }}>
-          <Translate id='link.user'>用户界面</Translate>
-        </Link>
-        <Link
-          className='button button--secondary'
-          onClick={handleLogout}
-          style={{ marginRight: "10px" }}>
-          <Translate id='button.logout'>注销</Translate>
-        </Link>
-        <Link className='button button--primary' onClick={() => setOpen(true)}>
-          <Translate id='link.addprompt'>添加自定义提示词</Translate>
-        </Link>
+        <Space>
+          {!hideLinks.userCenter && (
+            <Link to='/user'>
+              <Translate id='link.user'>个人中心</Translate>
+            </Link>
+          )}
+          {!hideLinks.myFavorite && (
+            <Link to='/user/favorite'>
+              <Translate id='link.myfavorite'>我的收藏</Translate>
+            </Link>
+          )}
+          <Link className='button button--secondary' onClick={handleLogout}>
+            <Translate id='button.logout'>注销</Translate>
+          </Link>
+          <Link
+            className='button button--primary'
+            onClick={() => setOpen(true)}>
+            <Translate id='link.addprompt'>添加自定义提示词</Translate>
+          </Link>
+        </Space>
         <Modal
           title={translate({
             id: "modal.addprompt.title",

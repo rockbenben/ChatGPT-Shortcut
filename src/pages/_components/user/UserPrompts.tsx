@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import styles from "./ShowcaseCard/styles.module.css";
+import styles from "../ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
 import {
   Form,
@@ -16,7 +16,7 @@ import {
   Switch,
 } from "antd";
 import Heading from "@theme/Heading";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "../AuthContext";
 import { updatePrompt, deletePrompt } from "@site/src/api";
 import {
   DeleteOutlined,
@@ -30,12 +30,10 @@ export default function UserPromptsPage() {
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
-  //console.log('userAuth:', userAuth);
 
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    console.log('userAuth:', userAuth); // 输出 userAuth 的内容
     if (userAuth && userAuth.data.userprompts) {
       setUserPrompts(userAuth.data.userprompts);
     }
