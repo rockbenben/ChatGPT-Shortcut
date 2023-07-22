@@ -29,8 +29,8 @@ import ShowcaseFilterToggle, {
 } from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
 import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
-import UserStatus from "@site/src/pages/_components/UserStatus";
-import UserPrompts from "@site/src/pages/_components/UserPrompts";
+import UserStatus from "@site/src/pages/_components/user/UserStatus";
+import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import {
   AuthContext,
   AuthProvider,
@@ -150,7 +150,7 @@ function ShowcaseHeader() {
         AI Short
       </Heading>
       <p>{DESCRIPTION}</p>
-      <UserStatus />
+      <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
     </section>
   );
 }

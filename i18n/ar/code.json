@@ -1,5 +1,5 @@
 {
-  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
+  "description.communityPrompts": {
     "message": "استكشف مجموعة من الكلمات السريعة المبتكرة التي يشاركها مستخدمو Aishort. يمكن أن تلهمك هذه الكلمات السريعة الفريدة والممتعة عند إنشاء مقاطع فيديو قصيرة وروايات وألعاب والمزيد. صوّت لنصائحك المفضلة ، انسخها وشاركها مع أصدقائك. دع Aishort يساعدك على فتح الباب للإبداع وخلق عمل رائع معًا."
   },
   "field.id": {
@@ -283,12 +283,6 @@
   },
   "showcase.tag.contribute.description": {
     "message": "يمكن أن تساعدنا مساهمات الجميع في تطوير الأفكار"
-  },
-  "Personal": {
-    "message": "شخصي"
-  },
-  "showcase.tag.personal.description": {
-    "message": "الاستخدام الشخصي غير المنتج ، للإشارة فقط"
   },
   "Latest": {
     "message": "أحدث"
@@ -773,5 +767,11 @@
   "theme.tags.tagsPageTitle": {
     "message": "الوسوم",
     "description": "The title of the tag list page"
+  },
+  "link.myfavorite": {
+    "message": "مفضلتي"
+  },
+  "移除收藏": {
+    "message": "يزيل"
   }
 }

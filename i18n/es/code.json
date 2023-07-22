@@ -1,7 +1,4 @@
 {
-  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
-    "message": "Explora la colección de prompts innovadores compartidos por los usuarios de Aishort, estos prompts únicos y divertidos pueden inspirarte a la hora de crear vídeos cortos, novelas, juegos y mucho más. Vota por tus prompts favoritos, cópialos y compártelos con tus amigos. Deja que Aishort te ayude a abrir la puerta a la creatividad y a crear juntos grandes obras."
-  },
   "field.id": {
     "message": "Tiempo de liberación"
   },
@@ -283,12 +280,6 @@
   },
   "showcase.tag.contribute.description": {
     "message": "Las contribuciones de todos ustedes pueden ayudarnos a desarrollar ideas"
-  },
-  "Personal": {
-    "message": "Personal"
-  },
-  "showcase.tag.personal.description": {
-    "message": "Sólo para uso personal no productivo"
   },
   "Latest": {
     "message": "Última"
@@ -773,5 +764,14 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
+  },
+  "description.communityPrompts": {
+    "message": "Explora la colección de prompts innovadores compartidos por los usuarios de Aishort, estos prompts únicos y divertidos pueden inspirarte a la hora de crear vídeos cortos, novelas, juegos y mucho más. Vota por tus prompts favoritos, cópialos y compártelos con tus amigos. Deja que Aishort te ayude a abrir la puerta a la creatividad y a crear juntos grandes obras."
+  },
+  "link.myfavorite": {
+    "message": "Mis favoritos"
+  },
+  "移除收藏": {
+    "message": "Eliminar"
   }
 }

@@ -1,7 +1,4 @@
 {
-  "探索由 Aishort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。": {
-    "message": "Explorez la collection d'idées novatrices partagées par les utilisateurs d'Aishort. Ces idées uniques et amusantes peuvent vous inspirer pour la création de courtes vidéos, de romans, de jeux et bien plus encore. Votez pour vos messages préférés, copiez-les et partagez-les avec vos amis. Laissez Aishort vous aider à ouvrir la porte de la créativité et à créer de grandes œuvres ensemble."
-  },
   "field.id": {
     "message": "Heure de sortie"
   },
@@ -283,12 +280,6 @@
   },
   "showcase.tag.contribute.description": {
     "message": "Les contributions de chacun d'entre vous peuvent nous aider à développer des idées"
-  },
-  "Personal": {
-    "message": "Personnel"
-  },
-  "showcase.tag.personal.description": {
-    "message": "Usage personnel et non productif uniquement"
   },
   "Latest": {
     "message": "Dernières nouvelles"
@@ -773,5 +764,14 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "description.communityPrompts": {
+    "message": "Explorez la collection d'idées novatrices partagées par les utilisateurs d'Aishort. Ces idées uniques et amusantes peuvent vous inspirer pour la création de courtes vidéos, de romans, de jeux et bien plus encore. Votez pour vos messages préférés, copiez-les et partagez-les avec vos amis. Laissez Aishort vous aider à ouvrir la porte de la créativité et à créer de grandes œuvres ensemble."
+  },
+  "link.myfavorite": {
+    "message": "Mes favoris"
+  },
+  "移除收藏": {
+    "message": "Retirer"
   }
 }
