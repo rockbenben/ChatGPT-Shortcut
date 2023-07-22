@@ -11,6 +11,12 @@ const config = {
   },
 };
 
+// 清除用户缓存信息：添加/更新收藏、添加/更新/删除自定义 prompt
+function clearUserAllInfoCache() {
+  localStorage.removeItem("userAllInfo");
+  localStorage.removeItem("userAllInfoCacheExpiration");
+}
+
 // 登陆用户获取
 export async function getUserAllInfo() {
   try {
@@ -36,7 +42,7 @@ export async function getUserAllInfo() {
     } else {
       // 如果缓存不存在或已过期，那么发送请求获取新的数据
       const response = await axios.get(
-        `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[userprompts]=*`,
+        `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts]=*`,
         config
       );
       // 将新的数据存入缓存，设置缓存过期时间为 24 小时后
@@ -54,22 +60,20 @@ export async function getUserAllInfo() {
   }
 }
 
-export async function createFavorite(loves) {
+// 收藏精选prompt、社区prompt
+export async function createFavorite(loves, isComm = false) {
   try {
     const response = await axios.post(
       `${API_URL}/favorites`,
       {
         data: {
-          loves: loves,
+          [isComm ? "commLoves" : "loves"]: loves,
         },
       },
       config
     );
 
-    // 在添加新收藏后，清除缓存的用户信息
-    localStorage.removeItem("userAllInfo");
-    localStorage.removeItem("userAllInfoCacheExpiration");
-
+    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error creating favorite:", error);
@@ -77,22 +81,20 @@ export async function createFavorite(loves) {
   }
 }
 
-export async function updateFavorite(favoriteId, loves) {
+// 更新收藏精选prompt、社区prompt
+export async function updateFavorite(favoriteId, loves, isComm = false) {
   try {
     const response = await axios.put(
       `${API_URL}/favorites/${favoriteId}`,
       {
         data: {
-          loves: loves,
+          [isComm ? "commLoves" : "loves"]: loves,
         },
       },
       config
     );
 
-    // 在更新收藏后，清除缓存的用户信息
-    localStorage.removeItem("userAllInfo");
-    localStorage.removeItem("userAllInfoCacheExpiration");
-
+    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating favorite:", error);
@@ -100,8 +102,75 @@ export async function updateFavorite(favoriteId, loves) {
   }
 }
 
-// 获取 userprompts
-export async function getUserPrompts(
+/* 管理自定义prompt（userprompt） */
+// 提交自定义prompt
+export async function submitPrompt(values) {
+  try {
+    const response = await axios.post(
+      `${API_URL}/userprompts`,
+      {
+        data: {
+          title: values.title,
+          description: values.description,
+          remark: values.remark,
+          notes: values.notes,
+          share: values.share,
+          promptLength: values.description.length,
+        },
+      },
+      config
+    );
+
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error submitting prompt:", error);
+    throw error;
+  }
+}
+
+// 更新自定义prompt
+export async function updatePrompt(id, values) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/userprompts/${id}`,
+      {
+        data: {
+          title: values.title,
+          description: values.description,
+          remark: values.remark,
+          notes: values.notes,
+          share: values.share,
+          promptLength: values.description.length,
+        },
+      },
+      config
+    );
+
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error updating prompt:", error);
+    throw error;
+  }
+}
+
+// 删除自定义prompt
+export async function deletePrompt(id) {
+  try {
+    const response = await axios.delete(`${API_URL}/userprompts/${id}`, config);
+
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error deleting prompt:", error);
+    throw error;
+  }
+}
+
+/* Community-prompts 页面管理 */
+// 获取 Community-prompts
+export async function getCommPrompts(
   page,
   pageSize,
   sortField,
@@ -146,74 +215,77 @@ export async function getUserPrompts(
   }
 }
 
-export async function submitPrompt(values) {
-  try {
-    const response = await axios.post(
-      `${API_URL}/userprompts`,
-      {
-        data: {
-          title: values.title,
-          description: values.description,
-          remark: values.remark,
-          notes: values.notes,
-          share: values.share,
-          promptLength: values.description.length,
-        },
-      },
-      config
-    );
+// 批量获取精选prompt
+export function getCards(ids, lang) {
+  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
+  const cacheKey = `cards_${ids.join("_")}_${lang}`;
+  const expirationKey = `${cacheKey}_expiration`;
 
-    // 在提交新的提示后，清除缓存的用户信息
-    localStorage.removeItem("userAllInfo");
-    localStorage.removeItem("userAllInfoCacheExpiration");
+  // 从 localStorage 中获取缓存的数据和到期时间
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+  const expirationDate = localStorage.getItem(expirationKey);
 
-    return response;
-  } catch (error) {
-    console.error("Error submitting prompt:", error);
-    throw error;
+  // 检查缓存的数据是否还有效
+  if (
+    cachedData &&
+    expirationDate &&
+    new Date().getTime() < Number(expirationDate)
+  ) {
+    // 如果有效，那么直接使用缓存的数据
+    return Promise.resolve(cachedData);
+  } else {
+    // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
+    return axios
+      .post(`${API_URL}/cards/bulk`, { ids, lang })
+      .then((response) => {
+        // 将获取到的数据和新的到期时间存储到 localStorage 中
+        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
+        localStorage.setItem(cacheKey, JSON.stringify(response));
+        localStorage.setItem(expirationKey, String(nextExpirationDate));
+
+        return response;
+      })
+      .catch((error) => {
+        console.error("Error fetching cards:", error);
+        throw error;
+      });
   }
 }
 
-export async function updatePrompt(id, values) {
-  try {
-    const response = await axios.put(
-      `${API_URL}/userprompts/${id}`,
-      {
-        data: {
-          title: values.title,
-          description: values.description,
-          remark: values.remark,
-          notes: values.notes,
-          share: values.share,
-          promptLength: values.description.length,
-        },
-      },
-      config
-    );
+// 批量获取社区 Prompt
+export function getSelectComms(ids) {
+  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
+  const cacheKey = `selectComms_${ids.join("_")}`;
+  const expirationKey = `${cacheKey}_expiration`;
 
-    // 在更新提示后，清除缓存的用户信息
-    localStorage.removeItem("userAllInfo");
-    localStorage.removeItem("userAllInfoCacheExpiration");
+  // 从 localStorage 中获取缓存的数据和到期时间
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+  const expirationDate = localStorage.getItem(expirationKey);
 
-    return response;
-  } catch (error) {
-    console.error("Error updating prompt:", error);
-    throw error;
-  }
-}
+  // 检查缓存的数据是否还有效
+  if (
+    cachedData &&
+    expirationDate &&
+    new Date().getTime() < Number(expirationDate)
+  ) {
+    // 如果有效，那么直接使用缓存的数据
+    return Promise.resolve(cachedData);
+  } else {
+    // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
+    return axios
+      .post(`${API_URL}/userprompts/bulk`, { ids })
+      .then((response) => {
+        // 将获取到的数据和新的到期时间存储到 localStorage 中
+        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
+        localStorage.setItem(cacheKey, JSON.stringify(response));
+        localStorage.setItem(expirationKey, String(nextExpirationDate));
 
-export async function deletePrompt(id) {
-  try {
-    const response = await axios.delete(`${API_URL}/userprompts/${id}`, config);
-
-    // 在删除提示后，清除缓存的用户信息
-    localStorage.removeItem("userAllInfo");
-    localStorage.removeItem("userAllInfoCacheExpiration");
-
-    return response;
-  } catch (error) {
-    console.error("Error deleting prompt:", error);
-    throw error;
+        return response;
+      })
+      .catch((error) => {
+        console.error("Error fetching select comms:", error);
+        throw error;
+      });
   }
 }
 
@@ -239,17 +311,18 @@ export async function voteOnUserPrompt(promptId, action) {
   }
 }
 
-export async function login(values) {
-  return axios.post(`${API_URL}/auth/local`, {
-    identifier: values.username,
-    password: values.password,
-  });
-}
-
+/* 用户管理：注册、登录、更改密码、重置密码 */
 export async function register(values) {
   return axios.post(`${API_URL}/auth/local/register`, {
     username: values.username,
     email: values.email,
+    password: values.password,
+  });
+}
+
+export async function login(values) {
+  return axios.post(`${API_URL}/auth/local`, {
+    identifier: values.username,
     password: values.password,
   });
 }
@@ -284,7 +357,6 @@ export async function forgotPassword(email) {
   }
 }
 
-// 重置用户密码
 export async function resetPassword(values) {
   try {
     const response = await axios.post(`${API_URL}/auth/reset-password`, {
@@ -299,7 +371,8 @@ export async function resetPassword(values) {
   }
 }
 
-// copy count api
+/* 精选提示词的 copy count */
+// 获取所有 cards 的 copy count
 export async function fetchAllCopyCounts() {
   try {
     // 首先从 localStorage 中获取缓存的数据和到期时间

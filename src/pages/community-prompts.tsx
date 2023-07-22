@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
-import { getUserPrompts, voteOnUserPrompt } from "@site/src/api";
+import {
+  getCommPrompts,
+  voteOnUserPrompt,
+  createFavorite,
+  updateFavorite,
+} from "@site/src/api";
+import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
+import {
+  AuthContext,
+  AuthProvider,
+} from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import {
+  Modal,
   Typography,
   Tooltip,
   message,
@@ -22,18 +33,21 @@ import {
   DownOutlined,
   HomeOutlined,
   CopyOutlined,
+  StarOutlined,
 } from "@ant-design/icons";
 
 const { Search } = Input;
 const { Text } = Typography;
 
-export default function CommunityPrompts() {
+function CommunityPrompts() {
   const TITLE =
     "AiShort Community Prompts - Share and find interesting prompts";
-  const DESCRIPTION = translate({
+  const DESCRIPTION = translate({id: "description.communityPrompts",
     message:
-      "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 Aishort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+      "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
   });
+  const { userAuth } = useContext(AuthContext);
+  const [open, setOpen] = useState(false);
   const [userprompts, setUserPrompts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
@@ -60,7 +74,7 @@ export default function CommunityPrompts() {
     sortOrder,
     searchTerm
   ) => {
-    const response = await getUserPrompts(
+    const response = await getCommPrompts(
       currentPage,
       pageSize,
       sortField,
@@ -92,6 +106,29 @@ export default function CommunityPrompts() {
       } else {
         message.error("Something went wrong with your vote.");
       }
+    } catch (err) {
+      message.error(`Error: ${err}`);
+    }
+  };
+  const bookmark = async (promptId) => {
+    try {
+      let userLoves;
+      let favoriteId;
+
+      if (!userAuth.data.favorites) {
+        const createFavoriteResponse = await createFavorite([promptId], true);
+        userLoves = [promptId];
+        favoriteId = createFavoriteResponse.data.id;
+      } else {
+        userLoves = userAuth.data.favorites.commLoves || [];
+        favoriteId = userAuth.data.favorites.id;
+
+        if (!userLoves.includes(promptId)) {
+          userLoves.push(promptId);
+          message.success("Added to favorites successfully!");
+        }
+      }
+      await updateFavorite(favoriteId, userLoves, true);
     } catch (err) {
       message.error(`Error: ${err}`);
     }
@@ -166,6 +203,17 @@ export default function CommunityPrompts() {
           <Link to='/'>
             <HomeOutlined /> <Translate id='link.home'>返回首页</Translate>
           </Link>
+          {userAuth ? (
+            <Link to='/user/favorite'>
+              <StarOutlined />{" "}
+              <Translate id='link.myfavorite'>我的收藏</Translate>
+            </Link>
+          ) : (
+            <Link onClick={() => setOpen(true)}>
+              <Translate id='button.login'>登录</Translate>
+            </Link>
+          )}
+
           <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
             {sortField === "id" ? (
               <Translate id='field.id'>发布时间</Translate>
@@ -234,16 +282,29 @@ export default function CommunityPrompts() {
                   </p>
                 </div>
                 <div className={clsx(styles.showcaseCardBodyActions)}>
-                  <Button
-                    icon={<CopyOutlined />}
-                    type='default'
-                    onClick={() => handleCopyClick(index)}>
-                    {copiedIndex === index ? (
-                      <Translate id='theme.CodeBlock.copied'>已复制</Translate>
-                    ) : (
-                      <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                    )}
-                  </Button>
+                  <Space>
+                    <Button
+                      icon={<CopyOutlined />}
+                      type='default'
+                      onClick={() => handleCopyClick(index)}>
+                      {copiedIndex === index ? (
+                        <Translate id='theme.CodeBlock.copied'>
+                          已复制
+                        </Translate>
+                      ) : (
+                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
+                      )}
+                    </Button>
+                    <Button
+                      icon={<StarOutlined />}
+                      type='default'
+                      onClick={() => {
+                        vote(UserPrompt.id, "upvote");
+                        bookmark(UserPrompt.id);
+                      }}>
+                      <Translate>收藏</Translate>
+                    </Button>
+                  </Space>
                   <Space>
                     <Tooltip
                       title={translate({
@@ -303,8 +364,20 @@ export default function CommunityPrompts() {
             })}
           </Text>
         </div>
+
+        <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+          <LoginComponent />
+        </Modal>
         <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
     </Layout>
+  );
+}
+
+export default function WrappedCommunityPrompts() {
+  return (
+    <AuthProvider>
+      <CommunityPrompts />
+    </AuthProvider>
   );
 }

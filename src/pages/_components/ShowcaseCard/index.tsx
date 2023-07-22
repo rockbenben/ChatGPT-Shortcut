@@ -149,10 +149,9 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   const removeFavorite = useCallback(async () => {
     try {
-      let userLoves;
-      let favoriteId;
-
       if (userAuth.data.favorites) {
+        let userLoves;
+        let favoriteId;
         userLoves = userAuth.data.favorites.loves || [];
         favoriteId = userAuth.data.favorites.id;
 

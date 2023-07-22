@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -20,7 +20,7 @@
     "@mdx-js/react": "^1.6.22",
     "@popperjs/core": "^2.11.6",
     "@waline/vercel": "^1.31.2",
-    "antd": "^5.7.0",
+    "antd": "^5.7.2",
     "axios": "^1.4.0",
     "clsx": "^1.2.1",
     "docusaurus2-plugin-google-adsense": "^1.1.0",
