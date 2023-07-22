@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
+import { EditOutlined, StarOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import UserStatus from "../_components/user/UserStatus";
@@ -11,12 +12,22 @@ import { AuthProvider } from "../_components/AuthContext";
 const items: TabsProps["items"] = [
   {
     key: "status",
-    label: translate({ message: "收藏" }),
+    label: (
+      <span>
+        <StarOutlined style={{ marginRight: "6px" }} />
+        {translate({ message: "收藏" })}
+      </span>
+    ),
     children: <UserFavorite />,
   },
   {
     key: "prompts",
-    label: translate({ message: "你的提示词" }),
+    label: (
+      <span>
+        <EditOutlined style={{ marginRight: "6px" }} />
+        {translate({ message: "你的提示词" })}
+      </span>
+    ),
     children: <UserPrompts />,
   },
 ];
@@ -31,14 +42,12 @@ function UserBookmark() {
       <main
         className='margin-vert--lg'
         style={{ maxWidth: "1200px", margin: "auto" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}>
+        <div className={"text--center"}>
           <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
         </div>
-        <Tabs defaultActiveKey='status' items={items} onChange={onChange} />
+        <div style={{ margin: "0 auto", maxWidth: "90%" }}>
+          <Tabs defaultActiveKey='status' items={items} onChange={onChange} />
+        </div>
       </main>
     </Layout>
   );

@@ -63,27 +63,23 @@ const UserStatus = ({
     return <div>Loading...</div>;
   } else if (userAuth) {
     return (
-      <div>
-        <Space>
-          {!hideLinks.userCenter && (
-            <Link to='/user'>
-              <Translate id='link.user'>个人中心</Translate>
-            </Link>
-          )}
-          {!hideLinks.myFavorite && (
-            <Link to='/user/favorite'>
-              <Translate id='link.myfavorite'>我的收藏</Translate>
-            </Link>
-          )}
-          <Link className='button button--secondary' onClick={handleLogout}>
-            <Translate id='button.logout'>注销</Translate>
+      <>
+        {!hideLinks.userCenter && (
+          <Link to='/user' style={{ marginRight: "10px" }}>
+            <Translate id='link.user'>个人中心</Translate>
           </Link>
-          <Link
-            className='button button--primary'
-            onClick={() => setOpen(true)}>
-            <Translate id='link.addprompt'>添加自定义提示词</Translate>
+        )}
+        {!hideLinks.myFavorite && (
+          <Link to='/user/favorite' style={{ marginRight: "10px" }}>
+            <Translate id='link.myfavorite'>我的收藏</Translate>
           </Link>
-        </Space>
+        )}
+        <Link className='button button--secondary' onClick={handleLogout} style={{ marginRight: "10px" }}>
+          <Translate id='button.logout'>注销</Translate>
+        </Link>
+        <Link className='button button--primary' onClick={() => setOpen(true)}>
+          <Translate id='link.addprompt'>添加自定义提示词</Translate>
+        </Link>
         <Modal
           title={translate({
             id: "modal.addprompt.title",
@@ -180,11 +176,11 @@ const UserStatus = ({
             </Form.Item>
           </Form>
         </Modal>
-      </div>
+      </>
     );
   } else {
     return (
-      <div>
+      <>
         <Link
           className='button button--secondary'
           onClick={() => setOpen(true)}
@@ -199,7 +195,7 @@ const UserStatus = ({
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />
         </Modal>
-      </div>
+      </>
     );
   }
 };
