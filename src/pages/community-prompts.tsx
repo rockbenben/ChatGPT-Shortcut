@@ -42,7 +42,8 @@ const { Text } = Typography;
 function CommunityPrompts() {
   const TITLE =
     "AiShort Community Prompts - Share and find interesting prompts";
-  const DESCRIPTION = translate({id: "description.communityPrompts",
+  const DESCRIPTION = translate({
+    id: "description.communityPrompts",
     message:
       "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
   });
@@ -282,30 +283,27 @@ function CommunityPrompts() {
                   </p>
                 </div>
                 <div className={clsx(styles.showcaseCardBodyActions)}>
-                  <Space>
-                    <Button
-                      icon={<CopyOutlined />}
-                      type='default'
-                      onClick={() => handleCopyClick(index)}>
-                      {copiedIndex === index ? (
-                        <Translate id='theme.CodeBlock.copied'>
-                          已复制
-                        </Translate>
-                      ) : (
-                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                      )}
-                    </Button>
-                    <Button
-                      icon={<StarOutlined />}
-                      type='default'
-                      onClick={() => {
-                        vote(UserPrompt.id, "upvote");
-                        bookmark(UserPrompt.id);
-                      }}>
-                      <Translate>收藏</Translate>
-                    </Button>
-                  </Space>
-                  <Space>
+                  <Button
+                    icon={<CopyOutlined />}
+                    type='default'
+                    onClick={() => handleCopyClick(index)}>
+                    {copiedIndex === index ? (
+                      <Translate id='theme.CodeBlock.copied'>已复制</Translate>
+                    ) : (
+                      <Translate id='theme.CodeBlock.copy'>复制</Translate>
+                    )}
+                  </Button>
+                  <Button
+                    icon={<StarOutlined />}
+                    type='default'
+                    style={{ marginRight: "10px" }}
+                    onClick={() => {
+                      vote(UserPrompt.id, "upvote");
+                      bookmark(UserPrompt.id);
+                    }}>
+                    <Translate>收藏</Translate>
+                  </Button>
+                  <Button.Group>
                     <Tooltip
                       title={translate({
                         id: "upvote",
@@ -334,7 +332,7 @@ function CommunityPrompts() {
                           : UserPrompt.downvotes || 0}
                       </Button>
                     </Tooltip>
-                  </Space>
+                  </Button.Group>
                 </div>
               </div>
             </li>
