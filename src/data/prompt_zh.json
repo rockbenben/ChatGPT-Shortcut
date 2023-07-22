@@ -1,7 +1,7 @@
 [
   {
     "zh": {
-      "title": "英语翻译或修改",
+      "title": "英语翻译/修改",
       "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"要翻译的语言\"",
       "description": "我希望你能充当英语翻译、拼写纠正者和改进者。我将用任何语言与你交谈，你将检测语言，翻译它，并在我的文本的更正和改进版本中用英语回答。我希望你用更漂亮、更优雅、更高级的英语单词和句子来取代我的简化 A0 级单词和句子。保持意思不变，但让它们更有文学性。我希望你只回答更正，改进，而不是其他，不要写解释。我的第一句话是 [要翻译的语言]",
       "remark": "将其他语言翻译成英文，或改进你提供的英文句子。"
@@ -11,7 +11,7 @@
       "language"
     ],
     "id": 1,
-    "weight": 7062
+    "weight": 7382
   },
   {
     "zh": {
@@ -26,7 +26,7 @@
       "write"
     ],
     "id": 2,
-    "weight": 34031
+    "weight": 35650
   },
   {
     "zh": {
@@ -40,7 +40,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 730
+    "weight": 768
   },
   {
     "zh": {
@@ -55,7 +55,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 8585
+    "weight": 8766
   },
   {
     "zh": {
@@ -69,7 +69,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 1680
+    "weight": 1770
   },
   {
     "zh": {
@@ -83,7 +83,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 859
+    "weight": 907
   },
   {
     "zh": {
@@ -97,7 +97,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 2867
+    "weight": 3000
   },
   {
     "zh": {
@@ -111,7 +111,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 3347
+    "weight": 3604
   },
   {
     "zh": {
@@ -125,7 +125,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 4275
+    "weight": 4463
   },
   {
     "zh": {
@@ -139,7 +139,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 2118
+    "weight": 2234
   },
   {
     "zh": {
@@ -153,7 +153,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 4369
+    "weight": 4605
   },
   {
     "zh": {
@@ -167,7 +167,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 574
+    "weight": 602
   },
   {
     "zh": {
@@ -181,7 +181,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 1253
+    "weight": 1317
   },
   {
     "zh": {
@@ -195,7 +195,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 1391
+    "weight": 1449
   },
   {
     "zh": {
@@ -209,7 +209,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 2047
+    "weight": 2178
   },
   {
     "zh": {
@@ -223,7 +223,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 1115
+    "weight": 1175
   },
   {
     "zh": {
@@ -237,7 +237,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 3984
+    "weight": 4234
   },
   {
     "zh": {
@@ -251,7 +251,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 1085
+    "weight": 1118
   },
   {
     "zh": {
@@ -265,7 +265,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 1267
+    "weight": 1344
   },
   {
     "zh": {
@@ -280,7 +280,7 @@
       "article"
     ],
     "id": 20,
-    "weight": 9961
+    "weight": 10316
   },
   {
     "zh": {
@@ -294,7 +294,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 1815
+    "weight": 1857
   },
   {
     "zh": {
@@ -308,7 +308,7 @@
       "article"
     ],
     "id": 22,
-    "weight": 362
+    "weight": 372
   },
   {
     "zh": {
@@ -322,7 +322,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 781
+    "weight": 812
   },
   {
     "zh": {
@@ -336,7 +336,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 962
+    "weight": 1014
   },
   {
     "zh": {
@@ -350,7 +350,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 231
+    "weight": 240
   },
   {
     "zh": {
@@ -364,7 +364,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 244
+    "weight": 256
   },
   {
     "zh": {
@@ -378,7 +378,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 177
+    "weight": 191
   },
   {
     "zh": {
@@ -392,7 +392,7 @@
       "comments"
     ],
     "id": 28,
-    "weight": 267
+    "weight": 276
   },
   {
     "zh": {
@@ -406,7 +406,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 179
+    "weight": 188
   },
   {
     "zh": {
@@ -420,7 +420,7 @@
       "text"
     ],
     "id": 30,
-    "weight": 161
+    "weight": 168
   },
   {
     "zh": {
@@ -434,7 +434,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 188
+    "weight": 203
   },
   {
     "zh": {
@@ -448,7 +448,7 @@
       "text"
     ],
     "id": 32,
-    "weight": 97
+    "weight": 104
   },
   {
     "zh": {
@@ -462,7 +462,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 86
+    "weight": 90
   },
   {
     "zh": {
@@ -476,7 +476,7 @@
       "text"
     ],
     "id": 34,
-    "weight": 83
+    "weight": 87
   },
   {
     "zh": {
@@ -490,7 +490,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 480
+    "weight": 501
   },
   {
     "zh": {
@@ -504,7 +504,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 170
+    "weight": 181
   },
   {
     "zh": {
@@ -518,7 +518,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 383
+    "weight": 395
   },
   {
     "zh": {
@@ -532,7 +532,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 355
+    "weight": 373
   },
   {
     "zh": {
@@ -546,7 +546,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 323
+    "weight": 339
   },
   {
     "zh": {
@@ -560,7 +560,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 745
+    "weight": 777
   },
   {
     "zh": {
@@ -574,7 +574,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 4410
+    "weight": 4655
   },
   {
     "zh": {
@@ -588,7 +588,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 595
+    "weight": 647
   },
   {
     "zh": {
@@ -602,7 +602,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 225
+    "weight": 234
   },
   {
     "zh": {
@@ -616,7 +616,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 154
+    "weight": 162
   },
   {
     "zh": {
@@ -630,7 +630,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 327
+    "weight": 336
   },
   {
     "zh": {
@@ -644,7 +644,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 506
+    "weight": 522
   },
   {
     "zh": {
@@ -658,7 +658,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 366
+    "weight": 383
   },
   {
     "zh": {
@@ -672,7 +672,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 1234
+    "weight": 1296
   },
   {
     "zh": {
@@ -686,7 +686,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 1346
+    "weight": 1413
   },
   {
     "zh": {
@@ -700,7 +700,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 892
+    "weight": 925
   },
   {
     "zh": {
@@ -714,7 +714,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 323
+    "weight": 345
   },
   {
     "zh": {
@@ -728,7 +728,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 214
+    "weight": 223
   },
   {
     "zh": {
@@ -742,7 +742,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 228
+    "weight": 234
   },
   {
     "zh": {
@@ -756,7 +756,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 232
+    "weight": 241
   },
   {
     "zh": {
@@ -770,7 +770,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 170
+    "weight": 180
   },
   {
     "zh": {
@@ -784,7 +784,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 2801
+    "weight": 2929
   },
   {
     "zh": {
@@ -798,7 +798,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 575
+    "weight": 596
   },
   {
     "zh": {
@@ -812,7 +812,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 298
+    "weight": 318
   },
   {
     "zh": {
@@ -826,7 +826,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 192
+    "weight": 202
   },
   {
     "zh": {
@@ -840,7 +840,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 138
+    "weight": 147
   },
   {
     "zh": {
@@ -854,7 +854,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 192
+    "weight": 202
   },
   {
     "zh": {
@@ -868,7 +868,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 283
+    "weight": 298
   },
   {
     "zh": {
@@ -883,7 +883,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 1208
+    "weight": 1258
   },
   {
     "zh": {
@@ -897,7 +897,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 281
+    "weight": 288
   },
   {
     "zh": {
@@ -911,7 +911,7 @@
       "speech"
     ],
     "id": 65,
-    "weight": 137
+    "weight": 144
   },
   {
     "zh": {
@@ -925,7 +925,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 433
+    "weight": 442
   },
   {
     "zh": {
@@ -939,7 +939,7 @@
       "speech"
     ],
     "id": 67,
-    "weight": 331
+    "weight": 356
   },
   {
     "zh": {
@@ -953,7 +953,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 236
+    "weight": 241
   },
   {
     "zh": {
@@ -967,7 +967,7 @@
       "speech"
     ],
     "id": 69,
-    "weight": 132
+    "weight": 137
   },
   {
     "zh": {
@@ -981,7 +981,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 250
+    "weight": 264
   },
   {
     "zh": {
@@ -995,7 +995,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 264
+    "weight": 283
   },
   {
     "zh": {
@@ -1009,7 +1009,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 442
+    "weight": 494
   },
   {
     "zh": {
@@ -1023,7 +1023,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 966
+    "weight": 1008
   },
   {
     "zh": {
@@ -1037,7 +1037,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 479
+    "weight": 490
   },
   {
     "zh": {
@@ -1051,7 +1051,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 863
+    "weight": 925
   },
   {
     "zh": {
@@ -1065,7 +1065,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 241
+    "weight": 249
   },
   {
     "zh": {
@@ -1079,7 +1079,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 722
+    "weight": 743
   },
   {
     "zh": {
@@ -1093,7 +1093,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 348
+    "weight": 363
   },
   {
     "zh": {
@@ -1107,7 +1107,7 @@
       "philosophy"
     ],
     "id": 79,
-    "weight": 204
+    "weight": 215
   },
   {
     "zh": {
@@ -1121,7 +1121,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 1805
+    "weight": 1894
   },
   {
     "zh": {
@@ -1135,7 +1135,7 @@
       "philosophy"
     ],
     "id": 81,
-    "weight": 235
+    "weight": 242
   },
   {
     "zh": {
@@ -1149,7 +1149,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 777
+    "weight": 811
   },
   {
     "zh": {
@@ -1163,7 +1163,7 @@
       "academic"
     ],
     "id": 83,
-    "weight": 112
+    "weight": 116
   },
   {
     "zh": {
@@ -1177,7 +1177,7 @@
       "academic"
     ],
     "id": 84,
-    "weight": 165
+    "weight": 170
   },
   {
     "zh": {
@@ -1191,7 +1191,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 277
+    "weight": 285
   },
   {
     "zh": {
@@ -1205,7 +1205,7 @@
       "academic"
     ],
     "id": 86,
-    "weight": 233
+    "weight": 242
   },
   {
     "zh": {
@@ -1219,7 +1219,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 548
+    "weight": 569
   },
   {
     "zh": {
@@ -1233,7 +1233,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 400
+    "weight": 414
   },
   {
     "zh": {
@@ -1247,7 +1247,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 996
+    "weight": 1043
   },
   {
     "zh": {
@@ -1261,7 +1261,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 6282
+    "weight": 6614
   },
   {
     "zh": {
@@ -1275,7 +1275,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 1136
+    "weight": 1192
   },
   {
     "zh": {
@@ -1289,12 +1289,12 @@
       "code"
     ],
     "id": 92,
-    "weight": 314
+    "weight": 331
   },
   {
     "zh": {
       "title": "前端：网页设计",
-      "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. My first request is [项目要求]",
+      "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Chinese. My first request is [项目要求]",
       "description": "我希望你能充当网页设计顾问。我将向你提供一个需要协助设计或重新开发网站的组织的相关细节，你的职责是建议最合适的界面和功能，以提高用户体验，同时也满足该公司的业务目标。你应该运用你在 UX/UI 设计原则、编码语言、网站开发工具等方面的知识，为该项目制定一个全面的计划。",
       "remark": "从网页开发和设计的角度，提供界面和功能建议，旨在提高用户体验。"
     },
@@ -1303,7 +1303,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 696
+    "weight": 729
   },
   {
     "zh": {
@@ -1317,7 +1317,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 1239
+    "weight": 1295
   },
   {
     "zh": {
@@ -1331,7 +1331,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 1008
+    "weight": 1039
   },
   {
     "zh": {
@@ -1345,7 +1345,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 312
+    "weight": 323
   },
   {
     "zh": {
@@ -1359,7 +1359,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 429
+    "weight": 438
   },
   {
     "zh": {
@@ -1373,7 +1373,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 432
+    "weight": 454
   },
   {
     "zh": {
@@ -1387,7 +1387,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 251
+    "weight": 257
   },
   {
     "zh": {
@@ -1401,7 +1401,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 228
+    "weight": 235
   },
   {
     "zh": {
@@ -1415,7 +1415,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 598
+    "weight": 612
   },
   {
     "zh": {
@@ -1429,7 +1429,7 @@
       "code"
     ],
     "id": 102,
-    "weight": 174
+    "weight": 181
   },
   {
     "zh": {
@@ -1443,7 +1443,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 604
+    "weight": 634
   },
   {
     "zh": {
@@ -1457,7 +1457,7 @@
       "interpreter"
     ],
     "id": 104,
-    "weight": 92
+    "weight": 97
   },
   {
     "zh": {
@@ -1471,7 +1471,7 @@
       "interpreter"
     ],
     "id": 105,
-    "weight": 87
+    "weight": 91
   },
   {
     "zh": {
@@ -1485,7 +1485,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 363
+    "weight": 404
   },
   {
     "zh": {
@@ -1499,7 +1499,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 165
+    "weight": 170
   },
   {
     "zh": {
@@ -1513,7 +1513,7 @@
       "interpreter"
     ],
     "id": 108,
-    "weight": 115
+    "weight": 123
   },
   {
     "zh": {
@@ -1528,7 +1528,7 @@
       "ai"
     ],
     "id": 109,
-    "weight": 11874
+    "weight": 12523
   },
   {
     "zh": {
@@ -1556,7 +1556,7 @@
       "ai"
     ],
     "id": 111,
-    "weight": 204
+    "weight": 208
   },
   {
     "zh": {
@@ -1570,7 +1570,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 547
+    "weight": 567
   },
   {
     "zh": {
@@ -1584,7 +1584,7 @@
       "language"
     ],
     "id": 113,
-    "weight": 92
+    "weight": 97
   },
   {
     "zh": {
@@ -1598,7 +1598,7 @@
       "language"
     ],
     "id": 114,
-    "weight": 136
+    "weight": 144
   },
   {
     "zh": {
@@ -1612,7 +1612,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 123
+    "weight": 129
   },
   {
     "zh": {
@@ -1626,7 +1626,7 @@
       "language"
     ],
     "id": 116,
-    "weight": 131
+    "weight": 147
   },
   {
     "zh": {
@@ -1640,7 +1640,7 @@
       "language"
     ],
     "id": 117,
-    "weight": 110
+    "weight": 115
   },
   {
     "zh": {
@@ -1654,7 +1654,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 194
+    "weight": 204
   },
   {
     "zh": {
@@ -1668,7 +1668,7 @@
       "language"
     ],
     "id": 119,
-    "weight": 175
+    "weight": 187
   },
   {
     "zh": {
@@ -1682,7 +1682,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 896
+    "weight": 921
   },
   {
     "zh": {
@@ -1696,7 +1696,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 107
+    "weight": 115
   },
   {
     "zh": {
@@ -1710,7 +1710,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 2074
+    "weight": 2145
   },
   {
     "zh": {
@@ -1724,7 +1724,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 344
+    "weight": 353
   },
   {
     "zh": {
@@ -1738,7 +1738,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 193
+    "weight": 197
   },
   {
     "zh": {
@@ -1752,7 +1752,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 1081
+    "weight": 1126
   },
   {
     "zh": {
@@ -1766,7 +1766,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 664
+    "weight": 687
   },
   {
     "zh": {
@@ -1780,7 +1780,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 59
+    "weight": 63
   },
   {
     "zh": {
@@ -1794,7 +1794,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 144
+    "weight": 149
   },
   {
     "zh": {
@@ -1808,7 +1808,7 @@
       "tool"
     ],
     "id": 129,
-    "weight": 192
+    "weight": 196
   },
   {
     "zh": {
@@ -1822,7 +1822,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 564
+    "weight": 579
   },
   {
     "zh": {
@@ -1836,7 +1836,7 @@
       "tool"
     ],
     "id": 131,
-    "weight": 176
+    "weight": 183
   },
   {
     "zh": {
@@ -1850,7 +1850,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 1603
+    "weight": 1654
   },
   {
     "zh": {
@@ -1864,7 +1864,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 265
+    "weight": 279
   },
   {
     "zh": {
@@ -1878,7 +1878,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 452
+    "weight": 486
   },
   {
     "zh": {
@@ -1892,7 +1892,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 268
+    "weight": 276
   },
   {
     "zh": {
@@ -1906,7 +1906,7 @@
       "tool"
     ],
     "id": 136,
-    "weight": 136
+    "weight": 143
   },
   {
     "zh": {
@@ -1920,7 +1920,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 463
+    "weight": 486
   },
   {
     "zh": {
@@ -1934,7 +1934,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 790
+    "weight": 818
   },
   {
     "zh": {
@@ -1948,7 +1948,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 1310
+    "weight": 1381
   },
   {
     "zh": {
@@ -1962,7 +1962,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 356
+    "weight": 379
   },
   {
     "zh": {
@@ -1976,7 +1976,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 1083
+    "weight": 1148
   },
   {
     "zh": {
@@ -1990,7 +1990,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 1385
+    "weight": 1449
   },
   {
     "zh": {
@@ -2004,7 +2004,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 194
+    "weight": 204
   },
   {
     "zh": {
@@ -2018,7 +2018,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 325
+    "weight": 339
   },
   {
     "zh": {
@@ -2032,7 +2032,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 855
+    "weight": 903
   },
   {
     "zh": {
@@ -2046,7 +2046,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 216
+    "weight": 227
   },
   {
     "zh": {
@@ -2060,7 +2060,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 479
+    "weight": 503
   },
   {
     "zh": {
@@ -2074,7 +2074,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 172
+    "weight": 181
   },
   {
     "zh": {
@@ -2088,7 +2088,7 @@
       "company"
     ],
     "id": 149,
-    "weight": 129
+    "weight": 139
   },
   {
     "zh": {
@@ -2102,7 +2102,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 377
+    "weight": 474
   },
   {
     "zh": {
@@ -2116,7 +2116,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 479
+    "weight": 495
   },
   {
     "zh": {
@@ -2130,7 +2130,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 990
+    "weight": 1031
   },
   {
     "zh": {
@@ -2144,7 +2144,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 235
+    "weight": 247
   },
   {
     "zh": {
@@ -2158,7 +2158,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 208
+    "weight": 222
   },
   {
     "zh": {
@@ -2172,7 +2172,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 2771
+    "weight": 2912
   },
   {
     "zh": {
@@ -2186,7 +2186,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 84
+    "weight": 88
   },
   {
     "zh": {
@@ -2200,7 +2200,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 537
+    "weight": 554
   },
   {
     "zh": {
@@ -2214,7 +2214,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 1325
+    "weight": 1369
   },
   {
     "zh": {
@@ -2228,7 +2228,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 2111
+    "weight": 2183
   },
   {
     "zh": {
@@ -2242,7 +2242,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 763
+    "weight": 794
   },
   {
     "zh": {
@@ -2256,7 +2256,7 @@
       "music"
     ],
     "id": 161,
-    "weight": 155
+    "weight": 161
   },
   {
     "zh": {
@@ -2270,7 +2270,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 513
+    "weight": 537
   },
   {
     "zh": {
@@ -2284,7 +2284,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 624
+    "weight": 650
   },
   {
     "zh": {
@@ -2298,7 +2298,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 136
+    "weight": 140
   },
   {
     "zh": {
@@ -2312,7 +2312,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 141
+    "weight": 147
   },
   {
     "zh": {
@@ -2326,7 +2326,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 214
+    "weight": 223
   },
   {
     "zh": {
@@ -2340,7 +2340,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 526
+    "weight": 558
   },
   {
     "zh": {
@@ -2354,7 +2354,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 242
+    "weight": 257
   },
   {
     "zh": {
@@ -2368,7 +2368,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 239
+    "weight": 249
   },
   {
     "zh": {
@@ -2382,7 +2382,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 245
+    "weight": 273
   },
   {
     "zh": {
@@ -2396,7 +2396,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 1560
+    "weight": 1637
   },
   {
     "zh": {
@@ -2410,7 +2410,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 393
+    "weight": 412
   },
   {
     "zh": {
@@ -2425,7 +2425,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 3355
+    "weight": 3462
   },
   {
     "zh": {
@@ -2440,7 +2440,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 93
+    "weight": 100
   },
   {
     "zh": {
@@ -2455,7 +2455,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 478
+    "weight": 495
   },
   {
     "zh": {
@@ -2470,7 +2470,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 1111
+    "weight": 1158
   },
   {
     "zh": {
@@ -2485,7 +2485,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 2773
+    "weight": 2878
   },
   {
     "zh": {
@@ -2500,7 +2500,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 392
+    "weight": 415
   },
   {
     "zh": {
@@ -2515,7 +2515,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 551
+    "weight": 578
   },
   {
     "zh": {
@@ -2530,7 +2530,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 5867
+    "weight": 6103
   },
   {
     "zh": {
@@ -2545,7 +2545,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 1308
+    "weight": 1361
   },
   {
     "zh": {
@@ -2561,7 +2561,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 928
+    "weight": 963
   },
   {
     "zh": {
@@ -2576,7 +2576,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 191
+    "weight": 210
   },
   {
     "zh": {
@@ -2591,7 +2591,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 637
+    "weight": 661
   },
   {
     "zh": {
@@ -2606,7 +2606,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 44113
+    "weight": 45326
   },
   {
     "zh": {
@@ -2621,7 +2621,7 @@
       "pedagogy"
     ],
     "id": 186,
-    "weight": 240
+    "weight": 244
   },
   {
     "zh": {
@@ -2635,7 +2635,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 2307
+    "weight": 2374
   },
   {
     "zh": {
@@ -2650,7 +2650,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 793
+    "weight": 822
   },
   {
     "zh": {
@@ -2665,7 +2665,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 511
+    "weight": 544
   },
   {
     "zh": {
@@ -2680,7 +2680,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 1097
+    "weight": 1167
   },
   {
     "zh": {
@@ -2695,7 +2695,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 1072
+    "weight": 1115
   },
   {
     "zh": {
@@ -2710,7 +2710,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 599
+    "weight": 631
   },
   {
     "zh": {
@@ -2725,7 +2725,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 440
+    "weight": 462
   },
   {
     "zh": {
@@ -2740,7 +2740,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 701
+    "weight": 727
   },
   {
     "zh": {
@@ -2755,7 +2755,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 1052
+    "weight": 1091
   },
   {
     "zh": {
@@ -2770,7 +2770,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 4540
+    "weight": 4764
   },
   {
     "zh": {
@@ -2786,7 +2786,7 @@
       "write"
     ],
     "id": 197,
-    "weight": 10967
+    "weight": 11424
   },
   {
     "zh": {
@@ -2801,7 +2801,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 434
+    "weight": 457
   },
   {
     "zh": {
@@ -2817,7 +2817,7 @@
       "favorite"
     ],
     "id": 199,
-    "weight": 9007
+    "weight": 9462
   },
   {
     "zh": {
@@ -2832,7 +2832,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 1537
+    "weight": 1589
   },
   {
     "zh": {
@@ -2847,7 +2847,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 353
+    "weight": 368
   },
   {
     "zh": {
@@ -2862,7 +2862,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 537
+    "weight": 562
   },
   {
     "zh": {
@@ -2877,7 +2877,7 @@
       "pedagogy"
     ],
     "id": 203,
-    "weight": 382
+    "weight": 397
   },
   {
     "zh": {
@@ -2892,7 +2892,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 6243
+    "weight": 6647
   },
   {
     "zh": {
@@ -2907,7 +2907,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 1137
+    "weight": 1209
   },
   {
     "zh": {
@@ -2922,7 +2922,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 3984
+    "weight": 4202
   },
   {
     "zh": {
@@ -2936,7 +2936,7 @@
       "social"
     ],
     "id": 207,
-    "weight": 299
+    "weight": 312
   },
   {
     "zh": {
@@ -2950,7 +2950,7 @@
       "social"
     ],
     "id": 208,
-    "weight": 236
+    "weight": 244
   },
   {
     "zh": {
@@ -2965,7 +2965,7 @@
       "write"
     ],
     "id": 209,
-    "weight": 24638
+    "weight": 25925
   },
   {
     "zh": {
@@ -2979,7 +2979,7 @@
       "article"
     ],
     "id": 210,
-    "weight": 3221
+    "weight": 3335
   },
   {
     "zh": {
@@ -2993,7 +2993,7 @@
       "write"
     ],
     "id": 211,
-    "weight": 536
+    "weight": 563
   },
   {
     "zh": {
@@ -3008,7 +3008,7 @@
       "social"
     ],
     "id": 212,
-    "weight": 2563
+    "weight": 2688
   },
   {
     "zh": {
@@ -3023,7 +3023,7 @@
       "comments"
     ],
     "id": 213,
-    "weight": 341
+    "weight": 354
   },
   {
     "zh": {
@@ -3038,7 +3038,7 @@
       "article"
     ],
     "id": 214,
-    "weight": 2730
+    "weight": 2843
   },
   {
     "zh": {
@@ -3052,7 +3052,7 @@
       "write"
     ],
     "id": 215,
-    "weight": 576
+    "weight": 607
   },
   {
     "zh": {
@@ -3067,7 +3067,7 @@
       "text"
     ],
     "id": 216,
-    "weight": 511
+    "weight": 531
   },
   {
     "zh": {
@@ -3082,7 +3082,7 @@
       "doctor"
     ],
     "id": 217,
-    "weight": 1487
+    "weight": 1580
   },
   {
     "zh": {
@@ -3097,7 +3097,7 @@
       "code"
     ],
     "id": 218,
-    "weight": 5295
+    "weight": 5570
   },
   {
     "zh": {
@@ -3112,7 +3112,7 @@
       "games"
     ],
     "id": 219,
-    "weight": 3052
+    "weight": 3237
   },
   {
     "zh": {
@@ -3127,7 +3127,7 @@
       "tool"
     ],
     "id": 220,
-    "weight": 2616
+    "weight": 2728
   },
   {
     "zh": {
@@ -3141,7 +3141,7 @@
       "ai"
     ],
     "id": 221,
-    "weight": 833
+    "weight": 877
   },
   {
     "zh": {
@@ -3155,7 +3155,7 @@
       "ai"
     ],
     "id": 222,
-    "weight": 867
+    "weight": 933
   },
   {
     "zh": {
@@ -3169,7 +3169,7 @@
       "ai"
     ],
     "id": 223,
-    "weight": 162
+    "weight": 167
   },
   {
     "zh": {
@@ -3183,7 +3183,7 @@
       "ai"
     ],
     "id": 224,
-    "weight": 1776
+    "weight": 1900
   },
   {
     "zh": {
@@ -3197,7 +3197,7 @@
       "ai"
     ],
     "id": 225,
-    "weight": 89
+    "weight": 92
   },
   {
     "zh": {
@@ -3211,7 +3211,7 @@
       "ai"
     ],
     "id": 226,
-    "weight": 175
+    "weight": 191
   },
   {
     "zh": {
@@ -3225,7 +3225,7 @@
       "ai"
     ],
     "id": 227,
-    "weight": 89
+    "weight": 90
   },
   {
     "zh": {
@@ -3239,7 +3239,7 @@
       "ai"
     ],
     "id": 228,
-    "weight": 343
+    "weight": 369
   },
   {
     "zh": {
@@ -3253,7 +3253,7 @@
       "ai"
     ],
     "id": 229,
-    "weight": 146
+    "weight": 154
   },
   {
     "zh": {
@@ -3295,7 +3295,7 @@
       "ai"
     ],
     "id": 232,
-    "weight": 4660
+    "weight": 5047
   },
   {
     "zh": {
@@ -3309,7 +3309,7 @@
       "ai"
     ],
     "id": 233,
-    "weight": 555
+    "weight": 585
   },
   {
     "zh": {
@@ -3323,7 +3323,7 @@
       "ai"
     ],
     "id": 234,
-    "weight": 4701
+    "weight": 4976
   },
   {
     "zh": {
@@ -3337,7 +3337,7 @@
       "ai"
     ],
     "id": 235,
-    "weight": 229
+    "weight": 244
   },
   {
     "zh": {
@@ -3352,7 +3352,7 @@
       "pedagogy"
     ],
     "id": 236,
-    "weight": 543
+    "weight": 574
   },
   {
     "zh": {
@@ -3367,7 +3367,7 @@
       "games"
     ],
     "id": 237,
-    "weight": 667
+    "weight": 709
   },
   {
     "zh": {
@@ -3381,7 +3381,7 @@
       "write"
     ],
     "id": 238,
-    "weight": 1902
+    "weight": 1969
   },
   {
     "zh": {
@@ -3395,7 +3395,7 @@
       "write"
     ],
     "id": 239,
-    "weight": 536
+    "weight": 560
   },
   {
     "zh": {
@@ -3409,7 +3409,7 @@
       "write"
     ],
     "id": 240,
-    "weight": 354
+    "weight": 364
   },
   {
     "zh": {
@@ -3425,7 +3425,7 @@
       "company"
     ],
     "id": 241,
-    "weight": 700
+    "weight": 759
   },
   {
     "zh": {
@@ -3439,7 +3439,7 @@
       "tool"
     ],
     "id": 242,
-    "weight": 1873
+    "weight": 1996
   },
   {
     "zh": {
@@ -3454,7 +3454,7 @@
       "comments"
     ],
     "id": 243,
-    "weight": 600
+    "weight": 626
   },
   {
     "zh": {
@@ -3469,7 +3469,7 @@
       "tool"
     ],
     "id": 244,
-    "weight": 236
+    "weight": 242
   },
   {
     "zh": {
@@ -3484,7 +3484,7 @@
       "tool"
     ],
     "id": 245,
-    "weight": 306
+    "weight": 322
   },
   {
     "zh": {
@@ -3499,7 +3499,7 @@
       "code"
     ],
     "id": 246,
-    "weight": 241
+    "weight": 245
   },
   {
     "zh": {
@@ -3514,7 +3514,7 @@
       "pedagogy"
     ],
     "id": 247,
-    "weight": 190
+    "weight": 198
   },
   {
     "zh": {
@@ -3529,7 +3529,7 @@
       "pedagogy"
     ],
     "id": 248,
-    "weight": 239
+    "weight": 257
   },
   {
     "zh": {
@@ -3544,7 +3544,7 @@
       "pedagogy"
     ],
     "id": 249,
-    "weight": 96
+    "weight": 99
   },
   {
     "zh": {
@@ -3559,7 +3559,7 @@
       "mind"
     ],
     "id": 250,
-    "weight": 554
+    "weight": 578
   },
   {
     "zh": {
@@ -3574,7 +3574,7 @@
       "article"
     ],
     "id": 251,
-    "weight": 5419
+    "weight": 5871
   },
   {
     "zh": {
@@ -3589,7 +3589,7 @@
       "academic"
     ],
     "id": 252,
-    "weight": 214
+    "weight": 223
   },
   {
     "zh": {
@@ -3604,7 +3604,7 @@
       "article"
     ],
     "id": 253,
-    "weight": 739
+    "weight": 806
   },
   {
     "zh": {
@@ -3619,7 +3619,7 @@
       "company"
     ],
     "id": 254,
-    "weight": 373
+    "weight": 387
   },
   {
     "zh": {
@@ -3633,7 +3633,7 @@
       "ai"
     ],
     "id": 255,
-    "weight": 668
+    "weight": 708
   },
   {
     "zh": {
@@ -3648,7 +3648,7 @@
       "write"
     ],
     "id": 256,
-    "weight": 1899
+    "weight": 2084
   },
   {
     "zh": {
@@ -3663,7 +3663,7 @@
       "academic"
     ],
     "id": 257,
-    "weight": 242
+    "weight": 261
   },
   {
     "zh": {
@@ -3678,7 +3678,7 @@
       "write"
     ],
     "id": 258,
-    "weight": 312
+    "weight": 339
   },
   {
     "zh": {
@@ -3693,7 +3693,7 @@
       "write"
     ],
     "id": 259,
-    "weight": 292
+    "weight": 327
   },
   {
     "zh": {
@@ -3708,7 +3708,7 @@
       "pedagogy"
     ],
     "id": 260,
-    "weight": 150
+    "weight": 153
   },
   {
     "zh": {
@@ -3723,7 +3723,7 @@
       "pedagogy"
     ],
     "id": 261,
-    "weight": 286
+    "weight": 321
   },
   {
     "zh": {
@@ -3738,7 +3738,7 @@
       "pedagogy"
     ],
     "id": 262,
-    "weight": 310
+    "weight": 352
   },
   {
     "zh": {
@@ -3753,7 +3753,7 @@
       "pedagogy"
     ],
     "id": 263,
-    "weight": 146
+    "weight": 157
   },
   {
     "zh": {
@@ -3768,7 +3768,7 @@
       "games"
     ],
     "id": 264,
-    "weight": 537
+    "weight": 591
   },
   {
     "zh": {
@@ -3783,7 +3783,7 @@
       "pedagogy"
     ],
     "id": 265,
-    "weight": 300
+    "weight": 329
   },
   {
     "zh": {
@@ -3798,7 +3798,7 @@
       "ai"
     ],
     "id": 266,
-    "weight": 1019
+    "weight": 1152
   },
   {
     "zh": {
@@ -3813,7 +3813,7 @@
       "tool"
     ],
     "id": 267,
-    "weight": 379
+    "weight": 414
   },
   {
     "zh": {
@@ -3828,7 +3828,7 @@
       "language"
     ],
     "id": 268,
-    "weight": 59
+    "weight": 65
   },
   {
     "zh": {
@@ -3843,7 +3843,7 @@
       "interesting"
     ],
     "id": 269,
-    "weight": 256
+    "weight": 288
   },
   {
     "zh": {
@@ -3858,7 +3858,7 @@
       "mind"
     ],
     "id": 270,
-    "weight": 322
+    "weight": 353
   },
   {
     "zh": {
@@ -3873,7 +3873,7 @@
       "mind"
     ],
     "id": 271,
-    "weight": 281
+    "weight": 306
   },
   {
     "zh": {
@@ -3889,7 +3889,7 @@
       "latest"
     ],
     "id": 272,
-    "weight": 10
+    "weight": 17
   },
   {
     "zh": {
@@ -3905,7 +3905,7 @@
       "latest"
     ],
     "id": 273,
-    "weight": 20
+    "weight": 48
   },
   {
     "zh": {
@@ -3921,7 +3921,7 @@
       "latest"
     ],
     "id": 274,
-    "weight": 16
+    "weight": 46
   },
   {
     "zh": {
@@ -3937,7 +3937,7 @@
       "latest"
     ],
     "id": 275,
-    "weight": 29
+    "weight": 77
   },
   {
     "zh": {
@@ -3952,6 +3952,6 @@
       "latest"
     ],
     "id": 276,
-    "weight": 7
+    "weight": 27
   }
 ]

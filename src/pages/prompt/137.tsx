@@ -15,13 +15,13 @@ const prompt = {
   },
   "ja": {
     "title": "ウィキペディアのページ",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Janpanese. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Janpanese. My first topic is \"The Great Barrier Reef.\".",
     "description": "ウィキペディアのページの役割を担っていただきたいのです。私はあなたにトピック名を与え、あなたはそのトピックの要約をウィキペディアのページのフォーマットで提供してください。あなたのアブストラクトは、トピックの最も重要な側面をカバーする、情報的で事実的なものでなければなりません。抄録は、トピックの概要を説明する序文で始めてください。",
     "remark": "ユーザーがトピックに関する基本的な情報にアクセスするのを助け、Wikipedia のページの形式で要約を提供します。このように、ユーザーはトピックについて素早く学ぶことができ、その結果、そのテーマについてより深く理解し、把握することができます。"
   },
   "ko": {
     "title": "위키피디아 페이지",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Korean. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Korean. My first topic is \"The Great Barrier Reef.\".",
     "description": "여러분이 위키백과 페이지의 역할을 해 주셨으면 합니다. 제가 주제 이름을 알려드리면 여러분은 해당 주제에 대한 요약을 위키백과 페이지 형식으로 작성해 주세요. 초록은 주제의 가장 중요한 측면을 다루면서 유익하고 사실적이어야 합니다. 초록은 주제를 개괄적으로 설명하는 서론 단락으로 시작하세요.",
     "remark": "사용자가 주제에 대한 기본 정보에 액세스할 수 있도록 도와주고 위키백과 페이지 형식의 요약을 제공합니다. 이러한 방식으로 사용자는 주제에 대해 빠르게 학습하여 해당 주제를 더 잘 이해하고 파악할 수 있습니다."
   },
@@ -33,49 +33,49 @@ const prompt = {
   },
   "fr": {
     "title": "Page Wikipédia",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in French. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in French. My first topic is \"The Great Barrier Reef.\".",
     "description": "J'aimerais que vous jouiez le rôle d'une page Wikipédia. Je vous donnerai un nom de sujet et vous fournirez un résumé de ce sujet dans le format d'une page Wikipédia. Votre résumé doit être informatif et factuel, et couvrir les aspects les plus importants du sujet. Commencez la rédaction de votre résumé par un paragraphe d'introduction décrivant le sujet.",
     "remark": "Aide les utilisateurs à obtenir des informations de base sur un sujet et fournit un résumé sous la forme d'une page Wikipédia. De cette manière, les utilisateurs peuvent rapidement obtenir des informations pertinentes sur un sujet et ainsi mieux le comprendre et le maîtriser."
   },
   "de": {
     "title": "Wikipedia-Seite",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in German. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in German. My first topic is \"The Great Barrier Reef.\".",
     "description": "Ich möchte Sie bitten, die Rolle einer Wikipedia-Seite zu übernehmen. Ich gebe Ihnen einen Themennamen vor, und Sie erstellen eine Zusammenfassung dieses Themas im Format einer Wikipedia-Seite. Ihre Zusammenfassung sollte informativ und sachlich sein und die wichtigsten Aspekte des Themas abdecken. Bitte beginnen Sie Ihre Zusammenfassung mit einem einleitenden Absatz, der das Thema umreißt.",
     "remark": "Hilft den Nutzern, grundlegende Informationen über ein Thema zu erhalten und bietet eine Zusammenfassung im Format einer Wikipedia-Seite. Auf diese Weise können die Nutzer schnell relevante Informationen über ein Thema erfahren und es so besser verstehen und beherrschen."
   },
   "it": {
     "title": "Pagina di Wikipedia",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Italian. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Italian. My first topic is \"The Great Barrier Reef.\".",
     "description": "Vorrei che interpretaste il ruolo di una pagina di Wikipedia. Vi darò il nome di un argomento e voi dovrete fornire un riassunto di quell'argomento nel formato di una pagina di Wikipedia. Il vostro riassunto deve essere informativo e fattuale, e deve coprire gli aspetti più importanti dell'argomento. Iniziate a scrivere l'abstract con un paragrafo introduttivo che illustri l'argomento.",
     "remark": "Aiuta gli utenti a ottenere informazioni di base su un argomento e fornisce una sintesi nel formato di una pagina di Wikipedia. In questo modo, gli utenti possono apprendere rapidamente le informazioni rilevanti su un argomento e quindi comprenderlo e padroneggiarlo meglio."
   },
   "ru": {
     "title": "Страница в Википедии",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Russian. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Russian. My first topic is \"The Great Barrier Reef.\".",
     "description": "Я хочу, чтобы вы сыграли роль страницы Википедии. Я дам вам название темы, а затем вы представите краткое изложение этой темы в формате страницы Википедии. Ваш реферат должен быть информативным и фактологическим, охватывающим наиболее важные аспекты темы. Пожалуйста, начните написание реферата с вводного абзаца, описывающего тему.",
     "remark": "Помогает пользователям получить основную информацию по теме и предоставляет краткое изложение в формате страницы Википедии. Таким образом, пользователи могут быстро получить необходимую информацию по теме и, следовательно, лучше понять и освоить ее."
   },
   "pt": {
     "title": "Página da Wikipédia",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is \"The Great Barrier Reef.\".",
     "description": "Gostaria que desempenhasses o papel de uma página da Wikipédia. Dar-te-ei um nome de tópico e, em seguida, farás um resumo desse tópico no formato de uma página da Wikipédia. O seu resumo deve ser informativo e factual, cobrindo os aspectos mais importantes do tópico. Comece a escrever o seu resumo com um parágrafo introdutório que descreva o tema.",
     "remark": "Ajuda os utilizadores a obter informações básicas sobre um tópico e fornece um resumo no formato de uma página da Wikipédia. Desta forma, os utilizadores podem obter rapidamente informações relevantes sobre um tópico e, assim, compreendê-lo e dominá-lo melhor."
   },
   "hi": {
     "title": "विकिपीडिया पेज",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Hindi. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Hindi. My first topic is \"The Great Barrier Reef.\".",
     "description": "मैं चाहता हूं कि आप विकिपीडिया पेज की भूमिका निभाएं। मैं आपको एक विषय का नाम दूंगा, और फिर आप विकिपीडिया पृष्ठ के प्रारूप में उस विषय का सारांश प्रदान करेंगे। आपका सारांश जानकारीपूर्ण और तथ्यात्मक होना चाहिए, जिसमें विषय के सबसे महत्वपूर्ण पहलू शामिल हों। कृपया अपने सार की शुरुआत विषय को रेखांकित करने वाले एक परिचयात्मक अनुच्छेद से करें।",
     "remark": "उपयोगकर्ताओं को किसी विषय पर बुनियादी जानकारी प्राप्त करने और विकिपीडिया पृष्ठ के प्रारूप में सारांश प्रदान करने में सहायता करें। इस तरह, उपयोगकर्ता किसी विषय पर प्रासंगिक जानकारी के बारे में जल्दी से जान सकते हैं, जिससे विषय की बेहतर समझ और महारत हासिल हो सकती है।"
   },
   "ar": {
     "title": "صفحة ويكيبيديا",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Arabic. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Arabic. My first topic is \"The Great Barrier Reef.\".",
     "description": "أريدك أن تلعب دور صفحة ويكيبيديا. سأعطيك اسم موضوع ، وبعد ذلك ستقدم ملخصًا لهذا الموضوع بتنسيق صفحة ويكيبيديا. يجب أن يكون ملخصك إعلاميًا وواقعيًا ، ويغطي أهم جوانب الموضوع. يرجى بدء الملخص الخاص بك بفقرة تمهيدية تحدد الموضوع.",
     "remark": "ساعد المستخدمين في الحصول على المعلومات الأساسية حول موضوع ما وقدم ملخصًا بتنسيق صفحة ويكيبيديا. بهذه الطريقة ، يمكن للمستخدمين التعرف بسرعة على المعلومات ذات الصلة بالموضوع ، وبالتالي اكتساب فهم وإتقان أفضل للموضوع."
   },
   "bn": {
     "title": "উইকিপিডিয়া পাতা",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Bengali. My first topic is \"The Great Barrier Reef.\"..",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Bengali. My first topic is \"The Great Barrier Reef.\".",
     "description": "আমি চাই আপনি উইকিপিডিয়া পাতার ভূমিকা পালন করুন। আমি আপনাকে একটি বিষয়ের নাম দেব, এবং তারপর আপনি একটি উইকিপিডিয়া পৃষ্ঠার বিন্যাসে সেই বিষয়ের একটি সারাংশ প্রদান করবেন। আপনার সারাংশ তথ্যপূর্ণ এবং বাস্তবসম্মত হওয়া উচিত, বিষয়টির সবচেয়ে গুরুত্বপূর্ণ দিকগুলিকে কভার করে। অনুগ্রহ করে বিষয়ের রূপরেখা দিয়ে একটি পরিচায়ক অনুচ্ছেদ দিয়ে আপনার বিমূর্ত শুরু করুন।",
     "remark": "ব্যবহারকারীদের একটি বিষয়ে প্রাথমিক তথ্য পেতে এবং উইকিপিডিয়া পৃষ্ঠার বিন্যাসে একটি সারসংক্ষেপ প্রদান করতে সহায়তা করুন। এইভাবে, ব্যবহারকারীরা একটি বিষয়ের প্রাসঙ্গিক তথ্য সম্পর্কে দ্রুত শিখতে পারে, যার ফলে বিষয়টি সম্পর্কে আরও ভাল বোঝা এবং দক্ষতা অর্জন করা যায়।"
   },
@@ -84,7 +84,7 @@ const prompt = {
     "tool"
   ],
   "id": 137,
-  "weight": 463
+  "weight": 486
 };
 
 function PromptDetail() {
