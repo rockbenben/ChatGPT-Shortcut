@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState, useCallback } from "react";
 import clsx from "clsx";
-import { Button, message, Spin, Typography, Space } from "antd";
+import { Button, message, Spin, Space } from "antd";
 import copy from "copy-text-to-clipboard";
 import { CopyOutlined, StarOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
@@ -10,8 +10,6 @@ import { AuthContext } from "../AuthContext";
 import { getCards, getSelectComms, updateFavorite } from "@site/src/api";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-const { Text } = Typography;
-
 function UserFavorite() {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [cards, setCards] = useState([]);
@@ -19,7 +17,8 @@ function UserFavorite() {
   const [clickedIndex, setClickedIndex] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
 
-  const [copiedIndex, setCopiedIndex] = useState(null);
+  const [copiedCardIndex, setCopiedCardIndex] = useState(null);
+  const [copiedCommIndex, setCopiedCommIndex] = useState(null);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
@@ -79,21 +78,25 @@ function UserFavorite() {
     setClickedIndex(index);
     setShowDescription((prev) => !prev); // toggle the state
   };
-  const handleCopyClick = (index) => {
-    const card = cards[index];
-    const comm = comms[index];
-    if (card) {
-      copy(card[currentLanguage].prompt);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
-    } else if (comm) {
-      copy(comm.description);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
+  const handleCopyClick = (index, isComm = false) => {
+    if (isComm) {
+      const comm = comms[index];
+      if (comm) {
+        copy(comm.description);
+        setCopiedCommIndex(index);
+        setTimeout(() => {
+          setCopiedCommIndex(null);
+        }, 2000);
+      }
+    } else {
+      const card = cards[index];
+      if (card) {
+        copy(card[currentLanguage].prompt);
+        setCopiedCardIndex(index);
+        setTimeout(() => {
+          setCopiedCardIndex(null);
+        }, 2000);
+      }
     }
   };
   const formatCopyCount = (count) => {
@@ -126,9 +129,9 @@ function UserFavorite() {
                   <div>
                     <div className={clsx(styles.showcaseCardHeader)}>
                       <h4 className={styles.showcaseCardTitle}>
-                        <Link className={styles.showcaseCardLink}>
+                        <span className={styles.showcaseCardLink} style={{ color: 'var(--ifm-color-primary)' }}>
                           {comm.title}
-                        </Link>
+                        </span>
                         <span
                           style={{
                             fontSize: "12px",
@@ -153,8 +156,8 @@ function UserFavorite() {
                       <Button
                         icon={<CopyOutlined />}
                         type='default'
-                        onClick={() => handleCopyClick(index)}>
-                        {copiedIndex === index ? (
+                        onClick={() => handleCopyClick(index, true)}>
+                        {copiedCommIndex === index ? (
                           <Translate id='theme.CodeBlock.copied'>
                             已复制
                           </Translate>
@@ -218,7 +221,7 @@ function UserFavorite() {
                         icon={<CopyOutlined />}
                         type='default'
                         onClick={() => handleCopyClick(index)}>
-                        {copiedIndex === index ? (
+                        {copiedCardIndex === index ? (
                           <Translate id='theme.CodeBlock.copied'>
                             已复制
                           </Translate>
