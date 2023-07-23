@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "../ShowcaseCard/styles.module.css";
-import Link from "@docusaurus/Link";
 import {
   Form,
   Input,
@@ -150,9 +149,11 @@ export default function UserPromptsPage() {
               <div>
                 <div className={clsx(styles.showcaseCardHeader)}>
                   <Heading as='h4' className={styles.showcaseCardTitle}>
-                    <Link className={styles.showcaseCardLink}>
+                    <span
+                      className={styles.showcaseCardLink}
+                      style={{ color: "var(--ifm-color-primary)" }}>
                       {UserPrompt.title}{" "}
-                    </Link>
+                    </span>
                   </Heading>
                   <button
                     className={clsx(
@@ -168,12 +169,13 @@ export default function UserPromptsPage() {
                     )}
                   </button>
                 </div>
-                {UserPrompt.remark && (
-                  <p className={styles.showcaseCardBody}>
-                    👉 {UserPrompt.remark}
-                  </p>
-                )}
                 <p className={styles.showcaseCardBody}>
+                  {UserPrompt.remark && (
+                    <>
+                      👉 {UserPrompt.remark}
+                      <br />
+                    </>
+                  )}
                   {UserPrompt.description}
                 </p>
               </div>

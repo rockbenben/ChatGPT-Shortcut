@@ -269,16 +269,15 @@ function CommunityPrompts() {
                     </p>
                   )}
                   <p className={styles.showcaseCardBody}>
-                    {UserPrompt.attributes.notes && (
+                    {UserPrompt.attributes.notes ? (
                       <Tooltip
                         placement='bottom'
                         title={truncate(UserPrompt.attributes.notes, 300)}
                         overlayStyle={{ maxWidth: 450 }}>
-                        <Text>{UserPrompt.attributes.description}</Text>
+                        {UserPrompt.attributes.description}
                       </Tooltip>
-                    )}
-                    {!UserPrompt.attributes.notes && (
-                      <Text>{UserPrompt.attributes.description}</Text>
+                    ) : (
+                      UserPrompt.attributes.description
                     )}
                   </p>
                 </div>

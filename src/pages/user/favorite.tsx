@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tabs } from "antd";
-import type { TabsProps } from "antd";
 import { EditOutlined, StarOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
@@ -9,32 +8,11 @@ import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
 import { AuthProvider } from "../_components/AuthContext";
 
-const items: TabsProps["items"] = [
-  {
-    key: "status",
-    label: (
-      <span>
-        <StarOutlined style={{ marginRight: "6px" }} />
-        {translate({ message: "收藏" })}
-      </span>
-    ),
-    children: <UserFavorite />,
-  },
-  {
-    key: "prompts",
-    label: (
-      <span>
-        <EditOutlined style={{ marginRight: "6px" }} />
-        {translate({ message: "你的提示词" })}
-      </span>
-    ),
-    children: <UserPrompts />,
-  },
-];
-
 function UserBookmark() {
-  const onChange = (key: string) => {
-    console.log(key);
+  const [activeKey, setActiveKey] = useState("status");
+
+  const onChange = (key) => {
+    setActiveKey(key);
   };
 
   return (
@@ -45,8 +23,29 @@ function UserBookmark() {
         <div className={"text--center"}>
           <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
         </div>
-        <div style={{ margin: "0 auto", maxWidth: "90%" }}>
-          <Tabs defaultActiveKey='status' items={items} onChange={onChange} />
+        <div style={{ margin: "0 auto", maxWidth: "90%"}}>
+          <Tabs defaultActiveKey='status' onChange={onChange} tabBarStyle={{color:"var(--ifm-font-color-base)"}} >
+            <Tabs.TabPane
+              key='status'
+              tab={
+                <span style={{}}>
+                  <StarOutlined style={{ marginRight: "5px" }} />
+                  {translate({ message: "收藏" })}
+                </span>
+              }
+            />
+            <Tabs.TabPane
+              key='prompts'
+              tab={
+                <span>
+                  <EditOutlined style={{ marginRight: "5px" }} />
+                  {translate({ message: "你的提示词" })}
+                </span>
+              }
+            />
+          </Tabs>
+          {activeKey === 'status' && <UserFavorite />}
+          {activeKey === 'prompts' && <UserPrompts />}
         </div>
       </main>
     </Layout>

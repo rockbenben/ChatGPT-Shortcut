@@ -129,7 +129,9 @@ function UserFavorite() {
                   <div>
                     <div className={clsx(styles.showcaseCardHeader)}>
                       <h4 className={styles.showcaseCardTitle}>
-                        <span className={styles.showcaseCardLink} style={{ color: 'var(--ifm-color-primary)' }}>
+                        <span
+                          className={styles.showcaseCardLink}
+                          style={{ color: "var(--ifm-color-primary)" }}>
                           {comm.title}
                         </span>
                         <span
@@ -142,12 +144,13 @@ function UserFavorite() {
                         </span>
                       </h4>
                     </div>
-                    {comm.remark && (
-                      <p className={styles.showcaseCardBody}>
-                        👉 {comm.remark}
-                      </p>
-                    )}
                     <p className={styles.showcaseCardBody}>
+                      {comm.remark && (
+                        <>
+                          👉 {comm.remark}
+                          <br />
+                        </>
+                      )}
                       {comm.description}
                     </p>
                   </div>
