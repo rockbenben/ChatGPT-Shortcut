@@ -1,5 +1,6 @@
 import React from "react";
 import PromptPage from "../_components/PromptPage";
+import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 
 const prompt = {
   "zh": {
@@ -89,7 +90,7 @@ const prompt = {
 };
 
 function PromptDetail() {
-  return <PromptPage prompt={prompt} />;
+  return <AuthProvider><PromptPage prompt={prompt} /></AuthProvider>;
 }
 
 export default PromptDetail;
