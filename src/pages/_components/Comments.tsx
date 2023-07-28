@@ -177,15 +177,15 @@ const Comments = ({ pageId, currentUserId }) => {
       <Comment
         actions={[
           <span key='comment-basic-reply-to' onClick={() => setReplyingTo(comment.id)}>
-            <Translate id='comment.reply'>Reply</Translate>
+            <Translate id='comment.reply'>回复</Translate>
           </span>,
           currentUserId === comment.author?.id && (
             <>
               <span onClick={() => setEditingComment(comment.id)}>
-                <Translate id='edit'>Edit</Translate>
+                <Translate id='edit'>编辑</Translate>
               </span>
               <span onClick={() => handleDelete(comment.id)}>
-                <Translate id='delete'>Delete</Translate>
+                <Translate id='delete'>删除</Translate>
               </span>
             </>
           ),
@@ -203,14 +203,14 @@ const Comments = ({ pageId, currentUserId }) => {
                     required: true,
                     message: translate({
                       id: "comment.required",
-                      message: "Please input comment content",
+                      message: "请输入评论内容",
                     }),
                   },
                   {
                     max: 2000,
                     message: translate({
                       id: "comment.maxLength",
-                      message: "Comment should not exceed 2000 characters",
+                      message: "评论内容不应超过2000个字符",
                     }),
                   },
                 ]}
@@ -219,7 +219,7 @@ const Comments = ({ pageId, currentUserId }) => {
                   rows={4}
                   placeholder={translate({
                     id: "comment.placeholder",
-                    message: "Type your comment here... Support Markdown and HTML syntax.",
+                    message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
                   })}
                 />
               </Form.Item>
@@ -236,12 +236,11 @@ const Comments = ({ pageId, currentUserId }) => {
                   ]}
                 />
               )}
-
-              <Button htmlType='submit' type='primary' style={{ marginLeft: "2px" }}>
-                <Translate id='comment.update'>Update Comment</Translate>
+              <Button htmlType='submit' type='primary' style={{ marginLeft: "5px" }}>
+                <Translate id='comment.update'>更新评论</Translate>
               </Button>
               <Button onClick={handleCancelUpdate} style={{ marginLeft: "10px" }}>
-                <Translate id='cancel'>Cancel</Translate>
+                <Translate id='cancel'>取消</Translate>
               </Button>
             </Form>
           ) : (
@@ -258,14 +257,14 @@ const Comments = ({ pageId, currentUserId }) => {
                   required: true,
                   message: translate({
                     id: "reply.required",
-                    message: "Please input reply content",
+                    message: "请输入回复内容",
                   }),
                 },
                 {
                   max: 2000,
                   message: translate({
                     id: "comment.maxLength",
-                    message: "Comment should not exceed 2000 characters",
+                    message: "评论内容不应超过2000个字符",
                   }),
                 },
               ]}
@@ -274,7 +273,7 @@ const Comments = ({ pageId, currentUserId }) => {
                 rows={4}
                 placeholder={translate({
                   id: "comment.placeholder",
-                  message: "Type your comment here... Support Markdown and HTML syntax.",
+                  message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
                 })}
               />
             </Form.Item>
@@ -293,16 +292,16 @@ const Comments = ({ pageId, currentUserId }) => {
             )}
             {currentUserId ? (
               <>
-                <Button htmlType='submit' type='primary' style={{ marginLeft: "2px" }}>
-                  <Translate id='reply.submit'>Reply Comment</Translate>
+                <Button htmlType='submit' type='primary' style={{ marginLeft: "5px" }}>
+                  <Translate id='reply.submit'>回复</Translate>
                 </Button>
                 <Button onClick={handleCancelReply} style={{ marginLeft: "10px" }}>
-                  <Translate id='cancel'>Cancel</Translate>
+                  <Translate id='cancel'>取消</Translate>
                 </Button>
               </>
             ) : (
-              <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "2px" }}>
-                <Translate id='button.login'>Log In</Translate>
+              <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "5px" }}>
+                <Translate id='button.login'>登录</Translate>
               </Button>
             )}
           </Form>
@@ -326,14 +325,14 @@ const Comments = ({ pageId, currentUserId }) => {
               required: true,
               message: translate({
                 id: "comment.required",
-                message: "Please input your comment",
+                message: "请输入评论内容",
               }),
             },
             {
               max: 2000,
               message: translate({
                 id: "comment.maxLength",
-                message: "Comment should not exceed 2000 characters",
+                message: "评论内容不应超过2000个字符",
               }),
             },
           ]}
@@ -342,7 +341,7 @@ const Comments = ({ pageId, currentUserId }) => {
             rows={4}
             placeholder={translate({
               id: "comment.placeholder",
-              message: "Type your comment here... Support Markdown and HTML syntax.",
+              message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
             })}
           />
         </Form.Item>
@@ -360,12 +359,12 @@ const Comments = ({ pageId, currentUserId }) => {
           />
         )}
         {currentUserId ? (
-          <Button htmlType='submit' type='primary' style={{ marginLeft: "2px" }}>
-            <Translate id='comment.add'>Add Comment</Translate>
+          <Button htmlType='submit' type='primary' style={{ marginLeft: "5px" }}>
+            <Translate id='comment.add'>提交评论</Translate>
           </Button>
         ) : (
-          <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "2px" }}>
-            <Translate id='button.login'>Log In</Translate>
+          <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "5px" }}>
+            <Translate id='button.login'>登录</Translate>
           </Button>
         )}
       </Form>
@@ -373,7 +372,7 @@ const Comments = ({ pageId, currentUserId }) => {
         className='comment-list'
         header={`${getCommentCount(comments)} ${translate({
           id: "comment.comments",
-          message: "comments",
+          message: "评论",
         })}`}
         itemLayout='horizontal'
         dataSource={comments}
