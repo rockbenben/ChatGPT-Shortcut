@@ -96,11 +96,12 @@ for prompt in data:
     # Prepare the content for the React JSX file
     content = f'''import React from "react";
 import PromptPage from "../_components/PromptPage";
+import {{ AuthProvider }} from "@site/src/pages/_components/AuthContext";
 
 const prompt = {prompt_json};
 
 function PromptDetail() {{
-  return <PromptPage prompt={{prompt}} />;
+  return <AuthProvider><PromptPage prompt={{prompt}} /></AuthProvider>;
 }}
 
 export default PromptDetail;
