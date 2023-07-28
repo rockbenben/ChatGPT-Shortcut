@@ -1,24 +1,13 @@
 import React, { useContext, useState } from "react";
 import Cookies from "js-cookie";
 import Link from "@docusaurus/Link";
-import {
-  Form,
-  Input,
-  Button,
-  message,
-  Modal,
-  Typography,
-  Switch,
-  Space,
-} from "antd";
+import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
-const UserStatus = ({
-  hideLinks = { userCenter: false, myFavorite: false },
-}) => {
+const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) => {
   const { userAuth, setUserAuth, refreshUserAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -39,20 +28,12 @@ const UserStatus = ({
       await submitPrompt(values);
       await refreshUserAuth();
       //window.location.reload();
-      message.success(
-        <Translate id='message.success'>词条提交成功！</Translate>
-      );
-      message.success(
-        <Translate id='message.success1'>
-          点击标签「你的提示词」查看已添加的自定义提示词。
-        </Translate>
-      );
+      message.success(<Translate id='message.success'>词条提交成功！</Translate>);
+      message.success(<Translate id='message.success1'>点击标签「你的提示词」查看已添加的自定义提示词。</Translate>);
       setOpen(false);
     } catch (err) {
       console.error(err);
-      message.error(
-        <Translate id='message.error'>词条提交失败，请稍后重试</Translate>
-      );
+      message.error(<Translate id='message.error'>词条提交失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -138,8 +119,7 @@ const UserStatus = ({
               <Input.TextArea
                 placeholder={translate({
                   id: "input.addprompt.notes",
-                  message:
-                    "备注（非必填）：您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。",
+                  message: "备注（非必填）：您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。",
                 })}
                 rows={3}
               />
@@ -161,16 +141,11 @@ const UserStatus = ({
               />
               <Typography.Text type='secondary'>
                 {" "}
-                <Translate id='message.addprompt.submission'>
-                  您是否愿意将该提示词分享到公开页面？
-                </Translate>
+                <Translate id='message.addprompt.submission'>您是否愿意将该提示词分享到公开页面？</Translate>
               </Typography.Text>
             </Form.Item>
             <Form.Item>
-              <Button
-                htmlType='submit'
-                loading={loading}
-                style={{ marginTop: "16px" }}>
+              <Button htmlType='submit' loading={loading} style={{ marginTop: "16px" }}>
                 <Translate id='button.addPrompt'>添加 Prompt</Translate>
               </Button>
             </Form.Item>
@@ -181,15 +156,10 @@ const UserStatus = ({
   } else {
     return (
       <>
-        <Link
-          className='button button--secondary'
-          onClick={() => setOpen(true)}
-          style={{ marginRight: "10px" }}>
+        <Link className='button button--secondary' onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id='button.login'>登录</Translate>
         </Link>
-        <Link
-          className='button button--primary'
-          to='https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11'>
+        <Link className='button button--primary' to='https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11'>
           <Translate id='showcase.header.button'>🙏 请添加你的提示词</Translate>
         </Link>
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>

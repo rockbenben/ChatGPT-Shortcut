@@ -32,25 +32,15 @@ export async function getUserAllInfo() {
     const cachedData = localStorage.getItem(cacheKey);
     const cachedExpiration = localStorage.getItem(expirationKey);
 
-    if (
-      cachedData &&
-      cachedExpiration &&
-      new Date().getTime() < Number(cachedExpiration)
-    ) {
+    if (cachedData && cachedExpiration && new Date().getTime() < Number(cachedExpiration)) {
       // 如果缓存的数据和缓存过期时间都存在，且当前时间小于缓存过期时间，那么直接返回缓存的数据
       return JSON.parse(cachedData);
     } else {
       // 如果缓存不存在或已过期，那么发送请求获取新的数据
-      const response = await axios.get(
-        `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts]=*`,
-        config
-      );
+      const response = await axios.get(`${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts]=*`, config);
       // 将新的数据存入缓存，设置缓存过期时间为 24 小时后
       localStorage.setItem(cacheKey, JSON.stringify(response));
-      localStorage.setItem(
-        expirationKey,
-        (new Date().getTime() + 24 * 60 * 60 * 1000).toString()
-      );
+      localStorage.setItem(expirationKey, (new Date().getTime() + 24 * 60 * 60 * 1000).toString());
 
       return response;
     }
@@ -170,17 +160,9 @@ export async function deletePrompt(id) {
 
 /* Community-prompts 页面管理 */
 // 获取 Community-prompts
-export async function getCommPrompts(
-  page,
-  pageSize,
-  sortField,
-  sortOrder,
-  searchTerm
-) {
+export async function getCommPrompts(page, pageSize, sortField, sortOrder, searchTerm) {
   // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
-  const cacheKey = `userPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${
-    searchTerm || "noTerm"
-  }`;
+  const cacheKey = `userPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${searchTerm || "noTerm"}`;
   const expirationKey = `${cacheKey}_expiration`;
 
   // 从 localStorage 中获取缓存的数据和到期时间
@@ -188,11 +170,7 @@ export async function getCommPrompts(
   const expirationDate = localStorage.getItem(expirationKey);
 
   // 检查缓存的数据是否还有效
-  if (
-    cachedData &&
-    expirationDate &&
-    new Date().getTime() < Number(expirationDate)
-  ) {
+  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
     // 如果有效，那么直接使用缓存的数据
     return cachedData;
   } else {
@@ -226,11 +204,7 @@ export function getCards(ids, lang) {
   const expirationDate = localStorage.getItem(expirationKey);
 
   // 检查缓存的数据是否还有效
-  if (
-    cachedData &&
-    expirationDate &&
-    new Date().getTime() < Number(expirationDate)
-  ) {
+  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
     // 如果有效，那么直接使用缓存的数据
     return Promise.resolve(cachedData);
   } else {
@@ -263,11 +237,7 @@ export function getSelectComms(ids) {
   const expirationDate = localStorage.getItem(expirationKey);
 
   // 检查缓存的数据是否还有效
-  if (
-    cachedData &&
-    expirationDate &&
-    new Date().getTime() < Number(expirationDate)
-  ) {
+  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
     // 如果有效，那么直接使用缓存的数据
     return Promise.resolve(cachedData);
   } else {
@@ -293,18 +263,12 @@ export function getSelectComms(ids) {
 export async function voteOnUserPrompt(promptId, action) {
   try {
     if (!authToken) {
-      throw new Error(
-        "Kindly proceed with casting your vote after logging in."
-      );
+      throw new Error("Kindly proceed with casting your vote after logging in.");
     }
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
     }
-    return await axios.post(
-      `${API_URL}/userprompts/${promptId}/vote`,
-      { action: action },
-      config
-    );
+    return await axios.post(`${API_URL}/userprompts/${promptId}/vote`, { action: action }, config);
   } catch (error) {
     console.error("Error voting on user prompt:", error);
     throw error;
@@ -371,6 +335,96 @@ export async function resetPassword(values) {
   }
 }
 
+/* 评论系统 */
+// 获取评论
+export async function getComments(pageId, page, pageSize) {
+  const cacheKey = `comments_${pageId}_${page}_${pageSize}`;
+  const expirationKey = `${cacheKey}_expiration`;
+
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+  const expirationDate = localStorage.getItem(expirationKey);
+
+  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
+    return Promise.resolve(cachedData);
+  } else {
+    try {
+      const response = await axios.get(`${API_URL}/comments/api::page.page:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
+
+      const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
+      localStorage.setItem(cacheKey, JSON.stringify(response.data));
+      localStorage.setItem(expirationKey, String(nextExpirationDate));
+
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+      throw error;
+    }
+  }
+}
+
+function clearCommentsCache(pageId) {
+  Object.keys(localStorage).forEach((key) => {
+    if (key.startsWith(`comments_${pageId}`)) {
+      localStorage.removeItem(key);
+      localStorage.removeItem(`${key}_expiration`);
+    }
+  });
+}
+
+// 发布评论
+export async function postComment(pageId, commentContent, threadOf = null) {
+  try {
+    const response = await axios.post(
+      `${API_URL}/comments/api::page.page:${pageId}`,
+      {
+        content: commentContent,
+        threadOf,
+      },
+      config
+    );
+
+    // 更新缓存
+    clearCommentsCache(pageId);
+    return response;
+  } catch (error) {
+    console.error("Error posting comment:", error);
+    throw error;
+  }
+}
+
+// 更新评论
+export async function updateComment(pageId, commentId, commentContent) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/comments/api::page.page:${pageId}/comment/${commentId}`,
+      {
+        content: commentContent,
+      },
+      config
+    );
+    // 更新缓存
+    clearCommentsCache(pageId);
+    return response;
+  } catch (error) {
+    console.error("Error updating comment:", error);
+    throw error;
+  }
+}
+
+// 删除评论
+export async function deleteComment(pageId, commentId) {
+  try {
+    const response = await axios.delete(`${API_URL}/comments/api::page.page:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
+
+    // 更新缓存
+    clearCommentsCache(pageId);
+    return response;
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+    throw error;
+  }
+}
+
 /* 精选提示词的 copy count */
 // 获取所有 cards 的 copy count
 export async function fetchAllCopyCounts() {
@@ -382,11 +436,7 @@ export async function fetchAllCopyCounts() {
     let counts;
 
     // 检查缓存的数据是否还有效
-    if (
-      cachedData &&
-      expirationDate &&
-      new Date().getTime() < Number(expirationDate)
-    ) {
+    if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
       // 如果有效，那么直接使用缓存的数据
       counts = cachedData;
     } else {
