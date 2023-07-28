@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "Échec de la suppression de l'invite, veuillez réessayer plus tard."
   },
-  "tooltip.deleteprompt": {
-    "message": "l'enlèvement"
-  },
-  "link.deleteprompt": {
-    "message": "l'enlèvement"
-  },
-  "tooltip.updateprompt": {
-    "message": "modifications"
-  },
-  "link.updateprompt": {
-    "message": "modifications"
-  },
   "modal.updateprompt.title": {
     "message": "Mettre à jour l'invite actuelle"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Retirer"
+  },
+  "comment.reply": {
+    "message": "Répondre"
+  },
+  "edit": {
+    "message": "Editer"
+  },
+  "delete": {
+    "message": "Supprimer"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "comment.required": {
+    "message": "Veuillez saisir votre commentaire"
+  },
+  "comment.maxLength": {
+    "message": "Le commentaire ne doit pas dépasser 2000 caractères"
+  },
+  "comment.placeholder": {
+    "message": "Tapez votre commentaire ici... Supporte les syntaxes Markdown et HTML."
+  },
+  "comment.update": {
+    "message": "Mise à jour des commentaires"
+  },
+  "reply.required": {
+    "message": "Veuillez saisir le contenu de la réponse"
+  },
+  "reply.submit": {
+    "message": "Commentaire de réponse"
+  },
+  "comment.add": {
+    "message": "Ajouter un commentaire"
+  },
+  "comment.comments": {
+    "message": "commentaires"
   }
 }

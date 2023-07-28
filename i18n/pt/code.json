@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "Falha ao apagar o prompt, por favor tente novamente mais tarde."
   },
-  "tooltip.deleteprompt": {
-    "message": "remoção"
-  },
-  "link.deleteprompt": {
-    "message": "remoção"
-  },
-  "tooltip.updateprompt": {
-    "message": "modificações"
-  },
-  "link.updateprompt": {
-    "message": "modificações"
-  },
   "modal.updateprompt.title": {
     "message": "Atualizar o Prompt atual"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Remover"
+  },
+  "comment.reply": {
+    "message": "Responder"
+  },
+  "edit": {
+    "message": "Editar"
+  },
+  "delete": {
+    "message": "Eliminar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "comment.required": {
+    "message": "Por favor, introduza o seu comentário"
+  },
+  "comment.maxLength": {
+    "message": "O comentário não deve exceder 2000 caracteres"
+  },
+  "comment.placeholder": {
+    "message": "Escreva o seu comentário aqui... Suporta a sintaxe Markdown e HTML."
+  },
+  "comment.update": {
+    "message": "Atualizar Comentário"
+  },
+  "reply.required": {
+    "message": "Introduzir o conteúdo da resposta"
+  },
+  "reply.submit": {
+    "message": "Responder Comentário"
+  },
+  "comment.add": {
+    "message": "Adicionar comentário"
+  },
+  "comment.comments": {
+    "message": "comentários"
   }
 }

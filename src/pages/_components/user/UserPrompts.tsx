@@ -181,21 +181,21 @@ export default function UserPromptsPage() {
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Tooltip
-                  title={<Translate id='tooltip.deleteprompt'>删除</Translate>}>
+                  title={<Translate id='delete'>删除</Translate>}>
                   <a
                     style={{ fontSize: "14px", cursor: "pointer" }}
                     onClick={() => handleDeletePrompt(UserPrompt.id)}>
                     <DeleteOutlined />
-                    <Translate id='link.deleteprompt'>删除</Translate>
+                    <Translate id='delete'>删除</Translate>
                   </a>
                 </Tooltip>
                 <Tooltip
-                  title={<Translate id='tooltip.updateprompt'>修改</Translate>}>
+                  title={<Translate id='edit'>修改</Translate>}>
                   <a
                     style={{ fontSize: "14px", cursor: "pointer" }}
                     onClick={() => handleEditPrompt(UserPrompt)}>
                     <EditOutlined />
-                    <Translate id='link.updateprompt'>修改</Translate>
+                    <Translate id='edit'>修改</Translate>
                   </a>
                 </Tooltip>
               </div>

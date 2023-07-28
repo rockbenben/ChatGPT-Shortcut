@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "No se ha podido eliminar el mensaje, inténtelo de nuevo más tarde."
   },
-  "tooltip.deleteprompt": {
-    "message": "eliminar"
-  },
-  "link.deleteprompt": {
-    "message": "eliminar"
-  },
-  "tooltip.updateprompt": {
-    "message": "modificaciones"
-  },
-  "link.updateprompt": {
-    "message": "modificaciones"
-  },
   "modal.updateprompt.title": {
     "message": "Actualizar el Prompt actual"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Eliminar"
+  },
+  "comment.reply": {
+    "message": "Respuesta"
+  },
+  "edit": {
+    "message": "Editar"
+  },
+  "delete": {
+    "message": "Borrar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "comment.required": {
+    "message": "Por favor, introduzca su comentario"
+  },
+  "comment.maxLength": {
+    "message": "El comentario no debe superar los 2000 caracteres"
+  },
+  "comment.placeholder": {
+    "message": "Escriba aquí su comentario... Soporta sintaxis Markdown y HTML."
+  },
+  "comment.update": {
+    "message": "Actualización Comentario"
+  },
+  "reply.required": {
+    "message": "Por favor, introduzca el contenido de la respuesta"
+  },
+  "reply.submit": {
+    "message": "Responder Comentario"
+  },
+  "comment.add": {
+    "message": "Añadir comentario"
+  },
+  "comment.comments": {
+    "message": "comentarios"
   }
 }

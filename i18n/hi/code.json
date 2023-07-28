@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "संकेत हटाने में विफल, कृपया बाद में पुनः प्रयास करें।"
   },
-  "tooltip.deleteprompt": {
-    "message": "मिटाना"
-  },
-  "link.deleteprompt": {
-    "message": "मिटाना"
-  },
-  "tooltip.updateprompt": {
-    "message": "दोहराना"
-  },
-  "link.updateprompt": {
-    "message": "दोहराना"
-  },
   "modal.updateprompt.title": {
     "message": "वर्तमान संकेत अद्यतन करें"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "निकालना"
+  },
+  "comment.reply": {
+    "message": "जवाब"
+  },
+  "edit": {
+    "message": "संपादन करना"
+  },
+  "delete": {
+    "message": "मिटाना"
+  },
+  "cancel": {
+    "message": "रद्द करना"
+  },
+  "comment.required": {
+    "message": "कृपया अपनी टिप्पणी दर्ज करें"
+  },
+  "comment.maxLength": {
+    "message": "टिप्पणी 2000 अक्षरों से अधिक नहीं होनी चाहिए"
+  },
+  "comment.placeholder": {
+    "message": "अपनी टिप्पणी यहां टाइप करें... मार्कडाउन और HTML सिंटैक्स का समर्थन करें।"
+  },
+  "comment.update": {
+    "message": "टिप्पणी अद्यतन करें"
+  },
+  "reply.required": {
+    "message": "कृपया उत्तर सामग्री इनपुट करें"
+  },
+  "reply.submit": {
+    "message": "उत्तर टिप्पणी"
+  },
+  "comment.add": {
+    "message": "टिप्पणी जोड़ना"
+  },
+  "comment.comments": {
+    "message": "टिप्पणियाँ"
   }
 }

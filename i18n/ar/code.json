@@ -428,18 +428,6 @@
   "message.deletePrompt.error": {
     "message": "فشل حذف المطالبة ، يرجى المحاولة مرة أخرى في وقت لاحق."
   },
-  "tooltip.deleteprompt": {
-    "message": "يمسح"
-  },
-  "link.deleteprompt": {
-    "message": "يمسح"
-  },
-  "tooltip.updateprompt": {
-    "message": "يراجع"
-  },
-  "link.updateprompt": {
-    "message": "يراجع"
-  },
   "modal.updateprompt.title": {
     "message": "قم بتحديث الموجه الحالي"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "يزيل"
+  },
+  "comment.reply": {
+    "message": "رد"
+  },
+  "edit": {
+    "message": "يحرر"
+  },
+  "delete": {
+    "message": "يمسح"
+  },
+  "cancel": {
+    "message": "يلغي"
+  },
+  "comment.required": {
+    "message": "الرجاء إدخال تعليقك"
+  },
+  "comment.maxLength": {
+    "message": "يجب ألا يتجاوز التعليق 2000 حرف"
+  },
+  "comment.placeholder": {
+    "message": "اكتب تعليقك هنا ... دعم Markdown وبناء جملة HTML."
+  },
+  "comment.update": {
+    "message": "تحديث التعليق"
+  },
+  "reply.required": {
+    "message": "الرجاء إدخال محتوى الرد"
+  },
+  "reply.submit": {
+    "message": "رد التعليق"
+  },
+  "comment.add": {
+    "message": "أضف تعليق"
+  },
+  "comment.comments": {
+    "message": "تعليقات"
   }
 }

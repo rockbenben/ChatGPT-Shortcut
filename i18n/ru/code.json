@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "Не удалось удалить запрос, повторите попытку позже."
   },
-  "tooltip.deleteprompt": {
-    "message": "удаление"
-  },
-  "link.deleteprompt": {
-    "message": "удаление"
-  },
-  "tooltip.updateprompt": {
-    "message": "модификации"
-  },
-  "link.updateprompt": {
-    "message": "модификации"
-  },
   "modal.updateprompt.title": {
     "message": "Обновление текущей подсказки"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Удалять"
+  },
+  "comment.reply": {
+    "message": "Ответить"
+  },
+  "edit": {
+    "message": "Редактировать"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "comment.required": {
+    "message": "Пожалуйста, введите свой комментарий"
+  },
+  "comment.maxLength": {
+    "message": "Комментарий не должен превышать 2000 знаков"
+  },
+  "comment.placeholder": {
+    "message": "Введите свой комментарий здесь... Поддержка синтаксиса Markdown и HTML."
+  },
+  "comment.update": {
+    "message": "Комментарий к обновлению"
+  },
+  "reply.required": {
+    "message": "Пожалуйста, введите содержание ответа"
+  },
+  "reply.submit": {
+    "message": "Ответить Комментарий"
+  },
+  "comment.add": {
+    "message": "Добавить комментарий"
+  },
+  "comment.comments": {
+    "message": "комментарии"
   }
 }

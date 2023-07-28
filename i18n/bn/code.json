@@ -428,18 +428,6 @@
   "message.deletePrompt.error": {
     "message": "প্রম্পট মুছে ফেলতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
   },
-  "tooltip.deleteprompt": {
-    "message": "মুছে ফেলা"
-  },
-  "link.deleteprompt": {
-    "message": "মুছে ফেলা"
-  },
-  "tooltip.updateprompt": {
-    "message": "সংশোধন করুন"
-  },
-  "link.updateprompt": {
-    "message": "সংশোধন করুন"
-  },
   "modal.updateprompt.title": {
     "message": "বর্তমান প্রম্পট আপডেট করুন"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "অপসারণ"
+  },
+  "comment.reply": {
+    "message": "উত্তর দিন"
+  },
+  "edit": {
+    "message": "সম্পাদনা করুন"
+  },
+  "delete": {
+    "message": "মুছে ফেলা"
+  },
+  "cancel": {
+    "message": "বাতিল করুন"
+  },
+  "comment.required": {
+    "message": "আপনার মন্তব্য ইনপুট করুন"
+  },
+  "comment.maxLength": {
+    "message": "মন্তব্য 2000 অক্ষরের বেশি হওয়া উচিত নয়"
+  },
+  "comment.placeholder": {
+    "message": "এখানে আপনার মন্তব্য টাইপ করুন... মার্কডাউন এবং এইচটিএমএল সিনট্যাক্স সমর্থন করুন।"
+  },
+  "comment.update": {
+    "message": "আপডেট মন্তব্য"
+  },
+  "reply.required": {
+    "message": "অনুগ্রহ করে উত্তরের কন্টেন্ট ইনপুট করুন"
+  },
+  "reply.submit": {
+    "message": "মন্তব্যের উত্তর দিন"
+  },
+  "comment.add": {
+    "message": "মন্তব্য যোগ করুন"
+  },
+  "comment.comments": {
+    "message": "মন্তব্য"
   }
 }

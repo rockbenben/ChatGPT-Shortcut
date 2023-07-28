@@ -19,10 +19,6 @@
     "message": "🛠️ Ferramentas de aplicação",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
-  "item.label.反馈": {
-    "message": "enviar informações",
-    "description": "Navbar item with label 反馈"
-  },
   "item.label.IMGPrompt": {
     "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
@@ -46,5 +42,25 @@
   "item.label.Find on Product Hunt": {
     "message": "Encontrar no Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
+  },
+  "item.label.反馈建议": {
+    "message": "Comentários/Sugestões",
+    "description": "Navbar item with label 反馈建议"
+  },
+  "item.label.📝 提交反馈": {
+    "message": "📝 Enviar comentários",
+    "description": "Navbar item with label 📝 提交反馈"
+  },
+  "item.label.💬 微信交流": {
+    "message": "💬 Conversar connosco no WeChat",
+    "description": "Navbar item with label 💬 微信交流"
+  },
+  "item.label.📧 发送邮件": {
+    "message": "📧 Enviar e-mail",
+    "description": "Navbar item with label 📧 发送邮件"
+  },
+  "item.label.📺 加入 Discord": {
+    "message": "Junte-se ao nosso Discord",
+    "description": "Navbar item with label 📺 加入 Discord"
   }
 }

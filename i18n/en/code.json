@@ -696,23 +696,11 @@
   "message.deletePrompt.error": {
     "message": "Failed to delete prompt, please try again later."
   },
-  "link.deleteprompt": {
-    "message": "Delete"
-  },
-  "link.updateprompt": {
-    "message": "Edit"
-  },
   "modal.updateprompt.title": {
     "message": "Edit the Prompt"
   },
   "button.updateprompt": {
     "message": "Update the Prompt"
-  },
-  "tooltip.deleteprompt": {
-    "message": "Delete"
-  },
-  "tooltip.updateprompt": {
-    "message": "Edit"
   },
   "comments.info": {
     "message": "Kindly provide your opinions, thoughts, or insights regarding the given prompt in the space below."
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Remove"
+  },
+  "comment.reply": {
+    "message": "Reply"
+  },
+  "edit": {
+    "message": "Edit"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "comment.required": {
+    "message": "Please input your comment"
+  },
+  "comment.maxLength": {
+    "message": "Comment should not exceed 2000 characters"
+  },
+  "comment.placeholder": {
+    "message": "Type your comment here... Support Markdown and HTML syntax."
+  },
+  "comment.update": {
+    "message": "Update Comment"
+  },
+  "reply.required": {
+    "message": "Please input reply content"
+  },
+  "reply.submit": {
+    "message": "Reply Comment"
+  },
+  "comment.add": {
+    "message": "Add Comment"
+  },
+  "comment.comments": {
+    "message": "comments"
   }
 }

@@ -386,18 +386,6 @@
   "message.deletePrompt.error": {
     "message": "메시지를 삭제하지 못했습니다. 나중에 다시 시도하세요."
   },
-  "tooltip.deleteprompt": {
-    "message": "삭제"
-  },
-  "link.deleteprompt": {
-    "message": "삭제"
-  },
-  "tooltip.updateprompt": {
-    "message": "수정 사항"
-  },
-  "link.updateprompt": {
-    "message": "수정 사항"
-  },
   "modal.updateprompt.title": {
     "message": "현재 프롬프트 업데이트"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "제거하다"
+  },
+  "comment.reply": {
+    "message": "답글"
+  },
+  "edit": {
+    "message": "편집"
+  },
+  "delete": {
+    "message": "삭제"
+  },
+  "cancel": {
+    "message": "취소"
+  },
+  "comment.required": {
+    "message": "의견을 입력해 주세요."
+  },
+  "comment.maxLength": {
+    "message": "댓글은 2000 자를 초과할 수 없습니다."
+  },
+  "comment.placeholder": {
+    "message": "여기에 댓글을 입력하세요... 마크다운 및 HTML 구문을 지원합니다."
+  },
+  "comment.update": {
+    "message": "댓글 업데이트"
+  },
+  "reply.required": {
+    "message": "답장 내용을 입력하세요."
+  },
+  "reply.submit": {
+    "message": "댓글 달기"
+  },
+  "comment.add": {
+    "message": "댓글 추가"
+  },
+  "comment.comments": {
+    "message": "댓글"
   }
 }

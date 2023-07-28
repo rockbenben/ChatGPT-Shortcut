@@ -425,18 +425,6 @@
   "message.deletePrompt.error": {
     "message": "La richiesta di cancellazione non è riuscita, riprovare più tardi."
   },
-  "tooltip.deleteprompt": {
-    "message": "rimozione"
-  },
-  "link.deleteprompt": {
-    "message": "rimozione"
-  },
-  "tooltip.updateprompt": {
-    "message": "modifiche"
-  },
-  "link.updateprompt": {
-    "message": "modifiche"
-  },
   "modal.updateprompt.title": {
     "message": "Aggiornare il prompt corrente"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Rimuovere"
+  },
+  "comment.reply": {
+    "message": "Risposta"
+  },
+  "edit": {
+    "message": "Modifica"
+  },
+  "delete": {
+    "message": "Cancellare"
+  },
+  "cancel": {
+    "message": "Annullamento"
+  },
+  "comment.required": {
+    "message": "Inserite il vostro commento"
+  },
+  "comment.maxLength": {
+    "message": "Il commento non deve superare i 2000 caratteri"
+  },
+  "comment.placeholder": {
+    "message": "Scrivi qui il tuo commento... Supporta la sintassi Markdown e HTML."
+  },
+  "comment.update": {
+    "message": "Commento di aggiornamento"
+  },
+  "reply.required": {
+    "message": "Inserire il contenuto della risposta"
+  },
+  "reply.submit": {
+    "message": "Commento di risposta"
+  },
+  "comment.add": {
+    "message": "Aggiungi commento"
+  },
+  "comment.comments": {
+    "message": "commenti"
   }
 }

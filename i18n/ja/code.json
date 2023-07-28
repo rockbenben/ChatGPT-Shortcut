@@ -386,18 +386,6 @@
   "message.deletePrompt.error": {
     "message": "プロンプトの削除に失敗しました、後でもう一度試してください。"
   },
-  "tooltip.deleteprompt": {
-    "message": "削除"
-  },
-  "link.deleteprompt": {
-    "message": "削除"
-  },
-  "tooltip.updateprompt": {
-    "message": "修正内容"
-  },
-  "link.updateprompt": {
-    "message": "修正内容"
-  },
   "modal.updateprompt.title": {
     "message": "現在のプロンプトを更新する"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "削除"
+  },
+  "comment.reply": {
+    "message": "返信"
+  },
+  "edit": {
+    "message": "編集"
+  },
+  "delete": {
+    "message": "削除"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "comment.required": {
+    "message": "コメントを入力してください"
+  },
+  "comment.maxLength": {
+    "message": "コメントは 2000 文字以内"
+  },
+  "comment.placeholder": {
+    "message": "ここにコメントを入力してください...Markdown と HTML 構文をサポートしています。"
+  },
+  "comment.update": {
+    "message": "コメント更新"
+  },
+  "reply.required": {
+    "message": "返信内容を入力してください"
+  },
+  "reply.submit": {
+    "message": "返信コメント"
+  },
+  "comment.add": {
+    "message": "コメントを追加"
+  },
+  "comment.comments": {
+    "message": "コメント"
   }
 }

@@ -428,18 +428,6 @@
   "message.deletePrompt.error": {
     "message": "Aufforderung zum Löschen fehlgeschlagen, bitte versuchen Sie es später noch einmal."
   },
-  "tooltip.deleteprompt": {
-    "message": "entfernen"
-  },
-  "link.deleteprompt": {
-    "message": "entfernen"
-  },
-  "tooltip.updateprompt": {
-    "message": "Änderungen"
-  },
-  "link.updateprompt": {
-    "message": "Änderungen"
-  },
   "modal.updateprompt.title": {
     "message": "Aktualisieren Sie die aktuelle Eingabeaufforderung"
   },
@@ -773,5 +761,41 @@
   },
   "移除收藏": {
     "message": "Entfernen"
+  },
+  "comment.reply": {
+    "message": "Antwort"
+  },
+  "edit": {
+    "message": "bearbeiten"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "comment.required": {
+    "message": "Bitte geben Sie Ihren Kommentar ein"
+  },
+  "comment.maxLength": {
+    "message": "Kommentar sollte 2000 Zeichen nicht überschreiten"
+  },
+  "comment.placeholder": {
+    "message": "Geben Sie Ihren Kommentar hier ein... Unterstützt Markdown- und HTML-Syntax."
+  },
+  "comment.update": {
+    "message": "Update Kommentar"
+  },
+  "reply.required": {
+    "message": "Bitte geben Sie den Inhalt der Antwort ein"
+  },
+  "reply.submit": {
+    "message": "Kommentar antworten"
+  },
+  "comment.add": {
+    "message": "Kommentar hinzufügen"
+  },
+  "comment.comments": {
+    "message": "Kommentare"
   }
 }

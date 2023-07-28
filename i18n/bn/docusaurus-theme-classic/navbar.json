@@ -19,10 +19,6 @@
     "message": "🛠️ অ্যাপস",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
-  "item.label.反馈": {
-    "message": "প্রতিক্রিয়া",
-    "description": "Navbar item with label 反馈"
-  },
   "item.label.IMGPrompt": {
     "message": "আইএমজি প্রম্পট",
     "description": "Navbar item with label IMGPrompt"
@@ -46,5 +42,25 @@
   "item.label.Find on Product Hunt": {
     "message": "পণ্য হান্ট এ খুঁজুন",
     "description": "Navbar item with label Find on Product Hunt"
+  },
+  "item.label.反馈建议": {
+    "message": "প্রতিক্রিয়া/পরামর্শ",
+    "description": "Navbar item with label 反馈建议"
+  },
+  "item.label.📝 提交反馈": {
+    "message": "📝 মতামত জমা দিন",
+    "description": "Navbar item with label 📝 提交反馈"
+  },
+  "item.label.💬 微信交流": {
+    "message": "💬 আমাদের সাথে একটি WeChat চ্যাট করুন",
+    "description": "Navbar item with label 💬 微信交流"
+  },
+  "item.label.📧 发送邮件": {
+    "message": "📧 ইমেইল পাঠান",
+    "description": "Navbar item with label 📧 发送邮件"
+  },
+  "item.label.📺 加入 Discord": {
+    "message": "📺 আমাদের ডিসকর্ডে যোগ দিন",
+    "description": "Navbar item with label 📺 加入 Discord"
   }
 }
