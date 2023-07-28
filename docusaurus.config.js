@@ -177,9 +177,27 @@ const config = {
             ],
           },
           {
-            to: "/feedback",
-            label: "反馈",
+            type: "dropdown",
+            label: "反馈建议",
             position: "left",
+            items: [
+              {
+                label: "📝 提交反馈",
+                to: "/feedback",
+              },
+              {
+                label: "💬 微信交流",
+                href: "https://img.newzone.top/wechat.svg",
+              },
+              {
+                label: "📧 发送邮件",
+                href: "mailto:learndata@newzone.top",
+              },
+              {
+                label: "📺 加入 Discord",
+                href: "https://discord.gg/PZTQfJ4GjX",
+              },
+            ],
           },
           { type: "localeDropdown", position: "right" },
           {
