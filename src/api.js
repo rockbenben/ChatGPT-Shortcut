@@ -337,8 +337,8 @@ export async function resetPassword(values) {
 
 /* 评论系统 */
 // 获取评论
-export async function getComments(pageId, page, pageSize) {
-  const cacheKey = `comments_${pageId}_${page}_${pageSize}`;
+export async function getComments(pageId, page, pageSize, type = "card") {
+  const cacheKey = `comments_${type}_${pageId}_${page}_${pageSize}`;
   const expirationKey = `${cacheKey}_expiration`;
 
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
@@ -348,7 +348,7 @@ export async function getComments(pageId, page, pageSize) {
     return Promise.resolve(cachedData);
   } else {
     try {
-      const response = await axios.get(`${API_URL}/comments/api::card.card:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
+      const response = await axios.get(`${API_URL}/comments/api::${type}.${type}:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
 
       const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
       localStorage.setItem(cacheKey, JSON.stringify(response.data));
@@ -362,9 +362,9 @@ export async function getComments(pageId, page, pageSize) {
   }
 }
 
-function clearCommentsCache(pageId) {
+function clearCommentsCache(pageId, type = "card") {
   Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith(`comments_${pageId}`)) {
+    if (key.startsWith(`comments_${type}_${pageId}`)) {
       localStorage.removeItem(key);
       localStorage.removeItem(`${key}_expiration`);
     }
@@ -372,10 +372,10 @@ function clearCommentsCache(pageId) {
 }
 
 // 发布评论
-export async function postComment(pageId, commentContent, threadOf = null) {
+export async function postComment(pageId, commentContent, threadOf = null, type = "card") {
   try {
     const response = await axios.post(
-      `${API_URL}/comments/api::card.card:${pageId}`,
+      `${API_URL}/comments/api::${type}.${type}:${pageId}`,
       {
         content: commentContent,
         threadOf,
@@ -384,7 +384,7 @@ export async function postComment(pageId, commentContent, threadOf = null) {
     );
 
     // 更新缓存
-    clearCommentsCache(pageId);
+    clearCommentsCache(pageId, type);
     return response;
   } catch (error) {
     console.error("Error posting comment:", error);
@@ -393,17 +393,17 @@ export async function postComment(pageId, commentContent, threadOf = null) {
 }
 
 // 更新评论
-export async function updateComment(pageId, commentId, commentContent) {
+export async function updateComment(pageId, commentId, commentContent, type = "card") {
   try {
     const response = await axios.put(
-      `${API_URL}/comments/api::card.card:${pageId}/comment/${commentId}`,
+      `${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}`,
       {
         content: commentContent,
       },
       config
     );
     // 更新缓存
-    clearCommentsCache(pageId);
+    clearCommentsCache(pageId, type);
     return response;
   } catch (error) {
     console.error("Error updating comment:", error);
@@ -412,12 +412,12 @@ export async function updateComment(pageId, commentId, commentContent) {
 }
 
 // 删除评论
-export async function deleteComment(pageId, commentId) {
+export async function deleteComment(pageId, commentId, type = "card") {
   try {
-    const response = await axios.delete(`${API_URL}/comments/api::card.card:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
+    const response = await axios.delete(`${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
 
     // 更新缓存
-    clearCommentsCache(pageId);
+    clearCommentsCache(pageId, type);
     return response;
   } catch (error) {
     console.error("Error deleting comment:", error);

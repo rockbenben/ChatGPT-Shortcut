@@ -96,7 +96,7 @@ function PromptPage({ prompt }) {
               <Translate id='comments.info'>请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Typography.Paragraph>{" "}
             <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
-            {userAuth && userAuth.data && userAuth.data.id ? <Comments pageId={prompt.id} currentUserId={userAuth.data.id} /> : <Comments pageId={prompt.id} currentUserId={0} />}
+            {userAuth && userAuth.data && userAuth.data.id ? <Comments pageId={prompt.id} currentUserId={userAuth.data.id} type="card" /> : <Comments pageId={prompt.id} currentUserId={0} type="card" />}
           </Card>
         </Col>
       </Row>

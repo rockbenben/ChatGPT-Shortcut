@@ -19,7 +19,7 @@ const getRandomColor = () => {
   return backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
 };
 
-const Comments = ({ pageId, currentUserId }) => {
+const Comments = ({ pageId, currentUserId, type }) => {
   const [comments, setComments] = useState([]);
   const [form] = Form.useForm();
   const [replyForm] = Form.useForm();
@@ -35,7 +35,7 @@ const Comments = ({ pageId, currentUserId }) => {
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
 
   const fetchComments = useCallback(async () => {
-    const response = await getComments(pageId, currentPage, pageSize);
+    const response = await getComments(pageId, currentPage, pageSize, type);
     const nestedComments = nestComments(response.data);
     setComments(nestedComments);
     console.log(response);
@@ -116,7 +116,7 @@ const Comments = ({ pageId, currentUserId }) => {
       handleLoginModalOpen();
       return;
     }
-    await postComment(pageId, values.comment, replyingTo);
+    await postComment(pageId, values.comment, replyingTo, type);
     form.resetFields();
     localStorage.removeItem("savedComment");
     setReplyingTo(null);
@@ -128,7 +128,7 @@ const Comments = ({ pageId, currentUserId }) => {
       handleLoginModalOpen();
       return;
     }
-    await postComment(pageId, values.reply, replyingTo);
+    await postComment(pageId, values.reply, replyingTo, type);
     replyForm.resetFields();
     localStorage.removeItem("savedReply");
     setReplyingTo(null);
@@ -136,14 +136,14 @@ const Comments = ({ pageId, currentUserId }) => {
   };
 
   const handleUpdate = async (values) => {
-    await updateComment(pageId, editingComment, values.comment);
+    await updateComment(pageId, editingComment, values.comment, type);
     editForm.resetFields();
     setEditingComment(null);
     setRefresh(!refresh);
   };
 
   const handleDelete = async (commentId) => {
-    await deleteComment(pageId, commentId);
+    await deleteComment(pageId, commentId, type);
     setReplyingTo(null);
     setRefresh(!refresh);
   };
