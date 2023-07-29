@@ -348,7 +348,7 @@ export async function getComments(pageId, page, pageSize) {
     return Promise.resolve(cachedData);
   } else {
     try {
-      const response = await axios.get(`${API_URL}/comments/api::page.page:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
+      const response = await axios.get(`${API_URL}/comments/api::card.card:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
 
       const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
       localStorage.setItem(cacheKey, JSON.stringify(response.data));
@@ -375,7 +375,7 @@ function clearCommentsCache(pageId) {
 export async function postComment(pageId, commentContent, threadOf = null) {
   try {
     const response = await axios.post(
-      `${API_URL}/comments/api::page.page:${pageId}`,
+      `${API_URL}/comments/api::card.card:${pageId}`,
       {
         content: commentContent,
         threadOf,
@@ -396,7 +396,7 @@ export async function postComment(pageId, commentContent, threadOf = null) {
 export async function updateComment(pageId, commentId, commentContent) {
   try {
     const response = await axios.put(
-      `${API_URL}/comments/api::page.page:${pageId}/comment/${commentId}`,
+      `${API_URL}/comments/api::card.card:${pageId}/comment/${commentId}`,
       {
         content: commentContent,
       },
@@ -414,7 +414,7 @@ export async function updateComment(pageId, commentId, commentContent) {
 // 删除评论
 export async function deleteComment(pageId, commentId) {
   try {
-    const response = await axios.delete(`${API_URL}/comments/api::page.page:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
+    const response = await axios.delete(`${API_URL}/comments/api::card.card:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
 
     // 更新缓存
     clearCommentsCache(pageId);
