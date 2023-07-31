@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Card,
-  Form,
-  Input,
-  message,
-  Tabs,
-  Checkbox,
-  Space,
-} from "antd";
+import React, { useState, useEffect } from "react";
+import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
+import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import Cookies from "js-cookie";
 import { login, register, forgotPassword } from "@site/src/api";
+import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
 
 const rules = {
   username: [
@@ -42,6 +35,40 @@ const rules = {
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
+  // Google Auth
+  useEffect(() => {
+    window.addEventListener(
+      "message",
+      async (event) => {
+        if (event.data.code) {
+          // Authenticate the user with the code
+          setLoading(true);
+          const auth_respond = await authenticateUserWithGoogle(event.data.code);
+          handleSuccess(auth_respond.user.username, auth_respond.token);
+          setLoading(true);
+        }
+      },
+      false
+    );
+  }, []);
+
+  const handleGoogleLogin = async () => {
+    try {
+      const url = await getGoogleAuthUrl();
+
+      if (url) {
+        const newWindow = window.open(url, "_blank", "location=yes,height=570,width=520,scrollbars=yes,status=yes");
+
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+          alert('Please disable your pop-up blocker and click the "Open" link again.');
+        }
+      } else {
+        alert("Failed to generate Google Auth URL.");
+      }
+    } catch (error) {
+      console.error("Error while attempting Google login:", error);
+    }
+  };
 
   const handleSuccess = (username, jwt) => {
     Cookies.set("auth_token", jwt, { expires: 365 });
@@ -56,14 +83,10 @@ const LoginPage = () => {
       if (err.response.status === 400) {
         message.error(err.response.data.error.message);
       } else {
-        message.error(
-          translate({ id: "message.error", message: "发生错误，请稍后再试" })
-        );
+        message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));
       }
     } catch (err) {
-      message.error(
-        translate({ id: "message.error", message: "处理错误时发生错误" })
-      );
+      message.error(translate({ id: "message.error", message: "处理错误时发生错误" }));
     }
   };
 
@@ -81,30 +104,18 @@ const LoginPage = () => {
   };
 
   const onFinishLogin = async (values) => {
-    handleAuth(
-      values,
-      login,
-      <Translate id='message.loginSuccess'>登录成功！</Translate>
-    );
+    handleAuth(values, login, <Translate id='message.loginSuccess'>登录成功！</Translate>);
   };
 
   const onFinishRegister = async (values) => {
-    handleAuth(
-      values,
-      register,
-      <Translate id='message.registerSuccess'>注册成功！</Translate>
-    );
+    handleAuth(values, register, <Translate id='message.registerSuccess'>注册成功！</Translate>);
   };
 
   const handleForgotPassword = async (values) => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(
-        <Translate id='message.forgotPassword.success'>
-          密码重置邮件已发送！
-        </Translate>
-      );
+      message.success(<Translate id='message.forgotPassword.success'>密码重置邮件已发送！</Translate>);
     } catch (error) {
       console.error(
         translate({
@@ -113,11 +124,7 @@ const LoginPage = () => {
         }),
         error
       );
-      message.error(
-        <Translate id='message.forgotPassword.error'>
-          发送密码重置邮件失败，请稍后重试
-        </Translate>
-      );
+      message.error(<Translate id='message.forgotPassword.error'>发送密码重置邮件失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -139,14 +146,15 @@ const LoginPage = () => {
         />
       </Form.Item>
       <Form.Item name='password' rules={rules.password}>
-        <Input.Password
-          placeholder={translate({ id: "input.password", message: "密码" })}
-        />
+        <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item>
         <Space size='middle'>
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.login'>登录</Translate>
+          </Button>
+          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+            Login via Google
           </Button>
           <Button onClick={handleForgotPasswordClick}>
             <Translate id='button.forgotPassword'>忘记密码</Translate>
@@ -167,14 +175,10 @@ const LoginPage = () => {
         />
       </Form.Item>
       <Form.Item name='email' rules={rules.email}>
-        <Input
-          placeholder={translate({ id: "input.email", message: "邮箱" })}
-        />
+        <Input placeholder={translate({ id: "input.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item name='password' rules={rules.password}>
-        <Input.Password
-          placeholder={translate({ id: "input.password", message: "密码" })}
-        />
+        <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item
         name='agreement'
@@ -207,9 +211,14 @@ const LoginPage = () => {
         </Checkbox>
       </Form.Item>
       <Form.Item>
-        <Button htmlType='submit' loading={loading}>
-          <Translate id='button.register'>注册</Translate>
-        </Button>
+        <Space size='middle'>
+          <Button htmlType='submit' loading={loading}>
+            <Translate id='button.register'>注册</Translate>
+          </Button>
+          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+            Login via Google
+          </Button>
+        </Space>
       </Form.Item>
     </Form>
   );
@@ -227,9 +236,7 @@ const LoginPage = () => {
             }),
           },
         ]}>
-        <Input
-          placeholder={translate({ id: "placeholder.email", message: "邮箱" })}
-        />
+        <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
         <Button htmlType='submit' loading={loading}>
@@ -257,15 +264,8 @@ const LoginPage = () => {
   ];
 
   return (
-    <Card
-      title={<Translate id='card.welcome'>欢迎</Translate>}
-      bordered={false}>
-      <Tabs
-        defaultActiveKey='1'
-        activeKey={activeTab}
-        onChange={setActiveTab}
-        items={items}
-      />
+    <Card title={<Translate id='card.welcome'>欢迎</Translate>} bordered={false}>
+      <Tabs defaultActiveKey='1' activeKey={activeTab} onChange={setActiveTab} items={items} />
     </Card>
   );
 };
