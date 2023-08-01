@@ -153,9 +153,9 @@ const LoginPage = () => {
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.login'>登录</Translate>
           </Button>
-          {/* <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
             Login via Google
-          </Button> */}
+          </Button>
           <Button onClick={handleForgotPasswordClick}>
             <Translate id='button.forgotPassword'>忘记密码</Translate>
           </Button>
@@ -215,9 +215,9 @@ const LoginPage = () => {
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.register'>注册</Translate>
           </Button>
-          {/* <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
             Login via Google
-          </Button> */}
+          </Button>
         </Space>
       </Form.Item>
     </Form>

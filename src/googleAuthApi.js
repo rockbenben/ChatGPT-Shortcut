@@ -1,7 +1,8 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const API_URL = "https://api.newzone.top/strapi-google-auth"; // http://localhost:1337  https://api.newzone.top
+const API_URL1 = "https://api.newzone.top/strapi-google-auth"; // http://localhost:1337  https://api.newzone.top
+const API_URL = "https://gauth.newzone.top/strapi-google-auth";
 const authToken = Cookies.get("auth_token");
 
 const config = {
@@ -13,7 +14,7 @@ const config = {
 // 获取 Google 认证 URL
 export async function getGoogleAuthUrl() {
   try {
-    const response = await axios.get(`${API_URL}/init`);
+    const response = await axios.get(`${API_URL1}/init`);
     return response.data.url; // The response should contain the Google authentication URL
   } catch (error) {
     console.error("Error fetching Google authentication URL:", error);

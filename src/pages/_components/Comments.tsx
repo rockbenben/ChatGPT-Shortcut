@@ -4,7 +4,7 @@ import { List, Avatar, Button, Form, Input, Modal, Pagination } from "antd";
 import { SmileOutlined, GifOutlined } from "@ant-design/icons";
 import { Comment } from "@ant-design/compatible";
 import LoginComponent from "@site/src/pages/_components/user/login";
-import { getComments, postComment, updateComment } from "@site/src/api";
+import { getComments, postComment, updateComment, deleteComment } from "@site/src/api";
 import moment from "moment";
 import debounce from "lodash/debounce";
 import { marked } from "marked";
@@ -142,12 +142,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
     setRefresh(!refresh);
   };
 
-  /* const handleDelete = async (commentId) => {
+  const handleDelete = async (commentId) => {
     await deleteComment(pageId, commentId, type);
     setReplyingTo(null);
     setRefresh(!refresh);
   };
- */
+
   const getCommentCount = (comments) => {
     let count = comments.length;
     comments.forEach((comment) => {
@@ -180,9 +180,14 @@ const Comments = ({ pageId, currentUserId, type }) => {
             <Translate id='comment.reply'>回复</Translate>
           </span>,
           currentUserId === comment.author?.id && (
+            <>
               <span onClick={() => setEditingComment(comment.id)}>
                 <Translate id='edit'>编辑</Translate>
               </span>
+              <span onClick={() => handleDelete(comment.id)}>
+                <Translate id='delete'>删除</Translate>
+              </span>
+            </>
           ),
         ]}
         author={comment.author?.name}
