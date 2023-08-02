@@ -148,15 +148,6 @@ const Comments = ({ pageId, currentUserId, type }) => {
     setRefresh(!refresh);
   };
 
-  const getCommentCount = (comments) => {
-    let count = comments.length;
-    comments.forEach((comment) => {
-      if (comment.children) {
-        count += getCommentCount(comment.children);
-      }
-    });
-    return count;
-  };
   // handle emoji
   const handleEmojiSelect = (emoji) => {
     const currentComment = form.getFieldValue("comment");
@@ -370,7 +361,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
       </Form>
       <List
         className='comment-list'
-        header={`${getCommentCount(comments)} ${translate({
+        header={`${totalCommentsCount} ${translate({
           id: "comment.comments",
           message: "评论",
         })}`}
