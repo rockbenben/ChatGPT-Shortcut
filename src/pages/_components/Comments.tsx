@@ -143,9 +143,17 @@ const Comments = ({ pageId, currentUserId, type }) => {
   };
 
   const handleDelete = async (commentId) => {
-    await deleteComment(pageId, commentId, type);
-    setReplyingTo(null);
-    setRefresh(!refresh);
+    Modal.confirm({
+      title: "Confirm Delete",
+      content: "Are you sure you want to delete this comment?",
+      okText: "Delete",
+      cancelText: "Cancel",
+      onOk: async () => {
+        await deleteComment(pageId, commentId, type);
+        setReplyingTo(null);
+        setRefresh(!refresh);
+      },
+    });
   };
 
   // handle emoji
