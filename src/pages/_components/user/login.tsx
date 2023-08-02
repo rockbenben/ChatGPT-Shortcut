@@ -35,17 +35,22 @@ const rules = {
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
+
   // Google Auth
   useEffect(() => {
     window.addEventListener(
       "message",
       async (event) => {
         if (event.data.code) {
-          // Authenticate the user with the code
           setLoading(true);
-          const auth_respond = await authenticateUserWithGoogle(event.data.code);
-          handleSuccess(auth_respond.user.username, auth_respond.token);
-          setLoading(true);
+          try {
+            const auth_respond = await authenticateUserWithGoogle(event.data.code);
+            handleSuccess(auth_respond.user.username, auth_respond.token);
+          } catch (error) {
+            message.error("Login failed: " + error.message);
+          } finally {
+            setLoading(false);
+          }
         }
       },
       false
@@ -53,12 +58,11 @@ const LoginPage = () => {
   }, []);
 
   const handleGoogleLogin = async () => {
+    setLoading(true);
     try {
       const url = await getGoogleAuthUrl();
-
       if (url) {
         const newWindow = window.open(url, "_blank", "location=yes,height=570,width=520,scrollbars=yes,status=yes");
-
         if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
           alert('Please disable your pop-up blocker and click the "Open" link again.');
         }
@@ -66,7 +70,9 @@ const LoginPage = () => {
         alert("Failed to generate Google Auth URL.");
       }
     } catch (error) {
-      console.error("Error while attempting Google login:", error);
+      message.error("Error while attempting Google login: " + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,7 +86,9 @@ const LoginPage = () => {
 
   const handleErrors = (err) => {
     try {
-      if (err.response.status === 400) {
+      if (err.message === "Request timed out. Please try again.") {
+        message.error(err.message);
+      } else if (err.response.status === 400) {
         message.error(err.response.data.error.message);
       } else {
         message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));

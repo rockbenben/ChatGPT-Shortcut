@@ -25,11 +25,15 @@ export async function getGoogleAuthUrl() {
 // 使用 REDIRECTION_AUTH_CODE 认证用户
 export async function authenticateUserWithGoogle(code) {
   try {
-    const response = await axios.post(`${API_URL}/user-profile`, { code });
+    const response = await axios.post(`${API_URL}/user-profile`, { code }, { timeout: 30000 }); // 设置超时时间为 30 秒
     return response.data.data;
   } catch (error) {
     console.error("Error authenticating user with Google:", error);
-    throw error;
+    if (error.code === 'ECONNABORTED') {
+      throw new Error('Request timed out. Please try again.');
+    } else {
+      throw error;
+    }
   }
 }
 
