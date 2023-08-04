@@ -4,25 +4,33 @@ slug: /
 
 # Introdução ao AiShort
 
-🚀 **Otimize seus Processos**: O AiShort apresenta uma lista acessível de instruções, permitindo a classificação e busca rápida de sugestões pertinentes para diversas situações, auxiliando os usuários na melhoria de seus procedimentos operacionais.
+AiShort oferece uma lista concisa e fácil de usar de instruções de IA. Mesmo sem entender os prompts, você pode facilmente encontrar os prompts adequados para vários cenários através de filtragem e busca, melhorando assim a sua produtividade.
 
-💻 **Aumente sua Produtividade**: Os usuários podem se beneficiar de feedback mais preciso e prático ao utilizar nossas sugestões otimizadas, aumentando assim sua eficiência produtiva.
+🚀 **Prompts de um clique**: Com apenas um clique, você pode obter uma variedade de prompts cuidadosamente selecionados por especialistas. Envie-os para modelos de linguagem de IA como o ChatGPT e você pode obter a saída esperada.
 
-🌍 **Otimização para Idiomas Não Inglês**: Apesar de as sugestões serem principalmente exibidas em inglês, integramos traduções em chinês, japonês, coreano e outros idiomas. Além disso, oferecemos suporte a respostas padrão no idioma atual, facilitando para os falantes não nativos de inglês compreenderem e utilizarem o serviço.
+💻 **Aumente a produtividade**: Ao usar prompts otimizados, você pode obter feedback mais preciso e prático, aumentando assim a eficiência do seu trabalho.
 
-🎓 **Amigável para Iniciantes**: Para os iniciantes, basta copiar e ajustar levemente as sugestões antes de enviá-las ao ChatGPT, para obter facilmente a saída desejada.
+🌍 **Otimização para idiomas não-ingleses**: Fornecemos traduções para prompts em inglês em 12 principais idiomas globais e suportamos respostas padrão na sua língua materna, o que é conveniente para falantes de idiomas que não o inglês entenderem e usarem.
 
-🆕 **Atualizações Regulares**: As sugestões do AiShort são derivadas de seleções online meticulosamente curadas, contribuições dos usuários e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Elas são atualizadas periodicamente para fornecer aos usuários sugestões frescas e estímulo intelectual.
+💾 **Salve prompts**: Colete, edite e gerencie seus prompts favoritos de maneira conveniente para uso futuro.
 
-📦 **Pronto para Uso**: Visite-nos em <https://www.aishort.top/pt/>
+🌐 **Compartilhe prompts**: Compartilhe seus prompts favoritos, colabore com outras pessoas e inspire mais ideias.
+
+🗳️ **Sistema de votação da comunidade**: Semelhante ao Product Hunt ou Reddit, a plataforma é movida pela comunidade. Os melhores prompts serão exibidos na página inicial.
+
+📦 **Pronto para usar**: Basta visitar <https://www.aishort.top/pt/> para começar a usar.
+
+A fonte dos prompts do AiShort inclui seleções da internet, compartilhamentos da comunidade e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Atualizaremos regularmente para fornecer a você novos prompts e inspiração.
+
+Bem-vindo para se juntar à nossa comunidade Discord para trocar ideias e feedback.
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat no Discord" />
 </a>
 
-## Extensão para Navegador
+## Extensão do navegador
 
-O ChatGPT Shortcut é compatível com o Chrome e o Edge, oferecendo funcionalidades semelhantes à versão web e recebendo atualizações periódicas.
+A extensão do navegador AiShort (ChatGPT Shortcut) suporta Chrome e Edge com funcionalidade consistente com a versão web e é atualizada regularmente. A extensão pode ser ativada automaticamente à medida que a página ChatGPT é carregada, ou você pode ativar a janela da extensão pressionando a tecla de atalho `Alt+Shift+S`.
 
 <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>

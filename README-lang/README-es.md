@@ -19,29 +19,35 @@ Español |
     <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
 </p>
 
-## Por qué usar AiShort?
+## ¿Por qué usar AiShort?
 
-🚀 **Optimización de procesos**: AiShort presenta una lista accesible de instrucciones que permite una clasificación y búsqueda rápida de indicaciones pertinentes para diversas situaciones, lo que ayuda a los usuarios a refinar su procedimiento operativo.
+AiShort proporciona una lista concisa y fácil de usar de instrucciones de IA. Incluso sin entender las solicitudes, puedes encontrar fácilmente las solicitudes adecuadas para diversos escenarios a través de filtrado y búsqueda, mejorando así tu productividad.
 
-💻 **Mejora de la productividad**: Los usuarios pueden beneficiarse de comentarios más precisos y prácticos utilizando nuestras indicaciones optimizadas, lo que aumenta su eficiencia productiva.
+🚀 **Solicitudes de un solo clic**: Con solo un clic, puedes obtener una variedad de solicitudes seleccionadas cuidadosamente por expertos. Envíalas a modelos de lenguaje AI como ChatGPT y puedes obtener la salida esperada.
 
-🌍 **Optimización para idiomas no ingleses**: Aunque las indicaciones se muestran principalmente en inglés, hemos integrado traducciones en chino, japonés, coreano y otros idiomas. Además, ofrecemos respuestas predeterminadas en el idioma actual, lo que facilita la comprensión y el uso para hablantes no nativos de inglés.
+💻 **Impulsa la productividad**: Al usar solicitudes optimizadas, puedes obtener comentarios más precisos y prácticos, mejorando así de manera efectiva tu eficiencia laboral.
 
-🎓 **Amigable para principiantes**: Para principiantes, simplemente copiando y ajustando ligeramente las indicaciones antes de enviarlas a ChatGPT, se puede obtener el resultado deseado fácilmente.
+🌍 **Optimización para idiomas que no son el inglés**: Proporcionamos traducciones para las solicitudes en inglés en 12 de los principales idiomas globales y soportamos respuestas predeterminadas en tu lengua materna, lo que es conveniente para los hablantes de idiomas que no son el inglés para entender y usar.
 
-🆕 **Actualizaciones regulares**: Las indicaciones de AiShort se derivan de selecciones en línea meticulosamente curadas, aportes de usuarios y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Se actualizan periódicamente para proporcionar a los usuarios indicaciones frescas y estimulantes intelectualmente.
+💾 **Guarda solicitudes**: Recopila, edita y gestiona convenientemente tus solicitudes favoritas para uso futuro.
 
-📦 **Listo para usar**: Visítanos en <https://www.aishort.top/es/>
+🌐 **Compartir solicitudes**: Comparte tus solicitudes favoritas, colabora con otros e inspira más ideas.
+
+🗳️ **Sistema de votación comunitaria**: Similar a Product Hunt o Reddit, la plataforma es impulsada por la comunidad. Las mejores solicitudes serán promovidas a la página principal.
+
+📦 **Listo para usar**: Simplemente visita <https://www.aishort.top/es/> para comenzar a usar.
+
+La fuente de las solicitudes de AiShort incluye selecciones de internet, compartidas por la comunidad, y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Actualizaremos regularmente para proporcionarte nuevas solicitudes e inspiración. Para entender cómo usar AiShort, por favor consulta el [manual de usuario](https://www.aishort.top/es/docs/guides/getting-started).
+
+Te invitamos a unirte a nuestra comunidad en Discord para intercambiar ideas y comentarios.
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat en Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-
-Manual de usuario: <https://www.aishort.top/es/docs/guides/getting-started>
 
 ## Extensión del navegador
 
-ChatGPT Shortcut es compatible con Chrome y Edge, ofrece funcionalidad similar a la versión web y recibe actualizaciones periódicas.
+La extensión del navegador AiShort (ChatGPT Shortcut) es compatible con Chrome y Edge y tiene una funcionalidad consistente con la versión web y se actualiza regularmente. La extensión puede ser activada automáticamente cuando se carga la página de ChatGPT, o puedes activar la ventana de la extensión presionando la tecla de acceso rápido `Alt+Shift+S`.
 
 <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>

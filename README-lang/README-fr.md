@@ -21,27 +21,33 @@ Français |
 
 ## Pourquoi utiliser AiShort ?
 
-🚀 **Optimisation des processus** : AiShort présente une liste d'instructions accessibles, permettant un tri rapide et une recherche de prompts pertinents pour différentes situations, aidant ainsi les utilisateurs à affiner leur procédure opérationnelle.
+AiShort fournit une liste concise et facile à utiliser d'instructions AI. Même sans comprendre les invites, vous pouvez facilement trouver les invites adaptées à divers scénarios en filtrant et en cherchant, améliorant ainsi votre productivité.
 
-💻 **Amélioration de la productivité** : Les utilisateurs peuvent bénéficier de retours plus précis et pratiques en utilisant nos prompts optimisés, ce qui augmente leur efficacité productive.
+🚀 **Invitations en un clic** : En un seul clic, vous pouvez obtenir une variété d'invitations soigneusement sélectionnées par des experts. Envoyez-les à des modèles de langage AI comme ChatGPT et vous pouvez obtenir la sortie attendue.
 
-🌍 **Optimisation pour les langues non anglaises** : Bien que les prompts soient principalement affichés en anglais, nous avons intégré des traductions en chinois, japonais, coréen et d'autres langues. De plus, nous prenons en charge des réponses par défaut dans la langue actuelle, ce qui facilite la compréhension et l'utilisation pour les personnes dont l'anglais n'est pas la langue maternelle.
+💻 **Augmenter la productivité** : En utilisant des invites optimisées, vous pouvez obtenir des commentaires plus précis et pratiques, améliorant ainsi efficacement votre efficacité de travail.
 
-🎓 **Convivialité pour les débutants** : Pour les débutants, il suffit de copier et d'ajuster légèrement les prompts avant de les envoyer à ChatGPT pour obtenir facilement le résultat souhaité.
+🌍 **Optimisation pour les langues non anglaises** : Nous fournissons des traductions pour les invitations en anglais dans 12 principales langues mondiales, et prenons en charge les réponses par défaut dans votre langue maternelle, ce qui est pratique pour les locuteurs non anglophones à comprendre et à utiliser.
 
-🆕 **Mises à jour régulières** : Les prompts d'AiShort sont issus de sélections en ligne minutieusement choisies, de soumissions d'utilisateurs et d'[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Ils sont mis à jour périodiquement pour fournir aux utilisateurs des prompts frais et une stimulation intellectuelle.
+💾 **Sauvegarder des invites** : Collectez, éditez et gérez facilement vos invitations préférées pour une utilisation future.
 
-📦 **Prêt à l'emploi** : Rendez-nous visite sur <https://www.aishort.top/fr/>
+🌐 **Partager des invites** : Partagez vos invitations préférées, collaborez avec d'autres, et inspirez plus d'idées.
+
+🗳️ **Système de vote communautaire** : Semblable à Product Hunt ou Reddit, la plateforme est pilotée par la communauté. Les meilleures invitations seront poussées sur la page d'accueil.
+
+📦 **Prêt à l'emploi** : Il suffit de visiter <https://www.aishort.top/fr/> pour commencer à utiliser.
+
+La source des invitations AiShort comprend les sélections sur Internet, les partages de la communauté et [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nous mettrons à jour régulièrement pour vous fournir de nouvelles invitations et de l'inspiration. Pour comprendre comment utiliser AiShort, veuillez vous référer au [manuel de l'utilisateur](https://www.aishort.top/fr/docs/guides/getting-started).
+
+Bienvenue à rejoindre notre communauté Discord pour échanger des idées et des commentaires.
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="discussion sur Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-
-Manuel de l'utilisateur : <https://www.aishort.top/fr/docs/guides/getting-started>
 
 ## Extension de navigateur
 
-ChatGPT Shortcut est compatible avec Chrome et Edge, offrant des fonctionnalités similaires à la version Web et bénéficiant de mises à jour régulières.
+L'extension de navigateur AiShort (ChatGPT Shortcut) prend en charge Chrome et Edge avec une fonctionnalité cohérente avec la version web et est régulièrement mise à jour. L'extension peut être déclenchée automatiquement lorsque la page ChatGPT se charge, ou vous pouvez activer la fenêtre de l'extension en appuyant sur la touche de raccourci `Alt+Shift+S`.
 
 <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
