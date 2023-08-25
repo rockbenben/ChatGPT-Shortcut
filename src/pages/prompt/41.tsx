@@ -85,7 +85,7 @@ const prompt = {
     "seo"
   ],
   "id": 41,
-  "weight": 4655
+  "weight": 5733
 };
 
 function PromptDetail() {

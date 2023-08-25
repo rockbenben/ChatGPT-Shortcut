@@ -85,7 +85,7 @@ const prompt = {
     "contribute"
   ],
   "id": 187,
-  "weight": 2374
+  "weight": 2740
 };
 
 function PromptDetail() {
