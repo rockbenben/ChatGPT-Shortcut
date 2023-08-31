@@ -28,12 +28,22 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
+## 使用说明
+
+将提示词复制到 AI 对话模型中即可使用，以下是常用模型链接：
+
+- ChatGPT：<https://chat.openai.com/>
+- 文心一言：<https://yiyan.baidu.com/>
+- 智谱清言：<https://chatglm.cn/detail>
+
 ## 浏览器扩展
 
-AiShort（ChatGPT Shortcut）的浏览器扩展支持 Chrome 和 Edge，其功能与网页版一致，会定期进行更新。这个扩展可以随着 ChatGPT 页面的加载而自动触发，或者你可以通过按下 `Alt+Shift+S` 热键来激活扩展窗口。
+AiShort（ChatGPT Shortcut）浏览器扩展适用于 Chrome、Edge 等 Chromium 系浏览器，功能与网页版相同并会定期更新。此扩展会随 ChatGPT 或自定义页面加载而自动启动，或你可用 `Alt+Shift+S` 热键来激活它。
 
 <a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
   <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
 
 <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+
+由于 Edge 版本停留在 2.5 且无法更新，建议在 Chrome Store 中安装此扩展。
