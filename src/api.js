@@ -179,7 +179,7 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
 
     // 如果存在搜索关键字，那么添加到 URL 中
     if (searchTerm) {
-      url += `&filters[description][$containsi]=${searchTerm}&filters[title][$containsi]=${searchTerm}&filters[remark][$containsi]=${searchTerm}`;
+      url += `&filters[$or][0][description][$containsi]=${searchTerm}&filters[$or][1][title][$containsi]=${searchTerm}&filters[$or][2][remark][$containsi]=${searchTerm}`;
     }
 
     const response = await axios.get(url);
