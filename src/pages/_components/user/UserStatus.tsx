@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import Cookies from "js-cookie";
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
 import LoginComponent from "./login";
@@ -16,8 +16,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   // 这里的 handleLogout 可能需要调用一个注销 API，然后在返回成功后清除 userAuth
   const handleLogout = async (event) => {
     event.preventDefault();
-    Cookies.remove("auth_token");
-    Cookies.remove("username");
+    if (ExecutionEnvironment.canUseDOM) {
+      localStorage.removeItem("auth_token");
+    }
     setUserAuth(null);
     window.location.reload();
   };

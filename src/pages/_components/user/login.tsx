@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
-import Cookies from "js-cookie";
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { login, register, forgotPassword } from "@site/src/api";
 import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
 
@@ -77,8 +77,10 @@ const LoginPage = () => {
   };
 
   const handleSuccess = (username, jwt) => {
-    Cookies.set("auth_token", jwt, { expires: 365 });
-    Cookies.set("username", username, { expires: 365 });
+    if (ExecutionEnvironment.canUseDOM) {
+      localStorage.setItem("auth_token", jwt);
+    }
+    //localStorage.setItem("auth_token", jwt);
     // 发送消息给扩展
     window.postMessage({ action: "login", username, jwt }, "*");
     window.location.reload();
