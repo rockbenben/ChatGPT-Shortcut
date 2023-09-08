@@ -29,7 +29,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [editingComment, setEditingComment] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(20);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
