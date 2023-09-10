@@ -658,7 +658,7 @@
     "message": "Add a custom prompt"
   },
   "modal.addprompt.title": {
-    "message": "Share Prompt (This content will appear in the 'Your Prompts' tab)"
+    "message": "Share Prompt (This content will appear in the 'My Prompts' tab)"
   },
   "message.addprompt.requiredTitle": {
     "message": "Please enter the prompt title!"
@@ -682,7 +682,7 @@
     "message": "Would you like to share the prompt on a public page?"
   },
   "message.success1": {
-    "message": "Click on the label 'Your Prompt' to view the custom prompts that have been added."
+    "message": "Click on the label 'My Prompt' to view the custom prompts that have been added."
   },
   "message.deletePrompt.confirm.title": {
     "message": "Confirm Delete"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "comments"
+  },
+  "myprompt": {
+    "message": "My Prompts"
   }
 }

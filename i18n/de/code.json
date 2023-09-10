@@ -456,7 +456,7 @@
     "message": "Aufforderung zur Aktualisierung"
   },
   "message.success1": {
-    "message": "Klicken Sie auf die Registerkarte \"Ihre Stichwörter\", um die hinzugefügten benutzerdefinierten Stichwörter anzuzeigen."
+    "message": "Klicken Sie auf die Bezeichnung \"Meine Eingabeaufforderung\", um die hinzugefügten benutzerdefinierten Eingabeaufforderungen anzuzeigen."
   },
   "link.user": {
     "message": "Benutzer"
@@ -468,7 +468,7 @@
     "message": "Hinzufügen einer benutzerdefinierten Eingabeaufforderung"
   },
   "modal.addprompt.title": {
-    "message": "Share Prompt (Dieser Inhalt erscheint auf der Registerkarte \"Your Prompt Words\")"
+    "message": "Share Prompt (Dieser Inhalt erscheint auf der Registerkarte \"Meine Prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "sein"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "Kommentare"
+  },
+  "myprompt": {
+    "message": "Meine Prompts"
   }
 }

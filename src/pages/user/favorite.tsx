@@ -39,7 +39,7 @@ function UserBookmark() {
               tab={
                 <span>
                   <EditOutlined style={{ marginRight: "5px" }} />
-                  {translate({ message: "你的提示词" })}
+                  {translate({ id: 'myprompt', message: "我的提示词" })}
                 </span>
               }
             />

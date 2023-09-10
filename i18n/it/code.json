@@ -453,7 +453,7 @@
     "message": "Prompt di aggiornamento"
   },
   "message.success1": {
-    "message": "Fare clic sulla scheda \"I tuoi spunti\" per visualizzare gli spunti personalizzati che sono stati aggiunti."
+    "message": "Fare clic sull'etichetta \"Il mio prompt\" per visualizzare i prompt personalizzati che sono stati aggiunti."
   },
   "link.user": {
     "message": "utente"
@@ -465,7 +465,7 @@
     "message": "Aggiunta di un prompt personalizzato"
   },
   "modal.addprompt.title": {
-    "message": "Condividi il Prompt (questo contenuto apparirà nella scheda \"Le tue parole del Prompt\")"
+    "message": "Condividere il Prompt (questo contenuto apparirà nella scheda \"I miei Prompt\")"
   },
   "input.addprompt.share.checked": {
     "message": "essere"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "commenti"
+  },
+  "myprompt": {
+    "message": "I miei suggerimenti"
   }
 }

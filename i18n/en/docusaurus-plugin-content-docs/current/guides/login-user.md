@@ -22,7 +22,7 @@ Click on the heart icon located on the right side of a favorite prompt to remove
 
 ## Add Custom Prompts
 
-After submitting a prompt, it will be displayed under the "Your Prompts" label.
+After submitting a prompt, it will be displayed under the "My Prompts" label.
 
 ![](https://img.newzone.top/2023-06-05-13-58-16.png?imageMogr2/format/webp/thumbnail/500x)
 

@@ -453,7 +453,7 @@
     "message": "Invite de mise à jour"
   },
   "message.success1": {
-    "message": "Cliquez sur l'onglet \"Vos repères\" pour afficher les repères personnalisés qui ont été ajoutés."
+    "message": "Cliquez sur l'intitulé \"Mon message\" pour afficher les messages personnalisés qui ont été ajoutés."
   },
   "link.user": {
     "message": "utilisateur"
@@ -465,7 +465,7 @@
     "message": "Ajout d'une invite personnalisée"
   },
   "modal.addprompt.title": {
-    "message": "Partager l'incitation (Ce contenu apparaîtra dans l'onglet \"Vos mots d'incitation\")"
+    "message": "Partager l'incitation (Ce contenu apparaîtra dans l'onglet \"Mes incitations\")"
   },
   "input.addprompt.share.checked": {
     "message": "être"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "commentaires"
+  },
+  "myprompt": {
+    "message": "Mes suggestions"
   }
 }

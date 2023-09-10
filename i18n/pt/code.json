@@ -453,7 +453,7 @@
     "message": "Prompt de atualização"
   },
   "message.success1": {
-    "message": "Clique no separador \"Os seus sinais\" para ver os sinais personalizados que foram adicionados."
+    "message": "Clique na etiqueta \"O meu aviso\" para ver os avisos personalizados que foram adicionados."
   },
   "link.user": {
     "message": "utilizador"
@@ -465,7 +465,7 @@
     "message": "Adicionar um prompt personalizado"
   },
   "modal.addprompt.title": {
-    "message": "Partilhar a proposta (Este conteúdo aparecerá no separador \"As suas palavras de proposta\")"
+    "message": "Partilhar prompt (Este conteúdo aparecerá no separador \"Os meus prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "ser"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "comentários"
+  },
+  "myprompt": {
+    "message": "Os meus prompts"
   }
 }

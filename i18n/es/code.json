@@ -453,7 +453,7 @@
     "message": "Mensaje de actualización"
   },
   "message.success1": {
-    "message": "Haga clic en la pestaña \"Sus claves\" para ver las claves personalizadas que se han añadido."
+    "message": "Haga clic en la etiqueta \"Mi aviso\" para ver los avisos personalizados que se han añadido."
   },
   "link.user": {
     "message": "usuario"
@@ -465,7 +465,7 @@
     "message": "Añadir un aviso personalizado"
   },
   "modal.addprompt.title": {
-    "message": "Share Prompt (Este contenido aparecerá en la pestaña \"Your Prompt Words\")"
+    "message": "Share Prompt (Este contenido aparecerá en la pestaña \"Mis Prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "sea"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "comentarios"
+  },
+  "myprompt": {
+    "message": "Mis sugerencias"
   }
 }

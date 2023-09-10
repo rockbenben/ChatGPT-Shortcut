@@ -414,7 +414,7 @@
     "message": "アップデートプロンプト"
   },
   "message.success1": {
-    "message": "タブ「Your Prompt」をクリックすると、追加されたカスタムプロンプトが表示されます。"
+    "message": "マイプロンプト」というラベルをクリックすると、追加されたカスタムプロンプトが表示されます。"
   },
   "link.user": {
     "message": "ユーザーインターフェース"
@@ -426,7 +426,7 @@
     "message": "カスタムプロンプトを追加する"
   },
   "modal.addprompt.title": {
-    "message": "プロンプトを共有する（このコンテンツは、「あなたのプロンプト」タブに表示されます。）"
+    "message": "プロンプトを共有する（このコンテンツは「マイプロンプト」タブに表示されます）"
   },
   "button.addPrompt": {
     "message": "プロンプトを追加する"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "コメント"
+  },
+  "myprompt": {
+    "message": "私のプロンプト"
   }
 }

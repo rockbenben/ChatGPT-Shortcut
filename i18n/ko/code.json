@@ -414,7 +414,7 @@
     "message": "업데이트 프롬프트"
   },
   "message.success1": {
-    "message": "추가된 사용자 지정 프롬프트를 보려면 '사용자 지정 프롬프트' 탭을 클릭합니다."
+    "message": "추가된 사용자 지정 프롬프트를 보려면 '내 프롬프트' 레이블을 클릭합니다."
   },
   "link.user": {
     "message": "사용자 인터페이스"
@@ -797,5 +797,8 @@
   },
   "comment.comments": {
     "message": "댓글"
+  },
+  "myprompt": {
+    "message": "내 프롬프트"
   }
 }
