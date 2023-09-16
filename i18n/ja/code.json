@@ -194,9 +194,6 @@
   "showcase.filters.title": {
     "message": "フィルター"
   },
-  "你的提示词": {
-    "message": "あなたのプロンプトワード"
-  },
   "showcase.searchBar.placeholder": {
     "message": "プロンプトを検索する..."
   },

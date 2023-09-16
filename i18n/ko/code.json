@@ -194,9 +194,6 @@
   "showcase.filters.title": {
     "message": "필터"
   },
-  "你的提示词": {
-    "message": "프롬프트 단어"
-  },
   "showcase.searchBar.placeholder": {
     "message": "프롬프트 검색..."
   },

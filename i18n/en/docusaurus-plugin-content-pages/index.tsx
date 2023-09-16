@@ -230,7 +230,8 @@ function ShowcaseFilters({ onToggleDescription }) {
               <ShowcaseTagSelect
                 tag='yourprompt'
                 label={translate({
-                  message: "你的提示词",
+                  id: 'myprompt',
+                  message: "我的提示词",
                 })}
                 icon={
                   <span

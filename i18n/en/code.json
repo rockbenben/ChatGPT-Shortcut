@@ -483,9 +483,6 @@
     "message": "We cordially invite you to provide suggestions, ideas, and prompts to continuously enhance ChatGPT Shortcut, thereby improving personal efficiency and productivity. If you encounter any bugs, please provide the relevant link and details of the issue. When it comes to prompt suggestions, you may submit content in multiple languages or simply describe your thoughts on the desired prompts. We look forward to expanding our collective knowledge and generating high-quality outputs through these suggestions. Once your submitted prompts are published, your contributions will be credited on the page. You can search for entries associated with your contributor name (username).",
     "description": "The main paragraph on the feedback page"
   },
-  "你的提示词": {
-    "message": "Your Prompts"
-  },
   "input.rules.username": {
     "message": "Please enter username or mail!"
   },
