@@ -55,8 +55,6 @@ AiShort（ChatGPT Shortcut）浏览器扩展适用于 Chrome、Edge 等 Chromium
 <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
 
-由于 Edge 版本停留在 2.5 且无法更新，建议在 Chrome Store 中安装此扩展。
-
 ## Deploy
 
 ### Deploy With Vercel

@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -15,16 +15,16 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.2",
-    "@docusaurus/core": "^2.4.1",
-    "@docusaurus/plugin-client-redirects": "^2.4.1",
-    "@docusaurus/preset-classic": "^2.4.1",
+    "@docusaurus/core": "^2.4.3",
+    "@docusaurus/plugin-client-redirects": "^2.4.3",
+    "@docusaurus/preset-classic": "^2.4.3",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^1.6.22",
     "@popperjs/core": "^2.11.6",
     "@waline/vercel": "^1.31.3",
-    "antd": "^5.9.1",
-    "axios": "^1.5.0",
+    "antd": "^5.9.4",
+    "axios": "^1.5.1",
     "clsx": "^1.2.1",
     "docusaurus2-plugin-google-adsense": "^1.1.0",
     "emoji-mart": "^5.5.2",
@@ -41,7 +41,7 @@
     "react-share": "^4.4.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.4.1",
+    "@docusaurus/module-type-aliases": "^2.4.3",
     "@waline/client": "^2.15.7"
   },
   "browserslist": {
