@@ -43,12 +43,6 @@
     "message": "Agradecemos cualquier sugerencia, idea o comentario para mejorar continuamente ChatGPT Shortcut y aumentar la eficacia y productividad personales. Si necesita hacer comentarios sobre un error, facilite un enlace al lugar donde se produjo el problema y las circunstancias que lo rodearon. En cuanto al contenido, puedes enviarlo en varios idiomas o simplemente describir tu idea. Buscamos ideas que estimulen la mente o que produzcan resultados de alta calidad. Una vez que se publique el tema que envíe, su contribución se añadirá a la página. Puede encontrar la entrada correspondiente buscando el nombre del colaborador (nombre de usuario).",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - ¡Hoja de comandos de acceso directo a ChatGPT fácil de usar que multiplica la productividad! Filtrado de etiquetas, búsqueda de palabras clave y copia con un solo clic Prompts"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "Atajos de ChatGPT que duplican la productividad"
-  },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} pide",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "Mis sugerencias"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT Shortcut) - ¡Una lista de comandos de acceso directo a ChatGPT sencilla y fácil de usar que duplica la productividad!"
+  },
+  "homepage.description": {
+    "message": "AiShort es una herramienta diseñada para gestionar y compartir de forma eficaz las indicaciones de inteligencia artificial. Permite a los usuarios personalizar, guardar y compartir fácilmente sus prompts, al tiempo que ofrece acceso a una plataforma impulsada por la comunidad con miles de prompts compartidos públicamente, mejorando la productividad para una variedad de aplicaciones."
+  },
+  "homepage.slogan": {
+    "message": "Maximice su eficacia y productividad"
   }
 }

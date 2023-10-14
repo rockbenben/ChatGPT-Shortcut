@@ -46,12 +46,6 @@
     "message": "نرحب بالاقتراحات والأفكار والكلمات السريعة لتحسين اختصار ChatGPT وزيادة الكفاءة الشخصية والإنتاجية. إذا كنت بحاجة إلى الإبلاغ عن خطأ ، فيرجى تقديم الرابط والظروف ذات الصلة بالمشكلة. للحصول على محتوى كلمة سريع ، يمكنك إرسال محتوى بلغات متعددة ، أو ببساطة وصف أفكارك في الكلمة السريعة. نحن نبحث عن الكلمات السريعة التي توسع التفكير أو تنتج مخرجات عالية الجودة. بمجرد نشر الكلمة الرئيسية التي قدمتها ، ستتم إضافة مساهمتك إلى الصفحة. يمكنك العثور على الإدخال المقابل من خلال البحث عن اسم المساهم (اسم المستخدم).",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (اختصار ChatGPT) - جدول اختصار ChatGPT سهل الاستخدام يضاعف إنتاجيتك! تصفية العلامات والبحث عن الكلمات الأساسية ومطالبات النسخ بنقرة واحدة"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "اختصارات ChatGPT لمضاعفة إنتاجيتك"
-  },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} من المطالبات",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "مطالباتي"
+  },
+  "homepage.title": {
+    "message": "AiShort (اختصار ChatGPT) - قائمة أوامر اختصارات ChatGPT بسيطة وسهلة الاستخدام تعمل على مضاعفة الإنتاجية!"
+  },
+  "homepage.description": {
+    "message": "AiShort هي أداة مصممة للإدارة الفعالة لمطالبات الذكاء الاصطناعي ومشاركتها. فهو يمكّن المستخدمين من تخصيص المطالبات الخاصة بهم وحفظها ومشاركتها بسهولة، مع توفير الوصول أيضًا إلى منصة يقودها المجتمع مع الآلاف من المطالبات المشتركة بشكل عام، مما يعزز الإنتاجية لمجموعة متنوعة من التطبيقات."
+  },
+  "homepage.slogan": {
+    "message": "تعظيم الكفاءة والإنتاجية الخاصة بك"
   }
 }

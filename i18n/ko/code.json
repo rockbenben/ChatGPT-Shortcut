@@ -181,12 +181,6 @@
     "message": "ChatGPT 바로가기를 지속적으로 개선하고 개인의 효율성과 생산성을 높일 수 있도록 제안, 아이디어, 당부의 말을 자유롭게 보내주세요. 버그에 대한 피드백이 필요한 경우, 문제가 발생한 위치와 주변 상황에 대한 링크를 제공해 주세요. 프롬프트 콘텐츠의 경우, 여러 언어로 콘텐츠를 제출하거나 프롬프트에 대한 아이디어를 간단히 설명할 수 있습니다. 저희는 생각을 확장하거나 고품질의 결과물을 만들어내는 프롬프트를 찾고 있습니다. 제출한 프롬프트가 게시되면 해당 페이지에 여러분의 기여가 추가됩니다. 기여자의 이름 (사용자 아이디) 을 검색하면 해당 항목을 찾을 수 있습니다.",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort(ChatGPT 바로 가기) - 생산성을 배가시켜주는 사용하기 쉬운 ChatGPT 바로 가기 명령 양식! 태그 필터링, 키워드 검색 및 원클릭 복사 프롬프트"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "생산성을 두 배로 높이는 ChatGPT 단축키"
-  },
   "showcase.filters.resultCount": {
     "message": "{사이트 수} 프롬프트",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "내 프롬프트"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT 바로 가기) - 생산성을 두 배로 높여주는 간단하고 사용자 친화적인 ChatGPT 바로 가기 명령 목록!"
+  },
+  "homepage.description": {
+    "message": "AiShort 는 AI 프롬프트의 효율적인 관리 및 공유를 위해 설계된 도구입니다. 사용자는 프롬프트를 쉽게 사용자 지정, 저장 및 공유할 수 있으며, 수천 개의 공개적으로 공유된 프롬프트가 있는 커뮤니티 중심 플랫폼에 액세스하여 다양한 애플리케이션의 생산성을 향상시킬 수 있습니다."
+  },
+  "homepage.slogan": {
+    "message": "효율성 및 생산성 극대화"
   }
 }

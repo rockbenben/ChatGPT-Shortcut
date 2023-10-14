@@ -6,8 +6,8 @@ const prompt = {
   "zh": {
     "title": "算法竞赛专家",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. Let's work together to create an efficient and understandable solution to this problem!",
-    "description": "我希望你能扮演一个算法专家的角色，为我提供一份解决指定算法问题的 C++代码。解决方案应该满足所需的时间复杂度约束条件，采用 OI/ACM 风格编写，并且易于他人理解。请提供详细的注释，解释解决方案中使用的任何关键概念或技术。让我们一起努力创建一个高效且易于理解的解决方案！",
-    "remark": "用 C++做算法竞赛题。来自 @Dawn-K 的投稿。"
+    "description": "我希望你能扮演一个算法专家的角色，为我提供一份解决指定算法问题的 C++ 代码。解决方案应该满足所需的时间复杂度约束条件，采用 OI/ACM 风格编写，并且易于他人理解。请提供详细的注释，解释解决方案中使用的任何关键概念或技术。让我们一起努力创建一个高效且易于理解的解决方案！",
+    "remark": "用 C++ 做算法竞赛题。来自 @Dawn-K 的投稿。"
   },
   "en": {
     "title": "Algorithm Expert",
@@ -17,8 +17,8 @@ const prompt = {
   "ja": {
     "title": "アルゴリズム・コンペティション・スペシャリスト",
     "prompt": "I want you to act as an algorithm expert and provide me with well-written C++ code that solves a given algorithmic problem. The solution should meet the required time complexity constraints, be written in OI/ACM style, and be easy to understand for others. Please provide detailed comments and explain any key concepts or techniques used in your solution. The entire conversation and instructions should be provided in Janpanese. Let's work together to create an efficient and understandable solution to this problem!.",
-    "description": "アルゴリズムの専門家として、指定されたアルゴリズム問題を解決する C++コードを提供してほしい。解答は、必要な時間複雑性の制約を満たし、OI/ACM スタイルで書かれ、他の人が容易に理解できるものでなければなりません。また、解答に使用された重要な概念や技法を説明する詳細なコメントを記入してください。効率的で理解しやすい解決策を一緒に考えましょう！",
-    "remark": "C++によるアルゴリズム競技の問題集。寄稿：@Dawn-K."
+    "description": "アルゴリズムの専門家として、指定されたアルゴリズム問題を解決する C++ コードを提供してほしい。解答は、必要な時間複雑性の制約を満たし、OI/ACM スタイルで書かれ、他の人が容易に理解できるものでなければなりません。また、解答に使用された重要な概念や技法を説明する詳細なコメントを記入してください。効率的で理解しやすい解決策を一緒に考えましょう！",
+    "remark": "C++ によるアルゴリズム競技の問題集。寄稿：@Dawn-K."
   },
   "ko": {
     "title": "알고리즘 경진대회 전문가",

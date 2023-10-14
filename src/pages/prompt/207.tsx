@@ -23,7 +23,7 @@ const prompt = {
   "ko": {
     "title": "공기 읽기",
     "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Korean. What could be the other person's intention? How should I respond?.",
-    "description": "특정 일/상황]이 발생했고 누군가 저에게 [내용] 이라고 말했습니다. 그 사람이 무슨 말을 하려는 것인지 물어봐도 될까요? 어떻게 대답하시겠어요?",
+    "description": "특정 일/상황] 이 발생했고 누군가 저에게 [내용] 이라고 말했습니다. 그 사람이 무슨 말을 하려는 것인지 물어봐도 될까요? 어떻게 대답하시겠어요?",
     "remark": "이해할 수 없는 대화의 경우 AI 가 적절한 답변을 해석하고 공식화할 수 있도록 대화에 대한 컨텍스트를 제공하세요."
   },
   "es": {

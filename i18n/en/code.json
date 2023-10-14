@@ -149,9 +149,6 @@
   "showcase.tag.contribute.description": {
     "message": "Works submitted by the public that can help broaden our horizons."
   },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "Maximize your Efficiency and Productivity"
-  },
   "showcase.header.button": {
     "message": "🙏 Please add your promote"
   },
@@ -624,9 +621,6 @@
   "userInfo.email": {
     "message": "Mail:"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity! Includes label filtering, prompt search, and one-click prompt copying."
-  },
   "message.resetPassword.success": {
     "message": "Password reset successful!"
   },
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "My Prompts"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity!"
+  },
+  "homepage.description": {
+    "message": "AiShort is a tool designed for the efficient management and sharing of AI prompts. It enables users to easily customize, save, and share their prompts, while also offering access to a community-driven platform with thousands of publicly shared prompts, enhancing productivity for a variety of applications."
+  },
+  "homepage.slogan": {
+    "message": "Maximize your Efficiency and Productivity"
   }
 }

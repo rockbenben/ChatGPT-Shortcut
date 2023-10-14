@@ -181,12 +181,6 @@
     "message": "ChatGPT Shortcut を継続的に改善し、個人の効率と生産性を高めるために、提案、アイデア、促音語を自由に与えてください。バグに関するフィードバックが必要な場合は、問題が発生した場所とそれにまつわる状況へのリンクを提供してください。プロンプトの内容については、多言語で投稿することもできますし、プロンプトのアイデアを記述するだけでもかまいません。私たちは、思考を広げ、質の高いアウトプットを生み出すプロンプトを求めます。投稿したプロンプトが公開されると、あなたの投稿はページに追加されます。投稿者の名前（ユーザー名）を検索すると、該当するエントリーを見つけることができます。",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - 生産性を倍増させる、使いやすい ChatGPT ショートカットコマンドフォーム！タグフィルタリング、キーワード検索、ワンクリックでコピーできるプロンプト"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "生産性を倍増させる ChatGPT のショートカット"
-  },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} プロンプト",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "私のプロンプト"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT Shortcut) - 生産性を倍増させるシンプルでユーザーフレンドリーな ChatGPT ショートカットコマンドリスト！"
+  },
+  "homepage.description": {
+    "message": "AiShort は、AI プロンプトを効率的に管理・共有するためのツールです。ユーザーが簡単にプロンプトをカスタマイズ、保存、共有できるほか、一般に共有されている何千ものプロンプトを含むコミュニティ主導のプラットフォームへのアクセスも可能で、さまざまなアプリケーションの生産性を高めます。"
+  },
+  "homepage.slogan": {
+    "message": "効率と生産性の最大化"
   }
 }

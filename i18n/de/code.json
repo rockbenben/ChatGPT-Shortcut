@@ -46,12 +46,6 @@
     "message": "Vorschläge, Ideen und Anregungen sind willkommen, um ChatGPT Shortcut kontinuierlich zu verbessern und die persönliche Effizienz und Produktivität zu steigern. Wenn Sie ein Feedback zu einem Fehler geben möchten, geben Sie bitte einen Link an, wo das Problem aufgetreten ist und welche Umstände es verursacht hat. Für Prompt-Inhalte können Sie Inhalte in mehreren Sprachen einreichen oder einfach Ihre Idee für einen Prompt beschreiben. Wir sind auf der Suche nach Prompts, die den Geist anregen oder qualitativ hochwertige Ergebnisse hervorbringen. Sobald der von Ihnen eingereichte Prompt veröffentlicht wird, wird Ihr Beitrag der Seite hinzugefügt. Sie können den entsprechenden Eintrag finden, indem Sie nach dem Namen des Beitragenden (Benutzernamen) suchen.",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - Einfach zu verwendendes ChatGPT Shortcut-Befehlsblatt, das die Produktivität vervielfacht! Tag-Filterung, Stichwortsuche und Ein-Klick-Kopieren Prompts"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "ChatGPT-Verknüpfungsbefehle, die die Produktivität verdoppeln"
-  },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} Eingabeaufforderungen",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "Meine Prompts"
+  },
+  "homepage.title": {
+    "message": "AiShort-Eine einfache und benutzerfreundliche ChatGPT Shortcut Befehlsliste, die die Produktivität verdoppelt!"
+  },
+  "homepage.description": {
+    "message": "AiShort ist ein Tool für die effiziente Verwaltung und den Austausch von KI-Prompts. Es ermöglicht Nutzern, ihre Prompts einfach anzupassen, zu speichern und zu teilen. Gleichzeitig bietet es Zugang zu einer Community-gesteuerten Plattform mit Tausenden von öffentlich geteilten Prompts, was die Produktivität für eine Vielzahl von Anwendungen erhöht."
+  },
+  "homepage.slogan": {
+    "message": "Maximieren Sie Ihre Effizienz und Produktivität"
   }
 }

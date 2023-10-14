@@ -43,12 +43,6 @@
     "message": "Les suggestions, les idées et les commentaires sont les bienvenus afin d'améliorer continuellement ChatGPT Shortcut et d'accroître l'efficacité et la productivité personnelles. Si vous avez besoin de donner votre avis sur un bug, veuillez fournir un lien vers l'endroit où le problème s'est produit et les circonstances qui l'ont entouré. Pour le contenu des messages-guides, vous pouvez soumettre un contenu en plusieurs langues ou simplement décrire votre idée de message-guide. Nous recherchons des idées qui stimulent l'esprit ou qui produisent des résultats de grande qualité. Une fois que le message que vous avez soumis est publié, votre contribution est ajoutée à la page. Vous pouvez trouver l'entrée correspondante en recherchant le nom du contributeur (nom d'utilisateur).",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - Feuille de commande de raccourci ChatGPT facile à utiliser qui multiplie la productivité ! Filtrage des balises, recherche par mot-clé et copie en un seul clic."
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "ChatGPT : des raccourcis qui doublent la productivité"
-  },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} invite",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "Mes suggestions"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT Shortcut) - Une liste de commandes de raccourcis ChatGPT simple et conviviale qui double la productivité !"
+  },
+  "homepage.description": {
+    "message": "AiShort est un outil conçu pour la gestion et le partage efficaces des messages-guides de l'IA. Il permet aux utilisateurs de personnaliser, d'enregistrer et de partager facilement leurs messages, tout en offrant un accès à une plateforme communautaire contenant des milliers de messages partagés publiquement, améliorant ainsi la productivité pour une variété d'applications."
+  },
+  "homepage.slogan": {
+    "message": "Maximisez votre efficacité et votre productivité"
   }
 }

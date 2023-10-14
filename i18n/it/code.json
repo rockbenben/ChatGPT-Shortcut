@@ -43,12 +43,6 @@
     "message": "Suggerimenti, idee e suggerimenti sono benvenuti al fine di migliorare continuamente ChatGPT Shortcut e aumentare l'efficienza e la produttività personali. Se dovete fornire un feedback su un bug, siete pregati di fornire un link al luogo in cui si è verificato il problema e alle circostanze in cui si è verificato. Per quanto riguarda i contenuti dei prompt, è possibile inviarli in più lingue o semplicemente descrivere la propria idea per un prompt. Cerchiamo suggerimenti che stimolino la mente o che producano risultati di alta qualità. Una volta che il tema inviato sarà pubblicato, il vostro contributo sarà aggiunto alla pagina. È possibile trovare la voce corrispondente cercando il nome del collaboratore (nome utente).",
     "description": "The main paragraph on the feedback page"
   },
-  "AiShort (ChatGPT Shortcut) - 简单易用的 ChatGPT 快捷指令表，让生产力倍增！标签筛选、关键词搜索和一键复制 Prompts": {
-    "message": "AiShort (ChatGPT Shortcut) - Foglio di comandi per scorciatoie ChatGPT facile da usare che moltiplica la produttività! Filtraggio dei tag, ricerca di parole chiave e copia dei prompt con un solo clic"
-  },
-  "让生产力加倍的 ChatGPT 快捷指令": {
-    "message": "I comandi di scelta rapida di ChatGPT che raddoppiano la produttività"
-  },
   "showcase.filters.resultCount": {
     "message": "Richieste di {sitesCount}",
     "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -797,5 +791,14 @@
   },
   "myprompt": {
     "message": "I miei suggerimenti"
+  },
+  "homepage.title": {
+    "message": "AiShort (ChatGPT Shortcut) - Un elenco di comandi di scelta rapida di ChatGPT semplice e facile da usare che raddoppia la produttività!"
+  },
+  "homepage.description": {
+    "message": "AiShort è uno strumento progettato per la gestione e la condivisione efficiente dei messaggi di intelligenza artificiale. Consente agli utenti di personalizzare, salvare e condividere facilmente i propri prompt, offrendo al contempo l'accesso a una piattaforma guidata dalla comunità con migliaia di prompt condivisi pubblicamente, migliorando la produttività per una varietà di applicazioni."
+  },
+  "homepage.slogan": {
+    "message": "Massimizzare l'efficienza e la produttività"
   }
 }
