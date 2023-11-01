@@ -117,12 +117,12 @@
   display: inline-block;
   background-color: #18816a;
   color: var(--site-color-favorite-background);
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
   text-decoration: none;
-  font-size: 8px;
+  font-size: 0.625rem;
   font-weight: bold;
-  margin-right: 8px;
+  margin-right: 0.625rem;
   border: none;
   box-shadow: none;
   cursor: pointer;

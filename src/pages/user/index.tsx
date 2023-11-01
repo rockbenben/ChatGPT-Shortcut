@@ -4,7 +4,7 @@ import { Card, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { changePassword, forgotPassword } from "@site/src/api";
-import { HomeOutlined, StarOutlined } from "@ant-design/icons";
+import { HomeOutlined, HeartOutlined } from "@ant-design/icons";
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
@@ -190,7 +190,7 @@ const UserProfile = () => {
           <HomeOutlined /> <Translate id='link.home'>返回首页</Translate>
         </Link>
         <Link to='/user/favorite'>
-          <StarOutlined /> <Translate id='link.myfavorite'>我的收藏</Translate>
+          <HeartOutlined /> <Translate id='link.myfavorite'>我的收藏</Translate>
         </Link>
         </Space>
         <Card title={translate({ id: "title.userInfo", message: "用户信息" })}>

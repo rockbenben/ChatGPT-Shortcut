@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -33,7 +33,7 @@ import {
   DownOutlined,
   HomeOutlined,
   CopyOutlined,
-  StarOutlined,
+  HeartOutlined,
 } from "@ant-design/icons";
 
 const { Search } = Input;
@@ -206,7 +206,7 @@ function CommunityPrompts() {
           </Link>
           {userAuth ? (
             <Link to='/user/favorite'>
-              <StarOutlined />{" "}
+              <HeartOutlined />{" "}
               <Translate id='link.myfavorite'>我的收藏</Translate>
             </Link>
           ) : (
@@ -282,26 +282,35 @@ function CommunityPrompts() {
                   </p>
                 </div>
                 <div className={clsx(styles.showcaseCardBodyActions)}>
-                  <Button
-                    icon={<CopyOutlined />}
-                    type='default'
-                    onClick={() => handleCopyClick(index)}>
-                    {copiedIndex === index ? (
-                      <Translate id='theme.CodeBlock.copied'>已复制</Translate>
-                    ) : (
-                      <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                    )}
-                  </Button>
-                  <Button
-                    icon={<StarOutlined />}
-                    type='default'
-                    style={{ marginRight: "10px" }}
-                    onClick={() => {
-                      vote(UserPrompt.id, "upvote");
-                      bookmark(UserPrompt.id);
-                    }}>
-                    <Translate>收藏</Translate>
-                  </Button>
+                  <Button.Group>
+                    <Tooltip
+                      title={translate({
+                        id: "copy.button",
+                        message: "复制",
+                      })}>
+                      <Button
+                        type='default'
+                        onClick={() => handleCopyClick(index)}>
+                        <CopyOutlined />
+                        {copiedIndex === index && (
+                          <Translate id='theme.CodeBlock.copied'>已复制</Translate>
+                        )}
+                      </Button>
+                    </Tooltip>
+                    <Tooltip
+                      title={translate({
+                        message: "收藏",
+                      })}>
+                      <Button
+                        type='default'
+                        onClick={() => {
+                          vote(UserPrompt.id, "upvote");
+                          bookmark(UserPrompt.id);
+                        }}>
+                        <HeartOutlined />
+                      </Button>
+                    </Tooltip>
+                  </Button.Group>
                   <Button.Group>
                     <Tooltip
                       title={translate({

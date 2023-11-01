@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tabs } from "antd";
-import { EditOutlined, StarOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
 import UserStatus from "../_components/user/UserStatus";
@@ -29,7 +29,7 @@ function UserBookmark() {
               key='status'
               tab={
                 <span style={{}}>
-                  <StarOutlined style={{ marginRight: "5px" }} />
+                  <HeartOutlined style={{ marginRight: "5px" }} />
                   {translate({ message: "收藏" })}
                 </span>
               }

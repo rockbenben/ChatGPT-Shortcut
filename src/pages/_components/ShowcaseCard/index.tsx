@@ -1,11 +1,15 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
-import { message, Tooltip } from "antd";
+import { message, Tooltip, Button } from "antd";
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import { LinkOutlined } from "@ant-design/icons";
+import {
+  LinkOutlined,
+  CopyOutlined,
+  HeartOutlined,
+  HeartTwoTone
+} from "@ant-design/icons";
 import {
   Tags,
   TagList,
@@ -172,9 +176,6 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
   return (
     <li key={userTitle} className='card shadow--md'>
-      {/* <div className={clsx('card__image', styles.showcaseCardImage)}>
-        <Image img={image} alt={user.title} />
-      </div> */}
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <Heading as='h4' className={styles.showcaseCardTitle}>
@@ -190,45 +191,33 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           {user.tags.includes("favorite") && (
             <Tooltip
               title={userAuth ? <Translate>点击移除收藏</Translate> : ""}>
-              <div onClick={userAuth ? removeFavorite : null}>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} size='small' />
-              </div>
+              <Button type='text' onClick={userAuth ? removeFavorite : null}>
+                <HeartTwoTone twoToneColor="#eb2f96" />
+              </Button>
             </Tooltip>
           )}
-          {/* {user.source && (
-            <Link
-              href={user.source}
-              className={clsx(
-                'button button--secondary button--sm',
-                styles.showcaseCardSrcBtn,
-              )}>
-              <Translate id="showcase.card.sourceLink">source</Translate>
-            </Link>
-          )} */}
           {userAuth && !user.tags.includes("favorite") && (
-            <button
-              className={clsx(
-                "button button--secondary button--sm",
-                styles.showcaseCardSrcBtn
-              )}
-              type='button'
-              onClick={handleLove}>
-              <Translate>收藏</Translate>
-            </button>
+            <Tooltip
+              title={translate({
+                message: "收藏",
+              })}>
+              <Button type='text' onClick={handleLove}>
+                <HeartOutlined />
+              </Button>
+            </Tooltip>
           )}
-          <button
-            className={clsx(
-              "button button--secondary button--sm",
-              styles.showcaseCardSrcBtn
-            )}
-            type='button'
-            onClick={handleCopyClick}>
-            {copied ? (
-              <Translate id='theme.CodeBlock.copied'>已复制</Translate>
-            ) : (
-              <Translate id='theme.CodeBlock.copy'>复制</Translate>
-            )}
-          </button>
+          <Tooltip
+            title={translate({
+              id: "copy.button",
+              message: "复制",
+            })}>
+            <Button type='text' onClick={handleCopyClick}>
+              <CopyOutlined />
+              {copied && (
+                <Translate id='theme.CodeBlock.copied'>已复制</Translate>
+              )}
+            </Button>
+          </Tooltip>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
         <p
