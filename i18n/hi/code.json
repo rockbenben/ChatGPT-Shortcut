@@ -45,7 +45,7 @@
   },
   "showcase.filters.resultCount": {
     "message": "{साइट्सकाउंट} संकेत देता है",
-    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "toggle_prompt_language": {
     "message": "शीघ्र भाषा बदलें"
@@ -668,10 +668,6 @@
     "message": "Toggle word wrap",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Toggle the collapsible sidebar category '{label}'",
-    "description": "The ARIA label to toggle the collapsible sidebar category"
-  },
   "theme.NavBar.navAriaLabel": {
     "message": "Main",
     "description": "The ARIA label for the main navigation"
@@ -800,5 +796,25 @@
   },
   "homepage.slogan": {
     "message": "अपनी दक्षता और उत्पादकता को अधिकतम करें"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.unlistedContent.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.unlistedContent.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
   }
 }

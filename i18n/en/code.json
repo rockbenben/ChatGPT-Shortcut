@@ -154,7 +154,7 @@
   },
   "showcase.filters.resultCount": {
     "message": "{sitesCount} prompts",
-    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "showcase.filters.title": {
     "message": "Filters"
@@ -166,7 +166,7 @@
     "message": "😒 No result, please refine your search term."
   },
   "showcase.favoritesList.title": {
-    "message": "Our favorites"
+    "message": "Favorites"
   },
   "showcase.usersList.allUsers": {
     "message": "All prompts"
@@ -371,10 +371,6 @@
   "theme.CodeBlock.wordWrapToggle": {
     "message": "Toggle word wrap",
     "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
-    "message": "Toggle the collapsible sidebar category '{label}'",
-    "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Main",
@@ -751,7 +747,7 @@
     "message": "My Favorites"
   },
   "移除收藏": {
-    "message": "Remove"
+    "message": "Remove favorite"
   },
   "comment.reply": {
     "message": "Reply"
@@ -800,5 +796,25 @@
   },
   "homepage.slogan": {
     "message": "Maximize your Efficiency and Productivity"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.unlistedContent.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.unlistedContent.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
   }
 }

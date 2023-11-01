@@ -170,7 +170,7 @@ function useSiteCountPlural() {
         {
           id: "showcase.filters.resultCount",
           description:
-            'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
+            'Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
           message: "{sitesCount} prompts",
         },
         { sitesCount }
@@ -492,7 +492,7 @@ function ShowcaseCards({ isDescription }) {
                 )}>
                 <Heading as='h2'>
                   <Translate id='showcase.favoritesList.title'>
-                    Our favorites
+                    Favorites
                   </Translate>
                 </Heading>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
