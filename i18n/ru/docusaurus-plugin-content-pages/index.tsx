@@ -214,7 +214,7 @@ function ShowcaseFilters({ onToggleDescription }) {
             className={styles.onToggleButton}
             title={translate({
               id: "toggle_prompt_language_description",
-              message: "更改提示词的显示语言，在英语和页面当前语言之间切换。",
+              message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
             })}>
             {togglePromptLanguage}
           </button>
