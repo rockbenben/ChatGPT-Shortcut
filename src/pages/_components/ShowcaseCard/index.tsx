@@ -189,28 +189,25 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
             </span>
           </Heading>
           {user.tags.includes("favorite") && (
-            <Tooltip
-              title={userAuth ? <Translate>点击移除收藏</Translate> : ""}>
-              <Button type='text' onClick={userAuth ? removeFavorite : null}>
+            <Tooltip title={userAuth ? <Translate>点击移除收藏</Translate> : ""}>
+              {userAuth ? (
+                <Button type='text' onClick={removeFavorite}>
+                  <HeartTwoTone twoToneColor="#eb2f96" />
+                </Button>
+              ) : (
                 <HeartTwoTone twoToneColor="#eb2f96" />
-              </Button>
+              )}
             </Tooltip>
           )}
           {userAuth && !user.tags.includes("favorite") && (
-            <Tooltip
-              title={translate({
-                message: "收藏",
-              })}>
+            <Tooltip title={translate({ message: "收藏" })}>
               <Button type='text' onClick={handleLove}>
                 <HeartOutlined />
               </Button>
             </Tooltip>
           )}
           <Tooltip
-            title={translate({
-              id: "copy.button",
-              message: "复制",
-            })}>
+            title={translate({ id: "copy.button", message: "复制" })}>
             <Button type='text' onClick={handleCopyClick}>
               <CopyOutlined />
               {copied && (
