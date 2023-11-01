@@ -35,7 +35,7 @@ AiShort 提供一份简洁易用的 AI 指令列表，即使不了解提示词�
 
 🗳️ **社区投票系统**：与 Product Hunt 或 Reddit 类似，平台由社区驱动，最佳提示词将推送至首页。
 
-📦 **开箱即用**：只需访问 <https://www.aishort.top/>，即可开始使用。
+📦 **开箱即用**：只需访问 https://www.aishort.top/ ，即可开始使用。
 
 AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。我们会定期更新，为你提供新的提示词和启发。如需了解如何使用 AiShort，请查阅我们的[使用手册](https://www.aishort.top/docs/guides/getting-started)。如需了解本项目的开发背景和初衷，你可以阅读 [AiShort 开发博客](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)。
 

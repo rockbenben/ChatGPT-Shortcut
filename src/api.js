@@ -353,7 +353,7 @@ export async function getComments(pageId, page, pageSize, type = "card") {
     try {
       const response = await axios.get(`${API_URL}/comments/api::${type}.${type}:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`);
 
-      const nextExpirationDate = new Date().getTime() + 12 * 60 * 60 * 1000; // 12 小时后过期
+      const nextExpirationDate = new Date().getTime() + 1 * 60 * 60 * 1000; // 1 小时后过期
       localStorage.setItem(cacheKey, JSON.stringify(response.data));
       localStorage.setItem(expirationKey, String(nextExpirationDate));
 

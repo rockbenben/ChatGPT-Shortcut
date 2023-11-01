@@ -1,8 +1,11 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import {themes as prismThemes} from 'prism-react-renderer';
+
 //const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
 //const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
 
@@ -27,9 +30,9 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "zh-Hans",
     locales: ["zh-Hans", "en", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
@@ -83,7 +86,7 @@ const config = {
           sidebarPath: "sidebars.js",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: './src/css/custom.css',
         },
         gtag: {
           trackingID: "G-YJY639H2J1",
@@ -217,8 +220,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut)`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
 
       /* announcementBar: {
@@ -231,7 +234,7 @@ const config = {
     }),
 };
 
-module.exports = config;
+export default config;
 
 /* process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
 function getNavbar() {

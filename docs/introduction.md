@@ -18,7 +18,7 @@ AiShort 提供一份简洁易用的 AI 指令列表，即使不了解提示词�
 
 🗳️ **社区投票系统**：与 Product Hunt 或 Reddit 类似，平台由社区驱动，最佳提示词将推送至首页。
 
-📦 **开箱即用**：只需访问 <https://www.aishort.top/>，即可开始使用。
+📦 **开箱即用**：只需访问 https://www.aishort.top/ ，即可开始使用。
 
 AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。如需了解本项目的开发背景和初衷，你可以阅读 [AiShort 开发博客](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)。
 
@@ -32,11 +32,11 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
 
 将提示词复制到 AI 对话模型中即可使用，以下是常用模型链接：
 
-- ChatGPT：<https://chat.openai.com/>
-- Bard: <https://bard.google.com/>
-- Claude: <https://claude.ai/chats>
-- 文心一言：<https://yiyan.baidu.com/>
-- 智谱清言：<https://chatglm.cn/detail>
+- ChatGPT：https://chat.openai.com/
+- Bard: https://bard.google.com/
+- Claude: https://claude.ai/chats>
+- 文心一言：https://yiyan.baidu.com/
+- 智谱清言：https://chatglm.cn/detail
 
 ## 浏览器扩展
 

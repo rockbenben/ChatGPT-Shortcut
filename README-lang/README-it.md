@@ -35,7 +35,7 @@ AiShort offre un elenco conciso e facile da usare di istruzioni AI. Anche senza 
 
 🗳️ **Sistema di votazione della comunità**: Simile a Product Hunt o Reddit, la piattaforma è guidata dalla comunità. I migliori prompts verranno spinti in homepage.
 
-📦 **Pronto all'uso**: Basta visitare <https://www.aishort.top/it/> per iniziare a usare.
+📦 **Pronto all'uso**: Basta visitare https://www.aishort.top/it/ per iniziare a usare.
 
 La fonte dei prompts di AiShort include selezioni Internet, condivisioni della comunità e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Aggiorneremo regolarmente per fornirti nuovi prompts e ispirazione. Per capire come usare AiShort, si prega di fare riferimento al [manuale utente](https://www.aishort.top/it/docs/guides/getting-started).
 
