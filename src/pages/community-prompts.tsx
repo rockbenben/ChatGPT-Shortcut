@@ -34,6 +34,7 @@ import {
   HomeOutlined,
   CopyOutlined,
   HeartOutlined,
+  LoginOutlined,
 } from "@ant-design/icons";
 
 const { Search } = Input;
@@ -211,6 +212,7 @@ function CommunityPrompts() {
             </Link>
           ) : (
             <Link onClick={() => setOpen(true)}>
+              <LoginOutlined />{" "}
               <Translate id='button.login'>登录</Translate>
             </Link>
           )}
