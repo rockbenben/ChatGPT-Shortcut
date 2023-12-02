@@ -18,6 +18,8 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     event.preventDefault();
     if (ExecutionEnvironment.canUseDOM) {
       localStorage.removeItem("auth_token");
+      localStorage.removeItem("userAllInfo");
+      localStorage.removeItem("userAllInfoCacheExpiration");
     }
     setUserAuth(null);
     window.location.reload();
