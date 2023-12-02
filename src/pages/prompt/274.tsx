@@ -87,7 +87,7 @@ const prompt = {
     "latest"
   ],
   "id": 274,
-  "weight": 220
+  "weight": 470
 };
 
 function PromptDetail() {

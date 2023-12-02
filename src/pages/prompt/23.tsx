@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 23,
-  "weight": 935
+  "weight": 1184
 };
 
 function PromptDetail() {

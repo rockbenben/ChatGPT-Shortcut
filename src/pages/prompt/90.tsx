@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 90,
-  "weight": 8189
+  "weight": 10982
 };
 
 function PromptDetail() {

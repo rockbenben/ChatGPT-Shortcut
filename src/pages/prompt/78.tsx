@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 78,
-  "weight": 422
+  "weight": 496
 };
 
 function PromptDetail() {
