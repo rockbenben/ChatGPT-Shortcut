@@ -24,7 +24,6 @@
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.6",
-    "@waline/vercel": "^1.31.7",
     "antd": "^5.12.1",
     "axios": "^1.6.2",
     "clsx": "^2.0.0",
@@ -43,8 +42,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.0.1",
-    "@docusaurus/types": "3.0.1",
-    "@waline/client": "^2.15.7"
+    "@docusaurus/types": "3.0.1"
   },
   "browserslist": {
     "production": [
