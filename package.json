@@ -1,7 +1,8 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "3.0.0",
-  "private": true,
+  "version": "3.0.1",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -16,22 +17,22 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.2",
-    "@docusaurus/core": "^3.0.0",
-    "@docusaurus/plugin-client-redirects": "^3.0.0",
-    "@docusaurus/preset-classic": "^3.0.0",
+    "@docusaurus/core": "3.0.1",
+    "@docusaurus/plugin-client-redirects": "3.0.1",
+    "@docusaurus/preset-classic": "3.0.1",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.6",
     "@waline/vercel": "^1.31.7",
-    "antd": "^5.10.3",
-    "axios": "^1.6.0",
-    "clsx": "^1.2.1",
+    "antd": "^5.12.1",
+    "axios": "^1.6.2",
+    "clsx": "^2.0.0",
     "emoji-mart": "^5.5.2",
     "js-cookie": "^3.0.5",
     "lodash": "^4.0.0",
     "marked": "^5.1.2",
-    "prism-react-renderer": "^2.1.0",
+    "prism-react-renderer": "^2.3.0",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
@@ -41,8 +42,8 @@
     "react-share": "^4.4.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.0.0",
-    "@docusaurus/types": "3.0.0",
+    "@docusaurus/module-type-aliases": "3.0.1",
+    "@docusaurus/types": "3.0.1",
     "@waline/client": "^2.15.7"
   },
   "browserslist": {
