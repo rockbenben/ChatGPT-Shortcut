@@ -1,5 +1,5 @@
 # 使用 nodejs 作为基础镜像
-FROM node:16-alpine
+FROM node:lts-alpine
 
 # 设置工作目录
 WORKDIR /app
@@ -25,7 +25,7 @@ FROM nginx:stable-alpine
 # 将Docusaurus静态站点文件复制到NGINX默认目录
 COPY --from=0 /app/build /usr/share/nginx/html
 
-# 暴露端口80
+# 暴露端口 80
 EXPOSE 80
 
 # 启动NGINX
@@ -33,4 +33,4 @@ CMD ["nginx", "-g", "daemon off;"]
 
 # 容器构建&运行命令
 # docker build -t chatgpt-shortcut .
-# docker run -d -p 80:80 --name chatgpt-shortcut chatgpt-shortcut
+# docker run -d -p 3000:80 --name chatgpt-shortcut chatgpt-shortcut
