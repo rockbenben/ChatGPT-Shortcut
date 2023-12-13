@@ -395,7 +395,7 @@ export async function postComment(pageId, commentContent, threadOf = null, type 
   }
 }
 
-// 更新评论
+/* // 更新评论
 export async function updateComment(pageId, commentId, commentContent, type = "card") {
   try {
     const response = await axios.put(
@@ -426,7 +426,7 @@ export async function deleteComment(pageId, commentId, type = "card") {
     console.error("Error deleting comment:", error);
     throw error;
   }
-}
+} */
 
 /* 精选提示词的 copy count */
 // 获取所有 cards 的 copy count
