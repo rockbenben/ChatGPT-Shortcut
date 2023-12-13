@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
+import { EditOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt } from "@site/src/api";
@@ -62,7 +63,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           <Translate id='button.logout'>注销</Translate>
         </Link>
         <Link className='button button--primary' onClick={() => setOpen(true)}>
-          <Translate id='link.addprompt'>添加自定义提示词</Translate>
+          <EditOutlined style={{ marginRight: "5px" }} /> <Translate id='link.addprompt'>添加提示词</Translate>
         </Link>
         <Modal
           title={translate({
@@ -163,7 +164,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           <Translate id='button.login'>登录</Translate>
         </Link>
         <Link className='button button--primary' to='https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11'>
-          <Translate id='showcase.header.button'>🙏 请添加你的提示词</Translate>
+          <Translate id='showcase.header.button'>🙏 分享你的提示词</Translate>
         </Link>
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />

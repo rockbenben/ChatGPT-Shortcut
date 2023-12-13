@@ -8,7 +8,7 @@ import React, {
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { ArrowDownOutlined } from "@ant-design/icons";
+import { EditOutlined, ArrowDownOutlined } from "@ant-design/icons";
 
 import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
@@ -240,15 +240,7 @@ function ShowcaseFilters({ onToggleDescription }) {
                   message: "我的提示词",
                 })}
                 icon={
-                  <span
-                    style={{
-                      backgroundColor: "#a2222a",
-                      width: 10,
-                      height: 10,
-                      borderRadius: "50%",
-                      marginLeft: 8,
-                    }}
-                  />
+                  <EditOutlined style={{ marginLeft: "5px" }} />
                 }
               />
             </ShowcaseTooltip>
