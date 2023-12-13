@@ -31,14 +31,17 @@ const config = {
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // useful metadata like html lang. For example, if your site is English, you
+  // may want to replace "zh" with "en".
   i18n: {
-    defaultLocale: "zh-Hans",
-    locales: ["zh-Hans", "en", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
+    defaultLocale: "zh",
+    locales: ["en", "zh", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
     localeConfigs: {
       en: {
         htmlLang: "en-US",
+      },
+      zh: {
+        htmlLang: "zh-Hans",
       },
       ja: {
         htmlLang: "ja-JP",
@@ -62,7 +65,7 @@ const config = {
         htmlLang: "ru-RU",
       },
       pt: {
-        htmlLang: "pt-PT",
+        htmlLang: "pt-BR",
       },
       hi: {
         htmlLang: "hi-IN",
@@ -202,6 +205,7 @@ const config = {
               },
             ],
           },
+          // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
             href: "https://github.com/rockbenben/ChatGPT-Shortcut",
