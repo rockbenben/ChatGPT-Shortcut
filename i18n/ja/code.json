@@ -119,9 +119,6 @@
   "showcase.tag.text.description": {
     "message": "テキスト／ワード"
   },
-  "企业职位": {
-    "message": "コーポレート職"
-  },
   "showcase.tag.company.description": {
     "message": "一般事業における役職"
   },
@@ -180,10 +177,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut を継続的に改善し、個人の効率と生産性を高めるために、提案、アイデア、促音語を自由に与えてください。バグに関するフィードバックが必要な場合は、問題が発生した場所とそれにまつわる状況へのリンクを提供してください。プロンプトの内容については、多言語で投稿することもできますし、プロンプトのアイデアを記述するだけでもかまいません。私たちは、思考を広げ、質の高いアウトプットを生み出すプロンプトを求めます。投稿したプロンプトが公開されると、あなたの投稿はページに追加されます。投稿者の名前（ユーザー名）を検索すると、該当するエントリーを見つけることができます。",
     "description": "The main paragraph on the feedback page"
-  },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} プロンプト",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "showcase.filters.title": {
     "message": "フィルター"
@@ -701,9 +694,6 @@
   "toggle_prompt_language": {
     "message": "プロンプト言語の切り替え"
   },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "追加・作成したパーソナルプロンプトは、AiShort 以外のプロンプトの保存に利用できます。"
-  },
   "加载更多": {
     "message": "さらに読み込み中"
   },
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "ここにコメントを入力してください...Markdown と HTML 構文をサポートしています。"
   },
-  "comment.update": {
-    "message": "コメント更新"
-  },
   "reply.required": {
     "message": "返信内容を入力してください"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "エンタープライズ機能"
+  },
+  "myprompt.tooltip": {
+    "message": "AiShort 以外のプロンプトを保存するために使用できる、私が追加または作成したプロンプト。"
+  },
+  "myfavorite.tooltip": {
+    "message": "コミュニティ・プロンプトを含む私のプロンプト集。"
   }
 }

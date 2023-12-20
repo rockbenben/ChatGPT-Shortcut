@@ -184,7 +184,7 @@ export const Tags: { [type in TagType]: Tag } = {
   },
 
   company: {
-    label: translate({ message: "企业职位" }),
+    label: translate({ message: "企业职能" }),
     description: translate({
       message: "一般企业内的岗位",
       id: "showcase.tag.company.description",

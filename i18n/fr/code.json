@@ -43,10 +43,6 @@
     "message": "Les suggestions, les idées et les commentaires sont les bienvenus afin d'améliorer continuellement ChatGPT Shortcut et d'accroître l'efficacité et la productivité personnelles. Si vous avez besoin de donner votre avis sur un bug, veuillez fournir un lien vers l'endroit où le problème s'est produit et les circonstances qui l'ont entouré. Pour le contenu des messages-guides, vous pouvez soumettre un contenu en plusieurs langues ou simplement décrire votre idée de message-guide. Nous recherchons des idées qui stimulent l'esprit ou qui produisent des résultats de grande qualité. Une fois que le message que vous avez soumis est publié, votre contribution est ajoutée à la page. Vous pouvez trouver l'entrée correspondante en recherchant le nom du contributeur (nom d'utilisateur).",
     "description": "The main paragraph on the feedback page"
   },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} invite",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "toggle_prompt_language": {
     "message": "Changement de langue de l'invite"
   },
@@ -55,9 +51,6 @@
   },
   "toggle_prompt_language_description": {
     "message": "Change la langue d'affichage des invites, en basculant entre l'anglais et la langue actuelle de la page."
-  },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "Les repères personnels que vous avez ajoutés ou créés peuvent être utilisés pour stocker des repères autres que AiShort."
   },
   "分享到社区的提示词": {
     "message": "Conseils pour partager avec la communauté"
@@ -229,9 +222,6 @@
   },
   "showcase.tag.text.description": {
     "message": "Texte/phrases"
-  },
-  "企业职位": {
-    "message": "Postes au sein de l'entreprise"
   },
   "showcase.tag.company.description": {
     "message": "Postes au sein de l'entreprise générale"
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "Tapez votre commentaire ici... Supporte les syntaxes Markdown et HTML."
   },
-  "comment.update": {
-    "message": "Mise à jour des commentaires"
-  },
   "reply.required": {
     "message": "Veuillez saisir le contenu de la réponse"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "Cette page n'est pas répertoriée. Les moteurs de recherche ne l'indexeront pas, et seuls les utilisateurs ayant un lien direct peuvent y accéder.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "Fonctions de l'entreprise"
+  },
+  "myprompt.tooltip": {
+    "message": "Invitations que j'ai ajoutées ou créées et qui peuvent être utilisées pour stocker des invitations autres que celles d'AiShort."
+  },
+  "myfavorite.tooltip": {
+    "message": "Ma collection d'incitations, y compris des incitations communautaires."
   }
 }

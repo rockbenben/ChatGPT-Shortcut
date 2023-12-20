@@ -113,9 +113,6 @@
   "showcase.tag.language.description": {
     "message": "Language/Translate"
   },
-  "企业职位": {
-    "message": "Company"
-  },
   "showcase.tag.company.description": {
     "message": "Positions within a typical business organization"
   },
@@ -151,10 +148,6 @@
   },
   "showcase.header.button": {
     "message": "🙏 Please add your promote"
-  },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} prompts",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "showcase.filters.title": {
     "message": "Filters"
@@ -701,9 +694,6 @@
   "toggle_prompt_language": {
     "message": "Switching Prompt Languages"
   },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "Personal prompts you have added or made can be used to store prompts other than AiShort."
-  },
   "加载更多": {
     "message": "Load More"
   },
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "Type your comment here... Support Markdown and HTML syntax."
   },
-  "comment.update": {
-    "message": "Update Comment"
-  },
   "reply.required": {
     "message": "Please input reply content"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "Enterprise Functions"
+  },
+  "myprompt.tooltip": {
+    "message": "Prompts that I've added or made that can be used to store prompts other than AiShort."
+  },
+  "myfavorite.tooltip": {
+    "message": "My collection of prompts, including community prompts."
   }
 }

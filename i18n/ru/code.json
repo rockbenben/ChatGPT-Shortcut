@@ -43,10 +43,6 @@
     "message": "Приветствуются предложения, идеи и пожелания, направленные на постоянное улучшение ChatGPT Shortcut и повышение личной эффективности и продуктивности. Если вам необходимо оставить отзыв об ошибке, пожалуйста, укажите ссылку на место, где возникла проблема, и обстоятельства, связанные с ней. Что касается содержания подсказок, то вы можете присылать их на нескольких языках или просто описать свою идею подсказки. Мы ищем подсказки, которые развивают мышление или позволяют получить высококачественный результат. Как только представленная вами подсказка будет опубликована, ваш вклад будет добавлен на страницу. Соответствующую запись можно найти по имени автора (username).",
     "description": "The main paragraph on the feedback page"
   },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} подсказки",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "toggle_prompt_language": {
     "message": "Переключение языков подсказок"
   },
@@ -55,9 +51,6 @@
   },
   "toggle_prompt_language_description": {
     "message": "Изменение языка, на котором отображаются подсказки, переключение между английским и текущим языком страницы."
-  },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "Добавленные или созданные вами персональные кии могут использоваться для хранения киев, отличных от AiShort."
   },
   "分享到社区的提示词": {
     "message": "Советы по обмену информацией с сообществом"
@@ -229,9 +222,6 @@
   },
   "showcase.tag.text.description": {
     "message": "Текст/фразы"
-  },
-  "企业职位": {
-    "message": "Корпоративные должности"
   },
   "showcase.tag.company.description": {
     "message": "Позиции в рамках общего бизнеса"
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "Введите свой комментарий здесь... Поддержка синтаксиса Markdown и HTML."
   },
-  "comment.update": {
-    "message": "Комментарий к обновлению"
-  },
   "reply.required": {
     "message": "Пожалуйста, введите содержание ответа"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "Функции предприятия"
+  },
+  "myprompt.tooltip": {
+    "message": "Подсказки, которые я добавил или сделал, которые можно использовать для хранения подсказок, отличных от AiShort."
+  },
+  "myfavorite.tooltip": {
+    "message": "Моя коллекция подсказок, включая подсказки сообщества."
   }
 }

@@ -43,10 +43,6 @@
     "message": "Agradecemos cualquier sugerencia, idea o comentario para mejorar continuamente ChatGPT Shortcut y aumentar la eficacia y productividad personales. Si necesita hacer comentarios sobre un error, facilite un enlace al lugar donde se produjo el problema y las circunstancias que lo rodearon. En cuanto al contenido, puedes enviarlo en varios idiomas o simplemente describir tu idea. Buscamos ideas que estimulen la mente o que produzcan resultados de alta calidad. Una vez que se publique el tema que envíe, su contribución se añadirá a la página. Puede encontrar la entrada correspondiente buscando el nombre del colaborador (nombre de usuario).",
     "description": "The main paragraph on the feedback page"
   },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} pide",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "toggle_prompt_language": {
     "message": "Cambiar el idioma de las instrucciones"
   },
@@ -55,9 +51,6 @@
   },
   "toggle_prompt_language_description": {
     "message": "Cambia el idioma en el que se muestran las indicaciones, alternando entre el inglés y el idioma actual de la página."
-  },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "Las señales personales que haya añadido o creado pueden utilizarse para almacenar señales distintas de AiShort."
   },
   "分享到社区的提示词": {
     "message": "Consejos para compartir con la comunidad"
@@ -229,9 +222,6 @@
   },
   "showcase.tag.text.description": {
     "message": "Texto/frases"
-  },
-  "企业职位": {
-    "message": "Cargos corporativos"
   },
   "showcase.tag.company.description": {
     "message": "Puestos dentro de la empresa general"
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "Escriba aquí su comentario... Soporta sintaxis Markdown y HTML."
   },
-  "comment.update": {
-    "message": "Actualización Comentario"
-  },
   "reply.required": {
     "message": "Por favor, introduzca el contenido de la respuesta"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "Esta página está sin clasificar. Los motores de búsqueda no la indexaran, y solo los usuarios con el enlace directo podrán acceder a esta.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "Funciones de empresa"
+  },
+  "myprompt.tooltip": {
+    "message": "Prompts que he añadido o hecho que se pueden utilizar para almacenar prompts que no sean AiShort."
+  },
+  "myfavorite.tooltip": {
+    "message": "Mi colección de prompts, incluyendo prompts comunitarios."
   }
 }

@@ -43,10 +43,6 @@
     "message": "चैटजीपीटी शॉर्टकट को लगातार बेहतर बनाने और व्यक्तिगत दक्षता और उत्पादकता बढ़ाने के लिए सुझावों, विचारों और त्वरित शब्दों का स्वागत है। यदि आपको किसी बग की रिपोर्ट करने की आवश्यकता है, तो कृपया समस्या का लिंक और संबंधित परिस्थितियाँ प्रदान करें। त्वरित शब्द सामग्री के लिए, आप कई भाषाओं में सामग्री सबमिट कर सकते हैं, या बस त्वरित शब्द पर अपने विचारों का वर्णन कर सकते हैं। हम ऐसे त्वरित शब्दों की तलाश करते हैं जो सोच का विस्तार करें या उच्च गुणवत्ता वाले आउटपुट उत्पन्न करें। एक बार आपका सबमिट किया गया संकेत शब्द प्रकाशित हो जाने पर, आपका योगदान पृष्ठ पर जोड़ दिया जाएगा। आप योगदानकर्ता का नाम (उपयोगकर्ता नाम) खोजकर संबंधित प्रविष्टि पा सकते हैं।",
     "description": "The main paragraph on the feedback page"
   },
-  "showcase.filters.resultCount": {
-    "message": "{साइट्सकाउंट} संकेत देता है",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "toggle_prompt_language": {
     "message": "शीघ्र भाषा बदलें"
   },
@@ -55,9 +51,6 @@
   },
   "toggle_prompt_language_description": {
     "message": "शीघ्र शब्दों की प्रदर्शन भाषा बदलें, अंग्रेजी और पृष्ठ की वर्तमान भाषा के बीच स्विच करें।"
-  },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "आपके द्वारा जोड़े गए या बनाए गए व्यक्तिगत संकेतों का उपयोग AiShort के अलावा अन्य संकेतों को संग्रहीत करने के लिए किया जा सकता है।"
   },
   "分享到社区的提示词": {
     "message": "समुदाय के साथ साझा करने के लिए युक्तियाँ"
@@ -229,9 +222,6 @@
   },
   "showcase.tag.text.description": {
     "message": "पाठ/शब्द"
-  },
-  "企业职位": {
-    "message": "कॉर्पोरेट नौकरियाँ"
   },
   "showcase.tag.company.description": {
     "message": "सामान्य कॉर्पोरेट नौकरियाँ"
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "अपनी टिप्पणी यहां टाइप करें... मार्कडाउन और HTML सिंटैक्स का समर्थन करें।"
   },
-  "comment.update": {
-    "message": "टिप्पणी अद्यतन करें"
-  },
   "reply.required": {
     "message": "कृपया उत्तर सामग्री इनपुट करें"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "उद्यम के कार्य"
+  },
+  "myprompt.tooltip": {
+    "message": "संकेत जो मैंने जोड़े हैं या बनाए हैं जिनका उपयोग एआईशॉर्ट के अलावा अन्य संकेतों को संग्रहीत करने के लिए किया जा सकता है।"
+  },
+  "myfavorite.tooltip": {
+    "message": "सामुदायिक संकेतों सहित संकेतों का मेरा संग्रह।"
   }
 }

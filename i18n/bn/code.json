@@ -46,10 +46,6 @@
     "message": "ChatGPT শর্টকাট ক্রমাগত উন্নত করতে এবং ব্যক্তিগত দক্ষতা ও উৎপাদনশীলতা বাড়াতে পরামর্শ, ধারণা এবং প্রম্পট শব্দগুলিকে স্বাগত জানানো হয়। আপনি যদি একটি বাগ রিপোর্ট করতে চান, তাহলে সমস্যাটির লিঙ্ক এবং সম্পর্কিত পরিস্থিতি প্রদান করুন। প্রম্পট শব্দ সামগ্রীর জন্য, আপনি একাধিক ভাষায় সামগ্রী জমা দিতে পারেন, বা প্রম্পট শব্দে আপনার চিন্তাভাবনা বর্ণনা করতে পারেন। আমরা প্রম্পট শব্দগুলি সন্ধান করি যা চিন্তাকে প্রসারিত করে বা উচ্চ-মানের আউটপুট তৈরি করে। আপনার জমা দেওয়া কিউ শব্দ প্রকাশিত হলে, আপনার অবদান পৃষ্ঠায় যোগ করা হবে। আপনি অবদানকারীর নাম (ব্যবহারকারীর নাম) অনুসন্ধান করে সংশ্লিষ্ট এন্ট্রি খুঁজে পেতে পারেন।",
     "description": "The main paragraph on the feedback page"
   },
-  "showcase.filters.resultCount": {
-    "message": "{sitesCount} প্রম্পট",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "toggle_prompt_language": {
     "message": "প্রম্পট ভাষা পরিবর্তন করুন"
   },
@@ -58,9 +54,6 @@
   },
   "toggle_prompt_language_description": {
     "message": "প্রম্পট শব্দের প্রদর্শন ভাষা পরিবর্তন করুন, ইংরেজি এবং পৃষ্ঠার বর্তমান ভাষার মধ্যে স্যুইচ করুন।"
-  },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "আপনি যে ব্যক্তিগত প্রম্পটগুলি যোগ করেছেন বা তৈরি করেছেন তা AiShort ছাড়া অন্য প্রম্পটগুলি সংরক্ষণ করতে ব্যবহার করা যেতে পারে।"
   },
   "分享到社区的提示词": {
     "message": "সম্প্রদায়ের সাথে ভাগ করার জন্য টিপস"
@@ -232,9 +225,6 @@
   },
   "showcase.tag.text.description": {
     "message": "পাঠ্য/শব্দ"
-  },
-  "企业职位": {
-    "message": "কর্পোরেট চাকরি"
   },
   "showcase.tag.company.description": {
     "message": "সাধারণ কর্পোরেট চাকরি"
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "এখানে আপনার মন্তব্য টাইপ করুন... মার্কডাউন এবং এইচটিএমএল সিনট্যাক্স সমর্থন করুন।"
   },
-  "comment.update": {
-    "message": "আপডেট মন্তব্য"
-  },
   "reply.required": {
     "message": "অনুগ্রহ করে উত্তরের কন্টেন্ট ইনপুট করুন"
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "এন্টারপ্রাইজ ফাংশন"
+  },
+  "myprompt.tooltip": {
+    "message": "আমি যে প্রম্পটগুলি যোগ করেছি বা তৈরি করেছি যেগুলি AiShort ছাড়া অন্য প্রম্পটগুলি সংরক্ষণ করতে ব্যবহার করা যেতে পারে৷"
+  },
+  "myfavorite.tooltip": {
+    "message": "সম্প্রদায় প্রম্পট সহ আমার প্রম্পটের সংগ্রহ।"
   }
 }

@@ -119,9 +119,6 @@
   "showcase.tag.text.description": {
     "message": "텍스트 / 단어"
   },
-  "企业职位": {
-    "message": "기업 채용"
-  },
   "showcase.tag.company.description": {
     "message": "일반 비즈니스 내 직책"
   },
@@ -180,10 +177,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT 바로가기를 지속적으로 개선하고 개인의 효율성과 생산성을 높일 수 있도록 제안, 아이디어, 당부의 말을 자유롭게 보내주세요. 버그에 대한 피드백이 필요한 경우, 문제가 발생한 위치와 주변 상황에 대한 링크를 제공해 주세요. 프롬프트 콘텐츠의 경우, 여러 언어로 콘텐츠를 제출하거나 프롬프트에 대한 아이디어를 간단히 설명할 수 있습니다. 저희는 생각을 확장하거나 고품질의 결과물을 만들어내는 프롬프트를 찾고 있습니다. 제출한 프롬프트가 게시되면 해당 페이지에 여러분의 기여가 추가됩니다. 기여자의 이름 (사용자 아이디) 을 검색하면 해당 항목을 찾을 수 있습니다.",
     "description": "The main paragraph on the feedback page"
-  },
-  "showcase.filters.resultCount": {
-    "message": "{사이트 수} 프롬프트",
-    "description": "Pluralized label for the number of prompts found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "showcase.filters.title": {
     "message": "필터"
@@ -701,9 +694,6 @@
   "toggle_prompt_language": {
     "message": "프롬프트 언어 전환"
   },
-  "你添加或制作过的个人提示词，可用于存放AiShort之外的提示词。": {
-    "message": "추가하거나 만든 개인 프롬프트는 AiShort 이외의 프롬프트를 저장하는 데 사용할 수 있습니다."
-  },
   "加载更多": {
     "message": "자세히 보기"
   },
@@ -770,9 +760,6 @@
   "comment.placeholder": {
     "message": "여기에 댓글을 입력하세요... 마크다운 및 HTML 구문을 지원합니다."
   },
-  "comment.update": {
-    "message": "댓글 업데이트"
-  },
   "reply.required": {
     "message": "답장 내용을 입력하세요."
   },
@@ -816,5 +803,14 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "企业职能": {
+    "message": "엔터프라이즈 기능"
+  },
+  "myprompt.tooltip": {
+    "message": "내가 추가했거나 만든 프롬프트를 AiShort 이외의 프롬프트를 저장하는 데 사용할 수 있습니다."
+  },
+  "myfavorite.tooltip": {
+    "message": "커뮤니티 프롬프트를 포함한 내 프롬프트 모음입니다."
   }
 }
