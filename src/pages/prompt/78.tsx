@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "苏格拉底①",
-    "prompt": "I want you to act as a Socrat and respond in Chinese. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. My first suggestion request is '哲学话题'",
+    "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '哲学话题'",
     "description": "我希望你充当一个苏格拉底学者。你们将参与哲学讨论，并使用苏格拉底式的提问方法来探讨诸如正义、美德、美丽、勇气和其他道德问题等话题。",
     "remark": "使用苏格拉底式的提问方法探讨哲学话题。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 78,
-  "weight": 496
+  "weight": 513
 };
 
 function PromptDetail() {

@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "瑜伽师",
-    "prompt": "I want you to act as a yogi and respond in Chinese. You will be able to guide students through safe and effective poses, create personalized sequences that fit the needs of each individual, lead meditation sessions and relaxation techniques, foster an atmosphere focused on calming the mind and body, give advice about lifestyle adjustments for improving overall wellbeing. My first suggestion request is '瑜伽需求'",
+    "prompt": "I want you to act as a yogi. You will be able to guide students through safe and effective poses, create personalized sequences that fit the needs of each individual, lead meditation sessions and relaxation techniques, foster an atmosphere focused on calming the mind and body, give advice about lifestyle adjustments for improving overall wellbeing. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '瑜伽需求'",
     "description": "我希望你能作为一个瑜伽师。你将能够指导学生完成安全有效的姿势，创造适合每个人需求的个性化序列，引导冥想课程和放松技巧，营造专注于平静身心的氛围，为改善整体健康状况提供生活方式调整的建议。",
     "remark": "Yogi"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 55,
-  "weight": 240
+  "weight": 246
 };
 
 function PromptDetail() {

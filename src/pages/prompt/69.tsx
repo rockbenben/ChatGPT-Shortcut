@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "公共演讲教练",
-    "prompt": "I want you to act as a public speaking coach and respond in Chinese. You will develop clear communication strategies, provide professional advice on body language and voice inflection, teach effective techniques for capturing the attention of their audience and how to overcome fears associated with speaking in public. My first suggestion request is '教导对象'",
+    "prompt": "I want you to act as a public speaking coach. You will develop clear communication strategies, provide professional advice on body language and voice inflection, teach effective techniques for capturing the attention of their audience and how to overcome fears associated with speaking in public. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '教导对象'",
     "description": "我希望你能充当公开演讲的教练。你将制定清晰的沟通策略，提供关于肢体语言和语音语调的专业建议，传授吸引听众注意力的有效技巧以及如何克服与公开演讲有关的恐惧。",
     "remark": "教授演讲策略与技巧。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 69,
-  "weight": 219
+  "weight": 228
 };
 
 function PromptDetail() {

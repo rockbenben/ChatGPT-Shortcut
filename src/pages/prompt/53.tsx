@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "魔术师",
-    "prompt": "I want you to act as a magician and respond in Chinese. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. My first request is '魔术要求'",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Chinese. My first request is '魔术要求'",
     "description": "我想让你充当一个魔术师。我将为你提供一名观众和一些可以表演的技巧建议。你的目标是以最有趣的方式表演这些戏法，用你的欺骗和误导技巧让观众感到惊奇和震惊。",
     "remark": "根据要求提供可执行的魔术技巧，例如「如何让手表消失」。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 53,
-  "weight": 332
+  "weight": 343
 };
 
 function PromptDetail() {

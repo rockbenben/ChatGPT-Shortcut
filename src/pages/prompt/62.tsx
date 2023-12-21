@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "造型师",
-    "prompt": "I want you to act as my personal stylist and respond in Chinese. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. My first request is '造型目的'",
+    "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Chinese. My first request is '造型目的'",
     "description": "我想让你充当我的个人造型师。我将告诉你我的时尚偏好和体型，而你将为我推荐服装。你应该只回复你推荐的服装，而不是其他。不要写解释。",
     "remark": "Personal Stylist"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 62,
-  "weight": 435
+  "weight": 449
 };
 
 function PromptDetail() {

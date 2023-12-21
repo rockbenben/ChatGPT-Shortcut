@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "语言病理学家",
-    "prompt": "I want you to act as a speech-language pathologist (SLP), respond in Chinese and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. My first suggestion request is [治疗对象]",
+    "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Chinese. My first suggestion request is [治疗对象]",
     "description": "我希望您能作为语言病理学家（SLP），提出新的语言模式、沟通策略，并培养他们对不口吃的沟通能力的信心。您应该能够推荐技术、策略和其他治疗方法。在提供建议时，您还需要考虑患者的年龄、生活方式和关注点。",
     "remark": "输入患者的年龄、生活方式和关注点，输出改善对方语言沟通（如：口吃）的计划。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 156,
-  "weight": 123
+  "weight": 127
 };
 
 function PromptDetail() {

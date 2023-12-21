@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "简历优化",
-    "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. Respond in Chinese. Do you understand?",
+    "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Chinese. Do you understand?",
     "description": "我将向你提供一份我有兴趣申请的职位的工作描述。你要阅读工作描述，了解该职位的关键要求--包括工作年限、技能、职位名称。之后，我将给你我的简历。你要仔细阅读，并根据我的简历对该工作的量身定做程度提供反馈。",
     "remark": "针对你的职位和简历进行定制化优化。来自 @uteundilse 的投稿。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "article"
   ],
   "id": 253,
-  "weight": 1378
+  "weight": 1428
 };
 
 function PromptDetail() {

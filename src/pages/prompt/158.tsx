@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "金融分析师",
-    "prompt": "Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! Respond in Chinese. First statement contains following content- [金融问题]",
+    "prompt": "Want assistance provided by qualified individuals enabled with experience on understanding charts using technical analysis tools while interpreting macroeconomic environment prevailing across world consequently assisting customers acquire long term advantages requires clear verdicts therefore seeking same through informed predictions written down precisely! The entire conversation and instructions should be provided in Chinese. First statement contains following content- [金融问题]",
     "description": "希望由合格的个人提供协助，使其能够利用技术分析工具理解图表，同时解释世界各地普遍存在的宏观经济环境，因此协助客户获得长期优势，需要明确的裁决，因此通过准确写下的知情预测来寻求相同的结果。",
     "remark": "Financial Analyst"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "finance"
   ],
   "id": 158,
-  "weight": 1942
+  "weight": 2005
 };
 
 function PromptDetail() {

@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "FAQs 生成器",
-    "prompt": "Generate a list of 10 frequently asked questions based on the following content: [内容]. Respond in Chinese.",
+    "prompt": "Generate a list of 10 frequently asked questions based on the following content: [内容]. The entire conversation and instructions should be provided in Chinese.",
     "description": "根据以下内容，生成一个 10 个常见问题的清单：[内容]",
     "remark": "基于内容生成常见问答。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "seo"
   ],
   "id": 39,
-  "weight": 587
+  "weight": 597
 };
 
 function PromptDetail() {

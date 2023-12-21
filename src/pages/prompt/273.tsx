@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "逃离信息茧房",
-    "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100) and respond in Chinese. The larger the number, the less relevant the information you provide should be to the information cocoon. Please respond according to this principle, and parse and respond to the following words:",
+    "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Chinese. Please respond according to this principle, and parse and respond to the following words:",
     "description": "我给你一组词，你以这组词及它们相关信息构成一个信息茧房，然后输出与信息茧房无关的信息，我输入数字，最大数字是 100，数字越大输出的信息与信息茧房中的信息关系越远。",
     "remark": "用来发现自己所不了解的知识。来自 @ergf991 的投稿。"
   },
@@ -87,7 +87,7 @@ const prompt = {
     "latest"
   ],
   "id": 273,
-  "weight": 466
+  "weight": 518
 };
 
 function PromptDetail() {

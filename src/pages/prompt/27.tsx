@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "科技评论",
-    "prompt": "I want you to act as a tech reviewer and respond in Chinese. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. My first suggestion request is '科技评论对象角度'",
+    "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '科技评论对象角度'",
     "description": "我想让你充当一个技术评论员。我将给你一个新技术的名字，你将为我提供一个深入的评论--包括优点、缺点、功能，以及与市场上其他技术的比较。我的第一个建议要求是 '科技评论对象角度'",
     "remark": "从优点、缺点、功能、同类对比等角度对技术和硬件进行评价。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 27,
-  "weight": 259
+  "weight": 274
 };
 
 function PromptDetail() {

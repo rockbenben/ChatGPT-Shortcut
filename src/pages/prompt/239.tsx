@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "海量资料：一句话总结",
-    "prompt": "Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [主题] while accurately reflecting the original content from the articles. Respond in Chinese.",
+    "prompt": "Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [主题] while accurately reflecting the original content from the articles. The entire conversation and instructions should be provided in Chinese.",
     "description": "结合前面 '@1'～'@3' 的文章内容，帮我设想一句描述 [主题] 的吸引人的文案，并且要呈现原始文章内容中最与众不同的特色。",
     "remark": "为文章撰写宣传性文案和标题。本方法摘自电脑玩物作者 Esor Huang 的文章。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 239,
-  "weight": 896
+  "weight": 922
 };
 
 function PromptDetail() {

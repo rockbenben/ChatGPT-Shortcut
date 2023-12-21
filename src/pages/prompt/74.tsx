@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "心理学家",
-    "prompt": "I want you to act a psychologist and respond in Chinese. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. my first thought, { 内心想法 }",
+    "prompt": "I want you to act a psychologist. i will provide you my thoughts. I want you to  give me scientific suggestions that will make me feel better. The entire conversation and instructions should be provided in Chinese. My first thought, { 内心想法 }",
     "description": "我希望你能扮演一个心理学家。我将向你提供我的想法。我希望你能给我科学的建议，使我感觉更好。",
     "remark": "Psychologist"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 74,
-  "weight": 714
+  "weight": 738
 };
 
 function PromptDetail() {

@@ -11,7 +11,7 @@
       "language"
     ],
     "id": 1,
-    "weight": 12439
+    "weight": 13144
   },
   {
     "hi": {
@@ -26,7 +26,7 @@
       "write"
     ],
     "id": 2,
-    "weight": 54726
+    "weight": 56766
   },
   {
     "hi": {
@@ -40,7 +40,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 1343
+    "weight": 1390
   },
   {
     "hi": {
@@ -55,7 +55,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 11161
+    "weight": 11444
   },
   {
     "hi": {
@@ -69,7 +69,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 2840
+    "weight": 2971
   },
   {
     "hi": {
@@ -83,7 +83,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 1467
+    "weight": 1521
   },
   {
     "hi": {
@@ -97,7 +97,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 4652
+    "weight": 4825
   },
   {
     "hi": {
@@ -111,7 +111,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 5920
+    "weight": 6092
   },
   {
     "hi": {
@@ -125,7 +125,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 6483
+    "weight": 6707
   },
   {
     "hi": {
@@ -139,7 +139,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 3303
+    "weight": 3418
   },
   {
     "hi": {
@@ -153,7 +153,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 7718
+    "weight": 8152
   },
   {
     "hi": {
@@ -167,7 +167,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 915
+    "weight": 944
   },
   {
     "hi": {
@@ -181,7 +181,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 2051
+    "weight": 2123
   },
   {
     "hi": {
@@ -195,7 +195,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 2048
+    "weight": 2131
   },
   {
     "hi": {
@@ -209,7 +209,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 3264
+    "weight": 3371
   },
   {
     "hi": {
@@ -223,7 +223,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 1798
+    "weight": 1854
   },
   {
     "hi": {
@@ -237,7 +237,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 6399
+    "weight": 6591
   },
   {
     "hi": {
@@ -251,7 +251,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 1703
+    "weight": 1780
   },
   {
     "hi": {
@@ -265,7 +265,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 2144
+    "weight": 2237
   },
   {
     "hi": {
@@ -280,7 +280,7 @@
       "article"
     ],
     "id": 20,
-    "weight": 15866
+    "weight": 16802
   },
   {
     "hi": {
@@ -294,7 +294,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 2623
+    "weight": 2755
   },
   {
     "hi": {
@@ -308,7 +308,7 @@
       "article"
     ],
     "id": 22,
-    "weight": 510
+    "weight": 517
   },
   {
     "hi": {
@@ -322,7 +322,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 1184
+    "weight": 1237
   },
   {
     "hi": {
@@ -336,7 +336,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 1438
+    "weight": 1484
   },
   {
     "hi": {
@@ -350,7 +350,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 333
+    "weight": 345
   },
   {
     "hi": {
@@ -364,7 +364,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 334
+    "weight": 341
   },
   {
     "hi": {
@@ -378,7 +378,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 259
+    "weight": 274
   },
   {
     "hi": {
@@ -392,7 +392,7 @@
       "comments"
     ],
     "id": 28,
-    "weight": 393
+    "weight": 398
   },
   {
     "hi": {
@@ -406,7 +406,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 289
+    "weight": 303
   },
   {
     "hi": {
@@ -420,7 +420,7 @@
       "text"
     ],
     "id": 30,
-    "weight": 253
+    "weight": 265
   },
   {
     "hi": {
@@ -434,7 +434,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 296
+    "weight": 307
   },
   {
     "hi": {
@@ -448,7 +448,7 @@
       "text"
     ],
     "id": 32,
-    "weight": 169
+    "weight": 177
   },
   {
     "hi": {
@@ -462,7 +462,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 125
+    "weight": 136
   },
   {
     "hi": {
@@ -476,7 +476,7 @@
       "text"
     ],
     "id": 34,
-    "weight": 133
+    "weight": 135
   },
   {
     "hi": {
@@ -490,7 +490,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 783
+    "weight": 808
   },
   {
     "hi": {
@@ -504,7 +504,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 286
+    "weight": 295
   },
   {
     "hi": {
@@ -518,7 +518,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 552
+    "weight": 566
   },
   {
     "hi": {
@@ -532,7 +532,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 524
+    "weight": 546
   },
   {
     "hi": {
@@ -546,7 +546,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 587
+    "weight": 597
   },
   {
     "hi": {
@@ -560,7 +560,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 1157
+    "weight": 1189
   },
   {
     "hi": {
@@ -574,7 +574,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 7782
+    "weight": 8169
   },
   {
     "hi": {
@@ -588,7 +588,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 981
+    "weight": 1013
   },
   {
     "hi": {
@@ -602,7 +602,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 339
+    "weight": 347
   },
   {
     "hi": {
@@ -616,7 +616,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 224
+    "weight": 230
   },
   {
     "hi": {
@@ -630,7 +630,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 444
+    "weight": 461
   },
   {
     "hi": {
@@ -644,7 +644,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 743
+    "weight": 766
   },
   {
     "hi": {
@@ -658,7 +658,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 592
+    "weight": 618
   },
   {
     "hi": {
@@ -672,7 +672,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 1958
+    "weight": 2034
   },
   {
     "hi": {
@@ -686,7 +686,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 2161
+    "weight": 2246
   },
   {
     "hi": {
@@ -700,7 +700,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 1311
+    "weight": 1349
   },
   {
     "hi": {
@@ -714,7 +714,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 539
+    "weight": 551
   },
   {
     "hi": {
@@ -728,7 +728,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 308
+    "weight": 315
   },
   {
     "hi": {
@@ -742,7 +742,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 332
+    "weight": 343
   },
   {
     "hi": {
@@ -756,7 +756,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 373
+    "weight": 383
   },
   {
     "hi": {
@@ -770,7 +770,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 240
+    "weight": 246
   },
   {
     "hi": {
@@ -784,7 +784,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 4281
+    "weight": 4403
   },
   {
     "hi": {
@@ -798,7 +798,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 808
+    "weight": 828
   },
   {
     "hi": {
@@ -812,7 +812,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 440
+    "weight": 456
   },
   {
     "hi": {
@@ -826,7 +826,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 302
+    "weight": 315
   },
   {
     "hi": {
@@ -840,7 +840,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 209
+    "weight": 214
   },
   {
     "hi": {
@@ -854,7 +854,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 281
+    "weight": 291
   },
   {
     "hi": {
@@ -868,7 +868,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 435
+    "weight": 449
   },
   {
     "hi": {
@@ -883,7 +883,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 1919
+    "weight": 1990
   },
   {
     "hi": {
@@ -897,7 +897,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 422
+    "weight": 447
   },
   {
     "hi": {
@@ -911,7 +911,7 @@
       "speech"
     ],
     "id": 65,
-    "weight": 224
+    "weight": 234
   },
   {
     "hi": {
@@ -925,7 +925,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 647
+    "weight": 673
   },
   {
     "hi": {
@@ -939,7 +939,7 @@
       "speech"
     ],
     "id": 67,
-    "weight": 621
+    "weight": 654
   },
   {
     "hi": {
@@ -953,7 +953,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 294
+    "weight": 304
   },
   {
     "hi": {
@@ -967,7 +967,7 @@
       "speech"
     ],
     "id": 69,
-    "weight": 219
+    "weight": 228
   },
   {
     "hi": {
@@ -981,7 +981,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 369
+    "weight": 376
   },
   {
     "hi": {
@@ -995,7 +995,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 397
+    "weight": 409
   },
   {
     "hi": {
@@ -1009,7 +1009,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 658
+    "weight": 690
   },
   {
     "hi": {
@@ -1023,7 +1023,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 1361
+    "weight": 1395
   },
   {
     "hi": {
@@ -1037,7 +1037,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 714
+    "weight": 738
   },
   {
     "hi": {
@@ -1051,7 +1051,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 1716
+    "weight": 1801
   },
   {
     "hi": {
@@ -1065,7 +1065,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 353
+    "weight": 375
   },
   {
     "hi": {
@@ -1079,7 +1079,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 1115
+    "weight": 1150
   },
   {
     "hi": {
@@ -1093,7 +1093,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 496
+    "weight": 513
   },
   {
     "hi": {
@@ -1107,7 +1107,7 @@
       "philosophy"
     ],
     "id": 79,
-    "weight": 290
+    "weight": 301
   },
   {
     "hi": {
@@ -1121,7 +1121,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 2774
+    "weight": 2874
   },
   {
     "hi": {
@@ -1135,7 +1135,7 @@
       "philosophy"
     ],
     "id": 81,
-    "weight": 294
+    "weight": 306
   },
   {
     "hi": {
@@ -1149,7 +1149,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 1285
+    "weight": 1331
   },
   {
     "hi": {
@@ -1163,7 +1163,7 @@
       "academic"
     ],
     "id": 83,
-    "weight": 165
+    "weight": 168
   },
   {
     "hi": {
@@ -1177,7 +1177,7 @@
       "academic"
     ],
     "id": 84,
-    "weight": 239
+    "weight": 249
   },
   {
     "hi": {
@@ -1191,7 +1191,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 402
+    "weight": 428
   },
   {
     "hi": {
@@ -1205,7 +1205,7 @@
       "academic"
     ],
     "id": 86,
-    "weight": 330
+    "weight": 341
   },
   {
     "hi": {
@@ -1219,7 +1219,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 821
+    "weight": 851
   },
   {
     "hi": {
@@ -1233,7 +1233,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 601
+    "weight": 632
   },
   {
     "hi": {
@@ -1247,7 +1247,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 1571
+    "weight": 1617
   },
   {
     "hi": {
@@ -1261,7 +1261,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 10982
+    "weight": 11518
   },
   {
     "hi": {
@@ -1275,7 +1275,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 1773
+    "weight": 1853
   },
   {
     "hi": {
@@ -1289,7 +1289,7 @@
       "code"
     ],
     "id": 92,
-    "weight": 466
+    "weight": 484
   },
   {
     "hi": {
@@ -1303,7 +1303,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 1145
+    "weight": 1199
   },
   {
     "hi": {
@@ -1317,7 +1317,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 2203
+    "weight": 2276
   },
   {
     "hi": {
@@ -1331,7 +1331,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 1632
+    "weight": 1713
   },
   {
     "hi": {
@@ -1345,7 +1345,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 492
+    "weight": 509
   },
   {
     "hi": {
@@ -1359,7 +1359,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 644
+    "weight": 663
   },
   {
     "hi": {
@@ -1373,7 +1373,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 729
+    "weight": 766
   },
   {
     "hi": {
@@ -1387,7 +1387,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 365
+    "weight": 385
   },
   {
     "hi": {
@@ -1401,7 +1401,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 400
+    "weight": 410
   },
   {
     "hi": {
@@ -1415,7 +1415,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 735
+    "weight": 746
   },
   {
     "hi": {
@@ -1429,7 +1429,7 @@
       "code"
     ],
     "id": 102,
-    "weight": 269
+    "weight": 280
   },
   {
     "hi": {
@@ -1443,7 +1443,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 964
+    "weight": 1002
   },
   {
     "hi": {
@@ -1457,7 +1457,7 @@
       "interpreter"
     ],
     "id": 104,
-    "weight": 128
+    "weight": 134
   },
   {
     "hi": {
@@ -1471,7 +1471,7 @@
       "interpreter"
     ],
     "id": 105,
-    "weight": 137
+    "weight": 139
   },
   {
     "hi": {
@@ -1485,7 +1485,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 613
+    "weight": 634
   },
   {
     "hi": {
@@ -1499,7 +1499,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 237
+    "weight": 244
   },
   {
     "hi": {
@@ -1513,7 +1513,7 @@
       "interpreter"
     ],
     "id": 108,
-    "weight": 188
+    "weight": 194
   },
   {
     "hi": {
@@ -1528,7 +1528,7 @@
       "ai"
     ],
     "id": 109,
-    "weight": 19066
+    "weight": 19590
   },
   {
     "hi": {
@@ -1556,7 +1556,7 @@
       "ai"
     ],
     "id": 111,
-    "weight": 300
+    "weight": 305
   },
   {
     "hi": {
@@ -1570,7 +1570,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 858
+    "weight": 888
   },
   {
     "hi": {
@@ -1584,7 +1584,7 @@
       "language"
     ],
     "id": 113,
-    "weight": 146
+    "weight": 152
   },
   {
     "hi": {
@@ -1598,7 +1598,7 @@
       "language"
     ],
     "id": 114,
-    "weight": 215
+    "weight": 227
   },
   {
     "hi": {
@@ -1612,7 +1612,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 203
+    "weight": 210
   },
   {
     "hi": {
@@ -1626,7 +1626,7 @@
       "language"
     ],
     "id": 116,
-    "weight": 214
+    "weight": 219
   },
   {
     "hi": {
@@ -1640,7 +1640,7 @@
       "language"
     ],
     "id": 117,
-    "weight": 172
+    "weight": 175
   },
   {
     "hi": {
@@ -1654,7 +1654,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 302
+    "weight": 332
   },
   {
     "hi": {
@@ -1668,7 +1668,7 @@
       "language"
     ],
     "id": 119,
-    "weight": 272
+    "weight": 280
   },
   {
     "hi": {
@@ -1682,7 +1682,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 1451
+    "weight": 1483
   },
   {
     "hi": {
@@ -1696,7 +1696,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 176
+    "weight": 185
   },
   {
     "hi": {
@@ -1710,7 +1710,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 3014
+    "weight": 3091
   },
   {
     "hi": {
@@ -1724,7 +1724,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 538
+    "weight": 553
   },
   {
     "hi": {
@@ -1738,7 +1738,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 264
+    "weight": 278
   },
   {
     "hi": {
@@ -1752,7 +1752,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 1435
+    "weight": 1473
   },
   {
     "hi": {
@@ -1766,7 +1766,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 899
+    "weight": 912
   },
   {
     "hi": {
@@ -1780,7 +1780,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 94
+    "weight": 99
   },
   {
     "hi": {
@@ -1794,7 +1794,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 204
+    "weight": 212
   },
   {
     "hi": {
@@ -1808,7 +1808,7 @@
       "tool"
     ],
     "id": 129,
-    "weight": 267
+    "weight": 274
   },
   {
     "hi": {
@@ -1822,7 +1822,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 773
+    "weight": 792
   },
   {
     "hi": {
@@ -1836,7 +1836,7 @@
       "tool"
     ],
     "id": 131,
-    "weight": 252
+    "weight": 261
   },
   {
     "hi": {
@@ -1850,7 +1850,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 2199
+    "weight": 2240
   },
   {
     "hi": {
@@ -1864,7 +1864,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 390
+    "weight": 396
   },
   {
     "hi": {
@@ -1878,7 +1878,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 710
+    "weight": 726
   },
   {
     "hi": {
@@ -1892,7 +1892,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 355
+    "weight": 368
   },
   {
     "hi": {
@@ -1906,7 +1906,7 @@
       "tool"
     ],
     "id": 136,
-    "weight": 211
+    "weight": 217
   },
   {
     "hi": {
@@ -1920,7 +1920,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 650
+    "weight": 667
   },
   {
     "hi": {
@@ -1934,7 +1934,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 1150
+    "weight": 1191
   },
   {
     "hi": {
@@ -1948,7 +1948,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 2041
+    "weight": 2102
   },
   {
     "hi": {
@@ -1962,7 +1962,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 540
+    "weight": 553
   },
   {
     "hi": {
@@ -1976,7 +1976,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 1741
+    "weight": 1786
   },
   {
     "hi": {
@@ -1990,7 +1990,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 2096
+    "weight": 2145
   },
   {
     "hi": {
@@ -2004,7 +2004,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 337
+    "weight": 342
   },
   {
     "hi": {
@@ -2018,7 +2018,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 518
+    "weight": 537
   },
   {
     "hi": {
@@ -2032,7 +2032,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 1311
+    "weight": 1342
   },
   {
     "hi": {
@@ -2046,7 +2046,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 336
+    "weight": 344
   },
   {
     "hi": {
@@ -2060,7 +2060,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 863
+    "weight": 890
   },
   {
     "hi": {
@@ -2074,7 +2074,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 252
+    "weight": 263
   },
   {
     "hi": {
@@ -2088,7 +2088,7 @@
       "company"
     ],
     "id": 149,
-    "weight": 203
+    "weight": 209
   },
   {
     "hi": {
@@ -2102,7 +2102,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 690
+    "weight": 726
   },
   {
     "hi": {
@@ -2116,7 +2116,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 713
+    "weight": 739
   },
   {
     "hi": {
@@ -2130,7 +2130,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 1395
+    "weight": 1437
   },
   {
     "hi": {
@@ -2144,7 +2144,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 342
+    "weight": 352
   },
   {
     "hi": {
@@ -2158,7 +2158,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 319
+    "weight": 331
   },
   {
     "hi": {
@@ -2172,7 +2172,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 4519
+    "weight": 4662
   },
   {
     "hi": {
@@ -2186,7 +2186,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 123
+    "weight": 127
   },
   {
     "hi": {
@@ -2200,7 +2200,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 782
+    "weight": 812
   },
   {
     "hi": {
@@ -2214,7 +2214,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 1942
+    "weight": 2005
   },
   {
     "hi": {
@@ -2228,7 +2228,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 2913
+    "weight": 2969
   },
   {
     "hi": {
@@ -2242,7 +2242,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 1154
+    "weight": 1189
   },
   {
     "hi": {
@@ -2256,7 +2256,7 @@
       "music"
     ],
     "id": 161,
-    "weight": 226
+    "weight": 238
   },
   {
     "hi": {
@@ -2270,7 +2270,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 847
+    "weight": 869
   },
   {
     "hi": {
@@ -2284,7 +2284,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 904
+    "weight": 919
   },
   {
     "hi": {
@@ -2298,7 +2298,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 191
+    "weight": 201
   },
   {
     "hi": {
@@ -2312,7 +2312,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 191
+    "weight": 195
   },
   {
     "hi": {
@@ -2326,7 +2326,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 310
+    "weight": 314
   },
   {
     "hi": {
@@ -2340,7 +2340,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 764
+    "weight": 781
   },
   {
     "hi": {
@@ -2354,7 +2354,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 363
+    "weight": 372
   },
   {
     "hi": {
@@ -2368,7 +2368,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 323
+    "weight": 340
   },
   {
     "hi": {
@@ -2382,7 +2382,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 364
+    "weight": 379
   },
   {
     "hi": {
@@ -2396,7 +2396,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 2405
+    "weight": 2486
   },
   {
     "hi": {
@@ -2410,7 +2410,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 589
+    "weight": 605
   },
   {
     "hi": {
@@ -2425,7 +2425,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 5190
+    "weight": 5430
   },
   {
     "hi": {
@@ -2440,7 +2440,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 149
+    "weight": 157
   },
   {
     "hi": {
@@ -2455,7 +2455,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 729
+    "weight": 763
   },
   {
     "hi": {
@@ -2470,7 +2470,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 1698
+    "weight": 1764
   },
   {
     "hi": {
@@ -2485,7 +2485,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 4062
+    "weight": 4167
   },
   {
     "hi": {
@@ -2500,7 +2500,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 641
+    "weight": 657
   },
   {
     "hi": {
@@ -2515,7 +2515,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 770
+    "weight": 795
   },
   {
     "hi": {
@@ -2530,7 +2530,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 10157
+    "weight": 10592
   },
   {
     "hi": {
@@ -2545,7 +2545,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 2280
+    "weight": 2362
   },
   {
     "hi": {
@@ -2561,7 +2561,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 1420
+    "weight": 1479
   },
   {
     "hi": {
@@ -2576,7 +2576,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 310
+    "weight": 320
   },
   {
     "hi": {
@@ -2591,7 +2591,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 920
+    "weight": 946
   },
   {
     "hi": {
@@ -2606,7 +2606,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 59359
+    "weight": 60867
   },
   {
     "hi": {
@@ -2621,7 +2621,7 @@
       "pedagogy"
     ],
     "id": 186,
-    "weight": 367
+    "weight": 383
   },
   {
     "hi": {
@@ -2635,7 +2635,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 3329
+    "weight": 3448
   },
   {
     "hi": {
@@ -2650,7 +2650,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 1243
+    "weight": 1311
   },
   {
     "hi": {
@@ -2665,7 +2665,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 806
+    "weight": 832
   },
   {
     "hi": {
@@ -2680,7 +2680,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 1923
+    "weight": 2001
   },
   {
     "hi": {
@@ -2695,7 +2695,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 1841
+    "weight": 1922
   },
   {
     "hi": {
@@ -2710,7 +2710,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 941
+    "weight": 974
   },
   {
     "hi": {
@@ -2725,7 +2725,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 750
+    "weight": 788
   },
   {
     "hi": {
@@ -2740,7 +2740,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 1116
+    "weight": 1159
   },
   {
     "hi": {
@@ -2755,7 +2755,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 1654
+    "weight": 1701
   },
   {
     "hi": {
@@ -2770,7 +2770,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 7183
+    "weight": 7422
   },
   {
     "hi": {
@@ -2786,7 +2786,7 @@
       "write"
     ],
     "id": 197,
-    "weight": 18113
+    "weight": 18896
   },
   {
     "hi": {
@@ -2801,7 +2801,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 685
+    "weight": 714
   },
   {
     "hi": {
@@ -2817,7 +2817,7 @@
       "favorite"
     ],
     "id": 199,
-    "weight": 14125
+    "weight": 14602
   },
   {
     "hi": {
@@ -2832,7 +2832,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 2333
+    "weight": 2414
   },
   {
     "hi": {
@@ -2847,7 +2847,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 491
+    "weight": 504
   },
   {
     "hi": {
@@ -2862,7 +2862,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 918
+    "weight": 963
   },
   {
     "hi": {
@@ -2877,7 +2877,7 @@
       "pedagogy"
     ],
     "id": 203,
-    "weight": 600
+    "weight": 640
   },
   {
     "hi": {
@@ -2892,7 +2892,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 11001
+    "weight": 11274
   },
   {
     "hi": {
@@ -2907,7 +2907,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 2088
+    "weight": 2175
   },
   {
     "hi": {
@@ -2922,7 +2922,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 7023
+    "weight": 7319
   },
   {
     "hi": {
@@ -2936,7 +2936,7 @@
       "social"
     ],
     "id": 207,
-    "weight": 419
+    "weight": 429
   },
   {
     "hi": {
@@ -2950,7 +2950,7 @@
       "social"
     ],
     "id": 208,
-    "weight": 363
+    "weight": 375
   },
   {
     "hi": {
@@ -2965,7 +2965,7 @@
       "write"
     ],
     "id": 209,
-    "weight": 39858
+    "weight": 41024
   },
   {
     "hi": {
@@ -2979,7 +2979,7 @@
       "article"
     ],
     "id": 210,
-    "weight": 4774
+    "weight": 4906
   },
   {
     "hi": {
@@ -2993,7 +2993,7 @@
       "write"
     ],
     "id": 211,
-    "weight": 790
+    "weight": 831
   },
   {
     "hi": {
@@ -3008,7 +3008,7 @@
       "social"
     ],
     "id": 212,
-    "weight": 4212
+    "weight": 4371
   },
   {
     "hi": {
@@ -3023,7 +3023,7 @@
       "comments"
     ],
     "id": 213,
-    "weight": 504
+    "weight": 514
   },
   {
     "hi": {
@@ -3038,7 +3038,7 @@
       "article"
     ],
     "id": 214,
-    "weight": 4321
+    "weight": 4493
   },
   {
     "hi": {
@@ -3052,7 +3052,7 @@
       "write"
     ],
     "id": 215,
-    "weight": 918
+    "weight": 952
   },
   {
     "hi": {
@@ -3067,7 +3067,7 @@
       "text"
     ],
     "id": 216,
-    "weight": 908
+    "weight": 939
   },
   {
     "hi": {
@@ -3082,7 +3082,7 @@
       "doctor"
     ],
     "id": 217,
-    "weight": 2650
+    "weight": 2731
   },
   {
     "hi": {
@@ -3097,7 +3097,7 @@
       "code"
     ],
     "id": 218,
-    "weight": 8645
+    "weight": 9057
   },
   {
     "hi": {
@@ -3112,7 +3112,7 @@
       "games"
     ],
     "id": 219,
-    "weight": 4960
+    "weight": 5141
   },
   {
     "hi": {
@@ -3127,7 +3127,7 @@
       "tool"
     ],
     "id": 220,
-    "weight": 3976
+    "weight": 4054
   },
   {
     "hi": {
@@ -3141,7 +3141,7 @@
       "ai"
     ],
     "id": 221,
-    "weight": 1584
+    "weight": 1673
   },
   {
     "hi": {
@@ -3155,7 +3155,7 @@
       "ai"
     ],
     "id": 222,
-    "weight": 1674
+    "weight": 1748
   },
   {
     "hi": {
@@ -3169,7 +3169,7 @@
       "ai"
     ],
     "id": 223,
-    "weight": 235
+    "weight": 242
   },
   {
     "hi": {
@@ -3183,7 +3183,7 @@
       "ai"
     ],
     "id": 224,
-    "weight": 3463
+    "weight": 3609
   },
   {
     "hi": {
@@ -3197,7 +3197,7 @@
       "ai"
     ],
     "id": 225,
-    "weight": 122
+    "weight": 124
   },
   {
     "hi": {
@@ -3211,7 +3211,7 @@
       "ai"
     ],
     "id": 226,
-    "weight": 323
+    "weight": 338
   },
   {
     "hi": {
@@ -3225,7 +3225,7 @@
       "ai"
     ],
     "id": 227,
-    "weight": 136
+    "weight": 142
   },
   {
     "hi": {
@@ -3239,7 +3239,7 @@
       "ai"
     ],
     "id": 228,
-    "weight": 683
+    "weight": 719
   },
   {
     "hi": {
@@ -3253,7 +3253,7 @@
       "ai"
     ],
     "id": 229,
-    "weight": 239
+    "weight": 245
   },
   {
     "hi": {
@@ -3295,7 +3295,7 @@
       "ai"
     ],
     "id": 232,
-    "weight": 9986
+    "weight": 10477
   },
   {
     "hi": {
@@ -3309,7 +3309,7 @@
       "ai"
     ],
     "id": 233,
-    "weight": 998
+    "weight": 1058
   },
   {
     "hi": {
@@ -3323,7 +3323,7 @@
       "ai"
     ],
     "id": 234,
-    "weight": 7894
+    "weight": 8170
   },
   {
     "hi": {
@@ -3337,7 +3337,7 @@
       "ai"
     ],
     "id": 235,
-    "weight": 424
+    "weight": 438
   },
   {
     "hi": {
@@ -3352,7 +3352,7 @@
       "pedagogy"
     ],
     "id": 236,
-    "weight": 930
+    "weight": 986
   },
   {
     "hi": {
@@ -3367,12 +3367,12 @@
       "games"
     ],
     "id": 237,
-    "weight": 1160
+    "weight": 1198
   },
   {
     "hi": {
       "title": "मास डेटा: इनपुट",
-      "prompt": "Let's start a new round of questions and answers. Respond in Chinese. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Hindi. Are you ready?.",
+      "prompt": "Let's start a new round of questions and answers. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Hindi. Are you ready?.",
       "description": "चलिए एक और प्रश्नोत्तर दौर करते हैं, और मैं आपको कई वार्तालापों में &quot;@&quot; क्रमांकित लेख की सामग्री देने जा रहा हूं, कृपया पहले याद रखें, लेकिन कोई सारांश नहीं, ठीक है?",
       "remark": "चैटजीपीटी की इनपुट सीमा को तोड़ने के लिए, आप लेख को प्रत्येक 2000 अक्षरों में कई पैराग्राफ में विभाजित कर सकते हैं, और प्रत्येक पैराग्राफ की पहली पंक्ति में &quot;@ नंबर&quot; से शुरू कर सकते हैं, उदाहरण के लिए: @1। नेविगेशन बार पर टेक्स्ट प्रोसेसिंग टूल के साथ टेक्स्ट सेगमेंटेशन किया जा सकता है। कृपया ध्यान दें, GPT के उत्तर से परेशान न हों, यह आपके अंतिम उपयोग को प्रभावित नहीं करेगा। यह विधि कंप्यूटर खिलौनों के लेखक एसोर हुआंग के एक लेख से ली गई है।"
     },
@@ -3381,7 +3381,7 @@
       "write"
     ],
     "id": 238,
-    "weight": 2833
+    "weight": 2916
   },
   {
     "hi": {
@@ -3395,7 +3395,7 @@
       "write"
     ],
     "id": 239,
-    "weight": 896
+    "weight": 922
   },
   {
     "hi": {
@@ -3409,7 +3409,7 @@
       "write"
     ],
     "id": 240,
-    "weight": 516
+    "weight": 527
   },
   {
     "hi": {
@@ -3425,7 +3425,7 @@
       "company"
     ],
     "id": 241,
-    "weight": 1197
+    "weight": 1231
   },
   {
     "hi": {
@@ -3439,7 +3439,7 @@
       "tool"
     ],
     "id": 242,
-    "weight": 2866
+    "weight": 2944
   },
   {
     "hi": {
@@ -3454,7 +3454,7 @@
       "comments"
     ],
     "id": 243,
-    "weight": 963
+    "weight": 996
   },
   {
     "hi": {
@@ -3469,7 +3469,7 @@
       "tool"
     ],
     "id": 244,
-    "weight": 320
+    "weight": 327
   },
   {
     "hi": {
@@ -3484,7 +3484,7 @@
       "tool"
     ],
     "id": 245,
-    "weight": 482
+    "weight": 495
   },
   {
     "hi": {
@@ -3499,12 +3499,12 @@
       "code"
     ],
     "id": 246,
-    "weight": 353
+    "weight": 368
   },
   {
     "hi": {
       "title": "नकली कक्षा चर्चा",
-      "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. Respond in Chinese. The entire conversation and instructions should be provided in Hindi. The first term is:.",
+      "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Hindi. The first term is:.",
       "description": "मुझे संज्ञा की व्याख्या याद रखने में आपकी सहायता की आवश्यकता है, जब मैं एक संज्ञा दर्ज करूंगा, तो आप कक्षा में संज्ञा के बारे में भाषण देने वाले पांच छात्रों का अनुकरण करेंगे। चर्चाएँ हास्यप्रद और सुलभ होनी चाहिए।",
       "remark": "सहपाठियों के बीच चर्चा से विषयों को समझने और याद रखने में मदद मिलती है। @A380747 से योगदान।"
     },
@@ -3514,7 +3514,7 @@
       "pedagogy"
     ],
     "id": 247,
-    "weight": 292
+    "weight": 308
   },
   {
     "hi": {
@@ -3529,7 +3529,7 @@
       "pedagogy"
     ],
     "id": 248,
-    "weight": 438
+    "weight": 461
   },
   {
     "hi": {
@@ -3544,7 +3544,7 @@
       "pedagogy"
     ],
     "id": 249,
-    "weight": 184
+    "weight": 198
   },
   {
     "hi": {
@@ -3559,7 +3559,7 @@
       "mind"
     ],
     "id": 250,
-    "weight": 867
+    "weight": 904
   },
   {
     "hi": {
@@ -3574,7 +3574,7 @@
       "article"
     ],
     "id": 251,
-    "weight": 11600
+    "weight": 12359
   },
   {
     "hi": {
@@ -3589,7 +3589,7 @@
       "academic"
     ],
     "id": 252,
-    "weight": 362
+    "weight": 377
   },
   {
     "hi": {
@@ -3604,7 +3604,7 @@
       "article"
     ],
     "id": 253,
-    "weight": 1378
+    "weight": 1428
   },
   {
     "hi": {
@@ -3619,7 +3619,7 @@
       "company"
     ],
     "id": 254,
-    "weight": 671
+    "weight": 696
   },
   {
     "hi": {
@@ -3633,7 +3633,7 @@
       "ai"
     ],
     "id": 255,
-    "weight": 1263
+    "weight": 1323
   },
   {
     "hi": {
@@ -3648,7 +3648,7 @@
       "write"
     ],
     "id": 256,
-    "weight": 5036
+    "weight": 5370
   },
   {
     "hi": {
@@ -3663,7 +3663,7 @@
       "academic"
     ],
     "id": 257,
-    "weight": 661
+    "weight": 721
   },
   {
     "hi": {
@@ -3678,7 +3678,7 @@
       "write"
     ],
     "id": 258,
-    "weight": 800
+    "weight": 842
   },
   {
     "hi": {
@@ -3693,7 +3693,7 @@
       "write"
     ],
     "id": 259,
-    "weight": 804
+    "weight": 867
   },
   {
     "hi": {
@@ -3708,7 +3708,7 @@
       "pedagogy"
     ],
     "id": 260,
-    "weight": 281
+    "weight": 303
   },
   {
     "hi": {
@@ -3723,7 +3723,7 @@
       "pedagogy"
     ],
     "id": 261,
-    "weight": 633
+    "weight": 660
   },
   {
     "hi": {
@@ -3738,7 +3738,7 @@
       "pedagogy"
     ],
     "id": 262,
-    "weight": 702
+    "weight": 747
   },
   {
     "hi": {
@@ -3753,7 +3753,7 @@
       "pedagogy"
     ],
     "id": 263,
-    "weight": 259
+    "weight": 268
   },
   {
     "hi": {
@@ -3768,7 +3768,7 @@
       "games"
     ],
     "id": 264,
-    "weight": 1223
+    "weight": 1319
   },
   {
     "hi": {
@@ -3783,7 +3783,7 @@
       "pedagogy"
     ],
     "id": 265,
-    "weight": 725
+    "weight": 789
   },
   {
     "hi": {
@@ -3798,12 +3798,12 @@
       "ai"
     ],
     "id": 266,
-    "weight": 2753
+    "weight": 2909
   },
   {
     "hi": {
       "title": "कागज का वजन कम करना",
-      "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Hindi. Respond in Chinese.\n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
+      "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Hindi. \n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
       "description": "आप एक जर्नल अनुक्रमण प्रणाली हैं, और आप मूल पाठ और समान सामग्री के बीच समानता का न्याय करने के लिए पाठ समानता एल्गोरिदम जैसे कोसाइन समानता, जैकार्ड, मैनहट्टन दूरी इत्यादि का उपयोग करने में कुशल हैं। आगे, मैं आपको मूल पाठ और समान सामग्री दूँगा। आपको मुझे दोनों का समानता परिणाम बताना होगा। फिर, आपको समानता को -1 तक कम करने के लिए मूल पाठ को फिर से लिखना होगा, और फिर मूल पाठ और समान सामग्री के बीच समानता की पुनर्गणना करनी होगी। अंततः, आप मुझे संशोधित मूल पाठ देंगे, और यह भी बताएंगे कि यह समान सामग्री से कितना मिलता-जुलता है।",
       "remark": "@百蛋白肉周 से योगदान।"
     },
@@ -3813,7 +3813,7 @@
       "tool"
     ],
     "id": 267,
-    "weight": 1070
+    "weight": 1147
   },
   {
     "hi": {
@@ -3828,7 +3828,7 @@
       "language"
     ],
     "id": 268,
-    "weight": 140
+    "weight": 146
   },
   {
     "hi": {
@@ -3843,7 +3843,7 @@
       "interesting"
     ],
     "id": 269,
-    "weight": 572
+    "weight": 594
   },
   {
     "hi": {
@@ -3858,7 +3858,7 @@
       "mind"
     ],
     "id": 270,
-    "weight": 684
+    "weight": 729
   },
   {
     "hi": {
@@ -3873,7 +3873,7 @@
       "mind"
     ],
     "id": 271,
-    "weight": 494
+    "weight": 517
   },
   {
     "hi": {
@@ -3889,7 +3889,7 @@
       "latest"
     ],
     "id": 272,
-    "weight": 284
+    "weight": 311
   },
   {
     "hi": {
@@ -3905,7 +3905,7 @@
       "latest"
     ],
     "id": 273,
-    "weight": 466
+    "weight": 518
   },
   {
     "hi": {
@@ -3921,7 +3921,7 @@
       "latest"
     ],
     "id": 274,
-    "weight": 470
+    "weight": 515
   },
   {
     "hi": {
@@ -3937,7 +3937,7 @@
       "latest"
     ],
     "id": 275,
-    "weight": 598
+    "weight": 656
   },
   {
     "hi": {
@@ -3952,7 +3952,7 @@
       "latest"
     ],
     "id": 276,
-    "weight": 162
+    "weight": 175
   },
   {
     "hi": {
@@ -3968,6 +3968,6 @@
       "latest"
     ],
     "id": 277,
-    "weight": 100
+    "weight": 611
   }
 ]

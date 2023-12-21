@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "花匠",
-    "prompt": "Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! Respond in Chinese. Requested information - [花卉要求]",
+    "prompt": "Calling out for assistance from knowledgeable personnel with experience of arranging flowers professionally to construct beautiful bouquets which possess pleasing fragrances along with aesthetic appeal as well as staying intact for longer duration according to preferences; not just that but also suggest ideas regarding decorative options presenting modern designs while satisfying customer satisfaction at same time! The entire conversation and instructions should be provided in Chinese. Requested information - [花卉要求]",
     "description": "呼叫有专业插花经验的人员协助，以构建美丽的花束，拥有令人愉悦的香味和审美吸引力，并根据喜好保持较长的时间；不仅如此，还建议有关装饰方案的想法，呈现现代设计，同时满足客户的满意度。",
     "remark": "提供花卉建议"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 165,
-  "weight": 191
+  "weight": 195
 };
 
 function PromptDetail() {

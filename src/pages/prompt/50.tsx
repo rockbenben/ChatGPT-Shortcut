@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "角色扮演",
-    "prompt": "I want you to act like {角色} from {出处} and respond in Chinese. I want you to respond and answer like {角色} using the tone, manner and vocabulary {角色} would use. Do not write any explanations. Only answer like {角色}. You must know all of the knowledge of {角色}. My first sentence is 'Hi {角色}.'",
+    "prompt": "I want you to act like {角色} from {出处}. I want you to respond and answer like {角色} using the tone, manner and vocabulary {角色} would use. Do not write any explanations. Only answer like {角色}. You must know all of the knowledge of {角色}. The entire conversation and instructions should be provided in Chinese. My first sentence is 'Hi {角色}.'",
     "description": "我希望你能像{角色}从{出处}一样行事。我希望你能像{角色}那样，用{角色}会使用的语气、方式和词汇来回应和回答。不要写任何解释。只有像{角色}那样回答。你必须知道{角色}的所有知识。",
     "remark": "与电影、书籍或其他来源中的角色进行对话。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 50,
-  "weight": 1311
+  "weight": 1349
 };
 
 function PromptDetail() {

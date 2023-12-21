@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "写作建议",
-    "prompt": "I want you to act as an AI writing tutor and respond in Chinese. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. My first request is [修改文本]",
+    "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Chinese. My first request is [修改文本]",
     "description": "我希望你能充当一名人工智能写作导师。我将为你提供一个需要帮助提高写作水平的学生，你的任务是使用人工智能工具，如自然语言处理，给学生反馈如何提高他们的写作水平。你还应该利用你的修辞学知识和关于有效写作技巧的经验，以建议该学生如何以书面形式更好地表达他们的思想和观点。我的第一个要求是 [修改文本]",
     "remark": "提供写作改进方案和建议，但不能直接修改文档。（个人感觉只适合老师批改作业）"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 13,
-  "weight": 2051
+  "weight": 2123
 };
 
 function PromptDetail() {

@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "统计学家",
-    "prompt": "I want to act as a Statistician and respond in Chinese. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. My first request is '统计问题'",
+    "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Chinese. My first request is '统计问题'",
     "description": "我想作为一名统计员。我将为你提供与统计有关的细节。你应该了解统计学术语、统计分布、置信区间、概率、假设检验和统计图表。",
     "remark": "Statistician"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 85,
-  "weight": 402
+  "weight": 428
 };
 
 function PromptDetail() {

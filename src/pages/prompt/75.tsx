@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "情绪操控",
-    "prompt": "I want you to act as a gaslighter and respond in Chinese. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. My sentence: '话题'",
+    "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Chinese. My sentence: '话题'",
     "description": "我想让你充当一个情绪操控者，你将使用微妙的评论和身体语言来操纵你的目标个人的思想、看法和情绪。我的第一个要求是，在与你聊天的时候，对我进行气场引导。",
     "remark": "煤气灯效应，情感控制方总会让被操纵方产生焦虑不安的感觉，质疑自己总是错的一方，或者为什么对方明明很好很优秀，自己却总是开心不起来。ChatGPT 会扮演情绪操控者，而你是被操控的一方。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 75,
-  "weight": 1716
+  "weight": 1801
 };
 
 function PromptDetail() {

@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "汽车导航",
-    "prompt": "I want you to act as a car navigation system and respond in Chinese. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. My first suggestion request is '导航需求'",
+    "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way.The entire conversation and instructions should be provided in Chinese.. My first suggestion request is '导航需求'",
     "description": "我希望你充当一个汽车导航系统。你将开发计算从一个地点到另一个地点的最佳路线的算法，能够提供详细的交通状况更新，考虑到施工绕道和其他延误，利用谷歌地图或苹果地图等地图技术，以便提供不同目的地和沿途兴趣点的互动视觉。",
     "remark": "Car Navigation System"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 128,
-  "weight": 204
+  "weight": 212
 };
 
 function PromptDetail() {

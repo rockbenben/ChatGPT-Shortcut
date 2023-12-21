@@ -5,8 +5,8 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "关键词热门相关",
-    "prompt": "Generate a list of 10 popular questions related to [关键词], that are relevant for [受众] and respond in Chinese",
-    "description": "生成一个与 [关键词] 相关的 10 个热门问题清单，这些问题与 [受众] 有关，并用中文回答。",
+    "prompt": "Generate a list of 10 popular questions related to [关键词], that are relevant for [受众]. The entire conversation and instructions should be provided in Chinese.",
+    "description": "生成一个与 [关键词] 相关的 10 个热门问题清单，这些问题与 [受众] 有关。",
     "remark": "可用于了解用户对特定话题的关注点，或整理文章结构，亦可更改为「热门关键词」「热门话题」「热门品牌」「热门网站」等。"
   },
   "en": {
@@ -85,7 +85,7 @@ const prompt = {
     "seo"
   ],
   "id": 40,
-  "weight": 1157
+  "weight": 1189
 };
 
 function PromptDetail() {

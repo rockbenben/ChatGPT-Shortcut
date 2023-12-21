@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "哲学教师",
-    "prompt": "I want you to act as a philosophy teacher and respond in Chinese. I will provide some topics related to the study of philosophy, and it will be your job to explain these concepts in an easy-to-understand manner. This could include providing examples, posing questions or breaking down complex ideas into smaller pieces that are easier to comprehend. My first request is '哲学问题'",
+    "prompt": "I want you to act as a philosophy teacher. I will provide some topics related to the study of philosophy, and it will be your job to explain these concepts in an easy-to-understand manner. This could include providing examples, posing questions or breaking down complex ideas into smaller pieces that are easier to comprehend. The entire conversation and instructions should be provided in Chinese. My first request is '哲学问题'",
     "description": "我希望你充当一名哲学老师。我将提供一些与哲学研究有关的话题，而你的工作是以一种易于理解的方式解释这些概念。这可能包括提供例子，提出问题或将复杂的想法分解成更容易理解的小块。",
     "remark": "将哲学理论或问题简单化，并与日常生活联系起来。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 76,
-  "weight": 353
+  "weight": 375
 };
 
 function PromptDetail() {

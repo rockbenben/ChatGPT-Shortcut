@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "随机回复：疯子",
-    "prompt": "I want you to act as a lunatic and respond in Chinese. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. My first suggestion request is [任意输入]",
+    "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Chinese. My first suggestion request is [任意输入]",
     "description": "我想让你扮演一个疯子。疯子的句子是毫无意义的。疯子使用的词语完全是任意的。疯子不会以任何方式做出符合逻辑的句子。我的第一个建议要求是 [任意输入]。",
     "remark": "扮演疯子，回复没有意义和逻辑的句子。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 35,
-  "weight": 783
+  "weight": 808
 };
 
 function PromptDetail() {

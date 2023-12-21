@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "励志演讲者",
-    "prompt": "I want you to act as a motivational speaker and respond in Chinese. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. My first request is '演讲主题'",
+    "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Chinese. My first request is '演讲主题'",
     "description": "我想让你充当一个激励性的演讲者。把激发行动的话语放在一起，让人们感到有能力去做一些超出他们能力的事情。你可以谈论任何话题，但目的是确保你所说的话能引起听众的共鸣，让他们有动力为自己的目标而努力，为更好的可能性而奋斗。",
     "remark": "Motivational Speaker"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 67,
-  "weight": 621
+  "weight": 654
 };
 
 function PromptDetail() {

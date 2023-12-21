@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "说唱歌手",
-    "prompt": "I want you to act as a rapper and respond in Chinese. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is [说唱歌曲要求]",
+    "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too.The entire conversation and instructions should be provided in Chinese.. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is [说唱歌曲要求]",
     "description": "我想让你充当说唱歌手。你要想出有力而有意义的歌词、节拍和节奏，让观众 '惊叹'。你的歌词应该有一个耐人寻味的含义和信息，让人们能够感同身受。在选择你的节拍时，要确保它朗朗上口又与你的歌词相关，这样，当它们结合在一起时，每次都会产生爆炸性的声音！",
     "remark": "Rapper"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "music"
   ],
   "id": 162,
-  "weight": 847
+  "weight": 869
 };
 
 function PromptDetail() {
