@@ -1392,7 +1392,7 @@
   {
     "ru": {
       "title": "Генератор сообщений о фиксации",
-      "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in Russian. Do not write any explanations or other words, just reply with the commit message.",
+      "prompt": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. The entire conversation and instructions should be provided in English. Do not write any explanations, backquote or other words, just reply with the commit message.",
       "description": "Я хочу, чтобы вы выступили в роли генератора сообщений для отправки. Я предоставлю вам информацию о задаче и префикс для кода задачи, а вы должны будете сгенерировать соответствующее сообщение, используя обычный формат отправки. Не пишите никаких пояснений или других текстов, просто ответьте на сообщение.",
       "remark": "Генератор сообщений о фиксации"
     },
