@@ -32,6 +32,7 @@
 .checkboxList {
   display: flex;
   align-items: center;
+  background-color: var(--docsearch-hit-color);
 }
 
 .filterCheckbox > div:first-child {
