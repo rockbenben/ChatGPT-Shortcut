@@ -245,15 +245,6 @@ export const Tags: { [type in TagType]: Tag } = {
     }),
     color: "#cecd21",
   },
-
-  latest: {
-    label: translate({ message: "Latest" }),
-    description: translate({
-      message: "近期新增的提示词",
-      id: "showcase.tag.latest.description",
-    }),
-    color: "#666b63",
-  },
 };
 
 export const TagList = Object.keys(Tags) as TagType[];

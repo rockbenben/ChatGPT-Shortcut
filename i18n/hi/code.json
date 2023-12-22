@@ -262,12 +262,6 @@
   "showcase.tag.contribute.description": {
     "message": "हर किसी का योगदान हमें विचार विकसित करने में मदद कर सकता है"
   },
-  "Latest": {
-    "message": "नवीनतम"
-  },
-  "showcase.tag.latest.description": {
-    "message": "हाल ही में संकेत जोड़े गए"
-  },
   "input.rules.username": {
     "message": "कृपया अपना उपयोगकर्ता नाम या पंजीकृत ईमेल पता दर्ज करें!"
   },

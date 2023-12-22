@@ -262,12 +262,6 @@
   "showcase.tag.contribute.description": {
     "message": "Os contributos de todos podem ajudar-nos a desenvolver ideias"
   },
-  "Latest": {
-    "message": "Mais recentes"
-  },
-  "showcase.tag.latest.description": {
-    "message": "Palavras de sugestão recentemente adicionadas"
-  },
   "input.rules.username": {
     "message": "Introduza o seu nome de utilizador ou endereço de e-mail registado!"
   },

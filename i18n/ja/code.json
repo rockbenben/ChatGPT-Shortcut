@@ -158,12 +158,6 @@
   "showcase.tag.contribute.description": {
     "message": "アイデアの開発にご協力いただける方からの投稿"
   },
-  "Latest": {
-    "message": "最新"
-  },
-  "showcase.tag.latest.description": {
-    "message": "最近追加されたキューワード"
-  },
   "feedback.title": {
     "message": "ご意見・ご感想"
   },

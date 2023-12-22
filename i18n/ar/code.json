@@ -265,12 +265,6 @@
   "showcase.tag.contribute.description": {
     "message": "يمكن أن تساعدنا مساهمات الجميع في تطوير الأفكار"
   },
-  "Latest": {
-    "message": "أحدث"
-  },
-  "showcase.tag.latest.description": {
-    "message": "التلميحات المضافة حديثًا"
-  },
   "input.rules.username": {
     "message": "الرجاء إدخال اسم المستخدم الخاص بك أو عنوان البريد الإلكتروني المسجل!"
   },

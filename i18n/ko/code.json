@@ -158,12 +158,6 @@
   "showcase.tag.contribute.description": {
     "message": "아이디어 개발에 도움을 줄 수 있는 분들의 기여"
   },
-  "Latest": {
-    "message": "최신"
-  },
-  "showcase.tag.latest.description": {
-    "message": "최근 추가된 단서 단어"
-  },
   "feedback.title": {
     "message": "피드백 및 제안"
   },

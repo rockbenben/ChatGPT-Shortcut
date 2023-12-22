@@ -83,8 +83,7 @@ const prompt = {
   "website": null,
   "tags": [
     "contribute",
-    "professional",
-    "latest"
+    "professional"
   ],
   "id": 275,
   "weight": 656

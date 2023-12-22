@@ -3885,8 +3885,7 @@
     "website": null,
     "tags": [
       "contribute",
-      "language",
-      "latest"
+      "language"
     ],
     "id": 272,
     "weight": 311
@@ -3901,8 +3900,7 @@
     "website": null,
     "tags": [
       "contribute",
-      "mind",
-      "latest"
+      "mind"
     ],
     "id": 273,
     "weight": 518
@@ -3917,8 +3915,7 @@
     "website": null,
     "tags": [
       "contribute",
-      "pedagogy",
-      "latest"
+      "pedagogy"
     ],
     "id": 274,
     "weight": 515
@@ -3933,8 +3930,7 @@
     "website": null,
     "tags": [
       "contribute",
-      "professional",
-      "latest"
+      "professional"
     ],
     "id": 275,
     "weight": 656
@@ -3948,8 +3944,7 @@
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-cheap-travel-ticket-advisor",
     "tags": [
-      "tool",
-      "latest"
+      "tool"
     ],
     "id": 276,
     "weight": 175
@@ -3964,8 +3959,7 @@
     "website": null,
     "tags": [
       "contribute",
-      "write",
-      "latest"
+      "write"
     ],
     "id": 277,
     "weight": 611

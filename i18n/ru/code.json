@@ -262,12 +262,6 @@
   "showcase.tag.contribute.description": {
     "message": "Вклад каждого из вас может помочь нам в разработке идей"
   },
-  "Latest": {
-    "message": "Последние"
-  },
-  "showcase.tag.latest.description": {
-    "message": "Недавно добавленные слова подсказки"
-  },
   "input.rules.username": {
     "message": "Пожалуйста, введите имя пользователя или адрес зарегистрированной электронной почты!"
   },

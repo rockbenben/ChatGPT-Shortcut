@@ -449,12 +449,6 @@
   "showcase.tag.academic.description": {
     "message": "People and things related to academia or schools."
   },
-  "Latest": {
-    "message": "Latest"
-  },
-  "showcase.tag.latest.description": {
-    "message": "Recently added prompts"
-  },
   "feedback.title": {
     "message": "Feedback and suggestions"
   },

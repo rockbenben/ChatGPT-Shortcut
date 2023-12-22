@@ -265,12 +265,6 @@
   "showcase.tag.contribute.description": {
     "message": "প্রত্যেকের অবদান আমাদের ধারণা বিকাশে সাহায্য করতে পারে"
   },
-  "Latest": {
-    "message": "সর্বশেষ"
-  },
-  "showcase.tag.latest.description": {
-    "message": "সম্প্রতি যোগ করা ইঙ্গিত"
-  },
   "input.rules.username": {
     "message": "অনুগ্রহ করে আপনার ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল ঠিকানা লিখুন!"
   },
