@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "古典音乐作曲家",
-    "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound.The entire conversation and instructions should be provided in Chinese.. My first suggestion request is [古典作曲要求]",
+    "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Chinese. My first suggestion request is [古典作曲要求]",
     "description": "我想让你充当作曲家。我将提供一首歌的歌词，你将为其创作音乐。这可能包括使用各种乐器或工具，如合成器或采样器，以创造旋律和和声，使歌词变得生动。",
     "remark": "Classical Music Composer"
   },

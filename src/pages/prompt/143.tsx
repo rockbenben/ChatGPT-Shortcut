@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "社交媒体经理",
-    "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly.The entire conversation and instructions should be provided in Chinese.. My first suggestion request is [推广目的]",
+    "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Chinese. My first suggestion request is [推广目的]",
     "description": "希望你能担任社会媒体经理。你将负责在所有相关平台上开发和执行活动，通过回应问题和评论与受众接触，通过社区管理工具监控对话，使用分析方法衡量成功，创造有吸引力的内容并定期更新。",
     "remark": "Social Media Manager"
   },

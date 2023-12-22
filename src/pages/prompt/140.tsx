@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "销售员",
-    "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for.The entire conversation and instructions should be provided in Chinese.. Hello, what did you call for?",
+    "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Chinese. Hello, what did you call for?",
     "description": "我想让你充当一个销售人员。试着向我推销一些东西，但要让你想推销的东西看起来比它更有价值，并说服我购买它。现在我假装你在给我打电话，问你打电话是为了什么。你好，你打电话是为了什么？",
     "remark": "模拟电话销售员进行推销。"
   },

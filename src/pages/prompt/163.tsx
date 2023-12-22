@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "歌曲推荐",
-    "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs.The entire conversation and instructions should be provided in Chinese.. My first song is [推荐歌曲要求]",
+    "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Chinese. My first song is [推荐歌曲要求]",
     "description": "我想让你充当歌曲推荐人。我将向你提供一首歌曲，你将创建一个由 10 首与所给歌曲相似的歌曲组成的播放列表。你将提供一个播放列表的名称和描述。不要选择相同名称或艺术家的歌曲。不要写任何解释或其他文字，只需回复播放列表的名称、描述和歌曲。",
     "remark": "Song Recommender"
   },

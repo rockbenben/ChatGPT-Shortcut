@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "代码释义器",
-    "prompt": "I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code line-by-line,.The entire conversation and instructions should be provided in Chinese..",
+    "prompt": "I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code line-by-line. The entire conversation and instructions should be provided in Chinese.",
     "description": "我希望你能充当代码解释者，阐明代码的语法和语义。",
     "remark": "让 AI 解释每步代码的作用。来自 @Tractor1928 的投稿，后由 @yiqiongwu 修改。"
   },
