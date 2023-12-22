@@ -1,5 +1,5 @@
 import React, {
-  useContext, useState, useMemo, useEffect, useCallback,
+  useContext, useState, useMemo, useEffect, useCallback, useRef,
 } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -158,7 +158,10 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
     setShowUserFavs(!showUserFavs);
   };
 
-  let modifiedTagList = userAuth ? TagList.filter(tag => tag !== "favorite") : [...TagList];
+  let modifiedTagList = TagList.filter(tag => tag !== "contribute");
+  if (userAuth) {
+      modifiedTagList = modifiedTagList.filter(tag => tag !== "favorite");
+  }
 
   // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
   const togglePromptLanguage = (
@@ -311,20 +314,15 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const searchRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState<string | null>(null);
+
   useEffect(() => {
     setValue(readSearchName(location.search));
-  }, [location]);
-
-  useEffect(() => {
-    const searchbar = document.getElementById("searchbar");
-    if (searchbar) {
-      searchbar.focus();
+    if (searchRef.current) {
+      searchRef.current.focus();
     }
-  }, [value]);
+  }, [location]);
 
   const updateSearch = useCallback(
     debounce((searchValue: string) => {
@@ -338,39 +336,19 @@ function SearchBar() {
         search: newSearch.toString(),
         state: prepareUserState(),
       });
-    }, 1000), //搜索延时
+    }, 1000), // 减少搜索延时
     [location, history]
   );
 
   const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
-    if (
-      currentLanguage !== "en" &&
-      (window.innerWidth >= 768 ||
-        (typeof chrome !== "undefined" && chrome.extension) ||
-        (typeof browser !== "undefined" && browser.extension))
-    ) {
-      // PC 端或插件版
-      setValue(e.currentTarget.value);
-      updateSearch(e.currentTarget.value);
-    } else {
-      // 移动端
-      setValue(e.currentTarget.value);
-      const newSearch = new URLSearchParams(location.search);
-      newSearch.delete(SearchNameQueryKey);
-      if (e.currentTarget.value) {
-        newSearch.set(SearchNameQueryKey, e.currentTarget.value);
-      }
-      history.push({
-        ...location,
-        search: newSearch.toString(),
-        state: prepareUserState(),
-      });
-    }
+    setValue(e.currentTarget.value);
+    updateSearch(e.currentTarget.value);
   };
 
   return (
     <div className={styles.searchContainer}>
       <input
+        ref={searchRef}
         id='searchbar'
         placeholder={translate({
           message: "Search for prompts...",
@@ -400,26 +378,17 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const [favoriteUsers, otherUsers] = useMemo(() => {
     return sortedUsers.reduce(
       ([favorites, others], user) => {
-        // 登陆后移除默认的收藏标签
-        if (userAuth) {
-          if (user.tags.includes("favorite")) {
-            const index = user.tags.indexOf("favorite");
-            if (index > -1) {
-              user.tags.splice(index, 1);
-            }
-          }
+        let updatedUser = {...user}; // 创建新对象，避免直接修改
+        if (userAuth && updatedUser.tags.includes("favorite")) {
+          updatedUser.tags = updatedUser.tags.filter(tag => tag !== "favorite");
         }
-        if (
-          userLoves &&
-          userLoves.includes(user.id) &&
-          !user.tags.includes("favorite")
-        ) {
-          user.tags.push("favorite");
+        if (userLoves && userLoves.includes(updatedUser.id) && !updatedUser.tags.includes("favorite")) {
+          updatedUser.tags = [...updatedUser.tags, "favorite"];
         }
-        if (user.tags.includes("favorite")) {
-          favorites.push(user);
+        if (updatedUser.tags.includes("favorite")) {
+          favorites.push(updatedUser);
         } else {
-          others.push(user);
+          others.push(updatedUser);
         }
         return [favorites, others];
       },
