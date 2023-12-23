@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "3.0.1",
+  "version": "3.1.2",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -24,7 +24,7 @@
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.6",
-    "antd": "^5.12.1",
+    "antd": "^5.12.5",
     "axios": "^1.6.2",
     "buffer": "^6.0.3",
     "clsx": "^2.0.0",

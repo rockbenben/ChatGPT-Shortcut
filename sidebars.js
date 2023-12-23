@@ -22,7 +22,7 @@ module.exports = {
         type: 'generated-index',
       },
       collapsed: false,
-      items: ["guides/getting-started", "guides/login-user", "guides/community", "guides/faq"],
+      items: ["guides/getting-started", "guides/login-user", "guides/community", "guides/extension", "guides/faq"],
     },
     {
       type: "doc",

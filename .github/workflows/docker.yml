@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: rockbenben/ChatGPT-Shortcut
+          images: rockben/chatgpt-shortcut
           tags: |
             type=raw,value=latest
             type=ref,event=tag
