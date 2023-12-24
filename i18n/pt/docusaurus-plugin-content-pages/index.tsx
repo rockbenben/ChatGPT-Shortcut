@@ -132,11 +132,13 @@ function useFilteredUsers() {
 
 function ShowcaseHeader() {
   return (
-    <section className={styles.mobileMarginAdjust + " text--center"}>
-      <Heading as='h1' className={styles.hideOnMobile}>
-        AI Short
-      </Heading>
-      <p>{SLOGAN}</p>
+    <section className={"text--center"}>
+      <div className={styles.hideOnMobile}>
+        <Heading as='h1'>
+          AI Short
+        </Heading>
+        <p>{SLOGAN}</p>
+      </div>
       <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
     </section>
   );
@@ -160,7 +162,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 
   let modifiedTagList = TagList.filter(tag => tag !== "contribute");
   if (userAuth) {
-      modifiedTagList = modifiedTagList.filter(tag => tag !== "favorite");
+    modifiedTagList = modifiedTagList.filter(tag => tag !== "favorite");
   }
 
   // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
@@ -169,8 +171,8 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   );
 
   return (
-    <section className='container margin-top--l margin-bottom--lg'>
-      <div className={clsx("margin-bottom--sm", styles.filterCheckbox)}>
+    <section className='container'>
+      <div className={styles.filterCheckbox}>
         <div>
           <Heading as='h2'>
             <Translate id='showcase.filters.title'>Filters</Translate>
@@ -336,7 +338,7 @@ function SearchBar() {
         search: newSearch.toString(),
         state: prepareUserState(),
       });
-    }, 1000), // 减少搜索延时
+    }, 1000), // search latency 搜索延时
     [location, history]
   );
 
@@ -378,7 +380,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const [favoriteUsers, otherUsers] = useMemo(() => {
     return sortedUsers.reduce(
       ([favorites, others], user) => {
-        let updatedUser = {...user}; // 创建新对象，避免直接修改
+        let updatedUser = { ...user }; // 创建新对象，避免直接修改
         if (userAuth && updatedUser.tags.includes("favorite")) {
           updatedUser.tags = updatedUser.tags.filter(tag => tag !== "favorite");
         }
@@ -447,7 +449,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                   "margin-bottom--md",
                   styles.showcaseFavoriteHeader
                 )}>
-                <Heading as='h2' className={styles.showcaseHeader}>
+                <Heading as='h2'>
                   <Translate id='showcase.usersList.allUsers'>
                     All prompts
                   </Translate>
@@ -506,7 +508,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
   // 正常渲染 Favorites 区块
   return (
-    <section className='margin-top--lg margin-bottom--xl'>
+    <section className='margin-top--lg margin-bottom--sm'>
       {filteredUsers.length === sortedUsers.length ? (
         <>
           <div className={styles.showcaseFavorite}>
@@ -606,7 +608,7 @@ export default function Showcase(): JSX.Element {
   }, []);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className='margin-vert--lg'>
+      <main className='margin-vert--md'>
         <AuthProvider>
           <ShowcaseHeader />
           <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />

@@ -8,7 +8,9 @@ AiShort (ChatGPT Shortcut) is a browser extension compatible with Chrome, Edge, 
 <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
 
-For users not on Chrome or Edge, or those looking to experience the latest features, the development version of the extension is available for download at: [Development Version Download](https://github.com/rockbenben/ChatGPT-Shortcut/releases). Additionally, users of non-Chrome browsers can use the ChatGPT Shortcut sidebar feature by installing the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey script.
+For users not on Chrome or Edge, or those looking to experience the latest features, the development version of the extension is available for download at: [Development Version Download](https://github.com/rockbenben/ChatGPT-Shortcut/releases).
+
+For users not utilizing Chrome-based browsers, we offer a Tampermonkey script — [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) — that enables you to use the AiShort sidebar feature. Please note that due to restrictions on script content injection on the ChatGPT page, you can only activate the sidebar feature on the ChatGPT website by installing our extension. The Tampermonkey script, however, functions normally on other websites.
 
 ## Language Options
 

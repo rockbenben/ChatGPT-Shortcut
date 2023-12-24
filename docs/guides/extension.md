@@ -8,7 +8,9 @@ AiShort（ChatGPT Shortcut）是一款适用于 Chrome、Edge 及其他基于 Ch
 <a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
   <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
 
-如果你的浏览器不是 Chrome 或 Edge，或者希望体验最新功能，可以尝试开发版扩展。下载地址：[开发版扩展下载](https://github.com/rockbenben/ChatGPT-Shortcut/releases)。此外，非 Chrome 系浏览器用户可以通过安装油猴脚本 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 来使用 ChatGPT Shortcut 扩展的侧边栏功能。
+如果你的浏览器不是 Chrome 或 Edge，或者希望体验最新功能，可以尝试开发版扩展。下载地址：[开发版扩展下载](https://github.com/rockbenben/ChatGPT-Shortcut/releases)。
+
+对于那些不使用 Chrome 系列浏览器的用户，我们提供了一个油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，使你可以使用 AiShort 侧边栏功能。请注意，由于 ChatGPT 页面限制了脚本的内容注入，你只能通过安装我们的扩展来在 ChatGPT 网站上激活侧边栏功能。油猴脚本在其他网站上则可以正常使用。
 
 ## 语言选项
 
