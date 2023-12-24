@@ -18,7 +18,6 @@ import {
 } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
-//import Tooltip from "../ShowcaseTooltip";
 import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
@@ -50,8 +49,7 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
         return (
           <Tooltip
             key={index}
-            text={tagObject.description}
-            anchorEl='#__docusaurus'
+            title={tagObject.description}
             id={id}>
             <TagComp key={index} {...tagObject} />
           </Tooltip>
@@ -188,33 +186,26 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
               {copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}
             </span>
           </Heading>
-          {user.tags.includes("favorite") && (
-            <Tooltip title={userAuth ? <Translate>点击移除收藏</Translate> : ""}>
-              {userAuth ? (
-                <Button type='text' onClick={removeFavorite}>
-                  <HeartTwoTone twoToneColor="#eb2f96" />
+          <Button.Group>
+            {userAuth && (
+              <Tooltip title={user.tags.includes("favorite") ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
+                <Button type='default' onClick={user.tags.includes("favorite") ? removeFavorite : handleLove}>
+                  {user.tags.includes("favorite") ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
                 </Button>
-              ) : (
+              </Tooltip>
+            )}
+            {!userAuth && user.tags.includes("favorite") && (
+              <Button type='text' disabled>
                 <HeartTwoTone twoToneColor="#eb2f96" />
-              )}
-            </Tooltip>
-          )}
-          {userAuth && !user.tags.includes("favorite") && (
-            <Tooltip title={translate({ message: "收藏" })}>
-              <Button type='text' onClick={handleLove}>
-                <HeartOutlined />
+              </Button>
+            )}
+            <Tooltip title={translate({ id: "copy.button", message: "复制" })}>
+              <Button type='default' onClick={handleCopyClick}>
+                <CopyOutlined />
+                {copied && <Translate id='theme.CodeBlock.copied'>已复制</Translate>}
               </Button>
             </Tooltip>
-          )}
-          <Tooltip
-            title={translate({ id: "copy.button", message: "复制" })}>
-            <Button type='text' onClick={handleCopyClick}>
-              <CopyOutlined />
-              {copied && (
-                <Translate id='theme.CodeBlock.copied'>已复制</Translate>
-              )}
-            </Button>
-          </Tooltip>
+          </Button.Group>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
         <p

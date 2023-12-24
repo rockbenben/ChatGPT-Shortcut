@@ -9,18 +9,9 @@
   display: none;
 }
 
-.mobileMarginAdjust {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 @media screen and (min-width: 576px) {
   .hideOnMobile {
     display: block;
-  }
-  .mobileMarginAdjust {
-    margin-top: var(--ifm-spacing-large);
-    margin-bottom: var(--ifm-spacing-large);
   }
 }
 
@@ -81,7 +72,7 @@
 }
 
 .showcaseFavorite {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   padding-bottom: 2rem;
   background-color: var(--site-color-favorite-background);
 }
@@ -121,9 +112,9 @@
   padding: 0.3rem 0.6rem;
   border-radius: 0.3rem;
   text-decoration: none;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: bold;
-  margin-right: 0.625rem;
+  margin-right: 0.75rem;
   border: none;
   box-shadow: none;
   cursor: pointer;
