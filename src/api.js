@@ -265,9 +265,6 @@ export function getSelectComms(ids) {
 // 投票用户提示
 export async function voteOnUserPrompt(promptId, action) {
   try {
-    if (!authToken) {
-      throw new Error("Kindly proceed with casting your vote after logging in.");
-    }
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
     }

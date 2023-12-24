@@ -97,7 +97,6 @@ function CommunityPrompts() {
   const vote = async (promptId, action) => {
     try {
       const response = await voteOnUserPrompt(promptId, action);
-      console.log(response);
       if (response.data) {
         message.success(`Successfully ${action}d!`);
         if (action === "upvote") {
@@ -306,6 +305,10 @@ function CommunityPrompts() {
                       <Button
                         type='default'
                         onClick={() => {
+                          if (!userAuth) {
+                            message.error("Please log in to vote and bookmark.");
+                            return;
+                          }
                           vote(UserPrompt.id, "upvote");
                           bookmark(UserPrompt.id);
                         }}>
@@ -321,7 +324,13 @@ function CommunityPrompts() {
                       })}>
                       <Button
                         type='default'
-                        onClick={() => vote(UserPrompt.id, "upvote")}>
+                        onClick={() => {
+                          if (!userAuth) {
+                            message.error("Please log in to vote and bookmark.");
+                            return;
+                          }
+                          vote(UserPrompt.id, "upvote");
+                        }}>
                         <UpOutlined />
                         {votedUpPromptIds.includes(UserPrompt.id)
                           ? (UserPrompt.upvotes || 0) + 1
@@ -335,7 +344,13 @@ function CommunityPrompts() {
                       })}>
                       <Button
                         type='default'
-                        onClick={() => vote(UserPrompt.id, "downvote")}>
+                        onClick={() => {
+                          if (!userAuth) {
+                            message.error("Please log in to vote and bookmark.");
+                            return;
+                          }
+                          vote(UserPrompt.id, "downvote");
+                        }}>
                         <DownOutlined />
                         {votedDownPromptIds.includes(UserPrompt.id)
                           ? (UserPrompt.downvotes || 0) + 1
