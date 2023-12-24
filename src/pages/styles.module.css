@@ -23,7 +23,6 @@
 .checkboxList {
   display: flex;
   align-items: center;
-  background-color: var(--docsearch-muted-color);
 }
 
 .filterCheckbox > div:first-child {
