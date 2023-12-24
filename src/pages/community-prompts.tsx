@@ -282,7 +282,7 @@ function CommunityPrompts() {
                     )}
                   </p>
                 </div>
-                <div className={clsx(styles.showcaseCardBodyActions)}>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <Button.Group>
                     <Tooltip
                       title={translate({

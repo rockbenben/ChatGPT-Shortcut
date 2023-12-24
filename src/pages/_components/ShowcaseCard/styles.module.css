@@ -38,16 +38,6 @@
   background-color: rgba(0, 0, 0, 0.5); /* Show scrollbar when hovering over the element */
 }
 
-.showcaseCardBodyActions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.showcaseCardBodyActions .button {
-  margin-right: 5px;
-}
-
 .showcaseCardImage {
   overflow: hidden;
   height: 150px;

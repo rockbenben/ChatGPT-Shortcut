@@ -1,14 +1,14 @@
 import React, { useEffect, useContext, useState, useCallback } from "react";
 import clsx from "clsx";
-import { Button, message, Spin, Space } from "antd";
 import copy from "copy-text-to-clipboard";
-import { CopyOutlined, StarOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
-import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
-import { AuthContext } from "../AuthContext";
-import { getCards, getSelectComms, updateFavorite } from "@site/src/api";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import { Button, message, Spin } from "antd";
+import { CopyOutlined, StarOutlined } from "@ant-design/icons";
+import { getCards, getSelectComms, updateFavorite } from "@site/src/api";
+import { AuthContext } from "../AuthContext";
 
 function UserFavorite() {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
@@ -78,27 +78,15 @@ function UserFavorite() {
     setClickedIndex(index);
     setShowDescription((prev) => !prev); // toggle the state
   };
-  const handleCopyClick = (index, isComm = false) => {
-    if (isComm) {
-      const comm = comms[index];
-      if (comm) {
-        copy(comm.description);
-        setCopiedCommIndex(index);
-        setTimeout(() => {
-          setCopiedCommIndex(null);
-        }, 2000);
-      }
-    } else {
-      const card = cards[index];
-      if (card) {
-        copy(card[currentLanguage].prompt);
-        setCopiedCardIndex(index);
-        setTimeout(() => {
-          setCopiedCardIndex(null);
-        }, 2000);
-      }
-    }
-  };
+
+  const handleCopyClick = useCallback((index, item, isComm = false) => {
+    const text = isComm ? item.description : item[currentLanguage].prompt;
+    copy(text);
+    const setCopiedIndex = isComm ? setCopiedCommIndex : setCopiedCardIndex;
+    setCopiedIndex(index);
+    setTimeout(() => setCopiedIndex(null), 2000);
+  }, [currentLanguage]);
+
   const formatCopyCount = (count) => {
     if (count >= 1000) {
       return (count / 1000).toFixed(1) + "k";
@@ -154,29 +142,27 @@ function UserFavorite() {
                       {comm.description}
                     </p>
                   </div>
-                  <div className={clsx(styles.showcaseCardBodyActions)}>
-                    <Space>
-                      <Button
-                        icon={<CopyOutlined />}
-                        type='default'
-                        onClick={() => handleCopyClick(index, true)}>
-                        {copiedCommIndex === index ? (
-                          <Translate id='theme.CodeBlock.copied'>
-                            已复制
-                          </Translate>
-                        ) : (
-                          <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                        )}
-                      </Button>
-                      <Button
-                        icon={<StarOutlined />}
-                        type='default'
-                        onClick={() => {
-                          removeBookmark(comm.id, true); // isComm set to true
-                        }}>
-                        <Translate>移除收藏</Translate>
-                      </Button>
-                    </Space>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <Button
+                      icon={<CopyOutlined />}
+                      type='default'
+                      onClick={() => handleCopyClick(index, comm, true)}>
+                      {copiedCommIndex === index ? (
+                        <Translate id='theme.CodeBlock.copied'>
+                          已复制
+                        </Translate>
+                      ) : (
+                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
+                      )}
+                    </Button>
+                    <Button
+                      icon={<StarOutlined />}
+                      type='default'
+                      onClick={() => {
+                        removeBookmark(comm.id, true); // isComm set to true
+                      }}>
+                      <Translate>移除收藏</Translate>
+                    </Button>
                   </div>
                 </div>
               </li>
@@ -212,35 +198,32 @@ function UserFavorite() {
                       onClick={() => handleTextClick(index)}
                       style={{ cursor: "pointer" }}>
                       {clickedIndex === index &&
-                      showDescription &&
-                      currentLanguage !== "en"
+                        showDescription
                         ? card[currentLanguage].description
                         : card[currentLanguage].prompt}
                     </p>
                   </div>
-                  <div className={clsx(styles.showcaseCardBodyActions)}>
-                    <Space>
-                      <Button
-                        icon={<CopyOutlined />}
-                        type='default'
-                        onClick={() => handleCopyClick(index)}>
-                        {copiedCardIndex === index ? (
-                          <Translate id='theme.CodeBlock.copied'>
-                            已复制
-                          </Translate>
-                        ) : (
-                          <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                        )}
-                      </Button>
-                      <Button
-                        icon={<StarOutlined />}
-                        type='default'
-                        onClick={() => {
-                          removeBookmark(card.id); // isComm defaults to false
-                        }}>
-                        <Translate>移除收藏</Translate>
-                      </Button>
-                    </Space>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <Button
+                      icon={<CopyOutlined />}
+                      type='default'
+                      onClick={() => handleCopyClick(index, card)}>
+                      {copiedCardIndex === index ? (
+                        <Translate id='theme.CodeBlock.copied'>
+                          已复制
+                        </Translate>
+                      ) : (
+                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
+                      )}
+                    </Button>
+                    <Button
+                      icon={<StarOutlined />}
+                      type='default'
+                      onClick={() => {
+                        removeBookmark(card.id); // isComm defaults to false
+                      }}>
+                      <Translate>移除收藏</Translate>
+                    </Button>
                   </div>
                 </div>
               </li>
