@@ -37,44 +37,8 @@ const config = {
     defaultLocale: "zh",
     locales: ["en", "zh", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
     localeConfigs: {
-      en: {
-        htmlLang: "en-US",
-      },
-      zh: {
-        htmlLang: "zh-Hans",
-      },
-      ja: {
-        htmlLang: "ja-JP",
-      },
-      ko: {
-        htmlLang: "ko-KR",
-      },
-      es: {
-        htmlLang: "es-ES",
-      },
-      fr: {
-        htmlLang: "fr-FR",
-      },
-      de: {
-        htmlLang: "de-DE",
-      },
-      it: {
-        htmlLang: "it-IT",
-      },
-      ru: {
-        htmlLang: "ru-RU",
-      },
-      pt: {
-        htmlLang: "pt-BR",
-      },
-      hi: {
-        htmlLang: "hi-IN",
-      },
       ar: {
-        htmlLang: "ar-SA",
-      },
-      bn: {
-        htmlLang: "bn-BD",
+        direction: 'rtl',
       },
     },
   },
