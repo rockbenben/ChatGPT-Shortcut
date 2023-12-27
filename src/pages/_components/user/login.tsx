@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Form, Input, message, Tabs, Checkbox, Space } from "antd";
+import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Tooltip } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
@@ -35,6 +35,10 @@ const rules = {
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("1");
+  const handleForgotPasswordClick = () => {
+    setActiveTab("3");
+  };
 
   // Google Auth
   useEffect(() => {
@@ -140,11 +144,6 @@ const LoginPage = () => {
     }
   };
 
-  // Add a new state value to track the active tab
-  const [activeTab, setActiveTab] = useState("1");
-  const handleForgotPasswordClick = () => {
-    setActiveTab("3");
-  };
   const loginForm = (
     <Form onFinish={onFinishLogin}>
       <Form.Item name='username' rules={rules.username}>
@@ -163,9 +162,11 @@ const LoginPage = () => {
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.login'>登录</Translate>
           </Button>
-          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
-            Login via Google
-          </Button>
+          <Tooltip title={translate({ id: "googleauth.tooltip", message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。" })}>
+            <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+              Login via Google
+            </Button>
+          </Tooltip>
           <Button onClick={handleForgotPasswordClick}>
             <Translate id='button.forgotPassword'>忘记密码</Translate>
           </Button>
@@ -199,13 +200,13 @@ const LoginPage = () => {
               value
                 ? Promise.resolve()
                 : Promise.reject(
-                    new Error(
-                      translate({
-                        id: "agreement.rules",
-                        message: "使用前须同意服务条款和隐私政策",
-                      })
-                    )
-                  ),
+                  new Error(
+                    translate({
+                      id: "agreement.rules",
+                      message: "使用前须同意服务条款和隐私政策",
+                    })
+                  )
+                ),
           },
         ]}>
         <Checkbox>
@@ -219,15 +220,15 @@ const LoginPage = () => {
           </a>
           。
         </Checkbox>
-      </Form.Item>
-      <Form.Item>
         <Space size='middle'>
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.register'>注册</Translate>
           </Button>
-          <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
-            Login via Google
-          </Button>
+          <Tooltip title={translate({ id: "googleauth.tooltip", message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。" })}>
+            <Button type='primary' onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+              Login via Google
+            </Button>
+          </Tooltip>
         </Space>
       </Form.Item>
     </Form>
