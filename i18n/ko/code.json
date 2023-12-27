@@ -709,12 +709,6 @@
   "downvote": {
     "message": "투표 취소"
   },
-  "分享到社区的提示词": {
-    "message": "커뮤니티에 프롬프트 단어 공유"
-  },
-  "社区提示词": {
-    "message": "커뮤니티 단서"
-  },
   "input.addprompt.share.checked": {
     "message": "예"
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "커뮤니티 프롬프트를 포함한 내 프롬프트 모음입니다."
+  },
+  "community.tag.tooltip": {
+    "message": "커뮤니티에서 공유한 프롬프트"
+  },
+  "community.tag": {
+    "message": "지역 사회"
+  },
+  "googleauth.tooltip": {
+    "message": "ChatGPT 에 포함된 페이지는 Google 인증을 통한 로그인을 지원하지 않습니다. 귀하의 계정 자격 증명을 사용하여 로그인하십시오."
   }
 }

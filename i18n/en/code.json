@@ -709,12 +709,6 @@
   "downvote": {
     "message": "Downvote"
   },
-  "分享到社区的提示词": {
-    "message": "Share the prompt word to the community"
-  },
-  "社区提示词": {
-    "message": "Community prompts"
-  },
   "input.addprompt.share.checked": {
     "message": "Yes"
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "My collection of prompts, including community prompts."
+  },
+  "community.tag.tooltip": {
+    "message": "Prompts Shared by the Community"
+  },
+  "community.tag": {
+    "message": "Community"
+  },
+  "googleauth.tooltip": {
+    "message": "The embedded pages of ChatGPT do not support login via Google authorization. Please log in using your account credentials."
   }
 }

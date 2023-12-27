@@ -52,12 +52,6 @@
   "toggle_prompt_language_description": {
     "message": "Cambia la lingua di visualizzazione dei messaggi, passando dall'inglese alla lingua corrente della pagina."
   },
-  "分享到社区的提示词": {
-    "message": "Suggerimenti per la condivisione con la comunità"
-  },
-  "社区提示词": {
-    "message": "Spunti per la comunità"
-  },
   "showcase.searchBar.placeholder": {
     "message": "Cerca i suggerimenti..."
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "La mia raccolta di suggerimenti, compresi quelli della comunità."
+  },
+  "community.tag.tooltip": {
+    "message": "Suggerimenti condivisi dalla comunità"
+  },
+  "community.tag": {
+    "message": "Comunità"
+  },
+  "googleauth.tooltip": {
+    "message": "Le pagine incorporate di ChatGPT non supportano l&#39;accesso tramite l&#39;autorizzazione di Google. Effettua l&#39;accesso utilizzando le credenziali del tuo account."
   }
 }

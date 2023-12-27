@@ -55,12 +55,6 @@
   "toggle_prompt_language_description": {
     "message": "Ändert die Sprache, in der die Eingabeaufforderungen angezeigt werden, und wechselt zwischen Englisch und der aktuellen Sprache der Seite."
   },
-  "分享到社区的提示词": {
-    "message": "Tipps für die Weitergabe an die Gemeinschaft"
-  },
-  "社区提示词": {
-    "message": "Gemeinschaftliche Stichwörter"
-  },
   "showcase.searchBar.placeholder": {
     "message": "Suche nach Prompts..."
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "Meine Sammlung von Prompts, einschließlich Community Prompts."
+  },
+  "community.tag.tooltip": {
+    "message": "Von der Community geteilte Eingabeaufforderungen"
+  },
+  "community.tag": {
+    "message": "Gemeinschaft"
+  },
+  "googleauth.tooltip": {
+    "message": "Die eingebetteten Seiten von ChatGPT unterstützen keine Anmeldung per Google-Autorisierung. Bitte melden Sie sich mit Ihren Zugangsdaten an."
   }
 }

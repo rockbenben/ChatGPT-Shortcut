@@ -55,12 +55,6 @@
   "toggle_prompt_language_description": {
     "message": "قم بتغيير لغة عرض الكلمات السريعة ، والتبديل بين اللغة الإنجليزية واللغة الحالية للصفحة."
   },
-  "分享到社区的提示词": {
-    "message": "نصائح للمشاركة مع المجتمع"
-  },
-  "社区提示词": {
-    "message": "يطالب المجتمع"
-  },
   "showcase.searchBar.placeholder": {
     "message": "البحث عن المطالبات ..."
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "مجموعتي من المطالبات، بما في ذلك مطالبات المجتمع."
+  },
+  "community.tag.tooltip": {
+    "message": "المطالبات المشتركة من قبل المجتمع"
+  },
+  "community.tag": {
+    "message": "مجتمع"
+  },
+  "googleauth.tooltip": {
+    "message": "لا تدعم الصفحات المضمنة في ChatGPT تسجيل الدخول عبر ترخيص Google. يرجى تسجيل الدخول باستخدام بيانات اعتماد حسابك."
   }
 }

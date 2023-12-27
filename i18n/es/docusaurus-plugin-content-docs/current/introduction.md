@@ -28,12 +28,13 @@ Te invitamos a unirte a nuestra comunidad en Discord para intercambiar ideas y c
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-## Extensión del navegador
+## Extensión del Navegador
 
-La extensión del navegador AiShort (ChatGPT Shortcut) es compatible con Chrome y Edge y tiene una funcionalidad consistente con la versión web y se actualiza regularmente. La extensión puede ser activada automáticamente cuando se carga la página de ChatGPT, o puedes activar la ventana de la extensión presionando la tecla de acceso rápido `Alt+Shift+S`.
+La extensión AiShort (ChatGPT Shortcut) es compatible con Chrome, Edge, Firefox y otros navegadores basados en Chromium. Esta extensión no solo tiene las funciones de la versión web de ChatGPT, sino que también agrega características únicas como una barra lateral y la activación automática de ventanas. La extensión puede iniciarse automáticamente con ChatGPT o páginas personalizadas, y también es compatible con la activación manual a través de la combinación de teclas `Alt+Shift+S`. A continuación, se presentan los canales de descarga:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: Esperando
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Además, también ofrecemos un script de Greasemonkey llamado [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Este script permite a los usuarios personalizar los nombres de dominio donde desean utilizar la barra lateral de AiShort en cualquier sitio web. Sin embargo, ten en cuenta que debido a las restricciones de inyección de contenido en la página de ChatGPT, la función de barra lateral del script se activa mediante una ventana emergente en la página de ChatGPT.

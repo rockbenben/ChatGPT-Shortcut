@@ -709,12 +709,6 @@
   "downvote": {
     "message": "ダウンヴォート"
   },
-  "分享到社区的提示词": {
-    "message": "プロンプトの言葉をコミュニティで共有する"
-  },
-  "社区提示词": {
-    "message": "コミュニティ・キュー"
-  },
   "input.addprompt.share.checked": {
     "message": "はい"
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "コミュニティ・プロンプトを含む私のプロンプト集。"
+  },
+  "community.tag.tooltip": {
+    "message": "コミュニティで共有されるプロンプト"
+  },
+  "community.tag": {
+    "message": "コミュニティ"
+  },
+  "googleauth.tooltip": {
+    "message": "ChatGPT の埋め込みページは、Google 認証によるログインをサポートしていません。アカウントの資格情報を使用してログインしてください。"
   }
 }

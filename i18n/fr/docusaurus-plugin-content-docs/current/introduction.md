@@ -30,11 +30,11 @@ Bienvenue à rejoindre notre communauté Discord pour échanger des idées et de
 
 ## Extension de navigateur
 
-L'extension de navigateur AiShort (ChatGPT Shortcut) prend en charge Chrome et Edge avec une fonctionnalité cohérente avec la version web et est régulièrement mise à jour. L'extension peut être déclenchée automatiquement lorsque la page ChatGPT se charge, ou vous pouvez activer la fenêtre de l'extension en appuyant sur la touche de raccourci `Alt+Shift+S`.
+L'extension AiShort (raccourci ChatGPT) est compatible avec Chrome, Edge, Firefox et d'autres navigateurs basés sur Chromium. Cette extension offre non seulement les fonctionnalités de la version web de ChatGPT, mais ajoute également des fonctionnalités uniques telles que la barre latérale et l'activation automatique de la fenêtre. Cette extension peut être automatiquement lancée avec ChatGPT ou des pages personnalisées, et prend également en charge l'activation manuelle via le raccourci `Alt+Shift+S`. Voici les canaux de téléchargement disponibles :
 
+- **Chrome** : [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge** : [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox** : En attente
+- **GitHub** : [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+De plus, nous proposons également un script Greasemonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) - qui permet aux utilisateurs de personnaliser les domaines correspondants et d'utiliser la barre latérale AiShort sur n'importe quel site web. Cependant, veuillez noter que, en raison des restrictions d'injection de scripts sur la page ChatGPT, la fonction de barre latérale du script ne fonctionnera que sous forme de fenêtre contextuelle sur la page ChatGPT.

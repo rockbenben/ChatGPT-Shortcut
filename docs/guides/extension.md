@@ -1,16 +1,14 @@
 # 浏览器扩展
 
-AiShort（ChatGPT Shortcut）是一款适用于 Chrome、Edge 及其他基于 Chromium 的浏览器的扩展。它不仅提供了与网页版类似的功能，还包括一些额外的特性，如侧边栏和自动激活窗口等。扩展可以随 ChatGPT 或指定的自定义页面自动启动，也支持使用 `Alt+Shift+S` 进行手动激活。
+AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp" alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: Waiting
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **国内下载**: [蓝奏云](https://wwva.lanzouq.com/b01lsc9vi),密码:1qow
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
-
-如果你的浏览器不是 Chrome 或 Edge，或者希望体验最新功能，可以尝试开发版扩展。下载地址：[开发版扩展下载](https://github.com/rockbenben/ChatGPT-Shortcut/releases)。
-
-对于那些不使用 Chrome 系列浏览器的用户，我们提供了一个油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，使你可以使用 AiShort 侧边栏功能。请注意，由于 ChatGPT 页面限制了脚本的内容注入，你只能通过安装我们的扩展来在 ChatGPT 网站上激活侧边栏功能。油猴脚本在其他网站上则可以正常使用。
+此外，我们还提供了油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，该脚本允许用户自定义匹配域名，在任意网站上使用 AiShort 侧边栏。但需注意，由于 ChatGPT 页面的脚本内容注入限制，脚本的侧边栏功能在 ChatGPT 页面上是通过弹窗来激活的。
 
 ## 语言选项
 
@@ -22,9 +20,11 @@ ChatGPT Shortcut 支持 13 种主流语言，扩展语言将根据你的浏览�
 
 ### AiShort 侧边栏
 
-启用 AiShort 侧边栏后，访问指定网页时侧边栏会自动激活。你也可以通过页面右下角的绿色图标手动激活。当前支持 ChatGPT、Bard、Claude、文心一言中显示侧边栏。如果你想在其他网站上使用 AiShort 侧边栏，请安装 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 脚本。
+启用 AiShort 侧边栏后，访问指定网页时侧边栏会自动激活。你也可以通过页面右下角的绿色图标手动激活。当前支持 ChatGPT、Bard、Claude、文心一言中显示侧边栏。
 
 ![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+
+如果你想在其他网站上使用 AiShort 侧边栏，请安装 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 脚本。请注意，为避免功能重叠和潜在的冲突，ChatGPT Shortcut Anywhere 脚本在扩展默认支持的网站上不会生效。
 
 ### 内置主页
 
@@ -47,3 +47,29 @@ ChatGPT Shortcut 支持 13 种主流语言，扩展语言将根据你的浏览�
 ### 热键激活
 
 使用 `Alt+Shift+S` 快捷键可以直接激活 AiShort 窗口，无论是弹窗模式还是独立窗口模式。
+
+## 登录问题
+
+### ChatGPT 内嵌页面限制
+
+ChatGPT 对于内嵌页面有较多限制，其中包括不支持使用 Google 授权登录。用户只能通过帐号和密码的方式进行登录。如果您的帐户是通过 Google 授权创建的，您可以通过“忘记密码”功能设置一
+
+### 内容屏蔽提示
+
+在使用帐号密码登录后，有时页面可能会显示“该内容被屏蔽了”的提示。这种情况下，简单刷新页面通常就可以解决问题，并恢复到正常登录后的状态。
+
+## Firefox 设置
+
+Firefox 浏览器的设置相对复杂，以下是两个主要的配置步骤：
+
+### 1. 固定扩展与访问设置
+
+首先，在 Firefox 工具栏上选择“固定 ChatGPT Shortcut 扩展”（Pin to Toolbar），然后进入扩展中心，在 ChatGPT Shortcut 扩展条目上选择“选项”（Options），进入扩展的设置界面。具体步骤如下图所示：
+
+![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+
+### 2. 授权扩展运行
+
+其次，为确保扩展在 ChatGPT、Bard 等网站上正常运行，您需要在这些网站上右键点击扩展图标，选择“始终允许在此网站上运行”（Always allow on ***）。此操作授予扩展在指定网站上修改内容和添加侧边栏的权限。
+
+![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)

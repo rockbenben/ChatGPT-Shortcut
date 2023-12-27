@@ -30,10 +30,11 @@ Willkommen in unserer Discord-Community, um Ideen auszutauschen und Feedback zu 
 
 ## Browser-Erweiterung
 
-Die AiShort (ChatGPT Shortcut) Browser-Erweiterung unterstützt Chrome und Edge mit Funktionen, die mit der Webversion übereinstimmen und regelmäßig aktualisiert werden. Die Erweiterung kann automatisch ausgelöst werden, wenn die ChatGPT-Seite geladen wird, oder Sie können das Erweiterungsfenster durch Drücken der `Alt+Shift+S`-Taste aktivieren.
+Die AiShort (ChatGPT Shortcut) Erweiterung ist mit Chrome, Edge, Firefox und anderen auf Chromium basierenden Browsern kompatibel. Diese Erweiterung bietet nicht nur die Funktionen der Webversion von ChatGPT, sondern auch einzigartige Features wie eine Seitenleiste und die automatische Aktivierung von Fenstern. Die Erweiterung kann mit ChatGPT oder benutzerdefinierten Seiten automatisch gestartet werden und unterstützt auch die manuelle Aktivierung über die Tastenkombination `Alt+Shift+S`. Hier sind die Download-Links:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: Warten
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Zusätzlich bieten wir ein Userskript namens [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) an, mit dem Benutzer Domains anpassen können, um die AiShort Seitenleiste auf jeder Website zu verwenden. Beachten Sie jedoch, dass auf der ChatGPT-Seite die Seitenleistenfunktion des Skripts über ein Popup aktiviert wird, aufgrund von Einschränkungen bei der Skripteinbindung auf der ChatGPT-Seite.

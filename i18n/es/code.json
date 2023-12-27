@@ -52,12 +52,6 @@
   "toggle_prompt_language_description": {
     "message": "Cambia el idioma en el que se muestran las indicaciones, alternando entre el inglés y el idioma actual de la página."
   },
-  "分享到社区的提示词": {
-    "message": "Consejos para compartir con la comunidad"
-  },
-  "社区提示词": {
-    "message": "Cuestiones comunitarias"
-  },
   "showcase.searchBar.placeholder": {
     "message": "Buscar indicaciones..."
   },
@@ -806,5 +800,14 @@
   },
   "myfavorite.tooltip": {
     "message": "Mi colección de prompts, incluyendo prompts comunitarios."
+  },
+  "community.tag.tooltip": {
+    "message": "Indicaciones compartidas por la comunidad"
+  },
+  "community.tag": {
+    "message": "Comunidad"
+  },
+  "googleauth.tooltip": {
+    "message": "Las páginas integradas de ChatGPT no admiten el inicio de sesión mediante la autorización de Google. Inicie sesión con las credenciales de su cuenta."
   }
 }

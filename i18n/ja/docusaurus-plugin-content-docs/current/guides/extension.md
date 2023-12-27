@@ -1,18 +1,17 @@
-# ブラウザ拡張機能
+# ブラウザ拡張
 
-AiShort（ChatGPT Shortcut）は、Chrome、Edge、その他の Chromium ベースのブラウザ用の拡張機能です。ウェブ版と同様の機能を提供するだけでなく、サイドバーや自動アクティベーションウィンドウなど、いくつかの追加機能も備えています。この拡張機能は、ChatGPT や指定されたカスタムページがロードされると自動的に起動することができ、また `Alt+Shift+S` キーで手動でアクティベートすることもできます。
+AiShort（ChatGPT ショートカット）拡張機能は、Chrome、Edge、Firefox、および他の Chromium ベースのブラウザと互換性があります。この拡張機能は、ウェブバージョンの ChatGPT の機能に加えて、サイドバーやウィンドウの自動アクティベーションなどのユニークな機能も備えています。この拡張機能は、ChatGPT またはカスタムページと一緒に自動的に起動し、`Alt+Shift+S`キーで手動でアクティベートすることもサポートしています。以下はダウンロードチャネルです：
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: 待機中
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
-
-Chrome や Edge 以外のブラウザを使用している場合、または最新機能を体験したい場合は、開発版の拡張機能を試すことができます。ダウンロードアドレス：[開発版拡張機能のダウンロード](https://github.com/rockbenben/ChatGPT-Shortcut/releases)。また、Chrome 系ではないブラウザのユーザーは、[ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) の油猴スクリプトをインストールして、ChatGPT Shortcut のサイドバー機能を使用することができます。
+さらに、私たちは GreaseMonkey スクリプトである「[ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)」も提供しており、ユーザーはドメインをカスタマイズし、任意のウェブサイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページのスクリプトコンテンツの注入制限のため、スクリプトのサイドバー機能は ChatGPT ページではポップアップとしてアクティベートされます。
 
 ## 言語オプション
 
-ChatGPT Shortcut は 13 種類の主要言語をサポートしており、拡張機能の言語はブラウザの環境に応じて自動的に設定されます。拡張機能内の ChatGPT 内蔵ページやサイドバーの言語もこの設定に従います。埋め込みページで直接言語を変更すると、第三者サイトのアクセス権限警告が発生する可能性があるため、注意してください。
+ChatGPT Shortcut は 13 の主要な言語をサポートしており、拡張機能の言語はブラウザの環境に応じて自動的に設定されます。拡張機能内の ChatGPT ビルトインページとサイドバーの言語もこの設定に従います。サードパーティのウェブサイトの権限警告をトリガーしないようにするために、インラインページでの言語の直接変更は避けてください。
 
 ![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
 
@@ -20,30 +19,58 @@ ChatGPT Shortcut は 13 種類の主要言語をサポートしており、拡�
 
 ### AiShort サイドバー
 
-AiShort サイドバーを有効にすると、特定のウェブページを訪れる際にサイドバーが自動的にアクティブになります。また、ページ右下隅の緑色アイコンをクリックすることで手動でアクティブにすることもできます。現在、ChatGPT、Bard、Claude、文心一言にサイドバーが表示されます。他のウェブサイトで AiShort サイドバーを使用したい場合は、[ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) スクリプトをインストールしてください。
+AiShort サイドバーを有効にすると、特定のウェブページを訪れるとサイドバーが自動的にアクティベートされます。また、ページの右下にある緑のアイコンをクリックして手動でアクティベートすることもできます。現在、ChatGPT、Bard、Claude、文心一言をサポートしています。
 
 ![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
 
+他のウェブサイトでも AiShort サイドバーを使用したい場合は、「[ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)」スクリプトをインストールしてください。ただし、機能の重複や潜在的な競合を避けるため、ChatGPT Shortcut Anywhere スクリプトはデフォルトでサポートされているウェブサイトでは動作しません。
+
 ### 組み込みホームページ
 
-組み込みホームページ機能を有効にすると、ChatGPT ウェブ版の左上隅に内蔵ホームページボタンが表示されます。このボタンをクリックすると、AiShort ページが ChatGPT アプリのインターフェースを置き換えます。
+組み込みホームページ機能を有効にすると、ChatGPT ウェブバージョンの左上に組み込みホームボタンが表示されます。クリックすると、AiShort ページが ChatGPT アプリケーションインターフェースを代替します。
 
 ![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
 
 ## 独立ウィンドウモード
 
-独立ウィンドウモードを有効にすると、拡張機能のインターフェースが独立したウィンドウとして持続的に表示され、マルチタスク操作が容易になります。ブラウザが特定のサイトを訪れると、AiShort ウィンドウが自動的にアクティブになるように、拡張設定で自動アクティベーションサイトを設定することができます。
+独立ウィンドウモードを有効にすると、拡張機能のインターフェースが独立したウィンドウとして常に表示され、マルチタスク操作が容易になります。拡張機能の設定で自動的にアクティベートするウェブサイトを設定することができます。ブラウザがこれらのウェブサイトにアクセスすると、AiShort ウィンドウが自動的にアクティベートされます。
 
 ![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
 
-### 自動アクティベーションサイト
+### 自動的にアクティベートするウェブサイト
 
-拡張機能の設定で、AiShort 独立ウィンドウを自動的にアクティブにするウェブサイトを指定できます。
+拡張機能の設定で、AiShort 独立ウィンドウを自動的にアクティベートするウェブサイトを指定できます。
 
 ![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
 
-### ホットキーによるアクティベーション
+### ショートカットキーでアクティベート
 
-`Alt+Shift+S` のホットキーを使用して、AiShort ウィンドウを直接アクティブにすること
+`Alt+Shift+S`キーを使用して、ポップアップモードまたは独立ウィンドウモードにかかわらず、AiShort ウィンドウを直接アクティベートできます。
 
-ができます。これはポップアップモードと独立ウィンドウモードの両方で使用できます。
+## ログインの問題
+
+### ChatGPT インラインページの制限
+
+ChatGPT に
+
+は、インラインページに対する多くの制限があります。その中には、Google アカウントを使用したログインのサポートが含まれていないこともあります。ユーザーはアカウントとパスワードを使用してログインするしかありません。Google アカウントで作成されたアカウントの場合、パスワードを忘れた場合には「パスワードを忘れました」機能を使用して設定できます。
+
+### コンテンツのブロックの表示
+
+アカウントとパスワードでログインした後、ページに「このコンテンツはブロックされています」と表示される場合があります。この場合、ページをシンプルにリフレッシュするだけで問題が解決し、通常のログイン後の状態に戻ります。
+
+## Firefox の設定
+
+Firefox ブラウザの設定は比較的複雑ですが、以下は主要な 2 つの設定手順です：
+
+### 1. 拡張機能のピン留めとアクセス設定
+
+まず、Firefox ツールバーで「ChatGPT Shortcut 拡張機能を固定」（Pin to Toolbar）を選択し、次に拡張機能センターに移動し、ChatGPT Shortcut 拡張機能のエントリを選択し、「オプション」（Options）を選択して拡張機能の設定画面にアクセスします。具体的な手順は次の画像に示されています：
+
+![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+
+### 2. 拡張機能の許可
+
+次に、拡張機能が ChatGPT、Bard などのウェブサイトで正常に動作することを確認するために、これらのウェブサイトで拡張機能アイコンを右クリックし、「Always allow on ***」を選択して拡張機能にコンテンツの変更とサイドバーの追加の権限を付与する必要があります。
+
+![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)

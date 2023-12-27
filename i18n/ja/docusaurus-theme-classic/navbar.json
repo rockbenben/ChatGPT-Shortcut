@@ -19,14 +19,6 @@
     "message": "🛠️ ツール",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
-  "item.label.Chrome 扩展": {
-    "message": "Chrome 拡張機能",
-    "description": "Navbar item with label Chrome 扩展"
-  },
-  "item.label.Edge 扩展": {
-    "message": "エッジエクステンション",
-    "description": "Navbar item with label Edge 扩展"
-  },
   "item.label.IMGPrompt": {
     "message": "IMG プロンプト",
     "description": "Navbar item with label IMGPrompt"
@@ -62,5 +54,9 @@
   "item.label.📺 加入 Discord": {
     "message": "ディスコードに参加する",
     "description": "Navbar item with label 📺 加入 Discord"
+  },
+  "item.label.脚本扩展": {
+    "message": "拡張機能",
+    "description": "Navbar item with label 脚本扩展"
   }
 }

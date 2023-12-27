@@ -40,12 +40,12 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
 
 ## 浏览器扩展
 
-AiShort（ChatGPT Shortcut）是一款适用于 Chrome、Edge 及其他基于 Chromium 的浏览器的扩展。它不仅提供了与网页版类似的功能，还包括一些额外的特性，如侧边栏和自动激活窗口等。扩展可以随 ChatGPT 或指定的自定义页面自动启动，也支持使用 `Alt+Shift+S` 进行手动激活。
+AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp" alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: Waiting
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **国内下载**: [蓝奏云](https://wwva.lanzouq.com/b01lsc9vi),密码:1qow
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
-
-如果你的浏览器不是 Chrome 或 Edge，或者希望体验最新功能，可以尝试开发版扩展。下载地址：[开发版扩展下载](https://github.com/rockbenben/ChatGPT-Shortcut/releases)。此外，非 Chrome 系浏览器用户可以通过安装油猴脚本 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 来使用 ChatGPT Shortcut 扩展的侧边栏功能。
+此外，我们还提供了油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，该脚本允许用户自定义匹配域名，在任意网站上使用 AiShort 侧边栏。但需注意，由于 ChatGPT 页面的脚本内容注入限制，脚本的侧边栏功能在 ChatGPT 页面上是通过弹窗来激活的。

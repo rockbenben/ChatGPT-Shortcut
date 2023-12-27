@@ -30,10 +30,11 @@ Bem-vindo para se juntar à nossa comunidade Discord para trocar ideias e feedba
 
 ## Extensão do navegador
 
-A extensão do navegador AiShort (ChatGPT Shortcut) suporta Chrome e Edge com funcionalidade consistente com a versão web e é atualizada regularmente. A extensão pode ser ativada automaticamente à medida que a página ChatGPT é carregada, ou você pode ativar a janela da extensão pressionando a tecla de atalho `Alt+Shift+S`.
+A extensão AiShort (ChatGPT Shortcut) é compatível com os navegadores Chrome, Edge, Firefox e outros navegadores baseados no Chromium. Esta extensão não apenas oferece as funcionalidades da versão web do ChatGPT, mas também adiciona recursos exclusivos, como uma barra lateral e ativação automática de janelas. A extensão pode ser iniciada automaticamente com o ChatGPT ou páginas personalizadas, e também suporta ativação manual por meio do atalho `Alt+Shift+S`. Abaixo estão os canais de download:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: Aguardando
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Além disso, fornecemos um script do Greasemonkey chamado [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), que permite aos usuários personalizar os domínios correspondentes e usar a barra lateral do AiShort em qualquer site. No entanto, observe que, devido às restrições de injeção de scripts nas páginas do ChatGPT, a função de barra lateral do script é ativada por meio de uma janela pop-up nas páginas do ChatGPT.

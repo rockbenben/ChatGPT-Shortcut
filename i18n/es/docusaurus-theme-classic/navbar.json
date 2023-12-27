@@ -31,14 +31,6 @@
     "message": "Colección de herramientas",
     "description": "Navbar item with label 工具收藏"
   },
-  "item.label.Chrome 扩展": {
-    "message": "Extensión de Chrome",
-    "description": "Navbar item with label Chrome 扩展"
-  },
-  "item.label.Edge 扩展": {
-    "message": "Ampliación de bordes",
-    "description": "Navbar item with label Edge 扩展"
-  },
   "item.label.Find on Product Hunt": {
     "message": "Buscar en Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
@@ -62,5 +54,9 @@
   "item.label.📺 加入 Discord": {
     "message": "📺 Únete a nuestro Discord",
     "description": "Navbar item with label 📺 加入 Discord"
+  },
+  "item.label.脚本扩展": {
+    "message": "Extensiones",
+    "description": "Navbar item with label 脚本扩展"
   }
 }

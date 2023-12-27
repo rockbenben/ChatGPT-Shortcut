@@ -31,14 +31,6 @@
     "message": "उपकरण संग्रह",
     "description": "Navbar item with label 工具收藏"
   },
-  "item.label.Chrome 扩展": {
-    "message": "क्रोम एक्सटेंशन",
-    "description": "Navbar item with label Chrome 扩展"
-  },
-  "item.label.Edge 扩展": {
-    "message": "किनारे का विस्तार",
-    "description": "Navbar item with label Edge 扩展"
-  },
   "item.label.Find on Product Hunt": {
     "message": "प्रोडक्ट हंट पर खोजें",
     "description": "Navbar item with label Find on Product Hunt"
@@ -62,5 +54,9 @@
   "item.label.📺 加入 Discord": {
     "message": "📺 हमारे डिस्कोर्ड में शामिल हों",
     "description": "Navbar item with label 📺 加入 Discord"
+  },
+  "item.label.脚本扩展": {
+    "message": "एक्सटेंशन",
+    "description": "Navbar item with label 脚本扩展"
   }
 }

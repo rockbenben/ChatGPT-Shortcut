@@ -34,7 +34,7 @@ import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthConte
 import { fetchAllCopyCounts } from "@site/src/api";
 const ShareButtons = Loadable({
   loader: () => import("@site/src/pages/_components/ShareButtons"),
-  loading: () => <div>Loading ShareButtons...</div>,
+  loading: () => null,
 });
 
 const TITLE = translate({
@@ -282,14 +282,16 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
         <li className={styles.checkboxListItem}>
           <ShowcaseTooltip
             text={translate({
-              message: "分享到社区的提示词",
+              id: "community.tag.tooltip",
+              message: "社区分享的精选提示词",
             })}
             anchorEl='#__docusaurus'>
             <Link to='/community-prompts'>
               <ShowcaseTagSelect
                 tag='communityprompt'
                 label={translate({
-                  message: "社区提示词",
+                  id: "community.tag",
+                  message: "社区精选",
                 })}
                 icon={
                   <span

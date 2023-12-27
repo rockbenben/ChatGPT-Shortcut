@@ -31,14 +31,6 @@
     "message": "جمع الأدوات",
     "description": "Navbar item with label 工具收藏"
   },
-  "item.label.Chrome 扩展": {
-    "message": "تمديد كروم",
-    "description": "Navbar item with label Chrome 扩展"
-  },
-  "item.label.Edge 扩展": {
-    "message": "ملحقات الحافة",
-    "description": "Navbar item with label Edge 扩展"
-  },
   "item.label.Find on Product Hunt": {
     "message": "ابحث عن Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
@@ -62,5 +54,9 @@
   "item.label.📺 加入 Discord": {
     "message": "📺 انضم إلى الفتنة",
     "description": "Navbar item with label 📺 加入 Discord"
+  },
+  "item.label.脚本扩展": {
+    "message": "ملحقات",
+    "description": "Navbar item with label 脚本扩展"
   }
 }

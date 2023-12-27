@@ -17,7 +17,6 @@ export type User = {
 };
 
 export type TagType =
-  // DO NOT USE THIS TAG: we choose sites to add to favorites
   | "favorite"
   | "write"
   | "article"
@@ -44,8 +43,7 @@ export type TagType =
   | "finance"
   | "music"
   | "professional"
-  | "contribute"
-  | "latest";
+  | "contribute";
 
 export type Tag = {
   label: string;

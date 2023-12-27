@@ -19,14 +19,6 @@
     "message": "🛠️ 도구",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
-  "item.label.Chrome 扩展": {
-    "message": "크롬 확장 프로그램",
-    "description": "Navbar item with label Chrome 扩展"
-  },
-  "item.label.Edge 扩展": {
-    "message": "가장자리 확장",
-    "description": "Navbar item with label Edge 扩展"
-  },
   "item.label.IMGPrompt": {
     "message": "IMG 프롬프트",
     "description": "Navbar item with label IMGPrompt"
@@ -62,5 +54,9 @@
   "item.label.📺 加入 Discord": {
     "message": "📺 디스코드 가입하기",
     "description": "Navbar item with label 📺 加入 Discord"
+  },
+  "item.label.脚本扩展": {
+    "message": "확장",
+    "description": "Navbar item with label 脚本扩展"
   }
 }

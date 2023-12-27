@@ -121,6 +121,10 @@ const config = {
             position: "left",
             items: [
               {
+                label: "脚本扩展",
+                to: "/docs/guides/extension",
+              },
+              {
                 label: "IMGPrompt",
                 href: "https://prompt.newzone.top/",
               },
@@ -131,14 +135,6 @@ const config = {
               {
                 label: "工具收藏",
                 href: "https://nav.newzone.top",
-              },
-              {
-                label: "Chrome 扩展",
-                href: "https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj",
-              },
-              {
-                label: "Edge 扩展",
-                href: "https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin",
               },
               {
                 label: "Find on Product Hunt",
