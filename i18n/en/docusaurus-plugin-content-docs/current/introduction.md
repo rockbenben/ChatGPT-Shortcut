@@ -30,11 +30,11 @@ Welcome to join our Discord community to exchange ideas and feedback.
 
 ## Browser Extension
 
-AiShort (ChatGPT Shortcut) is a versatile extension compatible with Chrome, Edge, Firefox, and other Chromium-based browsers. This extension not only features the functionality of the web version of ChatGPT but also adds unique features such as a sidebar and automatic window activation. The extension can automatically start with ChatGPT or custom pages and can also be manually activated using the shortcut `Alt+Shift+S`. Here are the download channels:
+AiShort (ChatGPT Shortcut) is a browser extension compatible with Chrome, Edge, Firefox, and other Chromium-based browsers. This extension not only offers the functionalities of the web version of ChatGPT Shortcut but also features unique elements like a sidebar and automatic window activation. It can automatically start with ChatGPT or custom pages and can also be manually activated using the `Alt+Shift+S` shortcut key. Below are the download channels:
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: Waiting
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-In addition, we offer the Tampermonkey script - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), allowing users to customize matching domain names and use the AiShort sidebar on any website. However, due to script content injection restrictions on the ChatGPT page, the script's sidebar functionality is activated via a popup on the ChatGPT page.
+Additionally, we offer a Tampermonkey script — [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), which allows users to customize matching domain names and use the AiShort sidebar on any website. However, due to script content injection limitations on ChatGPT pages, the sidebar function of the script is activated via a popup on ChatGPT pages.

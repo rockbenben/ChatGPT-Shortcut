@@ -47,7 +47,7 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
 
 ## 浏览器扩展
 
-AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
+AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT Shortcut 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)

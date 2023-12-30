@@ -47,7 +47,7 @@ Welcome to join our Discord community to exchange ideas and feedback.
 
 ## Browser Extension
 
-AiShort (ChatGPT Shortcut) is a versatile extension compatible with Chrome, Edge, Firefox, and other Chromium-based browsers. This extension not only features the functionality of the web version of ChatGPT but also adds unique features such as a sidebar and automatic window activation. The extension can automatically start with ChatGPT or custom pages and can also be manually activated using the shortcut `Alt+Shift+S`. Here are the download channels:
+AiShort (ChatGPT Shortcut) is a versatile extension compatible with Chrome, Edge, Firefox, and other Chromium-based browsers. This extension not only features the functionality of the web version of ChatGPT Shortcut but also adds unique features such as a sidebar and automatic window activation. The extension can automatically start with ChatGPT or custom pages and can also be manually activated using the shortcut `Alt+Shift+S`. Here are the download channels:
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
