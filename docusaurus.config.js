@@ -17,7 +17,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://www.aishort.top",
+  url: "https://aishort.nextai.date",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -105,16 +105,23 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
+          /*
           {
             to: "docs",
             label: "📘 使用说明",
             position: "left",
           },
+          */
           {
             to: "/community-prompts",
             label: "🏘️ 社区提示词",
             position: "left",
           },
+          {
+            label: "🤖️ NextAI",
+            href: "https://nextai.date",
+          },
+          /*
           {
             type: "dropdown",
             label: "🛠️ 应用工具",
@@ -165,23 +172,14 @@ const config = {
               },
             ],
           },
+          */
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
-          {
-            href: "https://github.com/rockbenben/ChatGPT-Shortcut",
-            position: "right",
-            className: "header-github-link",
-          },
-          {
-            href: "https://discord.gg/PZTQfJ4GjX",
-            position: "right",
-            className: "header-discord-link",
-          },
         ],
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut)`,
+        copyright: `Copyright © ${new Date().getFullYear()} ChatGPT Shortcut`,
       },
       prism: {
         theme: prismThemes.github,
