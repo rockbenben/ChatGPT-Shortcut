@@ -118,7 +118,7 @@ const config = {
             position: "left",
           },
           {
-            label: "🤖️ NextAI",
+            label: "🚀 NextAI",
             href: "https://nextai.date",
           },
           /*
