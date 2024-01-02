@@ -158,7 +158,7 @@ const LoginPage = () => {
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item>
-        <Space size='middle'>
+        <Space size='middle' wrap>
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.login'>登录</Translate>
           </Button>
@@ -220,7 +220,7 @@ const LoginPage = () => {
           </a>
           。
         </Checkbox>
-        <Space size='middle'>
+        <Space size='middle' wrap>
           <Button htmlType='submit' loading={loading}>
             <Translate id='button.register'>注册</Translate>
           </Button>
@@ -251,7 +251,7 @@ const LoginPage = () => {
       </Form.Item>
       <Form.Item>
         <Button htmlType='submit' loading={loading}>
-          <Translate id='button.sendResetEmail'>发送重置邮件</Translate>
+          <Translate id='button.sendResetEmail'>发送密码重置邮件</Translate>
         </Button>
       </Form.Item>
     </Form>
