@@ -4,7 +4,7 @@ AiShort (ChatGPT Shortcut) এক্সটেনশনটি Chrome, Edge, Firef
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: অপেক্ষারত
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 তাছাড়া, আমরা [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) নামে একটি গ্রিসমাঙ্কি স্ক্রিপ্টও সরবরাহ করেছি, যা ব্যবহারকারীদের কাস্টম ডোমেইনে AiShort সাইডবার ব্যবহারে সক্ষম করে। তবে, ChatGPT পৃষ্ঠায় স্ক্রিপ্ট ইনজেকশনের সীমাবদ্ধতার কারণে, সাইডবার ফাংশনালিটি পপ-আপ আকারে অ্যাক্টিভ হয়ে থাকে।

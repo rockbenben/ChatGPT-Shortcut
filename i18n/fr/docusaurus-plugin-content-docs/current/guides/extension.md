@@ -4,7 +4,7 @@ L'extension AiShort (raccourci ChatGPT) est compatible avec Chrome, Edge, Firefo
 
 - **Chrome** : [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge** : [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox** : En attente
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub** : [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 De plus, nous proposons également un script Greasemonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) - qui permet aux utilisateurs de personnaliser les domaines correspondants et d'utiliser la barre latérale AiShort sur n'importe quel site web. Cependant, veuillez noter que, en raison des restrictions d'injection de scripts sur la page ChatGPT, la fonction de barre latérale du script ne fonctionnera que sous forme de fenêtre contextuelle sur la page ChatGPT.

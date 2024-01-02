@@ -4,7 +4,7 @@
 
 - **Chrome**: [متجر Chrome للإضافات](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [إضافات Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: في انتظار الإصدار
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [إصدار GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 بالإضافة إلى ذلك، نوفر أيضًا سكريبت Greasemonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)، والذي يتيح للمستخدمين تخصيص أسماء النطاقات المطابقة لاستخدام الشريط الجانبي AiShort على أي موقع. ومع ذلك، يُرجى الانتباه إلى أنه بسبب قيود إدراج السكريبتات في صفحة ChatGPT، فإن وظيفة الشريط الجانبي للسكريبت تُفعل من خلال نافذة منبثقة على صفحة ChatGPT.

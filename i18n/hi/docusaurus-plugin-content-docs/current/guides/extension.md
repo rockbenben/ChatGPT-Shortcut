@@ -1,11 +1,11 @@
-```
+
 # ब्राउज़र एक्सटेंशन
 
 AiShort (ChatGPT Shortcut) एक्सटेंशन को Chrome, Edge, Firefox और अन्य Chromium आधारित ब्राउज़रों के साथ संगति है। यह एक्सटेंशन केवल वेब पृष्ठ संस्करण ChatGPT की सुविधाओं के साथ ही, साथ ही साथ साइडबार और स्वचालित विंडो जैसी अनूठी विशेषताएँ भी जोड़ता है। यह एक्सटेंशन ChatGPT या व्यक्तिगत पृष्ठ के साथ स्वचालित रूप से शुरू हो सकता है, साथ ही `Alt+Shift+S` शॉर्टकट के माध्यम से मैन्युअल रूप से भी सक्षम है। निम्नलिखित डाउनलोड स्रोत हैं:
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: अपेक्षा की जा रही है
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 इसके अलावा, हम [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) नामक एक ग्रीसी फ़ॉर्क स्क्रिप्ट भी प्रदान करते हैं, जिसकी मदद से उपयोगकर्ता डोमेन की अनुकूलन कर सकते हैं, किसी भी वेबसाइट पर AiShort साइडबार का उपयोग कर सकते हैं। हो सकता है कि ChatGPT पृष्ठों पर स्क्रिप्ट की सीमित अंतर्निहित सामग्री प्रवर्तन की सीमा के कारण, स्क्रिप्ट के साइडबार कार्यक्षेत्र ChatGPT पृष्ठों पर पॉपअप के रूप में सक्रिय किया जाता है।
