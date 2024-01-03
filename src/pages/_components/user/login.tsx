@@ -157,26 +157,23 @@ const LoginPage = () => {
       <Form.Item name="password" rules={rules.password}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
-      <Form.Item>
-        <Space size="middle" wrap>
-          <Button htmlType="submit" loading={loading}>
-            <Translate id="button.login">登录</Translate>
+      <Space size="middle" wrap>
+        <Button htmlType="submit" loading={loading}>
+          <Translate id="button.login">登录</Translate>
+        </Button>
+        <Tooltip
+          title={translate({
+            id: "googleauth.tooltip",
+            message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。",
+          })}>
+          <Button type="primary" onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
+            Login via Google
           </Button>
-          <Tooltip
-            title={translate({
-              id: "googleauth.tooltip",
-              message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。",
-            })}
-          >
-            <Button type="primary" onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
-              Login via Google
-            </Button>
-          </Tooltip>
-          <Button onClick={handleForgotPasswordClick}>
-            <Translate id="button.forgotPassword">忘记密码</Translate>
-          </Button>
-        </Space>
-      </Form.Item>
+        </Tooltip>
+        <Button onClick={handleForgotPasswordClick}>
+          <Translate id="button.forgotPassword">忘记密码</Translate>
+        </Button>
+      </Space>
     </Form>
   );
 
@@ -193,12 +190,13 @@ const LoginPage = () => {
       <Form.Item name="email" rules={rules.email}>
         <Input placeholder={translate({ id: "input.email", message: "邮箱" })} />
       </Form.Item>
-      <Form.Item name="password" rules={rules.password}>
+      <Form.Item name="password" rules={rules.password} style={{ marginBottom: "1px" }}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item
         name="agreement"
         valuePropName="checked"
+        style={{ marginBottom: "1px" }}
         rules={[
           {
             validator: (_, value) =>
@@ -213,8 +211,7 @@ const LoginPage = () => {
                     )
                   ),
           },
-        ]}
-      >
+        ]}>
         <Checkbox>
           <Translate id="agreement.text">点此同意</Translate>
           <a href="/docs/terms-of-service">
@@ -235,8 +232,7 @@ const LoginPage = () => {
           title={translate({
             id: "googleauth.tooltip",
             message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。",
-          })}
-        >
+          })}>
           <Button type="primary" onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
             Login via Google
           </Button>
@@ -257,8 +253,7 @@ const LoginPage = () => {
               message: "请输入您的邮箱！",
             }),
           },
-        ]}
-      >
+        ]}>
         <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
