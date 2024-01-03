@@ -1,6 +1,4 @@
-import React, {
-  useContext, useState, useMemo, useEffect, useCallback, useRef,
-} from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback, useRef } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -20,10 +18,7 @@ import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
 import { sortedUsers } from "@site/src/data/users.ko";
 
 import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
-import ShowcaseFilterToggle, {
-  type Operator,
-  readOperator,
-} from "@site/src/pages/_components/ShowcaseFilterToggle";
+import ShowcaseFilterToggle, { type Operator, readOperator } from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
 import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
@@ -38,16 +33,15 @@ const ShareButtons = Loadable({
 });
 
 const TITLE = translate({
-  id: 'homepage.title',
-  message:
-    "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
+  id: "homepage.title",
+  message: "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
 });
 const DESCRIPTION = translate({
-  id: 'homepage.description',
+  id: "homepage.description",
   message: "AI Short 是一款用于管理和分享 AI 提示词的工具，帮助用户更有效地定制、保存和共享自己的提示词，以提高生产力。该平台还包括一个提示词分享社区，让用户轻松找到适用于不同场景的指令。",
 });
 const SLOGAN = translate({
-  id: 'homepage.slogan',
+  id: "homepage.slogan",
   message: "让生产力加倍的 AI 快捷指令",
 });
 
@@ -73,27 +67,14 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function filterUsers(
-  users: User[],
-  selectedTags: TagType[],
-  operator: Operator,
-  searchName: string | null
-) {
+function filterUsers(users: User[], selectedTags: TagType[], operator: Operator, searchName: string | null) {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   if (searchName) {
     const lowercaseSearchName = searchName.toLowerCase();
-    // eslint-disable-next-line no-param-reassign
     // 搜索范围
     users = users.filter((user) =>
-      (
-        user[currentLanguage].title +
-        user[currentLanguage].prompt +
-        (user[currentLanguage].description ?? "") +
-        user[currentLanguage].remark
-      )
-        .toLowerCase()
-        .includes(lowercaseSearchName)
+      (user[currentLanguage].title + user[currentLanguage].prompt + (user[currentLanguage].description ?? "") + user[currentLanguage].remark).toLowerCase().includes(lowercaseSearchName)
     );
   }
   if (selectedTags.length === 0) {
@@ -124,19 +105,14 @@ function useFilteredUsers() {
     setSearchName(readSearchName(location.search));
   }, [location]);
 
-  return useMemo(
-    () => filterUsers(sortedUsers, selectedTags, operator, searchName),
-    [selectedTags, operator, searchName]
-  );
+  return useMemo(() => filterUsers(sortedUsers, selectedTags, operator, searchName), [selectedTags, operator, searchName]);
 }
 
 function ShowcaseHeader() {
   return (
     <section className={"text--center"}>
       <div className={styles.hideOnMobile}>
-        <Heading as='h1'>
-          AI Short
-        </Heading>
+        <Heading as="h1">AI Short</Heading>
         <p>{SLOGAN}</p>
       </div>
       <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
@@ -160,22 +136,20 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
     setShowUserFavs(!showUserFavs);
   };
 
-  let modifiedTagList = TagList.filter(tag => tag !== "contribute");
+  let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
   if (userAuth) {
-    modifiedTagList = modifiedTagList.filter(tag => tag !== "favorite");
+    modifiedTagList = modifiedTagList.filter((tag) => tag !== "favorite");
   }
 
   // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
-  const togglePromptLanguage = (
-    <Translate id='toggle_prompt_language'>切换 Prompt 语言</Translate>
-  );
+  const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
   return (
-    <section className='container'>
+    <section className="container">
       <div className={styles.filterCheckbox}>
         <div>
-          <Heading as='h2'>
-            <Translate id='showcase.filters.title'>Filters</Translate>
+          <Heading as="h2">
+            <Translate id="showcase.filters.title">Filters</Translate>
           </Heading>
         </div>
         {currentLanguage !== "en" && (
@@ -200,38 +174,34 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
             <li className={styles.checkboxListItem} onClick={handleUserPrompts}>
               <ShowcaseTooltip
                 text={translate({
-                  id: 'myprompt.tooltip',
+                  id: "myprompt.tooltip",
                   message: "我添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
                 })}
-                anchorEl='#__docusaurus'>
+                anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
-                  tag='myprompt'
+                  tag="myprompt"
                   label={translate({
-                    id: 'myprompt',
+                    id: "myprompt",
                     message: "我的提示词",
                   })}
-                  icon={
-                    <EditOutlined style={{ marginLeft: "5px" }} />
-                  }
+                  icon={<EditOutlined style={{ marginLeft: "5px" }} />}
                 />
               </ShowcaseTooltip>
             </li>
             <li className={styles.checkboxListItem} onClick={handleUserFavs}>
               <ShowcaseTooltip
                 text={translate({
-                  id: 'myfavorite.tooltip',
+                  id: "myfavorite.tooltip",
                   message: "我收藏的提示词，包括社区提示词。",
                 })}
-                anchorEl='#__docusaurus'>
+                anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
-                  tag='myfavorite'
+                  tag="myfavorite"
                   label={translate({
-                    id: 'link.myfavorite',
+                    id: "link.myfavorite",
                     message: "我的收藏",
                   })}
-                  icon={
-                    <HeartOutlined style={{ marginLeft: "5px" }} />
-                  }
+                  icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
                 />
               </ShowcaseTooltip>
             </li>
@@ -251,10 +221,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 
           return (
             <li key={i} className={styles.checkboxListItem} onClick={handleTagClick}>
-              <ShowcaseTooltip
-                id={id}
-                text={description}
-                anchorEl='#__docusaurus'>
+              <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
                   tag={tag}
                   id={id}
@@ -285,10 +252,10 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
               id: "community.tag.tooltip",
               message: "社区分享的精选提示词",
             })}
-            anchorEl='#__docusaurus'>
-            <Link to='/community-prompts'>
+            anchorEl="#__docusaurus">
+            <Link to="/community-prompts">
               <ShowcaseTagSelect
-                tag='communityprompt'
+                tag="communityprompt"
                 label={translate({
                   id: "community.tag",
                   message: "社区精选",
@@ -353,7 +320,7 @@ function SearchBar() {
     <div className={styles.searchContainer}>
       <input
         ref={searchRef}
-        id='searchbar'
+        id="searchbar"
         placeholder={translate({
           message: "Search for prompts...",
           id: "showcase.searchBar.placeholder",
@@ -369,9 +336,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const [copyCounts, setCopyCounts] = useState({});
 
   const { userAuth } = useContext(AuthContext);
-  const [userLoves, setUserLoves] = useState(
-    () => userAuth?.data?.favorites?.loves || []
-  );
+  const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
   // 当 userAuth 改变时，更新 userLoves 的值
@@ -384,7 +349,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
       ([favorites, others], user) => {
         let updatedUser = { ...user }; // 创建新对象，避免直接修改
         if (userAuth && updatedUser.tags.includes("favorite")) {
-          updatedUser.tags = updatedUser.tags.filter(tag => tag !== "favorite");
+          updatedUser.tags = updatedUser.tags.filter((tag) => tag !== "favorite");
         }
         if (userLoves && userLoves.includes(updatedUser.id) && !updatedUser.tags.includes("favorite")) {
           updatedUser.tags = [...updatedUser.tags, "favorite"];
@@ -400,9 +365,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     );
   }, [sortedUsers, userAuth, userLoves]);
 
-  const displayedOtherUsers = showAllOtherUsers
-    ? otherUsers
-    : otherUsers.slice(0, 24);
+  const displayedOtherUsers = showAllOtherUsers ? otherUsers : otherUsers.slice(0, 24);
 
   favoriteUsers.sort((a, b) => b.weight - a.weight);
   otherUsers.sort((a, b) => b.weight - a.weight);
@@ -427,12 +390,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
   if (filteredUsers.length === 0) {
     return (
-      <section className='margin-top--lg margin-bottom--xl'>
-        <div className='container padding-vert--md text--center'>
-          <Heading as='h2'>
-            <Translate id='showcase.usersList.noResult'>
-              😒 找不到结果，请缩短搜索词
-            </Translate>
+      <section className="margin-top--lg margin-bottom--xl">
+        <div className="container padding-vert--md text--center">
+          <Heading as="h2">
+            <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
           </Heading>
           <SearchBar />
         </div>
@@ -442,39 +403,23 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   if (showUserFavs) {
     // 如果 showUserFavs 为 true，则不渲染 Favorites 区块
     return (
-      <section className='margin-top--lg margin-bottom--xl'>
+      <section className="margin-top--lg margin-bottom--xl">
         {filteredUsers.length === sortedUsers.length ? (
           <>
-            <div className='container margin-top--lg'>
-              <div
-                className={clsx(
-                  "margin-bottom--md",
-                  styles.showcaseFavoriteHeader
-                )}>
-                <Heading as='h2'>
-                  <Translate id='showcase.usersList.allUsers'>
-                    All prompts
-                  </Translate>
+            <div className="container margin-top--lg">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <Heading as="h2">
+                  <Translate id="showcase.usersList.allUsers">All prompts</Translate>
                 </Heading>
                 <SearchBar />
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {displayedOtherUsers.map((user) => (
-                  <ShowcaseCard
-                    key={user.id}
-                    user={user}
-                    isDescription={isDescription}
-                    copyCount={copyCounts[user.id] || 0}
-                    onCopy={handleCardCopy}
-                    onLove={setUserLoves}
-                  />
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
                 ))}
               </ul>
               {!showAllOtherUsers && otherUsers.length > 50 && (
-                <Link
-                  className='button button--secondary'
-                  style={{ width: "100%" }}
-                  onClick={() => setShowAllOtherUsers(true)}>
+                <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                   {<ArrowDownOutlined />}
                   <Translate>加载更多</Translate>
                 </Link>
@@ -482,24 +427,13 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </div>
           </>
         ) : (
-          <div className='container'>
-            <div
-              className={clsx(
-                "margin-bottom--md",
-                styles.showcaseFavoriteHeader
-              )}>
+          <div className="container">
+            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
               <SearchBar />
             </div>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {filteredUsers.map((user) => (
-                <ShowcaseCard
-                  key={user.id}
-                  user={user}
-                  isDescription={isDescription}
-                  copyCount={copyCounts[user.id] || 0}
-                  onCopy={handleCardCopy}
-                  onLove={setUserLoves}
-                />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
               ))}
             </ul>
           </div>
@@ -510,61 +444,36 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
   // 正常渲染 Favorites 区块
   return (
-    <section className='margin-top--lg margin-bottom--sm'>
+    <section className="margin-top--lg margin-bottom--sm">
       {filteredUsers.length === sortedUsers.length ? (
         <>
           <div className={styles.showcaseFavorite}>
-            <div className='container'>
-              <div
-                className={clsx(
-                  "margin-bottom--md",
-                  styles.showcaseFavoriteHeader
-                )}>
-                <Heading as='h2'>
-                  <Translate id='showcase.favoritesList.title'>
-                    Favorites
-                  </Translate>
+            <div className="container">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <Heading as="h2">
+                  <Translate id="showcase.favoritesList.title">Favorites</Translate>
                 </Heading>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
                 <SearchBar />
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCard
-                    key={user.id}
-                    user={user}
-                    isDescription={isDescription}
-                    copyCount={copyCounts[user.id] || 0}
-                    onCopy={handleCardCopy}
-                    onLove={setUserLoves}
-                  />
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
                 ))}
               </ul>
             </div>
           </div>
-          <div className='container margin-top--lg'>
-            <Heading as='h2' className={styles.showcaseHeader}>
-              <Translate id='showcase.usersList.allUsers'>
-                All prompts
-              </Translate>
+          <div className="container margin-top--lg">
+            <Heading as="h2" className={styles.showcaseHeader}>
+              <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {displayedOtherUsers.map((user) => (
-                <ShowcaseCard
-                  key={user.id}
-                  user={user}
-                  isDescription={isDescription}
-                  copyCount={copyCounts[user.id] || 0}
-                  onCopy={handleCardCopy}
-                  onLove={setUserLoves}
-                />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
               ))}
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
-              <Link
-                className='button button--secondary'
-                style={{ width: "100%" }}
-                onClick={() => setShowAllOtherUsers(true)}>
+              <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                 {<ArrowDownOutlined />}
                 <Translate>加载更多</Translate>
               </Link>
@@ -572,24 +481,13 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
           </div>
         </>
       ) : (
-        <div className='container'>
-          <div
-            className={clsx(
-              "margin-bottom--md",
-              styles.showcaseFavoriteHeader
-            )}>
+        <div className="container">
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
-              <ShowcaseCard
-                key={user.id}
-                user={user}
-                isDescription={isDescription}
-                copyCount={copyCounts[user.id] || 0}
-                onCopy={handleCardCopy}
-                onLove={setUserLoves}
-              />
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
             ))}
           </ul>
         </div>
@@ -610,7 +508,7 @@ export default function Showcase(): JSX.Element {
   }, []);
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className='margin-vert--md'>
+      <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseHeader />
           <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />

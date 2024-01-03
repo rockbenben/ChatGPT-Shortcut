@@ -1,5 +1,5 @@
 import { sortBy } from "@site/src/utils/jsUtils";
-import { User } from './User.d';
+import { User } from "./User.d";
 import UsersData from "./prompt_de.json";
 
 const Users: User[] = UsersData as User[];

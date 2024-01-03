@@ -1,5 +1,5 @@
 import axios from "axios";
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 const API_URL1 = "https://api.newzone.top/strapi-google-auth"; // http://localhost:1337  https://api.newzone.top
 const API_URL = "https://gauth.aishort.top/strapi-google-auth";
@@ -32,8 +32,8 @@ export async function authenticateUserWithGoogle(code) {
     return response.data.data;
   } catch (error) {
     console.error("Error authenticating user with Google:", error);
-    if (error.code === 'ECONNABORTED') {
-      throw new Error('Request timed out. Please try again.');
+    if (error.code === "ECONNABORTED") {
+      throw new Error("Request timed out. Please try again.");
     } else {
       throw error;
     }
@@ -58,11 +58,7 @@ export async function getAuthenticatedUserDetails(token) {
 // 为用户账户创建/更新密码
 export async function updateUserPassword(newPassword) {
   try {
-    const response = await axios.post(
-      `${API_URL}/update-password`,
-      { password: newPassword },
-      config
-    );
+    const response = await axios.post(`${API_URL}/update-password`, { password: newPassword }, config);
     return response.data; // The response should confirm the password update
   } catch (error) {
     console.error("Error updating user password:", error);

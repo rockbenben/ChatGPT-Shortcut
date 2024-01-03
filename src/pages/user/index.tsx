@@ -25,11 +25,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await changePassword(values);
-      message.success(
-        <Translate id='message.changePassword.success'>
-          密码修改成功！
-        </Translate>
-      );
+      message.success(<Translate id="message.changePassword.success">密码修改成功！</Translate>);
     } catch (error) {
       console.error(
         translate({
@@ -38,11 +34,7 @@ const UserProfile = () => {
         }),
         error
       );
-      message.error(
-        <Translate id='message.changePassword.error'>
-          密码修改失败，请稍后重试
-        </Translate>
-      );
+      message.error(<Translate id="message.changePassword.error">密码修改失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -52,11 +44,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(
-        <Translate id='message.forgotPassword.success'>
-          密码重置邮件已发送！
-        </Translate>
-      );
+      message.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
     } catch (error) {
       console.error(
         translate({
@@ -65,20 +53,14 @@ const UserProfile = () => {
         }),
         error
       );
-      message.error(
-        <Translate id='message.forgotPassword.error'>
-          发送密码重置邮件失败，请稍后重试
-        </Translate>
-      );
+      message.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
   };
 
   if (!userAuth) {
-    return (
-      <Spin tip={<Translate id='message.loading'>Loading...</Translate>} />
-    );
+    return <Spin tip={<Translate id="message.loading">Loading...</Translate>} />;
   }
 
   const items = [
@@ -88,7 +70,7 @@ const UserProfile = () => {
       children: (
         <Form onFinish={onFinishChangePassword}>
           <Form.Item
-            name='currentPassword'
+            name="currentPassword"
             rules={[
               {
                 required: true,
@@ -106,7 +88,7 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item
-            name='newPassword'
+            name="newPassword"
             rules={[
               {
                 required: true,
@@ -124,7 +106,7 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item
-            name='confirmPassword'
+            name="confirmPassword"
             rules={[
               {
                 required: true,
@@ -142,8 +124,8 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button htmlType='submit' loading={loading}>
-              <Translate id='button.changePassword'>修改密码</Translate>
+            <Button htmlType="submit" loading={loading}>
+              <Translate id="button.changePassword">修改密码</Translate>
             </Button>
           </Form.Item>
         </Form>
@@ -155,7 +137,7 @@ const UserProfile = () => {
       children: (
         <Form onFinish={onFinishForgotPassword}>
           <Form.Item
-            name='email'
+            name="email"
             rules={[
               {
                 required: true,
@@ -173,8 +155,8 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button htmlType='submit' loading={loading}>
-              <Translate id='button.sendResetEmail'>发送重置邮件</Translate>
+            <Button htmlType="submit" loading={loading}>
+              <Translate id="button.sendResetEmail">发送重置邮件</Translate>
             </Button>
           </Form.Item>
         </Form>
@@ -185,26 +167,24 @@ const UserProfile = () => {
   return (
     <Layout>
       <div style={{ width: 600, margin: "auto", padding: "50px 0" }}>
-      <Space>
-        <Link to='/'>
-          <HomeOutlined /> <Translate id='link.home'>返回首页</Translate>
-        </Link>
-        <Link to='/user/favorite'>
-          <HeartOutlined /> <Translate id='link.myfavorite'>我的收藏</Translate>
-        </Link>
+        <Space>
+          <Link to="/">
+            <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+          </Link>
+          <Link to="/user/favorite">
+            <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
+          </Link>
         </Space>
         <Card title={translate({ id: "title.userInfo", message: "用户信息" })}>
           <p>
-            <Translate id='userInfo.username'>用户名：</Translate>{" "}
-            {userAuth.data.username}
+            <Translate id="userInfo.username">用户名：</Translate> {userAuth.data.username}
           </p>
           <p>
-            <Translate id='userInfo.email'>邮箱：</Translate>{" "}
-            {userAuth.data.email}
+            <Translate id="userInfo.email">邮箱：</Translate> {userAuth.data.email}
           </p>
         </Card>
         <Card style={{ marginTop: 20 }}>
-          <Tabs type='card' items={items} />
+          <Tabs type="card" items={items} />
         </Card>
       </div>
     </Layout>
@@ -218,4 +198,3 @@ export default function UserPapge() {
     </AuthProvider>
   );
 }
-

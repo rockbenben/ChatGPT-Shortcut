@@ -58,15 +58,15 @@ function PromptPage({ prompt }) {
 
   return (
     <Layout title={title} description={remark}>
-      <Row justify='center' style={{ marginTop: "20px" }}>
+      <Row justify="center" style={{ marginTop: "20px" }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
           <Card
-            className='shadow--md'
+            className="shadow--md"
             title={
               <span>
                 {title} <Badge count={"Weight: " + weight} style={{ backgroundColor: "#52c41a" }} />
                 <button className={clsx("button button--secondary button--sm")} style={{ marginLeft: "6px" }} onClick={handleCopyClick}>
-                  {copied ? <Translate id='theme.CodeBlock.copied'>已复制</Translate> : <Translate id='theme.CodeBlock.copy'>复制</Translate>}
+                  {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
                 </button>
               </span>
             }
@@ -78,7 +78,7 @@ function PromptPage({ prompt }) {
               ) : null
             }>
             <p className={styles.showcaseCardBody}>👉 {remark}</p>
-            <Tooltip title={<Translate id='tooltip.switchLang'>点击切换显示语言</Translate>}>
+            <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
               <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
                 {mainPrompt}
               </p>
@@ -86,17 +86,21 @@ function PromptPage({ prompt }) {
             <Space wrap>
               {tags.map((tag) => (
                 <Link to={"/?tags=" + tag}>
-                  <Tag color='blue' key={tag}>
+                  <Tag color="blue" key={tag}>
                     {tag}
                   </Tag>
                 </Link>
               ))}
             </Space>
             <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
-              <Translate id='comments.info'>请在下方回复您对本提示词的意见、想法或分享。</Translate>
+              <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Typography.Paragraph>{" "}
             <ShareButtons shareUrl={url} title={`${title}: ${remark}`} popOver={true} />
-            {userAuth && userAuth.data && userAuth.data.id ? <Comments pageId={prompt.id} currentUserId={userAuth.data.id} type="page" /> : <Comments pageId={prompt.id} currentUserId={0} type="page" />}
+            {userAuth && userAuth.data && userAuth.data.id ? (
+              <Comments pageId={prompt.id} currentUserId={userAuth.data.id} type="page" />
+            ) : (
+              <Comments pageId={prompt.id} currentUserId={0} type="page" />
+            )}
           </Card>
         </Col>
       </Row>

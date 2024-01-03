@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
 import { EditOutlined } from "@ant-design/icons";
@@ -32,12 +32,12 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
       await submitPrompt(values);
       await refreshUserAuth();
       //window.location.reload();
-      message.success(<Translate id='message.success'>词条提交成功！</Translate>);
-      message.success(<Translate id='message.success1'>点击标签「我的提示词」查看已添加的自定义提示词。</Translate>);
+      message.success(<Translate id="message.success">词条提交成功！</Translate>);
+      message.success(<Translate id="message.success1">点击标签「我的提示词」查看已添加的自定义提示词。</Translate>);
       setOpen(false);
     } catch (err) {
       console.error(err);
-      message.error(<Translate id='message.error'>词条提交失败，请稍后重试</Translate>);
+      message.error(<Translate id="message.error">词条提交失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -50,20 +50,20 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     return (
       <>
         {!hideLinks.userCenter && (
-          <Link to='/user' style={{ marginRight: "10px" }}>
-            <Translate id='link.user'>个人中心</Translate>
+          <Link to="/user" style={{ marginRight: "10px" }}>
+            <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to='/user/favorite' style={{ marginRight: "10px" }}>
-            <Translate id='link.myfavorite'>我的收藏</Translate>
+          <Link to="/user/favorite" style={{ marginRight: "10px" }}>
+            <Translate id="link.myfavorite">我的收藏</Translate>
           </Link>
         )}
-        <Link className='button button--secondary' onClick={handleLogout} style={{ marginRight: "10px" }}>
-          <Translate id='button.logout'>注销</Translate>
+        <Link className="button button--secondary" onClick={handleLogout} style={{ marginRight: "10px" }}>
+          <Translate id="button.logout">注销</Translate>
         </Link>
-        <Link className='button button--primary' onClick={() => setOpen(true)}>
-          <EditOutlined style={{ marginRight: "5px" }} /> <Translate id='link.addprompt'>添加提示词</Translate>
+        <Link className="button button--primary" onClick={() => setOpen(true)}>
+          <EditOutlined style={{ marginRight: "5px" }} /> <Translate id="link.addprompt">添加提示词</Translate>
         </Link>
         <Modal
           title={translate({
@@ -75,7 +75,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           onCancel={() => setOpen(false)}>
           <Form form={form} onFinish={onFinish}>
             <Form.Item
-              name='title'
+              name="title"
               rules={[
                 {
                   required: true,
@@ -93,7 +93,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
               />
             </Form.Item>
             <Form.Item
-              name='description'
+              name="description"
               rules={[
                 {
                   required: true,
@@ -111,7 +111,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
                 rows={4}
               />
             </Form.Item>
-            <Form.Item name='remark'>
+            <Form.Item name="remark">
               <Input
                 placeholder={translate({
                   id: "input.addprompt.remark",
@@ -119,7 +119,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
                 })}
               />
             </Form.Item>
-            <Form.Item name='notes'>
+            <Form.Item name="notes">
               <Input.TextArea
                 placeholder={translate({
                   id: "input.addprompt.notes",
@@ -128,7 +128,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
                 rows={3}
               />
             </Form.Item>
-            <Form.Item name='share' valuePropName='checked'>
+            <Form.Item name="share" valuePropName="checked">
               <Switch
                 defaultChecked
                 onChange={(checked) => {
@@ -143,14 +143,14 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
                   message: "否",
                 })}
               />
-              <Typography.Text type='secondary'>
+              <Typography.Text type="secondary">
                 {" "}
-                <Translate id='message.addprompt.submission'>您是否愿意将该提示词分享到公开页面？</Translate>
+                <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
               </Typography.Text>
             </Form.Item>
             <Form.Item>
-              <Button htmlType='submit' loading={loading} style={{ marginTop: "16px" }}>
-                <Translate id='button.addPrompt'>添加 Prompt</Translate>
+              <Button htmlType="submit" loading={loading} style={{ marginTop: "16px" }}>
+                <Translate id="button.addPrompt">添加 Prompt</Translate>
               </Button>
             </Form.Item>
           </Form>
@@ -160,11 +160,11 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   } else {
     return (
       <>
-        <Link className='button button--secondary' onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
-          <Translate id='button.login'>登录</Translate>
+        <Link className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+          <Translate id="button.login">登录</Translate>
         </Link>
-        <Link className='button button--primary' to='/community-prompts'>
-          <Translate id='showcase.header.button'>🙏 分享你的提示词</Translate>
+        <Link className="button button--primary" to="/community-prompts">
+          <Translate id="showcase.header.button">🙏 分享你的提示词</Translate>
         </Link>
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />

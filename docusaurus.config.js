@@ -4,15 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 //const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
 //const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title:
-    "AiShort(ChatGPT Shortcut)-AI Prompt Management,Productivity Tool",
+  title: "AiShort(ChatGPT Shortcut)-AI Prompt Management,Productivity Tool",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
@@ -38,7 +37,7 @@ const config = {
     locales: ["en", "zh", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
     localeConfigs: {
       ar: {
-        direction: 'rtl',
+        direction: "rtl",
       },
     },
   },
@@ -53,7 +52,7 @@ const config = {
           sidebarPath: "sidebars.js",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
         gtag: {
           trackingID: "G-YJY639H2J1",
@@ -93,8 +92,7 @@ const config = {
       metadata: [
         {
           name: "keywords",
-          content:
-            "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
+          content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
         },
       ],
       navbar: {

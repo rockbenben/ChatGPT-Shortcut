@@ -27,12 +27,8 @@ function UserFavorite() {
       return;
     }
 
-    const Loves = userAuth.data.favorites
-      ? userAuth.data.favorites.loves || []
-      : [];
-    const commLoves = userAuth.data.favorites
-      ? userAuth.data.favorites.commLoves || []
-      : [];
+    const Loves = userAuth.data.favorites ? userAuth.data.favorites.loves || [] : [];
+    const commLoves = userAuth.data.favorites ? userAuth.data.favorites.commLoves || [] : [];
 
     const fetchCards = async () => {
       try {
@@ -55,9 +51,7 @@ function UserFavorite() {
       try {
         let userLoves;
         let favoriteId;
-        userLoves = isComm
-          ? userAuth.data.favorites.commLoves || []
-          : userAuth.data.favorites.loves || [];
+        userLoves = isComm ? userAuth.data.favorites.commLoves || [] : userAuth.data.favorites.loves || [];
         favoriteId = userAuth.data.favorites.id;
 
         const index = userLoves.indexOf(id);
@@ -79,13 +73,16 @@ function UserFavorite() {
     setShowDescription((prev) => !prev); // toggle the state
   };
 
-  const handleCopyClick = useCallback((index, item, isComm = false) => {
-    const text = isComm ? item.description : item[currentLanguage].prompt;
-    copy(text);
-    const setCopiedIndex = isComm ? setCopiedCommIndex : setCopiedCardIndex;
-    setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 2000);
-  }, [currentLanguage]);
+  const handleCopyClick = useCallback(
+    (index, item, isComm = false) => {
+      const text = isComm ? item.description : item[currentLanguage].prompt;
+      copy(text);
+      const setCopiedIndex = isComm ? setCopiedCommIndex : setCopiedCardIndex;
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 2000);
+    },
+    [currentLanguage]
+  );
 
   const formatCopyCount = (count) => {
     if (count >= 1000) {
@@ -99,13 +96,13 @@ function UserFavorite() {
 
   return (
     <div className={styles.showcaseFavorite}>
-      <div className='container'>
+      <div className="container">
         {cards.length === 0 && comms.length === 0 ? (
           <p>You haven't favorited any prompts yet.</p>
         ) : (
-          <ul className='clean-list showcaseList_Cwj2'>
+          <ul className="clean-list showcaseList_Cwj2">
             {comms.map((comm, index) => (
-              <li key={comm.id} className='card shadow--md'>
+              <li key={comm.id} className="card shadow--md">
                 <div
                   className={clsx("card__body")}
                   style={{
@@ -117,9 +114,7 @@ function UserFavorite() {
                   <div>
                     <div className={clsx(styles.showcaseCardHeader)}>
                       <h4 className={styles.showcaseCardTitle}>
-                        <span
-                          className={styles.showcaseCardLink}
-                          style={{ color: "var(--ifm-color-primary)" }}>
+                        <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
                           {comm.title}
                         </span>
                         <span
@@ -143,21 +138,12 @@ function UserFavorite() {
                     </p>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Button
-                      icon={<CopyOutlined />}
-                      type='default'
-                      onClick={() => handleCopyClick(index, comm, true)}>
-                      {copiedCommIndex === index ? (
-                        <Translate id='theme.CodeBlock.copied'>
-                          已复制
-                        </Translate>
-                      ) : (
-                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                      )}
+                    <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, comm, true)}>
+                      {copiedCommIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
                     </Button>
                     <Button
                       icon={<StarOutlined />}
-                      type='default'
+                      type="default"
                       onClick={() => {
                         removeBookmark(comm.id, true); // isComm set to true
                       }}>
@@ -168,7 +154,7 @@ function UserFavorite() {
               </li>
             ))}
             {cards.map((card, index) => (
-              <li key={card.id} className='card shadow--md'>
+              <li key={card.id} className="card shadow--md">
                 <div
                   className={clsx("card__body")}
                   style={{
@@ -180,45 +166,24 @@ function UserFavorite() {
                   <div>
                     <div className={clsx(styles.showcaseCardHeader)}>
                       <h4 className={styles.showcaseCardTitle}>
-                        <Link
-                          href={"/prompt/" + card.id}
-                          className={styles.showcaseCardLink}>
+                        <Link href={"/prompt/" + card.id} className={styles.showcaseCardLink}>
                           {card[currentLanguage].title}{" "}
                         </Link>
-                        <span className={styles.showcaseCardBody}>
-                          {card.count > 0 && `🔥${formatCopyCount(card.count)}`}
-                        </span>
+                        <span className={styles.showcaseCardBody}>{card.count > 0 && `🔥${formatCopyCount(card.count)}`}</span>
                       </h4>
                     </div>
-                    <p className={styles.showcaseCardBody}>
-                      👉 {card[currentLanguage].remark}
-                    </p>
-                    <p
-                      className={styles.showcaseCardBody}
-                      onClick={() => handleTextClick(index)}
-                      style={{ cursor: "pointer" }}>
-                      {clickedIndex === index &&
-                        showDescription
-                        ? card[currentLanguage].description
-                        : card[currentLanguage].prompt}
+                    <p className={styles.showcaseCardBody}>👉 {card[currentLanguage].remark}</p>
+                    <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>
+                      {clickedIndex === index && showDescription ? card[currentLanguage].description : card[currentLanguage].prompt}
                     </p>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Button
-                      icon={<CopyOutlined />}
-                      type='default'
-                      onClick={() => handleCopyClick(index, card)}>
-                      {copiedCardIndex === index ? (
-                        <Translate id='theme.CodeBlock.copied'>
-                          已复制
-                        </Translate>
-                      ) : (
-                        <Translate id='theme.CodeBlock.copy'>复制</Translate>
-                      )}
+                    <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, card)}>
+                      {copiedCardIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
                     </Button>
                     <Button
                       icon={<StarOutlined />}
-                      type='default'
+                      type="default"
                       onClick={() => {
                         removeBookmark(card.id); // isComm defaults to false
                       }}>
