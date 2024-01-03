@@ -4,7 +4,7 @@ AiShort (ChatGPT Shortcut) 확장 프로그램은 Chrome, Edge, Firefox 및 기�
 
 - **Chrome**: [Chrome 웹 스토어](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge 애드온](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: 대기 중
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub 릴리스](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 또한 우리는 [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 스크립트를 제공하며, 이 스크립트를 사용하면 사용자가 도메인을 사용자 정의하고 어떤 웹 사이트에서든 AiShort 사이드바를 사용할 수 있습니다. 그러나 ChatGPT 페이지에서 스크립트의 사이드바 기능은 팝업을 통해 활성화되는 것에 주의하십시오.

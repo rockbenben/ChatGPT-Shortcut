@@ -4,7 +4,7 @@
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: Ожидается
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Кроме того, мы также предоставляем скрипт для Greasemonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), который позволяет пользователям настраивать совпадение доменных имен и использовать боковую панель AiShort на любом веб-сайте. Однако стоит отметить, что из-за ограничений внедрения сценариев на страницы ChatGPT, функция боковой панели скрипта работает на страницах ChatGPT через всплывающее окно.

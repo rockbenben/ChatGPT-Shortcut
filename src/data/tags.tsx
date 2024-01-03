@@ -1,5 +1,5 @@
 import { translate } from "@docusaurus/Translate";
-import { User, TagType, Tag } from './User.d';
+import { User, TagType, Tag } from "./User.d";
 
 export const Tags: { [type in TagType]: Tag } = {
   favorite: {
@@ -32,8 +32,7 @@ export const Tags: { [type in TagType]: Tag } = {
   code: {
     label: translate({ message: "IT/编程" }),
     description: translate({
-      message:
-        "虽然说是编程，但 ChatGPT 是按照要求给出编程步骤的建议或简单的样例代码，这些代码只能作为测试，仍然需要程序员来修改。",
+      message: "虽然说是编程，但 ChatGPT 是按照要求给出编程步骤的建议或简单的样例代码，这些代码只能作为测试，仍然需要程序员来修改。",
       id: "showcase.tag.code.description",
     }),
     color: "#8c2f00",

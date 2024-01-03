@@ -63,10 +63,10 @@ const Comments = ({ pageId, currentUserId, type }) => {
   // Emoji+Giphy
   const handleEmojiGiphyToggle = (toggleType, identifier) => {
     switch (toggleType) {
-      case 'emojiPicker':
+      case "emojiPicker":
         setShowGiphySearchBox(false);
         setShowGiphySearchBoxReply(false);
-        if (identifier === 'reply') {
+        if (identifier === "reply") {
           setShowEmojiPicker(false);
           setShowEmojiPickerReply((prevShowEmojiPickerReply) => !prevShowEmojiPickerReply);
         } else {
@@ -74,19 +74,19 @@ const Comments = ({ pageId, currentUserId, type }) => {
           setShowEmojiPicker((prevShowEmojiPicker) => !prevShowEmojiPicker);
         }
         break;
-  
-      case 'giphySearchBox':
+
+      case "giphySearchBox":
         setShowEmojiPicker(false);
         setShowEmojiPickerReply(false);
-        if (identifier === 'reply') {
+        if (identifier === "reply") {
           setShowGiphySearchBox(false);
           setShowGiphySearchBoxReply((prevShowGiphySearchBoxReply) => !prevShowGiphySearchBoxReply);
         } else {
           setShowGiphySearchBoxReply(false);
           setShowGiphySearchBox((prevShowGiphySearchBox) => !prevShowGiphySearchBox);
-        };
-      break;
-  
+        }
+        break;
+
       default:
         break;
     }
@@ -215,8 +215,8 @@ const Comments = ({ pageId, currentUserId, type }) => {
     (comment) => (
       <Comment
         actions={[
-          <span key='comment-basic-reply-to' onClick={() => setReplyingTo(comment.id)}>
-            <Translate id='comment.reply'>回复</Translate>
+          <span key="comment-basic-reply-to" onClick={() => setReplyingTo(comment.id)}>
+            <Translate id="comment.reply">回复</Translate>
           </span>,
           /* currentUserId === comment.author?.id && (
             <>
@@ -234,9 +234,9 @@ const Comments = ({ pageId, currentUserId, type }) => {
         content={ReactHtmlParser(marked(comment.content))}
         datetime={moment(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
-          <Form form={replyForm} layout='inline' onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
+          <Form form={replyForm} layout="inline" onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
             <Form.Item
-              name='reply'
+              name="reply"
               rules={[
                 {
                   required: true,
@@ -262,12 +262,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
                 })}
               />
             </Form.Item>
-            <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle('emojiPicker', 'reply')} />
-            {showEmojiPickerReply && <Picker data={data} theme='light' onEmojiSelect={handleEmojiSelectreply} />}
-            <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle('giphySearchBox', 'reply')} style={{ marginLeft: "2px" }} />
+            <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "reply")} />
+            {showEmojiPickerReply && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelectreply} />}
+            <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "reply")} style={{ marginLeft: "2px" }} />
             {showGiphySearchBoxReply && (
               <ReactGiphySearchBox
-                apiKey='36zezehgQXZMRV6Mko784D9OEBm0UHiP'
+                apiKey="36zezehgQXZMRV6Mko784D9OEBm0UHiP"
                 onSelect={(item) => handleGiphySelectreply(item)}
                 masonryConfig={[
                   { columns: 2, imageWidth: 110, gutter: 5 },
@@ -277,16 +277,16 @@ const Comments = ({ pageId, currentUserId, type }) => {
             )}
             {currentUserId ? (
               <>
-                <Button htmlType='submit' type='primary' style={{ marginLeft: "5px" }}>
-                  <Translate id='reply.submit'>回复</Translate>
+                <Button htmlType="submit" type="primary" style={{ marginLeft: "5px" }}>
+                  <Translate id="reply.submit">回复</Translate>
                 </Button>
                 <Button onClick={handleCancelReply} style={{ marginLeft: "10px" }}>
-                  <Translate id='cancel'>取消</Translate>
+                  <Translate id="cancel">取消</Translate>
                 </Button>
               </>
             ) : (
-              <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "5px" }}>
-                <Translate id='button.login'>登录</Translate>
+              <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "5px" }}>
+                <Translate id="button.login">登录</Translate>
               </Button>
             )}
           </Form>
@@ -302,9 +302,9 @@ const Comments = ({ pageId, currentUserId, type }) => {
       <Modal open={isLoginModalOpen} onCancel={handleLoginModalClose} footer={null}>
         <LoginComponent />
       </Modal>
-      <Form form={form} layout='inline' onFinish={handleSubmit} onValuesChange={saveFormValues}>
+      <Form form={form} layout="inline" onFinish={handleSubmit} onValuesChange={saveFormValues}>
         <Form.Item
-          name='comment'
+          name="comment"
           rules={[
             {
               required: true,
@@ -330,12 +330,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
             })}
           />
         </Form.Item>
-        <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle('emojiPicker', 'comment')} />
-        {showEmojiPicker && <Picker data={data} theme='light' onEmojiSelect={handleEmojiSelect} />}
-        <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle('giphySearchBox', 'comment')} style={{ marginLeft: "2px" }} />
+        <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "comment")} />
+        {showEmojiPicker && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelect} />}
+        <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "comment")} style={{ marginLeft: "2px" }} />
         {showGiphySearchBox && (
           <ReactGiphySearchBox
-            apiKey='36zezehgQXZMRV6Mko784D9OEBm0UHiP'
+            apiKey="36zezehgQXZMRV6Mko784D9OEBm0UHiP"
             onSelect={(item) => handleGiphySelect(item)}
             masonryConfig={[
               { columns: 2, imageWidth: 110, gutter: 5 },
@@ -344,22 +344,22 @@ const Comments = ({ pageId, currentUserId, type }) => {
           />
         )}
         {currentUserId ? (
-          <Button htmlType='submit' type='primary' style={{ marginLeft: "5px" }}>
-            <Translate id='comment.add'>提交评论</Translate>
+          <Button htmlType="submit" type="primary" style={{ marginLeft: "5px" }}>
+            <Translate id="comment.add">提交评论</Translate>
           </Button>
         ) : (
-          <Button onClick={handleLoginModalOpen} type='primary' style={{ marginLeft: "5px" }}>
-            <Translate id='button.login'>登录</Translate>
+          <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "5px" }}>
+            <Translate id="button.login">登录</Translate>
           </Button>
         )}
       </Form>
       <List
-        className='comment-list'
+        className="comment-list"
         header={`${totalCommentsCount} ${translate({
           id: "comment.comments",
           message: "评论",
         })}`}
-        itemLayout='horizontal'
+        itemLayout="horizontal"
         dataSource={comments}
         renderItem={renderComment}
       />

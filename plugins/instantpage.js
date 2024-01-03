@@ -6,10 +6,10 @@ module.exports = function () {
       return {
         postBodyTags: [
           {
-            tagName: 'script',
+            tagName: "script",
             attributes: {
-              src: 'https://oss.newzone.top/instantpage.min.js',
-              type: 'module',
+              src: "https://oss.newzone.top/instantpage.min.js",
+              type: "module",
             },
           },
         ],

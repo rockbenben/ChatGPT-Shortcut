@@ -4,18 +4,8 @@ import { message, Tooltip, Button } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import {
-  LinkOutlined,
-  CopyOutlined,
-  HeartOutlined,
-  HeartTwoTone
-} from "@ant-design/icons";
-import {
-  Tags,
-  TagList,
-  type TagType,
-  type Tag,
-} from "@site/src/data/tags";
+import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone } from "@ant-design/icons";
+import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
@@ -24,22 +14,18 @@ import { AuthContext } from "../AuthContext";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-const TagComp = React.forwardRef<HTMLLIElement, Tag>(
-  ({ label, color, description }, ref) => (
-    <li ref={ref} className={styles.tag} title={description}>
-      <span className={styles.textLabel}>{label.toLowerCase()}</span>
-      <span className={styles.colorLabel} style={{ backgroundColor: color }} />
-    </li>
-  )
-);
+const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
+  <li ref={ref} className={styles.tag} title={description}>
+    <span className={styles.textLabel}>{label.toLowerCase()}</span>
+    <span className={styles.colorLabel} style={{ backgroundColor: color }} />
+  </li>
+));
 
 function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
 
   // Keep same order for all tags
-  const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
-    TagList.indexOf(tagObject.tag)
-  );
+  const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
 
   return (
     <>
@@ -47,10 +33,7 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
         const id = `showcase_card_tag_${tagObject.tag}`;
 
         return (
-          <Tooltip
-            key={index}
-            title={tagObject.description}
-            id={id}>
+          <Tooltip key={index} title={tagObject.description} id={id}>
             <TagComp key={index} {...tagObject} />
           </Tooltip>
         );
@@ -67,23 +50,11 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
 
-  const [paragraphText, setParagraphText] = useState(
-    isDescription
-      ? user[currentLanguage].prompt
-      : user[currentLanguage].description
-  );
+  const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
 
   useEffect(() => {
-    setParagraphText(
-      isDescription
-        ? user[currentLanguage].prompt
-        : user[currentLanguage].description
-    );
-  }, [
-    isDescription,
-    user[currentLanguage].prompt,
-    user[currentLanguage].description,
-  ]);
+    setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+  }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
 
   // 点击显示母语
   function handleParagraphClick() {
@@ -93,8 +64,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       setParagraphText(user[currentLanguage].prompt);
     }
   }
-  const userDescription =
-    currentLanguage === "en" ? user.en.prompt : paragraphText;
+  const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
 
   //const image = getCardImage(user);
   // 复制
@@ -173,55 +143,46 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   }, [user.id, onLove, userAuth, refreshUserAuth]);
 
   return (
-    <li key={userTitle} className='card shadow--md'>
+    <li key={userTitle} className="card shadow--md">
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
-          <Heading as='h4' className={styles.showcaseCardTitle}>
-            <Link
-              href={"/prompt/" + user.id}
-              className={styles.showcaseCardLink}>
+          <Heading as="h4" className={styles.showcaseCardTitle}>
+            <Link href={"/prompt/" + user.id} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
-            <span className={styles.showcaseCardBody}>
-              {copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}
-            </span>
+            <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
           </Heading>
           <Button.Group>
             {userAuth && (
               <Tooltip title={user.tags.includes("favorite") ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button type='default' onClick={user.tags.includes("favorite") ? removeFavorite : handleLove}>
+                <Button type="default" onClick={user.tags.includes("favorite") ? removeFavorite : handleLove}>
                   {user.tags.includes("favorite") ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
                 </Button>
               </Tooltip>
             )}
             {!userAuth && user.tags.includes("favorite") && (
-              <Button type='text' disabled>
+              <Button type="text" disabled>
                 <HeartTwoTone twoToneColor="#eb2f96" />
               </Button>
             )}
             <Tooltip title={translate({ id: "copy.button", message: "复制" })}>
-              <Button type='default' onClick={handleCopyClick}>
+              <Button type="default" onClick={handleCopyClick}>
                 <CopyOutlined />
-                {copied && <Translate id='theme.CodeBlock.copied'>已复制</Translate>}
+                {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
               </Button>
             </Tooltip>
           </Button.Group>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p
-          onClick={handleParagraphClick}
-          className={styles.showcaseCardBody}
-          style={{ cursor: "pointer" }}>
+        <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
           {userDescription}
         </p>
       </div>
-      <ul
-        className={clsx("card__footer", styles.cardFooter)}
-        style={{ listStyle: "none" }}>
+      <ul className={clsx("card__footer", styles.cardFooter)} style={{ listStyle: "none" }}>
         <ShowcaseCardTag tags={user.tags} />
         {user.website ? (
           <li style={{ marginLeft: "auto" }}>
-            <a href={user.website} target='_blank' rel='noopener noreferrer'>
+            <a href={user.website} target="_blank" rel="noopener noreferrer">
               <LinkOutlined />
             </a>
           </li>

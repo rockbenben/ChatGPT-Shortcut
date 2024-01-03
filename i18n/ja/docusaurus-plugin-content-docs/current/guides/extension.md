@@ -4,7 +4,7 @@ AiShort（ChatGPT ショートカット）拡張機能は、Chrome、Edge、Fire
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: 待機中
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 さらに、私たちは GreaseMonkey スクリプトである「[ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)」も提供しており、ユーザーはドメインをカスタマイズし、任意のウェブサイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページのスクリプトコンテンツの注入制限のため、スクリプトのサイドバー機能は ChatGPT ページではポップアップとしてアクティベートされます。

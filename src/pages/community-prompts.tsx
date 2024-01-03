@@ -4,45 +4,19 @@ import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
-import {
-  getCommPrompts,
-  voteOnUserPrompt,
-  createFavorite,
-  updateFavorite,
-} from "@site/src/api";
+import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
-import {
-  AuthContext,
-  AuthProvider,
-} from "@site/src/pages/_components/AuthContext";
+import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import {
-  Modal,
-  Typography,
-  Tooltip,
-  message,
-  Pagination,
-  Dropdown,
-  Space,
-  Button,
-  Input,
-} from "antd";
-import {
-  UpOutlined,
-  DownOutlined,
-  HomeOutlined,
-  CopyOutlined,
-  HeartOutlined,
-  LoginOutlined,
-} from "@ant-design/icons";
+import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
 const { Text } = Typography;
 
 function CommunityPrompts() {
-  const TITLE =
-    "AiShort Community Prompts - Share and find interesting prompts";
+  const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
   const DESCRIPTION = translate({
     id: "description.communityPrompts",
     message:
@@ -69,20 +43,8 @@ function CommunityPrompts() {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
   }, [currentPage, sortField, sortOrder, searchTerm]); // 添加 searchTerm 到依赖数组中
 
-  const fetchData = async (
-    currentPage,
-    pageSize,
-    sortField,
-    sortOrder,
-    searchTerm
-  ) => {
-    const response = await getCommPrompts(
-      currentPage,
-      pageSize,
-      sortField,
-      sortOrder,
-      searchTerm
-    );
+  const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
+    const response = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
     setUserPrompts(response.data.data);
     setTotal(response.data.meta.pagination.total);
   };
@@ -197,49 +159,32 @@ function CommunityPrompts() {
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main
-        className='margin-vert--lg'
-        style={{ maxWidth: "1200px", margin: "auto" }}>
+      <main className="margin-vert--lg" style={{ maxWidth: "1200px", margin: "auto" }}>
         <Space wrap style={{ marginBottom: "20px" }}>
-          <Link to='/'>
-            <HomeOutlined /> <Translate id='link.home'>返回首页</Translate>
+          <Link to="/">
+            <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
           </Link>
           {userAuth ? (
-            <Link to='/user/favorite'>
-              <HeartOutlined />{" "}
-              <Translate id='link.myfavorite'>我的收藏</Translate>
+            <Link to="/user/favorite">
+              <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
             </Link>
           ) : (
             <Link onClick={() => setOpen(true)}>
-              <LoginOutlined />{" "}
-              <Translate id='button.login'>登录</Translate>
+              <LoginOutlined /> <Translate id="button.login">登录</Translate>
             </Link>
           )}
 
           <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
-            {sortField === "id" ? (
-              <Translate id='field.id'>发布时间</Translate>
-            ) : (
-              <Translate id='field.upvoteDifference'>支持度</Translate>
-            )}
+            {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
           </Dropdown.Button>
           <Dropdown.Button icon={<DownOutlined />} menu={orderMenuProps}>
-            {sortOrder === "asc" ? (
-              <Translate id='order.ascending'>升序</Translate>
-            ) : (
-              <Translate id='order.descending'>降序</Translate>
-            )}
+            {sortOrder === "asc" ? <Translate id="order.ascending">升序</Translate> : <Translate id="order.descending">降序</Translate>}
           </Dropdown.Button>
-          <Search
-            placeholder='Search'
-            onSearch={onSearch}
-            style={{ width: 200 }}
-            allowClear
-          />
+          <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
         </Space>
-        <ul className='clean-list showcaseList_Cwj2'>
+        <ul className="clean-list showcaseList_Cwj2">
           {userprompts.map((UserPrompt, index) => (
-            <li key={UserPrompt.id} className='card shadow--md'>
+            <li key={UserPrompt.id} className="card shadow--md">
               <div
                 className={clsx("card__body")}
                 style={{
@@ -251,9 +196,7 @@ function CommunityPrompts() {
                 <div>
                   <div className={clsx(styles.showcaseCardHeader)}>
                     <h4 className={styles.showcaseCardTitle}>
-                      <Link className={styles.showcaseCardLink}>
-                        {UserPrompt.attributes.title}
-                      </Link>
+                      <Link className={styles.showcaseCardLink}>{UserPrompt.attributes.title}</Link>
                       <span
                         style={{
                           fontSize: "12px",
@@ -264,17 +207,10 @@ function CommunityPrompts() {
                       </span>
                     </h4>
                   </div>
-                  {UserPrompt.attributes.remark && (
-                    <p className={styles.showcaseCardBody}>
-                      👉 {UserPrompt.attributes.remark}
-                    </p>
-                  )}
+                  {UserPrompt.attributes.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.attributes.remark}</p>}
                   <p className={styles.showcaseCardBody}>
                     {UserPrompt.attributes.notes ? (
-                      <Tooltip
-                        placement='bottom'
-                        title={truncate(UserPrompt.attributes.notes, 300)}
-                        overlayStyle={{ maxWidth: 450 }}>
+                      <Tooltip placement="bottom" title={truncate(UserPrompt.attributes.notes, 300)} overlayStyle={{ maxWidth: 450 }}>
                         {UserPrompt.attributes.description}
                       </Tooltip>
                     ) : (
@@ -289,13 +225,9 @@ function CommunityPrompts() {
                         id: "copy.button",
                         message: "复制",
                       })}>
-                      <Button
-                        type='default'
-                        onClick={() => handleCopyClick(index)}>
+                      <Button type="default" onClick={() => handleCopyClick(index)}>
                         <CopyOutlined />
-                        {copiedIndex === index && (
-                          <Translate id='theme.CodeBlock.copied'>已复制</Translate>
-                        )}
+                        {copiedIndex === index && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
                       </Button>
                     </Tooltip>
                     <Tooltip
@@ -303,7 +235,7 @@ function CommunityPrompts() {
                         message: "收藏",
                       })}>
                       <Button
-                        type='default'
+                        type="default"
                         onClick={() => {
                           if (!userAuth) {
                             message.error("Please log in to vote and bookmark.");
@@ -323,7 +255,7 @@ function CommunityPrompts() {
                         message: "赞",
                       })}>
                       <Button
-                        type='default'
+                        type="default"
                         onClick={() => {
                           if (!userAuth) {
                             message.error("Please log in to vote and bookmark.");
@@ -332,9 +264,7 @@ function CommunityPrompts() {
                           vote(UserPrompt.id, "upvote");
                         }}>
                         <UpOutlined />
-                        {votedUpPromptIds.includes(UserPrompt.id)
-                          ? (UserPrompt.upvotes || 0) + 1
-                          : UserPrompt.upvotes || 0}
+                        {votedUpPromptIds.includes(UserPrompt.id) ? (UserPrompt.upvotes || 0) + 1 : UserPrompt.upvotes || 0}
                       </Button>
                     </Tooltip>
                     <Tooltip
@@ -343,7 +273,7 @@ function CommunityPrompts() {
                         message: "踩",
                       })}>
                       <Button
-                        type='default'
+                        type="default"
                         onClick={() => {
                           if (!userAuth) {
                             message.error("Please log in to vote and bookmark.");
@@ -352,9 +282,7 @@ function CommunityPrompts() {
                           vote(UserPrompt.id, "downvote");
                         }}>
                         <DownOutlined />
-                        {votedDownPromptIds.includes(UserPrompt.id)
-                          ? (UserPrompt.downvotes || 0) + 1
-                          : UserPrompt.downvotes || 0}
+                        {votedDownPromptIds.includes(UserPrompt.id) ? (UserPrompt.downvotes || 0) + 1 : UserPrompt.downvotes || 0}
                       </Button>
                     </Tooltip>
                   </Button.Group>
@@ -364,13 +292,7 @@ function CommunityPrompts() {
           ))}
         </ul>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Pagination
-            current={currentPage}
-            total={total}
-            showQuickJumper
-            showSizeChanger={false}
-            onChange={onChangePage}
-          />
+          <Pagination current={currentPage} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
         <div
           style={{
@@ -378,9 +300,7 @@ function CommunityPrompts() {
             justifyContent: "center",
             marginTop: "10px",
           }}>
-          <Text
-            type='secondary'
-            style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
+          <Text type="secondary" style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
             {translate({
               message:
                 "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
