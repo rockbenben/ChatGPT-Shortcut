@@ -1,7 +1,7 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-// 登陆体系常量
+// Authentication Constants 登陆用户常量
 const API_URL = "https://api.newzone.top/api"; // http://localhost:1337/api  https://api.newzone.top/api
 let authToken;
 if (ExecutionEnvironment.canUseDOM) {
@@ -14,13 +14,14 @@ const config = {
   },
 };
 
-// 清除用户缓存信息：添加/更新收藏、添加/更新/删除自定义 prompt
+// Remove Local Cache 移除本地缓存信息
 function clearUserAllInfoCache() {
   localStorage.removeItem("userAllInfo");
   localStorage.removeItem("userAllInfoCacheExpiration");
 }
 
-// 登陆用户获取
+// 用户获取：获取登录用户的全部信息
+// User Retrieval: Fetches all information of the logged-in user.
 export async function getUserAllInfo() {
   try {
     if (!authToken) {
@@ -56,7 +57,27 @@ export async function getUserAllInfo() {
   }
 }
 
-// 收藏精选prompt、社区prompt
+// update username 更新用户名
+export async function updateUsername(username) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/favorites/update-username`,
+      {
+        data: { newUsername: username },
+      },
+      config
+    );
+
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error updating Username:", error);
+    throw error;
+  }
+}
+
+// 创建收藏：添加新的精选或社区prompt至收藏
+// Create Favorite: Adds a new selected or community prompt to favorites.
 export async function createFavorite(loves, isComm = false) {
   try {
     const response = await axios.post(
@@ -77,7 +98,8 @@ export async function createFavorite(loves, isComm = false) {
   }
 }
 
-// 更新收藏精选prompt、社区prompt
+// 更新收藏：更新现有的精选或社区提示收藏
+// Update Favorite: Updates an existing selected or community prompt favorite.
 export async function updateFavorite(favoriteId, loves, isComm = false) {
   try {
     const response = await axios.put(
@@ -125,7 +147,8 @@ export async function submitPrompt(values) {
   }
 }
 
-// 更新自定义prompt
+// 更新自定义提示：修改现有的自定义提示
+// Update Custom Prompt: Modifies an existing custom prompt.
 export async function updatePrompt(id, values) {
   try {
     const response = await axios.put(
@@ -165,7 +188,7 @@ export async function deletePrompt(id) {
 }
 
 /* Community-prompts 页面管理 */
-// 获取 Community-prompts
+// Get Community Prompts 获取社区精选提示词
 export async function getCommPrompts(page, pageSize, sortField, sortOrder, searchTerm) {
   // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
   const cacheKey = `userPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${searchTerm || "noTerm"}`;
