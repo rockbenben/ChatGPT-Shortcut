@@ -20,6 +20,11 @@ const getRandomColor = () => {
 };
 
 const Comments = ({ pageId, currentUserId, type }) => {
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
+  const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
+  const [showGiphySearchBoxReply, setShowGiphySearchBoxReply] = useState(false);
+
   const [comments, setComments] = useState([]);
   const [form] = Form.useForm();
   const [replyForm] = Form.useForm();
@@ -29,19 +34,15 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
-  const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
-  const [showGiphySearchBoxReply, setShowGiphySearchBoxReply] = useState(false);
 
   const fetchComments = useCallback(async () => {
     const response = await getComments(pageId, currentPage, pageSize, type);
-    const nestedComments = nestComments(response.data);
-    setComments(nestedComments);
-    console.log(response);
-    console.log(response.meta.pagination.total);
-    setTotalCommentsCount(response.meta.pagination.total);
-  }, [pageId, currentPage, pageSize]);
+    if (response) {
+      const nestedComments = nestComments(response.data);
+      setComments(nestedComments);
+      setTotalCommentsCount(response.meta.pagination.total);
+    }
+  }, [pageId, currentPage, pageSize, type]);
 
   useEffect(() => {
     fetchComments();
@@ -59,6 +60,31 @@ const Comments = ({ pageId, currentUserId, type }) => {
       replyForm.setFieldsValue({ reply: savedReply });
     }
   }, []);
+
+  // For better performance, debounced saveFormValues and saveReplyFormValues
+  const debouncedSaveFormValues = debounce((comment) => {
+    if (comment) {
+      localStorage.setItem("savedComment", comment);
+    }
+  }, 300);
+
+  const debouncedSaveReplyFormValues = debounce((reply) => {
+    if (reply) {
+      localStorage.setItem("savedReply", reply);
+    }
+  }, 300);
+
+  const saveFormValues = (changedValues, allValues) => {
+    if (changedValues.comment !== undefined) {
+      debouncedSaveFormValues(changedValues.comment);
+    }
+  };
+
+  const saveReplyFormValues = (changedValues, allValues) => {
+    if (changedValues.reply !== undefined) {
+      debouncedSaveReplyFormValues(changedValues.reply);
+    }
+  };
 
   // Emoji+Giphy
   const handleEmojiGiphyToggle = (toggleType, identifier) => {
@@ -91,19 +117,6 @@ const Comments = ({ pageId, currentUserId, type }) => {
         break;
     }
   };
-
-  // For better performance, debounced saveFormValues and saveReplyFormValues
-  const saveFormValues = debounce(({ comment }) => {
-    if (comment) {
-      localStorage.setItem("savedComment", comment);
-    }
-  }, 300);
-
-  const saveReplyFormValues = debounce(({ reply }) => {
-    if (reply) {
-      localStorage.setItem("savedReply", reply);
-    }
-  }, 300);
 
   const nestComments = (flatComments) => {
     let commentMap = {};
@@ -162,27 +175,6 @@ const Comments = ({ pageId, currentUserId, type }) => {
     setRefresh(!refresh);
   };
 
-  /* const handleUpdate = async (values) => {
-    await updateComment(pageId, editingComment, values.comment, type);
-    editForm.resetFields();
-    setEditingComment(null);
-    setRefresh(!refresh);
-  };
-
-  const handleDelete = async (commentId) => {
-    Modal.confirm({
-      title: "Confirm Delete",
-      content: "Are you sure you want to delete this comment?",
-      okText: "Delete",
-      cancelText: "Cancel",
-      onOk: async () => {
-        await deleteComment(pageId, commentId, type);
-        setReplyingTo(null);
-        setRefresh(!refresh);
-      },
-    });
-  }; */
-
   // handle emoji
   const handleEmojiSelect = (emoji) => {
     const currentComment = form.getFieldValue("comment");
@@ -218,16 +210,6 @@ const Comments = ({ pageId, currentUserId, type }) => {
           <span key="comment-basic-reply-to" onClick={() => setReplyingTo(comment.id)}>
             <Translate id="comment.reply">回复</Translate>
           </span>,
-          /* currentUserId === comment.author?.id && (
-            <>
-              <span onClick={() => setEditingComment(comment.id)}>
-                <Translate id='edit'>编辑</Translate>
-              </span>
-              <span onClick={() => handleDelete(comment.id)}>
-                <Translate id='delete'>删除</Translate>
-              </span>
-            </>
-          ), */
         ]}
         author={comment.author?.name}
         avatar={<Avatar style={{ backgroundColor: getRandomColor(), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
@@ -297,11 +279,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
     [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues]
   );
 
-  return (
-    <>
-      <Modal open={isLoginModalOpen} onCancel={handleLoginModalClose} footer={null}>
-        <LoginComponent />
-      </Modal>
+  const renderForm = () => {
+    if (type === "author") {
+      // 当 type 为 'author' 时，不渲染 Form
+      return null;
+    }
+    return (
       <Form form={form} layout="inline" onFinish={handleSubmit} onValuesChange={saveFormValues}>
         <Form.Item
           name="comment"
@@ -353,6 +336,15 @@ const Comments = ({ pageId, currentUserId, type }) => {
           </Button>
         )}
       </Form>
+    );
+  };
+
+  return (
+    <>
+      <Modal open={isLoginModalOpen} onCancel={handleLoginModalClose} footer={null}>
+        <LoginComponent />
+      </Modal>
+      {renderForm()}
       <List
         className="comment-list"
         header={`${totalCommentsCount} ${translate({

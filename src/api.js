@@ -204,7 +204,7 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     return cachedData;
   } else {
     // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-    let url = `${API_URL}/userprompts?filters[share]=true&filters[promptLength][$gt]=30&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
+    let url = `${API_URL}/userprompts?pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
 
     // 如果存在搜索关键字，那么添加到 URL 中
     if (searchTerm) {
@@ -255,27 +255,21 @@ export function getCards(ids, lang) {
   }
 }
 
-// 批量获取社区 Prompt
 export function getSelectComms(ids) {
-  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
   const cacheKey = `selectComms_${ids.join("_")}`;
   const expirationKey = `${cacheKey}_expiration`;
 
-  // 从 localStorage 中获取缓存的数据和到期时间
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
   const expirationDate = localStorage.getItem(expirationKey);
 
-  // 检查缓存的数据是否还有效
   if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
-    // 如果有效，那么直接使用缓存的数据
     return Promise.resolve(cachedData);
   } else {
     // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
     return axios
-      .post(`${API_URL}/userprompts/bulk`, { ids })
+      .post(`${API_URL}/userprompts/bulk`, { ids }, config)
       .then((response) => {
-        // 将获取到的数据和新的到期时间存储到 localStorage 中
-        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
+        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000;
         localStorage.setItem(cacheKey, JSON.stringify(response));
         localStorage.setItem(expirationKey, String(nextExpirationDate));
 
@@ -362,9 +356,9 @@ export async function resetPassword(values) {
 }
 
 /* 评论系统 */
-// 获取评论
-export async function getComments(pageId, page, pageSize, type = "card") {
-  const cacheKey = `comments_${type}_${pageId}_${page}_${pageSize}`;
+// 按 type 来获取评论
+export async function getComments(id, page, pageSize, type = "card") {
+  const cacheKey = `comments_${type}_${id}_${page}_${pageSize}`;
   const expirationKey = `${cacheKey}_expiration`;
 
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
@@ -375,7 +369,7 @@ export async function getComments(pageId, page, pageSize, type = "card") {
   } else {
     try {
       const response = await axios.get(
-        `${API_URL}/comments/api::${type}.${type}:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
+        `${API_URL}/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
       );
 
       const nextExpirationDate = new Date().getTime() + 1 * 60 * 60 * 1000; // 1 小时后过期
@@ -390,9 +384,9 @@ export async function getComments(pageId, page, pageSize, type = "card") {
   }
 }
 
-function clearCommentsCache(pageId, type = "card") {
+function clearCommentsCache(id, type = "card") {
   Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith(`comments_${type}_${pageId}`)) {
+    if (key.startsWith(`comments_${type}_${id}`)) {
       localStorage.removeItem(key);
       localStorage.removeItem(`${key}_expiration`);
     }
@@ -419,39 +413,6 @@ export async function postComment(pageId, commentContent, threadOf = null, type 
     throw error;
   }
 }
-
-/* // 更新评论
-export async function updateComment(pageId, commentId, commentContent, type = "card") {
-  try {
-    const response = await axios.put(
-      `${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}`,
-      {
-        content: commentContent,
-      },
-      config
-    );
-    // 更新缓存
-    clearCommentsCache(pageId, type);
-    return response;
-  } catch (error) {
-    console.error("Error updating comment:", error);
-    throw error;
-  }
-}
-
-// 删除评论
-export async function deleteComment(pageId, commentId, type = "card") {
-  try {
-    const response = await axios.delete(`${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
-
-    // 更新缓存
-    clearCommentsCache(pageId, type);
-    return response;
-  } catch (error) {
-    console.error("Error deleting comment:", error);
-    throw error;
-  }
-} */
 
 /* 精选提示词的 copy count */
 // 获取所有 cards 的 copy count
