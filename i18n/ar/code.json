@@ -377,10 +377,10 @@
     "message": "معلومات المستخدم"
   },
   "userInfo.username": {
-    "message": "اسم المستخدم:"
+    "message": "اسم المستخدم"
   },
   "userInfo.email": {
-    "message": "بريد:"
+    "message": "بريد"
   },
   "message.success": {
     "message": "تم تقديم الإدخال بنجاح!"

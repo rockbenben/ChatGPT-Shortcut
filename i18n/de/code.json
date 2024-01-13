@@ -377,10 +377,10 @@
     "message": "Benutzerinformationen"
   },
   "userInfo.username": {
-    "message": "Benutzername:"
+    "message": "Benutzername"
   },
   "userInfo.email": {
-    "message": "Briefkasten:"
+    "message": "Briefkasten"
   },
   "message.success": {
     "message": "Der Eintrag wurde erfolgreich übermittelt!"

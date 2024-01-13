@@ -374,10 +374,10 @@
     "message": "información para el usuario"
   },
   "userInfo.username": {
-    "message": "Nombre de usuario:"
+    "message": "Nombre de usuario"
   },
   "userInfo.email": {
-    "message": "Buzón:"
+    "message": "Buzón"
   },
   "message.success": {
     "message": "La entrada se ha enviado correctamente."

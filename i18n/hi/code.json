@@ -374,10 +374,10 @@
     "message": "उपयोगकर्ता जानकारी"
   },
   "userInfo.username": {
-    "message": "उपयोगकर्ता नाम:"
+    "message": "उपयोगकर्ता नाम"
   },
   "userInfo.email": {
-    "message": "मेल:"
+    "message": "मेल"
   },
   "message.success": {
     "message": "प्रविष्टि सफलतापूर्वक सबमिट की गई!"

@@ -374,10 +374,10 @@
     "message": "informations sur l'utilisateur"
   },
   "userInfo.username": {
-    "message": "Nom d'utilisateur :"
+    "message": "Nom d'utilisateur"
   },
   "userInfo.email": {
-    "message": "Boîte aux lettres :"
+    "message": "Boîte aux lettres"
   },
   "message.success": {
     "message": "L'inscription a été soumise avec succès !"
