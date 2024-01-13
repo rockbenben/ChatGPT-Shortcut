@@ -51,6 +51,18 @@ const UserProfile = () => {
     return () => clearTimeout(timer);
   }, [userAuth]);
 
+  if (!userAuth) {
+    return (
+      <Layout>
+        <div style={{ width: 600, margin: "auto", padding: "10px" }}>
+          <Spin tip={<Translate id="message.loading">Loading...</Translate>}>
+            <div style={{ height: 300 }}></div>
+          </Spin>
+        </div>
+      </Layout>
+    );
+  }
+
   const onFinishChangePassword = async (values) => {
     setLoading(true);
     try {
@@ -88,10 +100,6 @@ const UserProfile = () => {
       setLoading(false);
     }
   };
-
-  if (!userAuth) {
-    return <Spin tip={<Translate id="message.loading">Loading...</Translate>} />;
-  }
 
   // User info items
   const useritems = [
