@@ -377,10 +377,10 @@
     "message": "ব্যবহারকারীর তথ্য"
   },
   "userInfo.username": {
-    "message": "ব্যবহারকারীর নাম:"
+    "message": "ব্যবহারকারীর নাম"
   },
   "userInfo.email": {
-    "message": "মেইল:"
+    "message": "মেইল"
   },
   "message.success": {
     "message": "এন্ট্রি সফলভাবে জমা!"

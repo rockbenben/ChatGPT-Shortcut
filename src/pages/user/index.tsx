@@ -1,15 +1,46 @@
 import React, { useContext, useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Card, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
+import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { changePassword, forgotPassword } from "@site/src/api";
-import { HomeOutlined, HeartOutlined } from "@ant-design/icons";
+import { changePassword, forgotPassword, updateUsername } from "@site/src/api";
+import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
   const { userAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+
+  const [editUsername, setEditUsername] = useState(false);
+  const [newUsername, setNewUsername] = useState(userAuth?.data.username);
+  const handleEditUsernameClick = () => {
+    setNewUsername(userAuth.data.username);
+    setEditUsername(true);
+  };
+  const handleUsernameChange = (e) => {
+    setNewUsername(e.target.value);
+  };
+
+  const submitNewUsername = async () => {
+    if (newUsername === userAuth?.data.username) {
+      message.info("No change in username.");
+      setEditUsername(false);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await updateUsername(newUsername);
+      window.location.reload();
+    } catch (error) {
+      console.error("Error updating username:", error);
+      const errorMessage = error?.response?.data?.error?.message || "Unknown error";
+      message.error(`Username update failed: ${errorMessage}`);
+    } finally {
+      setLoading(false);
+      setEditUsername(false);
+    }
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,9 +48,20 @@ const UserProfile = () => {
         window.location.replace("/");
       }
     }, 1000);
-    // 清除计时器以防止内存泄漏
     return () => clearTimeout(timer);
   }, [userAuth]);
+
+  if (!userAuth) {
+    return (
+      <Layout>
+        <div style={{ width: 600, margin: "auto", padding: "10px" }}>
+          <Spin tip={<Translate id="message.loading">Loading...</Translate>}>
+            <div style={{ height: 300 }}></div>
+          </Spin>
+        </div>
+      </Layout>
+    );
+  }
 
   const onFinishChangePassword = async (values) => {
     setLoading(true);
@@ -59,9 +101,36 @@ const UserProfile = () => {
     }
   };
 
-  if (!userAuth) {
-    return <Spin tip={<Translate id="message.loading">Loading...</Translate>} />;
-  }
+  // User info items
+  const useritems = [
+    {
+      key: "1",
+      label: translate({
+        id: "userInfo.username",
+        message: "用户名",
+      }),
+      children: (
+        <p>
+          {editUsername ? (
+            <Input value={newUsername} onChange={handleUsernameChange} addonAfter={<Button type="link" icon={<SaveOutlined />} onClick={submitNewUsername} />} />
+          ) : (
+            <span>
+              {userAuth.data.username}
+              <Button type="link" icon={<EditOutlined />} onClick={handleEditUsernameClick} />
+            </span>
+          )}
+        </p>
+      ),
+    },
+    {
+      key: "2",
+      label: translate({
+        id: "userInfo.email",
+        message: "邮箱",
+      }),
+      children: <p>{userAuth.data.email}</p>,
+    },
+  ];
 
   const items = [
     {
@@ -166,7 +235,7 @@ const UserProfile = () => {
 
   return (
     <Layout>
-      <div style={{ width: 600, margin: "auto", padding: "50px 0" }}>
+      <div style={{ width: 600, margin: "auto", padding: "10px" }}>
         <Space>
           <Link to="/">
             <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
@@ -175,15 +244,8 @@ const UserProfile = () => {
             <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
           </Link>
         </Space>
-        <Card title={translate({ id: "title.userInfo", message: "用户信息" })}>
-          <p>
-            <Translate id="userInfo.username">用户名：</Translate> {userAuth.data.username}
-          </p>
-          <p>
-            <Translate id="userInfo.email">邮箱：</Translate> {userAuth.data.email}
-          </p>
-        </Card>
         <Card style={{ marginTop: 20 }}>
+          <Descriptions title={translate({ id: "title.userInfo", message: "用户信息" })} items={useritems} layout="vertical" />
           <Tabs type="card" items={items} />
         </Card>
       </div>

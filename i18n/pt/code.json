@@ -374,10 +374,10 @@
     "message": "informação do utilizador"
   },
   "userInfo.username": {
-    "message": "Nome de utilizador:"
+    "message": "Nome de utilizador"
   },
   "userInfo.email": {
-    "message": "Caixa de correio:"
+    "message": "Caixa de correio"
   },
   "message.success": {
     "message": "A entrada foi submetida com sucesso!"

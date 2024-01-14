@@ -374,10 +374,10 @@
     "message": "информация о пользователе"
   },
   "userInfo.username": {
-    "message": "Имя пользователя:"
+    "message": "Имя пользователя"
   },
   "userInfo.email": {
-    "message": "Почтовый ящик:"
+    "message": "Почтовый ящик"
   },
   "message.success": {
     "message": "Запись отправлена успешно!"

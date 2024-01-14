@@ -344,10 +344,10 @@
     "message": "사용자 정보"
   },
   "userInfo.username": {
-    "message": "사용자 이름:"
+    "message": "사용자 이름"
   },
   "userInfo.email": {
-    "message": "이메일:"
+    "message": "이메일"
   },
   "message.success": {
     "message": "단어가 성공적으로 제출되었습니다!"

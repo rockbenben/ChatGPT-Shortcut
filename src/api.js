@@ -1,7 +1,7 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-// 登陆体系常量
+// Authentication Constants 登陆用户常量
 const API_URL = "https://api.newzone.top/api"; // http://localhost:1337/api  https://api.newzone.top/api
 let authToken;
 if (ExecutionEnvironment.canUseDOM) {
@@ -14,13 +14,14 @@ const config = {
   },
 };
 
-// 清除用户缓存信息：添加/更新收藏、添加/更新/删除自定义 prompt
+// Remove Local Cache 移除本地缓存信息
 function clearUserAllInfoCache() {
   localStorage.removeItem("userAllInfo");
   localStorage.removeItem("userAllInfoCacheExpiration");
 }
 
-// 登陆用户获取
+// 用户获取：获取登录用户的全部信息
+// User Retrieval: Fetches all information of the logged-in user.
 export async function getUserAllInfo() {
   try {
     if (!authToken) {
@@ -56,7 +57,27 @@ export async function getUserAllInfo() {
   }
 }
 
-// 收藏精选prompt、社区prompt
+// update username 更新用户名
+export async function updateUsername(username) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/favorites/update-username`,
+      {
+        data: { newUsername: username },
+      },
+      config
+    );
+
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error updating Username:", error);
+    throw error;
+  }
+}
+
+// 创建收藏：添加新的精选或社区prompt至收藏
+// Create Favorite: Adds a new selected or community prompt to favorites.
 export async function createFavorite(loves, isComm = false) {
   try {
     const response = await axios.post(
@@ -77,7 +98,8 @@ export async function createFavorite(loves, isComm = false) {
   }
 }
 
-// 更新收藏精选prompt、社区prompt
+// 更新收藏：更新现有的精选或社区提示收藏
+// Update Favorite: Updates an existing selected or community prompt favorite.
 export async function updateFavorite(favoriteId, loves, isComm = false) {
   try {
     const response = await axios.put(
@@ -125,7 +147,8 @@ export async function submitPrompt(values) {
   }
 }
 
-// 更新自定义prompt
+// 更新自定义提示：修改现有的自定义提示
+// Update Custom Prompt: Modifies an existing custom prompt.
 export async function updatePrompt(id, values) {
   try {
     const response = await axios.put(
@@ -165,7 +188,7 @@ export async function deletePrompt(id) {
 }
 
 /* Community-prompts 页面管理 */
-// 获取 Community-prompts
+// Get Community Prompts 获取社区精选提示词
 export async function getCommPrompts(page, pageSize, sortField, sortOrder, searchTerm) {
   // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
   const cacheKey = `userPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${searchTerm || "noTerm"}`;
@@ -181,7 +204,7 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     return cachedData;
   } else {
     // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-    let url = `${API_URL}/userprompts?filters[share]=true&filters[promptLength][$gt]=30&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
+    let url = `${API_URL}/userprompts?pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
 
     // 如果存在搜索关键字，那么添加到 URL 中
     if (searchTerm) {
@@ -232,27 +255,21 @@ export function getCards(ids, lang) {
   }
 }
 
-// 批量获取社区 Prompt
 export function getSelectComms(ids) {
-  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
   const cacheKey = `selectComms_${ids.join("_")}`;
   const expirationKey = `${cacheKey}_expiration`;
 
-  // 从 localStorage 中获取缓存的数据和到期时间
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
   const expirationDate = localStorage.getItem(expirationKey);
 
-  // 检查缓存的数据是否还有效
   if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
-    // 如果有效，那么直接使用缓存的数据
     return Promise.resolve(cachedData);
   } else {
     // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
     return axios
-      .post(`${API_URL}/userprompts/bulk`, { ids })
+      .post(`${API_URL}/userprompts/bulk`, { ids }, config)
       .then((response) => {
-        // 将获取到的数据和新的到期时间存储到 localStorage 中
-        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
+        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000;
         localStorage.setItem(cacheKey, JSON.stringify(response));
         localStorage.setItem(expirationKey, String(nextExpirationDate));
 
@@ -339,9 +356,9 @@ export async function resetPassword(values) {
 }
 
 /* 评论系统 */
-// 获取评论
-export async function getComments(pageId, page, pageSize, type = "card") {
-  const cacheKey = `comments_${type}_${pageId}_${page}_${pageSize}`;
+// 按 type 来获取评论
+export async function getComments(id, page, pageSize, type = "card") {
+  const cacheKey = `comments_${type}_${id}_${page}_${pageSize}`;
   const expirationKey = `${cacheKey}_expiration`;
 
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
@@ -352,7 +369,7 @@ export async function getComments(pageId, page, pageSize, type = "card") {
   } else {
     try {
       const response = await axios.get(
-        `${API_URL}/comments/api::${type}.${type}:${pageId}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
+        `${API_URL}/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
       );
 
       const nextExpirationDate = new Date().getTime() + 1 * 60 * 60 * 1000; // 1 小时后过期
@@ -367,9 +384,9 @@ export async function getComments(pageId, page, pageSize, type = "card") {
   }
 }
 
-function clearCommentsCache(pageId, type = "card") {
+function clearCommentsCache(id, type = "card") {
   Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith(`comments_${type}_${pageId}`)) {
+    if (key.startsWith(`comments_${type}_${id}`)) {
       localStorage.removeItem(key);
       localStorage.removeItem(`${key}_expiration`);
     }
@@ -396,39 +413,6 @@ export async function postComment(pageId, commentContent, threadOf = null, type 
     throw error;
   }
 }
-
-/* // 更新评论
-export async function updateComment(pageId, commentId, commentContent, type = "card") {
-  try {
-    const response = await axios.put(
-      `${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}`,
-      {
-        content: commentContent,
-      },
-      config
-    );
-    // 更新缓存
-    clearCommentsCache(pageId, type);
-    return response;
-  } catch (error) {
-    console.error("Error updating comment:", error);
-    throw error;
-  }
-}
-
-// 删除评论
-export async function deleteComment(pageId, commentId, type = "card") {
-  try {
-    const response = await axios.delete(`${API_URL}/comments/api::${type}.${type}:${pageId}/comment/${commentId}?authorId=${config.headers.Authorization.split(" ")[1]}`, config);
-
-    // 更新缓存
-    clearCommentsCache(pageId, type);
-    return response;
-  } catch (error) {
-    console.error("Error deleting comment:", error);
-    throw error;
-  }
-} */
 
 /* 精选提示词的 copy count */
 // 获取所有 cards 的 copy count

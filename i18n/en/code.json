@@ -599,10 +599,10 @@
     "message": "User Info"
   },
   "userInfo.username": {
-    "message": "Username:"
+    "message": "Username"
   },
   "userInfo.email": {
-    "message": "Mail:"
+    "message": "Mail"
   },
   "message.resetPassword.success": {
     "message": "Password reset successful!"
