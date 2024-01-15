@@ -150,12 +150,8 @@ const config = {
                 to: "/feedback",
               },
               {
-                label: "💬 微信交流",
-                href: "https://img.newzone.top/wechat.svg",
-              },
-              {
-                label: "📧 发送邮件",
-                href: "mailto:learndata@newzone.top",
+                label: "💬 加入 QQ 群",
+                href: "https://img.newzone.top/qq736094782.jpg",
               },
               {
                 label: "📺 加入 Discord",
@@ -166,14 +162,19 @@ const config = {
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
-            href: "https://github.com/rockbenben/ChatGPT-Shortcut",
+            href: "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_cd1sY57tsJVfMThYebXl9_idl7V7wds&authKey=Nf8eCUQYo2TXTv6r3kWmqspXSn1LehqEndq0jtmrhDL1r55Nm5CGyr6VBzi7tKH2&noverify=0&group_code=736094782",
             position: "right",
-            className: "header-github-link",
+            className: "header-qq-link",
           },
           {
             href: "https://discord.gg/PZTQfJ4GjX",
             position: "right",
             className: "header-discord-link",
+          },
+          {
+            href: "https://github.com/rockbenben/ChatGPT-Shortcut",
+            position: "right",
+            className: "header-github-link",
           },
         ],
       },
