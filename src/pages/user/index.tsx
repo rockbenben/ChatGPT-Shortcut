@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { changePassword, forgotPassword, updateUsername } from "@site/src/api";
+import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
@@ -31,6 +31,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await updateUsername(newUsername);
+      updateLocalStorageCache("username", newUsername);
       window.location.reload();
     } catch (error) {
       console.error("Error updating username:", error);
