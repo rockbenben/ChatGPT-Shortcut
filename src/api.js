@@ -20,6 +20,33 @@ function clearUserAllInfoCache() {
   localStorage.removeItem("userAllInfoCacheExpiration");
 }
 
+// 更新 localStorage 缓存的通用函数
+export const updateLocalStorageCache = (setField, updatedData) => {
+  const cachedData = localStorage.getItem("userAllInfo");
+  if (cachedData) {
+    try {
+      const data = JSON.parse(cachedData);
+
+      if (setField === "favorites.loves") {
+        if (!data.data.favorites) {
+          data.data.favorites = {};
+        }
+        data.data.favorites.loves = updatedData;
+      } else if (setField === "favorites.commLoves") {
+        if (!data.data.favorites) {
+          data.data.favorites = {};
+        }
+        data.data.favorites.commLoves = updatedData;
+      } else {
+        data.data[setField] = updatedData;
+      }
+      localStorage.setItem("userAllInfo", JSON.stringify(data));
+    } catch (error) {
+      console.error("Error updating localStorage cache:", error);
+    }
+  }
+};
+
 // 用户获取：获取登录用户的全部信息
 // User Retrieval: Fetches all information of the logged-in user.
 export async function getUserAllInfo() {
@@ -45,7 +72,6 @@ export async function getUserAllInfo() {
         `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts]=*`,
         config
       );
-      // 将新的数据存入缓存，设置缓存过期时间为 24 小时后
       localStorage.setItem(cacheKey, JSON.stringify(response));
       localStorage.setItem(expirationKey, (new Date().getTime() + 24 * 60 * 60 * 1000).toString());
 
@@ -68,7 +94,7 @@ export async function updateUsername(username) {
       config
     );
 
-    clearUserAllInfoCache();
+    //clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating Username:", error);
@@ -76,6 +102,41 @@ export async function updateUsername(username) {
   }
 }
 
+// 提示词自定义排序
+export async function updatePromptsOrder(order) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/favorites/userprompt-order`,
+      {
+        data: { newOrder: order },
+      },
+      config
+    );
+    //clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error updating Order:", error);
+    throw error;
+  }
+}
+
+// 收藏自定义排序
+export async function updateFavoritesOrder(type, order) {
+  try {
+    const response = await axios.put(
+      `${API_URL}/favorites/favorite-order`,
+      {
+        [type]: order,
+      },
+      config
+    );
+    clearUserAllInfoCache();
+    return response;
+  } catch (error) {
+    console.error("Error updating Order:", error);
+    throw error;
+  }
+}
 // 创建收藏：添加新的精选或社区prompt至收藏
 // Create Favorite: Adds a new selected or community prompt to favorites.
 export async function createFavorite(loves, isComm = false) {
@@ -90,7 +151,7 @@ export async function createFavorite(loves, isComm = false) {
       config
     );
 
-    clearUserAllInfoCache();
+    //clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error creating favorite:", error);
@@ -222,61 +283,54 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
   }
 }
 
-// 批量获取精选prompt
-export function getCards(ids, lang) {
-  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
-  const cacheKey = `cards_${ids.join("_")}_${lang}`;
-  const expirationKey = `${cacheKey}_expiration`;
+// Batch fetch selected prompts 批量获取精选prompt
+export function getPrompts(type, ids, lang) {
+  // 准备一个数组来收集需要从服务器获取的 ID
+  let idsToFetch = [];
 
-  // 从 localStorage 中获取缓存的数据和到期时间
-  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
-  const expirationDate = localStorage.getItem(expirationKey);
+  // 准备一个数组来收集从本地缓存获取的数据
+  let cachedPrompts = [];
 
-  // 检查缓存的数据是否还有效
-  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
-    // 如果有效，那么直接使用缓存的数据
-    return Promise.resolve(cachedData);
+  // 检查每个 ID 对应的缓存
+  ids.forEach((id) => {
+    const cacheKey = `${type}_${id}${lang ? `_${lang}` : ""}`;
+    const expirationKey = `${cacheKey}_expiration`;
+
+    const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+    const expirationDate = localStorage.getItem(expirationKey);
+
+    if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
+      cachedPrompts.push(cachedData);
+    } else {
+      idsToFetch.push(id);
+    }
+  });
+
+  // 如果所有数据都已缓存，直接返回这些数据
+  if (idsToFetch.length === 0) {
+    return Promise.resolve(cachedPrompts);
   } else {
-    // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-    return axios
-      .post(`${API_URL}/cards/bulk`, { ids, lang })
-      .then((response) => {
-        // 将获取到的数据和新的到期时间存储到 localStorage 中
-        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 小时后过期
-        localStorage.setItem(cacheKey, JSON.stringify(response));
-        localStorage.setItem(expirationKey, String(nextExpirationDate));
+    const apiEndpoint = type === "cards" ? "/cards/bulk" : "/userprompts/bulk";
+    const postData = type === "cards" ? { ids: idsToFetch, lang } : { ids: idsToFetch };
+    const requestConfig = type === "cards" ? {} : config;
 
-        return response;
+    return axios
+      .post(`${API_URL}${apiEndpoint}`, postData, requestConfig)
+      .then((response) => {
+        const nextExpirationDate = new Date().getTime() + 240 * 60 * 60 * 1000;
+
+        response.data.forEach((item) => {
+          const itemCacheKey = `${type}_${item.id}${lang ? `_${lang}` : ""}`;
+          const itemExpirationKey = `${itemCacheKey}_expiration`;
+
+          localStorage.setItem(itemCacheKey, JSON.stringify(item));
+          localStorage.setItem(itemExpirationKey, String(nextExpirationDate));
+        });
+
+        return [...cachedPrompts, ...response];
       })
       .catch((error) => {
-        console.error("Error fetching cards:", error);
-        throw error;
-      });
-  }
-}
-
-export function getSelectComms(ids) {
-  const cacheKey = `selectComms_${ids.join("_")}`;
-  const expirationKey = `${cacheKey}_expiration`;
-
-  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
-  const expirationDate = localStorage.getItem(expirationKey);
-
-  if (cachedData && expirationDate && new Date().getTime() < Number(expirationDate)) {
-    return Promise.resolve(cachedData);
-  } else {
-    // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-    return axios
-      .post(`${API_URL}/userprompts/bulk`, { ids }, config)
-      .then((response) => {
-        const nextExpirationDate = new Date().getTime() + 24 * 60 * 60 * 1000;
-        localStorage.setItem(cacheKey, JSON.stringify(response));
-        localStorage.setItem(expirationKey, String(nextExpirationDate));
-
-        return response;
-      })
-      .catch((error) => {
-        console.error("Error fetching select comms:", error);
+        console.error(`Error fetching ${type}:`, error);
         throw error;
       });
   }

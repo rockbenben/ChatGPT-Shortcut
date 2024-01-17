@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -6,8 +6,9 @@ import styles from "../ShowcaseCard/styles.module.css";
 import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
 import Heading from "@theme/Heading";
 import { AuthContext } from "../AuthContext";
-import { updatePrompt, deletePrompt } from "@site/src/api";
+import { updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
 import { DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 export default function UserPromptsPage() {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
@@ -23,40 +24,49 @@ export default function UserPromptsPage() {
     }
   }, [userAuth]);
 
-  const handleCopyClick = (index) => {
-    const UserPrompt = userprompts[index];
-    if (UserPrompt) {
-      copy(UserPrompt.description);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
-    }
-  };
+  const handleCopyClick = useCallback(
+    (index) => {
+      const UserPrompt = userprompts[index];
+      if (UserPrompt) {
+        copy(UserPrompt.description);
+        setCopiedIndex(index);
+        setTimeout(() => {
+          setCopiedIndex(null);
+        }, 2000);
+      }
+    },
+    [userprompts]
+  );
 
   // 新增的状态变量，用于跟踪正在被编辑的 UserPrompt 的 id
   const [editingPromptId, setEditingPromptId] = useState(null);
   const [form] = Form.useForm();
-  const handleEditPrompt = (UserPrompt) => {
-    setEditingPromptId(UserPrompt.id);
-    form.setFieldsValue(UserPrompt);
-    setOpen(true);
-  };
-  const onUpdateprompt = async (values) => {
-    setLoading(true);
-    try {
-      await updatePrompt(editingPromptId, values);
-      await refreshUserAuth();
-      //window.location.reload();
-      message.success(<Translate id="message.success">词条更新成功！</Translate>);
-      setOpen(false);
-    } catch (err) {
-      console.error(err);
-      message.error(<Translate id="message.error">词条更新失败，请稍后重试</Translate>);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const handleEditPrompt = useCallback(
+    (UserPrompt) => {
+      setEditingPromptId(UserPrompt.id);
+      form.setFieldsValue(UserPrompt);
+      setOpen(true);
+    },
+    [form]
+  );
+  const onUpdateprompt = useCallback(
+    async (values) => {
+      setLoading(true);
+      try {
+        await updatePrompt(editingPromptId, values);
+        await refreshUserAuth();
+        //window.location.reload();
+        message.success(<Translate id="message.success">词条更新成功！</Translate>);
+        setOpen(false);
+      } catch (err) {
+        console.error(err);
+        message.error(<Translate id="message.error">词条更新失败，请稍后重试</Translate>);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [editingPromptId, refreshUserAuth]
+  );
 
   const handleDeletePrompt = (id) => {
     Modal.confirm({
@@ -89,67 +99,105 @@ export default function UserPromptsPage() {
       </div>
     );
   }
+  const [hasDragged, setHasDragged] = useState(false);
+  const onDragEnd = useCallback(
+    (result) => {
+      const { source, destination } = result;
+
+      if (!destination || (source.droppableId === destination.droppableId && source.index === destination.index)) {
+        return;
+      }
+      setHasDragged(true);
+      const items = Array.from(userprompts);
+      const [reorderedItem] = items.splice(source.index, 1);
+      items.splice(destination.index, 0, reorderedItem);
+
+      setUserPrompts(items);
+    },
+    [userprompts]
+  );
+  useEffect(() => {
+    if (hasDragged) {
+      const ids = userprompts.map((item) => item.id);
+      updateLocalStorageCache("userprompts", userprompts);
+      updatePromptsOrder(ids);
+      setHasDragged(false);
+    }
+  }, [userprompts]);
 
   return (
-    <ul className="clean-list showcaseList_Cwj2">
-      {userprompts.length === 0 ? (
-        <li className="card shadow--md">
-          <div className={clsx("card__body", styles.cardBodyHeight)}>
-            <p>No user prompts submitted yet.</p>
-            <p>Please submit your prompts.</p>
-          </div>
-        </li>
-      ) : (
-        userprompts.map((UserPrompt, index) => (
-          <li key={UserPrompt.id} className="card shadow--md">
-            <div
-              className={clsx("card__body")}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-              }}>
-              <div>
-                <div className={clsx(styles.showcaseCardHeader)}>
-                  <Heading as="h4" className={styles.showcaseCardTitle}>
-                    <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-                      {UserPrompt.title}{" "}
-                    </span>
-                    {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
-                  </Heading>
-                  <button className={clsx("button button--secondary button--sm", styles.showcaseCardSrcBtn)} type="button" onClick={() => handleCopyClick(index)}>
-                    {copiedIndex === index ? <Translate id="copy.done">已复制</Translate> : <Translate id="copy.button">复制</Translate>}
-                  </button>
-                </div>
-                <p className={styles.showcaseCardBody}>
-                  {UserPrompt.remark && (
-                    <>
-                      👉 {UserPrompt.remark}
-                      <br />
-                    </>
-                  )}
-                  {UserPrompt.description}
-                </p>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <Tooltip title={<Translate id="delete">删除</Translate>}>
-                  <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleDeletePrompt(UserPrompt.id)}>
-                    <DeleteOutlined />
-                    <Translate id="delete">删除</Translate>
-                  </a>
-                </Tooltip>
-                <Tooltip title={<Translate id="edit">修改</Translate>}>
-                  <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleEditPrompt(UserPrompt)}>
-                    <EditOutlined />
-                    <Translate id="edit">修改</Translate>
-                  </a>
-                </Tooltip>
-              </div>
-            </div>
-          </li>
-        ))
-      )}
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="userpromptsDroppable">
+          {(provided) => (
+            <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
+              {!userprompts || userprompts.length === 0 ? (
+                <li className="card shadow--md">
+                  <div className={clsx("card__body", styles.cardBodyHeight)}>
+                    <p>No user prompts submitted yet.</p>
+                    <p>Please submit your prompts.</p>
+                  </div>
+                </li>
+              ) : (
+                userprompts.map((UserPrompt, index) => (
+                  <Draggable key={UserPrompt.id} draggableId={UserPrompt.id.toString()} index={index}>
+                    {(provided) => (
+                      <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="card shadow--md">
+                        <div
+                          className={clsx("card__body")}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                            height: "100%",
+                          }}>
+                          <div>
+                            <div className={clsx(styles.showcaseCardHeader)}>
+                              <Heading as="h4" className={styles.showcaseCardTitle}>
+                                <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
+                                  {UserPrompt.title}{" "}
+                                </span>
+                                {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
+                              </Heading>
+                              <button className={clsx("button button--secondary button--sm", styles.showcaseCardSrcBtn)} type="button" onClick={() => handleCopyClick(index)}>
+                                {copiedIndex === index ? <Translate id="copy.done">已复制</Translate> : <Translate id="copy.button">复制</Translate>}
+                              </button>
+                            </div>
+                            <p className={styles.showcaseCardBody}>
+                              {UserPrompt.remark && (
+                                <>
+                                  👉 {UserPrompt.remark}
+                                  <br />
+                                </>
+                              )}
+                              {UserPrompt.description}
+                            </p>
+                          </div>
+                          <div style={{ display: "flex", justifyContent: "space-between" }}>
+                            <Tooltip title={<Translate id="delete">删除</Translate>}>
+                              <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleDeletePrompt(UserPrompt.id)}>
+                                <DeleteOutlined />
+                                <Translate id="delete">删除</Translate>
+                              </a>
+                            </Tooltip>
+                            <Tooltip title={<Translate id="edit">修改</Translate>}>
+                              <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleEditPrompt(UserPrompt)}>
+                                <EditOutlined />
+                                <Translate id="edit">修改</Translate>
+                              </a>
+                            </Tooltip>
+                          </div>
+                        </div>
+                      </li>
+                    )}
+                  </Draggable>
+                ))
+              )}
+              {provided.placeholder}
+            </ul>
+          )}
+        </Droppable>
+      </DragDropContext>
 
       <Modal
         title={translate({
@@ -238,6 +286,6 @@ export default function UserPromptsPage() {
           </Form.Item>
         </Form>
       </Modal>
-    </ul>
+    </>
   );
 }
