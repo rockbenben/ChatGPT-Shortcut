@@ -39,11 +39,13 @@ AiShort 提供一份简洁易用的 AI 指令列表，即使不了解提示词�
 
 AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。我们会定期更新，为你提供新的提示词和启发。如需了解如何使用 AiShort，请查阅我们的[使用手册](https://www.aishort.top/docs/guides/getting-started)。如需了解本项目的开发背景和初衷，你可以阅读 [AiShort 开发博客](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)。
 
-欢迎加入我们的 Discord 社区，一起交流想法和反馈。
+欢迎加入我们的 Discord 和 QQ 群，一起交流想法和反馈。
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
+
+![](https://img.newzone.top/qq736094782.jpg?imageMogr2/thumbnail/300x/format/webp)
 
 ## 浏览器扩展
 

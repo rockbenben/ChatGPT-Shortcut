@@ -151,7 +151,7 @@ const config = {
               },
               {
                 label: "💬 加入 QQ 群",
-                href: "https://img.newzone.top/qq736094782.jpg",
+                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
               },
               {
                 label: "📺 加入 Discord",

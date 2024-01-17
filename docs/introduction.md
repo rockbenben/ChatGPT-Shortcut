@@ -28,6 +28,8 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
+![](https://img.newzone.top/qq736094782.jpg?imageMogr2/thumbnail/300x/format/webp)
+
 ## 使用说明
 
 将提示词复制到 AI 对话模型中即可使用，以下是常用模型链接：
