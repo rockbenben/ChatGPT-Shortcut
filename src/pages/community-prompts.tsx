@@ -4,6 +4,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
+import Heading from "@theme/Heading";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
@@ -195,7 +196,7 @@ function CommunityPrompts() {
                 }}>
                 <div>
                   <div className={clsx(styles.showcaseCardHeader)}>
-                    <h4 className={styles.showcaseCardTitle}>
+                    <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
                       <Link className={styles.showcaseCardLink}>{UserPrompt.attributes.title}</Link>
                       <span
                         style={{
@@ -205,7 +206,7 @@ function CommunityPrompts() {
                         }}>
                         @{UserPrompt.owner}
                       </span>
-                    </h4>
+                    </Heading>
                   </div>
                   {UserPrompt.attributes.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.attributes.remark}</p>}
                   <p className={styles.showcaseCardBody}>

@@ -166,13 +166,12 @@ export default function UserPromptsPage() {
                           }}>
                           <div>
                             <div className={clsx(styles.showcaseCardHeader)}>
-                              <Heading as="h4" className={styles.showcaseCardTitle}>
+                              <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsisMy}`}>
                                 <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
                                   {UserPrompt.title}{" "}
                                 </span>
                                 {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
                               </Heading>
-
                               <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
                                 <Button type="default" onClick={() => handleCopyClick(index)}>
                                   <CopyOutlined />
