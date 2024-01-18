@@ -3,11 +3,11 @@ import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "../ShowcaseCard/styles.module.css";
-import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
 import Heading from "@theme/Heading";
 import { AuthContext } from "../AuthContext";
-import { updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
-import { DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
+import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
+import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 export default function UserPromptsPage() {
@@ -15,13 +15,25 @@ export default function UserPromptsPage() {
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
+  const [hasDragged, setHasDragged] = useState(false);
 
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (userAuth && userAuth.data.userprompts) {
-      setUserPrompts(userAuth.data.userprompts);
+    if (!userAuth || !userAuth.data) {
+      return;
     }
+    const myPrompts = userAuth.data.userprompts || [];
+    const fetchPrompts = async () => {
+      try {
+        const myPromptsData = await getPrompts("userprompts", myPrompts);
+        setUserPrompts(myPromptsData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPrompts();
   }, [userAuth]);
 
   const handleCopyClick = useCallback(
@@ -49,41 +61,42 @@ export default function UserPromptsPage() {
     },
     [form]
   );
+
   const onUpdateprompt = useCallback(
     async (values) => {
-      setLoading(true);
+      //setLoading(true);
       try {
+        console.log("values", values);
+        console.log("editingPromptId", editingPromptId);
         await updatePrompt(editingPromptId, values);
         await refreshUserAuth();
-        //window.location.reload();
         message.success(<Translate id="message.success">词条更新成功！</Translate>);
         setOpen(false);
       } catch (err) {
         console.error(err);
         message.error(<Translate id="message.error">词条更新失败，请稍后重试</Translate>);
       } finally {
-        setLoading(false);
+        //setLoading(false);
       }
     },
     [editingPromptId, refreshUserAuth]
   );
 
-  const handleDeletePrompt = (id) => {
+  const handleDeletePrompt = (promptId) => {
     Modal.confirm({
       title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
       content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
       onOk: async () => {
-        setLoading(true);
+        //setLoading(true);
         try {
-          await deletePrompt(id);
+          await deletePrompt(promptId);
           await refreshUserAuth();
-          //window.location.reload();
           message.success(<Translate id="message.deletePrompt.success">Prompt successfully deleted!</Translate>);
         } catch (err) {
           console.error(err);
           message.error(<Translate id="message.deletePrompt.error">Failed to delete prompt, please try again later.</Translate>);
         } finally {
-          setLoading(false);
+          //setLoading(false);
         }
       },
       onCancel() {
@@ -99,7 +112,6 @@ export default function UserPromptsPage() {
       </div>
     );
   }
-  const [hasDragged, setHasDragged] = useState(false);
   const onDragEnd = useCallback(
     (result) => {
       const { source, destination } = result;
@@ -119,7 +131,8 @@ export default function UserPromptsPage() {
   useEffect(() => {
     if (hasDragged) {
       const ids = userprompts.map((item) => item.id);
-      updateLocalStorageCache("userprompts", userprompts);
+      const objectsArray = ids.map((id) => ({ id: id }));
+      updateLocalStorageCache("userprompts", objectsArray);
       updatePromptsOrder(ids);
       setHasDragged(false);
     }
@@ -159,9 +172,13 @@ export default function UserPromptsPage() {
                                 </span>
                                 {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
                               </Heading>
-                              <button className={clsx("button button--secondary button--sm", styles.showcaseCardSrcBtn)} type="button" onClick={() => handleCopyClick(index)}>
-                                {copiedIndex === index ? <Translate id="copy.done">已复制</Translate> : <Translate id="copy.button">复制</Translate>}
-                              </button>
+
+                              <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+                                <Button type="default" onClick={() => handleCopyClick(index)}>
+                                  <CopyOutlined />
+                                  {copiedIndex === index && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+                                </Button>
+                              </Tooltip>
                             </div>
                             <p className={styles.showcaseCardBody}>
                               {UserPrompt.remark && (
@@ -280,7 +297,7 @@ export default function UserPromptsPage() {
             </Typography.Text>
           </Form.Item>
           <Form.Item>
-            <Button htmlType="submit" loading={loading} style={{ marginTop: "16px" }}>
+            <Button htmlType="submit" loading={loading}>
               <Translate id="button.updateprompt">更新 Prompt</Translate>
             </Button>
           </Form.Item>

@@ -9,7 +9,7 @@ import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
-import { updateCopyCount, createFavorite, updateFavorite } from "@site/src/api";
+import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -66,8 +66,6 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   }
   const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
 
-  //const image = getCardImage(user);
-  // 复制
   const [copied, setShowCopied] = useState(false);
   // 将显示数据单位简化到 k
   const formatCopyCount = (count) => {
@@ -113,6 +111,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
 
       await updateFavorite(favoriteId, userLoves);
       onLove(userLoves);
+      getPrompts("cards", userLoves, currentLanguage);
       refreshUserAuth();
     } catch (err) {
       console.error(err);
@@ -165,7 +164,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
                 <HeartTwoTone twoToneColor="#eb2f96" />
               </Button>
             )}
-            <Tooltip title={translate({ id: "copy.button", message: "复制" })}>
+            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
               <Button type="default" onClick={handleCopyClick}>
                 <CopyOutlined />
                 {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}

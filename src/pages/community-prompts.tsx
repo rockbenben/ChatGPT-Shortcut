@@ -222,7 +222,7 @@ function CommunityPrompts() {
                   <Button.Group>
                     <Tooltip
                       title={translate({
-                        id: "copy.button",
+                        id: "theme.CodeBlock.copy",
                         message: "复制",
                       })}>
                       <Button type="default" onClick={() => handleCopyClick(index)}>

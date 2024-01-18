@@ -28,12 +28,12 @@ function UserFavorite() {
       return;
     }
 
-    const Loves = userAuth.data.favorites ? userAuth.data.favorites.loves || [] : [];
+    const loves = userAuth.data.favorites ? userAuth.data.favorites.loves || [] : [];
     const commLoves = userAuth.data.favorites ? userAuth.data.favorites.commLoves || [] : [];
 
     const fetchPrompts = async () => {
       try {
-        const cardsData = await getPrompts("cards", Loves, currentLanguage);
+        const cardsData = await getPrompts("cards", loves, currentLanguage);
         setCards(cardsData);
         const commsData = await getPrompts("comms", commLoves);
         setComms(commsData);
@@ -58,7 +58,9 @@ function UserFavorite() {
           userLoves.splice(index, 1);
           message.success("Removed from favorites successfully!");
         }
-
+        if (isComm) {
+          localStorage.removeItem(`comms_${id}`);
+        }
         await updateFavorite(favoriteId, userLoves, isComm);
         refreshUserAuth();
       } catch (err) {

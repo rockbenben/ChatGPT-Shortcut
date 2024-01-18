@@ -8,7 +8,7 @@ import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-de
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const [editUsername, setEditUsername] = useState(false);
@@ -32,7 +32,8 @@ const UserProfile = () => {
     try {
       await updateUsername(newUsername);
       updateLocalStorageCache("username", newUsername);
-      window.location.reload();
+      await refreshUserAuth();
+      message.success("Username updated successfully!");
     } catch (error) {
       console.error("Error updating username:", error);
       const errorMessage = error?.response?.data?.error?.message || "Unknown error";
