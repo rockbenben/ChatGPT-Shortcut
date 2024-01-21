@@ -42,18 +42,22 @@ function CommunityPrompts() {
 
   useEffect(() => {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
-  }, [currentPage, sortField, sortOrder, searchTerm]); // 添加 searchTerm 到依赖数组中
+  }, [currentPage, sortField, sortOrder, searchTerm]);
 
   const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
-    const response = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-    setUserPrompts(response.data.data);
-    setTotal(response.data.meta.pagination.total);
+    const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
+    setUserPrompts(result[0]);
+    setTotal(result[1].data.meta.pagination.total);
   };
 
   const onSearch = (value) => {
+    if (!userAuth) {
+      setOpen(true);
+      message.warning("Please log in to search.");
+      return;
+    }
     setSearchTerm(value);
     setCurrentPage(1); // 重置页数到第一页
-    fetchData(currentPage, pageSize, sortField, sortOrder, value);
   };
   const [votedUpPromptIds, setVotedUpPromptIds] = useState([]);
   const [votedDownPromptIds, setVotedDownPromptIds] = useState([]);
@@ -101,7 +105,7 @@ function CommunityPrompts() {
   const handleCopyClick = (index) => {
     const UserPrompt = userprompts[index];
     if (UserPrompt) {
-      copy(UserPrompt.attributes.description);
+      copy(UserPrompt.description);
       setCopiedIndex(index);
       setTimeout(() => {
         setCopiedIndex(null);
@@ -197,7 +201,7 @@ function CommunityPrompts() {
                 <div>
                   <div className={clsx(styles.showcaseCardHeader)}>
                     <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-                      <Link className={styles.showcaseCardLink}>{UserPrompt.attributes.title}</Link>
+                      <Link className={styles.showcaseCardLink}>{UserPrompt.title}</Link>
                       <span
                         style={{
                           fontSize: "12px",
@@ -208,14 +212,14 @@ function CommunityPrompts() {
                       </span>
                     </Heading>
                   </div>
-                  {UserPrompt.attributes.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.attributes.remark}</p>}
+                  {UserPrompt.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.remark}</p>}
                   <p className={styles.showcaseCardBody}>
-                    {UserPrompt.attributes.notes ? (
-                      <Tooltip placement="bottom" title={truncate(UserPrompt.attributes.notes, 300)} overlayStyle={{ maxWidth: 450 }}>
-                        {UserPrompt.attributes.description}
+                    {UserPrompt.notes ? (
+                      <Tooltip placement="bottom" title={truncate(UserPrompt.notes, 300)} overlayStyle={{ maxWidth: 450 }}>
+                        {UserPrompt.description}
                       </Tooltip>
                     ) : (
-                      UserPrompt.attributes.description
+                      UserPrompt.description
                     )}
                   </p>
                 </div>

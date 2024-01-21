@@ -36,7 +36,7 @@ function UserFavorite() {
       try {
         const cardsData = await getPrompts("cards", loves, currentLanguage);
         setCards(cardsData);
-        const commsData = await getPrompts("comms", commLoves);
+        const commsData = await getPrompts("commus", commLoves);
         setComms(commsData);
       } catch (error) {
         console.error(error);
@@ -60,7 +60,7 @@ function UserFavorite() {
           message.success("Removed from favorites successfully!");
         }
         if (isComm) {
-          localStorage.removeItem(`comms_${id}`);
+          localStorage.removeItem(`commus_${id}`);
         }
         await updateFavorite(favoriteId, userLoves, isComm);
         refreshUserAuth();
