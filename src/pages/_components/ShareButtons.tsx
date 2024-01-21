@@ -7,7 +7,7 @@ import { FacebookShareButton, TelegramShareButton, TumblrShareButton, TwitterSha
 function ShareButtons({ shareUrl, title, popOver }) {
   const buttons = (
     <>
-      <FacebookShareButton url={shareUrl} quote={title}>
+      <FacebookShareButton url={shareUrl} hashtag={title}>
         <FacebookIcon size={32} round />
       </FacebookShareButton>
       <TwitterShareButton url={shareUrl} title={title}>
