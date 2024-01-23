@@ -88,27 +88,26 @@ react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
 # Ensure the output directory exists
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
 
-# Loop through each prompt
-for prompt in data:
-    # Convert the prompt to a JSON string, then load it back into a dict
-    prompt_json = json.dumps(prompt, ensure_ascii=False, indent=2)
-
+# Loop from 1 to 277
+for prompt_id in range(1, 278):
     # Prepare the content for the React JSX file
     content = f'''import React from "react";
 import PromptPage from "../_components/PromptPage";
 import {{ AuthProvider }} from "@site/src/pages/_components/AuthContext";
 
-const prompt = {prompt_json};
-
 function PromptDetail() {{
-  return <AuthProvider><PromptPage prompt={{prompt}} /></AuthProvider>;
+  return (
+    <AuthProvider>
+      <PromptPage promptId={{{prompt_id}}} />
+    </AuthProvider>
+  );
 }}
 
 export default PromptDetail;
 '''
 
-    # Write the content to a new file
-    with open(react_jsx_dir / f"{prompt['id']}.tsx", 'w', encoding='utf-8') as file:
+    # Write the content to a new file named {prompt_id}.tsx
+    with open(react_jsx_dir / f"{prompt_id}.tsx", 'w', encoding='utf-8') as file:
         file.write(content)
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
