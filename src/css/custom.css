@@ -286,3 +286,10 @@ div[class^="announcementBar_"] {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-thumb-hover-color); /* 悬停时的颜色 */
 }
+
+/* 自定义样式 */
+@media (max-width: 500px) {
+  .hide-on-small-screen-500 {
+    display: none;
+  }
+}
