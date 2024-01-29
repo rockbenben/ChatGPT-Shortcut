@@ -3,12 +3,12 @@ import Layout from "@theme/Layout";
 import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { changePassword, forgotPassword, updateUsername } from "@site/src/api";
+import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const [editUsername, setEditUsername] = useState(false);
@@ -31,7 +31,9 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await updateUsername(newUsername);
-      window.location.reload();
+      updateLocalStorageCache("username", newUsername);
+      await refreshUserAuth();
+      message.success("Username updated successfully!");
     } catch (error) {
       console.error("Error updating username:", error);
       const errorMessage = error?.response?.data?.error?.message || "Unknown error";

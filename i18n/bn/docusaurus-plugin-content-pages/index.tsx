@@ -115,7 +115,7 @@ function ShowcaseHeader() {
         <Heading as="h1">AI Short</Heading>
         <p>{SLOGAN}</p>
       </div>
-      <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
+      <UserStatus hideLinks={{ userCenter: false, myFavorite: false }} />
     </section>
   );
 }

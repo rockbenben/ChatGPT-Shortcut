@@ -43,9 +43,9 @@
     "message": "📝 प्रतिक्रिया सबमिट करें",
     "description": "Navbar item with label 📝 提交反馈"
   },
-  "item.label.💬 微信交流": {
+  "item.label.💬 加入 QQ 群": {
     "message": "💬 हमसे WeChat पर चैट करें",
-    "description": "Navbar item with label 💬 微信交流"
+    "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📧 发送邮件": {
     "message": "📧 ईमेल भेजें",

@@ -7,8 +7,8 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import { getComments, postComment } from "@site/src/api";
 import moment from "moment";
 import debounce from "lodash/debounce";
-import { marked } from "marked";
-import ReactHtmlParser from "react-html-parser";
+import ReactMarkdown from "react-markdown";
+
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import ReactGiphySearchBox from "react-giphy-searchbox";
@@ -206,6 +206,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const renderComment = useCallback(
     (comment) => (
       <Comment
+        key={comment.id}
         actions={[
           <span key="comment-basic-reply-to" onClick={() => setReplyingTo(comment.id)}>
             <Translate id="comment.reply">回复</Translate>
@@ -213,7 +214,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
         ]}
         author={comment.author?.name}
         avatar={<Avatar style={{ backgroundColor: getRandomColor(), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
-        content={ReactHtmlParser(marked(comment.content))}
+        content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={moment(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
           <Form form={replyForm} layout="inline" onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
@@ -273,7 +274,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
             )}
           </Form>
         )}
-        {comment.children && comment.children.map(renderComment)}
+        {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </Comment>
     ),
     [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues]

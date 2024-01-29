@@ -157,12 +157,8 @@ const config = {
                 to: "/feedback",
               },
               {
-                label: "💬 微信交流",
-                href: "https://img.newzone.top/wechat.svg",
-              },
-              {
-                label: "📧 发送邮件",
-                href: "mailto:learndata@newzone.top",
+                label: "💬 加入 QQ 群",
+                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
               },
               {
                 label: "📺 加入 Discord",

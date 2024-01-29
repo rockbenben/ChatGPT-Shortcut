@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
-import { EditOutlined } from "@ant-design/icons";
+import { UserOutlined, HeartOutlined, EditOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt } from "@site/src/api";
@@ -12,26 +12,14 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   const { userAuth, setUserAuth, refreshUserAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const [form] = Form.useForm();
-  // 这里的 handleLogout 可能需要调用一个注销 API，然后在返回成功后清除 userAuth
-  const handleLogout = async (event) => {
-    event.preventDefault();
-    if (ExecutionEnvironment.canUseDOM) {
-      localStorage.removeItem("auth_token");
-      localStorage.removeItem("userAllInfo");
-      localStorage.removeItem("userAllInfoCacheExpiration");
-    }
-    setUserAuth(null);
-    window.location.reload();
-  };
 
   const onFinish = async (values) => {
     setLoading(true);
     try {
       await submitPrompt(values);
       await refreshUserAuth();
-      //window.location.reload();
+      form.resetFields();
       message.success(<Translate id="message.success">词条提交成功！</Translate>);
       message.success(<Translate id="message.success1">点击标签「我的提示词」查看已添加的自定义提示词。</Translate>);
       setOpen(false);
@@ -43,6 +31,24 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     }
   };
 
+  const handleLogout = async () => {
+    if (ExecutionEnvironment.canUseDOM) {
+      localStorage.removeItem("auth_token");
+      localStorage.removeItem("userAllInfo");
+      localStorage.removeItem("userAllInfoCacheExpiration");
+    }
+    setUserAuth(null);
+    window.location.reload();
+  };
+
+  const handleLogoutConfirm = () => {
+    Modal.confirm({
+      title: "Confirm Logout",
+      content: "Click OK to log out.",
+      onOk: handleLogout,
+    });
+  };
+
   if (userAuth === undefined) {
     // 如果 userAuth 是 undefined，说明状态正在加载
     return <div>Loading...</div>;
@@ -50,25 +56,27 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     return (
       <>
         {!hideLinks.userCenter && (
-          <Link to="/user" style={{ marginRight: "10px" }}>
+          <Link to="/user" className="button button--secondary" style={{ marginRight: "10px" }}>
+            <UserOutlined />
             <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" style={{ marginRight: "10px" }}>
+          <Link to="/user/favorite" className="button button--secondary" style={{ marginRight: "10px" }}>
+            <HeartOutlined style={{ marginRight: "1px" }} />
             <Translate id="link.myfavorite">我的收藏</Translate>
           </Link>
         )}
-        <Link className="button button--secondary" onClick={handleLogout} style={{ marginRight: "10px" }}>
-          <Translate id="button.logout">注销</Translate>
+        <Link className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+          <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
         </Link>
-        <Link className="button button--primary" onClick={() => setOpen(true)}>
-          <EditOutlined style={{ marginRight: "5px" }} /> <Translate id="link.addprompt">添加提示词</Translate>
-        </Link>
+        <Button type="default" onClick={handleLogoutConfirm} style={{ color: "gray" }}>
+          <Translate id="button.logout">退出登录</Translate>
+        </Button>
         <Modal
           title={translate({
             id: "modal.addprompt.title",
-            message: "分享 Prompt（本内容将出现在「我的提示词」标签中）",
+            message: "添加 Prompt（本内容将出现在「我的提示词」标签中）",
           })}
           open={open}
           footer={null}
@@ -129,30 +137,29 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
               />
             </Form.Item>
             <Form.Item name="share" valuePropName="checked">
-              <Switch
-                defaultChecked
-                onChange={(checked) => {
-                  form.setFieldsValue({ share: checked });
-                }}
-                checkedChildren={translate({
-                  id: "input.addprompt.share.checked",
-                  message: "是",
-                })}
-                unCheckedChildren={translate({
-                  id: "input.addprompt.share.unchecked",
-                  message: "否",
-                })}
-              />
-              <Typography.Text type="secondary">
-                {" "}
-                <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
-              </Typography.Text>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Switch
+                  defaultChecked
+                  onChange={(checked) => {
+                    form.setFieldsValue({ share: checked });
+                  }}
+                  checkedChildren={translate({
+                    id: "input.addprompt.share.checked",
+                    message: "是",
+                  })}
+                  unCheckedChildren={translate({
+                    id: "input.addprompt.share.unchecked",
+                    message: "否",
+                  })}
+                />
+                <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
+                  <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
+                </Typography.Text>
+              </div>
             </Form.Item>
-            <Form.Item>
-              <Button htmlType="submit" loading={loading} style={{ marginTop: "16px" }}>
-                <Translate id="button.addPrompt">添加 Prompt</Translate>
-              </Button>
-            </Form.Item>
+            <Button htmlType="submit" loading={loading}>
+              <Translate id="button.addPrompt">添加 Prompt</Translate>
+            </Button>
           </Form>
         </Modal>
       </>

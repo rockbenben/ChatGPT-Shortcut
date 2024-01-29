@@ -50,6 +50,13 @@
   margin-bottom: 12px;
 }
 
+.shortEllipsisMy {
+  max-width: 85%;
+}
+.shortEllipsis {
+  max-width: 100%;
+}
+
 .showcaseCardTitle {
   margin-bottom: 0;
   flex: 1 1 auto;
