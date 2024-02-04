@@ -111,25 +111,26 @@ export default PromptDetail;
         file.write(content)
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
-def replace_and_write(source_file, destination_file, original_text, replacement_text):
-    with open(source_file, 'r', encoding='utf-8') as file:
-        file_data = file.read()
-        
-    file_data = file_data.replace(original_text, replacement_text)
-    
-    with open(destination_file, 'w', encoding='utf-8') as file:
-        file.write(file_data)
 
-# This is the file we want to copy
-source_file = os.path.join(os.getcwd(), 'src', 'pages', 'index.tsx')
-
-for lang in languages[1:]:
-    # Specify the path to the target file
-    target_file = os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'index.tsx')
-    
-    # If the target file exists, remove it
-    if os.path.exists(target_file):
-        os.remove(target_file)
-    
-    # Replace 'users.zh' with 'users.{lang}' and write to the target file
-    replace_and_write(source_file, target_file, 'users.zh', f'users.{lang}')
+# def replace_and_write(source_file, destination_file, original_text, replacement_text):
+#    with open(source_file, 'r', encoding='utf-8') as file:
+#        file_data = file.read()
+#        
+#    file_data = file_data.replace(original_text, replacement_text)
+#    
+#    with open(destination_file, 'w', encoding='utf-8') as file:
+#        file.write(file_data)
+#
+## This is the file we want to copy
+#source_file = os.path.join(os.getcwd(), 'src', 'pages', 'index.tsx')
+#
+#for lang in languages[1:]:
+#    # Specify the path to the target file
+#    target_file = os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'index.tsx')
+#    
+#    # If the target file exists, remove it
+#    if os.path.exists(target_file):
+#        os.remove(target_file)
+#    
+#    # Replace 'users.zh' with 'users.{lang}' and write to the target file
+#    replace_and_write(source_file, target_file, 'users.zh', f'users.{lang}')
