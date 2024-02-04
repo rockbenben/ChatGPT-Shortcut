@@ -11,14 +11,14 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { ConfigProvider, Input, Button } from "antd";
+import { Spin, ConfigProvider, Input, InputRef, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
-import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
+import { Tags, TagList, type TagType } from "@site/src/data/tags";
 
-import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
-import ShowcaseFilterToggle, { type Operator, readOperator } from "@site/src/pages/_components/ShowcaseFilterToggle";
+import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
+import ShowcaseFilterToggle, { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
 import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
@@ -72,7 +72,7 @@ function readSearchName(search: string) {
 }
 
 function useFilteredUsers() {
-  const location = useLocation(); // 使用 useLocation 来获取当前 URL 的信息
+  const location = useLocation<UserState>();
   const [operator, setOperator] = useState<Operator>("OR");
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
@@ -89,26 +89,25 @@ function useFilteredUsers() {
     setSelectedTags(tags);
     setSearchName(search);
     setOperator(operatorParam as Operator);
-  }, [location.search]); // 当 URL 查询参数变化时重新运行
+  }, [location.search]);
 
   useEffect(() => {
     async function fetchAndFilterUsers() {
       // 如果没有提供 tags 和 search，跳过搜索
       if (selectedTags.length === 0 && !searchName) {
-        setFilteredUsers([]); // 你可以在这里设置默认值或空数组
+        setFilteredUsers([]);
         return;
       }
-
       try {
         const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
-        setFilteredUsers(data); // 使用从 API 获取的过滤后的数据更新状态
+        setFilteredUsers(data);
       } catch (error) {
         console.error("Error fetching and filtering users:", error);
       }
     }
 
     fetchAndFilterUsers();
-  }, [selectedTags, searchName, operator, currentLanguage]); // 当这些依赖项变化时重新获取和过滤数据
+  }, [selectedTags, searchName, operator, currentLanguage]);
 
   // 计算 isFiltered 标志
   const isFiltered = selectedTags.length > 0 || searchName !== null;
@@ -293,8 +292,8 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef(null);
-  const [value, setValue] = useState("");
+  const searchRef = useRef<InputRef>(null);
+  const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
     // 初始化时根据当前 URL 设置搜索框的值
@@ -304,17 +303,28 @@ function SearchBar() {
 
   // 搜索函数
   const handleSearch = useCallback(() => {
-    const newSearch = new URLSearchParams(location.search);
-    newSearch.delete(SearchNameQueryKey);
-    if (value) {
-      newSearch.set(SearchNameQueryKey, value);
+    try {
+      const newSearch = new URLSearchParams(location.search);
+      newSearch.delete(SearchNameQueryKey);
+      if (value) {
+        newSearch.set(SearchNameQueryKey, value);
+      }
+      history.push({
+        ...location,
+        search: newSearch.toString(),
+        state: prepareUserState(),
+      });
+    } catch (error) {
+      console.error("Error occurred while searching:", error);
     }
-    history.push({
-      ...location,
-      search: newSearch.toString(),
-      state: prepareUserState(),
-    });
   }, [value, location, history]);
+
+  useEffect(() => {
+    // 如果 value 变为空字符串，假定清除操作已发生，触发搜索
+    if (value === "") {
+      handleSearch();
+    }
+  }, [value, handleSearch]);
 
   // 处理输入事件，更新搜索框的值
   const handleInput = (e) => {
@@ -338,9 +348,9 @@ function SearchBar() {
             message: "Search for prompts...",
             id: "showcase.searchBar.placeholder",
           })}
-          value={value}
+          value={value ?? undefined}
           onChange={handleInput}
-          onPressEnter={handleSearch} // 当用户在搜索框按回车时，触发搜索
+          onPressEnter={handleSearch}
           allowClear
           suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
         />
@@ -365,6 +375,8 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   ];
   const [favoritePrompts, setFavoritePrompts] = useState([]);
   const [otherPrompts, setOtherPrompts] = useState([]);
+  const [isLoadingFavorites, setIsLoadingFavorites] = useState(true);
+  const [isLoadingOthers, setIsLoadingOthers] = useState(true);
 
   const { userAuth } = useContext(AuthContext);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
@@ -378,12 +390,15 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }, [userAuth]);
 
   useEffect(() => {
+    setIsLoadingFavorites(true);
+    setIsLoadingOthers(true);
     if (!userAuth && !showAllOtherUsers) {
       setFavoritePrompts(favorData);
       setOtherPrompts(otherData);
+      setIsLoadingFavorites(false);
+      setIsLoadingOthers(false);
     } else {
       const favorIds = userAuth ? userLoves : defaultFavorIds;
-      // 根据 favorIds 过滤 allIds 和 defaultIds
       const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
       const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
 
@@ -392,10 +407,12 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
       getPrompts("cards", favorIds, currentLanguage).then((data) => {
         setFavoritePrompts(data);
+        setIsLoadingFavorites(false);
       });
 
       getPrompts("cards", idsToShow, currentLanguage).then((data) => {
         setOtherPrompts(data);
+        setIsLoadingOthers(false);
       });
     }
   }, [currentLanguage, showAllOtherUsers, userLoves]);
@@ -411,6 +428,15 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }, [otherUsers]);
 
   const { filteredUsers, isFiltered } = useFilteredUsers();
+  if (isLoadingFavorites || isLoadingOthers) {
+    return (
+      <section className="margin-top--lg margin-bottom--xl">
+        <div className="container padding-vert--md text--center">
+          <Spin size="large" />
+        </div>
+      </section>
+    );
+  }
   if (isFiltered && filteredUsers.length === 0) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
