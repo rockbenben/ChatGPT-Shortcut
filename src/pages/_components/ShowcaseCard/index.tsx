@@ -22,7 +22,8 @@ const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, descriptio
 ));
 
 function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
-  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
+  const safeTags = tags || [];
+  const tagObjects = safeTags.map((tag) => ({ tag, ...Tags[tag] }));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
@@ -143,6 +144,10 @@ function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
     }
   }, [user.id, onLove, userAuth, refreshUserAuth, isFavorite]);
 
+  // 临时方案，10 天后删除（2024/02/15）
+  const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
+  // 将下方的 defaultFavorIds.includes(user.id) 替换为 user.tags?.includes("favorite")
+
   return (
     <li key={userTitle} className="card shadow--md">
       <div className={clsx("card__body")}>
@@ -161,7 +166,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
                 </Button>
               </Tooltip>
             )}
-            {!userAuth && user.tags.includes("favorite") && (
+            {!userAuth && defaultFavorIds.includes(user.id) && (
               <Button type="text" disabled>
                 <HeartTwoTone twoToneColor="#eb2f96" />
               </Button>

@@ -13,7 +13,6 @@ import Heading from "@theme/Heading";
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import { ConfigProvider, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import { debounce } from "lodash";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";

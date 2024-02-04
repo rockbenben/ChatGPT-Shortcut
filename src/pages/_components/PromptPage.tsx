@@ -97,11 +97,12 @@ function PromptPage({ promptId }) {
               </Typography.Paragraph>
             </Tooltip>
             <Space wrap>
-              {tags.map((tag) => (
-                <Link key={tag} to={"/?tags=" + tag}>
-                  <Tag color="blue">{tag}</Tag>
-                </Link>
-              ))}
+              {tags &&
+                tags.map((tag) => (
+                  <Link key={tag} to={"/?tags=" + tag}>
+                    <Tag color="blue">{tag}</Tag>
+                  </Link>
+                ))}
             </Space>
             <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
