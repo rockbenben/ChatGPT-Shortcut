@@ -108,11 +108,17 @@ export function getPrompts(type, ids, lang) {
     }
   });
 
+  const apiEndpoints = {
+    cards: "/cards/bulk",
+    commus: "/userprompts/bulk",
+    userprompts: "/userprompts/favorbulk",
+  };
+
   // 如果所有数据都已缓存，直接返回这些数据
   if (idsToFetch.length === 0) {
     return Promise.resolve(cachedPrompts);
   } else {
-    const apiEndpoint = type === "cards" ? "/cards/bulk" : type === "commus" ? "/userprompts/bulk" : "/userprompts/favorbulk";
+    const apiEndpoint = apiEndpoints[type] || apiEndpoints["commus"];
     const postData = type === "cards" ? { ids: idsToFetch, lang } : { ids: idsToFetch };
     const requestConfig = type === "userprompts" ? config : {};
 
@@ -340,6 +346,36 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     localStorage.setItem(expirationKey, String(nextExpirationDate));
 
     return [responseIds, responseTotal];
+  }
+}
+
+// 根据 tag 或关键词搜索 cards prompts
+export async function findCardsWithTags(tags, search, lang = "zh", operator = "OR") {
+  try {
+    const queryParams = new URLSearchParams();
+    if (tags && tags.length > 0) {
+      tags.forEach((tag) => {
+        if (tag.trim() !== "") {
+          queryParams.append("tags", tag.trim());
+        }
+      });
+    }
+
+    // 添加 search, lang 和 operator 到查询参数
+    if (search && search.trim() !== "") {
+      queryParams.append("search", search.trim());
+    }
+    queryParams.append("lang", lang);
+    queryParams.append("operator", operator);
+
+    const responseIds = await axios.get(`${API_URL}/cards/find-with-tag`, {
+      params: queryParams,
+    });
+    const detailedCards = await getPrompts("cards", responseIds.data, lang);
+    return detailedCards;
+  } catch (error) {
+    console.error("Error fetching cards with tags:", error);
+    throw error;
   }
 }
 
