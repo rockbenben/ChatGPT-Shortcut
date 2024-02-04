@@ -271,7 +271,7 @@ div[class^="announcementBar_"] {
 
 /* 全局滚动条样式 */
 ::-webkit-scrollbar {
-  width: 5px; /* 滚动条宽度 */
+  width: 8px; /* 滚动条宽度 */
 }
 
 ::-webkit-scrollbar-track {
