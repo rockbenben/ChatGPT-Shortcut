@@ -1,0 +1,102 @@
+[
+    {
+        "en": {
+            "title": "Writing assistant",
+            "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. Please begin by editing the following text:",
+            "remark": "For optimising the grammar, clarity and conciseness of text and improving readability."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 2,
+        "count": 61198
+    },
+    {
+        "en": {
+            "title": "Thesis reply",
+            "prompt": "Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "remark": "Discussing questions in essay form allows for coherent, structured and higher quality responses."
+        },
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 4,
+        "count": 12050
+    },
+    {
+        "en": {
+            "title": "Scademician",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first suggestion request is ",
+            "remark": "Write a comprehensive and persuasive thesis based on the given topic."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "en": {
+            "title": "Midjourney Prompt Generator",
+            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. Here is your first prompt: ",
+            "remark": "By filling in detailed and creative descriptions for the provided image, Midjourney is inspired to generate unique and interesting images. This also applies to Stable Diffusion."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
+        "tags": [
+            "favorite",
+            "ai"
+        ],
+        "id": 109,
+        "count": 20763
+    },
+    {
+        "en": {
+            "title": "Nature Style Editing",
+            "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
+            "remark": "Polish according to the style of Nature, or provide a writing style to emulate. Contributed by @Pfyuan77."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "contribute",
+            "write"
+        ],
+        "id": 197,
+        "count": 20329
+    },
+    {
+        "en": {
+            "title": "Opposite-sex Dialogue",
+            "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. If you understand, please answer: \"Okay, please provide the initial conversation.\"",
+            "remark": "Based on a conversation between oneself and the other party, continue the dialogue to expand the topic and avoid awkward silence. The prompt words need to be modified according to one's own situation. Contributed by @lsdt45."
+        },
+        "website": null,
+        "tags": [
+            "contribute",
+            "social",
+            "favorite"
+        ],
+        "id": 199,
+        "count": 15473
+    },
+    {
+        "en": {
+            "title": "Emoji writing",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. Please begin by editing the following text: ",
+            "remark": "Rewrite text using emoticon style."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 209,
+        "count": 43405
+    }
+]

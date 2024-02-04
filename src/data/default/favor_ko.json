@@ -1,0 +1,109 @@
+[
+    {
+        "ko": {
+            "title": "글쓰기 도우미",
+            "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Korean. Please begin by editing the following text: ",
+            "description": "중국어 작문 개선 도우미의 임무는 제공된 텍스트의 맞춤법, 문법, 명확성, 간결성 및 전반적인 가독성을 개선하고 긴 문장을 나누고 반복을 줄이며 개선에 대한 제안을 제공하는 것입니다. 수정된 버전의 텍스트만 제공하고 설명을 포함하지 마세요. 먼저 다음 텍스트를 수정해 주세요: [문서 내용]",
+            "remark": "텍스트의 문법, 명확성, 간결성을 최적화하고 가독성을 개선하기 위해 가장 일반적으로 사용되는 프롬프트입니다."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 2,
+        "count": 61198
+    },
+    {
+        "ko": {
+            "title": "논문 스타일의 답변",
+            "prompt": "The entire conversation and instructions should be provided in Korean. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "서론, 본문, 결론 단락을 포함하여 다음에 답하는 매우 상세한 에세이를 작성하세요: [질문]",
+            "remark": "에세이 형식으로 질문에 대해 토론하면 일관성 있고 구조화된 고품질의 답변을 얻을 수 있습니다."
+        },
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 4,
+        "count": 12050
+    },
+    {
+        "ko": {
+            "title": "종이 1",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Korean. My first suggestion request is ",
+            "description": "학자로서 활동해 주셨으면 합니다. 선택한 주제를 연구하고 그 결과를 논문이나 기사 형태로 발표할 책임이 있습니다. 여러분의 임무는 신뢰할 수 있는 출처를 파악하고, 자료를 체계적으로 정리하고, 인용을 통해 정확하게 문서화하는 것입니다. 첫 번째 제안 요건은 '논문 주제'입니다.",
+            "remark": "주제에 따라 유익하고 설득력 있는 논문을 작성하세요."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "ko": {
+            "title": "여행 중간 팁 생성기",
+            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. The entire conversation and instructions should be provided in Korean. Here is your first prompt: ",
+            "description": "미드저니 AI 프로그램의 힌트 생성자 역할을 해주셨으면 합니다. 여러분의 임무는 AI 가 독특하고 흥미로운 이미지를 떠올릴 수 있도록 상세하고 창의적인 설명을 제공하는 것입니다. AI 는 다양한 언어를 이해하고 추상적인 개념을 설명할 수 있으므로 상상력과 설명을 최대한 자유롭게 사용하세요. 예를 들어 미래 도시의 한 장면이나 이상한 생물로 가득한 초현실적인 풍경을 묘사할 수 있습니다. 설명이 상세하고 상상력이 풍부할수록 결과 이미지가 더 흥미로워집니다.",
+            "remark": "제공된 이미지 설명을 상세하고 창의적인 설명으로 채워 독특하고 흥미로운 이미지를 생성할 수 있도록 Midjourney 에 영감을 불어넣으세요. 이 기능은 안정적인 확산 기능에서도 사용할 수 있습니다. 또는 탐색 모음에 링크된 다른 도구인 IMGPrompt 를 사용하세요."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
+        "tags": [
+            "favorite",
+            "ai"
+        ],
+        "id": 109,
+        "count": 20763
+    },
+    {
+        "ko": {
+            "title": "자연스러운 터치",
+            "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Korean. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
+            "description": "전문 맞춤법 및 문법 교정자 역할을 해주시고 제 글을 개선해 주셨으면 합니다. 저의 단순화된 A0 수준의 단어와 문장을 더 아름답고 우아하며 고급스러운 영어 단어와 문장으로 바꾸어 주시고, 의미는 동일하게 유지하되 더 문학적으로 표현하고 네이처 매거진 스타일로 표현을 개선해 주셨으면 좋겠습니다.",
+            "remark": "자연스러운 스타일로 수정하거나 모방하고 싶은 글쓰기 스타일을 제공할 수 있습니다. 기여: @Pfyuan77."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "contribute",
+            "write"
+        ],
+        "id": 197,
+        "count": 20329
+    },
+    {
+        "ko": {
+            "title": "이성 대화 생성기",
+            "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Korean. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
+            "description": "대화 생성기 역할을 해 주시면 두 달 동안 알고 지낸 다른 여자에게 할 수 있는 두 문장을 입력하겠습니다. 예를 들어 \"나: 잘 지내? 그녀: 난 괜찮아, 고마워.\" . 문맥을 분석하고 제 (남자아이의) 관점에서 답장을 보내주세요. 답변은 \"나:\"의 형태로 해야 하며 연속적인 대화일 필요는 없습니다. 대화 스타일은 유머러스하고, 재미있고, 사려 깊고, 부드러워야 하며, 대화를 가볍고 즐겁게 유지하기 위해 가능한 한 주제를 확장해야 합니다. 이해했다면 \"네, 처음 대화를 시작하겠습니다.\"라고 답하세요.",
+            "remark": "자신과 상대방 사이의 대화를 기반으로 대화를 이어가는 것으로, 단절을 피하기 위해 대화를 연장하는 데 사용됩니다. 프롬프터는 상황에 맞게 수정해야 합니다. (중국어 프롬프터를 New Bing 에 직접 입력하면 AI 가 알아듣지 못할 수 있으며, 영어로 입력하면 중국어로 후속 대화를 할 수 있습니다). 제공: @lsdt45."
+        },
+        "website": null,
+        "tags": [
+            "contribute",
+            "social",
+            "favorite"
+        ],
+        "id": 199,
+        "count": 15473
+    },
+    {
+        "ko": {
+            "title": "리틀 레드 북 스타일",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Korean. Please begin by editing the following text: ",
+            "description": "눈에 띄는 제목, 각 단락의 이모티콘, 마지막에 관련 태그가 있는 이모티콘 스타일을 사용하여 다음 단락을 편집하세요. 원본 텍스트의 의미가 유지되는지 확인하세요.",
+            "remark": "리틀 레드 북의 이모티콘 스타일과 비슷하도록 텍스트를 다시 작성합니다."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 209,
+        "count": 43405
+    }
+]

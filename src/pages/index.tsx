@@ -28,6 +28,9 @@ import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthConte
 
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 
+import favorData from "@site/src/data/default/favor_zh.json";
+import otherData from "@site/src/data/default/other_zh.json";
+
 const ShareButtons = Loadable({
   loader: () => import("@site/src/pages/_components/ShareButtons"),
   loading: () => null,
@@ -375,21 +378,26 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }, [userAuth]);
 
   useEffect(() => {
-    const favorIds = userAuth ? userLoves : defaultFavorIds;
-    // 根据 favorIds 过滤 allIds 和 defaultIds
-    const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
-    const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
+    if (!userAuth && !showAllOtherUsers) {
+      setFavoritePrompts(favorData);
+      setOtherPrompts(otherData);
+    } else {
+      const favorIds = userAuth ? userLoves : defaultFavorIds;
+      // 根据 favorIds 过滤 allIds 和 defaultIds
+      const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
+      const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
 
-    // 如果 showAllOtherUsers 为真，使用 filteredAllIds，否则使用 filteredDefaultIds
-    const idsToShow = showAllOtherUsers ? filteredAllIds : filteredDefaultIds;
+      // 如果 showAllOtherUsers 为真，使用 filteredAllIds，否则使用 filteredDefaultIds
+      const idsToShow = showAllOtherUsers ? filteredAllIds : filteredDefaultIds;
 
-    getPrompts("cards", favorIds, currentLanguage).then((data) => {
-      setFavoritePrompts(data);
-    });
+      getPrompts("cards", favorIds, currentLanguage).then((data) => {
+        setFavoritePrompts(data);
+      });
 
-    getPrompts("cards", idsToShow, currentLanguage).then((data) => {
-      setOtherPrompts(data);
-    });
+      getPrompts("cards", idsToShow, currentLanguage).then((data) => {
+        setOtherPrompts(data);
+      });
+    }
   }, [currentLanguage, showAllOtherUsers, userLoves]);
 
   const [favoriteUsers, otherUsers] = useMemo(() => {

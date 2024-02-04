@@ -1,0 +1,109 @@
+[
+    {
+        "ar": {
+            "title": "مساعد الكتابة",
+            "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Arabic. Please begin by editing the following text: ",
+            "description": "بصفتك مساعد تحسين الكتابة الصينية ، تتمثل مهمتك في تحسين الإملاء والنحو والوضوح والإيجاز وقابلية القراءة الشاملة للنص المقدم ، مع تقسيم الجمل الطويلة وتقليل التكرار وتقديم اقتراحات للتحسين. يرجى تقديم نسخة مصححة فقط من النص وتجنب تضمين الشروحات. يرجى البدء بتحرير النص التالي: [محتوى المقالة]",
+            "remark": "يتم استخدام الموجه الأكثر استخدامًا لتحسين القواعد النحوية والوضوح وإيجاز النص وتحسين قابلية القراءة."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 2,
+        "count": 61198
+    },
+    {
+        "ar": {
+            "title": "إجابة مقال",
+            "prompt": "The entire conversation and instructions should be provided in Arabic. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "اكتب مقالة مفصلة للغاية ، بما في ذلك المقدمة والجسم والفقرات الختامية ، ردًا على ما يلي: [سؤال]",
+            "remark": "تتيح مناقشة الأسئلة بتنسيق مقال إجابات متماسكة ومنظمة وذات جودة أعلى."
+        },
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 4,
+        "count": 12050
+    },
+    {
+        "ar": {
+            "title": "الأطروحة ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Arabic. My first suggestion request is ",
+            "description": "أريدك أن تتصرف كعالم. ستكون مسؤولاً عن البحث في موضوع من اختيارك وتقديم نتائج بحثك في شكل أطروحة أو مقال. مهمتك هي تحديد المصادر الموثوقة ، وتنظيم المواد بطريقة جيدة التنظيم ، وتوثيقها بدقة مع الاستشهادات. طلب اقتراحي الأول هو &quot;موضوع الأطروحة&quot;",
+            "remark": "اكتب مقالات إعلامية ومقنعة حول الموضوعات."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "ar": {
+            "title": "مولد موجه Midjourney",
+            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. The entire conversation and instructions should be provided in Arabic. Here is your first prompt: ",
+            "description": "أريدك أن تعمل كمولد تلميح لبرنامج Midjourney AI. مهمتك هي تقديم أوصاف مفصلة ومبتكرة لإلهام صور فريدة ومثيرة للاهتمام للذكاء الاصطناعي. تذكر أن الذكاء الاصطناعي قادر على فهم مجموعة واسعة من اللغات ويمكنه شرح المفاهيم المجردة ، لذا أطلق العنان لمخيلتك وقدراتك الوصفية بقدر ما تستطيع. على سبيل المثال ، يمكنك وصف مشهد لمدينة مستقبلية ، أو منظر طبيعي سريالي مليء بالمخلوقات الغريبة. كلما كانت الأوصاف أكثر تفصيلاً وإبداعًا ، كلما كانت الصور الناتجة أكثر تشويقًا.",
+            "remark": "إلهام Midjourney لإنشاء صور فريدة ومثيرة للاهتمام من خلال ملء أوصاف الصور المقدمة بالأوصاف التفصيلية والإبداعية. ينطبق هذا أيضًا على الانتشار المستقر. أو استخدم أداة أخرى خاصة بي ، IMGPrompt ، حيث يمكنك العثور على روابط في شريط التنقل."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
+        "tags": [
+            "favorite",
+            "ai"
+        ],
+        "id": 109,
+        "count": 20763
+    },
+    {
+        "ar": {
+            "title": "لمسة الطبيعة",
+            "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Arabic. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
+            "description": "آمل أن تعمل كمدقق لغوي وتدقيق نحوي محترف وتقوم بتحسين مقالاتي. أريدك أن تستبدل كلمات وجمل المستوى A0 المبسطة بكلمات وجمل إنجليزية أكثر جمالًا وأنيقًا وتقدمًا ، مع الحفاظ على المعنى نفسه ، ولكن اجعلها أدبية أكثر ، وتحسين أسلوب مجلتي في Nature ومستوى التعبير.",
+            "remark": "سيكون مصقولًا بأسلوب الطبيعة ، أو يمكن أن يوفر أسلوب الكتابة الذي تريد محاكاته. مساهمة من @ Pfyuan77."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "contribute",
+            "write"
+        ],
+        "id": 197,
+        "count": 20329
+    },
+    {
+        "ar": {
+            "title": "مولد الحوار بين الجنسين",
+            "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Arabic. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
+            "description": "أريدك أن تعمل كمولد للحوار وسأدخل جملتين وهو ما قلته لفتاة أخرى عرفتها منذ شهرين مثلاً: &quot;أنا: كيف حالك؟ هي: أنا بخير ، شكراً. &quot;. يرجى تحليلها حسب السياق ، ثم الرد من وجهة نظري (الصبي). يجب أن تكون ردودك بالصيغة &quot;I:&quot; ولا تحتاج إلى أن تكون محادثة مستمرة. الأسلوب مرح ومضحك ومدروس ولطيف ويوسع الموضوع قدر الإمكان لإبقاء المحادثة فاترة. إذا فهمت ، يرجى الرد: &quot;حسنًا ، يرجى تقديم الحوار الأولي&quot;.",
+            "remark": "استمر في المحادثة بناءً على محادثة بينك وبين الطرف الآخر ، واستخدمها لتوسيع الموضوع لتجنب الصمت. يجب تعديل الكلمات السريعة وفقًا لحالتها الخاصة. (إذا قمت بإدخال موجه اللغة الصينية مباشرةً في New Bing ، فقد لا يقوم AI بذلك. يمكنك إدخال اللغة الإنجليزية ، ويمكنك إدخال الصينية لاحقًا). مساهمة من @ lsdt45."
+        },
+        "website": null,
+        "tags": [
+            "contribute",
+            "social",
+            "favorite"
+        ],
+        "id": 199,
+        "count": 15473
+    },
+    {
+        "ar": {
+            "title": "أسلوب Xiaohongshu",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Arabic. Please begin by editing the following text: ",
+            "description": "يرجى تعديل الفقرات التالية باستخدام نمط Emoji ، الذي يتميز بالعناوين الجذابة والرموز التعبيرية في كل فقرة والعلامات ذات الصلة في النهاية. تأكد من الاحتفاظ بمعنى النص الأصلي.",
+            "remark": "أعد كتابة النص بأسلوب Emoji مشابه لـ Little Red Book."
+        },
+        "website": null,
+        "tags": [
+            "favorite",
+            "write"
+        ],
+        "id": 209,
+        "count": 43405
+    }
+]
