@@ -11,11 +11,12 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { ConfigProvider, Input, Button } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import { debounce } from "lodash";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
-import { sortedUsers } from "@site/src/data/users.zh";
 
 import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle, { type Operator, readOperator } from "@site/src/pages/_components/ShowcaseFilterToggle";
@@ -26,7 +27,8 @@ import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
-import { fetchAllCopyCounts } from "@site/src/api";
+import { findCardsWithTags, getPrompts } from "@site/src/api";
+
 const ShareButtons = Loadable({
   loader: () => import("@site/src/pages/_components/ShareButtons"),
   loading: () => null,
@@ -67,45 +69,49 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function filterUsers(users: User[], selectedTags: TagType[], operator: Operator, searchName: string | null) {
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
-  if (searchName) {
-    const lowercaseSearchName = searchName.toLowerCase();
-    // 搜索范围
-    users = users.filter((user) =>
-      (user[currentLanguage].title + user[currentLanguage].prompt + (user[currentLanguage].description ?? "") + user[currentLanguage].remark).toLowerCase().includes(lowercaseSearchName)
-    );
-  }
-  if (selectedTags.length === 0) {
-    return users.sort((a, b) => b.weight - a.weight);
-  }
-  return users.filter((user) => {
-    if (user.tags.length === 0) {
-      return false;
-    }
-    if (operator === "AND") {
-      return selectedTags.every((tag) => user.tags.includes(tag));
-    }
-    return selectedTags.some((tag) => user.tags.includes(tag));
-  });
-}
-
 function useFilteredUsers() {
-  const location = useLocation<UserState>();
+  const location = useLocation(); // 使用 useLocation 来获取当前 URL 的信息
   const [operator, setOperator] = useState<Operator>("OR");
-  // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
-  // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
-  // hydration mismatch)
-  useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
-    setOperator(readOperator(location.search));
-    setSearchName(readSearchName(location.search));
-  }, [location]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
 
-  return useMemo(() => filterUsers(sortedUsers, selectedTags, operator, searchName), [selectedTags, operator, searchName]);
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const tags = queryParams.getAll("tags");
+    const search = queryParams.get("name");
+    const operatorParam = queryParams.get("operator") || "OR";
+
+    setSelectedTags(tags);
+    setSearchName(search);
+    setOperator(operatorParam as Operator);
+  }, [location.search]); // 当 URL 查询参数变化时重新运行
+
+  useEffect(() => {
+    async function fetchAndFilterUsers() {
+      // 如果没有提供 tags 和 search，跳过搜索
+      if (selectedTags.length === 0 && !searchName) {
+        setFilteredUsers([]); // 你可以在这里设置默认值或空数组
+        return;
+      }
+
+      try {
+        const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
+        setFilteredUsers(data); // 使用从 API 获取的过滤后的数据更新状态
+      } catch (error) {
+        console.error("Error fetching and filtering users:", error);
+      }
+    }
+
+    fetchAndFilterUsers();
+  }, [selectedTags, searchName, operator, currentLanguage]); // 当这些依赖项变化时重新获取和过滤数据
+
+  // 计算 isFiltered 标志
+  const isFiltered = selectedTags.length > 0 || searchName !== null;
+
+  return { filteredUsers, isFiltered };
 }
 
 function ShowcaseHeader() {
@@ -285,110 +291,120 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef<HTMLInputElement>(null);
-  const [value, setValue] = useState<string | null>(null);
+  const searchRef = useRef(null);
+  const [value, setValue] = useState("");
 
   useEffect(() => {
+    // 初始化时根据当前 URL 设置搜索框的值
     setValue(readSearchName(location.search));
-    if (searchRef.current) {
-      searchRef.current.focus();
-    }
+    //searchRef.current?.focus();
   }, [location]);
 
-  const updateSearch = useCallback(
-    debounce((searchValue: string) => {
-      const newSearch = new URLSearchParams(location.search);
-      newSearch.delete(SearchNameQueryKey);
-      if (searchValue) {
-        newSearch.set(SearchNameQueryKey, searchValue);
-      }
-      history.push({
-        ...location,
-        search: newSearch.toString(),
-        state: prepareUserState(),
-      });
-    }, 1000), // search latency 搜索延时
-    [location, history]
-  );
+  // 搜索函数
+  const handleSearch = useCallback(() => {
+    const newSearch = new URLSearchParams(location.search);
+    newSearch.delete(SearchNameQueryKey);
+    if (value) {
+      newSearch.set(SearchNameQueryKey, value);
+    }
+    history.push({
+      ...location,
+      search: newSearch.toString(),
+      state: prepareUserState(),
+    });
+  }, [value, location, history]);
 
-  const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
-    setValue(e.currentTarget.value);
-    updateSearch(e.currentTarget.value);
+  // 处理输入事件，更新搜索框的值
+  const handleInput = (e) => {
+    setValue(e.target.value);
   };
 
   return (
     <div className={styles.searchContainer}>
-      <input
-        ref={searchRef}
-        id="searchbar"
-        placeholder={translate({
-          message: "Search for prompts...",
-          id: "showcase.searchBar.placeholder",
-        })}
-        value={value ?? undefined}
-        onInput={handleInput}
-      />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#397e6a",
+            borderRadius: 30,
+            colorBgContainer: "#f6ffed",
+          },
+        }}>
+        <Input
+          ref={searchRef}
+          id="searchbar"
+          placeholder={translate({
+            message: "Search for prompts...",
+            id: "showcase.searchBar.placeholder",
+          })}
+          value={value}
+          onChange={handleInput}
+          onPressEnter={handleSearch} // 当用户在搜索框按回车时，触发搜索
+          allowClear
+          suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
+        />
+      </ConfigProvider>
     </div>
   );
 }
 
 function ShowcaseCards({ isDescription, showUserFavs }) {
-  const [copyCounts, setCopyCounts] = useState({});
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
+  const defaultIds = [185, 2, 209, 109, 197, 20, 199, 4, 1, 90, 204, 180, 251, 218, 234, 232, 196, 41, 11];
+  const allIds = [
+    185, 2, 209, 109, 197, 20, 199, 4, 1, 90, 204, 180, 251, 218, 234, 232, 196, 41, 11, 9, 17, 206, 173, 8, 210, 219, 7, 56, 177, 155, 214, 220, 212, 187, 10, 159, 122, 15, 238, 256, 242, 21, 80,
+    224, 5, 132, 171, 200, 217, 14, 142, 49, 158, 139, 181, 19, 13, 94, 48, 63, 91, 205, 16, 176, 190, 18, 141, 125, 191, 195, 266, 95, 89, 152, 73, 24, 182, 120, 50, 222, 75, 6, 145, 221, 188, 138,
+    23, 82, 160, 40, 253, 3, 77, 194, 241, 93, 255, 237, 126, 184, 163, 103, 243, 192, 101, 42, 215, 57, 12, 130, 233, 250, 179, 87, 112, 236, 157, 202, 264, 211, 239, 167, 162, 189, 216, 46, 35, 74,
+    147, 151, 175, 137, 134, 72, 193, 198, 66, 98, 97, 88, 172, 178, 37, 203, 267, 150, 254, 47, 106, 22, 140, 38, 240, 201, 78, 123, 228, 213, 67, 45, 144, 39, 51, 270, 92, 96, 258, 262, 245, 207,
+    265, 58, 259, 261, 62, 64, 271, 85, 135, 28, 133, 71, 269, 99, 70, 170, 26, 168, 257, 76, 246, 186, 169, 248, 68, 208, 244, 81, 153, 86, 54, 25, 235, 53, 100, 43, 146, 52, 166, 252, 154, 79, 111,
+    118, 143, 124, 59, 61, 129, 183, 247, 31, 29, 27, 131, 119, 226, 102, 148, 36, 55, 84, 107, 223, 30, 161, 44, 260, 229, 263, 128, 165, 60, 65, 114, 136, 164, 69, 116, 149, 115, 108, 83, 117, 121,
+    32, 249, 174, 104, 113, 225, 227, 105, 33, 156, 34, 277, 127, 268, 275, 273, 274, 272, 276, 110, 230, 231,
+  ];
+  const [favoritePrompts, setFavoritePrompts] = useState([]);
+  const [otherPrompts, setOtherPrompts] = useState([]);
 
   const { userAuth } = useContext(AuthContext);
-  const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
-  // 当 userAuth 改变时，更新 userLoves 的值
+  const [userLoves, setUserLoves] = useState([]);
+
   useEffect(() => {
-    setUserLoves(userAuth?.data?.favorites?.loves || []);
+    if (userAuth) {
+      setUserLoves(userAuth.data?.favorites?.loves || []);
+    }
   }, [userAuth]);
 
-  const [favoriteUsers, otherUsers] = useMemo(() => {
-    return sortedUsers.reduce(
-      ([favorites, others], user) => {
-        let updatedUser = { ...user }; // 创建新对象，避免直接修改
-        if (userAuth && updatedUser.tags.includes("favorite")) {
-          updatedUser.tags = updatedUser.tags.filter((tag) => tag !== "favorite");
-        }
-        if (userLoves && userLoves.includes(updatedUser.id) && !updatedUser.tags.includes("favorite")) {
-          updatedUser.tags = [...updatedUser.tags, "favorite"];
-        }
-        if (updatedUser.tags.includes("favorite")) {
-          favorites.push(updatedUser);
-        } else {
-          others.push(updatedUser);
-        }
-        return [favorites, others];
-      },
-      [[], []]
-    );
-  }, [sortedUsers, userAuth, userLoves]);
-
-  const displayedOtherUsers = showAllOtherUsers ? otherUsers : otherUsers.slice(0, 24);
-
-  favoriteUsers.sort((a, b) => b.weight - a.weight);
-  otherUsers.sort((a, b) => b.weight - a.weight);
-
   useEffect(() => {
-    const fetchData = async () => {
-      const counts = await fetchAllCopyCounts();
-      setCopyCounts(counts);
-    };
+    const favorIds = userAuth ? userLoves : defaultFavorIds;
+    // 根据 favorIds 过滤 allIds 和 defaultIds
+    const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
+    const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
 
-    fetchData();
-  }, []);
+    // 如果 showAllOtherUsers 为真，使用 filteredAllIds，否则使用 filteredDefaultIds
+    const idsToShow = showAllOtherUsers ? filteredAllIds : filteredDefaultIds;
 
-  const handleCardCopy = useCallback((cardId) => {
-    setCopyCounts((prevCopyCounts) => ({
-      ...prevCopyCounts,
-      [cardId]: (prevCopyCounts[cardId] || 0) + 1,
-    }));
-  }, []);
+    getPrompts("cards", favorIds, currentLanguage).then((data) => {
+      setFavoritePrompts(data);
+    });
 
-  const filteredUsers = useFilteredUsers();
+    getPrompts("cards", idsToShow, currentLanguage).then((data) => {
+      setOtherPrompts(data);
+    });
+  }, [currentLanguage, showAllOtherUsers, userLoves]);
 
-  if (filteredUsers.length === 0) {
+  const [favoriteUsers, otherUsers] = useMemo(() => {
+    // 这里你可以根据实际情况调整逻辑，以处理 favoritePrompts 和 otherPrompts 的数据
+    return [favoritePrompts, otherPrompts];
+  }, [favoritePrompts, otherPrompts]);
+
+  const displayedOtherUsers = useMemo(() => {
+    // otherUsers 已经根据 showAllOtherUsers 和 favorIds 处理过，直接返回
+    return otherUsers;
+  }, [otherUsers]);
+
+  const { filteredUsers, isFiltered } = useFilteredUsers();
+  if (isFiltered && filteredUsers.length === 0) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
@@ -404,7 +420,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     // 如果 showUserFavs 为 true，则不渲染 Favorites 区块
     return (
       <section className="margin-top--lg margin-bottom--xl">
-        {filteredUsers.length === sortedUsers.length ? (
+        {!isFiltered ? (
           <>
             <div className="container margin-top--lg">
               <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
@@ -415,10 +431,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {displayedOtherUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
                 ))}
               </ul>
-              {!showAllOtherUsers && otherUsers.length > 50 && (
+              {!showAllOtherUsers && (
                 <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                   {<ArrowDownOutlined />}
                   <Translate>加载更多</Translate>
@@ -433,7 +449,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </div>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {filteredUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
               ))}
             </ul>
           </div>
@@ -445,7 +461,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   // 正常渲染 Favorites 区块
   return (
     <section className="margin-top--lg margin-bottom--sm">
-      {filteredUsers.length === sortedUsers.length ? (
+      {!isFiltered ? (
         <>
           <div className={styles.showcaseFavorite}>
             <div className="container">
@@ -458,7 +474,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
                 ))}
               </ul>
             </div>
@@ -469,10 +485,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {displayedOtherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
               ))}
             </ul>
-            {!showAllOtherUsers && otherUsers.length > 50 && (
+            {!showAllOtherUsers && (
               <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                 {<ArrowDownOutlined />}
                 <Translate>加载更多</Translate>
@@ -487,7 +503,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
             ))}
           </ul>
         </div>

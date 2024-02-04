@@ -42,14 +42,17 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
+function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
-
+  const [isFavorite, setIsFavorite] = useState(false);
+  useEffect(() => {
+    setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
+  }, [userAuth, user.id]);
   const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
 
   useEffect(() => {
@@ -82,7 +85,6 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       }
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
-      onCopy(user.id);
       await updateCopyCount(user.id);
       // Notify parent component to update the copy count
     } catch (error) {
@@ -95,7 +97,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       let userLoves;
       let favoriteId;
 
-      if (!userAuth.data.favorites) {
+      if (!userAuth?.data?.favorites) {
         const createFavoriteResponse = await createFavorite([user.id]);
         userLoves = [user.id];
         favoriteId = createFavoriteResponse.data.id;
@@ -103,7 +105,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
         userLoves = userAuth.data.favorites.loves || [];
         favoriteId = userAuth.data.favorites.id;
 
-        if (!userLoves.includes(user.id)) {
+        if (!isFavorite) {
           userLoves.push(user.id);
           message.success("Added to favorites successfully!");
         }
@@ -116,11 +118,11 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth]);
+  }, [user.id, onLove, userAuth, refreshUserAuth, isFavorite]);
 
   const removeFavorite = useCallback(async () => {
     try {
-      if (userAuth.data.favorites) {
+      if (userAuth?.data?.favorites && isFavorite) {
         let userLoves;
         let favoriteId;
         userLoves = userAuth.data.favorites.loves || [];
@@ -139,7 +141,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth]);
+  }, [user.id, onLove, userAuth, refreshUserAuth, isFavorite]);
 
   return (
     <li key={userTitle} className="card shadow--md">
@@ -153,9 +155,9 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </Heading>
           <Button.Group>
             {userAuth && (
-              <Tooltip title={user.tags.includes("favorite") ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button type="default" onClick={user.tags.includes("favorite") ? removeFavorite : handleLove}>
-                  {user.tags.includes("favorite") ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
+              <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
+                <Button type="default" onClick={isFavorite ? removeFavorite : handleLove}>
+                  {isFavorite ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
                 </Button>
               </Tooltip>
             )}
