@@ -16,33 +16,18 @@
     },
     {
         "ru": {
-            "title": "ответ в стиле эссе",
-            "prompt": "The entire conversation and instructions should be provided in Russian. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "Напишите подробное эссе, включающее введение, основную часть и заключение, в котором ответьте на следующие вопросы:[Вопрос].",
-            "remark": "Обсуждение вопросов в формате эссе позволяет получить связные, структурированные и более качественные ответы."
+            "title": "Маленькая красная книга стиля",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ",
+            "description": "Пожалуйста, отредактируйте следующие абзацы, используя стиль Emoji, который предусматривает привлекательные заголовки, emojis в каждом абзаце и соответствующие теги в конце. Пожалуйста, сохраняйте смысл исходного текста.",
+            "remark": "Перепишите текст в стиле Emoji, аналогичном Little Red Book."
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "ru": {
-            "title": "Диссертация ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ",
-            "description": "Я ожидаю, что вы будете действовать как ученый. Вы должны будете провести исследование по выбранной Вами теме и представить полученные результаты в виде диссертации или статьи. Ваша задача - найти надежные источники, грамотно структурировать материал и оформить его в виде цитат. Первое предлагаемое мной требование - \"Тема диссертации\".",
-            "remark": "Написать информативные и убедительные статьи по заданной теме."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "ru": {
@@ -77,6 +62,21 @@
     },
     {
         "ru": {
+            "title": "Диссертация ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ",
+            "description": "Я ожидаю, что вы будете действовать как ученый. Вы должны будете провести исследование по выбранной Вами теме и представить полученные результаты в виде диссертации или статьи. Ваша задача - найти надежные источники, грамотно структурировать материал и оформить его в виде цитат. Первое предлагаемое мной требование - \"Тема диссертации\".",
+            "remark": "Написать информативные и убедительные статьи по заданной теме."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "ru": {
             "title": "Генератор гетеросексуальных диалогов",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Russian. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "Я бы хотел, чтобы вы выступили в роли генератора диалогов, в который я бы ввел два предложения, каждое от меня и от другой девушки, которую я знаю уже два месяца, например, \"Я: Как дела? Она: Нормально, спасибо\". . Проанализируйте их в контексте, а затем ответьте с моей (парня) точки зрения. Ваш ответ должен быть в формате \"Я:\" и не обязательно должен представлять собой непрерывный диалог. Стиль должен быть юмористическим, интересным, внимательным, мягким, максимально расширяющим тему, чтобы разговор был легким и приятным. Если вы поняли, ответьте: \"Да, пожалуйста, предоставьте начальный диалог\".",
@@ -93,17 +93,17 @@
     },
     {
         "ru": {
-            "title": "Маленькая красная книга стиля",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ",
-            "description": "Пожалуйста, отредактируйте следующие абзацы, используя стиль Emoji, который предусматривает привлекательные заголовки, emojis в каждом абзаце и соответствующие теги в конце. Пожалуйста, сохраняйте смысл исходного текста.",
-            "remark": "Перепишите текст в стиле Emoji, аналогичном Little Red Book."
+            "title": "ответ в стиле эссе",
+            "prompt": "The entire conversation and instructions should be provided in Russian. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "Напишите подробное эссе, включающее введение, основную часть и заключение, в котором ответьте на следующие вопросы:[Вопрос].",
+            "remark": "Обсуждение вопросов в формате эссе позволяет получить связные, структурированные и более качественные ответы."
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

@@ -16,33 +16,18 @@
     },
     {
         "hi": {
-            "title": "निबंध उत्तर",
-            "prompt": "The entire conversation and instructions should be provided in Hindi. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "निम्नलिखित के जवाब में परिचय, मुख्य भाग और समापन पैराग्राफ सहित एक अत्यधिक विस्तृत निबंध लिखें: [प्रश्न]",
-            "remark": "निबंध प्रारूप में प्रश्नों पर चर्चा करने से सुसंगत, संरचित और उच्च गुणवत्ता वाली प्रतिक्रियाएँ प्राप्त होती हैं।"
+            "title": "ज़ियाहोंगशु शैली",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
+            "description": "कृपया इमोजी शैली का उपयोग करके निम्नलिखित पैराग्राफ को संपादित करें, जिसमें आकर्षक शीर्षक, प्रत्येक पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग शामिल हैं। मूल पाठ का अर्थ अवश्य रखें।",
+            "remark": "टेक्स्ट को लिटिल रेड बुक के समान इमोजी शैली में फिर से लिखें।"
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "hi": {
-            "title": "थीसिस ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Hindi. My first suggestion request is ",
-            "description": "मैं चाहता हूं कि आप एक विद्वान के रूप में कार्य करें। आप अपनी पसंद के विषय पर शोध करने और अपने शोध के परिणामों को शोध प्रबंध या लेख के रूप में प्रस्तुत करने के लिए जिम्मेदार होंगे। आपका कार्य विश्वसनीय स्रोतों की पहचान करना, सामग्री को सुव्यवस्थित तरीके से व्यवस्थित करना और उद्धरणों के साथ उसका सटीक दस्तावेजीकरण करना है। मेरा पहला सुझाव अनुरोध &#39;निबंध विषय&#39; है",
-            "remark": "विषयों पर जानकारीपूर्ण और ठोस निबंध लिखें।"
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "hi": {
@@ -77,6 +62,21 @@
     },
     {
         "hi": {
+            "title": "थीसिस ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Hindi. My first suggestion request is ",
+            "description": "मैं चाहता हूं कि आप एक विद्वान के रूप में कार्य करें। आप अपनी पसंद के विषय पर शोध करने और अपने शोध के परिणामों को शोध प्रबंध या लेख के रूप में प्रस्तुत करने के लिए जिम्मेदार होंगे। आपका कार्य विश्वसनीय स्रोतों की पहचान करना, सामग्री को सुव्यवस्थित तरीके से व्यवस्थित करना और उद्धरणों के साथ उसका सटीक दस्तावेजीकरण करना है। मेरा पहला सुझाव अनुरोध &#39;निबंध विषय&#39; है",
+            "remark": "विषयों पर जानकारीपूर्ण और ठोस निबंध लिखें।"
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "hi": {
             "title": "विषमलैंगिक संवाद जेनरेटर",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Hindi. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "मैं चाहता हूं कि आप एक संवाद जनक के रूप में कार्य करें। मैं दो वाक्य दर्ज करूंगा, जो मैंने एक अन्य लड़की से कहा था जिसे मैं दो महीने से जानता हूं, उदाहरण के लिए: &quot;मैं: आप कैसे हैं? वह: मैं ठीक हूं, धन्यवाद। &quot; . कृपया संदर्भ के अनुसार इसका विश्लेषण करें और फिर मेरे (लड़के के) दृष्टिकोण से उत्तर दें। आपकी प्रतिक्रियाएँ &quot;I:&quot; प्रारूप में होनी चाहिए और निरंतर बातचीत की आवश्यकता नहीं है। शैली विनोदी, मज़ाकिया, विचारशील, सौम्य है और बातचीत को हल्का-फुल्का बनाए रखने के लिए विषय का यथासंभव विस्तार करती है। यदि आप समझते हैं, तो कृपया उत्तर दें: &quot;ठीक है, कृपया प्रारंभिक संवाद प्रदान करें।&quot;",
@@ -93,17 +93,17 @@
     },
     {
         "hi": {
-            "title": "ज़ियाहोंगशु शैली",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
-            "description": "कृपया इमोजी शैली का उपयोग करके निम्नलिखित पैराग्राफ को संपादित करें, जिसमें आकर्षक शीर्षक, प्रत्येक पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग शामिल हैं। मूल पाठ का अर्थ अवश्य रखें।",
-            "remark": "टेक्स्ट को लिटिल रेड बुक के समान इमोजी शैली में फिर से लिखें।"
+            "title": "निबंध उत्तर",
+            "prompt": "The entire conversation and instructions should be provided in Hindi. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "निम्नलिखित के जवाब में परिचय, मुख्य भाग और समापन पैराग्राफ सहित एक अत्यधिक विस्तृत निबंध लिखें: [प्रश्न]",
+            "remark": "निबंध प्रारूप में प्रश्नों पर चर्चा करने से सुसंगत, संरचित और उच्च गुणवत्ता वाली प्रतिक्रियाएँ प्राप्त होती हैं।"
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

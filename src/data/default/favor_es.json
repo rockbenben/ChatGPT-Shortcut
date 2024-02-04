@@ -16,33 +16,18 @@
     },
     {
         "es": {
-            "title": "respuesta tipo ensayo",
-            "prompt": "The entire conversation and instructions should be provided in Spanish. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "Escribe un ensayo muy detallado, que incluya una introducción, un cuerpo y párrafos de conclusión, que responda a lo siguiente:[Pregunta].",
-            "remark": "Debatir las preguntas en formato de ensayo da lugar a respuestas coherentes, estructuradas y de mayor calidad."
+            "title": "Pequeño Libro Rojo del Estilo",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ",
+            "description": "Por favor, edite los siguientes párrafos utilizando el estilo Emoji, que se caracteriza por titulares atractivos, emojis en cada párrafo y etiquetas relevantes al final. Asegúrese de mantener el sentido del texto original.",
+            "remark": "Reescribe el texto en un estilo Emoji similar al del Pequeño Libro Rojo."
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "es": {
-            "title": "Tesis ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Spanish. My first suggestion request is ",
-            "description": "Espero que actúes como un académico. Será responsable de investigar un tema de su elección y presentar los resultados en forma de disertación o artículo. Tu tarea consistirá en identificar fuentes fiables, organizar el material de forma bien estructurada y documentarlo con precisión mediante citas. El primer requisito sugerido es \"Tema de la tesis\".",
-            "remark": "Redactar artículos informativos y convincentes basados en el tema."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "es": {
@@ -77,6 +62,21 @@
     },
     {
         "es": {
+            "title": "Tesis ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Spanish. My first suggestion request is ",
+            "description": "Espero que actúes como un académico. Será responsable de investigar un tema de su elección y presentar los resultados en forma de disertación o artículo. Tu tarea consistirá en identificar fuentes fiables, organizar el material de forma bien estructurada y documentarlo con precisión mediante citas. El primer requisito sugerido es \"Tema de la tesis\".",
+            "remark": "Redactar artículos informativos y convincentes basados en el tema."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "es": {
             "title": "Generador de diálogos heterosexuales",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Spanish. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "Me gustaría que actuara como un generador de diálogos, donde introduciría dos frases, cada una mía y de otra chica que conozco desde hace dos meses, por ejemplo: \"Yo: ¿Cómo estás? Ella: Estoy bien, gracias\". . Por favor, analízalas en su contexto y luego responde desde mi punto de vista (el del chico). Tu respuesta debe tener el formato \"Yo:\" y no es necesario que sea un diálogo continuo. El estilo debe ser humorístico, interesante, considerado, amable y ampliar el tema todo lo posible para que la conversación sea ligera y agradable. Si lo entiende, responda: \"Sí, por favor, facilite el diálogo inicial\".",
@@ -93,17 +93,17 @@
     },
     {
         "es": {
-            "title": "Pequeño Libro Rojo del Estilo",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ",
-            "description": "Por favor, edite los siguientes párrafos utilizando el estilo Emoji, que se caracteriza por titulares atractivos, emojis en cada párrafo y etiquetas relevantes al final. Asegúrese de mantener el sentido del texto original.",
-            "remark": "Reescribe el texto en un estilo Emoji similar al del Pequeño Libro Rojo."
+            "title": "respuesta tipo ensayo",
+            "prompt": "The entire conversation and instructions should be provided in Spanish. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "Escribe un ensayo muy detallado, que incluya una introducción, un cuerpo y párrafos de conclusión, que responda a lo siguiente:[Pregunta].",
+            "remark": "Debatir las preguntas en formato de ensayo da lugar a respuestas coherentes, estructuradas y de mayor calidad."
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

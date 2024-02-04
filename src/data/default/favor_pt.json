@@ -16,33 +16,18 @@
     },
     {
         "pt": {
-            "title": "resposta de tipo dissertativo",
-            "prompt": "The entire conversation and instructions should be provided in Portuguese. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "Escreve um ensaio altamente detalhado, incluindo uma introdução, um corpo e parágrafos de conclusão, que responda ao seguinte:[Pergunta].",
-            "remark": "A discussão das perguntas em formato de ensaio resulta em respostas coerentes, estruturadas e de maior qualidade."
+            "title": "Pequeno livro vermelho do estilo",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ",
+            "description": "Edite os parágrafos seguintes utilizando o estilo Emoji, que inclui títulos apelativos, emojis em cada parágrafo e etiquetas relevantes no final. Certifique-se de que mantém o significado do texto original.",
+            "remark": "Reescreva o texto num estilo Emoji semelhante ao do Pequeno Livro Vermelho."
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "pt": {
-            "title": "Tese ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ",
-            "description": "Espero que aja como um académico. Será responsável pela investigação de um tema à sua escolha e pela apresentação dos resultados sob a forma de uma dissertação ou de um artigo. A sua tarefa consistirá em identificar fontes fiáveis, organizar o material de forma bem estruturada e documentá-lo corretamente com citações. O meu primeiro requisito sugerido é \"Tópico de tese",
-            "remark": "Redigir trabalhos informativos e convincentes com base no tema."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "pt": {
@@ -77,6 +62,21 @@
     },
     {
         "pt": {
+            "title": "Tese ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ",
+            "description": "Espero que aja como um académico. Será responsável pela investigação de um tema à sua escolha e pela apresentação dos resultados sob a forma de uma dissertação ou de um artigo. A sua tarefa consistirá em identificar fontes fiáveis, organizar o material de forma bem estruturada e documentá-lo corretamente com citações. O meu primeiro requisito sugerido é \"Tópico de tese",
+            "remark": "Redigir trabalhos informativos e convincentes com base no tema."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "pt": {
             "title": "Gerador de diálogos heterossexuais",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Portuguese. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "Gostaria que funcionasse como um gerador de diálogos, onde eu introduziria duas frases, cada uma de mim e de outra rapariga que conheço há dois meses, por exemplo: \"Eu: Como estás? Ela: Estou óptima, obrigada\". . Analisa-as no contexto e responde do meu ponto de vista (o da rapariga). A sua resposta deve ter o formato de \"Eu:\" e não precisa de ser um diálogo contínuo. O estilo deve ser bem-humorado, interessante, atencioso, gentil e desenvolver o tópico tanto quanto possível para manter a conversa leve e agradável. Se compreender, responda: \"Sim, por favor, forneça o diálogo inicial\".",
@@ -93,17 +93,17 @@
     },
     {
         "pt": {
-            "title": "Pequeno livro vermelho do estilo",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ",
-            "description": "Edite os parágrafos seguintes utilizando o estilo Emoji, que inclui títulos apelativos, emojis em cada parágrafo e etiquetas relevantes no final. Certifique-se de que mantém o significado do texto original.",
-            "remark": "Reescreva o texto num estilo Emoji semelhante ao do Pequeno Livro Vermelho."
+            "title": "resposta de tipo dissertativo",
+            "prompt": "The entire conversation and instructions should be provided in Portuguese. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "Escreve um ensaio altamente detalhado, incluindo uma introdução, um corpo e parágrafos de conclusão, que responda ao seguinte:[Pergunta].",
+            "remark": "A discussão das perguntas em formato de ensaio resulta em respostas coerentes, estruturadas e de maior qualidade."
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

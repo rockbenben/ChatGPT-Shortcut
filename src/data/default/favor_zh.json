@@ -16,33 +16,18 @@
     },
     {
         "zh": {
-            "title": "论文式回答",
-            "prompt": "Write a highly detailed essay in Chinese with introduction, body, and conclusion paragraphs responding to the following: [问题]",
-            "description": "写一篇高度详细的文章，包括引言、主体和结论段落，以回应以下内容：[问题］",
-            "remark": "以论文形式讨论问题，能够获得连贯的、结构化的和更高质量的回答。"
+            "title": "小红书风格",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Chinese. Please begin by editing the following text: 小红书内容",
+            "description": "请使用 Emoji 风格编辑以下段落，该风格以引人入胜的标题、每个段落中包含表情符号和在末尾添加相关标签为特点。请确保保持原文的意思。",
+            "remark": "将文本改写成类似小红书的 Emoji 风格。"
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "zh": {
-            "title": "论文①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '论文主题'",
-            "description": "我希望你能作为一名学者行事。你将负责研究一个你选择的主题，并将研究结果以论文或文章的形式呈现出来。你的任务是确定可靠的来源，以结构良好的方式组织材料，并以引用的方式准确记录。我的第一个建议要求是 '论文主题'",
-            "remark": "根据主题撰写内容翔实、有信服力的论文。"
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "zh": {
@@ -77,6 +62,21 @@
     },
     {
         "zh": {
+            "title": "论文①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Chinese. My first suggestion request is '论文主题'",
+            "description": "我希望你能作为一名学者行事。你将负责研究一个你选择的主题，并将研究结果以论文或文章的形式呈现出来。你的任务是确定可靠的来源，以结构良好的方式组织材料，并以引用的方式准确记录。我的第一个建议要求是 '论文主题'",
+            "remark": "根据主题撰写内容翔实、有信服力的论文。"
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "zh": {
             "title": "异性对话生成器",
             "prompt": "我想让你充当一个对话生成器，我会输入两句话，分别是我和另一个认识两个月的女生说的话，例如：“我：你好吗？她：我很好，谢谢。”。请根据上下文进行分析，然后以我（男生）的角度进行回话。你的回答应该为“我：”的格式，且不需要连续进行对话。风格要幽默、有趣、体贴、温柔，并尽可能地扩展话题，让对话轻松愉快。如果你明白，请回答：“好的，请提供初始对话。”",
             "description": "我想让你充当一个对话生成器，我会输入两句话，分别是我和另一个认识两个月的女生说的话，例如：“我：你好吗？她：我很好，谢谢。”。请根据上下文进行分析，然后以我（男生）的角度进行回话。你的回答应该为“我：”的格式，且不需要连续进行对话。风格要幽默、有趣、体贴、温柔，并尽可能地扩展话题，让对话轻松愉快。如果你明白，请回答：“好的，请提供初始对话。”",
@@ -93,17 +93,17 @@
     },
     {
         "zh": {
-            "title": "小红书风格",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Chinese. Please begin by editing the following text: 小红书内容",
-            "description": "请使用 Emoji 风格编辑以下段落，该风格以引人入胜的标题、每个段落中包含表情符号和在末尾添加相关标签为特点。请确保保持原文的意思。",
-            "remark": "将文本改写成类似小红书的 Emoji 风格。"
+            "title": "论文式回答",
+            "prompt": "Write a highly detailed essay in Chinese with introduction, body, and conclusion paragraphs responding to the following: [问题]",
+            "description": "写一篇高度详细的文章，包括引言、主体和结论段落，以回应以下内容：[问题］",
+            "remark": "以论文形式讨论问题，能够获得连贯的、结构化的和更高质量的回答。"
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

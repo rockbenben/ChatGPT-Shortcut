@@ -16,33 +16,18 @@
     },
     {
         "fr": {
-            "title": "réponse sous forme de dissertation",
-            "prompt": "The entire conversation and instructions should be provided in French. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "Rédigez un essai très détaillé, comprenant une introduction, un corps de texte et une conclusion, qui réponde à la question suivante : [Question].",
-            "remark": "L'examen des questions sous forme de dissertation permet d'obtenir des réponses cohérentes, structurées et de meilleure qualité."
+            "title": "Le petit livre rouge du style",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
+            "description": "Veuillez modifier les paragraphes suivants en utilisant le style Emoji, qui comprend des titres attrayants, des emojis dans chaque paragraphe et des balises pertinentes à la fin. Veillez à conserver le sens du texte original.",
+            "remark": "Réécrivez le texte dans un style Emoji similaire à celui du Petit livre rouge."
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "fr": {
-            "title": "Thèse ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in French. My first suggestion request is ",
-            "description": "J'attends de vous que vous agissiez comme un universitaire. Vous serez chargé(e) de faire des recherches sur un sujet de votre choix et de présenter les résultats sous la forme d'un mémoire ou d'un article. Votre tâche consistera à identifier des sources fiables, à organiser le matériel d'une manière bien structurée et à le documenter avec précision au moyen de citations. La première exigence que je suggère est le \"sujet de thèse",
-            "remark": "Rédiger des documents informatifs et convaincants sur la base du sujet."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "fr": {
@@ -77,6 +62,21 @@
     },
     {
         "fr": {
+            "title": "Thèse ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in French. My first suggestion request is ",
+            "description": "J'attends de vous que vous agissiez comme un universitaire. Vous serez chargé(e) de faire des recherches sur un sujet de votre choix et de présenter les résultats sous la forme d'un mémoire ou d'un article. Votre tâche consistera à identifier des sources fiables, à organiser le matériel d'une manière bien structurée et à le documenter avec précision au moyen de citations. La première exigence que je suggère est le \"sujet de thèse",
+            "remark": "Rédiger des documents informatifs et convaincants sur la base du sujet."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "fr": {
             "title": "Générateur de dialogue hétérosexuel",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in French. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "J'aimerais que vous agissiez comme un générateur de dialogue, dans lequel j'entrerais deux phrases, chacune de moi et d'une autre fille que je connais depuis deux mois, par exemple : \"Moi : Comment vas-tu ? Elle : Je vais bien, merci\". . Veuillez les analyser dans leur contexte et répondre ensuite de mon point de vue (celui du garçon). Votre réponse doit être présentée sous la forme \"Je :\" et ne doit pas nécessairement être un dialogue continu. Le style doit être humoristique, intéressant, attentionné, doux et développer le sujet autant que possible pour que la conversation reste légère et agréable. Si vous comprenez, répondez \"Oui, veuillez fournir le dialogue initial\".",
@@ -93,17 +93,17 @@
     },
     {
         "fr": {
-            "title": "Le petit livre rouge du style",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
-            "description": "Veuillez modifier les paragraphes suivants en utilisant le style Emoji, qui comprend des titres attrayants, des emojis dans chaque paragraphe et des balises pertinentes à la fin. Veillez à conserver le sens du texte original.",
-            "remark": "Réécrivez le texte dans un style Emoji similaire à celui du Petit livre rouge."
+            "title": "réponse sous forme de dissertation",
+            "prompt": "The entire conversation and instructions should be provided in French. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "Rédigez un essai très détaillé, comprenant une introduction, un corps de texte et une conclusion, qui réponde à la question suivante : [Question].",
+            "remark": "L'examen des questions sous forme de dissertation permet d'obtenir des réponses cohérentes, structurées et de meilleure qualité."
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

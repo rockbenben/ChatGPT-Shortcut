@@ -16,33 +16,18 @@
     },
     {
         "de": {
-            "title": "Antwort im Essay-Stil",
-            "prompt": "The entire conversation and instructions should be provided in German. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "Schreiben Sie einen sehr detaillierten Aufsatz, der eine Einleitung, einen Hauptteil und eine Schlussfolgerung enthält und auf folgende Fragen eingeht:[Frage].",
-            "remark": "Die Erörterung von Fragen im Aufsatzformat führt zu kohärenten, strukturierten und qualitativ besseren Antworten."
+            "title": "Kleines Rotes Buch des Stils",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in German. Please begin by editing the following text: ",
+            "description": "Bitte bearbeiten Sie die folgenden Absätze unter Verwendung des Emoji-Stils, der sich durch ansprechende Überschriften, Emojis in jedem Absatz und entsprechende Tags am Ende auszeichnet. Achten Sie bitte darauf, dass der Sinn des Originaltextes erhalten bleibt.",
+            "remark": "Schreiben Sie den Text in einen Emoji-Stil um, der dem Little Red Book ähnelt."
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "de": {
-            "title": "Dissertation ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in German. My first suggestion request is ",
-            "description": "Ich erwarte von Ihnen, dass Sie wie ein Akademiker handeln. Sie sollen ein Thema Ihrer Wahl recherchieren und die Ergebnisse in Form einer Dissertation oder eines Artikels darstellen. Ihre Aufgabe ist es, verlässliche Quellen zu finden, das Material gut zu strukturieren und es mit Zitaten zu belegen. Mein erster Vorschlag ist 'Thema der Arbeit'.",
-            "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "de": {
@@ -77,6 +62,21 @@
     },
     {
         "de": {
+            "title": "Dissertation ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in German. My first suggestion request is ",
+            "description": "Ich erwarte von Ihnen, dass Sie wie ein Akademiker handeln. Sie sollen ein Thema Ihrer Wahl recherchieren und die Ergebnisse in Form einer Dissertation oder eines Artikels darstellen. Ihre Aufgabe ist es, verlässliche Quellen zu finden, das Material gut zu strukturieren und es mit Zitaten zu belegen. Mein erster Vorschlag ist 'Thema der Arbeit'.",
+            "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "de": {
             "title": "Heterosexueller Dialoggenerator",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in German. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "Ich möchte, dass Sie als Dialoggenerator fungieren, in den ich jeweils zwei Sätze von mir und einem anderen Mädchen, das ich seit zwei Monaten kenne, eingebe, z. B. \"Ich: Wie geht es dir? Sie: Mir geht's gut, danke.\" . Bitte analysieren Sie diese Sätze im Zusammenhang und antworten Sie dann aus meiner Sicht (der des Mannes). Ihre Antwort sollte in der Form \"Ich:\" erfolgen und muss kein fortlaufender Dialog sein. Der Stil sollte humorvoll, interessant, rücksichtsvoll und sanft sein und das Thema so weit wie möglich ausdehnen, um das Gespräch leicht und angenehm zu halten. Wenn Sie verstanden haben, antworten Sie: \"Ja, bitte stellen Sie den ersten Dialog zur Verfügung\".",
@@ -93,17 +93,17 @@
     },
     {
         "de": {
-            "title": "Kleines Rotes Buch des Stils",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in German. Please begin by editing the following text: ",
-            "description": "Bitte bearbeiten Sie die folgenden Absätze unter Verwendung des Emoji-Stils, der sich durch ansprechende Überschriften, Emojis in jedem Absatz und entsprechende Tags am Ende auszeichnet. Achten Sie bitte darauf, dass der Sinn des Originaltextes erhalten bleibt.",
-            "remark": "Schreiben Sie den Text in einen Emoji-Stil um, der dem Little Red Book ähnelt."
+            "title": "Antwort im Essay-Stil",
+            "prompt": "The entire conversation and instructions should be provided in German. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "Schreiben Sie einen sehr detaillierten Aufsatz, der eine Einleitung, einen Hauptteil und eine Schlussfolgerung enthält und auf folgende Fragen eingeht:[Frage].",
+            "remark": "Die Erörterung von Fragen im Aufsatzformat führt zu kohärenten, strukturierten und qualitativ besseren Antworten."
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

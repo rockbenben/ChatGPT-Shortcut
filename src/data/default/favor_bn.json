@@ -16,33 +16,18 @@
     },
     {
         "bn": {
-            "title": "প্রবন্ধের উত্তর",
-            "prompt": "The entire conversation and instructions should be provided in Bengali. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-            "description": "নিম্নলিখিতগুলির উত্তরে ভূমিকা, মূল অংশ এবং সমাপ্তি অনুচ্ছেদ সহ একটি অত্যন্ত বিশদ প্রবন্ধ লিখুন: [প্রশ্ন]",
-            "remark": "প্রবন্ধ বিন্যাসে প্রশ্ন আলোচনা করা সুসংগত, কাঠামোগত এবং উচ্চ মানের প্রতিক্রিয়া সক্ষম করে।"
+            "title": "জিয়াওহংশু শৈলী",
+            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ",
+            "description": "অনুগ্রহ করে ইমোজি স্টাইল ব্যবহার করে নিম্নলিখিত অনুচ্ছেদগুলি সম্পাদনা করুন, যাতে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ রয়েছে৷ মূল পাঠ্যের অর্থ রাখতে ভুলবেন না।",
+            "remark": "লিটল রেড বুকের মতো একটি ইমোজি শৈলীতে পাঠ্যটি পুনরায় লিখুন।"
         },
-        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+        "website": null,
         "tags": [
             "favorite",
-            "article"
+            "write"
         ],
-        "id": 4,
-        "count": 12050
-    },
-    {
-        "bn": {
-            "title": "থিসিস ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Bengali. My first suggestion request is ",
-            "description": "আমি চাই তুমি একজন আলেম হিসেবে কাজ কর। আপনি আপনার পছন্দের একটি বিষয় নিয়ে গবেষণা করার জন্য এবং আপনার গবেষণার ফলাফল একটি গবেষণামূলক বা নিবন্ধ আকারে উপস্থাপন করার জন্য দায়ী থাকবেন। আপনার কাজ হল নির্ভরযোগ্য উত্স সনাক্ত করা, উপাদানগুলিকে একটি সুগঠিত পদ্ধতিতে সংগঠিত করা এবং উদ্ধৃতি সহ সঠিকভাবে নথিভুক্ত করা। আমার প্রথম পরামর্শ অনুরোধ হল &#39;ডিজার্টেশন বিষয়&#39;",
-            "remark": "বিষয়ের উপর তথ্যপূর্ণ এবং বিশ্বাসযোগ্য প্রবন্ধ লিখুন।"
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 18235
+        "id": 209,
+        "count": 43405
     },
     {
         "bn": {
@@ -77,6 +62,21 @@
     },
     {
         "bn": {
+            "title": "থিসিস ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Bengali. My first suggestion request is ",
+            "description": "আমি চাই তুমি একজন আলেম হিসেবে কাজ কর। আপনি আপনার পছন্দের একটি বিষয় নিয়ে গবেষণা করার জন্য এবং আপনার গবেষণার ফলাফল একটি গবেষণামূলক বা নিবন্ধ আকারে উপস্থাপন করার জন্য দায়ী থাকবেন। আপনার কাজ হল নির্ভরযোগ্য উত্স সনাক্ত করা, উপাদানগুলিকে একটি সুগঠিত পদ্ধতিতে সংগঠিত করা এবং উদ্ধৃতি সহ সঠিকভাবে নথিভুক্ত করা। আমার প্রথম পরামর্শ অনুরোধ হল &#39;ডিজার্টেশন বিষয়&#39;",
+            "remark": "বিষয়ের উপর তথ্যপূর্ণ এবং বিশ্বাসযোগ্য প্রবন্ধ লিখুন।"
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 18235
+    },
+    {
+        "bn": {
             "title": "বিষমকামী সংলাপ জেনারেটর",
             "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Bengali. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
             "description": "আমি চাই আপনি একটি সংলাপ জেনারেটর হিসাবে কাজ করুন৷ আমি দুটি বাক্য লিখব, যা আমি অন্য একটি মেয়েকে যা বলেছিলাম যা আমি দুই মাস ধরে পরিচিত, উদাহরণস্বরূপ: &quot;আমি: আপনি কেমন আছেন? তার: আমি ভালো আছি, আপনাকে ধন্যবাদ৷ &quot; অনুগ্রহ করে প্রসঙ্গ অনুযায়ী এটি বিশ্লেষণ করুন, এবং তারপর আমার (ছেলে) দৃষ্টিকোণ থেকে উত্তর দিন। আপনার প্রতিক্রিয়াগুলি &quot;I:&quot; ফর্ম্যাটে হওয়া উচিত এবং একটি অবিচ্ছিন্ন কথোপকথন হওয়ার দরকার নেই৷ স্টাইলটি হাস্যরসাত্মক, মজার, চিন্তাশীল, মৃদু এবং কথোপকথনটিকে হালকা-হৃদয় রাখতে যতটা সম্ভব বিষয়কে প্রসারিত করে। আপনি যদি বুঝতে পারেন, অনুগ্রহ করে উত্তর দিন: &quot;ঠিক আছে, অনুগ্রহ করে প্রাথমিক সংলাপ প্রদান করুন।&quot;",
@@ -93,17 +93,17 @@
     },
     {
         "bn": {
-            "title": "জিয়াওহংশু শৈলী",
-            "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ",
-            "description": "অনুগ্রহ করে ইমোজি স্টাইল ব্যবহার করে নিম্নলিখিত অনুচ্ছেদগুলি সম্পাদনা করুন, যাতে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ রয়েছে৷ মূল পাঠ্যের অর্থ রাখতে ভুলবেন না।",
-            "remark": "লিটল রেড বুকের মতো একটি ইমোজি শৈলীতে পাঠ্যটি পুনরায় লিখুন।"
+            "title": "প্রবন্ধের উত্তর",
+            "prompt": "The entire conversation and instructions should be provided in Bengali. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+            "description": "নিম্নলিখিতগুলির উত্তরে ভূমিকা, মূল অংশ এবং সমাপ্তি অনুচ্ছেদ সহ একটি অত্যন্ত বিশদ প্রবন্ধ লিখুন: [প্রশ্ন]",
+            "remark": "প্রবন্ধ বিন্যাসে প্রশ্ন আলোচনা করা সুসংগত, কাঠামোগত এবং উচ্চ মানের প্রতিক্রিয়া সক্ষম করে।"
         },
-        "website": null,
+        "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
             "favorite",
-            "write"
+            "article"
         ],
-        "id": 209,
-        "count": 43405
+        "id": 4,
+        "count": 12050
     }
 ]

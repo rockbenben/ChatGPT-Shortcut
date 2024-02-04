@@ -28,7 +28,7 @@ favor_data = [item for item in data if item['id'] in favor_ids]
 other_data = [item for item in data if item['id'] in other_ids]
 
 # 处理和保存数据的函数
-def process_and_save_data(filtered_data, file_prefix):
+def process_and_save_data(filtered_data, file_prefix, ids_order):
     for lang in allLanguages:
         # 按当前语言过滤并处理数据
         processed_data = []
@@ -42,16 +42,16 @@ def process_and_save_data(filtered_data, file_prefix):
                 new_item['count'] = count  # 设置 count
                 
                 processed_data.append(new_item)
-        
+        # 按 ids_order 排列 processed_data
+        processed_data_sorted = sorted(processed_data, key=lambda x: ids_order.index(x['id']))
         # 保存为新的 JSON 文件
         output_file_path = f'{output_dir_path}\\{file_prefix}_{lang}.json'
         with open(output_file_path, 'w', encoding='utf-8') as file:
-            json.dump(processed_data, file, ensure_ascii=False, indent=4)
-            
+            json.dump(processed_data_sorted, file, ensure_ascii=False, indent=4)
 
 # 处理和保存 favor_ids 和 other_ids 数据
-process_and_save_data(favor_data, 'favor')
-process_and_save_data(other_data, 'other')
+process_and_save_data(favor_data, 'favor', favor_ids)
+process_and_save_data(other_data, 'other', other_ids)
 
 ## 处理和保存 favor_ids 和 other_ids 数据
 
