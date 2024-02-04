@@ -18,8 +18,7 @@ export type Operator = "OR" | "AND";
 export const OperatorQueryKey = "operator";
 
 export function readOperator(search: string): Operator {
-  return (new URLSearchParams(search).get(OperatorQueryKey) ??
-    "OR") as Operator;
+  return (new URLSearchParams(search).get(OperatorQueryKey) ?? "OR") as Operator;
 }
 
 export default function ShowcaseFilterToggle(): JSX.Element {
@@ -47,10 +46,10 @@ export default function ShowcaseFilterToggle(): JSX.Element {
   return (
     <div>
       <input
-        type='checkbox'
+        type="checkbox"
         id={id}
-        className='screen-reader-only'
-        aria-label='Toggle between or and and for the tags you selected'
+        className="screen-reader-only"
+        aria-label="Toggle between or and and for the tags you selected"
         onChange={toggleOperator}
         onKeyDown={(e) => {
           if (e.key === "Enter") {

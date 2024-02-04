@@ -38,7 +38,7 @@ const FeedbackPage = () => {
               </Translate>
             </Paragraph>
           </Typography>
-          {userAuth && userAuth.data && userAuth.data.id ? <Comments pageId={1000} currentUserId={userAuth.data.id} type="page" /> : <Comments pageId={1000} currentUserId={0} type="page" />}
+          <Comments pageId={1000} currentUserId={userAuth?.data?.id ?? 0} type="page" />
         </Card>
       </div>
     </Layout>
