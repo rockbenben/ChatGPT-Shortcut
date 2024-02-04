@@ -431,8 +431,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   if (isLoadingFavorites || isLoadingOthers) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
-        <div className="container padding-vert--md text--center">
-          <Spin size="large" />
+        <div className={styles.showcaseFavorite}>
+          <div className="container text--center">
+            <Spin size="large" />
+          </div>
         </div>
       </section>
     );
