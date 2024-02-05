@@ -115,10 +115,12 @@ const config = {
             label: "🏘️ 社区提示词",
             position: "left",
           },
+          /*
           {
             label: "🚀 NextAI",
             href: "https://nextai.date",
           },
+          */
           /*
           {
             type: "dropdown",
