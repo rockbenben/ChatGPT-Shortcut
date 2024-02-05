@@ -62,7 +62,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" className="button button--secondary" style={{ marginRight: "10px" }}>
+          <Link to="/user/favorite" className="button button--secondary hide-on-small-screen-500" style={{ marginRight: "10px" }}>
             <HeartOutlined style={{ marginRight: "1px" }} />
             <Translate id="link.myfavorite">我的收藏</Translate>
           </Link>

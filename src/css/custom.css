@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-:root {
+ :root {
   /*
    See css var + hsl color palette technique:
    https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
@@ -22,6 +22,8 @@
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
+  --scrollbar-thumb-color: hsl(167, 68%, 75%); /* 浅色主题滚动条颜色 */
+  --scrollbar-thumb-hover-color: hsl(167, 68%, 65%); /* 浅色主题滚动条悬停颜色 */
 }
 
 html[data-theme="dark"] {
@@ -29,6 +31,8 @@ html[data-theme="dark"] {
   --site-color-favorite-background: #1d1e1e;
   --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 10%);
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
+  --scrollbar-thumb-color: hsl(167, 68%, 45%); /* 深色主题滚动条颜色 */
+  --scrollbar-thumb-hover-color: hsl(167, 68%, 55%); /* 深色主题滚动条悬停颜色 */
 }
 
 /*
@@ -263,4 +267,29 @@ div[class^="announcementBar_"] {
 
 [data-theme="dark"] [data-rmiz-modal-overlay="visible"] {
   background-color: rgba(0 0 0 / 95%);
+}
+
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* 透明背景 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color); /* 使用变量定义颜色 */
+  border-radius: 5px; /* 圆角效果 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-color); /* 悬停时的颜色 */
+}
+
+/* 自定义样式 */
+@media (max-width: 500px) {
+  .hide-on-small-screen-500 {
+    display: none;
+  }
 }

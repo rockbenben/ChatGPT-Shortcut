@@ -66,8 +66,6 @@ export default function UserPromptsPage() {
     async (values) => {
       //setLoading(true);
       try {
-        console.log("values", values);
-        console.log("editingPromptId", editingPromptId);
         await updatePrompt(editingPromptId, values);
         await refreshUserAuth();
         message.success(<Translate id="message.success">词条更新成功！</Translate>);

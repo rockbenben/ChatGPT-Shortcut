@@ -87,7 +87,7 @@ const prompt = {
     "favorite"
   ],
   "id": 199,
-  "weight": 14602
+  "weight": 15473
 };
 
 function PromptDetail() {
