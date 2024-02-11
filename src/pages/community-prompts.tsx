@@ -10,7 +10,7 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
+import { Spin, Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
@@ -31,9 +31,10 @@ function CommunityPrompts() {
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("desc");
   const [copiedIndex, setCopiedIndex] = useState(null);
-  // 新增一个用于保存搜索关键字的 state
   const [searchTerm, setSearchTerm] = useState("");
   const [Shareurl, setShareUrl] = useState("");
+  const [spinning, setSpinning] = useState(true);
+
   useEffect(() => {
     setShareUrl(window.location.href);
   }, []);
@@ -45,9 +46,16 @@ function CommunityPrompts() {
   }, [currentPage, sortField, sortOrder, searchTerm]);
 
   const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
-    const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-    setUserPrompts(result[0]);
-    setTotal(result[1].data.meta.pagination.total);
+    setSpinning(true);
+    try {
+      const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
+      setUserPrompts(result[0]);
+      setTotal(result[1].data.meta.pagination.total);
+    } catch (error) {
+      console.error("Failed to fetch community prompts:", error);
+    } finally {
+      setSpinning(false);
+    }
   };
 
   const onSearch = (value) => {
@@ -187,6 +195,7 @@ function CommunityPrompts() {
           </Dropdown.Button>
           <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
         </Space>
+        <Spin spinning={spinning} fullscreen />
         <ul className="clean-list showcaseList_Cwj2">
           {userprompts.map((UserPrompt, index) => (
             <li key={UserPrompt.id} className="card shadow--md">
