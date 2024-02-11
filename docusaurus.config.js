@@ -162,7 +162,7 @@ const config = {
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
-            href: "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_cd1sY57tsJVfMThYebXl9_idl7V7wds&authKey=Nf8eCUQYo2TXTv6r3kWmqspXSn1LehqEndq0jtmrhDL1r55Nm5CGyr6VBzi7tKH2&noverify=0&group_code=736094782",
+            href: "https://qm.qq.com/q/sHgB9eqd6E",
             position: "right",
             className: "header-qq-link",
           },
