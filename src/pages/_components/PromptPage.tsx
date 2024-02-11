@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
-import { Spin, Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
+import { Skeleton, Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -17,18 +17,22 @@ function PromptPage({ promptId }) {
   const [shareUrl, setShareUrl] = useState("");
   const [mainPrompt, setMainPrompt] = useState("");
   const [copied, setShowCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
   useEffect(() => {
     const fetchPrompt = async () => {
+      setIsLoading(true);
       try {
         const promptData = await getPrompts("cards", [promptId], currentLanguage);
         setPrompt(promptData[0]);
         setMainPrompt(promptData[0][currentLanguage].prompt);
       } catch (error) {
         console.error("Error fetching prompt:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -47,13 +51,17 @@ function PromptPage({ promptId }) {
     await updateCopyCount(promptId);
   }, [promptId, mainPrompt]);
 
-  // 确保 prompt 数据已加载
-  if (!prompt) {
+  if (isLoading) {
     return (
       <Layout>
-        <Spin tip={<Translate id="message.loading">Loading...</Translate>}>
-          <div style={{ height: 300 }}></div>
-        </Spin>
+        <Row justify="center" style={{ marginTop: "20px" }}>
+          <Col xs={24} sm={22} md={20} lg={18} xl={16}>
+            <Card>
+              <Skeleton active paragraph={{ rows: 8 }} />
+              <Skeleton active avatar paragraph={{ rows: 16 }} />;
+            </Card>
+          </Col>
+        </Row>
       </Layout>
     );
   }

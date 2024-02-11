@@ -11,7 +11,7 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { Spin, ConfigProvider, Input, InputRef, Button } from "antd";
+import { Skeleton, ConfigProvider, Input, InputRef, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
@@ -375,8 +375,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   ];
   const [favoritePrompts, setFavoritePrompts] = useState([]);
   const [otherPrompts, setOtherPrompts] = useState([]);
-  const [isLoadingFavorites, setIsLoadingFavorites] = useState(true);
-  const [isLoadingOthers, setIsLoadingOthers] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { userAuth } = useContext(AuthContext);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
@@ -390,55 +389,78 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }, [userAuth]);
 
   useEffect(() => {
-    setIsLoadingFavorites(true);
-    setIsLoadingOthers(true);
+    setIsLoading(true);
     if (!userAuth && !showAllOtherUsers) {
       setFavoritePrompts(favorData);
       setOtherPrompts(otherData);
-      setIsLoadingFavorites(false);
-      setIsLoadingOthers(false);
+      setIsLoading(false);
     } else {
       const favorIds = userAuth ? userLoves : defaultFavorIds;
       const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
       const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
-
       // 如果 showAllOtherUsers 为真，使用 filteredAllIds，否则使用 filteredDefaultIds
       const idsToShow = showAllOtherUsers ? filteredAllIds : filteredDefaultIds;
 
-      getPrompts("cards", favorIds, currentLanguage).then((data) => {
-        setFavoritePrompts(data);
-        setIsLoadingFavorites(false);
-      });
-
-      getPrompts("cards", idsToShow, currentLanguage).then((data) => {
-        setOtherPrompts(data);
-        setIsLoadingOthers(false);
-      });
+      Promise.all([getPrompts("cards", favorIds, currentLanguage), getPrompts("cards", idsToShow, currentLanguage)])
+        .then(([favoriteData, otherData]) => {
+          setFavoritePrompts(favoriteData);
+          setOtherPrompts(otherData);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error loading data:", error);
+          setIsLoading(false);
+        });
     }
   }, [currentLanguage, showAllOtherUsers, userLoves]);
 
   const [favoriteUsers, otherUsers] = useMemo(() => {
-    // 这里你可以根据实际情况调整逻辑，以处理 favoritePrompts 和 otherPrompts 的数据
     return [favoritePrompts, otherPrompts];
   }, [favoritePrompts, otherPrompts]);
 
   const displayedOtherUsers = useMemo(() => {
-    // otherUsers 已经根据 showAllOtherUsers 和 favorIds 处理过，直接返回
     return otherUsers;
   }, [otherUsers]);
 
   const { filteredUsers, isFiltered } = useFilteredUsers();
-  if (isLoadingFavorites || isLoadingOthers) {
+
+  if (isLoading) {
     return (
-      <section className="margin-top--lg margin-bottom--xl">
+      <section className="margin-top--lg margin-bottom--sm">
         <div className={styles.showcaseFavorite}>
-          <div className="container text--center">
-            <Spin size="large" />
+          <div className="container">
+            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+              <Heading as="h2">
+                <Translate id="showcase.favoritesList.title">Favorites</Translate>
+              </Heading>
+              <FavoriteIcon svgClass={styles.svgIconFavorite} />
+              <SearchBar />
+            </div>
+            <ul className={clsx("clean-list", styles.showcaseList)}>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <li key={index}>
+                  <Skeleton active title={false} avatar paragraph={{ rows: 5 }} />
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+        <div className="container margin-top--lg">
+          <Heading as="h2" className={styles.showcaseHeader}>
+            <Translate id="showcase.usersList.allUsers">All prompts</Translate>
+          </Heading>
+          <ul className={clsx("clean-list", styles.showcaseList)}>
+            {Array.from({ length: 10 }).map((_, index) => (
+              <li key={index}>
+                <Skeleton active title={false} avatar paragraph={{ rows: 5 }} />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     );
   }
+
   if (isFiltered && filteredUsers.length === 0) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
