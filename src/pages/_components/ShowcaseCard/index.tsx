@@ -43,7 +43,7 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
+function ShowcaseCard({ user, isDescription, copyCount }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
 
   const { i18n } = useDocusaurusContext();
@@ -53,7 +53,7 @@ function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
   const [isFavorite, setIsFavorite] = useState(false);
   useEffect(() => {
     setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
-  }, [userAuth, user.id]);
+  }, [userAuth]);
   const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
 
   useEffect(() => {
@@ -87,11 +87,10 @@ function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
       await updateCopyCount(user.id);
-      // Notify parent component to update the copy count
     } catch (error) {
       console.error("Error updating copy count:", error);
     }
-  }, [user.id]);
+  }, []);
 
   const handleLove = useCallback(async () => {
     try {
@@ -105,44 +104,36 @@ function ShowcaseCard({ user, isDescription, copyCount, onLove }) {
       } else {
         userLoves = userAuth.data.favorites.loves || [];
         favoriteId = userAuth.data.favorites.id;
-
-        if (!isFavorite) {
-          userLoves.push(user.id);
-          message.success("Added to favorites successfully!");
-        }
+        userLoves.push(user.id);
       }
-
+      message.success("Added to favorites successfully!");
       await updateFavorite(favoriteId, userLoves);
-      onLove(userLoves);
       getPrompts("cards", userLoves, currentLanguage);
       refreshUserAuth();
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth, isFavorite]);
+  }, [userAuth?.data?.favorites?.loves, isFavorite]);
 
   const removeFavorite = useCallback(async () => {
     try {
-      if (userAuth?.data?.favorites && isFavorite) {
-        let userLoves;
-        let favoriteId;
-        userLoves = userAuth.data.favorites.loves || [];
-        favoriteId = userAuth.data.favorites.id;
+      let userLoves;
+      let favoriteId;
+      userLoves = userAuth.data.favorites.loves || [];
+      favoriteId = userAuth.data.favorites.id;
 
-        const index = userLoves.indexOf(user.id);
-        if (index > -1) {
-          userLoves.splice(index, 1);
-          message.success("Removed from favorites successfully!");
-        }
-
-        await updateFavorite(favoriteId, userLoves);
-        onLove(userLoves);
-        refreshUserAuth();
+      const index = userLoves.indexOf(user.id);
+      if (index > -1) {
+        userLoves.splice(index, 1);
+        message.success("Removed from favorites successfully!");
       }
+
+      await updateFavorite(favoriteId, userLoves);
+      refreshUserAuth();
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth, isFavorite]);
+  }, [isFavorite]);
 
   // 临时方案，10 天后删除（2024/02/15）
   const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];

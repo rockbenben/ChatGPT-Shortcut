@@ -28,8 +28,8 @@ import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthConte
 
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 
-import favorData from "@site/src/data/default/favor_es.json";
-import otherData from "@site/src/data/default/other_es.json";
+import favorDefault from "@site/src/data/default/favor_es.json";
+import otherDefault from "@site/src/data/default/other_es.json";
 
 const ShareButtons = Loadable({
   loader: () => import("@site/src/pages/_components/ShareButtons"),
@@ -380,47 +380,44 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const { userAuth } = useContext(AuthContext);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
-  const [userLoves, setUserLoves] = useState([]);
-
-  useEffect(() => {
-    if (userAuth) {
-      setUserLoves(userAuth.data?.favorites?.loves || []);
-    }
-  }, [userAuth]);
-
-  useEffect(() => {
+  const fetchData = async () => {
     setIsLoading(true);
-    if (!userAuth && !showAllOtherUsers) {
-      setFavoritePrompts(favorData);
-      setOtherPrompts(otherData);
-      setIsLoading(false);
-    } else {
-      const favorIds = userAuth ? userLoves : defaultFavorIds;
-      const filteredAllIds = allIds.filter((id) => !favorIds.includes(id));
-      const filteredDefaultIds = defaultIds.filter((id) => !favorIds.includes(id));
-      // 如果 showAllOtherUsers 为真，使用 filteredAllIds，否则使用 filteredDefaultIds
-      const idsToShow = showAllOtherUsers ? filteredAllIds : filteredDefaultIds;
+    try {
+      let favorIds: number[] = [];
+      let idsToShow: number[] = [];
 
-      Promise.all([getPrompts("cards", favorIds, currentLanguage), getPrompts("cards", idsToShow, currentLanguage)])
-        .then(([favoriteData, otherData]) => {
-          setFavoritePrompts(favoriteData);
+      if (userAuth) {
+        favorIds = userAuth.data?.favorites?.loves || [];
+        idsToShow = showAllOtherUsers ? allIds.filter((id) => !favorIds.includes(id)) : defaultIds.filter((id) => !favorIds.includes(id));
+
+        const [favoriteData, otherData] = await Promise.all([getPrompts("cards", favorIds, currentLanguage), getPrompts("cards", idsToShow, currentLanguage)]);
+
+        setFavoritePrompts(favoriteData);
+        setOtherPrompts(otherData);
+      } else {
+        if (!showAllOtherUsers) {
+          setFavoritePrompts(favorDefault);
+          setOtherPrompts(otherDefault);
+        } else {
+          const idsToShow = allIds.filter((id) => !defaultFavorIds.includes(id));
+          const otherData = await getPrompts("cards", idsToShow, currentLanguage);
           setOtherPrompts(otherData);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error loading data:", error);
-          setIsLoading(false);
-        });
+        }
+      }
+    } catch (error) {
+      console.error("Error loading data:", error);
+    } finally {
+      setIsLoading(false);
     }
-  }, [currentLanguage, showAllOtherUsers, userLoves]);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [currentLanguage, userAuth, showAllOtherUsers]);
 
   const [favoriteUsers, otherUsers] = useMemo(() => {
     return [favoritePrompts, otherPrompts];
   }, [favoritePrompts, otherPrompts]);
-
-  const displayedOtherUsers = useMemo(() => {
-    return otherUsers;
-  }, [otherUsers]);
 
   const { filteredUsers, isFiltered } = useFilteredUsers();
 
@@ -487,8 +484,8 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 <SearchBar />
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
-                {displayedOtherUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
+                {otherUsers.map((user) => (
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
                 ))}
               </ul>
               {!showAllOtherUsers && (
@@ -506,7 +503,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </div>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {filteredUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
             </ul>
           </div>
@@ -531,7 +528,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               </div>
               <ul className={clsx("clean-list", styles.showcaseList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
+                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
                 ))}
               </ul>
             </div>
@@ -541,8 +538,8 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {displayedOtherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
+              {otherUsers.map((user) => (
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
             </ul>
             {!showAllOtherUsers && (
@@ -560,7 +557,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredUsers.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} onLove={setUserLoves} />
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}
           </ul>
         </div>
