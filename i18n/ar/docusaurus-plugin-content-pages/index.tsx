@@ -11,7 +11,7 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { Skeleton, ConfigProvider, Input, InputRef, Button } from "antd";
+import { ConfigProvider, Input, InputRef, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
@@ -360,6 +360,7 @@ function SearchBar() {
 }
 
 function ShowcaseCards({ isDescription, showUserFavs }) {
+  const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
@@ -373,41 +374,32 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     118, 143, 124, 59, 61, 129, 183, 247, 31, 29, 27, 131, 119, 226, 102, 148, 36, 55, 84, 107, 223, 30, 161, 44, 260, 229, 263, 128, 165, 60, 65, 114, 136, 164, 69, 116, 149, 115, 108, 83, 117, 121,
     32, 249, 174, 104, 113, 225, 227, 105, 33, 156, 34, 277, 127, 268, 275, 273, 274, 272, 276, 110, 230, 231,
   ];
-  const [favoritePrompts, setFavoritePrompts] = useState([]);
-  const [otherPrompts, setOtherPrompts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
+  const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
 
-  const { userAuth } = useContext(AuthContext);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
   const fetchData = async () => {
-    setIsLoading(true);
+    if (!userAuth && !showAllOtherUsers) {
+      return;
+    }
+
     try {
-      let favorIds: number[] = [];
-      let idsToShow: number[] = [];
+      let favorIds = userAuth?.data?.favorites?.loves || [];
+      let idsToShow = !userAuth
+        ? allIds.filter((id) => !defaultFavorIds.includes(id))
+        : showAllOtherUsers
+        ? allIds.filter((id) => !favorIds.includes(id))
+        : defaultIds.filter((id) => !favorIds.includes(id));
+
+      const promptsData = await Promise.all([getPrompts("cards", userAuth ? favorIds : [], currentLanguage), getPrompts("cards", idsToShow, currentLanguage)]);
 
       if (userAuth) {
-        favorIds = userAuth.data?.favorites?.loves || [];
-        idsToShow = showAllOtherUsers ? allIds.filter((id) => !favorIds.includes(id)) : defaultIds.filter((id) => !favorIds.includes(id));
-
-        const [favoriteData, otherData] = await Promise.all([getPrompts("cards", favorIds, currentLanguage), getPrompts("cards", idsToShow, currentLanguage)]);
-
-        setFavoritePrompts(favoriteData);
-        setOtherPrompts(otherData);
-      } else {
-        if (!showAllOtherUsers) {
-          setFavoritePrompts(favorDefault);
-          setOtherPrompts(otherDefault);
-        } else {
-          const idsToShow = allIds.filter((id) => !defaultFavorIds.includes(id));
-          const otherData = await getPrompts("cards", idsToShow, currentLanguage);
-          setOtherPrompts(otherData);
-        }
+        setFavoritePrompts(promptsData[0]);
       }
+      setOtherPrompts(promptsData[1]);
     } catch (error) {
       console.error("Error loading data:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -420,43 +412,6 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }, [favoritePrompts, otherPrompts]);
 
   const { filteredUsers, isFiltered } = useFilteredUsers();
-
-  if (isLoading) {
-    return (
-      <section className="margin-top--lg margin-bottom--sm">
-        <div className={styles.showcaseFavorite}>
-          <div className="container">
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <Heading as="h2">
-                <Translate id="showcase.favoritesList.title">Favorites</Translate>
-              </Heading>
-              <FavoriteIcon svgClass={styles.svgIconFavorite} />
-              <SearchBar />
-            </div>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <li key={index}>
-                  <Skeleton active title={false} avatar paragraph={{ rows: 5 }} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="container margin-top--lg">
-          <Heading as="h2" className={styles.showcaseHeader}>
-            <Translate id="showcase.usersList.allUsers">All prompts</Translate>
-          </Heading>
-          <ul className={clsx("clean-list", styles.showcaseList)}>
-            {Array.from({ length: 10 }).map((_, index) => (
-              <li key={index}>
-                <Skeleton active title={false} avatar paragraph={{ rows: 5 }} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    );
-  }
 
   if (isFiltered && filteredUsers.length === 0) {
     return (
