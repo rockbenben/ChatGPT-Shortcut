@@ -51,6 +51,8 @@ function CommunityPrompts() {
       const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
       setUserPrompts(result[0]);
       setTotal(result[1].data.meta.pagination.total);
+      const fetchedTotal = result[1].data.meta.pagination.total;
+      setTotal(Math.min(fetchedTotal, 1000));
     } catch (error) {
       console.error("Failed to fetch community prompts:", error);
     } finally {
@@ -67,21 +69,14 @@ function CommunityPrompts() {
     setSearchTerm(value);
     setCurrentPage(1); // 重置页数到第一页
   };
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState([]);
+  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
+  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
   const vote = async (promptId, action) => {
     try {
-      const response = await voteOnUserPrompt(promptId, action);
-      if (response.data) {
-        message.success(`Successfully ${action}d!`);
-        if (action === "upvote") {
-          setVotedUpPromptIds([...votedUpPromptIds, promptId]);
-        } else if (action === "downvote") {
-          setVotedDownPromptIds([...votedDownPromptIds, promptId]);
-        }
-      } else {
-        message.error("Something went wrong with your vote.");
-      }
+      await voteOnUserPrompt(promptId, action);
+      message.success(`Successfully ${action}d!`);
+      const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
+      updateVotedIds((prevIds) => [...prevIds, promptId]);
     } catch (err) {
       message.error(`Error: ${err}`);
     }
