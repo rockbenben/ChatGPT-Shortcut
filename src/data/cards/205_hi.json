@@ -1,0 +1,15 @@
+{
+    "id": 205,
+    "hi": {
+        "title": "सारांश: कोर रिफाइनिंग",
+        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Hindi. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
+        "description": "आपने अभी जो बयान दिया है वह बहुत सटीक और व्यापक है, लेकिन यह याद रखना मुश्किल है कि क्या आप एक सरलीकृत और लोकप्रिय बयान दे सकते हैं जो कच्चा है और इतना सटीक नहीं है, लेकिन कुल मिलाकर सही है",
+        "remark": "एआई द्वारा दी गई जटिल प्रतिक्रियाओं को सरल और सारांशित करें, और कुछ &quot;आवश्यक जानकारी&quot; को कम करें जो बहुत विस्तृत है। @hanson-reas से योगदान।"
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 2344
+}

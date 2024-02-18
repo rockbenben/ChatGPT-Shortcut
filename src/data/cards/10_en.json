@@ -1,0 +1,13 @@
+{
+    "id": 10,
+    "en": {
+        "title": "Material Collection",
+        "prompt": "Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
+        "remark": "Provide findings and data on the specified topic as material."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 3611
+}

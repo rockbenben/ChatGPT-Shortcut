@@ -1,0 +1,13 @@
+{
+    "id": 39,
+    "en": {
+        "title": "FAQs Generator",
+        "prompt": "Generate a list of 10 frequently asked questions based on the following content: [内容]",
+        "remark": "Generate common Q&A based on content."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 636
+}

@@ -1,0 +1,15 @@
+{
+    "id": 174,
+    "ja": {
+        "title": "ロングワードリスト",
+        "prompt": "The entire conversation and instructions should be provided in Japanese. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "description": "A から Z で始まる長い単語をリストアップし、発音記号と中国語の意味を印刷し、ラベルを貼る。",
+        "remark": "長文単語のランダムリストで、楽しく英語を学べます。長文単語が明確でないという条件により、リストアップされる単語は毎回異なる。lxyntz さんの投稿より。"
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

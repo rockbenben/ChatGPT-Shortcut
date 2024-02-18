@@ -1,0 +1,14 @@
+{
+    "id": 34,
+    "ar": {
+        "title": "استخراج معلومات الاتصال",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. Extract the name and mailing address from this email: ",
+        "description": "استخراج الأسماء وعناوين البريد الإلكتروني من هذه الرسالة: [نص]",
+        "remark": "استخراج معلومات الاتصال من النص."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://platform.openai.com/examples/default-extract-contact-info",
+    "count": 145
+}

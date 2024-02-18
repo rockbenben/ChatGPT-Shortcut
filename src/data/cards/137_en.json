@@ -1,0 +1,13 @@
+{
+    "id": 137,
+    "en": {
+        "title": "Wikipedia page",
+        "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. My first topic is \"The Great Barrier Reef.\"",
+        "remark": "Help users obtain basic information about a certain topic and provide a summary in the format of a Wikipedia page. Through this method, users can quickly understand relevant information about a topic, thus better understanding and mastering it."
+    },
+    "tags": [
+        "tool"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
+    "count": 706
+}

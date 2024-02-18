@@ -1,0 +1,15 @@
+{
+    "id": 258,
+    "pt": {
+        "title": "Geração do título da tese",
+        "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Portuguese. My abstract is \"XXX\", my key words are \"XXX\".",
+        "description": "Vou fornecer-lhe o resumo e as palavras-chave de um artigo científico em qualquer língua, e você vai detetar essa língua e responder na mesma língua. A sua tarefa é fornecer-me o título do artigo científico com base no resumo e nas palavras-chave na mesma língua. O título do artigo científico deve ser conciso, claro e informativo. Deve evitar usar palavras como pesquisa, investigação, desenvolvimento ou observação. Certifique-se de que o título capta imediatamente a atenção do público.",
+        "remark": "Gerar um título de artigo com base no resumo e nas palavras-chave. Contribuição de @ScenerorSun, citada no Website B @Yams Potpourri."
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 911
+}

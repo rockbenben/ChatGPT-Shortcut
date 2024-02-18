@@ -1,0 +1,14 @@
+{
+    "id": 7,
+    "it": {
+        "title": "modificatore di prompt",
+        "prompt": "The entire conversation and instructions should be provided in Italian. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
+        "description": "Sto cercando di ottenere buoni risultati sul GPT-4 con le seguenti parole guida: le vostre parole guida. Potete scrivere parole guida che siano più ottimizzate e producano risultati migliori?",
+        "remark": "Lasciate che ChatGPT riscriva i messaggi per noi. Poiché la logica dei messaggi scritti dall'uomo è diversa da quella dei messaggi scritti dalla macchina, la rielaborazione dei messaggi renderà ChatGPT più facile da capire."
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
+    "count": 5244
+}

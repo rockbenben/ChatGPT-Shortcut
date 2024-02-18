@@ -1,0 +1,14 @@
+{
+    "id": 33,
+    "ru": {
+        "title": "Кластеризация семантической релевантности",
+        "prompt": "The entire conversation and instructions should be provided in Russian. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
+        "description": "Следующие ключевые слова распределены по категориям в соответствии с их семантической релевантностью. [ключевое слово]",
+        "remark": "Ключевые слова объединяются в кластеры и группируются по семантической релевантности."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 149
+}

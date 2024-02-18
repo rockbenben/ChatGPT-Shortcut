@@ -1,0 +1,15 @@
+{
+    "id": 205,
+    "ko": {
+        "title": "요약: 핵심 개선",
+        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Korean. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
+        "description": "방금 말씀하신 내용은 매우 정확하고 포괄적이지만 기억하기 어렵습니다. 거칠고 정확도는 떨어지지만 전반적으로 정확한 단순화되고 일반화된 설명을 해주시겠습니까?",
+        "remark": "지나치게 상세한 '필수 정보'를 제외하고 AI 가 제공하는 복잡한 응답을 간결하게 요약한 것입니다. 한슨 레아스 (@hanson-reas) 의 기여."
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 2344
+}

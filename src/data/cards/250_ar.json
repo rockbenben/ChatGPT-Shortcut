@@ -1,0 +1,15 @@
+{
+    "id": 250,
+    "ar": {
+        "title": "حلقة السؤال",
+        "prompt": "Your task is to automatically take turns asking and answering questions. We’ll begin with an initial question. Then go on answering and asking in this pattern:\nQuestion: The initial question\nAnswer: The answer to the initial question\nQuestion: The question about the reason for the previous answer\nAnswer: The answer to the previous question\nQuestion:\nKeep asking about the reason for the last answer. Stop only when the answer is \"That's the way it is\" or \"We don't know for now\". Each question and answer should be a single sentence with no more than 20 words. Add \"Q: \" before each question and \"A: \" before each answer.\nAsk and answer in \"English\" regardless of the language I use. Don’t show the translation process. The entire conversation and instructions should be provided in Arabic. Just write questions and answers in the destination language.\nNow, the initial question is: ",
+        "description": "مهمتك هي أن تتناوب تلقائيًا في طرح الأسئلة والإجابة عليها. سنبدأ بسؤال أولي. ثم تابع الإجابة وطرح الأسئلة في هذا النمط: السؤال: السؤال الأصلي الإجابة: الإجابة على السؤال الأصلي السؤال: السؤال عن سبب السؤال السابق: السؤال عن سبب الإجابة السابقة الإجابة: الإجابة على السؤال السؤال السابق: اسأل عن إجابة السؤال السابق: حول إجابة السؤال السابق: سبب الاستمرار في طرح الإجابة السابقة. توقف فقط عندما تكون الإجابة &quot;هكذا هي&quot; أو &quot;لا نعرف الآن&quot;. يجب أن يكون كل سؤال وجواب جملة واحدة ، لا تزيد عن 20 كلمة. أضف &quot;س:&quot; قبل كل سؤال و &quot;أ:&quot; قبل كل إجابة. بغض النظر عن اللغة التي أستخدمها ، سوف أسأل وأجيب باللغة الصينية. لا تظهر عملية الترجمة. فقط اكتب الأسئلة والأجوبة بلغة الوجهة.",
+        "remark": "استمر في طرح الأسئلة حول مشكلة ما لتعميق فهم المشكلة. مساهمة من @ hkfrank996."
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 953
+}

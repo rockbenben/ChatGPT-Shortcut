@@ -1,0 +1,14 @@
+{
+    "id": 242,
+    "bn": {
+        "title": "নামকরণ",
+        "prompt": "My baby will be born in June 2023. The father's last name is Li and the mother's last name is Hou. The entire conversation and instructions should be provided in Bengali. Can you help us choose a beautiful, auspicious, wise, and virtuous name for our child? Please derive the name from the Bible.",
+        "description": "অনুগ্রহ করে আমাদের সন্তানের জন্য একটি নাম চয়ন করুন, শিশুটি 2023 সালের জুনের শেষে জন্মগ্রহণ করবে, পিতার উপাধি লি, এবং মায়ের উপাধি হউ৷ আমরা আশা করি যে নামটি একটি উজ্জ্বল ভবিষ্যত, ভাল চরিত্র এবং প্রজ্ঞা বোঝায়। অনুগ্রহ করে চু-এর গান এবং গানের বই থেকে অনুপ্রেরণা বেছে নিন এবং আপনার সন্তানের জন্য 10টি উপযুক্ত নাম বেছে নিন।",
+        "remark": "আপনার সন্তানের জন্য একটি অর্থপূর্ণ নাম চয়ন করুন এবং প্রাচীন ক্লাসিক থেকে অনুপ্রেরণা পান।"
+    },
+    "tags": [
+        "tool"
+    ],
+    "website": null,
+    "count": 3107
+}

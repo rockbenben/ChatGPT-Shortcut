@@ -1,0 +1,14 @@
+{
+    "id": 9,
+    "ar": {
+        "title": "استمرار المادة",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. Continue writing an article about [theme] that begins with the following sentence: ",
+        "description": "انطلق واكتب مقالًا عن [موضوع المقالة] باللغة الصينية ، بدءًا من الجملة التالية: [بداية المقالة]",
+        "remark": "حسب موضوع المقال تابع بداية المقال لاستكمال المقال."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 7107
+}

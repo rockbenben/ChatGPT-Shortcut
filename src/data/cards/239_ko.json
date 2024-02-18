@@ -1,0 +1,14 @@
+{
+    "id": 239,
+    "ko": {
+        "title": "풍부한 정보: 한 문장으로 요약한 정보",
+        "prompt": "The entire conversation and instructions should be provided in Korean. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.",
+        "description": "이전 글 '@1'부터 '@3'까지의 맥락에서 [주제] 를 설명하고 원본 글의 가장 두드러진 특징을 잘 나타내는 문장을 생각해 내도록 도와주세요.",
+        "remark": "기사의 홍보 문구와 헤드라인을 작성합니다. 이 방법은 컴퓨터 게임의 저자 에소르 황의 기사에서 가져온 것입니다."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
+    "count": 980
+}

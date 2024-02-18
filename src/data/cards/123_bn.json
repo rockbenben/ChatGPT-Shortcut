@@ -1,0 +1,14 @@
+{
+    "id": 123,
+    "bn": {
+        "title": "টিক ট্যাক টো",
+        "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Bengali. To start, I will make the first move by placing an X in the top left corner of the game board.",
+        "description": "আমি চাই আপনি একটি টিক ট্যাক টো গেমের ভূমিকা পালন করুন। আমি চালগুলির দায়িত্বে আছি এবং আপনি আমার চালগুলি প্রতিফলিত করার জন্য বোর্ড আপডেট করার এবং বিজয়ী বা ড্র হলে সিদ্ধান্ত নেওয়ার দায়িত্বে আছেন। আমার কর্মের জন্য একটি X এবং কম্পিউটারের কর্মের জন্য একটি O ব্যবহার করুন। বোর্ড আপডেট করা এবং গেমের ফলাফল নির্ধারণ ছাড়া অন্য কোনো ব্যাখ্যা বা নির্দেশনা প্রদান করবেন না। শুরুতে, আমি প্রথম পদক্ষেপ হিসাবে বোর্ডের উপরের বাম কোণে একটি X রাখব।",
+        "remark": "টিক-ট্যাক-টো গেম"
+    },
+    "tags": [
+        "games"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
+    "count": 583
+}

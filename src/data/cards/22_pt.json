@@ -1,0 +1,14 @@
+{
+    "id": 22,
+    "pt": {
+        "title": "candidatura a emprego",
+        "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Portuguese. Can you write a cover letter for a job application about myself?.",
+        "description": "Para poder apresentar uma candidatura a um emprego, gostaria de escrever uma nova carta de apresentação. Por favor, escreva uma carta de apresentação que descreva as minhas competências técnicas. Trabalho na [RESUME] há [ANOS DE EXPERIÊNCIA] anos. Trabalho como programador front-end há 8 meses. Cresci adoptando uma série de ferramentas. Essas ferramentas incluem [HABILIDADES], entre outras. Quero [esperar]. Gostaria de [exigir]. É possível escrever uma carta de apresentação sobre mim para uma candidatura a um emprego?",
+        "remark": "Preparar uma carta de apresentação com base num perfil pessoal."
+    },
+    "tags": [
+        "article"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
+    "count": 546
+}

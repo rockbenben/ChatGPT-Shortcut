@@ -1,0 +1,15 @@
+{
+    "id": 4,
+    "bn": {
+        "title": "প্রবন্ধের উত্তর",
+        "prompt": "The entire conversation and instructions should be provided in Bengali. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+        "description": "নিম্নলিখিতগুলির উত্তরে ভূমিকা, মূল অংশ এবং সমাপ্তি অনুচ্ছেদ সহ একটি অত্যন্ত বিশদ প্রবন্ধ লিখুন: [প্রশ্ন]",
+        "remark": "প্রবন্ধ বিন্যাসে প্রশ্ন আলোচনা করা সুসংগত, কাঠামোগত এবং উচ্চ মানের প্রতিক্রিয়া সক্ষম করে।"
+    },
+    "tags": [
+        "favorite",
+        "article"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+    "count": 12050
+}

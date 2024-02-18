@@ -1,0 +1,15 @@
+{
+    "id": 205,
+    "ar": {
+        "title": "ملخص: التنقية الأساسية",
+        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Arabic. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
+        "description": "البيان الذي أدليت به للتو دقيق وشامل للغاية ، ولكن من الصعب تذكر ما إذا كان بإمكانك تقديم بيان مبسط وشائع يكون تقريبيًا وغير دقيق للغاية ، ولكنه صحيح بشكل عام",
+        "remark": "تبسيط وتلخيص الردود المعقدة التي قدمها الذكاء الاصطناعي ، وتقليل بعض &quot;المعلومات الضرورية&quot; التي تكون مفصلة للغاية. مساهمة من @ hanson-reas."
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 2344
+}

@@ -1,0 +1,14 @@
+{
+    "id": 10,
+    "ko": {
+        "title": "글쓰기 자료 모음",
+        "prompt": "The entire conversation and instructions should be provided in Korean. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
+        "description": "주제] 와 관련된 상위 10 가지 사실, 통계 및 트렌드 (출처 포함) 의 목록을 생성합니다.",
+        "remark": "주제와 관련된 결과, 데이터 및 출처를 소스 자료로 제공합니다."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 3611
+}

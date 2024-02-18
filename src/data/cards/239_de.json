@@ -1,0 +1,14 @@
+{
+    "id": 239,
+    "de": {
+        "title": "Eine Fülle von Informationen: eine Zusammenfassung in einem Satz",
+        "prompt": "The entire conversation and instructions should be provided in German. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.",
+        "description": "Kombinieren Sie den Inhalt der vorangegangenen Beiträge '@1' bis '@3', und helfen Sie mir dabei, eine einprägsame Zeile zu finden, die [Thema] beschreibt und die markantesten Merkmale des ursprünglichen Beitrags darstellt.",
+        "remark": "Schreiben Sie Werbetexte und Überschriften für Artikel. Diese Methode stammt aus einem Artikel von Esor Huang, dem Autor von Computer Playthings."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
+    "count": 980
+}

@@ -1,0 +1,15 @@
+{
+    "id": 4,
+    "zh": {
+        "title": "论文式回答",
+        "prompt": "Write a highly detailed essay in Chinese with introduction, body, and conclusion paragraphs responding to the following: [问题]",
+        "description": "写一篇高度详细的文章，包括引言、主体和结论段落，以回应以下内容：[问题］",
+        "remark": "以论文形式讨论问题，能够获得连贯的、结构化的和更高质量的回答。"
+    },
+    "tags": [
+        "favorite",
+        "article"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+    "count": 12050
+}

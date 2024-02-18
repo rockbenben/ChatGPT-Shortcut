@@ -1,0 +1,16 @@
+{
+    "id": 241,
+    "ko": {
+        "title": "고객 서비스 기술",
+        "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Korean. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
+        "description": "고객 서비스 메시지 검토 최적화 도우미로서 여러분의 임무는 고객 커뮤니케이션 개선을 돕는 것입니다. 예를 들어 고객과 고객 서비스 직원 간의 커뮤니케이션이 더 원활하고 정확하며 친근하게 이루어질 수 있도록 표현, 문법 또는 목소리 톤에 대한 개선 사항을 제안해 주세요.",
+        "remark": "고객 서비스 담론을 최적화하고 변화를 위한 제안을 제공하세요. SD362318 의 기여."
+    },
+    "tags": [
+        "contribute",
+        "social",
+        "company"
+    ],
+    "website": null,
+    "count": 1315
+}

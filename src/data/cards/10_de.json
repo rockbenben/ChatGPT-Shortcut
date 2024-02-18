@@ -1,0 +1,14 @@
+{
+    "id": 10,
+    "de": {
+        "title": "Sammlung von Schreibmaterial",
+        "prompt": "The entire conversation and instructions should be provided in German. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
+        "description": "Erstellen Sie eine Liste der 10 wichtigsten Fakten, Statistiken und Trends im Zusammenhang mit [Thema], einschließlich ihrer Quellen.",
+        "remark": "Geben Sie Ergebnisse, Daten und Quellen zum Thema als Quellenmaterial an."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 3611
+}

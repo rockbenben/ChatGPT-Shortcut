@@ -1,0 +1,14 @@
+{
+    "id": 39,
+    "ko": {
+        "title": "FAQ 생성기",
+        "prompt": "The entire conversation and instructions should be provided in Korean. Generate a list of 10 frequently asked questions based on the following content: [内容].",
+        "description": "다음을 기반으로 자주 묻는 질문 10 개의 목록을 생성합니다.",
+        "remark": "콘텐츠 기반 FAQ 생성."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 636
+}

@@ -1,0 +1,14 @@
+{
+    "id": 4,
+    "en": {
+        "title": "Thesis reply",
+        "prompt": "Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+        "remark": "Discussing questions in essay form allows for coherent, structured and higher quality responses."
+    },
+    "tags": [
+        "favorite",
+        "article"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+    "count": 12050
+}

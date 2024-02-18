@@ -1,0 +1,14 @@
+{
+    "id": 114,
+    "bn": {
+        "title": "ভাষা জেনারেটর",
+        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Bengali. My first sentence is ",
+        "description": "আমি চাই আপনি আমার লেখা বাক্যগুলো একটি নতুন ভাষায় অনুবাদ করুন। আমি বাক্যটি লিখি এবং আপনি এই নতুন ভাষায় প্রকাশ করেন। আমি শুধু চাই আপনি এটি নতুন তৈরি ভাষায় প্রকাশ করুন। আমি চাই না আপনি সদ্য তৈরি ভাষা ছাড়া আর কিছু দিয়ে উত্তর দিন। যখন আমার আপনাকে ইংরেজিতে কিছু বলার প্রয়োজন হয়, আমি এটিকে বন্ধনীতে মুড়ে দেই, যেমন {like this}।",
+        "remark": "AI দ্বারা তৈরি করা নতুন ভাষা দিয়ে আপনার দেওয়া ভাষা প্রতিস্থাপন করুন।"
+    },
+    "tags": [
+        "language"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
+    "count": 252
+}

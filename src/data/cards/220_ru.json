@@ -1,0 +1,15 @@
+{
+    "id": 220,
+    "ru": {
+        "title": "Планирование маршрутов путешествий",
+        "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Russian. Include the prices for each attraction and keep the total budget around [BUDGET].",
+        "description": "Я хочу поехать в Дали, провинция Юньнань, помогите, пожалуйста, составить путеводитель на 2 дня, как профессиональный гид. Кроме того, я надеюсь, что весь процесс не будет слишком компактным, я предпочитаю тихие места, я могу просто осмотреть окрестности. Когда будете отвечать, не забудьте указать стоимость каждого места, мой бюджет - около 5000RMB.",
+        "remark": "Грубое планирование в зависимости от направления поездки, бюджета, времени и требований. Вклад от @suaifu."
+    },
+    "tags": [
+        "contribute",
+        "tool"
+    ],
+    "website": null,
+    "count": 4246
+}

@@ -1,0 +1,14 @@
+{
+    "id": 34,
+    "ru": {
+        "title": "Извлечение контактной информации",
+        "prompt": "The entire conversation and instructions should be provided in Russian. Extract the name and mailing address from this email: ",
+        "description": "Извлеките имя и адрес электронной почты из этого письма: [текст].",
+        "remark": "Извлечение контактной информации из текста."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://platform.openai.com/examples/default-extract-contact-info",
+    "count": 145
+}

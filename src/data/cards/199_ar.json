@@ -1,0 +1,16 @@
+{
+    "id": 199,
+    "ar": {
+        "title": "مولد الحوار بين الجنسين",
+        "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Arabic. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
+        "description": "أريدك أن تعمل كمولد للحوار وسأدخل جملتين وهو ما قلته لفتاة أخرى عرفتها منذ شهرين مثلاً: &quot;أنا: كيف حالك؟ هي: أنا بخير ، شكراً. &quot;. يرجى تحليلها حسب السياق ، ثم الرد من وجهة نظري (الصبي). يجب أن تكون ردودك بالصيغة &quot;I:&quot; ولا تحتاج إلى أن تكون محادثة مستمرة. الأسلوب مرح ومضحك ومدروس ولطيف ويوسع الموضوع قدر الإمكان لإبقاء المحادثة فاترة. إذا فهمت ، يرجى الرد: &quot;حسنًا ، يرجى تقديم الحوار الأولي&quot;.",
+        "remark": "استمر في المحادثة بناءً على محادثة بينك وبين الطرف الآخر ، واستخدمها لتوسيع الموضوع لتجنب الصمت. يجب تعديل الكلمات السريعة وفقًا لحالتها الخاصة. (إذا قمت بإدخال موجه اللغة الصينية مباشرةً في New Bing ، فقد لا يقوم AI بذلك. يمكنك إدخال اللغة الإنجليزية ، ويمكنك إدخال الصينية لاحقًا). مساهمة من @ lsdt45."
+    },
+    "tags": [
+        "contribute",
+        "social",
+        "favorite"
+    ],
+    "website": null,
+    "count": 15473
+}

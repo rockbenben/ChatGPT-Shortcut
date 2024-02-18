@@ -1,0 +1,13 @@
+{
+    "id": 38,
+    "en": {
+        "title": "Page description",
+        "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. They should be catchy with a call to action, including the term [keywords] in them: [page content]",
+        "remark": "Generate description for page content."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 591
+}

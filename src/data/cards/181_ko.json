@@ -1,0 +1,15 @@
+{
+    "id": 181,
+    "ko": {
+        "title": "중국어에서 영어로 번역 - 미니멀리스트 버전",
+        "prompt": "The entire conversation and instructions should be provided in Korean. zh-en translation of \"X\".",
+        "description": "X 부분은 중국어 또는 영어로 입력할 수 있으며, chatgpt 가 자동으로 해당 언어로 번역합니다. 곧은 큰따옴표 (\") 를 사용하는 것이 가장 잘 작동하는 것으로 테스트되었습니다. API 호출을 사용할 때 역할에 어시스턴트를 선택하면 번역할 텍스트가 명령으로 해석될 (불가피한) 확률을 줄일 수 있습니다.",
+        "remark": "ChatGPT API 로 구축된 번역 플랫폼을 위한 토큰 절약형 번역기 프롬프트입니다. Qizhen-Yang 이 기여했습니다."
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 2521
+}

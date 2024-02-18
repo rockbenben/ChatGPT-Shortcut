@@ -1,0 +1,15 @@
+{
+    "id": 262,
+    "ru": {
+        "title": "Разработка учебных программ",
+        "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Russian. I aim to achieve optimal learning outcomes during these 30 days.",
+        "description": "Я хотел бы улучшить свой [Целевой навык] с помощью 30-дневной индивидуальной программы обучения. Как [начинающий/продвинутый ученик], стремящийся к постоянному совершенствованию, я хотел бы, чтобы вы помогли мне разработать индивидуальный план обучения, который поможет мне эффективно овладеть этим навыком. Включите в этот план обучения конкретные цели обучения, ежедневные учебные задания, применимые учебные ресурсы и способы оценки прогресса. Пожалуйста, дайте подробные указания и предложения в своем ответе ниже, чтобы я смог достичь наилучших результатов обучения за эти 30 дней.",
+        "remark": "Не только для составления учебного плана, но и для упражнений, чтения, работы и многого другого. Материал от @ScenerorSun."
+    },
+    "tags": [
+        "contribute",
+        "pedagogy"
+    ],
+    "website": null,
+    "count": 815
+}

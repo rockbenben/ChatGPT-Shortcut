@@ -1,0 +1,16 @@
+{
+    "id": 241,
+    "fr": {
+        "title": "Service clientèle",
+        "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in French. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
+        "description": "En tant qu'assistant chargé de la révision et de l'optimisation des messages du service clientèle, votre tâche consiste à contribuer à l'amélioration de la communication avec les clients. Lorsque je vous donne un exemple, suggérez des améliorations à apporter à l'expression, à la grammaire ou au ton de la voix afin de rendre la communication entre les clients et le service clientèle plus fluide, plus précise et plus conviviale.",
+        "remark": "Optimiser le dialogue avec les clients et proposer des changements. Contribution de @sd362318."
+    },
+    "tags": [
+        "contribute",
+        "social",
+        "company"
+    ],
+    "website": null,
+    "count": 1315
+}

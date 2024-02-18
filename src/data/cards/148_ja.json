@@ -1,0 +1,14 @@
+{
+    "id": 148,
+    "ja": {
+        "title": "タイトルジェネレーター",
+        "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Janpanese. My first keywords are ",
+        "description": "派手なタイトルのジェネレーターとして活動してほしい。私がコンマでキーワードを入力すると、あなたは派手なタイトルを返答してくれます。",
+        "remark": "キーワードをもとに複数のタイトルとポジションを生成する。"
+    },
+    "tags": [
+        "company"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
+    "count": 279
+}

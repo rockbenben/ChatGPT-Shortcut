@@ -1,0 +1,15 @@
+{
+    "id": 262,
+    "pt": {
+        "title": "Desenvolvimento de programas de aprendizagem",
+        "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in Portuguese. I aim to achieve optimal learning outcomes during these 30 days.",
+        "description": "Gostaria de melhorar a minha [competência-alvo] através de um programa de aprendizagem personalizado de 30 dias. Como [Aprendiz principiante/avançado] que está ansioso por continuar a melhorar, gostaria que me ajudasse a desenvolver um percurso de aprendizagem personalizado que me ajudará a dominar esta competência de forma eficaz. Inclua neste plano de aprendizagem objectivos de aprendizagem específicos, tarefas de aprendizagem diárias, recursos de aprendizagem aplicáveis e formas de avaliar o progresso. Por favor, forneça orientações e sugestões detalhadas na sua resposta abaixo, para que eu possa alcançar os melhores resultados de aprendizagem possíveis nestes 30 dias.",
+        "remark": "Não só para o desenvolvimento de planos de estudo, mas também para exercício, leitura, trabalho e muito mais. Contribuição de @ScenerorSun."
+    },
+    "tags": [
+        "contribute",
+        "pedagogy"
+    ],
+    "website": null,
+    "count": 815
+}

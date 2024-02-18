@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "hi": {
+        "title": "सारांश",
+        "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
+        "description": "निम्नलिखित पाठ को 100 शब्दों में सारांशित करें ताकि इसे पढ़ने और समझने में आसानी हो। जटिल वाक्य संरचनाओं या तकनीकी शब्दजाल से बचें।",
+        "remark": "पाठ की सामग्री को 100 शब्दों में सारांशित करें।"
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 9109
+}

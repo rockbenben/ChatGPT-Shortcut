@@ -1,0 +1,15 @@
+{
+    "id": 174,
+    "ar": {
+        "title": "قائمة كلمات طويلة",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "description": "ضع قائمة بأطول الكلمات بدءًا من الألف إلى الياء ، وقم بطباعة وتمييز الرموز الصوتية والمعنى الصيني",
+        "remark": "متعة تعلم اللغة الإنجليزية ، قائمة عشوائية من الكلمات الطويلة. نظرًا لأن شرط الكلمة الأطول ليس واضحًا بدرجة كافية ، فإن الكلمات المدرجة ستكون مختلفة في كل مرة. مساهمة منlxyntz."
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

@@ -1,0 +1,14 @@
+{
+    "id": 39,
+    "es": {
+        "title": "Generador de FAQs",
+        "prompt": "The entire conversation and instructions should be provided in Spanish. Generate a list of 10 frequently asked questions based on the following content: [内容].",
+        "description": "Genera una lista de 10 preguntas frecuentes basadas en lo siguiente:[Contenido]",
+        "remark": "Genere preguntas frecuentes basadas en el contenido."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 636
+}

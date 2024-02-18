@@ -1,0 +1,14 @@
+{
+    "id": 57,
+    "ru": {
+        "title": "врачи-диетологи",
+        "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Russian. Can you please provide a suggestion?.",
+        "description": "Как врач-диетолог, я хотел бы разработать вегетарианский рецепт с [требования] для [тема]. Не могли бы вы дать предложение?",
+        "remark": "Врач-диетолог"
+    },
+    "tags": [
+        "living"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
+    "count": 873
+}

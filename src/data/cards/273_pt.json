@@ -1,0 +1,15 @@
+{
+    "id": 273,
+    "pt": {
+        "title": "Fugir do casulo da informação",
+        "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The larger the number, the less relevant the information you provide should be to the information cocoon. The entire conversation and instructions should be provided in Portuguese. Please respond according to this principle, and parse and respond to the following words:.",
+        "description": "Eu dou-te um conjunto de palavras, tu usas este conjunto de palavras e a informação relacionada com elas para formar um casulo de informação, e depois emite a informação que não tem nada a ver com o casulo de informação, eu introduzo o número, o número máximo é 100, quanto maior for o número a informação de saída e a informação no casulo mais distante da relação de informação.",
+        "remark": "Utilize-o para descobrir o que não sabe. Contribuição de @ergf991."
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 571
+}

@@ -1,0 +1,14 @@
+{
+    "id": 174,
+    "en": {
+        "title": "Longest word",
+        "prompt": "Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "remark": "Fun English learning, randomly listing long words. Due to the unclear condition of the longest word, each listed word will be different every time. Contributed by @lxyntz."
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

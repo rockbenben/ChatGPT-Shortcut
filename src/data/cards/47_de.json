@@ -1,0 +1,14 @@
+{
+    "id": 47,
+    "de": {
+        "title": "Zusammenfassung von Sachbüchern",
+        "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in German. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
+        "description": "Ich möchte, dass Sie als Lebensberater fungieren. Bitte fassen Sie dieses Sachbuch [Titel] von [Autor] zusammen. Vereinfachen Sie die Kernprinzipien so, dass sie auch ein Kind verstehen kann. Können Sie mir auch eine Liste von Schritten geben, wie ich diese Prinzipien in meinem täglichen Leben umsetzen kann?",
+        "remark": "Fassen Sie die Kernprinzipien des Sachbuchs auf möglichst verständliche Weise zusammen, basierend auf dem Titel und dem Autor des angegebenen Sachbuchs. Geben Sie auch eine Liste von Schritten an, wie Sie diese Grundsätze im Alltag anwenden können."
+    },
+    "tags": [
+        "life"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
+    "count": 661
+}

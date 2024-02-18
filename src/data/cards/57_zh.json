@@ -1,0 +1,14 @@
+{
+    "id": 57,
+    "zh": {
+        "title": "营养师",
+        "prompt": "As a dietitian, I would like to design a vegetarian recipe for [对象] that has [要求]. Can you please provide a suggestion in Chinese?",
+        "description": "作为一名营养师，我想为 [对象] 设计一份有 [要求] 的素食食谱。能否请您提供一个建议？",
+        "remark": "Dietitian"
+    },
+    "tags": [
+        "living"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
+    "count": 873
+}

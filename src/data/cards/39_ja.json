@@ -1,0 +1,14 @@
+{
+    "id": 39,
+    "ja": {
+        "title": "FAQ ジェネレーター",
+        "prompt": "The entire conversation and instructions should be provided in Japanese. Generate a list of 10 frequently asked questions based on the following content: [内容].",
+        "description": "以下に基づいて、よくある質問 10 個のリストを生成する：【目次】。",
+        "remark": "コンテンツベースの FAQ 生成。"
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 636
+}

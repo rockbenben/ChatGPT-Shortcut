@@ -1,0 +1,15 @@
+{
+    "id": 195,
+    "ar": {
+        "title": "خطاب",
+        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Arabic. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
+        "description": "بصفتي [هوية] ، تتمحور حول كيفية تنفيذ الأخلاق العلمية وبناء الأسلوب الأكاديمي ، سأقوم بتوسيع النص التالي لي. يمكنك اقتباس اقتباس مشهور واحد على الأكثر من شخص مشهور ، وإضافة أمثلة محددة ، وشرح مشاعرك الشخصية.",
+        "remark": "مساهمة من SetSeele."
+    },
+    "tags": [
+        "contribute",
+        "speech"
+    ],
+    "website": null,
+    "count": 1788
+}

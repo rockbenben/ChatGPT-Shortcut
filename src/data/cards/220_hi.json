@@ -1,0 +1,15 @@
+{
+    "id": 220,
+    "hi": {
+        "title": "यात्रा मार्ग योजना",
+        "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Hindi. Include the prices for each attraction and keep the total budget around [BUDGET].",
+        "description": "मैं डाली, युन्नान जाना चाहता हूं। कृपया, एक पेशेवर टूर गाइड के रूप में, मुझे 2-दिवसीय यात्रा रणनीति बनाने में मदद करें। इसके अलावा, मुझे उम्मीद है कि पूरी प्रक्रिया बहुत कठिन नहीं होगी, और मैं एक शांत जगह पसंद करता हूं जहां मैं आसानी से खेल सकूं। उत्तर देते समय, प्रत्येक स्थान की कीमत संलग्न करना याद रखें। मेरा बजट लगभग 5,000 युआन है।",
+        "remark": "यात्रा गंतव्य, बजट, समय और आवश्यकताओं के आधार पर मोटे तौर पर योजना बनाएं। @suaifu से योगदान।"
+    },
+    "tags": [
+        "contribute",
+        "tool"
+    ],
+    "website": null,
+    "count": 4246
+}

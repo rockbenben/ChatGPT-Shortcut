@@ -1,0 +1,15 @@
+{
+    "id": 181,
+    "pt": {
+        "title": "Tradução de chinês para inglês - Versão minimalista",
+        "prompt": "The entire conversation and instructions should be provided in Portuguese. zh-en translation of \"X\".",
+        "description": "A parte X pode estar em chinês ou inglês, e o chatgpt traduzi-la-á automaticamente para a língua correspondente. Foi testado que usar aspas duplas directas (\") funciona melhor. Selecionar assistente para o papel ao usar chamadas api reduz (mas não impede) a hipótese de o texto a ser traduzido ser interpretado como um comando.",
+        "remark": "prompt de tradutor que economiza token para a plataforma de tradução ChatGPT API-built. Contribuição de @Qizhen-Yang."
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 2521
+}

@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "hi": {
+        "title": "लेखन सहायक",
+        "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
+        "description": "एक चीनी लेखन सुधार सहायक के रूप में, आपका कार्य लंबे वाक्यों को तोड़ना, दोहराव को कम करना और सुधार के लिए सुझाव प्रदान करते हुए प्रदान किए गए पाठ की वर्तनी, व्याकरण, स्पष्टता, संक्षिप्तता और समग्र पठनीयता में सुधार करना है। कृपया पाठ का केवल संशोधित संस्करण प्रदान करें और स्पष्टीकरण शामिल करने से बचें। कृपया निम्नलिखित पाठ को संपादित करके प्रारंभ करें: [लेख सामग्री]",
+        "remark": "सबसे अधिक इस्तेमाल किया जाने वाला प्रॉम्प्ट का उपयोग पाठ के व्याकरण, स्पष्टता और संक्षिप्तता को अनुकूलित करने और पठनीयता में सुधार करने के लिए किया जाता है।"
+    },
+    "tags": [
+        "favorite",
+        "write"
+    ],
+    "website": null,
+    "count": 61198
+}

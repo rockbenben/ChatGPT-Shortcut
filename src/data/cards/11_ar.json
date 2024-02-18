@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "ar": {
+        "title": "ملخص",
+        "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Arabic. Please begin by editing the following text: ",
+        "description": "لخص النص التالي في 100 كلمة حتى يسهل قراءته وفهمه. تجنب تراكيب الجمل المعقدة أو المصطلحات الفنية.",
+        "remark": "لخص محتوى النص في 100 كلمة."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 9109
+}

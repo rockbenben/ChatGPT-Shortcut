@@ -1,0 +1,14 @@
+{
+    "id": 10,
+    "hi": {
+        "title": "लेखन सामग्री का संग्रह",
+        "prompt": "The entire conversation and instructions should be provided in Hindi. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
+        "description": "[विषय] से संबंधित शीर्ष 10 तथ्यों, आंकड़ों और रुझानों की एक सूची तैयार करें, जिसमें उनके स्रोत भी शामिल हैं।",
+        "remark": "सामग्री के रूप में विषय से संबंधित निष्कर्ष, डेटा और स्रोत प्रदान करें।"
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 3611
+}

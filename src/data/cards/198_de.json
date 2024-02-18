@@ -1,0 +1,15 @@
+{
+    "id": 198,
+    "de": {
+        "title": "Eine Geschichte nach Stichworten schreiben",
+        "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in German. Feel free to be as creative and imaginative as possible.",
+        "description": "Jetzt werden Sie die Rolle meines Englischlehrers spielen, und im nächsten Dialog werde ich Ihnen ein paar englische Wörter schicken, und Sie müssen mit den Wörtern, die ich Ihnen gebe, eine interessante englische Kurzgeschichte erfinden. Die englischen Wörter, die ich Ihnen schicke, werden in Klammern gesetzt. Nur die Wörter innerhalb der Klammern sind diejenigen, die Sie brauchen, um eine Geschichte zu erfinden, und ich werde die Wörter mit Kommas trennen. Wenn meine Worte nicht in Klammern stehen, bedeutet das, dass du die Geschichte nicht erfinden musst. Für diese Geschichte müsst ihr die folgende Vorlage verwenden. Beachten Sie, dass die Vorlage aus drei Teilen besteht und Sie alle drei Teile schreiben müssen.",
+        "remark": "Schreibe eine kurze Geschichte mit einigen der von dir angegebenen Wörter. Beitrag von @LIyvqi."
+    },
+    "tags": [
+        "contribute",
+        "article"
+    ],
+    "website": null,
+    "count": 764
+}

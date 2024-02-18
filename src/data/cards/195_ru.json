@@ -1,0 +1,15 @@
+{
+    "id": 195,
+    "ru": {
+        "title": "проект речи",
+        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Russian. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
+        "description": "В качестве [личность] подготовьте для меня следующий текст, посвященный вопросам применения научной этики и стилей обучения. Вы можете процитировать не более одного известного человека, привести конкретные примеры и рассказать о своих личных ощущениях.",
+        "remark": "Вклад от @SetSeele."
+    },
+    "tags": [
+        "contribute",
+        "speech"
+    ],
+    "website": null,
+    "count": 1788
+}

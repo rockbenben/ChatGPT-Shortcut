@@ -1,0 +1,13 @@
+{
+    "id": 7,
+    "en": {
+        "title": "Prompt Optimizer",
+        "prompt": "I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?",
+        "remark": "Let ChatGPT reverse the prompt. As the logic of human-written prompts differs from that of a machine, reworking the prompts will make ChatGPT easier to understand."
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
+    "count": 5244
+}

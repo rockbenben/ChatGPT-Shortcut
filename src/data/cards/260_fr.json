@@ -1,0 +1,15 @@
+{
+    "id": 260,
+    "fr": {
+        "title": "Vérification grammaticale croisée",
+        "prompt": "The entire conversation and instructions should be provided in French. Could you please help me to ensure that the grammar and spelling are correct? Do not tryto improve the text, if no mistake is found, tellme that this paragraph is good.lf you find grammar or spelling mistakes, please list the mistakes you find in a two-column markdown table, put the original text in the first column.put the corrected text in the second columnand do highlight the key words you fixed in bold.",
+        "description": "Pouvez-vous m'aider à m'assurer que ma grammaire et mon orthographe sont correctes ? Si vous trouvez des erreurs grammaticales ou orthographiques, veuillez les répertorier dans une feuille de correction en deux colonnes, en plaçant le texte original dans la première colonne, le texte corrigé dans la deuxième colonne et les mots clés que vous avez corrigés en gras.",
+        "remark": "Contribution de @ScenerorSun."
+    },
+    "tags": [
+        "contribute",
+        "pedagogy"
+    ],
+    "website": null,
+    "count": 328
+}

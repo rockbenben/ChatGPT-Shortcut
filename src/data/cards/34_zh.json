@@ -1,0 +1,14 @@
+{
+    "id": 34,
+    "zh": {
+        "title": "提取联系信息",
+        "prompt": "Extract the name and mailing address from this email: [文本]",
+        "description": "从这封邮件中提取姓名和邮箱地址：[文本]",
+        "remark": "从文本中提取联系信息。"
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://platform.openai.com/examples/default-extract-contact-info",
+    "count": 145
+}

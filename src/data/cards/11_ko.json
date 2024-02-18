@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "ko": {
+        "title": "요약 콘텐츠",
+        "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Korean. Please begin by editing the following text: ",
+        "description": "다음 텍스트를 읽고 이해하기 쉽도록 100 개의 단어로 요약하세요. 복잡한 문장 구조나 전문 용어는 피하세요.",
+        "remark": "텍스트는 100 단어로 요약되어 있습니다."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 9109
+}

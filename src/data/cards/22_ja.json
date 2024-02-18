@@ -1,0 +1,14 @@
+{
+    "id": 22,
+    "ja": {
+        "title": "カバーレター",
+        "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in Janpanese. Can you write a cover letter for a job application about myself?.",
+        "description": "就職活動で提出するため、新たにカバーレターを書きたいと思います。私の技術的なスキルを説明するカバーレターを書いてください。私は [CV] で [年] 年働いてきました。フロントエンドデベロッパーとして 8 ヶ月間働いてきました。私は多くのツールを使うことで成長してきました。これらのツールには [スキル] などがあります。私は [期待] したいと思います。私は [リクエスト] したいと思います。就職活動用の自分に関するカバーレターを書いてもらえますか？",
+        "remark": "自画像に基づいたカバーレターを作成する。"
+    },
+    "tags": [
+        "article"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
+    "count": 546
+}

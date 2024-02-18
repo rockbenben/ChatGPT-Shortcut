@@ -1,0 +1,14 @@
+{
+    "id": 9,
+    "pt": {
+        "title": "Continuação do artigo",
+        "prompt": "The entire conversation and instructions should be provided in Portuguese. Continue writing an article about [theme] that begins with the following sentence: ",
+        "description": "Continue a escrever um artigo em chinês sobre [TÓPICO DO ARTIGO], começando pela seguinte frase: [INÍCIO DO ARTIGO].",
+        "remark": "Continue a secção de abertura do ensaio para completar o ensaio com base no tema do ensaio."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 7107
+}

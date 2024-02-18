@@ -1,0 +1,14 @@
+{
+    "id": 211,
+    "de": {
+        "title": "Artikel hervorheben",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in German. Here is the text: [].",
+        "description": "Lesen Sie den folgenden Text aufmerksam durch und verwenden Sie doppelte Sternchen (**), um Wörter oder Sätze hervorzuheben. Ändern Sie den Originaltext nicht und erstellen Sie keine Zusammenfassungen.",
+        "remark": "Die Hervorhebung erhöht die Lesbarkeit des Artikels. ChatGPT zeigt jedoch standardmäßig die Markdown-Syntax an. Wenn die Ergebnisse angezeigt werden, müssen Sie den hervorgehobenen Abschnitt manuell umrahmen. Ich habe auch versucht, die Hervorhebungsspitzen durch andere Symbole zu ersetzen, aber das funktioniert nicht sehr gut. Also, verwenden Sie diese Version für jetzt."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 865
+}

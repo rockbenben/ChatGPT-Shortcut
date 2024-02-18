@@ -1,0 +1,14 @@
+{
+    "id": 208,
+    "bn": {
+        "title": "স্ব-পরীক্ষা প্রকাশ করুন",
+        "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Bengali. How might the other person interpret my meaning?.",
+        "description": "[একটি নির্দিষ্ট জিনিস], আমি বললাম: [প্রতিক্রিয়া সামগ্রী]। আমি কি জিজ্ঞাসা করতে পারি কিভাবে অন্য পক্ষ বুঝতে পারে আমি কি বলতে চাইছি? এটা প্রকাশ করার অন্য কোন ভাল উপায় আছে?",
+        "remark": "আপনি যদি একটি অত্যন্ত সংবেদনশীল গোষ্ঠী হন, বা আপনার কথাগুলি প্রায়শই ভুল বোঝা যায়, তবে এআই ব্যাখ্যা আপনাকে কথা বলার আগে নিজেকে স্পষ্টভাবে প্রকাশ করছেন কিনা তা পরীক্ষা করার অনুমতি দিতে পারে।"
+    },
+    "tags": [
+        "social"
+    ],
+    "website": null,
+    "count": 401
+}

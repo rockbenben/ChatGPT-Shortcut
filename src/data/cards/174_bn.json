@@ -1,0 +1,15 @@
+{
+    "id": 174,
+    "bn": {
+        "title": "দীর্ঘ শব্দ তালিকা",
+        "prompt": "The entire conversation and instructions should be provided in Bengali. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "description": "A থেকে Z থেকে শুরু হওয়া দীর্ঘতম শব্দের তালিকা করুন, ফোনেটিক চিহ্ন এবং চীনা অর্থ মুদ্রণ করুন এবং চিহ্নিত করুন",
+        "remark": "মজার ইংরেজি শেখা, দীর্ঘ শব্দের এলোমেলো তালিকা। যেহেতু দীর্ঘতম শব্দ শর্তটি যথেষ্ট পরিষ্কার নয়, তাই তালিকাভুক্ত শব্দগুলি প্রতিবার আলাদা হবে৷ @lxyntz থেকে অবদান।"
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

@@ -1,0 +1,15 @@
+{
+    "id": 271,
+    "ru": {
+        "title": "Запрос о путанице",
+        "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Russian. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question.",
+        "description": "Я в смятении, но не знаю, какие вопросы задавать.\nВ каждом из следующих нескольких раундов диалога вы должны задать мне вопрос закрытого типа с вариантами ответов, я могу только выбирать, а вы должны сузить круг проблем, которые у меня возникают, исходя из моего выбора.\nПримечание: В каждом раунде мне можно задать только 1 вопрос.\nВы можете задать мне только 1 вопрос за раунд.\nВопрос должен быть закрытым.\nВы должны дать несколько вариантов ответа на вопрос, а я могу только сделать выбор.",
+        "remark": "Когда вы не знаете, какой вопрос задать, используйте это слово-подсказку, чтобы сузить круг возможных вариантов. Материал предоставлен @FreedomLeaf."
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 552
+}

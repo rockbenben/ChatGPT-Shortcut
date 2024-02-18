@@ -1,0 +1,14 @@
+{
+    "id": 33,
+    "bn": {
+        "title": "শব্দার্থিক প্রাসঙ্গিকতা ক্লাস্টারিং",
+        "prompt": "The entire conversation and instructions should be provided in Bengali. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
+        "description": "শব্দার্থগত প্রাসঙ্গিকতা অনুসারে, নিম্নলিখিত কীওয়ার্ডগুলিকে শ্রেণিবদ্ধ করা হয়েছে। [মূল শব্দ]",
+        "remark": "শব্দার্থগত প্রাসঙ্গিকতা অনুসারে কীওয়ার্ডগুলি ক্লাস্টার এবং গোষ্ঠীবদ্ধ করা হয়।"
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 149
+}

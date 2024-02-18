@@ -1,0 +1,14 @@
+{
+    "id": 7,
+    "ru": {
+        "title": "модификатор подсказки",
+        "prompt": "The entire conversation and instructions should be provided in Russian. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
+        "description": "Я пытаюсь получить хорошие результаты на GPT-4, используя следующие слова подсказки: Ваши слова подсказки. Можете ли вы написать слова подсказки, которые были бы более оптимизированы и давали бы лучшие результаты?",
+        "remark": "Пусть ChatGPT перепишет подсказки за нас. Поскольку логика написания подсказок человеком отличается от логики написания подсказок машиной, переработка подсказок облегчит понимание ChatGPT."
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
+    "count": 5244
+}

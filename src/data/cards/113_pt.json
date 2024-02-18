@@ -1,0 +1,14 @@
+{
+    "id": 113,
+    "pt": {
+        "title": "reconhecedor de voz",
+        "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Portuguese. My first sentence is ",
+        "description": "Quero que actues como um detetor de línguas. Vou escrever uma frase em qualquer língua e tu tens de me responder em que língua está a frase que escrevi na tua parte do mundo. Não escrevas explicações nem outras palavras, responde apenas ao nome da língua.",
+        "remark": "Identificar o tipo de língua introduzida."
+    },
+    "tags": [
+        "language"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
+    "count": 162
+}

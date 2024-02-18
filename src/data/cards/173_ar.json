@@ -1,0 +1,15 @@
+{
+    "id": 173,
+    "ar": {
+        "title": "مترجم الشفرة",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
+        "description": "آمل أن تتمكن من العمل كمترجم شفرات يوضح بناء الجملة ودلالات الكود.",
+        "remark": "دع AI يشرح ما تفعله كل خطوة من التعليمات البرمجية. مساهمة من @ Tractor1928 ، تم تعديلها بواسطةyiqiongwu."
+    },
+    "tags": [
+        "contribute",
+        "code"
+    ],
+    "website": null,
+    "count": 5831
+}

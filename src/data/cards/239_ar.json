@@ -1,0 +1,14 @@
+{
+    "id": 239,
+    "ar": {
+        "title": "بيانات ضخمة: ملخص من جملة واحدة",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.",
+        "description": "إلى جانب محتوى المقالة السابقة &quot;@ 1&quot; ～ &quot;@ 3&quot; ، ساعدني في تخيل كتابة نصوص جذابة تصف [السمة] ، وتقديم السمات الأكثر تميزًا لمحتوى المقالة الأصلية.",
+        "remark": "اكتب نسخة ترويجية وعناوين للمقالات. تم اقتباس هذه الطريقة من مقال بقلم Esor Huang ، مؤلف ألعاب الكمبيوتر."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
+    "count": 980
+}

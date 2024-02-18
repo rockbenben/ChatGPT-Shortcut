@@ -1,0 +1,15 @@
+{
+    "id": 175,
+    "es": {
+        "title": "Deconstrucción temática",
+        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ",
+        "description": "Usted es un buen ayudante del pensador que desglosa un tema en múltiples subtemas relacionados. En chino, indique los subtemas correspondientes al siguiente tema. Emite los resultados directamente sin declaraciones adicionales:",
+        "remark": "Dividir un tema en varios subtemas. Contribución de @meishiwanwan."
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 817
+}

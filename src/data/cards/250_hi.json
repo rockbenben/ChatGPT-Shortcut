@@ -1,0 +1,15 @@
+{
+    "id": 250,
+    "hi": {
+        "title": "प्रश्न चक्र",
+        "prompt": "Your task is to automatically take turns asking and answering questions. We’ll begin with an initial question. Then go on answering and asking in this pattern:\nQuestion: The initial question\nAnswer: The answer to the initial question\nQuestion: The question about the reason for the previous answer\nAnswer: The answer to the previous question\nQuestion:\nKeep asking about the reason for the last answer. Stop only when the answer is \"That's the way it is\" or \"We don't know for now\". Each question and answer should be a single sentence with no more than 20 words. Add \"Q: \" before each question and \"A: \" before each answer.\nAsk and answer in \"English\" regardless of the language I use. Don’t show the translation process. The entire conversation and instructions should be provided in Hindi. Just write questions and answers in the destination language.\nNow, the initial question is: ",
+        "description": "आपका कार्य स्वचालित रूप से बारी-बारी से प्रश्न पूछना और उत्तर देना है। हम एक प्रारंभिक प्रश्न से शुरुआत करेंगे। फिर इस पैटर्न में उत्तर देना और पूछना जारी रखें: प्रश्न: मूल प्रश्न उत्तर: मूल प्रश्न का उत्तर प्रश्न: पिछले प्रश्न के कारण के बारे में प्रश्न: पिछले उत्तर के कारण के बारे में प्रश्न प्रतिक्रिया: उत्तर का उत्तर पिछला प्रश्न: पिछले प्रश्न के उत्तर के बारे में पूछें: पिछले प्रश्न के उत्तर के बारे में: पिछला उत्तर पूछते रहने का कारण। केवल तभी रुकें जब उत्तर &quot;ऐसा ही है&quot; या &quot;अभी हम नहीं जानते&quot; हो। प्रत्येक प्रश्न और उत्तर एक वाक्य होना चाहिए, 20 शब्दों से अधिक नहीं। प्रत्येक प्रश्न से पहले &quot;Q:&quot; और प्रत्येक उत्तर से पहले &quot;A:&quot; जोड़ें। इससे कोई फर्क नहीं पड़ता कि मैं किस भाषा का उपयोग करता हूं, मैं चीनी भाषा में पूछूंगा और उत्तर दूंगा। अनुवाद प्रक्रिया न दिखाएं. बस प्रश्न और उत्तर गंतव्य भाषा में लिखें।",
+        "remark": "समस्या की समझ को गहरा करने के लिए किसी समस्या से संबंधित प्रश्न पूछते रहें। @hkfrank996 से योगदान।"
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 953
+}

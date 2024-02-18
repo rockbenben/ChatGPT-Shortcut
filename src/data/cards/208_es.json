@@ -1,0 +1,14 @@
+{
+    "id": 208,
+    "es": {
+        "title": "Autocomprobación de expresiones",
+        "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Spanish. How might the other person interpret my meaning?.",
+        "description": "[una cosa concreta], yo digo: [contenido de la respuesta]. ¿Puedo preguntar cómo puede interpretar la otra persona lo que quiero decir? ¿Hay otra forma mejor de expresarlo?",
+        "remark": "Si eres hipersensible o tus palabras se malinterpretan a menudo, la descodificación de IA te permite comprobar que te has expresado con claridad antes de hablar."
+    },
+    "tags": [
+        "social"
+    ],
+    "website": null,
+    "count": 401
+}

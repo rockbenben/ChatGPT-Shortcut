@@ -1,0 +1,14 @@
+{
+    "id": 40,
+    "ru": {
+        "title": "Ключевое слово Популярное связанное",
+        "prompt": "The entire conversation and instructions should be provided in Russian. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].",
+        "description": "Сформировать список из 10 популярных вопросов, связанных с [ключевым словом], релевантных для [аудитории] и имеющих ответы на китайском языке.",
+        "remark": "Она может быть использована для понимания того, насколько пользователи сосредоточены на определенных темах, или для организации структуры статьи, и может быть изменена на \"Горячие ключевые слова\", \"Горячие темы\", \"Горячие бренды\", \"Горячие сайты\" и т.д."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 1257
+}

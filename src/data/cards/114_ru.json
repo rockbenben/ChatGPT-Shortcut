@@ -1,0 +1,14 @@
+{
+    "id": 114,
+    "ru": {
+        "title": "генератор языка",
+        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Russian. My first sentence is ",
+        "description": "Я хочу, чтобы вы перевели предложения, которые я пишу, на новый выдуманный язык. Я пишу предложение, а вы выражаете его на этом новом выдуманном языке. Я просто хочу, чтобы вы выразили его на новом закодированном языке. Я не хочу, чтобы вы отвечали на что-то, кроме вновь закодированного языка. Когда мне нужно сказать вам что-то по-английски, я заключаю это в фигурные скобки, например {like this}.",
+        "remark": "Замените заданный вами язык на вновь созданный ИИ."
+    },
+    "tags": [
+        "language"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
+    "count": 252
+}

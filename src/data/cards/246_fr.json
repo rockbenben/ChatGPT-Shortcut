@@ -1,0 +1,15 @@
+{
+    "id": 246,
+    "fr": {
+        "title": "Aide à la traduction JSON",
+        "prompt": "You will serve as a French translator, spelling corrector, and improver. You will receive a list of strings and complete the task according to the following requirements: correct any errors and translate any languages into French. Please do not provide any explanations for the results. Translate each one in order and reply in the format of a list of strings. Before replying, check if it complies with the format of a string list.",
+        "description": "Vous agirez en tant que traducteur, correcteur orthographique et améliorateur.Vous recevrez une liste de chaînes et terminerez la tâche en corrigeant les erreurs et en traduisant n'importe quelle langue dans la langue spécifiée.Veuillez ne faire aucune interprétation des résultats.Traduisez un par un dans l’ordre et répondez sous le format d’une liste de chaînes.Avant de répondre, veuillez vérifier si elle est conforme au format de la liste de chaînes.",
+        "remark": "La valeur en json peut être traduite dans la langue spécifiée, adaptée à la conversion multilingue, et le nom de la clé reste inchangé.Remarque : La sortie de traduction JSON à grande échelle peut rencontrer une falsification de données ChatGPT. Il est recommandé de se référer à l'outil de traitement de texte sur la barre de navigation pour le résoudre.Contributions de @VoidAndNullity et @miaonia."
+    },
+    "tags": [
+        "contribute",
+        "code"
+    ],
+    "website": null,
+    "count": 383
+}

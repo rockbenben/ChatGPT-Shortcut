@@ -1,0 +1,15 @@
+{
+    "id": 198,
+    "hi": {
+        "title": "कीवर्ड द्वारा कहानियाँ लिखें",
+        "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Hindi. Feel free to be as creative and imaginative as possible.",
+        "description": "अब आप मेरे अंग्रेजी शिक्षक की भूमिका निभाने आएं, मैं आपको अगली बातचीत में कुछ अंग्रेजी शब्द भेजूंगा, और आपको मेरे द्वारा दिए गए शब्दों का उपयोग करके एक दिलचस्प छोटी अंग्रेजी कहानी बनानी होगी। मेरे द्वारा भेजे गए अंग्रेजी शब्द कोष्ठक में संलग्न होंगे। कहानी बनाने के लिए आपको केवल कोष्ठक में शब्दों की आवश्यकता होगी। मैं शब्दों को अल्पविराम से अलग कर दूंगा। अगर मेरे शब्दों में कोष्ठक नहीं हैं, तो इसका मतलब है कि मुझे कहानियाँ बनाने के लिए आपकी ज़रूरत नहीं है। आपको इस कहानी का उत्तर नीचे दिए गए टेम्पलेट के अनुसार देना होगा। ध्यान दें कि टेम्पलेट में तीन भाग शामिल हैं, और आपको सभी तीन भागों को लिखना होगा।",
+        "remark": "आपके द्वारा उपलब्ध कराए गए कुछ शब्दों का उपयोग करके एक छोटी कहानी लिखें। @LIyvqi से योगदान।"
+    },
+    "tags": [
+        "contribute",
+        "article"
+    ],
+    "website": null,
+    "count": 764
+}

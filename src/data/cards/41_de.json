@@ -1,0 +1,14 @@
+{
+    "id": 41,
+    "de": {
+        "title": "Falsche Umschreibung",
+        "prompt": "The entire conversation and instructions should be provided in German. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ",
+        "description": "Schreibe den folgenden Absatz auf 5 verschiedene Arten um, um Wiederholungen zu vermeiden und gleichzeitig den Sinn zu erhalten: [Text ändern",
+        "remark": "Schreiben Sie mehrere Versionen des angegebenen Inhalts neu, um Textduplikate zu vermeiden."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 8820
+}

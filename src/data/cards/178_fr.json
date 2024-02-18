@@ -1,0 +1,15 @@
+{
+    "id": 178,
+    "fr": {
+        "title": "Développement : Vue3",
+        "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in French. Provide only the necessary code to meet these requirements without explanations or descriptions.",
+        "description": "En tant que développeur Vue3, vous êtes chargé d'écrire un compteur à l'aide des outils Yarn, Vite, Vue3, TS, Pinia et Vueuse. Votre réponse doit être un code répondant aux exigences suivantes : combiner des modèles, des scripts et des styles dans un fichier vue en utilisant l'API de composition de Vue3 et la syntaxe <script setup> ; afficher du texte chinois dans la vue ; et inclure des styles. Veuillez noter que vous ne devez fournir que le code nécessaire pour répondre à ces exigences ; aucune explication ou description n'est requise.",
+        "remark": "Aide au développement de Vue3. Contribution de @gandli."
+    },
+    "tags": [
+        "contribute",
+        "code"
+    ],
+    "website": null,
+    "count": 699
+}

@@ -1,0 +1,13 @@
+{
+    "id": 148,
+    "en": {
+        "title": "fancy title generator",
+        "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. My first keywords are ",
+        "remark": "Generate multiple job titles and positions based on keywords."
+    },
+    "tags": [
+        "company"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
+    "count": 279
+}

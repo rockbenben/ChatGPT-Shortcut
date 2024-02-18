@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "pt": {
+        "title": "Assistente de redação",
+        "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ",
+        "description": "Como Assistente de Aperfeiçoamento da Escrita Chinesa, a sua tarefa é melhorar a ortografia, a gramática, a clareza, a concisão e a legibilidade geral do texto fornecido, ao mesmo tempo que decompõe frases longas, reduz as repetições e dá sugestões de melhoria. Por favor, forneça apenas uma versão corrigida do texto e evite incluir explicações. Comece por editar o seguinte texto: [Conteúdo do artigo]",
+        "remark": "O prompt mais comum, utilizado para otimizar a sintaxe, a clareza e a concisão do texto e melhorar a legibilidade."
+    },
+    "tags": [
+        "favorite",
+        "write"
+    ],
+    "website": null,
+    "count": 61198
+}

@@ -1,0 +1,14 @@
+{
+    "id": 41,
+    "ru": {
+        "title": "Поддельная перепись",
+        "prompt": "The entire conversation and instructions should be provided in Russian. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ",
+        "description": "Перепишите следующий абзац 5 разными способами, чтобы избежать повторов и сохранить смысл: [изменить текст",
+        "remark": "Перепишите несколько версий указанного содержимого, чтобы избежать дублирования текста."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 8820
+}

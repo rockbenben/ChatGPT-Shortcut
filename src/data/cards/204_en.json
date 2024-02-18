@@ -1,0 +1,14 @@
+{
+    "id": 204,
+    "en": {
+        "title": "Spoken script",
+        "prompt": "write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
+        "remark": "write scripts for live broadcasts, videos, podcasts and other types of spoken content. Contributed by @Bettycroco."
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 11920
+}

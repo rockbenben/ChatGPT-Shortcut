@@ -1,0 +1,14 @@
+{
+    "id": 238,
+    "ru": {
+        "title": "Массивный объем информации: ввод",
+        "prompt": "Let's start a new round of questions and answers. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Russian. Are you ready?.",
+        "description": "Давайте начнем раунд вопросов и ответов заново, я буду приводить содержание статей, пронумерованных буквой \"@\" в нескольких беседах, поэтому, пожалуйста, сначала запомните это, но не обобщайте, хорошо?",
+        "remark": "Чтобы преодолеть ограничения ChatGPT по вводу текста, разбейте статью на абзацы через каждые 2000 символов и начинайте первую строку каждого абзаца с символа \"@\", например, @1. Разбить текст на абзацы можно с помощью инструмента обработки текста на панели навигации. Обратите внимание, что игнорирование ответа GPT не повлияет на конечный результат. Данный метод взят из статьи Эсора Хуанга, автора книги Computer Playbook."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
+    "count": 3102
+}

@@ -1,0 +1,14 @@
+{
+    "id": 242,
+    "de": {
+        "title": "christen",
+        "prompt": "My baby will be born in June 2023. The father's last name is Li and the mother's last name is Hou. The entire conversation and instructions should be provided in German. Can you help us choose a beautiful, auspicious, wise, and virtuous name for our child? Please derive the name from the Bible.",
+        "description": "Bitte geben Sie uns einen Namen für unser Kind, das Ende Juni 2023 von einem Vater namens Lee und einer Mutter namens Hou geboren werden wird. Wir möchten, dass der Name für eine gute Zukunft, einen guten Charakter und Weisheit steht. Bitte wählen Sie 10 geeignete Namen für Ihr Kind aus, inspiriert von Gedichten aus dem Klassiker der Poesie und dem Buch Chu.",
+        "remark": "Suchen Sie sich einen Namen für Ihr Kind, der reich an schöner Bedeutung ist, und lassen Sie sich von den alten Klassikern inspirieren."
+    },
+    "tags": [
+        "tool"
+    ],
+    "website": null,
+    "count": 3107
+}

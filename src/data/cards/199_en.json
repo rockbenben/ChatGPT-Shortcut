@@ -1,0 +1,15 @@
+{
+    "id": 199,
+    "en": {
+        "title": "Opposite-sex Dialogue",
+        "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. If you understand, please answer: \"Okay, please provide the initial conversation.\"",
+        "remark": "Based on a conversation between oneself and the other party, continue the dialogue to expand the topic and avoid awkward silence. The prompt words need to be modified according to one's own situation. Contributed by @lsdt45."
+    },
+    "tags": [
+        "contribute",
+        "social",
+        "favorite"
+    ],
+    "website": null,
+    "count": 15473
+}

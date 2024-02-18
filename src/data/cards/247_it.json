@@ -1,0 +1,15 @@
+{
+    "id": 247,
+    "it": {
+        "title": "Finte discussioni in classe",
+        "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Italian. The first term is:.",
+        "description": "Dovete aiutarmi a ricordare le spiegazioni dei sostantivi e, dopo che avrò digitato un sostantivo, dovrete simulare cinque studenti che fanno un discorso in classe su quel sostantivo. Il discorso deve essere spiritoso e facile da capire.",
+        "remark": "Le discussioni tra compagni di classe sono utilizzate per aiutare a comprendere e ricordare l'argomento. Contributo di @A380747."
+    },
+    "tags": [
+        "contribute",
+        "pedagogy"
+    ],
+    "website": null,
+    "count": 323
+}

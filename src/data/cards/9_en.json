@@ -1,0 +1,13 @@
+{
+    "id": 9,
+    "en": {
+        "title": "Article Continued",
+        "prompt": "Continue writing an article about [theme] that begins with the following sentence: ",
+        "remark": "Complete the essay by continuing the opening section of the essay according to its theme."
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 7107
+}

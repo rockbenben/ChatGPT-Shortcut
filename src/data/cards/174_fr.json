@@ -1,0 +1,15 @@
+{
+    "id": 174,
+    "fr": {
+        "title": "longue liste de mots",
+        "prompt": "The entire conversation and instructions should be provided in French. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "description": "Listez les mots les plus longs commençant par A à Z. Imprimez et étiquetez les symboles phonétiques et les significations chinoises.",
+        "remark": "Apprentissage ludique de l'anglais avec une liste aléatoire de mots longs. Les mots seront listés différemment à chaque fois en raison du manque de clarté de la condition du mot le plus long. Contribution de @lxyntz."
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

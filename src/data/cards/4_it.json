@@ -1,0 +1,15 @@
+{
+    "id": 4,
+    "it": {
+        "title": "risposta in stile saggio",
+        "prompt": "The entire conversation and instructions should be provided in Italian. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
+        "description": "Scrivete un saggio molto dettagliato, comprensivo di introduzione, corpo e conclusione, che risponda a quanto segue: [Domanda].",
+        "remark": "Discutendo le domande in formato saggio si ottengono risposte coerenti, strutturate e di qualità superiore."
+    },
+    "tags": [
+        "favorite",
+        "article"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
+    "count": 12050
+}

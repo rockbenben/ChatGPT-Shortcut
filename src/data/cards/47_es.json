@@ -1,0 +1,14 @@
+{
+    "id": 47,
+    "es": {
+        "title": "Resumen de libros de no ficción",
+        "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Spanish. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
+        "description": "Quiero que actúes como coach de vida. Por favor, resuma este libro de no ficción [título] de [autor]. Simplifique los principios básicos de forma que un niño pueda entenderlos. Además, ¿puede darme una lista de medidas prácticas para aplicar estos principios en mi vida diaria?",
+        "remark": "Resuma los principios fundamentales del libro de no ficción de la forma más accesible posible, basándose en el título y el autor del libro de no ficción introducido. Asimismo, facilite una lista de medidas prácticas para aplicar estos principios a la vida cotidiana."
+    },
+    "tags": [
+        "life"
+    ],
+    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
+    "count": 661
+}

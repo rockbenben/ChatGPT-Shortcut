@@ -1,0 +1,15 @@
+{
+    "id": 179,
+    "ru": {
+        "title": "Настольные словесные игры",
+        "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Russian. If you understand, reply with \"Understood\" and begin the game.",
+        "description": "Представьте, что вы - dm в trpg Dungeons & Dragons, добавьте в модуль возможность провала и поставьте скобку после каждого выбора с подсказкой о выборе в скобке, а я буду играть игроком. Если вы поняли, ответьте ok и начните игру.",
+        "remark": "ChatGPT поставляется с настройками trpg. Вклад от @gandli. (Существует большая разница между английской и китайской версиями этого совета, пожалуйста, переключите язык, если вы хотите использовать английскую версию)."
+    },
+    "tags": [
+        "contribute",
+        "games"
+    ],
+    "website": null,
+    "count": 836
+}

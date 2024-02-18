@@ -1,0 +1,15 @@
+{
+    "id": 175,
+    "de": {
+        "title": "Thematische Dekonstruktion",
+        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in German. Please begin by editing the following text: ",
+        "description": "Sie sind ein guter Assistent des Denkers, der ein Thema in mehrere zusammenhängende Unterthemen zerlegt. Bitte geben Sie in Chinesisch die relevanten Unterthemen für das folgende Thema an. Geben Sie die Ergebnisse direkt und ohne zusätzliche Deklarationen aus:",
+        "remark": "Ein bestimmtes Thema in mehrere Unterthemen aufteilen. Beitrag von @meishiwanwan."
+    },
+    "tags": [
+        "contribute",
+        "mind"
+    ],
+    "website": null,
+    "count": 817
+}

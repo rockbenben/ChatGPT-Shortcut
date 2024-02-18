@@ -1,0 +1,14 @@
+{
+    "id": 34,
+    "ko": {
+        "title": "연락처 정보 철회",
+        "prompt": "The entire conversation and instructions should be provided in Korean. Extract the name and mailing address from this email: ",
+        "description": "이 이메일에서 이름과 이메일 주소 추출: [텍스트]",
+        "remark": "텍스트에서 연락처 정보 추출하기."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://platform.openai.com/examples/default-extract-contact-info",
+    "count": 145
+}

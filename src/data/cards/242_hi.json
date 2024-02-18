@@ -1,0 +1,14 @@
+{
+    "id": 242,
+    "hi": {
+        "title": "नामकरण",
+        "prompt": "My baby will be born in June 2023. The father's last name is Li and the mother's last name is Hou. The entire conversation and instructions should be provided in Hindi. Can you help us choose a beautiful, auspicious, wise, and virtuous name for our child? Please derive the name from the Bible.",
+        "description": "कृपया हमारे बच्चे के लिए एक नाम चुनें, बच्चे का जन्म जून 2023 के अंत में होगा, पिता का उपनाम ली है और माता का उपनाम होउ है। हम आशा करते हैं कि नाम का तात्पर्य उज्ज्वल भविष्य, अच्छे चरित्र और ज्ञान से है। कृपया चू के गीतों और गीतों की पुस्तक से प्रेरणा लें और अपने बच्चे के लिए 10 उपयुक्त नाम चुनें।",
+        "remark": "अपने बच्चे के लिए एक सार्थक नाम चुनें और प्राचीन क्लासिक्स से प्रेरणा लें।"
+    },
+    "tags": [
+        "tool"
+    ],
+    "website": null,
+    "count": 3107
+}

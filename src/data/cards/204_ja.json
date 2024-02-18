@@ -1,0 +1,15 @@
+{
+    "id": 204,
+    "ja": {
+        "title": "オーラルスクリプト",
+        "prompt": "The entire conversation and instructions should be provided in Japanese. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
+        "description": "トピック] に関するエッセイを、略語、イディオム、経過句、感嘆詞、ぶら下がり修飾語、口語などを使い、繰り返しのフレーズや不自然な文構造を避け、人間の声で書きなさい。",
+        "remark": "ビデオ、ライブストリーム、ポッドキャスト、サブ、その他のスポークワードコンテンツのスクリプトを作成。ベティクロコ（@Bettycroco）さんからの寄稿です。"
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 11920
+}

@@ -1,0 +1,15 @@
+{
+    "id": 179,
+    "ko": {
+        "title": "데스크톱 단어 게임",
+        "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Korean. If you understand, reply with \"Understood\" and begin the game.",
+        "description": "당신이 trpg 던전 앤 드래곤의 dm 이라고 가정하고 모듈에 실패 가능성을 추가하고 각 선택 뒤에 괄호 안에 선택에 대한 힌트가있는 괄호를 넣으면 플레이어를 플레이 할 것입니다. 받으면 확인이라고 답하고 게임을 시작하세요.",
+        "remark": "ChatGPT 는 trpg 설정과 함께 제공됩니다. gandli 가 제공했습니다. (이 프롬프트의 영어 버전과 중국어 버전에는 상당한 차이가 있으므로 영어 버전을 사용해야 하는 경우 언어를 전환하세요.)"
+    },
+    "tags": [
+        "contribute",
+        "games"
+    ],
+    "website": null,
+    "count": 836
+}

@@ -1,0 +1,14 @@
+{
+    "id": 9,
+    "zh": {
+        "title": "文章续写",
+        "prompt": "Continue writing an article in Chinese about [文章主题] that begins with the following sentence: [文章开头]",
+        "description": "继续用中文写一篇关于 [文章主题] 的文章，以下列句子开头：[文章开头］",
+        "remark": "根据文章主题，延续文章开头部分来完成文章。"
+    },
+    "tags": [
+        "write"
+    ],
+    "website": null,
+    "count": 7107
+}

@@ -1,0 +1,15 @@
+{
+    "id": 174,
+    "hi": {
+        "title": "लंबी शब्द सूची",
+        "prompt": "The entire conversation and instructions should be provided in Hindi. Generate the longest word possible starting with each letter of the alphabet from A to Z, and include its phonetic transcription and English definition in the output.",
+        "description": "ए से ज़ेड तक शुरू होने वाले सबसे लंबे शब्दों की सूची बनाएं, ध्वन्यात्मक प्रतीकों और चीनी अर्थ को प्रिंट करें और चिह्नित करें",
+        "remark": "मज़ेदार अंग्रेजी सीखना, लंबे शब्दों की यादृच्छिक सूची। चूंकि सबसे लंबे शब्द की स्थिति पर्याप्त रूप से स्पष्ट नहीं है, इसलिए सूचीबद्ध शब्द हर बार अलग होंगे। @lxyntz से योगदान।"
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 166
+}

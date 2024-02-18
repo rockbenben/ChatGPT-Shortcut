@@ -1,0 +1,14 @@
+{
+    "id": 33,
+    "ko": {
+        "title": "시맨틱 관련성 클러스터링",
+        "prompt": "The entire conversation and instructions should be provided in Korean. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
+        "description": "다음 키워드는 의미적 관련성에 따라 그룹화됩니다. [키워드].",
+        "remark": "의미적 관련성에 따라 키워드를 클러스터링하고 그룹화합니다."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 149
+}

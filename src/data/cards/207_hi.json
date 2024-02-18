@@ -1,0 +1,14 @@
+{
+    "id": 207,
+    "hi": {
+        "title": "हवा पढ़ना",
+        "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Hindi. What could be the other person's intention? How should I respond?.",
+        "description": "[कुछ विशिष्ट/पृष्ठभूमि] हुआ, और किसी ने मुझसे कहा: [सामग्री]। क्या मैं पूछ सकता हूँ कि दूसरा पक्ष क्या व्यक्त करना चाहता है? आप कैसे प्रतिक्रिया देंगे?",
+        "remark": "कुछ समझ से बाहर होने वाले संवादों के लिए, उचित प्रतिक्रियाओं की व्याख्या करने और तैयार करने के लिए एआई को संवाद पृष्ठभूमि प्रदान करें।"
+    },
+    "tags": [
+        "social"
+    ],
+    "website": null,
+    "count": 437
+}

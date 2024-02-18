@@ -1,0 +1,14 @@
+{
+    "id": 40,
+    "de": {
+        "title": "Schlüsselwort Popular Related",
+        "prompt": "The entire conversation and instructions should be provided in German. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].",
+        "description": "Erstellen Sie eine Liste von 10 beliebten Fragen zum Thema [Stichwort], die für [Zielgruppe] relevant sind und auf Chinesisch beantwortet werden.",
+        "remark": "Es kann verwendet werden, um den Fokus der Nutzer auf bestimmte Themen zu verstehen oder um die Struktur des Artikels zu organisieren, und kann in \"Hot Keywords\", \"Hot Topics\", \"Hot Brands\", \"Hot Websites\" usw. geändert werden."
+    },
+    "tags": [
+        "seo"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 1257
+}

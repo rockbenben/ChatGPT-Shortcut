@@ -1,0 +1,15 @@
+{
+    "id": 181,
+    "ja": {
+        "title": "中国語→英語翻訳 - ミニマム版",
+        "prompt": "The entire conversation and instructions should be provided in Japanese. zh-en translation of \"X\".",
+        "description": "X の部分は中国語でも英語でもよく、chatgpt は自動的にそれぞれの言語に翻訳します。まっすぐな二重引用符（\"）を使用することが最もうまくいくことがテストされています。api コールを使用するときに役割のためにアシスタントを選択すると、翻訳されるテキストがコマンドとして解釈される（避けられない）確率を減らすことができます。",
+        "remark": "API で構築された翻訳プラットフォーム ChatGPT のためのトークン節約型翻訳者プロンプトです。寄稿者：@Qizhen-Yang。"
+    },
+    "tags": [
+        "contribute",
+        "language"
+    ],
+    "website": null,
+    "count": 2521
+}

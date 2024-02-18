@@ -1,0 +1,15 @@
+{
+    "id": 204,
+    "bn": {
+        "title": "মৌখিক লিপি",
+        "prompt": "The entire conversation and instructions should be provided in Bengali. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
+        "description": "সংক্ষিপ্ত রূপ, ইডিয়ম, ট্রানজিশনাল বাক্যাংশ, ইন্টারজেকশন, ড্যাংলিং মডিফায়ার এবং কথোপকথন ভাষা ব্যবহার করে এবং পুনরাবৃত্তিমূলক বাক্যাংশ এবং অপ্রাকৃত বাক্য গঠন এড়িয়ে মানুষের কণ্ঠে [বিষয়] সম্পর্কে একটি প্রবন্ধ লিখুন।",
+        "remark": "ভিডিও, লাইভ সম্প্রচার, পডকাস্ট, স্টোরিবোর্ড এবং অন্যান্য কথ্য বিষয়বস্তুর জন্য স্ক্রিপ্ট লিখুন। @Bettycroco থেকে অবদান।"
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 11920
+}

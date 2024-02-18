@@ -1,0 +1,15 @@
+{
+    "id": 253,
+    "bn": {
+        "title": "অপ্টিমাইজেশান পুনরায় শুরু করুন",
+        "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Bengali. Do you understand?.",
+        "description": "আমি যে পদের জন্য আবেদন করতে আগ্রহী তার জন্য আমি আপনাকে একটি কাজের বিবরণ প্রদান করব। আপনি পদের জন্য মূল প্রয়োজনীয়তাগুলি বোঝার জন্য কাজের বিবরণটি পড়বেন -- বছরের অভিজ্ঞতা, দক্ষতা, চাকরির শিরোনাম সহ। এর পরে, আমি আপনাকে আমার জীবনবৃত্তান্ত পাঠাব। আপনি এটি মনোযোগ সহকারে পড়বেন এবং কাজের জন্য আমার সারসংকলনটি কতটা উপযুক্ত সে সম্পর্কে প্রতিক্রিয়া জানাবেন।",
+        "remark": "আপনার কাজের শিরোনাম এবং জীবনবৃত্তান্তের জন্য কাস্টমাইজড অপ্টিমাইজেশান। @uteundilse থেকে অবদান।"
+    },
+    "tags": [
+        "contribute",
+        "article"
+    ],
+    "website": null,
+    "count": 1553
+}

@@ -1,0 +1,15 @@
+{
+    "id": 220,
+    "de": {
+        "title": "Planung der Reiseroute",
+        "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in German. Include the prices for each attraction and keep the total budget around [BUDGET].",
+        "description": "Ich möchte gerne nach Dali in der Provinz Yunnan reisen. Bitte helfen Sie mir, einen 2-tägigen Reiseführer als professioneller Reiseleiter zu erstellen. Darüber hinaus hoffe ich, dass der gesamte Prozess nicht zu kompakt ist, ich bevorzuge ruhige Orte, ich kann einfach herumtouren. Wenn Sie antworten, denken Sie bitte daran, den Preis für jeden Ort anzugeben, mein Budget beträgt etwa 5000 RMB.",
+        "remark": "Grobe Planung auf der Grundlage von Reiseziel, Budget, Zeit und Anforderungen. Beitrag von @suaifu."
+    },
+    "tags": [
+        "contribute",
+        "tool"
+    ],
+    "website": null,
+    "count": 4246
+}

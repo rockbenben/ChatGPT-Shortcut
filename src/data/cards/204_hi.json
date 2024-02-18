@@ -1,0 +1,15 @@
+{
+    "id": 204,
+    "hi": {
+        "title": "मौखिक लिपि",
+        "prompt": "The entire conversation and instructions should be provided in Hindi. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
+        "description": "संक्षिप्ताक्षरों, मुहावरों, संक्रमणकालीन वाक्यांशों, विशेषणों, लटकते संशोधकों और बोलचाल की भाषा का उपयोग करते हुए और दोहराए जाने वाले वाक्यांशों और अप्राकृतिक वाक्य संरचनाओं से बचते हुए, मानवीय आवाज में [विषय] के बारे में एक निबंध लिखें।",
+        "remark": "वीडियो, लाइव प्रसारण, पॉडकास्ट, स्टोरीबोर्ड और अन्य मौखिक सामग्री के लिए स्क्रिप्ट लिखें। @Bettycroco से योगदान."
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 11920
+}

@@ -1,0 +1,15 @@
+{
+    "id": 241,
+    "en": {
+        "title": "Customer Service",
+        "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here]",
+        "remark": "Optimize customer service language and provide suggestions for improvement. Contributed by @sd362318."
+    },
+    "tags": [
+        "contribute",
+        "social",
+        "company"
+    ],
+    "website": null,
+    "count": 1315
+}

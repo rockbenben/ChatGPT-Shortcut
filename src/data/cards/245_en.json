@@ -1,0 +1,14 @@
+{
+    "id": 245,
+    "en": {
+        "title": "Icon designer",
+        "prompt": "Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX",
+        "remark": "Transform concepts or ideas into tangible objects to concretize design concepts. Contributed by @MoonJustice."
+    },
+    "tags": [
+        "contribute",
+        "tool"
+    ],
+    "website": null,
+    "count": 531
+}

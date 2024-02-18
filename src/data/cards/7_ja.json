@@ -1,0 +1,14 @@
+{
+    "id": 7,
+    "ja": {
+        "title": "プロンプトモディファイア",
+        "prompt": "The entire conversation and instructions should be provided in Japanese. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
+        "description": "私は次のプロンプトから GPT-4 の良い結果を得ようとしています：あなたのプロンプト。より最適化された、より良い結果をもたらすプロンプトワードを書くことができますか？",
+        "remark": "ChatGPT にプロンプトを書き換えてもらう。人間が書いたプロンプトと機械が書いたプロンプトでは論理が異なるので、プロンプトを書き換えることで ChatGPT が理解しやすくなります。"
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
+    "count": 5244
+}

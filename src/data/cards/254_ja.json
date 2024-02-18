@@ -1,0 +1,15 @@
+{
+    "id": 254,
+    "ja": {
+        "title": "ブランドブレインストームアシスタント",
+        "prompt": "For this task, we require two main parts:\n\n1. **Case Collection** - Utilize your vast training data and provide a selection of well-known brand names and slogans. The results should be evidence-based and be formatted in a visually appealing manner. The information will be used in the context of the project: [A Brief Background].\n\n2. **Proposal Generation** - Based on the project background, brainstorm and generate a series of proposals for new brand names and slogans. The brand names should be a maximum of 5 characters long, and the slogans should be a maximum of 12 characters long. Ensure that they are easy to recognize and remember, catchy, and not difficult to pronounce. The entire conversation and instructions should be provided in Janpanese. Please provide 5 proposals.",
+        "description": "このプロンプトは 2 つの段落に分かれています（[ ] 内のパラメータは必要に応じて自由に変更できます）：1.事例を集める 今、私はあなたにブレインストーミングを手伝ってもらい、全体を通して【中国語】で私に答えてもらい、あなたの回答の美的形式に注意を払う必要があります。プロジェクトの背景を踏まえて、有名なブランド名やスローガンの事例をできるだけ多く集めてください。2.5] の選択肢を提示してください。",
+        "remark": "有名ブランドの名前やスローガンを参考に、自分だけのブランディングスキームを作ろう。寄稿：@b3ue さん"
+    },
+    "tags": [
+        "contribute",
+        "company"
+    ],
+    "website": null,
+    "count": 749
+}

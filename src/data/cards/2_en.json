@@ -1,0 +1,14 @@
+{
+    "id": 2,
+    "en": {
+        "title": "Writing assistant",
+        "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. Please begin by editing the following text:",
+        "remark": "For optimising the grammar, clarity and conciseness of text and improving readability."
+    },
+    "tags": [
+        "favorite",
+        "write"
+    ],
+    "website": null,
+    "count": 61198
+}

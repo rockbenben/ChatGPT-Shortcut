@@ -1,0 +1,14 @@
+{
+    "id": 33,
+    "it": {
+        "title": "Clustering di rilevanza semantica",
+        "prompt": "The entire conversation and instructions should be provided in Italian. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
+        "description": "Le seguenti parole chiave sono classificate in base alla loro rilevanza semantica. [parola chiave]",
+        "remark": "Le parole chiave sono raggruppate e raggruppate in base alla rilevanza semantica."
+    },
+    "tags": [
+        "text"
+    ],
+    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
+    "count": 149
+}

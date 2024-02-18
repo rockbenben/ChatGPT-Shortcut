@@ -1,0 +1,15 @@
+{
+    "id": 258,
+    "ja": {
+        "title": "論文タイトル生成",
+        "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Janpanese. My abstract is \"XXX\", my key words are \"XXX\".",
+        "description": "私が科学論文の要旨とキーワードを任意の言語で提供し、あなたはその言語を検出し、同じ言語で応答します。あなたの仕事は、その要旨とキーワードに基づいて、同じ言語で科学論文のタイトルを私に提供することです。科学論文のタイトルは、簡潔でわかりやすく、情報量の多いものでなければなりません。研究、調査、開発、観察などの言葉を使うのは避けるべきです。タイトルがすぐに聴衆の注意を引くようにすること。",
+        "remark": "抄録とキーワードから論文タイトルを生成する。寄稿：@ScenerorSun、引用：B サイト@Yam Potpourri より。"
+    },
+    "tags": [
+        "contribute",
+        "write"
+    ],
+    "website": null,
+    "count": 911
+}
