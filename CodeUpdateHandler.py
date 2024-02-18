@@ -11,6 +11,7 @@ current_dir = os.path.join(os.getcwd(), 'src', 'data')
 input_path = os.path.join(current_dir, 'prompt.json')
 
 output_dir_path = os.path.join(current_dir, 'default')
+output_dir_path_cards = os.path.join(current_dir, 'cards')
 
 # 提供的语言列表
 allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
@@ -53,7 +54,30 @@ def process_and_save_data(filtered_data, file_prefix, ids_order):
 process_and_save_data(favor_data, 'favor', favor_ids)
 process_and_save_data(other_data, 'other', other_ids)
 
-## 处理和保存 favor_ids 和 other_ids 数据
+os.makedirs(output_dir_path_cards, exist_ok=True)
+# 处理并保存每个 ID 和语言的数据
+def save_data_by_id_and_language(data):
+    for item in data:
+        for lang in allLanguages:
+            if lang in item:
+                # 提取当前语言的数据
+                lang_data = {
+                    "id": item["id"],
+                    lang: item[lang],
+                    "tags": item.get("tags", []),
+                    "website": item.get("website", ""),
+                    "count": item.get("weight", 0)
+                }
+                # 定义输出文件路径
+                output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
+                # 保存为 JSON 文件
+                with open(output_file_path, 'w', encoding='utf-8') as file:
+                    json.dump(lang_data, file, ensure_ascii=False, indent=4)
+
+# 调用函数处理并保存数据
+save_data_by_id_and_language(data)
+
+## 处理和保存 favor_ids、other_ids 和独立提示词数据
 
 # 指定输出文件的目录
 output_dir = current_dir
@@ -127,35 +151,38 @@ for lang in languages[1:]:
             new_file.write(new_content)
 
 # 更新 Prompt Page 页面的 prompt 内容
-# Define the path to the output directory
 react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
-
-# Ensure the output directory exists
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
 
-# Loop from 1 to 277
+# Loop from 1 to 277 for each prompt ID
 for prompt_id in range(1, 278):
-    # Prepare the content for the React JSX file
-    content = f'''import React from "react";
-import PromptPage from "../_components/PromptPage";
+    # Loop through each language
+    for lang in allLanguages:
+        # 如果是中文，则直接在 base_react_jsx_dir 下创建文件
+        if lang == "zh":
+            output_path = react_jsx_dir / f"{prompt_id}.tsx"
+        # 对于其他语言，创建或使用指定的 i18n 目录
+        else:
+            prompt_i18n_dir = Path(os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'prompt'))
+            prompt_i18n_dir.mkdir(parents=True, exist_ok=True)
+            # 设置输出文件的路径
+            output_path = prompt_i18n_dir / f"{prompt_id}.tsx"
+
+        content = f'''import React from "react";
+import PromptPage from "@site/src/pages/_components/PromptPage";
 import {{ AuthProvider }} from "@site/src/pages/_components/AuthContext";
+import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
 function PromptDetail() {{
-  return (
-    <AuthProvider>
-      <PromptPage promptId={{{prompt_id}}} />
-    </AuthProvider>
-  );
+  return <AuthProvider><PromptPage prompt={{prompt}} /></AuthProvider>;
 }}
 
 export default PromptDetail;
 '''
 
-    # Write the content to a new file named {prompt_id}.tsx
-    with open(react_jsx_dir / f"{prompt_id}.tsx", 'w', encoding='utf-8') as file:
-        file.write(content)
-
-
+        # Write the content to a new file named {prompt_id}.tsx
+        with open(output_path, 'w', encoding='utf-8') as file:
+            file.write(content)
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
 def replace_and_write(source_file, destination_file, replacements):

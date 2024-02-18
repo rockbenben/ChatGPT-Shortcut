@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
-import { Skeleton, Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
+import React, { useContext, useState, useCallback } from "react";
+import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -9,62 +9,19 @@ import copy from "copy-text-to-clipboard";
 import ShareButtons from "./ShareButtons";
 import Comments from "./Comments";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
-import { getPrompts, updateCopyCount } from "@site/src/api";
+import { updateCopyCount } from "@site/src/api";
 
-function PromptPage({ promptId }) {
+function PromptPage({ prompt }) {
   const { userAuth } = useContext(AuthContext);
-  const [prompt, setPrompt] = useState(null);
-  const [shareUrl, setShareUrl] = useState("");
-  const [mainPrompt, setMainPrompt] = useState("");
   const [copied, setShowCopied] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-
-  useEffect(() => {
-    const fetchPrompt = async () => {
-      setIsLoading(true);
-      try {
-        const promptData = await getPrompts("cards", [promptId], currentLanguage);
-        setPrompt(promptData[0]);
-        setMainPrompt(promptData[0][currentLanguage].prompt);
-      } catch (error) {
-        console.error("Error fetching prompt:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchPrompt();
-    setShareUrl(window.location.href);
-  }, [promptId, currentLanguage]);
-
-  // Handle copying the mainPrompt text
-  const handleCopyClick = useCallback(async () => {
-    if (mainPrompt) {
-      copy(mainPrompt);
-      setShowCopied(true);
-      const timer = setTimeout(() => setShowCopied(false), 2000);
-      return () => clearTimeout(timer);
+  const [shareUrl, setShareUrl] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.location.href;
     }
-    await updateCopyCount(promptId);
-  }, [promptId, mainPrompt]);
-
-  if (isLoading) {
-    return (
-      <Layout>
-        <Row justify="center" style={{ marginTop: "20px" }}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16}>
-            <Card>
-              <Skeleton active paragraph={{ rows: 8 }} />
-              <Skeleton active avatar paragraph={{ rows: 16 }} />;
-            </Card>
-          </Col>
-        </Row>
-      </Layout>
-    );
-  }
+    return "";
+  });
 
   const title = prompt[currentLanguage].title;
   const remark = prompt[currentLanguage].remark;
@@ -72,10 +29,20 @@ function PromptPage({ promptId }) {
   const website = prompt.website;
   const tags = prompt.tags;
 
+  const [mainPrompt, setMainPrompt] = useState(prompt[currentLanguage].prompt);
+
   // Switching between the native language and English
-  function handleParagraphClick() {
+  const handleParagraphClick = useCallback(() => {
     setMainPrompt((prevMainPrompt) => (currentLanguage !== "en" && prevMainPrompt === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
-  }
+  }, [prompt, currentLanguage]);
+
+  // Handle copying the mainPrompt text
+  const handleCopyClick = useCallback(async () => {
+    copy(prompt[currentLanguage].prompt);
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 2000);
+    await updateCopyCount(prompt.id);
+  }, [prompt, currentLanguage]);
 
   return (
     <Layout title={title} description={remark}>
@@ -105,18 +72,19 @@ function PromptPage({ promptId }) {
               </Typography.Paragraph>
             </Tooltip>
             <Space wrap>
-              {tags &&
-                tags.map((tag) => (
-                  <Link key={tag} to={"/?tags=" + tag}>
-                    <Tag color="blue">{tag}</Tag>
-                  </Link>
-                ))}
+              {tags.map((tag) => (
+                <Link to={"/?tags=" + tag}>
+                  <Tag color="blue" key={tag}>
+                    {tag}
+                  </Tag>
+                </Link>
+              ))}
             </Space>
             <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Typography.Paragraph>{" "}
             <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-            <Comments pageId={promptId} currentUserId={userAuth?.data?.id || 0} type="page" />
+            <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
           </Card>
         </Col>
       </Row>
