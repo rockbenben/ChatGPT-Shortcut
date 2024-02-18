@@ -62,18 +62,6 @@ const config = {
     ],
   ],
   plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          // /docs/oldDoc -> /docs/newDoc
-          {
-            to: "/",
-            from: "/cn",
-          },
-        ],
-      },
-    ],
     /* [
       "docusaurus2-plugin-google-adsense",
       {

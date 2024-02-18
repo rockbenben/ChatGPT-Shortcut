@@ -2050,21 +2050,6 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@5.5.2"
 
-"@docusaurus/plugin-client-redirects@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-client-redirects/-/plugin-client-redirects-3.1.1.tgz#73feb15c2f3fe292d618f8a81e5194142f982ddb"
-  integrity sha512-J/1Z75XkO+BmUXHW17FrCIYZQ3b0IKaJECH6yCxW5RQ8NMMJ+SZCtPtx5oYoAd0VHersNiUu+ZAxfOqbsn1jKQ==
-  dependencies:
-    "@docusaurus/core" "3.1.1"
-    "@docusaurus/logger" "3.1.1"
-    "@docusaurus/utils" "3.1.1"
-    "@docusaurus/utils-common" "3.1.1"
-    "@docusaurus/utils-validation" "3.1.1"
-    eta "^2.2.0"
-    fs-extra "^11.1.1"
-    lodash "^4.17.21"
-    tslib "^2.6.0"
-
 "@docusaurus/plugin-content-blog@3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-3.1.1.tgz#16f4fd723227b2158461bba6b9bcc18c1926f7ea"
@@ -2535,7 +2520,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@popperjs/core@^2.11.6":
+"@popperjs/core@^2.11.8":
   version "2.11.8"
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
@@ -3456,10 +3441,10 @@ ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-antd@^5.14.0:
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.14.0.tgz#a9e75aad7c1c6c1310504c845ef000f09172f9ac"
-  integrity sha512-LdRJnYd8dTykR2xr483zNE0mBKmWHMLqmjkfcX4otQRD0kaZjOwSmN74vMC70jnMM8oqhWILFjWy3dEy/E1W6w==
+antd@^5.14.1:
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.14.1.tgz#e56faf6a421911543a0d232e2564a6b42d3696fa"
+  integrity sha512-P0Bwt9NKSZqnEJ0QAyAb13ay34FjOKsz+KEp/ts+feYsynhUxF7/Ay6d1jS6ZcNpcs+JWTlLKO59YFZ3tX07wQ==
   dependencies:
     "@ant-design/colors" "^7.0.2"
     "@ant-design/cssinjs" "^1.18.4"
@@ -3489,7 +3474,7 @@ antd@^5.14.0:
     rc-motion "^2.9.0"
     rc-notification "~5.3.0"
     rc-pagination "~4.0.4"
-    rc-picker "~4.0.0-alpha.43"
+    rc-picker "~4.1.1"
     rc-progress "~3.5.1"
     rc-rate "~2.12.0"
     rc-resize-observer "^1.4.0"
@@ -4054,6 +4039,11 @@ clsx@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
   integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
+
+clsx@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.0.tgz#e851283bcb5c80ee7608db18487433f7b23f77cb"
+  integrity sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==
 
 collapse-white-space@^2.0.0:
   version "2.1.0"
@@ -7202,11 +7192,6 @@ minimist@^1.2.0:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-moment@^2.30.1:
-  version "2.30.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
-  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
-
 mrmime@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mrmime/-/mrmime-1.0.1.tgz#5f90c825fad4bdd41dc914eff5d1a8cfdaf24f27"
@@ -7942,6 +7927,14 @@ prism-react-renderer@^2.3.0:
     "@types/prismjs" "^1.26.0"
     clsx "^2.0.0"
 
+prism-react-renderer@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-2.3.1.tgz#e59e5450052ede17488f6bc85de1553f584ff8d5"
+  integrity sha512-Rdf+HzBLR7KYjzpJ1rSoxT9ioO85nZngQEoFIhL07XhtJHlCU3SOz0GJ6+qvMyQe0Se+BV3qpe6Yd/NmQF5Juw==
+  dependencies:
+    "@types/prismjs" "^1.26.0"
+    clsx "^2.0.0"
+
 prismjs@^1.29.0:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
@@ -8311,10 +8304,10 @@ rc-pagination@~4.0.4:
     classnames "^2.3.2"
     rc-util "^5.38.0"
 
-rc-picker@~4.0.0-alpha.43:
-  version "4.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-4.0.0-alpha.43.tgz#a4aba5071a875332f7443755e5f58e58cd813abd"
-  integrity sha512-Rw9zYPZ+PsqfwfK0XoN9+l8elZOa63OwILaz+KzXh36itdSOwJNw27Sm4VMUqp2ssmhsWDrPF19Joq4DNszq7g==
+rc-picker@~4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-4.1.1.tgz#e3fd8931cc6aa0b8afc7f616b81c056563ceb449"
+  integrity sha512-H99qaHUepHjHnAqMLiftJEATXRuHJZcUyFoRkyIqUvTHVGnx/uHxFFNm7QIu1valCpfwdsGWQxiWgn9CAxvlvA==
   dependencies:
     "@babel/runtime" "^7.10.1"
     "@rc-component/trigger" "^1.5.0"
@@ -8784,10 +8777,10 @@ react-router@5.3.4, react-router@^5.3.4:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-share@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/react-share/-/react-share-5.0.3.tgz#94f30434f6b6fdf5e53c2f661c4dd5462ae3cca6"
-  integrity sha512-8BFkzfd8zNrO6JMP4Dwrt2sTSrRGQ9bNrU3K0riAwRJe4U/Z8/ryjKuhP2jLoHsfxj38MsPuyEQiVlIHVIICvw==
+react-share@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-share/-/react-share-5.1.0.tgz#27eff763e5c233c8765cacf595b039093cb9b408"
+  integrity sha512-OvyfMtj/0UzH1wi90OdHhZVJ6WUC/+IeWvBwppeZozwIGyAjQgyR0QXlHOrxVHVECqnGvcpBaFTXVrqouTieaw==
   dependencies:
     classnames "^2.3.2"
     jsonp "^0.2.1"

@@ -5,7 +5,8 @@ import { SmileOutlined, GifOutlined } from "@ant-design/icons";
 import { Comment } from "@ant-design/compatible";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { getComments, postComment } from "@site/src/api";
-import moment from "moment";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
 
@@ -13,6 +14,7 @@ import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import ReactGiphySearchBox from "react-giphy-searchbox";
 
+dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835"];
 
 const getRandomColor = () => {
@@ -215,7 +217,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
         author={comment.author?.name}
         avatar={<Avatar style={{ backgroundColor: getRandomColor(), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
-        datetime={moment(comment.createdAt).fromNow()}>
+        datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
           <Form form={replyForm} layout="inline" onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
             <Form.Item
