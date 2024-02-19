@@ -125,15 +125,27 @@ export function getPrompts(type, ids, lang) {
     return axios
       .post(`${API_URL}${apiEndpoint}`, postData, requestConfig)
       .then((response) => {
-        const expirationTime = type === "userprompts" ? 12 * 60 * 60 * 1000 : 240 * 60 * 60 * 1000;
-        const nextExpirationDate = new Date().getTime() + expirationTime;
+        let expirationTime;
+        switch (type) {
+          case "cards":
+            expirationTime = 100 * 24 * 60 * 60 * 1000;
+            break;
+          case "commus":
+            expirationTime = 10 * 24 * 60 * 60 * 1000;
+            break;
+          case "userprompts":
+            expirationTime = 12 * 60 * 60 * 1000;
+            break;
+          default:
+            expirationTime = 24 * 60 * 60 * 1000;
+        }
 
         response.data.forEach((item) => {
           const itemCacheKey = `${type}_${item.id}${lang ? `_${lang}` : ""}`;
           const itemExpirationKey = `${itemCacheKey}_expiration`;
 
           localStorage.setItem(itemCacheKey, JSON.stringify(item));
-          localStorage.setItem(itemExpirationKey, String(nextExpirationDate));
+          localStorage.setItem(itemExpirationKey, String(new Date().getTime() + expirationTime));
         });
 
         return [...cachedPrompts, ...response.data];
@@ -316,11 +328,9 @@ export async function deletePrompt(id) {
 /* Community-prompts 页面管理 */
 // Get Community Prompts 获取社区精选提示词
 export async function getCommPrompts(page, pageSize, sortField, sortOrder, searchTerm) {
-  // 创建一个唯一的缓存键，用于在 localStorage 中存储和检索数据
   const cacheKey = `commPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${searchTerm || "noTerm"}`;
   const expirationKey = `${cacheKey}_expiration`;
 
-  // 从 localStorage 中获取缓存的数据和到期时间
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
   const expirationDate = localStorage.getItem(expirationKey);
 
@@ -329,12 +339,14 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     //localStorage.removeItem(cacheKey);
     return cachedData;
   } else {
-    // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
     let url = `${API_URL}/userprompts?fields=id&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
 
     // 如果存在搜索关键字，那么添加到 URL 中
     if (searchTerm) {
-      url += `&filters[$or][0][description][$containsi]=${searchTerm}&filters[$or][1][title][$containsi]=${searchTerm}&filters[$or][2][remark][$containsi]=${searchTerm}`;
+      const trimmedSearchTerm = searchTerm.trim();
+      // 检查搜索词长度，并进行必要的截断
+      const finalSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
+      url += `&filters[$or][0][description][$containsi]=${finalSearchTerm}&filters[$or][1][title][$containsi]=${finalSearchTerm}&filters[$or][2][remark][$containsi]=${finalSearchTerm}`;
     }
 
     const responseTotal = await axios.get(url);
@@ -352,6 +364,16 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
 // 根据 tag 或关键词搜索 cards prompts
 export async function findCardsWithTags(tags, search, lang = "zh", operator = "OR") {
   try {
+    const cacheKey = `findCardsWithTags_${tags.join(",")}_${search}_${lang}_${operator}`;
+    const cachedData = localStorage.getItem(cacheKey);
+    const cacheExpirationKey = `${cacheKey}_expiration`;
+    const cacheExpiration = localStorage.getItem(cacheExpirationKey);
+
+    // 检查缓存是否存在且未过期
+    if (cachedData && cacheExpiration && new Date().getTime() < Number(cacheExpiration)) {
+      return JSON.parse(cachedData);
+    }
+
     const queryParams = new URLSearchParams();
     if (tags && tags.length > 0) {
       tags.forEach((tag) => {
@@ -361,17 +383,21 @@ export async function findCardsWithTags(tags, search, lang = "zh", operator = "O
       });
     }
 
-    // 添加 search, lang 和 operator 到查询参数
-    if (search && search.trim() !== "") {
-      queryParams.append("search", search.trim());
+    // 处理并添加 search, lang 和 operator 到查询参数
+    let trimmedSearch = search?.trim().substring(0, 100) || "";
+    if (trimmedSearch !== "") {
+      queryParams.append("search", trimmedSearch);
     }
     queryParams.append("lang", lang);
     queryParams.append("operator", operator);
 
-    const responseIds = await axios.get(`${API_URL}/cards/find-with-tag`, {
-      params: queryParams,
-    });
+    const responseIds = await axios.get(`${API_URL}/cards/find-with-tag`, { params: queryParams });
     const detailedCards = await getPrompts("cards", responseIds.data, lang);
+
+    localStorage.setItem(cacheKey, JSON.stringify(detailedCards));
+    const expirationTime = new Date().getTime() + 100 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(cacheExpirationKey, expirationTime.toString());
+
     return detailedCards;
   } catch (error) {
     console.error("Error fetching cards with tags:", error);
