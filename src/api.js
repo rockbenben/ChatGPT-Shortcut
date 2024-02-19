@@ -125,15 +125,27 @@ export function getPrompts(type, ids, lang) {
     return axios
       .post(`${API_URL}${apiEndpoint}`, postData, requestConfig)
       .then((response) => {
-        const expirationTime = type === "userprompts" ? 12 * 60 * 60 * 1000 : 240 * 60 * 60 * 1000;
-        const nextExpirationDate = new Date().getTime() + expirationTime;
+        let expirationTime;
+        switch (type) {
+          case "cards":
+            expirationTime = 100 * 24 * 60 * 60 * 1000;
+            break;
+          case "commus":
+            expirationTime = 10 * 24 * 60 * 60 * 1000;
+            break;
+          case "userprompts":
+            expirationTime = 12 * 60 * 60 * 1000;
+            break;
+          default:
+            expirationTime = 24 * 60 * 60 * 1000;
+        }
 
         response.data.forEach((item) => {
           const itemCacheKey = `${type}_${item.id}${lang ? `_${lang}` : ""}`;
           const itemExpirationKey = `${itemCacheKey}_expiration`;
 
           localStorage.setItem(itemCacheKey, JSON.stringify(item));
-          localStorage.setItem(itemExpirationKey, String(nextExpirationDate));
+          localStorage.setItem(itemExpirationKey, String(new Date().getTime() + expirationTime));
         });
 
         return [...cachedPrompts, ...response.data];
