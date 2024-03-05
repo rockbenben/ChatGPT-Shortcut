@@ -7,7 +7,6 @@ import copy from "copy-text-to-clipboard";
 import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
-import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
