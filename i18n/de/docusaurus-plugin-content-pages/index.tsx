@@ -253,15 +253,17 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
             </li>
           );
         })}
-        <li className={styles.checkboxListItem}>
+        <li key="community.tag.tooltip" className={styles.checkboxListItem}>
           <ShowcaseTooltip
+            id="community.tag.tooltip"
             text={translate({
               id: "community.tag.tooltip",
               message: "社区分享的精选提示词",
             })}
             anchorEl="#__docusaurus">
-            <Link to="/community-prompts">
+            <Link to="/community-prompts" style={{ color: "var(--site-primary-font)" }}>
               <ShowcaseTagSelect
+                id="community.tag.tooltip"
                 tag="communityprompt"
                 label={translate({
                   id: "community.tag",
@@ -444,10 +446,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 ))}
               </ul>
               {!showAllOtherUsers && (
-                <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+                <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                   {<ArrowDownOutlined />}
                   <Translate>加载更多</Translate>
-                </Link>
+                </button>
               )}
             </div>
           </>
@@ -498,10 +500,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               ))}
             </ul>
             {!showAllOtherUsers && (
-              <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+              <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                 {<ArrowDownOutlined />}
                 <Translate>加载更多</Translate>
-              </Link>
+              </button>
             )}
           </div>
         </>

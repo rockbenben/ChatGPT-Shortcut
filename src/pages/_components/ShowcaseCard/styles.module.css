@@ -58,6 +58,8 @@
 }
 
 .showcaseCardTitle {
+  font-size: 1em;
+  font-weight: bold;
   margin-bottom: 0;
   flex: 1 1 auto;
 }

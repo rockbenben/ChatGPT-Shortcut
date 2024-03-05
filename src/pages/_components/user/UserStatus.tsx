@@ -67,9 +67,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
             <Translate id="link.myfavorite">我的收藏</Translate>
           </Link>
         )}
-        <Link className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+        <button className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
-        </Link>
+        </button>
         <Button type="default" onClick={handleLogoutConfirm} style={{ color: "gray" }}>
           <Translate id="button.logout">退出登录</Translate>
         </Button>
@@ -167,12 +167,12 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   } else {
     return (
       <>
-        <Link className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+        <button className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id="button.login">登录</Translate>
-        </Link>
-        <Link className="button button--primary" to="/community-prompts">
+        </button>
+        <button className="button button--primary" to="/community-prompts">
           <Translate id="showcase.header.button">🙏 分享你的提示词</Translate>
-        </Link>
+        </button>
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />
         </Modal>

@@ -6,14 +6,11 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
-//const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
-//const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "AiShort(ChatGPT Shortcut)-AI Prompt Management,Productivity Tool",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
-  favicon: "img/favicon.ico",
+  favicon: "https://img.newzone.top/aishort/favicon.ico",
 
   // Set the production url of your site here
   url: "https://www.aishort.top",
@@ -88,7 +85,9 @@ const config = {
         title: "AI Short",
         logo: {
           alt: "ChatGPT Shortcuts",
-          src: "img/logo.svg",
+          src: "https://img.newzone.top/aishort/logo.svg",
+          width: 32,
+          height: 32,
         },
         items: [
           {
@@ -150,16 +149,19 @@ const config = {
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
+            title: "QQ Group",
             href: "https://qm.qq.com/q/sHgB9eqd6E",
             position: "right",
             className: "header-qq-link",
           },
           {
+            title: "Discord",
             href: "https://discord.gg/PZTQfJ4GjX",
             position: "right",
             className: "header-discord-link",
           },
           {
+            title: "GitHub",
             href: "https://github.com/rockbenben/ChatGPT-Shortcut",
             position: "right",
             className: "header-github-link",
@@ -186,19 +188,3 @@ const config = {
 };
 
 export default config;
-
-/* process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
-function getNavbar() {
-  switch (process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en":
-      return enNavbar;
-    default:
-      return zhNavbar;
-  }
-} */
-/* function getAnnouncement() {
-  switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en": return 'Announcement_en';
-    default: return 'Announcement_cn';
-  }
-} */

@@ -143,12 +143,12 @@ function ShowcaseCard({ user, isDescription, copyCount }) {
     <li key={userTitle} className="card shadow--md">
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
-          <Heading as="h4" className={styles.showcaseCardTitle}>
+          <div className={styles.showcaseCardTitle}>
             <Link href={"/prompt/" + user.id} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
-          </Heading>
+          </div>
           <Button.Group>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
