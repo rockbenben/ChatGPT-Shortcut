@@ -7,7 +7,6 @@ import copy from "copy-text-to-clipboard";
 import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
-import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
@@ -145,12 +144,12 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
     <li key={userTitle} className="card shadow--md">
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
-          <Heading as="h4" className={styles.showcaseCardTitle}>
+          <div className={styles.showcaseCardTitle}>
             <Link href={"/prompt/" + user.id} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
-          </Heading>
+          </div>
           <Button.Group>
             {userAuth && (
               <Tooltip title={user.tags.includes("favorite") ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>

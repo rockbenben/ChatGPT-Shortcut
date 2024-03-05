@@ -3,7 +3,6 @@ import clsx from "clsx";
 import copy from "copy-text-to-clipboard";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
-import Heading from "@theme/Heading";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import { Button, message, Spin } from "antd";
@@ -182,7 +181,7 @@ function UserFavorite() {
                               }}>
                               <div>
                                 <div className={clsx(styles.showcaseCardHeader)}>
-                                  <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
+                                  <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
                                     <Link className={styles.showcaseCardLink}>{comm.title} </Link>
                                     <span
                                       style={{
@@ -192,7 +191,7 @@ function UserFavorite() {
                                       }}>
                                       @{comm.owner}
                                     </span>
-                                  </Heading>
+                                  </div>
                                 </div>
                                 <p className={styles.showcaseCardBody}>
                                   {comm.remark && (
@@ -243,12 +242,12 @@ function UserFavorite() {
                               }}>
                               <div>
                                 <div className={clsx(styles.showcaseCardHeader)}>
-                                  <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
+                                  <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
                                     <Link href={"/prompt/" + card.id} className={styles.showcaseCardLink}>
                                       {card[currentLanguage].title}{" "}
                                     </Link>
                                     <span className={styles.showcaseCardBody}>{card.count > 0 && `🔥${formatCopyCount(card.count)}`}</span>
-                                  </Heading>
+                                  </div>
                                 </div>
                                 <p className={styles.showcaseCardBody}>👉 {card[currentLanguage].remark}</p>
                                 <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>

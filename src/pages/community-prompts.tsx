@@ -4,18 +4,28 @@ import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
-import Heading from "@theme/Heading";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Spin, Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
+import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
 const { Text } = Typography;
 
+const placeholderData = Array.from({ length: 12 }, (_, index) => ({
+  id: `placeholder-${index}`,
+  title: "Loading...",
+  description:
+    "You are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science: How to Write Papers That Get Cited and Proposals That Get FundedYou are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science: How to Write Papers That Get Cited and Proposals That Get FundedYou are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science",
+  remark: null,
+  notes: null,
+  owner: "Loading...",
+  upvotes: 0,
+  downvotes: 0,
+}));
 function CommunityPrompts() {
   const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
   const DESCRIPTION = translate({
@@ -25,7 +35,7 @@ function CommunityPrompts() {
   });
   const { userAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const [userprompts, setUserPrompts] = useState([]);
+  const [userprompts, setUserPrompts] = useState(placeholderData);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [sortField, setSortField] = useState("id");
@@ -33,7 +43,6 @@ function CommunityPrompts() {
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [Shareurl, setShareUrl] = useState("");
-  const [spinning, setSpinning] = useState(true);
 
   useEffect(() => {
     setShareUrl(window.location.href);
@@ -46,15 +55,19 @@ function CommunityPrompts() {
   }, [currentPage, sortField, sortOrder, searchTerm]);
 
   const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
-    setSpinning(true);
     try {
       const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-      setUserPrompts(result[0]);
-      setTotal(result[1].data.meta.pagination.total);
+      console.log("Loaded data:", result);
+      if (result && result[0].length > 0) {
+        setUserPrompts(result[0]);
+        setTotal(result[1].data.meta.pagination.total);
+        const fetchedTotal = result[1].data.meta.pagination.total;
+        setTotal(Math.min(fetchedTotal, 1000));
+      } else {
+        console.log("No data returned from the server");
+      }
     } catch (error) {
       console.error("Failed to fetch community prompts:", error);
-    } finally {
-      setSpinning(false);
     }
   };
 
@@ -67,21 +80,14 @@ function CommunityPrompts() {
     setSearchTerm(value);
     setCurrentPage(1); // 重置页数到第一页
   };
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState([]);
+  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
+  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
   const vote = async (promptId, action) => {
     try {
-      const response = await voteOnUserPrompt(promptId, action);
-      if (response.data) {
-        message.success(`Successfully ${action}d!`);
-        if (action === "upvote") {
-          setVotedUpPromptIds([...votedUpPromptIds, promptId]);
-        } else if (action === "downvote") {
-          setVotedDownPromptIds([...votedDownPromptIds, promptId]);
-        }
-      } else {
-        message.error("Something went wrong with your vote.");
-      }
+      await voteOnUserPrompt(promptId, action);
+      message.success(`Successfully ${action}d!`);
+      const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
+      updateVotedIds((prevIds) => [...prevIds, promptId]);
     } catch (err) {
       message.error(`Error: ${err}`);
     }
@@ -182,11 +188,10 @@ function CommunityPrompts() {
               <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
             </Link>
           ) : (
-            <Link onClick={() => setOpen(true)}>
+            <Button onClick={() => setOpen(true)}>
               <LoginOutlined /> <Translate id="button.login">登录</Translate>
-            </Link>
+            </Button>
           )}
-
           <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
             {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
           </Dropdown.Button>
@@ -195,7 +200,6 @@ function CommunityPrompts() {
           </Dropdown.Button>
           <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
         </Space>
-        <Spin spinning={spinning} fullscreen />
         <ul className="clean-list showcaseList_Cwj2">
           {userprompts.map((UserPrompt, index) => (
             <li key={UserPrompt.id} className="card shadow--md">
@@ -209,8 +213,10 @@ function CommunityPrompts() {
                 }}>
                 <div>
                   <div className={clsx(styles.showcaseCardHeader)}>
-                    <Heading as="h4" className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-                      <Link className={styles.showcaseCardLink}>{UserPrompt.title}</Link>
+                    <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
+                      <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
+                        {UserPrompt.title}
+                      </span>
                       <span
                         style={{
                           fontSize: "12px",
@@ -219,7 +225,7 @@ function CommunityPrompts() {
                         }}>
                         @{UserPrompt.owner}
                       </span>
-                    </Heading>
+                    </div>
                   </div>
                   {UserPrompt.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.remark}</p>}
                   <p className={styles.showcaseCardBody}>
