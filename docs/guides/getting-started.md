@@ -2,7 +2,7 @@
 
 AiShort 页面默认显示全部的提示词，页面分为标签区、搜索区和提示词展示区。
 
-![image](https://user-images.githubusercontent.com/28252913/222007639-20148284-8366-427f-9ee7-ad1be0edbd2e.png)
+![](https://img.newzone.top/2024-03-07-04-56-01.png?imageMogr2/format/webp)
 
 ## 🏷︎ 标签筛选
 
@@ -26,7 +26,7 @@ AiShort 页面默认显示全部的提示词，页面分为标签区、搜索区
 
 默认情况下，提示词内容以英文显示。如果你使用的是非英文页面，若要查看您的母语释义，请点击提示词内容切换至非英文，再次点击即可切回英文。请注意，语言切换只在 Prompt 文字上的点击有效，点击空白区域无效。
 
-![中英文切换](http://img.newzone.top/chatgptshortcut_encn.gif)
+![中英文切换](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 如果想让提示词默认显示为你的母语，你可以点击标签区右上方的 `切换 Prompt 语言` 按钮。需要注意的是，即使切换到母语翻译，复制按钮也仅针对英文提示词复制。
 

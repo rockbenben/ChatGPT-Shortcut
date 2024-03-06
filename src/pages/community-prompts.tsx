@@ -57,7 +57,6 @@ function CommunityPrompts() {
   const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
     try {
       const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-      console.log("Loaded data:", result);
       if (result && result[0].length > 0) {
         setUserPrompts(result[0]);
         setTotal(result[1].data.meta.pagination.total);

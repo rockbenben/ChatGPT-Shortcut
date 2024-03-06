@@ -26,7 +26,7 @@ Grâce au filtrage par balises et à la recherche par mot-clé, en cliquant sur 
 
 Par défaut, les mots suggérés sont affichés en anglais. Si vous utilisez une page non anglaise et souhaitez voir les interprétations dans votre langue maternelle, veuillez cliquer sur le contenu des mots suggérés pour passer à une langue non anglaise, et cliquez à nouveau pour revenir à l'anglais. Veuillez noter que le changement de langue ne fonctionne que lorsque vous cliquez sur le texte dans le prompt, et cliquer dans la zone vide est inefficace.
 
-![Passage entre le chinois et l'anglais](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Passage entre le chinois et l'anglais](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 Si vous souhaitez que les mots suggérés soient affichés par défaut dans votre langue maternelle, vous pouvez cliquer sur le bouton "Changer la langue du prompt" dans le coin supérieur droit de la zone des balises. Cependant, veuillez noter que même en passant aux traductions en langue maternelle, le bouton de copie ne copie que les mots suggérés en anglais.
 

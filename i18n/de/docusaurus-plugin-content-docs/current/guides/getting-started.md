@@ -26,7 +26,7 @@ Durch Tag-Filterung und Stichwortsuche ermöglicht es das Klicken auf die Schalt
 
 Standardmäßig werden die vorgeschlagenen Wörter in Englisch angezeigt. Wenn Sie eine nicht-englische Seite verwenden und die Interpretationen in Ihrer Muttersprache anzeigen möchten, klicken Sie bitte auf den Inhalt der vorgeschlagenen Wörter, um auf eine nicht-englische Sprache umzuschalten, und klicken Sie erneut, um zu Englisch zurückzukehren. Bitte beachten Sie, dass die Sprachumschaltung nur funktioniert, wenn Sie auf den Text in der Anfrage klicken, und das Klicken im leeren Bereich unwirksam ist.
 
-![Umschalten zwischen Chinesisch und Englisch](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Umschalten zwischen Chinesisch und Englisch](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 Wenn Sie möchten, dass die vorgeschlagenen Wörter standardmäßig in Ihrer Muttersprache angezeigt werden, können Sie auf die Schaltfläche "Sprache der Anfrage umschalten" in der oberen rechten Ecke des Tag-Bereichs klicken. Bitte beachten Sie jedoch, dass auch bei der Umstellung auf Übersetzungen in der Muttersprache die Kopierschaltfläche nur die englischen vorgeschlagenen Wörter kopiert.
 

@@ -26,7 +26,7 @@ Attraverso il filtraggio per tag e la ricerca per parole chiave, cliccando sul p
 
 Di default, le parole suggerite vengono visualizzate in inglese. Se stai utilizzando una pagina non in inglese e desideri visualizzare le interpretazioni nella tua lingua madre, fai clic sul contenuto delle parole suggerite per passare a una lingua non inglese, e fai nuovamente clic per tornare all'inglese. Nota che il cambio di lingua funziona solo quando si fa clic sul testo nella sollecitazione, mentre il clic nell'area vuota non ha effetto.
 
-![Cambio tra cinese e inglese](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Cambio tra cinese e inglese](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 Se desideri che le parole suggerite vengano visualizzate di default nella tua lingua madre, puoi fare clic sul pulsante "Cambia Lingua della Sollecitazione" nell'angolo in alto a destra dell'area dei tag. Tuttavia, tieni presente che anche quando si passa alle traduzioni nella lingua madre, il pulsante di copia copierà solo le parole suggerite in inglese.
 

@@ -26,7 +26,7 @@ Through tag filtering and keyword search, clicking the "Copy" button in the uppe
 
 By default, the suggested words are displayed in English. If you are using a non-English page and want to view the interpretations in your native language, please click on the suggested words content to switch to a non-English language, and click again to switch back to English. Please note that language switching only works when clicking on the text in the prompt, and clicking in the blank area is ineffective.
 
-![Switching between Chinese and English](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Switching between Chinese and English](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 If you want the suggested words to be displayed in your native language by default, you can click the "Switch Prompt Language" button in the upper right corner of the tag area. However, please note that even when switching to native language translations, the copy button only copies the English suggested words.
 

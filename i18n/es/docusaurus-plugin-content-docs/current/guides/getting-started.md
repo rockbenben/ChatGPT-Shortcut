@@ -26,7 +26,7 @@ A través del filtrado por etiquetas y la búsqueda por palabras clave, al hacer
 
 Por defecto, las palabras sugeridas se muestran en inglés. Si estás utilizando una página en otro idioma y deseas ver las interpretaciones en tu idioma nativo, haz clic en el contenido de las palabras sugeridas para cambiar a un idioma distinto al inglés, y haz clic nuevamente para volver al inglés. Ten en cuenta que el cambio de idioma solo funciona al hacer clic en el texto de la indicación, y hacer clic en el área en blanco no tiene efecto.
 
-![Cambio entre chino e inglés](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Cambio entre chino e inglés](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 Si deseas que las palabras sugeridas se muestren por defecto en tu idioma nativo, puedes hacer clic en el botón "Cambiar idioma de la indicación" en la esquina superior derecha del área de etiquetas. Sin embargo, ten en cuenta que incluso al cambiar a traducciones en el idioma nativo, el botón de copia solo copiará las palabras sugeridas en inglés.
 

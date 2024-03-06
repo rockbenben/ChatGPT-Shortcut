@@ -28,7 +28,7 @@ AiShort は、提案された単語をすべて表示することを初期設定
 
 デフォルトでは、提案された単語は英語で表示されます。英語以外のページを使用していて、母国語での解釈を見たい場合は、提案された単語の内容をクリックして英語以外の言語に切り替え、再度クリックして英語に戻すことができます。言語の切り替えはプロンプトのテキストをクリックしたときのみ有効であり、空白エリアをクリックしても無効です。
 
-![Switching between Chinese and English](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Switching between Chinese and English](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 提案された単語をデフォルトで母国語に表示することを希望する場合は、タグエリアの右上隅にある"プロンプト言語切替"ボタンをクリックできます。ただし、母国語に切り替えたとしても、コピーするボタンは英語の提案された単語のみをコピーすることに注意してください。
 

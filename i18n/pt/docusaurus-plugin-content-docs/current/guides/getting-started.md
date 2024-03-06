@@ -26,7 +26,7 @@ Por meio da filtragem por etiquetas e busca por palavras-chave, ao clicar no bot
 
 Por padrão, as palavras sugeridas são exibidas em inglês. Se você estiver usando uma página em outro idioma e quiser visualizar as interpretações em seu idioma nativo, clique no conteúdo das palavras sugeridas para alternar para um idioma não inglês e clique novamente para voltar para o inglês. Observe que a alternância de idioma só funciona ao clicar no texto da sugestão e clicar na área em branco é ineficaz.
 
-![Alternando entre chinês e inglês](http://img.newzone.top/chatgptshortcut_encn.gif)
+![Alternando entre chinês e inglês](https://img.newzone.top/chatgptshortcut_encn.gif)
 
 Se você deseja que as palavras sugeridas sejam exibidas em seu idioma nativo por padrão, clique no botão "Alternar Idioma da Sugestão" no canto superior direito da área de etiquetas. No entanto, observe que mesmo ao alternar para traduções em seu idioma nativo, o botão de cópia copiará apenas as palavras sugeridas em inglês.
 
