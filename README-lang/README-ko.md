@@ -59,7 +59,7 @@ AiShort (ChatGPT Shortcut) 브라우저 확장은 Chrome 과 Edge 를 지원하�
 
 ### Vercel 을 통한 배포
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fgh-pages)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
 ### 설치
 
