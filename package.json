@@ -17,13 +17,13 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.2",
-    "@docusaurus/core": "3.1.1",
-    "@docusaurus/preset-classic": "3.1.1",
+    "@docusaurus/core": "3.2.1",
+    "@docusaurus/preset-classic": "3.2.1",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.14.3",
+    "antd": "^5.16.1",
     "axios": "^1.6.8",
     "buffer": "^6.0.3",
     "clsx": "^2.1.0",
@@ -41,8 +41,8 @@
     "react-share": "^5.1.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.1.1",
-    "@docusaurus/types": "3.1.1"
+    "@docusaurus/module-type-aliases": "3.2.1",
+    "@docusaurus/types": "3.2.1"
   },
   "browserslist": {
     "production": [
