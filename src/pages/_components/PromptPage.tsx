@@ -8,6 +8,7 @@ import Translate from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import ShareButtons from "./ShareButtons";
 import Comments from "./Comments";
+import AdComponent from "@site/src/pages/_components/AdComponent";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { updateCopyCount } from "@site/src/api";
 
@@ -83,6 +84,7 @@ function PromptPage({ prompt }) {
             <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Typography.Paragraph>{" "}
+            <AdComponent />
             <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
             <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
           </Card>
