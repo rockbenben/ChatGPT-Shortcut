@@ -2,30 +2,33 @@ import React, { useEffect } from "react";
 
 const AdComponent = () => {
   useEffect(() => {
-    // AdSense 脚本加载
     const script = document.createElement("script");
     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
     script.async = true;
     script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 
-    // 脚本加载后初始化广告
+    const ins = document.createElement("ins");
+    ins.className = "adsbygoogle";
+    ins.style.display = "block";
+    ins.setAttribute("data-ad-client", "ca-pub-7585955822109216");
+    ins.setAttribute("data-ad-slot", "7438073448");
+    ins.setAttribute("data-ad-format", "auto");
+    ins.setAttribute("data-full-width-responsive", "true");
+
+    document.body.appendChild(ins);
+
     script.onload = () => {
-      const adsbygoogle = window.adsbygoogle || [];
-      adsbygoogle.push({});
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     };
 
     return () => {
-      // 组件卸载时移除脚本，避免重复添加
-      document.head.removeChild(script);
+      document.body.removeChild(script);
+      document.body.removeChild(ins);
     };
   }, []);
 
-  return (
-    <li className="card shadow--md">
-      <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot="7438073448" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </li>
-  );
+  return null; // 或者返回一个占位符
 };
 
 export default AdComponent;
