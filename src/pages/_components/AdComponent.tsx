@@ -1,13 +1,21 @@
-import React, { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const AdComponent = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.body.appendChild(script);
+  const adElementRef = useRef(null); // 用于引用广告位的容器
 
+  useEffect(() => {
+    // 检查脚本是否已加载
+    const scriptId = "adsbygoogle-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.body.appendChild(script);
+    }
+
+    // 创建并添加广告位元素
     const ins = document.createElement("ins");
     ins.className = "adsbygoogle";
     ins.style.display = "block";
@@ -16,19 +24,20 @@ const AdComponent = () => {
     ins.setAttribute("data-ad-format", "auto");
     ins.setAttribute("data-full-width-responsive", "true");
 
-    document.body.appendChild(ins);
+    adElementRef.current.appendChild(ins);
 
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    };
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
 
+    // 清理函数
     return () => {
-      document.body.removeChild(script);
-      document.body.removeChild(ins);
+      while (adElementRef.current.firstChild) {
+        adElementRef.current.removeChild(adElementRef.current.firstChild);
+      }
     };
   }, []);
 
-  return null; // 或者返回一个占位符
+  // 返回一个广告位的容器，而不是 null
+  return <div ref={adElementRef}></div>;
 };
 
 export default AdComponent;
