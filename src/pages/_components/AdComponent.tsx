@@ -21,7 +21,11 @@ const AdComponent = () => {
     };
   }, []);
 
-  return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot="7438073448" data-ad-format="auto" data-full-width-responsive="true"></ins>;
+  return (
+    <li className="card shadow--md">
+      <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot="7438073448" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </li>
+  );
 };
 
 export default AdComponent;
