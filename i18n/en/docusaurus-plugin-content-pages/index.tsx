@@ -27,6 +27,7 @@ import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
 import { findCardsWithTags, getPrompts } from "@site/src/api";
+import AdComponent from "@site/src/pages/_components/AdComponent";
 
 import favorDefault from "@site/src/data/default/favor_en.json";
 import otherDefault from "@site/src/data/default/other_en.json";
@@ -423,6 +424,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
           </Heading>
           <SearchBar />
+          <AdComponent />
         </div>
       </section>
     );
@@ -444,6 +446,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 {otherUsers.map((user) => (
                   <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
                 ))}
+                <AdComponent />
               </ul>
               {!showAllOtherUsers && (
                 <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
@@ -462,6 +465,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               {filteredUsers.map((user) => (
                 <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
+              <AdComponent />
             </ul>
           </div>
         )}
@@ -487,6 +491,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 {favoriteUsers.map((user) => (
                   <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
                 ))}
+                <AdComponent />
               </ul>
             </div>
           </div>
@@ -498,6 +503,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               {otherUsers.map((user) => (
                 <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
+              <AdComponent />
             </ul>
             {!showAllOtherUsers && (
               <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
@@ -516,6 +522,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             {filteredUsers.map((user) => (
               <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}
+            <AdComponent />
           </ul>
         </div>
       )}
