@@ -59,11 +59,21 @@ const config = {
     ],
   ],
   plugins: [
-    /* [
-      "docusaurus2-plugin-google-adsense",
+    [
+      "@docusaurus/plugin-client-redirects",
       {
-        dataAdClient: "ca-pub-7585955822109216",
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            to: "/",
+            from: "/cn",
+          },
+        ],
       },
+    ],
+    /* [
+      "@gracefullight/docusaurus-plugin-google-adsense",
+      { adClient: "ca-pub-7585955822109216" },
     ], */
     "./plugins/piwik.js",
     "./plugins/instantpage.js",
