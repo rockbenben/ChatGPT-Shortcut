@@ -7,6 +7,7 @@ import Link from "@docusaurus/Link";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
+import AdComponent from "@site/src/pages/_components/AdComponent";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input } from "antd";
@@ -310,6 +311,7 @@ function CommunityPrompts() {
             </li>
           ))}
         </ul>
+        <AdComponent type="transverse" />
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Pagination current={currentPage} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>

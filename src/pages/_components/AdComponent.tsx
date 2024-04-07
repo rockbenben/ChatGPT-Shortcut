@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 
-const AdComponent = () => {
+const AdComponent = ({ type = "default" }) => {
+  // 根据类型选择广告位
+  const adSlot = type === "transverse" ? "3744254915" : "7438073448";
+
   useEffect(() => {
     // 确保全局 adsbygoogle 数组存在
     window.adsbygoogle = window.adsbygoogle || [];
@@ -31,14 +34,9 @@ const AdComponent = () => {
         console.error("AdSense re-initialization failed", error);
       }
     }
-
-    // 组件卸载时的清理操作
-    return () => {
-      // 清理操作通常与广告加载逻辑本身无关，但你可以在这里执行必要的清理
-    };
   }, []);
 
-  return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot="7438073448" data-ad-format="auto" data-full-width-responsive="true"></ins>;
+  return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot={adSlot} data-ad-format="auto" data-full-width-responsive="true"></ins>;
 };
 
 export default AdComponent;
