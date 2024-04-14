@@ -1,0 +1,14 @@
+{
+    "id": 278,
+    "ko": {
+        "title": "DALL-E 규정 준수 이미지 생성",
+        "prompt": "Please generate an image according to the detailed description provided below. If the request involves copyrighted or content policy-violating elements, please substitute them with similar but compliant visuals. My detailed image description is: ",
+        "description": "아래 제공된 자세한 설명에 따라 이미지를 생성해 주세요. 요청에 저작권 또는 콘텐츠 정책을 위반하는 요소가 포함된 경우 유사하지만 규정을 준수하는 이미지로 대체해 주세요. 자세한 이미지 설명은 다음과 같습니다:",
+        "remark": "저작권 또는 콘텐츠 정책 위반이 포함된 요청의 요소를 정책을 준수하는 유사한 시각적 요소로 대체하여 생성 오류를 방지하는 등 DALL-E, MidJourney 등과 같은 플랫폼의 요구 사항을 준수하세요."
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": null,
+    "count": 100
+}

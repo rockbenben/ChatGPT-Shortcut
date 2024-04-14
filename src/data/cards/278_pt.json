@@ -1,0 +1,14 @@
+{
+    "id": 278,
+    "pt": {
+        "title": "Geração de imagens de conformidade DALL-E",
+        "prompt": "Please generate an image according to the detailed description provided below. If the request involves copyrighted or content policy-violating elements, please substitute them with similar but compliant visuals. My detailed image description is: ",
+        "description": "Crie uma imagem de acordo com a descrição pormenorizada fornecida abaixo. Se o pedido envolver elementos protegidos por direitos de autor ou que violem a política de conteúdos, substitua-os por imagens semelhantes mas conformes. A minha descrição detalhada da imagem é:",
+        "remark": "Para cumprir os requisitos de plataformas como DALL-E, MidJourney, etc., substituir os elementos do pedido que contenham direitos de autor ou violações da política de conteúdos por elementos visuais semelhantes que cumpram a política, a fim de evitar erros de geração."
+    },
+    "tags": [
+        "ai"
+    ],
+    "website": null,
+    "count": 100
+}

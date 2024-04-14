@@ -20,6 +20,14 @@ allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi'
 with open(input_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
+# 初始化最大 ID 值
+max_id = -1
+
+# 遍历每个元素提取 ID
+for item in data:
+    if item['id'] > max_id:
+        max_id = item['id']
+
 # ID 数组
 favor_ids = [2, 209, 109, 197, 20, 199, 4]
 other_ids = [185, 1, 90, 204, 180, 251, 218, 234, 232, 196, 41, 11]
@@ -154,8 +162,8 @@ for lang in languages[1:]:
 react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
 
-# Loop from 1 to 277 for each prompt ID
-for prompt_id in range(1, 278):
+# Loop from 1 to 278 for each prompt ID
+for prompt_id in range(1, max_id+1):
     # Loop through each language
     for lang in allLanguages:
         # 如果是中文，则直接在 base_react_jsx_dir 下创建文件
