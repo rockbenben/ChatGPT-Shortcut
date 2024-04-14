@@ -85,7 +85,7 @@ const prompt = {
     "music"
   ],
   "id": 161,
-  "weight": 246
+  "weight": 258
 };
 
 function PromptDetail() {
