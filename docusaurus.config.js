@@ -59,6 +59,7 @@ const config = {
     ],
   ],
   plugins: [
+    /*
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -71,7 +72,7 @@ const config = {
         ],
       },
     ],
-    /* [
+    [
       "@gracefullight/docusaurus-plugin-google-adsense",
       { adClient: "ca-pub-7585955822109216" },
     ], 
