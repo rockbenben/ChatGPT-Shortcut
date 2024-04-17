@@ -51,10 +51,10 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        gtag: {
+        /* gtag: {
           trackingID: "G-YJY639H2J1",
           anonymizeIP: false,
-        },
+        }, */
       }),
     ],
   ],
@@ -74,9 +74,9 @@ const config = {
     /* [
       "@gracefullight/docusaurus-plugin-google-adsense",
       { adClient: "ca-pub-7585955822109216" },
-    ], */
+    ], 
     "./plugins/piwik.js",
-    "./plugins/instantpage.js",
+    "./plugins/instantpage.js",*/
   ],
 
   themeConfig:
