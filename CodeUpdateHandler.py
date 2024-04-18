@@ -30,7 +30,7 @@ for item in data:
 
 # ID 数组
 favor_ids = [2, 209, 109, 197, 20, 199, 4]
-other_ids = [185, 1, 90, 204, 180, 251, 218, 234, 232, 196, 41, 11]
+other_ids = [185, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234]
 
 # 过滤出指定 ID 的数据项
 favor_data = [item for item in data if item['id'] in favor_ids]
