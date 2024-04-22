@@ -61,8 +61,6 @@ function CommunityPrompts() {
       if (result && result[0].length > 0) {
         setUserPrompts(result[0]);
         setTotal(result[1].data.meta.pagination.total);
-        const fetchedTotal = result[1].data.meta.pagination.total;
-        setTotal(Math.min(fetchedTotal, 1000));
       } else {
         console.log("No data returned from the server");
       }
@@ -312,7 +310,7 @@ function CommunityPrompts() {
           ))}
         </ul>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Pagination current={currentPage} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
+          <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
         <div
           style={{
