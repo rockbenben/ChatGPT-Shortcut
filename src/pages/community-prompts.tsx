@@ -49,7 +49,7 @@ function CommunityPrompts() {
     setShareUrl(window.location.href);
   }, []);
 
-  const pageSize = 12;
+  const pageSize = 11;
 
   useEffect(() => {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
@@ -61,8 +61,9 @@ function CommunityPrompts() {
       if (result && result[0].length > 0) {
         setUserPrompts(result[0]);
         setTotal(result[1].data.meta.pagination.total);
-        const fetchedTotal = result[1].data.meta.pagination.total;
-        setTotal(Math.min(fetchedTotal, 1000));
+        // 限制最多只能显示 1000 条数据
+        //const fetchedTotal = result[1].data.meta.pagination.total;
+        //setTotal(Math.min(fetchedTotal, 1000));
       } else {
         console.log("No data returned from the server");
       }
@@ -311,9 +312,9 @@ function CommunityPrompts() {
             </li>
           ))}
         </ul>
-        <AdComponent type="transverse" />
+        <AdComponent />
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Pagination current={currentPage} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
+          <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
         <div
           style={{
