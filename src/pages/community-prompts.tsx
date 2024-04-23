@@ -311,8 +311,8 @@ function CommunityPrompts() {
               </div>
             </li>
           ))}
+          <AdComponent />
         </ul>
-        <AdComponent />
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
