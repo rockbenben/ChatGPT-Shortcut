@@ -6,7 +6,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
-import Loadable from "@docusaurus/react-loadable";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
@@ -28,14 +27,10 @@ import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthConte
 
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 import AdComponent from "@site/src/pages/_components/AdComponent";
+import ShareButtons from "@site/src/pages/_components/ShareButtons";
 
 import favorDefault from "@site/src/data/default/favor_fr.json";
 import otherDefault from "@site/src/data/default/other_fr.json";
-
-const ShareButtons = Loadable({
-  loader: () => import("@site/src/pages/_components/ShareButtons"),
-  loading: () => null,
-});
 
 const TITLE = translate({
   id: "homepage.title",
