@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "3.1.9",
+  "version": "3.2.1",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -17,23 +17,23 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.2",
-    "@docusaurus/core": "3.2.1",
-    "@docusaurus/preset-classic": "3.2.1",
-    "@emoji-mart/data": "^1.1.2",
+    "@docusaurus/core": "3.3.2",
+    "@docusaurus/preset-classic": "3.3.2",
+    "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^3.0.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.16.1",
+    "antd": "^5.17.0",
     "axios": "^1.6.8",
     "buffer": "^6.0.3",
-    "clsx": "^2.1.0",
-    "emoji-mart": "^5.5.2",
+    "clsx": "^2.1.1",
+    "emoji-mart": "^5.6.0",
     "lodash": "^4.0.0",
     "prism-react-renderer": "^2.3.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-giphy-searchbox": "^1.5.4",
     "react-html-parser": "^2.0.2",
     "react-markdown": "^9.0.1",
@@ -41,8 +41,11 @@
     "react-share": "^5.1.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.2.1",
-    "@docusaurus/types": "3.2.1"
+    "@docusaurus/module-type-aliases": "3.3.2",
+    "@docusaurus/types": "3.3.2",
+    "@docusaurus/tsconfig": "3.3.2",
+    "@types/react": "^18.3.1",
+    "typescript": "~5.4.5"
   },
   "browserslist": {
     "production": [
