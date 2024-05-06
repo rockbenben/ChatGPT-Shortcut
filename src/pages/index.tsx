@@ -6,7 +6,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
-import Loadable from "@docusaurus/react-loadable";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
@@ -24,13 +23,10 @@ import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
+import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
 import { fetchAllCopyCounts } from "@site/src/api";
-const ShareButtons = Loadable({
-  loader: () => import("@site/src/pages/_components/ShareButtons"),
-  loading: () => null,
-});
 
 const TITLE = translate({
   id: "homepage.title",
