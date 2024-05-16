@@ -14,12 +14,6 @@
   "link.home": {
     "message": "घर लौटना"
   },
-  "copy.done": {
-    "message": "की नकल की"
-  },
-  "copy.button": {
-    "message": "कॉपी"
-  },
   "upvote": {
     "message": "थम्स अप"
   },
@@ -551,10 +545,6 @@
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "डॉक्स पेज",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "ChatGPT के एम्बेडेड पृष्ठ Google प्राधिकरण के माध्यम से लॉगिन का समर्थन नहीं करते हैं। कृपया अपने खाता क्रेडेंशियल का उपयोग करके लॉग इन करें।"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "पासवर्ड रहित लॉगिन लिंक भेजा गया!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "भेजने में विफल। कृपया अपना ईमेल या उपयोगकर्ता नाम जांचें।"
+  },
+  "button.sendPasswordlessLink": {
+    "message": "पासवर्ड रहित लॉगिन लिंक प्राप्त करें"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "पासवर्ड रहित लॉगिन"
   }
 }

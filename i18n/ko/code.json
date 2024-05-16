@@ -289,12 +289,6 @@
   "card.welcome": {
     "message": "환영"
   },
-  "copy.done": {
-    "message": "복사됨"
-  },
-  "copy.button": {
-    "message": "복제"
-  },
   "tooltip.switchLang": {
     "message": "클릭하여 표시 언어 전환"
   },
@@ -514,10 +508,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} 항목",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "문서 페이지",
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "ChatGPT 에 포함된 페이지는 Google 인증을 통한 로그인을 지원하지 않습니다. 귀하의 계정 자격 증명을 사용하여 로그인하십시오."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 항목",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "비밀번호 없는 로그인 링크가 전송되었습니다!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "전송하지 못했습니다. 이메일 또는 사용자 아이디를 확인하세요."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "비밀번호 없는 로그인 링크 받기"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "비밀번호 없는 로그인"
   }
 }

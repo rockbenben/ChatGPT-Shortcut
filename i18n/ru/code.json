@@ -14,12 +14,6 @@
   "link.home": {
     "message": "Вернуться на главную страницу"
   },
-  "copy.done": {
-    "message": "скопировано"
-  },
-  "copy.button": {
-    "message": "копировать"
-  },
   "upvote": {
     "message": "покровительствовать"
   },
@@ -551,10 +545,6 @@
     "message": "Навигационная цепочка текущей страницы",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} элемент|{count} элемента|{count} элементов",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Страница документа",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "Встроенные страницы ChatGPT не поддерживают вход через авторизацию Google. Пожалуйста, войдите в систему, используя данные своей учетной записи."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} элемент|{count} элемента|{count} элементов",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Ссылка для входа без пароля отправлена!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Не удалось отправить. Пожалуйста, проверьте свой адрес электронной почты или имя пользователя."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Получить ссылку для входа без пароля"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Вход в систему без пароля"
   }
 }

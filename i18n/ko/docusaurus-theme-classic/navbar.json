@@ -47,10 +47,6 @@
     "message": "💬 위챗 채팅하기",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
-  "item.label.📧 发送邮件": {
-    "message": "📧 이메일 보내기",
-    "description": "Navbar item with label 📧 发送邮件"
-  },
   "item.label.📺 加入 Discord": {
     "message": "📺 디스코드 가입하기",
     "description": "Navbar item with label 📺 加入 Discord"

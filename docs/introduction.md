@@ -34,7 +34,7 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
 
 使用 AiShort，只需将选中的提示词复制到任意 AI 对话模型中，以下是一些常用的 AI 模型链接：
 
-- ChatGPT：https://chat.openai.com
+- ChatGPT：https://chatgpt.com
 - Gemini: https://gemini.google.com/app
 - Claude: https://claude.ai/chats
 - 文心一言：https://yiyan.baidu.com

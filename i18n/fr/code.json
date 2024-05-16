@@ -14,12 +14,6 @@
   "link.home": {
     "message": "Retour à la page d'accueil"
   },
-  "copy.done": {
-    "message": "Copié"
-  },
-  "copy.button": {
-    "message": "Copie"
-  },
   "upvote": {
     "message": "patronner"
   },
@@ -551,10 +545,6 @@
     "message": "Fil d'Ariane",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} éléments",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Pages de documentation",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "Les pages intégrées de ChatGPT ne prennent pas en charge la connexion via autorisation Google. Veuillez vous connecter en utilisant les identifiants de votre compte."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} éléments",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Lien de connexion sans mot de passe envoyé !"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "L'envoi a échoué. Veuillez vérifier votre email ou votre nom d'utilisateur."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Obtenir un lien de connexion sans mot de passe"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Connexion sans mot de passe"
   }
 }

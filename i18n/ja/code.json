@@ -289,12 +289,6 @@
   "card.welcome": {
     "message": "ようこそ"
   },
-  "copy.done": {
-    "message": "コピー済み"
-  },
-  "copy.button": {
-    "message": "コピー"
-  },
   "tooltip.switchLang": {
     "message": "クリックすると表示言語が切り替わります"
   },
@@ -510,10 +504,6 @@
   "theme.colorToggle.ariaLabel.mode.light": {
     "message": "ライトモード",
     "description": "The name for the light color mode"
-  },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count}項目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "パンくずリストのナビゲーション",
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "ChatGPT の埋め込みページは、Google 認証によるログインをサポートしていません。アカウントの資格情報を使用してログインしてください。"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "パスワードレスログインリンクが送信されました！"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "送信に失敗しました。メールまたはユーザー名を確認してください。"
+  },
+  "button.sendPasswordlessLink": {
+    "message": "パスワードレスログインリンクを取得する"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "パスワードレスログイン"
   }
 }

@@ -164,12 +164,6 @@
   "showcase.usersList.allUsers": {
     "message": "All prompts"
   },
-  "copy.done": {
-    "message": "Copied"
-  },
-  "copy.button": {
-    "message": "Copy"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -269,10 +263,6 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Docs pages navigation",
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "The embedded pages of ChatGPT do not support login via Google authorization. Please log in using your account credentials."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Passwordless login link sent!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Failed to send. Please check your email or username."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Get Passwordless Login Link"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Passwordless Login"
   }
 }

@@ -14,12 +14,6 @@
   "link.home": {
     "message": "Torna alla pagina iniziale"
   },
-  "copy.done": {
-    "message": "Copiato"
-  },
-  "copy.button": {
-    "message": "Copia"
-  },
   "upvote": {
     "message": "patrocinare"
   },
@@ -551,10 +545,6 @@
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Pagina del documento",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "Le pagine incorporate di ChatGPT non supportano l&#39;accesso tramite l&#39;autorizzazione di Google. Effettua l&#39;accesso utilizzando le credenziali del tuo account."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} elementi",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Inviato il link per il login senza password!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Invio fallito. Controllare l'e-mail o il nome utente."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Ottenere il collegamento di accesso senza password"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Accesso senza password"
   }
 }

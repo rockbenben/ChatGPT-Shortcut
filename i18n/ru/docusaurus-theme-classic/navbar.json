@@ -47,10 +47,6 @@
     "message": "💬 Общайтесь с нами в WeChat",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
-  "item.label.📧 发送邮件": {
-    "message": "📧 Отправить письмо",
-    "description": "Navbar item with label 📧 发送邮件"
-  },
   "item.label.📺 加入 Discord": {
     "message": "📺 Присоединяйтесь к нашему Discord",
     "description": "Navbar item with label 📺 加入 Discord"

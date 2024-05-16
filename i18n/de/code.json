@@ -17,12 +17,6 @@
   "link.home": {
     "message": "Zurück zur Hauptseite"
   },
-  "copy.done": {
-    "message": "kopiert"
-  },
-  "copy.button": {
-    "message": "Kopieren"
-  },
   "upvote": {
     "message": "Upvote"
   },
@@ -554,10 +548,6 @@
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} Einträge",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Dokumentation Seiten",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "Die eingebetteten Seiten von ChatGPT unterstützen keine Anmeldung per Google-Autorisierung. Bitte melden Sie sich mit Ihren Zugangsdaten an."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} Einträge",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Passwortloser Login-Link gesendet!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Senden fehlgeschlagen. Bitte überprüfen Sie Ihre E-Mail oder Ihren Benutzernamen."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Passwortlosen Login-Link erhalten"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Passwortlose Anmeldung"
   }
 }

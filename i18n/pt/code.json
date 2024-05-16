@@ -14,12 +14,6 @@
   "link.home": {
     "message": "Voltar à página inicial"
   },
-  "copy.done": {
-    "message": "Copiado"
-  },
-  "copy.button": {
-    "message": "Cópia"
-  },
   "upvote": {
     "message": "ser condescendente"
   },
@@ -551,10 +545,6 @@
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Páginas de documentação",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "As páginas incorporadas do ChatGPT não suportam login via autorização do Google. Faça login usando as credenciais da sua conta."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Ligação de início de sessão sem palavra-passe enviada!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Falha no envio. Verifique o seu e-mail ou nome de utilizador."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Obter ligação de início de sessão sem palavra-passe"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Início de sessão sem palavra-passe"
   }
 }

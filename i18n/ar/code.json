@@ -17,12 +17,6 @@
   "link.home": {
     "message": "العودة للمنزل"
   },
-  "copy.done": {
-    "message": "نسخ"
-  },
-  "copy.button": {
-    "message": "ينسخ"
-  },
   "upvote": {
     "message": "ممتاز"
   },
@@ -554,10 +548,6 @@
     "message": "التنقل التفصيلي",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription": {
-    "message": "{count} مواد",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "صفحة التوثيق",
     "description": "The ARIA label for the docs pagination"
@@ -809,5 +799,21 @@
   },
   "googleauth.tooltip": {
     "message": "لا تدعم الصفحات المضمنة في ChatGPT تسجيل الدخول عبر ترخيص Google. يرجى تسجيل الدخول باستخدام بيانات اعتماد حسابك."
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} مواد",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "فشل الإرسال. يرجى التحقق من بريدك الإلكتروني أو اسم المستخدم."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "احصل على رابط تسجيل الدخول بدون كلمة مرور"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "تسجيل الدخول بدون كلمة مرور"
   }
 }
