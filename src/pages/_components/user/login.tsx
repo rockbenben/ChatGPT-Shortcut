@@ -3,7 +3,7 @@ import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Tooltip } fr
 import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { login, register, forgotPassword } from "@site/src/api";
+import { login, register, forgotPassword, sendPasswordlessLink } from "@site/src/api";
 import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
 
 const rules = {
@@ -144,15 +144,46 @@ const LoginPage = () => {
     }
   };
 
+  // 集成免密码登录
+  const handleSendPasswordlessLink = async (values) => {
+    setLoading(true);
+    const target = values.email;
+
+    // 判断输入是否为邮箱格式
+    const isValidEmail = (email) => {
+      return email.includes("@");
+    };
+
+    try {
+      // 根据输入的值动态地决定传递给后端的参数
+      const payload = isValidEmail(target) ? { email: target } : { username: target };
+      await sendPasswordlessLink(payload);
+      message.success(<Translate id="message.passwordlessLinkSent">免密码登录链接已发送到您的邮箱！</Translate>);
+    } catch (error) {
+      console.error("Error sending passwordless login link:", error);
+      message.error(<Translate id="message.errorSendingPasswordlessLink">发送失败，请检查邮箱或用户名</Translate>);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const passwordlessLoginForm = (
+    <Form onFinish={handleSendPasswordlessLink}>
+      <Form.Item name="email" rules={rules.email}>
+        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
+      </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" loading={loading}>
+          <Translate id="button.sendPasswordlessLink">获取免密码登录链接</Translate>
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+
   const loginForm = (
     <Form onFinish={onFinishLogin}>
       <Form.Item name="username" rules={rules.username}>
-        <Input
-          placeholder={translate({
-            id: "input.username",
-            message: "用户名/邮箱",
-          })}
-        />
+        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
       </Form.Item>
       <Form.Item name="password" rules={rules.password}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
@@ -278,6 +309,11 @@ const LoginPage = () => {
       key: "3",
       label: <Translate id="tabs.forgotPassword">忘记密码</Translate>,
       children: forgotForm,
+    },
+    {
+      key: "4",
+      label: <Translate id="tabs.passwordlessLogin">免密码登录</Translate>,
+      children: passwordlessLoginForm,
     },
   ];
 

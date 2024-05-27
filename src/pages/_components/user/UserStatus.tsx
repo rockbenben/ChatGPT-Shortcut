@@ -170,9 +170,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         <button className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id="button.login">登录</Translate>
         </button>
-        <button className="button button--primary" to="/community-prompts">
+        <Link className="button button--primary" to="/community-prompts">
           <Translate id="showcase.header.button">🙏 分享你的提示词</Translate>
-        </button>
+        </Link>
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />
         </Modal>
