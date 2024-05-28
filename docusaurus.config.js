@@ -58,6 +58,10 @@ const config = {
           trackingID: "G-YJY639H2J1",
           anonymizeIP: false,
         },
+        /*
+        googleTagManager: {
+          containerId: "GTM-MX524GTT",
+        },*/
       }),
     ],
   ],
