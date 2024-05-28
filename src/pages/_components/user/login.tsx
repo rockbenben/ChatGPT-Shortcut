@@ -288,7 +288,7 @@ const LoginPage = () => {
         <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
-        <Button htmlType="submit" loading={loading}>
+        <Button type="primary" htmlType="submit" loading={loading}>
           <Translate id="button.sendResetEmail">发送密码重置邮件</Translate>
         </Button>
       </Form.Item>
@@ -302,8 +302,8 @@ const LoginPage = () => {
     },
     {
       key: "2",
-      label: <Translate id="tabs.register">注册</Translate>,
-      children: registerForm,
+      label: <Translate id="tabs.passwordlessLogin">免密码登录</Translate>,
+      children: passwordlessLoginForm,
     },
     {
       key: "3",
@@ -312,8 +312,8 @@ const LoginPage = () => {
     },
     {
       key: "4",
-      label: <Translate id="tabs.passwordlessLogin">免密码登录</Translate>,
-      children: passwordlessLoginForm,
+      label: <Translate id="tabs.register">注册</Translate>,
+      children: registerForm,
     },
   ];
 
