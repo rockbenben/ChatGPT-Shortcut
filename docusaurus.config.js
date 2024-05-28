@@ -51,10 +51,9 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        /* gtag: {
-          trackingID: "G-YJY639H2J1",
-          anonymizeIP: false,
-        }, */
+        googleTagManager: {
+          containerId: "GTM-MX524GTT",
+        },
       }),
     ],
   ],
@@ -71,13 +70,7 @@ const config = {
           },
         ],
       },
-    ],
-    [
-      "@gracefullight/docusaurus-plugin-google-adsense",
-      { adClient: "ca-pub-7585955822109216" },
-    ], 
-    "./plugins/piwik.js",
-    "./plugins/instantpage.js",*/
+    ], */
   ],
 
   themeConfig:
@@ -88,7 +81,7 @@ const config = {
       metadata: [
         {
           name: "keywords",
-          content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
+          content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts,ai short,提示词",
         },
       ],
       navbar: {
