@@ -49,7 +49,7 @@ function CommunityPrompts() {
     setShareUrl(window.location.href);
   }, []);
 
-  const pageSize = 11;
+  const pageSize = 12;
 
   useEffect(() => {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
@@ -311,8 +311,8 @@ function CommunityPrompts() {
               </div>
             </li>
           ))}
-          <AdComponent />
         </ul>
+        <AdComponent type="transverse" />
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
