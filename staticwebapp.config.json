@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "route": "/*.js",
+            "headers": {
+                "cache-control": "public, max-age=31536000, immutable"
+            }
+        },
+        {
+            "route": "/*.css",
+            "headers": {
+                "cache-control": "public, max-age=31536000, immutable"
+            }
+        }
+    ]
+}
