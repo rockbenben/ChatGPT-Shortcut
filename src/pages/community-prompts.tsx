@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -27,13 +27,15 @@ const placeholderData = Array.from({ length: 12 }, (_, index) => ({
   upvotes: 0,
   downvotes: 0,
 }));
-function CommunityPrompts() {
-  const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
-  const DESCRIPTION = translate({
-    id: "description.communityPrompts",
-    message:
-      "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
-  });
+
+const TITLE = "AiShort Community Prompts - Share and find interesting prompts";
+const DESCRIPTION = translate({
+  id: "description.communityPrompts",
+  message:
+    "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+});
+
+const CommunityPrompts = () => {
   const { userAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [userprompts, setUserPrompts] = useState(placeholderData);
@@ -44,33 +46,32 @@ function CommunityPrompts() {
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [Shareurl, setShareUrl] = useState("");
+  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
+  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
+
+  const pageSize = 12;
 
   useEffect(() => {
     setShareUrl(window.location.href);
   }, []);
 
-  const pageSize = 12;
-
   useEffect(() => {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
   }, [currentPage, sortField, sortOrder, searchTerm]);
 
-  const fetchData = async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
+  const fetchData = useCallback(async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
     try {
       const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
       if (result && result[0].length > 0) {
         setUserPrompts(result[0]);
         setTotal(result[1].data.meta.pagination.total);
-        // 限制最多只能显示 1000 条数据
-        //const fetchedTotal = result[1].data.meta.pagination.total;
-        //setTotal(Math.min(fetchedTotal, 1000));
       } else {
         console.log("No data returned from the server");
       }
     } catch (error) {
       console.error("Failed to fetch community prompts:", error);
     }
-  };
+  }, []);
 
   const onSearch = (value) => {
     if (!userAuth) {
@@ -79,10 +80,9 @@ function CommunityPrompts() {
       return;
     }
     setSearchTerm(value);
-    setCurrentPage(1); // 重置页数到第一页
+    setCurrentPage(1);
   };
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
+
   const vote = async (promptId, action) => {
     try {
       await voteOnUserPrompt(promptId, action);
@@ -93,6 +93,7 @@ function CommunityPrompts() {
       message.error(`Error: ${err}`);
     }
   };
+
   const bookmark = async (promptId) => {
     try {
       let userLoves;
@@ -127,6 +128,7 @@ function CommunityPrompts() {
       }, 2000);
     }
   };
+
   const onChangePage = (page) => {
     setCurrentPage(page);
   };
@@ -169,13 +171,7 @@ function CommunityPrompts() {
     onClick: handleOrderClick,
   };
 
-  // 截取字符串的函数
-  const truncate = (str, num) => {
-    if (str.length <= num) {
-      return str;
-    }
-    return str.slice(0, num) + "...";
-  };
+  const truncate = (str, num) => (str.length <= num ? str : `${str.slice(0, num)}...`);
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -204,28 +200,14 @@ function CommunityPrompts() {
         <ul className="clean-list showcaseList_Cwj2">
           {userprompts.map((UserPrompt, index) => (
             <li key={UserPrompt.id} className="card shadow--md">
-              <div
-                className={clsx("card__body")}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  height: "100%",
-                }}>
+              <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
                 <div>
                   <div className={clsx(styles.showcaseCardHeader)}>
                     <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
                       <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
                         {UserPrompt.title}
                       </span>
-                      <span
-                        style={{
-                          fontSize: "12px",
-                          color: "#999",
-                          marginLeft: "10px",
-                        }}>
-                        @{UserPrompt.owner}
-                      </span>
+                      <span style={{ fontSize: "12px", color: "#999", marginLeft: "10px" }}>@{UserPrompt.owner}</span>
                     </div>
                   </div>
                   {UserPrompt.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.remark}</p>}
@@ -241,20 +223,13 @@ function CommunityPrompts() {
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                   <Button.Group>
-                    <Tooltip
-                      title={translate({
-                        id: "theme.CodeBlock.copy",
-                        message: "复制",
-                      })}>
+                    <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
                       <Button type="default" onClick={() => handleCopyClick(index)}>
                         <CopyOutlined />
                         {copiedIndex === index && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
                       </Button>
                     </Tooltip>
-                    <Tooltip
-                      title={translate({
-                        message: "收藏",
-                      })}>
+                    <Tooltip title={translate({ message: "收藏" })}>
                       <Button
                         type="default"
                         onClick={() => {
@@ -270,11 +245,7 @@ function CommunityPrompts() {
                     </Tooltip>
                   </Button.Group>
                   <Button.Group>
-                    <Tooltip
-                      title={translate({
-                        id: "upvote",
-                        message: "赞",
-                      })}>
+                    <Tooltip title={translate({ id: "upvote", message: "赞" })}>
                       <Button
                         type="default"
                         onClick={() => {
@@ -288,11 +259,7 @@ function CommunityPrompts() {
                         {votedUpPromptIds.includes(UserPrompt.id) ? (UserPrompt.upvotes || 0) + 1 : UserPrompt.upvotes || 0}
                       </Button>
                     </Tooltip>
-                    <Tooltip
-                      title={translate({
-                        id: "downvote",
-                        message: "踩",
-                      })}>
+                    <Tooltip title={translate({ id: "downvote", message: "踩" })}>
                       <Button
                         type="default"
                         onClick={() => {
@@ -316,12 +283,7 @@ function CommunityPrompts() {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "10px",
-          }}>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
           <Text type="secondary" style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
             {translate({
               message:
@@ -329,7 +291,6 @@ function CommunityPrompts() {
             })}
           </Text>
         </div>
-
         <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
           <LoginComponent />
         </Modal>
@@ -337,7 +298,7 @@ function CommunityPrompts() {
       </main>
     </Layout>
   );
-}
+};
 
 export default function WrappedCommunityPrompts() {
   return (
