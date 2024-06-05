@@ -394,7 +394,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
   if (isFiltered && filteredUsers.length === 0) {
     return (
-      <section className="margin-top--lg margin-bottom--xl">
+      <section className="margin-top--sm margin-bottom--sm">
         <div className="container padding-vert--md text--center">
           <Heading as="h2">
             <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
@@ -407,7 +407,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   }
 
   return (
-    <section className="margin-top--lg margin-bottom--xl">
+    <section className="margin-top--sm margin-bottom--sm">
       {!isFiltered ? (
         <>
           {showUserFavs ? null : (
@@ -429,7 +429,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               </div>
             </div>
           )}
-          <div className="container margin-top--lg">
+          <div className="container margin-top--md">
             <Heading as="h2" className={styles.showcaseHeader}>
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Heading>
