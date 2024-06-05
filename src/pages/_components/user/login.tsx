@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Tooltip } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -36,9 +36,10 @@ const rules = {
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
-  const handleForgotPasswordClick = () => {
+
+  const handleForgotPasswordClick = useCallback(() => {
     setActiveTab("3");
-  };
+  }, []);
 
   // Google Auth
   useEffect(() => {
@@ -104,7 +105,7 @@ const LoginPage = () => {
     }
   };
 
-  const handleAuth = async (values, authFunction, successMessage) => {
+  const handleAuth = useCallback(async (values, authFunction, successMessage) => {
     setLoading(true);
     try {
       const response = await authFunction(values);
@@ -115,7 +116,7 @@ const LoginPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const onFinishLogin = async (values) => {
     handleAuth(values, login, <Translate id="message.loginSuccess">登录成功！</Translate>);
@@ -294,6 +295,7 @@ const LoginPage = () => {
       </Form.Item>
     </Form>
   );
+
   const items = [
     {
       key: "1",

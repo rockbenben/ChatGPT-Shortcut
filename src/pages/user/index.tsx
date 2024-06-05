@@ -10,9 +10,9 @@ import { AuthContext, AuthProvider } from "../_components/AuthContext";
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
-
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState(userAuth?.data.username);
+
   const handleEditUsernameClick = () => {
     setNewUsername(userAuth.data.username);
     setEditUsername(true);
@@ -255,7 +255,7 @@ const UserProfile = () => {
   );
 };
 
-export default function UserPapge() {
+export default function UserPage() {
   return (
     <AuthProvider>
       <UserProfile />

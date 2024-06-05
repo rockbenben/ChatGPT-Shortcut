@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback } from "react";
+import React, { useContext, useState, useCallback, useMemo } from "react";
 import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
@@ -14,34 +14,26 @@ import { updateCopyCount } from "@site/src/api";
 
 function PromptPage({ prompt }) {
   const { userAuth } = useContext(AuthContext);
-  const [copied, setShowCopied] = useState(false);
+  const [copied, setCopied] = useState(false);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const [shareUrl, setShareUrl] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.location.href;
-    }
-    return "";
-  });
+  const [mainPrompt, setMainPrompt] = useState(prompt[currentLanguage].prompt);
 
-  const title = prompt[currentLanguage].title;
-  const remark = prompt[currentLanguage].remark;
+  const shareUrl = useMemo(() => (typeof window !== "undefined" ? window.location.href : ""), []);
+  const title = useMemo(() => prompt[currentLanguage].title, [prompt, currentLanguage]);
+  const remark = useMemo(() => prompt[currentLanguage].remark, [prompt, currentLanguage]);
   const weight = prompt.count;
   const website = prompt.website;
   const tags = prompt.tags;
 
-  const [mainPrompt, setMainPrompt] = useState(prompt[currentLanguage].prompt);
-
-  // Switching between the native language and English
   const handleParagraphClick = useCallback(() => {
-    setMainPrompt((prevMainPrompt) => (currentLanguage !== "en" && prevMainPrompt === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
+    setMainPrompt((prev) => (currentLanguage !== "en" && prev === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
   }, [prompt, currentLanguage]);
 
-  // Handle copying the mainPrompt text
   const handleCopyClick = useCallback(async () => {
     copy(prompt[currentLanguage].prompt);
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 2000);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
     await updateCopyCount(prompt.id);
   }, [prompt, currentLanguage]);
 
@@ -60,11 +52,11 @@ function PromptPage({ prompt }) {
               </span>
             }
             extra={
-              website ? (
+              website && (
                 <a href={website}>
                   <LinkOutlined />
                 </a>
-              ) : null
+              )
             }>
             <Typography.Paragraph style={{ color: "#595959" }}>👉 {remark}</Typography.Paragraph>
             <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
@@ -74,16 +66,14 @@ function PromptPage({ prompt }) {
             </Tooltip>
             <Space wrap>
               {tags.map((tag) => (
-                <Link to={"/?tags=" + tag}>
-                  <Tag color="blue" key={tag}>
-                    {tag}
-                  </Tag>
+                <Link to={`/?tags=${tag}`} key={tag}>
+                  <Tag color="blue">{tag}</Tag>
                 </Link>
               ))}
             </Space>
             <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
-            </Typography.Paragraph>{" "}
+            </Typography.Paragraph>
             <AdComponent type="transverse" />
             <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
             <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
