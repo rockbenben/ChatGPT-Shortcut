@@ -2,20 +2,16 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, useRef } 
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-
-import Translate, { translate } from "@docusaurus/Translate";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-
-import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
-import { ConfigProvider, Input, InputRef, Button } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import Translate, { translate } from "@docusaurus/Translate";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, SearchOutlined } from "@ant-design/icons";
+import { ConfigProvider, Input, Button } from "antd";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
-
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle, { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
@@ -24,11 +20,9 @@ import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
-
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 import AdComponent from "@site/src/pages/_components/AdComponent";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
-
 import favorDefault from "@site/src/data/default/favor_ru.json";
 import otherDefault from "@site/src/data/default/other_ru.json";
 
@@ -69,12 +63,12 @@ function readSearchName(search: string) {
 
 function useFilteredUsers() {
   const location = useLocation<UserState>();
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   const [operator, setOperator] = useState<Operator>("OR");
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
   const [filteredUsers, setFilteredUsers] = useState([]);
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -89,7 +83,6 @@ function useFilteredUsers() {
 
   useEffect(() => {
     async function fetchAndFilterUsers() {
-      // 如果没有提供 tags 和 search，跳过搜索
       if (selectedTags.length === 0 && !searchName) {
         setFilteredUsers([]);
         return;
@@ -105,7 +98,6 @@ function useFilteredUsers() {
     fetchAndFilterUsers();
   }, [selectedTags, searchName, operator, currentLanguage]);
 
-  // 计算 isFiltered 标志
   const isFiltered = selectedTags.length > 0 || searchName !== null;
 
   return { filteredUsers, isFiltered };
@@ -127,24 +119,23 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-
-  // 登陆后显示用户提示词和收藏夹，两者不可同时显示
   const [showUserPrompts, setShowUserPrompts] = useState(false);
-  const handleUserPrompts = () => {
+
+  const handleUserPrompts = useCallback(() => {
     setShowUserFavs(false);
-    setShowUserPrompts(!showUserPrompts);
-  };
-  const handleUserFavs = () => {
+    setShowUserPrompts((prev) => !prev);
+  }, [setShowUserFavs]);
+
+  const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
-    setShowUserFavs(!showUserFavs);
-  };
+    setShowUserFavs((prev) => !prev);
+  }, [setShowUserFavs]);
 
   let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
   if (userAuth) {
     modifiedTagList = modifiedTagList.filter((tag) => tag !== "favorite");
   }
 
-  // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
   return (
@@ -171,7 +162,6 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
         </div>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
-        {/* 登陆用户标签按钮 */}
         {userAuth && (
           <>
             <li className={styles.checkboxListItem} onClick={handleUserPrompts}>
@@ -290,41 +280,32 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
 function SearchBar() {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef<InputRef>(null);
+  const searchRef = useRef(null);
   const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
-    // 初始化时根据当前 URL 设置搜索框的值
     setValue(readSearchName(location.search));
-    //searchRef.current?.focus();
   }, [location]);
 
-  // 搜索函数
   const handleSearch = useCallback(() => {
-    try {
-      const newSearch = new URLSearchParams(location.search);
-      newSearch.delete(SearchNameQueryKey);
-      if (value) {
-        newSearch.set(SearchNameQueryKey, value);
-      }
-      history.push({
-        ...location,
-        search: newSearch.toString(),
-        state: prepareUserState(),
-      });
-    } catch (error) {
-      console.error("Error occurred while searching:", error);
+    const newSearch = new URLSearchParams(location.search);
+    newSearch.delete(SearchNameQueryKey);
+    if (value) {
+      newSearch.set(SearchNameQueryKey, value);
     }
+    history.push({
+      ...location,
+      search: newSearch.toString(),
+      state: prepareUserState(),
+    });
   }, [value, location, history]);
 
   useEffect(() => {
-    // 如果 value 变为空字符串，假定清除操作已发生，触发搜索
     if (value === "") {
       handleSearch();
     }
   }, [value, handleSearch]);
 
-  // 处理输入事件，更新搜索框的值
   const handleInput = (e) => {
     setValue(e.target.value);
   };
@@ -361,49 +342,49 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
-  const defaultIds = [185, 2, 209, 109, 197, 20, 199, 4, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234];
-  const allIds = [
-    2, 185, 209, 109, 197, 20, 199, 1, 251, 90, 4, 180, 204, 232, 218, 11, 41, 234, 196, 206, 9, 17, 8, 256, 173, 219, 7, 210, 155, 214, 56, 212, 177, 220, 224, 10, 15, 187, 5, 266, 122, 80, 238, 242,
-    159, 217, 21, 19, 171, 181, 94, 200, 205, 49, 132, 14, 142, 13, 139, 190, 48, 191, 63, 158, 91, 16, 222, 75, 95, 18, 141, 277, 221, 176, 195, 6, 89, 253, 120, 182, 152, 267, 3, 24, 125, 264, 73,
-    255, 82, 145, 188, 50, 241, 23, 237, 93, 40, 138, 194, 160, 77, 233, 236, 42, 202, 243, 103, 259, 215, 192, 12, 239, 216, 184, 163, 250, 126, 258, 112, 147, 162, 87, 189, 265, 35, 98, 257, 157,
-    211, 57, 193, 151, 179, 175, 46, 262, 270, 130, 167, 275, 74, 228, 198, 254, 134, 72, 101, 150, 66, 261, 97, 178, 137, 203, 88, 67, 47, 106, 269, 172, 39, 38, 37, 51, 140, 96, 273, 123, 144, 240,
-    271, 274, 22, 92, 78, 213, 245, 235, 201, 85, 248, 64, 45, 58, 100, 62, 230, 71, 70, 207, 99, 28, 54, 133, 252, 76, 186, 170, 208, 135, 168, 246, 25, 86, 226, 143, 153, 272, 146, 43, 118, 26, 53,
-    169, 154, 29, 36, 244, 183, 31, 260, 52, 111, 59, 166, 81, 247, 263, 79, 61, 119, 68, 102, 124, 27, 30, 129, 148, 131, 229, 114, 84, 223, 107, 55, 65, 69, 161, 44, 136, 231, 116, 115, 60, 128,
-    164, 249, 149, 121, 165, 108, 117, 276, 32, 83, 113, 110, 174, 268, 33, 105, 227, 34, 104, 156, 225, 127, 278,
-  ];
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
-
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!userAuth && !showAllOtherUsers) {
       return;
     }
 
     try {
-      let favorIds = userAuth?.data?.favorites?.loves || [];
-      let idsToShow = !userAuth
+      const favorIds = userAuth?.data?.favorites?.loves || [];
+      const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
+      const defaultIds = [185, 2, 209, 109, 197, 20, 199, 4, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234];
+      const allIds = [
+        2, 185, 209, 109, 197, 20, 199, 1, 251, 90, 4, 180, 204, 232, 218, 11, 41, 234, 196, 206, 9, 17, 8, 256, 173, 219, 7, 210, 155, 214, 56, 212, 177, 220, 224, 10, 15, 187, 5, 266, 122, 80, 238,
+        242, 159, 217, 21, 19, 171, 181, 94, 200, 205, 49, 132, 14, 142, 13, 139, 190, 48, 191, 63, 158, 91, 16, 222, 75, 95, 18, 141, 277, 221, 176, 195, 6, 89, 253, 120, 182, 152, 267, 3, 24, 125,
+        264, 73, 255, 82, 145, 188, 50, 241, 23, 237, 93, 40, 138, 194, 160, 77, 233, 236, 42, 202, 243, 103, 259, 215, 192, 12, 239, 216, 184, 163, 250, 126, 258, 112, 147, 162, 87, 189, 265, 35, 98,
+        257, 157, 211, 57, 193, 151, 179, 175, 46, 262, 270, 130, 167, 275, 74, 228, 198, 254, 134, 72, 101, 150, 66, 261, 97, 178, 137, 203, 88, 67, 47, 106, 269, 172, 39, 38, 37, 51, 140, 96, 273,
+        123, 144, 240, 271, 274, 22, 92, 78, 213, 245, 235, 201, 85, 248, 64, 45, 58, 100, 62, 230, 71, 70, 207, 99, 28, 54, 133, 252, 76, 186, 170, 208, 135, 168, 246, 25, 86, 226, 143, 153, 272,
+        146, 43, 118, 26, 53, 169, 154, 29, 36, 244, 183, 31, 260, 52, 111, 59, 166, 81, 247, 263, 79, 61, 119, 68, 102, 124, 27, 30, 129, 148, 131, 229, 114, 84, 223, 107, 55, 65, 69, 161, 44, 136,
+        231, 116, 115, 60, 128, 164, 249, 149, 121, 165, 108, 117, 276, 32, 83, 113, 110, 174, 268, 33, 105, 227, 34, 104, 156, 225, 127, 278,
+      ];
+
+      const idsToShow = !userAuth
         ? allIds.filter((id) => !defaultFavorIds.includes(id))
         : showAllOtherUsers
         ? allIds.filter((id) => !favorIds.includes(id))
         : defaultIds.filter((id) => !favorIds.includes(id));
 
-      const promptsData = await Promise.all([getPrompts("cards", userAuth ? favorIds : [], currentLanguage), getPrompts("cards", idsToShow, currentLanguage)]);
+      const [favorData, otherData] = await Promise.all([getPrompts("cards", userAuth ? favorIds : [], currentLanguage), getPrompts("cards", idsToShow, currentLanguage)]);
 
       if (userAuth) {
-        setFavoritePrompts(promptsData[0]);
+        setFavoritePrompts(favorData);
       }
-      setOtherPrompts(promptsData[1]);
+      setOtherPrompts(otherData);
     } catch (error) {
       console.error("Error loading data:", error);
     }
-  };
+  }, [userAuth, showAllOtherUsers, currentLanguage]);
 
   useEffect(() => {
     fetchData();
-  }, [currentLanguage, userAuth, showAllOtherUsers]);
+  }, [fetchData]);
 
   const [favoriteUsers, otherUsers] = useMemo(() => {
     return [favoritePrompts, otherPrompts];
@@ -424,72 +405,30 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
       </section>
     );
   }
-  if (showUserFavs) {
-    // 如果 showUserFavs 为 true，则不渲染 Favorites 区块
-    return (
-      <section className="margin-top--lg margin-bottom--xl">
-        {!isFiltered ? (
-          <>
-            <div className="container margin-top--lg">
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2">
-                  <Translate id="showcase.usersList.allUsers">All prompts</Translate>
-                </Heading>
-                <SearchBar />
-              </div>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {otherUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
-                ))}
-                <AdComponent />
-              </ul>
-              {!showAllOtherUsers && (
-                <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                  {<ArrowDownOutlined />}
-                  <Translate>加载更多</Translate>
-                </button>
-              )}
-            </div>
-          </>
-        ) : (
-          <div className="container">
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar />
-            </div>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
-              {filteredUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
-              ))}
-              <AdComponent />
-            </ul>
-          </div>
-        )}
-      </section>
-    );
-  }
 
-  // 正常渲染 Favorites 区块
   return (
-    <section className="margin-top--lg margin-bottom--sm">
+    <section className="margin-top--lg margin-bottom--xl">
       {!isFiltered ? (
         <>
-          <div className={styles.showcaseFavorite}>
-            <div className="container">
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2">
-                  <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                </Heading>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                <SearchBar />
+          {showUserFavs ? null : (
+            <div className={styles.showcaseFavorite}>
+              <div className="container">
+                <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                  <Heading as="h2">
+                    <Translate id="showcase.favoritesList.title">Favorites</Translate>
+                  </Heading>
+                  <FavoriteIcon svgClass={styles.svgIconFavorite} />
+                  <SearchBar />
+                </div>
+                <ul className={clsx("clean-list", styles.showcaseList)}>
+                  {favoriteUsers.map((user) => (
+                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
+                  ))}
+                  <AdComponent />
+                </ul>
               </div>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
-                ))}
-                <AdComponent />
-              </ul>
             </div>
-          </div>
+          )}
           <div className="container margin-top--lg">
             <Heading as="h2" className={styles.showcaseHeader}>
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
@@ -502,7 +441,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </ul>
             {!showAllOtherUsers && (
               <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                {<ArrowDownOutlined />}
+                <ArrowDownOutlined />
                 <Translate>加载更多</Translate>
               </button>
             )}
@@ -527,14 +466,17 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
 
 export default function Showcase(): JSX.Element {
   const [Shareurl, setShareUrl] = useState("");
+  const [isDescription, setIsDescription] = useState(true);
+  const [showUserFavs, setShowUserFavs] = useState(false);
+
   useEffect(() => {
     setShareUrl(window.location.href);
   }, []);
-  const [isDescription, setIsDescription] = useState(true);
-  const [showUserFavs, setShowUserFavs] = useState(false);
+
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
