@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { List, Avatar, Button, Form, Input, Modal, Pagination } from "antd";
 import { SmileOutlined, GifOutlined } from "@ant-design/icons";
@@ -17,7 +17,9 @@ import ReactGiphySearchBox from "react-giphy-searchbox";
 dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835"];
 
-const getRandomColor = () => backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+const getRandomColor = () => {
+  return backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+};
 
 const Comments = ({ pageId, currentUserId, type }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -35,9 +37,6 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [pageSize, setPageSize] = useState(20);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
 
-  const savedComment = useRef(localStorage.getItem("savedComment"));
-  const savedReply = useRef(localStorage.getItem("savedReply"));
-
   const fetchComments = useCallback(async () => {
     const response = await getComments(pageId, currentPage, pageSize, type);
     if (response) {
@@ -52,15 +51,19 @@ const Comments = ({ pageId, currentUserId, type }) => {
   }, [fetchComments, replyingTo, refresh]);
 
   useEffect(() => {
-    if (savedComment.current) {
-      form.setFieldsValue({ comment: savedComment.current });
+    const savedComment = localStorage.getItem("savedComment");
+    const savedReply = localStorage.getItem("savedReply");
+
+    if (savedComment) {
+      form.setFieldsValue({ comment: savedComment });
     }
 
-    if (savedReply.current) {
-      replyForm.setFieldsValue({ reply: savedReply.current });
+    if (savedReply) {
+      replyForm.setFieldsValue({ reply: savedReply });
     }
-  }, [form, replyForm]);
+  }, []);
 
+  // For better performance, debounced saveFormValues and saveReplyFormValues
   const debouncedSaveFormValues = debounce((comment) => {
     if (comment) {
       localStorage.setItem("savedComment", comment);
@@ -73,30 +76,47 @@ const Comments = ({ pageId, currentUserId, type }) => {
     }
   }, 300);
 
-  const saveFormValues = (changedValues) => {
+  const saveFormValues = (changedValues, allValues) => {
     if (changedValues.comment !== undefined) {
       debouncedSaveFormValues(changedValues.comment);
     }
   };
 
-  const saveReplyFormValues = (changedValues) => {
+  const saveReplyFormValues = (changedValues, allValues) => {
     if (changedValues.reply !== undefined) {
       debouncedSaveReplyFormValues(changedValues.reply);
     }
   };
 
+  // Emoji+Giphy
   const handleEmojiGiphyToggle = (toggleType, identifier) => {
-    const toggleEmoji = (setFn, showFn, showReplyFn) => {
-      setFn(false);
-      setFn(false);
-      showFn(false);
-      showReplyFn((prev) => !prev);
-    };
+    switch (toggleType) {
+      case "emojiPicker":
+        setShowGiphySearchBox(false);
+        setShowGiphySearchBoxReply(false);
+        if (identifier === "reply") {
+          setShowEmojiPicker(false);
+          setShowEmojiPickerReply((prevShowEmojiPickerReply) => !prevShowEmojiPickerReply);
+        } else {
+          setShowEmojiPickerReply(false);
+          setShowEmojiPicker((prevShowEmojiPicker) => !prevShowEmojiPicker);
+        }
+        break;
 
-    if (toggleType === "emojiPicker") {
-      toggleEmoji(setShowGiphySearchBox, setShowGiphySearchBoxReply, identifier === "reply" ? setShowEmojiPickerReply : setShowEmojiPicker);
-    } else if (toggleType === "giphySearchBox") {
-      toggleEmoji(setShowEmojiPicker, setShowEmojiPickerReply, identifier === "reply" ? setShowGiphySearchBoxReply : setShowGiphySearchBox);
+      case "giphySearchBox":
+        setShowEmojiPicker(false);
+        setShowEmojiPickerReply(false);
+        if (identifier === "reply") {
+          setShowGiphySearchBox(false);
+          setShowGiphySearchBoxReply((prevShowGiphySearchBoxReply) => !prevShowGiphySearchBoxReply);
+        } else {
+          setShowGiphySearchBoxReply(false);
+          setShowGiphySearchBox((prevShowGiphySearchBox) => !prevShowGiphySearchBox);
+        }
+        break;
+
+      default:
+        break;
     }
   };
 
@@ -109,18 +129,25 @@ const Comments = ({ pageId, currentUserId, type }) => {
         comment.children = [];
         commentMap[comment.id] = comment;
 
-        if (comment.threadOf && commentMap[comment.threadOf.id]) {
-          commentMap[comment.threadOf.id].children.push(comment);
+        if (comment.threadOf) {
+          if (commentMap[comment.threadOf.id]) {
+            commentMap[comment.threadOf.id].children.push(comment);
+          }
         }
       });
 
-    return flatComments.filter((comment) => !comment.threadOf).sort((a, b) => new Date(b.id) - new Date(a.id));
+    const rootComments = flatComments.filter((comment) => !comment.threadOf);
+
+    return rootComments.sort((a, b) => new Date(b.id) - new Date(a.id));
   };
 
-  const handleLoginModalOpen = () => setIsLoginModalOpen(true);
+  const handleLoginModalOpen = () => {
+    setIsLoginModalOpen(true);
+  };
 
-  const handleLoginModalClose = () => setIsLoginModalOpen(false);
-
+  const handleLoginModalClose = () => {
+    setIsLoginModalOpen(false);
+  };
   const handleCancelReply = () => {
     replyForm.resetFields();
     setReplyingTo(null);
@@ -135,7 +162,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
     form.resetFields();
     localStorage.removeItem("savedComment");
     setReplyingTo(null);
-    setRefresh((prev) => !prev);
+    setRefresh(!refresh);
   };
 
   const handleReplySubmit = async (values) => {
@@ -147,31 +174,31 @@ const Comments = ({ pageId, currentUserId, type }) => {
     replyForm.resetFields();
     localStorage.removeItem("savedReply");
     setReplyingTo(null);
-    setRefresh((prev) => !prev);
+    setRefresh(!refresh);
   };
 
+  // handle emoji
   const handleEmojiSelect = (emoji) => {
     const currentComment = form.getFieldValue("comment");
     form.setFieldsValue({
       comment: (currentComment || "") + emoji.native,
     });
   };
-
-  const handleEmojiSelectReply = (emoji) => {
+  const handleEmojiSelectreply = (emoji) => {
     const currentComment = replyForm.getFieldValue("reply");
     replyForm.setFieldsValue({
       reply: (currentComment || "") + emoji.native,
     });
   };
 
+  // handle giphy
   const handleGiphySelect = (giphy) => {
     const currentComment = form.getFieldValue("comment");
     form.setFieldsValue({
       comment: (currentComment || "") + `![Gif](${giphy.images.fixed_height.url})`,
     });
   };
-
-  const handleGiphySelectReply = (giphy) => {
+  const handleGiphySelectreply = (giphy) => {
     const currentComment = replyForm.getFieldValue("reply");
     replyForm.setFieldsValue({
       reply: (currentComment || "") + `![Gif](${giphy.images.fixed_height.url})`,
@@ -221,12 +248,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
               />
             </Form.Item>
             <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "reply")} />
-            {showEmojiPickerReply && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelectReply} />}
+            {showEmojiPickerReply && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelectreply} />}
             <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "reply")} style={{ marginLeft: "2px" }} />
             {showGiphySearchBoxReply && (
               <ReactGiphySearchBox
                 apiKey="36zezehgQXZMRV6Mko784D9OEBm0UHiP"
-                onSelect={handleGiphySelectReply}
+                onSelect={(item) => handleGiphySelectreply(item)}
                 masonryConfig={[
                   { columns: 2, imageWidth: 110, gutter: 5 },
                   { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 },
@@ -249,7 +276,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
             )}
           </Form>
         )}
-        {comment.children && comment.children.map(renderComment)}
+        {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </Comment>
     ),
     [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues]
@@ -295,7 +322,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
         {showGiphySearchBox && (
           <ReactGiphySearchBox
             apiKey="36zezehgQXZMRV6Mko784D9OEBm0UHiP"
-            onSelect={handleGiphySelect}
+            onSelect={(item) => handleGiphySelect(item)}
             masonryConfig={[
               { columns: 2, imageWidth: 110, gutter: 5 },
               { mq: "700px", columns: 3, imageWidth: 120, gutter: 5 },
