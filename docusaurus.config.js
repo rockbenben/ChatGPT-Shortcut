@@ -119,7 +119,7 @@ const config = {
               },
               {
                 label: "文字处理",
-                href: "https://tools.newzone.top/json-translate",
+                href: "https://tools.newzone.top/",
               },
               {
                 label: "工具收藏",
