@@ -2790,10 +2790,10 @@ ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-antd@^5.18.0:
-  version "5.18.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.18.0.tgz#78e3a7b3024e2db642a1046eb8f6c5eee0ae4bb3"
-  integrity sha512-xAvqvioW34npeZb8/JLZmCh5mcHU5MLiA0IYWAlpLAVmSgjs3p0tNzbU6a7Yx+y7o7E8PHtlchWfO3yBLQ15FQ==
+antd@^5.18.1:
+  version "5.18.1"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.18.1.tgz#6bc3662556c5ddebe209f6df0b9e22ddf73646da"
+  integrity sha512-l762vsoIpA3xsVsbIExlce3hgFgiLdflGEgdo8NFnq17Qq3fHIMJklGzM8WNpdJJ4iUk4FzritmSSnHk0Y5kZA==
   dependencies:
     "@ant-design/colors" "^7.0.2"
     "@ant-design/cssinjs" "^1.19.1"
@@ -2812,14 +2812,14 @@ antd@^5.18.0:
     rc-cascader "~3.26.0"
     rc-checkbox "~3.3.0"
     rc-collapse "~3.7.3"
-    rc-dialog "~9.4.0"
+    rc-dialog "~9.5.2"
     rc-drawer "~7.2.0"
     rc-dropdown "~4.2.0"
-    rc-field-form "~2.2.0"
-    rc-image "~7.8.0"
+    rc-field-form "~2.2.1"
+    rc-image "~7.9.0"
     rc-input "~1.5.1"
     rc-input-number "~9.1.0"
-    rc-mentions "~2.13.1"
+    rc-mentions "~2.14.0"
     rc-menu "~9.14.0"
     rc-motion "^2.9.1"
     rc-notification "~5.6.0"
@@ -3512,7 +3512,7 @@ copy-text-to-clipboard@^3.2.0:
   resolved "https://registry.yarnpkg.com/copy-text-to-clipboard/-/copy-text-to-clipboard-3.2.0.tgz#0202b2d9bdae30a49a53f898626dcc3b49ad960b"
   integrity sha512-RnJFp1XR/LOBDckxTib5Qjr/PMfkatD0MUCQgdpqS8MdKiNUzBjAQBEN6oUy+jW7LI93BBG3DtMB2KOOKpGs2Q==
 
-copy-to-clipboard@^3.3.1, copy-to-clipboard@^3.3.3:
+copy-to-clipboard@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz#55ac43a1db8ae639a4bd99511c148cdd1b83a1b0"
   integrity sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==
@@ -7196,7 +7196,7 @@ prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -7354,10 +7354,10 @@ rc-collapse@~3.7.3:
     rc-motion "^2.3.4"
     rc-util "^5.27.0"
 
-rc-dialog@~9.4.0:
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/rc-dialog/-/rc-dialog-9.4.0.tgz#194c107d34cb36a56f1db4a49dc73f6d59eeae85"
-  integrity sha512-AScCexaLACvf8KZRqCPz12BJ8olszXOS4lKlkMyzDQHS1m0zj1KZMYgmMCh39ee0Dcv8kyrj8mTqxuLyhH+QuQ==
+rc-dialog@~9.5.2:
+  version "9.5.2"
+  resolved "https://registry.yarnpkg.com/rc-dialog/-/rc-dialog-9.5.2.tgz#4cf7cca23aedb6fd3d9344ea8ffd14daa94ee3a0"
+  integrity sha512-qVUjc8JukG+j/pNaHVSRa2GO2/KbV2thm7yO4hepQ902eGdYK913sGkwg/fh9yhKYV1ql3BKIN2xnud3rEXAPw==
   dependencies:
     "@babel/runtime" "^7.10.1"
     "@rc-component/portal" "^1.0.0-8"
@@ -7386,10 +7386,10 @@ rc-dropdown@~4.2.0:
     classnames "^2.2.6"
     rc-util "^5.17.0"
 
-rc-field-form@~2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/rc-field-form/-/rc-field-form-2.2.0.tgz#1e8d1f1d6514ec2ab7cd7e8e0aa49854416bc009"
-  integrity sha512-Kl7wBXCmFbRi9aPw0yiRTSPH3WQGRnOVGX/UxlEjAz2pGwsaw2MisCJ7GTXukdiybYsw8K7agDD7ZsPGUNcDKg==
+rc-field-form@~2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/rc-field-form/-/rc-field-form-2.2.1.tgz#0a8c76a0103535c229311dac7f91d32ea13cd3bc"
+  integrity sha512-uoNqDoR7A4tn4QTSqoWPAzrR7ZwOK5I+vuZ/qdcHtbKx+ZjEsTg7QXm2wk/jalDiSksAQmATxL0T5LJkRREdIA==
   dependencies:
     "@babel/runtime" "^7.18.0"
     "@rc-component/async-validator" "^5.0.3"
@@ -7410,15 +7410,15 @@ rc-form@^2.4.12:
     react-is "^16.13.1"
     warning "^4.0.3"
 
-rc-image@~7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/rc-image/-/rc-image-7.8.0.tgz#d14c0e2410649fbacf71f459cc9006bdcbbaa9ac"
-  integrity sha512-f5lgtAvRaL+HW9to4Lt06419GJtMLCGbp9RA++nJaDEwZvsMNkKa4QtG5+kDYTVKQf6pjaakJOIPB98W/khQFw==
+rc-image@~7.9.0:
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/rc-image/-/rc-image-7.9.0.tgz#2d700a5cf891bb3d0d800b7c38348927ebb9f49b"
+  integrity sha512-l4zqO5E0quuLMCtdKfBgj4Suv8tIS011F5k1zBBlK25iMjjiNHxA0VeTzGFtUZERSA45gvpXDg8/P6qNLjR25g==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@rc-component/portal" "^1.0.2"
     classnames "^2.2.6"
-    rc-dialog "~9.4.0"
+    rc-dialog "~9.5.2"
     rc-motion "^2.6.2"
     rc-util "^5.34.1"
 
@@ -7442,10 +7442,10 @@ rc-input@~1.5.0, rc-input@~1.5.1:
     classnames "^2.2.1"
     rc-util "^5.18.1"
 
-rc-mentions@~2.13.1:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/rc-mentions/-/rc-mentions-2.13.1.tgz#14586ffa4a1ddd4079564f38abf2b4351671feca"
-  integrity sha512-DSyUDq/PPCleUX1eghIn371lTSRQsIuCs1N7xR9nZcHP9R1NkE7JjpWUP8Gy4EGVPu0JN0qIcokxYJaoGPnofg==
+rc-mentions@~2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/rc-mentions/-/rc-mentions-2.14.0.tgz#7cad133de2e95b7478c0ebb5d2a4315dbe9bda29"
+  integrity sha512-qKR59FMuF8PK4ZqsbWX3UuA5P1M/snzyqV6Yt3y1DCFbCEdqUGIBgQp6vEfLCO6Z0RoRFlzXtCeSlBTcDDpg1A==
   dependencies:
     "@babel/runtime" "^7.22.5"
     "@rc-component/trigger" "^2.0.0"
@@ -7722,14 +7722,6 @@ react-beautiful-dnd@^13.1.1:
     react-redux "^7.2.0"
     redux "^4.0.4"
     use-memo-one "^1.1.1"
-
-react-copy-to-clipboard@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz#09aae5ec4c62750ccb2e6421a58725eabc41255c"
-  integrity sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==
-  dependencies:
-    copy-to-clipboard "^3.3.1"
-    prop-types "^15.8.1"
 
 react-dev-utils@^12.0.1:
   version "12.0.1"
