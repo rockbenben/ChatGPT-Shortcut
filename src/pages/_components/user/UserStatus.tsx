@@ -152,13 +152,13 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         {!hideLinks.userCenter && (
           <Link to="/user" className="button button--secondary" style={{ marginRight: "10px" }}>
             <UserOutlined />
-            <Translate id="link.user">个人中心</Translate>
+            <Translate id="link.myaccount">账号设置</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
           <Link to="/user/favorite" className="button button--secondary hide-on-small-screen-500" style={{ marginRight: "10px" }}>
             <HeartOutlined style={{ marginRight: "1px" }} />
-            <Translate id="link.myfavorite">我的收藏</Translate>
+            <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
         <button className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>

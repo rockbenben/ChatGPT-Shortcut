@@ -243,7 +243,7 @@ const UserProfile = () => {
             <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
           </Link>
           <Link to="/user/favorite">
-            <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
+            <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
           </Link>
         </Space>
         <Card style={{ marginTop: 20 }}>

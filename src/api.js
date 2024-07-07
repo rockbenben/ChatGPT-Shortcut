@@ -131,7 +131,7 @@ export function getPrompts(type, ids, lang) {
             expirationTime = 100 * 24 * 60 * 60 * 1000;
             break;
           case "commus":
-            expirationTime = 10 * 24 * 60 * 60 * 1000;
+            expirationTime = 30 * 24 * 60 * 60 * 1000;
             break;
           case "userprompts":
             expirationTime = 12 * 60 * 60 * 1000;
