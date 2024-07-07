@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "পাসওয়ার্ডহীন লগইন"
+  },
+  "link.myaccount": {
+    "message": "অ্যাকাউন্ট সেটিংস"
   }
 }

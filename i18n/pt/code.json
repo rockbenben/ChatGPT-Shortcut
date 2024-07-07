@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "Início de sessão sem palavra-passe"
+  },
+  "link.myaccount": {
+    "message": "Configurações da conta"
   }
 }

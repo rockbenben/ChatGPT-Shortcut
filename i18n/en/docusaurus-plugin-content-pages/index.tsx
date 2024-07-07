@@ -7,10 +7,12 @@ import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import Translate, { translate } from "@docusaurus/Translate";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined, SearchOutlined } from "@ant-design/icons";
+import copy from "copy-text-to-clipboard";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, SearchOutlined, CopyOutlined } from "@ant-design/icons";
 import { ConfigProvider, Input, Button } from "antd";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
+import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle, { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
@@ -69,6 +71,8 @@ function useFilteredUsers() {
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
   const [filteredUsers, setFilteredUsers] = useState([]);
+  const [filteredCommus, setFilteredCommus] = useState<any[]>([]);
+  const { userAuth } = useContext(AuthContext);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -85,11 +89,32 @@ function useFilteredUsers() {
     async function fetchAndFilterUsers() {
       if (selectedTags.length === 0 && !searchName) {
         setFilteredUsers([]);
+        setFilteredCommus([]);
         return;
       }
       try {
         const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
         setFilteredUsers(data);
+        if (userAuth) {
+          Promise.all([
+            userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
+            userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
+          ])
+            .then(([userprompts, commus]) => {
+              return [...userprompts, ...commus].filter(
+                (prompt) =>
+                  prompt.title.includes(searchName) ||
+                  prompt.description.includes(searchName) ||
+                  (prompt.remark && prompt.remark.includes(searchName)) ||
+                  (prompt.notes && prompt.notes.includes(searchName))
+              );
+            })
+            .then((filteredCommus) => {
+              console.log("过滤后", filteredCommus);
+              setFilteredCommus(filteredCommus);
+              // 你可以在这里将 filteredPrompts 传递给你的组件
+            });
+        }
       } catch (error) {
         console.error("Error fetching and filtering users:", error);
       }
@@ -100,7 +125,7 @@ function useFilteredUsers() {
 
   const isFiltered = selectedTags.length > 0 || searchName !== null;
 
-  return { filteredUsers, isFiltered };
+  return { filteredCommus, filteredUsers, isFiltered };
 }
 
 function ShowcaseHeader() {
@@ -110,7 +135,7 @@ function ShowcaseHeader() {
         <Heading as="h1">AI Short</Heading>
         <p>{SLOGAN}</p>
       </div>
-      <UserStatus hideLinks={{ userCenter: false, myFavorite: false }} />
+      <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
     </section>
   );
 }
@@ -168,7 +193,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
               <ShowcaseTooltip
                 text={translate({
                   id: "myprompt.tooltip",
-                  message: "我添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
+                  message: "添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
                 })}
                 anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
@@ -346,13 +371,24 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
 
+  const [copiedIndex, setCopiedIndex] = useState(null);
+  const handleCopyClick = (index) => {
+    const node = filteredCommus.find((commu) => commu.id === index);
+    if (node) {
+      copy(node.description);
+      setCopiedIndex(index);
+      setTimeout(() => {
+        setCopiedIndex(null);
+      }, 2000);
+    }
+  };
+
   const fetchData = useCallback(async () => {
     if (!userAuth && !showAllOtherUsers) {
       return;
     }
 
     try {
-      const favorIds = userAuth?.data?.favorites?.loves || [];
       const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
       const defaultIds = [185, 2, 209, 109, 197, 20, 199, 4, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234];
       const allIds = [
@@ -364,6 +400,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
         146, 43, 118, 26, 53, 169, 154, 29, 36, 244, 183, 31, 260, 52, 111, 59, 166, 81, 247, 263, 79, 61, 119, 68, 102, 124, 27, 30, 129, 148, 131, 229, 114, 84, 223, 107, 55, 65, 69, 161, 44, 136,
         231, 116, 115, 60, 128, 164, 249, 149, 121, 165, 108, 117, 276, 32, 83, 113, 110, 174, 268, 33, 105, 227, 34, 104, 156, 225, 127, 278,
       ];
+      const favorIds = userAuth?.data?.favorites?.loves || defaultFavorIds;
 
       const idsToShow = !userAuth
         ? allIds.filter((id) => !defaultFavorIds.includes(id))
@@ -390,9 +427,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     return [favoritePrompts, otherPrompts];
   }, [favoritePrompts, otherPrompts]);
 
-  const { filteredUsers, isFiltered } = useFilteredUsers();
+  const { filteredCommus, filteredUsers, isFiltered } = useFilteredUsers();
 
-  if (isFiltered && filteredUsers.length === 0) {
+  if (isFiltered && filteredUsers.length === 0 && filteredCommus.length === 0) {
     return (
       <section className="margin-top--sm margin-bottom--sm">
         <div className="container padding-vert--md text--center">
@@ -453,6 +490,47 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             <SearchBar />
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
+            {filteredCommus.map((user) => (
+              <li className="card shadow--md">
+                <div
+                  className={clsx("card__body")}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    height: "100%",
+                  }}>
+                  <div>
+                    <div className={clsx(cardStyles.showcaseCardHeader)}>
+                      <div className={`${cardStyles.showcaseCardTitle} ${cardStyles.shortEllipsis}`}>
+                        <Link className={cardStyles.showcaseCardLink}>{user.title} </Link>
+                        <span
+                          style={{
+                            fontSize: "12px",
+                            color: "#999",
+                            marginLeft: "10px",
+                          }}>
+                          @{user.owner}
+                        </span>
+                      </div>
+                      <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(user.id)}>
+                        {copiedIndex === user.id ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                      </Button>
+                    </div>
+                    <p className={cardStyles.showcaseCardBody}>
+                      {user.remark && (
+                        <>
+                          👉 {user.remark}
+                          <br />
+                        </>
+                      )}
+                      {user.description}
+                    </p>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}></div>
+                </div>
+              </li>
+            ))}
             {filteredUsers.map((user) => (
               <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}

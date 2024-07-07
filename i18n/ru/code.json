@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "Вход в систему без пароля"
+  },
+  "link.myaccount": {
+    "message": "Настройки аккаунта"
   }
 }

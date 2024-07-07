@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "تسجيل الدخول بدون كلمة مرور"
+  },
+  "link.myaccount": {
+    "message": "إعدادات الحساب"
   }
 }

@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "Passwordless Login"
+  },
+  "link.myaccount": {
+    "message": "Account Settings"
   }
 }

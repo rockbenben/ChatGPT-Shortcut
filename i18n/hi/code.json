@@ -815,5 +815,8 @@
   },
   "tabs.passwordlessLogin": {
     "message": "पासवर्ड रहित लॉगिन"
+  },
+  "link.myaccount": {
+    "message": "खाता सेटिंग्स"
   }
 }
