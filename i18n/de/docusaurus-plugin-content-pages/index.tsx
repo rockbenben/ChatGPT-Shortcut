@@ -164,7 +164,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
   return (
-    <section className="container">
+    <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <div className={styles.filterCheckbox}>
         <div>
           <Heading as="h2">
