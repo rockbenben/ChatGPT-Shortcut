@@ -78,10 +78,11 @@ const config = {
     ({
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
+      // autocorrect: false,
       metadata: [
         {
           name: "keywords",
-          content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts,ai short,提示词",
+          content: "prompt,aishort,ChatGPT Shortcut,提示词社区,ai快捷指令,ChatGPT SC,ChatGPT,AI prompts,ai short,ai prompt,提示词,ai提示词",
         },
       ],
       navbar: {
