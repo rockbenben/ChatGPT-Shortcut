@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 68,
-  "weight": 319
+  "weight": 335
 };
 
 function PromptDetail() {
