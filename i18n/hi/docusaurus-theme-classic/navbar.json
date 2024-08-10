@@ -47,10 +47,6 @@
     "message": "💬 हमसे WeChat पर चैट करें",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
-  "item.label.📧 发送邮件": {
-    "message": "📧 ईमेल भेजें",
-    "description": "Navbar item with label 📧 发送邮件"
-  },
   "item.label.📺 加入 Discord": {
     "message": "📺 हमारे डिस्कोर्ड में शामिल हों",
     "description": "Navbar item with label 📺 加入 Discord"

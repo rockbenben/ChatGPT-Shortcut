@@ -47,10 +47,6 @@
     "message": "Chat us an WeChat",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
-  "item.label.📧 发送邮件": {
-    "message": "📧 Envoyer un courriel",
-    "description": "Navbar item with label 📧 发送邮件"
-  },
   "item.label.📺 加入 Discord": {
     "message": "📺 Rejoindre notre Discord",
     "description": "Navbar item with label 📺 加入 Discord"
