@@ -1,39 +1,29 @@
 # 开始上手
 
-AiShort 页面为用户提供了一个直观的界面来浏览和筛选提示词，以便找到最适合自己需求的内容。页面主要由标签区、搜索区和提示词展示区三部分组成，旨在为用户提供一个高效、直观的搜索体验。
+使用 AiShort，只需将选中的提示词复制到任意 AI 对话模型中，即可获取指定方向的输出。以下是具体步骤：
 
-![](https://img.newzone.top/2024-03-07-04-56-01.png?imageMogr2/format/webp)
+1. 搜索或选择你想要的提示词，然后点击提示词上的复制按钮。
+2. 将提示词复制到 ChatGPT、Gemini 或任意 AI 对话模型中。
+3. 根据对话提示，输入你的要求。
 
-## 🏷︎ 标签筛选
+![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
 
-标签区便于用户根据提示词的领域和功能进行筛选，满足不同的场景和需求。通过右上方的「标签筛选规则切换」按钮，用户可以实现更精细的多标签筛选。默认的筛选规则为 OR，即展示选中任一标签下的提示词。切换至 AND 规则时，则仅展示同时具备所有选中标签的提示词。
+## 常用 AI 模型
 
-![](https://img.newzone.top/2023-02-28-10-31-01.png?imageMogr2/format/webp)
+- ChatGPT：https://chatgpt.com
+- Gemini: https://gemini.google.com/app
+- Claude: https://claude.ai/chats
+- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
+- Kimi：https://kimi.moonshot.cn/
+- 豆包：https://www.doubao.com/chat/
+- 文心一言：https://yiyan.baidu.com
+- 智谱清言：https://chatglm.cn/detail
+- 腾讯元宝：https://yuanbao.tencent.com/chat
+- 讯飞星火：https://xinghuo.xfyun.cn/
+- 百川智能：https://ying.baichuan-ai.com/chat
 
-## 🔍 关键词搜索
+## 第三方 API 集成
 
-关键词搜索范围包括提示词的标题、简介、内容和你的母语翻译。输入关键词后，提示词展示区将立即展示筛选出的内容。如果已选中标签，则关键词搜索仅限于标签筛选范围内。对于 PC 端，搜索框内容变化后，新的搜索结果会在 800 毫秒后显示。移动端则为即时刷新。
-
-关键词搜索功能支持用户对提示词的标题、简介、内容及其母语翻译进行搜索。输入关键词后，展示区会即时更新以显示符合条件的提示词。如果已有标签选中，搜索范围则限定在这些标签下。在 PC 端，搜索结果会在输入停止后 800 毫秒刷新；而移动端则支持即时刷新。
-
-![](https://img.newzone.top/2023-02-28-10-31-10.png?imageMogr2/format/webp)
-
-## 🔬 展示区复制
-
-在经过标签筛选和关键词搜索后，点击提示词卡片右上方的「复制」按钮，即可获取所需的提示词。将这些提示词粘贴到 ChatGPT 或相应的模型界面中，即可针对特定领域获取回复。若提示词的母语备注未能清晰说明，用户可通过点击卡片右下方的链接查看原始网页以获得更多信息。
-
-![](https://img.newzone.top/2023-06-11-17-10-37.png?imageMogr2/format/webp)
-
-## 💬 语言切换
-
-默认情况下，提示词内容以英文展示。对于使用非英文界面的用户，可以通过点击提示词内容来切换至母语释义，再次点击则可切回英文。请注意，语言切换功能仅对提示词文本区域的点击有效。
-
-![中英文切换](https://img.newzone.top/chatgptshortcut_encn.gif)
-
-若希望提示词默认以您的母语显示，可点击标签区右上方的 `切换 Prompt 语言` 按钮进行设置。需要注意，即使在母语界面，复制功能依然只针对英文提示词。
-
-## 🔥 热门排序
-
-页面将根据提示词的使用次数进行排序，以帮助用户快速发现当前最受欢迎的提示词。
-
-提示词的标签排序也会根据其热度值进行调整，而这些热度值会定期更新，以确保反映出社区的最新偏好和趋势。
+- OpenRouter: https://openrouter.ai/chat
+- siliconflow: https://cloud.siliconflow.cn/playground/chat
+- grog: https://groq.com/

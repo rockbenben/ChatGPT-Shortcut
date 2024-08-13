@@ -1,35 +1,31 @@
-# Primeiros Passos
+# Começando a Usar
 
-O AiShort exibe, por padrão, todas as palavras sugeridas. A página está dividida em três seções: área de etiquetas, área de busca e área de exibição das palavras sugeridas.
+Usando o AiShort, você só precisa copiar o prompt selecionado para qualquer modelo de diálogo de IA para obter a saída na direção especificada. Aqui estão as etapas específicas:
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+1. Pesquise ou selecione o prompt desejado e clique no botão copiar no prompt.
 
-## 🏷︎ Filtragem por Etiqueta
+2. Copie o prompt para o ChatGPT, Gemini ou qualquer modelo de diálogo de IA.
 
-A área de etiquetas é dividida com base no domínio e na funcionalidade das palavras sugeridas, permitindo a seleção com base em diferentes cenários e necessidades. Pode ser usada em conjunto com o botão "Alternar Regra de Filtragem por Etiqueta" no canto superior direito da área de etiquetas para realizar filtragem por várias etiquetas. O estado padrão é OR, que seleciona todas as palavras sugeridas sob a etiqueta escolhida. Ao alternar para AND, serão filtradas as palavras sugeridas que possuem múltiplas etiquetas selecionadas.
+3. Insira seus requisitos de acordo com o prompt do diálogo.
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
 
-## 🔍 Busca por Palavras-chave
+## Common AI models
 
-O escopo da busca por palavras-chave inclui os títulos, resumos, conteúdos e traduções em seu idioma nativo das palavras sugeridas. Após inserir uma palavra-chave, a área de exibição das palavras sugeridas mostrará imediatamente o conteúdo filtrado. Se etiquetas tiverem sido selecionadas, a busca por palavras-chave será limitada ao escopo das etiquetas selecionadas. No lado do PC, após a alteração do conteúdo na caixa de busca, os novos resultados da busca serão exibidos após 800 milissegundos. Em dispositivos móveis, a atualização é instantânea.
+- ChatGPT：https://chatgpt.com
+- Gemini: https://gemini.google.com/app
+- Claude: https://claude.ai/chats
+- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
+- Kimi：https://kimi.moonshot.cn/
+- 豆包：https://www.doubao.com/chat/
+- 文心一言：https://yiyan.baidu.com
+- 智谱清言：https://chatglm.cn/detail
+- 腾讯元宝：https://yuanbao.tencent.com/chat
+- 讯飞星火：https://xinghuo.xfyun.cn/
+- 百川智能：https://ying.baichuan-ai.com/chat
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+## Third-party API integration
 
-## 🔬 Cópia da Sugestão
-
-Por meio da filtragem por etiquetas e busca por palavras-chave, ao clicar no botão "Copiar" no canto superior direito do cartão, você pode obter as palavras sugeridas. Depois de colá-las no ChatGPT, você pode se referir às sugestões e ajustar o texto de acordo com suas necessidades específicas para obter uma resposta no domínio desejado. Se a explicação em seu idioma nativo nas palavras sugeridas não estiver clara, você pode clicar no link no canto inferior direito das palavras sugeridas para visualizar a página da web de origem.
-
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
-
-## 💬 Alternância de Idioma
-
-Por padrão, as palavras sugeridas são exibidas em inglês. Se você estiver usando uma página em outro idioma e quiser visualizar as interpretações em seu idioma nativo, clique no conteúdo das palavras sugeridas para alternar para um idioma não inglês e clique novamente para voltar para o inglês. Observe que a alternância de idioma só funciona ao clicar no texto da sugestão e clicar na área em branco é ineficaz.
-
-![Alternando entre chinês e inglês](http://img.newzone.top/chatgptshortcut_encn.gif)
-
-Se você deseja que as palavras sugeridas sejam exibidas em seu idioma nativo por padrão, clique no botão "Alternar Idioma da Sugestão" no canto superior direito da área de etiquetas. No entanto, observe que mesmo ao alternar para traduções em seu idioma nativo, o botão de cópia copiará apenas as palavras sugeridas em inglês.
-
-## 🔥 Ordenação Popular
-
-A página agora exibe a frequência de uso das sugestões, e as sugestões com maior frequência de uso serão marcadas como "favoritas". Além disso, a ordenação das etiquetas das sugestões será baseada principalmente no valor de popularidade. O valor de popularidade será atualizado periodicamente."
+- OpenRouter: https://openrouter.ai/chat
+- siliconflow: https://cloud.siliconflow.cn/playground/chat
+- grog: https://groq.com/

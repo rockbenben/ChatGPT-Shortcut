@@ -1,37 +1,31 @@
-# 開始にあたって
+# はじめに
 
-AiShort は、提案された単語をすべて表示することを初期設定としています。ページは、タグエリア、検索エリア、そして提案された単語表示エリアの三つの部分に分割されています。
+AiShort を使用すると、選択したプロンプトを任意の AI ダイアログ モデルにコピーするだけで、指定した方向の出力を取得できます。具体的な手順は次のとおりです。
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+1. 必要なプロンプトを検索または選択し、プロンプトのコピー ボタンをクリックします。
 
-## 🏷︎ タグによるフィルタリング
+2. プロンプトを ChatGPT、Gemini、または任意の AI ダイアログ モデルにコピーします。
 
-タグエリアは、提案された単語の領域と機能性に基づいて分割され、異なるシナリオとニーズに基づいて選択を行うことができます。これは、タグエリアの右上隅にある"タグフィルタリングルール切替"ボタンと連動して使用することができ、複数のタグによるフィルタリングを行います。初期状態は OR で、選択されたタグ下のすべての提案単語を選択します。AND に切り替えると、複数の選択されたタグを持つ提案単語がフィルタリングされます。
+3. ダイアログ プロンプトに従って要件を入力します。
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
 
-## 🔍 キーワードによる検索
+## Common AI models
 
-キーワード検索範囲は、提案された単語のタイトル、概要、内容、そして母国語による翻訳を含みます。キーワードを入力した後、提案された単語表示エリアは即座にフィルタリングされた内容を表示します。タグが選択されている場合、キーワード検索は選択されたタグの範囲に限定されます。PC 側では、検索ボックスの内容が変わった後、新しい検索結果は 800 ミリ秒後に表示されます。モバイルデバイスでは、即時に更新されます。
+- ChatGPT：https://chatgpt.com
+- Gemini: https://gemini.google.com/app
+- Claude: https://claude.ai/chats
+- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
+- Kimi：https://kimi.moonshot.cn/
+- 豆包：https://www.doubao.com/chat/
+- 文心一言：https://yiyan.baidu.com
+- 智谱清言：https://chatglm.cn/detail
+- 腾讯元宝：https://yuanbao.tencent.com/chat
+- 讯飞星火：https://xinghuo.xfyun.cn/
+- 百川智能：https://ying.baichuan-ai.com/chat
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+## Third-party API integration
 
-## 🔬 プロンプトのコピー
-
-タグフィルタリングとキーワード検索を通じて、カードの右上隅にある"コピー"ボタンをクリックすることで、提案された単語を取得することができます。それらを ChatGPT に貼り付けた後、特定のニーズに応じてテキストを調整することで、希望する領域での回答を得ること
-
-ができます。提案された単語の母国語での説明が明確でない場合、提案された単語の右下隅にあるリンクをクリックしてソースのウェブページを閲覧することができます。
-
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
-
-## 💬 言語の切り替え
-
-デフォルトでは、提案された単語は英語で表示されます。英語以外のページを使用していて、母国語での解釈を見たい場合は、提案された単語の内容をクリックして英語以外の言語に切り替え、再度クリックして英語に戻すことができます。言語の切り替えはプロンプトのテキストをクリックしたときのみ有効であり、空白エリアをクリックしても無効です。
-
-![Switching between Chinese and English](http://img.newzone.top/chatgptshortcut_encn.gif)
-
-提案された単語をデフォルトで母国語に表示することを希望する場合は、タグエリアの右上隅にある"プロンプト言語切替"ボタンをクリックできます。ただし、母国語に切り替えたとしても、コピーするボタンは英語の提案された単語のみをコピーすることに注意してください。
-
-## 🔥 人気度による並び替え
-
-現在、ページはプロンプトの使用頻度を表示し、使用頻度が高いプロンプトは"お気に入り"としてマークされます。また、プロンプトタグの並べ替えは主に熱度値に基づいて行われます。熱度値は定期的に更新されます。
+- OpenRouter: https://openrouter.ai/chat
+- siliconflow: https://cloud.siliconflow.cn/playground/chat
+- grog: https://groq.com/

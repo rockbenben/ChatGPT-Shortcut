@@ -1,8 +1,6 @@
-# Fonctionnalités de l'utilisateur
+# Favoris et invites de soumission
 
-## Connexion/Inscription
-
-Lors de la connexion, les étiquettes de collection par défaut seront supprimées, permettant aux utilisateurs d'ajouter ou de supprimer librement des prompts favoris, ainsi que d'ajouter des prompts personnels.
+Une fois connecté, vous êtes libre d'ajouter ou de supprimer des invites favorites, ou d'ajouter des invites personnelles.
 
 ![](https://img.newzone.top/2023-06-05-13-51-23.png?imageMogr2/format/webp/thumbnail/500x)
 
@@ -12,9 +10,15 @@ Lors de la connexion, les étiquettes de collection par défaut seront supprimé
 
 Après vous être connecté, un bouton "Favori" sera affiché à côté de chaque prompt. Lorsque vous ajoutez ou supprimez un prompt de vos favoris, l'état de favori du prompt sera mis à jour en temps réel.
 
+## Invite favorite
+
+### Ajouter aux favoris
+
+Une fois connecté, les libellés de collection par défaut seront supprimés et le bouton « Favoris » s'affichera à côté de l'invite. Après cela, lorsque vous ajouterez ou supprimerez un favori, un indice du statut du favori s'affichera en temps réel.
+
 ![](https://img.newzone.top/2023-06-05-13-56-01.png?imageMogr2/format/webp/thumbnail/500x)
 
-## Supprimer des favoris
+### Supprimer les favoris
 
 Cliquez sur l'icône en forme de cœur située à droite d'un prompt favori pour le supprimer de vos favoris.
 
