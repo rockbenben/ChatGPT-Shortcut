@@ -1,14 +1,18 @@
 {
   "version.label": {
-    "message": "次のページ",
+    "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.docs.category.Guides": {
-    "message": "ガイド",
-    "description": "The label for category Guides in sidebar docs"
-  },
   "sidebar.docs.category.Policies": {
-    "message": "ポリシー",
+    "message": "Policies",
     "description": "The label for category Policies in sidebar docs"
+  },
+  "sidebar.docs.category.使用指南": {
+    "message": "Guides",
+    "description": "The label for category 使用指南 in sidebar docs"
+  },
+  "sidebar.docs.category.浏览器插件": {
+    "message": "Browser Extension",
+    "description": "The label for category 浏览器插件 in sidebar docs"
   }
 }

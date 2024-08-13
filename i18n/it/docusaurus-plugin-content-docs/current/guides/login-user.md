@@ -1,20 +1,20 @@
-# Funzionalità dell'Utente
+# Favoriti e suggerimenti per l'invio di contributi
 
-## Login/Registrazione
-
-Dopo aver effettuato l'accesso, le etichette di raccolta predefinite verranno rimosse, consentendo agli utenti di aggiungere o rimuovere liberamente le sollecitazioni preferite, nonché aggiungere sollecitazioni personali.
+Dopo aver effettuato il login, si è liberi di aggiungere o rimuovere i suggerimenti preferiti o di aggiungere suggerimenti personali.
 
 ![](https://img.newzone.top/2023-06-05-13-51-23.png?imageMogr2/format/webp/thumbnail/500x)
 
 ![](https://img.newzone.top/2023-06-05-13-53-20.png?imageMogr2/format/webp)
 
-## Sollecitazioni Preferite
+## Prompt preferito
 
-Dopo aver effettuato l'accesso, accanto a ogni sollecitazione verrà visualizzato un pulsante "Preferito". Quando aggiungi o rimuovi una sollecitazione dai preferiti, lo stato di preferenza della sollecitazione verrà aggiornato in tempo reale.
+### Aggiungi preferiti
+
+Dopo l'accesso, le etichette di raccolta predefinite saranno rimosse e il pulsante "Preferiti" sarà visualizzato accanto al prompt. In seguito, quando si favorisce o si rimuove un preferito, verrà visualizzato in tempo reale un suggerimento sullo stato del preferito.
 
 ![](https://img.newzone.top/2023-06-05-13-56-01.png?imageMogr2/format/webp/thumbnail/500x)
 
-## Rimuovi dai Preferiti
+### Rimuovere i preferiti
 
 Clicca sull'icona a forma di cuore situata sul lato destro di una sollecitazione preferita per rimuoverla dai tuoi preferiti.
 

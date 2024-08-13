@@ -19,13 +19,26 @@ const sidebars = {
       id: "introduction",
     },
     {
+      type: "doc",
+      id: "guides/getting-started",
+    },
+    {
       type: "category",
-      label: "Guides",
+      label: "使用指南",
       link: {
         type: "generated-index",
       },
       collapsed: false,
-      items: ["guides/getting-started", "guides/login-user", "guides/community", "guides/extension", "guides/faq"],
+      items: ["guides/interface", "guides/login-user", "guides/community", "guides/faq"],
+    },
+    {
+      type: "category",
+      label: "浏览器插件",
+      link: {
+        type: "generated-index",
+      },
+      collapsed: false,
+      items: ["extension/README", "extension/usage", "extension/manual-chrome-extension", "extension/manual-chrome-extension-zip", "extension/firefox-extension-setting", "extension/faq"],
     },
     {
       type: "doc",

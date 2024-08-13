@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# AiShort 紹介
+# 導入
 
 AiShort は、簡潔で使いやすい AI 指示のリストを提供します。プロンプトの理解がなくても、フィルタリングと検索を通じて様々なシナリオに適したプロンプトを簡単に見つけることができ、生産性を向上させます。
 
@@ -27,13 +27,3 @@ AiShort のプロンプトの源は、インターネットの選択、コミュ
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord でチャットする" />
 </a>
-
-## ブラウザエクステンション
-
-AiShort（ChatGPT Shortcut）のブラウザエクステンションは、Chrome と Edge をサポートしており、Web 版と同じ機能を持ち、定期的に更新されます。エクステンションは ChatGPT のページが読み込まれると自動的にトリガーされるか、または`Alt+Shift+S`ホットキーを押すことでエクステンションウィンドウをアクティブにすることができます。
-
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>

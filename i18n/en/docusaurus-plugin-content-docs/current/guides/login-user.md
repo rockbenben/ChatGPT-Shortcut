@@ -1,8 +1,6 @@
-# User Functionality
+# Favorites and Submission Prompts
 
-## Login/Registration
-
-Upon logging in, the default collection labels will be removed, allowing users to freely add or remove favorite prompts, as well as add personal prompts.
+After logging in, you are free to add or remove favorite prompts, or add personal prompts.
 
 ![](https://img.newzone.top/2023-06-05-13-51-23.png?imageMogr2/format/webp/thumbnail/500x)
 
@@ -10,11 +8,13 @@ Upon logging in, the default collection labels will be removed, allowing users t
 
 ## Favorite Prompt
 
-After logging in, a "Favorite" button will be displayed next to each prompt. When you favorite or unfavorite a prompt, the prompt's favorite status will be updated in real-time.
+### Add Favorites
+
+After logging in, the default collection labels will be removed and the "Favorites" button will be displayed next to the prompt. After that, when you favorite or remove a favorite, a hint of the favorite status will be displayed in real time.
 
 ![](https://img.newzone.top/2023-06-05-13-56-01.png?imageMogr2/format/webp/thumbnail/500x)
 
-## Remove from Favorites
+### Remove Favorites
 
 Click on the heart icon located on the right side of a favorite prompt to remove it from your favorites.
 

@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# एआई लघु परिचय
+# परिचय देना
 
 AiShort एक संक्षिप्त और आसानी से उपयोग करने वाली AI निर्देशिका प्रदान करता है। प्रॉम्प्ट्स की समझ ना होने पर भी, आप फ़िल्टरिंग और खोज के माध्यम से विभिन्न परिस्थितियों के लिए उपयुक्त प्रॉम्प्ट्स को आसानी से खोज सकते हैं, इससे आपकी प्रगति में सुधार होता है।
 
@@ -27,13 +27,3 @@ AiShort प्रॉम्प्ट्स का स्रोत इंटरन
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-
-## ब्राउज़र एक्सटेंशन
-
-AiShort (ChatGPT Shortcut) ब्राउज़र एक्सटेंशन Chrome और Edge का समर्थन करता है और वेब संस्करण के साथ सांगत फ़ंक्शनालिटी और नियमित रूप से अपडेट होता है। एक्सटेंशन को ChatGPT पेज लोड होते समय स्वचालित रूप से ट्रिगर किया जा सकता है, या आप `Alt+Shift+S` हॉटकी दबाकर एक्सटेंशन विंडो को सक्रिय कर सकते हैं।
-
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>

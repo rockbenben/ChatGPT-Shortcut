@@ -217,10 +217,10 @@
     rc-util "^5.35.0"
     stylis "^4.0.13"
 
-"@ant-design/fast-color@^2.0.1":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@ant-design/fast-color/-/fast-color-2.0.4.tgz#bc00c0e7fe7f2d99646ff8b1445c18ff6cec2b67"
-  integrity sha512-z/9LMF7SQcPpTdMkcWRmTwvlwCDQoQHexL4GFz0UDlTrzUG/Y5FjnkjuR4+Y1Kis0Mf34tTlZmSx07QOm4eWxQ==
+"@ant-design/fast-color@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@ant-design/fast-color/-/fast-color-2.0.6.tgz#ab4d4455c1542c9017d367c2fa8ca3e4215d0ba2"
+  integrity sha512-y2217gk4NqL35giHl72o6Zzqji9O7vHh9YmhUVkPtAOpoTCH4uWxo/pr4VE8t0+ChEPs0qo4eJRC5Q1eXWo3vA==
   dependencies:
     "@babel/runtime" "^7.24.7"
 
@@ -1952,12 +1952,12 @@
   dependencies:
     "@babel/runtime" "^7.24.4"
 
-"@rc-component/color-picker@~2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@rc-component/color-picker/-/color-picker-2.0.0.tgz#3bac931f53757bcc9ed3c57cfc8264c25e6e684a"
-  integrity sha512-52z3XqUwUr0+Br3B8RjN2GfuR1Pk3MZPAVd34WptWFEOyTz7OQmmn8nqgXUBOYwZem8jXp6G3iv+6Dm1+1epJA==
+"@rc-component/color-picker@~2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@rc-component/color-picker/-/color-picker-2.0.1.tgz#6b9b96152466a9d4475cbe72b40b594bfda164be"
+  integrity sha512-WcZYwAThV/b2GISQ8F+7650r5ZZJ043E57aVBFkQ+kSY4C6wdofXgB0hBx+GPGpIU0Z81eETNoDUJMr7oy/P8Q==
   dependencies:
-    "@ant-design/fast-color" "^2.0.1"
+    "@ant-design/fast-color" "^2.0.6"
     "@babel/runtime" "^7.23.6"
     classnames "^2.2.6"
     rc-util "^5.38.1"
@@ -2027,10 +2027,10 @@
     rc-resize-observer "^1.3.1"
     rc-util "^5.38.0"
 
-"@rc-component/trigger@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@rc-component/trigger/-/trigger-2.2.0.tgz#503a48b0895a2cfddee0a5b7b11492c3df2a493d"
-  integrity sha512-QarBCji02YE9aRFhZgRZmOpXBj0IZutRippsVBv85sxvG4FGk/vRxwAlkn3MS9zK5mwbETd86mAVg2tKqTkdJA==
+"@rc-component/trigger@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@rc-component/trigger/-/trigger-2.2.1.tgz#e6c5c1d9b36550104e23fe5c4e347170c77fb611"
+  integrity sha512-fuU11J8pOt6+U/tU6/CAv8wjCwGaNeRk9f5k8HQth7JBbJ6MMH62WhGycVW75VnXfBZgL/7kO+wbiO2Xc9U9sQ==
   dependencies:
     "@babel/runtime" "^7.23.2"
     "@rc-component/portal" "^1.1.0"
@@ -2835,10 +2835,10 @@ ansi-styles@^6.1.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-antd@^5.20.0:
-  version "5.20.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.20.0.tgz#32f4059f77ba3b5af6e5d21b26892bdccb8720f3"
-  integrity sha512-wWCFzbry3hov7k8gqhPR+FzD6EkWlhBbGD9mYOSIDoYRGMRqueTh2+2jfU1voHucmwcxDwzU7iwZDU2+PCXZdA==
+antd@^5.20.1:
+  version "5.20.1"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.20.1.tgz#0678737bb8aa4de54f41ad6913e4ea535a8104c2"
+  integrity sha512-YjVCYAfBjrTyNKsg+heAOR0Gm4qJNJoBZQcV1h1BX/ufwoLx0PC5RGs75g6gQFy/1nv8OrJH7DXUGdtwPMB3Vg==
   dependencies:
     "@ant-design/colors" "^7.1.0"
     "@ant-design/cssinjs" "^1.21.0"
@@ -2847,11 +2847,11 @@ antd@^5.20.0:
     "@ant-design/react-slick" "~1.1.2"
     "@babel/runtime" "^7.24.8"
     "@ctrl/tinycolor" "^3.6.1"
-    "@rc-component/color-picker" "~2.0.0"
+    "@rc-component/color-picker" "~2.0.1"
     "@rc-component/mutate-observer" "^1.1.0"
     "@rc-component/qrcode" "~1.0.0"
     "@rc-component/tour" "~1.15.0"
-    "@rc-component/trigger" "^2.2.0"
+    "@rc-component/trigger" "^2.2.1"
     classnames "^2.5.1"
     copy-to-clipboard "^3.3.3"
     dayjs "^1.11.11"
@@ -2861,22 +2861,22 @@ antd@^5.20.0:
     rc-dialog "~9.5.2"
     rc-drawer "~7.2.0"
     rc-dropdown "~4.2.0"
-    rc-field-form "~2.2.1"
+    rc-field-form "~2.3.0"
     rc-image "~7.9.0"
-    rc-input "~1.6.2"
+    rc-input "~1.6.3"
     rc-input-number "~9.2.0"
     rc-mentions "~2.15.0"
     rc-menu "~9.14.1"
     rc-motion "^2.9.2"
     rc-notification "~5.6.0"
     rc-pagination "~4.2.0"
-    rc-picker "~4.6.11"
+    rc-picker "~4.6.12"
     rc-progress "~4.0.0"
     rc-rate "~2.13.0"
     rc-resize-observer "^1.4.0"
     rc-segmented "~2.3.0"
     rc-select "~14.15.1"
-    rc-slider "~11.1.3"
+    rc-slider "~11.1.5"
     rc-steps "~6.0.1"
     rc-switch "~4.1.0"
     rc-table "~7.45.7"
@@ -7427,10 +7427,10 @@ rc-dropdown@~4.2.0:
     classnames "^2.2.6"
     rc-util "^5.17.0"
 
-rc-field-form@~2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/rc-field-form/-/rc-field-form-2.2.1.tgz#0a8c76a0103535c229311dac7f91d32ea13cd3bc"
-  integrity sha512-uoNqDoR7A4tn4QTSqoWPAzrR7ZwOK5I+vuZ/qdcHtbKx+ZjEsTg7QXm2wk/jalDiSksAQmATxL0T5LJkRREdIA==
+rc-field-form@~2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/rc-field-form/-/rc-field-form-2.3.0.tgz#8669c521e37d5856efc005fc92fc09fccfe4f574"
+  integrity sha512-QyiYrE3uweGGi21MJpxHFmDW+Tb1yt5hitM1k0EbWc5hKDiSf5imOBc6NLLHrYk+sdelrw2Ju/fD4uRQdhSqNg==
   dependencies:
     "@babel/runtime" "^7.18.0"
     "@rc-component/async-validator" "^5.0.3"
@@ -7474,10 +7474,19 @@ rc-input-number@~9.2.0:
     rc-input "~1.6.0"
     rc-util "^5.40.1"
 
-rc-input@~1.6.0, rc-input@~1.6.2:
+rc-input@~1.6.0:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/rc-input/-/rc-input-1.6.2.tgz#bb356a3b8af421beb7ff26d54ebf054396dfe447"
   integrity sha512-nJqsiIv8K88w8pvbUR5savKqBokdSR0zVGPntLApeOKFp8dp6s92l1CzD60yVActpCZAJwlCfRX5rno+QVYV7g==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    classnames "^2.2.1"
+    rc-util "^5.18.1"
+
+rc-input@~1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/rc-input/-/rc-input-1.6.3.tgz#f1708fc3d5e68f95cb20faeb3eed1df8543cd444"
+  integrity sha512-wI4NzuqBS8vvKr8cljsvnTUqItMfG1QbJoxovCgL+DX4eVUcHIjVwharwevIxyy7H/jbLryh+K7ysnJr23aWIA==
   dependencies:
     "@babel/runtime" "^7.11.1"
     classnames "^2.2.1"
@@ -7567,10 +7576,10 @@ rc-pagination@~4.2.0:
     classnames "^2.3.2"
     rc-util "^5.38.0"
 
-rc-picker@~4.6.11:
-  version "4.6.11"
-  resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-4.6.11.tgz#2016e4e88958d19398f3ce78965262cc94671bc5"
-  integrity sha512-PEVH5MMTUrdvTTxCmPndsXiJL7TFLSu8q0cDdZrhdcjn8en3NbuhOFacWqKTvdnfG53RPPhiBssXCUHYyc3R/Q==
+rc-picker@~4.6.12:
+  version "4.6.12"
+  resolved "https://registry.yarnpkg.com/rc-picker/-/rc-picker-4.6.12.tgz#6bbc11281222734642cc148175f64be099ec255d"
+  integrity sha512-wZhBf/L1JV/yCnhuVol42nBpZqxV+Nam1/tnsYm5ZWq0QvMLtX1lQEWceu3FyBESzOPEBIAZixiCnISHcbHsgw==
   dependencies:
     "@babel/runtime" "^7.24.7"
     "@rc-component/trigger" "^2.0.0"
@@ -7643,7 +7652,7 @@ rc-select@~14.15.1:
     rc-util "^5.16.1"
     rc-virtual-list "^3.5.2"
 
-rc-slider@~11.1.3:
+rc-slider@~11.1.5:
   version "11.1.5"
   resolved "https://registry.yarnpkg.com/rc-slider/-/rc-slider-11.1.5.tgz#9a596464a36d78feb90589fee4eb0bf7cec40584"
   integrity sha512-b77H5PbjMKsvkYXAYIkn50QuFX6ICQmCTibDinI9q+BHx65/TV4TeU25+oadhSRzykxs0/vBWeKBwRyySOeWlg==

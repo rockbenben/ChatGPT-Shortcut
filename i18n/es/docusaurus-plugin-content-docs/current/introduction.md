@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# Introducción a AiShort
+# Introducción
 
 AiShort proporciona una lista concisa y fácil de usar de instrucciones de IA. Incluso sin entender las solicitudes, puedes encontrar fácilmente las solicitudes adecuadas para diversos escenarios a través de filtrado y búsqueda, mejorando así tu productividad.
 
@@ -27,14 +27,3 @@ Te invitamos a unirte a nuestra comunidad en Discord para intercambiar ideas y c
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-
-## Extensión del Navegador
-
-La extensión AiShort (ChatGPT Shortcut) es compatible con Chrome, Edge, Firefox y otros navegadores basados en Chromium. Esta extensión no solo tiene las funciones de la versión web de ChatGPT, sino que también agrega características únicas como una barra lateral y la activación automática de ventanas. La extensión puede iniciarse automáticamente con ChatGPT o páginas personalizadas, y también es compatible con la activación manual a través de la combinación de teclas `Alt+Shift+S`. A continuación, se presentan los canales de descarga:
-
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: Esperando
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-
-Además, también ofrecemos un script de Greasemonkey llamado [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Este script permite a los usuarios personalizar los nombres de dominio donde desean utilizar la barra lateral de AiShort en cualquier sitio web. Sin embargo, ten en cuenta que debido a las restricciones de inyección de contenido en la página de ChatGPT, la función de barra lateral del script se activa mediante una ventana emergente en la página de ChatGPT.

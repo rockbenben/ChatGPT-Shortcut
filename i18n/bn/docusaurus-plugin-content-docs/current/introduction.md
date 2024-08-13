@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# AiShort ভূমিকা
+# ভূমিকা
 
 AiShort একটি সংক্ষিপ্ত এবং সহজব্যবহারযোগ্য AI নির্দেশনার তালিকা প্রদান করে। প্রম্পটগুলির বোধ না থাকলেও, আপনি সহজেই ফিল্টারিং এবং অনুসন্ধানের মাধ্যমে বিভিন্ন পরিস্থিতিগুলির জন্য উপযুক্ত প্রম্পটগুলি খুঁজে পেতে পারেন, যা আপনার কাজের ক্ষমতার উন্নয়ন করে।
 
@@ -27,13 +27,3 @@ AiShort প্রম্পটের উত্স ইন্টারনেট ন
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord এ চ্যাট করুন" />
 </a>
-
-## ব্রাউজার এক্সটেনশন
-
-AiShort (ChatGPT Shortcut) ব্রাউজার এক্সটেনশন Chrome এবং Edge সমর্থন করে এবং ওয়েব সংস্করণের সাথে সামঞ্জস্যপূর্ণ কার্যকারিতা নিয়ে নিয়মিতভাবে আপডেট করা হয়। এক্সটেনশনটি স্বয়ংক্রিয়ভাবে চালু হয় যখন ChatGPT পৃষ্ঠা লোড হয়, অথবা আপনি `Alt+Shift+S` হটকী চেপে এক্সটেনশন উইন্ডো সক্রিয় করতে পারেন।
-
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
