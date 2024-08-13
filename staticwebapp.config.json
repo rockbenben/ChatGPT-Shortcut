@@ -11,6 +11,71 @@
             "headers": {
                 "cache-control": "public, max-age=31536000, immutable"
             }
+        },
+        {
+            "route": "/docs/guides/extension",
+            "redirect": "/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/en/docs/guides/extension",
+            "redirect": "/en/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/ar/docs/guides/extension",
+            "redirect": "/ar/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/ja/docs/guides/extension",
+            "redirect": "/ja/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/ko/docs/guides/extension",
+            "redirect": "/ko/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/es/docs/guides/extension",
+            "redirect": "/es/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/fr/docs/guides/extension",
+            "redirect": "/fr/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/de/docs/guides/extension",
+            "redirect": "/de/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/it/docs/guides/extension",
+            "redirect": "/it/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/ru/docs/guides/extension",
+            "redirect": "/ru/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/pt/docs/guides/extension",
+            "redirect": "/pt/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/hi/docs/guides/extension",
+            "redirect": "/hi/docs/extension",
+            "statusCode": 301
+        },
+        {
+            "route": "/bn/docs/guides/extension",
+            "redirect": "/bn/docs/extension",
+            "statusCode": 301
         }
     ],
     "responseOverrides": {
