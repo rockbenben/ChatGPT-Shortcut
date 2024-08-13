@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# AiShort 소개
+# 소개
 
 AiShort 는 간결하면서 사용하기 쉬운 AI 명령어 리스트를 제공합니다. 프롬프트에 대한 이해가 없어도, 필터링과 검색을 통해 다양한 상황에 적합한 프롬프트를 쉽게 찾을 수 있어 생산성 향상에 도움이 됩니다.
 
@@ -27,13 +27,3 @@ AiShort 프롬프트의 출처는 인터넷 선택, 커뮤니티 공유, 그리�
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-
-## 브라우저 확장
-
-AiShort (ChatGPT Shortcut) 브라우저 확장은 Chrome 과 Edge 를 지원하며, 웹 버전과 기능이 일치하며 규칙적으로 업데이트됩니다. 확장은 ChatGPT 페이지가 로드될 때 자동으로 트리거될 수 있으며, `Alt+Shift+S` 핫키를 눌러 확장 창을 활성화할 수 있습니다.
-
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>

@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# Introduzione ad AiShort
+# Introduzione
 
 AiShort offre un elenco conciso e facile da usare di istruzioni AI. Anche senza capire le sollecitazioni, è possibile trovare facilmente le sollecitazioni adatte per vari scenari attraverso la filtrazione e la ricerca, migliorando così la tua produttività.
 
@@ -27,13 +27,3 @@ Benvenuto a unirti alla nostra comunità Discord per scambiare idee e feedback.
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat su Discord" />
 </a>
-
-## Estensione del browser
-
-L'estensione del browser AiShort (ChatGPT Shortcut) supporta Chrome e Edge con funzionalità coerente con la versione web ed è regolarmente aggiornata. L'estensione può essere attivata automaticamente non appena la pagina ChatGPT si carica, oppure è possibile attivare la finestra dell'estensione premendo la combinazione di tasti `Alt+Shift+S`.
-
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
-
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
