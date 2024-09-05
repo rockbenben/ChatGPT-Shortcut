@@ -22,8 +22,8 @@
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
-  --scrollbar-thumb-color: hsl(167, 68%, 75%); /* 浅色主题滚动条颜色 */
-  --scrollbar-thumb-hover-color: hsl(167, 68%, 65%); /* 浅色主题滚动条悬停颜色 */
+  --scrollbar-thumb-color: hsl(167, 68%, 60%); /* 浅色主题滚动条颜色 */
+  --scrollbar-thumb-hover-color: hsl(167, 68%, 70%); /* 浅色主题滚动条悬停颜色 */
 }
 
 html[data-theme="dark"] {
