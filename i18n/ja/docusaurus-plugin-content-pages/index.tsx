@@ -167,7 +167,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
         {/* 登陆用户标签按钮 */}
         {userAuth && (
           <>
-            <li className={styles.checkboxListItem} onClick={handleUserPrompts}>
+            <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
               <ShowcaseTooltip
                 text={translate({
                   id: "myprompt.tooltip",
@@ -184,7 +184,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
                 />
               </ShowcaseTooltip>
             </li>
-            <li className={styles.checkboxListItem} onClick={handleUserFavs}>
+            <li className={`${styles.checkboxListItem} ${showUserFavs ? styles.activeItem : ""}`} onClick={handleUserFavs}>
               <ShowcaseTooltip
                 text={translate({
                   id: "myfavorite.tooltip",
@@ -272,13 +272,27 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           </ShowcaseTooltip>
         </li>
       </ul>
-      {showUserPrompts && <UserPrompts />}
-      {showUserFavs && <UserFavorite />}
+      {showUserPrompts && (
+        <>
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
+          </div>
+          <UserPrompts />
+        </>
+      )}
+      {showUserFavs && (
+        <>
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
+          </div>
+          <UserFavorite />
+        </>
+      )}
     </section>
   );
 }
 
-function SearchBar() {
+function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (value) => {} }) {
   const history = useHistory();
   const location = useLocation();
   const searchRef = useRef<HTMLInputElement>(null);
@@ -303,6 +317,8 @@ function SearchBar() {
         search: newSearch.toString(),
         state: prepareUserState(),
       });
+      setShowUserPrompts(false);
+      setShowUserFavs(false);
     }, 1000), // search latency 搜索延时
     [location, history]
   );
