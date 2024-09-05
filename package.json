@@ -24,7 +24,7 @@
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.20.3",
+    "antd": "^5.20.5",
     "axios": "^1.7.7",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
