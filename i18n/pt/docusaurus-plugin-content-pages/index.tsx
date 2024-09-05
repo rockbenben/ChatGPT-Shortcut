@@ -189,7 +189,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {userAuth && (
           <>
-            <li className={styles.checkboxListItem} onClick={handleUserPrompts}>
+            <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
               <ShowcaseTooltip
                 text={translate({
                   id: "myprompt.tooltip",
@@ -206,7 +206,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
                 />
               </ShowcaseTooltip>
             </li>
-            <li className={styles.checkboxListItem} onClick={handleUserFavs}>
+            <li className={`${styles.checkboxListItem} ${showUserFavs ? styles.activeItem : ""}`} onClick={handleUserFavs}>
               <ShowcaseTooltip
                 text={translate({
                   id: "myfavorite.tooltip",
@@ -296,13 +296,27 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           </ShowcaseTooltip>
         </li>
       </ul>
-      {showUserPrompts && <UserPrompts />}
-      {showUserFavs && <UserFavorite />}
+      {showUserPrompts && (
+        <>
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
+          </div>
+          <UserPrompts />
+        </>
+      )}
+      {showUserFavs && (
+        <>
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
+          </div>
+          <UserFavorite />
+        </>
+      )}
     </section>
   );
 }
 
-function SearchBar() {
+function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (value) => {} }) {
   const history = useHistory();
   const location = useLocation();
   const searchRef = useRef(null);
@@ -323,6 +337,8 @@ function SearchBar() {
       search: newSearch.toString(),
       state: prepareUserState(),
     });
+    setShowUserPrompts(false);
+    setShowUserFavs(false);
   }, [value, location, history]);
 
   useEffect(() => {
