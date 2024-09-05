@@ -53,6 +53,21 @@
   margin-right: 0;
 }
 
+.activeItem {
+  display: flex;
+  cursor: pointer;
+  line-height: 1.5;
+  border-radius: 6px;
+  opacity: 1;
+  background-color: var(--site-color-checkbox-checked-bg);
+  border: 2px solid var(--ifm-color-primary-darkest);
+}
+
+.activeItem:hover {
+  opacity: 0.75;
+  box-shadow: 0 0 2px 1px var(--ifm-color-primary-dark);
+}
+
 .searchContainer {
   margin-left: auto;
 }
