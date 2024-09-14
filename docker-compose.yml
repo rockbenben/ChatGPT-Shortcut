@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  docsify:
+    container_name: chatgpt-shortcut
+    image: ghcr.io/rockbenben/chatgpt-shortcut:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
