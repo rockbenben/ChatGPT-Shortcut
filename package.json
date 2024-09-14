@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "3.2.4",
+  "version": "3.2.5",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -24,7 +24,7 @@
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.0.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.20.5",
+    "antd": "^5.20.6",
     "axios": "^1.7.7",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
@@ -46,7 +46,7 @@
     "@docusaurus/tsconfig": "3.5.2",
     "@docusaurus/types": "3.5.2",
     "@types/react": "^18.3.5",
-    "typescript": "~5.5.4"
+    "typescript": "~5.6.2"
   },
   "browserslist": {
     "production": [
