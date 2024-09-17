@@ -58,38 +58,7 @@ In addition, we offer the Tampermonkey script - [**ChatGPT Shortcut Anywhere**](
 
 ## Deploy
 
-### Deploy With Vercel
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Installation
-
-```shell
-# Installation
-yarn
-
-# Local Development
-yarn start
-
-# Build: This command generates static content into the `build` directory
-yarn build
-
-# Update the `defaultLocale` in the `docusaurus.config.js` file,
-# then perform a build for the desired language.
-yarn build --locale zh
-yarn build --locale en
-yarn build --locale ja
-yarn build --locale ko
-yarn build --locale es
-yarn build --locale fr
-yarn build --locale de
-yarn build --locale it
-yarn build --locale ru
-yarn build --locale pt
-yarn build --locale hi
-yarn build --locale ar
-yarn build --locale bn
-```
+For detailed steps on deploying through Vercel, local environment, Docker, and modifying the project, please refer to the [ChatGPT Shortcut Deployment Guide](https://www.aishort.top/en/docs/deploy).
 
 ## Synchronized Updates
 
@@ -114,14 +83,3 @@ Once you have forked the project, due to GitHub restrictions, it is necessary to
 If you wish to manually update immediately, you can refer to [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to learn how to synchronize the forked project with the upstream code.
 
 Feel free to show support for this project by giving it a star/follow, or by following the author, to stay informed about timely notifications regarding new feature updates.
-
-## Modification Information
-
-AI Short is an open-source project, affording you the liberty to make alterations to the nomenclature and explication of the website.
-
-- To amend the appellation of the page, please peruse the `docusaurus.config.js` document.
-- For the modification of usage directives, navigate to the `docs` directory.
-- To tailor the cues, you may find them within `src/data/prompt.json`. If you require alteration solely for a particular language, such as Chinese, direct your edits to `src/data/prompt_zh.json`.
-- Presently, the user-end system is already integrated with a communal backend infrastructure. Should the need arise, you have the autonomy to establish your own backend, with pertinent interfaces located in the `src/api.js` file.
-
-`CodeUpdateHandler.py` is the script designed for bulk processing of multilingual deployments. Upon completing your alterations, execute `python CodeUpdateHandler.py`. It will, in accordance with the prescribed rules, partition the `prompt.json` into diverse languages and synchronize the principal page code as well as individual page code for the selected cues in each language.

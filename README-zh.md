@@ -61,37 +61,7 @@ AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基�
 
 ## Deploy
 
-### Deploy With Vercel
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Installation
-
-```shell
-# Installation
-yarn
-
-# Local Development
-yarn start
-
-# Build: This command generates static content into the `build` directory
-yarn build
-
-# Update the `defaultLocale` in the `docusaurus.config.js` file, then perform a build for the desired language.
-yarn build --locale zh
-yarn build --locale en
-yarn build --locale ja
-yarn build --locale ko
-yarn build --locale es
-yarn build --locale fr
-yarn build --locale de
-yarn build --locale it
-yarn build --locale ru
-yarn build --locale pt
-yarn build --locale hi
-yarn build --locale ar
-yarn build --locale bn
-```
+关于如何通过 Vercel、本地环境、Docker 进行部署，以及项目修改的详细步骤，请参考[ChatGPT Shortcut 部署说明](https://www.aishort.top/docs/deploy)。
 
 ## 开启同步更新
 

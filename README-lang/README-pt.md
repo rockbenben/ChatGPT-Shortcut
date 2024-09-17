@@ -47,53 +47,39 @@ Bem-vindo para se juntar à nossa comunidade Discord para trocar ideias e feedba
 
 ## Extensão do navegador
 
-A extensão do navegador AiShort (ChatGPT Shortcut) suporta Chrome e Edge com funcionalidade consistente com a versão web e é atualizada regularmente. A extensão pode ser ativada automaticamente à medida que a página ChatGPT é carregada, ou você pode ativar a janela da extensão pressionando a tecla de atalho `Alt+Shift+S`.
+AiShort (ChatGPT Shortcut) é uma extensão versátil compatível com Chrome, Edge, Firefox e outros navegadores baseados em Chromium. Esta extensão não só apresenta a funcionalidade da versão web do ChatGPT Shortcut, mas também adiciona recursos exclusivos, como uma barra lateral e ativação automática de janelas. A extensão pode iniciar automaticamente com ChatGPT ou páginas personalizadas e também pode ser ativada manualmente usando o atalho `Alt+Shift+S`. Aqui estão os canais de download:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [ADD-ONS do navegador Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [Lançamento do GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Além disso, oferecemos o script Tampermonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), permitindo que os usuários personalizem nomes de domínio correspondentes e usem a barra lateral do AiShort em qualquer site. No entanto, devido a restrições de injeção de conteúdo de script na página ChatGPT, a funcionalidade da barra lateral do script é ativada por meio de um pop-up na página ChatGPT.
 
-## Implantação
+## Implantar
 
-### Implantação com Vercel
+Para etapas detalhadas sobre a implantação por meio do Vercel, ambiente local, Docker e modificação do projeto, consulte o [Guia de implantação do atalho do ChatGPT](https://www.aishort.top/pt/docs/deploy).
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+## Atualizações sincronizadas
 
-### Instalação
-
-```shell
-# Instalação
-yarn
-
-# Desenvolvimento Local
-yarn start
-
-# Build: Esse comando gera o conteúdo estático no diretório `build`
-yarn build
-```
-
-## Atualizações Sincronizadas
-
-Se você implantou seu próprio projeto no Vercel com um único clique, pode encontrar um problema em que as atualizações são consistentemente indicadas. Isso ocorre devido ao comportamento padrão do Vercel de criar um novo projeto para você em vez de fazer um fork do projeto atual, o que impede a detecção adequada de atualizações. Recomenda-se seguir as etapas subsequentes para reimplantação:
+Se você implantou seu próprio projeto no Vercel com um único clique, poderá encontrar um problema em que as atualizações são consistentemente indicadas. Isso surge do comportamento padrão do Vercel de criar um novo projeto para você em vez de bifurcar o projeto atual, impedindo assim a detecção adequada de atualizações. É recomendado seguir os passos subsequentes para a reimplantação:
 
 1. Remova o repositório anterior.
-2. Utilize o botão "fork" localizado no canto superior direito da página para fazer um fork do projeto atual.
-3. Na página [Vercel New Project](https://vercel.com/new), selecione o projeto recém-forked na seção Importar Repositório Git e prossiga com a implantação.
+2. Utilize o botão "fork" localizado no canto superior direito da página para bifurcar o projeto atual.
+3. Na [página Vercel New Project](https://vercel.com/new), selecione o projeto bifurcado recentemente na seção Import Git Repository e prossiga com a implantação.
 
 ### Atualizações Automáticas
 
 > No caso de encontrar um erro durante a execução do Upstream Sync, execute manualmente um único Sync Fork.
 
-Depois de fazer o fork do projeto, devido às restrições do GitHub, é necessário habilitar manualmente os Workflows na página de Ações do seu projeto forked e ativar a ação Upstream Sync. Após a ativação, as atualizações serão executadas automaticamente diariamente.
+Depois de bifurcar o projeto, devido às restrições do GitHub, é necessário habilitar manualmente os Workflows na página Actions do seu projeto bifurcado e ativar a Upstream Sync Action. Após a ativação, as atualizações serão executadas automaticamente diariamente.
 
-![Atualizações Automáticas](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+![Atualizações automáticas](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
-![Habilitando Atualizações Automáticas](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+![Habilitando atualizações automáticas](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
-### Atualizações Manuais
+### Atualizações manuais
 
-Se você deseja atualizar manualmente imediatamente, pode consultar a [documentação do GitHub](https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) para aprender como sincronizar o projeto forked com o código upstream.
+Se você deseja atualizar manualmente imediatamente, pode consultar a [documentação do GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) para aprender como sincronizar o projeto bifurcado com o código upstream.
 
 Sinta-se à vontade para mostrar apoio a este projeto dando uma estrela/seguindo, ou seguindo o autor, para se manter informado sobre notificações oportunas sobre novas atualizações de recursos.
