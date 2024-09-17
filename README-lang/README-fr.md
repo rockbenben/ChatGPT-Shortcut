@@ -47,48 +47,32 @@ Bienvenue à rejoindre notre communauté Discord pour échanger des idées et de
 
 ## Extension de navigateur
 
-L'extension de navigateur AiShort (ChatGPT Shortcut) prend en charge Chrome et Edge avec une fonctionnalité cohérente avec la version web et est régulièrement mise à jour. L'extension peut être déclenchée automatiquement lorsque la page ChatGPT se charge, ou vous pouvez activer la fenêtre de l'extension en appuyant sur la touche de raccourci `Alt+Shift+S`.
+AiShort (ChatGPT Shortcut) est une extension polyvalente compatible avec Chrome, Edge, Firefox et d'autres navigateurs basés sur Chromium. Cette extension propose non seulement les fonctionnalités de la version Web de ChatGPT Shortcut, mais ajoute également des fonctionnalités uniques telles qu'une barre latérale et l'activation automatique des fenêtres. L'extension peut démarrer automatiquement avec ChatGPT ou des pages personnalisées et peut également être activée manuellement à l'aide du raccourci « Alt+Maj+S ». Voici les canaux de téléchargement :
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome** : [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge** : [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox** : [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub** : [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+De plus, nous proposons le script Tampermonkey - [**ChatGPT Shortcut [N'importe où**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), permettant aux utilisateurs de personnaliser les noms de domaine correspondants et d'utiliser la barre latérale AiShort sur n'importe quel site Web. Cependant, en raison des restrictions d'injection de contenu de script sur la page ChatGPT, la fonctionnalité de la barre latérale du script est activée via une fenêtre contextuelle sur la page ChatGPT.
 
-## Déploiement
+## Déployer
 
-### Déployer avec Vercel
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Installation
-
-```shell
-# Installation
-yarn
-
-# Développement local
-yarn start
-
-# Build : Cette commande génère le contenu statique dans le répertoire `build`
-yarn build
-```
+Pour des étapes détaillées sur le déploiement via Vercel, l'environnement local, Docker et la modification du projet, veuillez vous référer au [Guide de déploiement du raccourci ChatGPT](https://www.aishort.top/fr/docs/deploy).
 
 ## Mises à jour synchronisées
 
-Si vous avez déployé votre propre projet sur Vercel en un clic, vous pouvez rencontrer un problème où des mises à jour sont indiquées de manière constante. Cela est dû au comportement par défaut de Vercel qui crée un nouveau projet pour vous au lieu de faire une copie du projet actuel, ce qui empêche la détection appropriée des mises à jour. Il est recommandé de suivre les étapes suivantes pour le redéploiement :
+Si vous avez déployé votre propre projet sur Vercel en un seul clic, vous pouvez rencontrer un problème où les mises à jour sont systématiquement indiquées. Cela découle du comportement par défaut de Vercel qui consiste à créer un nouveau projet pour vous au lieu de dupliquer le projet actuel, ce qui empêche la détection correcte des mises à jour. Il est recommandé de suivre les étapes suivantes pour le redéploiement :
 
-1. Supprimez le dépôt précédent.
-2. Utilisez le bouton "fork" situé dans le coin supérieur droit de la page pour faire une copie du projet actuel.
-3. Sur la page [Nouveau projet Vercel](https://vercel.com/new), sélectionnez le projet récemment copié à partir de la section Import Git Repository et procédez au déploiement.
+1. Supprimez le référentiel précédent.
+2. Utilisez le bouton « fork » situé dans le coin supérieur droit de la page pour forker le projet actuel.
+3. Sur la page [Vercel New Project](https://vercel.com/new), sélectionnez le projet récemment forké dans la section Import Git Repository et procédez au déploiement.
 
 ### Mises à jour automatiques
 
-> En cas d'erreur lors de l'exécution de la synchronisation amont, effectuez
+> En cas d'erreur lors de l'exécution de la synchronisation en amont, effectuez manuellement un seul fork de synchronisation.
 
- manuellement une seule synchronisation de la copie.
-
-Une fois que vous avez fait une copie du projet, en raison des restrictions de GitHub, il est nécessaire d'activer manuellement les workflows sur la page Actions de votre projet copié et d'activer l'action de synchronisation amont. Une fois activée, les mises à jour seront automatiquement exécutées quotidiennement.
+Une fois le projet forké, en raison des restrictions de GitHub, il est nécessaire d'activer manuellement les workflows sur la page Actions de votre projet forké et d'activer l'action de synchronisation en amont. Une fois l'activation effectuée, les mises à jour seront automatiquement exécutées quotidiennement.
 
 ![Mises à jour automatiques](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
@@ -96,6 +80,6 @@ Une fois que vous avez fait une copie du projet, en raison des restrictions de G
 
 ### Mises à jour manuelles
 
-Si vous souhaitez effectuer manuellement une mise à jour immédiate, vous pouvez consulter la [documentation de GitHub](https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) pour apprendre comment synchroniser le projet copié avec le code amont.
+Si vous souhaitez effectuer une mise à jour manuelle immédiatement, vous pouvez vous référer à la [documentation de GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) pour savoir comment synchroniser le projet forké avec le code en amont.
 
-N'hésitez pas à soutenir ce projet en lui donnant une étoile/suivant, ou en suivant l'auteur, pour être informé des notifications en temps opportun concernant les nouvelles fonctionnalités mises à jour.
+N'hésitez pas à montrer votre soutien à ce projet en lui attribuant une étoile/en le suivant, ou en suivant l'auteur, pour rester informé des notifications en temps opportun concernant les nouvelles mises à jour de fonctionnalités.

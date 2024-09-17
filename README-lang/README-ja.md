@@ -45,48 +45,36 @@ AiShort のプロンプトの源は、インターネットの選択、コミュ
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord でチャットする" />
 </a>
 
-## ブラウザエクステンション
+## ブラウザ拡張機能
 
-AiShort（ChatGPT Shortcut）のブラウザエクステンションは、Chrome と Edge をサポートしており、Web 版と同じ機能を持ち、定期的に更新されます。エクステンションは ChatGPT のページが読み込まれると自動的にトリガーされるか、または`Alt+Shift+S`ホットキーを押すことでエクステンションウィンドウをアクティブにすることができます。
+AiShort (ChatGPT ショートカット) は、Chrome、Edge、Firefox、その他の Chromium ベースのブラウザと互換性のある多機能拡張機能です。この拡張機能は、ChatGPT ショートカットの Web バージョンの機能を備えているだけでなく、サイドバーや自動ウィンドウ アクティベーションなどの独自の機能も追加します。拡張機能は ChatGPT またはカスタム ページで自動的に起動でき、ショートカット `Alt+Shift+S` を使用して手動でアクティブ化することもできます。ダウンロード チャネルは次のとおりです：
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome ウェブストア](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox ブラウザー アドオン](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [GitHub リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+さらに、Tampermonkey スクリプトも提供しています - [**ChatGPT ショートカットどこでも**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) により、ユーザーは一致するドメイン名をカスタマイズし、任意の Web サイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページのスクリプト コンテンツ挿入制限により、スクリプトのサイドバー機能は ChatGPT ページのポップアップを介してアクティブ化されます。
 
 ## デプロイ
 
-### Vercel を用いたデプロイ
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### インストール
-
-```shell
-# インストール
-yarn
-
-# ローカル開発
-yarn start
-
-# ビルド: このコマンドは `build` ディレクトリに静的な内容を生成します
-yarn build
-```
+Vercel、ローカル環境、Docker を介したデプロイ、およびプロジェクトの変更に関する詳細な手順については、[ChatGPT ショートカット デプロイ ガイド](https://www.aishort.top/ja/docs/deploy) を参照してください。
 
 ## 同期更新
 
-一度 Vercel にてプロジェクトをデプロイしたのち、更新が適切に反映されない問題が発生することがあります。これは、Vercel が新たにプロジェクトを作成するデフォルトの挙動が原因で、現行プロジェクトをフォークする代わりに新たなプロジェクトを作成してしまいます。適切な更新検出を促すために、再デプロイに以下の手順を推奨します：
+Vercel に独自のプロジェクトを 1 回のクリックでデプロイした場合、更新が一貫して示される問題が発生する可能性があります。これは、現在のプロジェクトをフォークするのではなく、新しいプロジェクトを作成するという Vercel のデフォルトの動作によって発生し、適切な更新検出が妨げられます。再デプロイには、次の手順に従うことをお勧めします。
 
-1. 既存のリポジトリを削除します。
-2. ページ右上部に位置する "fork" ボタンを利用し、現行プロジェクトをフォークします。
-3. [Vercel 新規プロジェクトページ](https://vercel.com/new)にて、Git リポジトリからインポート部分で先ほどフォークしたプロジェクトを選択し、デプロイを進行します。
+1. 以前のリポジトリを削除します。
+
+2. ページの右上隅にある「フォーク」ボタンを使用して、現在のプロジェクトをフォークします。
+
+3. [Vercel の新規プロジェクト ページ](https://vercel.com/new) で、[Git リポジトリのインポート] セクションから最近フォークしたプロジェクトを選択し、デプロイを続行します。
 
 ### 自動更新
 
-> アップストリーム同期の実行中にエラーに遭遇した場合は、手動で一度だけ同期フォークを行ってください。
+> Upstream Sync の実行中にエラーが発生した場合は、手動で 1 回の Sync Fork を実行します。
 
-プロジェクトをフォークした後、GitHub の制限により、フォークしたプロジェクトの Actions ページで Workflows を手動で有効にし、アップストリーム同期アクションを活性化する必要があります。活性化後、更新は日常的に自動で実行されます。
+プロジェクトをフォークしたら、GitHub の制限により、フォークしたプロジェクトの [アクション] ページでワークフローを手動で有効にし、Upstream Sync アクションをアクティブ化する必要があります。アクティブ化すると、更新は毎日自動的に実行されます。
 
 ![自動更新](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
@@ -94,6 +82,6 @@ yarn build
 
 ### 手動更新
 
-即座に手動で更新を行いたい場合は、[GitHub のドキュメンテーション](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)を参照し、フォークしたプロジェクトをアップストリームコードと同期させる方法を学ぶことができます。
+すぐに手動で更新したい場合は、[GitHub のドキュメント](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)を参照して、フォークしたプロジェクトをアップストリーム コードと同期する方法を確認してください。
 
-本プロジェクトに対するサポートを示すために、星を付ける/フォローする、あるいは作者をフォローして、新機能のアップデートに関するタイムリーな通知を受け取ることができます。
+このプロジェクトにスター/フォローを付けたり、作者をフォローしたりして、新機能の更新に関する通知をタイムリーに受け取るなど、このプロジェクトへのサポートを表明してください。

@@ -45,57 +45,43 @@
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-## الإضافة المتصفح
+## ملحق المتصفح
 
-إضافة المتصفح AiShort (ChatGPT Shortcut) تدعم Chrome و Edge مع وظائف متسقة مع الإصدار الويب ويتم تحديثها بانتظام. يمكن تنشيط الإضافة تلقائيًا أثناء تحميل صفحة ChatGPT، أو يمكنك تنشيط نافذة الإضافة عن طريق الضغط على مفتاح الاختصار `Alt+Shift+S`.
+AiShort (اختصار ChatGPT) هو ملحق متعدد الاستخدامات متوافق مع Chrome وEdge وFirefox والمتصفحات الأخرى المستندة إلى Chromium. لا يتميز هذا الملحق بوظائف إصدار الويب من اختصار ChatGPT فحسب، بل يضيف أيضًا ميزات فريدة مثل الشريط الجانبي وتنشيط النافذة تلقائيًا. يمكن أن يبدأ الملحق تلقائيًا باستخدام ChatGPT أو الصفحات المخصصة ويمكن أيضًا تنشيطه يدويًا باستخدام الاختصار `Alt+Shift+S`. فيما يلي قنوات التنزيل:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [متجر Chrome الإلكتروني](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [إضافات Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [إضافات متصفح Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [إصدار GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+بالإضافة إلى ذلك، نقدم نص Tampermonkey - [**اختصار ChatGPT في أي مكان**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)، مما يسمح للمستخدمين بتخصيص أسماء النطاقات المطابقة واستخدام الشريط الجانبي لـ AiShort على أي موقع ويب. ومع ذلك، نظرًا لقيود حقن محتوى البرنامج النصي على صفحة ChatGPT، يتم تنشيط وظيفة الشريط الجانبي للبرنامج النصي عبر نافذة منبثقة على صفحة ChatGPT.
 
-## نشر
+## النشر
 
-### نشر باستخدام Vercel
+للحصول على خطوات مفصلة حول النشر من خلال Vercel والبيئة المحلية وDocker وتعديل المشروع، يرجى الرجوع إلى [دليل نشر اختصار ChatGPT](https://www.aishort.top/ar/docs/deploy).
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+## التحديثات المتزامنة
 
-### التثبيت
+إذا قمت بنشر مشروعك الخاص على Vercel بنقرة واحدة، فقد تواجه مشكلة حيث تتم الإشارة إلى التحديثات باستمرار. ينشأ هذا من سلوك Vercel الافتراضي المتمثل في إنشاء مشروع جديد لك بدلاً من تقسيم المشروع الحالي، وبالتالي إعاقة اكتشاف التحديثات بشكل صحيح. يُنصح باتباع الخطوات التالية لإعادة النشر:
 
-```shell
-# التثبيت
-yarn
+1. إزالة المستودع السابق.
 
-# التطوير المحلي
-yarn start
+2. استخدام زر "التفرع" الموجود في الزاوية اليمنى العليا من الصفحة لتفرع المشروع الحالي.
 
-# البناء: يقوم هذا الأمر بتوليد المحتوى الثابت في الدليل `build`
-yarn build
-```
-
-## تحديثات متزامنة
-
-إذا قمت بنشر مشروعك الخاص على Vercel بنقرة واحدة، فقد تواجه مشكلة في تحديد التحديثات باستمرار. ينشأ ذلك من سلوك Vercel الافتراضي في إنشاء مشروع جديد بدلاً من نسخ المشروع الحالي، مما يعوق كشف التحديث السليم. يوصى باتباع الخطوات التالية لإعادة النشر:
-
-1. قم بإزالة المستودع السابق.
-2. استخدم زر "نسخ" الموجود في الزاوية العلوية اليمنى للصفحة لنسخ المشروع الحالي.
-3. في [صفحة المشروع الجديد لـ Vercel](https://vercel.com/new)، حدد
-
- المشروع الذي تم نسخه مؤخرًا من قسم استيراد مستودع Git واستمر في النشر.
+3. في [صفحة مشروع Vercel الجديد](https://vercel.com/new)، حدد المشروع الذي تم تفريعه مؤخرًا من قسم استيراد مستودع Git واستمر في النشر.
 
 ### التحديثات التلقائية
 
-> في حالة وجود خطأ أثناء تنفيذ تزامن المصدر، قم بأداء تزامن مستودع واحد يدويًا.
+> في حالة مواجهة خطأ أثناء تنفيذ Upstream Sync، قم يدويًا بإجراء Sync Fork واحد.
 
-بمجرد نسخ المشروع، نظرًا لقيود GitHub، فإنه من الضروري تمكين سير العمل يدويًا على صفحة الإجراءات في المشروع المنسوخ وتنشيط إجراء تزامن المصدر. بعد التنشيط، ستتم تنفيذ التحديثات تلقائيًا يوميًا.
+بمجرد تفريع المشروع، نظرًا لقيود GitHub، من الضروري تمكين سير العمل يدويًا في صفحة Actions الخاصة بمشروعك المتفرع وتنشيط Upstream Sync Action. عند التنشيط، سيتم تنفيذ التحديثات تلقائيًا على أساس يومي.
 
-![تحديثات تلقائية](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+![التحديثات التلقائية](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
 ![تمكين التحديثات التلقائية](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
 ### التحديثات اليدوية
 
-إذا كنت ترغب في تحديث يدوي فوري، يمكنك الرجوع إلى [وثائق GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) لمعرفة كيفية مزامنة المشروع المنسوخ مع الكود الأصلي.
+إذا كنت ترغب في التحديث يدويًا على الفور، يمكنك الرجوع إلى [وثائق GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) لمعرفة كيفية مزامنة المشروع المتشعب مع الكود الأصلي.
 
-لا تتردد في دعم هذا المشروع عن طريق إعطائه نجمة/متابعة، أو عن طريق متابعة المؤلف، للبقاء على اطلاع على التنبيهات في الوقت المناسب بشأن تحديثات الميزات الجديدة.
+لا تتردد في إظهار دعمك لهذا المشروع من خلال منحه نجمة/متابعة، أو متابعة المؤلف، للبقاء على اطلاع على الإشعارات في الوقت المناسب بخصوص تحديثات الميزات الجديدة.

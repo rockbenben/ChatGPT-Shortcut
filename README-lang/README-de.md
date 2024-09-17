@@ -47,55 +47,39 @@ Willkommen in unserer Discord-Community, um Ideen auszutauschen und Feedback zu 
 
 ## Browser-Erweiterung
 
-Die AiShort (ChatGPT Shortcut) Browser-Erweiterung unterstützt Chrome und Edge mit Funktionen, die mit der Webversion übereinstimmen und regelmäßig aktualisiert werden. Die Erweiterung kann automatisch ausgelöst werden, wenn die ChatGPT-Seite geladen wird, oder Sie können das Erweiterungsfenster durch Drücken der `Alt+Shift+S`-Taste aktivieren.
+AiShort (ChatGPT Shortcut) ist eine vielseitige Erweiterung, die mit Chrome, Edge, Firefox und anderen Chromium-basierten Browsern kompatibel ist. Diese Erweiterung bietet nicht nur die Funktionalität der Webversion von ChatGPT Shortcut, sondern fügt auch einzigartige Funktionen wie eine Seitenleiste und automatische Fensteraktivierung hinzu. Die Erweiterung kann automatisch mit ChatGPT oder benutzerdefinierten Seiten gestartet werden und kann auch manuell mit der Tastenkombination „Alt+Umschalt+S“ aktiviert werden. Hier sind die Downloadkanäle:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Zusätzlich bieten wir das Tampermonkey-Skript an - [**ChatGPT Shortcut Überall**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), sodass Benutzer passende Domänennamen anpassen und die AiShort-Seitenleiste auf jeder Website verwenden können. Aufgrund von Einschränkungen bei der Einfügung von Skriptinhalten auf der ChatGPT-Seite wird die Seitenleistenfunktion des Skripts jedoch über ein Popup auf der ChatGPT-Seite aktiviert.
 
-## Bereitstellung
+## Bereitstellen
 
-### Bereitstellung mit Vercel
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Installation
-
-```shell
-# Installation
-yarn
-
-# Lokale Entwicklung
-yarn start
-
-# Build: Dieser Befehl generiert statischen Inhalt im Verzeichnis "build"
-yarn build
-```
+Detaillierte Schritte zum Bereitstellen über Vercel, die lokale Umgebung, Docker und zum Ändern des Projekts finden Sie im [ChatGPT Shortcut-Bereitstellungshandbuch](https://www.aishort.top/de/docs/deploy).
 
 ## Synchronisierte Updates
 
-Wenn Sie Ihr eigenes Projekt mit einem einzigen Klick auf Vercel bereitgestellt haben, kann es vorkommen, dass Updates konsistent angezeigt werden. Dies liegt daran, dass Vercel standardmäßig ein neues Projekt für Sie erstellt, anstatt das aktuelle Projekt zu forken, was die ordnungsgemäße Erkennung von Updates behindert. Es wird empfohlen, die folgenden Schritte für die erneute Bereitstellung zu befolgen:
+Wenn Sie Ihr eigenes Projekt mit einem einzigen Klick auf Vercel bereitgestellt haben, kann es zu einem Problem kommen, bei dem Updates durchgängig angezeigt werden. Dies ist auf das Standardverhalten von Vercel zurückzuführen, bei dem ein neues Projekt für Sie erstellt wird, anstatt das aktuelle Projekt zu verzweigen, wodurch die ordnungsgemäße Update-Erkennung behindert wird. Es wird empfohlen, die folgenden Schritte zur erneuten Bereitstellung auszuführen:
 
 1. Entfernen Sie das vorherige Repository.
-2. Verwenden Sie die Schaltfläche "Fork" in der oberen rechten Ecke der Seite, um das aktuelle Projekt zu forken.
-3. Wählen Sie auf der [Vercel-New-Project-Seite](https://vercel.com/new) das kürzlich geforkte Projekt im Abschnitt "Import Git Repository" aus und fahren Sie mit der Bereitstellung fort.
+2. Verwenden Sie die Schaltfläche „Fork“ in der oberen rechten Ecke der Seite, um das aktuelle Projekt zu forken.
+3. Wählen Sie auf der [Vercel-Seite „Neues Projekt“](https://vercel.com/new) das kürzlich geforkte Projekt aus dem Abschnitt „Git-Repository importieren“ aus und fahren Sie mit der Bereitstellung fort.
 
 ### Automatische Updates
 
-> Wenn bei der Ausführung von Upstream Sync ein Fehler auftritt, führen Sie manuell eine einzelne Sync Fork aus.
+> Falls während der Ausführung von Upstream Sync ein Fehler auftritt, führen Sie manuell einen einzelnen Sync Fork durch.
 
-Sobald Sie das Projekt geforkt haben, müssen Sie aufgrund von GitHub-Einschränkungen manuell Workflows auf der Actions-Seite Ihres geforkten Projekts aktivieren und die Upstream-Sync-Aktion aktivieren. Nach der Aktivierung werden Updates automatisch täglich durchgeführt.
+Nachdem Sie das Projekt geforkt haben, müssen Sie aufgrund von GitHub-Einschränkungen Workflows auf der Seite „Aktionen“ Ihres geforkten Projekts manuell aktivieren und die Upstream Sync-Aktion aktivieren. Nach der Aktivierung werden täglich automatisch Updates ausgeführt.
 
 ![Automatische Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
-![Aktivieren der automatischen Updates](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format
-
-/webp)
+![Automatische Updates aktivieren](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
 ### Manuelle Updates
 
-Wenn Sie sofort ein manuelles Update durchführen möchten, können Sie sich in der [Dokumentation von GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) darüber informieren, wie Sie das geforkte Projekt mit dem Upstream-Code synchronisieren.
+Wenn Sie sofort manuell aktualisieren möchten, können Sie in der [GitHub-Dokumentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) nachlesen, wie Sie das gegabelte Projekt mit dem Upstream-Code synchronisieren.
 
-Zeigen Sie gerne Ihre Unterstützung für dieses Projekt, indem Sie ihm einen Stern/Follow geben oder dem Autor folgen, um rechtzeitig über neue Funktionsupdates informiert zu bleiben.
+Zeigen Sie Ihre Unterstützung für dieses Projekt, indem Sie ihm einen Stern geben/es folgen oder indem Sie dem Autor folgen, um über zeitnahe Benachrichtigungen zu neuen Funktionsupdates informiert zu bleiben.

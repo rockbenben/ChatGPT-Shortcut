@@ -47,53 +47,39 @@ Benvenuto a unirti alla nostra comunità Discord per scambiare idee e feedback.
 
 ## Estensione del browser
 
-L'estensione del browser AiShort (ChatGPT Shortcut) supporta Chrome e Edge con funzionalità coerente con la versione web ed è regolarmente aggiornata. L'estensione può essere attivata automaticamente non appena la pagina ChatGPT si carica, oppure è possibile attivare la finestra dell'estensione premendo la combinazione di tasti `Alt+Shift+S`.
+AiShort (ChatGPT Shortcut) è un'estensione versatile compatibile con Chrome, Edge, Firefox e altri browser basati su Chromium. Questa estensione non solo presenta la funzionalità della versione web di ChatGPT Shortcut, ma aggiunge anche caratteristiche uniche come una barra laterale e l'attivazione automatica delle finestre. L'estensione può avviarsi automaticamente con ChatGPT o pagine personalizzate e può anche essere attivata manualmente utilizzando la scorciatoia `Alt+Shift+S`. Ecco i canali di download:
 
-<a href="https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj">
-  <img src="https://img.newzone.top/2023-06-05-12-28-49.png?imageMogr2/format/webp"  alt="Chrome" valign="middle" /></a>
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Componenti aggiuntivi Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Componenti aggiuntivi del browser Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [Rilascio GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin">
-  <img src="https://img.newzone.top/2023-06-05-12-26-20.png?imageMogr2/format/webp" alt="Edge" valign="middle" /></a>
+Inoltre, offriamo lo script Tampermonkey - [**Scorciatoia ChatGPT Ovunque**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), consentendo agli utenti di personalizzare i nomi di dominio corrispondenti e di utilizzare la barra laterale AiShort su qualsiasi sito Web. Tuttavia, a causa delle restrizioni di iniezione del contenuto dello script nella pagina ChatGPT, la funzionalità della barra laterale dello script viene attivata tramite un popup nella pagina ChatGPT.
 
-## Deploy
+## Distribuzione
 
-### Deploy con Vercel
+Per i passaggi dettagliati sulla distribuzione tramite Vercel, ambiente locale, Docker e modifica del progetto, fare riferimento alla [Guida alla distribuzione delle scorciatoie ChatGPT](https://www.aishort.top/it/docs/deploy).
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+## Aggiornamenti sincronizzati
 
-### Installazione
+Se hai distribuito il tuo progetto su Vercel con un solo clic, potresti riscontrare un problema in cui gli aggiornamenti vengono indicati in modo coerente. Ciò deriva dal comportamento predefinito di Vercel di creare un nuovo progetto per te anziché eseguire il fork del progetto corrente, impedendo così il corretto rilevamento degli aggiornamenti. Si consiglia di seguire i passaggi successivi per la ridistribuzione:
 
-```shell
-# Installazione
-yarn
+1. Rimuovere il repository precedente.
+2. Utilizzare il pulsante "fork" situato nell'angolo in alto a destra della pagina per biforcare il progetto corrente.
+3. Nella [pagina Nuovo progetto Vercel](https://vercel.com/new), selezionare il progetto recentemente biforcato dalla sezione Importa repository Git e procedere con la distribuzione.
 
-# Sviluppo Locale
-yarn start
+### Aggiornamenti automatici
 
-# Build: Questo comando genera il contenuto statico nella directory `build`
-yarn build
-```
+> In caso di errore durante l'esecuzione di Upstream Sync, eseguire manualmente un singolo Sync Fork.
 
-## Aggiornamenti Sincronizzati
+Dopo aver biforcato il progetto, a causa delle restrizioni di GitHub, è necessario abilitare manualmente i flussi di lavoro nella pagina Azioni del progetto biforcato e attivare l'azione Upstream Sync. Dopo l'attivazione, gli aggiornamenti verranno eseguiti automaticamente su base giornaliera.
 
-Se hai distribuito il tuo progetto su Vercel con un solo clic, potresti incontrare un problema in cui vengono costantemente indicati gli aggiornamenti. Questo problema deriva dal comportamento predefinito di Vercel, che crea un nuovo progetto anziché fare il fork del progetto corrente, impedendo così un corretto rilevamento degli aggiornamenti. Si consiglia di seguire i passaggi successivi per una nuova distribuzione:
+![Aggiornamenti automatici](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
-1. Rimuovi il repository precedente.
-2. Utilizza il pulsante "fork" situato nell'angolo in alto a destra della pagina per fare il fork del progetto corrente.
-3. Sulla [pagina Nuovo Progetto di Vercel](https://vercel.com/new), seleziona il progetto appena forkato dalla sezione Importa Repository Git e procedi con la distribuzione.
+![Abilitazione degli aggiornamenti automatici](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
-### Aggiornamenti Automatici
+### Aggiornamenti manuali
 
-> Nel caso si verifichi un errore durante l'esecuzione della sincronizzazione upstream, eseguire manualmente una sola sincronizzazione del fork.
+Se desideri effettuare immediatamente l'aggiornamento manuale, puoi fare riferimento alla [documentazione di GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) per scoprire come sincronizzare il progetto forkato con il codice upstream.
 
-Una volta che hai fatto il fork del progetto, a causa delle restrizioni di GitHub, è necessario abilitare manualmente le Azioni (Actions) nella pagina delle Actions del progetto forkato e attivare l'azione di sincronizzazione upstream (Upstream Sync). Dopo l'attivazione, gli aggiornamenti verranno eseguiti automaticamente ogni giorno.
-
-![Aggiornamenti Automatici](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-![Abilitazione Aggiornamenti Automatici](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
-
-### Aggiornamenti Manuali
-
-Se desideri aggiornare manualmente immediatamente, puoi fare riferimento alla [documentazione di GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) per apprendere come sincronizzare il progetto forkato con il codice upstream.
-
-Sentiti libero di mostrare il tuo supporto a questo progetto dando un like/seguendo, oppure seguendo l'autore, per rimanere informato riguardo alle notifiche tempestive relative ai nuovi aggiornamenti delle funzionalità.
+Sentiti libero di mostrare supporto per questo progetto assegnandogli una stella/seguendolo, oppure seguendo l'autore, per rimanere informato sulle notifiche tempestive riguardanti i nuovi aggiornamenti delle funzionalità.
