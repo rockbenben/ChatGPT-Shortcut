@@ -181,6 +181,9 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      future: {
+        experimental_faster: true,
+      },
 
       /* announcementBar: {
         id: 'announcement_bar',
