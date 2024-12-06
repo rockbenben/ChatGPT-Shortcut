@@ -10,6 +10,7 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { ConfigProvider, theme } from "antd";
 import { debounce } from "lodash";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
@@ -432,7 +433,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               </ul>
               {!showAllOtherUsers && otherUsers.length > 50 && (
                 <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                  {<ArrowDownOutlined />}
+                  <ArrowDownOutlined />
                   <Translate>加载更多</Translate>
                 </Link>
               )}
@@ -518,13 +519,24 @@ export default function Showcase(): JSX.Element {
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
         <AuthProvider>
-          <ShowcaseHeader />
-          <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />
-          <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#397e6a",
+              },
+              cssVar: true,
+              hashed: false,
+              algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+            }}>
+            <ShowcaseHeader />
+            <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />
+            <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
+          </ConfigProvider>
         </AuthProvider>
         <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>

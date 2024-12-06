@@ -1,5 +1,5 @@
 import React, { useContext, useState, useCallback } from "react";
-import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
+import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button, ConfigProvider, theme } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -44,51 +44,63 @@ function PromptPage({ prompt }) {
     await updateCopyCount(prompt.id);
   }, [prompt, currentLanguage]);
 
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+
   return (
-    <Layout title={title} description={remark}>
-      <Row justify="center" style={{ marginTop: "20px" }}>
-        <Col xs={24} sm={22} md={20} lg={18} xl={16}>
-          <Card
-            className="shadow--md"
-            title={
-              <span>
-                {title} <Badge count={"Weight: " + weight} style={{ backgroundColor: "#52c41a" }} />
-                <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick} style={{ marginLeft: "6px" }}>
-                  {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-                </Button>
-              </span>
-            }
-            extra={
-              website ? (
-                <a href={website}>
-                  <LinkOutlined />
-                </a>
-              ) : null
-            }>
-            <Typography.Paragraph style={{ color: "#595959" }}>👉 {remark}</Typography.Paragraph>
-            <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
-              <Typography.Paragraph onClick={handleParagraphClick} style={{ cursor: "pointer", color: "#595959", maxHeight: "500px", overflowY: "auto" }}>
-                {mainPrompt}
-              </Typography.Paragraph>
-            </Tooltip>
-            <Space wrap>
-              {tags.map((tag) => (
-                <Link to={"/?tags=" + tag}>
-                  <Tag color="blue" key={tag}>
-                    {tag}
-                  </Tag>
-                </Link>
-              ))}
-            </Space>
-            <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
-              <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
-            </Typography.Paragraph>{" "}
-            <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-            <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
-          </Card>
-        </Col>
-      </Row>
-    </Layout>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#397e6a",
+        },
+        cssVar: true,
+        hashed: false,
+        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}>
+      <Layout title={title} description={remark}>
+        <Row justify="center" style={{ marginTop: "20px" }}>
+          <Col xs={24} sm={22} md={20} lg={18} xl={16}>
+            <Card
+              className="shadow--md"
+              title={
+                <span>
+                  {title} <Badge count={"Weight: " + weight} style={{ backgroundColor: "#52c41a" }} />
+                  <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick} style={{ marginLeft: "6px" }}>
+                    {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                  </Button>
+                </span>
+              }
+              extra={
+                website ? (
+                  <a href={website}>
+                    <LinkOutlined />
+                  </a>
+                ) : null
+              }>
+              <Typography.Paragraph style={{ color: "#595959" }}>👉 {remark}</Typography.Paragraph>
+              <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
+                <Typography.Paragraph onClick={handleParagraphClick} style={{ cursor: "pointer", maxHeight: "500px", overflowY: "auto" }}>
+                  {mainPrompt}
+                </Typography.Paragraph>
+              </Tooltip>
+              <Space wrap>
+                {tags.map((tag) => (
+                  <Link to={"/?tags=" + tag}>
+                    <Tag color="blue" key={tag}>
+                      {tag}
+                    </Tag>
+                  </Link>
+                ))}
+              </Space>
+              <Typography.Paragraph style={{ color: "gray", fontSize: "0.9em", marginTop: "20px" }}>
+                <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
+              </Typography.Paragraph>{" "}
+              <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
+              <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
+            </Card>
+          </Col>
+        </Row>
+      </Layout>
+    </ConfigProvider>
   );
 }
 
