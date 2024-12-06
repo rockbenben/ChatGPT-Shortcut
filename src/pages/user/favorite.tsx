@@ -6,6 +6,7 @@ import UserFavorite from "../_components/user/UserFavorite";
 import { AuthProvider } from "../_components/AuthContext";
 import { HeartOutlined, EditOutlined } from "@ant-design/icons";
 import { translate } from "@docusaurus/Translate";
+import { ConfigProvider, theme } from "antd";
 
 const tabStyles = {
   container: {
@@ -51,17 +52,29 @@ const UserBookmark = () => {
     setActiveTab(tab);
   }, []);
 
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+
   return (
     <Layout>
       <main className="margin-vert--lg" style={{ maxWidth: "1200px", margin: "auto" }}>
-        <div className="text--center">
-          <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
-        </div>
-        <div style={{ margin: "0 auto", maxWidth: "90%" }}>
-          <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
-          {activeTab === "favorites" && <UserFavorite />}
-          {activeTab === "prompts" && <UserPrompts />}
-        </div>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#397e6a",
+            },
+            cssVar: true,
+            hashed: false,
+            algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+          }}>
+          <div className="text--center">
+            <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
+          </div>
+          <div style={{ margin: "0 auto", maxWidth: "90%" }}>
+            <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
+            {activeTab === "favorites" && <UserFavorite />}
+            {activeTab === "prompts" && <UserPrompts />}
+          </div>
+        </ConfigProvider>
       </main>
     </Layout>
   );

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space } from "antd";
+import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, ConfigProvider, theme } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
@@ -235,21 +235,32 @@ const UserProfile = () => {
     },
   ];
 
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
   return (
     <Layout>
       <div style={{ width: 600, margin: "auto", padding: "10px" }}>
-        <Space>
-          <Link to="/">
-            <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
-          </Link>
-          <Link to="/user/favorite">
-            <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
-          </Link>
-        </Space>
-        <Card style={{ marginTop: 20 }}>
-          <Descriptions title={translate({ id: "title.userInfo", message: "用户信息" })} items={useritems} layout="vertical" />
-          <Tabs type="card" items={items} />
-        </Card>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#397e6a",
+            },
+            cssVar: true,
+            hashed: false,
+            algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+          }}>
+          <Space>
+            <Link to="/">
+              <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+            </Link>
+            <Link to="/user/favorite">
+              <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
+            </Link>
+          </Space>
+          <Card style={{ marginTop: 20 }}>
+            <Descriptions title={translate({ id: "title.userInfo", message: "用户信息" })} items={useritems} layout="vertical" />
+            <Tabs type="card" items={items} />
+          </Card>
+        </ConfigProvider>
       </div>
     </Layout>
   );

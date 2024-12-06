@@ -9,7 +9,7 @@ import Heading from "@theme/Heading";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, SearchOutlined, CopyOutlined } from "@ant-design/icons";
-import { ConfigProvider, Input, Button } from "antd";
+import { ConfigProvider, theme, Input, Button } from "antd";
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import styles from "@site/src/pages/styles.module.css";
 import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
@@ -23,8 +23,10 @@ import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import { findCardsWithTags, getPrompts } from "@site/src/api";
-import AdComponent from "@site/src/pages/_components/AdComponent";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
+
+import AdComponent from "@site/src/pages/_components/AdComponent";
+
 import favorDefault from "@site/src/data/default/favor_zh.json";
 import otherDefault from "@site/src/data/default/other_zh.json";
 
@@ -353,28 +355,19 @@ function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (valu
 
   return (
     <div className={styles.searchContainer}>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#397e6a",
-            borderRadius: 30,
-            colorBgContainer: "#f6ffed",
-          },
-        }}>
-        <Input
-          ref={searchRef}
-          id="searchbar"
-          placeholder={translate({
-            message: "Search for prompts...",
-            id: "showcase.searchBar.placeholder",
-          })}
-          value={value ?? undefined}
-          onChange={handleInput}
-          onPressEnter={handleSearch}
-          allowClear
-          suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
-        />
-      </ConfigProvider>
+      <Input
+        ref={searchRef}
+        id="searchbar"
+        placeholder={translate({
+          message: "Search for prompts...",
+          id: "showcase.searchBar.placeholder",
+        })}
+        value={value ?? undefined}
+        onChange={handleInput}
+        onPressEnter={handleSearch}
+        allowClear
+        suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
+      />
     </div>
   );
 }
@@ -493,10 +486,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               <AdComponent />
             </ul>
             {!showAllOtherUsers && (
-              <button className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+              <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                 <ArrowDownOutlined />
                 <Translate>加载更多</Translate>
-              </button>
+              </Button>
             )}
           </div>
         </>
@@ -571,13 +564,25 @@ export default function Showcase(): JSX.Element {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
 
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
         <AuthProvider>
-          <ShowcaseHeader />
-          <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />
-          <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#397e6a",
+              },
+              cssVar: true,
+              hashed: false,
+              algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+            }}>
+            <ShowcaseHeader />
+            <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />
+            <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
+          </ConfigProvider>
         </AuthProvider>
         <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
       </main>
