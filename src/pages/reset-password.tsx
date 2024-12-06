@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Form, Input, Button, message, Typography } from "antd";
+import { Form, Input, Button, message, Typography, ConfigProvider, theme } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
 
@@ -36,29 +36,40 @@ const ResetPassword = () => {
     }
   };
 
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
   return (
     <Layout>
-      <div style={{ width: 600, margin: "50px auto", padding: "50px" }}>
-        <Title level={2} style={{ textAlign: "center" }}>
-          Reset Password
-        </Title>
-        <Form form={form} onFinish={onFinishResetPassword}>
-          <Form.Item name="code" initialValue={resetCode} rules={[{ required: true, message: translate({ id: "input.resetPassword.code", message: "请输入您的重置代码！" }) }]}>
-            <Input placeholder={translate({ id: "placeholder.resetPassword.code", message: "重置代码" })} />
-          </Form.Item>
-          <Form.Item name="newPassword" rules={[{ required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) }]}>
-            <Input.Password placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })} />
-          </Form.Item>
-          <Form.Item name="confirmPassword" rules={[{ required: true, message: translate({ id: "input.confirmPassword", message: "请确认新密码！" }) }]}>
-            <Input.Password placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })} />
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" block>
-              <Translate id="button.resetPassword">重置密码</Translate>
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#397e6a",
+          },
+          cssVar: true,
+          hashed: false,
+          algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        }}>
+        <div style={{ width: 600, margin: "50px auto", padding: "50px" }}>
+          <Title level={2} style={{ textAlign: "center" }}>
+            Reset Password
+          </Title>
+          <Form form={form} onFinish={onFinishResetPassword}>
+            <Form.Item name="code" initialValue={resetCode} rules={[{ required: true, message: translate({ id: "input.resetPassword.code", message: "请输入您的重置代码！" }) }]}>
+              <Input placeholder={translate({ id: "placeholder.resetPassword.code", message: "重置代码" })} />
+            </Form.Item>
+            <Form.Item name="newPassword" rules={[{ required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) }]}>
+              <Input.Password placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })} />
+            </Form.Item>
+            <Form.Item name="confirmPassword" rules={[{ required: true, message: translate({ id: "input.confirmPassword", message: "请确认新密码！" }) }]}>
+              <Input.Password placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })} />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block>
+                <Translate id="button.resetPassword">重置密码</Translate>
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </ConfigProvider>
     </Layout>
   );
 };
