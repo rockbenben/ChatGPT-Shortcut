@@ -18,15 +18,15 @@
   },
   "dependencies": {
     "@ant-design/compatible": "^5.1.3",
-    "@docusaurus/core": "3.6.2",
-    "@docusaurus/faster": "^3.6.2",
-    "@docusaurus/preset-classic": "3.6.2",
+    "@docusaurus/core": "3.6.3",
+    "@docusaurus/faster": "^3.6.3",
+    "@docusaurus/preset-classic": "3.6.3",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.22.1",
-    "axios": "^1.7.7",
+    "antd": "^5.22.3",
+    "axios": "^1.7.9",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "emoji-mart": "^5.6.0",
@@ -42,11 +42,11 @@
     "react-share": "^5.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.6.2",
-    "@docusaurus/tsconfig": "3.6.2",
-    "@docusaurus/types": "3.6.2",
-    "@types/react": "^18.3.12",
-    "typescript": "~5.6.3"
+    "@docusaurus/module-type-aliases": "3.6.3",
+    "@docusaurus/tsconfig": "3.6.3",
+    "@docusaurus/types": "3.6.3",
+    "@types/react": "^18.3.13",
+    "typescript": "~5.7.2"
   },
   "browserslist": {
     "production": [
