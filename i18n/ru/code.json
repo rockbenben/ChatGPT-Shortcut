@@ -319,12 +319,6 @@
   "tabs.login": {
     "message": "войти в систему"
   },
-  "tabs.register": {
-    "message": "зачисление"
-  },
-  "tabs.forgotPassword": {
-    "message": "забыли пароль?"
-  },
   "card.welcome": {
     "message": "wellcome"
   },

@@ -322,12 +322,6 @@
   "tabs.login": {
     "message": "تسجيل الدخول"
   },
-  "tabs.register": {
-    "message": "يسجل"
-  },
-  "tabs.forgotPassword": {
-    "message": "نسيت كلمة المرور"
-  },
   "card.welcome": {
     "message": "مرحباً"
   },

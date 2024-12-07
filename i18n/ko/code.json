@@ -280,12 +280,6 @@
   "tabs.login": {
     "message": "로그인"
   },
-  "tabs.register": {
-    "message": "등록"
-  },
-  "tabs.forgotPassword": {
-    "message": "비밀번호를 잊어버리셨나요?"
-  },
   "card.welcome": {
     "message": "환영"
   },

@@ -504,9 +504,6 @@
   "tabs.login": {
     "message": "Log in"
   },
-  "tabs.register": {
-    "message": "Register"
-  },
   "card.welcome": {
     "message": "Welcome"
   },
@@ -593,9 +590,6 @@
   },
   "button.resetPassword": {
     "message": "Reset Password"
-  },
-  "tabs.forgotPassword": {
-    "message": "Forget the password"
   },
   "button.forgotPassword": {
     "message": "Forgot Password"
@@ -838,7 +832,7 @@
     "message": "🙏 Share your prompts"
   },
   "label.forgotPassword": {
-    "message": "Forget password"
+    "message": "Forgot Password?"
   },
   "link.home": {
     "message": "Home"

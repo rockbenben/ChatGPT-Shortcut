@@ -319,12 +319,6 @@
   "tabs.login": {
     "message": "Iniciar sesión"
   },
-  "tabs.register": {
-    "message": "inscripción"
-  },
-  "tabs.forgotPassword": {
-    "message": "¿Ha olvidado su contraseña?"
-  },
   "card.welcome": {
     "message": "bienvenido"
   },

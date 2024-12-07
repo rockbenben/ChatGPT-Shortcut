@@ -319,12 +319,6 @@
   "tabs.login": {
     "message": "लॉग इन करें"
   },
-  "tabs.register": {
-    "message": "पंजीकरण करवाना"
-  },
-  "tabs.forgotPassword": {
-    "message": "पासवर्ड भूल जाओ"
-  },
   "card.welcome": {
     "message": "स्वागत"
   },

@@ -315,12 +315,12 @@ const LoginPage = () => {
     },
     {
       key: "3",
-      label: <Translate id="tabs.register">注册</Translate>,
+      label: <Translate id="button.register">注册</Translate>,
       children: registerForm,
     },
     {
       key: "4",
-      label: <Translate id="tabs.forgotPassword">忘记密码</Translate>,
+      label: <Translate id="label.forgotPassword">忘记密码</Translate>,
       children: forgotForm,
     },
   ];

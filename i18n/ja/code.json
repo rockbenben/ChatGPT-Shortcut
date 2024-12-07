@@ -280,12 +280,6 @@
   "tabs.login": {
     "message": "ログイン"
   },
-  "tabs.register": {
-    "message": "新規登録はこちら"
-  },
-  "tabs.forgotPassword": {
-    "message": "パスワードをお忘れの方"
-  },
   "card.welcome": {
     "message": "ようこそ"
   },
