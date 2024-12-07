@@ -4,19 +4,19 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "Raccourcis ChatGPT",
+    "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 Mode d'emploi",
+    "message": "📘 Docs",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ Rappels à la communauté",
+    "message": "🏘️ Prompts de la communauté",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
-    "message": "🛠️ Outils d'application",
+    "message": "🛠️ Outils",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
@@ -24,7 +24,7 @@
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "traitement de texte",
+    "message": "Autres outils",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
@@ -36,23 +36,23 @@
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "Commentaires/Suggestions",
+    "message": "Retour d'information",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
-    "message": "📝 Soumettre un retour d'information",
+    "message": "📝 Soumettre un retour",
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "Chat us an WeChat",
+    "message": "💬 Discutez avec nous sur QQ",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "📺 Rejoindre notre Discord",
+    "message": "📺 Rejoignez notre Discord",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {
-    "message": "Rallonges",
+    "message": "Extensions",
     "description": "Navbar item with label 脚本扩展"
   }
 }

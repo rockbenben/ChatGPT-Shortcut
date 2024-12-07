@@ -8,51 +8,51 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 تعليمات الاستخدام",
+    "message": "📘 الوثائق",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ مطالبات المجتمع",
+    "message": "🏘️ مطالب المجتمع",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
-    "message": "🛠️ تطبيقات",
+    "message": "🛠️ الأدوات",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
-    "message": "موجه IMG",
+    "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "معالجة الكلمة",
+    "message": "أدوات أخرى",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
-    "message": "جمع الأدوات",
+    "message": "مجموعة الأدوات",
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "ابحث عن Product Hunt",
+    "message": "ابحث على Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "ردود الفعل / الاقتراحات",
+    "message": "التعليقات",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
-    "message": "📝 إرسال ملاحظات",
+    "message": "📝 تقديم الملاحظات",
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "💬 دردش معنا على WeChat",
+    "message": "💬 تحدث معنا على QQ",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "📺 انضم إلى الفتنة",
+    "message": "📺 انضم إلى Discord",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {
-    "message": "ملحقات",
+    "message": "الإضافات",
     "description": "Navbar item with label 脚本扩展"
   }
 }

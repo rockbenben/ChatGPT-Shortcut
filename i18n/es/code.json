@@ -11,16 +11,13 @@
   "order.descending": {
     "message": "orden descendente"
   },
-  "link.home": {
-    "message": "Volver a la página de inicio"
-  },
   "upvote": {
     "message": "patrocinar"
   },
   "downvote": {
     "message": "pedalear (una bicicleta)"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "Los mensajes que aparecen en esta página son compartidos y subidos por los internautas, por lo que no podemos garantizar la exactitud, calidad o integridad del contenido, y tampoco nos hacemos responsables de cualquier responsabilidad legal derivada del contenido. Si encuentras alguna infracción u otro problema, puedes ponerte en contacto con nosotros para solucionarlo. Nos ocuparemos de ello lo antes posible tras recibir la notificación."
   },
   "feedback.title": {
@@ -322,12 +319,6 @@
   "tabs.login": {
     "message": "Iniciar sesión"
   },
-  "tabs.register": {
-    "message": "inscripción"
-  },
-  "tabs.forgotPassword": {
-    "message": "¿Ha olvidado su contraseña?"
-  },
   "card.welcome": {
     "message": "bienvenido"
   },
@@ -360,9 +351,6 @@
   },
   "button.changePassword": {
     "message": "cambie su contraseña"
-  },
-  "label.forgotPassword": {
-    "message": "¿Ha olvidado su contraseña?"
   },
   "title.userInfo": {
     "message": "información para el usuario"
@@ -418,17 +406,8 @@
   "message.success1": {
     "message": "Haga clic en la etiqueta \"Mi aviso\" para ver los avisos personalizados que se han añadido."
   },
-  "link.user": {
-    "message": "usuario"
-  },
   "button.logout": {
     "message": "cancelar"
-  },
-  "link.addprompt": {
-    "message": "Añadir un aviso personalizado"
-  },
-  "modal.addprompt.title": {
-    "message": "Share Prompt (Este contenido aparecerá en la pestaña \"Mis Prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "sea"
@@ -438,9 +417,6 @@
   },
   "button.addPrompt": {
     "message": "Añadir pregunta"
-  },
-  "showcase.header.button": {
-    "message": "🙏 ¡Por favor, añade tu palabra clave!"
   },
   "点击移除收藏": {
     "message": "Haz clic para eliminar favoritos"
@@ -793,8 +769,20 @@
     "message": "Las páginas integradas de ChatGPT no admiten el inicio de sesión mediante la autorización de Google. Inicie sesión con las credenciales de su cuenta."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 artículo|{count} artículos",
+    "message": "{count} artículos",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "¡Enlace de inicio de sesión sin contraseña enviado!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "No se ha podido enviar. Por favor, compruebe su correo electrónico o nombre de usuario."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Obtener enlace de inicio de sesión sin contraseña"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Inicio de sesión sin contraseña"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -823,5 +811,30 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Mis Prompts"
+  },
+  "link.myaccount": {
+    "message": "Configuración de cuenta"
+  },
+  "link.addprompt": {
+    "message": "Agregar un prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Compartir prompt (Esto aparecerá en la pestaña 'Mis Prompts')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Comparte tus prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Olvidé la contraseña"
+  },
+  "link.home": {
+    "message": "Inicio"
   }
 }

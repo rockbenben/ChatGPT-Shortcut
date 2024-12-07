@@ -11,16 +11,13 @@
   "order.descending": {
     "message": "ordem decrescente"
   },
-  "link.home": {
-    "message": "Voltar à página inicial"
-  },
   "upvote": {
     "message": "ser condescendente"
   },
   "downvote": {
     "message": "pedalar (uma bicicleta)"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "Os avisos apresentados nesta página são partilhados e carregados por internautas. Não podemos garantir a exatidão, a qualidade ou a integridade do conteúdo e também não nos responsabilizamos por qualquer responsabilidade legal decorrente do conteúdo. Se encontrar alguma infração ou outros problemas, pode contactar-nos para resolver o problema. Trataremos do assunto o mais rapidamente possível após a receção da notificação."
   },
   "feedback.title": {
@@ -322,12 +319,6 @@
   "tabs.login": {
     "message": "iniciar sessão"
   },
-  "tabs.register": {
-    "message": "inscrição"
-  },
-  "tabs.forgotPassword": {
-    "message": "esqueceu-se da palavra-passe?"
-  },
   "card.welcome": {
     "message": "bem vindo"
   },
@@ -360,9 +351,6 @@
   },
   "button.changePassword": {
     "message": "alterar a sua palavra-passe"
-  },
-  "label.forgotPassword": {
-    "message": "esqueceu-se da palavra-passe?"
   },
   "title.userInfo": {
     "message": "informação do utilizador"
@@ -418,17 +406,8 @@
   "message.success1": {
     "message": "Clique na etiqueta \"O meu aviso\" para ver os avisos personalizados que foram adicionados."
   },
-  "link.user": {
-    "message": "utilizador"
-  },
   "button.logout": {
     "message": "cancelar"
-  },
-  "link.addprompt": {
-    "message": "Adicionar um prompt personalizado"
-  },
-  "modal.addprompt.title": {
-    "message": "Partilhar prompt (Este conteúdo aparecerá no separador \"Os meus prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "ser"
@@ -438,9 +417,6 @@
   },
   "button.addPrompt": {
     "message": "Adicionar prompt"
-  },
-  "showcase.header.button": {
-    "message": "Por favor, adiciona a tua palavra-chave!"
   },
   "点击移除收藏": {
     "message": "Clique para remover os favoritos"
@@ -793,8 +769,20 @@
     "message": "As páginas incorporadas do ChatGPT não suportam login via autorização do Google. Faça login usando as credenciais da sua conta."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
+    "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Ligação de início de sessão sem palavra-passe enviada!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Falha no envio. Verifique o seu e-mail ou nome de utilizador."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Obter ligação de início de sessão sem palavra-passe"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Início de sessão sem palavra-passe"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -823,5 +811,30 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Meus Prompts"
+  },
+  "link.myaccount": {
+    "message": "Configurações da Conta"
+  },
+  "link.addprompt": {
+    "message": "Adicionar um prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Compartilhar Prompt (Isso aparecerá na aba 'Meus Prompts')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Compartilhe seus prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Esqueceu a senha"
+  },
+  "link.home": {
+    "message": "Início"
   }
 }

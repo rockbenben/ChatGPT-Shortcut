@@ -4,19 +4,19 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "Atalhos do ChatGPT",
+    "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 Instruções de utilização",
+    "message": "📘 Documentação",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ Lembretes para a comunidade",
+    "message": "🏘️ Sugestões da Comunidade",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
-    "message": "🛠️ Ferramentas de aplicação",
+    "message": "🛠️ Ferramentas",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
@@ -24,31 +24,31 @@
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "processamento de texto",
+    "message": "Outras Ferramentas",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
-    "message": "Coleção de ferramentas",
+    "message": "Coleção de Ferramentas",
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "Encontrar no Product Hunt",
+    "message": "Encontre no Product Hunt",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "Comentários/Sugestões",
+    "message": "Feedback",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
-    "message": "📝 Enviar comentários",
+    "message": "📝 Enviar Feedback",
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "💬 Conversar connosco no WeChat",
+    "message": "💬 Chat no QQ",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "Junte-se ao nosso Discord",
+    "message": "📺 Junte-se ao nosso Discord",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {

@@ -8,11 +8,11 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 사용 지침",
+    "message": "📘 문서",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ 커뮤니티 단서",
+    "message": "🏘️ 커뮤니티 프롬프트",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
@@ -20,11 +20,11 @@
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
-    "message": "IMG 프롬프트",
+    "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "워드 프로세싱",
+    "message": "기타 도구",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
@@ -32,11 +32,11 @@
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "Find on Product Hunt",
+    "message": "Product Hunt 에서 찾기",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "피드백/제안",
+    "message": "피드백",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
@@ -44,15 +44,15 @@
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "💬 위챗 채팅하기",
+    "message": "💬 QQ 에서 채팅하기",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "📺 디스코드 가입하기",
+    "message": "📺 Discord 에 참여하기",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {
-    "message": "확장",
+    "message": "확장 기능",
     "description": "Navbar item with label 脚本扩展"
   }
 }

@@ -4,27 +4,27 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "ChatGPT Shortcut",
+    "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 ব্যবহারের জন্য নির্দেশাবলী",
+    "message": "📘 ডকস",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ কমিউনিটি প্রম্পট",
+    "message": "🏘️ কমিউনিটি প্রম্পটস",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
-    "message": "🛠️ অ্যাপস",
+    "message": "🛠️ টুলস",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
-    "message": "আইএমজি প্রম্পট",
+    "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "শব্দ প্রক্রিয়াকরণ",
+    "message": "অন্যান্য টুলস",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
@@ -32,27 +32,27 @@
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "পণ্য হান্ট এ খুঁজুন",
+    "message": "প্রোডাক্ট হান্টে খুঁজুন",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "প্রতিক্রিয়া/পরামর্শ",
+    "message": "প্রতিক্রিয়া",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
-    "message": "📝 মতামত জমা দিন",
+    "message": "📝 প্রতিক্রিয়া জমা দিন",
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "💬 আমাদের সাথে একটি WeChat চ্যাট করুন",
+    "message": "💬 আমাদের সাথে QQ তে চ্যাট করুন",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "📺 আমাদের ডিসকর্ডে যোগ দিন",
+    "message": "📺 আমাদের ডিসকোর্ডে যোগ দিন",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {
-    "message": "এক্সটেনশন",
+    "message": "এক্সটেনশনস",
     "description": "Navbar item with label 脚本扩展"
   }
 }

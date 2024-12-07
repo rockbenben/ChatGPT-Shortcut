@@ -14,16 +14,13 @@
   "order.descending": {
     "message": "تنازليا"
   },
-  "link.home": {
-    "message": "العودة للمنزل"
-  },
   "upvote": {
     "message": "ممتاز"
   },
   "downvote": {
     "message": "تقدم"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "الكلمات السريعة المعروضة على هذه الصفحة يتم مشاركتها وتحميلها بواسطة مستخدمي الإنترنت ، ولا يمكننا ضمان دقة أو جودة أو اكتمال المحتوى ، ولن نتحمل أي مسؤولية قانونية تنشأ عن المحتوى. إذا وجدت أي انتهاك أو مشاكل أخرى ، يمكنك الاتصال بنا للتعامل معها. سنتعامل معها بمجرد إخطارنا بذلك."
   },
   "feedback.title": {
@@ -325,12 +322,6 @@
   "tabs.login": {
     "message": "تسجيل الدخول"
   },
-  "tabs.register": {
-    "message": "يسجل"
-  },
-  "tabs.forgotPassword": {
-    "message": "نسيت كلمة المرور"
-  },
   "card.welcome": {
     "message": "مرحباً"
   },
@@ -363,9 +354,6 @@
   },
   "button.changePassword": {
     "message": "تغيير كلمة المرور"
-  },
-  "label.forgotPassword": {
-    "message": "نسيت كلمة المرور"
   },
   "title.userInfo": {
     "message": "معلومات المستخدم"
@@ -421,17 +409,8 @@
   "message.success1": {
     "message": "انقر فوق التسمية &quot;مطالبتي&quot; لعرض المطالبات المخصصة التي تمت إضافتها."
   },
-  "link.user": {
-    "message": "واجهة المستخدم"
-  },
   "button.logout": {
     "message": "تسجيل خروج"
-  },
-  "link.addprompt": {
-    "message": "أضف موجهًا مخصصًا"
-  },
-  "modal.addprompt.title": {
-    "message": "مطالبة المشاركة (سيظهر هذا المحتوى في علامة التبويب &quot;المطالبات الخاصة بي&quot;)"
   },
   "input.addprompt.share.checked": {
     "message": "نعم"
@@ -441,9 +420,6 @@
   },
   "button.addPrompt": {
     "message": "إضافة موجه"
-  },
-  "showcase.header.button": {
-    "message": "🙏 يرجى إضافة كلماتك السريعة"
   },
   "点击移除收藏": {
     "message": "انقر لإزالة المفضلة"
@@ -796,6 +772,18 @@
     "message": "{count} مواد",
     "description": "The default description for a category card in the generated index about how many items this category includes"
   },
+  "message.passwordlessLinkSent": {
+    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "فشل الإرسال. يرجى التحقق من بريدك الإلكتروني أو اسم المستخدم."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "احصل على رابط تسجيل الدخول بدون كلمة مرور"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "تسجيل الدخول بدون كلمة مرور"
+  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -823,5 +811,30 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "برامجي"
+  },
+  "link.myaccount": {
+    "message": "إعدادات الحساب"
+  },
+  "link.addprompt": {
+    "message": "أضف موجهًا"
+  },
+  "modal.addprompt.title": {
+    "message": "مشاركة الموجه (سيظهر هذا في علامة التبويب 'برامجي')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 شارك برامجاتك"
+  },
+  "label.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "link.home": {
+    "message": "الرئيسية"
   }
 }

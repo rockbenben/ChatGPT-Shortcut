@@ -146,9 +146,6 @@
   "showcase.tag.contribute.description": {
     "message": "Works submitted by the public that can help broaden our horizons."
   },
-  "showcase.header.button": {
-    "message": "🙏 Please add your promote"
-  },
   "showcase.filters.title": {
     "message": "Filters"
   },
@@ -507,17 +504,11 @@
   "tabs.login": {
     "message": "Log in"
   },
-  "tabs.register": {
-    "message": "Register"
-  },
   "card.welcome": {
     "message": "Welcome"
   },
   "message.success": {
     "message": "Entry submitted successfully!"
-  },
-  "link.user": {
-    "message": "User Interface"
   },
   "button.logout": {
     "message": "Log out"
@@ -573,17 +564,11 @@
   "button.changePassword": {
     "message": "Change Password"
   },
-  "label.forgotPassword": {
-    "message": "Forget the password"
-  },
   "placeholder.email": {
     "message": "Mail"
   },
   "button.sendResetEmail": {
     "message": "Send reset email"
-  },
-  "link.home": {
-    "message": "Return Home"
   },
   "title.userInfo": {
     "message": "User Info"
@@ -606,9 +591,6 @@
   "button.resetPassword": {
     "message": "Reset Password"
   },
-  "tabs.forgotPassword": {
-    "message": "Forget the password"
-  },
   "button.forgotPassword": {
     "message": "Forgot Password"
   },
@@ -617,12 +599,6 @@
   },
   "placeholder.resetPassword.code": {
     "message": "Reset code"
-  },
-  "link.addprompt": {
-    "message": "Add a custom prompt"
-  },
-  "modal.addprompt.title": {
-    "message": "Share Prompt (This content will appear in the 'My Prompts' tab)"
   },
   "message.addprompt.requiredTitle": {
     "message": "Please enter the prompt title!"
@@ -705,7 +681,7 @@
   "input.addprompt.share.unchecked": {
     "message": "No"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "The prompts displayed on this page are shared and uploaded by netizens, we cannot guarantee the accuracy, quality or completeness of the content, and we also do not take responsibility for any legal liability arising from the content. If you find any infringement or other problems, you can contact us to deal with it. We will deal with it as soon as possible after receiving the notification."
   },
   "description.communityPrompts": {
@@ -793,8 +769,20 @@
     "message": "The embedded pages of ChatGPT do not support login via Google authorization. Please log in using your account credentials."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
+    "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "message.passwordlessLinkSent": {
+    "message": "Passwordless login link sent!"
+  },
+  "message.errorSendingPasswordlessLink": {
+    "message": "Failed to send. Please check your email or username."
+  },
+  "button.sendPasswordlessLink": {
+    "message": "Get Passwordless Login Link"
+  },
+  "tabs.passwordlessLogin": {
+    "message": "Passwordless Login"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -823,5 +811,30 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "My Prompts"
+  },
+  "link.myaccount": {
+    "message": "Account Settings"
+  },
+  "link.addprompt": {
+    "message": "Add a prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Share Prompt (This will appear in the 'My Prompts' tab)"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Share your prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Forgot Password?"
+  },
+  "link.home": {
+    "message": "Home"
   }
 }
