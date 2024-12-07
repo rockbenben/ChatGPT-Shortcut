@@ -14,9 +14,6 @@
   "order.descending": {
     "message": "absteigende Reihenfolge"
   },
-  "link.home": {
-    "message": "Zurück zur Hauptseite"
-  },
   "upvote": {
     "message": "Upvote"
   },
@@ -364,9 +361,6 @@
   "button.changePassword": {
     "message": "Ihr Passwort ändern"
   },
-  "label.forgotPassword": {
-    "message": "Passwort vergessen?"
-  },
   "title.userInfo": {
     "message": "Benutzerinformationen"
   },
@@ -421,17 +415,8 @@
   "message.success1": {
     "message": "Klicken Sie auf die Bezeichnung \"Meine Eingabeaufforderung\", um die hinzugefügten benutzerdefinierten Eingabeaufforderungen anzuzeigen."
   },
-  "link.user": {
-    "message": "Benutzer"
-  },
   "button.logout": {
     "message": "stornieren"
-  },
-  "link.addprompt": {
-    "message": "Hinzufügen einer benutzerdefinierten Eingabeaufforderung"
-  },
-  "modal.addprompt.title": {
-    "message": "Share Prompt (Dieser Inhalt erscheint auf der Registerkarte \"Meine Prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "sein"
@@ -441,9 +426,6 @@
   },
   "button.addPrompt": {
     "message": "Eingabeaufforderung hinzufügen"
-  },
-  "showcase.header.button": {
-    "message": "🙏 Bitte fügen Sie Ihr Stichwort hinzu!"
   },
   "点击移除收藏": {
     "message": "Zum Entfernen von Favoriten anklicken"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Passwortlose Anmeldung"
   },
-  "link.myaccount": {
-    "message": "Kontoeinstellungen"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Meine Aufforderungen"
+  },
+  "link.myaccount": {
+    "message": "Kontoeinstellungen"
+  },
+  "link.addprompt": {
+    "message": "Aufforderung hinzufügen"
+  },
+  "modal.addprompt.title": {
+    "message": "Aufforderung teilen (Dies wird im Tab 'Meine Aufforderungen' erscheinen)"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Teile deine Aufforderungen"
+  },
+  "label.forgotPassword": {
+    "message": "Passwort vergessen"
+  },
+  "link.home": {
+    "message": "Startseite"
   }
 }

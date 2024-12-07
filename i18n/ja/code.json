@@ -328,12 +328,6 @@
   "button.changePassword": {
     "message": "パスワードの変更"
   },
-  "label.forgotPassword": {
-    "message": "パスワードをお忘れの方"
-  },
-  "link.home": {
-    "message": "このページのトップへ戻る"
-  },
   "title.userInfo": {
     "message": "ユーザー情報"
   },
@@ -388,23 +382,11 @@
   "message.success1": {
     "message": "マイプロンプト」というラベルをクリックすると、追加されたカスタムプロンプトが表示されます。"
   },
-  "link.user": {
-    "message": "ユーザーインターフェース"
-  },
   "button.logout": {
     "message": "ログアウト"
   },
-  "link.addprompt": {
-    "message": "カスタムプロンプトを追加する"
-  },
-  "modal.addprompt.title": {
-    "message": "プロンプトを共有する（このコンテンツは「マイプロンプト」タブに表示されます）"
-  },
   "button.addPrompt": {
     "message": "プロンプトを追加する"
-  },
-  "showcase.header.button": {
-    "message": "🙏 あなたのキューワードを追加してください。"
   },
   "点击移除收藏": {
     "message": "クリックするとコレクションを削除します"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "パスワードレスログイン"
   },
-  "link.myaccount": {
-    "message": "アカウント設定"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -828,7 +807,7 @@
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "このページは非公開です。 検索対象外となり、このページのリンクに直接アクセスできるユーザーのみに公開されます。",
+    "message": "このページは非公開です。検索対象外となり、このページのリンクに直接アクセスできるユーザーのみに公開されます。",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "この著者による投稿はまだありません。",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "マイプロンプト"
+  },
+  "link.myaccount": {
+    "message": "アカウント設定"
+  },
+  "link.addprompt": {
+    "message": "プロンプトを追加"
+  },
+  "modal.addprompt.title": {
+    "message": "プロンプトを共有（これは「マイプロンプト」タブに表示されます）"
+  },
+  "showcase.header.button": {
+    "message": "🙏 プロンプトを共有する"
+  },
+  "label.forgotPassword": {
+    "message": "パスワードを忘れた"
+  },
+  "link.home": {
+    "message": "ホーム"
   }
 }

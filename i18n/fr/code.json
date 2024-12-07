@@ -11,9 +11,6 @@
   "order.descending": {
     "message": "ordre décroissant"
   },
-  "link.home": {
-    "message": "Retour à la page d'accueil"
-  },
   "upvote": {
     "message": "patronner"
   },
@@ -361,9 +358,6 @@
   "button.changePassword": {
     "message": "modifier votre mot de passe"
   },
-  "label.forgotPassword": {
-    "message": "mot de passe oublié ?"
-  },
   "title.userInfo": {
     "message": "informations sur l'utilisateur"
   },
@@ -418,17 +412,8 @@
   "message.success1": {
     "message": "Cliquez sur l'intitulé \"Mon message\" pour afficher les messages personnalisés qui ont été ajoutés."
   },
-  "link.user": {
-    "message": "utilisateur"
-  },
   "button.logout": {
     "message": "annuler"
-  },
-  "link.addprompt": {
-    "message": "Ajout d'une invite personnalisée"
-  },
-  "modal.addprompt.title": {
-    "message": "Partager l'incitation (Ce contenu apparaîtra dans l'onglet \"Mes incitations\")"
   },
   "input.addprompt.share.checked": {
     "message": "être"
@@ -438,9 +423,6 @@
   },
   "button.addPrompt": {
     "message": "Ajouter une invite"
-  },
-  "showcase.header.button": {
-    "message": "🙏 Veuillez ajouter votre mot de repère !"
   },
   "点击移除收藏": {
     "message": "Cliquez pour supprimer les favoris"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Connexion sans mot de passe"
   },
-  "link.myaccount": {
-    "message": "Paramètres du compte"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Mes invites"
+  },
+  "link.myaccount": {
+    "message": "Paramètres du compte"
+  },
+  "link.addprompt": {
+    "message": "Ajouter une invite"
+  },
+  "modal.addprompt.title": {
+    "message": "Partager l'invite (Cela apparaîtra dans l'onglet 'Mes invites')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Partagez vos invites"
+  },
+  "label.forgotPassword": {
+    "message": "Mot de passe oublié"
+  },
+  "link.home": {
+    "message": "Accueil"
   }
 }

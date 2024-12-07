@@ -328,12 +328,6 @@
   "button.changePassword": {
     "message": "비밀번호 변경"
   },
-  "label.forgotPassword": {
-    "message": "비밀번호를 잊어버리셨나요?"
-  },
-  "link.home": {
-    "message": "맨 위로 가기"
-  },
   "title.userInfo": {
     "message": "사용자 정보"
   },
@@ -388,23 +382,11 @@
   "message.success1": {
     "message": "추가된 사용자 지정 프롬프트를 보려면 '내 프롬프트' 레이블을 클릭합니다."
   },
-  "link.user": {
-    "message": "사용자 인터페이스"
-  },
   "button.logout": {
     "message": "취소"
   },
-  "link.addprompt": {
-    "message": "사용자 지정 프롬프트 추가"
-  },
-  "modal.addprompt.title": {
-    "message": "공유 프롬프트 (이 콘텐츠는 '내 프롬프트' 탭에 표시됨)"
-  },
   "button.addPrompt": {
     "message": "프롬프트 추가"
-  },
-  "showcase.header.button": {
-    "message": "🙏 큐 단어를 추가하세요."
   },
   "点击移除收藏": {
     "message": "컬렉션을 제거하려면 클릭"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "비밀번호 없는 로그인"
   },
-  "link.myaccount": {
-    "message": "계정 설정"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "내 프롬프트"
+  },
+  "link.myaccount": {
+    "message": "계정 설정"
+  },
+  "link.addprompt": {
+    "message": "프롬프트 추가"
+  },
+  "modal.addprompt.title": {
+    "message": "프롬프트 공유 (이 프롬프트는 '내 프롬프트' 탭에 표시됩니다)"
+  },
+  "showcase.header.button": {
+    "message": "🙏 프롬프트 공유하기"
+  },
+  "label.forgotPassword": {
+    "message": "비밀번호를 잊으셨나요?"
+  },
+  "link.home": {
+    "message": "홈"
   }
 }

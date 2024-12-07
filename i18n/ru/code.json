@@ -11,9 +11,6 @@
   "order.descending": {
     "message": "порядок убывания"
   },
-  "link.home": {
-    "message": "Вернуться на главную страницу"
-  },
   "upvote": {
     "message": "покровительствовать"
   },
@@ -361,9 +358,6 @@
   "button.changePassword": {
     "message": "изменить пароль"
   },
-  "label.forgotPassword": {
-    "message": "забыли пароль?"
-  },
   "title.userInfo": {
     "message": "информация о пользователе"
   },
@@ -418,17 +412,8 @@
   "message.success1": {
     "message": "Щелкните на ярлыке \"My Prompt\", чтобы просмотреть добавленные пользовательские подсказки."
   },
-  "link.user": {
-    "message": "пользователь"
-  },
   "button.logout": {
     "message": "отменить"
-  },
-  "link.addprompt": {
-    "message": "Добавление пользовательских подсказок"
-  },
-  "modal.addprompt.title": {
-    "message": "Поделиться подсказкой (это содержимое появится на вкладке \"Мои подсказки\")"
   },
   "input.addprompt.share.checked": {
     "message": "быть"
@@ -438,9 +423,6 @@
   },
   "button.addPrompt": {
     "message": "Добавить подсказку"
-  },
-  "showcase.header.button": {
-    "message": "🙏 Пожалуйста, добавьте свое слово для подсказки!"
   },
   "点击移除收藏": {
     "message": "Нажмите, чтобы удалить избранное"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Вход в систему без пароля"
   },
-  "link.myaccount": {
-    "message": "Настройки аккаунта"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Мои запросы"
+  },
+  "link.myaccount": {
+    "message": "Настройки аккаунта"
+  },
+  "link.addprompt": {
+    "message": "Добавить запрос"
+  },
+  "modal.addprompt.title": {
+    "message": "Поделиться запросом (Этот запрос появится на вкладке 'Мои запросы')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Поделитесь своими запросами"
+  },
+  "label.forgotPassword": {
+    "message": "Забыли пароль"
+  },
+  "link.home": {
+    "message": "Главная"
   }
 }

@@ -11,9 +11,6 @@
   "order.descending": {
     "message": "ordem decrescente"
   },
-  "link.home": {
-    "message": "Voltar à página inicial"
-  },
   "upvote": {
     "message": "ser condescendente"
   },
@@ -361,9 +358,6 @@
   "button.changePassword": {
     "message": "alterar a sua palavra-passe"
   },
-  "label.forgotPassword": {
-    "message": "esqueceu-se da palavra-passe?"
-  },
   "title.userInfo": {
     "message": "informação do utilizador"
   },
@@ -418,17 +412,8 @@
   "message.success1": {
     "message": "Clique na etiqueta \"O meu aviso\" para ver os avisos personalizados que foram adicionados."
   },
-  "link.user": {
-    "message": "utilizador"
-  },
   "button.logout": {
     "message": "cancelar"
-  },
-  "link.addprompt": {
-    "message": "Adicionar um prompt personalizado"
-  },
-  "modal.addprompt.title": {
-    "message": "Partilhar prompt (Este conteúdo aparecerá no separador \"Os meus prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "ser"
@@ -438,9 +423,6 @@
   },
   "button.addPrompt": {
     "message": "Adicionar prompt"
-  },
-  "showcase.header.button": {
-    "message": "Por favor, adiciona a tua palavra-chave!"
   },
   "点击移除收藏": {
     "message": "Clique para remover os favoritos"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Início de sessão sem palavra-passe"
   },
-  "link.myaccount": {
-    "message": "Configurações da conta"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Meus Prompts"
+  },
+  "link.myaccount": {
+    "message": "Configurações da Conta"
+  },
+  "link.addprompt": {
+    "message": "Adicionar um prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Compartilhar Prompt (Isso aparecerá na aba 'Meus Prompts')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Compartilhe seus prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Esqueceu a senha"
+  },
+  "link.home": {
+    "message": "Início"
   }
 }

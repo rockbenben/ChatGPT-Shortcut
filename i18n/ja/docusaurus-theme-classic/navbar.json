@@ -12,7 +12,7 @@
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ コミュニティ・キュー",
+    "message": "🏘️ コミュニティプロンプト",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
@@ -20,11 +20,11 @@
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
-    "message": "IMG プロンプト",
+    "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "ワードプロセッシング",
+    "message": "その他のツール",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
@@ -32,23 +32,23 @@
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "Find on Product Hunt",
+    "message": "Product Hunt で見つける",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "ご意見・ご感想",
+    "message": "フィードバック",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
-    "message": "フィードバックの送信",
+    "message": "📝 フィードバックを送信",
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "WeChat でチャットする",
+    "message": "💬 QQ でチャット",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "ディスコードに参加する",
+    "message": "📺 Discord に参加",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {

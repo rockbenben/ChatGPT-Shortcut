@@ -11,9 +11,6 @@
   "order.descending": {
     "message": "orden descendente"
   },
-  "link.home": {
-    "message": "Volver a la página de inicio"
-  },
   "upvote": {
     "message": "patrocinar"
   },
@@ -361,9 +358,6 @@
   "button.changePassword": {
     "message": "cambie su contraseña"
   },
-  "label.forgotPassword": {
-    "message": "¿Ha olvidado su contraseña?"
-  },
   "title.userInfo": {
     "message": "información para el usuario"
   },
@@ -418,17 +412,8 @@
   "message.success1": {
     "message": "Haga clic en la etiqueta \"Mi aviso\" para ver los avisos personalizados que se han añadido."
   },
-  "link.user": {
-    "message": "usuario"
-  },
   "button.logout": {
     "message": "cancelar"
-  },
-  "link.addprompt": {
-    "message": "Añadir un aviso personalizado"
-  },
-  "modal.addprompt.title": {
-    "message": "Share Prompt (Este contenido aparecerá en la pestaña \"Mis Prompts\")"
   },
   "input.addprompt.share.checked": {
     "message": "sea"
@@ -438,9 +423,6 @@
   },
   "button.addPrompt": {
     "message": "Añadir pregunta"
-  },
-  "showcase.header.button": {
-    "message": "🙏 ¡Por favor, añade tu palabra clave!"
   },
   "点击移除收藏": {
     "message": "Haz clic para eliminar favoritos"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Inicio de sesión sin contraseña"
   },
-  "link.myaccount": {
-    "message": "Configuración de la cuenta"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "Mis Prompts"
+  },
+  "link.myaccount": {
+    "message": "Configuración de cuenta"
+  },
+  "link.addprompt": {
+    "message": "Agregar un prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Compartir prompt (Esto aparecerá en la pestaña 'Mis Prompts')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Comparte tus prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Olvidé la contraseña"
+  },
+  "link.home": {
+    "message": "Inicio"
   }
 }

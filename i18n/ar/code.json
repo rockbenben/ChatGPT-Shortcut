@@ -14,9 +14,6 @@
   "order.descending": {
     "message": "تنازليا"
   },
-  "link.home": {
-    "message": "العودة للمنزل"
-  },
   "upvote": {
     "message": "ممتاز"
   },
@@ -364,9 +361,6 @@
   "button.changePassword": {
     "message": "تغيير كلمة المرور"
   },
-  "label.forgotPassword": {
-    "message": "نسيت كلمة المرور"
-  },
   "title.userInfo": {
     "message": "معلومات المستخدم"
   },
@@ -421,17 +415,8 @@
   "message.success1": {
     "message": "انقر فوق التسمية &quot;مطالبتي&quot; لعرض المطالبات المخصصة التي تمت إضافتها."
   },
-  "link.user": {
-    "message": "واجهة المستخدم"
-  },
   "button.logout": {
     "message": "تسجيل خروج"
-  },
-  "link.addprompt": {
-    "message": "أضف موجهًا مخصصًا"
-  },
-  "modal.addprompt.title": {
-    "message": "مطالبة المشاركة (سيظهر هذا المحتوى في علامة التبويب &quot;المطالبات الخاصة بي&quot;)"
   },
   "input.addprompt.share.checked": {
     "message": "نعم"
@@ -441,9 +426,6 @@
   },
   "button.addPrompt": {
     "message": "إضافة موجه"
-  },
-  "showcase.header.button": {
-    "message": "🙏 يرجى إضافة كلماتك السريعة"
   },
   "点击移除收藏": {
     "message": "انقر لإزالة المفضلة"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "تسجيل الدخول بدون كلمة مرور"
   },
-  "link.myaccount": {
-    "message": "إعدادات الحساب"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "برامجي"
+  },
+  "link.myaccount": {
+    "message": "إعدادات الحساب"
+  },
+  "link.addprompt": {
+    "message": "أضف موجهًا"
+  },
+  "modal.addprompt.title": {
+    "message": "مشاركة الموجه (سيظهر هذا في علامة التبويب 'برامجي')"
+  },
+  "showcase.header.button": {
+    "message": "🙏 شارك برامجاتك"
+  },
+  "label.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "link.home": {
+    "message": "الرئيسية"
   }
 }

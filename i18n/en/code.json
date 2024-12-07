@@ -146,9 +146,6 @@
   "showcase.tag.contribute.description": {
     "message": "Works submitted by the public that can help broaden our horizons."
   },
-  "showcase.header.button": {
-    "message": "🙏 Please add your promote"
-  },
   "showcase.filters.title": {
     "message": "Filters"
   },
@@ -516,9 +513,6 @@
   "message.success": {
     "message": "Entry submitted successfully!"
   },
-  "link.user": {
-    "message": "User Interface"
-  },
   "button.logout": {
     "message": "Log out"
   },
@@ -573,17 +567,11 @@
   "button.changePassword": {
     "message": "Change Password"
   },
-  "label.forgotPassword": {
-    "message": "Forget the password"
-  },
   "placeholder.email": {
     "message": "Mail"
   },
   "button.sendResetEmail": {
     "message": "Send reset email"
-  },
-  "link.home": {
-    "message": "Return Home"
   },
   "title.userInfo": {
     "message": "User Info"
@@ -617,12 +605,6 @@
   },
   "placeholder.resetPassword.code": {
     "message": "Reset code"
-  },
-  "link.addprompt": {
-    "message": "Add a custom prompt"
-  },
-  "modal.addprompt.title": {
-    "message": "Share Prompt (This content will appear in the 'My Prompts' tab)"
   },
   "message.addprompt.requiredTitle": {
     "message": "Please enter the prompt title!"
@@ -808,9 +790,6 @@
   "tabs.passwordlessLogin": {
     "message": "Passwordless Login"
   },
-  "link.myaccount": {
-    "message": "Account Settings"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -842,5 +821,26 @@
   "theme.blog.author.noPosts": {
     "message": "This author has not written any posts yet.",
     "description": "The text for authors with 0 blog post"
+  },
+  "link.user": {
+    "message": "My Prompts"
+  },
+  "link.myaccount": {
+    "message": "Account Settings"
+  },
+  "link.addprompt": {
+    "message": "Add a prompt"
+  },
+  "modal.addprompt.title": {
+    "message": "Share Prompt (This will appear in the 'My Prompts' tab)"
+  },
+  "showcase.header.button": {
+    "message": "🙏 Share your prompts"
+  },
+  "label.forgotPassword": {
+    "message": "Forget password"
+  },
+  "link.home": {
+    "message": "Home"
   }
 }

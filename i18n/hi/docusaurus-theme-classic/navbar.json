@@ -8,23 +8,23 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.📘 使用说明": {
-    "message": "📘 उपयोग के लिए निर्देश",
+    "message": "📘 दस्तावेज़",
     "description": "Navbar item with label 📘 使用说明"
   },
   "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ सामुदायिक संकेत",
+    "message": "🏘️ समुदाय सुझाव",
     "description": "Navbar item with label 🏘️ 社区提示词"
   },
   "item.label.🛠️ 应用工具": {
-    "message": "🛠️ ऐप्स",
+    "message": "🛠️ उपकरण",
     "description": "Navbar item with label 🛠️ 应用工具"
   },
   "item.label.IMGPrompt": {
-    "message": "आईएमजी प्रॉम्प्ट",
+    "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
   "item.label.文字处理": {
-    "message": "शब्द संसाधन",
+    "message": "अन्य उपकरण",
     "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
@@ -32,11 +32,11 @@
     "description": "Navbar item with label 工具收藏"
   },
   "item.label.Find on Product Hunt": {
-    "message": "प्रोडक्ट हंट पर खोजें",
+    "message": "Product Hunt पर खोजें",
     "description": "Navbar item with label Find on Product Hunt"
   },
   "item.label.反馈建议": {
-    "message": "प्रतिक्रिया/सुझाव",
+    "message": "प्रतिक्रिया",
     "description": "Navbar item with label 反馈建议"
   },
   "item.label.📝 提交反馈": {
@@ -44,15 +44,15 @@
     "description": "Navbar item with label 📝 提交反馈"
   },
   "item.label.💬 加入 QQ 群": {
-    "message": "💬 हमसे WeChat पर चैट करें",
+    "message": "💬 हमें QQ पर चैट करें",
     "description": "Navbar item with label 💬 加入 QQ 群"
   },
   "item.label.📺 加入 Discord": {
-    "message": "📺 हमारे डिस्कोर्ड में शामिल हों",
+    "message": "📺 हमारे डिस्कॉर्ड में जुड़ें",
     "description": "Navbar item with label 📺 加入 Discord"
   },
   "item.label.脚本扩展": {
-    "message": "एक्सटेंशन",
+    "message": "विस्तार",
     "description": "Navbar item with label 脚本扩展"
   }
 }
