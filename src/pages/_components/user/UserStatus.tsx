@@ -1,7 +1,7 @@
 import React, { useContext, useState, useCallback } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, message, Modal, Typography, Switch } from "antd";
+import { Form, Input, Button, message, Modal, Typography, Switch, ConfigProvider } from "antd";
 import { UserOutlined, HeartOutlined, EditOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -9,95 +9,104 @@ import { submitPrompt } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
 const AddPromptModal = ({ open, setOpen, form, onFinish, loading }) => (
-  <Modal
-    title={translate({
-      id: "modal.addprompt.title",
-      message: "添加 Prompt（本内容将出现在「我的提示词」标签中）",
-    })}
-    open={open}
-    footer={null}
-    onCancel={() => setOpen(false)}>
-    <Form form={form} onFinish={onFinish}>
-      <Form.Item
-        name="title"
-        rules={[
-          {
-            required: true,
-            message: translate({
-              id: "message.addprompt.requiredTitle",
-              message: "请输入提示词标题！",
-            }),
-          },
-        ]}>
-        <Input
-          placeholder={translate({
-            id: "input.addprompt.title",
-            message: "提示词名称",
-          })}
-        />
-      </Form.Item>
-      <Form.Item
-        name="description"
-        rules={[
-          {
-            required: true,
-            message: translate({
-              id: "message.addprompt.requiredDescription",
-              message: "请输入提示词内容！",
-            }),
-          },
-        ]}>
-        <Input.TextArea
-          placeholder={translate({
-            id: "input.addprompt.description",
-            message: "提示词内容",
-          })}
-          rows={4}
-        />
-      </Form.Item>
-      <Form.Item name="remark">
-        <Input
-          placeholder={translate({
-            id: "input.addprompt.remark",
-            message: "提示词作用（非必填）",
-          })}
-        />
-      </Form.Item>
-      <Form.Item name="notes">
-        <Input.TextArea
-          placeholder={translate({
-            id: "input.addprompt.notes",
-            message: "备注（非必填）：您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。",
-          })}
-          rows={3}
-        />
-      </Form.Item>
-      <Form.Item name="share" valuePropName="checked">
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Switch
-            defaultChecked
-            onChange={(checked) => {
-              form.setFieldsValue({ share: checked });
-            }}
-            checkedChildren={translate({
-              id: "input.addprompt.share.checked",
-              message: "是",
-            })}
-            unCheckedChildren={translate({
-              id: "input.addprompt.share.unchecked",
-              message: "否",
+  <ConfigProvider
+    theme={{
+      components: {
+        Form: {
+          itemMarginBottom: 12,
+        },
+      },
+    }}>
+    <Modal
+      title={translate({
+        id: "modal.addprompt.title",
+        message: "添加 Prompt（本内容将出现在「我的提示词」标签中）",
+      })}
+      open={open}
+      footer={null}
+      onCancel={() => setOpen(false)}>
+      <Form form={form} onFinish={onFinish}>
+        <Form.Item
+          name="title"
+          rules={[
+            {
+              required: true,
+              message: translate({
+                id: "message.addprompt.requiredTitle",
+                message: "请输入提示词标题！",
+              }),
+            },
+          ]}>
+          <Input
+            placeholder={translate({
+              id: "input.addprompt.title",
+              message: "提示词名称",
             })}
           />
-          <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
-            <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
-          </Typography.Text>
-        </div>
-      </Form.Item>
-      <Button htmlType="submit" loading={loading}>
-        <Translate id="button.addPrompt">添加 Prompt</Translate>
-      </Button>
-    </Form>
-  </Modal>
+        </Form.Item>
+        <Form.Item
+          name="description"
+          rules={[
+            {
+              required: true,
+              message: translate({
+                id: "message.addprompt.requiredDescription",
+                message: "请输入提示词内容！",
+              }),
+            },
+          ]}>
+          <Input.TextArea
+            placeholder={translate({
+              id: "input.addprompt.description",
+              message: "提示词内容",
+            })}
+            rows={6}
+          />
+        </Form.Item>
+        <Form.Item name="remark">
+          <Input
+            placeholder={translate({
+              id: "input.addprompt.remark",
+              message: "提示词作用（非必填）",
+            })}
+          />
+        </Form.Item>
+        <Form.Item name="notes">
+          <Input.TextArea
+            placeholder={translate({
+              id: "input.addprompt.notes",
+              message: "备注（非必填）：您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。",
+            })}
+            rows={4}
+          />
+        </Form.Item>
+        <Form.Item name="share" valuePropName="checked">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Switch
+              defaultChecked
+              onChange={(checked) => {
+                form.setFieldsValue({ share: checked });
+              }}
+              checkedChildren={translate({
+                id: "input.addprompt.share.checked",
+                message: "是",
+              })}
+              unCheckedChildren={translate({
+                id: "input.addprompt.share.unchecked",
+                message: "否",
+              })}
+            />
+            <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
+              <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
+            </Typography.Text>
+          </div>
+        </Form.Item>
+        <Button htmlType="submit" type="primary" loading={loading} block>
+          <Translate id="button.addPrompt">添加 Prompt</Translate>
+        </Button>
+      </Form>
+    </Modal>
+  </ConfigProvider>
 );
 
 const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) => {
