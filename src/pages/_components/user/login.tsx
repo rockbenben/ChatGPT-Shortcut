@@ -37,8 +37,11 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
 
-  const handleForgotPasswordClick = useCallback(() => {
+  const handleRegister = useCallback(() => {
     setActiveTab("3");
+  }, []);
+  const handleForgotPasswordClick = useCallback(() => {
+    setActiveTab("4");
   }, []);
 
   // Google Auth
@@ -202,6 +205,9 @@ const LoginPage = () => {
             Login via Google
           </Button>
         </Tooltip>
+        <Button onClick={handleRegister}>
+          <Translate id="button.register">注册</Translate>
+        </Button>
         <Button onClick={handleForgotPasswordClick}>
           <Translate id="button.forgotPassword">忘记密码</Translate>
         </Button>
@@ -309,13 +315,13 @@ const LoginPage = () => {
     },
     {
       key: "3",
-      label: <Translate id="tabs.forgotPassword">忘记密码</Translate>,
-      children: forgotForm,
+      label: <Translate id="tabs.register">注册</Translate>,
+      children: registerForm,
     },
     {
       key: "4",
-      label: <Translate id="tabs.register">注册</Translate>,
-      children: registerForm,
+      label: <Translate id="tabs.forgotPassword">忘记密码</Translate>,
+      children: forgotForm,
     },
   ];
 
