@@ -295,6 +295,7 @@ const CommunityPrompts = () => {
           <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
             <Text type="secondary" style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
               {translate({
+                id: "info.communityPrompts",
                 message:
                   "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
               })}

@@ -478,6 +478,28 @@ export async function resetPassword(values) {
   }
 }
 
+// 发送无密码登录链接
+export async function sendPasswordlessLink(target) {
+  try {
+    return await axios.post(`${API_URL}/passwordless/send-link`, target);
+  } catch (error) {
+    console.error("Failed to send passwordless link:", error);
+    throw error;
+  }
+}
+
+// 使用令牌进行无密码登录
+export async function loginWithToken(loginToken) {
+  try {
+    const response = await axios.get(`${API_URL}/passwordless/login?loginToken=${loginToken}`);
+    localStorage.setItem("auth_token", response.data.jwt);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to login with token:", error);
+    throw error;
+  }
+}
+
 /* 评论系统 */
 // 按 type 来获取评论
 export async function getComments(id, page, pageSize, type = "card") {

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Tooltip } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { login, register, forgotPassword } from "@site/src/api";
+import { login, register, forgotPassword, sendPasswordlessLink } from "@site/src/api";
 import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
 
 const rules = {
@@ -36,9 +36,13 @@ const rules = {
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
-  const handleForgotPasswordClick = () => {
+
+  const handleRegister = useCallback(() => {
     setActiveTab("3");
-  };
+  }, []);
+  const handleForgotPasswordClick = useCallback(() => {
+    setActiveTab("4");
+  }, []);
 
   // Google Auth
   useEffect(() => {
@@ -104,7 +108,7 @@ const LoginPage = () => {
     }
   };
 
-  const handleAuth = async (values, authFunction, successMessage) => {
+  const handleAuth = useCallback(async (values, authFunction, successMessage) => {
     setLoading(true);
     try {
       const response = await authFunction(values);
@@ -115,7 +119,7 @@ const LoginPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   const onFinishLogin = async (values) => {
     handleAuth(values, login, <Translate id="message.loginSuccess">登录成功！</Translate>);
@@ -144,15 +148,46 @@ const LoginPage = () => {
     }
   };
 
+  // 集成免密码登录
+  const handleSendPasswordlessLink = async (values) => {
+    setLoading(true);
+    const target = values.email;
+
+    // 判断输入是否为邮箱格式
+    const isValidEmail = (email) => {
+      return email.includes("@");
+    };
+
+    try {
+      // 根据输入的值动态地决定传递给后端的参数
+      const payload = isValidEmail(target) ? { email: target } : { username: target };
+      await sendPasswordlessLink(payload);
+      message.success(<Translate id="message.passwordlessLinkSent">免密码登录链接已发送到您的邮箱！</Translate>);
+    } catch (error) {
+      console.error("Error sending passwordless login link:", error);
+      message.error(<Translate id="message.errorSendingPasswordlessLink">发送失败，请检查邮箱或用户名</Translate>);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const passwordlessLoginForm = (
+    <Form onFinish={handleSendPasswordlessLink}>
+      <Form.Item name="email" rules={rules.email}>
+        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
+      </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" loading={loading}>
+          <Translate id="button.sendPasswordlessLink">获取免密码登录链接</Translate>
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+
   const loginForm = (
     <Form onFinish={onFinishLogin}>
       <Form.Item name="username" rules={rules.username}>
-        <Input
-          placeholder={translate({
-            id: "input.username",
-            message: "用户名/邮箱",
-          })}
-        />
+        <Input placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
       </Form.Item>
       <Form.Item name="password" rules={rules.password}>
         <Input.Password placeholder={translate({ id: "input.password", message: "密码" })} />
@@ -170,6 +205,9 @@ const LoginPage = () => {
             Login via Google
           </Button>
         </Tooltip>
+        <Button onClick={handleRegister}>
+          <Translate id="button.register">注册</Translate>
+        </Button>
         <Button onClick={handleForgotPasswordClick}>
           <Translate id="button.forgotPassword">忘记密码</Translate>
         </Button>
@@ -257,12 +295,13 @@ const LoginPage = () => {
         <Input placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
-        <Button htmlType="submit" loading={loading}>
+        <Button type="primary" htmlType="submit" loading={loading}>
           <Translate id="button.sendResetEmail">发送密码重置邮件</Translate>
         </Button>
       </Form.Item>
     </Form>
   );
+
   const items = [
     {
       key: "1",
@@ -271,12 +310,17 @@ const LoginPage = () => {
     },
     {
       key: "2",
-      label: <Translate id="tabs.register">注册</Translate>,
-      children: registerForm,
+      label: <Translate id="tabs.passwordlessLogin">免密码登录</Translate>,
+      children: passwordlessLoginForm,
     },
     {
       key: "3",
-      label: <Translate id="tabs.forgotPassword">忘记密码</Translate>,
+      label: <Translate id="button.register">注册</Translate>,
+      children: registerForm,
+    },
+    {
+      key: "4",
+      label: <Translate id="label.forgotPassword">忘记密码</Translate>,
       children: forgotForm,
     },
   ];
