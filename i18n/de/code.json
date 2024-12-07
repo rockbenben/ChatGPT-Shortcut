@@ -20,7 +20,7 @@
   "downvote": {
     "message": "abstimmen"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "Die auf dieser Seite angezeigten Prompts werden von Netizens geteilt und hochgeladen, wir können nicht für die Richtigkeit, Qualität oder Vollständigkeit des Inhalts garantieren und wir übernehmen auch keine Verantwortung für jegliche rechtliche Haftung, die aus dem Inhalt entsteht. Wenn Sie Verstöße oder andere Probleme feststellen, können Sie sich mit uns in Verbindung setzen, um diese zu lösen. Wir werden uns so schnell wie möglich nach Erhalt der Meldung darum kümmern."
   },
   "feedback.title": {

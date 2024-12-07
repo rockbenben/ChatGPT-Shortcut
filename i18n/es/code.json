@@ -17,7 +17,7 @@
   "downvote": {
     "message": "pedalear (una bicicleta)"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "Los mensajes que aparecen en esta página son compartidos y subidos por los internautas, por lo que no podemos garantizar la exactitud, calidad o integridad del contenido, y tampoco nos hacemos responsables de cualquier responsabilidad legal derivada del contenido. Si encuentras alguna infracción u otro problema, puedes ponerte en contacto con nosotros para solucionarlo. Nos ocuparemos de ello lo antes posible tras recibir la notificación."
   },
   "feedback.title": {

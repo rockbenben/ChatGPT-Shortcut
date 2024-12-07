@@ -681,7 +681,7 @@
   "input.addprompt.share.unchecked": {
     "message": "No"
   },
-  "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。": {
+  "info.communityPrompts": {
     "message": "The prompts displayed on this page are shared and uploaded by netizens, we cannot guarantee the accuracy, quality or completeness of the content, and we also do not take responsibility for any legal liability arising from the content. If you find any infringement or other problems, you can contact us to deal with it. We will deal with it as soon as possible after receiving the notification."
   },
   "description.communityPrompts": {
