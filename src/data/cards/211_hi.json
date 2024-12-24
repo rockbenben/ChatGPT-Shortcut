@@ -2,7 +2,7 @@
     "id": 211,
     "hi": {
         "title": "लेख पर प्रकाश डाला गया",
-        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Hindi. Here is the text: [].",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it.  Here is the text: [].",
         "description": "निम्नलिखित पाठ को ध्यान से पढ़ें और जोर देने के लिए शब्दों या वाक्यांशों को उजागर करने के लिए दोहरे तारांकन (**) का उपयोग करें। मूल पाठ में परिवर्तन न करें या सारांश न बनाएं।",
         "remark": "हाइलाइट करने से लेख की पठनीयता बढ़ेगी. हालाँकि, ChatGPT डिफ़ॉल्ट रूप से मार्कडाउन सिंटैक्स प्रदर्शित करता है। परिणाम सामने आने के बाद, आपको हाइलाइट किए गए भाग को मैन्युअल रूप से चुनना होगा। मैंने हाइलाइटिंग के लिए अन्य प्रतीकों को प्रतिस्थापित करने का भी प्रयास किया है, लेकिन वह बहुत अच्छी तरह से काम नहीं कर सका। इसलिए, अभी इस संस्करण का उपयोग करें।"
     },
@@ -10,5 +10,5 @@
         "write"
     ],
     "website": null,
-    "count": 1034
+    "count": 1047
 }

@@ -2,7 +2,7 @@
     "id": 105,
     "bn": {
         "title": "আর প্রোগ্রামিং ইন্টারপ্রেটার",
-        "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Bengali. My first command is.",
+        "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}.  My first command is.",
         "description": "আমি চাই আপনি একজন R দোভাষী হিসেবে কাজ করুন। আমি কমান্ড টাইপ করি এবং আপনি উত্তর দেন যে টার্মিনালটি কী প্রদর্শন করবে। আমি আশা করি আপনি শুধুমাত্র একটি অনন্য কোড ব্লকের মধ্যে টার্মিনাল আউটপুটের জন্য উত্তর দেবেন, এবং অন্য কিছু নয়। ব্যাখ্যা লিখবেন না। আমি আপনাকে নির্দেশ না দেওয়া পর্যন্ত কমান্ড টাইপ করবেন না। যখন আমার আপনাকে ইংরেজিতে কিছু বলার প্রয়োজন হয়, আমি টেক্সটটি বন্ধনীতে রাখি {remark text}।",
         "remark": "আর প্রোগ্রামিং ইন্টারপ্রেটার"
     },
@@ -10,5 +10,5 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "count": 179
+    "count": 180
 }

@@ -2,7 +2,7 @@
     "id": 245,
     "hi": {
         "title": "आइकन डिज़ाइन",
-        "prompt": "The entire conversation and instructions should be provided in Hindi. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
+        "prompt": " Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
         "description": "एक आइकन डिजाइनर की तरह, मुझे &quot;सरल&quot; शब्द का प्रतिनिधित्व करने वाले आइकन के बारे में कुछ विचार दें। विचार ऐप के मुख्य वेबसाइट पृष्ठ पर एक आइकन जोड़ने का है, जो &quot;आसान और आसान खाना पकाने&quot; के विचार का प्रतिनिधित्व करता है क्योंकि ऐप का मुख्य लक्ष्य लोगों को सरल व्यंजन प्रदान करना है जिसे वे आसानी से घर पर पका सकते हैं। अधिक जानकारी:- प्रतीक सरल और स्पष्ट होने चाहिए, सरल दृश्यों के साथ जो विचारों को संक्षेप में व्यक्त करते हों।",
         "remark": "डिज़ाइन विचारों को ठोस बनाते हुए अवधारणाओं या विचारों को ठोस चीज़ों में बदलें। @梁哲豪 से साझा किया गया।"
     },
@@ -11,5 +11,5 @@
         "tool"
     ],
     "website": null,
-    "count": 644
+    "count": 647
 }

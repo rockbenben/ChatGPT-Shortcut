@@ -2,7 +2,7 @@
     "id": 245,
     "pt": {
         "title": "Desenho de ícones",
-        "prompt": "The entire conversation and instructions should be provided in Portuguese. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
+        "prompt": " Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
         "description": "Como designer de ícones, dê-me algumas ideias para um ícone que represente a palavra \"simples\". A ideia é adicionar um ícone na página principal do sítio Web da aplicação que represente a ideia de \"fácil de cozinhar\", uma vez que o principal objetivo da aplicação é fornecer às pessoas receitas simples que possam facilmente cozinhar em casa. Mais informações:- O ícone deve ser simples e visualmente apelativo para transmitir a ideia de forma sucinta.",
         "remark": "A tradução de um conceito ou ideia em algo concreto torna a ideia de design tangível. Partilhado por @Liang Zhehao."
     },
@@ -11,5 +11,5 @@
         "tool"
     ],
     "website": null,
-    "count": 644
+    "count": 647
 }

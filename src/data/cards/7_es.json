@@ -2,7 +2,7 @@
     "id": 7,
     "es": {
         "title": "modificador de aviso",
-        "prompt": "The entire conversation and instructions should be provided in Spanish. I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
+        "prompt": "I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
         "description": "Estoy intentando obtener buenos resultados en el GPT-4 a partir de las siguientes palabras clave: sus palabras clave. ¿Puede escribir palabras clave que estén más optimizadas y produzcan mejores resultados?",
         "remark": "Deja que ChatGPT reescriba las instrucciones por nosotros. Dado que la lógica de las instrucciones escritas por humanos es diferente a la de las escritas por máquinas, reescribir las instrucciones hará que ChatGPT sea más fácil de entender."
     },
@@ -10,5 +10,5 @@
         "ai"
     ],
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 6466
+    "count": 6524
 }

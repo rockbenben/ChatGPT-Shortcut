@@ -2,7 +2,7 @@
     "id": 181,
     "bn": {
         "title": "চীনা-ইংরেজি অনুবাদ - মিনিমালিস্ট",
-        "prompt": "The entire conversation and instructions should be provided in Bengali. zh-en translation of \"X\".",
+        "prompt": "The entire conversation and instructions should be provided in Bengali. bn-en translation of \"X\".",
         "description": "পার্ট X চীনা বা ইংরেজিতে হতে পারে এবং chatgpt স্বয়ংক্রিয়ভাবে সংশ্লিষ্ট ভাষায় অনুবাদ করবে। এটি পরীক্ষা করা হয়েছে যে সোজা ডাবল কোট (&quot;) ব্যবহার করা সবচেয়ে ভাল কাজ করে৷ api কল ব্যবহার করার সময় ভূমিকার জন্য সহকারী নির্বাচন করা একটি নির্দেশ হিসাবে অনুবাদ করার জন্য পাঠ্য বোঝার সম্ভাবনা হ্রাস করতে পারে (অনিবার্য)৷",
         "remark": "একটি অনুবাদক প্রম্পট যা টোকেন সংরক্ষণ করে, যা ChatGPT API-তে নির্মিত অনুবাদ প্ল্যাটফর্মের জন্য উপযুক্ত। @কিজেন-ইয়াং থেকে অবদান।"
     },
@@ -11,5 +11,5 @@
         "language"
     ],
     "website": null,
-    "count": 3021
+    "count": 3041
 }

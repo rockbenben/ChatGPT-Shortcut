@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 78203
+        "count": 78971
     },
     {
         "pt": {
@@ -27,12 +27,12 @@
             "write"
         ],
         "id": 209,
-        "count": 53152
+        "count": 53451
     },
     {
         "pt": {
             "title": "Gerador de gorjetas a meio da viagem",
-            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. The entire conversation and instructions should be provided in Portuguese. Here is your first prompt: ",
+            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be.  Here is your first prompt: ",
             "description": "Quero que actues como um gerador de sugestões para o programa de IA Midjourney. A tua tarefa é fornecer descrições detalhadas e criativas das imagens únicas e interessantes que inspiram a IA. Não se esqueça que a IA compreende uma grande variedade de linguagem e pode explicar conceitos abstractos, por isso sinta-se à vontade para ser o mais imaginativo e descritivo possível. Por exemplo, podes descrever uma cena de uma cidade futurista ou uma paisagem surrealista cheia de criaturas estranhas. Quanto mais pormenorizada e imaginativa for a sua descrição, mais interessante será a imagem resultante.",
             "remark": "Inspire o Midjourney a gerar imagens únicas e interessantes, preenchendo as descrições de imagens fornecidas com descrições detalhadas e criativas. Isto também se aplica à Difusão estável. Ou utilize a minha outra ferramenta, IMGPrompt, que pode ser encontrada na barra de navegação."
         },
@@ -42,7 +42,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25029
+        "count": 25170
     },
     {
         "pt": {
@@ -58,7 +58,7 @@
             "write"
         ],
         "id": 197,
-        "count": 26301
+        "count": 26536
     },
     {
         "pt": {
@@ -73,7 +73,7 @@
             "article"
         ],
         "id": 20,
-        "count": 22647
+        "count": 22866
     },
     {
         "pt": {
@@ -89,7 +89,7 @@
             "favorite"
         ],
         "id": 199,
-        "count": 18797
+        "count": 18896
     },
     {
         "pt": {
@@ -104,6 +104,6 @@
             "article"
         ],
         "id": 4,
-        "count": 14274
+        "count": 14365
     }
 ]

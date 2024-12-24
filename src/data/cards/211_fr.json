@@ -2,7 +2,7 @@
     "id": 211,
     "fr": {
         "title": "Mise en évidence d'un article",
-        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in French. Here is the text: [].",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it.  Here is the text: [].",
         "description": "Lisez attentivement le texte suivant et utilisez les doubles astérisques (**) pour mettre en évidence les mots ou les phrases à souligner. Ne modifiez pas le texte original et ne faites pas de résumé.",
         "remark": "Le surlignage permet d'améliorer la lisibilité de l'article. Cependant, ChatGPT affiche la syntaxe Markdown par défaut. Lorsque les résultats sont affichés, vous devez encadrer manuellement la section surlignée. J'ai également essayé de remplacer les conseils de surlignage par d'autres symboles, mais cela ne fonctionne pas très bien. Utilisez donc cette version pour l'instant."
     },
@@ -10,5 +10,5 @@
         "write"
     ],
     "website": null,
-    "count": 1034
+    "count": 1047
 }

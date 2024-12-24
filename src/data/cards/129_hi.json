@@ -2,7 +2,7 @@
     "id": 129,
     "hi": {
         "title": "छवि: प्रतीक डिज़ाइन",
-        "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes. The entire conversation and instructions should be provided in Hindi. My first object is ",
+        "prompt": "I want you to act as an ascii artist. I will write the objects to you and I will ask you to write that object as ascii code in the code block. Write only ascii code. Do not explain about the object you wrote. I will say the objects in double quotes.  My first object is ",
         "description": "मैं चाहता हूं कि आप एक एएससीआई कलाकार के रूप में काम करें। मैं आपको ऑब्जेक्ट लिखने जा रहा हूं, और मैं आपसे उस ऑब्जेक्ट के लिए एक कोड ब्लॉक में एएससीआई कोड लिखने के लिए कहने जा रहा हूं। केवल एएससीआई कोड लिखें। आपके द्वारा लिखी गई वस्तुओं की व्याख्या न करें। मैं इन वस्तुओं का दोहरे उद्धरण चिह्नों में वर्णन करूंगा।",
         "remark": "Ascii प्रतीकों के साथ विभिन्न छवियां बनाएं।"
     },
@@ -10,5 +10,5 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "count": 346
+    "count": 349
 }

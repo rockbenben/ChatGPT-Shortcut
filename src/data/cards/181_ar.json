@@ -2,7 +2,7 @@
     "id": 181,
     "ar": {
         "title": "الترجمة الصينية-الإنجليزية - الحد الأدنى",
-        "prompt": "The entire conversation and instructions should be provided in Arabic. zh-en translation of \"X\".",
+        "prompt": "The entire conversation and instructions should be provided in Arabic. ar-en translation of \"X\".",
         "description": "يمكن أن يكون الجزء X باللغة الصينية أو الإنجليزية ، وستتم ترجمة chatgpt تلقائيًا إلى اللغة المقابلة. لقد تم اختبار أن استخدام علامات الاقتباس المزدوجة (&quot;) يعمل بشكل أفضل. يمكن أن يؤدي اختيار المساعد للدور عند استخدام استدعاء api إلى تقليل (لا مفر منه) احتمالية فهم النص المراد ترجمته كتعليمات.",
         "remark": "موجه مترجم يحفظ الرموز المميزة المناسبة لمنصات الترجمة المبنية على واجهة برمجة تطبيقات ChatGPT. مساهمة من @ Qizhen-Yang."
     },
@@ -11,5 +11,5 @@
         "language"
     ],
     "website": null,
-    "count": 3021
+    "count": 3041
 }

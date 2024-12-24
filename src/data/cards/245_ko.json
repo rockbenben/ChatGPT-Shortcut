@@ -2,7 +2,7 @@
     "id": 245,
     "ko": {
         "title": "도상학",
-        "prompt": "The entire conversation and instructions should be provided in Korean. Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
+        "prompt": " Act like an icon designer and give me ideas on representing an icon of the word [KEYWORD].\n\nThe idea is to add to the main website page of the app an icon that represents the idea of [KEYIDEA] because the app's main goal is to offer [Function]\n\nMore information:\n-The icon should be XXXX.",
         "description": "아이콘 디자이너답게 '심플'이라는 단어를 표현할 수 있는 아이콘에 대한 아이디어를 주세요. 이 앱의 주요 목표는 사람들이 집에서 쉽게 요리할 수 있는 간단한 레시피를 제공하는 것이므로, 앱의 메인 웹사이트 페이지에 '쉬운 요리'라는 아이디어를 나타내는 아이콘을 추가하는 것입니다. 자세한 정보: - 아이콘은 간결하게 아이디어를 전달할 수 있도록 단순하고 시각적으로 매력적이어야 합니다.",
         "remark": "개념이나 아이디어를 구체적인 것으로 변환하여 디자인 아이디어를 가시화합니다. 공유 @sorghumcherho."
     },
@@ -11,5 +11,5 @@
         "tool"
     ],
     "website": null,
-    "count": 644
+    "count": 647
 }

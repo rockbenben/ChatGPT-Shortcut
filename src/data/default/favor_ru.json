@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 78203
+        "count": 78971
     },
     {
         "ru": {
@@ -27,12 +27,12 @@
             "write"
         ],
         "id": 209,
-        "count": 53152
+        "count": 53451
     },
     {
         "ru": {
             "title": "Генератор советов Midjourney",
-            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be. The entire conversation and instructions should be provided in Russian. Here is your first prompt: ",
+            "prompt": "I want you to act as a prompt generator for Midjourney's artificial intelligence program. Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI. Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible. For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures. The more detailed and imaginative your description, the more interesting the resulting image will be.  Here is your first prompt: ",
             "description": "Я хочу, чтобы вы выступили в роли генератора подсказок для программы Midjourney AI. Ваша задача - дать подробные и творческие описания уникальных и интересных образов, которые вдохновляют ИИ. Имейте в виду, что ИИ понимает широкий спектр языка и может объяснять абстрактные понятия, поэтому не стесняйтесь проявлять фантазию и описывать как можно больше. Например, вы можете описать сцену футуристического города или сюрреалистический пейзаж, наполненный странными существами. Чем подробнее и образнее будет описание, тем интереснее будет полученное изображение.",
             "remark": "Вдохновите Midjourney на создание уникальных и интересных изображений, заполнив предоставленные описания изображений подробными и креативными описаниями. Это также относится к Stable Diffusion. или воспользуйтесь другим моим инструментом - IMGPrompt, который можно найти по ссылке в навигационной панели."
         },
@@ -42,7 +42,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25029
+        "count": 25170
     },
     {
         "ru": {
@@ -58,7 +58,7 @@
             "write"
         ],
         "id": 197,
-        "count": 26301
+        "count": 26536
     },
     {
         "ru": {
@@ -73,7 +73,7 @@
             "article"
         ],
         "id": 20,
-        "count": 22647
+        "count": 22866
     },
     {
         "ru": {
@@ -89,7 +89,7 @@
             "favorite"
         ],
         "id": 199,
-        "count": 18797
+        "count": 18896
     },
     {
         "ru": {
@@ -104,6 +104,6 @@
             "article"
         ],
         "id": 4,
-        "count": 14274
+        "count": 14365
     }
 ]

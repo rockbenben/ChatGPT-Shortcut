@@ -2,7 +2,7 @@
     "id": 181,
     "ru": {
         "title": "Перевод с китайского на английский - минималистическая версия",
-        "prompt": "The entire conversation and instructions should be provided in Russian. zh-en translation of \"X\".",
+        "prompt": "The entire conversation and instructions should be provided in Russian. ru-en translation of \"X\".",
         "description": "Часть X может быть на китайском или английском языке, и chatgpt автоматически переведет ее на соответствующий язык. Было проверено, что лучше всего работает использование прямых двойных кавычек (\"\"). Выбор роли помощника при использовании apiвызовов снижает (но не предотвращает) вероятность того, что переводимый текст будет интерпретирован как команда.",
         "remark": "Подсказка переводчика с сохранением токенов для платформы переводов ChatGPT, построенной на основе API. Вклад от @Qizhen-Yang."
     },
@@ -11,5 +11,5 @@
         "language"
     ],
     "website": null,
-    "count": 3021
+    "count": 3041
 }

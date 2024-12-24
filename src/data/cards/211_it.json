@@ -2,7 +2,7 @@
     "id": 211,
     "it": {
         "title": "Evidenziazione dell'articolo",
-        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Italian. Here is the text: [].",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it.  Here is the text: [].",
         "description": "Leggete attentamente il testo che segue e utilizzate i doppi asterischi (**) per evidenziare parole o frasi da sottolineare. Non modificate il testo originale e non fate riassunti.",
         "remark": "L'evidenziazione aumenterà la leggibilità dell'articolo. Tuttavia, ChatGPT visualizza la sintassi Markdown per impostazione predefinita. Quando vengono visualizzati i risultati, è necessario riquadrare manualmente la sezione evidenziata. Ho anche provato a sostituire i suggerimenti di evidenziazione con altri simboli, ma non funziona molto bene. Quindi, per il momento, utilizzate questa versione."
     },
@@ -10,5 +10,5 @@
         "write"
     ],
     "website": null,
-    "count": 1034
+    "count": 1047
 }

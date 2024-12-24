@@ -2,7 +2,7 @@
     "id": 6,
     "ru": {
         "title": "Генератор кия②",
-        "prompt": "The entire conversation and instructions should be provided in Russian. I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful.",
+        "prompt": "I want you to act as a ChatGPT prompt generator, I will send a topic, you have to generate a ChatGPT prompt based on the content of the topic, the prompt should start with 'I want you to act as ', and guess what I might do, and expand the prompt accordingly Describe the content to make it useful.",
         "description": "Я хочу, чтобы вы выступили в роли генератора подсказок ChatGPT: я пришлю тему, а вы должны будете сгенерировать подсказку ChatGPT, начинающуюся со слов \"Я бы хотел, чтобы вы выступили в роли\", основываясь на содержании темы. Угадайте мое поведение и расширьте эту подсказку, описав содержание темы, чтобы сделать ее более полезной.",
         "remark": "Попросите ChatGPT сгенерировать слова-подсказки по теме."
     },
@@ -10,5 +10,5 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chatgpt-prompt-generator",
-    "count": 2317
+    "count": 2346
 }

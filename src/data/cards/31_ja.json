@@ -2,7 +2,7 @@
     "id": 31,
     "ja": {
         "title": "テキストのムード分析",
-        "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Janpanese. Generate the results in column, including the titles in the first one, and their sentiment in the second: ",
+        "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Japanese. Generate the results in column, including the titles in the first one, and their sentiment in the second: ",
         "description": "次の見出しのセンチメントを指定し、positive、neutral、negative のいずれかの値を与える。1 列目に見出し、2 列目に感情を指定した結果の列を生成する：[content].",
         "remark": "文章の雰囲気を判断する：ポジティブ、ニュートラル、ネガティブ。"
     },
@@ -10,5 +10,5 @@
         "text"
     ],
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 447
+    "count": 452
 }

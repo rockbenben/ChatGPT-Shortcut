@@ -2,7 +2,7 @@
     "id": 211,
     "bn": {
         "title": "নিবন্ধ হাইলাইট",
-        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. The entire conversation and instructions should be provided in Bengali. Here is the text: [].",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it.  Here is the text: [].",
         "description": "নিম্নলিখিত পাঠ্যটি মনোযোগ সহকারে পড়ুন এবং জোর দেওয়ার জন্য শব্দ বা বাক্যাংশগুলিকে হাইলাইট করতে ডবল তারকাচিহ্ন (**) ব্যবহার করুন। মূল পাঠ্য পরিবর্তন করবেন না বা সারাংশ তৈরি করবেন না।",
         "remark": "হাইলাইট করা নিবন্ধটির পাঠযোগ্যতা বৃদ্ধি করবে। যাইহোক, ChatGPT ডিফল্টরূপে মার্কডাউন সিনট্যাক্স প্রদর্শন করে। ফলাফল বেরিয়ে আসার পরে, আপনাকে ম্যানুয়ালি হাইলাইট করা অংশটি নির্বাচন করতে হবে। আমি হাইলাইট করার জন্য অন্যান্য চিহ্নগুলি প্রতিস্থাপন করার চেষ্টা করেছি, কিন্তু এটি খুব ভাল কাজ করেনি। অতএব, আপাতত এই সংস্করণটি ব্যবহার করুন।"
     },
@@ -10,5 +10,5 @@
         "write"
     ],
     "website": null,
-    "count": 1034
+    "count": 1047
 }
