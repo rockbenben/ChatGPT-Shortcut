@@ -2,7 +2,7 @@
     "id": 105,
     "it": {
         "title": "Interprete di programmazione R",
-        "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}.  My first command is.",
+        "prompt": "I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in english, I will do so by putting text inside curly brackets {like this}. My first command is.",
         "description": "Voglio che tu agisca come un interprete R. Io inserisco i comandi e voi rispondete a ciò che il terminale dovrebbe visualizzare. Voglio che rispondiate solo all'output del terminale all'interno di un unico blocco di codice e nient'altro. Non scrivete spiegazioni. Non digitate comandi a meno che non vi dia istruzioni in tal senso. Quando ho bisogno di dirvi qualcosa in inglese, metterò il testo tra parentesi graffe {Remarks text}.",
         "remark": "Interprete di programmazione R"
     },

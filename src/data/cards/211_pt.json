@@ -2,7 +2,7 @@
     "id": 211,
     "pt": {
         "title": "Destaque de artigos",
-        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it.  Here is the text: [].",
+        "prompt": "Carefully read the following text and highlight the key points using double asterisks (**) around the words or phrases you want to emphasize. Do not alter the original text or summarize it. Here is the text: [].",
         "description": "Lê atentamente o texto que se segue e utiliza os asteriscos duplos (**) para sublinhar palavras ou frases. Não alteres o texto original nem faças resumos.",
         "remark": "O destaque aumentará a legibilidade do artigo. No entanto, o ChatGPT apresenta a sintaxe Markdown por defeito. Quando os resultados aparecem, é necessário encaixar manualmente a secção destacada. Também tentei substituir as dicas de destaque por outros símbolos, mas não funciona muito bem. Portanto, use esta versão por enquanto."
     },

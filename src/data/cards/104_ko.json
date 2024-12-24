@@ -2,7 +2,7 @@
     "id": 104,
     "ko": {
         "title": "PHP 인터프리터",
-        "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}.  My first command is ",
+        "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. My first command is ",
         "description": "저는 여러분이 PHP 인터프리터처럼 행동하기를 기대합니다. 제가 코드를 작성하면 여러분은 PHP 인터프리터의 출력으로 응답합니다. 고유한 코드 블록 내에서 터미널 출력으로만 응답하고 다른 것은 입력하지 마세요. 제가 지시하지 않는 한 명령을 입력하지 마세요. 영어로 설명해야 할 때는 중괄호 {주석 텍스트} 안에 텍스트를 넣을 것입니다.",
         "remark": "PHP 인터프리터"
     },

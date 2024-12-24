@@ -2,7 +2,7 @@
     "id": 114,
     "ar": {
         "title": "منشئ اللغة",
-        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}.  My first sentence is ",
+        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ",
         "description": "أريدك أن تترجم الجمل التي كتبتها إلى لغة جديدة. أنا أكتب الجملة وأنت تعبر عنها بهذه اللغة الجديدة. أريدك فقط أن تعبر عنها بلغة حديثة الصنع. لا أريدك أن تجيب بأي شيء سوى اللغة المبتكرة حديثًا. عندما أحتاج إلى إخبارك بشيء ما باللغة الإنجليزية ، أقوم بلفه بأقواس ، مثل {مثل هذا}.",
         "remark": "استبدل اللغة التي تعطيها باللغة الجديدة التي أنشأتها منظمة العفو الدولية."
     },

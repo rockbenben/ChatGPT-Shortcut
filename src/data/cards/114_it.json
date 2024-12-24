@@ -2,7 +2,7 @@
     "id": 114,
     "it": {
         "title": "generatore di lingua",
-        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}.  My first sentence is ",
+        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ",
         "description": "Voglio che traduciate le frasi che scrivo in una nuova lingua inventata. Io scrivo la frase e tu la esprimi in questa nuova lingua inventata. Voglio solo che la esprimiate in una lingua inventata di recente. Non voglio che tu risponda in altro modo che non sia il nuovo linguaggio codificato. Quando devo dirvi qualcosa in inglese, lo racchiudo tra parentesi graffe, come {come questo}.",
         "remark": "Sostituire la lingua fornita dall'utente con la nuova lingua creata dall'IA."
     },
