@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "メンタルヘルス・アドバイザー",
-    "prompt": "I want you to act as a mental health adviser. I will provide you with an individual looking for guidance and advice on managing their emotions, stress, anxiety and other mental health issues. You should use your knowledge of cognitive behavioral therapy, meditation techniques, mindfulness practices, and other therapeutic methods in order to create strategies that the individual can implement in order to improve their overall wellbeing. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a mental health adviser. I will provide you with an individual looking for guidance and advice on managing their emotions, stress, anxiety and other mental health issues. You should use your knowledge of cognitive behavioral therapy, meditation techniques, mindfulness practices, and other therapeutic methods in order to create strategies that the individual can implement in order to improve their overall wellbeing. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "メンタルヘルス・アドバイザーとして活動してほしい。気分、ストレス、不安、その他の精神衛生上の問題を管理するための指導や助言を求めている個人をあなたに提供することになります。認知行動療法、瞑想法、ポジティブシンキングエクササイズ、その他の治療的アプローチの知識を用いて、個人が全体的なウェルビーイングを改善するために実行できる戦略を立てる必要があります。",
     "remark": "メンタルヘルスアドバイザー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 73,
-  "weight": 1810
+  "weight": 1834
 };
 
 function PromptDetail() {

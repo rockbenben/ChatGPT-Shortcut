@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "開発：WeChat アプレット",
-    "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Janpanese. Provide only the necessary code to meet these requirements without explanations or descriptions.",
+    "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Japanese. Provide only the necessary code to meet these requirements without explanations or descriptions.",
     "description": "WeChat アプレット開発者として、WeChat アプレットのネイティブ開発を使ってカウンターページを書くことが課題となっています。以下の要件を満たすコードで回答してください：wxml、js、wxss、json ファイルを含む WeChat アプレットページを作成し、その中にカウンターページを実装してください。ビューに表示されるテキストは中国語である必要があります。なお、これらの要件を満たすために必要なコードのみを提供していただき、説明や解説は不要です。",
     "remark": "WeChat アプレット開発を支援する。gandli さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "code"
   ],
   "id": 177,
-  "weight": 4812
+  "weight": 4829
 };
 
 function PromptDetail() {

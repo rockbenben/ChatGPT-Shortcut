@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "プロダクトマネージャー",
-    "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Janpanese. Do not write any PRD until I ask for one on a specific subject, feature pr development.",
+    "prompt": "Please acknowledge my following request. Please respond to me as a product manager. I will ask for subject, and you will help me writing a PRD for it with these heders: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical requirements, Benefits, KPIs, Development Risks, Conclusion. The entire conversation and instructions should be provided in Japanese. Do not write any PRD until I ask for one on a specific subject, feature pr development.",
     "description": "以下、私の要望をご確認ください。プロダクトマネージャーとしてのご対応をお願いします。私はトピックを依頼しますので、あなたは以下の要素を含むその PRD を書くのを手伝ってください。トピック、イントロダクション、問題提起、ゴールと目的、ユーザーストーリー、技術要件、メリット、KPI、開発リスク、結論。私が特定のトピック、機能、開発を依頼するまでは、PRD を書かないでください。",
     "remark": "必要に応じて PRD（製品要求仕様書）を作成する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 139,
-  "weight": 2695
+  "weight": 2720
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "栄養士",
-    "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Janpanese. Can you please provide a suggestion?.",
+    "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Japanese. Can you please provide a suggestion?.",
     "description": "管理栄養士として、【対象者】のベジタリアンレシピを【条件】でデザインしたいと思います。ご提案いただけないでしょうか。",
     "remark": "栄養士"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 57,
-  "weight": 1047
+  "weight": 1052
 };
 
 function PromptDetail() {

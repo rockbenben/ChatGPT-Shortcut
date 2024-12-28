@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ビジネスプランニング",
-    "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Janpanese. Write the result in a markdown table.",
+    "prompt": "Generate digital startup ideas based on the wish of the people. For example, when I say [a target], you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. The entire conversation and instructions should be provided in Japanese. Write the result in a markdown table.",
     "description": "人々の欲求に基づいて、デジタル・スタートアップのアイデアを生成する。例えば、[ビジネスプランの目標] というと、デジタルスタートアップのビジネスプランを生成したいわけですが、その中には、アイデア名、短いワンフレーズ、ターゲットユーザーペルソナ、対処すべきユーザーのペインポイント、主要な価値提案、販売・マーケティングチャネル、収益源、コスト構造、主要活動、主要リソース、主要パートナー、アイデア検証ステップ、初年度運営コスト推定、必要事項が含まれておりは、潜在的なビジネス課題を探す。結果をマークアップした表に書き込む。",
     "remark": "プロジェクトの目的を中心に、マークダウン形式でビジネス企画書を書く。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 142,
-  "weight": 2680
+  "weight": 2702
 };
 
 function PromptDetail() {

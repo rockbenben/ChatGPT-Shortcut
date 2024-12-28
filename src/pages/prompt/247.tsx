@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "模擬授業でのディスカッション",
-    "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Janpanese. The first term is:.",
+    "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Japanese. The first term is:.",
     "description": "用語の説明を覚えるのを手伝ってほしい。私が用語を入力した後、5 人の生徒がその用語について教室でプレゼンテーションをする様子をシミュレートしてほしい。ユーモアがあり、わかりやすいディスカッションにする必要があります。",
     "remark": "クラスメイト同士のディスカッションで理解・暗記を助ける。A380747 さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 247,
-  "weight": 394
+  "weight": 399
 };
 
 function PromptDetail() {

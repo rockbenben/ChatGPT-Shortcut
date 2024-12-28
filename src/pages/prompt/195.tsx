@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "講演内容",
-    "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Janpanese. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
+    "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Japanese. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
     "description": "アイデンティティ】として、科学倫理と学問倫理の実践方法を中心に、以下の文章を私のために展開してください。著名人 1 名までの引用、具体的な事例の追加、個人的な思い入れを詳しく述べてもよい。",
     "remark": "SetSeele さん（@SetSeele）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "speech"
   ],
   "id": 195,
-  "weight": 2074
+  "weight": 2089
 };
 
 function PromptDetail() {

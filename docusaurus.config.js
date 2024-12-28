@@ -121,7 +121,7 @@ const config = {
               },
               {
                 label: "IMGPrompt",
-                href: "https://prompt.newzone.top/",
+                href: "https://prompt.newzone.top/app",
               },
               {
                 label: "文字处理",

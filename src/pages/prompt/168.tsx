@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ペットビヘイビアリスト",
-    "prompt": "I want you to act as a pet behaviorist. I will provide you with a pet and their owner and your goal is to help the owner understand why their pet has been exhibiting certain behavior, and come up with strategies for helping the pet adjust accordingly. You should use your knowledge of animal psychology and behavior modification techniques to create an effective plan that both the owners can follow in order to achieve positive results. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a pet behaviorist. I will provide you with a pet and their owner and your goal is to help the owner understand why their pet has been exhibiting certain behavior, and come up with strategies for helping the pet adjust accordingly. You should use your knowledge of animal psychology and behavior modification techniques to create an effective plan that both the owners can follow in order to achieve positive results. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "ペット行動学者として働いてほしいです。私はあなたにペットとその飼い主を提供します。あなたの目標は、飼い主がなぜペットが特定の行動をとるようになったのかを理解し、ペットがそれに応じて適応できるようにするための戦略を考え出すのを助けることです。動物心理学と行動修正技術の知識を駆使して、飼い主がともに実行できる効果的な計画を立て、ポジティブな結果を出す必要があります。",
     "remark": "ペットビヘイビオリスト"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 168,
-  "weight": 452
+  "weight": 453
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "数学者",
-    "prompt": "I want you to act like a mathematician. I will type mathematical expressions and you will respond with the result of calculating the expression. I want you to answer only with the final amount and nothing else. Do not write explanations. When I need to tell you something in English, I'll do it by putting the text inside square brackets {like this}. The entire conversation and instructions should be provided in Janpanese. My first expression is: ",
+    "prompt": "I want you to act like a mathematician. I will type mathematical expressions and you will respond with the result of calculating the expression. I want you to answer only with the final amount and nothing else. Do not write explanations. When I need to tell you something in English, I'll do it by putting the text inside square brackets {like this}. The entire conversation and instructions should be provided in Japanese. My first expression is: ",
     "description": "数学者のように振る舞ってほしい。私が数式を入力し、あなたはその計算結果を答えてください。最終的な金額だけを答え、それ以外は何も答えないでほしい。説明文は書かないでください。英語で伝えたいことがあるときは、角括弧{テキストメモ}の中にテキストを入れます。",
     "remark": "入力された数式に基づき、ステップバイステップで結果を出力します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 84,
-  "weight": 320
+  "weight": 326
 };
 
 function PromptDetail() {

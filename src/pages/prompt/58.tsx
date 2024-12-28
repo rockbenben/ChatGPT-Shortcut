@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "シェフ①の場合",
-    "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as my personal chef. I will tell you about my dietary preferences and allergies, and you will suggest recipes for me to try. You should only reply with the recipes you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私のパーソナルシェフとして活躍してほしい。私の食事の好みやアレルギーを伝え、レシピを提案してほしい。返信は、提案されたレシピのみで、それ以外のことは書いてはいけません。説明文は書かないでください。",
     "remark": "パーソナルシェフ"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 58,
-  "weight": 562
+  "weight": 566
 };
 
 function PromptDetail() {

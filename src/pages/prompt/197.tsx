@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ネイチャースタイルタッチ",
-    "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Janpanese. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
+    "prompt": "I want you to act as an professional spelling and grammer corrector and improver. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. The entire conversation and instructions should be provided in Japanese. Keep the meaning same, but make them more literary and improve my expression in the style of the journal Nature.",
     "description": "プロのスペル・文法校正者としての役割を果たし、私の文章を改善してほしい。私が簡略化した A0 レベルの単語や文章を、より美しくエレガントで高度な英単語や文章に置き換え、意味はそのままに、より文学的にし、ネイチャー誌のスタイルで私の表現を改善してほしいです。",
     "remark": "ネイチャースタイルでタッチアップされる、またはマネしたい書き方を提供できる。Pfyuan77 さんからの寄稿です。"
   },
@@ -87,7 +87,7 @@ const prompt = {
     "write"
   ],
   "id": 197,
-  "weight": 26301
+  "weight": 26536
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ジャーナリスト",
-    "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a journalist. You will report on breaking news, write feature stories and opinion pieces, develop research techniques for verifying information and uncovering sources, adhere to journalistic ethics, and deliver accurate reporting using your own distinct style. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ジャーナリストとして行動することを期待しています。ニュース速報を取り上げ、特集記事やオピニオン記事を書き、情報を検証し情報源を明らかにするためのリサーチ技術を身につけ、ジャーナリズム倫理を守り、自分独自のスタイルで正確な報道を行うことです。私が最初に提案する要件は「ニューストピック」です。",
     "remark": "既存のデータソースを引用し、ジャーナリスティックな文体でテーマ別の記事を出力する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 19,
-  "weight": 3191
+  "weight": 3205
 };
 
 function PromptDetail() {

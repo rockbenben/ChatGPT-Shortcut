@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ノンフィクション書籍の概要",
-    "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Janpanese. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
+    "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Japanese. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
     "description": "ライフコーチとして活動してほしい。この [著者] のノンフィクション本 [タイトル] を要約してください。子供でも理解できるように、核となる原則を簡略化してください。また、これらの原則をどのように日常生活に導入するか、実行可能なステップのリストを教えてください。",
     "remark": "入力されたノンフィクションのタイトルと著者に基づき、その本の核となる原則を最も分かりやすい方法で概説する。また、これらの原則を日常生活に適用する方法について、実行可能なステップのリストを提供すること。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "life"
   ],
   "id": 47,
-  "weight": 806
+  "weight": 816
 };
 
 function PromptDetail() {

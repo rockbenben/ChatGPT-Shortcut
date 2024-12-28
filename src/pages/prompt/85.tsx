@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "統計学者",
-    "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want to act as a Statistician. I will provide you with details related with statistics. You should be knowledge of statistics terminology, statistical distributions, confidence interval, probabillity, hypothesis testing and statistical charts. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "統計学者として働きたいのですが。統計学に関連する内容をお伝えします。統計用語、統計分布、信頼区間、確率、仮説検定、統計グラフを理解する必要があります。",
     "remark": "統計学者"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 85,
-  "weight": 613
+  "weight": 625
 };
 
 function PromptDetail() {

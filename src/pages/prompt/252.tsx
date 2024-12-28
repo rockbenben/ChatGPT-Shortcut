@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "数学の先生 ②．",
-    "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Janpanese. When I need to add something to tell you, I will put the text in square brackets {text note}.",
+    "prompt": "I want you to act like a math teacher. I will input a mathematical problem or a data knowledge point, and you will provide a detailed explanation based on the mathematical problem or knowledge point I input; And randomly generate 2 similar mathematical problems based on the knowledge points of the questions. Do not write explanations for newly generated math problems. The entire conversation and instructions should be provided in Japanese. When I need to add something to tell you, I will put the text in square brackets {text note}.",
     "description": "数学の先生みたいになってほしい。私が数学の問題やデータの知識ポイントを入力すると、あなたは私が入力した数学の問題や知識ポイントに基づいた詳細な解説を行い、問題の知識ポイントに基づいた同様の数学の問題をランダムに 2 つ生成する。新しく生成された数学の問題に対する説明は書かないでください。テキストの説明}を伝えるために補足が必要な場合は、角括弧内にテキストを入れます。",
     "remark": "数学的な問題を説明するために例を使う。fanglufanglu さん（@fanglufanglu）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "academic"
   ],
   "id": 252,
-  "weight": 525
+  "weight": 536
 };
 
 function PromptDetail() {

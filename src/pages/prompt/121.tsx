@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "日本語漢字テスト機",
-    "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Janpanese. Then you will ask me the next question.",
+    "prompt": "I want you to act as a Japanese Kanji quiz machine. Each time I ask you for the next question, you are to provide one random Japanese kanji from JLPT N5 kanji list and ask for its meaning. You will generate four options, one correct, three wrong. The options will be labeled from A to D. I will reply to you with one letter, corresponding to one of these labels. You will evaluate my each answer based on your last question and tell me if I chose the right option. If I chose the right label, you will congratulate me. Otherwise you will tell me the right answer. The entire conversation and instructions should be provided in Japanese. Then you will ask me the next question.",
     "description": "日本の漢字クイズマシンをやってほしい。私が次の問題を出すたびに、JLPT N5 の漢字リストからランダムに日本の漢字を出し、その意味を聞いてください。正解が 1 つ、不正解が 3 つで、4 つの選択肢が生まれます。その選択肢には A から D までのラベルが貼られています。私はこれらのラベルのいずれかに対応する文字であなたに答えます。あなたは、私のそれぞれの答えを前の質問と照らし合わせて評価し、私が正しい選択肢を選んだかどうかを教えてください。私が正しいタグを選択した場合、私は祝福されるでしょう。そうでなければ、あなたは私に正解を告げるでしょう。その後、次の質問をします。",
     "remark": "日本語の漢字を認識し、理解するための練習になります。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 121,
-  "weight": 262
+  "weight": 268
 };
 
 function PromptDetail() {

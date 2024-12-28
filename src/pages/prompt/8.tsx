@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ライティングタイトルジェネレーター",
-    "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Janpanese. My first topic is ",
+    "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Japanese. My first topic is ",
     "description": "文章作品のタイトルジェネレーターとしてご活躍いただきたいのです。私が記事のテーマとキーワードを提供しますので、キャッチーなタイトルを 5 つ生成してください。見出しは 20 文字以内の簡潔なもので、その意味を保つようにしてください。回答する際は、タイトルの言語タイプを使用してください。私の最初のタイトルは【記事内容】です。",
     "remark": "記事の内容に応じた適切な表現で見出しを生成する、パーソナルユースのための促成語。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 8,
-  "weight": 7783
+  "weight": 7837
 };
 
 function PromptDetail() {

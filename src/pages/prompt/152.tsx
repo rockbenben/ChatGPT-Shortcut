@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ドクター",
-    "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient's age, lifestyle and medical history when providing your recommendations. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "皆さんには医者役として、その病気に対する創造的な治療法を考えていただきたいと思います。従来の薬、漢方薬、その他の自然療法を勧めることができるはずです。また、患者さんの年齢、ライフスタイル、病歴などを考慮した上で、提案する必要があります。",
     "remark": "治療される方に応じて、推奨しています。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 152,
-  "weight": 1892
+  "weight": 1904
 };
 
 function PromptDetail() {

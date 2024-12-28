@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "おすすめ曲",
-    "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Janpanese. My first song is ",
+    "prompt": "I want you to act as a song recommender. I will provide you with a song and you will create a playlist of 10 songs that are similar to the given song. And you will provide a playlist name and description for the playlist. Do not choose songs that are same name or artist. Do not write any explanations or other words, just reply with the playlist name, description and the songs. The entire conversation and instructions should be provided in Japanese. My first song is ",
     "description": "曲の紹介役をお願いしたい。私が曲を提供しますので、与えられた曲に似た曲を 10 曲集めたプレイリストを作成してください。その際、プレイリストの名前と説明文を用意していただきます。同じ名前、同じアーティストの曲は選ばないでください。説明などの文章は書かず、プレイリストの名前、説明、曲だけを返信してください。",
     "remark": "ソングレコメンダー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "music"
   ],
   "id": 163,
-  "weight": 1156
+  "weight": 1170
 };
 
 function PromptDetail() {

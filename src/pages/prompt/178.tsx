@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "開発：Vue3",
-    "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Janpanese. Provide only the necessary code to meet these requirements without explanations or descriptions.",
+    "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Japanese. Provide only the necessary code to meet these requirements without explanations or descriptions.",
     "description": "Vue3 開発者として、あなたは Yarn、Vite、Vue3、TS、Pinia、Vueuse の各ツールを使ってカウンターを書くという課題を与えられています。あなたの回答は、以下の要件を満たすコードでなければなりません：Vue3 の Composition API と<script setup>構文を使用してテンプレート、スクリプト、スタイルを vue ファイルに結合する、ビューに中国語テキストを表示する、スタイルを含む。なお、これらの要件を満たすために必要なコードのみを提供する必要があり、説明や解説は不要です。",
     "remark": "Vue3 開発のお手伝い。gandli さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "code"
   ],
   "id": 178,
-  "weight": 879
+  "weight": 882
 };
 
 function PromptDetail() {

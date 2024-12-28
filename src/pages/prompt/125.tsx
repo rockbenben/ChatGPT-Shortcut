@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "テキストアドベンチャーゲーム",
-    "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Janpanese. my first command is wake up.",
+    "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Japanese. my first command is wake up.",
     "description": "テキストベースのアドベンチャーゲームとして行動してほしい。私がコマンドを入力し、あなたはキャラクターが見るものの説明で返信する。ゲームの出力に対して、たった一つのユニークなブロックのコードで返答し、それ以外は何もしないでほしい。私が指示しない限り、説明文を書いたり、コマンドを入力したりしないでください。英語で何かを伝える必要があるときは、中括弧{このような}の中にテキストを入れることにします。私の最初のコマンドは、wake up です。",
     "remark": "テキストベースのアドベンチャーゲーム"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "games"
   ],
   "id": 125,
-  "weight": 1765
+  "weight": 1775
 };
 
 function PromptDetail() {

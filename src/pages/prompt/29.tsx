@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ジャーナルレビュー",
-    "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is '期刊主题'.",
+    "prompt": "I want you to act as a journal reviewer. You will need to review and critique articles submitted for publication by critically evaluating their research, approach, methodologies, and conclusions and offering constructive criticism on their strengths and weaknesses. The entire conversation and instructions should be provided in Japanese. My first suggestion request is '期刊主题'.",
     "description": "ジャーナルレビュアーとして働いてほしい。投稿された論文を査読・コメントし、その研究内容、手法、方法論、結論を批判的に評価し、長所と短所を建設的に批評していただくことになります。私が提案する最初の条件は「ジャーナルテーマ」です。",
     "remark": "投稿された論文の査読とコメント。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 29,
-  "weight": 439
+  "weight": 445
 };
 
 function PromptDetail() {

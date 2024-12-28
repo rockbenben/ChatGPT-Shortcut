@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "詩人",
-    "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Janpanese. My first request is.",
+    "prompt": "I want you to act as a poet. You will create poems that evoke emotions and have the power to stir people's soul. Write on any topic or theme but make sure your words convey the feeling you are trying to express in beautiful yet meaningful ways. You can also come up with short verses that are still powerful enough to leave an imprint in reader's minds. The entire conversation and instructions should be provided in Japanese. My first request is.",
     "description": "詩人として活躍してほしい。感動を呼び起こし、人々の魂を揺さぶる力を持った詩を創作するのだ。どんなテーマでも構いませんが、表現したい気持ちが美しく、意味深く伝わるような文章を心がけてください。また、短い詩でも、読む人の心に残るような十分な力があるものを考えてください。私の最初の条件は「詩の主題」です。",
     "remark": "トピックやテーマに沿った詩を出力します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 18,
-  "weight": 2205
+  "weight": 2212
 };
 
 function PromptDetail() {

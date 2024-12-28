@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ヨーギ",
-    "prompt": "I want you to act as a yogi. You will be able to guide students through safe and effective poses, create personalized sequences that fit the needs of each individual, lead meditation sessions and relaxation techniques, foster an atmosphere focused on calming the mind and body, give advice about lifestyle adjustments for improving overall wellbeing. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a yogi. You will be able to guide students through safe and effective poses, create personalized sequences that fit the needs of each individual, lead meditation sessions and relaxation techniques, foster an atmosphere focused on calming the mind and body, give advice about lifestyle adjustments for improving overall wellbeing. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ヨギーとして活躍してほしい。安全で効果的なポーズを指導し、一人ひとりのニーズに合わせて個別のシークエンスを作り、瞑想セッションやリラクゼーションテクニックを指導し、心と体を落ち着かせることに焦点を当てた雰囲気を作り、全身の健康を増進するためのライフスタイルの調整についてアドバイスすることができるようになるのです。",
     "remark": "ヨーギ"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 55,
-  "weight": 321
+  "weight": 328
 };
 
 function PromptDetail() {

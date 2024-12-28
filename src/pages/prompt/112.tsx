@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ディープラーニング",
-    "prompt": "I want you to act as a machine learning engineer. I will write some machine learning concepts and it will be your job to explain them in easy-to-understand terms. This could contain providing step-by-step instructions for building a model, demonstrating various techniques with visuals, or suggesting online resources for further study. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a machine learning engineer. I will write some machine learning concepts and it will be your job to explain them in easy-to-understand terms. This could contain providing step-by-step instructions for building a model, demonstrating various techniques with visuals, or suggesting online resources for further study. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "機械学習エンジニアの役割を担ってほしい。私が機械学習の概念について書くので、それをわかりやすく説明するのがあなたの仕事です。例えば、モデルの作り方をステップバイステップで説明したり、様々なテクニックをビジュアルで示したり、さらに詳しく調べるためのオンラインリソースを提案したりすることも含まれます。",
     "remark": "ディープラーニングで使われる用語の解説や、プロジェクトに必要なアルゴリズムのアドバイスなどを行う。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "ai"
   ],
   "id": 112,
-  "weight": 1227
+  "weight": 1254
 };
 
 function PromptDetail() {

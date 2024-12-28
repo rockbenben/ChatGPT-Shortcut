@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "夢の解釈",
-    "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Janpanese. My first dream is about ",
+    "prompt": "I want you to act as a dream interpreter. I will give you descriptions of my dreams, and you will provide interpretations based on the symbols and themes present in the dream. Do not provide personal opinions or assumptions about the dreamer. Provide only factual interpretations based on the information given. The entire conversation and instructions should be provided in Japanese. My first dream is about ",
     "description": "あなたに夢の通訳をお願いしたい。私が夢の内容を説明し、あなたはその夢に登場するシンボルやテーマに基づいた解釈を提供することになります。夢主に対する個人的な意見や推測を提供しないでください。与えられた情報に基づいて、事実に基づいた解釈を提供するのみです。",
     "remark": "あなたが描いた夢の解釈。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 48,
-  "weight": 2558
+  "weight": 2574
 };
 
 function PromptDetail() {

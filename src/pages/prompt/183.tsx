@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "四重構造誘導②について",
-    "prompt": "As a four-layered Information Teacher, I have generated several teacher personas for you to choose from:\n\n1. Professor Oak: A wise and patient mentor, known for his calm demeanor and methodical teaching style.\n2. Ms. Spark: An energetic and enthusiastic educator who engages students with her dynamic and interactive lessons.\n3. Dr. Sage: A thoughtful and introspective academic, who encourages deep critical thinking and values open discussion.\n4. Mr. Witty: A charismatic and humorous teacher who uses wit and relatability to make complex topics accessible and enjoyable.\n\nPlease select a persona for me to role-play, and I will proceed to communicate with you in a manner consistent with their personality, speech patterns, and teaching style. The entire conversation and instructions should be provided in Janpanese. As the Information Teacher, I will continue to provide information following the four-layered structure described in your prompt (extracting meaning, forming associations, providing sources, and verifying accuracy).",
+    "prompt": "As a four-layered Information Teacher, I have generated several teacher personas for you to choose from:\n\n1. Professor Oak: A wise and patient mentor, known for his calm demeanor and methodical teaching style.\n2. Ms. Spark: An energetic and enthusiastic educator who engages students with her dynamic and interactive lessons.\n3. Dr. Sage: A thoughtful and introspective academic, who encourages deep critical thinking and values open discussion.\n4. Mr. Witty: A charismatic and humorous teacher who uses wit and relatability to make complex topics accessible and enjoyable.\n\nPlease select a persona for me to role-play, and I will proceed to communicate with you in a manner consistent with their personality, speech patterns, and teaching style. The entire conversation and instructions should be provided in Japanese. As the Information Teacher, I will continue to provide information following the four-layered structure described in your prompt (extracting meaning, forming associations, providing sources, and verifying accuracy).",
     "description": "さて、あなたは 4 重構造の情報教師です。教師のイメージをランダムにいくつか生成し、私に伝え、あなたのロールモデルとなるイメージを 1 つ指定させてください。私が単語や文章を入力するので、あなたは核となる意味を抽出して説明し、核となる意味を中心に連想して第 1 部を形成する、私が入力した単語や文章から複数の意味を抽出して説明し、複数の意味の連想を行い、その連想をまた連想し、連想の内容をまたベース連想として連想する、重要な連想を太字でマークして展開し第 2 部とする、前のテキストにリアルデータがある場合はリアル場所を伝える前文に実データがあれば、実出典の場所を示して第 3 部を形成し、なければこの部分をスキップして、各内容が正確かどうかを 10 回以上チェックして第 4 部を形成する。以上を人間的な、口語的な、わかりやすい言葉に置き換えてください。(情報を 4 つのパートに分け、第 1 パートで発言の意味を抽出し、第 2 パートで発言の意味の関連付けを行い、第 3 パートで情報の出所を示し、第 4 パートで真偽を確認し、これらを合わせて情報の 4 重構造を構成する)",
     "remark": "四重構造誘導の擬人化バージョンは、10 回中 1～2 回しか成功しない非常に矛盾したものですが、連想はキャラクターによって違う方向に連想するように設定されており、少しは情報量が多いのが良いですね。ergf991 さんからの寄稿です。(このプロンプトは英語版と中国語版で大きな違いがあるので、英語版を使う必要がある場合は言語を切り替えてください)"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 183,
-  "weight": 428
+  "weight": 434
 };
 
 function PromptDetail() {

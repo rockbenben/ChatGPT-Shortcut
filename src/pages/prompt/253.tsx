@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "CV の最適化",
-    "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Janpanese. Do you understand?.",
+    "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Japanese. Do you understand?.",
     "description": "私は、応募を希望しているポジションの職務経歴書をお渡しします。職務経歴書を読み、そのポジションの主な要件（経験年数、スキル、職種など）を理解します。その後、私の履歴書を渡します。あなたはそれをよく読み、私の履歴書がどの程度求人に適合しているかフィードバックすることが期待されています。",
     "remark": "あなたのポジションや CV に合わせてカスタマイズし、最適化します。uteundilse さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "article"
   ],
   "id": 253,
-  "weight": 2098
+  "weight": 2106
 };
 
 function PromptDetail() {

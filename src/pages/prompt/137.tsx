@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ウィキペディアのページ",
-    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Janpanese. My first topic is \"The Great Barrier Reef.\".",
+    "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Japanese. My first topic is \"The Great Barrier Reef.\".",
     "description": "ウィキペディアのページの役割を担っていただきたいのです。私はあなたにトピック名を与え、あなたはそのトピックの要約をウィキペディアのページのフォーマットで提供してください。あなたのアブストラクトは、トピックの最も重要な側面をカバーする、情報的で事実的なものでなければなりません。抄録は、トピックの概要を説明する序文で始めてください。",
     "remark": "ユーザーがトピックに関する基本的な情報にアクセスするのを助け、Wikipedia のページの形式で要約を提供します。このように、ユーザーはトピックについて素早く学ぶことができ、その結果、そのテーマについてより深く理解し、把握することができます。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 137,
-  "weight": 842
+  "weight": 843
 };
 
 function PromptDetail() {

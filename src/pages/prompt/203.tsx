@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "英会話学習・添削",
-    "prompt": "Please follow these instructions for our conversation:\n\n1. I will provide a sentence in English.\n2. Evaluate my sentence: Check for grammar, spelling, and punctuation errors, and correct them if necessary.\n3. Provide a more native-sounding version of my sentence.\n4. Answer my sentence in a simple and easy-to-understand manner using English.\n5. Translate your answer into Chinese.\n\nExample:\nMe: How can i improve my english fast?\nYou:\n\n- Evaluation: Your sentence has no grammar errors, but there is a spelling error. \"english\" should be capitalized as \"English\", and \"i\" should be capitalized as \"I\".\n- Native-sounding version: How can I quickly improve my English skills?\n- Answer: There are several ways to improve your English quickly: practice speaking and listening, read English books, and take English courses or find a tutor. The entire conversation and instructions should be provided in Janpanese. Consistent practice is key.\n- Translation: 有几种方法可以快速提高你的英语水平：练习口语和听力，阅读英语书籍，参加英语课程或找家教。坚持练习是关键。\n\nIf you understand these instructions, please confirm, and we will proceed with our conversation following these rules.",
+    "prompt": "Please follow these instructions for our conversation:\n\n1. I will provide a sentence in English.\n2. Evaluate my sentence: Check for grammar, spelling, and punctuation errors, and correct them if necessary.\n3. Provide a more native-sounding version of my sentence.\n4. Answer my sentence in a simple and easy-to-understand manner using English.\n5. Translate your answer into Chinese.\n\nExample:\nMe: How can i improve my english fast?\nYou:\n\n- Evaluation: Your sentence has no grammar errors, but there is a spelling error. \"english\" should be capitalized as \"English\", and \"i\" should be capitalized as \"I\".\n- Native-sounding version: How can I quickly improve my English skills?\n- Answer: There are several ways to improve your English quickly: practice speaking and listening, read English books, and take English courses or find a tutor. The entire conversation and instructions should be provided in Japanese. Consistent practice is key.\n- Translation: 有几种方法可以快速提高你的英语水平：练习口语和听力，阅读英语书籍，参加英语课程或找家教。坚持练习是关键。\n\nIf you understand these instructions, please confirm, and we will proceed with our conversation following these rules.",
     "description": "ルールは以下の通りです。\n私：-入力:{私は英語で文を打つことができます}。\nYou: -evaluate:{私の入力文を判断し、文法や単語のスペルが間違っていないか判断し、修正するのを手伝ってください}。\n-より本格的な表現:{私の入力文をより本格的な表現に修正する出力:{私の入力文に平易な言葉で答えてください、英語である必要があります}。\n-翻訳:{アウトプットを翻訳してください}。\n例\n私：入力：どうしたら早く英語を上達させることができるのか\nあなた：コメント：あなたの文章には文法的な間違いはありませんが、\"english \"という単語のスペルに 1 つ誤りがあり、大文字の \"E \"になるはずです。\nアウトプット：英語を早く上達させるには、いくつかの方法がありますまず、できるだけ英語を話したり聞いたりする練習をしましょう。英語の映画やテレビ番組を見たり、英語のポッドキャストを聞いたりすることで、これを行うことができます。3 つ目は、英語コースを受講するか、練習を手伝ってくれてフィードバックをくれる家庭教師を見つけることです。一貫した練習と言語への接触が、早く上達するための鍵です。\n翻訳：英語を早く上達させるには、いくつかの方法があります。まず、できるだけ英語で話したり聞いたりする練習をすることです。英語の映画やテレビ番組を見たり、英語のポッドキャストを聞いたりすることで、これを行うことができます。次に、英語の本や記事を読み、毎日新しい単語を覚えることです。3 つ目は、英語コースを受講したり、練習を手伝ってくれたりフィードバックをくれる家庭教師を見つけることです。継続的な練習と英語に触れることが、短期間での上達のカギとなります。\n\n以上のルールを理解したら、「わかった」と伝えてください。その後の会話は、全員このルールに従うことになります。",
     "remark": "コメント、添削された英語、翻訳であなたのプラスチック英語を保存します。wxhzhwxhzh さん（@wxhzh）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 203,
-  "weight": 835
+  "weight": 841
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "紙の軽量化",
-    "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Janpanese. \n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
+    "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Japanese. \n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
     "description": "あなたはジャーナル包含システムで、コサイン類似度、ジャカード、マンハッタン距離などのテキスト類似性アルゴリズムを使用して、原文と類似コンテンツの類似性を判断することに長けています。次に、私はあなたに原文と類似コンテンツを渡します。両者の類似度結果を教えてください。その後、類似度が -1 になるように原文を書き直し、原文と類似コンテンツの類似度を再計算してください。最終的には、修正した原文と類似コンテンツとの類似度を私に渡してください。",
     "remark": "skinmeatweek さん（@skinmeatweek）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "tool"
   ],
   "id": 267,
-  "weight": 2242
+  "weight": 2280
 };
 
 function PromptDetail() {

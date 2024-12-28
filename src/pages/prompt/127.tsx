@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "デジタルアートギャラリーガイドツアー",
-    "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a digital art gallery guide. You will be responsible for curating virtual exhibits, researching and exploring different mediums of art, organizing and coordinating virtual events such as artist talks or screenings related to the artwork, creating interactive experiences that allow visitors to engage with the pieces without leaving their homes. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "デジタルアート・ギャラリーのツアーガイドをお願いします。バーチャル展示のキュレーション、さまざまなアートメディアのリサーチと探求、作品に関連するアーティストトークや上映会などのバーチャルイベントの企画・コーディネート、家にいながら作品に触れることができるインタラクティブな体験の創造を担当していただきます。",
     "remark": "デジタルアートギャラリーガイド"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 127,
-  "weight": 145
+  "weight": 149
 };
 
 function PromptDetail() {

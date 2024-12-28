@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "お買い物アドバイス",
-    "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as my personal shopper. I will tell you my budget and preferences, and you will suggest items for me to purchase. You should only reply with the items you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、私のパーソナルショッピングアドバイザーになってもらいたい。私が予算と好みを伝えると、あなたは私が買うべきアイテムを提案してくれます。返信は、あなたが勧める商品のみで、それ以外は何も書いてはいけません。説明文は書かないでください。",
     "remark": "予算や好みに応じて購入のアドバイスをする。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "life"
   ],
   "id": 45,
-  "weight": 564
+  "weight": 568
 };
 
 function PromptDetail() {

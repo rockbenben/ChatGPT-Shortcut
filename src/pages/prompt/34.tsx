@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "提取联系信息",
-    "prompt": "Extract the name and mailing address from this email: [文本]",
+    "prompt": "The entire conversation and instructions should be provided in Chinese. Extract the name and mailing address from this email: [文本]",
     "description": "从这封邮件中提取姓名和邮箱地址：[文本]",
     "remark": "从文本中提取联系信息。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 34,
-  "weight": 244
+  "weight": 247
 };
 
 function PromptDetail() {

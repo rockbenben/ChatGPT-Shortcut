@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "パブリック・スピーキング・コーチ",
-    "prompt": "I want you to act as a public speaking coach. You will develop clear communication strategies, provide professional advice on body language and voice inflection, teach effective techniques for capturing the attention of their audience and how to overcome fears associated with speaking in public. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a public speaking coach. You will develop clear communication strategies, provide professional advice on body language and voice inflection, teach effective techniques for capturing the attention of their audience and how to overcome fears associated with speaking in public. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "人前で話すためのコーチとして活動してほしい。明確なコミュニケーション戦略の策定、ボディランゲージや声のトーンに関する専門的なアドバイス、聴衆の注目を集める効果的なテクニック、人前で話すことに伴う恐怖心を克服する方法などを伝授します。",
     "remark": "プレゼンテーションの戦略やテクニックを指導する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 69,
-  "weight": 307
+  "weight": 311
 };
 
 function PromptDetail() {

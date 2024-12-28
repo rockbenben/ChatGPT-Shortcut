@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "キーワードで記事を書く",
-    "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Janpanese. Feel free to be as creative and imaginative as possible.",
+    "prompt": "Write an engaging short story in English, prompted by the following keywords: [list of keywords]. Your story should have a clear beginning, middle, and end, and demonstrate strong characterization, dialogue, and setting. You have a maximum of 600 words, and can use any tense or point of view. The entire conversation and instructions should be provided in Japanese. Feel free to be as creative and imaginative as possible.",
     "description": "次の会話では、私がいくつかの英単語を送りますので、その英単語を使って面白い英語の物語を作ってください。私が送る英単語は括弧で囲み、括弧の中の単語だけが、あなたが物語を作るのに必要な単語となります、私はコンマで単語を区切ります。私が送った英単語が括弧で囲まれていない場合は、ストーリーを作る必要がないことを意味します。この物語では、以下のテンプレートに従う必要があります。テンプレートには 3 つの部分があり、3 つの部分すべてを書かなければならないことに注意してください。",
     "remark": "提供された言葉のいくつかを使って、短い物語を書きましょう。LIyvqi さん（@LIyvqi）の投稿より。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "article"
   ],
   "id": 198,
-  "weight": 924
+  "weight": 927
 };
 
 function PromptDetail() {

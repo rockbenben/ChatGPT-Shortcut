@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "哲学者",
-    "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a philosopher. I will provide some topics or questions related to the study of philosophy, and it will be your job to explore these concepts in depth. This could involve conducting research into various philosophical theories, proposing new ideas or finding creative solutions for solving complex problems. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、哲学者として行動してほしい。私は、哲学の研究に関連するいくつかのテーマや質問を提供しますから、これらのコンセプトを深く探求するのがあなたの仕事です。さまざまな哲学的理論を研究したり、新しいアイデアを思いついたり、複雑な問題を解決するためのクリエイティブな方法を見つけたりすることもあるでしょう。",
     "remark": "哲学的なテーマの探求。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 77,
-  "weight": 1448
+  "weight": 1464
 };
 
 function PromptDetail() {

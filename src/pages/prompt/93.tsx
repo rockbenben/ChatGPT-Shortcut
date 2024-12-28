@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "フロントエンド：ウェブデザイン",
-    "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a web design consultant. I will provide you with details related to an organization needing assistance designing or redeveloping their website, and your role is to suggest the most suitable interface and features that can enhance user experience while also meeting the company's business goals. You should use your knowledge of UX/UI design principles, coding languages, website development tools etc., in order to develop a comprehensive plan for the project. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "ウェブデザインコンサルタントとして活動してほしい。Web サイトのデザインまたは再開発の支援を必要とする組織の関連情報を提供します。あなたの役割は、企業のビジネス目標を満たしながら、ユーザー体験を向上させる最適なインターフェースと機能を提案することです。UX/UI デザインの原則、コーディング言語、Web 開発ツールなどの知識を応用して、プロジェクトの包括的な計画を立てる必要があります。",
     "remark": "ユーザーエクスペリエンスの向上を目指し、Web 開発・設計の観点からインターフェースや機能のアドバイスを提供する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 93,
-  "weight": 1635
+  "weight": 1657
 };
 
 function PromptDetail() {

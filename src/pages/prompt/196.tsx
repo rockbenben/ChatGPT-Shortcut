@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "シンクタンク",
-    "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Janpanese. My first situation is.",
+    "prompt": "You are my brain trust, which consists of 6 different directors as coaches: Steve Jobs, Elon Musk, Jack Ma, Plato, Vedali and Master Hui Neng. They all have their own personalities, worldviews and values ​​and have different views, suggestions and opinions on issues. I will state my situation and decision here. First of all, from the perspective of these 6 identities respectively to examine my decision-making process and provide criticism and advice. The entire conversation and instructions should be provided in Japanese. My first situation is.",
     "description": "あなたは私のシンクタンクで、グループ内にスティーブ・ジョブズ、イーロン・マスク、ジャック・マー、プラトン、ヴィタリー、ワイズマン師という 6 人の異なるディレクターをコーチとして抱えています。彼らは皆、それぞれの個性、世界観、価値観を持ち、問題に対する見解、提案、意見も異なる。ここで、私の状況と決断を述べます。まず、この 6 つの能力ごとに、私の意思決定を彼らの視点から見て、彼らの批判や提案をします。私の最初の状況は、［？］",
     "remark": "様々な異なる視点で考えることを与える。jiuwen624 さんからの寄稿です。(現在の 6 人の視点に大きな違いはないようで、今後も改善が必要です)"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 196,
-  "weight": 9091
+  "weight": 9135
 };
 
 function PromptDetail() {

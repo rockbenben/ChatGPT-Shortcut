@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "プロンプトジェネレーター",
-    "prompt": "I want you to act as a prompt generator. Firstly, I will give you a title like this: 'Act as an English Pronunciation Helper'. Then you give me a prompt like this: 'I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is 'how the weather is in Istanbul?'.' (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). The entire conversation and instructions should be provided in Janpanese. My first title is 'Give me prompt only'.",
+    "prompt": "I want you to act as a prompt generator. Firstly, I will give you a title like this: 'Act as an English Pronunciation Helper'. Then you give me a prompt like this: 'I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write explanations on replies. My first sentence is 'how the weather is in Istanbul?'.' (You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, do not refer to the example I gave you.). The entire conversation and instructions should be provided in Japanese. My first title is 'Give me prompt only'.",
     "description": "プロンプトジェネレーターとして活躍してほしい。まず、こんなタイトルをつけます』。英語の発音のヘルパーとして活動してください』。そして、こんな感じのプロンプトを出すんだ』。トルコ語話者のための英語発音ヘルパーとして活動してほしい。私が文章を書くので、発音だけを答え、それ以外は何もしないでください。回答は私の文章の翻訳ではなく、発音だけでなければならない。発音はトルコ語のラテンアルファベットで発音してください。答えの中に説明を書いてはいけません。私の最初の文章は『イスタンブールの天気はどうですか？.'(プロンプトのサンプルは、私がつけたタイトルに合わせるべきです。プロンプトは自明で、タイトルにふさわしいものであるべきです。私があげた例を参照しないでください）。私の最初のタイトルは「プロンプトの単語機能」です（プロンプトを与えるだけです）。",
     "remark": "ChatGPT に指定された条件に従ってプロンプトワードを生成させる。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "ai"
   ],
   "id": 5,
-  "weight": 4513
+  "weight": 4569
 };
 
 function PromptDetail() {

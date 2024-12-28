@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "紛らわしいクエリ",
-    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Janpanese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question.",
+    "prompt": "I'm feeling confused and uncertain but I'm not sure what to ask. In the conversation that follows, I need you to ask me a series of closed-ended questions, each with multiple-choice answers. I will choose the answer that best fits my situation. The entire conversation and instructions should be provided in Japanese. Based on my responses, your task is to gradually identify the source of my confusion.\nRules:\nYou can only ask one question per round.\nThe question should be closed-ended.\nYou must provide multiple-choice answers for each question.",
     "description": "私は混乱でいっぱいですが、どんな質問をすればいいのかわかりません。\n次の会話の各ラウンドで、あなたは私に閉じた質問をし、私に選択肢を与える必要があり、私は選択をすることしかできません。\n注意してください。\n私は 1 ラウンドにつき 1 つの質問しかできません。\n質問はクローズドエンドでなければなりません。\nあなたはその質問に対していくつかの選択肢を与えなければならず、私は選択することしかできない。",
     "remark": "どんな質問をしたいのかわからないときに、このプロンプトワードで選択肢を絞りましょう。Libertyleaf さん（@Libertyleaf）の投稿より。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 271,
-  "weight": 710
+  "weight": 717
 };
 
 function PromptDetail() {

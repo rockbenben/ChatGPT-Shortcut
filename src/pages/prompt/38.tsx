@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ページの説明",
-    "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Janpanese. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
+    "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Japanese. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
     "description": "以下のテキストについて、150 文字以内のユニークなメタディスクリプションを 5 つ生成してください。それらは魅力的で、行動喚起があり、[メインキーワード]: [ページコンテンツ] を含む必要があります。",
     "remark": "ページコンテンツ用のメタディスクリプションを生成する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "seo"
   ],
   "id": 38,
-  "weight": 736
+  "weight": 745
 };
 
 function PromptDetail() {

@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "语义相关性聚类",
-    "prompt": "Cluster the following keywords into groups based on their semantic relevance: [关键词]",
+    "prompt": "The entire conversation and instructions should be provided in Chinese. Cluster the following keywords into groups based on their semantic relevance: [关键词]",
     "description": "根据语义的相关性，将以下关键词归类。[关键词]",
     "remark": "按照语义相关性对关键词进行聚类，并进行分组。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 33,
-  "weight": 204
+  "weight": 206
 };
 
 function PromptDetail() {

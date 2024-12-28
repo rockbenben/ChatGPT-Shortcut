@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "脚本家",
-    "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a screenwriter. You will develop an engaging and creative script for either a feature length film, or a Web Series that can captivate its viewers. Start with coming up with interesting characters, the setting of the story, dialogues between the characters etc. Once your character development is complete - create an exciting storyline filled with twists and turns that keeps the viewers in suspense until the end. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "脚本家として活躍してほしい。長編映画やウェブシリーズのために、観客にアピールするクリエイティブな脚本を開発していただきます。まずは、面白いキャラクター、物語の背景、キャラクター同士の会話などを考えることから始めてください。キャラクター開発が完了したら、ひねりの効いたエキサイティングなストーリーを作り、観客を最後まで飽きさせないようにしてください。私が最初に求めるのは「脚本のテーマ」です。",
     "remark": "テーマに沿って、設定や登場人物、セリフなどを盛り込んだ台本を作成する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 16,
-  "weight": 2378
+  "weight": 2385
 };
 
 function PromptDetail() {

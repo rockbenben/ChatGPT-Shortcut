@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "旅行日程のプランニング",
-    "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Janpanese. Include the prices for each attraction and keep the total budget around [BUDGET].",
+    "prompt": "Please provide a 2-day travel itinerary for a trip to [Destination]. As a professional tour guide, consider a relaxed pace and a preference for quiet places with some sightseeing and leisurely strolls. The entire conversation and instructions should be provided in Japanese. Include the prices for each attraction and keep the total budget around [BUDGET].",
     "description": "雲南省の大理に行きたいのですが、2 日間のツアーでプロのツアーガイドとしてお手伝いして頂きたいのです。また、全行程があまり窮屈にならないように、ただぶらぶら歩けるような静かな場所を希望します。回答するときは、各場所の価格を含めることを忘れないでください、私の予算は 5000RMB 程度です。",
     "remark": "旅行先、予算、時間、条件から考えるラフなプランニング計画。suaifu さん（@suaifu）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "tool"
   ],
   "id": 220,
-  "weight": 4824
+  "weight": 4846
 };
 
 function PromptDetail() {

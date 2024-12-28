@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ペーパー1",
-    "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたには、学者として行動してほしい。あなたには、自分で選んだトピックを研究し、その結果を論文や記事の形で発表する責任があります。あなたの仕事は、信頼できる情報源を特定し、資料をうまく構造化して整理し、引用を加えて正確に文書化することです。私が最初に提案する要件は「論文のテーマ」です。",
     "remark": "トピックに基づき、情報量が多く説得力のある論文を書く。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "article"
   ],
   "id": 20,
-  "weight": 22647
+  "weight": 22866
 };
 
 function PromptDetail() {

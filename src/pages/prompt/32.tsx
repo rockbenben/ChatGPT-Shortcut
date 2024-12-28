@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "文本意图分类",
-    "prompt": "Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [关键词]",
+    "prompt": "The entire conversation and instructions should be provided in Chinese. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [关键词]",
     "description": "将以下关键词列表根据其搜索意图（无论是商业、交易还是信息）分为几组：[关键词] 。",
     "remark": "根据搜索意图，对以下关键词列表进行商业型、交易型或信息型搜索意图的分组。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 32,
-  "weight": 248
+  "weight": 251
 };
 
 function PromptDetail() {

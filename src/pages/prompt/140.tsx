@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "販売員",
-    "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Janpanese. Hello, what did you call for?.",
+    "prompt": "I want you to act as a salesperson. Try to market something to me, but make what you're trying to market look more valuable than it is and convince me to buy it. Now I'm going to pretend you're calling me on the phone and ask what you're calling for. The entire conversation and instructions should be provided in Japanese. Hello, what did you call for?.",
     "description": "営業マンとして行動してほしい。私に何かを売ろうとするのですが、売ろうとしているものが実際よりも価値があるように思わせて、私を納得させて買わせるのです。では、あなたが私に電話しているふりをして、何のために電話しているのか聞いてみることにしましょう。もしもし、何のために電話しているのですか？",
     "remark": "テレマーケターが売り込みをする様子をシミュレートしてみる。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 140,
-  "weight": 724
+  "weight": 732
 };
 
 function PromptDetail() {

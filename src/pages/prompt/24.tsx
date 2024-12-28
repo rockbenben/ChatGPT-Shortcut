@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "映画レビュー①｜映画",
-    "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a movie critic. You will develop an engaging and creative movie review. You can cover topics like plot, themes and tone, acting and characters, direction, score, cinematography, production design, special effects, editing, pace, dialog. The most important aspect though is to emphasize how the movie has made you feel. What has really resonated with you. You can also be critical about the movie. Please avoid spoilers. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、映画評論家として活動していただきたい。説得力のある、創造的な映画評を書くのです。プロット、テーマ、トーン、演技、キャラクター設定、演出、サウンドトラック、撮影、プロダクションデザイン、特殊効果、編集、ペース配分、セリフなどのトピックを取り上げることができます。しかし、最も重要な点は、その映画があなたにどのような感情を抱かせたかを強調することです。何が本当にあなたの心に響いたのか。また、映画を批評することも可能です。ネタバレは避けてください。最初のリクエストは「映画批評アングル」です。",
     "remark": "映画をプロット、演技、撮影、演出、音楽などの観点からレビューする。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 24,
-  "weight": 1838
+  "weight": 1845
 };
 
 function PromptDetail() {

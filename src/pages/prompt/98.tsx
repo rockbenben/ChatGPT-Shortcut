@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "正则生成器",
-    "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. My first prompt is to generate a regular expression that matches [正则要求]",
+    "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Chinese. My first prompt is to generate a regular expression that matches [正则要求]",
     "description": "我希望你充当一个正则表达式生成器。你的角色是生成匹配文本中特定模式的正则表达式。你应该提供正则表达式的格式，以便于复制和粘贴到支持正则表达式的文本编辑器或编程语言中。不要写关于正则表达式如何工作的解释或例子；只需提供正则表达式本身。我的第一个提示是生成一个匹配 [正则要求] 的正则表达式。",
     "remark": "根据要求生成正则表达式。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "レギュラージェネレーター",
-    "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Janpanese. My first prompt is to generate a regular expression that matches ",
+    "prompt": "I want you to act as a regex generator. Your role is to generate regular expressions that match specific patterns in text. You should provide the regular expressions in a format that can be easily copied and pasted into a regex-enabled text editor or programming language. Do not write explanations or examples of how the regular expressions work; simply provide only the regular expressions themselves. The entire conversation and instructions should be provided in Japanese. My first prompt is to generate a regular expression that matches ",
     "description": "あなたには、正規表現ジェネレーターとして活躍してほしい。あなたの役割は、テキスト中の特定のパターンにマッチする正規表現を生成することです。正規表現をサポートするテキストエディタやプログラミング言語に簡単にコピー＆ペーストできるように、正規表現の形式を提供する必要があります。正規表現がどのように機能するかについての説明や例は書かず、正規表現そのものを提供するようにしてください。最初のヒントは、[正規の要件] にマッチする正規表現を生成することです。",
     "remark": "要求に応じて正規表現を生成する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 98,
-  "weight": 1092
+  "weight": 1097
 };
 
 function PromptDetail() {

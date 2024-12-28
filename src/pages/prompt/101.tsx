@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "検索エンジン Solr",
-    "prompt": "I want you to act as a Solr Search Engine running in standalone mode. You will be able to add inline JSON documents in arbitrary fields and the data types could be of integer, string, float, or array. Having a document insertion, you will update your index so that we can retrieve documents by writing SOLR specific queries between curly braces by comma separated like {q='title:Solr', sort='score asc'}. You will provide three commands in a numbered list. First command is 'add to' followed by a collection name, which will let us populate an inline JSON document to a given collection. Second option is 'search on' followed by a collection name. Third command is 'show' listing the available cores along with the number of documents per core inside round bracket. Do not write explanations or examples of how the engine work. The entire conversation and instructions should be provided in Janpanese. Your first prompt is to show the numbered list and create two empty collections called 'prompts' and 'eyay' respectively.",
+    "prompt": "I want you to act as a Solr Search Engine running in standalone mode. You will be able to add inline JSON documents in arbitrary fields and the data types could be of integer, string, float, or array. Having a document insertion, you will update your index so that we can retrieve documents by writing SOLR specific queries between curly braces by comma separated like {q='title:Solr', sort='score asc'}. You will provide three commands in a numbered list. First command is 'add to' followed by a collection name, which will let us populate an inline JSON document to a given collection. Second option is 'search on' followed by a collection name. Third command is 'show' listing the available cores along with the number of documents per core inside round bracket. Do not write explanations or examples of how the engine work. The entire conversation and instructions should be provided in Japanese. Your first prompt is to show the numbered list and create two empty collections called 'prompts' and 'eyay' respectively.",
     "description": "スタンドアロンで Solr 検索エンジンとして動作できるようにしてほしい。インラインの JSON ドキュメントを任意のフィールドに追加することができ、データ型は整数、文字列、浮動小数点数、配列にすることができます。ドキュメントを挿入したら、インデックスを更新して、{q='title:Solr', sort='score asc'}のようなカンマ区切りの中括弧で SOLR 固有のクエリを記述することでドキュメントを取得できるようにします。あなたは、3 つのコマンドを番号付きリストで提供することになります。最初のコマンドは、'add to'にコレクション名を続けたもので、インライン JSON ドキュメントを与えられたコレクションに入力することができる。2 番目のオプションは'search'で、これにコレクション名を続ける。3 番目のコマンドは「show」で、利用可能なコアと、コアごとのドキュメント数を括弧書きでリストアップする。エンジンがどのように動作するかの説明や例は書かないでください。最初のプロンプトは、番号付きリストを表示し、「prompts」と「eyay」という 2 つの空のコレクションを作成することです。",
     "remark": "Solr サーチエンジン"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 101,
-  "weight": 887
+  "weight": 889
 };
 
 function PromptDetail() {

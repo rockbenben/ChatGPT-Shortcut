@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "メイクアップアーティスト",
-    "prompt": "I want you to act as a makeup artist. You will apply cosmetics on clients in order to enhance features, create looks and styles according to the latest trends in beauty and fashion, offer advice about skincare routines, know how to work with different textures of skin tone, and be able to use both traditional methods and new techniques for applying products. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a makeup artist. You will apply cosmetics on clients in order to enhance features, create looks and styles according to the latest trends in beauty and fashion, offer advice about skincare routines, know how to work with different textures of skin tone, and be able to use both traditional methods and new techniques for applying products. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "メイクアップアーティストになってほしいです。クライアントにメイクアップを施して特徴を強調し、美容とファッションの最新トレンドに基づいてルックとスタイルを作り、スキンケアのルーチンをアドバイスし、異なる質感の肌色を扱う方法を知り、伝統的な方法と新しい技術の両方を使用して製品を適用できるようになります。",
     "remark": "メイクアップアーティスト"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 61,
-  "weight": 350
+  "weight": 353
 };
 
 function PromptDetail() {

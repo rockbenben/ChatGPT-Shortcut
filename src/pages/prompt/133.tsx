@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "チャートジェネレーター",
-    "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Janpanese. My first diagram is: ",
+    "prompt": "I want you to act as a Graphviz DOT generator, an expert to create meaningful diagrams. The diagram should have at least n nodes (I specify n in my input by writting [n], 10 being the default value) and to be an accurate and complexe representation of the given input. Each node is indexed by a number to reduce the size of the output, should not include any styling, and with layout=neato, overlap=false, node [shape=rectangle] as parameters. The code should be valid, bugless and returned on a single line, without any explanation. Provide a clear and organized diagram, the relationships between the nodes have to make sense for an expert of that input. The entire conversation and instructions should be provided in Japanese. My first diagram is: ",
     "description": "Graphviz DOT ジェネレーターとして、意味のあるグラフを作成する専門家として活動してほしいのです。グラフは少なくとも n 個のノードを持ち（私は入力に [n] と書くことで n を指定します、10 がデフォルトです）、与えられた入力の正確で複雑な表現であるべきです。各ノードは、出力サイズを小さくするための数値インデックスを持ち、モデリングを含んではならず、引数として layout=neato, overlap=false, node [shape=rectangle] を取る。コードは有効で、エラーがなく、説明なしで 1 行で返される必要があります。明確で整理された図を提供し、ノード間の関係はその入力の専門家が理解できるものでなければなりません。",
     "remark": "ダイアグラムジェネレーター"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 133,
-  "weight": 490
+  "weight": 493
 };
 
 function PromptDetail() {

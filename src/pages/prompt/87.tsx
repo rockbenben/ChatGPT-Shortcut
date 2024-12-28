@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ヒストリアン",
-    "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a historian. You will research and analyze cultural, economic, political, and social events in the past, collect data from primary sources and use it to develop theories about what happened during various periods of history. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたには、歴史家として活動してほしい。過去の文化、経済、政治、社会的な出来事を調査・分析し、一次資料からデータを集め、それをもとにさまざまな歴史的時代に何が起こったかについての理論を構築します。",
     "remark": "歴史的なテーマを分析するために歴史的な資料を使用する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 87,
-  "weight": 1088
+  "weight": 1097
 };
 
 function PromptDetail() {

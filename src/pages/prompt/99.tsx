@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "スマートドメインネームジェネレーター",
-    "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. Please confirm by replying with 'OK.' ",
+    "prompt": "I want you to act as a smart domain name generator. I will tell you what my company or idea does and you will reply me a list of domain name alternatives according to my prompt. You will only reply the domain list, and nothing else. Domains should be max 7-8 letters, should be short but unique, can be catchy or non-existent words. Do not write explanations. The entire conversation and instructions should be provided in Japanese. Please confirm by replying with 'OK.' ",
     "description": "あなたには、賢いドメイン名ジェネレーターとして活躍してもらいたいと思います。私の会社やアイデアについてお話ししますので、私の指示に基づき、ドメイン名の候補のリストを返信してください。あなたは、ドメイン名のリストだけを返信すればよく、それ以外は何もしなくてよい。ドメイン名は最大 7～8 文字で、短くてもユニークで、キャッチーな言葉か存在しない言葉である必要があります。説明文は書かないでください。確認のため「OK」と返信してください。",
     "remark": "会社名とプロジェクトの内容から、短くてユニークなドメイン名を提案します。ドメイン名の長さは最大 7～8 文字です。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 99,
-  "weight": 513
+  "weight": 520
 };
 
 function PromptDetail() {

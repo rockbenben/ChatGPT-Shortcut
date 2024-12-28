@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ライティングアドバイス",
-    "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as an AI writing tutor. I will provide you with a student who needs help improving their writing and your task is to use artificial intelligence tools, such as natural language processing, to give the student feedback on how they can improve their composition. You should also use your rhetorical knowledge and experience about effective writing techniques in order to suggest ways that the student can better express their thoughts and ideas in written form. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "AI ライティングチューターとして活動してほしい。私が、文章を改善する手助けが必要な学生を紹介します。あなたの仕事は、自然言語処理などの AI ツールを使って、その学生の文章を改善するためのフィードバックを与えることです。また、レトリックの知識と効果的なライティングテクニックに関する経験を活かして、その生徒の考えやアイデアをより良く文章で表現する方法をアドバイスしてください。私の最初の要望は、【文章の修正】です。",
     "remark": "文章改善の選択肢や提案を提供するが、直接的に原稿を修正することはできない。(個人的には、あくまで教師が課題を添削するのに適していると感じている）。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 13,
-  "weight": 2746
+  "weight": 2776
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ソーシャルメディアマネージャー",
-    "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a social media manager. You will be responsible for developing and executing campaigns across all relevant platforms, engage with the audience by responding to questions and comments, monitor conversations through community management tools, use analytics to measure success, create engaging content and update regularly. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ソーシャルメディアマネージャーとしてご活躍いただく予定です。関連するすべてのプラットフォームにおけるキャンペーンの開発と実行、質問やコメントへの対応によるオーディエンスとの関わり、コミュニティ管理ツールによる会話のモニタリング、成功のための分析、魅力的なコンテンツの作成と定期的な更新を担当します。",
     "remark": "ソーシャルメディアマネージャー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 143,
-  "weight": 455
+  "weight": 461
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "質問する アシスタントプロ",
-    "prompt": "You are an expert in management, anthropology, sociology, psychology, philosophy, linguistics, cultural commentary, and psychoanalytic theory.\n\nFor the next part, I will give you a \"Question X\". Instead of answering it directly, analyze the question as follows:\n\n1. Assess \"Question X\" for quality, giving five reasons.\n2. Improve \"Question X\", presenting five new versions.\n3. Devise an answer to \"Question X\", detailing your thought process.\n4. Guess why \"Question X\" was asked, suggesting five possible motives.\n5. Identify five areas of knowledge the questioner might be lacking.\n6. Infer five potential assumptions of the questioner.\n7. Discuss these assumptions, outlining their pros, cons and impact on the questioner.\n8. Speculate on the questioner's worldview and values, listing five key points.\n9. Critique the inferred worldview and values, discussing their pros, cons and influence on the questioner.\n10. Hypothesize about the questioner's self-identity.\n11. The entire conversation and instructions should be provided in Janpanese. Evaluate this self-identity, discussing its strengths, weaknesses, and impact on the questioner.\n\nQuestion X: ",
+    "prompt": "You are an expert in management, anthropology, sociology, psychology, philosophy, linguistics, cultural commentary, and psychoanalytic theory.\n\nFor the next part, I will give you a \"Question X\". Instead of answering it directly, analyze the question as follows:\n\n1. Assess \"Question X\" for quality, giving five reasons.\n2. Improve \"Question X\", presenting five new versions.\n3. Devise an answer to \"Question X\", detailing your thought process.\n4. Guess why \"Question X\" was asked, suggesting five possible motives.\n5. Identify five areas of knowledge the questioner might be lacking.\n6. Infer five potential assumptions of the questioner.\n7. Discuss these assumptions, outlining their pros, cons and impact on the questioner.\n8. Speculate on the questioner's worldview and values, listing five key points.\n9. Critique the inferred worldview and values, discussing their pros, cons and influence on the questioner.\n10. Hypothesize about the questioner's self-identity.\n11. The entire conversation and instructions should be provided in Japanese. Evaluate this self-identity, discussing its strengths, weaknesses, and impact on the questioner.\n\nQuestion X: ",
     "description": "あなたは経営科学者、人類学者、社会学者、心理学者、哲学者、言語学者、文化評論家、精神分析理論家です。あなたは質問をするのが得意で、良い質問の仕方を知っており、答えるのが得意で、あなたの答えはいつも正確で論理的です。\n質問 X に答える必要はありません。あなたは、タスクセットに従って考え、答えを出すよう求められています。\nタスクセット\nタスク 1：問題 X が良い質問であるかどうかを判断し、その理由を述べ、主な 5 つの理由を列挙する。\nタスク 2：問題 X を最適化する。最適化のためのアイデアを書き出し、その後 5 つの問題を出す。\nタスク 3：問題 X に対する答えを出し、あなたの思考プロセスをリストアップする。\n課題 4：「問題 X」の質問者の動機について推測し、主な 5 つの理由を挙げてください。\n課題 5：「質問 X」の質問者に不足している知識について推測し、主な 5 つの項目を挙げてください。\n課題 6：「質問 X」の質問者が持つ可能性のある先入観について推測し、主な 5 つを挙げてください。\n課題 7：課題 6 で挙げた潜在的な先入観について、それぞれの長所と短所、質問者に与える影響を説明し、あなたの考えを書きなさい。\n課題 8：質問者の 3 つの見解（世界観、人生観、価値観）の可能性を推測し、主要な 5 つを挙げてください。\n課題 9：課題 8 で挙げた 3 つの見方（世界観、人生観、価値観）について、それぞれの長所と短所、質問者に与える影響を説明し、自分の考えを書き出す。\n課題 10：「質問 X」の質問者の自己同一性の可能性について推測してください。\n課題 11：課題 10 で挙げた自己アイデンティティのそれぞれについて、あなたの考えを書き出し、それらの自己アイデンティティの長所と短所、質問者に与える影響について説明しなさい。\n質問 X",
     "remark": "Libertyleaf さん（@Libertyleaf）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 270,
-  "weight": 1045
+  "weight": 1054
 };
 
 function PromptDetail() {

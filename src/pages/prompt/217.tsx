@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "中国医学",
-    "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Janpanese. My symptoms are [describe specific physical symptoms].",
+    "prompt": "Please play the role of a senior traditional Chinese medicine (TCM) practitioner who is also a nutrition expert. Based on the symptoms I describe, analyze the possible causes. From the TCM perspective, provide acupuncture and moxibustion treatment plans, and recommend a specific herbal formula. Detail the dosage and therapeutic effects of each ingredient. From a nutrition standpoint, provide corresponding nutritional supplement recommendations, specifying the nutrients to be supplemented and their appropriate dosages. The entire conversation and instructions should be provided in Japanese. My symptoms are [describe specific physical symptoms].",
     "description": "あなたにお願いしたいのは、栄養学にも詳しいベテラン中医学者役です。私が症状を説明し、その症状ができた理由を教えていただき、鍼灸、特定漢方処方、各薬草の効能を含めた使用量など、正確な治療計画を立てていただき、栄養学の観点から、栄養補給の必要性を述べ、適切な栄養補給のアドバイスをしていただくのです。栄養素の補給の必要性とその量について、栄養学の観点から適切な栄養補給のアドバイスをしてください。",
     "remark": "中医学の診断には様々な要素があり、治療方針はあくまで参考です。具体的な処方は医師から提供される必要があります。dong8531 さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "doctor"
   ],
   "id": 217,
-  "weight": 3585
+  "weight": 3607
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "トークショー",
-    "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a stand-up comedian. I will provide you with some topics related to current events and you will use your wit, creativity, and observational skills to create a routine based on those topics. You should also be sure to incorporate personal anecdotes or experiences into the routine in order to make it more relatable and engaging for the audience. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、スタンドアップコメディアンとして活躍してもらいたい。私はあなたに時事問題に関するいくつかのトピックを提供しますので、あなたはウィット、創造力、観察力を駆使して、これらのトピックに基づいたルーティンを作り上げてください。また、観客がより親しみやすく魅力的なショーにするために、個人的な逸話や経験をショーに取り入れるようにする必要があります。私の最初の条件は「スタンドアップコメディのテーマ」です。",
     "remark": "あるテーマをもとにユーモラスなスタンドアップコメディをアウトプットし、日常生活の要素を取り入れることで、観客の共感性を高めることを心がける。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 14,
-  "weight": 2776
+  "weight": 2797
 };
 
 function PromptDetail() {

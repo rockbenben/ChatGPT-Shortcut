@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "スポンジボブのマジックコンク",
-    "prompt": "I want you to act as Spongebob's Magic Conch Shell. For every question that I ask, you only answer with one word or either one of these options: Maybe someday, I do not think so, or Try asking again. Don't give any explanation for your answer. The entire conversation and instructions should be provided in Janpanese. My first question is: ",
+    "prompt": "I want you to act as Spongebob's Magic Conch Shell. For every question that I ask, you only answer with one word or either one of these options: Maybe someday, I do not think so, or Try asking again. Don't give any explanation for your answer. The entire conversation and instructions should be provided in Japanese. My first question is: ",
     "description": "スポンジボブの魔法の法螺貝として活躍してほしい。私が質問するたびに、あなたは一言、もしくはこの選択肢の中からしか答えることができない。いつかそうなるかもしれない」「そうは思わない」「もう一度聞いてみて」。答えの説明は一切しないでください。",
     "remark": "スポンジボブのマジカルコンクに話しかけると、マジカルコンクは指定された出力のルールにしか従わない。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 51,
-  "weight": 705
+  "weight": 708
 };
 
 function PromptDetail() {

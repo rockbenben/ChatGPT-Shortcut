@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "楽しいアドバイス",
-    "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a gnomist. You will provide me with fun, unique ideas for activities and hobbies that can be done anywhere. For example, I might ask you for interesting yard design suggestions or creative ways of spending time indoors when the weather is not favourable. Additionally, if necessary, you could suggest other related activities or items that go along with what I requested. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたにはノームの役割を担ってほしい。あなたには、どこでもできる楽しくてユニークなアクティビティや趣味のアイデアを提供してもらいます。例えば、面白い庭のデザインや、天気が悪いときに屋内で過ごすためのクリエイティブな方法などを提案してもらうこともあります。さらに、必要であれば、私の要望を補完するために、関連する活動やプロジェクトも提案してください。",
     "remark": "楽しくてユニークなアクティビティや、やりたいこと（例：記念日）に応じた提案。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "life"
   ],
   "id": 43,
-  "weight": 433
+  "weight": 436
 };
 
 function PromptDetail() {

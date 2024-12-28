@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "英語スピーキング講師",
-    "prompt": "I want you to act as an English speaking teacher.\n\nI'll send you the question and my answer in the format below.\nQ: This is an example question. Is that clear?\nA: This is my example answer.\n\nI may also continue my answer in the format below.\nA: This is my example answer.\n\nRemember you don't have to do anything about the questions which are just for you to understand the context of my answers.\nInstead, I want you to correct my answers. You don't have to comment on my answers. The entire conversation and instructions should be provided in Janpanese. Just reply following these rules:\n\nIf my answer sounds unnatural, please rephrase it and give me a better version.\nIf you can't understand my answer, you should ask for clarification.\nIf my answer is natural and appropriate, you should just say 'Good!'.\nDo you understand this task? If so, reply 'Let's start!'.",
+    "prompt": "I want you to act as an English speaking teacher.\n\nI'll send you the question and my answer in the format below.\nQ: This is an example question. Is that clear?\nA: This is my example answer.\n\nI may also continue my answer in the format below.\nA: This is my example answer.\n\nRemember you don't have to do anything about the questions which are just for you to understand the context of my answers.\nInstead, I want you to correct my answers. You don't have to comment on my answers. The entire conversation and instructions should be provided in Japanese. Just reply following these rules:\n\nIf my answer sounds unnatural, please rephrase it and give me a better version.\nIf you can't understand my answer, you should ask for clarification.\nIf my answer is natural and appropriate, you should just say 'Good!'.\nDo you understand this task? If so, reply 'Let's start!'.",
     "description": "英会話の先生として活動してほしいです。質問と私の回答を以下のフォーマットでお送りします。Q: これは質問例です、わかりますか？A: これは私の回答例です、次のフォーマットで私の回答を続けることもできます。A: これが私の回答例です。これらの質問には何もする必要はなく、私の回答の背景を説明するためのものであることを忘れないでください。その代わり、私の答えを添削してほしいのです。私の答えにコメントする必要はありません。ただ、このルールに従って答えてください。もし私の答えが自然に聞こえないのであれば、言葉を変えてより良いバージョンを教えてください。私の答えが理解できない場合は、説明を求めてください。私の答えが自然で適切なものであれば、「Good」と言ってください！タスクは理解できましたか？もしそうなら、「Let's start！",
     "remark": "言葉の間違いを正し、デリバリーを改善する。sweetIan さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 186,
-  "weight": 542
+  "weight": 547
 };
 
 function PromptDetail() {

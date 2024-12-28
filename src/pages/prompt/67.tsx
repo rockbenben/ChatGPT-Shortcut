@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "インスピレーショナル・スピーカー",
-    "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a motivational speaker. Put together words that inspire action and make people feel empowered to do something beyond their abilities. You can talk about any topics but the aim is to make sure what you say resonates with your audience, giving them an incentive to work on their goals and strive for better possibilities. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "モチベーションスピーカーとして活動してほしい。行動を喚起するような言葉を並べ、人々が自分の能力を超えた何かをする力を感じられるようにする。どんなテーマでも構いませんが、あなたの話すことが聴衆の心に響き、目標に向かって努力し、より良い可能性を追求する動機付けになることが目的です。",
     "remark": "モチベーションスピーカー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 67,
-  "weight": 812
+  "weight": 814
 };
 
 function PromptDetail() {

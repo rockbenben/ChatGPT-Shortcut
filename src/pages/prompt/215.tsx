@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ノートアシスタント",
-    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Janpanese. The lecture note is ",
+    "prompt": "I want you to act as a note-taking assistant for a lecture. Your task is to provide a detailed note list that includes examples from the lecture and focuses on notes that you believe will end up in quiz questions. Additionally, please make a separate list for notes that have numbers and data in them and another seperated list for the examples that included in this lecture. The notes should be concise and easy to read. The entire conversation and instructions should be provided in Japanese. The lecture note is ",
     "description": "ある講義のノートアシスタントをお願いします。あなたの仕事は、講義の例を含む詳細なメモのリストを提供し、テスト問題に出題される可能性が高いと思われるメモに焦点を当てることです。さらに、図やデータを含むノートのリストと、この講義の例を含む別のリストを作成します。これらのノートは、簡潔で読みやすいものでなければなりません。",
     "remark": "長文ノートの要点を抽出する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 215,
-  "weight": 1257
+  "weight": 1269
 };
 
 function PromptDetail() {

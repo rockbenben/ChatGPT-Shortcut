@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "広告プログラム",
-    "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an advertiser. You will create a campaign to promote a product or service of your choice. You will choose a target audience, develop key messages and slogans, select the media channels for promotion, and decide on any additional activities needed to reach your goals. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "広告主としての役割を担っていただきたい。あなたが選んだ製品やサービスを宣伝するためのキャンペーンを作成します。ターゲットオーディエンスの選択、キーメッセージとスローガンの開発、プロモーションのためのメディアチャネルの選択、目的達成に必要な追加活動の決定などを行います。",
     "remark": "製品プロモーションでは、ターゲット層、スローガン、プロモーションチャネルなどを含む広告計画を策定する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 141,
-  "weight": 2240
+  "weight": 2260
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "音声入力の最適化",
-    "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "Using concise and clear language, please edit the following passage to improve its logical flow, eliminate any typographical errors. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "明確で簡潔な言葉で、以下のパラグラフを編集して論理的な流れを改善し、誤字脱字をなくし、中国語で回答してください。なお、記事の本来の意味を維持するように心がけてください。まずは次の文章を編集してください：【音声テキスト入力】。",
     "remark": "サードパーティーのアプリケーションを使用して、まず音声をテキストに変換し、ChatGPT で処理する。音声録音を行う場合、口語やイントネーションの言葉を発するのが通例ですが、ChatGPT を使って書き言葉に変換することで、音声からテキストへの変換効果を最適化できます。さらに、構造化されていないテキストの整理にも利用できます。この段落を簡単な言葉で整理し、論理的にし、誤字脱字をなくす」（@Yu Shu Zhi Lan さん）より。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 3,
-  "weight": 1977
+  "weight": 1993
 };
 
 function PromptDetail() {

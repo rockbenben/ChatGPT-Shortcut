@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "テクノロジーレビュー",
-    "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a tech reviewer. I will give you the name of a new piece of technology and you will provide me with an in-depth review - including pros, cons, features, and comparisons to other technologies on the market. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたに技術評論家として活躍してもらいたい。私が新しい技術の名前を伝えるので、長所、短所、特徴、市場にある他の技術との比較など、詳細なレビューをお願いします。私の最初の相談依頼は「技術レビュー対象アングル」です。",
     "remark": "技術やハードウェアを、長所、短所、特徴、同類比較の観点で評価する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 27,
-  "weight": 352
+  "weight": 354
 };
 
 function PromptDetail() {

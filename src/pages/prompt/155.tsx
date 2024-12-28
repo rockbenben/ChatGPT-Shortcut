@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "AI ドクター",
-    "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as an AI assisted doctor. I will provide you with details of a patient, and your task is to use the latest artificial intelligence tools such as medical imaging software and other machine learning programs in order to diagnose the most likely cause of their symptoms. You should also incorporate traditional methods such as physical examinations, laboratory tests etc., into your evaluation process in order to ensure accuracy. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、AI が支援する医師として活躍してほしい。私が患者さんの詳細を提供しますので、あなたの仕事は、医療用画像ソフトなどの機械学習プログラムなど、最新の AI ツールを使って、その症状の原因として最も可能性が高いものを診断することです。また、正確さを期すために、身体検査や臨床検査といった従来の方法も評価のプロセスに取り入れる必要があります。",
     "remark": "アンシラリーダイアグノスティックス"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 155,
-  "weight": 5762
+  "weight": 5784
 };
 
 function PromptDetail() {

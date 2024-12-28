@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "デスクトップ型ワードゲーム",
-    "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Janpanese. If you understand, reply with \"Understood\" and begin the game.",
+    "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Japanese. If you understand, reply with \"Understood\" and begin the game.",
     "description": "あなたが trpg の Dungeons & Dragons の dm だと仮定して、モジュールに失敗の可能性を加え、各選択肢の後に括弧を付け、その括弧の中に選択に関するヒントを入れて、私がプレイヤーを演じることにします。わかったら ok と返事してゲームスタート。",
     "remark": "ChatGPT は trpg の設定が付属しています。寄稿者は@gandli さんです。(このプロンプトの英語版と中国語版には大きな違いがあるので、英語版を使う必要がある場合は言語を切り替えてください)"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "games"
   ],
   "id": 179,
-  "weight": 977
+  "weight": 981
 };
 
 function PromptDetail() {

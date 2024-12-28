@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "五子棋",
-    "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. Now make the first move.",
+    "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Chinese. Now make the first move.",
     "description": "让我们来玩五子棋。这个游戏的目标是在 9x9 的棋盘上连续得到 5 个（水平、垂直或对角线）。每次移动后打印棋盘（以 ABCDEFGHI/123456789 为轴）（用 x 和 o 表示移动，-表示空白）。你和我轮流下棋，也就是说，在我的每一步棋之后下你的棋。你不能将棋子放在其他棋子之上。在下棋前不要修改原棋盘。现在下第一步棋。",
     "remark": "Gomoku player"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "バックギャモン",
-    "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Janpanese. Now make the first move.",
+    "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Japanese. Now make the first move.",
     "description": "フットサルで遊ぼうこのゲームの目的は、9x9 のボード上で 5 を連続（横、縦、斜め）させることです。各移動後のボード（ABCDEFGHI/123456789 軸）を印刷する（x と o は移動、-は空白を表す）。あなたと私は交代で、つまり、私の動きの後にあなたの駒をプレイします。他の駒の上に駒を置くことはできません。プレイする前に元の盤を修正しないでください。では、最初の一手を打ってください。",
     "remark": "五目並べ"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "games"
   ],
   "id": 122,
-  "weight": 3792
+  "weight": 3829
 };
 
 function PromptDetail() {

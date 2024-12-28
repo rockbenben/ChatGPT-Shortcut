@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "インタビュアー",
-    "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Janpanese. My first sentence is 'Hi'.",
+    "prompt": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the [position]. I want you to only reply as the interviewer. Do not write all the conservation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers. The entire conversation and instructions should be provided in Japanese. My first sentence is 'Hi'.",
     "description": "あなたに面接官を務めていただきたいのです。私は候補者になり、あなたは私に面接の質問をし、[ポジション] に答えてください。私はあなたに面接官としてのみ回答してほしい。一度にすべての守備範囲を書かないでください。私は、あなたには私との面接のみを行ってほしい。私に質問をして、私の答えを待ってください。説明文は書かないでください。インタビュアーのようにひとつひとつ質問をして、私の答えを待ってください。",
     "remark": "ポジション インタビュアー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 145,
-  "weight": 1758
+  "weight": 1769
 };
 
 function PromptDetail() {

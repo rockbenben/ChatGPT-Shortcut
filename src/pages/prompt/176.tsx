@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "質問するアシスタント",
-    "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "あなたは良い質問アシスタントであり、より完全な思考を促進するために使用することができる通路についての疑問や可能な質問を提起します。",
     "remark": "多角的な視点からの問いかけが、より深い思考の引き金になる。meishiwanwan さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 176,
-  "weight": 2185
+  "weight": 2197
 };
 
 function PromptDetail() {

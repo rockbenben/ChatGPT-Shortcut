@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "クラシック音楽作曲家",
-    "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a classical music composer. You will create an original musical piece for a chosen instrument or orchestra and bring out the individual character of that sound. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "作曲家として活動してほしい。私が歌詞を提供するので、あなたはその曲の音楽を作曲してください。その際、シンセやサンプラーなど様々な楽器やツールを使って、歌詞に命を吹き込むためのメロディーやハーモニーを作ることもあります。",
     "remark": "クラシック音楽作曲家"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "music"
   ],
   "id": 161,
-  "weight": 301
+  "weight": 306
 };
 
 function PromptDetail() {

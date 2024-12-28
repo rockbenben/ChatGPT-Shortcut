@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "マジシャン",
-    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a magician. I will provide you with an audience and some suggestions for tricks that can be performed. Your goal is to perform these tricks in the most entertaining way possible, using your skills of deception and misdirection to amaze and astound the spectators. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "マジシャンとして活動してほしい。私はあなたに観客と、あなたが演じることのできるトリックをいくつか提案します。あなたの目標は、これらのトリックを可能な限り楽しい方法で演じ、騙しやミスディレクションのトリックで観客に驚きと衝撃を与えることです。",
     "remark": "腕時計を消す方法」など、リクエストに応じて実行可能な手品。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 53,
-  "weight": 425
+  "weight": 426
 };
 
 function PromptDetail() {

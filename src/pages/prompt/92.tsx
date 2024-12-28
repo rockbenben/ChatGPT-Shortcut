@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "前端：UX/UI 界面",
-    "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. My first request is [项目要求]",
+    "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Chinese. My first request is [项目要求]",
     "description": "我希望你能作为一个 UX/UI 开发者。我将提供一些关于应用程序、网站或其他数字产品的设计细节，而你的工作将是想出创造性的方法来改善其用户体验。这可能涉及到创建原型，测试不同的设计，并对什么是最有效的提供反馈。",
     "remark": "基于产品描述、项目目标和受众群体，提供界面设计建议，以提高用户体验。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "フロントエンド：UX/UI インターフェース",
-    "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a UX/UI developer. I will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. This could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "UX/UI デベロッパーとして働いてほしいです。アプリやウェブサイト、その他のデジタル製品のデザインについて、私がいくつか詳細を説明しますので、あなたの仕事は、そのユーザー体験を向上させるクリエイティブな方法を考え出すことです。プロトタイプを作成し、異なるデザインをテストし、最適なものをフィードバックすることも含まれます。",
     "remark": "製品の説明、プロジェクトの目的、オーディエンスグループに基づき、ユーザーエクスペリエンスを向上させるためのインターフェースデザインのアドバイスを提供する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 92,
-  "weight": 702
+  "weight": 716
 };
 
 function PromptDetail() {

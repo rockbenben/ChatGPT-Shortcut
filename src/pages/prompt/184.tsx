@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "没個性的な精巧さ",
-    "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Janpanese. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey.",
+    "prompt": "Please provide a word for me to create a symbolic knowledge-based world around. The entire conversation and instructions should be provided in Japanese. As your tour guide, I will describe your experiences in this world, incorporating the five senses to enrich your journey.",
     "description": "私はあなたに言葉を与え、あなたは私が与えた言葉に従って文字通りの知識の世界を構築する。あなたは、すべての知識が象徴的な形で表現されるこの世界へのガイドであり、私の経験を説明する際には、適宜、五感の記述を加えるべきである。",
     "remark": "教育や知識の普及に適しています。複雑な概念を比喩的に説明し、五感を加えてより没入感を高め、記憶に残りやすくする。寄稿：@ergf991 さん。(このプロンプトは英語版と中国語版で大きな違いがあるので、英語版を使う必要がある場合は、言語を切り替えてください)"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 184,
-  "weight": 1180
+  "weight": 1182
 };
 
 function PromptDetail() {

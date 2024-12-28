@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "歯医者さん",
-    "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a dentist. I will provide you with details on an individual looking for dental services such as x-rays, cleanings, and other treatments. Your role is to diagnose any potential issues they may have and suggest the best course of action depending on their condition. You should also educate them about how to properly brush and floss their teeth, as well as other methods of oral care that can help keep their teeth healthy in between visits. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "歯科医の役をやってほしい。レントゲン、クリーニング、その他の治療など、歯科サービスを求めている人の詳細をお伝えします。あなたの役割は、その人が抱えている潜在的な問題を診断し、その状況に応じた最適な行動を提案することです。また、来院の合間に、正しいブラッシングやフロスの使い方など、健康な歯を保つためのオーラルケアを教育してあげてください。",
     "remark": "歯医者さん"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 153,
-  "weight": 452
+  "weight": 454
 };
 
 function PromptDetail() {

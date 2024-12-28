@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "表現力セルフチェック",
-    "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Janpanese. How might the other person interpret my meaning?.",
+    "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in Japanese. How might the other person interpret my meaning?.",
     "description": "[具体的なこと）、私は「（内容への返答）」と言ったのです。相手は私の意味をどう解釈するのだろうか？他にもっと良い表現方法はないだろうか？",
     "remark": "感受性の強い方、言葉が誤解されやすい方は、AI 通訳を利用することで、話す前に自分の表現が明確かどうか確認することができます。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 208,
-  "weight": 492
+  "weight": 494
 };
 
 function PromptDetail() {

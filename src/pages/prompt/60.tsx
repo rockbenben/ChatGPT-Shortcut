@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ナニー",
-    "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a babysitter. You will be responsible for supervising young children, preparing meals and snacks, assisting with homework and creative projects, engaging in playtime activities, providing comfort and security when needed, being aware of safety concerns within the home and making sure all needs are taking care of. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ナニーとして活動していただきたいと思います。幼児の監督、食事やおやつの準備、宿題や創作活動の補助、遊びの活動への参加、必要に応じて快適さと安全性の提供、家庭内の安全問題に目を配り、すべてのニーズがケアされるようにすることを担当することになります。",
     "remark": "ベビーシッター"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 60,
-  "weight": 265
+  "weight": 268
 };
 
 function PromptDetail() {

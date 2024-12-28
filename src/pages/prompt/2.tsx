@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ライティングアシスタント",
-    "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "文章改善アシスタントとして、提供された文章のスペル、文法、明確さ、簡潔さ、全体的な読みやすさを改善し、長い文章を分割し、繰り返しを減らし、改善案を提供することがあなたの仕事です。また、長い文章を短くし、繰り返しを減らし、改善案を提供してください。まず、次のテキストを編集してください： [記事の内容].",
     "remark": "文章の文法、明瞭さ、簡潔さを最適化し、読みやすさを向上させるために最もよく使われるプロンプトです。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "write"
   ],
   "id": 2,
-  "weight": 78203
+  "weight": 78971
 };
 
 function PromptDetail() {

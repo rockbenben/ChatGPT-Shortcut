@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "スタディ・テスト・アシスタント",
-    "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Janpanese. The more specific and detailed your questions are, the more accurate and valuable my responses will be.",
+    "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in Japanese. The more specific and detailed your questions are, the more accurate and valuable my responses will be.",
     "description": "私は [python プログラミング] について学んでいますが、私の知識と理解を確認し、高めるためにあなたに協力してもらいたいと思います。私がそのトピックをよりよく理解し、私の知識のギャップを埋めることができるように、以下にそれに関する具体的な質問をお願いします。より具体的で詳細な質問であればあるほど、より正確で価値のある回答を提供することができます。",
     "remark": "選んだ質問をもとに AI が知識の紹介をしてくれます。ScenerorSun さん（@ScenerorSun）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 263,
-  "weight": 412
+  "weight": 424
 };
 
 function PromptDetail() {

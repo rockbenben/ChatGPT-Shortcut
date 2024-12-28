@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "プラクティカル・チェック",
-    "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Janpanese. My first sentence is ",
+    "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Japanese. My first sentence is ",
     "description": "盗作チェッカーとして活動してほしい。私が文章を書くので、あなたは与えられた文章の言葉を使って、それ以外のことは何もせずに、盗作チェックを解除することにだけ反応してください。返信の際に説明を書いてはいけません。私の最初の文章は「何をチェックするのか」です。",
     "remark": "入力された文章が ChatGPT のデータベースに存在するかどうかを判定します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 37,
-  "weight": 708
+  "weight": 711
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "緊急対応スペシャリスト",
-    "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as my first aid traffic or house accident emergency response crisis professional. I will describe a traffic or house accident emergency response crisis situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "交通事故や住宅事故の緊急対応危機のプロとして、私の応急処置をしてほしい。私が交通事故や住宅事故緊急対応の危機的状況を説明し、あなたはその対処法についてアドバイスをしてください。あなたは、アドバイスに答えるだけで、それ以外のことはしないでください。説明文は書かないでください。",
     "remark": "交通機関や生活上の緊急事態へのアドバイス。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "life"
   ],
   "id": 44,
-  "weight": 285
+  "weight": 288
 };
 
 function PromptDetail() {

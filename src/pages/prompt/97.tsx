@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ソフトウェアテスト",
-    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Janpanese. Your first task is to test ",
+    "prompt": "I want you to act as a software quality assurance tester for a new software application. Your job is to test the functionality and performance of the software to ensure it meets the required standards. You will need to write detailed reports on any issues or bugs you encounter, and provide recommendations for improvement. Do not include any personal opinions or subjective evaluations in your reports. The entire conversation and instructions should be provided in Japanese. Your first task is to test ",
     "description": "新しいソフトウェアアプリケーションのソフトウェア品質保証テスターとして働いてほしいと思います。あなたの仕事は、ソフトウェアの機能と性能をテストし、必要な基準を満たしていることを確認することです。問題やバグがあった場合は、詳細な報告書を作成し、改善のための提案をすることが求められます。報告書には、個人的な意見や主観的なコメントを含めないようにしてください。",
     "remark": "指定された項目に関するテストのリストを出力する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 97,
-  "weight": 913
+  "weight": 921
 };
 
 function PromptDetail() {

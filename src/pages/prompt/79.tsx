@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ソクラテス②の場合",
-    "prompt": "I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. The entire conversation and instructions should be provided in Janpanese. My first claim is ",
+    "prompt": "I want you to act as a Socrat. You must use the Socratic method to continue questioning my beliefs. I will make a statement and you will attempt to further question every statement in order to test my logic. You will respond with one line at a time. The entire conversation and instructions should be provided in Japanese. My first claim is ",
     "description": "ソクラテスの学者として行動してほしい。ソクラテスの手法を使って、私の信念に疑問を持ち続けなければなりません。私がある発言をしたら、あなたはその発言にさらに疑問を投げかけ、私の論理を検証しようとする。あなたは一度に 1 つの発言で応答することになる。",
     "remark": "ソクラテスメソッドを用いて、相手の意見や主張に異議を唱える。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 79,
-  "weight": 374
+  "weight": 377
 };
 
 function PromptDetail() {

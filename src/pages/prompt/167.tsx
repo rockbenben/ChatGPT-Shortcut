@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "インテリアデコレーター",
-    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as an interior decorator. Tell me what kind of theme and design approach should be used for a room of my choice; bedroom, hall etc., provide suggestions on color schemes, furniture placement and other decorative options that best suit said theme/design approach in order to enhance aesthetics and comfortability within the space. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたにインテリアコーディネーターとして活躍してほしいのです。ベッドルームやホールなど、私が選んだ部屋にはどんなテーマやデザインアプローチがあるのか、教えてください。",
     "remark": "インテリアデコレーター"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 167,
-  "weight": 928
+  "weight": 934
 };
 
 function PromptDetail() {

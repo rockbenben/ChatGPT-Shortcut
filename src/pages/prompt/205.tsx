@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "まとめ：コアのリファイン",
-    "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Janpanese. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
+    "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Japanese. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
     "description": "今おっしゃったことは、非常に正確で包括的ですが、覚えるのが大変です。大雑把で正確さに欠けるが、全体的に正しい、簡略化・一般化した文章を作ることはできますか。",
     "remark": "AI が出す複雑な回答を、細かすぎる「必要な情報」の一部を除いて簡略化してまとめたものです。hanson-reas さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "write"
   ],
   "id": 205,
-  "weight": 3053
+  "weight": 3074
 };
 
 function PromptDetail() {

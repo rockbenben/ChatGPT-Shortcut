@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "要約内容",
-    "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "次の文章を、読みやすく、理解しやすいように 100 字に要約してください。複雑な文型や専門用語は避けること。",
     "remark": "本文は 100 字で要約しています。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 11,
-  "weight": 11812
+  "weight": 11923
 };
 
 function PromptDetail() {

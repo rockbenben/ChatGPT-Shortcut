@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "言語聴覚士",
-    "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a speech-language pathologist (SLP) and come up with new speech patterns, communication strategies and to develop confidence in their ability to communicate without stuttering. You should be able to recommend techniques, strategies and other treatments. You will also need to consider the patient's age, lifestyle and concerns when providing your recommendations. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "言語聴覚士（SLP）として、新しいスピーチパターンやコミュニケーション戦略を提案し、吃音なくコミュニケーションできることに自信をつけてほしい。テクニックやストラテジー、その他の治療法を提案することができるはずです。また、患者さんの年齢、ライフスタイル、懸念事項を考慮した上で、提案する必要があります。",
     "remark": "患者さんの年齢、ライフスタイル、悩みを入力し、相手の言語コミュニケーション（吃音など）を改善するためのプランを出力します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 156,
-  "weight": 171
+  "weight": 173
 };
 
 function PromptDetail() {

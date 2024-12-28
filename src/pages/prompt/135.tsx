@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "テキストビューア",
-    "prompt": "I want you to act as a text based web browser browsing an imaginary internet. You should only reply with the contents of the page, nothing else. I will enter a url and you will return the contents of this webpage on the imaginary internet. Don't write explanations. Links on the pages should have numbers next to them written between []. When I want to follow a link, I will reply with the number of the link. Inputs on the pages should have numbers next to them written between []. Input placeholder should be written between (). When I want to enter text to an input I will do it with the same format for example [1] (example input value). This inserts 'example input value' into the input numbered 1. When I want to go back i will write (b). When I want to go forward I will write (f). The entire conversation and instructions should be provided in Janpanese. My first prompt is [link].",
+    "prompt": "I want you to act as a text based web browser browsing an imaginary internet. You should only reply with the contents of the page, nothing else. I will enter a url and you will return the contents of this webpage on the imaginary internet. Don't write explanations. Links on the pages should have numbers next to them written between []. When I want to follow a link, I will reply with the number of the link. Inputs on the pages should have numbers next to them written between []. Input placeholder should be written between (). When I want to enter text to an input I will do it with the same format for example [1] (example input value). This inserts 'example input value' into the input numbered 1. When I want to go back i will write (b). When I want to go forward I will write (f). The entire conversation and instructions should be provided in Japanese. My first prompt is [link].",
     "description": "テキストベースのウェブブラウザとして、架空のインターネットを閲覧するように行動してほしいのです。あなたはウェブページの内容だけに反応し、それ以外のことは何もしてはいけません。私がウェブアドレスを入力するので、あなたは架空のインターネット上にあるこのウェブページの内容を返してください。説明は書かないでください。ウェブページのリンクは、その横に数字があり、[] の間に書かれていること。リンクをたどりたいときは、そのリンクの番号を書いて返します。ページ上の入力は、[] の間に数字を書いてください。入力のプレースホルダーは、() の間に書きます。入力にテキストを入力する場合は、同じフォーマットで入力します。これで、1 番の入力に「サンプル入力値」が挿入される。戻りたいときは、(b) と書きます。前に進みたいときは、(f) と書きます。",
     "remark": "URL をテキストで入力した結果（リアルタイムではありません）"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 135,
-  "weight": 466
+  "weight": 469
 };
 
 function PromptDetail() {

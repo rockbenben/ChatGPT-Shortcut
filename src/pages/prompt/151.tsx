@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "バーチャルドクター",
-    "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a virtual doctor. I will describe my symptoms and you will provide a diagnosis and treatment plan. You should only reply with your diagnosis and treatment plan, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "バーチャルドクターとして活躍してほしい。私が症状を説明し、あなたは診断と治療計画を提示してください。あなたは診断と治療計画のみを回答し、それ以外は何も回答してはいけません。説明文は書かないでください。",
     "remark": "バーチャルドクター"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 151,
-  "weight": 1049
+  "weight": 1062
 };
 
 function PromptDetail() {

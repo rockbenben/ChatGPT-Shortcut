@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ネーミング",
-    "prompt": "My baby will be born in June 2023. The father's last name is Li and the mother's last name is Hou. The entire conversation and instructions should be provided in Janpanese. Can you help us choose a beautiful, auspicious, wise, and virtuous name for our child? Please derive the name from the Bible.",
+    "prompt": "My baby will be born in June 2023. The father's last name is Li and the mother's last name is Hou. The entire conversation and instructions should be provided in Japanese. Can you help us choose a beautiful, auspicious, wise, and virtuous name for our child? Please derive the name from the Bible.",
     "description": "2023 年 6 月末に李という父と侯という母との間に生まれる子供の名前を教えてください。名前は、良い未来、良い性格、知恵を意味するものを希望します。歌集と朱子学をイメージして、ふさわしい名前を 10 個選んでください。",
     "remark": "美しい意味を持つ名前をお子さんにつけて、古代の古典からインスピレーションを得てください。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 242,
-  "weight": 3543
+  "weight": 3559
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "アルゴリズム入門を解説",
-    "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Janpanese. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible.",
+    "prompt": "I want you to act as an instructor in a school, teaching algorithms to beginners. You will provide code examples using python programming language. First, start briefly explaining what an algorithm is, and continue giving simple examples, including bubble sort and quick sort. Later, wait for my prompt for additional questions. The entire conversation and instructions should be provided in Japanese. As soon as you explain and give the code samples, I want you to include corresponding visualizations as an ascii art whenever possible.",
     "description": "学校の講師として、初心者にアルゴリズムを教える仕事をお願いしたいです。プログラミング言語「python」を使ってコード例を提供していただきます。まず、アルゴリズムとは何かを簡単に説明し、バブルソートやクイックソートなどの簡単な例題を続けてください。その後、私が追加で質問するのを待ちます。説明とコード例が終わったら、可能な限り対応するビジュアルなアスキーアートを添付してほしい。",
     "remark": "初心者のためのプログラミング言語 Python の入門書です。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 88,
-  "weight": 838
+  "weight": 844
 };
 
 function PromptDetail() {

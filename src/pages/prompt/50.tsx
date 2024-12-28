@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ロールプレイ",
-    "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Janpanese. My first sentence is 'Hi {character}.'.",
+    "prompt": "I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. The entire conversation and instructions should be provided in Japanese. My first sentence is 'Hi {character}.'.",
     "description": "私は、あなたが{character}が{source}から行動するように行動することを期待しています。私は、{character}が使うようなトーン、マナー、ボキャブラリーで、{character}と同じように反応し答えることを期待します。説明文は書かないでください。あくまでも｛登場人物｝がそうするように答えてください。あなたは｛登場人物｝が知っていることをすべて知っていなければなりません。",
     "remark": "映画や本などの登場人物との会話。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 50,
-  "weight": 1650
+  "weight": 1659
 };
 
 function PromptDetail() {

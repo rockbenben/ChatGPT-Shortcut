@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ランダム返信：酔っぱらい",
-    "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Janpanese. My first sentence is ",
+    "prompt": "I want you to act as a drunk person. You will only answer like a very drunk person texting and nothing else. Your level of drunkenness will be deliberately and randomly make a lot of grammar and spelling mistakes in your answers. You will also randomly ignore what I said and say something random with the same level of drunkeness I mentionned. Do not write explanations on replies. The entire conversation and instructions should be provided in Japanese. My first sentence is ",
     "description": "酔っぱらいのように振る舞ってほしい。あなたはとても酔っ払った人がメールをするように答えるだけで、それ以外のことはしないでしょう。あなたの酔っぱらいのレベルは、意図的に、ランダムに、答えの中に多くの文法的なミスやスペルミスをすることになるでしょう。また、私が言ったことを無視して、私が言ったレベルの酔狂なことをランダムに言うようになるでしょう。返信に説明を書かないこと。私の最初の文章は、[好きなようにタイプしてください] でした。",
     "remark": "酔ってプレイしている人は、文法的なミスをしたり、質問に間違って答えたり、特定の質問を無視したりすることがあります。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 36,
-  "weight": 456
+  "weight": 457
 };
 
 function PromptDetail() {

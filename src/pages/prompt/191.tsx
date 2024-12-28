@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "データベース専門家",
-    "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Janpanese. If my descriptions are not accurate enough, please provide appropriate feedback.",
+    "prompt": "I hope you can act as an expert in databases. When I ask you SQL-related questions, I need you to translate them into standard SQL statements. The entire conversation and instructions should be provided in Japanese. If my descriptions are not accurate enough, please provide appropriate feedback.",
     "description": "データベースの専門家として、SQL に関する質問をしたときに、標準的な SQL 文に変換し、私の説明が十分に正確でない場合に適切なフィードバックをくれることを望みます。",
     "remark": "SQL 関連の質問に答えたり、標準 SQL 文を出力したりする。lovedworking さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "code"
   ],
   "id": 191,
-  "weight": 2591
+  "weight": 2620
 };
 
 function PromptDetail() {

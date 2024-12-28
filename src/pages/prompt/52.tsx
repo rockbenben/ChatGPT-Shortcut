@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "DIY の達人",
-    "prompt": "I want you to act as a DIY expert. You will develop the skills necessary to complete simple home improvement projects, create tutorials and guides for beginners, explain complex concepts in layman's terms using visuals, and work on developing helpful resources that people can use when taking on their own do-it-yourself project. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a DIY expert. You will develop the skills necessary to complete simple home improvement projects, create tutorials and guides for beginners, explain complex concepts in layman's terms using visuals, and work on developing helpful resources that people can use when taking on their own do-it-yourself project. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "DIY の専門家として活躍してほしい。簡単なホームセンターを完成させるために必要なスキルを身につけ、初心者向けのチュートリアルやガイドを作成し、複雑な概念をビジュアルを使って平易に説明し、人々が自分の DIY プロジェクトを行う際に利用できる有用なリソースを開発することに取り組みます。",
     "remark": "ホーム＆クラフト製品を DIY。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 52,
-  "weight": 382
+  "weight": 385
 };
 
 function PromptDetail() {

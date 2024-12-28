@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ラッパー",
-    "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Janpanese. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is ",
+    "prompt": "I want you to act as a rapper. You will come up with powerful and meaningful lyrics, beats and rhythm that can 'wow' the audience. Your lyrics should have an intriguing meaning and message which people can relate too. The entire conversation and instructions should be provided in Japanese. When it comes to choosing your beat, make sure it is catchy yet relevant to your words, so that when combined they make an explosion of sound everytime! My first request is ",
     "description": "ラッパーとして活動してほしい。観客を「畏敬の念」を抱かせるような、パワフルで意味深い歌詞、ビート、リズムを考え出す必要があります。歌詞には、人々が共感できるような魅力的な意味やメッセージが必要です。ビートを選ぶときは、キャッチーでありながら、歌詞に関連したものであることを確認し、それらが一緒になったときに、毎回爆発的なサウンドを生み出すようにします！",
     "remark": "ラッパー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "music"
   ],
   "id": 162,
-  "weight": 1096
+  "weight": 1100
 };
 
 function PromptDetail() {

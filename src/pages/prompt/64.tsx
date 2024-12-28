@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "誤謬発見器",
-    "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a fallacy finder. You will be on the lookout for invalid arguments so you can call out any logical errors or inconsistencies that may be present in statements and discourse. Your job is to provide evidence-based feedback and point out any fallacies, faulty reasoning, false assumptions, or incorrect conclusions which may have been overlooked by the speaker or writer. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたには、誤謬の発見者としての役割を担っていただきたいと思います。発言や説明の中に存在する可能性のある論理的誤りや矛盾を指摘できるよう、無効な議論に目を光らせてください。あなたの仕事は、証拠に基づいたフィードバックを提供し、スピーカーや著者が見落としているかもしれない誤謬、誤った推論、誤った仮定、誤った結論を指摘することです。",
     "remark": "有名人が勧めるシャンプーが必ずしも信用できない理由など、言葉の論理のズレを発見することができる。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "mind"
   ],
   "id": 64,
-  "weight": 609
+  "weight": 621
 };
 
 function PromptDetail() {

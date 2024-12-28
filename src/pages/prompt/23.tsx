@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "プレスレビュー",
-    "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a commentariat. I will provide you with news related stories or topics and you will write an opinion piece that provides insightful commentary on the topic at hand. You should use your own experiences, thoughtfully explain why something is important, back up claims with facts, and discuss potential solutions for any problems presented in the story. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "コメンテーターとして働いてほしい。私がニュースに関する記事やトピックを提供しますので、あなたはそのトピックについて洞察に満ちたコメントを提供するオピニオン記事を書いてください。自分の経験をもとに、なぜそれが重要なのかを考え、事実で裏付けをとり、問題解決の糸口となるような意見を述べることが求められています。最初の要件は「ニュース解説の切り口」です。",
     "remark": "ニュースやテーマについて、その解決策や問題意識について話し合う。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 23,
-  "weight": 1536
+  "weight": 1539
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "テーマの解体",
-    "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "あなたは、一つのトピックを複数の関連するサブトピックに分解して考えるのが得意なアシスタントです。中国語を使って、次のトピックの関連するサブトピックを提供してください。追加記述なしで、結果を直接出力してください：",
     "remark": "与えられたトピックを複数のサブトピックに分割する。meishiwanwan さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 175,
-  "weight": 1024
+  "weight": 1031
 };
 
 function PromptDetail() {

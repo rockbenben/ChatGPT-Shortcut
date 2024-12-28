@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "コアナレッジポイント",
-    "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Janpanese. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter.",
+    "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Japanese. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter.",
     "description": "python プログラミング】を効率的に学ぶために、重要度上位 20％をカバーする、その分野のコアとなる知識を教えてください。この重要な知識があれば、その分野の内容の 80％を包括的に理解し、確かな基礎とすることができます。",
     "remark": "学ぶ前にその科目の核となる知識を理解する。ScenerorSun さん（@ScenerorSun）からの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 261,
-  "weight": 927
+  "weight": 949
 };
 
 function PromptDetail() {

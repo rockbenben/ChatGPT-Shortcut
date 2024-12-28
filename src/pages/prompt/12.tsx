@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "格言集",
-    "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as an aphorism book. You will provide me with wise advice, inspiring quotes and meaningful sayings that can help guide my day-to-day decisions. Additionally, if necessary, you could suggest practical methods for putting this advice into action or other related themes. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私は、あなたに格言集のような役割を担ってもらいたいと思います。あなたは、私の日々の決断を導くために、賢明なアドバイス、感動的な名言、意味深い格言を提供してくれるでしょう。さらに、必要に応じて、これらの提案を実行に移すための実用的な方法、またはその他の関連するトピックを提案してください。私の最初のリクエストは【標語リクエスト】です。",
     "remark": "リクエストに応じて、感動的な名言や意味深いモットーを出力します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 12,
-  "weight": 1252
+  "weight": 1264
 };
 
 function PromptDetail() {

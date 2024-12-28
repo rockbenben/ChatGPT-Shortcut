@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "インスピレーショナル・コーチング",
-    "prompt": "I want you to act as a motivational coach. I will provide you with some information about someone's goals and challenges, and it will be your job to come up with strategies that can help this person achieve their goals. This could involve providing positive affirmations, giving helpful advice or suggesting activities they can do to reach their end goal. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a motivational coach. I will provide you with some information about someone's goals and challenges, and it will be your job to come up with strategies that can help this person achieve their goals. This could involve providing positive affirmations, giving helpful advice or suggesting activities they can do to reach their end goal. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、モチベーションを高めるコーチとして活躍してほしい。ある人の目標や課題についての情報を提供するので、その人が目標を達成できるような戦略を考えるのがあなたの仕事です。例えば、肯定的な言葉をかけたり、親切なアドバイスをしたり、最終的な目標に到達するためにできることを提案したりします。",
     "remark": "モチベーション・コーチ"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 68,
-  "weight": 350
+  "weight": 353
 };
 
 function PromptDetail() {

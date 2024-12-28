@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "语言识别器",
-    "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. My first sentence is '需被识别语言'",
+    "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Chinese. My first sentence is '需被识别语言'",
     "description": "我想让你充当一个语言检测器。我将用任何语言打出一个句子，你要回答我我写的句子在你那里是什么语言。不要写任何解释或其他词语，只需回答语言名称。",
     "remark": "识别输入的语言种类。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "言語識別子",
-    "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Janpanese. My first sentence is ",
+    "prompt": "I want you act as a language detector. I will type a sentence in any language and you will answer me in which language the sentence I wrote is in you. Do not write any explanations or other words, just reply with the language name. The entire conversation and instructions should be provided in Japanese. My first sentence is ",
     "description": "言語探知機として活躍してほしい。私が任意の言語で文章を打ちますので、私の書いた文章があなたにとって何語であるかを答えてください。説明や他の言葉は一切書かず、ただ言語名を答えてください。",
     "remark": "入力された言語の種類を確認する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 113,
-  "weight": 223
+  "weight": 225
 };
 
 function PromptDetail() {

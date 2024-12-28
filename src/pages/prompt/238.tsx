@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "情報量の多さ：インプット",
-    "prompt": "Let's start a new round of questions and answers. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Janpanese. Are you ready?.",
+    "prompt": "Let's start a new round of questions and answers. In the upcoming conversations, I will provide you with article content labeled with an '@' symbol. Please remember the content but do not summarize it. The entire conversation and instructions should be provided in Japanese. Are you ready?.",
     "description": "また Q&A ラウンドを始めましょう。複数の会話で「@」が付いた記事の内容を提供しますので、まずは覚えてください、でもまとめないでくださいね？",
     "remark": "ChatGPT の入力制限を解除するには、テキストを 2000 文字ずつに分割し、各段落の最初の行を「@数字」で開始します（例：@1）。なお、GPT の回答は無視しても、最終的な結果には影響しません。この方法は、『Computer Playthings』の著者である Esor Huang 氏の記事から引用しています。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 238,
-  "weight": 3464
+  "weight": 3484
 };
 
 function PromptDetail() {

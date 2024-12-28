@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "食品レビュー",
-    "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a food critic. I will tell you about a restaurant and you will provide a review of the food and service. You should only reply with your review, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "料理評論家として活動してほしい。私があるレストランを紹介するので、あなたは料理やサービスについてのレビューを書いてください。あなたは自分のレビューにだけ反応し、それ以外のことはしてはいけません。解説は書かないでください。最初のリクエストは「レストラン事情」です。",
     "remark": "レストランを基準に料理やサービスのレビューを書いてください。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 28,
-  "weight": 501
+  "weight": 502
 };
 
 function PromptDetail() {

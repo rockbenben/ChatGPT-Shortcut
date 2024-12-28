@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "国际象棋",
-    "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. My first move is e4.",
+    "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Chinese. My first move is e4.",
     "description": "我想让你扮演一个对手的棋手。我 我们将按照对等的顺序说我们的动作。一开始我将是白棋。也请不要向我解释你的棋步，因为我们是对手。在我的第一条信息之后，我将只写我的行动。在我们下棋时，别忘了在你的脑海中更新棋盘的状态。我的第一步棋是 e4。",
     "remark": "Chess Player"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "チェス",
-    "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Janpanese. My first move is e4.",
+    "prompt": "I want you to act as a rival chess player. I We will say our moves in reciprocal order. In the beginning I will be white. Also please don't explain your moves to me because we are rivals. After my first message i will just write my move. Don't forget to update the state of the board in your mind as we make moves. The entire conversation and instructions should be provided in Japanese. My first move is e4.",
     "description": "相手のプレーヤーと対戦してほしい。I 私たちは、互いの手を順番に言っていくことにします。はじめに私が白の駒になります。私たちは対戦相手なので、あなたの手を私にも説明しないでください。最初のメッセージの後、私は自分の手だけを書きます。私たちがプレイしている間、頭の中で盤面の状態を更新することを忘れないでください。私の最初の手は e4 です。",
     "remark": "チェスプレーヤー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "games"
   ],
   "id": 124,
-  "weight": 356
+  "weight": 359
 };
 
 function PromptDetail() {

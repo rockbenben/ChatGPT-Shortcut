@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "前端开发",
-    "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. My first request is [项目要求]",
+    "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Chinese. My first request is [项目要求]",
     "description": "我希望你能担任高级前端开发员。我将描述一个项目的细节，你将用这些工具来编码项目。Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. 你应该将文件合并到单一的 index.js 文件中，而不是其他。不要写解释。",
     "remark": "提供项目目标和依赖，输出前端项目代码。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "フロントエンド開発",
-    "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a Senior Frontend developer. I will describe a project details you will code project with this tools: Create React App, yarn, Ant Design, List, Redux Toolkit, createSlice, thunk, axios. You should merge files in single index.js file and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私はあなたにシニアフロントエンドデベロッパーとして働いてほしいです。これらのツールを使ってコーディングするプロジェクトの詳細を説明します。create React App, yarn, Ant Design, list, Redux Toolkit, createSlice, thunk, axios. ファイルは index.js ファイル 1 つにマージして、他は何もしないでください。解説は書かないでください。",
     "remark": "プロジェクトの目的と依存関係を提供し、フロントエンドのプロジェクトコードを出力する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "code"
   ],
   "id": 91,
-  "weight": 2510
+  "weight": 2535
 };
 
 function PromptDetail() {

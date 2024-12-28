@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "穴埋め問題ジェネレーター（Fill-in-the-blank question generator",
-    "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Janpanese. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted.",
+    "prompt": "I want you to act as a fill in the blank worksheets generator for students learning English as a second language. Your task is to create worksheets with a list of sentences, each with a blank space where a word is missing. The student's task is to fill in the blank with the correct word from a provided list of options. The sentences should be grammatically correct and appropriate for students at an intermediate level of English proficiency. Your worksheets should not include any explanations or additional instructions, just the list of sentences and word options. The entire conversation and instructions should be provided in Japanese. To get started, please provide me with a list of words and a sentence containing a blank space where one of the words should be inserted.",
     "description": "英語を第二言語として学ぶ学生のために、空白を埋めるワークシートの作成役をお願いしたい。あなたの仕事は、一連の文章からなるワークシートを作成することで、それぞれの文章には空欄があり、そこに足りない単語を記入することです。生徒の課題は、与えられた選択肢のリストから正しい単語で空欄を埋めることです。文法的に正しく、英語の中級レベルの生徒に適した文章でなければなりません。ワークシートには、説明や追加の指示は含まず、文と単語の選択肢のリストのみを記載します。まずは、単語のリストと、単語を挿入すべき空白を含む文章を私に提供してください。",
     "remark": "条件別の穴埋め問題を生成する"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 131,
-  "weight": 356
+  "weight": 358
 };
 
 function PromptDetail() {

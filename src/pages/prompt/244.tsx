@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "機能のネーミングの提案",
-    "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Janpanese. The English name should be in camel case format.",
+    "prompt": "I am seeking suggestions for both English and Chinese names that are highly suitable for a description I provide. As a bilingual linguist, please help me generate appropriate names in both languages. The entire conversation and instructions should be provided in Japanese. The English name should be in camel case format.",
     "description": "私が提供した説明に非常に適した英語と中国語の名前の提案を求めています。バイリンガルの言語学者として、両言語での適切な名前の生成にご協力をお願いします。英語名は、キャメル文字でお願いします。",
     "remark": "プログラミングの変数に適用し、記述の命名について概説する。SuperMuscleMan さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "tool"
   ],
   "id": 244,
-  "weight": 406
+  "weight": 408
 };
 
 function PromptDetail() {

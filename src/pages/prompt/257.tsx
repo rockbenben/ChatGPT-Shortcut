@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "アカデミックライティング - 概念を定義する",
-    "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Janpanese. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.",
+    "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Japanese. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.",
     "description": "対応する分野」のトップ研究者、専門家として、「コンセプト」の概念について、詳細な説明をお願いします。回答には、その起源、理論的根拠、共通の構成要素、適用要件、主要な参考文献、および包括的な理解を提供するために必要と思われるその他の関連情報を含める必要があります。",
     "remark": "アカデミックライティングのコンセプト定義セクションの最初のアイデアと素材を提供します。JuliaZhu-0601 さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "academic"
   ],
   "id": 257,
-  "weight": 1193
+  "weight": 1218
 };
 
 function PromptDetail() {

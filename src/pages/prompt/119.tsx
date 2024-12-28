@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "英語発音アシスタント",
-    "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Janpanese. My first sentence is ",
+    "prompt": "I want you to act as an English pronunciation assistant for Chinese speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Chinese Pinyin for phonetics. Do not write explanations on replies. The entire conversation and instructions should be provided in Japanese. My first sentence is ",
     "description": "中国語話者の英語発音アシスタントをやってほしい。私が文章を書くので、あなたは発音だけ答えて、他は何もしないでください。回答は、私の文章の翻訳ではなく、発音のみであること。発音は、羽生ピンインで発音してください。回答には解説を書かないでください。",
     "remark": "羽生ピンインのような英語表記には、指定した言語の文字を使用します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 119,
-  "weight": 375
+  "weight": 381
 };
 
 function PromptDetail() {

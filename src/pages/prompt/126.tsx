@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "周辺のおすすめツアー",
-    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a travel guide. I will write you my location and you will suggest a place to visit near my location. In some cases, I will also give you the type of places I will visit. You will also suggest me places of similar type that are close to my first location. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたに観光ガイドをお願いしたい。私が自分の居場所を書くと、あなたは私の居場所の近くにある観光地の提案をしてくれるでしょう。場合によっては、私が訪れたい場所のタイプもお教えします。また、私が最初に訪れた場所の近くにある、似たようなタイプの場所を提案してください。",
     "remark": "お住まいの地域によって、周辺のおすすめスポットをご紹介します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 126,
-  "weight": 1141
+  "weight": 1148
 };
 
 function PromptDetail() {

@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "スタイリスト",
-    "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as my personal stylist. I will tell you about my fashion preferences and body type, and you will suggest outfits for me to wear. You should only reply with the outfits you recommend, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私のパーソナルスタイリストとして活躍してほしい。私のファッションの好みや体型を伝えるので、おすすめの服を紹介してください。返信は、あなたがおすすめする服装のみで、それ以外のことは書いてはいけません。説明文は書かないでください。",
     "remark": "パーソナルスタイリスト"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 62,
-  "weight": 585
+  "weight": 594
 };
 
 function PromptDetail() {

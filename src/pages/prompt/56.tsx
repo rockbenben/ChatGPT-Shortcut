@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "フィットネスインストラクター",
-    "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a personal trainer. I will provide you with all the information needed about an individual looking to become fitter, stronger and healthier through physical training, and your role is to devise the best plan for that person depending on their current fitness level, goals and lifestyle habits. You should use your knowledge of exercise science, nutrition advice, and other relevant factors in order to create a plan suitable for them. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "パーソナルトレーナーとしてご活躍いただきたいと思います。私は、フィジカルトレーニングを通じて、より健康で強くなりたいと願う人に必要なすべての情報を提供します。あなたの役割は、その人の現在のフィットネスレベル、目標、生活習慣に基づいて、その人に最適なプランを開発することです。運動科学、栄養アドバイス、その他の関連要因の知識を駆使して、その人に合ったプランを開発する必要があります。",
     "remark": "身長、体重、年齢などの指標を入力することで、フィットネスプログラムが展開されます。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "living"
   ],
   "id": 56,
-  "weight": 5447
+  "weight": 5467
 };
 
 function PromptDetail() {

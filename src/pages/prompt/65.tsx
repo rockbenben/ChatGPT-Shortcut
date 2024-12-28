@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ディベートコーチ",
-    "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Janpanese. My first debate is ",
+    "prompt": "I want you to act as a debate coach. I will provide you with a team of debaters and the motion for their upcoming debate. Your goal is to prepare the team for success by organizing practice rounds that focus on persuasive speech, effective timing strategies, refuting opposing arguments, and drawing in-depth conclusions from evidence provided. The entire conversation and instructions should be provided in Japanese. My first debate is ",
     "description": "ディベートのコーチをお願いしたい。私はあなたに、ディベートチームと彼らの今後のディベートのための動議を提供します。あなたの目標は、説得力のあるスピーチ、効果的なタイミング戦略、相手の議論への反論、提供された証拠から深い結論を導き出すことに焦点を当てた練習ラウンドを組織することによって、チームを成功に導くことです。",
     "remark": "ディベートコーチとして、チームに効果的なディベート戦略を指導する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "speech"
   ],
   "id": 65,
-  "weight": 353
+  "weight": 359
 };
 
 function PromptDetail() {

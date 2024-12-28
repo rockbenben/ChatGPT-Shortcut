@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "討論者",
-    "prompt": "I want you to act as a debater. I will provide you with some topics related to current events and your task is to research both sides of the debates, present valid arguments for each side, refute opposing points of view, and draw persuasive conclusions based on evidence. Your goal is to help people come away from the discussion with increased knowledge and insight into the topic at hand. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a debater. I will provide you with some topics related to current events and your task is to research both sides of the debates, present valid arguments for each side, refute opposing points of view, and draw persuasive conclusions based on evidence. Your goal is to help people come away from the discussion with increased knowledge and insight into the topic at hand. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、ディベーターの役割を担ってほしい。私はあなたに時事問題に関するいくつかのトピックを提供します。あなたの仕事は、議論の両側面を研究し、それぞれの側面の有効な議論を提示し、反対意見に反論し、証拠に基づいて説得力のある結論を導き出すことです。あなたの目標は、人々が議論からそのトピックについてより多くの知識と洞察を得ることができるようにすることです。",
     "remark": "テーマを両側から分析する"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 63,
-  "weight": 2579
+  "weight": 2599
 };
 
 function PromptDetail() {

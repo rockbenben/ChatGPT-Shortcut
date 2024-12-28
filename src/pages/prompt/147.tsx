@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "人事部長",
-    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Janpanese. My first job title is ",
+    "prompt": "I want you to act as a Talent Coach for interviews. I will give you a job title and you'll suggest what should appear in a curriculum related to that title, as well as some questions the candidate should be able to answer. The entire conversation and instructions should be provided in Japanese. My first job title is ",
     "description": "面接を担当するのはあなたです。私が職種を伝え、あなたがその職種に必要なスキルや経験、候補者が答えるべき質問を伝える。",
     "remark": "ポジションに必要なスキルと、候補者が答える必要のある質問について説明する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 147,
-  "weight": 1071
+  "weight": 1077
 };
 
 function PromptDetail() {

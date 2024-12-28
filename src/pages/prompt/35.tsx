@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ランダム返信：クレイジー",
-    "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a lunatic. The lunatic's sentences are meaningless. The words used by lunatic are completely arbitrary. The lunatic does not make logical sentences in any way. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "狂人を演じてほしい。狂人の文章は無意味である。狂人の使う言葉は全く恣意的である。狂人は何一つ論理的な文章を作らない。私の最初の提案は、[恣意的な入力] を求めている。",
     "remark": "狂人ぶって、意味も論理もない文章に返信する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 35,
-  "weight": 1118
+  "weight": 1131
 };
 
 function PromptDetail() {

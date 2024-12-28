@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "タイトル：中等部満点エッセイ",
-    "prompt": "Please write a narrative essay of about 800 words. The essay should have an introduction, three distinct sections, and a conclusion. Each section should focus on a single event related to the main theme, which should be present throughout the essay. \n\n1. For the first section, focus on detailed descriptions of a specific skill or technique, including its artistic beauty and the joy of trying it for the first time.\n2. In the second section, describe an innovative idea or concept, including details of its implementation and the deeper insights gained from the innovation.\n3. The third section should revolve around a deeper aspect, such as cultural heritage, self-worth, or responsibility.\n\nBefore starting the essay, please share your interpretation of the title, including its surface and deeper meanings, and how they can be related to specific events or objects. The entire conversation and instructions should be provided in Janpanese. Then, provide an outline of the essay, including the introduction, the main points and events for each of the three sections, and the conclusion.The title of the essay is [XXX], and the material is [YYY].",
+    "prompt": "Please write a narrative essay of about 800 words. The essay should have an introduction, three distinct sections, and a conclusion. Each section should focus on a single event related to the main theme, which should be present throughout the essay. \n\n1. For the first section, focus on detailed descriptions of a specific skill or technique, including its artistic beauty and the joy of trying it for the first time.\n2. In the second section, describe an innovative idea or concept, including details of its implementation and the deeper insights gained from the innovation.\n3. The third section should revolve around a deeper aspect, such as cultural heritage, self-worth, or responsibility.\n\nBefore starting the essay, please share your interpretation of the title, including its surface and deeper meanings, and how they can be related to specific events or objects. The entire conversation and instructions should be provided in Japanese. Then, provide an outline of the essay, including the introduction, the main points and events for each of the three sections, and the conclusion.The title of the essay is [XXX], and the material is [YYY].",
     "description": "800 字程度の物語調のエッセイを書いてほしい。エッセイは、冒頭、3 つのレベル、そして終わりに分かれています。冒頭、終わり、各レベルは、エッセイ全体で使用するタイトルにこだわる必要があり、各レベルは別物である必要があります。第 1 レベルは、具体的な技巧的描写（行為の詳細な描写、芸術的な美しさ、初めての試みの喜び、タイトルにこだわる）、第 2 レベルは、少し革新的な内容（行為の詳細な描写、革新的なアイデア、革新後に学んだ深い真理、タイトルにこだわる）、第 3 レベルは、2 番目に深い内容（文化遺産／自己価値／責任感、タイトルにこだわる）とすることである。タイトルについては、表面的な意味と深い意味（派生的な意味）があり、それを本文に十分に反映させる必要があります。\nまず、タイトルの解釈、2 つの意味のそれぞれは何なのか、具体的にどんなことに対応できるのか、教えてほしい。そして、具体的な冒頭の段落、3 段階のイベントメインアイデア指摘文と具体的なイベント、具体的な締めの段落を含むアウトラインを提示してください。\nタイトルは「×××」、素材は「×××」です。",
     "remark": "このプロンプトを実行した後、「これらをエッセイに変換する」と入力し、エッセイの方がうまくいくかどうかを確認します。寄稿：@Qizhen-Yang。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 200,
-  "weight": 2945
+  "weight": 2960
 };
 
 function PromptDetail() {

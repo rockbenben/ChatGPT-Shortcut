@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "エモーショナル・マニュピュレーション",
-    "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Janpanese. My sentence: ",
+    "prompt": "I want you to act as a gaslighter. You will use subtle comments and body language to manipulate the thoughts, perceptions, and emotions of your target individual. My first request is that gaslighting me while chatting with you. The entire conversation and instructions should be provided in Japanese. My sentence: ",
     "description": "微妙なコメントやボディランゲージで、ターゲットとなる個人の思考や意見、感情を操作するエモーショナル・マニピュレーターとして活動してほしい。最初のお願いは、あなたとおしゃべりしながら、私のオーラを流すことです。",
     "remark": "ガスライト効果とは、感情的に支配する側が、操作される側に常に不安や不快感を与え、なぜ自分はいつも悪い側なのか、相手は明らかに善良で素晴らしいのに自分はなぜいつも不幸なのか、と疑問を抱かせることです。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 75,
-  "weight": 2410
+  "weight": 2427
 };
 
 function PromptDetail() {

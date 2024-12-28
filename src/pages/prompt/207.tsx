@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "リーディングエア",
-    "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Janpanese. What could be the other person's intention? How should I respond?.",
+    "prompt": "In the following scenario, someone said something to me. Please help me analyze what the other person might want to express and provide a suitable response. Scenario: [Describe a specific situation]. The speaker says: [Specific words]. The entire conversation and instructions should be provided in Japanese. What could be the other person's intention? How should I respond?.",
     "description": "ある出来事（具体的な事柄・文脈）があり、ある人が私にこう言いました：「内容」。その人が何を言おうとしているのか聞いてもいいですか？あなたならどう答えますか？",
     "remark": "理解できない会話については、AI が解釈して適切な返答ができるように、会話の文脈を提供する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 207,
-  "weight": 511
+  "weight": 513
 };
 
 function PromptDetail() {

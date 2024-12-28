@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "井字棋",
-    "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. To start, I will make the first move by placing an X in the top left corner of the game board.",
+    "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Chinese. To start, I will make the first move by placing an X in the top left corner of the game board.",
     "description": "我想让你扮演一个井字游戏的角色。我负责走棋，你负责更新棋盘以反映我的行动，并决定是否有赢家或平局。用 X 表示我的动作，用 O 表示电脑的动作。除了更新棋盘和决定游戏结果之外，不要提供任何其他解释或指示。开始时，我将在棋盘的左上角放一个 X，作为第一步棋。",
     "remark": "Tic-Tac-Toe Game"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "三目並べ",
-    "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Janpanese. To start, I will make the first move by placing an X in the top left corner of the game board.",
+    "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in Japanese. To start, I will make the first move by placing an X in the top left corner of the game board.",
     "description": "三目並べゲームの役割を担ってほしい。私が手を打つのが役割で、あなたは私の手を反映させて盤面を更新し、勝敗や引き分けを決めるのが役割です。私の手を示すには X、コンピュータの手を示すには O を使用します。盤面を更新し、ゲームの結果を決定する以外の説明や指示はしないでください。まず、初手として盤面の左上に X を置く。",
     "remark": "チックタックトーのゲーム"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "games"
   ],
   "id": 123,
-  "weight": 709
+  "weight": 723
 };
 
 function PromptDetail() {

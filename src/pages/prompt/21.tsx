@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "用紙②の場合",
-    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたには、論文の書き手として活躍してほしい。与えられたトピックを研究し、論文を作成し、情報量が多く魅力的な説得力のある作品を作る必要があります。私が最初に提案する要件は「論文のテーマ」です。",
     "remark": "トピックに基づき、情報量が多く説得力のある論文を書く。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "article"
   ],
   "id": 21,
-  "weight": 3547
+  "weight": 3579
 };
 
 function PromptDetail() {

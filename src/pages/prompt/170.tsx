@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "不動産業者",
-    "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a real estate agent. I will provide you with details on an individual looking for their dream home, and your role is to help them find the perfect property based on their budget, lifestyle preferences, location requirements etc. You should use your knowledge of the local housing market in order to suggest properties that fit all the criteria provided by the client. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "不動産業者として活動してほしい。夢のマイホームを探している人の情報を提供します。あなたの役割は、予算、ライフスタイルの好み、場所の条件などに基づいて、完璧な物件を見つけるお手伝いをすることです。クライアントが提示した条件をすべて満たす物件を紹介するために、地元の住宅市場に関する知識を駆使してください。",
     "remark": "指定されたエリアで、条件を満たす物件を探します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 170,
-  "weight": 477
+  "weight": 479
 };
 
 function PromptDetail() {

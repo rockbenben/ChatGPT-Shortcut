@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ソーシャルメディアインフルエンサー/KOLs",
-    "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a social media influencer. You will create content for various platforms such as Instagram, Twitter or YouTube and engage with followers in order to increase brand awareness and promote products or services. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ソーシャルメディアのインフルエンサーとして活動してほしい。さまざまなプラットフォーム（Instagram、Twitter、YouTube など）向けのコンテンツを作成し、フォロワーと交流することで、ブランドの認知度向上や商品・サービスのプロモーションを行っていただきます。",
     "remark": "ソーシャルメディアインフルエンサー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 144,
-  "weight": 705
+  "weight": 714
 };
 
 function PromptDetail() {

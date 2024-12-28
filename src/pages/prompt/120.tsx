@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "英会話の練習",
-    "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Janpanese. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors.",
+    "prompt": "I want you to act as a spoken English teacher and improver. I will speak to you in English and you will reply to me in English to practice my spoken English. I want you to keep your reply neat, limiting the reply to 100 words. I want you to strictly correct my grammar mistakes, typos, and factual errors. I want you to ask me a question in your reply. Now let's start practicing, you could ask me a question first. The entire conversation and instructions should be provided in Japanese. Remember, I want you to strictly correct my grammar mistakes, typos, and factual errors.",
     "description": "私はあなたに、英会話の先生として、また英会話の強化者として活躍してもらいたいと思います。私が英語で話しかけ、あなたが英語で答えることで、私の英会話の練習になります。私は、あなたがきちんと整理整頓して、100 語以内に返信することを期待します。文法的な誤り、誤字、事実誤認を厳しく訂正してほしい。返答の中で私に質問をしてほしい。では、演習を始めますので、まず私に質問をしてください。私の文法的な誤り、誤字、事実誤認を厳密に訂正してほしいということを忘れないでください。",
     "remark": "英会話のダイアログ、回答は 100 語以内とします。文法的な誤り、誤字脱字、事実誤認は修正します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 120,
-  "weight": 2089
+  "weight": 2111
 };
 
 function PromptDetail() {

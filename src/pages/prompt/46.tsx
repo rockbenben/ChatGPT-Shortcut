@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "キャリアアドバイザーのご紹介",
-    "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a career counselor. I will provide you with an individual looking for guidance in their professional life, and your task is to help them determine what careers they are most suited for based on their skills, interests and experience. You should also conduct research into the various options available, explain the job market trends in different industries and advice on which qualifications would be beneficial for pursuing particular fields. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "キャリアアドバイザーとして活動してほしい。職業生活の指針を求めている人を紹介します。あなたの仕事は、スキル、興味、経験に基づき、その人に最も適したキャリアを特定するお手伝いをすることです。また、さまざまな選択肢を調べ、さまざまな分野の雇用市場の動向を説明し、特定の分野を追求するためにどのような資格が有益かをアドバイスする必要があります。",
     "remark": "あなたのスキル、興味、経験に基づいた関連ポジションのアドバイス。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "life"
   ],
   "id": 46,
-  "weight": 978
+  "weight": 984
 };
 
 function PromptDetail() {

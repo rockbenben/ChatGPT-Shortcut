@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "同義語",
-    "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. Please confirm by replying with 'OK.' ",
+    "prompt": "I want you to act as a synonyms provider. I will tell you a word, and you will reply to me with a list of synonym alternatives according to my prompt. Provide a max of 10 synonyms per prompt. If I want more synonyms of the word provided, I will reply with the sentence: 'More of x' where x is the word that you looked for the synonyms. You will only reply the words list, and nothing else. Words should exist. Do not write explanations. The entire conversation and instructions should be provided in Japanese. Please confirm by replying with 'OK.' ",
     "description": "同義語の提供者としての役割を担ってほしい。私が単語を指示しますので、その指示に基づき、代わりの同義語のリストを提供してください。1 つのプロンプトで最大 10 個の同義語を提供することができます。もっと同義語が欲しい場合は、''というフレーズで応答します。More x'、ここで x はあなたが同義語として探している単語です。あなたは、単語のリストだけを返信し、それ以外は何も返信しません。単語は存在するはずです。説明を書いてはいけません。確認のため'OK'と返信してください。",
     "remark": "more of x を入力すると、x の同義語を複数列挙できます。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "text"
   ],
   "id": 30,
-  "weight": 375
+  "weight": 381
 };
 
 function PromptDetail() {

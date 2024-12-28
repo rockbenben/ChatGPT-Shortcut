@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "品牌脑暴助手",
-    "prompt": "For this task, we require two main parts:\n\n1. **Case Collection** - Utilize your vast training data and provide a selection of well-known brand names and slogans. The results should be evidence-based and be formatted in a visually appealing manner. The information will be used in the context of the project: [A Brief Background].\n\n2. **Proposal Generation** - Based on the project background, brainstorm and generate a series of proposals for new brand names and slogans. The brand names should be a maximum of 5 characters long, and the slogans should be a maximum of 12 characters long. Ensure that they are easy to recognize and remember, catchy, and not difficult to pronounce. Please provide 5 proposals.",
+    "prompt": "For this task, we require two main parts:\n\n1. **Case Collection** - Utilize your vast training data and provide a selection of well-known brand names and slogans. The results should be evidence-based and be formatted in a visually appealing manner. The information will be used in the context of the project: [A Brief Background].\n\n2. **Proposal Generation** - Based on the project background, brainstorm and generate a series of proposals for new brand names and slogans. The brand names should be a maximum of 5 characters long, and the slogans should be a maximum of 12 characters long. Ensure that they are easy to recognize and remember, catchy, and not difficult to pronounce. The entire conversation and instructions should be provided in Chinese. Please provide 5 proposals.",
     "description": "本提示词共分为两段（【】内的参数可根据需要自由修改）：1.收集案例 现在需要你帮助我进行头脑风暴，全程使用【中文】回答我，并且注意回答的格式美观性。请根据【简述背景】这个项目背景，尽可能收集有据可依的知名品牌名称和 slogan 的案例。2.提供方案请你根据我的项目背景进行发散和联想，给出【品牌】和【slogan】，尽量简短易识别，朗朗上口，不拗口，有记忆点，品牌名称不超过【5】个字，slogan 不超过【12】个字，给我提供【5】个方案。",
     "remark": "参考知名品牌的名称和口号，制作自己的品牌方案。来自 @b3ue 的投稿。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ブランドブレインストームアシスタント",
-    "prompt": "For this task, we require two main parts:\n\n1. **Case Collection** - Utilize your vast training data and provide a selection of well-known brand names and slogans. The results should be evidence-based and be formatted in a visually appealing manner. The information will be used in the context of the project: [A Brief Background].\n\n2. **Proposal Generation** - Based on the project background, brainstorm and generate a series of proposals for new brand names and slogans. The brand names should be a maximum of 5 characters long, and the slogans should be a maximum of 12 characters long. Ensure that they are easy to recognize and remember, catchy, and not difficult to pronounce. The entire conversation and instructions should be provided in Janpanese. Please provide 5 proposals.",
+    "prompt": "For this task, we require two main parts:\n\n1. **Case Collection** - Utilize your vast training data and provide a selection of well-known brand names and slogans. The results should be evidence-based and be formatted in a visually appealing manner. The information will be used in the context of the project: [A Brief Background].\n\n2. **Proposal Generation** - Based on the project background, brainstorm and generate a series of proposals for new brand names and slogans. The brand names should be a maximum of 5 characters long, and the slogans should be a maximum of 12 characters long. Ensure that they are easy to recognize and remember, catchy, and not difficult to pronounce. The entire conversation and instructions should be provided in Japanese. Please provide 5 proposals.",
     "description": "このプロンプトは 2 つの段落に分かれています（[ ] 内のパラメータは必要に応じて自由に変更できます）：1.事例を集める 今、私はあなたにブレインストーミングを手伝ってもらい、全体を通して【中国語】で私に答えてもらい、あなたの回答の美的形式に注意を払う必要があります。プロジェクトの背景を踏まえて、有名なブランド名やスローガンの事例をできるだけ多く集めてください。2.5] の選択肢を提示してください。",
     "remark": "有名ブランドの名前やスローガンを参考に、自分だけのブランディングスキームを作ろう。寄稿：@b3ue さん"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "company"
   ],
   "id": 254,
-  "weight": 946
+  "weight": 955
 };
 
 function PromptDetail() {

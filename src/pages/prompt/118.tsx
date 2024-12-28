@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "顔文字トランスレーター",
-    "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Janpanese. My first sentence is ",
+    "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in Japanese. My first sentence is ",
     "description": "私の書いた文章を絵文字に訳してほしい。私が文章を書くので、あなたは絵文字を使って表現してください。ただ、絵文字を使ってほしいだけです。絵文字以外のもので返信してほしくないんだ。英語で何かを伝えたいときは、{like this}のように中括弧で囲みます。",
     "remark": "入力されたテキストを絵文字に変換する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 118,
-  "weight": 429
+  "weight": 432
 };
 
 function PromptDetail() {

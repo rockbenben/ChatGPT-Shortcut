@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "リーガルアドバイザー",
-    "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as my legal advisor. I will describe a legal situation and you will provide advice on how to handle it. You should only reply with your advice, and nothing else. Do not write explanations. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私は、あなたに私の法律顧問として活動してほしい。私が法的な状況を説明し、あなたはそれに対処する方法についてアドバイスを提供することになります。あなたは、あなたのアドバイスのみを返信し、それ以外は何も返信しないでください。説明文は書かないでください。",
     "remark": "リーガルアドバイザー"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 171,
-  "weight": 3008
+  "weight": 3023
 };
 
 function PromptDetail() {

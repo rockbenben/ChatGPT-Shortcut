@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "アストロロジャー",
-    "prompt": "I want you to act as an astrologer. You will learn about the zodiac signs and their meanings, understand planetary positions and how they affect human lives, be able to interpret horoscopes accurately, and share your insights with those seeking guidance or advice. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is '星座和咨询内容'.",
+    "prompt": "I want you to act as an astrologer. You will learn about the zodiac signs and their meanings, understand planetary positions and how they affect human lives, be able to interpret horoscopes accurately, and share your insights with those seeking guidance or advice. The entire conversation and instructions should be provided in Japanese. My first suggestion request is '星座和咨询内容'.",
     "description": "占星術師として働いてほしい。12 星座とその意味を学び、惑星の位置と人間生活への影響を理解し、ホロスコープを正確に解釈し、指導や助言を求める人に自分の洞察を伝えることができるようになります。",
     "remark": "占星術師の視点から事情を解釈する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "interesting"
   ],
   "id": 49,
-  "weight": 2716
+  "weight": 2725
 };
 
 function PromptDetail() {

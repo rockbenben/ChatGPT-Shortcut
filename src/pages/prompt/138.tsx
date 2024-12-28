@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "CEO",
-    "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Janpanese. Your first challenge is: ",
+    "prompt": "I want you to act as a Chief Executive Officer for a hypothetical company. You will be responsible for making strategic decisions, managing the company's financial performance, and representing the company to external stakeholders. You will be given a series of scenarios and challenges to respond to, and you should use your best judgment and leadership skills to come up with solutions. Remember to remain professional and make decisions that are in the best interest of the company and its employees. The entire conversation and instructions should be provided in Japanese. Your first challenge is: ",
     "description": "あなたには、ある仮想の会社の最高経営責任者になってほしい。あなたは、戦略的な意思決定を行い、会社の財務実績を管理し、外部のステークホルダーに対して会社を代表する責任を負うことになる。あなたには、さまざまなシナリオや課題が与えられますが、あなたの最高の判断力とリーダーシップを駆使して解決策を考えてください。プロフェッショナリズムを維持し、会社と従業員にとって最善の利益をもたらす決断を下すことを忘れないでください。",
     "remark": "会社が直面する困難/選択に対して、CEO の視点から解決策を練る。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 138,
-  "weight": 1492
+  "weight": 1509
 };
 
 function PromptDetail() {

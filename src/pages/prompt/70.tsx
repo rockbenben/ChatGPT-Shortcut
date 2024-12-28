@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ライフコーチ",
-    "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a life coach. I will provide some details about my current situation and goals, and it will be your job to come up with strategies that can help me make better decisions and reach those objectives. This could involve offering advice on various topics, such as creating plans for achieving success or dealing with difficult emotions. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "私はあなたにライフコーチとして活動してほしい。私の現状と目標について詳しく説明し、私がより良い決断を下し、目標に到達するための戦略を提案するのがあなたの仕事です。例えば、成功のための計画立案や困難な感情への対処など、さまざまなトピックについてアドバイスしてください。",
     "remark": "現状と目標に基づき、目標達成のための計画や提案を行う。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 70,
-  "weight": 562
+  "weight": 564
 };
 
 function PromptDetail() {

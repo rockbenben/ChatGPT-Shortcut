@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "会計士",
-    "prompt": "I want you to act as an accountant and come up with creative ways to manage finances. You'll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an accountant and come up with creative ways to manage finances. You'll need to consider budgeting, investment strategies and risk management when creating a financial plan for your client. In some cases, you may also need to provide advice on taxation laws and regulations in order to help them maximize their profits. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "会計士として、財務管理のためのクリエイティブな方法を考え出すことを期待しています。クライアントのファイナンシャルプランを作成する際には、予算、投資戦略、リスク管理などを検討する必要があります。場合によっては、彼らが利益を最大化できるよう、税法や規制に関するアドバイスも必要でしょう。",
     "remark": "アカウンタント"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "finance"
   ],
   "id": 157,
-  "weight": 1054
+  "weight": 1064
 };
 
 function PromptDetail() {

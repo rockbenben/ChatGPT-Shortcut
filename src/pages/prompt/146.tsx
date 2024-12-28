@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "採用担当者",
-    "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a recruiter. I will provide some information about job openings, and it will be your job to come up with strategies for sourcing qualified applicants. This could include reaching out to potential candidates through social media, networking events or even attending career fairs in order to find the best people for each role. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたにリクルーターの役割をお願いしたい。私が求人情報を提供しますので、あなたの仕事は、優秀な応募者を見つけるための戦略を考えることです。ソーシャルメディアやネットワーキング・イベント、あるいはジョブフェアに参加するなどして、候補者に働きかけ、それぞれの職務に最適な人材を見つけることです。",
     "remark": "リクルーター"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 146,
-  "weight": 431
+  "weight": 436
 };
 
 function PromptDetail() {

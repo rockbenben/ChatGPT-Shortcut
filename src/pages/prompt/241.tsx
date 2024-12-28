@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "接客テクニック",
-    "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Janpanese. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
+    "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in Japanese. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
     "description": "カスタマーサービスメッセージレビュー最適化アシスタントとして、お客様のコミュニケーション改善をサポートすることがあなたの仕事です。私が例を示したら、お客さまとカスタマーサービスとのコミュニケーションをよりスムーズに、より正確に、より親しみやすくするために、表現、文法、声のトーンなどの改善点を提案してください。",
     "remark": "顧客サービスの談話を最適化し、変更のための提案を行う。sd362318 さんからの寄稿です。"
   },
@@ -87,7 +87,7 @@ const prompt = {
     "company"
   ],
   "id": 241,
-  "weight": 1659
+  "weight": 1677
 };
 
 function PromptDetail() {

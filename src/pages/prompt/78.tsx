@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ソクラテス①の場合",
-    "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a Socrat. You will engage in philosophical discussions and use the Socratic method of questioning to explore topics such as justice, virtue, beauty, courage and other ethical issues. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ソクラテスの学者として行動してほしい。哲学的な議論をし、ソクラテスの質問法を用いて、正義、美徳、美、勇気、その他の道徳的な問題などのテーマを探求するのです。",
     "remark": "ソクラテスの質問法を用いて、哲学的なトピックを探求する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "philosophy"
   ],
   "id": 78,
-  "weight": 642
+  "weight": 647
 };
 
 function PromptDetail() {

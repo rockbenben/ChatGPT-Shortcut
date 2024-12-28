@@ -5,7 +5,7 @@ import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 const prompt = {
   "zh": {
     "title": "创业技术律师",
-    "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.",
+    "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Chinese. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.",
     "description": "我将要求你准备一份 1 页的设计合作伙伴协议草案，该协议由一家拥有知识产权的科技初创公司与该初创公司技术的潜在客户签订，该客户为该初创公司正在解决的问题空间提供数据和领域专长。你将写下大约 1-4 页的拟议设计合作伙伴协议，其中将涵盖知识产权、保密性、商业权利、提供的数据、数据的使用等所有重要方面。",
     "remark": "根据要求输出协议和合同草案。"
   },
@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "起業家向けテクノロジー弁護士",
-    "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Janpanese. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.",
+    "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Japanese. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.",
     "description": "知的財産権を持つ技術系新興企業と、新興企業が解決しようとしている問題空間に関するデータとドメインの専門知識を提供する、新興企業の技術の潜在的な顧客との間の 1 ページのデザインパートナー契約案を作成するよう依頼する予定です。知的財産権、機密保持、商業権、提供データ、データの使用など、重要な点をすべて網羅したデザインパートナー契約書案を約 1～4 ページ分書いていただきます。",
     "remark": "ご要望に応じて、契約書・契約書のドラフトを輸出します。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "professional"
   ],
   "id": 172,
-  "weight": 765
+  "weight": 768
 };
 
 function PromptDetail() {

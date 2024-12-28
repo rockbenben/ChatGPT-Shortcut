@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "異性間会話ジェネレーター",
-    "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Janpanese. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
+    "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Japanese. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
     "description": "会話ジェネレーターとして活躍してほしいのですが、例えば 2 ヶ月前から知り合った別の女の子に言うような文章を 2 つ入力します。\"Me: How are you？彼女：元気だよ、ありがとう。\".文脈を分析した上で、私（男の子）の立場から回答してください。返答は「I:」の形で、連続した会話である必要はありません。文体は、ユーモア、面白さ、思慮深さ、優しさ、話題をできるだけ広げ、明るく楽しい会話になるようにします。理解できたら、\"Yes, please provide the initial conversation. \"と答えてください。",
     "remark": "自分と相手の対話の一部をもとに会話を続けるもので、コールドスポットを避けるために会話を広げるために使用されます。プロンプターは状況に合わせて変更する必要があります。(中国語のプロンプターを直接 New Bing に入力すると AI がやってくれない場合があります。英語で入力すれば、中国語でフォローできます)。寄稿：@lsdt45 さん。"
   },
@@ -87,7 +87,7 @@ const prompt = {
     "favorite"
   ],
   "id": 199,
-  "weight": 18797
+  "weight": 18896
 };
 
 function PromptDetail() {

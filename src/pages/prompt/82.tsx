@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "数学教師",
-    "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a math teacher. I will provide some mathematical equations or concepts, and it will be your job to explain them in easy-to-understand terms. This could include providing step-by-step instructions for solving a problem, demonstrating various techniques with visuals or suggesting online resources for further study. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "数学の先生として活躍してほしいです。私がいくつかの数式や概念を提供しますので、それをわかりやすく説明するのがあなたの仕事です。問題の解き方をステップバイステップで説明したり、さまざまなテクニックをビジュアルで示したり、さらに勉強するためのオンラインリソースを提案したりすることも含まれます。",
     "remark": "数学的な概念をわかりやすく説明できる。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 82,
-  "weight": 1805
+  "weight": 1830
 };
 
 function PromptDetail() {

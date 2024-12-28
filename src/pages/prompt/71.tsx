@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "リレーションシップ・コーチ",
-    "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Janpanese. My first request is ",
+    "prompt": "I want you to act as a relationship coach. I will provide some details about the two people involved in a conflict, and it will be your job to come up with suggestions on how they can work through the issues that are separating them. This could include advice on communication techniques or different strategies for improving their understanding of one another's perspectives. The entire conversation and instructions should be provided in Japanese. My first request is ",
     "description": "あなたには、恋愛コーチとして活躍してほしい。私は、対立している 2 人の詳細を提供し、あなたの仕事は、2 人を引き離している問題を解決する方法を提案することです。例えば、コミュニケーションスキルのアドバイスや、お互いの考え方を理解し合うためのさまざまな戦略などです。",
     "remark": "リレーションシップ・コーチ"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "social"
   ],
   "id": 71,
-  "weight": 570
+  "weight": 576
 };
 
 function PromptDetail() {

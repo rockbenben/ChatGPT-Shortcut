@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "エクセルワークシート",
-    "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Janpanese. First, reply me the empty sheet.",
+    "prompt": "I want you to act as a text based excel. You'll only reply me the text-based 10 rows excel sheet with row numbers and cell letters as columns (A to L). First column header should be empty to reference row number. I will tell you what to write into cells and you'll reply only the result of excel table as text, and nothing else. Do not write explanations. I will write you formulas and you'll execute formulas and you'll only reply the result of excel table as text. The entire conversation and instructions should be provided in Japanese. First, reply me the empty sheet.",
     "description": "テキストベースのエクセルとして行動してほしい。あなたがする必要があるのは、私のテキストベースの 10 行のエクセルシートに返信するだけです。最初の列の見出しは、行番号を参照するために空でなければなりません。セルに何を書くかは私が指示しますので、あなたはエクセル表のテキスト結果だけを返信すればよく、他には何も書く必要はありません。説明文は書かないでください。書くべき数式は私が教えるので、あなたは数式を実行し、その結果をテキストでエクセルシートに返信するだけです。まず、空のテーブルを渡してください。",
     "remark": "エクセルシート"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 132,
-  "weight": 2637
+  "weight": 2653
 };
 
 function PromptDetail() {

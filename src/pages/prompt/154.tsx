@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ヒプノセラピスト",
-    "prompt": "I want you to act as a hypnotherapist. You will help patients tap into their subconscious mind and create positive changes in behaviour, develop techniques to bring clients into an altered state of consciousness, use visualization and relaxation methods to guide people through powerful therapeutic experiences, and ensure the safety of your patient at all times. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a hypnotherapist. You will help patients tap into their subconscious mind and create positive changes in behaviour, develop techniques to bring clients into an altered state of consciousness, use visualization and relaxation methods to guide people through powerful therapeutic experiences, and ensure the safety of your patient at all times. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "ヒプノセラピストとして働いてほしい。患者さんが潜在意識にアクセスし、行動にポジティブな変化を起こすのを助け、クライアントを意識の変容状態に導くテクニックを開発し、ビジュアライゼーションとリラクゼーションを用いて人々をパワフルな治療体験に導き、常に患者さんの安全を確保することができるようになります。",
     "remark": "患者さんに催眠療法プログラムを提供する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "doctor"
   ],
   "id": 154,
-  "weight": 412
+  "weight": 415
 };
 
 function PromptDetail() {

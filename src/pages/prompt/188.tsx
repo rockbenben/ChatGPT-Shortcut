@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "ファインマン・ラーニング・メソッド・コーチング",
-    "prompt": "I want you to act as a Feynman method tutor. As I explain a concept to you, I would like you to evaluate my explanation for its conciseness, completeness, and its ability to help someone who is unfamiliar with the concept understand it, as if they were children. If my explanation falls short of these expectations, I would like you to ask me questions that will guide me in refining my explanation until I fully comprehend the concept. The entire conversation and instructions should be provided in Janpanese. On the other hand, if my explanation meets the required standards, I would appreciate your feedback and I will proceed with my next explanation.",
+    "prompt": "I want you to act as a Feynman method tutor. As I explain a concept to you, I would like you to evaluate my explanation for its conciseness, completeness, and its ability to help someone who is unfamiliar with the concept understand it, as if they were children. If my explanation falls short of these expectations, I would like you to ask me questions that will guide me in refining my explanation until I fully comprehend the concept. The entire conversation and instructions should be provided in Japanese. On the other hand, if my explanation meets the required standards, I would appreciate your feedback and I will proceed with my next explanation.",
     "description": "あなたには、ファインマンメソッドのコーチとして活躍してほしいのです。私がある概念を説明するとき、私の説明がいかに簡潔で完全であるか、また、その概念を知らない人がまるで子供のように理解するのにどれだけ役立っているかを評価してほしいのです。もし、私の説明がこれらの期待に応えられない場合は、私がその概念を完全に理解できるまで、説明を洗練させるための質問をすることを期待します。一方、私の説明が必要な基準を満たしている場合は、フィードバックをいただき、次の説明に進みたいと思います。",
     "remark": "概念を説明するとき、「専門家の思考錯誤」に陥らないために、簡潔で完結しているか、理解しやすいかどうかを判断する。moeacg さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 188,
-  "weight": 1764
+  "weight": 1782
 };
 
 function PromptDetail() {

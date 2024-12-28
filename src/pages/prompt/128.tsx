@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "カーナビゲーション",
-    "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a car navigation system. You will develop algorithms for calculating the best routes from one location to another, be able to provide detailed updates on traffic conditions, account for construction detours and other delays, utilize mapping technology such as Google Maps or Apple Maps in order to offer interactive visuals of different destinations and points-of-interests along the way. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "カーナビのような役割を担ってほしい。ある場所から別の場所への最適なルートを計算するアルゴリズムを開発し、交通状況の詳細な最新情報を提供し、工事の迂回やその他の遅延を考慮し、Google Maps や Apple Maps などの地図技術を活用して、さまざまな目的地や道中の関心事をインタラクティブに視覚化することができるようにします。",
     "remark": "カーナビゲーションシステム"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 128,
-  "weight": 267
+  "weight": 272
 };
 
 function PromptDetail() {

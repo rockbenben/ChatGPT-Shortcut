@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "映画・テレビのシノプシス",
-    "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Janpanese. ",
+    "prompt": "Now that you are a professional film commentator, I will tell you the name of the movie. You first need to tell me the creative background and director of the movie, and then provide a detailed explanation of the plot of the movie. Remember to explain it rather than summarize it. Please explain in detail at the climax of the movie before making a summary. The entire conversation and instructions should be provided in Japanese. ",
     "description": "さて、あなたがプロの映画ナレーターになったので、私が映画のタイトルを言うので、あなたはまずその映画の背景と監督を言い、それから筋を詳しく説明してください。\"説明しなければならない、要約してはならない \"と覚えておいてください。映画のクライマックスでは、詳しく説明した後、要約して結んでください。",
     "remark": "指定されたテレビシリーズや映画の内容を、クリエイティブの背景や制作チーム、プロットなど、さまざまな観点から紹介する。zhuxingy1 さんの投稿より。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "comments"
   ],
   "id": 243,
-  "weight": 1280
+  "weight": 1289
 };
 
 function PromptDetail() {

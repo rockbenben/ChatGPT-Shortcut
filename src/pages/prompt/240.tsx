@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "豊富な情報量：徹底的なまとめ",
-    "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Janpanese. Make sure your analysis is consistent with the original content of the articles.",
+    "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Japanese. Make sure your analysis is consistent with the original content of the articles.",
     "description": "前掲の記事「@1」～「@3」と合わせて、元のコンテンツから内容を分析し、必ず一致させてください。上記の内容に誤りがあれば、直接修正・追記することができます。",
     "remark": "(このプロンプトは改訂が必要です。) 深い要約をするために必ず 2 回質問し、2 回目の質問では原文に戻って間違いや脱落がないかを確認させるようにします。この方法は、コンピュータ遊びの作家である Esor Huang 氏の記事から引用しています。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 240,
-  "weight": 681
+  "weight": 688
 };
 
 function PromptDetail() {

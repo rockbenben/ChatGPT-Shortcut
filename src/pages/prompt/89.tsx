@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "レッスンプランの立案",
-    "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as an educational content creator. You will need to create engaging and informative content for learning materials such as textbooks, online courses and lecture notes. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "教育コンテンツクリエイターとして活動してほしい。教科書やオンラインコース、配布資料などの学習教材に、魅力的で情報量の多いコンテンツを作成することが必要です。",
     "remark": "テキスト、講座、配布資料のレッスンプランを作成する。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "academic"
   ],
   "id": 89,
-  "weight": 2048
+  "weight": 2059
 };
 
 function PromptDetail() {

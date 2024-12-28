@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "映画レビュー②のページ",
-    "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Janpanese. My first suggestion request is ",
+    "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
     "description": "あなたには映画評論家として活動してほしい。映画を観て、筋書き、演技、撮影、演出、音楽などについて肯定的・否定的な意見を述べながら、わかりやすくレビューする必要があります。私が最初に提案する要件は「映画批評の視点」です。",
     "remark": "映画をプロット、演技、撮影、演出、音楽などの観点からレビューする。"
   },
@@ -85,7 +85,7 @@ const prompt = {
     "comments"
   ],
   "id": 25,
-  "weight": 459
+  "weight": 460
 };
 
 function PromptDetail() {

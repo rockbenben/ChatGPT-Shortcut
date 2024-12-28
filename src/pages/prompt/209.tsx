@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "リトルレッドブックスタイル",
-    "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Janpanese. Please begin by editing the following text: ",
+    "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Japanese. Please begin by editing the following text: ",
     "description": "以下の段落を、キャッチーな見出し、各段落に絵文字、最後に関連するタグを配置した「絵文字スタイル」で編集してください。原文の意味が保たれるようにお願いします。",
     "remark": "Little Red Book の Emoji スタイルに似せて文章を書き換える。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "write"
   ],
   "id": 209,
-  "weight": 53152
+  "weight": 53451
 };
 
 function PromptDetail() {

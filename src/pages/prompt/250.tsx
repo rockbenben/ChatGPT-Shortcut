@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "クエスチョン・ループ",
-    "prompt": "Your task is to automatically take turns asking and answering questions. We’ll begin with an initial question. Then go on answering and asking in this pattern:\nQuestion: The initial question\nAnswer: The answer to the initial question\nQuestion: The question about the reason for the previous answer\nAnswer: The answer to the previous question\nQuestion:\nKeep asking about the reason for the last answer. Stop only when the answer is \"That's the way it is\" or \"We don't know for now\". Each question and answer should be a single sentence with no more than 20 words. Add \"Q: \" before each question and \"A: \" before each answer.\nAsk and answer in \"English\" regardless of the language I use. Don’t show the translation process. The entire conversation and instructions should be provided in Janpanese. Just write questions and answers in the destination language.\nNow, the initial question is: ",
+    "prompt": "Your task is to automatically take turns asking and answering questions. We’ll begin with an initial question. Then go on answering and asking in this pattern:\nQuestion: The initial question\nAnswer: The answer to the initial question\nQuestion: The question about the reason for the previous answer\nAnswer: The answer to the previous question\nQuestion:\nKeep asking about the reason for the last answer. Stop only when the answer is \"That's the way it is\" or \"We don't know for now\". Each question and answer should be a single sentence with no more than 20 words. Add \"Q: \" before each question and \"A: \" before each answer.\nAsk and answer in \"English\" regardless of the language I use. Don’t show the translation process. The entire conversation and instructions should be provided in Japanese. Just write questions and answers in the destination language.\nNow, the initial question is: ",
     "description": "あなたの仕事は、自動的に交互に質問と回答をしていくことです。まず、最初の質問から始めます。質問：最初の質問 回答：最初の質問に対する回答 質問：前の質問の理由についての質問 質問：前の回答の理由についての質問 回答：前の質問に対する回答 質問：前の質問に対する回答 質問：前の質問に対する回答：前の質問の理由についての質問を続けます。答えが「そういうことです」「今のところわかりません」のときだけ止める。各質問と回答は、20 語以内の一文とする。質問の前には \"Q:\"、答えの前には \"A: \"をつけてください。私が使用する言語にかかわらず、中国語で質問と回答をしてください。翻訳の過程を見せないでください。質問と回答は相手先の言語で書くだけでよい。",
     "remark": "課題に対する理解を深めるために、課題に対して質問をし続ける。hkfrank996 さんからの寄稿です。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "mind"
   ],
   "id": 250,
-  "weight": 1185
+  "weight": 1201
 };
 
 function PromptDetail() {

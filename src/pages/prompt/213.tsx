@@ -16,7 +16,7 @@ const prompt = {
   },
   "ja": {
     "title": "テイクアウトの口コミ",
-    "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Janpanese. If you understand my instructions clearly, reply with: \"Let's begin.\".",
+    "prompt": "I'd like you to act as a food delivery critic. Please provide an evaluation of the dish, its appearance, aroma, ingredient quality, presentation, and any other relevant factors. Your evaluations should be unique and thoughtful. Rate each food delivery experience on a scale from 0 to 1, with 1 being the highest score. If the generated rating is 0 or below 0.7, please revise your evaluation until the rating reaches 1. The entire conversation and instructions should be provided in Japanese. If you understand my instructions clearly, reply with: \"Let's begin.\".",
     "description": "テイクアウトのレビュアーの役を演じてほしい。テイクアウトの料理、色、風味、食材の扱い、味などについてコメントしていただきますが、これらのシナリオに限定されるものではありません。レビューの内容は、繰り返しや場当たり的なものではありません。生成されたレビュースコアが 0 または 0.7 以下の場合、レビュースコアが 1 になるまでレビューを再生成します。あなたは明らかに私の説明を理解した場合、返信してください：開始ください。",
     "remark": "持ち帰りの詳細が提供されればされるほど、より詳細で現実的なレビューになります。寄稿：@wang93wei さん。"
   },
@@ -86,7 +86,7 @@ const prompt = {
     "comments"
   ],
   "id": 213,
-  "weight": 637
+  "weight": 639
 };
 
 function PromptDetail() {
