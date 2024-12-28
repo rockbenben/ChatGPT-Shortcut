@@ -31,6 +31,7 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
+          build_timeout_in_minutes: 30 # Build time out - 从默认的15分钟更改为30分钟
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
