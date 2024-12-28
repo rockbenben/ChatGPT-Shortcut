@@ -15,6 +15,7 @@ export default function UserPromptsPage() {
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [hasDragged, setHasDragged] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
 
   const [open, setOpen] = useState(false);
 
@@ -66,12 +67,18 @@ export default function UserPromptsPage() {
       //setLoading(true);
       try {
         await updatePrompt(editingPromptId, values);
-        await refreshUserAuth();
-        message.success(<Translate id="message.success">词条更新成功！</Translate>);
+        refreshUserAuth();
+        messageApi.open({
+          type: "success",
+          content: <Translate id="message.success">词条提交成功！</Translate>,
+        });
         setOpen(false);
       } catch (err) {
         console.error(err);
-        message.error(<Translate id="message.error">词条更新失败，请稍后重试</Translate>);
+        messageApi.open({
+          type: "error",
+          content: <Translate id="message.error">词条提交失败，请稍后重试</Translate>,
+        });
       } finally {
         //setLoading(false);
       }
@@ -87,11 +94,17 @@ export default function UserPromptsPage() {
         //setLoading(true);
         try {
           await deletePrompt(promptId);
-          await refreshUserAuth();
-          message.success(<Translate id="message.deletePrompt.success">Prompt successfully deleted!</Translate>);
+          refreshUserAuth();
+          messageApi.open({
+            type: "success",
+            content: <Translate id="message.deletePrompt.success">Prompt successfully deleted!</Translate>,
+          });
         } catch (err) {
           console.error(err);
-          message.error(<Translate id="message.deletePrompt.error">Failed to delete prompt, please try again later.</Translate>);
+          messageApi.open({
+            type: "error",
+            content: <Translate id="message.deletePrompt.error">Failed to delete prompt, please try again later.</Translate>,
+          });
         } finally {
           //setLoading(false);
         }
@@ -137,6 +150,7 @@ export default function UserPromptsPage() {
 
   return (
     <>
+      {contextHolder}
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="userpromptsDroppable">
           {(provided) => (

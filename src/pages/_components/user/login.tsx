@@ -36,6 +36,7 @@ const rules = {
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
+  const [messageApi, contextHolder] = message.useMessage();
 
   const handleRegister = useCallback(() => {
     setActiveTab("3");
@@ -55,7 +56,10 @@ const LoginPage = () => {
             const auth_respond = await authenticateUserWithGoogle(event.data.code);
             handleSuccess(auth_respond.user.username, auth_respond.token);
           } catch (error) {
-            message.error("Login failed: " + error.message);
+            messageApi.open({
+              type: "error",
+              content: "Login failed: " + error.message,
+            });
           } finally {
             setLoading(false);
           }
@@ -78,7 +82,10 @@ const LoginPage = () => {
         alert("Failed to generate Google Auth URL.");
       }
     } catch (error) {
-      message.error("Error while attempting Google login: " + error.message);
+      messageApi.open({
+        type: "error",
+        content: "Error while attempting Google login: " + error.message,
+      });
     } finally {
       setLoading(false);
     }
@@ -97,14 +104,26 @@ const LoginPage = () => {
   const handleErrors = (err) => {
     try {
       if (err.message === "Request timed out. Please try again.") {
-        message.error(err.message);
+        messageApi.open({
+          type: "error",
+          content: err.message,
+        });
       } else if (err.response.status === 400) {
-        message.error(err.response.data.error.message);
+        messageApi.open({
+          type: "error",
+          content: err.response.data.error.message,
+        });
       } else {
-        message.error(translate({ id: "message.error", message: "发生错误，请稍后再试" }));
+        messageApi.open({
+          type: "error",
+          content: <Translate id="message.error">发生错误，请稍后再试</Translate>,
+        });
       }
     } catch (err) {
-      message.error(translate({ id: "message.error", message: "处理错误时发生错误" }));
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.error">处理错误时发生错误</Translate>,
+      });
     }
   };
 
@@ -113,7 +132,10 @@ const LoginPage = () => {
     try {
       const response = await authFunction(values);
       handleSuccess(response.data.user.username, response.data.jwt);
-      message.success(successMessage);
+      messageApi.open({
+        type: "success",
+        content: successMessage,
+      });
     } catch (err) {
       handleErrors(err);
     } finally {
@@ -133,7 +155,10 @@ const LoginPage = () => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
+      messageApi.open({
+        type: "success",
+        content: <Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>,
+      });
     } catch (error) {
       console.error(
         translate({
@@ -142,7 +167,10 @@ const LoginPage = () => {
         }),
         error
       );
-      message.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>,
+      });
     } finally {
       setLoading(false);
     }
@@ -162,10 +190,16 @@ const LoginPage = () => {
       // 根据输入的值动态地决定传递给后端的参数
       const payload = isValidEmail(target) ? { email: target } : { username: target };
       await sendPasswordlessLink(payload);
-      message.success(<Translate id="message.passwordlessLinkSent">免密码登录链接已发送到您的邮箱！</Translate>);
+      messageApi.open({
+        type: "success",
+        content: <Translate id="message.passwordlessLinkSent">免密码登录链接已发送到您的邮箱！</Translate>,
+      });
     } catch (error) {
       console.error("Error sending passwordless login link:", error);
-      message.error(<Translate id="message.errorSendingPasswordlessLink">发送失败，请检查邮箱或用户名</Translate>);
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.errorSendingPasswordlessLink">发送失败，请检查邮箱或用户名</Translate>,
+      });
     } finally {
       setLoading(false);
     }
@@ -262,20 +296,11 @@ const LoginPage = () => {
           。
         </Checkbox>
       </Form.Item>
-      <Space size="middle" wrap>
-        <Button htmlType="submit" loading={loading}>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" loading={loading}>
           <Translate id="button.register">注册</Translate>
         </Button>
-        <Tooltip
-          title={translate({
-            id: "googleauth.tooltip",
-            message: "ChatGPT 的内嵌页面不支持 Google 授权登录，请使用账户密码。其他页面不受此限制。",
-          })}>
-          <Button type="primary" onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
-            Login via Google
-          </Button>
-        </Tooltip>
-      </Space>
+      </Form.Item>
     </Form>
   );
 
@@ -326,9 +351,12 @@ const LoginPage = () => {
   ];
 
   return (
-    <Card title={<Translate id="card.welcome">欢迎</Translate>} bordered={false}>
-      <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={setActiveTab} items={items} />
-    </Card>
+    <>
+      {contextHolder}
+      <Card title={<Translate id="card.welcome">欢迎</Translate>} bordered={false}>
+        <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={setActiveTab} items={items} />
+      </Card>
+    </>
   );
 };
 

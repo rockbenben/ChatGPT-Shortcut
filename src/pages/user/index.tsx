@@ -9,12 +9,13 @@ import { AuthContext, AuthProvider } from "../_components/AuthContext";
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState(false);
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState(userAuth?.data.username);
 
   const handleEditUsernameClick = () => {
-    setNewUsername(userAuth.data.username);
+    setNewUsername(userAuth?.data.username);
     setEditUsername(true);
   };
   const handleUsernameChange = (e) => {
@@ -23,7 +24,10 @@ const UserProfile = () => {
 
   const submitNewUsername = async () => {
     if (newUsername === userAuth?.data.username) {
-      message.info("No change in username.");
+      messageApi.open({
+        type: "info",
+        content: "No change in username.",
+      });
       setEditUsername(false);
       return;
     }
@@ -32,12 +36,18 @@ const UserProfile = () => {
     try {
       await updateUsername(newUsername);
       updateLocalStorageCache("username", newUsername);
-      await refreshUserAuth();
-      message.success("Username updated successfully!");
+      refreshUserAuth();
+      messageApi.open({
+        type: "success",
+        content: "Username updated successfully!",
+      });
     } catch (error) {
       console.error("Error updating username:", error);
       const errorMessage = error?.response?.data?.error?.message || "Unknown error";
-      message.error(`Username update failed: ${errorMessage}`);
+      messageApi.open({
+        type: "error",
+        content: `Username update failed: ${errorMessage}`,
+      });
     } finally {
       setLoading(false);
       setEditUsername(false);
@@ -69,7 +79,10 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await changePassword(values);
-      message.success(<Translate id="message.changePassword.success">密码修改成功！</Translate>);
+      messageApi.open({
+        type: "success",
+        content: <Translate id="message.changePassword.success">密码修改成功！</Translate>,
+      });
     } catch (error) {
       console.error(
         translate({
@@ -78,7 +91,10 @@ const UserProfile = () => {
         }),
         error
       );
-      message.error(<Translate id="message.changePassword.error">密码修改失败，请稍后重试</Translate>);
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.changePassword.error">密码修改失败，请稍后重试</Translate>,
+      });
     } finally {
       setLoading(false);
     }
@@ -88,7 +104,10 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
+      messageApi.open({
+        type: "success",
+        content: <Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>,
+      });
     } catch (error) {
       console.error(
         translate({
@@ -97,7 +116,10 @@ const UserProfile = () => {
         }),
         error
       );
-      message.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>,
+      });
     } finally {
       setLoading(false);
     }
@@ -114,11 +136,11 @@ const UserProfile = () => {
       children: (
         <p>
           {editUsername ? (
-            <Input value={newUsername} onChange={handleUsernameChange} addonAfter={<Button type="link" icon={<SaveOutlined />} onClick={submitNewUsername} />} />
+            <Input value={newUsername} onChange={handleUsernameChange} addonAfter={<Button color="primary" variant="link" icon={<SaveOutlined />} onClick={submitNewUsername} />} />
           ) : (
             <span>
               {userAuth.data.username}
-              <Button type="link" icon={<EditOutlined />} onClick={handleEditUsernameClick} />
+              <Button color="primary" variant="link" icon={<EditOutlined />} onClick={handleEditUsernameClick} />
             </span>
           )}
         </p>
@@ -195,7 +217,7 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button htmlType="submit" loading={loading}>
+            <Button type="primary" htmlType="submit" loading={loading}>
               <Translate id="button.changePassword">修改密码</Translate>
             </Button>
           </Form.Item>
@@ -226,7 +248,7 @@ const UserProfile = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button htmlType="submit" loading={loading}>
+            <Button type="primary" htmlType="submit" loading={loading}>
               <Translate id="button.sendResetEmail">发送重置邮件</Translate>
             </Button>
           </Form.Item>
@@ -248,6 +270,7 @@ const UserProfile = () => {
             hashed: false,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
+          {contextHolder}
           <Space>
             <Link to="/">
               <HomeOutlined /> <Translate id="link.home">返回首页</Translate>

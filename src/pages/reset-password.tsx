@@ -9,6 +9,7 @@ const { Title } = Typography;
 const ResetPassword = () => {
   const [form] = Form.useForm();
   const [resetCode, setResetCode] = useState("");
+  const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -22,17 +23,26 @@ const ResetPassword = () => {
 
   const onFinishResetPassword = async (values) => {
     if (values.newPassword !== values.confirmPassword) {
-      message.error("New password and confirmation password do not match. 新密码和确认密码不一致。");
+      messageApi.open({
+        type: "error",
+        content: "New password and confirmation password do not match. 新密码和确认密码不一致。",
+      });
       return;
     }
     try {
       await resetPassword(values);
-      message.success(<Translate id="message.resetPassword.success">密码重置成功！</Translate>);
+      messageApi.open({
+        type: "success",
+        content: <Translate id="message.resetPassword.success">密码重置成功！</Translate>,
+      });
       form.resetFields();
       window.location.replace("/");
     } catch (error) {
       console.error(translate({ id: "error.resetPassword", message: "Error resetting password:" }), error);
-      message.error(<Translate id="message.resetPassword.error">密码重置失败，请稍后重试</Translate>);
+      messageApi.open({
+        type: "error",
+        content: <Translate id="message.resetPassword.error">密码重置失败，请稍后重试</Translate>,
+      });
     }
   };
 
@@ -48,6 +58,7 @@ const ResetPassword = () => {
           hashed: false,
           algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}>
+        {contextHolder}
         <div style={{ width: 600, margin: "50px auto", padding: "50px" }}>
           <Title level={2} style={{ textAlign: "center" }}>
             Reset Password
