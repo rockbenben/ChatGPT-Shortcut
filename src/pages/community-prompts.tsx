@@ -37,6 +37,7 @@ const DESCRIPTION = translate({
 
 const CommunityPrompts = () => {
   const { userAuth } = useContext(AuthContext);
+  const [messageApi, contextHolder] = message.useMessage();
   const [open, setOpen] = useState(false);
   const [userprompts, setUserPrompts] = useState(placeholderData);
   const [currentPage, setCurrentPage] = useState(1);
@@ -65,6 +66,13 @@ const CommunityPrompts = () => {
       if (result && result[0].length > 0) {
         setUserPrompts(result[0]);
         setTotal(result[1].data.meta.pagination.total);
+      } else if (result && result[0].length === 0) {
+        messageApi.open({
+          type: "warning",
+          content: "No data found.",
+        });
+        setUserPrompts([]);
+        setTotal(0);
       } else {
         console.log("No data returned from the server");
       }
@@ -76,7 +84,10 @@ const CommunityPrompts = () => {
   const onSearch = (value) => {
     if (!userAuth) {
       setOpen(true);
-      message.warning("Please log in to search.");
+      messageApi.open({
+        type: "warning",
+        content: "Please log in to search.",
+      });
       return;
     }
     setSearchTerm(value);
@@ -86,11 +97,17 @@ const CommunityPrompts = () => {
   const vote = async (promptId, action) => {
     try {
       await voteOnUserPrompt(promptId, action);
-      message.success(`Successfully ${action}d!`);
+      messageApi.open({
+        type: "success",
+        content: `Successfully ${action}d!`,
+      });
       const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
       updateVotedIds((prevIds) => [...prevIds, promptId]);
     } catch (err) {
-      message.error(`Error: ${err}`);
+      messageApi.open({
+        type: "error",
+        content: `Failed to ${action}. Error: ${err}`,
+      });
     }
   };
 
@@ -109,12 +126,18 @@ const CommunityPrompts = () => {
 
         if (!userLoves.includes(promptId)) {
           userLoves.push(promptId);
-          message.success("Added to favorites successfully!");
+          messageApi.open({
+            type: "success",
+            content: "Added to favorites successfully!",
+          });
         }
       }
       await updateFavorite(favoriteId, userLoves, true);
     } catch (err) {
-      message.error(`Error: ${err}`);
+      messageApi.open({
+        type: "error",
+        content: `Failed to add to favorites. Error: ${err}`,
+      });
     }
   };
 
@@ -187,6 +210,7 @@ const CommunityPrompts = () => {
             hashed: false,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
+          {contextHolder}
           <Space wrap style={{ marginBottom: "20px" }}>
             <Link to="/">
               <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
@@ -245,7 +269,10 @@ const CommunityPrompts = () => {
                           type="default"
                           onClick={() => {
                             if (!userAuth) {
-                              message.error("Please log in to vote and bookmark.");
+                              messageApi.open({
+                                type: "warning",
+                                content: "Please log in to bookmark.",
+                              });
                               return;
                             }
                             vote(UserPrompt.id, "upvote");
@@ -261,7 +288,10 @@ const CommunityPrompts = () => {
                           type="default"
                           onClick={() => {
                             if (!userAuth) {
-                              message.error("Please log in to vote and bookmark.");
+                              messageApi.open({
+                                type: "warning",
+                                content: "Please log in to vote.",
+                              });
                               return;
                             }
                             vote(UserPrompt.id, "upvote");
@@ -275,7 +305,10 @@ const CommunityPrompts = () => {
                           type="default"
                           onClick={() => {
                             if (!userAuth) {
-                              message.error("Please log in to vote and bookmark.");
+                              messageApi.open({
+                                type: "warning",
+                                content: "Please log in to vote.",
+                              });
                               return;
                             }
                             vote(UserPrompt.id, "downvote");
