@@ -20,7 +20,7 @@ chrome://extensions
 
 ## Install the plugin
 
-Install the immersive translation plugin (Note⚠️: You need to drag in the .crx file, do not click [Load unzipped extension])
+Install ChatGPT Shortcut plugin (Note⚠️: You need to drag in the .crx file, do not click [Load unzipped extension])
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 

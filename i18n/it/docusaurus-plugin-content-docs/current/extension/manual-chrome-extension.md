@@ -20,7 +20,7 @@ chrome://extensions
 
 ## Installa il plugin
 
-Installa il plugin di traduzione immersiva (Nota⚠️: devi trascinare il file .crx, non cliccare su [Carica estensione non compressa])
+Installa il plugin (Nota⚠️: devi trascinare il file .crx, non cliccare su [Carica estensione non compressa])
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
