@@ -20,7 +20,7 @@ chrome://extensions
 
 ## Installieren Sie das Plugin
 
-Installieren Sie das immersive Übersetzungs-Plugin (Hinweis⚠️: Sie müssen die .crx-Datei hineinziehen, klicken Sie nicht auf [Entpackte Erweiterung laden])
+Installieren Sie das Plugin (Hinweis⚠️: Sie müssen die .crx-Datei hineinziehen, klicken Sie nicht auf [Entpackte Erweiterung laden])
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 

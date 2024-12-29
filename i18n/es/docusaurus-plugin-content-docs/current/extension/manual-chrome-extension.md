@@ -20,7 +20,7 @@ chrome://extensions
 
 ## Instalar el complemento
 
-Instalar el complemento de traducción inmersiva (Nota⚠️: Debe arrastrar el archivo .crx, no haga clic en [Cargar extensión descomprimida])
+Instalar el complemento (Nota⚠️: Debe arrastrar el archivo .crx, no haga clic en [Cargar extensión descomprimida])
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 

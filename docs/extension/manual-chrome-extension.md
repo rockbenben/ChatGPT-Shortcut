@@ -23,7 +23,7 @@ chrome://extensions
 
 ## 安装插件
 
-安装沉浸式翻译插件（注意⚠️：需要拖入 .crx 文件，不要点击【加载已解压的扩展程序】）
+安装 ChatGPT Shortcut 插件（注意⚠️：需要拖入 .crx 文件，不要点击【加载已解压的扩展程序】）
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
