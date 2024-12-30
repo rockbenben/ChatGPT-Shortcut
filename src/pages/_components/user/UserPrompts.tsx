@@ -2,14 +2,15 @@ import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import styles from "../ShowcaseCard/styles.module.css";
-import { AuthContext } from "../AuthContext";
 import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
-import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import styles from "../ShowcaseCard/styles.module.css";
 
-export default function UserPromptsPage() {
+import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
+import { AuthContext } from "../AuthContext";
+
+export default function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,15 +27,19 @@ export default function UserPromptsPage() {
     const myPrompts = userAuth.data.userprompts || [];
     const fetchPrompts = async () => {
       try {
-        const myPromptsData = await getPrompts("userprompts", myPrompts);
-        setUserPrompts(myPromptsData);
+        if (isFiltered) {
+          setUserPrompts(filteredCommus);
+        } else {
+          const myPromptsData = await getPrompts("userprompts", myPrompts);
+          setUserPrompts(myPromptsData);
+        }
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchPrompts();
-  }, [userAuth]);
+  }, [userAuth, filteredCommus]);
 
   const handleCopyClick = useCallback(
     (index) => {
@@ -159,7 +164,7 @@ export default function UserPromptsPage() {
                 <li className="card shadow--md">
                   <div className={clsx("card__body", styles.cardBodyHeight)}>
                     <p>No user prompts submitted yet.</p>
-                    <p>Please submit your prompts.</p>
+                    <p>Please add your prompts.</p>
                   </div>
                 </li>
               ) : (
