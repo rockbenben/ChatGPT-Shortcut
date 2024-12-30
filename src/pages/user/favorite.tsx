@@ -33,7 +33,6 @@ const Tabs = ({ activeTab, onTabChange }) => (
       <HeartOutlined style={{ marginRight: "5px" }} />
       {translate({ message: "收藏" })}
     </span>
-    <span
       style={{
         ...tabStyles.tab,
         ...(activeTab === "prompts" ? tabStyles.activeTab : {}),
