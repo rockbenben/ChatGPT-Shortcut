@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
-import Layout from "@theme/Layout";
-import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, ConfigProvider, theme } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
+
+import Layout from "@theme/Layout";
+import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, ConfigProvider, theme } from "antd";
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
+
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
+import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
