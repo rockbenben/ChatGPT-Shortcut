@@ -1,52 +1,40 @@
-import React, { useContext, useState, useMemo, useEffect, useCallback, useRef } from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import Translate, { translate } from "@docusaurus/Translate";
+
 import copy from "copy-text-to-clipboard";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined, SearchOutlined, CopyOutlined } from "@ant-design/icons";
-import { ConfigProvider, theme, Input, Button } from "antd";
+import { ConfigProvider, theme, Button } from "antd";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, CopyOutlined } from "@ant-design/icons";
+
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import styles from "@site/src/pages/styles.module.css";
-import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
-import { Tags, TagList, type TagType } from "@site/src/data/tags";
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
-import ShowcaseFilterToggle, { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
+import ShowcaseFilterToggle from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
 import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
-import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
-import { findCardsWithTags, getPrompts } from "@site/src/api";
+import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
+
+import styles from "@site/src/pages/styles.module.css";
+import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+
+import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
+import { getPrompts } from "@site/src/api";
+
+import { Tags, TagList } from "@site/src/data/tags";
+import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
 
 import AdComponent from "@site/src/pages/_components/AdComponent";
 
 import favorDefault from "@site/src/data/default/favor_it.json";
 import otherDefault from "@site/src/data/default/other_it.json";
-
-const TITLE = translate({
-  id: "homepage.title",
-  message: "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
-});
-const DESCRIPTION = translate({
-  id: "homepage.description",
-  message: "AI Short 是一款用于管理和分享 AI 提示词的工具，帮助用户更有效地定制、保存和共享自己的提示词，以提高生产力。该平台还包括一个提示词分享社区，让用户轻松找到适用于不同场景的指令。",
-});
-const SLOGAN = translate({
-  id: "homepage.slogan",
-  message: "让生产力加倍的 AI 快捷指令",
-});
-
-type UserState = {
-  scrollTopPosition: number;
-  focusedElementId: string | undefined;
-};
 
 export function prepareUserState(): UserState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
@@ -57,77 +45,6 @@ export function prepareUserState(): UserState | undefined {
   }
 
   return undefined;
-}
-
-const SearchNameQueryKey = "name";
-
-function readSearchName(search: string) {
-  return new URLSearchParams(search).get(SearchNameQueryKey);
-}
-
-function useFilteredUsers() {
-  const location = useLocation<UserState>();
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
-  const [operator, setOperator] = useState<Operator>("OR");
-  const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
-  const [searchName, setSearchName] = useState<string | null>(null);
-  const [filteredUsers, setFilteredUsers] = useState([]);
-  const [filteredCommus, setFilteredCommus] = useState<any[]>([]);
-  const { userAuth } = useContext(AuthContext);
-
-  useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    const tags = queryParams.getAll("tags");
-    const search = queryParams.get("name");
-    const operatorParam = queryParams.get("operator") || "OR";
-
-    setSelectedTags(tags);
-    setSearchName(search);
-    setOperator(operatorParam as Operator);
-  }, [location.search]);
-
-  useEffect(() => {
-    async function fetchAndFilterUsers() {
-      if (selectedTags.length === 0 && !searchName) {
-        setFilteredUsers([]);
-        setFilteredCommus([]);
-        return;
-      }
-      try {
-        const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
-        setFilteredUsers(data);
-        if (userAuth) {
-          Promise.all([
-            userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
-            userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
-          ])
-            .then(([userprompts, commus]) => {
-              return [...userprompts, ...commus].filter(
-                (prompt) =>
-                  prompt.title.includes(searchName) ||
-                  prompt.description.includes(searchName) ||
-                  (prompt.remark && prompt.remark.includes(searchName)) ||
-                  (prompt.notes && prompt.notes.includes(searchName))
-              );
-            })
-            .then((filteredCommus) => {
-              console.log("过滤后", filteredCommus);
-              setFilteredCommus(filteredCommus);
-              // 你可以在这里将 filteredPrompts 传递给你的组件
-            });
-        }
-      } catch (error) {
-        console.error("Error fetching and filtering users:", error);
-      }
-    }
-
-    fetchAndFilterUsers();
-  }, [selectedTags, searchName, operator, currentLanguage]);
-
-  const isFiltered = selectedTags.length > 0 || searchName !== null;
-
-  return { filteredCommus, filteredUsers, isFiltered };
 }
 
 function ShowcaseHeader() {
@@ -318,60 +235,6 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   );
 }
 
-function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (value) => {} }) {
-  const history = useHistory();
-  const location = useLocation();
-  const searchRef = useRef(null);
-  const [value, setValue] = useState<string | null>(null);
-
-  useEffect(() => {
-    setValue(readSearchName(location.search));
-  }, [location]);
-
-  const handleSearch = useCallback(() => {
-    const newSearch = new URLSearchParams(location.search);
-    newSearch.delete(SearchNameQueryKey);
-    if (value) {
-      newSearch.set(SearchNameQueryKey, value);
-    }
-    history.push({
-      ...location,
-      search: newSearch.toString(),
-      state: prepareUserState(),
-    });
-    setShowUserPrompts(false);
-    setShowUserFavs(false);
-  }, [value, location, history]);
-
-  useEffect(() => {
-    if (value === "") {
-      handleSearch();
-    }
-  }, [value, handleSearch]);
-
-  const handleInput = (e) => {
-    setValue(e.target.value);
-  };
-
-  return (
-    <div className={styles.searchContainer}>
-      <Input
-        ref={searchRef}
-        id="searchbar"
-        placeholder={translate({
-          message: "Search for prompts...",
-          id: "showcase.searchBar.placeholder",
-        })}
-        value={value ?? undefined}
-        onChange={handleInput}
-        onPressEnter={handleSearch}
-        allowClear
-        suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
-      />
-    </div>
-  );
-}
-
 function ShowcaseCards({ isDescription, showUserFavs }) {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
@@ -436,16 +299,16 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     return [favoritePrompts, otherPrompts];
   }, [favoritePrompts, otherPrompts]);
 
-  const { filteredCommus, filteredUsers, isFiltered } = useFilteredUsers();
+  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
 
-  if (isFiltered && filteredUsers.length === 0 && filteredCommus.length === 0) {
+  if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
     return (
       <section className="margin-top--sm margin-bottom--sm">
         <div className="container padding-vert--md text--center">
-          <Heading as="h2">
-            <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
-          </Heading>
-          <SearchBar />
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar />
+          </div>
+          <NoResults />
           <AdComponent />
         </div>
       </section>
@@ -540,7 +403,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 </div>
               </li>
             ))}
-            {filteredUsers.map((user) => (
+            {filteredCards.map((user) => (
               <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}
             <AdComponent />
