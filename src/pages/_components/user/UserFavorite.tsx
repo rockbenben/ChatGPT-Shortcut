@@ -175,9 +175,17 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                   {(provided) => (
                     <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
                       {comms.map((comm, index) => (
-                        <Draggable key={comm.id} draggableId={comm.id.toString()} index={index}>
+                        <Draggable key={comm.id} draggableId={comm.id.toString()} index={index} isDragDisabled={isFiltered}>
                           {(provided) => (
-                            <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="card shadow--md">
+                            <li
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              className="card shadow--md"
+                              style={{
+                                ...provided.draggableProps.style,
+                                cursor: isFiltered ? "default" : "grab", // 根据筛选状态修改鼠标样式
+                              }}>
                               <div
                                 className={clsx("card__body")}
                                 style={{
@@ -236,9 +244,17 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                   {(provided) => (
                     <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
                       {cards.map((card, index) => (
-                        <Draggable key={card.id} draggableId={card.id.toString()} index={index}>
+                        <Draggable key={card.id} draggableId={card.id.toString()} index={index} isDragDisabled={isFiltered}>
                           {(provided) => (
-                            <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="card shadow--md">
+                            <li
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              className="card shadow--md"
+                              style={{
+                                ...provided.draggableProps.style,
+                                cursor: isFiltered ? "default" : "grab", // 根据筛选状态修改鼠标样式
+                              }}>
                               <div
                                 className={clsx("card__body")}
                                 style={{

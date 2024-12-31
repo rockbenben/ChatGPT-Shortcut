@@ -169,9 +169,17 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
                 </li>
               ) : (
                 userprompts.map((UserPrompt, index) => (
-                  <Draggable key={UserPrompt.id} draggableId={UserPrompt.id.toString()} index={index}>
+                  <Draggable key={UserPrompt.id} draggableId={UserPrompt.id.toString()} index={index} isDragDisabled={isFiltered}>
                     {(provided) => (
-                      <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="card shadow--md">
+                      <li
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        className="card shadow--md"
+                        style={{
+                          ...provided.draggableProps.style,
+                          cursor: isFiltered ? "default" : "grab", // 根据筛选状态修改鼠标样式
+                        }}>
                         <div
                           className={clsx("card__body")}
                           style={{
