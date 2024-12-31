@@ -169,14 +169,17 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
   return { filteredCommus, filteredCards, isFiltered };
 }
 
-function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (value) => {} }) {
+function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFavs = (value: boolean) => {} }) {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef(null);
+  const searchRef = useRef<Input>(null);
   const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
     setValue(readSearchName(location.search));
+    if (searchRef.current?.input) {
+      searchRef.current.input.focus();
+    }
   }, [location]);
 
   const handleSearch = useCallback(() => {
@@ -200,7 +203,7 @@ function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (valu
     }
   }, [value, handleSearch]);
 
-  const handleInput = (e) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
