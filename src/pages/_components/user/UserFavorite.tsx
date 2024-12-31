@@ -167,138 +167,142 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
       <DragDropContext onDragEnd={onDragEnd}>
         <div className={styles.showcaseFavorite}>
           <div className="container">
-            {(!cards || cards.length === 0) && (!comms || comms.length === 0) ? (
+            {!cards?.length && !comms?.length ? (
               <p>You haven't favorited any prompts yet.</p>
             ) : (
               <>
-                <Droppable droppableId="droppableComms">
-                  {(provided) => (
-                    <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
-                      {comms.map((comm, index) => (
-                        <Draggable key={comm.id} draggableId={comm.id.toString()} index={index} isDragDisabled={isFiltered}>
-                          {(provided) => (
-                            <li
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className="card shadow--md"
-                              style={{
-                                ...provided.draggableProps.style,
-                                cursor: isFiltered ? "default" : "grab", // 根据筛选状态修改鼠标样式
-                              }}>
-                              <div
-                                className={clsx("card__body")}
+                {comms?.length > 0 && (
+                  <Droppable droppableId="droppableComms">
+                    {(provided) => (
+                      <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
+                        {comms.map((comm, index) => (
+                          <Draggable key={comm.id} draggableId={comm.id.toString()} index={index} isDragDisabled={isFiltered}>
+                            {(provided) => (
+                              <li
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="card shadow--md"
                                 style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  justifyContent: "space-between",
-                                  height: "100%",
+                                  ...provided.draggableProps.style,
+                                  cursor: isFiltered ? "default" : "grab",
                                 }}>
-                                <div>
-                                  <div className={clsx(styles.showcaseCardHeader)}>
-                                    <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-                                      <Link className={styles.showcaseCardLink}>{comm.title} </Link>
-                                      <span
-                                        style={{
-                                          fontSize: "12px",
-                                          color: "#999",
-                                          marginLeft: "10px",
-                                        }}>
-                                        @{comm.owner}
-                                      </span>
+                                <div
+                                  className={clsx("card__body")}
+                                  style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "space-between",
+                                    height: "100%",
+                                  }}>
+                                  <div>
+                                    <div className={clsx(styles.showcaseCardHeader)}>
+                                      <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
+                                        <Link className={styles.showcaseCardLink}>{comm.title} </Link>
+                                        <span
+                                          style={{
+                                            fontSize: "12px",
+                                            color: "#999",
+                                            marginLeft: "10px",
+                                          }}>
+                                          @{comm.owner}
+                                        </span>
+                                      </div>
                                     </div>
+                                    <p className={styles.showcaseCardBody}>
+                                      {comm.remark && (
+                                        <>
+                                          👉 {comm.remark}
+                                          <br />
+                                        </>
+                                      )}
+                                      {comm.description}
+                                    </p>
                                   </div>
-                                  <p className={styles.showcaseCardBody}>
-                                    {comm.remark && (
-                                      <>
-                                        👉 {comm.remark}
-                                        <br />
-                                      </>
-                                    )}
-                                    {comm.description}
-                                  </p>
+                                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                    <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, comm, true)}>
+                                      {copiedCommIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                                    </Button>
+                                    <Button
+                                      icon={<StarOutlined />}
+                                      type="default"
+                                      onClick={() => {
+                                        removeBookmark(comm.id, true); // isComm set to true
+                                      }}>
+                                      <Translate>移除收藏</Translate>
+                                    </Button>
+                                  </div>
                                 </div>
-                                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                                  <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, comm, true)}>
-                                    {copiedCommIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-                                  </Button>
-                                  <Button
-                                    icon={<StarOutlined />}
-                                    type="default"
-                                    onClick={() => {
-                                      removeBookmark(comm.id, true); // isComm set to true
-                                    }}>
-                                    <Translate>移除收藏</Translate>
-                                  </Button>
-                                </div>
-                              </div>
-                            </li>
-                          )}
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
-                    </ul>
-                  )}
-                </Droppable>
-                <Droppable droppableId="droppableCards">
-                  {(provided) => (
-                    <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
-                      {cards.map((card, index) => (
-                        <Draggable key={card.id} draggableId={card.id.toString()} index={index} isDragDisabled={isFiltered}>
-                          {(provided) => (
-                            <li
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              className="card shadow--md"
-                              style={{
-                                ...provided.draggableProps.style,
-                                cursor: isFiltered ? "default" : "grab", // 根据筛选状态修改鼠标样式
-                              }}>
-                              <div
-                                className={clsx("card__body")}
+                              </li>
+                            )}
+                          </Draggable>
+                        ))}
+                        {provided.placeholder}
+                      </ul>
+                    )}
+                  </Droppable>
+                )}
+                {cards?.length > 0 && (
+                  <Droppable droppableId="droppableCards">
+                    {(provided) => (
+                      <ul className="clean-list showcaseList_Cwj2" {...provided.droppableProps} ref={provided.innerRef}>
+                        {cards.map((card, index) => (
+                          <Draggable key={card.id} draggableId={card.id.toString()} index={index} isDragDisabled={isFiltered}>
+                            {(provided) => (
+                              <li
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                className="card shadow--md"
                                 style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  justifyContent: "space-between",
-                                  height: "100%",
+                                  ...provided.draggableProps.style,
+                                  cursor: isFiltered ? "default" : "grab",
                                 }}>
-                                <div>
-                                  <div className={clsx(styles.showcaseCardHeader)}>
-                                    <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-                                      <Link href={"/prompt/" + card.id} className={styles.showcaseCardLink}>
-                                        {card[currentLanguage].title}{" "}
-                                      </Link>
-                                      <span className={styles.showcaseCardBody}>{card.count > 0 && `🔥${formatCopyCount(card.count)}`}</span>
+                                <div
+                                  className={clsx("card__body")}
+                                  style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "space-between",
+                                    height: "100%",
+                                  }}>
+                                  <div>
+                                    <div className={clsx(styles.showcaseCardHeader)}>
+                                      <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
+                                        <Link href={"/prompt/" + card.id} className={styles.showcaseCardLink}>
+                                          {card[currentLanguage].title}{" "}
+                                        </Link>
+                                        <span className={styles.showcaseCardBody}>{card.count > 0 && `🔥${formatCopyCount(card.count)}`}</span>
+                                      </div>
                                     </div>
+                                    <p className={styles.showcaseCardBody}>👉 {card[currentLanguage].remark}</p>
+                                    <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>
+                                      {clickedIndex === index && showDescription ? card[currentLanguage].description : card[currentLanguage].prompt}
+                                    </p>
                                   </div>
-                                  <p className={styles.showcaseCardBody}>👉 {card[currentLanguage].remark}</p>
-                                  <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>
-                                    {clickedIndex === index && showDescription ? card[currentLanguage].description : card[currentLanguage].prompt}
-                                  </p>
+                                  <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                    <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, card)}>
+                                      {copiedCardIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                                    </Button>
+                                    <Button
+                                      icon={<StarOutlined />}
+                                      type="default"
+                                      onClick={() => {
+                                        removeBookmark(card.id); // isComm defaults to false
+                                      }}>
+                                      <Translate>移除收藏</Translate>
+                                    </Button>
+                                  </div>
                                 </div>
-                                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                                  <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, card)}>
-                                    {copiedCardIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-                                  </Button>
-                                  <Button
-                                    icon={<StarOutlined />}
-                                    type="default"
-                                    onClick={() => {
-                                      removeBookmark(card.id); // isComm defaults to false
-                                    }}>
-                                    <Translate>移除收藏</Translate>
-                                  </Button>
-                                </div>
-                              </div>
-                            </li>
-                          )}
-                        </Draggable>
-                      ))}
-                      {provided.placeholder}
-                    </ul>
-                  )}
-                </Droppable>
+                              </li>
+                            )}
+                          </Draggable>
+                        ))}
+                        {provided.placeholder}
+                      </ul>
+                    )}
+                  </Droppable>
+                )}
               </>
             )}
           </div>
