@@ -11,7 +11,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
-function UserFavorite() {
+function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [cards, setCards] = useState([]);
@@ -24,27 +24,33 @@ function UserFavorite() {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
+  // 从 userAuth 获取默认的 loves 和 commLoves
+  const loves = userAuth?.data?.favorites?.loves || [];
+  const commLoves = userAuth?.data?.favorites?.commLoves || [];
+
   useEffect(() => {
     if (!userAuth || !userAuth.data) {
       return;
     }
 
-    const loves = userAuth.data.favorites ? userAuth.data.favorites.loves || [] : [];
-    const commLoves = userAuth.data.favorites ? userAuth.data.favorites.commLoves || [] : [];
-
     const fetchPrompts = async () => {
       try {
-        const cardsData = await getPrompts("cards", loves, currentLanguage);
-        setCards(cardsData);
-        const commsData = await getPrompts("commus", commLoves);
-        setComms(commsData);
+        if (isFiltered) {
+          setComms(filteredCommus);
+          setCards(filteredCards);
+        } else {
+          const cardsData = await getPrompts("cards", loves, currentLanguage);
+          setCards(cardsData);
+          const commsData = await getPrompts("commus", commLoves);
+          setComms(commsData);
+        }
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchPrompts();
-  }, [userAuth, currentLanguage]);
+  }, [userAuth, currentLanguage, loves, commLoves, filteredCommus, filteredCards]);
 
   const removeBookmark = useCallback(
     async (id, isComm = false) => {
@@ -78,6 +84,8 @@ function UserFavorite() {
     setShowDescription((prev) => !prev); // toggle the state
   };
 
+  const formatCopyCount = (count) => (count >= 1000 ? (count / 1000).toFixed(1) + "k" : count);
+
   const handleCopyClick = useCallback(
     (index, item, isComm = false) => {
       const text = isComm ? item.description : item[currentLanguage].prompt;
@@ -88,13 +96,6 @@ function UserFavorite() {
     },
     [currentLanguage]
   );
-
-  const formatCopyCount = (count) => {
-    if (count >= 1000) {
-      return (count / 1000).toFixed(1) + "k";
-    }
-    return count;
-  };
 
   const [hasDragged, setHasDragged] = useState(false);
   const onDragEnd = useCallback(

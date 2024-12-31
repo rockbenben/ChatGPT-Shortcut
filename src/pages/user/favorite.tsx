@@ -1,62 +1,50 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
+import clsx from "clsx";
+import { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
+
+import { Tabs, ConfigProvider, theme } from "antd";
+import { HeartOutlined, EditOutlined } from "@ant-design/icons";
+import styles from "@site/src/pages/styles.module.css";
+
 import UserStatus from "../_components/user/UserStatus";
 import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
+import SearchBar, { NoResults, useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
 import { AuthProvider } from "../_components/AuthContext";
-import { HeartOutlined, EditOutlined } from "@ant-design/icons";
-import { translate } from "@docusaurus/Translate";
-import { ConfigProvider, theme } from "antd";
-
-const tabStyles = {
-  container: {
-    margin: "18px",
-    display: "flex",
-  },
-  tab: {
-    marginRight: "10px",
-    cursor: "pointer",
-  },
-  activeTab: {
-    color: "var(--ifm-color-primary)",
-  },
-};
-
-const Tabs = ({ activeTab, onTabChange }) => (
-  <div style={tabStyles.container}>
-    <span
-      style={{
-        ...tabStyles.tab,
-        ...(activeTab === "favorites" ? tabStyles.activeTab : {}),
-      }}
-      onClick={() => onTabChange("favorites")}>
-      <HeartOutlined style={{ marginRight: "5px" }} />
-      {translate({ message: "收藏" })}
-    </span>
-    <span
-      style={{
-        ...tabStyles.tab,
-        ...(activeTab === "prompts" ? tabStyles.activeTab : {}),
-      }}
-      onClick={() => onTabChange("prompts")}>
-      <EditOutlined style={{ marginRight: "5px" }} />
-      {translate({ id: "myprompt", message: "我的提示词" })}
-    </span>
-  </div>
-);
 
 const UserBookmark = () => {
-  const [activeTab, setActiveTab] = useState("favorites");
+  const [activeTab, setActiveTab] = useState("myprompts");
+  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts(activeTab);
 
   const handleTabChange = useCallback((tab) => {
     setActiveTab(tab);
   }, []);
 
   const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+  const showNoResults = isFiltered && filteredCards.length === 0 && filteredCommus.length === 0;
+
+  const items = useMemo(
+    () => [
+      {
+        key: "myfavor",
+        label: translate({ message: "收藏" }),
+        icon: <HeartOutlined />,
+        children: !showNoResults && <UserFavorite filteredCommus={filteredCommus} filteredCards={filteredCards} isFiltered={isFiltered} />,
+      },
+      {
+        key: "myprompts",
+        label: translate({ id: "myprompt", message: "我的提示词" }),
+        icon: <EditOutlined />,
+        children: !showNoResults && <UserPrompts filteredCommus={filteredCommus} isFiltered={isFiltered} />,
+      },
+    ],
+    [filteredCommus, filteredCards, isFiltered, showNoResults]
+  );
 
   return (
     <Layout>
-      <main className="margin-vert--lg" style={{ maxWidth: "1200px", margin: "auto" }}>
+      <main className="margin-vert--md">
         <ConfigProvider
           theme={{
             token: {
@@ -66,14 +54,18 @@ const UserBookmark = () => {
             hashed: false,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
-          <div className="text--center">
-            <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
-          </div>
-          <div style={{ margin: "0 auto", maxWidth: "90%" }}>
-            <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
-            {activeTab === "favorites" && <UserFavorite />}
-            {activeTab === "prompts" && <UserPrompts />}
-          </div>
+          <section className="margin-top--sm margin-bottom--sm">
+            <div className="container padding-vert--md">
+              <div className="text--center">
+                <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
+              </div>
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <SearchBar />
+              </div>
+              <Tabs activeKey={activeTab} items={items} onChange={handleTabChange} />
+              {showNoResults && <NoResults />}
+            </div>
+          </section>
         </ConfigProvider>
       </main>
     </Layout>
