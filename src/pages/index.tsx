@@ -1,23 +1,17 @@
-import React, { useContext, useState, useMemo, useEffect, useCallback, useRef } from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-
-import Translate, { translate } from "@docusaurus/Translate";
-import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
+import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
 
-import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import { ConfigProvider, theme } from "antd";
-import { debounce } from "lodash";
-import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import styles from "@site/src/pages/styles.module.css";
-import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
-import { sortedUsers } from "@site/src/data/users.zh";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
 
+import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle, { type Operator, readOperator } from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
@@ -26,14 +20,17 @@ import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import ShareButtons from "@site/src/pages/_components/ShareButtons";
+import SearchBar, { NoResults, type UserState } from "@site/src/pages/_components/SearchBar";
+
+import styles from "@site/src/pages/styles.module.css";
+import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
+import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
+
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
 import { fetchAllCopyCounts } from "@site/src/api";
 
-type UserState = {
-  scrollTopPosition: number;
-  focusedElementId: string | undefined;
-};
+import { sortedUsers } from "@site/src/data/users.zh";
 
 export function prepareUserState(): UserState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
@@ -281,58 +278,6 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   );
 }
 
-function SearchBar({ setShowUserPrompts = (value) => {}, setShowUserFavs = (value) => {} }) {
-  const history = useHistory();
-  const location = useLocation();
-  const searchRef = useRef<HTMLInputElement>(null);
-  const [value, setValue] = useState<string | null>(null);
-
-  useEffect(() => {
-    setValue(readSearchName(location.search));
-    if (searchRef.current) {
-      searchRef.current.focus();
-    }
-  }, [location]);
-
-  const updateSearch = useCallback(
-    debounce((searchValue: string) => {
-      const newSearch = new URLSearchParams(location.search);
-      newSearch.delete(SearchNameQueryKey);
-      if (searchValue) {
-        newSearch.set(SearchNameQueryKey, searchValue);
-      }
-      history.push({
-        ...location,
-        search: newSearch.toString(),
-        state: prepareUserState(),
-      });
-      setShowUserPrompts(false);
-      setShowUserFavs(false);
-    }, 1000), // search latency 搜索延时
-    [location, history]
-  );
-
-  const handleInput = (e: React.FormEvent<HTMLInputElement>) => {
-    setValue(e.currentTarget.value);
-    updateSearch(e.currentTarget.value);
-  };
-
-  return (
-    <div className={styles.searchContainer}>
-      <input
-        ref={searchRef}
-        id="searchbar"
-        placeholder={translate({
-          message: "Search for prompts...",
-          id: "showcase.searchBar.placeholder",
-        })}
-        value={value ?? undefined}
-        onInput={handleInput}
-      />
-    </div>
-  );
-}
-
 function ShowcaseCards({ isDescription, showUserFavs }) {
   const [copyCounts, setCopyCounts] = useState({});
 
@@ -393,10 +338,10 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
-          <Heading as="h2">
-            <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
-          </Heading>
-          <SearchBar />
+          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+            <SearchBar />
+          </div>
+          <NoResults />
         </div>
       </section>
     );
