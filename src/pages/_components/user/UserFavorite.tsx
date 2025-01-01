@@ -14,25 +14,20 @@ import { AuthContext } from "../AuthContext";
 function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
   const [cards, setCards] = useState([]);
   const [comms, setComms] = useState([]);
   const [clickedIndex, setClickedIndex] = useState(null);
   const [showDescription, setShowDescription] = useState(false);
-
   const [copiedCardIndex, setCopiedCardIndex] = useState(null);
   const [copiedCommIndex, setCopiedCommIndex] = useState(null);
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
-
-  // 从 userAuth 获取默认的 loves 和 commLoves
-  const loves = userAuth?.data?.favorites?.loves || [];
-  const commLoves = userAuth?.data?.favorites?.commLoves || [];
+  const [hasDragged, setHasDragged] = useState(false);
 
   useEffect(() => {
-    if (!userAuth || !userAuth.data) {
-      return;
-    }
-
+    if (!userAuth?.data) return;
+    const loves = userAuth.data?.favorites?.loves || [];
+    const commLoves = userAuth.data?.favorites?.commLoves || [];
     const fetchPrompts = async () => {
       try {
         if (isFiltered) {
@@ -48,9 +43,8 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
         console.error(error);
       }
     };
-
     fetchPrompts();
-  }, [userAuth, currentLanguage, loves, commLoves, filteredCommus, filteredCards]);
+  }, [userAuth, currentLanguage, isFiltered, filteredCommus, filteredCards]);
 
   const removeBookmark = useCallback(
     async (id, isComm = false) => {
@@ -97,7 +91,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     [currentLanguage]
   );
 
-  const [hasDragged, setHasDragged] = useState(false);
   const onDragEnd = useCallback(
     (result) => {
       const { source, destination } = result;

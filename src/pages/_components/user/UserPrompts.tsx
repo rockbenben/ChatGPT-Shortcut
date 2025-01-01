@@ -12,34 +12,32 @@ import { AuthContext } from "../AuthContext";
 
 export default function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const [messageApi, contextHolder] = message.useMessage();
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [hasDragged, setHasDragged] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
-
   const [open, setOpen] = useState(false);
+  const [editingPromptId, setEditingPromptId] = useState(null);
+  const [form] = Form.useForm();
 
   useEffect(() => {
-    if (!userAuth || !userAuth.data) {
-      return;
-    }
-    const myPrompts = userAuth.data.userprompts || [];
+    if (!userAuth?.data) return;
     const fetchPrompts = async () => {
       try {
         if (isFiltered) {
           setUserPrompts(filteredCommus);
         } else {
+          const myPrompts = userAuth.data?.userprompts || [];
           const myPromptsData = await getPrompts("userprompts", myPrompts);
           setUserPrompts(myPromptsData);
         }
       } catch (error) {
-        console.error(error);
+        console.error("Failed to fetch prompts:", error);
       }
     };
-
     fetchPrompts();
-  }, [userAuth, filteredCommus]);
+  }, [userAuth, isFiltered, filteredCommus]);
 
   const handleCopyClick = useCallback(
     (index) => {
@@ -55,9 +53,6 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
     [userprompts]
   );
 
-  // 新增的状态变量，用于跟踪正在被编辑的 UserPrompt 的 id
-  const [editingPromptId, setEditingPromptId] = useState(null);
-  const [form] = Form.useForm();
   const handleEditPrompt = useCallback(
     (UserPrompt) => {
       setEditingPromptId(UserPrompt.id);
