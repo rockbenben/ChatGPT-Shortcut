@@ -175,9 +175,14 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
   const searchRef = useRef<Input>(null);
   const [value, setValue] = useState<string | null>(null);
 
+  const isMobile = useCallback(() => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }, []);
+
   useEffect(() => {
     setValue(readSearchName(location.search));
-    if (searchRef.current?.input) {
+    // 只在非移动设备上自动获取焦点
+    if (!isMobile() && searchRef.current?.input) {
       searchRef.current.input.focus();
     }
   }, [location]);
@@ -220,6 +225,7 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
         onChange={handleInput}
         onPressEnter={handleSearch}
         allowClear
+        autoFocus={!isMobile()}
         suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
       />
     </div>
