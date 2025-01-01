@@ -176,7 +176,10 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
   const [value, setValue] = useState<string | null>(null);
 
   const isMobile = useCallback(() => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (ExecutionEnvironment.canUseDOM) {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    return false; // 默认为非移动设备。避免在 SSR 时报错
   }, []);
 
   useEffect(() => {
