@@ -263,7 +263,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
           </div>
-          <UserPrompts />
+          <UserPrompts filteredCommus={[]} isFiltered={false} />
         </>
       )}
       {showUserFavs && (
@@ -271,7 +271,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
           </div>
-          <UserFavorite />
+          <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
         </>
       )}
     </section>
