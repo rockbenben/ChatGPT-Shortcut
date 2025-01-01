@@ -145,9 +145,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
             {togglePromptLanguage}
           </button>
         )}
-        <div className={styles.hideOnMobile}>
-          <ShowcaseFilterToggle />
-        </div>
+        <ShowcaseFilterToggle />
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
