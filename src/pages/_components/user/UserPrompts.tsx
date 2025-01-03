@@ -23,7 +23,7 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
   };
 
   return (
-    <li ref={setNodeRef} {...attributes} {...(isFiltered ? {} : listeners)} className="card shadow--md" style={style}>
+    <li ref={setNodeRef} className="card shadow--md" style={style}>
       <div
         className={clsx("card__body")}
         style={{
@@ -34,7 +34,7 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
         }}>
         <div>
           <div className={clsx(styles.showcaseCardHeader)}>
-            <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsisMy}`}>
+            <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsisMy}`} {...attributes} {...(isFiltered ? {} : listeners)}>
               <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
                 {UserPrompt.title}{" "}
               </span>
@@ -47,7 +47,7 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
               </Button>
             </Tooltip>
           </div>
-          <p className={styles.showcaseCardBody}>
+          <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
             {UserPrompt.remark && (
               <>
                 👉 {UserPrompt.remark}
