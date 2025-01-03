@@ -24,7 +24,7 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
   };
 
   return (
-    <li ref={setNodeRef} {...attributes} {...(isFiltered ? {} : listeners)} className="card shadow--md" style={style}>
+    <li ref={setNodeRef} className="card shadow--md" style={style}>
       <div
         className={clsx("card__body")}
         style={{
@@ -34,7 +34,7 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
           height: "100%",
         }}>
         <div>
-          <div className={clsx(styles.showcaseCardHeader)}>
+          <div className={clsx(styles.showcaseCardHeader)} {...attributes} {...(isFiltered ? {} : listeners)}>
             <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
               {isCard ? (
                 <>
@@ -53,13 +53,15 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
           </div>
           {isCard ? (
             <>
-              <p className={styles.showcaseCardBody}>👉 {item[currentLanguage].remark}</p>
+              <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
+                👉 {item[currentLanguage].remark}
+              </p>
               <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>
                 {clickedIndex === index && showDescription ? item[currentLanguage].description : item[currentLanguage].prompt}
               </p>
             </>
           ) : (
-            <p className={styles.showcaseCardBody}>
+            <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
               {item.remark && (
                 <>
                   👉 {item.remark}
