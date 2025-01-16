@@ -79,8 +79,8 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
           console.log("搜索结果", data);
           setFilteredCards(data); // 未登录时，仅搜索 cards 提示词
-          if (userAuth) {
-            // 登录后，使用本地缓存，搜索用户收藏和自定义的提示词（不区分大小写）
+          if (userAuth && selectedTags.length === 0) {
+            // 登录且未选标签，使用本地缓存，搜索用户收藏和自定义的提示词（不区分大小写）
             Promise.all([
               userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
               userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
