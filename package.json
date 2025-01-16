@@ -17,7 +17,7 @@
     "update": "ncu -u && yarn install"
   },
   "dependencies": {
-    "@ant-design/compatible": "^5.1.3",
+    "@ant-design/compatible": "^5.1.4",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
@@ -28,27 +28,27 @@
     "@emoji-mart/react": "^1.1.1",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.22.7",
+    "antd": "^5.23.1",
     "axios": "^1.7.9",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "emoji-mart": "^5.6.0",
     "lodash": "^4.17.21",
-    "prism-react-renderer": "^2.4.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18",
+    "react-dom": "^18",
     "react-giphy-searchbox": "^1.5.4",
     "react-html-parser": "^2.0.2",
-    "react-markdown": "^9.0.1",
+    "react-markdown": "^9.0.3",
     "react-popper": "^2.3.0",
-    "react-share": "^5.1.1"
+    "react-share": "^5.1.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.6.3",
     "@docusaurus/tsconfig": "3.6.3",
     "@docusaurus/types": "3.6.3",
-    "@types/react": "^18.3.13",
-    "typescript": "~5.7.2"
+    "@types/react": "^18",
+    "typescript": "~5.7.3"
   },
   "browserslist": {
     "production": [
