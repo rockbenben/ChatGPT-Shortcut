@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import Translate, { translate } from "@docusaurus/Translate";
+import { translate } from "@docusaurus/Translate";
 import { List, Avatar, Button, Form, Input, Modal, Pagination } from "antd";
 import { SmileOutlined, GifOutlined } from "@ant-design/icons";
 import { Comment } from "@ant-design/compatible";
@@ -16,10 +16,7 @@ import ReactGiphySearchBox from "react-giphy-searchbox";
 
 dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835"];
-
-const getRandomColor = () => {
-  return backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
-};
+const getRandomColor = () => backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
 
 const Comments = ({ pageId, currentUserId, type }) => {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -27,7 +24,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
   const [showGiphySearchBoxReply, setShowGiphySearchBoxReply] = useState(false);
 
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<any[]>([]);
   const [form] = Form.useForm();
   const [replyForm] = Form.useForm();
   const [replyingTo, setReplyingTo] = useState(null);
@@ -36,6 +33,8 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
+
+  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
 
   const fetchComments = useCallback(async () => {
     const response = await getComments(pageId, currentPage, pageSize, type);
@@ -121,24 +120,36 @@ const Comments = ({ pageId, currentUserId, type }) => {
   };
 
   const nestComments = (flatComments) => {
-    let commentMap = {};
+    const commentMap = new Map();
 
-    flatComments
-      .sort((a, b) => new Date(a.id) - new Date(b.id))
-      .forEach((comment) => {
-        comment.children = [];
-        commentMap[comment.id] = comment;
+    const sortedComments = [...flatComments].sort((a, b) => new Date(a.id).getTime() - new Date(b.id).getTime());
 
-        if (comment.threadOf) {
-          if (commentMap[comment.threadOf.id]) {
-            commentMap[comment.threadOf.id].children.push(comment);
-          }
+    const dateCache = new Map();
+    const getDate = (id) => {
+      if (!dateCache.has(id)) {
+        dateCache.set(id, new Date(id).getTime());
+      }
+      return dateCache.get(id);
+    };
+
+    for (const comment of sortedComments) {
+      comment.children = [];
+      commentMap.set(comment.id, comment);
+    }
+
+    const rootComments: any[] = [];
+    for (const comment of sortedComments) {
+      if (comment.threadOf) {
+        const parentComment = commentMap.get(comment.threadOf.id);
+        if (parentComment) {
+          parentComment.children.push(comment);
         }
-      });
+      } else {
+        rootComments.push(comment);
+      }
+    }
 
-    const rootComments = flatComments.filter((comment) => !comment.threadOf);
-
-    return rootComments.sort((a, b) => new Date(b.id) - new Date(a.id));
+    return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
   };
 
   const handleLoginModalOpen = () => {
@@ -211,7 +222,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
         key={comment.id}
         actions={[
           <span key="comment-basic-reply-to" onClick={() => setReplyingTo(comment.id)}>
-            <Translate id="comment.reply">回复</Translate>
+            {translate({ id: "comment.reply", message: "回复" })}
           </span>,
         ]}
         author={comment.author?.name}
@@ -248,7 +259,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
               />
             </Form.Item>
             <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "reply")} />
-            {showEmojiPickerReply && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelectreply} />}
+            {showEmojiPickerReply && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelectreply} />}
             <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "reply")} style={{ marginLeft: "2px" }} />
             {showGiphySearchBoxReply && (
               <ReactGiphySearchBox
@@ -263,15 +274,15 @@ const Comments = ({ pageId, currentUserId, type }) => {
             {currentUserId ? (
               <>
                 <Button htmlType="submit" type="primary" style={{ marginLeft: "5px" }}>
-                  <Translate id="reply.submit">回复</Translate>
+                  {translate({ id: "reply.submit", message: "回复" })}
                 </Button>
                 <Button onClick={handleCancelReply} style={{ marginLeft: "10px" }}>
-                  <Translate id="cancel">取消</Translate>
+                  {translate({ id: "cancel", message: "取消" })}
                 </Button>
               </>
             ) : (
               <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "5px" }}>
-                <Translate id="button.login">登录</Translate>
+                {translate({ id: "button.login", message: "登录" })}
               </Button>
             )}
           </Form>
@@ -317,8 +328,8 @@ const Comments = ({ pageId, currentUserId, type }) => {
           />
         </Form.Item>
         <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "comment")} />
-        {showEmojiPicker && <Picker data={data} theme="light" onEmojiSelect={handleEmojiSelect} />}
-        <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "comment")} style={{ marginLeft: "2px" }} />
+        {showEmojiPicker && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelect} />}
+        <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "comment")} style={{ marginLeft: "5px" }} />
         {showGiphySearchBox && (
           <ReactGiphySearchBox
             apiKey="36zezehgQXZMRV6Mko784D9OEBm0UHiP"
@@ -330,12 +341,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
           />
         )}
         {currentUserId ? (
-          <Button htmlType="submit" type="primary" style={{ marginLeft: "5px" }}>
-            <Translate id="comment.add">提交评论</Translate>
+          <Button htmlType="submit" type="primary" style={{ marginLeft: "8px" }}>
+            {translate({ id: "comment.add", message: "提交评论" })}
           </Button>
         ) : (
-          <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "5px" }}>
-            <Translate id="button.login">登录</Translate>
+          <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "8px" }}>
+            {translate({ id: "button.login", message: "登录" })}
           </Button>
         )}
       </Form>
