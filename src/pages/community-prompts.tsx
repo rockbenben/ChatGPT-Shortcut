@@ -250,7 +250,7 @@ const CommunityPrompts = () => {
                         {UserPrompt.remark && <p className={styles.showcaseCardBody}>👉 {UserPrompt.remark}</p>}
                         <p className={styles.showcaseCardBody}>
                           {UserPrompt.notes ? (
-                            <Tooltip placement="bottom" title={truncate(UserPrompt.notes, 300)} overlayStyle={{ maxWidth: 450 }}>
+                            <Tooltip placement="right" title={truncate(UserPrompt.notes, 300)} style={{ maxWidth: 450 }}>
                               {UserPrompt.description}
                             </Tooltip>
                           ) : (
