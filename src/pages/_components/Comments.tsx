@@ -355,6 +355,8 @@ const Comments = ({ pageId, currentUserId, type }) => {
         current={currentPage}
         pageSize={pageSize}
         total={totalCommentsCount}
+        showQuickJumper
+        showSizeChanger={false}
         onChange={(page, pageSize) => {
           setCurrentPage(page);
           setPageSize(pageSize);
