@@ -38,6 +38,16 @@ const config = {
       },
     },
   },
+  /* future: {
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: false,
+      rspackBundler: false,
+      mdxCrossCompilerCache: true,
+    },
+  }, */
 
   presets: [
     [
@@ -185,9 +195,6 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-      },
-      future: {
-        experimental_faster: true,
       },
 
       /* announcementBar: {
