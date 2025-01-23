@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { translate } from "@docusaurus/Translate";
 import { List, Avatar, Button, Form, Input, Modal, Pagination } from "antd";
 import { SmileOutlined, GifOutlined } from "@ant-design/icons";
@@ -16,11 +16,30 @@ import Picker from "@emoji-mart/react";
 
 dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835", "#1565C0", "#283593", "#2E7D32", "#C2185B", "#4CAF50", "#9C27B0", "#607D8B", "#424242", "#1976D2"];
-const getRandomColor = () => backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+const useUserColorCache = () => {
+  const colorCache = useMemo(() => new Map(), []);
+
+  const getUserColor = useCallback((username: string | null | undefined) => {
+    // Return a default color if username is empty or null
+    if (!username) return "#607D8B"; // A consistent default color
+
+    if (colorCache.has(username)) {
+      return colorCache.get(username);
+    }
+
+    const color = backgroundColors[Math.abs(username.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % backgroundColors.length];
+
+    colorCache.set(username, color);
+    return color;
+  }, []);
+
+  return getUserColor;
+};
 
 const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
 
 const Comments = ({ pageId, currentUserId, type }) => {
+  const getUserColor = useUserColorCache();
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
   const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
@@ -277,7 +296,7 @@ const Comments = ({ pageId, currentUserId, type }) => {
           </span>,
         ]}
         author={comment.author?.name}
-        avatar={<Avatar style={{ backgroundColor: getRandomColor(), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
+        avatar={<Avatar style={{ backgroundColor: getUserColor(comment.author?.name), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
