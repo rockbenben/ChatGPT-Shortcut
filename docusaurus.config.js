@@ -41,9 +41,9 @@ const config = {
       },
     },
   },
-  future: {
+  /*   future: {
     experimental_faster: true,
-  },
+  }, */
 
   presets: [
     [
