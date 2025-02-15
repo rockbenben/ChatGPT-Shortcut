@@ -1,13 +1,48 @@
 # 项目部署
 
-AI Short 是一个开源项目，你可以自由修改网站的名称和说明。
+## 配置与自定义
 
-- 要更改页面名称，请编辑 `docusaurus.config.js` 文件。
-- 要修改使用说明，请前往 `docs` 目录。
-- 若要修改提示词，你可以在 `src/data/prompt.json` 中找到它们。如果你只需要修改单个语言，比如中文，可以直接编辑 `src/data/prompt_zh.json`。
-- 目前，用户后端已连接到一个共用后台系统。如果需要，你可以自行建立后端，相关接口位于 `src/api.js` 文件中。
+AI Short 是一个开源项目，你可以根据需求自由修改网站的标题、描述、提示词等内容。以下是常见的修改选项及操作说明：
 
-`CodeUpdateHandler.py` 是用于批量处理多语言部署的脚本。完成修改后，执行 `python CodeUpdateHandler.py`，它将根据规则将 `prompt.json` 拆分为多种语言，并同步各语言的主页面代码以及精选提示词的独立页面代码。
+- **修改网站标题和描述**  
+  要更改网站的标题和描述信息，请编辑 `docusaurus.config.js` 配置文件。
+
+- **修改项目的使用说明和介绍**  
+  项目的使用说明和介绍文件位于 `docs` 目录下。打开该目录中的相关文件，进行必要的修改。
+
+- **修改主页提示词**  
+  主页提示词存储在 `src/data/prompt.json` 文件中。如果需要修改特定语言的提示词，例如中文，可以直接编辑 `src/data/prompt_zh.json` 文件。新增提示词时，格式如下：
+
+  ```json
+  {
+    "zh": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": [
+      "music"
+    ],
+    "id": 500, 
+    "weight": 1
+  }
+  ```
+
+  **注意**：建议将 `id` 设置为 500 以上。新增的提示词不会有专属页面和评论区。如果需要为提示词添加专属页面，可以复制 `src/data/pages/prompt` 目录下的模板文件进行修改。
+
+- **自定义后端**  
+  当前项目已连接至一个共享的后台系统。如果你希望自行搭建后端，可以参考 `src/api.js` 文件中的接口说明。
+
+- **多语言支持与部署**  
+  在完成多语言修改后，你可以使用 `CodeUpdateHandler.py` 脚本进行批量处理。执行以下命令：
+
+  ```bash
+  python CodeUpdateHandler.py
+  ```
+
+  该脚本会根据预设规则拆分 `prompt.json` 文件，并同步更新各语言版本的主页面和精选提示词页面。
 
 ## 部署说明
 
