@@ -1,13 +1,48 @@
 # Deploy
 
-AI Short is an open source project, you can modify the name and description of the website freely.
+## Configuration and Customization
 
-- To change the page name, edit the `docusaurus.config.js` file.
-- To modify the instructions, go to the `docs` directory.
-- To modify the prompt words, you can find them in `src/data/prompt.json`. If you only need to modify a single language, such as Chinese, you can directly edit `src/data/prompt_zh.json`.
-- Currently, the user backend is connected to a common backend system. If necessary, you can build your own backend, and the relevant interface is located in the `src/api.js` file.
+AI Short is an open-source project that you can customize based on your needs. Below are common customization options and instructions:
 
-`CodeUpdateHandler.py` is a script for batch processing multi-language deployment. After completing the modification, execute `python CodeUpdateHandler.py`, which will split `prompt.json` into multiple languages ​​according to the rules, and synchronize the main page code of each language and the independent page code of the selected prompt words.
+- **Change Website Title and Description**  
+  To update the website's title and description, edit the `docusaurus.config.js` configuration file.
+
+- **Modify Usage Instructions and Introduction**  
+  The project’s usage instructions and introduction can be found in the `docs` directory. Open the relevant files and make the necessary changes.
+
+- **Change Homepage Prompts**  
+  Homepage prompts are stored in the `src/data/prompt.json` file. To modify prompts in specific languages, such as English, edit the `src/data/prompt_en.json` file directly. To add a new prompt, use the following format:
+
+  ```json
+  {
+    "en": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": [
+      "music"
+    ],
+    "id": 500, 
+    "weight": 1
+  }
+  ```
+
+  **Note**: It's recommended to set the `id` to 500 or higher. New prompts won’t have dedicated pages or comment sections. If you want a dedicated page for a prompt, you can copy the template files from `src/data/pages/prompt` and modify them.
+
+- **Customize Backend**  
+  The project is currently connected to a shared backend system. If you wish to set up your own backend, refer to the API documentation in the `src/api.js` file.
+
+- **Multilingual Support and Deployment**  
+  After updating the language files, you can use the `CodeUpdateHandler.py` script for batch processing. Run the following command:
+
+  ```bash
+  python CodeUpdateHandler.py
+  ```
+
+  This script will split the `prompt.json` file based on predefined rules and update the homepage and featured prompts pages for all language versions.
 
 ## Deployment
 

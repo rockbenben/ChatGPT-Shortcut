@@ -1,13 +1,48 @@
 # Implantar
 
-AI Short é um projeto de código aberto, você pode modificar o nome e a descrição do site livremente.
+## Configuração e Personalização
 
-- Para alterar o nome da página, edite o arquivo `docusaurus.config.js`.
-- Para modificar as instruções, vá para o diretório `docs`.
-- Para modificar as palavras do prompt, você pode encontrá-las em `src/data/prompt.json`. Se você só precisa modificar um único idioma, como chinês, você pode editar diretamente `src/data/prompt_zh.json`.
-- Atualmente, o backend do usuário está conectado a um sistema de backend comum. Se necessário, você pode construir seu próprio backend, e a interface relevante está localizada no arquivo `src/api.js`.
+AI Short é um projeto de código aberto que você pode personalizar conforme suas necessidades. Abaixo estão as opções de personalização comuns e suas instruções:
 
-`CodeUpdateHandler.py` é um script para processamento em lote de implantação multilíngue. Após concluir a modificação, execute `python CodeUpdateHandler.py`, que dividirá `prompt.json` em vários idiomas de acordo com as regras e sincronizará o código da página principal de cada idioma e o código da página independente das palavras de prompt selecionadas.
+- **Alterar Título e Descrição do Site**  
+  Para atualizar o título e a descrição do site, edite o arquivo de configuração `docusaurus.config.js`.
+
+- **Modificar Instruções de Uso e Introdução**  
+  As instruções de uso e a introdução do projeto podem ser encontradas no diretório `docs`. Abra os arquivos relevantes e faça as alterações necessárias.
+
+- **Alterar Prompt da Página Inicial**  
+  Os prompts da página inicial são armazenados no arquivo `src/data/prompt.json`. Para modificar prompts em idiomas específicos, como o português, edite diretamente o arquivo `src/data/prompt_pt.json`. Para adicionar um novo prompt, use o seguinte formato:
+
+  ```json
+  {
+    "pt": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": [
+      "music"
+    ],
+    "id": 500, 
+    "weight": 1
+  }
+  ```
+
+  **Observação**: Recomenda-se definir o `id` como 500 ou superior. Novos prompts não terão páginas ou seções de comentários dedicadas. Se você deseja uma página dedicada para um prompt, pode copiar os arquivos de modelo do diretório `src/data/pages/prompt` e modificá-los.
+
+- **Personalizar Backend**  
+  O projeto está atualmente conectado a um sistema de backend compartilhado. Se você deseja configurar seu próprio backend, consulte a documentação da API no arquivo `src/api.js`.
+
+- **Suporte Multilíngue e Implantação**  
+  Após atualizar os arquivos de idioma, você pode usar o script `CodeUpdateHandler.py` para processamento em lote. Execute o seguinte comando:
+
+  ```bash
+  python CodeUpdateHandler.py
+  ```
+
+  Este script irá dividir o arquivo `prompt.json` com base nas regras predefinidas e atualizar a página inicial e a página de prompts em destaque para todas as versões de idioma.
 
 ## Implantação
 
