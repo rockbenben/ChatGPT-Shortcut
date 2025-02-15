@@ -10,40 +10,22 @@ import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { updateCopyCount } from "@site/src/api";
 
-// 懒加载非关键组件
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const Comments = React.lazy(() => import("./Comments"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
-// 预定义样式以减少运行时计算
+const { Paragraph } = Typography;
+
 const styles = {
   container: { marginTop: "20px" },
   badge: { backgroundColor: "#52c41a" },
-  copyButton: { marginLeft: "6px" },
   remark: { color: "#595959" },
-  promptText: {
-    cursor: "pointer",
-    maxHeight: "500px",
-    overflowY: "auto",
-    // 预留空间防止布局偏移
-    minHeight: "100px",
-  },
   commentInfo: {
     color: "gray",
     fontSize: "0.9em",
     marginTop: "20px",
   },
 };
-
-// 抽离卡片标题组件以优化重渲染
-const CardTitle = React.memo(({ title, weight, copied, onCopyClick }) => (
-  <span>
-    {title} <Badge count={`Weight: ${weight}`} style={styles.badge} />
-    <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={onCopyClick} style={styles.copyButton}>
-      {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-    </Button>
-  </span>
-));
 
 function PromptPage({ prompt }) {
   const { userAuth } = useContext(AuthContext);
@@ -88,19 +70,28 @@ function PromptPage({ prompt }) {
           <Col xs={24} sm={22} md={20} lg={18} xl={16}>
             <Card
               className="shadow--md"
-              title={<CardTitle title={title} weight={weight} copied={copied} onCopyClick={handleCopyClick} />}
+              title={
+                <>
+                  {title} <Badge count={`Weight: ${weight}`} style={styles.badge} />
+                </>
+              }
               extra={
-                website && (
-                  <Link to={website}>
-                    <LinkOutlined />
-                  </Link>
-                )
+                <Space>
+                  <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick}>
+                    {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                  </Button>
+                  {website && (
+                    <Link to={website}>
+                      <LinkOutlined />
+                    </Link>
+                  )}
+                </Space>
               }>
-              <Typography.Paragraph style={styles.remark}>👉 {remark}</Typography.Paragraph>
+              <Paragraph style={styles.remark}>👉 {remark}</Paragraph>
               <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
-                <Typography.Paragraph onClick={handleParagraphClick} style={styles.promptText}>
+                <Paragraph onClick={handleParagraphClick} style={{ cursor: "pointer", maxHeight: "500px", overflowY: "auto", minHeight: "100px" }}>
                   {mainPrompt}
-                </Typography.Paragraph>
+                </Paragraph>
               </Tooltip>
               <Space wrap>
                 {tags.map((tag) => (
@@ -109,9 +100,9 @@ function PromptPage({ prompt }) {
                   </Link>
                 ))}
               </Space>
-              <Typography.Paragraph style={styles.commentInfo}>
+              <Paragraph style={styles.commentInfo}>
                 <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
-              </Typography.Paragraph>
+              </Paragraph>
 
               <Suspense fallback={null}>
                 <AdComponent type="transverse" />
