@@ -1,4 +1,4 @@
-import React, { useContext, useState, useMemo, useEffect, useCallback } from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback, Suspense } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -20,10 +20,10 @@ import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
-import ShareButtons from "@site/src/pages/_components/ShareButtons";
 
 import styles from "@site/src/pages/styles.module.css";
 import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import { getPrompts } from "@site/src/api";
@@ -31,7 +31,8 @@ import { getPrompts } from "@site/src/api";
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
 
-import AdComponent from "@site/src/pages/_components/AdComponent";
+const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
+const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
 import favorDefault from "@site/src/data/default/favor_zh.json";
 import otherDefault from "@site/src/data/default/other_zh.json";
@@ -47,19 +48,23 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
-function ShowcaseHeader() {
-  return (
-    <section className={"text--center"}>
-      <div className={styles.hideOnMobile}>
-        <Heading as="h1">AI Short</Heading>
-        <p>{SLOGAN}</p>
-      </div>
-      <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
-    </section>
-  );
+const ShowcaseHeader = React.memo(() => (
+  <section className={"text--center"}>
+    <div className={styles.hideOnMobile}>
+      <Heading as="h1">AI Short</Heading>
+      <p>{SLOGAN}</p>
+    </div>
+    <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
+  </section>
+));
+
+interface ShowcaseFiltersProps {
+  onToggleDescription: () => void;
+  showUserFavs: boolean;
+  setShowUserFavs: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs }) {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -75,10 +80,13 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
     setShowUserFavs((prev) => !prev);
   }, [setShowUserFavs]);
 
-  let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
-  if (userAuth) {
-    modifiedTagList = modifiedTagList.filter((tag) => tag !== "favorite");
-  }
+  const modifiedTagList = useMemo(() => {
+    let tags = TagList.filter((tag) => tag !== "contribute");
+    if (userAuth) {
+      tags = tags.filter((tag) => tag !== "favorite");
+    }
+    return tags;
+  }, [userAuth]);
 
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
@@ -231,17 +239,23 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
       )}
     </section>
   );
+});
+
+interface ShowcaseCardsProps {
+  isDescription: boolean;
+  showUserFavs: boolean;
 }
 
-function ShowcaseCards({ isDescription, showUserFavs }) {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
+
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
-
   const [copiedIndex, setCopiedIndex] = useState(null);
+
   const handleCopyClick = (index) => {
     const node = filteredCommus.find((commu) => commu.id === index);
     if (node) {
@@ -307,7 +321,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             <SearchBar />
           </div>
           <NoResults />
-          <AdComponent />
+          <Suspense fallback={null}>
+            <AdComponent />
+          </Suspense>
         </div>
       </section>
     );
@@ -331,7 +347,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                   {favoriteUsers.map((user) => (
                     <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
                   ))}
-                  <AdComponent />
+                  <Suspense fallback={null}>
+                    <AdComponent />
+                  </Suspense>
                 </ul>
               </div>
             </div>
@@ -344,7 +362,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               {otherUsers.map((user) => (
                 <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
-              <AdComponent />
+              <Suspense fallback={null}>
+                <AdComponent />
+              </Suspense>
             </ul>
             {!showAllOtherUsers && (
               <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
@@ -404,13 +424,15 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             {filteredCards.map((user) => (
               <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}
-            <AdComponent />
+            <Suspense fallback={null}>
+              <AdComponent />
+            </Suspense>
           </ul>
         </div>
       )}
     </section>
   );
-}
+});
 
 export default function Showcase(): JSX.Element {
   const [Shareurl, setShareUrl] = useState("");
@@ -418,14 +440,16 @@ export default function Showcase(): JSX.Element {
   const [showUserFavs, setShowUserFavs] = useState(false);
 
   useEffect(() => {
-    setShareUrl(window.location.href);
+    if (ExecutionEnvironment.canUseDOM) {
+      setShareUrl(window.location.href);
+    }
   }, []);
 
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+  const isDarkMode = ExecutionEnvironment.canUseDOM && document.documentElement.getAttribute("data-theme") === "dark";
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -433,11 +457,7 @@ export default function Showcase(): JSX.Element {
         <AuthProvider>
           <ConfigProvider
             theme={{
-              token: {
-                colorPrimary: "#397e6a",
-              },
-              cssVar: true,
-              hashed: false,
+              ...themeConfig,
               algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
             }}>
             <ShowcaseHeader />
@@ -445,7 +465,9 @@ export default function Showcase(): JSX.Element {
             <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
           </ConfigProvider>
         </AuthProvider>
-        <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+        <Suspense fallback={null}>
+          <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+        </Suspense>
       </main>
     </Layout>
   );

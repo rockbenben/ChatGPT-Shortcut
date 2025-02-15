@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
-import { message, Tooltip, Button } from "antd";
+import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -125,7 +125,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </Link>
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
           </div>
-          <Button.Group>
+          <Space.Compact>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
                 <Button type="default" onClick={isFavorite ? removeFavorite : handleLove}>
@@ -144,7 +144,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
                 {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
               </Button>
             </Tooltip>
-          </Button.Group>
+          </Space.Compact>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
         <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>

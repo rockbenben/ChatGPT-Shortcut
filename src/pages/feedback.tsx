@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Layout from "@theme/Layout";
 import { Card, Typography, ConfigProvider, theme } from "antd";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 import Comments from "@site/src/pages/_components/Comments";
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
@@ -13,11 +14,7 @@ const FeedbackPage = () => {
   return (
     <ConfigProvider
       theme={{
-        token: {
-          colorPrimary: "#397e6a",
-        },
-        cssVar: true,
-        hashed: false,
+        ...themeConfig,
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}>
       <Layout

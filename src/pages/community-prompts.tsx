@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
@@ -6,12 +6,15 @@ import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
-import ShareButtons from "@site/src/pages/_components/ShareButtons";
-import AdComponent from "@site/src/pages/_components/AdComponent";
+
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, ConfigProvider, theme } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
+import themeConfig from "@site/src/pages/_components/themeConfig";
+
+const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
+const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
 const { Search } = Input;
 const { Text } = Typography;
@@ -203,11 +206,7 @@ const CommunityPrompts = () => {
       <main className="margin-vert--md">
         <ConfigProvider
           theme={{
-            token: {
-              colorPrimary: "#397e6a",
-            },
-            cssVar: true,
-            hashed: false,
+            ...themeConfig,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
           {contextHolder}
@@ -259,7 +258,7 @@ const CommunityPrompts = () => {
                         </p>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <Button.Group>
+                        <Space.Compact>
                           <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
                             <Button type="default" onClick={() => handleCopyClick(index)}>
                               <CopyOutlined />
@@ -283,8 +282,8 @@ const CommunityPrompts = () => {
                               <HeartOutlined />
                             </Button>
                           </Tooltip>
-                        </Button.Group>
-                        <Button.Group>
+                        </Space.Compact>
+                        <Space.Compact>
                           <Tooltip title={translate({ id: "upvote", message: "赞" })}>
                             <Button
                               type="default"
@@ -319,13 +318,15 @@ const CommunityPrompts = () => {
                               {votedDownPromptIds.includes(UserPrompt.id) ? (UserPrompt.downvotes || 0) + 1 : UserPrompt.downvotes || 0}
                             </Button>
                           </Tooltip>
-                        </Button.Group>
+                        </Space.Compact>
                       </div>
                     </div>
                   </li>
                 ))}
               </ul>
-              <AdComponent type="transverse" />
+              <Suspense fallback={null}>
+                <AdComponent type="transverse" />
+              </Suspense>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
               </div>
@@ -341,7 +342,9 @@ const CommunityPrompts = () => {
               <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
                 <LoginComponent />
               </Modal>
-              <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+              <Suspense fallback={null}>
+                <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+              </Suspense>
             </div>
           </section>
         </ConfigProvider>
