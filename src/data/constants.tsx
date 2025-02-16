@@ -1,24 +1,7 @@
 import { translate } from "@docusaurus/Translate";
 
-export const SLOGAN = translate({
-  id: "homepage.slogan",
-  message: "让生产力加倍的 AI 快捷指令",
-});
-
-export const TITLE = translate({
-  id: "homepage.title",
-  message: "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
-});
-
-export const DESCRIPTION = translate({
-  id: "homepage.description",
-  message: "AI Short 是一款用于管理和分享 AI 提示词的工具，帮助用户更有效地定制、保存和共享自己的提示词，以提高生产力。该平台还包括一个提示词分享社区，让用户轻松找到适用于不同场景的指令。",
-});
-
 export const DEFAULT_FAVORITE_IDS = [2, 209, 109, 197, 20, 199, 4];
-
 export const DEFAULT_IDS = [185, 2, 209, 109, 197, 20, 199, 4, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234];
-
 export const ALL_IDS = [
   2, 185, 209, 109, 197, 20, 199, 1, 251, 90, 4, 180, 204, 232, 218, 11, 41, 234, 196, 206, 9, 17, 8, 256, 173, 219, 7, 210, 155, 214, 56, 212, 177, 220, 224, 10, 15, 187, 5, 266, 122, 80, 238, 242,
   159, 217, 21, 19, 171, 181, 94, 200, 205, 49, 132, 14, 142, 13, 139, 190, 48, 191, 63, 158, 91, 16, 222, 75, 95, 18, 141, 277, 221, 176, 195, 6, 89, 253, 120, 182, 152, 267, 3, 24, 125, 264, 73,
@@ -28,3 +11,24 @@ export const ALL_IDS = [
   154, 29, 36, 244, 183, 31, 260, 52, 111, 59, 166, 81, 247, 263, 79, 61, 119, 68, 102, 124, 27, 30, 129, 148, 131, 229, 114, 84, 223, 107, 55, 65, 69, 161, 44, 136, 231, 116, 115, 60, 128, 164, 249,
   149, 121, 165, 108, 117, 276, 32, 83, 113, 110, 174, 268, 33, 105, 227, 34, 104, 156, 225, 127, 278,
 ];
+
+export const SLOGAN = translate({
+  id: "homepage.slogan",
+  message: "让生产力加倍的 AI 快捷指令",
+});
+export const TITLE = translate({
+  id: "homepage.title",
+  message: "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
+});
+export const DESCRIPTION = translate({
+  id: "homepage.description",
+  message: "AI Short 是一款用于管理和分享 AI 提示词的工具，帮助用户更有效地定制、保存和共享自己的提示词，以提高生产力。该平台还包括一个提示词分享社区，让用户轻松找到适用于不同场景的指令。",
+});
+
+// community-prompts
+export const COMMU_TITLE = "AiShort Community Prompts - Share and find interesting prompts";
+export const COMMU_DESCRIPTION = translate({
+  id: "description.communityPrompts",
+  message:
+    "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+});
