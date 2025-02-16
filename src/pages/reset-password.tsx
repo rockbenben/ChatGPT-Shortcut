@@ -3,6 +3,7 @@ import Layout from "@theme/Layout";
 import { Form, Input, Button, message, Typography, ConfigProvider, theme } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const { Title } = Typography;
 
@@ -51,11 +52,7 @@ const ResetPassword = () => {
     <Layout>
       <ConfigProvider
         theme={{
-          token: {
-            colorPrimary: "#397e6a",
-          },
-          cssVar: true,
-          hashed: false,
+          ...themeConfig,
           algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         }}>
         {contextHolder}

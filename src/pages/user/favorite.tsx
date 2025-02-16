@@ -12,6 +12,7 @@ import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
 import SearchBar, { NoResults, useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
 import { AuthProvider } from "../_components/AuthContext";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const UserBookmark = () => {
   const [activeTab, setActiveTab] = useState("myprompts");
@@ -47,11 +48,7 @@ const UserBookmark = () => {
       <main className="margin-vert--md">
         <ConfigProvider
           theme={{
-            token: {
-              colorPrimary: "#397e6a",
-            },
-            cssVar: true,
-            hashed: false,
+            ...themeConfig,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
           <section className="margin-top--sm margin-bottom--sm">

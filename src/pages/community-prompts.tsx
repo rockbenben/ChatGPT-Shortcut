@@ -10,6 +10,7 @@ import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, ConfigProvider, theme } from "antd";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 
 const { Search } = Input;
@@ -202,11 +203,7 @@ const CommunityPrompts = () => {
       <main className="margin-vert--md">
         <ConfigProvider
           theme={{
-            token: {
-              colorPrimary: "#397e6a",
-            },
-            cssVar: true,
-            hashed: false,
+            ...themeConfig,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
           {contextHolder}

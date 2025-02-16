@@ -23,6 +23,7 @@ import ShareButtons from "@site/src/pages/_components/ShareButtons";
 import SearchBar, { NoResults, type UserState } from "@site/src/pages/_components/SearchBar";
 
 import styles from "@site/src/pages/styles.module.css";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
 
@@ -457,11 +458,7 @@ export default function Showcase(): JSX.Element {
         <AuthProvider>
           <ConfigProvider
             theme={{
-              token: {
-                colorPrimary: "#397e6a",
-              },
-              cssVar: true,
-              hashed: false,
+              ...themeConfig,
               algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
             }}>
             <ShowcaseHeader />

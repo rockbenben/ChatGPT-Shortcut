@@ -8,6 +8,7 @@ import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined } from "@ant-de
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
+import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
@@ -265,11 +266,7 @@ const UserProfile = () => {
       <div style={{ width: 600, margin: "auto", padding: "10px" }}>
         <ConfigProvider
           theme={{
-            token: {
-              colorPrimary: "#397e6a",
-            },
-            cssVar: true,
-            hashed: false,
+            ...themeConfig,
             algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
           }}>
           {contextHolder}
