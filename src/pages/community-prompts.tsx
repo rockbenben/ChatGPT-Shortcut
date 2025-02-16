@@ -16,11 +16,11 @@ import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, Lo
 const { Search } = Input;
 const { Text } = Typography;
 
-const placeholderData = Array.from({ length: 12 }, (_, index) => ({
-  id: `placeholder-${index}`,
+const pageSize = 12;
+const placeholderData = Array.from({ length: pageSize }, (_, index) => ({
+  id: `key-${index}`,
   title: "Loading...",
-  description:
-    "You are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science: How to Write Papers That Get Cited and Proposals That Get FundedYou are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science: How to Write Papers That Get Cited and Proposals That Get FundedYou are an expert in scientific writing,  please use the rules and principles stated in the books Writing Science",
+  description: "Loading...",
   remark: null,
   notes: null,
   owner: "Loading...",
@@ -49,8 +49,6 @@ const CommunityPrompts = () => {
   const [Shareurl, setShareUrl] = useState("");
   const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
   const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
-
-  const pageSize = 12;
 
   useEffect(() => {
     setShareUrl(window.location.href);
@@ -81,20 +79,23 @@ const CommunityPrompts = () => {
     }
   }, []);
 
-  const onSearch = (value) => {
-    if (!userAuth) {
-      setOpen(true);
-      messageApi.open({
-        type: "warning",
-        content: "Please log in to search.",
-      });
-      return;
-    }
-    setSearchTerm(value);
-    setCurrentPage(1);
-  };
+  const onSearch = useCallback(
+    (value) => {
+      if (!userAuth) {
+        setOpen(true);
+        messageApi.open({
+          type: "warning",
+          content: "Please log in to search.",
+        });
+        return;
+      }
+      setSearchTerm(value);
+      setCurrentPage(1);
+    },
+    [userAuth]
+  );
 
-  const vote = async (promptId, action) => {
+  const vote = useCallback(async (promptId, action) => {
     try {
       await voteOnUserPrompt(promptId, action);
       messageApi.open({
@@ -109,62 +110,68 @@ const CommunityPrompts = () => {
         content: `Failed to ${action}. Error: ${err}`,
       });
     }
-  };
+  }, []);
 
-  const bookmark = async (promptId) => {
-    try {
-      let userLoves;
-      let favoriteId;
+  const bookmark = useCallback(
+    async (promptId) => {
+      try {
+        let userLoves;
+        let favoriteId;
 
-      if (!userAuth.data.favorites) {
-        const createFavoriteResponse = await createFavorite([promptId], true);
-        userLoves = [promptId];
-        favoriteId = createFavoriteResponse.data.id;
-      } else {
-        userLoves = userAuth.data.favorites.commLoves || [];
-        favoriteId = userAuth.data.favorites.id;
+        if (!userAuth.data.favorites) {
+          const createFavoriteResponse = await createFavorite([promptId], true);
+          userLoves = [promptId];
+          favoriteId = createFavoriteResponse.data.id;
+        } else {
+          userLoves = userAuth.data.favorites.commLoves || [];
+          favoriteId = userAuth.data.favorites.id;
 
-        if (!userLoves.includes(promptId)) {
-          userLoves.push(promptId);
-          messageApi.open({
-            type: "success",
-            content: "Added to favorites successfully!",
-          });
+          if (!userLoves.includes(promptId)) {
+            userLoves.push(promptId);
+            messageApi.open({
+              type: "success",
+              content: "Added to favorites successfully!",
+            });
+          }
         }
+        await updateFavorite(favoriteId, userLoves, true);
+      } catch (err) {
+        messageApi.open({
+          type: "error",
+          content: `Failed to add to favorites. Error: ${err}`,
+        });
       }
-      await updateFavorite(favoriteId, userLoves, true);
-    } catch (err) {
-      messageApi.open({
-        type: "error",
-        content: `Failed to add to favorites. Error: ${err}`,
-      });
-    }
-  };
+    },
+    [userAuth]
+  );
 
-  const handleCopyClick = (index) => {
-    const UserPrompt = userprompts[index];
-    if (UserPrompt) {
-      copy(UserPrompt.description);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
-    }
-  };
+  const handleCopyClick = useCallback(
+    (index) => {
+      const UserPrompt = userprompts[index];
+      if (UserPrompt) {
+        copy(UserPrompt.description);
+        setCopiedIndex(index);
+        setTimeout(() => {
+          setCopiedIndex(null);
+        }, 2000);
+      }
+    },
+    [userprompts]
+  );
 
-  const onChangePage = (page) => {
+  const onChangePage = useCallback((page) => {
     setCurrentPage(page);
-  };
+  }, []);
 
-  const handleFieldClick = (e) => {
+  const handleFieldClick = useCallback((e) => {
     setCurrentPage(1);
     setSortField(e.key);
-  };
+  }, []);
 
-  const handleOrderClick = (e) => {
+  const handleOrderClick = useCallback((e) => {
     setCurrentPage(1);
     setSortOrder(e.key);
-  };
+  }, []);
 
   const fieldMenuProps = {
     items: [
