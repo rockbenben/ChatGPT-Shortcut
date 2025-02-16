@@ -85,7 +85,7 @@ const prompt = {
     "ai"
   ],
   "id": 223,
-  "weight": 335
+  "weight": 347
 };
 
 function PromptDetail() {

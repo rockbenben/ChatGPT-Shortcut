@@ -85,7 +85,7 @@ const prompt = {
     "write"
   ],
   "id": 240,
-  "weight": 688
+  "weight": 705
 };
 
 function PromptDetail() {
