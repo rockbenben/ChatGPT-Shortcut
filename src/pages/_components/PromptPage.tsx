@@ -9,6 +9,7 @@ import copy from "copy-text-to-clipboard";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { updateCopyCount } from "@site/src/api";
+import { formatCopyCount } from "@site/src/pages/_components/utils";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const Comments = React.lazy(() => import("./Comments"));
@@ -72,7 +73,7 @@ function PromptPage({ prompt }) {
               className="shadow--md"
               title={
                 <>
-                  {title} <Badge count={`Weight: ${weight}`} style={styles.badge} />
+                  {title} <Badge count={`${formatCopyCount(weight)}`} style={styles.badge} />
                 </>
               }
               extra={

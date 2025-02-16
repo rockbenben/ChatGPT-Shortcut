@@ -11,6 +11,7 @@ import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { formatCopyCount } from "@site/src/pages/_components/utils";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -58,8 +59,6 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   };
 
   const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
-
-  const formatCopyCount = (count) => (count >= 1000 ? (count / 1000).toFixed(1) + "k" : count);
 
   const handleCopyClick = useCallback(async () => {
     try {
