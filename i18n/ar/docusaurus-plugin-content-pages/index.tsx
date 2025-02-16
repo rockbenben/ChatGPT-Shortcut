@@ -29,7 +29,7 @@ import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthConte
 import { getPrompts } from "@site/src/api";
 
 import { Tags, TagList } from "@site/src/data/tags";
-import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
+import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -273,17 +273,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
     }
 
     try {
-      const defaultFavorIds = [2, 209, 109, 197, 20, 199, 4];
-      const defaultIds = [185, 2, 209, 109, 197, 20, 199, 4, 1, 251, 90, 180, 204, 232, 218, 11, 41, 234];
-      const allIds = [
-        2, 185, 209, 109, 197, 20, 199, 1, 251, 90, 4, 180, 204, 232, 218, 11, 41, 234, 196, 206, 9, 17, 8, 256, 173, 219, 7, 210, 155, 214, 56, 212, 177, 220, 224, 10, 15, 187, 5, 266, 122, 80, 238,
-        242, 159, 217, 21, 19, 171, 181, 94, 200, 205, 49, 132, 14, 142, 13, 139, 190, 48, 191, 63, 158, 91, 16, 222, 75, 95, 18, 141, 277, 221, 176, 195, 6, 89, 253, 120, 182, 152, 267, 3, 24, 125,
-        264, 73, 255, 82, 145, 188, 50, 241, 23, 237, 93, 40, 138, 194, 160, 77, 233, 236, 42, 202, 243, 103, 259, 215, 192, 12, 239, 216, 184, 163, 250, 126, 258, 112, 147, 162, 87, 189, 265, 35, 98,
-        257, 157, 211, 57, 193, 151, 179, 175, 46, 262, 270, 130, 167, 275, 74, 228, 198, 254, 134, 72, 101, 150, 66, 261, 97, 178, 137, 203, 88, 67, 47, 106, 269, 172, 39, 38, 37, 51, 140, 96, 273,
-        123, 144, 240, 271, 274, 22, 92, 78, 213, 245, 235, 201, 85, 248, 64, 45, 58, 100, 62, 230, 71, 70, 207, 99, 28, 54, 133, 252, 76, 186, 170, 208, 135, 168, 246, 25, 86, 226, 143, 153, 272,
-        146, 43, 118, 26, 53, 169, 154, 29, 36, 244, 183, 31, 260, 52, 111, 59, 166, 81, 247, 263, 79, 61, 119, 68, 102, 124, 27, 30, 129, 148, 131, 229, 114, 84, 223, 107, 55, 65, 69, 161, 44, 136,
-        231, 116, 115, 60, 128, 164, 249, 149, 121, 165, 108, 117, 276, 32, 83, 113, 110, 174, 268, 33, 105, 227, 34, 104, 156, 225, 127, 278,
-      ];
+      const defaultFavorIds = DEFAULT_FAVORITE_IDS;
+      const defaultIds = DEFAULT_IDS;
+      const allIds = ALL_IDS;
       const favorIds = userAuth?.data?.favorites?.loves || defaultFavorIds;
 
       const idsToShow = !userAuth
