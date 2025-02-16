@@ -12,9 +12,10 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } 
 import { CSS } from "@dnd-kit/utilities";
 import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
+import { formatCopyCount } from "@site/src/pages/_components/utils";
 
 // SortableItem component for both cards and comms
-const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFiltered, handleCopyClick, removeBookmark, clickedIndex, showDescription, handleTextClick, formatCopyCount }) => {
+const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFiltered, handleCopyClick, removeBookmark, clickedIndex, showDescription, handleTextClick }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.id });
 
   const style = {
@@ -160,8 +161,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     setShowDescription((prev) => !prev);
   };
 
-  const formatCopyCount = (count) => (count >= 1000 ? (count / 1000).toFixed(1) + "k" : count);
-
   const handleCopyClick = useCallback(
     (index, item, isComm = false) => {
       const text = isComm ? item.description : item[currentLanguage].prompt;
@@ -252,7 +251,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                           clickedIndex={clickedIndex}
                           showDescription={showDescription}
                           handleTextClick={handleTextClick}
-                          formatCopyCount={formatCopyCount}
                         />
                       ))}
                     </ul>
@@ -275,7 +273,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                           clickedIndex={clickedIndex}
                           showDescription={showDescription}
                           handleTextClick={handleTextClick}
-                          formatCopyCount={formatCopyCount}
                         />
                       ))}
                     </ul>

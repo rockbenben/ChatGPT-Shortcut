@@ -12,6 +12,7 @@ import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@si
 import { AuthContext } from "../AuthContext";
 
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { formatCopyCount } from "@site/src/pages/_components/utils";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -66,13 +67,6 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
   const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
 
   const [copied, setShowCopied] = useState(false);
-  // 将显示数据单位简化到 k
-  const formatCopyCount = (count) => {
-    if (count >= 1000) {
-      return (count / 1000).toFixed(1) + "k";
-    }
-    return count;
-  };
 
   const handleCopyClick = useCallback(async () => {
     try {
