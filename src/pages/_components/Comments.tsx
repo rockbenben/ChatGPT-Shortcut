@@ -10,25 +10,21 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
-
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
 dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835", "#1565C0", "#283593", "#2E7D32", "#C2185B", "#4CAF50", "#9C27B0", "#607D8B", "#424242", "#1976D2"];
+const pageSize = 12;
+
 const useUserColorCache = () => {
   const colorCache = useMemo(() => new Map(), []);
-
   const getUserColor = useCallback((username: string | null | undefined) => {
-    // Return a default color if username is empty or null
-    if (!username) return "#607D8B"; // A consistent default color
-
+    if (!username) return "#607D8B";
     if (colorCache.has(username)) {
       return colorCache.get(username);
     }
-
     const color = backgroundColors[Math.abs(username.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % backgroundColors.length];
-
     colorCache.set(username, color);
     return color;
   }, []);
@@ -36,15 +32,12 @@ const useUserColorCache = () => {
   return getUserColor;
 };
 
-const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
-
 const Comments = ({ pageId, currentUserId, type }) => {
   const getUserColor = useUserColorCache();
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
   const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
   const [showGiphySearchBoxReply, setShowGiphySearchBoxReply] = useState(false);
-
   const [comments, setComments] = useState<any[]>([]);
   const [form] = Form.useForm();
   const [replyForm] = Form.useForm();
@@ -52,15 +45,26 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [refresh, setRefresh] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(20);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 检查暗色模式
+  useEffect(() => {
+    setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
+  }, []);
 
   const fetchComments = useCallback(async () => {
-    const response = await getComments(pageId, currentPage, pageSize, type);
-    if (response) {
-      const nestedComments = nestComments(response.data);
-      setComments(nestedComments);
-      setTotalCommentsCount(response.meta.pagination.total);
+    setIsLoading(true);
+    try {
+      const response = await getComments(pageId, currentPage, pageSize, type);
+      if (response) {
+        const nestedComments = nestComments(response.data);
+        setComments(nestedComments);
+        setTotalCommentsCount(response.meta.pagination.total);
+      }
+    } finally {
+      setIsLoading(false);
     }
   }, [pageId, currentPage, pageSize, type]);
 
@@ -360,25 +364,27 @@ const Comments = ({ pageId, currentUserId, type }) => {
         <LoginComponent />
       </Modal>
       {renderForm()}
-      <List
-        className="comment-list"
-        header={`${totalCommentsCount} ${translate({
-          id: "comment.comments",
-          message: "评论",
-        })}`}
-        itemLayout="horizontal"
-        dataSource={comments}
-        renderItem={renderComment}
-      />
+      <div style={{ minHeight: 200 }}>
+        <List
+          loading={isLoading}
+          className="comment-list"
+          header={`${totalCommentsCount} ${translate({
+            id: "comment.comments",
+            message: "评论",
+          })}`}
+          itemLayout="horizontal"
+          dataSource={comments}
+          renderItem={renderComment}
+        />
+      </div>
       <Pagination
         current={currentPage}
         pageSize={pageSize}
         total={totalCommentsCount}
         showQuickJumper
         showSizeChanger={false}
-        onChange={(page, pageSize) => {
+        onChange={(page) => {
           setCurrentPage(page);
-          setPageSize(pageSize);
         }}
       />
     </>
