@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "होम"
+  },
+  "input.password.match": {
+    "message": "पासवर्ड मेल नहीं खाया!"
+  },
+  "input.password.valid": {
+    "message": "पासवर्ड कम से कम 6 अंकों का होना चाहिए।"
+  },
+  "message.forgotPassword.info": {
+    "message": "आपके ईमेल पर एक पासवर्ड रीसेट लिंक भेजा जाएगा।"
+  },
+  "input.email.valid": {
+    "message": "कृपया एक मान्य ईमेल दर्ज करें!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "आपके ईमेल पर एक लॉगिन लिंक भेजा जाएगा। बिना पासवर्ड के लॉग इन करने के लिए उस पर क्लिक करें।"
   }
 }

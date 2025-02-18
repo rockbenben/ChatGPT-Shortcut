@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "홈"
+  },
+  "input.password.match": {
+    "message": "비밀번호가 일치하지 않습니다!"
+  },
+  "input.password.valid": {
+    "message": "비밀번호는 6 자 이상이어야 합니다."
+  },
+  "message.forgotPassword.info": {
+    "message": "비밀번호 재설정 링크가 이메일로 전송됩니다."
+  },
+  "input.email.valid": {
+    "message": "유효한 이메일을 입력하세요!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "로그인 링크가 이메일로 전송됩니다. 이를 클릭하면 비밀번호 없이 로그인할 수 있습니다."
   }
 }

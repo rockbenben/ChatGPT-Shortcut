@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "Home"
+  },
+  "input.password.match": {
+    "message": "The passwords do not match!"
+  },
+  "input.password.valid": {
+    "message": "Password must be at least 6 characters."
+  },
+  "message.forgotPassword.info": {
+    "message": "A password reset link will be sent to your email."
+  },
+  "input.email.valid": {
+    "message": "Please enter a valid email!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "A login link will be sent to your email. Click it to log in without password."
   }
 }

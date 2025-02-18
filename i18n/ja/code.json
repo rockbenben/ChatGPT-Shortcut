@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "ホーム"
+  },
+  "input.password.match": {
+    "message": "パスワードが一致しない！"
+  },
+  "input.password.valid": {
+    "message": "パスワードは 6 文字以上でなければならない。"
+  },
+  "message.forgotPassword.info": {
+    "message": "パスワードリセットリンクが E メールに送信されます。"
+  },
+  "input.email.valid": {
+    "message": "有効な E メールを入力してください！"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "ログインリンクが E メールに送信されます。クリックするとパスワードなしでログインできます。"
   }
 }
