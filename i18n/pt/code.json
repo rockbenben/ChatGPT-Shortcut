@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "Início"
+  },
+  "input.password.match": {
+    "message": "As palavras-passe não coincidem!"
+  },
+  "input.password.valid": {
+    "message": "A palavra-passe deve ter pelo menos 6 caracteres."
+  },
+  "message.forgotPassword.info": {
+    "message": "Será enviada para o seu correio eletrónico uma ligação para redefinir a palavra-passe."
+  },
+  "input.email.valid": {
+    "message": "Introduza um e-mail válido!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "Será enviada uma ligação de início de sessão para o seu correio eletrónico. Clique nela para iniciar sessão sem palavra-passe."
   }
 }

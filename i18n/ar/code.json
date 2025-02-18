@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "الرئيسية"
+  },
+  "input.password.match": {
+    "message": "كلمات المرور غير متطابقة!"
+  },
+  "input.password.valid": {
+    "message": "يجب ألا تقل كلمة المرور عن 6 أحرف."
+  },
+  "message.forgotPassword.info": {
+    "message": "سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني."
+  },
+  "input.email.valid": {
+    "message": "الرجاء إدخال بريد إلكتروني صحيح!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "سيتم إرسال رابط تسجيل الدخول إلى بريدك الإلكتروني. انقر عليه لتسجيل الدخول بدون كلمة مرور."
   }
 }

@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "হোম"
+  },
+  "input.password.match": {
+    "message": "পাসওয়ার্ডগুলো মিলছে না!"
+  },
+  "input.password.valid": {
+    "message": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।"
+  },
+  "message.forgotPassword.info": {
+    "message": "আপনার ইমেইলে একটি পাসওয়ার্ড রিসেট লিঙ্ক পাঠানো হবে।"
+  },
+  "input.email.valid": {
+    "message": "অনুগ্রহ করে একটি বৈধ ইমেইল লিখুন!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "আপনার ইমেইলে একটি লগইন লিঙ্ক পাঠানো হবে। পাসওয়ার্ড ছাড়াই লগ ইন করতে এটিতে ক্লিক করুন।"
   }
 }

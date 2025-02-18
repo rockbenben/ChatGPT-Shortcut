@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "Home"
+  },
+  "input.password.match": {
+    "message": "Le password non corrispondono!"
+  },
+  "input.password.valid": {
+    "message": "La password deve essere composta da almeno 6 caratteri."
+  },
+  "message.forgotPassword.info": {
+    "message": "Un link per la reimpostazione della password verrà inviato al vostro indirizzo e-mail."
+  },
+  "input.email.valid": {
+    "message": "Inserisci un'email valida!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "Un link di accesso verrà inviato al vostro indirizzo e-mail. Fare clic su di esso per accedere senza password."
   }
 }

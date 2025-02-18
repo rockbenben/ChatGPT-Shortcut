@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "Accueil"
+  },
+  "input.password.match": {
+    "message": "Les mots de passe ne correspondent pas !"
+  },
+  "input.password.valid": {
+    "message": "Le mot de passe doit comporter au moins 6 caractères."
+  },
+  "message.forgotPassword.info": {
+    "message": "Un lien de réinitialisation du mot de passe sera envoyé à votre adresse e-mail."
+  },
+  "input.email.valid": {
+    "message": "Veuillez entrer une adresse email valide !"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "Un lien de connexion vous sera envoyé par email. Cliquez dessus pour vous connecter sans mot de passe."
   }
 }

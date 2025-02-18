@@ -836,5 +836,20 @@
   },
   "link.home": {
     "message": "Inicio"
+  },
+  "input.password.match": {
+    "message": "¡Las contraseñas no coinciden!"
+  },
+  "input.password.valid": {
+    "message": "La contraseña debe tener al menos 6 caracteres."
+  },
+  "message.forgotPassword.info": {
+    "message": "Se enviará un enlace para restablecer la contraseña a su correo electrónico."
+  },
+  "input.email.valid": {
+    "message": "¡Por favor ingrese un email válido!"
+  },
+  "message.passwordlessLogin.info": {
+    "message": "Se enviará un enlace de inicio de sesión a su correo electrónico. Haga clic en él para iniciar sesión sin contraseña."
   }
 }
