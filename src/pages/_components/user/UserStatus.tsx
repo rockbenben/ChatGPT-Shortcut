@@ -191,7 +191,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         </button>
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
           <Button type="default" icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
-            <Translate id="button.clearCache">清除缓存</Translate>
+            <span className="hide-on-small-screen-500">
+              <Translate id="button.clearCache">清除缓存</Translate>
+            </span>
           </Button>
         </Tooltip>
         <Button
@@ -205,7 +207,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
             });
           }}
           style={{ color: "gray" }}>
-          <Translate id="button.logout">退出登录</Translate>
+          <span className="hide-on-small-screen-500">
+            <Translate id="button.logout">退出登录</Translate>
+          </span>
         </Button>
       </Space>
     ),
@@ -214,14 +218,14 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
 
   const loggedOutButtons = useMemo(
     () => (
-      <Space wrap size="middle">
-        <button className="button button--secondary" onClick={() => setOpen(true)}>
+      <>
+        <button className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id="button.login">登录</Translate>
         </button>
         <Link className="button button--primary" to="/community-prompts">
           <Translate id="showcase.header.button">🙏 分享你的提示词</Translate>
         </Link>
-      </Space>
+      </>
     ),
     []
   );
