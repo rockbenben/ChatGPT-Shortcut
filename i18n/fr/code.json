@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "Un lien de connexion vous sera envoyé par email. Cliquez dessus pour vous connecter sans mot de passe."
+  },
+  "message.fetchError": {
+    "message": "Échec de la récupération des invites. Veuillez réessayer plus tard."
+  },
+  "message.noPrompts": {
+    "message": "Aucun texte n'a encore été soumis. Veuillez ajouter vos messages."
+  },
+  "message.cache.cleared": {
+    "message": "Le cache a été effacé."
+  },
+  "tooltip.clearCache": {
+    "message": "Si vous avez mis à jour votre favori ou vos invites sur un autre appareil, cliquez sur pour effacer le cache et synchroniser le dernier contenu."
+  },
+  "button.clearCache": {
+    "message": "Effacer le cache"
   }
 }

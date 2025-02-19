@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "ログインリンクが E メールに送信されます。クリックするとパスワードなしでログインできます。"
+  },
+  "message.fetchError": {
+    "message": "プロンプトの取得に失敗しました。後で再試行してください。"
+  },
+  "message.noPrompts": {
+    "message": "まだプロンプトが投稿されていません。プロンプトを追加してください。"
+  },
+  "message.cache.cleared": {
+    "message": "キャッシュがクリアされました。"
+  },
+  "tooltip.clearCache": {
+    "message": "他のデバイスでお気に入りやプロンプトを更新した場合は、クリックしてキャッシュをクリアし、最新のコンテンツを同期してください。"
+  },
+  "button.clearCache": {
+    "message": "キャッシュクリア"
   }
 }

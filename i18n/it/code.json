@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "Un link di accesso verrà inviato al vostro indirizzo e-mail. Fare clic su di esso per accedere senza password."
+  },
+  "message.fetchError": {
+    "message": "Impossibile recuperare i prompt. Riprovare più tardi."
+  },
+  "message.noPrompts": {
+    "message": "Non sono ancora stati inviati suggerimenti. Aggiungete i vostri suggerimenti."
+  },
+  "message.cache.cleared": {
+    "message": "La cache è stata cancellata."
+  },
+  "tooltip.clearCache": {
+    "message": "Se si è aggiornato il favore o i suggerimenti su un altro dispositivo, fare clic per cancellare la cache e sincronizzare i contenuti più recenti."
+  },
+  "button.clearCache": {
+    "message": "Cancella la cache"
   }
 }

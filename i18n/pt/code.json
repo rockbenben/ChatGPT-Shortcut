@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "Será enviada uma ligação de início de sessão para o seu correio eletrónico. Clique nela para iniciar sessão sem palavra-passe."
+  },
+  "message.fetchError": {
+    "message": "Falha na obtenção de prompts. Por favor, tente novamente mais tarde."
+  },
+  "message.noPrompts": {
+    "message": "Ainda não foram enviadas mensagens. Por favor, adicione as suas sugestões."
+  },
+  "message.cache.cleared": {
+    "message": "A cache foi limpa."
+  },
+  "tooltip.clearCache": {
+    "message": "Se tiver atualizado os seus favoritos ou avisos noutro dispositivo, clique para limpar a cache e sincronizar o conteúdo mais recente."
+  },
+  "button.clearCache": {
+    "message": "Limpar cache"
   }
 }

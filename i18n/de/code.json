@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "Ein Anmeldelink wird an Ihre E-Mail gesendet. Klicken Sie darauf, um sich ohne Passwort anzumelden."
+  },
+  "message.fetchError": {
+    "message": "Die Eingabeaufforderungen konnten nicht abgerufen werden. Bitte versuchen Sie es später noch einmal."
+  },
+  "message.noPrompts": {
+    "message": "Noch keine Prompts eingereicht. Bitte fügen Sie Ihre Prompts hinzu."
+  },
+  "message.cache.cleared": {
+    "message": "Der Cache wurde geleert."
+  },
+  "tooltip.clearCache": {
+    "message": "Wenn Sie Ihre Favoriten oder Eingabeaufforderungen auf einem anderen Gerät aktualisiert haben, klicken Sie auf , um den Cache zu leeren und die neuesten Inhalte zu synchronisieren."
+  },
+  "button.clearCache": {
+    "message": "Cache löschen"
   }
 }
