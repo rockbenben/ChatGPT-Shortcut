@@ -9,7 +9,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } 
 import { CSS } from "@dnd-kit/utilities";
 import styles from "../ShowcaseCard/styles.module.css";
 
-import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
+import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache, clearUserAllInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
 // SortableItem component
@@ -97,20 +97,40 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
 
   useEffect(() => {
     if (!userAuth?.data) return;
+    let isMounted = true;
+
     const fetchPrompts = async () => {
+      setLoading(true);
       try {
         if (isFiltered) {
           setUserPrompts(filteredCommus);
         } else {
           const myPrompts = userAuth.data?.userprompts || [];
           const myPromptsData = await getPrompts("userprompts", myPrompts);
-          setUserPrompts(myPromptsData);
+          if (isMounted) {
+            setUserPrompts(myPromptsData);
+          }
         }
       } catch (error) {
         console.error("Failed to fetch prompts:", error);
+        if (isMounted) {
+          messageApi.error(
+            translate({
+              id: "message.fetchError",
+              message: "获取提示词失败，请稍后重试",
+            })
+          );
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
     fetchPrompts();
+    return () => {
+      isMounted = false;
+    };
   }, [userAuth, isFiltered, filteredCommus]);
 
   const handleCopyClick = useCallback(
@@ -138,50 +158,70 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
 
   const onUpdateprompt = useCallback(
     async (values) => {
+      setLoading(true);
       try {
         await updatePrompt(editingPromptId, values);
         refreshUserAuth();
-        messageApi.open({
-          type: "success",
-          content: <Translate id="message.success">词条提交成功！</Translate>,
-        });
+        messageApi.success(
+          translate({
+            id: "message.success",
+            message: "词条提交成功！",
+          })
+        );
         setOpen(false);
+        form.resetFields();
       } catch (err) {
         console.error(err);
-        messageApi.open({
-          type: "error",
-          content: <Translate id="message.error">词条提交失败，请稍后重试</Translate>,
-        });
+        clearUserAllInfoCache();
+        refreshUserAuth();
+        messageApi.error(
+          translate({
+            id: "message.error",
+            message: "词条提交失败，请稍后重试",
+          })
+        );
+        setOpen(false);
+      } finally {
+        setLoading(false);
       }
     },
-    [editingPromptId, refreshUserAuth]
+    [editingPromptId, refreshUserAuth, form]
   );
 
-  const handleDeletePrompt = (promptId) => {
-    Modal.confirm({
-      title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
-      content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
-      onOk: async () => {
-        try {
-          await deletePrompt(promptId);
-          refreshUserAuth();
-          messageApi.open({
-            type: "success",
-            content: <Translate id="message.deletePrompt.success">Prompt successfully deleted!</Translate>,
-          });
-        } catch (err) {
-          console.error(err);
-          messageApi.open({
-            type: "error",
-            content: <Translate id="message.deletePrompt.error">Failed to delete prompt, please try again later.</Translate>,
-          });
-        }
-      },
-      onCancel() {
-        console.log("Cancel");
-      },
-    });
-  };
+  const handleDeletePrompt = useCallback(
+    (promptId) => {
+      Modal.confirm({
+        title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
+        content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
+        onOk: async () => {
+          setLoading(true);
+          try {
+            await deletePrompt(promptId);
+            refreshUserAuth();
+            messageApi.success(
+              translate({
+                id: "message.deletePrompt.success",
+                message: "Prompt successfully deleted!",
+              })
+            );
+          } catch (err) {
+            console.error(err);
+            clearUserAllInfoCache();
+            refreshUserAuth();
+            messageApi.error(
+              translate({
+                id: "message.deletePrompt.error",
+                message: "Failed to delete prompt, please try again later.",
+              })
+            );
+          } finally {
+            setLoading(false);
+          }
+        },
+      });
+    },
+    [refreshUserAuth]
+  );
 
   const handleDragEnd = useCallback((event) => {
     const { active, over } = event;
@@ -197,49 +237,56 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
   }, []);
 
   useEffect(() => {
-    if (hasDragged) {
+    if (hasDragged && userprompts.length > 0) {
       const ids = userprompts.map((item) => item.id);
-      const objectsArray = ids.map((id) => ({ id: id }));
+      const objectsArray = ids.map((id) => ({ id }));
       updateLocalStorageCache("userprompts", objectsArray);
       updatePromptsOrder(ids);
       setHasDragged(false);
     }
-  }, [userprompts]);
+  }, [userprompts, hasDragged]);
 
-  if (!userAuth?.data || loading) {
+  if (!userAuth?.data) {
     return <Spin />;
   }
 
   return (
     <>
       {contextHolder}
-      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        <ul className="clean-list showcaseList_Cwj2">
-          {!userprompts || userprompts.length === 0 ? (
-            <li className="card shadow--md">
-              <div className={clsx("card__body", styles.cardBodyHeight)}>
-                <p>No user prompts submitted yet.</p>
-                <p>Please add your prompts.</p>
-              </div>
-            </li>
-          ) : (
-            <SortableContext items={userprompts.map((item) => item.id)}>
-              {userprompts.map((UserPrompt, index) => (
-                <SortablePromptItem
-                  key={UserPrompt.id}
-                  UserPrompt={UserPrompt}
-                  index={index}
-                  copiedIndex={copiedIndex}
-                  isFiltered={isFiltered}
-                  handleCopyClick={handleCopyClick}
-                  handleDeletePrompt={handleDeletePrompt}
-                  handleEditPrompt={handleEditPrompt}
-                />
-              ))}
-            </SortableContext>
-          )}
-        </ul>
-      </DndContext>
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
+          <Spin />
+        </div>
+      ) : (
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+          <ul className="clean-list showcaseList_Cwj2">
+            {!userprompts || userprompts.length === 0 ? (
+              <li className="card shadow--md">
+                <div className={clsx("card__body", styles.cardBodyHeight)}>
+                  <p>
+                    <Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>
+                  </p>
+                </div>
+              </li>
+            ) : (
+              <SortableContext items={userprompts.map((item) => item.id)}>
+                {userprompts.map((UserPrompt, index) => (
+                  <SortablePromptItem
+                    key={UserPrompt.id}
+                    UserPrompt={UserPrompt}
+                    index={index}
+                    copiedIndex={copiedIndex}
+                    isFiltered={isFiltered}
+                    handleCopyClick={handleCopyClick}
+                    handleDeletePrompt={handleDeletePrompt}
+                    handleEditPrompt={handleEditPrompt}
+                  />
+                ))}
+              </SortableContext>
+            )}
+          </ul>
+        </DndContext>
+      )}
 
       <Modal
         title={translate({
@@ -322,7 +369,7 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
             </Typography.Text>
           </Form.Item>
           <Form.Item>
-            <Button htmlType="submit" loading={loading}>
+            <Button type="primary" htmlType="submit" loading={loading}>
               <Translate id="button.updateprompt">更新 Prompt</Translate>
             </Button>
           </Form.Item>

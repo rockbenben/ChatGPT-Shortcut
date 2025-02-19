@@ -851,5 +851,20 @@
   },
   "message.passwordlessLogin.info": {
     "message": "A login link will be sent to your email. Click it to log in without password."
+  },
+  "message.fetchError": {
+    "message": "Failed to fetch prompts. Please try again later."
+  },
+  "message.noPrompts": {
+    "message": "No prompts submitted yet. Please add your prompts."
+  },
+  "message.cache.cleared": {
+    "message": "Cache has been cleared."
+  },
+  "tooltip.clearCache": {
+    "message": "If you’ve updated your favor or prompts on another device, click to clear the cache and sync the latest content."
+  },
+  "button.clearCache": {
+    "message": "Clear Cache"
   }
 }

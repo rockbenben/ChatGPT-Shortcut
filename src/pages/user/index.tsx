@@ -335,7 +335,7 @@ const UserProfile = () => {
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
             <div style={{ padding: "20px" }}>
-              <Space>
+              <Space size={"large"}>
                 <Link to="/">
                   <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                 </Link>

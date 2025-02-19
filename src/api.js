@@ -15,7 +15,7 @@ const config = {
 };
 
 // Remove User Cache 移除用户缓存信息
-function clearUserAllInfoCache() {
+export function clearUserAllInfoCache() {
   localStorage.removeItem("userAllInfo");
   localStorage.removeItem("userAllInfoCacheExpiration");
 }
