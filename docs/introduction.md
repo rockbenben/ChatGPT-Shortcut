@@ -1,5 +1,7 @@
 ---
 slug: /
+title: AiShort - 精选 AI 指令列表，一键提升工作效率  
+Description: AiShort 提供精选 AI 提示词，支持一键发送至 ChatGPT，助您高效获取精准回复。支持多语言翻译、收藏管理、社区投票，轻松提升生产力！
 ---
 
 # 介绍

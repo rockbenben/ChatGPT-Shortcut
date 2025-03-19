@@ -684,9 +684,6 @@
     "message": "Marcadores",
     "description": "The title of the tag list page"
   },
-  "description.communityPrompts": {
-    "message": "Explore a coleção de sugestões inovadoras partilhadas pelos utilizadores do Aishort. Estas sugestões únicas e divertidas podem inspirá-lo na criação de pequenos vídeos, romances, jogos e muito mais. Vote nos seus prompts favoritos, copie-os e partilhe-os com os seus amigos. Deixe que o Aishort o ajude a abrir a porta à criatividade e a criar um excelente trabalho em conjunto."
-  },
   "link.myfavorite": {
     "message": "Meus favoritos"
   },
@@ -729,12 +726,6 @@
   "myprompt": {
     "message": "Os meus prompts"
   },
-  "homepage.title": {
-    "message": "AiShort (ChatGPT Shortcut) - Uma lista de comandos de atalho do ChatGPT simples e fácil de usar que duplica a produtividade!"
-  },
-  "homepage.description": {
-    "message": "O AiShort é uma ferramenta concebida para a gestão e partilha eficientes de prompts de IA. Permite aos utilizadores personalizar, guardar e partilhar facilmente os seus prompts, ao mesmo tempo que oferece acesso a uma plataforma orientada para a comunidade com milhares de prompts partilhados publicamente, aumentando a produtividade para uma variedade de aplicações."
-  },
   "homepage.slogan": {
     "message": "Maximize a sua eficiência e produtividade"
   },
@@ -764,9 +755,6 @@
   },
   "community.tag": {
     "message": "Comunidade"
-  },
-  "googleauth.tooltip": {
-    "message": "As páginas incorporadas do ChatGPT não suportam login via autorização do Google. Faça login usando as credenciais da sua conta."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} items",
@@ -866,5 +854,17 @@
   },
   "button.clearCache": {
     "message": "Limpar cache"
+  },
+  "homepage.title": {
+    "message": "AiShort - Plataforma Eficiente de Atalhos de IA | Gerenciamento e Compartilhamento de Prompts, Aumento de Produtividade"
+  },
+  "homepage.description": {
+    "message": "AiShort (ChatGPT Shortcut) é uma ferramenta de gerenciamento de instruções de IA projetada para melhorar a eficiência no trabalho e nos estudos. Ela oferece uma biblioteca selecionada de prompts, envio de comandos com um clique, suporte a tradução multilíngue e gerenciamento personalizado, ajudando os usuários a obter rapidamente feedback preciso. Junte-se à nossa comunidade de prompts para compartilhar inspirações, estimular criatividade e experimentar a conveniência e inovação de um assistente de IA eficiente!"
+  },
+  "community.title": {
+    "message": "Comunidade Criativa de Prompts AiShort - Acenda Inspirações, Melhore Juntos a Eficiência no Trabalho e nos Estudos"
+  },
+  "community.description": {
+    "message": "Participe da Comunidade Criativa de Prompts AiShort para explorar e compartilhar prompts únicos selecionados pelos usuários, estimulando criatividade ilimitada em vídeos curtos, romances, jogos e mais. Vote nos seus prompts favoritos, copie e compartilhe facilmente para gerar ainda mais ideias brilhantes!"
   }
 }

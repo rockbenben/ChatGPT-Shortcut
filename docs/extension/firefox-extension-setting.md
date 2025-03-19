@@ -1,3 +1,8 @@
+---
+title: Firefox 插件设置 - 配置 ChatGPT Shortcut 扩展  
+description: 了解如何在 Firefox 浏览器中设置 ChatGPT Shortcut 插件，包括固定扩展到工具栏、授权扩展运行并确保在 ChatGPT、Gemini 等网站上正常工作。详细的步骤和图示指导，帮助您轻松配置扩展。  
+---
+
 # Firefox 插件设置
 
 使用 Firefox 插件前，推荐按以下两步进行设置。

@@ -49,6 +49,11 @@ function PromptPage({ prompt }) {
     [prompt, currentLanguage]
   );
 
+  const seoDescription = useMemo(() => {
+    const fullDescription = `${prompt[currentLanguage].remark} ${prompt[currentLanguage].description} ${prompt[currentLanguage].prompt}`;
+    return fullDescription.length > 160 ? `${fullDescription.slice(0, 157)}...` : fullDescription;
+  }, [prompt, currentLanguage]);
+
   const handleParagraphClick = useCallback(() => {
     setMainPrompt((prev) => (currentLanguage !== "en" && prev === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
   }, [prompt, currentLanguage]);
@@ -66,7 +71,7 @@ function PromptPage({ prompt }) {
         ...themeConfig,
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}>
-      <Layout title={title} description={remark}>
+      <Layout title={`${title}-${remark}`} description={seoDescription}>
         <Row justify="center" style={styles.container}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16}>
             <Card

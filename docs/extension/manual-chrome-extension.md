@@ -1,3 +1,8 @@
+---
+title: Chrome CRX 插件本地安装指南 - 安装 ChatGPT Shortcut 扩展  
+description: 了解如何在 Chrome 浏览器中本地安装 ChatGPT Shortcut CRX 插件，包括下载 CRX 安装包、开启开发者模式及插件安装步骤。如果安装过程中遇到问题，也提供了常见解决方案。  
+---
+
 # Chrome CRX 插件本地安装指南
 
 ## 下载 CRX 安装包

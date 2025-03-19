@@ -684,9 +684,6 @@
   "info.communityPrompts": {
     "message": "The prompts displayed on this page are shared and uploaded by netizens, we cannot guarantee the accuracy, quality or completeness of the content, and we also do not take responsibility for any legal liability arising from the content. If you find any infringement or other problems, you can contact us to deal with it. We will deal with it as soon as possible after receiving the notification."
   },
-  "description.communityPrompts": {
-    "message": "Explore the collection of innovative prompts shared by AiShort users, these unique and fun prompts can inspire you when creating short videos, novels, games and more. Vote for your favorite prompts, copy them and share them with your friends. Let Aishort help you open the door to creativity and create great work together."
-  },
   "link.myfavorite": {
     "message": "My Favorites"
   },
@@ -729,12 +726,6 @@
   "myprompt": {
     "message": "My Prompts"
   },
-  "homepage.title": {
-    "message": "AiShort (ChatGPT Shortcut) - A simple and user-friendly ChatGPT shortcut command list that doubles productivity!"
-  },
-  "homepage.description": {
-    "message": "AiShort is a tool designed for the efficient management and sharing of AI prompts. It enables users to easily customize, save, and share their prompts, while also offering access to a community-driven platform with thousands of publicly shared prompts, enhancing productivity for a variety of applications."
-  },
   "homepage.slogan": {
     "message": "Maximize your Efficiency and Productivity"
   },
@@ -764,9 +755,6 @@
   },
   "community.tag": {
     "message": "Community"
-  },
-  "googleauth.tooltip": {
-    "message": "The embedded pages of ChatGPT do not support login via Google authorization. Please log in using your account credentials."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} items",
@@ -866,5 +854,17 @@
   },
   "button.clearCache": {
     "message": "Clear Cache"
+  },
+  "homepage.title": {
+    "message": "AiShort - High-Efficiency AI Shortcut Platform | Prompt Management & Sharing, Boosting Productivity"
+  },
+  "homepage.description": {
+    "message": "AiShort (ChatGPT Shortcut) is an AI instruction management tool designed to enhance work and study efficiency. It offers a curated library of prompts, one-click command sending, multilingual translation support, and personalized management to help users quickly obtain accurate feedback. Join our prompt community to share inspiration, spark creativity, and experience the convenience and innovation of a high-efficiency AI assistant!"
+  },
+  "community.title": {
+    "message": "AiShort Creative Prompt Community - Ignite Inspiration & Enhance Work and Study Efficiency Together"
+  },
+  "community.description": {
+    "message": "Join the AiShort Creative Prompt Community to explore and share unique prompts handpicked by our users, sparking limitless creativity for short videos, novels, games, and more. Vote for your favorite prompts and easily copy and share them to ignite even more brilliant ideas!"
   }
 }

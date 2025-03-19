@@ -1,3 +1,8 @@
+---
+title: 插件常见问题 - ChatGPT Shortcut 使用中的常见问题解答  
+description: 解决在使用 ChatGPT Shortcut 插件时遇到的常见问题，包括 ChatGPT 页面限制、内容屏蔽提示等。提供详细的步骤说明，帮助用户顺利登录、解决屏蔽提示和避免错误操作。  
+---
+
 # 插件常见问题
 
 ## ChatGPT 页面限制

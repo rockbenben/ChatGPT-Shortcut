@@ -1,3 +1,8 @@
+---
+title: AiShort 使用指南 - 快速上手 AI 提示词  
+description: 了解如何使用 AiShort 复制提示词并应用于 ChatGPT、Gemini、Claude 等 AI 模型，提升对话效果。支持第三方 API 集成，轻松开启 AI 体验。  
+---
+
 # 开始上手
 
 使用 AiShort，只需将选中的提示词复制到任意 AI 对话模型中，即可获取指定方向的输出。以下是具体步骤：
@@ -11,8 +16,10 @@
 ## 常用 AI 模型
 
 - ChatGPT：https://chatgpt.com
+- DeepSeek: https://chat.deepseek.com
 - Gemini: https://gemini.google.com/app
 - Claude: https://claude.ai/chats
+- Grok: https://grok.com/
 - 阿里通义千问：https://tongyi.aliyun.com/qianwen/
 - Kimi：https://kimi.moonshot.cn/
 - 豆包：https://www.doubao.com/chat/
