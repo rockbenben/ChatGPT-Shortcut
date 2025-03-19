@@ -50,7 +50,7 @@ function PromptPage({ prompt }) {
   );
 
   const seoDescription = useMemo(() => {
-    const fullDescription = `${prompt[currentLanguage].remark} ${prompt[currentLanguage].description} ${prompt[currentLanguage].prompt}`;
+    const fullDescription = `${prompt[currentLanguage].description} ${prompt[currentLanguage].prompt}`;
     return fullDescription.length > 160 ? `${fullDescription.slice(0, 157)}...` : fullDescription;
   }, [prompt, currentLanguage]);
 
