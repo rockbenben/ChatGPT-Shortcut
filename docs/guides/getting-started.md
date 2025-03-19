@@ -1,5 +1,4 @@
 ---
-title: AiShort 使用指南 - 快速上手 AI 提示词  
 description: 了解如何使用 AiShort 复制提示词并应用于 ChatGPT、Gemini、Claude 等 AI 模型，提升对话效果。支持第三方 API 集成，轻松开启 AI 体验。  
 ---
 

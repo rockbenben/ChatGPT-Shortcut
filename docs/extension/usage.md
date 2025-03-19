@@ -1,5 +1,4 @@
 ---
-title: 如何使用 AiShort 浏览器扩展 - 启用侧边栏与独立窗口  
 description: 学习如何使用 AiShort 浏览器扩展，启用自动激活窗口、侧边栏、独立窗口等功能，提升 ChatGPT、Gemini、Claude 等网站的操作体验，并支持快捷键激活。  
 ---
 

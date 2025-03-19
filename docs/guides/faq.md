@@ -1,5 +1,4 @@
 ---
-title: 常见问题 - AiShort 使用指南与优化技巧  
 description: 了解 AiShort 提示词使用指南，包括英文提示词优势、GPTs 区别、搜索延迟解决方案、虚假信息避免方法，以及如何优化提示词以提升 ChatGPT 生成效果。  
 ---
 

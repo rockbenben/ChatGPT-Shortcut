@@ -1,9 +1,8 @@
 ---
-title: 安装 AiShort（ChatGPT Shortcut）浏览器插件扩展
 description: 了解如何安装 AiShort 扩展插件，支持 Chrome、Edge、Firefox 等浏览器，并提供快捷键激活与自动启动功能。支持国内下载及油猴脚本自定义使用。  
 ---
 
-# 安装插件
+# 安装浏览器插件
 
 AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT Shortcut 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
 
