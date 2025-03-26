@@ -111,7 +111,7 @@ const ResetPassword = () => {
               </Form.Item>
 
               <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-                <Input.Password />
+                <Input.Password autoComplete="new-password" />
               </Form.Item>
 
               <Form.Item
@@ -143,7 +143,7 @@ const ResetPassword = () => {
                     },
                   }),
                 ]}>
-                <Input.Password />
+                <Input.Password autoComplete="new-password" />
               </Form.Item>
 
               <Form.Item>
