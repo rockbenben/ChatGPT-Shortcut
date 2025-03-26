@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Tooltip, Typography, Alert } from "antd";
-import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, KeyOutlined } from "@ant-design/icons";
+import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Typography, Alert } from "antd";
+import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { login, register, forgotPassword, sendPasswordlessLink } from "@site/src/api";
@@ -231,7 +231,7 @@ const LoginPage = () => {
     <Form form={passwordlessForm} onFinish={handleSendPasswordlessLink} layout="vertical">
       <Alert message={<Translate id="message.passwordlessLogin.info">登录链接将发送至您的邮箱，点击即可登录，无需输入密码</Translate>} type="info" showIcon style={{ marginBottom: 16 }} />
       <Form.Item name="email" rules={rules.username} label={<Translate id="input.username">用户名/邮箱</Translate>}>
-        <Input prefix={<MailOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
+        <Input autoComplete="username" prefix={<MailOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={loading} block>
@@ -244,10 +244,10 @@ const LoginPage = () => {
   const renderLoginForm = () => (
     <Form form={loginForm} onFinish={onFinishLogin} layout="vertical">
       <Form.Item name="username" rules={rules.username} label={<Translate id="input.username">用户名/邮箱</Translate>}>
-        <Input prefix={<UserOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
+        <Input autoComplete="username" prefix={<UserOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
       </Form.Item>
       <Form.Item name="password" rules={rules.password} label={<Translate id="input.password">密码</Translate>}>
-        <Input.Password prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
+        <Input.Password autoComplete="current-password" prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item>
         <Space direction="vertical" style={{ width: "100%" }}>
@@ -278,6 +278,7 @@ const LoginPage = () => {
     <Form form={registerForm} onFinish={onFinishRegister} layout="vertical">
       <Form.Item name="username" rules={rules.username} label={<Translate id="input.register.username">用户名</Translate>}>
         <Input
+          autoComplete="username"
           prefix={<UserOutlined />}
           placeholder={translate({
             id: "input.register.username",
@@ -286,10 +287,10 @@ const LoginPage = () => {
         />
       </Form.Item>
       <Form.Item name="email" rules={rules.email} label={<Translate id="input.email">邮箱</Translate>}>
-        <Input prefix={<MailOutlined />} placeholder={translate({ id: "input.email", message: "邮箱" })} />
+        <Input autoComplete="email" prefix={<MailOutlined />} placeholder={translate({ id: "input.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item name="password" rules={rules.password} label={<Translate id="input.password">密码</Translate>} hasFeedback>
-        <Input.Password prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
+        <Input.Password autoComplete="new-password" prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
       </Form.Item>
       <Form.Item
         name="agreement"
@@ -332,7 +333,7 @@ const LoginPage = () => {
     <Form form={forgotPasswordForm} onFinish={handleForgotPassword} layout="vertical">
       <Alert message={<Translate id="message.forgotPassword.info">重置密码链接将发送至您的邮箱</Translate>} type="info" showIcon style={{ marginBottom: 16 }} />
       <Form.Item name="email" label={<Translate id="input.email">邮箱</Translate>} rules={rules.email}>
-        <Input prefix={<MailOutlined />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
+        <Input autoComplete="email" prefix={<MailOutlined />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={loading} block>

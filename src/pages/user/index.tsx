@@ -171,6 +171,7 @@ const UserProfile = () => {
         <div>
           {editUsername ? (
             <Input
+              autoComplete="off"
               prefix={<UserOutlined />}
               value={newUsername}
               onChange={handleUsernameChange}
@@ -215,6 +216,7 @@ const UserProfile = () => {
               },
             ]}>
             <Input.Password
+              autoComplete="current-password"
               prefix={<LockOutlined />}
               placeholder={translate({
                 id: "placeholder.currentPassword",
@@ -224,6 +226,7 @@ const UserProfile = () => {
           </Form.Item>
           <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
             <Input.Password
+              autoComplete="new-password"
               prefix={<LockOutlined />}
               placeholder={translate({
                 id: "placeholder.newPassword",
@@ -261,6 +264,7 @@ const UserProfile = () => {
               }),
             ]}>
             <Input.Password
+              autoComplete="new-password"
               prefix={<LockOutlined />}
               placeholder={translate({
                 id: "placeholder.confirmPassword",
@@ -304,6 +308,7 @@ const UserProfile = () => {
               ]}
               initialValue={userAuth?.data?.email || ""}>
               <Input
+                autoComplete="email"
                 prefix={<MailOutlined />}
                 placeholder={translate({
                   id: "placeholder.email",
