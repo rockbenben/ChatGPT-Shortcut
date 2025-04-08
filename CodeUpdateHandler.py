@@ -161,11 +161,12 @@ export default PromptDetail;
         file.write(content)
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
-def replace_and_write(source_file, destination_file, original_text, replacement_text):
+def replace_and_write(source_file, destination_file, replacements):
     with open(source_file, 'r', encoding='utf-8') as file:
         file_data = file.read()
         
-    file_data = file_data.replace(original_text, replacement_text)
+    for original_text, replacement_text in replacements:
+        file_data = file_data.replace(original_text, replacement_text)
     
     with open(destination_file, 'w', encoding='utf-8') as file:
         file.write(file_data)
@@ -182,4 +183,13 @@ for lang in languages[1:]:
         os.remove(target_file)
     
     # Replace 'users.zh' with 'users.{lang}' and write to the target file
-    replace_and_write(source_file, target_file, 'users.zh', f'users.{lang}')
+    
+    # Prepare the replacements
+    replacements = [
+        ('users.zh', f'users.{lang}'),
+        ('favor_zh', f'favor_{lang}'),
+        ('other_zh', f'other_{lang}')
+    ]
+
+    # Replace and write to the target file
+    replace_and_write(source_file, target_file, replacements)
