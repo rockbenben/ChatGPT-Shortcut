@@ -176,14 +176,12 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
       <Space wrap size="middle">
         {!hideLinks.userCenter && (
           <Link to="/user" className="button button--secondary">
-            <UserOutlined />
-            <Translate id="link.myaccount">账号设置</Translate>
+            <UserOutlined /> <Translate id="link.myaccount">账号设置</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
           <Link to="/user/favorite" className="button button--secondary hideOnSmallScreen">
-            <HeartOutlined />
-            <Translate id="link.user">个人中心</Translate>
+            <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
         <button className="button button--primary" onClick={() => setOpen(true)}>
