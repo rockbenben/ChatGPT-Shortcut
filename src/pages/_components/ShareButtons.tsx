@@ -35,7 +35,7 @@ function ShareButtons({ shareUrl, title, popOver }) {
           colorPrimary: "#397e6a",
         },
       }}>
-      <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className={styles.hideOnMobile} icon={<ShareAltOutlined />}>
+      <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className={`hideOnSmallScreen`} icon={<ShareAltOutlined />}>
         {buttons}
       </FloatButton.Group>
     </ConfigProvider>

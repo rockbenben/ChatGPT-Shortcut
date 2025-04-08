@@ -94,7 +94,7 @@ function useFilteredUsers() {
 function ShowcaseHeader() {
   return (
     <section className={"text--center"}>
-      <div className={styles.hideOnMobile}>
+      <div className={`hideOnSmallScreen`}>
         <Heading as="h1">AI Short</Heading>
         <p>{SLOGAN}</p>
       </div>
@@ -156,7 +156,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
         )}
         <ShowcaseFilterToggle />
         <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
-          <MenuOutlined /> {showTagsOnMobile ? <Translate>隐藏标签</Translate> : <Translate>显示标签</Translate>}
+          <MenuOutlined /> <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
         </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
