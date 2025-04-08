@@ -6,12 +6,9 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
-//const zhNavbar = require("./src/components/LocalizedNavbar/Navbar.zh");
-//const enNavbar = require("./src/components/LocalizedNavbar/Navbar.en");
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "AiShort(ChatGPT Shortcut)-AI Prompt Management,Productivity Tool",
+  title: "AiShort - High-Efficiency AI Shortcut Platform | Prompt Management & Productivity Tool",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
@@ -41,9 +38,9 @@ const config = {
       },
     },
   },
-  /*   future: {
+  future: {
     experimental_faster: true,
-  }, */
+  },
 
   presets: [
     [
@@ -57,26 +54,26 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        gtag: {
-          trackingID: "G-YJY639H2J1",
-          anonymizeIP: false,
-        },
-        /*
         googleTagManager: {
           containerId: "GTM-MX524GTT",
-        },*/
+        },
       }),
     ],
   ],
   plugins: [
-    /* [
-      "docusaurus2-plugin-google-adsense",
+    /*
+    [
+      "@docusaurus/plugin-client-redirects",
       {
-        dataAdClient: "ca-pub-7585955822109216",
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            to: "/",
+            from: "/cn",
+          },
+        ],
       },
     ], */
-    "./plugins/piwik.js",
-    "./plugins/instantpage.js",
   ],
 
   themeConfig:
@@ -84,6 +81,7 @@ const config = {
     ({
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
+      // autocorrect: false,
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
@@ -92,7 +90,7 @@ const config = {
       metadata: [
         {
           name: "keywords",
-          content: "prompt,aishort,ChatGPT Shortcut,ChatGPT SC,ChatGPT,AI prompts，提示词",
+          content: "aishort,ChatGPT Shortcut,提示词社区,ai快捷指令,生产力提升,ChatGPT,AI prompts,ai short,ai prompt,提示词,ai提示词",
         },
       ],
       navbar: {
@@ -101,6 +99,8 @@ const config = {
         logo: {
           alt: "ChatGPT Shortcuts",
           src: "img/logo.svg",
+          width: 32,
+          height: 32,
         },
         items: [
           {
@@ -128,7 +128,7 @@ const config = {
               },
               {
                 label: "文字处理",
-                href: "https://tools.newzone.top/json-translate",
+                href: "https://tools.newzone.top/",
               },
               {
                 label: "工具收藏",
@@ -162,16 +162,19 @@ const config = {
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
+            title: "QQ Group",
             href: "https://qm.qq.com/q/sHgB9eqd6E",
             position: "right",
             className: "header-qq-link",
           },
           {
+            title: "Discord",
             href: "https://discord.gg/PZTQfJ4GjX",
             position: "right",
             className: "header-discord-link",
           },
           {
+            title: "GitHub",
             href: "https://github.com/rockbenben/ChatGPT-Shortcut",
             position: "right",
             className: "header-github-link",
@@ -198,19 +201,3 @@ const config = {
 };
 
 export default config;
-
-/* process.env.DOCUSAURUS_CURRENT_LOCALE ??= "zh-Hans";
-function getNavbar() {
-  switch (process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en":
-      return enNavbar;
-    default:
-      return zhNavbar;
-  }
-} */
-/* function getAnnouncement() {
-  switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en": return 'Announcement_en';
-    default: return 'Announcement_cn';
-  }
-} */
