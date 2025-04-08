@@ -40,7 +40,7 @@ function PromptPage({ prompt }) {
       shareUrl: typeof window !== "undefined" ? window.location.href : "",
       title: prompt[currentLanguage].title,
       remark: prompt[currentLanguage].remark,
-      weight: prompt.count,
+      weight: prompt.weight,
       website: prompt.website,
       tags: prompt.tags,
       isDarkMode: typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark",
