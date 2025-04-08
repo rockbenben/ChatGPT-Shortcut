@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "AiShort - High-Efficiency AI Shortcut Platform | Prompt Management & Productivity Tool",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
-  favicon: "https://img.newzone.top/aishort/favicon.ico",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://www.aishort.top",
@@ -98,7 +98,7 @@ const config = {
         title: "AI Short",
         logo: {
           alt: "ChatGPT Shortcuts",
-          src: "https://img.newzone.top/aishort/logo.svg",
+          src: "img/logo.svg",
           width: 32,
           height: 32,
         },
