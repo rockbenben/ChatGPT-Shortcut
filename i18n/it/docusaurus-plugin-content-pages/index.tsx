@@ -1,37 +1,41 @@
-import React, { useContext, useState, useMemo, useEffect, useCallback } from "react";
+import React, { useContext, useState, useMemo, useEffect, useCallback, Suspense } from "react";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
+import copy from "copy-text-to-clipboard";
 import { ConfigProvider, theme, Button } from "antd";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, CopyOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
-import ShowcaseFilterToggle, { type Operator, readOperator } from "@site/src/pages/_components/ShowcaseFilterToggle";
+import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
+import ShowcaseFilterToggle from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
 import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
-import ShareButtons from "@site/src/pages/_components/ShareButtons";
-import SearchBar, { NoResults, type UserState } from "@site/src/pages/_components/SearchBar";
+import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
 
 import styles from "@site/src/pages/styles.module.css";
+import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import themeConfig from "@site/src/pages/_components/themeConfig";
-import { Tags, TagList, type User, type TagType } from "@site/src/data/tags";
-import { SLOGAN, TITLE, DESCRIPTION } from "@site/src/data/constants";
 
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
-import { fetchAllCopyCounts } from "@site/src/api";
+import { Tags, TagList } from "@site/src/data/tags";
+import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+
+const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 
 import { sortedUsers } from "@site/src/data/users.it";
+import { cacheJsonData } from "@site/src/utils/cacheJsonData";
+import favorDefault from "@site/src/data/default/favor_zh.json";
+import otherDefault from "@site/src/data/default/other_zh.json";
 
 export function prepareUserState(): UserState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
@@ -44,99 +48,55 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
-const SearchNameQueryKey = "name";
+const ShowcaseHeader = React.memo(() => (
+  <section className={"text--center"}>
+    <div className={`hideOnSmallScreen`}>
+      <Heading as="h1">AI Short</Heading>
+      <p>{SLOGAN}</p>
+    </div>
+    <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
+  </section>
+));
 
-function readSearchName(search: string) {
-  return new URLSearchParams(search).get(SearchNameQueryKey);
+interface ShowcaseFiltersProps {
+  onToggleDescription: () => void;
+  showUserFavs: boolean;
+  setShowUserFavs: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function filterUsers(users: User[], selectedTags: TagType[], operator: Operator, searchName: string | null) {
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
-  if (searchName) {
-    const lowercaseSearchName = searchName.toLowerCase();
-    // 搜索范围
-    users = users.filter((user) =>
-      (user[currentLanguage].title + user[currentLanguage].prompt + (user[currentLanguage].description ?? "") + user[currentLanguage].remark).toLowerCase().includes(lowercaseSearchName)
-    );
-  }
-  if (selectedTags.length === 0) {
-    return users.sort((a, b) => b.weight - a.weight);
-  }
-  return users.filter((user) => {
-    if (user.tags.length === 0) {
-      return false;
-    }
-    if (operator === "AND") {
-      return selectedTags.every((tag) => user.tags.includes(tag));
-    }
-    return selectedTags.some((tag) => user.tags.includes(tag));
-  });
-}
-
-function useFilteredUsers() {
-  const location = useLocation<UserState>();
-  const [operator, setOperator] = useState<Operator>("OR");
-  // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
-  const [searchName, setSearchName] = useState<string | null>(null);
-  // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
-  // hydration mismatch)
-  useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
-    setOperator(readOperator(location.search));
-    setSearchName(readSearchName(location.search));
-  }, [location]);
-
-  return useMemo(() => filterUsers(sortedUsers, selectedTags, operator, searchName), [selectedTags, operator, searchName]);
-}
-
-function ShowcaseHeader() {
-  return (
-    <section className={"text--center"}>
-      <div className={`hideOnSmallScreen`}>
-        <Heading as="h1">AI Short</Heading>
-        <p>{SLOGAN}</p>
-      </div>
-      <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
-    </section>
-  );
-}
-
-function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs }) {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-
-  // 登陆后显示用户提示词和收藏夹，两者不可同时显示
   const [showUserPrompts, setShowUserPrompts] = useState(false);
-  const handleUserPrompts = () => {
+
+  const handleUserPrompts = useCallback(() => {
     setShowUserFavs(false);
-    setShowUserPrompts(!showUserPrompts);
-  };
-  const handleUserFavs = () => {
+    setShowUserPrompts((prev) => !prev);
+  }, [setShowUserFavs]);
+
+  const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
-    setShowUserFavs(!showUserFavs);
-  };
+    setShowUserFavs((prev) => !prev);
+  }, [setShowUserFavs]);
 
-  // 标签列表显示状态
   const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
-
-  // 切换标签列表在移动端的显示状态
   const toggleTagsOnMobile = () => {
     setShowTagsOnMobile(!showTagsOnMobile);
   };
 
-  let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
-  if (userAuth) {
-    modifiedTagList = modifiedTagList.filter((tag) => tag !== "favorite");
-  }
+  const modifiedTagList = useMemo(() => {
+    let tags = TagList.filter((tag) => tag !== "contribute");
+    if (userAuth) {
+      tags = tags.filter((tag) => tag !== "favorite");
+    }
+    return tags;
+  }, [userAuth]);
 
-  // 提前调用 Translate 组件以确保 Hooks 的调用顺序一致
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
   return (
-    <section className="container">
+    <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <div className={styles.filterCheckbox}>
         <div>
           <Heading as="h2">
@@ -156,18 +116,17 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
         )}
         <ShowcaseFilterToggle />
         <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
-          <MenuOutlined /> <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
+          <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
         </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
-        {/* 登陆用户标签按钮 */}
         {userAuth && (
           <>
             <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
               <ShowcaseTooltip
                 text={translate({
                   id: "myprompt.tooltip",
-                  message: "我添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
+                  message: "添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
                 })}
                 anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
@@ -238,15 +197,17 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
             </li>
           );
         })}
-        <li className={styles.checkboxListItem}>
+        <li key="community.tag.tooltip" className={styles.checkboxListItem}>
           <ShowcaseTooltip
+            id="community.tag.tooltip"
             text={translate({
               id: "community.tag.tooltip",
               message: "社区分享的精选提示词",
             })}
             anchorEl="#__docusaurus">
-            <Link to="/community-prompts">
+            <Link to="/community-prompts" style={{ color: "var(--site-primary-font)" }}>
               <ShowcaseTagSelect
+                id="community.tag.tooltip"
                 tag="communityprompt"
                 label={translate({
                   id: "community.tag",
@@ -286,67 +247,76 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
       )}
     </section>
   );
+});
+
+interface ShowcaseCardsProps {
+  isDescription: boolean;
+  showUserFavs: boolean;
 }
 
-function ShowcaseCards({ isDescription, showUserFavs }) {
-  const [copyCounts, setCopyCounts] = useState({});
-
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs }) => {
   const { userAuth } = useContext(AuthContext);
-  const [userLoves, setUserLoves] = useState(() => userAuth?.data?.favorites?.loves || []);
-  const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
 
-  // 当 userAuth 改变时，更新 userLoves 的值
+  const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
+  const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
+  const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
+  const [copiedIndex, setCopiedIndex] = useState(null);
+
+  const handleCopyClick = (index) => {
+    const node = filteredCommus.find((commu) => commu.id === index);
+    if (node) {
+      copy(node.description);
+      setCopiedIndex(index);
+      setTimeout(() => {
+        setCopiedIndex(null);
+      }, 2000);
+    }
+  };
+
+  const fetchData = useCallback(async () => {
+    if (!userAuth && !showAllOtherUsers) {
+      return;
+    }
+    cacheJsonData(sortedUsers, currentLanguage);
+    try {
+      const defaultFavorIds = DEFAULT_FAVORITE_IDS;
+      const defaultIds = DEFAULT_IDS;
+      const allIds = ALL_IDS;
+      const favorIds = userAuth?.data?.favorites?.loves || defaultFavorIds;
+
+      const idsToShow = !userAuth
+        ? allIds.filter((id) => !defaultFavorIds.includes(id))
+        : showAllOtherUsers
+        ? allIds.filter((id) => !favorIds.includes(id))
+        : defaultIds.filter((id) => !favorIds.includes(id));
+
+      const favorData = sortedUsers.filter((user) => favorIds.includes(user.id));
+      const otherData = sortedUsers.filter((user) => idsToShow.includes(user.id));
+
+      if (userAuth) {
+        setFavoritePrompts(favorData);
+      }
+      setOtherPrompts(otherData);
+    } catch (error) {
+      console.error("Error loading data:", error);
+    }
+  }, [userAuth, showAllOtherUsers, currentLanguage]);
+
   useEffect(() => {
-    setUserLoves(userAuth?.data?.favorites?.loves || []);
-  }, [userAuth]);
+    fetchData();
+  }, [fetchData]);
 
   const [favoriteUsers, otherUsers] = useMemo(() => {
-    return sortedUsers.reduce(
-      ([favorites, others], user) => {
-        let updatedUser = { ...user }; // 创建新对象，避免直接修改
-        if (userAuth && updatedUser.tags.includes("favorite")) {
-          updatedUser.tags = updatedUser.tags.filter((tag) => tag !== "favorite");
-        }
-        if (userLoves && userLoves.includes(updatedUser.id) && !updatedUser.tags.includes("favorite")) {
-          updatedUser.tags = [...updatedUser.tags, "favorite"];
-        }
-        if (updatedUser.tags.includes("favorite")) {
-          favorites.push(updatedUser);
-        } else {
-          others.push(updatedUser);
-        }
-        return [favorites, others];
-      },
-      [[], []]
-    );
-  }, [sortedUsers, userAuth, userLoves]);
+    return [favoritePrompts, otherPrompts];
+  }, [favoritePrompts, otherPrompts]);
 
-  const displayedOtherUsers = showAllOtherUsers ? otherUsers : otherUsers.slice(0, 24);
+  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
 
-  favoriteUsers.sort((a, b) => b.weight - a.weight);
-  otherUsers.sort((a, b) => b.weight - a.weight);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const counts = await fetchAllCopyCounts();
-      setCopyCounts(counts);
-    };
-
-    fetchData();
-  }, []);
-
-  const handleCardCopy = useCallback((cardId) => {
-    setCopyCounts((prevCopyCounts) => ({
-      ...prevCopyCounts,
-      [cardId]: (prevCopyCounts[cardId] || 0) + 1,
-    }));
-  }, []);
-
-  const filteredUsers = useFilteredUsers();
-
-  if (filteredUsers.length === 0) {
+  if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
     return (
-      <section className="margin-top--lg margin-bottom--xl">
+      <section className="margin-top--sm margin-bottom--sm">
         <div className="container padding-vert--md text--center">
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
@@ -356,78 +326,39 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
       </section>
     );
   }
-  if (showUserFavs) {
-    // 如果 showUserFavs 为 true，则不渲染 Favorites 区块
-    return (
-      <section className="margin-top--lg margin-bottom--xl">
-        {filteredUsers.length === sortedUsers.length ? (
-          <>
-            <div className="container margin-top--lg">
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2">
-                  <Translate id="showcase.usersList.allUsers">All prompts</Translate>
-                </Heading>
-                <SearchBar />
-              </div>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {displayedOtherUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
-                ))}
-              </ul>
-              {!showAllOtherUsers && otherUsers.length > 50 && (
-                <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                  <ArrowDownOutlined /> <Translate>加载更多</Translate>
-                </Button>
-              )}
-            </div>
-          </>
-        ) : (
-          <div className="container">
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar />
-            </div>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
-              {filteredUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
-              ))}
-            </ul>
-          </div>
-        )}
-      </section>
-    );
-  }
 
-  // 正常渲染 Favorites 区块
   return (
-    <section className="margin-top--lg margin-bottom--sm">
-      {filteredUsers.length === sortedUsers.length ? (
+    <section className="margin-top--sm margin-bottom--sm">
+      {!isFiltered ? (
         <>
-          <div className={styles.showcaseFavorite}>
-            <div className="container">
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2">
-                  <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                </Heading>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                <SearchBar />
+          {showUserFavs ? null : (
+            <div className={styles.showcaseFavorite}>
+              <div className="container">
+                <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                  <Heading as="h2">
+                    <Translate id="showcase.favoritesList.title">Favorites</Translate>
+                  </Heading>
+                  <FavoriteIcon svgClass={styles.svgIconFavorite} />
+                  <SearchBar />
+                </div>
+                <ul className={clsx("clean-list", styles.showcaseList)}>
+                  {favoriteUsers.map((user) => (
+                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
+                  ))}
+                </ul>
               </div>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
-                ))}
-              </ul>
             </div>
-          </div>
-          <div className="container margin-top--lg">
+          )}
+          <div className="container margin-top--md">
             <Heading as="h2" className={styles.showcaseHeader}>
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
-              {displayedOtherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+              {otherUsers.map((user) => (
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
               ))}
             </ul>
-            {!showAllOtherUsers && otherUsers.length > 50 && (
+            {!showAllOtherUsers && (
               <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                 <ArrowDownOutlined /> <Translate>加载更多</Translate>
               </Button>
@@ -440,27 +371,74 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             <SearchBar />
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
-            {filteredUsers.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={copyCounts[user.id] || 0} onCopy={handleCardCopy} onLove={setUserLoves} />
+            {filteredCommus.map((user) => (
+              <li className="card shadow--md">
+                <div
+                  className={clsx("card__body")}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    height: "100%",
+                  }}>
+                  <div>
+                    <div className={clsx(cardStyles.showcaseCardHeader)}>
+                      <div className={`${cardStyles.showcaseCardTitle} ${cardStyles.shortEllipsis}`}>
+                        <Link className={cardStyles.showcaseCardLink}>{user.title} </Link>
+                        <span
+                          style={{
+                            fontSize: "12px",
+                            color: "#999",
+                            marginLeft: "10px",
+                          }}>
+                          @{user.owner}
+                        </span>
+                      </div>
+                      <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(user.id)}>
+                        {copiedIndex === user.id ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                      </Button>
+                    </div>
+                    <p className={cardStyles.showcaseCardBody}>
+                      {user.remark && (
+                        <>
+                          👉 {user.remark}
+                          <br />
+                        </>
+                      )}
+                      {user.description}
+                    </p>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between" }}></div>
+                </div>
+              </li>
+            ))}
+            {filteredCards.map((user) => (
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
             ))}
           </ul>
         </div>
       )}
     </section>
   );
-}
+});
 
 export default function Showcase(): JSX.Element {
   const [Shareurl, setShareUrl] = useState("");
-  useEffect(() => {
-    setShareUrl(window.location.href);
-  }, []);
   const [isDescription, setIsDescription] = useState(true);
   const [showUserFavs, setShowUserFavs] = useState(false);
+
+  useEffect(() => {
+    if (ExecutionEnvironment.canUseDOM) {
+      setShareUrl(window.location.href);
+    }
+  }, []);
+
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+
+  const isDarkMode = ExecutionEnvironment.canUseDOM && document.documentElement.getAttribute("data-theme") === "dark";
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
@@ -475,7 +453,9 @@ export default function Showcase(): JSX.Element {
             <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
           </ConfigProvider>
         </AuthProvider>
-        <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+        <Suspense fallback={null}>
+          <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+        </Suspense>
       </main>
     </Layout>
   );
