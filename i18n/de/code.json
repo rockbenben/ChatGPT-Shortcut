@@ -1,7 +1,4 @@
 {
-  "description.communityPrompts": {
-    "message": "Entdecken Sie die Sammlung innovativer, von Aishort-Nutzern geteilter Prompts. Diese einzigartigen und lustigen Prompts können Sie beim Erstellen von kurzen Videos, Romanen, Spielen und mehr inspirieren. Stimmen Sie für Ihre Lieblingsprompts, kopieren Sie sie und teilen Sie sie mit Ihren Freunden. Lassen Sie Aishort Ihnen helfen, die Tür zur Kreativität zu öffnen und gemeinsam großartige Werke zu schaffen."
-  },
   "field.id": {
     "message": "Freigabezeit"
   },
@@ -729,12 +726,6 @@
   "myprompt": {
     "message": "Meine Prompts"
   },
-  "homepage.title": {
-    "message": "AiShort-Eine einfache und benutzerfreundliche ChatGPT Shortcut Befehlsliste, die die Produktivität verdoppelt!"
-  },
-  "homepage.description": {
-    "message": "AiShort ist ein Tool für die effiziente Verwaltung und den Austausch von KI-Prompts. Es ermöglicht Nutzern, ihre Prompts einfach anzupassen, zu speichern und zu teilen. Gleichzeitig bietet es Zugang zu einer Community-gesteuerten Plattform mit Tausenden von öffentlich geteilten Prompts, was die Produktivität für eine Vielzahl von Anwendungen erhöht."
-  },
   "homepage.slogan": {
     "message": "Maximieren Sie Ihre Effizienz und Produktivität"
   },
@@ -764,9 +755,6 @@
   },
   "community.tag": {
     "message": "Gemeinschaft"
-  },
-  "googleauth.tooltip": {
-    "message": "Die eingebetteten Seiten von ChatGPT unterstützen keine Anmeldung per Google-Autorisierung. Bitte melden Sie sich mit Ihren Zugangsdaten an."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} Einträge",
@@ -866,5 +854,23 @@
   },
   "button.clearCache": {
     "message": "Cache löschen"
+  },
+  "homepage.title": {
+    "message": "AiShort - Effiziente AI-Shortcut-Plattform | Prompt-Management und Sharing, Produktivität steigern"
+  },
+  "homepage.description": {
+    "message": "AI Short (ChatGPT Shortcut) ist ein speziell zur Steigerung der Arbeits- und Lerneffizienz entwickeltes AI-Management-Tool. Es bietet eine kuratierte Bibliothek von Prompts, Ein-Klick-Befehlssendung, Unterstützung für mehrsprachige Übersetzung und personalisiertes Management, um Benutzern zu helfen, schnell präzises Feedback zu erhalten. Treten Sie unserer Prompt-Community bei, teilen Sie Inspirationen, wecken Sie Kreativität und erleben Sie die Bequemlichkeit und Innovation eines effizienten AI-Assistenten!"
+  },
+  "community.title": {
+    "message": "AiShort Kreative Prompt-Community - Inspiration entfachen, gemeinsam Arbeits- und Lerneffizienz steigern"
+  },
+  "community.description": {
+    "message": "Treten Sie der AiShort Kreativen Prompt-Community bei, um einzigartige Prompts zu entdecken und zu teilen, die von Benutzern ausgewählt wurden, und grenzenlose Kreativität in Bereichen wie Kurzvideos, Romanen, Spielen und mehr zu entfachen. Stimmen Sie für Ihre Lieblings-Prompts ab, kopieren und teilen Sie sie mühelos, um noch mehr brillante Ideen zu entfachen!"
+  },
+  "hideTags": {
+    "message": "Tags ausblenden"
+  },
+  "showTags": {
+    "message": "Tags anzeigen"
   }
 }

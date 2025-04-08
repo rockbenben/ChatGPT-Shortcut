@@ -6,17 +6,20 @@ export const SLOGAN = translate({
 });
 export const TITLE = translate({
   id: "homepage.title",
-  message: "AiShort(ChatGPT Shortcut)-简单易用的 AI 快捷指令表，让生产力倍增！",
+  message: "AiShort - 高效 AI 快捷指令平台 | 提示词管理与分享，生产力倍增",
 });
 export const DESCRIPTION = translate({
   id: "homepage.description",
-  message: "AI Short 是一款用于管理和分享 AI 提示词的工具，帮助用户更有效地定制、保存和共享自己的提示词，以提高生产力。该平台还包括一个提示词分享社区，让用户轻松找到适用于不同场景的指令。",
+  message:
+    "AI Short (ChatGPT Shortcut) 是一款专为提升工作和学习效率设计的 AI 指令管理工具。它提供精选的提示词库、一键发送指令、支持多语种翻译及个性化管理，帮助用户快速获取精准反馈。加入我们的提示词社区，分享灵感、激发创意，立即体验高效 AI 助手带来的便捷与创新！",
 });
 
 // community-prompts
-export const COMMU_TITLE = "AiShort Community Prompts - Share and find interesting prompts";
+export const COMMU_TITLE = translate({
+  id: "community.title",
+  message: "AiShort 创意提示词社区 - 点亮灵感，共同提升工作和学习效率",
+});
 export const COMMU_DESCRIPTION = translate({
-  id: "description.communityPrompts",
-  message:
-    "探索由 AiShort 用户分享的创新提示词集合，这些独特且有趣的提示词可以激发你在创作短视频、小说、游戏等内容时的灵感。投票支持你最爱的提示，将它们复制并与你的朋友分享。让 AiShort 帮助你打开创造力的大门，一起创作出色的作品吧。",
+  id: "community.description",
+  message: "加入 AiShort 创意提示词社区，探索并分享由用户精选的独特提示词，激发你在短视频、小说、游戏等多领域创作时的无限灵感。投票支持你钟爱的提示词，轻松复制分享，让创意碰撞激发出更多精彩灵感！",
 });

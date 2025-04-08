@@ -9,7 +9,7 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { ConfigProvider, theme } from "antd";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
@@ -94,7 +94,7 @@ function useFilteredUsers() {
 function ShowcaseHeader() {
   return (
     <section className={"text--center"}>
-      <div className={styles.hideOnMobile}>
+      <div className={`hideOnSmallScreen`}>
         <Heading as="h1">AI Short</Heading>
         <p>{SLOGAN}</p>
       </div>
@@ -117,6 +117,14 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
   const handleUserFavs = () => {
     setShowUserPrompts(false);
     setShowUserFavs(!showUserFavs);
+  };
+
+  // 标签列表显示状态
+  const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
+
+  // 切换标签列表在移动端的显示状态
+  const toggleTagsOnMobile = () => {
+    setShowTagsOnMobile(!showTagsOnMobile);
   };
 
   let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
@@ -147,6 +155,9 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           </button>
         )}
         <ShowcaseFilterToggle />
+        <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
+          <MenuOutlined /> <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
+        </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
@@ -201,7 +212,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           };
 
           return (
-            <li key={i} className={styles.checkboxListItem} onClick={handleTagClick}>
+            <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
               <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
                   tag={tag}
@@ -364,9 +375,8 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 ))}
               </ul>
               {!showAllOtherUsers && otherUsers.length > 50 && (
-                <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                  <ArrowDownOutlined />
-                  <Translate>加载更多</Translate>
+                <Link className="button" style={{ backgroundColor: "var(--site-color-background)", width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+                  <ArrowDownOutlined /> <Translate>加载更多</Translate>
                 </Link>
               )}
             </div>
@@ -419,8 +429,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
               <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                {<ArrowDownOutlined />}
-                <Translate>加载更多</Translate>
+                {<ArrowDownOutlined />} <Translate>加载更多</Translate>
               </Link>
             )}
           </div>

@@ -684,9 +684,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "description.communityPrompts": {
-    "message": "Explorez la collection d'idées novatrices partagées par les utilisateurs d'Aishort. Ces idées uniques et amusantes peuvent vous inspirer pour la création de courtes vidéos, de romans, de jeux et bien plus encore. Votez pour vos messages préférés, copiez-les et partagez-les avec vos amis. Laissez Aishort vous aider à ouvrir la porte de la créativité et à créer de grandes œuvres ensemble."
-  },
   "link.myfavorite": {
     "message": "Mes favoris"
   },
@@ -729,12 +726,6 @@
   "myprompt": {
     "message": "Mes suggestions"
   },
-  "homepage.title": {
-    "message": "AiShort (ChatGPT Shortcut) - Une liste de commandes de raccourcis ChatGPT simple et conviviale qui double la productivité !"
-  },
-  "homepage.description": {
-    "message": "AiShort est un outil conçu pour la gestion et le partage efficaces des messages-guides de l'IA. Il permet aux utilisateurs de personnaliser, d'enregistrer et de partager facilement leurs messages, tout en offrant un accès à une plateforme communautaire contenant des milliers de messages partagés publiquement, améliorant ainsi la productivité pour une variété d'applications."
-  },
   "homepage.slogan": {
     "message": "Maximisez votre efficacité et votre productivité"
   },
@@ -764,9 +755,6 @@
   },
   "community.tag": {
     "message": "Communauté"
-  },
-  "googleauth.tooltip": {
-    "message": "Les pages intégrées de ChatGPT ne prennent pas en charge la connexion via autorisation Google. Veuillez vous connecter en utilisant les identifiants de votre compte."
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} éléments",
@@ -866,5 +854,23 @@
   },
   "button.clearCache": {
     "message": "Effacer le cache"
+  },
+  "homepage.title": {
+    "message": "AiShort - Plateforme efficace de raccourcis AI | Gestion et partage de prompts, productivité accrue"
+  },
+  "homepage.description": {
+    "message": "AI Short (ChatGPT Shortcut) est un outil de gestion de prompts AI conçu pour améliorer l'efficacité au travail et dans les études. Il offre une bibliothèque de prompts sélectionnés, l'envoi de commandes en un clic, un support multilingue et une gestion personnalisée pour aider les utilisateurs à obtenir rapidement des retours précis. Rejoignez notre communauté de prompts pour partager des idées, stimuler la créativité et découvrez la commodité et l'innovation apportées par un assistant AI efficace !"
+  },
+  "community.title": {
+    "message": "Communauté créative de prompts AiShort - Allumez l'inspiration, améliorez ensemble l'efficacité au travail et dans les études"
+  },
+  "community.description": {
+    "message": "Rejoignez la communauté créative de prompts AiShort pour explorer et partager des prompts uniques sélectionnés par les utilisateurs, stimulant une créativité infinie dans des domaines tels que les vidéos courtes, les romans, les jeux et plus encore. Votez pour vos prompts préférés, copiez et partagez-les facilement pour stimuler encore plus d'idées brillantes !"
+  },
+  "hideTags": {
+    "message": "Masquer les tags"
+  },
+  "showTags": {
+    "message": "Afficher les tags"
   }
 }

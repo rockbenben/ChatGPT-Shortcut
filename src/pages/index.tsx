@@ -375,9 +375,8 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 ))}
               </ul>
               {!showAllOtherUsers && otherUsers.length > 50 && (
-                <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                  <ArrowDownOutlined />
-                  <Translate>加载更多</Translate>
+                <Link className="button" style={{ backgroundColor: "var(--site-color-background)", width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+                  <ArrowDownOutlined /> <Translate>加载更多</Translate>
                 </Link>
               )}
             </div>
@@ -430,8 +429,7 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
               <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                {<ArrowDownOutlined />}
-                <Translate>加载更多</Translate>
+                {<ArrowDownOutlined />} <Translate>加载更多</Translate>
               </Link>
             )}
           </div>
