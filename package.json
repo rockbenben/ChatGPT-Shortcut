@@ -29,7 +29,7 @@
     "@giphy/react-components": "^10.0.1",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.24.5",
+    "antd": "^5.24.6",
     "axios": "^1.8.4",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
@@ -41,7 +41,7 @@
     "react-markdown": "^10.1.0",
     "react-popper": "^2.3.0",
     "react-share": "^5.2.2",
-    "styled-components": "^6.1.16"
+    "styled-components": "^6.1.17"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",

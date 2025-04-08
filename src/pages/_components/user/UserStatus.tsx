@@ -181,7 +181,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" className="button button--secondary hide-on-small-screen-500">
+          <Link to="/user/favorite" className="button button--secondary hideOnSmallScreen">
             <HeartOutlined />
             <Translate id="link.user">个人中心</Translate>
           </Link>
@@ -191,7 +191,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         </button>
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
           <Button type="default" icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
-            <span className="hide-on-small-screen-500">
+            <span className="hideOnSmallScreen">
               <Translate id="button.clearCache">清除缓存</Translate>
             </span>
           </Button>
@@ -207,7 +207,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
             });
           }}
           style={{ color: "gray" }}>
-          <span className="hide-on-small-screen-500">
+          <span className="hideOnSmallScreen">
             <Translate id="button.logout">退出登录</Translate>
           </span>
         </Button>

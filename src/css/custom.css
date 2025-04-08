@@ -291,9 +291,16 @@ div[class^="announcementBar_"] {
   background: var(--scrollbar-thumb-hover-color); /* 悬停时的颜色 */
 }
 
-/* 自定义样式 */
-@media (max-width: 500px) {
-  .hide-on-small-screen-500 {
+.showOnSmallScreen {
+  display: none;
+}
+
+/* 当屏幕宽度小于768px时应用的样式 */
+@media (max-width: 767px) {
+  .hideOnSmallScreen {
     display: none;
+  }
+  .showOnSmallScreen {
+    display: block; /* 或 inline-block, flex 等，取决于你的按钮样式需求 */
   }
 }

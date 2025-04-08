@@ -9,7 +9,7 @@ import Heading from "@theme/Heading";
 
 import copy from "copy-text-to-clipboard";
 import { ConfigProvider, theme, Button } from "antd";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined, CopyOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, CopyOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
@@ -80,6 +80,11 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
     setShowUserFavs((prev) => !prev);
   }, [setShowUserFavs]);
 
+  const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
+  const toggleTagsOnMobile = () => {
+    setShowTagsOnMobile(!showTagsOnMobile);
+  };
+
   const modifiedTagList = useMemo(() => {
     let tags = TagList.filter((tag) => tag !== "contribute");
     if (userAuth) {
@@ -110,6 +115,9 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           </button>
         )}
         <ShowcaseFilterToggle />
+        <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
+          <MenuOutlined /> {showTagsOnMobile ? <Translate>隐藏标签</Translate> : <Translate>显示标签</Translate>}
+        </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {userAuth && (
@@ -163,7 +171,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           };
 
           return (
-            <li key={i} className={styles.checkboxListItem} onClick={handleTagClick}>
+            <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
               <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
                   tag={tag}
