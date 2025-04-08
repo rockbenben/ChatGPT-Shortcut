@@ -47,13 +47,12 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
               </Button>
             </Tooltip>
           </div>
+          {UserPrompt.remark && (
+            <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
+              👉 {UserPrompt.remark}
+            </p>
+          )}
           <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
-            {UserPrompt.remark && (
-              <>
-                👉 {UserPrompt.remark}
-                <br />
-              </>
-            )}
             {UserPrompt.description}
           </p>
         </div>
