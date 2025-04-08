@@ -134,3 +134,29 @@
   margin-left: 6px;
   margin-right: 6px;
 }
+
+.descriptionWrapper {
+  position: relative;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.gradientOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: linear-gradient(transparent, var(--site-color-background) 70%);
+  padding-top: 40px;
+}
+
+.downIcon {
+  display: block;
+  margin: 0 auto;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  font-size: 16px;
+}

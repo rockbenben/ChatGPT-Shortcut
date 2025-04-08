@@ -4,7 +4,7 @@ import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone } from "@ant-design/icons";
+import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone, DownOutlined } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
@@ -12,6 +12,11 @@ import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@si
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { formatCopyCount } from "@site/src/pages/_components/utils";
+
+const MAX_LENGTH = 300;
+const getPreviewContent = (content: string) => {
+  return content.length <= MAX_LENGTH ? content : content.substring(0, MAX_LENGTH) + "...";
+};
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -45,6 +50,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
   const [copied, setShowCopied] = useState(false);
+  const [showFullContent, setShowFullContent] = useState(false);
 
   useEffect(() => {
     setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
@@ -52,6 +58,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
 
   useEffect(() => {
     setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+    setShowFullContent(false);
   }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
 
   const handleParagraphClick = () => {
@@ -59,6 +66,10 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   };
 
   const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
+
+  const toggleContentDisplay = () => {
+    setShowFullContent(!showFullContent);
+  };
 
   const handleCopyClick = useCallback(async () => {
     try {
@@ -146,9 +157,18 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           </Space.Compact>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
-          {userDescription}
-        </p>
+        <div className={styles.descriptionWrapper}>
+          <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${styles.clickable}`}>
+            {showFullContent ? userDescription : getPreviewContent(userDescription)}
+          </p>
+          {!showFullContent && userDescription.length > MAX_LENGTH && (
+            <div className={styles.gradientOverlay}>
+              <Tooltip title={<Translate>加载更多</Translate>}>
+                <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+              </Tooltip>
+            </div>
+          )}
+        </div>
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)} style={{ listStyle: "none" }}>
         <ShowcaseCardTag tags={user.tags} />

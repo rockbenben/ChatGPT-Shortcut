@@ -26,6 +26,7 @@
   --site-primary-font: #3e4042;
   --scrollbar-thumb-color: hsl(167, 68%, 60%); /* 浅色主题滚动条颜色 */
   --scrollbar-thumb-hover-color: hsl(167, 68%, 70%); /* 浅色主题滚动条悬停颜色 */
+  --site-color-background: white;
 }
 
 html[data-theme="dark"] {
@@ -37,6 +38,7 @@ html[data-theme="dark"] {
   --site-primary-font: #c5c5c5;
   --scrollbar-thumb-color: hsl(167, 68%, 45%); /* 深色主题滚动条颜色 */
   --scrollbar-thumb-hover-color: hsl(167, 68%, 55%); /* 深色主题滚动条悬停颜色 */
+  --site-color-background: #242526;
 }
 
 /*
