@@ -5,16 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.hideOnMobile {
-  display: none;
-}
-
-@media screen and (min-width: 576px) {
-  .hideOnMobile {
-    display: block;
-  }
-}
-
 .filterCheckbox {
   justify-content: space-between;
   display: flex;

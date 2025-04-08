@@ -866,5 +866,11 @@
   },
   "community.description": {
     "message": "Treten Sie der AiShort Kreativen Prompt-Community bei, um einzigartige Prompts zu entdecken und zu teilen, die von Benutzern ausgewählt wurden, und grenzenlose Kreativität in Bereichen wie Kurzvideos, Romanen, Spielen und mehr zu entfachen. Stimmen Sie für Ihre Lieblings-Prompts ab, kopieren und teilen Sie sie mühelos, um noch mehr brillante Ideen zu entfachen!"
+  },
+  "hideTags": {
+    "message": "Tags ausblenden"
+  },
+  "showTags": {
+    "message": "Tags anzeigen"
   }
 }

@@ -866,5 +866,11 @@
   },
   "community.description": {
     "message": "Join the AiShort Creative Prompt Community to explore and share unique prompts handpicked by our users, sparking limitless creativity for short videos, novels, games, and more. Vote for your favorite prompts and easily copy and share them to ignite even more brilliant ideas!"
+  },
+  "hideTags": {
+    "message": "Hide Tags"
+  },
+  "showTags": {
+    "message": "Show Tags"
   }
 }

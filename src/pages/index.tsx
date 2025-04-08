@@ -50,7 +50,7 @@ export function prepareUserState(): UserState | undefined {
 
 const ShowcaseHeader = React.memo(() => (
   <section className={"text--center"}>
-    <div className={styles.hideOnMobile}>
+    <div className={`hideOnSmallScreen`}>
       <Heading as="h1">AI Short</Heading>
       <p>{SLOGAN}</p>
     </div>
@@ -116,7 +116,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
         )}
         <ShowcaseFilterToggle />
         <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
-          <MenuOutlined /> {showTagsOnMobile ? <Translate>隐藏标签</Translate> : <Translate>显示标签</Translate>}
+          <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
         </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
@@ -368,8 +368,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </ul>
             {!showAllOtherUsers && (
               <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                <ArrowDownOutlined />
-                <Translate>加载更多</Translate>
+                <ArrowDownOutlined /> <Translate>加载更多</Translate>
               </Button>
             )}
           </div>

@@ -866,5 +866,11 @@
   },
   "community.description": {
     "message": "Rejoignez la communauté créative de prompts AiShort pour explorer et partager des prompts uniques sélectionnés par les utilisateurs, stimulant une créativité infinie dans des domaines tels que les vidéos courtes, les romans, les jeux et plus encore. Votez pour vos prompts préférés, copiez et partagez-les facilement pour stimuler encore plus d'idées brillantes !"
+  },
+  "hideTags": {
+    "message": "Masquer les tags"
+  },
+  "showTags": {
+    "message": "Afficher les tags"
   }
 }
