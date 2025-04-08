@@ -9,7 +9,7 @@ import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
 import { ConfigProvider, theme } from "antd";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect, { readSearchTags } from "@site/src/pages/_components/ShowcaseTagSelect";
@@ -119,6 +119,14 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
     setShowUserFavs(!showUserFavs);
   };
 
+  // 标签列表显示状态
+  const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
+
+  // 切换标签列表在移动端的显示状态
+  const toggleTagsOnMobile = () => {
+    setShowTagsOnMobile(!showTagsOnMobile);
+  };
+
   let modifiedTagList = TagList.filter((tag) => tag !== "contribute");
   if (userAuth) {
     modifiedTagList = modifiedTagList.filter((tag) => tag !== "favorite");
@@ -147,6 +155,9 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           </button>
         )}
         <ShowcaseFilterToggle />
+        <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
+          <MenuOutlined /> {showTagsOnMobile ? <Translate>隐藏标签</Translate> : <Translate>显示标签</Translate>}
+        </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {/* 登陆用户标签按钮 */}
@@ -201,7 +212,7 @@ function ShowcaseFilters({ onToggleDescription, showUserFavs, setShowUserFavs })
           };
 
           return (
-            <li key={i} className={styles.checkboxListItem} onClick={handleTagClick}>
+            <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
               <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                 <ShowcaseTagSelect
                   tag={tag}

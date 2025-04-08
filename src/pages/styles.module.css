@@ -17,6 +17,8 @@
 
 .filterCheckbox {
   justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filterCheckbox,
@@ -120,7 +122,6 @@
 }
 
 .onToggleButton {
-  display: inline-block;
   background-color: #18816a;
   color: var(--site-color-favorite-background);
   padding: 0.3rem 0.6rem;
