@@ -24,6 +24,7 @@
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
   --scrollbar-thumb-color: hsl(167, 68%, 60%); /* 浅色主题滚动条颜色 */
   --scrollbar-thumb-hover-color: hsl(167, 68%, 70%); /* 浅色主题滚动条悬停颜色 */
+  --site-color-background: white;
 }
 
 html[data-theme="dark"] {
@@ -33,6 +34,7 @@ html[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   --scrollbar-thumb-color: hsl(167, 68%, 45%); /* 深色主题滚动条颜色 */
   --scrollbar-thumb-hover-color: hsl(167, 68%, 55%); /* 深色主题滚动条悬停颜色 */
+  --site-color-background: #242526;
 }
 
 /*

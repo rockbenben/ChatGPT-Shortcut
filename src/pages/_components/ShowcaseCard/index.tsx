@@ -4,15 +4,19 @@ import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
-import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone } from "@ant-design/icons";
+import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone, DownOutlined } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
-
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { formatCopyCount } from "@site/src/pages/_components/utils";
+
+const MAX_LENGTH = 300;
+const getPreviewContent = (content: string) => {
+  return content.length <= MAX_LENGTH ? content : content.substring(0, MAX_LENGTH) + "...";
+};
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -21,52 +25,51 @@ const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, descriptio
   </li>
 ));
 
-function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
-  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
-
-  // Keep same order for all tags
+const ShowcaseCardTag = ({ tags }: { tags: TagType[] }) => {
+  const safeTags = tags || [];
+  const tagObjects = safeTags.map((tag) => ({ tag, ...Tags[tag] }));
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
 
   return (
     <>
-      {tagObjectsSorted.map((tagObject, index) => {
-        const id = `showcase_card_tag_${tagObject.tag}`;
-
-        return (
-          <Tooltip key={index} title={tagObject.description} id={id}>
-            <TagComp key={index} {...tagObject} />
-          </Tooltip>
-        );
-      })}
+      {tagObjectsSorted.map((tagObject, index) => (
+        <Tooltip key={index} title={tagObject.description} id={`showcase_card_tag_${tagObject.tag}`}>
+          <TagComp key={index} {...tagObject} />
+        </Tooltip>
+      ))}
     </>
   );
-}
+};
 
-function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
+const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
-
+  const [isFavorite, setIsFavorite] = useState(false);
   const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+  const [copied, setShowCopied] = useState(false);
+  const [showFullContent, setShowFullContent] = useState(false);
+
+  useEffect(() => {
+    setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
+  }, [userAuth]);
 
   useEffect(() => {
     setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+    setShowFullContent(false);
   }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
 
-  // 点击显示母语
-  function handleParagraphClick() {
-    if (paragraphText === user[currentLanguage].prompt) {
-      setParagraphText(user[currentLanguage].description);
-    } else {
-      setParagraphText(user[currentLanguage].prompt);
-    }
-  }
+  const handleParagraphClick = () => {
+    setParagraphText(paragraphText === user[currentLanguage].prompt ? user[currentLanguage].description : user[currentLanguage].prompt);
+  };
+
   const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
 
-  const [copied, setShowCopied] = useState(false);
+  const toggleContentDisplay = () => {
+    setShowFullContent(!showFullContent);
+  };
 
   const handleCopyClick = useCallback(async () => {
     try {
@@ -75,84 +78,72 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
       }
       setShowCopied(true);
       setTimeout(() => setShowCopied(false), 2000);
-      onCopy(user.id);
       await updateCopyCount(user.id);
-      // Notify parent component to update the copy count
     } catch (error) {
       console.error("Error updating copy count:", error);
     }
-  }, [user.id]);
+  }, [userDescription, user.id, user[currentLanguage].prompt]);
 
   const handleLove = useCallback(async () => {
     try {
       let userLoves;
       let favoriteId;
 
-      if (!userAuth.data.favorites) {
+      if (!userAuth?.data?.favorites) {
         const createFavoriteResponse = await createFavorite([user.id]);
         userLoves = [user.id];
         favoriteId = createFavoriteResponse.data.id;
       } else {
         userLoves = userAuth.data.favorites.loves || [];
         favoriteId = userAuth.data.favorites.id;
-
-        if (!userLoves.includes(user.id)) {
-          userLoves.push(user.id);
-          message.success("Added to favorites successfully!");
-        }
+        userLoves.push(user.id);
       }
-
+      message.success("Added to favorites successfully!");
       await updateFavorite(favoriteId, userLoves);
-      onLove(userLoves);
       getPrompts("cards", userLoves, currentLanguage);
       refreshUserAuth();
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth]);
+  }, [userAuth?.data?.favorites?.loves, isFavorite]);
 
   const removeFavorite = useCallback(async () => {
     try {
-      if (userAuth.data.favorites) {
-        let userLoves;
-        let favoriteId;
-        userLoves = userAuth.data.favorites.loves || [];
-        favoriteId = userAuth.data.favorites.id;
+      const userLoves = userAuth.data.favorites.loves || [];
+      const favoriteId = userAuth.data.favorites.id;
+      const index = userLoves.indexOf(user.id);
 
-        const index = userLoves.indexOf(user.id);
-        if (index > -1) {
-          userLoves.splice(index, 1);
-          message.success("Removed from favorites successfully!");
-        }
-
-        await updateFavorite(favoriteId, userLoves);
-        onLove(userLoves);
-        refreshUserAuth();
+      if (index > -1) {
+        userLoves.splice(index, 1);
+        message.success("Removed from favorites successfully!");
       }
+
+      await updateFavorite(favoriteId, userLoves);
+      refreshUserAuth();
     } catch (err) {
       console.error(err);
     }
-  }, [user.id, onLove, userAuth, refreshUserAuth]);
+  }, [isFavorite]);
 
   return (
     <li key={userTitle} className="card shadow--md">
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <div className={styles.showcaseCardTitle}>
-            <Link href={"/prompt/" + user.id} className={styles.showcaseCardLink}>
+            <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
           </div>
           <Space.Compact>
             {userAuth && (
-              <Tooltip title={user.tags.includes("favorite") ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button type="default" onClick={user.tags.includes("favorite") ? removeFavorite : handleLove}>
-                  {user.tags.includes("favorite") ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
+              <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
+                <Button type="default" onClick={isFavorite ? removeFavorite : handleLove}>
+                  {isFavorite ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
                 </Button>
               </Tooltip>
             )}
-            {!userAuth && user.tags.includes("favorite") && (
+            {!userAuth && user.tags?.includes("favorite") && (
               <Button type="text" disabled>
                 <HeartTwoTone twoToneColor="#eb2f96" />
               </Button>
@@ -166,22 +157,31 @@ function ShowcaseCard({ user, isDescription, copyCount, onCopy, onLove }) {
           </Space.Compact>
         </div>
         <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
-        <p onClick={handleParagraphClick} className={styles.showcaseCardBody} style={{ cursor: "pointer" }}>
-          {userDescription}
-        </p>
+        <div className={styles.descriptionWrapper}>
+          <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${styles.clickable}`}>
+            {showFullContent ? userDescription : getPreviewContent(userDescription)}
+          </p>
+          {!showFullContent && userDescription.length > MAX_LENGTH && (
+            <div className={styles.gradientOverlay}>
+              <Tooltip title={<Translate>加载更多</Translate>}>
+                <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+              </Tooltip>
+            </div>
+          )}
+        </div>
       </div>
       <ul className={clsx("card__footer", styles.cardFooter)} style={{ listStyle: "none" }}>
         <ShowcaseCardTag tags={user.tags} />
-        {user.website ? (
+        {user.website && (
           <li style={{ marginLeft: "auto" }}>
             <a href={user.website} target="_blank" rel="noopener noreferrer">
               <LinkOutlined />
             </a>
           </li>
-        ) : null}
+        )}
       </ul>
     </li>
   );
-}
+};
 
 export default React.memo(ShowcaseCard);
