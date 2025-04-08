@@ -34,8 +34,8 @@ const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareB
 
 import { sortedUsers } from "@site/src/data/users.pt";
 import { cacheJsonData } from "@site/src/utils/cacheJsonData";
-import favorDefault from "@site/src/data/default/favor_zh.json";
-import otherDefault from "@site/src/data/default/other_zh.json";
+import favorDefault from "@site/src/data/default/favor_pt.json";
+import otherDefault from "@site/src/data/default/other_pt.json";
 
 export function prepareUserState(): UserState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
