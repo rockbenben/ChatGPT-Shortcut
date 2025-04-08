@@ -8,7 +8,7 @@ import { useLocation } from "@docusaurus/router";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider, theme, Button } from "antd";
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
@@ -375,9 +375,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
                 ))}
               </ul>
               {!showAllOtherUsers && otherUsers.length > 50 && (
-                <Link className="button" style={{ backgroundColor: "var(--site-color-background)", width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+                <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
                   <ArrowDownOutlined /> <Translate>加载更多</Translate>
-                </Link>
+                </Button>
               )}
             </div>
           </>
@@ -428,9 +428,9 @@ function ShowcaseCards({ isDescription, showUserFavs }) {
               ))}
             </ul>
             {!showAllOtherUsers && otherUsers.length > 50 && (
-              <Link className="button button--secondary" style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                {<ArrowDownOutlined />} <Translate>加载更多</Translate>
-              </Link>
+              <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+                <ArrowDownOutlined /> <Translate>加载更多</Translate>
+              </Button>
             )}
           </div>
         </>
