@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import styles from "@site/src/pages/styles.module.css";
 import { ConfigProvider, FloatButton } from "antd";
 import { ShareAltOutlined } from "@ant-design/icons";
 import { FacebookShareButton, TelegramShareButton, TumblrShareButton, TwitterShareButton, WeiboShareButton, FacebookIcon, TelegramIcon, TumblrIcon, TwitterIcon, WeiboIcon } from "react-share";
@@ -35,7 +34,7 @@ function ShareButtons({ shareUrl, title, popOver }) {
           colorPrimary: "#397e6a",
         },
       }}>
-      <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className={`hideOnSmallScreen`} icon={<ShareAltOutlined />}>
+      <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className="hideOnSmallScreen" icon={<ShareAltOutlined />}>
         {buttons}
       </FloatButton.Group>
     </ConfigProvider>

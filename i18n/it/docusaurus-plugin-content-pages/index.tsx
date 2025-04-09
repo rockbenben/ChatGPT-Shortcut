@@ -50,7 +50,7 @@ export function prepareUserState(): UserState | undefined {
 
 const ShowcaseHeader = React.memo(() => (
   <section className={"text--center"}>
-    <div className={`hideOnSmallScreen`}>
+    <div className="hideOnSmallScreen">
       <Heading as="h1">AI Short</Heading>
       <p>{SLOGAN}</p>
     </div>
@@ -99,9 +99,12 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
     <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <div className={styles.filterCheckbox}>
         <div>
-          <Heading as="h2">
+          <Heading as="h2" className="hideOnSmallScreen">
             <Translate id="showcase.filters.title">Filters</Translate>
           </Heading>
+          <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
+            <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
+          </button>
         </div>
         {currentLanguage !== "en" && (
           <button
@@ -115,9 +118,6 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           </button>
         )}
         <ShowcaseFilterToggle />
-        <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
-          <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
-        </button>
       </div>
       <ul className={clsx("clean-list", styles.checkboxList)}>
         {userAuth && (
@@ -337,7 +337,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <div className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Heading as="h2">
+                  <Heading as="h2" className="hideOnSmallScreen">
                     <Translate id="showcase.favoritesList.title">Favorites</Translate>
                   </Heading>
                   <FavoriteIcon svgClass={styles.svgIconFavorite} />
