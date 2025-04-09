@@ -9,15 +9,12 @@ AI Short est un projet open source, vous pouvez modifier librement le nom et la 
 
 `CodeUpdateHandler.py` est un script pour le traitement par lots du déploiement multilingue. Une fois la modification terminée, exécutez `python CodeUpdateHandler.py`, qui divisera `prompt.json` en plusieurs langues selon les règles, et synchronisera le code de la page principale de chaque langue et le code de la page indépendante des mots d'invite sélectionnés.
 
-## Déploiement
+## Instructions de déploiement
 
-### Déployer avec Vercel
+Exigences système :
 
-Cliquez sur le bouton ci-dessous pour déployer ChatGPT-Shortcut sur la plateforme Vercel en un seul clic :
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-Avec Vercel, vous pouvez héberger rapidement votre projet et gérer automatiquement les builds et les déploiements, ce qui convient aux utilisateurs qui n'ont pas d'exigences complexes en matière de configuration de serveur.
+- [Node.js 18.0](https://nodejs.org/) ou version ultérieure.
+- macOS, Windows (y compris WSL) et Linux sont supportés.
 
 ### Déploiement local
 
@@ -30,10 +27,10 @@ yarn
 # Développement local
 yarn start
 
-# Build : cette commande génère du contenu statique dans le répertoire `build`
+# Build : Cette commande génère du contenu statique dans le répertoire `build`
 yarn build
 
-# Mettez à jour le `defaultLocale` dans le fichier `docusaurus.config.js`, puis effectuez une build pour la langue souhaitée.
+# Mettez à jour le `defaultLocale` dans le fichier `docusaurus.config.js`, puis effectuez un build pour la langue souhaitée.
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -51,6 +48,35 @@ yarn build --locale bn
 # Déploiement pour plusieurs langues
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Déploiement sur Vercel
+
+Cliquez sur le bouton ci-dessous pour déployer ChatGPT-Shortcut sur la plateforme Vercel en un seul clic :
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**Remarque** : La version gratuite de Vercel peut rencontrer des erreurs dues à un manque de mémoire. Dans ce cas, vous pouvez opter pour un déploiement en une seule langue. Voici les étapes à suivre :
+
+1. Accédez au projet Vercel que vous venez de déployer et ouvrez **Settings**.
+2. Dans la section **Build & Deployment**, trouvez **Build Command**, puis cliquez sur **Override** à droite.
+3. Modifiez la commande de déploiement. Par exemple, pour déployer la version chinoise, utilisez `yarn build --locale zh`; pour la version portugaise, utilisez `yarn build --locale pt`.
+
+## Déploiement sur Cloudflare Pages
+
+Cliquez sur le bouton ou le lien ci-dessous pour fork ce projet, puis suivez les instructions pour le déployer sur Cloudflare Pages :
+
+👉 [Fork ce projet](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+Étapes de déploiement :
+
+1. Connectez-vous à [Cloudflare Pages](https://pages.cloudflare.com/) et sélectionnez **"Create a project"**.
+2. Liez le dépôt que vous venez de forker.
+3. Configurez la commande de construction :
+   - **Build command** : `yarn build --locale zh` (choisissez le locale approprié en fonction de la langue à déployer, par exemple : pour le portugais, utilisez `yarn build --locale pt`).
+   - **Output directory** : `build`.
+4. Cliquez sur **Déployer**, puis attendez que Cloudflare Pages termine la construction et le déploiement.
+
+Cloudflare Pages déclenchera également automatiquement un build et un déploiement chaque fois que vous pousserez de nouveaux codes.
 
 ### Déploiement Docker
 

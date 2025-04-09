@@ -12,19 +12,16 @@ AI Short はオープンソース プロジェクトです。Web サイトの名
 
 `CodeUpdateHandler.py` は、多言語展開をバッチ処理するためのスクリプトです。変更が完了したら、`python CodeUpdateHandler.py` を実行します。これにより、`prompt.json` がルールに従って複数の言語に分割され、各言語のメイン ページ コードと選択したプロンプト ワードの独立ページ コードが同期されます。
 
-## デプロイ
+## デプロイの説明
 
-### Vercel でデプロイ
+システム要件：
 
-以下のボタンをクリックすると、ChatGPT-Shortcut がワンクリックで Vercel プラットフォームにデプロイされます：
+- [Node.js 18.0](https://nodejs.org/) 以降。
+- macOS、Windows（WSLを含む）、Linuxがサポートされています。
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+### ローカルデプロイ
 
-Vercel を使用すると、プロジェクトをすばやくホストし、ビルドとデプロイを自動的に処理できるため、複雑なサーバー構成要件がないユーザーに適しています。
-
-### ローカル デプロイメント
-
-[Node.js](https://nodejs.org/) がインストールされていることを確認してください。
+まず、[Node.js](https://nodejs.org/) をインストールしていることを確認してください。
 
 ```shell
 # インストール
@@ -33,10 +30,10 @@ yarn
 # ローカル開発
 yarn start
 
-# ビルド: このコマンドは、`build` ディレクトリに静的コンテンツを生成します
+# ビルド：このコマンドは静的コンテンツを `build` ディレクトリに生成します
 yarn build
 
-# `docusaurus.config.js` ファイル内の `defaultLocale` を更新し、目的の言語でビルドを実行します。
+# `docusaurus.config.js` ファイル内の `defaultLocale` を更新し、希望する言語でビルドを実行します。
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -51,9 +48,38 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# 複数の言語にデプロイ
+# 複数の言語用にデプロイ
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Vercel デプロイ
+
+下のボタンをクリックして、ChatGPT-Shortcut を Vercel プラットフォームにワンクリックでデプロイできます：
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**注意**：Vercelの無料プランはメモリ不足によってエラーが発生することがあります。もしそのような状況に遭遇した場合は、単一言語でのデプロイを選択することができます。具体的な手順は以下の通りです：
+
+1. デプロイしたばかりのVercelプロジェクトにアクセスし、**Settings** を開きます。
+2. **Build & Deployment** セクションで **Build Command** を見つけ、右側の **Override** をクリックします。
+3. デプロイコマンドを変更します。たとえば、中国語バージョンをデプロイしたい場合は `yarn build --locale zh` を使用し、ポルトガル語バージョンをデプロイしたい場合は `yarn build --locale pt` を使用します。
+
+## Cloudflare Pages デプロイ
+
+下のボタンまたはリンクをクリックして、このプロジェクトをフォークし、Cloudflare Pages でのデプロイ手順に従ってください：
+
+👉 [このプロジェクトをフォーク](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+デプロイ手順：
+
+1. [Cloudflare Pages](https://pages.cloudflare.com/) にログインし、**"Create a project"** を選択します。
+2. フォークしたばかりのリポジトリをリンクします。
+3. ビルドコマンドを設定します：
+   - **ビルドコマンド**：`yarn build --locale zh`（デプロイする言語に応じて適切なロケールを選択します。たとえば、ポルトガル語には `yarn build --locale pt` を使用します）。
+   - **出力ディレクトリ**：`build`。
+4. **デプロイ** をクリックし、Cloudflare Pages がビルドとデプロイを完了するのを待ちます。
+
+Cloudflare Pages では、新しいコードをプッシュするたびに自動的にビルドとデプロイがトリガーされます。
 
 ### Docker デプロイ
 

@@ -9,19 +9,16 @@ AI Short 는 오픈 소스 프로젝트로, 웹사이트의 이름과 설명을 
 
 `CodeUpdateHandler.py`는 다국어 배포를 일괄 처리하기 위한 스크립트입니다. 수정을 완료한 후 `python CodeUpdateHandler.py`를 실행하면 `prompt.json`이 규칙에 따라 여러 언어로 분할되고 각 언어의 메인 페이지 코드와 선택한 프롬프트 단어의 독립 페이지 코드가 동기화됩니다.
 
-## 배포
+## 배포 설명
 
-### Vercel 로 배포
+시스템 요구 사항:
 
-아래 버튼을 클릭하여 한 번의 클릭으로 ChatGPT-Shortcut 을 Vercel 플랫폼에 배포하세요.
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-Vercel 을 사용하면 프로젝트를 빠르게 호스팅하고 빌드와 배포를 자동으로 처리할 수 있어 복잡한 서버 구성 요구 사항이 없는 사용자에게 적합합니다.
+- [Node.js 18.0](https://nodejs.org/) 이상.
+- macOS, Windows (WSL 포함), Linux에서 지원됩니다.
 
 ### 로컬 배포
 
-[Node.js](https://nodejs.org/)를 설치했는지 확인하세요.
+먼저 [Node.js](https://nodejs.org/)가 설치되어 있는지 확인하십시오.
 
 ```shell
 # 설치
@@ -30,10 +27,10 @@ yarn
 # 로컬 개발
 yarn start
 
-# 빌드: 이 명령은 `build` 디렉토리에 정적 콘텐츠를 생성합니다.
+# 빌드: 이 명령어는 정적 콘텐츠를 `build` 디렉토리에 생성합니다.
 yarn build
 
-# `docusaurus.config.js` 파일에서 `defaultLocale`을 업데이트한 다음 원하는 언어에 대한 빌드를 수행합니다.
+# `docusaurus.config.js` 파일에서 `defaultLocale`을 업데이트한 후 원하는 언어로 빌드를 수행합니다.
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -51,6 +48,35 @@ yarn build --locale bn
 # 여러 언어로 배포
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Vercel 배포
+
+아래 버튼을 클릭하여 ChatGPT-Shortcut을 Vercel 플랫폼에 한 번에 배포하세요:
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**주의**: Vercel 무료 버전은 메모리 부족으로 오류가 발생할 수 있습니다. 이 경우 단일 언어 배포를 선택할 수 있습니다. 구체적인 작업은 다음과 같습니다:
+
+1. 방금 배포한 Vercel 프로젝트로 이동하여 **Settings**를 엽니다.
+2. **Build & Deployment** 섹션에서 **Build Command**를 찾아 오른쪽의 **Override**를 클릭합니다.
+3. 배포 명령을 수정합니다. 예를 들어, 중국어 버전을 배포하려면 `yarn build --locale zh`를 사용하고, 포르투갈어 버전을 배포하려면 `yarn build --locale pt`를 사용합니다.
+
+## Cloudflare Pages 배포
+
+아래 버튼 또는 링크를 클릭하여 본 프로젝트를 Fork한 후, Cloudflare Pages에서 배포 지침을 따르세요:
+
+👉 [이 프로젝트 Fork하기](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+배포 절차:
+
+1. [Cloudflare Pages](https://pages.cloudflare.com/)에 로그인하고 **"Create a project"**를 선택합니다.
+2. 방금 Fork한 저장소를 연결합니다.
+3. 빌드 명령을 설정합니다:
+   - **Build command**: `yarn build --locale zh` (배포하려는 언어에 맞는 locale을 선택하십시오. 예: 포르투갈어는 `yarn build --locale pt` 사용).
+   - **Output directory**: `build`.
+4. **배포**를 클릭하고 Cloudflare Pages가 빌드 및 배포를 완료할 때까지 기다립니다.
+
+Cloudflare Pages는 매번 새로운 코드를 푸시할 때마다 자동으로 빌드 및 배포를 트리거합니다.
 
 ### Docker 배포
 

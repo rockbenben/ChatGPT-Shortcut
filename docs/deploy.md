@@ -46,13 +46,10 @@ AI Short 是一个开源项目，你可以根据需求自由修改网站的标�
 
 ## 部署说明
 
-### Deploy With Vercel
+System Requirements:
 
-点击下方按钮，一键将 ChatGPT-Shortcut 部署到 Vercel 平台：
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-通过 Vercel，你可以快速将项目托管，并且可以自动处理构建和部署，适合没有复杂服务器配置需求的用户。
+- [Node.js 18.0](https://nodejs.org/) or later.
+- macOS, Windows (including WSL), and Linux are supported.
 
 ### 本地部署
 
@@ -86,6 +83,35 @@ yarn build --locale bn
 # Deploy for multiple languages
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Vercel 部署
+
+点击下方按钮，一键将 ChatGPT-Shortcut 部署到 Vercel 平台：
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**注意**：Vercel 免费版可能会因内存不足而报错，遇到这种情况可以选择进行单语言部署。具体操作如下：
+
+1. 进入刚刚部署的 Vercel 项目，打开 **Settings**。
+2. 在 **Build & Deployment** 部分，找到 **Build Command**，然后点击右侧的 **Override**。
+3. 修改部署命令。例如，如果需要部署中文版本，可以使用 `yarn build --locale zh`；如果需要部署葡萄牙语版本，则使用 `yarn build --locale pt`。
+
+## Cloudflare Pages 部署
+
+点击下方按钮或链接，Fork 本项目后，按说明在 Cloudflare Pages 上部署：
+
+👉 [Fork 本项目](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+部署步骤：
+
+1. 登录 [Cloudflare Pages](https://pages.cloudflare.com/)，并选择 **"Create a project"**。
+2. 绑定你刚刚 Fork 的仓库。
+3. 配置构建命令：
+   - **Build command**：`yarn build --locale zh`（根据要部署的语言选择合适的 locale，例如：葡萄牙语可使用 `yarn build --locale pt`）。
+   - **Output directory**：`build`。
+4. 点击 **部署**，等待 Cloudflare Pages 完成构建和部署。
+
+Cloudflare Pages 也会在你每次推送新代码时自动触发构建和部署。
 
 ### Docker 部署
 

@@ -9,19 +9,16 @@ AI Short ist ein Open-Source-Projekt. Sie können den Namen und die Beschreibung
 
 `CodeUpdateHandler.py` ist ein Skript zur Stapelverarbeitung der Bereitstellung in mehreren Sprachen. Führen Sie nach Abschluss der Änderung `python CodeUpdateHandler.py` aus, wodurch `prompt.json` gemäß den Regeln in mehrere Sprachen aufgeteilt wird und der Hauptseitencode jeder Sprache und der unabhängige Seitencode der ausgewählten Eingabeaufforderungswörter synchronisiert werden.
 
-## Bereitstellung
+## Bereitstellungsanweisungen
 
-### Bereitstellung mit Vercel
+Systemanforderungen:
 
-Klicken Sie auf die Schaltfläche unten, um ChatGPT-Shortcut mit einem Klick auf der Vercel-Plattform bereitzustellen:
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-Mit Vercel können Sie Ihr Projekt schnell hosten und Builds und Bereitstellungen automatisch abwickeln, was für Benutzer geeignet ist, die keine komplexen Anforderungen an die Serverkonfiguration haben.
+- [Node.js 18.0](https://nodejs.org/) oder neuer.
+- macOS, Windows (einschließlich WSL) und Linux werden unterstützt.
 
 ### Lokale Bereitstellung
 
-Stellen Sie sicher, dass Sie [Node.js](https://nodejs.org/) installiert haben.
+Stelle sicher, dass du [Node.js](https://nodejs.org/) installiert hast.
 
 ```shell
 # Installation
@@ -30,10 +27,10 @@ yarn
 # Lokale Entwicklung
 yarn start
 
-# Build: Dieser Befehl generiert statischen Inhalt im Verzeichnis `build`
+# Build: Dieser Befehl generiert statische Inhalte im Verzeichnis `build`
 yarn build
 
-# Aktualisieren Sie das `defaultLocale` in der Datei `docusaurus.config.js` und führen Sie dann einen Build für die gewünschte Sprache durch.
+# Aktualisiere das `defaultLocale` in der Datei `docusaurus.config.js` und führe dann einen Build für die gewünschte Sprache durch.
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -48,9 +45,38 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Für mehrere Sprachen bereitstellen
+# Bereitstellung für mehrere Sprachen
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Vercel Bereitstellung
+
+Klicke auf den untenstehenden Button, um ChatGPT-Shortcut mit einem Klick auf der Vercel-Plattform bereitzustellen:
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**Hinweis**: Die kostenlose Version von Vercel kann aufgrund unzureichendem Speicher fehlerhaft sein. In diesem Fall kannst du die Bereitstellung auf eine einzelne Sprache beschränken. Die genauen Schritte sind wie folgt:
+
+1. Gehe zum gerade bereitgestellten Vercel-Projekt und öffne **Settings**.
+2. Im Abschnitt **Build & Deployment** finde **Build Command** und klicke dann auf **Override** auf der rechten Seite.
+3. Ändere den Bereitstellungsbefehl. Zum Beispiel, wenn du die chinesische Version bereitstellen möchtest, verwende `yarn build --locale zh`; für die portugiesische Version verwende `yarn build --locale pt`.
+
+## Cloudflare Pages Bereitstellung
+
+Klicke auf den untenstehenden Button oder Link, um dieses Projekt zu forken und folge dann den Anweisungen zur Bereitstellung auf Cloudflare Pages:
+
+👉 [Fork dieses Projekts](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+Bereitstellungsschritte:
+
+1. Melde dich bei [Cloudflare Pages](https://pages.cloudflare.com/) an und wähle **"Create a project"**.
+2. Verknüpfe das gerade geforkte Repository.
+3. Konfiguriere den Build-Befehl:
+   - **Build-Befehl**: `yarn build --locale zh` (wähle die entsprechende locale basierend auf der zu deployenden Sprache; für Portugiesisch verwende `yarn build --locale pt`).
+   - **Ausgabeverzeichnis**: `build`.
+4. Klicke auf **Deploy** und warte, bis Cloudflare Pages den Build- und Bereitstellungsprozess abgeschlossen hat.
+
+Cloudflare Pages wird automatisch einen Build und eine Bereitstellung auslösen, jedes Mal wenn du neuen Code pusht.
 
 ### Docker-Bereitstellung
 
