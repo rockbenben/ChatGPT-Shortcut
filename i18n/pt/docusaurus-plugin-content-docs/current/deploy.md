@@ -44,31 +44,28 @@ AI Short é um projeto de código aberto que você pode personalizar conforme su
 
   Este script irá dividir o arquivo `prompt.json` com base nas regras predefinidas e atualizar a página inicial e a página de prompts em destaque para todas as versões de idioma.
 
-## Implantação
+## Instruções de Deploy
 
-### Implantar com Vercel
+Requisitos do Sistema:
 
-Clique no botão abaixo para implantar o ChatGPT-Shortcut na plataforma Vercel com um clique:
+- [Node.js 18.0](https://nodejs.org/) ou versão superior.
+- macOS, Windows (incluindo WSL) e Linux são compatíveis.
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+### Deploy Local
 
-Com o Vercel, você pode hospedar seu projeto rapidamente e manipular automaticamente compilações e implantações, o que é adequado para usuários que não têm requisitos complexos de configuração de servidor.
-
-### Implantação local
-
-Certifique-se de ter instalado o [Node.js](https://nodejs.org/).
+Certifique-se de que você tem o [Node.js](https://nodejs.org/) instalado.
 
 ```shell
 # Instalação
 yarn
 
-# Desenvolvimento local
+# Desenvolvimento Local
 yarn start
 
-# Build: Este comando gera conteúdo estático no diretório `build`
+# Build: Este comando gera o conteúdo estático no diretório `build`
 yarn build
 
-# Atualize o `defaultLocale` no arquivo `docusaurus.config.js` e execute uma compilação para o idioma desejado.
+# Atualize o `defaultLocale` no arquivo `docusaurus.config.js`, e em seguida faça o build para o idioma desejado.
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -83,9 +80,38 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Implantar para vários idiomas
+# Deploy para múltiplos idiomas
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Deploy no Vercel
+
+Clique no botão abaixo para fazer o deploy do ChatGPT-Shortcut na plataforma Vercel com um clique:
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**Atenção**: A versão gratuita do Vercel pode apresentar erros devido à falta de memória. Se isso ocorrer, você pode optar por realizar o deploy de uma versão com um único idioma. Os passos são os seguintes:
+
+1. Acesse o projeto recém-deployado no Vercel e abra as **Configurações**.
+2. Na seção **Build & Deployment**, encontre **Build Command** e clique em **Override** à direita.
+3. Modifique o comando de deploy. Por exemplo, para deploy da versão em chinês, use `yarn build --locale zh`; para a versão em português, use `yarn build --locale pt`.
+
+## Deploy no Cloudflare Pages
+
+Clique no botão ou link abaixo para fazer o fork deste projeto e depois siga as instruções para realizar o deploy no Cloudflare Pages:
+
+👉 [Fork este projeto](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+Passos para o Deploy:
+
+1. Faça login no [Cloudflare Pages](https://pages.cloudflare.com/) e selecione **"Create a project"**.
+2. Conecte o repositório que você acabou de forkar.
+3. Configure o comando de build:
+   - **Build command**: `yarn build --locale zh` (escolha o locale adequado para o idioma que você quer deployar; para o português, use `yarn build --locale pt`).
+   - **Output directory**: `build`.
+4. Clique em **Deploy** e aguarde o Cloudflare Pages finalizar o processo de build e deploy.
+
+O Cloudflare Pages também irá disparar automaticamente o build e o deploy sempre que você enviar novos códigos.
 
 ### Implantação do Docker
 

@@ -46,13 +46,10 @@ AI Short is an open-source project that you can customize based on your needs. B
 
 ## Deployment
 
-### Deploy With Vercel
+System Requirements:
 
-Click the button below to deploy ChatGPT-Shortcut to the Vercel platform with one click:
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-With Vercel, you can quickly host your project and automatically handle builds and deployments, which is suitable for users who do not have complex server configuration requirements.
+- [Node.js 18.0](https://nodejs.org/) or later.
+- macOS, Windows (including WSL), and Linux are supported.
 
 ### Local Deployment
 
@@ -86,6 +83,35 @@ yarn build --locale bn
 # Deploy for multiple languages
 yarn build --locale zh && yarn build --locale en
 ```
+
+### Vercel Deployment
+
+Click the button below to deploy ChatGPT-Shortcut to the Vercel platform with one click:
+
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+
+**Note**: The free tier of Vercel might run into errors due to insufficient memory. In such cases, you can opt for deploying a single language version. The specific steps are as follows:
+
+1. Go to the Vercel project you just deployed and open **Settings**.
+2. Under **Build & Deployment**, find **Build Command**, and then click **Override** on the right.
+3. Modify the deployment command. For example, to deploy the Chinese version, use `yarn build --locale zh`; for the Portuguese version, use `yarn build --locale pt`.
+
+## Cloudflare Pages Deployment
+
+Click the button or link below to fork this project, then follow the instructions to deploy it on Cloudflare Pages:
+
+👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+
+Deployment steps:
+
+1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/) and select **"Create a project"**.
+2. Link the repository you just forked.
+3. Configure the build command:
+   - **Build command**: `yarn build --locale zh` (choose the appropriate locale based on the language to be deployed; for Portuguese, use `yarn build --locale pt`).
+   - **Output directory**: `build`.
+4. Click **Deploy** and wait for Cloudflare Pages to finish the build and deployment process.
+
+Cloudflare Pages will automatically trigger a build and deployment every time you push new code.
 
 ### Docker Deployment
 
