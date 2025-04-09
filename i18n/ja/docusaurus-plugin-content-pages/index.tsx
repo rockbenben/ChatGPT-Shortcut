@@ -343,7 +343,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                 </div>
                 <ul className={clsx("clean-list", styles.showcaseList)}>
                   {favoriteUsers.map((user) => (
-                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
+                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
                   ))}
                 </ul>
               </div>
@@ -355,7 +355,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {otherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
               ))}
             </ul>
             {!showAllOtherUsers && (
@@ -413,7 +413,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               </li>
             ))}
             {filteredCards.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.count || 0} />
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
             ))}
           </ul>
         </div>
