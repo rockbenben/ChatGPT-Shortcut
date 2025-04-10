@@ -30,23 +30,6 @@
   }
 }
 
-/* For Webkit browsers like Chrome and Safari */
-.showcaseCardBody::-webkit-scrollbar {
-  width: 8px;
-}
-
-.showcaseCardBody::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.showcaseCardBody::-webkit-scrollbar-thumb {
-  background-color: transparent; /* transparent scrollbar until hovered over */
-}
-
-.showcaseCardBody:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5); /* Show scrollbar when hovering over the element */
-}
-
 .showcaseCardImage {
   overflow: hidden;
   height: 150px;

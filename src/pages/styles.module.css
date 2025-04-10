@@ -5,10 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+ @media (max-width: 767px) {
+  .showcaseFavorite {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.1rem !important;
+  }
+  
+  .showcaseList {
+    gap: 1rem !important;
+  }
+}
+
 .filterCheckbox {
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0.25rem;
 }
 
 .filterCheckbox,
