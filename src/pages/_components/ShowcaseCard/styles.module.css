@@ -21,6 +21,15 @@
   scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 767px) {
+  .showcaseCardBody {
+    margin-bottom: 5px;
+  }
+  .showcaseCardHeader {
+    margin-bottom: 5px !important;
+  }
+}
+
 /* For Webkit browsers like Chrome and Safari */
 .showcaseCardBody::-webkit-scrollbar {
   width: 8px;
