@@ -13,7 +13,7 @@ import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { formatCopyCount } from "@site/src/pages/_components/utils";
 
-const MAX_LENGTH = 300;
+const MAX_LENGTH = 200;
 const getPreviewContent = (content: string) => {
   return content.length <= MAX_LENGTH ? content : content.substring(0, MAX_LENGTH) + "...";
 };
@@ -156,7 +156,9 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </Tooltip>
           </Space.Compact>
         </div>
-        <p className={styles.showcaseCardBody}>👉 {userRemark}</p>
+        <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
+          👉 {userRemark}
+        </p>
         <div className={styles.descriptionWrapper}>
           <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${styles.clickable}`}>
             {showFullContent ? userDescription : getPreviewContent(userDescription)}
