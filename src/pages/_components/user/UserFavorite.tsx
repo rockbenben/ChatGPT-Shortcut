@@ -63,7 +63,7 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
               ) : (
                 <>
                   <Link className={styles.showcaseCardLink}>{item.title} </Link>
-                  <span style={{ fontSize: "12px", color: "#999", marginLeft: "10px" }}>@{item.owner}</span>
+                  <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{item.owner}</span>
                 </>
               )}
             </div>
