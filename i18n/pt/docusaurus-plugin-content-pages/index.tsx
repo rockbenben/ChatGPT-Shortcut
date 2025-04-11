@@ -7,9 +7,8 @@ import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
-import copy from "copy-text-to-clipboard";
 import { ConfigProvider, theme, Button } from "antd";
-import { EditOutlined, HeartOutlined, ArrowDownOutlined, CopyOutlined, MenuOutlined } from "@ant-design/icons";
+import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
@@ -22,8 +21,8 @@ import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
 
 import styles from "@site/src/pages/styles.module.css";
-import cardStyles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import themeConfig from "@site/src/pages/_components/themeConfig";
+import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
@@ -262,18 +261,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
-  const [copiedIndex, setCopiedIndex] = useState(null);
-
-  const handleCopyClick = (index) => {
-    const node = filteredCommus.find((commu) => commu.id === index);
-    if (node) {
-      copy(node.description);
-      setCopiedIndex(index);
-      setTimeout(() => {
-        setCopiedIndex(null);
-      }, 2000);
-    }
-  };
 
   const fetchData = useCallback(async () => {
     if (!userAuth && !showAllOtherUsers) {
@@ -372,45 +359,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
             {filteredCommus.map((user) => (
-              <li className="card shadow--md">
-                <div
-                  className={clsx("card__body")}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    height: "100%",
-                  }}>
-                  <div>
-                    <div className={clsx(cardStyles.showcaseCardHeader)}>
-                      <div className={`${cardStyles.showcaseCardTitle} ${cardStyles.shortEllipsis}`}>
-                        <Link className={cardStyles.showcaseCardLink}>{user.title} </Link>
-                        <span
-                          style={{
-                            fontSize: "12px",
-                            color: "#999",
-                            marginLeft: "10px",
-                          }}>
-                          @{user.owner}
-                        </span>
-                      </div>
-                      <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(user.id)}>
-                        {copiedIndex === user.id ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-                      </Button>
-                    </div>
-                    <p className={cardStyles.showcaseCardBody}>
-                      {user.remark && (
-                        <>
-                          👉 {user.remark}
-                          <br />
-                        </>
-                      )}
-                      {user.description}
-                    </p>
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between" }}></div>
-                </div>
-              </li>
+              <SearchCommu commuPrompt={user} />
             ))}
             {filteredCards.map((user) => (
               <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
