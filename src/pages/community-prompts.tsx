@@ -12,7 +12,7 @@ import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Butto
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
+import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 
@@ -46,7 +46,7 @@ const SKELETON_ITEMS = Array.from({ length: pageSize }, (_, index) => (
 ));
 
 interface PromptCardProps {
-  prompt: {
+  commuPrompt: {
     id: number;
     title: string;
     owner: string;
@@ -56,9 +56,6 @@ interface PromptCardProps {
     upvotes?: number;
     downvotes?: number;
   };
-  onCopy: (index: number) => void;
-  copiedIndex: number | null;
-  index: number;
   onVote: (promptId: number, action: string) => void;
   onBookmark: (promptId: number) => void;
   votedUpPromptIds: number[];
@@ -67,58 +64,25 @@ interface PromptCardProps {
   messageApi: any;
 }
 
-const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copiedIndex, index, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
-  const [showFullContent, setShowFullContent] = useState(false);
-  const [paragraphText, setParagraphText] = useState(prompt.description);
-
-  const toggleContentDisplay = () => {
-    setShowFullContent(!showFullContent);
+const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
+  const [copied, setCopied] = useState(false);
+  const handleCopyClick = () => {
+    copy(commuPrompt.description);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   };
-
-  const handleParagraphClick = () => {
-    if (prompt.notes) {
-      setParagraphText(paragraphText === prompt.description ? prompt.notes : prompt.description);
-    }
-  };
-
-  const displayText = paragraphText || prompt.description;
-
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-        <div>
-          <div className={clsx(styles.showcaseCardHeader)}>
-            <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-              <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-                {prompt.title}
-              </span>
-              <span style={{ fontSize: "12px", color: "#999", marginLeft: "10px" }}>@{prompt.owner}</span>
-            </div>
-          </div>
-          {prompt.remark && (
-            <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
-              👉 {prompt.remark}
-            </p>
-          )}
-          <div className={styles.descriptionWrapper}>
-            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${prompt.notes ? styles.clickable : ""}`}>
-              {showFullContent ? displayText : truncate(displayText)}
-            </p>
-            {!showFullContent && displayText.length > MAX_LENGTH && (
-              <div className={styles.gradientOverlay}>
-                <Tooltip title={<Translate>加载更多</Translate>}>
-                  <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-                </Tooltip>
-              </div>
-            )}
-          </div>
-        </div>
+        <CommuPagePrompt commuPrompt={commuPrompt} />
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Space.Compact>
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button type="default" onClick={() => onCopy(index)}>
+              <Button type="default" onClick={handleCopyClick}>
                 <CopyOutlined />
-                {copiedIndex === index && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+                {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
               </Button>
             </Tooltip>
             <Tooltip title={translate({ message: "收藏" })}>
@@ -129,8 +93,8 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copi
                     messageApi.warning("Please log in to bookmark.");
                     return;
                   }
-                  onVote(prompt.id, "upvote");
-                  onBookmark(prompt.id);
+                  onVote(commuPrompt.id, "upvote");
+                  onBookmark(commuPrompt.id);
                 }}>
                 <HeartOutlined />
               </Button>
@@ -145,10 +109,10 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copi
                     messageApi.warning("Please log in to vote.");
                     return;
                   }
-                  onVote(prompt.id, "upvote");
+                  onVote(commuPrompt.id, "upvote");
                 }}>
                 <UpOutlined />
-                {votedUpPromptIds.includes(prompt.id) ? (prompt.upvotes || 0) + 1 : prompt.upvotes || 0}
+                {votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0}
               </Button>
             </Tooltip>
             <Tooltip title={translate({ id: "downvote", message: "踩" })}>
@@ -159,10 +123,10 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copi
                     messageApi.warning("Please log in to vote.");
                     return;
                   }
-                  onVote(prompt.id, "downvote");
+                  onVote(commuPrompt.id, "downvote");
                 }}>
                 <DownOutlined />
-                {votedDownPromptIds.includes(prompt.id) ? (prompt.downvotes || 0) + 1 : prompt.downvotes || 0}
+                {votedDownPromptIds.includes(commuPrompt.id) ? (commuPrompt.downvotes || 0) + 1 : commuPrompt.downvotes || 0}
               </Button>
             </Tooltip>
           </Space.Compact>
@@ -177,12 +141,11 @@ const CommunityPrompts = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [userprompts, setUserPrompts] = useState<PromptCardProps["prompt"][]>([]);
+  const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("desc");
-  const [copiedIndex, setCopiedIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [Shareurl, setShareUrl] = useState("");
   const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
@@ -273,20 +236,6 @@ const CommunityPrompts = () => {
     [userAuth]
   );
 
-  const handleCopyClick = useCallback(
-    (index) => {
-      const UserPrompt = userprompts[index];
-      if (UserPrompt) {
-        copy(UserPrompt.description);
-        setCopiedIndex(index);
-        setTimeout(() => {
-          setCopiedIndex(null);
-        }, 2000);
-      }
-    },
-    [userprompts]
-  );
-
   const onChangePage = useCallback((page) => {
     setCurrentPage(page);
   }, []);
@@ -366,13 +315,10 @@ const CommunityPrompts = () => {
               <ul className="clean-list showcaseList_Cwj2">
                 {loading
                   ? SKELETON_ITEMS
-                  : userprompts.map((prompt, index) => (
+                  : userprompts.map((commuPrompt) => (
                       <PromptCard
-                        key={prompt.id}
-                        prompt={prompt}
-                        index={index}
-                        copiedIndex={copiedIndex}
-                        onCopy={handleCopyClick}
+                        key={commuPrompt.id}
+                        commuPrompt={commuPrompt}
                         onVote={vote}
                         onBookmark={bookmark}
                         votedUpPromptIds={votedUpPromptIds}
