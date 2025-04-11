@@ -12,6 +12,7 @@ import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Butto
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
+import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -68,8 +69,6 @@ interface PromptCardProps {
 }
 
 const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copiedIndex, index, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
-  const truncate = (str, num) => (str.length <= num ? str : `${str.slice(0, num)}...`);
-
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>

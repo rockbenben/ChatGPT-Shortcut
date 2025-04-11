@@ -9,7 +9,7 @@ import copy from "copy-text-to-clipboard";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { updateCopyCount } from "@site/src/api";
-import { formatCopyCount } from "@site/src/pages/_components/utils";
+import { formatCopyCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const Comments = React.lazy(() => import("./Comments"));

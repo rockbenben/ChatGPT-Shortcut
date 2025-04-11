@@ -11,12 +11,7 @@ import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { formatCopyCount } from "@site/src/pages/_components/utils";
-
-const MAX_LENGTH = 200;
-const getPreviewContent = (content: string) => {
-  return content.length <= MAX_LENGTH ? content : content.substring(0, MAX_LENGTH) + "...";
-};
+import { MAX_LENGTH, truncate, formatCopyCount } from "@site/src/utils/formatters";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -161,7 +156,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
         </p>
         <div className={styles.descriptionWrapper}>
           <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${styles.clickable}`}>
-            {showFullContent ? userDescription : getPreviewContent(userDescription)}
+            {showFullContent ? userDescription : truncate(userDescription)}
           </p>
           {!showFullContent && userDescription.length > MAX_LENGTH && (
             <div className={styles.gradientOverlay}>

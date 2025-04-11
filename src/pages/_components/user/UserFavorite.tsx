@@ -12,7 +12,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } 
 import { CSS } from "@dnd-kit/utilities";
 import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
-import { formatCopyCount } from "@site/src/pages/_components/utils";
+import { formatCopyCount } from "@site/src/utils/formatters";
 
 // SortableItem component for both cards and comms
 const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFiltered, handleCopyClick, removeBookmark, clickedIndex, showDescription, handleTextClick }) => {
