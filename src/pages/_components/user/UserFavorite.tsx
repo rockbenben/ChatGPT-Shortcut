@@ -5,18 +5,34 @@ import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
-import { Button, message, Spin } from "antd";
-import { CopyOutlined, StarOutlined } from "@ant-design/icons";
+import { Button, message, Spin, Tooltip } from "antd";
+import { CopyOutlined, StarOutlined, DownOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
-import { formatCopyCount } from "@site/src/utils/formatters";
+import { MAX_LENGTH, truncate, formatCopyCount } from "@site/src/utils/formatters";
 
 // SortableItem component for both cards and comms
-const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFiltered, handleCopyClick, removeBookmark, clickedIndex, showDescription, handleTextClick }) => {
+const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFiltered, handleCopyClick, removeBookmark }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.id });
+  const [showFullContent, setShowFullContent] = useState(false);
+  const [paragraphText, setParagraphText] = useState(isCard ? item[currentLanguage].prompt : item.description);
+  const canToggle = isCard && currentLanguage !== "en" && item[currentLanguage].description !== item[currentLanguage].prompt;
+
+  const toggleContentDisplay = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  const handleParagraphClick = () => {
+    if (isCard) {
+      if (!canToggle) return;
+      setParagraphText((prevText) => (prevText === item[currentLanguage].prompt ? item[currentLanguage].description : item[currentLanguage].prompt));
+    } else if (item.notes) {
+      setParagraphText((prevText) => (prevText === item.description ? item.notes : item.description));
+    }
+  };
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -42,7 +58,7 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
                   <Link href={"/prompt/" + item.id} className={styles.showcaseCardLink}>
                     {item[currentLanguage].title}{" "}
                   </Link>
-                  <span className={styles.showcaseCardBody}>{item.count > 0 && `🔥${formatCopyCount(item.count)}`}</span>
+                  <span className={styles.showcaseCardBody}>{item.weight > 0 && `🔥${formatCopyCount(item.weight)}`}</span>
                 </>
               ) : (
                 <>
@@ -54,30 +70,53 @@ const SortableItem = ({ item, index, isCard, currentLanguage, copiedIndex, isFil
           </div>
           {isCard ? (
             <>
-              <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
+              <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
                 👉 {item[currentLanguage].remark}
               </p>
-              <p className={styles.showcaseCardBody} onClick={() => handleTextClick(index)} style={{ cursor: "pointer" }}>
-                {clickedIndex === index && showDescription ? item[currentLanguage].description : item[currentLanguage].prompt}
-              </p>
+              <div className={styles.descriptionWrapper}>
+                <p
+                  onClick={canToggle ? handleParagraphClick : undefined}
+                  className={clsx(styles.showcaseCardBody, {
+                    [styles.clickable]: canToggle,
+                  })}>
+                  {showFullContent ? paragraphText : truncate(paragraphText)}
+                </p>
+                {!showFullContent && paragraphText.length > MAX_LENGTH && (
+                  <div className={styles.gradientOverlay}>
+                    <Tooltip title={<Translate>加载更多</Translate>}>
+                      <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+                    </Tooltip>
+                  </div>
+                )}
+              </div>
             </>
           ) : (
-            <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
+            <>
               {item.remark && (
-                <>
+                <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
                   👉 {item.remark}
-                  <br />
-                </>
+                </p>
               )}
-              {item.description}
-            </p>
+              <div className={styles.descriptionWrapper}>
+                <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${item.notes ? styles.clickable : styles.nonClickable}`}>
+                  {showFullContent ? paragraphText : truncate(paragraphText)}
+                </p>
+                {!showFullContent && paragraphText.length > MAX_LENGTH && (
+                  <div className={styles.gradientOverlay}>
+                    <Tooltip title={<Translate>加载更多</Translate>}>
+                      <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+                    </Tooltip>
+                  </div>
+                )}
+              </div>
+            </>
           )}
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Button icon={<CopyOutlined />} type="default" onClick={() => handleCopyClick(index, item, !isCard)}>
+          <Button icon={<CopyOutlined />} type="default" style={{ fontSize: "12px" }} onClick={() => handleCopyClick(index, item, !isCard)}>
             {copiedIndex === index ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
           </Button>
-          <Button icon={<StarOutlined />} type="default" onClick={() => removeBookmark(item.id, !isCard)}>
+          <Button icon={<StarOutlined />} type="default" style={{ fontSize: "12px" }} onClick={() => removeBookmark(item.id, !isCard)}>
             <Translate>移除收藏</Translate>
           </Button>
         </div>
@@ -93,8 +132,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const [cards, setCards] = useState([]);
   const [comms, setComms] = useState([]);
-  const [clickedIndex, setClickedIndex] = useState(null);
-  const [showDescription, setShowDescription] = useState(false);
   const [copiedCardIndex, setCopiedCardIndex] = useState(null);
   const [copiedCommIndex, setCopiedCommIndex] = useState(null);
   const [hasDragged, setHasDragged] = useState(false);
@@ -155,11 +192,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     },
     [userAuth, refreshUserAuth]
   );
-
-  const handleTextClick = (index) => {
-    setClickedIndex(index);
-    setShowDescription((prev) => !prev);
-  };
 
   const handleCopyClick = useCallback(
     (index, item, isComm = false) => {
@@ -248,9 +280,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                           isFiltered={isFiltered}
                           handleCopyClick={handleCopyClick}
                           removeBookmark={removeBookmark}
-                          clickedIndex={clickedIndex}
-                          showDescription={showDescription}
-                          handleTextClick={handleTextClick}
                         />
                       ))}
                     </ul>
@@ -270,9 +299,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
                           isFiltered={isFiltered}
                           handleCopyClick={handleCopyClick}
                           removeBookmark={removeBookmark}
-                          clickedIndex={clickedIndex}
-                          showDescription={showDescription}
-                          handleTextClick={handleTextClick}
                         />
                       ))}
                     </ul>

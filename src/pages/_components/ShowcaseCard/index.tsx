@@ -43,9 +43,11 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
   const [isFavorite, setIsFavorite] = useState(false);
-  const [paragraphText, setParagraphText] = useState(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
   const [copied, setShowCopied] = useState(false);
   const [showFullContent, setShowFullContent] = useState(false);
+
+  const canToggle = currentLanguage !== "en" && user[currentLanguage].description !== user[currentLanguage].prompt;
+  const [paragraphText, setParagraphText] = useState(canToggle ? (isDescription ? user[currentLanguage].prompt : user[currentLanguage].description) : user[currentLanguage].prompt);
 
   useEffect(() => {
     setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
@@ -57,10 +59,11 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
 
   const handleParagraphClick = () => {
-    setParagraphText(paragraphText === user[currentLanguage].prompt ? user[currentLanguage].description : user[currentLanguage].prompt);
+    if (!canToggle) return;
+    setParagraphText((prevText) => (prevText === user[currentLanguage].prompt ? user[currentLanguage].description : user[currentLanguage].prompt));
   };
 
-  const userDescription = currentLanguage === "en" ? user.en.prompt : paragraphText;
+  const userDescription = canToggle ? paragraphText : user[currentLanguage].prompt;
 
   const toggleContentDisplay = () => {
     setShowFullContent(!showFullContent);
@@ -155,7 +158,11 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           👉 {userRemark}
         </p>
         <div className={styles.descriptionWrapper}>
-          <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${styles.clickable}`}>
+          <p
+            onClick={canToggle ? handleParagraphClick : undefined}
+            className={clsx(styles.showcaseCardBody, {
+              [styles.clickable]: canToggle,
+            })}>
             {showFullContent ? userDescription : truncate(userDescription)}
           </p>
           {!showFullContent && userDescription.length > MAX_LENGTH && (

@@ -3,11 +3,12 @@ import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import copy from "copy-text-to-clipboard";
 import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
-import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import styles from "../ShowcaseCard/styles.module.css";
+import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 
 import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache, clearUserAllInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
@@ -15,6 +16,20 @@ import { AuthContext } from "../AuthContext";
 // SortableItem component
 const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handleCopyClick, handleDeletePrompt, handleEditPrompt }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: UserPrompt.id });
+  const [showFullContent, setShowFullContent] = useState(false);
+  const [paragraphText, setParagraphText] = useState(UserPrompt.description);
+
+  const toggleContentDisplay = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  const handleParagraphClick = () => {
+    if (UserPrompt.notes) {
+      setParagraphText(paragraphText === UserPrompt.description ? UserPrompt.notes : UserPrompt.description);
+    }
+  };
+
+  const displayText = paragraphText || UserPrompt.description;
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -48,25 +63,32 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
             </Tooltip>
           </div>
           {UserPrompt.remark && (
-            <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
+            <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
               👉 {UserPrompt.remark}
             </p>
           )}
-          <p className={styles.showcaseCardBody} {...attributes} {...(isFiltered ? {} : listeners)}>
-            {UserPrompt.description}
-          </p>
+          <div className={styles.descriptionWrapper}>
+            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${UserPrompt.notes ? styles.clickable : styles.nonClickable}`}>
+              {showFullContent ? displayText : truncate(displayText)}
+            </p>
+            {!showFullContent && displayText.length > MAX_LENGTH && (
+              <div className={styles.gradientOverlay}>
+                <Tooltip title={<Translate>加载更多</Translate>}>
+                  <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+                </Tooltip>
+              </div>
+            )}
+          </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }} className={styles.nonClickable}>
           <Tooltip title={<Translate id="delete">删除</Translate>}>
-            <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleDeletePrompt(UserPrompt.id)}>
-              <DeleteOutlined />
-              <Translate id="delete">删除</Translate>
+            <a style={{ cursor: "pointer" }} onClick={() => handleDeletePrompt(UserPrompt.id)}>
+              <DeleteOutlined /> <Translate id="delete">删除</Translate>
             </a>
           </Tooltip>
           <Tooltip title={<Translate id="edit">修改</Translate>}>
-            <a style={{ fontSize: "14px", cursor: "pointer" }} onClick={() => handleEditPrompt(UserPrompt)}>
-              <EditOutlined />
-              <Translate id="edit">修改</Translate>
+            <a style={{ cursor: "pointer" }} onClick={() => handleEditPrompt(UserPrompt)}>
+              <EditOutlined /> <Translate id="edit">修改</Translate>
             </a>
           </Tooltip>
         </div>

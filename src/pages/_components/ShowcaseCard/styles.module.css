@@ -135,6 +135,10 @@
   cursor: pointer;
 }
 
+.nonClickable {
+  cursor: default;
+}
+
 .gradientOverlay {
   position: absolute;
   bottom: 0;
