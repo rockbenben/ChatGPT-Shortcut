@@ -69,6 +69,21 @@ interface PromptCardProps {
 }
 
 const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copiedIndex, index, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
+  const [showFullContent, setShowFullContent] = useState(false);
+  const [paragraphText, setParagraphText] = useState(prompt.description);
+
+  const toggleContentDisplay = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  const handleParagraphClick = () => {
+    if (prompt.notes) {
+      setParagraphText(paragraphText === prompt.description ? prompt.notes : prompt.description);
+    }
+  };
+
+  const displayText = paragraphText || prompt.description;
+
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
@@ -81,16 +96,23 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ prompt, onCopy, copi
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "10px" }}>@{prompt.owner}</span>
             </div>
           </div>
-          {prompt.remark && <p className={styles.showcaseCardBody}>👉 {prompt.remark}</p>}
-          <p className={styles.showcaseCardBody}>
-            {prompt.notes ? (
-              <Tooltip placement="right" title={truncate(prompt.notes, 300)} style={{ maxWidth: 450 }}>
-                {prompt.description}
-              </Tooltip>
-            ) : (
-              prompt.description
+          {prompt.remark && (
+            <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
+              👉 {prompt.remark}
+            </p>
+          )}
+          <div className={styles.descriptionWrapper}>
+            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${prompt.notes ? styles.clickable : ""}`}>
+              {showFullContent ? displayText : truncate(displayText)}
+            </p>
+            {!showFullContent && displayText.length > MAX_LENGTH && (
+              <div className={styles.gradientOverlay}>
+                <Tooltip title={<Translate>加载更多</Translate>}>
+                  <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
+                </Tooltip>
+              </div>
             )}
-          </p>
+          </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Space.Compact>

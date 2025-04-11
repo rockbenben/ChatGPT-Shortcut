@@ -26,6 +26,7 @@ const styles = {
     fontSize: "0.9em",
     marginTop: "20px",
   },
+  mainText: { maxHeight: "500px", overflowY: "auto" as React.CSSProperties["overflowY"], minHeight: "100px" },
 };
 
 function PromptPage({ prompt }) {
@@ -33,7 +34,8 @@ function PromptPage({ prompt }) {
   const [copied, setCopied] = useState(false);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const [mainPrompt, setMainPrompt] = useState(prompt[currentLanguage].prompt);
+  const canToggle = currentLanguage !== "en" && prompt[currentLanguage].description !== prompt[currentLanguage].prompt;
+  const [paragraphText, setParagraphText] = useState(prompt[currentLanguage].prompt);
 
   // 使用 useMemo 缓存计算值
   const { shareUrl, title, remark, weight, website, tags, isDarkMode } = useMemo(
@@ -55,7 +57,8 @@ function PromptPage({ prompt }) {
   }, [prompt, currentLanguage]);
 
   const handleParagraphClick = useCallback(() => {
-    setMainPrompt((prev) => (currentLanguage !== "en" && prev === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
+    if (!canToggle) return;
+    setParagraphText((prevText) => (prevText === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
   }, [prompt, currentLanguage]);
 
   const handleCopyClick = useCallback(async () => {
@@ -94,11 +97,15 @@ function PromptPage({ prompt }) {
                 </Space>
               }>
               <Paragraph style={styles.remark}>👉 {remark}</Paragraph>
-              <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
-                <Paragraph onClick={handleParagraphClick} style={{ cursor: "pointer", maxHeight: "500px", overflowY: "auto", minHeight: "100px" }}>
-                  {mainPrompt}
-                </Paragraph>
-              </Tooltip>
+              {canToggle ? (
+                <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
+                  <Paragraph onClick={handleParagraphClick} style={(styles.mainText, { cursor: "pointer" })}>
+                    {paragraphText}
+                  </Paragraph>
+                </Tooltip>
+              ) : (
+                <Paragraph style={styles.mainText}>{paragraphText}</Paragraph>
+              )}
               <Space wrap>
                 {tags.map((tag) => (
                   <Link to={`/?tags=${tag}`} key={tag}>
