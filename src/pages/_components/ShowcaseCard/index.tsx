@@ -20,7 +20,7 @@ const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, descriptio
   </li>
 ));
 
-const ShowcaseCardTag = ({ tags }: { tags: TagType[] }) => {
+export const ShowcaseCardTag = ({ tags }: { tags: TagType[] }) => {
   const safeTags = tags || [];
   const tagObjects = safeTags.map((tag) => ({ tag, ...Tags[tag] }));
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
