@@ -13,7 +13,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } 
 import { CSS } from "@dnd-kit/utilities";
 import { updateCopyCount, getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
-import { MAX_LENGTH, truncate, formatCopyCount } from "@site/src/utils/formatters";
+import { MAX_LENGTH, truncate, getWeight, formatCount } from "@site/src/utils/formatters";
 
 // SortableItem component for both cards and comms
 const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmark }) => {
@@ -22,6 +22,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
   const [copied, setShowCopied] = useState(false);
   const [paragraphText, setParagraphText] = useState(isCard ? item[currentLanguage].prompt : item.description);
   const canToggle = isCard && currentLanguage !== "en" && item[currentLanguage].description !== item[currentLanguage].prompt;
+  const weight = getWeight(item);
 
   const toggleContentDisplay = () => {
     setShowFullContent(!showFullContent);
@@ -71,7 +72,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                   <Link href={"/prompt/" + item.id} className={styles.showcaseCardLink}>
                     {item[currentLanguage].title}{" "}
                   </Link>
-                  <span className={styles.showcaseCardBody}>{item.count > 0 && `🔥${formatCopyCount(item.count)}`}</span>
+                  <span className={styles.showcaseCardBody}>{weight > 0 && `🔥${formatCount(weight)}`}</span>
                 </>
               ) : (
                 <>

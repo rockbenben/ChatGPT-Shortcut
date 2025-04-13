@@ -9,7 +9,7 @@ import copy from "copy-text-to-clipboard";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { updateCopyCount } from "@site/src/api";
-import { formatCopyCount } from "@site/src/utils/formatters";
+import { getWeight, formatCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const Comments = React.lazy(() => import("./Comments"));
@@ -43,7 +43,7 @@ function PromptPage({ prompt }) {
       shareUrl: typeof window !== "undefined" ? window.location.href : "",
       title: prompt[currentLanguage].title,
       remark: prompt[currentLanguage].remark,
-      weight: prompt.count,
+      weight: getWeight(prompt),
       website: prompt.website,
       tags: prompt.tags,
       isDarkMode: typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark",
@@ -81,7 +81,7 @@ function PromptPage({ prompt }) {
               className="shadow--md"
               title={
                 <>
-                  {title} <Badge count={`${formatCopyCount(weight)}`} style={styles.badge} />
+                  {title} <Badge count={`${formatCount(weight)}`} style={styles.badge} />
                 </>
               }
               extra={
