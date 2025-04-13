@@ -23,6 +23,7 @@ import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/
 import styles from "@site/src/pages/styles.module.css";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
+import { getWeight } from "@site/src/utils/formatters";
 
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 
@@ -330,7 +331,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                 </div>
                 <ul className={clsx("clean-list", styles.showcaseList)}>
                   {favoriteUsers.map((user) => (
-                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
+                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
                   ))}
                 </ul>
               </div>
@@ -342,7 +343,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {otherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
+                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
               ))}
             </ul>
             {!showAllOtherUsers && (
@@ -362,7 +363,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               <SearchCommu commuPrompt={user} />
             ))}
             {filteredCards.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={user.weight || 0} />
+              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
             ))}
           </ul>
         </div>
