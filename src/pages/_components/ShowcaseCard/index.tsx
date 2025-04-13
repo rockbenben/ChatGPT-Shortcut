@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { MAX_LENGTH, truncate, formatCopyCount } from "@site/src/utils/formatters";
+import { MAX_LENGTH, truncate, formatCount } from "@site/src/utils/formatters";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
@@ -131,7 +131,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink}>
               {userTitle}{" "}
             </Link>
-            <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCopyCount(copyCount)}`}</span>
+            <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCount(copyCount)}`}</span>
           </div>
           <Space.Compact>
             {userAuth && (
