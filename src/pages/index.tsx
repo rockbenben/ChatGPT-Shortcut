@@ -62,13 +62,14 @@ interface ShowcaseFiltersProps {
   onToggleDescription: () => void;
   showUserFavs: boolean;
   setShowUserFavs: React.Dispatch<React.SetStateAction<boolean>>;
+  showUserPrompts: boolean;
+  setShowUserPrompts: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs }) => {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs, showUserPrompts, setShowUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const [showUserPrompts, setShowUserPrompts] = useState(false);
 
   const handleUserPrompts = useCallback(() => {
     setShowUserFavs(false);
@@ -252,9 +253,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
 interface ShowcaseCardsProps {
   isDescription: boolean;
   showUserFavs: boolean;
+  showUserPrompts: boolean;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs, showUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -327,7 +329,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                     <Translate id="showcase.favoritesList.title">Favorites</Translate>
                   </Heading>
                   <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                  <SearchBar />
+                  {!showUserPrompts && <SearchBar />}
                 </div>
                 <ul className={clsx("clean-list", styles.showcaseList)}>
                   {favoriteUsers.map((user) => (
@@ -376,6 +378,7 @@ export default function Showcase(): JSX.Element {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
   const [showUserFavs, setShowUserFavs] = useState(false);
+  const [showUserPrompts, setShowUserPrompts] = useState(false);
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -399,8 +402,14 @@ export default function Showcase(): JSX.Element {
               algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
             }}>
             <ShowcaseHeader />
-            <ShowcaseFilters onToggleDescription={toggleDescription} showUserFavs={showUserFavs} setShowUserFavs={setShowUserFavs} />
-            <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} />
+            <ShowcaseFilters
+              onToggleDescription={toggleDescription}
+              showUserFavs={showUserFavs}
+              setShowUserFavs={setShowUserFavs}
+              showUserPrompts={showUserPrompts}
+              setShowUserPrompts={setShowUserPrompts}
+            />
+            <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} showUserPrompts={showUserPrompts} />
           </ConfigProvider>
         </AuthProvider>
         <Suspense fallback={null}>
