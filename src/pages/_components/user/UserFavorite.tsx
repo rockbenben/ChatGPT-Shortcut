@@ -75,9 +75,9 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                   <span className={styles.showcaseCardBody}>{weight > 0 && `🔥${formatCount(weight)}`}</span>
                 </>
               ) : (
-                <>
-                  <Link className={styles.showcaseCardLink}>{item.title} </Link>
-                </>
+                <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
+                  {item.title}{" "}
+                </span>
               )}
             </div>
             <Space.Compact>
@@ -281,36 +281,36 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   return (
     <>
       {contextHolder}
-      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-        <div className={styles.showcaseFavorite}>
-          <div className="container">
-            {!cards?.length && !comms?.length ? (
+      {!cards?.length && !comms?.length ? (
+        <ul className="clean-list showcaseList_Cwj2">
+          <li className="card shadow--md">
+            <div className={clsx("card__body")}>
               <p>You haven't favorited any prompts yet.</p>
-            ) : (
-              <>
-                {comms?.length > 0 && (
-                  <SortableContext items={comms.map((comm) => comm.id)}>
-                    <ul className="clean-list showcaseList_Cwj2">
-                      {comms.map((comm) => (
-                        <SortableItem key={comm.id} item={comm} isCard={false} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
-                      ))}
-                    </ul>
-                  </SortableContext>
-                )}
-                {cards?.length > 0 && (
-                  <SortableContext items={cards.map((card) => card.id)}>
-                    <ul className="clean-list showcaseList_Cwj2">
-                      {cards.map((card) => (
-                        <SortableItem key={card.id} item={card} isCard={true} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
-                      ))}
-                    </ul>
-                  </SortableContext>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-      </DndContext>
+            </div>
+          </li>
+        </ul>
+      ) : (
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+          {comms?.length > 0 && (
+            <SortableContext items={comms.map((comm) => comm.id)}>
+              <ul className="clean-list showcaseList_Cwj2">
+                {comms.map((comm) => (
+                  <SortableItem key={comm.id} item={comm} isCard={false} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
+                ))}
+              </ul>
+            </SortableContext>
+          )}
+          {cards?.length > 0 && (
+            <SortableContext items={cards.map((card) => card.id)}>
+              <ul className="clean-list showcaseList_Cwj2">
+                {cards.map((card) => (
+                  <SortableItem key={card.id} item={card} isCard={true} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
+                ))}
+              </ul>
+            </SortableContext>
+          )}
+        </DndContext>
+      )}
     </>
   );
 }
