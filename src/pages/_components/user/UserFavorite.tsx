@@ -1,17 +1,17 @@
 import React, { useEffect, useContext, useState, useCallback } from "react";
 import clsx from "clsx";
-import copy from "copy-text-to-clipboard";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ShowcaseCardTag } from "@site/src/pages/_components/ShowcaseCard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import { Button, message, Spin, Tooltip, Space } from "antd";
-import { CopyOutlined, DownOutlined, HeartTwoTone, LinkOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, DownOutlined, HeartTwoTone, LinkOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { updateCopyCount, getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
+import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { MAX_LENGTH, truncate, getWeight, formatCount } from "@site/src/utils/formatters";
 import isEqual from "lodash/isEqual";
@@ -19,8 +19,8 @@ import isEqual from "lodash/isEqual";
 // SortableItem component for both cards and comms
 const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmark }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.id });
+  const { copied, copyText, updateCopy } = useCopyToClipboard();
   const [showFullContent, setShowFullContent] = useState(false);
-  const [copied, setShowCopied] = useState(false);
   const [paragraphText, setParagraphText] = useState(isCard ? item[currentLanguage].prompt : item.description);
   const canToggle = isCard && currentLanguage !== "en" && item[currentLanguage].description !== item[currentLanguage].prompt;
   const weight = getWeight(item);
@@ -40,13 +40,10 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
 
   const handleCopyClick = () => {
     if (isCard) {
-      copy(item[currentLanguage].prompt);
-      updateCopyCount(item.id);
+      updateCopy(item[currentLanguage].prompt, item.id);
     } else {
-      copy(item.description);
+      copyText(item.description);
     }
-    setShowCopied(true);
-    setTimeout(() => setShowCopied(false), 2000);
   };
 
   const style = {
@@ -83,14 +80,19 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
             </div>
             <Space.Compact>
               <Tooltip title={<Translate>点击移除收藏</Translate>}>
-                <Button type="default" onClick={() => removeBookmark(item.id, !isCard)}>
+                <Button onClick={() => removeBookmark(item.id, !isCard)}>
                   <HeartTwoTone twoToneColor="#eb2f96" />
                 </Button>
               </Tooltip>
               <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-                <Button type="default" onClick={handleCopyClick}>
-                  <CopyOutlined />
-                  {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+                <Button onClick={handleCopyClick}>
+                  {copied ? (
+                    <>
+                      <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
+                    </>
+                  ) : (
+                    <CopyOutlined />
+                  )}
                 </Button>
               </Tooltip>
             </Space.Compact>

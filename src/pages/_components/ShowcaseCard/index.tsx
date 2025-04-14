@@ -3,12 +3,12 @@ import clsx from "clsx";
 import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import copy from "copy-text-to-clipboard";
-import { LinkOutlined, CopyOutlined, HeartOutlined, HeartTwoTone, DownOutlined } from "@ant-design/icons";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CheckOutlined, CopyOutlined, HeartOutlined, HeartTwoTone, DownOutlined, LinkOutlined } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
-import { updateCopyCount, createFavorite, updateFavorite, getPrompts } from "@site/src/api";
+import { createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { MAX_LENGTH, truncate, formatCount } from "@site/src/utils/formatters";
@@ -43,8 +43,8 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const userTitle = user[currentLanguage].title;
   const userRemark = user[currentLanguage].remark;
   const [isFavorite, setIsFavorite] = useState(false);
-  const [copied, setShowCopied] = useState(false);
   const [showFullContent, setShowFullContent] = useState(false);
+  const { copied, updateCopy } = useCopyToClipboard();
 
   const canToggle = currentLanguage !== "en" && user[currentLanguage].description !== user[currentLanguage].prompt;
   const [paragraphText, setParagraphText] = useState(canToggle ? (isDescription ? user[currentLanguage].prompt : user[currentLanguage].description) : user[currentLanguage].prompt);
@@ -68,19 +68,6 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const toggleContentDisplay = () => {
     setShowFullContent(!showFullContent);
   };
-
-  const handleCopyClick = useCallback(async () => {
-    try {
-      if (user[currentLanguage].prompt) {
-        copy(userDescription);
-      }
-      setShowCopied(true);
-      setTimeout(() => setShowCopied(false), 2000);
-      await updateCopyCount(user.id);
-    } catch (error) {
-      console.error("Error updating copy count:", error);
-    }
-  }, [userDescription, user.id, user[currentLanguage].prompt]);
 
   const handleLove = useCallback(async () => {
     try {
@@ -136,9 +123,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           <Space.Compact>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button type="default" onClick={isFavorite ? removeFavorite : handleLove}>
-                  {isFavorite ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}
-                </Button>
+                <Button onClick={isFavorite ? removeFavorite : handleLove}>{isFavorite ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}</Button>
               </Tooltip>
             )}
             {!userAuth && user.tags?.includes("favorite") && (
@@ -147,9 +132,14 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
               </Button>
             )}
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button type="default" onClick={handleCopyClick}>
-                <CopyOutlined />
-                {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+              <Button onClick={() => updateCopy(user[currentLanguage].prompt, user.id)}>
+                {copied ? (
+                  <>
+                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
+                  </>
+                ) : (
+                  <CopyOutlined />
+                )}
               </Button>
             </Tooltip>
           </Space.Compact>

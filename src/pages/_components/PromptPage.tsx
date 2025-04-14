@@ -5,10 +5,9 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
-import copy from "copy-text-to-clipboard";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
-import { updateCopyCount } from "@site/src/api";
 import { getWeight, formatCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -30,11 +29,11 @@ const styles = {
 
 function PromptPage({ prompt }) {
   const { userAuth } = useContext(AuthContext);
-  const [copied, setCopied] = useState(false);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const canToggle = currentLanguage !== "en" && prompt[currentLanguage].description !== prompt[currentLanguage].prompt;
   const [paragraphText, setParagraphText] = useState(prompt[currentLanguage].prompt);
+  const { copied, updateCopy } = useCopyToClipboard();
 
   // 使用 useMemo 缓存计算值
   const { shareUrl, title, remark, weight, website, tags, isDarkMode } = useMemo(
@@ -55,13 +54,6 @@ function PromptPage({ prompt }) {
     setParagraphText((prevText) => (prevText === prompt[currentLanguage].prompt ? prompt[currentLanguage].description : prompt[currentLanguage].prompt));
   }, [prompt, currentLanguage]);
 
-  const handleCopyClick = useCallback(async () => {
-    copy(prompt[currentLanguage].prompt);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-    await updateCopyCount(prompt.id);
-  }, [prompt, currentLanguage]);
-
   return (
     <ConfigProvider
       theme={{
@@ -80,7 +72,11 @@ function PromptPage({ prompt }) {
               }
               extra={
                 <Space>
-                  <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick}>
+                  <Button
+                    icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                    onClick={() => {
+                      updateCopy(prompt[currentLanguage].prompt, prompt.id);
+                    }}>
                     {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
                   </Button>
                   {website && (
