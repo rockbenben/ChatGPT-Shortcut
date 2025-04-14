@@ -14,6 +14,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { updateCopyCount, getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { MAX_LENGTH, truncate, getWeight, formatCount } from "@site/src/utils/formatters";
+import isEqual from "lodash/isEqual";
 
 // SortableItem component for both cards and comms
 const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmark }) => {
@@ -315,4 +316,8 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   );
 }
 
-export default UserFavorite;
+function areEqual(prevProps, nextProps) {
+  return prevProps.isFiltered === nextProps.isFiltered && isEqual(prevProps.filteredCommus, nextProps.filteredCommus) && isEqual(prevProps.filteredCards, nextProps.filteredCards);
+}
+
+export default React.memo(UserFavorite, areEqual);

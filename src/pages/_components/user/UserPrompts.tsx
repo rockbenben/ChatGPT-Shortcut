@@ -9,6 +9,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } 
 import { CSS } from "@dnd-kit/utilities";
 import styles from "../ShowcaseCard/styles.module.css";
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
+import isEqual from "lodash/isEqual";
 
 import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache, clearUserAllInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
@@ -97,7 +98,7 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
   );
 };
 
-export default function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
+function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [userprompts, setUserPrompts] = useState([]);
@@ -399,3 +400,9 @@ export default function UserPromptsPage({ filteredCommus = [], isFiltered = fals
     </>
   );
 }
+
+function areEqual(prevProps, nextProps) {
+  return prevProps.isFiltered === nextProps.isFiltered && isEqual(prevProps.filteredCommus, nextProps.filteredCommus);
+}
+
+export default React.memo(UserPromptsPage, areEqual);
