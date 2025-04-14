@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
-import copy from "copy-text-to-clipboard";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import Link from "@docusaurus/Link";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
@@ -9,7 +9,7 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, ConfigProvider, theme, Skeleton } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
+import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
@@ -66,14 +66,7 @@ interface PromptCardProps {
 }
 
 const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
-  const [copied, setCopied] = useState(false);
-  const handleCopyClick = () => {
-    copy(commuPrompt.description);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  };
+  const { copied, copyText } = useCopyToClipboard();
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
@@ -81,14 +74,21 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Space.Compact>
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button type="default" onClick={handleCopyClick}>
-                <CopyOutlined />
-                {copied && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+              <Button
+                onClick={() => {
+                  copyText(commuPrompt.description);
+                }}>
+                {copied ? (
+                  <>
+                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
+                  </>
+                ) : (
+                  <CopyOutlined />
+                )}
               </Button>
             </Tooltip>
             <Tooltip title={translate({ message: "收藏" })}>
               <Button
-                type="default"
                 onClick={() => {
                   if (!userAuth) {
                     messageApi.warning("Please log in to bookmark.");
@@ -104,7 +104,6 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
           <Space.Compact>
             <Tooltip title={translate({ id: "upvote", message: "赞" })}>
               <Button
-                type="default"
                 onClick={() => {
                   if (!userAuth) {
                     messageApi.warning("Please log in to vote.");
@@ -118,7 +117,6 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
             </Tooltip>
             <Tooltip title={translate({ id: "downvote", message: "踩" })}>
               <Button
-                type="default"
                 onClick={() => {
                   if (!userAuth) {
                     messageApi.warning("Please log in to vote.");

@@ -2,26 +2,18 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
 import { Button, Tooltip } from "antd";
-import { CopyOutlined, DownOutlined } from "@ant-design/icons";
-import copy from "copy-text-to-clipboard";
+import { CheckOutlined, CopyOutlined, DownOutlined } from "@ant-design/icons";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import styles from "./styles.module.css";
 
 export const SearchCommu = ({ commuPrompt }) => {
+  const { copied, copyText } = useCopyToClipboard();
   const [paragraphText, setParagraphText] = useState(commuPrompt.description);
   const [showFullContent, setShowFullContent] = useState(false);
-  const [copied, setCopied] = useState(false);
   const toggleContentDisplay = () => {
     setShowFullContent(!showFullContent);
-  };
-
-  const handleCopyClick = () => {
-    copy(commuPrompt.description);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
   };
 
   const handleParagraphClick = () => {
@@ -49,8 +41,19 @@ export const SearchCommu = ({ commuPrompt }) => {
               </span>
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
             </div>
-            <Button icon={<CopyOutlined />} type="default" style={{ fontSize: "12px" }} onClick={handleCopyClick}>
-              {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+            <Button
+              onClick={() => {
+                copyText(commuPrompt.description);
+              }}>
+              {copied ? (
+                <>
+                  <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
+                </>
+              ) : (
+                <>
+                  <CopyOutlined /> <Translate id="theme.CodeBlock.copy">复制</Translate>
+                </>
+              )}
             </Button>
           </div>
           {commuPrompt.remark && (

@@ -188,14 +188,13 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
         </button>
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
-          <Button type="default" icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
+          <Button icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
             <span className="hideOnSmallScreen">
               <Translate id="button.clearCache">清除缓存</Translate>
             </span>
           </Button>
         </Tooltip>
         <Button
-          type="default"
           icon={<LogoutOutlined />}
           onClick={() => {
             Modal.confirm({

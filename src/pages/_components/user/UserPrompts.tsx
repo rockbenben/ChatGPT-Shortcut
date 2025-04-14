@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
-import copy from "copy-text-to-clipboard";
+import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
@@ -15,10 +15,11 @@ import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocal
 import { AuthContext } from "../AuthContext";
 
 // SortableItem component
-const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handleCopyClick, handleDeletePrompt, handleEditPrompt }) => {
+const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handleEditPrompt }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: UserPrompt.id });
   const [showFullContent, setShowFullContent] = useState(false);
   const [paragraphText, setParagraphText] = useState(UserPrompt.description);
+  const { copied, copyText } = useCopyToClipboard();
 
   const toggleContentDisplay = () => {
     setShowFullContent(!showFullContent);
@@ -57,9 +58,14 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
               {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
             </div>
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button type="default" onClick={() => handleCopyClick(index)}>
-                <CopyOutlined />
-                {copiedIndex === index && <Translate id="theme.CodeBlock.copied">已复制</Translate>}
+              <Button onClick={() => copyText(UserPrompt.description)}>
+                {copied ? (
+                  <>
+                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
+                  </>
+                ) : (
+                  <CopyOutlined />
+                )}
               </Button>
             </Tooltip>
           </div>
@@ -99,7 +105,6 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
   const [messageApi, contextHolder] = message.useMessage();
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [copiedIndex, setCopiedIndex] = useState(null);
   const [hasDragged, setHasDragged] = useState(false);
   const [open, setOpen] = useState(false);
   const [editingPromptId, setEditingPromptId] = useState(null);
@@ -150,20 +155,6 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
       isMounted = false;
     };
   }, [userAuth, isFiltered, filteredCommus]);
-
-  const handleCopyClick = useCallback(
-    (index) => {
-      const UserPrompt = userprompts[index];
-      if (UserPrompt) {
-        copy(UserPrompt.description);
-        setCopiedIndex(index);
-        setTimeout(() => {
-          setCopiedIndex(null);
-        }, 2000);
-      }
-    },
-    [userprompts]
-  );
 
   const handleEditPrompt = useCallback(
     (UserPrompt) => {
@@ -288,17 +279,8 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
               </li>
             ) : (
               <SortableContext items={userprompts.map((item) => item.id)}>
-                {userprompts.map((UserPrompt, index) => (
-                  <SortablePromptItem
-                    key={UserPrompt.id}
-                    UserPrompt={UserPrompt}
-                    index={index}
-                    copiedIndex={copiedIndex}
-                    isFiltered={isFiltered}
-                    handleCopyClick={handleCopyClick}
-                    handleDeletePrompt={handleDeletePrompt}
-                    handleEditPrompt={handleEditPrompt}
-                  />
+                {userprompts.map((UserPrompt) => (
+                  <SortablePromptItem key={UserPrompt.id} UserPrompt={UserPrompt} isFiltered={isFiltered} handleDeletePrompt={handleDeletePrompt} handleEditPrompt={handleEditPrompt} />
                 ))}
               </SortableContext>
             )}
