@@ -82,16 +82,12 @@ const SortablePromptItem = ({ UserPrompt, index, copiedIndex, isFiltered, handle
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }} className={styles.nonClickable}>
-          <Tooltip title={<Translate id="delete">删除</Translate>}>
-            <a style={{ cursor: "pointer" }} onClick={() => handleDeletePrompt(UserPrompt.id)}>
-              <DeleteOutlined /> <Translate id="delete">删除</Translate>
-            </a>
-          </Tooltip>
-          <Tooltip title={<Translate id="edit">修改</Translate>}>
-            <a style={{ cursor: "pointer" }} onClick={() => handleEditPrompt(UserPrompt)}>
-              <EditOutlined /> <Translate id="edit">修改</Translate>
-            </a>
-          </Tooltip>
+          <Button icon={<DeleteOutlined />} onClick={() => handleDeletePrompt(UserPrompt.id)}>
+            <Translate id="delete">删除</Translate>
+          </Button>
+          <Button icon={<EditOutlined />} onClick={() => handleEditPrompt(UserPrompt)}>
+            <Translate id="edit">修改</Translate>
+          </Button>
         </div>
       </div>
     </li>
