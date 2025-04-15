@@ -85,7 +85,7 @@ const prompt = {
     "tool"
   ],
   "id": 129,
-  "weight": 358
+  "weight": 366
 };
 
 function PromptDetail() {

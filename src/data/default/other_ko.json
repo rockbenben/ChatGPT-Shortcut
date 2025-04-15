@@ -12,7 +12,7 @@
             "ai"
         ],
         "id": 185,
-        "count": 71970
+        "count": 72554
     },
     {
         "ko": {
@@ -24,11 +24,10 @@
         "website": null,
         "tags": [
             "contribute",
-            "social",
-            "favorite"
+            "social"
         ],
         "id": 199,
-        "count": 19310
+        "count": 19654
     },
     {
         "ko": {
@@ -42,7 +41,7 @@
             "code"
         ],
         "id": 90,
-        "count": 16191
+        "count": 16496
     },
     {
         "ko": {
@@ -57,7 +56,7 @@
             "language"
         ],
         "id": 180,
-        "count": 15159
+        "count": 15491
     },
     {
         "ko": {
@@ -71,7 +70,7 @@
             "ai"
         ],
         "id": 232,
-        "count": 14709
+        "count": 15044
     },
     {
         "ko": {
@@ -82,11 +81,10 @@
         },
         "website": "https://learnprompting.org/docs/applied_prompting/short_response",
         "tags": [
-            "favorite",
             "article"
         ],
         "id": 4,
-        "count": 14584
+        "count": 14724
     },
     {
         "ko": {
@@ -101,7 +99,7 @@
             "write"
         ],
         "id": 204,
-        "count": 14522
+        "count": 14765
     },
     {
         "ko": {
@@ -116,7 +114,7 @@
             "code"
         ],
         "id": 218,
-        "count": 13016
+        "count": 13193
     },
     {
         "ko": {
@@ -130,7 +128,7 @@
             "seo"
         ],
         "id": 41,
-        "count": 12356
+        "count": 12506
     },
     {
         "ko": {
@@ -144,7 +142,7 @@
             "write"
         ],
         "id": 11,
-        "count": 12126
+        "count": 12315
     },
     {
         "ko": {
@@ -158,6 +156,6 @@
             "ai"
         ],
         "id": 234,
-        "count": 10334
+        "count": 10476
     }
 ]

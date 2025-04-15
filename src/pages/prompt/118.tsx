@@ -85,7 +85,7 @@ const prompt = {
     "language"
   ],
   "id": 118,
-  "weight": 439
+  "weight": 449
 };
 
 function PromptDetail() {

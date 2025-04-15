@@ -82,11 +82,12 @@ const prompt = {
   },
   "website": null,
   "tags": [
+    "favorite",
     "contribute",
     "article"
   ],
   "id": 251,
-  "weight": 19793
+  "weight": 21868
 };
 
 function PromptDetail() {
