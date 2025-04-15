@@ -1,30 +1,42 @@
-import React, { createContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
 import { getUserAllInfo } from "@site/src/api";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({
+  userAuth: null,
+  refreshUserAuth: () => {},
+  setUserAuth: (userAuth: any) => {},
+});
 
 export function AuthProvider({ children }) {
   const [userAuth, setUserAuth] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchUser = useCallback(async () => {
+    setIsLoading(true);
     try {
       const userAuth = await getUserAllInfo();
       setUserAuth(userAuth);
     } catch (error) {
-      // 这里可以进行错误处理，比如重定向到登录页面
+      console.error("Failed to fetch user data:", error);
+      // 这里可以考虑做额外处理，例如置空、显示错误提示或者重定向到登录页面
+      // setUserAuth(null);
     } finally {
+      setIsLoading(false);
     }
-  }, []); // 确保函数只在组件首次渲染时创建
+  }, []);
 
   useEffect(() => {
     fetchUser();
-  }, [fetchUser]);
+  }, []);
 
-  const value = {
-    userAuth,
-    setUserAuth,
-    refreshUserAuth: fetchUser,
-  };
+  const value = useMemo(
+    () => ({
+      userAuth,
+      setUserAuth,
+      refreshUserAuth: fetchUser,
+    }),
+    [userAuth, fetchUser]
+  );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
