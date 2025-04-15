@@ -7,8 +7,9 @@
         "remark": "अन्य भाषाओं का अंग्रेजी में अनुवाद करें, या आपके द्वारा प्रदान किए गए अंग्रेजी वाक्यों में सुधार करें।"
     },
     "tags": [
+        "favorite",
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-    "count": 19867
+    "count": 20339
 }

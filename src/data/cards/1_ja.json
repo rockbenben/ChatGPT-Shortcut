@@ -7,8 +7,9 @@
         "remark": "他言語から英語への翻訳や、提供した英語の文章を改善する。"
     },
     "tags": [
+        "favorite",
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-    "count": 19867
+    "count": 20339
 }

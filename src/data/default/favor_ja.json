@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 80690
+        "count": 82527
     },
     {
         "ja": {
@@ -27,7 +27,7 @@
             "write"
         ],
         "id": 209,
-        "count": 54291
+        "count": 55280
     },
     {
         "ja": {
@@ -43,7 +43,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27165
+        "count": 27714
     },
     {
         "ja": {
@@ -58,7 +58,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25588
+        "count": 25973
     },
     {
         "ja": {
@@ -73,7 +73,7 @@
             "article"
         ],
         "id": 20,
-        "count": 23276
+        "count": 23659
     },
     {
         "ja": {
@@ -84,10 +84,11 @@
         },
         "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
         "tags": [
+            "favorite",
             "language"
         ],
         "id": 1,
-        "count": 19867
+        "count": 20339
     },
     {
         "ja": {
@@ -98,10 +99,11 @@
         },
         "website": null,
         "tags": [
+            "favorite",
             "contribute",
             "article"
         ],
         "id": 251,
-        "count": 19793
+        "count": 21868
     }
 ]
