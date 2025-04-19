@@ -294,24 +294,22 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
         </ul>
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-          {comms?.length > 0 && (
-            <SortableContext items={comms.map((comm) => comm.id)}>
-              <ul className="clean-list showcaseList_Cwj2">
+          <ul className="clean-list showcaseList_Cwj2">
+            {comms?.length > 0 && (
+              <SortableContext items={comms.map((comm) => comm.id)}>
                 {comms.map((comm) => (
                   <SortableItem key={comm.id} item={comm} isCard={false} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
                 ))}
-              </ul>
-            </SortableContext>
-          )}
-          {cards?.length > 0 && (
-            <SortableContext items={cards.map((card) => card.id)}>
-              <ul className="clean-list showcaseList_Cwj2">
+              </SortableContext>
+            )}
+            {cards?.length > 0 && (
+              <SortableContext items={cards.map((card) => card.id)}>
                 {cards.map((card) => (
                   <SortableItem key={card.id} item={card} isCard={true} currentLanguage={currentLanguage} isFiltered={isFiltered} removeBookmark={removeBookmark} />
                 ))}
-              </ul>
-            </SortableContext>
-          )}
+              </SortableContext>
+            )}
+          </ul>
         </DndContext>
       )}
     </>
