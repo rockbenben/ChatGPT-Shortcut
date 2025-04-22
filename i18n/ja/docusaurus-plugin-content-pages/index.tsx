@@ -282,7 +282,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
         ? allIds.filter((id) => !favorIds.includes(id))
         : defaultIds.filter((id) => !favorIds.includes(id));
 
-      const favorData = sortedUsers.filter((user) => favorIds.includes(user.id));
+      const favorData = favorIds.map((id) => sortedUsers.find((user) => user.id === id)).filter(Boolean);
       const otherData = sortedUsers.filter((user) => idsToShow.includes(user.id));
 
       if (userAuth) {
