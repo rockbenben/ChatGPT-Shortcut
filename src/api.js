@@ -85,20 +85,29 @@ export async function getUserAllInfo() {
 
 // Batch fetch selected prompts 批量获取精选prompt
 export async function getPrompts(type, ids, lang) {
+  // 如果没有 ids，直接返回空数组
+  if (!ids || ids.length === 0) {
+    return [];
+  }
+
   // 如果 type 为 "userprompts"，提取 id 值
+  let originalIds = ids;
   if (type === "userprompts") {
     ids = ids.map((prompt) => prompt.id);
   }
 
   const cachedPrompts = [];
   const idsToFetch = [];
+  const idToIndexMap = {}; // 用于记录每个 id 在原数组中的位置
 
   // 辅助函数：生成缓存 key 和过期时间 key
   const getCacheKey = (id) => `${type}_${id}${lang ? `_${lang}` : ""}`;
   const getExpirationKey = (cacheKey) => `${cacheKey}_expiration`;
 
   // 遍历每个 id，检查缓存是否有效
-  ids.forEach((id) => {
+  ids.forEach((id, index) => {
+    idToIndexMap[id] = index; // 记录 id 的原始位置
+
     const cacheKey = getCacheKey(id);
     const expirationKey = getExpirationKey(cacheKey);
     const cachedDataStr = localStorage.getItem(cacheKey);
@@ -118,9 +127,10 @@ export async function getPrompts(type, ids, lang) {
     }
   });
 
-  // 如果所有数据都在缓存中，直接返回
+  // 如果所有数据都在缓存中，直接按原始顺序返回
   if (idsToFetch.length === 0) {
-    return cachedPrompts;
+    // 按原始 id 顺序排序
+    return ids.map((id) => cachedPrompts.find((item) => item.id === id)).filter(Boolean);
   }
 
   const apiEndpoints = {
@@ -152,7 +162,11 @@ export async function getPrompts(type, ids, lang) {
       localStorage.setItem(itemExpirationKey, String(Date.now() + expirationTime));
     });
 
-    return [...cachedPrompts, ...response.data];
+    // 合并缓存和新获取的数据
+    const allData = [...cachedPrompts, ...response.data];
+
+    // 按照原始 ids 数组的顺序返回数据
+    return ids.map((id) => allData.find((item) => item.id === id)).filter(Boolean);
   } catch (error) {
     console.error(`Error fetching ${type}:`, error);
     throw error;
