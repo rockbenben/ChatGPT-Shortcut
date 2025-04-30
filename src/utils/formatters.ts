@@ -3,8 +3,13 @@ export const getWeight = (item: { count?: number; weight?: number }) => {
   return value;
 };
 
+const compactFormatter = new Intl.NumberFormat("en-US", {
+  notation: "compact",
+  compactDisplay: "short",
+});
+
 export const formatCount = (count) => {
-  return count >= 1000 ? `${(count / 1000).toFixed(1)}K` : count.toString();
+  return compactFormatter.format(count);
 };
 
 // truncate
