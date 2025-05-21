@@ -34,7 +34,7 @@ const AddPromptModal = ({ open, setOpen, onFinish, loading }) => {
         })}
         open={open}
         footer={null}
-        maskClosable={!loading}
+        maskClosable={false}
         closable={!loading}
         onCancel={() => !loading && setOpen(false)}>
         <Form
