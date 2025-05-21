@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
-import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined } from "@ant-design/icons";
+import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -56,6 +56,7 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
                 {UserPrompt.title}{" "}
               </span>
               {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
+              {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
             </div>
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
               <Button onClick={() => copyText(UserPrompt.description)}>
