@@ -295,6 +295,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
         })}
         open={open}
         footer={null}
+        maskClosable={false}
         onCancel={() => {
           setOpen(false);
           form.resetFields();
