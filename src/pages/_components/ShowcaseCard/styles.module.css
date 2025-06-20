@@ -156,3 +156,7 @@
   cursor: pointer;
   font-size: 16px;
 }
+
+.showcaseCardLink {
+  color: var(--ifm-color-primary);
+}

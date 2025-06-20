@@ -340,11 +340,11 @@ const UserProfile = () => {
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
             <div style={{ padding: "20px" }}>
-              <Space size={"large"}>
-                <Link to="/">
+              <Space size={"large"} style={{ marginLeft: 8 }}>
+                <Link to="/" className="mainLink">
                   <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                 </Link>
-                <Link to="/user/favorite">
+                <Link to="/user/favorite" className="mainLink">
                   <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
                 </Link>
               </Space>

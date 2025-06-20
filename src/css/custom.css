@@ -280,3 +280,15 @@ div[class^="announcementBar_"] {
     display: block; /* 或 inline-block, flex 等，取决于你的按钮样式需求 */
   }
 }
+
+/* 修复Link css样式丢失问题 */
+.mainLink {
+  color: var(--ifm-color-primary);
+}
+.mainLink:hover {
+  color: var(--site-primary-font);
+}
+
+a.button {
+  color: var(--ifm-color-primary);
+}
