@@ -20,17 +20,17 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/faster": "3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/faster": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
     "@giphy/js-fetch-api": "^5.6.0",
     "@giphy/react-components": "^10.0.1",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.25.4",
-    "axios": "^1.9.0",
+    "antd": "^5.26.1",
+    "axios": "^1.10.0",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "emoji-mart": "^5.6.0",
@@ -41,14 +41,14 @@
     "react-markdown": "^10.1.0",
     "react-popper": "^2.3.0",
     "react-share": "^5.2.2",
-    "styled-components": "^6.1.18"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.7.0",
-    "@docusaurus/tsconfig": "3.7.0",
-    "@docusaurus/types": "3.7.0",
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@docusaurus/tsconfig": "3.8.1",
+    "@docusaurus/types": "3.8.1",
     "@types/react": "^18.3.13",
-    "typescript": "~5.7.3"
+    "typescript": "~5.8.3"
   },
   "browserslist": {
     "production": [
