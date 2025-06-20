@@ -175,18 +175,18 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     () => (
       <Space wrap size="middle">
         {!hideLinks.userCenter && (
-          <Link to="/user" className="button button--secondary">
+          <Link to="/user" className="button button--primary">
             <UserOutlined /> <Translate id="link.myaccount">账号设置</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" className="button button--secondary hideOnSmallScreen">
+          <Link to="/user/favorite" className="button button--primary hideOnSmallScreen">
             <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
-        <button className="button button--primary" onClick={() => setOpen(true)}>
+        <a className="button button--primary" onClick={() => setOpen(true)}>
           <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
-        </button>
+        </a>
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
           <Button icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
             <span className="hideOnSmallScreen">
@@ -216,7 +216,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   const loggedOutButtons = useMemo(
     () => (
       <>
-        <button className="button button--secondary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+        <button className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
           <Translate id="button.login">登录</Translate>
         </button>
         <Link className="button button--primary" to="/community-prompts">

@@ -73,9 +73,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                   <span className={styles.showcaseCardBody}>{weight > 0 && `🔥${formatCount(weight)}`}</span>
                 </>
               ) : (
-                <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-                  {item.title}{" "}
-                </span>
+                <span className={styles.showcaseCardLink}>{item.title} </span>
               )}
             </div>
             <Space.Compact>

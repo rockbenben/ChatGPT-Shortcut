@@ -291,11 +291,11 @@ const CommunityPrompts = () => {
           <section className="margin-top--sm margin-bottom--sm">
             <div className="container padding-vert--md">
               <Space wrap style={{ marginBottom: "20px" }}>
-                <Link to="/">
+                <Link to="/" className="mainLink">
                   <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                 </Link>
                 {userAuth ? (
-                  <Link to="/user/favorite">
+                  <Link to="/user/favorite" className="mainLink">
                     <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
                   </Link>
                 ) : (
