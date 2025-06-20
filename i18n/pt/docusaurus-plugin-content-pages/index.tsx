@@ -206,7 +206,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               message: "社区分享的精选提示词",
             })}
             anchorEl="#__docusaurus">
-            <Link to="/community-prompts" style={{ color: "var(--site-primary-font)" }}>
+            <Link to="/community-prompts">
               <ShowcaseTagSelect
                 id="community.tag.tooltip"
                 tag="communityprompt"
