@@ -471,7 +471,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "어두운 모드와 밝은 모드 전환하기 (현재 {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "어두운 모드",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "내가 좋아하는 것들"
   },
-  "移除收藏": {
-    "message": "제거하다"
-  },
   "comment.reply": {
     "message": "답글"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "내 프롬프트"
-  },
-  "homepage.slogan": {
-    "message": "효율성 및 생산성 극대화"
   },
   "theme.admonition.warning": {
     "message": "warning",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "캐시 지우기"
   },
-  "homepage.title": {
-    "message": "AiShort - 효율적인 AI 단축 명령 플랫폼 | 프롬프트 관리 및 공유로 생산성 향상"
-  },
-  "homepage.description": {
-    "message": "AI Short(ChatGPT Shortcut)는 업무 및 학습 효율성을 높이기 위해 설계된 AI 명령 관리 도구입니다. 엄선된 프롬프트 라이브러리, 원클릭 명령 전송, 다국어 번역 지원 및 개인화된 관리를 통해 사용자가 빠르고 정확한 피드백을 받을 수 있도록 도와줍니다. 우리의 프롬프트 커뮤니티에 참여하여 영감을 공유하고 창의력을 발휘하며, 효율적인 AI 도우미가 제공하는 편리함과 혁신을 경험해 보세요!"
-  },
-  "community.title": {
-    "message": "AiShort 창의적 프롬프트 커뮤니티 - 영감을 불러일으키고 함께 업무 및 학습 효율성 향상"
-  },
-  "community.description": {
-    "message": "AiShort 창의적 프롬프트 커뮤니티에 참여하여 사용자들이 엄선한 독특한 프롬프트를 탐색하고 공유함으로써 짧은 동영상, 소설, 게임 등 다양한 분야의 창작 시 무한한 영감을 얻으세요. 좋아하는 프롬프트에 투표하고 손쉽게 복사하여 공유함으로써 창의적인 아이디어를 더욱 자극해 보세요!"
-  },
   "hideTags": {
     "message": "태그 숨기기"
   },
   "showTags": {
     "message": "태그 표시"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "AI 에이전트를 활용하여 생산성을 10배로 높이세요"
+  },
+  "homepage.title": {
+    "message": "AiShort - 고급 AI 에이전트 및 프롬프트 플랫폼 | 원클릭으로 구축, 공유 및 생산성 증대"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut)는 여러분의 업무 및 학습 방식을 혁신하는 데 전념하는 선도적인 AI 에이전트 및 프롬프트 플랫폼입니다. 여기에서는 방대한 고품질 프롬프트 라이브러리를 발견할 수 있을 뿐만 아니라, 클릭 한 번으로 강력한 AI 에이전트를 손쉽게 구축, 관리 및 실행하여 복잡한 작업을 자동화할 수 있습니다. AiShort는 다국어를 지원하여 AI와의 더 효과적인 협업을 촉진합니다. 지금 바로 크리에이터 커뮤니티에 참여하여 AI 에이전트의 무한한 잠재력을 탐색하고 공유하며 여러분의 초생산성 시대를 시작하세요!"
+  },
+  "community.title": {
+    "message": "AiShort 크리에이터 커뮤니티 - AI 에이전트 및 프롬프트 공동 구축 및 공유, 미래의 워크플로우 탐색"
+  },
+  "community.description": {
+    "message": "AiShort 크리에이터 커뮤니티에 오신 것을 환영합니다! 이곳은 AI 에이전트 및 프롬프트 애호가와 실무자들을 위한 허브입니다. 여기에서 커뮤니티 회원들이 만든 강력한 AI 에이전트를 발견, 공유 및 가져올 수 있으며, 글쓰기, 프로그래밍, 시장 분석 및 기타 워크플로우에 단 한 번의 클릭으로 적용할 수 있습니다. 토론에 참여하고, 에이전트 솔루션을 최적화하며, 다른 크리에이터들과 협력하여 상상력 풍부한 아이디어를 효율적인 자동화 솔루션으로 전환하세요. 지금 가입하여 첫 번째 AI 에이전트를 공유하세요!"
   }
 }

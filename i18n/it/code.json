@@ -507,7 +507,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "dark mode",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "I miei preferiti"
   },
-  "移除收藏": {
-    "message": "Rimuovere"
-  },
   "comment.reply": {
     "message": "Risposta"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "I miei suggerimenti"
-  },
-  "homepage.slogan": {
-    "message": "Massimizzare l'efficienza e la produttività"
   },
   "theme.admonition.warning": {
     "message": "warning",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "Cancella la cache"
   },
-  "homepage.title": {
-    "message": "AiShort - Piattaforma Efficiente di Comandi AI | Gestione e Condivisione di Prompt, Incremento della Produttività"
-  },
-  "homepage.description": {
-    "message": "AiShort (ChatGPT Shortcut) è uno strumento di gestione dei comandi AI progettato per migliorare l'efficienza lavorativa e di studio. Offre una selezione curata di prompt, invio comandi con un clic, supporto multilingue e gestione personalizzata per aiutare gli utenti a ottenere rapidamente feedback accurati. Unisciti alla nostra community di prompt per condividere ispirazioni, stimolare la creatività e sperimentare la comodità e l'innovazione di un assistente AI efficiente!"
-  },
-  "community.title": {
-    "message": "AiShort Community Creativa di Prompt - Accendi l'Ispirazione, Migliora Insieme l'Efficienza Lavorativa e di Studio"
-  },
-  "community.description": {
-    "message": "Unisciti alla AiShort Community Creativa di Prompt per esplorare e condividere prompt unici selezionati dagli utenti, stimolando la creatività in vari campi come video brevi, romanzi, giochi e altro. Vota i tuoi prompt preferiti, copiali facilmente e condividili per scatenare idee ancora più brillanti!"
-  },
   "hideTags": {
     "message": "Nascondi Tag"
   },
   "showTags": {
     "message": "Mostra Tag"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "Sfrutta gli Agenti AI, scatena una produttività 10x"
+  },
+  "homepage.title": {
+    "message": "AiShort - Piattaforma avanzata di Agenti AI e Prompt | Crea, condividi e moltiplica la produttività con un clic"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut) è una piattaforma leader per Agenti AI e Prompt dedicata a rivoluzionare il tuo modo di lavorare e imparare. Qui, non solo puoi scoprire una vasta libreria di prompt di alta qualità, ma puoi anche costruire, gestire ed eseguire senza sforzo potenti agenti AI con un solo clic per automatizzare compiti complessi. AiShort supporta più lingue, facilitando una collaborazione più efficace con l'AI. Unisciti ora alla nostra community di creator per esplorare e condividere l'infinito potenziale degli agenti AI e iniziare la tua era di super-produttività!"
+  },
+  "community.title": {
+    "message": "Community dei Creator di AiShort - Co-costruisci e condividi Agenti AI e Prompt, esplora i flussi di lavoro futuri"
+  },
+  "community.description": {
+    "message": "Benvenuto nella Community dei Creator di AiShort! Questo è l'hub per appassionati e professionisti di Agenti AI e Prompt. Qui puoi scoprire, condividere e importare potenti agenti AI creati dai membri della community e applicarli alla tua scrittura, programmazione, analisi di mercato e altri flussi di lavoro con un solo clic. Partecipa alle discussioni, ottimizza le soluzioni degli agenti e collabora con altri creator per trasformare idee fantasiose in soluzioni efficienti e automatizzate. Unisciti ora e condividi il tuo primo Agente AI!"
   }
 }

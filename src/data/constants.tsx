@@ -14,24 +14,25 @@ export const ALL_IDS = [
 
 export const SLOGAN = translate({
   id: "homepage.slogan",
-  message: "让生产力加倍的 AI 快捷指令",
+  message: "驾驭 AI 智能体，释放十倍生产力",
 });
 export const TITLE = translate({
   id: "homepage.title",
-  message: "AiShort - 高效 AI 快捷指令平台 | 提示词管理与分享，生产力倍增",
+  message: "AiShort - 高效 AI 智能体与提示词平台 | 构建、分享、一键倍增生产力",
 });
 export const DESCRIPTION = translate({
   id: "homepage.description",
   message:
-    "AI Short (ChatGPT Shortcut) 是一款专为提升工作和学习效率设计的 AI 指令管理工具。它提供精选的提示词库、一键发送指令、支持多语种翻译及个性化管理，帮助用户快速获取精准反馈。加入我们的提示词社区，分享灵感、激发创意，立即体验高效 AI 助手带来的便捷与创新！",
+    "AiShort(ChatGPT Shortcut) 是一个高效的 AI 智能体与提示词平台，致力于革新您的工作与学习方式。在这里，您不仅能发现海量高质量的提示词，更能轻松构建、管理并一键运行强大的 AI 智能体，实现复杂任务的自动化。AiShort 支持多语言环境，帮助您与 AI 进行更高效的协作。立即加入我们的创作者社区，探索和分享 AI 智能体的无限潜能，开启您的超级生产力时代！",
 });
 
 // community-prompts
 export const COMMU_TITLE = translate({
   id: "community.title",
-  message: "AiShort 创意提示词社区 - 点亮灵感，共同提升工作和学习效率",
+  message: "AiShort 创作者社区 - 共建与分享 AI 智能体，探索未来工作流",
 });
 export const COMMU_DESCRIPTION = translate({
   id: "community.description",
-  message: "加入 AiShort 创意提示词社区，探索并分享由用户精选的独特提示词，激发你在短视频、小说、游戏等多领域创作时的无限灵感。投票支持你钟爱的提示词，轻松复制分享，让创意碰撞激发出更多精彩灵感！",
+  message:
+    "欢迎来到 AiShort 创作者社区！这里是 AI 智能体（AI Agent）和提示词爱好者与实践者的聚集地。在这里，你可以发现、分享并导入由社区成员构建的强大 AI 智能体，将它们一键应用于你的写作、编程、市场分析等工作流中。参与讨论，优化智能体方案，与其他创作者一同协作，将天马行空的创意变为高效的自动化解决方案。立即加入，分享你的第一个 AI 智能体！",
 });

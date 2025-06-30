@@ -471,7 +471,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "ダークモードを切り替える (現在は{mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "ダークモード",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "私のお気に入り"
   },
-  "移除收藏": {
-    "message": "削除"
-  },
   "comment.reply": {
     "message": "返信"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "私のプロンプト"
-  },
-  "homepage.slogan": {
-    "message": "効率と生産性の最大化"
   },
   "theme.admonition.warning": {
     "message": "警告",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "キャッシュクリア"
   },
-  "homepage.title": {
-    "message": "AiShort - 高効率AIショートカットプラットフォーム | プロンプト管理と共有で生産性倍増"
-  },
-  "homepage.description": {
-    "message": "AI Short（ChatGPT Shortcut）は、仕事や学習の効率化を目的としたAI指示管理ツールです。厳選されたプロンプトライブラリ、一括指示送信、多言語翻訳サポート、個別管理機能を提供し、ユーザーが迅速かつ正確なフィードバックを得られるよう支援します。プロンプトコミュニティに参加して、インスピレーションを共有し、創造性を刺激し、高効率AIアシスタントの利便性と革新性を今すぐ体験してください！"
-  },
-  "community.title": {
-    "message": "AiShort クリエイティブプロンプトコミュニティ - インスピレーションを点灯し、共に仕事と学習の効率化を図ろう"
-  },
-  "community.description": {
-    "message": "AiShort クリエイティブプロンプトコミュニティに参加して、ユーザーが厳選した独自のプロンプトを探索・共有し、ショートビデオ、小説、ゲームなど多岐にわたる創作活動における無限のインスピレーションを得ましょう。お気に入りのプロンプトに投票し、簡単にコピーして共有することで、創造性の交流を促進し、さらに素晴らしいアイデアを生み出しましょう！"
-  },
   "hideTags": {
     "message": "タグを非表示"
   },
   "showTags": {
     "message": "タグを表示"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "システムモード",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "AIエージェントを使いこなし、生産性を10倍に"
+  },
+  "homepage.title": {
+    "message": "AiShort - 高度なAIエージェントとプロンプトのプラットフォーム | ワンクリックで構築、共有、生産性を倍増"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut)は、仕事と学習の方法を革新することに特化した、最先端のAIエージェントおよびプロンプトプラットフォームです。ここでは、質の高いプロンプトの膨大なライブラリを発見できるだけでなく、ワンクリックで強力なAIエージェントを簡単に構築、管理、実行し、複雑なタスクを自動化できます。AiShortは多言語をサポートしており、AIとのより効果的な連携を促進します。今すぐクリエイターコミュニティに参加して、AIエージェントの無限の可能性を探求・共有し、あなたの超生産性時代を始めましょう！"
+  },
+  "community.title": {
+    "message": "AiShortクリエイターコミュニティ - AIエージェントとプロンプトを共同で構築・共有し、未来のワークフローを探求"
+  },
+  "community.description": {
+    "message": "AiShortクリエイターコミュニティへようこそ！ここはAIエージェントとプロンプトの愛好家や実践者が集うハブです。ここでは、コミュニティメンバーによって構築された強力なAIエージェントを発見、共有、インポートし、執筆、プログラミング、市場分析などのワークフローにワンクリックで適用できます。ディスカッションに参加し、エージェントソリューションを最適化し、他のクリエイターと協力して想像力豊かなアイデアを効率的な自動化ソリューションに変えましょう。今すぐ参加して、あなたの最初のAIエージェントを共有しましょう！"
   }
 }
