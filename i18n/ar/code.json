@@ -507,7 +507,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "التبديل بين الوضع الداكن والفاتح (الحالي {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "الوضع الداكن",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "مفضلتي"
   },
-  "移除收藏": {
-    "message": "يزيل"
-  },
   "comment.reply": {
     "message": "رد"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "مطالباتي"
-  },
-  "homepage.slogan": {
-    "message": "تعظيم الكفاءة والإنتاجية الخاصة بك"
   },
   "theme.admonition.warning": {
     "message": "warning",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "مسح ذاكرة التخزين المؤقت"
   },
-  "homepage.title": {
-    "message": "AiShort - منصة تعليمات AI سريعة عالية الكفاءة | إدارة ومشاركة كلمات التلميح لزيادة الإنتاجية"
-  },
-  "homepage.description": {
-    "message": "AI Short (ChatGPT Shortcut) هي أداة لإدارة تعليمات AI مصممة خصيصًا لتعزيز كفاءة العمل والدراسة. إنها توفر مكتبة مختارة من كلمات التلميح، وإرسال التعليمات بنقرة واحدة، ودعم الترجمة متعددة اللغات والإدارة الشخصية، مما يساعد المستخدمين على الحصول بسرعة على ردود دقيقة. انضم إلى مجتمع كلمات التلميح الخاص بنا، وشارك الإلهام، وأطلق العنان للإبداع، وجرب الراحة والابتكار الذي توفره مساعد AI عالي الكفاءة!"
-  },
-  "community.title": {
-    "message": "مجتمع كلمات التلميح الإبداعية AiShort - إشعال الإلهام معًا لتعزيز كفاءة العمل والدراسة"
-  },
-  "community.description": {
-    "message": "انضم إلى مجتمع كلمات التلميح الإبداعية AiShort لاستكشاف ومشاركة كلمات التلميح الفريدة التي اختارها المستخدمون، وإطلاق العنان للإبداع اللامحدود في مجالات مثل مقاطع الفيديو القصيرة، والروايات، والألعاب. صوت لدعم كلمات التلميح المفضلة لديك، ونسخها ومشاركتها بسهولة، ودع الإبداع يثير المزيد من الأفكار الرائعة!"
-  },
   "hideTags": {
     "message": "إخفاء العلامات"
   },
   "showTags": {
     "message": "عرض العلامات"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "أتقِن وكلاء الذكاء الاصطناعي، وأطلق العنان لإنتاجية تصل إلى 10 أضعاف"
+  },
+  "homepage.title": {
+    "message": "AiShort - منصة متقدمة لوكلاء الذكاء الاصطناعي والموجهات | أنشئ وشارك وضاعف إنتاجيتك بنقرة واحدة"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut) هي منصة رائدة لوكلاء الذكاء الاصطناعي والموجهات، مكرسة لإحداث ثورة في طريقة عملك وتعلمك. هنا، لا يمكنك فقط اكتشاف مكتبة واسعة من الموجهات عالية الجودة، بل يمكنك أيضًا وبكل سهولة بناء وإدارة وتشغيل وكلاء ذكاء اصطناعي أقوياء بنقرة واحدة لأتمتة المهام المعقدة. يدعم AiShort لغات متعددة، مما يسهل التعاون الأكثر فعالية مع الذكاء الاصطناعي. انضم إلى مجتمع المبدعين لدينا الآن لاستكشاف ومشاركة الإمكانات اللامحدودة لوكلاء الذكاء الاصطناعي وبدء عصر الإنتاجية الفائقة الخاص بك!"
+  },
+  "community.title": {
+    "message": "مجتمع المبدعين في AiShort - شارك في بناء ومشاركة وكلاء وموجهات الذكاء الاصطناعي، واستكشف مسارات العمل المستقبلية"
+  },
+  "community.description": {
+    "message": "مرحباً بك في مجتمع المبدعين في AiShort! هذا هو مركز عشاق وممارسي وكلاء الذكاء الاصطناعي والموجهات. هنا، يمكنك اكتشاف ومشاركة واستيراد وكلاء ذكاء اصطناعي أقوياء تم بناؤهم بواسطة أعضاء المجتمع، وتطبيقهم على كتاباتك، وبرمجتك، وتحليلاتك للسوق، ومسارات عملك الأخرى بنقرة واحدة فقط. شارك في المناقشات، وحسّن حلول الوكلاء، وتعاون مع المبدعين الآخرين لتحويل الأفكار المبتكرة إلى حلول مؤتمتة وفعالة. انضم الآن وشارك بأول وكيل ذكاء اصطناعي لك!"
   }
 }

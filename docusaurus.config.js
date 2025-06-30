@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "AiShort - High-Efficiency AI Shortcut Platform | Prompt Management & Productivity Tool",
+  title: "AiShort - Advanced AI Agent & Prompt Platform | Build, Share, and Multiply Productivity with One Click",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
@@ -91,7 +91,8 @@ const config = {
       metadata: [
         {
           name: "keywords",
-          content: "aishort,ChatGPT Shortcut,提示词社区,ai快捷指令,生产力提升,ChatGPT,AI prompts,ai short,ai prompt,提示词,ai提示词",
+          content:
+            "AI智能体,aishort,提示词,AI提示词,AI prompts,AI Agent,AI助理,提示词社区,ChatGPT Shortcut,智能体构建,AI应用,自定义GPTs,工作流自动化,多代理系统,AI效率工具,ChatGPT,AI快捷指令,生产力提升",
         },
       ],
       navbar: {

@@ -507,7 +507,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Umschalten zwischen dunkler und heller Ansicht (momentan {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "dunkler Modus",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "Meine Favoriten"
   },
-  "移除收藏": {
-    "message": "Entfernen"
-  },
   "comment.reply": {
     "message": "Antwort"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "Meine Prompts"
-  },
-  "homepage.slogan": {
-    "message": "Maximieren Sie Ihre Effizienz und Produktivität"
   },
   "theme.admonition.warning": {
     "message": "warning",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "Cache löschen"
   },
-  "homepage.title": {
-    "message": "AiShort - Effiziente AI-Shortcut-Plattform | Prompt-Management und Sharing, Produktivität steigern"
-  },
-  "homepage.description": {
-    "message": "AI Short (ChatGPT Shortcut) ist ein speziell zur Steigerung der Arbeits- und Lerneffizienz entwickeltes AI-Management-Tool. Es bietet eine kuratierte Bibliothek von Prompts, Ein-Klick-Befehlssendung, Unterstützung für mehrsprachige Übersetzung und personalisiertes Management, um Benutzern zu helfen, schnell präzises Feedback zu erhalten. Treten Sie unserer Prompt-Community bei, teilen Sie Inspirationen, wecken Sie Kreativität und erleben Sie die Bequemlichkeit und Innovation eines effizienten AI-Assistenten!"
-  },
-  "community.title": {
-    "message": "AiShort Kreative Prompt-Community - Inspiration entfachen, gemeinsam Arbeits- und Lerneffizienz steigern"
-  },
-  "community.description": {
-    "message": "Treten Sie der AiShort Kreativen Prompt-Community bei, um einzigartige Prompts zu entdecken und zu teilen, die von Benutzern ausgewählt wurden, und grenzenlose Kreativität in Bereichen wie Kurzvideos, Romanen, Spielen und mehr zu entfachen. Stimmen Sie für Ihre Lieblings-Prompts ab, kopieren und teilen Sie sie mühelos, um noch mehr brillante Ideen zu entfachen!"
-  },
   "hideTags": {
     "message": "Tags ausblenden"
   },
   "showTags": {
     "message": "Tags anzeigen"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "KI-Agenten meistern, 10-fache Produktivität entfesseln"
+  },
+  "homepage.title": {
+    "message": "AiShort - Fortschrittliche Plattform für KI-Agenten & Prompts | Erstellen, Teilen und Produktivität mit einem Klick vervielfachen"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut) ist eine führende Plattform für KI-Agenten und Prompts, die darauf abzielt, Ihre Arbeits- und Lernweise zu revolutionieren. Hier können Sie nicht nur eine riesige Bibliothek hochwertiger Prompts entdecken, sondern auch mühelos leistungsstarke KI-Agenten mit einem einzigen Klick erstellen, verwalten und ausführen, um komplexe Aufgaben zu automatisieren. AiShort unterstützt mehrere Sprachen, was eine effektivere Zusammenarbeit mit KI ermöglicht. Treten Sie jetzt unserer Creator-Community bei, um das unendliche Potenzial von KI-Agenten zu erkunden, zu teilen und Ihre Ära der Super-Produktivität zu beginnen!"
+  },
+  "community.title": {
+    "message": "AiShort Creator-Community - Gemeinsam KI-Agenten & Prompts erstellen und teilen, zukünftige Workflows entdecken"
+  },
+  "community.description": {
+    "message": "Willkommen in der AiShort Creator-Community! Dies ist der Treffpunkt für Enthusiasten und Anwender von KI-Agenten und Prompts. Hier können Sie von Community-Mitgliedern erstellte, leistungsstarke KI-Agenten entdecken, teilen und importieren und sie mit nur einem Klick auf Ihr Schreiben, Programmieren, Ihre Marktanalysen und andere Arbeitsabläufe anwenden. Nehmen Sie an Diskussionen teil, optimieren Sie Agenten-Lösungen und arbeiten Sie mit anderen Kreativen zusammen, um fantasievolle Ideen in effiziente, automatisierte Lösungen zu verwandeln. Treten Sie jetzt bei und teilen Sie Ihren ersten KI-Agenten!"
   }
 }

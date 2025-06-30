@@ -495,7 +495,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "dark mode",
@@ -687,9 +687,6 @@
   "link.myfavorite": {
     "message": "मेरे प्रिय"
   },
-  "移除收藏": {
-    "message": "निकालना"
-  },
   "comment.reply": {
     "message": "जवाब"
   },
@@ -725,9 +722,6 @@
   },
   "myprompt": {
     "message": "मेरे संकेत"
-  },
-  "homepage.slogan": {
-    "message": "अपनी दक्षता और उत्पादकता को अधिकतम करें"
   },
   "theme.admonition.warning": {
     "message": "warning",
@@ -855,22 +849,37 @@
   "button.clearCache": {
     "message": "कैश को साफ़ करें"
   },
-  "homepage.title": {
-    "message": "AiShort - उच्च दक्षता वाली एआई शॉर्टकट प्लेटफ़ॉर्म | प्रॉम्प्ट प्रबंधन और साझाकरण, उत्पादकता में वृद्धि"
-  },
-  "homepage.description": {
-    "message": "AI Short (ChatGPT Shortcut) एक एआई निर्देश प्रबंधन उपकरण है जिसे कार्य और अध्ययन की दक्षता बढ़ाने के लिए डिज़ाइन किया गया है। यह चयनित प्रॉम्प्ट्स की एक पुस्तकालय, एक-क्लिक निर्देश भेजने, बहुभाषी अनुवाद समर्थन और व्यक्तिगत प्रबंधन प्रदान करता है, जिससे उपयोगकर्ताओं को त्वरित और सटीक प्रतिक्रिया प्राप्त करने में मदद मिलती है। हमारे प्रॉम्प्ट समुदाय में शामिल हों, प्रेरणा साझा करें, रचनात्मकता को उत्तेजित करें, और उच्च दक्षता वाली एआई सहायक के माध्यम से सुविधा और नवाचार का अनुभव करें!"
-  },
-  "community.title": {
-    "message": "AiShort रचनात्मक प्रॉम्प्ट समुदाय - प्रेरणा को प्रज्वलित करें, कार्य और अध्ययन की दक्षता में सामूहिक वृद्धि"
-  },
-  "community.description": {
-    "message": "AiShort रचनात्मक प्रॉम्प्ट समुदाय में शामिल हों, उपयोगकर्ताओं द्वारा चयनित अद्वितीय प्रॉम्प्ट्स का अन्वेषण और साझाकरण करें, जो शॉर्ट वीडियो, उपन्यास, गेम्स और अन्य कई क्षेत्रों में रचनात्मकता को उत्तेजित करता है। अपनी पसंदीदा प्रॉम्प्ट्स के लिए वोट करें, उन्हें आसानी से कॉपी और साझा करें, और रचनात्मक विचारों को उत्तेजित करने के लिए एक साथ मिलकर काम करें!"
-  },
   "hideTags": {
     "message": "टैग छुपाएं"
   },
   "showTags": {
     "message": "टैग दिखाएं"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "homepage.slogan": {
+    "message": "AI एजेंट्स में महारत हासिल करें, 10 गुना उत्पादकता बढ़ाएँ"
+  },
+  "homepage.title": {
+    "message": "AiShort - उन्नत AI एजेंट और प्रॉम्प्ट प्लेटफ़ॉर्म | एक क्लिक में बनाएँ, साझा करें और उत्पादकता को कई गुना बढ़ाएँ"
+  },
+  "homepage.description": {
+    "message": "AiShort(ChatGPT Shortcut) एक प्रमुख AI एजेंट और प्रॉम्प्ट प्लेटफ़ॉर्म है जो आपके काम करने और सीखने के तरीके में क्रांति लाने के लिए समर्पित है। यहाँ, आप न केवल उच्च-गुणवत्ता वाले प्रॉम्प्ट्स की एक विशाल लाइब्रेरी खोज सकते हैं, बल्कि जटिल कार्यों को स्वचालित करने के लिए एक ही क्लिक से शक्तिशाली AI एजेंट्स को आसानी से बना, प्रबंधित और चला सकते हैं। AiShort कई भाषाओं का समर्थन करता है, जिससे AI के साथ अधिक प्रभावी सहयोग की सुविधा मिलती है। AI एजेंट्स की अनंत संभावनाओं को तलाशने और साझा करने और अपने सुपर-उत्पादकता के युग की शुरुआत करने के लिए अभी हमारे निर्माता समुदाय में शामिल हों!"
+  },
+  "community.title": {
+    "message": "AiShort क्रिएटर कम्युनिटी - AI एजेंट्स और प्रॉम्प्ट्स का सह-निर्माण और साझा करें, भविष्य के वर्कफ़्लो का अन्वेषण करें"
+  },
+  "community.description": {
+    "message": "AiShort क्रिएटर कम्युनिटी में आपका स्वागत है! यह AI एजेंट और प्रॉम्प्ट के उत्साही और अभ्यासकर्ताओं का केंद्र है। यहाँ, आप समुदाय के सदस्यों द्वारा बनाए गए शक्तिशाली AI एजेंट्स को खोज, साझा और आयात कर सकते हैं, और उन्हें अपने लेखन, प्रोग्रामिंग, बाजार विश्लेषण और अन्य वर्कफ़्लो पर केवल एक क्लिक से लागू कर सकते हैं। चर्चाओं में शामिल हों, एजेंट समाधानों को अनुकूलित करें, और कल्पनाशील विचारों को कुशल, स्वचालित समाधानों में बदलने के लिए अन्य निर्माताओं के साथ सहयोग करें। अभी शामिल हों और अपना पहला AI एजेंट साझा करें!"
   }
 }
