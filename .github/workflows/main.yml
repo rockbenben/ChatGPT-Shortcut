@@ -29,6 +29,11 @@ jobs:
       - name: Build website
         run: yarn build
 
+      - name: Deploy to EdgeOne Pages
+        run: npx edgeone pages deploy ./build --name aishort --token ${{ secrets.EDGEONE_API_TOKEN }}
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+
       # - name: Deploy
       #   uses: JamesIves/github-pages-deploy-action@v4
       #   with:
