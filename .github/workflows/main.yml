@@ -29,17 +29,17 @@ jobs:
       - name: Build website
         run: yarn build
 
-      - name: Deploy to EdgeOne Pages
-        run: npx edgeone pages deploy ./build --name aishort --token ${{ secrets.EDGEONE_API_TOKEN }}
-        env:
-          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+      # - name: Deploy to EdgeOne Pages
+      #   run: npx edgeone pages deploy ./build --name aishort --token ${{ secrets.EDGEONE_API_TOKEN }}
+      #   env:
+      #     EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
 
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     # 这是文档部署到的分支名称
-      #     branch: gh-pages
-      #     folder: build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # 这是文档部署到的分支名称
+          branch: gh-pages
+          folder: build
 
       # - name: 📂 Sync files
       #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
