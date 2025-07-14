@@ -1,0 +1,108 @@
+{
+  "name": "aishort",
+  "redirects": [
+    {
+      "source": "/docs/guides/extension",
+      "destination": "/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/docs/guides/extension",
+      "destination": "/en/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/ar/docs/guides/extension",
+      "destination": "/ar/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/ja/docs/guides/extension",
+      "destination": "/ja/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/ko/docs/guides/extension",
+      "destination": "/ko/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/docs/guides/extension",
+      "destination": "/es/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/docs/guides/extension",
+      "destination": "/fr/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/de/docs/guides/extension",
+      "destination": "/de/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/it/docs/guides/extension",
+      "destination": "/it/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/ru/docs/guides/extension",
+      "destination": "/ru/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/pt/docs/guides/extension",
+      "destination": "/pt/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/hi/docs/guides/extension",
+      "destination": "/hi/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "source": "/bn/docs/guides/extension",
+      "destination": "/bn/docs/extension/usage",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/*.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/*.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/*.ico",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/*.svg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
