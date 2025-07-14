@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="50px" viewBox="0 0 64 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="404-&amp;-site-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="404-page" transform="translate(-808.000000, -320.000000)">
+            <g id="Group-2" transform="translate(808.000000, 314.000000)">
+                <g id="Error-Icon" transform="translate(1.000000, 7.000000)">
+                    <rect id="stroke" fill="#0046BE" x="1" y="8" width="62" height="2"></rect>
+                    <path d="M21,38 L44,38" id="Line" stroke="#21B9CC" stroke-width="2" stroke-linecap="square"></path>
+                    <rect id="stroke" fill="#0046BE" x="18" y="1" width="2" height="7"></rect>
+                    <polygon id="Fill" fill="#0046BE" points="13 6 16 6 16 3 13 3"></polygon>
+                    <polygon id="Fill" fill="#0046BE" points="8 6 11 6 11 3 8 3"></polygon>
+                    <polygon id="Fill" fill="#0046BE" points="3 6 6 6 6 3 3 3"></polygon>
+                    <rect id="baseline" fill="#0046BE" x="6" y="47" width="51" height="2"></rect>
+                    <g id="Group" transform="translate(12.000000, 18.000000)" fill="#21B9CC">
+                        <polygon id="baseline-copy" transform="translate(6.000000, 5.847692) rotate(-45.000000) translate(-6.000000, -5.847692) " points="-1.30615385 4.92461544 13.2876923 5.35492198 13.3061538 6.77076929 -1.28769231 6.34046275"></polygon>
+                        <polygon id="baseline-copy-2" transform="translate(6.000000, 5.847692) scale(-1, 1) rotate(-45.000000) translate(-6.000000, -5.847692) " points="-1.30615367 4.92461538 13.2876925 5.35492192 13.306154 6.77076923 -1.28769213 6.3404627"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(38.000000, 18.000000)" fill="#21B9CC">
+                        <polygon id="baseline-copy" transform="translate(6.000000, 5.847692) rotate(-45.000000) translate(-6.000000, -5.847692) " points="-1.30615385 4.92461544 13.2876923 5.35492198 13.3061538 6.77076929 -1.28769231 6.34046275"></polygon>
+                        <polygon id="baseline-copy-2" transform="translate(6.000000, 5.847692) scale(-1, 1) rotate(-45.000000) translate(-6.000000, -5.847692) " points="-1.30615367 4.92461538 13.2876925 5.35492192 13.306154 6.77076923 -1.28769213 6.3404627"></polygon>
+                    </g>
+                    <polyline id="stroke" stroke="#0046BE" stroke-width="2" stroke-linecap="square" points="2.29616343 48 0 48 0 0 61.9964128 0 62 48 59.7002494 48"></polyline>
+                </g>
+                <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
