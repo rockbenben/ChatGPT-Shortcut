@@ -74,21 +74,29 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   const handleUserPrompts = useCallback(() => {
     setShowUserFavs(false);
     setShowUserPrompts((prev) => !prev);
-  }, [setShowUserFavs]);
+  }, []);
 
   const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
     setShowUserFavs((prev) => !prev);
-  }, [setShowUserFavs]);
+  }, []);
 
   const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
-  const toggleTagsOnMobile = () => {
-    setShowTagsOnMobile(!showTagsOnMobile);
-  };
+  const toggleTagsOnMobile = useCallback(() => {
+    setShowTagsOnMobile((prev) => !prev);
+  }, []);
 
   const modifiedTagList = useMemo(() => {
     const tags = TagList.filter((tag) => tag !== "contribute");
     return userAuth ? tags.filter((tag) => tag !== "favorite") : tags;
+  }, [userAuth]);
+
+  const handleTagClick = useCallback(() => {
+    if (!userAuth) {
+      return;
+    }
+    setShowUserPrompts(false);
+    setShowUserFavs(false);
   }, [userAuth]);
 
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
@@ -159,14 +167,6 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
         {modifiedTagList.map((tag, i) => {
           const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
-
-          const handleTagClick = () => {
-            if (!userAuth) {
-              return;
-            }
-            setShowUserPrompts(false);
-            setShowUserFavs(false);
-          };
 
           return (
             <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
