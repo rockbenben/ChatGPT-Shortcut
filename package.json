@@ -14,6 +14,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "dev": "docusaurus start",
+    "outdated": "ncu",
     "update": "ncu -u && yarn install"
   },
   "dependencies": {
@@ -25,11 +26,11 @@
     "@docusaurus/preset-classic": "3.8.1",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
-    "@giphy/js-fetch-api": "^5.6.0",
-    "@giphy/react-components": "^10.0.1",
+    "@giphy/js-fetch-api": "^5.7.0",
+    "@giphy/react-components": "^10.1.0",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.26.1",
+    "antd": "^5.26.5",
     "axios": "^1.10.0",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
