@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
+import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
 import clsx from "clsx";
 import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
@@ -40,34 +40,49 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const userTitle = user[currentLanguage].title;
-  const userRemark = user[currentLanguage].remark;
+
+  const userInfo = useMemo(
+    () => ({
+      title: user[currentLanguage].title,
+      remark: user[currentLanguage].remark,
+      prompt: user[currentLanguage].prompt,
+      description: user[currentLanguage].description,
+    }),
+    [user, currentLanguage]
+  );
+
+  const canToggle = currentLanguage !== "en" && userInfo.description !== userInfo.prompt;
+
   const [isFavorite, setIsFavorite] = useState(false);
   const [showFullContent, setShowFullContent] = useState(false);
   const { copied, updateCopy } = useCopyToClipboard();
 
-  const canToggle = currentLanguage !== "en" && user[currentLanguage].description !== user[currentLanguage].prompt;
-  const [paragraphText, setParagraphText] = useState(canToggle ? (isDescription ? user[currentLanguage].prompt : user[currentLanguage].description) : user[currentLanguage].prompt);
+  const [paragraphText, setParagraphText] = useState(() => (canToggle ? (isDescription ? userInfo.prompt : userInfo.description) : userInfo.prompt));
 
   useEffect(() => {
     setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
   }, [userAuth]);
 
   useEffect(() => {
-    setParagraphText(isDescription ? user[currentLanguage].prompt : user[currentLanguage].description);
+    setParagraphText(isDescription ? userInfo.prompt : userInfo.description);
     setShowFullContent(false);
-  }, [isDescription, user[currentLanguage].prompt, user[currentLanguage].description]);
+  }, [isDescription, userInfo.prompt, userInfo.description]);
 
-  const handleParagraphClick = () => {
+  const handleParagraphClick = useCallback(() => {
     if (!canToggle) return;
-    setParagraphText((prevText) => (prevText === user[currentLanguage].prompt ? user[currentLanguage].description : user[currentLanguage].prompt));
-  };
+    setParagraphText((prevText) => (prevText === userInfo.prompt ? userInfo.description : userInfo.prompt));
+  }, [canToggle, userInfo.prompt, userInfo.description]);
 
-  const userDescription = canToggle ? paragraphText : user[currentLanguage].prompt;
+  const userDescription = canToggle ? paragraphText : userInfo.prompt;
 
-  const toggleContentDisplay = () => {
-    setShowFullContent(!showFullContent);
-  };
+  // 缓存复制处理函数
+  const handleCopy = useCallback(() => {
+    updateCopy(userInfo.prompt, user.id);
+  }, [updateCopy, userInfo.prompt, user.id]);
+
+  const toggleContentDisplay = useCallback(() => {
+    setShowFullContent((prev) => !prev);
+  }, []);
 
   const handleLove = useCallback(async () => {
     try {
@@ -90,7 +105,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
     } catch (err) {
       console.error(err);
     }
-  }, [userAuth?.data?.favorites?.loves, isFavorite]);
+  }, [userAuth?.data?.favorites, user.id, currentLanguage, refreshUserAuth]);
 
   const removeFavorite = useCallback(async () => {
     try {
@@ -108,15 +123,15 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
     } catch (err) {
       console.error(err);
     }
-  }, [isFavorite]);
+  }, [userAuth, user.id, refreshUserAuth]);
 
   return (
-    <li key={userTitle} className="card shadow--md">
+    <li key={userInfo.title} className="card shadow--md">
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <div className={styles.showcaseCardTitle}>
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink}>
-              {userTitle}{" "}
+              {userInfo.title}{" "}
             </Link>
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCount(copyCount)}`}</span>
           </div>
@@ -132,7 +147,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
               </Button>
             )}
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button onClick={() => updateCopy(user[currentLanguage].prompt, user.id)}>
+              <Button onClick={handleCopy}>
                 {copied ? (
                   <>
                     <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
@@ -145,7 +160,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           </Space.Compact>
         </div>
         <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
-          👉 {userRemark}
+          👉 {userInfo.remark}
         </p>
         <div className={styles.descriptionWrapper}>
           <p

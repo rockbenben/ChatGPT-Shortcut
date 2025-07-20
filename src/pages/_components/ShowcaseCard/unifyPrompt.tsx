@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
 import { Button, Tooltip } from "antd";
@@ -8,19 +8,24 @@ import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import styles from "./styles.module.css";
 
-export const SearchCommu = ({ commuPrompt }) => {
+export const SearchCommu = React.memo(({ commuPrompt }) => {
   const { copied, copyText } = useCopyToClipboard();
   const [paragraphText, setParagraphText] = useState(commuPrompt.description);
   const [showFullContent, setShowFullContent] = useState(false);
-  const toggleContentDisplay = () => {
-    setShowFullContent(!showFullContent);
-  };
 
-  const handleParagraphClick = () => {
+  const toggleContentDisplay = useCallback(() => {
+    setShowFullContent((prev) => !prev);
+  }, []);
+
+  const handleParagraphClick = useCallback(() => {
     if (commuPrompt.notes) {
-      setParagraphText(paragraphText === commuPrompt.description ? commuPrompt.notes : commuPrompt.description);
+      setParagraphText((prev) => (prev === commuPrompt.description ? commuPrompt.notes : commuPrompt.description));
     }
-  };
+  }, [commuPrompt.notes, commuPrompt.description]);
+
+  const handleCopy = useCallback(() => {
+    copyText(commuPrompt.description);
+  }, [copyText, commuPrompt.description]);
 
   const displayText = paragraphText || commuPrompt.description;
   return (
@@ -41,10 +46,7 @@ export const SearchCommu = ({ commuPrompt }) => {
               </span>
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
             </div>
-            <Button
-              onClick={() => {
-                copyText(commuPrompt.description);
-              }}>
+            <Button onClick={handleCopy}>
               {copied ? (
                 <>
                   <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
@@ -78,20 +80,21 @@ export const SearchCommu = ({ commuPrompt }) => {
       </div>
     </li>
   );
-};
+});
 
-export const CommuPagePrompt = ({ commuPrompt }) => {
+export const CommuPagePrompt = React.memo(({ commuPrompt }) => {
   const [paragraphText, setParagraphText] = useState(commuPrompt.description);
   const [showFullContent, setShowFullContent] = useState(false);
-  const toggleContentDisplay = () => {
-    setShowFullContent(!showFullContent);
-  };
 
-  const handleParagraphClick = () => {
+  const toggleContentDisplay = useCallback(() => {
+    setShowFullContent((prev) => !prev);
+  }, []);
+
+  const handleParagraphClick = useCallback(() => {
     if (commuPrompt.notes) {
-      setParagraphText(paragraphText === commuPrompt.description ? commuPrompt.notes : commuPrompt.description);
+      setParagraphText((prev) => (prev === commuPrompt.description ? commuPrompt.notes : commuPrompt.description));
     }
-  };
+  }, [commuPrompt.notes, commuPrompt.description]);
 
   const displayText = paragraphText || commuPrompt.description;
   return (
@@ -123,4 +126,4 @@ export const CommuPagePrompt = ({ commuPrompt }) => {
       </div>
     </div>
   );
-};
+});

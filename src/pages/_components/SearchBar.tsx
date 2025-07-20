@@ -6,7 +6,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
 import Heading from "@theme/Heading";
 
-import { Input, Button } from "antd";
+import { Input, Button, InputRef } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
@@ -172,7 +172,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
 function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFavs = (value: boolean) => {} }) {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef<Input>(null);
+  const searchRef = useRef<InputRef>(null);
   const [value, setValue] = useState<string | null>(null);
 
   const isMobile = useCallback(() => {
