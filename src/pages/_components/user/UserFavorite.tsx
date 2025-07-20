@@ -6,6 +6,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ShowcaseCardTag } from "@site/src/pages/_components/ShowcaseCard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import pageStyles from "@site/src/pages/styles.module.css";
 import { Button, message, Spin, Tooltip, Space } from "antd";
 import { CheckOutlined, CopyOutlined, DownOutlined, HeartTwoTone, LinkOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
@@ -283,7 +284,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     <>
       {contextHolder}
       {!cards?.length && !comms?.length ? (
-        <ul className="clean-list showcaseList_Cwj2">
+        <ul className={clsx("clean-list", pageStyles.showcaseList)}>
           <li className="card shadow--md">
             <div className={clsx("card__body")}>
               <p>You haven't favorited any prompts yet.</p>
@@ -292,7 +293,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
         </ul>
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-          <ul className="clean-list showcaseList_Cwj2">
+          <ul className={clsx("clean-list", pageStyles.showcaseList)}>
             {comms?.length > 0 && (
               <SortableContext items={comms.map((comm) => comm.id)}>
                 {comms.map((comm) => (
