@@ -130,7 +130,7 @@ const AddPromptModal = ({ open, setOpen, onFinish, loading }) => {
 };
 
 const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) => {
-  const { userAuth, setUserAuth, refreshUserAuth } = useContext(AuthContext);
+  const { userAuth, setUserAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
@@ -139,7 +139,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     await clearUserAllInfoCache();
     refreshUserAuth();
     messageApi.success(<Translate id="message.cache.cleared">缓存已清除</Translate>);
-  }, [refreshUserAuth]);
+  }, [refreshUserAuth, messageApi]);
 
   const onFinish = useCallback(
     async (values, form) => {
@@ -158,7 +158,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         setLoading(false);
       }
     },
-    [refreshUserAuth]
+    [refreshUserAuth, messageApi]
   );
 
   const handleLogout = useCallback(async () => {
@@ -210,7 +210,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         </Button>
       </Space>
     ),
-    [hideLinks, handleLogout]
+    [hideLinks, handleClearCache, handleLogout]
   );
 
   const loggedOutButtons = useMemo(
@@ -227,7 +227,8 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     []
   );
 
-  if (userAuth === undefined) {
+  // 使用 AuthContext 的 isLoading 状态，而不是检查 userAuth === undefined
+  if (isLoading) {
     return (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50px" }}>
         <Spin size="small" />
