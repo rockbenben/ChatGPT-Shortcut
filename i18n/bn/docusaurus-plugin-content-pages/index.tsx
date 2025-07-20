@@ -87,11 +87,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   };
 
   const modifiedTagList = useMemo(() => {
-    let tags = TagList.filter((tag) => tag !== "contribute");
-    if (userAuth) {
-      tags = tags.filter((tag) => tag !== "favorite");
-    }
-    return tags;
+    const tags = TagList.filter((tag) => tag !== "contribute");
+    return userAuth ? tags.filter((tag) => tag !== "favorite") : tags;
   }, [userAuth]);
 
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
