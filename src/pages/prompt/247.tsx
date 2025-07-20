@@ -86,7 +86,7 @@ const prompt = {
     "pedagogy"
   ],
   "id": 247,
-  "weight": 413
+  "weight": 425
 };
 
 function PromptDetail() {

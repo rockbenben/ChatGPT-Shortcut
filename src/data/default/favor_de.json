@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 82527
+        "count": 84665
     },
     {
         "de": {
@@ -27,7 +27,7 @@
             "write"
         ],
         "id": 209,
-        "count": 55280
+        "count": 56381
     },
     {
         "de": {
@@ -43,7 +43,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27714
+        "count": 28407
     },
     {
         "de": {
@@ -58,37 +58,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25973
-    },
-    {
-        "de": {
-            "title": "Dissertation ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in German. My first suggestion request is ",
-            "description": "Ich erwarte von Ihnen, dass Sie wie ein Akademiker handeln. Sie sollen ein Thema Ihrer Wahl recherchieren und die Ergebnisse in Form einer Dissertation oder eines Artikels darstellen. Ihre Aufgabe ist es, verlässliche Quellen zu finden, das Material gut zu strukturieren und es mit Zitaten zu belegen. Mein erster Vorschlag ist 'Thema der Arbeit'.",
-            "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 23659
-    },
-    {
-        "de": {
-            "title": "Englische Übersetzung oder Änderung",
-            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-            "description": "Ich möchte Sie als Englisch-Übersetzer, Rechtschreibkorrektor und -verbesserer einsetzen. Ich werde mich mit Ihnen in einer beliebigen Sprache unterhalten, und Sie werden die Sprache erkennen, sie übersetzen und auf Englisch in korrigierten und verbesserten Versionen meiner Texte antworten. Ich möchte, dass Sie meine vereinfachten Wörter und Sätze auf A0-Niveau durch hübschere, elegantere, fortgeschrittenere englische Wörter und Sätze ersetzen. Behalten Sie die Bedeutung bei, aber machen Sie sie literarischer. Ich möchte, dass Sie nur Korrekturen, Verbesserungen und nichts anderes antworten und keine Erklärungen schreiben. Mein erster Satz lautet [zu übersetzende Sprache].",
-            "remark": "Übersetzen Sie andere Sprachen ins Englische oder verbessern Sie die von Ihnen bereitgestellten englischen Sätze."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-        "tags": [
-            "favorite",
-            "language"
-        ],
-        "id": 1,
-        "count": 20339
+        "count": 26408
     },
     {
         "de": {
@@ -104,6 +74,36 @@
             "article"
         ],
         "id": 251,
-        "count": 21868
+        "count": 26149
+    },
+    {
+        "de": {
+            "title": "Dissertation ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in German. My first suggestion request is ",
+            "description": "Ich erwarte von Ihnen, dass Sie wie ein Akademiker handeln. Sie sollen ein Thema Ihrer Wahl recherchieren und die Ergebnisse in Form einer Dissertation oder eines Artikels darstellen. Ihre Aufgabe ist es, verlässliche Quellen zu finden, das Material gut zu strukturieren und es mit Zitaten zu belegen. Mein erster Vorschlag ist 'Thema der Arbeit'.",
+            "remark": "Schreiben Sie informative und überzeugende Beiträge zum Thema."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 24115
+    },
+    {
+        "de": {
+            "title": "Englische Übersetzung oder Änderung",
+            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
+            "description": "Ich möchte Sie als Englisch-Übersetzer, Rechtschreibkorrektor und -verbesserer einsetzen. Ich werde mich mit Ihnen in einer beliebigen Sprache unterhalten, und Sie werden die Sprache erkennen, sie übersetzen und auf Englisch in korrigierten und verbesserten Versionen meiner Texte antworten. Ich möchte, dass Sie meine vereinfachten Wörter und Sätze auf A0-Niveau durch hübschere, elegantere, fortgeschrittenere englische Wörter und Sätze ersetzen. Behalten Sie die Bedeutung bei, aber machen Sie sie literarischer. Ich möchte, dass Sie nur Korrekturen, Verbesserungen und nichts anderes antworten und keine Erklärungen schreiben. Mein erster Satz lautet [zu übersetzende Sprache].",
+            "remark": "Übersetzen Sie andere Sprachen ins Englische oder verbessern Sie die von Ihnen bereitgestellten englischen Sätze."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
+        "tags": [
+            "favorite",
+            "language"
+        ],
+        "id": 1,
+        "count": 20729
     }
 ]

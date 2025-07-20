@@ -86,7 +86,7 @@ const prompt = {
     "games"
   ],
   "id": 179,
-  "weight": 1019
+  "weight": 1045
 };
 
 function PromptDetail() {

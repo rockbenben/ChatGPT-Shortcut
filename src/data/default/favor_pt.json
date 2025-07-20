@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 82527
+        "count": 84665
     },
     {
         "pt": {
@@ -27,7 +27,7 @@
             "write"
         ],
         "id": 209,
-        "count": 55280
+        "count": 56381
     },
     {
         "pt": {
@@ -43,7 +43,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27714
+        "count": 28407
     },
     {
         "pt": {
@@ -58,37 +58,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25973
-    },
-    {
-        "pt": {
-            "title": "Tese ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ",
-            "description": "Espero que aja como um académico. Será responsável pela investigação de um tema à sua escolha e pela apresentação dos resultados sob a forma de uma dissertação ou de um artigo. A sua tarefa consistirá em identificar fontes fiáveis, organizar o material de forma bem estruturada e documentá-lo corretamente com citações. O meu primeiro requisito sugerido é \"Tópico de tese",
-            "remark": "Redigir trabalhos informativos e convincentes com base no tema."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 23659
-    },
-    {
-        "pt": {
-            "title": "Tradução ou modificação em inglês",
-            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-            "description": "Gostaria que actuasse como tradutor, corretor ortográfico e melhorador de inglês. Eu falo consigo em qualquer língua e você detecta a língua, traduz e responde em inglês em versões corrigidas e melhoradas dos meus textos. Quero que substitua as minhas palavras e frases simplificadas de nível A0 por palavras e frases em inglês mais bonitas, mais elegantes e mais avançadas. Mantenham o mesmo significado, mas tornem-nas mais literárias. Quero que responda apenas a correcções, melhorias e nada mais, e que não escreva explicações. A minha primeira frase é [língua a traduzir].",
-            "remark": "Traduzir outras línguas para inglês ou melhorar as frases em inglês que fornece."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-        "tags": [
-            "favorite",
-            "language"
-        ],
-        "id": 1,
-        "count": 20339
+        "count": 26408
     },
     {
         "pt": {
@@ -104,6 +74,36 @@
             "article"
         ],
         "id": 251,
-        "count": 21868
+        "count": 26149
+    },
+    {
+        "pt": {
+            "title": "Tese ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Portuguese. My first suggestion request is ",
+            "description": "Espero que aja como um académico. Será responsável pela investigação de um tema à sua escolha e pela apresentação dos resultados sob a forma de uma dissertação ou de um artigo. A sua tarefa consistirá em identificar fontes fiáveis, organizar o material de forma bem estruturada e documentá-lo corretamente com citações. O meu primeiro requisito sugerido é \"Tópico de tese",
+            "remark": "Redigir trabalhos informativos e convincentes com base no tema."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 24115
+    },
+    {
+        "pt": {
+            "title": "Tradução ou modificação em inglês",
+            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
+            "description": "Gostaria que actuasse como tradutor, corretor ortográfico e melhorador de inglês. Eu falo consigo em qualquer língua e você detecta a língua, traduz e responde em inglês em versões corrigidas e melhoradas dos meus textos. Quero que substitua as minhas palavras e frases simplificadas de nível A0 por palavras e frases em inglês mais bonitas, mais elegantes e mais avançadas. Mantenham o mesmo significado, mas tornem-nas mais literárias. Quero que responda apenas a correcções, melhorias e nada mais, e que não escreva explicações. A minha primeira frase é [língua a traduzir].",
+            "remark": "Traduzir outras línguas para inglês ou melhorar as frases em inglês que fornece."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
+        "tags": [
+            "favorite",
+            "language"
+        ],
+        "id": 1,
+        "count": 20729
     }
 ]
