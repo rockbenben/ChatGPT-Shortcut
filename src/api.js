@@ -50,7 +50,8 @@ export const updateLocalStorageCache = (setField, updatedData) => {
 // User Retrieval: Fetches informations of the logged-in user.
 export async function getUserAllInfo() {
   if (!authToken) {
-    return Promise.reject(new Error("Please log in to gain access."));
+    // 返回 null 而不是抛出错误，表示未登录状态
+    return null;
   }
 
   const cacheKey = "userAllInfo";

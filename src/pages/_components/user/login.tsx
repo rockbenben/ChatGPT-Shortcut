@@ -377,7 +377,7 @@ const LoginPage = () => {
           </Title>
         }
         style={{ maxWidth: 480, margin: "0 auto" }}>
-        <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={handleTabChange} items={items} destroyInactiveTabPane key={formKey} />
+        <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={handleTabChange} items={items} destroyOnHidden key={formKey} />
       </Card>
     </>
   );

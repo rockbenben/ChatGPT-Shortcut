@@ -13,7 +13,7 @@ import themeConfig from "@site/src/pages/_components/themeConfig";
 const { Title } = Typography;
 
 const UserProfile = () => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState(false);
   const [editUsername, setEditUsername] = useState(false);
@@ -26,13 +26,14 @@ const UserProfile = () => {
   }, [userAuth]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!userAuth) {
+    // 如果不是在加载中且没有用户信息，重定向到首页
+    if (!isLoading && !userAuth) {
+      const timer = setTimeout(() => {
         window.location.href = "/";
-      }
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [userAuth]);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [userAuth, isLoading]);
 
   const handleEditUsernameClick = () => {
     setNewUsername(userAuth?.data.username);
@@ -146,12 +147,17 @@ const UserProfile = () => {
     },
   ];
 
-  // Loading state when user data is not available
-  if (!userAuth) {
+  // Loading state when user data is loading or not available
+  if (isLoading || !userAuth) {
     return (
       <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
         <div style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px", textAlign: "center" }}>
-          <Spin size="large" tip={<Translate id="message.loading">Loading...</Translate>}>
+          <Spin 
+            size="large" 
+            tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>}
+            role="status"
+            aria-label="正在加载用户信息"
+          >
             <div style={{ height: 300 }}></div>
           </Spin>
         </div>
@@ -357,7 +363,7 @@ const UserProfile = () => {
                 }
                 style={{ marginTop: 16 }}>
                 <Descriptions items={useritems} layout="vertical" />
-                <Tabs type="card" items={items} destroyInactiveTabPane />
+                <Tabs type="card" items={items} destroyOnHidden />
               </Card>
             </div>
           </Col>
