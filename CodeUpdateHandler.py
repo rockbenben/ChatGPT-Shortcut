@@ -29,8 +29,8 @@ for item in data:
         max_id = item['id']
 
 # ID 数组
-favor_ids = [2, 209, 197, 109, 20, 1, 251]
-other_ids = [185, 199, 90, 180, 232, 4, 204, 218, 41, 11, 234]
+favor_ids = [2, 209, 197, 109, 251, 20, 1]
+other_ids = [185, 199, 90, 180, 232, 204, 4]
 
 # 过滤出指定 ID 的数据项
 favor_data = [item for item in data if item['id'] in favor_ids]
