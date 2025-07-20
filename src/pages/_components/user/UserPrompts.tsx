@@ -7,7 +7,8 @@ import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutline
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import styles from "../ShowcaseCard/styles.module.css";
+import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import pageStyles from "@site/src/pages/styles.module.css";
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import isEqual from "lodash/isEqual";
 
@@ -269,7 +270,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
         </div>
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-          <ul className="clean-list showcaseList_Cwj2">
+          <ul className={clsx("clean-list", pageStyles.showcaseList)}>
             {!userprompts || userprompts.length === 0 ? (
               <li className="card shadow--md">
                 <div className={clsx("card__body", styles.cardBodyHeight)}>

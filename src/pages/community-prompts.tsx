@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, useCallback, Suspense } from "r
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 import Link from "@docusaurus/Link";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
@@ -21,30 +21,49 @@ const { Search } = Input;
 const { Text } = Typography;
 
 const pageSize = 12;
-
-const SKELETON_ITEMS = Array.from({ length: pageSize }, (_, index) => (
-  <li key={`skeleton-${index}`} className="card shadow--md">
-    <div className={clsx("card__body")} style={{ height: "250px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+const SkeletonCard = React.memo(() => (
+  <li className="card shadow--md">
+    <div
+      className={clsx("card__body")}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
+        minHeight: "300px",
+      }}>
       <div>
-        <div className={styles.showcaseCardHeader}>
-          <Skeleton.Input active style={{ width: "60%" }} />
-          <Skeleton.Input active style={{ width: "20%", marginLeft: "10px" }} />
-        </div>
-        <Skeleton active paragraph={{ rows: 3 }} />
+        <Skeleton.Input active style={{ width: "75%", height: "20px", marginBottom: "8px" }} />
+        <Skeleton.Input active style={{ width: "30%", height: "14px", marginBottom: "12px" }} />
+        <Skeleton active title={false} paragraph={{ rows: 3, width: ["100%", "90%", "70%"] }} />
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Space.Compact>
-          <Skeleton.Button active />
-          <Skeleton.Button active />
-        </Space.Compact>
-        <Space.Compact>
-          <Skeleton.Button active />
-          <Skeleton.Button active />
-        </Space.Compact>
+      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <Skeleton.Button active size="small" />
+          <Skeleton.Button active size="small" />
+        </div>
+        <div style={{ display: "flex", gap: "8px" }}>
+          <Skeleton.Button active size="small" />
+          <Skeleton.Button active size="small" />
+        </div>
       </div>
     </div>
   </li>
 ));
+
+// 性能优化的骨架屏列表 - 使用预生成的静态数组
+const SkeletonList = React.memo(({ count = pageSize }: { count?: number }) => {
+  return (
+    <>
+      {Array.from({ length: count }, (_, index) => (
+        <SkeletonCard key={index} />
+      ))}
+    </>
+  );
+});
+
+// 预生成常用数量的骨架屏，避免运行时计算
+const SKELETON_12 = Array.from({ length: 12 }, (_, index) => <SkeletonCard key={index} />);
 
 interface PromptCardProps {
   commuPrompt: {
@@ -159,24 +178,29 @@ const CommunityPrompts = () => {
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
   }, [currentPage, sortField, sortOrder, searchTerm]);
 
-  const fetchData = useCallback(async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
-    try {
-      const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-      if (result && result[0].length > 0) {
-        setUserPrompts(result[0]);
-        setTotal(result[1].data.meta.pagination.total);
-      } else if (result && result[0].length === 0) {
-        messageApi.warning("No data found.");
-        setUserPrompts([]);
-        setTotal(0);
+  const fetchData = useCallback(
+    async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
+      try {
+        const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
+        if (result && result[0].length > 0) {
+          setUserPrompts(result[0]);
+          setTotal(result[1].data.meta.pagination.total);
+        } else if (result && result[0].length === 0) {
+          if (searchTerm) {
+            messageApi.info("No results found for your search.");
+          }
+          setUserPrompts([]);
+          setTotal(0);
+        }
+      } catch (error) {
+        console.error("Failed to fetch community prompts:", error);
+        messageApi.error("Failed to fetch data");
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error("Failed to fetch community prompts:", error);
-      messageApi.error("Failed to fetch data");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+    },
+    [messageApi]
+  );
 
   const onSearch = useCallback(
     (value) => {
@@ -188,19 +212,26 @@ const CommunityPrompts = () => {
       setSearchTerm(value);
       setCurrentPage(1);
     },
-    [userAuth]
+    [userAuth, messageApi]
   );
 
-  const vote = useCallback(async (promptId, action) => {
-    try {
-      await voteOnUserPrompt(promptId, action);
-      messageApi.success(`Successfully ${action}d!`);
-      const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
-      updateVotedIds((prevIds) => [...prevIds, promptId]);
-    } catch (err) {
-      messageApi.error(`Failed to ${action}. Error: ${err}`);
-    }
-  }, []);
+  const vote = useCallback(
+    async (promptId, action) => {
+      // 防重复点击优化
+      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
+      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+
+      try {
+        await voteOnUserPrompt(promptId, action);
+        messageApi.success(`Successfully ${action}d!`);
+        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
+        updateVotedIds((prevIds) => [...prevIds, promptId]);
+      } catch (err) {
+        messageApi.error(`Failed to ${action}. Error: ${err}`);
+      }
+    },
+    [votedUpPromptIds, votedDownPromptIds, messageApi]
+  );
 
   const bookmark = useCallback(
     async (promptId) => {
@@ -232,7 +263,7 @@ const CommunityPrompts = () => {
         });
       }
     },
-    [userAuth]
+    [userAuth, messageApi]
   );
 
   const onChangePage = useCallback((page) => {
@@ -311,21 +342,28 @@ const CommunityPrompts = () => {
                 </Dropdown.Button>
                 <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
               </Space>
-              <ul className="clean-list showcaseList_Cwj2">
-                {loading
-                  ? SKELETON_ITEMS
-                  : userprompts.map((commuPrompt) => (
-                      <PromptCard
-                        key={commuPrompt.id}
-                        commuPrompt={commuPrompt}
-                        onVote={vote}
-                        onBookmark={bookmark}
-                        votedUpPromptIds={votedUpPromptIds}
-                        votedDownPromptIds={votedDownPromptIds}
-                        userAuth={userAuth}
-                        messageApi={messageApi}
-                      />
-                    ))}
+              <ul className={clsx("clean-list", styles.showcaseList)}>
+                {loading ? (
+                  // 使用预生成的骨架屏，性能最优
+                  pageSize === 12 ? (
+                    SKELETON_12
+                  ) : (
+                    <SkeletonList count={pageSize} />
+                  )
+                ) : (
+                  userprompts.map((commuPrompt) => (
+                    <PromptCard
+                      key={commuPrompt.id}
+                      commuPrompt={commuPrompt}
+                      onVote={vote}
+                      onBookmark={bookmark}
+                      votedUpPromptIds={votedUpPromptIds}
+                      votedDownPromptIds={votedDownPromptIds}
+                      userAuth={userAuth}
+                      messageApi={messageApi}
+                    />
+                  ))
+                )}
               </ul>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
