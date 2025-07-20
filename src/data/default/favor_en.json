@@ -11,7 +11,7 @@
             "write"
         ],
         "id": 2,
-        "count": 82527
+        "count": 84665
     },
     {
         "en": {
@@ -25,7 +25,7 @@
             "write"
         ],
         "id": 209,
-        "count": 55280
+        "count": 56381
     },
     {
         "en": {
@@ -40,7 +40,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27714
+        "count": 28407
     },
     {
         "en": {
@@ -54,35 +54,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25973
-    },
-    {
-        "en": {
-            "title": "Scademician",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first suggestion request is ",
-            "remark": "Write a comprehensive and persuasive thesis based on the given topic."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 23659
-    },
-    {
-        "en": {
-            "title": "English translator",
-            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-            "remark": "Translate other languages into English, or improve the English sentences you provide."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-        "tags": [
-            "favorite",
-            "language"
-        ],
-        "id": 1,
-        "count": 20339
+        "count": 26408
     },
     {
         "en": {
@@ -97,6 +69,34 @@
             "article"
         ],
         "id": 251,
-        "count": 21868
+        "count": 26149
+    },
+    {
+        "en": {
+            "title": "Scademician",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. My first suggestion request is ",
+            "remark": "Write a comprehensive and persuasive thesis based on the given topic."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 24115
+    },
+    {
+        "en": {
+            "title": "English translator",
+            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
+            "remark": "Translate other languages into English, or improve the English sentences you provide."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
+        "tags": [
+            "favorite",
+            "language"
+        ],
+        "id": 1,
+        "count": 20729
     }
 ]

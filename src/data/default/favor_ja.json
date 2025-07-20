@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 82527
+        "count": 84665
     },
     {
         "ja": {
@@ -27,7 +27,7 @@
             "write"
         ],
         "id": 209,
-        "count": 55280
+        "count": 56381
     },
     {
         "ja": {
@@ -43,7 +43,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27714
+        "count": 28407
     },
     {
         "ja": {
@@ -58,37 +58,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25973
-    },
-    {
-        "ja": {
-            "title": "ペーパー1",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
-            "description": "あなたには、学者として行動してほしい。あなたには、自分で選んだトピックを研究し、その結果を論文や記事の形で発表する責任があります。あなたの仕事は、信頼できる情報源を特定し、資料をうまく構造化して整理し、引用を加えて正確に文書化することです。私が最初に提案する要件は「論文のテーマ」です。",
-            "remark": "トピックに基づき、情報量が多く説得力のある論文を書く。"
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 23659
-    },
-    {
-        "ja": {
-            "title": "英語翻訳または修正",
-            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-            "description": "英語の翻訳者、スペル修正者、改善者として活動してほしいです。私がどんな言語で話しかけても、あなたはその言語を察知して翻訳し、私の文章の訂正・改善版を英語で回答してくれます。私の簡略化された A0 の単語や文章を、よりきれいでエレガントな、より高度な英語の単語や文章に置き換えてほしいのです。意味はそのままで、より文学的にしてください。訂正、改善、それ以外には答えず、説明も書かないでほしい。私の最初の文章は、【訳すべき言語】です。",
-            "remark": "他言語から英語への翻訳や、提供した英語の文章を改善する。"
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-        "tags": [
-            "favorite",
-            "language"
-        ],
-        "id": 1,
-        "count": 20339
+        "count": 26408
     },
     {
         "ja": {
@@ -104,6 +74,36 @@
             "article"
         ],
         "id": 251,
-        "count": 21868
+        "count": 26149
+    },
+    {
+        "ja": {
+            "title": "ペーパー1",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Japanese. My first suggestion request is ",
+            "description": "あなたには、学者として行動してほしい。あなたには、自分で選んだトピックを研究し、その結果を論文や記事の形で発表する責任があります。あなたの仕事は、信頼できる情報源を特定し、資料をうまく構造化して整理し、引用を加えて正確に文書化することです。私が最初に提案する要件は「論文のテーマ」です。",
+            "remark": "トピックに基づき、情報量が多く説得力のある論文を書く。"
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 24115
+    },
+    {
+        "ja": {
+            "title": "英語翻訳または修正",
+            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
+            "description": "英語の翻訳者、スペル修正者、改善者として活動してほしいです。私がどんな言語で話しかけても、あなたはその言語を察知して翻訳し、私の文章の訂正・改善版を英語で回答してくれます。私の簡略化された A0 の単語や文章を、よりきれいでエレガントな、より高度な英語の単語や文章に置き換えてほしいのです。意味はそのままで、より文学的にしてください。訂正、改善、それ以外には答えず、説明も書かないでほしい。私の最初の文章は、【訳すべき言語】です。",
+            "remark": "他言語から英語への翻訳や、提供した英語の文章を改善する。"
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
+        "tags": [
+            "favorite",
+            "language"
+        ],
+        "id": 1,
+        "count": 20729
     }
 ]

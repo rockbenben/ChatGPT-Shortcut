@@ -12,7 +12,7 @@
             "write"
         ],
         "id": 2,
-        "count": 82527
+        "count": 84665
     },
     {
         "ru": {
@@ -27,7 +27,7 @@
             "write"
         ],
         "id": 209,
-        "count": 55280
+        "count": 56381
     },
     {
         "ru": {
@@ -43,7 +43,7 @@
             "write"
         ],
         "id": 197,
-        "count": 27714
+        "count": 28407
     },
     {
         "ru": {
@@ -58,37 +58,7 @@
             "ai"
         ],
         "id": 109,
-        "count": 25973
-    },
-    {
-        "ru": {
-            "title": "Диссертация ①",
-            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ",
-            "description": "Я ожидаю, что вы будете действовать как ученый. Вы должны будете провести исследование по выбранной Вами теме и представить полученные результаты в виде диссертации или статьи. Ваша задача - найти надежные источники, грамотно структурировать материал и оформить его в виде цитат. Первое предлагаемое мной требование - \"Тема диссертации\".",
-            "remark": "Написать информативные и убедительные статьи по заданной теме."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-        "tags": [
-            "favorite",
-            "article"
-        ],
-        "id": 20,
-        "count": 23659
-    },
-    {
-        "ru": {
-            "title": "Перевод или модификация на английский язык",
-            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
-            "description": "Я хотел бы, чтобы Вы выступили в роли переводчика английского языка, корректора и улучшителя орфографии. Я буду говорить с Вами на любом языке, а Вы будете определять язык, переводить его и отвечать на английском языке в исправленных и улучшенных вариантах моих текстов. Я хочу, чтобы вы заменили мои упрощенные слова и предложения уровня А0 на более красивые, более элегантные, более совершенные английские слова и предложения. Сохраните смысл, но сделайте их более литературными. Я хочу, чтобы Вы отвечали только на исправления, улучшения и ничего больше, и не писали объяснений. Мое первое предложение - [язык для перевода].",
-            "remark": "Переводить другие языки на английский или улучшать предложения на английском языке."
-        },
-        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-        "tags": [
-            "favorite",
-            "language"
-        ],
-        "id": 1,
-        "count": 20339
+        "count": 26408
     },
     {
         "ru": {
@@ -104,6 +74,36 @@
             "article"
         ],
         "id": 251,
-        "count": 21868
+        "count": 26149
+    },
+    {
+        "ru": {
+            "title": "Диссертация ①",
+            "prompt": "I want you to act as an academician. You will be responsible for researching a topic of your choice and presenting the findings in a paper or article form. Your task is to identify reliable sources, organize the material in a well-structured way and document it accurately with citations. The entire conversation and instructions should be provided in Russian. My first suggestion request is ",
+            "description": "Я ожидаю, что вы будете действовать как ученый. Вы должны будете провести исследование по выбранной Вами теме и представить полученные результаты в виде диссертации или статьи. Ваша задача - найти надежные источники, грамотно структурировать материал и оформить его в виде цитат. Первое предлагаемое мной требование - \"Тема диссертации\".",
+            "remark": "Написать информативные и убедительные статьи по заданной теме."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
+        "tags": [
+            "favorite",
+            "article"
+        ],
+        "id": 20,
+        "count": 24115
+    },
+    {
+        "ru": {
+            "title": "Перевод или модификация на английский язык",
+            "prompt": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is \"istanbulu cok seviyom burada olmak cok guzel\"",
+            "description": "Я хотел бы, чтобы Вы выступили в роли переводчика английского языка, корректора и улучшителя орфографии. Я буду говорить с Вами на любом языке, а Вы будете определять язык, переводить его и отвечать на английском языке в исправленных и улучшенных вариантах моих текстов. Я хочу, чтобы вы заменили мои упрощенные слова и предложения уровня А0 на более красивые, более элегантные, более совершенные английские слова и предложения. Сохраните смысл, но сделайте их более литературными. Я хочу, чтобы Вы отвечали только на исправления, улучшения и ничего больше, и не писали объяснений. Мое первое предложение - [язык для перевода].",
+            "remark": "Переводить другие языки на английский или улучшать предложения на английском языке."
+        },
+        "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
+        "tags": [
+            "favorite",
+            "language"
+        ],
+        "id": 1,
+        "count": 20729
     }
 ]
