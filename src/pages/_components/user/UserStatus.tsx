@@ -11,12 +11,12 @@ import { AuthContext } from "../AuthContext";
 const AddPromptModal = ({ open, setOpen, onFinish, loading }) => {
   const [form] = Form.useForm();
 
-  // Reset form when modal is closed
-  React.useEffect(() => {
-    if (!open) {
-      form.resetFields();
-    }
-  }, [open, form]);
+  const handleFormSubmit = React.useCallback(
+    (values) => {
+      onFinish(values, form);
+    },
+    [onFinish, form]
+  );
 
   return (
     <ConfigProvider
@@ -36,13 +36,9 @@ const AddPromptModal = ({ open, setOpen, onFinish, loading }) => {
         footer={null}
         maskClosable={false}
         closable={!loading}
+        destroyOnHidden
         onCancel={() => !loading && setOpen(false)}>
-        <Form
-          form={form}
-          onFinish={(values) => {
-            onFinish(values, form);
-          }}
-          initialValues={{ share: true }}>
+        <Form form={form} onFinish={handleFormSubmit} initialValues={{ share: true }}>
           <Form.Item
             name="title"
             rules={[
