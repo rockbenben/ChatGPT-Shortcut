@@ -358,18 +358,22 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
             />
           </Form.Item>
           <Form.Item name="share" valuePropName="checked">
-            <Switch
-              defaultChecked={form.getFieldValue("share")}
-              onChange={(checked) => {
-                form.setFieldsValue({ share: checked });
-              }}
-              checkedChildren={<CheckOutlined />}
-              unCheckedChildren={<CloseOutlined />}
-            />
-            <Typography.Text type="secondary">
-              {" "}
-              <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
-            </Typography.Text>
+            <div>
+              {open && (
+                <Switch
+                  defaultChecked={form.getFieldValue("share")}
+                  onChange={(checked) => {
+                    form.setFieldsValue({ share: checked });
+                  }}
+                  checkedChildren={<CheckOutlined />}
+                  unCheckedChildren={<CloseOutlined />}
+                />
+              )}
+              <Typography.Text type="secondary">
+                {" "}
+                <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
+              </Typography.Text>
+            </div>
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loading}>
