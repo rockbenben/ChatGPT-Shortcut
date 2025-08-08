@@ -77,24 +77,42 @@ const config = {
     ], */
   ],
 
+  headTags: [
+    {
+      tagName: "script",
+      attributes: {
+        type: "application/ld+json",
+      },
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            name: "AiShort",
+            url: "https://www.aishort.top/",
+            logo: "https://www.aishort.top/img/logo.png",
+          },
+          {
+            "@type": "WebSite",
+            name: "AiShort",
+            url: "https://www.aishort.top/",
+          },
+        ],
+      }),
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      // image: 'img/docusaurus-social-card.jpg',
+      image: "img/logo.png",
       // autocorrect: false,
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
-      metadata: [
-        {
-          name: "keywords",
-          content:
-            "AI智能体,aishort,提示词,AI提示词,AI prompts,AI Agent,AI助理,提示词社区,ChatGPT Shortcut,智能体构建,AI应用,自定义GPTs,工作流自动化,多代理系统,AI效率工具,ChatGPT,AI快捷指令,生产力提升",
-        },
-      ],
       navbar: {
         hideOnScroll: true,
         title: "AI Short",
