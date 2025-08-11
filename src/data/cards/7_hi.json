@@ -2,13 +2,13 @@
     "id": 7,
     "hi": {
         "title": "शीघ्र शब्द संशोधक",
-        "prompt": "I am trying to get good results from GPT-4 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-4 and would produce better results?.",
-        "description": "मैं निम्नलिखित संकेत शब्दों से GPT-4 पर अच्छे परिणाम प्राप्त करने का प्रयास कर रहा हूँ: आपके संकेत शब्द। क्या आप अधिक अनुकूलित त्वरित शब्द लिख सकते हैं जो बेहतर परिणाम देते हैं?",
+        "prompt": "I am trying to get good results from GPT-5 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-5 and would produce better results?.",
+        "description": "मैं निम्नलिखित संकेत शब्दों से GPT-5 पर अच्छे परिणाम प्राप्त करने का प्रयास कर रहा हूँ: आपके संकेत शब्द। क्या आप अधिक अनुकूलित त्वरित शब्द लिख सकते हैं जो बेहतर परिणाम देते हैं?",
         "remark": "ChatGPT को हमारे लिए शीघ्र शब्दों को फिर से लिखने दें। चूंकि इंसानों द्वारा लिखे गए त्वरित शब्दों का तर्क मशीनों से अलग है, इसलिए त्वरित शब्दों को दोबारा संपादित करने से चैटजीपीटी को समझना आसान हो सकता है।"
     },
     "tags": [
         "ai"
     ],
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 7354
+    "count": 7402
 }
