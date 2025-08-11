@@ -30,7 +30,7 @@
     "@giphy/react-components": "^10.1.0",
     "@mdx-js/react": "^3.1.0",
     "@popperjs/core": "^2.11.8",
-    "antd": "^5.26.7",
+    "antd": "^5.27.0",
     "axios": "^1.11.0",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
