@@ -85,7 +85,7 @@ const prompt = {
     "company"
   ],
   "id": 140,
-  "weight": 784
+  "weight": 790
 };
 
 function PromptDetail() {

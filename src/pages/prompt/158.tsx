@@ -85,7 +85,7 @@ const prompt = {
     "finance"
   ],
   "id": 158,
-  "weight": 2682
+  "weight": 2694
 };
 
 function PromptDetail() {
