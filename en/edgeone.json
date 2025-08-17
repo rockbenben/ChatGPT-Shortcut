@@ -2,6 +2,21 @@
   "name": "aishort",
   "redirects": [
     {
+      "source": "/vi",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/id",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
+      "source": "/tr",
+      "destination": "/en",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/guides/extension",
       "destination": "/docs/extension/usage",
       "statusCode": 301
