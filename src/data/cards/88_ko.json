@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "코딩을 배우고 계신가요? 이 프롬프트는 ChatGPT를 초보자를 위한 알고리즘 강사로 변신시켜 버블 정렬과 같은 개념을 간단한 파이썬 예제와 ASCII 시각화로 설명합니다."
 }

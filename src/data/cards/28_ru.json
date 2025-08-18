@@ -10,5 +10,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic",
-    "count": 530
+    "count": 530,
+    "metaDescription": "Готовы стать ресторанным критиком? Расскажите этому промпту о ресторане, и он создаст профессиональный отзыв о еде и обслуживании, помогая вам поделиться своим опытом."
 }

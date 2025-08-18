@@ -11,5 +11,6 @@
         "mind"
     ],
     "website": null,
-    "count": 1294
+    "count": 1294,
+    "metaDescription": "Quer entender o \"porquê\" por trás de algo? Este prompt cria um loop de resposta, perguntando continuamente o motivo por trás da última resposta para aprofundar sua compreensão."
 }

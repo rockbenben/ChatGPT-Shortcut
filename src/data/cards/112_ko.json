@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer",
-    "count": 1322
+    "count": 1322,
+    "metaDescription": "머신러닝 개념을 이해해야 하나요? 이 프롬프트는 ChatGPT를 ML 엔지니어로 변신시켜 복잡한 주제를 이해하기 쉬운 용어로 설명합니다."
 }

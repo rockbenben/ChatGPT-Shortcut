@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "क्या आप ईएसएल वर्कशीट बना रहे हैं? यह प्रॉम्प्ट अंग्रेजी सीखने वालों के लिए रिक्त-स्थान-भरें वाक्य उत्पन्न करता है, जिसमें से चुनने के लिए शब्द विकल्पों की एक सूची होती है।"
 }

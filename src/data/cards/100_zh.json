@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "count": 710
+    "count": 710,
+    "metaDescription": "还在为写清晰的提交信息而烦恼吗？这个提示词能为您的任务生成格式完美的提交信息，帮助您维护一个干净、规范的 git 历史记录。"
 }

@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "Stai imparando a programmare? Questo prompt trasforma AI in un istruttore di algoritmi per principianti, spiegando concetti come il bubble sort con semplici esempi in Python e visualizzazioni ASCII."
 }

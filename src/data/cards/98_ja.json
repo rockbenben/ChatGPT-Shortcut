@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
-    "count": 1210
+    "count": 1210,
+    "metaDescription": "複雑な正規表現を書くのにうんざりしていませんか？このプロンプトを使って、テキスト内の特定のパターンに一致する正確な正規表現をChatGPTに生成させましょう。時間と労力を節約しましょう！"
 }

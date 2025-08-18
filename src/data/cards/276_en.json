@@ -9,5 +9,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-cheap-travel-ticket-advisor",
-    "count": 282
+    "count": 282,
+    "metaDescription": "Want to find the cheapest way to travel? This prompt acts as a ticket advisor, using its knowledge to suggest the most affordable routes, including transfers and different modes of transport."
 }

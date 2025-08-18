@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "ما هذه اللغة؟ هذا الموجه يجعل AI كاشف لغات. ما عليك سوى كتابة جملة، وسيخبرك باللغة التي كتبت بها."
 }

@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-composer",
-    "count": 1599
+    "count": 1599,
+    "metaDescription": "Vous avez les paroles mais pas la musique ? Ce prompt transforme AI en un compositeur. Fournissez vos paroles, et il créera une mélodie et une harmonie pour leur donner vie."
 }

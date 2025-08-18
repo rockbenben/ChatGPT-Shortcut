@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
-    "count": 1055
+    "count": 1055,
+    "metaDescription": "需要确保您的软件没有错误吗？这个提示词将 AI 转变为一名质量保证测试员，帮助您测试功能和性能，并撰写详细的错误报告。"
 }

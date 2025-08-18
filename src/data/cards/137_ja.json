@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 892
+    "count": 892,
+    "metaDescription": "トピックの簡単な要約が必要ですか？このプロンプトはChatGPTにウィキペディアのページとして機能させ、使い慣れた形式で有益で事実に基づいた概要を提供させます。"
 }

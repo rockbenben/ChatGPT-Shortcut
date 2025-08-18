@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
-    "count": 460
+    "count": 460,
+    "metaDescription": "Как бы вы сказали это на языке эмодзи? Этот забавный промпт переводит ваши предложения в последовательность эмодзи, выражая ваше сообщение совершенно по-новому."
 }

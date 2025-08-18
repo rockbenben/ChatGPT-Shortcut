@@ -9,5 +9,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-english-pronunciation-helper",
-    "count": 404
+    "count": 404,
+    "metaDescription": "Need help with English pronunciation? This prompt acts as an assistant, providing pronunciations for English sentences using phonetic letters from your own language."
 }

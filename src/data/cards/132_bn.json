@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-excel-sheet",
-    "count": 2760
+    "count": 2760,
+    "metaDescription": "আপনার চ্যাটে একটি স্প্রেডশিট ব্যবহার করতে চান? এই প্রম্পটটি ChatGPT-কে একটি টেক্সট-ভিত্তিক এক্সেল শীটে পরিণত করে। টেবিল আপডেট দেখতে ডেটা এবং সূত্র ইনপুট করুন।"
 }

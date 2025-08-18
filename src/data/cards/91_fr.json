@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
-    "count": 2794
+    "count": 2794,
+    "metaDescription": "Besoin de démarrer rapidement un projet React ? Ce prompt transforme AI en un développeur frontend senior, codant un projet avec React, Ant Design, Redux, et plus encore dans un seul fichier."
 }

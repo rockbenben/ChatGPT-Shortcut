@@ -10,5 +10,6 @@
         "life"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-emergency-response-professional",
-    "count": 312
+    "count": 312,
+    "metaDescription": "事故にどう対処すべきですか？このプロンプトはChatGPTを緊急対応の専門家にし、交通や家庭での事故状況に対する明確で段階的なアドバイスを提供します。"
 }

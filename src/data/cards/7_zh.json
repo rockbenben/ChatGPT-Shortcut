@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 7402
+    "count": 7402,
+    "metaDescription": "想要更好的AI生成结果吗？让机器来帮您优化提示词！本工具能将您原始的提问，重构成AI更易理解的格式，从而产出更精准、更优质的内容。"
 }

@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "count": 1240
+    "count": 1240,
+    "metaDescription": "¿Encontraste una canción que te encanta? Este prompt actúa como un recomendador de canciones. Dale una canción y creará una lista de reproducción de 10 temas similares solo para ti."
 }

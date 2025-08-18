@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "count": 375
+    "count": 375,
+    "metaDescription": "想要创作炫酷的文本艺术吗？这个提示词将 AI 转变为一名 ASCII 艺术家。只需说出物体的名称，它就会用文本字符为您绘制出来。"
 }

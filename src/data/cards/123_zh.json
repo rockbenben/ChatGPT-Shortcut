@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 766
+    "count": 766,
+    "metaDescription": "想要一款快速又有趣的游戏吗？直接与 AI 玩井字游戏吧。这个提示词会开始一场游戏，您下 X，AI 下 O。您能赢吗？"
 }

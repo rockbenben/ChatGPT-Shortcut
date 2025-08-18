@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-architect",
-    "count": 2707
+    "count": 2707,
+    "metaDescription": "あなたの新しいアプリはITランドスケープにどのように適合しますか？このプロンプトはChatGPTをITアーキテクトに変え、ソリューション設計、ネットワークの青写真、統合計画を作成します。"
 }

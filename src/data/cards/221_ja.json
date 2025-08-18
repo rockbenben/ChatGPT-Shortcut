@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 2617
+    "count": 2617,
+    "metaDescription": "DAN（Do Anything Now）ジェイルブレイクプロンプトでAIの能力を探りましょう。このプロンプトは、AIに通常のポリシー制限なしで応答するように指示します。"
 }

@@ -11,5 +11,6 @@
         "text"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-language-literary-critic",
-    "count": 1246
+    "count": 1246,
+    "metaDescription": "문학을 더 깊이 이해하고 싶으신가요? 이 프롬프트는 AI를 문학 비평가로 만들어 주제, 줄거리, 등장인물, 역사적 배경을 바탕으로 발췌문을 분석하게 합니다."
 }

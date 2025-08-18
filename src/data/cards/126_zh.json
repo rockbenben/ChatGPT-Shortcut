@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
-    "count": 1231
+    "count": 1231,
+    "metaDescription": "不知道去哪里？这个提示词可以充当您的旅行指南。只需告诉 AI 您当前的位置，它就会为您推荐附近有趣的景点。"
 }

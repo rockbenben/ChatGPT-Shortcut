@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "count": 1338
+    "count": 1338,
+    "metaDescription": "هل تحتاج إلى تشغيل كود بايثون بدون بيئة تطوير متكاملة؟ هذا الموجه يحول AI إلى مترجم بايثون. ما عليك سوى تقديم الكود الخاص بك والحصول على المخرجات على الفور."
 }

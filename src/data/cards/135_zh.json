@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "count": 495
+    "count": 495,
+    "metaDescription": "通过这个提示词体验纯文本互联网。ChatGPT 扮演网络浏览器的角色，在一个模拟环境中返回您输入的任何 URL 的文本内容。"
 }

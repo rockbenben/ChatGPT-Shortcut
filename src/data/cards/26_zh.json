@@ -10,5 +10,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-writer",
-    "count": 453
+    "count": 453,
+    "metaDescription": "需要为软件创建清晰的操作指南吗？本提示词将以技术作家的身份，帮助您将基本步骤转化为一篇引人入胜、易于理解的文章，并包含截图占位符。"
 }

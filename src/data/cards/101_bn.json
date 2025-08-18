@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "count": 929
+    "count": 929,
+    "metaDescription": "একটি সোলার সার্চ ইঞ্জিন সিমুলেট করতে চান? এই প্রম্পটটি আপনাকে চ্যাটের মধ্যেই সংগ্রহে JSON ডকুমেন্ট যোগ করতে এবং সোলার-নির্দিষ্ট কোয়েরি ব্যবহার করে সেগুলি পুনরুদ্ধার করতে দেয়।"
 }

@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "count": 889
+    "count": 889,
+    "metaDescription": "想要练习 Linux 命令吗？这个提示词在 AI 中模拟一个 Linux 终端。输入您的命令，看看终端会如何回应。"
 }

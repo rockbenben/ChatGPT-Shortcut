@@ -10,5 +10,6 @@
         "text"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder",
-    "count": 418
+    "count": 418,
+    "metaDescription": "Ищете нужное слово? Этот промпт работает как поставщик синонимов, предоставляя список до 10 альтернатив для любого слова. Расширьте свой словарный запас и улучшите свои тексты."
 }

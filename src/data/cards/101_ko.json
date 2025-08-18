@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "count": 929
+    "count": 929,
+    "metaDescription": "Solr 검색 엔진을 시뮬레이션하고 싶으신가요? 이 프롬프트를 사용하면 채팅 내에서 직접 컬렉션에 JSON 문서를 추가하고 Solr 관련 쿼리를 사용하여 검색할 수 있습니다."
 }

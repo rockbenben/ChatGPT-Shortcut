@@ -10,5 +10,6 @@
         "write"
     ],
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 3600
+    "count": 3600,
+    "metaDescription": "긴 기사를 처리해야 하나요? 이 프롬프트는 텍스트를 레이블이 지정된 작은 덩어리로 분할하여 대량의 데이터를 입력하여 AI가 기억하도록 할 수 있습니다."
 }

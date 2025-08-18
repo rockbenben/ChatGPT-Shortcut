@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "count": 1240
+    "count": 1240,
+    "metaDescription": "আপনার পছন্দের একটি গান খুঁজে পেয়েছেন? এই প্রম্পটটি একটি গান সুপারিশকারী হিসাবে কাজ করে। এটিকে একটি গান দিন, এবং এটি শুধুমাত্র আপনার জন্য ১০টি অনুরূপ ট্র্যাকের একটি প্লেলিস্ট তৈরি করবে।"
 }

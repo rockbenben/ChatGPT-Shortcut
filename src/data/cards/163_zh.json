@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "count": 1240
+    "count": 1240,
+    "metaDescription": "找到了一首您喜欢的歌曲吗？这个提示词可以充当歌曲推荐器。给它一首歌，它就会为您创建一个包含 10 首相似曲目的播放列表。"
 }

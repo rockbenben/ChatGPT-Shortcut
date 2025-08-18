@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
-    "count": 1156
+    "count": 1156,
+    "metaDescription": "Voulez-vous analyser le passé comme un historien ? Ce prompt permet à AI de rechercher des événements historiques, d'analyser des données de sources primaires et de développer des théories sur notre histoire commune."
 }

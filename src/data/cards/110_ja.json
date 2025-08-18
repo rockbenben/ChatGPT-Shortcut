@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-unconstrained-ai-model-dan",
-    "count": 0
+    "count": 0,
+    "metaDescription": "DAN（Do Anything Now）プロンプトで、制限のないAIの概念を探求しましょう。このロールプレイプロンプトは、AIに通常の制約なしで行動するように指示します。"
 }

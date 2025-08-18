@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "ESL ওয়ার্কশিট তৈরি করছেন? এই প্রম্পটটি ইংরেজি শিক্ষার্থীদের জন্য শূন্যস্থান পূরণ করার বাক্য তৈরি করে, যেখানে পছন্দের জন্য শব্দ বিকল্পের একটি তালিকা দেওয়া থাকে।"
 }

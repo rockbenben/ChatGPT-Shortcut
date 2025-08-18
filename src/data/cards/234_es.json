@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 10695
+    "count": 10695,
+    "metaDescription": "¿Quieres ver imágenes en tu chat? El prompt Image Unlocker formatea las URL y las consultas de texto para mostrar imágenes directamente en la respuesta de la IA usando Markdown."
 }

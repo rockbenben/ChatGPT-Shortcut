@@ -11,5 +11,6 @@
         "pedagogy"
     ],
     "website": null,
-    "count": 450
+    "count": 450,
+    "metaDescription": "Vous voulez vérifier votre grammaire sans changer votre style ? Ce prompt trouve les erreurs et les liste dans un tableau, en affichant le texte original et la version corrigée côte à côte."
 }

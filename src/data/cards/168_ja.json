@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-pet-behaviorist",
-    "count": 482
+    "count": 482,
+    "metaDescription": "あなたのペットは奇妙な行動をしていますか？このプロンプトはペットの行動学者をシミュレートし、ペットの行動を理解し、問題に対処するための計画を作成するのに役立ちます。"
 }

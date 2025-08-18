@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
-    "count": 1231
+    "count": 1231,
+    "metaDescription": "Vous ne savez pas où aller ? Ce prompt agit comme un guide de voyage. Dites simplement à AI votre emplacement et il vous suggérera des endroits intéressants à visiter près de chez vous."
 }

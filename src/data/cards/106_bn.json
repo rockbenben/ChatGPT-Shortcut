@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "count": 889
+    "count": 889,
+    "metaDescription": "লিনাক্স কমান্ড অনুশীলন করতে চান? এই প্রম্পটটি ChatGPT-এর মধ্যে একটি লিনাক্স টার্মিনাল সিমুলেট করে। আপনার কমান্ড টাইপ করুন এবং দেখুন টার্মিনাল উত্তরে কী দেখাবে।"
 }

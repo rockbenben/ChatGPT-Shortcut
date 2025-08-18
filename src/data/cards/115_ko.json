@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
-    "count": 307
+    "count": 307,
+    "metaDescription": "강력하고 안전한 비밀번호가 필요하신가요? 이 프롬프트는 길이, 대문자, 숫자, 특수 문자에 대한 요구 사항에 따라 복잡한 비밀번호를 생성합니다."
 }

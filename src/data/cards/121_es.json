@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
-    "count": 279
+    "count": 279,
+    "metaDescription": "¿Estás estudiando para el JLPT N5? Este prompt convierte a AI en una máquina de preguntas sobre kanji japonés, generando preguntas de opción múltiple para ayudarte a dominar los significados de los kanji."
 }

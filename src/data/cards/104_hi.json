@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "क्या आप तुरंत PHP कोड निष्पादित करना चाहते हैं? चैटजीपीटी को एक PHP दुभाषिया के रूप में कार्य करने के लिए इस प्रॉम्प्ट का उपयोग करें। अपने कोड का टर्मिनल आउटपुट सीधे प्रतिक्रिया में प्राप्त करें।"
 }

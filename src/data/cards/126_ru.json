@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
-    "count": 1231
+    "count": 1231,
+    "metaDescription": "Не знаете, куда пойти? Этот промпт действует как туристический гид. Просто сообщите AI свое местоположение, и он предложит интересные места для посещения поблизости."
 }

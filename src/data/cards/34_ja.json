@@ -10,5 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 270
+    "count": 270,
+    "metaDescription": "テキストから連絡先情報を素早く抜き出す必要がありますか？このシンプルなChatGPTプロンプトは、メールやテキストブロックから名前と郵送先住所を抽出します。時間を節約し、データ入力を自動化しましょう。"
 }

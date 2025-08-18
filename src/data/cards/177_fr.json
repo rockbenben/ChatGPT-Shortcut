@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 5083
+    "count": 5083,
+    "metaDescription": "Vous développez un mini-programme WeChat ? Ce prompt génère les fichiers wxml, js, wxss et json nécessaires à votre projet, vous faisant gagner un temps de développement précieux."
 }

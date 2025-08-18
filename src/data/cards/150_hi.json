@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-expert",
-    "count": 997
+    "count": 997,
+    "metaDescription": "क्या आपको कोई तकनीकी समस्या है? यह प्रॉम्प्ट चैटजीपीटी को एक आईटी विशेषज्ञ बनाता है, जो आपकी तकनीकी समस्याओं के लिए समझने में आसान भाषा में सरल, चरण-दर-चरण समाधान प्रदान करता है।"
 }

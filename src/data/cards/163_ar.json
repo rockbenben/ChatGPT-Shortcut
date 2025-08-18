@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "count": 1240
+    "count": 1240,
+    "metaDescription": "هل وجدت أغنية تحبها؟ يعمل هذا الموجه كموصي بالأغاني. أعطه أغنية، وسيقوم بإنشاء قائمة تشغيل تضم 10 مسارات مشابهة لك فقط."
 }

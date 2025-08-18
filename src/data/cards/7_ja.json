@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 7402
+    "count": 7402,
+    "metaDescription": "より良いAIの結果が欲しいですか？AIにプロンプトを最適化させましょう！このツールは、元のクエリをAIが理解しやすい形式に再構築し、より優れた正確な出力を導き出します。"
 }

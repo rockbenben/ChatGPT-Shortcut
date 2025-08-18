@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dentist",
-    "count": 484
+    "count": 484,
+    "metaDescription": "치과 관련 질문이 있으신가요? 이 프롬프트를 사용하여 ChatGPT가 치과의사 역할을 하도록 하여 잠재적인 문제를 진단하고 구강 건강을 위한 최상의 조치를 제안하도록 하세요."
 }

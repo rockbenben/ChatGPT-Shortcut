@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "count": 4051
+    "count": 4051,
+    "metaDescription": "¿Buscas un juego de mesa clásico? ¡Desafía a AI a una partida de Gomoku! Este prompt configura un tablero de 9x9 para que juegues a las cinco en raya contra la IA."
 }

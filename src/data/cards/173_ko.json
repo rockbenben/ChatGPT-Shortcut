@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 7275
+    "count": 7275,
+    "metaDescription": "코드 조각을 이해하지 못하시겠습니까? 이 프롬프트는 ChatGPT를 코드 해석기로 만들어 모든 코드 스니펫의 구문과 의미를 한 줄씩 설명합니다."
 }

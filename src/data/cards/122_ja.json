@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "count": 4051
+    "count": 4051,
+    "metaDescription": "クラシックなボードゲームをお探しですか？ChatGPTに五目並べのゲームを挑みましょう！このプロンプトは、AIと対戦するための9x9の盤面を設定します。"
 }

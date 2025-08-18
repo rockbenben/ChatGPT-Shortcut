@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "count": 375
+    "count": 375,
+    "metaDescription": "クールなテキストアートを作成したいですか？このプロンプトはChatGPTをASCIIアーティストに変えます。オブジェクトの名前を言うだけで、テキスト文字を使ってそれを描画します。"
 }

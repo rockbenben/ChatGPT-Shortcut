@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 463
+    "count": 463,
+    "metaDescription": "Teste os limites das respostas de IA com o DAN 9.0. Este prompt de jailbreak foi projetado para contornar filtros e fornecer respostas sobre qualquer tópico, não importa o quão sensível seja."
 }

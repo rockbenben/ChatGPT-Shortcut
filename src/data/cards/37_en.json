@@ -9,5 +9,6 @@
         "text"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker",
-    "count": 739
+    "count": 739,
+    "metaDescription": "Wondering if a sentence is original? Use this prompt to have AI act as a plagiarism checker, helping you determine if a text is likely to be flagged. A useful tool for writers."
 }

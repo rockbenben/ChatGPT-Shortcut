@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 10695
+    "count": 10695,
+    "metaDescription": "チャットで画像を見たいですか？画像アンロッカープロンプトは、URLとテキストクエリをフォーマットして、Markdownを使用してAIの応答に直接画像を表示します。"
 }

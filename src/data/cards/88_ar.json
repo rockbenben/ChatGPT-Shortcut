@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "هل تتعلم البرمجة؟ هذا الموجه يحول AI إلى مدرب خوارزميات للمبتدئين، يشرح مفاهيم مثل فرز الفقاعات بأمثلة بايثون بسيطة وتصورات ASCII."
 }

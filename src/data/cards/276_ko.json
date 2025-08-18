@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-cheap-travel-ticket-advisor",
-    "count": 282
+    "count": 282,
+    "metaDescription": "가장 저렴하게 여행하는 방법을 찾고 싶으신가요? 이 프롬프트는 티켓 어드바이저 역할을 하여 지식을 활용하여 환승 및 다양한 교통 수단을 포함한 가장 저렴한 경로를 제안합니다."
 }

@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "count": 375
+    "count": 375,
+    "metaDescription": "¿Quieres crear arte de texto genial? Este prompt convierte a AI en un artista ASCII. Simplemente nombra un objeto y lo dibujará para ti usando caracteres de texto."
 }

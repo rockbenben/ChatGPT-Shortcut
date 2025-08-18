@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "count": 16984
+    "count": 16984,
+    "metaDescription": "কোডিং নিয়ে প্রশ্ন আছে? এই প্রম্পটটি ChatGPT-কে স্ট্যাক ওভারফ্লো পোস্টের মতো কাজ করায়, যা আপনার প্রোগ্রামিং-সম্পর্কিত প্রশ্নের সরাসরি উত্তর এবং কোড সমাধান প্রদান করে। দ্রুত সাহায্য পান!"
 }

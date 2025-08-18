@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-football-commentator",
-    "count": 295
+    "count": 295,
+    "metaDescription": "解説付きのサッカーの試合を体験したいですか？このプロンプトはChatGPTをサッカー解説者に変え、あなたが説明するどんな試合についても分析と予測を提供します。"
 }

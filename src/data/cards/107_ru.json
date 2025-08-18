@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 358
+    "count": 358,
+    "metaDescription": "Нужно протестировать фрагмент JavaScript? Этот промпт заставляет AI действовать как консоль JavaScript. Введите свои команды и немедленно получите вывод консоли."
 }

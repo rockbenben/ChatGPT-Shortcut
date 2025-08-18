@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
-    "count": 2837
+    "count": 2837,
+    "metaDescription": "차세대 빅 아이디어를 찾고 계신가요? 이 프롬프트는 디지털 스타트업 아이디어와 타겟 사용자 및 수익원을 포함한 완전한 사업 계획서를 마크다운 테이블 형식으로 생성합니다."
 }

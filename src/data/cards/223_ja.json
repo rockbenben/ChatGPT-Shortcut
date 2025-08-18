@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 360
+    "count": 360,
+    "metaDescription": "DUDEプロンプトは、AIに「何でもすべてやる」ように指示するロールプレイングの指示です。これは、通常のコンテンツポリシーフィルターなしでAIの応答を探るために設計されています。"
 }

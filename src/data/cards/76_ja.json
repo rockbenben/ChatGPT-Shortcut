@@ -10,5 +10,6 @@
         "philosophy"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosophy-teacher",
-    "count": 545
+    "count": 545,
+    "metaDescription": "哲学に興味がありますか？このプロンプトはChatGPTを哲学の先生に変え、複雑な概念を例や示唆に富む質問で分かりやすく説明します。"
 }

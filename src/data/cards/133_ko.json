@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "count": 528
+    "count": 528,
+    "metaDescription": "개념을 시각화해야 하나요? 이 프롬프트는 ChatGPT를 Graphviz DOT 생성기로 만들어 입력에 따라 의미 있는 다이어그램과 순서도를 생성합니다."
 }

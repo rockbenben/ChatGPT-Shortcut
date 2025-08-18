@@ -10,5 +10,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic",
-    "count": 530
+    "count": 530,
+    "metaDescription": "¿Listo para ser un crítico gastronómico? Hable a este prompt sobre un restaurante y generará una reseña profesional de la comida y el servicio, ayudándole a compartir su experiencia."
 }

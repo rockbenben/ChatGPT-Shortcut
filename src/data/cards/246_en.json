@@ -10,5 +10,6 @@
         "code"
     ],
     "website": null,
-    "count": 520
+    "count": 520,
+    "metaDescription": "Need to translate text for your app? This prompt acts as a translation assistant, correcting and translating a list of strings and returning them in a clean JSON format."
 }

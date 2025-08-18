@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "Vous voulez exécuter du code PHP à la volée ? Utilisez ce prompt pour que AI agisse comme un interpréteur PHP. Obtenez la sortie du terminal de votre code directement dans la réponse."
 }

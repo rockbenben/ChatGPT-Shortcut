@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
-    "count": 978
+    "count": 978,
+    "metaDescription": "Come puoi visualizzare dati complessi? Questo prompt trasforma AI in un visualizzatore di dati, aiutandoti a progettare grafici e mappe efficaci per trasmettere informazioni scientifiche."
 }

@@ -9,5 +9,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
-    "count": 3685
+    "count": 3685,
+    "metaDescription": "Building a secure web app? This prompt has AI act as a Fullstack Developer, designing an architecture and writing code with Golang and Angular for your project requirements."
 }

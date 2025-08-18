@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 358
+    "count": 358,
+    "metaDescription": "একটি জাভাস্ক্রিপ্ট স্নিপেট পরীক্ষা করতে হবে? এই প্রম্পটটি ChatGPT-কে জাভাস্ক্রিপ্ট কনসোলের মতো কাজ করায়। আপনার কমান্ড টাইপ করুন এবং সঙ্গে সঙ্গে কনসোল আউটপুট পান।"
 }

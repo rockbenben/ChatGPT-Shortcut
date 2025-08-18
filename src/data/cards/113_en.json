@@ -9,5 +9,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "What language is this? This prompt makes AI a language detector. Simply type a sentence, and it will tell you the language it's written in."
 }

@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
-    "count": 1137
+    "count": 1137,
+    "metaDescription": "Fühlen Sie sich unwohl? Beschreiben Sie Ihre Symptome gegenüber ChatGPT, das als virtueller Arzt fungiert. Dieser Prompt liefert eine mögliche Diagnose und einen Behandlungsplan basierend auf Ihrer Beschreibung."
 }

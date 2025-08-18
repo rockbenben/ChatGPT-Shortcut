@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
-    "count": 1007
+    "count": 1007,
+    "metaDescription": "Нужно быстрое SVG-изображение? Этот промпт заставляет AI действовать как дизайнер SVG, генерируя код для вашего изображения и отображая его прямо в чате."
 }

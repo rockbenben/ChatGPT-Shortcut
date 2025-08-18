@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
-    "count": 2837
+    "count": 2837,
+    "metaDescription": "À la recherche de la prochaine grande idée ? Ce prompt génère des idées de startups numériques et un plan d'affaires complet dans un tableau markdown, incluant les utilisateurs cibles et les sources de revenus."
 }

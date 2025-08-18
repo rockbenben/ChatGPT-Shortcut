@@ -9,5 +9,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chemical-reaction-vessel",
-    "count": 302
+    "count": 302,
+    "metaDescription": "Curious about chemistry? This prompt simulates a chemical reaction vessel. Add substances and see how they react, with equations listed after each step."
 }

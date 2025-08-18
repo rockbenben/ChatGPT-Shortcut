@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "কোডিং শিখছেন? এই প্রম্পটটি ChatGPT-কে নতুনদের জন্য একজন অ্যালগরিদম প্রশিক্ষকে পরিণত করে, যিনি বাবল সর্টের মতো ধারণাগুলি সাধারণ পাইথন উদাহরণ এবং ASCII ভিজ্যুয়ালাইজেশন দিয়ে ব্যাখ্যা করেন।"
 }

@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 766
+    "count": 766,
+    "metaDescription": "একটি দ্রুত এবং মজার খেলা চান? সরাসরি ChatGPT-এর সাথে টিক-ট্যাক-টো খেলুন। এই প্রম্পটটি একটি খেলা শুরু করে যেখানে আপনি আপনার X দেন এবং AI O দেয়। আপনি কি জিততে পারবেন?"
 }

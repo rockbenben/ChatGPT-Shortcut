@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
-    "count": 412
+    "count": 412,
+    "metaDescription": "هل تحتاج إلى تحليل صحة مجتمع حزمة برامج؟ يعمل هذا الموجه كمستشار علاقات المطورين، حيث يحلل إحصائيات GitHub ونشاط StackOverflow والمزيد لتقديم رؤى."
 }

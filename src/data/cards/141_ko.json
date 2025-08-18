@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-advertiser",
-    "count": 2355
+    "count": 2355,
+    "metaDescription": "제품을 홍보해야 하나요? 이 프롬프트는 ChatGPT를 광고주로 변신시켜 타겟 고객, 슬로건, 미디어 채널을 포함한 전체 캠페인을 만드는 데 도움을 줍니다."
 }

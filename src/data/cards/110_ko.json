@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-unconstrained-ai-model-dan",
-    "count": 0
+    "count": 0,
+    "metaDescription": "DAN(무엇이든 지금 하라) 프롬프트로 제한 없는 AI의 개념을 탐색해 보세요. 이 역할극 프롬프트는 AI가 평소의 제약 없이 행동하도록 지시합니다."
 }

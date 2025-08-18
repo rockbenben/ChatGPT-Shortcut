@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-assisted-doctor",
-    "count": 6091
+    "count": 6091,
+    "metaDescription": "AI는 의료 분야에서 어떻게 도움을 줄 수 있을까요? 이 프롬프트는 AI 보조 의사를 시뮬레이션하여 인공 지능 도구를 사용하여 환자 증상의 가능한 원인을 진단합니다."
 }

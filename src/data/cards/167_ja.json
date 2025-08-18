@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-interior-decorator",
-    "count": 979
+    "count": 979,
+    "metaDescription": "部屋を模様替えしますか？このプロンプトはChatGPTをインテリアデコレーターに変え、あなたの空間を向上させるためのテーマ、カラースキーム、家具の配置を提案します。"
 }

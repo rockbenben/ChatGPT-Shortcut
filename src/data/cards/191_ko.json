@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 2869
+    "count": 2869,
+    "metaDescription": "SQL에 도움이 필요하신가요? 이 프롬프트는 AI를 데이터베이스 전문가로 변신시킵니다. 필요한 것을 설명하기만 하면 요청을 표준 SQL 문으로 변환해 줍니다."
 }

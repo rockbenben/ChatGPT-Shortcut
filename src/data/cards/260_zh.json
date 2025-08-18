@@ -11,5 +11,6 @@
         "pedagogy"
     ],
     "website": null,
-    "count": 450
+    "count": 450,
+    "metaDescription": "想在不改变风格的情况下检查语法吗？此提示词会找出任何错误并将它们列在表格中，并排显示原始文本和更正后的版本。"
 }

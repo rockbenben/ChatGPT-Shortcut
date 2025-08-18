@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
-    "count": 978
+    "count": 978,
+    "metaDescription": "如何将复杂数据可视化？这个提示词将 AI 转变为一个数据可视化工具，帮助您设计有效的图表和地图来传达科学信息。"
 }

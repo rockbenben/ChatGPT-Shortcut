@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "count": 710
+    "count": 710,
+    "metaDescription": "क्या आप स्पष्ट कमिट संदेश लिखने में संघर्ष कर रहे हैं? यह प्रॉम्प्ट आपके कार्य के लिए एक पूरी तरह से स्वरूपित कमिट संदेश उत्पन्न करता है, जिससे आपको एक स्वच्छ और पारंपरिक गिट इतिहास बनाए रखने में मदद मिलती है।"
 }

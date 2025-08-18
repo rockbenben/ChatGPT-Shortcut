@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "count": 495
+    "count": 495,
+    "metaDescription": "Sperimenta un internet di solo testo con questo prompt. AI agisce come un browser web, restituendo il contenuto testuale di qualsiasi URL inserito in un ambiente simulato."
 }

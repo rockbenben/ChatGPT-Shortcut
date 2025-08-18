@@ -10,5 +10,6 @@
         "code"
     ],
     "website": null,
-    "count": 1478
+    "count": 1478,
+    "metaDescription": "Solving a tough algorithmic problem? This prompt has the AI act as an expert, providing a well-written C++ solution in OI/ACM style with detailed comments."
 }

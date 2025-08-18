@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-automobile-mechanic",
-    "count": 426
+    "count": 426,
+    "metaDescription": "Vous avez des problèmes de voiture ? Ce prompt demande à AI d'agir comme un mécanicien automobile, en diagnostiquant les problèmes de votre véhicule et en suggérant les solutions requises."
 }

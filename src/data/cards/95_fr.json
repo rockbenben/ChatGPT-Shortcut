@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-architect",
-    "count": 2707
+    "count": 2707,
+    "metaDescription": "Comment votre nouvelle application s'intègre-t-elle dans votre paysage informatique ? Ce prompt transforme AI en un architecte informatique, créant des conceptions de solutions, des plans de réseau et des plans d'intégration."
 }

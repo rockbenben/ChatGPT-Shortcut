@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "count": 189
+    "count": 189,
+    "metaDescription": "데이터 분석을 위해 R 명령을 실행해야 하나요? 이 프롬프트는 ChatGPT를 R 인터프리터로 변환하여 통계 프로그래밍 요구에 맞는 터미널 출력을 보여줍니다."
 }

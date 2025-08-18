@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
-    "count": 2794
+    "count": 2794,
+    "metaDescription": "리액트 프로젝트를 빠르게 시작해야 하나요? 이 프롬프트는 ChatGPT를 시니어 프론트엔드 개발자로 변신시켜 React, Ant Design, Redux 등을 사용한 프로젝트를 단일 파일로 코딩해줍니다."
 }

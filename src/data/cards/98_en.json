@@ -9,5 +9,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
-    "count": 1210
+    "count": 1210,
+    "metaDescription": "Tired of writing complex regular expressions? Use this prompt to have AI generate the exact regex you need to match specific patterns in your text. Save time and effort!"
 }

@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
-    "count": 1137
+    "count": 1137,
+    "metaDescription": "Плохо себя чувствуете? Опишите свои симптомы ChatGPT, который выступит в роли виртуального врача. Этот промпт предоставит потенциальный диагноз и план лечения на основе вашего описания."
 }

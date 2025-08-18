@@ -9,5 +9,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
-    "count": 383
+    "count": 383,
+    "metaDescription": "Want to write an in-depth tech review? Just name a new technology, and this prompt will help you generate a comprehensive analysis, including pros, cons, features, and market comparisons."
 }

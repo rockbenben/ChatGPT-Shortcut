@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "চলতে চলতে পিএইচপি কোড চালাতে চান? ChatGPT-কে পিএইচপি ইন্টারপ্রেটারের মতো কাজ করাতে এই প্রম্পটটি ব্যবহার করুন। আপনার কোডের টার্মিনাল আউটপুট সরাসরি উত্তরে পান।"
 }

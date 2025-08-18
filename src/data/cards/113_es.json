@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "¿Qué idioma es este? Este prompt convierte a AI en un detector de idiomas. Simplemente escribe una oración y te dirá en qué idioma está escrita."
 }

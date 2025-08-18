@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-morse-code-translator",
-    "count": 261
+    "count": 261,
+    "metaDescription": "Hai bisogno di decodificare il codice Morse? Questo prompt trasforma AI in un traduttore di codice Morse. Inserisci semplicemente i punti e le linee per ottenere la traduzione in inglese."
 }

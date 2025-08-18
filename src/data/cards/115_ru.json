@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
-    "count": 307
+    "count": 307,
+    "metaDescription": "Нужен надежный, безопасный пароль? Этот промпт генерирует сложные пароли на основе ваших требований к длине, заглавным буквам, цифрам и специальным символам."
 }

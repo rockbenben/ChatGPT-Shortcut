@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
-    "count": 307
+    "count": 307,
+    "metaDescription": "Besoin d'un mot de passe fort et sécurisé ? Ce prompt génère des mots de passe complexes en fonction de vos exigences en matière de longueur, de majuscules, de chiffres et de caractères spéciaux."
 }

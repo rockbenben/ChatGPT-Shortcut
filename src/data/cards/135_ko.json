@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "count": 495
+    "count": 495,
+    "metaDescription": "이 프롬프트로 텍스트 전용 인터넷을 경험해 보세요. ChatGPT는 웹 브라우저 역할을 하여 시뮬레이션된 환경에서 입력한 모든 URL의 텍스트 콘텐츠를 반환합니다."
 }

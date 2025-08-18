@@ -9,5 +9,6 @@
         "write"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
-    "count": 1343
+    "count": 1343,
+    "metaDescription": "Struggling with messy lecture notes? This prompt turns the AI into a note-taking assistant, creating a concise and easy-to-read list of key points and potential quiz questions."
 }

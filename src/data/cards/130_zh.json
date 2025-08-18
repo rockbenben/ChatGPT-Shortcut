@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
-    "count": 1007
+    "count": 1007,
+    "metaDescription": "需要一张快速生成的 SVG 图片吗？这个提示词让 AI 扮演 SVG 设计师的角色，为您的图片生成代码并直接在聊天中显示。"
 }

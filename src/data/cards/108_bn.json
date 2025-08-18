@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
-    "count": 293
+    "count": 293,
+    "metaDescription": "এসকিউএল কোয়েরি অনুশীলন করতে চান? এই প্রম্পটটি উদাহরণ টেবিল সহ একটি এসকিউএল টার্মিনাল সিমুলেট করে। আপনার কোয়েরি টাইপ করুন এবং একটি পরিষ্কার টেবিল ফর্ম্যাটে ফলাফল পান।"
 }

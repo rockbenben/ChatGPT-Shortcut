@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 520
+    "count": 520,
+    "metaDescription": "需要为您的应用翻译文本吗？此提示词充当翻译助手，纠正和翻译字符串列表，并以干净的 JSON 格式返回它们。"
 }

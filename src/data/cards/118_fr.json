@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
-    "count": 460
+    "count": 460,
+    "metaDescription": "Comment diriez-vous cela en emoji ? Ce prompt amusant traduit vos phrases en une séquence d'emojis, exprimant votre message d'une toute nouvelle manière."
 }

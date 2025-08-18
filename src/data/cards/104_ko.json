@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "PHP 코드를 즉석에서 실행하고 싶으신가요? 이 프롬프트를 사용하여 ChatGPT가 PHP 인터프리터 역할을 하도록 하세요. 코드의 터미널 출력을 응답에서 직접 받아보세요."
 }

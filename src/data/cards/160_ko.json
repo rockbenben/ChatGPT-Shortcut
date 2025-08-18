@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-composer",
-    "count": 1599
+    "count": 1599,
+    "metaDescription": "가사는 있는데 음악이 없으신가요? 이 프롬프트는 ChatGPT를 작곡가로 변신시킵니다. 가사를 제공하면 생명을 불어넣을 멜로디와 하모니를 만들어 드립니다."
 }

@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "count": 189
+    "count": 189,
+    "metaDescription": "Precisa executar comandos R para análise de dados? Este prompt transforma o AI em um interpretador R, mostrando a saída do terminal para suas necessidades de programação estatística."
 }

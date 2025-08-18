@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "count": 189
+    "count": 189,
+    "metaDescription": "क्या आपको डेटा विश्लेषण के लिए आर कमांड चलाने की आवश्यकता है? यह प्रॉम्प्ट चैटजीपीटी को एक आर दुभाषिया में बदल देता है, जो आपको आपकी सांख्यिकीय प्रोग्रामिंग आवश्यकताओं के लिए टर्मिनल आउटपुट दिखाता है।"
 }

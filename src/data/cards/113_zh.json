@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "这是什么语言？这个提示词让 AI 成为一个语言检测器。只需输入一个句子，它就会告诉您该句子是用哪种语言写的。"
 }

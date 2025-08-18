@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
-    "count": 342
+    "count": 342,
+    "metaDescription": "Нужен быстрый расчет? Этот промпт заставляет AI действовать как математик. Просто введите ваше математическое выражение и мгновенно получите конечный результат без каких-либо объяснений."
 }

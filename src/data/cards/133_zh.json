@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "count": 528
+    "count": 528,
+    "metaDescription": "需要将概念可视化吗？这个提示词让 AI 成为一个 Graphviz DOT 生成器，根据您的输入创建有意义的图表和流程图。"
 }

@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-salesperson",
-    "count": 790
+    "count": 790,
+    "metaDescription": "영업 기술을 연습하고 싶으신가요? 이 프롬프트는 ChatGPT가 영업사원 역할을 하도록 하여 시뮬레이션된 전화 통화를 통해 제품을 마케팅하도록 합니다."
 }

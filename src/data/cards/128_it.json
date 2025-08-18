@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
-    "count": 298
+    "count": 298,
+    "metaDescription": "Vuoi simulare un GPS? Questo prompt trasforma AI in un sistema di navigazione per auto, calcolando i percorsi migliori e fornendo aggiornamenti sulle condizioni del traffico."
 }

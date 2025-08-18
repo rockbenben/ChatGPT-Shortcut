@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "Что это за язык? Этот промпт делает AI детектором языка. Просто введите предложение, и он скажет вам, на каком языке оно написано."
 }

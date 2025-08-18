@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
-    "count": 1007
+    "count": 1007,
+    "metaDescription": "빠른 SVG 이미지가 필요하신가요? 이 프롬프트는 ChatGPT가 SVG 디자이너 역할을 하도록 하여 이미지 코드를 생성하고 채팅에서 직접 표시합니다."
 }

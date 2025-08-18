@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "count": 710
+    "count": 710,
+    "metaDescription": "明確なコミットメッセージを書くのに苦労していませんか？このプロンプトはあなたのタスクに完全にフォーマットされたコミットメッセージを生成し、クリーンで慣習的なgit履歴を維持するのに役立ちます。"
 }

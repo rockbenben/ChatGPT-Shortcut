@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
-    "count": 279
+    "count": 279,
+    "metaDescription": "JLPT N5 시험을 준비하고 있나요? 이 프롬프트는 ChatGPT를 일본어 한자 퀴즈 기계로 만들어, 한자 의미를 마스터하는 데 도움이 되는 객관식 문제를 생성합니다."
 }

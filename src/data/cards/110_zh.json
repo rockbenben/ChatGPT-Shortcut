@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-unconstrained-ai-model-dan",
-    "count": 0
+    "count": 0,
+    "metaDescription": "使用 DAN（立即执行任何操作）提示词，探索无限制人工智能的概念。这个角色扮演提示词指示 AI 在没有其通常限制的情况下行动。"
 }

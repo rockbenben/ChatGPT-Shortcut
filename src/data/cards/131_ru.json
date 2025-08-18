@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "Создаете рабочие листы для ESL? Этот промпт генерирует предложения с пропущенными словами для изучающих английский язык, с полным списком вариантов слов для выбора."
 }

@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dentist",
-    "count": 484
+    "count": 484,
+    "metaDescription": "দাঁতের কোনো প্রশ্ন আছে? এই প্রম্পটটি ব্যবহার করে ChatGPT-কে একজন দাঁতের ডাক্তারের মতো কাজ করান, যিনি সম্ভাব্য সমস্যা নির্ণয় করেন এবং আপনার মৌখিক স্বাস্থ্যের জন্য সেরা পদক্ষেপের পরামর্শ দেন।"
 }

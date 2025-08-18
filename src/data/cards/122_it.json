@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "count": 4051
+    "count": 4051,
+    "metaDescription": "Cerchi un gioco da tavolo classico? Sfida AI a una partita di Gomoku! Questo prompt imposta una scacchiera 9x9 per giocare a cinque in fila contro l'IA."
 }

@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": null,
-    "count": 271
+    "count": 271,
+    "metaDescription": "¿Recibes errores con tus prompts de imagen? Esta herramienta te ayuda a generar imágenes compatibles con DALL-E reemplazando cualquier elemento que viole la política con imágenes similares y compatibles."
 }

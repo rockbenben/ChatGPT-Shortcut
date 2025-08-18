@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
-    "count": 1137
+    "count": 1137,
+    "metaDescription": "অসুস্থ বোধ করছেন? ভার্চুয়াল ডাক্তার হিসেবে কাজ করা ChatGPT-কে আপনার উপসর্গগুলি বর্ণনা করুন। এই প্রম্পটটি আপনার বর্ণনার উপর ভিত্তি করে একটি সম্ভাব্য রোগ নির্ণয় এবং চিকিৎসা পরিকল্পনা প্রদান করে।"
 }

@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "Vous apprenez à coder ? Ce prompt transforme AI en un instructeur d'algorithmes pour débutants, expliquant des concepts comme le tri à bulles avec des exemples simples en Python et des visualisations ASCII."
 }

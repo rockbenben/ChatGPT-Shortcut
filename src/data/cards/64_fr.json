@@ -10,5 +10,6 @@
         "mind"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fallacy-finder",
-    "count": 672
+    "count": 672,
+    "metaDescription": "Pouvez-vous repérer un argument fallacieux ? Utilisez ce prompt AI pour agir comme un détecteur de sophismes, identifiant les erreurs logiques, les fausses hypothèses et les incohérences dans n'importe quel texte. Un excellent outil pour les débatteurs !"
 }

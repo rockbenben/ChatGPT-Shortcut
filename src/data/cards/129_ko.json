@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "count": 375
+    "count": 375,
+    "metaDescription": "멋진 텍스트 아트를 만들고 싶으신가요? 이 프롬프트는 ChatGPT를 ASCII 아티스트로 변신시킵니다. 물체의 이름을 말하기만 하면 텍스트 문자를 사용하여 그려줍니다."
 }

@@ -9,5 +9,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
-    "count": 342
+    "count": 342,
+    "metaDescription": "Need a quick calculation? This prompt makes AI act as a mathematician. Simply type in your mathematical expression, and get the final result instantly without any explanations."
 }

@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-english-pronunciation-helper",
-    "count": 404
+    "count": 404,
+    "metaDescription": "영어 발음에 도움이 필요하신가요? 이 프롬프트는 보조자 역할을 하여 모국어의 음성 문자를 사용하여 영어 문장의 발음을 제공합니다."
 }

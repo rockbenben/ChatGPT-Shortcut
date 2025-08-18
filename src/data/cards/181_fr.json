@@ -11,5 +11,6 @@
         "language"
     ],
     "website": null,
-    "count": 3234
+    "count": 3234,
+    "metaDescription": "Vous construisez une API de traduction ? Ce prompt offre la méthode la plus efficace en termes de jetons pour la traduction de l'anglais vers le chinois, parfaite pour les développeurs utilisant l'API ChatGPT."
 }

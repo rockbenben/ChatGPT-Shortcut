@@ -10,5 +10,6 @@
         "doctor"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-assisted-doctor",
-    "count": 6091
+    "count": 6091,
+    "metaDescription": "Comment l'IA peut-elle aider en médecine ? Ce prompt simule un médecin assisté par l'IA, utilisant des outils d'intelligence artificielle pour diagnostiquer la cause probable des symptômes d'un patient."
 }

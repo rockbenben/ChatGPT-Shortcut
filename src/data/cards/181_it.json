@@ -11,5 +11,6 @@
         "language"
     ],
     "website": null,
-    "count": 3234
+    "count": 3234,
+    "metaDescription": "Stai costruendo un'API di traduzione? Questo prompt offre il metodo più efficiente in termini di token per la traduzione dall'inglese al cinese, perfetto per gli sviluppatori che utilizzano l'API di ChatGPT."
 }

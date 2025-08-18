@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
-    "count": 298
+    "count": 298,
+    "metaDescription": "GPS를 시뮬레이션하고 싶으신가요? 이 프롬프트는 ChatGPT를 자동차 내비게이션 시스템으로 변환하여 최적의 경로를 계산하고 교통 상황에 대한 업데이트를 제공합니다."
 }

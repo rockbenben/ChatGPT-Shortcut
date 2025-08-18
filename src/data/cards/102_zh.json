@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
-    "count": 412
+    "count": 412,
+    "metaDescription": "需要分析一个软件包的社区健康状况吗？这个提示词能扮演开发者关系顾问，分析 GitHub 统计数据、StackOverflow 活跃度等，为您提供深刻见解。"
 }

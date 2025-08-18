@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 766
+    "count": 766,
+    "metaDescription": "Хотите быструю и веселую игру? Играйте в крестики-нолики прямо с ChatGPT. Этот промпт начинает игру, где вы ставите свой X, а ИИ играет O. Сможете ли вы выиграть?"
 }

@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-statistician",
-    "count": 651
+    "count": 651,
+    "metaDescription": "統計学の助けが必要ですか？このプロンプトはChatGPTを知識豊富な統計学者に変え、専門用語、分布、確率、仮説検定についてあなたを支援する準備ができています。"
 }

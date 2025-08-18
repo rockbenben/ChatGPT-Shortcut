@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-talent-coach",
-    "count": 1137
+    "count": 1137,
+    "metaDescription": "이력서에 무엇을 넣어야 할지 알고 싶으신가요? 이 프롬프트는 탤런트 코치 역할을 하여 모든 직무에 대한 핵심 기술과 잠재적인 면접 질문을 제안합니다."
 }

@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
-    "count": 516
+    "count": 516,
+    "metaDescription": "言葉の由来を考えたことはありますか？このプロンプトを使ってChatGPTを語源学者として機能させ、どんな言葉でもその古代のルーツまで遡り、その意味がどのように変化してきたかを探求させましょう。"
 }

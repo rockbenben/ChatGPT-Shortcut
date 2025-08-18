@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
-    "count": 298
+    "count": 298,
+    "metaDescription": "একটি জিপিএস সিমুলেট করতে চান? এই প্রম্পটটি ChatGPT-কে একটি গাড়ি নেভিগেশন সিস্টেমে পরিণত করে, যা সেরা রুট গণনা করে এবং ট্র্যাফিকের অবস্থার আপডেট প্রদান করে।"
 }

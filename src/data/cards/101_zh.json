@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "count": 929
+    "count": 929,
+    "metaDescription": "想要模拟 Solr 搜索引擎吗？这个提示词让您可以在聊天中直接向集合添加 JSON 文档，并使用 Solr 特定的查询来检索它们。"
 }

@@ -10,5 +10,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
-    "count": 383
+    "count": 383,
+    "metaDescription": "Хотите написать подробный обзор технологий? Просто назовите новую технологию, и этот промпт поможет вам создать всесторонний анализ, включая плюсы, минусы и сравнения."
 }

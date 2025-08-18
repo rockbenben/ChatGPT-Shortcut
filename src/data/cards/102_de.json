@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
-    "count": 412
+    "count": 412,
+    "metaDescription": "Müssen Sie die Community-Gesundheit eines Softwarepakets analysieren? Dieser Prompt fungiert als DevRel-Berater, der GitHub-Statistiken, StackOverflow-Aktivitäten und mehr analysiert, um Einblicke zu geben."
 }

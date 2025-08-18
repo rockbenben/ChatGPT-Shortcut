@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "count": 889
+    "count": 889,
+    "metaDescription": "क्या आप लिनक्स कमांड का अभ्यास करना चाहते हैं? यह प्रॉम्प्ट चैटजीपीटी के भीतर एक लिनक्स टर्मिनल का अनुकरण करता है। अपनी कमांड टाइप करें और देखें कि टर्मिनल प्रतिक्रिया में क्या दिखाएगा।"
 }

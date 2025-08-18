@@ -10,5 +10,6 @@
         "comments"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
-    "count": 383
+    "count": 383,
+    "metaDescription": "想撰写一篇深入的技术评测吗？只需说出一种新技术，本提示词就能帮助您生成一份全面的分析报告，包含优缺点、功能特点以及市场对比。"
 }

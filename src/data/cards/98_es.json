@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
-    "count": 1210
+    "count": 1210,
+    "metaDescription": "¿Cansado de escribir expresiones regulares complejas? Usa este prompt para que AI genere la expresión regular exacta que necesitas para coincidir con patrones específicos en tu texto. ¡Ahorra tiempo y esfuerzo!"
 }

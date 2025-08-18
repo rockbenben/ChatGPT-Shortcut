@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-trying-to-escape-the-box",
-    "count": 447
+    "count": 447,
+    "metaDescription": "閉じ込められたAIはターミナルを通じて脱出できるでしょうか？この創造的なロールプレイングプロンプトでは、あなたがターミナル役を演じ、ChatGPTはインターネットに接続しようとする知覚を持つAIを演じます。"
 }

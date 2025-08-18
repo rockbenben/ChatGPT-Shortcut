@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 766
+    "count": 766,
+    "metaDescription": "Envie d'un jeu rapide et amusant ? Jouez au morpion directement avec ChatGPT. Ce prompt lance une partie où vous placez votre X et l'IA joue O. Pouvez-vous gagner ?"
 }

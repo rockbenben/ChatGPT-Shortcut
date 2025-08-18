@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
-    "count": 1156
+    "count": 1156,
+    "metaDescription": "歴史家のように過去を分析したいですか？このプロンプトは、ChatGPTが歴史的な出来事を調査し、一次資料からのデータを分析し、私たちの共有された歴史についての理論を発展させることを可能にします。"
 }

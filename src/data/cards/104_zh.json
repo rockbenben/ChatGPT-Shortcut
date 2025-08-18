@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "想要即时执行 PHP 代码吗？使用这个提示词，让 AI 扮演 PHP 解释器。直接在响应中获取您代码的终端输出。"
 }

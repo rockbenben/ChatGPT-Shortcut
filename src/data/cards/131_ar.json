@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "هل تقوم بإنشاء أوراق عمل لتعليم اللغة الإنجليزية كلغة ثانية؟ هذا الموجه يولد جملًا لملء الفراغات لمتعلمي اللغة الإنجليزية، مع قائمة من خيارات الكلمات للاختيار من بينها."
 }

@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "count": 16984
+    "count": 16984,
+    "metaDescription": "有编程问题吗？这个提示词让 AI 像 Stack Overflow 帖子一样，为您的编程相关问题提供直接的答案和代码解决方案。快速获得帮助！"
 }

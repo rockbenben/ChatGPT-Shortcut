@@ -10,5 +10,6 @@
         "company"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
-    "count": 2837
+    "count": 2837,
+    "metaDescription": "次の大きなアイデアをお探しですか？このプロンプトは、デジタルスタートアップのアイデアと、ターゲットユーザーや収益源を含む完全なビジネスプランをマークダウンテーブルで生成します。"
 }

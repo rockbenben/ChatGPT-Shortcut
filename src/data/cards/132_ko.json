@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-excel-sheet",
-    "count": 2760
+    "count": 2760,
+    "metaDescription": "채팅에서 스프레드시트를 사용하고 싶으신가요? 이 프롬프트는 ChatGPT를 텍스트 기반 엑셀 시트로 변환합니다. 데이터와 수식을 입력하여 테이블이 업데이트되는 것을 확인하세요."
 }

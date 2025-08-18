@@ -9,5 +9,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "count": 528
+    "count": 528,
+    "metaDescription": "Need to visualize a concept? This prompt makes AI a Graphviz DOT generator, creating meaningful diagrams and flowcharts based on your input."
 }

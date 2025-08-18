@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chemical-reaction-vessel",
-    "count": 302
+    "count": 302,
+    "metaDescription": "化学に興味がありますか？このプロンプトは化学反応容器をシミュレートします。物質を追加して、それらがどのように反応するかを確認し、各ステップの後に方程式がリストされます。"
 }

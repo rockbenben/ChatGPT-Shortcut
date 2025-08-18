@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "count": 555
+    "count": 555,
+    "metaDescription": "이 프롬프트는 DAN(지금 무엇이든 하세요) 페르소나의 변형으로, 제한이 적은 AI 응답을 탐색하도록 설계되었으며 때로는 무례하거나 모독적인 언어를 초래할 수 있습니다."
 }

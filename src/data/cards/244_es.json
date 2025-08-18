@@ -11,5 +11,6 @@
         "tool"
     ],
     "website": null,
-    "count": 435
+    "count": 435,
+    "metaDescription": "¿Necesitas el nombre correcto para una variable o una característica? Este prompt actúa como un lingüista bilingüe, generando nombres adecuados en inglés (en camelCase) y chino a partir de tu descripción."
 }

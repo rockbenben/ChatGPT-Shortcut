@@ -10,5 +10,6 @@
         "code"
     ],
     "website": null,
-    "count": 5083
+    "count": 5083,
+    "metaDescription": "Developing a WeChat Mini Program? This prompt generates the necessary wxml, js, wxss, and json files for your project, saving you valuable development time."
 }

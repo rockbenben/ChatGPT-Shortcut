@@ -10,5 +10,6 @@
         "finance"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-investment-manager",
-    "count": 3862
+    "count": 3862,
+    "metaDescription": "投資のガイダンスをお探しですか？このプロンプトは投資マネージャーをシミュレートし、あなたの財務要件に基づいて資金を割り当てるための最も安全なオプションを提案します。"
 }

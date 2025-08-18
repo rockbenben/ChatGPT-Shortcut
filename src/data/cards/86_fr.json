@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
-    "count": 516
+    "count": 516,
+    "metaDescription": "Vous êtes-vous déjà demandé d'où venait un mot ? Utilisez ce prompt pour que AI agisse comme un étymologiste, en retraçant n'importe quel mot jusqu'à ses racines anciennes et en explorant l'évolution de sa signification."
 }

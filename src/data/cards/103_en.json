@@ -9,5 +9,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "count": 1338
+    "count": 1338,
+    "metaDescription": "Need to run Python code without an IDE? This prompt turns AI into a Python interpreter. Just provide your code and get the output instantly."
 }

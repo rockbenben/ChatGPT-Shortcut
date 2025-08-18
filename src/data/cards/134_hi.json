@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
-    "count": 978
+    "count": 978,
+    "metaDescription": "आप जटिल डेटा की कल्पना कैसे कर सकते हैं? यह प्रॉम्प्ट चैटजीपीटी को एक डेटा विज़ुअलाइज़र में बदल देता है, जो आपको वैज्ञानिक जानकारी देने के लिए प्रभावी ग्राफ़ और मानचित्र डिज़ाइन करने में मदद करता है।"
 }

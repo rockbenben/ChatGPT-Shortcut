@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 358
+    "count": 358,
+    "metaDescription": "هل تحتاج إلى اختبار جزء من كود جافاسكريبت؟ هذا الموجه يجعل AI يتصرف مثل وحدة تحكم جافاسكريبت. اكتب أوامرك واحصل على مخرجات وحدة التحكم على الفور."
 }

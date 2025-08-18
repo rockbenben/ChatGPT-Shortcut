@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-automobile-mechanic",
-    "count": 426
+    "count": 426,
+    "metaDescription": "자동차에 문제가 있으신가요? 이 프롬프트는 ChatGPT가 자동차 정비사 역할을 하도록 하여 차량의 문제를 진단하고 필요한 해결책을 제안합니다."
 }

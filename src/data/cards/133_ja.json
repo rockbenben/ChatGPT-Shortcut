@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "count": 528
+    "count": 528,
+    "metaDescription": "コンセプトを視覚化する必要がありますか？このプロンプトはChatGPTをGraphviz DOTジェネレーターにし、あなたの入力に基づいて意味のある図やフローチャートを作成します。"
 }

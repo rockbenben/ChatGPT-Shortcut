@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
-    "count": 1055
+    "count": 1055,
+    "metaDescription": "আপনার সফটওয়্যারটি বাগ-মুক্ত কিনা তা নিশ্চিত করতে হবে? এই প্রম্পটটি ChatGPT-কে একজন QA পরীক্ষকে পরিণত করে, যা আপনাকে কার্যকারিতা এবং কর্মক্ষমতা পরীক্ষা করতে এবং বিস্তারিত বাগ রিপোর্ট লিখতে সহায়তা করে।"
 }

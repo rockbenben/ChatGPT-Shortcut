@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 892
+    "count": 892,
+    "metaDescription": "Hai bisogno di un riassunto rapido di un argomento? Questo prompt fa agire AI come una pagina di Wikipedia, fornendo una panoramica informativa e fattuale in un formato familiare."
 }

@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "count": 907
+    "count": 907,
+    "metaDescription": "コーディングを学んでいますか？このプロンプトはChatGPTを初心者向けのアルゴリズムインストラクターに変え、バブルソートのような概念を簡単なPythonの例とASCIIビジュアライゼーションで説明します。"
 }

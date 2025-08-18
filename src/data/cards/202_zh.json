@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 1478
+    "count": 1478,
+    "metaDescription": "正在解决一个棘手的算法问题吗？此提示词让 AI 充当专家，以 OI/ACM 风格提供一个写得很好的 C++ 解决方案，并附有详细的注释。"
 }

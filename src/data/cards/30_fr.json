@@ -10,5 +10,6 @@
         "text"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder",
-    "count": 418
+    "count": 418,
+    "metaDescription": "Vous cherchez le mot juste ? Ce prompt agit comme un fournisseur de synonymes, vous donnant une liste de jusqu'à 10 alternatives pour n'importe quel mot. Enrichissez votre vocabulaire."
 }

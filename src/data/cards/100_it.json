@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "count": 710
+    "count": 710,
+    "metaDescription": "Hai difficoltà a scrivere messaggi di commit chiari? Questo prompt genera un messaggio di commit perfettamente formattato per il tuo compito, aiutandoti a mantenere una cronologia git pulita e convenzionale."
 }

@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196
+    "count": 196,
+    "metaDescription": "PHPコードをその場で実行したいですか？このプロンプトを使って、ChatGPTにPHPインタープリターとして機能させましょう。あなたのコードのターミナル出力を、直接応答で受け取れます。"
 }

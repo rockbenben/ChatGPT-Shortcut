@@ -10,5 +10,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tea-taster",
-    "count": 390
+    "count": 390,
+    "metaDescription": "さまざまな種類のお茶に興味がありますか？このプロンプトはChatGPTに茶鑑定士の役を演じさせ、風味プロファイルに基づいてさまざまなお茶を区別するのを助けます。"
 }

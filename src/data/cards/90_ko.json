@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "count": 16984
+    "count": 16984,
+    "metaDescription": "코딩 질문이 있으신가요? 이 프롬프트는 ChatGPT가 스택 오버플로 게시물처럼 작동하게 하여 프로그래밍 관련 질문에 대한 직접적인 답변과 코드 솔루션을 제공합니다. 빠르게 도움을 받으세요!"
 }

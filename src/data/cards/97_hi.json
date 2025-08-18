@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
-    "count": 1055
+    "count": 1055,
+    "metaDescription": "क्या आपको यह सुनिश्चित करने की आवश्यकता है कि आपका सॉफ़्टवेयर बग-मुक्त है? यह प्रॉम्प्ट चैटजीपीटी को एक क्यूए परीक्षक में बदल देता है, जो आपको कार्यक्षमता और प्रदर्शन का परीक्षण करने और विस्तृत बग रिपोर्ट लिखने में मदद करता है।"
 }

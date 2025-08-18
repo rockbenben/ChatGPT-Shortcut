@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "ESL 워크시트를 만들고 계신가요? 이 프롬프트는 영어 학습자를 위한 빈칸 채우기 문장을 생성하며, 선택할 수 있는 단어 옵션 목록도 함께 제공됩니다."
 }

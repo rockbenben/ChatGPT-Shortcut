@@ -10,5 +10,6 @@
         "music"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-classical-music-composer",
-    "count": 340
+    "count": 340,
+    "metaDescription": "あなた自身のクラシック音楽を作曲したいですか？このプロンプトはChatGPTにクラシック音楽の作曲家として機能させ、選ばれた楽器やオーケストラのためのオリジナル曲を作成させます。"
 }

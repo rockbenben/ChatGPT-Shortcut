@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "ESLのワークシートを作成していますか？このプロンプトは、英語学習者向けの穴埋め問題の文章を生成し、選択肢の単語リストも完備しています。"
 }

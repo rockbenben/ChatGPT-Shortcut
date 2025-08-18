@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243
+    "count": 243,
+    "metaDescription": "এটা কোন ভাষা? এই প্রম্পটটি ChatGPT-কে একটি ভাষা সনাক্তকারীতে পরিণত করে। শুধু একটি বাক্য টাইপ করুন, এবং এটি আপনাকে বলে দেবে এটি কোন ভাষায় লেখা।"
 }

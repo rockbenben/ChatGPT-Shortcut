@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 892
+    "count": 892,
+    "metaDescription": "Нужно быстрое резюме по теме? Этот промпт заставляет AI действовать как страница Википедии, предоставляя информативный и фактический обзор в знакомом формате."
 }

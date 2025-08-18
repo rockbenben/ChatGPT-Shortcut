@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
-    "count": 279
+    "count": 279,
+    "metaDescription": "JLPT N5 এর জন্য পড়াশোনা করছেন? এই প্রম্পটটি ChatGPT-কে একটি জাপানি কাঞ্জি কুইজ মেশিনে পরিণত করে, যা আপনাকে কাঞ্জির অর্থ আয়ত্ত করতে সাহায্য করার জন্য বহুনির্বাচনী প্রশ্ন তৈরি করে।"
 }

@@ -10,5 +10,6 @@
         "mind"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fallacy-finder",
-    "count": 672
+    "count": 672,
+    "metaDescription": "欠陥のある議論を見つけられますか？このChatGPTプロンプトを使って誤謬発見者として機能させ、あらゆるテキストの論理的誤り、誤った仮定、矛盾を特定しましょう。ディベーターにとって素晴らしいツールです！"
 }

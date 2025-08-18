@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "count": 16984
+    "count": 16984,
+    "metaDescription": "Tem uma pergunta sobre programação? Este prompt faz o AI atuar como uma postagem do Stack Overflow, fornecendo respostas diretas e soluções de código para suas perguntas relacionadas à programação. Obtenha ajuda rapidamente!"
 }

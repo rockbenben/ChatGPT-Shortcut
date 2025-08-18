@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-cheap-travel-ticket-advisor",
-    "count": 282
+    "count": 282,
+    "metaDescription": "Vous voulez trouver le moyen le moins cher de voyager ? Ce prompt agit comme un conseiller en billets, utilisant ses connaissances pour suggérer les itinéraires les plus abordables, y compris les correspondances et les différents modes de transport."
 }

@@ -10,5 +10,6 @@
         "games"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 766
+    "count": 766,
+    "metaDescription": "Vuoi un gioco veloce e divertente? Gioca a Tris direttamente con ChatGPT. Questo prompt avvia una partita in cui tu metti la tua X e l'IA gioca con la O. Riuscirai a vincere?"
 }

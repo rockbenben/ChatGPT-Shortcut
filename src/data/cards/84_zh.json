@@ -10,5 +10,6 @@
         "academic"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
-    "count": 342
+    "count": 342,
+    "metaDescription": "需要快速计算吗？这个提示词让 AI 扮演数学家。只需输入您的数学表达式，即可立即获得最终结果，无需任何解释。"
 }

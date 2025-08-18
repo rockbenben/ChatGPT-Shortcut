@@ -10,5 +10,6 @@
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer",
-    "count": 1322
+    "count": 1322,
+    "metaDescription": "機械学習の概念を理解する必要がありますか？このプロンプトはChatGPTをMLエンジニアに変え、複雑なトピックを分かりやすく説明します。"
 }

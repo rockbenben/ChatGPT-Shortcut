@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
-    "count": 3685
+    "count": 3685,
+    "metaDescription": "안전한 웹 앱을 구축하고 계신가요? 이 프롬프트는 ChatGPT가 풀스택 개발자 역할을 하도록 하여 프로젝트 요구사항에 맞춰 Golang과 Angular로 아키텍처를 설계하고 코드를 작성하게 합니다."
 }

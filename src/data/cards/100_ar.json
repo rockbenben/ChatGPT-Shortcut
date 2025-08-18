@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "count": 710
+    "count": 710,
+    "metaDescription": "هل تجد صعوبة في كتابة رسائل التزام واضحة؟ هذا الموجه ينشئ رسالة التزام منسقة بشكل مثالي لمهمتك، مما يساعدك في الحفاظ على سجل git نظيف وتقليدي."
 }

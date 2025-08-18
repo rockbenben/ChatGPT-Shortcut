@@ -10,5 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "count": 384
+    "count": 384,
+    "metaDescription": "Vous créez des feuilles de travail pour l'anglais langue seconde ? Ce prompt génère des phrases à compléter pour les apprenants d'anglais, avec une liste d'options de mots à choisir."
 }

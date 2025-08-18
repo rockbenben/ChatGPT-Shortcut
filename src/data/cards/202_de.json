@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 1478
+    "count": 1478,
+    "metaDescription": "Lösen Sie ein schwieriges algorithmisches Problem? Dieser Prompt lässt die KI als Experte agieren und liefert eine gut geschriebene C++-Lösung im OI/ACM-Stil mit detaillierten Kommentaren."
 }

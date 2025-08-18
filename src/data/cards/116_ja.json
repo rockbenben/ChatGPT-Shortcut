@@ -10,5 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-biblical-translator",
-    "count": 303
+    "count": 303,
+    "metaDescription": "聖書のようなタッチでテキストを言い換えたいですか？このプロンプトは翻訳者として機能し、現代の言葉をよりエレガントな聖書風の言葉に置き換えます。"
 }

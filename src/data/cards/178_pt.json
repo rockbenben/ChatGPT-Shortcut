@@ -11,5 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 976
+    "count": 976,
+    "metaDescription": "Construindo com o Vue 3? Este prompt cria um componente Vue 3 completo em um único arquivo, usando a API de Composição e a sintaxe <script setup> para o seu projeto."
 }

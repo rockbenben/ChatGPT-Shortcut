@@ -9,5 +9,6 @@
         "professional"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-legal-advisor",
-    "count": 3179
+    "count": 3179,
+    "metaDescription": "Facing a legal situation? This prompt has AI act as a legal advisor. Describe your situation and get advice on how to handle it (for informational purposes)."
 }

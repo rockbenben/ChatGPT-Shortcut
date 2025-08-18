@@ -10,5 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "count": 889
+    "count": 889,
+    "metaDescription": "Möchten Sie Linux-Befehle üben? Dieser Prompt simuliert ein Linux-Terminal in ChatGPT. Geben Sie Ihre Befehle ein und sehen Sie, was das Terminal als Antwort anzeigen würde."
 }

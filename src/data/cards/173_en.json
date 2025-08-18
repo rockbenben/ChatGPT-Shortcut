@@ -10,5 +10,6 @@
         "code"
     ],
     "website": null,
-    "count": 7275
+    "count": 7275,
+    "metaDescription": "Don't understand a piece of code? This prompt makes AI a code interpreter, explaining the syntax and semantics of any code snippet line-by-line."
 }

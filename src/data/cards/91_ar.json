@@ -10,5 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
-    "count": 2794
+    "count": 2794,
+    "metaDescription": "هل تحتاج إلى بدء مشروع React بسرعة؟ هذا الموجه يحول AI إلى مطور واجهة أمامية خبير، يقوم ببرمجة مشروع باستخدام React و Ant Design و Redux والمزيد في ملف واحد."
 }
