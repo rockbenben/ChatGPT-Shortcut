@@ -51,8 +51,15 @@ function PromptPage({ prompt }) {
   );
 
   const seoDescription = useMemo(() => {
-    const fullDescription = `${prompt[currentLanguage].description} ${prompt[currentLanguage].prompt}`;
-    return fullDescription.length > 160 ? `${fullDescription.slice(0, 157)}...` : fullDescription;
+    // 优先使用数据文件中的 metaDescription
+    const meta = (prompt as any).metaDescription && String((prompt as any).metaDescription).trim();
+    if (meta) return meta;
+
+    // 兜底：拼接 description + prompt，并截断到 160 字符
+    const desc = prompt?.[currentLanguage]?.description || "";
+    const prm = prompt?.[currentLanguage]?.prompt || "";
+    const full = `${desc} ${prm}`.trim();
+    return full.length > 160 ? `${full.slice(0, 157)}...` : full;
   }, [prompt, currentLanguage]);
 
   const handleParagraphClick = useCallback(() => {
