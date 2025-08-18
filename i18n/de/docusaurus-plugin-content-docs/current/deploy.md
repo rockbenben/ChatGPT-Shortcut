@@ -96,7 +96,7 @@ Alternativ können Sie `docker-compose` verwenden:
 version: "3.8"
 
 services:
-docsify:
+chatgpt-shortcut:
 container_name: chatgpt-shortcut
 image: ghcr.io/rockbenben/chatgpt-shortcut:latest
 ports:
