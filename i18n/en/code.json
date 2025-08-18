@@ -868,18 +868,18 @@
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "homepage.slogan": {
-    "message": "Harness AI Agents, Unleash 10x Productivity"
+    "message": "Smarter Prompts, Smarter Results"
   },
   "homepage.title": {
-    "message": "AiShort - Advanced AI Agent & Prompt Platform | Build, Share, and Multiply Productivity with One Click"
+    "message": "AiShort - AI Prompt Templates | Proven Prompts for Productivity | Unlock AI’s Full Potential"
   },
   "homepage.description": {
-    "message": "AiShort(ChatGPT Shortcut) is a leading AI Agent and Prompt platform dedicated to revolutionizing the way you work and learn. Here, you can not only discover a vast library of high-quality prompts but also effortlessly build, manage, and run powerful AI agents with a single click to automate complex tasks. AiShort supports multiple languages, facilitating more effective collaboration with AI. Join our creator community now to explore and share the infinite potential of AI agents and start your era of super-productivity!"
+    "message": "Struggling to get the best from AI? AiShort delivers proven AI prompt templates for writing, coding & translation—copy instantly and boost results with ease!"
   },
   "community.title": {
-    "message": "AiShort Creator Community - Co-build and Share AI Agents & Prompts, Explore Future Workflows"
+    "message": "AI Prompt Community - Share, Learn & Optimize Together | AiShort Hub"
   },
   "community.description": {
-    "message": "Welcome to the AiShort Creator Community! This is the hub for AI Agent and Prompt enthusiasts and practitioners. Here, you can discover, share, and import powerful AI agents built by community members, and apply them to your writing, programming, market analysis, and other workflows with just one click. Engage in discussions, optimize agent solutions, and collaborate with other creators to turn imaginative ideas into efficient, automated solutions. Join now and share your first AI Agent!"
+    "message": "Want AI that truly understands you? Join AiShort’s community to share, discover and refine prompts—unlock higher accuracy and creativity together."
   }
 }

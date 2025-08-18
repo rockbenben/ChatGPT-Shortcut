@@ -868,18 +868,18 @@
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "homepage.slogan": {
-    "message": "Maîtrisez les Agents IA, décuplez votre productivité"
+    "message": "Des Prompts Plus Intelligents, Des Résultats Plus Intelligents"
   },
   "homepage.title": {
-    "message": "AiShort - Plateforme avancée d'Agents IA & de Prompts | Créez, Partagez et Multipliez votre Productivité en un Clic"
+    "message": "AiShort - Modèles de Prompts IA | Prompts Éprouvés pour la Productivité | Libérez le Plein Potentiel de l'IA"
   },
   "homepage.description": {
-    "message": "AiShort(ChatGPT Shortcut) est une plateforme de premier plan pour les Agents IA et les Prompts, dédiée à révolutionner votre façon de travailler et d'apprendre. Ici, vous pouvez non seulement découvrir une vaste bibliothèque de prompts de haute qualité, mais aussi construire, gérer et exécuter sans effort de puissants agents IA en un seul clic pour automatiser des tâches complexes. AiShort prend en charge plusieurs langues, facilitant une collaboration plus efficace avec l'IA. Rejoignez notre communauté de créateurs dès maintenant pour explorer et partager le potentiel infini des agents IA et commencer votre ère de super-productivité !"
+    "message": "Vous peinez à tirer le meilleur de l'IA ? AiShort propose des modèles de prompts éprouvés pour l'écriture, le code et la traduction—copiez instantanément !"
   },
   "community.title": {
-    "message": "Communauté de Créateurs AiShort - Co-construisez et partagez des Agents IA & Prompts, explorez les futurs flux de travail"
+    "message": "Communauté de Prompts IA - Partagez, Apprenez et Optimisez Ensemble | AiShort Hub"
   },
   "community.description": {
-    "message": "Bienvenue dans la Communauté de Créateurs AiShort ! C'est le carrefour des passionnés et des praticiens des Agents IA et des Prompts. Ici, vous pouvez découvrir, partager et importer de puissants agents IA créés par les membres de la communauté, et les appliquer à votre écriture, programmation, analyse de marché et autres flux de travail en un seul clic. Participez à des discussions, optimisez des solutions d'agents et collaborez avec d'autres créateurs pour transformer des idées imaginatives en solutions automatisées et efficaces. Rejoignez-nous maintenant et partagez votre premier Agent IA !"
+    "message": "Vous voulez une IA qui vous comprend vraiment ? Rejoignez la communauté AiShort pour partager, découvrir et affiner vos prompts—libérez ensemble précision et créativité"
   }
 }
