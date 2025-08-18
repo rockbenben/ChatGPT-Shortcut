@@ -9,6 +9,7 @@ current_dir = os.path.join(os.getcwd(), 'src', 'data')
 
 # 指定输入文件的路径
 input_path = os.path.join(current_dir, 'prompt.json')
+meta_description_path = os.path.join(current_dir, 'meta_description.json')
 
 output_dir_path = os.path.join(current_dir, 'default')
 output_dir_path_cards = os.path.join(current_dir, 'cards')
@@ -19,6 +20,20 @@ allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi'
 # 读取 JSON 数据
 with open(input_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
+
+# 载入 meta description 映射（id -> {lang: description}）
+meta_map = {}
+if os.path.exists(meta_description_path):
+    try:
+        with open(meta_description_path, 'r', encoding='utf-8') as meta_file:
+            meta_data = json.load(meta_file)
+            # 期望结构: [{"id": number, "description": { lang: text }}]
+            for item in meta_data:
+                if isinstance(item, dict) and 'id' in item and isinstance(item.get('description'), dict):
+                    meta_map[item['id']] = item['description']
+    except Exception as e:
+        # 如果 meta 文件格式异常，不中断主流程
+        print(f"Warn: failed to load meta_description.json: {e}")
 
 # 初始化最大 ID 值
 max_id = -1
@@ -74,7 +89,9 @@ def save_data_by_id_and_language(data):
                     lang: item[lang],
                     "tags": item.get("tags", []),
                     "website": item.get("website", ""),
-                    "count": item.get("weight", 0)
+                    "count": item.get("weight", 0),
+                    # 合并 meta description（如果存在）
+                    "metaDescription": meta_map.get(item["id"], {}).get(lang, "")
                 }
                 # 定义输出文件路径
                 output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
