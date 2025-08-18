@@ -1,5 +1,7 @@
 ---
-description: 学习如何通过 ZIP 安装包在 Chrome 浏览器中本地安装 ChatGPT Shortcut 插件，包括下载 ZIP 安装包、开启开发者模式和插件安装步骤。提供详细的操作指导和常见问题解决方案。  
+sidebar_label: Chrome ZIP 安装指南
+title: Chrome 插件 ZIP 本地安装指南 | 手动安装 ChatGPT Shortcut
+description: 如何在 Chrome 中通过 ZIP 文件手动安装 ChatGPT Shortcut 插件？本指南提供详细的下载、开启开发者模式及安装步骤，帮助您轻松完成本地插件部署，立即开始使用。  
 ---
 
 # Chrome ZIP 插件本地安装指南

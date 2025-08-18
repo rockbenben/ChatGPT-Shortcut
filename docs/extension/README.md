@@ -1,5 +1,7 @@
 ---
-description: 了解如何安装 AiShort 扩展插件，支持 Chrome、Edge、Firefox 等浏览器，并提供快捷键激活与自动启动功能。支持国内下载及油猴脚本自定义使用。  
+sidebar_label: 安装浏览器插件
+title: 如何安装 AiShort 插件 (ChatGPT Shortcut) | 支持 Chrome/Edge/Firefox
+description: 寻找 AiShort (ChatGPT Shortcut) 插件的官方下载地址？本页面提供 Chrome、Edge、Firefox 浏览器的官方商店链接及国内下载渠道，并介绍油猴脚本，助您轻松安装与使用。  
 ---
 
 # 安装浏览器插件
@@ -12,4 +14,4 @@ AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基�
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 - **国内下载**: [Alist 云盘](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[蓝奏云](https://wwva.lanzouq.com/b01lsc9vi),密码:1qow
 
-此外，我们还提供了油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，该脚本允许用户自定义匹配域名，在任意网站上使用 AiShort 侧边栏。但需注意，由于 ChatGPT 页面的脚本内容注入限制，脚本的侧边栏功能在 ChatGPT 页面上是通过弹窗来激活的。
+此外，我们还提供了油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)。油猴（Tampermonkey）是一个浏览器扩展，它允许用户运行自定义脚本来修改网页。通过这个脚本，您可以在任意网站上使用 AiShort 侧边栏。但需注意，由于 ChatGPT 页面的脚本内容注入限制，脚本的侧边栏功能在 ChatGPT 页面上是通过弹窗来激活的。

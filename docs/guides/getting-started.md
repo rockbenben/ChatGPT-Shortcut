@@ -1,5 +1,7 @@
 ---
-description: 了解如何使用 AiShort 复制提示词并应用于 ChatGPT、Gemini、Claude 等 AI 模型，提升对话效果。支持第三方 API 集成，轻松开启 AI 体验。  
+sidebar_label: 开始上手
+title: AiShort 新手入门指南 | 如何复制和使用提示词
+description: 刚开始使用 AiShort？本快速入门指南将教您如何轻松复制提示词，并将其应用于 ChatGPT、Gemini、Claude 等主流 AI 模型，立即开启您的高效 AI 对话体验。  
 ---
 
 # 开始上手
@@ -14,22 +16,23 @@ description: 了解如何使用 AiShort 复制提示词并应用于 ChatGPT、Ge
 
 ## 常用 AI 模型
 
-- ChatGPT：https://chatgpt.com
-- DeepSeek: https://chat.deepseek.com
+- ChatGPT: https://chatgpt.com
 - Gemini: https://gemini.google.com/app
 - Claude: https://claude.ai/chats
+- DeepSeek: https://chat.deepseek.com
+- Qwen: https://chat.qwen.ai/
 - Grok: https://grok.com/
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+- 通义千问: https://www.tongyi.com/qianwen/
+- 文心一言: https://yiyan.baidu.com
+- 豆包: https://www.doubao.com/chat/
+- Kimi: https://kimi.moonshot.cn/
+- 智谱清言: https://chatglm.cn/detail
+- 讯飞星火: https://xinghuo.xfyun.cn/
+- 腾讯元宝: https://yuanbao.tencent.com/chat
+- 百川大模型: https://ying.baichuan-ai.com/chat
 
 ## 第三方 API 集成
 
 - OpenRouter: https://openrouter.ai/chat
 - siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+- Groq: https://groq.com/

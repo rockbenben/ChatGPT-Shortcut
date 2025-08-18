@@ -1,5 +1,7 @@
 ---
-description: 了解 AiShort 提示词使用指南，包括英文提示词优势、GPTs 区别、搜索延迟解决方案、虚假信息避免方法，以及如何优化提示词以提升 ChatGPT 生成效果。  
+sidebar_label: 常见问题
+title: 常见问题解答 | AiShort 提示词使用技巧与指南
+description: 为什么提示词建议用英文？GPTs 和提示词有何区别？了解 AiShort 常见问题，获取关于优化提示词、处理搜索延迟及避免 AI 虚假信息等实用技巧，提升您的 AI 使用效果。  
 ---
 
 # 常见问题
@@ -26,7 +28,7 @@ API 中可以将提示词设为「system prompt」，这样后续就不需要输
 
 AI Short 网页版通过手动搜索实现无延迟搜索，而 Docker 或扩展版本采用自动搜索，存在 800 毫秒的延迟。
 
-此问题源于扩展搜索功能基于 Docusaurus 的 showcase，存在 PC 端输入法焦点丢失问题。向 Docusaurus 反馈后，对方表示会尝试修复和 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。但问题始终没有解决。因此，我将搜索组件分为移动端和 PC 端两类。移动端搜索逻辑保持不变，而屏幕宽度阈值 768px 以上的 PC 端浏览引入 `debounce` 函数解决输入法问题。但这在 PC 端产生两个问题：一是非英文输入需在 800 毫秒内完成；二是 PC 端搜索刷新从即时变为 800 毫秒延迟。若你有更好的解决方案，欢迎提供反馈。
+此问题源于扩展搜索功能基于 Docusaurus 的 showcase，存在 PC 端输入法焦点丢失问题。向 Docusaurus 反馈后，对方表示会尝试修复和 `FWIW, you should not be using Chinese anyway, since the showcase is not localized`。但问题始终没有解决。因此，我将搜索组件分为移动端和 PC 端两类。移动端搜索逻辑保持不变，而屏幕宽度阈值 768px 以上的 PC 端浏览引入 `debounce` 函数解决输入法问题。但这在 PC 端产生两个问题：一是非英文输入需在 800 毫秒内完成；二是 PC 端搜索刷新从即时变为 800 毫秒延迟。若你有更好的解决方案，欢迎通过[反馈](/feedback)告知我们。
 
 ## 输出虚假信息
 

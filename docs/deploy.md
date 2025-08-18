@@ -1,5 +1,7 @@
 ---
-description: 了解如何配置和自定义 AI Short，包括修改网站标题、描述、提示词以及后端部署，助您快速适配个性化需求。  
+sidebar_label: 项目部署
+title: 项目部署与自定义指南 | 轻松配置 AI Short
+description: 如何快速部署和自定义您的 AI Short 项目？本指南提供详细的 Vercel、Cloudflare、Docker 及本地部署教程，并教您如何修改网站内容与开启自动更新。  
 ---
 
 # 项目部署
@@ -135,7 +137,7 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:late
 version: "3.8"
 
 services:
-  docsify:
+  chatgpt-shortcut:
     container_name: chatgpt-shortcut
     image: ghcr.io/rockbenben/chatgpt-shortcut:latest
     ports:

@@ -96,7 +96,7 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:late
 version: "3.8"
 
 services:
-docsify:
+chatgpt-shortcut:
 Container_name: chatgpt-shortcut
 image: ghcr.io/rockbenben/chatgpt-shortcut:latest
 ports:
