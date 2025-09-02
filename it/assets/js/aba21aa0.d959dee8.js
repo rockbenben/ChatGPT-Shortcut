@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["5112"],{42418:function(t){t.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
