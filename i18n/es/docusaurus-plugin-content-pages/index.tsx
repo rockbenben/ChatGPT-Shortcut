@@ -337,7 +337,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </div>
           )}
           <div className="container margin-top--md">
-            <Heading as="h2" className={styles.showcaseHeader}>
+            <Heading as="h2" className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
