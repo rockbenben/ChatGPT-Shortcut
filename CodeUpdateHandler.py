@@ -27,7 +27,7 @@ if os.path.exists(meta_description_path):
     try:
         with open(meta_description_path, 'r', encoding='utf-8') as meta_file:
             meta_data = json.load(meta_file)
-            # 期望结构: [{"id": number, "description": { lang: text }}]
+            # 期望结构：[{"id": number, "description": { lang: text }}]
             for item in meta_data:
                 if isinstance(item, dict) and 'id' in item and isinstance(item.get('description'), dict):
                     meta_map[item['id']] = item['description']
@@ -195,14 +195,16 @@ for prompt_id in range(1, max_id+1):
 
         content = f'''import React from "react";
 import PromptPage from "@site/src/pages/_components/PromptPage";
-import {{ AuthProvider }} from "@site/src/pages/_components/AuthContext";
 import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
+const cachedPrompt = prompt;
+
 function PromptDetail() {{
-  return <AuthProvider><PromptPage prompt={{prompt}} /></AuthProvider>;
+  return <PromptPage prompt={{cachedPrompt}} />;
 }}
 
-export default PromptDetail;
+export default React.memo(PromptDetail);
+
 '''
 
         # Write the content to a new file named {prompt_id}.tsx

@@ -1,10 +1,12 @@
 import React from "react";
 import PromptPage from "@site/src/pages/_components/PromptPage";
-import { AuthProvider } from "@site/src/pages/_components/AuthContext";
 import prompt from "@site/src/data/cards/82_ja.json";
 
+const cachedPrompt = prompt;
+
 function PromptDetail() {
-  return <AuthProvider><PromptPage prompt={prompt} /></AuthProvider>;
+  return <PromptPage prompt={cachedPrompt} />;
 }
 
-export default PromptDetail;
+export default React.memo(PromptDetail);
+
