@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch, Spin, Tooltip, Space } from "antd";
-import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined } from "@ant-design/icons";
+import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt, clearUserAllInfoCache } from "@site/src/api";
@@ -202,14 +202,14 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
 
   const loggedOutButtons = useMemo(
     () => (
-      <>
-        <button className="button button--primary" onClick={() => setOpen(true)} style={{ marginRight: "10px" }}>
+      <Space wrap size="middle">
+        <button className="button button--primary" onClick={() => setOpen(true)}>
           <Translate id="button.login">登录</Translate>
         </button>
-        <Link className="button button--primary" to="/community-prompts">
-          <Translate id="showcase.header.button">🙏 分享你的提示词</Translate>
+        <Link to="/community-prompts" className="button button--primary">
+          <LikeFilled /> <Translate id="showcase.header.button">分享你的提示词</Translate>
         </Link>
-      </>
+      </Space>
     ),
     []
   );

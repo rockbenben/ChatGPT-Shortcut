@@ -24,7 +24,12 @@ const styles = {
     fontSize: "0.9em",
     marginTop: "20px",
   },
-  mainText: { maxHeight: "500px", overflowY: "auto" as React.CSSProperties["overflowY"], minHeight: "100px" },
+  mainText: {
+    maxHeight: "200px",
+    overflowY: "auto" as React.CSSProperties["overflowY"],
+    minHeight: "100px",
+    transition: "none", // 禁用动画减少视觉抖动
+  },
 };
 
 function PromptPage({ prompt }) {
@@ -36,7 +41,7 @@ function PromptPage({ prompt }) {
   const { copied, updateCopy } = useCopyToClipboard();
 
   // 使用 useMemo 缓存计算值
-  const { shareUrl, title, remark, weight, website, tags, isDarkMode } = useMemo(
+  const { shareUrl, title, remark, weight, website, tags } = useMemo(
     () => ({
       shareUrl: typeof window !== "undefined" ? window.location.href : "",
       title: prompt[currentLanguage].title,
@@ -44,7 +49,6 @@ function PromptPage({ prompt }) {
       weight: getWeight(prompt),
       website: prompt.website,
       tags: prompt.tags,
-      isDarkMode: typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark",
     }),
     [prompt, currentLanguage]
   );
