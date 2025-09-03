@@ -811,7 +811,7 @@
     "message": "プロンプトを共有（これは「マイプロンプト」タブに表示されます）"
   },
   "showcase.header.button": {
-    "message": "🙏 プロンプトを共有する"
+    "message": "プロンプトを共有する"
   },
   "label.forgotPassword": {
     "message": "パスワードを忘れた"

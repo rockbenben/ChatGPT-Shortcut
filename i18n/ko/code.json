@@ -811,7 +811,7 @@
     "message": "프롬프트 공유 (이 프롬프트는 '내 프롬프트' 탭에 표시됩니다)"
   },
   "showcase.header.button": {
-    "message": "🙏 프롬프트 공유하기"
+    "message": "프롬프트 공유하기"
   },
   "label.forgotPassword": {
     "message": "비밀번호를 잊으셨나요?"

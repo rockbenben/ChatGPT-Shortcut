@@ -28,7 +28,11 @@ const styles = {
     maxHeight: "200px",
     overflowY: "auto" as React.CSSProperties["overflowY"],
     minHeight: "100px",
-    transition: "none", // 禁用动画减少视觉抖动
+    transition: "none",
+  },
+  // CLS优化：为懒加载组件预留空间
+  suspenseContainer: {
+    minHeight: "400px",
   },
 };
 
@@ -100,7 +104,7 @@ function PromptPage({ prompt }) {
             <Paragraph style={styles.remark}>👉 {remark}</Paragraph>
             {canToggle ? (
               <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
-                <Paragraph onClick={handleParagraphClick} style={(styles.mainText, { cursor: "pointer" })}>
+                <Paragraph onClick={handleParagraphClick} style={{ ...styles.mainText, cursor: "pointer" }}>
                   {paragraphText}
                 </Paragraph>
               </Tooltip>
@@ -118,11 +122,14 @@ function PromptPage({ prompt }) {
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Paragraph>
 
-            <Suspense fallback={null}>
-              <AdComponent type="transverse" />
-              <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-              <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
-            </Suspense>
+            {/* CLS优化：为懒加载组件预留高度空间 */}
+            <div style={styles.suspenseContainer}>
+              <Suspense fallback={null}>
+                <AdComponent type="transverse" />
+                <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
+                <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
+              </Suspense>
+            </div>
           </Card>
         </Col>
       </Row>
