@@ -15,7 +15,11 @@ const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdCompo
 const { Paragraph } = Typography;
 
 const styles = {
-  container: { marginTop: "20px" },
+  container: {
+    marginTop: "20px",
+    width: "100%", // Ensure stable container width
+    overflow: "hidden", // Prevent horizontal scroll causing CLS
+  },
   badge: { backgroundColor: "#52c41a" },
   remark: { color: "#595959" },
   commentInfo: {
@@ -29,9 +33,9 @@ const styles = {
     minHeight: "100px",
     transition: "none",
   },
-  // CLS 优化：只为需要的组件预留固定高度
   commentsContainer: {
     minHeight: "400px",
+    width: "100%",
   },
 };
 
@@ -120,7 +124,7 @@ function PromptPage({ prompt }) {
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Paragraph>
 
-            {/* CLS optimization: Ad has built-in fallback, Share buttons are floating */}
+            {/* CLS optimization: Fixed width containers prevent layout shifts */}
             <Suspense fallback={null}>
               <AdComponent type="transverse" />
               <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
@@ -136,7 +140,5 @@ function PromptPage({ prompt }) {
       </Row>
     </Layout>
   );
-}
-
-// 使用 memo 优化整个组件的重渲染
+} // 使用 memo 优化整个组件的重渲染
 export default React.memo(PromptPage);

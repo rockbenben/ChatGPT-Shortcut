@@ -8,8 +8,14 @@ const Comments = React.lazy(() => import("@site/src/pages/_components/Comments")
 const { Title, Paragraph } = Typography;
 
 const styles = {
+  container: {
+    marginTop: "20px",
+    width: "100%", // Ensure stable container width
+    overflow: "hidden", // Prevent horizontal scroll causing CLS
+  },
   commentsContainer: {
     minHeight: "400px",
+    width: "100%",
   },
 };
 
@@ -21,7 +27,7 @@ const FeedbackPage = () => {
         id: "feedback.description",
         message: "您的反馈对我们很重要！",
       })}>
-      <Row justify="center" style={{ marginTop: "20px" }}>
+      <Row justify="center" style={styles.container}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
           <Card className="shadow--md">
             <Title style={{ textAlign: "center" }}>
