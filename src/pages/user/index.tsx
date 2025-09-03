@@ -3,12 +3,11 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import Layout from "@theme/Layout";
-import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, ConfigProvider, theme, Alert, Row, Col, Typography } from "antd";
+import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, Alert, Row, Col, Typography } from "antd";
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const { Title } = Typography;
 
@@ -333,20 +332,13 @@ const UserProfile = () => {
     },
   ];
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
-
   return (
     <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
-      <ConfigProvider
-        theme={{
-          ...themeConfig,
-          algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-        }}>
-        {contextHolder}
-        <Row justify="center">
-          <Col xs={24} sm={22} md={20} lg={16} xl={14}>
-            <div style={{ padding: "20px" }}>
-              <Space size={"large"} style={{ marginLeft: 8 }}>
+      {contextHolder}
+      <Row justify="center">
+        <Col xs={24} sm={22} md={20} lg={16} xl={14}>
+          <div style={{ padding: "20px" }}>
+            <Space size={"large"} style={{ marginLeft: 8 }}>
                 <Link to="/" className="mainLink">
                   <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                 </Link>
@@ -368,7 +360,6 @@ const UserProfile = () => {
             </div>
           </Col>
         </Row>
-      </ConfigProvider>
     </Layout>
   );
 };

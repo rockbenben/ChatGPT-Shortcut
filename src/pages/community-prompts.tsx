@@ -8,9 +8,8 @@ import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, ConfigProvider, theme, Skeleton } from "antd";
+import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, Skeleton } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
@@ -313,22 +312,17 @@ const CommunityPrompts = () => {
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">
-        <ConfigProvider
-          theme={{
-            ...themeConfig,
-            algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-          }}>
-          {contextHolder}
-          <section className="margin-top--sm margin-bottom--sm">
-            <div className="container padding-vert--md">
-              <Space wrap style={{ marginBottom: "20px" }}>
-                <Link to="/" className="mainLink">
-                  <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+        {contextHolder}
+        <section className="margin-top--sm margin-bottom--sm">
+          <div className="container padding-vert--md">
+            <Space wrap style={{ marginBottom: "20px" }}>
+              <Link to="/" className="mainLink">
+                <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+              </Link>
+              {userAuth ? (
+                <Link to="/user/favorite" className="mainLink">
+                  <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
                 </Link>
-                {userAuth ? (
-                  <Link to="/user/favorite" className="mainLink">
-                    <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
-                  </Link>
                 ) : (
                   <Button onClick={() => setOpen(true)}>
                     <LoginOutlined /> <Translate id="button.login">登录</Translate>
@@ -388,10 +382,9 @@ const CommunityPrompts = () => {
               </Suspense>
             </div>
           </section>
-        </ConfigProvider>
-      </main>
-    </Layout>
-  );
+        </main>
+      </Layout>
+    );
 };
 
 export default function WrappedCommunityPrompts() {

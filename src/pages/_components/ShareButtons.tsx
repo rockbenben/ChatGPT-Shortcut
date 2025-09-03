@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { ConfigProvider, FloatButton } from "antd";
+import { FloatButton } from "antd";
 import { ShareAltOutlined } from "@ant-design/icons";
 import { FacebookShareButton, TelegramShareButton, TumblrShareButton, TwitterShareButton, WeiboShareButton, FacebookIcon, TelegramIcon, TumblrIcon, TwitterIcon, WeiboIcon } from "react-share";
 
@@ -28,16 +28,9 @@ function ShareButtons({ shareUrl, title, popOver }) {
   );
 
   const floatButtons = (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#397e6a",
-        },
-      }}>
-      <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className="hideOnSmallScreen" icon={<ShareAltOutlined />}>
-        {buttons}
-      </FloatButton.Group>
-    </ConfigProvider>
+    <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className="hideOnSmallScreen" icon={<ShareAltOutlined />}>
+      {buttons}
+    </FloatButton.Group>
   );
 
   if (popOver) {

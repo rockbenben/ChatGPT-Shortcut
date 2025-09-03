@@ -1,12 +1,11 @@
 import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
-import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button, ConfigProvider, theme } from "antd";
+import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { getWeight, formatCount } from "@site/src/utils/formatters";
 
@@ -68,68 +67,62 @@ function PromptPage({ prompt }) {
   }, [prompt, currentLanguage]);
 
   return (
-    <ConfigProvider
-      theme={{
-        ...themeConfig,
-        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-      }}>
-      <Layout title={`${title}-${remark}`} description={seoDescription}>
-        <Row justify="center" style={styles.container}>
-          <Col xs={24} sm={22} md={20} lg={18} xl={16}>
-            <Card
-              className="shadow--md"
-              title={
-                <>
-                  {title} <Badge count={`${formatCount(weight)}`} style={styles.badge} />
-                </>
-              }
-              extra={
-                <Space>
-                  <Button
-                    icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                    onClick={() => {
-                      updateCopy(prompt[currentLanguage].prompt, prompt.id);
-                    }}>
-                    {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
-                  </Button>
-                  {website && (
-                    <Link to={website}>
-                      <LinkOutlined />
-                    </Link>
-                  )}
-                </Space>
-              }>
-              <Paragraph style={styles.remark}>👉 {remark}</Paragraph>
-              {canToggle ? (
-                <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
-                  <Paragraph onClick={handleParagraphClick} style={(styles.mainText, { cursor: "pointer" })}>
-                    {paragraphText}
-                  </Paragraph>
-                </Tooltip>
-              ) : (
-                <Paragraph style={styles.mainText}>{paragraphText}</Paragraph>
-              )}
-              <Space wrap>
-                {tags.map((tag) => (
-                  <Link to={`/?tags=${tag}`} key={tag}>
-                    <Tag color="blue">{tag}</Tag>
+    <Layout title={`${title}-${remark}`} description={seoDescription}>
+      <Row justify="center" style={styles.container}>
+        <Col xs={24} sm={22} md={20} lg={18} xl={16}>
+          <Card
+            className="shadow--md"
+            title={
+              <>
+                {title} <Badge count={`${formatCount(weight)}`} style={styles.badge} />
+              </>
+            }
+            extra={
+              <Space>
+                <Button
+                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                  onClick={() => {
+                    updateCopy(prompt[currentLanguage].prompt, prompt.id);
+                  }}>
+                  {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                </Button>
+                {website && (
+                  <Link to={website}>
+                    <LinkOutlined />
                   </Link>
-                ))}
+                )}
               </Space>
-              <Paragraph style={styles.commentInfo}>
-                <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
-              </Paragraph>
+            }>
+            <Paragraph style={styles.remark}>👉 {remark}</Paragraph>
+            {canToggle ? (
+              <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
+                <Paragraph onClick={handleParagraphClick} style={(styles.mainText, { cursor: "pointer" })}>
+                  {paragraphText}
+                </Paragraph>
+              </Tooltip>
+            ) : (
+              <Paragraph style={styles.mainText}>{paragraphText}</Paragraph>
+            )}
+            <Space wrap>
+              {tags.map((tag) => (
+                <Link to={`/?tags=${tag}`} key={tag}>
+                  <Tag color="blue">{tag}</Tag>
+                </Link>
+              ))}
+            </Space>
+            <Paragraph style={styles.commentInfo}>
+              <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
+            </Paragraph>
 
-              <Suspense fallback={null}>
-                <AdComponent type="transverse" />
-                <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-                <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
-              </Suspense>
-            </Card>
-          </Col>
-        </Row>
-      </Layout>
-    </ConfigProvider>
+            <Suspense fallback={null}>
+              <AdComponent type="transverse" />
+              <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
+              <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
+            </Suspense>
+          </Card>
+        </Col>
+      </Row>
+    </Layout>
   );
 }
 

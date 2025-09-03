@@ -7,7 +7,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
-import { ConfigProvider, theme, Button } from "antd";
+import { Button } from "antd";
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
@@ -21,7 +21,6 @@ import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
 import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
 
 import styles from "@site/src/pages/styles.module.css";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 import { getWeight } from "@site/src/utils/formatters";
 
@@ -398,27 +397,19 @@ export default function Showcase(): JSX.Element {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
 
-  const isDarkMode = ExecutionEnvironment.canUseDOM && document.documentElement.getAttribute("data-theme") === "dark";
-
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
         <AuthProvider>
-          <ConfigProvider
-            theme={{
-              ...themeConfig,
-              algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-            }}>
-            <ShowcaseHeader />
-            <ShowcaseFilters
-              onToggleDescription={toggleDescription}
-              showUserFavs={showUserFavs}
-              setShowUserFavs={setShowUserFavs}
-              showUserPrompts={showUserPrompts}
-              setShowUserPrompts={setShowUserPrompts}
-            />
-            <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} showUserPrompts={showUserPrompts} />
-          </ConfigProvider>
+          <ShowcaseHeader />
+          <ShowcaseFilters
+            onToggleDescription={toggleDescription}
+            showUserFavs={showUserFavs}
+            setShowUserFavs={setShowUserFavs}
+            showUserPrompts={showUserPrompts}
+            setShowUserPrompts={setShowUserPrompts}
+          />
+          <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} showUserPrompts={showUserPrompts} />
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />

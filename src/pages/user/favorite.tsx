@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 
-import { Tabs, ConfigProvider, theme } from "antd";
+import { Tabs } from "antd";
 import { HeartOutlined, EditOutlined } from "@ant-design/icons";
 import styles from "@site/src/pages/styles.module.css";
 
@@ -12,7 +12,6 @@ import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
 import SearchBar, { NoResults, useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
 import { AuthProvider } from "../_components/AuthContext";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const UserBookmark = () => {
   const [activeTab, setActiveTab] = useState("myprompts");
@@ -46,24 +45,18 @@ const UserBookmark = () => {
   return (
     <Layout>
       <main className="margin-vert--md">
-        <ConfigProvider
-          theme={{
-            ...themeConfig,
-            algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-          }}>
-          <section className="margin-top--sm margin-bottom--sm">
-            <div className="container padding-vert--md">
-              <div className="text--center">
-                <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
-              </div>
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <SearchBar />
-              </div>
-              <Tabs activeKey={activeTab} items={items} onChange={handleTabChange} />
-              {showNoResults && <NoResults />}
+        <section className="margin-top--sm margin-bottom--sm">
+          <div className="container padding-vert--md">
+            <div className="text--center">
+              <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
             </div>
-          </section>
-        </ConfigProvider>
+            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+              <SearchBar />
+            </div>
+            <Tabs activeKey={activeTab} items={items} onChange={handleTabChange} />
+            {showNoResults && <NoResults />}
+          </div>
+        </section>
       </main>
     </Layout>
   );
