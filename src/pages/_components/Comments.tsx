@@ -12,6 +12,37 @@ import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
+import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+
+// Simple JWT parsing function
+const parseJwt = (token) => {
+  try {
+    const base64Url = token.split(".")[1];
+    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    return null;
+  }
+};
+
+// Get current user ID
+const getCurrentUserId = () => {
+  if (!ExecutionEnvironment.canUseDOM) return 0;
+
+  const token = localStorage.getItem("auth_token");
+  if (!token) return 0;
+
+  const payload = parseJwt(token);
+  return payload?.id || 0;
+};
 
 dayjs.extend(relativeTime);
 const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835", "#1565C0", "#283593", "#2E7D32", "#C2185B", "#4CAF50", "#9C27B0", "#607D8B", "#424242", "#1976D2"];
@@ -32,8 +63,9 @@ const useUserColorCache = () => {
   return getUserColor;
 };
 
-const Comments = ({ pageId, currentUserId, type }) => {
+const Comments = ({ pageId, type }) => {
   const getUserColor = useUserColorCache();
+  const [currentUserId, setCurrentUserId] = useState(0);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
   const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
@@ -49,7 +81,12 @@ const Comments = ({ pageId, currentUserId, type }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // 检查暗色模式
+  // Get current user ID from localStorage
+  useEffect(() => {
+    setCurrentUserId(getCurrentUserId());
+  }, []);
+
+  // Check dark mode
   useEffect(() => {
     setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
   }, []);
