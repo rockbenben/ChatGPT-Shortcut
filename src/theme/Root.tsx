@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { ConfigProvider, theme } from "antd";
 import { createCache, StyleProvider } from "@ant-design/cssinjs";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -27,20 +27,20 @@ export default function Root({ children }) {
     return () => observer.disconnect();
   }, []);
 
-  // 按照官方文档的内联样式方案
-  const cache = React.useMemo(() => createCache(), []);
+  const cache = useMemo(() => createCache(), []);
+  const themeConfig = useMemo(
+    () => ({
+      token: {
+        colorPrimary: "#397e6a",
+      },
+      algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+    }),
+    [isDarkMode]
+  );
 
   return (
     <StyleProvider cache={cache}>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#397e6a",
-          },
-          algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-        }}>
-        {children}
-      </ConfigProvider>
+      <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>
     </StyleProvider>
   );
 }
