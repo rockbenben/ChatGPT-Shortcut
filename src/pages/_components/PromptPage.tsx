@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
+import React, { useState, useCallback, useMemo, Suspense } from "react";
 import { Card, Typography, Tag, Tooltip, Space, Row, Col, Badge, Button } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
@@ -6,7 +6,6 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { AuthContext } from "@site/src/pages/_components/AuthContext";
 import { getWeight, formatCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -30,14 +29,13 @@ const styles = {
     minHeight: "100px",
     transition: "none",
   },
-  // CLS优化：为懒加载组件预留空间
-  suspenseContainer: {
+  // CLS 优化：只为需要的组件预留固定高度
+  commentsContainer: {
     minHeight: "400px",
   },
 };
 
 function PromptPage({ prompt }) {
-  const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const canToggle = currentLanguage !== "en" && prompt[currentLanguage].description !== prompt[currentLanguage].prompt;
@@ -122,12 +120,15 @@ function PromptPage({ prompt }) {
               <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
             </Paragraph>
 
-            {/* CLS优化：为懒加载组件预留高度空间 */}
-            <div style={styles.suspenseContainer}>
-              <Suspense fallback={null}>
-                <AdComponent type="transverse" />
-                <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-                <Comments pageId={prompt.id} currentUserId={userAuth?.data?.id || 0} type="page" />
+            {/* CLS optimization: Ad has built-in fallback, Share buttons are floating */}
+            <Suspense fallback={null}>
+              <AdComponent type="transverse" />
+              <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
+            </Suspense>
+
+            <div style={styles.commentsContainer}>
+              <Suspense fallback={<div style={styles.commentsContainer}></div>}>
+                <Comments pageId={prompt.id} type="page" />
               </Suspense>
             </div>
           </Card>
