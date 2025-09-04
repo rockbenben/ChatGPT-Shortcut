@@ -1,0 +1,113 @@
+{
+  "routes": [
+    {
+      "route": "/*.js",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/*.css",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/*.ico",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/*.svg",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/vi",
+      "redirect": "/en",
+      "statusCode": 301
+    },
+    {
+      "route": "/id",
+      "redirect": "/en",
+      "statusCode": 301
+    },
+    {
+      "route": "/tr",
+      "redirect": "/en",
+      "statusCode": 301
+    },
+    {
+      "route": "/docs/guides/extension",
+      "redirect": "/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/docs/guides/extension",
+      "redirect": "/en/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/ar/docs/guides/extension",
+      "redirect": "/ar/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/ja/docs/guides/extension",
+      "redirect": "/ja/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/ko/docs/guides/extension",
+      "redirect": "/ko/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/es/docs/guides/extension",
+      "redirect": "/es/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/fr/docs/guides/extension",
+      "redirect": "/fr/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/de/docs/guides/extension",
+      "redirect": "/de/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/it/docs/guides/extension",
+      "redirect": "/it/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/ru/docs/guides/extension",
+      "redirect": "/ru/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/pt/docs/guides/extension",
+      "redirect": "/pt/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/hi/docs/guides/extension",
+      "redirect": "/hi/docs/extension/usage",
+      "statusCode": 301
+    },
+    {
+      "route": "/bn/docs/guides/extension",
+      "redirect": "/bn/docs/extension/usage",
+      "statusCode": 301
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html"
+    }
+  }
+}
