@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - speedup/data-retrieval
+  workflow_dispatch:
 
 jobs:
   web-deploy:
@@ -48,9 +49,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           ###### Repository/Build Configurations ######
-          app_location: "/" # 应用源代码路径
+          app_location: "/build" # 应用源代码路径
           api_location: "" # API 源代码路径（可选）
-          output_location: "build" # 构建输出目录
+          output_location: "" # 构建输出目录
           skip_app_build: true # 跳过构建步骤，因为已经构建好了
           ###### End of Repository/Build Configurations ######
 
