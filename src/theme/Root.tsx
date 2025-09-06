@@ -1,18 +1,19 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { ConfigProvider, theme } from "antd";
-import { createCache, StyleProvider } from "@ant-design/cssinjs";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 export default function Root({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
+  const updateTheme = useCallback(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
 
-    const updateTheme = () => {
-      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      setIsDarkMode(isDark);
-    };
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    setIsDarkMode(isDark);
+  }, []);
+
+  useEffect(() => {
+    if (!ExecutionEnvironment.canUseDOM) return;
 
     // 初始化主题
     updateTheme();
@@ -25,22 +26,19 @@ export default function Root({ children }) {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [updateTheme]);
 
-  const cache = useMemo(() => createCache(), []);
   const themeConfig = useMemo(
     () => ({
       token: {
         colorPrimary: "#397e6a",
       },
       algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      cssVar: true,
+      hashed: false,
     }),
     [isDarkMode]
   );
 
-  return (
-    <StyleProvider cache={cache}>
-      <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>
-    </StyleProvider>
-  );
+  return <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>;
 }
