@@ -22,17 +22,34 @@ description: 刚开始使用 AiShort？本快速入门指南将教您如何轻�
 - DeepSeek: https://chat.deepseek.com
 - Qwen: https://chat.qwen.ai/
 - Grok: https://grok.com/
-- 通义千问: https://www.tongyi.com/qianwen/
-- 文心一言: https://yiyan.baidu.com
-- 豆包: https://www.doubao.com/chat/
+- 通义千问：https://www.tongyi.com/qianwen/
+- 文心一言：https://yiyan.baidu.com
+- 豆包：https://www.doubao.com/chat/
 - Kimi: https://kimi.moonshot.cn/
-- 智谱清言: https://chatglm.cn/detail
-- 讯飞星火: https://xinghuo.xfyun.cn/
-- 腾讯元宝: https://yuanbao.tencent.com/chat
-- 百川大模型: https://ying.baichuan-ai.com/chat
+- 智谱清言：https://chatglm.cn/detail
+- 讯飞星火：https://xinghuo.xfyun.cn/
+- 腾讯元宝：https://yuanbao.tencent.com/chat
+- 百川大模型：https://ying.baichuan-ai.com/chat
 
 ## 第三方 API 集成
 
 - OpenRouter: https://openrouter.ai/chat
 - siliconflow: https://cloud.siliconflow.cn/playground/chat
 - Groq: https://groq.com/
+
+## 进阶功能
+
+### 用户账户功能
+
+登录 AiShort 后，您将获得更多高级功能：
+
+- **收藏管理**：收藏喜欢的提示词，建立个人专属库
+- **自定义提示词**：创建和管理您自己的提示词
+- **数据导出**：一键导出您创建的所有提示词为 JSON 文件
+- **社区互动**：在社区版块分享提示词并参与投票
+
+### 数据备份
+
+1. 登录您的账户
+2. 点击页面右上角的「导出提示词」按钮
+3. 系统会自动下载包含所有提示词的 JSON 文件
