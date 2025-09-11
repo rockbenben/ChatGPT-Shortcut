@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "Effacer le cache"
   },
+  "tooltip.exportPrompts": {
+    "message": "Exporter toutes vos invites créées vers un fichier JSON"
+  },
+  "button.exportPrompts": {
+    "message": "Exporter les invites"
+  },
+  "message.export.noPrompts": {
+    "message": "Aucune invite à exporter, veuillez réessayer plus tard"
+  },
+  "message.export.success": {
+    "message": "Invites exportées avec succès !"
+  },
+  "message.export.error": {
+    "message": "Échec de l'exportation, veuillez réessayer plus tard"
+  },
   "hideTags": {
     "message": "Masquer les tags"
   },

@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "مسح ذاكرة التخزين المؤقت"
   },
+  "tooltip.exportPrompts": {
+    "message": "تصدير جميع المطالبات التي أنشأتها إلى ملف JSON"
+  },
+  "button.exportPrompts": {
+    "message": "تصدير المطالبات"
+  },
+  "message.export.noPrompts": {
+    "message": "لا توجد مطالبات للتصدير، يرجى المحاولة مرة أخرى لاحقاً"
+  },
+  "message.export.success": {
+    "message": "تم تصدير المطالبات بنجاح!"
+  },
+  "message.export.error": {
+    "message": "فشل التصدير، يرجى المحاولة مرة أخرى لاحقاً"
+  },
   "hideTags": {
     "message": "إخفاء العلامات"
   },

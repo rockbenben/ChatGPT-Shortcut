@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "ক্যাশে সাফ করুন"
   },
+  "tooltip.exportPrompts": {
+    "message": "আপনার তৈরি সমস্ত প্রম্পট একটি JSON ফাইলে রপ্তানি করুন"
+  },
+  "button.exportPrompts": {
+    "message": "প্রম্পট রপ্তানি করুন"
+  },
+  "message.export.noPrompts": {
+    "message": "রপ্তানি করার জন্য কোন প্রম্পট নেই, পরে আবার চেষ্টা করুন"
+  },
+  "message.export.success": {
+    "message": "প্রম্পট সফলভাবে রপ্তানি হয়েছে!"
+  },
+  "message.export.error": {
+    "message": "রপ্তানি ব্যর্থ, পরে আবার চেষ্টা করুন"
+  },
   "hideTags": {
     "message": "ট্যাগ লুকান"
   },

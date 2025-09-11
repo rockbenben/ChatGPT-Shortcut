@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "캐시 지우기"
   },
+  "tooltip.exportPrompts": {
+    "message": "생성한 모든 프롬프트를 JSON 파일로 내보내기"
+  },
+  "button.exportPrompts": {
+    "message": "프롬프트 내보내기"
+  },
+  "message.export.noPrompts": {
+    "message": "내보낼 프롬프트가 없습니다. 나중에 다시 시도해주세요"
+  },
+  "message.export.success": {
+    "message": "프롬프트가 성공적으로 내보내졌습니다!"
+  },
+  "message.export.error": {
+    "message": "내보내기 실패, 나중에 다시 시도해주세요"
+  },
   "hideTags": {
     "message": "태그 숨기기"
   },
@@ -871,15 +886,15 @@
     "message": "더 스마트한 프롬프트, 더 스마트한 결과"
   },
   "homepage.title": {
-    "message": "AiShort - AI 프롬프트 템플릿 | 생산성 향상을 위한 검증된 프롬프트 | AI의 잠재력 극대화"
+    "message": "AiShort - AI 프롬프트 템플릿 | 생산성 향상을 위한 검증된 프롬프트 | AI 의 잠재력 극대화"
   },
   "homepage.description": {
-    "message": "AI에서 최고의 결과를 얻기 어려우신가요? AiShort로 글쓰기, 코딩, 번역용 검증된 AI 프롬프트 템플릿을 즉시 복사해서 성과를 높이세요!"
+    "message": "AI 에서 최고의 결과를 얻기 어려우신가요? AiShort 로 글쓰기, 코딩, 번역용 검증된 AI 프롬프트 템플릿을 즉시 복사해서 성과를 높이세요!"
   },
   "community.title": {
     "message": "AI 프롬프트 커뮤니티 - 공유, 학습, 최적화 | AiShort Hub"
   },
   "community.description": {
-    "message": "진정으로 이해하는 AI를 원하시나요? AiShort 커뮤니티에서 프롬프트를 공유하고 발견하며 개선하여 더 높은 정확성과 창의성을 함께 실현하세요"
+    "message": "진정으로 이해하는 AI 를 원하시나요? AiShort 커뮤니티에서 프롬프트를 공유하고 발견하며 개선하여 더 높은 정확성과 창의성을 함께 실현하세요"
   }
 }

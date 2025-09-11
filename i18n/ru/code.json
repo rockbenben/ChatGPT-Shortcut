@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "Очистить кэш"
   },
+  "tooltip.exportPrompts": {
+    "message": "Экспортировать все созданные вами подсказки в JSON файл"
+  },
+  "button.exportPrompts": {
+    "message": "Экспорт подсказок"
+  },
+  "message.export.noPrompts": {
+    "message": "Нет подсказок для экспорта, попробуйте позже"
+  },
+  "message.export.success": {
+    "message": "Подсказки успешно экспортированы!"
+  },
+  "message.export.error": {
+    "message": "Ошибка экспорта, попробуйте позже"
+  },
   "hideTags": {
     "message": "Скрыть теги"
   },

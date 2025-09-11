@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "Clear Cache"
   },
+  "tooltip.exportPrompts": {
+    "message": "Export all your created prompts to a JSON file"
+  },
+  "button.exportPrompts": {
+    "message": "Export Prompts"
+  },
+  "message.export.noPrompts": {
+    "message": "No prompts to export, please try again later"
+  },
+  "message.export.success": {
+    "message": "Prompts exported successfully!"
+  },
+  "message.export.error": {
+    "message": "Export failed, please try again later"
+  },
   "hideTags": {
     "message": "Hide Tags"
   },

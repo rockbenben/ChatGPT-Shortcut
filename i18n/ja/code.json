@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "キャッシュクリア"
   },
+  "tooltip.exportPrompts": {
+    "message": "作成したすべてのプロンプトを JSON ファイルにエクスポート"
+  },
+  "button.exportPrompts": {
+    "message": "プロンプトをエクスポート"
+  },
+  "message.export.noPrompts": {
+    "message": "エクスポートするプロンプトがありません。後でもう一度お試しください"
+  },
+  "message.export.success": {
+    "message": "プロンプトのエクスポートが成功しました！"
+  },
+  "message.export.error": {
+    "message": "エクスポートに失敗しました。後でもう一度お試しください"
+  },
   "hideTags": {
     "message": "タグを非表示"
   },
@@ -871,15 +886,15 @@
     "message": "スマートなプロンプト、スマートな結果"
   },
   "homepage.title": {
-    "message": "AiShort - AIプロンプトテンプレート | 生産性向上の実証済みプロンプト | AIの可能性を最大限に"
+    "message": "AiShort - AI プロンプトテンプレート | 生産性向上の実証済みプロンプト | AI の可能性を最大限に"
   },
   "homepage.description": {
-    "message": "AIで思うような結果が得られない？AiShortなら文章作成・コーディング・翻訳に実証済みのAIプロンプトテンプレートをコピー&ペーストで即活用！"
+    "message": "AI で思うような結果が得られない？AiShort なら文章作成・コーディング・翻訳に実証済みの AI プロンプトテンプレートをコピー&ペーストで即活用！"
   },
   "community.title": {
-    "message": "AIプロンプトコミュニティ - 共有・学習・最適化 | AiShort Hub"
+    "message": "AI プロンプトコミュニティ - 共有・学習・最適化 | AiShort Hub"
   },
   "community.description": {
-    "message": "本当に理解してくれるAIが欲しい？AiShortコミュニティでプロンプトを共有・発見・改善して、より高い精度と創造性を一緒に解き放とう"
+    "message": "本当に理解してくれる AI が欲しい？AiShort コミュニティでプロンプトを共有・発見・改善して、より高い精度と創造性を一緒に解き放とう"
   }
 }

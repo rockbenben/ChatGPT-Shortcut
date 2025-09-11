@@ -2,10 +2,10 @@ import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
 import { Form, Input, Button, message, Modal, Typography, Switch, Spin, Tooltip, Space } from "antd";
-import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled } from "@ant-design/icons";
+import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
-import { submitPrompt, clearUserAllInfoCache } from "@site/src/api";
+import { submitPrompt, clearUserAllInfoCache, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 
 const AddPromptModal = ({ open, setOpen, onFinish, loading }) => {
@@ -148,6 +148,52 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     [refreshUserAuth, messageApi]
   );
 
+  const handleExportPrompts = useCallback(async () => {
+    try {
+      if (!userAuth?.data?.userprompts || userAuth.data.userprompts.length === 0) {
+        messageApi.warning(<Translate id="message.export.noPrompts">暂无提示词可导出，请稍后重试</Translate>);
+        return;
+      }
+
+      // 获取完整的用户提示词数据
+      const userPromptsData = await getPrompts("userprompts", userAuth.data.userprompts);
+
+      // 准备导出数据
+      const exportData = {
+        exportTime: new Date().toISOString(),
+        totalCount: userPromptsData.length,
+        prompts: userPromptsData.map((prompt) => ({
+          id: prompt.id,
+          title: prompt.title,
+          description: prompt.description,
+          remark: prompt.remark || "",
+          notes: prompt.notes || "",
+          createdAt: prompt.createdAt,
+          updatedAt: prompt.updatedAt,
+          share: prompt.share,
+        })),
+      };
+
+      // 创建并下载 JSON 文件
+      const dataStr = JSON.stringify(exportData, null, 2);
+      const dataBlob = new Blob([dataStr], { type: "application/json" });
+      const url = URL.createObjectURL(dataBlob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `my-prompts-${new Date().toISOString().split("T")[0]}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      messageApi.success(<Translate id="message.export.success">提示词导出成功！</Translate>);
+    } catch (error) {
+      console.error("Export error:", error);
+      messageApi.error(<Translate id="message.export.error">导出失败，请稍后重试</Translate>);
+    }
+  }, [userAuth, messageApi]);
+
   const handleLogout = useCallback(async () => {
     if (ExecutionEnvironment.canUseDOM) {
       localStorage.removeItem("auth_token");
@@ -174,6 +220,15 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         <a className="button button--primary" onClick={() => setOpen(true)}>
           <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
         </a>
+        {!hideLinks.userCenter && (
+          <Tooltip title={<Translate id="tooltip.exportPrompts">导出您创建的所有提示词到 JSON 文件</Translate>}>
+            <Button icon={<DownloadOutlined />} onClick={handleExportPrompts} style={{ color: "gray" }}>
+              <span className="hideOnSmallScreen">
+                <Translate id="button.exportPrompts">导出提示词</Translate>
+              </span>
+            </Button>
+          </Tooltip>
+        )}
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
           <Button icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
             <span className="hideOnSmallScreen">
