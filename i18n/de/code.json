@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "Cache löschen"
   },
+  "tooltip.exportPrompts": {
+    "message": "Exportieren Sie alle Ihre erstellten Eingabeaufforderungen in eine JSON-Datei"
+  },
+  "button.exportPrompts": {
+    "message": "Eingabeaufforderungen exportieren"
+  },
+  "message.export.noPrompts": {
+    "message": "Keine Eingabeaufforderungen zum Exportieren, bitte versuchen Sie es später erneut"
+  },
+  "message.export.success": {
+    "message": "Eingabeaufforderungen erfolgreich exportiert!"
+  },
+  "message.export.error": {
+    "message": "Export fehlgeschlagen, bitte versuchen Sie es später erneut"
+  },
   "hideTags": {
     "message": "Tags ausblenden"
   },

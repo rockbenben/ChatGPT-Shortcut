@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "Cancella la cache"
   },
+  "tooltip.exportPrompts": {
+    "message": "Esporta tutti i tuoi prompt creati in un file JSON"
+  },
+  "button.exportPrompts": {
+    "message": "Esporta Prompt"
+  },
+  "message.export.noPrompts": {
+    "message": "Nessun prompt da esportare, riprova più tardi"
+  },
+  "message.export.success": {
+    "message": "Prompt esportati con successo!"
+  },
+  "message.export.error": {
+    "message": "Esportazione fallita, riprova più tardi"
+  },
   "hideTags": {
     "message": "Nascondi Tag"
   },

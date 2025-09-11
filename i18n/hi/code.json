@@ -849,6 +849,21 @@
   "button.clearCache": {
     "message": "कैश को साफ़ करें"
   },
+  "tooltip.exportPrompts": {
+    "message": "अपने सभी बनाए गए प्रॉम्प्ट को JSON फ़ाइल में निर्यात करें"
+  },
+  "button.exportPrompts": {
+    "message": "प्रॉम्प्ट निर्यात करें"
+  },
+  "message.export.noPrompts": {
+    "message": "निर्यात करने के लिए कोई प्रॉम्प्ट नहीं, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.export.success": {
+    "message": "प्रॉम्प्ट सफलतापूर्वक निर्यात किए गए!"
+  },
+  "message.export.error": {
+    "message": "निर्यात असफल, कृपया बाद में पुनः प्रयास करें"
+  },
   "hideTags": {
     "message": "टैग छुपाएं"
   },
