@@ -84,33 +84,7 @@
   ],
   "headers": [
     {
-      "source": "/**/*.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
-      ]
-    },
-    {
-      "source": "/**/*.css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Vary",
-          "value": "Accept-Encoding"
-        }
-      ]
-    },
-    {
-      "source": "/**/*.ico",
+      "source": "/assets/*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -119,7 +93,16 @@
       ]
     },
     {
-      "source": "/**/*.svg",
+      "source": "/*.ico",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/*.svg",
       "headers": [
         {
           "key": "Cache-Control",
