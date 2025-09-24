@@ -1,71 +1,79 @@
-# Implantar
+---
+sidebar_label: Implantação
+title: Guia de Implantação e Personalização | Configure o AI Short com Facilidade
+description: Aprenda a implantar e personalizar rapidamente seu projeto AI Short. Este guia aborda a implantação com Vercel, Cloudflare, Docker e localmente, além de como editar conteúdo e habilitar atualizações automáticas.
+---
+
+# Implantação do Projeto
 
 ## Configuração e Personalização
 
-AI Short é um projeto de código aberto que você pode personalizar conforme suas necessidades. Abaixo estão as opções de personalização comuns e suas instruções:
+O AI Short é um projeto de código aberto, e você pode modificar livremente o título do site, a descrição, os prompts e muito mais. Abaixo estão as opções comuns de personalização:
 
-- **Alterar Título e Descrição do Site**  
-  Para atualizar o título e a descrição do site, edite o arquivo de configuração `docusaurus.config.js`.
+- **Editar o título e a descrição do site**  
+    Atualize o arquivo `docusaurus.config.js`.
 
-- **Modificar Instruções de Uso e Introdução**  
-  As instruções de uso e a introdução do projeto podem ser encontradas no diretório `docs`. Abra os arquivos relevantes e faça as alterações necessárias.
+- **Editar instruções de uso e documentos**  
+    Todos os arquivos de documentação estão localizados no diretório `docs`. Abra e modifique o arquivo relevante conforme necessário.
 
-- **Alterar Prompt da Página Inicial**  
-  Os prompts da página inicial são armazenados no arquivo `src/data/prompt.json`. Para modificar prompts em idiomas específicos, como o português, edite diretamente o arquivo `src/data/prompt_pt.json`. Para adicionar um novo prompt, use o seguinte formato:
+- **Editar prompts da página inicial**  
+    Os prompts da página inicial são armazenados em `src/data/prompt.json`.  
+    Para idiomas específicos (por exemplo, chinês), edite `src/data/prompt_zh.json`.  
+    Formato de exemplo para um novo prompt:
 
-  ```json
-  {
-    "pt": {
-      "title": "custom prompt",
-      "prompt": "custom prompt",
-      "description": "custom description",
-      "remark": "custom mark"
-    },
-    "website": null,
-    "tags": [
-      "music"
-    ],
-    "id": 500, 
-    "weight": 1
-  }
-  ```
+`json
+  {
+    "zh": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": ["music"],
+    "id": 500,
+    "weight": 1
+  }
+  `
 
-  **Observação**: Recomenda-se definir o `id` como 500 ou superior. Novos prompts não terão páginas ou seções de comentários dedicadas. Se você deseja uma página dedicada para um prompt, pode copiar os arquivos de modelo do diretório `src/data/pages/prompt` e modificá-los.
+**Nota**: Use `id >= 500` para novos prompts. Eles não terão páginas ou comentários dedicados.
+Se você quiser uma página dedicada, copie um arquivo de modelo de `src/data/pages/prompt` e modifique-o.
 
-- **Personalizar Backend**  
-  O projeto está atualmente conectado a um sistema de backend compartilhado. Se você deseja configurar seu próprio backend, consulte a documentação da API no arquivo `src/api.js`.
+- **Backend personalizado**
+    O projeto está atualmente vinculado a um backend compartilhado.
+    Para configurar o seu próprio, verifique os detalhes da API em `src/api.js`.
 
-- **Suporte Multilíngue e Implantação**  
-  Após atualizar os arquivos de idioma, você pode usar o script `CodeUpdateHandler.py` para processamento em lote. Execute o seguinte comando:
+- **Suporte a vários idiomas**
+    Após atualizar os arquivos de idioma, execute o script `CodeUpdateHandler.py` para processamento em lote:
 
-  ```bash
-  python CodeUpdateHandler.py
-  ```
+`bash
+  python CodeUpdateHandler.py
+  `
 
-  Este script irá dividir o arquivo `prompt.json` com base nas regras predefinidas e atualizar a página inicial e a página de prompts em destaque para todas as versões de idioma.
+Este script dividirá o `prompt.json` e sincronizará as atualizações com as páginas de prompts principais e em destaque de cada idioma.
 
-## Instruções de Deploy
+## Guia de Implantação
 
-Requisitos do Sistema:
+**Requisitos do sistema**:
 
-- [Node.js 18.0](https://nodejs.org/) ou versão superior.
-- macOS, Windows (incluindo WSL) e Linux são compatíveis.
+- [Node.js 18.0+](https://nodejs.org/)
+- macOS, Windows (incluindo WSL) ou Linux
 
-### Deploy Local
+### Implantação Local
 
-Certifique-se de que você tem o [Node.js](https://nodejs.org/) instalado.
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
 
-```shell
-# Instalação
+```bash
+# Instalar dependências
 yarn
 
-# Desenvolvimento Local
+# Desenvolvimento local
 yarn start
 
-# Build: Este comando gera o conteúdo estático no diretório `build`
+# Construir arquivos estáticos
 yarn build
 
-# Atualize o `defaultLocale` no arquivo `docusaurus.config.js`, e em seguida faça o build para o idioma desejado.
+# Construir para múltiplos locais
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -80,44 +88,47 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Deploy para múltiplos idiomas
+# Exemplo: construir para dois idiomas
 yarn build --locale zh && yarn build --locale en
 ```
 
-### Deploy no Vercel
+### Implantação com Vercel
 
-Clique no botão abaixo para fazer o deploy do ChatGPT-Shortcut na plataforma Vercel com um clique:
+Clique abaixo para implantar o ChatGPT-Shortcut na Vercel com um clique:
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-**Atenção**: A versão gratuita do Vercel pode apresentar erros devido à falta de memória. Se isso ocorrer, você pode optar por realizar o deploy de uma versão com um único idioma. Os passos são os seguintes:
+**Nota**: O plano gratuito da Vercel pode ficar sem memória. Nesse caso, implante apenas um único idioma.
 
-1. Acesse o projeto recém-deployado no Vercel e abra as **Configurações**.
-2. Na seção **Build & Deployment**, encontre **Build Command** e clique em **Override** à direita.
-3. Modifique o comando de deploy. Por exemplo, para deploy da versão em chinês, use `yarn build --locale zh`; para a versão em português, use `yarn build --locale pt`.
+Passos:
 
-## Deploy no Cloudflare Pages
+1.  Vá para o seu projeto implantado na Vercel → **Settings**.
+2.  Em **Build & Deployment**, encontre **Build Command** → clique em **Override**.
+3.  Defina o comando de construção, por exemplo:
 
-Clique no botão ou link abaixo para fazer o fork deste projeto e depois siga as instruções para realizar o deploy no Cloudflare Pages:
+- Para chinês: `yarn build --locale zh`
+   - Para português: `yarn build --locale pt`
 
-👉 [Fork este projeto](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+### Implantação com Cloudflare Pages
 
-Passos para o Deploy:
+👉 [Faça um fork do repositório](https://github.com/rockbenben/ChatGPT-Shortcut/fork), em seguida, implante via Cloudflare Pages:
 
-1. Faça login no [Cloudflare Pages](https://pages.cloudflare.com/) e selecione **"Create a project"**.
-2. Conecte o repositório que você acabou de forkar.
-3. Configure o comando de build:
-   - **Build command**: `yarn build --locale zh` (escolha o locale adequado para o idioma que você quer deployar; para o português, use `yarn build --locale pt`).
-   - **Output directory**: `build`.
-4. Clique em **Deploy** e aguarde o Cloudflare Pages finalizar o processo de build e deploy.
+1.  Faça login no [Cloudflare Pages](https://pages.cloudflare.com/) e escolha **Create a project**.
+2.  Conecte seu repositório forkado.
+3.  Configure as definições de compilação:
 
-O Cloudflare Pages também irá disparar automaticamente o build e o deploy sempre que você enviar novos códigos.
+- **Build command**: `yarn build --locale zh` (ou outro idioma)
+   - **Output directory**: `build`
 
-### Implantação do Docker
+4.  Implante e aguarde a conclusão da compilação.
 
-Se você estiver familiarizado com o Docker, poderá implantar rapidamente com o seguinte comando:
+O Cloudflare Pages será reimplantado automaticamente quando você enviar novos commits.
 
-```shell
+### Implantação com Docker
+
+Execute com o Docker:
+
+```bash
 # ghcr.io
 docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-shortcut:latest
 
@@ -125,40 +136,42 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-sh
 docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:latest
 ```
 
-Alternativamente, você pode usar `docker-compose`:
+Ou com `docker-compose`:
 
 ```yml
-version: "3.8"
-
 services:
-chatgpt-shortcut:
-container_name: chatgpt-shortcut
-image: ghcr.io/rockbenben/chatgpt-shortcut:latest
-ports:
-- "3000:3000"
-restart: unless-stopped
+  chatgpt-shortcut:
+    container_name: chatgpt-shortcut
+    image: ghcr.io/rockbenben/chatgpt-shortcut:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
 ```
 
-## Atualizações sincronizadas
+## Habilitar Atualização Automática
 
-Se você implantou seu próprio projeto no Vercel com um único clique, pode encontrar um problema em que as atualizações são consistentemente indicadas. Isso surge do comportamento padrão do Vercel de criar um novo projeto para você em vez de bifurcar o projeto atual, impedindo assim a detecção adequada de atualizações. É recomendável seguir as etapas subsequentes para a reimplantação:
+Se você usou a implantação de um clique da Vercel, pode ver "atualizações disponíveis" com frequência.
+Isso ocorre porque a Vercel cria um novo repositório em vez de um fork, quebrando a sincronização.
 
-1. Remova o repositório anterior.
-2. Utilize o botão "fork" localizado no canto superior direito da página para bifurcar o projeto atual.
-3. Na [página Vercel New Project](https://vercel.com/new), selecione o projeto bifurcado recentemente na seção Import Git Repository e prossiga com a implantação.
+**Correção:**
+
+1.  Exclua o repositório antigo.
+2.  Faça um fork deste projeto diretamente (use o botão de fork).
+3.  Reimplante a partir do seu fork através da [página de novo projeto do Vercel](https://vercel.com/new).
 
 ### Atualizações Automáticas
 
-> No caso de encontrar um erro durante a execução do Upstream Sync, execute manualmente um único Sync Fork.
+> Se você vir erros com **Upstream Sync**, execute **Sync Fork** manualmente uma vez.
 
-Depois de bifurcar o projeto, devido às restrições do GitHub, é necessário habilitar manualmente os Workflows na página Actions do seu projeto bifurcado e ativar a Upstream Sync Action. Após a ativação, as atualizações serão executadas automaticamente diariamente.
+Após fazer o fork, o GitHub exige que você habilite os fluxos de trabalho manualmente:
 
-![Atualizações automáticas](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+- Vá para **Actions** no seu fork
+- Habilite os fluxos de trabalho, especialmente o **Upstream Sync Action**.
 
-![Habilitando atualizações automáticas](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+Isso será executado diariamente para buscar as atualizações do upstream.
 
-### Atualizações manuais
+### Atualizações Manuais
 
-Se você deseja atualizar manualmente imediatamente, pode consultar a [documentação do GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) para aprender como sincronizar o projeto bifurcado com o código upstream.
+Para atualizações imediatas, verifique a [documentação do GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) sobre como sincronizar forks.
 
-Sinta-se à vontade para mostrar apoio a este projeto dando uma estrela/seguindo, ou seguindo o autor, para se manter informado sobre notificações oportunas sobre novas atualizações de recursos.
+⭐ Dê uma estrela / 👀 Acompanhe este projeto ou siga o autor para ser notificado sobre novos recursos.

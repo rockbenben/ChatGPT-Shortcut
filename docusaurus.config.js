@@ -147,7 +147,7 @@ const config = {
                 href: "https://prompt.newzone.top/app",
               },
               {
-                label: "文字处理",
+                label: "ToolsByAI",
                 href: "https://tools.newzone.top/",
               },
               {
@@ -170,28 +170,38 @@ const config = {
                 to: "/feedback",
               },
               {
-                label: "💬 加入 QQ 群",
-                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
+                label: "✈️ Telegram",
+                href: "https://t.me/aishort_top",
               },
               {
                 label: "📺 加入 Discord",
                 href: "https://discord.gg/PZTQfJ4GjX",
+              },
+              {
+                label: "💬 加入 QQ 群",
+                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
               },
             ],
           },
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
-            title: "QQ Group",
-            href: "https://qm.qq.com/q/sHgB9eqd6E",
+            title: "Telegram",
+            href: "https://t.me/aishort_top",
             position: "right",
-            className: "header-qq-link",
+            className: "header-tg-link",
           },
           {
             title: "Discord",
             href: "https://discord.gg/PZTQfJ4GjX",
             position: "right",
             className: "header-discord-link",
+          },
+          {
+            title: "QQ Group",
+            href: "https://qm.qq.com/q/sHgB9eqd6E",
+            position: "right",
+            className: "header-qq-link",
           },
           {
             title: "GitHub",

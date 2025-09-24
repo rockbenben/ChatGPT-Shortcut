@@ -1,29 +1,36 @@
 ---
 slug: /
+description: Explorez AiShort, une communauté d'invites IA sélectionnées. Nous fournissons des invites prêtes à l'emploi pour les grands modèles d'IA, prenant en charge plusieurs langues, des collections et des fonctionnalités de vote communautaire, conçues pour vous aider à simplifier votre flux de travail et à augmenter facilement votre productivité.
 ---
 
-# Présentation
+# Introduction
 
-AiShort fournit une liste concise et facile à utiliser d'instructions AI. Même sans comprendre les invites, vous pouvez facilement trouver les invites adaptées à divers scénarios en filtrant et en cherchant, améliorant ainsi votre productivité.
+AiShort (Raccourci ChatGPT) fournit une liste concise et facile à utiliser d'invites pour l'IA. Il est conçu pour aider les utilisateurs à trouver rapidement des invites adaptées à divers scénarios, ce qui le rend facile à utiliser même pour les débutants et améliore de manière globale leur efficacité dans l'apprentissage et le travail.
 
-🚀 **Invitations en un clic** : En un seul clic, vous pouvez obtenir une variété d'invitations soigneusement sélectionnées par des experts. Envoyez-les à des modèles de langage AI comme ChatGPT et vous pouvez obtenir la sortie attendue.
+🚀 **Invites en un clic** : Une sélection de diverses invites professionnelles. En un seul clic, vous pouvez les envoyer à des modèles d'IA comme ChatGPT et obtenir rapidement les réponses souhaitées.
 
-💻 **Augmenter la productivité** : En utilisant des invites optimisées, vous pouvez obtenir des commentaires plus précis et pratiques, améliorant ainsi efficacement votre efficacité de travail.
+💻 **Augmentez votre productivité** : Utilisez des invites optimisées pour obtenir des retours plus précis et pratiques, et accomplissez efficacement vos tâches d'apprentissage et de travail.
 
-🌍 **Optimisation pour les langues non anglaises** : Nous fournissons des traductions pour les invitations en anglais dans 12 principales langues mondiales, et prenons en charge les réponses par défaut dans votre langue maternelle, ce qui est pratique pour les locuteurs non anglophones à comprendre et à utiliser.
+🌍 **Support multilingue** : Fournit des traductions pour les invites en anglais dans 12 langues principales et prend en charge les réponses par défaut dans votre langue maternelle, permettant aux utilisateurs non anglophones de l'utiliser sans barrière.
 
-💾 **Sauvegarder des invites** : Collectez, éditez et gérez facilement vos invitations préférées pour une utilisation future.
+💾 **Collecter & Éditer** : Vous pouvez collecter, éditer et gérer vos invites préférées à tout moment pour une utilisation future.
 
-🌐 **Partager des invites** : Partagez vos invitations préférées, collaborez avec d'autres, et inspirez plus d'idées.
+📤 **Exporter & Sauvegarder** : Exportez toutes vos invites en un seul clic, avec prise en charge du format JSON pour la sauvegarde, ce qui facilite la migration et la sauvegarde locale.
 
-🗳️ **Système de vote communautaire** : Semblable à Product Hunt ou Reddit, la plateforme est pilotée par la communauté. Les meilleures invitations seront poussées sur la page d'accueil.
+🌟 **Partager des invites** : Partagez vos invites préférées avec d'autres pour inspirer plus de créativité et d'idées.
 
-📦 **Prêt à l'emploi** : Il suffit de visiter https://www.aishort.top/fr/ pour commencer à utiliser.
+🗳️ **Vote de la communauté** : Similaire à Product Hunt ou Reddit, piloté par les votes de la communauté, les excellentes invites seront recommandées sur la page d'accueil.
 
-La source des invitations AiShort comprend les sélections sur Internet, les partages de la communauté et [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nous mettrons à jour régulièrement pour vous fournir de nouvelles invitations et de l'inspiration.
+📦 **Prêt à l'emploi** : Aucune configuration complexe n'est nécessaire. Visitez [aishort.top](https://www.aishort.top/fr/) pour commencer à l'expérimenter immédiatement.
 
-Bienvenue à rejoindre notre communauté Discord pour échanger des idées et des commentaires.
+Les invites pour AiShort (Raccourci ChatGPT) proviennent de sélections en ligne, de partages de la communauté et de [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nous les mettons à jour régulièrement pour vous apporter continuellement de nouvelles invites et de l'inspiration. Pour des instructions détaillées, veuillez consulter le [Guide de l'utilisateur](https://www.aishort.top/fr/docs/guides/getting-started).
+
+Bienvenue à rejoindre notre communauté pour échanger des idées et des commentaires :
+
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+</a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>

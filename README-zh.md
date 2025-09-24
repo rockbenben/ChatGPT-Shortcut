@@ -21,25 +21,31 @@
 
 ## Why use AiShort?
 
-AiShort 提供一份简洁易用的 AI 指令列表，即使不了解提示词知识，也可以轻松地通过筛选和查询找到适合各种场景的提示词，从而提升你的生产力。
+AiShort(ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，旨在帮助用户快速找到适用于不同场景的提示词，即使是提示词新手，也能轻松使用，全面提升学习和工作的效率。
 
-🚀 **一键提示词**：只需一键，即可获取由专家精选的各种提示词，发送给 ChatGPT 等 AI 语言模型，即可获得预期输出。
+🚀 **一键提示词**：精选各类专业提示词，只需一键操作即可发送给 ChatGPT、DeepSeek 等 AI 模型，快速获得理想答案。
 
-💻 **提升生产力**：通过使用优化过的提示词，你可以获得更精确、实用的反馈，从而有效提升生产效率。
+💻 **提升生产力**：使用优化后的提示词，获得更精准、实用的反馈，高效完成学习和工作任务。
 
-🌍 **非英语优化**：为英文提示词提供了 12 种全球主流语言的翻译，并支持默认使用你的母语回复，从而方便非英语母语的用户理解和使用。
+🌍 **多语言支持**：为英文提示词提供 12 种主流语言翻译，并支持默认使用母语回复，让非英语用户也能无障碍使用。
 
-💾 **收藏提示词**：方便地收藏、编辑和管理你喜欢的提示词，以便将来使用。
+💾 **收藏与编辑**：可随时收藏、编辑和管理喜欢的提示词，方便日后调用。
 
-🌐 **分享提示词**：分享你最喜欢的提示词，与他人协作，激发更多灵感。
+📤 **导出备份**：一键导出所有提示词，支持 JSON 格式备份，方便迁移和本地保存。
 
-🗳️ **社区投票系统**：与 Product Hunt 或 Reddit 类似，平台由社区驱动，最佳提示词将推送至首页。
+🌟 **分享提示词**：与他人分享你喜欢的提示词，激发更多创意与灵感。
 
-📦 **开箱即用**：只需访问 https://www.aishort.top/ ，即可开始使用。
+🗳️ **社区投票**：类似 Product Hunt 或 Reddit，由社区投票驱动，优秀提示词将推荐至首页。
 
-AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。我们会定期更新，为你提供新的提示词和启发。如需了解如何使用 AiShort，请查阅我们的[使用手册](https://www.aishort.top/docs/guides/getting-started)。如需了解本项目的开发背景和初衷，你可以阅读 [AiShort 开发博客](https://newzone.top/posts/2023-02-27-chatgpt_shortcuts.html)。
+📦 **开箱即用**：无需复杂配置，访问 [aishort.top](https://www.aishort.top/) 即可立即体验。
 
-欢迎加入我们的 Discord 和 QQ 群，一起交流想法和反馈。
+AiShort(ChatGPT Shortcut) 的提示词来源于网络精选、社区分享，以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。我们会定期更新，持续为你带来新的提示词和灵感。如需了解详细使用方法，请查看[使用手册](https://www.aishort.top/docs/guides/getting-started)。
+
+欢迎加入我们的社群，与大家一起交流想法与反馈：
+
+<a href="https://t.me/aishort_top">
+   <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+</a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
@@ -49,19 +55,18 @@ AiShort 的提示词来源包括网络精选、社区分享以及 [Awesome ChatG
 
 ## 浏览器扩展
 
-AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基于 Chromium 的浏览器。这款扩展不仅具备网页版 ChatGPT Shortcut 的功能，还增添了如侧边栏和自动激活窗口等独特特性。该扩展能够随 ChatGPT 或自定义页面自动启动，同时支持通过 `Alt+Shift+S` 快捷键手动激活。以下为下载渠道：
+AiShort（ChatGPT Shortcut）扩展可以帮助您随时调用 AIShort 提示词库，提升工作与学习效率。它支持 Chrome、Edge、Firefox 等主流浏览器，并提供侧边栏与快捷键功能，您可以通过 `Alt + Shift + S` 快速唤出插件。以下为下载渠道：
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **国内下载**: [蓝奏云](https://wwva.lanzouq.com/b01lsc9vi),密码:1qow
 
 此外，我们还提供了油猴脚本——[**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)，该脚本允许用户自定义匹配域名，在任意网站上使用 AiShort 侧边栏。但需注意，由于 ChatGPT 页面的脚本内容注入限制，脚本的侧边栏功能在 ChatGPT 页面上是通过弹窗来激活的。
 
 ## Deploy
 
-关于如何通过 Vercel、本地环境、Docker 进行部署，以及项目修改的详细步骤，请参考[ChatGPT Shortcut 部署说明](https://www.aishort.top/docs/deploy)。
+关于如何通过 本地环境、Vercel、Cloudflare、Docker 进行部署，以及项目修改的详细步骤，请参考 [ChatGPT Shortcut 部署说明](https://www.aishort.top/docs/deploy)。
 
 ## 开启同步更新
 
@@ -83,17 +88,6 @@ AiShort（ChatGPT Shortcut）扩展兼容 Chrome、Edge、Firefox 及其他基�
 
 ### 手动更新代码
 
-如果想手动立即更新，可以查看 [GitHub 的文档](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)，了解如何让 fork 的项目与上游代码同步。
+如果想手动立即更新，可以查看 [GitHub 文档](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)，了解如何让 fork 的项目与上游代码同步。
 
-你可以给本项目点赞（star）/关注（watch），或者关注作者，以便及时获得新功能更新通知。
-
-## 网站修改
-
-AI Short 是一个开源项目，你可以自由修改网站的名称和说明。
-
-- 要更改页面名称，请编辑 `docusaurus.config.js` 文件。
-- 要修改使用说明，请前往 `docs` 目录。
-- 若要修改提示词，你可以在 `src/data/prompt.json` 中找到它们。如果你只需要修改单个语言，比如中文，可以直接编辑 `src/data/prompt_zh.json`。
-- 目前，用户后端已连接到一个共用后台系统。如果需要，你可以自行建立后端，相关接口位于 `src/api.js` 文件中。
-
-`CodeUpdateHandler.py` 是用于批量处理多语言部署的脚本。完成修改后，执行 `python CodeUpdateHandler.py`，它将根据规则将 `prompt.json` 拆分为多种语言，并同步各语言的主页面代码以及精选提示词的独立页面代码。
+⭐ Star / 👀 关注此项目或关注作者，以便及时获得新功能更新通知。
