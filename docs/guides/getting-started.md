@@ -1,16 +1,16 @@
 ---
 sidebar_label: 开始上手
 title: AiShort 新手入门指南 | 如何复制和使用提示词
-description: 刚开始使用 AiShort？本快速入门指南将教您如何轻松复制提示词，并将其应用于 ChatGPT、Gemini、Claude 等主流 AI 模型，立即开启您的高效 AI 对话体验。  
+description: 刚开始使用 AiShort？本快速入门指南将教您如何轻松复制提示词，并将其应用于 ChatGPT、Gemini、DeepSeek 等主流 AI 模型，立即开启您的高效 AI 对话体验。
 ---
 
 # 开始上手
 
-使用 AiShort，只需将选中的提示词复制到任意 AI 对话模型中，即可获取指定方向的输出。以下是具体步骤：
+在与 AI 对话时，好的提示词能帮助你更快获得高质量的回答。AiShort 为你整理了大量实用提示词，你只需复制粘贴即可使用。以下是具体步骤：
 
-1. 搜索或选择你想要的提示词，然后点击提示词上的复制按钮。
-2. 将提示词复制到 ChatGPT、Gemini 或任意 AI 对话模型中。
-3. 根据对话提示，输入你的要求。
+1. 在 AiShort 中搜索或选择你需要的提示词，然后点击提示词右侧的复制按钮。
+2. 打开任意 AI 对话模型（如 ChatGPT、Gemini、DeepSeek，或免费工具 [chat.newzone.top](https://chat.newzone.top/)），将复制的提示词粘贴进去。
+3. 按照提示词的指引，补充你的具体问题或需求，即可获得定制化的回答。
 
 ![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
 

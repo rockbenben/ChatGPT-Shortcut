@@ -1,39 +1,70 @@
-# Interface Description
+---
+sidebar_label: Interface
+title: AiShort Interface Guide | Master Search, Filters & Language Switching
+description: How to use the AiShort interface effectively? This guide explains core features like tag filters, keyword search, multi-language switching, and popularity ranking to help you quickly find the right AI prompts.
+---
 
-AiShort defaults to displaying all the suggested words. The page is divided into three sections: the tag area, the search area, and the suggested words display area.
+# Interface Overview
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+The AiShort interface provides an intuitive way to browse and filter prompts, helping you find exactly what you need. The page is divided into three main sections: **Tags**, **Search**, and **Prompt Display**, designed to give you an efficient and user-friendly search experience.
 
-## 🏷︎ Tag Filtering
+![](https://img.newzone.top/2024-03-07-04-56-01.png?imageMogr2/format/webp)
 
-The tag area is divided based on the domain and functionality of the suggested words, allowing for selection based on different scenarios and needs. It can be used in conjunction with the "Tag Filtering Rule Toggle" button in the upper right corner of the tag area to perform multi-tag filtering. The default state is OR, which selects all the suggested words under the chosen tag. Switching to AND will filter out the suggested words that have multiple selected tags.
+## 🏷︎ Tag Filters
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+The tag area allows you to filter prompts by domain or function, making it easier to match your specific scenario.  
+Use the **“Tag Filter Mode”** switch (top-right) to choose between two modes:
+
+- **OR (default):** shows prompts with _any_ of the selected tags.
+- **AND:** shows only prompts that include _all_ selected tags.
+
+![](https://img.newzone.top/2023-02-28-10-31-01.png?imageMogr2/format/webp)
 
 ## 🔍 Keyword Search
 
-The keyword search scope includes the titles, summaries, content, and translations in your native language of the suggested words. After entering a keyword, the suggested words display area will immediately show the filtered content. If tags have been selected, the keyword search will be limited to the scope of the selected tags. On the PC side, after the content in the search box changes, the new search results will be displayed after 800 milliseconds. On mobile devices, it updates instantly.
+The search bar supports searching through prompt titles, descriptions, content, and translations. Results update instantly based on your input:
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+- On desktop: results refresh **800 ms** after typing stops.
+- On mobile: results update immediately.
+- If tags are selected, the search is limited within those tags.
 
-After you log in, the search scope will include the prompts you submitted and collected.
+![](https://img.newzone.top/2023-02-28-10-31-10.png?imageMogr2/format/webp)
+
+When logged in, search results also include your own submitted and favorited prompts.
 
 ![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
 
-## 🔬 Prompt Copy
+## 📤 Data Management
 
-Through tag filtering and keyword search, clicking the "Copy" button in the upper right corner of the card allows you to obtain the suggested words. After pasting them into ChatGPT, you can refer to the suggestions and adjust the text according to your specific needs to obtain a reply in the desired domain. If the native language explanation in the suggested words is not clear, you can click the link in the lower right corner of the suggested words to view the source webpage.
+Logged-in users can access **Data Management** from the personal center:
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+- **Export Prompts**: One-click export of all your custom prompts as a JSON file for backup or migration.
+- **Clear Cache**: Reset local cache to sync the latest favorites and prompt data.
+
+These features help you better manage and protect your personal data.
+
+## 🔬 Copy from Display
+
+After filtering or searching, click the **Copy** button on the top-right of any prompt card to get the text.  
+Paste the prompt into ChatGPT or another AI model to generate domain-specific responses.
+
+If the native-language description is unclear, you can click the link at the bottom-right of the card to view the original source page.
+
+![](https://img.newzone.top/2023-06-11-17-10-37.png?imageMogr2/format/webp)
 
 ## 💬 Language Switching
 
-By default, the suggested words are displayed in English. If you are using a non-English page and want to view the interpretations in your native language, please click on the suggested words content to switch to a non-English language, and click again to switch back to English. Please note that language switching only works when clicking on the text in the prompt, and clicking in the blank area is ineffective.
+By default, prompts are shown in **English**. Non-English users can click the prompt text area to toggle between English and their native-language translation.
 
-![Switching between Chinese and English](http://img.newzone.top/chatgptshortcut_encn.gif)
+- First click → switch to native language
+- Second click → switch back to English
 
-If you want the suggested words to be displayed in your native language by default, you can click the "Switch Prompt Language" button in the upper right corner of the tag area. However, please note that even when switching to native language translations, the copy button only copies the English suggested words.
+![Language Switching](https://img.newzone.top/chatgptshortcut_encn.gif?imageMogr2/format/webp)
 
-## 🔥 Popular Sorting
+If you prefer prompts to always display in your native language, use the **“Switch Prompt Language”** button in the tag area (top-right).  
+**Note:** even in native mode, the **Copy** button always copies the English prompt text.
 
-The page now displays the frequency of prompt usage, and prompts with higher usage frequency will be marked as "favorite". Additionally, the sorting of prompt tags will be primarily based on the heat value. The heat value will be periodically updated.
+## 🔥 Popularity Ranking
+
+Prompts are ranked by usage frequency, helping you quickly discover the most popular ones.  
+Tag rankings also adjust dynamically based on popularity, updated regularly to reflect the latest community trends.
