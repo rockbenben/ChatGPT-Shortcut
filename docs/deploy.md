@@ -1,7 +1,7 @@
 ---
 sidebar_label: 项目部署
 title: 项目部署与自定义指南 | 轻松配置 AI Short
-description: 如何快速部署和自定义您的 AI Short 项目？本指南提供详细的 Vercel、Cloudflare、Docker 及本地部署教程，并教您如何修改网站内容与开启自动更新。  
+description: 如何快速部署和自定义您的 AI Short 项目？本指南提供详细的 Vercel、Cloudflare、Docker 及本地部署教程，并教您如何修改网站内容与开启自动更新。
 ---
 
 # 项目部署
@@ -28,10 +28,8 @@ AI Short 是一个开源项目，你可以根据需求自由修改网站的标�
       "remark": "custom mark"
     },
     "website": null,
-    "tags": [
-      "music"
-    ],
-    "id": 500, 
+    "tags": ["music"],
+    "id": 500,
     "weight": 1
   }
   ```
@@ -134,8 +132,6 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:late
 或者，你也可以使用 `docker-compose`：
 
 ```yml
-version: "3.8"
-
 services:
   chatgpt-shortcut:
     container_name: chatgpt-shortcut

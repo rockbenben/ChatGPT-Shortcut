@@ -1,28 +1,31 @@
 ---
 slug: /
+description: Discover AiShort, a curated AI prompt hub. With one-click prompts, multi-language support, favorites, and community voting, AiShort helps you simplify workflows and boost productivity with ease.
 ---
 
 # Introduction
 
-AiShort provides a concise and easy-to-use list of AI instructions. Even without understanding of prompts, you can easily find the prompts suitable for various scenarios through filtering and searching, thus improving your productivity.
+AiShort provides a clean and easy-to-use collection of AI prompts. Even if you’re new to prompt engineering, you can quickly search, filter, and find prompts for various scenarios to improve your productivity.
 
-🚀 **One-click prompts**: With just one click, you can get a variety of prompts carefully selected by experts. Send them to AI language models like ChatGPT and you can get the expected output.
+🚀 **One-Click Prompts**: Explore a curated library of professional prompts. With just one click, send them to ChatGPT or other AI models and get the results you need.
 
-💻 **Boost productivity**: By using optimized prompts, you can get more accurate and practical feedback, thus effectively enhancing your work efficiency.
+💻 **Boost Productivity**: Optimized prompts deliver more accurate and practical responses, helping you work and learn more efficiently.
 
-🌍 **Optimization for Non-English Languages**: We provide translations for English prompts in 12 major global languages, and support default responses in your mother tongue, which is convenient for non-English speakers to understand and use.
+🌍 **Multi-Language Friendly**: English prompts are available in 12 major global languages, and AiShort can reply in your native language by default—perfect for non-English users.
 
-💾 **Save prompts**: Conveniently collect, edit, and manage your favorite prompts for future use.
+💾 **Save Your Favorites**: Easily bookmark, edit, and manage prompts you like for future use.
 
-🌐 **Share prompts**: Share your favorite prompts, collaborate with others, and inspire more ideas.
+📤 **Export & Backup**: Export all your saved prompts in JSON format for data migration or local storage.
 
-🗳️ **Community voting system**: Similar to Product Hunt or Reddit, the platform is community-driven. The best prompts will be pushed to the homepage.
+🌐 **Share Prompts**: Share your favorite prompts with others to spark more creativity and collaboration.
 
-📦 **Ready to use**: Just visit https://www.aishort.top/en/ to start using.
+🗳️ **Community Voting**: Just like Product Hunt or Reddit, the platform is community-driven. The best prompts are voted to the homepage.
 
-The source of AiShort prompts includes internet selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We will regularly update to provide you with new prompts and inspiration.
+📦 **Ready to Use**: Simply visit [https://www.aishort.top/en/](https://www.aishort.top/en/) and get started right away.
 
-Welcome to join our Discord community to exchange ideas and feedback.
+The prompt library comes from curated online resources, community contributions, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We will regularly update to provide you with new prompts and inspiration.
+
+Join our Discord community to share feedback and ideas:
 
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />

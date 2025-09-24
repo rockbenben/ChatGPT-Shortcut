@@ -1,71 +1,79 @@
-# Deploy
+---
+sidebar_label: Deployment
+title: Deployment & Customization Guide | Configure AI Short with Ease
+description: Learn how to quickly deploy and customize your AI Short project. This guide covers Vercel, Cloudflare, Docker, and local deployment, plus how to edit content and enable auto-updates.
+---
 
-## Configuration and Customization
+# Project Deployment
 
-AI Short is an open-source project that you can customize based on your needs. Below are common customization options and instructions:
+## Configuration & Customization
 
-- **Change Website Title and Description**  
-  To update the website's title and description, edit the `docusaurus.config.js` configuration file.
+AI Short is an open-source project, and you can freely modify the site’s title, description, prompts, and more. Below are common customization options:
 
-- **Modify Usage Instructions and Introduction**  
-  The project’s usage instructions and introduction can be found in the `docs` directory. Open the relevant files and make the necessary changes.
+- **Edit site title and description**  
+  Update the `docusaurus.config.js` file.
 
-- **Change Homepage Prompts**  
-  Homepage prompts are stored in the `src/data/prompt.json` file. To modify prompts in specific languages, such as English, edit the `src/data/prompt_en.json` file directly. To add a new prompt, use the following format:
+- **Edit usage instructions and docs**  
+  All documentation files are located in the `docs` directory. Open and modify the relevant file as needed.
+
+- **Edit homepage prompts**  
+  Homepage prompts are stored in `src/data/prompt.json`.  
+  For specific languages (e.g., Chinese), edit `src/data/prompt_zh.json`.  
+  Example format for a new prompt:
 
   ```json
   {
-    "en": {
+    "zh": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
       "remark": "custom mark"
     },
     "website": null,
-    "tags": [
-      "music"
-    ],
-    "id": 500, 
+    "tags": ["music"],
+    "id": 500,
     "weight": 1
   }
   ```
 
-  **Note**: It's recommended to set the `id` to 500 or higher. New prompts won’t have dedicated pages or comment sections. If you want a dedicated page for a prompt, you can copy the template files from `src/data/pages/prompt` and modify them.
+**Note**: Use `id >= 500` for new prompts. These will not have dedicated pages or comments.
+If you want a dedicated page, copy a template file from `src/data/pages/prompt` and modify it.
 
-- **Customize Backend**  
-  The project is currently connected to a shared backend system. If you wish to set up your own backend, refer to the API documentation in the `src/api.js` file.
+- **Custom backend**
+  The project is currently linked to a shared backend.
+  To set up your own, check the API details in `src/api.js`.
 
-- **Multilingual Support and Deployment**  
-  After updating the language files, you can use the `CodeUpdateHandler.py` script for batch processing. Run the following command:
+- **Multi-language support**
+  After updating language files, run the script `CodeUpdateHandler.py` to batch process:
 
   ```bash
   python CodeUpdateHandler.py
   ```
 
-  This script will split the `prompt.json` file based on predefined rules and update the homepage and featured prompts pages for all language versions.
+  This script will split `prompt.json` and sync updates to each language’s main and featured prompt pages.
 
-## Deployment
+## Deployment Guide
 
-System Requirements:
+**System Requirements**:
 
-- [Node.js 18.0](https://nodejs.org/) or later.
-- macOS, Windows (including WSL), and Linux are supported.
+- [Node.js 18.0+](https://nodejs.org/)
+- macOS, Windows (including WSL), or Linux
 
 ### Local Deployment
 
-Make sure you have installed [Node.js](https://nodejs.org/).
+Make sure you have [Node.js](https://nodejs.org/) installed.
 
-```shell
-# Installation
+```bash
+# Install dependencies
 yarn
 
-# Local Development
+# Local development
 yarn start
 
-# Build: This command generates static content into the `build` directory
+# Build static files
 yarn build
 
-# Update the `defaultLocale` in the `docusaurus.config.js` file, then perform a build for the desired language.
+# Build for multiple locales
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -80,42 +88,45 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Deploy for multiple languages
+# Example: build for two languages
 yarn build --locale zh && yarn build --locale en
 ```
 
 ### Vercel Deployment
 
-Click the button below to deploy ChatGPT-Shortcut to the Vercel platform with one click:
+Click below to deploy ChatGPT-Shortcut to Vercel with one click:
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-**Note**: The free tier of Vercel might run into errors due to insufficient memory. In such cases, you can opt for deploying a single language version. The specific steps are as follows:
+**Note**: The free Vercel plan may run out of memory. In that case, deploy a single language only.
 
-1. Go to the Vercel project you just deployed and open **Settings**.
-2. Under **Build & Deployment**, find **Build Command**, and then click **Override** on the right.
-3. Modify the deployment command. For example, to deploy the Chinese version, use `yarn build --locale zh`; for the Portuguese version, use `yarn build --locale pt`.
+Steps:
+
+1. Go to your deployed Vercel project → **Settings**.
+2. Under **Build & Deployment**, find **Build Command** → click **Override**.
+3. Set the build command, e.g.:
+
+   - For Chinese: `yarn build --locale zh`
+   - For Portuguese: `yarn build --locale pt`
 
 ## Cloudflare Pages Deployment
 
-Click the button or link below to fork this project, then follow the instructions to deploy it on Cloudflare Pages:
+👉 [Fork the repo](https://github.com/rockbenben/ChatGPT-Shortcut/fork), then deploy via Cloudflare Pages:
 
-👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/), choose **Create a project**.
+2. Connect your forked repo.
+3. Configure build settings:
 
-Deployment steps:
+   - **Build command**: `yarn build --locale zh` (or another language)
+   - **Output directory**: `build`
 
-1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/) and select **"Create a project"**.
-2. Link the repository you just forked.
-3. Configure the build command:
-   - **Build command**: `yarn build --locale zh` (choose the appropriate locale based on the language to be deployed; for Portuguese, use `yarn build --locale pt`).
-   - **Output directory**: `build`.
-4. Click **Deploy** and wait for Cloudflare Pages to finish the build and deployment process.
+4. Deploy and wait for build to finish.
 
-Cloudflare Pages will automatically trigger a build and deployment every time you push new code.
+Cloudflare Pages will automatically redeploy when you push new commits.
 
 ### Docker Deployment
 
-If you are familiar with Docker, you can quickly deploy with the following command:
+Run with Docker:
 
 ```bash
 # ghcr.io
@@ -125,11 +136,9 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-sh
 docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:latest
 ```
 
-Alternatively, you can use `docker-compose`:
+Or with `docker-compose`:
 
 ```yml
-version: "3.8"
-
 services:
   chatgpt-shortcut:
     container_name: chatgpt-shortcut
@@ -139,26 +148,33 @@ services:
     restart: unless-stopped
 ```
 
-## Synchronized Updates
+## Enable Auto-Update
 
-If you have deployed your own project on Vercel with a single click, you might encounter an issue where updates are consistently indicated. This arises from Vercel's default behavior of creating a new project for you instead of forking the current project, thereby impeding proper update detection. It is recommended to follow the subsequent steps for re-deployment:
+If you used the one-click Vercel deployment, you might see “updates available” often.
+This is because Vercel creates a new repo instead of a fork, breaking sync.
 
-1. Remove the previous repository.
-2. Utilize the "fork" button located in the upper right corner of the page to fork the current project.
-3. On the [Vercel New Project page](https://vercel.com/new), select the recently forked project from the Import Git Repository section and proceed with deployment.
+**Fix:**
+
+1. Delete the old repo.
+2. Fork this project directly (use the fork button).
+3. Re-deploy from your fork via [Vercel new project page](https://vercel.com/new).
 
 ### Automatic Updates
 
-> In the event of encountering an error during the execution of Upstream Sync, manually perform a single Sync Fork.
+> If you see errors with **Upstream Sync**, run **Sync Fork** manually once.
 
-Once you have forked the project, due to GitHub restrictions, it is necessary to manually enable Workflows on the Actions page of your forked project and activate the Upstream Sync Action. Upon activation, updates will be automatically executed on a daily basis.
+After forking, GitHub requires you to enable workflows manually:
 
-![Automatic Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+- Go to **Actions** in your fork
+- Enable workflows, especially **Upstream Sync Action**.
 
-![Enabling Automatic Updates](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+This will run daily to pull upstream updates.
+
+![Auto Update](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+![Enable Workflow](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
 ### Manual Updates
 
-If you wish to manually update immediately, you can refer to [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to learn how to synchronize the forked project with the upstream code.
+For immediate updates, check [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on syncing forks.
 
-Feel free to show support for this project by giving it a star/follow, or by following the author, to stay informed about timely notifications regarding new feature updates.
+⭐ Star / 👀 Watch this project or follow the author to get notified about new features.
