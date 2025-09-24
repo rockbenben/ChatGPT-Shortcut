@@ -1,36 +1,79 @@
-# Bereitstellen
+---
+sidebar_label: Bereitstellung
+title: Bereitstellungs- & Anpassungsanleitung | AI Short einfach konfigurieren
+description: Erfahren Sie, wie Sie Ihr AI Short-Projekt schnell bereitstellen und anpassen können. Diese Anleitung behandelt Vercel, Cloudflare, Docker und die lokale Bereitstellung sowie das Bearbeiten von Inhalten und das Aktivieren von automatischen Updates.
+---
 
-AI Short ist ein Open-Source-Projekt. Sie können den Namen und die Beschreibung der Website frei ändern.
+# Projektbereitstellung
 
-- Um den Seitennamen zu ändern, bearbeiten Sie die Datei `docusaurus.config.js`.
-- Um die Anweisungen zu ändern, gehen Sie in das Verzeichnis `docs`.
-- Um die Eingabeaufforderungswörter zu ändern, finden Sie sie in `src/data/prompt.json`. Wenn Sie nur eine einzige Sprache ändern müssen, z. B. Chinesisch, können Sie `src/data/prompt_zh.json` direkt bearbeiten.
-- Derzeit ist das Benutzer-Backend mit einem gemeinsamen Backend-System verbunden. Bei Bedarf können Sie Ihr eigenes Backend erstellen. Die entsprechende Schnittstelle befindet sich in der Datei `src/api.js`.
+## Konfiguration & Anpassung
 
-`CodeUpdateHandler.py` ist ein Skript zur Stapelverarbeitung der Bereitstellung in mehreren Sprachen. Führen Sie nach Abschluss der Änderung `python CodeUpdateHandler.py` aus, wodurch `prompt.json` gemäß den Regeln in mehrere Sprachen aufgeteilt wird und der Hauptseitencode jeder Sprache und der unabhängige Seitencode der ausgewählten Eingabeaufforderungswörter synchronisiert werden.
+AI Short ist ein Open-Source-Projekt, und Sie können den Titel, die Beschreibung, die Prompts und mehr der Website frei ändern. Nachfolgend finden Sie gängige Anpassungsoptionen:
 
-## Bereitstellungsanweisungen
+- **Seitentitel und Beschreibung bearbeiten**  
+    Aktualisieren Sie die Datei `docusaurus.config.js`.
 
-Systemanforderungen:
+- **Nutzungsanweisungen und Dokumentation bearbeiten**  
+    Alle Dokumentationsdateien befinden sich im Verzeichnis `docs`. Öffnen und ändern Sie die entsprechende Datei nach Bedarf.
 
-- [Node.js 18.0](https://nodejs.org/) oder neuer.
-- macOS, Windows (einschließlich WSL) und Linux werden unterstützt.
+- **Startseiten-Prompts bearbeiten**  
+    Die Prompts der Startseite sind in `src/data/prompt.json` gespeichert.  
+    Für bestimmte Sprachen (z. B. Chinesisch) bearbeiten Sie `src/data/prompt_zh.json`.  
+    Beispielformat für einen neuen Prompt:
+
+`json
+  {
+    "zh": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": ["music"],
+    "id": 500,
+    "weight": 1
+  }
+  `
+
+**Hinweis**: Verwenden Sie `id >= 500` für neue Prompts. Diese werden keine eigenen Seiten oder Kommentare haben.
+Wenn Sie eine eigene Seite wünschen, kopieren Sie eine Vorlagendatei aus `src/data/pages/prompt` und ändern Sie sie.
+
+- **Benutzerdefiniertes Backend**
+    Das Projekt ist derzeit mit einem gemeinsam genutzten Backend verknüpft.
+    Um Ihr eigenes einzurichten, überprüfen Sie die API-Details in `src/api.js`.
+
+- **Mehrsprachige Unterstützung**
+    Nachdem Sie die Sprachdateien aktualisiert haben, führen Sie das Skript `CodeUpdateHandler.py` zur Stapelverarbeitung aus:
+
+`bash
+  python CodeUpdateHandler.py
+  `
+
+Dieses Skript teilt `prompt.json` auf und synchronisiert die Updates mit den Haupt- und vorgestellten Prompt-Seiten jeder Sprache.
+
+## Bereitstellungsanleitung
+
+**Systemanforderungen**:
+
+- [Node.js 18.0+](https://nodejs.org/)
+- macOS, Windows (einschließlich WSL) oder Linux
 
 ### Lokale Bereitstellung
 
-Stelle sicher, dass du [Node.js](https://nodejs.org/) installiert hast.
+Stellen Sie sicher, dass Sie [Node.js](https://nodejs.org/) installiert haben.
 
-```shell
-# Installation
+```bash
+# Abhängigkeiten installieren
 yarn
 
 # Lokale Entwicklung
 yarn start
 
-# Build: Dieser Befehl generiert statische Inhalte im Verzeichnis `build`
+# Statische Dateien erstellen
 yarn build
 
-# Aktualisiere das `defaultLocale` in der Datei `docusaurus.config.js` und führe dann einen Build für die gewünschte Sprache durch.
+# Für mehrere Sprachen erstellen
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -45,42 +88,45 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Bereitstellung für mehrere Sprachen
+# Beispiel: für zwei Sprachen erstellen
 yarn build --locale zh && yarn build --locale en
 ```
 
-### Vercel Bereitstellung
+### Vercel-Bereitstellung
 
-Klicke auf den untenstehenden Button, um ChatGPT-Shortcut mit einem Klick auf der Vercel-Plattform bereitzustellen:
+Klicken Sie unten, um ChatGPT-Shortcut mit einem Klick auf Vercel bereitzustellen:
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-**Hinweis**: Die kostenlose Version von Vercel kann aufgrund unzureichendem Speicher fehlerhaft sein. In diesem Fall kannst du die Bereitstellung auf eine einzelne Sprache beschränken. Die genauen Schritte sind wie folgt:
+**Hinweis**: Der kostenlose Vercel-Plan kann an seine Speichergrenzen stoßen. In diesem Fall stellen Sie nur eine einzelne Sprache bereit.
 
-1. Gehe zum gerade bereitgestellten Vercel-Projekt und öffne **Settings**.
-2. Im Abschnitt **Build & Deployment** finde **Build Command** und klicke dann auf **Override** auf der rechten Seite.
-3. Ändere den Bereitstellungsbefehl. Zum Beispiel, wenn du die chinesische Version bereitstellen möchtest, verwende `yarn build --locale zh`; für die portugiesische Version verwende `yarn build --locale pt`.
+Schritte:
 
-## Cloudflare Pages Bereitstellung
+1.  Gehen Sie zu Ihrem bereitgestellten Vercel-Projekt → **Settings**.
+2.  Unter **Build & Deployment** finden Sie **Build Command** → klicken Sie auf **Override**.
+3.  Legen Sie den Build-Befehl fest, z.B.:
 
-Klicke auf den untenstehenden Button oder Link, um dieses Projekt zu forken und folge dann den Anweisungen zur Bereitstellung auf Cloudflare Pages:
+- Für Chinesisch: `yarn build --locale zh`
+   - Für Portugiesisch: `yarn build --locale pt`
 
-👉 [Fork dieses Projekts](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+### Cloudflare Pages-Bereitstellung
 
-Bereitstellungsschritte:
+👉 [Forken Sie das Repo](https://github.com/rockbenben/ChatGPT-Shortcut/fork) und stellen Sie es dann über Cloudflare Pages bereit:
 
-1. Melde dich bei [Cloudflare Pages](https://pages.cloudflare.com/) an und wähle **"Create a project"**.
-2. Verknüpfe das gerade geforkte Repository.
-3. Konfiguriere den Build-Befehl:
-   - **Build-Befehl**: `yarn build --locale zh` (wähle die entsprechende locale basierend auf der zu deployenden Sprache; für Portugiesisch verwende `yarn build --locale pt`).
-   - **Ausgabeverzeichnis**: `build`.
-4. Klicke auf **Deploy** und warte, bis Cloudflare Pages den Build- und Bereitstellungsprozess abgeschlossen hat.
+1.  Melden Sie sich bei [Cloudflare Pages](https://pages.cloudflare.com/) an und wählen Sie **Create a project**.
+2.  Verbinden Sie Ihr geforktes Repo.
+3.  Konfigurieren Sie die Build-Einstellungen:
 
-Cloudflare Pages wird automatisch einen Build und eine Bereitstellung auslösen, jedes Mal wenn du neuen Code pusht.
+- **Build command**: `yarn build --locale zh` (oder eine andere Sprache)
+   - **Output directory**: `build`
+
+4.  Stellen Sie bereit und warten Sie, bis der Build abgeschlossen ist.
+
+Cloudflare Pages wird automatisch neu bereitgestellt, wenn Sie neue Commits pushen.
 
 ### Docker-Bereitstellung
 
-Wenn Sie mit Docker vertraut sind, können Sie schnell mit dem folgenden Befehl bereitstellen:
+Mit Docker ausführen:
 
 ```bash
 # ghcr.io
@@ -90,40 +136,42 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-sh
 docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:latest
 ```
 
-Alternativ können Sie `docker-compose` verwenden:
+Oder mit `docker-compose`:
 
 ```yml
-version: "3.8"
-
 services:
-chatgpt-shortcut:
-container_name: chatgpt-shortcut
-image: ghcr.io/rockbenben/chatgpt-shortcut:latest
-ports:
-- "3000:3000"
-restart: unless-stopped
+  chatgpt-shortcut:
+    container_name: chatgpt-shortcut
+    image: ghcr.io/rockbenben/chatgpt-shortcut:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
 ```
 
-## Synchronisierte Updates
+## Automatische Updates aktivieren
 
-Wenn Sie Ihr eigenes Projekt mit einem einzigen Klick auf Vercel bereitgestellt haben, kann es sein, dass Updates durchgängig angezeigt werden. Dies liegt daran, dass Vercel standardmäßig ein neues Projekt für Sie erstellt, anstatt das aktuelle Projekt zu verzweigen, wodurch die ordnungsgemäße Update-Erkennung behindert wird. Es wird empfohlen, die folgenden Schritte zur erneuten Bereitstellung durchzuführen:
+Wenn Sie die Ein-Klick-Bereitstellung von Vercel verwendet haben, sehen Sie möglicherweise häufig „Updates verfügbar“.
+Dies liegt daran, dass Vercel ein neues Repo anstelle eines Forks erstellt, was die Synchronisierung unterbricht.
 
-1. Entfernen Sie das vorherige Repository.
-2. Verwenden Sie die Schaltfläche „Fork“ in der oberen rechten Ecke der Seite, um das aktuelle Projekt zu forken.
-3. Wählen Sie auf der [Vercel-Seite „Neues Projekt“](https://vercel.com/new) das kürzlich geforkte Projekt aus dem Abschnitt „Git-Repository importieren“ aus und fahren Sie mit der Bereitstellung fort.
+**Lösung:**
+
+1.  Löschen Sie das alte Repo.
+2.  Forken Sie dieses Projekt direkt (verwenden Sie die Fork-Schaltfläche).
+3.  Stellen Sie es von Ihrem Fork aus über die [Vercel-Seite für neue Projekte](https://vercel.com/new) erneut bereit.
 
 ### Automatische Updates
 
-> Falls während der Ausführung von Upstream Sync ein Fehler auftritt, führen Sie manuell einen einzelnen Sync Fork durch.
+> Wenn Fehler bei **Upstream Sync** auftreten, führen Sie **Sync Fork** einmal manuell aus.
 
-Nachdem Sie das Projekt geforkt haben, müssen Sie aufgrund von GitHub-Einschränkungen Workflows auf der Seite „Aktionen“ Ihres geforkten Projekts manuell aktivieren und die Upstream Sync-Aktion aktivieren. Nach der Aktivierung werden täglich automatisch Updates ausgeführt.
+Nach dem Forken müssen Sie bei GitHub die Workflows manuell aktivieren:
 
-![Automatische Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+- Gehen Sie zu **Actions** in Ihrem Fork
+- Aktivieren Sie die Workflows, insbesondere **Upstream Sync Action**.
 
-![Automatische Updates aktivieren](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+Dadurch werden täglich Updates vom Upstream-Repo abgerufen.
 
 ### Manuelle Updates
 
-Wenn Sie sofort manuell aktualisieren möchten, können Sie in der [GitHub-Dokumentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) nachlesen, wie Sie das gegabelte Projekt mit dem Upstream-Code synchronisieren.
+Für sofortige Updates lesen Sie die [GitHub-Dokumentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) zum Synchronisieren von Forks.
 
-Zeigen Sie Ihre Unterstützung für dieses Projekt, indem Sie ihm einen Stern geben/es folgen oder indem Sie dem Autor folgen, um über zeitnahe Benachrichtigungen zu neuen Funktionsupdates informiert zu bleiben.
+⭐ Markieren / 👀 Beobachten Sie dieses Projekt oder folgen Sie dem Autor, um über neue Funktionen benachrichtigt zu werden.

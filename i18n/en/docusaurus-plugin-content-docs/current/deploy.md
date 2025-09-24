@@ -109,7 +109,7 @@ Steps:
    - For Chinese: `yarn build --locale zh`
    - For Portuguese: `yarn build --locale pt`
 
-## Cloudflare Pages Deployment
+### Cloudflare Pages Deployment
 
 👉 [Fork the repo](https://github.com/rockbenben/ChatGPT-Shortcut/fork), then deploy via Cloudflare Pages:
 

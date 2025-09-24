@@ -1,29 +1,36 @@
 ---
 slug: /
+description: Explora AiShort, una comunidad de prompts de IA seleccionada. Ofrecemos prompts listos para usar para grandes modelos de IA, con soporte para múltiples idiomas, colecciones y funciones de votación comunitaria, diseñados para ayudarte a simplificar tu flujo de trabajo y aumentar fácilmente la productividad.
 ---
 
 # Introducción
 
-AiShort proporciona una lista concisa y fácil de usar de instrucciones de IA. Incluso sin entender las solicitudes, puedes encontrar fácilmente las solicitudes adecuadas para diversos escenarios a través de filtrado y búsqueda, mejorando así tu productividad.
+AiShort (ChatGPT Shortcut) proporciona una lista concisa y fácil de usar de prompts de IA. Está diseñado para ayudar a los usuarios a encontrar rápidamente prompts adecuados para diversos escenarios, facilitando su uso incluso para principiantes y mejorando de manera integral su eficiencia en el aprendizaje y el trabajo.
 
-🚀 **Solicitudes de un solo clic**: Con solo un clic, puedes obtener una variedad de solicitudes seleccionadas cuidadosamente por expertos. Envíalas a modelos de lenguaje AI como ChatGPT y puedes obtener la salida esperada.
+🚀 **Prompts con un solo clic**: Una selección de diversos prompts profesionales. Con solo un clic, puedes enviarlos a modelos de IA como ChatGPT y obtener rápidamente las respuestas deseadas.
 
-💻 **Impulsa la productividad**: Al usar solicitudes optimizadas, puedes obtener comentarios más precisos y prácticos, mejorando así de manera efectiva tu eficiencia laboral.
+💻 **Aumenta la productividad**: Utiliza prompts optimizados para obtener respuestas más precisas y prácticas, completando eficientemente tareas de aprendizaje y trabajo.
 
-🌍 **Optimización para idiomas que no son el inglés**: Proporcionamos traducciones para las solicitudes en inglés en 12 de los principales idiomas globales y soportamos respuestas predeterminadas en tu lengua materna, lo que es conveniente para los hablantes de idiomas que no son el inglés para entender y usar.
+🌍 **Soporte multilingüe**: Ofrece traducciones de prompts en inglés a 12 idiomas principales y admite respuestas predeterminadas en tu idioma nativo, permitiendo que los usuarios que no hablan inglés lo usen sin barreras.
 
-💾 **Guarda solicitudes**: Recopila, edita y gestiona convenientemente tus solicitudes favoritas para uso futuro.
+💾 **Colecciona y Edita**: Puedes coleccionar, editar y gestionar tus prompts favoritos en cualquier momento para su uso futuro.
 
-🌐 **Compartir solicitudes**: Comparte tus solicitudes favoritas, colabora con otros e inspira más ideas.
+📤 **Exporta y Respalda**: Exporta todos tus prompts con un solo clic, con soporte para formato JSON para copias de seguridad, facilitando la migración y el guardado local.
 
-🗳️ **Sistema de votación comunitaria**: Similar a Product Hunt o Reddit, la plataforma es impulsada por la comunidad. Las mejores solicitudes serán promovidas a la página principal.
+🌟 **Comparte Prompts**: Comparte tus prompts favoritos con otros para inspirar más creatividad e ideas.
 
-📦 **Listo para usar**: Simplemente visita https://www.aishort.top/es/ para comenzar a usar.
+🗳️ **Votación de la comunidad**: Similar a Product Hunt o Reddit, impulsado por los votos de la comunidad, los prompts excelentes serán recomendados en la página de inicio.
 
-La fuente de las solicitudes de AiShort incluye selecciones de internet, compartidas por la comunidad, y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Actualizaremos regularmente para proporcionarte nuevas solicitudes e inspiración.
+📦 **Listo para usar**: No se necesita una configuración compleja. Visita [aishort.top](https://www.aishort.top/es/) para comenzar a experimentarlo de inmediato.
 
-Te invitamos a unirte a nuestra comunidad en Discord para intercambiar ideas y comentarios.
+Los prompts de AiShort (ChatGPT Shortcut) provienen de selecciones en línea, contribuciones de la comunidad y de [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Los actualizamos regularmente para ofrecerte continuamente nuevos prompts e inspiración. Para obtener instrucciones detalladas, consulta la [Guía del usuario](https://www.aishort.top/es/docs/guides/getting-started).
+
+Te invitamos a unirte a nuestra comunidad para intercambiar ideas y comentarios:
+
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+</a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>

@@ -19,62 +19,66 @@
     <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
 </p>
 
-## Why use AiShort?
+## なぜ AiShort を使うのか？
 
-AiShort は、簡潔で使いやすい AI 指示のリストを提供します。プロンプトの理解がなくても、フィルタリングと検索を通じて様々なシナリオに適したプロンプトを簡単に見つけることができ、生産性を向上させます。
+AiShort（ChatGPT ショートカット）は、簡潔で使いやすい AI プロンプトのリストを提供します。様々なシナリオに適したプロンプトをユーザーが素早く見つけられるように設計されており、初心者でも簡単に使用でき、学習や仕事の効率を総合的に向上させます。
 
-🚀 **ワンクリックプロンプト**: ただ一つのクリックで、専門家によって慎重に選ばれたさまざまなプロンプトを取得することができます。それらを ChatGPT のような AI 言語モデルに送ると、期待した出力を得ることができます。
+🚀 **ワンクリックプロンプト**: 様々なプロフェッショナルなプロンプトのセレクション。ワンクリックで ChatGPT などの AI モデルに送信し、望む回答を迅速に得ることができます。
 
-💻 **生産性の向上**: 最適化されたプロンプトを使用することで、より正確で実用的なフィードバックを得られ、効果的に作業効率を向上させます。
+💻 **生産性の向上**: 最適化されたプロンプトを使用して、より正確で実用的なフィードバックを得て、学習や仕事のタスクを効率的に完了します。
 
-🌍 **非英語言語のための最適化**: 英語のプロンプトに対する 12 の主要な世界言語の翻訳を提供し、母国語でのデフォルトのレスポンスをサポートします。これにより、非英語話者が理解しやすく、使いやすくなります。
+🌍 **多言語サポート**: 12 の主流言語で英語のプロンプトの翻訳を提供し、母国語でのデフォルト返信をサポートしているため、英語以外のユーザーも障壁なく使用できます。
 
-💾 **プロンプトの保存**: お気に入りのプロンプトを便利に収集、編集、管理し、将来の使用のために保存します。
+💾 **収集と編集**: お気に入りのプロンプトをいつでも収集、編集、管理して将来の使用に備えることができます。
 
-🌐 **プロンプトの共有**: お気に入りのプロンプトを共有し、他の人と協力し、さらに多くのアイデアを生み出します。
+📤 **エクスポートとバックアップ**: ワンクリックですべてのプロンプトをエクスポートし、バックアップ用に JSON 形式をサポートしているため、ローカルへの移行や保存が簡単です。
 
-🗳️ **コミュニティ投票システム**: Product Hunt や Reddit のように、プラットフォームはコミュニティ駆動型です。最高のプロンプトはホームページに推されます。
+🌟 **プロンプトの共有**: お気に入りのプロンプトを他の人と共有して、より多くの創造性やアイデアを刺激します。
 
-📦 **すぐに使用可能**: https://www.aishort.top/ja/ を訪問してすぐに使用を開始します。
+🗳️ **コミュニティ投票**: Product Hunt や Reddit のように、コミュニティの投票によって優れたプロンプトがホームページに推薦されます。
 
-AiShort のプロンプトの源は、インターネットの選択、コミュニティの共有、そして[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)によるものです。私たちは定期的に更新を行い、新しいプロンプトとインスピレーションを提供します。AiShort の使い方を理解するために、[ユーザーマニュアル](https://www.aishort.top/ja/docs/guides/getting-started)を参照してください。
+📦 **すぐに使える**: 複雑な設定は不要です。[aishort.top](https://www.aishort.top/ja/)にアクセスして、すぐに体験を始めましょう。
 
-アイデアとフィードバックを交換するために、私たちの Discord コミュニティに参加することを歓迎します。
+AiShort（ChatGPT ショートカット）のプロンプトは、オンラインのセレクション、コミュニティの共有、および[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)から供給されています。私たちは定期的に更新し、常に新しいプロンプトとインスピレーションをお届けします。詳細な手順については、[ユーザーガイド](https://www.aishort.top/ja/docs/guides/getting-started)をご覧ください。
+
+アイデアやフィードバックを交換するために、私たちのコミュニティへようこそ：
+
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+</a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord でチャットする" />
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
 ## ブラウザ拡張機能
 
-AiShort (ChatGPT ショートカット) は、Chrome、Edge、Firefox、その他の Chromium ベースのブラウザと互換性のある多機能拡張機能です。この拡張機能は、ChatGPT ショートカットの Web バージョンの機能を備えているだけでなく、サイドバーや自動ウィンドウ アクティベーションなどの独自の機能も追加します。拡張機能は ChatGPT またはカスタム ページで自動的に起動でき、ショートカット `Alt+Shift+S` を使用して手動でアクティブ化することもできます。ダウンロード チャネルは次のとおりです：
+AiShort（ChatGPT ショートカット）拡張機能は、いつでも AiShort プロンプトライブラリにアクセスして、仕事や学習の効率を高めるのに役立ちます。Chrome、Edge、Firefox などの主要なブラウザをサポートし、ショートカット `Alt + Shift + S` で素早く呼び出せるサイドバーを備えています。
 
 - **Chrome**: [Chrome ウェブストア](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox ブラウザー アドオン](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-さらに、Tampermonkey スクリプトも提供しています - [**ChatGPT ショートカットどこでも**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) により、ユーザーは一致するドメイン名をカスタマイズし、任意の Web サイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページのスクリプト コンテンツ挿入制限により、スクリプトのサイドバー機能は ChatGPT ページのポップアップを介してアクティブ化されます。
+さらに、Tampermonkey スクリプト - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)も提供しており、ユーザーはマッチングするドメイン名をカスタマイズし、任意のウェブサイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページでのスクリプトコンテンツの挿入制限のため、スクリプトのサイドバー機能は ChatGPT ページ上のポップアップを介してアクティブになります。
 
 ## デプロイ
 
-Vercel、ローカル環境、Docker を介したデプロイ、およびプロジェクトの変更に関する詳細な手順については、[ChatGPT ショートカット デプロイ ガイド](https://www.aishort.top/ja/docs/deploy) を参照してください。
+ローカル環境、Vercel、Cloudflare Page、Docker を介したデプロイ、およびプロジェクトの変更に関する詳細な手順については、[ChatGPT ショートカットデプロイガイド](https://www.aishort.top/ja/docs/deploy)を参照してください。
 
 ## 同期更新
 
-Vercel に独自のプロジェクトを 1 回のクリックでデプロイした場合、更新が一貫して示される問題が発生する可能性があります。これは、現在のプロジェクトをフォークするのではなく、新しいプロジェクトを作成するという Vercel のデフォルトの動作によって発生し、適切な更新検出が妨げられます。再デプロイには、次の手順に従うことをお勧めします。
+ワンクリックで Vercel に独自のプロジェクトをデプロイした場合、更新が常に示される問題が発生することがあります。これは、Vercel が現在のプロジェクトをフォークする代わりに新しいプロジェクトを作成するというデフォルトの動作に起因し、適切な更新検出を妨げます。再デプロイのために以下の手順に従うことをお勧めします：
 
 1. 以前のリポジトリを削除します。
-
-2. ページの右上隅にある「フォーク」ボタンを使用して、現在のプロジェクトをフォークします。
-
-3. [Vercel の新規プロジェクト ページ](https://vercel.com/new) で、[Git リポジトリのインポート] セクションから最近フォークしたプロジェクトを選択し、デプロイを続行します。
+2. ページ右上の「fork」ボタンを使用して現在のプロジェクトをフォークします。
+3. [Vercel の新規プロジェクトページ](https://vercel.com/new)で、Import Git Repository セクションから最近フォークしたプロジェクトを選択し、デプロイを進めます。
 
 ### 自動更新
 
-> Upstream Sync の実行中にエラーが発生した場合は、手動で 1 回の Sync Fork を実行します。
+> Upstream Sync の実行中にエラーが発生した場合は、手動で一度 Sync Fork を実行してください。
 
-プロジェクトをフォークしたら、GitHub の制限により、フォークしたプロジェクトの [アクション] ページでワークフローを手動で有効にし、Upstream Sync アクションをアクティブ化する必要があります。アクティブ化すると、更新は毎日自動的に実行されます。
+プロジェクトをフォークした後、GitHub の制限により、フォークしたプロジェクトの Actions ページで手動で Workflows を有効にし、Upstream Sync Action をアクティブにする必要があります。アクティブにすると、更新は毎日自動的に実行されます。
 
 ![自動更新](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 
@@ -82,6 +86,6 @@ Vercel に独自のプロジェクトを 1 回のクリックでデプロイし�
 
 ### 手動更新
 
-すぐに手動で更新したい場合は、[GitHub のドキュメント](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)を参照して、フォークしたプロジェクトをアップストリーム コードと同期する方法を確認してください。
+即時更新については、フォークの同期に関する[GitHub ドキュメント](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)を確認してください。
 
-このプロジェクトにスター/フォローを付けたり、作者をフォローしたりして、新機能の更新に関する通知をタイムリーに受け取るなど、このプロジェクトへのサポートを表明してください。
+⭐ このプロジェクトにスターを付ける / 👀 ウォッチするか、作者をフォローして新機能の通知を受け取りましょう。

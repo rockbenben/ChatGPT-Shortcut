@@ -1,36 +1,79 @@
-# Deploy
+---
+sidebar_label: Deploy
+title: Guida al Deploy e alla Personalizzazione | Configura AI Short con Facilità
+description: Impara come effettuare il deploy e personalizzare rapidamente il tuo progetto AI Short. Questa guida copre Vercel, Cloudflare, Docker e il deploy locale, oltre a come modificare i contenuti e abilitare gli aggiornamenti automatici.
+---
 
-AI Short è un progetto open source, puoi modificare liberamente il nome e la descrizione del sito web.
+# Deploy del Progetto
 
-- Per cambiare il nome della pagina, modifica il file `docusaurus.config.js`.
-- Per modificare le istruzioni, vai alla directory `docs`.
-- Per modificare le parole del prompt, puoi trovarle in `src/data/prompt.json`. Se hai bisogno di modificare solo una lingua, come il cinese, puoi modificare direttamente `src/data/prompt_zh.json`.
-- Attualmente, il backend utente è connesso a un sistema backend comune. Se necessario, puoi creare il tuo backend e l'interfaccia pertinente si trova nel file `src/api.js`.
+## Configurazione e Personalizzazione
 
-`CodeUpdateHandler.py` è uno script per l'elaborazione batch di distribuzioni multilingua. Dopo aver completato la modifica, esegui `python CodeUpdateHandler.py`, che suddividerà `prompt.json` in più lingue in base alle regole e sincronizzerà il codice della pagina principale di ogni lingua e il codice della pagina indipendente delle parole di prompt selezionate.
+AI Short è un progetto open-source e puoi modificare liberamente il titolo del sito, la descrizione, i prompt e altro ancora. Di seguito sono riportate le opzioni di personalizzazione più comuni:
 
-## Deployment Instructions
+- **Modifica il titolo e la descrizione del sito**  
+    Aggiorna il file `docusaurus.config.js`.
 
-System Requirements:
+- **Modifica le istruzioni per l'uso e la documentazione**  
+    Tutti i file della documentazione si trovano nella directory `docs`. Apri e modifica il file pertinente secondo necessità.
 
-- [Node.js 18.0](https://nodejs.org/) or later.
-- macOS, Windows (including WSL), and Linux are supported.
+- **Modifica i prompt della homepage**  
+    I prompt della homepage sono memorizzati in `src/data/prompt.json`.  
+    Per lingue specifiche (ad es. cinese), modifica `src/data/prompt_zh.json`.  
+    Formato di esempio per un nuovo prompt:
 
-### Local Deployment
+`json
+  {
+    "zh": {
+      "title": "custom prompt",
+      "prompt": "custom prompt",
+      "description": "custom description",
+      "remark": "custom mark"
+    },
+    "website": null,
+    "tags": ["music"],
+    "id": 500,
+    "weight": 1
+  }
+  `
 
-Make sure you have [Node.js](https://nodejs.org/) installed.
+**Nota**: Usa `id >= 500` per i nuovi prompt. Questi non avranno pagine dedicate o commenti.
+Se desideri una pagina dedicata, copia un file modello da `src/data/pages/prompt` e modificalo.
 
-```shell
-# Installation
+- **Backend personalizzato**
+    Il progetto è attualmente collegato a un backend condiviso.
+    Per configurare il tuo, controlla i dettagli dell'API in `src/api.js`.
+
+- **Supporto multilingue**
+    Dopo aver aggiornato i file di lingua, esegui lo script `CodeUpdateHandler.py` per l'elaborazione batch:
+
+`bash
+  python CodeUpdateHandler.py
+  `
+
+Questo script dividerà `prompt.json` e sincronizzerà gli aggiornamenti con le pagine dei prompt principali e in primo piano di ogni lingua.
+
+## Guida al Deploy
+
+**Requisiti di sistema**:
+
+- [Node.js 18.0+](https://nodejs.org/)
+- macOS, Windows (incluso WSL), o Linux
+
+### Deploy Locale
+
+Assicurati di aver installato [Node.js](https://nodejs.org/).
+
+```bash
+# Installa le dipendenze
 yarn
 
-# Local Development
+# Sviluppo locale
 yarn start
 
-# Build: This command generates static content into the `build` directory
+# Crea i file statici
 yarn build
 
-# Update the `defaultLocale` in the `docusaurus.config.js` file, then perform a build for the desired language.
+# Crea per più lingue
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -45,42 +88,45 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Deploy for multiple languages
+# Esempio: crea per due lingue
 yarn build --locale zh && yarn build --locale en
 ```
 
-### Vercel Deployment
+### Deploy su Vercel
 
-Click the button below to deploy ChatGPT-Shortcut to the Vercel platform with one click:
+Clicca qui sotto per effettuare il deploy di ChatGPT-Shortcut su Vercel con un solo clic:
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
+[](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-**Note**: The free tier of Vercel may throw errors due to insufficient memory. In this case, you can choose to deploy a single-language version. The steps are as follows:
+**Nota**: Il piano gratuito di Vercel potrebbe esaurire la memoria. In tal caso, effettua il deploy di una sola lingua.
 
-1. Go to the Vercel project you just deployed and open **Settings**.
-2. Under **Build & Deployment**, find **Build Command**, and then click **Override** on the right.
-3. Modify the deployment command. For example, to deploy the Chinese version, use `yarn build --locale zh`; for the Portuguese version, use `yarn build --locale pt`.
+Passaggi:
 
-## Cloudflare Pages Deployment
+1.  Vai al tuo progetto su Vercel → **Settings**.
+2.  Sotto **Build & Deployment**, trova **Build Command** → clicca **Override**.
+3.  Imposta il comando di build, ad es.:
 
-Click the button or link below to fork this project, then follow the instructions to deploy it on Cloudflare Pages:
+- Per il cinese: `yarn build --locale zh`
+   - Per il portoghese: `yarn build --locale pt`
 
-👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
+### Deploy su Cloudflare Pages
 
-Deployment steps:
+👉 [Fai un fork del repository](https://github.com/rockbenben/ChatGPT-Shortcut/fork), quindi effettua il deploy tramite Cloudflare Pages:
 
-1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/) and select **"Create a project"**.
-2. Link the repository you just forked.
-3. Configure the build command:
-   - **Build command**: `yarn build --locale zh` (choose the appropriate locale based on the language to be deployed; for Portuguese, use `yarn build --locale pt`).
-   - **Output directory**: `build`.
-4. Click **Deploy** and wait for Cloudflare Pages to complete the build and deployment process.
+1.  Accedi a [Cloudflare Pages](https://pages.cloudflare.com/), scegli **Create a project**.
+2.  Collega il tuo repository forkato.
+3.  Configura le impostazioni di build:
 
-Cloudflare Pages will also automatically trigger a build and deployment every time you push new code.
+- **Build command**: `yarn build --locale zh` (o un'altra lingua)
+   - **Output directory**: `build`
 
-### Distribuzione Docker
+4.  Effettua il deploy e attendi il completamento della build.
 
-Se hai familiarità con Docker, puoi distribuire rapidamente con il seguente comando:
+Cloudflare Pages eseguirà automaticamente un nuovo deploy quando effettui il push di nuovi commit.
+
+### Deploy con Docker
+
+Esegui con Docker:
 
 ```bash
 # ghcr.io
@@ -90,40 +136,42 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-sh
 docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:latest
 ```
 
-In alternativa, puoi usare `docker-compose`:
+O con `docker-compose`:
 
 ```yml
-version: "3.8"
-
 services:
-chatgpt-shortcut:
-container_name: chatgpt-shortcut
-image: ghcr.io/rockbenben/chatgpt-shortcut:latest
-ports:
-- "3000:3000"
-restart: unless-stopped
+  chatgpt-shortcut:
+    container_name: chatgpt-shortcut
+    image: ghcr.io/rockbenben/chatgpt-shortcut:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
 ```
 
-## Aggiornamenti sincronizzati
+## Abilitare l'Aggiornamento Automatico
 
-Se hai distribuito il tuo progetto su Vercel con un solo clic, potresti riscontrare un problema in cui gli aggiornamenti vengono indicati in modo coerente. Ciò deriva dal comportamento predefinito di Vercel di creare un nuovo progetto per te anziché effettuare il fork del progetto corrente, impedendo così il corretto rilevamento degli aggiornamenti. Si consiglia di seguire i passaggi successivi per la ridistribuzione:
+Se hai utilizzato il deploy con un clic di Vercel, potresti vedere spesso "aggiornamenti disponibili".
+Questo perché Vercel crea un nuovo repository invece di un fork, interrompendo la sincronizzazione.
 
-1. Rimuovi il repository precedente.
-2. Utilizza il pulsante "fork" situato nell'angolo in alto a destra della pagina per forkare il progetto corrente.
-3. Nella [pagina Nuovo progetto Vercel](https://vercel.com/new), seleziona il progetto forkato di recente dalla sezione Importa repository Git e procedi con la distribuzione.
+**Soluzione:**
 
-### Aggiornamenti automatici
+1.  Elimina il vecchio repository.
+2.  Fai un fork di questo progetto direttamente (usa il pulsante fork).
+3.  Effettua nuovamente il deploy dal tuo fork tramite la [pagina nuovo progetto Vercel](https://vercel.com/new).
 
-> In caso di errore durante l'esecuzione di Upstream Sync, esegui manualmente un singolo Sync Fork.
+### Aggiornamenti Automatici
 
-Dopo aver forkato il progetto, a causa delle restrizioni di GitHub, è necessario abilitare manualmente i flussi di lavoro nella pagina Azioni del progetto forkato e attivare l'azione Upstream Sync. Dopo l'attivazione, gli aggiornamenti verranno eseguiti automaticamente ogni giorno.
+> Se vedi errori con **Upstream Sync**, esegui **Sync Fork** manualmente una volta.
 
-![Aggiornamenti automatici](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+Dopo aver effettuato il fork, GitHub richiede di abilitare manualmente i workflow:
 
-![Abilitazione degli aggiornamenti automatici](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
+- Vai su **Actions** nel tuo fork
+- Abilita i workflow, in particolare **Upstream Sync Action**.
 
-### Aggiornamenti manuali
+Questo verrà eseguito quotidianamente per scaricare gli aggiornamenti dall'upstream.
 
-Se desideri effettuare immediatamente l'aggiornamento manuale, puoi fare riferimento alla [documentazione di GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) per scoprire come sincronizzare il progetto forkato con il codice upstream.
+### Aggiornamenti Manuali
 
-Sentiti libero di mostrare supporto per questo progetto assegnandogli una stella/seguendolo, oppure seguendo l'autore, per rimanere informato sulle notifiche tempestive riguardanti i nuovi aggiornamenti delle funzionalità.
+Per aggiornamenti immediati, consulta la [documentazione di GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) sulla sincronizzazione dei fork.
+
+⭐ Metti una stella / 👀 Osserva questo progetto o segui l'autore per ricevere notifiche sulle nuove funzionalità.

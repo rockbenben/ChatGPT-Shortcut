@@ -21,33 +21,39 @@
 
 ## Why use AiShort?
 
-AiShort provides a concise and easy-to-use list of AI instructions. Even without understanding of prompts, you can easily find the prompts suitable for various scenarios through filtering and searching, thus improving your productivity.
+AiShort (ChatGPT Shortcut) provides a concise and easy-to-use list of AI prompts. It is designed to help users quickly find prompts suitable for various scenarios, making it easy even for beginners to use and comprehensively improve their efficiency in learning and work.
 
-🚀 **One-click prompts**: With just one click, you can get a variety of prompts carefully selected by experts. Send them to AI language models like ChatGPT and you can get the expected output.
+🚀 **One-Click Prompts**: A selection of various professional prompts. With just one click, you can send them to AI models like ChatGPT and quickly get the desired answers.
 
-💻 **Boost productivity**: By using optimized prompts, you can get more accurate and practical feedback, thus effectively enhancing your work efficiency.
+💻 **Boost Productivity**: Use optimized prompts to get more accurate and practical feedback, efficiently completing learning and work tasks.
 
-🌍 **Optimization for Non-English Languages**: We provide translations for English prompts in 12 major global languages, and support default responses in your mother tongue, which is convenient for non-English speakers to understand and use.
+🌍 **Multi-language Support**: Provides translations for English prompts in 12 mainstream languages and supports default replies in your native language, allowing non-English users to use it without barriers.
 
-💾 **Save prompts**: Conveniently collect, edit, and manage your favorite prompts for future use.
+💾 **Collect & Edit**: You can collect, edit, and manage your favorite prompts at any time for future use.
 
-🌐 **Share prompts**: Share your favorite prompts, collaborate with others, and inspire more ideas.
+📤 **Export & Backup**: Export all your prompts with one click, supporting JSON format for backup, making it easy to migrate and save locally.
 
-🗳️ **Community voting system**: Similar to Product Hunt or Reddit, the platform is community-driven. The best prompts will be pushed to the homepage.
+🌟 **Share Prompts**: Share your favorite prompts with others to inspire more creativity and ideas.
 
-📦 **Ready to use**: Just visit https://www.aishort.top/en/ to start using.
+🗳️ **Community Voting**: Similar to Product Hunt or Reddit, driven by community votes, excellent prompts will be recommended to the homepage.
 
-The source of AiShort prompts includes internet selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We will regularly update to provide you with new prompts and inspiration. To understand how to use AiShort, please refer to [user manual](https://www.aishort.top/en/docs/guides/getting-started).
+📦 **Ready to Use**: No complex configuration needed. Visit [aishort.top](https://www.aishort.top/en/) to start experiencing it immediately.
 
-Welcome to join our Discord community to exchange ideas and feedback.
+The prompts for AiShort (ChatGPT Shortcut) are sourced from online selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We update them regularly to continuously bring you new prompts and inspiration. For detailed instructions, please see the [User Guide](https://www.aishort.top/en/docs/guides/getting-started).
+
+Welcome to join our community to exchange ideas and feedback:
+
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+</a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
 ## Browser Extension
 
-AiShort (ChatGPT Shortcut) is a versatile extension compatible with Chrome, Edge, Firefox, and other Chromium-based browsers. This extension not only features the functionality of the web version of ChatGPT Shortcut but also adds unique features such as a sidebar and automatic window activation. The extension can automatically start with ChatGPT or custom pages and can also be manually activated using the shortcut `Alt+Shift+S`. Here are the download channels:
+The AiShort (ChatGPT Shortcut) extension helps you access the AiShort prompt library anytime to enhance your work and study efficiency. It supports major browsers like Chrome, Edge, and Firefox, and features a sidebar that can be quickly summoned with the shortcut `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
@@ -58,7 +64,7 @@ In addition, we offer the Tampermonkey script - [**ChatGPT Shortcut Anywhere**](
 
 ## Deploy
 
-For detailed steps on deploying through Vercel, local environment, Docker, and modifying the project, please refer to the [ChatGPT Shortcut Deployment Guide](https://www.aishort.top/en/docs/deploy).
+For detailed steps on deploying through local environment, Vercel, Cloudflare Page, Docker, and modifying the project, please refer to the [ChatGPT Shortcut Deployment Guide](https://www.aishort.top/en/docs/deploy).
 
 ## Synchronized Updates
 
@@ -80,6 +86,6 @@ Once you have forked the project, due to GitHub restrictions, it is necessary to
 
 ### Manual Updates
 
-If you wish to manually update immediately, you can refer to [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to learn how to synchronize the forked project with the upstream code.
+For immediate updates, check [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on syncing forks.
 
-Feel free to show support for this project by giving it a star/follow, or by following the author, to stay informed about timely notifications regarding new feature updates.
+⭐ Star / 👀 Watch this project or follow the author to get notified about new features.

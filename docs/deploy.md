@@ -100,7 +100,7 @@ yarn build --locale zh && yarn build --locale en
 2. 在 **Build & Deployment** 部分，找到 **Build Command**，然后点击右侧的 **Override**。
 3. 修改部署命令。例如，如果需要部署中文版本，可以使用 `yarn build --locale zh`；如果需要部署葡萄牙语版本，则使用 `yarn build --locale pt`。
 
-## Cloudflare Pages 部署
+### Cloudflare Pages 部署
 
 点击下方按钮或链接，Fork 本项目后，按说明在 Cloudflare Pages 上部署：
 

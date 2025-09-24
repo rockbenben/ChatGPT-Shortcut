@@ -14,7 +14,6 @@ The AiShort (ChatGPT Shortcut) extension helps you access the AiShort prompt lib
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **Alternative Download Mirrors (for when stores are inaccessible)**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[Lanzou Cloud (Password: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
 
 ## 🧩 Tampermonkey Userscript
 
