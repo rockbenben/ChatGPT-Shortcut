@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useMemo, useCallback } from "react";
+import React, { createContext, useState, useEffect, useMemo, useCallback, startTransition } from "react";
 import { getUserAllInfo } from "@site/src/api";
 
 export const AuthContext = createContext({
@@ -8,28 +8,40 @@ export const AuthContext = createContext({
   isLoading: false,
 });
 
-export function AuthProvider({ children }) {
-  const [userAuth, setUserAuth] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [userAuth, setUserAuth] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(false); // 初始不加载，等空闲再触发
 
   const fetchUser = useCallback(async () => {
-    setIsLoading(true);
+    startTransition(() => setIsLoading(true));
     try {
-      const userAuth = await getUserAllInfo();
-      // getUserAllInfo 现在返回 null 表示未登录，这是正常状态
-      setUserAuth(userAuth);
+      const userAuthResp = await getUserAllInfo();
+      startTransition(() => setUserAuth(userAuthResp));
     } catch (error) {
       console.error("Failed to fetch user data:", error);
-      // 这里可以考虑做额外处理，例如置空、显示错误提示或者重定向到登录页面
-      // setUserAuth(null); // 如果 getUserAllInfo 返回 null，表示未登录，这里不需要再设置为 null
     } finally {
-      setIsLoading(false);
+      startTransition(() => setIsLoading(false));
     }
   }, []);
 
+  // 使用空闲回调或延时，确保避开 SSR -> Hydration 的关键窗口，降低 React 421 发生概率
   useEffect(() => {
-    fetchUser();
-  }, []);
+    let cancelled = false;
+    const run = () => {
+      if (cancelled) return;
+      fetchUser();
+    };
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(run, { timeout: 1500 });
+      } else {
+        setTimeout(run, 80); // 给 hydration 一点缓冲
+      }
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [fetchUser]);
 
   const value = useMemo(
     () => ({
