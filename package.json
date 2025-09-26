@@ -13,6 +13,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc",
     "dev": "docusaurus start",
     "outdated": "ncu",
     "update": "ncu -u && yarn install"
@@ -21,9 +22,9 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@docusaurus/core": "3.8.1",
-    "@docusaurus/faster": "3.8.1",
-    "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/core": "3.9.0",
+    "@docusaurus/faster": "3.9.0",
+    "@docusaurus/preset-classic": "3.9.0",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
     "@giphy/js-fetch-api": "^5.7.0",
@@ -45,11 +46,11 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/tsconfig": "3.8.1",
-    "@docusaurus/types": "3.8.1",
+    "@docusaurus/module-type-aliases": "3.9.0",
+    "@docusaurus/tsconfig": "3.9.0",
+    "@docusaurus/types": "3.9.0",
     "@types/react": "^18.3.13",
-    "typescript": "~5.8.3"
+    "typescript": "~5.6.2"
   },
   "browserslist": {
     "production": [
@@ -64,6 +65,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   }
 }
