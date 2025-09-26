@@ -12,6 +12,12 @@ const config = {
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true,
+    experimental_faster: true,
+  },
+
   // Set the production url of your site here
   url: "https://www.aishort.top",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -37,10 +43,6 @@ const config = {
         direction: "rtl",
       },
     },
-  },
-  future: {
-    v4: true,
-    experimental_faster: true,
   },
 
   presets: [
@@ -219,14 +221,6 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-
-      /* announcementBar: {
-        id: 'announcement_bar',
-        content: getAnnouncement(),
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: false,
-      }, */
     }),
 };
 
