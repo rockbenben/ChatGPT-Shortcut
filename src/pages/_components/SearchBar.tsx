@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback, useRef } from "react";
+import React, { useContext, useState, useEffect, useCallback, useRef, startTransition } from "react";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -38,11 +38,20 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-export const NoResults = () => (
-  <Heading as="h2" className="text--center">
-    <Translate id="showcase.usersList.noResult">😒 找不到结果，请缩短搜索词</Translate>
-  </Heading>
-);
+// NoResults 组件：先显示 "Searching..." 150ms，再显示真正的“无结果”提示，防止瞬间搜索完成时的闪烁
+export const NoResults: React.FC = () => {
+  const [showNoResult, setShowNoResult] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowNoResult(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Heading as="h2" className="text--center">
+      {showNoResult ? translate({ id: "showcase.usersList.noResult", message: "😒 找不到结果，请缩短搜索词" }) : "Searching..."}
+    </Heading>
+  );
+};
 
 export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompts" = "default") {
   const location = useLocation<UserState>();
@@ -60,32 +69,41 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     const tags = queryParams.getAll("tags");
     const search = queryParams.get("name");
     const operatorParam = queryParams.get("operator") || "OR";
-
-    setSelectedTags(tags);
-    setSearchName(search);
-    setOperator(operatorParam as Operator);
+    // 将多次初始 setState 合并到一次低优更新，避免 hydration 尚未完全时触发高优刷新
+    startTransition(() => {
+      setSelectedTags(tags);
+      setSearchName(search);
+      setOperator(operatorParam as Operator);
+    });
   }, [location.search]);
 
   useEffect(() => {
+    let cancelled = false;
     async function fetchAndFilterUsers() {
       if (selectedTags.length === 0 && !searchName) {
-        setFilteredCards([]);
-        setFilteredCommus([]);
+        startTransition(() => {
+          if (!cancelled) {
+            setFilteredCards([]);
+            setFilteredCommus([]);
+          }
+        });
         return;
       }
       const searchLower = searchName ? searchName.toLowerCase() : "";
       try {
         if (searchMode === "default") {
           const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
-          console.log("搜索结果", data);
-          setFilteredCards(data); // 未登录时，仅搜索 cards 提示词
+          if (cancelled) return;
+          startTransition(() => {
+            setFilteredCards(data);
+          });
           if (userAuth && selectedTags.length === 0) {
-            // 登录且未选标签，使用本地缓存，搜索用户收藏和自定义的提示词（不区分大小写）
             Promise.all([
               userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
               userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
             ])
               .then(([userprompts, commus]) => {
+                if (cancelled) return [];
                 return [...userprompts, ...commus].filter(
                   (prompt) =>
                     prompt.title.toLowerCase().includes(searchLower) ||
@@ -95,29 +113,26 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
                 );
               })
               .then((filteredCommus) => {
-                setFilteredCommus(filteredCommus);
-                // 你可以在这里将 filteredPrompts 传递给你的组件
+                if (cancelled) return;
+                startTransition(() => setFilteredCommus(filteredCommus));
               });
           }
         } else if (searchMode === "myfavor") {
           if (userAuth?.data?.favorites) {
             Promise.resolve()
               .then(async () => {
-                // 第一步：获取并过滤 cards
                 const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
+                if (cancelled) return { favoriteCards: [], commus: [] };
                 const favoriteCards = userAuth.data.favorites.loves ? data.filter((card) => userAuth.data.favorites.loves.includes(card.id)) : [];
-                setFilteredCards(favoriteCards);
-                console.log("用户收藏的提示词", favoriteCards);
-
-                // 第二步：获取并过滤 community prompts
+                startTransition(() => setFilteredCards(favoriteCards));
                 if (userAuth.data.favorites.commLoves) {
                   const commus = await getPrompts("commus", userAuth.data.favorites.commLoves);
-                  return commus;
+                  return { favoriteCards, commus };
                 }
-                return [];
+                return { favoriteCards, commus: [] };
               })
-              .then((commus) => {
-                // 第三步：处理过滤后的结果
+              .then(({ commus }) => {
+                if (cancelled) return;
                 const filtered = commus.filter(
                   (prompt) =>
                     prompt.title.toLowerCase().includes(searchLower) ||
@@ -125,22 +140,25 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
                     (prompt.remark && prompt.remark.toLowerCase().includes(searchLower)) ||
                     (prompt.notes && prompt.notes.toLowerCase().includes(searchLower))
                 );
-                setFilteredCommus(filtered);
+                startTransition(() => setFilteredCommus(filtered));
               });
           } else {
-            setFilteredCards([]);
-            setFilteredCommus([]);
+            startTransition(() => {
+              if (!cancelled) {
+                setFilteredCards([]);
+                setFilteredCommus([]);
+              }
+            });
           }
         } else if (searchMode === "myprompts") {
           if (userAuth?.data?.userprompts) {
             Promise.resolve()
               .then(async () => {
-                // 第一步：获取用户自定义提示词
                 const userprompts = await getPrompts("userprompts", userAuth.data.userprompts);
                 return userprompts;
               })
               .then((userprompts) => {
-                // 第二步：过滤结果
+                if (cancelled) return;
                 const filtered = userprompts.filter(
                   (prompt) =>
                     prompt.title.toLowerCase().includes(searchLower) ||
@@ -148,21 +166,29 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
                     (prompt.remark && prompt.remark.toLowerCase().includes(searchLower)) ||
                     (prompt.notes && prompt.notes.toLowerCase().includes(searchLower))
                 );
-                setFilteredCommus(filtered);
+                startTransition(() => setFilteredCommus(filtered));
               });
           } else {
-            setFilteredCommus([]);
+            startTransition(() => {
+              if (!cancelled) setFilteredCommus([]);
+            });
           }
         }
       } catch (error) {
         console.error("Error fetching and filtering prompts:", error);
-        setFilteredCards([]);
-        setFilteredCommus([]);
+        if (!cancelled) {
+          startTransition(() => {
+            setFilteredCards([]);
+            setFilteredCommus([]);
+          });
+        }
       }
     }
-
     fetchAndFilterUsers();
-  }, [selectedTags, searchName, operator, currentLanguage, searchMode]);
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedTags, searchName, operator, currentLanguage, searchMode, userAuth]);
 
   const isFiltered = selectedTags.length > 0 || searchName !== null;
 
