@@ -4,52 +4,34 @@ import { loginWithToken } from "@site/src/api";
 
 const CallbackPage = () => {
   const location = useLocation();
+  const urlParams = new URLSearchParams(location.search);
 
   useEffect(() => {
-    const params = mergeSearchAndHashParams(location.search, location.hash);
-
     try {
-      const loginToken = params.get("loginToken");
-      if (loginToken) {
-        loginUserWithToken(loginToken);
-        return;
-      }
+      const code = urlParams.get("code");
 
-      const jwt = params.get("access_token") || params.get("jwt") || params.get("token") || params.get("id_token");
-      const state = params.get("state");
-      const provider = params.get("provider") || "google";
-      const code = params.get("code");
-
-      if (jwt || code) {
+      if (code) {
         if (window.opener) {
-          const userRaw = params.get("user");
-          const user = parseUserParam(userRaw);
-          const rawParams = Object.fromEntries(params.entries());
-
-          window.opener.postMessage(
-            {
-              provider,
-              jwt,
-              access_token: jwt,
-              code,
-              state,
-              user,
-              id_token: params.get("id_token"),
-              rawParams,
-            },
-            "*"
-          );
+          window.opener.postMessage({ code }, "*");
           window.close();
         } else {
+          // Handle the situation where window.opener is null
           console.error("Please do not close the main login page during the login process");
         }
-      }
-    } catch (error) {
-      console.error("An error occurred while handling the OAuth callback:", error);
-    }
-  }, [location]);
+      } else {
+        // 从 URL 查询参数中获取 token
+        const token = urlParams.get("loginToken");
 
-  const loginUserWithToken = async (token: string) => {
+        if (token) {
+          loginUserWithToken(token);
+        }
+      }
+    } catch (e) {
+      console.error("An error occurred:", e);
+    }
+  }, [location, urlParams]);
+
+  const loginUserWithToken = async (token) => {
     try {
       const response = await loginWithToken(token);
       console.log("Login successful:", response);
@@ -61,31 +43,6 @@ const CallbackPage = () => {
   };
 
   return null; // or a loading spinner, or whatever you want to show while waiting
-};
-
-const mergeSearchAndHashParams = (search: string, hash: string): URLSearchParams => {
-  const merged = new URLSearchParams(search || "");
-  const hashParams = new URLSearchParams((hash || "").replace(/^#/, ""));
-  hashParams.forEach((value, key) => {
-    if (!merged.has(key)) {
-      merged.set(key, value);
-    }
-  });
-  return merged;
-};
-
-const parseUserParam = (rawValue: string | null) => {
-  if (!rawValue) {
-    return undefined;
-  }
-
-  try {
-    const decoded = decodeURIComponent(rawValue);
-    return JSON.parse(decoded);
-  } catch (error) {
-    console.error("Failed to parse user data from OAuth callback:", error);
-    return undefined;
-  }
 };
 
 export default CallbackPage;
