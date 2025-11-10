@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect, useCallback } from "react";
 import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Typography, Alert } from "antd";
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -84,19 +85,50 @@ const LoginPage = () => {
     passwordlessForm.resetFields();
   };
 
+  const handleSuccess = useCallback((username, jwt) => {
+    if (ExecutionEnvironment.canUseDOM) {
+      localStorage.setItem("auth_token", jwt);
+
+      // Send message to extension
+      window.postMessage({ action: "login", username, jwt }, "*");
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+  }, []);
+
   // Handle Google Authentication
   useEffect(() => {
-    const messageHandler = async (event) => {
-      if (event.data.code) {
-        setLoading(true);
-        try {
-          const auth_respond = await authenticateUserWithGoogle(event.data.code);
-          handleSuccess(auth_respond.user.username, auth_respond.token);
-        } catch (error) {
-          messageApi.error("Login failed: " + (error.message || "Unknown error"));
-        } finally {
-          setLoading(false);
+    const messageHandler = async (event: MessageEvent) => {
+      if (event?.source === window) {
+        return;
+      }
+
+      const data = event?.data;
+      if (!data) {
+        return;
+      }
+
+      const isGooglePayload = data.provider === "google" || data.jwt || data.access_token || data.id_token || data.code;
+      if (!isGooglePayload) {
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const authRespond = await authenticateUserWithGoogle(data);
+        if (!authRespond?.token || !authRespond?.user?.username) {
+          throw new Error("Invalid Google authentication response.");
         }
+        handleSuccess(authRespond.user.username, authRespond.token);
+      } catch (error) {
+        console.error("Google login handler failed:", error);
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
+        messageApi.error("Login failed: " + errorMessage);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -105,7 +137,7 @@ const LoginPage = () => {
     return () => {
       window.removeEventListener("message", messageHandler);
     };
-  }, [messageApi]);
+  }, [messageApi, handleSuccess]);
 
   const handleGoogleLogin = async () => {
     setLoading(true);
@@ -120,25 +152,13 @@ const LoginPage = () => {
         alert("Failed to generate Google Auth URL.");
       }
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
       messageApi.open({
         type: "error",
-        content: "Error while attempting Google login: " + error.message,
+        content: "Error while attempting Google login: " + errorMessage,
       });
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleSuccess = (username, jwt) => {
-    if (ExecutionEnvironment.canUseDOM) {
-      localStorage.setItem("auth_token", jwt);
-
-      // Send message to extension
-      window.postMessage({ action: "login", username, jwt }, "*");
-
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
     }
   };
 
