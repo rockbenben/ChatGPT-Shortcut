@@ -1,8 +1,8 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-const STRAPI_CALLBACK_BASE = "https://api.newzone.top/strapi-google-auth"; // http://localhost:1337 // 供回调和用户数据请求使用
-const GAUTH_API_BASE = "https://gauth.aishort.top/strapi-google-auth"; // Google 登录入口服务
+const STRAPI_CALLBACK_BASE = "https://api.newzone.top"; // http://localhost:1337 // 供回调和用户数据请求使用
+const GAUTH_API_BASE = "https://gauth.aishort.top"; // Google 登录入口服务
 const GOOGLE_CONNECT_PATH = "/api/connect/google";
 const GOOGLE_CALLBACK_PATH = "/api/connect/google/callback";
 const USERS_ME_PATH = "/api/users/me";
