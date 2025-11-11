@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 358,
+    "count": 360,
     "metaDescription": "需要测试一段 JavaScript 代码片段吗？这个提示词让 AI 扮演 JavaScript 控制台。输入您的命令，立即获取控制台输出。"
 }

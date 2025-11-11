@@ -10,6 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 243,
+    "count": 245,
     "metaDescription": "이것은 무슨 언어인가요? 이 프롬프트는 ChatGPT를 언어 감지기로 만듭니다. 문장을 입력하기만 하면 어떤 언어로 쓰여졌는지 알려줍니다."
 }

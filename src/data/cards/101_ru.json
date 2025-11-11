@@ -10,6 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "count": 929,
+    "count": 934,
     "metaDescription": "Хотите симулировать поисковый движок Solr? Этот промпт позволяет добавлять JSON-документы в коллекции и извлекать их с помощью специфичных для Solr запросов прямо в чате."
 }

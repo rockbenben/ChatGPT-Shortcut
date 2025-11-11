@@ -9,6 +9,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 270,
+    "count": 273,
     "metaDescription": "Need to pull contact info from text fast? This simple AI prompt extracts names and mailing addresses from emails or blocks of text. Save time and automate data entry."
 }

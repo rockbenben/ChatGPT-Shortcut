@@ -10,6 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-morse-code-translator",
-    "count": 261,
+    "count": 264,
     "metaDescription": "モールス信号を解読する必要がありますか？このプロンプトはChatGPTをモールス信号翻訳機に変えます。点とダッシュを入力するだけで、英語の翻訳が得られます。"
 }

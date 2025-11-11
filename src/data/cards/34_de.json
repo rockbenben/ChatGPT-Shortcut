@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 270,
+    "count": 273,
     "metaDescription": "Müssen Sie schnell Kontaktinformationen aus Text extrahieren? Dieser einfache ChatGPT-Prompt extrahiert Namen und Postanschriften aus E-Mails oder Textblöcken. Sparen Sie Zeit und automatisieren Sie die Dateneingabe."
 }

@@ -11,6 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 976,
+    "count": 1010,
     "metaDescription": "Vue 3로 빌드하고 계신가요? 이 프롬프트는 프로젝트를 위해 컴포지션 API와 <script setup> 구문을 사용하여 단일 파일에 완전한 Vue 3 컴포넌트를 생성합니다."
 }

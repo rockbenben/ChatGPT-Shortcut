@@ -10,6 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "count": 929,
+    "count": 934,
     "metaDescription": "Quer simular um motor de busca Solr? Este prompt permite que você adicione documentos JSON a coleções e os recupere usando consultas específicas do Solr diretamente no chat."
 }

@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
-    "count": 293,
+    "count": 300,
     "metaDescription": "Vuoi fare pratica con le query SQL? Questo prompt simula un terminale SQL con tabelle di esempio. Digita le tue query e ottieni i risultati in un formato di tabella pulito."
 }

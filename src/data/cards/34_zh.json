@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 270,
+    "count": 273,
     "metaDescription": "需要快速从文本中提取联系信息？这个简单的 AI 提示词可以从电子邮件或文本块中提取姓名和邮寄地址。节省时间，实现数据录入自动化。"
 }

@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
-    "count": 293,
+    "count": 300,
     "metaDescription": "SQL 쿼리를 연습하고 싶으신가요? 이 프롬프트는 예제 테이블이 있는 SQL 터미널을 시뮬레이션합니다. 쿼리를 입력하고 깔끔한 테이블 형식으로 결과를 얻으세요."
 }

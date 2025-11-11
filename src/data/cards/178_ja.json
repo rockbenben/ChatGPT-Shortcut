@@ -11,6 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 976,
+    "count": 1010,
     "metaDescription": "Vue 3で構築していますか？このプロンプトは、プロジェクトにComposition APIと<script setup>構文を使用して、単一ファイルに完全なVue 3コンポーネントを作成します。"
 }
