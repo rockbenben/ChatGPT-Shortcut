@@ -141,17 +141,32 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async () => {
     setLoading(true);
+    let popup: Window | null = null;
+
     try {
-      const url = await getGoogleAuthUrl();
-      if (url) {
-        const newWindow = window.open(url, "_blank", "location=yes,height=570,width=520,scrollbars=yes,status=yes");
-        if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
-          alert('Please disable your pop-up blocker and click the "Open" link again.');
-        }
-      } else {
-        alert("Failed to generate Google Auth URL.");
+      popup = window.open("", "gauth-login", "popup,location=yes,height=570,width=520,scrollbars=yes,status=yes,resizable=yes");
+
+      if (!popup || popup.closed || typeof popup.closed === "undefined") {
+        throw new Error("Pop-up window blocked. Please allow pop-ups and try again.");
       }
+
+      popup.document.write(
+        `<!DOCTYPE html><html><head><title>Google Login</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial,sans-serif;color:#444;background:#f7f7f7;} .wrapper{text-align:center;padding:24px;} .spinner{margin:0 auto 16px;border:4px solid #e0e0e0;border-top:4px solid #4285f4;border-radius:50%;width:36px;height:36px;animation:spin 1s linear infinite;} @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style></head><body><div class="wrapper"><div class="spinner"></div><p>Redirecting to Google sign-in...</p></div></body></html>`
+      );
+      popup.document.close();
+
+      const url = await getGoogleAuthUrl();
+      if (!url) {
+        throw new Error("Failed to generate Google authentication URL.");
+      }
+
+      popup.location.href = url;
+      popup.focus();
     } catch (error) {
+      if (popup && !popup.closed) {
+        popup.close();
+      }
+
       const errorMessage = error instanceof Error ? error.message : "Unknown error";
       messageApi.open({
         type: "error",
