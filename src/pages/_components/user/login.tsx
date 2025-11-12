@@ -151,7 +151,7 @@ const LoginPage = () => {
       }
 
       popup.document.write(
-        `<!DOCTYPE html><html><head><title>Google Login</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial,sans-serif;color:#444;background:#f7f7f7;} .wrapper{text-align:center;padding:24px;} .spinner{margin:0 auto 16px;border:4px solid #e0e0e0;border-top:4px solid #4285f4;border-radius:50%;width:36px;height:36px;animation:spin 1s linear infinite;} @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style></head><body><div class="wrapper"><div class="spinner"></div><p>Redirecting to Google sign-in...</p></div></body></html>`
+        `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Google Login</title><style>html,body{margin:0;padding:0;height:100%;}body{display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;color:#444;background:#f7f7f7;} .wrapper{box-sizing:border-box;text-align:center;padding:24px 16px;width:100%;max-width:320px;margin:0 auto;} .spinner{margin:0 auto 16px;border:4px solid #e0e0e0;border-top:4px solid #4285f4;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;} @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style></head><body><div class="wrapper"><div class="spinner"></div><p>Redirecting to Google sign-in...</p></div></body></html>`
       );
       popup.document.close();
 
