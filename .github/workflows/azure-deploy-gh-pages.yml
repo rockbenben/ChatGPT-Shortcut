@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Job
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: gh-pages
           submodules: true
