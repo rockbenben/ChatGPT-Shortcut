@@ -1,0 +1,39 @@
+name: "IndexNow Multi-Language"
+
+on:
+  schedule:
+    # 每3天的 北京时间 04:00 运行一次
+    - cron: "0 20 */3 * *"
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  submit-root-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit Root Sitemap
+        uses: bojieyang/indexnow-action@v2
+        with:
+          # 这里填写主站的 sitemap 地址
+          sitemap-location: "https://www.aishort.top/sitemap.xml"
+          since: 4
+          key: ${{ secrets.INDEXNOW_KEY }}
+
+  submit-lang-sitemaps:
+    # (可选) 让这个任务在主站任务完成后再跑，不加这行则是并行跑(更快)
+    # needs: submit-root-sitemap
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 在这里列出除主站zh外所有的语言代码
+        lang: [en, ja, ko, es, fr, de, it, ru, pt, hi, ar, bn]
+
+    steps:
+      - name: Submit Sitemap for ${{ matrix.lang }}
+        uses: bojieyang/indexnow-action@v2
+        with:
+          # 动态拼接地址：例如 https://www.aishort.top/en/sitemap.xml
+          sitemap-location: "https://www.aishort.top/${{ matrix.lang }}/sitemap.xml"
+          since: 4
+          key: ${{ secrets.INDEXNOW_KEY }}
