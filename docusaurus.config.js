@@ -101,8 +101,14 @@ const config = {
         ],
       }),
     },
+  ],  
+  scripts: [
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7585955822109216',
+      async: true,
+      crossorigin: 'anonymous',
+    },
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
