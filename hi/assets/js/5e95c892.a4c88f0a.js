@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["1668"],{37866:function(t,e,r){r.r(e),r.d(e,{default:()=>o});var s=r(74848);r(96540);var c=r(39836),u=r(99727),a=r(16364),h=r(22831),n=r(55206);function o(t){return(0,s.jsx)(u.e3,{className:(0,c.A)(a.G.wrapper.docsPages),children:(0,s.jsx)(n.A,{children:(0,h.v)(t.route.routes)})})}}}]);
