@@ -8,7 +8,9 @@
 .showcaseCardBody {
   max-height: 300px;
   overflow-y: auto;
-  line-height: 1.66;
+  line-height: 1.6;
+  color: var(--site-primary-font);
+  font-size: 0.9rem;
 
   /* Scrollbar styles */
   scrollbar-width: thin;
@@ -39,6 +41,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .shortEllipsisMy {
@@ -49,10 +53,11 @@
 }
 
 .showcaseCardTitle {
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 0;
   flex: 1 1 auto;
+  letter-spacing: -0.01em;
 }
 
 .showcaseCardTitle a {
@@ -104,26 +109,31 @@
 }
 
 .tag {
-  font-size: 0.675rem;
-  border: 1px solid var(--ifm-color-secondary-darkest);
+  font-size: 0.75rem;
+  border: 1px solid transparent;
+  background-color: var(--site-color-checkbox-checked-bg);
+  color: var(--ifm-color-primary-darker);
   cursor: default;
   margin-right: 6px;
   margin-bottom: 6px !important;
-  border-radius: 12px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
+  padding: 0px 6px;
+  font-weight: 500;
 }
 
 .tag .textLabel {
-  margin-left: 8px;
+  margin-left: 0px;
 }
 
 .tag .colorLabel {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   margin-left: 6px;
-  margin-right: 6px;
+  margin-right: 0;
+  opacity: 0.8;
 }
 
 .descriptionWrapper {

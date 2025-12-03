@@ -6,33 +6,47 @@
  */
 
 .checkboxLabel:hover {
-  opacity: 1;
-  box-shadow: 0 0 2px 1px var(--ifm-color-secondary-darkest);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background-color: var(--site-color-checkbox-checked-bg);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.checkboxLabel:active {
+  transform: scale(0.95);
 }
 
 input[type='checkbox'] + .checkboxLabel {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
   line-height: 1.5;
-  border-radius: 4px;
-  padding: 0.275rem 0.8rem;
-  opacity: 0.85;
-  transition: opacity 200ms ease-out;
-  border: 2px solid var(--ifm-color-secondary-darkest);
+  border-radius: 20px;
+  padding: 6px 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--site-color-card-background);
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--site-primary-font);
 }
 
 input:focus-visible + .checkboxLabel {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--ifm-color-primary);
 }
 
 input:checked + .checkboxLabel {
-  opacity: 0.9;
-  background-color: var(--site-color-checkbox-checked-bg);
-  border: 2px solid var(--ifm-color-primary-darkest);
+  background: linear-gradient(135deg, var(--site-color-tag-selected-bg) 0%, var(--site-color-tag-selected-bg) 100%);
+  color: var(--site-color-tag-selected-text);
+  border: 1px solid var(--site-color-tag-selected-border);
+  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
+  text-shadow: none;
 }
 
 input:checked + .checkboxLabel:hover {
-  opacity: 0.75;
-  box-shadow: 0 0 2px 1px var(--ifm-color-primary-dark);
+  opacity: 0.95;
+  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
+  transform: translateY(-1px);
 }

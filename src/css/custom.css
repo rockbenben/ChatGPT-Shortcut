@@ -25,6 +25,12 @@
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
   --site-primary-font: #3e4042;
   --site-color-background: white;
+  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
+  --site-color-tag-selected-text: #2d6454; /* Darker primary */
+  --site-color-tag-selected-border: #397e6a; /* Primary border */
 }
 
 html[data-theme="dark"] {
@@ -35,6 +41,12 @@ html[data-theme="dark"] {
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   --site-primary-font: #c5c5c5;
   --site-color-background: #242526;
+  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
+  --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
+  --site-color-tag-selected-border: #397e6a; /* Primary border */
 }
 
 /*

@@ -14,6 +14,22 @@
   .showcaseList {
     gap: 1rem !important;
   }
+
+  .checkboxList {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for cleaner look */
+  }
+  
+  .checkboxList::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .filterCheckbox {
@@ -42,34 +58,29 @@
 
 .checkboxList {
   flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.5rem;
 }
 
 .checkboxListItem {
   user-select: none;
   white-space: nowrap;
-  height: 32px;
+  height: auto;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  margin: 0;
 }
 
 .checkboxListItem:last-child {
   margin-right: 0;
 }
 
-.activeItem {
-  display: flex;
-  cursor: pointer;
-  line-height: 1.5;
-  border-radius: 6px;
-  opacity: 1;
-  background-color: var(--site-color-checkbox-checked-bg);
-  border: 2px solid var(--ifm-color-primary-darkest);
-}
 
-.activeItem:hover {
-  opacity: 0.75;
-  box-shadow: 0 0 2px 1px var(--ifm-color-primary-dark);
+
+.activeItem :global(.checkboxLabel) {
+  background-color: var(--ifm-color-primary) !important;
+  color: white !important;
+  border-color: var(--ifm-color-primary) !important;
+  opacity: 1 !important;
 }
 
 .searchContainer {
