@@ -101,7 +101,6 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                 {!showFullContent && paragraphText.length > MAX_LENGTH && (
                   <div className={styles.gradientOverlay}>
                     <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-                      <Translate id="showcase.card.readMore">Show More</Translate>
                       <DownOutlined />
                     </div>
                   </div>
@@ -118,7 +117,6 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                 {!showFullContent && paragraphText.length > MAX_LENGTH && (
                   <div className={styles.gradientOverlay}>
                     <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-                      <Translate id="showcase.card.readMore">Show More</Translate>
                       <DownOutlined />
                     </div>
                   </div>

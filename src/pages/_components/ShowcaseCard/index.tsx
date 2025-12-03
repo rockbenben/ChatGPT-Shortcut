@@ -164,7 +164,6 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           {!showFullContent && userDescription.length > MAX_LENGTH && (
             <div className={styles.gradientOverlay}>
               <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-                <Translate id="showcase.card.readMore">Show More</Translate>
                 <DownOutlined />
               </div>
             </div>
