@@ -9,9 +9,9 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, Pagination, Dropdown, Space, Button, Input, Skeleton, App } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined } from "@ant-design/icons";
+import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined, UserOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
+import { CommuPagePrompt, styles as cardStyles } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -90,30 +90,41 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-        <CommuPagePrompt commuPrompt={commuPrompt} />
+        <div>
+          <div className={clsx(cardStyles.showcaseCardHeader)}>
+            <div className={`${cardStyles.showcaseCardTitle} ${cardStyles.shortEllipsis}`}>
+              <span className={cardStyles.showcaseCardLink}>{commuPrompt.title}</span>
+            </div>
+            <Space.Compact>
+              <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
+                <Button
+                  icon={isBookmarked ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />}
+                  onClick={() => {
+                    if (!userAuth) {
+                      messageApi.warning("Please log in to bookmark.");
+                      return;
+                    }
+                    onBookmark(commuPrompt.id);
+                  }}
+                />
+              </Tooltip>
+              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+                <Button
+                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                  onClick={() => {
+                    copyText(commuPrompt.description);
+                  }}
+                />
+              </Tooltip>
+            </Space.Compact>
+          </div>
+          <CommuPagePrompt commuPrompt={commuPrompt} />
+        </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Space.Compact>
-            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
-              <Button
-                icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                onClick={() => {
-                  copyText(commuPrompt.description);
-                }}
-              />
-            </Tooltip>
-            <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-              <Button
-                icon={isBookmarked ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />}
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to bookmark.");
-                    return;
-                  }
-                  onBookmark(commuPrompt.id);
-                }}
-              />
-            </Tooltip>
-          </Space.Compact>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "var(--ifm-color-emphasis-600)", fontSize: "0.9rem" }}>
+            <UserOutlined />
+            <span>{commuPrompt.owner}</span>
+          </div>
           <Space.Compact>
             <Tooltip title={translate({ id: "upvote", message: "赞" })}>
               <Button

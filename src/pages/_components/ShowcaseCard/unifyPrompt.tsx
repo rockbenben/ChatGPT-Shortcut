@@ -7,6 +7,7 @@ import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import styles from "./styles.module.css";
+export { styles };
 import { ShowcaseRemark } from "./ShowcaseRemark";
 
 export interface CommuPrompt {
@@ -97,12 +98,6 @@ export const CommuPagePrompt = React.memo<SearchCommuProps>(({ commuPrompt }) =>
   const displayText = paragraphText || commuPrompt.description;
   return (
     <div>
-      <div className={clsx(styles.showcaseCardHeader)}>
-        <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-          <span className={styles.showcaseCardLink}>{commuPrompt.title}</span>
-          <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
-        </div>
-      </div>
       {commuPrompt.remark && <ShowcaseRemark remark={commuPrompt.remark} />}
       <div className={styles.descriptionWrapper}>
         <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${commuPrompt.notes ? styles.clickable : ""}`}>
