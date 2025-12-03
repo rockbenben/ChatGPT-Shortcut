@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { ConfigProvider, theme } from "antd";
+import "antd/dist/antd.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 export default function Root({ children }) {
@@ -7,24 +8,18 @@ export default function Root({ children }) {
 
   const updateTheme = useCallback(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
-
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
     setIsDarkMode(isDark);
   }, []);
 
   useEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
-
-    // 初始化主题
     updateTheme();
-
-    // 监听主题变化
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["data-theme"],
     });
-
     return () => observer.disconnect();
   }, [updateTheme]);
 
@@ -34,7 +29,7 @@ export default function Root({ children }) {
         colorPrimary: "#397e6a",
       },
       algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-      cssVar: true,
+      zeroRuntime: true,
       hashed: false,
     }),
     [isDarkMode]
