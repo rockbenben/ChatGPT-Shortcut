@@ -4,7 +4,7 @@ import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireFilled } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
@@ -135,7 +135,10 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink}>
               {userInfo.title}{" "}
             </Link>
-            <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCount(copyCount)}`}</span>
+            <span style={{ gap: "2px", color: "gray", fontSize: "0.8rem" }}>
+              <FireFilled style={{ color: "#ff6b6b" }} />
+              {formatCount(copyCount)}
+            </span>
           </div>
           <Space.Compact>
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
@@ -143,10 +146,10 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </Tooltip>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button icon={isFavorite ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />} onClick={isFavorite ? removeFavorite : handleLove} />
+                <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? removeFavorite : handleLove} />
               </Tooltip>
             )}
-            {!userAuth && user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#ffc107" }} />} />}
+            {!userAuth && user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} />}
           </Space.Compact>
         </div>
         <ShowcaseRemark remark={userInfo.remark} />

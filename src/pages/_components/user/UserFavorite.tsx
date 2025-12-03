@@ -83,7 +83,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                 <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick} />
               </Tooltip>
               <Tooltip title={<Translate>点击移除收藏</Translate>}>
-                <Button icon={<StarFilled style={{ color: "#ffc107" }} />} onClick={() => removeBookmark(item.id, !isCard)} />
+                <Button icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => removeBookmark(item.id, !isCard)} />
               </Tooltip>
             </Space.Compact>
           </div>

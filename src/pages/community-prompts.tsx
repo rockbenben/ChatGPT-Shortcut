@@ -106,7 +106,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
               </Tooltip>
               <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
                 <Button
-                  icon={isBookmarked ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />}
+                  icon={isBookmarked ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />}
                   onClick={() => {
                     if (!userAuth) {
                       messageApi.warning("Please log in to bookmark.");
