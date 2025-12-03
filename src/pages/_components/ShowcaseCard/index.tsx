@@ -138,15 +138,15 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             <span className={styles.showcaseCardBody}>{copyCount > 0 && `🔥${formatCount(copyCount)}`}</span>
           </div>
           <Space.Compact>
+            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+              <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
+            </Tooltip>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
                 <Button icon={isFavorite ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />} onClick={isFavorite ? removeFavorite : handleLove} />
               </Tooltip>
             )}
             {!userAuth && user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#ffc107" }} />} />}
-            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
-            </Tooltip>
           </Space.Compact>
         </div>
         <ShowcaseRemark remark={userInfo.remark} />

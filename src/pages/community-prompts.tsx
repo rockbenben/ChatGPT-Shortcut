@@ -96,6 +96,14 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
               <span className={cardStyles.showcaseCardLink}>{commuPrompt.title}</span>
             </div>
             <Space.Compact>
+              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+                <Button
+                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                  onClick={() => {
+                    copyText(commuPrompt.description);
+                  }}
+                />
+              </Tooltip>
               <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
                 <Button
                   icon={isBookmarked ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />}
@@ -105,14 +113,6 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
                       return;
                     }
                     onBookmark(commuPrompt.id);
-                  }}
-                />
-              </Tooltip>
-              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
-                <Button
-                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                  onClick={() => {
-                    copyText(commuPrompt.description);
                   }}
                 />
               </Tooltip>
