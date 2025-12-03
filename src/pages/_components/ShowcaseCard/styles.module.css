@@ -192,40 +192,42 @@
   left: 0;
   right: 0;
   text-align: center;
-  background: linear-gradient(to bottom, transparent, var(--site-color-card-background) 90%);
-  padding-top: 60px; /* Increased fade area */
+  background: linear-gradient(to bottom, transparent, var(--site-color-card-background) 70%);
+  padding-top: 60px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  pointer-events: none; /* Allow clicks to pass through transparent areas */
+  pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 12px;
+  padding-bottom: 0; /* Remove padding to let button sit at bottom */
 }
 
 .loadMoreBtn {
   background: var(--site-color-card-background);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  padding: 6px 16px; /* Increased padding */
-  border-radius: 20px; /* More pill-shaped */
-  display: inline-flex;
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  width: 100%; /* Full width */
+  padding: 8px 0; /* Vertical padding */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-  font-weight: 600; /* Bolder text */
-  color: var(--ifm-color-emphasis-700);
   cursor: pointer;
-  box-shadow: var(--site-shadow-sm);
+  color: var(--ifm-color-emphasis-600);
   transition: all 0.2s ease;
-  pointer-events: auto; /* Re-enable clicks on the button */
+  pointer-events: auto;
   z-index: 10;
+  border-radius: 0 0 12px 12px; /* Match card bottom radius */
 }
 
 .loadMoreBtn:hover {
   background: var(--ifm-color-emphasis-100);
-  transform: translateY(-2px);
-  box-shadow: var(--site-shadow-md);
   color: var(--ifm-color-primary);
+}
+
+.downIcon {
+  font-size: 16px; /* Larger icon */
+  font-weight: bold;
 }
 
 .downIcon {
