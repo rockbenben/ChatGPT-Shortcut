@@ -13,6 +13,8 @@ import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { MAX_LENGTH, truncate, formatCount } from "@site/src/utils/formatters";
 
+import { ShowcaseRemark } from "./ShowcaseRemark";
+
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(({ label, color, description }, ref) => (
   <li ref={ref} className={styles.tag} title={description}>
     <span className={styles.textLabel}>{label.toLowerCase()}</span>
@@ -126,7 +128,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   }, [userAuth, user.id, refreshUserAuth]);
 
   return (
-    <li key={userInfo.title} className="card shadow--md">
+    <li key={userInfo.title} className={clsx("card", styles.showcaseCard)}>
       <div className={clsx("card__body")}>
         <div className={clsx(styles.showcaseCardHeader)}>
           <div className={styles.showcaseCardTitle}>
@@ -159,9 +161,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </Tooltip>
           </Space.Compact>
         </div>
-        <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
-          👉 {userInfo.remark}
-        </p>
+        <ShowcaseRemark remark={userInfo.remark} />
         <div className={styles.descriptionWrapper}>
           <p
             onClick={canToggle ? handleParagraphClick : undefined}
@@ -172,9 +172,10 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           </p>
           {!showFullContent && userDescription.length > MAX_LENGTH && (
             <div className={styles.gradientOverlay}>
-              <Tooltip title={<Translate>加载更多</Translate>}>
-                <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-              </Tooltip>
+              <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+                <Translate id="showcase.card.readMore">Show More</Translate>
+                <DownOutlined className={styles.downIcon} />
+              </div>
             </div>
           )}
         </div>

@@ -14,6 +14,7 @@ import isEqual from "lodash/isEqual";
 
 import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache, clearUserAllInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
+import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/ShowcaseRemark";
 
 // SortableItem component
 const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handleEditPrompt }) => {
@@ -41,7 +42,7 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
   };
 
   return (
-    <li ref={setNodeRef} className="card shadow--md" style={style}>
+    <li ref={setNodeRef} className={clsx("card", styles.showcaseCard)} style={style}>
       <div
         className={clsx("card__body")}
         style={{
@@ -69,20 +70,17 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
               </Button>
             </Tooltip>
           </div>
-          {UserPrompt.remark && (
-            <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
-              👉 {UserPrompt.remark}
-            </p>
-          )}
+          {UserPrompt.remark && <ShowcaseRemark remark={UserPrompt.remark} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)} />}
           <div className={styles.descriptionWrapper}>
             <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${UserPrompt.notes ? styles.clickable : styles.nonClickable}`}>
               {showFullContent ? displayText : truncate(displayText)}
             </p>
             {!showFullContent && displayText.length > MAX_LENGTH && (
               <div className={styles.gradientOverlay}>
-                <Tooltip title={<Translate>加载更多</Translate>}>
-                  <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-                </Tooltip>
+                <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+                  <Translate id="showcase.card.readMore">Show More</Translate>
+                  <DownOutlined className={styles.downIcon} />
+                </div>
               </div>
             )}
           </div>
@@ -269,7 +267,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <ul className={clsx("clean-list", pageStyles.showcaseList)}>
             {!userprompts || userprompts.length === 0 ? (
-              <li className="card shadow--md">
+              <li className={clsx("card", styles.showcaseCard)}>
                 <div className={clsx("card__body", styles.cardBodyHeight)}>
                   <p>
                     <Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>

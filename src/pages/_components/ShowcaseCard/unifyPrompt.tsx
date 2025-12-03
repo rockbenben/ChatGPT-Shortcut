@@ -7,6 +7,7 @@ import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import styles from "./styles.module.css";
+import { ShowcaseRemark } from "./ShowcaseRemark";
 
 export interface CommuPrompt {
   title: string;
@@ -41,7 +42,7 @@ export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
 
   const displayText = paragraphText || commuPrompt.description;
   return (
-    <li className="card shadow--md">
+    <li className={clsx("card", styles.showcaseCard)}>
       <div
         className={clsx("card__body")}
         style={{
@@ -68,23 +69,7 @@ export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
               )}
             </Button>
           </div>
-          {commuPrompt.remark && (
-            <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
-              👉 {commuPrompt.remark}
-            </p>
-          )}
-          <div className={styles.descriptionWrapper}>
-            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${commuPrompt.notes ? styles.clickable : ""}`}>
-              {showFullContent ? displayText : truncate(displayText)}
-            </p>
-            {!showFullContent && displayText.length > MAX_LENGTH && (
-              <div className={styles.gradientOverlay}>
-                <Tooltip title={<Translate>加载更多</Translate>}>
-                  <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-                </Tooltip>
-              </div>
-            )}
-          </div>
+          {commuPrompt.remark && <ShowcaseRemark remark={commuPrompt.remark} />}
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}></div>
       </div>
@@ -115,20 +100,17 @@ export const CommuPagePrompt = React.memo<SearchCommuProps>(({ commuPrompt }) =>
           <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
         </div>
       </div>
-      {commuPrompt.remark && (
-        <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }}>
-          👉 {commuPrompt.remark}
-        </p>
-      )}
+      {commuPrompt.remark && <ShowcaseRemark remark={commuPrompt.remark} />}
       <div className={styles.descriptionWrapper}>
         <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${commuPrompt.notes ? styles.clickable : ""}`}>
           {showFullContent ? displayText : truncate(displayText)}
         </p>
         {!showFullContent && displayText.length > MAX_LENGTH && (
           <div className={styles.gradientOverlay}>
-            <Tooltip title={<Translate>加载更多</Translate>}>
-              <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-            </Tooltip>
+            <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+              <Translate id="showcase.card.readMore">Show More</Translate>
+              <DownOutlined className={styles.downIcon} />
+            </div>
           </div>
         )}
       </div>

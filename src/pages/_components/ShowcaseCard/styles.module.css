@@ -5,21 +5,57 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* New Card Container Style */
+.showcaseCard {
+  border-radius: 12px;
+  border: 1px solid transparent; /* Prepare for potential border */
+  box-shadow: var(--site-shadow-sm);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  background-color: var(--site-color-card-background);
+}
+
+.showcaseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--site-shadow-lg);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
 .showcaseCardBody {
   max-height: 300px;
   overflow-y: auto;
   line-height: 1.6;
   color: var(--site-primary-font);
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* Increased from 0.9rem */
 
   /* Scrollbar styles */
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent; /* transparent scrollbar until hovered over */
+  scrollbar-color: transparent transparent;
 }
 
 .showcaseCardBody:hover {
-  /* Show scrollbar when hovering over the element */
   scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.1);
+}
+
+/* Distinct Remark Styling */
+.showcaseCardRemark {
+  background-color: transparent;
+  color: var(--ifm-color-emphasis-600);
+  padding: 2px 0 2px 12px;
+  border-radius: 0;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-weight: 400;
+  border: none;
+  border-left: 3px solid var(--ifm-color-emphasis-200);
+  
+  /* Truncation */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -34,15 +70,16 @@
 .showcaseCardImage {
   overflow: hidden;
   height: 150px;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  border-bottom: none; /* Removed border */
 }
 
 .showcaseCardHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  margin-bottom: 8px; /* Reduced from 12px */
+  padding-bottom: 0; /* Removed padding */
+  border-bottom: none; /* Removed border */
+  min-height: 40px;
 }
 
 .shortEllipsisMy {
@@ -53,30 +90,28 @@
 }
 
 .showcaseCardTitle {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem; /* Increased from 1rem */
+  font-weight: 700; /* Increased weight */
   margin-bottom: 0;
   flex: 1 1 auto;
   letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
 .showcaseCardTitle a {
   text-decoration: none;
-  background: linear-gradient(
-      var(--ifm-color-primary),
-      var(--ifm-color-primary)
-    )
-    0% 100% / 0% 1px no-repeat;
-  transition: background-size ease-out 200ms;
+  color: var(--ifm-color-primary);
+  transition: color 0.2s ease;
 }
 
-.showcaseCardTitle a:not(:focus):hover {
-  background-size: 100% 1px;
+.showcaseCardTitle a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
 }
 
 .showcaseCardTitle,
 .showcaseCardHeader .svgIconFavorite {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .showcaseCardHeader .svgIconFavorite {
@@ -101,11 +136,14 @@
 
 [data-theme='dark'] .showcaseCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
+  color: inherit;
 }
 
 .cardFooter {
   display: flex;
   flex-wrap: wrap;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 12px;
 }
 
 .tag {
@@ -119,7 +157,7 @@
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
-  padding: 0px 6px;
+  padding: 2px 8px; /* Slightly increased padding */
   font-weight: 500;
 }
 
@@ -154,16 +192,44 @@
   left: 0;
   right: 0;
   text-align: center;
-  background: linear-gradient(transparent, var(--site-color-background) 70%);
-  padding-top: 40px;
+  background: linear-gradient(to bottom, transparent, var(--site-color-card-background) 90%);
+  padding-top: 60px; /* Increased fade area */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  pointer-events: none; /* Allow clicks to pass through transparent areas */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 12px;
+}
+
+.loadMoreBtn {
+  background: var(--site-color-card-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 6px 16px; /* Increased padding */
+  border-radius: 20px; /* More pill-shaped */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600; /* Bolder text */
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  box-shadow: var(--site-shadow-sm);
+  transition: all 0.2s ease;
+  pointer-events: auto; /* Re-enable clicks on the button */
+  z-index: 10;
+}
+
+.loadMoreBtn:hover {
+  background: var(--ifm-color-emphasis-100);
+  transform: translateY(-2px);
+  box-shadow: var(--site-shadow-md);
+  color: var(--ifm-color-primary);
 }
 
 .downIcon {
-  display: block;
-  margin: 0 auto;
-  color: var(--ifm-color-primary);
-  cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .showcaseCardLink {

@@ -5,6 +5,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ShowcaseCardTag } from "@site/src/pages/_components/ShowcaseCard";
+import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/ShowcaseRemark";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
 import { Button, Spin, Tooltip, Space, App } from "antd";
@@ -54,7 +55,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
   };
 
   return (
-    <li ref={setNodeRef} className="card shadow--md" style={style}>
+    <li ref={setNodeRef} className={clsx("card", styles.showcaseCard)} style={style}>
       <div
         className={clsx("card__body")}
         style={{
@@ -98,9 +99,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
           </div>
           {isCard ? (
             <>
-              <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
-                👉 {item[currentLanguage].remark}
-              </p>
+              <ShowcaseRemark remark={item[currentLanguage].remark} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)} />
               <div className={styles.descriptionWrapper}>
                 <p
                   onClick={canToggle ? handleParagraphClick : undefined}
@@ -111,29 +110,27 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                 </p>
                 {!showFullContent && paragraphText.length > MAX_LENGTH && (
                   <div className={styles.gradientOverlay}>
-                    <Tooltip title={<Translate>加载更多</Translate>}>
-                      <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-                    </Tooltip>
+                    <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+                      <Translate id="showcase.card.readMore">Show More</Translate>
+                      <DownOutlined className={styles.downIcon} />
+                    </div>
                   </div>
                 )}
               </div>
             </>
           ) : (
             <>
-              {item.remark && (
-                <p className={styles.showcaseCardBody} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)}>
-                  👉 {item.remark}
-                </p>
-              )}
+              {item.remark && <ShowcaseRemark remark={item.remark} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)} />}
               <div className={styles.descriptionWrapper}>
                 <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${item.notes ? styles.clickable : styles.nonClickable}`}>
                   {showFullContent ? paragraphText : truncate(paragraphText)}
                 </p>
                 {!showFullContent && paragraphText.length > MAX_LENGTH && (
                   <div className={styles.gradientOverlay}>
-                    <Tooltip title={<Translate>加载更多</Translate>}>
-                      <DownOutlined onClick={toggleContentDisplay} className={styles.downIcon} />
-                    </Tooltip>
+                    <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+                      <Translate id="showcase.card.readMore">Show More</Translate>
+                      <DownOutlined className={styles.downIcon} />
+                    </div>
                   </div>
                 )}
               </div>
