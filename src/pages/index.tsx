@@ -48,21 +48,12 @@ export function prepareUserState(): UserState | undefined {
 }
 
 const ShowcaseHeader = React.memo(() => (
-  <section className={"text--center"}>
+  <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      <Heading
-        as="h1"
-        style={{
-          fontSize: "2.5rem",
-          fontWeight: 800,
-          background: "linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          marginBottom: "1rem",
-        }}>
+      <Heading as="h1" className={styles.heroTitle}>
         AI Short
       </Heading>
-      <p style={{ fontSize: "1.2rem", color: "var(--ifm-color-content-secondary)" }}>{SLOGAN}</p>
+      <p className={styles.heroSubtitle}>{SLOGAN}</p>
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
