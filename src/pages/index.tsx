@@ -370,9 +370,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               </Suspense>
             </ul>
             {!showAllOtherUsers && (
-              <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
+              <button className={styles.loadMoreButton} onClick={() => setShowAllOtherUsers(true)}>
                 <ArrowDownOutlined /> <Translate>加载更多</Translate>
-              </Button>
+              </button>
             )}
           </div>
         </>
