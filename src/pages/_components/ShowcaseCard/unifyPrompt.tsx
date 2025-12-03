@@ -53,9 +53,7 @@ export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
         <div>
           <div className={clsx(styles.showcaseCardHeader)}>
             <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-              <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-                {commuPrompt.title}
-              </span>
+              <span className={styles.showcaseCardLink}>{commuPrompt.title}</span>
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
             </div>
             <Button onClick={handleCopy}>
@@ -113,9 +111,7 @@ export const CommuPagePrompt = React.memo<SearchCommuProps>(({ commuPrompt }) =>
     <div>
       <div className={clsx(styles.showcaseCardHeader)}>
         <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsis}`}>
-          <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-            {commuPrompt.title}
-          </span>
+          <span className={styles.showcaseCardLink}>{commuPrompt.title}</span>
           <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
         </div>
       </div>

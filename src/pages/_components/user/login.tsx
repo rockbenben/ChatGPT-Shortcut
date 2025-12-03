@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Card, Form, Input, message, Tabs, Checkbox, Space, Typography, Alert } from "antd";
+import { Button, Card, Form, Input, Tabs, Checkbox, Space, Typography, Alert, App } from "antd";
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -54,7 +54,7 @@ const rules = {
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState("1");
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
   const [formKey, setFormKey] = useState(Date.now()); // For resetting forms
 
   // Form hooks
@@ -404,7 +404,6 @@ const LoginPage = () => {
 
   return (
     <>
-      {contextHolder}
       <Card
         title={
           <Title level={4}>

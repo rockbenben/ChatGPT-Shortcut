@@ -97,7 +97,7 @@ function PromptPage({ prompt }) {
                   {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
                 </Button>
                 {website && (
-                  <Link to={website}>
+                  <Link to={website} className="buttonLink" target="_blank" rel="noopener noreferrer">
                     <LinkOutlined />
                   </Link>
                 )}

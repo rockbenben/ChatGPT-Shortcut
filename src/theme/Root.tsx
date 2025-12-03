@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider, theme, App } from "antd";
 import "antd/dist/antd.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
@@ -35,5 +35,9 @@ export default function Root({ children }) {
     [isDarkMode]
   );
 
-  return <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>;
+  return (
+    <ConfigProvider theme={themeConfig}>
+      <App className="app-root">{children}</App>
+    </ConfigProvider>
+  );
 }

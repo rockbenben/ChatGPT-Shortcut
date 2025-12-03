@@ -51,7 +51,7 @@ const ShowcaseHeader = React.memo(() => (
   <section className={"text--center"}>
     <div className="hideOnSmallScreen">
       <Heading as="h1">AI Short</Heading>
-      <p>{SLOGAN}</p>
+      <p style={{ fontSize: "1rem" }}>{SLOGAN}</p>
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
@@ -107,7 +107,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           <Heading as="h2" className="hideOnSmallScreen">
             <Translate id="showcase.filters.title">Filters</Translate>
           </Heading>
-          <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
+          <button onClick={toggleTagsOnMobile} className={clsx("showOnSmallScreen", styles.onToggleButton)}>
             <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
           </button>
         </div>
@@ -204,7 +204,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               message: "社区分享的精选提示词",
             })}
             anchorEl="#__docusaurus">
-            <Link to="/community-prompts">
+            <Link to="/community-prompts" className="fontLink">
               <ShowcaseTagSelect
                 id="community.tag.tooltip"
                 tag="communityprompt"

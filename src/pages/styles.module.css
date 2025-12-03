@@ -124,15 +124,28 @@
 }
 
 .onToggleButton {
-  background-color: #18816a;
-  color: var(--site-color-favorite-background);
-  padding: 0.3rem 0.6rem;
+  border: 2px solid var(--ifm-color-primary-darkest);
+  background-color: transparent;
+  color: inherit;
   border-radius: 0.3rem;
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: bold;
+  opacity: 0.75;
+  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  box-shadow: var(--ifm-global-shadow-md);
   margin-right: 0.75rem;
-  border: none;
-  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px; /* Match toggle height */
+  padding: 0 10px;
+  font-size: 0.8rem; /* Match toggle font size */
   cursor: pointer;
 }
+
+.onToggleButton:hover {
+  opacity: 1;
+  box-shadow: var(--ifm-global-shadow-md);
+  color: inherit;
+  border-color: var(--ifm-color-primary-darkest);
+}
+
+

@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ShowcaseCardTag } from "@site/src/pages/_components/ShowcaseCard";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
-import { Button, message, Spin, Tooltip, Space } from "antd";
+import { Button, Spin, Tooltip, Space, App } from "antd";
 import { CheckOutlined, CopyOutlined, DownOutlined, HeartTwoTone, LinkOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
@@ -151,7 +151,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
           <ShowcaseCardTag tags={item.tags} />
           {item.website && (
             <li style={{ marginLeft: "auto" }}>
-              <a href={item.website} target="_blank" rel="noopener noreferrer">
+              <a href={item.website} className="buttonLink" target="_blank" rel="noopener noreferrer">
                 <LinkOutlined />
               </a>
             </li>
@@ -164,7 +164,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
 
 function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const [cards, setCards] = useState([]);
@@ -282,7 +282,6 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
 
   return (
     <>
-      {contextHolder}
       {!cards?.length && !comms?.length ? (
         <ul className={clsx("clean-list", pageStyles.showcaseList)}>
           <li className="card shadow--md">

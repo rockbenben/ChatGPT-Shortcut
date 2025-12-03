@@ -183,7 +183,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
         <ShowcaseCardTag tags={user.tags} />
         {user.website && (
           <li style={{ marginLeft: "auto" }}>
-            <a href={user.website} target="_blank" rel="noopener noreferrer">
+            <a href={user.website} className="buttonLink" target="_blank" rel="noopener noreferrer">
               <LinkOutlined />
             </a>
           </li>

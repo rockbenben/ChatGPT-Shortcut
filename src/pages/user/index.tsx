@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import Layout from "@theme/Layout";
-import { Card, Descriptions, Form, Input, Button, message, Tabs, Spin, Space, Alert, Row, Col, Typography } from "antd";
+import { Card, Descriptions, Form, Input, Button, Tabs, Spin, Space, Alert, Row, Col, Typography, App } from "antd";
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
@@ -13,7 +13,7 @@ const { Title } = Typography;
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
   const [loading, setLoading] = useState(false);
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState("");
@@ -329,15 +329,14 @@ const UserProfile = () => {
 
   return (
     <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
-      {contextHolder}
       <Row justify="center">
         <Col xs={24} sm={22} md={20} lg={16} xl={14}>
           <div style={{ padding: "20px" }}>
             <Space size={"large"} style={{ marginLeft: 8 }}>
-              <Link to="/" className="mainLink">
+              <Link to="/" className="interLink">
                 <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
               </Link>
-              <Link to="/user/favorite" className="mainLink">
+              <Link to="/user/favorite" className="interLink">
                 <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
               </Link>
             </Space>

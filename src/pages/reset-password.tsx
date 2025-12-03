@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Form, Input, Button, message, Typography, Card } from "antd";
+import { Form, Input, Button, Typography, Card, App } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
 
@@ -10,7 +10,7 @@ const ResetPassword = () => {
   const [form] = Form.useForm();
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -76,7 +76,6 @@ const ResetPassword = () => {
 
   return (
     <Layout title={translate({ id: "button.resetPassword", message: "重置密码" })}>
-      {contextHolder}
       <div
         style={{
           maxWidth: 450,

@@ -1,7 +1,7 @@
 import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, message, Modal, Typography, Switch, Spin, Tooltip, Space } from "antd";
+import { Form, Input, Button, Modal, Typography, Switch, Spin, Tooltip, Space, App } from "antd";
 import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -120,7 +120,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   const { userAuth, setUserAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi, modal } = App.useApp();
 
   const handleClearCache = useCallback(async () => {
     await clearUserAllInfoCache();
@@ -208,16 +208,16 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     () => (
       <Space wrap size="middle">
         {!hideLinks.userCenter && (
-          <Link to="/user" className="button button--primary">
+          <Link to="/user" className="button button--primary buttonLink">
             <UserOutlined /> <Translate id="link.myaccount">账号设置</Translate>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" className="button button--primary hideOnSmallScreen">
+          <Link to="/user/favorite" className="button button--primary hideOnSmallScreen buttonLink">
             <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
           </Link>
         )}
-        <a className="button button--primary" onClick={() => setOpen(true)}>
+        <a className="button button--primary buttonLink" onClick={() => setOpen(true)}>
           <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
         </a>
         {!hideLinks.userCenter && (
@@ -239,7 +239,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         <Button
           icon={<LogoutOutlined />}
           onClick={() => {
-            Modal.confirm({
+            modal.confirm({
               title: "Confirm Logout",
               content: "Click OK to log out.",
               onOk: handleLogout,
@@ -261,7 +261,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         <button className="button button--primary" onClick={() => setOpen(true)}>
           <Translate id="button.login">登录</Translate>
         </button>
-        <Link to="/community-prompts" className="button button--primary">
+        <Link to="/community-prompts" className="button button--primary buttonLink">
           <LikeFilled /> <Translate id="showcase.header.button">分享你的提示词</Translate>
         </Link>
       </Space>
@@ -280,7 +280,6 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
 
   return (
     <>
-      {contextHolder}
       {userAuth ? (
         <>
           {loggedInButtons}

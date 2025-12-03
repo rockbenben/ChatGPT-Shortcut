@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { Form, Input, Button, message, Spin, Modal, Typography, Tooltip, Switch, Tag } from "antd";
+import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App } from "antd";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
@@ -53,9 +53,7 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
         <div>
           <div className={clsx(styles.showcaseCardHeader)}>
             <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsisMy}`} {...attributes} {...(isFiltered ? {} : listeners)}>
-              <span className={styles.showcaseCardLink} style={{ color: "var(--ifm-color-primary)" }}>
-                {UserPrompt.title}{" "}
-              </span>
+              <span className={styles.showcaseCardLink}>{UserPrompt.title} </span>
               {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
               {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
             </div>
@@ -104,7 +102,7 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
 
 function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi, modal } = App.useApp();
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasDragged, setHasDragged] = useState(false);
@@ -201,7 +199,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
 
   const handleDeletePrompt = useCallback(
     (promptId) => {
-      Modal.confirm({
+      modal.confirm({
         title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
         content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
         onOk: async () => {
@@ -263,7 +261,6 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
 
   return (
     <>
-      {contextHolder}
       {loading ? (
         <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
           <Spin />

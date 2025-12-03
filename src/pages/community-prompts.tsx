@@ -8,7 +8,7 @@ import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, Skeleton } from "antd";
+import { Modal, Typography, Tooltip, Pagination, Dropdown, Space, Button, Input, Skeleton, App } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
@@ -155,7 +155,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
 
 const CommunityPrompts = () => {
   const { userAuth } = useContext(AuthContext);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
@@ -312,79 +312,78 @@ const CommunityPrompts = () => {
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">
-        {contextHolder}
         <section className="margin-top--sm margin-bottom--sm">
           <div className="container padding-vert--md">
             <Space wrap style={{ marginBottom: "20px" }}>
-              <Link to="/" className="mainLink">
+              <Link to="/" className="interLink">
                 <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
               </Link>
               {userAuth ? (
-                <Link to="/user/favorite" className="mainLink">
+                <Link to="/user/favorite" className="interLink">
                   <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
                 </Link>
+              ) : (
+                <Button onClick={() => setOpen(true)}>
+                  <LoginOutlined /> <Translate id="button.login">登录</Translate>
+                </Button>
+              )}
+              <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
+                {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
+              </Dropdown.Button>
+              <Dropdown.Button icon={<DownOutlined />} menu={orderMenuProps}>
+                {sortOrder === "asc" ? <Translate id="order.ascending">升序</Translate> : <Translate id="order.descending">降序</Translate>}
+              </Dropdown.Button>
+              <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
+            </Space>
+            <ul className={clsx("clean-list", styles.showcaseList)}>
+              {loading ? (
+                // 使用预生成的骨架屏，性能最优
+                pageSize === 12 ? (
+                  SKELETON_12
                 ) : (
-                  <Button onClick={() => setOpen(true)}>
-                    <LoginOutlined /> <Translate id="button.login">登录</Translate>
-                  </Button>
-                )}
-                <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
-                  {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
-                </Dropdown.Button>
-                <Dropdown.Button icon={<DownOutlined />} menu={orderMenuProps}>
-                  {sortOrder === "asc" ? <Translate id="order.ascending">升序</Translate> : <Translate id="order.descending">降序</Translate>}
-                </Dropdown.Button>
-                <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
-              </Space>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {loading ? (
-                  // 使用预生成的骨架屏，性能最优
-                  pageSize === 12 ? (
-                    SKELETON_12
-                  ) : (
-                    <SkeletonList count={pageSize} />
-                  )
-                ) : (
-                  userprompts.map((commuPrompt) => (
-                    <PromptCard
-                      key={commuPrompt.id}
-                      commuPrompt={commuPrompt}
-                      onVote={vote}
-                      onBookmark={bookmark}
-                      votedUpPromptIds={votedUpPromptIds}
-                      votedDownPromptIds={votedDownPromptIds}
-                      userAuth={userAuth}
-                      messageApi={messageApi}
-                    />
-                  ))
-                )}
-              </ul>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
-              </div>
-              <Suspense fallback={null}>
-                <AdComponent type="transverse" />
-              </Suspense>
-              <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
-                <Text type="secondary" style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
-                  {translate({
-                    id: "info.communityPrompts",
-                    message:
-                      "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
-                  })}
-                </Text>
-              </div>
-              <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-                <LoginComponent />
-              </Modal>
-              <Suspense fallback={null}>
-                <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
-              </Suspense>
+                  <SkeletonList count={pageSize} />
+                )
+              ) : (
+                userprompts.map((commuPrompt) => (
+                  <PromptCard
+                    key={commuPrompt.id}
+                    commuPrompt={commuPrompt}
+                    onVote={vote}
+                    onBookmark={bookmark}
+                    votedUpPromptIds={votedUpPromptIds}
+                    votedDownPromptIds={votedDownPromptIds}
+                    userAuth={userAuth}
+                    messageApi={messageApi}
+                  />
+                ))
+              )}
+            </ul>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
             </div>
-          </section>
-        </main>
-      </Layout>
-    );
+            <Suspense fallback={null}>
+              <AdComponent type="transverse" />
+            </Suspense>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: 16, marginBottom: -24 }}>
+              <Text style={{ color: "var(--ifm-color-secondary-darker)", fontSize: "10px" }}>
+                {translate({
+                  id: "info.communityPrompts",
+                  message:
+                    "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
+                })}
+              </Text>
+            </div>
+            <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+              <LoginComponent />
+            </Modal>
+            <Suspense fallback={null}>
+              <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
+            </Suspense>
+          </div>
+        </section>
+      </main>
+    </Layout>
+  );
 };
 
 export default function WrappedCommunityPrompts() {
