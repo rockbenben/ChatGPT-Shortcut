@@ -1,13 +1,13 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React from "react";
 import { Tooltip } from "antd";
 import styles from "./styles.module.css";
 
 export const ShowcaseRemark = ({ remark, ...props }: { remark: string } & React.HTMLAttributes<HTMLParagraphElement>) => {
-  return (
-    <Tooltip title={remark}>
-      <p className={styles.showcaseCardRemark} {...props}>
-        {remark}
-      </p>
-    </Tooltip>
+  const isLongRemark = remark.length > 78;
+  const content = (
+    <p className={styles.showcaseCardRemark} {...props}>
+      {remark}
+    </p>
   );
+  return isLongRemark ? <Tooltip title={remark}>{content}</Tooltip> : content;
 };
