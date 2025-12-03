@@ -204,34 +204,25 @@
 }
 
 .loadMoreBtn {
-  background: var(--site-color-card-background);
+  background: var(--site-color-tag-selected-bg);
+  opacity: 0.4;
   border: none;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
-  width: 100%; /* Full width */
-  padding: 8px 0; /* Vertical padding */
+  width: 100%;
+  padding: 8px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: var(--ifm-color-emphasis-600);
-  transition: all 0.2s ease;
+  color: var(--site-color-tag-selected-border);
+  transition: all 0.3s ease;
   pointer-events: auto;
   z-index: 10;
-  border-radius: 0 0 12px 12px; /* Match card bottom radius */
+  border-radius: 0 0 12px 12px;
 }
 
 .loadMoreBtn:hover {
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-primary);
-}
-
-.downIcon {
-  font-size: 16px; /* Larger icon */
-  font-weight: bold;
-}
-
-.downIcon {
-  font-size: 12px;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .showcaseCardLink {

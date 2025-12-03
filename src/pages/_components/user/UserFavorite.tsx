@@ -112,7 +112,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                   <div className={styles.gradientOverlay}>
                     <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
                       <Translate id="showcase.card.readMore">Show More</Translate>
-                      <DownOutlined className={styles.downIcon} />
+                      <DownOutlined />
                     </div>
                   </div>
                 )}
@@ -129,7 +129,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
                   <div className={styles.gradientOverlay}>
                     <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
                       <Translate id="showcase.card.readMore">Show More</Translate>
-                      <DownOutlined className={styles.downIcon} />
+                      <DownOutlined />
                     </div>
                   </div>
                 )}
