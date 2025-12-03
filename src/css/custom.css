@@ -12,7 +12,7 @@
     */
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 38%; /* do we really need this extra one? */
-  --site-color-favorite-background: #f6fdfd;
+  --site-color-favorite-background: transparent;
   --site-color-tooltip: #fff;
   --site-color-tooltip-background: #353738;
   --site-color-svg-icon-favorite: #e9669e;

@@ -104,6 +104,8 @@
   padding-top: 1.5rem;
   padding-bottom: 2rem;
   background-color: var(--site-color-favorite-background);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .showcaseFavoriteHeader {
