@@ -57,21 +57,24 @@ export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
               <span className={styles.showcaseCardLink}>{commuPrompt.title}</span>
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
             </div>
-            <Button onClick={handleCopy}>
-              {copied ? (
-                <>
-                  <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                </>
-              ) : (
-                <>
-                  <CopyOutlined /> <Translate id="theme.CodeBlock.copy">复制</Translate>
-                </>
-              )}
-            </Button>
+            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+              <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
+            </Tooltip>
           </div>
           {commuPrompt.remark && <ShowcaseRemark remark={commuPrompt.remark} />}
+          <div className={styles.descriptionWrapper}>
+            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${commuPrompt.notes ? styles.clickable : ""}`}>
+              {showFullContent ? displayText : truncate(displayText)}
+            </p>
+            {!showFullContent && displayText.length > MAX_LENGTH && (
+              <div className={styles.gradientOverlay}>
+                <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
+                  <DownOutlined className={styles.downIcon} />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}></div>
       </div>
     </li>
   );
@@ -108,8 +111,7 @@ export const CommuPagePrompt = React.memo<SearchCommuProps>(({ commuPrompt }) =>
         {!showFullContent && displayText.length > MAX_LENGTH && (
           <div className={styles.gradientOverlay}>
             <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-              <Translate id="showcase.card.readMore">Show More</Translate>
-              <DownOutlined />
+              <DownOutlined className={styles.downIcon} />
             </div>
           </div>
         )}

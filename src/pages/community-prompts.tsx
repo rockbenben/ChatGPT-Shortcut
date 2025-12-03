@@ -9,7 +9,7 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, Pagination, Dropdown, Space, Button, Input, Skeleton, App } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
+import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
@@ -85,38 +85,33 @@ interface PromptCardProps {
 
 const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
   const { copied, copyText } = useCopyToClipboard();
+  const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
+
   return (
     <li className="card shadow--md">
       <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
         <CommuPagePrompt commuPrompt={commuPrompt} />
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Space.Compact>
-            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
               <Button
+                icon={copied ? <CheckOutlined /> : <CopyOutlined />}
                 onClick={() => {
                   copyText(commuPrompt.description);
-                }}>
-                {copied ? (
-                  <>
-                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                  </>
-                ) : (
-                  <CopyOutlined />
-                )}
-              </Button>
+                }}
+              />
             </Tooltip>
-            <Tooltip title={translate({ message: "收藏" })}>
+            <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
               <Button
+                icon={isBookmarked ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />}
                 onClick={() => {
                   if (!userAuth) {
                     messageApi.warning("Please log in to bookmark.");
                     return;
                   }
-                  onVote(commuPrompt.id, "upvote");
                   onBookmark(commuPrompt.id);
-                }}>
-                <HeartOutlined />
-              </Button>
+                }}
+              />
             </Tooltip>
           </Space.Compact>
           <Space.Compact>
@@ -154,7 +149,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
 });
 
 const CommunityPrompts = () => {
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -242,27 +237,29 @@ const CommunityPrompts = () => {
           const createFavoriteResponse = await createFavorite([promptId], true);
           userLoves = [promptId];
           favoriteId = createFavoriteResponse.data.id;
+          messageApi.success("Added to favorites successfully!");
         } else {
-          userLoves = userAuth.data.favorites.commLoves || [];
+          userLoves = [...(userAuth.data.favorites.commLoves || [])];
           favoriteId = userAuth.data.favorites.id;
 
-          if (!userLoves.includes(promptId)) {
+          if (userLoves.includes(promptId)) {
+            userLoves = userLoves.filter((id) => id !== promptId);
+            messageApi.success("Removed from favorites successfully!");
+          } else {
             userLoves.push(promptId);
-            messageApi.open({
-              type: "success",
-              content: "Added to favorites successfully!",
-            });
+            messageApi.success("Added to favorites successfully!");
           }
         }
         await updateFavorite(favoriteId, userLoves, true);
+        refreshUserAuth();
       } catch (err) {
         messageApi.open({
           type: "error",
-          content: `Failed to add to favorites. Error: ${err}`,
+          content: `Failed to update favorites. Error: ${err}`,
         });
       }
     },
-    [userAuth, messageApi]
+    [userAuth, messageApi, refreshUserAuth]
   );
 
   const onChangePage = useCallback((page) => {
@@ -320,7 +317,7 @@ const CommunityPrompts = () => {
               </Link>
               {userAuth ? (
                 <Link to="/user/favorite" className="interLink">
-                  <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
+                  <StarOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
                 </Link>
               ) : (
                 <Button onClick={() => setOpen(true)}>

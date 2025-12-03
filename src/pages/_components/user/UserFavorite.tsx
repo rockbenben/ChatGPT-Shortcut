@@ -9,7 +9,7 @@ import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/Showcas
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
 import { Button, Spin, Tooltip, Space, App } from "antd";
-import { CheckOutlined, CopyOutlined, DownOutlined, HeartTwoTone, LinkOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, DownOutlined, StarFilled, StarOutlined, LinkOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -80,20 +80,10 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
             </div>
             <Space.Compact>
               <Tooltip title={<Translate>点击移除收藏</Translate>}>
-                <Button onClick={() => removeBookmark(item.id, !isCard)}>
-                  <HeartTwoTone twoToneColor="#eb2f96" />
-                </Button>
+                <Button icon={<StarFilled style={{ color: "#ffc107" }} />} onClick={() => removeBookmark(item.id, !isCard)} />
               </Tooltip>
-              <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-                <Button onClick={handleCopyClick}>
-                  {copied ? (
-                    <>
-                      <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                    </>
-                  ) : (
-                    <CopyOutlined />
-                  )}
-                </Button>
+              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+                <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick} />
               </Tooltip>
             </Space.Compact>
           </div>

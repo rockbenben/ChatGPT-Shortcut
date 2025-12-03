@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App } from "antd";
+import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App, Space } from "antd";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
@@ -58,17 +58,17 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
               {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
               {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
             </div>
-            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button onClick={() => copyText(UserPrompt.description)}>
-                {copied ? (
-                  <>
-                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                  </>
-                ) : (
-                  <CopyOutlined />
-                )}
-              </Button>
-            </Tooltip>
+            <Space.Compact>
+              <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+                <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={() => copyText(UserPrompt.description)} />
+              </Tooltip>
+              <Tooltip title={<Translate id="edit">修改</Translate>}>
+                <Button icon={<EditOutlined />} onClick={() => handleEditPrompt(UserPrompt)} />
+              </Tooltip>
+              <Tooltip title={<Translate id="delete">删除</Translate>}>
+                <Button icon={<DeleteOutlined style={{ color: "#ff4d4f" }} />} onClick={() => handleDeletePrompt(UserPrompt.id)} />
+              </Tooltip>
+            </Space.Compact>
           </div>
           {UserPrompt.remark && <ShowcaseRemark remark={UserPrompt.remark} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)} />}
           <div className={styles.descriptionWrapper}>
@@ -78,20 +78,11 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
             {!showFullContent && displayText.length > MAX_LENGTH && (
               <div className={styles.gradientOverlay}>
                 <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-                  <Translate id="showcase.card.readMore">Show More</Translate>
-                  <DownOutlined />
+                  <DownOutlined className={styles.downIcon} />
                 </div>
               </div>
             )}
           </div>
-        </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }} className={styles.nonClickable}>
-          <Button icon={<DeleteOutlined />} onClick={() => handleDeletePrompt(UserPrompt.id)}>
-            <Translate id="delete">删除</Translate>
-          </Button>
-          <Button icon={<EditOutlined />} onClick={() => handleEditPrompt(UserPrompt)}>
-            <Translate id="edit">修改</Translate>
-          </Button>
         </div>
       </div>
     </li>

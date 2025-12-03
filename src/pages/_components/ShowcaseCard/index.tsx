@@ -4,7 +4,7 @@ import { message, Tooltip, Button, Space } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, HeartOutlined, HeartTwoTone, DownOutlined, LinkOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
@@ -140,24 +140,12 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
           <Space.Compact>
             {userAuth && (
               <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button onClick={isFavorite ? removeFavorite : handleLove}>{isFavorite ? <HeartTwoTone twoToneColor="#eb2f96" /> : <HeartOutlined />}</Button>
+                <Button icon={isFavorite ? <StarFilled style={{ color: "#ffc107" }} /> : <StarOutlined />} onClick={isFavorite ? removeFavorite : handleLove} />
               </Tooltip>
             )}
-            {!userAuth && user.tags?.includes("favorite") && (
-              <Button type="text" disabled>
-                <HeartTwoTone twoToneColor="#eb2f96" />
-              </Button>
-            )}
+            {!userAuth && user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#ffc107" }} />} />}
             <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button onClick={handleCopy}>
-                {copied ? (
-                  <>
-                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                  </>
-                ) : (
-                  <CopyOutlined />
-                )}
-              </Button>
+              <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
           </Space.Compact>
         </div>
