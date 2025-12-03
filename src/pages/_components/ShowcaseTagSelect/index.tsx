@@ -5,44 +5,34 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {
-  useCallback,
-  useState,
-  useEffect,
-  type ComponentProps,
-  type ReactNode,
-  type ReactElement,
-} from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {toggleListItem} from '@site/src/utils/jsUtils';
-import type {TagType} from '@site/src/data/users';
+import React, { useCallback, useState, useEffect, type ComponentProps, type ReactNode, type ReactElement } from "react";
+import { useHistory, useLocation } from "@docusaurus/router";
+import { toggleListItem } from "@site/src/utils/jsUtils";
+import type { TagType } from "@site/src/data/tags";
 
-import {prepareUserState} from '../../index';
-import styles from './styles.module.css';
+import { prepareUserState } from "../../index";
+import styles from "./styles.module.css";
 
-interface Props extends ComponentProps<'input'> {
-  icon: ReactElement<ComponentProps<'svg'>>;
+interface Props extends ComponentProps<"input"> {
+  icon: ReactElement<ComponentProps<"svg">>;
   label: ReactNode;
-  tag: TagType;
+  tag: TagType | string;
 }
 
-const TagQueryStringKey = 'tags';
+const TagQueryStringKey = "tags";
 
-export function readSearchTags(search: string): TagType[] {
-  return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
+export function readSearchTags(search: string): (TagType | string)[] {
+  return new URLSearchParams(search).getAll(TagQueryStringKey) as (TagType | string)[];
 }
 
-function replaceSearchTags(search: string, newTags: TagType[]) {
+function replaceSearchTags(search: string, newTags: (TagType | string)[]) {
   const searchParams = new URLSearchParams(search);
   searchParams.delete(TagQueryStringKey);
   newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
   return searchParams.toString();
 }
 
-function ShowcaseTagSelect(
-  {id, icon, label, tag, ...rest}: Props,
-  ref: React.ForwardedRef<HTMLLabelElement>,
-) {
+function ShowcaseTagSelect({ id, icon, label, tag, ...rest }: Props, ref: React.ForwardedRef<HTMLLabelElement>) {
   const location = useLocation();
   const history = useHistory();
   const [selected, setSelected] = useState(false);
@@ -67,19 +57,17 @@ function ShowcaseTagSelect(
         id={id}
         className="screen-reader-only"
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+          if (e.key === "Enter") {
             toggleTag();
           }
         }}
         onFocus={(e) => {
           if (e.relatedTarget) {
-            e.target.nextElementSibling?.dispatchEvent(
-              new KeyboardEvent('focus'),
-            );
+            e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("focus"));
           }
         }}
         onBlur={(e) => {
-          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent('blur'));
+          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("blur"));
         }}
         onChange={toggleTag}
         checked={selected}

@@ -21,7 +21,7 @@ export function readOperator(search: string): Operator {
   return (new URLSearchParams(search).get(OperatorQueryKey) ?? "OR") as Operator;
 }
 
-export default function ShowcaseFilterToggle(): JSX.Element {
+export default function ShowcaseFilterToggle(): React.ReactElement {
   const id = "showcase_filter_toggle";
   const location = useLocation();
   const history = useHistory();

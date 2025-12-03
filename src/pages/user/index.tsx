@@ -89,7 +89,7 @@ const UserProfile = () => {
       await changePassword(values);
       messageApi.success(<Translate id="message.changePassword.success">密码修改成功！</Translate>);
       // Reset form after successful password change
-      const changePasswordForm = document.getElementById("changePasswordForm");
+      const changePasswordForm = document.getElementById("changePasswordForm") as HTMLFormElement | null;
       if (changePasswordForm) {
         changePasswordForm.reset();
       }
@@ -113,7 +113,7 @@ const UserProfile = () => {
       await forgotPassword(values.email);
       messageApi.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
       // Reset form after sending reset email
-      const forgotPasswordForm = document.getElementById("forgotPasswordForm");
+      const forgotPasswordForm = document.getElementById("forgotPasswordForm") as HTMLFormElement | null;
       if (forgotPasswordForm) {
         forgotPasswordForm.reset();
       }
@@ -150,13 +150,8 @@ const UserProfile = () => {
   if (isLoading || !userAuth) {
     return (
       <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
-        <div style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px", textAlign: "center" }}>
-          <Spin 
-            size="large" 
-            tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>}
-            role="status"
-            aria-label="正在加载用户信息"
-          >
+        <div role="status" aria-label="Loading user information" style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px", textAlign: "center" }}>
+          <Spin size="large" tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>}>
             <div style={{ height: 300 }}></div>
           </Spin>
         </div>
@@ -339,27 +334,27 @@ const UserProfile = () => {
         <Col xs={24} sm={22} md={20} lg={16} xl={14}>
           <div style={{ padding: "20px" }}>
             <Space size={"large"} style={{ marginLeft: 8 }}>
-                <Link to="/" className="mainLink">
-                  <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
-                </Link>
-                <Link to="/user/favorite" className="mainLink">
-                  <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
-                </Link>
-              </Space>
+              <Link to="/" className="mainLink">
+                <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+              </Link>
+              <Link to="/user/favorite" className="mainLink">
+                <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
+              </Link>
+            </Space>
 
-              <Card
-                title={
-                  <Title level={4} style={{ marginBottom: 0 }}>
-                    <Translate id="title.userInfo">用户信息</Translate>
-                  </Title>
-                }
-                style={{ marginTop: 16 }}>
-                <Descriptions items={useritems} layout="vertical" />
-                <Tabs type="card" items={items} destroyOnHidden />
-              </Card>
-            </div>
-          </Col>
-        </Row>
+            <Card
+              title={
+                <Title level={4} style={{ marginBottom: 0 }}>
+                  <Translate id="title.userInfo">用户信息</Translate>
+                </Title>
+              }
+              style={{ marginTop: 16 }}>
+              <Descriptions items={useritems} layout="vertical" />
+              <Tabs type="card" items={items} destroyOnHidden />
+            </Card>
+          </div>
+        </Col>
+      </Row>
     </Layout>
   );
 };
