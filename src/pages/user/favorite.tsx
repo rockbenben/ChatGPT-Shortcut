@@ -15,11 +15,11 @@ import { AuthProvider } from "../_components/AuthContext";
 import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const UserBookmark = () => {
-  const [activeTab, setActiveTab] = useState("myprompts");
+  const [activeTab, setActiveTab] = useState<"default" | "myfavor" | "myprompts">("myprompts");
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts(activeTab);
 
-  const handleTabChange = useCallback((tab) => {
-    setActiveTab(tab);
+  const handleTabChange = useCallback((tab: string) => {
+    setActiveTab(tab as "default" | "myfavor" | "myprompts");
   }, []);
 
   const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";

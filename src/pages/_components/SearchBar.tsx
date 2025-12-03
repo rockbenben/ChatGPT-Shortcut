@@ -13,7 +13,7 @@ import { AuthContext } from "@site/src/pages/_components/AuthContext";
 
 import styles from "@site/src/pages/styles.module.css";
 import { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
-import { type TagType } from "@site/src/data/tags";
+import { type TagType, TagList } from "@site/src/data/tags";
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 
 export type UserState = {
@@ -71,7 +71,8 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     const operatorParam = queryParams.get("operator") || "OR";
     // 将多次初始 setState 合并到一次低优更新，避免 hydration 尚未完全时触发高优刷新
     startTransition(() => {
-      setSelectedTags(tags);
+      const validTags = tags.filter((tag) => TagList.includes(tag as TagType)) as TagType[];
+      setSelectedTags(validTags);
       setSearchName(search);
       setOperator(operatorParam as Operator);
     });

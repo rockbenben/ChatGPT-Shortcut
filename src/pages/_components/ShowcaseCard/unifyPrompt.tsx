@@ -8,7 +8,19 @@ import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import styles from "./styles.module.css";
 
-export const SearchCommu = React.memo(({ commuPrompt }) => {
+export interface CommuPrompt {
+  title: string;
+  description: string;
+  owner: string;
+  remark?: string;
+  notes?: string;
+}
+
+interface SearchCommuProps {
+  commuPrompt: CommuPrompt;
+}
+
+export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
   const { copied, copyText } = useCopyToClipboard();
   const [paragraphText, setParagraphText] = useState(commuPrompt.description);
   const [showFullContent, setShowFullContent] = useState(false);
@@ -82,7 +94,7 @@ export const SearchCommu = React.memo(({ commuPrompt }) => {
   );
 });
 
-export const CommuPagePrompt = React.memo(({ commuPrompt }) => {
+export const CommuPagePrompt = React.memo<SearchCommuProps>(({ commuPrompt }) => {
   const [paragraphText, setParagraphText] = useState(commuPrompt.description);
   const [showFullContent, setShowFullContent] = useState(false);
 

@@ -1,5 +1,6 @@
 import { translate } from "@docusaurus/Translate";
 import { User, TagType, Tag } from "./User.d";
+export type { User, TagType, Tag };
 
 export const Tags: { [type in TagType]: Tag } = {
   favorite: {

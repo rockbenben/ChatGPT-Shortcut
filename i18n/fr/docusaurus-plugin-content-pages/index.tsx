@@ -130,6 +130,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           <>
             <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
               <ShowcaseTooltip
+                id="myprompt"
                 text={translate({
                   id: "myprompt.tooltip",
                   message: "添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
@@ -147,6 +148,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
             </li>
             <li className={`${styles.checkboxListItem} ${showUserFavs ? styles.activeItem : ""}`} onClick={handleUserFavs}>
               <ShowcaseTooltip
+                id="myfavorite"
                 text={translate({
                   id: "myfavorite.tooltip",
                   message: "我收藏的提示词，包括社区提示词。",
@@ -371,7 +373,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
   );
 });
 
-export default function Showcase(): JSX.Element {
+export default function Showcase(): React.ReactElement {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
   const [showUserFavs, setShowUserFavs] = useState(false);
