@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "Password must be at least 6 characters."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "A password reset link will be sent to your email."
   },
   "input.email.valid": {

@@ -823,7 +823,7 @@
   "input.password.valid": {
     "message": "비밀번호는 6 자 이상이어야 합니다."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "비밀번호 재설정 링크가 이메일로 전송됩니다."
   },
   "input.email.valid": {

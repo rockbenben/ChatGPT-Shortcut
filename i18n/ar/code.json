@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "يجب ألا تقل كلمة المرور عن 6 أحرف."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني."
   },
   "input.email.valid": {

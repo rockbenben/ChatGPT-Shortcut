@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "パスワードは 6 文字以上でなければならない。"
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "パスワードリセットリンクが E メールに送信されます。"
   },
   "input.email.valid": {

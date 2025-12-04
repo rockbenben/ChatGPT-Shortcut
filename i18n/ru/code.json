@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "Пароль должен состоять не менее чем из 6 символов."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "На вашу электронную почту будет отправлена ссылка для сброса пароля."
   },
   "input.email.valid": {

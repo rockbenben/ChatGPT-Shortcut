@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "पासवर्ड कम से कम 6 अंकों का होना चाहिए।"
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "आपके ईमेल पर एक पासवर्ड रीसेट लिंक भेजा जाएगा।"
   },
   "input.email.valid": {

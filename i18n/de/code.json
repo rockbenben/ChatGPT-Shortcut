@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "Das Passwort muss mindestens 6 Zeichen lang sein."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "Ein Link zum Zurücksetzen des Passworts wird an Ihre E-Mail gesendet."
   },
   "input.email.valid": {

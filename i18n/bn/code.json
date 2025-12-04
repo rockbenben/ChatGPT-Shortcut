@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।"
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "আপনার ইমেইলে একটি পাসওয়ার্ড রিসেট লিঙ্ক পাঠানো হবে।"
   },
   "input.email.valid": {

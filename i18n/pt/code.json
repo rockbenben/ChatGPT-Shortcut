@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "A palavra-passe deve ter pelo menos 6 caracteres."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "Será enviada para o seu correio eletrónico uma ligação para redefinir a palavra-passe."
   },
   "input.email.valid": {

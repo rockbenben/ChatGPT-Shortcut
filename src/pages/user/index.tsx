@@ -285,7 +285,6 @@ const UserProfile = () => {
       label: translate({ id: "label.forgotPassword", message: "忘记密码" }),
       children: (
         <>
-          <Alert message={<Translate id="message.forgotPassword.info">重置密码链接将发送至您的邮箱</Translate>} type="info" showIcon style={{ marginBottom: 16 }} />
           <Form id="forgotPasswordForm" onFinish={onFinishForgotPassword} layout="vertical" requiredMark={false}>
             <Form.Item
               name="email"

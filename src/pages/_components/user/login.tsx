@@ -1,13 +1,12 @@
-// @ts-nocheck
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Card, Form, Input, Tabs, Checkbox, Space, Typography, Alert, App } from "antd";
-import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, theme, Segmented } from "antd";
+import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { login, register, forgotPassword, sendPasswordlessLink } from "@site/src/api";
 import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 // Validation rules
 const rules = {
@@ -42,20 +41,46 @@ const rules = {
       }),
     },
     {
-      type: "email",
+      type: "email" as const,
       message: translate({
         id: "input.email.valid",
         message: "请输入有效的邮箱地址！",
       }),
     },
   ],
+  confirm: [
+    {
+      required: true,
+      message: translate({
+        id: "input.confirmPassword",
+        message: "请确认新密码！",
+      }),
+    },
+    ({ getFieldValue }) => ({
+      validator(_, value) {
+        if (!value || getFieldValue("password") === value) {
+          return Promise.resolve();
+        }
+        return Promise.reject(
+          new Error(
+            translate({
+              id: "input.password.match",
+              message: "两次输入的密码不一致！",
+            })
+          )
+        );
+      },
+    }),
+  ],
 };
 
 const LoginPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState("1");
+  const [viewState, setViewState] = useState<"login" | "register" | "forgot-password">("login");
+  const [loginType, setLoginType] = useState<"password" | "code">("password");
   const { message: messageApi } = App.useApp();
   const [formKey, setFormKey] = useState(Date.now()); // For resetting forms
+  const { token } = theme.useToken();
+  const [loading, setLoading] = useState(false);
 
   // Form hooks
   const [loginForm] = Form.useForm();
@@ -64,19 +89,22 @@ const LoginPage = () => {
   const [passwordlessForm] = Form.useForm();
 
   const handleRegister = useCallback(() => {
-    setActiveTab("3");
+    setViewState("register");
   }, []);
 
   const handleForgotPasswordClick = useCallback(() => {
-    setActiveTab("4");
+    setViewState("forgot-password");
   }, []);
 
-  // Clear form data when switching tabs
-  const handleTabChange = (activeKey) => {
-    setActiveTab(activeKey);
+  const handleBackToLogin = useCallback(() => {
+    setViewState("login");
+  }, []);
+
+  // Clear form data when switching views
+  useEffect(() => {
     setFormKey(Date.now());
     resetAllForms();
-  };
+  }, [viewState, loginType]);
 
   const resetAllForms = () => {
     loginForm.resetFields();
@@ -206,7 +234,7 @@ const LoginPage = () => {
         setLoading(false);
       }
     },
-    [messageApi]
+    [messageApi, handleSuccess]
   );
 
   const onFinishLogin = async (values) => {
@@ -261,159 +289,198 @@ const LoginPage = () => {
     }
   };
 
-  // Form components
-  const renderPasswordlessLoginForm = () => (
-    <Form form={passwordlessForm} onFinish={handleSendPasswordlessLink} layout="vertical">
-      <Alert message={<Translate id="message.passwordlessLogin.info">登录链接将发送至您的邮箱，点击即可登录，无需输入密码</Translate>} type="info" showIcon style={{ marginBottom: 16 }} />
-      <Form.Item name="email" rules={rules.username} label={<Translate id="input.username">用户名/邮箱</Translate>}>
-        <Input autoComplete="username" prefix={<MailOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit" loading={loading} block>
-          <Translate id="button.sendPasswordlessLink">获取免密码登录链接</Translate>
-        </Button>
-      </Form.Item>
-    </Form>
-  );
-
   const renderLoginForm = () => (
-    <Form form={loginForm} onFinish={onFinishLogin} layout="vertical">
-      <Form.Item name="username" rules={rules.username} label={<Translate id="input.username">用户名/邮箱</Translate>}>
-        <Input autoComplete="username" prefix={<UserOutlined />} placeholder={translate({ id: "input.username", message: "用户名/邮箱" })} />
-      </Form.Item>
-      <Form.Item name="password" rules={rules.password} label={<Translate id="input.password">密码</Translate>}>
-        <Input.Password autoComplete="current-password" prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
-      </Form.Item>
-      <Form.Item>
-        <Space direction="vertical" style={{ width: "100%" }}>
-          <Button type="primary" htmlType="submit" loading={loading} block>
-            <Translate id="button.login">登录</Translate>
-          </Button>
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <Segmented
+        block
+        size="large"
+        options={[
+          { label: <Translate id="login.tab.password">密码登录</Translate>, value: "password" },
+          { label: <Translate id="login.tab.code">免密登录</Translate>, value: "code" },
+        ]}
+        value={loginType}
+        onChange={(value) => setLoginType(value as "password" | "code")}
+      />
 
-          <Space style={{ width: "100%", justifyContent: "center" }}>
-            <Button onClick={handleGoogleLogin} icon={<GoogleOutlined />}>
-              Login via Google
-            </Button>
-          </Space>
+      {loginType === "password" ? (
+        <Form form={loginForm} onFinish={onFinishLogin} layout="vertical" size="large">
+          <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
+            <Input
+              autoComplete="username"
+              prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
+              placeholder={translate({ id: "input.username", message: "用户名/邮箱" })}
+              size="large"
+            />
+          </Form.Item>
+          <Form.Item name="password" rules={rules.password} style={{ marginBottom: 8 }}>
+            <Input.Password
+              autoComplete="current-password"
+              prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+              placeholder={translate({ id: "input.password", message: "密码" })}
+              size="large"
+            />
+          </Form.Item>
 
-          <Space style={{ width: "100%", justifyContent: "space-between" }}>
-            <Button type="link" onClick={handleRegister} style={{ padding: 0 }}>
-              <Translate id="button.register">注册</Translate>
-            </Button>
-            <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0 }}>
+          <Flex justify="flex-end" style={{ marginBottom: 24 }}>
+            <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0, height: "auto", color: token.colorTextSecondary }}>
               <Translate id="button.forgotPassword">忘记密码</Translate>
             </Button>
-          </Space>
-        </Space>
-      </Form.Item>
-    </Form>
+          </Flex>
+
+          <Button type="primary" htmlType="submit" loading={loading} block size="large">
+            <Translate id="button.login">登录</Translate>
+          </Button>
+        </Form>
+      ) : (
+        <Form form={passwordlessForm} onFinish={handleSendPasswordlessLink} layout="vertical" size="large">
+          <div
+            style={{
+              marginBottom: 24,
+              padding: "12px 16px",
+              background: token.colorFillAlter,
+              borderRadius: token.borderRadiusLG,
+              display: "flex",
+              gap: 12,
+              alignItems: "flex-start",
+            }}>
+            <InfoCircleOutlined style={{ color: token.colorPrimary, marginTop: 4 }} />
+            <Text type="secondary" style={{ fontSize: token.fontSize }}>
+              <Translate id="message.passwordlessLogin.info">登录链接将发送至您的邮箱，点击即可登录</Translate>
+            </Text>
+          </div>
+          <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
+            <Input
+              autoComplete="username"
+              prefix={<MailOutlined style={{ color: token.colorTextDescription }} />}
+              placeholder={translate({ id: "input.username", message: "用户名/邮箱" })}
+              size="large"
+            />
+          </Form.Item>
+          <Button type="primary" htmlType="submit" loading={loading} block size="large">
+            <Translate id="button.sendPasswordlessLink">获取登录链接</Translate>
+          </Button>
+        </Form>
+      )}
+
+      <div>
+        <Divider plain style={{ margin: "24px 0", color: token.colorTextDescription, fontSize: token.fontSizeSM }}>
+          <Translate id="login.divider.or">Or</Translate>
+        </Divider>
+
+        <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 24 }}>
+          Login via Google
+        </Button>
+
+        <Flex justify="center" align="center" gap="small">
+          <Text type="secondary">
+            <Translate id="login.noAccount">还没有账号？</Translate>
+          </Text>
+          <Button type="link" onClick={handleRegister} style={{ padding: 0, fontWeight: 500 }}>
+            <Translate id="button.register">立即注册</Translate>
+          </Button>
+        </Flex>
+      </div>
+    </div>
   );
 
   const renderRegisterForm = () => (
-    <Form form={registerForm} onFinish={onFinishRegister} layout="vertical">
-      <Form.Item name="username" rules={rules.username} label={<Translate id="input.register.username">用户名</Translate>}>
+    <Form form={registerForm} onFinish={onFinishRegister} layout="vertical" size="large">
+      <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
         <Input
           autoComplete="username"
-          prefix={<UserOutlined />}
-          placeholder={translate({
-            id: "input.register.username",
-            message: "用户名",
-          })}
+          prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
+          placeholder={translate({ id: "input.register.username", message: "用户名" })}
+          size="large"
         />
       </Form.Item>
-      <Form.Item name="email" rules={rules.email} label={<Translate id="input.email">邮箱</Translate>}>
-        <Input autoComplete="email" prefix={<MailOutlined />} placeholder={translate({ id: "input.email", message: "邮箱" })} />
+      <Form.Item name="email" rules={rules.email} style={{ marginBottom: 16 }}>
+        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "input.email", message: "邮箱" })} size="large" />
       </Form.Item>
-      <Form.Item name="password" rules={rules.password} label={<Translate id="input.password">密码</Translate>} hasFeedback>
-        <Input.Password autoComplete="new-password" prefix={<LockOutlined />} placeholder={translate({ id: "input.password", message: "密码" })} />
+      <Form.Item name="password" rules={rules.password} hasFeedback style={{ marginBottom: 16 }}>
+        <Input.Password
+          autoComplete="new-password"
+          prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+          placeholder={translate({ id: "input.password", message: "密码" })}
+          size="large"
+        />
       </Form.Item>
       <Form.Item
         name="agreement"
         valuePropName="checked"
         rules={[
           {
-            validator: (_, value) =>
-              value
-                ? Promise.resolve()
-                : Promise.reject(
-                    new Error(
-                      translate({
-                        id: "agreement.rules",
-                        message: "使用前须同意服务条款和隐私政策",
-                      })
-                    )
-                  ),
+            validator: (_, value) => (value ? Promise.resolve() : Promise.reject(new Error(translate({ id: "agreement.rules", message: "使用前须同意服务条款和隐私政策" })))),
           },
-        ]}>
+        ]}
+        style={{ marginBottom: 24 }}>
         <Checkbox>
-          <Translate id="agreement.text">点此同意</Translate>{" "}
-          <a href="/docs/terms-of-service">
+          <Translate id="agreement.text">同意</Translate>{" "}
+          <a href="/docs/terms-of-service" target="_blank" rel="noopener noreferrer">
             <Translate id="agreement.terms">服务条款</Translate>
           </a>{" "}
           <Translate id="agreement.and">和</Translate>{" "}
-          <a href="/docs/privacy-policy">
+          <a href="/docs/privacy-policy" target="_blank" rel="noopener noreferrer">
             <Translate id="agreement.policy">隐私政策</Translate>
           </a>
         </Checkbox>
       </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit" loading={loading} block>
-          <Translate id="button.register">注册</Translate>
+      <Button type="primary" htmlType="submit" loading={loading} block size="large" style={{ marginBottom: 16 }}>
+        <Translate id="button.register">注册</Translate>
+      </Button>
+      <Flex justify="center" align="center" gap="small">
+        <Text type="secondary">
+          <Translate id="register.hasAccount">已有账号？</Translate>
+        </Text>
+        <Button type="link" onClick={handleBackToLogin} style={{ padding: 0, fontWeight: 500 }}>
+          <Translate id="button.login">直接登录</Translate>
         </Button>
-      </Form.Item>
+      </Flex>
     </Form>
   );
 
   const renderForgotPasswordForm = () => (
-    <Form form={forgotPasswordForm} onFinish={handleForgotPassword} layout="vertical">
-      <Alert message={<Translate id="message.forgotPassword.info">重置密码链接将发送至您的邮箱</Translate>} type="info" showIcon style={{ marginBottom: 16 }} />
-      <Form.Item name="email" label={<Translate id="input.email">邮箱</Translate>} rules={rules.email}>
-        <Input autoComplete="email" prefix={<MailOutlined />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} />
+    <Form form={forgotPasswordForm} onFinish={handleForgotPassword} layout="vertical" size="large">
+      <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
+        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit" loading={loading} block>
-          <Translate id="button.sendResetEmail">发送密码重置邮件</Translate>
+      <Button type="primary" htmlType="submit" loading={loading} block size="large" style={{ marginBottom: 16 }}>
+        <Translate id="button.sendResetEmail">发送重置邮件</Translate>
+      </Button>
+
+      <Flex justify="center">
+        <Button type="link" onClick={handleBackToLogin} style={{ padding: 0 }}>
+          <Translate id="button.backToLogin">返回登录</Translate>
         </Button>
-      </Form.Item>
+      </Flex>
     </Form>
   );
 
-  // Tab items configuration
-  const items = [
-    {
-      key: "1",
-      label: <Translate id="tabs.login">登录</Translate>,
-      children: renderLoginForm(),
-    },
-    {
-      key: "2",
-      label: <Translate id="tabs.passwordlessLogin">免密码登录</Translate>,
-      children: renderPasswordlessLoginForm(),
-    },
-    {
-      key: "3",
-      label: <Translate id="button.register">注册</Translate>,
-      children: renderRegisterForm(),
-    },
-    {
-      key: "4",
-      label: <Translate id="label.forgotPassword">忘记密码</Translate>,
-      children: renderForgotPasswordForm(),
-    },
-  ];
-
   return (
-    <>
-      <Card
-        title={
-          <Title level={4}>
-            <Translate id="card.welcome">欢迎</Translate>
+    <Card
+      title={
+        <>
+          <Title level={3} style={{ textAlign: "center", marginTop: 12, marginBottom: 12 }}>
+            {viewState === "login" && <Translate id="login.card.welcome">欢迎回来</Translate>}
+            {viewState === "register" && <Translate id="login.card.register">加入社区</Translate>}
+            {viewState === "forgot-password" && <Translate id="login.card.forgotPassword">找回密码</Translate>}
           </Title>
-        }
-        style={{ maxWidth: 480, margin: "0 auto" }}>
-        <Tabs defaultActiveKey="1" activeKey={activeTab} onChange={handleTabChange} items={items} destroyOnHidden key={formKey} />
-      </Card>
-    </>
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <Text type="secondary">
+              {viewState === "login" && <Translate id="login.card.welcome.sub">登录探索更多优质提示词</Translate>}
+              {viewState === "register" && <Translate id="login.card.register.sub">发现、分享和创造精彩提示词</Translate>}
+              {viewState === "forgot-password" && <Translate id="login.card.forgotPassword.sub">重置链接将发送至您的邮箱</Translate>}
+            </Text>
+          </div>
+        </>
+      }
+      style={{ maxWidth: 440, margin: "0 auto", boxShadow: token.boxShadowTertiary, borderRadius: token.borderRadiusLG }}
+      styles={{ body: { padding: "0 40px 40px" } }}>
+      <div key={formKey} style={{ marginTop: token.marginLG }}>
+        {viewState === "login" && renderLoginForm()}
+        {viewState === "register" && renderRegisterForm()}
+        {viewState === "forgot-password" && renderForgotPasswordForm()}
+      </div>
+    </Card>
   );
 };
 

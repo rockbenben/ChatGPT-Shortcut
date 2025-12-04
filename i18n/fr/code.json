@@ -826,7 +826,7 @@
   "input.password.valid": {
     "message": "Le mot de passe doit comporter au moins 6 caractères."
   },
-  "message.forgotPassword.info": {
+  "message.card.forgotPassword.sub": {
     "message": "Un lien de réinitialisation du mot de passe sera envoyé à votre adresse e-mail."
   },
   "input.email.valid": {
