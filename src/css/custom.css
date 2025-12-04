@@ -372,3 +372,23 @@ div[class^="announcementBar_"] {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* Social Buttons Grayscale Effect */
+.social-buttons-grayscale {
+  display: inline-block;
+}
+
+.social-buttons-grayscale button, 
+.social-buttons-grayscale a,
+.social-buttons-grayscale .react-share__ShareButton {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.social-buttons-grayscale:hover button,
+.social-buttons-grayscale:hover a,
+.social-buttons-grayscale:hover .react-share__ShareButton {
+  filter: none;
+  opacity: 1;
+}
