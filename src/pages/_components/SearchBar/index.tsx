@@ -205,12 +205,19 @@ interface SearchBarProps {
 
 function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarProps) {
   const history = useHistory();
-  const location = useLocation();
+  const location = useLocation<UserState>();
   const [value, setValue] = useState<string | null>(null);
+  const inputRef = React.useRef<any>(null);
 
   useEffect(() => {
     setValue(readSearchName(location.search));
   }, [location]);
+
+  useEffect(() => {
+    if (location.state?.focusedElementId === "searchbar" && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [location.state]);
 
   const handleSearch = useCallback(() => {
     if (beforeSearch && beforeSearch(value) === false) {
@@ -243,6 +250,7 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
     <div className={styles.searchContainer}>
       <ConfigProvider theme={searchBarTheme}>
         <Input
+          ref={inputRef}
           id="searchbar"
           placeholder={translate({
             message: "搜索提示词……",
