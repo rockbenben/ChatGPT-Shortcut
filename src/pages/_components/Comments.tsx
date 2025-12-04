@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { translate } from "@docusaurus/Translate";
-import { List, Avatar, Button, Form, Input, Modal, Pagination } from "antd";
-import { SmileOutlined, GifOutlined } from "@ant-design/icons";
+import { List, Avatar, Button, Form, Modal, Pagination, theme } from "antd";
+import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/pages/_components/CommentComponent";
+import CommentEditor from "@site/src/pages/_components/CommentComponent/CommentEditor";
 import { GiphySelector } from "@site/src/pages/_components/CommentComponent/GiphySelector";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { getComments, postComment } from "@site/src/api";
@@ -64,6 +65,10 @@ const useUserColorCache = () => {
 };
 
 const Comments = ({ pageId, type }) => {
+  const { token } = theme.useToken();
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
+
   const getUserColor = useUserColorCache();
   const [currentUserId, setCurrentUserId] = useState(0);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -78,17 +83,11 @@ const Comments = ({ pageId, type }) => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   // Get current user ID from localStorage
   useEffect(() => {
     setCurrentUserId(getCurrentUserId());
-  }, []);
-
-  // Check dark mode
-  useEffect(() => {
-    setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
   }, []);
 
   const fetchComments = useCallback(async () => {
@@ -282,48 +281,42 @@ const Comments = ({ pageId, type }) => {
       return null;
     }
     return (
-      <Form form={form} layout="inline" onFinish={handleSubmit} onValuesChange={saveFormValues}>
-        <Form.Item
-          name="comment"
-          rules={[
-            {
-              required: true,
-              message: translate({
-                id: "comment.required",
-                message: "请输入评论内容",
-              }),
-            },
-            {
-              max: 2000,
-              message: translate({
-                id: "comment.maxLength",
-                message: "评论内容不应超过2000个字符",
-              }),
-            },
-          ]}
-          style={{ width: "100%", margin: "10px 0" }}>
-          <Input.TextArea
-            rows={4}
-            placeholder={translate({
-              id: "comment.placeholder",
-              message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
-            })}
-          />
-        </Form.Item>
-        <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "comment")} />
-        {showEmojiPicker && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelect} />}
-        <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "comment")} style={{ marginLeft: "5px" }} />
-        {showGiphySearchBox && <GiphySelector onGifSelect={handleGiphySelect} isDarkMode={isDarkMode} />}
-        {currentUserId ? (
-          <Button htmlType="submit" type="primary" style={{ marginLeft: "8px" }}>
-            {translate({ id: "comment.add", message: "提交评论" })}
-          </Button>
-        ) : (
-          <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "8px" }}>
-            {translate({ id: "button.login", message: "登录" })}
-          </Button>
-        )}
-      </Form>
+      <div style={{ marginTop: token.marginSM }}>
+        <Form form={form} onFinish={handleSubmit} onValuesChange={saveFormValues}>
+          <Form.Item
+            name="comment"
+            rules={[
+              {
+                required: true,
+                message: translate({
+                  id: "comment.required",
+                  message: "请输入评论内容",
+                }),
+              },
+              {
+                max: 2000,
+                message: translate({
+                  id: "comment.maxLength",
+                  message: "评论内容不应超过2000个字符",
+                }),
+              },
+            ]}>
+            <CommentEditor
+              onSubmit={form.submit}
+              isLoggedIn={!!currentUserId}
+              onLogin={handleLoginModalOpen}
+              onEmojiToggle={() => handleEmojiGiphyToggle("emojiPicker", "comment")}
+              onGifToggle={() => handleEmojiGiphyToggle("giphySearchBox", "comment")}
+              placeholder={translate({
+                id: "comment.placeholder",
+                message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
+              })}
+            />
+          </Form.Item>
+          {showEmojiPicker && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelect} />}
+          {showGiphySearchBox && <GiphySelector onGifSelect={handleGiphySelect} />}
+        </Form>
+      </div>
     );
   };
 
@@ -332,16 +325,16 @@ const Comments = ({ pageId, type }) => {
       <CommentComponent
         key={comment.id}
         actions={[
-          <span key="comment-basic-reply-to" onClick={() => setReplyingTo(comment.id)}>
+          <Button key="comment-basic-reply-to" type="text" size="small" onClick={() => setReplyingTo(comment.id)}>
             {translate({ id: "comment.reply", message: "回复" })}
-          </span>,
+          </Button>,
         ]}
         author={comment.author?.name}
         avatar={<Avatar style={{ backgroundColor: getUserColor(comment.author?.name), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
-          <Form form={replyForm} layout="inline" onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
+          <Form form={replyForm} onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
             <Form.Item
               name="reply"
               rules={[
@@ -359,40 +352,28 @@ const Comments = ({ pageId, type }) => {
                     message: "评论内容不应超过2000个字符",
                   }),
                 },
-              ]}
-              style={{ width: "100%", margin: "5px 0" }}>
-              <Input.TextArea
-                rows={4}
+              ]}>
+              <CommentEditor
+                onSubmit={replyForm.submit}
+                isLoggedIn={!!currentUserId}
+                onLogin={handleLoginModalOpen}
+                onEmojiToggle={() => handleEmojiGiphyToggle("emojiPicker", "reply")}
+                onGifToggle={() => handleEmojiGiphyToggle("giphySearchBox", "reply")}
+                onCancel={handleCancelReply}
                 placeholder={translate({
                   id: "comment.placeholder",
                   message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
                 })}
               />
             </Form.Item>
-            <Button icon={<SmileOutlined />} onClick={() => handleEmojiGiphyToggle("emojiPicker", "reply")} />
             {showEmojiPickerReply && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelectreply} />}
-            <Button icon={<GifOutlined />} onClick={() => handleEmojiGiphyToggle("giphySearchBox", "reply")} style={{ marginLeft: "5px" }} />
-            {showGiphySearchBoxReply && <GiphySelector onGifSelect={handleGiphySelectreply} isDarkMode={isDarkMode} />}
-            {currentUserId ? (
-              <>
-                <Button htmlType="submit" type="primary" style={{ marginLeft: "8px" }}>
-                  {translate({ id: "reply.submit", message: "回复" })}
-                </Button>
-                <Button onClick={handleCancelReply} style={{ marginLeft: "10px" }}>
-                  {translate({ id: "cancel", message: "取消" })}
-                </Button>
-              </>
-            ) : (
-              <Button onClick={handleLoginModalOpen} type="primary" style={{ marginLeft: "8px" }}>
-                {translate({ id: "button.login", message: "登录" })}
-              </Button>
-            )}
+            {showGiphySearchBoxReply && <GiphySelector onGifSelect={handleGiphySelectreply} />}
           </Form>
         )}
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues]
+    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, token, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply, getUserColor]
   );
 
   return (
@@ -423,6 +404,7 @@ const Comments = ({ pageId, type }) => {
         onChange={(page) => {
           setCurrentPage(page);
         }}
+        style={{ textAlign: "center", marginTop: token.marginLG }}
       />
     </>
   );
