@@ -337,14 +337,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                   <FavoriteIcon svgClass={styles.svgIconFavorite} />
                   {!showUserPrompts && <SearchBar />}
                 </div>
-                <ul className={clsx("clean-list", styles.showcaseList)}>
-                  {favoriteUsers.map((user) => (
-                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
-                  ))}
-                  <Suspense fallback={null}>
-                    <AdComponent />
-                  </Suspense>
-                </ul>
+                {userAuth ? (
+                  <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
+                ) : (
+                  <ul className={clsx("clean-list", styles.showcaseList)}>
+                    {favoriteUsers.map((user) => (
+                      <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                    ))}
+                    <Suspense fallback={null}>
+                      <AdComponent />
+                    </Suspense>
+                  </ul>
+                )}
               </div>
             </div>
           )}
