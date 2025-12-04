@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App, Space, Empty } from "antd";
-import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
+import { Button, Spin, Tooltip, Tag, App, Space, Empty } from "antd";
+import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -12,9 +12,11 @@ import pageStyles from "@site/src/pages/styles.module.css";
 import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import isEqual from "lodash/isEqual";
 
-import { getPrompts, updatePrompt, deletePrompt, updatePromptsOrder, updateLocalStorageCache, clearUserAllInfoCache } from "@site/src/api";
+import { getPrompts, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/ShowcaseRemark";
+import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
+import EditPromptModal from "./modal/EditPromptModal";
 
 // SortableItem component
 const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handleEditPrompt }) => {
@@ -90,14 +92,15 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
 };
 
 function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const { message: messageApi, modal } = App.useApp();
+  const { userAuth } = useContext(AuthContext);
+  const { message: messageApi } = App.useApp();
   const [userprompts, setUserPrompts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasDragged, setHasDragged] = useState(false);
   const [open, setOpen] = useState(false);
-  const [editingPromptId, setEditingPromptId] = useState(null);
-  const [form] = Form.useForm();
+  const [editingPrompt, setEditingPrompt] = useState(null);
+
+  const { updatePrompt, confirmRemovePrompt, loading: hookLoading } = useUserPrompt();
 
   // Configure dnd-kit sensors
   const sensors = useSensors(
@@ -143,82 +146,30 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
     return () => {
       isMounted = false;
     };
-  }, [userAuth, isFiltered, filteredCommus]);
+  }, [userAuth, isFiltered, filteredCommus, messageApi]);
 
-  const handleEditPrompt = useCallback(
-    (UserPrompt) => {
-      setEditingPromptId(UserPrompt.id);
-      form.setFieldsValue(UserPrompt);
-      setOpen(true);
-    },
-    [form]
-  );
+  const handleEditPrompt = useCallback((UserPrompt) => {
+    setEditingPrompt(UserPrompt);
+    setOpen(true);
+  }, []);
 
   const onUpdateprompt = useCallback(
     async (values) => {
-      setLoading(true);
-      try {
-        await updatePrompt(editingPromptId, values);
-        refreshUserAuth();
-        messageApi.success(
-          translate({
-            id: "message.success",
-            message: "词条提交成功！",
-          })
-        );
+      if (!editingPrompt) return;
+      const success = await updatePrompt(editingPrompt.id, values);
+      if (success) {
         setOpen(false);
-        form.resetFields();
-      } catch (err) {
-        console.error(err);
-        clearUserAllInfoCache();
-        refreshUserAuth();
-        messageApi.error(
-          translate({
-            id: "message.error",
-            message: "词条提交失败，请稍后重试",
-          })
-        );
-        setOpen(false);
-      } finally {
-        setLoading(false);
+        setEditingPrompt(null);
       }
     },
-    [editingPromptId, refreshUserAuth, form]
+    [editingPrompt, updatePrompt]
   );
 
   const handleDeletePrompt = useCallback(
     (promptId) => {
-      modal.confirm({
-        title: <Translate id="message.deletePrompt.confirm.title">Confirm Delete</Translate>,
-        content: <Translate id="message.deletePrompt.confirm.content">Are you sure you want to delete this prompt?</Translate>,
-        onOk: async () => {
-          setLoading(true);
-          try {
-            await deletePrompt(promptId);
-            refreshUserAuth();
-            messageApi.success(
-              translate({
-                id: "message.deletePrompt.success",
-                message: "Prompt successfully deleted!",
-              })
-            );
-          } catch (err) {
-            console.error(err);
-            clearUserAllInfoCache();
-            refreshUserAuth();
-            messageApi.error(
-              translate({
-                id: "message.deletePrompt.error",
-                message: "Failed to delete prompt, please try again later.",
-              })
-            );
-          } finally {
-            setLoading(false);
-          }
-        },
-      });
+      confirmRemovePrompt(promptId);
     },
-    [refreshUserAuth]
+    [confirmRemovePrompt]
   );
 
   const handleDragEnd = useCallback((event) => {
@@ -274,98 +225,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
         </DndContext>
       )}
 
-      <Modal
-        title={translate({
-          id: "modal.updateprompt.title",
-          message: "更新当前 Prompt",
-        })}
-        open={open}
-        footer={null}
-        maskClosable={false}
-        onCancel={() => {
-          setOpen(false);
-          form.resetFields();
-        }}>
-        <Form form={form} onFinish={onUpdateprompt}>
-          <Form.Item
-            name="title"
-            rules={[
-              {
-                required: true,
-                message: translate({
-                  id: "message.addprompt.requiredTitle",
-                  message: "请输入提示词标题！",
-                }),
-              },
-            ]}>
-            <Input
-              placeholder={translate({
-                id: "input.addprompt.title",
-                message: "提示词名称",
-              })}
-            />
-          </Form.Item>
-          <Form.Item
-            name="description"
-            rules={[
-              {
-                required: true,
-                message: translate({
-                  id: "message.addprompt.requiredDescription",
-                  message: "请输入提示词内容！",
-                }),
-              },
-            ]}>
-            <Input.TextArea
-              placeholder={translate({
-                id: "input.addprompt.description",
-                message: "提示词内容",
-              })}
-              rows={4}
-            />
-          </Form.Item>
-          <Form.Item name="remark">
-            <Input
-              placeholder={translate({
-                id: "input.addprompt.remark",
-                message: "提示词作用（非必填）",
-              })}
-            />
-          </Form.Item>
-          <Form.Item name="notes">
-            <Input.TextArea
-              placeholder={translate({
-                id: "input.addprompt.notes",
-                message: "备注（非必填）：您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。",
-              })}
-              rows={3}
-            />
-          </Form.Item>
-          <Form.Item name="share" valuePropName="checked">
-            <div>
-              {open && (
-                <Switch
-                  defaultChecked={form.getFieldValue("share")}
-                  onChange={(checked) => {
-                    form.setFieldsValue({ share: checked });
-                  }}
-                  checkedChildren={<CheckOutlined />}
-                  unCheckedChildren={<CloseOutlined />}
-                />
-              )}
-              <Typography.Text type="secondary">
-                {" "}
-                <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
-              </Typography.Text>
-            </div>
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              <Translate id="button.updateprompt">更新 Prompt</Translate>
-            </Button>
-          </Form.Item>
-        </Form>
-      </Modal>
+      <EditPromptModal open={open} setOpen={setOpen} onFinish={onUpdateprompt} loading={hookLoading} initialValues={editingPrompt} />
     </>
   );
 }
