@@ -165,12 +165,13 @@
     "message": "お客様の声は、私たちにとって大切なものです！"
   },
   "feedback.welcome": {
-    "message": "フィードバック歓迎",
-    "description": "The welcome title on the feedback page"
+    "message": "フィードバック歓迎"
+  },
+  "feedback.subtitle": {
+    "message": "あなたの貢献の一つひとつが、このオープンソースプロジェクトをより良いものにしています。"
   },
   "feedback.paragraph": {
-    "message": "ChatGPT Shortcut を継続的に改善し、個人の効率と生産性を高めるために、提案、アイデア、促音語を自由に与えてください。バグに関するフィードバックが必要な場合は、問題が発生した場所とそれにまつわる状況へのリンクを提供してください。プロンプトの内容については、多言語で投稿することもできますし、プロンプトのアイデアを記述するだけでもかまいません。私たちは、思考を広げ、質の高いアウトプットを生み出すプロンプトを求めます。投稿したプロンプトが公開されると、あなたの投稿はページに追加されます。投稿者の名前（ユーザー名）を検索すると、該当するエントリーを見つけることができます。",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcutは、AIの利用効率を向上させるためのオープンソースのプロンプト管理ツールです。バグの報告、機能の提案、高品質なプロンプトの共有など、皆様のご参加を心よりお待ちしております。プロンプトの投稿は多言語に対応しており、採用された場合は収録され、署名（ユーザー名検索対応）されます。あなたの貢献は、コミュニティメンバーの思考を広げ、生産性を向上させる助けとなります。一緒により完璧なプロンプトライブラリを作り上げましょう！"
   },
   "showcase.filters.title": {
     "message": "フィルター"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "本当に理解してくれる AI が欲しい？AiShort コミュニティでプロンプトを共有・発見・改善して、より高い精度と創造性を一緒に解き放とう"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

@@ -27,12 +27,13 @@
     "message": "Ihr Feedback ist für uns wichtig!"
   },
   "feedback.welcome": {
-    "message": "Rückmeldungen sind willkommen!",
-    "description": "The welcome title on the feedback page"
+    "message": "Rückmeldungen sind willkommen!"
+  },
+  "feedback.subtitle": {
+    "message": "Jeder Beitrag, den Sie leisten, macht dieses Open-Source-Projekt besser."
   },
   "feedback.paragraph": {
-    "message": "Vorschläge, Ideen und Anregungen sind willkommen, um ChatGPT Shortcut kontinuierlich zu verbessern und die persönliche Effizienz und Produktivität zu steigern. Wenn Sie ein Feedback zu einem Fehler geben möchten, geben Sie bitte einen Link an, wo das Problem aufgetreten ist und welche Umstände es verursacht hat. Für Prompt-Inhalte können Sie Inhalte in mehreren Sprachen einreichen oder einfach Ihre Idee für einen Prompt beschreiben. Wir sind auf der Suche nach Prompts, die den Geist anregen oder qualitativ hochwertige Ergebnisse hervorbringen. Sobald der von Ihnen eingereichte Prompt veröffentlicht wird, wird Ihr Beitrag der Seite hinzugefügt. Sie können den entsprechenden Eintrag finden, indem Sie nach dem Namen des Beitragenden (Benutzernamen) suchen.",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut ist ein Open-Source-Prompt-Management-Tool, das sich der Verbesserung der KI-Effizienz widmet. Wir freuen uns auf Ihre Teilnahme: sei es durch das Melden von Fehlern, das Vorschlagen von Funktionen oder das Teilen hochwertiger Prompts. Für Prompt-Einreichungen unterstützen wir mehrere Sprachen, und sobald sie akzeptiert wurden, werden sie aufgenommen und gutgeschrieben (suchbar nach Benutzernamen). Jeder Beitrag, den Sie leisten, hilft den Community-Mitgliedern, ihr Denken zu erweitern und die Produktivität zu verbessern. Lassen Sie uns zusammenarbeiten, um eine perfektere Prompt-Bibliothek aufzubauen!"
   },
   "toggle_prompt_language": {
     "message": "Wechsel der Prompt-Sprache"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "Wollen Sie eine KI, die Sie wirklich versteht? Treten Sie der AiShort-Community bei, um Prompts zu teilen, zu entdecken und zu verfeinern—gemeinsam höhere Genauigkeit erreichen"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

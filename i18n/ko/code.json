@@ -165,12 +165,10 @@
     "message": "여러분의 피드백은 저희에게 소중합니다!"
   },
   "feedback.welcome": {
-    "message": "피드백 환영",
-    "description": "The welcome title on the feedback page"
+    "message": "피드백 환영"
   },
   "feedback.paragraph": {
-    "message": "ChatGPT 바로가기를 지속적으로 개선하고 개인의 효율성과 생산성을 높일 수 있도록 제안, 아이디어, 당부의 말을 자유롭게 보내주세요. 버그에 대한 피드백이 필요한 경우, 문제가 발생한 위치와 주변 상황에 대한 링크를 제공해 주세요. 프롬프트 콘텐츠의 경우, 여러 언어로 콘텐츠를 제출하거나 프롬프트에 대한 아이디어를 간단히 설명할 수 있습니다. 저희는 생각을 확장하거나 고품질의 결과물을 만들어내는 프롬프트를 찾고 있습니다. 제출한 프롬프트가 게시되면 해당 페이지에 여러분의 기여가 추가됩니다. 기여자의 이름 (사용자 아이디) 을 검색하면 해당 항목을 찾을 수 있습니다.",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut은 AI 사용 효율성을 높이기 위한 오픈 소스 프롬프트 관리 도구입니다. 버그 신고, 기능 제안, 고품질 프롬프트 공유 등 여러분의 참여를 간절히 기다립니다. 프롬프트 투고는 다국어를 지원하며, 채택 시 수록되고 서명(사용자 이름 검색 지원)됩니다. 여러분의 기여는 커뮤니티 회원들의 사고를 확장하고 생산성을 높이는 데 도움이 됩니다. 함께 더 완벽한 프롬프트 라이브러리를 만들어 갑시다!"
   },
   "showcase.filters.title": {
     "message": "필터"
@@ -896,5 +894,15 @@
   },
   "community.description": {
     "message": "진정으로 이해하는 AI 를 원하시나요? AiShort 커뮤니티에서 프롬프트를 공유하고 발견하며 개선하여 더 높은 정확성과 창의성을 함께 실현하세요"
+  },
+  "feedback.subtitle": {
+    "message": "您的每一份贡献，都在让这个开源项目变得更好"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

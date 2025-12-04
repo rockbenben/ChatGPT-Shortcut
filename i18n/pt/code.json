@@ -27,12 +27,13 @@
     "message": "Os seus comentários são importantes para nós!"
   },
   "feedback.welcome": {
-    "message": "Os comentários são bem-vindos!",
-    "description": "The welcome title on the feedback page"
+    "message": "Os comentários são bem-vindos!"
+  },
+  "feedback.subtitle": {
+    "message": "Cada contribuição que você faz torna este projeto de código aberto melhor."
   },
   "feedback.paragraph": {
-    "message": "Sugestões, ideias e palavras rápidas são bem-vindas para melhorar continuamente o ChatGPT Shortcut e aumentar a eficiência e produtividade pessoal. Se precisar de dar feedback sobre um bug, por favor, forneça um link para onde o problema ocorreu e as circunstâncias em torno dele. Para o conteúdo das mensagens, pode enviar conteúdo em várias línguas ou simplesmente descrever a sua ideia para uma mensagem. Estamos à procura de sugestões que estimulem a mente ou produzam resultados de alta qualidade. Assim que a proposta que submeter for publicada, a sua contribuição será adicionada à página. Pode encontrar a entrada correspondente procurando o nome do contribuidor (nome de utilizador).",
-    "description": "The main paragraph on the feedback page"
+    "message": "O ChatGPT Shortcut é uma ferramenta de gerenciamento de prompts de código aberto dedicada a melhorar a eficiência da IA. Aguardamos ansiosamente sua participação: seja relatando bugs, sugerindo recursos ou compartilhando prompts de alta qualidade. Para envios de prompts, oferecemos suporte a vários idiomas e, uma vez aceitos, eles serão incluídos e creditados (pesquisáveis por nome de usuário). Cada contribuição que você faz ajuda os membros da comunidade a expandir seu pensamento e aumentar a produtividade. Vamos trabalhar juntos para construir uma biblioteca de prompts mais perfeita!"
   },
   "toggle_prompt_language": {
     "message": "Mudança de idiomas do prompt"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "Quer uma IA que realmente te entenda? Junte-se à comunidade AiShort para compartilhar, descobrir e refinar prompts—desbloqueie maior precisão e criatividade juntos"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

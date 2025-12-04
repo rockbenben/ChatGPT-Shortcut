@@ -23,10 +23,6 @@
     "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
   },
-  "item.label.文字处理": {
-    "message": "Другие инструменты",
-    "description": "Navbar item with label 文字处理"
-  },
   "item.label.工具收藏": {
     "message": "Коллекция инструментов",
     "description": "Navbar item with label 工具收藏"
@@ -54,5 +50,13 @@
   "item.label.脚本扩展": {
     "message": "Расширения",
     "description": "Navbar item with label 脚本扩展"
+  },
+  "item.label.ToolsByAI": {
+    "message": "ToolsByAI",
+    "description": "Navbar item with label ToolsByAI"
+  },
+  "item.label.✈️ Telegram": {
+    "message": "✈️ Telegram",
+    "description": "Navbar item with label ✈️ Telegram"
   }
 }

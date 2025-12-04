@@ -27,12 +27,13 @@
     "message": "Sus comentarios son importantes para nosotros."
   },
   "feedback.welcome": {
-    "message": "Agradecemos sus comentarios.",
-    "description": "The welcome title on the feedback page"
+    "message": "Agradecemos sus comentarios."
+  },
+  "feedback.subtitle": {
+    "message": "Cada contribución que haces mejora este proyecto de código abierto."
   },
   "feedback.paragraph": {
-    "message": "Agradecemos cualquier sugerencia, idea o comentario para mejorar continuamente ChatGPT Shortcut y aumentar la eficacia y productividad personales. Si necesita hacer comentarios sobre un error, facilite un enlace al lugar donde se produjo el problema y las circunstancias que lo rodearon. En cuanto al contenido, puedes enviarlo en varios idiomas o simplemente describir tu idea. Buscamos ideas que estimulen la mente o que produzcan resultados de alta calidad. Una vez que se publique el tema que envíe, su contribución se añadirá a la página. Puede encontrar la entrada correspondiente buscando el nombre del colaborador (nombre de usuario).",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut es una herramienta de gestión de prompts de código abierto dedicada a mejorar la eficiencia de la IA. Esperamos con impaciencia su participación: ya sea informando errores, sugiriendo funciones o compartiendo prompts de alta calidad. Para los envíos de prompts, admitimos varios idiomas y, una vez aceptados, se incluirán y acreditarán (se pueden buscar por nombre de usuario). Cada contribución que haces ayuda a los miembros de la comunidad a expandir su pensamiento y mejorar la productividad. ¡Trabajemos juntos para construir una biblioteca de prompts más perfecta!"
   },
   "toggle_prompt_language": {
     "message": "Cambiar el idioma de las instrucciones"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "¿Quieres una IA que realmente te entienda? Únete a la comunidad AiShort para compartir, descubrir y perfeccionar prompts—desbloquea mayor precisión y creatividad juntos"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

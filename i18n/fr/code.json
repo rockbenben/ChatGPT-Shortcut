@@ -27,12 +27,13 @@
     "message": "Vos commentaires sont importants pour nous !"
   },
   "feedback.welcome": {
-    "message": "Les commentaires sont les bienvenus !",
-    "description": "The welcome title on the feedback page"
+    "message": "Les commentaires sont les bienvenus !"
+  },
+  "feedback.subtitle": {
+    "message": "Chaque contribution que vous apportez rend ce projet open source meilleur."
   },
   "feedback.paragraph": {
-    "message": "Les suggestions, les idées et les commentaires sont les bienvenus afin d'améliorer continuellement ChatGPT Shortcut et d'accroître l'efficacité et la productivité personnelles. Si vous avez besoin de donner votre avis sur un bug, veuillez fournir un lien vers l'endroit où le problème s'est produit et les circonstances qui l'ont entouré. Pour le contenu des messages-guides, vous pouvez soumettre un contenu en plusieurs langues ou simplement décrire votre idée de message-guide. Nous recherchons des idées qui stimulent l'esprit ou qui produisent des résultats de grande qualité. Une fois que le message que vous avez soumis est publié, votre contribution est ajoutée à la page. Vous pouvez trouver l'entrée correspondante en recherchant le nom du contributeur (nom d'utilisateur).",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut est un outil de gestion de prompts open source dédié à l'amélioration de l'efficacité de l'IA. Nous attendons avec impatience votre participation : qu'il s'agisse de signaler des bugs, de suggérer des fonctionnalités ou de partager des prompts de haute qualité. Pour les soumissions de prompts, nous prenons en charge plusieurs langues, et une fois acceptées, elles seront incluses et créditées (recherchables par nom d'utilisateur). Chaque contribution que vous apportez aide les membres de la communauté à élargir leur réflexion et à améliorer leur productivité. Travaillons ensemble pour construire une bibliothèque de prompts plus parfaite !"
   },
   "toggle_prompt_language": {
     "message": "Changement de langue de l'invite"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "Vous voulez une IA qui vous comprend vraiment ? Rejoignez la communauté AiShort pour partager, découvrir et affiner vos prompts—libérez ensemble précision et créativité"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

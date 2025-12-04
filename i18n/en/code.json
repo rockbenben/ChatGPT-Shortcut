@@ -443,12 +443,13 @@
     "message": "您的反馈对我们很重要！"
   },
   "feedback.welcome": {
-    "message": "Feedback and suggestions",
-    "description": "The welcome title on the feedback page"
+    "message": "Feedback and suggestions"
+  },
+  "feedback.subtitle": {
+    "message": "Every contribution you make is making this open-source project better."
   },
   "feedback.paragraph": {
-    "message": "We cordially invite you to provide suggestions, ideas, and prompts to continuously enhance ChatGPT Shortcut, thereby improving personal efficiency and productivity. If you encounter any bugs, please provide the relevant link and details of the issue. When it comes to prompt suggestions, you may submit content in multiple languages or simply describe your thoughts on the desired prompts. We look forward to expanding our collective knowledge and generating high-quality outputs through these suggestions. Once your submitted prompts are published, your contributions will be credited on the page. You can search for entries associated with your contributor name (username).",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut is an open-source prompt management tool dedicated to improving AI efficiency. We eagerly anticipate your participation: whether it's reporting bugs, suggesting features, or sharing high-quality prompts. For prompt submissions, we support multiple languages, and once accepted, they will be included and credited (searchable by username). Every contribution you make helps community members expand their thinking and improve productivity. Let's work together to build a more perfect prompt library!"
   },
   "input.rules.username": {
     "message": "Please enter username or mail!"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "Want AI that truly understands you? Join AiShort’s community to share, discover and refine prompts—unlock higher accuracy and creativity together."
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }

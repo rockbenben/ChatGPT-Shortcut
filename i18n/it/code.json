@@ -27,12 +27,13 @@
     "message": "Il vostro feedback è importante per noi!"
   },
   "feedback.welcome": {
-    "message": "Il feedback è ben accetto!",
-    "description": "The welcome title on the feedback page"
+    "message": "Il feedback è ben accetto!"
+  },
+  "feedback.subtitle": {
+    "message": "Ogni tuo contributo rende migliore questo progetto open source."
   },
   "feedback.paragraph": {
-    "message": "Suggerimenti, idee e suggerimenti sono benvenuti al fine di migliorare continuamente ChatGPT Shortcut e aumentare l'efficienza e la produttività personali. Se dovete fornire un feedback su un bug, siete pregati di fornire un link al luogo in cui si è verificato il problema e alle circostanze in cui si è verificato. Per quanto riguarda i contenuti dei prompt, è possibile inviarli in più lingue o semplicemente descrivere la propria idea per un prompt. Cerchiamo suggerimenti che stimolino la mente o che producano risultati di alta qualità. Una volta che il tema inviato sarà pubblicato, il vostro contributo sarà aggiunto alla pagina. È possibile trovare la voce corrispondente cercando il nome del collaboratore (nome utente).",
-    "description": "The main paragraph on the feedback page"
+    "message": "ChatGPT Shortcut è uno strumento di gestione dei prompt open source dedicato a migliorare l'efficienza dell'IA. Attendiamo con ansia la tua partecipazione: che si tratti di segnalare bug, suggerire funzionalità o condividere prompt di alta qualità. Per l'invio di prompt, supportiamo più lingue e, una volta accettati, verranno inclusi e accreditati (ricercabili per nome utente). Ogni tuo contributo aiuta i membri della community ad espandere il proprio pensiero e migliorare la produttività. Lavoriamo insieme per costruire una libreria di prompt più perfetta!"
   },
   "toggle_prompt_language": {
     "message": "Cambiare la lingua del prompt"
@@ -896,5 +897,12 @@
   },
   "community.description": {
     "message": "Vuoi un'AI che ti capisca davvero? Unisciti alla community AiShort per condividere, scoprire e perfezionare prompt—sblocca insieme maggiore precisione e creatività"
+  },
+  "message.loading.userStatus": {
+    "message": "加载登录状态..."
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   }
 }
