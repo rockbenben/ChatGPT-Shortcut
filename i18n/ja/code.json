@@ -1,0 +1,971 @@
+{
+  "message.addFavorite.success": {
+    "message": "お気に入りに追加しました"
+  },
+  "message.addFavorite.error": {
+    "message": "お気に入りの追加に失敗しました。後でもう一度お試しください"
+  },
+  "message.removeFavorite.success": {
+    "message": "お気に入りから削除しました"
+  },
+  "message.removeFavorite.error": {
+    "message": "お気に入りの削除に失敗しました。後でもう一度お試しください"
+  },
+  "message.removeFavorite.confirm.title": {
+    "message": "お気に入りから削除"
+  },
+  "message.removeFavorite.confirm.content": {
+    "message": "このプロンプトをお気に入りから削除してもよろしいですか？"
+  },
+  "button.confirm": {
+    "message": "確認"
+  },
+  "action.cancel": {
+    "message": "キャンセル"
+  },
+  "message.addPrompt.success": {
+    "message": "プロンプトの送信に成功しました！"
+  },
+  "message.addPrompt.success.view": {
+    "message": "「マイプロンプト」で確認できます"
+  },
+  "message.addPrompt.error": {
+    "message": "プロンプトの送信に失敗しました。後でもう一度お試しください"
+  },
+  "message.updatePrompt.success": {
+    "message": "プロンプトの更新に成功しました！"
+  },
+  "message.updatePrompt.error": {
+    "message": "プロンプトの更新に失敗しました。後でもう一度お試しください"
+  },
+  "message.deletePrompt.success": {
+    "message": "プロンプトの削除に成功しました！"
+  },
+  "message.deletePrompt.error": {
+    "message": "プロンプトの削除に失敗しました。後でもう一度お試しください"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "削除の確認"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "このプロンプトを削除してもよろしいですか？"
+  },
+  "homepage.slogan": {
+    "message": "厳選されたAIプロンプトで、会話をより効率的に"
+  },
+  "homepage.title": {
+    "message": "AiShort - AIプロンプトテンプレートライブラリ | 厳選プロンプト指令 | ワンクリックで生産性向上"
+  },
+  "homepage.description": {
+    "message": "なぜAIはいつも的外れな回答をするのでしょうか？AiShortは、ライティング、プログラミング、翻訳などのシナリオをカバーする実用的なAIプロンプトテンプレートを収録しています。ワンクリックでコピーして使用でき、AIに指示を正確に理解させ、プロフェッショナルな結果を出力し、作業効率を瞬時に倍増させます！"
+  },
+  "community.title": {
+    "message": "AIプロンプトコミュニティ - 高品質なプロンプトを発見・共有 | AiShortクリエイティブプラットフォーム"
+  },
+  "community.description": {
+    "message": "もっと実用的なAIプロンプトが欲しいですか？AiShortコミュニティに参加して、ユーザーが共有する実用的なプロンプトテンプレートを発見し、最適化のコツを交換し、高品質なプロンプトリソースライブラリを一緒に構築しましょう。"
+  },
+  "common.favorites": {
+    "message": "お気に入り"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "私のお気に入りプロンプト"
+  },
+  "showcase.tag.write.label": {
+    "message": "ライティング支援"
+  },
+  "showcase.tag.write.description": {
+    "message": "記事の文法を修正し、表現スタイルを最適化し、ライティングの質を向上させる"
+  },
+  "showcase.tag.article.label": {
+    "message": "記事/レポート"
+  },
+  "showcase.tag.article.description": {
+    "message": "小説、論文、プレスリリース、脚本、調査レポートなど、あらゆる種類の記事を生成する"
+  },
+  "showcase.tag.code.label": {
+    "message": "IT/プログラミング"
+  },
+  "showcase.tag.code.description": {
+    "message": "プログラミングの提案、コード例、デバッグソリューション、技術的なガイダンスを提供する"
+  },
+  "showcase.tag.ai.label": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "人工知能に関連するプロンプトとアプリケーションシナリオ"
+  },
+  "showcase.tag.living.label": {
+    "message": "生活の質"
+  },
+  "showcase.tag.living.description": {
+    "message": "フィットネス指導、栄養アドバイス、料理のテクニック、メイクアップスタイリングなどの生活サービス"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "面白雑学"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "面白い豆知識、ポピュラーサイエンスコンテンツ、楽しいQ&A"
+  },
+  "showcase.tag.life.label": {
+    "message": "生活百科"
+  },
+  "showcase.tag.life.description": {
+    "message": "日常生活における実用的な知識と問題解決策"
+  },
+  "showcase.tag.social.label": {
+    "message": "心理/社交"
+  },
+  "showcase.tag.social.description": {
+    "message": "心理カウンセリング、感情分析、社会的スキル、対人コミュニケーション"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "哲学/宗教"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "哲学的思考、宗教文化、人生の知恵の探求"
+  },
+  "showcase.tag.mind.label": {
+    "message": "思考トレーニング"
+  },
+  "showcase.tag.mind.description": {
+    "message": "創造性、批判的思考、論理的推論能力を刺激する"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "教育/学生"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "家庭教師、宿題のサポート、試験準備など、学生関連のコンテンツ"
+  },
+  "showcase.tag.academic.label": {
+    "message": "学術/教師"
+  },
+  "showcase.tag.academic.description": {
+    "message": "学術研究、教育設計、カリキュラム計画など、教師の仕事のサポート"
+  },
+  "showcase.tag.games.label": {
+    "message": "楽しいゲーム"
+  },
+  "showcase.tag.games.description": {
+    "message": "テキストゲーム、ロールプレイング、インタラクティブエンターテイメント"
+  },
+  "showcase.tag.tool.label": {
+    "message": "生産性向上ツール"
+  },
+  "showcase.tag.tool.description": {
+    "message": "作業効率を向上させるための実用的なツール"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "ターミナル/インタプリタ"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "コマンドラインターミナルとさまざまなプログラミング言語インタプリタをシミュレートする"
+  },
+  "showcase.tag.language.label": {
+    "message": "言語/翻訳"
+  },
+  "showcase.tag.language.description": {
+    "message": "多言語翻訳、語学学習、テキスト変換、言語認識"
+  },
+  "showcase.tag.speech.label": {
+    "message": "ディベート/スピーチ"
+  },
+  "showcase.tag.speech.description": {
+    "message": "ディベートスキル、スピーチ原稿の作成、レトリックトレーニング"
+  },
+  "showcase.tag.comments.label": {
+    "message": "批評/評価"
+  },
+  "showcase.tag.comments.description": {
+    "message": "専門的なレビュー、作品評価、鑑賞分析"
+  },
+  "showcase.tag.text.label": {
+    "message": "テキスト/言葉"
+  },
+  "showcase.tag.text.description": {
+    "message": "テキスト処理、単語分析、言語関連のタスク"
+  },
+  "showcase.tag.company.label": {
+    "message": "企業機能"
+  },
+  "showcase.tag.company.description": {
+    "message": "企業経営、人事、マーケティング、その他の機能的な役割"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "検索エンジン最適化、キーワード拡張、コンテンツマーケティング"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "医療健康"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "健康相談、病気の教育、医療アドバイス"
+  },
+  "showcase.tag.finance.label": {
+    "message": "ファイナンシャルアドバイザー"
+  },
+  "showcase.tag.finance.description": {
+    "message": "投資管理、財務分析、ファイナンシャルプランニングのアドバイス"
+  },
+  "showcase.tag.music.label": {
+    "message": "音楽と芸術"
+  },
+  "showcase.tag.music.description": {
+    "message": "作曲、音楽理論の学習、作品鑑賞"
+  },
+  "showcase.tag.professional.label": {
+    "message": "専門コンサルタント"
+  },
+  "showcase.tag.professional.description": {
+    "message": "弁護士、会計士、コンサルタントなど、専門分野のアドバイザー"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "ユーザー投稿"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "コミュニティユーザーによって共有された高品質なプロンプト"
+  },
+  "action.copy": {
+    "message": "コピー"
+  },
+  "action.removeFavorite": {
+    "message": "クリックしてお気に入りから削除"
+  },
+  "action.upvote": {
+    "message": "高評価"
+  },
+  "action.downvote": {
+    "message": "低評価"
+  },
+  "link.home": {
+    "message": "ホームに戻る"
+  },
+  "link.myFavorites": {
+    "message": "私のお気に入り"
+  },
+  "button.login": {
+    "message": "ログイン"
+  },
+  "field.id": {
+    "message": "公開時間"
+  },
+  "field.upvoteDifference": {
+    "message": "人気度"
+  },
+  "order.descending": {
+    "message": "降順"
+  },
+  "order.ascending": {
+    "message": "昇順"
+  },
+  "info.communityPrompts": {
+    "message": "このページのプロンプトは、ユーザーによって共有およびアップロードされたものです。内容の正確性、品質、完全性を保証するものではなく、内容に起因する法的責任も負いません。侵害やその他の問題を見つけた場合は、ご連絡ください。"
+  },
+  "feedback.title": {
+    "message": "フィードバックと提案"
+  },
+  "feedback.description": {
+    "message": "あなたのフィードバックは私たちにとって重要です！"
+  },
+  "feedback.welcome": {
+    "message": "フィードバックを歓迎します"
+  },
+  "feedback.subtitle": {
+    "message": "あなたのすべての貢献が、このオープンソースプロジェクトをより良くするのに役立ちます"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcutは、AIの効率向上に特化したオープンソースのプロンプト管理ツールです。バグの報告、機能の提案、高品質なプロンプトの共有など、皆様のご参加をお待ちしております。プロンプトの投稿については、多言語に対応しており、採用された場合は帰属表示（ユーザー名で検索可能）付きで掲載されます。すべての貢献は、コミュニティメンバーが思考を広げ、生産性を向上させるのに役立ちます。一緒に完璧なプロンプトライブラリを作りましょう！"
+  },
+  "toggle_prompt_language": {
+    "message": "プロンプト言語の切り替え"
+  },
+  "showcase.filters.title": {
+    "message": "フィルタ"
+  },
+  "action.hideTags": {
+    "message": "タグを隠す"
+  },
+  "action.showTags": {
+    "message": "タグを表示"
+  },
+  "toggle_prompt_language_description": {
+    "message": "プロンプトの表示言語を変更します。英語と現在のページ言語を切り替えることができます。"
+  },
+  "myprompt.tooltip": {
+    "message": "追加または作成した個人的なプロンプト。AiShort以外のプロンプトを保存するために使用されます。"
+  },
+  "myprompt": {
+    "message": "マイプロンプト"
+  },
+  "myfavorite.tooltip": {
+    "message": "コミュニティプロンプトを含む、私がお気に入りに追加したプロンプト。"
+  },
+  "community.tag.tooltip": {
+    "message": "コミュニティで共有された厳選プロンプト"
+  },
+  "community.tag": {
+    "message": "コミュニティ厳選"
+  },
+  "showcase.favoritesList.title": {
+    "message": "お気に入り"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "すべてのプロンプト"
+  },
+  "action.loadMore": {
+    "message": "もっと読み込む"
+  },
+  "validation.password.match": {
+    "message": "2つのパスワードが一致しません！"
+  },
+  "message.resetPassword.success": {
+    "message": "パスワードのリセットに成功しました！"
+  },
+  "message.resetPassword.error": {
+    "message": "パスワードのリセットに失敗しました。後でもう一度お試しください"
+  },
+  "input.newPassword": {
+    "message": "新しいパスワードを入力してください！"
+  },
+  "validation.password.length": {
+    "message": "パスワードは少なくとも6文字である必要があります"
+  },
+  "button.resetPassword": {
+    "message": "パスワードをリセット"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "リセットコード"
+  },
+  "input.resetPassword.code": {
+    "message": "リセットコードを入力してください！"
+  },
+  "placeholder.newPassword": {
+    "message": "新しいパスワード"
+  },
+  "placeholder.confirmPassword": {
+    "message": "新しいパスワードを確認"
+  },
+  "validation.confirmPassword.required": {
+    "message": "新しいパスワードを確認してください！"
+  },
+  "common.myPrompts": {
+    "message": "マイプロンプト"
+  },
+  "message.success.passwordChanged": {
+    "message": "パスワードの変更に成功しました！"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "パスワードの変更に失敗しました。後でもう一度お試しください"
+  },
+  "message.success.forgotPassword": {
+    "message": "パスワードリセットメールを送信しました！"
+  },
+  "message.error.forgotPassword": {
+    "message": "パスワードリセットメールの送信に失敗しました。後でもう一度お試しください"
+  },
+  "title.userInfo": {
+    "message": "ユーザー情報"
+  },
+  "message.loading": {
+    "message": "ログイン状態を読み込んでいます..."
+  },
+  "label.sharedPrompts": {
+    "message": "共有されたプロンプト"
+  },
+  "label.newMember": {
+    "message": "新しいメンバー、最初のプロンプトを共有しましょう"
+  },
+  "title.security": {
+    "message": "セキュリティ設定"
+  },
+  "action.changePassword": {
+    "message": "パスワードを変更"
+  },
+  "action.forgotPassword": {
+    "message": "パスワードをお忘れですか"
+  },
+  "placeholder.currentPassword": {
+    "message": "現在のパスワード"
+  },
+  "validation.currentPassword.required": {
+    "message": "現在のパスワードを入力してください！"
+  },
+  "message.forgotPassword.info": {
+    "message": "現在のパスワードをお忘れの場合は、メールでリセットできます。登録されたメールアドレスにリセットリンクを含むメールを送信します。"
+  },
+  "placeholder.email": {
+    "message": "メールアドレス"
+  },
+  "validation.email.required": {
+    "message": "メールアドレスを入力してください！"
+  },
+  "validation.email.invalid": {
+    "message": "有効なメールアドレスを入力してください！"
+  },
+  "action.sendResetEmail": {
+    "message": "リセットメールを送信"
+  },
+  "validation.comment.required": {
+    "message": "コメントの内容を入力してください"
+  },
+  "validation.comment.maxLength": {
+    "message": "コメントの内容は2000文字を超えてはいけません"
+  },
+  "placeholder.comment": {
+    "message": "ここにコメントを入力... MarkdownとHTML構文をサポート"
+  },
+  "action.reply": {
+    "message": "返信"
+  },
+  "validation.replyRequired": {
+    "message": "返信の内容を入力してください"
+  },
+  "label.comments": {
+    "message": "コメント"
+  },
+  "message.copied": {
+    "message": "コピーに成功しました"
+  },
+  "tooltip.switchLanguage": {
+    "message": "クリックして表示言語を切り替える"
+  },
+  "label.commentInfo": {
+    "message": "このプロンプトに関するご意見、ご感想、共有などを以下に返信してください。"
+  },
+  "input.search.placeholder": {
+    "message": "プロンプトを検索..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "関連する結果が見つかりませんでした。検索語を短くしてみてください"
+  },
+  "comment.add": {
+    "message": "コメントを送信"
+  },
+  "validation.username.required": {
+    "message": "ユーザー名または登録メールアドレスを入力してください！"
+  },
+  "validation.password.required": {
+    "message": "パスワードを入力してください！"
+  },
+  "message.error": {
+    "message": "処理中にエラーが発生しました"
+  },
+  "message.success.login": {
+    "message": "ログイン成功！"
+  },
+  "message.success.register": {
+    "message": "登録成功！"
+  },
+  "message.success.passwordlessLink": {
+    "message": "パスワードレスログインリンクをメールに送信しました！"
+  },
+  "message.error.passwordlessLink": {
+    "message": "送信に失敗しました。メールアドレスまたはユーザー名を確認してください"
+  },
+  "login.method.password": {
+    "message": "パスワードログイン"
+  },
+  "login.method.code": {
+    "message": "パスワードレスログイン"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "ユーザー名/メールアドレス"
+  },
+  "placeholder.password": {
+    "message": "パスワード"
+  },
+  "action.login": {
+    "message": "直接ログイン"
+  },
+  "login.passwordless.info": {
+    "message": "ログインリンクがメールに送信されます。クリックしてログインしてください"
+  },
+  "action.sendLink": {
+    "message": "ログインリンクを取得"
+  },
+  "login.register.prompt": {
+    "message": "アカウントをお持ちでないですか？"
+  },
+  "action.register": {
+    "message": "登録"
+  },
+  "placeholder.username": {
+    "message": "ユーザー名"
+  },
+  "validation.agreement.required": {
+    "message": "使用する前に利用規約とプライバシーポリシーに同意する必要があります"
+  },
+  "label.agree": {
+    "message": "同意する"
+  },
+  "link.terms": {
+    "message": "利用規約"
+  },
+  "link.privacy": {
+    "message": "プライバシーポリシー"
+  },
+  "login.login.prompt": {
+    "message": "すでにアカウントをお持ちですか？"
+  },
+  "action.backToLogin": {
+    "message": "ログインに戻る"
+  },
+  "login.title.welcome": {
+    "message": "お帰りなさい"
+  },
+  "login.title.register": {
+    "message": "コミュニティに参加"
+  },
+  "login.title.forgotPassword": {
+    "message": "パスワードを回復"
+  },
+  "login.subtitle.welcome": {
+    "message": "ログインして、より多くのプレミアムプロンプトを探索しましょう"
+  },
+  "login.subtitle.register": {
+    "message": "素晴らしいプロンプトを発見、共有、作成しましょう"
+  },
+  "login.subtitle.forgotPassword": {
+    "message": "リセットリンクがメールに送信されます"
+  },
+  "message.noFavorites": {
+    "message": "お気に入りのプロンプトはまだありません"
+  },
+  "action.edit": {
+    "message": "編集"
+  },
+  "action.delete": {
+    "message": "削除"
+  },
+  "message.fetchError": {
+    "message": "プロンプトの取得に失敗しました。後でもう一度お試しください"
+  },
+  "message.noPrompts": {
+    "message": "まだプロンプトが送信されていません。プロンプトを追加してください。"
+  },
+  "message.cache.cleared": {
+    "message": "キャッシュをクリアしました"
+  },
+  "message.export.noPrompts": {
+    "message": "エクスポートできるプロンプトがありません。後でもう一度お試しください"
+  },
+  "message.export.success": {
+    "message": "プロンプトのエクスポートに成功しました！"
+  },
+  "message.export.error": {
+    "message": "エクスポートに失敗しました。後でもう一度お試しください"
+  },
+  "link.myaccount": {
+    "message": "アカウント設定"
+  },
+  "button.exportPrompts": {
+    "message": "プロンプトをエクスポート"
+  },
+  "button.clearCache": {
+    "message": "キャッシュをクリア"
+  },
+  "button.logout": {
+    "message": "ログアウト"
+  },
+  "message.logout.confirm.title": {
+    "message": "ログアウトの確認"
+  },
+  "message.logout.confirm.content": {
+    "message": "本当にログアウトしますか？"
+  },
+  "link.addprompt": {
+    "message": "プロンプトを追加"
+  },
+  "button.settings": {
+    "message": "設定"
+  },
+  "showcase.header.button": {
+    "message": "プロンプトを共有"
+  },
+  "action.addPrompt": {
+    "message": "プロンプトを追加"
+  },
+  "label.promptTitle": {
+    "message": "プロンプト名"
+  },
+  "validation.promptTitle.required": {
+    "message": "プロンプトのタイトルを入力してください！"
+  },
+  "placeholder.promptTitle": {
+    "message": "プロンプトに名前を付ける"
+  },
+  "label.promptContent": {
+    "message": "プロンプトの内容"
+  },
+  "validation.promptContent.required": {
+    "message": "プロンプトの内容を入力してください！"
+  },
+  "placeholder.promptContent": {
+    "message": "詳細なプロンプトの内容をここに入力..."
+  },
+  "label.promptTags": {
+    "message": "機能/タグ"
+  },
+  "placeholder.promptTags": {
+    "message": "プロンプトの機能を簡単に説明してください（オプション）"
+  },
+  "label.promptNotes": {
+    "message": "備考"
+  },
+  "label.promptNotes.description": {
+    "message": "ここでプロンプトのソースや、他の言語バージョンを提供できます。また、このプロンプトに関する拡張のアイデアや要件がある場合は、ここで説明してください。"
+  },
+  "placeholder.promptNotes": {
+    "message": "このプロンプトに関する追加の備考（オプション）"
+  },
+  "label.sharePrompt": {
+    "message": "このプロンプトを公開ページで共有しますか？"
+  },
+  "modal.editPrompt.title": {
+    "message": "現在のプロンプトを更新"
+  },
+  "action.updatePrompt": {
+    "message": "プロンプトを更新"
+  },
+  "hideTags": {
+    "message": "タグを隠す"
+  },
+  "showTags": {
+    "message": "タグを表示"
+  },
+  "link.myfavorite": {
+    "message": "私のお気に入り"
+  },
+  "加载更多": {
+    "message": "もっと読み込む"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "エラーが発生しました",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "先頭へ戻る",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "アーカイブ",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "アーカイブ",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ブログ記事一覧のナビゲーション",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "新しい記事",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "過去の記事",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ブログ記事のナビゲーション",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "新しい記事",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "過去の記事",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "全てのタグを見る",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "システムモード",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "ライトモード",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "ダークモード",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "ダークモードを切り替える(現在は{mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "パンくずリストのナビゲーション",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "ドキュメントページ",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "前へ",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "次へ",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count}記事",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "「{tagName}」タグのついた{nDocsTagged}",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "バージョン: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "これはバージョン{versionLabel}の{siteTitle}のドキュメントで現在はメンテナンスされていません",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新のドキュメントは{latestVersionLink} ({versionLabel}) を見てください",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新バージョン",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "このページを編集",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} への直接リンク",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "{date}に",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "{user}が",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "{atDate}{byUser}最終更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "ページが見つかりません",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "他のバージョン",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "タグ:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "閉じる",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "注意",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危険",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "備考",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "注記",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "ヒント",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "警告",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  }
+}

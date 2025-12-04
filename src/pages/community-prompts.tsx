@@ -78,7 +78,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
                   }}
                 />
               </Tooltip>
-              <Tooltip title={isBookmarked ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="showcase.tag.favorite.description">收藏</Translate>}>
+              <Tooltip title={isBookmarked ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
                 <Button
                   type="text"
                   icon={isBookmarked ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />}

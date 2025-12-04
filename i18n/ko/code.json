@@ -1,0 +1,971 @@
+{
+  "action.copy": {
+    "message": "복사"
+  },
+  "action.removeFavorite": {
+    "message": "즐겨찾기 제거"
+  },
+  "common.favorites": {
+    "message": "즐겨찾기"
+  },
+  "action.upvote": {
+    "message": "좋아요"
+  },
+  "action.downvote": {
+    "message": "싫어요"
+  },
+  "link.home": {
+    "message": "홈으로 돌아가기"
+  },
+  "link.myFavorites": {
+    "message": "내 즐겨찾기"
+  },
+  "button.login": {
+    "message": "로그인"
+  },
+  "field.id": {
+    "message": "게시 시간"
+  },
+  "field.upvoteDifference": {
+    "message": "인기도"
+  },
+  "order.descending": {
+    "message": "내림차순"
+  },
+  "order.ascending": {
+    "message": "오름차순"
+  },
+  "info.communityPrompts": {
+    "message": "이 페이지의 프롬프트는 사용자가 공유하고 업로드한 것입니다. 우리는 내용의 정확성, 품질 또는 완전성을 보장하지 않으며, 내용으로 인해 발생하는 법적 책임도 지지 않습니다. 침해 또는 기타 문제를 발견하면 당사에 문의하십시오."
+  },
+  "feedback.title": {
+    "message": "피드백 및 제안"
+  },
+  "feedback.description": {
+    "message": "귀하의 피드백은 우리에게 중요합니다!"
+  },
+  "feedback.welcome": {
+    "message": "피드백 환영"
+  },
+  "feedback.subtitle": {
+    "message": "귀하의 모든 기여는 이 오픈 소스 프로젝트를 더 좋게 만드는 데 도움이 됩니다."
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut은 AI 효율성을 높이는 데 전념하는 오픈 소스 프롬프트 관리 도구입니다. 버그 보고, 기능 제안 또는 고품질 프롬프트 공유 등 귀하의 참여를 기다립니다. 프롬프트 제출의 경우 여러 언어를 지원하며, 채택되면 귀속 표시(사용자 이름으로 검색 가능)와 함께 게시됩니다. 모든 기여는 커뮤니티 구성원이 사고를 확장하고 생산성을 높이는 데 도움이 됩니다. 함께 완벽한 프롬프트 라이브러리를 만들어 봅시다!"
+  },
+  "toggle_prompt_language": {
+    "message": "프롬프트 언어 전환"
+  },
+  "showcase.filters.title": {
+    "message": "필터"
+  },
+  "action.hideTags": {
+    "message": "태그 숨기기"
+  },
+  "action.showTags": {
+    "message": "태그 표시"
+  },
+  "toggle_prompt_language_description": {
+    "message": "프롬프트 표시 언어를 변경합니다. 영어와 현재 페이지 언어 간에 전환할 수 있습니다."
+  },
+  "myprompt.tooltip": {
+    "message": "추가하거나 만든 개인 프롬프트. AiShort 외부의 프롬프트를 저장하는 데 사용됩니다."
+  },
+  "myprompt": {
+    "message": "내 프롬프트"
+  },
+  "myfavorite.tooltip": {
+    "message": "커뮤니티 프롬프트를 포함하여 내가 즐겨찾기에 추가한 프롬프트."
+  },
+  "community.tag.tooltip": {
+    "message": "커뮤니티에서 공유된 엄선된 프롬프트"
+  },
+  "community.tag": {
+    "message": "커뮤니티 엄선"
+  },
+  "showcase.favoritesList.title": {
+    "message": "즐겨찾기"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "모든 프롬프트"
+  },
+  "action.loadMore": {
+    "message": "더 불러오기"
+  },
+  "validation.password.match": {
+    "message": "두 비밀번호가 일치하지 않습니다!"
+  },
+  "message.resetPassword.success": {
+    "message": "비밀번호 재설정 성공!"
+  },
+  "message.resetPassword.error": {
+    "message": "비밀번호 재설정 실패, 나중에 다시 시도하십시오."
+  },
+  "input.newPassword": {
+    "message": "새 비밀번호를 입력하십시오!"
+  },
+  "validation.password.length": {
+    "message": "비밀번호는 최소 6자 이상이어야 합니다."
+  },
+  "button.resetPassword": {
+    "message": "비밀번호 재설정"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "재설정 코드"
+  },
+  "input.resetPassword.code": {
+    "message": "재설정 코드를 입력하십시오!"
+  },
+  "placeholder.newPassword": {
+    "message": "새 비밀번호"
+  },
+  "placeholder.confirmPassword": {
+    "message": "새 비밀번호 확인"
+  },
+  "validation.confirmPassword.required": {
+    "message": "새 비밀번호를 확인하십시오!"
+  },
+  "message.addFavorite.success": {
+    "message": "즐겨찾기에 추가됨"
+  },
+  "message.addFavorite.error": {
+    "message": "즐겨찾기 추가 실패, 나중에 다시 시도하십시오."
+  },
+  "message.removeFavorite.success": {
+    "message": "즐겨찾기에서 제거됨"
+  },
+  "message.removeFavorite.error": {
+    "message": "즐겨찾기 제거 실패, 나중에 다시 시도하십시오."
+  },
+  "message.removeFavorite.confirm.title": {
+    "message": "즐겨찾기 제거"
+  },
+  "message.removeFavorite.confirm.content": {
+    "message": "이 프롬프트를 즐겨찾기에서 제거하시겠습니까?"
+  },
+  "button.confirm": {
+    "message": "확인"
+  },
+  "action.cancel": {
+    "message": "취소"
+  },
+  "message.addPrompt.success": {
+    "message": "프롬프트 제출 성공!"
+  },
+  "message.addPrompt.success.view": {
+    "message": "「내 프롬프트」에서 확인할 수 있습니다."
+  },
+  "message.addPrompt.error": {
+    "message": "프롬프트 제출 실패, 나중에 다시 시도하십시오."
+  },
+  "message.updatePrompt.success": {
+    "message": "프롬프트 업데이트 성공!"
+  },
+  "message.updatePrompt.error": {
+    "message": "프롬프트 업데이트 실패, 나중에 다시 시도하십시오."
+  },
+  "message.deletePrompt.success": {
+    "message": "프롬프트 삭제 성공!"
+  },
+  "message.deletePrompt.error": {
+    "message": "프롬프트 삭제 실패, 나중에 다시 시도하십시오."
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "삭제 확인"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "이 프롬프트를 삭제하시겠습니까?"
+  },
+  "homepage.slogan": {
+    "message": "엄선된 AI 프롬프트로 대화를 더 효율적으로"
+  },
+  "homepage.title": {
+    "message": "AiShort - AI 프롬프트 템플릿 라이브러리 | 엄선된 Prompt 지침 | 원클릭 생산성 향상"
+  },
+  "homepage.description": {
+    "message": "왜 AI는 항상 엉뚱한 대답을 할까요? AiShort는 글쓰기, 프로그래밍, 번역 등의 시나리오를 다루는 실용적인 AI 프롬프트 템플릿을 수록하고 있습니다. 원클릭으로 복사하여 사용하면 AI가 지침을 정확하게 이해하고 전문적인 결과를 출력하여 작업 효율성을 즉시 두 배로 높일 수 있습니다!"
+  },
+  "community.title": {
+    "message": "AI 프롬프트 커뮤니티 - 고품질 Prompt 발견 및 공유 | AiShort 창작 교류 플랫폼"
+  },
+  "community.description": {
+    "message": "더 실용적인 AI 프롬프트를 원하시나요? AiShort 커뮤니티에 가입하여 사용자가 공유하는 실용적인 Prompt 템플릿을 발견하고, 최적화 팁을 교환하며, 고품질 프롬프트 리소스 라이브러리를 함께 만들어 보세요."
+  },
+  "showcase.tag.favorite.description": {
+    "message": "내 즐겨찾기 프롬프트"
+  },
+  "showcase.tag.write.label": {
+    "message": "글쓰기 보조"
+  },
+  "showcase.tag.write.description": {
+    "message": "기사 문법 수정, 표현 스타일 최적화, 글쓰기 품질 향상"
+  },
+  "showcase.tag.article.label": {
+    "message": "기사/보고서"
+  },
+  "showcase.tag.article.description": {
+    "message": "소설, 논문, 보도 자료, 대본, 연구 보고서 등 다양한 유형의 기사 생성"
+  },
+  "showcase.tag.code.label": {
+    "message": "IT/프로그래밍"
+  },
+  "showcase.tag.code.description": {
+    "message": "프로그래밍 제안, 코드 예제, 디버깅 솔루션 및 기술 지침 제공"
+  },
+  "showcase.tag.ai.label": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "인공 지능 관련 프롬프트 및 응용 시나리오"
+  },
+  "showcase.tag.living.label": {
+    "message": "삶의 질"
+  },
+  "showcase.tag.living.description": {
+    "message": "피트니스 지도, 영양 조언, 요리 기술, 메이크업 스타일링 등 생활 서비스"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "재미있는 상식"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "재미있는 상식, 대중 과학 콘텐츠 및 재미있는 Q&A"
+  },
+  "showcase.tag.life.label": {
+    "message": "생활 백과"
+  },
+  "showcase.tag.life.description": {
+    "message": "일상 생활의 실용적인 지식과 문제 해결책"
+  },
+  "showcase.tag.social.label": {
+    "message": "심리/사교"
+  },
+  "showcase.tag.social.description": {
+    "message": "심리 상담, 감정 분석, 사회적 기술 및 대인 커뮤니케이션"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "철학/종교"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "철학적 사고, 종교 문화 및 인생의 지혜 탐구"
+  },
+  "showcase.tag.mind.label": {
+    "message": "사고 훈련"
+  },
+  "showcase.tag.mind.description": {
+    "message": "창의성, 비판적 사고 및 논리적 추론 능력 자극"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "교육/학생"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "학습 지도, 숙제 도움, 시험 준비 등 학생 관련 콘텐츠"
+  },
+  "showcase.tag.academic.label": {
+    "message": "학술/교사"
+  },
+  "showcase.tag.academic.description": {
+    "message": "학술 연구, 교수 설계, 커리큘럼 계획 등 교사 업무 지원"
+  },
+  "showcase.tag.games.label": {
+    "message": "재미있는 게임"
+  },
+  "showcase.tag.games.description": {
+    "message": "텍스트 게임, 롤플레잉 및 인터랙티브 엔터테인먼트"
+  },
+  "showcase.tag.tool.label": {
+    "message": "생산성 도구"
+  },
+  "showcase.tag.tool.description": {
+    "message": "작업 효율성을 높이는 실용적인 도구"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "터미널/인터프리터"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "명령줄 터미널 및 다양한 프로그래밍 언어 인터프리터 시뮬레이션"
+  },
+  "showcase.tag.language.label": {
+    "message": "언어/번역"
+  },
+  "showcase.tag.language.description": {
+    "message": "다국어 번역, 언어 학습, 텍스트 변환 및 언어 인식"
+  },
+  "showcase.tag.speech.label": {
+    "message": "토론/연설"
+  },
+  "showcase.tag.speech.description": {
+    "message": "토론 기술, 연설문 작성 및 수사학 훈련"
+  },
+  "showcase.tag.comments.label": {
+    "message": "비평/평가"
+  },
+  "showcase.tag.comments.description": {
+    "message": "전문적인 리뷰, 작품 평가 및 감상 분석"
+  },
+  "showcase.tag.text.label": {
+    "message": "텍스트/단어"
+  },
+  "showcase.tag.text.description": {
+    "message": "텍스트 처리, 단어 분석 및 언어 관련 작업"
+  },
+  "showcase.tag.company.label": {
+    "message": "기업 기능"
+  },
+  "showcase.tag.company.description": {
+    "message": "기업 경영, 인사, 마케팅 및 기타 기능적 역할"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "검색 엔진 최적화, 키워드 확장 및 콘텐츠 마케팅"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "의료 건강"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "건강 상담, 질병 교육 및 의료 조언"
+  },
+  "showcase.tag.finance.label": {
+    "message": "재무 고문"
+  },
+  "showcase.tag.finance.description": {
+    "message": "투자 관리, 재무 분석 및 재무 계획 조언"
+  },
+  "showcase.tag.music.label": {
+    "message": "음악 예술"
+  },
+  "showcase.tag.music.description": {
+    "message": "음악 창작, 음악 이론 학습 및 작품 감상"
+  },
+  "showcase.tag.professional.label": {
+    "message": "전문 고문"
+  },
+  "showcase.tag.professional.description": {
+    "message": "변호사, 회계사, 컨설턴트 등 전문 분야 고문"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "사용자 공유"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "커뮤니티 사용자가 공유한 고품질 프롬프트"
+  },
+  "common.myPrompts": {
+    "message": "내 프롬프트"
+  },
+  "message.success.passwordChanged": {
+    "message": "비밀번호 변경 성공!"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "비밀번호 변경 실패, 나중에 다시 시도하십시오."
+  },
+  "message.success.forgotPassword": {
+    "message": "비밀번호 재설정 이메일이 전송되었습니다!"
+  },
+  "message.error.forgotPassword": {
+    "message": "비밀번호 재설정 이메일 전송 실패, 나중에 다시 시도하십시오."
+  },
+  "title.userInfo": {
+    "message": "사용자 정보"
+  },
+  "message.loading": {
+    "message": "로그인 상태 로드 중..."
+  },
+  "label.sharedPrompts": {
+    "message": "공유된 프롬프트"
+  },
+  "label.newMember": {
+    "message": "새 멤버, 첫 번째 프롬프트를 공유해 보세요"
+  },
+  "title.security": {
+    "message": "보안 설정"
+  },
+  "action.changePassword": {
+    "message": "비밀번호 변경"
+  },
+  "action.forgotPassword": {
+    "message": "비밀번호를 잊으셨나요"
+  },
+  "placeholder.currentPassword": {
+    "message": "현재 비밀번호"
+  },
+  "validation.currentPassword.required": {
+    "message": "현재 비밀번호를 입력하십시오!"
+  },
+  "message.forgotPassword.info": {
+    "message": "현재 비밀번호를 잊으신 경우 이메일을 통해 재설정할 수 있습니다. 등록된 이메일 주소로 재설정 링크가 포함된 이메일을 보내드립니다."
+  },
+  "placeholder.email": {
+    "message": "이메일"
+  },
+  "validation.email.required": {
+    "message": "이메일을 입력하십시오!"
+  },
+  "validation.email.invalid": {
+    "message": "유효한 이메일 주소를 입력하십시오!"
+  },
+  "action.sendResetEmail": {
+    "message": "재설정 이메일 보내기"
+  },
+  "validation.comment.required": {
+    "message": "댓글 내용을 입력하십시오"
+  },
+  "validation.comment.maxLength": {
+    "message": "댓글 내용은 2000자를 초과할 수 없습니다"
+  },
+  "placeholder.comment": {
+    "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
+  },
+  "action.reply": {
+    "message": "답글"
+  },
+  "validation.replyRequired": {
+    "message": "답글 내용을 입력하십시오"
+  },
+  "label.comments": {
+    "message": "댓글"
+  },
+  "message.copied": {
+    "message": "복사 성공"
+  },
+  "tooltip.switchLanguage": {
+    "message": "클릭하여 표시 언어 전환"
+  },
+  "label.commentInfo": {
+    "message": "이 프롬프트에 대한 의견, 생각 또는 공유를 아래에 답글로 남겨주세요."
+  },
+  "comment.add": {
+    "message": "댓글 제출"
+  },
+  "input.search.placeholder": {
+    "message": "프롬프트 검색..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "관련 결과를 찾을 수 없습니다. 검색어를 줄여보세요"
+  },
+  "validation.username.required": {
+    "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
+  },
+  "validation.password.required": {
+    "message": "비밀번호를 입력하십시오!"
+  },
+  "message.error": {
+    "message": "처리 중 오류가 발생했습니다"
+  },
+  "message.success.login": {
+    "message": "로그인 성공!"
+  },
+  "message.success.register": {
+    "message": "등록 성공!"
+  },
+  "message.success.passwordlessLink": {
+    "message": "비밀번호 없는 로그인 링크가 이메일로 전송되었습니다!"
+  },
+  "message.error.passwordlessLink": {
+    "message": "전송 실패, 이메일 또는 사용자 이름을 확인하십시오"
+  },
+  "login.method.password": {
+    "message": "비밀번호 로그인"
+  },
+  "login.method.code": {
+    "message": "비밀번호 없는 로그인"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "사용자 이름/이메일"
+  },
+  "placeholder.password": {
+    "message": "비밀번호"
+  },
+  "action.login": {
+    "message": "직접 로그인"
+  },
+  "login.passwordless.info": {
+    "message": "로그인 링크가 이메일로 전송됩니다. 클릭하여 로그인하십시오"
+  },
+  "action.sendLink": {
+    "message": "로그인 링크 받기"
+  },
+  "login.register.prompt": {
+    "message": "계정이 없으신가요?"
+  },
+  "action.register": {
+    "message": "등록"
+  },
+  "placeholder.username": {
+    "message": "사용자 이름"
+  },
+  "validation.agreement.required": {
+    "message": "사용하기 전에 서비스 약관 및 개인 정보 보호 정책에 동의해야 합니다"
+  },
+  "label.agree": {
+    "message": "동의"
+  },
+  "link.terms": {
+    "message": "서비스 약관"
+  },
+  "link.privacy": {
+    "message": "개인 정보 보호 정책"
+  },
+  "login.login.prompt": {
+    "message": "이미 계정이 있으신가요?"
+  },
+  "action.backToLogin": {
+    "message": "로그인으로 돌아가기"
+  },
+  "login.title.welcome": {
+    "message": "환영합니다"
+  },
+  "login.title.register": {
+    "message": "커뮤니티 가입"
+  },
+  "login.title.forgotPassword": {
+    "message": "비밀번호 찾기"
+  },
+  "login.subtitle.welcome": {
+    "message": "로그인하여 더 많은 프리미엄 프롬프트 탐색"
+  },
+  "login.subtitle.register": {
+    "message": "멋진 프롬프트 발견, 공유 및 생성"
+  },
+  "login.subtitle.forgotPassword": {
+    "message": "재설정 링크가 이메일로 전송됩니다"
+  },
+  "message.noFavorites": {
+    "message": "즐겨찾는 프롬프트가 없습니다"
+  },
+  "action.edit": {
+    "message": "수정"
+  },
+  "action.delete": {
+    "message": "삭제"
+  },
+  "message.fetchError": {
+    "message": "프롬프트 가져오기 실패, 나중에 다시 시도하십시오."
+  },
+  "message.noPrompts": {
+    "message": "아직 프롬프트가 제출되지 않았습니다. 프롬프트를 추가하십시오."
+  },
+  "message.cache.cleared": {
+    "message": "캐시가 지워졌습니다"
+  },
+  "message.export.noPrompts": {
+    "message": "내보낼 프롬프트가 없습니다. 나중에 다시 시도하십시오."
+  },
+  "message.export.success": {
+    "message": "프롬프트 내보내기 성공!"
+  },
+  "message.export.error": {
+    "message": "내보내기 실패, 나중에 다시 시도하십시오."
+  },
+  "link.myaccount": {
+    "message": "계정 설정"
+  },
+  "button.exportPrompts": {
+    "message": "프롬프트 내보내기"
+  },
+  "button.clearCache": {
+    "message": "캐시 지우기"
+  },
+  "button.logout": {
+    "message": "로그아웃"
+  },
+  "message.logout.confirm.title": {
+    "message": "로그아웃 확인"
+  },
+  "message.logout.confirm.content": {
+    "message": "정말 로그아웃하시겠습니까?"
+  },
+  "link.addprompt": {
+    "message": "프롬프트 추가"
+  },
+  "button.settings": {
+    "message": "설정"
+  },
+  "showcase.header.button": {
+    "message": "프롬프트 공유"
+  },
+  "action.addPrompt": {
+    "message": "프롬프트 추가"
+  },
+  "label.promptTitle": {
+    "message": "프롬프트 이름"
+  },
+  "validation.promptTitle.required": {
+    "message": "프롬프트 제목을 입력하십시오!"
+  },
+  "placeholder.promptTitle": {
+    "message": "프롬프트에 이름 지정"
+  },
+  "label.promptContent": {
+    "message": "프롬프트 내용"
+  },
+  "validation.promptContent.required": {
+    "message": "프롬프트 내용을 입력하십시오!"
+  },
+  "placeholder.promptContent": {
+    "message": "여기에 자세한 프롬프트 내용 입력..."
+  },
+  "label.promptTags": {
+    "message": "기능/태그"
+  },
+  "placeholder.promptTags": {
+    "message": "프롬프트 기능을 간단히 설명하십시오 (선택 사항)"
+  },
+  "label.promptNotes": {
+    "message": "비고"
+  },
+  "label.promptNotes.description": {
+    "message": "여기에서 프롬프트의 출처나 다른 언어 버전을 제공할 수 있습니다. 또한 이 프롬프트에 대한 확장 아이디어나 요구 사항이 있는 경우 여기에서 설명하십시오."
+  },
+  "placeholder.promptNotes": {
+    "message": "이 프롬프트에 대한 추가 비고 (선택 사항)"
+  },
+  "label.sharePrompt": {
+    "message": "이 프롬프트를 공개 페이지에 공유하시겠습니까?"
+  },
+  "modal.editPrompt.title": {
+    "message": "현재 프롬프트 업데이트"
+  },
+  "action.updatePrompt": {
+    "message": "프롬프트 업데이트"
+  },
+  "hideTags": {
+    "message": "태그 숨기기"
+  },
+  "showTags": {
+    "message": "태그 표시"
+  },
+  "link.myfavorite": {
+    "message": "내 즐겨찾기"
+  },
+  "加载更多": {
+    "message": "더 불러오기"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "페이지에 오류가 발생하였습니다.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "맨 위로 스크롤하기",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "게시물 목록",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "게시물 목록",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "블로그 게시물 목록 탐색",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "이전 페이지",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "다음 페이지",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "블로그 게시물 탐색",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "이전 게시물",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "다음 게시물",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "모든 태그 보기",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "밝은 모드",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "어두운 모드",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "어두운 모드와 밝은 모드 전환하기 (현재 {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "탐색 경로",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 항목",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "문서 페이지",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "이전",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "다음",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count}개 문서가",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} \"{tagName}\" 태그에 분류되었습니다",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "{siteTitle} {versionLabel} 문서는 아직 정식 공개되지 않았습니다.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "{siteTitle} {versionLabel} 문서는 더 이상 업데이트되지 않습니다.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "최신 문서는 {latestVersionLink} ({versionLabel})을 확인하세요.",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "최신 버전",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "버전: {versionLabel}"
+  },
+  "theme.common.editThisPage": {
+    "message": "페이지 편집",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}에 대한 직접 링크",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date}에",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " {user}가",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "최종 수정: {atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "버전",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "페이지를 찾을 수 없습니다.",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "태그:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "닫기",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "주의",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "위험",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "정보",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "노트",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "팁",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "경고",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  }
+}

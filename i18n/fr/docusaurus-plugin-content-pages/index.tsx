@@ -2,12 +2,12 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, Suspense 
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
-import { Button } from "antd";
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
@@ -18,7 +18,8 @@ import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
-import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
+import SearchBar, { useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
+import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
 import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
@@ -48,10 +49,12 @@ export function prepareUserState(): UserState | undefined {
 }
 
 const ShowcaseHeader = React.memo(() => (
-  <section className={"text--center"}>
+  <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      <Heading as="h1">AI Short</Heading>
-      <p>{SLOGAN}</p>
+      <Heading as="h1" className={styles.heroTitle}>
+        AI Short
+      </Heading>
+      <p className={styles.heroSubtitle}>{SLOGAN}</p>
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
@@ -59,26 +62,32 @@ const ShowcaseHeader = React.memo(() => (
 
 interface ShowcaseFiltersProps {
   onToggleDescription: () => void;
-  showUserFavs: boolean;
-  setShowUserFavs: React.Dispatch<React.SetStateAction<boolean>>;
   showUserPrompts: boolean;
   setShowUserPrompts: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs, showUserPrompts, setShowUserPrompts }) => {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
   const handleUserPrompts = useCallback(() => {
-    setShowUserFavs(false);
     setShowUserPrompts((prev) => !prev);
   }, []);
 
+  const history = useHistory();
+  const location = useLocation();
+
   const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
-    setShowUserFavs((prev) => !prev);
-  }, []);
+
+    // Clear all states
+    history.push({
+      ...location,
+      search: "",
+      state: prepareUserState(),
+    });
+  }, [history, location]);
 
   const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
   const toggleTagsOnMobile = useCallback(() => {
@@ -95,166 +104,160 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
       return;
     }
     setShowUserPrompts(false);
-    setShowUserFavs(false);
   }, [userAuth]);
 
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
 
   return (
-    <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
-      <div className={styles.filterCheckbox}>
-        <div>
-          <Heading as="h2" className="hideOnSmallScreen">
-            <Translate id="showcase.filters.title">Filters</Translate>
-          </Heading>
-          <button onClick={toggleTagsOnMobile} className={`${styles.onToggleButton} showOnSmallScreen`}>
-            <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
-          </button>
+    <>
+      <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
+        <div className={styles.filterCheckbox}>
+          <div>
+            <Heading as="h2" className="hideOnSmallScreen">
+              <Translate id="showcase.filters.title">Filters</Translate>
+            </Heading>
+            <button onClick={toggleTagsOnMobile} className={clsx("showOnSmallScreen", styles.onToggleButton)}>
+              <MenuOutlined /> {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
+            </button>
+          </div>
+          {currentLanguage !== "en" && (
+            <button
+              onClick={onToggleDescription}
+              className={styles.onToggleButton}
+              title={translate({
+                id: "toggle_prompt_language_description",
+                message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
+              })}>
+              {togglePromptLanguage}
+            </button>
+          )}
+          <ShowcaseFilterToggle />
         </div>
-        {currentLanguage !== "en" && (
-          <button
-            onClick={onToggleDescription}
-            className={styles.onToggleButton}
-            title={translate({
-              id: "toggle_prompt_language_description",
-              message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
-            })}>
-            {togglePromptLanguage}
-          </button>
-        )}
-        <ShowcaseFilterToggle />
-      </div>
-      <ul className={clsx("clean-list", styles.checkboxList)}>
-        {userAuth && (
-          <>
-            <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
-              <ShowcaseTooltip
-                id="myprompt"
-                text={translate({
-                  id: "myprompt.tooltip",
-                  message: "添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
-                })}
-                anchorEl="#__docusaurus">
-                <ShowcaseTagSelect
-                  tag="myprompt"
-                  label={translate({
-                    id: "myprompt",
-                    message: "我的提示词",
+        <ul className={clsx("clean-list", styles.checkboxList)}>
+          {userAuth && (
+            <>
+              <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
+                <ShowcaseTooltip
+                  id="myprompt"
+                  text={translate({
+                    id: "myprompt.tooltip",
+                    message: "添加或制作过的个人提示词，可用于存放AiShort之外的提示词。",
                   })}
-                  icon={<EditOutlined style={{ marginLeft: "5px" }} />}
-                />
-              </ShowcaseTooltip>
-            </li>
-            <li className={`${styles.checkboxListItem} ${showUserFavs ? styles.activeItem : ""}`} onClick={handleUserFavs}>
-              <ShowcaseTooltip
-                id="myfavorite"
-                text={translate({
-                  id: "myfavorite.tooltip",
-                  message: "我收藏的提示词，包括社区提示词。",
-                })}
-                anchorEl="#__docusaurus">
-                <ShowcaseTagSelect
-                  tag="myfavorite"
-                  label={translate({
-                    id: "link.myfavorite",
-                    message: "我的收藏",
+                  anchorEl="#__docusaurus">
+                  <ShowcaseTagSelect
+                    tag="myprompt"
+                    label={translate({
+                      id: "myprompt",
+                      message: "我的提示词",
+                    })}
+                    icon={<EditOutlined style={{ marginLeft: "5px" }} />}
+                  />
+                </ShowcaseTooltip>
+              </li>
+              <li className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
+                <ShowcaseTooltip
+                  id="myfavorite"
+                  text={translate({
+                    id: "myfavorite.tooltip",
+                    message: "我收藏的提示词，包括社区提示词。",
                   })}
-                  icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
-                />
-              </ShowcaseTooltip>
-            </li>
-          </>
-        )}
-        {modifiedTagList.map((tag, i) => {
-          const { label, description, color } = Tags[tag];
-          const id = `showcase_checkbox_id_${tag}`;
+                  anchorEl="#__docusaurus">
+                  <ShowcaseTagSelect
+                    tag="myfavorite"
+                    label={translate({
+                      id: "link.myFavorites",
+                      message: "我的收藏",
+                    })}
+                    icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
+                  />
+                </ShowcaseTooltip>
+              </li>
+            </>
+          )}
+          {modifiedTagList.map((tag, i) => {
+            const { label, description, color } = Tags[tag];
+            const id = `showcase_checkbox_id_${tag}`;
 
-          return (
-            <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
-              <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
+            return (
+              <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
+                <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
+                  <ShowcaseTagSelect
+                    tag={tag}
+                    id={id}
+                    label={label}
+                    icon={
+                      tag === "favorite" ? (
+                        <FavoriteIcon svgClass={styles.svgIconFavoriteXs} />
+                      ) : (
+                        <span
+                          style={{
+                            backgroundColor: color,
+                            width: 10,
+                            height: 10,
+                            borderRadius: "50%",
+                            marginLeft: 8,
+                          }}
+                        />
+                      )
+                    }
+                  />
+                </ShowcaseTooltip>
+              </li>
+            );
+          })}
+          <li key="community.tag.tooltip" className={styles.checkboxListItem}>
+            <ShowcaseTooltip
+              id="community.tag.tooltip"
+              text={translate({
+                id: "community.tag.tooltip",
+                message: "社区分享的精选提示词",
+              })}
+              anchorEl="#__docusaurus">
+              <Link to="/community-prompts" className="fontLink">
                 <ShowcaseTagSelect
-                  tag={tag}
-                  id={id}
-                  label={label}
+                  id="community.tag.tooltip"
+                  tag="communityprompt"
+                  label={translate({
+                    id: "community.tag",
+                    message: "社区精选",
+                  })}
                   icon={
-                    tag === "favorite" ? (
-                      <FavoriteIcon svgClass={styles.svgIconFavoriteXs} />
-                    ) : (
-                      <span
-                        style={{
-                          backgroundColor: color,
-                          width: 10,
-                          height: 10,
-                          borderRadius: "50%",
-                          marginLeft: 8,
-                        }}
-                      />
-                    )
+                    <span
+                      style={{
+                        backgroundColor: "#a2222a",
+                        width: 10,
+                        height: 10,
+                        borderRadius: "50%",
+                        marginLeft: 8,
+                      }}
+                    />
                   }
                 />
-              </ShowcaseTooltip>
-            </li>
-          );
-        })}
-        <li key="community.tag.tooltip" className={styles.checkboxListItem}>
-          <ShowcaseTooltip
-            id="community.tag.tooltip"
-            text={translate({
-              id: "community.tag.tooltip",
-              message: "社区分享的精选提示词",
-            })}
-            anchorEl="#__docusaurus">
-            <Link to="/community-prompts">
-              <ShowcaseTagSelect
-                id="community.tag.tooltip"
-                tag="communityprompt"
-                label={translate({
-                  id: "community.tag",
-                  message: "社区精选",
-                })}
-                icon={
-                  <span
-                    style={{
-                      backgroundColor: "#a2222a",
-                      width: 10,
-                      height: 10,
-                      borderRadius: "50%",
-                      marginLeft: 8,
-                    }}
-                  />
-                }
-              />
-            </Link>
-          </ShowcaseTooltip>
-        </li>
-      </ul>
-      {showUserPrompts && (
-        <>
-          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
-          </div>
-          <UserPrompts filteredCommus={[]} isFiltered={false} />
-        </>
-      )}
-      {showUserFavs && (
-        <>
-          <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-            <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
-          </div>
-          <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
-        </>
-      )}
-    </section>
+              </Link>
+            </ShowcaseTooltip>
+          </li>
+        </ul>
+      </section>
+      <section className="container">
+        {showUserPrompts && (
+          <>
+            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+              <SearchBar setShowUserPrompts={setShowUserPrompts} />
+            </div>
+            <UserPrompts filteredCommus={[]} isFiltered={false} />
+          </>
+        )}
+      </section>
+    </>
   );
 });
 
 interface ShowcaseCardsProps {
   isDescription: boolean;
-  showUserFavs: boolean;
   showUserPrompts: boolean;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs, showUserPrompts }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -321,16 +324,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
     <section className="margin-top--sm margin-bottom--sm">
       {!isFiltered ? (
         <>
-          {showUserFavs ? null : (
-            <div className={styles.showcaseFavorite}>
-              <div className="container">
-                <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Heading as="h2" className="hideOnSmallScreen">
-                    <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                  </Heading>
-                  <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                  {!showUserPrompts && <SearchBar />}
-                </div>
+          <div id="favorites-section" className={styles.showcaseFavorite}>
+            <div className="container">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <Heading as="h2" className="hideOnSmallScreen">
+                  <Translate id="showcase.favoritesList.title">Favorites</Translate>
+                </Heading>
+                <FavoriteIcon svgClass={styles.svgIconFavorite} />
+                {!showUserPrompts && <SearchBar />}
+              </div>
+              {userAuth ? (
+                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
+              ) : (
                 <ul className={clsx("clean-list", styles.showcaseList)}>
                   {favoriteUsers.map((user) => (
                     <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
@@ -339,9 +344,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                     <AdComponent />
                   </Suspense>
                 </ul>
-              </div>
+              )}
             </div>
-          )}
+          </div>
           <div className="container margin-top--md">
             <Heading as="h2" className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
@@ -355,9 +360,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               </Suspense>
             </ul>
             {!showAllOtherUsers && (
-              <Button style={{ width: "100%" }} onClick={() => setShowAllOtherUsers(true)}>
-                <ArrowDownOutlined /> <Translate>加载更多</Translate>
-              </Button>
+              <button className={styles.loadMoreButton} onClick={() => setShowAllOtherUsers(true)}>
+                <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
+              </button>
             )}
           </div>
         </>
@@ -386,7 +391,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
 export default function Showcase(): React.ReactElement {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
-  const [showUserFavs, setShowUserFavs] = useState(false);
   const [showUserPrompts, setShowUserPrompts] = useState(false);
 
   useEffect(() => {
@@ -404,14 +408,8 @@ export default function Showcase(): React.ReactElement {
       <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseHeader />
-          <ShowcaseFilters
-            onToggleDescription={toggleDescription}
-            showUserFavs={showUserFavs}
-            setShowUserFavs={setShowUserFavs}
-            showUserPrompts={showUserPrompts}
-            setShowUserPrompts={setShowUserPrompts}
-          />
-          <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} showUserPrompts={showUserPrompts} />
+          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} />
+          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} />
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />

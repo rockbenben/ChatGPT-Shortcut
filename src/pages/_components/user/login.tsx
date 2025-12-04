@@ -254,8 +254,8 @@ const LoginPage = () => {
     } catch (error) {
       console.error(
         translate({
-          id: "error.forgotPassword",
-          message: "Error sending forgot password email:",
+          id: "message.error.forgotPassword",
+          message: "发送密码重置邮件失败，请稍后重试",
         }),
         error
       );
@@ -364,11 +364,11 @@ const LoginPage = () => {
 
       <div>
         <Divider plain style={{ margin: "24px 0", color: token.colorTextDescription, fontSize: token.fontSizeSM }}>
-          <Translate id="common.or">Or</Translate>
+          Or
         </Divider>
 
         <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 24 }}>
-          <Translate id="action.loginGoogle">Login via Google</Translate>
+          Login via Google
         </Button>
 
         <Flex justify="center" align="center" gap="small">
@@ -418,7 +418,7 @@ const LoginPage = () => {
           <a href="/docs/terms-of-service" target="_blank" rel="noopener noreferrer">
             <Translate id="link.terms">服务条款</Translate>
           </a>{" "}
-          <Translate id="common.and">和</Translate>{" "}
+          &{" "}
           <a href="/docs/privacy-policy" target="_blank" rel="noopener noreferrer">
             <Translate id="link.privacy">隐私政策</Translate>
           </a>

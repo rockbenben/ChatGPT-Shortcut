@@ -113,7 +113,7 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
               <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
             {userAuth && (
-              <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="showcase.tag.favorite.description">收藏</Translate>}>
+              <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
                 <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} />
               </Tooltip>
             )}
