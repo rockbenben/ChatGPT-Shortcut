@@ -1,97 +1,27 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { Button, Spin, Tooltip, Tag, App, Space, Empty } from "antd";
-import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
+import { Spin, Empty, App } from "antd";
+import { BasePromptCard } from "@site/src/pages/_components/PromptCard/Base";
+import PromptCard from "@site/src/pages/_components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
-import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
+import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
+import styles from "@site/src/pages/_components/PromptCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
-import { MAX_LENGTH, truncate } from "@site/src/utils/formatters";
 import isEqual from "lodash/isEqual";
 
 import { getPrompts, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
-import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/ShowcaseRemark";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import EditPromptModal from "./modal/EditPromptModal";
 
-// SortableItem component
-const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handleEditPrompt }) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: UserPrompt.id });
-  const [showFullContent, setShowFullContent] = useState(false);
-  const [paragraphText, setParagraphText] = useState(UserPrompt.description);
-  const { copied, copyText } = useCopyToClipboard();
+interface UserPromptsProps {
+  filteredCommus?: any[];
+  isFiltered?: boolean;
+  onOpenModal?: (data: any) => void;
+}
 
-  const toggleContentDisplay = () => {
-    setShowFullContent(!showFullContent);
-  };
-
-  const handleParagraphClick = () => {
-    if (UserPrompt.notes) {
-      setParagraphText(paragraphText === UserPrompt.description ? UserPrompt.notes : UserPrompt.description);
-    }
-  };
-
-  const displayText = paragraphText || UserPrompt.description;
-
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    cursor: isFiltered ? "default" : "grab",
-  };
-
-  return (
-    <li ref={setNodeRef} className={clsx("card", styles.showcaseCard)} style={style}>
-      <div
-        className={clsx("card__body")}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          height: "100%",
-        }}>
-        <div>
-          <div className={clsx(styles.showcaseCardHeader)}>
-            <div className={`${styles.showcaseCardTitle} ${styles.shortEllipsisMy}`} {...attributes} {...(isFiltered ? {} : listeners)}>
-              <span className={styles.showcaseCardLink}>{UserPrompt.title} </span>
-              {UserPrompt.upvoteDifference > 0 && <Tag color="green">+{UserPrompt.upvoteDifference}</Tag>}
-              {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
-            </div>
-            <Space.Compact>
-              <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-                <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={() => copyText(UserPrompt.description)} />
-              </Tooltip>
-              <Tooltip title={<Translate id="action.edit">修改</Translate>}>
-                <Button icon={<EditOutlined />} onClick={() => handleEditPrompt(UserPrompt)} />
-              </Tooltip>
-              <Tooltip title={<Translate id="action.delete">删除</Translate>}>
-                <Button icon={<DeleteOutlined style={{ color: "#ff4d4f" }} />} onClick={() => handleDeletePrompt(UserPrompt.id)} />
-              </Tooltip>
-            </Space.Compact>
-          </div>
-          {UserPrompt.remark && <ShowcaseRemark remark={UserPrompt.remark} style={{ maxHeight: 68 }} {...attributes} {...(isFiltered ? {} : listeners)} />}
-          <div className={styles.descriptionWrapper}>
-            <p onClick={handleParagraphClick} className={`${styles.showcaseCardBody} ${UserPrompt.notes ? styles.clickable : styles.nonClickable}`}>
-              {showFullContent ? displayText : truncate(displayText)}
-            </p>
-            {!showFullContent && displayText.length > MAX_LENGTH && (
-              <div className={styles.gradientOverlay}>
-                <div className={styles.loadMoreBtn} onClick={toggleContentDisplay}>
-                  <DownOutlined className={styles.downIcon} />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-};
-
-function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
+function UserPromptsPage({ filteredCommus = [], isFiltered = false, onOpenModal }: UserPromptsProps) {
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const [userprompts, setUserPrompts] = useState([]);
@@ -204,15 +134,17 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <ul className={clsx("clean-list", pageStyles.showcaseList)}>
             {!userprompts || userprompts.length === 0 ? (
-              <li className={clsx("card", styles.showcaseCard)}>
-                <div className={clsx("card__body", styles.cardBodyHeight)} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
-                  <Empty description={<Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>} />
-                </div>
+              <li style={{ listStyle: "none" }}>
+                <BasePromptCard>
+                  <div className={styles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
+                    <Empty description={<Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>} />
+                  </div>
+                </BasePromptCard>
               </li>
             ) : (
               <SortableContext items={userprompts.map((item) => item.id)}>
                 {userprompts.map((UserPrompt) => (
-                  <SortablePromptItem key={UserPrompt.id} UserPrompt={UserPrompt} isFiltered={isFiltered} handleDeletePrompt={handleDeletePrompt} handleEditPrompt={handleEditPrompt} />
+                  <PromptCard key={UserPrompt.id} type="user" data={UserPrompt} isFiltered={isFiltered} onDelete={handleDeletePrompt} onEdit={handleEditPrompt} onOpenModal={onOpenModal} />
                 ))}
               </SortableContext>
             )}

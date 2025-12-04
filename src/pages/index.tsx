@@ -7,6 +7,7 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
+import { App } from "antd";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -14,7 +15,6 @@ import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/pages/_components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
-import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
@@ -22,14 +22,18 @@ import SearchBar, { useFilteredPrompts, type UserState } from "@site/src/pages/_
 import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
-import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
-import { getPrompts } from "@site/src/api";
+import { getPrompts, voteOnUserPrompt } from "@site/src/api";
 
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+import PromptCard from "@site/src/pages/_components/PromptCard";
+import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
+import { useFavorite } from "@site/src/hooks/useFavorite";
+import EditPromptModal from "@site/src/pages/_components/user/modal/EditPromptModal";
+import { PromptDetailModal } from "@site/src/pages/_components/PromptDetailModal";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -64,9 +68,10 @@ interface ShowcaseFiltersProps {
   onToggleDescription: () => void;
   showUserPrompts: boolean;
   setShowUserPrompts: React.Dispatch<React.SetStateAction<boolean>>;
+  onOpenModal: (data: any) => void;
 }
 
-const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts }) => {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts, onOpenModal }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -244,7 +249,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
             <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
               <SearchBar setShowUserPrompts={setShowUserPrompts} />
             </div>
-            <UserPrompts filteredCommus={[]} isFiltered={false} />
+            <UserPrompts filteredCommus={[]} isFiltered={false} onOpenModal={onOpenModal} />
           </>
         )}
       </section>
@@ -255,16 +260,45 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
 interface ShowcaseCardsProps {
   isDescription: boolean;
   showUserPrompts: boolean;
+  onEdit: (data: any) => void;
+  onDelete: (id: string) => void;
+  onOpenModal: (data: any) => void;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onEdit, onDelete, onOpenModal }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
+  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const { message: messageApi } = App.useApp();
 
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
+  const [votedUpPromptIds, setVotedUpPromptIds] = useState<(number | string)[]>([]);
+  const [votedDownPromptIds, setVotedDownPromptIds] = useState<(number | string)[]>([]);
+
+  const vote = useCallback(
+    async (promptId, action) => {
+      if (!userAuth) {
+        messageApi.warning("Please log in to vote.");
+        return;
+      }
+      // Prevent duplicate clicks
+      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
+      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+
+      try {
+        await voteOnUserPrompt(promptId, action);
+        messageApi.success(`Successfully ${action}d!`);
+        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
+        updateVotedIds((prevIds) => [...prevIds, promptId]);
+      } catch (err) {
+        messageApi.error(`Failed to ${action}. Error: ${err}`);
+      }
+    },
+    [userAuth, votedUpPromptIds, votedDownPromptIds, messageApi]
+  );
 
   const fetchData = useCallback(async () => {
     if (!userAuth && !showAllOtherUsers) {
@@ -334,11 +368,11 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                 {!showUserPrompts && <SearchBar />}
               </div>
               {userAuth ? (
-                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
+                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} isDescription={isDescription} onOpenModal={onOpenModal} />
               ) : (
                 <ul className={clsx("clean-list", styles.showcaseList)}>
                   {favoriteUsers.map((user) => (
-                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                    <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
                   ))}
                   <Suspense fallback={null}>
                     <AdComponent />
@@ -353,7 +387,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </Heading>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {otherUsers.map((user) => (
-                <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
               ))}
               <Suspense fallback={null}>
                 <AdComponent />
@@ -372,11 +406,25 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <SearchBar />
           </div>
           <ul className={clsx("clean-list", styles.showcaseList)}>
-            {filteredCommus.map((user) => (
-              <SearchCommu commuPrompt={user} />
-            ))}
+            {filteredCommus.map((user) => {
+              const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
+              const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
+              return (
+                <PromptCard
+                  key={user.id}
+                  type={isUserPrompt ? "user" : "community"}
+                  data={user}
+                  onEdit={isUserPrompt ? () => onEdit(user) : undefined}
+                  onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
+                  isFavorite={isFavorite}
+                  onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
+                  onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
+                  onOpenModal={onOpenModal}
+                />
+              );
+            })}
             {filteredCards.map((user) => (
-              <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
+              <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
             ))}
             <Suspense fallback={null}>
               <AdComponent />
@@ -392,6 +440,11 @@ export default function Showcase(): React.ReactElement {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
   const [showUserPrompts, setShowUserPrompts] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [editingPrompt, setEditingPrompt] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>({});
+  const { updatePrompt, confirmRemovePrompt, loading: hookLoading } = useUserPrompt();
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -403,17 +456,48 @@ export default function Showcase(): React.ReactElement {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
 
+  const handleEditPrompt = useCallback((UserPrompt) => {
+    setEditingPrompt(UserPrompt);
+    setOpen(true);
+  }, []);
+
+  const onUpdateprompt = useCallback(
+    async (values) => {
+      if (!editingPrompt) return;
+      const success = await updatePrompt(editingPrompt.id, values);
+      if (success) {
+        setOpen(false);
+        setEditingPrompt(null);
+      }
+    },
+    [editingPrompt, updatePrompt]
+  );
+
+  const handleDeletePrompt = useCallback(
+    (promptId) => {
+      confirmRemovePrompt(promptId);
+    },
+    [confirmRemovePrompt]
+  );
+
+  const handleOpenModal = useCallback((data: any) => {
+    setModalData(data);
+    setModalOpen(true);
+  }, []);
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseHeader />
-          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} />
-          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} />
+          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} onOpenModal={handleOpenModal} />
+          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
+          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
         </Suspense>
+        <EditPromptModal open={open} setOpen={setOpen} onFinish={onUpdateprompt} loading={hookLoading} initialValues={editingPrompt} />
       </main>
     </Layout>
   );

@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect, useCallback, startTransition } 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory, useLocation } from "@docusaurus/router";
-import Translate, { translate } from "@docusaurus/Translate";
+import { translate } from "@docusaurus/Translate";
 
 import { Input, Button, ConfigProvider } from "antd";
 import { SearchOutlined } from "@ant-design/icons";

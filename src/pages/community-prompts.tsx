@@ -14,12 +14,13 @@ import Layout from "@theme/Layout";
 import { Modal, Typography, Tooltip, Pagination, Space, Button, App, Card, Flex, Segmented, FloatButton } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined, UserOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
+import PromptCard from "@site/src/pages/_components/PromptCard";
+import { PromptDetailModal } from "@site/src/pages/_components/PromptDetailModal";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 
 const pageSize = 12;
 
@@ -48,97 +49,7 @@ interface PromptCardProps {
     upvotes?: number;
     downvotes?: number;
   };
-  onVote: (promptId: number, action: string) => void;
-  onBookmark: (promptId: number) => void;
-  votedUpPromptIds: number[];
-  votedDownPromptIds: number[];
-  userAuth: any;
-  messageApi: any;
 }
-
-const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
-  const { copied, copyText } = useCopyToClipboard();
-  const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
-
-  return (
-    <Card hoverable className={styles.promptCard}>
-      <Flex vertical justify="space-between" style={{ height: "100%" }}>
-        <Flex vertical gap="small" style={{ flex: 1 }}>
-          <Flex justify="space-between" align="start">
-            <Title level={5} ellipsis={{ rows: 1 }} style={{ margin: 0, flex: 1, paddingRight: 8 }}>
-              {commuPrompt.title}
-            </Title>
-            <Space size="small">
-              <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-                <Button
-                  type="text"
-                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                  onClick={() => {
-                    copyText(commuPrompt.description);
-                  }}
-                />
-              </Tooltip>
-              <Tooltip title={isBookmarked ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-                <Button
-                  type="text"
-                  icon={isBookmarked ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />}
-                  onClick={() => {
-                    if (!userAuth) {
-                      messageApi.warning("Please log in to bookmark.");
-                      return;
-                    }
-                    onBookmark(commuPrompt.id);
-                  }}
-                />
-              </Tooltip>
-            </Space>
-          </Flex>
-
-          <CommuPagePrompt commuPrompt={commuPrompt} />
-        </Flex>
-
-        <Flex justify="space-between" align="center" style={{ marginTop: 16, paddingTop: 12, borderTop: "1px solid var(--ifm-color-emphasis-200)" }}>
-          <Space size={4} style={{ color: "var(--ifm-color-emphasis-600)", fontSize: "0.85rem" }}>
-            <UserOutlined />
-            <Text type="secondary" style={{ maxWidth: 80 }} ellipsis>
-              {commuPrompt.owner}
-            </Text>
-          </Space>
-          <Space.Compact size="small">
-            <Tooltip title={translate({ id: "action.upvote", message: "赞" })}>
-              <Button
-                type={votedUpPromptIds.includes(commuPrompt.id) ? "primary" : "default"}
-                ghost={votedUpPromptIds.includes(commuPrompt.id)}
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to vote.");
-                    return;
-                  }
-                  onVote(commuPrompt.id, "upvote");
-                }}>
-                <UpOutlined />
-                {votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0}
-              </Button>
-            </Tooltip>
-            <Tooltip title={translate({ id: "action.downvote", message: "踩" })}>
-              <Button
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to vote.");
-                    return;
-                  }
-                  onVote(commuPrompt.id, "downvote");
-                }}>
-                <DownOutlined />
-                {votedDownPromptIds.includes(commuPrompt.id) ? (commuPrompt.downvotes || 0) + 1 : commuPrompt.downvotes || 0}
-              </Button>
-            </Tooltip>
-          </Space.Compact>
-        </Flex>
-      </Flex>
-    </Card>
-  );
-});
 
 const CommunityPrompts = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
@@ -156,6 +67,8 @@ const CommunityPrompts = () => {
   const [Shareurl, setShareUrl] = useState("");
   const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
   const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
 
   useEffect(() => {
     setShareUrl(window.location.href);
@@ -238,6 +151,11 @@ const CommunityPrompts = () => {
     setCurrentPage(page);
   }, []);
 
+  const onOpenModal = useCallback((data: any) => {
+    setModalData(data);
+    setModalOpen(true);
+  }, []);
+
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">
@@ -298,18 +216,29 @@ const CommunityPrompts = () => {
               </Flex>
             ) : (
               <div className={styles.showcaseList}>
-                {userprompts.map((commuPrompt) => (
-                  <PromptCard
-                    key={commuPrompt.id}
-                    commuPrompt={commuPrompt}
-                    onVote={vote}
-                    onBookmark={bookmark}
-                    votedUpPromptIds={votedUpPromptIds}
-                    votedDownPromptIds={votedDownPromptIds}
-                    userAuth={userAuth}
-                    messageApi={messageApi}
-                  />
-                ))}
+                {userprompts.map((commuPrompt) => {
+                  const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
+                  const optimisticUpvotes = votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0;
+                  const optimisticDownvotes = votedDownPromptIds.includes(commuPrompt.id) ? (commuPrompt.downvotes || 0) + 1 : commuPrompt.downvotes || 0;
+
+                  const modifiedData = {
+                    ...commuPrompt,
+                    upvotes: optimisticUpvotes,
+                    downvotes: optimisticDownvotes,
+                  };
+
+                  return (
+                    <PromptCard
+                      key={commuPrompt.id}
+                      type="community"
+                      data={modifiedData}
+                      onVote={vote}
+                      isFavorite={isBookmarked}
+                      onToggleFavorite={(id) => bookmark(Number(id))}
+                      onOpenModal={onOpenModal}
+                    />
+                  );
+                })}
               </div>
             )}
 
@@ -333,6 +262,7 @@ const CommunityPrompts = () => {
             <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
               <LoginComponent />
             </Modal>
+            <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
             <Suspense fallback={null}>
               <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
             </Suspense>
