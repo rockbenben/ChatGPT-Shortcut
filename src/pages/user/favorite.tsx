@@ -22,7 +22,6 @@ const UserBookmark = () => {
     setActiveTab(tab as "default" | "myfavor" | "myprompts");
   }, []);
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
   const showNoResults = isFiltered && filteredCards.length === 0 && filteredCommus.length === 0;
 
   const items = useMemo(

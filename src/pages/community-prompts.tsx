@@ -315,8 +315,6 @@ const CommunityPrompts = () => {
     onClick: handleOrderClick,
   };
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
-
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">

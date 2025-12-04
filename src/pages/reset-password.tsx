@@ -57,8 +57,6 @@ const ResetPassword = () => {
     }
   };
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
-
   // Password validation rules
   const passwordRules = [
     {
