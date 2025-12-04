@@ -1,22 +1,28 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 
 import Layout from "@theme/Layout";
-import { Card, Descriptions, Form, Input, Button, Tabs, Spin, Space, Alert, Row, Col, Typography, App } from "antd";
-import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Divider, Segmented, Tag } from "antd";
+import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
+  const { token } = theme.useToken();
+
   const [loading, setLoading] = useState(false);
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState("");
+  const [securityMode, setSecurityMode] = useState<"password" | "reset">("password");
+
+  const [changePasswordForm] = Form.useForm();
+  const [forgotPasswordForm] = Form.useForm();
 
   useEffect(() => {
     if (userAuth?.data?.username) {
@@ -25,22 +31,17 @@ const UserProfile = () => {
   }, [userAuth]);
 
   useEffect(() => {
-    // 如果不是在加载中且没有用户信息，重定向到首页
     if (!isLoading && !userAuth) {
       const timer = setTimeout(() => {
         window.location.href = "/";
-      }, 1000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
-  }, [userAuth, isLoading]);
+  }, [isLoading, userAuth]);
 
   const handleEditUsernameClick = () => {
-    setNewUsername(userAuth?.data.username);
+    setNewUsername(userAuth?.data.username || "");
     setEditUsername(true);
-  };
-
-  const handleUsernameChange = (e) => {
-    setNewUsername(e.target.value);
   };
 
   const submitNewUsername = async () => {
@@ -50,7 +51,6 @@ const UserProfile = () => {
     }
 
     if (newUsername === userAuth?.data.username) {
-      messageApi.info("No change in username");
       setEditUsername(false);
       return;
     }
@@ -61,46 +61,24 @@ const UserProfile = () => {
       updateLocalStorageCache("username", newUsername);
       await refreshUserAuth();
       messageApi.success("Username updated successfully!");
+      setEditUsername(false);
     } catch (error) {
       console.error("Error updating username:", error);
       const errorMessage = error?.response?.data?.error?.message || "Unknown error";
-      messageApi.error(`Username update failed: ${errorMessage}`);
+      messageApi.error(`Failed to update username: ${errorMessage}`);
     } finally {
       setLoading(false);
-      setEditUsername(false);
     }
   };
 
   const onFinishChangePassword = async (values) => {
-    if (values.newPassword !== values.confirmPassword) {
-      messageApi.open({
-        type: "error",
-        content: translate({
-          id: "input.password.match",
-          message: "两次输入的密码不一致！",
-        }),
-        duration: 5,
-      });
-      return;
-    }
-
     setLoading(true);
     try {
       await changePassword(values);
       messageApi.success(<Translate id="message.changePassword.success">密码修改成功！</Translate>);
-      // Reset form after successful password change
-      const changePasswordForm = document.getElementById("changePasswordForm") as HTMLFormElement | null;
-      if (changePasswordForm) {
-        changePasswordForm.reset();
-      }
+      changePasswordForm.resetFields();
     } catch (error) {
-      console.error(
-        translate({
-          id: "error.changePassword",
-          message: "Error changing password:",
-        }),
-        error
-      );
+      console.error("Error changing password:", error);
       messageApi.error(<Translate id="message.changePassword.error">密码修改失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
@@ -112,255 +90,202 @@ const UserProfile = () => {
     try {
       await forgotPassword(values.email);
       messageApi.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
-      // Reset form after sending reset email
-      const forgotPasswordForm = document.getElementById("forgotPasswordForm") as HTMLFormElement | null;
-      if (forgotPasswordForm) {
-        forgotPasswordForm.reset();
-      }
+      forgotPasswordForm.resetFields();
     } catch (error) {
-      console.error(
-        translate({
-          id: "error.forgotPassword",
-          message: "Error sending forgot password email:",
-        }),
-        error
-      );
+      console.error("Error sending forgot password email:", error);
       messageApi.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
   };
 
-  // Password validation rules
-  const passwordRules = [
-    {
-      required: true,
-      message: translate({ id: "input.newPassword", message: "请输入新密码！" }),
-    },
-    {
-      min: 6,
-      message: translate({
-        id: "input.password.valid",
-        message: "密码长度至少为 6 个字符",
-      }),
-    },
-  ];
-
-  // Loading state when user data is loading or not available
   if (isLoading || !userAuth) {
     return (
       <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
-        <div role="status" aria-label="Loading user information" style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px", textAlign: "center" }}>
-          <Spin size="large" tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>}>
-            <div style={{ height: 300 }}></div>
-          </Spin>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+          <Spin size="large" tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>} />
         </div>
       </Layout>
     );
   }
 
-  // User info items
-  const useritems = [
-    {
-      key: "1",
-      label: translate({
-        id: "userInfo.username",
-        message: "用户名",
-      }),
-      children: (
-        <div>
-          {editUsername ? (
-            <Input
-              autoComplete="off"
-              prefix={<UserOutlined />}
-              value={newUsername}
-              onChange={handleUsernameChange}
-              addonAfter={<Button type="link" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />}
-            />
-          ) : (
-            <Space>
-              {userAuth.data.username}
-              <Button type="link" icon={<EditOutlined />} onClick={handleEditUsernameClick} />
-            </Space>
-          )}
-        </div>
-      ),
-    },
-    {
-      key: "2",
-      label: translate({
-        id: "userInfo.email",
-        message: "邮箱",
-      }),
-      children: <div>{userAuth.data.email}</div>,
-    },
-  ];
-
-  // Tab items
-  const items = [
-    {
-      key: "1",
-      label: translate({ id: "label.changePassword", message: "修改密码" }),
-      children: (
-        <Form id="changePasswordForm" onFinish={onFinishChangePassword} layout="vertical" requiredMark={false}>
-          <Form.Item
-            name="currentPassword"
-            label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
-            rules={[
-              {
-                required: true,
-                message: translate({
-                  id: "input.currentPassword",
-                  message: "请输入当前密码！",
-                }),
-              },
-            ]}>
-            <Input.Password
-              autoComplete="current-password"
-              prefix={<LockOutlined />}
-              placeholder={translate({
-                id: "placeholder.currentPassword",
-                message: "当前密码",
-              })}
-            />
-          </Form.Item>
-          <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-            <Input.Password
-              autoComplete="new-password"
-              prefix={<LockOutlined />}
-              placeholder={translate({
-                id: "placeholder.newPassword",
-                message: "新密码",
-              })}
-            />
-          </Form.Item>
-          <Form.Item
-            name="confirmPassword"
-            label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
-            dependencies={["newPassword"]}
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: translate({
-                  id: "input.confirmPassword",
-                  message: "请确认新密码！",
-                }),
-              },
-              ({ getFieldValue }) => ({
-                validator(_, value) {
-                  if (!value || getFieldValue("newPassword") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    new Error(
-                      translate({
-                        id: "input.password.match",
-                        message: "两次输入的密码不一致！",
-                      })
-                    )
-                  );
-                },
-              }),
-            ]}>
-            <Input.Password
-              autoComplete="new-password"
-              prefix={<LockOutlined />}
-              placeholder={translate({
-                id: "placeholder.confirmPassword",
-                message: "确认新密码",
-              })}
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              <Translate id="button.changePassword">修改密码</Translate>
-            </Button>
-          </Form.Item>
-        </Form>
-      ),
-    },
-    {
-      key: "2",
-      label: translate({ id: "label.forgotPassword", message: "忘记密码" }),
-      children: (
-        <>
-          <Form id="forgotPasswordForm" onFinish={onFinishForgotPassword} layout="vertical" requiredMark={false}>
-            <Form.Item
-              name="email"
-              label={<Translate id="input.email">邮箱</Translate>}
-              rules={[
-                {
-                  required: true,
-                  message: translate({
-                    id: "input.email",
-                    message: "请输入您的邮箱！",
-                  }),
-                },
-                {
-                  type: "email",
-                  message: translate({
-                    id: "input.email.valid",
-                    message: "请输入有效的邮箱地址！",
-                  }),
-                },
-              ]}
-              initialValue={userAuth?.data?.email || ""}>
-              <Input
-                autoComplete="email"
-                prefix={<MailOutlined />}
-                placeholder={translate({
-                  id: "placeholder.email",
-                  message: "邮箱",
-                })}
-              />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit" loading={loading}>
-                <Translate id="button.sendResetEmail">发送重置邮件</Translate>
-              </Button>
-            </Form.Item>
-          </Form>
-        </>
-      ),
-    },
-  ];
-
   return (
     <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
-      <Row justify="center">
-        <Col xs={24} sm={22} md={20} lg={16} xl={14}>
-          <div style={{ padding: "20px" }}>
-            <Space size={"large"} style={{ marginLeft: 8 }}>
-              <Link to="/" className="interLink">
-                <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
-              </Link>
-              <Link to="/user/favorite" className="interLink">
-                <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
-              </Link>
-            </Space>
+      <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
+        <Row justify="center">
+          <Col xs={24} sm={22} md={20} lg={16} xl={14}>
+            <Space direction="vertical" size="large" style={{ width: "100%" }}>
+              {/* Header Navigation */}
+              <Card bordered={false} bodyStyle={{ padding: "16px 24px" }}>
+                <Space split={<Divider type="vertical" />}>
+                  <Link to="/" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
+                    <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+                  </Link>
+                  <Link to="/user/favorite" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
+                    <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
+                  </Link>
+                </Space>
+              </Card>
 
-            <Card
-              title={
-                <Title level={4} style={{ marginBottom: 0 }}>
-                  <Translate id="title.userInfo">用户信息</Translate>
-                </Title>
-              }
-              style={{ marginTop: 16 }}>
-              <Descriptions items={useritems} layout="vertical" />
-              <Tabs type="card" items={items} destroyOnHidden />
-            </Card>
-          </div>
-        </Col>
-      </Row>
+              <Row gutter={[24, 24]}>
+                {/* Left Column: Profile Info */}
+                <Col xs={24} md={10}>
+                  <Card
+                    bordered={false}
+                    title={
+                      <Space>
+                        <UserOutlined style={{ color: token.colorPrimary }} />
+                        <Translate id="title.userInfo">用户信息</Translate>
+                      </Space>
+                    }>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 24 }}>
+                      <Avatar size={80} icon={<UserOutlined />} style={{ backgroundColor: token.colorPrimaryBg, color: token.colorPrimary, marginBottom: 16 }} />
+
+                      {editUsername ? (
+                        <Space.Compact style={{ width: "100%", maxWidth: 240 }}>
+                          <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
+                          <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
+                          <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
+                        </Space.Compact>
+                      ) : (
+                        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                          <Title level={4} style={{ margin: 0 }}>
+                            {userAuth.data.username}
+                          </Title>
+                          <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: token.colorTextSecondary }} />
+                        </div>
+                      )}
+
+                      <Text type="secondary" style={{ marginTop: 4 }}>
+                        {userAuth.data.email}
+                      </Text>
+                      {userAuth.data.userprompts && userAuth.data.userprompts.filter((p) => p.share).length > 0 ? (
+                        <Tag color="green" style={{ marginTop: 12 }}>
+                          📝 <Translate id="user.tag.sharedPrompts">已分享提示词</Translate>
+                          {": " + userAuth.data.userprompts.filter((p) => p.share).length}
+                        </Tag>
+                      ) : (
+                        <Tag color="blue" style={{ marginTop: 12 }}>
+                          🌱 <Translate id="user.tag.newMember">新成员，开始分享第一个提示词吧</Translate>
+                        </Tag>
+                      )}
+                    </div>
+                  </Card>
+                </Col>
+
+                {/* Right Column: Security Settings */}
+                <Col xs={24} md={14}>
+                  <Card
+                    bordered={false}
+                    title={
+                      <Space>
+                        <SafetyCertificateOutlined style={{ color: token.colorPrimary }} />
+                        <Translate id="title.security">安全设置</Translate>
+                      </Space>
+                    }
+                    extra={
+                      <Segmented
+                        value={securityMode}
+                        onChange={(val) => setSecurityMode(val as "password" | "reset")}
+                        options={[
+                          { label: <Translate id="label.changePassword">修改密码</Translate>, value: "password" },
+                          { label: <Translate id="label.forgotPassword">忘记密码</Translate>, value: "reset" },
+                        ]}
+                      />
+                    }>
+                    {securityMode === "password" ? (
+                      <Form form={changePasswordForm} onFinish={onFinishChangePassword} layout="vertical" requiredMark={false}>
+                        <Form.Item
+                          name="currentPassword"
+                          label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
+                          rules={[{ required: true, message: translate({ id: "input.currentPassword", message: "请输入当前密码！" }) }]}>
+                          <Input.Password
+                            prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                            placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
+                            size="large"
+                          />
+                        </Form.Item>
+                        <Form.Item
+                          name="newPassword"
+                          label={<Translate id="placeholder.newPassword">新密码</Translate>}
+                          rules={[
+                            { required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) },
+                            { min: 6, message: translate({ id: "input.password.valid", message: "密码长度至少为 6 个字符" }) },
+                          ]}>
+                          <Input.Password
+                            prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                            placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })}
+                            size="large"
+                          />
+                        </Form.Item>
+                        <Form.Item
+                          name="confirmPassword"
+                          label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
+                          dependencies={["newPassword"]}
+                          rules={[
+                            { required: true, message: translate({ id: "input.confirmPassword", message: "请确认新密码！" }) },
+                            ({ getFieldValue }) => ({
+                              validator(_, value) {
+                                if (!value || getFieldValue("newPassword") === value) {
+                                  return Promise.resolve();
+                                }
+                                return Promise.reject(new Error(translate({ id: "input.password.match", message: "两次输入的密码不一致！" })));
+                              },
+                            }),
+                          ]}>
+                          <Input.Password
+                            prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                            placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })}
+                            size="large"
+                          />
+                        </Form.Item>
+                        <Form.Item style={{ marginBottom: 0 }}>
+                          <Button type="primary" htmlType="submit" loading={loading} block size="large">
+                            <Translate id="button.changePassword">修改密码</Translate>
+                          </Button>
+                        </Form.Item>
+                      </Form>
+                    ) : (
+                      <Form form={forgotPasswordForm} onFinish={onFinishForgotPassword} layout="vertical" requiredMark={false}>
+                        <div style={{ marginBottom: 24, padding: 16, background: token.colorFillAlter, borderRadius: token.borderRadiusLG }}>
+                          <Text type="secondary">
+                            <Translate id="message.forgotPassword.info">如果您忘记了当前密码，可以通过邮箱重置。我们会向您的注册邮箱发送一封包含重置链接的邮件。</Translate>
+                          </Text>
+                        </div>
+                        <Form.Item
+                          name="email"
+                          label={<Translate id="input.email">邮箱</Translate>}
+                          rules={[
+                            { required: true, message: translate({ id: "input.email", message: "请输入您的邮箱！" }) },
+                            { type: "email", message: translate({ id: "input.email.valid", message: "请输入有效的邮箱地址！" }) },
+                          ]}
+                          initialValue={userAuth?.data?.email || ""}>
+                          <Input prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
+                        </Form.Item>
+                        <Form.Item style={{ marginBottom: 0 }}>
+                          <Button type="primary" htmlType="submit" loading={loading} block size="large">
+                            <Translate id="button.sendResetEmail">发送重置邮件</Translate>
+                          </Button>
+                        </Form.Item>
+                      </Form>
+                    )}
+                  </Card>
+                </Col>
+              </Row>
+            </Space>
+          </Col>
+        </Row>
+      </div>
     </Layout>
   );
 };
 
-export default function UserPage() {
-  return (
-    <AuthProvider>
+const UserPage = () => (
+  <AuthProvider>
+    <App>
       <UserProfile />
-    </AuthProvider>
-  );
-}
+    </App>
+  </AuthProvider>
+);
+
+export default UserPage;

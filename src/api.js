@@ -68,7 +68,7 @@ export async function getUserAllInfo() {
   try {
     // 如果缓存不存在或已过期，那么发送请求获取新的数据
     const response = await axios.get(
-      `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id`,
+      `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id&populate[userprompts][fields][1]=share`,
       config
     );
 
