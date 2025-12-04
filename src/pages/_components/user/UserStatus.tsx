@@ -206,23 +206,27 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
 
   const loggedInButtons = useMemo(
     () => (
-      <Space wrap size="middle">
+      <Space wrap size="small">
         {!hideLinks.userCenter && (
-          <Link to="/user" className="button button--primary buttonLink">
-            <UserOutlined /> <Translate id="link.myaccount">账号设置</Translate>
+          <Link to="/user">
+            <Button icon={<UserOutlined />}>
+              <Translate id="link.myaccount">账号设置</Translate>
+            </Button>
           </Link>
         )}
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite" className="button button--primary hideOnSmallScreen buttonLink">
-            <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
+          <Link to="/user/favorite">
+            <Button icon={<HeartOutlined />} className="hideOnSmallScreen">
+              <Translate id="link.user">个人中心</Translate>
+            </Button>
           </Link>
         )}
-        <a className="button button--primary buttonLink" onClick={() => setOpen(true)}>
-          <EditOutlined /> <Translate id="link.addprompt">添加提示词</Translate>
-        </a>
+        <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
+          <Translate id="link.addprompt">添加提示词</Translate>
+        </Button>
         {!hideLinks.userCenter && (
           <Tooltip title={<Translate id="tooltip.exportPrompts">导出您创建的所有提示词到 JSON 文件</Translate>}>
-            <Button icon={<DownloadOutlined />} onClick={handleExportPrompts} style={{ color: "gray" }}>
+            <Button icon={<DownloadOutlined />} onClick={handleExportPrompts}>
               <span className="hideOnSmallScreen">
                 <Translate id="button.exportPrompts">导出提示词</Translate>
               </span>
@@ -230,7 +234,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           </Tooltip>
         )}
         <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
-          <Button icon={<ClearOutlined />} onClick={handleClearCache} style={{ color: "gray" }}>
+          <Button icon={<ClearOutlined />} onClick={handleClearCache}>
             <span className="hideOnSmallScreen">
               <Translate id="button.clearCache">清除缓存</Translate>
             </span>
@@ -244,8 +248,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
               content: "Click OK to log out.",
               onOk: handleLogout,
             });
-          }}
-          style={{ color: "gray" }}>
+          }}>
           <span className="hideOnSmallScreen">
             <Translate id="button.logout">退出登录</Translate>
           </span>
@@ -257,12 +260,14 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
 
   const loggedOutButtons = useMemo(
     () => (
-      <Space wrap size="middle">
-        <button className="button button--primary" onClick={() => setOpen(true)}>
+      <Space wrap size="small">
+        <Button type="primary" onClick={() => setOpen(true)}>
           <Translate id="button.login">登录</Translate>
-        </button>
-        <Link to="/community-prompts" className="button button--primary buttonLink">
-          <LikeFilled /> <Translate id="showcase.header.button">分享你的提示词</Translate>
+        </Button>
+        <Link to="/community-prompts">
+          <Button icon={<LikeFilled />}>
+            <Translate id="showcase.header.button">分享你的提示词</Translate>
+          </Button>
         </Link>
       </Space>
     ),

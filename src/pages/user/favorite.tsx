@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 
-import { Tabs } from "antd";
+import { Tabs, theme, Flex } from "antd";
 import { HeartOutlined, EditOutlined } from "@ant-design/icons";
 import styles from "@site/src/pages/styles.module.css";
 
@@ -17,6 +17,7 @@ import { AuthProvider } from "../_components/AuthContext";
 const UserBookmark = () => {
   const [activeTab, setActiveTab] = useState<"default" | "myfavor" | "myprompts">("myprompts");
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts(activeTab);
+  const { token } = theme.useToken();
 
   const handleTabChange = useCallback((tab: string) => {
     setActiveTab(tab as "default" | "myfavor" | "myprompts");
@@ -44,20 +45,36 @@ const UserBookmark = () => {
 
   return (
     <Layout>
-      <main className="margin-vert--md">
-        <section className="margin-top--sm margin-bottom--sm">
-          <div className="container padding-vert--md">
-            <div className="text--center">
+      <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
+        <div className="container">
+          <Flex vertical gap="middle">
+            {/* Top Actions */}
+            <div style={{ display: "flex", justifyContent: "flex-start" }}>
               <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
             </div>
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar />
+
+            {/* Tabs and Search */}
+            <Flex justify="space-between" align="center" wrap="wrap" gap="small" style={{ marginBottom: 16 }}>
+              <Tabs
+                activeKey={activeTab}
+                items={items.map((item) => ({ ...item, children: null }))} // Only render tab headers here
+                onChange={handleTabChange}
+                style={{ marginBottom: 0 }}
+                tabBarStyle={{ marginBottom: 0 }}
+              />
+              <div style={{ width: "100%", maxWidth: 300 }}>
+                <SearchBar />
+              </div>
+            </Flex>
+
+            {/* Content Area */}
+            <div style={{ minHeight: 400 }}>
+              {items.find((item) => item.key === activeTab)?.children}
+              {showNoResults && <NoResults />}
             </div>
-            <Tabs activeKey={activeTab} items={items} onChange={handleTabChange} />
-            {showNoResults && <NoResults />}
-          </div>
-        </section>
-      </main>
+          </Flex>
+        </div>
+      </div>
     </Layout>
   );
 };
