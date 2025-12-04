@@ -1,14 +1,14 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
 import clsx from "clsx";
-import { message, Tooltip, Button, Space } from "antd";
+import { message, Tooltip, Button, Space, App } from "antd";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { useFavorite } from "@site/src/hooks/useFavorite";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireFilled } from "@ant-design/icons";
 import { Tags, TagList, type TagType, type Tag } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 import styles from "./styles.module.css";
-import { createFavorite, updateFavorite, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { MAX_LENGTH, truncate, formatCount } from "@site/src/utils/formatters";
@@ -41,6 +41,7 @@ export const ShowcaseCardTag = ({ tags }: { tags: TagType[] }) => {
 const ShowcaseCard = ({ user, isDescription, copyCount }) => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
+  const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
   const userInfo = useMemo(
@@ -86,46 +87,13 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
     setShowFullContent((prev) => !prev);
   }, []);
 
-  const handleLove = useCallback(async () => {
-    try {
-      let userLoves;
-      let favoriteId;
+  const handleLove = useCallback(() => {
+    addFavorite(user.id, false);
+  }, [addFavorite, user.id]);
 
-      if (!userAuth?.data?.favorites) {
-        const createFavoriteResponse = await createFavorite([user.id]);
-        userLoves = [user.id];
-        favoriteId = createFavoriteResponse.data.id;
-      } else {
-        userLoves = userAuth.data.favorites.loves || [];
-        favoriteId = userAuth.data.favorites.id;
-        userLoves.push(user.id);
-      }
-      message.success("Added to favorites successfully!");
-      await updateFavorite(favoriteId, userLoves);
-      getPrompts("cards", userLoves, currentLanguage);
-      refreshUserAuth();
-    } catch (err) {
-      console.error(err);
-    }
-  }, [userAuth?.data?.favorites, user.id, currentLanguage, refreshUserAuth]);
-
-  const removeFavorite = useCallback(async () => {
-    try {
-      const userLoves = userAuth.data.favorites.loves || [];
-      const favoriteId = userAuth.data.favorites.id;
-      const index = userLoves.indexOf(user.id);
-
-      if (index > -1) {
-        userLoves.splice(index, 1);
-        message.success("Removed from favorites successfully!");
-      }
-
-      await updateFavorite(favoriteId, userLoves);
-      refreshUserAuth();
-    } catch (err) {
-      console.error(err);
-    }
-  }, [userAuth, user.id, refreshUserAuth]);
+  const handleRemoveFavorite = useCallback(() => {
+    confirmRemoveFavorite(user.id, false);
+  }, [confirmRemoveFavorite, user.id]);
 
   return (
     <li key={userInfo.title} className={clsx("card", styles.showcaseCard)}>
@@ -145,8 +113,8 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
               <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
             {userAuth && (
-              <Tooltip title={isFavorite ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
-                <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? removeFavorite : handleLove} />
+              <Tooltip title={isFavorite ? <Translate id="showcase.removeFavorite">点击移除收藏</Translate> : translate({ message: "收藏" })}>
+                <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} />
               </Tooltip>
             )}
             {!userAuth && user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} />}

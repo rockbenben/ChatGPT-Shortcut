@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState, useCallback } from "react";
 import clsx from "clsx";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { useFavorite } from "@site/src/hooks/useFavorite";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -152,7 +153,7 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
 
 function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = false }) {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+  const { confirmRemoveFavorite } = useFavorite();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const [cards, setCards] = useState([]);
@@ -191,29 +192,10 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   }, [userAuth, currentLanguage, isFiltered, filteredCommus, filteredCards]);
 
   const removeBookmark = useCallback(
-    async (id, isComm = false) => {
-      try {
-        let userLoves = isComm ? userAuth.data.favorites.commLoves || [] : userAuth.data.favorites.loves || [];
-        const favoriteId = userAuth.data.favorites.id;
-
-        const index = userLoves.indexOf(id);
-        if (index > -1) {
-          userLoves.splice(index, 1);
-          messageApi.open({
-            type: "success",
-            content: "Removed from favorites successfully!",
-          });
-        }
-        if (isComm) {
-          localStorage.removeItem(`commus_${id}`);
-        }
-        await updateFavorite(favoriteId, userLoves, isComm);
-        refreshUserAuth();
-      } catch (err) {
-        console.error(err);
-      }
+    (id, isComm = false) => {
+      confirmRemoveFavorite(id, isComm);
     },
-    [userAuth, refreshUserAuth]
+    [confirmRemoveFavorite]
   );
 
   const handleDragStart = (event) => {

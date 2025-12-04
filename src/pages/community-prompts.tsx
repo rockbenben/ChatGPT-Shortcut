@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { useFavorite } from "@site/src/hooks/useFavorite";
 import styles from "@site/src/pages/styles.module.css";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
@@ -142,6 +143,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
 const CommunityPrompts = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
+  const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -223,37 +225,13 @@ const CommunityPrompts = () => {
 
   const bookmark = useCallback(
     async (promptId) => {
-      try {
-        let userLoves;
-        let favoriteId;
-
-        if (!userAuth.data.favorites) {
-          const createFavoriteResponse = await createFavorite([promptId], true);
-          userLoves = [promptId];
-          favoriteId = createFavoriteResponse.data.id;
-          messageApi.success("Added to favorites successfully!");
-        } else {
-          userLoves = [...(userAuth.data.favorites.commLoves || [])];
-          favoriteId = userAuth.data.favorites.id;
-
-          if (userLoves.includes(promptId)) {
-            userLoves = userLoves.filter((id) => id !== promptId);
-            messageApi.success("Removed from favorites successfully!");
-          } else {
-            userLoves.push(promptId);
-            messageApi.success("Added to favorites successfully!");
-          }
-        }
-        await updateFavorite(favoriteId, userLoves, true);
-        refreshUserAuth();
-      } catch (err) {
-        messageApi.open({
-          type: "error",
-          content: `Failed to update favorites. Error: ${err}`,
-        });
+      if (userAuth?.data?.favorites?.commLoves?.includes(promptId)) {
+        confirmRemoveFavorite(promptId, true);
+      } else {
+        addFavorite(promptId, true);
       }
     },
-    [userAuth, messageApi, refreshUserAuth]
+    [userAuth, confirmRemoveFavorite, addFavorite]
   );
 
   const onChangePage = useCallback((page) => {
