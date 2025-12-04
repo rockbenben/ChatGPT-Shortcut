@@ -133,9 +133,9 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
         <div className={clsx(styles.showcaseCardHeader)}>
           <div className={styles.showcaseCardTitle}>
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink}>
-              {userInfo.title}{" "}
+              {userInfo.title}
             </Link>
-            <span style={{ gap: "2px", color: "gray", fontSize: "0.8rem" }}>
+            <span style={{ gap: "2px", color: "gray", fontSize: "0.8rem", marginLeft: "4px" }}>
               <FireFilled style={{ color: "#ff6b6b" }} />
               {formatCount(copyCount)}
             </span>

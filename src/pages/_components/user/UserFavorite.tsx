@@ -1,15 +1,15 @@
 import React, { useEffect, useContext, useState, useCallback } from "react";
 import clsx from "clsx";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { ShowcaseCardTag } from "@site/src/pages/_components/ShowcaseCard";
 import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/ShowcaseRemark";
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
-import { Button, Spin, Tooltip, Space, App } from "antd";
-import { CheckOutlined, CopyOutlined, DownOutlined, StarFilled, LinkOutlined } from "@ant-design/icons";
+import { Button, Spin, Tooltip, Space, App, Empty } from "antd";
+import { CheckOutlined, CopyOutlined, DownOutlined, StarFilled, LinkOutlined, FireFilled } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -70,9 +70,12 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
               {isCard ? (
                 <>
                   <Link href={"/prompt/" + item.id} className={styles.showcaseCardLink}>
-                    {item[currentLanguage].title}{" "}
+                    {item[currentLanguage].title}
                   </Link>
-                  <span className={styles.showcaseCardBody}>{weight > 0 && `🔥${formatCount(weight)}`}</span>
+                  <span style={{ gap: "2px", color: "gray", fontSize: "0.8rem", marginLeft: "4px" }}>
+                    <FireFilled style={{ color: "#ff6b6b" }} />
+                    {formatCount(weight)}
+                  </span>
                 </>
               ) : (
                 <span className={styles.showcaseCardLink}>{item.title} </span>
@@ -268,13 +271,13 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   return (
     <>
       {!cards?.length && !comms?.length ? (
-        <ul className={clsx("clean-list", pageStyles.showcaseList)}>
-          <li className="card shadow--md">
+        <div className={pageStyles.showcaseList}>
+          <div className={clsx("card", styles.showcaseCard)}>
             <div className={clsx("card__body")}>
-              <p>You haven't favorited any prompts yet.</p>
+              <Empty description={<Translate id="message.noFavorites">No favorites yet</Translate>} />
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
           <ul className={clsx("clean-list", pageStyles.showcaseList)}>

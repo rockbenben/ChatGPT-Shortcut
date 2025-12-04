@@ -839,7 +839,7 @@
     "message": "Failed to fetch prompts. Please try again later."
   },
   "message.noPrompts": {
-    "message": "No prompts submitted yet. Please add your prompts."
+    "message": "No prompts submitted yet. Add your first prompt."
   },
   "message.cache.cleared": {
     "message": "Cache has been cleared."

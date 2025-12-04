@@ -204,7 +204,7 @@
 }
 
 .loadMoreBtn {
-  background: var(--site-color-tag-selected-bg);
+  background-color: hsl(var(--site-primary-hue-saturation-light) 64% / 15%);
   opacity: 0.4;
   border: none;
   width: 100%;
@@ -223,6 +223,7 @@
 .loadMoreBtn:hover {
   opacity: 0.9;
   transform: translateY(-1px);
+  background-color: hsl(var(--site-primary-hue-saturation-light) 64% / 25%);
 }
 
 .showcaseCardLink {

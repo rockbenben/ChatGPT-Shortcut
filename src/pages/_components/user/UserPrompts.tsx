@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App, Space } from "antd";
+import { Form, Input, Button, Spin, Modal, Typography, Tooltip, Switch, Tag, App, Space, Empty } from "antd";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, CloseOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
@@ -259,10 +259,8 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
           <ul className={clsx("clean-list", pageStyles.showcaseList)}>
             {!userprompts || userprompts.length === 0 ? (
               <li className={clsx("card", styles.showcaseCard)}>
-                <div className={clsx("card__body", styles.cardBodyHeight)}>
-                  <p>
-                    <Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>
-                  </p>
+                <div className={clsx("card__body", styles.cardBodyHeight)} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
+                  <Empty description={<Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>} />
                 </div>
               </li>
             ) : (

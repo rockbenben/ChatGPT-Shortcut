@@ -19,13 +19,5 @@ export const NoResults: React.FC = () => {
     );
   }
 
-  return (
-    <Empty
-      image={Empty.PRESENTED_IMAGE_SIMPLE}
-      description={translate({
-        id: "showcase.usersList.noResult",
-        message: "找不到相关结果，请尝试缩短搜索词",
-      })}
-    />
-  );
+  return <Empty description={translate({ id: "showcase.usersList.noResult", message: "找不到相关结果，请尝试缩短搜索词" })} />;
 };

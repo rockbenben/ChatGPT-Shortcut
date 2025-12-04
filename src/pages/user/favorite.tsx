@@ -54,7 +54,7 @@ const UserBookmark = () => {
             </div>
 
             {/* Tabs and Search */}
-            <Flex justify="space-between" align="center" wrap="wrap" gap="small" style={{ marginBottom: 16 }}>
+            <Flex justify="space-between" align="center" wrap="wrap" gap="middle" style={{ marginBottom: 16 }}>
               <Tabs
                 activeKey={activeTab}
                 items={items.map((item) => ({ ...item, children: null }))} // Only render tab headers here

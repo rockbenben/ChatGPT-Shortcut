@@ -116,8 +116,6 @@
   margin-right: 0;
 }
 
-
-
 .activeItem :global(.checkboxLabel) {
   background-color: var(--ifm-color-primary) !important;
   color: white !important;
@@ -197,10 +195,8 @@
   border-color: var(--ifm-color-primary-darkest);
 }
 
-
 .loadMoreButton {
   width: 100%;
-  margin: 2rem auto 1rem;
   height: 44px;
   border-radius: 8px;
   border: 1px solid var(--ifm-color-emphasis-300);
