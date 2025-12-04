@@ -75,11 +75,11 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await changePassword(values);
-      messageApi.success(<Translate id="message.changePassword.success">密码修改成功！</Translate>);
+      messageApi.success(<Translate id="message.success.passwordChanged">密码修改成功！</Translate>);
       changePasswordForm.resetFields();
     } catch (error) {
       console.error("Error changing password:", error);
-      messageApi.error(<Translate id="message.changePassword.error">密码修改失败，请稍后重试</Translate>);
+      messageApi.error(<Translate id="message.error.passwordChangeFailed">密码修改失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -89,11 +89,11 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      messageApi.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
+      messageApi.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
       forgotPasswordForm.resetFields();
     } catch (error) {
       console.error("Error sending forgot password email:", error);
-      messageApi.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
+      messageApi.error(<Translate id="message.error.forgotPassword">发送密码重置邮件失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -103,7 +103,7 @@ const UserProfile = () => {
     return (
       <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
-          <Spin size="large" tip={<Translate id="message.loading.userStatus">加载登录状态...</Translate>} />
+          <Spin size="large" tip={<Translate id="message.loading">加载登录状态...</Translate>} />
         </div>
       </Layout>
     );
@@ -122,7 +122,7 @@ const UserProfile = () => {
                     <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                   </Link>
                   <Link to="/user/favorite" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
-                    <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
+                    <HeartOutlined /> <Translate id="link.myFavorites">我的收藏</Translate>
                   </Link>
                 </Space>
               </Card>
@@ -161,12 +161,12 @@ const UserProfile = () => {
                       </Text>
                       {userAuth.data.userprompts && userAuth.data.userprompts.filter((p) => p.share).length > 0 ? (
                         <Tag color="green" style={{ marginTop: 12 }}>
-                          📝 <Translate id="user.tag.sharedPrompts">已分享提示词</Translate>
+                          📝 <Translate id="label.sharedPrompts">已分享提示词</Translate>
                           {": " + userAuth.data.userprompts.filter((p) => p.share).length}
                         </Tag>
                       ) : (
                         <Tag color="blue" style={{ marginTop: 12 }}>
-                          🌱 <Translate id="user.tag.newMember">新成员，开始分享第一个提示词吧</Translate>
+                          🌱 <Translate id="label.newMember">新成员，开始分享第一个提示词吧</Translate>
                         </Tag>
                       )}
                     </div>
@@ -188,8 +188,8 @@ const UserProfile = () => {
                         value={securityMode}
                         onChange={(val) => setSecurityMode(val as "password" | "reset")}
                         options={[
-                          { label: <Translate id="label.changePassword">修改密码</Translate>, value: "password" },
-                          { label: <Translate id="label.forgotPassword">忘记密码</Translate>, value: "reset" },
+                          { label: <Translate id="action.changePassword">修改密码</Translate>, value: "password" },
+                          { label: <Translate id="action.forgotPassword">忘记密码</Translate>, value: "reset" },
                         ]}
                       />
                     }>
@@ -198,7 +198,7 @@ const UserProfile = () => {
                         <Form.Item
                           name="currentPassword"
                           label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
-                          rules={[{ required: true, message: translate({ id: "input.currentPassword", message: "请输入当前密码！" }) }]}>
+                          rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
                           <Input.Password
                             prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
                             placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
@@ -210,7 +210,7 @@ const UserProfile = () => {
                           label={<Translate id="placeholder.newPassword">新密码</Translate>}
                           rules={[
                             { required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) },
-                            { min: 6, message: translate({ id: "input.password.valid", message: "密码长度至少为 6 个字符" }) },
+                            { min: 6, message: translate({ id: "validation.password.length", message: "密码长度至少为 6 个字符" }) },
                           ]}>
                           <Input.Password
                             prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
@@ -223,13 +223,13 @@ const UserProfile = () => {
                           label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
                           dependencies={["newPassword"]}
                           rules={[
-                            { required: true, message: translate({ id: "input.confirmPassword", message: "请确认新密码！" }) },
+                            { required: true, message: translate({ id: "validation.confirmPassword.required", message: "请确认新密码！" }) },
                             ({ getFieldValue }) => ({
                               validator(_, value) {
                                 if (!value || getFieldValue("newPassword") === value) {
                                   return Promise.resolve();
                                 }
-                                return Promise.reject(new Error(translate({ id: "input.password.match", message: "两次输入的密码不一致！" })));
+                                return Promise.reject(new Error(translate({ id: "validation.password.match", message: "两次输入的密码不一致！" })));
                               },
                             }),
                           ]}>
@@ -241,7 +241,7 @@ const UserProfile = () => {
                         </Form.Item>
                         <Form.Item style={{ marginBottom: 0 }}>
                           <Button type="primary" htmlType="submit" loading={loading} block size="large">
-                            <Translate id="button.changePassword">修改密码</Translate>
+                            <Translate id="action.changePassword">修改密码</Translate>
                           </Button>
                         </Form.Item>
                       </Form>
@@ -254,17 +254,17 @@ const UserProfile = () => {
                         </div>
                         <Form.Item
                           name="email"
-                          label={<Translate id="input.email">邮箱</Translate>}
+                          label={<Translate id="placeholder.email">邮箱</Translate>}
                           rules={[
-                            { required: true, message: translate({ id: "input.email", message: "请输入您的邮箱！" }) },
-                            { type: "email", message: translate({ id: "input.email.valid", message: "请输入有效的邮箱地址！" }) },
+                            { required: true, message: translate({ id: "validation.email.required", message: "请输入您的邮箱！" }) },
+                            { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址！" }) },
                           ]}
                           initialValue={userAuth?.data?.email || ""}>
                           <Input prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
                         </Form.Item>
                         <Form.Item style={{ marginBottom: 0 }}>
                           <Button type="primary" htmlType="submit" loading={loading} block size="large">
-                            <Translate id="button.sendResetEmail">发送重置邮件</Translate>
+                            <Translate id="action.sendResetEmail">发送重置邮件</Translate>
                           </Button>
                         </Form.Item>
                       </Form>

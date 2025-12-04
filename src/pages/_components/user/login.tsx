@@ -14,7 +14,7 @@ const rules = {
     {
       required: true,
       message: translate({
-        id: "input.rules.username",
+        id: "validation.username.required",
         message: "请输入用户名或注册邮箱！",
       }),
     },
@@ -22,12 +22,12 @@ const rules = {
   password: [
     {
       required: true,
-      message: translate({ id: "input.rules.password", message: "请输入密码！" }),
+      message: translate({ id: "validation.password.required", message: "请输入密码！" }),
     },
     {
       min: 6,
       message: translate({
-        id: "input.password.valid",
+        id: "validation.password.length",
         message: "密码长度至少为 6 个字符",
       }),
     },
@@ -36,14 +36,14 @@ const rules = {
     {
       required: true,
       message: translate({
-        id: "input.rules.email",
+        id: "validation.email.required",
         message: "请输入邮箱！",
       }),
     },
     {
       type: "email" as const,
       message: translate({
-        id: "input.email.valid",
+        id: "validation.email.invalid",
         message: "请输入有效的邮箱地址！",
       }),
     },
@@ -52,7 +52,7 @@ const rules = {
     {
       required: true,
       message: translate({
-        id: "input.confirmPassword",
+        id: "validation.confirmPassword.required",
         message: "请确认新密码！",
       }),
     },
@@ -64,7 +64,7 @@ const rules = {
         return Promise.reject(
           new Error(
             translate({
-              id: "input.password.match",
+              id: "validation.password.match",
               message: "两次输入的密码不一致！",
             })
           )
@@ -238,18 +238,18 @@ const LoginPage = () => {
   );
 
   const onFinishLogin = async (values) => {
-    handleAuth(values, login, <Translate id="message.loginSuccess">登录成功！</Translate>);
+    handleAuth(values, login, <Translate id="message.success.login">登录成功！</Translate>);
   };
 
   const onFinishRegister = async (values) => {
-    handleAuth(values, register, <Translate id="message.registerSuccess">注册成功！</Translate>);
+    handleAuth(values, register, <Translate id="message.success.register">注册成功！</Translate>);
   };
 
   const handleForgotPassword = async (values) => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      messageApi.success(<Translate id="message.forgotPassword.success">密码重置邮件已发送！</Translate>);
+      messageApi.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
       forgotPasswordForm.resetFields();
     } catch (error) {
       console.error(
@@ -259,7 +259,7 @@ const LoginPage = () => {
         }),
         error
       );
-      messageApi.error(<Translate id="message.forgotPassword.error">发送密码重置邮件失败，请稍后重试</Translate>);
+      messageApi.error(<Translate id="message.error.forgotPassword">发送密码重置邮件失败，请稍后重试</Translate>);
     } finally {
       setLoading(false);
     }
@@ -279,11 +279,11 @@ const LoginPage = () => {
       // Dynamically determine parameters to pass to backend
       const payload = isValidEmail(target) ? { email: target } : { username: target };
       await sendPasswordlessLink(payload);
-      messageApi.success(<Translate id="message.passwordlessLinkSent">免密码登录链接已发送到您的邮箱！</Translate>);
+      messageApi.success(<Translate id="message.success.passwordlessLink">免密码登录链接已发送到您的邮箱！</Translate>);
       passwordlessForm.resetFields();
     } catch (error) {
       console.error("Error sending passwordless login link:", error);
-      messageApi.error(<Translate id="message.errorSendingPasswordlessLink">发送失败，请检查邮箱或用户名</Translate>);
+      messageApi.error(<Translate id="message.error.passwordlessLink">发送失败，请检查邮箱或用户名</Translate>);
     } finally {
       setLoading(false);
     }
@@ -295,8 +295,8 @@ const LoginPage = () => {
         block
         size="large"
         options={[
-          { label: <Translate id="login.tab.password">密码登录</Translate>, value: "password" },
-          { label: <Translate id="login.tab.code">免密登录</Translate>, value: "code" },
+          { label: <Translate id="login.method.password">密码登录</Translate>, value: "password" },
+          { label: <Translate id="login.method.code">免密登录</Translate>, value: "code" },
         ]}
         value={loginType}
         onChange={(value) => setLoginType(value as "password" | "code")}
@@ -308,7 +308,7 @@ const LoginPage = () => {
             <Input
               autoComplete="username"
               prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
-              placeholder={translate({ id: "input.username", message: "用户名/邮箱" })}
+              placeholder={translate({ id: "placeholder.usernameOrEmail", message: "用户名/邮箱" })}
               size="large"
             />
           </Form.Item>
@@ -316,19 +316,19 @@ const LoginPage = () => {
             <Input.Password
               autoComplete="current-password"
               prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
-              placeholder={translate({ id: "input.password", message: "密码" })}
+              placeholder={translate({ id: "placeholder.password", message: "密码" })}
               size="large"
             />
           </Form.Item>
 
           <Flex justify="flex-end" style={{ marginBottom: 24 }}>
             <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0, height: "auto", color: token.colorTextSecondary }}>
-              <Translate id="button.forgotPassword">忘记密码</Translate>
+              <Translate id="action.forgotPassword">忘记密码</Translate>
             </Button>
           </Flex>
 
           <Button type="primary" htmlType="submit" loading={loading} block size="large">
-            <Translate id="button.login">登录</Translate>
+            <Translate id="action.login">登录</Translate>
           </Button>
         </Form>
       ) : (
@@ -345,38 +345,38 @@ const LoginPage = () => {
             }}>
             <InfoCircleOutlined style={{ color: token.colorPrimary, marginTop: 4 }} />
             <Text type="secondary" style={{ fontSize: token.fontSize }}>
-              <Translate id="message.passwordlessLogin.info">登录链接将发送至您的邮箱，点击即可登录</Translate>
+              <Translate id="login.passwordless.info">登录链接将发送至您的邮箱，点击即可登录</Translate>
             </Text>
           </div>
           <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
             <Input
               autoComplete="username"
               prefix={<MailOutlined style={{ color: token.colorTextDescription }} />}
-              placeholder={translate({ id: "input.username", message: "用户名/邮箱" })}
+              placeholder={translate({ id: "placeholder.usernameOrEmail", message: "用户名/邮箱" })}
               size="large"
             />
           </Form.Item>
           <Button type="primary" htmlType="submit" loading={loading} block size="large">
-            <Translate id="button.sendPasswordlessLink">获取登录链接</Translate>
+            <Translate id="action.sendLink">获取登录链接</Translate>
           </Button>
         </Form>
       )}
 
       <div>
         <Divider plain style={{ margin: "24px 0", color: token.colorTextDescription, fontSize: token.fontSizeSM }}>
-          <Translate id="login.divider.or">Or</Translate>
+          <Translate id="common.or">Or</Translate>
         </Divider>
 
         <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 24 }}>
-          Login via Google
+          <Translate id="action.loginGoogle">Login via Google</Translate>
         </Button>
 
         <Flex justify="center" align="center" gap="small">
           <Text type="secondary">
-            <Translate id="login.noAccount">还没有账号？</Translate>
+            <Translate id="login.register.prompt">还没有账号？</Translate>
           </Text>
           <Button type="link" onClick={handleRegister} style={{ padding: 0, fontWeight: 500 }}>
-            <Translate id="button.register">立即注册</Translate>
+            <Translate id="action.register">立即注册</Translate>
           </Button>
         </Flex>
       </div>
@@ -389,18 +389,18 @@ const LoginPage = () => {
         <Input
           autoComplete="username"
           prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
-          placeholder={translate({ id: "input.register.username", message: "用户名" })}
+          placeholder={translate({ id: "placeholder.username", message: "用户名" })}
           size="large"
         />
       </Form.Item>
       <Form.Item name="email" rules={rules.email} style={{ marginBottom: 16 }}>
-        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "input.email", message: "邮箱" })} size="large" />
+        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>
       <Form.Item name="password" rules={rules.password} hasFeedback style={{ marginBottom: 16 }}>
         <Input.Password
           autoComplete="new-password"
           prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
-          placeholder={translate({ id: "input.password", message: "密码" })}
+          placeholder={translate({ id: "placeholder.password", message: "密码" })}
           size="large"
         />
       </Form.Item>
@@ -409,30 +409,30 @@ const LoginPage = () => {
         valuePropName="checked"
         rules={[
           {
-            validator: (_, value) => (value ? Promise.resolve() : Promise.reject(new Error(translate({ id: "agreement.rules", message: "使用前须同意服务条款和隐私政策" })))),
+            validator: (_, value) => (value ? Promise.resolve() : Promise.reject(new Error(translate({ id: "validation.agreement.required", message: "使用前须同意服务条款和隐私政策" })))),
           },
         ]}
         style={{ marginBottom: 24 }}>
         <Checkbox>
-          <Translate id="agreement.text">同意</Translate>{" "}
+          <Translate id="label.agree">同意</Translate>{" "}
           <a href="/docs/terms-of-service" target="_blank" rel="noopener noreferrer">
-            <Translate id="agreement.terms">服务条款</Translate>
+            <Translate id="link.terms">服务条款</Translate>
           </a>{" "}
-          <Translate id="agreement.and">和</Translate>{" "}
+          <Translate id="common.and">和</Translate>{" "}
           <a href="/docs/privacy-policy" target="_blank" rel="noopener noreferrer">
-            <Translate id="agreement.policy">隐私政策</Translate>
+            <Translate id="link.privacy">隐私政策</Translate>
           </a>
         </Checkbox>
       </Form.Item>
       <Button type="primary" htmlType="submit" loading={loading} block size="large" style={{ marginBottom: 16 }}>
-        <Translate id="button.register">注册</Translate>
+        <Translate id="action.register">注册</Translate>
       </Button>
       <Flex justify="center" align="center" gap="small">
         <Text type="secondary">
-          <Translate id="register.hasAccount">已有账号？</Translate>
+          <Translate id="login.login.prompt">已有账号？</Translate>
         </Text>
         <Button type="link" onClick={handleBackToLogin} style={{ padding: 0, fontWeight: 500 }}>
-          <Translate id="button.login">直接登录</Translate>
+          <Translate id="action.login">直接登录</Translate>
         </Button>
       </Flex>
     </Form>
@@ -444,12 +444,12 @@ const LoginPage = () => {
         <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>
       <Button type="primary" htmlType="submit" loading={loading} block size="large" style={{ marginBottom: 16 }}>
-        <Translate id="button.sendResetEmail">发送重置邮件</Translate>
+        <Translate id="action.sendResetEmail">发送重置邮件</Translate>
       </Button>
 
       <Flex justify="center">
         <Button type="link" onClick={handleBackToLogin} style={{ padding: 0 }}>
-          <Translate id="button.backToLogin">返回登录</Translate>
+          <Translate id="action.backToLogin">返回登录</Translate>
         </Button>
       </Flex>
     </Form>
@@ -460,15 +460,15 @@ const LoginPage = () => {
       title={
         <>
           <Title level={3} style={{ textAlign: "center", marginTop: 12, marginBottom: 12 }}>
-            {viewState === "login" && <Translate id="login.card.welcome">欢迎回来</Translate>}
-            {viewState === "register" && <Translate id="login.card.register">加入社区</Translate>}
-            {viewState === "forgot-password" && <Translate id="login.card.forgotPassword">找回密码</Translate>}
+            {viewState === "login" && <Translate id="login.title.welcome">欢迎回来</Translate>}
+            {viewState === "register" && <Translate id="login.title.register">加入社区</Translate>}
+            {viewState === "forgot-password" && <Translate id="login.title.forgotPassword">找回密码</Translate>}
           </Title>
           <div style={{ textAlign: "center", marginBottom: 16 }}>
             <Text type="secondary">
-              {viewState === "login" && <Translate id="login.card.welcome.sub">登录探索更多优质提示词</Translate>}
-              {viewState === "register" && <Translate id="login.card.register.sub">发现、分享和创造精彩提示词</Translate>}
-              {viewState === "forgot-password" && <Translate id="login.card.forgotPassword.sub">重置链接将发送至您的邮箱</Translate>}
+              {viewState === "login" && <Translate id="login.subtitle.welcome">登录探索更多优质提示词</Translate>}
+              {viewState === "register" && <Translate id="login.subtitle.register">发现、分享和创造精彩提示词</Translate>}
+              {viewState === "forgot-password" && <Translate id="login.subtitle.forgotPassword">重置链接将发送至您的邮箱</Translate>}
             </Text>
           </div>
         </>

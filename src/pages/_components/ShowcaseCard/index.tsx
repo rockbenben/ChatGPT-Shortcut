@@ -109,11 +109,11 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </span>
           </div>
           <Space.Compact>
-            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+            <Tooltip title={<Translate id="action.copy">复制</Translate>}>
               <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
             {userAuth && (
-              <Tooltip title={isFavorite ? <Translate id="showcase.removeFavorite">点击移除收藏</Translate> : <Translate>收藏</Translate>}>
+              <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="showcase.tag.favorite.description">收藏</Translate>}>
                 <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} />
               </Tooltip>
             )}

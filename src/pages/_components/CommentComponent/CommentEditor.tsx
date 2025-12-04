@@ -65,12 +65,12 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
         <div style={{ display: "flex", gap: token.marginXS }}>
           {onCancel && (
             <Button onClick={onCancel} size="small" disabled={submitting}>
-              <Translate id="cancel">取消</Translate>
+              <Translate id="action.cancel">取消</Translate>
             </Button>
           )}
           {isLoggedIn ? (
             <Button type="primary" size="small" icon={<SendOutlined />} onClick={onSubmit} loading={submitting}>
-              {onCancel ? <Translate id="reply.submit">回复</Translate> : <Translate id="comment.add">提交评论</Translate>}
+              {onCancel ? <Translate id="action.reply">回复</Translate> : <Translate id="comment.add">提交评论</Translate>}
             </Button>
           ) : (
             <Button onClick={onLogin} type="primary" size="small">

@@ -27,7 +27,7 @@ const ResetPassword = () => {
       messageApi.open({
         type: "error",
         content: translate({
-          id: "input.password.match",
+          id: "validation.password.match",
           message: "两次输入的密码不一致！",
         }),
         duration: 5,
@@ -46,7 +46,7 @@ const ResetPassword = () => {
         window.location.href = "/";
       }, 1500);
     } catch (error) {
-      console.error(translate({ id: "error.resetPassword", message: "Error resetting password:" }), error);
+      console.error(translate({ id: "message.resetPassword.error", message: "密码重置失败，请稍后重试：" }), error);
       messageApi.open({
         type: "error",
         content: <Translate id="message.resetPassword.error">密码重置失败，请稍后重试</Translate>,
@@ -66,7 +66,7 @@ const ResetPassword = () => {
     {
       min: 6,
       message: translate({
-        id: "input.password.valid",
+        id: "validation.password.length",
         message: "密码长度至少为 6 个字符",
       }),
     },
@@ -114,7 +114,7 @@ const ResetPassword = () => {
                 {
                   required: true,
                   message: translate({
-                    id: "input.confirmPassword",
+                    id: "validation.confirmPassword.required",
                     message: "请确认新密码！",
                   }),
                 },
@@ -126,7 +126,7 @@ const ResetPassword = () => {
                     return Promise.reject(
                       new Error(
                         translate({
-                          id: "input.password.match",
+                          id: "validation.password.match",
                           message: "两次输入的密码不一致！",
                         })
                       )

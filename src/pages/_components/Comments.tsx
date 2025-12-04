@@ -289,14 +289,14 @@ const Comments = ({ pageId, type }) => {
               {
                 required: true,
                 message: translate({
-                  id: "comment.required",
+                  id: "validation.comment.required",
                   message: "请输入评论内容",
                 }),
               },
               {
                 max: 2000,
                 message: translate({
-                  id: "comment.maxLength",
+                  id: "validation.comment.maxLength",
                   message: "评论内容不应超过2000个字符",
                 }),
               },
@@ -308,7 +308,7 @@ const Comments = ({ pageId, type }) => {
               onEmojiToggle={() => handleEmojiGiphyToggle("emojiPicker", "comment")}
               onGifToggle={() => handleEmojiGiphyToggle("giphySearchBox", "comment")}
               placeholder={translate({
-                id: "comment.placeholder",
+                id: "placeholder.comment",
                 message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
               })}
             />
@@ -326,7 +326,7 @@ const Comments = ({ pageId, type }) => {
         key={comment.id}
         actions={[
           <Button key="comment-basic-reply-to" type="text" size="small" onClick={() => setReplyingTo(comment.id)}>
-            <Translate id="comment.reply">回复</Translate>
+            <Translate id="action.reply">回复</Translate>
           </Button>,
         ]}
         author={comment.author?.name}
@@ -341,14 +341,14 @@ const Comments = ({ pageId, type }) => {
                 {
                   required: true,
                   message: translate({
-                    id: "reply.required",
+                    id: "validation.replyRequired",
                     message: "请输入回复内容",
                   }),
                 },
                 {
                   max: 2000,
                   message: translate({
-                    id: "comment.maxLength",
+                    id: "validation.comment.maxLength",
                     message: "评论内容不应超过2000个字符",
                   }),
                 },
@@ -361,7 +361,7 @@ const Comments = ({ pageId, type }) => {
                 onGifToggle={() => handleEmojiGiphyToggle("giphySearchBox", "reply")}
                 onCancel={handleCancelReply}
                 placeholder={translate({
-                  id: "comment.placeholder",
+                  id: "placeholder.comment",
                   message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
                 })}
               />
@@ -387,7 +387,7 @@ const Comments = ({ pageId, type }) => {
           loading={isLoading}
           className="comment-list"
           header={`${totalCommentsCount} ${translate({
-            id: "comment.comments",
+            id: "label.comments",
             message: "评论",
           })}`}
           itemLayout="horizontal"

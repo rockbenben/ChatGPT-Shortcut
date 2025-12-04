@@ -83,10 +83,10 @@ const SortableItem = ({ item, isCard, currentLanguage, isFiltered, removeBookmar
               )}
             </div>
             <Space.Compact>
-              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+              <Tooltip title={<Translate id="action.copy">复制</Translate>}>
                 <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopyClick} />
               </Tooltip>
-              <Tooltip title={<Translate>点击移除收藏</Translate>}>
+              <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
                 <Button icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => removeBookmark(item.id, !isCard)} />
               </Tooltip>
             </Space.Compact>
@@ -256,7 +256,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
         <div className={pageStyles.showcaseList}>
           <div className={clsx("card", styles.showcaseCard)}>
             <div className={clsx("card__body")}>
-              <Empty description={<Translate id="message.noFavorites">No favorites yet</Translate>} />
+              <Empty description={<Translate id="message.noFavorites">暂无收藏的提示词</Translate>} />
             </div>
           </div>
         </div>

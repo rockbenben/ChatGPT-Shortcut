@@ -58,7 +58,7 @@ export const SearchCommu = React.memo<SearchCommuProps>(({ commuPrompt }) => {
               <span className={styles.showcaseCardLink}>{commuPrompt.title}</span>
               <span style={{ fontSize: "12px", color: "#999", marginLeft: "6px" }}>@{commuPrompt.owner}</span>
             </div>
-            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+            <Tooltip title={<Translate id="action.copy">复制</Translate>}>
               <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
           </div>

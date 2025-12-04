@@ -29,13 +29,13 @@ const UserBookmark = () => {
     () => [
       {
         key: "myfavor",
-        label: translate({ message: "收藏" }),
+        label: translate({ id: "common.favorites", message: "收藏" }),
         icon: <HeartOutlined />,
         children: !showNoResults && <UserFavorite filteredCommus={filteredCommus} filteredCards={filteredCards} isFiltered={isFiltered} />,
       },
       {
         key: "myprompts",
-        label: translate({ id: "myprompt", message: "我的提示词" }),
+        label: translate({ id: "common.myPrompts", message: "我的提示词" }),
         icon: <EditOutlined />,
         children: !showNoResults && <UserPrompts filteredCommus={filteredCommus} isFiltered={isFiltered} />,
       },

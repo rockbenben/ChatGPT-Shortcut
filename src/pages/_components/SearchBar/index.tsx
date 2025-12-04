@@ -247,8 +247,8 @@ function SearchBar({ setShowUserPrompts = () => {}, setShowUserFavs = () => {}, 
         <Input
           id="searchbar"
           placeholder={translate({
-            message: "Search for prompts...",
-            id: "showcase.searchBar.placeholder",
+            message: "搜索提示词……",
+            id: "input.search.placeholder",
           })}
           value={value ?? undefined}
           onChange={handleInput}

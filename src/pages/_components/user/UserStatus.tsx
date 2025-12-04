@@ -120,9 +120,12 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
       danger: true,
       onClick: () => {
         modal.confirm({
-          title: "Confirm Logout",
-          content: "Click OK to log out.",
+          title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
+          content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
           onOk: handleLogout,
+          okText: <Translate id="button.confirm">确认</Translate>,
+          cancelText: <Translate id="action.cancel">取消</Translate>,
+          centered: true,
         });
       },
     },
@@ -135,7 +138,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
           <Link to="/user/favorite">
             <Button icon={<HeartOutlined />}>
               <span className="hideOnSmallScreen">
-                <Translate id="link.myfavorite">我的收藏</Translate>
+                <Translate id="link.myFavorites">我的收藏</Translate>
               </span>
             </Button>
           </Link>

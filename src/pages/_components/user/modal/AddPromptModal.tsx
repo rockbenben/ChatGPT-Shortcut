@@ -31,7 +31,7 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
 
   return (
     <Modal
-      title={<Translate id="modal.addprompt.title">添加 Prompt</Translate>}
+      title={<Translate id="action.addPrompt">添加 Prompt</Translate>}
       open={open}
       onOk={form.submit}
       onCancel={() => !loading && setOpen(false)}
@@ -39,43 +39,43 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
       maskClosable={false}
       destroyOnHidden
       width={600}
-      okText={<Translate id="button.addPrompt">添加 Prompt</Translate>}
-      cancelText={<Translate id="button.cancel">取消</Translate>}>
+      okText={<Translate id="action.addPrompt">添加 Prompt</Translate>}
+      cancelText={<Translate id="action.cancel">取消</Translate>}>
       <Form form={form} onFinish={handleFormSubmit} layout="vertical" initialValues={{ share: true }} requiredMark="optional">
         <Form.Item
           name="title"
-          label={<Translate id="input.addprompt.title">提示词名称</Translate>}
+          label={<Translate id="label.promptTitle">提示词名称</Translate>}
           rules={[
             {
               required: true,
               message: translate({
-                id: "message.addprompt.requiredTitle",
+                id: "validation.promptTitle.required",
                 message: "请输入提示词标题！",
               }),
             },
           ]}>
           <Input
             placeholder={translate({
-              id: "input.addprompt.title.placeholder",
+              id: "placeholder.promptTitle",
               message: "给你的提示词起个名字",
             })}
           />
         </Form.Item>
         <Form.Item
           name="description"
-          label={<Translate id="input.addprompt.description">提示词内容</Translate>}
+          label={<Translate id="label.promptContent">提示词内容</Translate>}
           rules={[
             {
               required: true,
               message: translate({
-                id: "message.addprompt.requiredDescription",
+                id: "validation.promptContent.required",
                 message: "请输入提示词内容！",
               }),
             },
           ]}>
           <Input.TextArea
             placeholder={translate({
-              id: "input.addprompt.description.placeholder",
+              id: "placeholder.promptContent",
               message: "在此输入详细的提示词内容...",
             })}
             rows={6}
@@ -83,21 +83,23 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
             showCount
           />
         </Form.Item>
-        <Form.Item name="remark" label={<Translate id="input.addprompt.remark">作用/标签</Translate>}>
+        <Form.Item name="remark" label={<Translate id="label.promptTags">作用/标签</Translate>}>
           <Input
             placeholder={translate({
-              id: "input.addprompt.remark.placeholder",
+              id: "placeholder.promptTags",
               message: "简要描述提示词的作用（选填）",
             })}
           />
         </Form.Item>
         <Form.Item
           name="notes"
-          label={<Translate id="input.addprompt.notes">备注说明</Translate>}
-          extra={<Translate id="input.addprompt.notes.extra">您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。</Translate>}>
+          label={<Translate id="label.promptNotes">备注说明</Translate>}
+          extra={
+            <Translate id="label.promptNotes.description">您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。</Translate>
+          }>
           <Input.TextArea
             placeholder={translate({
-              id: "input.addprompt.notes.placeholder",
+              id: "placeholder.promptNotes",
               message: "关于此提示词的额外说明（选填）",
             })}
             rows={3}
@@ -109,7 +111,7 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
               <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} />
             </Form.Item>
             <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
-              <Translate id="message.addprompt.submission">是否愿意将该提示词分享到公开页面？</Translate>
+              <Translate id="label.sharePrompt">是否愿意将该提示词分享到公开页面？</Translate>
             </Typography.Text>
           </div>
         </Form.Item>

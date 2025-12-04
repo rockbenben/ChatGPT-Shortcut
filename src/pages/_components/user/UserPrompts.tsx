@@ -61,13 +61,13 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
               {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
             </div>
             <Space.Compact>
-              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+              <Tooltip title={<Translate id="action.copy">复制</Translate>}>
                 <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={() => copyText(UserPrompt.description)} />
               </Tooltip>
-              <Tooltip title={<Translate id="edit">修改</Translate>}>
+              <Tooltip title={<Translate id="action.edit">修改</Translate>}>
                 <Button icon={<EditOutlined />} onClick={() => handleEditPrompt(UserPrompt)} />
               </Tooltip>
-              <Tooltip title={<Translate id="delete">删除</Translate>}>
+              <Tooltip title={<Translate id="action.delete">删除</Translate>}>
                 <Button icon={<DeleteOutlined style={{ color: "#ff4d4f" }} />} onClick={() => handleDeletePrompt(UserPrompt.id)} />
               </Tooltip>
             </Space.Compact>

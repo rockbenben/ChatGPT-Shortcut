@@ -111,7 +111,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               <Translate id="showcase.filters.title">Filters</Translate>
             </Heading>
             <button onClick={toggleTagsOnMobile} className={clsx("showOnSmallScreen", styles.onToggleButton)}>
-              <MenuOutlined /> {showTagsOnMobile ? <Translate id="hideTags">隐藏标签</Translate> : <Translate id="showTags">显示标签</Translate>}
+              <MenuOutlined /> {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
             </button>
           </div>
           {currentLanguage !== "en" && (
@@ -159,7 +159,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                   <ShowcaseTagSelect
                     tag="myfavorite"
                     label={translate({
-                      id: "link.myfavorite",
+                      id: "link.myFavorites",
                       message: "我的收藏",
                     })}
                     icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
@@ -362,7 +362,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </ul>
             {!showAllOtherUsers && (
               <button className={styles.loadMoreButton} onClick={() => setShowAllOtherUsers(true)}>
-                <ArrowDownOutlined /> <Translate>加载更多</Translate>
+                <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
               </button>
             )}
           </div>

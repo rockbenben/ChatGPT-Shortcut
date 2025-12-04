@@ -69,7 +69,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
               {commuPrompt.title}
             </Title>
             <Space size="small">
-              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
+              <Tooltip title={<Translate id="action.copy">复制</Translate>}>
                 <Button
                   type="text"
                   icon={copied ? <CheckOutlined /> : <CopyOutlined />}
@@ -78,7 +78,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
                   }}
                 />
               </Tooltip>
-              <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
+              <Tooltip title={isBookmarked ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="showcase.tag.favorite.description">收藏</Translate>}>
                 <Button
                   type="text"
                   icon={isBookmarked ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />}
@@ -105,7 +105,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
             </Text>
           </Space>
           <Space.Compact size="small">
-            <Tooltip title={translate({ id: "upvote", message: "赞" })}>
+            <Tooltip title={translate({ id: "action.upvote", message: "赞" })}>
               <Button
                 type={votedUpPromptIds.includes(commuPrompt.id) ? "primary" : "default"}
                 ghost={votedUpPromptIds.includes(commuPrompt.id)}
@@ -120,7 +120,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
                 {votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0}
               </Button>
             </Tooltip>
-            <Tooltip title={translate({ id: "downvote", message: "踩" })}>
+            <Tooltip title={translate({ id: "action.downvote", message: "踩" })}>
               <Button
                 onClick={() => {
                   if (!userAuth) {
@@ -253,7 +253,7 @@ const CommunityPrompts = () => {
                 {userAuth ? (
                   <Link to="/user/favorite" className="interLink">
                     <Button icon={<StarOutlined />}>
-                      <Translate id="link.myfavorite">我的收藏</Translate>
+                      <Translate id="link.myFavorites">我的收藏</Translate>
                     </Button>
                   </Link>
                 ) : (
@@ -325,8 +325,7 @@ const CommunityPrompts = () => {
               <Text type="secondary" style={{ fontSize: "12px", textAlign: "center", maxWidth: 800 }}>
                 {translate({
                   id: "info.communityPrompts",
-                  message:
-                    "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
+                  message: "本页面提示词由网友分享上传。我们不对内容的准确性、质量或完整性做出保证，也不承担因内容引发的法律责任。如发现侵权或其他问题，请联系我们处理。",
                 })}
               </Text>
             </div>

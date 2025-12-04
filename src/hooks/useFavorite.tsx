@@ -49,11 +49,11 @@ export const useFavorite = (): UseFavoriteReturn => {
           }
         }
 
-        message.success("Added to favorites successfully!");
+        message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
         await updateFavorites(userLoves, favoriteId, isComm);
       } catch (err) {
         console.error(err);
-        message.error("Failed to add to favorites.");
+        message.error(<Translate id="message.addFavorite.error">收藏失败，请稍后重试</Translate>);
       }
     },
     [userAuth, message, updateFavorites]
@@ -68,7 +68,7 @@ export const useFavorite = (): UseFavoriteReturn => {
         const index = userLoves.indexOf(id);
         if (index > -1) {
           userLoves.splice(index, 1);
-          message.success("Removed from favorites successfully!");
+          message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
 
           if (isComm) {
             localStorage.removeItem(`commus_${id}`);
@@ -78,7 +78,7 @@ export const useFavorite = (): UseFavoriteReturn => {
         }
       } catch (err) {
         console.error(err);
-        message.error("Failed to remove from favorites.");
+        message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
       }
     },
     [userAuth, message, updateFavorites]
@@ -87,13 +87,13 @@ export const useFavorite = (): UseFavoriteReturn => {
   const confirmRemoveFavorite = useCallback(
     (id: number, isComm: boolean = false) => {
       modal.confirm({
-        title: <Translate id="message.removeFavorite.confirm.title">确认移除</Translate>,
-        content: <Translate id="message.removeFavorite.confirm.content">您确定要从收藏中移除该提示词吗？</Translate>,
+        title: <Translate id="message.removeFavorite.confirm.title">取消收藏</Translate>,
+        content: <Translate id="message.removeFavorite.confirm.content">确定要取消收藏这个提示词吗？</Translate>,
         onOk: async () => {
           await removeFavorite(id, isComm);
         },
         okText: <Translate id="button.confirm">确认</Translate>,
-        cancelText: <Translate id="button.cancel">取消</Translate>,
+        cancelText: <Translate id="action.cancel">取消</Translate>,
         centered: true,
       });
     },

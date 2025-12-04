@@ -88,7 +88,7 @@ function PromptPage({ prompt }) {
                       onClick={() => {
                         updateCopy(prompt[currentLanguage].prompt, prompt.id);
                       }}>
-                      {copied ? <Translate id="theme.CodeBlock.copied">已复制</Translate> : <Translate id="theme.CodeBlock.copy">复制</Translate>}
+                      {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
                     </Button>
                     {website && (
                       <Link to={website} target="_blank" rel="noopener noreferrer">
@@ -112,7 +112,7 @@ function PromptPage({ prompt }) {
                     borderLeft: `3px solid ${token.colorPrimary}`,
                   }}>
                   {canToggle ? (
-                    <Tooltip title={<Translate id="tooltip.switchLang">点击切换显示语言</Translate>}>
+                    <Tooltip title={<Translate id="tooltip.switchLanguage">点击切换显示语言</Translate>}>
                       <Paragraph
                         onClick={handleParagraphClick}
                         style={{
@@ -132,7 +132,7 @@ function PromptPage({ prompt }) {
                 {/* 底部：社交分享与提示 */}
                 <Flex justify="space-between" align="center" wrap="wrap" gap="small" className="hideOnSmallScreen" style={{ marginTop: token.marginXS }}>
                   <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                    <Translate id="comments.info">请在下方回复您对本提示词的意见、想法或分享。</Translate>
+                    <Translate id="label.commentInfo">请在下方回复您对本提示词的意见、想法或分享。</Translate>
                   </Text>
                   <Suspense fallback={null}>
                     <div className="social-buttons-grayscale">
