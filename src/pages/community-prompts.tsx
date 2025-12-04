@@ -1,68 +1,40 @@
 import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
-import clsx from "clsx";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import styles from "@site/src/pages/styles.module.css";
 import Link from "@docusaurus/Link";
+import { useLocation } from "@docusaurus/router";
+import SearchBar from "@site/src/pages/_components/SearchBar";
+import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, Pagination, Dropdown, Space, Button, Input, Skeleton, App } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined, UserOutlined } from "@ant-design/icons";
+import { Modal, Typography, Tooltip, Pagination, Space, Button, App, Card, Flex, Segmented, FloatButton } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined, UserOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import { CommuPagePrompt, styles as cardStyles } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
+import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
-const { Search } = Input;
-const { Text } = Typography;
+const { Text, Title } = Typography;
 
 const pageSize = 12;
-const SkeletonCard = React.memo(() => (
-  <li className="card shadow--md">
-    <div
-      className={clsx("card__body")}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "100%",
-        minHeight: "300px",
-      }}>
-      <div>
-        <Skeleton.Input active style={{ width: "75%", height: "20px", marginBottom: "8px" }} />
-        <Skeleton.Input active style={{ width: "30%", height: "14px", marginBottom: "12px" }} />
-        <Skeleton active title={false} paragraph={{ rows: 3, width: ["100%", "90%", "70%"] }} />
-      </div>
-      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <Skeleton.Button active size="small" />
-          <Skeleton.Button active size="small" />
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <Skeleton.Button active size="small" />
-          <Skeleton.Button active size="small" />
-        </div>
-      </div>
-    </div>
-  </li>
-));
 
 // 性能优化的骨架屏列表 - 使用预生成的静态数组
 const SkeletonList = React.memo(({ count = pageSize }: { count?: number }) => {
   return (
     <>
       {Array.from({ length: count }, (_, index) => (
-        <SkeletonCard key={index} />
+        <Card key={index} className={styles.promptCard} loading />
       ))}
     </>
   );
 });
 
 // 预生成常用数量的骨架屏，避免运行时计算
-const SKELETON_12 = Array.from({ length: 12 }, (_, index) => <SkeletonCard key={index} />);
+const SKELETON_12 = Array.from({ length: 12 }, (_, index) => <Card key={index} className={styles.promptCard} loading />);
 
 interface PromptCardProps {
   commuPrompt: {
@@ -88,16 +60,17 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
   const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
 
   return (
-    <li className="card shadow--md">
-      <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-        <div>
-          <div className={clsx(cardStyles.showcaseCardHeader)}>
-            <div className={`${cardStyles.showcaseCardTitle} ${cardStyles.shortEllipsis}`}>
-              <span className={cardStyles.showcaseCardLink}>{commuPrompt.title}</span>
-            </div>
-            <Space.Compact>
+    <Card hoverable className={styles.promptCard}>
+      <Flex vertical justify="space-between" style={{ height: "100%" }}>
+        <Flex vertical gap="small" style={{ flex: 1 }}>
+          <Flex justify="space-between" align="start">
+            <Title level={5} ellipsis={{ rows: 1 }} style={{ margin: 0, flex: 1, paddingRight: 8 }}>
+              {commuPrompt.title}
+            </Title>
+            <Space size="small">
               <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
                 <Button
+                  type="text"
                   icon={copied ? <CheckOutlined /> : <CopyOutlined />}
                   onClick={() => {
                     copyText(commuPrompt.description);
@@ -106,6 +79,7 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
               </Tooltip>
               <Tooltip title={isBookmarked ? <Translate>点击移除收藏</Translate> : translate({ message: "收藏" })}>
                 <Button
+                  type="text"
                   icon={isBookmarked ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />}
                   onClick={() => {
                     if (!userAuth) {
@@ -116,18 +90,24 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
                   }}
                 />
               </Tooltip>
-            </Space.Compact>
-          </div>
+            </Space>
+          </Flex>
+
           <CommuPagePrompt commuPrompt={commuPrompt} />
-        </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6, color: "var(--ifm-color-emphasis-600)", fontSize: "0.9rem" }}>
+        </Flex>
+
+        <Flex justify="space-between" align="center" style={{ marginTop: 16, paddingTop: 12, borderTop: "1px solid var(--ifm-color-emphasis-200)" }}>
+          <Space size={4} style={{ color: "var(--ifm-color-emphasis-600)", fontSize: "0.85rem" }}>
             <UserOutlined />
-            <span>{commuPrompt.owner}</span>
-          </div>
-          <Space.Compact>
+            <Text type="secondary" style={{ maxWidth: 80 }} ellipsis>
+              {commuPrompt.owner}
+            </Text>
+          </Space>
+          <Space.Compact size="small">
             <Tooltip title={translate({ id: "upvote", message: "赞" })}>
               <Button
+                type={votedUpPromptIds.includes(commuPrompt.id) ? "primary" : "default"}
+                ghost={votedUpPromptIds.includes(commuPrompt.id)}
                 onClick={() => {
                   if (!userAuth) {
                     messageApi.warning("Please log in to vote.");
@@ -153,15 +133,16 @@ const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote,
               </Button>
             </Tooltip>
           </Space.Compact>
-        </div>
-      </div>
-    </li>
+        </Flex>
+      </Flex>
+    </Card>
   );
 });
 
 const CommunityPrompts = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
@@ -179,6 +160,15 @@ const CommunityPrompts = () => {
   }, []);
 
   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const name = params.get("name");
+    if (name !== searchTerm) {
+      setSearchTerm(name || "");
+      setCurrentPage(1);
+    }
+  }, [location.search]);
+
+  useEffect(() => {
     setLoading(true);
     fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
   }, [currentPage, sortField, sortOrder, searchTerm]);
@@ -191,9 +181,6 @@ const CommunityPrompts = () => {
           setUserPrompts(result[0]);
           setTotal(result[1].data.meta.pagination.total);
         } else if (result && result[0].length === 0) {
-          if (searchTerm) {
-            messageApi.info("No results found for your search.");
-          }
           setUserPrompts([]);
           setTotal(0);
         }
@@ -207,18 +194,14 @@ const CommunityPrompts = () => {
     [messageApi]
   );
 
-  const onSearch = useCallback(
-    (value) => {
-      if (!userAuth) {
-        setOpen(true);
-        messageApi.warning("Please log in to search.");
-        return;
-      }
-      setSearchTerm(value);
-      setCurrentPage(1);
-    },
-    [userAuth, messageApi]
-  );
+  const handleBeforeSearch = useCallback(() => {
+    if (!userAuth) {
+      setOpen(true);
+      messageApi.warning("Please log in to search.");
+      return false;
+    }
+    return true;
+  }, [userAuth, messageApi]);
 
   const vote = useCallback(
     async (promptId, action) => {
@@ -277,80 +260,67 @@ const CommunityPrompts = () => {
     setCurrentPage(page);
   }, []);
 
-  const handleFieldClick = useCallback((e) => {
-    setCurrentPage(1);
-    setSortField(e.key);
-  }, []);
-
-  const handleOrderClick = useCallback((e) => {
-    setCurrentPage(1);
-    setSortOrder(e.key);
-  }, []);
-
-  const fieldMenuProps = {
-    items: [
-      {
-        label: translate({ id: "field.id", message: "发布时间" }),
-        key: "id",
-      },
-      {
-        label: translate({ id: "field.upvoteDifference", message: "投票支持" }),
-        key: "upvoteDifference",
-      },
-    ],
-    onClick: handleFieldClick,
-  };
-
-  const orderMenuProps = {
-    items: [
-      {
-        label: translate({ id: "order.ascending", message: "升序" }),
-        key: "asc",
-      },
-      {
-        label: translate({ id: "order.descending", message: "降序" }),
-        key: "desc",
-      },
-    ],
-    onClick: handleOrderClick,
-  };
-
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">
           <div className="container padding-vert--md">
-            <Space wrap style={{ marginBottom: "20px" }}>
-              <Link to="/" className="interLink">
-                <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
-              </Link>
-              {userAuth ? (
-                <Link to="/user/favorite" className="interLink">
-                  <StarOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
+            <Flex wrap="wrap" gap="middle" justify="space-between" align="center" style={{ marginBottom: 16 }}>
+              <Space>
+                <Link to="/" className="interLink">
+                  <Button icon={<HomeOutlined />}>
+                    <Translate id="link.home">返回首页</Translate>
+                  </Button>
                 </Link>
-              ) : (
-                <Button onClick={() => setOpen(true)}>
-                  <LoginOutlined /> <Translate id="button.login">登录</Translate>
-                </Button>
-              )}
-              <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
-                {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
-              </Dropdown.Button>
-              <Dropdown.Button icon={<DownOutlined />} menu={orderMenuProps}>
-                {sortOrder === "asc" ? <Translate id="order.ascending">升序</Translate> : <Translate id="order.descending">降序</Translate>}
-              </Dropdown.Button>
-              <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
-            </Space>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
-              {loading ? (
-                // 使用预生成的骨架屏，性能最优
-                pageSize === 12 ? (
-                  SKELETON_12
+                {userAuth ? (
+                  <Link to="/user/favorite" className="interLink">
+                    <Button icon={<StarOutlined />}>
+                      <Translate id="link.myfavorite">我的收藏</Translate>
+                    </Button>
+                  </Link>
                 ) : (
-                  <SkeletonList count={pageSize} />
-                )
-              ) : (
-                userprompts.map((commuPrompt) => (
+                  <Button icon={<LoginOutlined />} onClick={() => setOpen(true)}>
+                    <Translate id="button.login">登录</Translate>
+                  </Button>
+                )}
+              </Space>
+
+              <Flex gap="small" align="center" wrap="wrap">
+                <Segmented
+                  options={[
+                    { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },
+                    { label: translate({ id: "field.upvoteDifference", message: "支持度" }), value: "upvoteDifference", icon: <FireOutlined /> },
+                  ]}
+                  value={sortField}
+                  onChange={(value) => {
+                    setSortField(value as string);
+                    setCurrentPage(1);
+                  }}
+                />
+                <Segmented
+                  options={[
+                    { label: translate({ id: "order.descending", message: "降序" }), value: "desc", icon: <DownOutlined /> },
+                    { label: translate({ id: "order.ascending", message: "升序" }), value: "asc", icon: <UpOutlined /> },
+                  ]}
+                  value={sortOrder}
+                  onChange={(value) => {
+                    setSortOrder(value as string);
+                    setCurrentPage(1);
+                  }}
+                />
+                <SearchBar beforeSearch={handleBeforeSearch} />
+              </Flex>
+            </Flex>
+
+            {loading ? (
+              <div className={styles.showcaseList}>{pageSize === 12 ? SKELETON_12 : <SkeletonList count={pageSize} />}</div>
+            ) : userprompts.length === 0 ? (
+              <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
+                <NoResults />
+              </Flex>
+            ) : (
+              <div className={styles.showcaseList}>
+                {userprompts.map((commuPrompt) => (
                   <PromptCard
                     key={commuPrompt.id}
                     commuPrompt={commuPrompt}
@@ -361,17 +331,20 @@ const CommunityPrompts = () => {
                     userAuth={userAuth}
                     messageApi={messageApi}
                   />
-                ))
-              )}
-            </ul>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+                ))}
+              </div>
+            )}
+
+            <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
               <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
             </div>
+
             <Suspense fallback={null}>
               <AdComponent type="transverse" />
             </Suspense>
+
             <div style={{ display: "flex", justifyContent: "center", marginTop: 16, marginBottom: -24 }}>
-              <Text style={{ color: "var(--ifm-color-secondary-darker)", fontSize: "10px" }}>
+              <Text type="secondary" style={{ fontSize: "12px", textAlign: "center", maxWidth: 800 }}>
                 {translate({
                   id: "info.communityPrompts",
                   message:
@@ -379,12 +352,14 @@ const CommunityPrompts = () => {
                 })}
               </Text>
             </div>
+
             <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
               <LoginComponent />
             </Modal>
             <Suspense fallback={null}>
               <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
             </Suspense>
+            <FloatButton.BackTop />
           </div>
         </section>
       </main>

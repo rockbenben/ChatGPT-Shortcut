@@ -133,6 +133,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+  padding: 0;
+  list-style: none;
 }
 
 .showcaseFavorite {
@@ -226,4 +228,26 @@
 .loadMoreButton:active {
   transform: translateY(0);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Prompt Card Styles */
+.promptCard {
+  height: 100%;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+  background: var(--ifm-card-background-color) !important;
+}
+
+.promptCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+.promptCard :global(.ant-card-body) {
+  padding: 16px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }

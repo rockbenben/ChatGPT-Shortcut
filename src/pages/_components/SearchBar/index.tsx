@@ -184,7 +184,7 @@ const searchBarTheme = {
   components: {
     Input: {
       borderRadius: 20,
-      controlHeight: 40,
+      controlHeight: 32,
       colorBorder: "transparent",
       activeBorderColor: "transparent",
       hoverBorderColor: "var(--ifm-color-emphasis-300)",
@@ -198,7 +198,13 @@ const searchBarTheme = {
   },
 };
 
-function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFavs = (value: boolean) => {} }) {
+interface SearchBarProps {
+  setShowUserPrompts?: (value: boolean) => void;
+  setShowUserFavs?: (value: boolean) => void;
+  beforeSearch?: (value: string | null) => boolean | void;
+}
+
+function SearchBar({ setShowUserPrompts = () => {}, setShowUserFavs = () => {}, beforeSearch }: SearchBarProps) {
   const history = useHistory();
   const location = useLocation();
   const [value, setValue] = useState<string | null>(null);
@@ -208,6 +214,9 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
   }, [location]);
 
   const handleSearch = useCallback(() => {
+    if (beforeSearch && beforeSearch(value) === false) {
+      return;
+    }
     const newSearch = new URLSearchParams(location.search);
     newSearch.delete(SearchNameQueryKey);
     if (value) {
@@ -220,7 +229,7 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
     });
     setShowUserPrompts(false);
     setShowUserFavs(false);
-  }, [value, location, history]);
+  }, [value, location, history, beforeSearch]);
 
   useEffect(() => {
     if (value === "") {
