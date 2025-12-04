@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { Button, Spin, Tooltip, Tag, App, Space, Empty } from "antd";
 import { CopyOutlined, DeleteOutlined, EditOutlined, CheckOutlined, DownOutlined, LockOutlined } from "@ant-design/icons";
@@ -61,7 +61,7 @@ const SortablePromptItem = ({ UserPrompt, isFiltered, handleDeletePrompt, handle
               {UserPrompt.share === false && <Tag color="blue" icon={<LockOutlined />} />}
             </div>
             <Space.Compact>
-              <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+              <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
                 <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={() => copyText(UserPrompt.description)} />
               </Tooltip>
               <Tooltip title={<Translate id="edit">修改</Translate>}>
@@ -129,12 +129,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false }) {
       } catch (error) {
         console.error("Failed to fetch prompts:", error);
         if (isMounted) {
-          messageApi.error(
-            translate({
-              id: "message.fetchError",
-              message: "获取提示词失败，请稍后重试",
-            })
-          );
+          messageApi.error(<Translate id="message.fetchError">获取提示词失败，请稍后重试</Translate>);
         }
       } finally {
         if (isMounted) {

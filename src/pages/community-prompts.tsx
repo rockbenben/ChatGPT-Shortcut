@@ -7,7 +7,7 @@ import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/pages/_components/SearchBar";
 import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
-import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
+import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";

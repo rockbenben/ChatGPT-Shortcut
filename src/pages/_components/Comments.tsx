@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { translate } from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import { List, Avatar, Button, Form, Modal, Pagination, theme } from "antd";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/pages/_components/CommentComponent";
@@ -326,7 +326,7 @@ const Comments = ({ pageId, type }) => {
         key={comment.id}
         actions={[
           <Button key="comment-basic-reply-to" type="text" size="small" onClick={() => setReplyingTo(comment.id)}>
-            {translate({ id: "comment.reply", message: "回复" })}
+            <Translate id="comment.reply">回复</Translate>
           </Button>,
         ]}
         author={comment.author?.name}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input, Button, theme } from "antd";
 import { SmileOutlined, GifOutlined, SendOutlined } from "@ant-design/icons";
-import { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 
 interface CommentEditorProps {
   value?: string;
@@ -65,16 +65,16 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
         <div style={{ display: "flex", gap: token.marginXS }}>
           {onCancel && (
             <Button onClick={onCancel} size="small" disabled={submitting}>
-              {translate({ id: "cancel", message: "取消" })}
+              <Translate id="cancel">取消</Translate>
             </Button>
           )}
           {isLoggedIn ? (
             <Button type="primary" size="small" icon={<SendOutlined />} onClick={onSubmit} loading={submitting}>
-              {onCancel ? translate({ id: "reply.submit", message: "回复" }) : translate({ id: "comment.add", message: "提交评论" })}
+              {onCancel ? <Translate id="reply.submit">回复</Translate> : <Translate id="comment.add">提交评论</Translate>}
             </Button>
           ) : (
             <Button onClick={onLogin} type="primary" size="small">
-              {translate({ id: "button.login", message: "登录" })}
+              <Translate id="button.login">登录</Translate>
             </Button>
           )}
         </div>

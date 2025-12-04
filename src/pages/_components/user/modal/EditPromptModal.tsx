@@ -31,10 +31,7 @@ const EditPromptModal: React.FC<EditPromptModalProps> = ({ open, setOpen, onFini
 
   return (
     <Modal
-      title={translate({
-        id: "modal.updateprompt.title",
-        message: "更新当前 Prompt",
-      })}
+      title={<Translate id="modal.updateprompt.title">更新当前 Prompt</Translate>}
       open={open}
       footer={null}
       maskClosable={false}

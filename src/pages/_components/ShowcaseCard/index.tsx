@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useCallback, useMemo } from "re
 import clsx from "clsx";
 import { message, Tooltip, Button, Space, App } from "antd";
 import Link from "@docusaurus/Link";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireFilled } from "@ant-design/icons";
@@ -109,11 +109,11 @@ const ShowcaseCard = ({ user, isDescription, copyCount }) => {
             </span>
           </div>
           <Space.Compact>
-            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
+            <Tooltip title={<Translate id="theme.CodeBlock.copy">复制</Translate>}>
               <Button icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} />
             </Tooltip>
             {userAuth && (
-              <Tooltip title={isFavorite ? <Translate id="showcase.removeFavorite">点击移除收藏</Translate> : translate({ message: "收藏" })}>
+              <Tooltip title={isFavorite ? <Translate id="showcase.removeFavorite">点击移除收藏</Translate> : <Translate>收藏</Translate>}>
                 <Button icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} />
               </Tooltip>
             )}

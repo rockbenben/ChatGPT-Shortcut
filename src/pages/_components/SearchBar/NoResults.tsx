@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Empty, Spin } from "antd";
-import { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 
 // NoResults 组件：先显示 "Searching..." 150ms，再显示真正的“无结果”提示，防止瞬间搜索完成时的闪烁
 export const NoResults: React.FC = () => {
@@ -19,5 +19,5 @@ export const NoResults: React.FC = () => {
     );
   }
 
-  return <Empty description={translate({ id: "showcase.usersList.noResult", message: "找不到相关结果，请尝试缩短搜索词" })} />;
+  return <Empty description={<Translate id="showcase.usersList.noResult">找不到相关结果，请尝试缩短搜索词</Translate>} />;
 };

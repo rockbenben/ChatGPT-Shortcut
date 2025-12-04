@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Form, Input, Button, Modal, Typography, Switch } from "antd";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 
 interface AddPromptModalProps {
@@ -30,10 +31,7 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
 
   return (
     <Modal
-      title={translate({
-        id: "modal.addprompt.title",
-        message: "添加 Prompt（本内容将出现在「我的提示词」标签中）",
-      })}
+      title={<Translate id="modal.addprompt.title">添加 Prompt（本内容将出现在「我的提示词」标签中）</Translate>}
       open={open}
       footer={null}
       maskClosable={false}
@@ -104,14 +102,8 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
               onChange={(checked) => {
                 form.setFieldsValue({ share: checked });
               }}
-              checkedChildren={translate({
-                id: "input.addprompt.share.checked",
-                message: "是",
-              })}
-              unCheckedChildren={translate({
-                id: "input.addprompt.share.unchecked",
-                message: "否",
-              })}
+              checkedChildren={<CheckOutlined />}
+              unCheckedChildren={<CloseOutlined />}
             />
             <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
               <Translate id="message.addprompt.submission">您是否愿意将该提示词分享到公开页面？</Translate>
