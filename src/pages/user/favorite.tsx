@@ -10,7 +10,8 @@ import styles from "@site/src/pages/styles.module.css";
 import UserStatus from "../_components/user/UserStatus";
 import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
-import SearchBar, { NoResults, useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
+import SearchBar, { useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
+import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 import { AuthProvider } from "../_components/AuthContext";
 
 const UserBookmark = () => {

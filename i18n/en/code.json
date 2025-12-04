@@ -153,7 +153,7 @@
     "message": "Search for prompts..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 No result, please refine your search term."
+    "message": "No results found, please try a shorter search term."
   },
   "showcase.favoritesList.title": {
     "message": "Favorites"

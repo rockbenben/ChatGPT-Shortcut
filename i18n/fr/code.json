@@ -47,7 +47,7 @@
     "message": "Recherche de messages..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 Aucun résultat n'a été trouvé, veuillez raccourcir le terme de la recherche"
+    "message": "Aucun résultat n'a été trouvé, veuillez raccourcir le terme de la recherche"
   },
   "showcase.favoritesList.title": {
     "message": "Nos favoris"

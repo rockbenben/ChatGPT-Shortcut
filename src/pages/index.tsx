@@ -18,7 +18,8 @@ import ShowcaseCard from "@site/src/pages/_components/ShowcaseCard";
 import UserStatus from "@site/src/pages/_components/user/UserStatus";
 import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
 import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
-import SearchBar, { NoResults, useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
+import SearchBar, { useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
+import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
 import { SearchCommu } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";

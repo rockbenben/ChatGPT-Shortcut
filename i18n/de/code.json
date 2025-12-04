@@ -47,7 +47,7 @@
     "message": "Suche nach Prompts..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 Keine Ergebnisse gefunden, bitte Suchbegriff verkürzen"
+    "message": "Keine Ergebnisse gefunden, bitte Suchbegriff verkürzen"
   },
   "showcase.favoritesList.title": {
     "message": "Unsere Favoriten"

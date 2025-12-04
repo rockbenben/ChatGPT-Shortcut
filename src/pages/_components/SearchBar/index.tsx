@@ -1,12 +1,11 @@
-import React, { useContext, useState, useEffect, useCallback, useRef, startTransition } from "react";
+import React, { useContext, useState, useEffect, useCallback, startTransition } from "react";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory, useLocation } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
-import Heading from "@theme/Heading";
 
-import { Input, Button, InputRef } from "antd";
+import { Input, Button, ConfigProvider } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/pages/_components/AuthContext";
@@ -37,21 +36,6 @@ const SearchNameQueryKey = "name";
 function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
-
-// NoResults 组件：先显示 "Searching..." 150ms，再显示真正的“无结果”提示，防止瞬间搜索完成时的闪烁
-export const NoResults: React.FC = () => {
-  const [showNoResult, setShowNoResult] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => setShowNoResult(true), 150);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <Heading as="h2" className="text--center">
-      {showNoResult ? translate({ id: "showcase.usersList.noResult", message: "😒 找不到结果，请缩短搜索词" }) : "Searching..."}
-    </Heading>
-  );
-};
 
 export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompts" = "default") {
   const location = useLocation<UserState>();
@@ -196,25 +180,31 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
   return { filteredCommus, filteredCards, isFiltered };
 }
 
+const searchBarTheme = {
+  components: {
+    Input: {
+      borderRadius: 20,
+      controlHeight: 40,
+      colorBorder: "transparent",
+      activeBorderColor: "transparent",
+      hoverBorderColor: "var(--ifm-color-emphasis-300)",
+      activeShadow: "0 0 0 2px var(--ifm-color-primary-lighter)",
+      colorBgContainer: "var(--site-color-background)",
+    },
+    Button: {
+      colorText: "var(--ifm-color-emphasis-600)",
+      colorPrimaryHover: "var(--ifm-color-primary)",
+    },
+  },
+};
+
 function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFavs = (value: boolean) => {} }) {
   const history = useHistory();
   const location = useLocation();
-  const searchRef = useRef<InputRef>(null);
   const [value, setValue] = useState<string | null>(null);
-
-  const isMobile = useCallback(() => {
-    if (ExecutionEnvironment.canUseDOM) {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-    return false; // 默认为非移动设备。避免在 SSR 时报错
-  }, []);
 
   useEffect(() => {
     setValue(readSearchName(location.search));
-    // 只在非移动设备上自动获取焦点
-    if (!isMobile() && searchRef.current?.input) {
-      searchRef.current.input.focus();
-    }
   }, [location]);
 
   const handleSearch = useCallback(() => {
@@ -244,20 +234,20 @@ function SearchBar({ setShowUserPrompts = (value: boolean) => {}, setShowUserFav
 
   return (
     <div className={styles.searchContainer}>
-      <Input
-        ref={searchRef}
-        id="searchbar"
-        placeholder={translate({
-          message: "Search for prompts...",
-          id: "showcase.searchBar.placeholder",
-        })}
-        value={value ?? undefined}
-        onChange={handleInput}
-        onPressEnter={handleSearch}
-        allowClear
-        autoFocus={!isMobile()}
-        suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="primary" />}
-      />
+      <ConfigProvider theme={searchBarTheme}>
+        <Input
+          id="searchbar"
+          placeholder={translate({
+            message: "Search for prompts...",
+            id: "showcase.searchBar.placeholder",
+          })}
+          value={value ?? undefined}
+          onChange={handleInput}
+          onPressEnter={handleSearch}
+          allowClear
+          suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />}
+        />
+      </ConfigProvider>
     </div>
   );
 }

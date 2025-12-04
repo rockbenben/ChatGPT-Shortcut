@@ -47,7 +47,7 @@
     "message": "Buscar indicaciones..."
   },
   "showcase.usersList.noResult": {
-    "message": "😒 No se han encontrado resultados, acorta el término de búsqueda"
+    "message": "No se han encontrado resultados, acorta el término de búsqueda"
   },
   "showcase.favoritesList.title": {
     "message": "Nuestros favoritos"
