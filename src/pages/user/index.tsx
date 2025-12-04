@@ -114,15 +114,15 @@ const UserProfile = () => {
       <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
-            <Space direction="vertical" size="large" style={{ width: "100%" }}>
+            <Space orientation="vertical" size="large" style={{ width: "100%" }}>
               {/* Header Navigation */}
-              <Card bordered={false} bodyStyle={{ padding: "16px 24px" }}>
-                <Space split={<Divider type="vertical" />}>
+              <Card variant="borderless" styles={{ body: { padding: "16px 24px" } }}>
+                <Space separator={<Divider orientation="vertical" />}>
                   <Link to="/" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
                     <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
                   </Link>
                   <Link to="/user/favorite" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
-                    <HeartOutlined /> <Translate id="link.user">个人中心</Translate>
+                    <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
                   </Link>
                 </Space>
               </Card>
@@ -131,7 +131,7 @@ const UserProfile = () => {
                 {/* Left Column: Profile Info */}
                 <Col xs={24} md={10}>
                   <Card
-                    bordered={false}
+                    variant="borderless"
                     title={
                       <Space>
                         <UserOutlined style={{ color: token.colorPrimary }} />
@@ -176,7 +176,7 @@ const UserProfile = () => {
                 {/* Right Column: Security Settings */}
                 <Col xs={24} md={14}>
                   <Card
-                    bordered={false}
+                    variant="borderless"
                     title={
                       <Space>
                         <SafetyCertificateOutlined style={{ color: token.colorPrimary }} />

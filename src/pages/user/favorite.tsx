@@ -49,7 +49,7 @@ const UserBookmark = () => {
         <div className="container">
           <Flex vertical gap="middle">
             {/* Top Actions */}
-            <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            <div className={clsx("text--center", styles.heroSection)}>
               <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
             </div>
 

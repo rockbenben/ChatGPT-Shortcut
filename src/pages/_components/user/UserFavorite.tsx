@@ -9,7 +9,7 @@ import { ShowcaseRemark } from "@site/src/pages/_components/ShowcaseCard/Showcas
 import styles from "@site/src/pages/_components/ShowcaseCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
 import { Button, Spin, Tooltip, Space, App } from "antd";
-import { CheckOutlined, CopyOutlined, DownOutlined, StarFilled, StarOutlined, LinkOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, DownOutlined, StarFilled, LinkOutlined } from "@ant-design/icons";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";

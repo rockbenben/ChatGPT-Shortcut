@@ -1,8 +1,8 @@
 import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
-import { Form, Input, Button, Modal, Typography, Switch, Spin, Tooltip, Space, App } from "antd";
-import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Modal, Typography, Switch, Spin, Space, App, Dropdown } from "antd";
+import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate, { translate } from "@docusaurus/Translate";
 import { submitPrompt, clearUserAllInfoCache, getPrompts } from "@site/src/api";
@@ -204,69 +204,86 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     window.location.reload();
   }, [setUserAuth]);
 
+  const menuItems = [
+    {
+      key: "account",
+      label: (
+        <Link to="/user">
+          <Translate id="link.myaccount">账号设置</Translate>
+        </Link>
+      ),
+      icon: <UserOutlined />,
+    },
+    !hideLinks.userCenter && {
+      key: "export",
+      label: <Translate id="button.exportPrompts">导出提示词</Translate>,
+      icon: <DownloadOutlined />,
+      onClick: handleExportPrompts,
+    },
+    {
+      key: "clearCache",
+      label: <Translate id="button.clearCache">清除缓存</Translate>,
+      icon: <ClearOutlined />,
+      onClick: handleClearCache,
+    },
+    {
+      type: "divider" as const,
+    },
+    {
+      key: "logout",
+      label: <Translate id="button.logout">退出登录</Translate>,
+      icon: <LogoutOutlined />,
+      danger: true,
+      onClick: () => {
+        modal.confirm({
+          title: "Confirm Logout",
+          content: "Click OK to log out.",
+          onOk: handleLogout,
+        });
+      },
+    },
+  ].filter(Boolean);
+
   const loggedInButtons = useMemo(
     () => (
       <Space wrap size="small">
-        {!hideLinks.userCenter && (
-          <Link to="/user">
-            <Button icon={<UserOutlined />}>
-              <Translate id="link.myaccount">账号设置</Translate>
-            </Button>
-          </Link>
-        )}
         {!hideLinks.myFavorite && (
           <Link to="/user/favorite">
-            <Button icon={<HeartOutlined />} className="hideOnSmallScreen">
-              <Translate id="link.user">个人中心</Translate>
+            <Button icon={<HeartOutlined />}>
+              <span className="hideOnSmallScreen">
+                <Translate id="link.myfavorite">我的收藏</Translate>
+              </span>
             </Button>
           </Link>
         )}
         <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
-          <Translate id="link.addprompt">添加提示词</Translate>
-        </Button>
-        {!hideLinks.userCenter && (
-          <Tooltip title={<Translate id="tooltip.exportPrompts">导出您创建的所有提示词到 JSON 文件</Translate>}>
-            <Button icon={<DownloadOutlined />} onClick={handleExportPrompts}>
-              <span className="hideOnSmallScreen">
-                <Translate id="button.exportPrompts">导出提示词</Translate>
-              </span>
-            </Button>
-          </Tooltip>
-        )}
-        <Tooltip title={<Translate id="tooltip.clearCache">若您在其他设备更新了收藏或提示词，点击清除缓存以同步最新内容。</Translate>}>
-          <Button icon={<ClearOutlined />} onClick={handleClearCache}>
-            <span className="hideOnSmallScreen">
-              <Translate id="button.clearCache">清除缓存</Translate>
-            </span>
-          </Button>
-        </Tooltip>
-        <Button
-          icon={<LogoutOutlined />}
-          onClick={() => {
-            modal.confirm({
-              title: "Confirm Logout",
-              content: "Click OK to log out.",
-              onOk: handleLogout,
-            });
-          }}>
           <span className="hideOnSmallScreen">
-            <Translate id="button.logout">退出登录</Translate>
+            <Translate id="link.addprompt">添加提示词</Translate>
           </span>
         </Button>
+        <Dropdown menu={{ items: menuItems }} placement="bottomRight">
+          <Button icon={<SettingOutlined />}>
+            <span className="hideOnSmallScreen">
+              <Translate id="button.settings">设置</Translate>
+            </span>
+          </Button>
+        </Dropdown>
       </Space>
     ),
-    [hideLinks, handleClearCache, handleLogout]
+    [hideLinks, handleClearCache, handleLogout, handleExportPrompts, menuItems]
   );
 
   const loggedOutButtons = useMemo(
     () => (
-      <Space wrap size="small">
-        <Button type="primary" onClick={() => setOpen(true)}>
+      <Space wrap size="middle">
+        <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
           <Translate id="button.login">登录</Translate>
         </Button>
         <Link to="/community-prompts">
           <Button icon={<LikeFilled />}>
-            <Translate id="showcase.header.button">分享你的提示词</Translate>
+            <span className="hideOnSmallScreen">
+              <Translate id="showcase.header.button">分享你的提示词</Translate>
+            </span>
           </Button>
         </Link>
       </Space>
