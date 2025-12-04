@@ -160,6 +160,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
   const [comms, setComms] = useState([]);
   const [hasDragged, setHasDragged] = useState(false);
   const [activeId, setActiveId] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // Configure dnd-kit sensors
   const sensors = useSensors(
@@ -175,6 +176,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     const commLoves = userAuth.data?.favorites?.commLoves || [];
     const fetchPrompts = async () => {
       try {
+        setLoading(true);
         if (isFiltered) {
           setComms(filteredCommus);
           setCards(filteredCards);
@@ -186,6 +188,8 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
         }
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchPrompts();
@@ -246,7 +250,7 @@ function UserFavorite({ filteredCommus = [], filteredCards = [], isFiltered = fa
     }
   }, [comms, cards]);
 
-  if (!userAuth?.data) {
+  if (!userAuth?.data || loading) {
     return <Spin />;
   }
 
