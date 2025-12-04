@@ -2,6 +2,7 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, Suspense 
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
@@ -61,26 +62,32 @@ const ShowcaseHeader = React.memo(() => (
 
 interface ShowcaseFiltersProps {
   onToggleDescription: () => void;
-  showUserFavs: boolean;
-  setShowUserFavs: React.Dispatch<React.SetStateAction<boolean>>;
   showUserPrompts: boolean;
   setShowUserPrompts: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserFavs, setShowUserFavs, showUserPrompts, setShowUserPrompts }) => {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
   const handleUserPrompts = useCallback(() => {
-    setShowUserFavs(false);
     setShowUserPrompts((prev) => !prev);
   }, []);
 
+  const history = useHistory();
+  const location = useLocation();
+
   const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
-    setShowUserFavs((prev) => !prev);
-  }, []);
+
+    // Clear all states
+    history.push({
+      ...location,
+      search: "",
+      state: prepareUserState(),
+    });
+  }, [history, location]);
 
   const [showTagsOnMobile, setShowTagsOnMobile] = useState(false);
   const toggleTagsOnMobile = useCallback(() => {
@@ -97,7 +104,6 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
       return;
     }
     setShowUserPrompts(false);
-    setShowUserFavs(false);
   }, [userAuth]);
 
   const togglePromptLanguage = <Translate id="toggle_prompt_language">切换 Prompt 语言</Translate>;
@@ -148,7 +154,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                   />
                 </ShowcaseTooltip>
               </li>
-              <li className={`${styles.checkboxListItem} ${showUserFavs ? styles.activeItem : ""}`} onClick={handleUserFavs}>
+              <li className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
                 <ShowcaseTooltip
                   id="myfavorite"
                   text={translate({
@@ -236,17 +242,9 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
         {showUserPrompts && (
           <>
             <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
+              <SearchBar setShowUserPrompts={setShowUserPrompts} />
             </div>
             <UserPrompts filteredCommus={[]} isFiltered={false} />
-          </>
-        )}
-        {showUserFavs && (
-          <>
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar setShowUserPrompts={setShowUserPrompts} setShowUserFavs={setShowUserFavs} />
-            </div>
-            <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
           </>
         )}
       </section>
@@ -256,11 +254,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
 
 interface ShowcaseCardsProps {
   isDescription: boolean;
-  showUserFavs: boolean;
   showUserPrompts: boolean;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserFavs, showUserPrompts }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -327,31 +324,29 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
     <section className="margin-top--sm margin-bottom--sm">
       {!isFiltered ? (
         <>
-          {showUserFavs ? null : (
-            <div className={styles.showcaseFavorite}>
-              <div className="container">
-                <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Heading as="h2" className="hideOnSmallScreen">
-                    <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                  </Heading>
-                  <FavoriteIcon svgClass={styles.svgIconFavorite} />
-                  {!showUserPrompts && <SearchBar />}
-                </div>
-                {userAuth ? (
-                  <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
-                ) : (
-                  <ul className={clsx("clean-list", styles.showcaseList)}>
-                    {favoriteUsers.map((user) => (
-                      <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
-                    ))}
-                    <Suspense fallback={null}>
-                      <AdComponent />
-                    </Suspense>
-                  </ul>
-                )}
+          <div id="favorites-section" className={styles.showcaseFavorite}>
+            <div className="container">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <Heading as="h2" className="hideOnSmallScreen">
+                  <Translate id="showcase.favoritesList.title">Favorites</Translate>
+                </Heading>
+                <FavoriteIcon svgClass={styles.svgIconFavorite} />
+                {!showUserPrompts && <SearchBar />}
               </div>
+              {userAuth ? (
+                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
+              ) : (
+                <ul className={clsx("clean-list", styles.showcaseList)}>
+                  {favoriteUsers.map((user) => (
+                    <ShowcaseCard key={user.id} user={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                  ))}
+                  <Suspense fallback={null}>
+                    <AdComponent />
+                  </Suspense>
+                </ul>
+              )}
             </div>
-          )}
+          </div>
           <div className="container margin-top--md">
             <Heading as="h2" className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
@@ -396,7 +391,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
 export default function Showcase(): React.ReactElement {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
-  const [showUserFavs, setShowUserFavs] = useState(false);
   const [showUserPrompts, setShowUserPrompts] = useState(false);
 
   useEffect(() => {
@@ -414,14 +408,8 @@ export default function Showcase(): React.ReactElement {
       <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseHeader />
-          <ShowcaseFilters
-            onToggleDescription={toggleDescription}
-            showUserFavs={showUserFavs}
-            setShowUserFavs={setShowUserFavs}
-            showUserPrompts={showUserPrompts}
-            setShowUserPrompts={setShowUserPrompts}
-          />
-          <ShowcaseCards isDescription={isDescription} showUserFavs={showUserFavs} showUserPrompts={showUserPrompts} />
+          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} />
+          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} />
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />

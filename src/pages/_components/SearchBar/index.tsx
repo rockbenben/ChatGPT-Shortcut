@@ -200,11 +200,10 @@ const searchBarTheme = {
 
 interface SearchBarProps {
   setShowUserPrompts?: (value: boolean) => void;
-  setShowUserFavs?: (value: boolean) => void;
   beforeSearch?: (value: string | null) => boolean | void;
 }
 
-function SearchBar({ setShowUserPrompts = () => {}, setShowUserFavs = () => {}, beforeSearch }: SearchBarProps) {
+function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarProps) {
   const history = useHistory();
   const location = useLocation();
   const [value, setValue] = useState<string | null>(null);
@@ -228,7 +227,6 @@ function SearchBar({ setShowUserPrompts = () => {}, setShowUserFavs = () => {}, 
       state: prepareUserState(),
     });
     setShowUserPrompts(false);
-    setShowUserFavs(false);
   }, [value, location, history, beforeSearch]);
 
   useEffect(() => {
