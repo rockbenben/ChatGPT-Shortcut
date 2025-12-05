@@ -94,7 +94,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
       <BasePromptCard
         title={
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
                 <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
                   {title}
@@ -103,19 +103,19 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
                 <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
               )}
             </Typography.Title>
-            <Flex align="center" gap={8} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
+            <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
               {copyCount > 0 && (
-                <Flex align="center" gap={4} style={{ color: token.colorError }}>
+                <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError }}>
                   <FireFilled />
-                  <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
+                  <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
                     {formatCompactNumber(copyCount)}
                   </Typography.Text>
                 </Flex>
               )}
               {user.upvoteDifference > 0 && (
-                <Flex align="center" gap={4} style={{ color: token.colorWarning }}>
+                <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning }}>
                   <LikeFilled />
-                  <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
+                  <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
                     {formatCompactNumber(user.upvoteDifference)}
                   </Typography.Text>
                 </Flex>

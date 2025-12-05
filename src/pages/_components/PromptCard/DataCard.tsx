@@ -83,15 +83,15 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
     <li key={userInfo.title} style={{ height: "100%", listStyle: "none" }}>
       <BasePromptCard
         title={
-          <Flex justify="space-between" align="center" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1 }} ellipsis>
+          <Flex justify="space-between" align="start" style={{ width: "100%" }}>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
               <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
                 {userInfo.title}
               </Link>
             </Typography.Title>
-            <Flex align="center" gap={4} style={{ color: token.colorError }}>
+            <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
               <FireFilled />
-              <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
+              <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
                 {formatCount(copyCount)}
               </Typography.Text>
             </Flex>

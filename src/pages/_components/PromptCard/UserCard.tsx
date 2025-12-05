@@ -68,24 +68,16 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
                   <HolderOutlined style={{ color: token.colorTextSecondary }} />
                 </div>
               )}
-              <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, display: "inline" }} ellipsis={{ rows: 2 }}>
+              <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", display: "inline" }} ellipsis={{ rows: 2 }}>
                 <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
               </Typography.Title>
             </div>
-            <Flex align="center" gap={8} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
+            <Flex align="center" gap={token.marginXXS} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
               {!user.share && <LockOutlined style={{ color: token.colorTextSecondary }} />}
-              {user.copyCount > 0 && (
-                <Flex align="center" gap={4} style={{ color: token.colorError }}>
-                  <FireFilled />
-                  <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
-                    {formatCompactNumber(user.copyCount)}
-                  </Typography.Text>
-                </Flex>
-              )}
               {user.upvoteDifference > 0 && (
-                <Flex align="center" gap={4} style={{ color: token.colorWarning }}>
+                <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning, flexShrink: 0 }}>
                   <LikeFilled />
-                  <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
+                  <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
                     {formatCompactNumber(user.upvoteDifference)}
                   </Typography.Text>
                 </Flex>

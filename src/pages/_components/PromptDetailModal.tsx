@@ -47,6 +47,8 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
       onCancel={onCancel}
       footer={null}
       width={800}
+      key={data?.id}
+      destroyOnHidden
       centered
       title={null}
       styles={{
