@@ -45,7 +45,7 @@ export const useFavorite = (): UseFavoriteReturn => {
           favoriteId = userAuth.data.favorites.id;
 
           if (!userLoves.includes(id)) {
-            userLoves.push(id);
+            userLoves.unshift(id);
           }
         }
 

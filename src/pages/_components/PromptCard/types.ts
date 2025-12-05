@@ -9,7 +9,7 @@ export interface PromptCardProps {
   isFiltered?: boolean;
   onEdit?: (data: any) => void;
   onDelete?: (id: string) => void;
-  onRemoveFavorite?: (id: string) => void;
+  onRemoveFavorite?: (id: string, isComm?: boolean) => void;
   onToggleFavorite?: (id: string | number, isComm: boolean) => void;
   onVote?: (id: string | number, action: "upvote" | "downvote") => void;
   isFavorite?: boolean;

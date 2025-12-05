@@ -19,7 +19,7 @@ interface FavoriteCardProps {
   data: any;
   isFiltered?: boolean;
   isDescription?: boolean;
-  onRemoveFavorite?: (id: string) => void;
+  onRemoveFavorite?: (id: string, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
 }
 
@@ -136,7 +136,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
             <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
           </Tooltip>,
           <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-            <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => onRemoveFavorite?.(user.id)} block />
+            <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => onRemoveFavorite?.(user.id, !isDataCard)} block />
           </Tooltip>,
         ]}>
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>

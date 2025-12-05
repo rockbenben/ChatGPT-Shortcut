@@ -102,8 +102,8 @@ function UserFavoritePage({ filteredCommus = [], filteredCards = [], isFiltered 
   }, [favoriteItems, hasDragged]);
 
   const handleRemoveFavorite = useCallback(
-    (id) => {
-      confirmRemoveFavorite(id, false);
+    (id, isComm) => {
+      confirmRemoveFavorite(id, isComm);
     },
     [confirmRemoveFavorite]
   );
