@@ -26,7 +26,7 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
-  const { copied, updateCopy } = useCopyToClipboard();
+  const { copied, copyText } = useCopyToClipboard();
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: user.id });
 
@@ -39,8 +39,8 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
   };
 
   const handleCopy = useCallback(() => {
-    updateCopy(user.prompt, user.id);
-  }, [updateCopy, user.prompt, user.id]);
+    copyText(user.description);
+  }, [copyText, user.description]);
 
   const handleParagraphClick = useCallback(() => {
     onOpenModal?.({

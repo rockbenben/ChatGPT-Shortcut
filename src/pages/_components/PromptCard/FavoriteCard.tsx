@@ -27,7 +27,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
-  const { copied, updateCopy } = useCopyToClipboard();
+  const { copied, copyText, updateCopy } = useCopyToClipboard();
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: user.id });
 
@@ -56,8 +56,12 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
   const contentToShow = isDescription ? prompt : description;
 
   const handleCopy = useCallback(() => {
-    updateCopy(prompt, user.id);
-  }, [updateCopy, prompt, user.id]);
+    if (isDataCard) {
+      updateCopy(prompt, user.id);
+    } else {
+      copyText(prompt);
+    }
+  }, [isDataCard, updateCopy, copyText, prompt, user.id]);
 
   const handleParagraphClick = useCallback(() => {
     if (isDataCard) {
