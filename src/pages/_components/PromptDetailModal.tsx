@@ -28,7 +28,7 @@ interface PromptDetailModalProps {
   };
 }
 
-export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
+export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
   if (!data) return null;
 
   const { token } = theme.useToken();
@@ -48,7 +48,6 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
       footer={null}
       width={800}
       centered
-      destroyOnHidden
       title={null}
       styles={{
         body: {
@@ -212,3 +211,5 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
     </Modal>
   );
 };
+
+export const PromptDetailModal = React.memo(PromptDetailModalComponent);
