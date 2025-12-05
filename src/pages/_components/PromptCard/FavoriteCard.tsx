@@ -90,41 +90,38 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
       <BasePromptCard
         title={
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <div style={{ flex: 1, minWidth: 0, marginRight: token.marginXS }}>
-              {!isFiltered && (
-                <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "inline-flex", alignItems: "center", verticalAlign: "middle" }}>
-                  <HolderOutlined style={{ color: token.colorTextSecondary }} />
-                </div>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+              {isDataCard ? (
+                <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
+                  {title}
+                </Link>
+              ) : (
+                <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
               )}
-              <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, display: "inline" }} ellipsis={{ rows: 2 }}>
-                {isDataCard ? (
-                  <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
-                    {title}
-                  </Link>
-                ) : (
-                  <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
-                )}
-              </Typography.Title>
-            </div>
-            {copyCount > 0 && (
-              <Typography.Text type="secondary" style={{ fontSize: "12px", marginLeft: token.marginXS, display: "inline-flex", alignItems: "center", gap: 2, flexShrink: 0 }}>
-                <FireFilled style={{ color: "#ff6b6b" }} />
-                {formatCompactNumber(copyCount)}
-              </Typography.Text>
-            )}
-            {user.upvoteDifference > 0 && (
-              <Flex align="center" gap={4} style={{ color: token.colorWarning, flexShrink: 0, marginLeft: token.marginXS }}>
-                <LikeFilled />
-                <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
-                  {formatCompactNumber(user.upvoteDifference)}
-                </Typography.Text>
-              </Flex>
-            )}
+            </Typography.Title>
+            <Flex align="center" gap={8} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
+              {copyCount > 0 && (
+                <Flex align="center" gap={4} style={{ color: token.colorError }}>
+                  <FireFilled />
+                  <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
+                    {formatCompactNumber(copyCount)}
+                  </Typography.Text>
+                </Flex>
+              )}
+              {user.upvoteDifference > 0 && (
+                <Flex align="center" gap={4} style={{ color: token.colorWarning }}>
+                  <LikeFilled />
+                  <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
+                    {formatCompactNumber(user.upvoteDifference)}
+                  </Typography.Text>
+                </Flex>
+              )}
+            </Flex>
           </Flex>
         }
         titleExtra={
           owner && (
-            <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center" }}>
+            <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
               <UserOutlined style={{ marginRight: 4 }} />
               {owner}
             </Typography.Text>

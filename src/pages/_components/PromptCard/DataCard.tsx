@@ -53,7 +53,6 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
   }, [isDescription, userInfo.prompt, userInfo.description]);
 
   const handleParagraphClick = useCallback(() => {
-    if (!canToggle) return;
     onOpenModal?.({
       id: user.id,
       title: userInfo.title,
@@ -64,7 +63,7 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
       website: user.website,
       copyCount: copyCount,
     });
-  }, [canToggle, onOpenModal, user.id, userInfo, user.tags, user.website]);
+  }, [onOpenModal, user.id, userInfo, user.tags, user.website, copyCount]);
 
   const userDescription = canToggle ? paragraphText : userInfo.prompt;
 
@@ -90,10 +89,12 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
                 {userInfo.title}
               </Link>
             </Typography.Title>
-            <Typography.Text type="secondary" style={{ fontSize: "12px", marginLeft: token.marginXS, display: "inline-flex", alignItems: "center", gap: 2, flexShrink: 0 }}>
-              <FireFilled style={{ color: "#ff6b6b" }} />
-              {formatCount(copyCount)}
-            </Typography.Text>
+            <Flex align="center" gap={4} style={{ color: token.colorError }}>
+              <FireFilled />
+              <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
+                {formatCount(copyCount)}
+              </Typography.Text>
+            </Flex>
           </Flex>
         }
         actions={[
@@ -114,10 +115,8 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
             ellipsis={{
               rows: 3,
             }}
-            className={clsx(styles.showcaseCardBody, {
-              [styles.clickable]: canToggle,
-            })}
-            onClick={canToggle ? handleParagraphClick : undefined}
+            className={clsx(styles.showcaseCardBody, styles.clickable)}
+            onClick={handleParagraphClick}
             style={{ marginBottom: 0 }}>
             {userDescription}
           </Typography.Paragraph>

@@ -4,7 +4,7 @@ import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, FireFilled, LockOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -53,6 +53,7 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
       owner: user.owner,
       vote: user.upvoteDifference,
       copyCount: user.copyCount,
+      share: user.share,
     });
   }, [onOpenModal, user]);
 
@@ -71,14 +72,25 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
                 {user.title}
               </Typography.Title>
             </div>
-            {user.upvoteDifference > 0 && (
-              <Flex align="center" gap={4} style={{ color: token.colorWarning, flexShrink: 0, marginLeft: token.marginXS }}>
-                <LikeFilled />
-                <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
-                  {formatCompactNumber(user.upvoteDifference)}
-                </Typography.Text>
-              </Flex>
-            )}
+            <Flex align="center" gap={8} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
+              {!user.share && <LockOutlined style={{ color: token.colorTextSecondary }} />}
+              {user.copyCount > 0 && (
+                <Flex align="center" gap={4} style={{ color: token.colorError }}>
+                  <FireFilled />
+                  <Typography.Text type="danger" style={{ fontSize: "12px", fontWeight: 600 }}>
+                    {formatCompactNumber(user.copyCount)}
+                  </Typography.Text>
+                </Flex>
+              )}
+              {user.upvoteDifference > 0 && (
+                <Flex align="center" gap={4} style={{ color: token.colorWarning }}>
+                  <LikeFilled />
+                  <Typography.Text type="warning" style={{ fontSize: "12px", fontWeight: 600 }}>
+                    {formatCompactNumber(user.upvoteDifference)}
+                  </Typography.Text>
+                </Flex>
+              )}
+            </Flex>
           </Flex>
         }
         actions={[

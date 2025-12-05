@@ -1,6 +1,6 @@
 import React from "react";
-import { Modal, Typography, Space, Button, Tooltip, theme, Flex } from "antd";
-import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled } from "@ant-design/icons";
+import { Modal, Typography, Space, Button, Tooltip, theme, Flex, Tag } from "antd";
+import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
@@ -24,6 +24,7 @@ interface PromptDetailModalProps {
     owner?: string;
     vote?: number;
     copyCount?: number;
+    share?: boolean;
   };
 }
 
@@ -47,13 +48,16 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
       footer={null}
       width={800}
       centered
-      destroyOnClose
-      title={null} // Custom title in body
+      destroyOnHidden
+      title={null}
       styles={{
         body: {
           padding: 0,
+          overflow: "hidden",
+          borderRadius: token.borderRadiusLG,
         },
-      }}>
+      }}
+      closeIcon={null}>
       <Flex vertical style={{ height: "100%", maxHeight: "85vh" }}>
         {/* Header Section */}
         <div
@@ -61,53 +65,59 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
             padding: `${token.paddingMD}px ${token.paddingLG}px`,
             borderBottom: `1px solid ${token.colorBorderSecondary}`,
             backgroundColor: token.colorBgContainer,
-            borderTopLeftRadius: token.borderRadiusLG,
-            borderTopRightRadius: token.borderRadiusLG,
           }}>
           <Flex justify="space-between" align="start" gap={token.padding}>
             <div style={{ flex: 1 }}>
-              <Typography.Title level={4} style={{ margin: 0, marginBottom: 4 }}>
+              <Typography.Title level={3} style={{ margin: 0, marginBottom: token.marginXS }}>
                 {data.title}
               </Typography.Title>
-              <Flex align="center" gap={token.marginSM} wrap="wrap">
+              <Space separator={<span style={{ color: token.colorBorder }}>|</span>} size="small" wrap>
+                {data.share === false && (
+                  <Space size={4}>
+                    <LockOutlined style={{ color: token.colorTextSecondary }} />
+                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                      <Translate id="prompt.private">Private</Translate>
+                    </Typography.Text>
+                  </Space>
+                )}
                 {data.owner && (
-                  <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                    <Translate id="prompt.owner">Shared by</Translate>: <span style={{ color: token.colorText }}>{data.owner}</span>
-                  </Typography.Text>
+                  <Space size={4}>
+                    <UserOutlined style={{ color: token.colorTextTertiary }} />
+                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                      {data.owner}
+                    </Typography.Text>
+                  </Space>
                 )}
                 {data.copyCount > 0 && (
-                  <Flex align="center" gap={4} style={{ color: token.colorError }}>
-                    <FireFilled />
-                    <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
+                  <Space size={4}>
+                    <FireFilled style={{ color: token.colorError }} />
+                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
                       {formatCompactNumber(data.copyCount)}
                     </Typography.Text>
-                  </Flex>
+                  </Space>
                 )}
                 {data.vote > 0 && (
-                  <Flex align="center" gap={4} style={{ color: token.colorWarning }}>
-                    <LikeFilled />
-                    <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
+                  <Space size={4}>
+                    <LikeFilled style={{ color: token.colorWarning }} />
+                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
                       {formatCompactNumber(data.vote)}
                     </Typography.Text>
-                  </Flex>
+                  </Space>
                 )}
-              </Flex>
-            </div>
-            {/* Actions Toolbar */}
-            <Space size="small">
-              {data.website && (
-                <Tooltip title="Website">
-                  <a href={data.website} target="_blank" rel="noopener noreferrer">
-                    <Button icon={<LinkOutlined />} />
+                {data.website && (
+                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    <LinkOutlined style={{ fontSize: token.fontSizeSM }} />
+                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                      Website
+                    </Typography.Text>
                   </a>
-                </Tooltip>
-              )}
-              <Tooltip title={<Translate id="action.copy">Copy</Translate>}>
-                <Button type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
-                  {copied ? <Translate id="common.copied">Copied</Translate> : <Translate id="action.copy">Copy</Translate>}
-                </Button>
-              </Tooltip>
-            </Space>
+                )}
+              </Space>
+            </div>
+            {/* Close Button (Custom) */}
+            <Button type="text" onClick={onCancel} style={{ color: token.colorTextTertiary }}>
+              ✕
+            </Button>
           </Flex>
         </div>
 
@@ -117,16 +127,17 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
             overflowY: "auto",
             padding: `${token.paddingLG}px`,
             flex: 1,
+            backgroundColor: token.colorBgLayout,
           }}>
           <Flex vertical gap={token.marginLG}>
             {/* Remark / Note */}
             {data.remark && (
               <div
                 style={{
-                  padding: token.paddingSM,
-                  backgroundColor: token.colorFillQuaternary,
+                  padding: `${token.paddingSM}px ${token.paddingMD}px`,
+                  backgroundColor: token.colorInfoBg,
                   borderRadius: token.borderRadius,
-                  borderLeft: `3px solid ${token.colorPrimary}`,
+                  border: `1px solid ${token.colorInfoBorder}`,
                 }}>
                 <PromptRemark remark={data.remark} style={{ margin: 0, border: "none", padding: 0 }} />
               </div>
@@ -134,16 +145,21 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
 
             {/* Prompt Content Block */}
             <div>
-              <Typography.Text type="secondary" strong style={{ display: "block", marginBottom: token.marginXS }}>
-                <Translate id="prompt.content">Prompt Content</Translate>
-              </Typography.Text>
+              <Flex justify="space-between" align="center" style={{ marginBottom: token.marginXS }}>
+                <Typography.Text strong style={{ fontSize: token.fontSizeLG }}>
+                  <Translate id="prompt.content">Prompt Content</Translate>
+                </Typography.Text>
+                <Button size="small" type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
+                  {copied ? <Translate id="common.copied">Copied</Translate> : <Translate id="action.copy">Copy</Translate>}
+                </Button>
+              </Flex>
               <div
                 style={{
-                  backgroundColor: token.colorFillAlter,
+                  backgroundColor: token.colorBgContainer,
                   padding: token.paddingMD,
                   borderRadius: token.borderRadiusLG,
-                  border: `1px solid ${token.colorBorderSecondary}`,
-                  position: "relative",
+                  border: `1px solid ${token.colorBorder}`,
+                  boxShadow: token.boxShadowTertiary,
                 }}>
                 <Typography.Text
                   style={{
@@ -162,7 +178,7 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
             {/* Description */}
             {data.description && data.description !== data.prompt && (
               <div>
-                <Typography.Text type="secondary" strong style={{ display: "block", marginBottom: token.marginXS }}>
+                <Typography.Text strong style={{ display: "block", marginBottom: token.marginXS, fontSize: token.fontSizeLG }}>
                   <Translate id="prompt.description">Description</Translate>
                 </Typography.Text>
                 <Typography.Paragraph type="secondary" style={{ margin: 0, lineHeight: 1.6 }}>
@@ -178,9 +194,7 @@ export const PromptDetailModal: React.FC<PromptDetailModalProps> = ({ open, onCa
           style={{
             padding: `${token.paddingMD}px ${token.paddingLG}px`,
             borderTop: `1px solid ${token.colorBorderSecondary}`,
-            backgroundColor: token.colorBgLayout,
-            borderBottomLeftRadius: token.borderRadiusLG,
-            borderBottomRightRadius: token.borderRadiusLG,
+            backgroundColor: token.colorBgContainer,
           }}>
           <Flex justify="space-between" align="center" wrap="wrap" gap={token.marginSM}>
             <div style={{ flex: 1, minWidth: 0 }}>{data.tags && <PromptCardTag tags={data.tags} />}</div>

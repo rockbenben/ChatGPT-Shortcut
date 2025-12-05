@@ -4,14 +4,12 @@ import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { formatCompactNumber } from "@site/src/utils/formatters";
+import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
-import { PromptDetailModal } from "../PromptDetailModal";
 
 interface CommunityCardProps {
   data: any;
@@ -51,15 +49,13 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
       <BasePromptCard
         title={
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <div style={{ flex: 1, minWidth: 0, marginRight: token.marginXS }}>
-              <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
-                {user.title}
-              </Typography.Title>
-            </div>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+              {user.title}
+            </Typography.Title>
           </Flex>
         }
         titleExtra={
-          <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center" }}>
+          <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
             <UserOutlined style={{ marginRight: 4 }} />
             {user.owner}
           </Typography.Text>
@@ -93,7 +89,7 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
           <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
             <Typography.Paragraph
               ellipsis={{
-                rows: 3,
+                rows: 5,
               }}
               className={clsx(styles.showcaseCardBody, styles.clickable)}
               onClick={handleParagraphClick}
@@ -101,7 +97,7 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
               {user.description}
             </Typography.Paragraph>
           </div>
-          <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
+          <Flex justify="space-between" align="center">
             <div style={{ flex: 1, overflow: "hidden" }}>
               <PromptCardTag tags={user.tags} />
             </div>
