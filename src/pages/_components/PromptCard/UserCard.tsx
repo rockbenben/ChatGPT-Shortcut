@@ -69,7 +69,7 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
                 </div>
               )}
               <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, display: "inline" }} ellipsis={{ rows: 2 }}>
-                {user.title}
+                <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
               </Typography.Title>
             </div>
             <Flex align="center" gap={8} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
