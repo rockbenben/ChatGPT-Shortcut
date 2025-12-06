@@ -7,7 +7,7 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import { App } from "antd";
+import { App, Button, Typography, Space, theme, Flex } from "antd";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -53,13 +53,17 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
+const { Title, Paragraph } = Typography;
+
 const ShowcaseHeader = React.memo(() => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      <Heading as="h1" className={styles.heroTitle}>
+      <Title level={1} className={styles.heroTitle} style={{ color: "transparent" }}>
         AI Short
-      </Heading>
-      <p className={styles.heroSubtitle}>{SLOGAN}</p>
+      </Title>
+      <Paragraph type="secondary" className={styles.heroSubtitle}>
+        {SLOGAN}
+      </Paragraph>
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
@@ -76,6 +80,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
+  const { token } = theme.useToken();
 
   const handleUserPrompts = useCallback(() => {
     setShowUserPrompts((prev) => !prev);
@@ -117,28 +122,29 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   return (
     <>
       <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
-        <div className={styles.filterCheckbox}>
-          <div>
-            <Heading as="h2" className="hideOnSmallScreen">
-              <Translate id="showcase.filters.title">Filters</Translate>
-            </Heading>
-            <button onClick={toggleTagsOnMobile} className={clsx("showOnSmallScreen", styles.onToggleButton)}>
-              <MenuOutlined /> {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
-            </button>
-          </div>
-          {currentLanguage !== "en" && (
-            <button
-              onClick={onToggleDescription}
-              className={styles.onToggleButton}
-              title={translate({
-                id: "toggle_prompt_language_description",
-                message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
-              })}>
-              {togglePromptLanguage}
-            </button>
-          )}
-          <ShowcaseFilterToggle />
-        </div>
+        <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
+          <Title level={3} className="hideOnSmallScreen" style={{ marginBottom: 0 }}>
+            <Translate id="showcase.filters.title">Filters</Translate>
+          </Title>
+          <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
+            {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
+          </Button>
+          <Space>
+            {currentLanguage !== "en" && (
+              <Button
+                onClick={onToggleDescription}
+                title={translate({
+                  id: "toggle_prompt_language_description",
+                  message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
+                })}
+                size="small"
+                style={{ display: "inline-flex", alignItems: "center" }}>
+                {togglePromptLanguage}
+              </Button>
+            )}
+            <ShowcaseFilterToggle />
+          </Space>
+        </Flex>
         <ul className={clsx("clean-list", styles.checkboxList)}>
           {userAuth && (
             <>
@@ -387,9 +393,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
           <div id="favorites-section" className={styles.showcaseFavorite}>
             <div className="container">
               <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2" className="hideOnSmallScreen">
+                <Title level={3} className="hideOnSmallScreen">
                   <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                </Heading>
+                </Title>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
                 {!showUserPrompts && <SearchBar />}
               </div>
@@ -408,9 +414,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             </div>
           </div>
           <div className="container margin-top--md">
-            <Heading as="h2" className="hideOnSmallScreen">
+            <Title level={3} className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
-            </Heading>
+            </Title>
             <ul className={clsx("clean-list", styles.showcaseList)}>
               {otherUsers.map((user) => (
                 <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
@@ -420,9 +426,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               </Suspense>
             </ul>
             {!showAllOtherUsers && (
-              <button className={styles.loadMoreButton} onClick={() => setShowAllOtherUsers(true)}>
+              <Button size="large" block onClick={() => setShowAllOtherUsers(true)} style={{ marginTop: 24, fontSize: "0.95rem" }}>
                 <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
-              </button>
+              </Button>
             )}
           </div>
         </>

@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
   .showcaseFavorite {
     padding-top: 0.5rem !important;
     padding-bottom: 0.1rem !important;
   }
-  
+
   .showcaseList {
     gap: 1rem !important;
   }
@@ -26,7 +26,7 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Hide scrollbar for cleaner look */
   }
-  
+
   .checkboxList::-webkit-scrollbar {
     display: none;
   }
@@ -40,7 +40,7 @@
 }
 
 .heroSection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: 50%;
@@ -147,13 +147,18 @@
   align-items: center;
 }
 
-.showcaseFavoriteHeader > h2 {
-  margin-bottom: 0;
+.showcaseFavoriteHeader > h2,
+.showcaseFavoriteHeader > h3 {
+  margin: 0;
+}
+
+.searchContainer {
+  margin-left: auto;
 }
 
 .showcaseFavoriteHeader > svg {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .svgIconFavoriteXs,
@@ -168,62 +173,6 @@
 
 .svgIconFavorite {
   margin-left: 1rem;
-}
-
-.onToggleButton {
-  border: 2px solid var(--ifm-color-primary-darkest);
-  background-color: transparent;
-  color: inherit;
-  border-radius: 0.3rem;
-  opacity: 0.75;
-  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  box-shadow: var(--ifm-global-shadow-md);
-  margin-right: 0.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px; /* Match toggle height */
-  padding: 0 10px;
-  font-size: 0.8rem; /* Match toggle font size */
-  cursor: pointer;
-}
-
-.onToggleButton:hover {
-  opacity: 1;
-  box-shadow: var(--ifm-global-shadow-md);
-  color: inherit;
-  border-color: var(--ifm-color-primary-darkest);
-}
-
-.loadMoreButton {
-  width: 100%;
-  height: 44px;
-  border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  background-color: transparent;
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.95rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.loadMoreButton:hover {
-  color: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.loadMoreButton:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 /* Prompt Card Styles */
