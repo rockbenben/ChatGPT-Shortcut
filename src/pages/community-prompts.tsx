@@ -10,7 +10,7 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin } from "antd";
+import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin, Card, Skeleton, theme } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
@@ -38,6 +38,7 @@ interface PromptCardProps {
 }
 
 const CommunityPrompts = () => {
+  const { token } = theme.useToken();
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -210,57 +211,78 @@ const CommunityPrompts = () => {
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">
           <div className="container padding-vert--md">
-            <Flex wrap="wrap" gap="middle" justify="space-between" align="center" style={{ marginBottom: 16 }}>
-              <Space>
-                <Link to="/" className="interLink">
-                  <Button icon={<HomeOutlined />}>
-                    <Translate id="link.home">返回首页</Translate>
-                  </Button>
-                </Link>
-                {userAuth ? (
-                  <Link to="/user/favorite" className="interLink">
-                    <Button icon={<StarOutlined />}>
-                      <Translate id="link.myFavorites">我的收藏</Translate>
+            <div
+              style={{
+                marginBottom: 24,
+                padding: "16px 24px",
+                background: token.colorBgContainer,
+                borderRadius: token.borderRadiusLG,
+                border: `1px solid ${token.colorBorderSecondary}`,
+                boxShadow: token.boxShadowTertiary,
+              }}>
+              <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
+                <Space>
+                  <Link to="/" className="interLink">
+                    <Button type="text" icon={<HomeOutlined />}>
+                      <Translate id="link.home">返回首页</Translate>
                     </Button>
                   </Link>
-                ) : (
-                  <Button icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-                    <Translate id="button.login">登录</Translate>
-                  </Button>
-                )}
-              </Space>
+                  {userAuth ? (
+                    <Link to="/user/favorite" className="interLink">
+                      <Button type="text" icon={<StarOutlined />}>
+                        <Translate id="link.myFavorites">我的收藏</Translate>
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
+                      <Translate id="button.login">登录</Translate>
+                    </Button>
+                  )}
+                </Space>
 
-              <Flex gap="small" align="center" wrap="wrap">
-                <Segmented
-                  options={[
-                    { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },
-                    { label: translate({ id: "field.upvoteDifference", message: "支持度" }), value: "upvoteDifference", icon: <FireOutlined /> },
-                  ]}
-                  value={sortField}
-                  onChange={(value) => {
-                    setSortField(value as string);
-                    setCurrentPage(1);
-                  }}
-                />
-                <Segmented
-                  options={[
-                    { label: translate({ id: "order.descending", message: "降序" }), value: "desc", icon: <DownOutlined /> },
-                    { label: translate({ id: "order.ascending", message: "升序" }), value: "asc", icon: <UpOutlined /> },
-                  ]}
-                  value={sortOrder}
-                  onChange={(value) => {
-                    setSortOrder(value as string);
-                    setCurrentPage(1);
-                  }}
-                />
-                <SearchBar beforeSearch={handleBeforeSearch} />
+                <Flex gap="small" align="center" wrap="wrap">
+                  <Segmented
+                    options={[
+                      { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },
+                      { label: translate({ id: "field.upvoteDifference", message: "支持度" }), value: "upvoteDifference", icon: <FireOutlined /> },
+                    ]}
+                    value={sortField}
+                    onChange={(value) => {
+                      setSortField(value as string);
+                      setCurrentPage(1);
+                    }}
+                  />
+                  <Segmented
+                    options={[
+                      { label: translate({ id: "order.descending", message: "降序" }), value: "desc", icon: <DownOutlined /> },
+                      { label: translate({ id: "order.ascending", message: "升序" }), value: "asc", icon: <UpOutlined /> },
+                    ]}
+                    value={sortOrder}
+                    onChange={(value) => {
+                      setSortOrder(value as string);
+                      setCurrentPage(1);
+                    }}
+                  />
+                  <SearchBar beforeSearch={handleBeforeSearch} />
+                </Flex>
               </Flex>
-            </Flex>
+            </div>
 
             {loading ? (
-              <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
-                <Spin size="large" />
-              </Flex>
+              <div className={styles.showcaseList}>
+                {Array.from({ length: pageSize }).map((_, i) => (
+                  <Card
+                    key={i}
+                    loading
+                    bordered={false}
+                    style={{
+                      borderRadius: 12,
+                      border: `1px solid ${token.colorBorderSecondary}`,
+                      boxShadow: "none",
+                    }}
+                  />
+                ))}
+              </div>
             ) : userprompts.length === 0 ? (
               <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
                 <NoResults />
