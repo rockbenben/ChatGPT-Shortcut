@@ -49,8 +49,8 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
       <BasePromptCard
         title={
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", lineHeight: 1.4, flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-              {user.title}
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+              <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
             </Typography.Title>
           </Flex>
         }
