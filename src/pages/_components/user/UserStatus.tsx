@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
 import { Button, Modal, App, Dropdown, Space, Spin } from "antd";
-import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined } from "@ant-design/icons";
+import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined, AppstoreOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate from "@docusaurus/Translate";
 import { clearUserAllInfoCache, getPrompts } from "@site/src/api";
@@ -93,7 +93,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
       key: "account",
       label: (
         <Link to="/user">
-          <Translate id="link.myaccount">账号设置</Translate>
+          <Translate id="link.myaccount">我的账户</Translate>
         </Link>
       ),
       icon: <UserOutlined />,
@@ -135,10 +135,10 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     () => (
       <Space wrap size="small">
         {!hideLinks.myFavorite && (
-          <Link to="/user/favorite">
-            <Button icon={<HeartOutlined />}>
+          <Link to="/user/center">
+            <Button icon={<AppstoreOutlined />}>
               <span className="hideOnSmallScreen">
-                <Translate id="link.myFavorites">我的收藏</Translate>
+                <Translate id="link.myCenter">个人中心</Translate>
               </span>
             </Button>
           </Link>

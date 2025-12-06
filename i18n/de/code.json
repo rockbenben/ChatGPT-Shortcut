@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "Prompt aktualisieren"
   },
-  "hideTags": {
-    "message": "Tags verbergen"
-  },
-  "showTags": {
-    "message": "Tags anzeigen"
-  },
-  "link.myfavorite": {
-    "message": "Meine Favoriten"
-  },
-  "加载更多": {
-    "message": "Mehr laden"
-  },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
     "description": "The title of the fallback page when the page crashed"
@@ -963,5 +951,27 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "Mein Zentrum"
+  },
+  "link.myAccount": {
+    "message": "Mein Konto"
+  },
+  "prompt.private": {
+    "message": "Privat"
+  },
+  "prompt.content": {
+    "message": "Prompt-Inhalt"
+  },
+  "prompt.description": {
+    "message": "Beschreibung"
+  },
+  "action.viewDetails": {
+    "message": "Details anzeigen"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Schließen",
+    "description": "The ARIA label for close button of announcement bar"
   }
 }

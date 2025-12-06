@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "Mettre à jour le Prompt"
   },
-  "hideTags": {
-    "message": "Masquer les tags"
-  },
-  "showTags": {
-    "message": "Afficher les tags"
-  },
-  "link.myfavorite": {
-    "message": "Mes favoris"
-  },
-  "加载更多": {
-    "message": "Charger plus"
-  },
   "theme.ErrorPageContent.title": {
     "message": "Cette page a planté.",
     "description": "The title of the fallback page when the page crashed"
@@ -959,5 +947,31 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "Mon Centre"
+  },
+  "link.myAccount": {
+    "message": "Mon Compte"
+  },
+  "prompt.private": {
+    "message": "Privé"
+  },
+  "prompt.content": {
+    "message": "Contenu du prompt"
+  },
+  "prompt.description": {
+    "message": "Description"
+  },
+  "action.viewDetails": {
+    "message": "Voir les détails"
+  },
+  "theme.NotFound.title": {
+    "message": "Page introuvable",
+    "description": "The title of the 404 page"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Fermer",
+    "description": "The ARIA label for close button of announcement bar"
   }
 }

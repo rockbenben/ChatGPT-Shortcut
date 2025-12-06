@@ -4,7 +4,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 
 import Layout from "@theme/Layout";
 import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Divider, Segmented, Tag } from "antd";
-import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined } from "@ant-design/icons";
+import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined, AppstoreOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateUserInfoCache } from "@site/src/api";
@@ -101,7 +101,7 @@ const UserProfile = () => {
 
   if (isLoading || !userAuth) {
     return (
-      <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
+      <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
           <Spin size="large" tip={<Translate id="message.loading">加载登录状态...</Translate>} />
         </div>
@@ -110,7 +110,7 @@ const UserProfile = () => {
   }
 
   return (
-    <Layout title={translate({ id: "title.userInfo", message: "用户信息" })}>
+    <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
       <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
@@ -130,9 +130,9 @@ const UserProfile = () => {
                       <Translate id="link.home">返回首页</Translate>
                     </Button>
                   </Link>
-                  <Link to="/user/favorite" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
-                    <Button type="text" icon={<HeartOutlined />}>
-                      <Translate id="link.myFavorites">我的收藏</Translate>
+                  <Link to="/user/center" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
+                    <Button type="text" icon={<AppstoreOutlined />}>
+                      <Translate id="link.myCenter">个人中心</Translate>
                     </Button>
                   </Link>
                 </Space>

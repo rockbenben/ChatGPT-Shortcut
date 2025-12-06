@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "Atualizar Prompt"
   },
-  "hideTags": {
-    "message": "Ocultar etiquetas"
-  },
-  "showTags": {
-    "message": "Mostrar etiquetas"
-  },
-  "link.myfavorite": {
-    "message": "Meus Favoritos"
-  },
-  "加载更多": {
-    "message": "Carregar mais"
-  },
   "theme.ErrorPageContent.title": {
     "message": "Esta página deu erro.",
     "description": "The title of the fallback page when the page crashed"
@@ -967,5 +955,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "Meu Centro"
+  },
+  "link.myAccount": {
+    "message": "Minha Conta"
+  },
+  "prompt.private": {
+    "message": "Privado"
+  },
+  "prompt.content": {
+    "message": "Conteúdo do Prompt"
+  },
+  "prompt.description": {
+    "message": "Descrição"
+  },
+  "action.viewDetails": {
+    "message": "Ver Detalhes"
   }
 }

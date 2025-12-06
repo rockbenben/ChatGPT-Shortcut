@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "تحديث التوجيه"
   },
-  "hideTags": {
-    "message": "إخفاء الوسوم"
-  },
-  "showTags": {
-    "message": "إظهار الوسوم"
-  },
-  "link.myfavorite": {
-    "message": "مفضلاتي"
-  },
-  "加载更多": {
-    "message": "تحميل المزيد"
-  },
   "theme.ErrorPageContent.title": {
     "message": "هذه الصفحة لا تستجيب.",
     "description": "The title of the fallback page when the page crashed"
@@ -963,5 +951,27 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "مركزي"
+  },
+  "link.myAccount": {
+    "message": "حسابي"
+  },
+  "prompt.private": {
+    "message": "خاص"
+  },
+  "prompt.content": {
+    "message": "محتوى المطالبة"
+  },
+  "prompt.description": {
+    "message": "وصف"
+  },
+  "action.viewDetails": {
+    "message": "عرض التفاصيل"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "إغلاق",
+    "description": "The ARIA label for close button of announcement bar"
   }
 }

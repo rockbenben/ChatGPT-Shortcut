@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "प्रॉम्प्ट अपडेट करें"
   },
-  "hideTags": {
-    "message": "टैग छिपाएं"
-  },
-  "showTags": {
-    "message": "टैग दिखाएं"
-  },
-  "link.myfavorite": {
-    "message": "मेरे पसंदीदा"
-  },
-  "加载更多": {
-    "message": "और लोड करें"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -963,5 +951,27 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "मेरा केंद्र"
+  },
+  "link.myAccount": {
+    "message": "मेरा खाता"
+  },
+  "prompt.private": {
+    "message": "निजी"
+  },
+  "prompt.content": {
+    "message": "प्रॉम्प्ट सामग्री"
+  },
+  "prompt.description": {
+    "message": "विवरण"
+  },
+  "action.viewDetails": {
+    "message": "विवरण देखें"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "बंद करे",
+    "description": "The ARIA label for close button of announcement bar"
   }
 }

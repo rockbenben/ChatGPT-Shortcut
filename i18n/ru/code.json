@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "Обновить Prompt"
   },
-  "hideTags": {
-    "message": "Скрыть теги"
-  },
-  "showTags": {
-    "message": "Показать теги"
-  },
-  "link.myfavorite": {
-    "message": "Мое избранное"
-  },
-  "加载更多": {
-    "message": "Загрузить еще"
-  },
   "theme.ErrorPageContent.title": {
     "message": "На странице произошёл сбой.",
     "description": "The title of the fallback page when the page crashed"
@@ -967,5 +955,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "Мой Центр"
+  },
+  "link.myAccount": {
+    "message": "Мой Аккаунт"
+  },
+  "prompt.private": {
+    "message": "Частный"
+  },
+  "prompt.content": {
+    "message": "Содержание подсказки"
+  },
+  "prompt.description": {
+    "message": "Описание"
+  },
+  "action.viewDetails": {
+    "message": "Посмотреть детали"
   }
 }

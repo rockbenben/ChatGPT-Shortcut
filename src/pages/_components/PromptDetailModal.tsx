@@ -77,7 +77,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                   <Space size={4}>
                     <LockOutlined style={{ color: token.colorTextSecondary }} />
                     <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                      <Translate id="prompt.private">Private</Translate>
+                      <Translate id="prompt.private">私密</Translate>
                     </Typography.Text>
                   </Space>
                 )}
@@ -148,10 +148,10 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
             <div>
               <Flex justify="space-between" align="center" style={{ marginBottom: token.marginXS }}>
                 <Typography.Text strong style={{ fontSize: token.fontSizeLG }}>
-                  <Translate id="prompt.content">Prompt Content</Translate>
+                  <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
                 <Button size="small" type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
-                  {copied ? <Translate id="common.copied">Copied</Translate> : <Translate id="action.copy">Copy</Translate>}
+                  {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
                 </Button>
               </Flex>
               <div
@@ -180,7 +180,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
             {data.description && data.description !== data.prompt && (
               <div>
                 <Typography.Text strong style={{ display: "block", marginBottom: token.marginXS, fontSize: token.fontSizeLG }}>
-                  <Translate id="prompt.description">Description</Translate>
+                  <Translate id="prompt.description">描述</Translate>
                 </Typography.Text>
                 <Typography.Paragraph type="secondary" style={{ margin: 0, lineHeight: 1.6 }}>
                   {data.description}
@@ -203,7 +203,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
             {showViewDetails && (
               <Link to={`/prompt/${data.id}`}>
                 <Button type="link" icon={<InfoCircleOutlined />}>
-                  <Translate id="action.viewDetails">View Details</Translate>
+                  <Translate id="action.viewDetails">查看详情</Translate>
                 </Button>
               </Link>
             )}

@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "Update Prompt"
   },
-  "hideTags": {
-    "message": "Hide Tags"
-  },
-  "showTags": {
-    "message": "Show Tags"
-  },
-  "link.myfavorite": {
-    "message": "My Favorites"
-  },
-  "加载更多": {
-    "message": "Load More"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -967,5 +955,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "My Center"
+  },
+  "link.myAccount": {
+    "message": "My Account"
+  },
+  "prompt.private": {
+    "message": "Private"
+  },
+  "prompt.content": {
+    "message": "Prompt Content"
+  },
+  "prompt.description": {
+    "message": "Description"
+  },
+  "action.viewDetails": {
+    "message": "View Details"
   }
 }

@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "プロンプトを更新"
   },
-  "hideTags": {
-    "message": "タグを隠す"
-  },
-  "showTags": {
-    "message": "タグを表示"
-  },
-  "link.myfavorite": {
-    "message": "私のお気に入り"
-  },
-  "加载更多": {
-    "message": "もっと読み込む"
-  },
   "theme.ErrorPageContent.title": {
     "message": "エラーが発生しました",
     "description": "The title of the fallback page when the page crashed"
@@ -967,5 +955,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "マイセンター"
+  },
+  "link.myAccount": {
+    "message": "マイアカウント"
+  },
+  "prompt.private": {
+    "message": "非公開"
+  },
+  "prompt.content": {
+    "message": "プロンプトの内容"
+  },
+  "prompt.description": {
+    "message": "説明"
+  },
+  "action.viewDetails": {
+    "message": "詳細を見る"
   }
 }

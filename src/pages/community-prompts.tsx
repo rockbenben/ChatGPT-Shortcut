@@ -11,7 +11,7 @@ import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin, Card, Skeleton, theme } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
 const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
@@ -228,9 +228,9 @@ const CommunityPrompts = () => {
                     </Button>
                   </Link>
                   {userAuth ? (
-                    <Link to="/user/favorite" className="interLink">
-                      <Button type="text" icon={<StarOutlined />}>
-                        <Translate id="link.myFavorites">我的收藏</Translate>
+                    <Link to="/user/center" className="interLink">
+                      <Button type="text" icon={<AppstoreOutlined />}>
+                        <Translate id="link.myCenter">个人中心</Translate>
                       </Button>
                     </Link>
                   ) : (

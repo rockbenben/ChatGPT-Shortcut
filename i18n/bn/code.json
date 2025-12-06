@@ -629,18 +629,6 @@
   "action.updatePrompt": {
     "message": "প্রম্পট আপডেট করুন"
   },
-  "hideTags": {
-    "message": "ট্যাগ লুকান"
-  },
-  "showTags": {
-    "message": "ট্যাগ দেখান"
-  },
-  "link.myfavorite": {
-    "message": "আমার পছন্দসমূহ"
-  },
-  "加载更多": {
-    "message": "আরও লোড করুন"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -967,5 +955,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "link.myCenter": {
+    "message": "আমার কেন্দ্র"
+  },
+  "link.myAccount": {
+    "message": "আমার অ্যাকাউন্ট"
+  },
+  "prompt.private": {
+    "message": "ব্যক্তিগত"
+  },
+  "prompt.content": {
+    "message": "প্রম্পট বিষয়বস্তু"
+  },
+  "prompt.description": {
+    "message": "বর্ণনা"
+  },
+  "action.viewDetails": {
+    "message": "বিস্তারিত দেখুন"
   }
 }

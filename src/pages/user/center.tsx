@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 
 import { theme, Flex, Button, Space, Segmented } from "antd";
-import { HeartOutlined, EditOutlined, HomeOutlined, UserOutlined } from "@ant-design/icons";
+import { HeartOutlined, EditOutlined, HomeOutlined, UserOutlined, AppstoreOutlined } from "@ant-design/icons";
 
 import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
@@ -52,7 +52,7 @@ const UserBookmark = () => {
   );
 
   return (
-    <Layout>
+    <Layout title={translate({ id: "link.myCenter", message: "个人中心" })}>
       <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
         <div className="container">
           <Flex vertical gap="middle">
@@ -75,7 +75,7 @@ const UserBookmark = () => {
                   </Link>
                   <Link to="/user" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
                     <Button type="text" icon={<UserOutlined />}>
-                      <Translate id="link.userCenter">个人中心</Translate>
+                      <Translate id="link.myAccount">我的账户</Translate>
                     </Button>
                   </Link>
                 </Space>
@@ -117,10 +117,10 @@ const UserBookmark = () => {
   );
 };
 
-const FavoritePage = () => (
+const UserCenterPage = () => (
   <AuthProvider>
     <UserBookmark />
   </AuthProvider>
 );
 
-export default FavoritePage;
+export default UserCenterPage;
