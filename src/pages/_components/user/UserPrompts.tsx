@@ -10,7 +10,7 @@ import styles from "@site/src/pages/_components/PromptCard/styles.module.css";
 import pageStyles from "@site/src/pages/styles.module.css";
 import isEqual from "lodash/isEqual";
 
-import { getPrompts, updatePromptsOrder, updateLocalStorageCache } from "@site/src/api";
+import { getPrompts, updatePromptsOrder, updateUserInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import EditPromptModal from "./modal/EditPromptModal";
@@ -114,7 +114,7 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false, onOpenModal 
     if (hasDragged && userprompts.length > 0) {
       const ids = userprompts.map((item) => item.id);
       const objectsArray = ids.map((id) => ({ id }));
-      updateLocalStorageCache("userprompts", objectsArray);
+      updateUserInfoCache("userprompts", objectsArray);
       updatePromptsOrder(ids);
       setHasDragged(false);
     }

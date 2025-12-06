@@ -78,7 +78,7 @@ const CommunityPrompts = () => {
         const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
         if (result && result[0].length > 0) {
           setUserPrompts(result[0]);
-          setTotal(result[1].data.meta.pagination.total);
+          setTotal(result[1].pagination.total);
         } else if (result && result[0].length === 0) {
           setUserPrompts([]);
           setTotal(0);

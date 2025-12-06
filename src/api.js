@@ -1,5 +1,6 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import { setCache, getCache, removeCache, flushCacheByPrefix, getPromptCacheKey, getPromptTTL, getListCacheKey, CACHE_TTL, CACHE_PREFIX } from "@site/src/utils/cache";
 
 // Authentication Constants 登陆用户常量
 const API_URL = "https://api.newzone.top/api"; // http://localhost:1337/api  https://api.newzone.top/api
@@ -10,8 +11,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 // Remove User Cache 移除用户缓存信息
 export function clearUserAllInfoCache() {
-  localStorage.removeItem("userAllInfo");
-  localStorage.removeItem("userAllInfoCacheExpiration");
+  removeCache(CACHE_PREFIX.USER_INFO);
 }
 
 const ensureArrayInput = (value, fieldName) => {
@@ -76,34 +76,27 @@ apiClient.interceptors.response.use(
   }
 );
 
-// 更新 localStorage 缓存的通用函数
-export const updateLocalStorageCache = (setField, updatedData) => {
-  const cachedData = localStorage.getItem("userAllInfo");
+// 更新用户信息缓存的通用函数
+export const updateUserInfoCache = (setField, updatedData) => {
+  const cachedData = getCache(CACHE_PREFIX.USER_INFO);
   if (!cachedData) return;
-  try {
-    const data = JSON.parse(cachedData);
-    if (!data || typeof data !== "object") {
-      return;
-    }
 
-    data.data = data.data || {};
+  try {
+    cachedData.data = cachedData.data || {};
 
     if (setField === "favorites.loves") {
-      if (!data.data.favorites) {
-        data.data.favorites = {};
-      }
-      data.data.favorites.loves = updatedData;
+      cachedData.data.favorites = cachedData.data.favorites || {};
+      cachedData.data.favorites.loves = updatedData;
     } else if (setField === "favorites.commLoves") {
-      if (!data.data.favorites) {
-        data.data.favorites = {};
-      }
-      data.data.favorites.commLoves = updatedData;
+      cachedData.data.favorites = cachedData.data.favorites || {};
+      cachedData.data.favorites.commLoves = updatedData;
     } else {
-      data.data[setField] = updatedData;
+      cachedData.data[setField] = updatedData;
     }
-    localStorage.setItem("userAllInfo", JSON.stringify(data));
+
+    setCache(CACHE_PREFIX.USER_INFO, cachedData, CACHE_TTL.USER_INFO);
   } catch (error) {
-    console.error("Error updating localStorage cache:", error);
+    console.error("Error updating user info cache:", error);
   }
 };
 
@@ -112,33 +105,36 @@ export const updateLocalStorageCache = (setField, updatedData) => {
 export async function getUserAllInfo() {
   const token = getAuthToken();
   if (!token) {
-    // 返回 null 而不是抛出错误，表示未登录状态
     return null;
   }
 
-  const cacheKey = "userAllInfo";
-  const expirationKey = "userAllInfoCacheExpiration";
+  const cacheKey = CACHE_PREFIX.USER_INFO;
+  const cachedData = getCache(cacheKey);
 
-  const cachedData = localStorage.getItem(cacheKey);
-  const cachedExpiration = localStorage.getItem(expirationKey);
-
-  if (cachedData && cachedExpiration && Date.now() < Number(cachedExpiration)) {
-    // 如果缓存的数据和缓存过期时间都存在，且当前时间小于缓存过期时间，那么直接返回缓存的数据
-    return JSON.parse(cachedData);
+  if (cachedData) {
+    return cachedData;
   }
 
   try {
-    // 如果缓存不存在或已过期，那么发送请求获取新的数据
     const response = await apiClient.get(
       `/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id&populate[userprompts][fields][1]=share`
     );
 
     const normalizedResponse = { data: response.data };
+    setCache(cacheKey, normalizedResponse, CACHE_TTL.USER_INFO);
 
-    // 保存新的数据和缓存时间
-    localStorage.setItem(cacheKey, JSON.stringify(normalizedResponse));
-    getPrompts("userprompts", response.data.userprompts);
-    localStorage.setItem(expirationKey, (Date.now() + 24 * 60 * 60 * 1000).toString());
+    // 预热 userprompts 缓存：只获取尚未缓存的 prompt
+    const userprompts = response.data.userprompts;
+    if (userprompts && userprompts.length > 0) {
+      const uncachedPrompts = userprompts.filter((p) => {
+        const promptCacheKey = getPromptCacheKey("userprompts", p.id);
+        return !getCache(promptCacheKey);
+      });
+
+      if (uncachedPrompts.length > 0) {
+        getPrompts("userprompts", uncachedPrompts);
+      }
+    }
 
     return normalizedResponse;
   } catch (error) {
@@ -149,7 +145,6 @@ export async function getUserAllInfo() {
 
 // Batch fetch selected prompts 批量获取精选prompt
 export async function getPrompts(type, ids, lang) {
-  // 如果没有 ids，直接返回空数组
   if (!ids || ids.length === 0) {
     return [];
   }
@@ -164,6 +159,7 @@ export async function getPrompts(type, ids, lang) {
   const safeType = allowedTypes.has(normalizedType) ? normalizedType : "commus";
   const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : undefined;
 
+  // 去重并验证 ID
   const idsSeen = new Set();
   const normalizedIds = [];
   ids.forEach((value) => {
@@ -181,34 +177,20 @@ export async function getPrompts(type, ids, lang) {
   const cachedPrompts = new Map();
   const idsToFetch = [];
 
-  // 辅助函数：生成缓存 key 和过期时间 key
-  const getCacheKey = (id) => `${safeType}_${id}${sanitizedLang ? `_${sanitizedLang}` : ""}`;
-  const getExpirationKey = (cacheKey) => `${cacheKey}_expiration`;
-
-  // 遍历每个 id，检查缓存是否有效
+  // 遍历每个 id，检查缓存
   normalizedIds.forEach((id) => {
-    const cacheKey = getCacheKey(id);
-    const expirationKey = getExpirationKey(cacheKey);
-    const cachedDataStr = localStorage.getItem(cacheKey);
-    const expirationDate = localStorage.getItem(expirationKey);
+    const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+    const cachedData = getCache(cacheKey);
 
-    let cachedData;
-    try {
-      cachedData = JSON.parse(cachedDataStr);
-    } catch (error) {
-      cachedData = null;
-    }
-
-    if (cachedData && expirationDate && Date.now() < Number(expirationDate)) {
+    if (cachedData) {
       cachedPrompts.set(id, cachedData);
     } else {
       idsToFetch.push(id);
     }
   });
 
-  // 如果所有数据都在缓存中，直接按原始顺序返回
+  // 如果所有数据都在缓存中，直接返回
   if (idsToFetch.length === 0) {
-    // 按原始 id 顺序排序
     return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
   }
 
@@ -223,21 +205,12 @@ export async function getPrompts(type, ids, lang) {
 
   try {
     const response = await apiClient.post(apiEndpoint, postData);
+    const ttl = getPromptTTL(safeType);
 
-    // 通过对象映射来获取对应的过期时间
-    const expirationTimes = {
-      cards: 100 * 24 * 60 * 60 * 1000,
-      commus: 30 * 24 * 60 * 60 * 1000,
-      userprompts: 12 * 60 * 60 * 1000,
-    };
-    const expirationTime = expirationTimes[safeType] || 24 * 60 * 60 * 1000;
-
-    // 更新缓存：保存请求到的数据及过期时间
+    // 更新缓存
     response.data.forEach((item) => {
-      const itemCacheKey = getCacheKey(item.id);
-      const itemExpirationKey = getExpirationKey(itemCacheKey);
-      localStorage.setItem(itemCacheKey, JSON.stringify(item));
-      localStorage.setItem(itemExpirationKey, String(Date.now() + expirationTime));
+      const cacheKey = getPromptCacheKey(safeType, item.id, sanitizedLang);
+      setCache(cacheKey, item, ttl);
     });
 
     // 合并缓存和新获取的数据
@@ -246,7 +219,6 @@ export async function getPrompts(type, ids, lang) {
       allData.set(item.id, item);
     });
 
-    // 按照原始 ids 数组的顺序返回数据
     return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
     console.error(`Error fetching ${type}:`, error);
@@ -377,11 +349,11 @@ export async function updatePrompt(id, values) {
       },
     });
 
-    const cacheKey = `userprompts_${id}`;
-    localStorage.removeItem(cacheKey);
-    getPrompts("userprompts", [{ id }]);
+    // 清除缓存，下次访问时获取最新数据
+    // PUT 返回格式 (data.attributes) 与 getPrompts (扁平) 不同，不能直接缓存
+    const cacheKey = getPromptCacheKey("userprompts", id);
+    removeCache(cacheKey);
 
-    //clearUserAllInfoCache();
     return response.data;
   } catch (error) {
     console.error("Error updating prompt:", error);
@@ -393,6 +365,11 @@ export async function updatePrompt(id, values) {
 export async function deletePrompt(id) {
   try {
     const response = await apiClient.delete(`/userprompts/${id}`);
+
+    // 清除该 prompt 的缓存
+    const cacheKey = getPromptCacheKey("userprompts", id);
+    removeCache(cacheKey);
+
     clearUserAllInfoCache();
     return response;
   } catch (error) {
@@ -408,21 +385,15 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
   const limitedSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
   const encodedSearchKey = trimmedSearchTerm ? encodeURIComponent(limitedSearchTerm) : "noTerm";
 
-  const cacheKey = `commPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${encodedSearchKey}`;
-  const expirationKey = `${cacheKey}_expiration`;
+  const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, page, pageSize, sortField, sortOrder, encodedSearchKey);
+  const cachedData = getCache(cacheKey);
 
-  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
-  const expirationDate = localStorage.getItem(expirationKey);
-
-  // 检查缓存的数据是否还有效
-  if (cachedData && expirationDate && Date.now() < Number(expirationDate)) {
-    //localStorage.removeItem(cacheKey);
+  if (cachedData) {
     return cachedData;
   }
 
-  let url = `/userprompts?fields=id&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
+  let url = `/userprompts?pagination[withCount]=true&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=${sortField}:${sortOrder}`;
 
-  // 如果存在搜索关键字，那么添加到 URL 中
   if (trimmedSearchTerm) {
     url += `&filters[$or][0][description][$containsi]=${limitedSearchTerm}&filters[$or][1][title][$containsi]=${limitedSearchTerm}&filters[$or][2][remark][$containsi]=${limitedSearchTerm}`;
   }
@@ -432,11 +403,11 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     const ids = responseTotal.data.data.map((item) => item.id);
     const responseIds = await getPrompts("commus", ids);
 
-    const nextExpirationDate = Date.now() + 24 * 60 * 60 * 1000; // 24 hour later
-    localStorage.setItem(cacheKey, JSON.stringify([responseIds, responseTotal]));
-    localStorage.setItem(expirationKey, String(nextExpirationDate));
+    // 只缓存必要数据：prompts 数组和分页信息
+    const result = [responseIds, { pagination: responseTotal.data.meta.pagination }];
+    setCache(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS);
 
-    return [responseIds, responseTotal];
+    return result;
   } catch (error) {
     console.error(`Error fetching commPrompts:`, error);
     throw error;
@@ -449,13 +420,11 @@ export async function findCardsWithTags(tags, search, lang = "zh", operator = "O
     const normalizedTags = Array.isArray(tags) ? Array.from(new Set(tags.map((tag) => (typeof tag === "string" ? tag.trim() : "")).filter(Boolean))) : [];
     const safeSearch = typeof search === "string" ? search.trim().slice(0, 100) : "";
 
-    const cacheKey = `findCardsWithTags_${encodeURIComponent(JSON.stringify(normalizedTags))}_${encodeURIComponent(safeSearch)}_${lang}_${operator}`;
-    const cachedData = localStorage.getItem(cacheKey);
-    const cacheExpirationKey = `${cacheKey}_expiration`;
-    const cacheExpiration = localStorage.getItem(cacheExpirationKey);
+    const cacheKey = getListCacheKey(CACHE_PREFIX.SEARCH, encodeURIComponent(JSON.stringify(normalizedTags)), encodeURIComponent(safeSearch), lang, operator);
+    const cachedData = getCache(cacheKey);
 
-    if (cachedData && cacheExpiration && Date.now() < Number(cacheExpiration)) {
-      return JSON.parse(cachedData);
+    if (cachedData) {
+      return cachedData;
     }
 
     const queryParams = new URLSearchParams();
@@ -472,9 +441,7 @@ export async function findCardsWithTags(tags, search, lang = "zh", operator = "O
     const responseIds = await apiClient.get(`/cards/find-with-tag`, { params: queryParams });
     const detailedCards = await getPrompts("cards", responseIds.data, lang);
 
-    localStorage.setItem(cacheKey, JSON.stringify(detailedCards));
-    const expirationTime = Date.now() + 100 * 24 * 60 * 60 * 1000;
-    localStorage.setItem(cacheExpirationKey, expirationTime.toString());
+    setCache(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS);
 
     return detailedCards;
   } catch (error) {
@@ -494,43 +461,20 @@ export async function voteOnUserPrompt(promptId, action) {
     // 使用后端返回值更新本地缓存
     if (result?.data?.counts) {
       const { upvotes, downvotes } = result.data.counts;
-      const upvoteDifference = upvotes - downvotes; // 计算投票差值
+      const upvoteDifference = upvotes - downvotes;
 
       // 1. 更新该 prompt 的单独缓存
-      const cacheKey = `commus_${promptId}`;
-      const cachedDataStr = localStorage.getItem(cacheKey);
-      if (cachedDataStr) {
-        try {
-          const cachedData = JSON.parse(cachedDataStr);
-          cachedData.upvotes = upvotes;
-          cachedData.downvotes = downvotes;
-          cachedData.upvoteDifference = upvoteDifference;
-          localStorage.setItem(cacheKey, JSON.stringify(cachedData));
-        } catch (e) {
-          // 解析失败，忽略
-        }
+      const cacheKey = getPromptCacheKey("commus", promptId);
+      const cachedData = getCache(cacheKey);
+      if (cachedData) {
+        cachedData.upvotes = upvotes;
+        cachedData.downvotes = downvotes;
+        cachedData.upvoteDifference = upvoteDifference;
+        setCache(cacheKey, cachedData, getPromptTTL("commus"));
       }
 
-      // 2. 更新所有 commPrompts 列表缓存中该 prompt 的数据
-      Object.keys(localStorage).forEach((key) => {
-        if (key.startsWith("commPrompts_") && !key.endsWith("_expiration")) {
-          try {
-            const listCache = JSON.parse(localStorage.getItem(key));
-            if (Array.isArray(listCache) && listCache[0]) {
-              const prompts = listCache[0];
-              const promptIndex = prompts.findIndex((p) => p.id === promptId);
-              if (promptIndex !== -1) {
-                prompts[promptIndex].upvotes = upvotes;
-                prompts[promptIndex].downvotes = downvotes;
-                prompts[promptIndex].upvoteDifference = upvoteDifference;
-                localStorage.setItem(key, JSON.stringify(listCache));
-              }
-            }
-          } catch (e) {
-            // 解析失败，忽略
-          }
-        }
-      });
+      // 2. 清除 commPrompts 列表缓存（强制下次刷新时获取最新数据）
+      flushCacheByPrefix(CACHE_PREFIX.COMM_LISTS);
     }
 
     return result;
@@ -621,39 +565,29 @@ export async function loginWithToken(loginToken) {
 /* 评论系统 */
 // 按 type 来获取评论
 export async function getComments(id, page, pageSize, type = "card") {
-  const cacheKey = `comments_${type}_${id}_${page}_${pageSize}`;
-  const expirationKey = `${cacheKey}_expiration`;
+  const cacheKey = getListCacheKey(CACHE_PREFIX.COMMENTS, type, id, page, pageSize);
+  const cachedData = getCache(cacheKey);
 
-  const cachedData = JSON.parse(localStorage.getItem(cacheKey));
-  const expirationDate = localStorage.getItem(expirationKey);
+  if (cachedData) {
+    return cachedData;
+  }
 
-  if (cachedData && expirationDate && Date.now() < Number(expirationDate)) {
-    return Promise.resolve(cachedData);
-  } else {
-    try {
-      const response = await apiClient.get(
-        `/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
-      );
+  try {
+    const response = await apiClient.get(
+      `/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
+    );
 
-      const nextExpirationDate = Date.now() + 12 * 60 * 60 * 1000;
-      localStorage.setItem(cacheKey, JSON.stringify(response.data));
-      localStorage.setItem(expirationKey, String(nextExpirationDate));
-
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching comments:", error);
-      throw error;
-    }
+    setCache(cacheKey, response.data, CACHE_TTL.COMMENTS);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    throw error;
   }
 }
 
 function clearCommentsCache(id, type = "card") {
-  Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith(`comments_${type}_${id}`)) {
-      localStorage.removeItem(key);
-      localStorage.removeItem(`${key}_expiration`);
-    }
-  });
+  const prefix = `${CACHE_PREFIX.COMMENTS}${type}_${id}`;
+  flushCacheByPrefix(prefix);
 }
 
 // 发布评论
@@ -664,7 +598,6 @@ export async function postComment(pageId, commentContent, threadOf = null, type 
       threadOf,
     });
 
-    // 更新缓存
     clearCommentsCache(pageId, type);
     return response;
   } catch (error) {
@@ -677,30 +610,20 @@ export async function postComment(pageId, commentContent, threadOf = null, type 
 // 获取所有 cards 的 copy count
 export async function fetchAllCopyCounts() {
   try {
-    // 首先从 localStorage 中获取缓存的数据和到期时间
-    const cachedData = JSON.parse(localStorage.getItem("copyCounts"));
-    const expirationDate = localStorage.getItem("copyCountsExpiration");
+    const cacheKey = CACHE_PREFIX.COPY_COUNTS;
+    const cachedData = getCache(cacheKey);
 
-    let counts;
-
-    // 检查缓存的数据是否还有效
-    if (cachedData && expirationDate && Date.now() < Number(expirationDate)) {
-      // 如果有效，那么直接使用缓存的数据
-      counts = cachedData;
-    } else {
-      // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-      const response = await apiClient.get(`/cards/allcounts`);
-      counts = response.data.reduce((acc, item) => {
-        acc[item.card_id] = item.count;
-        return acc;
-      }, {});
-
-      // 将获取到的数据和新的到期时间存储到 localStorage 中
-      const nextExpirationDate = Date.now() + 240 * 60 * 60 * 1000;
-      localStorage.setItem("copyCounts", JSON.stringify(counts));
-      localStorage.setItem("copyCountsExpiration", String(nextExpirationDate));
+    if (cachedData) {
+      return cachedData;
     }
 
+    const response = await apiClient.get(`/cards/allcounts`);
+    const counts = response.data.reduce((acc, item) => {
+      acc[item.card_id] = item.count;
+      return acc;
+    }, {});
+
+    setCache(cacheKey, counts, CACHE_TTL.COPY_COUNTS);
     return counts;
   } catch (error) {
     console.error("Error fetching all copy counts:", error);
@@ -711,8 +634,7 @@ export async function fetchAllCopyCounts() {
 export async function updateCopyCount(cardId) {
   try {
     const response = await apiClient.post(`/cards/${cardId}/copy`);
-    const updatedCount = response.data.copyCount;
-    return updatedCount;
+    return response.data.count;
   } catch (error) {
     console.error("Error updating copy count:", error);
     return null;

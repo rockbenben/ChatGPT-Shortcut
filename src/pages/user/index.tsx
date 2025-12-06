@@ -7,7 +7,7 @@ import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, them
 import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
-import { changePassword, forgotPassword, updateUsername, updateLocalStorageCache } from "@site/src/api";
+import { changePassword, forgotPassword, updateUsername, updateUserInfoCache } from "@site/src/api";
 
 const { Title, Text } = Typography;
 
@@ -58,7 +58,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       await updateUsername(newUsername);
-      updateLocalStorageCache("username", newUsername);
+      updateUserInfoCache("username", newUsername);
       await refreshUserAuth();
       messageApi.success("Username updated successfully!");
       setEditUsername(false);

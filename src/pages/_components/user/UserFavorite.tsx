@@ -11,7 +11,7 @@ import pageStyles from "@site/src/pages/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { getPrompts, updateFavorite, updateFavoritesOrder, updateLocalStorageCache } from "@site/src/api";
+import { getPrompts, updateFavorite, updateFavoritesOrder, updateUserInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
@@ -95,7 +95,7 @@ function UserFavoritePage({ filteredCommus = [], filteredCards = [], isFiltered 
     if (hasDragged && favoriteItems.length > 0) {
       const ids = favoriteItems.map((item) => item.id);
       const objectsArray = ids.map((id) => ({ id }));
-      updateLocalStorageCache("favorites", objectsArray);
+      updateUserInfoCache("favorites", objectsArray);
       updateFavoritesOrder("loves", ids);
       setHasDragged(false);
     }
