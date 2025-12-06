@@ -173,7 +173,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     return () => {
       cancelled = true;
     };
-  }, [selectedTags, searchName, operator, currentLanguage, searchMode, userAuth]);
+  }, [selectedTags, searchName, operator, currentLanguage, searchMode, userAuth?.data?.userprompts, userAuth?.data?.favorites?.loves, userAuth?.data?.favorites?.commLoves]);
 
   const isFiltered = selectedTags.length > 0 || searchName !== null;
 
