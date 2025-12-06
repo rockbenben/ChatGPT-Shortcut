@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
-import clsx from "clsx";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
@@ -52,7 +51,7 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
     setParagraphText(isDescription ? userInfo.prompt : userInfo.description);
   }, [isDescription, userInfo.prompt, userInfo.description]);
 
-  const handleParagraphClick = useCallback(() => {
+  const handleCardClick = useCallback(() => {
     onOpenModal?.({
       id: user.id,
       title: userInfo.title,
@@ -85,7 +84,7 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
         title={
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-              <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
+              <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }} onClick={(e) => e.stopPropagation()}>
                 {userInfo.title}
               </Link>
             </Typography.Title>
@@ -108,15 +107,15 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
           ) : (
             user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} block />
           ),
-        ].filter(Boolean)}>
+        ].filter(Boolean)}
+        onCardClick={handleCardClick}>
         <PromptRemark remark={userInfo.remark} />
         <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
           <Typography.Paragraph
             ellipsis={{
               rows: 3,
             }}
-            className={clsx(styles.showcaseCardBody, styles.clickable)}
-            onClick={handleParagraphClick}
+            className={styles.showcaseCardBody}
             style={{ marginBottom: 0 }}>
             {userDescription}
           </Typography.Paragraph>

@@ -14,10 +14,11 @@ export interface BasePromptCardProps {
   loading?: boolean;
   hoverable?: boolean;
   id?: string;
+  onCardClick?: () => void;
 }
 
 export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardProps>(
-  ({ title, titleExtra, actions, children, className, style, bodyStyle, loading, hoverable = true, id, ...rest }, ref) => {
+  ({ title, titleExtra, actions, children, className, style, bodyStyle, loading, hoverable = true, id, onCardClick, ...rest }, ref) => {
     const { token } = theme.useToken();
 
     return (
@@ -32,6 +33,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           display: "flex",
           flexDirection: "column",
           borderColor: token.colorBorderSecondary,
+          cursor: onCardClick ? "pointer" : undefined,
           ...style,
         }}
         styles={{
@@ -50,6 +52,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           },
         }}
         actions={actions}
+        onClick={onCardClick}
         {...rest}>
         {(title || titleExtra) && (
           <Flex justify="space-between" align="start" style={{ marginBottom: token.marginSM, minHeight: 32 }}>

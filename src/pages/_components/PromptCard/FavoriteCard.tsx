@@ -1,5 +1,4 @@
 import React, { useContext, useCallback } from "react";
-import clsx from "clsx";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
@@ -63,7 +62,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
     }
   }, [isDataCard, updateCopy, copyText, prompt, user.id]);
 
-  const handleParagraphClick = useCallback(() => {
+  const handleCardClick = useCallback(() => {
     if (isDataCard) {
       onOpenModal?.({
         id: user.id,
@@ -96,7 +95,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
-                <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }}>
+                <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }} onClick={(e) => e.stopPropagation()}>
                   {title}
                 </Link>
               ) : (
@@ -138,7 +137,8 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
           <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
             <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => onRemoveFavorite?.(user.id, !isDataCard)} block />
           </Tooltip>,
-        ]}>
+        ]}
+        onCardClick={handleCardClick}>
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <PromptRemark remark={remark} />
           <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
@@ -146,8 +146,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
               ellipsis={{
                 rows: 3,
               }}
-              className={clsx(styles.showcaseCardBody, styles.clickable)}
-              onClick={handleParagraphClick}
+              className={styles.showcaseCardBody}
               style={{ marginBottom: 0, color: token.colorTextSecondary }}>
               {contentToShow}
             </Typography.Paragraph>

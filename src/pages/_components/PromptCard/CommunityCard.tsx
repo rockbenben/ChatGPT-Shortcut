@@ -1,5 +1,4 @@
 import React, { useContext, useCallback } from "react";
-import clsx from "clsx";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
@@ -30,7 +29,7 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
     copyText(user.description);
   }, [copyText, user.description]);
 
-  const handleParagraphClick = useCallback(() => {
+  const handleCardClick = useCallback(() => {
     onOpenModal?.({
       id: user.id,
       title: user.title,
@@ -83,7 +82,8 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
               </Button>
             </Tooltip>
           ),
-        ].filter(Boolean)}>
+        ].filter(Boolean)}
+        onCardClick={handleCardClick}>
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <PromptRemark remark={user.remark} />
           <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
@@ -91,8 +91,7 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
               ellipsis={{
                 rows: 5,
               }}
-              className={clsx(styles.showcaseCardBody, styles.clickable)}
-              onClick={handleParagraphClick}
+              className={styles.showcaseCardBody}
               style={{ marginBottom: 0, color: token.colorTextSecondary }}>
               {user.description}
             </Typography.Paragraph>

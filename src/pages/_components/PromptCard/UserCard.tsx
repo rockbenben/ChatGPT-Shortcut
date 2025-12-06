@@ -1,5 +1,4 @@
 import React, { useContext, useCallback } from "react";
-import clsx from "clsx";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
@@ -42,7 +41,7 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
     copyText(user.description);
   }, [copyText, user.description]);
 
-  const handleParagraphClick = useCallback(() => {
+  const handleCardClick = useCallback(() => {
     onOpenModal?.({
       id: user.id,
       title: user.title,
@@ -95,7 +94,8 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
           <Tooltip title={<Translate id="action.delete">删除</Translate>}>
             <Button type="text" danger icon={<DeleteOutlined />} onClick={() => onDelete?.(user.id)} block />
           </Tooltip>,
-        ]}>
+        ]}
+        onCardClick={handleCardClick}>
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
           <PromptRemark remark={user.remark} />
           <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
@@ -103,8 +103,7 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
               ellipsis={{
                 rows: 3,
               }}
-              className={clsx(styles.showcaseCardBody, styles.clickable)}
-              onClick={handleParagraphClick}
+              className={styles.showcaseCardBody}
               style={{ marginBottom: 0, color: token.colorTextSecondary }}>
               {user.description}
             </Typography.Paragraph>
