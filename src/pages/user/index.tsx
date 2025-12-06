@@ -116,22 +116,38 @@ const UserProfile = () => {
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
               {/* Header Navigation */}
-              <Card variant="borderless" styles={{ body: { padding: "16px 24px" } }}>
+              <div
+                style={{
+                  padding: "16px 24px",
+                  background: token.colorBgContainer,
+                  borderRadius: token.borderRadiusLG,
+                  border: `1px solid ${token.colorBorderSecondary}`,
+                  boxShadow: token.boxShadowTertiary,
+                }}>
                 <Space separator={<Divider orientation="vertical" />}>
                   <Link to="/" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
-                    <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
+                    <Button type="text" icon={<HomeOutlined />} style={{ paddingLeft: 0 }}>
+                      <Translate id="link.home">返回首页</Translate>
+                    </Button>
                   </Link>
                   <Link to="/user/favorite" style={{ display: "flex", alignItems: "center", gap: 8, color: token.colorTextSecondary }}>
-                    <HeartOutlined /> <Translate id="link.myFavorites">我的收藏</Translate>
+                    <Button type="text" icon={<HeartOutlined />}>
+                      <Translate id="link.myFavorites">我的收藏</Translate>
+                    </Button>
                   </Link>
                 </Space>
-              </Card>
+              </div>
 
               <Row gutter={[24, 24]}>
                 {/* Left Column: Profile Info */}
                 <Col xs={24} md={10}>
                   <Card
-                    variant="borderless"
+                    style={{
+                      height: "100%",
+                      borderRadius: token.borderRadiusLG,
+                      border: `1px solid ${token.colorBorderSecondary}`,
+                      boxShadow: token.boxShadowTertiary,
+                    }}
                     title={
                       <Space>
                         <UserOutlined style={{ color: token.colorPrimary }} />
@@ -176,7 +192,12 @@ const UserProfile = () => {
                 {/* Right Column: Security Settings */}
                 <Col xs={24} md={14}>
                   <Card
-                    variant="borderless"
+                    style={{
+                      height: "100%",
+                      borderRadius: token.borderRadiusLG,
+                      border: `1px solid ${token.colorBorderSecondary}`,
+                      boxShadow: token.boxShadowTertiary,
+                    }}
                     title={
                       <Space>
                         <SafetyCertificateOutlined style={{ color: token.colorPrimary }} />
