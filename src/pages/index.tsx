@@ -276,29 +276,54 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState<(number | string)[]>([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState<(number | string)[]>([]);
+
+  // 本次会话的投票记录（防止 API 请求期间重复点击）
+  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
+  // 本地投票增量（用于 optimistic UI，存储 delta 而非绝对值）
+  const [voteDeltas, setVoteDeltas] = useState<Record<string | number, { upvoteDelta: number; downvoteDelta: number }>>({});
 
   const vote = useCallback(
-    async (promptId, action) => {
+    async (promptId: number | string, action: "upvote" | "downvote") => {
       if (!userAuth) {
         messageApi.warning("Please log in to vote.");
         return;
       }
-      // Prevent duplicate clicks
-      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
-      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+
+      // 防止 API 请求期间重复点击
+      const voteKey = `${promptId}_${action}`;
+      if (sessionVotedIdsRef.current.has(voteKey)) {
+        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        return;
+      }
+      sessionVotedIdsRef.current.add(voteKey);
+
+      // Optimistic UI: 存储增量变化
+      const delta = { upvoteDelta: action === "upvote" ? 1 : 0, downvoteDelta: action === "downvote" ? 1 : 0 };
+      setVoteDeltas((prev) => ({
+        ...prev,
+        [promptId]: {
+          upvoteDelta: (prev[promptId]?.upvoteDelta || 0) + delta.upvoteDelta,
+          downvoteDelta: (prev[promptId]?.downvoteDelta || 0) + delta.downvoteDelta,
+        },
+      }));
 
       try {
         await voteOnUserPrompt(promptId, action);
         messageApi.success(`Successfully ${action}d!`);
-        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
-        updateVotedIds((prevIds) => [...prevIds, promptId]);
       } catch (err) {
-        messageApi.error(`Failed to ${action}. Error: ${err}`);
+        // 回滚增量
+        sessionVotedIdsRef.current.delete(voteKey);
+        setVoteDeltas((prev) => ({
+          ...prev,
+          [promptId]: {
+            upvoteDelta: (prev[promptId]?.upvoteDelta || 0) - delta.upvoteDelta,
+            downvoteDelta: (prev[promptId]?.downvoteDelta || 0) - delta.downvoteDelta,
+          },
+        }));
+        messageApi.error(`Failed to ${action}. Please try again.`);
       }
     },
-    [userAuth, votedUpPromptIds, votedDownPromptIds, messageApi]
+    [userAuth, messageApi]
   );
 
   const fetchData = useCallback(async () => {
@@ -410,11 +435,23 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             {filteredCommus.map((user) => {
               const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
+
+              // 应用本地投票增量（optimistic UI）
+              const delta = voteDeltas[user.id];
+              const modifiedData = delta
+                ? {
+                    ...user,
+                    upvotes: (user.upvotes || 0) + delta.upvoteDelta,
+                    downvotes: (user.downvotes || 0) + delta.downvoteDelta,
+                    upvoteDifference: (user.upvoteDifference || 0) + delta.upvoteDelta - delta.downvoteDelta,
+                  }
+                : user;
+
               return (
                 <PromptCard
                   key={user.id}
                   type={isUserPrompt ? "user" : "community"}
-                  data={user}
+                  data={modifiedData}
                   onEdit={isUserPrompt ? () => onEdit(user) : undefined}
                   onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
                   isFavorite={isFavorite}

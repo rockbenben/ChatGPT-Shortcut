@@ -434,7 +434,50 @@ export async function voteOnUserPrompt(promptId, action) {
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
     }
-    return await axios.post(`${API_URL}/userprompts/${promptId}/vote`, { action: action }, config);
+    const result = await axios.post(`${API_URL}/userprompts/${promptId}/vote`, { action: action }, config);
+
+    // 使用后端返回值更新本地缓存（而非清除）
+    if (result?.data?.counts) {
+      const { upvotes, downvotes, difference } = result.data.counts;
+
+      // 1. 更新该 prompt 的单独缓存
+      const cacheKey = `commus_${promptId}`;
+      const cachedDataStr = localStorage.getItem(cacheKey);
+      if (cachedDataStr) {
+        try {
+          const cachedData = JSON.parse(cachedDataStr);
+          cachedData.upvotes = upvotes;
+          cachedData.downvotes = downvotes;
+          cachedData.upvoteDifference = difference;
+          localStorage.setItem(cacheKey, JSON.stringify(cachedData));
+        } catch (e) {
+          // 解析失败，忽略
+        }
+      }
+
+      // 2. 更新所有 commPrompts 列表缓存中该 prompt 的数据
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith("commPrompts_") && !key.endsWith("_expiration")) {
+          try {
+            const listCache = JSON.parse(localStorage.getItem(key));
+            if (Array.isArray(listCache) && listCache[0]) {
+              const prompts = listCache[0];
+              const promptIndex = prompts.findIndex((p) => p.id === promptId);
+              if (promptIndex !== -1) {
+                prompts[promptIndex].upvotes = upvotes;
+                prompts[promptIndex].downvotes = downvotes;
+                prompts[promptIndex].upvoteDifference = difference;
+                localStorage.setItem(key, JSON.stringify(listCache));
+              }
+            }
+          } catch (e) {
+            // 解析失败，忽略
+          }
+        }
+      });
+    }
+
+    return result;
   } catch (error) {
     console.error("Error voting on user prompt:", error);
     throw error;

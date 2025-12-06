@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
+import React, { useContext, useEffect, useState, useCallback, Suspense, useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import styles from "@site/src/pages/styles.module.css";
 import Link from "@docusaurus/Link";
@@ -11,11 +10,11 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, Pagination, Space, Button, App, Card, Flex, Segmented, FloatButton } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, StarOutlined, StarFilled, LoginOutlined, UserOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
-import { PromptDetailModal } from "@site/src/pages/_components/PromptDetailModal";
+const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -23,20 +22,6 @@ const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdCompo
 const { Text } = Typography;
 
 const pageSize = 12;
-
-// 性能优化的骨架屏列表 - 使用预生成的静态数组
-const SkeletonList = React.memo(({ count = pageSize }: { count?: number }) => {
-  return (
-    <>
-      {Array.from({ length: count }, (_, index) => (
-        <Card key={index} className={styles.promptCard} loading />
-      ))}
-    </>
-  );
-});
-
-// 预生成常用数量的骨架屏，避免运行时计算
-const SKELETON_12 = Array.from({ length: 12 }, (_, index) => <Card key={index} className={styles.promptCard} loading />);
 
 interface PromptCardProps {
   commuPrompt: {
@@ -48,11 +33,12 @@ interface PromptCardProps {
     description: string;
     upvotes?: number;
     downvotes?: number;
+    upvoteDifference?: number;
   };
 }
 
 const CommunityPrompts = () => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
@@ -64,14 +50,12 @@ const CommunityPrompts = () => {
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("desc");
   const [searchTerm, setSearchTerm] = useState("");
-  const [Shareurl, setShareUrl] = useState("");
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalData, setModalData] = useState<any>(null);
-
-  useEffect(() => {
-    setShareUrl(window.location.href);
+  // Shareurl 使用 useMemo 避免额外的渲染周期
+  const Shareurl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.location.href;
+    }
+    return "";
   }, []);
 
   useEffect(() => {
@@ -118,22 +102,87 @@ const CommunityPrompts = () => {
     return true;
   }, [userAuth, messageApi]);
 
+  // 本次会话的投票记录（防止 API 请求期间重复点击）
+  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
+
   const vote = useCallback(
-    async (promptId, action) => {
-      // 防重复点击优化
-      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
-      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+    async (promptId: number, action: "upvote" | "downvote") => {
+      // 未登录时引导登录
+      if (!userAuth) {
+        messageApi.warning("Please log in to vote.");
+        setOpen(true);
+        return;
+      }
+
+      // 防止 API 请求期间重复点击（后端会处理实际的重复投票逻辑）
+      const voteKey = `${promptId}_${action}`;
+      if (sessionVotedIdsRef.current.has(voteKey)) {
+        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        return;
+      }
+      sessionVotedIdsRef.current.add(voteKey);
+
+      // 保存原始数据用于回滚
+      const originalPrompt = userprompts.find((p) => p.id === promptId);
+
+      // Optimistic UI: 立即更新
+      setUserPrompts((prev) =>
+        prev.map((prompt) =>
+          prompt.id === promptId
+            ? {
+                ...prompt,
+                upvotes: action === "upvote" ? (prompt.upvotes || 0) + 1 : prompt.upvotes,
+                downvotes: action === "downvote" ? (prompt.downvotes || 0) + 1 : prompt.downvotes,
+                upvoteDifference: (prompt.upvoteDifference || 0) + (action === "upvote" ? 1 : -1),
+              }
+            : prompt
+        )
+      );
 
       try {
-        await voteOnUserPrompt(promptId, action);
+        const response = await voteOnUserPrompt(promptId, action);
+
+        // 使用后端返回的实际数据更新 UI
+        if (response?.data?.counts) {
+          const { upvotes, downvotes, difference } = response.data.counts;
+          setUserPrompts((prev) =>
+            prev.map((prompt) =>
+              prompt.id === promptId
+                ? {
+                    ...prompt,
+                    upvotes,
+                    downvotes,
+                    upvoteDifference: difference,
+                  }
+                : prompt
+            )
+          );
+        }
+
         messageApi.success(`Successfully ${action}d!`);
-        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
-        updateVotedIds((prevIds) => [...prevIds, promptId]);
       } catch (err) {
-        messageApi.error(`Failed to ${action}. Error: ${err}`);
+        // 回滚到原始数据并移除会话标记
+        sessionVotedIdsRef.current.delete(voteKey);
+        if (originalPrompt) {
+          setUserPrompts((prev) =>
+            prev.map((prompt) =>
+              prompt.id === promptId
+                ? {
+                    ...prompt,
+                    upvotes: originalPrompt.upvotes,
+                    downvotes: originalPrompt.downvotes,
+                    upvoteDifference: originalPrompt.upvoteDifference,
+                  }
+                : prompt
+            )
+          );
+        }
+        messageApi.error(`Failed to ${action}. Please try again.`);
       }
     },
-    [votedUpPromptIds, votedDownPromptIds, messageApi]
+    [userAuth, messageApi, userprompts]
   );
 
   const bookmark = useCallback(
@@ -144,7 +193,7 @@ const CommunityPrompts = () => {
         addFavorite(promptId, true);
       }
     },
-    [userAuth, confirmRemoveFavorite, addFavorite]
+    [userAuth?.data?.favorites?.commLoves, confirmRemoveFavorite, addFavorite]
   );
 
   const onChangePage = useCallback((page) => {
@@ -209,7 +258,9 @@ const CommunityPrompts = () => {
             </Flex>
 
             {loading ? (
-              <div className={styles.showcaseList}>{pageSize === 12 ? SKELETON_12 : <SkeletonList count={pageSize} />}</div>
+              <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
+                <Spin size="large" />
+              </Flex>
             ) : userprompts.length === 0 ? (
               <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
                 <NoResults />
@@ -218,20 +269,11 @@ const CommunityPrompts = () => {
               <div className={styles.showcaseList}>
                 {userprompts.map((commuPrompt) => {
                   const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
-                  const optimisticUpvotes = votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0;
-                  const optimisticDownvotes = votedDownPromptIds.includes(commuPrompt.id) ? (commuPrompt.downvotes || 0) + 1 : commuPrompt.downvotes || 0;
-
-                  const modifiedData = {
-                    ...commuPrompt,
-                    upvotes: optimisticUpvotes,
-                    downvotes: optimisticDownvotes,
-                  };
-
                   return (
                     <PromptCard
                       key={commuPrompt.id}
                       type="community"
-                      data={modifiedData}
+                      data={commuPrompt}
                       onVote={vote}
                       isFavorite={isBookmarked}
                       onToggleFavorite={(id) => bookmark(Number(id))}
@@ -259,10 +301,16 @@ const CommunityPrompts = () => {
               </Text>
             </div>
 
-            <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-              <LoginComponent />
-            </Modal>
-            <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+            {open && (
+              <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+                <LoginComponent />
+              </Modal>
+            )}
+            {modalOpen && (
+              <Suspense fallback={null}>
+                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+              </Suspense>
+            )}
             <Suspense fallback={null}>
               <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
             </Suspense>
