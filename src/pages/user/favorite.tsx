@@ -1,13 +1,11 @@
 import React, { useState, useCallback, useMemo } from "react";
-import clsx from "clsx";
-import { translate } from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 
-import { Tabs, theme, Flex } from "antd";
-import { HeartOutlined, EditOutlined } from "@ant-design/icons";
-import styles from "@site/src/pages/styles.module.css";
+import { theme, Flex, Button, Space, Segmented } from "antd";
+import { HeartOutlined, EditOutlined, HomeOutlined, UserOutlined } from "@ant-design/icons";
 
-import UserStatus from "../_components/user/UserStatus";
 import UserPrompts from "../_components/user/UserPrompts";
 import UserFavorite from "../_components/user/UserFavorite";
 import SearchBar, { useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
@@ -58,24 +56,53 @@ const UserBookmark = () => {
       <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
         <div className="container">
           <Flex vertical gap="middle">
-            {/* Top Actions */}
-            <div className={clsx("text--center", styles.heroSection)}>
-              <UserStatus hideLinks={{ userCenter: false, myFavorite: true }} />
-            </div>
+            {/* Consolidated Header */}
+            <div
+              style={{
+                marginBottom: 0,
+                padding: "16px 24px",
+                background: token.colorBgContainer,
+                borderRadius: token.borderRadiusLG,
+                border: `1px solid ${token.colorBorderSecondary}`,
+                boxShadow: token.boxShadowTertiary,
+              }}>
+              <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
+                <Space>
+                  <Link to="/" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
+                    <Button type="text" icon={<HomeOutlined />} style={{ paddingLeft: 0 }}>
+                      <Translate id="link.home">返回首页</Translate>
+                    </Button>
+                  </Link>
+                  <Link to="/user" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
+                    <Button type="text" icon={<UserOutlined />}>
+                      <Translate id="link.userCenter">个人中心</Translate>
+                    </Button>
+                  </Link>
+                </Space>
 
-            {/* Tabs and Search */}
-            <Flex justify="space-between" align="center" wrap="wrap" gap="middle" style={{ marginBottom: 16 }}>
-              <Tabs
-                activeKey={activeTab}
-                items={items.map((item) => ({ ...item, children: null }))} // Only render tab headers here
-                onChange={handleTabChange}
-                style={{ marginBottom: 0 }}
-                tabBarStyle={{ marginBottom: 0 }}
-              />
-              <div style={{ width: "100%", maxWidth: 300 }}>
-                <SearchBar />
-              </div>
-            </Flex>
+                <Flex gap="small" align="center" wrap="wrap">
+                  <Segmented
+                    value={activeTab}
+                    onChange={(val) => handleTabChange(val as string)}
+                    options={[
+                      {
+                        label: translate({ id: "common.myPrompts", message: "我的提示词" }),
+                        value: "myprompts",
+                        icon: <EditOutlined />,
+                      },
+                      {
+                        label: translate({ id: "common.favorites", message: "收藏" }),
+                        value: "myfavor",
+                        icon: <HeartOutlined />,
+                      },
+                    ]}
+                  />
+                  <div style={{ width: 250 }}>
+                    <SearchBar />
+                  </div>
+                </Flex>
+              </Flex>
+            </div>
 
             {/* Content Area */}
             <div style={{ minHeight: 400 }}>
