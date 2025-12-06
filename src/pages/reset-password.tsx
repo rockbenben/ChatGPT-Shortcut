@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Form, Input, Button, Typography, Card, App } from "antd";
+import { Form, Input, Button, Typography, Card, App, theme } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
 
@@ -8,6 +8,7 @@ const { Title } = Typography;
 
 const ResetPassword = () => {
   const [form] = Form.useForm();
+  const { token } = theme.useToken();
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
   const { message: messageApi } = App.useApp();
@@ -76,16 +77,26 @@ const ResetPassword = () => {
     <Layout title={translate({ id: "button.resetPassword", message: "重置密码" })}>
       <div
         style={{
-          maxWidth: 450,
-          width: "100%",
-          margin: "50px auto",
-          padding: "0 16px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "calc(100vh - 60px)",
+          backgroundColor: token.colorBgLayout,
+          padding: "50px 16px",
         }}>
-        <Card className="reset-password-card">
-          <Title level={2} style={{ textAlign: "center", marginBottom: 24 }}>
+        <Card
+          className="reset-password-card"
+          style={{
+            maxWidth: 440,
+            width: "100%",
+            boxShadow: token.boxShadowSecondary,
+            borderRadius: token.borderRadiusLG,
+            border: `1px solid ${token.colorBorderSecondary}`,
+          }}>
+          <Title level={2} style={{ textAlign: "center", marginBottom: 32 }}>
             <Translate id="button.resetPassword">重置密码</Translate>
           </Title>
-          <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }}>
+          <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }} size="large">
             <Form.Item
               name="code"
               label={<Translate id="placeholder.resetPassword.code">重置代码</Translate>}
@@ -98,11 +109,11 @@ const ResetPassword = () => {
                   }),
                 },
               ]}>
-              <Input />
+              <Input placeholder={translate({ id: "placeholder.resetPassword.code", message: "重置代码" })} />
             </Form.Item>
 
             <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-              <Input.Password autoComplete="new-password" />
+              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })} />
             </Form.Item>
 
             <Form.Item
@@ -134,11 +145,11 @@ const ResetPassword = () => {
                   },
                 }),
               ]}>
-              <Input.Password autoComplete="new-password" />
+              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })} />
             </Form.Item>
 
-            <Form.Item>
-              <Button type="primary" htmlType="submit" block loading={loading} style={{ marginTop: 16 }}>
+            <Form.Item style={{ marginBottom: 0 }}>
+              <Button type="primary" htmlType="submit" block loading={loading} size="large">
                 <Translate id="button.resetPassword">重置密码</Translate>
               </Button>
             </Form.Item>
