@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../pages/_components/AuthContext";
-import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache } from "../api";
+import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache, updatePromptsOrder } from "../api";
 
 interface UseUserPromptReturn {
   loading: boolean;
@@ -13,7 +13,7 @@ interface UseUserPromptReturn {
 }
 
 export const useUserPrompt = (): UseUserPromptReturn => {
-  const { refreshUserAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message: messageApi, modal } = App.useApp();
   const [loading, setLoading] = useState(false);
 
@@ -21,7 +21,16 @@ export const useUserPrompt = (): UseUserPromptReturn => {
     async (values: any) => {
       setLoading(true);
       try {
-        await submitPrompt(values);
+        const response = await submitPrompt(values);
+
+        // Prepend the new prompt to the list
+        const newPromptId = response.data.id;
+        const currentPrompts = userAuth?.data?.userprompts || [];
+        const currentIds = currentPrompts.map((p: any) => p.id);
+        const newOrder = [newPromptId, ...currentIds];
+
+        await updatePromptsOrder(newOrder);
+
         refreshUserAuth();
         messageApi.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
         messageApi.success(<Translate id="message.addPrompt.success.view">可在「我的提示词」中查看</Translate>);
@@ -34,7 +43,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         setLoading(false);
       }
     },
-    [refreshUserAuth, messageApi]
+    [userAuth, refreshUserAuth, messageApi]
   );
 
   const updatePrompt = useCallback(
