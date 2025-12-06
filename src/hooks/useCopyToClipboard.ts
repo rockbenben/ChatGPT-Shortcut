@@ -17,7 +17,7 @@ export const useCopyToClipboard = (timeout: number = 2000) => {
   );
 
   const updateCopy = useCallback(
-    async (text: string, id: number) => {
+    async (text: string, id: number | string) => {
       try {
         copyText(text);
         await updateCopyCount(id);
