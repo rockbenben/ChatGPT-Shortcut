@@ -8,17 +8,73 @@ if (ExecutionEnvironment.canUseDOM) {
   authToken = localStorage.getItem("auth_token");
 }
 
-const config = {
-  headers: {
-    Authorization: `Bearer ${authToken}`,
-  },
-};
-
 // Remove User Cache 移除用户缓存信息
 export function clearUserAllInfoCache() {
   localStorage.removeItem("userAllInfo");
   localStorage.removeItem("userAllInfoCacheExpiration");
 }
+
+const ensureArrayInput = (value, fieldName) => {
+  if (!Array.isArray(value)) {
+    throw new Error(`${fieldName} must be an array`);
+  }
+  return value;
+};
+
+const handleApiError = (error) => {
+  if (error?.response?.status === 401) {
+    clearUserAllInfoCache();
+  }
+  throw error;
+};
+
+const getAuthToken = () => {
+  if (ExecutionEnvironment.canUseDOM) {
+    return localStorage.getItem("auth_token");
+  }
+  return authToken;
+};
+
+const persistAuthToken = (token) => {
+  authToken = token || null;
+  if (!ExecutionEnvironment.canUseDOM) {
+    return authToken;
+  }
+
+  if (token) {
+    localStorage.setItem("auth_token", token);
+  } else {
+    localStorage.removeItem("auth_token");
+  }
+
+  return authToken;
+};
+
+const apiClient = axios.create({ baseURL: API_URL });
+
+apiClient.interceptors.request.use((requestConfig) => {
+  const token = getAuthToken();
+  if (token) {
+    requestConfig.headers = {
+      ...(requestConfig.headers || {}),
+      Authorization: `Bearer ${token}`,
+    };
+  } else if (requestConfig.headers?.Authorization) {
+    delete requestConfig.headers.Authorization;
+  }
+  return requestConfig;
+});
+
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    try {
+      handleApiError(error);
+    } catch (handledError) {
+      return Promise.reject(handledError);
+    }
+  }
+);
 
 // 更新 localStorage 缓存的通用函数
 export const updateLocalStorageCache = (setField, updatedData) => {
@@ -26,6 +82,11 @@ export const updateLocalStorageCache = (setField, updatedData) => {
   if (!cachedData) return;
   try {
     const data = JSON.parse(cachedData);
+    if (!data || typeof data !== "object") {
+      return;
+    }
+
+    data.data = data.data || {};
 
     if (setField === "favorites.loves") {
       if (!data.data.favorites) {
@@ -49,7 +110,8 @@ export const updateLocalStorageCache = (setField, updatedData) => {
 // 用户获取：获取登录用户信息
 // User Retrieval: Fetches informations of the logged-in user.
 export async function getUserAllInfo() {
-  if (!authToken) {
+  const token = getAuthToken();
+  if (!token) {
     // 返回 null 而不是抛出错误，表示未登录状态
     return null;
   }
@@ -67,17 +129,18 @@ export async function getUserAllInfo() {
 
   try {
     // 如果缓存不存在或已过期，那么发送请求获取新的数据
-    const response = await axios.get(
-      `${API_URL}/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id&populate[userprompts][fields][1]=share`,
-      config
+    const response = await apiClient.get(
+      `/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id&populate[userprompts][fields][1]=share`
     );
 
+    const normalizedResponse = { data: response.data };
+
     // 保存新的数据和缓存时间
-    localStorage.setItem(cacheKey, JSON.stringify(response));
+    localStorage.setItem(cacheKey, JSON.stringify(normalizedResponse));
     getPrompts("userprompts", response.data.userprompts);
     localStorage.setItem(expirationKey, (Date.now() + 24 * 60 * 60 * 1000).toString());
 
-    return response;
+    return normalizedResponse;
   } catch (error) {
     console.error("Error fetching user data:", error);
     throw error;
@@ -92,23 +155,38 @@ export async function getPrompts(type, ids, lang) {
   }
 
   // 如果 type 为 "userprompts"，提取 id 值
-  let originalIds = ids;
   if (type === "userprompts") {
     ids = ids.map((prompt) => prompt.id);
   }
 
-  const cachedPrompts = [];
+  const normalizedType = typeof type === "string" ? type.trim() : "";
+  const allowedTypes = new Set(["cards", "commus", "userprompts"]);
+  const safeType = allowedTypes.has(normalizedType) ? normalizedType : "commus";
+  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : undefined;
+
+  const idsSeen = new Set();
+  const normalizedIds = [];
+  ids.forEach((value) => {
+    const numericId = Number(value);
+    if (Number.isInteger(numericId) && numericId > 0 && !idsSeen.has(numericId)) {
+      idsSeen.add(numericId);
+      normalizedIds.push(numericId);
+    }
+  });
+
+  if (!normalizedIds.length) {
+    return [];
+  }
+
+  const cachedPrompts = new Map();
   const idsToFetch = [];
-  const idToIndexMap = {}; // 用于记录每个 id 在原数组中的位置
 
   // 辅助函数：生成缓存 key 和过期时间 key
-  const getCacheKey = (id) => `${type}_${id}${lang ? `_${lang}` : ""}`;
+  const getCacheKey = (id) => `${safeType}_${id}${sanitizedLang ? `_${sanitizedLang}` : ""}`;
   const getExpirationKey = (cacheKey) => `${cacheKey}_expiration`;
 
   // 遍历每个 id，检查缓存是否有效
-  ids.forEach((id, index) => {
-    idToIndexMap[id] = index; // 记录 id 的原始位置
-
+  normalizedIds.forEach((id) => {
     const cacheKey = getCacheKey(id);
     const expirationKey = getExpirationKey(cacheKey);
     const cachedDataStr = localStorage.getItem(cacheKey);
@@ -122,7 +200,7 @@ export async function getPrompts(type, ids, lang) {
     }
 
     if (cachedData && expirationDate && Date.now() < Number(expirationDate)) {
-      cachedPrompts.push(cachedData);
+      cachedPrompts.set(id, cachedData);
     } else {
       idsToFetch.push(id);
     }
@@ -131,7 +209,7 @@ export async function getPrompts(type, ids, lang) {
   // 如果所有数据都在缓存中，直接按原始顺序返回
   if (idsToFetch.length === 0) {
     // 按原始 id 顺序排序
-    return ids.map((id) => cachedPrompts.find((item) => item.id === id)).filter(Boolean);
+    return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
   }
 
   const apiEndpoints = {
@@ -140,12 +218,11 @@ export async function getPrompts(type, ids, lang) {
     userprompts: "/userprompts/favorbulk",
   };
 
-  const apiEndpoint = apiEndpoints[type] || apiEndpoints["commus"];
-  const postData = type === "cards" ? { ids: idsToFetch, lang } : { ids: idsToFetch };
-  const requestConfig = type === "userprompts" ? config : {};
+  const apiEndpoint = apiEndpoints[safeType] || apiEndpoints["commus"];
+  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang } : { ids: idsToFetch };
 
   try {
-    const response = await axios.post(`${API_URL}${apiEndpoint}`, postData, requestConfig);
+    const response = await apiClient.post(apiEndpoint, postData);
 
     // 通过对象映射来获取对应的过期时间
     const expirationTimes = {
@@ -153,7 +230,7 @@ export async function getPrompts(type, ids, lang) {
       commus: 30 * 24 * 60 * 60 * 1000,
       userprompts: 12 * 60 * 60 * 1000,
     };
-    const expirationTime = expirationTimes[type] || 24 * 60 * 60 * 1000;
+    const expirationTime = expirationTimes[safeType] || 24 * 60 * 60 * 1000;
 
     // 更新缓存：保存请求到的数据及过期时间
     response.data.forEach((item) => {
@@ -164,10 +241,13 @@ export async function getPrompts(type, ids, lang) {
     });
 
     // 合并缓存和新获取的数据
-    const allData = [...cachedPrompts, ...response.data];
+    const allData = new Map(cachedPrompts);
+    response.data.forEach((item) => {
+      allData.set(item.id, item);
+    });
 
     // 按照原始 ids 数组的顺序返回数据
-    return ids.map((id) => allData.find((item) => item.id === id)).filter(Boolean);
+    return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
     console.error(`Error fetching ${type}:`, error);
     throw error;
@@ -177,13 +257,9 @@ export async function getPrompts(type, ids, lang) {
 // update username 更新用户名
 export async function updateUsername(username) {
   try {
-    const response = await axios.put(
-      `${API_URL}/favorites/update-username`,
-      {
-        data: { newUsername: username },
-      },
-      config
-    );
+    const response = await apiClient.put(`/favorites/update-username`, {
+      data: { newUsername: username },
+    });
 
     //clearUserAllInfoCache();
     return response;
@@ -196,13 +272,10 @@ export async function updateUsername(username) {
 // 提示词自定义排序
 export async function updatePromptsOrder(order) {
   try {
-    const response = await axios.put(
-      `${API_URL}/favorites/userprompt-order`,
-      {
-        data: { newOrder: order },
-      },
-      config
-    );
+    const safeOrder = ensureArrayInput(order, "order");
+    const response = await apiClient.put(`/favorites/userprompt-order`, {
+      data: { newOrder: safeOrder },
+    });
     //clearUserAllInfoCache();
     return response;
   } catch (error) {
@@ -214,13 +287,16 @@ export async function updatePromptsOrder(order) {
 // 收藏自定义排序
 export async function updateFavoritesOrder(type, order) {
   try {
-    const response = await axios.put(
-      `${API_URL}/favorites/favorite-order`,
-      {
-        [type]: order,
-      },
-      config
-    );
+    const trimmedType = typeof type === "string" ? type.trim() : "";
+    if (!trimmedType) {
+      throw new Error("type is required");
+    }
+
+    const safeOrder = ensureArrayInput(order, `${trimmedType} order`);
+
+    const response = await apiClient.put(`/favorites/favorite-order`, {
+      [trimmedType]: safeOrder,
+    });
     clearUserAllInfoCache();
     return response;
   } catch (error) {
@@ -232,15 +308,11 @@ export async function updateFavoritesOrder(type, order) {
 // Create Favorite: Adds a new selected or community prompt to favorites.
 export async function createFavorite(loves, isComm = false) {
   try {
-    const response = await axios.post(
-      `${API_URL}/favorites`,
-      {
-        data: {
-          [isComm ? "commLoves" : "loves"]: loves,
-        },
+    const response = await apiClient.post(`/favorites`, {
+      data: {
+        [isComm ? "commLoves" : "loves"]: loves,
       },
-      config
-    );
+    });
 
     //clearUserAllInfoCache();
     return response;
@@ -254,15 +326,11 @@ export async function createFavorite(loves, isComm = false) {
 // Update Favorite: Updates an existing selected or community prompt favorite.
 export async function updateFavorite(favoriteId, loves, isComm = false) {
   try {
-    const response = await axios.put(
-      `${API_URL}/favorites/${favoriteId}`,
-      {
-        data: {
-          [isComm ? "commLoves" : "loves"]: loves,
-        },
+    const response = await apiClient.put(`/favorites/${favoriteId}`, {
+      data: {
+        [isComm ? "commLoves" : "loves"]: loves,
       },
-      config
-    );
+    });
 
     clearUserAllInfoCache();
     return response;
@@ -276,64 +344,55 @@ export async function updateFavorite(favoriteId, loves, isComm = false) {
 // submit prompt
 export async function submitPrompt(values) {
   try {
-    const response = await axios.post(
-      `${API_URL}/userprompts`,
-      {
-        data: {
-          title: values.title,
-          description: values.description,
-          remark: values.remark,
-          notes: values.notes,
-          share: values.share,
-          promptLength: values.description.length,
-        },
+    const response = await apiClient.post(`/userprompts`, {
+      data: {
+        title: values.title,
+        description: values.description,
+        remark: values.remark,
+        notes: values.notes,
+        share: values.share,
+        promptLength: values.description.length,
       },
-      config
-    );
+    });
 
     clearUserAllInfoCache();
-    return response;
+    return response.data;
   } catch (error) {
     console.error("Error submitting prompt:", error);
     throw error;
   }
 }
 
-// 更新自定义提示：修改现有的自定义提示
-// Update Custom Prompt: Modifies an existing custom prompt.
+// 更新我的提示词
 export async function updatePrompt(id, values) {
   try {
-    const response = await axios.put(
-      `${API_URL}/userprompts/${id}`,
-      {
-        data: {
-          title: values.title,
-          description: values.description,
-          remark: values.remark,
-          notes: values.notes,
-          share: values.share,
-          promptLength: values.description.length,
-        },
+    const response = await apiClient.put(`/userprompts/${id}`, {
+      data: {
+        title: values.title,
+        description: values.description,
+        remark: values.remark,
+        notes: values.notes,
+        share: values.share,
+        promptLength: values.description.length,
       },
-      config
-    );
+    });
 
     const cacheKey = `userprompts_${id}`;
     localStorage.removeItem(cacheKey);
     getPrompts("userprompts", [{ id }]);
 
     //clearUserAllInfoCache();
-    return response;
+    return response.data;
   } catch (error) {
     console.error("Error updating prompt:", error);
     throw error;
   }
 }
 
-// 删除自定义 prompt
+// 删除自己创建的提示词 prompt
 export async function deletePrompt(id) {
   try {
-    const response = await axios.delete(`${API_URL}/userprompts/${id}`, config);
+    const response = await apiClient.delete(`/userprompts/${id}`);
     clearUserAllInfoCache();
     return response;
   } catch (error) {
@@ -345,7 +404,11 @@ export async function deletePrompt(id) {
 /* Community-prompts 页面管理 */
 // Get Community Prompts 获取社区精选提示词
 export async function getCommPrompts(page, pageSize, sortField, sortOrder, searchTerm) {
-  const cacheKey = `commPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${searchTerm || "noTerm"}`;
+  const trimmedSearchTerm = typeof searchTerm === "string" ? searchTerm.trim() : "";
+  const limitedSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
+  const encodedSearchKey = trimmedSearchTerm ? encodeURIComponent(limitedSearchTerm) : "noTerm";
+
+  const cacheKey = `commPrompts_${page}_${pageSize}_${sortField}_${sortOrder}_${encodedSearchKey}`;
   const expirationKey = `${cacheKey}_expiration`;
 
   const cachedData = JSON.parse(localStorage.getItem(cacheKey));
@@ -357,18 +420,15 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
     return cachedData;
   }
 
-  let url = `${API_URL}/userprompts?fields=id&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
+  let url = `/userprompts?fields=id&pagination%5BwithCount%5D=true&pagination%5Bpage%5D=${page}&pagination%5BpageSize%5D=${pageSize}&sort=${sortField}:${sortOrder}`;
 
   // 如果存在搜索关键字，那么添加到 URL 中
-  if (searchTerm) {
-    const trimmedSearchTerm = searchTerm.trim();
-    // 检查搜索词长度，并进行必要的截断
-    const finalSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
-    url += `&filters[$or][0][description][$containsi]=${finalSearchTerm}&filters[$or][1][title][$containsi]=${finalSearchTerm}&filters[$or][2][remark][$containsi]=${finalSearchTerm}`;
+  if (trimmedSearchTerm) {
+    url += `&filters[$or][0][description][$containsi]=${limitedSearchTerm}&filters[$or][1][title][$containsi]=${limitedSearchTerm}&filters[$or][2][remark][$containsi]=${limitedSearchTerm}`;
   }
 
   try {
-    const responseTotal = await axios.get(url);
+    const responseTotal = await apiClient.get(url);
     const ids = responseTotal.data.data.map((item) => item.id);
     const responseIds = await getPrompts("commus", ids);
 
@@ -386,35 +446,30 @@ export async function getCommPrompts(page, pageSize, sortField, sortOrder, searc
 // 根据 tag 或关键词搜索 cards prompts
 export async function findCardsWithTags(tags, search, lang = "zh", operator = "OR") {
   try {
-    const cacheKey = `findCardsWithTags_${tags.join(",")}_${search}_${lang}_${operator}`;
+    const normalizedTags = Array.isArray(tags) ? Array.from(new Set(tags.map((tag) => (typeof tag === "string" ? tag.trim() : "")).filter(Boolean))) : [];
+    const safeSearch = typeof search === "string" ? search.trim().slice(0, 100) : "";
+
+    const cacheKey = `findCardsWithTags_${encodeURIComponent(JSON.stringify(normalizedTags))}_${encodeURIComponent(safeSearch)}_${lang}_${operator}`;
     const cachedData = localStorage.getItem(cacheKey);
     const cacheExpirationKey = `${cacheKey}_expiration`;
     const cacheExpiration = localStorage.getItem(cacheExpirationKey);
 
-    // 检查缓存是否存在且未过期
     if (cachedData && cacheExpiration && Date.now() < Number(cacheExpiration)) {
       return JSON.parse(cachedData);
     }
 
     const queryParams = new URLSearchParams();
-    if (tags && tags.length > 0) {
-      tags.forEach((tag) => {
-        const trimmedTag = tag.trim();
-        if (trimmedTag) {
-          queryParams.append("tags", trimmedTag);
-        }
-      });
-    }
+    normalizedTags.forEach((tag) => {
+      queryParams.append("tags", tag);
+    });
 
-    // 处理并添加 search, lang 和 operator 到查询参数
-    const trimmedSearch = search?.trim().substring(0, 100) || "";
-    if (trimmedSearch) {
-      queryParams.append("search", trimmedSearch);
+    if (safeSearch) {
+      queryParams.append("search", safeSearch);
     }
     queryParams.append("lang", lang);
     queryParams.append("operator", operator);
 
-    const responseIds = await axios.get(`${API_URL}/cards/find-with-tag`, { params: queryParams });
+    const responseIds = await apiClient.get(`/cards/find-with-tag`, { params: queryParams });
     const detailedCards = await getPrompts("cards", responseIds.data, lang);
 
     localStorage.setItem(cacheKey, JSON.stringify(detailedCards));
@@ -434,11 +489,12 @@ export async function voteOnUserPrompt(promptId, action) {
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
     }
-    const result = await axios.post(`${API_URL}/userprompts/${promptId}/vote`, { action: action }, config);
+    const result = await apiClient.post(`/userprompts/${promptId}/vote`, { action: action });
 
-    // 使用后端返回值更新本地缓存（而非清除）
+    // 使用后端返回值更新本地缓存
     if (result?.data?.counts) {
-      const { upvotes, downvotes, difference } = result.data.counts;
+      const { upvotes, downvotes } = result.data.counts;
+      const upvoteDifference = upvotes - downvotes; // 计算投票差值
 
       // 1. 更新该 prompt 的单独缓存
       const cacheKey = `commus_${promptId}`;
@@ -448,7 +504,7 @@ export async function voteOnUserPrompt(promptId, action) {
           const cachedData = JSON.parse(cachedDataStr);
           cachedData.upvotes = upvotes;
           cachedData.downvotes = downvotes;
-          cachedData.upvoteDifference = difference;
+          cachedData.upvoteDifference = upvoteDifference;
           localStorage.setItem(cacheKey, JSON.stringify(cachedData));
         } catch (e) {
           // 解析失败，忽略
@@ -466,7 +522,7 @@ export async function voteOnUserPrompt(promptId, action) {
               if (promptIndex !== -1) {
                 prompts[promptIndex].upvotes = upvotes;
                 prompts[promptIndex].downvotes = downvotes;
-                prompts[promptIndex].upvoteDifference = difference;
+                prompts[promptIndex].upvoteDifference = upvoteDifference;
                 localStorage.setItem(key, JSON.stringify(listCache));
               }
             }
@@ -486,7 +542,7 @@ export async function voteOnUserPrompt(promptId, action) {
 
 /* 用户管理：注册、登录、更改密码、重置密码 */
 export async function register(values) {
-  return axios.post(`${API_URL}/auth/local/register`, {
+  return apiClient.post(`/auth/local/register`, {
     username: values.username,
     email: values.email,
     password: values.password,
@@ -494,7 +550,7 @@ export async function register(values) {
 }
 
 export async function login(values) {
-  return axios.post(`${API_URL}/auth/local`, {
+  return apiClient.post(`/auth/local`, {
     identifier: values.username,
     password: values.password,
   });
@@ -502,15 +558,11 @@ export async function login(values) {
 
 export async function changePassword(values) {
   try {
-    await axios.post(
-      `${API_URL}/auth/change-password`,
-      {
-        password: values.newPassword,
-        currentPassword: values.currentPassword,
-        passwordConfirmation: values.confirmPassword,
-      },
-      config
-    );
+    await apiClient.post(`/auth/change-password`, {
+      password: values.newPassword,
+      currentPassword: values.currentPassword,
+      passwordConfirmation: values.confirmPassword,
+    });
     return true;
   } catch (error) {
     console.error("Error changing password:", error);
@@ -520,7 +572,7 @@ export async function changePassword(values) {
 
 export async function forgotPassword(email) {
   try {
-    await axios.post(`${API_URL}/auth/forgot-password`, {
+    await apiClient.post(`/auth/forgot-password`, {
       email: email,
     });
     return true;
@@ -532,7 +584,7 @@ export async function forgotPassword(email) {
 
 export async function resetPassword(values) {
   try {
-    const response = await axios.post(`${API_URL}/auth/reset-password`, {
+    const response = await apiClient.post(`/auth/reset-password`, {
       code: values.code,
       password: values.newPassword,
       passwordConfirmation: values.confirmPassword,
@@ -547,7 +599,7 @@ export async function resetPassword(values) {
 // 发送无密码登录链接
 export async function sendPasswordlessLink(target) {
   try {
-    return await axios.post(`${API_URL}/passwordless/send-link`, target);
+    return await apiClient.post(`/passwordless/send-link`, target);
   } catch (error) {
     console.error("Failed to send passwordless link:", error);
     throw error;
@@ -557,8 +609,8 @@ export async function sendPasswordlessLink(target) {
 // 使用令牌进行无密码登录
 export async function loginWithToken(loginToken) {
   try {
-    const response = await axios.get(`${API_URL}/passwordless/login?loginToken=${loginToken}`);
-    localStorage.setItem("auth_token", response.data.jwt);
+    const response = await apiClient.get(`/passwordless/login`, { params: { loginToken } });
+    persistAuthToken(response.data.jwt);
     return response.data;
   } catch (error) {
     console.error("Failed to login with token:", error);
@@ -579,8 +631,8 @@ export async function getComments(id, page, pageSize, type = "card") {
     return Promise.resolve(cachedData);
   } else {
     try {
-      const response = await axios.get(
-        `${API_URL}/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
+      const response = await apiClient.get(
+        `/comments/api::${type}.${type}:${id}/flat?fields[0]=content&fields[1]=createdAt&pagination[page]=${page}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&sort=id:desc`
       );
 
       const nextExpirationDate = Date.now() + 12 * 60 * 60 * 1000;
@@ -607,14 +659,10 @@ function clearCommentsCache(id, type = "card") {
 // 发布评论
 export async function postComment(pageId, commentContent, threadOf = null, type = "card") {
   try {
-    const response = await axios.post(
-      `${API_URL}/comments/api::${type}.${type}:${pageId}`,
-      {
-        content: commentContent,
-        threadOf,
-      },
-      config
-    );
+    const response = await apiClient.post(`/comments/api::${type}.${type}:${pageId}`, {
+      content: commentContent,
+      threadOf,
+    });
 
     // 更新缓存
     clearCommentsCache(pageId, type);
@@ -641,7 +689,7 @@ export async function fetchAllCopyCounts() {
       counts = cachedData;
     } else {
       // 如果没有缓存的数据，或者数据已经过期，那么从服务器获取新的数据
-      const response = await axios.get(`${API_URL}/cards/allcounts`);
+      const response = await apiClient.get(`/cards/allcounts`);
       counts = response.data.reduce((acc, item) => {
         acc[item.card_id] = item.count;
         return acc;
@@ -662,7 +710,7 @@ export async function fetchAllCopyCounts() {
 
 export async function updateCopyCount(cardId) {
   try {
-    const response = await axios.post(`${API_URL}/cards/${cardId}/copy`);
+    const response = await apiClient.post(`/cards/${cardId}/copy`);
     const updatedCount = response.data.copyCount;
     return updatedCount;
   } catch (error) {

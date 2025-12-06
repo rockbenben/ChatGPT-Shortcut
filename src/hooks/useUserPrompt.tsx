@@ -24,7 +24,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         const response = await submitPrompt(values);
 
         // Prepend the new prompt to the list
-        const newPromptId = response.data.id;
+        const newPromptId = response.id;
         const currentPrompts = userAuth?.data?.userprompts || [];
         const currentIds = currentPrompts.map((p: any) => p.id);
         const newOrder = [newPromptId, ...currentIds];

@@ -146,7 +146,7 @@ const CommunityPrompts = () => {
 
         // 使用后端返回的实际数据更新 UI
         if (response?.data?.counts) {
-          const { upvotes, downvotes, difference } = response.data.counts;
+          const { upvotes, downvotes } = response.data.counts;
           setUserPrompts((prev) =>
             prev.map((prompt) =>
               prompt.id === promptId
@@ -154,7 +154,7 @@ const CommunityPrompts = () => {
                     ...prompt,
                     upvotes,
                     downvotes,
-                    upvoteDifference: difference,
+                    upvoteDifference: upvotes - downvotes,
                   }
                 : prompt
             )
