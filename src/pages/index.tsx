@@ -33,7 +33,8 @@ import PromptCard from "@site/src/pages/_components/PromptCard";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import EditPromptModal from "@site/src/pages/_components/user/modal/EditPromptModal";
-import { PromptDetailModal } from "@site/src/pages/_components/PromptDetailModal";
+
+const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
@@ -492,7 +493,11 @@ export default function Showcase(): React.ReactElement {
           <ShowcaseHeader />
           <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} onOpenModal={handleOpenModal} />
           <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
-          <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+          {modalOpen && (
+            <Suspense fallback={null}>
+              <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+            </Suspense>
+          )}
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />

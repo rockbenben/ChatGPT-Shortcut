@@ -19,7 +19,7 @@ interface CommunityCardProps {
   onDelete?: (id: number) => void;
 }
 
-export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onDelete, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
+const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onDelete, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
@@ -111,3 +111,5 @@ export const CommunityCard = ({ data: user, isFavorite, onToggleFavorite, onVote
     </li>
   );
 };
+
+export const CommunityCard = React.memo(CommunityCardComponent);

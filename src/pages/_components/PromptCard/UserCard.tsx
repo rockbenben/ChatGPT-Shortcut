@@ -21,7 +21,7 @@ interface UserCardProps {
   onOpenModal?: (data: any) => void;
 }
 
-export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal }: UserCardProps) => {
+const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal }: UserCardProps) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
@@ -123,3 +123,5 @@ export const UserCard = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal
     </li>
   );
 };
+
+export const UserCard = React.memo(UserCardComponent);

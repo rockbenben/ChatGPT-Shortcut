@@ -22,7 +22,7 @@ interface FavoriteCardProps {
   onOpenModal?: (data: any) => void;
 }
 
-export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFavorite, onOpenModal }: FavoriteCardProps) => {
+const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemoveFavorite, onOpenModal }: FavoriteCardProps) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
@@ -166,3 +166,5 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
     </li>
   );
 };
+
+export const FavoriteCard = React.memo(FavoriteCardComponent);

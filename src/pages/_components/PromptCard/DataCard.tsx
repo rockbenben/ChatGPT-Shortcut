@@ -19,7 +19,7 @@ interface DataCardProps {
   copyCount?: number;
 }
 
-export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
+const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -134,3 +134,5 @@ export const DataCard = ({ data: user, isDescription, copyCount, onOpenModal }: 
     </li>
   );
 };
+
+export const DataCard = React.memo(DataCardComponent);
