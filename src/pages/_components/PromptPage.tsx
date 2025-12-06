@@ -98,34 +98,59 @@ function PromptPage({ prompt }) {
                   </Space>
                 </Flex>
 
-                {/* 描述/备注 */}
-                <Paragraph type="secondary" style={{ fontSize: token.fontSizeLG, margin: 0 }}>
-                  {remark}
-                </Paragraph>
+                {/* 描述/备注 - Enhanced Info Card Style */}
+                <div
+                  style={{
+                    padding: `${token.paddingSM}px ${token.paddingMD}px`,
+                    backgroundColor: token.colorInfoBg,
+                    borderRadius: token.borderRadius,
+                    border: `1px solid ${token.colorInfoBorder}`,
+                  }}>
+                  <Paragraph type="secondary" style={{ fontSize: token.fontSize, margin: 0 }}>
+                    {remark}
+                  </Paragraph>
+                </div>
 
                 {/* 提示词内容区域 */}
                 <div
                   style={{
                     padding: token.paddingMD,
-                    background: token.colorFillAlter,
+                    backgroundColor: token.colorBgContainer,
                     borderRadius: token.borderRadiusLG,
-                    borderLeft: `3px solid ${token.colorPrimary}`,
+                    border: `1px solid ${token.colorBorder}`,
+                    borderLeft: `4px solid ${token.colorPrimary}`,
+                    boxShadow: token.boxShadowTertiary,
                   }}>
                   {canToggle ? (
                     <Tooltip title={<Translate id="tooltip.switchLanguage">点击切换显示语言</Translate>}>
-                      <Paragraph
+                      <Typography.Text
                         onClick={handleParagraphClick}
                         style={{
-                          margin: 0,
-                          fontSize: token.fontSizeLG,
+                          display: "block",
+                          fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
+                          fontSize: token.fontSize,
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                          wordBreak: "break-word",
                           cursor: "pointer",
                           minHeight: 100,
                         }}>
                         {paragraphText}
-                      </Paragraph>
+                      </Typography.Text>
                     </Tooltip>
                   ) : (
-                    <Paragraph style={{ margin: 0, fontSize: token.fontSizeLG, minHeight: 100 }}>{paragraphText}</Paragraph>
+                    <Typography.Text
+                      style={{
+                        display: "block",
+                        fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
+                        fontSize: token.fontSize,
+                        lineHeight: 1.7,
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
+                        minHeight: 100,
+                      }}>
+                      {paragraphText}
+                    </Typography.Text>
                   )}
                 </div>
 
