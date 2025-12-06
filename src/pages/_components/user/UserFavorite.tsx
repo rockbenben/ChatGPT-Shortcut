@@ -48,7 +48,7 @@ function UserFavoritePage({ filteredCommus = [], filteredCards = [], isFiltered 
       setLoading(true);
       try {
         if (isFiltered) {
-          setFavoriteItems([...filteredCards, ...filteredCommus]);
+          setFavoriteItems([...filteredCommus, ...filteredCards]);
         } else {
           const loves = userAuth.data?.favorites?.loves || [];
           const commLoves = userAuth.data?.favorites?.commLoves || [];
@@ -56,7 +56,7 @@ function UserFavoritePage({ filteredCommus = [], filteredCards = [], isFiltered 
           const [cardsData, commusData] = await Promise.all([getPrompts("cards", loves), getPrompts("commus", commLoves)]);
 
           if (isMounted) {
-            setFavoriteItems([...cardsData, ...commusData]);
+            setFavoriteItems([...commusData, ...cardsData]);
           }
         }
       } catch (error) {
