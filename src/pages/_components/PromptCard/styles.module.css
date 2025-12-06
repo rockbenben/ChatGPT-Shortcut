@@ -30,14 +30,14 @@
 }
 
 .showcaseCardLink {
-  color: inherit;
+  color: var(--ifm-color-primary) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .showcaseCardLink:hover {
-  color: var(--ifm-color-primary-dark);
-  text-decoration: underline;
+  color: var(--ifm-color-primary-dark) !important;
+  text-decoration: underline !important;
 }
 
 .svgIconFavorite {

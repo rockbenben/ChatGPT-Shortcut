@@ -95,7 +95,7 @@ export const FavoriteCard = ({ data: user, isFiltered, isDescription, onRemoveFa
           <Flex justify="space-between" align="start" style={{ width: "100%" }}>
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
-                <Link href={`/prompt/${user.id}`} style={{ color: "var(--ifm-color-primary)" }} onClick={(e) => e.stopPropagation()}>
+                <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {title}
                 </Link>
               ) : (
