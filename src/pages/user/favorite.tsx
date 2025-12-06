@@ -13,11 +13,21 @@ import UserFavorite from "../_components/user/UserFavorite";
 import SearchBar, { useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
 import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
 import { AuthProvider } from "../_components/AuthContext";
+import { PromptDetailModal } from "../_components/PromptDetailModal";
 
 const UserBookmark = () => {
   const [activeTab, setActiveTab] = useState<"default" | "myfavor" | "myprompts">("myprompts");
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts(activeTab);
   const { token } = theme.useToken();
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
+
+  const handleOpenModal = useCallback((data: any) => {
+    setModalData(data);
+    setModalOpen(true);
+  }, []);
 
   const handleTabChange = useCallback((tab: string) => {
     setActiveTab(tab as "default" | "myfavor" | "myprompts");
@@ -31,16 +41,16 @@ const UserBookmark = () => {
         key: "myfavor",
         label: translate({ id: "common.favorites", message: "收藏" }),
         icon: <HeartOutlined />,
-        children: !showNoResults && <UserFavorite filteredCommus={filteredCommus} filteredCards={filteredCards} isFiltered={isFiltered} />,
+        children: !showNoResults && <UserFavorite filteredCommus={filteredCommus} filteredCards={filteredCards} isFiltered={isFiltered} onOpenModal={handleOpenModal} />,
       },
       {
         key: "myprompts",
         label: translate({ id: "common.myPrompts", message: "我的提示词" }),
         icon: <EditOutlined />,
-        children: !showNoResults && <UserPrompts filteredCommus={filteredCommus} isFiltered={isFiltered} />,
+        children: !showNoResults && <UserPrompts filteredCommus={filteredCommus} isFiltered={isFiltered} onOpenModal={handleOpenModal} />,
       },
     ],
-    [filteredCommus, filteredCards, isFiltered, showNoResults]
+    [filteredCommus, filteredCards, isFiltered, showNoResults, handleOpenModal]
   );
 
   return (
@@ -75,6 +85,7 @@ const UserBookmark = () => {
           </Flex>
         </div>
       </div>
+      <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
     </Layout>
   );
 };
