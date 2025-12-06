@@ -37,9 +37,29 @@ const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenMod
     listStyle: "none",
   };
 
-  const handleCopy = useCallback(() => {
-    copyText(user.description);
-  }, [copyText, user.description]);
+  const handleCopy = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      copyText(user.description);
+    },
+    [copyText, user.description]
+  );
+
+  const handleEdit = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onEdit?.(user);
+    },
+    [onEdit, user]
+  );
+
+  const handleDelete = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onDelete?.(user.id);
+    },
+    [onDelete, user.id]
+  );
 
   const handleCardClick = useCallback(() => {
     onOpenModal?.({
@@ -89,10 +109,10 @@ const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenMod
             <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
           </Tooltip>,
           <Tooltip title={<Translate id="action.edit">编辑</Translate>}>
-            <Button type="text" icon={<EditOutlined />} onClick={() => onEdit?.(user)} block />
+            <Button type="text" icon={<EditOutlined />} onClick={handleEdit} block />
           </Tooltip>,
           <Tooltip title={<Translate id="action.delete">删除</Translate>}>
-            <Button type="text" danger icon={<DeleteOutlined />} onClick={() => onDelete?.(user.id)} block />
+            <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
           </Tooltip>,
         ]}
         onCardClick={handleCardClick}>

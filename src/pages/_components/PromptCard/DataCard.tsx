@@ -66,17 +66,29 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
 
   const userDescription = canToggle ? paragraphText : userInfo.prompt;
 
-  const handleCopy = useCallback(() => {
-    updateCopy(userInfo.prompt, user.id);
-  }, [updateCopy, userInfo.prompt, user.id]);
+  const handleCopy = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      updateCopy(userInfo.prompt, user.id);
+    },
+    [updateCopy, userInfo.prompt, user.id]
+  );
 
-  const handleLove = useCallback(() => {
-    addFavorite(user.id, false);
-  }, [addFavorite, user.id]);
+  const handleLove = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      addFavorite(user.id, false);
+    },
+    [addFavorite, user.id]
+  );
 
-  const handleRemoveFavorite = useCallback(() => {
-    confirmRemoveFavorite(user.id, false);
-  }, [confirmRemoveFavorite, user.id]);
+  const handleRemoveFavorite = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      confirmRemoveFavorite(user.id, false);
+    },
+    [confirmRemoveFavorite, user.id]
+  );
 
   return (
     <li key={userInfo.title} style={{ height: "100%", listStyle: "none" }}>

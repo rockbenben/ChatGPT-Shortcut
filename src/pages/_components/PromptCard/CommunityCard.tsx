@@ -25,9 +25,37 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
   const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
-  const handleCopy = useCallback(() => {
-    copyText(user.description);
-  }, [copyText, user.description]);
+  const handleCopy = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      copyText(user.description);
+    },
+    [copyText, user.description]
+  );
+
+  const handleToggleFavorite = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onToggleFavorite?.(user.id, true);
+    },
+    [onToggleFavorite, user.id]
+  );
+
+  const handleUpvote = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onVote?.(user.id, "upvote");
+    },
+    [onVote, user.id]
+  );
+
+  const handleDownvote = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onVote?.(user.id, "downvote");
+    },
+    [onVote, user.id]
+  );
 
   const handleCardClick = useCallback(() => {
     onOpenModal?.({
@@ -65,19 +93,19 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
           </Tooltip>,
           userAuth && onToggleFavorite && (
             <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-              <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={() => onToggleFavorite(user.id, true)} block />
+              <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={handleToggleFavorite} block />
             </Tooltip>
           ),
           onVote && (
             <Tooltip title={<Translate id="action.upvote">赞</Translate>}>
-              <Button type="text" icon={<UpOutlined />} onClick={() => onVote(user.id, "upvote")} block>
+              <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
                 {user.upvotes || 0}
               </Button>
             </Tooltip>
           ),
           onVote && (
             <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
-              <Button type="text" icon={<DownOutlined />} onClick={() => onVote(user.id, "downvote")} block>
+              <Button type="text" icon={<DownOutlined />} onClick={handleDownvote} block>
                 {user.downvotes || 0}
               </Button>
             </Tooltip>

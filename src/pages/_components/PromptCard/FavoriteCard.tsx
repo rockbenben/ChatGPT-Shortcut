@@ -54,13 +54,25 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
 
   const contentToShow = isDescription ? prompt : description;
 
-  const handleCopy = useCallback(() => {
-    if (isDataCard) {
-      updateCopy(prompt, user.id);
-    } else {
-      copyText(prompt);
-    }
-  }, [isDataCard, updateCopy, copyText, prompt, user.id]);
+  const handleCopy = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (isDataCard) {
+        updateCopy(prompt, user.id);
+      } else {
+        copyText(prompt);
+      }
+    },
+    [isDataCard, updateCopy, copyText, prompt, user.id]
+  );
+
+  const handleRemoveFavorite = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onRemoveFavorite?.(user.id, !isDataCard);
+    },
+    [onRemoveFavorite, user.id, isDataCard]
+  );
 
   const handleCardClick = useCallback(() => {
     if (isDataCard) {
@@ -135,7 +147,7 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
             <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
           </Tooltip>,
           <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-            <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={() => onRemoveFavorite?.(user.id, !isDataCard)} block />
+            <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={handleRemoveFavorite} block />
           </Tooltip>,
         ]}
         onCardClick={handleCardClick}>
