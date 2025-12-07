@@ -976,5 +976,8 @@
   },
   "action.close": {
     "message": "閉じる"
+  },
+  "message.noComments": {
+    "message": "まだコメントはありません。最初のコメントを投稿しましょう！"
   }
 }

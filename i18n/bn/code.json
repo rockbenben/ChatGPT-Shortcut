@@ -976,5 +976,8 @@
   },
   "action.close": {
     "message": "বন্ধ করুন"
+  },
+  "message.noComments": {
+    "message": "এখনও কোনো মন্তব্য নেই, প্রথম মন্তব্যকারী হোন!"
   }
 }

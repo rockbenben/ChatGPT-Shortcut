@@ -976,5 +976,8 @@
   },
   "action.close": {
     "message": "Chiudi"
+  },
+  "message.noComments": {
+    "message": "Ancora nessun commento, sii il primo a commentare!"
   }
 }
