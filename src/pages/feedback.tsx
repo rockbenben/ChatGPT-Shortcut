@@ -1,10 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Layout from "@theme/Layout";
-import { Card, Typography, theme, Flex, Skeleton, Divider } from "antd";
+import { Card, Typography, theme, Flex, Divider } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
-
-const Comments = React.lazy(() => import("@site/src/pages/_components/Comments"));
+import Comments from "@site/src/pages/_components/Comments";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -91,9 +90,7 @@ const FeedbackPage = () => {
               {/* Comments Section with Divider */}
               <div style={{ width: "100%", minHeight: 400 }}>
                 <Divider style={{ margin: "8px 0 24px" }} />
-                <Suspense fallback={<Skeleton active avatar paragraph={{ rows: 4 }} />}>
-                  <Comments pageId={1000} type="page" />
-                </Suspense>
+                <Comments pageId={1000} type="page" />
               </div>
             </Flex>
           </Card>
