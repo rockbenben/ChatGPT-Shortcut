@@ -239,8 +239,6 @@ export async function updateUsername(username) {
     const response = await apiClient.put(`/favorites/update-username`, {
       data: { newUsername: username },
     });
-
-    //clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating Username:", error);
@@ -255,7 +253,6 @@ export async function updatePromptsOrder(order) {
     const response = await apiClient.put(`/favorites/userprompt-order`, {
       data: { newOrder: safeOrder },
     });
-    //clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating Order:", error);
@@ -276,7 +273,6 @@ export async function updateFavoritesOrder(type, order) {
     const response = await apiClient.put(`/favorites/favorite-order`, {
       [trimmedType]: safeOrder,
     });
-    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating Order:", error);
@@ -312,7 +308,6 @@ export async function updateFavorite(favoriteId, loves, isComm = false) {
       },
     });
 
-    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error updating favorite:", error);
@@ -335,7 +330,6 @@ export async function submitPrompt(values) {
       },
     });
 
-    clearUserAllInfoCache();
     return response.data;
   } catch (error) {
     console.error("Error submitting prompt:", error);
@@ -380,7 +374,6 @@ export async function deletePrompt(id) {
     const cacheKey = getPromptCacheKey("userprompts", id);
     removeCache(cacheKey);
 
-    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error deleting prompt:", error);
@@ -497,18 +490,22 @@ export async function voteOnUserPrompt(promptId, action) {
 
 /* 用户管理：注册、登录、更改密码、重置密码 */
 export async function register(values) {
-  return apiClient.post(`/auth/local/register`, {
+  const response = await apiClient.post(`/auth/local/register`, {
     username: values.username,
     email: values.email,
     password: values.password,
   });
+  clearUserAllInfoCache();
+  return response;
 }
 
 export async function login(values) {
-  return apiClient.post(`/auth/local`, {
+  const response = await apiClient.post(`/auth/local`, {
     identifier: values.username,
     password: values.password,
   });
+  clearUserAllInfoCache();
+  return response;
 }
 
 export async function changePassword(values) {
@@ -566,6 +563,7 @@ export async function loginWithToken(loginToken) {
   try {
     const response = await apiClient.get(`/passwordless/login`, { params: { loginToken } });
     persistAuthToken(response.data.jwt);
+    clearUserAllInfoCache();
     return response.data;
   } catch (error) {
     console.error("Failed to login with token:", error);

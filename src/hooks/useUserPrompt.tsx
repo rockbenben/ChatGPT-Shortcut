@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../pages/_components/AuthContext";
-import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache, updatePromptsOrder } from "../api";
+import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache, updatePromptsOrder, updateUserInfoCache } from "../api";
 
 interface UseUserPromptReturn {
   loading: boolean;
@@ -24,11 +24,13 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         const response = await submitPrompt(values);
 
         // Prepend the new prompt to the list
-        const newPromptId = response.id;
+        const newPrompt = { id: response.id, share: values.share };
         const currentPrompts = userAuth?.data?.userprompts || [];
-        const currentIds = currentPrompts.map((p: any) => p.id);
-        const newOrder = [newPromptId, ...currentIds];
+        const updatedPrompts = [newPrompt, ...currentPrompts];
 
+        updateUserInfoCache("userprompts", updatedPrompts);
+
+        const newOrder = updatedPrompts.map((p: any) => p.id);
         await updatePromptsOrder(newOrder);
 
         refreshUserAuth();
@@ -72,6 +74,12 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       setLoading(true);
       try {
         await apiDeletePrompt(id);
+
+        // 增量更新缓存：移除已删除的 prompt
+        const currentPrompts = userAuth?.data?.userprompts || [];
+        const updatedPrompts = currentPrompts.filter((p: any) => p.id !== id);
+        updateUserInfoCache("userprompts", updatedPrompts);
+
         refreshUserAuth();
         messageApi.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
       } catch (err) {
@@ -83,7 +91,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         setLoading(false);
       }
     },
-    [refreshUserAuth, messageApi]
+    [userAuth, refreshUserAuth, messageApi]
   );
 
   const confirmRemovePrompt = useCallback(

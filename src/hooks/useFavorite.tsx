@@ -3,7 +3,7 @@ import React, { useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../pages/_components/AuthContext";
-import { createFavorite, updateFavorite, getPrompts } from "../api";
+import { createFavorite, updateFavorite, getPrompts, voteOnUserPrompt, updateUserInfoCache } from "../api";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 interface UseFavoriteReturn {
@@ -21,6 +21,10 @@ export const useFavorite = (): UseFavoriteReturn => {
   const updateFavorites = useCallback(
     async (userLoves: number[], favoriteId: number, isComm: boolean) => {
       await updateFavorite(favoriteId, userLoves, isComm);
+
+      const cacheField = isComm ? "favorites.commLoves" : "favorites.loves";
+      updateUserInfoCache(cacheField, userLoves);
+
       if (!isComm) {
         // Refresh cards cache if needed, matching original ShowcaseCard logic
         getPrompts("cards", userLoves, currentLanguage);
@@ -50,6 +54,12 @@ export const useFavorite = (): UseFavoriteReturn => {
 
           await updateFavorites(userLoves, favoriteId, isComm);
         }
+
+        // 收藏则投赞成票
+        if (isComm) {
+          voteOnUserPrompt(id, "upvote").catch(() => {});
+        }
+
         message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
       } catch (err) {
         console.error(err);
