@@ -1,8 +1,8 @@
 import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import Link from "@docusaurus/Link";
-import { Button, Modal, App, Dropdown, Space, Spin } from "antd";
-import { UserOutlined, HeartOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined, AppstoreOutlined } from "@ant-design/icons";
+import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
+import { UserOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined, AppstoreOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate from "@docusaurus/Translate";
 import { clearUserAllInfoCache, getPrompts } from "@site/src/api";
@@ -11,7 +11,7 @@ import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import AddPromptModal from "./modal/AddPromptModal";
 
 const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) => {
-  const { userAuth, setUserAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
+  const { userAuth, setUserAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const { message: messageApi, modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
@@ -178,12 +178,12 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
     []
   );
 
-  // 使用 AuthContext 的 isLoading 状态，而不是检查 userAuth === undefined
-  if (isLoading) {
+  if (authLoading) {
     return (
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50px" }}>
-        <Spin size="small" />
-      </div>
+      <Space wrap size="small">
+        <Skeleton.Button active size="default" style={{ width: 100 }} />
+        <Skeleton.Button active size="default" style={{ width: 100 }} />
+      </Space>
     );
   }
 

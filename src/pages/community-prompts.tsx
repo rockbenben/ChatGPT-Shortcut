@@ -9,10 +9,11 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Card, theme, Row, Col } from "antd";
+import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, theme, Row, Col, Skeleton } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
+import { PromptCardSkeleton } from "@site/src/pages/_components/PromptCardSkeleton";
 const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
@@ -38,7 +39,7 @@ interface PromptCardProps {
 
 const CommunityPrompts = () => {
   const { token } = theme.useToken();
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
@@ -226,7 +227,9 @@ const CommunityPrompts = () => {
                       <Translate id="link.home">返回首页</Translate>
                     </Button>
                   </Link>
-                  {userAuth ? (
+                  {authLoading ? (
+                    <Skeleton.Button active size="default" style={{ width: 100 }} />
+                  ) : userAuth ? (
                     <Link to="/user/center" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
                       <Button type="text" icon={<AppstoreOutlined />}>
                         <Translate id="link.myCenter">个人中心</Translate>
@@ -268,21 +271,7 @@ const CommunityPrompts = () => {
             </div>
 
             {loading ? (
-              <Row gutter={[16, 16]}>
-                {Array.from({ length: pageSize }).map((_, i) => (
-                  <Col key={i} xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <Card
-                      loading
-                      variant="borderless"
-                      style={{
-                        borderRadius: 12,
-                        border: `1px solid ${token.colorBorderSecondary}`,
-                        boxShadow: "none",
-                      }}
-                    />
-                  </Col>
-                ))}
-              </Row>
+              <PromptCardSkeleton count={pageSize} />
             ) : userprompts.length === 0 ? (
               <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
                 <NoResults />

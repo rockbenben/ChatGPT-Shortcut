@@ -1,19 +1,18 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
-import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import { Spin, Empty, App, Row, Col } from "antd";
+import { Empty, App, Row, Col } from "antd";
 import { BasePromptCard } from "@site/src/pages/_components/PromptCard/Base";
 import PromptCard from "@site/src/pages/_components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import styles from "@site/src/pages/_components/PromptCard/styles.module.css";
-import pageStyles from "@site/src/pages/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { getPrompts, updateFavorite, updateFavoritesOrder, updateUserInfoCache } from "@site/src/api";
+import { getPrompts, updateFavoritesOrder, updateUserInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
+import { PromptCardSkeleton } from "@site/src/pages/_components/PromptCardSkeleton";
 
 interface UserFavoriteProps {
   filteredCommus?: any[];
@@ -109,15 +108,13 @@ function UserFavoritePage({ filteredCommus = [], filteredCards = [], isFiltered 
   );
 
   if (!userAuth?.data) {
-    return <Spin />;
+    return <PromptCardSkeleton count={6} />;
   }
 
   return (
     <>
       {loading ? (
-        <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
-          <Spin />
-        </div>
+        <PromptCardSkeleton count={6} />
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <Row gutter={[16, 16]}>

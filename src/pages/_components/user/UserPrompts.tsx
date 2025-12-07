@@ -1,19 +1,18 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
-import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import { Spin, Empty, App, Row, Col } from "antd";
+import { Empty, App, Row, Col } from "antd";
 import { BasePromptCard } from "@site/src/pages/_components/PromptCard/Base";
 import PromptCard from "@site/src/pages/_components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import styles from "@site/src/pages/_components/PromptCard/styles.module.css";
-import pageStyles from "@site/src/pages/styles.module.css";
 import isEqual from "lodash/isEqual";
 
 import { getPrompts, updatePromptsOrder, updateUserInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import EditPromptModal from "./modal/EditPromptModal";
+import { PromptCardSkeleton } from "@site/src/pages/_components/PromptCardSkeleton";
 
 interface UserPromptsProps {
   filteredCommus?: any[];
@@ -121,15 +120,13 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false, onOpenModal 
   }, [userprompts, hasDragged]);
 
   if (!userAuth?.data) {
-    return <Spin />;
+    return <PromptCardSkeleton count={4} />;
   }
 
   return (
     <>
       {loading ? (
-        <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
-          <Spin />
-        </div>
+        <PromptCardSkeleton count={6} />
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <Row gutter={[16, 16]}>

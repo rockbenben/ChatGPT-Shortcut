@@ -5,24 +5,22 @@ export const AuthContext = createContext({
   userAuth: null,
   refreshUserAuth: () => {},
   setUserAuth: (userAuth: any) => {},
-  isLoading: false,
+  authLoading: false,
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [userAuth, setUserAuth] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(true);
 
   const fetchUser = useCallback(async () => {
-    startTransition(() => setIsLoading(true));
+    startTransition(() => setAuthLoading(true));
     try {
       const userAuthResp = await getUserAllInfo();
       startTransition(() => setUserAuth(userAuthResp));
     } catch (error) {
       console.error("Failed to fetch user data:", error);
-      // 这里可以考虑做额外处理，例如置空、显示错误提示或者重定向到登录页面
-      // setUserAuth(null); // 如果 getUserAllInfo 返回 null，表示未登录，这里不需要再设置为 null
     } finally {
-      startTransition(() => setIsLoading(false));
+      startTransition(() => setAuthLoading(false));
     }
   }, []);
 
@@ -35,9 +33,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       userAuth,
       setUserAuth,
       refreshUserAuth: fetchUser,
-      isLoading,
+      authLoading,
     }),
-    [userAuth, fetchUser, isLoading]
+    [userAuth, fetchUser, authLoading]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

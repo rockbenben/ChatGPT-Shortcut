@@ -4,7 +4,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 
 import Layout from "@theme/Layout";
 import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Divider, Segmented, Tag } from "antd";
-import { HomeOutlined, HeartOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined, AppstoreOutlined } from "@ant-design/icons";
+import { HomeOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined, AppstoreOutlined } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "../_components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateUserInfoCache } from "@site/src/api";
@@ -12,7 +12,7 @@ import { changePassword, forgotPassword, updateUsername, updateUserInfoCache } f
 const { Title, Text } = Typography;
 
 const UserProfile = () => {
-  const { userAuth, refreshUserAuth, isLoading } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { token } = theme.useToken();
 
@@ -31,13 +31,13 @@ const UserProfile = () => {
   }, [userAuth]);
 
   useEffect(() => {
-    if (!isLoading && !userAuth) {
+    if (!authLoading && !userAuth) {
       const timer = setTimeout(() => {
         window.location.href = "/";
       }, 2000);
       return () => clearTimeout(timer);
     }
-  }, [isLoading, userAuth]);
+  }, [authLoading, userAuth]);
 
   const handleEditUsernameClick = () => {
     setNewUsername(userAuth?.data.username || "");
@@ -99,7 +99,7 @@ const UserProfile = () => {
     }
   };
 
-  if (isLoading || !userAuth) {
+  if (authLoading || !userAuth) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>

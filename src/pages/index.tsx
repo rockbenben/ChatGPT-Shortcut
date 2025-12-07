@@ -273,7 +273,7 @@ interface ShowcaseCardsProps {
 }
 
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onEdit, onDelete, onOpenModal }) => {
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, authLoading } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -333,6 +333,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
   );
 
   const fetchData = useCallback(async () => {
+    // 等待认证加载完成后再决定是否获取数据
+    if (authLoading) {
+      return;
+    }
     if (!userAuth && !showAllOtherUsers) {
       return;
     }
@@ -358,7 +362,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
     } catch (error) {
       console.error("Error loading data:", error);
     }
-  }, [userAuth, showAllOtherUsers, currentLanguage]);
+  }, [userAuth, showAllOtherUsers, currentLanguage, authLoading]);
 
   useEffect(() => {
     fetchData();
@@ -403,7 +407,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
                 {!showUserPrompts && <SearchBar />}
               </div>
-              {userAuth ? (
+              {authLoading || userAuth ? (
                 <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} isDescription={isDescription} onOpenModal={onOpenModal} />
               ) : (
                 <Row gutter={[16, 16]}>
