@@ -80,13 +80,23 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
   const { token } = theme.useToken();
-
-  const handleUserPrompts = useCallback(() => {
-    setShowUserPrompts((prev) => !prev);
-  }, []);
-
   const history = useHistory();
   const location = useLocation();
+
+  const handleUserPrompts = useCallback(() => {
+    // Determine the new state
+    const newShowUserPrompts = !showUserPrompts;
+    setShowUserPrompts(newShowUserPrompts);
+
+    // If we are activating My Prompts, clear other tags
+    if (newShowUserPrompts) {
+      history.push({
+        ...location,
+        search: "",
+        state: prepareUserState(),
+      });
+    }
+  }, [showUserPrompts, history, location]);
 
   const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
@@ -185,6 +195,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               </div>
             </>
           )}
+          {userAuth && <div style={{ width: 1, backgroundColor: token.colorSplit }} />}
           {modifiedTagList.map((tag, i) => {
             const { label, description, color } = Tags[tag];
             const id = `showcase_checkbox_id_${tag}`;
@@ -248,16 +259,6 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
             </ShowcaseTooltip>
           </div>
         </Flex>
-      </section>
-      <section className="container">
-        {showUserPrompts && (
-          <>
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar setShowUserPrompts={setShowUserPrompts} />
-            </div>
-            <UserPrompts filteredCommus={[]} isFiltered={false} onOpenModal={onOpenModal} />
-          </>
-        )}
       </section>
     </>
   );
@@ -551,7 +552,16 @@ export default function Showcase(): React.ReactElement {
         <AuthProvider>
           <ShowcaseHeader />
           <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} onOpenModal={handleOpenModal} />
-          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
+          {showUserPrompts ? (
+            <div className="container margin-top--sm">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <SearchBar setShowUserPrompts={setShowUserPrompts} />
+              </div>
+              <UserPrompts filteredCommus={[]} isFiltered={false} onOpenModal={handleOpenModal} />
+            </div>
+          ) : (
+            <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
+          )}
           {modalOpen && (
             <Suspense fallback={null}>
               <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
