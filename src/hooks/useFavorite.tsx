@@ -37,10 +37,9 @@ export const useFavorite = (): UseFavoriteReturn => {
         let favoriteId: number;
 
         if (!userAuth?.data?.favorites) {
-          const createFavoriteResponse = await createFavorite([id], isComm);
-          userLoves = [id];
-          // Strapi v4: id 位于 data.id；兼容可能的 data.id 旧结构
-          favoriteId = createFavoriteResponse?.data?.data?.id ?? createFavoriteResponse?.data?.id;
+          // 新用户：创建收藏记录，已包含该 id，无需再调用 updateFavorite
+          await createFavorite([id], isComm);
+          refreshUserAuth();
         } else {
           userLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
           favoriteId = userAuth.data.favorites.id;
@@ -48,9 +47,9 @@ export const useFavorite = (): UseFavoriteReturn => {
           if (!userLoves.includes(id)) {
             userLoves.unshift(id);
           }
-        }
 
-        await updateFavorites(userLoves, favoriteId, isComm);
+          await updateFavorites(userLoves, favoriteId, isComm);
+        }
         message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
       } catch (err) {
         console.error(err);
@@ -68,8 +67,14 @@ export const useFavorite = (): UseFavoriteReturn => {
   const removeFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
-        let userLoves = isComm ? [...(userAuth?.data?.favorites?.commLoves || [])] : [...(userAuth?.data?.favorites?.loves || [])];
         const favoriteId = userAuth?.data?.favorites?.id;
+        // 防止 favoriteId 为 undefined 导致 /api/favorites/undefined 请求
+        if (!favoriteId) {
+          message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
+          return;
+        }
+
+        let userLoves = isComm ? [...(userAuth?.data?.favorites?.commLoves || [])] : [...(userAuth?.data?.favorites?.loves || [])];
 
         const index = userLoves.indexOf(id);
         if (index > -1) {
