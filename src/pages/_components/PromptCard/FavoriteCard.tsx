@@ -38,14 +38,15 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
   };
 
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const isDataCard = user[currentLanguage] && user[currentLanguage].title;
+  const itemData = user[currentLanguage] || user["zh"] || user["en"];
+  const isDataCard = !!(itemData && itemData.title);
 
   // Map data based on card type
-  const title = isDataCard ? user[currentLanguage].title : user.title;
+  const title = isDataCard ? itemData.title : user.title;
   // For Community Cards: description field is prompt, note field is description
-  const prompt = isDataCard ? user[currentLanguage].prompt : user.description;
-  const description = isDataCard ? user[currentLanguage].description : user.note || user.description;
-  const remark = isDataCard ? user[currentLanguage].remark : user.remark;
+  const prompt = isDataCard ? itemData.prompt : user.description;
+  const description = isDataCard ? itemData.description : user.note || user.description;
+  const remark = isDataCard ? itemData.remark : user.remark;
   const tags = user.tags;
   const website = user.website;
   const owner = user.owner;
