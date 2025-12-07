@@ -293,7 +293,7 @@ export async function createFavorite(loves, isComm = false) {
       },
     });
 
-    //clearUserAllInfoCache();
+    clearUserAllInfoCache();
     return response;
   } catch (error) {
     console.error("Error creating favorite:", error);
@@ -304,6 +304,7 @@ export async function createFavorite(loves, isComm = false) {
 // 更新收藏：更新现有的精选或社区提示收藏
 // Update Favorite: Updates an existing selected or community prompt favorite.
 export async function updateFavorite(favoriteId, loves, isComm = false) {
+  if (!favoriteId) throw new Error("favoriteId is required");
   try {
     const response = await apiClient.put(`/favorites/${favoriteId}`, {
       data: {
@@ -344,6 +345,7 @@ export async function submitPrompt(values) {
 
 // 更新我的提示词
 export async function updatePrompt(id, values) {
+  if (!id) throw new Error("prompt id is required");
   try {
     const response = await apiClient.put(`/userprompts/${id}`, {
       data: {
@@ -370,6 +372,7 @@ export async function updatePrompt(id, values) {
 
 // 删除自己创建的提示词 prompt
 export async function deletePrompt(id) {
+  if (!id) throw new Error("prompt id is required");
   try {
     const response = await apiClient.delete(`/userprompts/${id}`);
 
@@ -459,6 +462,7 @@ export async function findCardsWithTags(tags, search, lang = "zh", operator = "O
 
 // 投票用户提示
 export async function voteOnUserPrompt(promptId, action) {
+  if (!promptId) throw new Error("promptId is required");
   try {
     if (!["upvote", "downvote"].includes(action)) {
       throw new Error("Invalid vote action");
@@ -639,6 +643,7 @@ export async function fetchAllCopyCounts() {
 }
 
 export async function updateCopyCount(cardId) {
+  if (!cardId) return null;
   try {
     const response = await apiClient.post(`/cards/${cardId}/copy`);
     return response.data.count;
