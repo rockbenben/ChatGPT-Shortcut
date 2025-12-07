@@ -180,7 +180,8 @@ const CommunityPrompts = () => {
             )
           );
         }
-        messageApi.error(`Failed to ${action}. Please try again.`);
+        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
+        messageApi.error(errorMessage);
       }
     },
     [userAuth, messageApi, userprompts]

@@ -322,7 +322,8 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             downvoteDelta: (prev[promptId]?.downvoteDelta || 0) - delta.downvoteDelta,
           },
         }));
-        messageApi.error(`Failed to ${action}. Please try again.`);
+        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
+        messageApi.error(errorMessage);
       }
     },
     [userAuth, messageApi]

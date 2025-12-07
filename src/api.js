@@ -25,6 +25,13 @@ const handleApiError = (error) => {
   if (error?.response?.status === 401) {
     clearUserAllInfoCache();
   }
+
+  // 提取 Strapi 错误信息并附加到 error 对象，方便前端直接使用
+  const strapiMessage = error?.response?.data?.error?.message;
+  if (strapiMessage && !error.message?.includes(strapiMessage)) {
+    error.strapiMessage = strapiMessage;
+  }
+
   throw error;
 };
 

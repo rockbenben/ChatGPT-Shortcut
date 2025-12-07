@@ -49,11 +49,16 @@ export const useFavorite = (): UseFavoriteReturn => {
           }
         }
 
-        message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
         await updateFavorites(userLoves, favoriteId, isComm);
+        message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
       } catch (err) {
         console.error(err);
-        message.error(<Translate id="message.addFavorite.error">收藏失败，请稍后重试</Translate>);
+        const errorMessage = err?.strapiMessage;
+        if (errorMessage) {
+          message.error(errorMessage);
+        } else {
+          message.error(<Translate id="message.addFavorite.error">收藏失败，请稍后重试</Translate>);
+        }
       }
     },
     [userAuth, message, updateFavorites]
