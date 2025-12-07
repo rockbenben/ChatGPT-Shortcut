@@ -185,5 +185,4 @@ function PromptPage({ prompt }) {
   );
 }
 
-// 使用 memo 优化整个组件的重渲染
-export default React.memo(PromptPage);
+export default PromptPage;

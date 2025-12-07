@@ -1,12 +1,6 @@
-import React from "react";
 import PromptPage from "@site/src/pages/_components/PromptPage";
 import prompt from "@site/src/data/cards/98_it.json";
 
-const cachedPrompt = prompt;
-
-function PromptDetail() {
-  return <PromptPage prompt={cachedPrompt} />;
+export default function PromptDetail() {
+  return <PromptPage prompt={prompt} />;
 }
-
-export default React.memo(PromptDetail);
-

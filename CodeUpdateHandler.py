@@ -193,18 +193,12 @@ for prompt_id in range(1, max_id+1):
             # 设置输出文件的路径
             output_path = prompt_i18n_dir / f"{prompt_id}.tsx"
 
-        content = f'''import React from "react";
-import PromptPage from "@site/src/pages/_components/PromptPage";
+        content = f'''import PromptPage from "@site/src/pages/_components/PromptPage";
 import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
-const cachedPrompt = prompt;
-
-function PromptDetail() {{
-  return <PromptPage prompt={{cachedPrompt}} />;
+export default function PromptDetail() {{
+  return <PromptPage prompt={{prompt}} />;
 }}
-
-export default React.memo(PromptDetail);
-
 '''
 
         # Write the content to a new file named {prompt_id}.tsx

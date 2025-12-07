@@ -206,4 +206,4 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   );
 };
 
-export default React.memo(UserStatus);
+export default UserStatus;

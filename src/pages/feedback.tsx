@@ -100,4 +100,4 @@ const FeedbackPage = () => {
   );
 };
 
-export default React.memo(FeedbackPage);
+export default FeedbackPage;

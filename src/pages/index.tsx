@@ -52,7 +52,7 @@ export function prepareUserState(): UserState | undefined {
 
 const { Title, Paragraph } = Typography;
 
-const ShowcaseHeader = React.memo(() => (
+const ShowcaseHeader = () => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
       <Title level={1} className={styles.heroTitle} style={{ color: "transparent" }}>
@@ -64,7 +64,7 @@ const ShowcaseHeader = React.memo(() => (
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
-));
+);
 
 interface ShowcaseFiltersProps {
   onToggleDescription: () => void;

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import classNames from "classnames";
 import { ConfigProvider, theme, Typography } from "antd";
 import type { ReactNode } from "react";
@@ -87,4 +87,4 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   );
 };
 
-export default CommentComponent;
+export default memo(CommentComponent);

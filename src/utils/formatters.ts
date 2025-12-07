@@ -15,5 +15,5 @@ export const formatCount = (count) => {
 export const formatCompactNumber = formatCount;
 
 // truncate
-export const MAX_LENGTH = 200;
+const MAX_LENGTH = 200;
 export const truncate = (str: string, num: number = MAX_LENGTH): string => (str.length <= num ? str : `${str.slice(0, num)}...`);
