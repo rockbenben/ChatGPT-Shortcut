@@ -29,9 +29,7 @@ import { getPrompts, voteOnUserPrompt } from "@site/src/api";
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
-import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import EditPromptModal from "@site/src/pages/_components/user/modal/EditPromptModal";
 
 const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
@@ -267,12 +265,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
 interface ShowcaseCardsProps {
   isDescription: boolean;
   showUserPrompts: boolean;
-  onEdit: (data: any) => void;
-  onDelete: (id: string) => void;
   onOpenModal: (data: any) => void;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onEdit, onDelete, onOpenModal }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onOpenModal }) => {
   const { userAuth, authLoading } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -470,8 +466,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                   <PromptCard
                     type={isUserPrompt ? "user" : "community"}
                     data={modifiedData}
-                    onEdit={isUserPrompt ? () => onEdit(user) : undefined}
-                    onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
                     isFavorite={isFavorite}
                     onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
                     onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
@@ -501,11 +495,8 @@ export default function Showcase(): React.ReactElement {
   const [Shareurl, setShareUrl] = useState("");
   const [isDescription, setIsDescription] = useState(true);
   const [showUserPrompts, setShowUserPrompts] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [editingPrompt, setEditingPrompt] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<any>({});
-  const { updatePrompt, confirmRemovePrompt, loading: hookLoading } = useUserPrompt();
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -516,30 +507,6 @@ export default function Showcase(): React.ReactElement {
   const toggleDescription = useCallback(() => {
     setIsDescription((prevIsDescription) => !prevIsDescription);
   }, []);
-
-  const handleEditPrompt = useCallback((UserPrompt) => {
-    setEditingPrompt(UserPrompt);
-    setOpen(true);
-  }, []);
-
-  const onUpdateprompt = useCallback(
-    async (values) => {
-      if (!editingPrompt) return;
-      const success = await updatePrompt(editingPrompt.id, values);
-      if (success) {
-        setOpen(false);
-        setEditingPrompt(null);
-      }
-    },
-    [editingPrompt, updatePrompt]
-  );
-
-  const handleDeletePrompt = useCallback(
-    (promptId) => {
-      confirmRemovePrompt(promptId);
-    },
-    [confirmRemovePrompt]
-  );
 
   const handleOpenModal = useCallback((data: any) => {
     setModalData(data);
@@ -560,7 +527,7 @@ export default function Showcase(): React.ReactElement {
               <UserPrompts filteredCommus={[]} isFiltered={false} onOpenModal={handleOpenModal} />
             </div>
           ) : (
-            <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
+            <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onOpenModal={handleOpenModal} />
           )}
           {modalOpen && (
             <Suspense fallback={null}>
@@ -571,7 +538,6 @@ export default function Showcase(): React.ReactElement {
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
         </Suspense>
-        <EditPromptModal open={open} setOpen={setOpen} onFinish={onUpdateprompt} loading={hookLoading} initialValues={editingPrompt} />
       </main>
     </Layout>
   );
