@@ -39,7 +39,8 @@ export const useFavorite = (): UseFavoriteReturn => {
         if (!userAuth?.data?.favorites) {
           const createFavoriteResponse = await createFavorite([id], isComm);
           userLoves = [id];
-          favoriteId = createFavoriteResponse.data.id;
+          // Strapi v4: id 位于 data.id；兼容可能的 data.id 旧结构
+          favoriteId = createFavoriteResponse?.data?.data?.id ?? createFavoriteResponse?.data?.id;
         } else {
           userLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
           favoriteId = userAuth.data.favorites.id;
