@@ -382,13 +382,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <SearchBar />
           </div>
           <NoResults />
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-              <Suspense fallback={null}>
-                <AdComponent type="transverse" />
-              </Suspense>
-            </Col>
-          </Row>
+          <Suspense fallback={null}>
+            <AdComponent type="transverse" />
+          </Suspense>
         </div>
       </section>
     );

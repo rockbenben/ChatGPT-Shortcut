@@ -64,7 +64,21 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   );
 
   return (
-    <div className={cls} style={{ ...style, marginBottom: token.margin }}>
+    <div
+      className={cls}
+      style={{
+        ...style,
+        marginBottom: token.margin,
+        padding: token.paddingSM,
+        borderRadius: token.borderRadiusSM,
+        transition: "background-color 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = token.colorFillQuaternary;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = "transparent";
+      }}>
       <div className={`${prefixCls}-inner`} style={{ display: "flex", gap: token.marginSM }}>
         {avatar && <div className={`${prefixCls}-avatar`}>{avatar}</div>}
         {contentDom}

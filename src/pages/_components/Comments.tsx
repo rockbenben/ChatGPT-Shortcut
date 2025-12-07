@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback, memo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { List, Avatar, Button, Form, Modal, Pagination, theme } from "antd";
+import { List, Avatar, Button, Form, Modal, Pagination, theme, Empty } from "antd";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/pages/_components/CommentComponent";
 import CommentEditor from "@site/src/pages/_components/CommentComponent/CommentEditor";
 import { GiphySelector } from "@site/src/pages/_components/CommentComponent/GiphySelector";
+import { CommentSkeleton } from "@site/src/pages/_components/CommentComponent/CommentSkeleton";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { getComments, postComment } from "@site/src/api";
 import dayjs from "dayjs";
@@ -62,6 +63,39 @@ const useUserColorCache = () => {
   }, []);
 
   return getUserColor;
+};
+
+// 提取到组件外部的纯函数 - 性能优化
+const nestComments = (flatComments: any[]) => {
+  const commentMap = new Map();
+  const sortedComments = [...flatComments].sort((a, b) => new Date(a.id).getTime() - new Date(b.id).getTime());
+
+  const dateCache = new Map();
+  const getDate = (id: any) => {
+    if (!dateCache.has(id)) {
+      dateCache.set(id, new Date(id).getTime());
+    }
+    return dateCache.get(id);
+  };
+
+  for (const comment of sortedComments) {
+    comment.children = [];
+    commentMap.set(comment.id, comment);
+  }
+
+  const rootComments: any[] = [];
+  for (const comment of sortedComments) {
+    if (comment.threadOf) {
+      const parentComment = commentMap.get(comment.threadOf.id);
+      if (parentComment) {
+        parentComment.children.push(comment);
+      }
+    } else {
+      rootComments.push(comment);
+    }
+  }
+
+  return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
 };
 
 const Comments = ({ pageId, type }) => {
@@ -176,39 +210,6 @@ const Comments = ({ pageId, type }) => {
       default:
         break;
     }
-  };
-
-  const nestComments = (flatComments) => {
-    const commentMap = new Map();
-
-    const sortedComments = [...flatComments].sort((a, b) => new Date(a.id).getTime() - new Date(b.id).getTime());
-
-    const dateCache = new Map();
-    const getDate = (id) => {
-      if (!dateCache.has(id)) {
-        dateCache.set(id, new Date(id).getTime());
-      }
-      return dateCache.get(id);
-    };
-
-    for (const comment of sortedComments) {
-      comment.children = [];
-      commentMap.set(comment.id, comment);
-    }
-
-    const rootComments: any[] = [];
-    for (const comment of sortedComments) {
-      if (comment.threadOf) {
-        const parentComment = commentMap.get(comment.threadOf.id);
-        if (parentComment) {
-          parentComment.children.push(comment);
-        }
-      } else {
-        rootComments.push(comment);
-      }
-    }
-
-    return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
   };
 
   const handleLoginModalOpen = () => {
@@ -383,31 +384,39 @@ const Comments = ({ pageId, type }) => {
       </Modal>
       {renderForm()}
       <div style={{ minHeight: 200 }}>
-        <List
-          loading={isLoading}
-          className="comment-list"
-          header={`${totalCommentsCount} ${translate({
-            id: "label.comments",
-            message: "评论",
-          })}`}
-          itemLayout="horizontal"
-          dataSource={comments}
-          renderItem={renderComment}
-        />
+        {/* Header */}
+        <div
+          style={{
+            padding: `${token.paddingSM}px 0`,
+            borderBottom: `1px solid ${token.colorSplit}`,
+            marginBottom: token.margin,
+            fontWeight: 500,
+          }}>
+          {totalCommentsCount} {translate({ id: "label.comments", message: "评论" })}
+        </div>
+
+        {/* Content with skeleton/empty/list */}
+        {isLoading ? (
+          <CommentSkeleton count={10} />
+        ) : comments.length === 0 ? (
+          <Empty description={<Translate id="message.noComments">暂无评论，成为第一个评论者吧！</Translate>} style={{ padding: token.paddingLG }} />
+        ) : (
+          <List className="comment-list" itemLayout="horizontal" dataSource={comments} renderItem={renderComment} />
+        )}
       </div>
-      <Pagination
-        current={currentPage}
-        pageSize={pageSize}
-        total={totalCommentsCount}
-        showQuickJumper
-        showSizeChanger={false}
-        onChange={(page) => {
-          setCurrentPage(page);
-        }}
-        style={{ textAlign: "center", marginTop: token.marginLG }}
-      />
+      {totalCommentsCount > pageSize && (
+        <Pagination
+          current={currentPage}
+          pageSize={pageSize}
+          total={totalCommentsCount}
+          showQuickJumper
+          showSizeChanger={false}
+          onChange={(page) => setCurrentPage(page)}
+          style={{ textAlign: "center", marginTop: token.marginLG }}
+        />
+      )}
     </>
   );
 };
 
-export default Comments;
+export default memo(Comments);

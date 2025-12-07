@@ -9,7 +9,7 @@ import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { getWeight, formatCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
-const Comments = React.lazy(() => import("./Comments"));
+import Comments from "./Comments";
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
 const { Title, Paragraph, Text } = Typography;
@@ -168,7 +168,6 @@ function PromptPage({ prompt }) {
               </Flex>
             </Card>
 
-            {/* 广告组件 */}
             <Suspense fallback={null}>
               <AdComponent type="transverse" />
             </Suspense>
@@ -176,9 +175,7 @@ function PromptPage({ prompt }) {
             {/* 评论区卡片 */}
             <Card variant="borderless" className="shadow--md">
               <div style={{ minHeight: 200 }}>
-                <Suspense fallback={<div style={{ minHeight: 200 }}></div>}>
-                  <Comments pageId={prompt.id} type="page" />
-                </Suspense>
+                <Comments pageId={prompt.id} type="page" />
               </div>
             </Card>
           </Flex>
