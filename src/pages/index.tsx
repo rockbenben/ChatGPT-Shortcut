@@ -6,7 +6,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
-import { App, Button, Typography, Space, theme, Flex, Row, Col } from "antd";
+import { App, Button, Typography, Space, theme, Flex, Row, Col, Tooltip } from "antd";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -130,16 +130,15 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           </Button>
           <Space>
             {currentLanguage !== "en" && (
-              <Button
-                onClick={onToggleDescription}
+              <Tooltip
                 title={translate({
                   id: "toggle_prompt_language_description",
                   message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
-                })}
-                size="small"
-                style={{ display: "inline-flex", alignItems: "center" }}>
-                {togglePromptLanguage}
-              </Button>
+                })}>
+                <Button onClick={onToggleDescription} size="small" style={{ display: "inline-flex", alignItems: "center" }}>
+                  {togglePromptLanguage}
+                </Button>
+              </Tooltip>
             )}
             <ShowcaseFilterToggle />
           </Space>

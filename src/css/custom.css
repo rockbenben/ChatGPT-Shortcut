@@ -355,13 +355,12 @@ div[class^="announcementBar_"] {
 .buttonLink {
   color: var(--ifm-color-primary);
 }
-.interLink,
+
 .pagination-nav__label {
   color: var(--ifm-color-primary);
   font-size: 1rem;
 }
 .buttonLink:hover,
-.interLink:hover,
 .pagination-nav__label:hover {
   color: var(--site-primary-font);
 }

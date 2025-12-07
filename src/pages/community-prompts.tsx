@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState, useCallback, Suspense, useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import styles from "@site/src/pages/styles.module.css";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/pages/_components/SearchBar";
@@ -10,8 +9,8 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin, Card, Skeleton, theme, Row, Col } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
+import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Card, theme, Row, Col } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
 const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
@@ -222,13 +221,13 @@ const CommunityPrompts = () => {
               }}>
               <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
                 <Space>
-                  <Link to="/" className="interLink">
-                    <Button type="text" icon={<HomeOutlined />}>
+                  <Link to="/" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
+                    <Button type="text" icon={<HomeOutlined />} style={{ paddingLeft: 0 }}>
                       <Translate id="link.home">返回首页</Translate>
                     </Button>
                   </Link>
                   {userAuth ? (
-                    <Link to="/user/center" className="interLink">
+                    <Link to="/user/center" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
                       <Button type="text" icon={<AppstoreOutlined />}>
                         <Translate id="link.myCenter">个人中心</Translate>
                       </Button>
@@ -274,7 +273,7 @@ const CommunityPrompts = () => {
                   <Col key={i} xs={24} sm={12} md={8} lg={6} xl={6}>
                     <Card
                       loading
-                      bordered={false}
+                      variant="borderless"
                       style={{
                         borderRadius: 12,
                         border: `1px solid ${token.colorBorderSecondary}`,
