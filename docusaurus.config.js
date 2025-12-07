@@ -131,18 +131,18 @@ const config = {
         },
         items: [
           {
-            to: "docs",
-            label: "📘 使用说明",
+            to: "/community-prompts",
+            label: "社区提示词",
             position: "left",
           },
           {
-            to: "/community-prompts",
-            label: "🏘️ 社区提示词",
+            to: "docs",
+            label: "使用说明",
             position: "left",
           },
           {
             type: "dropdown",
-            label: "🛠️ 应用工具",
+            label: "应用工具",
             position: "left",
             items: [
               {
@@ -150,13 +150,14 @@ const config = {
                 to: "/docs/extension",
               },
               {
-                label: "IMGPrompt",
-                href: "https://prompt.newzone.top/app",
-              },
-              {
                 label: "ToolsByAI",
                 href: "https://tools.newzone.top/",
               },
+              {
+                label: "IMGPrompt",
+                href: "https://prompt.newzone.top/app",
+              },
+              { type: "html", value: '<hr style="margin: 4px 0;">' },
               {
                 label: "工具收藏",
                 href: "https://nav.newzone.top",
@@ -168,47 +169,33 @@ const config = {
             ],
           },
           {
-            type: "dropdown",
+            to: "/feedback",
             label: "反馈建议",
             position: "left",
-            items: [
-              {
-                label: "📝 提交反馈",
-                to: "/feedback",
-              },
-              {
-                label: "✈️ Telegram",
-                href: "https://t.me/aishort_top",
-              },
-              {
-                label: "📺 加入 Discord",
-                href: "https://discord.gg/PZTQfJ4GjX",
-              },
-              {
-                label: "💬 加入 QQ 群",
-                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
-              },
-            ],
           },
           // remove the language dropdown from the navbar (if you only have one language)
           { type: "localeDropdown", position: "right" },
           {
-            title: "Telegram",
-            href: "https://t.me/aishort_top",
+            type: "dropdown",
+            label: "支持",
             position: "right",
-            className: "header-tg-link",
-          },
-          {
-            title: "Discord",
-            href: "https://discord.gg/PZTQfJ4GjX",
-            position: "right",
-            className: "header-discord-link",
-          },
-          {
-            title: "QQ Group",
-            href: "https://qm.qq.com/q/sHgB9eqd6E",
-            position: "right",
-            className: "header-qq-link",
+            items: [
+              {
+                label: "Telegram",
+                href: "https://t.me/aishort_top",
+                className: "header-tg-link",
+              },
+              {
+                label: "Discord",
+                href: "https://discord.gg/PZTQfJ4GjX",
+                className: "header-discord-link",
+              },
+              {
+                label: "QQ 群",
+                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
+                className: "header-qq-link",
+              },
+            ],
           },
           {
             title: "GitHub",
@@ -219,7 +206,6 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} AiShort (ChatGPT Shortcut)`,
       },
       prism: {

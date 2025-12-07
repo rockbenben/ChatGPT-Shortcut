@@ -26,7 +26,7 @@ Attraverso il filtraggio per tag e la ricerca per parole chiave, cliccando sul p
 
 ![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
-## 💬 Cambio di Lingua
+## Cambio di Lingua
 
 Di default, le parole suggerite vengono visualizzate in inglese. Se stai utilizzando una pagina non in inglese e desideri visualizzare le interpretazioni nella tua lingua madre, fai clic sul contenuto delle parole suggerite per passare a una lingua non inglese, e fai nuovamente clic per tornare all'inglese. Nota che il cambio di lingua funziona solo quando si fa clic sul testo nella sollecitazione, mentre il clic nell'area vuota non ha effetto.
 

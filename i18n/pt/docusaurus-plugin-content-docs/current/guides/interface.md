@@ -26,7 +26,7 @@ Por meio da filtragem por etiquetas e busca por palavras-chave, ao clicar no bot
 
 ![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
-## 💬 Alternância de Idioma
+## Alternância de Idioma
 
 Por padrão, as palavras sugeridas são exibidas em inglês. Se você estiver usando uma página em outro idioma e quiser visualizar as interpretações em seu idioma nativo, clique no conteúdo das palavras sugeridas para alternar para um idioma não inglês e clique novamente para voltar para o inglês. Observe que a alternância de idioma só funciona ao clicar no texto da sugestão e clicar na área em branco é ineficaz.
 

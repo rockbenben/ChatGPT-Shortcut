@@ -16,10 +16,9 @@ interface CommunityCardProps {
   onToggleFavorite?: (id: number, isComm: boolean) => void;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
   onEdit?: (data: any) => void;
-  onDelete?: (id: number) => void;
 }
 
-const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onDelete, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
+const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();

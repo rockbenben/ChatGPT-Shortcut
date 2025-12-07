@@ -973,5 +973,8 @@
   },
   "action.viewDetails": {
     "message": "상세 보기"
+  },
+  "action.close": {
+    "message": "닫기"
   }
 }

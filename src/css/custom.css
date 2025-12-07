@@ -142,6 +142,27 @@ html[data-theme="dark"] {
     no-repeat;
 }
 
+/* 让下拉菜单项的图标和文字在同一行 */
+.dropdown__menu .header-qq-link,
+.dropdown__menu .header-discord-link,
+.dropdown__menu .header-tg-link {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown__menu .header-qq-link::before,
+.dropdown__menu .header-discord-link::before,
+.dropdown__menu .header-tg-link::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
 .header-qq-link:hover {
   opacity: 0.6;
 }

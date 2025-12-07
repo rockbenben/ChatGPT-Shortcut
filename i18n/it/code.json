@@ -973,5 +973,8 @@
   "theme.NotFound.title": {
     "message": "Pagina non trovata",
     "description": "The title of the 404 page"
+  },
+  "action.close": {
+    "message": "Chiudi"
   }
 }

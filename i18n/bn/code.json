@@ -973,5 +973,8 @@
   },
   "action.viewDetails": {
     "message": "বিস্তারিত দেখুন"
+  },
+  "action.close": {
+    "message": "বন্ধ করুন"
   }
 }

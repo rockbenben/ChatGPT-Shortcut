@@ -6,8 +6,11 @@ const AdComponent = ({ type = "default" }) => {
 
   useEffect(() => {
     setIsMounted(true);
+  }, []);
 
-    // 组件挂载后，尝试填充广告
+  useEffect(() => {
+    if (!isMounted) return;
+
     try {
       // 确保 adsbygoogle 数组存在
       window.adsbygoogle = window.adsbygoogle || [];
@@ -16,7 +19,7 @@ const AdComponent = ({ type = "default" }) => {
     } catch (error) {
       console.error("AdSense push failed", error);
     }
-  }, []);
+  }, [isMounted]);
 
   // 服务端渲染或未挂载时，返回占位符，防止 Hydration Error
   if (!isMounted) {

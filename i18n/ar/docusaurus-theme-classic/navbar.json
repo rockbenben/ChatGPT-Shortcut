@@ -7,17 +7,17 @@
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
-  "item.label.📘 使用说明": {
-    "message": "📘 الوثائق",
-    "description": "Navbar item with label 📘 使用说明"
+  "item.label.使用说明": {
+    "message": "الوثائق",
+    "description": "Navbar item with label 使用说明"
   },
-  "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ مطالب المجتمع",
-    "description": "Navbar item with label 🏘️ 社区提示词"
+  "item.label.社区提示词": {
+    "message": "مطالب المجتمع",
+    "description": "Navbar item with label 社区提示词"
   },
-  "item.label.🛠️ 应用工具": {
-    "message": "🛠️ الأدوات",
-    "description": "Navbar item with label 🛠️ 应用工具"
+  "item.label.应用工具": {
+    "message": "الأدوات",
+    "description": "Navbar item with label 应用工具"
   },
   "item.label.IMGPrompt": {
     "message": "IMGPrompt",
@@ -35,18 +35,6 @@
     "message": "التعليقات",
     "description": "Navbar item with label 反馈建议"
   },
-  "item.label.📝 提交反馈": {
-    "message": "📝 تقديم الملاحظات",
-    "description": "Navbar item with label 📝 提交反馈"
-  },
-  "item.label.💬 加入 QQ 群": {
-    "message": "💬 تحدث معنا على QQ",
-    "description": "Navbar item with label 💬 加入 QQ 群"
-  },
-  "item.label.📺 加入 Discord": {
-    "message": "📺 انضم إلى Discord",
-    "description": "Navbar item with label 📺 加入 Discord"
-  },
   "item.label.脚本扩展": {
     "message": "الإضافات",
     "description": "Navbar item with label 脚本扩展"
@@ -55,8 +43,20 @@
     "message": "ToolsByAI",
     "description": "Navbar item with label ToolsByAI"
   },
-  "item.label.✈️ Telegram": {
-    "message": "✈️ Telegram",
-    "description": "Navbar item with label ✈️ Telegram"
+  "item.label.Telegram": {
+    "message": "Telegram",
+    "description": "Navbar item with label Telegram"
+  },
+  "item.label.支持": {
+    "message": "دعم",
+    "description": "Navbar item with label 支持"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.QQ 群": {
+    "message": "مجموعة QQ",
+    "description": "Navbar item with label QQ 群"
   }
 }

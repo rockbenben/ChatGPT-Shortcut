@@ -973,5 +973,8 @@
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Schließen",
     "description": "The ARIA label for close button of announcement bar"
+  },
+  "action.close": {
+    "message": "Schließen"
   }
 }

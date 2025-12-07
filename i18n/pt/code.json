@@ -973,5 +973,8 @@
   },
   "action.viewDetails": {
     "message": "Ver Detalhes"
+  },
+  "action.close": {
+    "message": "Fechar"
   }
 }

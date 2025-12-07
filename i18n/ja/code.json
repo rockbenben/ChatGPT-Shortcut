@@ -973,5 +973,8 @@
   },
   "action.viewDetails": {
     "message": "詳細を見る"
+  },
+  "action.close": {
+    "message": "閉じる"
   }
 }

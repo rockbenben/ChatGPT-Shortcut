@@ -26,7 +26,7 @@ Grâce au filtrage par balises et à la recherche par mot-clé, en cliquant sur 
 
 ![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
-## 💬 Changement de langue
+## Changement de langue
 
 Par défaut, les mots suggérés sont affichés en anglais. Si vous utilisez une page non anglaise et souhaitez voir les interprétations dans votre langue maternelle, veuillez cliquer sur le contenu des mots suggérés pour passer à une langue non anglaise, et cliquez à nouveau pour revenir à l'anglais. Veuillez noter que le changement de langue ne fonctionne que lorsque vous cliquez sur le texte dans le prompt, et cliquer dans la zone vide est inefficace.
 

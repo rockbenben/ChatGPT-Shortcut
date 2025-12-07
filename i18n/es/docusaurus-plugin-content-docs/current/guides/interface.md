@@ -26,7 +26,7 @@ A través del filtrado por etiquetas y la búsqueda por palabras clave, al hacer
 
 ![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
-## 💬 Cambio de idioma
+## Cambio de idioma
 
 Por defecto, las palabras sugeridas se muestran en inglés. Si estás utilizando una página en otro idioma y deseas ver las interpretaciones en tu idioma nativo, haz clic en el contenido de las palabras sugeridas para cambiar a un idioma distinto al inglés, y haz clic nuevamente para volver al inglés. Ten en cuenta que el cambio de idioma solo funciona al hacer clic en el texto de la indicación, y hacer clic en el área en blanco no tiene efecto.
 

@@ -52,7 +52,7 @@ If the native-language description is unclear, you can click the link at the bot
 
 ![](https://img.newzone.top/2023-06-11-17-10-37.png?imageMogr2/format/webp)
 
-## 💬 Language Switching
+## Language Switching
 
 By default, prompts are shown in **English**. Non-English users can click the prompt text area to toggle between English and their native-language translation.
 

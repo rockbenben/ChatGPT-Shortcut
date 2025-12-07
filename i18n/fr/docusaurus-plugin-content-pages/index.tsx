@@ -6,8 +6,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
-import { App } from "antd";
+import { App, Button, Typography, Space, theme, Flex, Row, Col, Tooltip } from "antd";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -34,6 +33,8 @@ import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import EditPromptModal from "@site/src/pages/_components/user/modal/EditPromptModal";
 
+const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+
 const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
 
@@ -51,13 +52,17 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
+const { Title, Paragraph } = Typography;
+
 const ShowcaseHeader = React.memo(() => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      <Heading as="h1" className={styles.heroTitle}>
+      <Title level={1} className={styles.heroTitle} style={{ color: "transparent" }}>
         AI Short
-      </Heading>
-      <p className={styles.heroSubtitle}>{SLOGAN}</p>
+      </Title>
+      <Paragraph type="secondary" className={styles.heroSubtitle}>
+        {SLOGAN}
+      </Paragraph>
     </div>
     <UserStatus hideLinks={{ userCenter: true, myFavorite: false }} />
   </section>
@@ -67,19 +72,31 @@ interface ShowcaseFiltersProps {
   onToggleDescription: () => void;
   showUserPrompts: boolean;
   setShowUserPrompts: React.Dispatch<React.SetStateAction<boolean>>;
+  onOpenModal: (data: any) => void;
 }
 
-const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts }) => {
+const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDescription, showUserPrompts, setShowUserPrompts, onOpenModal }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-
-  const handleUserPrompts = useCallback(() => {
-    setShowUserPrompts((prev) => !prev);
-  }, []);
-
+  const { token } = theme.useToken();
   const history = useHistory();
   const location = useLocation();
+
+  const handleUserPrompts = useCallback(() => {
+    // Determine the new state
+    const newShowUserPrompts = !showUserPrompts;
+    setShowUserPrompts(newShowUserPrompts);
+
+    // If we are activating My Prompts, clear other tags
+    if (newShowUserPrompts) {
+      history.push({
+        ...location,
+        search: "",
+        state: prepareUserState(),
+      });
+    }
+  }, [showUserPrompts, history, location]);
 
   const handleUserFavs = useCallback(() => {
     setShowUserPrompts(false);
@@ -114,32 +131,32 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   return (
     <>
       <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
-        <div className={styles.filterCheckbox}>
-          <div>
-            <Heading as="h2" className="hideOnSmallScreen">
-              <Translate id="showcase.filters.title">Filters</Translate>
-            </Heading>
-            <button onClick={toggleTagsOnMobile} className={clsx("showOnSmallScreen", styles.onToggleButton)}>
-              <MenuOutlined /> {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
-            </button>
-          </div>
-          {currentLanguage !== "en" && (
-            <button
-              onClick={onToggleDescription}
-              className={styles.onToggleButton}
-              title={translate({
-                id: "toggle_prompt_language_description",
-                message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
-              })}>
-              {togglePromptLanguage}
-            </button>
-          )}
-          <ShowcaseFilterToggle />
-        </div>
-        <ul className={clsx("clean-list", styles.checkboxList)}>
+        <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
+          <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
+            <Translate id="showcase.filters.title">Filters</Translate>
+          </Title>
+          <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
+            {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
+          </Button>
+          <Space>
+            {currentLanguage !== "en" && (
+              <Tooltip
+                title={translate({
+                  id: "toggle_prompt_language_description",
+                  message: "更改提示词的显示语言，可以在英语和当前页面语言之间进行切换。",
+                })}>
+                <Button onClick={onToggleDescription} size="small" style={{ display: "inline-flex", alignItems: "center" }}>
+                  {togglePromptLanguage}
+                </Button>
+              </Tooltip>
+            )}
+            <ShowcaseFilterToggle />
+          </Space>
+        </Flex>
+        <Flex wrap="wrap" gap="small" style={{ marginTop: "0.5rem" }}>
           {userAuth && (
             <>
-              <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
+              <div className={`${styles.checkboxListItem}`} onClick={handleUserPrompts}>
                 <ShowcaseTooltip
                   id="myprompt"
                   text={translate({
@@ -154,10 +171,11 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                       message: "我的提示词",
                     })}
                     icon={<EditOutlined style={{ marginLeft: "5px" }} />}
+                    checked={showUserPrompts}
                   />
                 </ShowcaseTooltip>
-              </li>
-              <li className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
+              </div>
+              <div className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
                 <ShowcaseTooltip
                   id="myfavorite"
                   text={translate({
@@ -174,15 +192,16 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
                   />
                 </ShowcaseTooltip>
-              </li>
+              </div>
             </>
           )}
+          {userAuth && <div style={{ width: 1, backgroundColor: token.colorSplit }} />}
           {modifiedTagList.map((tag, i) => {
             const { label, description, color } = Tags[tag];
             const id = `showcase_checkbox_id_${tag}`;
 
             return (
-              <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
+              <div key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
                 <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                   <ShowcaseTagSelect
                     tag={tag}
@@ -205,10 +224,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     }
                   />
                 </ShowcaseTooltip>
-              </li>
+              </div>
             );
           })}
-          <li key="community.tag.tooltip" className={styles.checkboxListItem}>
+          <div key="community.tag.tooltip" className={styles.checkboxListItem}>
             <ShowcaseTooltip
               id="community.tag.tooltip"
               text={translate({
@@ -238,18 +257,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                 />
               </Link>
             </ShowcaseTooltip>
-          </li>
-        </ul>
-      </section>
-      <section className="container">
-        {showUserPrompts && (
-          <>
-            <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-              <SearchBar setShowUserPrompts={setShowUserPrompts} />
-            </div>
-            <UserPrompts filteredCommus={[]} isFiltered={false} />
-          </>
-        )}
+          </div>
+        </Flex>
       </section>
     </>
   );
@@ -260,9 +269,10 @@ interface ShowcaseCardsProps {
   showUserPrompts: boolean;
   onEdit: (data: any) => void;
   onDelete: (id: string) => void;
+  onOpenModal: (data: any) => void;
 }
 
-const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onEdit, onDelete }) => {
+const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription, showUserPrompts, onEdit, onDelete, onOpenModal }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -272,29 +282,54 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
   const [favoritePrompts, setFavoritePrompts] = useState(favorDefault || []);
   const [otherPrompts, setOtherPrompts] = useState(otherDefault || []);
   const [showAllOtherUsers, setShowAllOtherUsers] = useState(false);
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState<(number | string)[]>([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState<(number | string)[]>([]);
+
+  // 本次会话的投票记录（防止 API 请求期间重复点击）
+  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
+  // 本地投票增量（用于 optimistic UI，存储 delta 而非绝对值）
+  const [voteDeltas, setVoteDeltas] = useState<Record<string | number, { upvoteDelta: number; downvoteDelta: number }>>({});
 
   const vote = useCallback(
-    async (promptId, action) => {
+    async (promptId: number | string, action: "upvote" | "downvote") => {
       if (!userAuth) {
         messageApi.warning("Please log in to vote.");
         return;
       }
-      // Prevent duplicate clicks
-      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
-      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+
+      // 防止 API 请求期间重复点击
+      const voteKey = `${promptId}_${action}`;
+      if (sessionVotedIdsRef.current.has(voteKey)) {
+        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        return;
+      }
+      sessionVotedIdsRef.current.add(voteKey);
+
+      // Optimistic UI: 存储增量变化
+      const delta = { upvoteDelta: action === "upvote" ? 1 : 0, downvoteDelta: action === "downvote" ? 1 : 0 };
+      setVoteDeltas((prev) => ({
+        ...prev,
+        [promptId]: {
+          upvoteDelta: (prev[promptId]?.upvoteDelta || 0) + delta.upvoteDelta,
+          downvoteDelta: (prev[promptId]?.downvoteDelta || 0) + delta.downvoteDelta,
+        },
+      }));
 
       try {
         await voteOnUserPrompt(promptId, action);
         messageApi.success(`Successfully ${action}d!`);
-        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
-        updateVotedIds((prevIds) => [...prevIds, promptId]);
       } catch (err) {
-        messageApi.error(`Failed to ${action}. Error: ${err}`);
+        // 回滚增量
+        sessionVotedIdsRef.current.delete(voteKey);
+        setVoteDeltas((prev) => ({
+          ...prev,
+          [promptId]: {
+            upvoteDelta: (prev[promptId]?.upvoteDelta || 0) - delta.upvoteDelta,
+            downvoteDelta: (prev[promptId]?.downvoteDelta || 0) - delta.downvoteDelta,
+          },
+        }));
+        messageApi.error(`Failed to ${action}. Please try again.`);
       }
     },
-    [userAuth, votedUpPromptIds, votedDownPromptIds, messageApi]
+    [userAuth, messageApi]
   );
 
   const fetchData = useCallback(async () => {
@@ -343,9 +378,13 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <SearchBar />
           </div>
           <NoResults />
-          <Suspense fallback={null}>
-            <AdComponent />
-          </Suspense>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+              <Suspense fallback={null}>
+                <AdComponent type="transverse" />
+              </Suspense>
+            </Col>
+          </Row>
         </div>
       </section>
     );
@@ -358,42 +397,50 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
           <div id="favorites-section" className={styles.showcaseFavorite}>
             <div className="container">
               <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <Heading as="h2" className="hideOnSmallScreen">
+                <Title level={3} className="hideOnSmallScreen">
                   <Translate id="showcase.favoritesList.title">Favorites</Translate>
-                </Heading>
+                </Title>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
                 {!showUserPrompts && <SearchBar />}
               </div>
               {userAuth ? (
-                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} />
+                <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} isDescription={isDescription} onOpenModal={onOpenModal} />
               ) : (
-                <ul className={clsx("clean-list", styles.showcaseList)}>
+                <Row gutter={[16, 16]}>
                   {favoriteUsers.map((user) => (
-                    <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                      <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                    </Col>
                   ))}
-                  <Suspense fallback={null}>
-                    <AdComponent />
-                  </Suspense>
-                </ul>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                    <Suspense fallback={null}>
+                      <AdComponent />
+                    </Suspense>
+                  </Col>
+                </Row>
               )}
             </div>
           </div>
           <div className="container margin-top--md">
-            <Heading as="h2" className="hideOnSmallScreen">
+            <Title level={3} className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
-            </Heading>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
+            </Title>
+            <Row gutter={[16, 16]}>
               {otherUsers.map((user) => (
-                <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} />
+                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                  <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                </Col>
               ))}
-              <Suspense fallback={null}>
-                <AdComponent />
-              </Suspense>
-            </ul>
+              <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                <Suspense fallback={null}>
+                  <AdComponent />
+                </Suspense>
+              </Col>
+            </Row>
             {!showAllOtherUsers && (
-              <button className={styles.loadMoreButton} onClick={() => setShowAllOtherUsers(true)}>
+              <Button size="large" block onClick={() => setShowAllOtherUsers(true)} style={{ marginTop: 24, fontSize: "0.95rem" }}>
                 <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
-              </button>
+              </Button>
             )}
           </div>
         </>
@@ -402,30 +449,48 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
-          <ul className={clsx("clean-list", styles.showcaseList)}>
+          <Row gutter={[16, 16]}>
             {filteredCommus.map((user) => {
               const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
+
+              // 应用本地投票增量（optimistic UI）
+              const delta = voteDeltas[user.id];
+              const modifiedData = delta
+                ? {
+                    ...user,
+                    upvotes: (user.upvotes || 0) + delta.upvoteDelta,
+                    downvotes: (user.downvotes || 0) + delta.downvoteDelta,
+                    upvoteDifference: (user.upvoteDifference || 0) + delta.upvoteDelta - delta.downvoteDelta,
+                  }
+                : user;
+
               return (
-                <PromptCard
-                  key={user.id}
-                  type={isUserPrompt ? "user" : "community"}
-                  data={user}
-                  onEdit={isUserPrompt ? () => onEdit(user) : undefined}
-                  onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
-                  isFavorite={isFavorite}
-                  onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
-                  onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
-                />
+                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                  <PromptCard
+                    type={isUserPrompt ? "user" : "community"}
+                    data={modifiedData}
+                    onEdit={isUserPrompt ? () => onEdit(user) : undefined}
+                    onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
+                    isFavorite={isFavorite}
+                    onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
+                    onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
+                    onOpenModal={onOpenModal}
+                  />
+                </Col>
               );
             })}
             {filteredCards.map((user) => (
-              <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} />
+              <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+              </Col>
             ))}
-            <Suspense fallback={null}>
-              <AdComponent />
-            </Suspense>
-          </ul>
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+              <Suspense fallback={null}>
+                <AdComponent />
+              </Suspense>
+            </Col>
+          </Row>
         </div>
       )}
     </section>
@@ -438,6 +503,8 @@ export default function Showcase(): React.ReactElement {
   const [showUserPrompts, setShowUserPrompts] = useState(false);
   const [open, setOpen] = useState(false);
   const [editingPrompt, setEditingPrompt] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>({});
   const { updatePrompt, confirmRemovePrompt, loading: hookLoading } = useUserPrompt();
 
   useEffect(() => {
@@ -474,13 +541,32 @@ export default function Showcase(): React.ReactElement {
     [confirmRemovePrompt]
   );
 
+  const handleOpenModal = useCallback((data: any) => {
+    setModalData(data);
+    setModalOpen(true);
+  }, []);
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseHeader />
-          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} />
-          <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} />
+          <ShowcaseFilters onToggleDescription={toggleDescription} showUserPrompts={showUserPrompts} setShowUserPrompts={setShowUserPrompts} onOpenModal={handleOpenModal} />
+          {showUserPrompts ? (
+            <div className="container margin-top--sm">
+              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
+                <SearchBar setShowUserPrompts={setShowUserPrompts} />
+              </div>
+              <UserPrompts filteredCommus={[]} isFiltered={false} onOpenModal={handleOpenModal} />
+            </div>
+          ) : (
+            <ShowcaseCards isDescription={isDescription} showUserPrompts={showUserPrompts} onEdit={handleEditPrompt} onDelete={handleDeletePrompt} onOpenModal={handleOpenModal} />
+          )}
+          {modalOpen && (
+            <Suspense fallback={null}>
+              <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
+            </Suspense>
+          )}
         </AuthProvider>
         <Suspense fallback={null}>
           <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />

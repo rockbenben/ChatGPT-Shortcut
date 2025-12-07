@@ -26,7 +26,7 @@ Durch Tag-Filterung und Stichwortsuche ermöglicht es das Klicken auf die Schalt
 
 ![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
 
-## 💬 Sprachumschaltung
+## Sprachumschaltung
 
 Standardmäßig werden die vorgeschlagenen Wörter in Englisch angezeigt. Wenn Sie eine nicht-englische Seite verwenden und die Interpretationen in Ihrer Muttersprache anzeigen möchten, klicken Sie bitte auf den Inhalt der vorgeschlagenen Wörter, um auf eine nicht-englische Sprache umzuschalten, und klicken Sie erneut, um zu Englisch zurückzukehren. Bitte beachten Sie, dass die Sprachumschaltung nur funktioniert, wenn Sie auf den Text in der Anfrage klicken, und das Klicken im leeren Bereich unwirksam ist.
 

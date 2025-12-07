@@ -973,5 +973,8 @@
   },
   "action.viewDetails": {
     "message": "Посмотреть детали"
+  },
+  "action.close": {
+    "message": "Закрыть"
   }
 }
