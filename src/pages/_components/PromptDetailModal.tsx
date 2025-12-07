@@ -1,11 +1,10 @@
 import React from "react";
-import { Modal, Typography, Space, Button, Tooltip, theme, Flex, Tag } from "antd";
-import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Modal, Typography, Space, Button, Tooltip, theme, Flex } from "antd";
+import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
-import { PromptRemark } from "./PromptCard/PromptRemark";
 import { formatCompactNumber } from "@site/src/utils/formatters";
 
 import { TagType } from "@site/src/data/tags";
@@ -69,7 +68,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
           }}>
           <Flex justify="space-between" align="start" gap={token.padding}>
             <div style={{ flex: 1 }}>
-              <Typography.Title level={3} style={{ margin: 0, marginBottom: token.marginXS }}>
+              <Typography.Title level={2} style={{ margin: 0, marginBottom: token.marginXS }}>
                 {data.title}
               </Typography.Title>
               <Space separator={<span style={{ color: token.colorBorder }}>|</span>} size="small" wrap>
@@ -108,17 +107,15 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                 {data.website && (
                   <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4 }}>
                     <LinkOutlined style={{ fontSize: token.fontSizeSM }} />
-                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                      Website
-                    </Typography.Text>
+                    <Typography.Text style={{ fontSize: token.fontSizeSM, color: "inherit" }}>Website</Typography.Text>
                   </a>
                 )}
               </Space>
             </div>
             {/* Close Button (Custom) */}
-            <Button type="text" onClick={onCancel} style={{ color: token.colorTextTertiary }}>
-              ✕
-            </Button>
+            <Tooltip title={<Translate id="action.close">关闭</Translate>}>
+              <Button type="text" icon={<CloseOutlined style={{ fontSize: 18, color: token.colorTextTertiary }} />} onClick={onCancel} />
+            </Tooltip>
           </Flex>
         </div>
 
@@ -140,7 +137,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                   borderRadius: token.borderRadius,
                   border: `1px solid ${token.colorInfoBorder}`,
                 }}>
-                <PromptRemark remark={data.remark} style={{ margin: 0, border: "none", padding: 0 }} />
+                <Typography.Paragraph style={{ margin: 0 }}>{data.remark}</Typography.Paragraph>
               </div>
             )}
 
@@ -150,7 +147,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                 <Typography.Text strong style={{ fontSize: token.fontSizeLG }}>
                   <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
-                <Button size="small" type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
+                <Button type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
                   {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
                 </Button>
               </Flex>

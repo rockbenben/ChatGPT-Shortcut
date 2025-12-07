@@ -50,7 +50,9 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
       theme={{
         components: {
           Switch: {
-            handleSize: 16,
+            handleSize: 14,
+            trackHeight: 20,
+            trackMinWidth: 45,
             colorPrimary: "var(--ifm-color-primary)",
             colorPrimaryHover: "var(--ifm-color-primary-dark)",
           },

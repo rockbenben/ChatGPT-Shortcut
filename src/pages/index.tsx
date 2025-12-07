@@ -147,7 +147,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
         <Flex wrap="wrap" gap="small" style={{ marginTop: "0.5rem" }}>
           {userAuth && (
             <>
-              <div className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
+              <div className={`${styles.checkboxListItem}`} onClick={handleUserPrompts}>
                 <ShowcaseTooltip
                   id="myprompt"
                   text={translate({
@@ -162,6 +162,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                       message: "我的提示词",
                     })}
                     icon={<EditOutlined style={{ marginLeft: "5px" }} />}
+                    checked={showUserPrompts}
                   />
                 </ShowcaseTooltip>
               </div>

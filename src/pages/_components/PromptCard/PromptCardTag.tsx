@@ -4,7 +4,7 @@ import { Tags, TagList, type TagType } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 
 export const PromptCardTag = ({ tags }: { tags: TagType[] }) => {
-  const safeTags = tags || [];
+  const safeTags = (tags || []).filter((tag) => tag !== "favorite");
   const tagObjects = safeTags.map((tag) => ({ tag, ...Tags[tag] }));
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
 

@@ -116,12 +116,7 @@
   margin-right: 0;
 }
 
-.activeItem :global(.checkboxLabel) {
-  background-color: var(--ifm-color-primary) !important;
-  color: white !important;
-  border-color: var(--ifm-color-primary) !important;
-  opacity: 1 !important;
-}
+
 
 .searchContainer {
   margin-left: auto;
