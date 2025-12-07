@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import { Spin, Empty, App } from "antd";
+import { Spin, Empty, App, Row, Col } from "antd";
 import { BasePromptCard } from "@site/src/pages/_components/PromptCard/Base";
 import PromptCard from "@site/src/pages/_components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
@@ -132,23 +132,25 @@ function UserPromptsPage({ filteredCommus = [], isFiltered = false, onOpenModal 
         </div>
       ) : (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-          <ul className={clsx("clean-list", pageStyles.showcaseList)}>
+          <Row gutter={[16, 16]}>
             {!userprompts || userprompts.length === 0 ? (
-              <li style={{ listStyle: "none" }}>
+              <Col xs={24} sm={24} md={24} lg={24}>
                 <BasePromptCard>
                   <div className={styles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
                     <Empty description={<Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>} />
                   </div>
                 </BasePromptCard>
-              </li>
+              </Col>
             ) : (
               <SortableContext items={userprompts.map((item) => item.id)}>
                 {userprompts.map((UserPrompt) => (
-                  <PromptCard key={UserPrompt.id} type="user" data={UserPrompt} isFiltered={isFiltered} onDelete={handleDeletePrompt} onEdit={handleEditPrompt} onOpenModal={onOpenModal} />
+                  <Col key={UserPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                    <PromptCard type="user" data={UserPrompt} isFiltered={isFiltered} onDelete={handleDeletePrompt} onEdit={handleEditPrompt} onOpenModal={onOpenModal} />
+                  </Col>
                 ))}
               </SortableContext>
             )}
-          </ul>
+          </Row>
         </DndContext>
       )}
 

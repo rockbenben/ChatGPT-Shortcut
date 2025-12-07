@@ -35,7 +35,6 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
     transition,
     opacity: isDragging ? 0.5 : 1,
     height: "100%",
-    listStyle: "none",
   };
 
   const currentLanguage = i18n.currentLocale.split("-")[0];
@@ -101,81 +100,82 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
   }, [onOpenModal, isDataCard, user, title, prompt, description, remark, tags, website, owner]);
 
   return (
-    <li ref={setNodeRef} style={style} {...attributes}>
-      <BasePromptCard
-        title={
-          <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-              {isDataCard ? (
-                <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
-                  {title}
-                </Link>
-              ) : (
-                <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
-              )}
-            </Typography.Title>
-            <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
-              {copyCount > 0 && (
-                <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError }}>
-                  <FireFilled />
-                  <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                    {formatCompactNumber(copyCount)}
-                  </Typography.Text>
-                </Flex>
-              )}
-              {user.upvoteDifference > 0 && (
-                <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning }}>
-                  <LikeFilled />
-                  <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                    {formatCompactNumber(user.upvoteDifference)}
-                  </Typography.Text>
-                </Flex>
-              )}
-            </Flex>
-          </Flex>
-        }
-        titleExtra={
-          owner && (
-            <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-              <UserOutlined style={{ marginRight: 4 }} />
-              {owner}
-            </Typography.Text>
-          )
-        }
-        actions={[
-          <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-            <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-          </Tooltip>,
-          <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-            <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={handleRemoveFavorite} block />
-          </Tooltip>,
-        ]}
-        onCardClick={handleCardClick}>
-        <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-          <PromptRemark remark={remark} />
-          <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-            <Typography.Paragraph
-              ellipsis={{
-                rows: 3,
-              }}
-              className={styles.showcaseCardBody}
-              style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-              {contentToShow}
-            </Typography.Paragraph>
-          </div>
-          <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
-            <div style={{ flex: 1, overflow: "hidden" }}>
-              <PromptCardTag tags={tags} />
-            </div>
-            {website && (
-              <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-                <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
-              </a>
+    <BasePromptCard
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      title={
+        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+            {isDataCard ? (
+              <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+                {title}
+              </Link>
+            ) : (
+              <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
+            )}
+          </Typography.Title>
+          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
+            {copyCount > 0 && (
+              <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError }}>
+                <FireFilled />
+                <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
+                  {formatCompactNumber(copyCount)}
+                </Typography.Text>
+              </Flex>
+            )}
+            {user.upvoteDifference > 0 && (
+              <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning }}>
+                <LikeFilled />
+                <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
+                  {formatCompactNumber(user.upvoteDifference)}
+                </Typography.Text>
+              </Flex>
             )}
           </Flex>
+        </Flex>
+      }
+      titleExtra={
+        owner && (
+          <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+            <UserOutlined style={{ marginRight: 4 }} />
+            {owner}
+          </Typography.Text>
+        )
+      }
+      actions={[
+        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
+          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
+        </Tooltip>,
+        <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
+          <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={handleRemoveFavorite} block />
+        </Tooltip>,
+      ]}
+      onCardClick={handleCardClick}>
+      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        <PromptRemark remark={remark} />
+        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
+          <Typography.Paragraph
+            ellipsis={{
+              rows: 3,
+            }}
+            className={styles.showcaseCardBody}
+            style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+            {contentToShow}
+          </Typography.Paragraph>
         </div>
-      </BasePromptCard>
-    </li>
+        <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
+          <div style={{ flex: 1, overflow: "hidden" }}>
+            <PromptCardTag tags={tags} />
+          </div>
+          {website && (
+            <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
+              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            </a>
+          )}
+        </Flex>
+      </div>
+    </BasePromptCard>
   );
 };
 

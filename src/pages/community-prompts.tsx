@@ -10,7 +10,7 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/pages/_components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin, Card, Skeleton, theme } from "antd";
+import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, Spin, Card, Skeleton, theme, Row, Col } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, StarOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/pages/_components/PromptCard";
@@ -269,41 +269,36 @@ const CommunityPrompts = () => {
             </div>
 
             {loading ? (
-              <div className={styles.showcaseList}>
+              <Row gutter={[16, 16]}>
                 {Array.from({ length: pageSize }).map((_, i) => (
-                  <Card
-                    key={i}
-                    loading
-                    bordered={false}
-                    style={{
-                      borderRadius: 12,
-                      border: `1px solid ${token.colorBorderSecondary}`,
-                      boxShadow: "none",
-                    }}
-                  />
+                  <Col key={i} xs={24} sm={12} md={8} lg={6} xl={6}>
+                    <Card
+                      loading
+                      bordered={false}
+                      style={{
+                        borderRadius: 12,
+                        border: `1px solid ${token.colorBorderSecondary}`,
+                        boxShadow: "none",
+                      }}
+                    />
+                  </Col>
                 ))}
-              </div>
+              </Row>
             ) : userprompts.length === 0 ? (
               <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
                 <NoResults />
               </Flex>
             ) : (
-              <div className={styles.showcaseList}>
+              <Row gutter={[16, 16]}>
                 {userprompts.map((commuPrompt) => {
                   const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
                   return (
-                    <PromptCard
-                      key={commuPrompt.id}
-                      type="community"
-                      data={commuPrompt}
-                      onVote={vote}
-                      isFavorite={isBookmarked}
-                      onToggleFavorite={(id) => bookmark(Number(id))}
-                      onOpenModal={onOpenModal}
-                    />
+                    <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                      <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={isBookmarked} onToggleFavorite={(id) => bookmark(Number(id))} onOpenModal={onOpenModal} />
+                    </Col>
                   );
                 })}
-              </div>
+              </Row>
             )}
 
             <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>

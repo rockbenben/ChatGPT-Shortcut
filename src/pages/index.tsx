@@ -6,8 +6,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
-import { App, Button, Typography, Space, theme, Flex } from "antd";
+import { App, Button, Typography, Space, theme, Flex, Row, Col } from "antd";
 
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -123,7 +122,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
     <>
       <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
         <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
-          <Title level={3} className="hideOnSmallScreen" style={{ marginBottom: 0 }}>
+          <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
             <Translate id="showcase.filters.title">Filters</Translate>
           </Title>
           <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
@@ -145,10 +144,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
             <ShowcaseFilterToggle />
           </Space>
         </Flex>
-        <ul className={clsx("clean-list", styles.checkboxList)}>
+        <Flex wrap="wrap" gap="small" style={{ marginTop: "0.5rem" }}>
           {userAuth && (
             <>
-              <li className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
+              <div className={`${styles.checkboxListItem} ${showUserPrompts ? styles.activeItem : ""}`} onClick={handleUserPrompts}>
                 <ShowcaseTooltip
                   id="myprompt"
                   text={translate({
@@ -165,8 +164,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     icon={<EditOutlined style={{ marginLeft: "5px" }} />}
                   />
                 </ShowcaseTooltip>
-              </li>
-              <li className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
+              </div>
+              <div className={`${styles.checkboxListItem}`} onClick={handleUserFavs}>
                 <ShowcaseTooltip
                   id="myfavorite"
                   text={translate({
@@ -183,7 +182,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     icon={<HeartOutlined style={{ marginLeft: "5px" }} />}
                   />
                 </ShowcaseTooltip>
-              </li>
+              </div>
             </>
           )}
           {modifiedTagList.map((tag, i) => {
@@ -191,7 +190,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
             const id = `showcase_checkbox_id_${tag}`;
 
             return (
-              <li key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
+              <div key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`} onClick={handleTagClick}>
                 <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
                   <ShowcaseTagSelect
                     tag={tag}
@@ -214,10 +213,10 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     }
                   />
                 </ShowcaseTooltip>
-              </li>
+              </div>
             );
           })}
-          <li key="community.tag.tooltip" className={styles.checkboxListItem}>
+          <div key="community.tag.tooltip" className={styles.checkboxListItem}>
             <ShowcaseTooltip
               id="community.tag.tooltip"
               text={translate({
@@ -247,8 +246,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                 />
               </Link>
             </ShowcaseTooltip>
-          </li>
-        </ul>
+          </div>
+        </Flex>
       </section>
       <section className="container">
         {showUserPrompts && (
@@ -378,9 +377,13 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <SearchBar />
           </div>
           <NoResults />
-          <Suspense fallback={null}>
-            <AdComponent />
-          </Suspense>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+              <Suspense fallback={null}>
+                <AdComponent type="transverse" />
+              </Suspense>
+            </Col>
+          </Row>
         </div>
       </section>
     );
@@ -402,14 +405,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               {userAuth ? (
                 <UserFavorite filteredCommus={[]} filteredCards={[]} isFiltered={false} isDescription={isDescription} onOpenModal={onOpenModal} />
               ) : (
-                <ul className={clsx("clean-list", styles.showcaseList)}>
+                <Row gutter={[16, 16]}>
                   {favoriteUsers.map((user) => (
-                    <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                      <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                    </Col>
                   ))}
-                  <Suspense fallback={null}>
-                    <AdComponent />
-                  </Suspense>
-                </ul>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                    <Suspense fallback={null}>
+                      <AdComponent />
+                    </Suspense>
+                  </Col>
+                </Row>
               )}
             </div>
           </div>
@@ -417,14 +424,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
             <Title level={3} className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Title>
-            <ul className={clsx("clean-list", styles.showcaseList)}>
+            <Row gutter={[16, 16]}>
               {otherUsers.map((user) => (
-                <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                  <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                </Col>
               ))}
-              <Suspense fallback={null}>
-                <AdComponent />
-              </Suspense>
-            </ul>
+              <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+                <Suspense fallback={null}>
+                  <AdComponent />
+                </Suspense>
+              </Col>
+            </Row>
             {!showAllOtherUsers && (
               <Button size="large" block onClick={() => setShowAllOtherUsers(true)} style={{ marginTop: 24, fontSize: "0.95rem" }}>
                 <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
@@ -437,7 +448,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
-          <ul className={clsx("clean-list", styles.showcaseList)}>
+          <Row gutter={[16, 16]}>
             {filteredCommus.map((user) => {
               const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
@@ -454,26 +465,31 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
                 : user;
 
               return (
-                <PromptCard
-                  key={user.id}
-                  type={isUserPrompt ? "user" : "community"}
-                  data={modifiedData}
-                  onEdit={isUserPrompt ? () => onEdit(user) : undefined}
-                  onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
-                  isFavorite={isFavorite}
-                  onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
-                  onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
-                  onOpenModal={onOpenModal}
-                />
+                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                  <PromptCard
+                    type={isUserPrompt ? "user" : "community"}
+                    data={modifiedData}
+                    onEdit={isUserPrompt ? () => onEdit(user) : undefined}
+                    onDelete={isUserPrompt ? () => onDelete(user.id) : undefined}
+                    isFavorite={isFavorite}
+                    onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
+                    onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
+                    onOpenModal={onOpenModal}
+                  />
+                </Col>
               );
             })}
             {filteredCards.map((user) => (
-              <PromptCard key={user.id} type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+              <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                <PromptCard type="data" data={user} isDescription={isDescription} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+              </Col>
             ))}
-            <Suspense fallback={null}>
-              <AdComponent />
-            </Suspense>
-          </ul>
+            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+              <Suspense fallback={null}>
+                <AdComponent />
+              </Suspense>
+            </Col>
+          </Row>
         </div>
       )}
     </section>

@@ -6,7 +6,7 @@ const AdComponent = ({ type = "default" }) => {
 
   useEffect(() => {
     setIsMounted(true);
-    
+
     // 组件挂载后，尝试填充广告
     try {
       // 确保 adsbygoogle 数组存在
@@ -23,16 +23,7 @@ const AdComponent = ({ type = "default" }) => {
     return <div style={{ minHeight: "200px", width: "100%" }} />;
   }
 
-  return (
-    <ins
-      className="adsbygoogle"
-      style={{ display: "block" }}
-      data-ad-client="ca-pub-7585955822109216"
-      data-ad-slot={adSlot}
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    />
-  );
+  return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot={adSlot} data-ad-format="auto" data-full-width-responsive="true" />;
 };
 
 export default AdComponent;

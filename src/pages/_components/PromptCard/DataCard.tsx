@@ -91,59 +91,57 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
   );
 
   return (
-    <li key={userInfo.title} style={{ height: "100%", listStyle: "none" }}>
-      <BasePromptCard
-        title={
-          <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-              <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
-                {userInfo.title}
-              </Link>
-            </Typography.Title>
-            <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
-              <FireFilled />
-              <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                {formatCount(copyCount)}
-              </Typography.Text>
-            </Flex>
+    <BasePromptCard
+      title={
+        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+            <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+              {userInfo.title}
+            </Link>
+          </Typography.Title>
+          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
+            <FireFilled />
+            <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
+              {formatCount(copyCount)}
+            </Typography.Text>
           </Flex>
-        }
-        actions={[
-          <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-            <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-          </Tooltip>,
-          userAuth ? (
-            <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-              <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} block />
-            </Tooltip>
-          ) : (
-            user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} block />
-          ),
-        ].filter(Boolean)}
-        onCardClick={handleCardClick}>
-        <PromptRemark remark={userInfo.remark} />
-        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-          <Typography.Paragraph
-            ellipsis={{
-              rows: 3,
-            }}
-            className={styles.showcaseCardBody}
-            style={{ marginBottom: 0 }}>
-            {userDescription}
-          </Typography.Paragraph>
-        </div>
-        <Flex justify="space-between" align="center" style={{ marginTop: token.marginSM }}>
-          <div style={{ flex: 1 }}>
-            <PromptCardTag tags={user.tags} />
-          </div>
-          {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-              <LinkOutlined style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", opacity: 0.6 }} />
-            </a>
-          )}
         </Flex>
-      </BasePromptCard>
-    </li>
+      }
+      actions={[
+        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
+          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
+        </Tooltip>,
+        userAuth ? (
+          <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
+            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} block />
+          </Tooltip>
+        ) : (
+          user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} block />
+        ),
+      ].filter(Boolean)}
+      onCardClick={handleCardClick}>
+      <PromptRemark remark={userInfo.remark} />
+      <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
+        <Typography.Paragraph
+          ellipsis={{
+            rows: 3,
+          }}
+          className={styles.showcaseCardBody}
+          style={{ marginBottom: 0 }}>
+          {userDescription}
+        </Typography.Paragraph>
+      </div>
+      <Flex justify="space-between" align="center" style={{ marginTop: token.marginSM }}>
+        <div style={{ flex: 1 }}>
+          <PromptCardTag tags={user.tags} />
+        </div>
+        {user.website && (
+          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
+            <LinkOutlined style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", opacity: 0.6 }} />
+          </a>
+        )}
+      </Flex>
+    </BasePromptCard>
   );
 };
 

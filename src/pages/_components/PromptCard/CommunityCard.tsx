@@ -72,71 +72,69 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
   }, [onOpenModal, user]);
 
   return (
-    <li key={user.id} style={{ height: "100%", listStyle: "none" }}>
-      <BasePromptCard
-        title={
-          <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-              <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
-            </Typography.Title>
-          </Flex>
-        }
-        titleExtra={
-          <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-            <UserOutlined style={{ marginRight: 4 }} />
-            {user.owner}
-          </Typography.Text>
-        }
-        actions={[
-          <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-            <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-          </Tooltip>,
-          userAuth && onToggleFavorite && (
-            <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-              <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={handleToggleFavorite} block />
-            </Tooltip>
-          ),
-          onVote && (
-            <Tooltip title={<Translate id="action.upvote">赞</Translate>}>
-              <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
-                {user.upvotes || 0}
-              </Button>
-            </Tooltip>
-          ),
-          onVote && (
-            <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
-              <Button type="text" icon={<DownOutlined />} onClick={handleDownvote} block>
-                {user.downvotes || 0}
-              </Button>
-            </Tooltip>
-          ),
-        ].filter(Boolean)}
-        onCardClick={handleCardClick}>
-        <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-          <PromptRemark remark={user.remark} />
-          <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-            <Typography.Paragraph
-              ellipsis={{
-                rows: 5,
-              }}
-              className={styles.showcaseCardBody}
-              style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-              {user.description}
-            </Typography.Paragraph>
-          </div>
-          <Flex justify="space-between" align="center">
-            <div style={{ flex: 1, overflow: "hidden" }}>
-              <PromptCardTag tags={user.tags} />
-            </div>
-            {user.website && (
-              <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-                <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
-              </a>
-            )}
-          </Flex>
+    <BasePromptCard
+      title={
+        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+            <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+          </Typography.Title>
+        </Flex>
+      }
+      titleExtra={
+        <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+          <UserOutlined style={{ marginRight: 4 }} />
+          {user.owner}
+        </Typography.Text>
+      }
+      actions={[
+        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
+          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
+        </Tooltip>,
+        userAuth && onToggleFavorite && (
+          <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
+            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={handleToggleFavorite} block />
+          </Tooltip>
+        ),
+        onVote && (
+          <Tooltip title={<Translate id="action.upvote">赞</Translate>}>
+            <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
+              {user.upvotes || 0}
+            </Button>
+          </Tooltip>
+        ),
+        onVote && (
+          <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
+            <Button type="text" icon={<DownOutlined />} onClick={handleDownvote} block>
+              {user.downvotes || 0}
+            </Button>
+          </Tooltip>
+        ),
+      ].filter(Boolean)}
+      onCardClick={handleCardClick}>
+      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        <PromptRemark remark={user.remark} />
+        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
+          <Typography.Paragraph
+            ellipsis={{
+              rows: 5,
+            }}
+            className={styles.showcaseCardBody}
+            style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+            {user.description}
+          </Typography.Paragraph>
         </div>
-      </BasePromptCard>
-    </li>
+        <Flex justify="space-between" align="center">
+          <div style={{ flex: 1, overflow: "hidden" }}>
+            <PromptCardTag tags={user.tags} />
+          </div>
+          {user.website && (
+            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
+              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            </a>
+          )}
+        </Flex>
+      </div>
+    </BasePromptCard>
   );
 };
 
