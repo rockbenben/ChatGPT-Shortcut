@@ -3,22 +3,25 @@ import { Tooltip, Space, Tag as AntTag } from "antd";
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
 import { sortBy } from "@site/src/utils/jsUtils";
 
-export const PromptCardTag = ({ tags }: { tags: TagType[] }) => {
+interface PromptCardTagProps {
+  tags: TagType[];
+  muted?: boolean;
+}
+
+export const PromptCardTag = ({ tags, muted = false }: PromptCardTagProps) => {
   const safeTags = (tags || []).filter((tag) => tag !== "favorite");
   const tagObjects = safeTags.map((tag) => ({ tag, ...Tags[tag] }));
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) => TagList.indexOf(tagObject.tag));
 
   return (
-    <Space size={[8, 8]} wrap>
+    <Space size={[8, 8]} wrap style={{ opacity: muted ? 0.6 : 1 }}>
       {tagObjectsSorted.map((tagObject, index) => (
         <Tooltip key={index} title={tagObject.description} id={`showcase_card_tag_${tagObject.tag}`}>
           <AntTag
-            variant="filled"
+            color={tagObject.color}
             style={{
-              backgroundColor: `${tagObject.color}20`, // 12% opacity
-              color: tagObject.color,
-              borderColor: "transparent",
               marginRight: 0,
+              opacity: muted ? 0.7 : 1,
             }}>
             {tagObject.label}
           </AntTag>

@@ -50,3 +50,43 @@ input:checked + .checkboxLabel:hover {
   box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
   transform: translateY(-1px);
 }
+
+/* Ant Design Tag.CheckableTag base + hover styles */
+.tagSelect {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--site-primary-font);
+  background-color: var(--site-color-card-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tagSelect:hover {
+  border-color: var(--ifm-color-primary) !important;
+  background-color: var(--site-color-card-background) !important;
+  box-shadow: var(--site-shadow-sm);
+  transform: translateY(-1px);
+}
+
+.tagSelect:active {
+  transform: scale(0.96);
+}
+
+/* Selected state */
+.tagSelectChecked {
+  color: var(--site-color-tag-selected-text);
+  background-color: var(--site-color-tag-selected-bg);
+  border: 1px solid var(--site-color-tag-selected-border);
+  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
+}
+
+.tagSelectChecked:hover {
+  background-color: var(--site-color-tag-selected-bg) !important;
+  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
+}

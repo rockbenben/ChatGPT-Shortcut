@@ -7,14 +7,15 @@
 
 import React, { useCallback, useState, useEffect, type ComponentProps, type ReactNode, type ReactElement } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
+import { Tag } from "antd";
 import { toggleListItem } from "@site/src/utils/jsUtils";
 import type { TagType } from "@site/src/data/tags";
-
-import { prepareUserState } from "@site/src/components/SearchBar/index";
 import styles from "./styles.module.css";
 
+import { prepareUserState } from "@site/src/components/SearchBar/index";
+
 interface Props extends ComponentProps<"input"> {
-  icon: ReactElement<ComponentProps<"svg">>;
+  icon: ReactElement<ComponentProps<"svg">> | ReactNode;
   label: ReactNode;
   tag: TagType | string;
 }
@@ -32,14 +33,21 @@ function replaceSearchTags(search: string, newTags: (TagType | string)[]) {
   return searchParams.toString();
 }
 
-function ShowcaseTagSelect({ id, icon, label, tag, ...rest }: Props, ref: React.ForwardedRef<HTMLLabelElement>) {
+function ShowcaseTagSelect({ id, icon, label, tag, checked: propChecked, ...rest }: Props, ref: React.ForwardedRef<HTMLSpanElement>) {
   const location = useLocation();
   const history = useHistory();
   const [selected, setSelected] = useState(false);
+
   useEffect(() => {
-    const tags = readSearchTags(location.search);
-    setSelected(tags.includes(tag));
-  }, [tag, location]);
+    // Use propChecked if provided (for controlled mode), otherwise derive from URL
+    if (propChecked !== undefined) {
+      setSelected(propChecked);
+    } else {
+      const tags = readSearchTags(location.search);
+      setSelected(tags.includes(tag));
+    }
+  }, [tag, location, propChecked]);
+
   const toggleTag = useCallback(() => {
     const tags = readSearchTags(location.search);
     const newTags = toggleListItem(tags, tag);
@@ -50,34 +58,21 @@ function ShowcaseTagSelect({ id, icon, label, tag, ...rest }: Props, ref: React.
       state: prepareUserState(),
     });
   }, [tag, location, history]);
+
+  const handleChange = useCallback(
+    (nextChecked: boolean) => {
+      toggleTag();
+    },
+    [toggleTag]
+  );
+
   return (
-    <>
-      <input
-        type="checkbox"
-        id={id}
-        className="screen-reader-only"
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            toggleTag();
-          }
-        }}
-        onFocus={(e) => {
-          if (e.relatedTarget) {
-            e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("focus"));
-          }
-        }}
-        onBlur={(e) => {
-          e.target.nextElementSibling?.dispatchEvent(new KeyboardEvent("blur"));
-        }}
-        onChange={toggleTag}
-        checked={selected}
-        {...rest}
-      />
-      <label ref={ref} htmlFor={id} className={styles.checkboxLabel}>
+    <span ref={ref} style={{ display: "inline-block" }}>
+      <Tag.CheckableTag className={`${styles.tagSelect} ${selected ? styles.tagSelectChecked : ""}`} checked={selected} onChange={handleChange}>
         {label}
         {icon}
-      </label>
-    </>
+      </Tag.CheckableTag>
+    </span>
   );
 }
 

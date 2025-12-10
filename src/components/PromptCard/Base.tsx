@@ -46,9 +46,9 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             ...bodyStyle,
           },
           actions: {
-            borderTop: `1px solid ${token.colorBorderSecondary}`,
-            backgroundColor: token.colorFillQuaternary,
-            padding: `4px ${token.paddingXS}px`,
+            borderTop: `1px solid ${token.colorBorder}`,
+            backgroundColor: token.colorBgLayout,
+            padding: `${token.paddingXS}px ${token.paddingSM}px`,
           },
         }}
         actions={actions}

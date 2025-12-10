@@ -4,7 +4,7 @@ import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, HolderOutlined, UserOutlined, FireFilled, LikeFilled } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -118,12 +118,19 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
           </Typography.Title>
           <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
             {copyCount > 0 && (
-              <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError }}>
-                <FireFilled />
-                <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                  {formatCompactNumber(copyCount)}
-                </Typography.Text>
-              </Flex>
+              <Typography.Text
+                type="secondary"
+                style={{
+                  fontSize: token.fontSizeSM,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: token.marginXXS,
+                  color: token.colorTextTertiary,
+                  flexShrink: 0,
+                }}>
+                <FireOutlined style={{ color: token.colorWarning }} />
+                {formatCompactNumber(copyCount)}
+              </Typography.Text>
             )}
             {user.upvoteDifference > 0 && (
               <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning }}>
@@ -167,7 +174,7 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
         </div>
         <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
           <div style={{ flex: 1, overflow: "hidden" }}>
-            <PromptCardTag tags={tags} />
+            <PromptCardTag tags={tags} muted />
           </div>
           {website && (
             <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>

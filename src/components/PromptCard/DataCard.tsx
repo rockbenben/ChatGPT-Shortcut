@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireFilled } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -99,12 +99,19 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
               {userInfo.title}
             </Link>
           </Typography.Title>
-          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
-            <FireFilled />
-            <Typography.Text type="danger" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-              {formatCount(copyCount)}
-            </Typography.Text>
-          </Flex>
+          <Typography.Text
+            type="secondary"
+            style={{
+              fontSize: token.fontSizeSM,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: token.marginXXS,
+              color: token.colorTextTertiary,
+              flexShrink: 0,
+            }}>
+            <FireOutlined style={{ color: token.colorWarning }} />
+            {formatCount(copyCount)}
+          </Typography.Text>
         </Flex>
       }
       actions={[
@@ -133,7 +140,7 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
       </div>
       <Flex justify="space-between" align="center" style={{ marginTop: token.marginSM }}>
         <div style={{ flex: 1 }}>
-          <PromptCardTag tags={user.tags} />
+          <PromptCardTag tags={user.tags} muted />
         </div>
         {user.website && (
           <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>

@@ -16,7 +16,8 @@ export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.H
         fontSize: "0.85rem",
         lineHeight: 1.5,
         color: token.colorTextSecondary,
-        padding: "2px 0 2px 12px",
+        padding: `${token.paddingXXS}px ${token.paddingXS}px`,
+        borderRadius: token.borderRadiusSM,
         borderLeft: `3px solid ${token.colorFillTertiary}`,
         ...props.style,
       }}

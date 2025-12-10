@@ -136,7 +136,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
           <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
             {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
           </Button>
-          <Space>
+          <Flex gap="small" align="center">
             {currentLanguage !== "en" && (
               <Tooltip
                 title={translate({
@@ -149,7 +149,7 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               </Tooltip>
             )}
             <ShowcaseFilterToggle />
-          </Space>
+          </Flex>
         </Flex>
         <Flex wrap="wrap" gap="small" style={{ marginTop: "0.5rem" }}>
           {userAuth && (
@@ -216,6 +216,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                             height: 10,
                             borderRadius: "50%",
                             marginLeft: 8,
+                            display: "inline-block",
+                            flexShrink: 0,
                           }}
                         />
                       )
@@ -225,37 +227,6 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
               </div>
             );
           })}
-          <div key="community.tag.tooltip" className={styles.checkboxListItem}>
-            <ShowcaseTooltip
-              id="community.tag.tooltip"
-              text={translate({
-                id: "community.tag.tooltip",
-                message: "社区分享的精选提示词",
-              })}
-              anchorEl="#__docusaurus">
-              <Link to="/community-prompts" className="fontLink">
-                <ShowcaseTagSelect
-                  id="community.tag.tooltip"
-                  tag="communityprompt"
-                  label={translate({
-                    id: "community.tag",
-                    message: "社区精选",
-                  })}
-                  icon={
-                    <span
-                      style={{
-                        backgroundColor: "#a2222a",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                        marginLeft: 8,
-                      }}
-                    />
-                  }
-                />
-              </Link>
-            </ShowcaseTooltip>
-          </div>
         </Flex>
       </section>
     </>
@@ -435,8 +406,19 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ isDescription,
               </Col>
             </Row>
             {!showAllOtherUsers && (
-              <Button size="large" block onClick={() => setShowAllOtherUsers(true)} style={{ marginTop: 24, fontSize: "0.95rem" }}>
-                <ArrowDownOutlined /> <Translate id="action.loadMore">加载更多</Translate>
+              <Button
+                size="large"
+                block
+                type="dashed"
+                icon={<ArrowDownOutlined />}
+                onClick={() => setShowAllOtherUsers(true)}
+                style={{
+                  marginTop: 24,
+                  height: 48,
+                  borderRadius: 12,
+                  fontSize: 14,
+                }}>
+                <Translate id="action.loadMore">加载更多</Translate>
               </Button>
             )}
           </div>
