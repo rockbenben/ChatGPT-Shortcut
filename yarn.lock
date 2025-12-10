@@ -4159,6 +4159,11 @@ boolbase@^1.0.0:
   resolved "https://registry.npmmirror.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
+boring-avatars@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmmirror.com/boring-avatars/-/boring-avatars-2.0.4.tgz#568524684aa15582248821a1c9c1e9ca81432f30"
+  integrity sha512-xhZO/w/6aFmRfkaWohcl2NfyIy87gK5SBbys8kctZeTGF1Apjpv/10pfUuv+YEfVPkESU/h2Y6tt/Dwp+bIZPw==
+
 boxen@^6.2.1:
   version "6.2.1"
   resolved "https://registry.npmmirror.com/boxen/-/boxen-6.2.1.tgz#b098a2278b2cd2845deef2dff2efc38d329b434d"

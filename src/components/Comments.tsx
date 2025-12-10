@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useMemo, useCallback, memo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { List, Avatar, Button, Form, Modal, Pagination, theme, Empty } from "antd";
+import { List, Button, Form, Modal, Pagination, theme, Empty } from "antd";
+import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
+import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/components/CommentComponent";
 import CommentEditor from "@site/src/components/CommentComponent/CommentEditor";
@@ -47,23 +49,8 @@ const getCurrentUserId = () => {
 };
 
 dayjs.extend(relativeTime);
-const backgroundColors = ["#1E88E5", "#43A047", "#FF5722", "#E53935", "#8E24AA", "#FDD835", "#1565C0", "#283593", "#2E7D32", "#C2185B", "#4CAF50", "#9C27B0", "#607D8B", "#424242", "#1976D2"];
+const avatarColors = [blue[5], green[5], red[5], purple[5], cyan[5], orange[5], gold[5], magenta[5]];
 const pageSize = 12;
-
-const useUserColorCache = () => {
-  const colorCache = useMemo(() => new Map(), []);
-  const getUserColor = useCallback((username: string | null | undefined) => {
-    if (!username) return "#607D8B";
-    if (colorCache.has(username)) {
-      return colorCache.get(username);
-    }
-    const color = backgroundColors[Math.abs(username.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0)) % backgroundColors.length];
-    colorCache.set(username, color);
-    return color;
-  }, []);
-
-  return getUserColor;
-};
 
 // 提取到组件外部的纯函数 - 性能优化
 const nestComments = (flatComments: any[]) => {
@@ -103,7 +90,6 @@ const Comments = ({ pageId, type }) => {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
-  const getUserColor = useUserColorCache();
   const [currentUserId, setCurrentUserId] = useState(0);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
@@ -331,7 +317,7 @@ const Comments = ({ pageId, type }) => {
           </Button>,
         ]}
         author={comment.author?.name}
-        avatar={<Avatar style={{ backgroundColor: getUserColor(comment.author?.name), color: "#ffffff" }}>{(comment.author?.name || "").slice(0, 3)}</Avatar>}
+        avatar={<BoringAvatar size={40} name={comment.author?.name || "anonymous"} variant="beam" colors={avatarColors} />}
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
@@ -374,7 +360,7 @@ const Comments = ({ pageId, type }) => {
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, token, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply, getUserColor]
+    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, token, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply]
   );
 
   return (
