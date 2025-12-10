@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 360,
+    "count": 361,
     "metaDescription": "자바스크립트 스니펫을 테스트해야 하나요? 이 프롬프트는 ChatGPT가 자바스크립트 콘솔처럼 작동하게 합니다. 명령어를 입력하고 즉시 콘솔 출력을 받으세요."
 }

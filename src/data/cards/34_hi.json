@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 273,
+    "count": 274,
     "metaDescription": "क्या टेक्स्ट से संपर्क जानकारी जल्दी निकालनी है? यह सरल चैटजीपीटी प्रॉम्प्ट ईमेल या टेक्स्ट के ब्लॉक से नाम और मेलिंग पते निकालता है। समय बचाएं और डेटा प्रविष्टि को स्वचालित करें।"
 }

@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 273,
+    "count": 274,
     "metaDescription": "Besoin d'extraire rapidement des informations de contact d'un texte ? Ce simple prompt AI extrait les noms et adresses postales des e-mails ou des blocs de texte. Gagnez du temps et automatisez la saisie de données."
 }

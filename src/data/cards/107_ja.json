@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "count": 360,
+    "count": 361,
     "metaDescription": "JavaScriptのスニペットをテストする必要がありますか？このプロンプトはChatGPTをJavaScriptコンソールのように機能させます。コマンドを入力して、すぐにコンソールの出力を取得します。"
 }

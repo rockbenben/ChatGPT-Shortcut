@@ -7,10 +7,9 @@
         "remark": "제공된 이미지 설명을 상세하고 창의적인 설명으로 채워 독특하고 흥미로운 이미지를 생성할 수 있도록 Midjourney 에 영감을 불어넣으세요. 이 기능은 안정적인 확산 기능에서도 사용할 수 있습니다. 또는 탐색 모음에 링크된 다른 도구인 IMGPrompt 를 사용하세요."
     },
     "tags": [
-        "favorite",
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "count": 26860,
+    "count": 27021,
     "metaDescription": "멋진 AI 아트를 만들고 싶으신가요? 이 프롬프트는 ChatGPT를 Midjourney 프롬프트 생성기로 변환하여 독특한 이미지에 영감을 줄 상세하고 창의적인 설명을 제공합니다."
 }

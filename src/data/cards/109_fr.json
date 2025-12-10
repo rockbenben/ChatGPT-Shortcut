@@ -7,10 +7,9 @@
         "remark": "Inspirez Midjourney pour qu'il génère des images uniques et intéressantes en complétant les descriptions d'images fournies avec des descriptions détaillées et créatives. Ceci s'applique également à la diffusion stable. Vous pouvez également utiliser mon autre outil, IMGPrompt, dont le lien se trouve dans la barre de navigation."
     },
     "tags": [
-        "favorite",
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "count": 26860,
+    "count": 27021,
     "metaDescription": "Vous voulez créer de superbes œuvres d'art IA ? Ce prompt transforme AI en un générateur de prompts Midjourney, fournissant des descriptions détaillées et créatives pour inspirer des images uniques."
 }

@@ -10,6 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "count": 500,
+    "count": 501,
     "metaDescription": "このプロンプトでテキストのみのインターネットを体験してください。ChatGPTはウェブブラウザとして機能し、シミュレートされた環境で入力したURLのテキストコンテンツを返します。"
 }

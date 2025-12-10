@@ -10,6 +10,6 @@
         "tool"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "count": 540,
+    "count": 543,
     "metaDescription": "Нужно визуализировать концепцию? Этот промпт делает AI генератором Graphviz DOT, создавая осмысленные диаграммы и блок-схемы на основе вашего ввода."
 }

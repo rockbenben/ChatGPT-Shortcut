@@ -7,10 +7,9 @@
         "remark": "Midjourney を刺激して、ユニークで面白い画像を生成するために、提供された画像説明文を詳細かつ創造的な説明で埋める。これは、Stable Diffusion にも適用されます。また、ナビゲーションバーにリンクされている私の他のツール IMGPrompt を使用してください。"
     },
     "tags": [
-        "favorite",
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "count": 26860,
+    "count": 27021,
     "metaDescription": "素晴らしいAIアートを作成したいですか？このプロンプトはChatGPTをMidjourneyプロンプトジェネレーターに変え、ユニークな画像を刺激するための詳細で創造的な説明を提供します。"
 }

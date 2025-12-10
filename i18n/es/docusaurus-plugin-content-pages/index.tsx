@@ -113,9 +113,8 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
   }, []);
 
   const modifiedTagList = useMemo(() => {
-    const tags = TagList.filter((tag) => tag !== "contribute");
-    return userAuth ? tags.filter((tag) => tag !== "favorite") : tags;
-  }, [userAuth]);
+    return TagList.filter((tag) => tag !== "contribute");
+  }, []);
 
   const handleTagClick = useCallback(() => {
     if (!userAuth) {
@@ -206,21 +205,17 @@ const ShowcaseFilters: React.FC<ShowcaseFiltersProps> = React.memo(({ onToggleDe
                     id={id}
                     label={label}
                     icon={
-                      tag === "favorite" ? (
-                        <FavoriteIcon svgClass={styles.svgIconFavoriteXs} />
-                      ) : (
-                        <span
-                          style={{
-                            backgroundColor: color,
-                            width: 10,
-                            height: 10,
-                            borderRadius: "50%",
-                            marginLeft: 8,
-                            display: "inline-block",
-                            flexShrink: 0,
-                          }}
-                        />
-                      )
+                      <span
+                        style={{
+                          backgroundColor: color,
+                          width: 10,
+                          height: 10,
+                          borderRadius: "50%",
+                          marginLeft: 8,
+                          display: "inline-block",
+                          flexShrink: 0,
+                        }}
+                      />
                     }
                   />
                 </ShowcaseTooltip>

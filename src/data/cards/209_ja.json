@@ -7,10 +7,9 @@
         "remark": "Little Red Book の Emoji スタイルに似せて文章を書き換える。"
     },
     "tags": [
-        "favorite",
         "write"
     ],
     "website": null,
-    "count": 57387,
+    "count": 57712,
     "metaDescription": "テキストをスパイスアップしたいですか？このプロンプトは、キャッチーな見出し、各段落の絵文字、そして最後に関連タグを付けて、あなたのコンテンツを楽しい「絵文字スタイル」で書き直します。"
 }

@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
@@ -118,12 +119,10 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
-        userAuth ? (
+        userAuth && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: "#faad14" }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} block />
+            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} block />
           </Tooltip>
-        ) : (
-          user.tags?.includes("favorite") && <Button type="text" disabled icon={<StarFilled style={{ color: "#faad14" }} />} block />
         ),
       ].filter(Boolean)}
       onCardClick={handleCardClick}>

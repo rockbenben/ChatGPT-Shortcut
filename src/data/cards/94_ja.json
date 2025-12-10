@@ -10,6 +10,6 @@
         "code"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
-    "count": 3781,
+    "count": 3840,
     "metaDescription": "安全なウェブアプリを構築していますか？このプロンプトはChatGPTにフルスタック開発者として機能させ、あなたのプロジェクト要件に合わせてGolangとAngularでアーキテクチャを設計し、コードを記述させます。"
 }

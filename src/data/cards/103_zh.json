@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "count": 1351,
+    "count": 1353,
     "metaDescription": "需要在没有 IDE 的情况下运行 Python 代码吗？这个提示词将 AI 变成一个 Python 解释器。只需提供您的代码，即可立即获得输出。"
 }

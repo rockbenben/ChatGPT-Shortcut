@@ -11,6 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 1010,
+    "count": 1027,
     "metaDescription": "هل تبني باستخدام Vue 3؟ هذا الموجه ينشئ مكون Vue 3 كاملاً في ملف واحد، باستخدام واجهة برمجة تطبيقات التركيب (Composition API) وبناء جملة <script setup> لمشروعك."
 }

@@ -1,5 +1,6 @@
 import React, { useContext, useCallback } from "react";
 import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
@@ -156,7 +157,7 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
         <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-          <Button type="text" icon={<StarFilled style={{ color: "#faad14" }} />} onClick={handleRemoveFavorite} block />
+          <Button type="text" icon={<StarFilled style={{ color: gold[5] }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
       ]}
       onCardClick={handleCardClick}>

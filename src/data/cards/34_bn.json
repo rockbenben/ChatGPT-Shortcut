@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 273,
+    "count": 274,
     "metaDescription": "পাঠ্য থেকে দ্রুত যোগাযোগের তথ্য বের করতে হবে? এই সাধারণ AI প্রম্পটটি ইমেল বা পাঠ্যের ব্লক থেকে নাম এবং মেইলিং ঠিকানা বের করে। সময় বাঁচান এবং ডেটা এন্ট্রি স্বয়ংক্রিয় করুন।"
 }

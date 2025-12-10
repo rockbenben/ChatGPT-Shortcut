@@ -7,10 +7,9 @@
         "remark": "Inspira a Midjourney para que genere imágenes únicas e interesantes rellenando las descripciones de imagen proporcionadas con descripciones detalladas y creativas. Esto también se aplica a Stable Diffusion. o utiliza mi otra herramienta, IMGPrompt, que puedes encontrar enlazada en la barra de navegación."
     },
     "tags": [
-        "favorite",
         "ai"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "count": 26860,
+    "count": 27021,
     "metaDescription": "¿Quieres crear arte de IA impresionante? Este prompt convierte a AI en un generador de prompts de Midjourney, proporcionando descripciones detalladas y creativas para inspirar imágenes únicas."
 }

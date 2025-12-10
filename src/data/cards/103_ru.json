@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "count": 1351,
+    "count": 1353,
     "metaDescription": "Нужно запустить код Python без IDE? Этот промпт превращает AI в интерпретатор Python. Просто предоставьте свой код и мгновенно получите вывод."
 }

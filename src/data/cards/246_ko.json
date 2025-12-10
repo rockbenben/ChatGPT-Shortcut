@@ -11,6 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 532,
+    "count": 535,
     "metaDescription": "앱의 텍스트를 번역해야 하나요? 이 프롬프트는 번역 도우미 역할을 하여 문자열 목록을 수정하고 번역한 후 깔끔한 JSON 형식으로 반환합니다."
 }

@@ -8,11 +8,10 @@
         },
         "website": null,
         "tags": [
-            "favorite",
             "write"
         ],
         "id": 2,
-        "count": 86494
+        "count": 87116
     },
     {
         "de": {
@@ -23,11 +22,10 @@
         },
         "website": null,
         "tags": [
-            "favorite",
             "write"
         ],
         "id": 209,
-        "count": 57387
+        "count": 57712
     },
     {
         "de": {
@@ -38,12 +36,11 @@
         },
         "website": null,
         "tags": [
-            "favorite",
             "contribute",
             "write"
         ],
         "id": 197,
-        "count": 29235
+        "count": 29375
     },
     {
         "de": {
@@ -54,11 +51,10 @@
         },
         "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
         "tags": [
-            "favorite",
             "ai"
         ],
         "id": 109,
-        "count": 26860
+        "count": 27021
     },
     {
         "de": {
@@ -69,12 +65,11 @@
         },
         "website": null,
         "tags": [
-            "favorite",
             "contribute",
-            "article"
+            "social"
         ],
         "id": 251,
-        "count": 29018
+        "count": 29487
     },
     {
         "de": {
@@ -85,11 +80,10 @@
         },
         "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
         "tags": [
-            "favorite",
             "article"
         ],
         "id": 20,
-        "count": 24502
+        "count": 24623
     },
     {
         "de": {
@@ -100,10 +94,9 @@
         },
         "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
         "tags": [
-            "favorite",
             "language"
         ],
         "id": 1,
-        "count": 21115
+        "count": 21197
     }
 ]

@@ -10,6 +10,6 @@
         "text"
     ],
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 273,
+    "count": 274,
     "metaDescription": "텍스트에서 연락처 정보를 빠르게 추출해야 하나요? 이 간단한 AI 프롬프트는 이메일이나 텍스트 블록에서 이름과 우편 주소를 추출합니다. 시간을 절약하고 데이터 입력을 자동화하세요."
 }

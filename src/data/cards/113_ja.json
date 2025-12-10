@@ -10,6 +10,6 @@
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "count": 245,
+    "count": 246,
     "metaDescription": "これは何語ですか？このプロンプトはChatGPTを言語検出器にします。文を入力するだけで、それがどの言語で書かれているかを教えてくれます。"
 }

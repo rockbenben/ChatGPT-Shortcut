@@ -8,11 +8,10 @@
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
     "tags": [
-      "favorite",
       "language"
     ],
     "id": 1,
-    "weight": 21115
+    "weight": 21197
   },
   {
     "ru": {
@@ -23,11 +22,10 @@
     },
     "website": null,
     "tags": [
-      "favorite",
       "write"
     ],
     "id": 2,
-    "weight": 86494
+    "weight": 87116
   },
   {
     "ru": {
@@ -41,7 +39,7 @@
       "write"
     ],
     "id": 3,
-    "weight": 2158
+    "weight": 2163
   },
   {
     "ru": {
@@ -55,7 +53,7 @@
       "article"
     ],
     "id": 4,
-    "weight": 15118
+    "weight": 15164
   },
   {
     "ru": {
@@ -69,7 +67,7 @@
       "ai"
     ],
     "id": 5,
-    "weight": 5373
+    "weight": 5460
   },
   {
     "ru": {
@@ -83,7 +81,7 @@
       "ai"
     ],
     "id": 6,
-    "weight": 2624
+    "weight": 2637
   },
   {
     "ru": {
@@ -97,7 +95,7 @@
       "ai"
     ],
     "id": 7,
-    "weight": 7604
+    "weight": 7689
   },
   {
     "ru": {
@@ -111,7 +109,7 @@
       "write"
     ],
     "id": 8,
-    "weight": 8275
+    "weight": 8305
   },
   {
     "ru": {
@@ -125,7 +123,7 @@
       "write"
     ],
     "id": 9,
-    "weight": 8754
+    "weight": 8775
   },
   {
     "ru": {
@@ -139,7 +137,7 @@
       "write"
     ],
     "id": 10,
-    "weight": 4575
+    "weight": 4586
   },
   {
     "ru": {
@@ -153,7 +151,7 @@
       "write"
     ],
     "id": 11,
-    "weight": 12636
+    "weight": 12674
   },
   {
     "ru": {
@@ -167,7 +165,7 @@
       "write"
     ],
     "id": 12,
-    "weight": 1363
+    "weight": 1367
   },
   {
     "ru": {
@@ -181,7 +179,7 @@
       "write"
     ],
     "id": 13,
-    "weight": 2997
+    "weight": 3005
   },
   {
     "ru": {
@@ -195,7 +193,7 @@
       "article"
     ],
     "id": 14,
-    "weight": 3018
+    "weight": 3033
   },
   {
     "ru": {
@@ -209,7 +207,7 @@
       "article"
     ],
     "id": 15,
-    "weight": 4539
+    "weight": 4564
   },
   {
     "ru": {
@@ -223,7 +221,7 @@
       "article"
     ],
     "id": 16,
-    "weight": 2533
+    "weight": 2549
   },
   {
     "ru": {
@@ -237,7 +235,7 @@
       "article"
     ],
     "id": 17,
-    "weight": 8609
+    "weight": 8666
   },
   {
     "ru": {
@@ -251,7 +249,7 @@
       "article"
     ],
     "id": 18,
-    "weight": 2328
+    "weight": 2330
   },
   {
     "ru": {
@@ -265,7 +263,7 @@
       "article"
     ],
     "id": 19,
-    "weight": 3376
+    "weight": 3386
   },
   {
     "ru": {
@@ -276,11 +274,10 @@
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
     "tags": [
-      "favorite",
       "article"
     ],
     "id": 20,
-    "weight": 24502
+    "weight": 24623
   },
   {
     "ru": {
@@ -294,7 +291,7 @@
       "article"
     ],
     "id": 21,
-    "weight": 3717
+    "weight": 3734
   },
   {
     "ru": {
@@ -322,7 +319,7 @@
       "comments"
     ],
     "id": 23,
-    "weight": 1625
+    "weight": 1628
   },
   {
     "ru": {
@@ -336,7 +333,7 @@
       "comments"
     ],
     "id": 24,
-    "weight": 1937
+    "weight": 1950
   },
   {
     "ru": {
@@ -350,7 +347,7 @@
       "comments"
     ],
     "id": 25,
-    "weight": 491
+    "weight": 492
   },
   {
     "ru": {
@@ -364,7 +361,7 @@
       "comments"
     ],
     "id": 26,
-    "weight": 462
+    "weight": 466
   },
   {
     "ru": {
@@ -378,7 +375,7 @@
       "comments"
     ],
     "id": 27,
-    "weight": 386
+    "weight": 387
   },
   {
     "ru": {
@@ -406,7 +403,7 @@
       "comments"
     ],
     "id": 29,
-    "weight": 569
+    "weight": 583
   },
   {
     "ru": {
@@ -434,7 +431,7 @@
       "text"
     ],
     "id": 31,
-    "weight": 500
+    "weight": 505
   },
   {
     "ru": {
@@ -462,7 +459,7 @@
       "text"
     ],
     "id": 33,
-    "weight": 231
+    "weight": 232
   },
   {
     "ru": {
@@ -476,7 +473,7 @@
       "text"
     ],
     "id": 34,
-    "weight": 273
+    "weight": 274
   },
   {
     "ru": {
@@ -490,7 +487,7 @@
       "text"
     ],
     "id": 35,
-    "weight": 1240
+    "weight": 1248
   },
   {
     "ru": {
@@ -504,7 +501,7 @@
       "text"
     ],
     "id": 36,
-    "weight": 497
+    "weight": 500
   },
   {
     "ru": {
@@ -518,7 +515,7 @@
       "text"
     ],
     "id": 37,
-    "weight": 743
+    "weight": 745
   },
   {
     "ru": {
@@ -532,7 +529,7 @@
       "seo"
     ],
     "id": 38,
-    "weight": 795
+    "weight": 801
   },
   {
     "ru": {
@@ -546,7 +543,7 @@
       "seo"
     ],
     "id": 39,
-    "weight": 859
+    "weight": 862
   },
   {
     "ru": {
@@ -560,7 +557,7 @@
       "seo"
     ],
     "id": 40,
-    "weight": 1622
+    "weight": 1627
   },
   {
     "ru": {
@@ -574,7 +571,7 @@
       "seo"
     ],
     "id": 41,
-    "weight": 12796
+    "weight": 12827
   },
   {
     "ru": {
@@ -588,7 +585,7 @@
       "life"
     ],
     "id": 42,
-    "weight": 1497
+    "weight": 1504
   },
   {
     "ru": {
@@ -602,7 +599,7 @@
       "life"
     ],
     "id": 43,
-    "weight": 468
+    "weight": 469
   },
   {
     "ru": {
@@ -616,7 +613,7 @@
       "life"
     ],
     "id": 44,
-    "weight": 318
+    "weight": 321
   },
   {
     "ru": {
@@ -630,7 +627,7 @@
       "life"
     ],
     "id": 45,
-    "weight": 609
+    "weight": 614
   },
   {
     "ru": {
@@ -644,7 +641,7 @@
       "life"
     ],
     "id": 46,
-    "weight": 1065
+    "weight": 1071
   },
   {
     "ru": {
@@ -658,7 +655,7 @@
       "life"
     ],
     "id": 47,
-    "weight": 876
+    "weight": 880
   },
   {
     "ru": {
@@ -672,7 +669,7 @@
       "interesting"
     ],
     "id": 48,
-    "weight": 2740
+    "weight": 2744
   },
   {
     "ru": {
@@ -686,7 +683,7 @@
       "interesting"
     ],
     "id": 49,
-    "weight": 2865
+    "weight": 2873
   },
   {
     "ru": {
@@ -700,7 +697,7 @@
       "interesting"
     ],
     "id": 50,
-    "weight": 1812
+    "weight": 1820
   },
   {
     "ru": {
@@ -714,7 +711,7 @@
       "interesting"
     ],
     "id": 51,
-    "weight": 751
+    "weight": 753
   },
   {
     "ru": {
@@ -728,7 +725,7 @@
       "interesting"
     ],
     "id": 52,
-    "weight": 419
+    "weight": 424
   },
   {
     "ru": {
@@ -742,7 +739,7 @@
       "interesting"
     ],
     "id": 53,
-    "weight": 456
+    "weight": 457
   },
   {
     "ru": {
@@ -756,7 +753,7 @@
       "interesting"
     ],
     "id": 54,
-    "weight": 537
+    "weight": 539
   },
   {
     "ru": {
@@ -770,7 +767,7 @@
       "living"
     ],
     "id": 55,
-    "weight": 364
+    "weight": 365
   },
   {
     "ru": {
@@ -784,7 +781,7 @@
       "living"
     ],
     "id": 56,
-    "weight": 5856
+    "weight": 5896
   },
   {
     "ru": {
@@ -798,7 +795,7 @@
       "living"
     ],
     "id": 57,
-    "weight": 1132
+    "weight": 1138
   },
   {
     "ru": {
@@ -812,7 +809,7 @@
       "living"
     ],
     "id": 58,
-    "weight": 609
+    "weight": 615
   },
   {
     "ru": {
@@ -826,7 +823,7 @@
       "living"
     ],
     "id": 59,
-    "weight": 431
+    "weight": 434
   },
   {
     "ru": {
@@ -840,7 +837,7 @@
       "living"
     ],
     "id": 60,
-    "weight": 292
+    "weight": 294
   },
   {
     "ru": {
@@ -854,7 +851,7 @@
       "living"
     ],
     "id": 61,
-    "weight": 380
+    "weight": 383
   },
   {
     "ru": {
@@ -868,7 +865,7 @@
       "living"
     ],
     "id": 62,
-    "weight": 641
+    "weight": 647
   },
   {
     "ru": {
@@ -883,7 +880,7 @@
       "mind"
     ],
     "id": 63,
-    "weight": 2792
+    "weight": 2810
   },
   {
     "ru": {
@@ -897,7 +894,7 @@
       "mind"
     ],
     "id": 64,
-    "weight": 681
+    "weight": 683
   },
   {
     "ru": {
@@ -925,7 +922,7 @@
       "speech"
     ],
     "id": 66,
-    "weight": 965
+    "weight": 966
   },
   {
     "ru": {
@@ -953,7 +950,7 @@
       "speech"
     ],
     "id": 68,
-    "weight": 364
+    "weight": 366
   },
   {
     "ru": {
@@ -981,7 +978,7 @@
       "social"
     ],
     "id": 70,
-    "weight": 636
+    "weight": 640
   },
   {
     "ru": {
@@ -995,7 +992,7 @@
       "social"
     ],
     "id": 71,
-    "weight": 700
+    "weight": 701
   },
   {
     "ru": {
@@ -1009,7 +1006,7 @@
       "social"
     ],
     "id": 72,
-    "weight": 1063
+    "weight": 1066
   },
   {
     "ru": {
@@ -1023,7 +1020,7 @@
       "social"
     ],
     "id": 73,
-    "weight": 1989
+    "weight": 2002
   },
   {
     "ru": {
@@ -1037,7 +1034,7 @@
       "social"
     ],
     "id": 74,
-    "weight": 1045
+    "weight": 1053
   },
   {
     "ru": {
@@ -1051,7 +1048,7 @@
       "social"
     ],
     "id": 75,
-    "weight": 2641
+    "weight": 2665
   },
   {
     "ru": {
@@ -1065,7 +1062,7 @@
       "philosophy"
     ],
     "id": 76,
-    "weight": 550
+    "weight": 551
   },
   {
     "ru": {
@@ -1079,7 +1076,7 @@
       "philosophy"
     ],
     "id": 77,
-    "weight": 1573
+    "weight": 1586
   },
   {
     "ru": {
@@ -1093,7 +1090,7 @@
       "philosophy"
     ],
     "id": 78,
-    "weight": 689
+    "weight": 690
   },
   {
     "ru": {
@@ -1121,7 +1118,7 @@
       "philosophy"
     ],
     "id": 80,
-    "weight": 3858
+    "weight": 3878
   },
   {
     "ru": {
@@ -1149,7 +1146,7 @@
       "academic"
     ],
     "id": 82,
-    "weight": 2019
+    "weight": 2029
   },
   {
     "ru": {
@@ -1191,7 +1188,7 @@
       "academic"
     ],
     "id": 85,
-    "weight": 668
+    "weight": 675
   },
   {
     "ru": {
@@ -1219,7 +1216,7 @@
       "academic"
     ],
     "id": 87,
-    "weight": 1174
+    "weight": 1177
   },
   {
     "ru": {
@@ -1233,7 +1230,7 @@
       "academic"
     ],
     "id": 88,
-    "weight": 914
+    "weight": 916
   },
   {
     "ru": {
@@ -1247,7 +1244,7 @@
       "academic"
     ],
     "id": 89,
-    "weight": 2244
+    "weight": 2259
   },
   {
     "ru": {
@@ -1261,7 +1258,7 @@
       "code"
     ],
     "id": 90,
-    "weight": 17327
+    "weight": 17464
   },
   {
     "ru": {
@@ -1275,7 +1272,7 @@
       "code"
     ],
     "id": 91,
-    "weight": 2855
+    "weight": 2878
   },
   {
     "ru": {
@@ -1289,7 +1286,7 @@
       "code"
     ],
     "id": 92,
-    "weight": 917
+    "weight": 949
   },
   {
     "ru": {
@@ -1303,7 +1300,7 @@
       "code"
     ],
     "id": 93,
-    "weight": 2052
+    "weight": 2086
   },
   {
     "ru": {
@@ -1317,7 +1314,7 @@
       "code"
     ],
     "id": 94,
-    "weight": 3781
+    "weight": 3840
   },
   {
     "ru": {
@@ -1331,7 +1328,7 @@
       "code"
     ],
     "id": 95,
-    "weight": 2795
+    "weight": 2832
   },
   {
     "ru": {
@@ -1345,7 +1342,7 @@
       "code"
     ],
     "id": 96,
-    "weight": 836
+    "weight": 839
   },
   {
     "ru": {
@@ -1359,7 +1356,7 @@
       "code"
     ],
     "id": 97,
-    "weight": 1095
+    "weight": 1112
   },
   {
     "ru": {
@@ -1373,7 +1370,7 @@
       "code"
     ],
     "id": 98,
-    "weight": 1229
+    "weight": 1238
   },
   {
     "ru": {
@@ -1387,7 +1384,7 @@
       "code"
     ],
     "id": 99,
-    "weight": 581
+    "weight": 586
   },
   {
     "ru": {
@@ -1401,7 +1398,7 @@
       "code"
     ],
     "id": 100,
-    "weight": 732
+    "weight": 743
   },
   {
     "ru": {
@@ -1415,7 +1412,7 @@
       "code"
     ],
     "id": 101,
-    "weight": 934
+    "weight": 935
   },
   {
     "ru": {
@@ -1443,7 +1440,7 @@
       "interpreter"
     ],
     "id": 103,
-    "weight": 1351
+    "weight": 1353
   },
   {
     "ru": {
@@ -1485,7 +1482,7 @@
       "interpreter"
     ],
     "id": 106,
-    "weight": 908
+    "weight": 914
   },
   {
     "ru": {
@@ -1499,7 +1496,7 @@
       "interpreter"
     ],
     "id": 107,
-    "weight": 360
+    "weight": 361
   },
   {
     "ru": {
@@ -1524,11 +1521,10 @@
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
     "tags": [
-      "favorite",
       "ai"
     ],
     "id": 109,
-    "weight": 26860
+    "weight": 27021
   },
   {
     "ru": {
@@ -1570,7 +1566,7 @@
       "ai"
     ],
     "id": 112,
-    "weight": 1340
+    "weight": 1344
   },
   {
     "ru": {
@@ -1584,7 +1580,7 @@
       "language"
     ],
     "id": 113,
-    "weight": 245
+    "weight": 246
   },
   {
     "ru": {
@@ -1612,7 +1608,7 @@
       "language"
     ],
     "id": 115,
-    "weight": 310
+    "weight": 311
   },
   {
     "ru": {
@@ -1640,7 +1636,7 @@
       "language"
     ],
     "id": 117,
-    "weight": 264
+    "weight": 265
   },
   {
     "ru": {
@@ -1654,7 +1650,7 @@
       "language"
     ],
     "id": 118,
-    "weight": 465
+    "weight": 467
   },
   {
     "ru": {
@@ -1682,7 +1678,7 @@
       "pedagogy"
     ],
     "id": 120,
-    "weight": 2294
+    "weight": 2313
   },
   {
     "ru": {
@@ -1696,7 +1692,7 @@
       "language"
     ],
     "id": 121,
-    "weight": 282
+    "weight": 284
   },
   {
     "ru": {
@@ -1710,7 +1706,7 @@
       "games"
     ],
     "id": 122,
-    "weight": 4119
+    "weight": 4132
   },
   {
     "ru": {
@@ -1724,7 +1720,7 @@
       "games"
     ],
     "id": 123,
-    "weight": 772
+    "weight": 773
   },
   {
     "ru": {
@@ -1738,7 +1734,7 @@
       "games"
     ],
     "id": 124,
-    "weight": 389
+    "weight": 392
   },
   {
     "ru": {
@@ -1752,7 +1748,7 @@
       "games"
     ],
     "id": 125,
-    "weight": 1889
+    "weight": 1892
   },
   {
     "ru": {
@@ -1766,7 +1762,7 @@
       "tool"
     ],
     "id": 126,
-    "weight": 1244
+    "weight": 1246
   },
   {
     "ru": {
@@ -1780,7 +1776,7 @@
       "tool"
     ],
     "id": 127,
-    "weight": 169
+    "weight": 170
   },
   {
     "ru": {
@@ -1794,7 +1790,7 @@
       "tool"
     ],
     "id": 128,
-    "weight": 306
+    "weight": 308
   },
   {
     "ru": {
@@ -1822,7 +1818,7 @@
       "tool"
     ],
     "id": 130,
-    "weight": 1024
+    "weight": 1032
   },
   {
     "ru": {
@@ -1850,7 +1846,7 @@
       "tool"
     ],
     "id": 132,
-    "weight": 2797
+    "weight": 2807
   },
   {
     "ru": {
@@ -1864,7 +1860,7 @@
       "tool"
     ],
     "id": 133,
-    "weight": 540
+    "weight": 543
   },
   {
     "ru": {
@@ -1878,7 +1874,7 @@
       "tool"
     ],
     "id": 134,
-    "weight": 1005
+    "weight": 1009
   },
   {
     "ru": {
@@ -1892,7 +1888,7 @@
       "tool"
     ],
     "id": 135,
-    "weight": 500
+    "weight": 501
   },
   {
     "ru": {
@@ -1920,7 +1916,7 @@
       "tool"
     ],
     "id": 137,
-    "weight": 901
+    "weight": 902
   },
   {
     "ru": {
@@ -1934,7 +1930,7 @@
       "company"
     ],
     "id": 138,
-    "weight": 1612
+    "weight": 1615
   },
   {
     "ru": {
@@ -1948,7 +1944,7 @@
       "company"
     ],
     "id": 139,
-    "weight": 3058
+    "weight": 3084
   },
   {
     "ru": {
@@ -1962,7 +1958,7 @@
       "company"
     ],
     "id": 140,
-    "weight": 798
+    "weight": 803
   },
   {
     "ru": {
@@ -1976,7 +1972,7 @@
       "company"
     ],
     "id": 141,
-    "weight": 2381
+    "weight": 2389
   },
   {
     "ru": {
@@ -1990,7 +1986,7 @@
       "company"
     ],
     "id": 142,
-    "weight": 2882
+    "weight": 2891
   },
   {
     "ru": {
@@ -2004,7 +2000,7 @@
       "company"
     ],
     "id": 143,
-    "weight": 492
+    "weight": 493
   },
   {
     "ru": {
@@ -2018,7 +2014,7 @@
       "company"
     ],
     "id": 144,
-    "weight": 761
+    "weight": 765
   },
   {
     "ru": {
@@ -2032,7 +2028,7 @@
       "company"
     ],
     "id": 145,
-    "weight": 1917
+    "weight": 1936
   },
   {
     "ru": {
@@ -2046,7 +2042,7 @@
       "company"
     ],
     "id": 146,
-    "weight": 484
+    "weight": 485
   },
   {
     "ru": {
@@ -2060,7 +2056,7 @@
       "company"
     ],
     "id": 147,
-    "weight": 1148
+    "weight": 1154
   },
   {
     "ru": {
@@ -2074,7 +2070,7 @@
       "company"
     ],
     "id": 148,
-    "weight": 374
+    "weight": 376
   },
   {
     "ru": {
@@ -2102,7 +2098,7 @@
       "company"
     ],
     "id": 150,
-    "weight": 1011
+    "weight": 1018
   },
   {
     "ru": {
@@ -2116,7 +2112,7 @@
       "doctor"
     ],
     "id": 151,
-    "weight": 1139
+    "weight": 1140
   },
   {
     "ru": {
@@ -2130,7 +2126,7 @@
       "doctor"
     ],
     "id": 152,
-    "weight": 2107
+    "weight": 2115
   },
   {
     "ru": {
@@ -2144,7 +2140,7 @@
       "doctor"
     ],
     "id": 153,
-    "weight": 489
+    "weight": 494
   },
   {
     "ru": {
@@ -2158,7 +2154,7 @@
       "doctor"
     ],
     "id": 154,
-    "weight": 468
+    "weight": 469
   },
   {
     "ru": {
@@ -2172,7 +2168,7 @@
       "doctor"
     ],
     "id": 155,
-    "weight": 6176
+    "weight": 6207
   },
   {
     "ru": {
@@ -2186,7 +2182,7 @@
       "doctor"
     ],
     "id": 156,
-    "weight": 190
+    "weight": 191
   },
   {
     "ru": {
@@ -2200,7 +2196,7 @@
       "finance"
     ],
     "id": 157,
-    "weight": 1165
+    "weight": 1171
   },
   {
     "ru": {
@@ -2214,7 +2210,7 @@
       "finance"
     ],
     "id": 158,
-    "weight": 2747
+    "weight": 2764
   },
   {
     "ru": {
@@ -2228,7 +2224,7 @@
       "finance"
     ],
     "id": 159,
-    "weight": 3960
+    "weight": 3999
   },
   {
     "ru": {
@@ -2242,7 +2238,7 @@
       "music"
     ],
     "id": 160,
-    "weight": 1620
+    "weight": 1639
   },
   {
     "ru": {
@@ -2256,7 +2252,7 @@
       "music"
     ],
     "id": 161,
-    "weight": 343
+    "weight": 344
   },
   {
     "ru": {
@@ -2270,7 +2266,7 @@
       "music"
     ],
     "id": 162,
-    "weight": 1175
+    "weight": 1181
   },
   {
     "ru": {
@@ -2284,7 +2280,7 @@
       "music"
     ],
     "id": 163,
-    "weight": 1256
+    "weight": 1263
   },
   {
     "ru": {
@@ -2298,7 +2294,7 @@
       "professional"
     ],
     "id": 164,
-    "weight": 299
+    "weight": 301
   },
   {
     "ru": {
@@ -2312,7 +2308,7 @@
       "professional"
     ],
     "id": 165,
-    "weight": 283
+    "weight": 285
   },
   {
     "ru": {
@@ -2326,7 +2322,7 @@
       "professional"
     ],
     "id": 166,
-    "weight": 391
+    "weight": 395
   },
   {
     "ru": {
@@ -2340,7 +2336,7 @@
       "professional"
     ],
     "id": 167,
-    "weight": 984
+    "weight": 989
   },
   {
     "ru": {
@@ -2354,7 +2350,7 @@
       "professional"
     ],
     "id": 168,
-    "weight": 485
+    "weight": 491
   },
   {
     "ru": {
@@ -2368,7 +2364,7 @@
       "professional"
     ],
     "id": 169,
-    "weight": 428
+    "weight": 429
   },
   {
     "ru": {
@@ -2382,7 +2378,7 @@
       "professional"
     ],
     "id": 170,
-    "weight": 544
+    "weight": 546
   },
   {
     "ru": {
@@ -2396,7 +2392,7 @@
       "professional"
     ],
     "id": 171,
-    "weight": 3194
+    "weight": 3214
   },
   {
     "ru": {
@@ -2410,7 +2406,7 @@
       "professional"
     ],
     "id": 172,
-    "weight": 806
+    "weight": 810
   },
   {
     "ru": {
@@ -2425,7 +2421,7 @@
       "code"
     ],
     "id": 173,
-    "weight": 7439
+    "weight": 7481
   },
   {
     "ru": {
@@ -2440,7 +2436,7 @@
       "language"
     ],
     "id": 174,
-    "weight": 205
+    "weight": 208
   },
   {
     "ru": {
@@ -2455,7 +2451,7 @@
       "mind"
     ],
     "id": 175,
-    "weight": 1126
+    "weight": 1128
   },
   {
     "ru": {
@@ -2470,7 +2466,7 @@
       "mind"
     ],
     "id": 176,
-    "weight": 2374
+    "weight": 2386
   },
   {
     "ru": {
@@ -2485,7 +2481,7 @@
       "code"
     ],
     "id": 177,
-    "weight": 5155
+    "weight": 5190
   },
   {
     "ru": {
@@ -2500,7 +2496,7 @@
       "code"
     ],
     "id": 178,
-    "weight": 1010
+    "weight": 1027
   },
   {
     "ru": {
@@ -2515,7 +2511,7 @@
       "games"
     ],
     "id": 179,
-    "weight": 1058
+    "weight": 1062
   },
   {
     "ru": {
@@ -2530,7 +2526,7 @@
       "language"
     ],
     "id": 180,
-    "weight": 16122
+    "weight": 16224
   },
   {
     "ru": {
@@ -2545,7 +2541,7 @@
       "language"
     ],
     "id": 181,
-    "weight": 3273
+    "weight": 3279
   },
   {
     "ru": {
@@ -2561,7 +2557,7 @@
       "pedagogy"
     ],
     "id": 182,
-    "weight": 2245
+    "weight": 2252
   },
   {
     "ru": {
@@ -2576,7 +2572,7 @@
       "mind"
     ],
     "id": 183,
-    "weight": 479
+    "weight": 481
   },
   {
     "ru": {
@@ -2591,7 +2587,7 @@
       "pedagogy"
     ],
     "id": 184,
-    "weight": 1251
+    "weight": 1256
   },
   {
     "ru": {
@@ -2606,7 +2602,7 @@
       "ai"
     ],
     "id": 185,
-    "weight": 74153
+    "weight": 74411
   },
   {
     "ru": {
@@ -2635,7 +2631,7 @@
       "contribute"
     ],
     "id": 187,
-    "weight": 4509
+    "weight": 4538
   },
   {
     "ru": {
@@ -2650,7 +2646,7 @@
       "mind"
     ],
     "id": 188,
-    "weight": 1984
+    "weight": 1999
   },
   {
     "ru": {
@@ -2665,7 +2661,7 @@
       "pedagogy"
     ],
     "id": 189,
-    "weight": 1191
+    "weight": 1193
   },
   {
     "ru": {
@@ -2680,7 +2676,7 @@
       "ai"
     ],
     "id": 190,
-    "weight": 2851
+    "weight": 2869
   },
   {
     "ru": {
@@ -2695,7 +2691,7 @@
       "code"
     ],
     "id": 191,
-    "weight": 2927
+    "weight": 2963
   },
   {
     "ru": {
@@ -2710,7 +2706,7 @@
       "mind"
     ],
     "id": 192,
-    "weight": 1376
+    "weight": 1380
   },
   {
     "ru": {
@@ -2725,7 +2721,7 @@
       "pedagogy"
     ],
     "id": 193,
-    "weight": 1118
+    "weight": 1125
   },
   {
     "ru": {
@@ -2740,7 +2736,7 @@
       "social"
     ],
     "id": 194,
-    "weight": 1673
+    "weight": 1679
   },
   {
     "ru": {
@@ -2755,7 +2751,7 @@
       "speech"
     ],
     "id": 195,
-    "weight": 2173
+    "weight": 2180
   },
   {
     "ru": {
@@ -2770,7 +2766,7 @@
       "mind"
     ],
     "id": 196,
-    "weight": 9694
+    "weight": 9743
   },
   {
     "ru": {
@@ -2781,12 +2777,11 @@
     },
     "website": null,
     "tags": [
-      "favorite",
       "contribute",
       "write"
     ],
     "id": 197,
-    "weight": 29235
+    "weight": 29375
   },
   {
     "ru": {
@@ -2801,7 +2796,7 @@
       "article"
     ],
     "id": 198,
-    "weight": 988
+    "weight": 991
   },
   {
     "ru": {
@@ -2816,7 +2811,7 @@
       "social"
     ],
     "id": 199,
-    "weight": 20555
+    "weight": 20679
   },
   {
     "ru": {
@@ -2831,7 +2826,7 @@
       "pedagogy"
     ],
     "id": 200,
-    "weight": 3107
+    "weight": 3114
   },
   {
     "ru": {
@@ -2846,7 +2841,7 @@
       "tool"
     ],
     "id": 201,
-    "weight": 675
+    "weight": 676
   },
   {
     "ru": {
@@ -2861,7 +2856,7 @@
       "code"
     ],
     "id": 202,
-    "weight": 1501
+    "weight": 1507
   },
   {
     "ru": {
@@ -2891,7 +2886,7 @@
       "write"
     ],
     "id": 204,
-    "weight": 15362
+    "weight": 15493
   },
   {
     "ru": {
@@ -2906,7 +2901,7 @@
       "write"
     ],
     "id": 205,
-    "weight": 3302
+    "weight": 3312
   },
   {
     "ru": {
@@ -2921,7 +2916,7 @@
       "mind"
     ],
     "id": 206,
-    "weight": 10152
+    "weight": 10236
   },
   {
     "ru": {
@@ -2949,7 +2944,7 @@
       "social"
     ],
     "id": 208,
-    "weight": 546
+    "weight": 553
   },
   {
     "ru": {
@@ -2960,11 +2955,10 @@
     },
     "website": null,
     "tags": [
-      "favorite",
       "write"
     ],
     "id": 209,
-    "weight": 57387
+    "weight": 57712
   },
   {
     "ru": {
@@ -2978,7 +2972,7 @@
       "article"
     ],
     "id": 210,
-    "weight": 6503
+    "weight": 6551
   },
   {
     "ru": {
@@ -2992,7 +2986,7 @@
       "write"
     ],
     "id": 211,
-    "weight": 1119
+    "weight": 1121
   },
   {
     "ru": {
@@ -3007,7 +3001,7 @@
       "social"
     ],
     "id": 212,
-    "weight": 6084
+    "weight": 6125
   },
   {
     "ru": {
@@ -3022,7 +3016,7 @@
       "comments"
     ],
     "id": 213,
-    "weight": 671
+    "weight": 672
   },
   {
     "ru": {
@@ -3037,7 +3031,7 @@
       "article"
     ],
     "id": 214,
-    "weight": 6102
+    "weight": 6147
   },
   {
     "ru": {
@@ -3051,7 +3045,7 @@
       "write"
     ],
     "id": 215,
-    "weight": 1361
+    "weight": 1369
   },
   {
     "ru": {
@@ -3066,7 +3060,7 @@
       "text"
     ],
     "id": 216,
-    "weight": 1256
+    "weight": 1263
   },
   {
     "ru": {
@@ -3081,7 +3075,7 @@
       "doctor"
     ],
     "id": 217,
-    "weight": 3910
+    "weight": 3936
   },
   {
     "ru": {
@@ -3096,7 +3090,7 @@
       "code"
     ],
     "id": 218,
-    "weight": 13784
+    "weight": 13874
   },
   {
     "ru": {
@@ -3111,7 +3105,7 @@
       "games"
     ],
     "id": 219,
-    "weight": 7050
+    "weight": 7099
   },
   {
     "ru": {
@@ -3126,7 +3120,7 @@
       "tool"
     ],
     "id": 220,
-    "weight": 5135
+    "weight": 5160
   },
   {
     "ru": {
@@ -3140,7 +3134,7 @@
       "ai"
     ],
     "id": 221,
-    "weight": 2650
+    "weight": 2672
   },
   {
     "ru": {
@@ -3154,7 +3148,7 @@
       "ai"
     ],
     "id": 222,
-    "weight": 2733
+    "weight": 2754
   },
   {
     "ru": {
@@ -3182,7 +3176,7 @@
       "ai"
     ],
     "id": 224,
-    "weight": 5295
+    "weight": 5342
   },
   {
     "ru": {
@@ -3210,7 +3204,7 @@
       "ai"
     ],
     "id": 226,
-    "weight": 563
+    "weight": 568
   },
   {
     "ru": {
@@ -3224,7 +3218,7 @@
       "ai"
     ],
     "id": 227,
-    "weight": 241
+    "weight": 242
   },
   {
     "ru": {
@@ -3238,7 +3232,7 @@
       "ai"
     ],
     "id": 228,
-    "weight": 1262
+    "weight": 1271
   },
   {
     "ru": {
@@ -3252,7 +3246,7 @@
       "ai"
     ],
     "id": 229,
-    "weight": 490
+    "weight": 494
   },
   {
     "ru": {
@@ -3294,7 +3288,7 @@
       "ai"
     ],
     "id": 232,
-    "weight": 16033
+    "weight": 16169
   },
   {
     "ru": {
@@ -3308,7 +3302,7 @@
       "ai"
     ],
     "id": 233,
-    "weight": 1580
+    "weight": 1588
   },
   {
     "ru": {
@@ -3322,7 +3316,7 @@
       "ai"
     ],
     "id": 234,
-    "weight": 10771
+    "weight": 10812
   },
   {
     "ru": {
@@ -3336,7 +3330,7 @@
       "ai"
     ],
     "id": 235,
-    "weight": 805
+    "weight": 808
   },
   {
     "ru": {
@@ -3351,7 +3345,7 @@
       "pedagogy"
     ],
     "id": 236,
-    "weight": 1548
+    "weight": 1556
   },
   {
     "ru": {
@@ -3366,7 +3360,7 @@
       "games"
     ],
     "id": 237,
-    "weight": 1757
+    "weight": 1766
   },
   {
     "ru": {
@@ -3380,7 +3374,7 @@
       "write"
     ],
     "id": 238,
-    "weight": 3618
+    "weight": 3624
   },
   {
     "ru": {
@@ -3394,7 +3388,7 @@
       "write"
     ],
     "id": 239,
-    "weight": 1306
+    "weight": 1313
   },
   {
     "ru": {
@@ -3408,7 +3402,7 @@
       "write"
     ],
     "id": 240,
-    "weight": 755
+    "weight": 757
   },
   {
     "ru": {
@@ -3424,7 +3418,7 @@
       "company"
     ],
     "id": 241,
-    "weight": 1871
+    "weight": 1890
   },
   {
     "ru": {
@@ -3438,7 +3432,7 @@
       "tool"
     ],
     "id": 242,
-    "weight": 3744
+    "weight": 3755
   },
   {
     "ru": {
@@ -3453,7 +3447,7 @@
       "comments"
     ],
     "id": 243,
-    "weight": 1365
+    "weight": 1368
   },
   {
     "ru": {
@@ -3483,7 +3477,7 @@
       "tool"
     ],
     "id": 245,
-    "weight": 713
+    "weight": 716
   },
   {
     "ru": {
@@ -3498,7 +3492,7 @@
       "code"
     ],
     "id": 246,
-    "weight": 532
+    "weight": 535
   },
   {
     "ru": {
@@ -3528,7 +3522,7 @@
       "pedagogy"
     ],
     "id": 248,
-    "weight": 666
+    "weight": 675
   },
   {
     "ru": {
@@ -3543,7 +3537,7 @@
       "pedagogy"
     ],
     "id": 249,
-    "weight": 283
+    "weight": 284
   },
   {
     "ru": {
@@ -3558,7 +3552,7 @@
       "mind"
     ],
     "id": 250,
-    "weight": 1315
+    "weight": 1323
   },
   {
     "ru": {
@@ -3569,12 +3563,11 @@
     },
     "website": null,
     "tags": [
-      "favorite",
       "contribute",
-      "article"
+      "social"
     ],
     "id": 251,
-    "weight": 29018
+    "weight": 29487
   },
   {
     "ru": {
@@ -3589,7 +3582,7 @@
       "academic"
     ],
     "id": 252,
-    "weight": 590
+    "weight": 594
   },
   {
     "ru": {
@@ -3604,7 +3597,7 @@
       "article"
     ],
     "id": 253,
-    "weight": 2352
+    "weight": 2373
   },
   {
     "ru": {
@@ -3619,7 +3612,7 @@
       "company"
     ],
     "id": 254,
-    "weight": 1028
+    "weight": 1034
   },
   {
     "ru": {
@@ -3633,7 +3626,7 @@
       "ai"
     ],
     "id": 255,
-    "weight": 2122
+    "weight": 2144
   },
   {
     "ru": {
@@ -3648,7 +3641,7 @@
       "write"
     ],
     "id": 256,
-    "weight": 8352
+    "weight": 8414
   },
   {
     "ru": {
@@ -3663,7 +3656,7 @@
       "academic"
     ],
     "id": 257,
-    "weight": 1390
+    "weight": 1400
   },
   {
     "ru": {
@@ -3678,7 +3671,7 @@
       "write"
     ],
     "id": 258,
-    "weight": 1457
+    "weight": 1463
   },
   {
     "ru": {
@@ -3693,7 +3686,7 @@
       "write"
     ],
     "id": 259,
-    "weight": 1574
+    "weight": 1584
   },
   {
     "ru": {
@@ -3723,7 +3716,7 @@
       "pedagogy"
     ],
     "id": 261,
-    "weight": 1094
+    "weight": 1106
   },
   {
     "ru": {
@@ -3738,7 +3731,7 @@
       "pedagogy"
     ],
     "id": 262,
-    "weight": 1243
+    "weight": 1256
   },
   {
     "ru": {
@@ -3753,7 +3746,7 @@
       "pedagogy"
     ],
     "id": 263,
-    "weight": 470
+    "weight": 472
   },
   {
     "ru": {
@@ -3768,7 +3761,7 @@
       "games"
     ],
     "id": 264,
-    "weight": 2275
+    "weight": 2295
   },
   {
     "ru": {
@@ -3783,7 +3776,7 @@
       "pedagogy"
     ],
     "id": 265,
-    "weight": 1479
+    "weight": 1497
   },
   {
     "ru": {
@@ -3798,7 +3791,7 @@
       "ai"
     ],
     "id": 266,
-    "weight": 4250
+    "weight": 4283
   },
   {
     "ru": {
@@ -3813,7 +3806,7 @@
       "tool"
     ],
     "id": 267,
-    "weight": 2589
+    "weight": 2602
   },
   {
     "ru": {
@@ -3828,7 +3821,7 @@
       "language"
     ],
     "id": 268,
-    "weight": 228
+    "weight": 229
   },
   {
     "ru": {
@@ -3843,7 +3836,7 @@
       "interesting"
     ],
     "id": 269,
-    "weight": 891
+    "weight": 892
   },
   {
     "ru": {
@@ -3858,7 +3851,7 @@
       "mind"
     ],
     "id": 270,
-    "weight": 1228
+    "weight": 1234
   },
   {
     "ru": {
@@ -3873,7 +3866,7 @@
       "mind"
     ],
     "id": 271,
-    "weight": 804
+    "weight": 810
   },
   {
     "ru": {
@@ -3888,7 +3881,7 @@
       "language"
     ],
     "id": 272,
-    "weight": 562
+    "weight": 565
   },
   {
     "ru": {
@@ -3903,7 +3896,7 @@
       "mind"
     ],
     "id": 273,
-    "weight": 927
+    "weight": 936
   },
   {
     "ru": {
@@ -3918,7 +3911,7 @@
       "pedagogy"
     ],
     "id": 274,
-    "weight": 712
+    "weight": 718
   },
   {
     "ru": {
@@ -3933,7 +3926,7 @@
       "professional"
     ],
     "id": 275,
-    "weight": 1285
+    "weight": 1302
   },
   {
     "ru": {
@@ -3947,7 +3940,7 @@
       "tool"
     ],
     "id": 276,
-    "weight": 288
+    "weight": 291
   },
   {
     "ru": {
@@ -3962,7 +3955,7 @@
       "write"
     ],
     "id": 277,
-    "weight": 3781
+    "weight": 3810
   },
   {
     "ru": {
@@ -3976,6 +3969,6 @@
       "ai"
     ],
     "id": 278,
-    "weight": 280
+    "weight": 289
   }
 ]

@@ -10,6 +10,6 @@
         "interpreter"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "count": 1351,
+    "count": 1353,
     "metaDescription": "IDEなしでPythonコードを実行する必要がありますか？このプロンプトはChatGPTをPythonインタープリターに変えます。コードを提供するだけで、すぐに出力が得られます。"
 }

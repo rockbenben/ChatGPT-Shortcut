@@ -11,6 +11,6 @@
         "code"
     ],
     "website": null,
-    "count": 1010,
+    "count": 1027,
     "metaDescription": "Строите на Vue 3? Этот промпт создает полный компонент Vue 3 в одном файле, используя Composition API и синтаксис <script setup> для вашего проекта."
 }

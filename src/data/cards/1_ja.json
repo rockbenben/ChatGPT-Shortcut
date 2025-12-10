@@ -7,10 +7,9 @@
         "remark": "他言語から英語への翻訳や、提供した英語の文章を改善する。"
     },
     "tags": [
-        "favorite",
         "language"
     ],
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-    "count": 21115,
+    "count": 21197,
     "metaDescription": "あなたの英語をレベルアップしませんか？このプロンプトは、簡単なテキストを洗練された文学的な文章に変換する高度な翻訳・改善ツールです。スペルや文法を完璧にしましょう！"
 }
