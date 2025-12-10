@@ -10,7 +10,7 @@ import { useHistory, useLocation } from "@docusaurus/router";
 import { toggleListItem } from "@site/src/utils/jsUtils";
 import type { TagType } from "@site/src/data/tags";
 
-import { prepareUserState } from "../../index";
+import { prepareUserState } from "@site/src/components/SearchBar/index";
 import styles from "./styles.module.css";
 
 interface Props extends ComponentProps<"input"> {

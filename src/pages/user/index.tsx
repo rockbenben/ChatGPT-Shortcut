@@ -6,7 +6,7 @@ import Layout from "@theme/Layout";
 import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Divider, Segmented, Tag } from "antd";
 import { HomeOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined, AppstoreOutlined } from "@ant-design/icons";
 
-import { AuthContext, AuthProvider } from "../_components/AuthContext";
+import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { changePassword, forgotPassword, updateUsername, updateUserInfoCache } from "@site/src/api";
 
 const { Title, Text } = Typography;

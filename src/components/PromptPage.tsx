@@ -10,7 +10,7 @@ import { getWeight, formatCount } from "@site/src/utils/formatters";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 import Comments from "./Comments";
-const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
+const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
 const { Title, Paragraph, Text } = Typography;
 

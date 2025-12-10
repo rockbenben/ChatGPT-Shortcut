@@ -1,18 +1,18 @@
 import React, { useContext, useState, useEffect, useCallback } from "react";
 import Translate from "@docusaurus/Translate";
 import { Empty, App, Row, Col } from "antd";
-import { BasePromptCard } from "@site/src/pages/_components/PromptCard/Base";
-import PromptCard from "@site/src/pages/_components/PromptCard";
+import { BasePromptCard } from "@site/src/components/PromptCard/Base";
+import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import styles from "@site/src/pages/_components/PromptCard/styles.module.css";
+import styles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 
 import { getPrompts, updatePromptsOrder, updateUserInfoCache } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import EditPromptModal from "./modal/EditPromptModal";
-import { PromptCardSkeleton } from "@site/src/pages/_components/PromptCardSkeleton";
+import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 
 interface UserPromptsProps {
   filteredCommus?: any[];

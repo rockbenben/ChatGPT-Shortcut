@@ -8,10 +8,10 @@ import { translate } from "@docusaurus/Translate";
 import { Input, Button, ConfigProvider } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
-import { AuthContext } from "@site/src/pages/_components/AuthContext";
+import { AuthContext } from "@site/src/components/AuthContext";
 
 import styles from "@site/src/pages/styles.module.css";
-import { type Operator } from "@site/src/pages/_components/ShowcaseFilterToggle";
+import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
 import { findCardsWithTags, getPrompts } from "@site/src/api";
 

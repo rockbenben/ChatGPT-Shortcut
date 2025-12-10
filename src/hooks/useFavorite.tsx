@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from "react";
 // Hook for managing favorites
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
-import { AuthContext } from "../pages/_components/AuthContext";
+import { AuthContext } from "../components/AuthContext";
 import { createFavorite, updateFavorite, getPrompts, voteOnUserPrompt, updateUserInfoCache } from "../api";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 

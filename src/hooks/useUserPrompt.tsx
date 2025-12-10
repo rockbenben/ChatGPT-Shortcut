@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
-import { AuthContext } from "../pages/_components/AuthContext";
+import { AuthContext } from "../components/AuthContext";
 import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache, updatePromptsOrder, updateUserInfoCache } from "../api";
 
 interface UseUserPromptReturn {

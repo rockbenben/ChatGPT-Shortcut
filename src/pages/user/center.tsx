@@ -6,12 +6,12 @@ import Layout from "@theme/Layout";
 import { theme, Flex, Button, Space, Segmented } from "antd";
 import { HeartOutlined, EditOutlined, HomeOutlined, UserOutlined, AppstoreOutlined } from "@ant-design/icons";
 
-import UserPrompts from "../_components/user/UserPrompts";
-import UserFavorite from "../_components/user/UserFavorite";
-import SearchBar, { useFilteredPrompts } from "@site/src/pages/_components/SearchBar";
-import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
-import { AuthProvider } from "../_components/AuthContext";
-import { PromptDetailModal } from "../_components/PromptDetailModal";
+import UserPrompts from "@site/src/components/user/UserPrompts";
+import UserFavorite from "@site/src/components/user/UserFavorite";
+import SearchBar, { useFilteredPrompts } from "@site/src/components/SearchBar";
+import { NoResults } from "@site/src/components/SearchBar/NoResults";
+import { AuthProvider } from "@site/src/components/AuthContext";
+import { PromptDetailModal } from "@site/src/components/PromptDetailModal";
 
 const UserBookmark = () => {
   const [activeTab, setActiveTab] = useState<"default" | "myfavor" | "myprompts">("myprompts");

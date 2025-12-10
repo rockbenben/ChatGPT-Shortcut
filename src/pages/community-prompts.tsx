@@ -3,21 +3,21 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
-import SearchBar from "@site/src/pages/_components/SearchBar";
-import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
+import SearchBar from "@site/src/components/SearchBar";
+import { NoResults } from "@site/src/components/SearchBar/NoResults";
 import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
-import LoginComponent from "@site/src/pages/_components/user/login";
-import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
+import LoginComponent from "@site/src/components/user/login";
+import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
 import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, theme, Row, Col, Skeleton } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import PromptCard from "@site/src/pages/_components/PromptCard";
-import { PromptCardSkeleton } from "@site/src/pages/_components/PromptCardSkeleton";
-const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+import PromptCard from "@site/src/components/PromptCard";
+import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
-const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
+const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
+const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
 const { Text } = Typography;
 

@@ -11,30 +11,30 @@ import { App, Button, Typography, Space, theme, Flex, Row, Col, Tooltip } from "
 import { EditOutlined, HeartOutlined, ArrowDownOutlined, MenuOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
-import ShowcaseTagSelect from "@site/src/pages/_components/ShowcaseTagSelect";
-import ShowcaseFilterToggle from "@site/src/pages/_components/ShowcaseFilterToggle";
-import ShowcaseTooltip from "@site/src/pages/_components/ShowcaseTooltip";
-import UserStatus from "@site/src/pages/_components/user/UserStatus";
-import UserPrompts from "@site/src/pages/_components/user/UserPrompts";
-import UserFavorite from "@site/src/pages/_components/user/UserFavorite";
-import SearchBar, { useFilteredPrompts, type UserState } from "@site/src/pages/_components/SearchBar";
-import { NoResults } from "@site/src/pages/_components/SearchBar/NoResults";
+import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
+import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
+import ShowcaseTooltip from "@site/src/components/ShowcaseTooltip";
+import UserStatus from "@site/src/components/user/UserStatus";
+import UserPrompts from "@site/src/components/user/UserPrompts";
+import UserFavorite from "@site/src/components/user/UserFavorite";
+import SearchBar, { useFilteredPrompts, type UserState } from "@site/src/components/SearchBar";
+import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
+import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { getPrompts, voteOnUserPrompt } from "@site/src/api";
 
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
-import PromptCard from "@site/src/pages/_components/PromptCard";
+import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
-const PromptDetailModal = React.lazy(() => import("@site/src/pages/_components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
-const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/pages/_components/AdComponent"));
+const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
+const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
 import favorDefault from "@site/src/data/default/favor_ar.json";
 import otherDefault from "@site/src/data/default/other_ar.json";

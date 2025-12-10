@@ -193,7 +193,7 @@ for prompt_id in range(1, max_id+1):
             # 设置输出文件的路径
             output_path = prompt_i18n_dir / f"{prompt_id}.tsx"
 
-        content = f'''import PromptPage from "@site/src/pages/_components/PromptPage";
+        content = f'''import PromptPage from "@site/src/components/PromptPage";
 import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
 export default function PromptDetail() {{

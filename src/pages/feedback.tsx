@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import { Card, Typography, theme, Flex, Divider } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
-import Comments from "@site/src/pages/_components/Comments";
+import Comments from "@site/src/components/Comments";
 
 const { Title, Paragraph, Text } = Typography;
 

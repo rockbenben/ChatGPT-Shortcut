@@ -9,7 +9,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { Switch, ConfigProvider } from "antd";
 
-import { prepareUserState } from "../../index";
+import { prepareUserState } from "@site/src/components/SearchBar/index";
 
 export type Operator = "OR" | "AND";
 

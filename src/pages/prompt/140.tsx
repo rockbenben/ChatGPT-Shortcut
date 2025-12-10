@@ -1,4 +1,4 @@
-import PromptPage from "@site/src/pages/_components/PromptPage";
+import PromptPage from "@site/src/components/PromptPage";
 import prompt from "@site/src/data/cards/140_zh.json";
 
 export default function PromptDetail() {
