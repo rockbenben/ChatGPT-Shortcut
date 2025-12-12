@@ -1,15 +1,1 @@
-{
-    "id": 7,
-    "zh": {
-        "title": "提示词修改器",
-        "prompt": "I am trying to get good results from GPT-5 on the following prompt: '你的提示词.' Could you write a better prompt that is more optimal for GPT-5 and would produce better results?",
-        "description": "我正在尝试从以下提示词中获得 GPT-5 的良好结果：你的提示词。你能否写出更优化、能够产生更好结果的提示词？",
-        "remark": "让 ChatGPT 为我们重新撰写提示词。由于人工书写的提示词逻辑与机器不同，重新修改提示语可令 ChatGPT 更容易理解。"
-    },
-    "tags": [
-        "ai"
-    ],
-    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 7689,
-    "metaDescription": "想要更好的AI生成结果吗？让机器来帮您优化提示词！本工具能将您原始的提问，重构成AI更易理解的格式，从而产出更精准、更优质的内容。"
-}
+{"id":7,"zh":{"title":"提示词修改器","prompt":"I am trying to get good results from GPT-5 on the following prompt: '你的提示词.' Could you write a better prompt that is more optimal for GPT-5 and would produce better results?","description":"我正在尝试从以下提示词中获得 GPT-5 的良好结果：你的提示词。你能否写出更优化、能够产生更好结果的提示词？","remark":"让 ChatGPT 为我们重新撰写提示词。由于人工书写的提示词逻辑与机器不同，重新修改提示语可令 ChatGPT 更容易理解。"},"tags":["ai"],"website":"https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3","count":7689,"metaDescription":"想要更好的AI生成结果吗？让机器来帮您优化提示词！本工具能将您原始的提问，重构成AI更易理解的格式，从而产出更精准、更优质的内容。"}

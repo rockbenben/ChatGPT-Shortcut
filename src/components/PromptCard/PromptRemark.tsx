@@ -15,10 +15,9 @@ export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.H
         marginBottom: token.marginSM,
         fontSize: "0.85rem",
         lineHeight: 1.5,
-        color: token.colorTextSecondary,
         padding: `${token.paddingXXS}px ${token.paddingXS}px`,
         borderRadius: token.borderRadiusSM,
-        borderLeft: `3px solid ${token.colorFillTertiary}`,
+        borderLeft: "3px solid var(--ifm-color-emphasis-200)", // SSG 兼容
         ...props.style,
       }}
       ellipsis={{

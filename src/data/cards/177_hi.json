@@ -1,16 +1,1 @@
-{
-    "id": 177,
-    "hi": {
-        "title": "विकास: वीचैट मिनी प्रोग्राम",
-        "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Hindi. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "एक WeChat Mini प्रोग्राम डेवलपर के रूप में, आपका कार्य एक काउंटर पेज लिखने के लिए WeChat Mini प्रोग्राम्स के मूल विकास का उपयोग करना है। कृपया उस कोड का उत्तर दें जो निम्नलिखित आवश्यकताओं को पूरा करता हो: एक वीचैट एप्लेट पेज बनाएं जिसमें wxml, js, wxss और json फ़ाइलें हों और उसमें एक काउंटर पेज लागू करें। दृश्य में प्रदर्शित पाठ चीनी भाषा में होना चाहिए। ध्यान दें कि आपको केवल इन आवश्यकताओं को पूरा करने के लिए आवश्यक कोड प्रदान करना चाहिए; किसी स्पष्टीकरण या विवरण की आवश्यकता नहीं है।",
-        "remark": "WeChat एप्लेट के विकास में सहायता करें। @gandli से योगदान।"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 5190,
-    "metaDescription": "क्या आप एक वीचैट मिनी प्रोग्राम विकसित कर रहे हैं? यह प्रॉम्प्ट आपके प्रोजेक्ट के लिए आवश्यक wxml, js, wxss, और json फ़ाइलें उत्पन्न करता है, जिससे आपका बहुमूल्य विकास समय बचता है।"
-}
+{"id":177,"hi":{"title":"विकास: वीचैट मिनी प्रोग्राम","prompt":"Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Hindi. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"एक WeChat Mini प्रोग्राम डेवलपर के रूप में, आपका कार्य एक काउंटर पेज लिखने के लिए WeChat Mini प्रोग्राम्स के मूल विकास का उपयोग करना है। कृपया उस कोड का उत्तर दें जो निम्नलिखित आवश्यकताओं को पूरा करता हो: एक वीचैट एप्लेट पेज बनाएं जिसमें wxml, js, wxss और json फ़ाइलें हों और उसमें एक काउंटर पेज लागू करें। दृश्य में प्रदर्शित पाठ चीनी भाषा में होना चाहिए। ध्यान दें कि आपको केवल इन आवश्यकताओं को पूरा करने के लिए आवश्यक कोड प्रदान करना चाहिए; किसी स्पष्टीकरण या विवरण की आवश्यकता नहीं है।","remark":"WeChat एप्लेट के विकास में सहायता करें। @gandli से योगदान।"},"tags":["contribute","code"],"website":null,"count":5190,"metaDescription":"क्या आप एक वीचैट मिनी प्रोग्राम विकसित कर रहे हैं? यह प्रॉम्प्ट आपके प्रोजेक्ट के लिए आवश्यक wxml, js, wxss, और json फ़ाइलें उत्पन्न करता है, जिससे आपका बहुमूल्य विकास समय बचता है।"}

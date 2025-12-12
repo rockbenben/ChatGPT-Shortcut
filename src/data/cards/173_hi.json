@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "hi": {
-        "title": "कोड दुभाषिया",
-        "prompt": "The entire conversation and instructions should be provided in Hindi. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
-        "description": "मुझे आशा है कि आप एक कोड दुभाषिया के रूप में कार्य कर सकते हैं, जो कोड के सिंटैक्स और शब्दार्थ को स्पष्ट कर सकता है।",
-        "remark": "एआई को बताएं कि कोड का प्रत्येक चरण क्या करता है। @Tractor1928 से योगदान, @yiqiongwu द्वारा संशोधित।"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "क्या आप कोड का एक टुकड़ा नहीं समझ पा रहे हैं? यह प्रॉम्प्ट चैटजीपीटी को एक कोड दुभाषिया बनाता है, जो किसी भी कोड स्निपेट के सिंटैक्स और सिमेंटिक्स को लाइन-बाय-लाइन समझाता है।"
-}
+{"id":173,"hi":{"title":"कोड दुभाषिया","prompt":"The entire conversation and instructions should be provided in Hindi. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.","description":"मुझे आशा है कि आप एक कोड दुभाषिया के रूप में कार्य कर सकते हैं, जो कोड के सिंटैक्स और शब्दार्थ को स्पष्ट कर सकता है।","remark":"एआई को बताएं कि कोड का प्रत्येक चरण क्या करता है। @Tractor1928 से योगदान, @yiqiongwu द्वारा संशोधित।"},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"क्या आप कोड का एक टुकड़ा नहीं समझ पा रहे हैं? यह प्रॉम्प्ट चैटजीपीटी को एक कोड दुभाषिया बनाता है, जो किसी भी कोड स्निपेट के सिंटैक्स और सिमेंटिक्स को लाइन-बाय-लाइन समझाता है।"}

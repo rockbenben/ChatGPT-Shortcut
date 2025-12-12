@@ -1,15 +1,1 @@
-{
-    "id": 210,
-    "fr": {
-        "title": "Générateur de rapports hebdomadaires",
-        "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
-        "description": "Utilisez le texte fourni ci-dessous comme base d'un rapport hebdomadaire en chinois pour générer un résumé succinct mettant en évidence le contenu le plus important. Le rapport doit être rédigé au format markdown et doit être facile à lire et à comprendre pour un public général. En particulier, concentrez-vous sur la fourniture d'informations et d'analyses qui seront utiles aux parties prenantes et aux décideurs. Vous pouvez également utiliser des informations ou des sources supplémentaires si nécessaire.",
-        "remark": "Extraire les points clés et les développer de manière appropriée pour générer des rapports hebdomadaires basés sur le contenu du travail quotidien."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": null,
-    "count": 6551,
-    "metaDescription": "Besoin de rédiger un rapport hebdomadaire ? Fournissez vos tâches de travail, et ce prompt générera un résumé concis en markdown, en soulignant les points les plus importants pour les parties prenantes."
-}
+{"id":210,"fr":{"title":"Générateur de rapports hebdomadaires","prompt":"Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ","description":"Utilisez le texte fourni ci-dessous comme base d'un rapport hebdomadaire en chinois pour générer un résumé succinct mettant en évidence le contenu le plus important. Le rapport doit être rédigé au format markdown et doit être facile à lire et à comprendre pour un public général. En particulier, concentrez-vous sur la fourniture d'informations et d'analyses qui seront utiles aux parties prenantes et aux décideurs. Vous pouvez également utiliser des informations ou des sources supplémentaires si nécessaire.","remark":"Extraire les points clés et les développer de manière appropriée pour générer des rapports hebdomadaires basés sur le contenu du travail quotidien."},"tags":["article"],"website":null,"count":6551,"metaDescription":"Besoin de rédiger un rapport hebdomadaire ? Fournissez vos tâches de travail, et ce prompt générera un résumé concis en markdown, en soulignant les points les plus importants pour les parties prenantes."}

@@ -1,14 +1,1 @@
-{
-    "id": 21,
-    "en": {
-        "title": "Essay writer",
-        "prompt": "I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. My first suggestion request is ",
-        "remark": "Write a comprehensive and persuasive thesis based on the given topic."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer",
-    "count": 3734,
-    "metaDescription": "Need to write a persuasive essay? This prompt guides you to research a topic, formulate a strong thesis, and create an informative and engaging piece of work. Master the art of the essay!"
-}
+{"id":21,"en":{"title":"Essay writer","prompt":"I want you to act as an essay writer. You will need to research a given topic, formulate a thesis statement, and create a persuasive piece of work that is both informative and engaging. My first suggestion request is ","remark":"Write a comprehensive and persuasive thesis based on the given topic."},"tags":["article"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer","count":3734,"metaDescription":"Need to write a persuasive essay? This prompt guides you to research a topic, formulate a strong thesis, and create an informative and engaging piece of work. Master the art of the essay!"}

@@ -1,15 +1,1 @@
-{
-    "id": 114,
-    "hi": {
-        "title": "भाषा जनरेटर",
-        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ",
-        "description": "मैं चाहता हूं कि आप मेरे द्वारा लिखे गए वाक्यों का नई भाषा में अनुवाद करें। मैं वाक्य लिखता हूं और आप उसे इस नई भाषा में व्यक्त करते हैं। मैं बस इतना चाहता हूं कि आप इसे नई बनी भाषा में व्यक्त करें। मैं नहीं चाहता कि आप नव निर्मित भाषा के अलावा किसी और चीज़ से उत्तर दें। जब मुझे आपको अंग्रेजी में कुछ बताना होता है, तो मैं उसे ब्रेसिज़ में लपेट देता हूं, जैसे {इस तरह से}।",
-        "remark": "आपके द्वारा दी गई भाषा को AI द्वारा बनाई गई नई भाषा से बदलें।"
-    },
-    "tags": [
-        "language"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
-    "count": 362,
-    "metaDescription": "क्या आप अपने वाक्यों को एक पूरी तरह से नई, मनगढ़ंत भाषा में देखना चाहते हैं? यह रचनात्मक प्रॉम्प्ट चैटजीपीटी को आपके पाठ का एक अद्वितीय, काल्पनिक भाषा में अनुवाद करने के लिए प्रेरित करता है।"
-}
+{"id":114,"hi":{"title":"भाषा जनरेटर","prompt":"I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ","description":"मैं चाहता हूं कि आप मेरे द्वारा लिखे गए वाक्यों का नई भाषा में अनुवाद करें। मैं वाक्य लिखता हूं और आप उसे इस नई भाषा में व्यक्त करते हैं। मैं बस इतना चाहता हूं कि आप इसे नई बनी भाषा में व्यक्त करें। मैं नहीं चाहता कि आप नव निर्मित भाषा के अलावा किसी और चीज़ से उत्तर दें। जब मुझे आपको अंग्रेजी में कुछ बताना होता है, तो मैं उसे ब्रेसिज़ में लपेट देता हूं, जैसे {इस तरह से}।","remark":"आपके द्वारा दी गई भाषा को AI द्वारा बनाई गई नई भाषा से बदलें।"},"tags":["language"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator","count":362,"metaDescription":"क्या आप अपने वाक्यों को एक पूरी तरह से नई, मनगढ़ंत भाषा में देखना चाहते हैं? यह रचनात्मक प्रॉम्प्ट चैटजीपीटी को आपके पाठ का एक अद्वितीय, काल्पनिक भाषा में अनुवाद करने के लिए प्रेरित करता है।"}

@@ -1,15 +1,1 @@
-{
-    "id": 209,
-    "pt": {
-        "title": "Pequeno livro vermelho do estilo",
-        "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ",
-        "description": "Edite os parágrafos seguintes utilizando o estilo Emoji, que inclui títulos apelativos, emojis em cada parágrafo e etiquetas relevantes no final. Certifique-se de que mantém o significado do texto original.",
-        "remark": "Reescreva o texto num estilo Emoji semelhante ao do Pequeno Livro Vermelho."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 57712,
-    "metaDescription": "Quer dar um toque especial ao seu texto? Este prompt reescreve seu conteúdo em um divertido \"estilo Emoji\", com um título cativante, emojis em cada parágrafo e tags relevantes no final."
-}
+{"id":209,"pt":{"title":"Pequeno livro vermelho do estilo","prompt":"Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ","description":"Edite os parágrafos seguintes utilizando o estilo Emoji, que inclui títulos apelativos, emojis em cada parágrafo e etiquetas relevantes no final. Certifique-se de que mantém o significado do texto original.","remark":"Reescreva o texto num estilo Emoji semelhante ao do Pequeno Livro Vermelho."},"tags":["write"],"website":null,"count":57712,"metaDescription":"Quer dar um toque especial ao seu texto? Este prompt reescreve seu conteúdo em um divertido \"estilo Emoji\", com um título cativante, emojis em cada parágrafo e tags relevantes no final."}

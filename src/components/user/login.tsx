@@ -3,8 +3,7 @@ import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, th
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { login, register, forgotPassword, sendPasswordlessLink } from "@site/src/api";
-import { getGoogleAuthUrl, authenticateUserWithGoogle } from "@site/src/googleAuthApi";
+import { login, register, forgotPassword, sendPasswordlessLink, getGoogleLoginUrl, googleLogin } from "@site/src/api";
 
 const { Title, Text } = Typography;
 
@@ -82,11 +81,10 @@ const LoginPage = () => {
   const { token } = theme.useToken();
   const [loading, setLoading] = useState(false);
 
-  // Form hooks
-  const [loginForm] = Form.useForm();
-  const [registerForm] = Form.useForm();
-  const [forgotPasswordForm] = Form.useForm();
-  const [passwordlessForm] = Form.useForm();
+  // Form hook
+  // Use a single form instance to avoid creating unmounted/unconnected form instances,
+  // which triggers: "Instance created by useForm is not connected to any Form element".
+  const [form] = Form.useForm();
 
   const handleRegister = useCallback(() => {
     setViewState("register");
@@ -107,10 +105,7 @@ const LoginPage = () => {
   }, [viewState, loginType]);
 
   const resetAllForms = () => {
-    loginForm.resetFields();
-    registerForm.resetFields();
-    forgotPasswordForm.resetFields();
-    passwordlessForm.resetFields();
+    form.resetFields();
   };
 
   const handleSuccess = useCallback((username, jwt) => {
@@ -146,7 +141,7 @@ const LoginPage = () => {
       setLoading(true);
 
       try {
-        const authRespond = await authenticateUserWithGoogle(data);
+        const authRespond = await googleLogin(data);
         if (!authRespond?.token || !authRespond?.user?.username) {
           throw new Error("Invalid Google authentication response.");
         }
@@ -178,12 +173,49 @@ const LoginPage = () => {
         throw new Error("Pop-up window blocked. Please allow pop-ups and try again.");
       }
 
-      popup.document.write(
-        `<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Google Login</title><style>html,body{margin:0;padding:0;height:100%;}body{display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;color:#444;background:#f7f7f7;} .wrapper{box-sizing:border-box;text-align:center;padding:24px 16px;width:100%;max-width:320px;margin:0 auto;} .spinner{margin:0 auto 16px;border:4px solid #e0e0e0;border-top:4px solid #4285f4;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;} @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style></head><body><div class="wrapper"><div class="spinner"></div><p>Redirecting to Google sign-in...</p></div></body></html>`
-      );
-      popup.document.close();
+      // Avoid deprecated Document.write(). Build a minimal loading page via DOM instead.
+      const doc = popup.document;
+      doc.title = "Google Login";
 
-      const url = await getGoogleAuthUrl();
+      const metaViewport = doc.createElement("meta");
+      metaViewport.name = "viewport";
+      metaViewport.content = "width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no";
+
+      const styleEl = doc.createElement("style");
+      styleEl.textContent =
+        "html,body{margin:0;padding:0;height:100%;}" +
+        "body{display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;color:#444;background:#f7f7f7;}" +
+        ".wrapper{box-sizing:border-box;text-align:center;padding:24px 16px;width:100%;max-width:320px;margin:0 auto;}" +
+        ".spinner{margin:0 auto 16px;border:4px solid #e0e0e0;border-top:4px solid #4285f4;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;}" +
+        "@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}";
+
+      // Ensure head/body exist in the blank popup document.
+      if (!doc.head) {
+        doc.documentElement.appendChild(doc.createElement("head"));
+      }
+      if (!doc.body) {
+        doc.documentElement.appendChild(doc.createElement("body"));
+      }
+
+      doc.head.innerHTML = "";
+      doc.body.innerHTML = "";
+      doc.head.appendChild(metaViewport);
+      doc.head.appendChild(styleEl);
+
+      const wrapper = doc.createElement("div");
+      wrapper.className = "wrapper";
+
+      const spinner = doc.createElement("div");
+      spinner.className = "spinner";
+
+      const text = doc.createElement("p");
+      text.textContent = "Redirecting to Google sign-in...";
+
+      wrapper.appendChild(spinner);
+      wrapper.appendChild(text);
+      doc.body.appendChild(wrapper);
+
+      const url = await getGoogleLoginUrl();
       if (!url) {
         throw new Error("Failed to generate Google authentication URL.");
       }
@@ -250,7 +282,7 @@ const LoginPage = () => {
     try {
       await forgotPassword(values.email);
       messageApi.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
-      forgotPasswordForm.resetFields();
+      form.resetFields();
     } catch (error) {
       console.error(
         translate({
@@ -280,7 +312,7 @@ const LoginPage = () => {
       const payload = isValidEmail(target) ? { email: target } : { username: target };
       await sendPasswordlessLink(payload);
       messageApi.success(<Translate id="message.success.passwordlessLink">免密码登录链接已发送到您的邮箱！</Translate>);
-      passwordlessForm.resetFields();
+      form.resetFields();
     } catch (error) {
       console.error("Error sending passwordless login link:", error);
       messageApi.error(<Translate id="message.error.passwordlessLink">发送失败，请检查邮箱或用户名</Translate>);
@@ -303,7 +335,7 @@ const LoginPage = () => {
       />
 
       {loginType === "password" ? (
-        <Form form={loginForm} onFinish={onFinishLogin} layout="vertical" size="large">
+        <Form form={form} onFinish={onFinishLogin} layout="vertical" size="large">
           <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
             <Input
               autoComplete="username"
@@ -332,7 +364,7 @@ const LoginPage = () => {
           </Button>
         </Form>
       ) : (
-        <Form form={passwordlessForm} onFinish={handleSendPasswordlessLink} layout="vertical" size="large">
+        <Form form={form} onFinish={handleSendPasswordlessLink} layout="vertical" size="large">
           <div
             style={{
               marginBottom: 24,
@@ -384,7 +416,7 @@ const LoginPage = () => {
   );
 
   const renderRegisterForm = () => (
-    <Form form={registerForm} onFinish={onFinishRegister} layout="vertical" size="large">
+    <Form form={form} onFinish={onFinishRegister} layout="vertical" size="large">
       <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
         <Input
           autoComplete="username"
@@ -439,7 +471,7 @@ const LoginPage = () => {
   );
 
   const renderForgotPasswordForm = () => (
-    <Form form={forgotPasswordForm} onFinish={handleForgotPassword} layout="vertical" size="large">
+    <Form form={form} onFinish={handleForgotPassword} layout="vertical" size="large">
       <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
         <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>

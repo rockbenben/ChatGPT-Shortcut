@@ -26,9 +26,6 @@
   "message.addPrompt.success": {
     "message": "プロンプトの送信に成功しました！"
   },
-  "message.addPrompt.success.view": {
-    "message": "「マイプロンプト」で確認できます"
-  },
   "message.addPrompt.error": {
     "message": "プロンプトの送信に失敗しました。後でもう一度お試しください"
   },
@@ -67,9 +64,6 @@
   },
   "common.favorites": {
     "message": "お気に入り"
-  },
-  "showcase.tag.favorite.description": {
-    "message": "私のお気に入りプロンプト"
   },
   "showcase.tag.write.label": {
     "message": "ライティング支援"
@@ -239,12 +233,6 @@
   "action.downvote": {
     "message": "低評価"
   },
-  "link.home": {
-    "message": "ホームに戻る"
-  },
-  "link.myFavorites": {
-    "message": "私のお気に入り"
-  },
   "button.login": {
     "message": "ログイン"
   },
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcutは、AIの効率向上に特化したオープンソースのプロンプト管理ツールです。バグの報告、機能の提案、高品質なプロンプトの共有など、皆様のご参加をお待ちしております。プロンプトの投稿については、多言語に対応しており、採用された場合は帰属表示（ユーザー名で検索可能）付きで掲載されます。すべての貢献は、コミュニティメンバーが思考を広げ、生産性を向上させるのに役立ちます。一緒に完璧なプロンプトライブラリを作りましょう！"
   },
-  "toggle_prompt_language": {
-    "message": "プロンプト言語の切り替え"
-  },
   "showcase.filters.title": {
     "message": "フィルタ"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "タグを表示"
   },
-  "toggle_prompt_language_description": {
-    "message": "プロンプトの表示言語を変更します。英語と現在のページ言語を切り替えることができます。"
-  },
-  "myprompt.tooltip": {
-    "message": "追加または作成した個人的なプロンプト。AiShort以外のプロンプトを保存するために使用されます。"
-  },
-  "myprompt": {
-    "message": "マイプロンプト"
-  },
-  "myfavorite.tooltip": {
-    "message": "コミュニティプロンプトを含む、私がお気に入りに追加したプロンプト。"
-  },
-  "community.tag.tooltip": {
-    "message": "コミュニティで共有された厳選プロンプト"
-  },
-  "community.tag": {
-    "message": "コミュニティ厳選"
-  },
   "showcase.favoritesList.title": {
     "message": "お気に入り"
   },
   "showcase.usersList.allUsers": {
     "message": "すべてのプロンプト"
-  },
-  "action.loadMore": {
-    "message": "もっと読み込む"
   },
   "validation.password.match": {
     "message": "2つのパスワードが一致しません！"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "新しいパスワードを確認してください！"
   },
-  "common.myPrompts": {
-    "message": "マイプロンプト"
-  },
   "message.success.passwordChanged": {
     "message": "パスワードの変更に成功しました！"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "ユーザー情報"
-  },
-  "message.loading": {
-    "message": "ログイン状態を読み込んでいます..."
   },
   "label.sharedPrompts": {
     "message": "共有されたプロンプト"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "コピーに成功しました"
-  },
-  "tooltip.switchLanguage": {
-    "message": "クリックして表示言語を切り替える"
   },
   "label.commentInfo": {
     "message": "このプロンプトに関するご意見、ご感想、共有などを以下に返信してください。"
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "削除"
-  },
-  "message.fetchError": {
-    "message": "プロンプトの取得に失敗しました。後でもう一度お試しください"
   },
   "message.noPrompts": {
     "message": "まだプロンプトが送信されていません。プロンプトを追加してください。"
@@ -956,9 +908,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "マイセンター"
-  },
   "link.myAccount": {
     "message": "マイアカウント"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "まだコメントはありません。最初のコメントを投稿しましょう！"
+  },
+  "link.home": {
+    "message": "ホーム"
+  },
+  "link.communityPrompts": {
+    "message": "コミュニティプロンプト"
+  },
+  "myCollection.header.title": {
+    "message": "マイコレクション"
+  },
+  "myCollection.header.subtitle": {
+    "message": "作成したプロンプト、お気に入り、カスタムタグを管理"
+  },
+  "myCollection.stats.total": {
+    "message": "合計"
+  },
+  "myCollection.stats.prompts": {
+    "message": "マイプロンプト"
+  },
+  "myCollection.stats.favorites": {
+    "message": "お気に入り"
+  },
+  "myCollection.stats.tags": {
+    "message": "カスタムタグ"
+  },
+  "myspace.filter.all": {
+    "message": "すべて"
+  },
+  "myspace.filter.prompts": {
+    "message": "プロンプト"
+  },
+  "myspace.filter.favorites": {
+    "message": "お気に入り"
+  },
+  "myspace.manageTags": {
+    "message": "タグ管理"
+  },
+  "myspace.search.placeholder": {
+    "message": "マイスペースを検索..."
+  },
+  "myspace.tagManager.title": {
+    "message": "カスタムタグの管理"
+  },
+  "action.save": {
+    "message": "保存"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "タグ名"
+  },
+  "action.add": {
+    "message": "追加"
+  },
+  "myspace.tagManager.empty": {
+    "message": "カスタムタグはありません"
+  },
+  "message.tagsUpdated": {
+    "message": "タグを更新しました"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "タグの更新に失敗しました"
+  },
+  "message.noSpaceItems": {
+    "message": "コンテンツがありません。プロンプトやお気に入りを追加してください。"
+  },
+  "nav.explore": {
+    "message": "見つける"
+  },
+  "nav.myCollection": {
+    "message": "マイコレクション"
+  },
+  "message.cache.clearError": {
+    "message": "キャッシュの削除に失敗しました"
+  },
+  "title.dataManagement": {
+    "message": "データ管理"
+  },
+  "description.exportPrompts.short": {
+    "message": "バックアップ用にJSONファイルとしてエクスポート"
+  },
+  "button.export": {
+    "message": "データをエクスポート"
+  },
+  "description.clearCache.short": {
+    "message": "ローカルキャッシュデータを更新"
+  },
+  "modal.clearCache.title": {
+    "message": "キャッシュを削除しますか？"
+  },
+  "modal.clearCache.content": {
+    "message": "システムはETag技術を使用してキャッシュを自動管理しているため、通常は手動で削除する必要はありません。"
+  },
+  "modal.clearCache.warning": {
+    "message": "削除すると、すべてのデータが再読み込みされます。"
+  },
+  "button.clearAllCache": {
+    "message": "すべてのキャッシュを削除"
+  },
+  "modal.forgotPassword.title": {
+    "message": "パスワードをお忘れですか"
   }
 }

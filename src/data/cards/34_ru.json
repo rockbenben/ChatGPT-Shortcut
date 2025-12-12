@@ -1,15 +1,1 @@
-{
-    "id": 34,
-    "ru": {
-        "title": "Извлечение контактной информации",
-        "prompt": "The entire conversation and instructions should be provided in Russian. Extract the name and mailing address from this email: ",
-        "description": "Извлеките имя и адрес электронной почты из этого письма: [текст].",
-        "remark": "Извлечение контактной информации из текста."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 274,
-    "metaDescription": "Нужно быстро извлечь контактную информацию из текста? Этот простой промпт для AI извлекает имена и почтовые адреса из электронных писем или блоков текста. Экономьте время и автоматизируйте ввод данных."
-}
+{"id":34,"ru":{"title":"Извлечение контактной информации","prompt":"The entire conversation and instructions should be provided in Russian. Extract the name and mailing address from this email: ","description":"Извлеките имя и адрес электронной почты из этого письма: [текст].","remark":"Извлечение контактной информации из текста."},"tags":["text"],"website":"https://platform.openai.com/examples/default-extract-contact-info","count":274,"metaDescription":"Нужно быстро извлечь контактную информацию из текста? Этот простой промпт для AI извлекает имена и почтовые адреса из электронных писем или блоков текста. Экономьте время и автоматизируйте ввод данных."}

@@ -1,16 +1,1 @@
-{
-    "id": 195,
-    "es": {
-        "title": "borrador del discurso",
-        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Spanish. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
-        "description": "Como [identidad], amplíe para mí el siguiente texto, centrado en cómo aplicar la ética científica y los estilos de aprendizaje. Puedes citar hasta un personaje famoso, añadir ejemplos concretos y desarrollar tus sentimientos personales.",
-        "remark": "Contribución de @SetSeele."
-    },
-    "tags": [
-        "contribute",
-        "speech"
-    ],
-    "website": null,
-    "count": 2180,
-    "metaDescription": "¿Necesitas escribir un discurso convincente? Este prompt te ayuda a desarrollar cualquier tema desde una identidad específica, incorporando citas famosas, ejemplos y pensamientos personales."
-}
+{"id":195,"es":{"title":"borrador del discurso","prompt":"As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Spanish. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.","description":"Como [identidad], amplíe para mí el siguiente texto, centrado en cómo aplicar la ética científica y los estilos de aprendizaje. Puedes citar hasta un personaje famoso, añadir ejemplos concretos y desarrollar tus sentimientos personales.","remark":"Contribución de @SetSeele."},"tags":["contribute","speech"],"website":null,"count":2180,"metaDescription":"¿Necesitas escribir un discurso convincente? Este prompt te ayuda a desarrollar cualquier tema desde una identidad específica, incorporando citas famosas, ejemplos y pensamientos personales."}

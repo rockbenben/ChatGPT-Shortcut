@@ -1,15 +1,1 @@
-{
-    "id": 240,
-    "ru": {
-        "title": "Богатая информация: подробное резюме",
-        "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Russian. Make sure your analysis is consistent with the original content of the articles.",
-        "description": "Объединяя содержание предыдущих статей \"@1\" - \"@3\", пожалуйста, проанализируйте оригинальное содержание и убедитесь, что оно соответствует оригинальному содержанию, и если в нем есть какие-либо ошибки, они могут быть непосредственно исправлены или дополнены.",
-        "remark": "(Эта подсказка нуждается в пересмотре.) Всегда задавайте вопрос по углубленному резюме дважды, и при втором задании попросите его вернуться к исходному тексту для перекрестных ссылок, чтобы увидеть, нет ли в нем ошибок или пропусков. Этот метод взят из статьи Эсора Хуанга, автора книги Computer Playbook."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 757,
-    "metaDescription": "Нужен подробный анализ длинного текста? Используйте этот промпт после ввода больших объемов данных, чтобы получить подробное резюме и выявить любые ошибки или несоответствия."
-}
+{"id":240,"ru":{"title":"Богатая информация: подробное резюме","prompt":"Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Russian. Make sure your analysis is consistent with the original content of the articles.","description":"Объединяя содержание предыдущих статей \"@1\" - \"@3\", пожалуйста, проанализируйте оригинальное содержание и убедитесь, что оно соответствует оригинальному содержанию, и если в нем есть какие-либо ошибки, они могут быть непосредственно исправлены или дополнены.","remark":"(Эта подсказка нуждается в пересмотре.) Всегда задавайте вопрос по углубленному резюме дважды, и при втором задании попросите его вернуться к исходному тексту для перекрестных ссылок, чтобы увидеть, нет ли в нем ошибок или пропусков. Этот метод взят из статьи Эсора Хуанга, автора книги Computer Playbook."},"tags":["write"],"website":"https://www.playpcesor.com/2023/03/chatgpt-2.html","count":757,"metaDescription":"Нужен подробный анализ длинного текста? Используйте этот промпт после ввода больших объемов данных, чтобы получить подробное резюме и выявить любые ошибки или несоответствия."}

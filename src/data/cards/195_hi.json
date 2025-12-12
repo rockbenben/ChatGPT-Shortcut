@@ -1,16 +1,1 @@
-{
-    "id": 195,
-    "hi": {
-        "title": "भाषण",
-        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Hindi. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
-        "description": "एक [पहचान] के रूप में, वैज्ञानिक नैतिकता को कैसे लागू किया जाए और अकादमिक शैली के निर्माण पर ध्यान केंद्रित करते हुए, मैं अपने लिए निम्नलिखित पाठ का विस्तार करूंगा। आप किसी प्रसिद्ध व्यक्ति का अधिकतम एक प्रसिद्ध उद्धरण उद्धृत कर सकते हैं, विशिष्ट उदाहरण जोड़ सकते हैं और अपनी व्यक्तिगत भावनाओं को समझा सकते हैं।",
-        "remark": "@SetSeele से योगदान।"
-    },
-    "tags": [
-        "contribute",
-        "speech"
-    ],
-    "website": null,
-    "count": 2180,
-    "metaDescription": "क्या आपको एक प्रेरक भाषण लिखने की आवश्यकता है? यह प्रॉम्प्ट आपको एक विशिष्ट पहचान से किसी भी विषय पर विस्तार करने में मदद करता है, जिसमें प्रसिद्ध उद्धरण, उदाहरण और व्यक्तिगत विचार शामिल हैं।"
-}
+{"id":195,"hi":{"title":"भाषण","prompt":"As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Hindi. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.","description":"एक [पहचान] के रूप में, वैज्ञानिक नैतिकता को कैसे लागू किया जाए और अकादमिक शैली के निर्माण पर ध्यान केंद्रित करते हुए, मैं अपने लिए निम्नलिखित पाठ का विस्तार करूंगा। आप किसी प्रसिद्ध व्यक्ति का अधिकतम एक प्रसिद्ध उद्धरण उद्धृत कर सकते हैं, विशिष्ट उदाहरण जोड़ सकते हैं और अपनी व्यक्तिगत भावनाओं को समझा सकते हैं।","remark":"@SetSeele से योगदान।"},"tags":["contribute","speech"],"website":null,"count":2180,"metaDescription":"क्या आपको एक प्रेरक भाषण लिखने की आवश्यकता है? यह प्रॉम्प्ट आपको एक विशिष्ट पहचान से किसी भी विषय पर विस्तार करने में मदद करता है, जिसमें प्रसिद्ध उद्धरण, उदाहरण और व्यक्तिगत विचार शामिल हैं।"}

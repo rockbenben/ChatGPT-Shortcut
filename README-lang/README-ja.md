@@ -2,7 +2,7 @@
 ⚡️AI Short
 </h1>
 <p align="center">
-    <a href="/README-en.md">English</a> | <a href="/README.md">中文</a> |
+    <a href="../README.md">English</a> | <a href="../README-zh.md">中文</a> |
 <a href="./README-es.md">Español</a> |
 日本語 |
 <a href="./README-ko.md">한국어</a> |
@@ -16,76 +16,69 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
+    <em>ChatGPT Shortcut - 効率と生産性を最大化</em>
 </p>
 
-## なぜ AiShort を使うのか？
+## ⚡ クイックスタート
 
-AiShort（ChatGPT ショートカット）は、簡潔で使いやすい AI プロンプトのリストを提供します。様々なシナリオに適したプロンプトをユーザーが素早く見つけられるように設計されており、初心者でも簡単に使用でき、学習や仕事の効率を総合的に向上させます。
+1. [aishort.top](https://www.aishort.top/ja/) にアクセス
+2. 必要なプロンプトを検索または閲覧
+3. 「コピー」をクリックして任意の AI モデルに貼り付け
 
-🚀 **ワンクリックプロンプト**: 様々なプロフェッショナルなプロンプトのセレクション。ワンクリックで ChatGPT などの AI モデルに送信し、望む回答を迅速に得ることができます。
+これだけです！詳細は[ユーザーガイド](https://www.aishort.top/ja/docs/guides/getting-started)をご覧ください。
 
-💻 **生産性の向上**: 最適化されたプロンプトを使用して、より正確で実用的なフィードバックを得て、学習や仕事のタスクを効率的に完了します。
+## AiShort を使う理由
 
-🌍 **多言語サポート**: 12 の主流言語で英語のプロンプトの翻訳を提供し、母国語でのデフォルト返信をサポートしているため、英語以外のユーザーも障壁なく使用できます。
+AiShort（ChatGPT Shortcut）は、あらゆるシーンに対応した AI プロンプトを素早く見つけられる厳選リストを提供します。
 
-💾 **収集と編集**: お気に入りのプロンプトをいつでも収集、編集、管理して将来の使用に備えることができます。
+### 基本機能
 
-📤 **エクスポートとバックアップ**: ワンクリックですべてのプロンプトをエクスポートし、バックアップ用に JSON 形式をサポートしているため、ローカルへの移行や保存が簡単です。
+🚀 **ワンクリックプロンプト** - 厳選されたプロフェッショナルなプロンプトをワンクリックでコピー。
 
-🌟 **プロンプトの共有**: お気に入りのプロンプトを他の人と共有して、より多くの創造性やアイデアを刺激します。
+🔍 **スマート検索** - タグフィルターとキーワード検索で素早く発見。
 
-🗳️ **コミュニティ投票**: Product Hunt や Reddit のように、コミュニティの投票によって優れたプロンプトがホームページに推薦されます。
+🌍 **12 言語対応** - すべてのプロンプトを多言語で翻訳、母国語での返答にも対応。
 
-📦 **すぐに使える**: 複雑な設定は不要です。[aishort.top](https://www.aishort.top/ja/)にアクセスして、すぐに体験を始めましょう。
+📦 **すぐに使える** - 登録不要、すぐに利用開始。
 
-AiShort（ChatGPT ショートカット）のプロンプトは、オンラインのセレクション、コミュニティの共有、および[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)から供給されています。私たちは定期的に更新し、常に新しいプロンプトとインスピレーションをお届けします。詳細な手順については、[ユーザーガイド](https://www.aishort.top/ja/docs/guides/getting-started)をご覧ください。
+### 高度な機能（ログイン後）
 
-アイデアやフィードバックを交換するために、私たちのコミュニティへようこそ：
+📂 **マイコレクション** - お気に入りをドラッグ＆ドロップで並べ替え、カスタムタグで整理。
 
-<a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
-</a>
+✏️ **カスタムプロンプト** - 自分だけのプロンプトを作成・編集・管理。
 
-<a href="https://discord.gg/PZTQfJ4GjX">
-    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
-</a>
+🗳️ **コミュニティ** - プロンプトを共有し、コミュニティで投票。
+
+📤 **エクスポート** - すべてのプロンプトを JSON でバックアップ。
+
+🔐 **複数のログイン方法** - パスワード、Google、メールリンク。
 
 ## ブラウザ拡張機能
 
-AiShort（ChatGPT ショートカット）拡張機能は、いつでも AiShort プロンプトライブラリにアクセスして、仕事や学習の効率を高めるのに役立ちます。Chrome、Edge、Firefox などの主要なブラウザをサポートし、ショートカット `Alt + Shift + S` で素早く呼び出せるサイドバーを備えています。
+いつでも AiShort プロンプトにアクセス。Chrome、Edge、Firefox 対応。`Alt + Shift + S`でサイドバーを表示。
 
 - **Chrome**: [Chrome ウェブストア](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [GitHub リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-
-さらに、Tampermonkey スクリプト - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)も提供しており、ユーザーはマッチングするドメイン名をカスタマイズし、任意のウェブサイトで AiShort サイドバーを使用できます。ただし、ChatGPT ページでのスクリプトコンテンツの挿入制限のため、スクリプトのサイドバー機能は ChatGPT ページ上のポップアップを介してアクティブになります。
+- **Firefox**: [Firefox アドオン](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 ## デプロイ
 
-ローカル環境、Vercel、Cloudflare Page、Docker を介したデプロイ、およびプロジェクトの変更に関する詳細な手順については、[ChatGPT ショートカットデプロイガイド](https://www.aishort.top/ja/docs/deploy)を参照してください。
+Vercel、Cloudflare Pages、Docker、またはローカル環境でデプロイ可能。[デプロイガイド](https://www.aishort.top/ja/docs/deploy)をご確認ください。
 
-## 同期更新
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-ワンクリックで Vercel に独自のプロジェクトをデプロイした場合、更新が常に示される問題が発生することがあります。これは、Vercel が現在のプロジェクトをフォークする代わりに新しいプロジェクトを作成するというデフォルトの動作に起因し、適切な更新検出を妨げます。再デプロイのために以下の手順に従うことをお勧めします：
+## コミュニティ
 
-1. 以前のリポジトリを削除します。
-2. ページ右上の「fork」ボタンを使用して現在のプロジェクトをフォークします。
-3. [Vercel の新規プロジェクトページ](https://vercel.com/new)で、Import Git Repository セクションから最近フォークしたプロジェクトを選択し、デプロイを進めます。
+フィードバックや交流はこちら：
 
-### 自動更新
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-グループ-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
+</a>
+<a href="https://discord.gg/PZTQfJ4GjX">
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
+</a>
 
-> Upstream Sync の実行中にエラーが発生した場合は、手動で一度 Sync Fork を実行してください。
+---
 
-プロジェクトをフォークした後、GitHub の制限により、フォークしたプロジェクトの Actions ページで手動で Workflows を有効にし、Upstream Sync Action をアクティブにする必要があります。アクティブにすると、更新は毎日自動的に実行されます。
-
-![自動更新](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-![自動更新の有効化](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
-
-### 手動更新
-
-即時更新については、フォークの同期に関する[GitHub ドキュメント](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)を確認してください。
-
-⭐ このプロジェクトにスターを付ける / 👀 ウォッチするか、作者をフォローして新機能の通知を受け取りましょう。
+⭐ スターで新機能の通知を受け取れます！

@@ -1,16 +1,1 @@
-{
-    "id": 253,
-    "es": {
-        "title": "Optimización del CV",
-        "prompt": "I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Spanish. Do you understand?.",
-        "description": "Le proporcionaré una descripción del puesto que me interesa solicitar. Leerá la descripción del puesto para comprender los requisitos clave del mismo, incluidos los años de experiencia, las competencias y el cargo. A continuación, le entregaré mi CV. Lo leerá detenidamente y me dará su opinión sobre la adecuación de mi currículum al puesto.",
-        "remark": "Personalizado y optimizado para su puesto y CV. Contribución de @uteundilse."
-    },
-    "tags": [
-        "contribute",
-        "article"
-    ],
-    "website": null,
-    "count": 2373,
-    "metaDescription": "¿Quieres adaptar tu currículum a un trabajo específico? Este prompt analiza una descripción de trabajo y tu currículum, y luego proporciona comentarios detallados para optimizar tu solicitud."
-}
+{"id":253,"es":{"title":"Optimización del CV","prompt":"I'm going to provide you with a job description for a job I'm interested to apply for. You're going to read the job description and understand the key requirements for the position – including years of experience, skills, position name. After that I'm going to give you my resume. You'll go over it and provide feedback based on how tailored my resume is for the job. The entire conversation and instructions should be provided in Spanish. Do you understand?.","description":"Le proporcionaré una descripción del puesto que me interesa solicitar. Leerá la descripción del puesto para comprender los requisitos clave del mismo, incluidos los años de experiencia, las competencias y el cargo. A continuación, le entregaré mi CV. Lo leerá detenidamente y me dará su opinión sobre la adecuación de mi currículum al puesto.","remark":"Personalizado y optimizado para su puesto y CV. Contribución de @uteundilse."},"tags":["contribute","article"],"website":null,"count":2373,"metaDescription":"¿Quieres adaptar tu currículum a un trabajo específico? Este prompt analiza una descripción de trabajo y tu currículum, y luego proporciona comentarios detallados para optimizar tu solicitud."}

@@ -1,15 +1,1 @@
-{
-    "id": 41,
-    "ko": {
-        "title": "유사 원본 재작성",
-        "prompt": "The entire conversation and instructions should be provided in Korean. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ",
-        "description": "의미를 유지하면서 반복을 피할 수 있도록 다음 단락을 5 가지 방법으로 다시 작성합니다.",
-        "remark": "텍스트 중복을 피하기 위해 지정된 콘텐츠의 여러 버전이 다시 작성됩니다."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 12827,
-    "metaDescription": "반복적인 텍스트를 피하고 싶으신가요? 이 AI 프롬프트를 사용하여 원래 의미를 유지하면서 단락을 5가지 다른 방식으로 재구성하세요. 글쓰기를 향상시키고 SEO를 개선하세요!"
-}
+{"id":41,"ko":{"title":"유사 원본 재작성","prompt":"The entire conversation and instructions should be provided in Korean. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ","description":"의미를 유지하면서 반복을 피할 수 있도록 다음 단락을 5 가지 방법으로 다시 작성합니다.","remark":"텍스트 중복을 피하기 위해 지정된 콘텐츠의 여러 버전이 다시 작성됩니다."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":12827,"metaDescription":"반복적인 텍스트를 피하고 싶으신가요? 이 AI 프롬프트를 사용하여 원래 의미를 유지하면서 단락을 5가지 다른 방식으로 재구성하세요. 글쓰기를 향상시키고 SEO를 개선하세요!"}

@@ -1,15 +1,1 @@
-{
-    "id": 210,
-    "bn": {
-        "title": "সাপ্তাহিক জেনারেটর",
-        "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ",
-        "description": "সবচেয়ে গুরুত্বপূর্ণ বিষয়বস্তুকে হাইলাইট করে এমন একটি সংক্ষিপ্ত সারসংক্ষেপ তৈরি করতে একটি চীনা সাপ্তাহিক প্রতিবেদনের ভিত্তি হিসাবে নীচে দেওয়া পাঠ্যটি ব্যবহার করুন। প্রতিবেদনটি মার্কডাউন বিন্যাসে লিখিত হওয়া উচিত এবং সাধারণ দর্শকদের জন্য পড়তে এবং বোঝা সহজ হওয়া উচিত। বিশেষ করে, স্টেকহোল্ডার এবং নীতি নির্ধারকদের জন্য দরকারী অন্তর্দৃষ্টি এবং বিশ্লেষণ প্রদানের উপর ফোকাস করুন। প্রয়োজনে আপনি যেকোনো অতিরিক্ত তথ্য বা উৎস ব্যবহার করতে পারেন।",
-        "remark": "দৈনিক কাজের বিষয়বস্তু অনুসারে, মূল পয়েন্টগুলি বের করুন এবং একটি সাপ্তাহিক প্রতিবেদন তৈরি করতে যথাযথভাবে প্রসারিত করুন।"
-    },
-    "tags": [
-        "article"
-    ],
-    "website": null,
-    "count": 6551,
-    "metaDescription": "সাপ্তাহিক প্রতিবেদন লিখতে হবে? আপনার কাজের তালিকা দিন, এবং এই প্রম্পটটি স্টেকহোল্ডারদের জন্য সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলি তুলে ধরে মার্কডাউনে একটি সংক্ষিপ্ত সারসংক্ষেপ তৈরি করবে।"
-}
+{"id":210,"bn":{"title":"সাপ্তাহিক জেনারেটর","prompt":"Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ","description":"সবচেয়ে গুরুত্বপূর্ণ বিষয়বস্তুকে হাইলাইট করে এমন একটি সংক্ষিপ্ত সারসংক্ষেপ তৈরি করতে একটি চীনা সাপ্তাহিক প্রতিবেদনের ভিত্তি হিসাবে নীচে দেওয়া পাঠ্যটি ব্যবহার করুন। প্রতিবেদনটি মার্কডাউন বিন্যাসে লিখিত হওয়া উচিত এবং সাধারণ দর্শকদের জন্য পড়তে এবং বোঝা সহজ হওয়া উচিত। বিশেষ করে, স্টেকহোল্ডার এবং নীতি নির্ধারকদের জন্য দরকারী অন্তর্দৃষ্টি এবং বিশ্লেষণ প্রদানের উপর ফোকাস করুন। প্রয়োজনে আপনি যেকোনো অতিরিক্ত তথ্য বা উৎস ব্যবহার করতে পারেন।","remark":"দৈনিক কাজের বিষয়বস্তু অনুসারে, মূল পয়েন্টগুলি বের করুন এবং একটি সাপ্তাহিক প্রতিবেদন তৈরি করতে যথাযথভাবে প্রসারিত করুন।"},"tags":["article"],"website":null,"count":6551,"metaDescription":"সাপ্তাহিক প্রতিবেদন লিখতে হবে? আপনার কাজের তালিকা দিন, এবং এই প্রম্পটটি স্টেকহোল্ডারদের জন্য সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলি তুলে ধরে মার্কডাউনে একটি সংক্ষিপ্ত সারসংক্ষেপ তৈরি করবে।"}

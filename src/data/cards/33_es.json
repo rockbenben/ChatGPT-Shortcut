@@ -1,15 +1,1 @@
-{
-    "id": 33,
-    "es": {
-        "title": "Agrupación por relevancia semántica",
-        "prompt": "The entire conversation and instructions should be provided in Spanish. Cluster the following keywords into groups based on their semantic relevance: [keywords].",
-        "description": "Las siguientes palabras clave se clasifican según su relevancia semántica. [palabra clave]",
-        "remark": "Las palabras clave se agrupan según su relevancia semántica."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 232,
-    "metaDescription": "¿Cansado de agrupar palabras clave manualmente? Este prompt agrupa palabras clave según su relevancia semántica, ayudándote a organizar tu estrategia de SEO de manera más efectiva. ¡Optimiza tu flujo de trabajo ahora!"
-}
+{"id":33,"es":{"title":"Agrupación por relevancia semántica","prompt":"The entire conversation and instructions should be provided in Spanish. Cluster the following keywords into groups based on their semantic relevance: [keywords].","description":"Las siguientes palabras clave se clasifican según su relevancia semántica. [palabra clave]","remark":"Las palabras clave se agrupan según su relevancia semántica."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":232,"metaDescription":"¿Cansado de agrupar palabras clave manualmente? Este prompt agrupa palabras clave según su relevancia semántica, ayudándote a organizar tu estrategia de SEO de manera más efectiva. ¡Optimiza tu flujo de trabajo ahora!"}

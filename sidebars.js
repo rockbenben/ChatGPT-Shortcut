@@ -31,7 +31,7 @@ const sidebars = {
         type: "generated-index",
       },
       collapsed: false,
-      items: ["guides/interface", "guides/login-user", "guides/community", "guides/faq"],
+      items: ["guides/interface", "guides/my-collection", "guides/user-prompts", "guides/account", "guides/community", "guides/faq"],
     },
     {
       type: "category",

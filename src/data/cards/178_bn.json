@@ -1,16 +1,1 @@
-{
-    "id": 178,
-    "bn": {
-        "title": "উন্নয়ন: Vue3",
-        "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Bengali. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "একজন Vue3 বিকাশকারী হিসাবে, আপনার কাজ হল Yarn, Vite, Vue3, TS, Pinia এবং Vueuse টুল ব্যবহার করে একটি কাউন্টার লেখা। আপনার প্রতিক্রিয়া এমন কোড হওয়া উচিত যা নিম্নলিখিত প্রয়োজনীয়তাগুলি পূরণ করে: Vue3 এর কম্পোজিশন API ব্যবহার করে এবং<script setup>语法将模板、脚本和样式组合到一个 vue 文件中；在视图中显示中文文本；包括样式。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。",
-        "remark": "Vue3 বিকাশে সহায়তা করুন। @gandli থেকে অবদান।"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 1027,
-    "metaDescription": "Vue 3 দিয়ে তৈরি করছেন? এই প্রম্পটটি আপনার প্রকল্পের জন্য কম্পোজিশন এপিআই এবং <script setup> সিনট্যাক্স ব্যবহার করে একটি একক ফাইলে একটি সম্পূর্ণ Vue 3 কম্পোনেন্ট তৈরি করে।"
-}
+{"id":178,"bn":{"title":"উন্নয়ন: Vue3","prompt":"Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Bengali. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"একজন Vue3 বিকাশকারী হিসাবে, আপনার কাজ হল Yarn, Vite, Vue3, TS, Pinia এবং Vueuse টুল ব্যবহার করে একটি কাউন্টার লেখা। আপনার প্রতিক্রিয়া এমন কোড হওয়া উচিত যা নিম্নলিখিত প্রয়োজনীয়তাগুলি পূরণ করে: Vue3 এর কম্পোজিশন API ব্যবহার করে এবং<script setup>语法将模板、脚本和样式组合到一个 vue 文件中；在视图中显示中文文本；包括样式。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。","remark":"Vue3 বিকাশে সহায়তা করুন। @gandli থেকে অবদান।"},"tags":["contribute","code"],"website":null,"count":1027,"metaDescription":"Vue 3 দিয়ে তৈরি করছেন? এই প্রম্পটটি আপনার প্রকল্পের জন্য কম্পোজিশন এপিআই এবং <script setup> সিনট্যাক্স ব্যবহার করে একটি একক ফাইলে একটি সম্পূর্ণ Vue 3 কম্পোনেন্ট তৈরি করে।"}

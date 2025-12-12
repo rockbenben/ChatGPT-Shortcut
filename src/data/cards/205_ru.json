@@ -1,16 +1,1 @@
-{
-    "id": 205,
-    "ru": {
-        "title": "Подведение итогов: дистилляция ядра",
-        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Russian. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
-        "description": "То, что Вы сейчас сказали, очень точно и полно, но это трудно запомнить, поэтому не могли бы Вы сделать грубое, менее точное, но в целом правильное, упрощенное обобщение?",
-        "remark": "Упрощенное изложение сложных ответов, выдаваемых ИИ, за вычетом некоторых излишне подробных \"сведений о необходимости\". Предоставлено @hanson-reas."
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 3312,
-    "metaDescription": "Объяснение ИИ слишком сложное? Используйте этот последующий промпт, чтобы получить грубое, легкое для понимания резюме, которое все еще отражает основной смысл исходного ответа."
-}
+{"id":205,"ru":{"title":"Подведение итогов: дистилляция ядра","prompt":"Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Russian. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.","description":"То, что Вы сейчас сказали, очень точно и полно, но это трудно запомнить, поэтому не могли бы Вы сделать грубое, менее точное, но в целом правильное, упрощенное обобщение?","remark":"Упрощенное изложение сложных ответов, выдаваемых ИИ, за вычетом некоторых излишне подробных \"сведений о необходимости\". Предоставлено @hanson-reas."},"tags":["contribute","write"],"website":null,"count":3312,"metaDescription":"Объяснение ИИ слишком сложное? Используйте этот последующий промпт, чтобы получить грубое, легкое для понимания резюме, которое все еще отражает основной смысл исходного ответа."}

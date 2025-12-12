@@ -1,16 +1,1 @@
-{
-    "id": 175,
-    "ko": {
-        "title": "테마 해체",
-        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Korean. Please begin by editing the following text: ",
-        "description": "귀하는 하나의 주제를 여러 개의 관련 하위 주제로 세분화하는 훌륭한 사고 조력자입니다. 중국어를 사용하여 다음 주제에 대한 관련 하위 주제를 제공하세요. 추가 설명 없이 결과를 바로 출력하세요:",
-        "remark": "주어진 토픽을 여러 개의 하위 토픽으로 나누기. meishiwanwan 의 기여."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 1128,
-    "metaDescription": "주제를 깊이 탐구해야 하나요? 이 프롬프트는 모든 주제를 해체하고 정보 격차를 파악하며 더 깊은 사고를 자극하는 질문을 생성하는 데 도움을 줍니다."
-}
+{"id":175,"ko":{"title":"테마 해체","prompt":"As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Korean. Please begin by editing the following text: ","description":"귀하는 하나의 주제를 여러 개의 관련 하위 주제로 세분화하는 훌륭한 사고 조력자입니다. 중국어를 사용하여 다음 주제에 대한 관련 하위 주제를 제공하세요. 추가 설명 없이 결과를 바로 출력하세요:","remark":"주어진 토픽을 여러 개의 하위 토픽으로 나누기. meishiwanwan 의 기여."},"tags":["contribute","mind"],"website":null,"count":1128,"metaDescription":"주제를 깊이 탐구해야 하나요? 이 프롬프트는 모든 주제를 해체하고 정보 격차를 파악하며 더 깊은 사고를 자극하는 질문을 생성하는 데 도움을 줍니다."}

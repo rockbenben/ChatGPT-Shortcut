@@ -1,15 +1,1 @@
-{
-    "id": 38,
-    "bn": {
-        "title": "পৃষ্ঠার বিবরণ",
-        "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Bengali. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
-        "description": "নীচের পাঠ্যের জন্য 150টি অক্ষর পর্যন্ত 5টি অনন্য মেটা বর্ণনা তৈরি করুন৷ তাদের আকর্ষক হতে হবে, একটি কল টু অ্যাকশন থাকতে হবে এবং [প্রাথমিক কীওয়ার্ড] অন্তর্ভুক্ত করতে হবে: [পৃষ্ঠার বিষয়বস্তু]",
-        "remark": "পৃষ্ঠার বিষয়বস্তুর জন্য মেটা বিবরণ তৈরি করুন।"
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 801,
-    "metaDescription": "মেটা ডেসক্রিপশন নিয়ে সমস্যায় পড়েছেন? এই প্রম্পটটি ১৫০ অক্ষরের মধ্যে ৫টি অনন্য এবং আকর্ষণীয় মেটা ডেসক্রিপশন তৈরি করে, যেখানে কল-টু-অ্যাকশন এবং আপনার টার্গেট কীওয়ার্ড অন্তর্ভুক্ত থাকে।"
-}
+{"id":38,"bn":{"title":"পৃষ্ঠার বিবরণ","prompt":"Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Bengali. They should be catchy with a call to action, including the term [keywords] in them: [page content].","description":"নীচের পাঠ্যের জন্য 150টি অক্ষর পর্যন্ত 5টি অনন্য মেটা বর্ণনা তৈরি করুন৷ তাদের আকর্ষক হতে হবে, একটি কল টু অ্যাকশন থাকতে হবে এবং [প্রাথমিক কীওয়ার্ড] অন্তর্ভুক্ত করতে হবে: [পৃষ্ঠার বিষয়বস্তু]","remark":"পৃষ্ঠার বিষয়বস্তুর জন্য মেটা বিবরণ তৈরি করুন।"},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":801,"metaDescription":"মেটা ডেসক্রিপশন নিয়ে সমস্যায় পড়েছেন? এই প্রম্পটটি ১৫০ অক্ষরের মধ্যে ৫টি অনন্য এবং আকর্ষণীয় মেটা ডেসক্রিপশন তৈরি করে, যেখানে কল-টু-অ্যাকশন এবং আপনার টার্গেট কীওয়ার্ড অন্তর্ভুক্ত থাকে।"}

@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "fr": {
-        "title": "Assistant chargé des questions",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
-        "description": "Vous savez poser des questions, et vous aborderez un paragraphe avec des préoccupations et des questions possibles qui peuvent être utilisées pour promouvoir une réflexion plus complète.",
-        "remark": "Poser des questions à partir de plusieurs points de vue pour susciter une réflexion plus approfondie. Contribution de @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "Vous voulez réfléchir de manière plus critique à un texte ? Ce prompt agit comme un assistant de questions, générant des questions perspicaces qui remettent en question votre perspective."
-}
+{"id":176,"fr":{"title":"Assistant chargé des questions","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ","description":"Vous savez poser des questions, et vous aborderez un paragraphe avec des préoccupations et des questions possibles qui peuvent être utilisées pour promouvoir une réflexion plus complète.","remark":"Poser des questions à partir de plusieurs points de vue pour susciter une réflexion plus approfondie. Contribution de @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"Vous voulez réfléchir de manière plus critique à un texte ? Ce prompt agit comme un assistant de questions, générant des questions perspicaces qui remettent en question votre perspective."}

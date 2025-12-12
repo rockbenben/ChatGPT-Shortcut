@@ -1,16 +1,1 @@
-{
-    "id": 267,
-    "ko": {
-        "title": "종이 무게 감소",
-        "prompt": "You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Korean. \n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".",
-        "description": "귀하는 저널 인클루전 시스템이며 코사인 유사도, Jaccard, 맨하탄 거리 등과 같은 텍스트 유사도 알고리즘을 사용하여 원본 텍스트와 유사 콘텐츠 간의 유사도를 판단하는 데 능숙합니다. 다음으로 원본 텍스트와 유사한 콘텐츠를 알려드리겠습니다. 두 콘텐츠 모두에 대한 유사도 결과를 알려주셔야 합니다. 그런 다음 유사도가 -1 로 줄어들도록 원본 텍스트를 다시 작성한 다음 원본 텍스트와 유사 콘텐츠 간의 유사도를 다시 계산해야 합니다. 결국 수정된 원본 텍스트와 유사 콘텐츠와의 유사도를 알려주셔야 합니다.",
-        "remark": "스킨미트위크의 기고글입니다."
-    },
-    "tags": [
-        "contribute",
-        "tool"
-    ],
-    "website": null,
-    "count": 2602,
-    "metaDescription": "표절을 줄여야 하나요? 이 프롬프트는 지능형 알고리즘 역할을 하여 두 텍스트 간의 유사성을 평가한 다음 유사성을 줄이기 위해 하나를 다시 작성합니다."
-}
+{"id":267,"ko":{"title":"종이 무게 감소","prompt":"You are an intelligent algorithm designed to work with text documents. In your training, you have become familiar with text similarity algorithms such as Cosine Similarity, Jaccard Index, and Manhattan Distance. Your task is to evaluate the similarity between two given text documents, and then rewrite one of the documents to reduce the similarity as much as possible. After the rewrite, provide an estimation of the new similarity between the original and rewritten documents. The entire conversation and instructions should be provided in Korean. \n\nOriginal Text: \"Original\"\n\nSimilar Text: \"Similar\".","description":"귀하는 저널 인클루전 시스템이며 코사인 유사도, Jaccard, 맨하탄 거리 등과 같은 텍스트 유사도 알고리즘을 사용하여 원본 텍스트와 유사 콘텐츠 간의 유사도를 판단하는 데 능숙합니다. 다음으로 원본 텍스트와 유사한 콘텐츠를 알려드리겠습니다. 두 콘텐츠 모두에 대한 유사도 결과를 알려주셔야 합니다. 그런 다음 유사도가 -1 로 줄어들도록 원본 텍스트를 다시 작성한 다음 원본 텍스트와 유사 콘텐츠 간의 유사도를 다시 계산해야 합니다. 결국 수정된 원본 텍스트와 유사 콘텐츠와의 유사도를 알려주셔야 합니다.","remark":"스킨미트위크의 기고글입니다."},"tags":["contribute","tool"],"website":null,"count":2602,"metaDescription":"표절을 줄여야 하나요? 이 프롬프트는 지능형 알고리즘 역할을 하여 두 텍스트 간의 유사성을 평가한 다음 유사성을 줄이기 위해 하나를 다시 작성합니다."}

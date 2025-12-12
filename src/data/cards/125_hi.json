@@ -1,15 +1,1 @@
-{
-    "id": 125,
-    "hi": {
-        "title": "पाठ साहसिक खेल",
-        "prompt": "I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Hindi. my first command is wake up.",
-        "description": "मैं चाहता हूं कि आप एक टेक्स्ट आधारित साहसिक गेम के रूप में कार्य करें। मैं कमांड टाइप करूंगा, और आप चरित्र ने जो देखा उसके विवरण के साथ उत्तर देंगे। मैं चाहता हूं कि आप गेम आउटपुट को केवल कोड के एक अनूठे ब्लॉक में लौटाएं, और कुछ नहीं। जब तक मैं तुमसे न कहूँ, स्पष्टीकरण न लिखें, आदेश टाइप न करें। जब मुझे आपको अंग्रेजी में कुछ बताना होता है, तो मैं पाठ को ब्रेसिज़ में डाल देता हूं {इस तरह से}। मेरा पहला आदेश है जाग जाओ.",
-        "remark": "पाठ आधारित साहसिक खेल"
-    },
-    "tags": [
-        "games"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-text-based-adventure-game",
-    "count": 1892,
-    "metaDescription": "क्या आपको क्लासिक टेक्स्ट एडवेंचर पसंद हैं? यह प्रॉम्प्ट चैटजीपीटी को एक टेक्स्ट-आधारित एडवेंचर गेम में बदल देता है। 'जागें' जैसे कमांड टाइप करें और एक इंटरैक्टिव कहानी का अन्वेषण करें।"
-}
+{"id":125,"hi":{"title":"पाठ साहसिक खेल","prompt":"I want you to act as a text based adventure game. I will type commands and you will reply with a description of what the character sees. I want you to only reply with the game output, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. when i need to tell you something in english, i will do so by putting text inside curly brackets {like this}. The entire conversation and instructions should be provided in Hindi. my first command is wake up.","description":"मैं चाहता हूं कि आप एक टेक्स्ट आधारित साहसिक गेम के रूप में कार्य करें। मैं कमांड टाइप करूंगा, और आप चरित्र ने जो देखा उसके विवरण के साथ उत्तर देंगे। मैं चाहता हूं कि आप गेम आउटपुट को केवल कोड के एक अनूठे ब्लॉक में लौटाएं, और कुछ नहीं। जब तक मैं तुमसे न कहूँ, स्पष्टीकरण न लिखें, आदेश टाइप न करें। जब मुझे आपको अंग्रेजी में कुछ बताना होता है, तो मैं पाठ को ब्रेसिज़ में डाल देता हूं {इस तरह से}। मेरा पहला आदेश है जाग जाओ.","remark":"पाठ आधारित साहसिक खेल"},"tags":["games"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-text-based-adventure-game","count":1892,"metaDescription":"क्या आपको क्लासिक टेक्स्ट एडवेंचर पसंद हैं? यह प्रॉम्प्ट चैटजीपीटी को एक टेक्स्ट-आधारित एडवेंचर गेम में बदल देता है। 'जागें' जैसे कमांड टाइप करें और एक इंटरैक्टिव कहानी का अन्वेषण करें।"}

@@ -1,16 +1,1 @@
-{
-    "id": 263,
-    "fr": {
-        "title": "Assistant de test d'apprentissage",
-        "prompt": "I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in French. The more specific and detailed your questions are, the more accurate and valuable my responses will be.",
-        "description": "Je me plonge dans la [programmation python] et j'aimerais que vous m'aidiez à vérifier et à améliorer mes connaissances. Veuillez poser des questions spécifiques à ce sujet ci-dessous afin que je puisse mieux comprendre le sujet et combler les lacunes de mes connaissances. Plus vos questions seront précises et détaillées, plus je serai en mesure de vous fournir des réponses précises et utiles.",
-        "remark": "L'IA vous aidera à vous familiariser avec les connaissances en fonction des questions que vous aurez choisies. Contribution de @ScenerorSun."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 472,
-    "metaDescription": "Besoin de tester vos connaissances sur un sujet ? Ce prompt agit comme un assistant de quiz, vous fournissant des questions spécifiques pour vous aider à comprendre un sujet et à trouver des lacunes dans vos connaissances."
-}
+{"id":263,"fr":{"title":"Assistant de test d'apprentissage","prompt":"I am deeply immersed in studying [TOPIC], and I would appreciate your assistance in assessing and enhancing my understanding of this subject. Please provide specific questions regarding it below, so that I can better comprehend the subject matter and address any gaps in my knowledge. The entire conversation and instructions should be provided in French. The more specific and detailed your questions are, the more accurate and valuable my responses will be.","description":"Je me plonge dans la [programmation python] et j'aimerais que vous m'aidiez à vérifier et à améliorer mes connaissances. Veuillez poser des questions spécifiques à ce sujet ci-dessous afin que je puisse mieux comprendre le sujet et combler les lacunes de mes connaissances. Plus vos questions seront précises et détaillées, plus je serai en mesure de vous fournir des réponses précises et utiles.","remark":"L'IA vous aidera à vous familiariser avec les connaissances en fonction des questions que vous aurez choisies. Contribution de @ScenerorSun."},"tags":["contribute","pedagogy"],"website":null,"count":472,"metaDescription":"Besoin de tester vos connaissances sur un sujet ? Ce prompt agit comme un assistant de quiz, vous fournissant des questions spécifiques pour vous aider à comprendre un sujet et à trouver des lacunes dans vos connaissances."}

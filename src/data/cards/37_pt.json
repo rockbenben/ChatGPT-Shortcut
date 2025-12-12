@@ -1,15 +1,1 @@
-{
-    "id": 37,
-    "pt": {
-        "title": "verificação de plágio",
-        "prompt": "I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Portuguese. My first sentence is ",
-        "description": "Quero que actues como um verificador de plágio. Vou escrever frases para ti e só terás de responder a verificações de plágio não detectadas na língua da frase dada e nada mais. Não escrevam explicações nas vossas respostas. A minha primeira frase será \"verificar o conteúdo",
-        "remark": "Determina se a frase introduzida existe na base de dados ChatGPT."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker",
-    "count": 745,
-    "metaDescription": "Quer saber se uma frase é original? Use este prompt para fazer o AI atuar como um verificador de plágio, ajudando a determinar se um texto provavelmente será sinalizado. Uma ferramenta útil para escritores."
-}
+{"id":37,"pt":{"title":"verificação de plágio","prompt":"I want you to act as a plagiarism checker. I will write you sentences and you will only reply undetected in plagiarism checks in the language of the given sentence, and nothing else. Do not write explanations on replies. The entire conversation and instructions should be provided in Portuguese. My first sentence is ","description":"Quero que actues como um verificador de plágio. Vou escrever frases para ti e só terás de responder a verificações de plágio não detectadas na língua da frase dada e nada mais. Não escrevam explicações nas vossas respostas. A minha primeira frase será \"verificar o conteúdo","remark":"Determina se a frase introduzida existe na base de dados ChatGPT."},"tags":["text"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker","count":745,"metaDescription":"Quer saber se uma frase é original? Use este prompt para fazer o AI atuar como um verificador de plágio, ajudando a determinar se um texto provavelmente será sinalizado. Uma ferramenta útil para escritores."}

@@ -1,16 +1,1 @@
-{
-    "id": 257,
-    "de": {
-        "title": "Akademisches Schreiben - Begriffsdefinition",
-        "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in German. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.",
-        "description": "Als Spitzenforscher und Experte auf dem [entsprechenden Gebiet] erläutern Sie bitte ausführlich das Konzept von [Konzept]. Ihre Antwort sollte den Ursprung, die theoretische Grundlage, die gemeinsamen Komponenten, die Anwendungsanforderungen, die wichtigsten Referenzen und alle anderen relevanten Informationen enthalten, die Sie für ein umfassendes Verständnis für notwendig halten.",
-        "remark": "Bietet erste Ideen und Material für den Abschnitt zur Begriffsdefinition in akademischen Schriften. Beitrag von @JuliaZhu-0601."
-    },
-    "tags": [
-        "contribute",
-        "academic"
-    ],
-    "website": null,
-    "count": 1400,
-    "metaDescription": "Schreiben Sie eine wissenschaftliche Arbeit? Dieser Prompt lässt die KI als Spitzenforscher agieren und liefert eine detaillierte Definition jedes Konzepts mit seinem Ursprung, seinen Grundlagen und wichtigen Referenzen."
-}
+{"id":257,"de":{"title":"Akademisches Schreiben - Begriffsdefinition","prompt":"As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in German. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.","description":"Als Spitzenforscher und Experte auf dem [entsprechenden Gebiet] erläutern Sie bitte ausführlich das Konzept von [Konzept]. Ihre Antwort sollte den Ursprung, die theoretische Grundlage, die gemeinsamen Komponenten, die Anwendungsanforderungen, die wichtigsten Referenzen und alle anderen relevanten Informationen enthalten, die Sie für ein umfassendes Verständnis für notwendig halten.","remark":"Bietet erste Ideen und Material für den Abschnitt zur Begriffsdefinition in akademischen Schriften. Beitrag von @JuliaZhu-0601."},"tags":["contribute","academic"],"website":null,"count":1400,"metaDescription":"Schreiben Sie eine wissenschaftliche Arbeit? Dieser Prompt lässt die KI als Spitzenforscher agieren und liefert eine detaillierte Definition jedes Konzepts mit seinem Ursprung, seinen Grundlagen und wichtigen Referenzen."}

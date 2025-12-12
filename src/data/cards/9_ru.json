@@ -1,15 +1,1 @@
-{
-    "id": 9,
-    "ru": {
-        "title": "Продолжение статьи",
-        "prompt": "The entire conversation and instructions should be provided in Russian. Continue writing an article about [theme] that begins with the following sentence: ",
-        "description": "Продолжайте писать статью на китайском языке на тему [TOPIC OF ARTICLE], начиная со следующего предложения: [ARTICLE START].",
-        "remark": "Продолжите вступительную часть эссе, чтобы завершить его, исходя из темы эссе."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 8775,
-    "metaDescription": "Больше никакого писательского блока. Просто укажите тему и начальное предложение, и этот промпт ИИ без проблем продолжит писать убедительную и связную статью для вас."
-}
+{"id":9,"ru":{"title":"Продолжение статьи","prompt":"The entire conversation and instructions should be provided in Russian. Continue writing an article about [theme] that begins with the following sentence: ","description":"Продолжайте писать статью на китайском языке на тему [TOPIC OF ARTICLE], начиная со следующего предложения: [ARTICLE START].","remark":"Продолжите вступительную часть эссе, чтобы завершить его, исходя из темы эссе."},"tags":["write"],"website":null,"count":8775,"metaDescription":"Больше никакого писательского блока. Просто укажите тему и начальное предложение, и этот промпт ИИ без проблем продолжит писать убедительную и связную статью для вас."}

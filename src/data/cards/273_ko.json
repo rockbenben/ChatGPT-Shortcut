@@ -1,16 +1,1 @@
-{
-    "id": 273,
-    "ko": {
-        "title": "정보의 고치에서 벗어나기",
-        "prompt": "Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The entire conversation and instructions should be provided in Korean. The larger the number, the less relevant the information you provide should be to the information cocoon. Please respond according to this principle, and parse and respond to the following words:.",
-        "description": "나는 당신에게 단어 집합을 제공하고, 당신은이 단어 집합과 관련 정보를 사용하여 정보 고치를 형성 한 다음 정보 고치와 관련이없는 정보를 출력하고, 숫자를 입력하고, 최대 숫자는 100 이며, 숫자가 클수록 출력 정보와 고치 속의 정보는 정보 관계에서 더 멀어집니다.",
-        "remark": "모르는 것을 발견하는 데 사용하세요. ergf991 의 기여."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 936,
-    "metaDescription": "정보 거품에서 벗어나고 싶으신가요? 키워드 세트를 제공하면 이 프롬프트가 선택한 숫자가 높을수록 관련성이 낮아지는 관련 정보를 제공합니다."
-}
+{"id":273,"ko":{"title":"정보의 고치에서 벗어나기","prompt":"Below is a set of words that form an information cocoon. You need to output information related to these words based on a number I give (up to 100). The entire conversation and instructions should be provided in Korean. The larger the number, the less relevant the information you provide should be to the information cocoon. Please respond according to this principle, and parse and respond to the following words:.","description":"나는 당신에게 단어 집합을 제공하고, 당신은이 단어 집합과 관련 정보를 사용하여 정보 고치를 형성 한 다음 정보 고치와 관련이없는 정보를 출력하고, 숫자를 입력하고, 최대 숫자는 100 이며, 숫자가 클수록 출력 정보와 고치 속의 정보는 정보 관계에서 더 멀어집니다.","remark":"모르는 것을 발견하는 데 사용하세요. ergf991 의 기여."},"tags":["contribute","mind"],"website":null,"count":936,"metaDescription":"정보 거품에서 벗어나고 싶으신가요? 키워드 세트를 제공하면 이 프롬프트가 선택한 숫자가 높을수록 관련성이 낮아지는 관련 정보를 제공합니다."}

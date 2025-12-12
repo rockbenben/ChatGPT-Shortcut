@@ -1,16 +1,1 @@
-{
-    "id": 258,
-    "ar": {
-        "title": "توليد عنوان الورق",
-        "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Arabic. My abstract is \"XXX\", my key words are \"XXX\".",
-        "description": "سأقدم لك الملخصات والكلمات الرئيسية لورقة علمية بأي لغة وسوف تكتشف اللغة وترد بنفس اللغة. مهمتك هي أن تزودني بعناوين أوراق علمية بنفس اللغة بناءً على الملخصات والكلمات الرئيسية. يجب أن يكون عنوان الورقة العلمية موجزًا وواضحًا وغنيًا بالمعلومات. يجب تجنب كلمات مثل البحث أو التحقيق أو التطوير أو الملاحظة. تأكد من أن العنوان يستحوذ على قلب جمهورك على الفور.",
-        "remark": "قم بإنشاء عنوان أطروحة بناءً على الملخص والكلمات الرئيسية. مساهمة منScenerorSun ، مقتبسة من المحطة B @ 沙 蜜 粥 巴。"
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 1463,
-    "metaDescription": "هل تحتاج إلى عنوان لورقتك العلمية؟ قدم ملخصك وكلماتك الرئيسية، وسيقوم هذا الموجه بإنشاء عنوان موجز وواضح وغني بالمعلومات لجذب جمهورك."
-}
+{"id":258,"ar":{"title":"توليد عنوان الورق","prompt":"I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Arabic. My abstract is \"XXX\", my key words are \"XXX\".","description":"سأقدم لك الملخصات والكلمات الرئيسية لورقة علمية بأي لغة وسوف تكتشف اللغة وترد بنفس اللغة. مهمتك هي أن تزودني بعناوين أوراق علمية بنفس اللغة بناءً على الملخصات والكلمات الرئيسية. يجب أن يكون عنوان الورقة العلمية موجزًا وواضحًا وغنيًا بالمعلومات. يجب تجنب كلمات مثل البحث أو التحقيق أو التطوير أو الملاحظة. تأكد من أن العنوان يستحوذ على قلب جمهورك على الفور.","remark":"قم بإنشاء عنوان أطروحة بناءً على الملخص والكلمات الرئيسية. مساهمة منScenerorSun ، مقتبسة من المحطة B @ 沙 蜜 粥 巴。"},"tags":["contribute","write"],"website":null,"count":1463,"metaDescription":"هل تحتاج إلى عنوان لورقتك العلمية؟ قدم ملخصك وكلماتك الرئيسية، وسيقوم هذا الموجه بإنشاء عنوان موجز وواضح وغني بالمعلومات لجذب جمهورك."}

@@ -1,15 +1,1 @@
-{
-    "id": 4,
-    "ko": {
-        "title": "논문 스타일의 답변",
-        "prompt": "The entire conversation and instructions should be provided in Korean. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-        "description": "서론, 본문, 결론 단락을 포함하여 다음에 답하는 매우 상세한 에세이를 작성하세요: [질문]",
-        "remark": "에세이 형식으로 질문에 대해 토론하면 일관성 있고 구조화된 고품질의 답변을 얻을 수 있습니다."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
-    "count": 15164,
-    "metaDescription": "구조적이고 상세한 에세이 답변을 작성하는 방법은? 이 프롬프트는 명확한 서론, 본론, 결론을 갖춘 설득력 있는 답변을 작성하도록 안내합니다. 당신의 학술적 글쓰기를 완성하세요."
-}
+{"id":4,"ko":{"title":"논문 스타일의 답변","prompt":"The entire conversation and instructions should be provided in Korean. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ","description":"서론, 본문, 결론 단락을 포함하여 다음에 답하는 매우 상세한 에세이를 작성하세요: [질문]","remark":"에세이 형식으로 질문에 대해 토론하면 일관성 있고 구조화된 고품질의 답변을 얻을 수 있습니다."},"tags":["article"],"website":"https://learnprompting.org/docs/applied_prompting/short_response","count":15164,"metaDescription":"구조적이고 상세한 에세이 답변을 작성하는 방법은? 이 프롬프트는 명확한 서론, 본론, 결론을 갖춘 설득력 있는 답변을 작성하도록 안내합니다. 당신의 학술적 글쓰기를 완성하세요."}

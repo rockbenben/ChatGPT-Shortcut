@@ -1,15 +1,1 @@
-{
-    "id": 104,
-    "ru": {
-        "title": "Интерпретатор PHP",
-        "prompt": "I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. My first command is ",
-        "description": "Я хочу, чтобы вы действовали как php-интерпретатор. Я пишу для вас код, а вы отвечаете выводом php-интерпретатора. Я хочу, чтобы вы отвечали только выводом терминала в пределах уникального блока кода, и ничем больше. Не вводите команды, пока я не проинструктирую вас об этом. Когда мне нужно будет сказать вам что-то на английском языке, я буду заключать текст в фигурные скобки {Remarks text}.",
-        "remark": "Интерпретатор PHP"
-    },
-    "tags": [
-        "interpreter"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "count": 196,
-    "metaDescription": "Хотите выполнить PHP-код на лету? Используйте этот промпт, чтобы AI выступил в роли интерпретатора PHP. Получите вывод терминала вашего кода прямо в ответе."
-}
+{"id":104,"ru":{"title":"Интерпретатор PHP","prompt":"I want you to act like a php interpreter. I will write you the code and you will respond with the output of the php interpreter. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. Do not type commands unless I instruct you to do so. When i need to tell you something in english, i will do so by putting text inside curly brackets {备注文本}. My first command is ","description":"Я хочу, чтобы вы действовали как php-интерпретатор. Я пишу для вас код, а вы отвечаете выводом php-интерпретатора. Я хочу, чтобы вы отвечали только выводом терминала в пределах уникального блока кода, и ничем больше. Не вводите команды, пока я не проинструктирую вас об этом. Когда мне нужно будет сказать вам что-то на английском языке, я буду заключать текст в фигурные скобки {Remarks text}.","remark":"Интерпретатор PHP"},"tags":["interpreter"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter","count":196,"metaDescription":"Хотите выполнить PHP-код на лету? Используйте этот промпт, чтобы AI выступил в роли интерпретатора PHP. Получите вывод терминала вашего кода прямо в ответе."}

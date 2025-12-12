@@ -1,16 +1,1 @@
-{
-    "id": 247,
-    "de": {
-        "title": "Diskussionen im Klassenzimmer simulieren",
-        "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in German. The first term is:.",
-        "description": "Du musst mir helfen, mich an die Erklärungen der Substantive zu erinnern, und nachdem ich ein Substantiv eingegeben habe, wirst du fünf Schüler simulieren, die eine Klassenrede über dieses Substantiv halten. Die Diskussion muss humorvoll und leicht zu verstehen sein.",
-        "remark": "Diskussionen unter den Mitschülern helfen, das Thema zu verstehen und sich zu merken. Beitrag von @A380747."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 432,
-    "metaDescription": "Möchten Sie eine unterhaltsame Möglichkeit, sich Konzepte zu merken? Dieser Prompt simuliert eine Klassendiskussion, bei der 5 Schüler humorvolle und leicht verständliche Erklärungen für jedes von Ihnen angegebene Substantiv anbieten."
-}
+{"id":247,"de":{"title":"Diskussionen im Klassenzimmer simulieren","prompt":"I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in German. The first term is:.","description":"Du musst mir helfen, mich an die Erklärungen der Substantive zu erinnern, und nachdem ich ein Substantiv eingegeben habe, wirst du fünf Schüler simulieren, die eine Klassenrede über dieses Substantiv halten. Die Diskussion muss humorvoll und leicht zu verstehen sein.","remark":"Diskussionen unter den Mitschülern helfen, das Thema zu verstehen und sich zu merken. Beitrag von @A380747."},"tags":["contribute","pedagogy"],"website":null,"count":432,"metaDescription":"Möchten Sie eine unterhaltsame Möglichkeit, sich Konzepte zu merken? Dieser Prompt simuliert eine Klassendiskussion, bei der 5 Schüler humorvolle und leicht verständliche Erklärungen für jedes von Ihnen angegebene Substantiv anbieten."}

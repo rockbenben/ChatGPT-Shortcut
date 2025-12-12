@@ -1,15 +1,1 @@
-{
-    "id": 22,
-    "de": {
-        "title": "Stellenbewerbung",
-        "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in German. Can you write a cover letter for a job application about myself?.",
-        "description": "Um mich für eine Stelle zu bewerben, möchte ich ein neues Anschreiben verfassen. Bitte schreiben Sie ein Anschreiben, in dem Sie meine technischen Fähigkeiten beschreiben. Ich arbeite seit [LEBENSLAUF] Jahren bei [JAHRE DER ERFAHRUNG]. Ich arbeite seit 8 Monaten als Front-End-Entwickler. Ich habe mich durch die Übernahme einer Reihe von Tools weiterentwickelt. Zu diesen Tools gehören unter anderem [SKILLS]. Ich möchte [erwarten]. Ich möchte [verlangen]. Können Sie ein Anschreiben über mich für eine Bewerbung schreiben?",
-        "remark": "Erstellen Sie ein Anschreiben auf der Grundlage eines Selbstprofils."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
-    "count": 705,
-    "metaDescription": "Möchten Sie das perfekte Anschreiben verfassen? Beschreiben Sie Ihre technischen Fähigkeiten und Karriereziele, und dieser Prompt hilft Ihnen, ein überzeugendes Schreiben zu verfassen."
-}
+{"id":22,"de":{"title":"Stellenbewerbung","prompt":"In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in German. Can you write a cover letter for a job application about myself?.","description":"Um mich für eine Stelle zu bewerben, möchte ich ein neues Anschreiben verfassen. Bitte schreiben Sie ein Anschreiben, in dem Sie meine technischen Fähigkeiten beschreiben. Ich arbeite seit [LEBENSLAUF] Jahren bei [JAHRE DER ERFAHRUNG]. Ich arbeite seit 8 Monaten als Front-End-Entwickler. Ich habe mich durch die Übernahme einer Reihe von Tools weiterentwickelt. Zu diesen Tools gehören unter anderem [SKILLS]. Ich möchte [erwarten]. Ich möchte [verlangen]. Können Sie ein Anschreiben über mich für eine Bewerbung schreiben?","remark":"Erstellen Sie ein Anschreiben auf der Grundlage eines Selbstprofils."},"tags":["article"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter","count":705,"metaDescription":"Möchten Sie das perfekte Anschreiben verfassen? Beschreiben Sie Ihre technischen Fähigkeiten und Karriereziele, und dieser Prompt hilft Ihnen, ein überzeugendes Schreiben zu verfassen."}

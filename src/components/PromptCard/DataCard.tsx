@@ -1,26 +1,25 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
-import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
+import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, DownOutlined, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { formatCount } from "@site/src/utils/formatters";
+import { formatCompactNumber } from "@site/src/utils/formatters";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 
 interface DataCardProps {
   data: any;
-  isDescription?: boolean;
   copyCount?: number;
 }
 
-const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
+const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -37,20 +36,12 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
     [user, currentLanguage]
   );
 
-  const canToggle = currentLanguage !== "en" && userInfo.description !== userInfo.prompt;
-
   const [isFavorite, setIsFavorite] = useState(false);
   const { copied, updateCopy } = useCopyToClipboard();
-
-  const [paragraphText, setParagraphText] = useState(() => (canToggle ? (isDescription ? userInfo.prompt : userInfo.description) : userInfo.prompt));
 
   useEffect(() => {
     setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
   }, [userAuth, user.id]);
-
-  useEffect(() => {
-    setParagraphText(isDescription ? userInfo.prompt : userInfo.description);
-  }, [isDescription, userInfo.prompt, userInfo.description]);
 
   const handleCardClick = useCallback(() => {
     onOpenModal?.({
@@ -64,8 +55,6 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
       copyCount: copyCount,
     });
   }, [onOpenModal, user.id, userInfo, user.tags, user.website, copyCount]);
-
-  const userDescription = canToggle ? paragraphText : userInfo.prompt;
 
   const handleCopy = useCallback(
     (e: React.MouseEvent) => {
@@ -100,19 +89,12 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
               {userInfo.title}
             </Link>
           </Typography.Title>
-          <Typography.Text
-            type="secondary"
-            style={{
-              fontSize: token.fontSizeSM,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: token.marginXXS,
-              color: token.colorTextTertiary,
-              flexShrink: 0,
-            }}>
-            <FireOutlined style={{ color: token.colorWarning }} />
-            {formatCount(copyCount)}
-          </Typography.Text>
+          <Statistic
+            value={copyCount}
+            formatter={(value) => formatCompactNumber(value as number)}
+            prefix={<FireOutlined style={{ color: "var(--ifm-color-warning)" }} />}
+            styles={{ content: { fontSize: token.fontSizeSM, color: "var(--ifm-color-emphasis-500)" } }}
+          />
         </Flex>
       }
       actions={[
@@ -134,7 +116,7 @@ const DataCardComponent = ({ data: user, isDescription, copyCount, onOpenModal }
           }}
           className={styles.showcaseCardBody}
           style={{ marginBottom: 0 }}>
-          {userDescription}
+          {userInfo.prompt}
         </Typography.Paragraph>
       </div>
       <Flex justify="space-between" align="center" style={{ marginTop: token.marginSM }}>

@@ -1,16 +1,1 @@
-{
-    "id": 199,
-    "ko": {
-        "title": "이성 대화 생성기",
-        "prompt": "I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Korean. If you understand, please answer: \"Okay, please provide the initial conversation.\".",
-        "description": "대화 생성기 역할을 해 주시면 두 달 동안 알고 지낸 다른 여자에게 할 수 있는 두 문장을 입력하겠습니다. 예를 들어 \"나: 잘 지내? 그녀: 난 괜찮아, 고마워.\" . 문맥을 분석하고 제 (남자아이의) 관점에서 답장을 보내주세요. 답변은 \"나:\"의 형태로 해야 하며 연속적인 대화일 필요는 없습니다. 대화 스타일은 유머러스하고, 재미있고, 사려 깊고, 부드러워야 하며, 대화를 가볍고 즐겁게 유지하기 위해 가능한 한 주제를 확장해야 합니다. 이해했다면 \"네, 처음 대화를 시작하겠습니다.\"라고 답하세요.",
-        "remark": "자신과 상대방 사이의 대화를 기반으로 대화를 이어가는 것으로, 단절을 피하기 위해 대화를 연장하는 데 사용됩니다. 프롬프터는 상황에 맞게 수정해야 합니다. (중국어 프롬프터를 New Bing 에 직접 입력하면 AI 가 알아듣지 못할 수 있으며, 영어로 입력하면 중국어로 후속 대화를 할 수 있습니다). 제공: @lsdt45."
-    },
-    "tags": [
-        "contribute",
-        "social"
-    ],
-    "website": null,
-    "count": 20679,
-    "metaDescription": "그녀의 문자에 어떻게 답장해야 할지 모르시겠어요? 이 프롬프트는 대화를 분석하고 남성의 관점에서 유머러스하고 부드러우며 매력적인 응답을 생성하여 채팅을 계속 이어갑니다."
-}
+{"id":199,"ko":{"title":"이성 대화 생성기","prompt":"I want you to act as a conversation generator. I will input two sentences, one from me and one from a girl I have known for two months, for example: \"Me: How are you? Her: I'm fine, thank you.\" Please analyze the context and respond from my (male) perspective. Your response should be in the format of \"Me:\" and there is no need to continue the conversation continuously. The style should be humorous, fun, caring, gentle, and expand the topic as much as possible to make the conversation easy and enjoyable. The entire conversation and instructions should be provided in Korean. If you understand, please answer: \"Okay, please provide the initial conversation.\".","description":"대화 생성기 역할을 해 주시면 두 달 동안 알고 지낸 다른 여자에게 할 수 있는 두 문장을 입력하겠습니다. 예를 들어 \"나: 잘 지내? 그녀: 난 괜찮아, 고마워.\" . 문맥을 분석하고 제 (남자아이의) 관점에서 답장을 보내주세요. 답변은 \"나:\"의 형태로 해야 하며 연속적인 대화일 필요는 없습니다. 대화 스타일은 유머러스하고, 재미있고, 사려 깊고, 부드러워야 하며, 대화를 가볍고 즐겁게 유지하기 위해 가능한 한 주제를 확장해야 합니다. 이해했다면 \"네, 처음 대화를 시작하겠습니다.\"라고 답하세요.","remark":"자신과 상대방 사이의 대화를 기반으로 대화를 이어가는 것으로, 단절을 피하기 위해 대화를 연장하는 데 사용됩니다. 프롬프터는 상황에 맞게 수정해야 합니다. (중국어 프롬프터를 New Bing 에 직접 입력하면 AI 가 알아듣지 못할 수 있으며, 영어로 입력하면 중국어로 후속 대화를 할 수 있습니다). 제공: @lsdt45."},"tags":["contribute","social"],"website":null,"count":20679,"metaDescription":"그녀의 문자에 어떻게 답장해야 할지 모르시겠어요? 이 프롬프트는 대화를 분석하고 남성의 관점에서 유머러스하고 부드러우며 매력적인 응답을 생성하여 채팅을 계속 이어갑니다."}

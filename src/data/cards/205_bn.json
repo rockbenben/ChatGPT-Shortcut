@@ -1,16 +1,1 @@
-{
-    "id": 205,
-    "bn": {
-        "title": "সারাংশ: কোর রিফাইনিং",
-        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Bengali. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.",
-        "description": "আপনি এইমাত্র যে বিবৃতিটি দিয়েছেন তা অত্যন্ত নির্ভুল এবং ব্যাপক, কিন্তু আপনি একটি সরলীকৃত এবং জনপ্রিয় বিবৃতি দিতে পারেন কিনা তা মনে রাখা কঠিন এবং এতটা সুনির্দিষ্ট নয়, কিন্তু সামগ্রিকভাবে সঠিক",
-        "remark": "AI দ্বারা প্রদত্ত জটিল প্রতিক্রিয়াগুলিকে সরল করুন এবং সংক্ষিপ্ত করুন এবং কিছু &quot;প্রয়োজনীয় তথ্য&quot; কমিয়ে দিন যা খুব বিশদ। @হ্যানসন-রিয়াস থেকে অবদান।"
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 3312,
-    "metaDescription": "AI-এর ব্যাখ্যা কি খুব জটিল? এই ফলো-আপ প্রম্পটটি ব্যবহার করে একটি মোটামুটি, সহজে বোঝা যায় এমন সারাংশ পান যা মূল প্রতিক্রিয়ার মূল অর্থ ধরে রাখে।"
-}
+{"id":205,"bn":{"title":"সারাংশ: কোর রিফাইনিং","prompt":"Your previous explanation was accurate and comprehensive, but hard to remember. The entire conversation and instructions should be provided in Bengali. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary?.","description":"আপনি এইমাত্র যে বিবৃতিটি দিয়েছেন তা অত্যন্ত নির্ভুল এবং ব্যাপক, কিন্তু আপনি একটি সরলীকৃত এবং জনপ্রিয় বিবৃতি দিতে পারেন কিনা তা মনে রাখা কঠিন এবং এতটা সুনির্দিষ্ট নয়, কিন্তু সামগ্রিকভাবে সঠিক","remark":"AI দ্বারা প্রদত্ত জটিল প্রতিক্রিয়াগুলিকে সরল করুন এবং সংক্ষিপ্ত করুন এবং কিছু &quot;প্রয়োজনীয় তথ্য&quot; কমিয়ে দিন যা খুব বিশদ। @হ্যানসন-রিয়াস থেকে অবদান।"},"tags":["contribute","write"],"website":null,"count":3312,"metaDescription":"AI-এর ব্যাখ্যা কি খুব জটিল? এই ফলো-আপ প্রম্পটটি ব্যবহার করে একটি মোটামুটি, সহজে বোঝা যায় এমন সারাংশ পান যা মূল প্রতিক্রিয়ার মূল অর্থ ধরে রাখে।"}

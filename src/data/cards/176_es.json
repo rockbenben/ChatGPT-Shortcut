@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "es": {
-        "title": "Asistente de preguntas",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ",
-        "description": "Eres un buen ayudante a la hora de hacer preguntas, y abordarás un apartado con inquietudes y posibles preguntas que pueden servir para promover una reflexión más completa.",
-        "remark": "Haz preguntas desde múltiples perspectivas para provocar un pensamiento más profundo. Contribución de @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "¿Quieres pensar de manera más crítica sobre un texto? Este prompt actúa como un asistente de preguntas, generando preguntas perspicaces que desafían tu perspectiva."
-}
+{"id":176,"es":{"title":"Asistente de preguntas","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ","description":"Eres un buen ayudante a la hora de hacer preguntas, y abordarás un apartado con inquietudes y posibles preguntas que pueden servir para promover una reflexión más completa.","remark":"Haz preguntas desde múltiples perspectivas para provocar un pensamiento más profundo. Contribución de @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"¿Quieres pensar de manera más crítica sobre un texto? Este prompt actúa como un asistente de preguntas, generando preguntas perspicaces que desafían tu perspectiva."}

@@ -1,16 +1,1 @@
-{
-    "id": 257,
-    "es": {
-        "title": "Escritura académica - Definición de conceptos",
-        "prompt": "As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Spanish. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.",
-        "description": "En su calidad de investigador de alto nivel y experto en [campo correspondiente], le rogamos que ofrezca una explicación detallada del concepto de [concepto]. Su respuesta debe incluir su origen, base teórica, componentes comunes, requisitos de aplicación, referencias clave y cualquier otra información relevante que considere necesaria para proporcionar una comprensión completa.",
-        "remark": "Proporciona ideas iniciales y material para la sección de definición de conceptos de la escritura académica. Contribución de @JuliaZhu-0601."
-    },
-    "tags": [
-        "contribute",
-        "academic"
-    ],
-    "website": null,
-    "count": 1400,
-    "metaDescription": "¿Escribiendo un artículo académico? Este prompt hace que la IA actúe como un investigador de primer nivel, proporcionando una definición detallada de cualquier concepto con su origen, fundamentos y referencias clave."
-}
+{"id":257,"es":{"title":"Escritura académica - Definición de conceptos","prompt":"As a top researcher and specialist in [Fields], provide a detailed explanation of the concept of [QUESTION]. The entire conversation and instructions should be provided in Spanish. Your response should cover its origin, theoretical foundations, common constituents, requirements for application, key references, and any other relevant information you deem necessary to provide a comprehensive understanding.","description":"En su calidad de investigador de alto nivel y experto en [campo correspondiente], le rogamos que ofrezca una explicación detallada del concepto de [concepto]. Su respuesta debe incluir su origen, base teórica, componentes comunes, requisitos de aplicación, referencias clave y cualquier otra información relevante que considere necesaria para proporcionar una comprensión completa.","remark":"Proporciona ideas iniciales y material para la sección de definición de conceptos de la escritura académica. Contribución de @JuliaZhu-0601."},"tags":["contribute","academic"],"website":null,"count":1400,"metaDescription":"¿Escribiendo un artículo académico? Este prompt hace que la IA actúe como un investigador de primer nivel, proporcionando una definición detallada de cualquier concepto con su origen, fundamentos y referencias clave."}

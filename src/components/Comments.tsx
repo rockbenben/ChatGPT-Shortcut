@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback, memo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { List, Button, Form, Modal, Pagination, theme, Empty } from "antd";
+import { Button, Form, Modal, Pagination, theme, Empty } from "antd";
 import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
 import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -387,7 +387,7 @@ const Comments = ({ pageId, type }) => {
         ) : comments.length === 0 ? (
           <Empty description={<Translate id="message.noComments">暂无评论，成为第一个评论者吧！</Translate>} style={{ padding: token.paddingLG }} />
         ) : (
-          <List className="comment-list" itemLayout="horizontal" dataSource={comments} renderItem={renderComment} />
+          <div className="comment-list">{comments.map(renderComment)}</div>
         )}
       </div>
       {totalCommentsCount > pageSize && (

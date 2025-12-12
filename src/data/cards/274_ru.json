@@ -1,16 +1,1 @@
-{
-    "id": 274,
-    "ru": {
-        "title": "Статьи, преобразованные в изображения",
-        "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Russian. Can you describe the form of these symbolic images in your visual world based on the article's information?.",
-        "description": "Представьте, что вы - существо, которое может понимать логические отношения только в терминах образов, и теперь вы пришли в мир информации в терминах символизации, и я даю вам статью, а вы говорите мне, как эта статья выглядит для вас в мире информации в терминах символизации, понятно?",
-        "remark": "Разбор и понимание статьи с разных точек зрения. Вклад от @ergf991."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 718,
-    "metaDescription": "Как бы вы визуализировали статью? Этот творческий промпт заставляет ИИ преобразовывать информацию в любом тексте в серию символических изображений, описанных в его собственном визуальном мире."
-}
+{"id":274,"ru":{"title":"Статьи, преобразованные в изображения","prompt":"Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Russian. Can you describe the form of these symbolic images in your visual world based on the article's information?.","description":"Представьте, что вы - существо, которое может понимать логические отношения только в терминах образов, и теперь вы пришли в мир информации в терминах символизации, и я даю вам статью, а вы говорите мне, как эта статья выглядит для вас в мире информации в терминах символизации, понятно?","remark":"Разбор и понимание статьи с разных точек зрения. Вклад от @ergf991."},"tags":["contribute","pedagogy"],"website":null,"count":718,"metaDescription":"Как бы вы визуализировали статью? Этот творческий промпт заставляет ИИ преобразовывать информацию в любом тексте в серию символических изображений, описанных в его собственном визуальном мире."}

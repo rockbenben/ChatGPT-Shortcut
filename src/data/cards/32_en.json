@@ -1,14 +1,1 @@
-{
-    "id": 32,
-    "en": {
-        "title": "Text Classification",
-        "prompt": "Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords]",
-        "remark": "According to the search intent, group the following keyword list into commercial, transactional or informational search intent."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 305,
-    "metaDescription": "How do you classify keywords by user intent? Use this prompt to automatically group keywords into commercial, transactional, or informational search intents. Perfect for SEO!"
-}
+{"id":32,"en":{"title":"Text Classification","prompt":"Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords]","remark":"According to the search intent, group the following keyword list into commercial, transactional or informational search intent."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":305,"metaDescription":"How do you classify keywords by user intent? Use this prompt to automatically group keywords into commercial, transactional, or informational search intents. Perfect for SEO!"}

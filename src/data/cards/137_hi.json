@@ -1,15 +1,1 @@
-{
-    "id": 137,
-    "hi": {
-        "title": "विकिपीडिया पेज",
-        "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Hindi. My first topic is \"The Great Barrier Reef.\".",
-        "description": "मैं चाहता हूं कि आप विकिपीडिया पेज की भूमिका निभाएं। मैं आपको एक विषय का नाम दूंगा, और फिर आप विकिपीडिया पृष्ठ के प्रारूप में उस विषय का सारांश प्रदान करेंगे। आपका सारांश जानकारीपूर्ण और तथ्यात्मक होना चाहिए, जिसमें विषय के सबसे महत्वपूर्ण पहलू शामिल हों। कृपया अपने सार की शुरुआत विषय को रेखांकित करने वाले एक परिचयात्मक अनुच्छेद से करें।",
-        "remark": "उपयोगकर्ताओं को किसी विषय पर बुनियादी जानकारी प्राप्त करने और विकिपीडिया पृष्ठ के प्रारूप में सारांश प्रदान करने में सहायता करें। इस तरह, उपयोगकर्ता किसी विषय पर प्रासंगिक जानकारी के बारे में जल्दी से जान सकते हैं, जिससे विषय की बेहतर समझ और महारत हासिल हो सकती है।"
-    },
-    "tags": [
-        "tool"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 902,
-    "metaDescription": "क्या आपको किसी विषय का त्वरित सारांश चाहिए? यह प्रॉम्प्ट चैटजीपीटी को एक विकिपीडिया पृष्ठ के रूप में कार्य करने के लिए प्रेरित करता है, जो एक परिचित प्रारूप में एक सूचनात्मक और तथ्यात्मक अवलोकन प्रदान करता है।"
-}
+{"id":137,"hi":{"title":"विकिपीडिया पेज","prompt":"I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Hindi. My first topic is \"The Great Barrier Reef.\".","description":"मैं चाहता हूं कि आप विकिपीडिया पेज की भूमिका निभाएं। मैं आपको एक विषय का नाम दूंगा, और फिर आप विकिपीडिया पृष्ठ के प्रारूप में उस विषय का सारांश प्रदान करेंगे। आपका सारांश जानकारीपूर्ण और तथ्यात्मक होना चाहिए, जिसमें विषय के सबसे महत्वपूर्ण पहलू शामिल हों। कृपया अपने सार की शुरुआत विषय को रेखांकित करने वाले एक परिचयात्मक अनुच्छेद से करें।","remark":"उपयोगकर्ताओं को किसी विषय पर बुनियादी जानकारी प्राप्त करने और विकिपीडिया पृष्ठ के प्रारूप में सारांश प्रदान करने में सहायता करें। इस तरह, उपयोगकर्ता किसी विषय पर प्रासंगिक जानकारी के बारे में जल्दी से जान सकते हैं, जिससे विषय की बेहतर समझ और महारत हासिल हो सकती है।"},"tags":["tool"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page","count":902,"metaDescription":"क्या आपको किसी विषय का त्वरित सारांश चाहिए? यह प्रॉम्प्ट चैटजीपीटी को एक विकिपीडिया पृष्ठ के रूप में कार्य करने के लिए प्रेरित करता है, जो एक परिचित प्रारूप में एक सूचनात्मक और तथ्यात्मक अवलोकन प्रदान करता है।"}

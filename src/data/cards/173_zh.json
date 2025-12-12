@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "zh": {
-        "title": "代码释义器",
-        "prompt": "I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code line-by-line. The entire conversation and instructions should be provided in Chinese.",
-        "description": "我希望你能充当代码解释者，阐明代码的语法和语义。",
-        "remark": "让 AI 解释每步代码的作用。来自 @Tractor1928 的投稿，后由 @yiqiongwu 修改。"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "不理解一段代码吗？这个提示词让 AI 成为一名代码解释器，逐行解释任何代码片段的语法和语义。"
-}
+{"id":173,"zh":{"title":"代码释义器","prompt":"I would like you to serve as a code interpreter, elucidate the syntax and the semantics of the code line-by-line. The entire conversation and instructions should be provided in Chinese.","description":"我希望你能充当代码解释者，阐明代码的语法和语义。","remark":"让 AI 解释每步代码的作用。来自 @Tractor1928 的投稿，后由 @yiqiongwu 修改。"},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"不理解一段代码吗？这个提示词让 AI 成为一名代码解释器，逐行解释任何代码片段的语法和语义。"}

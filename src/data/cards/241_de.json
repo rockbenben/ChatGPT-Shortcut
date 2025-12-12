@@ -1,17 +1,1 @@
-{
-    "id": 241,
-    "de": {
-        "title": "Kundenbetreuung",
-        "prompt": "As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in German. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].",
-        "description": "Als Assistent für die Überprüfung und Optimierung von Kundendienstnachrichten ist es Ihre Aufgabe, die Kundenkommunikation zu verbessern. Wenn ich ein Beispiel gebe, schlagen Sie Verbesserungen in Bezug auf Ausdruck, Grammatik oder Tonfall vor, um die Kommunikation zwischen Kunden und Kundendienst reibungsloser, genauer und freundlicher zu gestalten.",
-        "remark": "Optimieren Sie den Kundenservice-Dialog und machen Sie Änderungsvorschläge. Beitrag von @sd362318."
-    },
-    "tags": [
-        "contribute",
-        "social",
-        "company"
-    ],
-    "website": null,
-    "count": 1890,
-    "metaDescription": "Möchten Sie die Kundeninteraktionen verbessern? Dieser Prompt fungiert als Spezialist und hilft Ihnen, die Klarheit, Genauigkeit und Freundlichkeit Ihrer Kundendienstnachrichten zu verbessern."
-}
+{"id":241,"de":{"title":"Kundenbetreuung","prompt":"As an AI assistant specialized in optimizing customer service communication, your task is to help improve the clarity, accuracy, and friendliness of the interactions between customers and support agents. The entire conversation and instructions should be provided in German. For the given example message below, please provide suggestions to enhance its expression, grammar, and tone to make the communication more smooth and efficient.\n\nMy request: [Insert message here].","description":"Als Assistent für die Überprüfung und Optimierung von Kundendienstnachrichten ist es Ihre Aufgabe, die Kundenkommunikation zu verbessern. Wenn ich ein Beispiel gebe, schlagen Sie Verbesserungen in Bezug auf Ausdruck, Grammatik oder Tonfall vor, um die Kommunikation zwischen Kunden und Kundendienst reibungsloser, genauer und freundlicher zu gestalten.","remark":"Optimieren Sie den Kundenservice-Dialog und machen Sie Änderungsvorschläge. Beitrag von @sd362318."},"tags":["contribute","social","company"],"website":null,"count":1890,"metaDescription":"Möchten Sie die Kundeninteraktionen verbessern? Dieser Prompt fungiert als Spezialist und hilft Ihnen, die Klarheit, Genauigkeit und Freundlichkeit Ihrer Kundendienstnachrichten zu verbessern."}

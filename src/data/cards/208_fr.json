@@ -1,15 +1,1 @@
-{
-    "id": 208,
-    "fr": {
-        "title": "Autocontrôle de l'expression",
-        "prompt": "After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in French. How might the other person interpret my meaning?.",
-        "description": "[une chose spécifique], je dis : [contenu de la réponse]. Puis-je demander comment l'autre personne pourrait interpréter ce que je veux dire ? Existe-t-il une meilleure façon de l'exprimer ?",
-        "remark": "Si vous êtes hypersensible ou si vos paroles sont souvent mal comprises, le décodage de l'IA vous permet de vérifier que vous vous êtes exprimé clairement avant de prendre la parole."
-    },
-    "tags": [
-        "social"
-    ],
-    "website": null,
-    "count": 553,
-    "metaDescription": "Vous craignez que vos paroles soient mal interprétées ? Ce prompt vous aide à auto-vérifier vos expressions. Dites à l'IA ce que vous avez dit, et elle analysera comment les autres pourraient l'interpréter."
-}
+{"id":208,"fr":{"title":"Autocontrôle de l'expression","prompt":"After [a specific action], I said: [my response]. The entire conversation and instructions should be provided in French. How might the other person interpret my meaning?.","description":"[une chose spécifique], je dis : [contenu de la réponse]. Puis-je demander comment l'autre personne pourrait interpréter ce que je veux dire ? Existe-t-il une meilleure façon de l'exprimer ?","remark":"Si vous êtes hypersensible ou si vos paroles sont souvent mal comprises, le décodage de l'IA vous permet de vérifier que vous vous êtes exprimé clairement avant de prendre la parole."},"tags":["social"],"website":null,"count":553,"metaDescription":"Vous craignez que vos paroles soient mal interprétées ? Ce prompt vous aide à auto-vérifier vos expressions. Dites à l'IA ce que vous avez dit, et elle analysera comment les autres pourraient l'interpréter."}

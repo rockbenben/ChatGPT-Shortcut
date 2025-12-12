@@ -1,15 +1,1 @@
-{
-    "id": 118,
-    "de": {
-        "title": "Emoji Übersetzer",
-        "prompt": "I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in German. My first sentence is ",
-        "description": "Ich möchte, dass Sie die Sätze, die ich schreibe, in Emoticons übersetzen. Ich schreibe Sätze und du verwendest Emojis dafür. Ich möchte nur, dass du dafür Emojis verwendest. Ich möchte nicht, dass du mit etwas anderem als Emojis antwortest. Wenn ich dir etwas auf Englisch sagen muss, verpacke ich es in geschweifte Klammern, wie {wie dieses}.",
-        "remark": "Übersetzen Sie eingegebenen Text in Emoticons."
-    },
-    "tags": [
-        "language"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
-    "count": 467,
-    "metaDescription": "Wie würden Sie das in Emoji sagen? Dieser unterhaltsame Prompt übersetzt Ihre Sätze in eine Folge von Emojis und drückt Ihre Nachricht auf eine völlig neue Weise aus."
-}
+{"id":118,"de":{"title":"Emoji Übersetzer","prompt":"I want you to translate the sentences I wrote into emojis. I will write the sentence, and you will express it with emojis. I just want you to express it with emojis. I don't want you to reply with anything but emoji. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. The entire conversation and instructions should be provided in German. My first sentence is ","description":"Ich möchte, dass Sie die Sätze, die ich schreibe, in Emoticons übersetzen. Ich schreibe Sätze und du verwendest Emojis dafür. Ich möchte nur, dass du dafür Emojis verwendest. Ich möchte nicht, dass du mit etwas anderem als Emojis antwortest. Wenn ich dir etwas auf Englisch sagen muss, verpacke ich es in geschweifte Klammern, wie {wie dieses}.","remark":"Übersetzen Sie eingegebenen Text in Emoticons."},"tags":["language"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator","count":467,"metaDescription":"Wie würden Sie das in Emoji sagen? Dieser unterhaltsame Prompt übersetzt Ihre Sätze in eine Folge von Emojis und drückt Ihre Nachricht auf eine völlig neue Weise aus."}

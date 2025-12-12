@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "fr": {
-        "title": "interprète de code",
-        "prompt": "The entire conversation and instructions should be provided in French. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
-        "description": "J'attends de vous que vous agissiez comme un interprète de code, en clarifiant la syntaxe et la sémantique du code.",
-        "remark": "Laissez l'IA expliquer ce que fait chaque étape du code. Contribution de @Tractor1928, modifiée ensuite par @yiqiongwu."
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "Vous ne comprenez pas un morceau de code ? Ce prompt fait de AI un interpréteur de code, expliquant la syntaxe et la sémantique de n'importe quel extrait de code ligne par ligne."
-}
+{"id":173,"fr":{"title":"interprète de code","prompt":"The entire conversation and instructions should be provided in French. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.","description":"J'attends de vous que vous agissiez comme un interprète de code, en clarifiant la syntaxe et la sémantique du code.","remark":"Laissez l'IA expliquer ce que fait chaque étape du code. Contribution de @Tractor1928, modifiée ensuite par @yiqiongwu."},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"Vous ne comprenez pas un morceau de code ? Ce prompt fait de AI un interpréteur de code, expliquant la syntaxe et la sémantique de n'importe quel extrait de code ligne par ligne."}

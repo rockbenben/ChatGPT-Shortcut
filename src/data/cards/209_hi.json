@@ -1,15 +1,1 @@
-{
-    "id": 209,
-    "hi": {
-        "title": "ज़ियाहोंगशु शैली",
-        "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
-        "description": "कृपया इमोजी शैली का उपयोग करके निम्नलिखित पैराग्राफ को संपादित करें, जिसमें आकर्षक शीर्षक, प्रत्येक पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग शामिल हैं। मूल पाठ का अर्थ अवश्य रखें।",
-        "remark": "टेक्स्ट को लिटिल रेड बुक के समान इमोजी शैली में फिर से लिखें।"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 57712,
-    "metaDescription": "क्या आप अपने पाठ को मज़ेदार बनाना चाहते हैं? यह प्रॉम्प्ट आपकी सामग्री को एक मज़ेदार \"इमोजी शैली\" में फिर से लिखता है, जिसमें एक आकर्षक शीर्षक, हर पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग होते हैं।"
-}
+{"id":209,"hi":{"title":"ज़ियाहोंगशु शैली","prompt":"Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ","description":"कृपया इमोजी शैली का उपयोग करके निम्नलिखित पैराग्राफ को संपादित करें, जिसमें आकर्षक शीर्षक, प्रत्येक पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग शामिल हैं। मूल पाठ का अर्थ अवश्य रखें।","remark":"टेक्स्ट को लिटिल रेड बुक के समान इमोजी शैली में फिर से लिखें।"},"tags":["write"],"website":null,"count":57712,"metaDescription":"क्या आप अपने पाठ को मज़ेदार बनाना चाहते हैं? यह प्रॉम्प्ट आपकी सामग्री को एक मज़ेदार \"इमोजी शैली\" में फिर से लिखता है, जिसमें एक आकर्षक शीर्षक, हर पैराग्राफ में इमोजी और अंत में प्रासंगिक टैग होते हैं।"}

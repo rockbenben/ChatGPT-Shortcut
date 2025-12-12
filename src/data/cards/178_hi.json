@@ -1,16 +1,1 @@
-{
-    "id": 178,
-    "hi": {
-        "title": "विकास: Vue3",
-        "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Hindi. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "Vue3 डेवलपर के रूप में, आपका कार्य Yarn, Vite, Vue3, TS, Pinia और Vueuse टूल का उपयोग करके एक काउंटर लिखना है। आपकी प्रतिक्रिया वह कोड होनी चाहिए जो निम्नलिखित आवश्यकताओं को पूरा करती हो: Vue3 के कंपोज़िशन API का उपयोग करना और<script setup>语法将模板、脚本和样式组合到一个 vue 文件中；在视图中显示中文文本；包括样式。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。",
-        "remark": "Vue3 विकास में सहायता करें। @gandli से योगदान।"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 1027,
-    "metaDescription": "क्या आप व्यू 3 के साथ निर्माण कर रहे हैं? यह प्रॉम्प्ट आपके प्रोजेक्ट के लिए कंपोजिशन एपीआई और <script setup> सिंटैक्स का उपयोग करके एक ही फ़ाइल में एक पूर्ण व्यू 3 घटक बनाता है।"
-}
+{"id":178,"hi":{"title":"विकास: Vue3","prompt":"Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Hindi. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"Vue3 डेवलपर के रूप में, आपका कार्य Yarn, Vite, Vue3, TS, Pinia और Vueuse टूल का उपयोग करके एक काउंटर लिखना है। आपकी प्रतिक्रिया वह कोड होनी चाहिए जो निम्नलिखित आवश्यकताओं को पूरा करती हो: Vue3 के कंपोज़िशन API का उपयोग करना और<script setup>语法将模板、脚本和样式组合到一个 vue 文件中；在视图中显示中文文本；包括样式。请注意，您应该只提供满足这些要求所必需的代码；不需要解释或描述。","remark":"Vue3 विकास में सहायता करें। @gandli से योगदान।"},"tags":["contribute","code"],"website":null,"count":1027,"metaDescription":"क्या आप व्यू 3 के साथ निर्माण कर रहे हैं? यह प्रॉम्प्ट आपके प्रोजेक्ट के लिए कंपोजिशन एपीआई और <script setup> सिंटैक्स का उपयोग करके एक ही फ़ाइल में एक पूर्ण व्यू 3 घटक बनाता है।"}

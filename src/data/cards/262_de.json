@@ -1,16 +1,1 @@
-{
-    "id": 262,
-    "de": {
-        "title": "Entwicklung von Lernprogrammen",
-        "prompt": "I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in German. I aim to achieve optimal learning outcomes during these 30 days.",
-        "description": "Ich möchte meine [Zielfertigkeit] durch ein 30-tägiges individuelles Lernprogramm verbessern. Als [Anfänger/Fortgeschrittener], der sich ständig verbessern möchte, möchte ich, dass Sie mir helfen, einen individuellen Lernplan zu erstellen, der mir hilft, diese Fähigkeit effektiv zu beherrschen. Dieser Lernplan sollte spezifische Lernziele, tägliche Lernaufgaben, geeignete Lernressourcen und Möglichkeiten zur Bewertung der Fortschritte enthalten. Bitte geben Sie mir in Ihrer Antwort unten detaillierte Hinweise und Vorschläge, damit ich in diesen 30 Tagen die bestmöglichen Lernergebnisse erzielen kann.",
-        "remark": "Nicht nur für die Erstellung von Studienplänen, sondern auch für Sport, Lesen, Arbeit und mehr. Beitrag von @ScenerorSun."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 1256,
-    "metaDescription": "Möchten Sie eine neue Fähigkeit in 30 Tagen meistern? Dieser Prompt hilft Ihnen, einen personalisierten Lernplan mit täglichen Aufgaben, Zielen und Ressourcen zu erstellen, um Ihren Fortschritt zu verfolgen."
-}
+{"id":262,"de":{"title":"Entwicklung von Lernprogrammen","prompt":"I want to enhance my [SKILL] through a personalized 30-day learning plan. As an aspiring [Beginner/Advanced learner] who is eager to continuously improve, I would like you to assist me in creating a customized learning roadmap to help me master this skill effectively. Please provide detailed guidance and suggestions in your response below, including specific learning goals, daily learning tasks, relevant learning resources, and a method to assess progress. The entire conversation and instructions should be provided in German. I aim to achieve optimal learning outcomes during these 30 days.","description":"Ich möchte meine [Zielfertigkeit] durch ein 30-tägiges individuelles Lernprogramm verbessern. Als [Anfänger/Fortgeschrittener], der sich ständig verbessern möchte, möchte ich, dass Sie mir helfen, einen individuellen Lernplan zu erstellen, der mir hilft, diese Fähigkeit effektiv zu beherrschen. Dieser Lernplan sollte spezifische Lernziele, tägliche Lernaufgaben, geeignete Lernressourcen und Möglichkeiten zur Bewertung der Fortschritte enthalten. Bitte geben Sie mir in Ihrer Antwort unten detaillierte Hinweise und Vorschläge, damit ich in diesen 30 Tagen die bestmöglichen Lernergebnisse erzielen kann.","remark":"Nicht nur für die Erstellung von Studienplänen, sondern auch für Sport, Lesen, Arbeit und mehr. Beitrag von @ScenerorSun."},"tags":["contribute","pedagogy"],"website":null,"count":1256,"metaDescription":"Möchten Sie eine neue Fähigkeit in 30 Tagen meistern? Dieser Prompt hilft Ihnen, einen personalisierten Lernplan mit täglichen Aufgaben, Zielen und Ressourcen zu erstellen, um Ihren Fortschritt zu verfolgen."}

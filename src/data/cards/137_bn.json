@@ -1,15 +1,1 @@
-{
-    "id": 137,
-    "bn": {
-        "title": "উইকিপিডিয়া পাতা",
-        "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Bengali. My first topic is \"The Great Barrier Reef.\".",
-        "description": "আমি চাই আপনি উইকিপিডিয়া পাতার ভূমিকা পালন করুন। আমি আপনাকে একটি বিষয়ের নাম দেব, এবং তারপর আপনি একটি উইকিপিডিয়া পৃষ্ঠার বিন্যাসে সেই বিষয়ের একটি সারাংশ প্রদান করবেন। আপনার সারাংশ তথ্যপূর্ণ এবং বাস্তবসম্মত হওয়া উচিত, বিষয়টির সবচেয়ে গুরুত্বপূর্ণ দিকগুলিকে কভার করে। অনুগ্রহ করে বিষয়ের রূপরেখা দিয়ে একটি পরিচায়ক অনুচ্ছেদ দিয়ে আপনার বিমূর্ত শুরু করুন।",
-        "remark": "ব্যবহারকারীদের একটি বিষয়ে প্রাথমিক তথ্য পেতে এবং উইকিপিডিয়া পৃষ্ঠার বিন্যাসে একটি সারসংক্ষেপ প্রদান করতে সহায়তা করুন। এইভাবে, ব্যবহারকারীরা একটি বিষয়ের প্রাসঙ্গিক তথ্য সম্পর্কে দ্রুত শিখতে পারে, যার ফলে বিষয়টি সম্পর্কে আরও ভাল বোঝা এবং দক্ষতা অর্জন করা যায়।"
-    },
-    "tags": [
-        "tool"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 902,
-    "metaDescription": "একটি বিষয়ের দ্রুত সারাংশ প্রয়োজন? এই প্রম্পটটি ChatGPT-কে একটি উইকিপিডিয়া পৃষ্ঠার মতো কাজ করায়, যা একটি পরিচিত বিন্যাসে তথ্যপূর্ণ এবং বাস্তবসম্মত সংক্ষিপ্ত বিবরণ প্রদান করে।"
-}
+{"id":137,"bn":{"title":"উইকিপিডিয়া পাতা","prompt":"I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Bengali. My first topic is \"The Great Barrier Reef.\".","description":"আমি চাই আপনি উইকিপিডিয়া পাতার ভূমিকা পালন করুন। আমি আপনাকে একটি বিষয়ের নাম দেব, এবং তারপর আপনি একটি উইকিপিডিয়া পৃষ্ঠার বিন্যাসে সেই বিষয়ের একটি সারাংশ প্রদান করবেন। আপনার সারাংশ তথ্যপূর্ণ এবং বাস্তবসম্মত হওয়া উচিত, বিষয়টির সবচেয়ে গুরুত্বপূর্ণ দিকগুলিকে কভার করে। অনুগ্রহ করে বিষয়ের রূপরেখা দিয়ে একটি পরিচায়ক অনুচ্ছেদ দিয়ে আপনার বিমূর্ত শুরু করুন।","remark":"ব্যবহারকারীদের একটি বিষয়ে প্রাথমিক তথ্য পেতে এবং উইকিপিডিয়া পৃষ্ঠার বিন্যাসে একটি সারসংক্ষেপ প্রদান করতে সহায়তা করুন। এইভাবে, ব্যবহারকারীরা একটি বিষয়ের প্রাসঙ্গিক তথ্য সম্পর্কে দ্রুত শিখতে পারে, যার ফলে বিষয়টি সম্পর্কে আরও ভাল বোঝা এবং দক্ষতা অর্জন করা যায়।"},"tags":["tool"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page","count":902,"metaDescription":"একটি বিষয়ের দ্রুত সারাংশ প্রয়োজন? এই প্রম্পটটি ChatGPT-কে একটি উইকিপিডিয়া পৃষ্ঠার মতো কাজ করায়, যা একটি পরিচিত বিন্যাসে তথ্যপূর্ণ এবং বাস্তবসম্মত সংক্ষিপ্ত বিবরণ প্রদান করে।"}

@@ -1,15 +1,1 @@
-{
-    "id": 114,
-    "ko": {
-        "title": "언어 생성기",
-        "prompt": "I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ",
-        "description": "내가 쓴 문장을 새로 만든 언어로 번역해 주세요. 내가 문장을 쓰면 당신이 이 새로 만들어진 언어로 표현해 주세요. 나는 당신이 그것을 새로 만든 언어로 표현하기를 원합니다. 나는 당신이 새로 만든 언어 외에는 대답하지 않기를 바랍니다. 영어로 무언가를 말해야 할 때는 {이렇게}처럼 중괄호로 마무리합니다.",
-        "remark": "사용자가 입력한 언어를 AI 가 새로 생성한 언어로 대체합니다."
-    },
-    "tags": [
-        "language"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
-    "count": 362,
-    "metaDescription": "완전히 새로운 가상의 언어로 문장을 보고 싶으신가요? 이 창의적인 프롬프트는 ChatGPT가 당신의 텍스트를 독특한 가상 언어로 번역하게 합니다."
-}
+{"id":114,"ko":{"title":"언어 생성기","prompt":"I want you to translate the sentences I wrote into a new made up language. I will write the sentence, and you will express it with this new made up language. I just want you to express it with the new made up language. I don't want you to reply with anything but the new made up language. When I need to tell you something in English, I will do it by wrapping it in curly brackets like {like this}. My first sentence is ","description":"내가 쓴 문장을 새로 만든 언어로 번역해 주세요. 내가 문장을 쓰면 당신이 이 새로 만들어진 언어로 표현해 주세요. 나는 당신이 그것을 새로 만든 언어로 표현하기를 원합니다. 나는 당신이 새로 만든 언어 외에는 대답하지 않기를 바랍니다. 영어로 무언가를 말해야 할 때는 {이렇게}처럼 중괄호로 마무리합니다.","remark":"사용자가 입력한 언어를 AI 가 새로 생성한 언어로 대체합니다."},"tags":["language"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator","count":362,"metaDescription":"완전히 새로운 가상의 언어로 문장을 보고 싶으신가요? 이 창의적인 프롬프트는 ChatGPT가 당신의 텍스트를 독특한 가상 언어로 번역하게 합니다."}

@@ -17,9 +17,6 @@
   "common.favorites": {
     "message": "Favorites"
   },
-  "showcase.tag.favorite.description": {
-    "message": "My Favorite Prompts"
-  },
   "showcase.tag.write.label": {
     "message": "Writing Aid"
   },
@@ -203,9 +200,6 @@
   "message.addPrompt.success": {
     "message": "Prompt submitted successfully!"
   },
-  "message.addPrompt.success.view": {
-    "message": "View in \"My Prompts\""
-  },
   "message.addPrompt.error": {
     "message": "Failed to submit prompt, please try again later"
   },
@@ -238,12 +232,6 @@
   },
   "action.downvote": {
     "message": "Downvote"
-  },
-  "link.home": {
-    "message": "Back to Home"
-  },
-  "link.myFavorites": {
-    "message": "My Favorites"
   },
   "button.login": {
     "message": "Login"
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut is an open-source prompt management tool dedicated to improving AI efficiency. We eagerly look forward to your participation: whether reporting bugs, suggesting features, or sharing premium prompts. For prompt submissions, we support multiple languages, and once accepted, they will be included with attribution (searchable by username). Every contribution helps community members expand their thinking and boost productivity. Let's build a perfect prompt library together!"
   },
-  "toggle_prompt_language": {
-    "message": "Switch Prompt Language"
-  },
   "showcase.filters.title": {
     "message": "Filters"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "Show Tags"
   },
-  "toggle_prompt_language_description": {
-    "message": "Change the display language of prompts; you can switch between English and the current page language."
-  },
-  "myprompt.tooltip": {
-    "message": "Personal prompts you've added or created, used for storing prompts outside of AiShort."
-  },
-  "myprompt": {
-    "message": "My Prompts"
-  },
-  "myfavorite.tooltip": {
-    "message": "Prompts I've favorited, including community prompts."
-  },
-  "community.tag.tooltip": {
-    "message": "Selected prompts shared by the community"
-  },
-  "community.tag": {
-    "message": "Community Picks"
-  },
   "showcase.favoritesList.title": {
     "message": "Favorites"
   },
   "showcase.usersList.allUsers": {
     "message": "All prompts"
-  },
-  "action.loadMore": {
-    "message": "Load More"
   },
   "validation.password.match": {
     "message": "Passwords do not match!"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "Please confirm your new password!"
   },
-  "common.myPrompts": {
-    "message": "My Prompts"
-  },
   "message.success.passwordChanged": {
     "message": "Password changed successfully!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "User Info"
-  },
-  "message.loading": {
-    "message": "Loading login status..."
   },
   "label.sharedPrompts": {
     "message": "Shared Prompts"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "Copied successfully"
-  },
-  "tooltip.switchLanguage": {
-    "message": "Click to switch display language"
   },
   "label.commentInfo": {
     "message": "Please reply below with your opinions, thoughts, or shares regarding this prompt."
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "Delete"
-  },
-  "message.fetchError": {
-    "message": "Failed to fetch prompts, please try again later"
   },
   "message.noPrompts": {
     "message": "No prompts submitted yet, please add a prompt."
@@ -956,9 +908,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "My Center"
-  },
   "link.myAccount": {
     "message": "My Account"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "No comments yet, be the first to comment!"
+  },
+  "link.home": {
+    "message": "Home"
+  },
+  "link.communityPrompts": {
+    "message": "Community Prompts"
+  },
+  "myCollection.header.title": {
+    "message": "My Collection"
+  },
+  "myCollection.header.subtitle": {
+    "message": "Manage your created prompts, favorites, and custom tags"
+  },
+  "myCollection.stats.total": {
+    "message": "Total"
+  },
+  "myCollection.stats.prompts": {
+    "message": "My Prompts"
+  },
+  "myCollection.stats.favorites": {
+    "message": "Favorites"
+  },
+  "myCollection.stats.tags": {
+    "message": "Custom Tags"
+  },
+  "myspace.filter.all": {
+    "message": "All"
+  },
+  "myspace.filter.prompts": {
+    "message": "Prompts"
+  },
+  "myspace.filter.favorites": {
+    "message": "Favorites"
+  },
+  "myspace.manageTags": {
+    "message": "Manage Tags"
+  },
+  "myspace.search.placeholder": {
+    "message": "Search my space..."
+  },
+  "myspace.tagManager.title": {
+    "message": "Manage Custom Tags"
+  },
+  "action.save": {
+    "message": "Save"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "Tag Name"
+  },
+  "action.add": {
+    "message": "Add"
+  },
+  "myspace.tagManager.empty": {
+    "message": "No custom tags"
+  },
+  "message.tagsUpdated": {
+    "message": "Tags updated"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Failed to update tags"
+  },
+  "message.noSpaceItems": {
+    "message": "No content yet, please add prompts or favorites."
+  },
+  "nav.explore": {
+    "message": "Explore"
+  },
+  "nav.myCollection": {
+    "message": "My Collection"
+  },
+  "message.cache.clearError": {
+    "message": "Failed to clear cache"
+  },
+  "title.dataManagement": {
+    "message": "Data Management"
+  },
+  "description.exportPrompts.short": {
+    "message": "Export as JSON file for backup"
+  },
+  "button.export": {
+    "message": "Export Data"
+  },
+  "description.clearCache.short": {
+    "message": "Refresh local cache data"
+  },
+  "modal.clearCache.title": {
+    "message": "Clear Cache?"
+  },
+  "modal.clearCache.content": {
+    "message": "System uses ETag for automatic cache management, manual clearing is usually unnecessary."
+  },
+  "modal.clearCache.warning": {
+    "message": "Clearing will reload all data."
+  },
+  "button.clearAllCache": {
+    "message": "Clear All Cache"
+  },
+  "modal.forgotPassword.title": {
+    "message": "Forgot Password"
   }
 }

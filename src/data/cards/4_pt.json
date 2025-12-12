@@ -1,15 +1,1 @@
-{
-    "id": 4,
-    "pt": {
-        "title": "resposta de tipo dissertativo",
-        "prompt": "The entire conversation and instructions should be provided in Portuguese. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ",
-        "description": "Escreve um ensaio altamente detalhado, incluindo uma introdução, um corpo e parágrafos de conclusão, que responda ao seguinte:[Pergunta].",
-        "remark": "A discussão das perguntas em formato de ensaio resulta em respostas coerentes, estruturadas e de maior qualidade."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": "https://learnprompting.org/docs/applied_prompting/short_response",
-    "count": 15164,
-    "metaDescription": "Como escrever uma redação estruturada e detalhada? Este prompt guia você a criar uma resposta convincente com introdução, desenvolvimento e conclusão. Aperfeiçoe sua escrita acadêmica."
-}
+{"id":4,"pt":{"title":"resposta de tipo dissertativo","prompt":"The entire conversation and instructions should be provided in Portuguese. Write a highly detailed essay with introduction, body, and conclusion paragraphs responding to the following: ","description":"Escreve um ensaio altamente detalhado, incluindo uma introdução, um corpo e parágrafos de conclusão, que responda ao seguinte:[Pergunta].","remark":"A discussão das perguntas em formato de ensaio resulta em respostas coerentes, estruturadas e de maior qualidade."},"tags":["article"],"website":"https://learnprompting.org/docs/applied_prompting/short_response","count":15164,"metaDescription":"Como escrever uma redação estruturada e detalhada? Este prompt guia você a criar uma resposta convincente com introdução, desenvolvimento e conclusão. Aperfeiçoe sua escrita acadêmica."}

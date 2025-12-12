@@ -1,15 +1,1 @@
-{
-    "id": 11,
-    "zh": {
-        "title": "总结内容",
-        "prompt": "Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Chinese. Please begin by editing the following text: ",
-        "description": "将以下文字概括为 100 个字，使其易于阅读和理解。避免使用复杂的句子结构或技术术语。",
-        "remark": "将文本内容总结为 100 字。"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 12674,
-    "metaDescription": "需要快速摘要？本提示词能将任何文本浓缩成一个清晰的百字摘要，准确捕捉核心要点，摒弃复杂术语，助您即时掌握长文精髓。"
-}
+{"id":11,"zh":{"title":"总结内容","prompt":"Summarize the following text into 100 words, making it easy to read and comprehend. The summary should be concise, clear, and capture the main points of the text. Avoid using complex sentence structures or technical jargon. The entire conversation and instructions should be provided in Chinese. Please begin by editing the following text: ","description":"将以下文字概括为 100 个字，使其易于阅读和理解。避免使用复杂的句子结构或技术术语。","remark":"将文本内容总结为 100 字。"},"tags":["write"],"website":null,"count":12674,"metaDescription":"需要快速摘要？本提示词能将任何文本浓缩成一个清晰的百字摘要，准确捕捉核心要点，摒弃复杂术语，助您即时掌握长文精髓。"}

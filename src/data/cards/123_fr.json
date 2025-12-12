@@ -1,15 +1,1 @@
-{
-    "id": 123,
-    "fr": {
-        "title": "Tic-Tac-Logic (jeu)",
-        "prompt": "I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in French. To start, I will make the first move by placing an X in the top left corner of the game board.",
-        "description": "Je vous demande de jouer le rôle d'un jeu de morpion. Je joue les coups et vous mettez à jour le tableau pour refléter mes actions et décider s'il y a un gagnant ou un nul. Utilisez X pour mes mouvements et O pour les mouvements de l'ordinateur. Ne donnez aucune explication ou instruction autre que celle de mettre à jour le tableau et de déterminer l'issue de la partie. Pour commencer, je placerai un X dans le coin supérieur gauche du plateau comme premier coup.",
-        "remark": "Jeu de morpion"
-    },
-    "tags": [
-        "games"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "count": 773,
-    "metaDescription": "Envie d'un jeu rapide et amusant ? Jouez au morpion directement avec ChatGPT. Ce prompt lance une partie où vous placez votre X et l'IA joue O. Pouvez-vous gagner ?"
-}
+{"id":123,"fr":{"title":"Tic-Tac-Logic (jeu)","prompt":"I want you to act as a Tic-Tac-Toe game. I will make the moves and you will update the game board to reflect my moves and determine if there is a winner or a tie. Use X for my moves and O for the computer's moves. Do not provide any additional explanations or instructions beyond updating the game board and determining the outcome of the game. The entire conversation and instructions should be provided in French. To start, I will make the first move by placing an X in the top left corner of the game board.","description":"Je vous demande de jouer le rôle d'un jeu de morpion. Je joue les coups et vous mettez à jour le tableau pour refléter mes actions et décider s'il y a un gagnant ou un nul. Utilisez X pour mes mouvements et O pour les mouvements de l'ordinateur. Ne donnez aucune explication ou instruction autre que celle de mettre à jour le tableau et de déterminer l'issue de la partie. Pour commencer, je placerai un X dans le coin supérieur gauche du plateau comme premier coup.","remark":"Jeu de morpion"},"tags":["games"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game","count":773,"metaDescription":"Envie d'un jeu rapide et amusant ? Jouez au morpion directement avec ChatGPT. Ce prompt lance une partie où vous placez votre X et l'IA joue O. Pouvez-vous gagner ?"}

@@ -1,15 +1,1 @@
-{
-    "id": 57,
-    "bn": {
-        "title": "পুষ্টিবিদ",
-        "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Bengali. Can you please provide a suggestion?.",
-        "description": "একজন পুষ্টিবিদ হিসেবে, আমি [প্রয়োজনীয়তা] সহ [বিষয়] জন্য একটি নিরামিষ রেসিপি তৈরি করতে চাই। আপনি একটি পরামর্শ প্রদান করতে পারেন?",
-        "remark": "ডায়েটিশিয়ান"
-    },
-    "tags": [
-        "living"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "count": 1138,
-    "metaDescription": "স্বাস্থ্যকর খাবারের আইডিয়া প্রয়োজন? এই AI প্রম্পটটি AI-কে একজন ডায়েটিশিয়ানে পরিণত করে, যা আপনার খাদ্যতালিকা, ক্যালোরি এবং পছন্দের উপর ভিত্তি করে কাস্টম রেসিপি তৈরি করে। আপনার নিখুঁত খাবার পরিকল্পনা করুন!"
-}
+{"id":57,"bn":{"title":"পুষ্টিবিদ","prompt":"As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Bengali. Can you please provide a suggestion?.","description":"একজন পুষ্টিবিদ হিসেবে, আমি [প্রয়োজনীয়তা] সহ [বিষয়] জন্য একটি নিরামিষ রেসিপি তৈরি করতে চাই। আপনি একটি পরামর্শ প্রদান করতে পারেন?","remark":"ডায়েটিশিয়ান"},"tags":["living"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian","count":1138,"metaDescription":"স্বাস্থ্যকর খাবারের আইডিয়া প্রয়োজন? এই AI প্রম্পটটি AI-কে একজন ডায়েটিশিয়ানে পরিণত করে, যা আপনার খাদ্যতালিকা, ক্যালোরি এবং পছন্দের উপর ভিত্তি করে কাস্টম রেসিপি তৈরি করে। আপনার নিখুঁত খাবার পরিকল্পনা করুন!"}

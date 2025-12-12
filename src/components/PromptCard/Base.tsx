@@ -32,7 +32,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          borderColor: token.colorBorderSecondary,
+          borderColor: "var(--ifm-color-emphasis-200)", // CSS 变量确保 SSG 兼容
           cursor: onCardClick ? "pointer" : undefined,
           ...style,
         }}
@@ -46,8 +46,9 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             ...bodyStyle,
           },
           actions: {
-            borderTop: `1px solid ${token.colorBorder}`,
-            backgroundColor: token.colorBgLayout,
+            // 使用 CSS 变量替代 JS token，确保 SSG 主题兼容
+            borderTop: "1px solid var(--ifm-color-emphasis-200)",
+            backgroundColor: "var(--ifm-background-surface-color)",
             padding: `${token.paddingXS}px ${token.paddingSM}px`,
           },
         }}

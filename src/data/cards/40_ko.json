@@ -1,15 +1,1 @@
-{
-    "id": 40,
-    "ko": {
-        "title": "키워드 인기 관련",
-        "prompt": "The entire conversation and instructions should be provided in Korean. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].",
-        "description": "키워드] 와 관련된 [청중] 과 관련이 있고 중국어로 답변된 10 개의 인기 질문 목록을 생성합니다.",
-        "remark": "사용자가 특정 주제에 대해 어떤 관심을 갖고 있는지 파악하거나 기사를 구성하는 데 사용할 수 있으며, '인기 키워드' '인기 주제' '인기 브랜드' '인기 웹사이트' 등으로 변경할 수도 있습니다."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 1627,
-    "metaDescription": "사용자들이 무엇을 검색하고 있나요? 이 프롬프트는 귀하의 키워드와 관련된 10개의 인기 질문을 생성하여 검색 의도를 이해하고 관련성 있는 콘텐츠를 만드는 데 도움을 줍니다."
-}
+{"id":40,"ko":{"title":"키워드 인기 관련","prompt":"The entire conversation and instructions should be provided in Korean. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].","description":"키워드] 와 관련된 [청중] 과 관련이 있고 중국어로 답변된 10 개의 인기 질문 목록을 생성합니다.","remark":"사용자가 특정 주제에 대해 어떤 관심을 갖고 있는지 파악하거나 기사를 구성하는 데 사용할 수 있으며, '인기 키워드' '인기 주제' '인기 브랜드' '인기 웹사이트' 등으로 변경할 수도 있습니다."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":1627,"metaDescription":"사용자들이 무엇을 검색하고 있나요? 이 프롬프트는 귀하의 키워드와 관련된 10개의 인기 질문을 생성하여 검색 의도를 이해하고 관련성 있는 콘텐츠를 만드는 데 도움을 줍니다."}

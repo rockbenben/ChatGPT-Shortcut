@@ -1,16 +1,1 @@
-{
-    "id": 258,
-    "hi": {
-        "title": "पेपर शीर्षक जनरेशन",
-        "prompt": "I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Hindi. My abstract is \"XXX\", my key words are \"XXX\".",
-        "description": "मैं आपको किसी भी भाषा में एक वैज्ञानिक पेपर के सार और मुख्य शब्द प्रदान करूंगा और आप उस भाषा का पता लगा लेंगे और उसी भाषा में उत्तर देंगे। आपका कार्य मुझे सार और कीवर्ड के आधार पर उसी भाषा में वैज्ञानिक पत्रों के शीर्षक प्रदान करना है। वैज्ञानिक पेपर का शीर्षक संक्षिप्त, स्पष्ट और सूचनाप्रद होना चाहिए। आपको अनुसंधान, जांच, विकास या अवलोकन जैसे शब्दों से बचना चाहिए। सुनिश्चित करें कि शीर्षक तुरंत आपके दर्शकों का दिल जीत ले।",
-        "remark": "सार और कीवर्ड के आधार पर थीसिस शीर्षक तैयार करें। @ScenerorSun का योगदान, स्टेशन B @沙蜜粥巴 से उद्धृत।"
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 1463,
-    "metaDescription": "क्या आपको अपने वैज्ञानिक पत्र के लिए एक शीर्षक की आवश्यकता है? अपना सार और कीवर्ड प्रदान करें, और यह प्रॉम्प्ट आपके दर्शकों को आकर्षित करने के लिए एक संक्षिप्त, स्पष्ट और जानकारीपूर्ण शीर्षक उत्पन्न करेगा।"
-}
+{"id":258,"hi":{"title":"पेपर शीर्षक जनरेशन","prompt":"I will provide you with the abstract and key words of a scientific paper in any language and you will detect the language and reply in the same language. Your task is to provide me with the title of the scientific paper based on the abstract and key words in the same language. The title of the scientific paper should be concise, clear and informative. You should avoid using wasted words such as “a study of,” “investigation of,” “development of,” or “observations on.” Make sure the title can grip the audience immediately. The entire conversation and instructions should be provided in Hindi. My abstract is \"XXX\", my key words are \"XXX\".","description":"मैं आपको किसी भी भाषा में एक वैज्ञानिक पेपर के सार और मुख्य शब्द प्रदान करूंगा और आप उस भाषा का पता लगा लेंगे और उसी भाषा में उत्तर देंगे। आपका कार्य मुझे सार और कीवर्ड के आधार पर उसी भाषा में वैज्ञानिक पत्रों के शीर्षक प्रदान करना है। वैज्ञानिक पेपर का शीर्षक संक्षिप्त, स्पष्ट और सूचनाप्रद होना चाहिए। आपको अनुसंधान, जांच, विकास या अवलोकन जैसे शब्दों से बचना चाहिए। सुनिश्चित करें कि शीर्षक तुरंत आपके दर्शकों का दिल जीत ले।","remark":"सार और कीवर्ड के आधार पर थीसिस शीर्षक तैयार करें। @ScenerorSun का योगदान, स्टेशन B @沙蜜粥巴 से उद्धृत।"},"tags":["contribute","write"],"website":null,"count":1463,"metaDescription":"क्या आपको अपने वैज्ञानिक पत्र के लिए एक शीर्षक की आवश्यकता है? अपना सार और कीवर्ड प्रदान करें, और यह प्रॉम्प्ट आपके दर्शकों को आकर्षित करने के लिए एक संक्षिप्त, स्पष्ट और जानकारीपूर्ण शीर्षक उत्पन्न करेगा।"}

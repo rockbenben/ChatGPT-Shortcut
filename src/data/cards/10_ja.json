@@ -1,15 +1,1 @@
-{
-    "id": 10,
-    "ja": {
-        "title": "筆記用具コレクション",
-        "prompt": "The entire conversation and instructions should be provided in Japanese. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
-        "description": "トピック] に関連する事実、統計、トレンドのトップ 10 を、その出典も含めてリストアップしてください。",
-        "remark": "トピックに関連する結論、データ、ソースを資料として提供する。"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 4586,
-    "metaDescription": "あなたのコンテンツのために信頼できるデータをお探しですか？このプロンプトは、あらゆるテーマに関するトップ10の事実、統計、トレンドのリストを、検証済みの情報源と共に生成します。"
-}
+{"id":10,"ja":{"title":"筆記用具コレクション","prompt":"The entire conversation and instructions should be provided in Japanese. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.","description":"トピック] に関連する事実、統計、トレンドのトップ 10 を、その出典も含めてリストアップしてください。","remark":"トピックに関連する結論、データ、ソースを資料として提供する。"},"tags":["write"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":4586,"metaDescription":"あなたのコンテンツのために信頼できるデータをお探しですか？このプロンプトは、あらゆるテーマに関するトップ10の事実、統計、トレンドのリストを、検証済みの情報源と共に生成します。"}

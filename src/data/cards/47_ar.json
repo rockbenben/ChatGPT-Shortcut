@@ -1,15 +1,1 @@
-{
-    "id": 47,
-    "ar": {
-        "title": "ملخص كتاب قصصي",
-        "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Arabic. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
-        "description": "أريدك أن تعمل كمدرب حياة. يرجى تلخيص الكتاب الواقعي [العنوان] من تأليف [المؤلف]. تبسيط المبادئ الأساسية بطريقة يمكن للطفل أن يفهمها. أيضًا ، هل يمكن أن تعطيني قائمة بالخطوات القابلة للتنفيذ حول كيفية تطبيق هذه المبادئ في حياتي اليومية؟",
-        "remark": "استنادًا إلى عنوان ومؤلف الكتاب غير الخيالي الذي تم إدخاله ، لخص المبادئ الأساسية للكتاب بأكثر طريقة سهلة الهضم. في الوقت نفسه ، يتم توفير قائمة بالخطوات القابلة للتنفيذ حول كيفية تطبيق هذه المبادئ في الحياة اليومية."
-    },
-    "tags": [
-        "life"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
-    "count": 880,
-    "metaDescription": "هل تريد حكمة كتاب غير خيالي في دقائق؟ هذا الموجه يلخص المبادئ الأساسية بعبارات بسيطة ويقدم خطوات قابلة للتنفيذ لتطبيقها في حياتك اليومية."
-}
+{"id":47,"ar":{"title":"ملخص كتاب قصصي","prompt":"I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Arabic. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.","description":"أريدك أن تعمل كمدرب حياة. يرجى تلخيص الكتاب الواقعي [العنوان] من تأليف [المؤلف]. تبسيط المبادئ الأساسية بطريقة يمكن للطفل أن يفهمها. أيضًا ، هل يمكن أن تعطيني قائمة بالخطوات القابلة للتنفيذ حول كيفية تطبيق هذه المبادئ في حياتي اليومية؟","remark":"استنادًا إلى عنوان ومؤلف الكتاب غير الخيالي الذي تم إدخاله ، لخص المبادئ الأساسية للكتاب بأكثر طريقة سهلة الهضم. في الوقت نفسه ، يتم توفير قائمة بالخطوات القابلة للتنفيذ حول كيفية تطبيق هذه المبادئ في الحياة اليومية."},"tags":["life"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1","count":880,"metaDescription":"هل تريد حكمة كتاب غير خيالي في دقائق؟ هذا الموجه يلخص المبادئ الأساسية بعبارات بسيطة ويقدم خطوات قابلة للتنفيذ لتطبيقها في حياتك اليومية."}

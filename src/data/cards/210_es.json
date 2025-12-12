@@ -1,15 +1,1 @@
-{
-    "id": 210,
-    "es": {
-        "title": "Generador de informes semanales",
-        "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ",
-        "description": "Utilice el texto proporcionado a continuación como base para un informe semanal en chino que genere un resumen sucinto en el que se destaque el contenido más importante. El informe deberá estar en formato markdown y ser de fácil lectura y comprensión para un público general. En particular, concéntrese en ofrecer perspectivas y análisis que sean útiles para las partes interesadas y los responsables de la toma de decisiones. También puede utilizar cualquier información o fuente adicional que necesite.",
-        "remark": "Extraiga los puntos clave y amplíelos adecuadamente para generar informes semanales basados en el contenido del trabajo diario."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": null,
-    "count": 6551,
-    "metaDescription": "¿Necesitas escribir un informe semanal? Proporciona tus tareas de trabajo y este prompt generará un resumen conciso en markdown, destacando los puntos más importantes para los interesados."
-}
+{"id":210,"es":{"title":"Generador de informes semanales","prompt":"Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Spanish. Please begin by editing the following text: ","description":"Utilice el texto proporcionado a continuación como base para un informe semanal en chino que genere un resumen sucinto en el que se destaque el contenido más importante. El informe deberá estar en formato markdown y ser de fácil lectura y comprensión para un público general. En particular, concéntrese en ofrecer perspectivas y análisis que sean útiles para las partes interesadas y los responsables de la toma de decisiones. También puede utilizar cualquier información o fuente adicional que necesite.","remark":"Extraiga los puntos clave y amplíelos adecuadamente para generar informes semanales basados en el contenido del trabajo diario."},"tags":["article"],"website":null,"count":6551,"metaDescription":"¿Necesitas escribir un informe semanal? Proporciona tus tareas de trabajo y este prompt generará un resumen conciso en markdown, destacando los puntos más importantes para los interesados."}

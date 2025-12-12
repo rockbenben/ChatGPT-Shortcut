@@ -1,15 +1,1 @@
-{
-    "id": 33,
-    "zh": {
-        "title": "语义相关性聚类",
-        "prompt": "The entire conversation and instructions should be provided in Chinese. Cluster the following keywords into groups based on their semantic relevance: [关键词]",
-        "description": "根据语义的相关性，将以下关键词归类。[关键词]",
-        "remark": "按照语义相关性对关键词进行聚类，并进行分组。"
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 232,
-    "metaDescription": "厌倦了手动分组关键词？此提示词根据关键词的语义相关性进行聚类，助您更有效地组织 SEO 策略。立即简化您的工作流程！"
-}
+{"id":33,"zh":{"title":"语义相关性聚类","prompt":"The entire conversation and instructions should be provided in Chinese. Cluster the following keywords into groups based on their semantic relevance: [关键词]","description":"根据语义的相关性，将以下关键词归类。[关键词]","remark":"按照语义相关性对关键词进行聚类，并进行分组。"},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":232,"metaDescription":"厌倦了手动分组关键词？此提示词根据关键词的语义相关性进行聚类，助您更有效地组织 SEO 策略。立即简化您的工作流程！"}

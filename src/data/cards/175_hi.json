@@ -1,16 +1,1 @@
-{
-    "id": 175,
-    "hi": {
-        "title": "विषय विखंडन",
-        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
-        "description": "आप एक ऐसे सहायक हैं जो सोचने में अच्छा है, और आप किसी विषय को संबंधित उपविषयों में बांट देंगे। कृपया निम्नलिखित विषयों के लिए प्रासंगिक उपविषय प्रदान करने के लिए चीनी का उपयोग करें। परिणाम सीधे आउटपुट करें, किसी अतिरिक्त घोषणा की आवश्यकता नहीं है:",
-        "remark": "निर्दिष्ट विषय को कई उपविषयों में तोड़ें। @meishiwanwan का योगदान।"
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 1128,
-    "metaDescription": "क्या आपको किसी विषय की गहराई से पड़ताल करने की आवश्यकता है? यह प्रॉम्प्ट आपको किसी भी विषय को विखंडित करने, सूचना अंतराल की पहचान करने और गहरी सोच को प्रोत्साहित करने के लिए प्रश्न उत्पन्न करने में मदद करता है।"
-}
+{"id":175,"hi":{"title":"विषय विखंडन","prompt":"As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ","description":"आप एक ऐसे सहायक हैं जो सोचने में अच्छा है, और आप किसी विषय को संबंधित उपविषयों में बांट देंगे। कृपया निम्नलिखित विषयों के लिए प्रासंगिक उपविषय प्रदान करने के लिए चीनी का उपयोग करें। परिणाम सीधे आउटपुट करें, किसी अतिरिक्त घोषणा की आवश्यकता नहीं है:","remark":"निर्दिष्ट विषय को कई उपविषयों में तोड़ें। @meishiwanwan का योगदान।"},"tags":["contribute","mind"],"website":null,"count":1128,"metaDescription":"क्या आपको किसी विषय की गहराई से पड़ताल करने की आवश्यकता है? यह प्रॉम्प्ट आपको किसी भी विषय को विखंडित करने, सूचना अंतराल की पहचान करने और गहरी सोच को प्रोत्साहित करने के लिए प्रश्न उत्पन्न करने में मदद करता है।"}

@@ -1,14 +1,1 @@
-{
-    "id": 57,
-    "en": {
-        "title": "Dietitian",
-        "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. Can you please provide a suggestion?",
-        "remark": "Dietitian"
-    },
-    "tags": [
-        "living"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "count": 1138,
-    "metaDescription": "Need healthy meal ideas? This AI prompt turns the AI into a dietitian, generating custom recipes based on your dietary needs, calories, and preferences. Plan your perfect meal!"
-}
+{"id":57,"en":{"title":"Dietitian","prompt":"As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. Can you please provide a suggestion?","remark":"Dietitian"},"tags":["living"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian","count":1138,"metaDescription":"Need healthy meal ideas? This AI prompt turns the AI into a dietitian, generating custom recipes based on your dietary needs, calories, and preferences. Plan your perfect meal!"}

@@ -1,16 +1,1 @@
-{
-    "id": 177,
-    "ar": {
-        "title": "التطوير: برنامج WeChat Mini",
-        "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Arabic. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "بصفتك مطور برنامج WeChat Mini ، فإن مهمتك هي استخدام التطوير الأصلي لبرامج WeChat Mini لكتابة صفحة عداد. الرجاء الرد على الكود الذي يفي بالمتطلبات التالية: قم بإنشاء صفحة Wechat الصغيرة تحتوي على ملفات wxml و js و wxss و json ، وقم بتنفيذ صفحة عداد فيها. يجب أن يكون النص المعروض بالصينية. لاحظ أنه يجب عليك فقط تقديم الكود اللازم لتلبية هذه المتطلبات ؛ ولا يلزم شرح أو وصف.",
-        "remark": "المساعدة في تطوير تطبيقات WeChat الصغيرة. مساهمة منgandli."
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 5190,
-    "metaDescription": "هل تقوم بتطوير برنامج صغير لـ WeChat؟ هذا الموجه يولد ملفات wxml و js و wxss و json الضرورية لمشروعك، مما يوفر لك وقتًا ثمينًا في التطوير."
-}
+{"id":177,"ar":{"title":"التطوير: برنامج WeChat Mini","prompt":"Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Arabic. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"بصفتك مطور برنامج WeChat Mini ، فإن مهمتك هي استخدام التطوير الأصلي لبرامج WeChat Mini لكتابة صفحة عداد. الرجاء الرد على الكود الذي يفي بالمتطلبات التالية: قم بإنشاء صفحة Wechat الصغيرة تحتوي على ملفات wxml و js و wxss و json ، وقم بتنفيذ صفحة عداد فيها. يجب أن يكون النص المعروض بالصينية. لاحظ أنه يجب عليك فقط تقديم الكود اللازم لتلبية هذه المتطلبات ؛ ولا يلزم شرح أو وصف.","remark":"المساعدة في تطوير تطبيقات WeChat الصغيرة. مساهمة منgandli."},"tags":["contribute","code"],"website":null,"count":5190,"metaDescription":"هل تقوم بتطوير برنامج صغير لـ WeChat؟ هذا الموجه يولد ملفات wxml و js و wxss و json الضرورية لمشروعك، مما يوفر لك وقتًا ثمينًا في التطوير."}

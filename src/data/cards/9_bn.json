@@ -1,15 +1,1 @@
-{
-    "id": 9,
-    "bn": {
-        "title": "প্রবন্ধের ধারাবাহিকতা",
-        "prompt": "The entire conversation and instructions should be provided in Bengali. Continue writing an article about [theme] that begins with the following sentence: ",
-        "description": "এগিয়ে যান এবং চীনা ভাষায় [নিবন্ধের বিষয়] সম্পর্কে একটি নিবন্ধ লিখুন, নিম্নলিখিত বাক্য দিয়ে শুরু করুন: [নিবন্ধের শুরু]",
-        "remark": "নিবন্ধের বিষয় অনুসারে, নিবন্ধটি সম্পূর্ণ করতে নিবন্ধের শুরুটি চালিয়ে যান।"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 8775,
-    "metaDescription": "লেখকের ব্লকের সম্মুখীন আর হবেন না। শুধু একটি থিম এবং একটি প্রারম্ভিক বাক্য দিন, এবং এই এআই প্রম্পটটি আপনার জন্য একটি আকর্ষণীয় এবং সুসংগত নিবন্ধ লেখা চালিয়ে যাবে।"
-}
+{"id":9,"bn":{"title":"প্রবন্ধের ধারাবাহিকতা","prompt":"The entire conversation and instructions should be provided in Bengali. Continue writing an article about [theme] that begins with the following sentence: ","description":"এগিয়ে যান এবং চীনা ভাষায় [নিবন্ধের বিষয়] সম্পর্কে একটি নিবন্ধ লিখুন, নিম্নলিখিত বাক্য দিয়ে শুরু করুন: [নিবন্ধের শুরু]","remark":"নিবন্ধের বিষয় অনুসারে, নিবন্ধটি সম্পূর্ণ করতে নিবন্ধের শুরুটি চালিয়ে যান।"},"tags":["write"],"website":null,"count":8775,"metaDescription":"লেখকের ব্লকের সম্মুখীন আর হবেন না। শুধু একটি থিম এবং একটি প্রারম্ভিক বাক্য দিন, এবং এই এআই প্রম্পটটি আপনার জন্য একটি আকর্ষণীয় এবং সুসংগত নিবন্ধ লেখা চালিয়ে যাবে।"}

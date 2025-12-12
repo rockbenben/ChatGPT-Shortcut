@@ -1,15 +1,1 @@
-{
-    "id": 22,
-    "fr": {
-        "title": "demande d'emploi",
-        "prompt": "In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in French. Can you write a cover letter for a job application about myself?.",
-        "description": "Afin d'introduire une demande d'emploi, je souhaite rédiger une nouvelle lettre de motivation. Veuillez rédiger une lettre de motivation décrivant mes compétences techniques. Je travaille à [RÉSUMÉ] depuis [ANNÉES D'EXPÉRIENCE] ans. Je travaille en tant que développeur front-end depuis 8 mois. J'ai évolué en adoptant un certain nombre d'outils. Ces outils comprennent entre autres [COMPÉTENCES]. Je veux [attendre]. Je voudrais [exiger]. Pouvez-vous rédiger une lettre de motivation à mon sujet pour une demande d'emploi ?",
-        "remark": "Préparer une lettre de motivation sur la base d'un autoprofil."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
-    "count": 705,
-    "metaDescription": "Voulez-vous rédiger la lettre de motivation parfaite ? Décrivez vos compétences techniques et vos objectifs de carrière, et ce prompt vous aidera à écrire une lettre convaincante."
-}
+{"id":22,"fr":{"title":"demande d'emploi","prompt":"In order to submit applications for jobs, I want to write a new cover letter. Please compose a cover letter describing my technical skills. I've been working with web technology for two years. I've worked as a frontend developer for 8 months. I've grown by employing some tools. These include [...Tech Stack], and so on. I wish to develop my full-stack development skills. I desire to lead a T-shaped existence. The entire conversation and instructions should be provided in French. Can you write a cover letter for a job application about myself?.","description":"Afin d'introduire une demande d'emploi, je souhaite rédiger une nouvelle lettre de motivation. Veuillez rédiger une lettre de motivation décrivant mes compétences techniques. Je travaille à [RÉSUMÉ] depuis [ANNÉES D'EXPÉRIENCE] ans. Je travaille en tant que développeur front-end depuis 8 mois. J'ai évolué en adoptant un certain nombre d'outils. Ces outils comprennent entre autres [COMPÉTENCES]. Je veux [attendre]. Je voudrais [exiger]. Pouvez-vous rédiger une lettre de motivation à mon sujet pour une demande d'emploi ?","remark":"Préparer une lettre de motivation sur la base d'un autoprofil."},"tags":["article"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter","count":705,"metaDescription":"Voulez-vous rédiger la lettre de motivation parfaite ? Décrivez vos compétences techniques et vos objectifs de carrière, et ce prompt vous aidera à écrire une lettre convaincante."}

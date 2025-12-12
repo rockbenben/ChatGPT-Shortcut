@@ -14,12 +14,6 @@
   "action.downvote": {
     "message": "싫어요"
   },
-  "link.home": {
-    "message": "홈으로 돌아가기"
-  },
-  "link.myFavorites": {
-    "message": "내 즐겨찾기"
-  },
   "button.login": {
     "message": "로그인"
   },
@@ -53,9 +47,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut은 AI 효율성을 높이는 데 전념하는 오픈 소스 프롬프트 관리 도구입니다. 버그 보고, 기능 제안 또는 고품질 프롬프트 공유 등 귀하의 참여를 기다립니다. 프롬프트 제출의 경우 여러 언어를 지원하며, 채택되면 귀속 표시(사용자 이름으로 검색 가능)와 함께 게시됩니다. 모든 기여는 커뮤니티 구성원이 사고를 확장하고 생산성을 높이는 데 도움이 됩니다. 함께 완벽한 프롬프트 라이브러리를 만들어 봅시다!"
   },
-  "toggle_prompt_language": {
-    "message": "프롬프트 언어 전환"
-  },
   "showcase.filters.title": {
     "message": "필터"
   },
@@ -65,32 +56,11 @@
   "action.showTags": {
     "message": "태그 표시"
   },
-  "toggle_prompt_language_description": {
-    "message": "프롬프트 표시 언어를 변경합니다. 영어와 현재 페이지 언어 간에 전환할 수 있습니다."
-  },
-  "myprompt.tooltip": {
-    "message": "추가하거나 만든 개인 프롬프트. AiShort 외부의 프롬프트를 저장하는 데 사용됩니다."
-  },
-  "myprompt": {
-    "message": "내 프롬프트"
-  },
-  "myfavorite.tooltip": {
-    "message": "커뮤니티 프롬프트를 포함하여 내가 즐겨찾기에 추가한 프롬프트."
-  },
-  "community.tag.tooltip": {
-    "message": "커뮤니티에서 공유된 엄선된 프롬프트"
-  },
-  "community.tag": {
-    "message": "커뮤니티 엄선"
-  },
   "showcase.favoritesList.title": {
     "message": "즐겨찾기"
   },
   "showcase.usersList.allUsers": {
     "message": "모든 프롬프트"
-  },
-  "action.loadMore": {
-    "message": "더 불러오기"
   },
   "validation.password.match": {
     "message": "두 비밀번호가 일치하지 않습니다!"
@@ -152,9 +122,6 @@
   "message.addPrompt.success": {
     "message": "프롬프트 제출 성공!"
   },
-  "message.addPrompt.success.view": {
-    "message": "「내 프롬프트」에서 확인할 수 있습니다."
-  },
   "message.addPrompt.error": {
     "message": "프롬프트 제출 실패, 나중에 다시 시도하십시오."
   },
@@ -190,9 +157,6 @@
   },
   "community.description": {
     "message": "더 실용적인 AI 프롬프트를 원하시나요? AiShort 커뮤니티에 가입하여 사용자가 공유하는 실용적인 Prompt 템플릿을 발견하고, 최적화 팁을 교환하며, 고품질 프롬프트 리소스 라이브러리를 함께 만들어 보세요."
-  },
-  "showcase.tag.favorite.description": {
-    "message": "내 즐겨찾기 프롬프트"
   },
   "showcase.tag.write.label": {
     "message": "글쓰기 보조"
@@ -350,9 +314,6 @@
   "showcase.tag.contribute.description": {
     "message": "커뮤니티 사용자가 공유한 고품질 프롬프트"
   },
-  "common.myPrompts": {
-    "message": "내 프롬프트"
-  },
   "message.success.passwordChanged": {
     "message": "비밀번호 변경 성공!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "사용자 정보"
-  },
-  "message.loading": {
-    "message": "로그인 상태 로드 중..."
   },
   "label.sharedPrompts": {
     "message": "공유된 프롬프트"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "복사 성공"
-  },
-  "tooltip.switchLanguage": {
-    "message": "클릭하여 표시 언어 전환"
   },
   "label.commentInfo": {
     "message": "이 프롬프트에 대한 의견, 생각 또는 공유를 아래에 답글로 남겨주세요."
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "삭제"
-  },
-  "message.fetchError": {
-    "message": "프롬프트 가져오기 실패, 나중에 다시 시도하십시오."
   },
   "message.noPrompts": {
     "message": "아직 프롬프트가 제출되지 않았습니다. 프롬프트를 추가하십시오."
@@ -956,9 +908,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "마이 센터"
-  },
   "link.myAccount": {
     "message": "내 계정"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "아직 댓글이 없습니다. 첫 번째 댓글을 남겨보세요!"
+  },
+  "link.home": {
+    "message": "홈"
+  },
+  "link.communityPrompts": {
+    "message": "커뮤니티 프롬프트"
+  },
+  "myCollection.header.title": {
+    "message": "내 컬렉션"
+  },
+  "myCollection.header.subtitle": {
+    "message": "작성한 프롬프트, 즐겨찾기, 사용자 지정 태그 관리"
+  },
+  "myCollection.stats.total": {
+    "message": "총계"
+  },
+  "myCollection.stats.prompts": {
+    "message": "내 프롬프트"
+  },
+  "myCollection.stats.favorites": {
+    "message": "즐겨찾기"
+  },
+  "myCollection.stats.tags": {
+    "message": "사용자 지정 태그"
+  },
+  "myspace.filter.all": {
+    "message": "전체"
+  },
+  "myspace.filter.prompts": {
+    "message": "프롬프트"
+  },
+  "myspace.filter.favorites": {
+    "message": "즐겨찾기"
+  },
+  "myspace.manageTags": {
+    "message": "태그 관리"
+  },
+  "myspace.search.placeholder": {
+    "message": "내 공간 검색..."
+  },
+  "myspace.tagManager.title": {
+    "message": "사용자 지정 태그 관리"
+  },
+  "action.save": {
+    "message": "저장"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "태그 이름"
+  },
+  "action.add": {
+    "message": "추가"
+  },
+  "myspace.tagManager.empty": {
+    "message": "사용자 지정 태그 없음"
+  },
+  "message.tagsUpdated": {
+    "message": "태그가 업데이트되었습니다"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "태그 업데이트 실패"
+  },
+  "message.noSpaceItems": {
+    "message": "콘텐츠가 없습니다. 프롬프트나 즐겨찾기를 추가하세요."
+  },
+  "nav.explore": {
+    "message": "탐색"
+  },
+  "nav.myCollection": {
+    "message": "내 컬렉션"
+  },
+  "message.cache.clearError": {
+    "message": "캐시 지우기 실패"
+  },
+  "title.dataManagement": {
+    "message": "데이터 관리"
+  },
+  "description.exportPrompts.short": {
+    "message": "백업을 위해 JSON 파일로 내보내기"
+  },
+  "button.export": {
+    "message": "데이터 내보내기"
+  },
+  "description.clearCache.short": {
+    "message": "로컬 캐시 데이터 새로 고침"
+  },
+  "modal.clearCache.title": {
+    "message": "캐시를 지우시겠습니까?"
+  },
+  "modal.clearCache.content": {
+    "message": "시스템은 ETag 기술을 사용하여 캐시를 자동으로 관리하므로 일반적으로 수동으로 지울 필요가 없습니다."
+  },
+  "modal.clearCache.warning": {
+    "message": "지우면 모든 데이터가 다시 로드됩니다."
+  },
+  "button.clearAllCache": {
+    "message": "모든 캐시 지우기"
+  },
+  "modal.forgotPassword.title": {
+    "message": "비밀번호 찾기"
   }
 }

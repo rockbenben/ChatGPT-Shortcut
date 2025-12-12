@@ -10,7 +10,6 @@ import { SearchOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/components/AuthContext";
 
-import styles from "@site/src/pages/styles.module.css";
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
 import { findCardsWithTags, getPrompts } from "@site/src/api";
@@ -247,8 +246,8 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
   };
 
   return (
-    <div className={styles.searchContainer}>
-      <ConfigProvider theme={searchBarTheme}>
+    <ConfigProvider theme={searchBarTheme}>
+      <div style={{ marginLeft: "auto" }}>
         <Input
           ref={inputRef}
           id="searchbar"
@@ -262,8 +261,8 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
           allowClear
           suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />}
         />
-      </ConfigProvider>
-    </div>
+      </div>
+    </ConfigProvider>
   );
 }
 

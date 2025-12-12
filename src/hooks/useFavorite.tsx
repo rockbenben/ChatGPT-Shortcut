@@ -1,10 +1,8 @@
 import React, { useCallback, useContext } from "react";
-// Hook for managing favorites
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { createFavorite, updateFavorite, getPrompts, voteOnUserPrompt, updateUserInfoCache } from "../api";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { createFavorite, updateFavorite, voteOnUserPrompt } from "../api";
 
 interface UseFavoriteReturn {
   addFavorite: (id: number, isComm?: boolean) => Promise<void>;
@@ -15,47 +13,35 @@ interface UseFavoriteReturn {
 export const useFavorite = (): UseFavoriteReturn => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message, modal } = App.useApp();
-  const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
 
+  // 更新收藏列表（内部函数）
   const updateFavorites = useCallback(
     async (userLoves: number[], favoriteId: number, isComm: boolean) => {
       await updateFavorite(favoriteId, userLoves, isComm);
-
-      const cacheField = isComm ? "favorites.commLoves" : "favorites.loves";
-      updateUserInfoCache(cacheField, userLoves);
-
-      if (!isComm) {
-        // Refresh cards cache if needed, matching original ShowcaseCard logic
-        getPrompts("cards", userLoves, currentLanguage);
-      }
-      refreshUserAuth();
+      await refreshUserAuth(true);
     },
-    [currentLanguage, refreshUserAuth]
+    [refreshUserAuth]
   );
 
   const addFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
-        let userLoves: number[];
-        let favoriteId: number;
-
         if (!userAuth?.data?.favorites) {
-          // 新用户：创建收藏记录，已包含该 id，无需再调用 updateFavorite
+          // 新用户：创建收藏记录
           await createFavorite([id], isComm);
-          refreshUserAuth();
+          await refreshUserAuth(true);
         } else {
-          userLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
-          favoriteId = userAuth.data.favorites.id;
+          const currentLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
+          const favoriteId = userAuth.data.favorites.id;
 
-          if (!userLoves.includes(id)) {
-            userLoves.unshift(id);
+          if (!currentLoves.includes(id)) {
+            currentLoves.unshift(id);
           }
 
-          await updateFavorites(userLoves, favoriteId, isComm);
+          await updateFavorites(currentLoves, favoriteId, isComm);
         }
 
-        // 收藏则投赞成票
+        // 社区提示词：异步投赞成票（不阻塞）
         if (isComm) {
           voteOnUserPrompt(id, "upvote").catch(() => {});
         }
@@ -63,7 +49,7 @@ export const useFavorite = (): UseFavoriteReturn => {
         message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
       } catch (err) {
         console.error(err);
-        const errorMessage = err?.strapiMessage;
+        const errorMessage = (err as any)?.strapiMessage;
         if (errorMessage) {
           message.error(errorMessage);
         } else {
@@ -71,31 +57,30 @@ export const useFavorite = (): UseFavoriteReturn => {
         }
       }
     },
-    [userAuth, message, updateFavorites]
+    [userAuth, message, updateFavorites, refreshUserAuth]
   );
 
   const removeFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
         const favoriteId = userAuth?.data?.favorites?.id;
-        // 防止 favoriteId 为 undefined 导致 /api/favorites/undefined 请求
         if (!favoriteId) {
           message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
           return;
         }
 
-        let userLoves = isComm ? [...(userAuth?.data?.favorites?.commLoves || [])] : [...(userAuth?.data?.favorites?.loves || [])];
+        const currentLoves = isComm ? [...(userAuth?.data?.favorites?.commLoves || [])] : [...(userAuth?.data?.favorites?.loves || [])];
 
-        const index = userLoves.indexOf(id);
+        const index = currentLoves.indexOf(id);
         if (index > -1) {
-          userLoves.splice(index, 1);
-          message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
+          currentLoves.splice(index, 1);
 
           if (isComm) {
             localStorage.removeItem(`commus_${id}`);
           }
 
-          await updateFavorites(userLoves, favoriteId, isComm);
+          await updateFavorites(currentLoves, favoriteId, isComm);
+          message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
         }
       } catch (err) {
         console.error(err);

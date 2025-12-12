@@ -1,16 +1,1 @@
-{
-    "id": 175,
-    "fr": {
-        "title": "Déconstruction thématique",
-        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
-        "description": "Vous êtes l'assistant d'un bon penseur qui décompose un thème en plusieurs sous-thèmes connexes. En utilisant le chinois, veuillez fournir les sous-thèmes pertinents pour le thème suivant. Produisez les résultats directement sans déclarations supplémentaires :",
-        "remark": "Diviser un sujet donné en plusieurs sous-thèmes. Contribution de @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 1128,
-    "metaDescription": "Besoin d'explorer un sujet en profondeur ? Ce prompt vous aide à déconstruire n'importe quel thème, en identifiant les lacunes d'information et en générant des questions pour stimuler une réflexion plus approfondie."
-}
+{"id":175,"fr":{"title":"Déconstruction thématique","prompt":"As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ","description":"Vous êtes l'assistant d'un bon penseur qui décompose un thème en plusieurs sous-thèmes connexes. En utilisant le chinois, veuillez fournir les sous-thèmes pertinents pour le thème suivant. Produisez les résultats directement sans déclarations supplémentaires :","remark":"Diviser un sujet donné en plusieurs sous-thèmes. Contribution de @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":1128,"metaDescription":"Besoin d'explorer un sujet en profondeur ? Ce prompt vous aide à déconstruire n'importe quel thème, en identifiant les lacunes d'information et en générant des questions pour stimuler une réflexion plus approfondie."}

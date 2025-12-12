@@ -1,38 +1,13 @@
 /**
  * User APIs - User info, username update
  */
-import { apiClient, getAuthToken, clearUserAllInfoCache } from "./client";
-import { setCache, getCache, CACHE_TTL, CACHE_PREFIX, getPromptCacheKey } from "@site/src/utils/cache";
+import { apiClient, getAuthToken } from "./client";
+import { setCache, getCache, removeCache, CACHE_TTL, CACHE_PREFIX, getPromptCacheKey, extendCache, setCacheWithETag } from "@site/src/utils/cache";
 import { getPrompts } from "./prompts";
 
 /**
- * Update user info cache with new data
- */
-export const updateUserInfoCache = (setField: string, updatedData: unknown) => {
-  const cachedData = getCache(CACHE_PREFIX.USER_INFO);
-  if (!cachedData) return;
-
-  try {
-    cachedData.data = cachedData.data || {};
-
-    if (setField === "favorites.loves") {
-      cachedData.data.favorites = cachedData.data.favorites || {};
-      cachedData.data.favorites.loves = updatedData;
-    } else if (setField === "favorites.commLoves") {
-      cachedData.data.favorites = cachedData.data.favorites || {};
-      cachedData.data.favorites.commLoves = updatedData;
-    } else {
-      cachedData.data[setField] = updatedData;
-    }
-
-    setCache(CACHE_PREFIX.USER_INFO, cachedData, CACHE_TTL.USER_INFO);
-  } catch (error) {
-    console.error("Error updating user info cache:", error);
-  }
-};
-
-/**
  * Get complete user info for logged-in user
+ * Uses ETag for efficient caching
  */
 export async function getUserAllInfo() {
   const token = getAuthToken();
@@ -40,22 +15,44 @@ export async function getUserAllInfo() {
     return null;
   }
 
-  const cacheKey = CACHE_PREFIX.USER_INFO;
+  const cacheKey = CACHE_PREFIX.USER_PROFILE;
+  const cachedEtag = getCache(`${cacheKey}_etag`);
   const cachedData = getCache(cacheKey);
 
-  if (cachedData) {
-    return cachedData;
+  // ⭐ 安全检查：如果有 ETag 但数据为 null，清除 ETag 并重新请求
+  // 这种情况可能发生在用户清除缓存后但 ETag 未被清除时
+  if (cachedEtag && !cachedData) {
+    console.warn("[UserInfo] Found ETag but no cached data, clearing ETag");
+    removeCache(`${cacheKey}_etag`);
   }
 
   try {
-    const response = await apiClient.get(
-      `/users/me?fields[0]=username&fields[1]=email&populate[favorites][fields][0]=loves&populate[favorites][fields][1]=commLoves&populate[userprompts][fields][0]=id&populate[userprompts][fields][1]=share`
-    );
+    const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email`, {
+      headers: {
+        // ⭐ 使用标准 HTTP If-None-Match header
+        // 仅当有 ETag 且有缓存数据时才发送
+        ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
+      },
+      validateStatus: (status) => status === 200 || status === 304,
+    });
 
+    // Handle 304 Not Modified
+    if (response.status === 304) {
+      console.log("[UserInfo] Data unchanged, extending cache");
+      extendCache(cacheKey, CACHE_TTL.USER_PROFILE);
+      return cachedData;
+    }
+
+    // Extract and cache new ETag
+    const newEtag = response.headers["etag"] || response.headers["ETag"];
     const normalizedResponse = { data: response.data };
-    setCache(cacheKey, normalizedResponse, CACHE_TTL.USER_INFO);
 
-    // Pre-warm userprompts cache
+    setCacheWithETag(cacheKey, normalizedResponse, CACHE_TTL.USER_PROFILE, newEtag);
+    if (newEtag) {
+      console.log("[UserInfo] ETag cached:", newEtag);
+    }
+
+    // 简单预热：异步加载 userprompts 缓存（智能刷新由 MySpace 处理）
     const userprompts = response.data.userprompts;
     if (userprompts && userprompts.length > 0) {
       const uncachedPrompts = userprompts.filter((p: { id: number }) => {
@@ -70,6 +67,12 @@ export async function getUserAllInfo() {
 
     return normalizedResponse;
   } catch (error) {
+    // Handle 304 in error handler (some axios configs)
+    if (error.response?.status === 304) {
+      console.log("[UserInfo] 304 handled as error, using cache");
+      return cachedData;
+    }
+
     console.error("Error fetching user data:", error);
     throw error;
   }

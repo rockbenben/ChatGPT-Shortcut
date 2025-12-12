@@ -21,9 +21,10 @@ const AdComponent = ({ type = "default" }) => {
     }
   }, [isMounted]);
 
-  // 服务端渲染或未挂载时，返回占位符，防止 Hydration Error
+  // SSR/SSG 时不渲染任何内容，避免 CLS
+  // 广告在客户端 hydration 后才加载
   if (!isMounted) {
-    return <div style={{ minHeight: "200px", width: "100%" }} />;
+    return null;
   }
 
   return <ins className="adsbygoogle" style={{ display: "block" }} data-ad-client="ca-pub-7585955822109216" data-ad-slot={adSlot} data-ad-format="auto" data-full-width-responsive="true" />;

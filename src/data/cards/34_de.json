@@ -1,15 +1,1 @@
-{
-    "id": 34,
-    "de": {
-        "title": "Kontaktinformationen extrahieren",
-        "prompt": "The entire conversation and instructions should be provided in German. Extract the name and mailing address from this email: ",
-        "description": "Name und E-Mail-Adresse aus dieser E-Mail extrahieren: [Text]",
-        "remark": "Extrahieren von Kontaktinformationen aus Text."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 274,
-    "metaDescription": "Müssen Sie schnell Kontaktinformationen aus Text extrahieren? Dieser einfache ChatGPT-Prompt extrahiert Namen und Postanschriften aus E-Mails oder Textblöcken. Sparen Sie Zeit und automatisieren Sie die Dateneingabe."
-}
+{"id":34,"de":{"title":"Kontaktinformationen extrahieren","prompt":"The entire conversation and instructions should be provided in German. Extract the name and mailing address from this email: ","description":"Name und E-Mail-Adresse aus dieser E-Mail extrahieren: [Text]","remark":"Extrahieren von Kontaktinformationen aus Text."},"tags":["text"],"website":"https://platform.openai.com/examples/default-extract-contact-info","count":274,"metaDescription":"Müssen Sie schnell Kontaktinformationen aus Text extrahieren? Dieser einfache ChatGPT-Prompt extrahiert Namen und Postanschriften aus E-Mails oder Textblöcken. Sparen Sie Zeit und automatisieren Sie die Dateneingabe."}

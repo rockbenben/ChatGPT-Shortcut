@@ -1,15 +1,1 @@
-{
-    "id": 39,
-    "bn": {
-        "title": "FAQ জেনারেটর",
-        "prompt": "The entire conversation and instructions should be provided in Bengali. Generate a list of 10 frequently asked questions based on the following content: [内容].",
-        "description": "এর উপর ভিত্তি করে প্রায়শই জিজ্ঞাসিত 10টি প্রশ্নের একটি তালিকা তৈরি করুন: [সামগ্রী]",
-        "remark": "বিষয়বস্তুর উপর ভিত্তি করে FAQs তৈরি করুন।"
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 862,
-    "metaDescription": "আপনার বিষয়বস্তুর জন্য একটি প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী বিভাগ তৈরি করতে হবে? এই প্রম্পটটি আপনার সরবরাহ করা পাঠ্যের উপর ভিত্তি করে ১০টি প্রায়শই জিজ্ঞাসিত প্রশ্নের একটি তালিকা স্বয়ংক্রিয়ভাবে তৈরি করে। এটি একটি দারুণ সময় বাঁচানোর উপায়!"
-}
+{"id":39,"bn":{"title":"FAQ জেনারেটর","prompt":"The entire conversation and instructions should be provided in Bengali. Generate a list of 10 frequently asked questions based on the following content: [内容].","description":"এর উপর ভিত্তি করে প্রায়শই জিজ্ঞাসিত 10টি প্রশ্নের একটি তালিকা তৈরি করুন: [সামগ্রী]","remark":"বিষয়বস্তুর উপর ভিত্তি করে FAQs তৈরি করুন।"},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":862,"metaDescription":"আপনার বিষয়বস্তুর জন্য একটি প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী বিভাগ তৈরি করতে হবে? এই প্রম্পটটি আপনার সরবরাহ করা পাঠ্যের উপর ভিত্তি করে ১০টি প্রায়শই জিজ্ঞাসিত প্রশ্নের একটি তালিকা স্বয়ংক্রিয়ভাবে তৈরি করে। এটি একটি দারুণ সময় বাঁচানোর উপায়!"}

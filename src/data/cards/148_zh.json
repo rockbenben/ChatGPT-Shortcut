@@ -1,15 +1,1 @@
-{
-    "id": 148,
-    "zh": {
-        "title": "头衔生成器",
-        "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Chinese. My first keywords are [头衔关键词]",
-        "description": "我希望你能充当花式标题生成器。我将通过逗号输入关键词，你将用花哨的标题进行回复。",
-        "remark": "根据关键词生成多种头衔和职位。"
-    },
-    "tags": [
-        "company"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
-    "count": 376,
-    "metaDescription": "正在寻找一个创意十足的职位头衔吗？这个提示词可以充当一个花哨的头衔生成器。只需提供一些关键词，它就会给您一份令人印象深刻的头衔列表。"
-}
+{"id":148,"zh":{"title":"头衔生成器","prompt":"I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Chinese. My first keywords are [头衔关键词]","description":"我希望你能充当花式标题生成器。我将通过逗号输入关键词，你将用花哨的标题进行回复。","remark":"根据关键词生成多种头衔和职位。"},"tags":["company"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator","count":376,"metaDescription":"正在寻找一个创意十足的职位头衔吗？这个提示词可以充当一个花哨的头衔生成器。只需提供一些关键词，它就会给您一份令人印象深刻的头衔列表。"}

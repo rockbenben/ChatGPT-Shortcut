@@ -1,15 +1,1 @@
-{
-    "id": 240,
-    "hi": {
-        "title": "बड़ा डेटा: गहन सारांश",
-        "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Hindi. Make sure your analysis is consistent with the original content of the articles.",
-        "description": "पिछले लेखों की सामग्री &#39;@1&#39;~&#39;@3&#39; के साथ संयुक्त, कृपया मूल सामग्री से विश्लेषण करें और सुनिश्चित करें कि यह मूल सामग्री के अनुरूप है। यदि उपरोक्त सामग्री में कोई त्रुटि है, तो आप सीधे सुधार या पूरक कर सकते हैं यह।",
-        "remark": "(इस त्वरित शब्द को संशोधित करने की आवश्यकता है।) गहन सार दो बार पूछा जाना चाहिए। दूसरी बार पूछते समय, त्रुटियों या चूक की जांच करने के लिए तुलना के लिए उन्हें मूल पाठ पर लौटने के लिए कहें। यह विधि कंप्यूटर खिलौनों के लेखक एसोर हुआंग के एक लेख से ली गई है।"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 757,
-    "metaDescription": "क्या आपको एक लंबे पाठ का विस्तृत विश्लेषण चाहिए? भारी डेटा इनपुट करने के बाद इस प्रॉम्प्ट का उपयोग करके एक गहन सारांश प्राप्त करें और किसी भी त्रुटि या विसंगतियों की पहचान करें।"
-}
+{"id":240,"hi":{"title":"बड़ा डेटा: गहन सारांश","prompt":"Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Hindi. Make sure your analysis is consistent with the original content of the articles.","description":"पिछले लेखों की सामग्री &#39;@1&#39;~&#39;@3&#39; के साथ संयुक्त, कृपया मूल सामग्री से विश्लेषण करें और सुनिश्चित करें कि यह मूल सामग्री के अनुरूप है। यदि उपरोक्त सामग्री में कोई त्रुटि है, तो आप सीधे सुधार या पूरक कर सकते हैं यह।","remark":"(इस त्वरित शब्द को संशोधित करने की आवश्यकता है।) गहन सार दो बार पूछा जाना चाहिए। दूसरी बार पूछते समय, त्रुटियों या चूक की जांच करने के लिए तुलना के लिए उन्हें मूल पाठ पर लौटने के लिए कहें। यह विधि कंप्यूटर खिलौनों के लेखक एसोर हुआंग के एक लेख से ली गई है।"},"tags":["write"],"website":"https://www.playpcesor.com/2023/03/chatgpt-2.html","count":757,"metaDescription":"क्या आपको एक लंबे पाठ का विस्तृत विश्लेषण चाहिए? भारी डेटा इनपुट करने के बाद इस प्रॉम्प्ट का उपयोग करके एक गहन सारांश प्राप्त करें और किसी भी त्रुटि या विसंगतियों की पहचान करें।"}

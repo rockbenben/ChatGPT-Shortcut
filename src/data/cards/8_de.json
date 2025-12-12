@@ -1,15 +1,1 @@
-{
-    "id": 8,
-    "de": {
-        "title": "Titelgenerator schreiben",
-        "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in German. My first topic is ",
-        "description": "Ich möchte, dass Sie als Titelgenerator für schriftliche Arbeiten fungieren. Ich werde Ihnen das Thema und die Schlüsselwörter für einen Text vorgeben, und Sie werden fünf einprägsame Titel erstellen. Bitte halten Sie die Überschriften kurz und prägnant, nicht länger als 20 Wörter, und achten Sie darauf, dass Sie ihre Bedeutung beibehalten. Verwenden Sie bei der Beantwortung die Sprachform des Titels. Mein erster Titel ist [Artikelinhalt].",
-        "remark": "Vorgaben für den persönlichen Gebrauch, die auf der Grundlage des Inhalts des Artikels Titel in der entsprechenden Sprache erzeugen."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces",
-    "count": 8305,
-    "metaDescription": "Fällt es Ihnen schwer, den perfekten Titel zu finden? Geben Sie Thema und Schlüsselwörter Ihres Artikels an, und dieses Tool generiert fünf aufmerksamkeitsstarke Titel, damit Ihr Inhalt heraussticht."
-}
+{"id":8,"de":{"title":"Titelgenerator schreiben","prompt":"I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in German. My first topic is ","description":"Ich möchte, dass Sie als Titelgenerator für schriftliche Arbeiten fungieren. Ich werde Ihnen das Thema und die Schlüsselwörter für einen Text vorgeben, und Sie werden fünf einprägsame Titel erstellen. Bitte halten Sie die Überschriften kurz und prägnant, nicht länger als 20 Wörter, und achten Sie darauf, dass Sie ihre Bedeutung beibehalten. Verwenden Sie bei der Beantwortung die Sprachform des Titels. Mein erster Titel ist [Artikelinhalt].","remark":"Vorgaben für den persönlichen Gebrauch, die auf der Grundlage des Inhalts des Artikels Titel in der entsprechenden Sprache erzeugen."},"tags":["write"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces","count":8305,"metaDescription":"Fällt es Ihnen schwer, den perfekten Titel zu finden? Geben Sie Thema und Schlüsselwörter Ihres Artikels an, und dieses Tool generiert fünf aufmerksamkeitsstarke Titel, damit Ihr Inhalt heraussticht."}

@@ -2,11 +2,11 @@ import React, { useState, useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt, clearUserAllInfoCache, updatePromptsOrder, updateUserInfoCache } from "../api";
+import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt } from "../api";
 
 interface UseUserPromptReturn {
   loading: boolean;
-  addPrompt: (values: any) => Promise<boolean>;
+  addPrompt: (values: any, onSuccess?: () => void) => Promise<boolean>;
   updatePrompt: (id: number, values: any) => Promise<boolean>;
   removePrompt: (id: number) => Promise<void>;
   confirmRemovePrompt: (id: number) => void;
@@ -14,38 +14,35 @@ interface UseUserPromptReturn {
 
 export const useUserPrompt = (): UseUserPromptReturn => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
-  const { message: messageApi, modal } = App.useApp();
+  const { message, modal } = App.useApp();
   const [loading, setLoading] = useState(false);
 
   const addPrompt = useCallback(
-    async (values: any) => {
+    async (values: any, onSuccess?: () => void) => {
       setLoading(true);
       try {
-        const response = await submitPrompt(values);
+        await submitPrompt(values);
 
-        // Prepend the new prompt to the list
-        const newPrompt = { id: response.id, share: values.share };
-        const currentPrompts = userAuth?.data?.userprompts || [];
-        const updatedPrompts = [newPrompt, ...currentPrompts];
+        // 强制刷新，确保获取最新数据
+        await refreshUserAuth(true);
 
-        updateUserInfoCache("userprompts", updatedPrompts);
+        message.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
 
-        const newOrder = updatedPrompts.map((p: any) => p.id);
-        await updatePromptsOrder(newOrder);
+        // 调用成功回调（用于导航）
+        if (onSuccess) {
+          onSuccess();
+        }
 
-        refreshUserAuth();
-        messageApi.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
-        messageApi.success(<Translate id="message.addPrompt.success.view">可在「我的提示词」中查看</Translate>);
         return true;
       } catch (err) {
         console.error(err);
-        messageApi.error(<Translate id="message.addPrompt.error">提示词提交失败，请稍后重试</Translate>);
+        message.error(<Translate id="message.addPrompt.error">提示词提交失败，请稍后重试</Translate>);
         return false;
       } finally {
         setLoading(false);
       }
     },
-    [userAuth, refreshUserAuth, messageApi]
+    [refreshUserAuth, message]
   );
 
   const updatePrompt = useCallback(
@@ -53,20 +50,22 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       setLoading(true);
       try {
         await apiUpdatePrompt(id, values);
-        refreshUserAuth();
-        messageApi.success(<Translate id="message.updatePrompt.success">提示词更新成功！</Translate>);
+        await refreshUserAuth(true);
+
+        message.success(<Translate id="message.updatePrompt.success">提示词更新成功！</Translate>);
         return true;
       } catch (err) {
         console.error(err);
-        clearUserAllInfoCache();
-        refreshUserAuth();
-        messageApi.error(<Translate id="message.updatePrompt.error">提示词更新失败，请稍后重试</Translate>);
+        // 失败时强制刷新，从服务器重新获取正确状态
+        await refreshUserAuth(true);
+
+        message.error(<Translate id="message.updatePrompt.error">提示词更新失败，请稍后重试</Translate>);
         return false;
       } finally {
         setLoading(false);
       }
     },
-    [refreshUserAuth, messageApi]
+    [refreshUserAuth, message]
   );
 
   const removePrompt = useCallback(
@@ -74,24 +73,19 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       setLoading(true);
       try {
         await apiDeletePrompt(id);
-
-        // 增量更新缓存：移除已删除的 prompt
-        const currentPrompts = userAuth?.data?.userprompts || [];
-        const updatedPrompts = currentPrompts.filter((p: any) => p.id !== id);
-        updateUserInfoCache("userprompts", updatedPrompts);
-
-        refreshUserAuth();
-        messageApi.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
+        await refreshUserAuth(true);
+        message.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
       } catch (err) {
         console.error(err);
-        clearUserAllInfoCache();
-        refreshUserAuth();
-        messageApi.error(<Translate id="message.deletePrompt.error">提示词删除失败，请稍后重试</Translate>);
+        // 失败时强制刷新，从服务器重新获取正确状态
+        await refreshUserAuth(true);
+
+        message.error(<Translate id="message.deletePrompt.error">提示词删除失败，请稍后重试</Translate>);
       } finally {
         setLoading(false);
       }
     },
-    [userAuth, refreshUserAuth, messageApi]
+    [refreshUserAuth, message]
   );
 
   const confirmRemovePrompt = useCallback(
@@ -102,6 +96,9 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         onOk: async () => {
           await removePrompt(id);
         },
+        okText: <Translate id="button.confirm">确认</Translate>,
+        cancelText: <Translate id="action.cancel">取消</Translate>,
+        centered: true,
       });
     },
     [modal, removePrompt]

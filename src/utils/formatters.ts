@@ -8,11 +8,9 @@ const compactFormatter = new Intl.NumberFormat("en-US", {
   compactDisplay: "short",
 });
 
-export const formatCount = (count) => {
+export const formatCompactNumber = (count) => {
   return compactFormatter.format(count);
 };
-
-export const formatCompactNumber = formatCount;
 
 // truncate
 const MAX_LENGTH = 200;

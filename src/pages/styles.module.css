@@ -32,11 +32,30 @@
   }
 }
 
+/* 过滤器容器 - 桌面端预留高度防止 CLS */
+.filterContainer {
+  min-height: 144px;
+}
+
+@media (max-width: 767px) {
+  .filterContainer {
+    min-height: auto;
+  }
+}
+
 /* Hero Section */
 .heroSection {
   padding: 1rem 0 1rem;
   position: relative;
   overflow: hidden;
+  min-height: 181px; /* 桌面端预留高度，防止 CLS */
+}
+
+/* 移动端 heroSection 不需要预留高度 */
+@media (max-width: 767px) {
+  .heroSection {
+    min-height: auto;
+  }
 }
 
 .heroSection::before {
@@ -116,12 +135,6 @@
   margin-right: 0;
 }
 
-
-
-.searchContainer {
-  margin-left: auto;
-}
-
 .showcaseList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -145,10 +158,6 @@
 .showcaseFavoriteHeader > h2,
 .showcaseFavoriteHeader > h3 {
   margin: 0;
-}
-
-.searchContainer {
-  margin-left: auto;
 }
 
 .showcaseFavoriteHeader > svg {
@@ -191,3 +200,57 @@
   display: flex;
   flex-direction: column;
 }
+
+/* ==================== 性能优化样式 ==================== */
+
+/**
+ * 虚拟渲染优化 - 使用 content-visibility 让浏览器跳过屏幕外内容的渲染
+ * 注意：仅用于大批量列表场景，不在首屏使用
+ */
+.virtualCardContainer {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 320px; /* auto 关键字让浏览器记住实际高度 */
+}
+
+/**
+ * 卡片行容器优化 - 应用到 Row 组件
+ * contain: layout style 告诉浏览器此容器内的变化不会影响外部
+ */
+.cardRowContainer {
+  contain: layout style;
+}
+
+/**
+ * 骨架屏容器 - 预留空间防止 CLS
+ */
+.skeletonContainer {
+  min-height: 320px; 
+  contain: layout style;
+}
+
+/**
+ * 卡片列优化 - 移除 content-visibility 避免 CLS
+ * 仅使用 contain 来隔离布局计算
+ */
+.cardColumn {
+  /* 移除 content-visibility 以避免 CLS 问题 */
+  contain: layout style;
+  /* 设置最小高度来预留空间，减少布局跳动 */
+  min-height: 320px;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+  .virtualCardContainer {
+    contain-intrinsic-block-size: auto 320px;
+  }
+
+  .skeletonContainer {
+    min-height: 320px;
+  }
+
+  .cardColumn {
+    min-height: 320px; /* 移动端卡片高度 */
+  }
+}
+

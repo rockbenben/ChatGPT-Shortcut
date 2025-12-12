@@ -1,7 +1,8 @@
 /**
  * Favorites APIs - create, update, and manage favorites
  */
-import { apiClient, ensureArrayInput, clearUserAllInfoCache } from "./client";
+import { apiClient } from "./client";
+import { clearMySpaceCache } from "./myspace";
 
 /**
  * Create a new favorite record
@@ -13,8 +14,7 @@ export async function createFavorite(loves: number[], isComm: boolean = false) {
         [isComm ? "commLoves" : "loves"]: loves,
       },
     });
-
-    clearUserAllInfoCache();
+    clearMySpaceCache();
     return response;
   } catch (error) {
     console.error("Error creating favorite:", error);
@@ -34,31 +34,10 @@ export async function updateFavorite(favoriteId: number, loves: number[], isComm
       },
     });
 
+    clearMySpaceCache(); // ⭐ 清除 MySpace 缓存
     return response;
   } catch (error) {
     console.error("Error updating favorite:", error);
-    throw error;
-  }
-}
-
-/**
- * Update favorites order
- */
-export async function updateFavoritesOrder(type: string, order: number[]) {
-  try {
-    const trimmedType = typeof type === "string" ? type.trim() : "";
-    if (!trimmedType) {
-      throw new Error("type is required");
-    }
-
-    const safeOrder = ensureArrayInput(order, `${trimmedType} order`);
-
-    const response = await apiClient.put(`/favorites/favorite-order`, {
-      [trimmedType]: safeOrder,
-    });
-    return response;
-  } catch (error) {
-    console.error("Error updating Order:", error);
     throw error;
   }
 }

@@ -1,16 +1,1 @@
-{
-    "id": 205,
-    "zh": {
-        "title": "总结：核心提炼",
-        "prompt": "Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary in Chinese?",
-        "description": "你刚刚的表述非常准确和全面 但是难以记住 能不能进行粗略而不那么精准 但整体正确的简化通俗化表述",
-        "remark": "对于 AI 给出的复杂回复进行简化总结，减掉一些过于细节的“必要性信息”。来自 @hanson-reas 的投稿。"
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 3312,
-    "metaDescription": "AI 的解释太复杂了吗？使用此后续提示词获取一个粗略、易于理解的摘要，该摘要仍能抓住原始响应的核心含义。"
-}
+{"id":205,"zh":{"title":"总结：核心提炼","prompt":"Your previous explanation was accurate and comprehensive, but hard to remember. Can you provide a rough, less precise, but still generally correct and easy-to-understand summary in Chinese?","description":"你刚刚的表述非常准确和全面 但是难以记住 能不能进行粗略而不那么精准 但整体正确的简化通俗化表述","remark":"对于 AI 给出的复杂回复进行简化总结，减掉一些过于细节的“必要性信息”。来自 @hanson-reas 的投稿。"},"tags":["contribute","write"],"website":null,"count":3312,"metaDescription":"AI 的解释太复杂了吗？使用此后续提示词获取一个粗略、易于理解的摘要，该摘要仍能抓住原始响应的核心含义。"}

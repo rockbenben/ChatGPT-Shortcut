@@ -1,15 +1,1 @@
-{
-    "id": 41,
-    "ja": {
-        "title": "疑似オリジナルリライティング",
-        "prompt": "The entire conversation and instructions should be provided in Japanese. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ",
-        "description": "次の段落を、意味を保ちつつ繰り返しを避けるために、5 種類の方法で書き換えてください：[本文を修正する",
-        "remark": "指定された内容の複数のバージョンを、文章の重複を避けるためにリライトする。"
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 12827,
-    "metaDescription": "繰り返しを避けたいですか？このChatGPTプロンプトを使えば、元の意味を保ったまま、どんな段落でも5通りの異なる方法で言い換えられます。ライティングを強化し、SEOを向上させましょう！"
-}
+{"id":41,"ja":{"title":"疑似オリジナルリライティング","prompt":"The entire conversation and instructions should be provided in Japanese. Rephrase the following paragraph in 5 different ways, to avoid repetition, while keeping its meaning: ","description":"次の段落を、意味を保ちつつ繰り返しを避けるために、5 種類の方法で書き換えてください：[本文を修正する","remark":"指定された内容の複数のバージョンを、文章の重複を避けるためにリライトする。"},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":12827,"metaDescription":"繰り返しを避けたいですか？このChatGPTプロンプトを使えば、元の意味を保ったまま、どんな段落でも5通りの異なる方法で言い換えられます。ライティングを強化し、SEOを向上させましょう！"}

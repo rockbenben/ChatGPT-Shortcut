@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "bn": {
-        "title": "কোড দোভাষী",
-        "prompt": "The entire conversation and instructions should be provided in Bengali. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
-        "description": "আমি আশা করি আপনি কোডের সিনট্যাক্স এবং শব্দার্থবিদ্যা স্পষ্ট করে কোড ইন্টারপ্রেটার হিসাবে কাজ করতে পারেন।",
-        "remark": "কোডের প্রতিটি ধাপ কী করে তা AI ব্যাখ্যা করুন। @yiqiongwu দ্বারা পরিবর্তিত @Tractor1928 থেকে অবদান।"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "একটি কোডের অংশ বুঝতে পারছেন না? এই প্রম্পটটি ChatGPT-কে একটি কোড ইন্টারপ্রেটারে পরিণত করে, যা যেকোনো কোড স্নিপেটের সিনট্যাক্স এবং সেমান্টিকস লাইন-বাই-লাইন ব্যাখ্যা করে।"
-}
+{"id":173,"bn":{"title":"কোড দোভাষী","prompt":"The entire conversation and instructions should be provided in Bengali. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.","description":"আমি আশা করি আপনি কোডের সিনট্যাক্স এবং শব্দার্থবিদ্যা স্পষ্ট করে কোড ইন্টারপ্রেটার হিসাবে কাজ করতে পারেন।","remark":"কোডের প্রতিটি ধাপ কী করে তা AI ব্যাখ্যা করুন। @yiqiongwu দ্বারা পরিবর্তিত @Tractor1928 থেকে অবদান।"},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"একটি কোডের অংশ বুঝতে পারছেন না? এই প্রম্পটটি ChatGPT-কে একটি কোড ইন্টারপ্রেটারে পরিণত করে, যা যেকোনো কোড স্নিপেটের সিনট্যাক্স এবং সেমান্টিকস লাইন-বাই-লাইন ব্যাখ্যা করে।"}

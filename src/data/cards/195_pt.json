@@ -1,16 +1,1 @@
-{
-    "id": 195,
-    "pt": {
-        "title": "projeto de discurso",
-        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Portuguese. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
-        "description": "Como [identidade], elabora-me o seguinte texto, centrado na aplicação da ética científica e dos estilos de aprendizagem. Pode citar, no máximo, uma pessoa famosa, acrescentar exemplos específicos e desenvolver os seus sentimentos pessoais.",
-        "remark": "Contribuição de @SetSeele."
-    },
-    "tags": [
-        "contribute",
-        "speech"
-    ],
-    "website": null,
-    "count": 2180,
-    "metaDescription": "Precisa escrever um discurso convincente? Este prompt ajuda você a expandir qualquer tópico a partir de uma identidade específica, incorporando citações famosas, exemplos e pensamentos pessoais."
-}
+{"id":195,"pt":{"title":"projeto de discurso","prompt":"As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in Portuguese. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.","description":"Como [identidade], elabora-me o seguinte texto, centrado na aplicação da ética científica e dos estilos de aprendizagem. Pode citar, no máximo, uma pessoa famosa, acrescentar exemplos específicos e desenvolver os seus sentimentos pessoais.","remark":"Contribuição de @SetSeele."},"tags":["contribute","speech"],"website":null,"count":2180,"metaDescription":"Precisa escrever um discurso convincente? Este prompt ajuda você a expandir qualquer tópico a partir de uma identidade específica, incorporando citações famosas, exemplos e pensamentos pessoais."}

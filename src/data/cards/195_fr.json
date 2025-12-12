@@ -1,16 +1,1 @@
-{
-    "id": 195,
-    "fr": {
-        "title": "projet de discours",
-        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in French. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
-        "description": "En tant qu'[identité], développez pour moi le texte suivant, centré sur la manière de mettre en œuvre l'éthique scientifique et les styles d'apprentissage. Vous pouvez citer jusqu'à une personne célèbre, ajouter des exemples spécifiques et développer vos sentiments personnels.",
-        "remark": "Contribution de @SetSeele."
-    },
-    "tags": [
-        "contribute",
-        "speech"
-    ],
-    "website": null,
-    "count": 2180,
-    "metaDescription": "Besoin d'écrire un discours convaincant ? Ce prompt vous aide à développer n'importe quel sujet à partir d'une identité spécifique, en y intégrant des citations célèbres, des exemples et des réflexions personnelles."
-}
+{"id":195,"fr":{"title":"projet de discours","prompt":"As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in French. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.","description":"En tant qu'[identité], développez pour moi le texte suivant, centré sur la manière de mettre en œuvre l'éthique scientifique et les styles d'apprentissage. Vous pouvez citer jusqu'à une personne célèbre, ajouter des exemples spécifiques et développer vos sentiments personnels.","remark":"Contribution de @SetSeele."},"tags":["contribute","speech"],"website":null,"count":2180,"metaDescription":"Besoin d'écrire un discours convaincant ? Ce prompt vous aide à développer n'importe quel sujet à partir d'une identité spécifique, en y intégrant des citations célèbres, des exemples et des réflexions personnelles."}

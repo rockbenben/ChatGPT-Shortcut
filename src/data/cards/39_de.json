@@ -1,15 +1,1 @@
-{
-    "id": 39,
-    "de": {
-        "title": "FAQ-Generator",
-        "prompt": "The entire conversation and instructions should be provided in German. Generate a list of 10 frequently asked questions based on the following content: [内容].",
-        "description": "Erstellen Sie eine Liste von 10 häufig gestellten Fragen auf der Grundlage der folgenden Punkte:[Inhalt]",
-        "remark": "Generieren Sie FAQs auf der Grundlage von Inhalten."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 862,
-    "metaDescription": "Müssen Sie einen FAQ-Bereich für Ihre Inhalte erstellen? Dieser Prompt generiert automatisch eine Liste von 10 häufig gestellten Fragen basierend auf Ihrem bereitgestellten Text. Eine große Zeitersparnis!"
-}
+{"id":39,"de":{"title":"FAQ-Generator","prompt":"The entire conversation and instructions should be provided in German. Generate a list of 10 frequently asked questions based on the following content: [内容].","description":"Erstellen Sie eine Liste von 10 häufig gestellten Fragen auf der Grundlage der folgenden Punkte:[Inhalt]","remark":"Generieren Sie FAQs auf der Grundlage von Inhalten."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":862,"metaDescription":"Müssen Sie einen FAQ-Bereich für Ihre Inhalte erstellen? Dieser Prompt generiert automatisch eine Liste von 10 häufig gestellten Fragen basierend auf Ihrem bereitgestellten Text. Eine große Zeitersparnis!"}

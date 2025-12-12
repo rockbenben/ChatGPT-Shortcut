@@ -17,9 +17,6 @@
   "common.favorites": {
     "message": "Favoris"
   },
-  "showcase.tag.favorite.description": {
-    "message": "Mes prompts favoris"
-  },
   "showcase.tag.write.label": {
     "message": "Aide à l'écriture"
   },
@@ -203,9 +200,6 @@
   "message.addPrompt.success": {
     "message": "Prompt soumis avec succès !"
   },
-  "message.addPrompt.success.view": {
-    "message": "Voir dans \"Mes Prompts\""
-  },
   "message.addPrompt.error": {
     "message": "Échec de la soumission du prompt, veuillez réessayer plus tard"
   },
@@ -238,12 +232,6 @@
   },
   "action.downvote": {
     "message": "Je n'aime pas"
-  },
-  "link.home": {
-    "message": "Retour à l'accueil"
-  },
-  "link.myFavorites": {
-    "message": "Mes favoris"
   },
   "button.login": {
     "message": "Se connecter"
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut est un outil de gestion de prompts open source dédié à l'amélioration de l'efficacité de l'IA. Nous attendons avec impatience votre participation : que ce soit pour signaler des bugs, suggérer des fonctionnalités ou partager des prompts de qualité. Pour les soumissions de prompts, nous prenons en charge plusieurs langues et, une fois acceptés, ils seront inclus avec attribution (consultable par nom d'utilisateur). Chaque contribution aide les membres de la communauté à élargir leur réflexion et à augmenter leur productivité. Construisons ensemble une bibliothèque de prompts parfaite !"
   },
-  "toggle_prompt_language": {
-    "message": "Changer la langue du Prompt"
-  },
   "showcase.filters.title": {
     "message": "Filtres"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "Afficher les tags"
   },
-  "toggle_prompt_language_description": {
-    "message": "Changer la langue d'affichage des prompts, vous pouvez basculer entre l'anglais et la langue actuelle de la page."
-  },
-  "myprompt.tooltip": {
-    "message": "Prompts personnels que vous avez ajoutés ou créés, utilisés pour stocker des prompts en dehors d'AiShort."
-  },
-  "myprompt": {
-    "message": "Mes Prompts"
-  },
-  "myfavorite.tooltip": {
-    "message": "Prompts que j'ai mis en favoris, y compris les prompts de la communauté."
-  },
-  "community.tag.tooltip": {
-    "message": "Prompts sélectionnés partagés par la communauté"
-  },
-  "community.tag": {
-    "message": "Sélection de la communauté"
-  },
   "showcase.favoritesList.title": {
     "message": "Favoris"
   },
   "showcase.usersList.allUsers": {
     "message": "Tous les prompts"
-  },
-  "action.loadMore": {
-    "message": "Charger plus"
   },
   "validation.password.match": {
     "message": "Les deux mots de passe ne correspondent pas !"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "Veuillez confirmer votre nouveau mot de passe !"
   },
-  "common.myPrompts": {
-    "message": "Mes Prompts"
-  },
   "message.success.passwordChanged": {
     "message": "Mot de passe modifié avec succès !"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "Informations utilisateur"
-  },
-  "message.loading": {
-    "message": "Chargement du statut de connexion..."
   },
   "label.sharedPrompts": {
     "message": "Prompts partagés"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "Copié avec succès"
-  },
-  "tooltip.switchLanguage": {
-    "message": "Cliquez pour changer la langue d'affichage"
   },
   "label.commentInfo": {
     "message": "Veuillez répondre ci-dessous avec vos opinions, pensées ou partages concernant ce prompt."
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "Supprimer"
-  },
-  "message.fetchError": {
-    "message": "Échec de la récupération des prompts, veuillez réessayer plus tard"
   },
   "message.noPrompts": {
     "message": "Aucun prompt soumis pour le moment, veuillez ajouter un prompt."
@@ -948,9 +900,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "Mon Centre"
-  },
   "link.myAccount": {
     "message": "Mon Compte"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "Aucun commentaire pour le moment, soyez le premier à commenter !"
+  },
+  "link.home": {
+    "message": "Accueil"
+  },
+  "link.communityPrompts": {
+    "message": "Prompts Communautaires"
+  },
+  "myCollection.header.title": {
+    "message": "Ma Collection"
+  },
+  "myCollection.header.subtitle": {
+    "message": "Gérez vos prompts créés, vos favoris et vos étiquettes personnalisées"
+  },
+  "myCollection.stats.total": {
+    "message": "Total"
+  },
+  "myCollection.stats.prompts": {
+    "message": "Mes Prompts"
+  },
+  "myCollection.stats.favorites": {
+    "message": "Favoris"
+  },
+  "myCollection.stats.tags": {
+    "message": "Étiquettes Personnalisées"
+  },
+  "myspace.filter.all": {
+    "message": "Tout"
+  },
+  "myspace.filter.prompts": {
+    "message": "Prompts"
+  },
+  "myspace.filter.favorites": {
+    "message": "Favoris"
+  },
+  "myspace.manageTags": {
+    "message": "Gérer les Étiquettes"
+  },
+  "myspace.search.placeholder": {
+    "message": "Rechercher dans mon espace..."
+  },
+  "myspace.tagManager.title": {
+    "message": "Gérer les Étiquettes Personnalisées"
+  },
+  "action.save": {
+    "message": "Enregistrer"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "Nom de l'étiquette"
+  },
+  "action.add": {
+    "message": "Ajouter"
+  },
+  "myspace.tagManager.empty": {
+    "message": "Aucune étiquette personnalisée"
+  },
+  "message.tagsUpdated": {
+    "message": "Étiquettes mises à jour"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Échec de la mise à jour des étiquettes"
+  },
+  "message.noSpaceItems": {
+    "message": "Aucun contenu pour le moment, veuillez ajouter des prompts ou des favoris."
+  },
+  "nav.explore": {
+    "message": "Explorer"
+  },
+  "nav.myCollection": {
+    "message": "Ma Collection"
+  },
+  "message.cache.clearError": {
+    "message": "Échec de l'effacement du cache"
+  },
+  "title.dataManagement": {
+    "message": "Gestion des Données"
+  },
+  "description.exportPrompts.short": {
+    "message": "Exporter au format JSON pour sauvegarde"
+  },
+  "button.export": {
+    "message": "Exporter les Données"
+  },
+  "description.clearCache.short": {
+    "message": "Actualiser les données du cache local"
+  },
+  "modal.clearCache.title": {
+    "message": "Effacer le Cache ?"
+  },
+  "modal.clearCache.content": {
+    "message": "Le système utilise la technologie ETag pour gérer automatiquement le cache, un effacement manuel n'est généralement pas nécessaire."
+  },
+  "modal.clearCache.warning": {
+    "message": "L'effacement rechargera toutes les données."
+  },
+  "button.clearAllCache": {
+    "message": "Effacer Tout le Cache"
+  },
+  "modal.forgotPassword.title": {
+    "message": "Mot de passe oublié"
   }
 }

@@ -1,15 +1,1 @@
-{
-    "id": 34,
-    "hi": {
-        "title": "संपर्क जानकारी निकालें",
-        "prompt": "The entire conversation and instructions should be provided in Hindi. Extract the name and mailing address from this email: ",
-        "description": "इस संदेश से नाम और ईमेल पते निकालें: [पाठ]",
-        "remark": "पाठ से संपर्क जानकारी निकालें."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 274,
-    "metaDescription": "क्या टेक्स्ट से संपर्क जानकारी जल्दी निकालनी है? यह सरल चैटजीपीटी प्रॉम्प्ट ईमेल या टेक्स्ट के ब्लॉक से नाम और मेलिंग पते निकालता है। समय बचाएं और डेटा प्रविष्टि को स्वचालित करें।"
-}
+{"id":34,"hi":{"title":"संपर्क जानकारी निकालें","prompt":"The entire conversation and instructions should be provided in Hindi. Extract the name and mailing address from this email: ","description":"इस संदेश से नाम और ईमेल पते निकालें: [पाठ]","remark":"पाठ से संपर्क जानकारी निकालें."},"tags":["text"],"website":"https://platform.openai.com/examples/default-extract-contact-info","count":274,"metaDescription":"क्या टेक्स्ट से संपर्क जानकारी जल्दी निकालनी है? यह सरल चैटजीपीटी प्रॉम्प्ट ईमेल या टेक्स्ट के ब्लॉक से नाम और मेलिंग पते निकालता है। समय बचाएं और डेटा प्रविष्टि को स्वचालित करें।"}

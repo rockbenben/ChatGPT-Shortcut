@@ -1,16 +1,1 @@
-{
-    "id": 261,
-    "ru": {
-        "title": "Основные пункты знаний",
-        "prompt": "In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Russian. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter.",
-        "description": "Для эффективного изучения [программирования на языке python], пожалуйста, предоставьте основные знания в этой области, охватывающие 20% содержания по степени важности. Эти ключевые знания обеспечат мне глубокое понимание и прочную основу 80% содержания данной области.",
-        "remark": "Прежде чем изучать предмет, поймите его суть. Материал предоставлен @ScenerorSun."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 1106,
-    "metaDescription": "Как эффективно изучать новый предмет? Этот промпт поможет вам освоить 20% самых важных знаний в любой области для прочного фундамента."
-}
+{"id":261,"ru":{"title":"Основные пункты знаний","prompt":"In order to learn [subject] efficiently, please provide the core knowledge points of this field, covering the top 20% of importance. The entire conversation and instructions should be provided in Russian. These key insights will enable me to develop a comprehensive understanding and solid foundation of 80% of the subject matter.","description":"Для эффективного изучения [программирования на языке python], пожалуйста, предоставьте основные знания в этой области, охватывающие 20% содержания по степени важности. Эти ключевые знания обеспечат мне глубокое понимание и прочную основу 80% содержания данной области.","remark":"Прежде чем изучать предмет, поймите его суть. Материал предоставлен @ScenerorSun."},"tags":["contribute","pedagogy"],"website":null,"count":1106,"metaDescription":"Как эффективно изучать новый предмет? Этот промпт поможет вам освоить 20% самых важных знаний в любой области для прочного фундамента."}

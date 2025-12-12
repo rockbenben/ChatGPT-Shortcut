@@ -1,15 +1,1 @@
-{
-    "id": 32,
-    "hi": {
-        "title": "पाठ आशय वर्गीकरण",
-        "prompt": "The entire conversation and instructions should be provided in Hindi. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].",
-        "description": "कीवर्ड की निम्नलिखित सूची को उनके खोज उद्देश्य (चाहे वाणिज्यिक, लेन-देन संबंधी, या सूचनात्मक) के अनुसार समूहों में विभाजित करें: [कीवर्ड]।",
-        "remark": "खोज अभिप्राय के आधार पर, नीचे दी गई कीवर्ड सूचियाँ वाणिज्यिक, लेन-देन संबंधी, या सूचनात्मक खोज अभिप्राय के आधार पर समूहीकृत की गई हैं।"
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 305,
-    "metaDescription": "उपयोगकर्ता के इरादे के अनुसार कीवर्ड कैसे वर्गीकृत करें? इस प्रॉम्प्ट का उपयोग कीवर्ड को वाणिज्यिक, लेन-देन, या सूचनात्मक खोज इरादों में स्वचालित रूप से समूहित करने के लिए करें। एसईओ के लिए बिल्कुल सही!"
-}
+{"id":32,"hi":{"title":"पाठ आशय वर्गीकरण","prompt":"The entire conversation and instructions should be provided in Hindi. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].","description":"कीवर्ड की निम्नलिखित सूची को उनके खोज उद्देश्य (चाहे वाणिज्यिक, लेन-देन संबंधी, या सूचनात्मक) के अनुसार समूहों में विभाजित करें: [कीवर्ड]।","remark":"खोज अभिप्राय के आधार पर, नीचे दी गई कीवर्ड सूचियाँ वाणिज्यिक, लेन-देन संबंधी, या सूचनात्मक खोज अभिप्राय के आधार पर समूहीकृत की गई हैं।"},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":305,"metaDescription":"उपयोगकर्ता के इरादे के अनुसार कीवर्ड कैसे वर्गीकृत करें? इस प्रॉम्प्ट का उपयोग कीवर्ड को वाणिज्यिक, लेन-देन, या सूचनात्मक खोज इरादों में स्वचालित रूप से समूहित करने के लिए करें। एसईओ के लिए बिल्कुल सही!"}

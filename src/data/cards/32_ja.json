@@ -1,15 +1,1 @@
-{
-    "id": 32,
-    "ja": {
-        "title": "テキスト意図の分類",
-        "prompt": "The entire conversation and instructions should be provided in Japanese. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].",
-        "description": "次のキーワードのリストを、検索意図（商業的、取引的、情報的かどうか）に応じてグループに分ける：【キーワード】.",
-        "remark": "以下のキーワードリストは、商業目的、取引目的、情報提供目的の検索意図によってグループ分けされています。"
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 305,
-    "metaDescription": "ユーザーの意図別にキーワードを分類する方法は？このプロンプトを使えば、キーワードを商業的、取引的、情報的な検索意図に自動でグループ化できます。SEOに最適！"
-}
+{"id":32,"ja":{"title":"テキスト意図の分類","prompt":"The entire conversation and instructions should be provided in Japanese. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].","description":"次のキーワードのリストを、検索意図（商業的、取引的、情報的かどうか）に応じてグループに分ける：【キーワード】.","remark":"以下のキーワードリストは、商業目的、取引目的、情報提供目的の検索意図によってグループ分けされています。"},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":305,"metaDescription":"ユーザーの意図別にキーワードを分類する方法は？このプロンプトを使えば、キーワードを商業的、取引的、情報的な検索意図に自動でグループ化できます。SEOに最適！"}

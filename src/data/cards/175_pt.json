@@ -1,16 +1,1 @@
-{
-    "id": 175,
-    "pt": {
-        "title": "Desconstrução temática",
-        "prompt": "As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ",
-        "description": "É um bom assistente de pensador que decompõe um tema em vários subtemas relacionados. Utilizando a língua chinesa, forneça os subtemas relevantes para o seguinte tema. Apresente os resultados diretamente sem declarações adicionais:",
-        "remark": "Dividir um determinado tópico em múltiplos subtópicos. Contribuição de @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 1128,
-    "metaDescription": "Precisa explorar um tópico em profundidade? Este prompt ajuda você a desconstruir qualquer tema, identificando lacunas de informação e gerando perguntas para estimular um pensamento mais profundo."
-}
+{"id":175,"pt":{"title":"Desconstrução temática","prompt":"As an expert questioning assistant, you have the ability to identify potential gaps in information and ask insightful questions that stimulate deeper thinking. Please demonstrate your skills by generating a list of thought-provoking questions based on a provided text. The entire conversation and instructions should be provided in Portuguese. Please begin by editing the following text: ","description":"É um bom assistente de pensador que decompõe um tema em vários subtemas relacionados. Utilizando a língua chinesa, forneça os subtemas relevantes para o seguinte tema. Apresente os resultados diretamente sem declarações adicionais:","remark":"Dividir um determinado tópico em múltiplos subtópicos. Contribuição de @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":1128,"metaDescription":"Precisa explorar um tópico em profundidade? Este prompt ajuda você a desconstruir qualquer tema, identificando lacunas de informação e gerando perguntas para estimular um pensamento mais profundo."}

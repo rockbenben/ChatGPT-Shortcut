@@ -17,9 +17,6 @@
   "common.favorites": {
     "message": "Избранное"
   },
-  "showcase.tag.favorite.description": {
-    "message": "Мои избранные промпты"
-  },
   "showcase.tag.write.label": {
     "message": "Помощь в письме"
   },
@@ -203,9 +200,6 @@
   "message.addPrompt.success": {
     "message": "Промпт успешно отправлен!"
   },
-  "message.addPrompt.success.view": {
-    "message": "Можно посмотреть в «Мои промпты»"
-  },
   "message.addPrompt.error": {
     "message": "Не удалось отправить промпт, попробуйте позже"
   },
@@ -238,12 +232,6 @@
   },
   "action.downvote": {
     "message": "Не нравится"
-  },
-  "link.home": {
-    "message": "На главную"
-  },
-  "link.myFavorites": {
-    "message": "Мое избранное"
   },
   "button.login": {
     "message": "Войти"
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut — это инструмент управления промптами с открытым исходным кодом, предназначенный для повышения эффективности использования ИИ. Мы с нетерпением ждем вашего участия: будь то сообщение об ошибках, предложение функций или обмен качественными промптами (Prompt). Мы поддерживаем загрузку промптов на нескольких языках, и после принятия они будут опубликованы с указанием авторства (доступен поиск по имени пользователя). Каждый ваш вклад помогает участникам сообщества расширять мышление и повышать продуктивность. Давайте вместе создадим идеальную библиотеку промптов!"
   },
-  "toggle_prompt_language": {
-    "message": "Переключить язык Prompt"
-  },
   "showcase.filters.title": {
     "message": "Фильтры"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "Показать теги"
   },
-  "toggle_prompt_language_description": {
-    "message": "Изменить язык отображения промпта, можно переключаться между английским и языком текущей страницы."
-  },
-  "myprompt.tooltip": {
-    "message": "Добавленные или созданные личные промпты, можно использовать для хранения промптов вне AiShort."
-  },
-  "myprompt": {
-    "message": "Мои промпты"
-  },
-  "myfavorite.tooltip": {
-    "message": "Промпты, которые я добавил в избранное, включая промпты сообщества."
-  },
-  "community.tag.tooltip": {
-    "message": "Избранные промпты, которыми поделилось сообщество"
-  },
-  "community.tag": {
-    "message": "Выбор сообщества"
-  },
   "showcase.favoritesList.title": {
     "message": "Избранное"
   },
   "showcase.usersList.allUsers": {
     "message": "Все промпты"
-  },
-  "action.loadMore": {
-    "message": "Загрузить еще"
   },
   "validation.password.match": {
     "message": "Пароли не совпадают!"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "Пожалуйста, подтвердите новый пароль!"
   },
-  "common.myPrompts": {
-    "message": "Мои промпты"
-  },
   "message.success.passwordChanged": {
     "message": "Пароль успешно изменен!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "Информация о пользователе"
-  },
-  "message.loading": {
-    "message": "Загрузка статуса входа..."
   },
   "label.sharedPrompts": {
     "message": "Общие промпты"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "Успешно скопировано"
-  },
-  "tooltip.switchLanguage": {
-    "message": "Нажмите, чтобы переключить язык отображения"
   },
   "label.commentInfo": {
     "message": "Пожалуйста, ответьте ниже, поделившись своим мнением, мыслями или информацией об этом промпте."
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "Удалить"
-  },
-  "message.fetchError": {
-    "message": "Не удалось получить промпты, попробуйте позже"
   },
   "message.noPrompts": {
     "message": "Промпты еще не отправлены, пожалуйста, добавьте промпт."
@@ -956,9 +908,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "Мой Центр"
-  },
   "link.myAccount": {
     "message": "Мой Аккаунт"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "Пока нет комментариев, будьте первым!"
+  },
+  "link.home": {
+    "message": "Главная"
+  },
+  "link.communityPrompts": {
+    "message": "Промпты сообщества"
+  },
+  "myCollection.header.title": {
+    "message": "Моя коллекция"
+  },
+  "myCollection.header.subtitle": {
+    "message": "Управление вашими промптами, избранным и тегами"
+  },
+  "myCollection.stats.total": {
+    "message": "Всего"
+  },
+  "myCollection.stats.prompts": {
+    "message": "Мои промпты"
+  },
+  "myCollection.stats.favorites": {
+    "message": "Избранное"
+  },
+  "myCollection.stats.tags": {
+    "message": "Теги"
+  },
+  "myspace.filter.all": {
+    "message": "Все"
+  },
+  "myspace.filter.prompts": {
+    "message": "Промпты"
+  },
+  "myspace.filter.favorites": {
+    "message": "Избранное"
+  },
+  "myspace.manageTags": {
+    "message": "Управление тегами"
+  },
+  "myspace.search.placeholder": {
+    "message": "Поиск в моей коллекции..."
+  },
+  "myspace.tagManager.title": {
+    "message": "Управление пользовательскими тегами"
+  },
+  "action.save": {
+    "message": "Сохранить"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "Название тега"
+  },
+  "action.add": {
+    "message": "Добавить"
+  },
+  "myspace.tagManager.empty": {
+    "message": "Нет пользовательских тегов"
+  },
+  "message.tagsUpdated": {
+    "message": "Теги обновлены"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Не удалось обновить теги"
+  },
+  "message.noSpaceItems": {
+    "message": "Здесь пока ничего нет. Добавьте промпты или избранное."
+  },
+  "nav.explore": {
+    "message": "Обзор"
+  },
+  "nav.myCollection": {
+    "message": "Моя коллекция"
+  },
+  "message.cache.clearError": {
+    "message": "Ошибка очистки кэша"
+  },
+  "title.dataManagement": {
+    "message": "Управление данными"
+  },
+  "description.exportPrompts.short": {
+    "message": "Экспорт в JSON для резервного копирования"
+  },
+  "button.export": {
+    "message": "Экспорт данных"
+  },
+  "description.clearCache.short": {
+    "message": "Обновить локальный кэш"
+  },
+  "modal.clearCache.title": {
+    "message": "Очистить кэш?"
+  },
+  "modal.clearCache.content": {
+    "message": "Система автоматически управляет кэшем с помощью ETag, ручная очистка обычно не требуется."
+  },
+  "modal.clearCache.warning": {
+    "message": "Очистка приведет к перезагрузке всех данных."
+  },
+  "button.clearAllCache": {
+    "message": "Очистить весь кэш"
+  },
+  "modal.forgotPassword.title": {
+    "message": "Забыли пароль"
   }
 }

@@ -1,15 +1,1 @@
-{
-    "id": 31,
-    "es": {
-        "title": "Análisis del sentimiento del texto",
-        "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Spanish. Generate the results in column, including the titles in the first one, and their sentiment in the second: ",
-        "description": "Especifica los sentimientos para los siguientes títulos, asignándoles los valores: positivo, neutro o negativo. Genera una columna de resultados con los títulos en la primera columna y los sentimientos en la segunda columna: [contenido] ",
-        "remark": "Juzga el estado de ánimo del texto: positivo, neutro o negativo."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 505,
-    "metaDescription": "¿Sientes curiosidad por el tono de un texto? Este prompt de AI clasifica instantáneamente el contenido como positivo, neutral o negativo. ¡Obtén un análisis de sentimiento rápido y preciso!"
-}
+{"id":31,"es":{"title":"Análisis del sentimiento del texto","prompt":"Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Spanish. Generate the results in column, including the titles in the first one, and their sentiment in the second: ","description":"Especifica los sentimientos para los siguientes títulos, asignándoles los valores: positivo, neutro o negativo. Genera una columna de resultados con los títulos en la primera columna y los sentimientos en la segunda columna: [contenido] ","remark":"Juzga el estado de ánimo del texto: positivo, neutro o negativo."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":505,"metaDescription":"¿Sientes curiosidad por el tono de un texto? Este prompt de AI clasifica instantáneamente el contenido como positivo, neutral o negativo. ¡Obtén un análisis de sentimiento rápido y preciso!"}

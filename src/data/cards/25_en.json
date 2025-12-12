@@ -1,14 +1,1 @@
-{
-    "id": 25,
-    "en": {
-        "title": "film critic",
-        "prompt": "I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. My first suggestion request is ",
-        "remark": "Comment on the movie from aspects such as plot, performance, cinematography, direction, music, etc."
-    },
-    "tags": [
-        "comments"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-film-critic",
-    "count": 492,
-    "metaDescription": "Want to write an articulate film review? This prompt helps you provide both positive and negative feedback on a movie's plot, acting, cinematography, direction, and music. Share your critique!"
-}
+{"id":25,"en":{"title":"film critic","prompt":"I want you to act as a film critic. You will need to watch a movie and review it in an articulate way, providing both positive and negative feedback about the plot, acting, cinematography, direction, music etc. My first suggestion request is ","remark":"Comment on the movie from aspects such as plot, performance, cinematography, direction, music, etc."},"tags":["comments"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-film-critic","count":492,"metaDescription":"Want to write an articulate film review? This prompt helps you provide both positive and negative feedback on a movie's plot, acting, cinematography, direction, and music. Share your critique!"}

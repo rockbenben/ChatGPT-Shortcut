@@ -1,15 +1,1 @@
-{
-    "id": 7,
-    "bn": {
-        "title": "প্রম্পট শব্দ সংশোধক",
-        "prompt": "I am trying to get good results from GPT-5 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-5 and would produce better results?.",
-        "description": "আমি নিম্নলিখিত কিউ শব্দগুলি থেকে GPT-5 এ ভাল ফলাফল পাওয়ার চেষ্টা করছি: আপনার কিউ শব্দগুলি। আপনি কি আরও অপ্টিমাইজড প্রম্পট শব্দ লিখতে পারেন যা ভাল ফলাফল দেয়?",
-        "remark": "চ্যাটজিপিটি আমাদের জন্য প্রম্পট শব্দগুলি পুনরায় লিখতে দিন। যেহেতু মানুষের দ্বারা লেখা প্রম্পট শব্দগুলির যুক্তি মেশিনের থেকে আলাদা, তাই প্রম্পট শব্দগুলিকে পুনরায় সম্পাদনা করা ChatGPT কে বোঝা সহজ করে তুলতে পারে।"
-    },
-    "tags": [
-        "ai"
-    ],
-    "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "count": 7689,
-    "metaDescription": "আরও ভালো এআই ফলাফল চান? মেশিনকে আপনার প্রম্পট অপ্টিমাইজ করতে দিন! এই টুলটি আপনার মূল কোয়েরিটিকে এমন একটি ফরম্যাটে পুনর্গঠন করে যা এআই আরও ভালোভাবে বোঝে, যার ফলে উন্নত এবং সঠিক আউটপুট পাওয়া যায়।"
-}
+{"id":7,"bn":{"title":"প্রম্পট শব্দ সংশোধক","prompt":"I am trying to get good results from GPT-5 on the following prompt: 'Your prompt.' Could you write a better prompt that is more optimal for GPT-5 and would produce better results?.","description":"আমি নিম্নলিখিত কিউ শব্দগুলি থেকে GPT-5 এ ভাল ফলাফল পাওয়ার চেষ্টা করছি: আপনার কিউ শব্দগুলি। আপনি কি আরও অপ্টিমাইজড প্রম্পট শব্দ লিখতে পারেন যা ভাল ফলাফল দেয়?","remark":"চ্যাটজিপিটি আমাদের জন্য প্রম্পট শব্দগুলি পুনরায় লিখতে দিন। যেহেতু মানুষের দ্বারা লেখা প্রম্পট শব্দগুলির যুক্তি মেশিনের থেকে আলাদা, তাই প্রম্পট শব্দগুলিকে পুনরায় সম্পাদনা করা ChatGPT কে বোঝা সহজ করে তুলতে পারে।"},"tags":["ai"],"website":"https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3","count":7689,"metaDescription":"আরও ভালো এআই ফলাফল চান? মেশিনকে আপনার প্রম্পট অপ্টিমাইজ করতে দিন! এই টুলটি আপনার মূল কোয়েরিটিকে এমন একটি ফরম্যাটে পুনর্গঠন করে যা এআই আরও ভালোভাবে বোঝে, যার ফলে উন্নত এবং সঠিক আউটপুট পাওয়া যায়।"}

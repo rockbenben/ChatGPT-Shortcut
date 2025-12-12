@@ -1,15 +1,1 @@
-{
-    "id": 240,
-    "bn": {
-        "title": "বিগ ডেটা: গভীরভাবে সারাংশ",
-        "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Bengali. Make sure your analysis is consistent with the original content of the articles.",
-        "description": "পূর্ববর্তী নিবন্ধগুলির &#39;@1&#39;～&#39;@3&#39; বিষয়বস্তুর সাথে একত্রিত, অনুগ্রহ করে মূল বিষয়বস্তু থেকে বিশ্লেষণ করুন এবং নিশ্চিত করুন যে এটি মূল বিষয়বস্তুর সাথে সামঞ্জস্যপূর্ণ। উপরের বিষয়বস্তুতে কোনো ত্রুটি থাকলে, আপনি সরাসরি সংশোধন বা পরিপূরক করতে পারেন এটা",
-        "remark": "(এই প্রম্পট শব্দটি সংশোধন করা প্রয়োজন।) গভীরভাবে বিমূর্তগুলি অবশ্যই দুবার জিজ্ঞাসা করা উচিত। দ্বিতীয়বার জিজ্ঞাসা করার সময়, ত্রুটি বা বাদ পড়ার জন্য তুলনা করার জন্য তাদের মূল পাঠে ফিরে যেতে বলুন। এই পদ্ধতিটি কম্পিউটার খেলনার লেখক Esor Huang এর একটি নিবন্ধ থেকে উদ্ধৃত করা হয়েছে।"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 757,
-    "metaDescription": "একটি দীর্ঘ পাঠ্যের বিস্তারিত বিশ্লেষণ প্রয়োজন? বিপুল ডেটা ইনপুট করার পরে এই প্রম্পটটি ব্যবহার করে একটি গভীর সারাংশ পান এবং যেকোনো ত্রুটি বা অসঙ্গতি চিহ্নিত করুন।"
-}
+{"id":240,"bn":{"title":"বিগ ডেটা: গভীরভাবে সারাংশ","prompt":"Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Bengali. Make sure your analysis is consistent with the original content of the articles.","description":"পূর্ববর্তী নিবন্ধগুলির &#39;@1&#39;～&#39;@3&#39; বিষয়বস্তুর সাথে একত্রিত, অনুগ্রহ করে মূল বিষয়বস্তু থেকে বিশ্লেষণ করুন এবং নিশ্চিত করুন যে এটি মূল বিষয়বস্তুর সাথে সামঞ্জস্যপূর্ণ। উপরের বিষয়বস্তুতে কোনো ত্রুটি থাকলে, আপনি সরাসরি সংশোধন বা পরিপূরক করতে পারেন এটা","remark":"(এই প্রম্পট শব্দটি সংশোধন করা প্রয়োজন।) গভীরভাবে বিমূর্তগুলি অবশ্যই দুবার জিজ্ঞাসা করা উচিত। দ্বিতীয়বার জিজ্ঞাসা করার সময়, ত্রুটি বা বাদ পড়ার জন্য তুলনা করার জন্য তাদের মূল পাঠে ফিরে যেতে বলুন। এই পদ্ধতিটি কম্পিউটার খেলনার লেখক Esor Huang এর একটি নিবন্ধ থেকে উদ্ধৃত করা হয়েছে।"},"tags":["write"],"website":"https://www.playpcesor.com/2023/03/chatgpt-2.html","count":757,"metaDescription":"একটি দীর্ঘ পাঠ্যের বিস্তারিত বিশ্লেষণ প্রয়োজন? বিপুল ডেটা ইনপুট করার পরে এই প্রম্পটটি ব্যবহার করে একটি গভীর সারাংশ পান এবং যেকোনো ত্রুটি বা অসঙ্গতি চিহ্নিত করুন।"}

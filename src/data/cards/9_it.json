@@ -1,15 +1,1 @@
-{
-    "id": 9,
-    "it": {
-        "title": "Articolo continuato",
-        "prompt": "The entire conversation and instructions should be provided in Italian. Continue writing an article about [theme] that begins with the following sentence: ",
-        "description": "Continuate a scrivere un articolo in cinese su [ARGOMENTO DELL'ARTICOLO], iniziando con la seguente frase: [INIZIO ARTICOLO].",
-        "remark": "Continuare la sezione di apertura del saggio per completare l'elaborato in base al tema del saggio."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 8775,
-    "metaDescription": "Mai più blocco dello scrittore. Fornisci un tema e una frase iniziale, e questo prompt AI continuerà a scrivere un articolo avvincente e coerente per te. Inizia ora!"
-}
+{"id":9,"it":{"title":"Articolo continuato","prompt":"The entire conversation and instructions should be provided in Italian. Continue writing an article about [theme] that begins with the following sentence: ","description":"Continuate a scrivere un articolo in cinese su [ARGOMENTO DELL'ARTICOLO], iniziando con la seguente frase: [INIZIO ARTICOLO].","remark":"Continuare la sezione di apertura del saggio per completare l'elaborato in base al tema del saggio."},"tags":["write"],"website":null,"count":8775,"metaDescription":"Mai più blocco dello scrittore. Fornisci un tema e una frase iniziale, e questo prompt AI continuerà a scrivere un articolo avvincente e coerente per te. Inizia ora!"}

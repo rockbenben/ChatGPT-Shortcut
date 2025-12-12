@@ -1,15 +1,1 @@
-{
-    "id": 32,
-    "ar": {
-        "title": "تصنيف نية النص",
-        "prompt": "The entire conversation and instructions should be provided in Arabic. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].",
-        "description": "قسّم قائمة الكلمات الرئيسية التالية إلى مجموعات وفقًا لهدف البحث (سواء أكان تجاريًا أم عمليًا أم إعلاميًا): [الكلمات الرئيسية].",
-        "remark": "بناءً على نية البحث ، يتم تجميع قوائم الكلمات الرئيسية أدناه حسب هدف البحث التجاري أو المتعلق بالمعاملات أو المعلومات."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 305,
-    "metaDescription": "كيف تصنف الكلمات الرئيسية حسب نية المستخدم؟ استخدم هذا الموجه لتجميع الكلمات الرئيسية تلقائيًا في نوايا بحث تجارية أو معاملاتية أو معلوماتية. مثالي لتحسين محركات البحث!"
-}
+{"id":32,"ar":{"title":"تصنيف نية النص","prompt":"The entire conversation and instructions should be provided in Arabic. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].","description":"قسّم قائمة الكلمات الرئيسية التالية إلى مجموعات وفقًا لهدف البحث (سواء أكان تجاريًا أم عمليًا أم إعلاميًا): [الكلمات الرئيسية].","remark":"بناءً على نية البحث ، يتم تجميع قوائم الكلمات الرئيسية أدناه حسب هدف البحث التجاري أو المتعلق بالمعاملات أو المعلومات."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":305,"metaDescription":"كيف تصنف الكلمات الرئيسية حسب نية المستخدم؟ استخدم هذا الموجه لتجميع الكلمات الرئيسية تلقائيًا في نوايا بحث تجارية أو معاملاتية أو معلوماتية. مثالي لتحسين محركات البحث!"}

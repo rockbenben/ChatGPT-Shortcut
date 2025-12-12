@@ -1,11 +1,11 @@
-import React, { useContext, useCallback } from "react";
-import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import React, { useContext, useCallback, ReactNode } from "react";
+import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -17,19 +17,21 @@ import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 
 interface FavoriteCardProps {
   data: any;
+  sortableId?: string | number;
   isFiltered?: boolean;
-  isDescription?: boolean;
+
   onRemoveFavorite?: (id: string, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
+  extraActions?: ReactNode;
 }
 
-const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemoveFavorite, onOpenModal }: FavoriteCardProps) => {
+const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, extraActions }: FavoriteCardProps) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText, updateCopy } = useCopyToClipboard();
 
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: user.id });
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -52,8 +54,6 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
   const website = user.website;
   const owner = user.owner;
   const copyCount = getWeight(user);
-
-  const contentToShow = isDescription ? prompt : description;
 
   const handleCopy = useCallback(
     (e: React.MouseEvent) => {
@@ -108,58 +108,54 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
       {...attributes}
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-            {isDataCard ? (
-              <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
-                {title}
-              </Link>
-            ) : (
-              <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
+          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: token.marginXS, overflow: "hidden" }}>
+            {!isFiltered && (
+              <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+                <HolderOutlined style={{ color: token.colorTextSecondary }} />
+              </div>
             )}
-          </Typography.Title>
-          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}>
-            {copyCount > 0 && (
-              <Typography.Text
-                type="secondary"
-                style={{
-                  fontSize: token.fontSizeSM,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: token.marginXXS,
-                  color: token.colorTextTertiary,
-                  flexShrink: 0,
-                }}>
-                <FireOutlined style={{ color: token.colorWarning }} />
-                {formatCompactNumber(copyCount)}
-              </Typography.Text>
-            )}
-            {user.upvoteDifference > 0 && (
-              <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning }}>
-                <LikeFilled />
-                <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                  {formatCompactNumber(user.upvoteDifference)}
-                </Typography.Text>
-              </Flex>
-            )}
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
+              {isDataCard ? (
+                <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+                  {title}
+                </Link>
+              ) : (
+                <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
+              )}
+            </Typography.Title>
           </Flex>
+          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}></Flex>
         </Flex>
       }
       titleExtra={
-        owner && (
-          <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-            <UserOutlined style={{ marginRight: 4 }} />
-            {owner}
-          </Typography.Text>
-        )
+        <>
+          {copyCount > 0 && (
+            <Statistic
+              value={copyCount}
+              formatter={(value) => formatCompactNumber(value as number)}
+              prefix={<FireOutlined style={{ color: token.colorWarning }} />}
+              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorTextTertiary } }}
+            />
+          )}
+          {user.upvoteDifference > 0 && (
+            <Statistic
+              value={user.upvoteDifference}
+              formatter={(value) => formatCompactNumber(value as number)}
+              prefix={<LikeFilled style={{ color: token.colorWarning }} />}
+              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+            />
+          )}
+        </>
       }
       actions={[
+        extraActions,
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
         <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
           <Button type="text" icon={<StarFilled style={{ color: gold[5] }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
-      ]}
+      ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={remark} />
@@ -170,13 +166,20 @@ const FavoriteCardComponent = ({ data: user, isFiltered, isDescription, onRemove
             }}
             className={styles.showcaseCardBody}
             style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-            {contentToShow}
+            {prompt}
           </Typography.Paragraph>
         </div>
         <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
           <div style={{ flex: 1, overflow: "hidden" }}>
+            {owner && (
+              <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+                <UserOutlined style={{ marginRight: 4 }} />
+                {owner}
+              </Typography.Text>
+            )}
             <PromptCardTag tags={tags} muted />
           </div>
+
           {website && (
             <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
               <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />

@@ -1,15 +1,1 @@
-{
-    "id": 10,
-    "ar": {
-        "title": "مجموعة من مواد الكتابة",
-        "prompt": "The entire conversation and instructions should be provided in Arabic. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
-        "description": "قم بإنشاء قائمة بأهم 10 حقائق وإحصاءات واتجاهات تتعلق بـ [الموضوع] ، بما في ذلك مصادرها.",
-        "remark": "قدم الاستنتاجات والبيانات والمصادر المتعلقة بالموضوع كمواد."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 4586,
-    "metaDescription": "هل تبحث عن بيانات موثوقة لمحتواك؟ يقوم هذا الموجه بإنشاء قائمة بأهم 10 حقائق وإحصاءات واتجاهات حول أي موضوع، مع مصادر موثقة. عزز بحثك الآن."
-}
+{"id":10,"ar":{"title":"مجموعة من مواد الكتابة","prompt":"The entire conversation and instructions should be provided in Arabic. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.","description":"قم بإنشاء قائمة بأهم 10 حقائق وإحصاءات واتجاهات تتعلق بـ [الموضوع] ، بما في ذلك مصادرها.","remark":"قدم الاستنتاجات والبيانات والمصادر المتعلقة بالموضوع كمواد."},"tags":["write"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":4586,"metaDescription":"هل تبحث عن بيانات موثوقة لمحتواك؟ يقوم هذا الموجه بإنشاء قائمة بأهم 10 حقائق وإحصاءات واتجاهات حول أي موضوع، مع مصادر موثقة. عزز بحثك الآن."}

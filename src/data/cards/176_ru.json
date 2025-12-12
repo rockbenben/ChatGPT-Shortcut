@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "ru": {
-        "title": "Ассистент по постановке вопросов",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ",
-        "description": "Вы хорошо умеете задавать вопросы, и в параграфе вы обратитесь к озабоченности и возможным вопросам, которые могут быть использованы для более полного осмысления.",
-        "remark": "Задавайте вопросы с разных точек зрения, чтобы вызвать более глубокое мышление. Вклад от @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "Хотите более критически осмыслить текст? Этот промпт действует как помощник по вопросам, генерируя проницательные вопросы, которые бросают вызов вашей точке зрения."
-}
+{"id":176,"ru":{"title":"Ассистент по постановке вопросов","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ","description":"Вы хорошо умеете задавать вопросы, и в параграфе вы обратитесь к озабоченности и возможным вопросам, которые могут быть использованы для более полного осмысления.","remark":"Задавайте вопросы с разных точек зрения, чтобы вызвать более глубокое мышление. Вклад от @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"Хотите более критически осмыслить текст? Этот промпт действует как помощник по вопросам, генерируя проницательные вопросы, которые бросают вызов вашей точке зрения."}

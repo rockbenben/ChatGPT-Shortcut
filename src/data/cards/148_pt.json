@@ -1,15 +1,1 @@
-{
-    "id": 148,
-    "pt": {
-        "title": "gerador de títulos",
-        "prompt": "I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Portuguese. My first keywords are ",
-        "description": "Gostaria que actuasse como um gerador de títulos de fantasia. Eu introduzo as palavras-chave através de vírgulas e vocês respondem com títulos extravagantes.",
-        "remark": "Gerar vários títulos e posições com base em palavras-chave."
-    },
-    "tags": [
-        "company"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
-    "count": 376,
-    "metaDescription": "Procurando um título de cargo criativo? Este prompt atua como um gerador de títulos sofisticados. Basta fornecer algumas palavras-chave e ele lhe dará uma lista de títulos impressionantes."
-}
+{"id":148,"pt":{"title":"gerador de títulos","prompt":"I want you to act as a fancy title generator. I will type keywords via comma and you will reply with fancy titles. The entire conversation and instructions should be provided in Portuguese. My first keywords are ","description":"Gostaria que actuasse como um gerador de títulos de fantasia. Eu introduzo as palavras-chave através de vírgulas e vocês respondem com títulos extravagantes.","remark":"Gerar vários títulos e posições com base em palavras-chave."},"tags":["company"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator","count":376,"metaDescription":"Procurando um título de cargo criativo? Este prompt atua como um gerador de títulos sofisticados. Basta fornecer algumas palavras-chave e ele lhe dará uma lista de títulos impressionantes."}

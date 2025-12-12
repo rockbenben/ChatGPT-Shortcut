@@ -1,9 +1,9 @@
-import React, { useContext, useCallback } from "react";
-import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import React, { useContext, useCallback, ReactNode } from "react";
+import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, FireFilled, LockOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -15,19 +15,21 @@ import { formatCompactNumber } from "@site/src/utils/formatters";
 
 interface UserCardProps {
   data: any;
+  sortableId?: string | number;
   isFiltered?: boolean;
   onEdit?: (data: any) => void;
   onDelete?: (id: string) => void;
   onOpenModal?: (data: any) => void;
+  extraActions?: ReactNode;
 }
 
-const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenModal }: UserCardProps) => {
+const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: user.id });
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -82,30 +84,33 @@ const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenMod
       {...attributes}
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <div style={{ flex: 1, minWidth: 0, marginRight: token.marginXS }}>
+          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: token.marginXS, overflow: "hidden" }}>
             {!isFiltered && (
-              <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "inline-flex", alignItems: "center", verticalAlign: "middle" }}>
+              <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
                 <HolderOutlined style={{ color: token.colorTextSecondary }} />
               </div>
             )}
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", display: "inline" }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
               <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
             </Typography.Title>
-          </div>
-          <Flex align="center" gap={token.marginXXS} style={{ flexShrink: 0, marginLeft: token.marginXS }}>
-            {!user.share && <LockOutlined style={{ color: token.colorTextSecondary }} />}
-            {user.upvoteDifference > 0 && (
-              <Flex align="center" gap={token.marginXXS} style={{ color: token.colorWarning, flexShrink: 0 }}>
-                <LikeFilled />
-                <Typography.Text type="warning" style={{ fontSize: token.fontSizeSM, fontWeight: 600 }}>
-                  {formatCompactNumber(user.upvoteDifference)}
-                </Typography.Text>
-              </Flex>
-            )}
           </Flex>
         </Flex>
       }
+      titleExtra={
+        <>
+          {!user.share && <LockOutlined style={{ color: token.colorTextSecondary }} />}
+          {user.upvoteDifference > 0 && (
+            <Statistic
+              value={user.upvoteDifference}
+              formatter={(value) => formatCompactNumber(value as number)}
+              prefix={<LikeFilled style={{ color: token.colorWarning }} />}
+              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+            />
+          )}
+        </>
+      }
       actions={[
+        extraActions,
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
@@ -115,7 +120,7 @@ const UserCardComponent = ({ data: user, isFiltered, onEdit, onDelete, onOpenMod
         <Tooltip title={<Translate id="action.delete">删除</Translate>}>
           <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
         </Tooltip>,
-      ]}
+      ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />

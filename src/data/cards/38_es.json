@@ -1,15 +1,1 @@
-{
-    "id": 38,
-    "es": {
-        "title": "Descripción de la página",
-        "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Spanish. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
-        "description": "Genere 5 meta descripciones únicas de hasta 150 caracteres para el siguiente texto. Deben ser atractivas, tener una llamada a la acción e incluir [palabra clave principal]: [contenido de la página].",
-        "remark": "Generar meta descripción para el contenido de la página."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 801,
-    "metaDescription": "¿Tienes problemas con las metadescripciones? Este prompt genera 5 metadescripciones únicas y atractivas de menos de 150 caracteres, con una llamada a la acción y tus palabras clave objetivo."
-}
+{"id":38,"es":{"title":"Descripción de la página","prompt":"Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Spanish. They should be catchy with a call to action, including the term [keywords] in them: [page content].","description":"Genere 5 meta descripciones únicas de hasta 150 caracteres para el siguiente texto. Deben ser atractivas, tener una llamada a la acción e incluir [palabra clave principal]: [contenido de la página].","remark":"Generar meta descripción para el contenido de la página."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":801,"metaDescription":"¿Tienes problemas con las metadescripciones? Este prompt genera 5 metadescripciones únicas y atractivas de menos de 150 caracteres, con una llamada a la acción y tus palabras clave objetivo."}

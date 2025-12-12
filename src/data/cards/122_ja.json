@@ -1,15 +1,1 @@
-{
-    "id": 122,
-    "ja": {
-        "title": "バックギャモン",
-        "prompt": "Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Japanese. Now make the first move.",
-        "description": "フットサルで遊ぼうこのゲームの目的は、9x9 のボード上で 5 を連続（横、縦、斜め）させることです。各移動後のボード（ABCDEFGHI/123456789 軸）を印刷する（x と o は移動、-は空白を表す）。あなたと私は交代で、つまり、私の動きの後にあなたの駒をプレイします。他の駒の上に駒を置くことはできません。プレイする前に元の盤を修正しないでください。では、最初の一手を打ってください。",
-        "remark": "五目並べ"
-    },
-    "tags": [
-        "games"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "count": 4132,
-    "metaDescription": "クラシックなボードゲームをお探しですか？ChatGPTに五目並べのゲームを挑みましょう！このプロンプトは、AIと対戦するための9x9の盤面を設定します。"
-}
+{"id":122,"ja":{"title":"バックギャモン","prompt":"Let us play Gomoku. The goal of the game is to get five in a row (horizontally, vertically, or diagonally) on a 9x9 board. Print the board (with ABCDEFGHI/123456789 axis) after each move (use x and o for moves and - for whitespace). You and I take turns in moving, that is, make your move after my each move. You cannot place a move an top of other moves. Do not modify the original board before a move. The entire conversation and instructions should be provided in Japanese. Now make the first move.","description":"フットサルで遊ぼうこのゲームの目的は、9x9 のボード上で 5 を連続（横、縦、斜め）させることです。各移動後のボード（ABCDEFGHI/123456789 軸）を印刷する（x と o は移動、-は空白を表す）。あなたと私は交代で、つまり、私の動きの後にあなたの駒をプレイします。他の駒の上に駒を置くことはできません。プレイする前に元の盤を修正しないでください。では、最初の一手を打ってください。","remark":"五目並べ"},"tags":["games"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player","count":4132,"metaDescription":"クラシックなボードゲームをお探しですか？ChatGPTに五目並べのゲームを挑みましょう！このプロンプトは、AIと対戦するための9x9の盤面を設定します。"}

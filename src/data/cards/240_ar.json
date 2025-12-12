@@ -1,15 +1,1 @@
-{
-    "id": 240,
-    "ar": {
-        "title": "البيانات الضخمة: ملخص في العمق",
-        "prompt": "Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Arabic. Make sure your analysis is consistent with the original content of the articles.",
-        "description": "بالاقتران مع محتوى المقالات السابقة &quot;@ 1&quot; ～ &quot;@ 3&quot; ، يرجى التحليل من المحتوى الأصلي والتأكد من توافقه مع المحتوى الأصلي. إذا كان هناك أي خطأ في المحتوى أعلاه ، فيمكنك تصحيحه أو استكماله مباشرةً هو - هي.",
-        "remark": "(هذه الكلمة السريعة تحتاج إلى تعديل.) يجب طرح الملخصات المتعمقة مرتين. عند السؤال للمرة الثانية ، اطلب منهم العودة إلى النص الأصلي للمقارنة للتحقق من الأخطاء أو السهو. تم اقتباس هذه الطريقة من مقال بقلم Esor Huang ، مؤلف ألعاب الكمبيوتر."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 757,
-    "metaDescription": "هل تحتاج إلى تحليل مفصل لنص طويل؟ استخدم هذا الموجه بعد إدخال بيانات ضخمة للحصول على ملخص متعمق وتحديد أي أخطاء أو تناقضات."
-}
+{"id":240,"ar":{"title":"البيانات الضخمة: ملخص في العمق","prompt":"Based on the content from articles '@1' to '@3', please analyze and identify any errors or inconsistencies that need to be corrected or supplemented. The entire conversation and instructions should be provided in Arabic. Make sure your analysis is consistent with the original content of the articles.","description":"بالاقتران مع محتوى المقالات السابقة &quot;@ 1&quot; ～ &quot;@ 3&quot; ، يرجى التحليل من المحتوى الأصلي والتأكد من توافقه مع المحتوى الأصلي. إذا كان هناك أي خطأ في المحتوى أعلاه ، فيمكنك تصحيحه أو استكماله مباشرةً هو - هي.","remark":"(هذه الكلمة السريعة تحتاج إلى تعديل.) يجب طرح الملخصات المتعمقة مرتين. عند السؤال للمرة الثانية ، اطلب منهم العودة إلى النص الأصلي للمقارنة للتحقق من الأخطاء أو السهو. تم اقتباس هذه الطريقة من مقال بقلم Esor Huang ، مؤلف ألعاب الكمبيوتر."},"tags":["write"],"website":"https://www.playpcesor.com/2023/03/chatgpt-2.html","count":757,"metaDescription":"هل تحتاج إلى تحليل مفصل لنص طويل؟ استخدم هذا الموجه بعد إدخال بيانات ضخمة للحصول على ملخص متعمق وتحديد أي أخطاء أو تناقضات."}

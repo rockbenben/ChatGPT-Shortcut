@@ -1,15 +1,1 @@
-{
-    "id": 172,
-    "bn": {
-        "title": "উদ্যোক্তা প্রযুক্তি আইনজীবী",
-        "prompt": "I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Bengali. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.",
-        "description": "আমি আপনাকে বৌদ্ধিক সম্পত্তির মালিক একটি টেক স্টার্টআপ এবং স্টার্টআপের প্রযুক্তির সম্ভাব্য গ্রাহকের মধ্যে একটি খসড়া 1-পৃষ্ঠার নকশা অংশীদারি চুক্তি প্রস্তুত করতে বলব যা স্টার্টআপটি যে সমস্যার সমাধান করছে এবং ডোমেন দক্ষতার জন্য ডেটা সরবরাহ করে। আপনি প্রায় 1-4 পৃষ্ঠার একটি প্রস্তাবিত নকশা অংশীদারিত্ব চুক্তি লিখবেন, যা মেধা সম্পত্তি, গোপনীয়তা, বাণিজ্যিক অধিকার, প্রদত্ত ডেটা, ডেটার ব্যবহার ইত্যাদির সমস্ত গুরুত্বপূর্ণ দিকগুলিকে কভার করবে৷",
-        "remark": "অনুরোধের ভিত্তিতে আউটপুট চুক্তি এবং চুক্তির খসড়া।"
-    },
-    "tags": [
-        "professional"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-tech-lawyer",
-    "count": 810,
-    "metaDescription": "আপনার স্টার্টআপের জন্য একটি ডিজাইন পার্টনার চুক্তি প্রয়োজন? এই প্রম্পটটি ChatGPT-কে একজন প্রযুক্তি আইনজীবীতে পরিণত করে, যিনি আপনাকে আইপি এবং গোপনীয়তা কভার করে একটি ১-পৃষ্ঠার চুক্তি খসড়া করতে সহায়তা করেন।"
-}
+{"id":172,"bn":{"title":"উদ্যোক্তা প্রযুক্তি আইনজীবী","prompt":"I will ask of you to prepare a 1 page draft of a design partner agreement between a tech startup with IP and a potential client of that startup's technology that provides data and domain expertise to the problem space the startup is solving. The entire conversation and instructions should be provided in Bengali. You will write down about a 1 a4 page length of a proposed design partner agreement that will cover all the important aspects of IP, confidentiality, commercial rights, data provided, usage of the data etc.","description":"আমি আপনাকে বৌদ্ধিক সম্পত্তির মালিক একটি টেক স্টার্টআপ এবং স্টার্টআপের প্রযুক্তির সম্ভাব্য গ্রাহকের মধ্যে একটি খসড়া 1-পৃষ্ঠার নকশা অংশীদারি চুক্তি প্রস্তুত করতে বলব যা স্টার্টআপটি যে সমস্যার সমাধান করছে এবং ডোমেন দক্ষতার জন্য ডেটা সরবরাহ করে। আপনি প্রায় 1-4 পৃষ্ঠার একটি প্রস্তাবিত নকশা অংশীদারিত্ব চুক্তি লিখবেন, যা মেধা সম্পত্তি, গোপনীয়তা, বাণিজ্যিক অধিকার, প্রদত্ত ডেটা, ডেটার ব্যবহার ইত্যাদির সমস্ত গুরুত্বপূর্ণ দিকগুলিকে কভার করবে৷","remark":"অনুরোধের ভিত্তিতে আউটপুট চুক্তি এবং চুক্তির খসড়া।"},"tags":["professional"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-tech-lawyer","count":810,"metaDescription":"আপনার স্টার্টআপের জন্য একটি ডিজাইন পার্টনার চুক্তি প্রয়োজন? এই প্রম্পটটি ChatGPT-কে একজন প্রযুক্তি আইনজীবীতে পরিণত করে, যিনি আপনাকে আইপি এবং গোপনীয়তা কভার করে একটি ১-পৃষ্ঠার চুক্তি খসড়া করতে সহায়তা করেন।"}

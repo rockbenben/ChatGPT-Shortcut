@@ -1,15 +1,1 @@
-{
-    "id": 38,
-    "ru": {
-        "title": "Описание страницы",
-        "prompt": "Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Russian. They should be catchy with a call to action, including the term [keywords] in them: [page content].",
-        "description": "Создайте 5 уникальных метаописаний объемом до 150 символов для следующего текста. Они должны быть увлекательными, содержать призыв к действию и включать [главное ключевое слово]: [содержание страницы].",
-        "remark": "Генерировать метаописание для содержимого страницы."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 801,
-    "metaDescription": "Испытываете трудности с мета-описаниями? Этот промпт генерирует 5 уникальных и запоминающихся мета-описаний длиной до 150 символов, с призывом к действию и вашими целевыми ключевыми словами."
-}
+{"id":38,"ru":{"title":"Описание страницы","prompt":"Generate 5 unique meta descriptions, of a maximum of 150 characters, for the following text. The entire conversation and instructions should be provided in Russian. They should be catchy with a call to action, including the term [keywords] in them: [page content].","description":"Создайте 5 уникальных метаописаний объемом до 150 символов для следующего текста. Они должны быть увлекательными, содержать призыв к действию и включать [главное ключевое слово]: [содержание страницы].","remark":"Генерировать метаописание для содержимого страницы."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":801,"metaDescription":"Испытываете трудности с мета-описаниями? Этот промпт генерирует 5 уникальных и запоминающихся мета-описаний длиной до 150 символов, с призывом к действию и вашими целевыми ключевыми словами."}

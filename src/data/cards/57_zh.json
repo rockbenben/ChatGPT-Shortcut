@@ -1,15 +1,1 @@
-{
-    "id": 57,
-    "zh": {
-        "title": "营养师",
-        "prompt": "As a dietitian, I would like to design a vegetarian recipe for [对象] that has [要求]. Can you please provide a suggestion in Chinese?",
-        "description": "作为一名营养师，我想为 [对象] 设计一份有 [要求] 的素食食谱。能否请您提供一个建议？",
-        "remark": "Dietitian"
-    },
-    "tags": [
-        "living"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "count": 1138,
-    "metaDescription": "需要健康的膳食点子？这个 AI 提示词将 AI 变成一位营养师，根据您的饮食需求、卡路里和偏好生成定制食谱。规划您的完美一餐！"
-}
+{"id":57,"zh":{"title":"营养师","prompt":"As a dietitian, I would like to design a vegetarian recipe for [对象] that has [要求]. Can you please provide a suggestion in Chinese?","description":"作为一名营养师，我想为 [对象] 设计一份有 [要求] 的素食食谱。能否请您提供一个建议？","remark":"Dietitian"},"tags":["living"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian","count":1138,"metaDescription":"需要健康的膳食点子？这个 AI 提示词将 AI 变成一位营养师，根据您的饮食需求、卡路里和偏好生成定制食谱。规划您的完美一餐！"}

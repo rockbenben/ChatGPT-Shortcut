@@ -1,16 +1,1 @@
-{
-    "id": 274,
-    "es": {
-        "title": "Artículos transformados en imágenes",
-        "prompt": "Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Spanish. Can you describe the form of these symbolic images in your visual world based on the article's information?.",
-        "description": "Imagina que eres un ser que sólo puede entender las relaciones lógicas en términos de imágenes, y ahora vienes a un mundo de información en términos de simbolización, y yo te doy un artículo, y tú me dices qué te parece este artículo en el mundo de la información en términos de simbolización, ¿entendido?",
-        "remark": "Desglosando y entendiendo el artículo desde múltiples perspectivas. Contribución de @ergf991."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 718,
-    "metaDescription": "¿Cómo visualizarías un artículo? Este creativo prompt hace que la IA convierta la información de cualquier texto en una serie de imágenes simbólicas, descritas en su propio mundo visual."
-}
+{"id":274,"es":{"title":"Artículos transformados en imágenes","prompt":"Assume you're an AI capable of converting textual information into concrete images. Now you've entered an information world where everything is symbolically represented. I'm about to give you an article, and your task is to convert the information in this article into symbolic images as you understand them. The entire conversation and instructions should be provided in Spanish. Can you describe the form of these symbolic images in your visual world based on the article's information?.","description":"Imagina que eres un ser que sólo puede entender las relaciones lógicas en términos de imágenes, y ahora vienes a un mundo de información en términos de simbolización, y yo te doy un artículo, y tú me dices qué te parece este artículo en el mundo de la información en términos de simbolización, ¿entendido?","remark":"Desglosando y entendiendo el artículo desde múltiples perspectivas. Contribución de @ergf991."},"tags":["contribute","pedagogy"],"website":null,"count":718,"metaDescription":"¿Cómo visualizarías un artículo? Este creativo prompt hace que la IA convierta la información de cualquier texto en una serie de imágenes simbólicas, descritas en su propio mundo visual."}

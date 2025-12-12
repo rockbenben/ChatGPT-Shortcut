@@ -1,15 +1,1 @@
-{
-    "id": 209,
-    "bn": {
-        "title": "জিয়াওহংশু শৈলী",
-        "prompt": "Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ",
-        "description": "অনুগ্রহ করে ইমোজি স্টাইল ব্যবহার করে নিম্নলিখিত অনুচ্ছেদগুলি সম্পাদনা করুন, যাতে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ রয়েছে৷ মূল পাঠ্যের অর্থ রাখতে ভুলবেন না।",
-        "remark": "লিটল রেড বুকের মতো একটি ইমোজি শৈলীতে পাঠ্যটি পুনরায় লিখুন।"
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 57712,
-    "metaDescription": "আপনার লেখায় নতুনত্ব আনতে চান? এই প্রম্পটটি আপনার বিষয়বস্তুকে একটি মজাদার \"ইমোজি শৈলী\"তে নতুন করে লেখে, যেখানে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ থাকে।"
-}
+{"id":209,"bn":{"title":"জিয়াওহংশু শৈলী","prompt":"Please edit the following passage using the Emoji style, which is characterized by captivating headlines, the inclusion of emoticons in each paragraph, and the addition of relevant tags at the end. Be sure to maintain the original meaning of the text. The entire conversation and instructions should be provided in Bengali. Please begin by editing the following text: ","description":"অনুগ্রহ করে ইমোজি স্টাইল ব্যবহার করে নিম্নলিখিত অনুচ্ছেদগুলি সম্পাদনা করুন, যাতে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ রয়েছে৷ মূল পাঠ্যের অর্থ রাখতে ভুলবেন না।","remark":"লিটল রেড বুকের মতো একটি ইমোজি শৈলীতে পাঠ্যটি পুনরায় লিখুন।"},"tags":["write"],"website":null,"count":57712,"metaDescription":"আপনার লেখায় নতুনত্ব আনতে চান? এই প্রম্পটটি আপনার বিষয়বস্তুকে একটি মজাদার \"ইমোজি শৈলী\"তে নতুন করে লেখে, যেখানে আকর্ষণীয় শিরোনাম, প্রতিটি অনুচ্ছেদে ইমোজি এবং শেষে প্রাসঙ্গিক ট্যাগ থাকে।"}

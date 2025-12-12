@@ -1,16 +1,1 @@
-{
-    "id": 179,
-    "ar": {
-        "title": "لعبة كلمة سطح المكتب",
-        "prompt": "Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Arabic. If you understand, reply with \"Understood\" and begin the game.",
-        "description": "تظاهر بأنك DM في trpg Dungeons &amp; Dragons ، أضف إمكانية الفشل في التعديل ، ثم ضع قوسًا بعد كل اختيار مع تلميحات حول الاختيار ، وسأقوم بتشغيل اللاعب. إذا حصلت عليها ، فقم بالرد &quot;موافق&quot; وابدأ اللعبة.",
-        "remark": "يأتي ChatGPT مع إعدادات trpg. مساهمة منgandli. (توجد اختلافات كبيرة بين النسختين الصينية والإنجليزية من هذا التذكير ، يرجى تبديل اللغة إذا كنت تريد استخدام النسخة الإنجليزية.)"
-    },
-    "tags": [
-        "contribute",
-        "games"
-    ],
-    "website": null,
-    "count": 1062,
-    "metaDescription": "هل أنت مستعد لمغامرة؟ هذا الموجه يحول AI إلى سيد زنزانة (Dungeon Master) للعبة نصية من Dungeons & Dragons، حيث ينشئ سيناريوهات مع خيارات لتتخذها."
-}
+{"id":179,"ar":{"title":"لعبة كلمة سطح المكتب","prompt":"Pretend you are the Dungeon Master (DM) in a tabletop role-playing game (TRPG) like \"Dungeons & Dragons.\" Create a scenario with various choices for the player to make, and include hints in parentheses after each choice. I will play as the player. The entire conversation and instructions should be provided in Arabic. If you understand, reply with \"Understood\" and begin the game.","description":"تظاهر بأنك DM في trpg Dungeons &amp; Dragons ، أضف إمكانية الفشل في التعديل ، ثم ضع قوسًا بعد كل اختيار مع تلميحات حول الاختيار ، وسأقوم بتشغيل اللاعب. إذا حصلت عليها ، فقم بالرد &quot;موافق&quot; وابدأ اللعبة.","remark":"يأتي ChatGPT مع إعدادات trpg. مساهمة منgandli. (توجد اختلافات كبيرة بين النسختين الصينية والإنجليزية من هذا التذكير ، يرجى تبديل اللغة إذا كنت تريد استخدام النسخة الإنجليزية.)"},"tags":["contribute","games"],"website":null,"count":1062,"metaDescription":"هل أنت مستعد لمغامرة؟ هذا الموجه يحول AI إلى سيد زنزانة (Dungeon Master) للعبة نصية من Dungeons & Dragons، حيث ينشئ سيناريوهات مع خيارات لتتخذها."}

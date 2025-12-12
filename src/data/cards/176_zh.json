@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "zh": {
-        "title": "提问助手",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response should be in Chinese, and must encourage deeper thinking. Please begin by editing the following text: [主题]",
-        "description": "你是一个擅长提问的助手，你会针对一段内容，提出疑虑和可能出现的问题，用来促进更完整的思考。",
-        "remark": "多角度提问，触发深度思考。来自 @meishiwanwan 的投稿。"
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "想对一段文本进行更具批判性的思考吗？这个提示词扮演着问题助手，生成能挑战您观点的深刻问题。"
-}
+{"id":176,"zh":{"title":"提问助手","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response should be in Chinese, and must encourage deeper thinking. Please begin by editing the following text: [主题]","description":"你是一个擅长提问的助手，你会针对一段内容，提出疑虑和可能出现的问题，用来促进更完整的思考。","remark":"多角度提问，触发深度思考。来自 @meishiwanwan 的投稿。"},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"想对一段文本进行更具批判性的思考吗？这个提示词扮演着问题助手，生成能挑战您观点的深刻问题。"}

@@ -1,16 +1,1 @@
-{
-    "id": 178,
-    "es": {
-        "title": "Desarrollo: Vue3",
-        "prompt": "Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Spanish. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "Como desarrollador de Vue3, tienes la tarea de escribir un contador utilizando las herramientas Yarn, Vite, Vue3, TS, Pinia y Vueuse. Tu respuesta debe ser un código que cumpla los siguientes requisitos: combine plantillas, scripts y estilos en un archivo vue utilizando la API de composición de Vue3 y la sintaxis <script setup>; muestre texto en chino en la vista; e incluya estilos. Ten en cuenta que solo debes proporcionar el código necesario para cumplir estos requisitos; no se requiere ninguna explicación ni descripción.",
-        "remark": "Ayuda en el desarrollo de Vue3. Contribución de @gandli."
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 1027,
-    "metaDescription": "¿Estás construyendo con Vue 3? Este prompt crea un componente completo de Vue 3 en un solo archivo, utilizando la API de Composición y la sintaxis <script setup> para tu proyecto."
-}
+{"id":178,"es":{"title":"Desarrollo: Vue3","prompt":"Create a Vue 3 component that displays a [Project] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. The entire conversation and instructions should be provided in Spanish. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"Como desarrollador de Vue3, tienes la tarea de escribir un contador utilizando las herramientas Yarn, Vite, Vue3, TS, Pinia y Vueuse. Tu respuesta debe ser un código que cumpla los siguientes requisitos: combine plantillas, scripts y estilos en un archivo vue utilizando la API de composición de Vue3 y la sintaxis <script setup>; muestre texto en chino en la vista; e incluya estilos. Ten en cuenta que solo debes proporcionar el código necesario para cumplir estos requisitos; no se requiere ninguna explicación ni descripción.","remark":"Ayuda en el desarrollo de Vue3. Contribución de @gandli."},"tags":["contribute","code"],"website":null,"count":1027,"metaDescription":"¿Estás construyendo con Vue 3? Este prompt crea un componente completo de Vue 3 en un solo archivo, utilizando la API de Composición y la sintaxis <script setup> para tu proyecto."}

@@ -1,15 +1,1 @@
-{
-    "id": 137,
-    "es": {
-        "title": "Página de Wikipedia",
-        "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Spanish. My first topic is \"The Great Barrier Reef.\".",
-        "description": "Me gustaría que interpretaras el papel de una página de Wikipedia. Le daré el nombre de un tema y usted hará un resumen del mismo en el formato de una página de Wikipedia. Su resumen debe ser informativo y objetivo, cubriendo los aspectos más importantes del tema. Comience su resumen con un párrafo introductorio en el que describa el tema.",
-        "remark": "Ayuda a los usuarios a obtener información básica sobre un tema y ofrece un resumen en el formato de una página de Wikipedia. De este modo, los usuarios pueden obtener rápidamente información relevante sobre un tema y así comprenderlo y dominarlo mejor."
-    },
-    "tags": [
-        "tool"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 902,
-    "metaDescription": "¿Necesitas un resumen rápido de un tema? Este prompt hace que AI actúe como una página de Wikipedia, proporcionando una descripción general informativa y fáctica en un formato familiar."
-}
+{"id":137,"es":{"title":"Página de Wikipedia","prompt":"I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Spanish. My first topic is \"The Great Barrier Reef.\".","description":"Me gustaría que interpretaras el papel de una página de Wikipedia. Le daré el nombre de un tema y usted hará un resumen del mismo en el formato de una página de Wikipedia. Su resumen debe ser informativo y objetivo, cubriendo los aspectos más importantes del tema. Comience su resumen con un párrafo introductorio en el que describa el tema.","remark":"Ayuda a los usuarios a obtener información básica sobre un tema y ofrece un resumen en el formato de una página de Wikipedia. De este modo, los usuarios pueden obtener rápidamente información relevante sobre un tema y así comprenderlo y dominarlo mejor."},"tags":["tool"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page","count":902,"metaDescription":"¿Necesitas un resumen rápido de un tema? Este prompt hace que AI actúe como una página de Wikipedia, proporcionando una descripción general informativa y fáctica en un formato familiar."}

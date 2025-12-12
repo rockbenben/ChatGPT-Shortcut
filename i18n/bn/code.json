@@ -26,9 +26,6 @@
   "message.addPrompt.success": {
     "message": "প্রম্পট সফলভাবে জমা দেওয়া হয়েছে!"
   },
-  "message.addPrompt.success.view": {
-    "message": "‘আমার প্রম্পট’-এ দেখা যাবে"
-  },
   "message.addPrompt.error": {
     "message": "প্রম্পট জমা দিতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
@@ -67,9 +64,6 @@
   },
   "common.favorites": {
     "message": "পছন্দসমূহ"
-  },
-  "showcase.tag.favorite.description": {
-    "message": "আমার পছন্দের প্রম্পট"
   },
   "showcase.tag.write.label": {
     "message": "লেখা সহায়ক"
@@ -239,12 +233,6 @@
   "action.downvote": {
     "message": "ডাউনভোট"
   },
-  "link.home": {
-    "message": "হোমে ফিরে যান"
-  },
-  "link.myFavorites": {
-    "message": "আমার পছন্দসমূহ"
-  },
   "button.login": {
     "message": "লগইন"
   },
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut হল একটি ওপেন সোর্স প্রম্পট ম্যানেজমেন্ট টুল যা এআই দক্ষতা উন্নত করতে নিবেদিত। আমরা আপনার অংশগ্রহণের জন্য উন্মুখ: বাগ রিপোর্ট করা, বৈশিষ্ট্যের পরামর্শ দেওয়া বা উচ্চ-মানের প্রম্পট শেয়ার করা। প্রম্পট জমা দেওয়ার জন্য, আমরা একাধিক ভাষা সমর্থন করি এবং একবার গৃহীত হলে, সেগুলি অ্যাট্রিবিউশন সহ অন্তর্ভুক্ত করা হবে (ব্যবহারকারীর নাম দ্বারা অনুসন্ধানযোগ্য)। প্রতিটি অবদান কমিউনিটি সদস্যদের তাদের চিন্তাভাবনা প্রসারিত করতে এবং উৎপাদনশীলতা বাড়াতে সাহায্য করে। আসুন একসাথে একটি নিখুঁত প্রম্পট লাইব্রেরি তৈরি করি!"
   },
-  "toggle_prompt_language": {
-    "message": "প্রম্পট ভাষা পরিবর্তন করুন"
-  },
   "showcase.filters.title": {
     "message": "ফিল্টার"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "ট্যাগ দেখান"
   },
-  "toggle_prompt_language_description": {
-    "message": "প্রম্পটের প্রদর্শনের ভাষা পরিবর্তন করুন, আপনি ইংরেজি এবং বর্তমান পেজের ভাষার মধ্যে পরিবর্তন করতে পারেন।"
-  },
-  "myprompt.tooltip": {
-    "message": "আপনার যোগ করা বা তৈরি করা ব্যক্তিগত প্রম্পট, AiShort-এর বাইরে প্রম্পট সংরক্ষণের জন্য ব্যবহৃত হয়।"
-  },
-  "myprompt": {
-    "message": "আমার প্রম্পট"
-  },
-  "myfavorite.tooltip": {
-    "message": "আমার পছন্দের প্রম্পট, কমিউনিটি প্রম্পট সহ।"
-  },
-  "community.tag.tooltip": {
-    "message": "কমিউনিটি দ্বারা শেয়ার করা নির্বাচিত প্রম্পট"
-  },
-  "community.tag": {
-    "message": "কমিউনিটি নির্বাচন"
-  },
   "showcase.favoritesList.title": {
     "message": "পছন্দসমূহ"
   },
   "showcase.usersList.allUsers": {
     "message": "সমস্ত প্রম্পট"
-  },
-  "action.loadMore": {
-    "message": "আরও লোড করুন"
   },
   "validation.password.match": {
     "message": "পাসওয়ার্ড দুটি মিলছে না!"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "অনুগ্রহ করে আপনার নতুন পাসওয়ার্ড নিশ্চিত করুন!"
   },
-  "common.myPrompts": {
-    "message": "আমার প্রম্পট"
-  },
   "message.success.passwordChanged": {
     "message": "পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "ব্যবহারকারীর তথ্য"
-  },
-  "message.loading": {
-    "message": "লগইন স্থিতি লোড হচ্ছে..."
   },
   "label.sharedPrompts": {
     "message": "শেয়ার করা প্রম্পট"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "সফলভাবে কপি করা হয়েছে"
-  },
-  "tooltip.switchLanguage": {
-    "message": "প্রদর্শনের ভাষা পরিবর্তন করতে ক্লিক করুন"
   },
   "label.commentInfo": {
     "message": "অনুগ্রহ করে এই প্রম্পট সম্পর্কে আপনার মতামত, চিন্তাভাবনা বা শেয়ারিং সহ নিচে উত্তর দিন।"
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "মুছুন"
-  },
-  "message.fetchError": {
-    "message": "প্রম্পট আনতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.noPrompts": {
     "message": "এখনও কোনো প্রম্পট জমা দেওয়া হয়নি, অনুগ্রহ করে একটি প্রম্পট যোগ করুন।"
@@ -956,9 +908,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "আমার কেন্দ্র"
-  },
   "link.myAccount": {
     "message": "আমার অ্যাকাউন্ট"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "এখনও কোনো মন্তব্য নেই, প্রথম মন্তব্যকারী হোন!"
+  },
+  "link.home": {
+    "message": "হোম"
+  },
+  "link.communityPrompts": {
+    "message": "কমিউনিটি প্রম্পট"
+  },
+  "myCollection.header.title": {
+    "message": "আমার সংগ্রহ"
+  },
+  "myCollection.header.subtitle": {
+    "message": "আপনার তৈরি প্রম্পট, প্রিয় এবং কাস্টম ট্যাগ পরিচালনা করুন"
+  },
+  "myCollection.stats.total": {
+    "message": "মোট"
+  },
+  "myCollection.stats.prompts": {
+    "message": "আমার প্রম্পট"
+  },
+  "myCollection.stats.favorites": {
+    "message": "প্রিয়"
+  },
+  "myCollection.stats.tags": {
+    "message": "কাস্টম ট্যাগ"
+  },
+  "myspace.filter.all": {
+    "message": "সব"
+  },
+  "myspace.filter.prompts": {
+    "message": "প্রম্পট"
+  },
+  "myspace.filter.favorites": {
+    "message": "প্রিয়"
+  },
+  "myspace.manageTags": {
+    "message": "ট্যাগ পরিচালনা"
+  },
+  "myspace.search.placeholder": {
+    "message": "আমার স্পেস অনুসন্ধান করুন..."
+  },
+  "myspace.tagManager.title": {
+    "message": "কাস্টম ট্যাগ পরিচালনা করুন"
+  },
+  "action.save": {
+    "message": "সংরক্ষণ"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "ট্যাগের নাম"
+  },
+  "action.add": {
+    "message": "যোগ করুন"
+  },
+  "myspace.tagManager.empty": {
+    "message": "কোনো কাস্টম ট্যাগ নেই"
+  },
+  "message.tagsUpdated": {
+    "message": "ট্যাগ আপডেট করা হয়েছে"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "ট্যাগ আপডেট করতে ব্যর্থ"
+  },
+  "message.noSpaceItems": {
+    "message": "এখনও কোনো বিষয়বস্তু নেই, অনুগ্রহ করে প্রম্পট বা প্রিয় যোগ করুন।"
+  },
+  "nav.explore": {
+    "message": "অন্বেষণ"
+  },
+  "nav.myCollection": {
+    "message": "আমার সংগ্রহ"
+  },
+  "message.cache.clearError": {
+    "message": "ক্যাশ সাফ করতে ব্যর্থ"
+  },
+  "title.dataManagement": {
+    "message": "ডেটা ম্যানেজমেন্ট"
+  },
+  "description.exportPrompts.short": {
+    "message": "ব্যাকআপের জন্য JSON ফাইল হিসেবে রপ্তানি করুন"
+  },
+  "button.export": {
+    "message": "ডেটা রপ্তানি করুন"
+  },
+  "description.clearCache.short": {
+    "message": "স্থানীয় ক্যাশ ডেটা রিফ্রেশ করুন"
+  },
+  "modal.clearCache.title": {
+    "message": "ক্যাশ সাফ করবেন?"
+  },
+  "modal.clearCache.content": {
+    "message": "সিস্টেম স্বয়ংক্রিয়ভাবে ক্যাশ পরিচালনা করতে ETag প্রযুক্তি ব্যবহার করে, ম্যানুয়াল সাফ করার সাধারণত প্রয়োজন হয় না।"
+  },
+  "modal.clearCache.warning": {
+    "message": "সাফ করলে সমস্ত ডেটা পুনরায় লোড হবে।"
+  },
+  "button.clearAllCache": {
+    "message": "সমস্ত ক্যাশ সাফ করুন"
+  },
+  "modal.forgotPassword.title": {
+    "message": "পাসওয়ার্ড ভুলে গেছেন"
   }
 }

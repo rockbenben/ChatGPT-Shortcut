@@ -44,8 +44,8 @@ for item in data:
         max_id = item['id']
 
 # ID 数组
-favor_ids = [2, 209, 197, 109, 251, 20, 1]
-other_ids = [185, 199, 90, 180, 232, 204, 4]
+favor_ids = [2, 209, 251]
+other_ids = [185, 197, 109, 20, 1]
 
 # 过滤出指定 ID 的数据项
 favor_data = [item for item in data if item['id'] in favor_ids]
@@ -71,7 +71,7 @@ def process_and_save_data(filtered_data, file_prefix, ids_order):
         # 保存为新的 JSON 文件
         output_file_path = f'{output_dir_path}\\{file_prefix}_{lang}.json'
         with open(output_file_path, 'w', encoding='utf-8') as file:
-            json.dump(processed_data_sorted, file, ensure_ascii=False, indent=4)
+            json.dump(processed_data_sorted, file, ensure_ascii=False, separators=(',', ':'))
 
 # 处理和保存 favor_ids 和 other_ids 数据
 process_and_save_data(favor_data, 'favor', favor_ids)
@@ -97,7 +97,7 @@ def save_data_by_id_and_language(data):
                 output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
                 # 保存为 JSON 文件
                 with open(output_file_path, 'w', encoding='utf-8') as file:
-                    json.dump(lang_data, file, ensure_ascii=False, indent=4)
+                    json.dump(lang_data, file, ensure_ascii=False, separators=(',', ':'))
 
 # 调用函数处理并保存数据
 save_data_by_id_and_language(data)
@@ -153,7 +153,7 @@ for lang in languages:
 
     # 写入数据
     with open(output_path, 'w', encoding='utf-8') as file:
-        json.dump(output_data[lang], file, ensure_ascii=False, indent=2)
+        json.dump(output_data[lang], file, ensure_ascii=False, separators=(',', ':'))
 
 # 在 # 更新 Prompt Page 页面的 prompt 内容 的步骤前，将 os.path.join(current_dir, 'users.zh.tsx') 复制到同路径的 'users.{lang}.tsx'
 # 遍历每个语言
@@ -197,7 +197,7 @@ for prompt_id in range(1, max_id+1):
 import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
 export default function PromptDetail() {{
-  return <PromptPage prompt={{prompt}} />;
+  return <PromptPage prompt={{prompt}} currentLanguage="{lang}" />;
 }}
 '''
 
@@ -232,7 +232,7 @@ for lang in languages[1:]:
     # Prepare the replacements
     replacements = [
         ('favor_zh', f'favor_{lang}'),
-        ('other_zh', f'other_{lang}')
+        ('other_zh', f'other_{lang}'),
     ]
 
     # Replace and write to the target file

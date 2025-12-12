@@ -17,9 +17,6 @@
   "common.favorites": {
     "message": "पसंदीदा"
   },
-  "showcase.tag.favorite.description": {
-    "message": "मेरे पसंदीदा प्रॉम्प्ट्स"
-  },
   "showcase.tag.write.label": {
     "message": "लेखन सहायक"
   },
@@ -203,9 +200,6 @@
   "message.addPrompt.success": {
     "message": "प्रॉम्प्ट सफलतापूर्वक सबमिट किया गया!"
   },
-  "message.addPrompt.success.view": {
-    "message": "'मेरे प्रॉम्प्ट्स' में देखा जा सकता है"
-  },
   "message.addPrompt.error": {
     "message": "प्रॉम्प्ट सबमिट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
@@ -238,12 +232,6 @@
   },
   "action.downvote": {
     "message": "डाउनवोट"
-  },
-  "link.home": {
-    "message": "होम पर वापस जाएं"
-  },
-  "link.myFavorites": {
-    "message": "मेरे पसंदीदा"
   },
   "button.login": {
     "message": "लॉगिन"
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut एक ओपन सोर्स प्रॉम्प्ट प्रबंधन उपकरण है जो एआई दक्षता में सुधार के लिए समर्पित है। हम आपकी भागीदारी के लिए तत्पर हैं: बग रिपोर्ट करना, सुविधाओं का सुझाव देना या उच्च-गुणवत्ता वाले प्रॉम्प्ट्स साझा करना। प्रॉम्प्ट सबमिशन के लिए, हम कई भाषाओं का समर्थन करते हैं और एक बार स्वीकार किए जाने पर, उन्हें एट्रिब्यूशन (उपयोगकर्ता नाम द्वारा खोजा जा सकता है) के साथ शामिल किया जाएगा। प्रत्येक योगदान समुदाय के सदस्यों को अपनी सोच का विस्तार करने और उत्पादकता बढ़ाने में मदद करता है। आइए एक साथ एक आदर्श प्रॉम्प्ट लाइब्रेरी बनाएं!"
   },
-  "toggle_prompt_language": {
-    "message": "प्रॉम्प्ट भाषा बदलें"
-  },
   "showcase.filters.title": {
     "message": "फ़िल्टर"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "टैग दिखाएं"
   },
-  "toggle_prompt_language_description": {
-    "message": "प्रॉम्प्ट की प्रदर्शन भाषा बदलें, आप अंग्रेजी और वर्तमान पृष्ठ भाषा के बीच स्विच कर सकते हैं।"
-  },
-  "myprompt.tooltip": {
-    "message": "आपके द्वारा जोड़े गए या बनाए गए व्यक्तिगत प्रॉम्प्ट्स, AiShort के बाहर प्रॉम्प्ट्स को संग्रहीत करने के लिए उपयोग किए जाते हैं।"
-  },
-  "myprompt": {
-    "message": "मेरे प्रॉम्प्ट्स"
-  },
-  "myfavorite.tooltip": {
-    "message": "मेरे द्वारा पसंदीदा किए गए प्रॉम्प्ट्स, जिसमें समुदाय प्रॉम्प्ट्स शामिल हैं।"
-  },
-  "community.tag.tooltip": {
-    "message": "समुदाय द्वारा साझा किए गए चयनित प्रॉम्प्ट्स"
-  },
-  "community.tag": {
-    "message": "समुदाय चयन"
-  },
   "showcase.favoritesList.title": {
     "message": "पसंदीदा"
   },
   "showcase.usersList.allUsers": {
     "message": "सभी प्रॉम्प्ट्स"
-  },
-  "action.loadMore": {
-    "message": "और लोड करें"
   },
   "validation.password.match": {
     "message": "दो पासवर्ड मेल नहीं खाते!"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "कृपया अपने नए पासवर्ड की पुष्टि करें!"
   },
-  "common.myPrompts": {
-    "message": "मेरे प्रॉम्प्ट्स"
-  },
   "message.success.passwordChanged": {
     "message": "पासवर्ड सफलतापूर्वक बदला गया!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "उपयोगकर्ता जानकारी"
-  },
-  "message.loading": {
-    "message": "लॉगिन स्थिति लोड हो रही है..."
   },
   "label.sharedPrompts": {
     "message": "साझा किए गए प्रॉम्प्ट्स"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "सफलतापूर्वक कॉपी किया गया"
-  },
-  "tooltip.switchLanguage": {
-    "message": "प्रदर्शन भाषा बदलने के लिए क्लिक करें"
   },
   "label.commentInfo": {
     "message": "कृपया इस प्रॉम्प्ट के बारे में अपनी राय, विचार या साझा करने के साथ नीचे उत्तर दें।"
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "हटाएं"
-  },
-  "message.fetchError": {
-    "message": "प्रॉम्प्ट लाने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.noPrompts": {
     "message": "अभी तक कोई प्रॉम्प्ट सबमिट नहीं किया गया है, कृपया एक प्रॉम्प्ट जोड़ें।"
@@ -952,9 +904,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "मेरा केंद्र"
-  },
   "link.myAccount": {
     "message": "मेरा खाता"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें!"
+  },
+  "link.home": {
+    "message": "होम"
+  },
+  "link.communityPrompts": {
+    "message": "सामुदायिक प्रॉन्प्ट्स"
+  },
+  "myCollection.header.title": {
+    "message": "मेरा संग्रह"
+  },
+  "myCollection.header.subtitle": {
+    "message": "अपने बनाए गए प्रॉन्प्ट्स, पसंदीदा और कस्टम टैग प्रबंधित करें"
+  },
+  "myCollection.stats.total": {
+    "message": "कुल"
+  },
+  "myCollection.stats.prompts": {
+    "message": "मेरे प्रॉन्प्ट्स"
+  },
+  "myCollection.stats.favorites": {
+    "message": "पसंदीदा"
+  },
+  "myCollection.stats.tags": {
+    "message": "कस्टम टैग"
+  },
+  "myspace.filter.all": {
+    "message": "सभी"
+  },
+  "myspace.filter.prompts": {
+    "message": "प्रॉन्प्ट्स"
+  },
+  "myspace.filter.favorites": {
+    "message": "पसंदीदा"
+  },
+  "myspace.manageTags": {
+    "message": "टैग प्रबंधित करें"
+  },
+  "myspace.search.placeholder": {
+    "message": "मेरे स्थान में खोजें..."
+  },
+  "myspace.tagManager.title": {
+    "message": "कस्टम टैग प्रबंधित करें"
+  },
+  "action.save": {
+    "message": "सहेजें"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "टैग का नाम"
+  },
+  "action.add": {
+    "message": "जोड़ें"
+  },
+  "myspace.tagManager.empty": {
+    "message": "कोई कस्टम टैग नहीं"
+  },
+  "message.tagsUpdated": {
+    "message": "टैग अपडेट किए गए"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "टैग अपडेट करने में विफल"
+  },
+  "message.noSpaceItems": {
+    "message": "अभी तक कोई सामग्री नहीं, कृपया प्रॉन्प्ट्स या पसंदीदा जोड़ें।"
+  },
+  "nav.explore": {
+    "message": "अन्वेषण"
+  },
+  "nav.myCollection": {
+    "message": "मेरा संग्रह"
+  },
+  "message.cache.clearError": {
+    "message": "कैश साफ़ करने में विफल"
+  },
+  "title.dataManagement": {
+    "message": "डेटा प्रबंधन"
+  },
+  "description.exportPrompts.short": {
+    "message": "बैकअप के लिए JSON फ़ाइल के रूप में निर्यात करें"
+  },
+  "button.export": {
+    "message": "डेटा निर्यात करें"
+  },
+  "description.clearCache.short": {
+    "message": "स्थानीय कैश डेटा ताज़ा करें"
+  },
+  "modal.clearCache.title": {
+    "message": "कैश साफ़ करें?"
+  },
+  "modal.clearCache.content": {
+    "message": "सिस्टम कैश को स्वचालित रूप से प्रबंधित करने के लिए ETag तकनीक का उपयोग करता है, मैन्युअल समाशोधन की आमतौर पर आवश्यकता नहीं होती है।"
+  },
+  "modal.clearCache.warning": {
+    "message": "साफ़ करने से सभी डेटा फिर से लोड हो जाएगा।"
+  },
+  "button.clearAllCache": {
+    "message": "सभी कैश साफ़ करें"
+  },
+  "modal.forgotPassword.title": {
+    "message": "पासवर्ड भूल गए"
   }
 }

@@ -17,9 +17,6 @@
   "common.favorites": {
     "message": "المفضلة"
   },
-  "showcase.tag.favorite.description": {
-    "message": "توجيهاتي المفضلة"
-  },
   "showcase.tag.write.label": {
     "message": "مساعد الكتابة"
   },
@@ -203,9 +200,6 @@
   "message.addPrompt.success": {
     "message": "تم إرسال التوجيه بنجاح!"
   },
-  "message.addPrompt.success.view": {
-    "message": "يمكن عرضه في \"توجيهاتي\""
-  },
   "message.addPrompt.error": {
     "message": "فشل إرسال التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
   },
@@ -238,12 +232,6 @@
   },
   "action.downvote": {
     "message": "عدم إعجاب"
-  },
-  "link.home": {
-    "message": "العودة للرئيسية"
-  },
-  "link.myFavorites": {
-    "message": "مفضلاتي"
   },
   "button.login": {
     "message": "تسجيل الدخول"
@@ -278,9 +266,6 @@
   "feedback.paragraph": {
     "message": "ChatGPT Shortcut هي أداة لإدارة التوجيهات مفتوحة المصدر مخصصة لتحسين كفاءة الذكاء الاصطناعي. نتطلع بشغف إلى مشاركتك: سواء بالإبلاغ عن الأخطاء، أو اقتراح ميزات، أو مشاركة توجيهات (Prompt) عالية الجودة. بالنسبة لمشاركات التوجيهات، ندعم لغات متعددة، وبمجرد قبولها سيتم تضمينها مع الإسناد (يمكن البحث عنها باسم المستخدم). كل مساهمة تساعد أعضاء المجتمع على توسيع تفكيرهم وزيادة الإنتاجية. دعونا نبني مكتبة توجيهات مثالية معًا!"
   },
-  "toggle_prompt_language": {
-    "message": "تبديل لغة التوجيه"
-  },
   "showcase.filters.title": {
     "message": "Filters"
   },
@@ -290,32 +275,11 @@
   "action.showTags": {
     "message": "إظهار الوسوم"
   },
-  "toggle_prompt_language_description": {
-    "message": "تغيير لغة عرض التوجيهات، يمكنك التبديل بين الإنجليزية ولغة الصفحة الحالية."
-  },
-  "myprompt.tooltip": {
-    "message": "التوجيهات الشخصية التي أضفتها أو أنشأتها، وتستخدم لتخزين التوجيهات خارج AiShort."
-  },
-  "myprompt": {
-    "message": "توجيهاتي"
-  },
-  "myfavorite.tooltip": {
-    "message": "التوجيهات التي قمت بتفضيلها، بما في ذلك توجيهات المجتمع."
-  },
-  "community.tag.tooltip": {
-    "message": "توجيهات مختارة يشاركها المجتمع"
-  },
-  "community.tag": {
-    "message": "مختارات المجتمع"
-  },
   "showcase.favoritesList.title": {
     "message": "Favorites"
   },
   "showcase.usersList.allUsers": {
     "message": "All prompts"
-  },
-  "action.loadMore": {
-    "message": "تحميل المزيد"
   },
   "validation.password.match": {
     "message": "كلمتا المرور غير متطابقتين!"
@@ -350,9 +314,6 @@
   "validation.confirmPassword.required": {
     "message": "يرجى تأكيد كلمة المرور الجديدة!"
   },
-  "common.myPrompts": {
-    "message": "توجيهاتي"
-  },
   "message.success.passwordChanged": {
     "message": "تم تغيير كلمة المرور بنجاح!"
   },
@@ -367,9 +328,6 @@
   },
   "title.userInfo": {
     "message": "معلومات المستخدم"
-  },
-  "message.loading": {
-    "message": "جارٍ تحميل حالة تسجيل الدخول..."
   },
   "label.sharedPrompts": {
     "message": "التوجيهات المشاركة"
@@ -427,9 +385,6 @@
   },
   "message.copied": {
     "message": "تم النسخ بنجاح"
-  },
-  "tooltip.switchLanguage": {
-    "message": "انقر لتبديل لغة العرض"
   },
   "label.commentInfo": {
     "message": "يرجى الرد أدناه بآرائك أو أفكارك أو مشاركاتك بخصوص هذا التوجيه."
@@ -538,9 +493,6 @@
   },
   "action.delete": {
     "message": "حذف"
-  },
-  "message.fetchError": {
-    "message": "فشل جلب التوجيهات، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.noPrompts": {
     "message": "لم يتم إرسال أي توجيهات بعد، يرجى إضافة توجيه."
@@ -952,9 +904,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myCenter": {
-    "message": "مركزي"
-  },
   "link.myAccount": {
     "message": "حسابي"
   },
@@ -979,5 +928,104 @@
   },
   "message.noComments": {
     "message": "لا توجد تعليقات بعد، كن أول من يعلق!"
+  },
+  "link.home": {
+    "message": "الرئيسية"
+  },
+  "link.communityPrompts": {
+    "message": "موجهات المجتمع"
+  },
+  "myCollection.header.title": {
+    "message": "مجموعتي"
+  },
+  "myCollection.header.subtitle": {
+    "message": "إدارة الموجهات التي أنشأتها، والمفضلة، والوسوم المخصصة"
+  },
+  "myCollection.stats.total": {
+    "message": "الإجمالي"
+  },
+  "myCollection.stats.prompts": {
+    "message": "موجهاتي"
+  },
+  "myCollection.stats.favorites": {
+    "message": "المفضلة"
+  },
+  "myCollection.stats.tags": {
+    "message": "وسوم مخصصة"
+  },
+  "myspace.filter.all": {
+    "message": "الكل"
+  },
+  "myspace.filter.prompts": {
+    "message": "موجهات"
+  },
+  "myspace.filter.favorites": {
+    "message": "المفضلة"
+  },
+  "myspace.manageTags": {
+    "message": "إدارة الوسوم"
+  },
+  "myspace.search.placeholder": {
+    "message": "البحث في مساحتي..."
+  },
+  "myspace.tagManager.title": {
+    "message": "إدارة الوسوم المخصصة"
+  },
+  "action.save": {
+    "message": "حفظ"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "اسم الوسم"
+  },
+  "action.add": {
+    "message": "إضافة"
+  },
+  "myspace.tagManager.empty": {
+    "message": "لا توجد وسوم مخصصة"
+  },
+  "message.tagsUpdated": {
+    "message": "تم تحديث الوسوم"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "فشل تحديث الوسوم"
+  },
+  "message.noSpaceItems": {
+    "message": "لا يوجد محتوى بعد، يرجى إضافة موجهات أو مفضلة."
+  },
+  "nav.explore": {
+    "message": "استكشاف"
+  },
+  "nav.myCollection": {
+    "message": "مجموعتي"
+  },
+  "message.cache.clearError": {
+    "message": "فشل مسح ذاكرة التخزين المؤقت"
+  },
+  "title.dataManagement": {
+    "message": "إدارة البيانات"
+  },
+  "description.exportPrompts.short": {
+    "message": "تصدير كملف JSON للنسخ الاحتياطي"
+  },
+  "button.export": {
+    "message": "تصدير البيانات"
+  },
+  "description.clearCache.short": {
+    "message": "تحديث بيانات التخزين المؤقت المحلية"
+  },
+  "modal.clearCache.title": {
+    "message": "مسح ذاكرة التخزين المؤقت؟"
+  },
+  "modal.clearCache.content": {
+    "message": "يستخدم النظام تقنية ETag لإدارة التخزين المؤقت تلقائيًا، عادةً لا يلزم المسح اليدوي."
+  },
+  "modal.clearCache.warning": {
+    "message": "سيؤدي المسح إلى إعادة تحميل جميع البيانات."
+  },
+  "button.clearAllCache": {
+    "message": "مسح كل التخزين المؤقت"
+  },
+  "modal.forgotPassword.title": {
+    "message": "نسيت كلمة المرور"
   }
 }

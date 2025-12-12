@@ -1,16 +1,1 @@
-{
-    "id": 177,
-    "es": {
-        "title": "Desarrollo: WeChat Applet",
-        "prompt": "Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Spanish. Provide only the necessary code to meet these requirements without explanations or descriptions.",
-        "description": "Como desarrollador de wechat applet, su tarea es escribir una página de contador utilizando el desarrollo nativo de wechat applet. Por favor, responda con el código que cumpla los siguientes requisitos: crear una página de applet wechat con archivos wxml, js, wxss y json e implementar una página de contador en ella. El texto mostrado en la vista debe estar en chino. Tenga en cuenta que sólo debe proporcionar el código necesario para cumplir estos requisitos; no se requiere ninguna explicación ni descripción.",
-        "remark": "Ayudando en el desarrollo del applet WeChat. Contribución de @gandli."
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 5190,
-    "metaDescription": "¿Desarrollando un Mini Programa de WeChat? Este prompt genera los archivos wxml, js, wxss y json necesarios para tu proyecto, ahorrándote un valioso tiempo de desarrollo."
-}
+{"id":177,"es":{"title":"Desarrollo: WeChat Applet","prompt":"Create a WeChat Mini Program page with wxml, js, wxss, and json files that implements a [Project]. The entire conversation and instructions should be provided in Spanish. Provide only the necessary code to meet these requirements without explanations or descriptions.","description":"Como desarrollador de wechat applet, su tarea es escribir una página de contador utilizando el desarrollo nativo de wechat applet. Por favor, responda con el código que cumpla los siguientes requisitos: crear una página de applet wechat con archivos wxml, js, wxss y json e implementar una página de contador en ella. El texto mostrado en la vista debe estar en chino. Tenga en cuenta que sólo debe proporcionar el código necesario para cumplir estos requisitos; no se requiere ninguna explicación ni descripción.","remark":"Ayudando en el desarrollo del applet WeChat. Contribución de @gandli."},"tags":["contribute","code"],"website":null,"count":5190,"metaDescription":"¿Desarrollando un Mini Programa de WeChat? Este prompt genera los archivos wxml, js, wxss y json necesarios para tu proyecto, ahorrándote un valioso tiempo de desarrollo."}

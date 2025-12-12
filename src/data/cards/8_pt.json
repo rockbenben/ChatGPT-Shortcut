@@ -1,15 +1,1 @@
-{
-    "id": 8,
-    "pt": {
-        "title": "Gerador de títulos para escrita",
-        "prompt": "I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is ",
-        "description": "Pretendo que actue como um gerador de títulos para textos escritos. Fornecer-te-ei o tema e as palavras-chave de um texto e tu gerarás cinco títulos apelativos. Mantém os títulos concisos, não mais de 20 palavras, e certifica-te de que manténs o seu significado. Utilize o tipo de linguagem do título quando responder. O meu primeiro título é [conteúdo do artigo].",
-        "remark": "Prompts para uso pessoal que geram títulos na língua apropriada com base no conteúdo do artigo."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces",
-    "count": 8305,
-    "metaDescription": "Com dificuldades para encontrar o título perfeito? Forneça o tópico e as palavras-chave do seu artigo, e esta ferramenta gerará cinco títulos atraentes para destacar seu conteúdo."
-}
+{"id":8,"pt":{"title":"Gerador de títulos para escrita","prompt":"I want you to act as a title generator for written pieces. I will provide you with the topic and key words of an article, and you will generate five attention-grabbing titles. Please keep the title concise and under 20 words, and ensure that the meaning is maintained. Replies will utilize the language type of the topic. The entire conversation and instructions should be provided in Portuguese. My first topic is ","description":"Pretendo que actue como um gerador de títulos para textos escritos. Fornecer-te-ei o tema e as palavras-chave de um texto e tu gerarás cinco títulos apelativos. Mantém os títulos concisos, não mais de 20 palavras, e certifica-te de que manténs o seu significado. Utilize o tipo de linguagem do título quando responder. O meu primeiro título é [conteúdo do artigo].","remark":"Prompts para uso pessoal que geram títulos na língua apropriada com base no conteúdo do artigo."},"tags":["write"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces","count":8305,"metaDescription":"Com dificuldades para encontrar o título perfeito? Forneça o tópico e as palavras-chave do seu artigo, e esta ferramenta gerará cinco títulos atraentes para destacar seu conteúdo."}

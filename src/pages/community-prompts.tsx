@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useCallback, Suspense, useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import Link from "@docusaurus/Link";
+
 import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
@@ -9,8 +9,9 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Pagination, Space, Button, App, Flex, Segmented, FloatButton, theme, Row, Col, Skeleton } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, LoginOutlined, FireOutlined, ClockCircleOutlined, AppstoreOutlined } from "@ant-design/icons";
+import Link from "@docusaurus/Link";
+import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, theme, Row, Col, Breadcrumb } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -39,7 +40,7 @@ interface PromptCardProps {
 
 const CommunityPrompts = () => {
   const { token } = theme.useToken();
-  const { userAuth, authLoading } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
@@ -222,28 +223,30 @@ const CommunityPrompts = () => {
                 boxShadow: token.boxShadowTertiary,
               }}>
               <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
-                <Space>
-                  <Link to="/" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
-                    <Button type="text" icon={<HomeOutlined />} style={{ paddingLeft: 0 }}>
-                      <Translate id="link.home">返回首页</Translate>
-                    </Button>
-                  </Link>
-                  {authLoading ? (
-                    <Skeleton.Button active size="default" style={{ width: 100 }} />
-                  ) : userAuth ? (
-                    <Link to="/user/center" style={{ display: "flex", alignItems: "center", color: token.colorTextSecondary }}>
-                      <Button type="text" icon={<AppstoreOutlined />}>
-                        <Translate id="link.myCenter">个人中心</Translate>
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-                      <Translate id="button.login">登录</Translate>
-                    </Button>
-                  )}
-                </Space>
+                <Breadcrumb
+                  itemRender={(item, params, items, paths) => {
+                    const isLast = items.indexOf(item) === items.length - 1;
+                    return isLast || !item.path ? <span>{item.title}</span> : <Link to={item.path}>{item.title}</Link>;
+                  }}
+                  items={[
+                    {
+                      path: "/",
+                      title: (
+                        <>
+                          <HomeOutlined />
+                          <span>
+                            <Translate id="link.home">首页</Translate>
+                          </span>
+                        </>
+                      ),
+                    },
+                    {
+                      title: <Translate id="link.communityPrompts">社区提示词</Translate>,
+                    },
+                  ]}
+                />
 
-                <Flex gap="small" align="center" wrap="wrap">
+                <Flex gap="middle" align="center" wrap="wrap">
                   <Segmented
                     options={[
                       { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },

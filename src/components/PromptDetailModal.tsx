@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Typography, Space, Button, Tooltip, theme, Flex } from "antd";
+import { Modal, Typography, Space, Button, Tooltip, theme, Flex, Statistic } from "antd";
 import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
@@ -88,21 +88,21 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                     </Typography.Text>
                   </Space>
                 )}
-                {data.copyCount > 0 && (
-                  <Space size={4}>
-                    <FireFilled style={{ color: token.colorError }} />
-                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                      {formatCompactNumber(data.copyCount)}
-                    </Typography.Text>
-                  </Space>
-                )}
                 {data.vote > 0 && (
-                  <Space size={4}>
-                    <LikeFilled style={{ color: token.colorWarning }} />
-                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                      {formatCompactNumber(data.vote)}
-                    </Typography.Text>
-                  </Space>
+                  <Statistic
+                    value={data.vote}
+                    formatter={(value) => formatCompactNumber(value as number)}
+                    prefix={<LikeFilled style={{ color: token.colorWarning }} />}
+                    styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+                  />
+                )}
+                {data.copyCount > 0 && (
+                  <Statistic
+                    value={data.copyCount}
+                    formatter={(value) => formatCompactNumber(value as number)}
+                    prefix={<FireFilled style={{ color: token.colorError }} />}
+                    styles={{ content: { fontSize: token.fontSizeSM, color: token.colorTextSecondary } }}
+                  />
                 )}
                 {data.website && (
                   <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4 }}>
@@ -160,6 +160,9 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                   boxShadow: token.boxShadowTertiary,
                 }}>
                 <Typography.Text
+                  copyable={{
+                    text: data.prompt,
+                  }}
                   style={{
                     fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
                     fontSize: token.fontSize,
@@ -179,7 +182,12 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                 <Typography.Text strong style={{ display: "block", marginBottom: token.marginXS, fontSize: token.fontSizeLG }}>
                   <Translate id="prompt.description">描述</Translate>
                 </Typography.Text>
-                <Typography.Paragraph type="secondary" style={{ margin: 0, lineHeight: 1.6 }}>
+                <Typography.Paragraph
+                  type="secondary"
+                  copyable={{
+                    text: data.description,
+                  }}
+                  style={{ margin: 0, lineHeight: 1.6 }}>
                   {data.description}
                 </Typography.Paragraph>
               </div>

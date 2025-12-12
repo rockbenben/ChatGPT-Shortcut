@@ -1,15 +1,1 @@
-{
-    "id": 34,
-    "ar": {
-        "title": "استخراج معلومات الاتصال",
-        "prompt": "The entire conversation and instructions should be provided in Arabic. Extract the name and mailing address from this email: ",
-        "description": "استخراج الأسماء وعناوين البريد الإلكتروني من هذه الرسالة: [نص]",
-        "remark": "استخراج معلومات الاتصال من النص."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "count": 274,
-    "metaDescription": "هل تحتاج إلى استخراج معلومات الاتصال من نص بسرعة؟ هذا الموجه البسيط لـ AI يستخرج الأسماء وعناوين البريد من رسائل البريد الإلكتر الإلكتروني أو كتل النصوص. وفر الوقت وأتمتة إدخال البيانات."
-}
+{"id":34,"ar":{"title":"استخراج معلومات الاتصال","prompt":"The entire conversation and instructions should be provided in Arabic. Extract the name and mailing address from this email: ","description":"استخراج الأسماء وعناوين البريد الإلكتروني من هذه الرسالة: [نص]","remark":"استخراج معلومات الاتصال من النص."},"tags":["text"],"website":"https://platform.openai.com/examples/default-extract-contact-info","count":274,"metaDescription":"هل تحتاج إلى استخراج معلومات الاتصال من نص بسرعة؟ هذا الموجه البسيط لـ AI يستخرج الأسماء وعناوين البريد من رسائل البريد الإلكتر الإلكتروني أو كتل النصوص. وفر الوقت وأتمتة إدخال البيانات."}

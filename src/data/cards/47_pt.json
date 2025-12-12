@@ -1,15 +1,1 @@
-{
-    "id": 47,
-    "pt": {
-        "title": "Resumo de livros de não ficção",
-        "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Portuguese. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.",
-        "description": "Quero que actue como um treinador de vida. Por favor, faça um resumo deste livro de não ficção [título] de [autor]. Simplifique os princípios fundamentais de uma forma que uma criança possa compreender. Além disso, pode dar-me uma lista de passos práticos sobre como implementar estes princípios na minha vida quotidiana?",
-        "remark": "Resumir os princípios fundamentais do livro de não ficção da forma mais acessível possível, com base no título e no autor do livro de não ficção introduzido. Forneça também uma lista de passos práticos sobre a forma de aplicar estes princípios à vida quotidiana."
-    },
-    "tags": [
-        "life"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
-    "count": 880,
-    "metaDescription": "Quer a sabedoria de um livro de não ficção em minutos? Este prompt resume os princípios centrais em termos simples e fornece passos práticos para aplicá-los à sua vida diária."
-}
+{"id":47,"pt":{"title":"Resumo de livros de não ficção","prompt":"I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. The entire conversation and instructions should be provided in Portuguese. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?.","description":"Quero que actue como um treinador de vida. Por favor, faça um resumo deste livro de não ficção [título] de [autor]. Simplifique os princípios fundamentais de uma forma que uma criança possa compreender. Além disso, pode dar-me uma lista de passos práticos sobre como implementar estes princípios na minha vida quotidiana?","remark":"Resumir os princípios fundamentais do livro de não ficção da forma mais acessível possível, com base no título e no autor do livro de não ficção introduzido. Forneça também uma lista de passos práticos sobre a forma de aplicar estes princípios à vida quotidiana."},"tags":["life"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1","count":880,"metaDescription":"Quer a sabedoria de um livro de não ficção em minutos? Este prompt resume os princípios centrais em termos simples e fornece passos práticos para aplicá-los à sua vida diária."}

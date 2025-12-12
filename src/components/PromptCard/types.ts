@@ -6,6 +6,7 @@ export interface PromptCardProps {
   type: CardType;
   data: any; // We'll refine this type as we go
   index?: number; // For sortable items
+  sortableId?: string | number; // Custom ID for sortable context (uses data.id if not provided)
   isFiltered?: boolean;
   onEdit?: (data: any) => void;
   onDelete?: (id: string) => void;
@@ -14,6 +15,8 @@ export interface PromptCardProps {
   onVote?: (id: string | number, action: "upvote" | "downvote") => void;
   isFavorite?: boolean;
   copyCount?: number;
-  isDescription?: boolean;
+
   onOpenModal?: (data: any) => void;
+  extraActions?: ReactNode;
+  typeBadge?: ReactNode;
 }

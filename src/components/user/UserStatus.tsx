@@ -1,88 +1,46 @@
 import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import Link from "@docusaurus/Link";
 import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
-import { UserOutlined, EditOutlined, LogoutOutlined, ClearOutlined, LikeFilled, DownloadOutlined, SettingOutlined, LoginOutlined, AppstoreOutlined } from "@ant-design/icons";
+import { useViewMode } from "@site/src/contexts/ViewModeContext";
+import { UserOutlined, EditOutlined, LogoutOutlined, LikeFilled, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
 import Translate from "@docusaurus/Translate";
-import { clearUserAllInfoCache, getPrompts } from "@site/src/api";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import AddPromptModal from "./modal/AddPromptModal";
+import Link from "@docusaurus/Link";
 
-const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) => {
+const UserStatus = () => {
   const { userAuth, setUserAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const { message: messageApi, modal } = App.useApp();
+  const { modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
 
-  const handleClearCache = useCallback(async () => {
-    await clearUserAllInfoCache();
-    refreshUserAuth();
-    messageApi.success(<Translate id="message.cache.cleared">缓存已清除</Translate>);
-  }, [refreshUserAuth, messageApi]);
+  // 使用视图模式上下文
+  const { viewMode, setViewMode } = useViewMode();
 
   const onFinish = useCallback(
     async (values) => {
-      const success = await addPrompt(values);
+      const success = await addPrompt(values, () => {
+        // 成功后自动切换到"我的收藏"视图
+        setViewMode("collection");
+      });
       if (success) {
         setOpen(false);
       }
     },
-    [addPrompt]
+    [addPrompt, setViewMode]
   );
-
-  const handleExportPrompts = useCallback(async () => {
-    try {
-      if (!userAuth?.data?.userprompts || userAuth.data.userprompts.length === 0) {
-        messageApi.warning(<Translate id="message.export.noPrompts">暂无提示词可导出，请稍后重试</Translate>);
-        return;
-      }
-
-      // 获取完整的用户提示词数据
-      const userPromptsData = await getPrompts("userprompts", userAuth.data.userprompts);
-
-      // 准备导出数据
-      const exportData = {
-        exportTime: new Date().toISOString(),
-        totalCount: userPromptsData.length,
-        prompts: userPromptsData.map((prompt) => ({
-          id: prompt.id,
-          title: prompt.title,
-          description: prompt.description,
-          remark: prompt.remark || "",
-          notes: prompt.notes || "",
-          createdAt: prompt.createdAt,
-          updatedAt: prompt.updatedAt,
-          share: prompt.share,
-        })),
-      };
-
-      // 创建并下载 JSON 文件
-      const dataStr = JSON.stringify(exportData, null, 2);
-      const dataBlob = new Blob([dataStr], { type: "application/json" });
-      const url = URL.createObjectURL(dataBlob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `my-prompts-${new Date().toISOString().split("T")[0]}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-
-      messageApi.success(<Translate id="message.export.success">提示词导出成功！</Translate>);
-    } catch (error) {
-      console.error("Export error:", error);
-      messageApi.error(<Translate id="message.export.error">导出失败，请稍后重试</Translate>);
-    }
-  }, [userAuth, messageApi]);
 
   const handleLogout = useCallback(async () => {
     if (ExecutionEnvironment.canUseDOM) {
       localStorage.removeItem("auth_token");
-      localStorage.removeItem("userAllInfo");
-      localStorage.removeItem("userAllInfoCacheExpiration");
+
+      // 清除所有用户相关缓存
+      const { clearUserProfileCache } = await import("@site/src/api/client");
+      const { clearMySpaceCache } = await import("@site/src/api");
+      clearUserProfileCache();
+      clearMySpaceCache();
     }
     setUserAuth(null);
     window.location.reload();
@@ -97,18 +55,6 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         </Link>
       ),
       icon: <UserOutlined />,
-    },
-    !hideLinks.userCenter && {
-      key: "export",
-      label: <Translate id="button.exportPrompts">导出提示词</Translate>,
-      icon: <DownloadOutlined />,
-      onClick: handleExportPrompts,
-    },
-    {
-      key: "clearCache",
-      label: <Translate id="button.clearCache">清除缓存</Translate>,
-      icon: <ClearOutlined />,
-      onClick: handleClearCache,
     },
     {
       type: "divider" as const,
@@ -134,15 +80,9 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   const loggedInButtons = useMemo(
     () => (
       <Space wrap size="small">
-        {!hideLinks.myFavorite && (
-          <Link to="/user/center">
-            <Button icon={<AppstoreOutlined />}>
-              <span className="hideOnSmallScreen">
-                <Translate id="link.myCenter">个人中心</Translate>
-              </span>
-            </Button>
-          </Link>
-        )}
+        <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
+          <span className="hideOnSmallScreen">{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
+        </Button>
         <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
           <span className="hideOnSmallScreen">
             <Translate id="link.addprompt">添加提示词</Translate>
@@ -157,7 +97,7 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
         </Dropdown>
       </Space>
     ),
-    [hideLinks, handleClearCache, handleLogout, handleExportPrompts, menuItems]
+    [menuItems, viewMode, setViewMode]
   );
 
   const loggedOutButtons = useMemo(
@@ -181,8 +121,8 @@ const UserStatus = ({ hideLinks = { userCenter: false, myFavorite: false } }) =>
   if (authLoading) {
     return (
       <Space wrap size="small">
-        <Skeleton.Button active size="default" style={{ width: 100 }} />
-        <Skeleton.Button active size="default" style={{ width: 100 }} />
+        <Skeleton.Button active size="default" style={{ width: 80 }} />
+        <Skeleton.Button active size="default" style={{ width: 120 }} />
       </Space>
     );
   }

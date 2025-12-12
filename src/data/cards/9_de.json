@@ -1,15 +1,1 @@
-{
-    "id": 9,
-    "de": {
-        "title": "Artikel fortgesetzt",
-        "prompt": "The entire conversation and instructions should be provided in German. Continue writing an article about [theme] that begins with the following sentence: ",
-        "description": "Schreiben Sie einen Artikel auf Chinesisch über [THEMA DES ARTIKELS] und beginnen Sie mit folgendem Satz: [ARTIKELANFANG].",
-        "remark": "Setzen Sie den einleitenden Abschnitt des Aufsatzes fort, um den Aufsatz auf der Grundlage des Themas des Aufsatzes zu vervollständigen."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 8775,
-    "metaDescription": "Nie wieder Schreibblockaden. Geben Sie einfach ein Thema und einen Anfangssatz an, und dieser KI-Prompt schreibt nahtlos einen überzeugenden und kohärenten Artikel für Sie weiter."
-}
+{"id":9,"de":{"title":"Artikel fortgesetzt","prompt":"The entire conversation and instructions should be provided in German. Continue writing an article about [theme] that begins with the following sentence: ","description":"Schreiben Sie einen Artikel auf Chinesisch über [THEMA DES ARTIKELS] und beginnen Sie mit folgendem Satz: [ARTIKELANFANG].","remark":"Setzen Sie den einleitenden Abschnitt des Aufsatzes fort, um den Aufsatz auf der Grundlage des Themas des Aufsatzes zu vervollständigen."},"tags":["write"],"website":null,"count":8775,"metaDescription":"Nie wieder Schreibblockaden. Geben Sie einfach ein Thema und einen Anfangssatz an, und dieser KI-Prompt schreibt nahtlos einen überzeugenden und kohärenten Artikel für Sie weiter."}

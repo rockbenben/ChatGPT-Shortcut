@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "ko": {
-        "title": "코드 인터프리터",
-        "prompt": "The entire conversation and instructions should be provided in Korean. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
-        "description": "코드의 구문과 의미를 명확히 하는 코드 통역사 역할을 해주실 것으로 기대합니다.",
-        "remark": "AI 가 코드의 각 단계가 무엇을 하는지 설명해줍니다. Contractor1928 의 기여로 @yiqiongwu 가 나중에 수정했습니다."
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "코드 조각을 이해하지 못하시겠습니까? 이 프롬프트는 ChatGPT를 코드 해석기로 만들어 모든 코드 스니펫의 구문과 의미를 한 줄씩 설명합니다."
-}
+{"id":173,"ko":{"title":"코드 인터프리터","prompt":"The entire conversation and instructions should be provided in Korean. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.","description":"코드의 구문과 의미를 명확히 하는 코드 통역사 역할을 해주실 것으로 기대합니다.","remark":"AI 가 코드의 각 단계가 무엇을 하는지 설명해줍니다. Contractor1928 의 기여로 @yiqiongwu 가 나중에 수정했습니다."},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"코드 조각을 이해하지 못하시겠습니까? 이 프롬프트는 ChatGPT를 코드 해석기로 만들어 모든 코드 스니펫의 구문과 의미를 한 줄씩 설명합니다."}

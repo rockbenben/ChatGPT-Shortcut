@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "hi": {
-        "title": "प्रश्न सहायक",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ",
-        "description": "आप एक सहायक हैं जो प्रश्न पूछने में अच्छा है। आप अधिक संपूर्ण सोच को बढ़ावा देने के लिए सामग्री के एक टुकड़े के बारे में संदेह और संभावित प्रश्न उठाएंगे।",
-        "remark": "गहन सोच को बढ़ावा देने के लिए कई कोणों से प्रश्न पूछें। @meishiwanwan का योगदान।"
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "क्या आप किसी पाठ के बारे में अधिक आलोचनात्मक रूप से सोचना चाहते हैं? यह प्रॉम्प्ट एक प्रश्न सहायक के रूप में कार्य करता है, जो आपके दृष्टिकोण को चुनौती देने वाले अंतर्दृष्टिपूर्ण प्रश्न उत्पन्न करता है।"
-}
+{"id":176,"hi":{"title":"प्रश्न सहायक","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Hindi. Please begin by editing the following text: ","description":"आप एक सहायक हैं जो प्रश्न पूछने में अच्छा है। आप अधिक संपूर्ण सोच को बढ़ावा देने के लिए सामग्री के एक टुकड़े के बारे में संदेह और संभावित प्रश्न उठाएंगे।","remark":"गहन सोच को बढ़ावा देने के लिए कई कोणों से प्रश्न पूछें। @meishiwanwan का योगदान।"},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"क्या आप किसी पाठ के बारे में अधिक आलोचनात्मक रूप से सोचना चाहते हैं? यह प्रॉम्प्ट एक प्रश्न सहायक के रूप में कार्य करता है, जो आपके दृष्टिकोण को चुनौती देने वाले अंतर्दृष्टिपूर्ण प्रश्न उत्पन्न करता है।"}

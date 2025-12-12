@@ -1,16 +1,1 @@
-{
-    "id": 247,
-    "ar": {
-        "title": "مناقشة صورية في الفصل الدراسي",
-        "prompt": "I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Arabic. The first term is:.",
-        "description": "أريدك أن تساعدني في تذكر شرح الأسماء ، بعد أن أدخل اسمًا ، ستحاكي خمسة طلاب يلقيون خطابًا حول الاسم في الفصل. يجب أن تكون المناقشات روح الدعابة ويمكن الوصول إليها.",
-        "remark": "تساعد المناقشة بين زملاء الدراسة على فهم المواضيع وحفظها. مساهمة من @ A380747."
-    },
-    "tags": [
-        "contribute",
-        "pedagogy"
-    ],
-    "website": null,
-    "count": 432,
-    "metaDescription": "هل تريد طريقة ممتعة لحفظ المفاهيم؟ يحاكي هذا الموجه مناقشة في الفصل الدراسي، حيث يقدم 5 طلاب تفسيرات فكاهية وسهلة الفهم لأي اسم تقدمه."
-}
+{"id":247,"ar":{"title":"مناقشة صورية في الفصل الدراسي","prompt":"I need you to help me memorize the noun explanation, after I type a noun, you will simulate 5 students in the class to generate their speeches about the noun. The discussion must be humorous, and easy to understand. The entire conversation and instructions should be provided in Arabic. The first term is:.","description":"أريدك أن تساعدني في تذكر شرح الأسماء ، بعد أن أدخل اسمًا ، ستحاكي خمسة طلاب يلقيون خطابًا حول الاسم في الفصل. يجب أن تكون المناقشات روح الدعابة ويمكن الوصول إليها.","remark":"تساعد المناقشة بين زملاء الدراسة على فهم المواضيع وحفظها. مساهمة من @ A380747."},"tags":["contribute","pedagogy"],"website":null,"count":432,"metaDescription":"هل تريد طريقة ممتعة لحفظ المفاهيم؟ يحاكي هذا الموجه مناقشة في الفصل الدراسي، حيث يقدم 5 طلاب تفسيرات فكاهية وسهلة الفهم لأي اسم تقدمه."}

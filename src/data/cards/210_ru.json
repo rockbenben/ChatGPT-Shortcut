@@ -1,15 +1,1 @@
-{
-    "id": 210,
-    "ru": {
-        "title": "Генератор еженедельных отчетов",
-        "prompt": "Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ",
-        "description": "Используйте приведенный ниже текст в качестве основы для еженедельного отчета на китайском языке, чтобы составить краткое резюме, выделяя наиболее важное содержание. Отчет должен быть выполнен в формате markdown и должен быть простым для чтения и понимания широкой аудиторией. В частности, сосредоточьтесь на изложении идей и аналитических выкладок, которые будут полезны заинтересованным сторонам и лицам, принимающим решения. При необходимости можно использовать любую дополнительную информацию или источники.",
-        "remark": "Извлечение ключевых моментов и их соответствующее расширение для создания еженедельных отчетов на основе содержания ежедневной работы."
-    },
-    "tags": [
-        "article"
-    ],
-    "website": null,
-    "count": 6551,
-    "metaDescription": "Нужно написать еженедельный отчет? Предоставьте свои рабочие задачи, и этот промпт сгенерирует краткое резюме в формате markdown, выделив самые важные моменты для заинтересованных сторон."
-}
+{"id":210,"ru":{"title":"Генератор еженедельных отчетов","prompt":"Using the provided text below as the basis for a weekly report, generate a concise summary that highlights the most important points. The report should be written in markdown format and should be easily readable and understandable for a general audience. In particular, focus on providing insights and analysis that would be useful to stakeholders and decision-makers. You may also use any additional information or sources as necessary. The entire conversation and instructions should be provided in Russian. Please begin by editing the following text: ","description":"Используйте приведенный ниже текст в качестве основы для еженедельного отчета на китайском языке, чтобы составить краткое резюме, выделяя наиболее важное содержание. Отчет должен быть выполнен в формате markdown и должен быть простым для чтения и понимания широкой аудиторией. В частности, сосредоточьтесь на изложении идей и аналитических выкладок, которые будут полезны заинтересованным сторонам и лицам, принимающим решения. При необходимости можно использовать любую дополнительную информацию или источники.","remark":"Извлечение ключевых моментов и их соответствующее расширение для создания еженедельных отчетов на основе содержания ежедневной работы."},"tags":["article"],"website":null,"count":6551,"metaDescription":"Нужно написать еженедельный отчет? Предоставьте свои рабочие задачи, и этот промпт сгенерирует краткое резюме в формате markdown, выделив самые важные моменты для заинтересованных сторон."}

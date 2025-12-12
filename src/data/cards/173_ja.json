@@ -1,16 +1,1 @@
-{
-    "id": 173,
-    "ja": {
-        "title": "コードインタープリタ",
-        "prompt": "The entire conversation and instructions should be provided in Japanese. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.",
-        "description": "コードのシンタックスやセマンティクスを明らかにする、コードインタープリターとしての役割を期待しています。",
-        "remark": "コードの各ステップが何をするのか、AI に説明させる。Tractor1928 からの寄稿、後に@yiqiongwu によって修正されました。"
-    },
-    "tags": [
-        "contribute",
-        "code"
-    ],
-    "website": null,
-    "count": 7481,
-    "metaDescription": "コードの一部が理解できませんか？このプロンプトはChatGPTをコードインタープリターにし、あらゆるコードスニペットの構文と意味を一行ずつ説明します。"
-}
+{"id":173,"ja":{"title":"コードインタープリタ","prompt":"The entire conversation and instructions should be provided in Japanese. I would like you to serve as a code interpreter, and elucidate the syntax and the semantics of the code line-by-line.","description":"コードのシンタックスやセマンティクスを明らかにする、コードインタープリターとしての役割を期待しています。","remark":"コードの各ステップが何をするのか、AI に説明させる。Tractor1928 からの寄稿、後に@yiqiongwu によって修正されました。"},"tags":["contribute","code"],"website":null,"count":7481,"metaDescription":"コードの一部が理解できませんか？このプロンプトはChatGPTをコードインタープリターにし、あらゆるコードスニペットの構文と意味を一行ずつ説明します。"}

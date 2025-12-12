@@ -1,15 +1,1 @@
-{
-    "id": 137,
-    "ar": {
-        "title": "صفحة ويكيبيديا",
-        "prompt": "I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Arabic. My first topic is \"The Great Barrier Reef.\".",
-        "description": "أريدك أن تلعب دور صفحة ويكيبيديا. سأعطيك اسم موضوع ، وبعد ذلك ستقدم ملخصًا لهذا الموضوع بتنسيق صفحة ويكيبيديا. يجب أن يكون ملخصك إعلاميًا وواقعيًا ، ويغطي أهم جوانب الموضوع. يرجى بدء الملخص الخاص بك بفقرة تمهيدية تحدد الموضوع.",
-        "remark": "ساعد المستخدمين في الحصول على المعلومات الأساسية حول موضوع ما وقدم ملخصًا بتنسيق صفحة ويكيبيديا. بهذه الطريقة ، يمكن للمستخدمين التعرف بسرعة على المعلومات ذات الصلة بالموضوع ، وبالتالي اكتساب فهم وإتقان أفضل للموضوع."
-    },
-    "tags": [
-        "tool"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "count": 902,
-    "metaDescription": "هل تحتاج إلى ملخص سريع لموضوع ما؟ هذا الموجه يجعل AI يتصرف كصفحة ويكيبيديا، ويقدم نظرة عامة غنية بالمعلومات وحقائقية بتنسيق مألوف."
-}
+{"id":137,"ar":{"title":"صفحة ويكيبيديا","prompt":"I want you to act as a Wikipedia page. I will give you the name of a topic, and you will provide a summary of that topic in the format of a Wikipedia page. Your summary should be informative and factual, covering the most important aspects of the topic. Start your summary with an introductory paragraph that gives an overview of the topic. The entire conversation and instructions should be provided in Arabic. My first topic is \"The Great Barrier Reef.\".","description":"أريدك أن تلعب دور صفحة ويكيبيديا. سأعطيك اسم موضوع ، وبعد ذلك ستقدم ملخصًا لهذا الموضوع بتنسيق صفحة ويكيبيديا. يجب أن يكون ملخصك إعلاميًا وواقعيًا ، ويغطي أهم جوانب الموضوع. يرجى بدء الملخص الخاص بك بفقرة تمهيدية تحدد الموضوع.","remark":"ساعد المستخدمين في الحصول على المعلومات الأساسية حول موضوع ما وقدم ملخصًا بتنسيق صفحة ويكيبيديا. بهذه الطريقة ، يمكن للمستخدمين التعرف بسرعة على المعلومات ذات الصلة بالموضوع ، وبالتالي اكتساب فهم وإتقان أفضل للموضوع."},"tags":["tool"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page","count":902,"metaDescription":"هل تحتاج إلى ملخص سريع لموضوع ما؟ هذا الموجه يجعل AI يتصرف كصفحة ويكيبيديا، ويقدم نظرة عامة غنية بالمعلومات وحقائقية بتنسيق مألوف."}

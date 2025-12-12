@@ -1,15 +1,1 @@
-{
-    "id": 2,
-    "fr": {
-        "title": "Assistante de rédaction",
-        "prompt": "As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ",
-        "description": "En tant qu'assistant à l'amélioration de l'écriture chinoise, votre tâche consiste à améliorer l'orthographe, la grammaire, la clarté, la concision et la lisibilité générale du texte fourni, tout en décomposant les phrases longues, en réduisant les répétitions et en formulant des suggestions d'amélioration. Veuillez fournir uniquement une version corrigée du texte et éviter d'inclure des explications. Commencez par modifier le texte suivant : [contenu de l'article]",
-        "remark": "L'invite la plus courante, utilisée pour optimiser la syntaxe, la clarté et la concision d'un texte et en améliorer la lisibilité."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": null,
-    "count": 87116,
-    "metaDescription": "Votre écriture est-elle claire et concise ? Utilisez cet assistant d'écriture pour améliorer instantanément la grammaire, corriger l'orthographe et optimiser la lisibilité. Obtenez un texte professionnel."
-}
+{"id":2,"fr":{"title":"Assistante de rédaction","prompt":"As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected version of the text and avoid including explanations. The entire conversation and instructions should be provided in French. Please begin by editing the following text: ","description":"En tant qu'assistant à l'amélioration de l'écriture chinoise, votre tâche consiste à améliorer l'orthographe, la grammaire, la clarté, la concision et la lisibilité générale du texte fourni, tout en décomposant les phrases longues, en réduisant les répétitions et en formulant des suggestions d'amélioration. Veuillez fournir uniquement une version corrigée du texte et éviter d'inclure des explications. Commencez par modifier le texte suivant : [contenu de l'article]","remark":"L'invite la plus courante, utilisée pour optimiser la syntaxe, la clarté et la concision d'un texte et en améliorer la lisibilité."},"tags":["write"],"website":null,"count":87116,"metaDescription":"Votre écriture est-elle claire et concise ? Utilisez cet assistant d'écriture pour améliorer instantanément la grammaire, corriger l'orthographe et optimiser la lisibilité. Obtenez un texte professionnel."}

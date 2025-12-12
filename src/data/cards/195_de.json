@@ -1,16 +1,1 @@
-{
-    "id": 195,
-    "de": {
-        "title": "Redeentwurf",
-        "prompt": "As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in German. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.",
-        "description": "Erweitern Sie als [Identität] den folgenden Text für mich, in dem es um die Umsetzung von Wissenschaftsethik und Lernstilen geht. Sie können bis zu einer berühmten Person zitieren, konkrete Beispiele anführen und Ihre persönlichen Empfindungen erläutern.",
-        "remark": "Beitrag von @SetSeele."
-    },
-    "tags": [
-        "contribute",
-        "speech"
-    ],
-    "website": null,
-    "count": 2180,
-    "metaDescription": "Müssen Sie eine überzeugende Rede schreiben? Dieser Prompt hilft Ihnen, jedes Thema aus einer bestimmten Identität heraus zu erweitern und berühmte Zitate, Beispiele und persönliche Gedanken einzubeziehen."
-}
+{"id":195,"de":{"title":"Redeentwurf","prompt":"As a [identity], centered around [topic], please expand the following text for me. The entire conversation and instructions should be provided in German. You may quote up to one famous saying, provide specific examples, and elaborate on personal thoughts.","description":"Erweitern Sie als [Identität] den folgenden Text für mich, in dem es um die Umsetzung von Wissenschaftsethik und Lernstilen geht. Sie können bis zu einer berühmten Person zitieren, konkrete Beispiele anführen und Ihre persönlichen Empfindungen erläutern.","remark":"Beitrag von @SetSeele."},"tags":["contribute","speech"],"website":null,"count":2180,"metaDescription":"Müssen Sie eine überzeugende Rede schreiben? Dieser Prompt hilft Ihnen, jedes Thema aus einer bestimmten Identität heraus zu erweitern und berühmte Zitate, Beispiele und persönliche Gedanken einzubeziehen."}

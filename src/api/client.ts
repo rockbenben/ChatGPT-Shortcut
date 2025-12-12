@@ -1,13 +1,12 @@
 /**
  * API Client - Axios instance and shared utilities
+ *
+ * API 配置统一在 config.ts 中定义
  */
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { removeCache, CACHE_PREFIX } from "@site/src/utils/cache";
-
-// API Configuration
-// http://localhost:1337/api  https://api.newzone.top/api
-export const API_URL = "https://api.newzone.top/api";
+import { API_URL } from "./config";
 
 // Token Management
 let authToken: string | null = null;
@@ -17,20 +16,19 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 /**
- * Clear all user info cache
+ * 清除用户基本信息缓存（id, username, email）
+ * ⭐ 重要：必须同时清除 ETag，否则会导致 304 响应但数据为 null 的问题
  */
-export function clearUserAllInfoCache() {
-  removeCache(CACHE_PREFIX.USER_INFO);
+export function clearUserProfileCache() {
+  removeCache(CACHE_PREFIX.USER_PROFILE);
+  removeCache(`${CACHE_PREFIX.USER_PROFILE}_etag`);
 }
 
-/**
- * Ensure value is an array
- */
-export const ensureArrayInput = (value: unknown, fieldName: string): unknown[] => {
-  if (!Array.isArray(value)) {
-    throw new Error(`${fieldName} must be an array`);
-  }
-  return value;
+// 动态导入 clearMySpaceCache 以避免循环依赖
+const clearAllUserCaches = async () => {
+  clearUserProfileCache();
+  const { clearMySpaceCache } = await import("./myspace");
+  clearMySpaceCache();
 };
 
 /**
@@ -38,7 +36,9 @@ export const ensureArrayInput = (value: unknown, fieldName: string): unknown[] =
  */
 const handleApiError = (error: any) => {
   if (error?.response?.status === 401) {
-    clearUserAllInfoCache();
+    localStorage.removeItem("auth_token");
+    // 401 时清除所有用户缓存
+    clearAllUserCaches();
   }
 
   // Extract Strapi error message and attach to error object

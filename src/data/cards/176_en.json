@@ -1,15 +1,1 @@
-{
-    "id": 176,
-    "en": {
-        "title": "Question Assistant",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. Please begin by editing the following text: ",
-        "remark": "Ask from multiple angles to trigger deep thinking. Contributed by @meishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "Want to think more critically about a text? This prompt acts as a question assistant, generating insightful questions that challenge your perspective."
-}
+{"id":176,"en":{"title":"Question Assistant","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. Please begin by editing the following text: ","remark":"Ask from multiple angles to trigger deep thinking. Contributed by @meishiwanwan."},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"Want to think more critically about a text? This prompt acts as a question assistant, generating insightful questions that challenge your perspective."}

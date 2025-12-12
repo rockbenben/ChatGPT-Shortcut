@@ -1,15 +1,1 @@
-{
-    "id": 10,
-    "fr": {
-        "title": "Collection de matériel d'écriture",
-        "prompt": "The entire conversation and instructions should be provided in French. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.",
-        "description": "Dresser une liste des 10 principaux faits, statistiques et tendances liés au [sujet], en indiquant leurs sources.",
-        "remark": "Fournir des résultats, des données et des sources en rapport avec le sujet en tant que matériel de référence."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 4586,
-    "metaDescription": "Vous cherchez des données crédibles pour votre contenu ? Ce prompt génère une liste des 10 principaux faits, statistiques et tendances sur n'importe quel thème, avec des sources vérifiées."
-}
+{"id":10,"fr":{"title":"Collection de matériel d'écriture","prompt":"The entire conversation and instructions should be provided in French. Generate a list of the top 10 facts, statistics and trends related to [theme], including their source.","description":"Dresser une liste des 10 principaux faits, statistiques et tendances liés au [sujet], en indiquant leurs sources.","remark":"Fournir des résultats, des données et des sources en rapport avec le sujet en tant que matériel de référence."},"tags":["write"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":4586,"metaDescription":"Vous cherchez des données crédibles pour votre contenu ? Ce prompt génère une liste des 10 principaux faits, statistiques et tendances sur n'importe quel thème, avec des sources vérifiées."}

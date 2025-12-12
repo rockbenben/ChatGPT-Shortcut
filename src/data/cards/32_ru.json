@@ -1,15 +1,1 @@
-{
-    "id": 32,
-    "ru": {
-        "title": "Классификация текстовых намерений",
-        "prompt": "The entire conversation and instructions should be provided in Russian. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].",
-        "description": "Разделите следующий список ключевых слов на группы в зависимости от их поискового намерения (коммерческого, транзакционного или информационного):[keyword].",
-        "remark": "Сгруппируйте приведенный ниже список ключевых слов с коммерческим, транзакционным или информационным поисковым намерением на основе поискового намерения."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 305,
-    "metaDescription": "Как классифицировать ключевые слова по намерению пользователя? Используйте этот промпт для автоматической группировки ключевых слов по коммерческим, транзакционным или информационным поисковым намерениям. Идеально для SEO!"
-}
+{"id":32,"ru":{"title":"Классификация текстовых намерений","prompt":"The entire conversation and instructions should be provided in Russian. Classify the following keyword list into groups based on their search intent, whether commercial, transactional or informational: [keywords].","description":"Разделите следующий список ключевых слов на группы в зависимости от их поискового намерения (коммерческого, транзакционного или информационного):[keyword].","remark":"Сгруппируйте приведенный ниже список ключевых слов с коммерческим, транзакционным или информационным поисковым намерением на основе поискового намерения."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":305,"metaDescription":"Как классифицировать ключевые слова по намерению пользователя? Используйте этот промпт для автоматической группировки ключевых слов по коммерческим, транзакционным или информационным поисковым намерениям. Идеально для SEO!"}

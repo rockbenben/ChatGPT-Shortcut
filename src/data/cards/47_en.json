@@ -1,14 +1,1 @@
-{
-    "id": 47,
-    "en": {
-        "title": "Summary of Non-Fiction Books",
-        "prompt": "I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?",
-        "remark": "Based on the input of non-fiction book titles and authors, summarize the core principles of the book in the most easily understandable way. Additionally, provide a feasible checklist of steps to explain how these principles can be applied to daily life."
-    },
-    "tags": [
-        "life"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
-    "count": 880,
-    "metaDescription": "Want the wisdom of a non-fiction book in minutes? This prompt summarizes core principles in simple terms and provides actionable steps to apply them to your daily life."
-}
+{"id":47,"en":{"title":"Summary of Non-Fiction Books","prompt":"I want you to act as a Life Coach. Please summarize this non-fiction book, [书名] by [作者]. Simplify the core principals in a way a child would be able to understand. Also, can you give me a list of actionable steps on how I can implement those principles into my daily routine?","remark":"Based on the input of non-fiction book titles and authors, summarize the core principles of the book in the most easily understandable way. Additionally, provide a feasible checklist of steps to explain how these principles can be applied to daily life."},"tags":["life"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1","count":880,"metaDescription":"Want the wisdom of a non-fiction book in minutes? This prompt summarizes core principles in simple terms and provides actionable steps to apply them to your daily life."}

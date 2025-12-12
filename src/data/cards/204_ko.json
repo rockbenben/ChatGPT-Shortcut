@@ -1,16 +1,1 @@
-{
-    "id": 204,
-    "ko": {
-        "title": "구술 스크립트",
-        "prompt": "The entire conversation and instructions should be provided in Korean. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.",
-        "description": "주제] 에 대한 에세이를 사람의 목소리로 작성하되, 약어, 관용구, 전환구, 느낌표, 수식어 및 구어체를 사용하고 반복되는 구절과 부자연스러운 문장 구조를 피하세요.",
-        "remark": "동영상, 라이브 스트림, 팟캐스트, 서브 및 기타 음성 콘텐츠 스크립팅. 베티크로코의 기여."
-    },
-    "tags": [
-        "contribute",
-        "write"
-    ],
-    "website": null,
-    "count": 15493,
-    "metaDescription": "자연스럽게 들리는 대본이 필요하신가요? 이 프롬프트는 관용구, 구어체, 간단한 영어를 사용하여 사람과 같은 대화 스타일로 기사를 작성하는 데 도움을 줍니다."
-}
+{"id":204,"ko":{"title":"구술 스크립트","prompt":"The entire conversation and instructions should be provided in Korean. write an article about [TOPIC] in a human-like style, simple English, using contractions, idioms, transitional phrases, interjections, dangling modifiers, and colloquialisms and avoiding repetitive phrases and unnatural sentence structures.","description":"주제] 에 대한 에세이를 사람의 목소리로 작성하되, 약어, 관용구, 전환구, 느낌표, 수식어 및 구어체를 사용하고 반복되는 구절과 부자연스러운 문장 구조를 피하세요.","remark":"동영상, 라이브 스트림, 팟캐스트, 서브 및 기타 음성 콘텐츠 스크립팅. 베티크로코의 기여."},"tags":["contribute","write"],"website":null,"count":15493,"metaDescription":"자연스럽게 들리는 대본이 필요하신가요? 이 프롬프트는 관용구, 구어체, 간단한 영어를 사용하여 사람과 같은 대화 스타일로 기사를 작성하는 데 도움을 줍니다."}

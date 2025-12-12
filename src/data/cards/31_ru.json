@@ -1,15 +1,1 @@
-{
-    "id": 31,
-    "ru": {
-        "title": "Анализ текстовых настроений",
-        "prompt": "Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Russian. Generate the results in column, including the titles in the first one, and their sentiment in the second: ",
-        "description": "Задайте настроения для следующих заголовков, присвоив им значения: положительный, нейтральный или отрицательный. Сформировать столбец результатов с заголовками в первом столбце и настроениями во втором: [content] ",
-        "remark": "Оцените настроение текста: позитивное, нейтральное или негативное."
-    },
-    "tags": [
-        "text"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 505,
-    "metaDescription": "Интересует тон текста? Этот промпт для AI мгновенно классифицирует контент как позитивный, нейтральный или негативный. Получите быстрый и точный анализ тональности!"
-}
+{"id":31,"ru":{"title":"Анализ текстовых настроений","prompt":"Specify the sentiment of the following titles, assigning them the values of: positive, neutral or negative. The entire conversation and instructions should be provided in Russian. Generate the results in column, including the titles in the first one, and their sentiment in the second: ","description":"Задайте настроения для следующих заголовков, присвоив им значения: положительный, нейтральный или отрицательный. Сформировать столбец результатов с заголовками в первом столбце и настроениями во втором: [content] ","remark":"Оцените настроение текста: позитивное, нейтральное или негативное."},"tags":["text"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":505,"metaDescription":"Интересует тон текста? Этот промпт для AI мгновенно классифицирует контент как позитивный, нейтральный или негативный. Получите быстрый и точный анализ тональности!"}

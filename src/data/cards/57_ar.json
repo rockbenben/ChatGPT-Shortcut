@@ -1,15 +1,1 @@
-{
-    "id": 57,
-    "ar": {
-        "title": "اخصائي تغذيه",
-        "prompt": "As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Arabic. Can you please provide a suggestion?.",
-        "description": "بصفتي خبير تغذية ، أود إنشاء وصفة نباتية لـ [الموضوع] مع [المتطلبات]. هل يمكنك تقديم اقتراح؟",
-        "remark": "أخصائيو التغذية"
-    },
-    "tags": [
-        "living"
-    ],
-    "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "count": 1138,
-    "metaDescription": "هل تحتاج إلى أفكار لوجبات صحية؟ هذا الموجه لـ AI يحول الذكاء الاصطناعي إلى أخصائي تغذية، ويولد وصفات مخصصة بناءً على احتياجاتك الغذائية والسعرات الحرارية والتفضيلات. خطط لوجبتك المثالية!"
-}
+{"id":57,"ar":{"title":"اخصائي تغذيه","prompt":"As a dietitian, I would like to design a vegetarian recipe for 2 people that has approximate 500 calories per serving and has a low glycemic index. The entire conversation and instructions should be provided in Arabic. Can you please provide a suggestion?.","description":"بصفتي خبير تغذية ، أود إنشاء وصفة نباتية لـ [الموضوع] مع [المتطلبات]. هل يمكنك تقديم اقتراح؟","remark":"أخصائيو التغذية"},"tags":["living"],"website":"https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian","count":1138,"metaDescription":"هل تحتاج إلى أفكار لوجبات صحية؟ هذا الموجه لـ AI يحول الذكاء الاصطناعي إلى أخصائي تغذية، ويولد وصفات مخصصة بناءً على احتياجاتك الغذائية والسعرات الحرارية والتفضيلات. خطط لوجبتك المثالية!"}

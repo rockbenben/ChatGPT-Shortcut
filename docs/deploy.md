@@ -37,7 +37,24 @@ AI Short 是一个开源项目，你可以根据需求自由修改网站的标�
   **注意**：建议将 `id` 设置为 500 以上。新增的提示词不会有专属页面和评论区。如果需要为提示词添加专属页面，可以复制 `src/data/pages/prompt` 目录下的模板文件进行修改。
 
 - **自定义后端**  
-  当前项目已连接至一个共享的后台系统。如果你希望自行搭建后端，可以参考 `src/api.js` 文件中的接口说明。
+  当前项目已连接至一个共享的后台系统。如果你希望自行搭建后端，可以参考 `src/api` 文件夹中的接口说明。
+
+  API 模块结构：
+
+  ```
+  src/api/
+  ├── index.ts       # 统一导出入口
+  ├── config.ts      # API URL 配置
+  ├── client.ts      # Axios 客户端（含认证拦截器）
+  ├── auth.ts        # 认证 API（登录/注册/OAuth）
+  ├── prompts.ts     # 提示词 CRUD + 搜索 + 投票
+  ├── favorites.ts   # 收藏操作
+  ├── myspace.ts     # 我的空间数据（核心数据源）
+  ├── comments.ts    # 评论系统
+  └── user.ts        # 用户信息
+  ```
+
+  **缓存机制**：项目使用 `lscache` 结合 ETag 实现智能缓存。当服务器返回 304 Not Modified 时，直接复用本地缓存数据，减少数据传输。
 
 - **多语言支持与部署**  
   在完成多语言修改后，你可以使用 `CodeUpdateHandler.py` 脚本进行批量处理。执行以下命令：
@@ -52,7 +69,7 @@ AI Short 是一个开源项目，你可以根据需求自由修改网站的标�
 
 System Requirements:
 
-- [Node.js 18.0](https://nodejs.org/) or later.
+- [Node.js 20.0](https://nodejs.org/) or later.
 - macOS, Windows (including WSL), and Linux are supported.
 
 ### 本地部署

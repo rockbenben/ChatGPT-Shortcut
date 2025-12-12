@@ -1,15 +1,1 @@
-{
-    "id": 40,
-    "hi": {
-        "title": "कीवर्ड लोकप्रिय संबंधित",
-        "prompt": "The entire conversation and instructions should be provided in Hindi. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].",
-        "description": "[कीवर्ड] से संबंधित, [दर्शकों] से संबंधित और चीनी भाषा में उत्तर दिए गए शीर्ष 10 प्रश्नों की एक सूची तैयार करें।",
-        "remark": "इसका उपयोग किसी विशिष्ट विषय पर उपयोगकर्ता के फोकस को समझने या लेख की संरचना को व्यवस्थित करने के लिए किया जा सकता है, और इसे &quot;हॉट कीवर्ड&quot;, &quot;हॉट टॉपिक्स&quot;, &quot;हॉट ब्रांड&quot;, &quot;हॉट वेबसाइट्स&quot; आदि में भी बदला जा सकता है। ."
-    },
-    "tags": [
-        "seo"
-    ],
-    "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "count": 1627,
-    "metaDescription": "आपके उपयोगकर्ता क्या खोज रहे हैं? यह प्रॉम्प्ट आपके कीवर्ड से संबंधित 10 लोकप्रिय प्रश्न उत्पन्न करता है, जिससे आपको खोज के इरादे को समझने और प्रासंगिक सामग्री बनाने में मदद मिलती है।"
-}
+{"id":40,"hi":{"title":"कीवर्ड लोकप्रिय संबंधित","prompt":"The entire conversation and instructions should be provided in Hindi. Generate a list of 10 popular questions related to [keywords], that are relevant for [target users].","description":"[कीवर्ड] से संबंधित, [दर्शकों] से संबंधित और चीनी भाषा में उत्तर दिए गए शीर्ष 10 प्रश्नों की एक सूची तैयार करें।","remark":"इसका उपयोग किसी विशिष्ट विषय पर उपयोगकर्ता के फोकस को समझने या लेख की संरचना को व्यवस्थित करने के लिए किया जा सकता है, और इसे &quot;हॉट कीवर्ड&quot;, &quot;हॉट टॉपिक्स&quot;, &quot;हॉट ब्रांड&quot;, &quot;हॉट वेबसाइट्स&quot; आदि में भी बदला जा सकता है। ."},"tags":["seo"],"website":"https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/","count":1627,"metaDescription":"आपके उपयोगकर्ता क्या खोज रहे हैं? यह प्रॉम्प्ट आपके कीवर्ड से संबंधित 10 लोकप्रिय प्रश्न उत्पन्न करता है, जिससे आपको खोज के इरादे को समझने और प्रासंगिक सामग्री बनाने में मदद मिलती है।"}

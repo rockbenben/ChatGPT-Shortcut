@@ -1,16 +1,1 @@
-{
-    "id": 176,
-    "ar": {
-        "title": "مساعد سؤال",
-        "prompt": "Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Arabic. Please begin by editing the following text: ",
-        "description": "أنت مساعد جيد في طرح الأسئلة ، وستثير الشكوك والأسئلة المحتملة حول جزء من المحتوى لتعزيز تفكير أكثر اكتمالاً.",
-        "remark": "اطرح أسئلة من زوايا متعددة لتحفيز التفكير المتعمق. مساهمة منmeishiwanwan."
-    },
-    "tags": [
-        "contribute",
-        "mind"
-    ],
-    "website": null,
-    "count": 2386,
-    "metaDescription": "هل تريد أن تفكر بشكل أكثر نقدًا في نص ما؟ يعمل هذا الموجه كمساعد أسئلة، حيث يولد أسئلة ثاقبة تتحدى وجهة نظرك."
-}
+{"id":176,"ar":{"title":"مساعد سؤال","prompt":"Please analyze the following text and generate a set of insightful questions that challenge the reader's perspective and spark curiosity. Your response must encourage deeper thinking. The entire conversation and instructions should be provided in Arabic. Please begin by editing the following text: ","description":"أنت مساعد جيد في طرح الأسئلة ، وستثير الشكوك والأسئلة المحتملة حول جزء من المحتوى لتعزيز تفكير أكثر اكتمالاً.","remark":"اطرح أسئلة من زوايا متعددة لتحفيز التفكير المتعمق. مساهمة منmeishiwanwan."},"tags":["contribute","mind"],"website":null,"count":2386,"metaDescription":"هل تريد أن تفكر بشكل أكثر نقدًا في نص ما؟ يعمل هذا الموجه كمساعد أسئلة، حيث يولد أسئلة ثاقبة تتحدى وجهة نظرك."}

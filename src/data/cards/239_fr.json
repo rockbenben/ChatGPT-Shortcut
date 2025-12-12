@@ -1,15 +1,1 @@
-{
-    "id": 239,
-    "fr": {
-        "title": "Une mine d'informations : résumé en une phrase",
-        "prompt": "The entire conversation and instructions should be provided in French. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.",
-        "description": "En combinant le contenu des posts précédents '@1' à '@3', aidez-moi à trouver une ligne accrocheuse qui décrit [sujet] et présente les caractéristiques les plus distinctives du post original.",
-        "remark": "Rédiger des textes promotionnels et des titres d'articles. Cette méthode est tirée d'un article d'Esor Huang, auteur de Computer Playthings."
-    },
-    "tags": [
-        "write"
-    ],
-    "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "count": 1313,
-    "metaDescription": "Comment résumer un long document ? Après avoir saisi des données massives, utilisez ce prompt pour générer une seule phrase engageante qui reflète fidèlement le contenu principal."
-}
+{"id":239,"fr":{"title":"Une mine d'informations : résumé en une phrase","prompt":"The entire conversation and instructions should be provided in French. Based on the key features and unique characteristics of articles '@1' to '@3', please create an engaging and attractive sentence describing the [Topic] while accurately reflecting the original content from the articles.","description":"En combinant le contenu des posts précédents '@1' à '@3', aidez-moi à trouver une ligne accrocheuse qui décrit [sujet] et présente les caractéristiques les plus distinctives du post original.","remark":"Rédiger des textes promotionnels et des titres d'articles. Cette méthode est tirée d'un article d'Esor Huang, auteur de Computer Playthings."},"tags":["write"],"website":"https://www.playpcesor.com/2023/03/chatgpt-2.html","count":1313,"metaDescription":"Comment résumer un long document ? Après avoir saisi des données massives, utilisez ce prompt pour générer une seule phrase engageante qui reflète fidèlement le contenu principal."}

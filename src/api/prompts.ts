@@ -1,11 +1,25 @@
 /**
  * Prompts APIs - CRUD for prompts, search, voting
  */
-import { apiClient, ensureArrayInput, clearUserAllInfoCache } from "./client";
-import { setCache, getCache, removeCache, flushCacheByPrefix, getPromptCacheKey, getPromptTTL, getListCacheKey, CACHE_TTL, CACHE_PREFIX } from "@site/src/utils/cache";
+import { apiClient } from "./client";
+import {
+  setCache,
+  getCache,
+  removeCache,
+  flushCacheByPrefix,
+  getPromptCacheKey,
+  getPromptTTL,
+  getListCacheKey,
+  CACHE_TTL,
+  CACHE_PREFIX,
+  getETag,
+  setCacheWithETag,
+  extendCache,
+} from "@site/src/utils/cache";
+import { clearMySpaceCache } from "./myspace";
 
 /**
- * Batch fetch prompts by IDs
+ * Batch fetch prompts by IDs with ETag conditional request support
  */
 export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: number[] | { id: number }[], lang?: string) {
   if (!ids || ids.length === 0) {
@@ -40,6 +54,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
   const cachedPrompts = new Map();
   const idsToFetch: number[] = [];
+  const etagMap: Record<number, string> = {}; // ETag映射
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
@@ -48,13 +63,19 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     if (cachedData) {
       cachedPrompts.set(id, cachedData);
+
+      // 对于所有类型收集 ETag 用于条件验证
+      const etag = getETag(cacheKey);
+      if (etag) {
+        etagMap[id] = etag;
+      }
     } else {
       idsToFetch.push(id);
     }
   });
 
-  // Return cached data if all present
-  if (idsToFetch.length === 0) {
+  // Return cached data if all present and no ETags to validate
+  if (idsToFetch.length === 0 && Object.keys(etagMap).length === 0) {
     return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
   }
 
@@ -65,16 +86,38 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   };
 
   const apiEndpoint = apiEndpoints[safeType] || apiEndpoints["commus"];
-  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang } : { ids: idsToFetch };
+
+  // 构建请求体，包含 ETags
+  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang, etags: etagMap } : { ids: idsToFetch, etags: etagMap };
 
   try {
-    const response = await apiClient.post(apiEndpoint, postData);
+    const response = await apiClient.post(apiEndpoint, postData, {
+      validateStatus: (status) => status === 200 || status === 304,
+    });
+
     const ttl = getPromptTTL(safeType);
 
-    // Update cache
+    // Handle 304 Not Modified: extend cache TTL
+    if (response.status === 304) {
+      console.log(`[getPrompts] 304 Not Modified for type: ${safeType}, extending cache`);
+
+      // 延长所有已缓存项的 TTL
+      Object.keys(etagMap).forEach((idStr) => {
+        const id = Number(idStr);
+        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        extendCache(cacheKey, ttl);
+      });
+
+      // 返回缓存数据
+      return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
+    }
+
+    // Handle 200 OK: update cache with new data
+    const newEtag = response.headers["etag"] || response.headers["ETag"];
+
     response.data.forEach((item: { id: number }) => {
       const cacheKey = getPromptCacheKey(safeType, item.id, sanitizedLang);
-      setCache(cacheKey, item, ttl);
+      setCacheWithETag(cacheKey, item, ttl, newEtag);
     });
 
     // Merge cached and fetched data
@@ -85,6 +128,12 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
+    // Handle 304 in catch block (some axios configurations)
+    if (error?.response?.status === 304) {
+      console.log(`[getPrompts] 304 handled in catch, using cache`);
+      return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
+    }
+
     console.error(`Error fetching ${type}:`, error);
     throw error;
   }
@@ -105,7 +154,7 @@ export async function submitPrompt(values: { title: string; description: string;
         promptLength: values.description.length,
       },
     });
-
+    clearMySpaceCache();
     return response.data;
   } catch (error) {
     console.error("Error submitting prompt:", error);
@@ -142,6 +191,7 @@ export async function updatePrompt(
     // Clear cache
     const cacheKey = getPromptCacheKey("userprompts", id);
     removeCache(cacheKey);
+    clearMySpaceCache();
 
     return response.data;
   } catch (error) {
@@ -161,26 +211,11 @@ export async function deletePrompt(id: number) {
     // Clear cache
     const cacheKey = getPromptCacheKey("userprompts", id);
     removeCache(cacheKey);
+    clearMySpaceCache();
 
     return response;
   } catch (error) {
     console.error("Error deleting prompt:", error);
-    throw error;
-  }
-}
-
-/**
- * Update prompts order
- */
-export async function updatePromptsOrder(order: number[]) {
-  try {
-    const safeOrder = ensureArrayInput(order, "order");
-    const response = await apiClient.put(`/favorites/userprompt-order`, {
-      data: { newOrder: safeOrder },
-    });
-    return response;
-  } catch (error) {
-    console.error("Error updating Order:", error);
     throw error;
   }
 }
@@ -231,9 +266,13 @@ export async function findCardsWithTags(tags: string[], search: string, lang: st
 
     const cacheKey = getListCacheKey(CACHE_PREFIX.SEARCH, encodeURIComponent(JSON.stringify(normalizedTags)), encodeURIComponent(safeSearch), lang, operator);
     const cachedData = getCache(cacheKey);
+    const cachedEtag = getETag(cacheKey);
 
-    if (cachedData) {
-      return cachedData;
+    // 防御性检查
+    if (cachedEtag && !cachedData) {
+      console.warn("[Search] Found ETag but no cached data, clearing ETag");
+      const { removeETag } = require("@site/src/utils/cache");
+      removeETag(cacheKey);
     }
 
     const queryParams = new URLSearchParams();
@@ -247,12 +286,37 @@ export async function findCardsWithTags(tags: string[], search: string, lang: st
     queryParams.append("lang", lang);
     queryParams.append("operator", operator);
 
-    const responseIds = await apiClient.get(`/cards/find-with-tag`, { params: queryParams });
-    const detailedCards = await getPrompts("cards", responseIds.data, lang);
+    try {
+      const responseIds = await apiClient.get(`/cards/find-with-tag`, {
+        params: queryParams,
+        headers: {
+          ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
+        },
+        validateStatus: (status) => status === 200 || status === 304,
+      });
 
-    setCache(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS);
+      // Handle 304 Not Modified
+      if (responseIds.status === 304) {
+        console.log("[Search] Data unchanged, extending cache");
+        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
+        return cachedData;
+      }
 
-    return detailedCards;
+      // Handle 200 OK
+      const detailedCards = await getPrompts("cards", responseIds.data, lang);
+      const newEtag = responseIds.headers["etag"] || responseIds.headers["ETag"];
+      setCacheWithETag(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS, newEtag);
+
+      return detailedCards;
+    } catch (error) {
+      // Handle 304 in catch
+      if (error?.response?.status === 304) {
+        console.log("[Search] 304 handled in catch, extending cache");
+        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
+        return cachedData;
+      }
+      throw error;
+    }
   } catch (error) {
     console.error("Error fetching cards with tags:", error);
     throw error;
