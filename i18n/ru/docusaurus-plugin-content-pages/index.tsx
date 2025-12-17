@@ -329,11 +329,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                       <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
                     </Col>
                   ))}
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <Suspense fallback={null}>
-                      <AdComponent />
-                    </Suspense>
-                  </Col>
                 </Row>
               </div>
             </div>
@@ -349,16 +344,20 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Title>
             <Row gutter={[16, 16]} className={styles.cardRowContainer}>
-              {otherUsers.map((user) => (
-                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
-                  <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
-                </Col>
+              {otherUsers.map((user, index) => (
+                <React.Fragment key={user.id}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                    <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
+                  </Col>
+                  {(index + 1) % 12 === 0 && (
+                    <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                      <Suspense fallback={null}>
+                        <AdComponent />
+                      </Suspense>
+                    </Col>
+                  )}
+                </React.Fragment>
               ))}
-              <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                <Suspense fallback={null}>
-                  <AdComponent />
-                </Suspense>
-              </Col>
             </Row>
             {/* Intersection Observer 触发器 - 所有用户滚动自动加载 */}
             {hasMoreData && (
@@ -384,7 +383,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             <SearchBar />
           </div>
           <Row gutter={[16, 16]} className={styles.cardRowContainer}>
-            {filteredCommus.map((user) => {
+            {filteredCommus.map((user, index) => {
               const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
 
@@ -399,28 +398,41 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                 : user;
 
               return (
-                <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
-                  <PromptCard
-                    type={isUserPrompt ? "user" : "community"}
-                    data={modifiedData}
-                    isFavorite={isFavorite}
-                    onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
-                    onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
-                    onOpenModal={onOpenModal}
-                  />
-                </Col>
+                <React.Fragment key={user.id}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                    <PromptCard
+                      type={isUserPrompt ? "user" : "community"}
+                      data={modifiedData}
+                      isFavorite={isFavorite}
+                      onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
+                      onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
+                      onOpenModal={onOpenModal}
+                    />
+                  </Col>
+                  {(index + 1) % 12 === 0 && (
+                    <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                      <Suspense fallback={null}>
+                        <AdComponent />
+                      </Suspense>
+                    </Col>
+                  )}
+                </React.Fragment>
               );
             })}
-            {filteredCards.map((user) => (
-              <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
-                <PromptCard type="data" data={user} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
-              </Col>
+            {filteredCards.map((user, index) => (
+              <React.Fragment key={user.id}>
+                <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                  <PromptCard type="data" data={user} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                </Col>
+                {(filteredCommus.length + index + 1) % 12 === 0 && (
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                    <Suspense fallback={null}>
+                      <AdComponent />
+                    </Suspense>
+                  </Col>
+                )}
+              </React.Fragment>
             ))}
-            <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-              <Suspense fallback={null}>
-                <AdComponent />
-              </Suspense>
-            </Col>
           </Row>
         </div>
       )}
