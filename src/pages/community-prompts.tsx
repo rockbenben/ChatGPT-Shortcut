@@ -226,7 +226,13 @@ const CommunityPrompts = () => {
                 <Breadcrumb
                   itemRender={(item, params, items, paths) => {
                     const isLast = items.indexOf(item) === items.length - 1;
-                    return isLast || !item.path ? <span>{item.title}</span> : <Link to={item.path}>{item.title}</Link>;
+                    return isLast || !item.path ? (
+                      <span>{item.title}</span>
+                    ) : (
+                      <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
+                        {item.title}
+                      </Link>
+                    );
                   }}
                   items={[
                     {
