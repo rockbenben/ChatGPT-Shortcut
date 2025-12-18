@@ -32,6 +32,13 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     if (!shouldLoad) return;
 
     try {
+      if (!window.adsbygoogle) {
+        const script = document.createElement("script");
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7585955822109216";
+        script.async = true;
+        script.crossOrigin = "anonymous";
+        document.body.appendChild(script);
+      }
       window.adsbygoogle = window.adsbygoogle || [];
       window.adsbygoogle.push({});
     } catch (error) {
