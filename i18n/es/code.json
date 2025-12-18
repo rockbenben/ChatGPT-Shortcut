@@ -3,16 +3,16 @@
     "message": "Prompts de IA seleccionados para conversaciones más eficientes"
   },
   "homepage.title": {
-    "message": "AiShort - Biblioteca de Prompts de IA | Instrucciones de Prompt seleccionadas | Aumenta la productividad al instante"
+    "message": "AiShort - Biblioteca de Prompts IA | Plantillas para Aumentar Productividad"
   },
   "homepage.description": {
-    "message": "¿Por qué la IA siempre responde de manera irrelevante? AiShort recopila plantillas de prompts de IA prácticas, cubriendo escenarios de escritura, programación y traducción. Copia con un clic para ayudar a la IA a comprender las instrucciones con precisión y generar resultados profesionales, ¡duplicando tu eficiencia en un instante!"
+    "message": "¿Frustrado con respuestas IA irrelevantes? AiShort ofrece plantillas prácticas para escritura, programación y traducción. ¡Copia con un clic y duplica tu eficiencia!"
   },
   "community.title": {
-    "message": "Comunidad de Prompts de IA - Descubre y comparte Prompts de calidad | Plataforma creativa AiShort"
+    "message": "Comunidad de Prompts IA | Descubre y Comparte - AiShort"
   },
   "community.description": {
-    "message": "¿Quieres más prompts de IA prácticos? Únete a la comunidad AiShort, descubre plantillas de prompts prácticas compartidas por usuarios, intercambia consejos de optimización y construye juntos una biblioteca de recursos de prompts de alta calidad."
+    "message": "¿Necesitas más prompts IA probados? Únete a la comunidad AiShort para descubrir plantillas prácticas, compartir técnicas de optimización y construir una biblioteca de calidad."
   },
   "common.favorites": {
     "message": "Favoritos"
@@ -557,17 +557,8 @@
   "placeholder.promptContent": {
     "message": "Ingresa el contenido detallado del prompt aquí..."
   },
-  "label.promptTags": {
-    "message": "Función/Etiquetas"
-  },
-  "placeholder.promptTags": {
-    "message": "Describe brevemente la función del prompt (opcional)"
-  },
   "label.promptNotes": {
     "message": "Notas"
-  },
-  "label.promptNotes.description": {
-    "message": "Puedes proporcionar la fuente del prompt aquí, así como otras versiones de idioma. Además, si tienes alguna idea de expansión o requisito para este prompt, por favor explícalo aquí."
   },
   "placeholder.promptNotes": {
     "message": "Notas adicionales sobre este prompt (opcional)"
@@ -1027,5 +1018,23 @@
   },
   "modal.forgotPassword.title": {
     "message": "¿Olvidó su contraseña?"
+  },
+  "myspace.assignTag": {
+    "message": "Asignar etiquetas"
+  },
+  "prompt.tokenDanger": {
+    "message": "El prompt es demasiado largo; se recomienda encarecidamente dividirlo en varios prompts."
+  },
+  "prompt.tokenWarning": {
+    "message": "El prompt es bastante largo; considere acortarlo o dividirlo."
+  },
+  "label.promptNotes.description": {
+    "message": "Puede proporcionar aquí la fuente, otras versiones de idioma o notas adicionales."
+  },
+  "label.promptRemark": {
+    "message": "Uso"
+  },
+  "placeholder.promptRemark": {
+    "message": "Describa brevemente el uso de este prompt (opcional)"
   }
 }

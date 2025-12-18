@@ -51,16 +51,16 @@
     "message": "厳選されたAIプロンプトで、会話をより効率的に"
   },
   "homepage.title": {
-    "message": "AiShort - AIプロンプトテンプレートライブラリ | 厳選プロンプト指令 | ワンクリックで生産性向上"
+    "message": "AiShort - AIプロンプト集 | 厳選テンプレートで生産性向上"
   },
   "homepage.description": {
-    "message": "なぜAIはいつも的外れな回答をするのでしょうか？AiShortは、ライティング、プログラミング、翻訳などのシナリオをカバーする実用的なAIプロンプトテンプレートを収録しています。ワンクリックでコピーして使用でき、AIに指示を正確に理解させ、プロフェッショナルな結果を出力し、作業効率を瞬時に倍増させます！"
+    "message": "AIの回答がいつも的外れ？AiShortは執筆・プログラミング・翻訳に役立つ実用的なプロンプトを収録。ワンクリックでコピーして作業効率を倍増！"
   },
   "community.title": {
-    "message": "AIプロンプトコミュニティ - 高品質なプロンプトを発見・共有 | AiShortクリエイティブプラットフォーム"
+    "message": "AIプロンプトコミュニティ | 発見・共有 - AiShort"
   },
   "community.description": {
-    "message": "もっと実用的なAIプロンプトが欲しいですか？AiShortコミュニティに参加して、ユーザーが共有する実用的なプロンプトテンプレートを発見し、最適化のコツを交換し、高品質なプロンプトリソースライブラリを一緒に構築しましょう。"
+    "message": "もっと実用的なAIプロンプトが欲しい？AiShortコミュニティで高品質なテンプレートを発見し、最適化のコツを交換しましょう。"
   },
   "common.favorites": {
     "message": "お気に入り"
@@ -557,17 +557,8 @@
   "placeholder.promptContent": {
     "message": "詳細なプロンプトの内容をここに入力..."
   },
-  "label.promptTags": {
-    "message": "機能/タグ"
-  },
-  "placeholder.promptTags": {
-    "message": "プロンプトの機能を簡単に説明してください（オプション）"
-  },
   "label.promptNotes": {
     "message": "備考"
-  },
-  "label.promptNotes.description": {
-    "message": "ここでプロンプトのソースや、他の言語バージョンを提供できます。また、このプロンプトに関する拡張のアイデアや要件がある場合は、ここで説明してください。"
   },
   "placeholder.promptNotes": {
     "message": "このプロンプトに関する追加の備考（オプション）"
@@ -1027,5 +1018,23 @@
   },
   "modal.forgotPassword.title": {
     "message": "パスワードをお忘れですか"
+  },
+  "myspace.assignTag": {
+    "message": "タグを割り当て"
+  },
+  "prompt.tokenDanger": {
+    "message": "プロンプトが長すぎます。複数のプロンプトに分割することを強くお勧めします。"
+  },
+  "prompt.tokenWarning": {
+    "message": "プロンプトが長めです。短縮するか分割することをお勧めします。"
+  },
+  "label.promptNotes.description": {
+    "message": "ここに出典、他言語版、または追加の説明を記入できます。"
+  },
+  "label.promptRemark": {
+    "message": "用途"
+  },
+  "placeholder.promptRemark": {
+    "message": "プロンプトの用途を簡単に説明してください（任意）"
   }
 }

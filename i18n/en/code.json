@@ -3,16 +3,16 @@
     "message": "Curated AI Prompts for More Efficient Conversations"
   },
   "homepage.title": {
-    "message": "AiShort - AI Prompt Library | Curated Prompt Instructions | Boost Productivity Instantly"
+    "message": "AiShort - AI Prompt Library | Curated Prompts to Boost AI Productivity"
   },
   "homepage.description": {
-    "message": "Why does AI always answer irrelevantly? AiShort collects practical AI prompt templates covering writing, programming, and translation scenarios. Copy with one click to help AI precisely understand instructions and output professional results, instantly doubling work efficiency!"
+    "message": "Frustrated by irrelevant AI answers? AiShort offers practical prompt templates for writing, coding, and translation. One-click copy to unlock precise AI outputs and double your efficiency!"
   },
   "community.title": {
-    "message": "AI Prompt Community - Discover & Share Premium Prompts | AiShort Creation Platform"
+    "message": "AI Prompt Community | Discover & Share Premium Prompts - AiShort"
   },
   "community.description": {
-    "message": "Want more battle-tested AI prompts? Join the AiShort community to discover practical prompt templates shared by users, exchange optimization techniques, and jointly build a high-quality prompt resource library."
+    "message": "Want more battle-tested AI prompts? Join AiShort community to discover practical prompt templates, share optimization techniques, and build a quality prompt library together."
   },
   "common.favorites": {
     "message": "Favorites"
@@ -557,17 +557,8 @@
   "placeholder.promptContent": {
     "message": "Enter detailed prompt content here..."
   },
-  "label.promptTags": {
-    "message": "Function/Tags"
-  },
-  "placeholder.promptTags": {
-    "message": "Briefly describe the prompt's function (optional)"
-  },
   "label.promptNotes": {
     "message": "Notes"
-  },
-  "label.promptNotes.description": {
-    "message": "You can provide the source of the prompt here, as well as other language versions. Additionally, if you have any expansion ideas or requirements for this prompt, please explain them here."
   },
   "placeholder.promptNotes": {
     "message": "Additional notes about this prompt (optional)"
@@ -1027,5 +1018,23 @@
   },
   "modal.forgotPassword.title": {
     "message": "Forgot Password"
+  },
+  "myspace.assignTag": {
+    "message": "Assign Tags"
+  },
+  "prompt.tokenDanger": {
+    "message": "Prompt is too long; strongly suggest splitting into multiple prompts."
+  },
+  "prompt.tokenWarning": {
+    "message": "Prompt is quite long; consider shortening or splitting."
+  },
+  "label.promptNotes.description": {
+    "message": "You can provide the prompt source, other language versions, or additional notes here."
+  },
+  "label.promptRemark": {
+    "message": "Usage"
+  },
+  "placeholder.promptRemark": {
+    "message": "Briefly describe how to use this prompt (optional)"
   }
 }

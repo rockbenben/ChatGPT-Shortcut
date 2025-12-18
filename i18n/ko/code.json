@@ -147,16 +147,16 @@
     "message": "엄선된 AI 프롬프트로 대화를 더 효율적으로"
   },
   "homepage.title": {
-    "message": "AiShort - AI 프롬프트 템플릿 라이브러리 | 엄선된 Prompt 지침 | 원클릭 생산성 향상"
+    "message": "AiShort - AI 프롬프트 모음 | 엄선된 템플릿으로 생산성 향상"
   },
   "homepage.description": {
-    "message": "왜 AI는 항상 엉뚱한 대답을 할까요? AiShort는 글쓰기, 프로그래밍, 번역 등의 시나리오를 다루는 실용적인 AI 프롬프트 템플릿을 수록하고 있습니다. 원클릭으로 복사하여 사용하면 AI가 지침을 정확하게 이해하고 전문적인 결과를 출력하여 작업 효율성을 즉시 두 배로 높일 수 있습니다!"
+    "message": "AI 답변이 항상 엉뚱한가요? AiShort는 글쓰기, 코딩, 번역에 유용한 실용적인 프롬프트를 제공합니다. 원클릭 복사로 작업 효율을 두 배로!"
   },
   "community.title": {
-    "message": "AI 프롬프트 커뮤니티 - 고품질 Prompt 발견 및 공유 | AiShort 창작 교류 플랫폼"
+    "message": "AI 프롬프트 커뮤니티 | 발견 및 공유 - AiShort"
   },
   "community.description": {
-    "message": "더 실용적인 AI 프롬프트를 원하시나요? AiShort 커뮤니티에 가입하여 사용자가 공유하는 실용적인 Prompt 템플릿을 발견하고, 최적화 팁을 교환하며, 고품질 프롬프트 리소스 라이브러리를 함께 만들어 보세요."
+    "message": "더 많은 실용적인 AI 프롬프트가 필요하신가요? AiShort 커뮤니티에서 고품질 템플릿을 발견하고 최적화 기술을 공유하세요."
   },
   "showcase.tag.write.label": {
     "message": "글쓰기 보조"
@@ -557,17 +557,8 @@
   "placeholder.promptContent": {
     "message": "여기에 자세한 프롬프트 내용 입력..."
   },
-  "label.promptTags": {
-    "message": "기능/태그"
-  },
-  "placeholder.promptTags": {
-    "message": "프롬프트 기능을 간단히 설명하십시오 (선택 사항)"
-  },
   "label.promptNotes": {
     "message": "비고"
-  },
-  "label.promptNotes.description": {
-    "message": "여기에서 프롬프트의 출처나 다른 언어 버전을 제공할 수 있습니다. 또한 이 프롬프트에 대한 확장 아이디어나 요구 사항이 있는 경우 여기에서 설명하십시오."
   },
   "placeholder.promptNotes": {
     "message": "이 프롬프트에 대한 추가 비고 (선택 사항)"
@@ -1027,5 +1018,23 @@
   },
   "modal.forgotPassword.title": {
     "message": "비밀번호 찾기"
+  },
+  "myspace.assignTag": {
+    "message": "태그 할당"
+  },
+  "prompt.tokenDanger": {
+    "message": "프롬프트가 너무 깁니다. 여러 프롬프트로 나누는 것이 좋습니다."
+  },
+  "prompt.tokenWarning": {
+    "message": "프롬프트가 다소 깁니다. 줄이거나 나누는 것을 고려하세요."
+  },
+  "label.promptNotes.description": {
+    "message": "여기에서 출처, 다른 언어 버전 또는 추가 메모를 제공할 수 있습니다."
+  },
+  "label.promptRemark": {
+    "message": "용도"
+  },
+  "placeholder.promptRemark": {
+    "message": "프롬프트의 용도를 간략하게 설명하세요 (선택 사항)"
   }
 }

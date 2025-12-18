@@ -3,16 +3,16 @@
     "message": "Ausgewählte KI-Prompts für effizientere Gespräche"
   },
   "homepage.title": {
-    "message": "AiShort - KI-Prompt-Bibliothek | Ausgewählte Prompt-Anweisungen | Produktivität sofort steigern"
+    "message": "AiShort - KI-Prompt-Bibliothek | Vorlagen für mehr Produktivität"
   },
   "homepage.description": {
-    "message": "Warum antwortet die KI immer am Thema vorbei? AiShort sammelt praktische KI-Prompt-Vorlagen für Schreiben, Programmieren und Übersetzen. Mit einem Klick kopieren, damit die KI Anweisungen präzise versteht und professionelle Ergebnisse liefert – verdoppeln Sie Ihre Arbeitseffizienz im Handumdrehen!"
+    "message": "Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Ein-Klick-Kopie für doppelte Effizienz!"
   },
   "community.title": {
-    "message": "KI-Prompt-Community - Premium-Prompts entdecken & teilen | AiShort Kreativplattform"
+    "message": "KI-Prompt-Community | Entdecken & Teilen - AiShort"
   },
   "community.description": {
-    "message": "Möchten Sie mehr praxiserprobte KI-Prompts? Treten Sie der AiShort-Community bei, entdecken Sie von Nutzern geteilte praktische Prompt-Vorlagen, tauschen Sie Optimierungstipps aus und bauen Sie gemeinsam eine hochwertige Prompt-Ressourcenbibliothek auf."
+    "message": "Brauchen Sie mehr bewährte KI-Prompts? Treten Sie der AiShort-Community bei, um praktische Vorlagen zu entdecken und Optimierungstechniken zu teilen."
   },
   "common.favorites": {
     "message": "Favoriten"
@@ -557,17 +557,8 @@
   "placeholder.promptContent": {
     "message": "Geben Sie hier den detaillierten Prompt-Inhalt ein..."
   },
-  "label.promptTags": {
-    "message": "Funktion/Tags"
-  },
-  "placeholder.promptTags": {
-    "message": "Beschreiben Sie kurz die Funktion des Prompts (optional)"
-  },
   "label.promptNotes": {
     "message": "Anmerkungen"
-  },
-  "label.promptNotes.description": {
-    "message": "Sie können hier die Quelle des Prompts sowie andere Sprachversionen angeben. Wenn Sie Erweiterungsideen oder Anforderungen für diesen Prompt haben, erläutern Sie diese bitte hier."
   },
   "placeholder.promptNotes": {
     "message": "Zusätzliche Anmerkungen zu diesem Prompt (optional)"
@@ -1027,5 +1018,23 @@
   },
   "modal.forgotPassword.title": {
     "message": "Passwort vergessen"
+  },
+  "myspace.assignTag": {
+    "message": "Tags zuweisen"
+  },
+  "prompt.tokenDanger": {
+    "message": "Der Prompt ist zu lang; es wird dringend empfohlen, ihn in mehrere Prompts aufzuteilen."
+  },
+  "prompt.tokenWarning": {
+    "message": "Der Prompt ist ziemlich lang; erwägen Sie eine Kürzung oder Aufteilung."
+  },
+  "label.promptNotes.description": {
+    "message": "Hier können Sie die Quelle, andere Sprachversionen oder zusätzliche Notizen angeben."
+  },
+  "label.promptRemark": {
+    "message": "Verwendung"
+  },
+  "placeholder.promptRemark": {
+    "message": "Beschreiben Sie kurz die Verwendung dieses Prompts (optional)"
   }
 }

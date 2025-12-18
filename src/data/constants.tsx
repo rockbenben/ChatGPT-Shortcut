@@ -18,19 +18,19 @@ export const SLOGAN = translate({
 });
 export const TITLE = translate({
   id: "homepage.title",
-  message: "AiShort - AI提示词模板库 | 精选Prompt指令 | 一键提升生产力",
+  message: "AiShort - AI提示词库 | 精选Prompt模板，即刻提升AI效率",
 });
 export const DESCRIPTION = translate({
   id: "homepage.description",
-  message: "为什么AI总是答非所问？AiShort收录实用AI提示词模板，覆盖写作、编程、翻译场景，一键复制使用，让AI精准理解指令，输出专业结果，工作效率瞬间翻倍！",
+  message: "AI总是答非所问？AiShort收录论文写作、编程、翻译等场景的实用Prompt模板，一键复制即可让AI精准理解指令，工作效率翻倍！",
 });
 
 // community-prompts
 export const COMMU_TITLE = translate({
   id: "community.title",
-  message: "AI提示词社区 - 发现分享优质Prompt | AiShort创作交流平台",
+  message: "AI提示词社区 | 发现与分享优质Prompt - AiShort创作平台",
 });
 export const COMMU_DESCRIPTION = translate({
   id: "community.description",
-  message: "想要更多实战级AI提示词？加入AiShort社区，发现用户分享的实用Prompt模板，交流优化技巧，共同打造高质量提示词资源库。",
+  message: "想要更多实战验证的AI提示词？加入AiShort社区，发现用户分享的实用模板，交流优化技巧，共建高质量Prompt资源库。",
 });
