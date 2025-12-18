@@ -110,7 +110,6 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         </>
       }
       actions={[
-        extraActions,
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
@@ -120,6 +119,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         <Tooltip title={<Translate id="action.delete">删除</Translate>}>
           <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
         </Tooltip>,
+        extraActions,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>

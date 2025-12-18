@@ -666,12 +666,26 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                     },
                   }));
 
-                  const extraActions =
-                    customTags.length > 0 ? (
-                      <Dropdown menu={{ items: tagMenuItems }} trigger={["click"]}>
-                        <Button type="text" size="small" icon={<TagOutlined />} onClick={(e) => e.stopPropagation()} />
-                      </Dropdown>
-                    ) : undefined;
+                  // 始终显示标签按钮，没有标签时点击打开管理弹窗
+                  const extraActions = (
+                    <Tooltip title={translate({ id: "myspace.assignTag", message: "分配标签" })}>
+                      {customTags.length > 0 ? (
+                        <Dropdown menu={{ items: tagMenuItems }} trigger={["click"]}>
+                          <Button type="text" size="small" icon={<TagOutlined />} onClick={(e) => e.stopPropagation()} />
+                        </Dropdown>
+                      ) : (
+                        <Button
+                          type="text"
+                          size="small"
+                          icon={<TagOutlined />}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setTagManagerOpen(true);
+                          }}
+                        />
+                      )}
+                    </Tooltip>
+                  );
 
                   return (
                     <Col key={item.id} xs={24} sm={12} md={8} lg={6} xl={6}>

@@ -148,13 +148,13 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
         </>
       }
       actions={[
-        extraActions,
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
         <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
           <Button type="text" icon={<StarFilled style={{ color: gold[5] }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
+        extraActions,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
