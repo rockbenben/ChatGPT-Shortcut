@@ -89,6 +89,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
 
         <Form.Item name="remark" label={<Translate id="label.promptRemark">作用/用途</Translate>}>
           <Input
+            maxLength={100}
             placeholder={translate({
               id: "placeholder.promptRemark",
               message: "简要描述提示词的作用（选填）",
@@ -102,6 +103,8 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           extra={<Translate id="label.promptNotes.description">您可以在此提供提示词来源、其他语言版本或拓展说明。</Translate>}>
           <Input.TextArea
             rows={3}
+            maxLength={2000}
+            showCount
             placeholder={translate({
               id: "placeholder.promptNotes",
               message: "关于此提示词的额外说明（选填）",
