@@ -28,6 +28,8 @@ export interface PromptData {
   website: string | null;
   tags: TagType[];
   weight: number;
+  metaDescription?: string;
+  metaTitle?: string;
 }
 
 /**

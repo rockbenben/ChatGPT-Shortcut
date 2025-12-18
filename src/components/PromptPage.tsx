@@ -1,4 +1,4 @@
-import React, { useMemo, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Card, Typography, Tag, Space, Row, Col, Button, Flex, theme, Alert, Statistic, Divider } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled } from "@ant-design/icons";
 import Layout from "@theme/Layout";
@@ -15,36 +15,24 @@ const { Title, Text } = Typography;
 
 function PromptPage({ prompt, currentLanguage }) {
   const { token } = theme.useToken();
-  const promptInfo = prompt[currentLanguage] || prompt;
-
   const { copied, updateCopy } = useCopyToClipboard();
 
-  // 使用 useMemo 缓存计算值
-  const { shareUrl, title, remark, weight, website, tags } = useMemo(
-    () => ({
-      shareUrl: typeof window !== "undefined" ? window.location.href : "",
-      title: promptInfo.title,
-      remark: promptInfo.remark,
-      weight: getWeight(prompt),
-      website: prompt.website,
-      tags: prompt.tags,
-    }),
-    [prompt, promptInfo]
-  );
+  const promptInfo = prompt[currentLanguage] || prompt;
 
-  const seoDescription = useMemo(() => {
-    // 优先使用数据文件中的 metaDescription
-    const meta = (prompt as any).metaDescription?.trim();
-    if (meta) return meta;
+  // 静态值：单语言 JSON 数据在组件生命周期内不会变化
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const title = promptInfo.title;
+  const remark = promptInfo.remark;
+  const weight = getWeight(prompt);
+  const website = prompt.website;
+  const tags = prompt.tags;
 
-    // 兜底：拼接 description + prompt（搜索引擎会自动截断）
-    const desc = promptInfo.description || "";
-    const prm = promptInfo.prompt || "";
-    return `${desc} ${prm}`.trim();
-  }, [prompt, promptInfo]);
+  // SEO 字段
+  const seoTitle = prompt.metaTitle?.trim() || `${title}-${remark}`;
+  const seoDescription = prompt.metaDescription?.trim() || `${promptInfo.description || ""} ${promptInfo.prompt || ""}`.trim();
 
   return (
-    <Layout title={`${title}-${remark}`} description={seoDescription}>
+    <Layout title={seoTitle} description={seoDescription}>
       <Row justify="center" style={{ marginTop: token.marginLG, marginBottom: token.marginLG }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
           <Flex vertical gap="large" style={{ minHeight: 400 }}>
