@@ -2,46 +2,56 @@ import React, { useEffect } from "react";
 import { Form, Input, Modal, Switch, Typography } from "antd";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
+import PromptEditorFormItem from "./PromptEditorFormItem";
 
-interface AddPromptModalProps {
+type PromptFormMode = "add" | "edit";
+
+interface PromptFormModalProps {
   open: boolean;
-  setOpen: (open: boolean) => void;
-  onFinish: (values: any) => Promise<void>;
+  mode: PromptFormMode;
   loading: boolean;
+  initialValues?: any;
+  onSubmit: (values: any) => Promise<void>;
+  onClose: () => void;
 }
 
-const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish, loading }) => {
+const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, initialValues, onSubmit, onClose }) => {
   const [form] = Form.useForm();
 
-  // Reset form when modal opens
   useEffect(() => {
-    if (open) {
-      form.resetFields();
-    }
-  }, [open, form]);
+    if (!open) return;
 
-  const handleFormSubmit = React.useCallback(
-    (values) => {
-      onFinish(values).then(() => {
-        form.resetFields();
-      });
-    },
-    [onFinish, form]
-  );
+    if (mode === "edit" && initialValues) {
+      form.resetFields();
+      form.setFieldsValue(initialValues);
+    }
+
+    if (mode === "add") {
+      form.resetFields();
+      form.setFieldsValue({ share: true });
+    }
+  }, [open, mode, initialValues, form]);
 
   return (
     <Modal
-      title={<Translate id="action.addPrompt">添加 Prompt</Translate>}
       open={open}
-      onOk={form.submit}
-      onCancel={() => !loading && setOpen(false)}
-      confirmLoading={loading}
-      maskClosable={false}
-      destroyOnHidden
       width={600}
-      okText={<Translate id="action.addPrompt">添加 Prompt</Translate>}
+      maskClosable={false}
+      confirmLoading={loading}
+      onOk={form.submit}
+      onCancel={onClose}
+      destroyOnHidden
+      title={mode === "add" ? <Translate id="action.addPrompt">添加 Prompt</Translate> : <Translate id="modal.editPrompt.title">更新当前 Prompt</Translate>}
+      okText={mode === "add" ? <Translate id="action.addPrompt">添加 Prompt</Translate> : <Translate id="action.updatePrompt">更新 Prompt</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
-      <Form form={form} onFinish={handleFormSubmit} layout="vertical" initialValues={{ share: true }} requiredMark="optional">
+      <Form
+        form={form}
+        layout="vertical"
+        requiredMark="optional"
+        onFinish={async (values) => {
+          await onSubmit(values);
+          form.resetFields();
+        }}>
         <Form.Item
           name="title"
           label={<Translate id="label.promptTitle">提示词名称</Translate>}
@@ -61,6 +71,7 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
             })}
           />
         </Form.Item>
+
         <Form.Item
           name="description"
           label={<Translate id="label.promptContent">提示词内容</Translate>}
@@ -73,38 +84,31 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
               }),
             },
           ]}>
-          <Input.TextArea
-            placeholder={translate({
-              id: "placeholder.promptContent",
-              message: "在此输入详细的提示词内容...",
-            })}
-            rows={6}
-            maxLength={2000}
-            showCount
-          />
+          <PromptEditorFormItem />
         </Form.Item>
-        <Form.Item name="remark" label={<Translate id="label.promptTags">作用/标签</Translate>}>
+
+        <Form.Item name="remark" label={<Translate id="label.promptRemark">作用/用途</Translate>}>
           <Input
             placeholder={translate({
-              id: "placeholder.promptTags",
+              id: "placeholder.promptRemark",
               message: "简要描述提示词的作用（选填）",
             })}
           />
         </Form.Item>
+
         <Form.Item
           name="notes"
           label={<Translate id="label.promptNotes">备注说明</Translate>}
-          extra={
-            <Translate id="label.promptNotes.description">您可以在此提供提示词的来源说明，以及该提示词的其他语言版本。此外，如果您有任何关于该提示词的拓展想法和需求，请在此进行说明。</Translate>
-          }>
+          extra={<Translate id="label.promptNotes.description">您可以在此提供提示词来源、其他语言版本或拓展说明。</Translate>}>
           <Input.TextArea
+            rows={3}
             placeholder={translate({
               id: "placeholder.promptNotes",
               message: "关于此提示词的额外说明（选填）",
             })}
-            rows={3}
           />
         </Form.Item>
+
         <Form.Item>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Form.Item name="share" valuePropName="checked" noStyle>
@@ -120,4 +124,4 @@ const AddPromptModal: React.FC<AddPromptModalProps> = ({ open, setOpen, onFinish
   );
 };
 
-export default AddPromptModal;
+export default PromptFormModal;

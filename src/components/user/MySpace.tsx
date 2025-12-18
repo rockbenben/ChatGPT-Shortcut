@@ -16,7 +16,7 @@ import { getCache, removeCache, getPromptCacheKey } from "@site/src/utils/cache"
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
-import EditPromptModal from "./modal/EditPromptModal";
+import PromptFormModal from "./modal/PromptFormModal";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 
 // ==================== 类型定义 ====================
@@ -711,7 +711,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       <TagManagerModal open={tagManagerOpen} onClose={() => setTagManagerOpen(false)} tags={customTags} onSave={handleManageTagsSave} />
 
-      <EditPromptModal open={editModalOpen} setOpen={setEditModalOpen} onFinish={handleUpdatePrompt} loading={false} initialValues={editingPrompt} />
+      <PromptFormModal open={editModalOpen} mode="edit" loading={false} initialValues={editingPrompt} onSubmit={handleUpdatePrompt} onClose={() => setEditModalOpen(false)} />
     </>
   );
 };

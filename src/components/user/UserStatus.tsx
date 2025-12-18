@@ -7,7 +7,7 @@ import LoginComponent from "./login";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
-import AddPromptModal from "./modal/AddPromptModal";
+import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
 
 const UserStatus = () => {
@@ -132,7 +132,15 @@ const UserStatus = () => {
       {userAuth ? (
         <>
           {loggedInButtons}
-          <AddPromptModal open={open} setOpen={setOpen} onFinish={onFinish} loading={loading} />
+          <PromptFormModal
+            open={open}
+            mode="add"
+            loading={loading}
+            onSubmit={onFinish}
+            onClose={() => {
+              if (!loading) setOpen(false);
+            }}
+          />
         </>
       ) : (
         <>
