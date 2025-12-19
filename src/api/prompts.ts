@@ -87,8 +87,11 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
   const apiEndpoint = apiEndpoints[safeType] || apiEndpoints["commus"];
 
+  // If idsToFetch is empty but we have ETags to validate, include those IDs in the request
+  const requestIds = idsToFetch.length > 0 ? idsToFetch : Object.keys(etagMap).map(Number);
+
   // 构建请求体，包含 ETags
-  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang, etags: etagMap } : { ids: idsToFetch, etags: etagMap };
+  const postData = safeType === "cards" ? { ids: requestIds, lang: sanitizedLang, etags: etagMap } : { ids: requestIds, etags: etagMap };
 
   try {
     const response = await apiClient.post(apiEndpoint, postData, {
