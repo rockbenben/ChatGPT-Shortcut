@@ -15,6 +15,7 @@ import {
   getETag,
   setCacheWithETag,
   extendCache,
+  extendCacheIfNeeded,
 } from "@site/src/utils/cache";
 import { clearMySpaceCache } from "./myspace";
 
@@ -54,7 +55,6 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
   const cachedPrompts = new Map();
   const idsToFetch: number[] = [];
-  const etagMap: Record<number, string> = {}; // ETag映射
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
@@ -63,19 +63,79 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     if (cachedData) {
       cachedPrompts.set(id, cachedData);
-
-      // 对于所有类型收集 ETag 用于条件验证
-      const etag = getETag(cacheKey);
-      if (etag) {
-        etagMap[id] = etag;
-      }
     } else {
       idsToFetch.push(id);
     }
   });
 
-  // Return cached data if all present and no ETags to validate
-  if (idsToFetch.length === 0 && Object.keys(etagMap).length === 0) {
+  // Smart cache extension based on type
+  // - Cards: Pure cache (count changes frequently, not reliable)
+  // - Commus: Validate ONLY favorited items, auto-extend others
+  // - Userprompts: Already validated by MySpace API, auto-extend
+
+  if (cachedPrompts.size > 0) {
+    const ttl = getPromptTTL(safeType);
+
+    if (safeType === "commus") {
+      // Get favorited commu IDs from MySpace cache
+      const myspace = getCache("myspace");
+      const favoredCommIds = new Set(myspace?.items?.filter((item: any) => item.type === "favorite" && item.source === "community")?.map((item: any) => item.id) || []);
+
+      // Separate favorited and non-favorited
+      const favoredToValidate: number[] = [];
+      const nonFavoredToExtend: number[] = [];
+
+      Array.from(cachedPrompts.keys()).forEach((id) => {
+        if (favoredCommIds.size > 0 && favoredCommIds.has(id) && cachedPrompts.get(id)?.updatedAt) {
+          favoredToValidate.push(id);
+        } else {
+          nonFavoredToExtend.push(id);
+        }
+      });
+
+      // Auto-extend non-favorited commus
+      nonFavoredToExtend.forEach((id) => {
+        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        extendCacheIfNeeded(cacheKey, ttl);
+      });
+
+      // Validate favorited commus
+      if (favoredToValidate.length > 0) {
+        try {
+          const response = await apiClient.get("/userprompts/check-updates", {
+            params: { ids: favoredToValidate },
+          });
+
+          response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
+            const cached = cachedPrompts.get(serverItem.id);
+            const cacheKey = getPromptCacheKey(safeType, serverItem.id, sanitizedLang);
+
+            if (cached?.updatedAt === serverItem.updatedAt) {
+              // Same → Conditionally extend
+              extendCacheIfNeeded(cacheKey, ttl);
+            } else {
+              // Changed → Clear and mark for refetch
+              removeCache(cacheKey);
+              cachedPrompts.delete(serverItem.id);
+              idsToFetch.push(serverItem.id);
+            }
+          });
+        } catch (error) {
+          console.warn("[getPrompts] Favorited commus validation failed:", error);
+        }
+      }
+    } else if (safeType === "userprompts") {
+      // For userprompts: trust MySpace validation, conditionally extend
+      cachedPrompts.forEach((_, id) => {
+        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        extendCacheIfNeeded(cacheKey, ttl);
+      });
+    }
+    // Cards: no extension (pure cache)
+  }
+
+  // Return cached data if all present
+  if (idsToFetch.length === 0) {
     return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
   }
 
@@ -86,41 +146,16 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   };
 
   const apiEndpoint = apiEndpoints[safeType] || apiEndpoints["commus"];
-
-  // If idsToFetch is empty but we have ETags to validate, include those IDs in the request
-  const requestIds = idsToFetch.length > 0 ? idsToFetch : Object.keys(etagMap).map(Number);
-
-  // 构建请求体，包含 ETags
-  const postData = safeType === "cards" ? { ids: requestIds, lang: sanitizedLang, etags: etagMap } : { ids: requestIds, etags: etagMap };
+  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang } : { ids: idsToFetch };
 
   try {
-    const response = await apiClient.post(apiEndpoint, postData, {
-      validateStatus: (status) => status === 200 || status === 304,
-    });
-
+    const response = await apiClient.post(apiEndpoint, postData);
     const ttl = getPromptTTL(safeType);
 
-    // Handle 304 Not Modified: extend cache TTL
-    if (response.status === 304) {
-      console.log(`[getPrompts] 304 Not Modified for type: ${safeType}, extending cache`);
-
-      // 延长所有已缓存项的 TTL
-      Object.keys(etagMap).forEach((idStr) => {
-        const id = Number(idStr);
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
-        extendCache(cacheKey, ttl);
-      });
-
-      // 返回缓存数据
-      return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
-    }
-
-    // Handle 200 OK: update cache with new data
-    const newEtag = response.headers["etag"] || response.headers["ETag"];
-
+    // Save fetched data to cache
     response.data.forEach((item: { id: number }) => {
       const cacheKey = getPromptCacheKey(safeType, item.id, sanitizedLang);
-      setCacheWithETag(cacheKey, item, ttl, newEtag);
+      setCache(cacheKey, item, ttl);
     });
 
     // Merge cached and fetched data
@@ -131,12 +166,6 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
-    // Handle 304 in catch block (some axios configurations)
-    if (error?.response?.status === 304) {
-      console.log(`[getPrompts] 304 handled in catch, using cache`);
-      return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
-    }
-
     console.error(`Error fetching ${type}:`, error);
     throw error;
   }
@@ -198,7 +227,7 @@ export async function updatePrompt(
 
     return response.data;
   } catch (error) {
-    console.error("Error updating prompt:", error);
+    error("Error updating prompt:", error);
     throw error;
   }
 }
@@ -233,8 +262,16 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
 
   const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, page, pageSize, sortField, sortOrder, encodedSearchKey);
   const cachedData = getCache(cacheKey);
+  const cachedEtag = getETag(cacheKey);
 
-  if (cachedData) {
+  // Poll throttling: only validate if >1 hour since last fetch
+  const lastFetchKey = `${cacheKey}_lastFetch`;
+  const lastFetchTime = getCache(lastFetchKey);
+  const now = Date.now();
+  const ONE_HOUR = 60 * 60 * 1000;
+
+  if (cachedData && lastFetchTime && now - lastFetchTime < ONE_HOUR) {
+    // Within 1 hour, return cached data directly
     return cachedData;
   }
 
@@ -245,15 +282,65 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   }
 
   try {
-    const responseTotal = await apiClient.get(url);
-    const ids = responseTotal.data.data.map((item: { id: number }) => item.id);
+    // Record fetch time
+    setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
+
+    // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
+    const config = cachedEtag ? { headers: { "If-None-Match": cachedEtag } } : {};
+    const response = await apiClient.get(url, {
+      ...config,
+      validateStatus: (status) => status === 200 || status === 304,
+    });
+
+    // Handle 304 Not Modified
+    if (response.status === 304) {
+      if (cachedData) {
+        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+        return cachedData;
+      }
+      // Fallthrough to 200 logic if cache missing
+    }
+
+    // Handle 200 OK
+    const listItems = response.data.data; // [{ id: 73, updatedAt: "..." }, ...]
+    const newEtag = response.headers["etag"];
+
+    // Clear stale caches by comparing updatedAt
+    const { removeCache, getPromptCacheKey } = await import("@site/src/utils/cache");
+    let clearedCount = 0;
+
+    listItems.forEach((item: { id: number; updatedAt: string }) => {
+      const promptCacheKey = getPromptCacheKey("commus", item.id);
+      const cachedPrompt = getCache(promptCacheKey);
+
+      // If cached updatedAt differs from latest, clear the cache
+      if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
+        removeCache(promptCacheKey);
+        clearedCount++;
+      }
+    });
+
+    if (clearedCount > 0) {
+      console.log(`[getCommPrompts] Cleared ${clearedCount} stale prompt cache(s)`);
+    }
+
+    // Fetch prompts (only uncached or rebuilt ones will be fetched)
+    const ids = listItems.map((item: { id: number }) => item.id);
     const responseIds = await getPrompts("commus", ids);
 
-    const result = [responseIds, { pagination: responseTotal.data.meta.pagination }];
-    setCache(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS);
+    const result = [responseIds, { pagination: response.data.meta.pagination }];
+
+    // Save with ETag
+    setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, newEtag);
 
     return result;
   } catch (error) {
+    // Handle 304 in catch block
+    if (error?.response?.status === 304 && cachedData) {
+      extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+      return cachedData;
+    }
+
     console.error(`Error fetching commPrompts:`, error);
     throw error;
   }

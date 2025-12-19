@@ -210,6 +210,37 @@ export const extendCache = (key, ttlMinutes) => {
   return true;
 };
 
+/**
+ * 条件延长缓存（仅在剩余时间 < 50% TTL 时）
+ * @param {string} key - 缓存键
+ * @param {number} ttlMinutes - 新的过期时间（分钟）
+ * @returns {boolean} 是否成功延长
+ */
+export const extendCacheIfNeeded = (key, ttlMinutes) => {
+  if (!canUseCache()) return false;
+
+  try {
+    // 获取缓存项的过期时间戳
+    const expiryKey = EXPIRY_PREFIX + key;
+    const expiryTime = localStorage.getItem(expiryKey);
+
+    if (!expiryTime) return false;
+
+    const now = new Date().getTime();
+    const remaining = parseInt(expiryTime) - now;
+    const ttlMs = ttlMinutes * 60 * 1000;
+
+    // 只在剩余时间 < 50% TTL 时延长
+    if (remaining < ttlMs * 0.5) {
+      return extendCache(key, ttlMinutes);
+    }
+
+    return false; // 不需要延长
+  } catch (e) {
+    return false;
+  }
+};
+
 // ==================== 遗留缓存清理 ====================
 
 /**
