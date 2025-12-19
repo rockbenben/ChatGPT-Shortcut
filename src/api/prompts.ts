@@ -16,6 +16,7 @@ import {
   setCacheWithETag,
   extendCache,
   extendCacheIfNeeded,
+  needsCacheExtension,
 } from "@site/src/utils/cache";
 import { clearMySpaceCache } from "./myspace";
 
@@ -99,13 +100,23 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
         extendCacheIfNeeded(cacheKey, ttl);
       });
 
-      // Validate favorited commus
-      if (favoredToValidate.length > 0) {
+      // Filter favorited commus: only validate those needing extension (< 50% TTL remaining)
+      const favoredNeedingValidation = favoredToValidate.filter((id) => {
+        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        return needsCacheExtension(cacheKey, ttl);
+      });
+
+      // Validate favorited commus (only those needing validation)
+      if (favoredNeedingValidation.length > 0) {
         try {
           const response = await apiClient.get("/userprompts/check-updates", {
-            params: { ids: favoredToValidate },
+            params: { ids: favoredNeedingValidation },
           });
 
+          // Track which IDs were returned (still available)
+          const returnedIds = new Set(response.data.map((item: { id: number }) => item.id));
+
+          // Process returned (available) prompts
           response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
             const cached = cachedPrompts.get(serverItem.id);
             const cacheKey = getPromptCacheKey(safeType, serverItem.id, sanitizedLang);
@@ -118,6 +129,40 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
               removeCache(cacheKey);
               cachedPrompts.delete(serverItem.id);
               idsToFetch.push(serverItem.id);
+            }
+          });
+
+          // Process unavailable prompts (not returned = unshared/deleted)
+          favoredNeedingValidation.forEach((id) => {
+            if (!returnedIds.has(id)) {
+              const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+              const cached = cachedPrompts.get(id);
+
+              if (cached) {
+                // Has cache → Mark as unavailable, extend TTL to 1 year
+                // User can still access cached content while it's private/deleted
+                const unavailablePrompt = {
+                  ...cached,
+                  _unavailable: true,
+                  _unavailableReason: "unshared",
+                  _unavailableAt: new Date().toISOString(),
+                };
+                setCache(cacheKey, unavailablePrompt, CACHE_TTL.UNAVAILABLE_CACHE);
+                cachedPrompts.set(id, unavailablePrompt);
+                console.warn(`[getPrompts] Prompt ${id} is unavailable (unshared), cached for 1 year`);
+              } else {
+                // No cache → Mark for frontend handling (will be fetched via favorBulk)
+                const placeholderPrompt = {
+                  id,
+                  _unavailable: true,
+                  _unavailableReason: "unshared",
+                  _noCache: true,
+                  _unavailableAt: new Date().toISOString(),
+                };
+                setCache(cacheKey, placeholderPrompt, CACHE_TTL.UNAVAILABLE_CACHE);
+                cachedPrompts.set(id, placeholderPrompt);
+                console.warn(`[getPrompts] Prompt ${id} is unavailable and has no cache`);
+              }
             }
           });
         } catch (error) {

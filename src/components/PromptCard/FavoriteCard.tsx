@@ -5,7 +5,7 @@ import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -22,14 +22,20 @@ interface FavoriteCardProps {
 
   onRemoveFavorite?: (id: string, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
+  onConvertToPrivate?: (data: any) => void; // New: convert unavailable prompt to private
   extraActions?: ReactNode;
 }
 
-const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, extraActions }: FavoriteCardProps) => {
+const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText, updateCopy } = useCopyToClipboard();
+
+  // Check if prompt is unavailable (unshared by author)
+  const isUnavailable = user._unavailable === true;
+  const hasCache = !user._noCache;
+  const unavailableReason = user._unavailableReason;
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
 
@@ -101,6 +107,51 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
     }
   }, [onOpenModal, isDataCard, user, title, prompt, description, remark, tags, website, owner]);
 
+  // Render unavailable warning banner
+  const renderUnavailableBanner = () => {
+    if (!isUnavailable) return null;
+
+    const handleConvertToPrivate = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onConvertToPrivate?.(user);
+    };
+
+    const handleRemove = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      onRemoveFavorite?.(user.id, !isDataCard);
+    };
+
+    return (
+      <div
+        style={{
+          padding: `${token.paddingSM}px ${token.padding}px`,
+          background: hasCache ? "#fff7e6" : "#fff2f0",
+          border: `1px solid ${hasCache ? "#ffa940" : "#ff7875"}`,
+          borderRadius: token.borderRadiusLG,
+          marginBottom: token.marginSM,
+        }}>
+        <Flex vertical gap="small">
+          <Flex align="center" gap="small">
+            {hasCache ? <ExclamationCircleOutlined style={{ color: "#faad14", fontSize: 18, flexShrink: 0 }} /> : <StopOutlined style={{ color: "#ff4d4f", fontSize: 18, flexShrink: 0 }} />}
+            <Typography.Text style={{ fontSize: token.fontSize, color: token.colorText, flex: 1 }}>
+              {hasCache ? <Translate id="unavailable.unshared">原作者已取消分享</Translate> : <Translate id="unavailable.unsharedNoCache">原作者已取消分享且无本地缓存</Translate>}
+            </Typography.Text>
+          </Flex>
+          <Flex gap="small" justify="end">
+            {hasCache && (
+              <Button size="small" type="primary" onClick={handleConvertToPrivate} style={{ minWidth: 80 }}>
+                <Translate id="action.convertToPrivate">转为私有</Translate>
+              </Button>
+            )}
+            <Button size="small" onClick={handleRemove} style={{ minWidth: 80 }}>
+              <Translate id="message.removeFavorite.confirm.title">移除收藏</Translate>
+            </Button>
+          </Flex>
+        </Flex>
+      </div>
+    );
+  };
+
   return (
     <BasePromptCard
       ref={setNodeRef}
@@ -158,6 +209,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+        {renderUnavailableBanner()}
         <PromptRemark remark={remark} />
         <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
           <Typography.Paragraph

@@ -12,6 +12,7 @@ export const CACHE_TTL = {
   COMMENTS: 30 * 24 * 60, // 30 天（ETag）
   USER_PROFILE: 30 * 24 * 60, // 30 天（ETag）
   MYSPACE: 30 * 24 * 60, // 30 天（ETag）
+  UNAVAILABLE_CACHE: 365 * 24 * 60, // 1 年（不可用内容缓存）
 };
 
 // 缓存键前缀
@@ -211,6 +212,32 @@ export const extendCache = (key, ttlMinutes) => {
 };
 
 /**
+ * 检查缓存是否需要延长（不执行延长操作）
+ * @param {string} key - 缓存键
+ * @param {number} ttlMinutes - TTL（分钟）
+ * @returns {boolean} true = 需要延长（剩余 < 50% TTL 或无过期信息），false = 不需要
+ */
+export const needsCacheExtension = (key, ttlMinutes) => {
+  if (!canUseCache()) return true; // 无法判断时，保守返回 true
+
+  try {
+    // lscache 格式: lscache-{key}-cacheexpiration
+    const expiryKey = `lscache-${key}-cacheexpiration`;
+    const expiryTime = localStorage.getItem(expiryKey);
+
+    if (!expiryTime) return true; // 无过期信息，需要验证
+
+    const now = new Date().getTime();
+    const remaining = parseInt(expiryTime) - now;
+    const ttlMs = ttlMinutes * 60 * 1000;
+
+    return remaining < ttlMs * 0.5;
+  } catch (e) {
+    return true; // 出错时保守返回 true
+  }
+};
+
+/**
  * 条件延长缓存（仅在剩余时间 < 50% TTL 时）
  * @param {string} key - 缓存键
  * @param {number} ttlMinutes - 新的过期时间（分钟）
@@ -219,26 +246,11 @@ export const extendCache = (key, ttlMinutes) => {
 export const extendCacheIfNeeded = (key, ttlMinutes) => {
   if (!canUseCache()) return false;
 
-  try {
-    // 获取缓存项的过期时间戳
-    const expiryKey = EXPIRY_PREFIX + key;
-    const expiryTime = localStorage.getItem(expiryKey);
-
-    if (!expiryTime) return false;
-
-    const now = new Date().getTime();
-    const remaining = parseInt(expiryTime) - now;
-    const ttlMs = ttlMinutes * 60 * 1000;
-
-    // 只在剩余时间 < 50% TTL 时延长
-    if (remaining < ttlMs * 0.5) {
-      return extendCache(key, ttlMinutes);
-    }
-
-    return false; // 不需要延长
-  } catch (e) {
-    return false;
+  if (needsCacheExtension(key, ttlMinutes)) {
+    return extendCache(key, ttlMinutes);
   }
+
+  return false; // 不需要延长
 };
 
 // ==================== 遗留缓存清理 ====================

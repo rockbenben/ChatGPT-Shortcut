@@ -284,7 +284,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { message: messageApi } = App.useApp();
 
   const { confirmRemoveFavorite } = useFavorite();
-  const { updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
+  const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
   const [spaceItems, setSpaceItems] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -552,6 +552,37 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [confirmRemovePrompt]
   );
 
+  // 转换不可用的收藏提示词为私有提示词
+  const handleConvertToPrivate = useCallback(
+    async (data: any) => {
+      try {
+        const currentLanguage = i18n.currentLocale.split("-")[0];
+        const itemData = data[currentLanguage] || data["zh"] || data["en"];
+        const isDataCard = !!(itemData && itemData.title);
+
+        // 构建提示词数据
+        const promptData = {
+          title: isDataCard ? itemData.title : data.title,
+          description: isDataCard ? itemData.prompt : data.description,
+          remark: isDataCard ? itemData.remark : data.remark,
+          notes: `从社区提示词转换（原ID: ${data.id}）`,
+          share: false, // 设为私有
+        };
+
+        const success = await addUserPrompt(promptData);
+        if (success) {
+          messageApi.success(<Translate id="message.convertToPrivate.success">已转为私有提示词</Translate>);
+          // 转换成功后，从收藏中移除原提示词
+          await confirmRemoveFavorite(data.id, !isDataCard);
+        }
+      } catch (error) {
+        console.error("Failed to convert prompt:", error);
+        messageApi.error(<Translate id="message.convertToPrivate.error">转换失败，请稍后重试</Translate>);
+      }
+    },
+    [addUserPrompt, confirmRemoveFavorite, messageApi, i18n]
+  );
+
   // 移除收藏
   const handleRemoveFavorite = useCallback(
     (id: string, isComm?: boolean) => {
@@ -697,6 +728,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                         onDelete={item.type === "prompt" ? handleDeletePrompt : undefined}
                         onEdit={item.type === "prompt" ? () => handleEditPrompt(item.data) : undefined}
                         onRemoveFavorite={item.type === "favorite" ? handleRemoveFavorite : undefined}
+                        onConvertToPrivate={item.type === "favorite" ? handleConvertToPrivate : undefined}
                         onOpenModal={onOpenModal}
                         extraActions={extraActions}
                       />

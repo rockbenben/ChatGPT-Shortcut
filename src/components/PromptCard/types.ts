@@ -17,6 +17,7 @@ export interface PromptCardProps {
   copyCount?: number;
 
   onOpenModal?: (data: any) => void;
+  onConvertToPrivate?: (data: any) => void; // Convert unavailable prompt to private
   extraActions?: ReactNode;
   typeBadge?: ReactNode;
 }
