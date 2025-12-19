@@ -1,7 +1,7 @@
 ---
 sidebar_label: 常见问题
-title: 常见问题解答 | AiShort 提示词使用技巧
-description: 了解 AiShort 常见问题，获取关于提示词优化、AI 虚假信息避免等实用技巧，提升您的 AI 使用效果。
+title: AI Short 常见问题 | 提示词优化与 AI 幻觉处理
+description: 提示词效果不理想？AI 输出虚假信息怎么办？本指南解答常见问题，教你优化提示词、避免 AI 幻觉、备份数据。
 ---
 
 # 常见问题

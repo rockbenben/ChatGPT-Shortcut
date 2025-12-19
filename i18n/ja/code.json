@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "プロンプトの用途を簡単に説明してください（任意）"
+  },
+  "unavailable.unshared": {
+    "message": "著者が共有を停止しました"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "著者が共有を停止し、ローカルキャッシュもありません"
+  },
+  "action.convertToPrivate": {
+    "message": "プライベートに変換"
+  },
+  "message.convertToPrivate.success": {
+    "message": "プライベートプロンプトに変換されました"
+  },
+  "message.convertToPrivate.error": {
+    "message": "変換に失敗しました。後でもう一度お試しください"
   }
 }

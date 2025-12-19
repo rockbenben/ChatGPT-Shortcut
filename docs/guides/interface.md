@@ -1,7 +1,7 @@
 ---
 sidebar_label: 界面说明
-title: AiShort 界面功能指南 | 搜索、筛选与提示词卡片
-description: 如何高效使用 AiShort 界面？本指南详细介绍标签筛选、关键词搜索和提示词卡片功能，助您快速精准地找到所需 AI 提示词。
+title: AI Short 界面指南 | 标签筛选与智能搜索功能
+description: 掌握 AI Short 界面功能！通过标签筛选、关键词搜索快速定位提示词，了解卡片详情与收藏操作。
 ---
 
 # 界面说明

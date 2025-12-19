@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "프롬프트의 용도를 간략하게 설명하세요 (선택 사항)"
+  },
+  "unavailable.unshared": {
+    "message": "작성자가 공유를 중단했습니다"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "작성자가 공유를 중단했으며 로컬 캐시가 없습니다"
+  },
+  "action.convertToPrivate": {
+    "message": "비공개로 변환"
+  },
+  "message.convertToPrivate.success": {
+    "message": "비공개 프롬프트로 성공적으로 변환되었습니다"
+  },
+  "message.convertToPrivate.error": {
+    "message": "변환에 실패했습니다. 나중에 다시 시도해 주세요"
   }
 }

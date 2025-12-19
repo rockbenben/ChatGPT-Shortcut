@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "संक्षेप में बताएं कि इस प्रॉम्प्ट का उपयोग कैसे करें (वैकल्पिक)"
+  },
+  "unavailable.unshared": {
+    "message": "लेखक ने साझा करना बंद कर दिया है"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "लेखक ने साझा करना बंद कर दिया है और कोई स्थानीय कैश उपलब्ध नहीं है"
+  },
+  "action.convertToPrivate": {
+    "message": "निजी में बदलें"
+  },
+  "message.convertToPrivate.success": {
+    "message": "सफलतापूर्वक निजी प्रॉम्प्ट में बदल दिया गया"
+  },
+  "message.convertToPrivate.error": {
+    "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
   }
 }

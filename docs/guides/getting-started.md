@@ -1,7 +1,7 @@
 ---
 sidebar_label: 开始上手
-title: AiShort 新手入门指南 | 如何复制和使用提示词
-description: 刚开始使用 AiShort？本快速入门指南将教您如何轻松复制提示词，并将其应用于 ChatGPT、Gemini、DeepSeek 等主流 AI 模型，立即开启您的高效 AI 对话体验。
+title: AI Short 入门指南 | 复制提示词到 ChatGPT/DeepSeek
+description: 30 秒快速上手！复制提示词到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升对话质量与工作效率。
 ---
 
 # 开始上手

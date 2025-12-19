@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "Décrivez brièvement l'utilisation de ce prompt (facultatif)"
+  },
+  "unavailable.unshared": {
+    "message": "L'auteur a arrêté le partage"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "L'auteur a arrêté le partage, aucun cache local disponible"
+  },
+  "action.convertToPrivate": {
+    "message": "Convertir en privé"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Converti en prompt privé avec succès"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Échec de la conversion, veuillez réessayer plus tard"
   }
 }

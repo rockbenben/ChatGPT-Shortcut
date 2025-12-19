@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "সংক্ষেপে এই প্রম্পটটি কীভাবে ব্যবহার করবেন তা বর্ণনা করুন (ঐচ্ছিক)"
+  },
+  "unavailable.unshared": {
+    "message": "লেখক শেয়ার করা বন্ধ করেছেন"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "লেখক শেয়ার করা বন্ধ করেছেন এবং কোনো স্থানীয় ক্যাশে নেই"
+  },
+  "action.convertToPrivate": {
+    "message": "ব্যক্তিগতে রূপান্তর করুন"
+  },
+  "message.convertToPrivate.success": {
+    "message": "সফলভাবে ব্যক্তিগত প্রম্পটে রূপান্তর করা হয়েছে"
+  },
+  "message.convertToPrivate.error": {
+    "message": "রূপান্তর করতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   }
 }

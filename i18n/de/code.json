@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "Beschreiben Sie kurz die Verwendung dieses Prompts (optional)"
+  },
+  "unavailable.unshared": {
+    "message": "Autor hat das Teilen beendet"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "Autor hat das Teilen beendet und kein lokaler Cache verfügbar"
+  },
+  "action.convertToPrivate": {
+    "message": "In Privat umwandeln"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Erfolgreich in privaten Prompt umgewandelt"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Umwandlung fehlgeschlagen, bitte später erneut versuchen"
   }
 }

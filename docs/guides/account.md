@@ -1,7 +1,7 @@
 ---
 sidebar_label: 账户管理
-title: 账户管理 | 登录方式与账户设置
-description: 了解 AiShort 支持的多种登录方式（账号密码、Google、无密码登录），以及密码重置和缓存管理等账户功能。
+title: AI Short 账户管理 | Google 登录与无密码登录
+description: 支持 Google 一键登录、邮箱无密码登录，快速访问个人收藏。忘记密码可一键重置，轻松找回账户数据。
 ---
 
 # 账户管理

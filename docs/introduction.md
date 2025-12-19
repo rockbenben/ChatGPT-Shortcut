@@ -1,15 +1,17 @@
 ---
 slug: /
-description: 探索 AiShort，一个精选 AI 提示词社群。提供一键可用的 AI 大模型提示词，支持多语言、收藏和社区投票功能，旨在帮助你简化工作流程，轻松提升生产力。
+sidebar_label: AI Short 介绍
+title: AIShort - 精选 AI 提示词库 | 一键复制提升效率
+description: 探索 AI Short 精选提示词社群，支持 ChatGPT、DeepSeek 等主流模型。多语言翻译、收藏管理与社区投票，简化工作流程。
 ---
 
-# AiShort 介绍
+# AI Short 介绍
 
-AiShort(ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，帮助用户快速找到适用于不同场景的提示词。
+AI Short(ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，帮助用户快速找到适用于不同场景的提示词。
 
 ## ⚡ 30 秒快速开始
 
-1. 打开 AiShort
+1. 打开 AI Short
 2. 搜索或浏览你需要的提示词
 3. 点击「复制」，粘贴到任意 AI 对话模型
 

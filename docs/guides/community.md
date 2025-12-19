@@ -1,7 +1,7 @@
 ---
 sidebar_label: 社区提示词
-title: 社区提示词 | 发现、分享和投票优质 AI 指令
-description: 浏览 AiShort 社区提示词，通过投票筛选高质量指令。分享自己的创意，或选择私密保存。
+title: AI Short 社区 | 发现分享优质 AI 提示词
+description: 发现社区精选 AI 提示词！通过投票筛选优质内容，分享你的创意获得曝光，或设为私密仅自己可见。
 ---
 
 # 社区提示词

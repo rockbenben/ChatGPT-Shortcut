@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "صف بإيجاز كيفية استخدام هذا الموجه (اختياري)"
+  },
+  "unavailable.unshared": {
+    "message": "توقف المؤلف عن المشاركة"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "توقف المؤلف عن المشاركة ولا تتوفر ذاكرة تخزين مؤقت محلية"
+  },
+  "action.convertToPrivate": {
+    "message": "تحويل إلى خاص"
+  },
+  "message.convertToPrivate.success": {
+    "message": "تم التحويل إلى مطالبة خاصة بنجاح"
+  },
+  "message.convertToPrivate.error": {
+    "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
   }
 }

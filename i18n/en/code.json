@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "Briefly describe how to use this prompt (optional)"
+  },
+  "unavailable.unshared": {
+    "message": "Author has stopped sharing"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "Author has stopped sharing and no local cache available"
+  },
+  "action.convertToPrivate": {
+    "message": "Convert to Private"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Converted to private prompt successfully"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Failed to convert, please try again later"
   }
 }

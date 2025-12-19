@@ -1,7 +1,7 @@
 ---
 sidebar_label: 安装浏览器插件
-title: 如何安装 AIShort 插件 (ChatGPT Shortcut) | 支持 Chrome/Edge/Firefox
-description: 寻找 AIShort (ChatGPT Shortcut) 插件的官方下载地址？本页面提供 Chrome、Edge、Firefox 浏览器的官方商店链接及国内下载渠道，并介绍油猴脚本，助您轻松安装与使用。
+title: AI Short 插件下载 | Chrome/Edge/Firefox 安装
+description: 获取 AI Short 浏览器插件官方下载，支持 Chrome、Edge、Firefox。一键安装，随时调用提示词库。
 ---
 
 # 安装浏览器插件

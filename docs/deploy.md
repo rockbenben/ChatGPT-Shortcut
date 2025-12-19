@@ -1,7 +1,7 @@
 ---
 sidebar_label: 项目部署
-title: 项目部署与自定义指南 | 轻松配置 AI Short
-description: 如何快速部署和自定义您的 AI Short 项目？本指南提供详细的 Vercel、Cloudflare、Docker 及本地部署教程，并教您如何修改网站内容与开启自动更新。
+title: AI Short 部署指南 | Vercel/Docker 一键部署配置
+description: 快速部署 AI Short 提示词项目！支持 Vercel、Cloudflare、Docker 多种方式，含自定义配置与自动更新教程。
 ---
 
 # 项目部署

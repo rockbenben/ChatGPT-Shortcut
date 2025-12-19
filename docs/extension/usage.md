@@ -1,7 +1,7 @@
 ---
 sidebar_label: 如何使用浏览器扩展
-title: AiShort 扩展使用指南 | 掌握侧边栏、独立窗口与快捷键
-description: 如何高效使用 AiShort 浏览器扩展？本教程将详细介绍如何启用和操作侧边栏、内置主页及独立窗口模式，并教您使用 Alt+Shift+S 快捷键，全面提升您的 AI 交互体验。  
+title: AI Short 扩展使用 | 侧边栏与快捷键 Alt+Shift+S
+description: 掌握 AI Short 浏览器扩展！启用侧边栏、独立窗口模式，Alt+Shift+S 快捷键一键唤出提示词库。
 ---
 
 # 如何使用浏览器扩展？

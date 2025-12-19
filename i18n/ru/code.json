@@ -1036,5 +1036,20 @@
   },
   "placeholder.promptRemark": {
     "message": "Кратко опишите использование этого промпта (необязательно)"
+  },
+  "unavailable.unshared": {
+    "message": "Автор прекратил делиться"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "Автор прекратил делиться, и нет локального кэша"
+  },
+  "action.convertToPrivate": {
+    "message": "Сделать приватным"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Успешно преобразовано в приватный промпт"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Не удалось преобразовать, попробуйте еще раз позже"
   }
 }

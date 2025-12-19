@@ -1,7 +1,7 @@
 ---
 sidebar_label: Chrome ZIP 安装指南
-title: Chrome 插件 ZIP 本地安装指南 | 手动安装 ChatGPT Shortcut
-description: 如何在 Chrome 中通过 ZIP 文件手动安装 ChatGPT Shortcut 插件？本指南提供详细的下载、开启开发者模式及安装步骤，帮助您轻松完成本地插件部署，立即开始使用。  
+title: AI Short Chrome ZIP 安装 | 解压文件夹加载扩展
+description: 通过 ZIP 文件在 Chrome 中安装 AI Short 插件，解压后拖入扩展页面即可。适用于无法安装 CRX 的情况。
 ---
 
 # Chrome ZIP 插件本地安装指南
