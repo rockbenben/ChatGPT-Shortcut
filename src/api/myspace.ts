@@ -41,7 +41,31 @@ export async function getMySpace() {
 
     setCacheWithETag(cacheKey, newData, CACHE_TTL.MYSPACE, newEtag);
     if (newEtag) {
-      console.log("[MySpace] ETag cached:", newEtag);
+      // ETag cached
+    }
+
+    // Clear stale userprompt caches by comparing updatedAt
+    if (newData?.items) {
+      const { removeCache, getPromptCacheKey } = await import("@site/src/utils/cache");
+      let clearedCount = 0;
+
+      newData.items.forEach((item: any) => {
+        if (item.type === "prompt" && item.source === "userprompt") {
+          const promptCacheKey = getPromptCacheKey("userprompts", item.id);
+          const cachedPrompt = getCache(promptCacheKey);
+
+          // If cached updatedAt differs from latest, clear the cache
+          if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
+            removeCache(promptCacheKey);
+            removeCache(`${promptCacheKey}_etag`);
+            clearedCount++;
+          }
+        }
+      });
+
+      if (clearedCount > 0) {
+        // Cleared stale userprompt cache(s)
+      }
     }
 
     return newData;
