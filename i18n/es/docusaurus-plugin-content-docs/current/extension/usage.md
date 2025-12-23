@@ -1,37 +1,25 @@
-# ¿Cómo usar la extensión del navegador?
+---
+sidebar_label: Cómo Usar la Extensión
+title: Uso de Extensión - Barra Lateral y Atajos
+description: Aprovecha al máximo la extensión. Aprende a usar la barra lateral y el atajo Alt+Shift+S. para acceso rápido.
+---
 
-ChatGPT Shortcut admite 13 idiomas principales y el idioma de la extensión se configurará automáticamente según el entorno de su navegador. El idioma de la página integrada de ChatGPT y la barra lateral de la extensión también seguirá esta configuración. Tenga en cuenta que, para evitar activar alertas de permisos de sitios web de terceros, evite cambiar directamente el idioma en las páginas integradas.
+# ¿Cómo Usar la Extensión del Navegador?
 
-![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
+ChatGPT Shortcut soporta 13 idiomas principales, y el idioma de la extensión se configurará automáticamente según el entorno de tu navegador. El idioma de la página integrada de ChatGPT y la barra lateral en la extensión también seguirán esta configuración. Ten en cuenta que, para evitar activar advertencias de permisos de sitios web de terceros, **no cambies el idioma en la página integrada**.
 
-## Configuración de visualización
+![](/img/docs/extension-settings.png)
 
-### Barra lateral de AiShort
+## Barra Lateral de AiShort
 
-Después de habilitar la barra lateral de AiShort, verá un interruptor de icono verde en la esquina inferior derecha de las páginas web compatibles. Al hacer clic en este icono, puede activar o desactivar la barra lateral. Actualmente, es compatible de forma predeterminada con ChatGPT, Bard, Claude y Wenxin Yiyan. Si elige "Activar la barra lateral automáticamente", la barra lateral se abrirá automáticamente cuando visite estos sitios compatibles.
+La extensión AiShort funciona actualmente como un Panel Lateral (Side Panel), proporcionando una experiencia interactiva fluida.
 
-![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+Si se habilita la opción "Mantener el panel lateral abierto (Keep side panel open)" en la configuración, la barra lateral permanecerá abierta al cambiar de pestaña del navegador, facilitando su uso continuo.
 
-Si desea utilizar la barra lateral de AiShort en otros sitios web, instale el script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tenga en cuenta que, para evitar superposiciones de funcionalidades y posibles conflictos, el script ChatGPT Shortcut Anywhere no será efectivo en sitios web compatibles de forma nativa con la extensión.
+![](/img/docs/extension-sidebar.png)
 
-### Página de inicio incorporada
+Si deseas usar la barra lateral de AiShort en otros sitios web, instala el script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tampermonkey es una extensión de navegador que permite a los usuarios ejecutar scripts personalizados para modificar páginas web. Ten en cuenta que, para evitar superposición funcional y conflictos potenciales, el script ChatGPT Shortcut Anywhere no tendrá efecto en los sitios web soportados por la extensión por defecto.
 
-Después de habilitar la función de página de inicio incorporada, aparecerá un botón para la página incorporada en la esquina superior izquierda de la versión web de ChatGPT. Al hacer clic en él, se reemplazará la interfaz de la aplicación ChatGPT con la página de AiShort.
+## Activación por Tecla de Acceso Rápido
 
-![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
-
-## Modo de ventana independiente
-
-Cuando el modo de ventana independiente está habilitado, la interfaz de la extensión aparecerá de forma persistente en una ventana independiente, lo que facilita la realización de múltiples tareas. Puede configurar sitios web para que se activen automáticamente en la configuración de la extensión. Cuando el navegador visite estos sitios, la ventana de AiShort se activará automáticamente.
-
-![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
-
-### Sitios web con activación automática
-
-En la configuración de la extensión, puede especificar qué sitios web activarán automáticamente la ventana independiente de AiShort.
-
-![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
-
-### Activación de teclas de acceso rápido
-
-La tecla de acceso rápido `Alt+Shift+S` se puede utilizar para activar directamente la ventana de AiShort, ya sea en modo emergente o en modo de ventana independiente.
+Usa el acceso directo `Alt+Shift+S` para activar directamente la barra lateral de AiShort.

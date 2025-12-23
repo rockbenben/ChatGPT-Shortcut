@@ -55,4 +55,4 @@ AI Short(ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，�
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-![](https://img.newzone.top/qq736094782.jpg?imageMogr2/thumbnail/300x/format/webp)
+![](https://img.newzone.top/qq963752577.jpg?imageMogr2/thumbnail/300x/format/webp)

@@ -1,27 +1,45 @@
 ---
 sidebar_label: Community Prompts
-title: Community Prompts | Discover, Share, and Vote for Quality AI Instructions
-description: Looking for more AI creative inspiration? Browse AiShort's community prompts and filter for high-quality instructions through voting. You can also share your own unique ideas or save them privately, building a quality AI prompt library with users worldwide.
+title: AI Short Community | Discover & Share Quality AI Prompts
+description: Discover top-rated AI prompts in the community! Filter by votes, share your best ideas for exposure, or manage private prompts for personal use.
 ---
 
 # Community Prompts
 
-The Community Prompts section showcases custom prompts shared and uploaded by our users. This section is designed to encourage the exchange of creative ideas and spark inspiration, allowing every user to find new ideas and share their own unique creations. You can not only share your prompts on the public page but also browse prompts shared by others to gain inspiration.
+The Community Prompts section displays custom prompts shared by users. You can find inspiration here or share your own creativity.
 
-## Sorting and Voting
+![](/img/docs/community-page.png)
 
-The Community Prompts page offers multiple options for users to freely filter and find prompts, including sorting by publication date, upvote/downvote ranking, and keyword search.
+## Sorting and Filtering
 
-![](https://img.newzone.top/2023-07-13-14-50-15.png?imageMogr2/format/webp/thumbnail/500x)
+The community page provides multiple filtering methods:
 
-The upvote/downvote mechanism is a crucial way to determine which prompts are displayed on the main page. This system aims to enhance content quality and relevance by allowing users to directly participate in filtering out prompts the community finds valuable. For prompts that are considered low-quality, you can **express your disapproval by downvoting**. Once a prompt receives a certain number of downvotes, it will be hidden from the public page to ensure that only high-quality content is displayed.
+- **Publish Time**: View the latest shared prompts
+- **Vote Sorting**: View prompts with the most upvotes
+- **Keyword Search**: Search for prompts on specific topics
 
-The voting feature is only available to logged-in users to ensure the authenticity and validity of the votes. Each user's vote on a single prompt will be based on their most recent choice, ensuring that the results accurately reflect the current opinions of the users.
+## Voting Mechanism
+
+Decide the exposure of prompts by upvoting/downvoting:
+
+- **Upvote**: Help high-quality content get more exposure
+- **Downvote**: After the number of downvotes reaches a certain amount, the prompt will be hidden
+
+**Collection Link**: When collecting a community prompt, the system will automatically cast an upvote.
+
+![Voting Button Status](/img/docs/community-vote.png)
+
+> Voting is only open to logged-in users, and each person's vote for the same prompt is based on the most recent one.
 
 ## Private Prompts
 
-If you have ideas or prompts that you don't wish to make public, the community also offers the option of private prompts. When submitting or updating a prompt, you can choose whether or not to share it with the community. This way, you can save your prompts privately and share them when you are ready to exchange inspiration with others.
+Creativity you don't want to make public can be set to private:
 
-![](https://img.newzone.top/2023-07-13-09-13-00.gif?imageMogr2/format/webp/thumbnail/500x)
+- When creating or editing a prompt, uncheck the "Share to Community" option
+- Private prompts are only visible to yourself
+- You can switch between public/private status at any time
 
-We sincerely invite you to actively share your creative prompts and help maintain the high quality of community content through the upvote/downvote mechanism. Every participation and contribution you make is a key force driving the continuous growth and improvement of the community. Let's work together to create a prompt community environment that is creative, vibrant, and mutually supportive.
+## Related Documentation
+
+- [Custom Prompts](./user-prompts) - Create and manage prompts
+- [My Collection](./my-collection) - Collection management

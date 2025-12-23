@@ -1,31 +1,60 @@
+---
+sidebar_label: Erste Schritte
+title: AI Short Start - ChatGPT in 30 Sekunden
+description: Starten Sie in 30 Sekunden. Kopieren Sie Prompts für ChatGPT und Gemini und verbessern Sie sofort Ihre Konversationen.
+---
+
 # Erste Schritte
 
-Mit AiShort müssen Sie nur die ausgewählte Eingabeaufforderung in ein beliebiges KI-Dialogmodell kopieren, um die Ausgabe in die angegebene Richtung zu erhalten. Hier sind die einzelnen Schritte:
+Wenn Sie sich mit KI unterhalten, können gute Prompts Ihnen helfen, hochwertige Antworten schneller zu erhalten. AiShort hat eine große Anzahl praktischer Prompts für Sie organisiert, bereit zum Kopieren und Verwenden.
 
-1. Suchen oder wählen Sie die gewünschte Eingabeaufforderung aus und klicken Sie dann auf die Schaltfläche „Kopieren“ in der Eingabeaufforderung.
+## Grundlegende Nutzung
 
-2. Kopieren Sie die Eingabeaufforderung in ChatGPT, Gemini oder ein beliebiges KI-Dialogmodell.
+1. Suchen oder wählen Sie den benötigten Prompt auf der Startseite aus
+2. Klicken Sie auf die Karte, um Details anzuzeigen, oder klicken Sie direkt auf die Schaltfläche "Kopieren"
+3. Öffnen Sie ein beliebiges KI-Modell und fügen Sie den Prompt ein
+4. Folgen Sie den Anweisungen im Prompt, um Ihre spezifische Frage hinzuzufügen
 
-3. Geben Sie Ihre Anforderungen entsprechend der Dialogaufforderung ein.
+![](/img/docs/how-to-use-aishort.gif)
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+## Schnellzugriff
 
-## Common AI models
+| Ich möchte...                  | Wohin                                          |
+| ------------------------------ | ---------------------------------------------- |
+| Prompts kopieren und verwenden | Direkt auf [Startseite](/) suchen oder stöbern |
+| Prompts sammeln und verwalten  | [Meine Sammlung](./my-collection)              |
+| Eigene Prompts erstellen       | [Benutzerdefinierte Prompts](./user-prompts)   |
+| Registrieren oder Anmelden     | [Kontoverwaltung](./account)                   |
+| Community-Shares entdecken     | [Community-Prompts](./community)               |
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+## Gängige KI-Modelle
 
-## Third-party API integration
+### Internationale Modelle
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### Chinesische Modelle
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Ernie Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### API-Plattformen
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## Verwandte Dokumentation
+
+- [Schnittstellen-Leitfaden](./interface) - Such- und Filterfunktionen
+- [Meine Sammlung](./my-collection) - Sammlung, Tags und Sortierung
+- [Kontoverwaltung](./account) - Anmeldung und Registrierung

@@ -1,25 +1,23 @@
 ---
 sidebar_label: Deployment
-title: Deployment & Customization Guide | Configure AI Short with Ease
-description: Learn how to quickly deploy and customize your AI Short project. This guide covers Vercel, Cloudflare, Docker, and local deployment, plus how to edit content and enable auto-updates.
+title: Deploy AI Short | Vercel, Docker & Cloudflare Setup
+description: Want to host your own AI prompt library? Deploy AI Short easily using Vercel, Docker, or Cloudflare. Includes config tips and auto-update scripts.
 ---
 
 # Project Deployment
 
-## Configuration & Customization
+## Configuration and Customization
 
-AI Short is an open-source project, and you can freely modify the site’s title, description, prompts, and more. Below are common customization options:
+AI Short is an open-source project that allows you to freely modify the website title, description, prompts, and other content according to your needs. Below are common modification options and operation instructions:
 
-- **Edit site title and description**  
-  Update the `docusaurus.config.js` file.
+- **Modify Website Title and Description**
+  To change the website's title and description information, please edit the `docusaurus.config.js` configuration file.
 
-- **Edit usage instructions and docs**  
-  All documentation files are located in the `docs` directory. Open and modify the relevant file as needed.
+- **Modify Project Usage Instructions and Introduction**
+  The project's usage instructions and introduction files are located in the `docs` directory. Open the relevant files in that directory to make necessary modifications.
 
-- **Edit homepage prompts**  
-  Homepage prompts are stored in `src/data/prompt.json`.  
-  For specific languages (e.g., Chinese), edit `src/data/prompt_zh.json`.  
-  Example format for a new prompt:
+- **Modify Homepage Prompts**
+  Homepage prompts are stored in the `src/data/prompt.json` file. If you need to modify prompts for a specific language, such as Chinese, you can directly edit the `src/data/prompt_zh.json` file. When adding a new prompt, the format is as follows:
 
   ```json
   {
@@ -36,44 +34,59 @@ AI Short is an open-source project, and you can freely modify the site’s title
   }
   ```
 
-**Note**: Use `id >= 500` for new prompts. These will not have dedicated pages or comments.
-If you want a dedicated page, copy a template file from `src/data/pages/prompt` and modify it.
+  **Note**: It is recommended to set the `id` to 500 or above. Newly added prompts will not have an exclusive page or comment section. If you need to add an exclusive page for a prompt, you can copy the template file in the `src/data/pages/prompt` directory for modification.
 
-- **Custom backend**
-  The project is currently linked to a shared backend.
-  To set up your own, check the API details in `src/api.js`.
+- **Custom Backend**
+  The current project is connected to a shared backend system. If you wish to build your own backend, you can refer to the interface instructions in the `src/api` folder.
 
-- **Multi-language support**
-  After updating language files, run the script `CodeUpdateHandler.py` to batch process:
+  API Module Structure:
+
+  ```
+  src/api/
+  ├── index.ts       # Unified export entry
+  ├── config.ts      # API URL configuration
+  ├── client.ts      # Axios client (including auth interceptors)
+  ├── auth.ts        # Auth API (Login/Register/OAuth)
+  ├── prompts.ts     # Prompt CRUD + Search + Voting
+  ├── favorites.ts   # Favorites operations
+  ├── myspace.ts     # My Space data (Core data source)
+  ├── comments.ts    # Comment system
+  └── user.ts        # User information
+  ```
+
+  **Caching Mechanism**: The project uses `lscache` combined with ETags to implement smart caching. When the server returns 304 Not Modified, local cached data is reused directly to reduce data transmission.
+
+- **Multi-language Support and Deployment**
+  After completing multi-language modifications, you can use the `CodeUpdateHandler.py` script for batch processing. Run the following command:
 
   ```bash
   python CodeUpdateHandler.py
   ```
 
-  This script will split `prompt.json` and sync updates to each language’s main and featured prompt pages.
+  This script will split the `prompt.json` file according to preset rules and synchronously update the homepage and featured prompt pages for each language version.
 
-## Deployment Guide
+## Deployment Instructions
 
-**System Requirements**:
+System Requirements:
 
-- [Node.js 18.0+](https://nodejs.org/)
-- macOS, Windows (including WSL), or Linux
+- [Node.js 20.0](https://nodejs.org/) or later.
+- macOS, Windows (including WSL), and Linux are supported.
 
 ### Local Deployment
 
-Make sure you have [Node.js](https://nodejs.org/) installed.
+Ensure you have installed [Node.js](https://nodejs.org/).
 
-```bash
-# Install dependencies
+```shell
+# Installation
 yarn
 
-# Local development
+# Local Development
 yarn start
 
-# Build static files
+# Build: This command generates static content into the `build` directory
 yarn build
 
-# Build for multiple locales
+# Update the `defaultLocale` in the `docusaurus.config.js` file, then perform a build for the desired language.
 yarn build --locale zh
 yarn build --locale en
 yarn build --locale ja
@@ -88,45 +101,42 @@ yarn build --locale hi
 yarn build --locale ar
 yarn build --locale bn
 
-# Example: build for two languages
+# Deploy for multiple languages
 yarn build --locale zh && yarn build --locale en
 ```
 
 ### Vercel Deployment
 
-Click below to deploy ChatGPT-Shortcut to Vercel with one click:
+Click the button below to one-click deploy ChatGPT-Shortcut to the Vercel platform:
 
 [![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-**Note**: The free Vercel plan may run out of memory. In that case, deploy a single language only.
+**Note**: The free version of Vercel may report an error due to insufficient memory. If you encounter this situation, you can choose to perform single-language deployment. Specific operations are as follows:
 
-Steps:
-
-1. Go to your deployed Vercel project → **Settings**.
-2. Under **Build & Deployment**, find **Build Command** → click **Override**.
-3. Set the build command, e.g.:
-
-   - For Chinese: `yarn build --locale zh`
-   - For Portuguese: `yarn build --locale pt`
+1. Enter the Vercel project you just deployed and open **Settings**.
+2. In the **Build & Deployment** section, find **Build Command**, then click **Override** to the right.
+3. Modify the deployment command. For example, if you need to deploy the Chinese version, you can use `yarn build --locale zh`; if you need to deploy the Portuguese version, use `yarn build --locale pt`.
 
 ### Cloudflare Pages Deployment
 
-👉 [Fork the repo](https://github.com/rockbenben/ChatGPT-Shortcut/fork), then deploy via Cloudflare Pages:
+Click the button or link below to Fork this project, then follow the instructions to deploy on Cloudflare Pages:
 
-1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/), choose **Create a project**.
-2. Connect your forked repo.
-3. Configure build settings:
+👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)
 
-   - **Build command**: `yarn build --locale zh` (or another language)
-   - **Output directory**: `build`
+Deployment Steps:
 
-4. Deploy and wait for build to finish.
+1. Log in to [Cloudflare Pages](https://pages.cloudflare.com/) and select **"Create a project"**.
+2. Bind the repository you just Forked.
+3. Configure build commands:
+   - **Build command**: `yarn build --locale zh` (Choose the appropriate locale based on the language to be deployed, e.g., for Portuguese use `yarn build --locale pt`).
+   - **Output directory**: `build`.
+4. Click **Deploy** and wait for Cloudflare Pages to complete the build and deployment.
 
-Cloudflare Pages will automatically redeploy when you push new commits.
+Cloudflare Pages will also automatically trigger builds and deployments every time you push new code.
 
 ### Docker Deployment
 
-Run with Docker:
+If you are familiar with Docker, you can quickly deploy using the following command:
 
 ```bash
 # ghcr.io
@@ -136,7 +146,7 @@ docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-sh
 docker run -d -p 3000:3000 --name chatgpt-shortcut rockben/chatgpt-shortcut:latest
 ```
 
-Or with `docker-compose`:
+Alternatively, you can also use `docker-compose`:
 
 ```yml
 services:
@@ -148,33 +158,26 @@ services:
     restart: unless-stopped
 ```
 
-## Enable Auto-Update
+## Enable Sync Updates
 
-If you used the one-click Vercel deployment, you might see “updates available” often.
-This is because Vercel creates a new repo instead of a fork, breaking sync.
+If you deployed your own project on Vercel with one click, you might encounter an issue where it always prompts that updates are available. This is because Vercel creates a new project for you by default instead of forking this project, causing update detection to fail. It is recommended to redeploy following these steps:
 
-**Fix:**
+1. Delete the original repository;
+2. Use the fork button in the top right corner of the page to fork this project;
+3. Reselect the project you just forked in the Import Git Repository section of the [Vercel New Project Page](https://vercel.com/new) and deploy.
 
-1. Delete the old repo.
-2. Fork this project directly (use the fork button).
-3. Re-deploy from your fork via [Vercel new project page](https://vercel.com/new).
+### Enable Auto Updates
 
-### Automatic Updates
+> If you encounter an Upstream Sync execution error, please manually execute Sync Fork once!
 
-> If you see errors with **Upstream Sync**, run **Sync Fork** manually once.
-
-After forking, GitHub requires you to enable workflows manually:
-
-- Go to **Actions** in your fork
-- Enable workflows, especially **Upstream Sync Action**.
-
-This will run daily to pull upstream updates.
+After fetching the project, due to GitHub limitations, you need to manually enable Workflows in the Actions page of your forked project and enable the Upstream Sync Action. Once enabled, updates will be executed automatically every day:
 
 ![Auto Update](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-![Enable Workflow](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
-### Manual Updates
+![Enable Auto Update](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
 
-For immediate updates, check [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on syncing forks.
+### Manual Code Update
 
-⭐ Star / 👀 Watch this project or follow the author to get notified about new features.
+If you want to update immediately manually, you can view [GitHub's documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) to learn how to sync a forked project with upstream code.
+
+You can give this project a star/watch, or follow the author to get notifications of new feature updates in time.

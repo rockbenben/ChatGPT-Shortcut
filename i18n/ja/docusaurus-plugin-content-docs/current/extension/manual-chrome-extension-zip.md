@@ -1,14 +1,23 @@
-# Chrome ZIP プラグインのローカル インストール ガイド
+---
+sidebar_label: Chrome ZIP インストールガイド
+title: Chrome手動インストール：ZIPファイル版導入ガイド
+description: CRXが使えない場合はこちら。ZIPファイルを解凍し、Chrome拡張機能ページにドラッグするだけの手動インストール手順を解説。
+---
 
-## プラグインのダウンロード
+# Chrome ZIP 拡張機能ローカルインストールガイド
 
-[GitHub リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) から ChatGPT ショートカット プラグインの Zip インストール パッケージ (ChatGPT_Shortcut-zip-3.x.x.zip) をダウンロードし、解凍します。(解凍したフォルダーはコンピューター上に保存する必要があるため、必ず永続的な場所に解凍してください)
+## 拡張機能のダウンロード
+
+ChatGPT Shortcut 拡張機能の Zip インストールパッケージ（ChatGPT_Shortcut-zip-3.x.x.zip）をダウンロードし、解凍します。（解凍したフォルダはコンピュータに保持する必要があるため、永続的な場所に解凍することを忘れないでください）
+
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **国内ダウンロード**: [Alist クラウドドライブ](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[藍奏雲](https://wwva.lanzouq.com/b01lsc9vi), パスワード: 1qow
 
 ## 開発者モードを有効にする
 
-Chrome の [拡張機能の管理] ページを開き、[開発者モード] を有効にします。
+Chrome の「拡張機能を管理」ページを開き、「デベロッパーモード」をオンにします。
 
-次のアドレスをコピーしてブラウザーのアドレス バーに貼り付け、Enter キーを押して開きます。ページの右上隅で [開発者モード] を有効にします。
+以下のアドレスをコピーしてブラウザのアドレスバーに貼り付け、Enter キーを押して開きます。ページの右上隅にある「デベロッパーモード」をオンにします。
 
 ```txt
 chrome://extensions
@@ -16,10 +25,10 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## プラグインをインストール
+## 拡張機能をインストール
 
-解凍したフォルダを拡張機能ページにドラッグしてインストールを完了します。
+解凍したフォルダを拡張機能ページにドラッグすると、インストールが完了します。
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-インストールが成功したら、[プラグインの使用チュートリアル](./usage.md) を表示できます。
+インストールが成功したら、[プラグイン使用チュートリアル](./usage.md)を確認できます。

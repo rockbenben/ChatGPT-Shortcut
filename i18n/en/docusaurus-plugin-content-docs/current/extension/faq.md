@@ -1,13 +1,19 @@
-# Extension Usage Issues
+---
+sidebar_label: Extension FAQ
+title: AI Short Extension FAQ - Login Fixes & Content Blocking
+description: Extension login failed or content blocked? Set password to resolve Google login restrictions, refresh page to restore normal function.
+---
 
-## ChatGPT Embedded Page Limitations
+# Extension FAQ
 
-ChatGPT imposes several access restrictions on its embedded extension pages, notably the lack of support for Google account authorization for login. This means that users must log in using their username and password.
+## ChatGPT Page Restrictions
 
-If your account was initially created through Google authorization, you can use the "Forget Password" feature to set a new password. Doing so will ensure that you can successfully log in to the ChatGPT embedded page.
+ChatGPT has set multiple permission restrictions on pages embedded in extensions, so logging in with Google authorization is not supported. This means users must log in using a username and password.
 
-## Content Blockage Notice
+If your account was originally created via Google authorization, you can use the "Forgot Password" function to set a new password. This ensures you can log in smoothly within the embedded ChatGPT page.
 
-After logging in with a username and password, you might occasionally encounter a notification stating "This content is blocked." In such instances, simply reloading the page is often sufficient to resolve the issue and revert the page back to its normal state post-login.
+## Content Blocked Prompt
 
-It's important to note that switching languages within the integrated ChatGPT page might also trigger the "This content is blocked" notice. Therefore, I recommend changing languages through the extension's settings rather than directly on the integrated page. This approach can help avoid unnecessary error messages.
+After logging in with username and password, the page may sometimes show a "Content is blocked" prompt. In this case, usually a simple **refresh of the page** will solve the problem and restore the page to a normal logged-in state. Furthermore, once logged in, unless you actively log out, the login status usually stays for a long time, so you don't need to worry too much about frequent appearance of such prompts.
+
+Note that switching languages within the integrated ChatGPT page may also trigger the "Content is blocked" prompt. Therefore, it is recommended that you switch languages through the extension's settings rather than directly within the integrated page. This avoids unnecessary error prompts.

@@ -1,39 +1,59 @@
-# Descrizione dell'interfaccia
+---
+sidebar_label: Guida Interfaccia
+title: Guida Interfaccia AI Short - Filtro Tag e Ricerca Avanzata
+description: Scopri come usare AI Short - Padroneggia i filtri tag, la ricerca avanzata e gestisci le tue collezioni di prompt in modo efficiente.
+---
 
-AiShort visualizza di default tutte le parole suggerite. La pagina è divisa in tre sezioni: l'area dei tag, l'area di ricerca e l'area di visualizzazione delle parole suggerite.
+# Guida Interfaccia
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+La pagina AiShort offre agli utenti un'interfaccia intuitiva per sfogliare e filtrare i prompt. La pagina è composta principalmente dall'area tag, dall'area di ricerca e dall'area di visualizzazione dei prompt.
 
-## 🏷️ Filtraggio per Tag
+![](/img/docs/interface-home.png)
 
-L'area dei tag è suddivisa in base al dominio e alla funzionalità delle parole suggerite, consentendo la selezione in base a scenari e esigenze diverse. Può essere utilizzata in combinazione con il pulsante "Regola di Filtraggio dei Tag" nell'angolo in alto a destra dell'area dei tag per eseguire un filtraggio multi-tag. Lo stato predefinito è OR, che seleziona tutte le parole suggerite sotto il tag scelto. Passando a AND, saranno filtrate le parole suggerite che hanno più tag selezionati.
+## 🏷︎ Filtro Tag
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+L'area tag aiuta gli utenti a filtrare i prompt in base al dominio e alla funzione.
+
+Tramite il pulsante "Cambia Regola Filtro Tag" in alto a destra, puoi ottenere un filtraggio multi-tag più preciso:
+
+- **Regola OR** (Predefinita): Mostra i prompt che hanno uno qualsiasi dei tag selezionati
+- **Regola AND**: Mostra solo i prompt che hanno tutti i tag selezionati contemporaneamente
+
+![](/img/docs/interface-filter.png)
 
 ## 🔍 Ricerca per Parole Chiave
 
-La ricerca per parole chiave include i titoli, i riassunti, i contenuti e le traduzioni nella tua lingua madre delle parole suggerite. Dopo aver inserito una parola chiave, l'area di visualizzazione delle parole suggerite mostrerà immediatamente il contenuto filtrato. Se sono stati selezionati dei tag, la ricerca per parole chiave sarà limitata allo scope dei tag selezionati. Sul lato del PC, dopo che il contenuto nella casella di ricerca cambia, i nuovi risultati della ricerca verranno visualizzati dopo 800 millisecondi. Su dispositivi mobili, l'aggiornamento è istantaneo.
+La funzione di ricerca per parole chiave supporta la ricerca di titoli, descrizioni e contenuti dei prompt.
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+- Se ci sono già tag selezionati, l'ambito della ricerca è limitato a quei tag
+- Dopo l'accesso, l'ambito della ricerca include le tue collezioni e i prompt personalizzati
 
-Dopo aver effettuato l'accesso, l'ambito di ricerca includerà i prompt inviati e raccolti.
+![](/img/docs/interface-search.png)
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+## 🔬 Schede Prompt
 
-## 🔬 Copia della Sollecitazione
+### Visualizza Dettagli
 
-Attraverso il filtraggio per tag e la ricerca per parole chiave, cliccando sul pulsante "Copia" nell'angolo in alto a destra della scheda puoi ottenere le parole suggerite. Dopo averle incollate in ChatGPT, puoi fare riferimento alle suggestioni e regolare il testo in base alle tue esigenze specifiche per ottenere una risposta nel dominio desiderato. Se l'esplicazione nella tua lingua madre nelle parole suggerite non è chiara, puoi cliccare sul link nell'angolo in basso a destra delle parole suggerite per visualizzare la pagina web di origine.
+Clicca su una scheda prompt per aprire il popup dei dettagli, dove puoi vedere il titolo, la descrizione, il contenuto completo del prompt, le note e il pulsante di copia.
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+![](/img/docs/prompt-card.gif)
 
-## Cambio di Lingua
+### Copia Prompt
 
-Di default, le parole suggerite vengono visualizzate in inglese. Se stai utilizzando una pagina non in inglese e desideri visualizzare le interpretazioni nella tua lingua madre, fai clic sul contenuto delle parole suggerite per passare a una lingua non inglese, e fai nuovamente clic per tornare all'inglese. Nota che il cambio di lingua funziona solo quando si fa clic sul testo nella sollecitazione, mentre il clic nell'area vuota non ha effetto.
+Clicca sul pulsante "Copia" in fondo alla scheda per ottenere il prompt. Incollalo in un modello IA per usarlo.
 
-![Cambio tra cinese e inglese](http://img.newzone.top/chatgptshortcut_encn.gif)
+### Colleziona Prompt
 
-Se desideri che le parole suggerite vengano visualizzate di default nella tua lingua madre, puoi fare clic sul pulsante "Cambia Lingua della Sollecitazione" nell'angolo in alto a destra dell'area dei tag. Tuttavia, tieni presente che anche quando si passa alle traduzioni nella lingua madre, il pulsante di copia copierà solo le parole suggerite in inglese.
+Dopo l'accesso, un pulsante di collezione apparirà sulla scheda. Clicca per aggiungere il prompt a La Mia Collezione.
 
 ## 🔥 Ordinamento Popolare
 
-La pagina visualizza ora la frequenza di utilizzo delle sollecitazioni, e le sollecitazioni con una frequenza di utilizzo più elevata saranno contrassegnate come "preferite". Inoltre, l'ordinamento dei tag delle sollecitazioni sarà principalmente basato sul valore di popolarità. Il valore di popolarità verrà aggiornato periodicamente.
+La pagina ordina i prompt in base alla loro popolarità per aiutarti a scoprire rapidamente i contenuti di tendenza.
+
+L'ordinamento dei tag è anche regolato in base ai valori di calore per garantire che rifletta le ultime preferenze della community.
+
+## Documentazione Correlata
+
+- [Avvio Rapido](./getting-started) - Metodi di utilizzo base
+- [La Mia Collezione](./my-collection) - Collezione, tag e ordinamento
+- [Prompt della Community](./community) - Scoprire e condividere

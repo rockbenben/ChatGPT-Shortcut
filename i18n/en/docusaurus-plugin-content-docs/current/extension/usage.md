@@ -1,37 +1,25 @@
-# How to use the browser extension?
+---
+sidebar_label: How to Use Extension
+title: AI Short Extension Guide - Sidebar & Shortcuts Mastered
+description: Master the AI Short browser extension! Enable sidebar, one-click invoke prompt library with Alt+Shift+S.
+---
 
-ChatGPT Shortcut supports 13 mainstream languages, and the extension language will be automatically set according to your browser environment. The language of ChatGPT built-in page and sidebar in the extension will also follow this setting. Please note, to avoid triggering permission alerts of third-party websites, avoid directly changing the language in embedded pages.
+# How to Use Browser Extension?
 
-![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
+ChatGPT Shortcut supports 13 mainstream languages, and the extension language will be automatically set according to your browser environment. The language of the ChatGPT embedded page and sidebar in the extension will also follow this setting. Please note, to avoid triggering permission warnings from third-party websites, **do not change the language in the embedded page**.
 
-## Display Settings
+![](/img/docs/extension-settings.png)
 
-### AiShort Sidebar
+## AiShort Sidebar
 
-After enabling the AiShort sidebar, you will see a green icon switch at the bottom right corner of the supported web pages. By clicking this icon, you can toggle the sidebar on or off. Currently, it defaults to support ChatGPT, Bard, Claude, and Wenxin Yiyan. If you choose to "Activate sidebar automatically," the sidebar will open automatically when you visit these supported sites.
+The AiShort extension currently works as a Side Panel, providing a seamless interactive experience.
 
-![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+If "Keep side panel open" is enabled in settings, the sidebar will remain open when switching browser tabs.
 
-If you want to use the AiShort sidebar on other websites, please install the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) script. Please note, to avoid overlapping functionalities and potential conflicts, the ChatGPT Shortcut Anywhere script will not be effective on websites natively supported by the extension.
+![](/img/docs/extension-sidebar.png)
 
-### Built-in Homepage
+If you want to use the AiShort sidebar on other websites, please install the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) script. Tampermonkey is a browser extension that allows users to run custom scripts to modify web pages. Please note, to avoid functional overlap and potential conflicts, the ChatGPT Shortcut Anywhere script will not take effect on websites supported by the extension by default.
 
-After enabling the built-in homepage feature, a button for the built-in page will appear in the top left corner of the ChatGPT web version. Clicking it will replace the ChatGPT app interface with the AiShort page.
+## Hotkey Activation
 
-![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
-
-## Separate Window Mode
-
-When separate window mode is enabled, the extension interface will persistently appear in a separate window, facilitating multitasking. You can set websites for automatic activation in the extension settings. When the browser visits these sites, the AiShort window will automatically activate.
-
-![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
-
-### Auto-Activation Websites
-
-In the extension settings, you can specify which websites will automatically activate the AiShort separate window.
-
-![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
-
-### Hotkey Activation
-
-The `Alt+Shift+S` shortcut key can be used to directly activate the AiShort window, whether in popup mode or separate window mode.
+Use the `Alt+Shift+S` shortcut to directly activate the AiShort sidebar.

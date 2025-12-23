@@ -8,7 +8,7 @@ description: 掌握 AI Short 界面功能！通过标签筛选、关键词搜索
 
 AiShort 页面为用户提供了一个直观的界面来浏览和筛选提示词。页面主要由标签区、搜索区和提示词展示区组成。
 
-![](https://img.newzone.top/2024-03-07-04-56-01.png?imageMogr2/format/webp)
+![](/img/docs/interface-home.png)
 
 ## 🏷︎ 标签筛选
 
@@ -19,7 +19,7 @@ AiShort 页面为用户提供了一个直观的界面来浏览和筛选提示词
 - **OR 规则**（默认）：展示选中任一标签下的提示词
 - **AND 规则**：仅展示同时具备所有选中标签的提示词
 
-![](https://img.newzone.top/2023-02-28-10-31-01.png?imageMogr2/format/webp)
+![](/img/docs/interface-filter.png)
 
 ## 🔍 关键词搜索
 
@@ -28,13 +28,15 @@ AiShort 页面为用户提供了一个直观的界面来浏览和筛选提示词
 - 如果已有标签选中，搜索范围限定在这些标签下
 - 登录后，搜索范围包括您的收藏和自定义提示词
 
-![](https://img.newzone.top/2023-02-28-10-31-10.png?imageMogr2/format/webp)
+![](/img/docs/interface-search.png)
 
 ## 🔬 提示词卡片
 
 ### 查看详情
 
 点击提示词卡片可打开详情弹窗，查看标题、描述、完整提示词内容、备注说明和复制按钮。
+
+![](/img/docs/prompt-card.gif)
 
 ### 复制提示词
 

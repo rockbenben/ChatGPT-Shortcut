@@ -1,31 +1,60 @@
-# শুরু করা
+---
+sidebar_label: শুরু করুন
+title: AI Short শুরুর নির্দেশিকা - ChatGPT এবং DeepSeek প্রম্পট
+description: AI Short এর সাথে দ্রুত শুরু করুন - ChatGPT, Gemini এবং DeepSeek এর জন্য প্রস্তুত প্রম্পট ব্যবহার করুন।
+---
 
-AiShort ব্যবহার করে, নির্দিষ্ট দিক থেকে আউটপুট পেতে আপনাকে শুধুমাত্র নির্বাচিত প্রম্পটটি যেকোনো AI ডায়ালগ মডেলে কপি করতে হবে। এখানে নির্দিষ্ট পদক্ষেপ আছে:
+# শুরু করুন
 
-1. আপনি যে প্রম্পটটি চান তা অনুসন্ধান করুন বা নির্বাচন করুন এবং তারপরে প্রম্পটে অনুলিপি বোতামটি ক্লিক করুন৷
+AI এর সাথে কথোপকথন করার সময়, ভাল প্রম্পট আপনাকে দ্রুত উচ্চ-মানের উত্তর পেতে সাহায্য করতে পারে। AiShort আপনার কপি এবং ব্যবহারের জন্য প্রচুর সংখ্যক ব্যবহারিক প্রম্পট সংকলন করেছে।
 
-2. ChatGPT, Gemini বা যেকোনো AI ডায়ালগ মডেলে প্রম্পটটি কপি করুন।
+## মূল ব্যবহার
 
-3. ডায়ালগ প্রম্পট অনুযায়ী আপনার প্রয়োজনীয়তা লিখুন।
+1. হোমপেজে আপনার প্রয়োজনীয় প্রম্পট খুঁজুন বা নির্বাচন করুন
+2. বিবরণ দেখতে কার্ডে ক্লিক করুন, বা সরাসরি "কপি" বাটনে ক্লিক করুন
+3. যেকোনো AI মডেল খুলুন এবং প্রম্পট পেস্ট করুন
+4. আপনার নির্দিষ্ট প্রশ্নের পরিপূরক করতে প্রম্পটের নির্দেশাবলী অনুসরণ করুন
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
-## Common AI models
+## দ্রুত অ্যাক্সেস
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+| আমি চাই...                       | কোথায় যেতে হবে                           |
+| -------------------------------- | ----------------------------------------- |
+| প্রম্পট কপি এবং ব্যবহার করুন     | সরাসরি [হোমপেজে](/) খুঁজুন বা ব্রাউজ করুন |
+| প্রম্পট প্রিয় এবং পরিচালনা করুন | [আমার সংগ্রহ](./my-collection)            |
+| আমার নিজস্ব প্রম্পট তৈরি করুন    | [কাস্টম প্রম্পট](./user-prompts)          |
+| নিবন্ধন বা লগইন                  | [অ্যাকাউন্ট ব্যবস্থাপনা](./account)       |
+| শেয়ারিং আবিষ্কার করুন           | [কমিউনিটি প্রম্পট](./community)           |
 
-## Third-party API integration
+## সাধারণ AI মডেল
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+### আন্তর্জাতিক মডেল
+
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### চীনা মডেল
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [ERNIE Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [Spark Desk](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### API প্ল্যাটফর্ম
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## সম্পর্কিত ডকুমেন্টেশন
+
+- [ইন্টারফেস ব্যাখ্যা](./interface) - অনুসন্ধান এবং ফিল্টার ফাংশন
+- [আমার সংগ্রহ](./my-collection) - প্রিয়, ট্যাগ এবং বাছাই
+- [অ্যাকাউন্ট ব্যবস্থাপনা](./account) - লগইন এবং নিবন্ধন

@@ -1,37 +1,25 @@
-# Come usare l'estensione del browser?
+---
+sidebar_label: Come Usare l'Estensione
+title: Guida all'Uso Estensione AI Short - Barra Laterale e Scorciatoie
+description: Sfrutta al meglio l'estensione AI Short - Attiva la barra laterale e la scorciatoia Alt+Shift+S per i tuoi prompt.
+---
 
-ChatGPT Shortcut supporta 13 lingue principali e la lingua dell'estensione verrà impostata automaticamente in base all'ambiente del tuo browser. Anche la lingua della pagina incorporata di ChatGPT e della barra laterale nell'estensione seguirà questa impostazione. Nota, per evitare di attivare avvisi di autorizzazione di siti Web di terze parti, evita di cambiare direttamente la lingua nelle pagine incorporate.
+# Come Usare l'Estensione del Browser?
 
-![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
+ChatGPT Shortcut supporta 13 lingue principali, e la lingua dell'estensione sarà impostata automaticamente in base all'ambiente del tuo browser. La lingua della pagina incorporata di ChatGPT e la barra laterale nell'estensione seguiranno anche questa impostazione. Nota che per evitare di attivare avvisi di permesso da siti web di terze parti, **non cambiare la lingua nella pagina incorporata**.
 
-## Impostazioni di visualizzazione
+![](/img/docs/extension-settings.png)
 
-### Barra laterale AiShort
+## Barra Laterale AiShort
 
-Dopo aver abilitato la barra laterale AiShort, vedrai un'icona verde nell'angolo in basso a destra delle pagine Web supportate. Facendo clic su questa icona, puoi attivare o disattivare la barra laterale. Attualmente, l'impostazione predefinita è quella di supportare ChatGPT, Bard, Claude e Wenxin Yiyan. Se scegli "Attiva automaticamente la barra laterale", la barra laterale si aprirà automaticamente quando visiti questi siti supportati.
+L'estensione AiShort funziona attualmente come un pannello laterale (Side Panel), offrendo un'esperienza interattiva fluida.
 
-![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+Se l'opzione "Mantenere aperto il pannello laterale (Keep side panel open)" è abilitata nelle impostazioni, la barra laterale rimarrà aperta durante il cambio delle schede del browser.
 
-Se vuoi usare la barra laterale AiShort su altri siti web, installa lo script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Nota che, per evitare sovrapposizioni di funzionalità e potenziali conflitti, lo script ChatGPT Shortcut Anywhere non sarà efficace sui siti web supportati nativamente dall'estensione.
+![](/img/docs/extension-sidebar.png)
 
-### Homepage integrata
+Se desideri usare la barra laterale AiShort su altri siti web, installa lo script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tampermonkey è un'estensione del browser che permette agli utenti di eseguire script personalizzati per modificare le pagine web. Nota che per evitare sovrapposizioni funzionali e potenziali conflitti, lo script ChatGPT Shortcut Anywhere non avrà effetto sui siti web supportati dall'estensione di default.
 
-Dopo aver abilitato la funzionalità della home page integrata, un pulsante per la pagina integrata apparirà nell'angolo in alto a sinistra della versione web di ChatGPT. Facendo clic su di esso, l'interfaccia dell'app ChatGPT verrà sostituita con la pagina AiShort.
+## Attivazione tramite Tasto di Scelta Rapida
 
-![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
-
-## Modalità finestra separata
-
-Quando la modalità finestra separata è abilitata, l'interfaccia dell'estensione apparirà in modo persistente in una finestra separata, facilitando il multitasking. Puoi impostare i siti Web per l'attivazione automatica nelle impostazioni dell'estensione. Quando il browser visita questi siti, la finestra di AiShort si attiverà automaticamente.
-
-![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
-
-### Siti Web di attivazione automatica
-
-Nelle impostazioni dell'estensione, puoi specificare quali siti Web attiveranno automaticamente la finestra separata di AiShort.
-
-![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
-
-### Attivazione tramite tasti di scelta rapida
-
-Il tasto di scelta rapida `Alt+Shift+S` può essere utilizzato per attivare direttamente la finestra AiShort, sia in modalità popup che in modalità finestra separata.
+Usa la scorciatoia `Alt+Shift+S` per attivare direttamente la barra laterale AiShort.

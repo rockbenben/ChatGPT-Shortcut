@@ -1,13 +1,19 @@
-# Probleme bei der Nutzung von Erweiterungen
+---
+sidebar_label: Erweiterungs-FAQ
+title: Erweiterungs-FAQ - Probleme & Lösungen
+description: Lösen Sie Login- und Blockierungsprobleme. Umgehen Sie Google-Einschränkungen und stellen Sie die Funktion wieder her.
+---
 
-## Einschränkungen für eingebettete ChatGPT-Seiten
+# Erweiterungs-FAQ
 
-ChatGPT legt mehrere Zugriffsbeschränkungen für seine eingebetteten Erweiterungsseiten fest, insbesondere die fehlende Unterstützung für die Google-Kontoautorisierung zur Anmeldung. Dies bedeutet, dass sich Benutzer mit ihrem Benutzernamen und Passwort anmelden müssen.
+## ChatGPT Seiten-Einschränkungen
 
-Wenn Ihr Konto ursprünglich über eine Google-Autorisierung erstellt wurde, können Sie die Funktion „Passwort vergessen“ verwenden, um ein neues Passwort festzulegen. Dadurch wird sichergestellt, dass Sie sich erfolgreich bei der eingebetteten ChatGPT-Seite anmelden können.
+ChatGPT hat mehrere Berechtigungseinschränkungen auf in Erweiterungen eingebetteten Seiten festgelegt, sodass die Anmeldung über Google-Autorisierung nicht unterstützt wird. Dies bedeutet, dass Benutzer sich mit Konto und Passwort anmelden müssen.
 
-## Hinweis zur Blockierung von Inhalten
+Wenn Ihr Konto ursprünglich über Google-Autorisierung erstellt wurde, können Sie die Funktion "Passwort vergessen" verwenden, um ein neues Passwort festzulegen. Dies stellt sicher, dass Sie sich innerhalb der eingebetteten ChatGPT-Seite reibungslos anmelden können.
 
-Nach der Anmeldung mit einem Benutzernamen und einem Passwort wird gelegentlich die Meldung „Dieser Inhalt ist blockiert“ angezeigt. In solchen Fällen reicht es oft aus, die Seite einfach neu zu laden, um das Problem zu beheben und die Seite nach der Anmeldung wieder in ihren normalen Zustand zu versetzen.
+## Eingabeaufforderung für blockierten Inhalt
 
-Es ist wichtig zu beachten, dass das Wechseln der Sprache innerhalb der integrierten ChatGPT-Seite ebenfalls den Hinweis „Dieser Inhalt ist blockiert“ auslösen kann. Daher empfehle ich, die Sprachen über die Einstellungen der Erweiterung und nicht direkt auf der integrierten Seite zu ändern. Dieser Ansatz kann dazu beitragen, unnötige Fehlermeldungen zu vermeiden.
+Nach der Anmeldung mit Konto und Passwort zeigt die Seite möglicherweise manchmal die Meldung "Dieser Inhalt ist blockiert" an. In diesem Fall löst in der Regel eine einfache **Aktualisierung der Seite** das Problem und stellt die Seite in einen normalen Anmeldezustand zurück. Darüber hinaus bleibt der Anmeldestatus nach dem Anmelden normalerweise lange erhalten, es sei denn, Sie melden sich aktiv ab, sodass Sie sich keine allzu großen Sorgen über das häufige Erscheinen solcher Meldungen machen müssen.
+
+Beachten Sie, dass das Wechseln der Sprache innerhalb der eingebetteten ChatGPT-Seite auch die Meldung "Dieser Inhalt ist blockiert" auslösen kann. Daher wird empfohlen, die Sprache über die Erweiterungseinstellungen zu wechseln, anstatt direkt auf der eingebetteten Seite. Dies vermeidet unnötige Fehler-Meldungen.

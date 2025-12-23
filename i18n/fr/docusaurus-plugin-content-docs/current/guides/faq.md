@@ -1,27 +1,53 @@
-# Questions fréquentes
+---
+sidebar_label: FAQ
+title: FAQ AI Short - Optimisation et Hallucinations
+description: Résolvez les problèmes courants d'IA. Apprenez à optimiser vos prompts, éviter les hallucinations et sauvegarder vos données.
+---
 
-## Pourquoi les mots suggérés sont-ils en anglais ?
+# FAQ
 
-AiShort a été créé pour faciliter l'utilisation de ChatGPT par les personnes dont l'anglais n'est pas la langue maternelle. Cependant, tous les mots suggérés sont en anglais. Cela s'explique par le fait que ChatGPT a une meilleure compréhension de l'anglais par rapport aux autres langues. Même MOSS, le premier modèle de langage chinois de dialogue à grande échelle, reconnaît que ses réponses en anglais sont supérieures à celles en chinois. Il est donc recommandé d'utiliser les mots suggérés en anglais. (MOSS n'est plus disponible)
+## Pourquoi utiliser des prompts en anglais ?
 
-Bien que l'utilisation de mots suggérés dans d'autres langues puisse donner des résultats satisfaisants, les résultats peuvent varier considérablement lorsque vous saisissez à nouveau les mêmes prompts dans une autre langue. Étant donné que la compréhension de ChatGPT des prompts dans d'autres langues varie à chaque fois, il est conseillé d'utiliser des prompts en anglais pour les tâches axées sur la productivité afin d'obtenir le résultat souhaité. De plus, les réponses générées par des prompts en anglais sont susceptibles d'être en anglais. Vous pouvez spécifier la langue de réponse comme le chinois en ajoutant "répondre en chinois" à la fin du prompt. Si votre langue maternelle est différente, veuillez remplacer "chinois" par votre propre langue maternelle.
+Les modèles d'IA ont généralement une meilleure compréhension de l'anglais, et l'utilisation de prompts en anglais peut produire des résultats plus stables.
 
-## Dois-je saisir le prompt à chaque fois ?
+Bien que l'utilisation de prompts en chinois puisse obtenir des résultats décents, la saisie répétée du même prompt en chinois peut entraîner des variations significatives dans les résultats. Par conséquent, il est recommandé d'utiliser des prompts en anglais dans des scénarios importants.
 
-Dans l'API, vous pouvez définir le prompt comme un "prompt système", ce qui vous dispense de saisir le prompt à chaque fois. ChatGPT suivra les instructions basées sur le prompt système.
+**Spécifier une réponse en chinois** : Ajoutez `respond in Chinese` à la fin du prompt pour obtenir une réponse en chinois.
 
-Dans la version Web de ChatGPT, si vous n'avez pas changé le prompt principal, vous pouvez simplement mettre le contenu de la réponse ultérieure entre guillemets, ce qui élimine la nécessité de saisir le prompt à chaque fois. Lorsque la réponse générée ne correspond pas aux exigences du prompt, cela signifie que ChatGPT a oublié le prompt, et dans de tels cas, vous devez ressaisir le prompt pour le recentrer. De plus, chaque lien de conversation est unique, et vous pouvez enregistrer les conversations fréquemment utilisées en tant que favoris pour une utilisation ultérieure.
+## Dois-je entrer le prompt à chaque fois ?
 
-## Délai de recherche de la méthode d'entrée
+**Utilisation de l'API** : Vous pouvez définir le prompt comme "system prompt", qui s'appliquera automatiquement aux conversations ultérieures.
 
-La fonction de recherche est basée sur la vitrine de Docusaurus et présente un problème de perte de focus de la méthode d'entrée côté PC. Après avoir signalé le problème à Docusaurus, ils ont mentionné qu'ils essaieraient de le résoudre, mais jusqu'à présent, le problème reste non résolu, avec le commentaire suivant : "FWIW, vous ne devriez pas utiliser le chinois de toute façon, car la vitrine n'est pas localisée." Par conséquent, j'ai catégorisé le composant de recherche en deux types : mobile et PC. La logique de recherche pour mobile reste inchangée, tandis que pour la navigation PC avec une largeur d'écran supérieure à 768px, j'ai introduit la fonction "debounce" pour résoudre le problème de la méthode d'entrée. Cependant, cela entraîne deux problèmes côté PC : la saisie en langue étrangère doit être terminée dans les 800 millisecondes, et le rafraîchissement de la recherche sur PC passe d'une réponse instantanée à un délai de 800 millisecondes. Si vous avez une meilleure solution, veuillez fournir des commentaires.
+**Version Web** : Si vous n'avez pas changé de sujet, ChatGPT se souviendra des paramètres de prompt de la conversation actuelle. Lorsque la réponse commence à s'écarter des attentes, cela signifie que l'IA a "oublié" le prompt et vous devez le saisir à nouveau.
 
-## Diffusion d'informations erronées
+**Astuce** : Enregistrez les conversations fréquemment utilisées comme signets pour un accès rapide plus tard.
 
-Bien que ChatGPT soit très puissant, il n'est pas infaillible. Parfois, il peut générer des informations erronées. Par exemple, lorsque j'ai dû saisir des centaines de données dans AiShort, j'ai demandé à ChatGPT de convertir les données dans un format spécifié. Cependant, lors du processus de conversion, j'ai remarqué que ChatGPT avait écrit certaines informations de manière incorrecte. Par exemple, un libellé dans le texte était "critique de film", mais ChatGPT l'a changé en "critique de cinéma". Bien que cela n'ait peut-être aucune incidence sur le texte lui-même, cela provoquerait une erreur lors de son utilisation dans le code. Par conséquent, lors de l'utilisation de ChatGPT, il est essentiel de vérifier sa sortie.
+## Que faire si l'IA génère de fausses informations ?
 
-## Les invites sont-elles inefficaces ?
+L'IA a parfois des "hallucinations", générant des informations qui semblent plausibles mais qui sont en fait incorrectes. Suggestions d'utilisation :
 
-Si vous êtes engagé dans une tâche de synthèse, vous pouvez utiliser le TPG pour affiner et améliorer vos réponses initiales, et ainsi accroître la précision de vos réponses. En outre, les messages-guides ne sont pas uniquement bénéfiques pour la production de travail ; ils servent surtout de catalyseurs pour la stimulation intellectuelle. Ils vous aident à élargir votre perspective, vous permettent d'envisager les questions sous différents angles et de remédier aux oublis potentiels qui surviennent souvent au cours du processus de réflexion.
+1. **Vérifier les informations clés** : Surtout les données, citations, code, etc.
+2. **Optimisation en plusieurs tours** : Demandez à l'IA de vérifier et d'optimiser la réponse à nouveau.
+3. **Vérification croisée** : Utilisez différents prompts ou modèles pour vérifier les conclusions importantes.
 
-Tous les exercices utilisés par AI Short proviennent d'Internet et sont régulièrement mis à jour dans notre répertoire d'exercices. Bien que chaque message soit soumis à des tests approfondis, son efficacité peut varier en fonction des besoins individuels de l'utilisateur. Si vous rencontrez des inexactitudes, si vous avez des idées novatrices ou si vous tombez sur des messages utiles, nous vous encourageons à nous en informer par le biais de [feedback](/feedback) ou à partager vos découvertes au sein de notre communauté.
+Des prompts appropriés peuvent vous aider à réduire l'apparition d'hallucinations de l'IA.
+
+## Comment sauvegarder mes prompts ?
+
+1. Entrez dans le Centre utilisateur
+2. Cliquez sur le bouton "Exporter les prompts"
+3. Le système génère automatiquement un fichier JSON à télécharger
+
+Il est recommandé de faire des sauvegardes régulières pour éviter la perte de données.
+
+## Les résultats des prompts ne sont pas idéaux ?
+
+1. **Essayez d'optimiser** : Laissez l'IA optimiser la réponse à nouveau.
+2. **Changez de perspective** : Utilisez différents prompts pour exprimer la même exigence.
+3. **Commentaires et partage** : Si vous trouvez des problèmes ou avez de bons prompts, bienvenue pour nous informer via [Commentaires](/feedback) ou partager dans la communauté.
+
+## Documentation associée
+
+- [Bien commencer](./getting-started) - Méthodes d'utilisation de base
+- [Ma collection](./my-collection) - Gestion des collections et des balises
+- [Prompts de la communauté](./community) - Découvrir et partager

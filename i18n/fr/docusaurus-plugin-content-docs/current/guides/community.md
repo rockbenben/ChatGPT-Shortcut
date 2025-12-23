@@ -1,17 +1,45 @@
+---
+sidebar_label: Prompts de la communauté
+title: Communauté AI Short - Votez et Partagez
+description: Découvrez les meilleurs prompts votés par la communauté. Partagez vos idées ou gardez-les privées. Trouvez l'inspiration pour l'IA.
+---
+
 # Prompts de la communauté
 
-La section des prompts de la communauté mettra en valeur des prompts personnalisés partagés et téléchargés par les utilisateurs. Vous pouvez partager des prompts sur une page publique et également consulter des prompts partagés par d'autres utilisateurs pour vous inspirer.
+La section Prompts de la communauté affiche les prompts personnalisés partagés par les utilisateurs. Vous pouvez y trouver de l'inspiration ou partager votre propre créativité.
 
-## Tri et Vote
+![](/img/docs/community-page.png)
 
-La page des prompts de la communauté offre des options de tri selon l'heure de publication, les votes positifs/négatifs et la recherche par mot-clé. Vous êtes libre de filtrer les prompts de la communauté selon vos préférences.
+## Trier et Filtrer
 
-![](https://img.newzone.top/2023-07-13-14-50-15.png?imageMogr2/format/webp/thumbnail/500x)
+La page communautaire offre plusieurs méthodes de filtrage :
 
-Les votes positifs/négatifs détermineront les prompts inclus sur la page principale. Actuellement, seuls les utilisateurs connectés peuvent voter, et seul le vote le plus récent pour un même prompt sera enregistré.
+- **Heure de publication** : Voir les derniers prompts partagés
+- **Ordre de vote** : Voir les prompts avec le plus de votes positifs
+- **Recherche par mots-clés** : Rechercher des prompts sur des sujets spécifiques
 
-## Prompts Privés
+## Mécanisme de vote
 
-Si vous souhaitez garder vos prompts privés, vous pouvez choisir de les partager ou non avec la communauté lors de la soumission ou de la mise à jour de vos prompts.
+Décidez de l'exposition des prompts en votant pour/contre :
 
-![](https://img.newzone.top/2023-07-13-09-13-00.gif?imageMogr2/format/webp/thumbnail/500x)
+- **Pour** : Aide le contenu de haute qualité à obtenir plus d'exposition
+- **Contre** : Après qu'un certain nombre de votes contre soit atteint, le prompt sera masqué
+
+**Lien de collection** : Lorsque vous collectionnez un prompt de la communauté, le système émettra automatiquement un vote positif.
+
+![État du bouton de vote](/img/docs/community-vote.png)
+
+> Le vote est ouvert uniquement aux utilisateurs connectés, et le vote de chaque personne pour le même prompt est basé sur le plus récent.
+
+## Prompts privés
+
+La créativité que vous ne souhaitez pas rendre publique peut être définie comme privée :
+
+- Lors de la création ou de l'édition d'un prompt, décochez l'option "Partager avec la communauté"
+- Les prompts privés ne sont visibles que par vous
+- Vous pouvez basculer entre l'état public/privé à tout moment
+
+## Documentation associée
+
+- [Prompts personnalisés](./user-prompts) - Créer et gérer des prompts
+- [Ma collection](./my-collection) - Gestion des collections

@@ -1,17 +1,45 @@
-# Community-Empfehlungen
+---
+sidebar_label: Community-Prompts
+title: AI Short Community - Teilen & Abstimmen
+description: Entdecken Sie die besten Community-Prompts. Teilen Sie Ihre Ideen oder nutzen Sie sie privat. Finden Sie KI-Inspiration.
+---
 
-Die Kategorie "Gemeinschaftliche Hinweiswörter" präsentiert benutzerdefinierte Hinweiswörter, die von Internetnutzern geteilt und hochgeladen werden. Sie können Ihre Hinweiswörter auf der öffentlichen Seite teilen und gleichzeitig die von anderen geteilten Hinweiswörter einsehen, um Inspiration zu erhalten.
+# Community-Prompts
 
-## Sortierung und Abstimmung
+Der Bereich Community-Prompts zeigt benutzerdefinierte Prompts, die von Benutzern geteilt wurden. Hier finden Sie Inspiration oder können Ihre eigene Kreativität teilen.
 
-Die Gemeinschaftliche Hinweiswörter-Seite bietet die Optionen zur Sortierung nach Veröffentlichungsdatum, positiven/negativen Bewertungen und Schlüsselwortsuche. Sie können die Hinweiswörter der Gemeinschaft nach Belieben filtern.
+![](/img/docs/community-page.png)
 
-![](https://img.newzone.top/2023-07-13-14-50-15.png?imageMogr2/format/webp/thumbnail/500x)
+## Sortieren und Filtern
 
-Positive/negative Bewertungen bestimmen die Aufnahme der Hinweiswörter auf der Startseite. Derzeit können nur angemeldete Benutzer abstimmen, und mehrfache Abstimmungen für dasselbe Hinweiswort werden nur für die letzte Abstimmung erfasst.
+Die Community-Seite bietet mehrere Filtermethoden:
 
-## Vertrauliche Hinweiswörter
+- **Veröffentlichungszeit**: Neueste geteilte Prompts anzeigen
+- **Abstimmungsreihenfolge**: Prompts mit den meisten positiven Stimmen anzeigen
+- **Stichwortsuche**: Nach Prompts zu bestimmten Themen suchen
 
-Wenn Sie Ihre vertraulichen Hinweiswörter speichern möchten, können Sie wählen, ob Sie sie mit der Gemeinschaft teilen möchten, wenn Sie Hinweiswörter einreichen oder aktualisieren.
+## Abstimmungsmechanismus
 
-![](https://img.newzone.top/2023-07-13-09-13-00.gif?imageMogr2/format/webp/thumbnail/500x)
+Entscheiden Sie über die Sichtbarkeit von Prompts durch Für/Gegen-Stimmen:
+
+- **Dafür**: Hilft hochwertigen Inhalten, mehr Sichtbarkeit zu erhalten
+- **Dagegen**: Nachdem eine bestimmte Anzahl von Gegenstimmen erreicht ist, wird der Prompt ausgeblendet
+
+**Sammlungsverknüpfung**: Wenn Sie einen Community-Prompt sammeln, gibt das System automatisch eine positive Stimme ab.
+
+![Abstimmungsschalter-Status](/img/docs/community-vote.png)
+
+> Die Abstimmung steht nur angemeldeten Benutzern offen, und die Stimme jeder Person für denselben Prompt basiert auf der aktuellsten.
+
+## Private Prompts
+
+Kreativität, die Sie nicht öffentlich machen möchten, kann als privat eingestellt werden:
+
+- Deaktivieren Sie beim Erstellen oder Bearbeiten eines Prompts die Option "Mit Community teilen"
+- Private Prompts sind nur für Sie sichtbar
+- Sie können jederzeit zwischen öffentlichem/privatem Status wechseln
+
+## Verwandte Dokumentation
+
+- [Benutzerdefinierte Prompts](./user-prompts) - Prompts erstellen und verwalten
+- [Meine Sammlung](./my-collection) - Sammlungsverwaltung

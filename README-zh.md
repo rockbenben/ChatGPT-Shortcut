@@ -99,7 +99,7 @@ Fork 后，在 Actions 页面启用 Workflows 并激活 Upstream Sync Action，�
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
 
-![](https://img.newzone.top/qq736094782.jpg?imageMogr2/thumbnail/300x/format/webp)
+![](https://img.newzone.top/qq963752577.jpg?imageMogr2/thumbnail/300x/format/webp)
 
 ---
 

@@ -1,14 +1,23 @@
-# Guida all'installazione locale del plugin ZIP di Chrome
+---
+sidebar_label: Guida Installazione ZIP Chrome
+title: Installazione Manuale ZIP Chrome - Estensione AI Short
+description: Guida all'installazione ZIP per Chrome - Come installare AI Short manualmente decomprimendo e caricando l'estensione.
+---
 
-## Scarica plugin
+# Guida Installazione Locale Estensione ZIP Chrome
 
-Scarica il pacchetto di installazione Zip del plugin ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) da [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) e decomprimilo. (La cartella decompressa deve essere conservata sul computer, quindi ricordati di decomprimerla in una posizione permanente)
+## Scarica Estensione
 
-## Abilita la modalità sviluppatore
+Scarica il pacchetto di installazione ZIP dell'estensione ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) e decomprimilo. (La cartella decompressa deve essere mantenuta sul computer, quindi ricorda di decomprimerla in una posizione permanente).
 
-Apri la pagina "Gestisci estensioni" di Chrome e abilita la "Modalità sviluppatore".
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Download Cina**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), password: 1qow
 
-Copia il seguente indirizzo e incollalo nella barra degli indirizzi del browser, quindi premi Invio per aprirlo. Abilita la "Modalità sviluppatore" nell'angolo in alto a destra della pagina.
+## Abilita Modalità Sviluppatore
+
+Apri la pagina "Gestisci estensioni" di Chrome e attiva la "Modalità sviluppatore".
+
+Copia il seguente indirizzo e incollalo nella barra degli indirizzi del browser, poi premi Invio per aprire. Attiva la "Modalità sviluppatore" nell'angolo in alto a destra della pagina.
 
 ```txt
 chrome://extensions
@@ -16,10 +25,10 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## Installa il plugin
+## Installa Estensione
 
-Trascina la cartella decompressa nella pagina dell'estensione per completare l'installazione.
+Trascina la cartella decompressa nella pagina delle estensioni per completare l'installazione.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Dopo l'installazione riuscita, puoi visualizzare il [Plugin Usage Tutorial](./usage.md).
+Dopo un'installazione riuscita, puoi consultare il [Tutorial Uso Plugin](./usage.md).

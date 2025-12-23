@@ -1,39 +1,59 @@
-# Descrição da interface
+---
+sidebar_label: Explicação da Interface
+title: Interface do AI Short - Filtros de Tags e Pesquisa Inteligente
+description: Aprenda a usar a interface do AI Short - Busque prompts por tags e palavras-chave e gerencie seus favoritos.
+---
 
-O AiShort exibe, por padrão, todas as palavras sugeridas. A página está dividida em três seções: área de etiquetas, área de busca e área de exibição das palavras sugeridas.
+# Explicação da Interface
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+A página do AI Short oferece aos usuários uma interface intuitiva para navegar e filtrar prompts. A página consiste principalmente na área de tags, área de pesquisa e área de exibição de prompts.
 
-## 🏷︎ Filtragem por Etiqueta
+![](/img/docs/interface-home.png)
 
-A área de etiquetas é dividida com base no domínio e na funcionalidade das palavras sugeridas, permitindo a seleção com base em diferentes cenários e necessidades. Pode ser usada em conjunto com o botão "Alternar Regra de Filtragem por Etiqueta" no canto superior direito da área de etiquetas para realizar filtragem por várias etiquetas. O estado padrão é OR, que seleciona todas as palavras sugeridas sob a etiqueta escolhida. Ao alternar para AND, serão filtradas as palavras sugeridas que possuem múltiplas etiquetas selecionadas.
+## 🏷︎ Filtragem por Tags
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+A área de tags permite aos usuários filtrar prompts com base em domínio e função.
 
-## 🔍 Busca por Palavras-chave
+Use o botão "Alternar Regra de Filtragem de Tags" no canto superior direito para filtragem multi-tag mais precisa:
 
-O escopo da busca por palavras-chave inclui os títulos, resumos, conteúdos e traduções em seu idioma nativo das palavras sugeridas. Após inserir uma palavra-chave, a área de exibição das palavras sugeridas mostrará imediatamente o conteúdo filtrado. Se etiquetas tiverem sido selecionadas, a busca por palavras-chave será limitada ao escopo das etiquetas selecionadas. No lado do PC, após a alteração do conteúdo na caixa de busca, os novos resultados da busca serão exibidos após 800 milissegundos. Em dispositivos móveis, a atualização é instantânea.
+- **Regra OR** (Padrão): Mostra prompts que correspondem a qualquer uma das tags selecionadas
+- **Regra AND**: Mostra apenas prompts que possuem todas as tags selecionadas
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+![](/img/docs/interface-filter.png)
 
-Após efetuar login, o escopo da pesquisa incluirá os prompts que você enviou e coletou.
+## 🔍 Pesquisa de Palavras-chave
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+A função de pesquisa de palavras-chave suporta a pesquisa por título, descrição e conteúdo do prompt.
 
-## 🔬 Cópia da Sugestão
+- Se tags já estiverem selecionadas, o escopo da pesquisa é limitado a essas tags
+- Após o login, o escopo da pesquisa inclui seus favoritos e prompts personalizados
 
-Por meio da filtragem por etiquetas e busca por palavras-chave, ao clicar no botão "Copiar" no canto superior direito do cartão, você pode obter as palavras sugeridas. Depois de colá-las no ChatGPT, você pode se referir às sugestões e ajustar o texto de acordo com suas necessidades específicas para obter uma resposta no domínio desejado. Se a explicação em seu idioma nativo nas palavras sugeridas não estiver clara, você pode clicar no link no canto inferior direito das palavras sugeridas para visualizar a página da web de origem.
+![](/img/docs/interface-search.png)
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+## 🔬 Cartão de Prompt
 
-## Alternância de Idioma
+### Ver Detalhes
 
-Por padrão, as palavras sugeridas são exibidas em inglês. Se você estiver usando uma página em outro idioma e quiser visualizar as interpretações em seu idioma nativo, clique no conteúdo das palavras sugeridas para alternar para um idioma não inglês e clique novamente para voltar para o inglês. Observe que a alternância de idioma só funciona ao clicar no texto da sugestão e clicar na área em branco é ineficaz.
+Clique no cartão de prompt para abrir uma janela pop-up com detalhes, mostrando o título, descrição, conteúdo completo do prompt, observações e botão de copiar.
 
-![Alternando entre chinês e inglês](http://img.newzone.top/chatgptshortcut_encn.gif)
+![](/img/docs/prompt-card.gif)
 
-Se você deseja que as palavras sugeridas sejam exibidas em seu idioma nativo por padrão, clique no botão "Alternar Idioma da Sugestão" no canto superior direito da área de etiquetas. No entanto, observe que mesmo ao alternar para traduções em seu idioma nativo, o botão de cópia copiará apenas as palavras sugeridas em inglês.
+### Copiar Prompt
 
-## 🔥 Ordenação Popular
+Clique no botão "Copiar" na parte inferior do cartão para obter o prompt. Cole-o no modelo de IA para usar.
 
-A página agora exibe a frequência de uso das sugestões, e as sugestões com maior frequência de uso serão marcadas como "favoritas". Além disso, a ordenação das etiquetas das sugestões será baseada principalmente no valor de popularidade. O valor de popularidade será atualizado periodicamente."
+### Favoritar Prompt
+
+Após o login, um botão de favoritos aparecerá no cartão. Clique para adicionar o prompt à Minha Coleção.
+
+## 🔥 Ordenação por Popularidade
+
+A página ordena os prompts com base na popularidade, ajudando você a descobrir rapidamente o conteúdo em alta.
+
+A ordenação das tags também se ajusta com base nos valores de popularidade, garantindo que reflita as preferências mais recentes da comunidade.
+
+## Documentação Relacionada
+
+- [Início Rápido](./getting-started) - Uso básico
+- [Minha Coleção](./my-collection) - Favoritos, tags e ordenação
+- [Prompts da Comunidade](./community) - Descoberta e compartilhamento

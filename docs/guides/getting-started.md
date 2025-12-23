@@ -15,7 +15,7 @@ description: 30 秒快速上手！复制提示词到 ChatGPT、Gemini、DeepSeek
 3. 打开任意 AI 模型，将提示词粘贴进去
 4. 按照提示词的指引，补充你的具体问题
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
 ## 快速入口
 

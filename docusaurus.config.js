@@ -186,7 +186,7 @@ const config = {
               },
               {
                 label: "QQ 群",
-                href: "https://img.newzone.top/qq736094782.jpg?imageMogr2/format/webp",
+                href: "https://img.newzone.top/qq963752577.jpg?imageMogr2/format/webp",
                 className: "header-qq-link",
               },
             ],

@@ -1,14 +1,23 @@
-# دليل التثبيت المحلي لمكونات Chrome ZIP
+---
+sidebar_label: دليل تثبيت Chrome ZIP
+title: تثبيت AI Short على Chrome عبر ملف ZIP
+description: طريقة يدوية لتثبيت AI Short على Chrome باستخدام ملف ZIP. مثالية عندما لا يتوفر تثبيت CRX - فك الضغط وحمل الإضافة.
+---
+
+# دليل التثبيت المحلي لإضافة Chrome ZIP
 
 ## تنزيل المكون الإضافي
 
-قم بتنزيل حزمة تثبيت Zip لمكون ChatGPT Shortcut الإضافي (ChatGPT_Shortcut-zip-3.x.x.zip) من [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) وفك ضغطها. (يجب الاحتفاظ بالمجلد الذي تم فك ضغطه على الكمبيوتر، لذا تذكر فك ضغطه إلى موقع دائم)
+قم بتنزيل حزمة تثبيت zip للمكون الإضافي ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) وقم بفك ضغطها. (يجب الاحتفاظ بالمجلد الذي تم فك ضغطه على الكمبيوتر، لذا تذكر فك الضغط في مكان دائم)
+
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **التنزيل المحلي**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi)، كلمة المرور: 1qow
 
 ## تمكين وضع المطور
 
-افتح صفحة "إدارة الإضافات" في Chrome وقم بتمكين "وضع المطور".
+افتح صفحة "إدارة الإضافات" في Chrome، وقم بتشغيل "وضع المطور".
 
-انسخ العنوان التالي والصقه في شريط عناوين المتصفح، واضغط على Enter لفتحه. قم بتمكين "وضع المطور" في الزاوية اليمنى العليا من الصفحة.
+انسخ العنوان أدناه والصقه في شريط عنوان المتصفح، واضغط على Enter لفتحه. قم بتشغيل "وضع المطور" في الزاوية العلوية اليمنى من الصفحة.
 
 ```txt
 chrome://extensions
@@ -16,10 +25,10 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## تثبيت البرنامج الإضافي
+## تثبيت المكون الإضافي
 
-اسحب المجلد غير المضغوط إلى صفحة الامتداد لإكمال التثبيت.
+اسحب المجلد الذي تم فك ضغطه إلى صفحة الإضافة لإكمال التثبيت.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-بعد التثبيت الناجح، يمكنك عرض [دليل استخدام البرنامج الإضافي](./usage.md).
+بعد التثبيت الناجح، يمكنك عرض [برنامج تعليمي لاستخدام الإضافة](./usage.md).

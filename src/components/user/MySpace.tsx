@@ -480,10 +480,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         // 刷新 AuthContext 数据
         refreshUserAuth();
 
-        messageApi.success("顺序已保存");
+        messageApi.success("Order saved");
       } catch (error) {
         console.error("Failed to save order:", error);
-        messageApi.error("保存顺序失败");
+        messageApi.error("Failed to save order");
       }
     },
     [filteredItems, refreshUserAuth, messageApi]

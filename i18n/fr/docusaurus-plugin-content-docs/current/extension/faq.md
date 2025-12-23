@@ -1,13 +1,19 @@
-# Problèmes d'utilisation de l'extension
+---
+sidebar_label: FAQ de l'extension
+title: FAQ Extension - Problèmes et Solutions
+description: Résolvez les problèmes de connexion et de blocage. Apprenez à gérer les restrictions Google et restaurer le fonctionnement normal.
+---
 
-## Limitations de la page intégrée ChatGPT
+# FAQ de l'extension
 
-ChatGPT impose plusieurs restrictions d'accès sur ses pages d'extension intégrées, notamment l'absence de prise en charge de l'autorisation de compte Google pour la connexion. Cela signifie que les utilisateurs doivent se connecter à l'aide de leur nom d'utilisateur et de leur mot de passe.
+## Restrictions de la page ChatGPT
 
-Si votre compte a été initialement créé via l'autorisation Google, vous pouvez utiliser la fonction « Mot de passe oublié » pour définir un nouveau mot de passe. Cela vous permettra de vous connecter avec succès à la page intégrée ChatGPT.
+ChatGPT a défini plusieurs restrictions de permission sur les pages intégrées dans les extensions, donc la connexion utilisant l'autorisation Google n'est pas prise en charge. Cela signifie que les utilisateurs doivent se connecter en utilisant un compte et un mot de passe.
 
-## Avis de blocage de contenu
+Si votre compte a été créé à l'origine via l'autorisation Google, vous pouvez utiliser la fonction "Mot de passe oublié" pour définir un nouveau mot de passe. Cela garantit que vous pouvez vous connecter en douceur dans la page ChatGPT intégrée.
 
-Après vous être connecté avec un nom d'utilisateur et un mot de passe, vous pouvez parfois recevoir une notification indiquant « Ce contenu est bloqué ». Dans de tels cas, il suffit souvent de recharger la page pour résoudre le problème et ramener la page à son état normal après la connexion.
+## Invite de contenu bloqué
 
-Il est important de noter que le changement de langue dans la page ChatGPT intégrée peut également déclencher l'avis « Ce contenu est bloqué ». Par conséquent, je recommande de changer de langue via les paramètres de l'extension plutôt que directement sur la page intégrée. Cette approche peut aider à éviter les messages d'erreur inutiles.
+Après vous être connecté avec un compte et un mot de passe, la page peut parfois afficher une invite "Ce contenu est bloqué". Dans ce cas, généralement une simple **actualisation de la page** résoudra le problème et restaurera la page à un état de connexion normal. De plus, une fois connecté, à moins que vous ne vous déconnectiez activement, l'état de connexion est généralement maintenu pendant une longue période, vous n'avez donc pas besoin de vous inquiéter outre mesure de l'apparition fréquente de telles invites.
+
+Notez que le changement de langue dans la page ChatGPT intégrée peut également déclencher l'invite "Ce contenu est bloqué". Par conséquent, il est recommandé de changer de langue via les paramètres de l'extension plutôt que directement dans la page intégrée. Cela évite les invites d'erreur inutiles.

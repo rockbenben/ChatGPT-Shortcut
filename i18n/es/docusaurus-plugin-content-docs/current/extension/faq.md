@@ -1,13 +1,19 @@
-# Problemas de uso de la extensión
+---
+sidebar_label: Preguntas Frecuentes de la Extensión
+title: FAQ Extensión - Solución de Login y Bloqueos
+description: Resuelve los problemas de login y bloqueo. Aprende a manejar las restricciones de Google y restaurar el funcionamiento normal.
+---
 
-## Limitaciones de la página integrada de ChatGPT
+# Preguntas Frecuentes de la Extensión
 
-ChatGPT impone varias restricciones de acceso en sus páginas integradas de extensión, en particular la falta de compatibilidad con la autorización de la cuenta de Google para iniciar sesión. Esto significa que los usuarios deben iniciar sesión con su nombre de usuario y contraseña.
+## Restricciones de la Página de ChatGPT
 
-Si su cuenta se creó inicialmente a través de la autorización de Google, puede utilizar la función "Olvidar contraseña" para establecer una nueva contraseña. Al hacerlo, se asegurará de poder iniciar sesión correctamente en la página integrada de ChatGPT.
+ChatGPT ha establecido múltiples restricciones de permisos en páginas integradas en extensiones, por lo que no se admite el inicio de sesión con autorización de Google. Esto significa que los usuarios deben iniciar sesión usando una cuenta y contraseña.
 
-## Aviso de bloqueo de contenido
+Si tu cuenta se creó originalmente mediante autorización de Google, puedes usar la función "Olvidé mi contraseña" para establecer una nueva contraseña. Esto asegura que puedas iniciar sesión sin problemas dentro de la página integrada de ChatGPT.
 
-Después de iniciar sesión con un nombre de usuario y una contraseña, es posible que ocasionalmente aparezca una notificación que indique "Este contenido está bloqueado". En tales casos, simplemente volver a cargar la página suele ser suficiente para resolver el problema y revertir la página a su estado normal después del inicio de sesión.
+## Aviso de Contenido Bloqueado
 
-Es importante tener en cuenta que cambiar de idioma dentro de la página integrada de ChatGPT también puede activar el aviso "Este contenido está bloqueado". Por lo tanto, recomiendo cambiar de idioma a través de la configuración de la extensión en lugar de hacerlo directamente en la página integrada. Este enfoque puede ayudar a evitar mensajes de error innecesarios.
+Después de iniciar sesión con cuenta y contraseña, la página a veces puede mostrar un aviso de "Este contenido está bloqueado". En este caso, generalmente una simple **actualización de la página** resolverá el problema y restaurará la página a un estado normal de inicio de sesión. Además, una vez iniciada la sesión, a menos que cierres sesión activamente, el estado de inicio de sesión generalmente se mantiene durante mucho tiempo, por lo que no necesitas preocuparte demasiado por la aparición frecuente de tales avisos.
+
+Ten en cuenta que cambiar de idioma dentro de la página integrada de ChatGPT también puede activar el aviso de "Este contenido está bloqueado". Por lo tanto, se recomienda que cambies de idioma a través de la configuración de la extensión en lugar de directamente dentro de la página integrada. Esto evita avisos de error innecesarios.

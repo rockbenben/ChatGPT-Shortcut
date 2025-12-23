@@ -1,10 +1,25 @@
-# Instalar extensión
+---
+sidebar_label: Instalar Extensión del Navegador
+title: Extensión AI Short - Chrome, Edge y Firefox
+description: Optimiza tu trabajo. Descarga la extensión para Chrome, Edge y Firefox y accede a tus prompts desde la barra lateral.
+---
 
-AiShort (ChatGPT Shortcut) es una extensión de navegador compatible con Chrome, Edge, Firefox y otros navegadores basados ​​en Chromium. Esta extensión no solo ofrece las funcionalidades de la versión web de ChatGPT Shortcut, sino que también incluye elementos únicos como una barra lateral y activación automática de ventanas. Puede iniciarse automáticamente con ChatGPT o páginas personalizadas y también puede activarse manualmente utilizando la tecla de acceso directo `Alt+Shift+S`. A continuación se muestran los canales de descarga:
+# Instalar Extensión del Navegador
+
+La extensión AiShort (ChatGPT Shortcut) te ayuda a invocar la biblioteca de prompts de AIShort en cualquier momento, mejorando la eficiencia en el trabajo y el estudio. Soporta navegadores principales como Chrome, Edge, Firefox, y proporciona funciones de barra lateral y accesos directos. Puedes invocar rápidamente la extensión a través de `Alt + Shift + S`.
+
+## 📥 Canales de Descarga Oficiales
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Complementos de Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [COMPLEMENTOS del navegador Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [Versión de GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Descarga Espejo en China (Usar cuando la tienda es inaccesible)**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud (Contraseña: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
 
-Además, ofrecemos un script de Tampermonkey: [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), que permite a los usuarios personalizar los nombres de dominio coincidentes y utilizar la barra lateral de AiShort en cualquier sitio web. Sin embargo, debido a las limitaciones de inyección de contenido de scripts en las páginas de ChatGPT, la función de barra lateral del script se activa a través de una ventana emergente en las páginas de ChatGPT.
+## 🧩 Script de Tampermonkey
+
+Además del formato de extensión, también proporcionamos el [**Script de Tampermonkey ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere).
+Tampermonkey es una extensión de navegador que permite a los usuarios ejecutar scripts personalizados para mejorar las funciones de las páginas web.
+
+Con este script, puedes invocar la barra lateral de AiShort en cualquier sitio web.
+Sin embargo, debido a las restricciones de la página oficial de ChatGPT sobre la inyección de scripts, en esa página el script se ejecutará como una **ventana emergente** en lugar de una barra lateral.

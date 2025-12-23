@@ -1,17 +1,23 @@
-# Firefox-Einstellungen
+---
+sidebar_label: Firefox-Erweiterungseinstellungen
+title: Firefox Config - Anheften & Autorisieren
+description: Konfigurieren Sie Firefox richtig. Heften Sie die Erweiterung an und autorisieren Sie die Seitenleiste für ChatGPT.
+---
 
-Bevor Sie das Firefox-Plug-in verwenden, wird empfohlen, es in den folgenden zwei Schritten einzurichten.
+# Firefox-Erweiterungseinstellungen
 
-## 1. Einstellungen für das Anheften und Zugreifen auf Erweiterungen
+Bevor Sie die Firefox-Erweiterung verwenden, wird empfohlen, diese zwei Schritte zur Einrichtung zu befolgen.
 
-Wählen Sie zunächst „ChatGPT-Shortcut-Erweiterung anheften“ in der Firefox-Symbolleiste und rufen Sie dann das Erweiterungscenter auf. Wählen Sie im Erweiterungselement „ChatGPT-Shortcut“ „Optionen“, um die Einstellungsoberfläche der Erweiterung aufzurufen. Die spezifischen Schritte sind in der folgenden Abbildung dargestellt:
+## 1. Erweiterung anheften und Zugriffseinstellungen
 
-![Firefox-Einstellungen](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+Wählen Sie zuerst "ChatGPT Shortcut Erweiterung anheften" (Pin to Toolbar) in der Firefox-Symbolleiste. Gehen Sie dann ins Erweiterungscenter, suchen Sie den Eintrag für die ChatGPT Shortcut Erweiterung und wählen Sie "Optionen" (Options). Betreten Sie die Erweiterungs-Einstellungsoberfläche. Die spezifischen Schritte sind unten dargestellt:
 
-## 2. Erweiterungsbetrieb autorisieren
+![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 
-Zweitens müssen Sie mit der rechten Maustaste auf das Erweiterungssymbol auf diesen Websites klicken und „Auf dieser Site immer zulassen“ auswählen, um sicherzustellen, dass die Erweiterung auf Websites wie ChatGPT und Bard normal funktioniert. Diese Aktion erteilt der Erweiterung die Berechtigung, Inhalte zu ändern und Seitenleisten auf bestimmten Websites hinzuzufügen.
+## 2. Erweiterungsausführung autorisieren
 
-![Firefox-Erweiterungsberechtigung](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+Zweitens, um sicherzustellen, dass die Erweiterung auf Websites wie ChatGPT, Gemini normal funktioniert, müssen Sie mit der rechten Maustaste auf das Erweiterungssymbol auf diesen Websites klicken und "Immer auf dieser Website zulassen" (Always allow on \*\*\*) auswählen. Diese Operation gewährt der Erweiterung die Berechtigung, eine Seitenleiste auf der angegebenen Domain hinzuzufügen.
 
-Nach erfolgreicher Installation können Sie das [Tutorial zur Verwendung des Plugins](./usage.md) ansehen.
+![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+
+Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage.md) ansehen.

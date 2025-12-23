@@ -1,31 +1,60 @@
-# आरंभ करना
+---
+sidebar_label: शुरुआत करें
+title: AI Short शुरुआत गाइड - ChatGPT और DeepSeek प्रॉम्प्ट
+description: AI Short के साथ जल्दी शुरुआत करें - ChatGPT, Gemini और DeepSeek के लिए तैयार प्रॉम्प्ट कॉपी और उपयोग करें।
+---
 
-AiShort का उपयोग करते हुए, आपको निर्दिष्ट दिशा में आउटपुट प्राप्त करने के लिए केवल चयनित प्रॉम्प्ट को किसी भी AI संवाद मॉडल में कॉपी करना होगा। यहाँ विशिष्ट चरण दिए गए हैं:
+# शुरुआत करें
 
-1. अपने इच्छित प्रॉम्प्ट को खोजें या चुनें, और फिर प्रॉम्प्ट पर कॉपी बटन पर क्लिक करें।
+AI के साथ बातचीत करते समय, अच्छे प्रॉम्प्ट आपको उच्च गुणवत्ता वाले उत्तर तेजी से प्राप्त करने में मदद कर सकते हैं। AiShort ने आपके लिए कॉपी और उपयोग करने के लिए बड़ी संख्या में व्यावहारिक प्रॉम्प्ट संकलित किए हैं।
 
-2. प्रॉम्प्ट को ChatGPT, Gemini या किसी भी AI संवाद मॉडल में कॉपी करें।
+## मूल उपयोग
 
-3. संवाद प्रॉम्प्ट के अनुसार अपनी आवश्यकताएँ दर्ज करें।
+1. होमपेज पर अपनी ज़रूरत के प्रॉम्प्ट को खोजें या चुनें
+2. विवरण देखने के लिए कार्ड पर क्लिक करें, या सीधे "कॉपी" बटन पर क्लिक करें
+3. कोई भी AI मॉडल खोलें और प्रॉम्प्ट पेस्ट करें
+4. अपने विशिष्ट प्रश्न को पूरक करने के लिए प्रॉम्प्ट के निर्देशों का पालन करें
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
-## Common AI models
+## त्वरित पहुंच
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+| मुझे चाहिए...                      | कहाँ जाना है                              |
+| ---------------------------------- | ----------------------------------------- |
+| प्रॉम्प्ट कॉपी और उपयोग करें       | सीधे [होमपेज](/) पर खोजें या ब्राउज़ करें |
+| प्रॉम्प्ट पसंदीदा और प्रबंधित करें | [मेरा संग्रह](./my-collection)            |
+| अपने स्वयं के प्रॉम्प्ट बनाएं      | [कस्टम प्रॉम्प्ट](./user-prompts)         |
+| रजिस्टर या लॉगिन                   | [खाता प्रबंधन](./account)                 |
+| साझाकरण खोजें                      | [समुदाय प्रॉम्प्ट](./community)           |
 
-## Third-party API integration
+## सामान्य AI मॉडल
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+### अंतर्राष्ट्रीय मॉडल
+
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### चीनी मॉडल
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [ERNIE Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [Spark Desk](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### API प्लेटफ़ॉर्म
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## संबंधित दस्तावेज़
+
+- [इंटरफ़ेस स्पष्टीकरण](./interface) - खोज और फ़िल्टर फ़ंक्शन
+- [मेरा संग्रह](./my-collection) - पसंदीदा, टैग और छँटाई
+- [खाता प्रबंधन](./account) - लॉगिन और पंजीकरण

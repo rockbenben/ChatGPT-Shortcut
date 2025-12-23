@@ -4,15 +4,15 @@
     "description": "The label for version current"
   },
   "sidebar.docs.category.Policies": {
-    "message": "Policies",
+    "message": "নীতিমালা",
     "description": "The label for category 'Policies' in sidebar 'docs'"
   },
   "sidebar.docs.category.使用指南": {
-    "message": "Guides",
+    "message": "গাইড",
     "description": "The label for category '使用指南' in sidebar 'docs'"
   },
   "sidebar.docs.category.浏览器插件": {
-    "message": "Browser Extension",
+    "message": "ব্রাউজার এক্সটেনশন",
     "description": "The label for category '浏览器插件' in sidebar 'docs'"
   }
 }

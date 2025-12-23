@@ -1,31 +1,60 @@
-# البدء
+---
+sidebar_label: ابدأ
+title: دليل البدء السريع لـ AI Short - ChatGPT و DeepSeek
+description: ابدأ باستخدام AI Short فورًا - انسخ أفضل المطالبات لـ ChatGPT و Gemini و DeepSeek لتحسين جودة الحوار.
+---
 
-باستخدام AiShort، ما عليك سوى نسخ المطالبة المحددة إلى أي نموذج حوار AI للحصول على الناتج في الاتجاه المحدد. فيما يلي الخطوات المحددة:
+# ابدأ
 
-1. ابحث عن المطالبة التي تريدها أو حددها، ثم انقر فوق زر النسخ الموجود على المطالبة.
+عند الحوار مع AI، يمكن أن تساعدك المطالبات الجيدة في الحصول على إجابات عالية الجودة بشكل أسرع. قام AiShort بتجميع عدد كبير من المطالبات العملية لنسخها واستخدامها.
 
-2. انسخ المطالبة إلى ChatGPT أو Gemini أو أي نموذج حوار AI.
+## الاستخدام الأساسي
 
-3. أدخل متطلباتك وفقًا لمطالبة الحوار.
+1. ابحث عن أو اختر المطالبة التي تحتاجها في الصفحة الرئيسية
+2. انقر على البطاقة لعرض التفاصيل، أو انقر مباشرة على زر "نسخ"
+3. افتح أي نموذج AI والصق المطالبة
+4. اتبع تعليمات المطالبة لتكملة سؤالك المحدد
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
-## نماذج الذكاء الاصطناعي الشائعة
+## الوصول السريع
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+| أريد...                 | إلى أين أذهب                                   |
+| ----------------------- | ---------------------------------------------- |
+| نسخ واستخدام المطالبات  | البحث أو التصفح مباشرة في [الصفحة الرئيسية](/) |
+| تفضيل وإدارة المطالبات  | [مجموعتي](./my-collection)                     |
+| إنشاء مطالباتي الخاصة   | [مطالبات مخصصة](./user-prompts)                |
+| التسجيل أو تسجيل الدخول | [إدارة الحساب](./account)                      |
+| اكتشاف المشاركة         | [مطالبات المجتمع](./community)                 |
 
-## تكامل واجهة برمجة التطبيقات الخاصة بطرف ثالث
+## نماذج AI الشائعة
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+### النماذج الدولية
+
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### النماذج الصينية
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [ERNIE Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [Spark Desk](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### منصات API
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## وثائق ذات صلة
+
+- [شرح الواجهة](./interface) - وظائف البحث والتصفية
+- [مجموعتي](./my-collection) - المفضلة، العلامات والفرز
+- [إدارة الحساب](./account) - تسجيل الدخول والتسجيل

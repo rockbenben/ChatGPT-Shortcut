@@ -1,31 +1,60 @@
-# Начало работы
+---
+sidebar_label: Быстрый Старт
+title: Быстрый старт AI Short - Промпты для ChatGPT и DeepSeek
+description: Начните работу с AI Short за 30 секунд - Готовые промпты для ChatGPT, Gemini и DeepSeek. Повысьте продуктивность мгновенно.
+---
 
-Используя AiShort, вам нужно только скопировать выбранную подсказку в любую модель диалога ИИ, чтобы получить вывод в указанном направлении. Вот конкретные шаги:
+# Быстрый Старт
 
-1. Найдите или выберите нужную подсказку, а затем нажмите кнопку копирования на подсказке.
+При общении с ИИ хорошие промпты могут помочь вам быстрее получать качественные ответы. AiShort организовал для вас огромное количество практичных промптов, готовых к копированию и использованию.
 
-2. Скопируйте подсказку в ChatGPT, Gemini или любую модель диалога ИИ.
+## Основное Использование
 
-3. Введите свои требования в соответствии с подсказкой диалога.
+1. Найдите или выберите нужный промпт на главной странице
+2. Нажмите на карточку, чтобы просмотреть детали, или нажмите прямо на кнопку "Копировать"
+3. Откройте любую модель ИИ и вставьте промпт
+4. Следуйте инструкциям промпта, чтобы добавить ваш конкретный вопрос
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
-## Common AI models
+## Быстрый Доступ
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+| Я хочу...                         | Куда идти                                      |
+| --------------------------------- | ---------------------------------------------- |
+| Копировать и использовать промпты | Искать или просматривать прямо на [Главной](/) |
+| Собирать и управлять промптами    | [Моя Коллекция](./my-collection)               |
+| Создавать свои промпты            | [Пользовательские Промпты](./user-prompts)     |
+| Зарегистрироваться или Войти      | [Управление Аккаунтом](./account)              |
+| Находить публикации сообщества    | [Промпты Сообщества](./community)              |
 
-## Third-party API integration
+## Популярные Модели ИИ
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+### Международные Модели
+
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### Китайские Модели
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Ernie Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### API Платформы
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## Связанная Документация
+
+- [Руководство по Интерфейсу](./interface) - Функции поиска и фильтрации
+- [Моя Коллекция](./my-collection) - Коллекция, теги и сортировка
+- [Управление Аккаунтом](./account) - Вход и регистрация

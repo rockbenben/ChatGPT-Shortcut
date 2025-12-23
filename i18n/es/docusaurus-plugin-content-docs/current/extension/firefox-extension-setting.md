@@ -1,17 +1,23 @@
-# Configuración de Firefox
+---
+sidebar_label: Configuración de Extensión de Firefox
+title: Configuración Firefox - Anclar y Autorizar
+description: Configura Firefox correctamente. Aprende a anclar la extensión y autorizar la barra lateral en ChatGPT y Gemini.
+---
 
-Antes de usar el complemento de Firefox, se recomienda configurarlo en los dos pasos siguientes.
+# Configuración de Extensión de Firefox
 
-## 1. Configuración de acceso y fijación de extensiones
+Antes de usar la extensión de Firefox, se recomienda seguir estos dos pasos para la configuración.
 
-Primero, seleccione "Fijar extensión de acceso directo de ChatGPT" en la barra de herramientas de Firefox y luego ingrese al centro de extensiones. En el elemento de extensión de acceso directo de ChatGPT, seleccione "Opciones" para ingresar a la interfaz de configuración de la extensión. Los pasos específicos se muestran en la siguiente imagen:
+## 1. Anclar Extensión y Configuración de Acceso
 
-![Configuración de Firefox](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+Primero, selecciona "Anclar extensión ChatGPT Shortcut" (Pin to Toolbar) en la barra de herramientas de Firefox. Luego, ingresa al Centro de Extensiones, encuentra la entrada de la extensión ChatGPT Shortcut y selecciona "Opciones" (Options). Ingresa a la interfaz de configuración de la extensión. Los pasos específicos se muestran a continuación:
 
-## 2. Autorizar el funcionamiento de la extensión
+![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 
-En segundo lugar, para garantizar que la extensión funcione normalmente en sitios web como ChatGPT y Bard, debe hacer clic derecho en el ícono de la extensión en estos sitios web y seleccionar "Permitir siempre en este sitio". Esta acción otorga a la extensión permiso para modificar el contenido y agregar barras laterales en los sitios web designados.
+## 2. Autorizar Ejecución de la Extensión
 
-![Permiso de extensión de Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+En segundo lugar, para asegurar que la extensión funcione normalmente en sitios web como ChatGPT, Gemini, necesitas hacer clic derecho en el icono de la extensión en estos sitios web y seleccionar "Permitir siempre en este sitio web" (Always allow on \*\*\*). Esta operación otorga a la extensión permiso para agregar una barra lateral en el dominio especificado.
 
-Después de la instalación exitosa, puede ver el [tutorial de uso del complemento](./usage.md).
+![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+
+Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage.md).

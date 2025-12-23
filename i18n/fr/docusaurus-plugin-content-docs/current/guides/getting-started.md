@@ -1,31 +1,60 @@
-# Mise en route
+---
+sidebar_label: Bien commencer
+title: Débuter avec AI Short - ChatGPT en 30s
+description: Commencez en 30 secondes. Copiez des prompts pour ChatGPT et Gemini et améliorez instantanément la qualité de vos conversations.
+---
 
-Avec AiShort, il vous suffit de copier l'invite sélectionnée dans n'importe quel modèle de dialogue IA pour obtenir la sortie dans la direction spécifiée. Voici les étapes spécifiques :
+# Bien commencer
 
-1. Recherchez ou sélectionnez l'invite souhaitée, puis cliquez sur le bouton Copier de l'invite.
+Lorsque vous conversez avec l'IA, de bons prompts peuvent vous aider à obtenir des réponses de haute qualité plus rapidement. AiShort a organisé un grand nombre de prompts pratiques pour vous, prêts à être copiés et utilisés.
 
-2. Copiez l'invite dans ChatGPT, Gemini ou n'importe quel modèle de dialogue IA.
+## Utilisation de base
 
-3. Saisissez vos exigences en fonction de l'invite de dialogue.
+1. Recherchez ou sélectionnez le prompt dont vous avez besoin sur la page d'accueil
+2. Cliquez sur la carte pour voir les détails, ou cliquez directement sur le bouton "Copier"
+3. Ouvrez n'importe quel modèle d'IA et collez le prompt
+4. Suivez les instructions du prompt pour ajouter votre question spécifique
 
-![](https://img.newzone.top/gif/how-to-use-aishort.gif?imageMogr2/format/webp)
+![](/img/docs/how-to-use-aishort.gif)
 
-## Common AI models
+## Accès rapide
 
-- ChatGPT：https://chatgpt.com
-- Gemini: https://gemini.google.com/app
-- Claude: https://claude.ai/chats
-- 阿里通义千问：https://tongyi.aliyun.com/qianwen/
-- Kimi：https://kimi.moonshot.cn/
-- 豆包：https://www.doubao.com/chat/
-- 文心一言：https://yiyan.baidu.com
-- 智谱清言：https://chatglm.cn/detail
-- 腾讯元宝：https://yuanbao.tencent.com/chat
-- 讯飞星火：https://xinghuo.xfyun.cn/
-- 百川智能：https://ying.baichuan-ai.com/chat
+| Je veux...                              | Où aller                                             |
+| --------------------------------------- | ---------------------------------------------------- |
+| Copier et utiliser des prompts          | Rechercher ou parcourir directement sur [Accueil](/) |
+| Collectionner et gérer des prompts      | [Ma collection](./my-collection)                     |
+| Créer mes propres prompts               | [Prompts personnalisés](./user-prompts)              |
+| M'inscrire ou me connecter              | [Gestion de compte](./account)                       |
+| Découvrir les partages de la communauté | [Prompts de la communauté](./community)              |
 
-## Third-party API integration
+## Modèles d'IA courants
 
-- OpenRouter: https://openrouter.ai/chat
-- siliconflow: https://cloud.siliconflow.cn/playground/chat
-- grog: https://groq.com/
+### Modèles internationaux
+
+- [ChatGPT](https://chatgpt.com)
+- [Gemini](https://gemini.google.com/app)
+- [Claude](https://claude.ai/chats)
+- [Grok](https://grok.com/)
+
+### Modèles chinois
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Ernie Bot](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+
+### Plateformes API
+
+- [OpenRouter](https://openrouter.ai/chat)
+- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
+- [Groq](https://groq.com/)
+
+## Documentation associée
+
+- [Guide de l'interface](./interface) - Fonctions de recherche et de filtrage
+- [Ma collection](./my-collection) - Collection, balises et tri
+- [Gestion de compte](./account) - Connexion et inscription
