@@ -1,61 +1,103 @@
-import React, { useContext } from "react";
+import React from "react";
 import Layout from "@theme/Layout";
-import { Card, Typography, ConfigProvider, theme } from "antd";
-import themeConfig from "@site/src/pages/_components/themeConfig";
-import Comments from "@site/src/pages/_components/Comments";
+import { Card, Typography, theme, Flex, Divider } from "antd";
+import { MessageOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
-import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
+import Comments from "@site/src/components/Comments";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const FeedbackPage = () => {
-  const { userAuth } = useContext(AuthContext);
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
+  const { token } = theme.useToken();
+
   return (
-    <ConfigProvider
-      theme={{
-        ...themeConfig,
-        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-      }}>
-      <Layout
-        title={translate({ id: "feedback.title", message: "反馈与建议" })}
-        description={translate({
-          id: "feedback.description",
-          message: "您的反馈对我们很重要！",
-        })}>
-        <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
+    <Layout
+      title={translate({ id: "feedback.title", message: "反馈与建议" })}
+      description={translate({
+        id: "feedback.description",
+        message: "您的反馈对我们很重要！",
+      })}>
+      <main
+        style={{
+          backgroundColor: token.colorBgLayout,
+          minHeight: "calc(100vh - 60px)",
+          padding: "clamp(24px, 5vw, 40px) clamp(16px, 4vw, 24px)",
+        }}>
+        <Flex justify="center">
           <Card
             style={{
-              width: "80%",
-              boxShadow: "0px 0px 10px rgba(0,0,0,0.1)",
-              padding: "2rem",
-              borderRadius: "15px",
-            }}>
-            <Typography>
-              <Title style={{ textAlign: "center" }}>
-                <Translate id="feedback.welcome" description="The welcome title on the feedback page">
-                  欢迎给出反馈
-                </Translate>
-              </Title>
-              <Paragraph>
-                <Translate id="feedback.paragraph" description="The main paragraph on the feedback page">
-                  欢迎给出建议、想法和提示词，以便不断改进 ChatGPT Shortcut，并提高个人效率和生产力。如果您需要反馈
-                  bug，请提供问题发生的链接和相关情况。对于提示词内容，您可以提交多种语言的内容，或简单描述您对提示词的想法。我们期待能够拓展思维或产生高质量输出的提示词。一旦您提交的提示词被发布，您的贡献将会添加到页面上。您可以通过搜索贡献者名称（用户名）来找到对应的词条。
-                </Translate>
-              </Paragraph>
-            </Typography>
-            <Comments pageId={1000} currentUserId={userAuth?.data?.id ?? 0} type="page" />
+              width: "100%",
+              maxWidth: 1200,
+              boxShadow: token.boxShadowSecondary,
+              borderRadius: token.borderRadiusLG,
+            }}
+            styles={{ body: { padding: "clamp(24px, 5vw, 40px)" } }}
+            variant="borderless">
+            <Flex vertical align="center" gap="large">
+              {/* Enhanced Icon */}
+              <div
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: "50%",
+                  background: `linear-gradient(135deg, ${token.colorPrimaryBg} 0%, ${token.colorPrimaryBgHover} 100%)`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 36,
+                  color: token.colorPrimary,
+                  boxShadow: `0 8px 24px ${token.colorPrimary}20`,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                }}>
+                <MessageOutlined />
+              </div>
+
+              {/* Enhanced Title Section */}
+              <div style={{ textAlign: "center" }}>
+                <Title
+                  level={2}
+                  style={{
+                    margin: 0,
+                    marginBottom: 8,
+                    color: token.colorPrimary,
+                  }}>
+                  <Translate id="feedback.welcome">欢迎给出反馈</Translate>
+                </Title>
+                <Text type="secondary" style={{ fontSize: token.fontSizeLG }}>
+                  <Translate id="feedback.subtitle">您的每一份贡献，都在让这个开源项目变得更好</Translate>
+                </Text>
+              </div>
+
+              {/* Enhanced Description Box */}
+              <div
+                style={{
+                  backgroundColor: token.colorFillAlter,
+                  padding: "24px 24px 24px 28px",
+                  borderRadius: token.borderRadiusLG,
+                  width: "100%",
+                  border: `1px solid ${token.colorBorderSecondary}`,
+                  borderLeft: `4px solid ${token.colorPrimary}`,
+                  position: "relative",
+                }}>
+                <Paragraph style={{ marginBottom: 0, color: token.colorTextSecondary, lineHeight: 1.8 }}>
+                  <Translate id="feedback.paragraph">
+                    ChatGPT Shortcut 是一款开源的提示词管理工具，致力于提升 AI 使用效率。我们热切期待您的参与：无论是反馈
+                    Bug、提出功能建议，还是分享优质的提示词（Prompt）。对于提示词投稿，我们支持多种语言，一经采纳将被收录并署名（支持用户名搜索）。您的每一份贡献，都能帮助社区成员拓展思维、提升生产力。让我们共同打造更完美的提示词库！
+                  </Translate>
+                </Paragraph>
+              </div>
+
+              {/* Comments Section with Divider */}
+              <div style={{ width: "100%", minHeight: 400 }}>
+                <Divider style={{ margin: "8px 0 24px" }} />
+                <Comments pageId={1000} type="page" />
+              </div>
+            </Flex>
           </Card>
-        </div>
-      </Layout>
-    </ConfigProvider>
+        </Flex>
+      </main>
+    </Layout>
   );
 };
 
-export default function WrappedFeedbackPage() {
-  return (
-    <AuthProvider>
-      <FeedbackPage />
-    </AuthProvider>
-  );
-}
+export default FeedbackPage;

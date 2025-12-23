@@ -1,27 +1,37 @@
-import React, { useEffect, useState, useMemo, useCallback } from "react";
-import { ConfigProvider, theme } from "antd";
+import React, { useLayoutEffect, useState, useMemo } from "react";
+import { ConfigProvider, theme, App } from "antd";
 import "antd/dist/antd.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
+// 同步读取初始主题，避免 hydration 时的闪烁
+function getInitialTheme(): boolean {
+  if (ExecutionEnvironment.canUseDOM) {
+    return document.documentElement.getAttribute("data-theme") === "dark";
+  }
+  // SSR 时返回 true，匹配 Docusaurus 的 defaultMode: "dark"
+  return true;
+}
+
 export default function Root({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
 
-  const updateTheme = useCallback(() => {
+  useLayoutEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
-    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    setIsDarkMode(isDark);
-  }, []);
 
-  useEffect(() => {
-    if (!ExecutionEnvironment.canUseDOM) return;
+    const updateTheme = () => {
+      setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
+    };
+
+    // 初始化时同步一次（处理可能的 SSR 不匹配）
     updateTheme();
+
     const observer = new MutationObserver(updateTheme);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["data-theme"],
     });
     return () => observer.disconnect();
-  }, [updateTheme]);
+  }, []);
 
   const themeConfig = useMemo(
     () => ({
@@ -35,5 +45,9 @@ export default function Root({ children }) {
     [isDarkMode]
   );
 
-  return <ConfigProvider theme={themeConfig}>{children}</ConfigProvider>;
+  return (
+    <ConfigProvider theme={themeConfig}>
+      <App className="app-root">{children}</App>
+    </ConfigProvider>
+  );
 }

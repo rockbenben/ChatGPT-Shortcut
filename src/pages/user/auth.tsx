@@ -51,8 +51,7 @@ const CallbackPage = () => {
 
   const loginUserWithToken = async (token: string) => {
     try {
-      const response = await loginWithToken(token);
-      console.log("Login successful:", response);
+      await loginWithToken(token);
     } catch (error) {
       console.error("Login failed, token is invalid or expired:", error);
     } finally {

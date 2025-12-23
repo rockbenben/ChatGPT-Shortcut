@@ -9,8 +9,10 @@ current_dir = os.path.join(os.getcwd(), 'src', 'data')
 
 # 指定输入文件的路径
 input_path = os.path.join(current_dir, 'prompt.json')
+meta_cards_path = os.path.join(current_dir, 'meta_cards.json')
 
 output_dir_path = os.path.join(current_dir, 'default')
+output_dir_path_cards = os.path.join(current_dir, 'cards')
 
 # 提供的语言列表
 allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
@@ -18,6 +20,23 @@ allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi'
 # 读取 JSON 数据
 with open(input_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
+
+# 载入 meta description 映射（id -> {lang: description}）
+meta_map = {}
+if os.path.exists(meta_cards_path):
+    try:
+        with open(meta_cards_path, 'r', encoding='utf-8') as meta_file:
+            meta_data = json.load(meta_file)
+            # 期望结构：[{"id": number, "description": { lang: text }, "title": { lang: text }}]
+            for item in meta_data:
+                if isinstance(item, dict) and 'id' in item:
+                    meta_map[item['id']] = {
+                        'description': item.get('description', {}),
+                        'title': item.get('title', {})
+                    }
+    except Exception as e:
+        # 如果 meta 文件格式异常，不中断主流程
+        print(f"Warn: failed to load meta_description.json: {e}")
 
 # 初始化最大 ID 值
 max_id = -1
@@ -28,8 +47,8 @@ for item in data:
         max_id = item['id']
 
 # ID 数组
-favor_ids = [2, 209, 197, 109, 251, 20, 1]
-other_ids = [185, 199, 90, 180, 232, 204, 4]
+favor_ids = [2, 209, 251]
+other_ids = [185, 197, 109, 20, 1]
 
 # 过滤出指定 ID 的数据项
 favor_data = [item for item in data if item['id'] in favor_ids]
@@ -55,13 +74,41 @@ def process_and_save_data(filtered_data, file_prefix, ids_order):
         # 保存为新的 JSON 文件
         output_file_path = f'{output_dir_path}\\{file_prefix}_{lang}.json'
         with open(output_file_path, 'w', encoding='utf-8') as file:
-            json.dump(processed_data_sorted, file, ensure_ascii=False, indent=4)
+            json.dump(processed_data_sorted, file, ensure_ascii=False, separators=(',', ':'))
 
 # 处理和保存 favor_ids 和 other_ids 数据
 process_and_save_data(favor_data, 'favor', favor_ids)
 process_and_save_data(other_data, 'other', other_ids)
 
+os.makedirs(output_dir_path_cards, exist_ok=True)
+# 处理并保存每个 ID 和语言的数据
+def save_data_by_id_and_language(data):
+    for item in data:
+        for lang in allLanguages:
+            if lang in item:
+                # 提取当前语言的数据
+                lang_data = {
+                    "id": item["id"],
+                    lang: item[lang],
+                    "tags": item.get("tags", []),
+                    "website": item.get("website", ""),
+                    "count": item.get("weight", 0),
+                    # 合并 meta title（如果存在）
+                    "metaTitle": meta_map.get(item["id"], {}).get('title', {}).get(lang, ""),
+                    # 合并 meta description（如果存在）
+                    "metaDescription": meta_map.get(item["id"], {}).get('description', {}).get(lang, ""),
+                }
+                # 定义输出文件路径
+                output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
+                # 保存为 JSON 文件
+                with open(output_file_path, 'w', encoding='utf-8') as file:
+                    json.dump(lang_data, file, ensure_ascii=False, separators=(',', ':'))
+
+# 调用函数处理并保存数据
+save_data_by_id_and_language(data)
+
 ## 处理和保存 favor_ids、other_ids 和独立提示词数据
+
 # 指定输出文件的目录
 output_dir = current_dir
 
@@ -111,7 +158,7 @@ for lang in languages:
 
     # 写入数据
     with open(output_path, 'w', encoding='utf-8') as file:
-        json.dump(output_data[lang], file, ensure_ascii=False, indent=2)
+        json.dump(output_data[lang], file, ensure_ascii=False, separators=(',', ':'))
 
 # 在 # 更新 Prompt Page 页面的 prompt 内容 的步骤前，将 os.path.join(current_dir, 'users.zh.tsx') 复制到同路径的 'users.{lang}.tsx'
 # 遍历每个语言
@@ -137,28 +184,31 @@ for lang in languages[1:]:
 react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
 
-# Loop through each prompt
-for prompt in data:
-    # Convert the prompt to a JSON string, then load it back into a dict
-    prompt_json = json.dumps(prompt, ensure_ascii=False, indent=2)
+# Loop from 1 to 278 for each prompt ID
+for prompt_id in range(1, max_id+1):
+    # Loop through each language
+    for lang in allLanguages:
+        # 如果是中文，则直接在 base_react_jsx_dir 下创建文件
+        if lang == "zh":
+            output_path = react_jsx_dir / f"{prompt_id}.tsx"
+        # 对于其他语言，创建或使用指定的 i18n 目录
+        else:
+            prompt_i18n_dir = Path(os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'prompt'))
+            prompt_i18n_dir.mkdir(parents=True, exist_ok=True)
+            # 设置输出文件的路径
+            output_path = prompt_i18n_dir / f"{prompt_id}.tsx"
 
-    # Prepare the content for the React JSX file
-    content = f'''import React from "react";
-import PromptPage from "../_components/PromptPage";
-import {{ AuthProvider }} from "@site/src/pages/_components/AuthContext";
+        content = f'''import PromptPage from "@site/src/components/PromptPage";
+import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
 
-const prompt = {prompt_json};
-
-function PromptDetail() {{
-  return <AuthProvider><PromptPage prompt={{prompt}} /></AuthProvider>;
+export default function PromptDetail() {{
+  return <PromptPage prompt={{prompt}} currentLanguage="{lang}" />;
 }}
-
-export default PromptDetail;
 '''
 
-    # Write the content to a new file
-    with open(react_jsx_dir / f"{prompt['id']}.tsx", 'w', encoding='utf-8') as file:
-        file.write(content)
+        # Write the content to a new file named {prompt_id}.tsx
+        with open(output_path, 'w', encoding='utf-8') as file:
+            file.write(content)
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
 def replace_and_write(source_file, destination_file, replacements):
@@ -186,9 +236,8 @@ for lang in languages[1:]:
     
     # Prepare the replacements
     replacements = [
-        ('users.zh', f'users.{lang}'),
         ('favor_zh', f'favor_{lang}'),
-        ('other_zh', f'other_{lang}')
+        ('other_zh', f'other_{lang}'),
     ]
 
     # Replace and write to the target file

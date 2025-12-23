@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Form, Input, Button, message, Typography, ConfigProvider, theme, Card } from "antd";
+import { Form, Input, Button, Typography, Card, App, theme } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
-import themeConfig from "@site/src/pages/_components/themeConfig";
 
 const { Title } = Typography;
 
 const ResetPassword = () => {
   const [form] = Form.useForm();
+  const { token } = theme.useToken();
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -28,7 +28,7 @@ const ResetPassword = () => {
       messageApi.open({
         type: "error",
         content: translate({
-          id: "input.password.match",
+          id: "validation.password.match",
           message: "两次输入的密码不一致！",
         }),
         duration: 5,
@@ -47,7 +47,7 @@ const ResetPassword = () => {
         window.location.href = "/";
       }, 1500);
     } catch (error) {
-      console.error(translate({ id: "error.resetPassword", message: "Error resetting password:" }), error);
+      console.error(translate({ id: "message.resetPassword.error", message: "密码重置失败，请稍后重试：" }), error);
       messageApi.open({
         type: "error",
         content: <Translate id="message.resetPassword.error">密码重置失败，请稍后重试</Translate>,
@@ -58,8 +58,6 @@ const ResetPassword = () => {
     }
   };
 
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
-
   // Password validation rules
   const passwordRules = [
     {
@@ -69,7 +67,7 @@ const ResetPassword = () => {
     {
       min: 6,
       message: translate({
-        id: "input.password.valid",
+        id: "validation.password.length",
         message: "密码长度至少为 6 个字符",
       }),
     },
@@ -77,84 +75,87 @@ const ResetPassword = () => {
 
   return (
     <Layout title={translate({ id: "button.resetPassword", message: "重置密码" })}>
-      <ConfigProvider
-        theme={{
-          ...themeConfig,
-          algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "calc(100vh - 60px)",
+          backgroundColor: token.colorBgLayout,
+          padding: "50px 16px",
         }}>
-        {contextHolder}
-        <div
+        <Card
+          className="reset-password-card"
           style={{
-            maxWidth: 450,
+            maxWidth: 440,
             width: "100%",
-            margin: "50px auto",
-            padding: "0 16px",
+            boxShadow: token.boxShadowSecondary,
+            borderRadius: token.borderRadiusLG,
+            border: `1px solid ${token.colorBorderSecondary}`,
           }}>
-          <Card className="reset-password-card">
-            <Title level={2} style={{ textAlign: "center", marginBottom: 24 }}>
-              <Translate id="button.resetPassword">重置密码</Translate>
-            </Title>
-            <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }}>
-              <Form.Item
-                name="code"
-                label={<Translate id="placeholder.resetPassword.code">重置代码</Translate>}
-                rules={[
-                  {
-                    required: true,
-                    message: translate({
-                      id: "input.resetPassword.code",
-                      message: "请输入您的重置代码！",
-                    }),
-                  },
-                ]}>
-                <Input />
-              </Form.Item>
-
-              <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-                <Input.Password autoComplete="new-password" />
-              </Form.Item>
-
-              <Form.Item
-                name="confirmPassword"
-                label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
-                dependencies={["newPassword"]}
-                hasFeedback
-                rules={[
-                  {
-                    required: true,
-                    message: translate({
-                      id: "input.confirmPassword",
-                      message: "请确认新密码！",
-                    }),
-                  },
-                  ({ getFieldValue }) => ({
-                    validator(_, value) {
-                      if (!value || getFieldValue("newPassword") === value) {
-                        return Promise.resolve();
-                      }
-                      return Promise.reject(
-                        new Error(
-                          translate({
-                            id: "input.password.match",
-                            message: "两次输入的密码不一致！",
-                          })
-                        )
-                      );
-                    },
+          <Title level={2} style={{ textAlign: "center", marginBottom: 32 }}>
+            <Translate id="button.resetPassword">重置密码</Translate>
+          </Title>
+          <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }} size="large">
+            <Form.Item
+              name="code"
+              label={<Translate id="placeholder.resetPassword.code">重置代码</Translate>}
+              rules={[
+                {
+                  required: true,
+                  message: translate({
+                    id: "input.resetPassword.code",
+                    message: "请输入您的重置代码！",
                   }),
-                ]}>
-                <Input.Password autoComplete="new-password" />
-              </Form.Item>
+                },
+              ]}>
+              <Input placeholder={translate({ id: "placeholder.resetPassword.code", message: "重置代码" })} />
+            </Form.Item>
 
-              <Form.Item>
-                <Button type="primary" htmlType="submit" block loading={loading} style={{ marginTop: 16 }}>
-                  <Translate id="button.resetPassword">重置密码</Translate>
-                </Button>
-              </Form.Item>
-            </Form>
-          </Card>
-        </div>
-      </ConfigProvider>
+            <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
+              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })} />
+            </Form.Item>
+
+            <Form.Item
+              name="confirmPassword"
+              label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
+              dependencies={["newPassword"]}
+              hasFeedback
+              rules={[
+                {
+                  required: true,
+                  message: translate({
+                    id: "validation.confirmPassword.required",
+                    message: "请确认新密码！",
+                  }),
+                },
+                ({ getFieldValue }) => ({
+                  validator(_, value) {
+                    if (!value || getFieldValue("newPassword") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error(
+                        translate({
+                          id: "validation.password.match",
+                          message: "两次输入的密码不一致！",
+                        })
+                      )
+                    );
+                  },
+                }),
+              ]}>
+              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })} />
+            </Form.Item>
+
+            <Form.Item style={{ marginBottom: 0 }}>
+              <Button type="primary" htmlType="submit" block loading={loading} size="large">
+                <Translate id="button.resetPassword">重置密码</Translate>
+              </Button>
+            </Form.Item>
+          </Form>
+        </Card>
+      </div>
     </Layout>
   );
 };

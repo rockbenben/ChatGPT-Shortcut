@@ -1,0 +1,92 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.checkboxLabel:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background-color: var(--site-color-checkbox-checked-bg);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.checkboxLabel:active {
+  transform: scale(0.95);
+}
+
+input[type='checkbox'] + .checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1.5;
+  border-radius: 20px;
+  padding: 6px 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--site-color-card-background);
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+  white-space: nowrap;
+  color: var(--site-primary-font);
+}
+
+input:focus-visible + .checkboxLabel {
+  outline: 2px solid var(--ifm-color-primary);
+}
+
+input:checked + .checkboxLabel {
+  background: linear-gradient(135deg, var(--site-color-tag-selected-bg) 0%, var(--site-color-tag-selected-bg) 100%);
+  color: var(--site-color-tag-selected-text);
+  border: 1px solid var(--site-color-tag-selected-border);
+  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
+  text-shadow: none;
+}
+
+input:checked + .checkboxLabel:hover {
+  opacity: 0.95;
+  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
+  transform: translateY(-1px);
+}
+
+/* Ant Design Tag.CheckableTag base + hover styles */
+.tagSelect {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--site-primary-font);
+  background-color: var(--site-color-card-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.tagSelect:hover {
+  border-color: var(--ifm-color-primary) !important;
+  background-color: var(--site-color-card-background) !important;
+  box-shadow: var(--site-shadow-sm);
+  transform: translateY(-1px);
+}
+
+.tagSelect:active {
+  transform: scale(0.96);
+}
+
+/* Selected state */
+.tagSelectChecked {
+  color: var(--site-color-tag-selected-text);
+  background-color: var(--site-color-tag-selected-bg);
+  border: 1px solid var(--site-color-tag-selected-border);
+  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
+}
+
+.tagSelectChecked:hover {
+  background-color: var(--site-color-tag-selected-bg) !important;
+  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
+}

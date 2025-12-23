@@ -1,68 +1,27 @@
-import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
-import clsx from "clsx";
+import React, { useContext, useEffect, useState, useCallback, Suspense, useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import styles from "@site/src/pages/styles.module.css";
-import Link from "@docusaurus/Link";
-import { getCommPrompts, voteOnUserPrompt, createFavorite, updateFavorite } from "@site/src/api";
-import LoginComponent from "@site/src/pages/_components/user/login";
-import { AuthContext, AuthProvider } from "@site/src/pages/_components/AuthContext";
+import { useFavorite } from "@site/src/hooks/useFavorite";
+
+import { useLocation } from "@docusaurus/router";
+import SearchBar from "@site/src/components/SearchBar";
+import { NoResults } from "@site/src/components/SearchBar/NoResults";
+import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
+import LoginComponent from "@site/src/components/user/login";
+import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
-import { Modal, Typography, Tooltip, message, Pagination, Dropdown, Space, Button, Input, ConfigProvider, theme, Skeleton } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, CopyOutlined, CheckOutlined, HeartOutlined, LoginOutlined } from "@ant-design/icons";
-import themeConfig from "@site/src/pages/_components/themeConfig";
+import Link from "@docusaurus/Link";
+import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, theme, Row, Col, Breadcrumb } from "antd";
+import { UpOutlined, DownOutlined, HomeOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
-import { CommuPagePrompt } from "@site/src/pages/_components/ShowcaseCard/unifyPrompt";
+import PromptCard from "@site/src/components/PromptCard";
+import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
-const ShareButtons = React.lazy(() => import("@site/src/pages/_components/ShareButtons"));
+const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
 
-const { Search } = Input;
 const { Text } = Typography;
 
 const pageSize = 12;
-const SkeletonCard = React.memo(() => (
-  <li className="card shadow--md">
-    <div
-      className={clsx("card__body")}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "100%",
-        minHeight: "300px",
-      }}>
-      <div>
-        <Skeleton.Input active style={{ width: "75%", height: "20px", marginBottom: "8px" }} />
-        <Skeleton.Input active style={{ width: "30%", height: "14px", marginBottom: "12px" }} />
-        <Skeleton active title={false} paragraph={{ rows: 3, width: ["100%", "90%", "70%"] }} />
-      </div>
-      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <Skeleton.Button active size="small" />
-          <Skeleton.Button active size="small" />
-        </div>
-        <div style={{ display: "flex", gap: "8px" }}>
-          <Skeleton.Button active size="small" />
-          <Skeleton.Button active size="small" />
-        </div>
-      </div>
-    </div>
-  </li>
-));
-
-// 性能优化的骨架屏列表 - 使用预生成的静态数组
-const SkeletonList = React.memo(({ count = pageSize }: { count?: number }) => {
-  return (
-    <>
-      {Array.from({ length: count }, (_, index) => (
-        <SkeletonCard key={index} />
-      ))}
-    </>
-  );
-});
-
-// 预生成常用数量的骨架屏，避免运行时计算
-const SKELETON_12 = Array.from({ length: 12 }, (_, index) => <SkeletonCard key={index} />);
 
 interface PromptCardProps {
   commuPrompt: {
@@ -74,88 +33,16 @@ interface PromptCardProps {
     description: string;
     upvotes?: number;
     downvotes?: number;
+    upvoteDifference?: number;
   };
-  onVote: (promptId: number, action: string) => void;
-  onBookmark: (promptId: number) => void;
-  votedUpPromptIds: number[];
-  votedDownPromptIds: number[];
-  userAuth: any;
-  messageApi: any;
 }
 
-const PromptCard: React.FC<PromptCardProps> = React.memo(({ commuPrompt, onVote, onBookmark, votedUpPromptIds, votedDownPromptIds, userAuth, messageApi }) => {
-  const { copied, copyText } = useCopyToClipboard();
-  return (
-    <li className="card shadow--md">
-      <div className={clsx("card__body")} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-        <CommuPagePrompt commuPrompt={commuPrompt} />
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Space.Compact>
-            <Tooltip title={translate({ id: "theme.CodeBlock.copy", message: "复制" })}>
-              <Button
-                onClick={() => {
-                  copyText(commuPrompt.description);
-                }}>
-                {copied ? (
-                  <>
-                    <CheckOutlined /> <Translate id="theme.CodeBlock.copied">已复制</Translate>
-                  </>
-                ) : (
-                  <CopyOutlined />
-                )}
-              </Button>
-            </Tooltip>
-            <Tooltip title={translate({ message: "收藏" })}>
-              <Button
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to bookmark.");
-                    return;
-                  }
-                  onVote(commuPrompt.id, "upvote");
-                  onBookmark(commuPrompt.id);
-                }}>
-                <HeartOutlined />
-              </Button>
-            </Tooltip>
-          </Space.Compact>
-          <Space.Compact>
-            <Tooltip title={translate({ id: "upvote", message: "赞" })}>
-              <Button
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to vote.");
-                    return;
-                  }
-                  onVote(commuPrompt.id, "upvote");
-                }}>
-                <UpOutlined />
-                {votedUpPromptIds.includes(commuPrompt.id) ? (commuPrompt.upvotes || 0) + 1 : commuPrompt.upvotes || 0}
-              </Button>
-            </Tooltip>
-            <Tooltip title={translate({ id: "downvote", message: "踩" })}>
-              <Button
-                onClick={() => {
-                  if (!userAuth) {
-                    messageApi.warning("Please log in to vote.");
-                    return;
-                  }
-                  onVote(commuPrompt.id, "downvote");
-                }}>
-                <DownOutlined />
-                {votedDownPromptIds.includes(commuPrompt.id) ? (commuPrompt.downvotes || 0) + 1 : commuPrompt.downvotes || 0}
-              </Button>
-            </Tooltip>
-          </Space.Compact>
-        </div>
-      </div>
-    </li>
-  );
-});
-
 const CommunityPrompts = () => {
+  const { token } = theme.useToken();
   const { userAuth } = useContext(AuthContext);
-  const [messageApi, contextHolder] = message.useMessage();
+  const { message: messageApi } = App.useApp();
+  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
@@ -164,13 +51,22 @@ const CommunityPrompts = () => {
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("desc");
   const [searchTerm, setSearchTerm] = useState("");
-  const [Shareurl, setShareUrl] = useState("");
-  const [votedUpPromptIds, setVotedUpPromptIds] = useState<number[]>([]);
-  const [votedDownPromptIds, setVotedDownPromptIds] = useState<number[]>([]);
+  // Shareurl 使用 useMemo 避免额外的渲染周期
+  const Shareurl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return window.location.href;
+    }
+    return "";
+  }, []);
 
   useEffect(() => {
-    setShareUrl(window.location.href);
-  }, []);
+    const params = new URLSearchParams(location.search);
+    const name = params.get("name");
+    if (name !== searchTerm) {
+      setSearchTerm(name || "");
+      setCurrentPage(1);
+    }
+  }, [location.search]);
 
   useEffect(() => {
     setLoading(true);
@@ -183,11 +79,8 @@ const CommunityPrompts = () => {
         const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
         if (result && result[0].length > 0) {
           setUserPrompts(result[0]);
-          setTotal(result[1].data.meta.pagination.total);
+          setTotal(result[1].pagination.total);
         } else if (result && result[0].length === 0) {
-          if (searchTerm) {
-            messageApi.info("No results found for your search.");
-          }
           setUserPrompts([]);
           setTotal(0);
         }
@@ -201,190 +94,239 @@ const CommunityPrompts = () => {
     [messageApi]
   );
 
-  const onSearch = useCallback(
-    (value) => {
-      if (!userAuth) {
-        setOpen(true);
-        messageApi.warning("Please log in to search.");
-        return;
-      }
-      setSearchTerm(value);
-      setCurrentPage(1);
-    },
-    [userAuth, messageApi]
-  );
+  const handleBeforeSearch = useCallback(() => {
+    if (!userAuth) {
+      setOpen(true);
+      messageApi.warning("Please log in to search.");
+      return false;
+    }
+    return true;
+  }, [userAuth, messageApi]);
+
+  // 本次会话的投票记录（防止 API 请求期间重复点击）
+  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
 
   const vote = useCallback(
-    async (promptId, action) => {
-      // 防重复点击优化
-      if (action === "upvote" && votedUpPromptIds.includes(promptId)) return;
-      if (action === "downvote" && votedDownPromptIds.includes(promptId)) return;
+    async (promptId: number, action: "upvote" | "downvote") => {
+      // 未登录时引导登录
+      if (!userAuth) {
+        messageApi.warning("Please log in to vote.");
+        setOpen(true);
+        return;
+      }
+
+      // 防止 API 请求期间重复点击（后端会处理实际的重复投票逻辑）
+      const voteKey = `${promptId}_${action}`;
+      if (sessionVotedIdsRef.current.has(voteKey)) {
+        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        return;
+      }
+      sessionVotedIdsRef.current.add(voteKey);
+
+      // 保存原始数据用于回滚
+      const originalPrompt = userprompts.find((p) => p.id === promptId);
+
+      // Optimistic UI: 立即更新
+      setUserPrompts((prev) =>
+        prev.map((prompt) =>
+          prompt.id === promptId
+            ? {
+                ...prompt,
+                upvotes: action === "upvote" ? (prompt.upvotes || 0) + 1 : prompt.upvotes,
+                downvotes: action === "downvote" ? (prompt.downvotes || 0) + 1 : prompt.downvotes,
+                upvoteDifference: (prompt.upvoteDifference || 0) + (action === "upvote" ? 1 : -1),
+              }
+            : prompt
+        )
+      );
 
       try {
-        await voteOnUserPrompt(promptId, action);
+        const response = await voteOnUserPrompt(promptId, action);
+
+        // 使用后端返回的实际数据更新 UI
+        if (response?.data?.counts) {
+          const { upvotes, downvotes } = response.data.counts;
+          setUserPrompts((prev) =>
+            prev.map((prompt) =>
+              prompt.id === promptId
+                ? {
+                    ...prompt,
+                    upvotes,
+                    downvotes,
+                    upvoteDifference: upvotes - downvotes,
+                  }
+                : prompt
+            )
+          );
+        }
+
         messageApi.success(`Successfully ${action}d!`);
-        const updateVotedIds = action === "upvote" ? setVotedUpPromptIds : setVotedDownPromptIds;
-        updateVotedIds((prevIds) => [...prevIds, promptId]);
       } catch (err) {
-        messageApi.error(`Failed to ${action}. Error: ${err}`);
+        // 回滚到原始数据并移除会话标记
+        sessionVotedIdsRef.current.delete(voteKey);
+        if (originalPrompt) {
+          setUserPrompts((prev) =>
+            prev.map((prompt) =>
+              prompt.id === promptId
+                ? {
+                    ...prompt,
+                    upvotes: originalPrompt.upvotes,
+                    downvotes: originalPrompt.downvotes,
+                    upvoteDifference: originalPrompt.upvoteDifference,
+                  }
+                : prompt
+            )
+          );
+        }
+        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
+        messageApi.error(errorMessage);
       }
     },
-    [votedUpPromptIds, votedDownPromptIds, messageApi]
+    [userAuth, messageApi, userprompts]
   );
 
   const bookmark = useCallback(
     async (promptId) => {
-      try {
-        let userLoves;
-        let favoriteId;
-
-        if (!userAuth.data.favorites) {
-          const createFavoriteResponse = await createFavorite([promptId], true);
-          userLoves = [promptId];
-          favoriteId = createFavoriteResponse.data.id;
-        } else {
-          userLoves = userAuth.data.favorites.commLoves || [];
-          favoriteId = userAuth.data.favorites.id;
-
-          if (!userLoves.includes(promptId)) {
-            userLoves.push(promptId);
-            messageApi.open({
-              type: "success",
-              content: "Added to favorites successfully!",
-            });
-          }
-        }
-        await updateFavorite(favoriteId, userLoves, true);
-      } catch (err) {
-        messageApi.open({
-          type: "error",
-          content: `Failed to add to favorites. Error: ${err}`,
-        });
+      if (userAuth?.data?.favorites?.commLoves?.includes(promptId)) {
+        confirmRemoveFavorite(promptId, true);
+      } else {
+        addFavorite(promptId, true);
       }
     },
-    [userAuth, messageApi]
+    [userAuth?.data?.favorites?.commLoves, confirmRemoveFavorite, addFavorite]
   );
 
   const onChangePage = useCallback((page) => {
     setCurrentPage(page);
   }, []);
 
-  const handleFieldClick = useCallback((e) => {
-    setCurrentPage(1);
-    setSortField(e.key);
+  const onOpenModal = useCallback((data: any) => {
+    setModalData(data);
+    setModalOpen(true);
   }, []);
-
-  const handleOrderClick = useCallback((e) => {
-    setCurrentPage(1);
-    setSortOrder(e.key);
-  }, []);
-
-  const fieldMenuProps = {
-    items: [
-      {
-        label: translate({ id: "field.id", message: "发布时间" }),
-        key: "id",
-      },
-      {
-        label: translate({ id: "field.upvoteDifference", message: "投票支持" }),
-        key: "upvoteDifference",
-      },
-    ],
-    onClick: handleFieldClick,
-  };
-
-  const orderMenuProps = {
-    items: [
-      {
-        label: translate({ id: "order.ascending", message: "升序" }),
-        key: "asc",
-      },
-      {
-        label: translate({ id: "order.descending", message: "降序" }),
-        key: "desc",
-      },
-    ],
-    onClick: handleOrderClick,
-  };
-
-  const isDarkMode = typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark";
 
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <main className="margin-vert--md">
-        <ConfigProvider
-          theme={{
-            ...themeConfig,
-            algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-          }}>
-          {contextHolder}
-          <section className="margin-top--sm margin-bottom--sm">
-            <div className="container padding-vert--md">
-              <Space wrap style={{ marginBottom: "20px" }}>
-                <Link to="/" className="mainLink">
-                  <HomeOutlined /> <Translate id="link.home">返回首页</Translate>
-                </Link>
-                {userAuth ? (
-                  <Link to="/user/favorite" className="mainLink">
-                    <HeartOutlined /> <Translate id="link.myfavorite">我的收藏</Translate>
-                  </Link>
-                ) : (
-                  <Button onClick={() => setOpen(true)}>
-                    <LoginOutlined /> <Translate id="button.login">登录</Translate>
-                  </Button>
-                )}
-                <Dropdown.Button icon={<DownOutlined />} menu={fieldMenuProps}>
-                  {sortField === "id" ? <Translate id="field.id">发布时间</Translate> : <Translate id="field.upvoteDifference">支持度</Translate>}
-                </Dropdown.Button>
-                <Dropdown.Button icon={<DownOutlined />} menu={orderMenuProps}>
-                  {sortOrder === "asc" ? <Translate id="order.ascending">升序</Translate> : <Translate id="order.descending">降序</Translate>}
-                </Dropdown.Button>
-                <Search placeholder="Search" onSearch={onSearch} style={{ width: 200 }} allowClear />
-              </Space>
-              <ul className={clsx("clean-list", styles.showcaseList)}>
-                {loading ? (
-                  // 使用预生成的骨架屏，性能最优
-                  pageSize === 12 ? (
-                    SKELETON_12
-                  ) : (
-                    <SkeletonList count={pageSize} />
-                  )
-                ) : (
-                  userprompts.map((commuPrompt) => (
-                    <PromptCard
-                      key={commuPrompt.id}
-                      commuPrompt={commuPrompt}
-                      onVote={vote}
-                      onBookmark={bookmark}
-                      votedUpPromptIds={votedUpPromptIds}
-                      votedDownPromptIds={votedDownPromptIds}
-                      userAuth={userAuth}
-                      messageApi={messageApi}
-                    />
-                  ))
-                )}
-              </ul>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
-                <Text type="secondary" style={{ color: "var(--ifm-color-secondary)", fontSize: "10px" }}>
-                  {translate({
-                    id: "info.communityPrompts",
-                    message:
-                      "本页面展示的提示词均由网友分享和上传，我们无法保证内容的准确性、质量或完整性，同时也不对因内容引发的任何法律责任承担责任。如果发现有侵权或者其他问题，可以联系我们进行处理。我们将在收到通知后尽快处理。",
-                  })}
-                </Text>
-              </div>
+        <section className="margin-top--sm margin-bottom--sm">
+          <div className="container padding-vert--md">
+            <div
+              style={{
+                marginBottom: 24,
+                padding: "16px 24px",
+                background: token.colorBgContainer,
+                borderRadius: token.borderRadiusLG,
+                border: `1px solid ${token.colorBorderSecondary}`,
+                boxShadow: token.boxShadowTertiary,
+              }}>
+              <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
+                <Breadcrumb
+                  itemRender={(item, params, items, paths) => {
+                    const isLast = items.indexOf(item) === items.length - 1;
+                    return isLast || !item.path ? (
+                      <span>{item.title}</span>
+                    ) : (
+                      <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
+                        {item.title}
+                      </Link>
+                    );
+                  }}
+                  items={[
+                    {
+                      path: "/",
+                      title: (
+                        <>
+                          <HomeOutlined />
+                          <span>
+                            <Translate id="link.home">首页</Translate>
+                          </span>
+                        </>
+                      ),
+                    },
+                    {
+                      title: <Translate id="link.communityPrompts">社区提示词</Translate>,
+                    },
+                  ]}
+                />
+
+                <Flex gap="middle" align="center" wrap="wrap">
+                  <Segmented
+                    options={[
+                      { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },
+                      { label: translate({ id: "field.upvoteDifference", message: "支持度" }), value: "upvoteDifference", icon: <FireOutlined /> },
+                    ]}
+                    value={sortField}
+                    onChange={(value) => {
+                      setSortField(value as string);
+                      setCurrentPage(1);
+                    }}
+                  />
+                  <Segmented
+                    options={[
+                      { label: translate({ id: "order.descending", message: "降序" }), value: "desc", icon: <DownOutlined /> },
+                      { label: translate({ id: "order.ascending", message: "升序" }), value: "asc", icon: <UpOutlined /> },
+                    ]}
+                    value={sortOrder}
+                    onChange={(value) => {
+                      setSortOrder(value as string);
+                      setCurrentPage(1);
+                    }}
+                  />
+                  <SearchBar beforeSearch={handleBeforeSearch} />
+                </Flex>
+              </Flex>
+            </div>
+
+            {loading ? (
+              <PromptCardSkeleton count={pageSize} />
+            ) : userprompts.length === 0 ? (
+              <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
+                <NoResults />
+              </Flex>
+            ) : (
+              <Row gutter={[16, 16]}>
+                {userprompts.map((commuPrompt) => {
+                  const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
+                  return (
+                    <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                      <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={isBookmarked} onToggleFavorite={(id) => bookmark(Number(id))} onOpenModal={onOpenModal} />
+                    </Col>
+                  );
+                })}
+              </Row>
+            )}
+
+            <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
+              <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center", marginTop: 16, marginBottom: -24 }}>
+              <Text type="secondary" style={{ fontSize: "12px", textAlign: "center", maxWidth: 800 }}>
+                {translate({
+                  id: "info.communityPrompts",
+                  message: "本页面提示词由网友分享上传。我们不对内容的准确性、质量或完整性做出保证，也不承担因内容引发的法律责任。如发现侵权或其他问题，请联系我们处理。",
+                })}
+              </Text>
+            </div>
+
+            {open && (
               <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
                 <LoginComponent />
               </Modal>
+            )}
+            {modalOpen && (
               <Suspense fallback={null}>
-                <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
+                <PromptDetailModal open={modalOpen} onCancel={() => setModalOpen(false)} data={modalData} />
               </Suspense>
-            </div>
-          </section>
-        </ConfigProvider>
+            )}
+            <Suspense fallback={null}>
+              <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
+            </Suspense>
+            <FloatButton.BackTop />
+          </div>
+        </section>
       </main>
     </Layout>
   );

@@ -5,17 +5,90 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
   .showcaseFavorite {
     padding-top: 0.5rem !important;
     padding-bottom: 0.1rem !important;
   }
-  
-  .showcaseList {
-    gap: 1rem !important;
+
+  .checkboxList {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for cleaner look */
+  }
+
+  .checkboxList::-webkit-scrollbar {
+    display: none;
   }
 }
 
+/* 过滤器容器 - 桌面端预留高度防止 CLS */
+.filterContainer {
+  min-height: 144px;
+}
+
+@media (max-width: 767px) {
+  .filterContainer {
+    min-height: auto;
+  }
+}
+
+/* Hero Section */
+.heroSection {
+  padding: 1rem 0 1rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 181px; /* 桌面端预留高度，防止 CLS */
+}
+
+/* 移动端 heroSection 不需要预留高度 */
+@media (max-width: 767px) {
+  .heroSection {
+    min-height: auto;
+  }
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, var(--ifm-color-primary-lightest) 0%, transparent 70%);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-content-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Filter Container */
 .filterCheckbox {
   justify-content: space-between;
   display: flex;
@@ -42,57 +115,27 @@
 
 .checkboxList {
   flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.5rem;
 }
 
 .checkboxListItem {
   user-select: none;
   white-space: nowrap;
-  height: 32px;
+  height: auto;
   font-size: 0.8rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  margin: 0;
 }
 
 .checkboxListItem:last-child {
   margin-right: 0;
 }
 
-.activeItem {
-  display: flex;
-  cursor: pointer;
-  line-height: 1.5;
-  border-radius: 6px;
-  opacity: 1;
-  background-color: var(--site-color-checkbox-checked-bg);
-  border: 2px solid var(--ifm-color-primary-darkest);
-}
-
-.activeItem:hover {
-  opacity: 0.75;
-  box-shadow: 0 0 2px 1px var(--ifm-color-primary-dark);
-}
-
-.searchContainer {
-  margin-left: auto;
-}
-
-.searchContainer input {
-  height: 30px;
-  border-radius: 15px;
-  padding: 10px;
-  border: 1px solid gray;
-}
-
-.showcaseList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
 .showcaseFavorite {
-  padding-top: 1.5rem;
-  padding-bottom: 2rem;
+  padding: 1rem 0;
   background-color: var(--site-color-favorite-background);
+  border-top: 1px solid var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
 }
 
 .showcaseFavoriteHeader {
@@ -100,13 +143,14 @@
   align-items: center;
 }
 
-.showcaseFavoriteHeader > h2 {
-  margin-bottom: 0;
+.showcaseFavoriteHeader > h2,
+.showcaseFavoriteHeader > h3 {
+  margin: 0;
 }
 
 .showcaseFavoriteHeader > svg {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }
 
 .svgIconFavoriteXs,
@@ -123,16 +167,78 @@
   margin-left: 1rem;
 }
 
-.onToggleButton {
-  background-color: #18816a;
-  color: var(--site-color-favorite-background);
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.3rem;
-  text-decoration: none;
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-right: 0.75rem;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
+/* Prompt Card Styles */
+.promptCard {
+  height: 100%;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid var(--ifm-color-emphasis-200) !important;
+  background: var(--ifm-card-background-color) !important;
 }
+
+.promptCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+.promptCard :global(.ant-card-body) {
+  padding: 16px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== 性能优化样式 ==================== */
+
+/**
+ * 虚拟渲染优化 - 使用 content-visibility 让浏览器跳过屏幕外内容的渲染
+ * 注意：仅用于大批量列表场景，不在首屏使用
+ */
+.virtualCardContainer {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 310px; /* auto 关键字让浏览器记住实际高度 */
+}
+
+/**
+ * 卡片行容器优化 - 应用到 Row 组件
+ * contain: layout style 告诉浏览器此容器内的变化不会影响外部
+ */
+.cardRowContainer {
+  contain: layout style;
+}
+
+/**
+ * 骨架屏容器 - 预留空间防止 CLS
+ */
+.skeletonContainer {
+  min-height: 310px; 
+  contain: layout style;
+}
+
+/**
+ * 卡片列优化 - 移除 content-visibility 避免 CLS
+ * 仅使用 contain 来隔离布局计算
+ */
+.cardColumn {
+  /* 移除 content-visibility 以避免 CLS 问题 */
+  contain: layout style;
+  /* 设置最小高度来预留空间，减少布局跳动 */
+  min-height: 310px;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+  .virtualCardContainer {
+    contain-intrinsic-block-size: auto 310px;
+  }
+
+  .skeletonContainer {
+    min-height: 310px;
+  }
+
+  .cardColumn {
+    min-height: 310px; /* 移动端卡片高度 */
+  }
+}
+

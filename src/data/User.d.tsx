@@ -17,7 +17,6 @@ export type User = {
 };
 
 export type TagType =
-  | "favorite"
   | "write"
   | "article"
   | "code"

@@ -1,249 +1,241 @@
 import { translate } from "@docusaurus/Translate";
 import { User, TagType, Tag } from "./User.d";
+import { magenta, cyan, gold, blue, volcano, purple, lime, green, orange, red, yellow } from "@ant-design/colors";
 export type { User, TagType, Tag };
 
 export const Tags: { [type in TagType]: Tag } = {
-  favorite: {
-    label: translate({ message: "收藏" }),
-    description: translate({
-      message: "收藏",
-      id: "showcase.tag.favorite.description",
-    }),
-    color: "#e9669e",
-  },
-
   write: {
-    label: translate({ message: "写作辅助" }),
+    label: translate({ message: "写作辅助", id: "showcase.tag.write.label" }),
     description: translate({
-      message: "对文章的语法和风格进行润色，以帮助你完成写作",
+      message: "润色文章语法、优化表达风格、提升写作质量",
       id: "showcase.tag.write.description",
     }),
-    color: "#75581e",
+    color: blue[5],
   },
 
   article: {
-    label: translate({ message: "文章/报告" }),
+    label: translate({ message: "文章/报告", id: "showcase.tag.article.label" }),
     description: translate({
-      message: "小说、论文、新闻、剧本、报告等有一定样式的文章",
+      message: "生成小说、论文、新闻稿、剧本、研究报告等各类文章",
       id: "showcase.tag.article.description",
     }),
-    color: "#dfd545",
+    color: volcano[5],
   },
 
   code: {
-    label: translate({ message: "IT/编程" }),
+    label: translate({ message: "IT/编程", id: "showcase.tag.code.label" }),
     description: translate({
-      message: "虽然说是编程，但 ChatGPT 是按照要求给出编程步骤的建议或简单的样例代码，这些代码只能作为测试，仍然需要程序员来修改。",
+      message: "提供编程建议、代码示例、调试方案和技术指导",
       id: "showcase.tag.code.description",
     }),
-    color: "#8c2f00",
+    color: green[5],
   },
 
   ai: {
-    label: translate({ message: "AI" }),
+    label: translate({ message: "AI", id: "showcase.tag.ai.label" }),
     description: translate({
-      message: "AI",
+      message: "人工智能相关的提示词和应用场景",
       id: "showcase.tag.ai.description",
     }),
-    color: "#ff6100", // Facebook blue
+    color: purple[5],
   },
 
   living: {
-    label: translate({ message: "生活质量" }),
+    label: translate({ message: "生活质量", id: "showcase.tag.living.label" }),
     description: translate({
-      message: "健身、营养、厨师、化妆、造型",
+      message: "健身指导、营养建议、烹饪技巧、美妆造型等生活服务",
       id: "showcase.tag.living.description",
     }),
-    color: "#cf92e0",
+    color: gold[5],
   },
 
   interesting: {
-    label: translate({ message: "趣味知识" }),
+    label: translate({ message: "趣味科普", id: "showcase.tag.interesting.label" }),
     description: translate({
-      message: "趣味知识",
+      message: "有趣的冷知识、科普内容和趣味问答",
       id: "showcase.tag.interesting.description",
     }),
-    color: "#127f82",
+    color: cyan[5],
   },
 
   life: {
-    label: translate({ message: "自助百科" }),
+    label: translate({ message: "生活百科", id: "showcase.tag.life.label" }),
     description: translate({
-      message: "生活知识/自助百科",
+      message: "日常生活中的实用知识和问题解决方案",
       id: "showcase.tag.life.description",
     }),
-    color: "#a44fb7",
+    color: red[5],
   },
 
   social: {
-    label: translate({ message: "心理/社交" }),
+    label: translate({ message: "心理/社交", id: "showcase.tag.social.label" }),
     description: translate({
-      message: "心理/社交",
+      message: "心理咨询、情感分析、社交技巧和人际沟通",
       id: "showcase.tag.social.description",
     }),
-    color: "#ee3308",
+    color: blue[6],
   },
 
   philosophy: {
-    label: translate({ message: "哲学/宗教" }),
+    label: translate({ message: "哲学/宗教", id: "showcase.tag.philosophy.label" }),
     description: translate({
-      message: "哲学/宗教",
+      message: "哲学思考、宗教文化和人生智慧探讨",
       id: "showcase.tag.philosophy.description",
     }),
-    color: "#ffcaa9",
+    color: orange[5],
   },
 
   mind: {
-    label: translate({ message: "发散思维" }),
+    label: translate({ message: "思维训练", id: "showcase.tag.mind.label" }),
     description: translate({
-      message: "质疑、思考、联想、归纳",
+      message: "激发创意、批判性思考和逻辑推理能力",
       id: "showcase.tag.mind.description",
     }),
-    color: "#86699e",
+    color: lime[6],
   },
 
   pedagogy: {
-    label: translate({ message: "教育/学生" }),
+    label: translate({ message: "教育/学生", id: "showcase.tag.pedagogy.label" }),
     description: translate({
-      message: "与学生教育相关的内容",
+      message: "学习辅导、作业帮助、考试准备等学生相关内容",
       id: "showcase.tag.pedagogy.description",
     }),
-    color: "#fe0999",
+    color: magenta[6],
   },
 
   academic: {
-    label: translate({ message: "学术/教师" }),
+    label: translate({ message: "学术/教师", id: "showcase.tag.academic.label" }),
     description: translate({
-      message: "与学术或学校相关的人和事物",
+      message: "学术研究、教学设计、课程规划等教师工作支持",
       id: "showcase.tag.academic.description",
     }),
-    color: "#fe6829",
+    color: green[6],
   },
 
   games: {
-    label: translate({ message: "游戏" }),
+    label: translate({ message: "趣味游戏", id: "showcase.tag.games.label" }),
     description: translate({
-      message: "游戏",
+      message: "文字游戏、角色扮演和互动娱乐",
       id: "showcase.tag.games.description",
     }),
-    color: "#574C57",
+    color: purple[6],
   },
 
   tool: {
-    label: translate({ message: "工具" }),
+    label: translate({ message: "效率工具", id: "showcase.tag.tool.label" }),
     description: translate({
-      message: "工具",
+      message: "提升工作效率的实用工具",
       id: "showcase.tag.tool.description",
     }),
-    color: "#4267b2", // Facebook blue
+    color: volcano[6],
   },
 
   interpreter: {
-    label: translate({ message: "终端/解释器" }),
+    label: translate({ message: "终端/解释器", id: "showcase.tag.interpreter.label" }),
     description: translate({
-      message: "终端/解释器",
+      message: "模拟命令行终端和各类编程语言解释器",
       id: "showcase.tag.interpreter.description",
     }),
-    color: "#ffa11c", // Facebook blue
+    color: cyan[6],
   },
 
   language: {
-    label: translate({ message: "语言/翻译" }),
+    label: translate({ message: "语言/翻译", id: "showcase.tag.language.label" }),
     description: translate({
-      message: "语言生成、转换、翻译、识别等多种工具",
+      message: "多语言翻译、语言学习、文本转换和语言识别",
       id: "showcase.tag.language.description",
     }),
-    color: "#39ca30",
+    color: gold[6],
   },
 
   speech: {
-    label: translate({ message: "辩论/演讲" }),
+    label: translate({ message: "辩论/演讲", id: "showcase.tag.speech.label" }),
     description: translate({
-      message: "辩论/演讲",
+      message: "辩论技巧、演讲稿撰写和口才训练",
       id: "showcase.tag.speech.description",
     }),
-    color: "#9c1d10",
+    color: blue[4],
   },
 
   comments: {
-    label: translate({ message: "点评/评鉴" }),
+    label: translate({ message: "点评/评鉴", id: "showcase.tag.comments.label" }),
     description: translate({
-      message: "点评/评鉴",
+      message: "专业点评、作品评价和鉴赏分析",
       id: "showcase.tag.comments.description",
     }),
-    color: "#eeef99",
+    color: red[6],
   },
 
   text: {
-    label: translate({ message: "文本/词语" }),
+    label: translate({ message: "文本/词语", id: "showcase.tag.text.label" }),
     description: translate({
-      message: "文本/词语",
+      message: "文本处理、词语解析和语言文字相关任务",
       id: "showcase.tag.text.description",
     }),
-    color: "#554236",
+    color: green[4],
   },
 
   company: {
-    label: translate({ message: "企业职能" }),
+    label: translate({ message: "企业职能", id: "showcase.tag.company.label" }),
     description: translate({
-      message: "一般企业内的岗位",
+      message: "企业管理、人力资源、市场营销等职能岗位",
       id: "showcase.tag.company.description",
     }),
-    color: "#124f4e",
+    color: purple[4],
   },
 
   seo: {
-    label: translate({ message: "SEO" }),
+    label: translate({ message: "SEO", id: "showcase.tag.seo.label" }),
     description: translate({
-      message: "文本/关键词拓展生成",
+      message: "搜索引擎优化、关键词拓展和内容营销",
       id: "showcase.tag.seo.description",
     }),
-    color: "#BC9F77",
+    color: orange[6],
   },
 
   doctor: {
-    label: translate({ message: "医生" }),
+    label: translate({ message: "医疗健康", id: "showcase.tag.doctor.label" }),
     description: translate({
-      message: "医生",
+      message: "健康咨询、疾病科普和医疗建议",
       id: "showcase.tag.doctor.description",
     }),
-    color: "#0e7774",
+    color: cyan[4],
   },
 
   finance: {
-    label: translate({ message: "金融顾问" }),
+    label: translate({ message: "金融顾问", id: "showcase.tag.finance.label" }),
     description: translate({
-      message: "金融行业的岗位",
+      message: "投资理财、金融分析和财务规划建议",
       id: "showcase.tag.finance.description",
     }),
-    color: "#14cfc3",
+    color: volcano[4],
   },
 
   music: {
-    label: translate({ message: "音乐" }),
+    label: translate({ message: "音乐艺术", id: "showcase.tag.music.label" }),
     description: translate({
-      message: "音乐",
+      message: "音乐创作、乐理学习和作品鉴赏",
       id: "showcase.tag.music.description",
     }),
-    color: "#5cecdc",
+    color: magenta[4],
   },
 
   professional: {
-    label: translate({ message: "行业顾问" }),
+    label: translate({ message: "专业顾问", id: "showcase.tag.professional.label" }),
     description: translate({
-      message: "律师、茶艺师等需要专业知识的岗位",
+      message: "律师、会计师、咨询师等专业领域顾问",
       id: "showcase.tag.professional.description",
     }),
-    color: "#ffcfc3",
+    color: lime[5],
   },
 
   contribute: {
-    label: translate({ message: "投稿" }),
+    label: translate({ message: "用户分享", id: "showcase.tag.contribute.label" }),
     description: translate({
-      message: "来自大家的投稿作品，能帮助我们开拓思路",
+      message: "社区用户分享的优质提示词",
       id: "showcase.tag.contribute.description",
     }),
-    color: "#cecd21",
+    color: gold[4],
   },
 };
 
