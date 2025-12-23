@@ -187,7 +187,11 @@ const UserProfile = () => {
 
   return (
     <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
-      <div style={{ minHeight: "calc(100vh - 60px)", padding: "24px 0" }}>
+      <main
+        style={{
+          minHeight: "calc(100vh - 60px)",
+          padding: "24px 0",
+        }}>
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
@@ -492,7 +496,7 @@ const UserProfile = () => {
             </Space>
           </Col>
         </Row>
-      </div>
+      </main>
     </Layout>
   );
 };

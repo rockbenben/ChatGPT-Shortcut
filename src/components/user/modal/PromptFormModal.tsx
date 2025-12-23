@@ -104,7 +104,6 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           <Input.TextArea
             rows={3}
             maxLength={2000}
-            showCount
             placeholder={translate({
               id: "placeholder.promptNotes",
               message: "关于此提示词的额外说明（选填）",
