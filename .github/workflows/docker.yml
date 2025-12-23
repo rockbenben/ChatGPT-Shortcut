@@ -5,6 +5,13 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE_NAME: chatgpt-shortcut
+
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub and GHCR
@@ -29,21 +36,28 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Lowercase GitHub Owner
+        run: |
+          echo "GH_OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: "${{ github.repository_owner }}"
 
       - name: 🏷️ Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ vars.DOCKERHUB_USERNAME }}/chatgpt-shortcut
-            ghcr.io/${{ github.repository_owner }}/chatgpt-shortcut
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
+            ghcr.io/${{ env.GH_OWNER_LC }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=tag
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
             type=raw,value=latest
 
-      # Build and push Docker image to both Docker Hub and GHCR
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:

@@ -1,5 +1,5 @@
 # 第一阶段: 构建静态网站
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 # 设置工作目录
 WORKDIR /app
