@@ -1,10 +1,25 @@
-# 拡張機能のインストール
+---
+sidebar_label: ブラウザ拡張機能のインストール
+title: AI Short 拡張機能：Chrome/Edge/Firefox
+description: AI作業を効率化！Chrome、Edge、Firefox対応の拡張機能をダウンロード。サイドバーからプロンプトを即座に呼び出せます。
+---
 
-AiShort (ChatGPT ショートカット) は、Chrome、Edge、Firefox、その他の Chromium ベースのブラウザーと互換性のあるブラウザー拡張機能です。この拡張機能は、ChatGPT ショートカットの Web バージョンの機能を提供するだけでなく、サイドバーや自動ウィンドウ アクティベーションなどの独自の要素も備えています。ChatGPT またはカスタム ページで自動的に起動することも、`Alt+Shift+S` ショートカット キーを使用して手動でアクティブ化することもできます。ダウンロード チャネルは次のとおりです：
+# ブラウザ拡張機能のインストール
 
-- **Chrome**: [Chrome ウェブストア](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox ブラウザー アドオン](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [GitHub リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+AiShort (ChatGPT Shortcut) 拡張機能は、いつでも AIShort プロンプトライブラリを呼び出すのに役立ち、仕事や学習の効率を向上させます。Chrome、Edge、Firefox などの主流ブラウザをサポートし、サイドバーとショートカット機能を提供します。`Alt + Shift + S` で拡張機能をすばやく呼び出すことができます。
 
-さらに、Tampermonkey スクリプトも提供しています — [**ChatGPT ショートカット Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) では、ユーザーは一致するドメイン名をカスタマイズし、どの Web サイトでも AiShort サイドバーを使用できます。ただし、ChatGPT ページにはスクリプト コンテンツ挿入の制限があるため、スクリプトのサイドバー機能は ChatGPT ページ上のポップアップを介してアクティブ化されます。
+## 📥 公式ダウンロードチャンネル
+
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **国内ミラーダウンロード（ストアにアクセスできない場合に使用）**: [Alist クラウドドライブ](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[藍奏雲（パスワード: 1qow）](https://wwva.lanzouq.com/b01lsc9vi)
+
+## 🧩 Tampermonkey スクリプト
+
+拡張機能形式に加えて、[**ChatGPT Shortcut Anywhere Tampermonkey スクリプト**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)も提供しています。
+Tampermonkey は、ユーザーがカスタムスクリプトを実行して Web ページの機能を強化できるブラウザ拡張機能です。
+
+このスクリプトを使用すると、任意の Web サイトで AiShort サイドバーを呼び出すことができます。
+ただし、ChatGPT の公式ページのスクリプト注入制限により、そのページではスクリプトはサイドバーではなく**ポップアップ**として実行されることに注意してください。

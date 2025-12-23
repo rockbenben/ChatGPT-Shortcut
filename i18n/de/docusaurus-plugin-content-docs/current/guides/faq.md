@@ -1,27 +1,53 @@
-# FAQs
+---
+sidebar_label: Häufig gestellte Fragen
+title: AI Short FAQ - Optimierung & Halluzinationen
+description: Lösen Sie häufige KI-Probleme. Erfahren Sie, wie Sie Prompts optimieren, Halluzinationen vermeiden und Daten sichern.
+---
 
-## Warum sind die vorgeschlagenen Wörter in Englisch?
+# Häufig gestellte Fragen
 
-AiShort wurde geschaffen, um die Nutzung von ChatGPT durch nicht-englischsprachige Benutzer zu erleichtern. Allerdings sind alle vorgeschlagenen Wörter in Englisch. Dies liegt daran, dass ChatGPT ein besseres Verständnis von Englisch im Vergleich zu anderen Sprachen hat. Selbst MOSS, das erste chinesische Dialog-Sprachmodell im großen Maßstab, gibt zu, dass seine englischen Antworten überlegen sind. Daher wird empfohlen, englische Vorschläge zu verwenden. (MOSS ist nicht mehr verfügbar)
+## Warum englische Prompts verwenden?
 
-Obwohl die Verwendung von nicht-englischen Vorschlägen akzeptable Ergebnisse liefern kann, können die Ergebnisse erheblich variieren, wenn Sie dieselben nicht-englischen Eingaben erneut verwenden. Da ChatGPT das Verständnis nicht-englischer Eingaben jedes Mal unterschiedlich ist, empfiehlt es sich, englische Eingaben für produktivitätsorientierte Anfragen zu verwenden, um das gewünschte Ergebnis zu erzielen. Darüber hinaus werden die Antworten, die durch englische Eingaben generiert werden, wahrscheinlich auf Englisch sein. Sie können die Antwortensprache auf Chinesisch festlegen, indem Sie am Ende der Anfrage "auf Chinesisch antworten" hinzufügen. Wenn Ihre Muttersprache eine andere ist, ersetzen Sie bitte "Chinesisch" durch Ihre eigene Muttersprache.
+KI-Modelle haben im Allgemeinen ein besseres Verständnis von Englisch, und die Verwendung englischer Prompts kann stabilere Ausgabeergebnisse liefern.
 
-## Muss ich die Anfrage jedes Mal eingeben?
+Obwohl die Verwendung chinesischer Prompts auch anständige Ergebnisse erzielen kann, kann die wiederholte Eingabe desselben chinesischen Prompts zu erheblichen Abweichungen in den Ergebnissen führen. Daher wird empfohlen, in wichtigen Szenarien englische Prompts zu verwenden.
 
-In der API können Sie die Anfrage als "Systemanfrage" festlegen, so dass Sie die Anfrage nicht jedes Mal eingeben müssen. ChatGPT wird den Anweisungen entsprechend der Systemanfrage folgen.
+**Antwort auf Chinesisch spezifizieren**: Fügen Sie `respond in Chinese` am Ende des Prompts hinzu, um eine Antwort auf Chinesisch zu erhalten.
 
-In der Webversion von ChatGPT können Sie, wenn Sie die Hauptanfrage nicht gewechselt haben, einfach den nachfolgenden Antwortinhalt in Anführungszeichen setzen, so dass Sie die Anfrage nicht jedes Mal eingeben müssen. Wenn die generierte Antwort nicht mit den Anforderungen der Anfrage übereinstimmt, bedeutet dies, dass ChatGPT die Anfrage vergessen hat, und in solchen Fällen müssen Sie die Anfrage erneut eingeben, um sie neu auszurichten. Darüber hinaus ist jeder Konversationslink eindeutig, und Sie können häufig verwendete Konversationen als Lesezeichen speichern, um sie in Zukunft zu verwenden.
+## Muss ich den Prompt jedes Mal eingeben?
 
-## Verzögerung bei der Eingabesuche
+**API-Nutzung**: Sie können den Prompt als "system prompt" festlegen, der automatisch auf nachfolgende Konversationen angewendet wird.
 
-Die Suchfunktion basiert auf der Vorführung von Docusaurus und hat ein Problem mit dem Eingabemethodenfokus auf der PC-Seite. Nachdem ich das Problem bei Docusaurus gemeldet habe, haben sie erwähnt, dass sie versuchen werden, es zu beheben, aber bisher bleibt das Problem ungelöst mit dem Kommentar: "FWIW, Sie sollten sowieso kein Chinesisch verwenden, da die Vorführung nicht lokalisiert ist." Deshalb habe ich die Suchkomponente in zwei Typen eingeteilt: Mobil und PC. Die Suchlogik für Mobilgeräte bleibt unverändert, während für das Surfen mit einem Bildschirm mit einer Breitenschwelle über 768px habe ich die "Debounce"-Funktion eingeführt, um das Problem mit der Eingabemethode zu beheben. Dadurch ergeben sich jedoch zwei Probleme auf der PC-Seite: Nicht-englische Eingaben müssen innerhalb von 800 Millisekunden abgeschlossen sein, und die Aktualisierung der PC-Suche erfolgt mit einer Verzögerung von 800 Millisekunden anstelle von sofort. Wenn Sie eine bessere Lösung haben, geben Sie bitte Feedback.
+**Web-Version**: Wenn Sie das Thema nicht gewechselt haben, merkt sich ChatGPT die Prompt-Einstellungen der aktuellen Konversation. Wenn die Antwort beginnt, von den Erwartungen abzuweichen, bedeutet dies, dass die KI den Prompt "vergessen" hat und Sie ihn erneut eingeben müssen.
 
-## Ausgabe von falschen Informationen
+**Tipp**: Speichern Sie häufig genutzte Konversationen als Lesezeichen für einen schnellen Zugriff später.
 
-Obwohl ChatGPT sehr leistungsfähig ist, ist es nicht unfehlbar. Manchmal kann es falsche Informationen ausgeben. Zum Beispiel musste ich Hunderte von Informationen in AiShort eingeben und bat ChatGPT, die Daten in einem bestimmten Format umzuwandeln. Während des Konvertierungsprozesses bemerkte ich jedoch, dass ChatGPT einige Informationen ungenau geschrieben hatte. Zum Beispiel war ein Label im Text "Filmkritiker", aber ChatGPT änderte es in "Kinokritiker". Obwohl dies im Text selbst keine Auswirkungen haben mag, würde es einen Fehler verursachen, wenn es im Code verwendet wird. Daher ist es beim Einsatz von ChatGPT wichtig, die Ausgabe zu überprüfen.
+## Was tun, wenn die KI falsche Informationen generiert?
 
-## Sind die Aufforderungen unwirksam?
+KI hat manchmal "Halluzinationen" und generiert Informationen, die plausibel erscheinen, aber tatsächlich falsch sind. Nutzungsvorschläge:
 
-Wenn Sie mit der Aufgabe der Zusammenfassung beschäftigt sind, können Sie die GPT nutzen, um Ihre ursprünglichen Antworten zu verfeinern und zu verbessern und so die Präzision Ihrer Antworten zu erhöhen. Darüber hinaus sind die Aufforderungen nicht nur für die Arbeitsproduktion von Vorteil, sondern dienen auch als Katalysator für die intellektuelle Anregung. Sie helfen Ihnen, Ihren Blickwinkel zu erweitern, Fragen aus verschiedenen Blickwinkeln zu betrachten und potenzielle Fehler anzusprechen, die häufig während des Denkprozesses auftreten.
+1. **Schlüsselinformationen überprüfen**: Besonders Daten, Zitate, Code usw.
+2. **Mehrrunden-Optimierung**: Bitten Sie die KI, die Antwort erneut zu überprüfen und zu optimieren.
+3. **Kreuzvalidierung**: Verwenden Sie verschiedene Prompts oder Modelle, um wichtige Schlussfolgerungen zu überprüfen.
 
-Alle von AI Short verwendeten Prompts stammen aus dem Internet und werden in unserem Prompt-Repository regelmäßig aktualisiert. Obwohl jeder Prompt ausgiebig getestet wird, kann seine Wirksamkeit je nach den individuellen Bedürfnissen des Nutzers variieren. Sollten Sie auf Ungenauigkeiten stoßen, innovative Ideen haben oder über nützliche Prompts stolpern, können Sie uns dies über [Feedback](/feedback) mitteilen oder Ihre Entdeckungen mit unserer Community teilen.
+Geeignete Prompts können Ihnen helfen, das Auftreten von KI-Halluzinationen zu reduzieren.
+
+## Wie sichere ich meine Prompts?
+
+1. Gehen Sie ins Benutzerzentrum
+2. Klicken Sie auf die Schaltfläche "Prompts exportieren"
+3. Das System generiert automatisch eine JSON-Datei zum Herunterladen
+
+Es wird empfohlen, regelmäßig Backups zu erstellen, um Datenverlust zu vermeiden.
+
+## Prompt-Ergebnisse sind nicht ideal?
+
+1. **Versuchen Sie zu optimieren**: Lassen Sie die KI die Antwort erneut optimieren.
+2. **Perspektive wechseln**: Verwenden Sie verschiedene Prompts, um dieselbe Anforderung auszudrücken.
+3. **Feedback und Teilen**: Wenn Sie Probleme finden oder gute Prompts haben, können Sie uns gerne über [Feedback](/feedback) informieren oder in der Community teilen.
+
+## Verwandte Dokumentation
+
+- [Erste Schritte](./getting-started) - Grundlegende Nutzungsmethoden
+- [Meine Sammlung](./my-collection) - Sammlungs- und Tag-Verwaltung
+- [Community-Prompts](./community) - Entdecken und Teilen

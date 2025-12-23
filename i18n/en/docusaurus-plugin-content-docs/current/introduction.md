@@ -1,36 +1,56 @@
 ---
 slug: /
-description: Explore AiShort, a curated AI prompt community. We provide ready-to-use AI large model prompts, supporting multiple languages, collections, and community voting features, designed to help you simplify your workflow and easily boost productivity.
+sidebar_label: Introduction
+title: AI Short - Curated ChatGPT & AI Prompt Library
+description: Struggling with AI responses? AI Short offers curated prompts for ChatGPT, Claude & more. Copy prompts, manage collections, and boost productivity instantly.
 ---
 
-# Introduction
+# Introduction to AI Short
 
-AiShort (ChatGPT Shortcut) provides a concise and easy-to-use list of AI prompts. It is designed to help users quickly find prompts suitable for various scenarios, making it easy even for beginners to use and comprehensively improve their efficiency in learning and work.
+AI Short (ChatGPT Shortcut) provides a concise and easy-to-use list of AI prompts to help users quickly find prompts suitable for different scenarios.
 
-🚀 **One-Click Prompts**: A selection of various professional prompts. With just one click, you can send them to AI models like ChatGPT and quickly get the desired answers.
+## ⚡ 30-Second Quick Start
 
-💻 **Boost Productivity**: Use optimized prompts to get more accurate and practical feedback, efficiently completing learning and work tasks.
+1. Open AI Short
+2. Search or browse for the prompt you need
+3. Click "Copy" and paste into any AI conversation model
 
-🌍 **Multi-language Support**: Provides translations for English prompts in 12 mainstream languages and supports default replies in your native language, allowing non-English users to use it without barriers.
+It's that simple! For more features, please continue reading or check the [User Manual](./guides/getting-started).
 
-💾 **Collect & Edit**: You can collect, edit, and manage your favorite prompts at any time for future use.
+## Core Features
 
-📤 **Export & Backup**: Export all your prompts with one click, supporting JSON format for backup, making it easy to migrate and save locally.
+🚀 **One-Click Prompts**: Curated professional prompts, ready to use with one click copy.
 
-🌟 **Share Prompts**: Share your favorite prompts with others to inspire more creativity and ideas.
+🔍 **Smart Search**: Quickly find the prompts you need through tag filtering and keyword search.
 
-🗳️ **Community Voting**: Similar to Product Hunt or Reddit, driven by community votes, excellent prompts will be recommended to the homepage.
+🌍 **Multi-language Support**: Provides translation for 12 languages, supporting native language replies.
 
-📦 **Ready to Use**: No complex configuration needed. Visit [aishort.top](https://www.aishort.top/en/) to start experiencing it immediately.
+📦 **Ready to Use**: No registration required, simply visit to use.
 
-The prompts for AiShort (ChatGPT Shortcut) are sourced from online selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We update them regularly to continuously bring you new prompts and inspiration. For detailed instructions, please see the [User Guide](https://www.aishort.top/en/docs/guides/getting-started).
+## Advanced Features (After Login)
+
+📂 **My Collection**: Collect favorite prompts, supporting drag-and-drop sorting and custom tag classification.
+
+✏️ **Custom Prompts**: Create, edit, and manage your own prompts.
+
+🗳️ **Community Interaction**: Share prompts in the community section and participate in voting.
+
+📤 **Data Export**: One-click export of all prompts as a JSON file.
+
+🔐 **Multiple Login Methods**: Supports account password, Google, and passwordless email links.
+
+## Prompt Sources
+
+Prompts are sourced from internet selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We update regularly to bring you new prompts and inspiration continuously.
+
+## Join the Community
 
 Welcome to join our community to exchange ideas and feedback:
 
 <a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+   <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
 </a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>

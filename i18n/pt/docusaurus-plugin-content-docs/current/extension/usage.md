@@ -1,37 +1,27 @@
+---
+sidebar_label: Usar a extensão
+title: Guia da extensão AI Short - Barra lateral e atalhos
+description: Domine a extensão de navegador AI Short! Ative a barra lateral, invoque a biblioteca de prompts com Alt+Shift+S.
+---
+
 # Como usar a extensão do navegador?
 
-O ChatGPT Shortcut suporta 13 idiomas principais, e o idioma da extensão será definido automaticamente de acordo com o ambiente do seu navegador. O idioma da página interna do ChatGPT e da barra lateral na extensão também seguirá essa configuração. Observe que, para evitar o acionamento de alertas de permissão de sites de terceiros, evite alterar diretamente o idioma em páginas incorporadas.
+ChatGPT Shortcut suporta 13 idiomas principais, e o idioma da extensão será configurado automaticamente de acordo com o ambiente do seu navegador. Você também pode alterar manualmente o idioma na página de configurações.
 
-![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
+![](/img/docs/extension-settings.png)
 
-## Configurações de exibição
+## Barra lateral AiShort
 
-### Barra lateral do AiShort
+A extensão AiShort atualmente funciona como um painel lateral, proporcionando uma experiência interativa fluida.
 
-Depois de habilitar a barra lateral do AiShort, você verá um ícone verde no canto inferior direito das páginas da web suportadas. Ao clicar neste ícone, você pode ativar ou desativar a barra lateral. Atualmente, o padrão é oferecer suporte ao ChatGPT, Bard, Claude e Wenxin Yiyan. Se você escolher "Ativar barra lateral automaticamente", a barra lateral será aberta automaticamente quando você visitar esses sites suportados.
+Se "Manter o painel lateral aberto" estiver habilitado nas configurações, a barra lateral permanecerá aberta ao trocar de aba.
 
-![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+![](/img/docs/extension-sidebar.png)
 
-Se você quiser usar a barra lateral do AiShort em outros sites, instale o script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Observe que, para evitar funcionalidades sobrepostas e potenciais conflitos, o script ChatGPT Shortcut Anywhere não será eficaz em sites suportados nativamente pela extensão.
+## Modo escuro
 
-### Página inicial integrada
+A extensão suporta o modo escuro. Habilite "Modo escuro" na página de configurações para mudar a barra lateral e a página de configurações para uma aparência escura.
 
-Após habilitar o recurso de página inicial integrada, um botão para a página integrada aparecerá no canto superior esquerdo da versão web do ChatGPT. Clicar nele substituirá a interface do aplicativo ChatGPT pela página do AiShort.
+## Ativação por atalho
 
-![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
-
-## Modo de janela separada
-
-Quando o modo de janela separada estiver habilitado, a interface da extensão aparecerá persistentemente em uma janela separada, facilitando a multitarefa. Você pode definir sites para ativação automática nas configurações da extensão. Quando o navegador visitar esses sites, a janela do AiShort será ativada automaticamente.
-
-![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
-
-### Sites de ativação automática
-
-Nas configurações da extensão, você pode especificar quais sites ativarão automaticamente a janela separada do AiShort.
-
-![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
-
-### Ativação de tecla de atalho
-
-A tecla de atalho `Alt+Shift+S` pode ser usada para ativar diretamente a janela do AiShort, seja no modo pop-up ou no modo de janela separada.
+Use o atalho `Alt+Shift+S` para ativar diretamente a barra lateral do AiShort.

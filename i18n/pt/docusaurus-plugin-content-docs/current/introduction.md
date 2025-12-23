@@ -1,36 +1,56 @@
 ---
 slug: /
-description: Explore o AiShort, uma comunidade de prompts de IA selecionada. Oferecemos prompts prontos para uso de grandes modelos de IA, com suporte a múltiplos idiomas, coleções e recursos de votação da comunidade, projetados para ajudar você a simplificar seu fluxo de trabalho e aumentar facilmente a produtividade.
+sidebar_label: Introdução ao AI Short
+title: AI Short - Biblioteca de Prompts de IA e Gerenciamento
+description: Aumente sua produtividade com AI Short - Melhores prompts para ChatGPT e DeepSeek, tradução multilíngue e gestão de coleções.
 ---
 
-# Introdução
+# Introdução ao AI Short
 
-O AiShort (Atalho para ChatGPT) fornece uma lista concisa e fácil de usar de prompts de IA. Ele foi projetado para ajudar os usuários a encontrar rapidamente prompts adequados para vários cenários, tornando-o fácil de usar até mesmo para iniciantes e melhorando de forma abrangente sua eficiência no aprendizado e no trabalho.
+O AI Short (ChatGPT Shortcut) fornece uma lista de prompts de IA concisa e fácil de usar para ajudar os usuários a encontrar rapidamente prompts adequados para diferentes cenários.
 
-🚀 **Prompts com Um Clique**: Uma seleção de vários prompts profissionais. Com apenas um clique, você pode enviá-los para modelos de IA como o ChatGPT e obter rapidamente as respostas desejadas.
+## ⚡ Comece em 30 Segundos
 
-💻 **Aumente a Produtividade**: Use prompts otimizados para obter feedback mais preciso e prático, concluindo tarefas de aprendizado e trabalho de forma eficiente.
+1. Abra o AI Short
+2. Pesquise ou navegue pelos prompts que você precisa
+3. Clique em "Copiar" e cole em qualquer modelo de diálogo de IA
 
-🌍 **Suporte a Vários Idiomas**: Oferece traduções para prompts em inglês em 12 idiomas principais e suporta respostas padrão em seu idioma nativo, permitindo que usuários que não falam inglês o utilizem sem barreiras.
+É simples assim! Para mais recursos, continue lendo ou veja o [Guia de Início Rápido](./guides/getting-started).
 
-💾 **Colete e Edite**: Você pode coletar, editar e gerenciar seus prompts favoritos a qualquer momento para uso futuro.
+## Principais Funcionalidades
 
-📤 **Exporte e Faça Backup**: Exporte todos os seus prompts com um clique, com suporte ao formato JSON para backup, facilitando a migração e o salvamento local.
+🚀 **Prompts em Um Clique**: Uma seleção de vários prompts profissionais, prontos para copiar e usar com um clique.
 
-🌟 **Compartilhe Prompts**: Compartilhe seus prompts favoritos com outras pessoas para inspirar mais criatividade e ideias.
+🔍 **Busca Inteligente**: Encontre rapidamente os prompts desejados através de filtragem por tags e pesquisa de palavras-chave.
 
-🗳️ **Votação da Comunidade**: Semelhante ao Product Hunt ou Reddit, impulsionado pelos votos da comunidade, prompts excelentes serão recomendados na página inicial.
+🌍 **Suporte Multilíngue**: Fornece tradução para 12 idiomas, com suporte para respostas em sua língua nativa.
 
-📦 **Pronto para Usar**: Nenhuma configuração complexa é necessária. Visite [aishort.top](https://www.aishort.top/pt/) para começar a experimentar imediatamente.
+📦 **Pronto para Usar**: Sem necessidade de registro, basta acessar e usar.
 
-Os prompts para o AiShort (Atalho para ChatGPT) são provenientes de seleções online, compartilhamentos da comunidade e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nós os atualizamos regularmente para trazer continuamente novos prompts e inspiração para você. Para instruções detalhadas, consulte o [Guia do Usuário](https://www.aishort.top/pt/docs/guides/getting-started).
+## Funcionalidades Avançadas (Após Login)
 
-Bem-vindo a se juntar à nossa comunidade para trocar ideias e feedback:
+📂 **Minha Coleção**: Favorite os prompts que você gosta, com suporte para ordenação por arrastar e soltar e classificação de tags personalizadas.
+
+✏️ **Prompts Personalizados**: Crie, edite e gerencie seus próprios prompts.
+
+🗳️ **Interação com a Comunidade**: Compartilhe prompts na seção da comunidade e participe da votação.
+
+📤 **Exportar Dados**: Exporte todos os prompts como um arquivo JSON com um clique.
+
+🔐 **Múltiplos Métodos de Login**: Suporte para conta e senha, Google e link de e-mail sem senha.
+
+## Fonte dos Prompts
+
+Os prompts vêm de seleções da internet, compartilhamentos da comunidade e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Atualizamos regularmente para trazer novos prompts e inspiração para você.
+
+## Junte-se à Comunidade
+
+Bem-vindo à nossa comunidade para trocar ideias e feedback:
 
 <a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
+   <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
 </a>
 
 <a href="https://discord.gg/PZTQfJ4GjX">
-    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
+   <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>

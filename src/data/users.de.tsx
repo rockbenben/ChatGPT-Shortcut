@@ -9,8 +9,6 @@ function sortUsers() {
   result = sortBy(result, (user) => -user.weight);
   // Sort by prompt title
   //result = sortBy(result, (user) => user.zh.title.toLowerCase());
-  // Sort by favorite tag, favorites first
-  result = sortBy(result, (user) => !user.tags.includes("favorite"));
   return result;
 }
 

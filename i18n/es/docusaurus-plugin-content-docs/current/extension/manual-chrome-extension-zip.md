@@ -1,14 +1,23 @@
-# Guía de instalación local del complemento ZIP de Chrome
+---
+sidebar_label: Guía de Instalación ZIP para Chrome
+title: Instalación Manual Chrome - Guía Archivo ZIP
+description: Alternativa al CRX. Guía paso a paso para instalar la extensión de Chrome manualmente con el archivo ZIP descomprimido.
+---
 
-## Descargar complemento
+# Guía de Instalación Local de Extensión ZIP para Chrome
 
-Descarga el paquete de instalación Zip del complemento ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) desde [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) y descomprímelo. (La carpeta descomprimida debe conservarse en la computadora, así que recuerda descomprimirla en una ubicación permanente)
+## Descargar Extensión
 
-## Habilita el modo de desarrollador
+Descarga el paquete de instalación ZIP de la extensión ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) y descomprímelo. (La carpeta descomprimida debe mantenerse en la computadora, así que recuerda descomprimirla en una ubicación permanente).
 
-Abre la página "Administrar extensiones" de Chrome y habilita el "Modo de desarrollador".
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Descarga en China**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), contraseña: 1qow
 
-Copia la siguiente dirección y pégala en la barra de direcciones del navegador y presiona Enter para abrirla. Habilita el "Modo de desarrollador" en la esquina superior derecha de la página.
+## Habilitar Modo Desarrollador
+
+Abre la página "Gestionar extensiones" de Chrome y activa el "Modo de desarrollador".
+
+Copia la siguiente dirección y pégala en la barra de direcciones del navegador, luego presiona Enter para abrir. Activa el "Modo de desarrollador" en la esquina superior derecha de la página.
 
 ```txt
 chrome://extensions
@@ -16,10 +25,10 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## Instalar el complemento
+## Instalar Extensión
 
-Arrastre la carpeta descomprimida a la página de la extensión para completar la instalación.
+Arrastra la carpeta descomprimida a la página de extensiones para completar la instalación.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Después de una instalación exitosa, puede ver el [Tutorial de uso del complemento](./usage.md).
+Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage.md).

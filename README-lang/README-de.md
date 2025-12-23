@@ -2,7 +2,7 @@
 ⚡️AI Short
 </h1>
 <p align="center">
-    <a href="/README-en.md">English</a> | <a href="/README.md">中文</a> |
+    <a href="../README.md">English</a> | <a href="../README-zh.md">中文</a> |
 <a href="./README-es.md">Español</a> |
 <a href="./README-ja.md">日本語</a> |
 <a href="./README-ko.md">한국어</a> |
@@ -16,76 +16,69 @@ Deutsch |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
+    <em>ChatGPT Shortcut - Maximiere deine Effizienz und Produktivität</em>
 </p>
 
-## Warum AiShort verwenden?
+## ⚡ Schnellstart
 
-AiShort (ChatGPT Shortcut) bietet eine prägnante und einfach zu bedienende Liste von KI-Prompts. Es wurde entwickelt, um Benutzern dabei zu helfen, schnell passende Prompts für verschiedene Szenarien zu finden, was die Nutzung auch für Anfänger einfach macht und ihre Effizienz beim Lernen und Arbeiten umfassend verbessert.
+1. Besuche [aishort.top](https://www.aishort.top/de/)
+2. Suche oder durchsuche den benötigten Prompt
+3. Klicke auf „Kopieren" und füge ihn in ein beliebiges KI-Modell ein
 
-🚀 **Ein-Klick-Prompts**: Eine Auswahl verschiedener professioneller Prompts. Mit nur einem Klick können Sie sie an KI-Modelle wie ChatGPT senden und schnell die gewünschten Antworten erhalten.
+Das war's! Weitere Funktionen findest du im [Benutzerhandbuch](https://www.aishort.top/de/docs/guides/getting-started).
 
-💻 **Produktivität steigern**: Verwenden Sie optimierte Prompts, um genaueres und praxisnahes Feedback zu erhalten und Lern- und Arbeitsaufgaben effizient zu erledigen.
+## Warum AiShort?
 
-🌍 **Mehrsprachige Unterstützung**: Bietet Übersetzungen für englische Prompts in 12 gängigen Sprachen und unterstützt Standardantworten in Ihrer Muttersprache, sodass auch nicht-englischsprachige Benutzer es ohne Barrieren nutzen können.
+AiShort (ChatGPT Shortcut) bietet eine sorgfältig kuratierte Liste von KI-Prompts, die dir hilft, schnell passende Prompts für jede Situation zu finden.
 
-💾 **Sammeln & Bearbeiten**: Sie können Ihre bevorzugten Prompts jederzeit sammeln, bearbeiten und verwalten, um sie später zu verwenden.
+### Kernfunktionen
 
-📤 **Export & Backup**: Exportieren Sie alle Ihre Prompts mit einem Klick. Unterstützt das JSON-Format für Backups, was die Migration und lokale Speicherung erleichtert.
+🚀 **Ein-Klick-Prompts** - Ausgewählte professionelle Prompts, mit einem Klick kopieren und verwenden.
 
-🌟 **Prompts teilen**: Teilen Sie Ihre Lieblings-Prompts mit anderen, um mehr Kreativität und Ideen zu inspirieren.
+🔍 **Intelligente Suche** - Schnell finden mit Tag-Filter und Stichwortsuche.
 
-🗳️ **Community-Abstimmung**: Ähnlich wie bei Product Hunt oder Reddit, angetrieben durch Community-Abstimmungen, werden ausgezeichnete Prompts auf der Startseite empfohlen.
+🌍 **12 Sprachen** - Übersetzungen für alle Prompts, Antworten in deiner Muttersprache.
 
-📦 **Sofort einsatzbereit**: Keine komplexe Konfiguration erforderlich. Besuchen Sie [aishort.top](https://www.aishort.top/de/) und probieren Sie es sofort aus.
+📦 **Sofort einsatzbereit** - Keine Registrierung erforderlich, sofort loslegen.
 
-Die Prompts für AiShort (ChatGPT Shortcut) stammen aus Online-Auswahlen, Community-Beiträgen und [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Wir aktualisieren sie regelmäßig, um Ihnen kontinuierlich neue Prompts und Inspirationen zu bieten. Detaillierte Anweisungen finden Sie im [Benutzerhandbuch](https://www.aishort.top/de/docs/guides/getting-started).
+### Erweiterte Funktionen (Anmeldung erforderlich)
 
-Treten Sie unserer Community bei, um Ideen und Feedback auszutauschen:
+📂 **Meine Sammlung** - Favoriten speichern mit Drag-and-Drop-Sortierung und benutzerdefinierten Tags.
 
-<a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
-</a>
+✏️ **Eigene Prompts** - Erstelle, bearbeite und verwalte deine eigenen Prompts.
 
-<a href="https://discord.gg/PZTQfJ4GjX">
-    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
-</a>
+🗳️ **Community** - Prompts teilen und für Community-Beiträge abstimmen.
+
+📤 **Export** - Alle Prompts als JSON sichern.
+
+🔐 **Mehrere Anmeldeoptionen** - Passwort, Google oder passwortloser E-Mail-Link.
 
 ## Browser-Erweiterung
 
-Die AiShort (ChatGPT Shortcut) Erweiterung hilft Ihnen, jederzeit auf die AiShort-Prompt-Bibliothek zuzugreifen, um Ihre Arbeits- und Lerneffizienz zu steigern. Sie unterstützt gängige Browser wie Chrome, Edge und Firefox und verfügt über eine Seitenleiste, die schnell mit der Tastenkombination `Alt + Shift + S` aufgerufen werden kann.
+Greife jederzeit auf AiShort-Prompts zu. Unterstützt Chrome, Edge und Firefox mit Seitenleiste über `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Edge**: [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-Zusätzlich bieten wir das Tampermonkey-Skript an - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), das es Benutzern ermöglicht, passende Domainnamen anzupassen und die AiShort-Seitenleiste auf jeder Website zu verwenden. Aufgrund von Einschränkungen bei der Injektion von Skriptinhalten auf der ChatGPT-Seite wird die Seitenleistenfunktion des Skripts jedoch über ein Popup auf der ChatGPT-Seite aktiviert.
+## Bereitstellung
 
-## Bereitstellen
+Deploye deine eigene Instanz über Vercel, Cloudflare Pages, Docker oder lokal. Siehe [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy).
 
-Detaillierte Schritte zur Bereitstellung über eine lokale Umgebung, Vercel, Cloudflare Page, Docker und zur Änderung des Projekts finden Sie im [ChatGPT Shortcut Bereitstellungsleitfaden](https://www.aishort.top/de/docs/deploy).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## Synchronisierte Updates
+## Community
 
-Wenn Sie Ihr eigenes Projekt mit einem Klick auf Vercel bereitgestellt haben, kann es vorkommen, dass ständig Updates angezeigt werden. Dies liegt am Standardverhalten von Vercel, das ein neues Projekt für Sie erstellt, anstatt das aktuelle Projekt zu forken, was die korrekte Erkennung von Updates verhindert. Es wird empfohlen, die folgenden Schritte für eine erneute Bereitstellung zu befolgen:
+Tritt uns bei für Diskussionen und Feedback:
 
-1. Entfernen Sie das vorherige Repository.
-2. Verwenden Sie die "Fork"-Schaltfläche oben rechts auf der Seite, um das aktuelle Projekt zu forken.
-3. Wählen Sie auf der [Vercel New Project Seite](https://vercel.com/new) im Abschnitt "Import Git Repository" das kürzlich geforkte Projekt aus und fahren Sie mit der Bereitstellung fort.
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Gruppe-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
+</a>
+<a href="https://discord.gg/PZTQfJ4GjX">
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
+</a>
 
-### Automatische Updates
+---
 
-> Sollte bei der Ausführung von Upstream Sync ein Fehler auftreten, führen Sie manuell einen einmaligen Sync Fork durch.
-
-Nachdem Sie das Projekt geforkt haben, ist es aufgrund von GitHub-Einschränkungen erforderlich, Workflows auf der Actions-Seite Ihres geforkten Projekts manuell zu aktivieren und die Upstream Sync Action zu aktivieren. Nach der Aktivierung werden die Updates täglich automatisch ausgeführt.
-
-![Automatische Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-![Aktivierung automatischer Updates](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
-
-### Manuelle Updates
-
-Für sofortige Updates lesen Sie die [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) zum Synchronisieren von Forks.
-
-⭐ Markieren Sie dieses Projekt mit einem Stern / 👀 Beobachten Sie es oder folgen Sie dem Autor, um über neue Funktionen benachrichtigt zu werden.
+⭐ Gib diesem Projekt einen Stern, um über neue Funktionen informiert zu bleiben!

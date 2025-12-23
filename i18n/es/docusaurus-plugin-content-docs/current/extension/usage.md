@@ -1,37 +1,27 @@
+---
+sidebar_label: Usar la extensión
+title: Guía de extensión AI Short - Barra lateral y atajos
+description: ¡Domina la extensión de navegador AI Short! Activa la barra lateral, invoca la biblioteca de prompts con Alt+Shift+S.
+---
+
 # ¿Cómo usar la extensión del navegador?
 
-ChatGPT Shortcut admite 13 idiomas principales y el idioma de la extensión se configurará automáticamente según el entorno de su navegador. El idioma de la página integrada de ChatGPT y la barra lateral de la extensión también seguirá esta configuración. Tenga en cuenta que, para evitar activar alertas de permisos de sitios web de terceros, evite cambiar directamente el idioma en las páginas integradas.
+ChatGPT Shortcut admite 13 idiomas principales, y el idioma de la extensión se configurará automáticamente según el entorno de tu navegador. También puedes cambiar manualmente el idioma en la página de configuración.
 
-![](https://img.newzone.top/2023-12-23-12-04-29.png?imageMogr2/format/webp)
+![](/img/docs/extension-settings.png)
 
-## Configuración de visualización
+## Barra lateral AiShort
 
-### Barra lateral de AiShort
+La extensión AiShort actualmente funciona como un panel lateral, proporcionando una experiencia interactiva fluida.
 
-Después de habilitar la barra lateral de AiShort, verá un interruptor de icono verde en la esquina inferior derecha de las páginas web compatibles. Al hacer clic en este icono, puede activar o desactivar la barra lateral. Actualmente, es compatible de forma predeterminada con ChatGPT, Bard, Claude y Wenxin Yiyan. Si elige "Activar la barra lateral automáticamente", la barra lateral se abrirá automáticamente cuando visite estos sitios compatibles.
+Si "Mantener el panel lateral abierto" está habilitado en la configuración, la barra lateral permanecerá abierta al cambiar de pestaña.
 
-![](https://img.newzone.top/2023-12-23-04-16-15.gif?imageMogr2/format/webp)
+![](/img/docs/extension-sidebar.png)
 
-Si desea utilizar la barra lateral de AiShort en otros sitios web, instale el script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tenga en cuenta que, para evitar superposiciones de funcionalidades y posibles conflictos, el script ChatGPT Shortcut Anywhere no será efectivo en sitios web compatibles de forma nativa con la extensión.
+## Modo oscuro
 
-### Página de inicio incorporada
+La extensión admite el modo oscuro. Habilita "Modo oscuro" en la página de configuración para cambiar la barra lateral y la página de configuración a una apariencia oscura.
 
-Después de habilitar la función de página de inicio incorporada, aparecerá un botón para la página incorporada en la esquina superior izquierda de la versión web de ChatGPT. Al hacer clic en él, se reemplazará la interfaz de la aplicación ChatGPT con la página de AiShort.
+## Activación por atajo
 
-![](https://img.newzone.top/ai/2023-12-22-19-40-15.png?imageMogr2/format/webp)
-
-## Modo de ventana independiente
-
-Cuando el modo de ventana independiente está habilitado, la interfaz de la extensión aparecerá de forma persistente en una ventana independiente, lo que facilita la realización de múltiples tareas. Puede configurar sitios web para que se activen automáticamente en la configuración de la extensión. Cuando el navegador visite estos sitios, la ventana de AiShort se activará automáticamente.
-
-![](https://img.newzone.top/2023-12-23-12-07-09.png?imageMogr2/format/webp)
-
-### Sitios web con activación automática
-
-En la configuración de la extensión, puede especificar qué sitios web activarán automáticamente la ventana independiente de AiShort.
-
-![](https://img.newzone.top/2023-12-23-12-09-51.png?imageMogr2/format/webp)
-
-### Activación de teclas de acceso rápido
-
-La tecla de acceso rápido `Alt+Shift+S` se puede utilizar para activar directamente la ventana de AiShort, ya sea en modo emergente o en modo de ventana independiente.
+Usa el atajo `Alt+Shift+S` para activar directamente la barra lateral de AiShort.

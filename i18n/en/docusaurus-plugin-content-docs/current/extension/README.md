@@ -1,12 +1,12 @@
 ---
 sidebar_label: Install Browser Extension
-title: How to Install the AIShort Extension (ChatGPT Shortcut) | Supports Chrome/Edge/Firefox
-description: Looking for the official download link for the AIShort (ChatGPT Shortcut) extension? This page provides official store links for Chrome, Edge, and Firefox, as well as alternative download channels and information on the userscript to help you easily install and use it.
+title: Install AI Short Extension - Chrome, Edge & Firefox Download
+description: Boost your AI workflow with the AI Short extension. Download for Chrome, Edge, or Firefox and access prompts instantly via sidebar or shortcut.
 ---
 
 # Install Browser Extension
 
-The AiShort (ChatGPT Shortcut) extension helps you access the AiShort prompt library anytime to enhance your work and study efficiency. It supports major browsers like Chrome, Edge, and Firefox, and features a sidebar that can be quickly summoned with the shortcut `Alt + Shift + S`.
+AiShort (ChatGPT Shortcut) extension helps you access the AIShort prompt library at any time, improving work and study efficiency. It supports mainstream browsers like Chrome, Edge, Firefox, and provides sidebar and shortcut features. You can quickly invoke the extension via `Alt + Shift + S`.
 
 ## 📥 Official Download Channels
 
@@ -14,11 +14,12 @@ The AiShort (ChatGPT Shortcut) extension helps you access the AiShort prompt lib
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **China Mirror (Use when store is inaccessible)**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud (Password: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
 
-## 🧩 Tampermonkey Userscript
+## 🧩 Tampermonkey Script
 
-In addition to the browser extension, we also offer the [**ChatGPT Shortcut Anywhere Userscript**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere).
-Tampermonkey is a browser extension that allows users to run custom scripts to enhance webpage functionality.
+In addition to the extension, we also provide the [**ChatGPT Shortcut Anywhere Tampermonkey Script**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere).
+Tampermonkey is a browser extension that allows users to run custom scripts to enhance web page functions.
 
-With this script, you can bring up the AiShort sidebar on any website.
-However, please note that due to script injection restrictions on the official ChatGPT page, the script will run as a **pop-up window** instead of a sidebar on that specific page.
+With this script, you can invoke the AiShort sidebar on any website.
+However, due to ChatGPT official page restrictions on script injection, the script will run as a **popup** rather than a sidebar on that page.

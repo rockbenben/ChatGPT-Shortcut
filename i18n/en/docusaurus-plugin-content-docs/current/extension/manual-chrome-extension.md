@@ -1,16 +1,25 @@
-# Chrome CRX plugin local installation guide
+---
+sidebar_label: Chrome CRX Install Guide
+title: Chrome CRX Install - Manual Developer Mode Setup
+description: Manually install AI Short extension via CRX file. Enable developer mode and drag to install. Includes solutions for common issues.
+---
 
-## Download the CRX package
+# Chrome CRX Extension Local Installation Guide
 
-Download the ChatGPT Shortcut crx installation package (ChatGPT_Shortcut-crx-3.x.x.zip) from [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) and unzip it (the crx file is in the unzipped folder).
+## Download CRX Package
+
+Download the ChatGPT Shortcut crx installation package (ChatGPT_Shortcut-crx-3.x.x.zip) and unzip it (the crx file is inside the unzipped folder).
+
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **China Download**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), password: 1qow
 
 ![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
 
-## Enable developer mode
+## Enable Developer Mode
 
-Open the "Manage extensions" page of Chrome and enable "Developer mode".
+Open Chrome's "Manage Extensions" page and turn on "Developer mode".
 
-Copy the following address and paste it into the browser address bar, then press Enter to open it. Enable "Developer mode" in the upper right corner of the page.
+Copy the following address and paste it into the browser address bar, then press Enter to open. Turn on "Developer mode" in the top right corner of the page.
 
 ```txt
 chrome://extensions
@@ -18,20 +27,20 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## Install the plugin
+## Install Extension
 
-Install ChatGPT Shortcut plugin (Note⚠️: You need to drag in the .crx file, do not click [Load unzipped extension])
+Install ChatGPT Shortcut extension (Note ⚠️: You need to drag in the .crx file, do NOT click "Load unpacked")
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-After successful installation, you can view the [Plugin Usage Tutorial](./usage.md).
+After successful installation, check the [Plugin Usage Tutorial](./usage.md).
 
-## Have problems with installation?
+## Installation Issues?
 
-1. Windows users, please check whether the downloaded installation package has been unzipped (not double-clicked to open)?
+1. Windows users: Check if you have unzipped the downloaded installation package (instead of double-clicking to open)?
 
-2. Is "Developer Mode" enabled? If not, please refer to the second step.
+2. Is "Developer mode" enabled? If not, refer to step 2.
 
-3. Did you drag the crx file to the "Extensions" page? Note⚠️: Do not click [Load unzipped extension], you must drag in the crx file.
+3. Did you drag the crx file into the "Extensions" page? Note ⚠️: Do not click "Load unpacked", you must drag the crx file.
 
-4. The browser does not allow the crx file to be installed? Try installing the zip file! [Click here to view the zip installation instructions](./manual-chrome-extension-zip.md).
+4. Browser doesn't allow installing crx files? Try installing the zip file! [Click here for zip installation tutorial](./manual-chrome-extension-zip.md).

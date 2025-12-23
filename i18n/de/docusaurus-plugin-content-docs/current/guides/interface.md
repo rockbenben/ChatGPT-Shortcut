@@ -1,39 +1,59 @@
-# Schnittstellenbeschreibung
+---
+sidebar_label: Schnittstellen-Leitfaden
+title: Schnittstellen-Guide - Suche & Filter
+description: Meistern Sie AI Short. Filtern Sie nach Tags und nutzen Sie die intelligente Suche, um den perfekten Prompt zu finden.
+---
 
-AiShort zeigt standardmäßig alle vorgeschlagenen Wörter an. Die Seite ist in drei Abschnitte unterteilt: den Tag-Bereich, den Suchbereich und den Bereich zur Anzeige der vorgeschlagenen Wörter.
+# Schnittstellen-Leitfaden
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+Die AiShort-Seite bietet Benutzern eine intuitive Benutzeroberfläche zum Durchsuchen und Filtern von Prompts. Die Seite besteht hauptsächlich aus dem Tag-Bereich, dem Suchbereich und dem Prompt-Anzeigebereich.
+
+![](/img/docs/interface-home.png)
 
 ## 🏷︎ Tag-Filterung
 
-Der Tag-Bereich ist nach dem Bereich und der Funktionalität der vorgeschlagenen Wörter unterteilt, um eine Auswahl basierend auf verschiedenen Szenarien und Bedürfnissen zu ermöglichen. Er kann in Verbindung mit dem "Tag-Filterung Regel Umschalter" in der oberen rechten Ecke des Tag-Bereichs verwendet werden, um eine Mehr-Tag-Filterung durchzuführen. Der Standardzustand ist ODER, was alle vorgeschlagenen Wörter unter dem gewählten Tag auswählt. Durch Umschalten auf UND werden die vorgeschlagenen Wörter herausgefiltert, die mehrere ausgewählte Tags haben.
+Der Tag-Bereich hilft Benutzern, Prompts basierend auf Domäne und Funktion zu filtern.
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+Über die Schaltfläche "Tag-Filterregel wechseln" oben rechts können Sie eine präzisere Multi-Tag-Filterung erreichen:
+
+- **ODER-Regel** (Standard): Zeigt Prompts an, die eines der ausgewählten Tags haben
+- **UND-Regel**: Zeigt nur Prompts an, die alle ausgewählten Tags gleichzeitig haben
+
+![](/img/docs/interface-filter.png)
 
 ## 🔍 Stichwortsuche
 
-Der Suchbereich umfasst die Titel, Zusammenfassungen, Inhalte und Übersetzungen in Ihrer Muttersprache der vorgeschlagenen Wörter. Nach Eingabe eines Stichworts wird der Bereich zur Anzeige der vorgeschlagenen Wörter sofort den gefilterten Inhalt anzeigen. Wenn Tags ausgewählt wurden, wird die Stichwortsuche auf den Bereich der ausgewählten Tags beschränkt. Auf der PC-Seite werden nach Änderung des Inhalts im Suchfeld die neuen Suchergebnisse nach 800 Millisekunden angezeigt. Auf mobilen Geräten erfolgt die Aktualisierung sofort.
+Die Stichwortsuche unterstützt die Suche nach Prompt-Titeln, Beschreibungen und Inhalten.
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+- Wenn bereits Tags ausgewählt sind, ist der Suchbereich auf diese Tags beschränkt
+- Nach der Anmeldung umfasst der Suchbereich Ihre Sammlungen und benutzerdefinierten Prompts
 
-Nachdem Sie sich angemeldet haben, umfasst der Suchbereich die Eingabeaufforderungen, die Sie übermittelt und gesammelt haben.
+![](/img/docs/interface-search.png)
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+## 🔬 Prompt-Karten
 
-## 🔬 Kopieren der Anfrage
+### Details ansehen
 
-Durch Tag-Filterung und Stichwortsuche ermöglicht es das Klicken auf die Schaltfläche "Kopieren" in der oberen rechten Ecke der Karte, die vorgeschlagenen Wörter zu erhalten. Nach dem Einfügen in ChatGPT können Sie sich auf die Vorschläge beziehen und den Text entsprechend Ihren spezifischen Bedürfnissen anpassen, um eine Antwort im gewünschten Bereich zu erhalten. Wenn die Erklärung in Ihrer Muttersprache in den vorgeschlagenen Wörtern nicht klar ist, können Sie auf den Link in der unteren rechten Ecke der vorgeschlagenen Wörter klicken, um die Quellwebseite anzuzeigen.
+Klicken Sie auf eine Prompt-Karte, um das Detail-Popup zu öffnen, in dem Sie Titel, Beschreibung, vollständigen Prompt-Inhalt, Bemerkungen und Kopier-Schaltfläche sehen können.
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+![](/img/docs/prompt-card.gif)
 
-## 💬 Sprachumschaltung
+### Prompt kopieren
 
-Standardmäßig werden die vorgeschlagenen Wörter in Englisch angezeigt. Wenn Sie eine nicht-englische Seite verwenden und die Interpretationen in Ihrer Muttersprache anzeigen möchten, klicken Sie bitte auf den Inhalt der vorgeschlagenen Wörter, um auf eine nicht-englische Sprache umzuschalten, und klicken Sie erneut, um zu Englisch zurückzukehren. Bitte beachten Sie, dass die Sprachumschaltung nur funktioniert, wenn Sie auf den Text in der Anfrage klicken, und das Klicken im leeren Bereich unwirksam ist.
+Klicken Sie auf die Schaltfläche "Kopieren" unten auf der Karte, um den Prompt zu erhalten. Fügen Sie ihn zur Verwendung in ein KI-Modell ein.
 
-![Umschalten zwischen Chinesisch und Englisch](http://img.newzone.top/chatgptshortcut_encn.gif)
+### Prompt sammeln
 
-Wenn Sie möchten, dass die vorgeschlagenen Wörter standardmäßig in Ihrer Muttersprache angezeigt werden, können Sie auf die Schaltfläche "Sprache der Anfrage umschalten" in der oberen rechten Ecke des Tag-Bereichs klicken. Bitte beachten Sie jedoch, dass auch bei der Umstellung auf Übersetzungen in der Muttersprache die Kopierschaltfläche nur die englischen vorgeschlagenen Wörter kopiert.
+Nach der Anmeldung erscheint eine Sammeln-Schaltfläche auf der Karte. Klicken Sie darauf, um den Prompt zu "Meine Sammlung" hinzuzufügen.
 
 ## 🔥 Beliebte Sortierung
 
-Die Seite zeigt jetzt die Häufigkeit der Verwendung der Anfragen an, und Anfragen mit höherer Nutzungshäufigkeit werden als "Favorit" markiert. Darüber hinaus basiert die Sortierung der Anfrage-Tags hauptsächlich auf dem Heat-Wert. Der Heat-Wert wird regelmäßig aktualisiert.
+Die Seite sortiert Prompts nach ihrer Beliebtheit, damit Sie trendige Inhalte schnell entdecken können.
+
+Die Tag-Sortierung wird auch basierend auf Heat-Werten angepasst, um sicherzustellen, dass sie die neuesten Vorlieben der Community widerspiegelt.
+
+## Verwandte Dokumentation
+
+- [Erste Schritte](./getting-started) - Grundlegende Nutzungsmethoden
+- [Meine Sammlung](./my-collection) - Sammlung, Tags und Sortierung
+- [Community-Prompts](./community) - Entdecken und Teilen

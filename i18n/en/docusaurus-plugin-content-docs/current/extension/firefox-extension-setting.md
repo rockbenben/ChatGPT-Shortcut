@@ -1,17 +1,23 @@
-# Firefox Settings
+---
+sidebar_label: Firefox Extension Settings
+title: Firefox Extension Setup - Pinning & Permissions Guide
+description: Firefox extension setup guide - Pin extension to toolbar, authorize to run on websites like ChatGPT, Gemini, ensuring sidebar displays correctly.
+---
 
-Before using the Firefox plug-in, it is recommended to set it up in the following two steps.
+# Firefox Extension Settings
 
-## 1. Extension Pinning and Access Settings
+Before using the Firefox extension, it is recommended to follow these two steps for setup.
 
-First, select "Pin ChatGPT Shortcut Extension" in the Firefox toolbar, then enter the extension center. On the ChatGPT Shortcut extension item, select "Options" to enter the extension's settings interface. The specific steps are as shown in the following image:
+## 1. Pin Extension and Access Settings
+
+First, select "Pin ChatGPT Shortcut Extension" (Pin to Toolbar) on the Firefox toolbar. Then, enter the Extension Center, find the ChatGPT Shortcut extension entry and select "Options". Enter the extension's settings interface. Specific steps are shown below:
 
 ![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 
-## 2. Authorize Extension Operation
+## 2. Authorize Extension to Run
 
-Secondly, to ensure the extension functions normally on websites like ChatGPT and Bard, you need to right-click the extension icon on these websites and select "Always allow on this site." This action grants the extension permission to modify content and add sidebars on designated websites.
+Secondly, to ensure the extension runs normally on websites like ChatGPT, Gemini, you need to right-click the extension icon on these websites and select "Always allow on \*\*\*". This operation grants the extension permission to add a sidebar on the specified domain.
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-After successful installation, you can view the [plugin usage tutorial](./usage.md).
+After successful installation, check the [Plugin Usage Tutorial](./usage.md).

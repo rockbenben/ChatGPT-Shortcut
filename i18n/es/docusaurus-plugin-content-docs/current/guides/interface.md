@@ -1,39 +1,59 @@
-# Descripción de la interfaz
+---
+sidebar_label: Guía de Interfaz
+title: Guía de Interfaz - Búsqueda y Filtros Avanzados
+description: Domina AI Short. Aprende a filtrar por etiquetas y usar la búsqueda inteligente para encontrar el prompt perfecto. en segundos.
+---
 
-AiShort se muestra por defecto con todas las palabras sugeridas. La página se divide en tres secciones: el área de etiquetas, el área de búsqueda y el área de visualización de palabras sugeridas.
+# Guía de Interfaz
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+La página de AiShort proporciona a los usuarios una interfaz intuitiva para navegar y filtrar prompts. La página consta principalmente del área de etiquetas, área de búsqueda y área de visualización de prompts.
 
-## 🏷︎ Filtrado por etiquetas
+![](/img/docs/interface-home.png)
 
-El área de etiquetas se divide según el dominio y la funcionalidad de las palabras sugeridas, permitiendo la selección en base a diferentes escenarios y necesidades. Se puede utilizar junto con el botón "Alternar regla de filtrado por etiquetas" en la esquina superior derecha del área de etiquetas para realizar un filtrado de múltiples etiquetas. El estado predeterminado es OR, que selecciona todas las palabras sugeridas bajo la etiqueta elegida. Cambiar a AND filtrará las palabras sugeridas que tienen múltiples etiquetas seleccionadas.
+## 🏷︎ Filtrado de Etiquetas
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+El área de etiquetas facilita a los usuarios filtrar prompts basados en dominio y función.
 
-## 🔍 Búsqueda por palabras clave
+A través del botón "Cambiar Regla de Filtrado de Etiquetas" en la parte superior derecha, puedes lograr un filtrado de múltiples etiquetas más preciso:
 
-El ámbito de búsqueda por palabras clave incluye los títulos, resúmenes, contenido y traducciones en tu idioma nativo de las palabras sugeridas. Después de ingresar una palabra clave, el área de visualización de palabras sugeridas mostrará inmediatamente el contenido filtrado. Si se han seleccionado etiquetas, la búsqueda por palabras clave se limitará al ámbito de las etiquetas seleccionadas. En el lado de la PC, después de que el contenido en el cuadro de búsqueda cambie, los nuevos resultados de búsqueda se mostrarán después de 800 milisegundos. En dispositivos móviles, se actualiza al instante.
+- **Regla OR** (Predeterminada): Muestra prompts que tienen cualquiera de las etiquetas seleccionadas
+- **Regla AND**: Muestra solo prompts que tienen todas las etiquetas seleccionadas simultáneamente
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+![](/img/docs/interface-filter.png)
 
-Después de iniciar sesión, el ámbito de búsqueda incluirá las indicaciones que envió y recopiló.
+## 🔍 Búsqueda por Palabras Clave
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+La función de búsqueda por palabras clave soporta la búsqueda de títulos, descripciones y contenido de prompts.
 
-## 🔬 Copia de la indicación
+- Si ya hay etiquetas seleccionadas, el alcance de la búsqueda se limita a esas etiquetas
+- Después de iniciar sesión, el alcance de la búsqueda incluye tus colecciones y prompts personalizados
 
-A través del filtrado por etiquetas y la búsqueda por palabras clave, al hacer clic en el botón "Copia" en la esquina superior derecha de la tarjeta, puedes obtener las palabras sugeridas. Después de pegarlas en ChatGPT, puedes consultar las sugerencias y ajustar el texto según tus necesidades específicas para obtener una respuesta en el dominio deseado. Si la explicación en tu idioma nativo en las palabras sugeridas no es clara, puedes hacer clic en el enlace en la esquina inferior derecha de las palabras sugeridas para ver la página web de origen.
+![](/img/docs/interface-search.png)
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+## 🔬 Tarjetas de Prompts
 
-## 💬 Cambio de idioma
+### Ver Detalles
 
-Por defecto, las palabras sugeridas se muestran en inglés. Si estás utilizando una página en otro idioma y deseas ver las interpretaciones en tu idioma nativo, haz clic en el contenido de las palabras sugeridas para cambiar a un idioma distinto al inglés, y haz clic nuevamente para volver al inglés. Ten en cuenta que el cambio de idioma solo funciona al hacer clic en el texto de la indicación, y hacer clic en el área en blanco no tiene efecto.
+Haz clic en una tarjeta de prompt para abrir la ventana emergente de detalles, donde puedes ver el título, descripción, contenido completo del prompt, observaciones y botón de copiar.
 
-![Cambio entre chino e inglés](http://img.newzone.top/chatgptshortcut_encn.gif)
+![](/img/docs/prompt-card.gif)
 
-Si deseas que las palabras sugeridas se muestren por defecto en tu idioma nativo, puedes hacer clic en el botón "Cambiar idioma de la indicación" en la esquina superior derecha del área de etiquetas. Sin embargo, ten en cuenta que incluso al cambiar a traducciones en el idioma nativo, el botón de copia solo copiará las palabras sugeridas en inglés.
+### Copiar Prompt
 
-## 🔥 Orden popular
+Haz clic en el botón "Copiar" en la parte inferior de la tarjeta para obtener el prompt. Pégalo en un modelo de IA para usarlo.
 
-La página ahora muestra la frecuencia de uso de la indicación, y las indicaciones con mayor frecuencia de uso se marcarán como "favoritas". Además, la ordenación de las etiquetas de la indicación se basará principalmente en el valor de popularidad. El valor de popularidad se actualizará periódicamente.
+### Coleccionar Prompt
+
+Después de iniciar sesión, aparecerá un botón de colección en la tarjeta. Haz clic para agregar el prompt a Mi Colección.
+
+## 🔥 Ordenamiento Popular
+
+La página ordena los prompts según su popularidad para ayudarte a descubrir rápidamente contenido en tendencia.
+
+El ordenamiento de etiquetas también se ajusta según los valores de calor para asegurar que refleje las últimas preferencias de la comunidad.
+
+## Documentación Relacionada
+
+- [Inicio Rápido](./getting-started) - Métodos básicos de uso
+- [Mi Colección](./my-collection) - Colección, etiquetas y ordenamiento
+- [Prompts de la Comunidad](./community) - Descubrir y compartir

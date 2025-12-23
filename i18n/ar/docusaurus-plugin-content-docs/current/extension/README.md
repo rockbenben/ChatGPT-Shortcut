@@ -1,10 +1,25 @@
-# تثبيت الامتداد
+---
+sidebar_label: تثبيت إضافة المتصفح
+title: إضافة AI Short للمتصفح - Chrome و Edge و Firefox
+description: حمل إضافة AI Short لـ Chrome و Edge و Firefox. تكامل سلس مع أدوات الذكاء الاصطناعي لتعزيز إنتاجيتك.
+---
 
-AiShort (ChatGPT Shortcut) هو امتداد للمتصفح متوافق مع Chrome وEdge وFirefox والمتصفحات الأخرى المستندة إلى Chromium. لا يوفر هذا الامتداد وظائف إصدار الويب من ChatGPT Shortcut فحسب، بل يتميز أيضًا بعناصر فريدة مثل الشريط الجانبي وتنشيط النافذة تلقائيًا. يمكن أن يبدأ تلقائيًا باستخدام ChatGPT أو الصفحات المخصصة ويمكن أيضًا تنشيطه يدويًا باستخدام مفتاح الاختصار `Alt+Shift+S`. فيما يلي قنوات التنزيل:
+# تثبيت إضافة المتصفح
 
-- **Chrome**: [متجر Chrome الإلكتروني](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [إضافات Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [إضافات متصفح Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [إصدار GitHub](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+تساعدك إضافة AiShort (ChatGPT Shortcut) على الوصول إلى مكتبة مطالبات AIShort في أي وقت، مما يحسن كفاءة العمل والدراسة. وهي تدعم المتصفحات السائدة مثل Chrome و Edge و Firefox، وتوفر ميزات الشريط الجانبي والاختصارات. يمكنك استخدام `Alt + Shift + S` لتنشيط الإضافة بسرعة.
 
-بالإضافة إلى ذلك، نقدم نص Tampermonkey — [**اختصار ChatGPT في أي مكان**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere)، والذي يسمح للمستخدمين بتخصيص أسماء النطاقات المطابقة واستخدام الشريط الجانبي AiShort على أي موقع ويب. ومع ذلك، نظرًا لقيود حقن محتوى البرنامج النصي على صفحات ChatGPT، يتم تنشيط وظيفة الشريط الجانبي للبرنامج النصي عبر نافذة منبثقة على صفحات ChatGPT.
+## 📥 قنوات التنزيل الرسمية
+
+- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **تنزيل المرآة (استخدمه عندما لا يمكن الوصول إلى المتجر)**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud (كلمة المرور: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
+
+## 🧩 برنامج Tampermonkey النصي (Tampermonkey Script)
+
+بالإضافة إلى نموذج الإضافة، نقدم أيضًا [**ChatGPT Shortcut Anywhere Script**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere).
+يعد Tampermonkey امتدادًا للمتصفح يسمح للمستخدمين بتشغيل نصوص برمجية مخصصة لتحسين وظائف صفحة الويب.
+
+من خلال هذا البرنامج النصي، يمكنك إحضار الشريط الجانبي لـ AiShort إلى أي موقع ويب.
+ومع ذلك، يرجى ملاحظة أنه نظرًا لقيود حقن البرنامج النصي في صفحة ChatGPT الرسمية، سيعمل البرنامج النصي كـ **نافذة منبثقة** بدلاً من شريط جانبي على تلك الصفحة.

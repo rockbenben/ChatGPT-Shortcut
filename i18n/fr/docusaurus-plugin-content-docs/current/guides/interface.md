@@ -1,39 +1,59 @@
-# Description de l'interface
+---
+sidebar_label: Guide de l'interface
+title: Guide de l'interface - Recherche et Filtres
+description: Maîtrisez AI Short. Apprenez à filtrer par étiquettes et utiliser la recherche intelligente pour trouver le prompt parfait.
+---
 
-AiShort affiche par défaut tous les mots suggérés. La page est divisée en trois sections : la zone des balises, la zone de recherche et la zone d'affichage des mots suggérés.
+# Guide de l'interface
 
-![](https://img.newzone.top/2023-06-05-20-44-19.png?imageMogr2/format/webp)
+La page AiShort offre aux utilisateurs une interface intuitive pour parcourir et filtrer les prompts. La page se compose principalement de la zone de balises, de la zone de recherche et de la zone d'affichage des prompts.
+
+![](/img/docs/interface-home.png)
 
 ## 🏷︎ Filtrage par balises
 
-La zone des balises est divisée en fonction du domaine et de la fonctionnalité des mots suggérés, permettant une sélection en fonction de différents scénarios et besoins. Elle peut être utilisée en combinaison avec le bouton "Règle de filtrage par balises" situé dans le coin supérieur droit de la zone des balises pour effectuer un filtrage multi-balises. L'état par défaut est OR, ce qui sélectionne tous les mots suggérés sous la balise choisie. En passant en mode AND, les mots suggérés ayant plusieurs balises sélectionnées seront filtrés.
+La zone de balises aide les utilisateurs à filtrer les prompts en fonction du domaine et de la fonction.
 
-![](https://img.newzone.top/2023-06-05-20-50-19.png?imageMogr2/format/webp)
+Via le bouton "Changer la règle de filtrage des balises" en haut à droite, vous pouvez obtenir un filtrage multi-balises plus précis :
 
-## 🔍 Recherche par mot-clé
+- **Règle OU** (Par défaut) : Affiche les prompts ayant l'une des balises sélectionnées
+- **Règle ET** : Affiche uniquement les prompts ayant toutes les balises sélectionnées simultanément
 
-La recherche par mot-clé inclut les titres, les résumés, le contenu et les traductions dans votre langue maternelle des mots suggérés. Après avoir saisi un mot-clé, la zone d'affichage des mots suggérés affichera immédiatement le contenu filtré. Si des balises ont été sélectionnées, la recherche par mot-clé sera limitée à la portée des balises sélectionnées. Côté PC, après que le contenu dans la zone de recherche change, les nouveaux résultats de recherche s'afficheront après 800 millisecondes. Sur les appareils mobiles, la mise à jour est instantanée.
+![](/img/docs/interface-filter.png)
 
-![](https://img.newzone.top/2023-06-05-20-58-07.png?imageMogr2/format/webp)
+## 🔍 Recherche par mots-clés
 
-Une fois connecté, la zone de recherche inclura les invites que vous avez envoyées et collectées.
+La fonction de recherche par mots-clés prend en charge la recherche des titres, descriptions et contenus des prompts.
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+- Si des balises sont déjà sélectionnées, la portée de la recherche est limitée à ces balises
+- Après connexion, la portée de la recherche inclut vos collections et prompts personnalisés
 
-## 🔬 Copie du prompt
+![](/img/docs/interface-search.png)
 
-Grâce au filtrage par balises et à la recherche par mot-clé, en cliquant sur le bouton "Copier" dans le coin supérieur droit de la carte, vous pouvez obtenir les mots suggérés. Après les avoir collés dans ChatGPT, vous pouvez vous référer aux suggestions et ajuster le texte selon vos besoins spécifiques pour obtenir une réponse dans le domaine souhaité. Si l'explication en langue maternelle dans les mots suggérés n'est pas claire, vous pouvez cliquer sur le lien dans le coin inférieur droit des mots suggérés pour afficher la page web source.
+## 🔬 Cartes de prompts
 
-![](https://img.newzone.top/2023-06-11-17-14-07.png?imageMogr2/format/webp)
+### Voir les détails
 
-## 💬 Changement de langue
+Cliquez sur une carte de prompt pour ouvrir la fenêtre contextuelle des détails, où vous pouvez voir le titre, la description, le contenu complet du prompt, les remarques et le bouton de copie.
 
-Par défaut, les mots suggérés sont affichés en anglais. Si vous utilisez une page non anglaise et souhaitez voir les interprétations dans votre langue maternelle, veuillez cliquer sur le contenu des mots suggérés pour passer à une langue non anglaise, et cliquez à nouveau pour revenir à l'anglais. Veuillez noter que le changement de langue ne fonctionne que lorsque vous cliquez sur le texte dans le prompt, et cliquer dans la zone vide est inefficace.
+![](/img/docs/prompt-card.gif)
 
-![Passage entre le chinois et l'anglais](http://img.newzone.top/chatgptshortcut_encn.gif)
+### Copier le prompt
 
-Si vous souhaitez que les mots suggérés soient affichés par défaut dans votre langue maternelle, vous pouvez cliquer sur le bouton "Changer la langue du prompt" dans le coin supérieur droit de la zone des balises. Cependant, veuillez noter que même en passant aux traductions en langue maternelle, le bouton de copie ne copie que les mots suggérés en anglais.
+Cliquez sur le bouton "Copier" en bas de la carte pour obtenir le prompt. Collez-le dans un modèle d'IA pour l'utiliser.
 
-## 🔥 Tri par popularité
+### Collectionner le prompt
 
-La page affiche maintenant la fréquence d'utilisation des prompts, et les prompts les plus utilisés seront marqués comme "favoris". De plus, le tri des balises des prompts sera principalement basé sur la valeur de popularité. La valeur de popularité sera mise à jour périodiquement.
+Après connexion, un bouton de collection apparaîtra sur la carte. Cliquez pour ajouter le prompt à Ma collection.
+
+## 🔥 Tri populaire
+
+La page trie les prompts en fonction de leur popularité pour vous aider à découvrir rapidement le contenu tendance.
+
+Le tri des balises est également ajusté en fonction des valeurs de chaleur pour s'assurer qu'il reflète les dernières préférences de la communauté.
+
+## Documentation associée
+
+- [Bien commencer](./getting-started) - Méthodes d'utilisation de base
+- [Ma collection](./my-collection) - Collection, balises et tri
+- [Prompts de la communauté](./community) - Découvrir et partager

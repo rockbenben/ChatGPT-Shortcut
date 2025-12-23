@@ -1,70 +1,59 @@
 ---
-sidebar_label: Interface
-title: AiShort Interface Guide | Master Search, Filters & Language Switching
-description: How to use the AiShort interface effectively? This guide explains core features like tag filters, keyword search, multi-language switching, and popularity ranking to help you quickly find the right AI prompts.
+sidebar_label: Interface Guide
+title: AI Short Interface Guide | Tag Filtering & Smart Search
+description: Master the AI Short interface! Quickly locate prompts via tag filtering and keyword search, understand card details and collection operations.
 ---
 
-# Interface Overview
+# Interface Guide
 
-The AiShort interface provides an intuitive way to browse and filter prompts, helping you find exactly what you need. The page is divided into three main sections: **Tags**, **Search**, and **Prompt Display**, designed to give you an efficient and user-friendly search experience.
+The AiShort page provides users with an intuitive interface to browse and filter prompts. The page mainly consists of the tag area, search area, and prompt display area.
 
-![](https://img.newzone.top/2024-03-07-04-56-01.png?imageMogr2/format/webp)
+![](/img/docs/interface-home.png)
 
-## 🏷︎ Tag Filters
+## 🏷︎ Tag Filtering
 
-The tag area allows you to filter prompts by domain or function, making it easier to match your specific scenario.  
-Use the **“Tag Filter Mode”** switch (top-right) to choose between two modes:
+The tag area facilitates users to filter prompts based on domain and function.
 
-- **OR (default):** shows prompts with _any_ of the selected tags.
-- **AND:** shows only prompts that include _all_ selected tags.
+Via the "Tag Filter Rule Switch" button at the top right, you can achieve more precise multi-tag filtering:
 
-![](https://img.newzone.top/2023-02-28-10-31-01.png?imageMogr2/format/webp)
+- **OR Rule** (Default): Show prompts that have any of the selected tags
+- **AND Rule**: Only show prompts that have all selected tags simultaneously
+
+![](/img/docs/interface-filter.png)
 
 ## 🔍 Keyword Search
 
-The search bar supports searching through prompt titles, descriptions, content, and translations. Results update instantly based on your input:
+Keyword search function supports searching for prompt titles, descriptions, and content.
 
-- On desktop: results refresh **800 ms** after typing stops.
-- On mobile: results update immediately.
-- If tags are selected, the search is limited within those tags.
+- If tags are already selected, the search scope is limited to those tags
+- After logging in, the search scope includes your collections and custom prompts
 
-![](https://img.newzone.top/2023-02-28-10-31-10.png?imageMogr2/format/webp)
+![](/img/docs/interface-search.png)
 
-When logged in, search results also include your own submitted and favorited prompts.
+## 🔬 Prompt Cards
 
-![](https://img.newzone.top/2024-08-12-20-38-27.png?imageMogr2/format/webp)
+### View Details
 
-## 📤 Data Management
+Click on a prompt card to open the details popup, where you can view the title, description, complete prompt content, remarks, and copy button.
 
-Logged-in users can access **Data Management** from the personal center:
+![](/img/docs/prompt-card.gif)
 
-- **Export Prompts**: One-click export of all your custom prompts as a JSON file for backup or migration.
-- **Clear Cache**: Reset local cache to sync the latest favorites and prompt data.
+### Copy Prompt
 
-These features help you better manage and protect your personal data.
+Click the "Copy" button at the bottom of the card to get the prompt. Paste it into an AI model to use.
 
-## 🔬 Copy from Display
+### Collect Prompt
 
-After filtering or searching, click the **Copy** button on the top-right of any prompt card to get the text.  
-Paste the prompt into ChatGPT or another AI model to generate domain-specific responses.
+After logging in, a collect button will appear on the card. Click to add the prompt to My Collection.
 
-If the native-language description is unclear, you can click the link at the bottom-right of the card to view the original source page.
+## 🔥 Popular Sorting
 
-![](https://img.newzone.top/2023-06-11-17-10-37.png?imageMogr2/format/webp)
+The page sorts prompts based on their popularity to help you quickly discover trending content.
 
-## 💬 Language Switching
+Tag sorting is also adjusted based on heat values to ensure it reflects the community's latest preferences.
 
-By default, prompts are shown in **English**. Non-English users can click the prompt text area to toggle between English and their native-language translation.
+## Related Documentation
 
-- First click → switch to native language
-- Second click → switch back to English
-
-![Language Switching](https://img.newzone.top/chatgptshortcut_encn.gif?imageMogr2/format/webp)
-
-If you prefer prompts to always display in your native language, use the **“Switch Prompt Language”** button in the tag area (top-right).  
-**Note:** even in native mode, the **Copy** button always copies the English prompt text.
-
-## 🔥 Popularity Ranking
-
-Prompts are ranked by usage frequency, helping you quickly discover the most popular ones.  
-Tag rankings also adjust dynamically based on popularity, updated regularly to reflect the latest community trends.
+- [Getting Started](./getting-started) - Basic usage methods
+- [My Collection](./my-collection) - Collection, tags, and sorting
+- [Community Prompts](./community) - Discover and share

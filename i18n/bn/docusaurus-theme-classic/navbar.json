@@ -7,25 +7,21 @@
     "message": "ChatGPT Shortcuts",
     "description": "The alt text of navbar logo"
   },
-  "item.label.📘 使用说明": {
-    "message": "📘 ডকস",
-    "description": "Navbar item with label 📘 使用说明"
+  "item.label.使用说明": {
+    "message": "ডকস",
+    "description": "Navbar item with label 使用说明"
   },
-  "item.label.🏘️ 社区提示词": {
-    "message": "🏘️ কমিউনিটি প্রম্পটস",
-    "description": "Navbar item with label 🏘️ 社区提示词"
+  "item.label.社区提示词": {
+    "message": "কমিউনিটি প্রম্পটস",
+    "description": "Navbar item with label 社区提示词"
   },
-  "item.label.🛠️ 应用工具": {
-    "message": "🛠️ টুলস",
-    "description": "Navbar item with label 🛠️ 应用工具"
+  "item.label.应用工具": {
+    "message": "টুলস",
+    "description": "Navbar item with label 应用工具"
   },
   "item.label.IMGPrompt": {
     "message": "IMGPrompt",
     "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.文字处理": {
-    "message": "অন্যান্য টুলস",
-    "description": "Navbar item with label 文字处理"
   },
   "item.label.工具收藏": {
     "message": "টুল সংগ্রহ",
@@ -39,20 +35,28 @@
     "message": "প্রতিক্রিয়া",
     "description": "Navbar item with label 反馈建议"
   },
-  "item.label.📝 提交反馈": {
-    "message": "📝 প্রতিক্রিয়া জমা দিন",
-    "description": "Navbar item with label 📝 提交反馈"
-  },
-  "item.label.💬 加入 QQ 群": {
-    "message": "💬 আমাদের সাথে QQ তে চ্যাট করুন",
-    "description": "Navbar item with label 💬 加入 QQ 群"
-  },
-  "item.label.📺 加入 Discord": {
-    "message": "📺 আমাদের ডিসকোর্ডে যোগ দিন",
-    "description": "Navbar item with label 📺 加入 Discord"
-  },
   "item.label.脚本扩展": {
     "message": "এক্সটেনশনস",
     "description": "Navbar item with label 脚本扩展"
+  },
+  "item.label.ToolsByAI": {
+    "message": "ToolsByAI",
+    "description": "Navbar item with label ToolsByAI"
+  },
+  "item.label.Telegram": {
+    "message": "Telegram",
+    "description": "Navbar item with label Telegram"
+  },
+  "item.label.支持": {
+    "message": "সহায়তা",
+    "description": "Navbar item with label 支持"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.QQ 群": {
+    "message": "QQ গ্রুপ",
+    "description": "Navbar item with label QQ 群"
   }
 }

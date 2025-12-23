@@ -2,7 +2,7 @@
 ⚡️AI Short
 </h1>
 <p align="center">
-    <a href="/README-en.md">English</a> | <a href="/README.md">中文</a> |
+    <a href="../README.md">English</a> | <a href="../README-zh.md">中文</a> |
 <a href="./README-es.md">Español</a> |
 <a href="./README-ja.md">日本語</a> |
 <a href="./README-ko.md">한국어</a> |
@@ -16,76 +16,69 @@ Português |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>ChatGPT Shortcut, Maximize your Efficiency and Productivity</em>
+    <em>ChatGPT Shortcut - Maximize sua Eficiência e Produtividade</em>
 </p>
+
+## ⚡ Início Rápido
+
+1. Visite [aishort.top](https://www.aishort.top/pt/)
+2. Pesquise ou navegue pelo prompt que você precisa
+3. Clique em "Copiar" e cole em qualquer modelo de IA
+
+É isso! Para mais funcionalidades, consulte o [Guia do Usuário](https://www.aishort.top/pt/docs/guides/getting-started).
 
 ## Por que usar o AiShort?
 
-O AiShort (Atalho para ChatGPT) fornece uma lista concisa e fácil de usar de prompts de IA. Ele foi projetado para ajudar os usuários a encontrar rapidamente prompts adequados para vários cenários, tornando-o fácil de usar até mesmo para iniciantes e melhorando de forma abrangente sua eficiência no aprendizado e no trabalho.
+O AiShort (ChatGPT Shortcut) oferece uma lista selecionada de prompts de IA para ajudá-lo a encontrar rapidamente prompts para qualquer situação.
 
-🚀 **Prompts com Um Clique**: Uma seleção de vários prompts profissionais. Com apenas um clique, você pode enviá-los para modelos de IA como o ChatGPT e obter rapidamente as respostas desejadas.
+### Funcionalidades Principais
 
-💻 **Aumente a Produtividade**: Use prompts otimizados para obter feedback mais preciso e prático, concluindo tarefas de aprendizado e trabalho de forma eficiente.
+🚀 **Prompts com Um Clique** - Prompts profissionais selecionados, um clique para copiar e usar.
 
-🌍 **Suporte a Vários Idiomas**: Oferece traduções para prompts em inglês em 12 idiomas principais e suporta respostas padrão em seu idioma nativo, permitindo que usuários que não falam inglês o utilizem sem barreiras.
+🔍 **Busca Inteligente** - Encontre rapidamente com filtros de tags e busca por palavras-chave.
 
-💾 **Colete e Edite**: Você pode coletar, editar e gerenciar seus prompts favoritos a qualquer momento para uso futuro.
+🌍 **12 Idiomas** - Traduções para todos os prompts, respostas no seu idioma nativo.
 
-📤 **Exporte e Faça Backup**: Exporte todos os seus prompts com um clique, com suporte ao formato JSON para backup, facilitando a migração e o salvamento local.
+📦 **Pronto para Usar** - Sem necessidade de registro, comece imediatamente.
 
-🌟 **Compartilhe Prompts**: Compartilhe seus prompts favoritos com outras pessoas para inspirar mais criatividade e ideias.
+### Funcionalidades Avançadas (Requer Login)
 
-🗳️ **Votação da Comunidade**: Semelhante ao Product Hunt ou Reddit, impulsionado pelos votos da comunidade, prompts excelentes serão recomendados na página inicial.
+📂 **Minha Coleção** - Salve favoritos com ordenação por arrastar e soltar e tags personalizadas.
 
-📦 **Pronto para Usar**: Nenhuma configuração complexa é necessária. Visite [aishort.top](https://www.aishort.top/pt/) para começar a experimentar imediatamente.
+✏️ **Prompts Personalizados** - Crie, edite e gerencie seus próprios prompts.
 
-Os prompts para o AiShort (Atalho para ChatGPT) são provenientes de seleções online, compartilhamentos da comunidade e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nós os atualizamos regularmente para trazer continuamente novos prompts e inspiração para você. Para instruções detalhadas, consulte o [Guia do Usuário](https://www.aishort.top/pt/docs/guides/getting-started).
+🗳️ **Comunidade** - Compartilhe prompts e vote nas contribuições da comunidade.
 
-Bem-vindo a se juntar à nossa comunidade para trocar ideias e feedback:
+📤 **Exportar** - Faça backup de todos os seus prompts em JSON.
 
-<a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="join Telegram group" />
-</a>
-
-<a href="https://discord.gg/PZTQfJ4GjX">
-    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
-</a>
+🔐 **Múltiplas Opções de Login** - Senha, Google ou link de email sem senha.
 
 ## Extensão do Navegador
 
-A extensão AiShort (Atalho para ChatGPT) ajuda você a acessar a biblioteca de prompts do AiShort a qualquer momento para aprimorar sua eficiência no trabalho e nos estudos. Ela suporta os principais navegadores como Chrome, Edge e Firefox, e possui uma barra lateral que pode ser chamada rapidamente com o atalho `Alt + Shift + S`.
+Acesse os prompts do AiShort a qualquer momento. Suporta Chrome, Edge e Firefox com barra lateral via `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-
-Além disso, oferecemos o script Tampermonkey - [**ChatGPT Shortcut Anywhere**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere), que permite aos usuários personalizar nomes de domínio correspondentes e usar a barra lateral do AiShort em qualquer site. No entanto, devido a restrições de injeção de conteúdo de script na página do ChatGPT, a funcionalidade da barra lateral do script é ativada por meio de um pop-up na página do ChatGPT.
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 ## Implantação
 
-Para etapas detalhadas sobre a implantação através de ambiente local, Vercel, Cloudflare Page, Docker e modificação do projeto, consulte o [Guia de Implantação do Atalho para ChatGPT](https://www.aishort.top/pt/docs/deploy).
+Implante sua própria instância via Vercel, Cloudflare Pages, Docker ou localmente. Veja o [Guia de Implantação](https://www.aishort.top/pt/docs/deploy).
 
-## Atualizações Sincronizadas
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-Se você implantou seu próprio projeto no Vercel com um único clique, pode encontrar um problema em que as atualizações são constantemente indicadas. Isso ocorre devido ao comportamento padrão do Vercel de criar um novo projeto para você em vez de fazer um "fork" do projeto atual, impedindo assim a detecção adequada de atualizações. Recomenda-se seguir os passos subsequentes para a reimplantação:
+## Comunidade
 
-1. Remova o repositório anterior.
-2. Utilize o botão "fork" localizado no canto superior direito da página para fazer um "fork" do projeto atual.
-3. Na [página de Novo Projeto do Vercel](https://vercel.com/new), selecione o projeto recém-"forkado" na seção Importar Repositório Git e prossiga com a implantação.
+Junte-se para discussões e feedback:
 
-### Atualizações Automáticas
+<a href="https://t.me/aishort_top">
+    <img src="https://img.shields.io/badge/Telegram-Grupo-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
+</a>
+<a href="https://discord.gg/PZTQfJ4GjX">
+    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
+</a>
 
-> No caso de encontrar um erro durante a execução do Upstream Sync, execute manualmente um único Sync Fork.
+---
 
-Depois de fazer um "fork" do projeto, devido a restrições do GitHub, é necessário habilitar manualmente os Workflows na página Actions do seu projeto "forkado" e ativar a Ação Upstream Sync. Após a ativação, as atualizações serão executadas automaticamente diariamente.
-
-![Atualizações Automáticas](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-![Habilitando Atualizações Automáticas](https://img.newzone.top/2023-05-19-11-59-26.png?imageMogr2/format/webp)
-
-### Atualizações Manuais
-
-Para atualizações imediatas, verifique os [Documentos do GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) sobre como sincronizar "forks".
-
-⭐ Dê uma estrela / 👀 Acompanhe este projeto ou siga o autor para ser notificado sobre novos recursos.
+⭐ Dê uma estrela para ficar atualizado sobre novas funcionalidades!

@@ -1,16 +1,25 @@
-# Guía de instalación local del complemento CRX de Chrome
+---
+sidebar_label: Guía de Instalación CRX para Chrome
+title: Instalación Manual Chrome - Guía Archivo CRX
+description: Instala fácilmente el archivo CRX en modo desarrollador. Instrucciones de arrastrar y soltar y soluciones a problemas comunes.
+---
 
-## Descarga el paquete CRX
+# Guía de Instalación Local de Extensión CRX para Chrome
 
-Descarga el paquete de instalación de CRX de ChatGPT Shortcut (ChatGPT_Shortcut-crx-3.x.x.zip) desde [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest) y descomprímelo (el archivo crx está en la carpeta descomprimida).
+## Descargar Paquete CRX
+
+Descarga el paquete de instalación crx de ChatGPT Shortcut (ChatGPT_Shortcut-crx-3.x.x.zip) y descomprímelo (el archivo crx está dentro de la carpeta descomprimida).
+
+- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Descarga en China**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), contraseña: 1qow
 
 ![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
 
-## Habilita el modo de desarrollador
+## Habilitar Modo Desarrollador
 
-Abre la página "Administrar extensiones" de Chrome y habilita el "Modo de desarrollador".
+Abre la página "Gestionar extensiones" de Chrome y activa el "Modo de desarrollador".
 
-Copia la siguiente dirección y pégala en la barra de direcciones del navegador, luego presiona Enter para abrirla. Habilita el "Modo de desarrollador" en la esquina superior derecha de la página.
+Copia la siguiente dirección y pégala en la barra de direcciones del navegador, luego presiona Enter para abrir. Activa el "Modo de desarrollador" en la esquina superior derecha de la página.
 
 ```txt
 chrome://extensions
@@ -18,20 +27,20 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-05-52.png?imageMogr2/format/webp)
 
-## Instalar el complemento
+## Instalar Extensión
 
-Instalar el complemento (Nota⚠️: Debe arrastrar el archivo .crx, no haga clic en [Cargar extensión descomprimida])
+Instala la extensión ChatGPT Shortcut (Nota ⚠️: Necesitas arrastrar el archivo .crx, NO hagas clic en "Cargar descomprimida")
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Después de una instalación exitosa, puede ver el [Tutorial de uso del complemento](./usage.md).
+Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage.md).
 
-## ¿Tiene problemas con la instalación?
+## ¿Problemas de Instalación?
 
-1. Usuarios de Windows, verifiquen si el paquete de instalación descargado se ha descomprimido (no se ha hecho doble clic para abrirlo).
+1. Usuarios de Windows: ¿Has descomprimido el paquete de instalación descargado (en lugar de hacer doble clic para abrir)?
 
-2. ¿Está habilitado el "Modo de desarrollador"? Si no es así, consulta el segundo paso.
+2. ¿Está activado el "Modo de desarrollador"? Si no, consulta la operación del paso 2.
 
-3. ¿Arrastraste el archivo crx a la página "Extensiones"? Nota⚠️: No hagas clic en [Cargar extensión descomprimida], debes arrastrar el archivo crx.
+3. ¿Arrastraste el archivo crx a la página de "Extensiones"? Nota ⚠️: No hagas clic en "Cargar descomprimida", debes arrastrar el archivo crx.
 
-4. ¿El navegador no permite instalar el archivo crx? ¡Prueba a instalar el archivo zip! [Haz clic aquí para ver las instrucciones de instalación zip](./manual-chrome-extension-zip.md).
+4. ¿El navegador no permite instalar archivos crx? ¡Intenta instalar el archivo zip! [Haz clic aquí para ver el tutorial de instalación zip](./manual-chrome-extension-zip.md).
