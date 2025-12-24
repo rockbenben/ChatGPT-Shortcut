@@ -417,3 +417,10 @@ div[class^="announcementBar_"] {
   filter: none;
   opacity: 1;
 }
+
+@media (min-width: 450px) and (max-width: 575px) {
+  .ant-col-xs-24 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
