@@ -6,7 +6,7 @@ description: Master the AI Short browser extension! Enable sidebar, one-click in
 
 # How to Use Browser Extension?
 
-ChatGPT Shortcut supports 13 mainstream languages, and the extension language will be automatically set according to your browser environment. The language of the ChatGPT embedded page and sidebar in the extension will also follow this setting. Please note, to avoid triggering permission warnings from third-party websites, **do not change the language in the embedded page**.
+ChatGPT Shortcut supports 13 mainstream languages, and the extension language will be automatically set according to your browser environment. You can also manually change the language in the settings page.
 
 ![](/img/docs/extension-settings.png)
 
@@ -18,7 +18,9 @@ If "Keep side panel open" is enabled in settings, the sidebar will remain open w
 
 ![](/img/docs/extension-sidebar.png)
 
-If you want to use the AiShort sidebar on other websites, please install the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) script. Tampermonkey is a browser extension that allows users to run custom scripts to modify web pages. Please note, to avoid functional overlap and potential conflicts, the ChatGPT Shortcut Anywhere script will not take effect on websites supported by the extension by default.
+## Dark Mode
+
+The extension supports dark mode. Enable "Dark Mode" in the settings page to switch the sidebar and settings page to a dark appearance.
 
 ## Hotkey Activation
 

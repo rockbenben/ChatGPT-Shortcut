@@ -1,25 +1,27 @@
 ---
-sidebar_label: Verwendung der Erweiterung
-title: Erweiterung nutzen - Sidebar & Shortcuts
-description: Nutzen Sie die Erweiterung effizient. Lernen Sie Seitenleiste und Shortcuts kennen.
+sidebar_label: Erweiterung verwenden
+title: AI Short Erweiterungsanleitung - Seitenleiste & Tastenkürzel
+description: Meistern Sie die AI Short Browser-Erweiterung! Aktivieren Sie die Seitenleiste, rufen Sie mit Alt+Shift+S die Prompt-Bibliothek auf.
 ---
 
-# Wie benutzt man die Browser-Erweiterung?
+# Wie verwendet man die Browser-Erweiterung?
 
-ChatGPT Shortcut unterstützt 13 Hauptsprachen, und die Erweiterungssprache wird automatisch basierend auf Ihrer Browserumgebung eingestellt. Die Sprache der eingebetteten ChatGPT-Seite und die Seitenleiste in der Erweiterung folgen ebenfalls dieser Einstellung. Beachten Sie, dass Sie, um das Auslösen von Berechtigungswarnungen von Drittanbieter-Websites zu vermeiden, **die Sprache nicht auf der eingebetteten Seite ändern sollten**.
+ChatGPT Shortcut unterstützt 13 Hauptsprachen, und die Erweiterungssprache wird automatisch entsprechend Ihrer Browserumgebung eingestellt. Sie können die Sprache auch manuell auf der Einstellungsseite ändern.
 
 ![](/img/docs/extension-settings.png)
 
-## AiShort-Seitenleiste
+## AiShort Seitenleiste
 
-Die AiShort-Erweiterung funktioniert derzeit als Seitenleiste (Side Panel) und bietet ein nahtloses interaktives Erlebnis.
+Die AiShort-Erweiterung funktioniert derzeit als Seitenleiste und bietet ein nahtloses interaktives Erlebnis.
 
-Wenn in den Einstellungen die Option „Seitenleiste offen halten (Keep side panel open)“ aktiviert ist, bleibt die Seitenleiste beim Wechseln von Browser-Tabs geöffnet.
+Wenn "Seitenleiste geöffnet halten" in den Einstellungen aktiviert ist, bleibt die Seitenleiste beim Wechseln der Browser-Tabs geöffnet.
 
 ![](/img/docs/extension-sidebar.png)
 
-Wenn Sie die AiShort-Seitenleiste auf anderen Websites verwenden möchten, installieren Sie bitte das Skript [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tampermonkey ist eine Browser-Erweiterung, die es Benutzern ermöglicht, benutzerdefinierte Skripte auszuführen, um Webseiten zu ändern. Beachten Sie, dass das ChatGPT Shortcut Anywhere-Skript aus Gründen der Funktionsüberschneidung und potenzieller Konflikte standardmäßig auf den von der Erweiterung unterstützten Websites nicht wirksam wird.
+## Dunkelmodus
 
-## Aktivierung per Hotkey
+Die Erweiterung unterstützt den Dunkelmodus. Aktivieren Sie "Dunkelmodus" auf der Einstellungsseite, um die Seitenleiste und Einstellungsseite auf ein dunkles Erscheinungsbild umzuschalten.
 
-Verwenden Sie die Tastenkombination `Alt+Shift+S`, um die AiShort-Seitenleiste direkt zu aktivieren.
+## Tastenkürzel-Aktivierung
+
+Verwenden Sie das Tastenkürzel `Alt+Shift+S`, um die AiShort-Seitenleiste direkt zu aktivieren.

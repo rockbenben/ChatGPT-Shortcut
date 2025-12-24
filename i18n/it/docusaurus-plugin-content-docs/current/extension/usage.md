@@ -1,25 +1,27 @@
 ---
-sidebar_label: Come Usare l'Estensione
-title: Guida all'Uso Estensione AI Short - Barra Laterale e Scorciatoie
-description: Sfrutta al meglio l'estensione AI Short - Attiva la barra laterale e la scorciatoia Alt+Shift+S per i tuoi prompt.
+sidebar_label: Usare l'estensione
+title: Guida estensione AI Short - Barra laterale e scorciatoie
+description: Padroneggia l'estensione browser AI Short! Attiva la barra laterale, richiama la libreria prompt con Alt+Shift+S.
 ---
 
-# Come Usare l'Estensione del Browser?
+# Come usare l'estensione del browser?
 
-ChatGPT Shortcut supporta 13 lingue principali, e la lingua dell'estensione sarà impostata automaticamente in base all'ambiente del tuo browser. La lingua della pagina incorporata di ChatGPT e la barra laterale nell'estensione seguiranno anche questa impostazione. Nota che per evitare di attivare avvisi di permesso da siti web di terze parti, **non cambiare la lingua nella pagina incorporata**.
+ChatGPT Shortcut supporta 13 lingue principali e la lingua dell'estensione verrà impostata automaticamente in base all'ambiente del browser. Puoi anche cambiare manualmente la lingua nella pagina delle impostazioni.
 
 ![](/img/docs/extension-settings.png)
 
-## Barra Laterale AiShort
+## Barra laterale AiShort
 
-L'estensione AiShort funziona attualmente come un pannello laterale (Side Panel), offrendo un'esperienza interattiva fluida.
+L'estensione AiShort funziona attualmente come pannello laterale, fornendo un'esperienza interattiva fluida.
 
-Se l'opzione "Mantenere aperto il pannello laterale (Keep side panel open)" è abilitata nelle impostazioni, la barra laterale rimarrà aperta durante il cambio delle schede del browser.
+Se "Mantieni il pannello laterale aperto" è abilitato nelle impostazioni, la barra laterale rimarrà aperta quando si cambiano le schede.
 
 ![](/img/docs/extension-sidebar.png)
 
-Se desideri usare la barra laterale AiShort su altri siti web, installa lo script [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere). Tampermonkey è un'estensione del browser che permette agli utenti di eseguire script personalizzati per modificare le pagine web. Nota che per evitare sovrapposizioni funzionali e potenziali conflitti, lo script ChatGPT Shortcut Anywhere non avrà effetto sui siti web supportati dall'estensione di default.
+## Modalità scura
 
-## Attivazione tramite Tasto di Scelta Rapida
+L'estensione supporta la modalità scura. Abilita "Modalità scura" nella pagina delle impostazioni per passare la barra laterale e la pagina delle impostazioni a un aspetto scuro.
 
-Usa la scorciatoia `Alt+Shift+S` per attivare direttamente la barra laterale AiShort.
+## Attivazione tramite scorciatoia
+
+Usa la scorciatoia `Alt+Shift+S` per attivare direttamente la barra laterale di AiShort.
