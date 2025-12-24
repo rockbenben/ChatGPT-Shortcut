@@ -12,7 +12,7 @@ export { API_URL, GAUTH_API_BASE } from "./config";
 export { clearUserProfileCache, getAuthToken, persistAuthToken, apiClient } from "./client";
 
 // Auth APIs
-export { register, login, changePassword, forgotPassword, resetPassword, sendPasswordlessLink, loginWithToken, getGoogleLoginUrl, googleLogin } from "./auth";
+export { register, login, changePassword, forgotPassword, resetPassword, sendPasswordlessLink, loginWithToken, getGoogleAuthUrl, googleLogin } from "./auth";
 
 // User APIs
 export { getUserAllInfo, updateUsername } from "./user";

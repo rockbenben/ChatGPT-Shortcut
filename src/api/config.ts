@@ -13,3 +13,10 @@ export const API_URL = "https://api.newzone.top/api";
 // 生产环境: https://gauth.aishort.top
 // 开发环境: http://localhost:1337
 export const GAUTH_API_BASE = "https://gauth.aishort.top";
+
+/**
+ * Google OAuth 模式开关
+ * - true:  使用旧版流程（/init 获取 URL + /user-profile 认证）
+ * - false: 使用新版流程（Strapi 原生 /api/connect/google）
+ */
+export const USE_LEGACY_GAUTH = false;

@@ -3,7 +3,7 @@ import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, th
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { login, register, forgotPassword, sendPasswordlessLink, getGoogleLoginUrl, googleLogin } from "@site/src/api";
+import { login, register, forgotPassword, sendPasswordlessLink, getGoogleAuthUrl, googleLogin } from "@site/src/api";
 
 const { Title, Text } = Typography;
 
@@ -215,7 +215,7 @@ const LoginPage = () => {
       wrapper.appendChild(text);
       doc.body.appendChild(wrapper);
 
-      const url = await getGoogleLoginUrl();
+      const url = await getGoogleAuthUrl();
       if (!url) {
         throw new Error("Failed to generate Google authentication URL.");
       }

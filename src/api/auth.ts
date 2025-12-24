@@ -6,11 +6,11 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { apiClient, persistAuthToken } from "./client";
-import { API_URL, GAUTH_API_BASE } from "./config";
+import { API_URL, GAUTH_API_BASE, USE_LEGACY_GAUTH } from "./config";
 import { clearMySpaceCache } from "./myspace";
 
 // Google OAuth 路径配置
-const STRAPI_CALLBACK_BASE = API_URL.replace("/api", ""); // 回调和用户数据请求使用主 API
+const STRAPI_CALLBACK_BASE = API_URL.replace(/\/api$/, ""); // 回调和用户数据请求使用主 API(只替换最后出现的 /api)
 const GOOGLE_CONNECT_PATH = "/api/connect/google";
 const GOOGLE_CALLBACK_PATH = "/api/connect/google/callback";
 const USERS_ME_PATH = "/api/users/me";
@@ -174,18 +174,32 @@ const coerceUser = (userCandidate: unknown): Record<string, unknown> | undefined
 };
 
 /**
- * 获取 Google 登录 URL
- * 使用 GAUTH_API_BASE 作为 Google 登录入口
+ * 获取 Google 认证 URL
+ * 根据 USE_LEGACY_GAUTH 开关选择流程：
+ * - true:  旧版流程，调用 /init 端点获取 URL
+ * - false: 新版流程，构建 Strapi /api/connect/google URL
  */
-export async function getGoogleLoginUrl(): Promise<string> {
-  const redirectUrl = resolveRedirectUrl();
-  const url = new URL(buildGauthUrl(GOOGLE_CONNECT_PATH));
+export async function getGoogleAuthUrl(): Promise<string> {
+  if (USE_LEGACY_GAUTH) {
+    // 旧版流程：调用 /init 端点
+    try {
+      const response = await axios.get(buildCallbackUrl("/strapi-google-auth/init"));
+      return response.data.url;
+    } catch (error) {
+      console.error("Error fetching Google authentication URL:", error);
+      throw error;
+    }
+  } else {
+    // 新版流程：构建 Strapi connect URL
+    const redirectUrl = resolveRedirectUrl();
+    const url = new URL(buildGauthUrl(GOOGLE_CONNECT_PATH));
 
-  if (redirectUrl && INCLUDE_REDIRECT_QUERY) {
-    url.searchParams.set(REDIRECT_PARAM_KEY, redirectUrl);
+    if (redirectUrl && INCLUDE_REDIRECT_QUERY) {
+      url.searchParams.set(REDIRECT_PARAM_KEY, redirectUrl);
+    }
+
+    return url.toString();
   }
-
-  return url.toString();
 }
 
 /**
@@ -212,11 +226,50 @@ export async function getAuthenticatedUserDetails(token: string): Promise<Record
 
 /**
  * Google 登录：使用来自回调的数据完成认证
- * - 回调处理使用主 API
+ * 根据 USE_LEGACY_GAUTH 开关选择流程：
+ * - true:  旧版流程，调用 /user-profile 端点
+ * - false: 新版流程，使用 Strapi callback 或直接解析 JWT
  */
 export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAuthResult> {
   if (!payload) {
     throw new Error("Missing Google authentication payload.");
+  }
+
+  // 旧版流程：使用 /user-profile + /me 端点
+  if (USE_LEGACY_GAUTH) {
+    const code = typeof payload === "string" ? payload : payload.code;
+    if (!code) {
+      throw new Error("Missing authorization code for legacy Google authentication.");
+    }
+
+    try {
+      // Step 1: 调用 /user-profile 获取 token
+      const profileResponse = await axios.post(buildGauthUrl("/strapi-google-auth/user-profile"), { code }, { timeout: 30000 });
+      const profileData = profileResponse.data.data;
+
+      // 从返回数据中提取 token
+      const token = profileData.jwt || profileData.token || profileData.access_token;
+      if (!token) {
+        throw new Error("No token received from /user-profile endpoint.");
+      }
+
+      // Step 2: 调用 /me 获取完整用户信息
+      const userResponse = await axios.get(buildCallbackUrl("/strapi-google-auth/me"), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const user = userResponse.data;
+
+      clearMySpaceCache();
+      return { token, user };
+    } catch (error) {
+      console.error("Error authenticating user with Google:", error);
+      if ((error as { code?: string })?.code === "ECONNABORTED") {
+        throw new Error("Request timed out. Please try again.");
+      }
+      throw error;
+    }
   }
 
   // 新流程：直接接收 Strapi 重定向返回的 jwt 与用户信息
