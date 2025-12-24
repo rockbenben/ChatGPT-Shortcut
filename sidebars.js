@@ -40,7 +40,7 @@ const sidebars = {
         type: "generated-index",
       },
       collapsed: false,
-      items: ["extension/README", "extension/usage", "extension/manual-chrome-extension", "extension/manual-chrome-extension-zip", "extension/firefox-extension-setting", "extension/faq"],
+      items: ["extension/README", "extension/usage", "extension/manual-chrome-extension", "extension/manual-chrome-extension-zip", "extension/firefox-extension-setting"],
     },
     {
       type: "doc",
