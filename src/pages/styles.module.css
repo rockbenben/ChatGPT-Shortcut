@@ -11,10 +11,6 @@
     padding-bottom: 0.1rem !important;
   }
 
-  .showcaseList {
-    gap: 1rem !important;
-  }
-
   .checkboxList {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -135,14 +131,6 @@
   margin-right: 0;
 }
 
-.showcaseList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  padding: 0;
-  list-style: none;
-}
-
 .showcaseFavorite {
   padding: 1rem 0;
   background-color: var(--site-color-favorite-background);
@@ -209,7 +197,7 @@
  */
 .virtualCardContainer {
   content-visibility: auto;
-  contain-intrinsic-block-size: auto 320px; /* auto 关键字让浏览器记住实际高度 */
+  contain-intrinsic-block-size: auto 310px; /* auto 关键字让浏览器记住实际高度 */
 }
 
 /**
@@ -224,7 +212,7 @@
  * 骨架屏容器 - 预留空间防止 CLS
  */
 .skeletonContainer {
-  min-height: 320px; 
+  min-height: 310px; 
   contain: layout style;
 }
 
@@ -236,21 +224,21 @@
   /* 移除 content-visibility 以避免 CLS 问题 */
   contain: layout style;
   /* 设置最小高度来预留空间，减少布局跳动 */
-  min-height: 320px;
+  min-height: 310px;
 }
 
 /* 响应式调整 */
 @media (max-width: 767px) {
   .virtualCardContainer {
-    contain-intrinsic-block-size: auto 320px;
+    contain-intrinsic-block-size: auto 310px;
   }
 
   .skeletonContainer {
-    min-height: 320px;
+    min-height: 310px;
   }
 
   .cardColumn {
-    min-height: 320px; /* 移动端卡片高度 */
+    min-height: 310px; /* 移动端卡片高度 */
   }
 }
 

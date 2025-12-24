@@ -5,9 +5,7 @@ import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
-import styles from "./styles.module.css";
 import { AuthContext } from "../AuthContext";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 
@@ -21,7 +19,6 @@ interface CommunityCardProps {
 
 const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
-  const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
@@ -113,16 +110,9 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-          <Typography.Paragraph
-            ellipsis={{
-              rows: 5,
-            }}
-            className={styles.showcaseCardBody}
-            style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-            {user.description}
-          </Typography.Paragraph>
-        </div>
+        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: token.colorTextSecondary }}>
+          {user.description}
+        </Typography.Paragraph>
         <Flex justify="space-between" align="center">
           <div style={{ flex: 1, overflow: "hidden" }}>
             <PromptCardTag tags={user.tags} />

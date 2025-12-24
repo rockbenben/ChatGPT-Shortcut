@@ -211,16 +211,9 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         {renderUnavailableBanner()}
         <PromptRemark remark={remark} />
-        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-          <Typography.Paragraph
-            ellipsis={{
-              rows: 3,
-            }}
-            className={styles.showcaseCardBody}
-            style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-            {prompt}
-          </Typography.Paragraph>
-        </div>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+          {prompt}
+        </Typography.Paragraph>
         <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
           <div style={{ flex: 1, overflow: "hidden" }}>
             {owner && (

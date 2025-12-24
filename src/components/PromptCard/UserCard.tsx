@@ -1,12 +1,9 @@
-import React, { useContext, useCallback, ReactNode } from "react";
+import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
-import styles from "./styles.module.css";
-import { AuthContext } from "../AuthContext";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
@@ -24,8 +21,6 @@ interface UserCardProps {
 }
 
 const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
-  const { userAuth } = useContext(AuthContext);
-  const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
@@ -124,17 +119,10 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-          <Typography.Paragraph
-            ellipsis={{
-              rows: 3,
-            }}
-            className={styles.showcaseCardBody}
-            style={{ marginBottom: 0, color: token.colorTextSecondary }}>
-            {user.description}
-          </Typography.Paragraph>
-        </div>
-        <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+          {user.description}
+        </Typography.Paragraph>
+        <Flex justify="space-between" align="center">
           <div style={{ flex: 1, overflow: "hidden" }}>
             <PromptCardTag tags={user.tags} />
           </div>

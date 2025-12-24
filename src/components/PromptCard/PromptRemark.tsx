@@ -1,9 +1,7 @@
 import React from "react";
-import { theme, Typography } from "antd";
+import { Typography } from "antd";
 
 export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.HTMLAttributes<HTMLElement>) => {
-  const { token } = theme.useToken();
-
   if (!remark) {
     return null;
   }
@@ -12,12 +10,12 @@ export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.H
     <Typography.Paragraph
       {...props}
       style={{
-        marginBottom: token.marginSM,
         fontSize: "0.85rem",
         lineHeight: 1.5,
-        padding: `${token.paddingXXS}px ${token.paddingXS}px`,
-        borderRadius: token.borderRadiusSM,
+        padding: "2px 12px",
+        borderRadius: 6,
         borderLeft: "3px solid var(--ifm-color-emphasis-200)", // SSG 兼容
+        marginBottom: 12,
         ...props.style,
       }}
       ellipsis={{

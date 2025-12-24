@@ -108,18 +108,11 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
         ),
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
-      <PromptRemark remark={userInfo.remark} />
-      <div className={styles.descriptionWrapper} style={{ flex: 1, marginTop: token.marginXS }}>
-        <Typography.Paragraph
-          ellipsis={{
-            rows: 3,
-          }}
-          className={styles.showcaseCardBody}
-          style={{ marginBottom: 0 }}>
-          {userInfo.prompt}
-        </Typography.Paragraph>
-      </div>
-      <Flex justify="space-between" align="center" style={{ marginTop: token.marginSM }}>
+      <PromptRemark remark={userInfo.remark} style={{ marginBottom: 0 }} />
+      <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ flex: 1 }}>
+        {userInfo.prompt}
+      </Typography.Paragraph>
+      <Flex justify="space-between" align="center">
         <div style={{ flex: 1 }}>
           <PromptCardTag tags={user.tags} muted />
         </div>
