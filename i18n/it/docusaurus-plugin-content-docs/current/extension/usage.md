@@ -1,27 +1,33 @@
 ---
-sidebar_label: Usare l'estensione
-title: Guida estensione AI Short - Barra laterale e scorciatoie
-description: Padroneggia l'estensione browser AI Short! Attiva la barra laterale, richiama la libreria prompt con Alt+Shift+S.
+sidebar_label: Come usare l'estensione
+title: Guida AI Short - Barra laterale e scorciatoie
+description: Padroneggia l'estensione AI Short! Attiva la barra laterale con Alt+Shift+S.
 ---
 
 # Come usare l'estensione del browser?
 
-ChatGPT Shortcut supporta 13 lingue principali e la lingua dell'estensione verrà impostata automaticamente in base all'ambiente del browser. Puoi anche cambiare manualmente la lingua nella pagina delle impostazioni.
+ChatGPT Shortcut supporta 13 lingue principali. La lingua dell'estensione viene impostata automaticamente in base al browser. Puoi anche cambiarla manualmente nelle impostazioni.
 
 ![](/img/docs/extension-settings.png)
 
-## Barra laterale AiShort
+## Modalità di visualizzazione
 
-L'estensione AiShort funziona attualmente come pannello laterale, fornendo un'esperienza interattiva fluida.
+L'estensione supporta tre modalità di visualizzazione:
 
-Se "Mantieni il pannello laterale aperto" è abilitato nelle impostazioni, la barra laterale rimarrà aperta quando si cambiano le schede.
+- **Modalità barra laterale**: Si apre nella barra laterale del browser, accanto al contenuto web
+- **Modalità popup**: Si mostra come popup cliccando sull'icona
+- **Modalità finestra**: Si apre in una finestra mobile indipendente
 
-![](/img/docs/extension-sidebar.png)
+## Mantieni pannello laterale aperto
+
+Se attivato, la barra laterale rimane aperta quando si cambiano le schede del browser.
 
 ## Modalità scura
 
-L'estensione supporta la modalità scura. Abilita "Modalità scura" nella pagina delle impostazioni per passare la barra laterale e la pagina delle impostazioni a un aspetto scuro.
+L'estensione supporta la modalità scura. Attiva "Modalità scura" nelle impostazioni per passare l'interfaccia all'aspetto scuro.
 
-## Attivazione tramite scorciatoia
+![](/img/docs/extension-sidebar.png)
 
-Usa la scorciatoia `Alt+Shift+S` per attivare direttamente la barra laterale di AiShort.
+## Scorciatoia da tastiera
+
+Usa la scorciatoia `Alt+Shift+S` per attivare direttamente l'estensione.

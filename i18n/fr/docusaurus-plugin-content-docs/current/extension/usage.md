@@ -1,27 +1,33 @@
 ---
-sidebar_label: Utiliser l'extension
-title: Guide AI Short Extension - Barre latérale et raccourcis
-description: Maîtrisez l'extension de navigateur AI Short ! Activez la barre latérale, invoquez la bibliothèque de prompts avec Alt+Shift+S.
+sidebar_label: Comment utiliser l'extension
+title: Guide AI Short - Barre latérale et raccourcis
+description: Maîtrisez l'extension AI Short ! Activez la barre latérale avec Alt+Shift+S.
 ---
 
-# Comment utiliser l'extension de navigateur ?
+# Comment utiliser l'extension ?
 
-ChatGPT Shortcut prend en charge 13 langues principales, et la langue de l'extension sera automatiquement définie selon votre environnement de navigateur. Vous pouvez également modifier manuellement la langue dans la page de paramètres.
+ChatGPT Shortcut prend en charge 13 langues principales. La langue de l'extension est automatiquement définie selon votre navigateur. Vous pouvez aussi la changer manuellement dans les paramètres.
 
 ![](/img/docs/extension-settings.png)
 
-## Barre latérale AiShort
+## Mode d'affichage
 
-L'extension AiShort fonctionne actuellement comme un panneau latéral, offrant une expérience interactive fluide.
+L'extension prend en charge trois modes d'affichage :
 
-Si "Garder le panneau latéral ouvert" est activé dans les paramètres, la barre latérale restera ouverte lors du changement d'onglets.
+- **Mode barre latérale** : S'ouvre dans la barre latérale du navigateur, à côté du contenu web
+- **Mode popup** : S'affiche en fenêtre popup en cliquant sur l'icône
+- **Mode fenêtre** : S'ouvre dans une fenêtre flottante indépendante
 
-![](/img/docs/extension-sidebar.png)
+## Garder le panneau latéral ouvert
+
+Une fois activé, la barre latérale reste ouverte lors du changement d'onglets.
 
 ## Mode sombre
 
-L'extension prend en charge le mode sombre. Activez "Mode sombre" dans la page de paramètres pour basculer la barre latérale et la page de paramètres vers une apparence sombre.
+L'extension prend en charge le mode sombre. Activez "Mode sombre" dans les paramètres pour passer l'interface en apparence sombre.
 
-## Activation par raccourci
+![](/img/docs/extension-sidebar.png)
 
-Utilisez le raccourci `Alt+Shift+S` pour activer directement la barre latérale AiShort.
+## Raccourci clavier
+
+Utilisez le raccourci `Alt+Shift+S` pour activer directement l'extension.

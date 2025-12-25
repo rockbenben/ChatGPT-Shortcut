@@ -1,27 +1,33 @@
 ---
-sidebar_label: Usar la extensión
+sidebar_label: Cómo usar la extensión
 title: Guía de extensión AI Short - Barra lateral y atajos
-description: ¡Domina la extensión de navegador AI Short! Activa la barra lateral, invoca la biblioteca de prompts con Alt+Shift+S.
+description: Domina la extensión AI Short! Activa la barra lateral con Alt+Shift+S.
 ---
 
 # ¿Cómo usar la extensión del navegador?
 
-ChatGPT Shortcut admite 13 idiomas principales, y el idioma de la extensión se configurará automáticamente según el entorno de tu navegador. También puedes cambiar manualmente el idioma en la página de configuración.
+ChatGPT Shortcut soporta 13 idiomas principales. El idioma de la extensión se configura automáticamente según tu navegador. También puedes cambiarlo manualmente en la página de configuración.
 
 ![](/img/docs/extension-settings.png)
 
-## Barra lateral AiShort
+## Modo de visualización
 
-La extensión AiShort actualmente funciona como un panel lateral, proporcionando una experiencia interactiva fluida.
+La extensión soporta tres modos de visualización:
 
-Si "Mantener el panel lateral abierto" está habilitado en la configuración, la barra lateral permanecerá abierta al cambiar de pestaña.
+- **Modo barra lateral**: Se abre en la barra lateral del navegador, junto al contenido web
+- **Modo popup**: Se muestra como ventana emergente al hacer clic en el icono
+- **Modo ventana**: Se abre en una ventana flotante independiente
 
-![](/img/docs/extension-sidebar.png)
+## Mantener panel lateral abierto
+
+Al activar esta opción, la barra lateral permanecerá abierta al cambiar de pestaña.
 
 ## Modo oscuro
 
-La extensión admite el modo oscuro. Habilita "Modo oscuro" en la página de configuración para cambiar la barra lateral y la página de configuración a una apariencia oscura.
+La extensión soporta modo oscuro. Activa "Modo oscuro" en configuración para cambiar la interfaz a apariencia oscura.
+
+![](/img/docs/extension-sidebar.png)
 
 ## Activación por atajo
 
-Usa el atajo `Alt+Shift+S` para activar directamente la barra lateral de AiShort.
+Usa el atajo `Alt+Shift+S` para activar directamente la extensión.

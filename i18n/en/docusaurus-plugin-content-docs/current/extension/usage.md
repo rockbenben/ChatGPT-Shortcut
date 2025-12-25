@@ -10,18 +10,24 @@ ChatGPT Shortcut supports 13 mainstream languages, and the extension language wi
 
 ![](/img/docs/extension-settings.png)
 
-## AiShort Sidebar
+## Display Mode
 
-The AiShort extension currently works as a Side Panel, providing a seamless interactive experience.
+The extension supports three display modes:
 
-If "Keep side panel open" is enabled in settings, the sidebar will remain open when switching browser tabs.
+- **Sidebar Mode**: Opens in the browser sidebar, displaying alongside web content
+- **Popup Mode**: Displays as a popup when clicking the extension icon
+- **Window Mode**: Opens in a separate floating window
 
-![](/img/docs/extension-sidebar.png)
+## Keep Side Panel Open
+
+When enabled, the sidebar will remain open when switching browser tabs.
 
 ## Dark Mode
 
-The extension supports dark mode. Enable "Dark Mode" in the settings page to switch the sidebar and settings page to a dark appearance.
+The extension supports dark mode. Enable "Dark Mode" in the settings page to switch the interface to a dark appearance.
+
+![](/img/docs/extension-sidebar.png)
 
 ## Hotkey Activation
 
-Use the `Alt+Shift+S` shortcut to directly activate the AiShort sidebar.
+Use the `Alt+Shift+S` shortcut to directly activate the extension.
