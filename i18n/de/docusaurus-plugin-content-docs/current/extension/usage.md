@@ -1,27 +1,33 @@
 ---
 sidebar_label: Erweiterung verwenden
-title: AI Short Erweiterungsanleitung - Seitenleiste & Tastenkürzel
-description: Meistern Sie die AI Short Browser-Erweiterung! Aktivieren Sie die Seitenleiste, rufen Sie mit Alt+Shift+S die Prompt-Bibliothek auf.
+title: AI Short Erweiterung - Seitenleiste & Tastenkürzel
+description: Meistern Sie die AI Short Erweiterung! Seitenleiste mit Alt+Shift+S aktivieren.
 ---
 
-# Wie verwendet man die Browser-Erweiterung?
+# Wie verwende ich die Browser-Erweiterung?
 
-ChatGPT Shortcut unterstützt 13 Hauptsprachen, und die Erweiterungssprache wird automatisch entsprechend Ihrer Browserumgebung eingestellt. Sie können die Sprache auch manuell auf der Einstellungsseite ändern.
+ChatGPT Shortcut unterstützt 13 Hauptsprachen. Die Sprache der Erweiterung wird automatisch nach Ihrer Browser-Umgebung eingestellt. Sie können sie auch manuell in den Einstellungen ändern.
 
 ![](/img/docs/extension-settings.png)
 
-## AiShort Seitenleiste
+## Anzeigemodus
 
-Die AiShort-Erweiterung funktioniert derzeit als Seitenleiste und bietet ein nahtloses interaktives Erlebnis.
+Die Erweiterung unterstützt drei Anzeigemodi:
 
-Wenn "Seitenleiste geöffnet halten" in den Einstellungen aktiviert ist, bleibt die Seitenleiste beim Wechseln der Browser-Tabs geöffnet.
+- **Seitenleisten-Modus**: Öffnet sich in der Browser-Seitenleiste neben dem Webinhalt
+- **Popup-Modus**: Zeigt sich als Popup beim Klicken auf das Symbol
+- **Fenster-Modus**: Öffnet sich in einem separaten schwebenden Fenster
+
+## Seitenleiste geöffnet halten
+
+Wenn aktiviert, bleibt die Seitenleiste beim Wechseln von Browser-Tabs geöffnet.
+
+## Dunkler Modus
+
+Die Erweiterung unterstützt den dunklen Modus. Aktivieren Sie "Dunkler Modus" in den Einstellungen, um die Oberfläche in dunkle Darstellung zu wechseln.
 
 ![](/img/docs/extension-sidebar.png)
 
-## Dunkelmodus
+## Tastenkürzel
 
-Die Erweiterung unterstützt den Dunkelmodus. Aktivieren Sie "Dunkelmodus" auf der Einstellungsseite, um die Seitenleiste und Einstellungsseite auf ein dunkles Erscheinungsbild umzuschalten.
-
-## Tastenkürzel-Aktivierung
-
-Verwenden Sie das Tastenkürzel `Alt+Shift+S`, um die AiShort-Seitenleiste direkt zu aktivieren.
+Verwenden Sie das Tastenkürzel `Alt+Shift+S`, um die Erweiterung direkt zu aktivieren.
