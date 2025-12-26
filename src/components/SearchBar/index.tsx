@@ -12,7 +12,7 @@ import { AuthContext } from "@site/src/components/AuthContext";
 
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
-import { findCardsWithTags, getPrompts } from "@site/src/api";
+import { searchCards, getPrompts } from "@site/src/api";
 
 export type UserState = {
   scrollTopPosition: number;
@@ -76,7 +76,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
       const searchLower = searchName ? searchName.toLowerCase() : "";
       try {
         if (searchMode === "default") {
-          const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
+          const data = await searchCards(selectedTags, searchName, currentLanguage, operator);
           if (cancelled) return;
           startTransition(() => {
             setFilteredCards(data);
@@ -105,7 +105,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           if (userAuth?.data?.favorites) {
             Promise.resolve()
               .then(async () => {
-                const data = await findCardsWithTags(selectedTags, searchName, currentLanguage, operator);
+                const data = await searchCards(selectedTags, searchName, currentLanguage, operator);
                 if (cancelled) return { favoriteCards: [], commus: [] };
                 const favoriteCards = userAuth.data.favorites.loves ? data.filter((card) => userAuth.data.favorites.loves.includes(card.id)) : [];
                 startTransition(() => setFilteredCards(favoriteCards));
