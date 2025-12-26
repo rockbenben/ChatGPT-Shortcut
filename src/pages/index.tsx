@@ -6,7 +6,8 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
 
-import { App, Button, Typography, Flex, Row, Col, Card, Statistic } from "antd";
+import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
+import { green, red, blue, cyan, grey } from "@ant-design/colors";
 import { MenuOutlined, AppstoreOutlined, HeartOutlined, EditOutlined, TagOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
@@ -22,6 +23,7 @@ import { NoResults } from "@site/src/components/SearchBar/NoResults";
 import styles from "@site/src/pages/styles.module.css";
 import { getWeight } from "@site/src/utils/formatters";
 import { cleanupLegacyCache } from "@site/src/utils/cache";
+import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
@@ -434,43 +436,99 @@ const PageHeader: React.FC<{
   totalFavorites: number;
   totalTags: number;
 }> = ({ userAuth, totalItems, totalPrompts, totalFavorites, totalTags }) => {
+  // Level system based on shared prompts count
+  const sharedCount = userAuth?.data?.userprompts?.filter((p: any) => p.share)?.length || 0;
+  const levelInfo = getLevelInfo(sharedCount);
+
   return (
     <div style={{ marginBottom: 24 }} className="hideOnSmallScreen">
-      <Title level={2} style={{ marginBottom: 8 }}>
-        <Translate id="myCollection.header.title">我的收藏</Translate>
-      </Title>
-      <Paragraph type="secondary" style={{ fontSize: 16, marginBottom: 24 }}>
-        <Translate id="myCollection.header.subtitle">管理您创建的提示词、收藏的内容和自定义标签</Translate>
-      </Paragraph>
+      {/* Title and Level Badge Row */}
+      <Flex justify="space-between" align="center" style={{ marginBottom: 16 }}>
+        <div>
+          <Title level={2} style={{ marginBottom: 4 }}>
+            <Translate id="myCollection.header.title">我的收藏</Translate>
+          </Title>
+          <Paragraph type="secondary" style={{ fontSize: 14, marginBottom: 0 }}>
+            <Translate id="myCollection.header.subtitle">管理您创建的提示词、收藏的内容和自定义标签</Translate>
+          </Paragraph>
+        </div>
+
+        {/* Level Badge - Only show when logged in */}
+        {userAuth && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "6px 14px",
+              background: levelInfo.color,
+              borderRadius: 16,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            }}>
+            <span
+              style={{
+                fontSize: 16,
+                fontWeight: 600,
+                color: "#fff",
+                textShadow: "0 1px 2px rgba(0,0,0,0.2)",
+              }}>
+              <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
+            </span>
+          </div>
+        )}
+      </Flex>
 
       {userAuth && (
-        <Row gutter={16}>
-          <Col xs={12} sm={6}>
-            <Card>
-              <Statistic
-                title={<Translate id="myCollection.stats.total">总计</Translate>}
-                value={totalItems}
-                prefix={<AppstoreOutlined />}
-                styles={{ content: { color: "var(--ifm-color-primary)" } }}
-              />
-            </Card>
-          </Col>
-          <Col xs={12} sm={6}>
-            <Card>
-              <Statistic title={<Translate id="myCollection.stats.prompts">我的提示词</Translate>} value={totalPrompts} prefix={<EditOutlined />} styles={{ content: { color: "#3f8600" } }} />
-            </Card>
-          </Col>
-          <Col xs={12} sm={6}>
-            <Card>
-              <Statistic title={<Translate id="myCollection.stats.favorites">收藏</Translate>} value={totalFavorites} prefix={<HeartOutlined />} styles={{ content: { color: "#cf1322" } }} />
-            </Card>
-          </Col>
-          <Col xs={12} sm={6}>
-            <Card>
-              <Statistic title={<Translate id="myCollection.stats.tags">自定义标签</Translate>} value={totalTags} prefix={<TagOutlined />} styles={{ content: { color: "#1890ff" } }} />
-            </Card>
-          </Col>
-        </Row>
+        <Card
+          style={{
+            borderRadius: 12,
+            border: "1px solid var(--ifm-color-emphasis-200)",
+            background: "var(--ifm-card-background-color)",
+          }}
+          styles={{ body: { padding: "16px 24px" } }}>
+          <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
+            {/* Total */}
+            <div style={{ textAlign: "center", minWidth: 80 }}>
+              <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
+                <AppstoreOutlined style={{ marginRight: 4, color: cyan[4] }} />
+                <Translate id="myCollection.stats.total">总计</Translate>
+              </div>
+              <div style={{ fontSize: 28, fontWeight: 700, color: cyan[4] }}>{totalItems}</div>
+            </div>
+
+            <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
+
+            {/* My Prompts */}
+            <div style={{ textAlign: "center", minWidth: 80 }}>
+              <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
+                <EditOutlined style={{ marginRight: 4, color: green[4] }} />
+                <Translate id="myCollection.stats.prompts">我的提示词</Translate>
+              </div>
+              <div style={{ fontSize: 28, fontWeight: 700, color: green[4] }}>{totalPrompts}</div>
+            </div>
+
+            <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
+
+            {/* Favorites */}
+            <div style={{ textAlign: "center", minWidth: 60 }}>
+              <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
+                <HeartOutlined style={{ marginRight: 4, color: red[4] }} />
+                <Translate id="myCollection.stats.favorites">收藏</Translate>
+              </div>
+              <div style={{ fontSize: 28, fontWeight: 700, color: red[4] }}>{totalFavorites}</div>
+            </div>
+
+            <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
+
+            {/* Custom Tags */}
+            <div style={{ textAlign: "center", minWidth: 80 }}>
+              <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
+                <TagOutlined style={{ marginRight: 4, color: blue[4] }} />
+                <Translate id="myCollection.stats.tags">自定义标签</Translate>
+              </div>
+              <div style={{ fontSize: 28, fontWeight: 700, color: blue[4] }}>{totalTags}</div>
+            </div>
+          </Flex>
+        </Card>
       )}
     </div>
   );

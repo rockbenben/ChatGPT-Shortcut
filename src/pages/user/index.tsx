@@ -3,12 +3,31 @@ import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
-import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb } from "antd";
-import { HomeOutlined, EditOutlined, SaveOutlined, LockOutlined, MailOutlined, UserOutlined, SafetyCertificateOutlined, DownloadOutlined, DatabaseOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress } from "antd";
+import {
+  HomeOutlined,
+  EditOutlined,
+  SaveOutlined,
+  LockOutlined,
+  MailOutlined,
+  UserOutlined,
+  SafetyCertificateOutlined,
+  DownloadOutlined,
+  DatabaseOutlined,
+  DeleteOutlined,
+  TrophyOutlined,
+  RocketOutlined,
+  StarOutlined,
+  CrownOutlined,
+  FireOutlined,
+  ThunderboltOutlined,
+  ShareAltOutlined,
+} from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { getUserAllInfo } from "@site/src/api/user";
 import { changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
+import { getLevelInfo, LevelName, LevelDescription } from "@site/src/components/LevelSystem";
 
 const { Title, Text } = Typography;
 
@@ -338,40 +357,176 @@ const UserProfile = () => {
                         <Translate id="title.userInfo">用户信息</Translate>
                       </Space>
                     }>
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 24 }}>
-                      <Avatar size={96} icon={<UserOutlined />} style={{ backgroundColor: token.colorPrimaryBg, color: token.colorPrimary, marginBottom: 16, fontSize: 40 }} />
+                    {(() => {
+                      const sharedCount = userAuth?.data?.userprompts?.filter((p) => p.share).length || 0;
+                      const levelInfo = getLevelInfo(sharedCount);
+                      const progressPercent = levelInfo.next ? Math.min(100, Math.round((sharedCount / levelInfo.next) * 100)) : 100;
+                      const remaining = levelInfo.next ? levelInfo.next - sharedCount : 0;
 
-                      {editUsername ? (
-                        <Space.Compact style={{ width: "100%", maxWidth: 240 }}>
-                          <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
-                          <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
-                          <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
-                        </Space.Compact>
-                      ) : (
-                        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                          <Title level={4} style={{ margin: 0 }}>
-                            {userInfo.username}
-                          </Title>
-                          <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: token.colorTextSecondary }} />
-                        </div>
-                      )}
+                      // Icon mapping for visual display
+                      const iconMap: Record<string, React.ReactNode> = {
+                        crown: <CrownOutlined />,
+                        trophy: <TrophyOutlined />,
+                        star: <StarOutlined />,
+                        rocket: <RocketOutlined />,
+                        fire: <FireOutlined />,
+                        thunderbolt: <ThunderboltOutlined />,
+                      };
 
-                      <Text type="secondary" style={{ marginTop: 4 }}>
-                        <MailOutlined style={{ marginRight: 4 }} />
-                        {userInfo.email}
-                      </Text>
+                      return (
+                        <Flex vertical align="center" gap={0}>
+                          {/* Avatar with static gradient ring */}
+                          <div
+                            style={{
+                              position: "relative",
+                              padding: 4,
+                              borderRadius: "50%",
+                              background: levelInfo.color,
+                              marginBottom: 16,
+                            }}>
+                            <Avatar
+                              size={88}
+                              icon={<UserOutlined />}
+                              style={{
+                                backgroundColor: token.colorBgContainer,
+                                color: token.colorPrimary,
+                                fontSize: 36,
+                                border: `3px solid ${token.colorBgContainer}`,
+                              }}
+                            />
+                            <div
+                              style={{
+                                position: "absolute",
+                                bottom: 0,
+                                right: 0,
+                                background: token.colorBgContainer,
+                                borderRadius: "50%",
+                                padding: 4,
+                                boxShadow: token.boxShadow,
+                              }}>
+                              <span style={{ fontSize: 20, color: token.colorPrimary }}>{iconMap[levelInfo.icon]}</span>
+                            </div>
+                          </div>
 
-                      {userAuth?.data?.userprompts && userAuth.data.userprompts.filter((p) => p.share).length > 0 ? (
-                        <Tag color="green" style={{ marginTop: 12 }}>
-                          📝 <Translate id="label.sharedPrompts">已分享提示词</Translate>
-                          {": " + userAuth.data.userprompts.filter((p) => p.share).length}
-                        </Tag>
-                      ) : (
-                        <Tag color="blue" style={{ marginTop: 12 }}>
-                          🌱 <Translate id="label.newMember">新成员，开始分享第一个提示词吧</Translate>
-                        </Tag>
-                      )}
-                    </div>
+                          {/* Username */}
+                          {editUsername ? (
+                            <Space.Compact style={{ width: "100%", maxWidth: 240, marginBottom: 8 }}>
+                              <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
+                              <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
+                              <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
+                            </Space.Compact>
+                          ) : (
+                            <Flex align="center" gap={8} style={{ marginBottom: 4 }}>
+                              <Title level={4} style={{ margin: 0 }}>
+                                {userInfo.username}
+                              </Title>
+                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: token.colorTextSecondary }} />
+                            </Flex>
+                          )}
+
+                          {/* Email */}
+                          <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                            <MailOutlined style={{ marginRight: 4 }} />
+                            {userInfo.email}
+                          </Text>
+
+                          {/* Level Badge */}
+                          <Tag
+                            color={levelInfo.tagColor}
+                            style={{
+                              marginTop: 16,
+                              padding: "6px 16px",
+                              fontSize: token.fontSize,
+                              fontWeight: 600,
+                              borderRadius: token.borderRadiusLG,
+                            }}>
+                            <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
+                          </Tag>
+
+                          {/* Level Description */}
+                          <Text type="secondary" style={{ marginTop: 8, fontSize: token.fontSizeSM, textAlign: "center" }}>
+                            <LevelDescription level={levelInfo.level} />
+                          </Text>
+
+                          {/* Stats Card - Using Ant Design Card */}
+                          <Card
+                            size="small"
+                            style={{
+                              width: "100%",
+                              marginTop: 20,
+                              border: `1px solid ${token.colorPrimaryBorder}`,
+                            }}
+                            styles={{
+                              body: {
+                                textAlign: "center",
+                                background: `linear-gradient(135deg, ${token.colorPrimaryBg} 0%, ${token.colorBgContainer} 100%)`,
+                              },
+                            }}>
+                            <Statistic
+                              title={
+                                <Space style={{ color: token.colorTextSecondary }}>
+                                  <ShareAltOutlined />
+                                  <Translate id="stat.sharedPrompts">已分享提示词</Translate>
+                                </Space>
+                              }
+                              value={sharedCount}
+                              valueStyle={{
+                                color: token.colorPrimary,
+                                fontSize: 32,
+                                fontWeight: 700,
+                              }}
+                            />
+                          </Card>
+
+                          {/* Progress to next level */}
+                          {levelInfo.next && (
+                            <Flex vertical gap={8} style={{ width: "100%", marginTop: 16 }}>
+                              <Flex justify="space-between">
+                                <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                                  <Translate id="progress.toNextLevel">距离下一等级</Translate>
+                                </Text>
+                                <Text strong style={{ fontSize: token.fontSizeSM, color: token.colorPrimary }}>
+                                  {remaining}
+                                </Text>
+                              </Flex>
+                              <Progress
+                                percent={progressPercent}
+                                strokeColor={{
+                                  "0%": token.colorPrimary,
+                                  "100%": token.colorPrimaryActive,
+                                }}
+                                trailColor={token.colorBorderSecondary}
+                                showInfo={false}
+                              />
+                              <Text type="secondary" style={{ fontSize: 12, textAlign: "center" }}>
+                                <Translate id="progress.encourage">继续分享，解锁更高等级！</Translate> 🎯
+                              </Text>
+                            </Flex>
+                          )}
+
+                          {/* Max level celebration */}
+                          {!levelInfo.next && sharedCount > 0 && (
+                            <Card
+                              size="small"
+                              style={{
+                                width: "100%",
+                                marginTop: 16,
+                                border: `1px solid ${token.colorSuccessBorder}`,
+                              }}
+                              styles={{
+                                body: {
+                                  textAlign: "center",
+                                  background: `linear-gradient(135deg, ${token.colorSuccessBg} 0%, ${token.colorBgContainer} 100%)`,
+                                },
+                              }}>
+                              <Text strong style={{ color: token.colorSuccess }}>
+                                🎉 <Translate id="level.max.congrats">恭喜达成最高等级！你是社区的传奇贡献者！</Translate>
+                              </Text>
+                            </Card>
+                          )}
+                        </Flex>
+                      );
+                    })()}
                   </Card>
                 </Col>
 
