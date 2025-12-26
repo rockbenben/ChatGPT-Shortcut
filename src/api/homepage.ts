@@ -133,3 +133,51 @@ export async function fetchNextCards(excludeIds: number[], batchSize: number = 8
     throw error;
   }
 }
+
+/**
+ * 本地搜索卡片（从静态 JSON）
+ * - 根据 tags 和关键词过滤
+ * - 替代 API 的 searchCards 调用
+ */
+export async function searchCardsLocally(tags: string[], searchName: string | null, lang: string = "zh", operator: "AND" | "OR" = "OR"): Promise<CardData[]> {
+  try {
+    const allData = await getPromptData(lang);
+    const searchLower = searchName ? searchName.toLowerCase().trim() : "";
+
+    // 过滤逻辑
+    const filtered = allData.filter((card) => {
+      // Tag 过滤
+      let tagMatch = true;
+      if (tags.length > 0) {
+        const cardTags = card.tags || [];
+        if (operator === "AND") {
+          // AND: 卡片必须包含所有选中的标签
+          tagMatch = tags.every((tag) => cardTags.includes(tag));
+        } else {
+          // OR: 卡片只需包含其中一个标签
+          tagMatch = tags.some((tag) => cardTags.includes(tag));
+        }
+      }
+
+      // 关键词过滤
+      let searchMatch = true;
+      if (searchLower) {
+        // 获取当前语言的字段数据
+        const langData = card[lang] || card.zh || {};
+        const title = (langData.title || card.title || "").toLowerCase();
+        const description = (langData.description || card.description || "").toLowerCase();
+        const remark = (langData.remark || card.remark || "").toLowerCase();
+        const prompt = (langData.prompt || card.prompt || "").toLowerCase();
+
+        searchMatch = title.includes(searchLower) || description.includes(searchLower) || remark.includes(searchLower) || prompt.includes(searchLower);
+      }
+
+      return tagMatch && searchMatch;
+    });
+
+    return filtered;
+  } catch (error) {
+    console.error("[searchCardsLocally] Error searching cards:", error);
+    throw error;
+  }
+}
