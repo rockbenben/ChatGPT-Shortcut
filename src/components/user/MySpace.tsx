@@ -12,7 +12,6 @@ import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
-import { getCache, removeCache, getPromptCacheKey } from "@site/src/utils/cache";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
