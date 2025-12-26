@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "Информация о пользователе"
   },
-  "label.sharedPrompts": {
-    "message": "Общие промпты"
-  },
-  "label.newMember": {
-    "message": "Новый участник, начните с публикации своего первого промпта"
-  },
   "title.security": {
     "message": "Настройки безопасности"
   },
@@ -1051,5 +1045,53 @@
   },
   "message.convertToPrivate.error": {
     "message": "Не удалось преобразовать, попробуйте еще раз позже"
+  },
+  "level.diamond": {
+    "message": "Бриллиантовая легенда"
+  },
+  "level.platinum": {
+    "message": "Платиновый мастер"
+  },
+  "level.gold": {
+    "message": "Золотой эксперт"
+  },
+  "level.silver": {
+    "message": "Серебряная элита"
+  },
+  "level.bronze": {
+    "message": "Бронзовая звезда"
+  },
+  "level.newcomer": {
+    "message": "Исследователь"
+  },
+  "level.diamond.desc": {
+    "message": "Элитный контрибьютор, настоящая легенда сообщества!"
+  },
+  "level.platinum.desc": {
+    "message": "Опытный эксперт с выдающимся влиянием!"
+  },
+  "level.gold.desc": {
+    "message": "Опытный и очень надёжный!"
+  },
+  "level.silver.desc": {
+    "message": "Активный участник, уверенно растёт!"
+  },
+  "level.bronze.desc": {
+    "message": "Отличное начало! Продолжайте в том же духе!"
+  },
+  "level.newcomer.desc": {
+    "message": "Поделитесь первым промптом, чтобы начать путешествие!"
+  },
+  "stat.sharedPrompts": {
+    "message": "Общих промптов"
+  },
+  "progress.toNextLevel": {
+    "message": "До следующего уровня"
+  },
+  "progress.encourage": {
+    "message": "Продолжайте делиться, чтобы открыть более высокие уровни!"
+  },
+  "level.max.congrats": {
+    "message": "Поздравляем с достижением максимального уровня! Вы легендарный контрибьютор!"
   }
 }

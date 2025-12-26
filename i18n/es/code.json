@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "Información del usuario"
   },
-  "label.sharedPrompts": {
-    "message": "Prompts compartidos"
-  },
-  "label.newMember": {
-    "message": "Nuevo miembro, comienza a compartir tu primer prompt"
-  },
   "title.security": {
     "message": "Configuración de seguridad"
   },
@@ -1051,5 +1045,53 @@
   },
   "message.convertToPrivate.error": {
     "message": "Error al convertir, inténtelo de nuevo más tarde"
+  },
+  "level.diamond": {
+    "message": "Leyenda Diamante"
+  },
+  "level.platinum": {
+    "message": "Maestro Platino"
+  },
+  "level.gold": {
+    "message": "Experto Oro"
+  },
+  "level.silver": {
+    "message": "Élite Plata"
+  },
+  "level.bronze": {
+    "message": "Estrella Bronce"
+  },
+  "level.newcomer": {
+    "message": "Explorador"
+  },
+  "level.diamond.desc": {
+    "message": "¡Contribuidor de élite, una verdadera leyenda de la comunidad!"
+  },
+  "level.platinum.desc": {
+    "message": "¡Experto experimentado con una influencia notable!"
+  },
+  "level.gold.desc": {
+    "message": "¡Experimentado y muy confiable!"
+  },
+  "level.silver.desc": {
+    "message": "¡Contribuidor activo, creciendo fuerte!"
+  },
+  "level.bronze.desc": {
+    "message": "¡Gran comienzo! ¡Mantén el impulso!"
+  },
+  "level.newcomer.desc": {
+    "message": "¡Comparte tu primer prompt para comenzar el viaje!"
+  },
+  "stat.sharedPrompts": {
+    "message": "Prompts Compartidos"
+  },
+  "progress.toNextLevel": {
+    "message": "Hasta el próximo nivel"
+  },
+  "progress.encourage": {
+    "message": "¡Sigue compartiendo para desbloquear niveles más altos!"
+  },
+  "level.max.congrats": {
+    "message": "¡Felicidades por alcanzar el nivel máximo! ¡Eres un contribuidor legendario!"
   }
 }
