@@ -26,15 +26,27 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
   const { token } = theme.useToken();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
-  const userInfo = useMemo(
-    () => ({
-      title: user[currentLanguage].title,
-      remark: user[currentLanguage].remark,
-      prompt: user[currentLanguage].prompt,
-      description: user[currentLanguage].description,
-    }),
-    [user, currentLanguage]
-  );
+  const userInfo = useMemo(() => {
+    // 支持两种数据格式：
+    // 1. 语言分层格式: user.zh.title, user.en.title
+    // 2. 扁平格式: user.title (团队提示词等)
+    const langData = user[currentLanguage];
+    if (langData && typeof langData === "object") {
+      return {
+        title: langData.title,
+        remark: langData.remark,
+        prompt: langData.prompt,
+        description: langData.description,
+      };
+    }
+    // 扁平格式
+    return {
+      title: user.title || "",
+      remark: user.remark || "",
+      prompt: user.description || user.prompt || "",
+      description: user.description || "",
+    };
+  }, [user, currentLanguage]);
 
   const [isFavorite, setIsFavorite] = useState(false);
   const { copied, updateCopy } = useCopyToClipboard();
