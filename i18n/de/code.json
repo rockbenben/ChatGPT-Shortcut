@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "Benutzerinfo"
   },
-  "label.sharedPrompts": {
-    "message": "Geteilte Prompts"
-  },
-  "label.newMember": {
-    "message": "Neues Mitglied, teilen Sie Ihren ersten Prompt"
-  },
   "title.security": {
     "message": "Sicherheitseinstellungen"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "Umwandlung fehlgeschlagen, bitte später erneut versuchen"
+  },
+  "level.diamond": {
+    "message": "Diamant-Legende"
+  },
+  "level.platinum": {
+    "message": "Platin-Meister"
+  },
+  "level.gold": {
+    "message": "Gold-Experte"
+  },
+  "level.silver": {
+    "message": "Silber-Elite"
+  },
+  "level.bronze": {
+    "message": "Bronze-Stern"
+  },
+  "level.newcomer": {
+    "message": "Entdecker"
+  },
+  "level.diamond.desc": {
+    "message": "Top-Beitragender, eine echte Community-Legende!"
+  },
+  "level.platinum.desc": {
+    "message": "Erfahrener Experte mit bemerkenswertem Einfluss!"
+  },
+  "level.gold.desc": {
+    "message": "Erfahren und sehr vertrauenswürdig!"
+  },
+  "level.silver.desc": {
+    "message": "Aktiver Beitragender, wächst stetig!"
+  },
+  "level.bronze.desc": {
+    "message": "Toller Start! Weiter so!"
+  },
+  "level.newcomer.desc": {
+    "message": "Teilen Sie Ihren ersten Prompt, um die Reise zu beginnen!"
+  },
+  "stat.sharedPrompts": {
+    "message": "Geteilte Prompts"
+  },
+  "progress.toNextLevel": {
+    "message": "Bis zum nächsten Level"
+  },
+  "progress.encourage": {
+    "message": "Weiter teilen, um höhere Level freizuschalten!"
+  },
+  "level.max.congrats": {
+    "message": "Herzlichen Glückwunsch zum Erreichen des höchsten Levels! Sie sind ein legendärer Beitragender!"
+  },
+  "message.import.invalid": {
+    "message": "Ungültiges Datenformat"
+  },
+  "message.import.success": {
+    "message": "Import erfolgreich!"
+  },
+  "message.import.partial": {
+    "message": "Teilweise importiert"
+  },
+  "message.import.failed": {
+    "message": "Import fehlgeschlagen"
+  },
+  "message.import.parseError": {
+    "message": "JSON-Parsing-Fehler"
+  },
+  "button.importPrompts": {
+    "message": "Prompts importieren"
+  },
+  "description.importPrompts.short": {
+    "message": "Prompts und Favoriten aus JSON-Datei importieren"
+  },
+  "button.import": {
+    "message": "Importieren"
   }
 }

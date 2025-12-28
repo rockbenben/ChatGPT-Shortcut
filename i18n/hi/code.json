@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "उपयोगकर्ता जानकारी"
   },
-  "label.sharedPrompts": {
-    "message": "साझा किए गए प्रॉम्प्ट्स"
-  },
-  "label.newMember": {
-    "message": "नए सदस्य, अपना पहला प्रॉम्प्ट साझा करना शुरू करें"
-  },
   "title.security": {
     "message": "सुरक्षा सेटिंग्स"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "level.diamond": {
+    "message": "डायमंड लीजेंड"
+  },
+  "level.platinum": {
+    "message": "प्लैटिनम मास्टर"
+  },
+  "level.gold": {
+    "message": "गोल्ड एक्सपर्ट"
+  },
+  "level.silver": {
+    "message": "सिल्वर एलीट"
+  },
+  "level.bronze": {
+    "message": "ब्रॉन्ज स्टार"
+  },
+  "level.newcomer": {
+    "message": "एक्सप्लोरर"
+  },
+  "level.diamond.desc": {
+    "message": "शीर्ष योगदानकर्ता, समुदाय की एक सच्ची किंवदंती!"
+  },
+  "level.platinum.desc": {
+    "message": "अनुभवी विशेषज्ञ, उल्लेखनीय प्रभाव!"
+  },
+  "level.gold.desc": {
+    "message": "अनुभवी और अत्यधिक भरोसेमंद!"
+  },
+  "level.silver.desc": {
+    "message": "सक्रिय योगदानकर्ता, मजबूती से बढ़ रहा है!"
+  },
+  "level.bronze.desc": {
+    "message": "बढ़िया शुरुआत! इस गति को बनाए रखें!"
+  },
+  "level.newcomer.desc": {
+    "message": "यात्रा शुरू करने के लिए अपना पहला प्रॉम्प्ट साझा करें!"
+  },
+  "stat.sharedPrompts": {
+    "message": "साझा किए गए प्रॉम्प्ट"
+  },
+  "progress.toNextLevel": {
+    "message": "अगले स्तर तक"
+  },
+  "progress.encourage": {
+    "message": "उच्च स्तर अनलॉक करने के लिए साझा करते रहें!"
+  },
+  "level.max.congrats": {
+    "message": "उच्चतम स्तर प्राप्त करने पर बधाई! आप एक किंवदंती योगदानकर्ता हैं!"
+  },
+  "message.import.invalid": {
+    "message": "अमान्य डेटा प्रारूप"
+  },
+  "message.import.success": {
+    "message": "आयात सफल!"
+  },
+  "message.import.partial": {
+    "message": "आंशिक आयात"
+  },
+  "message.import.failed": {
+    "message": "आयात विफल"
+  },
+  "message.import.parseError": {
+    "message": "JSON पार्सिंग त्रुटि"
+  },
+  "button.importPrompts": {
+    "message": "प्रॉम्प्ट आयात करें"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON फ़ाइल से प्रॉम्प्ट और पसंदीदा आयात करें"
+  },
+  "button.import": {
+    "message": "आयात करें"
   }
 }

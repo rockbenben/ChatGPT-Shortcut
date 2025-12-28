@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "ユーザー情報"
   },
-  "label.sharedPrompts": {
-    "message": "共有されたプロンプト"
-  },
-  "label.newMember": {
-    "message": "新しいメンバー、最初のプロンプトを共有しましょう"
-  },
   "title.security": {
     "message": "セキュリティ設定"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "変換に失敗しました。後でもう一度お試しください"
+  },
+  "level.diamond": {
+    "message": "ダイヤモンドレジェンド"
+  },
+  "level.platinum": {
+    "message": "プラチナマスター"
+  },
+  "level.gold": {
+    "message": "ゴールドエキスパート"
+  },
+  "level.silver": {
+    "message": "シルバーエリート"
+  },
+  "level.bronze": {
+    "message": "ブロンズスター"
+  },
+  "level.newcomer": {
+    "message": "探検家"
+  },
+  "level.diamond.desc": {
+    "message": "トップ貢献者、コミュニティの伝説！"
+  },
+  "level.platinum.desc": {
+    "message": "ベテラン専門家、並外れた影響力！"
+  },
+  "level.gold.desc": {
+    "message": "経験豊富で信頼できる！"
+  },
+  "level.silver.desc": {
+    "message": "アクティブな貢献者、成長中！"
+  },
+  "level.bronze.desc": {
+    "message": "素晴らしいスタート！この調子で！"
+  },
+  "level.newcomer.desc": {
+    "message": "最初のプロンプトを共有して旅を始めよう！"
+  },
+  "stat.sharedPrompts": {
+    "message": "共有プロンプト"
+  },
+  "progress.toNextLevel": {
+    "message": "次のレベルまで"
+  },
+  "progress.encourage": {
+    "message": "共有を続けて、より高いレベルを解除しよう！"
+  },
+  "level.max.congrats": {
+    "message": "最高レベル達成おめでとうございます！あなたは伝説の貢献者です！"
+  },
+  "message.import.invalid": {
+    "message": "無効なデータ形式"
+  },
+  "message.import.success": {
+    "message": "インポート成功！"
+  },
+  "message.import.partial": {
+    "message": "一部インポート成功"
+  },
+  "message.import.failed": {
+    "message": "インポート失敗"
+  },
+  "message.import.parseError": {
+    "message": "JSON解析エラー"
+  },
+  "button.importPrompts": {
+    "message": "プロンプトをインポート"
+  },
+  "description.importPrompts.short": {
+    "message": "JSONファイルからプロンプトとお気に入りをインポート"
+  },
+  "button.import": {
+    "message": "インポート"
   }
 }

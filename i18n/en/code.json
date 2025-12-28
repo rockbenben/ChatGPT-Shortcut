@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "User Info"
   },
-  "label.sharedPrompts": {
-    "message": "Shared Prompts"
-  },
-  "label.newMember": {
-    "message": "New member, start sharing your first prompt"
-  },
   "title.security": {
     "message": "Security Settings"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "Failed to convert, please try again later"
+  },
+  "level.diamond": {
+    "message": "Diamond Legend"
+  },
+  "level.diamond.desc": {
+    "message": "Elite contributor, a true community legend!"
+  },
+  "level.platinum": {
+    "message": "Platinum Master"
+  },
+  "level.platinum.desc": {
+    "message": "Seasoned expert with remarkable influence!"
+  },
+  "level.gold": {
+    "message": "Gold Expert"
+  },
+  "level.gold.desc": {
+    "message": "Experienced and highly trusted!"
+  },
+  "level.silver": {
+    "message": "Silver Elite"
+  },
+  "level.silver.desc": {
+    "message": "Active contributor, growing strong!"
+  },
+  "level.bronze": {
+    "message": "Bronze Star"
+  },
+  "level.bronze.desc": {
+    "message": "Great start! Keep up the momentum!"
+  },
+  "level.newcomer": {
+    "message": "Explorer"
+  },
+  "level.newcomer.desc": {
+    "message": "Share your first prompt to begin the journey!"
+  },
+  "stat.sharedPrompts": {
+    "message": "Shared Prompts"
+  },
+  "progress.toNextLevel": {
+    "message": "To next level"
+  },
+  "progress.encourage": {
+    "message": "Keep sharing to unlock higher levels!"
+  },
+  "level.max.congrats": {
+    "message": "Congratulations on reaching the highest level! You are a legendary contributor!"
+  },
+  "message.import.invalid": {
+    "message": "Invalid data format"
+  },
+  "message.import.success": {
+    "message": "Import successful!"
+  },
+  "message.import.partial": {
+    "message": "Partial import"
+  },
+  "message.import.failed": {
+    "message": "Import failed"
+  },
+  "message.import.parseError": {
+    "message": "JSON parse error"
+  },
+  "button.importPrompts": {
+    "message": "Import Prompts"
+  },
+  "description.importPrompts.short": {
+    "message": "Import prompts and favorites from JSON file"
+  },
+  "button.import": {
+    "message": "Import"
   }
 }

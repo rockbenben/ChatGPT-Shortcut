@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "معلومات المستخدم"
   },
-  "label.sharedPrompts": {
-    "message": "التوجيهات المشاركة"
-  },
-  "label.newMember": {
-    "message": "عضو جديد، ابدأ بمشاركة أول توجيه لك"
-  },
   "title.security": {
     "message": "إعدادات الأمان"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "level.diamond": {
+    "message": "أسطورة الماس"
+  },
+  "level.platinum": {
+    "message": "سيد البلاتين"
+  },
+  "level.gold": {
+    "message": "خبير الذهب"
+  },
+  "level.silver": {
+    "message": "نخبة الفضة"
+  },
+  "level.bronze": {
+    "message": "نجمة البرونز"
+  },
+  "level.newcomer": {
+    "message": "مستكشف"
+  },
+  "level.diamond.desc": {
+    "message": "مساهم متميز، أسطورة حقيقية في المجتمع!"
+  },
+  "level.platinum.desc": {
+    "message": "خبير متمرس بتأثير ملحوظ!"
+  },
+  "level.gold.desc": {
+    "message": "خبير وموثوق للغاية!"
+  },
+  "level.silver.desc": {
+    "message": "مساهم نشط، ينمو بقوة!"
+  },
+  "level.bronze.desc": {
+    "message": "بداية رائعة! حافظ على الزخم!"
+  },
+  "level.newcomer.desc": {
+    "message": "شارك أول موجه لك لبدء الرحلة!"
+  },
+  "stat.sharedPrompts": {
+    "message": "الموجهات المشتركة"
+  },
+  "progress.toNextLevel": {
+    "message": "حتى المستوى التالي"
+  },
+  "progress.encourage": {
+    "message": "استمر في المشاركة لفتح مستويات أعلى!"
+  },
+  "level.max.congrats": {
+    "message": "تهانينا لوصولك إلى أعلى مستوى! أنت مساهم أسطوري!"
+  },
+  "message.import.invalid": {
+    "message": "تنسيق بيانات غير صالح"
+  },
+  "message.import.success": {
+    "message": "تم الاستيراد بنجاح!"
+  },
+  "message.import.partial": {
+    "message": "استيراد جزئي"
+  },
+  "message.import.failed": {
+    "message": "فشل الاستيراد"
+  },
+  "message.import.parseError": {
+    "message": "خطأ في تحليل JSON"
+  },
+  "button.importPrompts": {
+    "message": "استيراد التوجيهات"
+  },
+  "description.importPrompts.short": {
+    "message": "استيراد التوجيهات والمفضلة من ملف JSON"
+  },
+  "button.import": {
+    "message": "استيراد"
   }
 }

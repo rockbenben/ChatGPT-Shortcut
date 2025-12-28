@@ -27,7 +27,7 @@ import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
 
 import { Tags, TagList } from "@site/src/data/tags";
-import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";

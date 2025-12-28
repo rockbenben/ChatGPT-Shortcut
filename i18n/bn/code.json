@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "ব্যবহারকারীর তথ্য"
   },
-  "label.sharedPrompts": {
-    "message": "শেয়ার করা প্রম্পট"
-  },
-  "label.newMember": {
-    "message": "নতুন সদস্য, আপনার প্রথম প্রম্পট শেয়ার করা শুরু করুন"
-  },
   "title.security": {
     "message": "নিরাপত্তা সেটিংস"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "রূপান্তর করতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+  },
+  "level.diamond": {
+    "message": "ডায়মন্ড লেজেন্ড"
+  },
+  "level.platinum": {
+    "message": "প্ল্যাটিনাম মাস্টার"
+  },
+  "level.gold": {
+    "message": "গোল্ড এক্সপার্ট"
+  },
+  "level.silver": {
+    "message": "সিলভার এলিট"
+  },
+  "level.bronze": {
+    "message": "ব্রোঞ্জ স্টার"
+  },
+  "level.newcomer": {
+    "message": "অন্বেষণকারী"
+  },
+  "level.diamond.desc": {
+    "message": "সেরা অবদানকারী, কমিউনিটির এক সত্যিকারের কিংবদন্তি!"
+  },
+  "level.platinum.desc": {
+    "message": "অভিজ্ঞ বিশেষজ্ঞ, অসাধারণ প্রভাব!"
+  },
+  "level.gold.desc": {
+    "message": "অভিজ্ঞ এবং অত্যন্ত বিশ্বস্ত!"
+  },
+  "level.silver.desc": {
+    "message": "সক্রিয় অবদানকারী, শক্তিশালী বৃদ্ধি!"
+  },
+  "level.bronze.desc": {
+    "message": "দুর্দান্ত শুরু! এই গতি বজায় রাখুন!"
+  },
+  "level.newcomer.desc": {
+    "message": "যাত্রা শুরু করতে আপনার প্রথম প্রম্পট শেয়ার করুন!"
+  },
+  "stat.sharedPrompts": {
+    "message": "শেয়ার করা প্রম্পট"
+  },
+  "progress.toNextLevel": {
+    "message": "পরবর্তী লেভেলে"
+  },
+  "progress.encourage": {
+    "message": "উচ্চতর লেভেল আনলক করতে শেয়ার করতে থাকুন!"
+  },
+  "level.max.congrats": {
+    "message": "সর্বোচ্চ লেভেল অর্জনে অভিনন্দন! আপনি একজন কিংবদন্তি অবদানকারী!"
+  },
+  "message.import.invalid": {
+    "message": "অবৈধ ডেটা ফরম্যাট"
+  },
+  "message.import.success": {
+    "message": "আমদানি সফল!"
+  },
+  "message.import.partial": {
+    "message": "আংশিক আমদানি"
+  },
+  "message.import.failed": {
+    "message": "আমদানি ব্যর্থ"
+  },
+  "message.import.parseError": {
+    "message": "JSON পার্সিং ত্রুটি"
+  },
+  "button.importPrompts": {
+    "message": "প্রম্পট আমদানি করুন"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON ফাইল থেকে প্রম্পট এবং প্রিয় আমদানি করুন"
+  },
+  "button.import": {
+    "message": "আমদানি"
   }
 }

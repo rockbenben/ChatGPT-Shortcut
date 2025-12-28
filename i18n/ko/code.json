@@ -329,12 +329,6 @@
   "title.userInfo": {
     "message": "사용자 정보"
   },
-  "label.sharedPrompts": {
-    "message": "공유된 프롬프트"
-  },
-  "label.newMember": {
-    "message": "새 멤버, 첫 번째 프롬프트를 공유해 보세요"
-  },
   "title.security": {
     "message": "보안 설정"
   },
@@ -1051,5 +1045,77 @@
   },
   "message.convertToPrivate.error": {
     "message": "변환에 실패했습니다. 나중에 다시 시도해 주세요"
+  },
+  "level.diamond": {
+    "message": "다이아몬드 레전드"
+  },
+  "level.platinum": {
+    "message": "플래티넘 마스터"
+  },
+  "level.gold": {
+    "message": "골드 전문가"
+  },
+  "level.silver": {
+    "message": "실버 엘리트"
+  },
+  "level.bronze": {
+    "message": "브론즈 스타"
+  },
+  "level.newcomer": {
+    "message": "탐험가"
+  },
+  "level.diamond.desc": {
+    "message": "최고 기여자, 커뮤니티의 전설!"
+  },
+  "level.platinum.desc": {
+    "message": "숙련된 전문가, 뛰어난 영향력!"
+  },
+  "level.gold.desc": {
+    "message": "경험이 풍부하고 신뢰할 수 있습니다!"
+  },
+  "level.silver.desc": {
+    "message": "활발한 기여자, 꾸준히 성장 중!"
+  },
+  "level.bronze.desc": {
+    "message": "훌륭한 시작! 이 기세를 유지하세요!"
+  },
+  "level.newcomer.desc": {
+    "message": "첫 번째 프롬프트를 공유하여 여정을 시작하세요!"
+  },
+  "stat.sharedPrompts": {
+    "message": "공유한 프롬프트"
+  },
+  "progress.toNextLevel": {
+    "message": "다음 레벨까지"
+  },
+  "progress.encourage": {
+    "message": "계속 공유하여 더 높은 레벨을 잠금 해제하세요!"
+  },
+  "level.max.congrats": {
+    "message": "최고 레벨 달성을 축하합니다! 당신은 전설적인 기여자입니다!"
+  },
+  "message.import.invalid": {
+    "message": "잘못된 데이터 형식"
+  },
+  "message.import.success": {
+    "message": "가져오기 성공!"
+  },
+  "message.import.partial": {
+    "message": "일부 가져오기 성공"
+  },
+  "message.import.failed": {
+    "message": "가져오기 실패"
+  },
+  "message.import.parseError": {
+    "message": "JSON 파싱 오류"
+  },
+  "button.importPrompts": {
+    "message": "프롬프트 가져오기"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON 파일에서 프롬프트와 즐겨찾기 가져오기"
+  },
+  "button.import": {
+    "message": "가져오기"
   }
 }
