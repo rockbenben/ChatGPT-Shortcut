@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "Поздравляем с достижением максимального уровня! Вы легендарный контрибьютор!"
+  },
+  "message.import.invalid": {
+    "message": "Неверный формат данных"
+  },
+  "message.import.success": {
+    "message": "Импорт успешен!"
+  },
+  "message.import.partial": {
+    "message": "Частичный импорт"
+  },
+  "message.import.failed": {
+    "message": "Ошибка импорта"
+  },
+  "message.import.parseError": {
+    "message": "Ошибка разбора JSON"
+  },
+  "button.importPrompts": {
+    "message": "Импортировать промпты"
+  },
+  "description.importPrompts.short": {
+    "message": "Импорт промптов и избранного из JSON-файла"
+  },
+  "button.import": {
+    "message": "Импорт"
   }
 }

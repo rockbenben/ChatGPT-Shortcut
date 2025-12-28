@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "उच्चतम स्तर प्राप्त करने पर बधाई! आप एक किंवदंती योगदानकर्ता हैं!"
+  },
+  "message.import.invalid": {
+    "message": "अमान्य डेटा प्रारूप"
+  },
+  "message.import.success": {
+    "message": "आयात सफल!"
+  },
+  "message.import.partial": {
+    "message": "आंशिक आयात"
+  },
+  "message.import.failed": {
+    "message": "आयात विफल"
+  },
+  "message.import.parseError": {
+    "message": "JSON पार्सिंग त्रुटि"
+  },
+  "button.importPrompts": {
+    "message": "प्रॉम्प्ट आयात करें"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON फ़ाइल से प्रॉम्प्ट और पसंदीदा आयात करें"
+  },
+  "button.import": {
+    "message": "आयात करें"
   }
 }

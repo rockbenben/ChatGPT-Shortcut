@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "সর্বোচ্চ লেভেল অর্জনে অভিনন্দন! আপনি একজন কিংবদন্তি অবদানকারী!"
+  },
+  "message.import.invalid": {
+    "message": "অবৈধ ডেটা ফরম্যাট"
+  },
+  "message.import.success": {
+    "message": "আমদানি সফল!"
+  },
+  "message.import.partial": {
+    "message": "আংশিক আমদানি"
+  },
+  "message.import.failed": {
+    "message": "আমদানি ব্যর্থ"
+  },
+  "message.import.parseError": {
+    "message": "JSON পার্সিং ত্রুটি"
+  },
+  "button.importPrompts": {
+    "message": "প্রম্পট আমদানি করুন"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON ফাইল থেকে প্রম্পট এবং প্রিয় আমদানি করুন"
+  },
+  "button.import": {
+    "message": "আমদানি"
   }
 }

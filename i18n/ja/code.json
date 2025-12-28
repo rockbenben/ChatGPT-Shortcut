@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "最高レベル達成おめでとうございます！あなたは伝説の貢献者です！"
+  },
+  "message.import.invalid": {
+    "message": "無効なデータ形式"
+  },
+  "message.import.success": {
+    "message": "インポート成功！"
+  },
+  "message.import.partial": {
+    "message": "一部インポート成功"
+  },
+  "message.import.failed": {
+    "message": "インポート失敗"
+  },
+  "message.import.parseError": {
+    "message": "JSON解析エラー"
+  },
+  "button.importPrompts": {
+    "message": "プロンプトをインポート"
+  },
+  "description.importPrompts.short": {
+    "message": "JSONファイルからプロンプトとお気に入りをインポート"
+  },
+  "button.import": {
+    "message": "インポート"
   }
 }

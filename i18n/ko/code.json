@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "최고 레벨 달성을 축하합니다! 당신은 전설적인 기여자입니다!"
+  },
+  "message.import.invalid": {
+    "message": "잘못된 데이터 형식"
+  },
+  "message.import.success": {
+    "message": "가져오기 성공!"
+  },
+  "message.import.partial": {
+    "message": "일부 가져오기 성공"
+  },
+  "message.import.failed": {
+    "message": "가져오기 실패"
+  },
+  "message.import.parseError": {
+    "message": "JSON 파싱 오류"
+  },
+  "button.importPrompts": {
+    "message": "프롬프트 가져오기"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON 파일에서 프롬프트와 즐겨찾기 가져오기"
+  },
+  "button.import": {
+    "message": "가져오기"
   }
 }

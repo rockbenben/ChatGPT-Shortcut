@@ -1093,5 +1093,29 @@
   },
   "level.max.congrats": {
     "message": "Parabéns por atingir o nível máximo! Você é um contribuidor lendário!"
+  },
+  "message.import.invalid": {
+    "message": "Formato de dados inválido"
+  },
+  "message.import.success": {
+    "message": "Importação bem-sucedida!"
+  },
+  "message.import.partial": {
+    "message": "Importação parcial"
+  },
+  "message.import.failed": {
+    "message": "Falha na importação"
+  },
+  "message.import.parseError": {
+    "message": "Erro de análise JSON"
+  },
+  "button.importPrompts": {
+    "message": "Importar prompts"
+  },
+  "description.importPrompts.short": {
+    "message": "Importar prompts e favoritos do arquivo JSON"
+  },
+  "button.import": {
+    "message": "Importar"
   }
 }
