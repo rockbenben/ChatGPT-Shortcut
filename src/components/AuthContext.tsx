@@ -33,14 +33,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       clearMySpaceCache();
     }
 
-    startTransition(() => setAuthLoading(true));
+    // 仅在 forceRefresh=true 时显示 loading，false 时静默刷新
+    if (forceRefresh) {
+      startTransition(() => setAuthLoading(true));
+    }
     try {
       const myspaceData = await getMySpace();
 
       // 处理 customTags：后端可能返回嵌套结构或扁平数组
       const customTagsArray = Array.isArray(myspaceData.customTags) ? myspaceData.customTags : myspaceData.customTags?.definitions || [];
 
-      // ⭐ 防御性过滤：移除 id 为 null/undefined 的无效项
+      // 防御性过滤：移除 id 为 null/undefined 的无效项
       const validItems = (myspaceData.items || []).filter((item) => {
         if (item.id == null || item.id === undefined) {
           console.warn("[AuthProvider] Filtered out invalid item with null ID:", item);

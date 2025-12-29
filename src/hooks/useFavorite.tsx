@@ -14,11 +14,12 @@ export const useFavorite = (): UseFavoriteReturn => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message, modal } = App.useApp();
 
-  // 更新收藏列表（内部函数）
+  // 更新收藏列表（内部函数）- 静默刷新，不触发全屏 loading
   const updateFavorites = useCallback(
     async (userLoves: number[], favoriteId: number, isComm: boolean) => {
       await updateFavorite(favoriteId, userLoves, isComm);
-      await refreshUserAuth(true);
+      // 使用 false 进行静默刷新，不触发 authLoading 骨架屏
+      await refreshUserAuth();
     },
     [refreshUserAuth]
   );
@@ -29,7 +30,8 @@ export const useFavorite = (): UseFavoriteReturn => {
         if (!userAuth?.data?.favorites) {
           // 新用户：创建收藏记录
           await createFavorite([id], isComm);
-          await refreshUserAuth(true);
+          // 静默刷新，不触发全屏 loading
+          await refreshUserAuth();
         } else {
           const currentLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
           const favoriteId = userAuth.data.favorites.id;
