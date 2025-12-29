@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
+import React, { useContext, useState, useEffect, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown, ConfigProvider } from "antd";
@@ -298,6 +298,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
   const [hasDragged, setHasDragged] = useState(false);
 
+  // 使用 ref 跟踪已初始化的用户 ID 和 items hash，避免收藏操作后重复加载
+  const initializedUserIdRef = useRef<number | null>(null);
+  const itemsHashRef = useRef<string>("");
+
   // 配置拖拽传感器
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -309,6 +313,19 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   // 加载数据 - 直接使用 AuthContext 提供的数据
   useEffect(() => {
     if (!userAuth?.data) return;
+
+    // 计算 items 的 hash（用于检测实际的数据变化）
+    const items = userAuth.data.items || [];
+    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
+    const currentUserId = userAuth.data.id;
+
+    // 如果用户相同且 items 没变化，跳过重新加载
+    if (initializedUserIdRef.current === currentUserId && itemsHashRef.current === currentHash) {
+      return;
+    }
+    initializedUserIdRef.current = currentUserId;
+    itemsHashRef.current = currentHash;
+
     let isMounted = true;
 
     const fetchData = async () => {
@@ -316,7 +333,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       setLoading(true);
       try {
-        // ⭐ 直接使用 AuthContext 提供的 items（后端已排序，AuthProvider 已过滤）
+        // 直接使用 AuthContext 提供的 items（后端已排序，AuthProvider 已过滤）
         const { items, customTags: tagsArray } = userAuth.data;
 
         // 设置自定义标签
@@ -341,7 +358,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const cardsMap = new Map(cardsData.map((c) => [c.id, c]));
         const commusMap = new Map(commusData.map((c) => [c.id, c]));
 
-        // ⭐ 直接按照 items 的顺序构建 allItems（保持后端排序）
+        // 直接按照 items 的顺序构建 allItems（保持后端排序）
         const allItems = items
           .map((item) => {
             let detailData;
@@ -476,16 +493,13 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         }));
         await updateMySpaceOrder(newOrder);
 
-        // 刷新 AuthContext 数据
-        refreshUserAuth();
-
-        messageApi.success("Order saved");
+        messageApi.success(<Translate id="message.orderSaved">排列已保存</Translate>);
       } catch (error) {
         console.error("Failed to save order:", error);
-        messageApi.error("Failed to save order");
+        messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
       }
     },
-    [filteredItems, refreshUserAuth, messageApi]
+    [filteredItems, messageApi]
   );
 
   // 编辑提示词
@@ -531,9 +545,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       // 立即更新本地状态
       setCustomTags(tags);
-
-      // 刷新 AuthContext 数据
-      refreshUserAuth();
+      // 不调用 refreshUserAuth() — 避免触发 MySpace useEffect 重新加载数据
 
       setTagManagerOpen(false);
       messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
