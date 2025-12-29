@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState, useCallback, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress } from "antd";
 import {
   HomeOutlined,
@@ -13,6 +14,7 @@ import {
   UserOutlined,
   SafetyCertificateOutlined,
   DownloadOutlined,
+  ImportOutlined,
   DatabaseOutlined,
   DeleteOutlined,
   TrophyOutlined,
@@ -25,16 +27,19 @@ import {
 } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
-import { getUserAllInfo } from "@site/src/api/user";
-import { changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
 import { getLevelInfo, LevelName, LevelDescription } from "@site/src/components/LevelSystem";
+import { getUserAllInfo } from "@site/src/api/user";
+import { submitPrompt, updatePrompt, createFavorite, updateFavorite, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
+import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
 
 const { Title, Text } = Typography;
 
 const UserProfile = () => {
-  const { userAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
-  const { message, modal } = App.useApp(); // 使用 modal 实现主题适配
+  const { userAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
+  const { message, modal } = App.useApp();
   const { token } = theme.useToken();
+  const { i18n } = useDocusaurusContext();
+  const currentLanguage = i18n.currentLocale.split("-")[0];
 
   const [userInfo, setUserInfo] = useState<any>(null);
   const [userLoading, setUserLoading] = useState(true);
@@ -44,6 +49,8 @@ const UserProfile = () => {
 
   const [changePasswordForm] = Form.useForm();
   const [forgotPasswordForm] = Form.useForm();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [importing, setImporting] = useState(false);
 
   // Fetch user info from /me endpoint
   const fetchUserInfo = useCallback(async () => {
@@ -76,31 +83,65 @@ const UserProfile = () => {
 
   const handleExportPrompts = useCallback(async () => {
     try {
-      // 从 userAuth.data.items 获取用户提示词
+      // 从 userAuth.data.items 获取用户提示词和收藏
       const userPromptItems = userAuth?.data?.items?.filter((item) => item.type === "prompt") || [];
+      const favoriteItems = userAuth?.data?.items?.filter((item) => item.type === "favorite") || [];
 
-      if (userPromptItems.length === 0) {
+      if (userPromptItems.length === 0 && favoriteItems.length === 0) {
         message.warning(<Translate id="message.export.noPrompts">暂无提示词可导出</Translate>);
         return;
       }
 
-      // 获取提示词ID列表
+      // 获取提示词和收藏的详细数据
       const promptIds = userPromptItems.map((item) => item.id);
-      const userPromptsData = await getPrompts("userprompts", promptIds);
+      const cardFavoriteIds = favoriteItems.filter((item) => item.source === "card").map((item) => item.id);
+      const commFavoriteIds = favoriteItems.filter((item) => item.source === "community").map((item) => item.id);
+
+      const [userPromptsData, cardFavoritesData, commFavoritesData] = await Promise.all([
+        promptIds.length > 0 ? getPrompts("userprompts", promptIds) : [],
+        cardFavoriteIds.length > 0 ? getPrompts("cards", cardFavoriteIds) : [],
+        commFavoriteIds.length > 0 ? getPrompts("commus", commFavoriteIds) : [],
+      ]);
+
+      // favorites: 只包含 ID 数组（用于导入）
+      const favorites = {
+        card: cardFavoriteIds,
+        community: commFavoriteIds,
+      };
+
+      // favoriteDetails: 详细内容供用户查看（导入时忽略）
+      const favoriteDetails = [
+        ...cardFavoritesData.map((p: any) => {
+          const langData = p[currentLanguage] || p["zh"] || p["en"] || {};
+          return {
+            id: p.id,
+            source: "card" as const,
+            ...(langData.title && { title: langData.title }),
+            ...(langData.prompt && { prompt: langData.prompt }),
+            ...(langData.remark && { remark: langData.remark }),
+          };
+        }),
+        ...commFavoritesData.map((p: any) => ({
+          id: p.id,
+          source: "community" as const,
+          ...(p.title && { title: p.title }),
+          ...(p.description && { prompt: p.description }),
+          ...(p.remark && { remark: p.remark }),
+        })),
+      ];
 
       const exportData = {
         exportTime: new Date().toISOString(),
-        totalCount: userPromptsData.length,
         prompts: userPromptsData.map((prompt: any) => ({
           id: prompt.id,
           title: prompt.title,
-          description: prompt.description,
-          remark: prompt.remark || "",
-          notes: prompt.notes || "",
-          createdAt: prompt.createdAt,
-          updatedAt: prompt.updatedAt,
+          prompt: prompt.description,
+          ...(prompt.remark && { remark: prompt.remark }),
+          ...(prompt.notes && { notes: prompt.notes }),
           share: prompt.share,
         })),
+        favorites,
+        ...(favoriteDetails.length > 0 && { favoriteDetails }),
       };
 
       const dataStr = JSON.stringify(exportData, null, 2);
@@ -120,7 +161,7 @@ const UserProfile = () => {
       console.error("Export error:", error);
       message.error(<Translate id="message.export.error">导出失败，请稍后重试</Translate>);
     }
-  }, [userAuth, message]);
+  }, [userAuth, message, currentLanguage]);
 
   const handleClearCache = useCallback(async () => {
     try {
@@ -134,6 +175,171 @@ const UserProfile = () => {
       message.error(<Translate id="message.cache.clearError">清除缓存失败</Translate>);
     }
   }, [fetchUserInfo, message]);
+
+  // 导入提示词处理
+  const handleImportPrompts = useCallback(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      // 重置 input 以允许重复选择同一文件
+      event.target.value = "";
+
+      try {
+        const content = await file.text();
+        const parsed = JSON.parse(content);
+
+        // 解析数据
+        let prompts: any[] = [];
+        let favorites: { card: number[]; community: number[] } = { card: [], community: [] };
+
+        if (Array.isArray(parsed)) {
+          prompts = parsed;
+        } else if (parsed.prompts) {
+          prompts = parsed.prompts;
+          if (parsed.favorites) {
+            favorites.card = parsed.favorites.card || [];
+            favorites.community = parsed.favorites.community || [];
+          }
+        } else if (parsed.title && (parsed.prompt || parsed.description)) {
+          prompts = [parsed];
+        }
+
+        // 标准化 prompt 字段
+        prompts = prompts.map((p) => ({ ...p, prompt: p.prompt || p.description || "" })).filter((p) => p.title && p.prompt);
+
+        const hasFavorites = favorites.card.length > 0 || favorites.community.length > 0;
+        if (prompts.length === 0 && !hasFavorites) {
+          message.error(<Translate id="message.import.invalid">无效的数据格式</Translate>);
+          return;
+        }
+
+        setImporting(true);
+
+        // 获取用户已有提示词ID
+        const userPromptIds = userAuth?.data?.userprompts?.map((p: any) => p.id) || [];
+        const favoriteId = userAuth?.data?.favorites?.id;
+
+        // 获取现有提示词详情（用于对比内容）
+        const conflictIds = prompts.filter((p) => p.id && userPromptIds.includes(p.id)).map((p) => p.id);
+        let existingPromptsMap: Record<number, any> = {};
+        if (conflictIds.length > 0) {
+          try {
+            const existingPrompts = await getPrompts("userprompts", conflictIds);
+            existingPromptsMap = existingPrompts.reduce((acc: Record<number, any>, p: any) => {
+              acc[p.id] = p;
+              return acc;
+            }, {});
+          } catch {
+            // 获取失败时继续导入，只是无法跳过相同内容
+          }
+        }
+
+        let successCount = 0;
+        let errorCount = 0;
+
+        // 处理提示词（并发执行，提升性能）
+        const promptTasks = prompts.map(async (prompt) => {
+          if (prompt.id && userPromptIds.includes(prompt.id)) {
+            // 检查内容是否相同，相同则跳过
+            const existing = existingPromptsMap[prompt.id];
+            if (existing) {
+              const isSame =
+                existing.title === prompt.title &&
+                existing.description === prompt.prompt &&
+                (existing.remark || "") === (prompt.remark || "") &&
+                (existing.notes || "") === (prompt.notes || "") &&
+                existing.share === (prompt.share ?? false);
+              if (isSame) {
+                return { status: "skipped" as const };
+              }
+            }
+            // 更新现有提示词
+            await updatePrompt(prompt.id, {
+              title: prompt.title,
+              description: prompt.prompt,
+              remark: prompt.remark,
+              notes: prompt.notes,
+              share: prompt.share ?? false,
+            });
+            return { status: "success" as const };
+          } else if (!prompt.id) {
+            // 没有 id：新创建提示词，默认公开
+            await submitPrompt({
+              title: prompt.title,
+              description: prompt.prompt,
+              remark: prompt.remark,
+              notes: prompt.notes,
+              share: prompt.share ?? true,
+            });
+            return { status: "success" as const };
+          } else {
+            // 有 id 但不属于当前用户：导入为新提示词，强制私密
+            await submitPrompt({
+              title: prompt.title,
+              description: prompt.prompt,
+              remark: prompt.remark,
+              notes: prompt.notes,
+              share: false,
+            });
+            return { status: "success" as const };
+          }
+        });
+
+        const promptResults = await Promise.allSettled(promptTasks);
+        for (const result of promptResults) {
+          if (result.status === "fulfilled") {
+            if (result.value.status !== "skipped") {
+              successCount++;
+            }
+          } else {
+            errorCount++;
+          }
+        }
+
+        // 处理收藏（合并模式，并行执行）
+        if (hasFavorites) {
+          const items = userAuth?.data?.items || [];
+          const favoriteConfigs = [
+            { importIds: favorites.card, isCommunity: false, derive: deriveLoves },
+            { importIds: favorites.community, isCommunity: true, derive: deriveCommLoves },
+          ] as const;
+
+          const tasks = favoriteConfigs.map(async ({ importIds, isCommunity, derive }) => {
+            if (importIds.length === 0) return false;
+
+            const existing = derive(items);
+            const merged = [...new Set([...existing, ...importIds])];
+            if (merged.length === existing.length) return false; // 无新增
+
+            favoriteId ? await updateFavorite(favoriteId, merged, isCommunity) : await createFavorite(merged, isCommunity);
+            return true;
+          });
+
+          const results = await Promise.allSettled(tasks);
+          successCount += results.filter((r) => r.status === "fulfilled" && r.value).length;
+        }
+
+        setImporting(false);
+
+        if (errorCount === 0) {
+          message.success(<Translate id="message.import.success">导入成功！</Translate>);
+        } else if (successCount > 0) {
+          message.warning(`${translate({ id: "message.import.partial", message: "部分导入成功" })} (${successCount}/${successCount + errorCount})`);
+        } else {
+          message.error(<Translate id="message.import.failed">导入失败</Translate>);
+        }
+
+        // 刷新 MySpace 数据（prompts 和 favorites）
+        await refreshUserAuth(true);
+      } catch (error) {
+        setImporting(false);
+        console.error("Import error:", error);
+        message.error(<Translate id="message.import.parseError">JSON 解析失败，请检查文件格式</Translate>);
+      }
+    },
+    [userAuth, message, refreshUserAuth]
+  );
 
   const handleEditUsernameClick = () => {
     setNewUsername(userInfo?.username || "");
@@ -252,93 +458,6 @@ const UserProfile = () => {
                     ]}
                   />
                 </Flex>
-              </Card>
-
-              {/* Data Management Section */}
-              <Card
-                style={{
-                  borderRadius: token.borderRadiusLG,
-                  border: `1px solid ${token.colorBorderSecondary}`,
-                  boxShadow: token.boxShadowTertiary,
-                }}
-                title={
-                  <Space>
-                    <DatabaseOutlined style={{ color: token.colorPrimary }} />
-                    <Translate id="title.dataManagement">数据管理</Translate>
-                  </Space>
-                }>
-                <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
-                  {/* Export Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0`, borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
-                    <Flex align="center" gap={token.marginMD}>
-                      <Avatar
-                        icon={<DownloadOutlined />}
-                        style={{
-                          backgroundColor: token.colorPrimaryBg,
-                          color: token.colorPrimary,
-                          border: `1px solid ${token.colorPrimaryBorder}`,
-                        }}
-                      />
-                      <div>
-                        <Text strong>
-                          <Translate id="button.exportPrompts">导出提示词</Translate>
-                        </Text>
-                        <br />
-                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                          <Translate id="description.exportPrompts.short">导出为 JSON 文件，方便备份</Translate>
-                        </Text>
-                      </div>
-                    </Flex>
-                    <Button icon={<DownloadOutlined />} onClick={handleExportPrompts} disabled={!userAuth?.data?.items?.some((item) => item.type === "prompt")}>
-                      <Translate id="button.export">导出数据</Translate>
-                    </Button>
-                  </Flex>
-
-                  {/* Clear Cache */}
-                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0` }}>
-                    <Flex align="center" gap={token.marginMD}>
-                      <Avatar
-                        icon={<DeleteOutlined />}
-                        style={{
-                          backgroundColor: token.colorPrimaryBg,
-                          color: token.colorPrimary,
-                          border: `1px solid ${token.colorPrimaryBorder}`,
-                        }}
-                      />
-                      <div>
-                        <Text strong>
-                          <Translate id="button.clearCache">清除缓存</Translate>
-                        </Text>
-                        <br />
-                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
-                          <Translate id="description.clearCache.short">刷新本地缓存数据</Translate>
-                        </Text>
-                      </div>
-                    </Flex>
-                    <Popconfirm
-                      title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
-                      description={
-                        <div>
-                          <Text>
-                            <Translate id="modal.clearCache.content">系统使用 ETag 技术自动管理缓存，通常无需手动清除。</Translate>
-                          </Text>
-                          <br />
-                          <Text type="warning">
-                            <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
-                          </Text>
-                        </div>
-                      }
-                      onConfirm={handleClearCache}
-                      okText={<Translate id="button.confirm">确认清除</Translate>}
-                      okButtonProps={{ danger: true }}
-                      cancelText={<Translate id="action.cancel">取消</Translate>}
-                      placement="topRight">
-                      <Button danger icon={<DeleteOutlined />}>
-                        <Translate id="button.clearAllCache">清除所有缓存</Translate>
-                      </Button>
-                    </Popconfirm>
-                  </Flex>
-                </Space>
               </Card>
 
               <Row gutter={[24, 24]}>
@@ -648,10 +767,124 @@ const UserProfile = () => {
                   </Card>
                 </Col>
               </Row>
+
+              {/* Data Management Section */}
+              <Card
+                style={{
+                  borderRadius: token.borderRadiusLG,
+                  border: `1px solid ${token.colorBorderSecondary}`,
+                  boxShadow: token.boxShadowTertiary,
+                }}
+                title={
+                  <Space>
+                    <DatabaseOutlined style={{ color: token.colorPrimary }} />
+                    <Translate id="title.dataManagement">数据管理</Translate>
+                  </Space>
+                }>
+                <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+                  {/* Export Prompts */}
+                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0`, borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
+                    <Flex align="center" gap={token.marginMD}>
+                      <Avatar
+                        icon={<DownloadOutlined />}
+                        style={{
+                          backgroundColor: token.colorPrimaryBg,
+                          color: token.colorPrimary,
+                          border: `1px solid ${token.colorPrimaryBorder}`,
+                        }}
+                      />
+                      <div>
+                        <Text strong>
+                          <Translate id="button.exportPrompts">导出提示词</Translate>
+                        </Text>
+                        <br />
+                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                          <Translate id="description.exportPrompts.short">导出为 JSON 文件，方便备份</Translate>
+                        </Text>
+                      </div>
+                    </Flex>
+                    <Button icon={<DownloadOutlined />} onClick={handleExportPrompts} disabled={!userAuth?.data?.items?.some((item) => item.type === "prompt" || item.type === "favorite")}>
+                      <Translate id="button.export">导出数据</Translate>
+                    </Button>
+                  </Flex>
+
+                  {/* Import Prompts */}
+                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0`, borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
+                    <Flex align="center" gap={token.marginMD}>
+                      <Avatar
+                        icon={<ImportOutlined />}
+                        style={{
+                          backgroundColor: token.colorPrimaryBg,
+                          color: token.colorPrimary,
+                          border: `1px solid ${token.colorPrimaryBorder}`,
+                        }}
+                      />
+                      <div>
+                        <Text strong>
+                          <Translate id="button.importPrompts">导入提示词</Translate>
+                        </Text>
+                        <br />
+                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                          <Translate id="description.importPrompts.short">从 JSON 文件导入提示词和收藏</Translate>
+                        </Text>
+                      </div>
+                    </Flex>
+                    <Button icon={<ImportOutlined />} loading={importing} onClick={() => fileInputRef.current?.click()}>
+                      <Translate id="button.import">导入数据</Translate>
+                    </Button>
+                  </Flex>
+
+                  {/* Clear Cache */}
+                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0` }}>
+                    <Flex align="center" gap={token.marginMD}>
+                      <Avatar
+                        icon={<DeleteOutlined />}
+                        style={{
+                          backgroundColor: token.colorPrimaryBg,
+                          color: token.colorPrimary,
+                          border: `1px solid ${token.colorPrimaryBorder}`,
+                        }}
+                      />
+                      <div>
+                        <Text strong>
+                          <Translate id="button.clearCache">清除缓存</Translate>
+                        </Text>
+                        <br />
+                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                          <Translate id="description.clearCache.short">刷新本地缓存数据</Translate>
+                        </Text>
+                      </div>
+                    </Flex>
+                    <Popconfirm
+                      title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
+                      description={
+                        <div>
+                          <Text>
+                            <Translate id="modal.clearCache.content">系统使用 ETag 技术自动管理缓存，通常无需手动清除。</Translate>
+                          </Text>
+                          <br />
+                          <Text type="warning">
+                            <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
+                          </Text>
+                        </div>
+                      }
+                      onConfirm={handleClearCache}
+                      okText={<Translate id="button.confirm">确认清除</Translate>}
+                      okButtonProps={{ danger: true }}
+                      cancelText={<Translate id="action.cancel">取消</Translate>}
+                      placement="topRight">
+                      <Button danger icon={<DeleteOutlined />}>
+                        <Translate id="button.clearAllCache">清除所有缓存</Translate>
+                      </Button>
+                    </Popconfirm>
+                  </Flex>
+                </Space>
+              </Card>
             </Space>
           </Col>
         </Row>
       </main>
+      <input type="file" ref={fileInputRef} accept=".json" style={{ display: "none" }} onChange={handleImportPrompts} />
     </Layout>
   );
 };
