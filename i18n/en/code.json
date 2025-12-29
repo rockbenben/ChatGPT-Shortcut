@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "Import"
+  },
+  "message.orderSaved": {
+    "message": "Layout saved"
+  },
+  "message.orderSaveFailed": {
+    "message": "Failed to save layout"
   }
 }

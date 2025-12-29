@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "استيراد"
+  },
+  "message.orderSaved": {
+    "message": "تم حفظ الترتيب"
+  },
+  "message.orderSaveFailed": {
+    "message": "فشل في حفظ الترتيب"
   }
 }

@@ -59,6 +59,22 @@ Le contenu de l'exportation comprend :
 
 Il est recommandé d'exporter des sauvegardes régulièrement pour éviter la perte de données.
 
+## Importer des prompts
+
+Importez des prompts et des favoris depuis un fichier JSON :
+
+1. Entrez dans le Centre utilisateur
+2. Cliquez sur le bouton "Importer les prompts"
+3. Sélectionnez un fichier JSON
+4. Le système fusionne automatiquement les données
+
+### Collaboration d'équipe
+
+Workflow recommandé pour partager des prompts au sein d'une équipe :
+
+1. **Filtrer et partager** : Après l'exportation des données, supprimez manuellement votre liste de favoris ou filtrez des prompts spécifiques, puis partagez le fichier avec les membres de l'équipe pour l'importation
+2. **Protection de la vie privée** : Les prompts importés d'autres personnes (dont les ID n'appartiennent pas à votre compte) sont automatiquement définis sur **Privé**, assurant l'isolation des données entre les membres
+
 ## Documentation associée
 
 - [Ma collection](./my-collection) - Gestion des collections et des balises

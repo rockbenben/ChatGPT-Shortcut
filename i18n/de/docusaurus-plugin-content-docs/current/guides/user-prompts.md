@@ -59,6 +59,22 @@ Der Exportinhalt umfasst:
 
 Es wird empfohlen, regelmäßig Backups zu exportieren, um Datenverlust zu vermeiden.
 
+## Prompts importieren
+
+Importieren Sie Prompts und Favoriten aus einer JSON-Datei:
+
+1. Gehen Sie ins Benutzerzentrum
+2. Klicken Sie auf die Schaltfläche "Prompts importieren"
+3. Wählen Sie eine JSON-Datei aus
+4. Das System führt die Daten automatisch zusammen
+
+### Team-Zusammenarbeit
+
+Empfohlener Workflow für das Teilen von Prompts innerhalb eines Teams:
+
+1. **Filtern & Teilen**: Nach dem Datenexport können Sie Ihre Favoritenliste entfernen oder bestimmte Prompts filtern und dann die Datei mit Teammitgliedern zum Import teilen
+2. **Datenschutz**: Prompts, die von anderen importiert werden (deren IDs nicht zu Ihrem Konto gehören), werden automatisch auf **Privat** gesetzt, um die Datenisolierung zwischen Mitgliedern zu gewährleisten
+
 ## Verwandte Dokumentation
 
 - [Meine Sammlung](./my-collection) - Sammlungs- und Tag-Verwaltung

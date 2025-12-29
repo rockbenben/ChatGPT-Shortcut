@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "Импорт"
+  },
+  "message.orderSaved": {
+    "message": "Расположение сохранено"
+  },
+  "message.orderSaveFailed": {
+    "message": "Не удалось сохранить расположение"
   }
 }

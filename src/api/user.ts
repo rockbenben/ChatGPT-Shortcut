@@ -19,7 +19,7 @@ export async function getUserAllInfo() {
   const cachedEtag = getCache(`${cacheKey}_etag`);
   const cachedData = getCache(cacheKey);
 
-  // ⭐ 安全检查：如果有 ETag 但数据为 null，清除 ETag 并重新请求
+  // 安全检查：如果有 ETag 但数据为 null，清除 ETag 并重新请求
   // 这种情况可能发生在用户清除缓存后但 ETag 未被清除时
   if (cachedEtag && !cachedData) {
     console.warn("[UserInfo] Found ETag but no cached data, clearing ETag");
@@ -29,7 +29,7 @@ export async function getUserAllInfo() {
   try {
     const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email`, {
       headers: {
-        // ⭐ 使用标准 HTTP If-None-Match header
+        // 使用标准 HTTP If-None-Match header
         // 仅当有 ETag 且有缓存数据时才发送
         ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
       },

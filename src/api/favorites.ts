@@ -34,7 +34,7 @@ export async function updateFavorite(favoriteId: number, loves: number[], isComm
       },
     });
 
-    clearMySpaceCache(); // ⭐ 清除 MySpace 缓存
+    clearMySpaceCache();
     return response;
   } catch (error) {
     console.error("Error updating favorite:", error);

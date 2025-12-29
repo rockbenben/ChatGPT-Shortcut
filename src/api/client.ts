@@ -17,7 +17,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 /**
  * 清除用户基本信息缓存（id, username, email）
- * ⭐ 重要：必须同时清除 ETag，否则会导致 304 响应但数据为 null 的问题
+ * 重要：必须同时清除 ETag，否则会导致 304 响应但数据为 null 的问题
  */
 export function clearUserProfileCache() {
   removeCache(CACHE_PREFIX.USER_PROFILE);

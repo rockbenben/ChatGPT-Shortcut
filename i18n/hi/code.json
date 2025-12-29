@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "आयात करें"
+  },
+  "message.orderSaved": {
+    "message": "व्यवस्था सहेजी गई"
+  },
+  "message.orderSaveFailed": {
+    "message": "व्यवस्था सहेजने में विफल"
   }
 }

@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "가져오기"
+  },
+  "message.orderSaved": {
+    "message": "배열이 저장되었습니다"
+  },
+  "message.orderSaveFailed": {
+    "message": "배열 저장 실패"
   }
 }
