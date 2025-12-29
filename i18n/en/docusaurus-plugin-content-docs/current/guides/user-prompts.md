@@ -59,6 +59,22 @@ Export content includes:
 
 It is recommended to export backups regularly to prevent data loss.
 
+## Import Prompts
+
+Import prompts and favorites from a JSON file:
+
+1. Enter User Center
+2. Click "Import Prompts" button
+3. Select a JSON file
+4. The system automatically merges data
+
+### Team Collaboration
+
+Recommended workflow for sharing prompts within a team:
+
+1. **Filter & Share**: After exporting data, manually remove your favorites or filter specific prompts, then share the file with team members for import
+2. **Privacy Protection**: Prompts imported from others (whose IDs don't belong to your account) are automatically set to **Private**, ensuring data isolation between members
+
 ## Related Documentation
 
 - [My Collection](./my-collection) - Collection and tag management

@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "Importar"
+  },
+  "message.orderSaved": {
+    "message": "Disposición guardada"
+  },
+  "message.orderSaveFailed": {
+    "message": "Error al guardar la disposición"
   }
 }

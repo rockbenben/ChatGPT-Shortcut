@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "আমদানি"
+  },
+  "message.orderSaved": {
+    "message": "বিন্যাস সংরক্ষিত হয়েছে"
+  },
+  "message.orderSaveFailed": {
+    "message": "বিন্যাস সংরক্ষণে ব্যর্থ"
   }
 }

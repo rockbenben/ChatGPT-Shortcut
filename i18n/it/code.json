@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "Importa"
+  },
+  "message.orderSaved": {
+    "message": "Disposizione salvata"
+  },
+  "message.orderSaveFailed": {
+    "message": "Salvataggio della disposizione fallito"
   }
 }

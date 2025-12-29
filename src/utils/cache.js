@@ -25,7 +25,7 @@ export const CACHE_PREFIX = {
   SEARCH: "sr_",
   COMMENTS: "cm_",
   USER_PROFILE: "up", // 用户基本信息 (id, username, email)
-  MYSPACE: "myspace", // ⭐ 新的统一 MySpace 数据
+  MYSPACE: "myspace", //新的统一 MySpace 数据
 };
 
 /**

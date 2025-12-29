@@ -59,6 +59,22 @@ Il contenuto dell'esportazione include:
 
 Si raccomanda di esportare backup regolarmente per evitare la perdita di dati.
 
+## Importa Prompt
+
+Importa prompt e preferiti da un file JSON:
+
+1. Entra nel Centro Utente
+2. Clicca sul pulsante "Importa Prompt"
+3. Seleziona un file JSON
+4. Il sistema unisce i dati automaticamente
+
+### Collaborazione del Team
+
+Workflow consigliato per condividere prompt all'interno di un team:
+
+1. **Filtra e condividi**: Dopo aver esportato i dati, rimuovi manualmente la tua lista dei preferiti o filtra prompt specifici, poi condividi il file con i membri del team per l'importazione
+2. **Protezione della privacy**: I prompt importati da altri (i cui ID non appartengono al tuo account) vengono automaticamente impostati su **Privato**, garantendo l'isolamento dei dati tra i membri
+
 ## Documentazione Correlata
 
 - [La Mia Collezione](./my-collection) - Gestione collezioni e tag

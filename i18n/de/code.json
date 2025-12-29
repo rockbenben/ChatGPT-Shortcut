@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "Importieren"
+  },
+  "message.orderSaved": {
+    "message": "Anordnung gespeichert"
+  },
+  "message.orderSaveFailed": {
+    "message": "Speichern der Anordnung fehlgeschlagen"
   }
 }

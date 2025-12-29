@@ -1117,5 +1117,11 @@
   },
   "button.import": {
     "message": "インポート"
+  },
+  "message.orderSaved": {
+    "message": "配置を保存しました"
+  },
+  "message.orderSaveFailed": {
+    "message": "配置の保存に失敗しました"
   }
 }
