@@ -12,6 +12,7 @@ import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
+import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
@@ -285,8 +286,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { confirmRemoveFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
-  const [spaceItems, setSpaceItems] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  // 使用缓存初始化，避免刷新时闪烁空白
+  const cachedSpaceItems = typeof window !== "undefined" ? getCache("myspace_items") : null;
+  const [spaceItems, setSpaceItems] = useState<any[]>(cachedSpaceItems || []);
+  const [loading, setLoading] = useState(!cachedSpaceItems);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [customTags, setCustomTags] = useState<CustomTag[]>([]);
@@ -316,7 +319,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
     // 计算 items 的 hash（用于检测实际的数据变化）
     const items = userAuth.data.items || [];
-    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
+    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}_${item.updatedAt || ""}`).join(",");
     const currentUserId = userAuth.data.id;
 
     // 如果用户相同且 items 没变化，跳过重新加载
@@ -386,6 +389,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
         if (isMounted) {
           setSpaceItems(allItems);
+          // 缓存 spaceItems 用于下次快速显示
+          setCache("myspace_items", allItems, CACHE_TTL.MYSPACE);
 
           // 通知父组件数据已加载（使用实际获取到数据的数量）
           if (onDataLoaded) {
@@ -648,7 +653,9 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [spaceItems, customTags, messageApi]
   );
 
-  if (!userAuth?.data) {
+  // 如果有缓存数据，即使 userAuth 还在加载也显示缓存
+  // 只有在没有缓存且没有 userAuth 时才显示骨架屏
+  if (!userAuth?.data && spaceItems.length === 0) {
     return <PromptCardSkeleton count={6} />;
   }
 

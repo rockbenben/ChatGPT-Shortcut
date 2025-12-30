@@ -555,11 +555,23 @@ const PageHeader: React.FC<{
 const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOpenModal }) => {
   const { userAuth } = useContext(AuthContext);
   const { viewMode } = useViewMode();
-  const [stats, setStats] = React.useState({ totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 });
+
+  // 从缓存初始化 stats，避免刷新时显示 0
+  const cachedStats =
+    typeof window !== "undefined"
+      ? (() => {
+          const { getCache } = require("@site/src/utils/cache");
+          return getCache("myspace_stats");
+        })()
+      : null;
+  const [stats, setStats] = React.useState(cachedStats || { totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 });
 
   // 从 MySpace 组件接收数据更新（避免重复请求）
   const handleDataLoaded = React.useCallback((newStats: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => {
     setStats(newStats);
+    // 缓存 stats
+    const { setCache, CACHE_TTL } = require("@site/src/utils/cache");
+    setCache("myspace_stats", newStats, CACHE_TTL.MYSPACE);
   }, []);
 
   // 如果切换到浏览模式，显示公共浏览

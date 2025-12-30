@@ -331,7 +331,7 @@ const UserProfile = () => {
         }
 
         // 刷新 MySpace 数据（prompts 和 favorites）
-        await refreshUserAuth(true);
+        await refreshUserAuth();
       } catch (error) {
         setImporting(false);
         console.error("Import error:", error);
