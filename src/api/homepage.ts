@@ -1,10 +1,10 @@
 /**
  * Homepage Data Service - Manages card data loading for the homepage
- * Uses existing getPrompts API as transition approach
+ * All data is loaded from static JSON files (no API calls)
+ * Uses lscache for persistent caching (100 days)
  */
-import { getPrompts } from "./prompts";
-import { setCache, getCache, CACHE_TTL, CACHE_PREFIX, getListCacheKey } from "@site/src/utils/cache";
 import { DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 
 export interface CardData {
   id: number;
@@ -27,10 +27,57 @@ export interface PagedCardsResult {
   currentPage: number;
 }
 
+// 内存缓存（会话级别，快速访问）
+const promptDataCache: Record<string, CardData[]> = {};
+
+// lscache 缓存键前缀
+const PROMPT_CACHE_KEY = "prompt_data_";
+
+/**
+ * Load all prompt data for a specific language
+ * Cache hierarchy: Memory -> lscache (100 days) -> Dynamic Import
+ */
+async function getPromptData(lang: string): Promise<CardData[]> {
+  // Fallback to zh if language not supported
+  const safeLang = ["zh", "en", "ja", "ko", "de", "fr", "es", "it", "pt", "ru", "ar", "hi", "bn"].includes(lang) ? lang : "zh";
+  const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
+
+  // 1. 检查内存缓存（最快）
+  if (promptDataCache[safeLang]) {
+    return promptDataCache[safeLang];
+  }
+
+  // 2. 检查 lscache 持久化缓存（100天有效期）
+  const cachedData = getCache(cacheKey);
+  if (cachedData && Array.isArray(cachedData)) {
+    // 存入内存缓存以供后续快速访问
+    promptDataCache[safeLang] = cachedData;
+    return cachedData;
+  }
+
+  // 3. 动态导入 JSON 文件
+  try {
+    const data = await import(`@site/src/data/prompt_${safeLang}.json`);
+    const promptData = data.default;
+
+    // 同时存入内存缓存和 lscache
+    promptDataCache[safeLang] = promptData;
+    setCache(cacheKey, promptData, CACHE_TTL.PROMPT_CARDS); // 100 天
+
+    return promptData;
+  } catch (error) {
+    console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
+    // Fallback to zh
+    if (safeLang !== "zh") {
+      return getPromptData("zh");
+    }
+    throw error;
+  }
+}
+
 /**
  * 获取默认卡片数据（未登录用户）
  * - 直接导入本地静态 JSON 文件
- * - 不使用缓存，确保每次都是最新的静态数据
  */
 export async function fetchDefaultCards(lang: string = "zh"): Promise<DefaultCardsResult> {
   try {
@@ -54,9 +101,9 @@ export async function fetchDefaultCards(lang: string = "zh"): Promise<DefaultCar
 }
 
 /**
- * 批量获取卡片详情（过渡方案）
- * - 使用现有 getPrompts API
- * - 自动缓存每个卡片（100 天）
+ * 批量获取卡片详情（从静态 JSON）
+ * - 从 prompt_{lang}.json 加载数据
+ * - 根据 ID 过滤返回
  */
 export async function fetchCardsByIds(ids: number[], lang: string = "zh"): Promise<CardData[]> {
   if (!ids || ids.length === 0) {
@@ -64,8 +111,19 @@ export async function fetchCardsByIds(ids: number[], lang: string = "zh"): Promi
   }
 
   try {
-    const cards = await getPrompts("cards", ids, lang);
-    return cards as CardData[];
+    const allData = await getPromptData(lang);
+    const idSet = new Set(ids);
+
+    // Filter cards by IDs and maintain order
+    const cardMap = new Map<number, CardData>();
+    allData.forEach((card) => {
+      if (idSet.has(card.id)) {
+        cardMap.set(card.id, card);
+      }
+    });
+
+    // Return in the requested order
+    return ids.map((id) => cardMap.get(id)).filter(Boolean) as CardData[];
   } catch (error) {
     console.error("[fetchCardsByIds] Error fetching cards:", error);
     throw error;
@@ -73,10 +131,9 @@ export async function fetchCardsByIds(ids: number[], lang: string = "zh"): Promi
 }
 
 /**
- * 增量加载下一批卡片
- * - 从 ALL_IDS 中获取，排除已显示的 ID
- * - 每次加载 8 个
- * - 用于滚动加载场景
+ * 增量加载下一批卡片（从静态 JSON）
+ * - 从 prompt_{lang}.json 获取，排除已显示的 ID
+ * - 按 ALL_IDS 顺序返回
  */
 export async function fetchNextCards(excludeIds: number[], batchSize: number = 8, lang: string = "zh"): Promise<CardData[]> {
   try {
@@ -90,12 +147,60 @@ export async function fetchNextCards(excludeIds: number[], batchSize: number = 8
     // 取前 batchSize 个
     const nextIds = availableIds.slice(0, batchSize);
 
-    // 批量获取卡片数据
+    // 从静态 JSON 获取卡片数据
     const cards = await fetchCardsByIds(nextIds, lang);
 
     return cards;
   } catch (error) {
     console.error("[fetchNextCards] Error fetching next cards:", error);
+    throw error;
+  }
+}
+
+/**
+ * 本地搜索卡片（从静态 JSON）
+ * - 根据 tags 和关键词过滤
+ * - 替代 API 的 searchCards 调用
+ */
+export async function searchCardsLocally(tags: string[], searchName: string | null, lang: string = "zh", operator: "AND" | "OR" = "OR"): Promise<CardData[]> {
+  try {
+    const allData = await getPromptData(lang);
+    const searchLower = searchName ? searchName.toLowerCase().trim() : "";
+
+    // 过滤逻辑
+    const filtered = allData.filter((card) => {
+      // Tag 过滤
+      let tagMatch = true;
+      if (tags.length > 0) {
+        const cardTags = card.tags || [];
+        if (operator === "AND") {
+          // AND: 卡片必须包含所有选中的标签
+          tagMatch = tags.every((tag) => cardTags.includes(tag));
+        } else {
+          // OR: 卡片只需包含其中一个标签
+          tagMatch = tags.some((tag) => cardTags.includes(tag));
+        }
+      }
+
+      // 关键词过滤
+      let searchMatch = true;
+      if (searchLower) {
+        // 获取当前语言的字段数据
+        const langData = card[lang] || card.zh || {};
+        const title = (langData.title || card.title || "").toLowerCase();
+        const description = (langData.description || card.description || "").toLowerCase();
+        const remark = (langData.remark || card.remark || "").toLowerCase();
+        const prompt = (langData.prompt || card.prompt || "").toLowerCase();
+
+        searchMatch = title.includes(searchLower) || description.includes(searchLower) || remark.includes(searchLower) || prompt.includes(searchLower);
+      }
+
+      return tagMatch && searchMatch;
+    });
+
+    return filtered;
+  } catch (error) {
+    console.error("[searchCardsLocally] Error searching cards:", error);
     throw error;
   }
 }

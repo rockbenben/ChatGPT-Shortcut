@@ -22,6 +22,7 @@ import { clearMySpaceCache } from "./myspace";
 
 /**
  * Batch fetch prompts by IDs with ETag conditional request support
+ * Note: For "cards" type, uses local JSON data instead of API
  */
 export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: number[] | { id: number }[], lang?: string) {
   if (!ids || ids.length === 0) {
@@ -37,7 +38,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   const normalizedType = typeof type === "string" ? type.trim() : "";
   const allowedTypes = new Set(["cards", "commus", "userprompts"]);
   const safeType = allowedTypes.has(normalizedType) ? normalizedType : "commus";
-  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : undefined;
+  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : "zh";
 
   // Deduplicate and validate IDs
   const idsSeen = new Set<number>();
@@ -52,6 +53,13 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
   if (!normalizedIds.length) {
     return [];
+  }
+
+  // === Cards: Use local JSON data with lscache caching ===
+  // This avoids API calls and uses the same cached prompt_*.json as search/filter
+  if (safeType === "cards") {
+    const { fetchCardsByIds } = await import("./homepage");
+    return fetchCardsByIds(normalizedIds, sanitizedLang);
   }
 
   const cachedPrompts = new Map();
