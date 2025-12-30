@@ -185,10 +185,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
   const initializedUserIdRef = useRef<number | null>(null);
 
-  // 初始化数据加载 - 仅对已登录用户加载个性化数据
-  // 未登录用户使用 SSG 静态数据（已在 useState 初始值中）
+  // 初始化数据加载 - 已登录用户立即加载个性化数据
+  // prompt_*.json 有缓存机制，首次加载后不会重复请求
   const initializeData = useCallback(async () => {
-    // 未登录或正在加载认证状态时，使用 SSG 默认数据，无需额外加载
+    // 未登录或正在加载认证状态时，使用 SSG 默认数据
     if (authLoading || !userAuth) {
       return;
     }
@@ -200,7 +200,8 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     }
     initializedUserIdRef.current = currentUserId;
 
-    // 已登录用户：加载个性化收藏数据
+    // 已登录用户：立即加载个性化收藏数据
+    // 注意：prompt_*.json 有缓存机制（promptDataCache），首次加载后后续操作直接使用缓存
     try {
       const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
 
@@ -234,7 +235,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
       // 收集所有已显示的 ID（收藏 + 其他）
       const displayedIds = [...favoritePrompts.map((p: any) => p.id), ...otherPrompts.map((p: any) => p.id)];
 
-      // 获取下一批卡片（8 个）
+      // 获取下一批卡片（使用缓存的 prompt_*.json 数据）
       const nextCards = await fetchNextCards(displayedIds, BATCH_SIZE, currentLanguage);
 
       if (nextCards.length === 0) {
