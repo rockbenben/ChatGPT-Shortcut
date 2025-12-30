@@ -262,21 +262,28 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
 
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
+  const isLoadingMoreRef = useRef(isLoadingMore);
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    isLoadingMoreRef.current = isLoadingMore;
+  }, [isLoadingMore]);
 
   useEffect(() => {
-    if (!loadMoreTriggerRef.current || !hasMoreData || isLoadingMore) {
+    if (!loadMoreTriggerRef.current || !hasMoreData) {
       return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !isLoadingMore && hasMoreData) {
+        // Check loading state from ref to get latest value
+        if (entries[0].isIntersecting && !isLoadingMoreRef.current) {
           loadMoreData();
         }
       },
       {
         root: null,
-        rootMargin: "0px", // 负值：用户需滚动超过触发器 100px 才加载
+        rootMargin: "0px", // 不提前触发，避免首屏自动加载
         threshold: 0.1,
       }
     );
@@ -286,7 +293,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     return () => {
       observer.disconnect();
     };
-  }, [hasMoreData, isLoadingMore, loadMoreData]);
+  }, [hasMoreData, loadMoreData]);
 
   // 使用 useMemo 缓存卡片数据和权重计算，避免每次渲染都重新计算 getWeight
   const favoriteUsers = useMemo(() => {
