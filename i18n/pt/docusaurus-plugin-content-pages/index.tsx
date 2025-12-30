@@ -439,7 +439,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
 const ExploreView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOpenModal }) => {
   return (
     <>
-      <ShowcaseHeader />
       <ShowcaseFilters />
       <ShowcaseCards onOpenModal={onOpenModal} />
     </>
@@ -581,13 +580,10 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
 
   // 仅在 collection 模式才显示 MySpace（避免不必要的 API 调用）
   return (
-    <>
-      <ShowcaseHeader />
-      <div className="container margin-top--md">
-        <PageHeader userAuth={userAuth} {...stats} />
-        <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
-      </div>
-    </>
+    <div className="container margin-top--md">
+      <PageHeader userAuth={userAuth} {...stats} />
+      <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
+    </div>
   );
 };
 
@@ -673,6 +669,7 @@ const ShowcaseContent: React.FC = () => {
 
   return (
     <ViewModeContext.Provider value={{ viewMode, setViewMode: handleViewModeChange }}>
+      <ShowcaseHeader />
       <div
         style={{
           opacity: isAnimating ? 0 : 1,
