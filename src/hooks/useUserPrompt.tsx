@@ -24,7 +24,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         await submitPrompt(values);
 
         // 强制刷新，确保获取最新数据
-        await refreshUserAuth(true);
+        await refreshUserAuth();
 
         message.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
 
@@ -50,14 +50,14 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       setLoading(true);
       try {
         await apiUpdatePrompt(id, values);
-        await refreshUserAuth(true);
+        await refreshUserAuth();
 
         message.success(<Translate id="message.updatePrompt.success">提示词更新成功！</Translate>);
         return true;
       } catch (err) {
         console.error(err);
         // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth(true);
+        await refreshUserAuth();
 
         message.error(<Translate id="message.updatePrompt.error">提示词更新失败，请稍后重试</Translate>);
         return false;
@@ -73,12 +73,12 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       setLoading(true);
       try {
         await apiDeletePrompt(id);
-        await refreshUserAuth(true);
+        await refreshUserAuth();
         message.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
       } catch (err) {
         console.error(err);
         // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth(true);
+        await refreshUserAuth();
 
         message.error(<Translate id="message.deletePrompt.error">提示词删除失败，请稍后重试</Translate>);
       } finally {

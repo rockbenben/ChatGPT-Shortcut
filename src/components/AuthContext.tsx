@@ -15,10 +15,14 @@ export const AuthContext = createContext<{
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [userAuth, setUserAuth] = useState<any>(null);
-  // 快速检查：如果没有 token，不需要显示 loading 状态
+  // Stale-While-Revalidate: 用缓存的 userAuth 初始化，避免刷新时闪烁
+  const { getCache } = require("@site/src/utils/cache");
+  const cachedUserAuth = typeof window !== "undefined" ? getCache("user_auth") : null;
+  const [userAuth, setUserAuth] = useState<any>(cachedUserAuth);
+
+  // 如果有缓存，不显示 loading 状态（后台静默刷新）
   const hasToken = typeof window !== "undefined" && localStorage.getItem("auth_token");
-  const [authLoading, setAuthLoading] = useState(!!hasToken);
+  const [authLoading, setAuthLoading] = useState(hasToken && !cachedUserAuth);
 
   const fetchUser = useCallback(async (forceRefresh = false) => {
     // 快速检查：如果没有 token，直接跳过 loading 状态
@@ -69,7 +73,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         userprompts: deriveUserprompts(validItems), // ← 使用 validItems
       };
 
-      startTransition(() => setUserAuth({ data: enrichedData }));
+      const newUserAuth = { data: enrichedData };
+      startTransition(() => setUserAuth(newUserAuth));
+      // 缓存 userAuth 用于下次快速显示
+      const { setCache, CACHE_TTL } = require("@site/src/utils/cache");
+      setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
     } catch (error) {
       console.error("Failed to fetch user data:", error);
       startTransition(() => setUserAuth(null));

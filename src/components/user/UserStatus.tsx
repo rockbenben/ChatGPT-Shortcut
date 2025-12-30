@@ -39,8 +39,12 @@ const UserStatus = () => {
       // 清除所有用户相关缓存
       const { clearUserProfileCache } = await import("@site/src/api/client");
       const { clearMySpaceCache } = await import("@site/src/api");
+      const { removeCache } = await import("@site/src/utils/cache");
       clearUserProfileCache();
       clearMySpaceCache();
+      removeCache("user_auth");
+      removeCache("myspace_items");
+      removeCache("myspace_stats");
     }
     setUserAuth(null);
     window.location.reload();
