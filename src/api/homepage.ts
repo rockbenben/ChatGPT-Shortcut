@@ -1,8 +1,10 @@
 /**
  * Homepage Data Service - Manages card data loading for the homepage
  * All data is loaded from static JSON files (no API calls)
+ * Uses lscache for persistent caching (100 days)
  */
 import { DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 
 export interface CardData {
   id: number;
@@ -25,31 +27,52 @@ export interface PagedCardsResult {
   currentPage: number;
 }
 
-// Cache for loaded prompt data by language
+// 内存缓存（会话级别，快速访问）
 const promptDataCache: Record<string, CardData[]> = {};
+
+// lscache 缓存键前缀
+const PROMPT_CACHE_KEY = "prompt_data_";
 
 /**
  * Load all prompt data for a specific language
- * Uses dynamic import with caching
+ * Cache hierarchy: Memory -> lscache (100 days) -> Dynamic Import
  */
 async function getPromptData(lang: string): Promise<CardData[]> {
   // Fallback to zh if language not supported
   const safeLang = ["zh", "en", "ja", "ko", "de", "fr", "es", "it", "pt", "ru", "ar", "hi", "bn"].includes(lang) ? lang : "zh";
+  const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
 
-  if (!promptDataCache[safeLang]) {
-    try {
-      const data = await import(`@site/src/data/prompt_${safeLang}.json`);
-      promptDataCache[safeLang] = data.default;
-    } catch (error) {
-      console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
-      // Fallback to zh
-      if (safeLang !== "zh") {
-        return getPromptData("zh");
-      }
-      throw error;
-    }
+  // 1. 检查内存缓存（最快）
+  if (promptDataCache[safeLang]) {
+    return promptDataCache[safeLang];
   }
-  return promptDataCache[safeLang];
+
+  // 2. 检查 lscache 持久化缓存（100天有效期）
+  const cachedData = getCache(cacheKey);
+  if (cachedData && Array.isArray(cachedData)) {
+    // 存入内存缓存以供后续快速访问
+    promptDataCache[safeLang] = cachedData;
+    return cachedData;
+  }
+
+  // 3. 动态导入 JSON 文件
+  try {
+    const data = await import(`@site/src/data/prompt_${safeLang}.json`);
+    const promptData = data.default;
+
+    // 同时存入内存缓存和 lscache
+    promptDataCache[safeLang] = promptData;
+    setCache(cacheKey, promptData, CACHE_TTL.PROMPT_CARDS); // 100 天
+
+    return promptData;
+  } catch (error) {
+    console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
+    // Fallback to zh
+    if (safeLang !== "zh") {
+      return getPromptData("zh");
+    }
+    throw error;
+  }
 }
 
 /**
