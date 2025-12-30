@@ -67,7 +67,9 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
-    const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+    // Userprompts and Commus are language-agnostic (user content), others (cards) differ by language
+    const keyLang = safeType === "cards" ? sanitizedLang : undefined;
+    const cacheKey = getPromptCacheKey(safeType, id, keyLang);
     const cachedData = getCache(cacheKey);
 
     if (cachedData) {
@@ -207,7 +209,8 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     // Save fetched data to cache
     response.data.forEach((item: { id: number }) => {
-      const cacheKey = getPromptCacheKey(safeType, item.id, sanitizedLang);
+      const keyLang = safeType === "cards" ? sanitizedLang : undefined;
+      const cacheKey = getPromptCacheKey(safeType, item.id, keyLang);
       setCache(cacheKey, item, ttl);
     });
 
