@@ -14,6 +14,29 @@ export const AuthContext = createContext<{
   authLoading: false,
 });
 
+function withTimeout<T>(promise: Promise<T>, ms: number, label = "operation"): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error(`[AuthProvider] ${label} timed out after ${ms}ms`));
+    }, ms);
+
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (err) => {
+        clearTimeout(timer);
+        reject(err);
+      }
+    );
+  });
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Stale-While-Revalidate: 用缓存的 userAuth 初始化，避免刷新时闪烁
   const { getCache } = require("@site/src/utils/cache");
@@ -41,8 +64,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (forceRefresh) {
       startTransition(() => setAuthLoading(true));
     }
-    try {
-      const myspaceData = await getMySpace();
+    const hadCachedAuth = Boolean(cachedUserAuth);
+
+    const fetchOnce = async () => {
+      // Avoid being stuck in loading forever if the request stalls.
+      // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
+      const myspaceData = await withTimeout(getMySpace(), 12_000, "getMySpace");
+
+      // If request returned nothing (and no cache), stop loading and keep current state.
+      if (!myspaceData) {
+        return null;
+      }
 
       // 处理 customTags：后端可能返回嵌套结构或扁平数组
       const customTagsArray = Array.isArray(myspaceData.customTags) ? myspaceData.customTags : myspaceData.customTags?.definitions || [];
@@ -78,9 +110,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // 缓存 userAuth 用于下次快速显示
       const { setCache, CACHE_TTL } = require("@site/src/utils/cache");
       setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
+      return myspaceData;
+    };
+
+    try {
+      await fetchOnce();
     } catch (error) {
-      console.error("Failed to fetch user data:", error);
-      startTransition(() => setUserAuth(null));
+      // One bounded retry for transient failures on the initial/background refresh.
+      // Don't retry force refresh to keep user-triggered actions responsive.
+      if (!forceRefresh) {
+        try {
+          await delay(800);
+          await fetchOnce();
+          return;
+        } catch (retryError) {
+          console.warn("Failed to fetch user data (after retry):", retryError);
+        }
+      } else {
+        console.error("Failed to fetch user data:", error);
+      }
+
+      // Keep any existing cached userAuth to avoid UX regression.
+      // If there was no cached auth to begin with, fall back to logged-out UI by clearing userAuth.
+      if (!hadCachedAuth) {
+        startTransition(() => setUserAuth(null));
+      }
     } finally {
       startTransition(() => setAuthLoading(false));
     }
