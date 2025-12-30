@@ -29,7 +29,6 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
       style={{
         border: `1px solid ${focused ? token.colorPrimary : token.colorBorder}`,
         borderRadius: token.borderRadiusLG,
-        backgroundColor: token.colorBgContainer,
         boxShadow: focused ? `0 0 0 2px ${token.colorPrimaryBg}` : "none",
         transition: "all 0.3s",
         overflow: "hidden",
@@ -56,7 +55,6 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
           alignItems: "center",
           padding: `${token.paddingXS}px ${token.paddingSM}px`,
           borderTop: `1px solid ${token.colorSplit}`,
-          backgroundColor: token.colorFillQuaternary,
         }}>
         <div style={{ display: "flex", gap: token.marginXS }}>
           <Button type="text" size="small" icon={<SmileOutlined />} onClick={onEmojiToggle} />
