@@ -54,7 +54,7 @@ const config = {
           sidebarPath: "sidebars.js",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: ["./src/css/antd.dark.css", "./src/css/custom.css"],
         },
         googleTagManager: {
           containerId: "GTM-MX524GTT",
@@ -111,7 +111,7 @@ const config = {
       // autocorrect: false,
       colorMode: {
         defaultMode: "dark",
-        disableSwitch: false,
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       navbar: {
