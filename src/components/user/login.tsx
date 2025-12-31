@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, theme, Segmented } from "antd";
+import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, Segmented } from "antd";
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
@@ -78,7 +78,6 @@ const LoginPage = () => {
   const [loginType, setLoginType] = useState<"password" | "code">("password");
   const { message: messageApi } = App.useApp();
   const [formKey, setFormKey] = useState(Date.now()); // For resetting forms
-  const { token } = theme.useToken();
   const [loading, setLoading] = useState(false);
 
   // Form hook
@@ -339,7 +338,7 @@ const LoginPage = () => {
           <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
             <Input
               autoComplete="username"
-              prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
+              prefix={<UserOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
               placeholder={translate({ id: "placeholder.usernameOrEmail", message: "用户名/邮箱" })}
               size="large"
             />
@@ -347,14 +346,14 @@ const LoginPage = () => {
           <Form.Item name="password" rules={rules.password} style={{ marginBottom: 8 }}>
             <Input.Password
               autoComplete="current-password"
-              prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+              prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
               placeholder={translate({ id: "placeholder.password", message: "密码" })}
               size="large"
             />
           </Form.Item>
 
           <Flex justify="flex-end" style={{ marginBottom: 24 }}>
-            <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0, height: "auto", color: token.colorTextSecondary }}>
+            <Button type="link" onClick={handleForgotPasswordClick} style={{ padding: 0, height: "auto", color: "var(--ifm-color-emphasis-500)" }}>
               <Translate id="action.forgotPassword">忘记密码</Translate>
             </Button>
           </Flex>
@@ -369,21 +368,21 @@ const LoginPage = () => {
             style={{
               marginBottom: 24,
               padding: "12px 16px",
-              background: token.colorFillAlter,
-              borderRadius: token.borderRadiusLG,
+              background: "var(--ifm-color-emphasis-100)",
+              borderRadius: 8,
               display: "flex",
               gap: 12,
               alignItems: "flex-start",
             }}>
-            <InfoCircleOutlined style={{ color: token.colorPrimary, marginTop: 4 }} />
-            <Text type="secondary" style={{ fontSize: token.fontSize }}>
+            <InfoCircleOutlined style={{ color: "var(--ifm-color-primary)", marginTop: 4 }} />
+            <Text type="secondary" style={{ fontSize: 14 }}>
               <Translate id="login.passwordless.info">登录链接将发送至您的邮箱，点击即可登录</Translate>
             </Text>
           </div>
           <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
             <Input
               autoComplete="username"
-              prefix={<MailOutlined style={{ color: token.colorTextDescription }} />}
+              prefix={<MailOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
               placeholder={translate({ id: "placeholder.usernameOrEmail", message: "用户名/邮箱" })}
               size="large"
             />
@@ -395,7 +394,7 @@ const LoginPage = () => {
       )}
 
       <div>
-        <Divider plain style={{ margin: "24px 0", color: token.colorTextDescription, fontSize: token.fontSizeSM }}>
+        <Divider plain style={{ margin: "24px 0", color: "var(--ifm-color-emphasis-400)", fontSize: 12 }}>
           Or
         </Divider>
 
@@ -420,18 +419,18 @@ const LoginPage = () => {
       <Form.Item name="username" rules={rules.username} style={{ marginBottom: 16 }}>
         <Input
           autoComplete="username"
-          prefix={<UserOutlined style={{ color: token.colorTextDescription }} />}
+          prefix={<UserOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
           placeholder={translate({ id: "placeholder.username", message: "用户名" })}
           size="large"
         />
       </Form.Item>
       <Form.Item name="email" rules={rules.email} style={{ marginBottom: 16 }}>
-        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
+        <Input autoComplete="email" prefix={<MailOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>
       <Form.Item name="password" rules={rules.password} hasFeedback style={{ marginBottom: 16 }}>
         <Input.Password
           autoComplete="new-password"
-          prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
           placeholder={translate({ id: "placeholder.password", message: "密码" })}
           size="large"
         />
@@ -473,7 +472,7 @@ const LoginPage = () => {
   const renderForgotPasswordForm = () => (
     <Form form={form} onFinish={handleForgotPassword} layout="vertical" size="large">
       <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
-        <Input autoComplete="email" prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
+        <Input autoComplete="email" prefix={<MailOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
       </Form.Item>
       <Button type="primary" htmlType="submit" loading={loading} block size="large" style={{ marginBottom: 16 }}>
         <Translate id="action.sendResetEmail">发送重置邮件</Translate>
@@ -505,9 +504,9 @@ const LoginPage = () => {
           </div>
         </>
       }
-      style={{ maxWidth: 440, margin: "0 auto", boxShadow: token.boxShadowTertiary, borderRadius: token.borderRadiusLG }}
+      style={{ maxWidth: 440, margin: "0 auto", boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.03)", borderRadius: 8 }}
       styles={{ body: { padding: "0 40px 40px" } }}>
-      <div key={formKey} style={{ marginTop: token.marginLG }}>
+      <div key={formKey} style={{ marginTop: 24 }}>
         {viewState === "login" && renderLoginForm()}
         {viewState === "register" && renderRegisterForm()}
         {viewState === "forgot-password" && renderForgotPasswordForm()}

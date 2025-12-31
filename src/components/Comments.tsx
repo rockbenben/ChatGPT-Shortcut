@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback, memo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Button, Form, Modal, Pagination, theme, Empty } from "antd";
+import { Button, Form, Modal, Pagination, Empty } from "antd";
 import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
 import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -86,7 +86,6 @@ const nestComments = (flatComments: any[]) => {
 };
 
 const Comments = ({ pageId, type }) => {
-  const { token } = theme.useToken();
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
@@ -268,7 +267,7 @@ const Comments = ({ pageId, type }) => {
       return null;
     }
     return (
-      <div style={{ marginTop: token.marginSM }}>
+      <div style={{ marginTop: 12 }}>
         <Form form={form} onFinish={handleSubmit} onValuesChange={saveFormValues}>
           <Form.Item
             name="comment"
@@ -360,7 +359,7 @@ const Comments = ({ pageId, type }) => {
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, token, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply]
+    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply]
   );
 
   return (
@@ -373,9 +372,9 @@ const Comments = ({ pageId, type }) => {
         {/* Header */}
         <div
           style={{
-            padding: `${token.paddingSM}px 0`,
-            borderBottom: `1px solid ${token.colorSplit}`,
-            marginBottom: token.margin,
+            padding: "12px 0",
+            borderBottom: "1px solid var(--ifm-color-emphasis-200)",
+            marginBottom: 16,
             fontWeight: 500,
           }}>
           {totalCommentsCount} {translate({ id: "label.comments", message: "评论" })}
@@ -385,7 +384,7 @@ const Comments = ({ pageId, type }) => {
         {isLoading ? (
           <CommentSkeleton count={10} />
         ) : comments.length === 0 ? (
-          <Empty description={<Translate id="message.noComments">暂无评论，成为第一个评论者吧！</Translate>} style={{ padding: token.paddingLG }} />
+          <Empty description={<Translate id="message.noComments">暂无评论，成为第一个评论者吧！</Translate>} style={{ padding: 24 }} />
         ) : (
           <div className="comment-list">{comments.map(renderComment)}</div>
         )}
@@ -398,7 +397,7 @@ const Comments = ({ pageId, type }) => {
           showQuickJumper
           showSizeChanger={false}
           onChange={(page) => setCurrentPage(page)}
-          style={{ textAlign: "center", marginTop: token.marginLG }}
+          style={{ textAlign: "center", marginTop: 24 }}
         />
       )}
     </>

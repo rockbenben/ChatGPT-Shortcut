@@ -1,6 +1,6 @@
 import React, { useContext, memo } from "react";
 import classNames from "classnames";
-import { ConfigProvider, theme, Typography } from "antd";
+import { ConfigProvider, Typography } from "antd";
 import type { ReactNode } from "react";
 
 const { Text, Paragraph } = Typography;
@@ -18,22 +18,21 @@ export interface CommentComponentProps {
 
 const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, avatar, children, className, content, datetime, style }) => {
   const { getPrefixCls, direction } = useContext(ConfigProvider.ConfigContext);
-  const { token } = theme.useToken();
 
   const prefixCls = getPrefixCls("comment");
 
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: token.marginXS }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
         <Text strong>{author || "AI Short"}</Text>
-        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+        <Text type="secondary" style={{ fontSize: 12 }}>
           {datetime}
         </Text>
       </div>
-      <div style={{ marginBottom: token.marginXS }}>
+      <div style={{ marginBottom: 8 }}>
         <Paragraph style={{ margin: 0, wordWrap: "break-word" }}>{content}</Paragraph>
       </div>
-      <div style={{ display: "flex", gap: token.marginSM, alignItems: "center" }}>
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
         {actions &&
           actions.map((action, index) => (
             <span key={index} style={{ display: "inline-flex", alignItems: "center" }}>
@@ -44,10 +43,10 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
       {children && (
         <div
           style={{
-            marginTop: token.marginSM,
-            paddingLeft: token.paddingSM,
-            borderLeft: `2px solid ${token.colorSplit}`,
-            marginLeft: token.marginXS,
+            marginTop: 12,
+            paddingLeft: 12,
+            borderLeft: "2px solid var(--ifm-color-emphasis-200)",
+            marginLeft: 8,
           }}>
           {children}
         </div>
@@ -68,18 +67,18 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
       className={cls}
       style={{
         ...style,
-        marginBottom: token.margin,
-        padding: token.paddingSM,
-        borderRadius: token.borderRadiusSM,
+        marginBottom: 16,
+        padding: 12,
+        borderRadius: 4,
         transition: "background-color 0.2s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = token.colorFillQuaternary;
+        e.currentTarget.style.backgroundColor = "var(--ifm-color-emphasis-100)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = "transparent";
       }}>
-      <div className={`${prefixCls}-inner`} style={{ display: "flex", gap: token.marginSM }}>
+      <div className={`${prefixCls}-inner`} style={{ display: "flex", gap: 12 }}>
         {avatar && <div className={`${prefixCls}-avatar`}>{avatar}</div>}
         {contentDom}
       </div>

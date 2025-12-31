@@ -2,7 +2,7 @@
 .showcaseCard {
   border-radius: 12px;
   border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--site-shadow-sm);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
   background-color: var(--site-color-card-background);
@@ -12,8 +12,8 @@
 
 .showcaseCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border-color: var(--ifm-color-primary);
+  box-shadow: var(--site-shadow-lg);
+  /* border-color: var(--ifm-color-primary); */
 }
 
 .showcaseCardBody {

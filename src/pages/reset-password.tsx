@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import { Form, Input, Button, Typography, Card, App, theme } from "antd";
+import { Form, Input, Button, Typography, Card, App } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import { resetPassword } from "@site/src/api";
 
@@ -8,7 +8,6 @@ const { Title } = Typography;
 
 const ResetPassword = () => {
   const [form] = Form.useForm();
-  const { token } = theme.useToken();
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
   const { message: messageApi } = App.useApp();
@@ -81,7 +80,6 @@ const ResetPassword = () => {
           justifyContent: "center",
           alignItems: "center",
           minHeight: "calc(100vh - 60px)",
-          backgroundColor: token.colorBgLayout,
           padding: "50px 16px",
         }}>
         <Card
@@ -89,10 +87,11 @@ const ResetPassword = () => {
           style={{
             maxWidth: 440,
             width: "100%",
-            boxShadow: token.boxShadowSecondary,
-            borderRadius: token.borderRadiusLG,
-            border: `1px solid ${token.colorBorderSecondary}`,
-          }}>
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
+            borderRadius: 16,
+            border: "none",
+          }}
+          styles={{ body: { padding: 40 } }}>
           <Title level={2} style={{ textAlign: "center", marginBottom: 32 }}>
             <Translate id="button.resetPassword">重置密码</Translate>
           </Title>

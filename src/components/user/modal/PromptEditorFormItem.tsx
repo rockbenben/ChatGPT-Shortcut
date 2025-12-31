@@ -63,17 +63,16 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
           id: "placeholder.promptContent",
           message: "在此输入详细的提示词内容...",
         })}
-        showCount={{
-          formatter: () => <Typography.Text style={{ color: statusColor, fontSize: 12 }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>,
-        }}
         status={isDanger ? "warning" : undefined}
       />
+      <div style={{ textAlign: "right" }}>
+        <Typography.Text style={{ color: statusColor, fontSize: 12 }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>
+      </div>
 
       {showWarning && (
         <Alert
           type={isDanger ? "error" : "warning"}
           title={isDanger ? <Translate id="prompt.tokenDanger">提示词过长，强烈建议拆分为多个 Prompt</Translate> : <Translate id="prompt.tokenWarning">提示词较长，建议精简或拆分</Translate>}
-          style={{ marginTop: 20 }}
           showIcon
           banner
         />

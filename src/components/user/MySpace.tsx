@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown, ConfigProvider } from "antd";
+import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown } from "antd";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, PlusOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
 import { BasePromptCard } from "@site/src/components/PromptCard/Base";
 import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import styles from "@site/src/components/PromptCard/styles.module.css";
+import cardStyles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
@@ -18,6 +18,7 @@ import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import styles from "./styles.module.css";
 
 // ==================== 类型定义 ====================
 
@@ -35,21 +36,6 @@ interface MySpaceProps {
 }
 
 type FilterType = "all" | "prompt" | "favorite";
-
-// SearchBar 样式主题
-const searchBarTheme = {
-  components: {
-    Input: {
-      borderRadius: 20,
-      controlHeight: 32,
-      colorBorder: "transparent",
-      activeBorderColor: "transparent",
-      hoverBorderColor: "var(--ifm-color-emphasis-300)",
-      activeShadow: "0 0 0 2px var(--ifm-color-primary-lighter)",
-      colorBgContainer: "var(--site-color-background)",
-    },
-  },
-};
 
 // ==================== 辅助组件 ====================
 
@@ -149,17 +135,16 @@ const FilterBar: React.FC<{
         <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small" />
       </Tooltip>
 
-      <ConfigProvider theme={searchBarTheme}>
+      <div className={styles.searchInput} style={{ marginLeft: "auto" }}>
         <Input
           placeholder={translate({ id: "myspace.search.placeholder", message: "搜索我的空间..." })}
           value={inputValue}
           onChange={handleChange}
           onPressEnter={handleSearch}
           allowClear
-          style={{ marginLeft: "auto", width: "auto" }}
           suffix={<Button type="text" icon={<SearchOutlined />} onClick={handleSearch} style={{ margin: -8 }} />}
         />
-      </ConfigProvider>
+      </div>
     </Flex>
   );
 };
@@ -680,7 +665,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
             {filteredItems.length === 0 ? (
               <Col xs={24}>
                 <BasePromptCard>
-                  <div className={styles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
+                  <div className={cardStyles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
                     <Empty
                       description={
                         filter === "all" ? (

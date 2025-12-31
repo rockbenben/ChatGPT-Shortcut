@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Card, Typography, Tag, Space, Row, Col, Button, Flex, theme, Alert, Statistic, Divider } from "antd";
+import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Alert, Statistic, Divider } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -14,7 +14,6 @@ const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"))
 const { Title, Text } = Typography;
 
 function PromptPage({ prompt, currentLanguage }) {
-  const { token } = theme.useToken();
   const { copied, updateCopy } = useCopyToClipboard();
 
   const promptInfo = prompt[currentLanguage] || prompt;
@@ -33,11 +32,11 @@ function PromptPage({ prompt, currentLanguage }) {
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
-      <Row justify="center" style={{ marginTop: token.marginLG, marginBottom: token.marginLG }}>
+      <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
           <Flex vertical gap="large" style={{ minHeight: 400 }}>
             {/* 提示词信息卡片 */}
-            <Card variant="borderless" className="shadow--md" style={{ borderRadius: token.borderRadiusLG }} styles={{ body: { padding: token.paddingMD } }}>
+            <Card variant="borderless" className="shadow--md" style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
               <Flex vertical gap="small">
                 {/* 头部：标题行 */}
                 <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
@@ -47,7 +46,7 @@ function PromptPage({ prompt, currentLanguage }) {
                   </Title>
 
                   {/* 标签 + 热度 */}
-                  <Flex gap={token.marginXS} align="center" wrap="wrap">
+                  <Flex gap={8} align="center" wrap="wrap">
                     {website && (
                       <Link to={website} target="_blank" rel="noopener noreferrer">
                         <Button type="text" size="small" icon={<LinkOutlined />} />
@@ -67,23 +66,28 @@ function PromptPage({ prompt, currentLanguage }) {
                     <Statistic
                       value={weight}
                       formatter={(value) => formatCompactNumber(value as number)}
-                      prefix={<FireFilled style={{ color: token.colorError }} />}
-                      styles={{ content: { fontSize: token.fontSizeSM, color: token.colorTextSecondary } }}
+                      prefix={<FireFilled style={{ color: "var(--ifm-color-danger)" }} />}
+                      styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
                     />
                   </Flex>
                 </Flex>
 
-                {/* 描述/备注 - Compact Alert */}
-                {remark && <Alert title={remark} type="info" style={{ borderRadius: token.borderRadius }} />}
+                {/* 描述/备注 - Quote Style */}
+                {remark && (
+                  <div style={{ marginTop: 12, borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
+                    <Typography.Text type="secondary" style={{ fontSize: 14 }}>
+                      {remark}
+                    </Typography.Text>
+                  </div>
+                )}
 
-                {/* 提示词内容卡片 */}
-                <Card
-                  type="inner"
-                  title={translate({
-                    id: "prompt.content",
-                    message: "Prompt 内容",
-                  })}
-                  extra={
+                {/* 提示词内容 - Streamlined Code Block */}
+                <div>
+                  {/* Action Row */}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                    <Typography.Text strong style={{ fontSize: 16 }}>
+                      <Translate id="prompt.content">Prompt 内容</Translate>
+                    </Typography.Text>
                     <Button
                       type={copied ? "primary" : "default"}
                       icon={copied ? <CheckOutlined /> : <CopyOutlined />}
@@ -92,45 +96,55 @@ function PromptPage({ prompt, currentLanguage }) {
                       }}>
                       {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
                     </Button>
-                  }>
-                  <Typography.Paragraph
-                    copyable={{
-                      text: promptInfo.prompt,
-                    }}
-                    style={{
-                      fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
-                      fontSize: token.fontSize,
-                      lineHeight: 1.6,
-                      whiteSpace: "pre-wrap",
-                      wordBreak: "break-word",
-                      margin: 0,
-                    }}>
-                    {promptInfo.prompt}
-                  </Typography.Paragraph>
+                  </div>
 
-                  {/* 描述信息 */}
+                  <div
+                    style={{
+                      backgroundColor: "var(--ifm-color-emphasis-100)",
+                      borderRadius: 12,
+                      padding: 24,
+                    }}>
+                    <Typography.Paragraph
+                      copyable={{
+                        text: promptInfo.prompt,
+                        tooltips: false,
+                      }}
+                      style={{
+                        fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
+                        fontSize: 14,
+                        lineHeight: 1.6,
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
+                        color: "var(--ifm-color-content)",
+                        margin: 0,
+                      }}>
+                      {promptInfo.prompt}
+                    </Typography.Paragraph>
+                  </div>
+
+                  {/* 描述/翻译信息 */}
                   {promptInfo.description !== promptInfo.prompt && (
-                    <>
-                      <Divider />
-                      <Typography.Paragraph
-                        type="secondary"
-                        copyable={{
-                          text: promptInfo.description,
-                        }}
-                        style={{
-                          fontSize: token.fontSizeSM,
-                          lineHeight: 1.6,
-                          margin: 0,
-                        }}>
-                        {promptInfo.description}
-                      </Typography.Paragraph>
-                    </>
+                    <Typography.Paragraph
+                      type="secondary"
+                      copyable={{
+                        text: promptInfo.description,
+                      }}
+                      style={{
+                        fontSize: 14,
+                        lineHeight: 1.6,
+                        margin: 0,
+                        marginTop: 24,
+                      }}>
+                      {promptInfo.description}
+                    </Typography.Paragraph>
                   )}
-                </Card>
+                </div>
+
+                <Divider />
 
                 {/* 底部：社交分享与提示 */}
                 <Flex justify="space-between" align="center" wrap="wrap" gap="small" className="hideOnSmallScreen">
-                  <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
                     <Translate id="label.commentInfo">请在下方回复您对本提示词的意见、想法或分享。</Translate>
                   </Text>
                   <Suspense fallback={null}>
@@ -148,7 +162,7 @@ function PromptPage({ prompt, currentLanguage }) {
 
             {/* 评论区卡片 */}
             <Suspense fallback={null}>
-              <Card variant="borderless" className="shadow--md" style={{ minHeight: 480 }}>
+              <Card variant="borderless" className="shadow--md" style={{ minHeight: 480, borderRadius: 12 }}>
                 <Comments pageId={prompt.id} type="page" />
               </Card>
             </Suspense>

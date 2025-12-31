@@ -1,5 +1,5 @@
 import React from "react";
-import { Skeleton, Flex, theme } from "antd";
+import { Skeleton, Flex } from "antd";
 
 interface CommentSkeletonProps {
   count?: number;
@@ -10,12 +10,10 @@ interface CommentSkeletonProps {
  * 模拟评论列表的加载状态
  */
 export const CommentSkeleton: React.FC<CommentSkeletonProps> = ({ count = 3 }) => {
-  const { token } = theme.useToken();
-
   return (
-    <Flex vertical gap={token.margin}>
+    <Flex vertical gap={16}>
       {Array.from({ length: count }).map((_, index) => (
-        <Flex key={index} gap={token.marginSM} style={{ padding: `${token.paddingXS}px 0` }}>
+        <Flex key={index} gap={12} style={{ padding: "8px 0" }}>
           {/* Avatar */}
           <Skeleton.Avatar active size={40} shape="circle" />
 

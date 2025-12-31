@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Typography, Space, Button, Tooltip, theme, Flex, Statistic } from "antd";
+import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
 import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
@@ -30,7 +30,6 @@ interface PromptDetailModalProps {
 export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
   if (!data) return null;
 
-  const { token } = theme.useToken();
   const { copied, updateCopy } = useCopyToClipboard();
 
   const handleCopy = () => {
@@ -54,7 +53,7 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
         body: {
           padding: 0,
           overflow: "hidden",
-          borderRadius: token.borderRadiusLG,
+          borderRadius: 8,
         },
       }}
       closeIcon={null}>
@@ -62,28 +61,28 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
         {/* Header Section */}
         <div
           style={{
-            padding: `${token.paddingMD}px ${token.paddingLG}px`,
-            borderBottom: `1px solid ${token.colorBorderSecondary}`,
-            backgroundColor: token.colorBgContainer,
+            padding: "20px 24px",
+            borderBottom: "1px solid var(--ifm-color-emphasis-200)",
+            backgroundColor: "var(--ifm-background-color)",
           }}>
-          <Flex justify="space-between" align="start" gap={token.padding}>
+          <Flex justify="space-between" align="start" gap={16}>
             <div style={{ flex: 1 }}>
-              <Typography.Title level={2} style={{ margin: 0, marginBottom: token.marginXS }}>
+              <Typography.Title level={2} style={{ margin: 0, marginBottom: 8 }}>
                 {data.title}
               </Typography.Title>
-              <Space separator={<span style={{ color: token.colorBorder }}>|</span>} size="small" wrap>
+              <Space separator={<span style={{ color: "var(--ifm-color-emphasis-200)" }}>|</span>} size="small" wrap>
                 {data.share === false && (
                   <Space size={4}>
-                    <LockOutlined style={{ color: token.colorTextSecondary }} />
-                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                    <LockOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
+                    <Typography.Text type="secondary" style={{ fontSize: 12 }}>
                       <Translate id="prompt.private">私密</Translate>
                     </Typography.Text>
                   </Space>
                 )}
                 {data.owner && (
                   <Space size={4}>
-                    <UserOutlined style={{ color: token.colorTextTertiary }} />
-                    <Typography.Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                    <UserOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />
+                    <Typography.Text type="secondary" style={{ fontSize: 12 }}>
                       {data.owner}
                     </Typography.Text>
                   </Space>
@@ -92,29 +91,29 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
                   <Statistic
                     value={data.vote}
                     formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<LikeFilled style={{ color: token.colorWarning }} />}
-                    styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+                    prefix={<LikeFilled style={{ color: "var(--ifm-color-warning)" }} />}
+                    styles={{ content: { fontSize: 12, color: "var(--ifm-color-warning)" } }}
                   />
                 )}
                 {data.copyCount > 0 && (
                   <Statistic
                     value={data.copyCount}
                     formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<FireFilled style={{ color: token.colorError }} />}
-                    styles={{ content: { fontSize: token.fontSizeSM, color: token.colorTextSecondary } }}
+                    prefix={<FireFilled style={{ color: "var(--ifm-color-danger)" }} />}
+                    styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
                   />
                 )}
                 {data.website && (
-                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                    <LinkOutlined style={{ fontSize: token.fontSizeSM }} />
-                    <Typography.Text style={{ fontSize: token.fontSizeSM, color: "inherit" }}>Website</Typography.Text>
+                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--ifm-color-primary)" }}>
+                    <LinkOutlined style={{ fontSize: 12 }} />
+                    <Typography.Text style={{ fontSize: 12, color: "inherit" }}>Website</Typography.Text>
                   </a>
                 )}
               </Space>
             </div>
             {/* Close Button (Custom) */}
             <Tooltip title={<Translate id="action.close">关闭</Translate>}>
-              <Button type="text" icon={<CloseOutlined style={{ fontSize: 18, color: token.colorTextTertiary }} />} onClick={onCancel} />
+              <Button type="text" icon={<CloseOutlined style={{ fontSize: 18, color: "var(--ifm-color-emphasis-400)" }} />} onClick={onCancel} />
             </Tooltip>
           </Flex>
         </div>
@@ -123,28 +122,24 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
         <div
           style={{
             overflowY: "auto",
-            padding: `${token.paddingLG}px`,
+            padding: 24,
             flex: 1,
-            backgroundColor: token.colorBgLayout,
+            backgroundColor: "var(--ifm-background-surface-color)",
           }}>
-          <Flex vertical gap={token.marginLG}>
-            {/* Remark / Note */}
+          <Flex vertical gap={24}>
+            {/* Remark / Note - Quote Style */}
             {data.remark && (
-              <div
-                style={{
-                  padding: `${token.paddingSM}px ${token.paddingMD}px`,
-                  backgroundColor: token.colorInfoBg,
-                  borderRadius: token.borderRadius,
-                  border: `1px solid ${token.colorInfoBorder}`,
-                }}>
-                <Typography.Paragraph style={{ margin: 0 }}>{data.remark}</Typography.Paragraph>
+              <div style={{ borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
+                <Typography.Text type="secondary" style={{ fontSize: 14 }}>
+                  {data.remark}
+                </Typography.Text>
               </div>
             )}
 
             {/* Prompt Content Block */}
             <div>
-              <Flex justify="space-between" align="center" style={{ marginBottom: token.marginXS }}>
-                <Typography.Text strong style={{ fontSize: token.fontSizeLG }}>
+              <Flex justify="space-between" align="center" style={{ marginBottom: 8 }}>
+                <Typography.Text strong style={{ fontSize: 16 }}>
                   <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
                 <Button type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
@@ -153,44 +148,39 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
               </Flex>
               <div
                 style={{
-                  backgroundColor: token.colorBgContainer,
-                  padding: token.paddingMD,
-                  borderRadius: token.borderRadiusLG,
-                  border: `1px solid ${token.colorBorder}`,
-                  boxShadow: token.boxShadowTertiary,
+                  backgroundColor: "var(--ifm-color-emphasis-100)",
+                  borderRadius: 12,
+                  padding: 24,
                 }}>
-                <Typography.Text
+                <Typography.Paragraph
                   copyable={{
                     text: data.prompt,
+                    tooltips: false,
                   }}
                   style={{
                     fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
-                    fontSize: token.fontSize,
+                    fontSize: 14,
                     lineHeight: 1.6,
-                    color: token.colorText,
+                    color: "var(--ifm-color-content)",
                     whiteSpace: "pre-wrap",
                     wordBreak: "break-word",
+                    margin: 0,
                   }}>
                   {data.prompt}
-                </Typography.Text>
+                </Typography.Paragraph>
               </div>
             </div>
 
             {/* Description */}
             {data.description && data.description !== data.prompt && (
-              <div>
-                <Typography.Text strong style={{ display: "block", marginBottom: token.marginXS, fontSize: token.fontSizeLG }}>
-                  <Translate id="prompt.description">描述</Translate>
-                </Typography.Text>
-                <Typography.Paragraph
-                  type="secondary"
-                  copyable={{
-                    text: data.description,
-                  }}
-                  style={{ margin: 0, lineHeight: 1.6 }}>
-                  {data.description}
-                </Typography.Paragraph>
-              </div>
+              <Typography.Paragraph
+                type="secondary"
+                copyable={{
+                  text: data.description,
+                }}
+                style={{ margin: 0, lineHeight: 1.6, fontSize: 14 }}>
+                {data.description}
+              </Typography.Paragraph>
             )}
           </Flex>
         </div>
@@ -198,11 +188,11 @@ export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ o
         {/* Footer Section */}
         <div
           style={{
-            padding: `${token.paddingMD}px ${token.paddingLG}px`,
-            borderTop: `1px solid ${token.colorBorderSecondary}`,
-            backgroundColor: token.colorBgContainer,
+            padding: "20px 24px",
+            borderTop: "1px solid var(--ifm-color-emphasis-200)",
+            backgroundColor: "var(--ifm-background-color)",
           }}>
-          <Flex justify="space-between" align="center" wrap="wrap" gap={token.marginSM}>
+          <Flex justify="space-between" align="center" wrap="wrap" gap={12}>
             <div style={{ flex: 1, minWidth: 0 }}>{data.tags && <PromptCardTag tags={data.tags} />}</div>
 
             {showViewDetails && (

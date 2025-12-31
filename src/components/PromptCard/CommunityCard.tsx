@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from "react";
-import { Tooltip, Button, Typography, Flex, theme } from "antd";
+import { Tooltip, Button, Typography, Flex } from "antd";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
@@ -19,7 +19,6 @@ interface CommunityCardProps {
 
 const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
-  const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
   const handleCopy = useCallback(
@@ -72,7 +71,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
             <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
           </Typography.Title>
         </Flex>
@@ -110,7 +109,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: token.colorTextSecondary }}>
+        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
           {user.description}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center">
@@ -118,8 +117,8 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
             <PromptCardTag tags={user.tags} />
           </div>
           {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
             </a>
           )}
         </Flex>

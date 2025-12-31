@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, theme, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress } from "antd";
+import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress } from "antd";
 import {
   HomeOutlined,
   EditOutlined,
@@ -37,7 +37,6 @@ const { Title, Text } = Typography;
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
   const { message, modal } = App.useApp();
-  const { token } = theme.useToken();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
@@ -423,9 +422,9 @@ const UserProfile = () => {
               {/* Breadcrumb Navigation */}
               <Card
                 style={{
-                  borderRadius: token.borderRadiusLG,
-                  border: `1px solid ${token.colorBorderSecondary}`,
-                  boxShadow: token.boxShadowTertiary,
+                  borderRadius: 12,
+                  border: "1px solid var(--ifm-color-emphasis-200)",
+                  boxShadow: "var(--site-shadow-sm)",
                 }}
                 styles={{ body: { padding: "12px 24px" } }}>
                 <Flex justify="space-between" align="center">
@@ -466,13 +465,13 @@ const UserProfile = () => {
                   <Card
                     style={{
                       height: "100%",
-                      borderRadius: token.borderRadiusLG,
-                      border: `1px solid ${token.colorBorderSecondary}`,
-                      boxShadow: token.boxShadowTertiary,
+                      borderRadius: 12,
+                      border: "1px solid var(--ifm-color-emphasis-200)",
+                      boxShadow: "var(--site-shadow-sm)",
                     }}
                     title={
                       <Space>
-                        <UserOutlined style={{ color: token.colorPrimary }} />
+                        <UserOutlined style={{ color: "var(--ifm-color-primary)" }} />
                         <Translate id="title.userInfo">用户信息</Translate>
                       </Space>
                     }>
@@ -507,10 +506,10 @@ const UserProfile = () => {
                               size={88}
                               icon={<UserOutlined />}
                               style={{
-                                backgroundColor: token.colorBgContainer,
-                                color: token.colorPrimary,
+                                backgroundColor: "var(--ifm-background-color)",
+                                color: "var(--ifm-color-primary)",
                                 fontSize: 36,
-                                border: `3px solid ${token.colorBgContainer}`,
+                                border: "3px solid var(--ifm-background-color)",
                               }}
                             />
                             <div
@@ -518,12 +517,12 @@ const UserProfile = () => {
                                 position: "absolute",
                                 bottom: 0,
                                 right: 0,
-                                background: token.colorBgContainer,
+                                background: "var(--ifm-background-color)",
                                 borderRadius: "50%",
                                 padding: 4,
-                                boxShadow: token.boxShadow,
+                                boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
                               }}>
-                              <span style={{ fontSize: 20, color: token.colorPrimary }}>{iconMap[levelInfo.icon]}</span>
+                              <span style={{ fontSize: 20, color: "var(--ifm-color-primary)" }}>{iconMap[levelInfo.icon]}</span>
                             </div>
                           </div>
 
@@ -539,12 +538,12 @@ const UserProfile = () => {
                               <Title level={4} style={{ margin: 0 }}>
                                 {userInfo.username}
                               </Title>
-                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: token.colorTextSecondary }} />
+                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--ifm-color-emphasis-500)" }} />
                             </Flex>
                           )}
 
                           {/* Email */}
-                          <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                          <Text type="secondary" style={{ fontSize: 12 }}>
                             <MailOutlined style={{ marginRight: 4 }} />
                             {userInfo.email}
                           </Text>
@@ -555,15 +554,15 @@ const UserProfile = () => {
                             style={{
                               marginTop: 16,
                               padding: "6px 16px",
-                              fontSize: token.fontSize,
+                              fontSize: 14,
                               fontWeight: 600,
-                              borderRadius: token.borderRadiusLG,
+                              borderRadius: 8,
                             }}>
                             <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
                           </Tag>
 
                           {/* Level Description */}
-                          <Text type="secondary" style={{ marginTop: 8, fontSize: token.fontSizeSM, textAlign: "center" }}>
+                          <Text type="secondary" style={{ marginTop: 8, fontSize: 12, textAlign: "center" }}>
                             <LevelDescription level={levelInfo.level} />
                           </Text>
 
@@ -573,26 +572,30 @@ const UserProfile = () => {
                             style={{
                               width: "100%",
                               marginTop: 20,
-                              border: `1px solid ${token.colorPrimaryBorder}`,
+                              borderRadius: 12,
+                              overflow: "hidden",
+                              border: "1px solid rgba(var(--ifm-color-primary-rgb), 0.2)",
                             }}
                             styles={{
                               body: {
                                 textAlign: "center",
-                                background: `linear-gradient(135deg, ${token.colorPrimaryBg} 0%, ${token.colorBgContainer} 100%)`,
+                                background: "linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-background-color) 100%)",
                               },
                             }}>
                             <Statistic
                               title={
-                                <Space style={{ color: token.colorTextSecondary }}>
+                                <Space style={{ color: "var(--ifm-color-emphasis-500)" }}>
                                   <ShareAltOutlined />
                                   <Translate id="stat.sharedPrompts">已分享提示词</Translate>
                                 </Space>
                               }
                               value={sharedCount}
-                              valueStyle={{
-                                color: token.colorPrimary,
-                                fontSize: 32,
-                                fontWeight: 700,
+                              styles={{
+                                content: {
+                                  color: "var(--ifm-color-primary)",
+                                  fontSize: 32,
+                                  fontWeight: 700,
+                                },
                               }}
                             />
                           </Card>
@@ -601,20 +604,20 @@ const UserProfile = () => {
                           {levelInfo.next && (
                             <Flex vertical gap={8} style={{ width: "100%", marginTop: 16 }}>
                               <Flex justify="space-between">
-                                <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                                <Text type="secondary" style={{ fontSize: 12 }}>
                                   <Translate id="progress.toNextLevel">距离下一等级</Translate>
                                 </Text>
-                                <Text strong style={{ fontSize: token.fontSizeSM, color: token.colorPrimary }}>
+                                <Text strong style={{ fontSize: 12, color: "var(--ifm-color-primary)" }}>
                                   {remaining}
                                 </Text>
                               </Flex>
                               <Progress
                                 percent={progressPercent}
                                 strokeColor={{
-                                  "0%": token.colorPrimary,
-                                  "100%": token.colorPrimaryActive,
+                                  "0%": "var(--ifm-color-primary)",
+                                  "100%": "var(--ifm-color-primary-dark)",
                                 }}
-                                trailColor={token.colorBorderSecondary}
+                                trailColor="var(--ifm-color-emphasis-200)"
                                 showInfo={false}
                               />
                               <Text type="secondary" style={{ fontSize: 12, textAlign: "center" }}>
@@ -630,15 +633,15 @@ const UserProfile = () => {
                               style={{
                                 width: "100%",
                                 marginTop: 16,
-                                border: `1px solid ${token.colorSuccessBorder}`,
+                                border: "1px solid var(--ifm-color-success-dark)",
                               }}
                               styles={{
                                 body: {
                                   textAlign: "center",
-                                  background: `linear-gradient(135deg, ${token.colorSuccessBg} 0%, ${token.colorBgContainer} 100%)`,
+                                  background: "linear-gradient(135deg, var(--ifm-color-success-contrast-background) 0%, var(--ifm-background-color) 100%)",
                                 },
                               }}>
-                              <Text strong style={{ color: token.colorSuccess }}>
+                              <Text strong style={{ color: "var(--ifm-color-success)" }}>
                                 🎉 <Translate id="level.max.congrats">恭喜达成最高等级！你是社区的传奇贡献者！</Translate>
                               </Text>
                             </Card>
@@ -654,24 +657,25 @@ const UserProfile = () => {
                   <Card
                     style={{
                       height: "100%",
-                      borderRadius: token.borderRadiusLG,
-                      border: `1px solid ${token.colorBorderSecondary}`,
-                      boxShadow: token.boxShadowTertiary,
+                      borderRadius: 12,
+                      border: "1px solid var(--ifm-color-emphasis-200)",
+                      boxShadow: "var(--site-shadow-sm)",
                     }}
                     title={
                       <Space>
-                        <SafetyCertificateOutlined style={{ color: token.colorPrimary }} />
+                        <SafetyCertificateOutlined style={{ color: "var(--ifm-color-primary)" }} />
                         <Translate id="title.security">安全设置</Translate>
                       </Space>
                     }
                     extra={
                       <Button
                         type="link"
+                        style={{ color: "var(--ifm-color-primary)" }}
                         onClick={() => {
                           modal.confirm({
                             title: (
                               <Space>
-                                <MailOutlined style={{ color: token.colorPrimary }} />
+                                <MailOutlined style={{ color: "var(--ifm-color-primary)" }} />
                                 <Translate id="modal.forgotPassword.title">忘记密码</Translate>
                               </Space>
                             ),
@@ -690,7 +694,11 @@ const UserProfile = () => {
                                       { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址！" }) },
                                     ]}
                                     initialValue={userInfo?.email || ""}>
-                                    <Input prefix={<MailOutlined style={{ color: token.colorTextDescription }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
+                                    <Input
+                                      prefix={<MailOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                                      placeholder={translate({ id: "placeholder.email", message: "邮箱" })}
+                                      size="large"
+                                    />
                                   </Form.Item>
                                 </Form>
                               </div>
@@ -719,7 +727,7 @@ const UserProfile = () => {
                         label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
                         rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
                         <Input.Password
-                          prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
                           placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
                           size="large"
                         />
@@ -732,7 +740,7 @@ const UserProfile = () => {
                           { min: 6, message: translate({ id: "validation.password.length", message: "密码长度至少为 6 个字符" }) },
                         ]}>
                         <Input.Password
-                          prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
                           placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })}
                           size="large"
                         />
@@ -753,7 +761,7 @@ const UserProfile = () => {
                           }),
                         ]}>
                         <Input.Password
-                          prefix={<LockOutlined style={{ color: token.colorTextDescription }} />}
+                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
                           placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })}
                           size="large"
                         />
@@ -771,26 +779,26 @@ const UserProfile = () => {
               {/* Data Management Section */}
               <Card
                 style={{
-                  borderRadius: token.borderRadiusLG,
-                  border: `1px solid ${token.colorBorderSecondary}`,
-                  boxShadow: token.boxShadowTertiary,
+                  borderRadius: 12,
+                  border: "1px solid var(--ifm-color-emphasis-200)",
+                  boxShadow: "var(--site-shadow-sm)",
                 }}
                 title={
                   <Space>
-                    <DatabaseOutlined style={{ color: token.colorPrimary }} />
+                    <DatabaseOutlined style={{ color: "var(--ifm-color-primary)" }} />
                     <Translate id="title.dataManagement">数据管理</Translate>
                   </Space>
                 }>
                 <Space direction="vertical" size="middle" style={{ width: "100%" }}>
                   {/* Export Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0`, borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
-                    <Flex align="center" gap={token.marginMD}>
+                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
+                    <Flex align="center" gap={20}>
                       <Avatar
                         icon={<DownloadOutlined />}
                         style={{
-                          backgroundColor: token.colorPrimaryBg,
-                          color: token.colorPrimary,
-                          border: `1px solid ${token.colorPrimaryBorder}`,
+                          backgroundColor: "var(--ifm-color-emphasis-100)",
+                          color: "var(--ifm-color-primary)",
+                          border: "1px solid var(--ifm-color-emphasis-200)",
                         }}
                       />
                       <div>
@@ -798,7 +806,7 @@ const UserProfile = () => {
                           <Translate id="button.exportPrompts">导出提示词</Translate>
                         </Text>
                         <br />
-                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                        <Text type="secondary" style={{ fontSize: 12 }}>
                           <Translate id="description.exportPrompts.short">导出为 JSON 文件，方便备份</Translate>
                         </Text>
                       </div>
@@ -809,14 +817,14 @@ const UserProfile = () => {
                   </Flex>
 
                   {/* Import Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0`, borderBottom: `1px solid ${token.colorBorderSecondary}` }}>
-                    <Flex align="center" gap={token.marginMD}>
+                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
+                    <Flex align="center" gap={20}>
                       <Avatar
                         icon={<ImportOutlined />}
                         style={{
-                          backgroundColor: token.colorPrimaryBg,
-                          color: token.colorPrimary,
-                          border: `1px solid ${token.colorPrimaryBorder}`,
+                          backgroundColor: "var(--ifm-color-emphasis-100)",
+                          color: "var(--ifm-color-primary)",
+                          border: "1px solid var(--ifm-color-emphasis-200)",
                         }}
                       />
                       <div>
@@ -824,7 +832,7 @@ const UserProfile = () => {
                           <Translate id="button.importPrompts">导入提示词</Translate>
                         </Text>
                         <br />
-                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                        <Text type="secondary" style={{ fontSize: 12 }}>
                           <Translate id="description.importPrompts.short">从 JSON 文件导入提示词和收藏</Translate>
                         </Text>
                       </div>
@@ -835,14 +843,14 @@ const UserProfile = () => {
                   </Flex>
 
                   {/* Clear Cache */}
-                  <Flex justify="space-between" align="center" style={{ padding: `${token.paddingSM}px 0` }}>
-                    <Flex align="center" gap={token.marginMD}>
+                  <Flex justify="space-between" align="center" style={{ padding: "12px 0" }}>
+                    <Flex align="center" gap={20}>
                       <Avatar
                         icon={<DeleteOutlined />}
                         style={{
-                          backgroundColor: token.colorPrimaryBg,
-                          color: token.colorPrimary,
-                          border: `1px solid ${token.colorPrimaryBorder}`,
+                          backgroundColor: "var(--ifm-color-emphasis-100)",
+                          color: "var(--ifm-color-primary)",
+                          border: "1px solid var(--ifm-color-emphasis-200)",
                         }}
                       />
                       <div>
@@ -850,7 +858,7 @@ const UserProfile = () => {
                           <Translate id="button.clearCache">清除缓存</Translate>
                         </Text>
                         <br />
-                        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+                        <Text type="secondary" style={{ fontSize: 12 }}>
                           <Translate id="description.clearCache.short">刷新本地缓存数据</Translate>
                         </Text>
                       </div>

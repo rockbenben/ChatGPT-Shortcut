@@ -7,7 +7,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
-import { Switch, ConfigProvider } from "antd";
+import { Switch } from "antd";
 
 import { prepareUserState } from "@site/src/components/SearchBar/index";
 
@@ -45,20 +45,5 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
     [location, history]
   );
 
-  return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Switch: {
-            handleSize: 14,
-            trackHeight: 20,
-            trackMinWidth: 45,
-            colorPrimary: "var(--ifm-color-primary)",
-            colorPrimaryHover: "var(--ifm-color-primary-dark)",
-          },
-        },
-      }}>
-      <Switch checked={operator} onChange={toggleOperator} checkedChildren="AND" unCheckedChildren="OR" />
-    </ConfigProvider>
-  );
+  return <Switch checked={operator} onChange={toggleOperator} checkedChildren="AND" unCheckedChildren="OR" />;
 }

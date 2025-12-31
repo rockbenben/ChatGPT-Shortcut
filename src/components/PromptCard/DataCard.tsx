@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
-import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
+import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
@@ -23,7 +23,6 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
   const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
-  const { token } = theme.useToken();
   const currentLanguage = i18n.currentLocale.split("-")[0];
 
   const userInfo = useMemo(() => {
@@ -96,7 +95,7 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
               {userInfo.title}
             </Link>
@@ -105,7 +104,7 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
             value={copyCount}
             formatter={(value) => formatCompactNumber(value as number)}
             prefix={<FireOutlined style={{ color: "var(--ifm-color-warning)" }} />}
-            styles={{ content: { fontSize: token.fontSizeSM, color: "var(--ifm-color-emphasis-500)" } }}
+            styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
           />
         </Flex>
       }
@@ -129,7 +128,7 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
           <PromptCardTag tags={user.tags} muted />
         </div>
         {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
+          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
             <LinkOutlined style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", opacity: 0.6 }} />
           </a>
         )}

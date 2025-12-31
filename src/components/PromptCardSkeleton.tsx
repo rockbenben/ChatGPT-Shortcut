@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Card, Skeleton, Row, Col, theme } from "antd";
+import { Card, Skeleton, Row, Col } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 interface PromptCardSkeletonProps {
@@ -36,8 +36,6 @@ const calculateVisibleCount = (fallbackCount: number): number => {
  * 用于在数据加载期间显示占位内容，避免布局抖动
  */
 export const PromptCardSkeleton: React.FC<PromptCardSkeletonProps> = ({ count = 4 }) => {
-  const { token } = theme.useToken();
-
   // 使用 useMemo 避免每次渲染都重新计算
   const visibleCount = useMemo(() => calculateVisibleCount(count), [count]);
 
@@ -58,7 +56,7 @@ export const PromptCardSkeleton: React.FC<PromptCardSkeletonProps> = ({ count = 
             variant="borderless"
             style={{
               borderRadius: 12,
-              border: `1px solid ${token.colorBorderSecondary}`,
+              border: "1px solid var(--ifm-color-emphasis-200)",
               boxShadow: "none",
               height: "100%",
             }}>

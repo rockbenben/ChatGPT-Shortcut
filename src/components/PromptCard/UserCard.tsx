@@ -1,5 +1,5 @@
 import React, { useCallback, ReactNode } from "react";
-import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
+import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
@@ -21,7 +21,6 @@ interface UserCardProps {
 }
 
 const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
-  const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
@@ -79,10 +78,10 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       {...attributes}
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: token.marginXS, overflow: "hidden" }}>
+          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
             {!isFiltered && (
-              <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: token.colorTextSecondary }} />
+              <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+                <HolderOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
               </div>
             )}
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
@@ -93,13 +92,13 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       }
       titleExtra={
         <>
-          {!user.share && <LockOutlined style={{ color: token.colorTextSecondary }} />}
+          {!user.share && <LockOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />}
           {user.upvoteDifference > 0 && (
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: token.colorWarning }} />}
-              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+              prefix={<LikeFilled style={{ color: "var(--ifm-color-warning)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-warning)" } }}
             />
           )}
         </>
@@ -119,7 +118,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
           {user.description}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center">
@@ -127,8 +126,8 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
             <PromptCardTag tags={user.tags} />
           </div>
           {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
             </a>
           )}
         </Flex>

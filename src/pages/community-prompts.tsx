@@ -10,7 +10,7 @@ import LoginComponent from "@site/src/components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, theme, Row, Col, Breadcrumb } from "antd";
+import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
@@ -39,7 +39,6 @@ interface PromptCardProps {
 }
 
 const CommunityPrompts = () => {
-  const { token } = theme.useToken();
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -217,10 +216,9 @@ const CommunityPrompts = () => {
               style={{
                 marginBottom: 24,
                 padding: "16px 24px",
-                background: token.colorBgContainer,
-                borderRadius: token.borderRadiusLG,
-                border: `1px solid ${token.colorBorderSecondary}`,
-                boxShadow: token.boxShadowTertiary,
+                background: "var(--ifm-background-color)",
+                borderRadius: 12,
+                boxShadow: "var(--site-shadow-md)",
               }}>
               <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
                 <Breadcrumb

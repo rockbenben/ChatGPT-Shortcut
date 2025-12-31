@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Button, theme } from "antd";
+import { Input, Button } from "antd";
 import { SmileOutlined, GifOutlined, SendOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 
@@ -17,7 +17,6 @@ interface CommentEditorProps {
 }
 
 const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit, submitting, placeholder, isLoggedIn, onLogin, onEmojiToggle, onGifToggle, onCancel }) => {
-  const { token } = theme.useToken();
   const [focused, setFocused] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -27,9 +26,9 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
   return (
     <div
       style={{
-        border: `1px solid ${focused ? token.colorPrimary : token.colorBorder}`,
-        borderRadius: token.borderRadiusLG,
-        boxShadow: focused ? `0 0 0 2px ${token.colorPrimaryBg}` : "none",
+        border: `1px solid ${focused ? "var(--ifm-color-primary)" : "var(--ifm-color-emphasis-200)"}`,
+        borderRadius: 8,
+        boxShadow: focused ? "0 0 0 2px var(--ifm-color-primary-lightest)" : "none",
         transition: "all 0.3s",
         overflow: "hidden",
       }}>
@@ -45,7 +44,7 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
           boxShadow: "none",
           backgroundColor: "transparent",
           resize: "vertical",
-          padding: token.paddingSM,
+          padding: 12,
         }}
       />
       <div
@@ -53,14 +52,14 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: `${token.paddingXS}px ${token.paddingSM}px`,
-          borderTop: `1px solid ${token.colorSplit}`,
+          padding: "8px 12px",
+          borderTop: "1px solid var(--ifm-color-emphasis-200)",
         }}>
-        <div style={{ display: "flex", gap: token.marginXS }}>
+        <div style={{ display: "flex", gap: 8 }}>
           <Button type="text" size="small" icon={<SmileOutlined />} onClick={onEmojiToggle} />
           <Button type="text" size="small" icon={<GifOutlined />} onClick={onGifToggle} />
         </div>
-        <div style={{ display: "flex", gap: token.marginXS }}>
+        <div style={{ display: "flex", gap: 8 }}>
           {onCancel && (
             <Button onClick={onCancel} size="small" disabled={submitting}>
               <Translate id="action.cancel">取消</Translate>
