@@ -33,6 +33,55 @@ const promptDataCache: Record<string, CardData[]> = {};
 // lscache 缓存键前缀
 const PROMPT_CACHE_KEY = "prompt_data_";
 
+// Define explicit import maps to ensure bundlers (like in extensions) can resolve them statically
+const PROMPT_DATA_MAP: Record<string, () => Promise<any>> = {
+  zh: () => import("@site/src/data/prompt_zh.json"),
+  en: () => import("@site/src/data/prompt_en.json"),
+  ja: () => import("@site/src/data/prompt_ja.json"),
+  ko: () => import("@site/src/data/prompt_ko.json"),
+  de: () => import("@site/src/data/prompt_de.json"),
+  fr: () => import("@site/src/data/prompt_fr.json"),
+  es: () => import("@site/src/data/prompt_es.json"),
+  it: () => import("@site/src/data/prompt_it.json"),
+  pt: () => import("@site/src/data/prompt_pt.json"),
+  ru: () => import("@site/src/data/prompt_ru.json"),
+  ar: () => import("@site/src/data/prompt_ar.json"),
+  hi: () => import("@site/src/data/prompt_hi.json"),
+  bn: () => import("@site/src/data/prompt_bn.json"),
+};
+
+const DEFAULT_FAVOR_MAP: Record<string, () => Promise<any>> = {
+  zh: () => import("@site/src/data/default/favor_zh.json"),
+  en: () => import("@site/src/data/default/favor_en.json"),
+  ja: () => import("@site/src/data/default/favor_ja.json"),
+  ko: () => import("@site/src/data/default/favor_ko.json"),
+  de: () => import("@site/src/data/default/favor_de.json"),
+  fr: () => import("@site/src/data/default/favor_fr.json"),
+  es: () => import("@site/src/data/default/favor_es.json"),
+  it: () => import("@site/src/data/default/favor_it.json"),
+  pt: () => import("@site/src/data/default/favor_pt.json"),
+  ru: () => import("@site/src/data/default/favor_ru.json"),
+  ar: () => import("@site/src/data/default/favor_ar.json"),
+  hi: () => import("@site/src/data/default/favor_hi.json"),
+  bn: () => import("@site/src/data/default/favor_bn.json"),
+};
+
+const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
+  zh: () => import("@site/src/data/default/other_zh.json"),
+  en: () => import("@site/src/data/default/other_en.json"),
+  ja: () => import("@site/src/data/default/other_ja.json"),
+  ko: () => import("@site/src/data/default/other_ko.json"),
+  de: () => import("@site/src/data/default/other_de.json"),
+  fr: () => import("@site/src/data/default/other_fr.json"),
+  es: () => import("@site/src/data/default/other_es.json"),
+  it: () => import("@site/src/data/default/other_it.json"),
+  pt: () => import("@site/src/data/default/other_pt.json"),
+  ru: () => import("@site/src/data/default/other_ru.json"),
+  ar: () => import("@site/src/data/default/other_ar.json"),
+  hi: () => import("@site/src/data/default/other_hi.json"),
+  bn: () => import("@site/src/data/default/other_bn.json"),
+};
+
 /**
  * Load all prompt data for a specific language
  * Cache hierarchy: Memory -> lscache (100 days) -> Dynamic Import
@@ -55,9 +104,13 @@ async function getPromptData(lang: string): Promise<CardData[]> {
     return cachedData;
   }
 
-  // 3. 动态导入 JSON 文件
+  // 3. 静态映射导入 JSON 文件
   try {
-    const data = await import(`@site/src/data/prompt_${safeLang}.json`);
+    const loader = PROMPT_DATA_MAP[safeLang];
+    if (!loader) {
+      throw new Error(`Language ${safeLang} not supported in PROMPT_DATA_MAP`);
+    }
+    const data = await loader();
     const promptData = data.default;
 
     // 同时存入内存缓存和 lscache
@@ -82,7 +135,10 @@ async function getPromptData(lang: string): Promise<CardData[]> {
 export async function fetchDefaultCards(lang: string = "zh"): Promise<DefaultCardsResult> {
   try {
     // 直接从本地静态文件加载默认数据
-    const [favorModule, otherModule] = await Promise.all([import(`@site/src/data/default/favor_${lang}.json`), import(`@site/src/data/default/other_${lang}.json`)]);
+    const favorLoader = DEFAULT_FAVOR_MAP[lang] || DEFAULT_FAVOR_MAP["zh"];
+    const otherLoader = DEFAULT_OTHER_MAP[lang] || DEFAULT_OTHER_MAP["zh"];
+
+    const [favorModule, otherModule] = await Promise.all([favorLoader(), otherLoader()]);
 
     const result: DefaultCardsResult = {
       favorite: favorModule.default,
