@@ -346,10 +346,6 @@ div[class^="announcementBar_"] {
 }
 
 /* CLS 修复：导航栏预留高度，防止 hydration 时推动内容 */
-.navbar {
-  min-height: 60px; /* Docusaurus 默认导航栏高度 */
-}
-
 .navbar__title {
   color: var(--site-primary-font);
   font-size: 1.1rem;

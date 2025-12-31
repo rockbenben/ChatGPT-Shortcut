@@ -231,7 +231,7 @@ const TagManagerModal: React.FC<{
           onClick: () => onChange(color),
         })),
       }}>
-      <Tag color={value} style={{ cursor: "pointer", minWidth: 60 }}>
+      <Tag color={value} style={{ cursor: "pointer" }}>
         {value}
       </Tag>
     </Dropdown>

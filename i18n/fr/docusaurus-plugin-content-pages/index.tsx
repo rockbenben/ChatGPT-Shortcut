@@ -526,7 +526,7 @@ const PageHeader: React.FC<{
           styles={{ body: { padding: "16px 24px" } }}>
           <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
             {/* Total */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <AppstoreOutlined style={{ marginRight: 4, color: cyan[4] }} />
                 <Translate id="myCollection.stats.total">总计</Translate>
@@ -537,7 +537,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* My Prompts */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <EditOutlined style={{ marginRight: 4, color: green[4] }} />
                 <Translate id="myCollection.stats.prompts">我的提示词</Translate>
@@ -548,7 +548,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* Favorites */}
-            <div style={{ textAlign: "center", minWidth: 60 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <HeartOutlined style={{ marginRight: 4, color: red[4] }} />
                 <Translate id="myCollection.stats.favorites">收藏</Translate>
@@ -559,7 +559,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* Custom Tags */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <TagOutlined style={{ marginRight: 4, color: blue[4] }} />
                 <Translate id="myCollection.stats.tags">自定义标签</Translate>
