@@ -12,7 +12,6 @@ import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
-import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
@@ -265,16 +264,15 @@ const TagManagerModal: React.FC<{
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale.split("-")[0];
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
 
   const { confirmRemoveFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
-  // 使用缓存初始化，避免刷新时闪烁空白
-  const cachedSpaceItems = typeof window !== "undefined" ? getCache("myspace_items") : null;
-  const [spaceItems, setSpaceItems] = useState<any[]>(cachedSpaceItems || []);
-  const [loading, setLoading] = useState(!cachedSpaceItems);
+  // 移除本地缓存，统一使用 AuthContext 的数据
+  const [spaceItems, setSpaceItems] = useState<any[]>([]);
+  const [dataProcessing, setDataProcessing] = useState(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [customTags, setCustomTags] = useState<CustomTag[]>([]);
@@ -300,7 +298,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
   // 加载数据 - 直接使用 AuthContext 提供的数据
   useEffect(() => {
-    if (!userAuth?.data) return;
+    if (!userAuth?.data) {
+      setSpaceItems([]);
+      return;
+    }
 
     // 计算 items 的 hash（用于检测实际的数据变化）
     const items = userAuth.data.items || [];
@@ -319,7 +320,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     const fetchData = async () => {
       if (!userAuth?.data) return;
 
-      setLoading(true);
+      setDataProcessing(true);
       try {
         // 直接使用 AuthContext 提供的 items（后端已排序，AuthProvider 已过滤）
         const { items, customTags: tagsArray } = userAuth.data;
@@ -374,8 +375,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
         if (isMounted) {
           setSpaceItems(allItems);
-          // 缓存 spaceItems 用于下次快速显示
-          setCache("myspace_items", allItems, CACHE_TTL.MYSPACE);
+          // 不再缓存 myspace_items，统一使用 AuthContext 的 user_auth 缓存
 
           // 通知父组件数据已加载（使用实际获取到数据的数量）
           if (onDataLoaded) {
@@ -396,7 +396,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         }
       } finally {
         if (isMounted) {
-          setLoading(false);
+          setDataProcessing(false);
         }
       }
     };
@@ -638,9 +638,13 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [spaceItems, customTags, messageApi]
   );
 
-  // 如果有缓存数据，即使 userAuth 还在加载也显示缓存
-  // 只有在没有缓存且没有 userAuth 时才显示骨架屏
-  if (!userAuth?.data && spaceItems.length === 0) {
+  // 统一的加载状态：AuthContext 加载中 或 数据处理中
+  if (authLoading || dataProcessing) {
+    return <PromptCardSkeleton count={6} />;
+  }
+
+  // 如果没有用户数据，显示骨架屏
+  if (!userAuth?.data) {
     return <PromptCardSkeleton count={6} />;
   }
 
@@ -657,9 +661,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         setSearchQuery={setSearchQuery}
       />
 
-      {loading ? (
-        <PromptCardSkeleton count={6} />
-      ) : (
+      {
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <Row gutter={[16, 16]}>
             {filteredItems.length === 0 ? (
@@ -742,7 +744,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
             )}
           </Row>
         </DndContext>
-      )}
+      }
 
       <TagManagerModal open={tagManagerOpen} onClose={() => setTagManagerOpen(false)} tags={customTags} onSave={handleManageTagsSave} />
 
