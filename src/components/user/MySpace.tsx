@@ -287,6 +287,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   // 使用 ref 跟踪已初始化的用户 ID 和 items hash，避免收藏操作后重复加载
   const initializedUserIdRef = useRef<number | null>(null);
   const itemsHashRef = useRef<string>("");
+  // 跟踪是否已完成过首次数据加载（用于区分“正在加载”和“用户真的没有数据”）
+  const hasInitializedRef = useRef(false);
 
   // 配置拖拽传感器
   const sensors = useSensors(
@@ -375,6 +377,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
         if (isMounted) {
           setSpaceItems(allItems);
+          hasInitializedRef.current = true; // 标记已完成首次加载
           // 不再缓存 myspace_items，统一使用 AuthContext 的 user_auth 缓存
 
           // 通知父组件数据已加载（使用实际获取到数据的数量）
@@ -638,8 +641,11 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [spaceItems, customTags, messageApi]
   );
 
-  // 统一的加载状态：AuthContext 加载中 或 数据处理中
-  if (authLoading || dataProcessing) {
+  // 统一的加载状态：
+  // 1. AuthContext 加载中
+  // 2. 数据处理中
+  // 3. 有用户数据但尚未完成首次加载（初始渲染阶段）
+  if (authLoading || dataProcessing || (userAuth?.data && !hasInitializedRef.current)) {
     return <PromptCardSkeleton count={6} />;
   }
 
