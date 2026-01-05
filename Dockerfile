@@ -7,8 +7,8 @@ WORKDIR /app
 # 复制项目中的 package.json 和 yarn.lock 到工作目录中
 COPY package.json yarn.lock ./
 
-# 安装依赖包（仅安装生产环境依赖）
-RUN yarn install --frozen-lockfile --production --network-timeout 100000
+# 安装依赖包
+RUN yarn install --frozen-lockfile --network-timeout 100000
 
 # 复制项目源代码到工作目录
 COPY . .
