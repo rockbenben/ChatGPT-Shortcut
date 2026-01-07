@@ -3,7 +3,7 @@
  * All data is loaded from static JSON files (no API calls)
  * Uses lscache for persistent caching (100 days)
  */
-import { DEFAULT_FAVORITE_IDS, DEFAULT_IDS, ALL_IDS } from "@site/src/data/constants";
+import { ALL_IDS, SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 
 export interface CardData {
@@ -88,7 +88,7 @@ const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
  */
 async function getPromptData(lang: string): Promise<CardData[]> {
   // Fallback to zh if language not supported
-  const safeLang = ["zh", "en", "ja", "ko", "de", "fr", "es", "it", "pt", "ru", "ar", "hi", "bn"].includes(lang) ? lang : "zh";
+  const safeLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "zh";
   const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
 
   // 1. 检查内存缓存（最快）
@@ -223,6 +223,8 @@ export async function searchCardsLocally(tags: string[], searchName: string | nu
     const allData = await getPromptData(lang);
     const searchLower = searchName ? searchName.toLowerCase().trim() : "";
 
+    const safeLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "zh";
+
     // 过滤逻辑
     const filtered = allData.filter((card) => {
       // Tag 过滤
@@ -242,7 +244,7 @@ export async function searchCardsLocally(tags: string[], searchName: string | nu
       let searchMatch = true;
       if (searchLower) {
         // 获取当前语言的字段数据
-        const langData = card[lang] || card.zh || {};
+        const langData = card[safeLang] || card.zh || {};
         const title = (langData.title || card.title || "").toLowerCase();
         const description = (langData.description || card.description || "").toLowerCase();
         const remark = (langData.remark || card.remark || "").toLowerCase();

@@ -12,6 +12,7 @@ import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
+import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
@@ -448,7 +449,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     // 搜索筛选
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      const langKeys = ["zh", "en", "ja", "ko", "de", "fr", "es", "it", "ru", "pt", "hi", "ar", "bn"];
+      const langKeys = SUPPORTED_LANGUAGES;
 
       items = items.filter((item) => {
         const data = item.data;
