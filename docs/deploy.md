@@ -17,11 +17,11 @@ AI Short 是一个开源项目，你可以根据需求自由修改网站的标�
   项目的使用说明和介绍文件位于 `docs` 目录下。打开该目录中的相关文件，进行必要的修改。
 
 - **修改主页提示词**  
-  主页提示词存储在 `src/data/prompt.json` 文件中。如果需要修改特定语言的提示词，例如中文，可以直接编辑 `src/data/prompt_zh.json` 文件。新增提示词时，格式如下：
+  主页提示词存储在 `src/data/prompt.json` 文件中。如果需要修改特定语言的提示词，例如中文，可以直接编辑 `src/data/prompt_es.json` 文件。新增提示词时，格式如下：
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Update the `defaultLocale` in the `docusaurus.config.js` file, then perform a build for the desired language.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Deploy for multiple languages
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Vercel 部署
@@ -115,7 +116,7 @@ yarn build --locale zh && yarn build --locale en
 
 1. 进入刚刚部署的 Vercel 项目，打开 **Settings**。
 2. 在 **Build & Deployment** 部分，找到 **Build Command**，然后点击右侧的 **Override**。
-3. 修改部署命令。例如，如果需要部署中文版本，可以使用 `yarn build --locale zh`；如果需要部署葡萄牙语版本，则使用 `yarn build --locale pt`。
+3. 修改部署命令。例如，如果需要部署中文版本，可以使用 `yarn build --locale zh-Hans`；如果需要部署葡萄牙语版本，则使用 `yarn build --locale pt`。
 
 ### Cloudflare Pages 部署
 
@@ -128,7 +129,7 @@ yarn build --locale zh && yarn build --locale en
 1. 登录 [Cloudflare Pages](https://pages.cloudflare.com/)，并选择 **"Create a project"**。
 2. 绑定你刚刚 Fork 的仓库。
 3. 配置构建命令：
-   - **Build command**：`yarn build --locale zh`（根据要部署的语言选择合适的 locale，例如：葡萄牙语可使用 `yarn build --locale pt`）。
+   - **Build command**：`yarn build --locale zh-Hans`（根据要部署的语言选择合适的 locale，例如：葡萄牙语可使用 `yarn build --locale pt`）。
    - **Output directory**：`build`。
 4. 点击 **部署**，等待 Cloudflare Pages 完成构建和部署。
 

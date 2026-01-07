@@ -17,11 +17,11 @@ AI Short はオープンソースプロジェクトであり、ニーズに合�
   プロジェクトの使用説明と紹介ファイルは `docs` ディレクトリにあります。そのディレクトリ内の関連ファイルを開いて、必要な変更を行ってください。
 
 - **ホームページのプロンプトの変更**
-  ホームページのプロンプトは `src/data/prompt.json` ファイルに保存されています。特定の言語（例えば中国語）のプロンプトを変更する必要がある場合は、`src/data/prompt_zh.json` ファイルを直接編集できます。新しいプロンプトを追加する場合の形式は以下の通りです：
+  ホームページのプロンプトは `src/data/prompt.json` ファイルに保存されています。特定の言語（例えば中国語）のプロンプトを変更する必要がある場合は、`src/data/prompt_es.json` ファイルを直接編集できます。新しいプロンプトを追加する場合の形式は以下の通りです：
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # `docusaurus.config.js` ファイルの `defaultLocale` を更新し、希望する言語のビルドを実行します。
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # 複数言語のデプロイ
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Vercel デプロイ
@@ -115,7 +116,7 @@ yarn build --locale zh && yarn build --locale en
 
 1. デプロイしたばかりの Vercel プロジェクトに入り、**Settings** を開きます。
 2. **Build & Deployment** セクションで **Build Command** を見つけ、右側の **Override** をクリックします。
-3. デプロイコマンドを変更します。例えば、中国語バージョンをデプロイする必要がある場合は `yarn build --locale zh` を使用し、ポルトガル語バージョンをデプロイする必要がある場合は `yarn build --locale pt` を使用します。
+3. デプロイコマンドを変更します。例えば、中国語バージョンをデプロイする必要がある場合は `yarn build --locale zh-Hans` を使用し、ポルトガル語バージョンをデプロイする必要がある場合は `yarn build --locale pt` を使用します。
 
 ### Cloudflare Pages デプロイ
 
@@ -128,7 +129,7 @@ yarn build --locale zh && yarn build --locale en
 1. [Cloudflare Pages](https://pages.cloudflare.com/) にログインし、**"Create a project"** を選択します。
 2. フォークしたばかりのリポジトリをバインドします。
 3. ビルドコマンドを設定します：
-   - **Build command**：`yarn build --locale zh`（デプロイする言語に基づいて適切な locale を選択してください。例：ポルトガル語の場合は `yarn build --locale pt`）。
+   - **Build command**：`yarn build --locale zh-Hans`（デプロイする言語に基づいて適切な locale を選択してください。例：ポルトガル語の場合は `yarn build --locale pt`）。
    - **Output directory**：`build`。
 4. **Deploy** をクリックし、Cloudflare Pages がビルドとデプロイを完了するのを待ちます。
 

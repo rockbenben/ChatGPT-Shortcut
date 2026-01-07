@@ -17,11 +17,11 @@ AI Short est un projet open source qui vous permet de modifier librement le titr
   Les instructions d'utilisation et les fichiers d'introduction du projet se trouvent dans le répertoire `docs`. Ouvrez les fichiers pertinents dans ce répertoire pour effectuer les modifications nécessaires.
 
 - **Modifier les prompts de la page d'accueil**
-  Les prompts de la page d'accueil sont stockés dans le fichier `src/data/prompt.json`. Si vous devez modifier des prompts pour une langue spécifique, comme le chinois, vous pouvez éditer directement le fichier `src/data/prompt_zh.json`. Lors de l'ajout d'un nouveau prompt, le format est le suivant :
+  Les prompts de la page d'accueil sont stockés dans le fichier `src/data/prompt.json`. Si vous devez modifier des prompts pour une langue spécifique, comme le chinois, vous pouvez éditer directement le fichier `src/data/prompt_es.json`. Lors de l'ajout d'un nouveau prompt, le format est le suivant :
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Mettez à jour le `defaultLocale` dans le fichier `docusaurus.config.js`, puis effectuez un build pour la langue souhaitée.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Déploiement pour plusieurs langues
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Déploiement Vercel
@@ -115,7 +116,7 @@ Cliquez sur le bouton ci-dessous pour déployer ChatGPT-Shortcut sur la platefor
 
 1. Entrez dans le projet Vercel que vous venez de déployer et ouvrez **Settings**.
 2. Dans la section **Build & Deployment**, trouvez **Build Command**, puis cliquez sur **Override** à droite.
-3. Modifiez la commande de déploiement. Par exemple, si vous devez déployer la version chinoise, vous pouvez utiliser `yarn build --locale zh` ; si vous devez déployer la version portugaise, utilisez `yarn build --locale pt`.
+3. Modifiez la commande de déploiement. Par exemple, si vous devez déployer la version chinoise, vous pouvez utiliser `yarn build --locale zh-Hans` ; si vous devez déployer la version portugaise, utilisez `yarn build --locale pt`.
 
 ### Déploiement Cloudflare Pages
 
@@ -128,7 +129,7 @@ Cliquez sur le bouton ou le lien ci-dessous pour faire un Fork de ce projet, pui
 1. Connectez-vous à [Cloudflare Pages](https://pages.cloudflare.com/) et sélectionnez **"Create a project"**.
 2. Liez le dépôt que vous venez de forker.
 3. Configurez les commandes de build :
-   - **Build command** : `yarn build --locale zh` (Choisissez la locale appropriée selon la langue à déployer, ex: pour le portuguais utilisez `yarn build --locale pt`).
+   - **Build command** : `yarn build --locale zh-Hans` (Choisissez la locale appropriée selon la langue à déployer, ex: pour le portuguais utilisez `yarn build --locale pt`).
    - **Output directory** : `build`.
 4. Cliquez sur **Deploy** et attendez que Cloudflare Pages termine le build et le déploiement.
 

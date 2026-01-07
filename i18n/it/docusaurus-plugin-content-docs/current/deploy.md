@@ -17,11 +17,11 @@ AI Short è un progetto open source che ti permette di modificare liberamente il
   Le istruzioni d'uso e i file di introduzione del progetto si trovano nella directory `docs`. Apri i file rilevanti in quella directory per apportare le modifiche necessarie.
 
 - **Modificare i Prompt della Home Page**
-  I prompt della home page sono memorizzati nel file `src/data/prompt.json`. Se hai bisogno di modificare i prompt per una lingua specifica, come il cinese, puoi modificare direttamente il file `src/data/prompt_zh.json`. Quando aggiungi un nuovo prompt, il formato è il seguente:
+  I prompt della home page sono memorizzati nel file `src/data/prompt.json`. Se hai bisogno di modificare i prompt per una lingua specifica, come il cinese, puoi modificare direttamente il file `src/data/prompt_es.json`. Quando aggiungi un nuovo prompt, il formato è il seguente:
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Aggiorna il `defaultLocale` nel file `docusaurus.config.js`, poi esegui una build per la lingua desiderata.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Distribuzione per multiple lingue
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Distribuzione su Vercel
@@ -115,7 +116,7 @@ Clicca sul pulsante qui sotto per distribuire ChatGPT-Shortcut sulla piattaforma
 
 1. Entra nel progetto Vercel che hai appena distribuito e apri **Settings**.
 2. Nella sezione **Build & Deployment**, trova **Build Command**, poi clicca su **Override** a destra.
-3. Modifica il comando di distribuzione. Ad esempio, se devi distribuire la versione cinese, puoi usare `yarn build --locale zh`; se devi distribuire la versione portoghese, usa `yarn build --locale pt`.
+3. Modifica il comando di distribuzione. Ad esempio, se devi distribuire la versione cinese, puoi usare `yarn build --locale zh-Hans`; se devi distribuire la versione portoghese, usa `yarn build --locale pt`.
 
 ### Distribuzione su Cloudflare Pages
 
@@ -128,7 +129,7 @@ Passaggi di Distribuzione:
 1. Accedi a [Cloudflare Pages](https://pages.cloudflare.com/) e seleziona **"Create a project"**.
 2. Collega il repository che hai appena forkato.
 3. Configura i comandi di build:
-   - **Build command**: `yarn build --locale zh` (Scegli il locale appropriato in base alla lingua da distribuire, es: per portoghese usa `yarn build --locale pt`).
+   - **Build command**: `yarn build --locale zh-Hans` (Scegli il locale appropriato in base alla lingua da distribuire, es: per portoghese usa `yarn build --locale pt`).
    - **Output directory**: `build`.
 4. Clicca su **Deploy** e attendi che Cloudflare Pages completi la build e la distribuzione.
 

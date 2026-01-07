@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Atualize o `defaultLocale` no arquivo `docusaurus.config.js`, depois execute um build para o idioma desejado.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Implantar para múltiplos idiomas
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Implantação Vercel
@@ -115,7 +116,7 @@ Clique no botão abaixo para implantar o ChatGPT-Shortcut na plataforma Vercel c
 
 1. Entre no projeto Vercel recém-implantado e abra **Settings** (Configurações).
 2. Na seção **Build & Deployment** (Construção e Implantação), encontre **Build Command** (Comando de Construção) e clique em **Override** (Substituir) à direita.
-3. Modifique o comando de implantação. Por exemplo, se precisar implantar a versão em Chinês, use `yarn build --locale zh`; se precisar implantar a versão em Português, use `yarn build --locale pt`.
+3. Modifique o comando de implantação. Por exemplo, se precisar implantar a versão em Chinês, use `yarn build --locale zh-Hans`; se precisar implantar a versão em Português, use `yarn build --locale pt`.
 
 ### Implantação Cloudflare Pages
 
@@ -128,7 +129,7 @@ Passos de Implantação:
 1. Faça login no [Cloudflare Pages](https://pages.cloudflare.com/) e selecione **"Create a project"** (Criar um projeto).
 2. Vincule o repositório que você acabou de fazer o Fork.
 3. Configure o comando de construção:
-   - **Build command**: `yarn build --locale zh` (escolha o locale apropriado de acordo com o idioma a ser implantado, ex: para Português use `yarn build --locale pt`).
+   - **Build command**: `yarn build --locale zh-Hans` (escolha o locale apropriado de acordo com o idioma a ser implantado, ex: para Português use `yarn build --locale pt`).
    - **Output directory**: `build`.
 4. Clique em **Deploy** (Implantar) e aguarde o Cloudflare Pages concluir a construção e implantação.
 
