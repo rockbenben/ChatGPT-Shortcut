@@ -279,7 +279,7 @@ const TagManagerModal: React.FC<{
 
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
   const { userAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
 
@@ -581,8 +581,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const handleConvertToPrivate = useCallback(
     async (data: any) => {
       try {
-        const currentLanguage = i18n.currentLocale.split("-")[0];
-        const itemData = data[currentLanguage] || data["zh"] || data["en"];
+        const currentLanguage = i18n.currentLocale;
+        const itemData = data[currentLanguage] || data["zh-Hans"] || data["en"];
         const isDataCard = !!(itemData && itemData.title);
 
         // 构建提示词数据

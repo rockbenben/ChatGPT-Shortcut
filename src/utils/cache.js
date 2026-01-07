@@ -262,11 +262,13 @@ export const extendCacheIfNeeded = (key, ttlMinutes) => {
 export const cleanupLegacyCache = () => {
   if (!canUseCache()) return;
 
-  const CLEANUP_FLAG = "lscache_cleanup_v1";
+  const CLEANUP_FLAG = "lscache_cleanup_v3";
   if (localStorage.getItem(CLEANUP_FLAG)) return;
 
   // 需要删除的废弃缓存前缀（黑名单）
+  // 注意：lscache 的键会加上 "lscache-" 前缀，所以这里需要匹配两种格式
   const LEGACY_PREFIXES = [
+    "prompt_data_zh", // 旧版中文数据缓存（仅 "zh"，不是 "zh-Hans" 或 "zh-Hant"）
     "comments_page_", // 旧版评论缓存
     "findCardsWithTags_", // 旧版搜索缓存
     "cards_", // 旧版卡片缓存
@@ -278,8 +280,21 @@ export const cleanupLegacyCache = () => {
   const keysToRemove = [];
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (key && LEGACY_PREFIXES.some((prefix) => key.startsWith(prefix))) {
-      keysToRemove.push(key);
+    if (key) {
+      // lscache 键格式: lscache-{key} 或 lscache-{key}-cacheexpiration
+      // 需要处理带前缀和不带前缀的情况
+      const keyWithoutLscache = key.startsWith("lscache-") ? key.slice(8) : key;
+      // 移除可能的 -cacheexpiration 后缀
+      const cleanKey = keyWithoutLscache.replace(/-cacheexpiration$/, "");
+
+      // 检查是否是 prompt_data_zh（精确匹配，不匹配 prompt_data_zh-Hans 等）
+      const isLegacyZh = cleanKey === "prompt_data_zh";
+      // 检查其他旧版前缀
+      const isOtherLegacy = LEGACY_PREFIXES.slice(1).some((prefix) => cleanKey.startsWith(prefix));
+
+      if (isLegacyZh || isOtherLegacy) {
+        keysToRemove.push(key);
+      }
     }
   }
 

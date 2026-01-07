@@ -33,10 +33,10 @@ const config = {
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is English, you
-  // may want to replace "zh" with "en".
+  // may want to replace "zh-Hans" with "en". "zh-Hant" hidden to avoid build save
   i18n: {
-    defaultLocale: "zh",
-    locales: ["en", "zh", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
+    defaultLocale: "zh-Hans",
+    locales: ["en", "zh-Hans", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
     localeConfigs: {
       ar: {
         direction: "rtl",

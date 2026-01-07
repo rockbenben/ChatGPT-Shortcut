@@ -24,7 +24,7 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
   const { i18n } = useDocusaurusContext();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { token } = theme.useToken();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
 
   const userInfo = useMemo(() => {
     // 支持两种数据格式：

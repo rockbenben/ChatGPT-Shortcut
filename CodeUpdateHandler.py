@@ -3,6 +3,15 @@ import os
 import shutil
 from pathlib import Path
 
+# Try to import opencc for Traditional Chinese conversion
+try:
+    import opencc
+    converter = opencc.OpenCC('s2t')
+    print("OpenCC loaded successfully.")
+except ImportError:
+    converter = None
+    print("Warning: opencc-python-reimplemented not found. Traditional Chinese conversion will be skipped (content will remain Simplified).")
+
 # 将 prompt.json 按语言分割成多个文件
 # 获取当前目录的路径
 current_dir = os.path.join(os.getcwd(), 'src', 'data')
@@ -14,8 +23,8 @@ meta_cards_path = os.path.join(current_dir, 'meta_cards.json')
 output_dir_path = os.path.join(current_dir, 'default')
 output_dir_path_cards = os.path.join(current_dir, 'cards')
 
-# 提供的语言列表
-allLanguages = ["zh", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
+# 提供的语言列表 - Update: Replace 'zh' with 'zh-Hans' and 'zh-Hant'
+allLanguages = ["zh-Hans", "zh-Hant", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
 
 # 读取 JSON 数据
 with open(input_path, 'r', encoding='utf-8') as file:
@@ -54,19 +63,60 @@ other_ids = [185, 197, 109, 20, 1]
 favor_data = [item for item in data if item['id'] in favor_ids]
 other_data = [item for item in data if item['id'] in other_ids]
 
+# Helper function to get content for a language, handling zh mapping
+def get_lang_content(item, target_lang):
+    if target_lang == 'zh-Hans':
+        return item.get('zh')
+    elif target_lang == 'zh-Hant':
+        content = item.get('zh')
+        if content:
+            if converter:
+                # Deep copy and convert strings
+                converted = {}
+                for k, v in content.items():
+                    if isinstance(v, str):
+                        converted[k] = converter.convert(v)
+                    else:
+                        converted[k] = v
+                return converted
+            return content # Fallback if no converter
+        return None
+    return item.get(target_lang)
+
+# Helper for meta content
+def get_meta_content(item_id, field, target_lang):
+    # meta_map[id][field] is a dict of {lang: text}
+    meta_dict = meta_map.get(item_id, {}).get(field, {})
+    if target_lang == 'zh-Hans':
+        return meta_dict.get('zh', "")
+    elif target_lang == 'zh-Hant':
+        content = meta_dict.get('zh', "")
+        if content and converter:
+            return converter.convert(content)
+        return content
+    return meta_dict.get(target_lang, "")
+
+
 # 处理和保存数据的函数
 def process_and_save_data(filtered_data, file_prefix, ids_order):
     for lang in allLanguages:
         # 按当前语言过滤并处理数据
         processed_data = []
         for item in filtered_data:
-            if lang in item:
+            content = get_lang_content(item, lang)
+            if content:
                 # 先提取 weight 并重命名为 count
                 count = item['weight']
                 
                 # 处理剩余的数据
-                new_item = {key: value for key, value in item.items() if key in [lang, 'id', 'tags', 'website']}
-                new_item['count'] = count  # 设置 count
+                # Construct new item with target language key
+                new_item = {
+                    lang: content,
+                    'id': item['id'],
+                    'tags': item.get('tags'),
+                    'website': item.get('website'),
+                    'count': count
+                }
                 
                 processed_data.append(new_item)
         # 按 ids_order 排列 processed_data
@@ -85,18 +135,19 @@ os.makedirs(output_dir_path_cards, exist_ok=True)
 def save_data_by_id_and_language(data):
     for item in data:
         for lang in allLanguages:
-            if lang in item:
+            content = get_lang_content(item, lang)
+            if content:
                 # 提取当前语言的数据
                 lang_data = {
                     "id": item["id"],
-                    lang: item[lang],
+                    lang: content,
                     "tags": item.get("tags", []),
                     "website": item.get("website", ""),
                     "count": item.get("weight", 0),
                     # 合并 meta title（如果存在）
-                    "metaTitle": meta_map.get(item["id"], {}).get('title', {}).get(lang, ""),
+                    "metaTitle": get_meta_content(item["id"], 'title', lang),
                     # 合并 meta description（如果存在）
-                    "metaDescription": meta_map.get(item["id"], {}).get('description', {}).get(lang, ""),
+                    "metaDescription": get_meta_content(item["id"], 'description', lang),
                 }
                 # 定义输出文件路径
                 output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
@@ -112,12 +163,9 @@ save_data_by_id_and_language(data)
 # 指定输出文件的目录
 output_dir = current_dir
 
-# 先将 json 数据读取出来
-with open(input_path, 'r', encoding='utf-8') as file:
-    data = json.load(file)
-
-# 这是我们要提取的语言列表
-languages = ['zh', 'en', 'ja', 'ko', 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
+# Reuse loaded data
+# languages = ['zh', 'en', ...] -> use allLanguages
+languages = allLanguages
 
 # 对于每种语言，我们创建一个新的列表来保存该语言的元素
 output_data = {lang: [] for lang in languages}
@@ -129,7 +177,7 @@ for element in data:
     for lang in languages:
 
         # 我们尝试提取该语言的数据
-        lang_data = element.get(lang)
+        lang_data = get_lang_content(element, lang)
 
         # 如果该语言的数据存在
         if lang_data:
@@ -162,9 +210,14 @@ for lang in languages:
 
 # 在 # 更新 Prompt Page 页面的 prompt 内容 的步骤前，将 os.path.join(current_dir, 'users.zh.tsx') 复制到同路径的 'users.{lang}.tsx'
 # 遍历每个语言
-for lang in languages[1:]:
+# Skip the first one? Previous logic was skipping 'zh' which was first.
+# Now 'zh-Hans' is first. We should generate users.zh-Hans.tsx too?
+# Since existing users.zh.tsx is just a template, we can treat it as such.
+# But if users.zh.tsx is NOT used by anything, then it doesn't matter?
+# However, for safety, let's generate for ALL languages including zh-Hans.
+for lang in languages:
     # 指定原始文件路径
-    original_file_path = os.path.join(current_dir, 'users.zh.tsx')
+    original_file_path = os.path.join(current_dir, 'users.template.tsx')
     # 指定新文件路径
     new_file_path = os.path.join(current_dir, f'users.{lang}.tsx')
     # 如果新文件已存在，则先删除它
@@ -188,8 +241,9 @@ react_jsx_dir.mkdir(parents=True, exist_ok=True)
 for prompt_id in range(1, max_id+1):
     # Loop through each language
     for lang in allLanguages:
-        # 如果是中文，则直接在 base_react_jsx_dir 下创建文件
-        if lang == "zh":
+        # 如果是中文(zh-Hans)，则直接在 base_react_jsx_dir 下创建文件
+        # Use zh-Hans as the default logic
+        if lang == "zh-Hans":
             output_path = react_jsx_dir / f"{prompt_id}.tsx"
         # 对于其他语言，创建或使用指定的 i18n 目录
         else:
@@ -224,20 +278,21 @@ def replace_and_write(source_file, destination_file, replacements):
 # This is the file we want to copy
 source_file = os.path.join(os.getcwd(), 'src', 'pages', 'index.tsx')
 
+# Loop languages starting from index 1. 0 is default (zh-Hans).
 for lang in languages[1:]:
     # Specify the path to the target file
     target_file = os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'index.tsx')
+    os.makedirs(os.path.dirname(target_file), exist_ok=True)
     
     # If the target file exists, remove it
     if os.path.exists(target_file):
         os.remove(target_file)
     
-    # Replace 'users.zh' with 'users.{lang}' and write to the target file
-    
     # Prepare the replacements
+    # Since src/pages/index.tsx now uses favor_zh-Hans.json, we replace that.
     replacements = [
-        ('favor_zh', f'favor_{lang}'),
-        ('other_zh', f'other_{lang}'),
+        ('favor_zh-Hans', f'favor_{lang}'),
+        ('other_zh-Hans', f'other_{lang}'),
     ]
 
     # Replace and write to the target file

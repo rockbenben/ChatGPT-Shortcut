@@ -39,7 +39,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   const normalizedType = typeof type === "string" ? type.trim() : "";
   const allowedTypes = new Set(["cards", "commus", "userprompts"]);
   const safeType = allowedTypes.has(normalizedType) ? normalizedType : "commus";
-  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : "zh";
+  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : "zh-Hans";
 
   // Deduplicate and validate IDs
   const idsSeen = new Set<number>();
@@ -405,7 +405,7 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
 /**
  * Search cards by tags or keywords
  */
-export async function searchCards(tags: string[], search: string, lang: string = "zh", operator: string = "OR") {
+export async function searchCards(tags: string[], search: string, lang: string = "zh-Hans", operator: string = "OR") {
   try {
     const normalizedTags = Array.isArray(tags) ? Array.from(new Set(tags.map((tag) => (typeof tag === "string" ? tag.trim() : "")).filter(Boolean))) : [];
     const safeSearch = typeof search === "string" ? search.trim().slice(0, 100) : "";
