@@ -17,11 +17,11 @@ AI Short는 오픈 소스 프로젝트로, 필요에 따라 웹사이트 제목,
   프로젝트의 사용 설명 및 소개 파일은 `docs` 디렉터리에 있습니다. 해당 디렉터리 내의 관련 파일을 열어 필요한 수정을 진행하세요.
 
 - **홈페이지 프롬프트 수정**
-  홈페이지 프롬프트는 `src/data/prompt.json` 파일에 저장됩니다. 특정 언어(예: 중국어)의 프롬프트를 수정해야 하는 경우 `src/data/prompt_zh.json` 파일을 직접 편집할 수 있습니다. 새 프롬프트를 추가할 때의 형식은 다음과 같습니다.
+  홈페이지 프롬프트는 `src/data/prompt.json` 파일에 저장됩니다. 특정 언어(예: 중국어)의 프롬프트를 수정해야 하는 경우 `src/data/prompt_es.json` 파일을 직접 편집할 수 있습니다. 새 프롬프트를 추가할 때의 형식은 다음과 같습니다.
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # `docusaurus.config.js` 파일의 `defaultLocale`을 업데이트한 다음 원하는 언어에 대한 빌드를 수행합니다.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # 여러 언어 배포
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Vercel 배포
@@ -115,7 +116,7 @@ yarn build --locale zh && yarn build --locale en
 
 1. 방금 배포한 Vercel 프로젝트에 들어가 **Settings**를 엽니다.
 2. **Build & Deployment** 섹션에서 **Build Command**를 찾아 오른쪽의 **Override**를 클릭합니다.
-3. 배포 명령을 수정합니다. 예를 들어 중국어 버전을 배포해야 하는 경우 `yarn build --locale zh`를 사용하고, 포르투갈어 버전을 배포해야 하는 경우 `yarn build --locale pt`를 사용합니다.
+3. 배포 명령을 수정합니다. 예를 들어 중국어 버전을 배포해야 하는 경우 `yarn build --locale zh-Hans`를 사용하고, 포르투갈어 버전을 배포해야 하는 경우 `yarn build --locale pt`를 사용합니다.
 
 ### Cloudflare Pages 배포
 
@@ -128,7 +129,7 @@ yarn build --locale zh && yarn build --locale en
 1. [Cloudflare Pages](https://pages.cloudflare.com/)에 로그인하고 **"Create a project"**를 선택합니다.
 2. 방금 포크한 저장소를 바인딩합니다.
 3. 빌드 명령을 구성합니다.
-   - **Build command**: `yarn build --locale zh` (배포할 언어에 따라 적절한 locale을 선택하세요. 예: 포르투갈어의 경우 `yarn build --locale pt` 사용).
+   - **Build command**: `yarn build --locale zh-Hans` (배포할 언어에 따라 적절한 locale을 선택하세요. 예: 포르투갈어의 경우 `yarn build --locale pt` 사용).
    - **Output directory**: `build`.
 4. **Deploy**를 클릭하고 Cloudflare Pages가 빌드 및 배포를 완료할 때까지 기다립니다.
 

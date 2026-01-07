@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # قم بتحديث `defaultLocale` في ملف `docusaurus.config.js`، ثم قم بالبناء للغة المطلوبة.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # النشر لعدة لغات
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### نشر Vercel
@@ -115,7 +116,7 @@ yarn build --locale zh && yarn build --locale en
 
 1. أدخل مشروع Vercel المنشور حديثًا وافتح **الإعدادات**.
 2. في قسم **البناء والنشر**، ابحث عن **أمر البناء**، وانقر فوق **تجاوز** على اليمين.
-3. قم بتعديل أمر النشر. على سبيل المثال، إذا كنت بحاجة إلى نشر النسخة الصينية، استخدم `yarn build --locale zh`؛ إذا كنت بحاجة إلى نشر النسخة العربية، استخدم `yarn build --locale ar`.
+3. قم بتعديل أمر النشر. على سبيل المثال، إذا كنت بحاجة إلى نشر النسخة الصينية، استخدم `yarn build --locale zh-Hans`؛ إذا كنت بحاجة إلى نشر النسخة العربية، استخدم `yarn build --locale ar`.
 
 ### نشر Cloudflare Pages
 
@@ -128,7 +129,7 @@ yarn build --locale zh && yarn build --locale en
 1. قم بتسجيل الدخول إلى [Cloudflare Pages](https://pages.cloudflare.com/)، واختر **"Create a project"**.
 2. اربط المستودع الذي قمت بعمل Fork له للتو.
 3. تكوين أمر البناء:
-   - **Build command**: `yarn build --locale zh` (اختر اللغة المناسبة للنشر، على سبيل المثال: استخدم `yarn build --locale ar` للعربية).
+   - **Build command**: `yarn build --locale zh-Hans` (اختر اللغة المناسبة للنشر، على سبيل المثال: استخدم `yarn build --locale ar` للعربية).
    - **Output directory**: `build`.
 4. انقر فوق **Deploy**، وانتظر حتى يكمل Cloudflare Pages البناء والنشر.
 

@@ -128,7 +128,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
 
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
   const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);

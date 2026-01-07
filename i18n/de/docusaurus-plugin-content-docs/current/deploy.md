@@ -17,11 +17,11 @@ AI Short ist ein Open-Source-Projekt, das es Ihnen ermöglicht, den Website-Tite
   Die Nutzungsanweisungen und Einführungsdateien des Projekts befinden sich im Verzeichnis `docs`. Öffnen Sie die entsprechenden Dateien in diesem Verzeichnis, um notwendige Änderungen vorzunehmen.
 
 - **Startseiten-Prompts ändern**
-  Startseiten-Prompts werden in der Datei `src/data/prompt.json` gespeichert. Wenn Sie Prompts für eine bestimmte Sprache, wie z.B. Chinesisch, ändern müssen, können Sie die Datei `src/data/prompt_zh.json` direkt bearbeiten. Beim Hinzufügen eines neuen Prompts ist das Format wie folgt:
+  Startseiten-Prompts werden in der Datei `src/data/prompt.json` gespeichert. Wenn Sie Prompts für eine bestimmte Sprache, wie z.B. Chinesisch, ändern müssen, können Sie die Datei `src/data/prompt_es.json` direkt bearbeiten. Beim Hinzufügen eines neuen Prompts ist das Format wie folgt:
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Aktualisieren Sie das `defaultLocale` in der Datei `docusaurus.config.js` und führen Sie dann einen Build für die gewünschte Sprache durch.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Bereitstellung für mehrere Sprachen
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Vercel-Bereitstellung
@@ -115,7 +116,7 @@ Klicken Sie auf die Schaltfläche unten, um ChatGPT-Shortcut mit einem Klick auf
 
 1. Betreten Sie das Vercel-Projekt, das Sie gerade bereitgestellt haben, und öffnen Sie **Settings**.
 2. Finden Sie im Abschnitt **Build & Deployment** den **Build Command** und klicken Sie rechts auf **Override**.
-3. Ändern Sie den Bereitstellungsbefehl. Wenn Sie beispielsweise die chinesische Version bereitstellen müssen, können Sie `yarn build --locale zh` verwenden; wenn Sie die portugiesische Version bereitstellen müssen, verwenden Sie `yarn build --locale pt`.
+3. Ändern Sie den Bereitstellungsbefehl. Wenn Sie beispielsweise die chinesische Version bereitstellen müssen, können Sie `yarn build --locale zh-Hans` verwenden; wenn Sie die portugiesische Version bereitstellen müssen, verwenden Sie `yarn build --locale pt`.
 
 ### Cloudflare Pages Bereitstellung
 
@@ -128,7 +129,7 @@ Bereitstellungsschritte:
 1. Melden Sie sich bei [Cloudflare Pages](https://pages.cloudflare.com/) an und wählen Sie **"Create a project"**.
 2. Binden Sie das Repository, das Sie gerade geforkt haben.
 3. Konfigurieren Sie die Build-Befehle:
-   - **Build command**: `yarn build --locale zh` (Wählen Sie das entsprechende Locale basierend auf der bereitzustellenden Sprache, z.B. für Portugiesisch verwenden Sie `yarn build --locale pt`).
+   - **Build command**: `yarn build --locale zh-Hans` (Wählen Sie das entsprechende Locale basierend auf der bereitzustellenden Sprache, z.B. für Portugiesisch verwenden Sie `yarn build --locale pt`).
    - **Output directory**: `build`.
 4. Klicken Sie auf **Deploy** und warten Sie, bis Cloudflare Pages den Build und die Bereitstellung abgeschlossen hat.
 

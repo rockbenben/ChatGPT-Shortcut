@@ -1,0 +1,1127 @@
+{
+  "validation.comment.required": {
+    "message": "請輸入評論內容"
+  },
+  "validation.comment.maxLength": {
+    "message": "評論內容不應超過 2000 個字元"
+  },
+  "placeholder.comment": {
+    "message": "在此輸入評論…… 支援使用 Markdown 和 HTML 語法"
+  },
+  "action.reply": {
+    "message": "回覆"
+  },
+  "validation.replyRequired": {
+    "message": "請輸入回覆內容"
+  },
+  "label.comments": {
+    "message": "評論"
+  },
+  "message.noComments": {
+    "message": "暫無評論，成為第一個評論者吧！"
+  },
+  "level.diamond": {
+    "message": "鑽石傳說"
+  },
+  "level.platinum": {
+    "message": "白金大師"
+  },
+  "level.gold": {
+    "message": "黃金專家"
+  },
+  "level.silver": {
+    "message": "白銀精英"
+  },
+  "level.bronze": {
+    "message": "青銅新星"
+  },
+  "level.newcomer": {
+    "message": "萌新探索者"
+  },
+  "level.diamond.desc": {
+    "message": "頂級貢獻者，社群傳奇！"
+  },
+  "level.platinum.desc": {
+    "message": "資深專家，影響力非凡！"
+  },
+  "level.gold.desc": {
+    "message": "經驗豐富，值得信賴！"
+  },
+  "level.silver.desc": {
+    "message": "活躍貢獻者，持續成長中！"
+  },
+  "level.bronze.desc": {
+    "message": "已邁出第一步，繼續加油！"
+  },
+  "level.newcomer.desc": {
+    "message": "分享第一個提示詞，開啟創作之旅！"
+  },
+  "prompt.private": {
+    "message": "私密"
+  },
+  "action.close": {
+    "message": "關閉"
+  },
+  "prompt.content": {
+    "message": "Prompt 內容"
+  },
+  "message.copied": {
+    "message": "複製成功"
+  },
+  "action.copy": {
+    "message": "複製"
+  },
+  "prompt.description": {
+    "message": "描述"
+  },
+  "action.viewDetails": {
+    "message": "查看詳情"
+  },
+  "label.commentInfo": {
+    "message": "請在下方回覆您對本提示詞的意見、想法或分享。"
+  },
+  "homepage.slogan": {
+    "message": "精選 AI 提示詞，讓每次對話更高效"
+  },
+  "homepage.title": {
+    "message": "AiShort - AI 提示詞庫 | 精選 Prompt 範本，即刻提升 AI 效率"
+  },
+  "homepage.description": {
+    "message": "AI 總是答非所問？AiShort 收錄論文寫作、程式設計、翻譯等場景的實用 Prompt 範本，一鍵複製即可讓 AI 精準理解指令，工作效率倍增！"
+  },
+  "community.title": {
+    "message": "AI 提示詞社群 | 發現與分享優質 Prompt - AiShort 創作平台"
+  },
+  "community.description": {
+    "message": "想要更多實戰驗證的 AI 提示詞？加入 AiShort 社群，發現使用者分享的實用範本，交流最佳化技巧，共建高品質 Prompt 資源庫。"
+  },
+  "showcase.tag.write.label": {
+    "message": "寫作輔助"
+  },
+  "showcase.tag.write.description": {
+    "message": "潤飾文章語法、最佳化表達風格、提升寫作品質"
+  },
+  "showcase.tag.article.label": {
+    "message": "文章/報告"
+  },
+  "showcase.tag.article.description": {
+    "message": "生成小說、論文、新聞稿、劇本、研究報告等各類文章"
+  },
+  "showcase.tag.code.label": {
+    "message": "IT/程式設計"
+  },
+  "showcase.tag.code.description": {
+    "message": "提供程式設計建議、程式碼範例、除錯方案和技術指導"
+  },
+  "showcase.tag.ai.label": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "人工智慧相關的提示詞和應用場景"
+  },
+  "showcase.tag.living.label": {
+    "message": "生活品質"
+  },
+  "showcase.tag.living.description": {
+    "message": "健身指導、營養建議、烹飪技巧、美妝造型等生活服務"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "趣味科普"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "有趣的冷知識、科普內容和趣味問答"
+  },
+  "showcase.tag.life.label": {
+    "message": "生活百科"
+  },
+  "showcase.tag.life.description": {
+    "message": "日常生活中的實用知識和問題解決方案"
+  },
+  "showcase.tag.social.label": {
+    "message": "心理/社交"
+  },
+  "showcase.tag.social.description": {
+    "message": "心理諮詢、情感分析、社交技巧和人際溝通"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "哲學/宗教"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "哲學思考、宗教文化和人生智慧探討"
+  },
+  "showcase.tag.mind.label": {
+    "message": "思維訓練"
+  },
+  "showcase.tag.mind.description": {
+    "message": "激發創意、批判性思考和邏輯推理能力"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "教育/學生"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "學習輔導、作業幫助、考試準備等學生相關內容"
+  },
+  "showcase.tag.academic.label": {
+    "message": "學術/教師"
+  },
+  "showcase.tag.academic.description": {
+    "message": "學術研究、教學設計、課程規劃等教師工作支援"
+  },
+  "showcase.tag.games.label": {
+    "message": "趣味遊戲"
+  },
+  "showcase.tag.games.description": {
+    "message": "文字遊戲、角色扮演和互動娛樂"
+  },
+  "showcase.tag.tool.label": {
+    "message": "效率工具"
+  },
+  "showcase.tag.tool.description": {
+    "message": "提升工作效率的實用工具"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "終端機/直譯器"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "模擬命令列終端機和各類程式語言直譯器"
+  },
+  "showcase.tag.language.label": {
+    "message": "語言/翻譯"
+  },
+  "showcase.tag.language.description": {
+    "message": "多語言翻譯、語言學習、文本轉換和語言識別"
+  },
+  "showcase.tag.speech.label": {
+    "message": "辯論/演講"
+  },
+  "showcase.tag.speech.description": {
+    "message": "辯論技巧、演講稿撰寫和口才訓練"
+  },
+  "showcase.tag.comments.label": {
+    "message": "點評/評鑒"
+  },
+  "showcase.tag.comments.description": {
+    "message": "專業點評、作品評價和鑒賞分析"
+  },
+  "showcase.tag.text.label": {
+    "message": "文本/詞語"
+  },
+  "showcase.tag.text.description": {
+    "message": "文本處理、詞語解析和語言文字相關任務"
+  },
+  "showcase.tag.company.label": {
+    "message": "企業職能"
+  },
+  "showcase.tag.company.description": {
+    "message": "企業管理、人力資源、市場行銷等職能崗位"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "搜尋引擎最佳化、關鍵詞拓展和內容行銷"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "醫療健康"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "健康諮詢、疾病科普和醫療建議"
+  },
+  "showcase.tag.finance.label": {
+    "message": "金融顧問"
+  },
+  "showcase.tag.finance.description": {
+    "message": "投資理財、金融分析和財務規劃建議"
+  },
+  "showcase.tag.music.label": {
+    "message": "音樂藝術"
+  },
+  "showcase.tag.music.description": {
+    "message": "音樂創作、樂理學習和作品鑒賞"
+  },
+  "showcase.tag.professional.label": {
+    "message": "專業顧問"
+  },
+  "showcase.tag.professional.description": {
+    "message": "律師、會計師、諮詢師等專業領域顧問"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "使用者分享"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "社群使用者分享的優質提示詞"
+  },
+  "message.addFavorite.success": {
+    "message": "已添加到收藏"
+  },
+  "message.addFavorite.error": {
+    "message": "收藏失敗，請稍後重試"
+  },
+  "message.removeFavorite.error": {
+    "message": "移除收藏失敗，請稍後重試"
+  },
+  "message.removeFavorite.success": {
+    "message": "已取消收藏"
+  },
+  "message.removeFavorite.confirm.title": {
+    "message": "移除收藏"
+  },
+  "message.removeFavorite.confirm.content": {
+    "message": "確定要取消收藏這個提示詞嗎？"
+  },
+  "button.confirm": {
+    "message": "確認清除"
+  },
+  "action.cancel": {
+    "message": "取消"
+  },
+  "message.addPrompt.success": {
+    "message": "提示詞提交成功！"
+  },
+  "message.addPrompt.error": {
+    "message": "提示詞提交失敗，請稍後重試"
+  },
+  "message.updatePrompt.success": {
+    "message": "提示詞更新成功！"
+  },
+  "message.updatePrompt.error": {
+    "message": "提示詞更新失敗，請稍後重試"
+  },
+  "message.deletePrompt.success": {
+    "message": "提示詞刪除成功！"
+  },
+  "message.deletePrompt.error": {
+    "message": "提示詞刪除失敗，請稍後重試"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "確認刪除"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "您確定要刪除該提示詞嗎？"
+  },
+  "link.home": {
+    "message": "首頁"
+  },
+  "link.communityPrompts": {
+    "message": "社群提示詞"
+  },
+  "field.id": {
+    "message": "發佈時間"
+  },
+  "field.upvoteDifference": {
+    "message": "支持度"
+  },
+  "order.descending": {
+    "message": "降冪"
+  },
+  "order.ascending": {
+    "message": "升冪"
+  },
+  "info.communityPrompts": {
+    "message": "本頁面提示詞由網友分享上傳。我們不對內容的準確性、品質或完整性做出保證，也不承擔因內容引發的法律責任。如發現侵權或其他問題，請聯繫我們處理。"
+  },
+  "feedback.title": {
+    "message": "反饋與建議"
+  },
+  "feedback.description": {
+    "message": "您的反饋對我們很重要！"
+  },
+  "feedback.welcome": {
+    "message": "歡迎提出反饋"
+  },
+  "feedback.subtitle": {
+    "message": "您的每一份貢獻，都在讓這個開源專案變得更好"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut 是一款開源的提示詞管理工具，致力於提升 AI 使用效率。我們熱切期待您的參與：無論是反饋 Bug、提出功能建議，還是分享優質的提示詞（Prompt）。對於提示詞投稿，我們支援多種語言，一經採納將被收錄並署名（支援使用者名稱搜尋）。您的每一份貢獻，都能幫助社群成員拓展思維、提升生產力。讓我們共同打造更完美的提示詞庫！"
+  },
+  "showcase.filters.title": {
+    "message": "Filters"
+  },
+  "action.hideTags": {
+    "message": "隱藏標籤"
+  },
+  "action.showTags": {
+    "message": "顯示標籤"
+  },
+  "showcase.favoritesList.title": {
+    "message": "Favorites"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "All prompts"
+  },
+  "myCollection.header.title": {
+    "message": "我的收藏"
+  },
+  "myCollection.header.subtitle": {
+    "message": "管理您建立的提示詞、收藏的內容和自訂標籤"
+  },
+  "myCollection.stats.total": {
+    "message": "總計"
+  },
+  "myCollection.stats.prompts": {
+    "message": "我的提示詞"
+  },
+  "myCollection.stats.favorites": {
+    "message": "收藏"
+  },
+  "myCollection.stats.tags": {
+    "message": "自訂標籤"
+  },
+  "validation.password.match": {
+    "message": "兩次輸入的密碼不一致！"
+  },
+  "message.resetPassword.success": {
+    "message": "密碼重置成功！"
+  },
+  "message.resetPassword.error": {
+    "message": "密碼重置失敗，請稍後重試"
+  },
+  "input.newPassword": {
+    "message": "請輸入新密碼！"
+  },
+  "validation.password.length": {
+    "message": "密碼長度至少為 6 個字元"
+  },
+  "button.resetPassword": {
+    "message": "重置密碼"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "重置代碼"
+  },
+  "input.resetPassword.code": {
+    "message": "請輸入您的重置代碼！"
+  },
+  "placeholder.newPassword": {
+    "message": "新密碼"
+  },
+  "placeholder.confirmPassword": {
+    "message": "確認新密碼"
+  },
+  "validation.confirmPassword.required": {
+    "message": "請確認新密碼！"
+  },
+  "comment.add": {
+    "message": "提交評論"
+  },
+  "button.login": {
+    "message": "登入"
+  },
+  "input.search.placeholder": {
+    "message": "搜尋提示詞……"
+  },
+  "showcase.usersList.noResult": {
+    "message": "找不到相關結果，請嘗試縮短搜尋詞"
+  },
+  "action.removeFavorite": {
+    "message": "點擊移除收藏"
+  },
+  "common.favorites": {
+    "message": "收藏"
+  },
+  "action.upvote": {
+    "message": "讚"
+  },
+  "action.downvote": {
+    "message": "倒讚"
+  },
+  "unavailable.unshared": {
+    "message": "原作者已取消分享"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "原作者已取消分享且無本地快取"
+  },
+  "action.convertToPrivate": {
+    "message": "轉為私有"
+  },
+  "action.edit": {
+    "message": "編輯"
+  },
+  "action.delete": {
+    "message": "刪除"
+  },
+  "validation.username.required": {
+    "message": "請輸入使用者名稱或註冊電子信箱！"
+  },
+  "validation.password.required": {
+    "message": "請輸入密碼！"
+  },
+  "validation.email.required": {
+    "message": "請輸入您的電子信箱！"
+  },
+  "validation.email.invalid": {
+    "message": "請輸入有效的電子信箱地址！"
+  },
+  "message.error": {
+    "message": "處理錯誤時發生錯誤"
+  },
+  "message.success.login": {
+    "message": "登入成功！"
+  },
+  "message.success.register": {
+    "message": "註冊成功！"
+  },
+  "message.success.forgotPassword": {
+    "message": "密碼重置郵件已發送！"
+  },
+  "message.error.forgotPassword": {
+    "message": "發送密碼重置郵件失敗，請稍後重試"
+  },
+  "message.success.passwordlessLink": {
+    "message": "免密碼登入連結已發送到您的電子信箱！"
+  },
+  "message.error.passwordlessLink": {
+    "message": "發送失敗，請檢查電子信箱或使用者名稱"
+  },
+  "login.method.password": {
+    "message": "密碼登入"
+  },
+  "login.method.code": {
+    "message": "免密登入"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "使用者名稱/電子信箱"
+  },
+  "placeholder.password": {
+    "message": "密碼"
+  },
+  "action.forgotPassword": {
+    "message": "忘記密碼？"
+  },
+  "action.login": {
+    "message": "直接登入"
+  },
+  "login.passwordless.info": {
+    "message": "登入連結將發送至您的電子信箱，點擊即可登入"
+  },
+  "action.sendLink": {
+    "message": "獲取登入連結"
+  },
+  "login.register.prompt": {
+    "message": "還沒有賬號？"
+  },
+  "action.register": {
+    "message": "註冊"
+  },
+  "placeholder.username": {
+    "message": "使用者名稱"
+  },
+  "placeholder.email": {
+    "message": "電子信箱"
+  },
+  "validation.agreement.required": {
+    "message": "使用前須同意服務條款和隱私政策"
+  },
+  "label.agree": {
+    "message": "同意"
+  },
+  "link.terms": {
+    "message": "服務條款"
+  },
+  "link.privacy": {
+    "message": "隱私政策"
+  },
+  "login.login.prompt": {
+    "message": "已有賬號？"
+  },
+  "action.sendResetEmail": {
+    "message": "發送重置郵件"
+  },
+  "action.backToLogin": {
+    "message": "返回登入"
+  },
+  "login.title.welcome": {
+    "message": "歡迎回來"
+  },
+  "login.title.register": {
+    "message": "加入社群"
+  },
+  "login.title.forgotPassword": {
+    "message": "找回密碼"
+  },
+  "login.subtitle.welcome": {
+    "message": "登入探索更多優質提示詞"
+  },
+  "login.subtitle.register": {
+    "message": "發現、分享和創造精彩提示詞"
+  },
+  "login.subtitle.forgotPassword": {
+    "message": "重置連結將發送至您的電子信箱"
+  },
+  "myspace.filter.all": {
+    "message": "全部"
+  },
+  "myspace.filter.prompts": {
+    "message": "提示詞"
+  },
+  "myspace.filter.favorites": {
+    "message": "收藏"
+  },
+  "myspace.manageTags": {
+    "message": "管理標籤"
+  },
+  "myspace.search.placeholder": {
+    "message": "搜尋我的空間..."
+  },
+  "myspace.tagManager.title": {
+    "message": "管理自訂標籤"
+  },
+  "action.save": {
+    "message": "保存"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "標籤名稱"
+  },
+  "action.add": {
+    "message": "添加"
+  },
+  "myspace.tagManager.empty": {
+    "message": "暫無自訂標籤"
+  },
+  "message.orderSaved": {
+    "message": "排列已保存"
+  },
+  "message.orderSaveFailed": {
+    "message": "排列保存失敗"
+  },
+  "message.tagsUpdated": {
+    "message": "標籤已更新"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "標籤更新失敗"
+  },
+  "message.convertToPrivate.success": {
+    "message": "已轉為私有提示詞"
+  },
+  "message.convertToPrivate.error": {
+    "message": "轉換失敗，請稍後重試"
+  },
+  "message.noSpaceItems": {
+    "message": "暫無內容，請添加提示詞或收藏。"
+  },
+  "message.noPrompts": {
+    "message": "尚未提交任何提示詞，請添加提示詞。"
+  },
+  "message.noFavorites": {
+    "message": "尚未收藏任何提示詞，請添加收藏。"
+  },
+  "myspace.assignTag": {
+    "message": "分配標籤"
+  },
+  "link.myaccount": {
+    "message": "我的賬戶"
+  },
+  "button.logout": {
+    "message": "登出"
+  },
+  "message.logout.confirm.title": {
+    "message": "確認登出"
+  },
+  "message.logout.confirm.content": {
+    "message": "確定要登出嗎？"
+  },
+  "nav.explore": {
+    "message": "提示詞庫"
+  },
+  "nav.myCollection": {
+    "message": "我的收藏"
+  },
+  "link.addprompt": {
+    "message": "添加提示詞"
+  },
+  "button.settings": {
+    "message": "設定"
+  },
+  "showcase.header.button": {
+    "message": "分享你的提示詞"
+  },
+  "message.export.noPrompts": {
+    "message": "暫無提示詞可匯出"
+  },
+  "message.export.success": {
+    "message": "提示詞匯出成功！"
+  },
+  "message.export.error": {
+    "message": "匯出失敗，請稍後重試"
+  },
+  "message.cache.cleared": {
+    "message": "快取已清除，數據已更新"
+  },
+  "message.cache.clearError": {
+    "message": "清除快取失敗"
+  },
+  "message.import.invalid": {
+    "message": "無效的數據格式"
+  },
+  "message.import.success": {
+    "message": "匯入成功！"
+  },
+  "message.import.partial": {
+    "message": "部分匯入成功"
+  },
+  "message.import.failed": {
+    "message": "匯入失敗"
+  },
+  "message.import.parseError": {
+    "message": "JSON 解析失敗，請檢查檔案格式"
+  },
+  "message.success.passwordChanged": {
+    "message": "密碼修改成功！"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "密碼修改失敗，請稍後重試"
+  },
+  "link.myAccount": {
+    "message": "使用者中心"
+  },
+  "title.userInfo": {
+    "message": "使用者資訊"
+  },
+  "stat.sharedPrompts": {
+    "message": "已分享提示詞"
+  },
+  "progress.toNextLevel": {
+    "message": "距離下一等級"
+  },
+  "progress.encourage": {
+    "message": "繼續分享，解鎖更高等級！"
+  },
+  "level.max.congrats": {
+    "message": "恭喜達成最高等級！你是社群的傳奇貢獻者！"
+  },
+  "title.security": {
+    "message": "安全設定"
+  },
+  "modal.forgotPassword.title": {
+    "message": "忘記密碼"
+  },
+  "message.forgotPassword.info": {
+    "message": "我們會向您的註冊電子信箱發送一封包含重置連結的郵件。"
+  },
+  "placeholder.currentPassword": {
+    "message": "當前密碼"
+  },
+  "validation.currentPassword.required": {
+    "message": "請輸入當前密碼！"
+  },
+  "action.changePassword": {
+    "message": "修改密碼"
+  },
+  "title.dataManagement": {
+    "message": "數據管理"
+  },
+  "button.exportPrompts": {
+    "message": "匯出提示詞"
+  },
+  "description.exportPrompts.short": {
+    "message": "匯出為 JSON 檔案，方便備份"
+  },
+  "button.export": {
+    "message": "匯出數據"
+  },
+  "button.importPrompts": {
+    "message": "匯入提示詞"
+  },
+  "description.importPrompts.short": {
+    "message": "從 JSON 檔案匯入提示詞和收藏"
+  },
+  "button.import": {
+    "message": "匯入數據"
+  },
+  "button.clearCache": {
+    "message": "清除快取"
+  },
+  "description.clearCache.short": {
+    "message": "重新整理本地快取數據"
+  },
+  "modal.clearCache.title": {
+    "message": "確認清除快取？"
+  },
+  "modal.clearCache.content": {
+    "message": "系統使用 ETag 技術自動管理快取，通常無需手動清除。"
+  },
+  "modal.clearCache.warning": {
+    "message": "清除後將重新加載所有數據。"
+  },
+  "button.clearAllCache": {
+    "message": "清除所有快取"
+  },
+  "placeholder.promptContent": {
+    "message": "在此輸入詳細的提示詞內容..."
+  },
+  "prompt.tokenDanger": {
+    "message": "提示詞過長，強烈建議拆分為多個 Prompt"
+  },
+  "prompt.tokenWarning": {
+    "message": "提示詞較長，建議精簡或拆分"
+  },
+  "action.addPrompt": {
+    "message": "添加 Prompt"
+  },
+  "modal.editPrompt.title": {
+    "message": "更新當前 Prompt"
+  },
+  "action.updatePrompt": {
+    "message": "更新 Prompt"
+  },
+  "label.promptTitle": {
+    "message": "提示詞名稱"
+  },
+  "validation.promptTitle.required": {
+    "message": "請輸入提示詞標題！"
+  },
+  "placeholder.promptTitle": {
+    "message": "給你的提示詞起個名字"
+  },
+  "label.promptContent": {
+    "message": "提示詞內容"
+  },
+  "validation.promptContent.required": {
+    "message": "請輸入提示詞內容！"
+  },
+  "label.promptRemark": {
+    "message": "作用/用途"
+  },
+  "placeholder.promptRemark": {
+    "message": "簡要描述提示詞的作用（選填）"
+  },
+  "label.promptNotes": {
+    "message": "備註說明"
+  },
+  "label.promptNotes.description": {
+    "message": "您可以在此提供提示詞來源、其他語言版本或拓展說明。"
+  },
+  "placeholder.promptNotes": {
+    "message": "關於此提示詞的額外說明（選填）"
+  },
+  "label.sharePrompt": {
+    "message": "是否願意將該提示詞分享到公開頁面？"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "此頁已當機。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到頂部",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "歷史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "歷史文章",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "部落格文章列表分頁導覽",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "較新的文章",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "較舊的文章",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "部落格文章分頁導覽",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "較新一篇",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "較舊一篇",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "檢視所有標籤",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "淺色模式",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "深色模式",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "切換淺色/深色模式（當前為{mode}）",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 個項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "頁面路徑",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文件選項卡",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一頁",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一頁",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count} 篇文件帶有標籤",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged}「{tagName}」",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "此為 {siteTitle} {versionLabel} 版尚未發行的文件。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "此為 {siteTitle} {versionLabel} 版的文件，現已不再積極維護。",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新的文件請參閱 {latestVersionLink} ({versionLabel})。",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新版本",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "編輯此頁",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接連結",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "於 {date} ",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "由 {user} ",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最後{byUser}{atDate}更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到頁面",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "選擇版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "標籤：",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "關閉",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "警告",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危險",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "資訊",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "備註",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "提示",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "注意",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近部落格文章導覽",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展開側邊欄分類 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "收起側邊欄分類 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NotFound.p1": {
+    "message": "我們沒有您要找的頁面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "請聯絡原始連結來源網站的所有者，並通知他們連結已毀損。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主導航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "選擇語言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本頁導覽",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "閱讀時間約 {readingTime} 分鐘",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "閱讀更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "閱讀 {title} 全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切換自動換行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "複製",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "複製成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "複製程式碼至剪貼簿",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主頁面",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "收起側邊欄",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "收起側邊欄",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文件側邊欄",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "關閉導覽列",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主選單",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切換導覽列",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "展開側邊欄",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "展開側邊欄",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count} 篇文章",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} 含有標籤「{tagName}」",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "作者列表",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "檢視所有作者",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "此作者尚未撰寫任何文章。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出頁",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此頁面未列出。搜索引擎不會對其索引，只有擁有直接連結的用戶才能訪問。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿頁",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此頁面為草稿，僅在開發環境中可見，不會包含於正式版本中。",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重試",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳至主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "標籤",
+    "description": "The title of the tag list page"
+  }
+}

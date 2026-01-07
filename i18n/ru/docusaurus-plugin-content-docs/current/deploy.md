@@ -17,11 +17,11 @@ AI Short — это проект с открытым исходным кодом
   Инструкции по использованию и файлы введения в проект находятся в директории `docs`. Откройте соответствующие файлы в этой директории, чтобы внести необходимые изменения.
 
 - **Изменить подсказки на главной странице**
-  Подсказки на главной странице хранятся в файле `src/data/prompt.json`. Если вам нужно изменить подсказки для определенного языка, например китайского, вы можете напрямую отредактировать файл `src/data/prompt_zh.json`. При добавлении новой подсказки формат следующий:
+  Подсказки на главной странице хранятся в файле `src/data/prompt.json`. Если вам нужно изменить подсказки для определенного языка, например китайского, вы можете напрямую отредактировать файл `src/data/prompt_es.json`. При добавлении новой подсказки формат следующий:
 
   ```json
   {
-    "zh": {
+    "es": {
       "title": "custom prompt",
       "prompt": "custom prompt",
       "description": "custom description",
@@ -87,7 +87,8 @@ yarn start
 yarn build
 
 # Обновите `defaultLocale` в файле `docusaurus.config.js`, затем выполните сборку для желаемого языка.
-yarn build --locale zh
+yarn build --locale zh-Hans
+yarn build --locale zh-Hant
 yarn build --locale en
 yarn build --locale ja
 yarn build --locale ko
@@ -102,7 +103,7 @@ yarn build --locale ar
 yarn build --locale bn
 
 # Развертывание для нескольких языков
-yarn build --locale zh && yarn build --locale en
+yarn build --locale zh-Hans && yarn build --locale en
 ```
 
 ### Развертывание на Vercel
@@ -115,7 +116,7 @@ yarn build --locale zh && yarn build --locale en
 
 1. Войдите в проект Vercel, который вы только что развернули, и откройте **Settings**.
 2. В разделе **Build & Deployment** найдите **Build Command**, затем нажмите **Override** справа.
-3. Измените команду развертывания. Например, если вам нужно развернуть китайскую версию, вы можете использовать `yarn build --locale zh`; если вам нужно развернуть португальскую версию, используйте `yarn build --locale pt`.
+3. Измените команду развертывания. Например, если вам нужно развернуть китайскую версию, вы можете использовать `yarn build --locale zh-Hans`; если вам нужно развернуть португальскую версию, используйте `yarn build --locale pt`.
 
 ### Развертывание на Cloudflare Pages
 
@@ -128,7 +129,7 @@ yarn build --locale zh && yarn build --locale en
 1. Войдите в [Cloudflare Pages](https://pages.cloudflare.com/) и выберите **"Create a project"**.
 2. Привяжите репозиторий, который вы только что форкнули.
 3. Настройте команды сборки:
-   - **Build command**: `yarn build --locale zh` (Выберите подходящую локаль в зависимости от языка развертывания, например: для португальского используйте `yarn build --locale pt`).
+   - **Build command**: `yarn build --locale zh-Hans` (Выберите подходящую локаль в зависимости от языка развертывания, например: для португальского используйте `yarn build --locale pt`).
    - **Output directory**: `build`.
 4. Нажмите **Deploy** и дождитесь завершения сборки и развертывания Cloudflare Pages.
 
