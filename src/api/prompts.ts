@@ -19,6 +19,7 @@ import {
   needsCacheExtension,
 } from "@site/src/utils/cache";
 import { clearMySpaceCache } from "./myspace";
+import { fetchCardsByIds } from "./homepage";
 
 /**
  * Batch fetch prompts by IDs with ETag conditional request support
@@ -58,7 +59,6 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   // === Cards: Use local JSON data with lscache caching ===
   // This avoids API calls and uses the same cached prompt_*.json as search/filter
   if (safeType === "cards") {
-    const { fetchCardsByIds } = await import("./homepage");
     return fetchCardsByIds(normalizedIds, sanitizedLang);
   }
 
