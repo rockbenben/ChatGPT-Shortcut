@@ -262,11 +262,12 @@ export const extendCacheIfNeeded = (key, ttlMinutes) => {
 export const cleanupLegacyCache = () => {
   if (!canUseCache()) return;
 
-  const CLEANUP_FLAG = "lscache_cleanup_v1";
+  const CLEANUP_FLAG = "lscache_cleanup_v2";
   if (localStorage.getItem(CLEANUP_FLAG)) return;
 
   // 需要删除的废弃缓存前缀（黑名单）
   const LEGACY_PREFIXES = [
+    "prompt_data_zh", // 旧版中文数据缓存
     "comments_page_", // 旧版评论缓存
     "findCardsWithTags_", // 旧版搜索缓存
     "cards_", // 旧版卡片缓存

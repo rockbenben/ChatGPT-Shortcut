@@ -35,8 +35,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is English, you
   // may want to replace "zh" with "en".
   i18n: {
-    defaultLocale: "zh",
-    locales: ["en", "zh", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
+    defaultLocale: "zh-Hans",
+    locales: ["en", "zh-Hans", "zh-Hant", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
     localeConfigs: {
       ar: {
         direction: "rtl",

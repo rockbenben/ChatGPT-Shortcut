@@ -35,8 +35,8 @@ import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 
 // SSG: 静态导入默认数据，构建时嵌入，避免客户端加载 CLS
-import defaultFavorData from "@site/src/data/default/favor_zh.json";
-import defaultOtherData from "@site/src/data/default/other_zh.json";
+import defaultFavorData from "@site/src/data/default/favor_zh-Hans.json";
+import defaultOtherData from "@site/src/data/default/other_zh-Hans.json";
 
 const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
@@ -128,7 +128,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
 
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
   const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);

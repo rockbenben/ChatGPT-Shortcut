@@ -45,8 +45,8 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
     height: "100%",
   };
 
-  const currentLanguage = i18n.currentLocale.split("-")[0];
-  const itemData = user[currentLanguage] || user["zh"] || user["en"];
+  const currentLanguage = i18n.currentLocale;
+  const itemData = user[currentLanguage] || user["zh-Hans"] || user["en"];
   const isDataCard = !!(itemData && itemData.title);
 
   // Map data based on card type

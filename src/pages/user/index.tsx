@@ -38,7 +38,7 @@ const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
   const { message, modal } = App.useApp();
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
 
   const [userInfo, setUserInfo] = useState<any>(null);
   const [userLoading, setUserLoading] = useState(true);
@@ -111,7 +111,7 @@ const UserProfile = () => {
       // favoriteDetails: 详细内容供用户查看（导入时忽略）
       const favoriteDetails = [
         ...cardFavoritesData.map((p: any) => {
-          const langData = p[currentLanguage] || p["zh"] || p["en"] || {};
+          const langData = p[currentLanguage] || p["zh-Hans"] || p["en"] || {};
           return {
             id: p.id,
             source: "card" as const,

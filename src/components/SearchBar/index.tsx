@@ -42,7 +42,7 @@ function readSearchName(search: string) {
 export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompts" = "default") {
   const location = useLocation<UserState>();
   const { i18n } = useDocusaurusContext();
-  const currentLanguage = i18n.currentLocale.split("-")[0];
+  const currentLanguage = i18n.currentLocale;
   const [operator, setOperator] = useState<Operator>("OR");
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
