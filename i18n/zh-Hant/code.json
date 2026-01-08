@@ -71,9 +71,6 @@
   "action.copy": {
     "message": "複製"
   },
-  "prompt.description": {
-    "message": "描述"
-  },
   "action.viewDetails": {
     "message": "查看詳情"
   },

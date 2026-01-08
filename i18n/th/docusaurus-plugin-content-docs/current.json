@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "ถัดไป",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.使用指南": {
+    "message": "คู่มือการใช้งาน",
+    "description": "The label for category '使用指南' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.浏览器插件": {
+    "message": "ส่วนขยายเบราว์เซอร์",
+    "description": "The label for category '浏览器插件' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Policies": {
+    "message": "นโยบาย",
+    "description": "The label for category 'Policies' in sidebar 'docs'"
+  }
+}

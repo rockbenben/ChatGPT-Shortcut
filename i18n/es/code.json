@@ -898,9 +898,6 @@
   "prompt.content": {
     "message": "Contenido del Prompt"
   },
-  "prompt.description": {
-    "message": "Descripción"
-  },
   "action.viewDetails": {
     "message": "Ver detalles"
   },

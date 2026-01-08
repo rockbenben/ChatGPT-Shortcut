@@ -898,9 +898,6 @@
   "prompt.content": {
     "message": "प्रॉम्प्ट सामग्री"
   },
-  "prompt.description": {
-    "message": "विवरण"
-  },
   "action.viewDetails": {
     "message": "विवरण देखें"
   },

@@ -902,9 +902,6 @@
   "prompt.content": {
     "message": "프롬프트 내용"
   },
-  "prompt.description": {
-    "message": "설명"
-  },
   "action.viewDetails": {
     "message": "상세 보기"
   },

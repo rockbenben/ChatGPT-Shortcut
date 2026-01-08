@@ -1,0 +1,1124 @@
+{
+  "validation.comment.required": {
+    "message": "Silakan masukkan konten komentar"
+  },
+  "validation.comment.maxLength": {
+    "message": "Konten komentar tidak boleh melebihi 2000 karakter"
+  },
+  "placeholder.comment": {
+    "message": "Masukkan komentar di sini... Mendukung sintaks Markdown dan HTML"
+  },
+  "action.reply": {
+    "message": "Balas"
+  },
+  "validation.replyRequired": {
+    "message": "Silakan masukkan konten balasan"
+  },
+  "label.comments": {
+    "message": "Komentar"
+  },
+  "message.noComments": {
+    "message": "Belum ada komentar, jadilah yang pertama berkomentar!"
+  },
+  "level.diamond": {
+    "message": "Legenda Berlian"
+  },
+  "level.platinum": {
+    "message": "Master Platinum"
+  },
+  "level.gold": {
+    "message": "Ahli Emas"
+  },
+  "level.silver": {
+    "message": "Elit Perak"
+  },
+  "level.bronze": {
+    "message": "Bintang Baru Perunggu"
+  },
+  "level.newcomer": {
+    "message": "Penjelajah Pemula"
+  },
+  "level.diamond.desc": {
+    "message": "Kontributor tingkat atas, legenda komunitas!"
+  },
+  "level.platinum.desc": {
+    "message": "Pakar senior, pengaruh luar biasa!"
+  },
+  "level.gold.desc": {
+    "message": "Berpengalaman, dapat dipercaya!"
+  },
+  "level.silver.desc": {
+    "message": "Kontributor aktif, terus bertumbuh!"
+  },
+  "level.bronze.desc": {
+    "message": "Sudah mengambil langkah pertama, terus semangat!"
+  },
+  "level.newcomer.desc": {
+    "message": "Bagikan Prompt pertama, mulai perjalanan kreasi!"
+  },
+  "prompt.private": {
+    "message": "Pribadi"
+  },
+  "action.close": {
+    "message": "Tutup"
+  },
+  "prompt.content": {
+    "message": "Konten Prompt"
+  },
+  "message.copied": {
+    "message": "Berhasil disalin"
+  },
+  "action.copy": {
+    "message": "Salin"
+  },
+  "action.viewDetails": {
+    "message": "Lihat Detail"
+  },
+  "label.commentInfo": {
+    "message": "Silakan balas di bawah dengan pendapat, pemikiran, atau berbagi Anda tentang prompt ini."
+  },
+  "message.addFavorite.success": {
+    "message": "Ditambahkan ke favorit"
+  },
+  "message.addFavorite.error": {
+    "message": "Gagal menambahkan ke favorit, silakan coba lagi nanti"
+  },
+  "message.removeFavorite.error": {
+    "message": "Gagal menghapus dari favorit, silakan coba lagi nanti"
+  },
+  "message.removeFavorite.success": {
+    "message": "Dihapus dari favorit"
+  },
+  "message.removeFavorite.confirm.title": {
+    "message": "Hapus Favorit"
+  },
+  "message.removeFavorite.confirm.content": {
+    "message": "Yakin ingin menghapus prompt ini dari favorit?"
+  },
+  "button.confirm": {
+    "message": "Konfirmasi"
+  },
+  "action.cancel": {
+    "message": "Batal"
+  },
+  "message.addPrompt.success": {
+    "message": "Prompt berhasil dikirim!"
+  },
+  "message.addPrompt.error": {
+    "message": "Gagal mengirim prompt, silakan coba lagi nanti"
+  },
+  "message.updatePrompt.success": {
+    "message": "Prompt berhasil diperbarui!"
+  },
+  "message.updatePrompt.error": {
+    "message": "Gagal memperbarui prompt, silakan coba lagi nanti"
+  },
+  "message.deletePrompt.success": {
+    "message": "Prompt berhasil dihapus!"
+  },
+  "message.deletePrompt.error": {
+    "message": "Gagal menghapus prompt, silakan coba lagi nanti"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "Konfirmasi Hapus"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "Yakin ingin menghapus prompt ini?"
+  },
+  "homepage.slogan": {
+    "message": "Prompt AI pilihan untuk percakapan yang lebih efisien"
+  },
+  "homepage.title": {
+    "message": "AiShort - Perpustakaan Prompt AI | Prompt Pilihan untuk Meningkatkan Produktivitas AI"
+  },
+  "homepage.description": {
+    "message": "Frustasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!"
+  },
+  "community.title": {
+    "message": "Komunitas Prompt AI | Temukan & Bagikan Prompt Premium - AiShort"
+  },
+  "community.description": {
+    "message": "Ingin lebih banyak prompt AI yang teruji? Bergabunglah dengan komunitas AiShort untuk menemukan template prompt praktis!"
+  },
+  "showcase.tag.write.label": {
+    "message": "Bantuan Menulis"
+  },
+  "showcase.tag.write.description": {
+    "message": "Poles tata bahasa artikel, optimalkan gaya ekspresi, dan tingkatkan kualitas penulisan"
+  },
+  "showcase.tag.article.label": {
+    "message": "Artikel/Laporan"
+  },
+  "showcase.tag.article.description": {
+    "message": "Buat novel, makalah, siaran pers, naskah, dan laporan penelitian"
+  },
+  "showcase.tag.code.label": {
+    "message": "IT/Pemrograman"
+  },
+  "showcase.tag.code.description": {
+    "message": "Berikan saran pemrograman, contoh kode, solusi debugging, dan panduan teknis"
+  },
+  "showcase.tag.ai.label": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "Prompt dan skenario aplikasi terkait AI"
+  },
+  "showcase.tag.living.label": {
+    "message": "Kualitas Hidup"
+  },
+  "showcase.tag.living.description": {
+    "message": "Panduan kebugaran, saran nutrisi, tips memasak, dan layanan gaya hidup lainnya"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "Pengetahuan Menarik"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "Fakta menarik, konten sains populer, dan tanya jawab seru"
+  },
+  "showcase.tag.life.label": {
+    "message": "Ensiklopedia Kehidupan"
+  },
+  "showcase.tag.life.description": {
+    "message": "Pengetahuan praktis dan pemecahan masalah untuk kehidupan sehari-hari"
+  },
+  "showcase.tag.social.label": {
+    "message": "Psikologi/Sosial"
+  },
+  "showcase.tag.social.description": {
+    "message": "Konseling psikologis, analisis emosi, keterampilan sosial, dan komunikasi interpersonal"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "Filsafat/Agama"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "Pemikiran filosofis, budaya agama, dan eksplorasi kebijaksanaan hidup"
+  },
+  "showcase.tag.mind.label": {
+    "message": "Latihan Pikiran"
+  },
+  "showcase.tag.mind.description": {
+    "message": "Menginspirasi kreativitas, pemikiran kritis, dan keterampilan penalaran logis"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "Pendidikan/Siswa"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "Bimbingan belajar, bantuan PR, persiapan ujian, dan konten terkait siswa"
+  },
+  "showcase.tag.academic.label": {
+    "message": "Akademik/Guru"
+  },
+  "showcase.tag.academic.description": {
+    "message": "Penelitian akademis, desain pengajaran, perencanaan kurikulum, dan dukungan guru"
+  },
+  "showcase.tag.games.label": {
+    "message": "Permainan Seru"
+  },
+  "showcase.tag.games.description": {
+    "message": "Permainan teks, bermain peran, dan hiburan interaktif"
+  },
+  "showcase.tag.tool.label": {
+    "message": "Alat Produktivitas"
+  },
+  "showcase.tag.tool.description": {
+    "message": "Alat praktis untuk meningkatkan efisiensi kerja"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "Terminal/Interpreter"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "Simulasi terminal baris perintah dan berbagai interpreter bahasa pemrograman"
+  },
+  "showcase.tag.language.label": {
+    "message": "Bahasa/Terjemahan"
+  },
+  "showcase.tag.language.description": {
+    "message": "Terjemahan multi-bahasa, pembelajaran bahasa, konversi teks, dan identifikasi bahasa"
+  },
+  "showcase.tag.speech.label": {
+    "message": "Debat/Pidato"
+  },
+  "showcase.tag.speech.description": {
+    "message": "Keterampilan debat, penulisan pidato, dan pelatihan berbicara"
+  },
+  "showcase.tag.comments.label": {
+    "message": "Ulasan/Penilaian"
+  },
+  "showcase.tag.comments.description": {
+    "message": "Ulasan profesional, evaluasi karya, dan analisis apresiasi"
+  },
+  "showcase.tag.text.label": {
+    "message": "Teks/Kata"
+  },
+  "showcase.tag.text.description": {
+    "message": "Pemrosesan teks, analisis kata, dan tugas terkait bahasa"
+  },
+  "showcase.tag.company.label": {
+    "message": "Fungsi Perusahaan"
+  },
+  "showcase.tag.company.description": {
+    "message": "Manajemen perusahaan, sumber daya manusia, pemasaran, dan peran fungsional lainnya"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "Optimasi mesin pencari, perluasan kata kunci, dan pemasaran konten"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "Kesehatan Medis"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "Konsultasi kesehatan, pengetahuan penyakit, dan saran medis"
+  },
+  "showcase.tag.finance.label": {
+    "message": "Penasihat Keuangan"
+  },
+  "showcase.tag.finance.description": {
+    "message": "Manajemen investasi, analisis keuangan, dan saran perencanaan keuangan"
+  },
+  "showcase.tag.music.label": {
+    "message": "Musik dan Seni"
+  },
+  "showcase.tag.music.description": {
+    "message": "Kreasi musik, pembelajaran teori musik, dan apresiasi karya"
+  },
+  "showcase.tag.professional.label": {
+    "message": "Konsultan Profesional"
+  },
+  "showcase.tag.professional.description": {
+    "message": "Pengacara, akuntan, konsultan, dan penasihat bidang profesional lainnya"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "Dibagikan Pengguna"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "Prompt premium yang dibagikan oleh pengguna komunitas"
+  },
+  "link.home": {
+    "message": "Beranda"
+  },
+  "link.communityPrompts": {
+    "message": "Prompt Komunitas"
+  },
+  "field.id": {
+    "message": "Tanggal Diposting"
+  },
+  "field.upvoteDifference": {
+    "message": "Popularitas"
+  },
+  "order.descending": {
+    "message": "Menurun"
+  },
+  "order.ascending": {
+    "message": "Meningkat"
+  },
+  "info.communityPrompts": {
+    "message": "Prompt di halaman ini dibagikan oleh pengguna. Kami tidak menjamin keakuratan, kualitas, atau kelengkapan konten, dan tidak bertanggung jawab secara hukum atas masalah yang timbul dari konten. Jika Anda menemukan pelanggaran atau masalah lainnya, silakan hubungi kami."
+  },
+  "feedback.title": {
+    "message": "Umpan Balik dan Saran"
+  },
+  "feedback.description": {
+    "message": "Umpan balik Anda sangat penting bagi kami!"
+  },
+  "feedback.welcome": {
+    "message": "Selamat Memberikan Umpan Balik"
+  },
+  "feedback.subtitle": {
+    "message": "Setiap kontribusi Anda membuat proyek open source ini lebih baik"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut adalah alat manajemen Prompt open source yang didedikasikan untuk meningkatkan efisiensi AI. Kami sangat menantikan partisipasi Anda: melaporkan bug, menyarankan fitur, atau berbagi Prompt berkualitas. Untuk pengiriman Prompt, kami mendukung berbagai bahasa, dan setelah diterima akan dimasukkan dengan atribusi (dapat dicari berdasarkan nama pengguna). Setiap kontribusi membantu anggota komunitas memperluas pemikiran dan meningkatkan produktivitas. Mari kita bangun perpustakaan Prompt yang sempurna bersama!"
+  },
+  "showcase.filters.title": {
+    "message": "Filter"
+  },
+  "action.hideTags": {
+    "message": "Sembunyikan Tag"
+  },
+  "action.showTags": {
+    "message": "Tampilkan Tag"
+  },
+  "showcase.favoritesList.title": {
+    "message": "Favorit"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "Semua prompt"
+  },
+  "myCollection.header.title": {
+    "message": "Koleksi Saya"
+  },
+  "myCollection.header.subtitle": {
+    "message": "Kelola prompt yang dibuat, favorit, dan tag kustom"
+  },
+  "myCollection.stats.total": {
+    "message": "Total"
+  },
+  "myCollection.stats.prompts": {
+    "message": "Prompt Saya"
+  },
+  "myCollection.stats.favorites": {
+    "message": "Favorit"
+  },
+  "myCollection.stats.tags": {
+    "message": "Tag Kustom"
+  },
+  "validation.password.match": {
+    "message": "Kata sandi tidak cocok!"
+  },
+  "message.resetPassword.success": {
+    "message": "Reset kata sandi berhasil!"
+  },
+  "message.resetPassword.error": {
+    "message": "Reset kata sandi gagal, silakan coba lagi nanti"
+  },
+  "input.newPassword": {
+    "message": "Silakan masukkan kata sandi baru!"
+  },
+  "validation.password.length": {
+    "message": "Kata sandi harus minimal 6 karakter"
+  },
+  "button.resetPassword": {
+    "message": "Reset Kata Sandi"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "Kode reset"
+  },
+  "input.resetPassword.code": {
+    "message": "Silakan masukkan kode reset Anda!"
+  },
+  "placeholder.newPassword": {
+    "message": "Kata sandi baru"
+  },
+  "placeholder.confirmPassword": {
+    "message": "Konfirmasi kata sandi baru"
+  },
+  "validation.confirmPassword.required": {
+    "message": "Silakan konfirmasi kata sandi baru!"
+  },
+  "comment.add": {
+    "message": "Kirim Komentar"
+  },
+  "button.login": {
+    "message": "Masuk"
+  },
+  "action.removeFavorite": {
+    "message": "Klik untuk menghapus favorit"
+  },
+  "common.favorites": {
+    "message": "Favorit"
+  },
+  "action.upvote": {
+    "message": "Suka"
+  },
+  "action.downvote": {
+    "message": "Tidak suka"
+  },
+  "unavailable.unshared": {
+    "message": "Penulis asli telah membatalkan berbagi"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "Penulis asli telah membatalkan berbagi dan tidak ada cache lokal"
+  },
+  "action.convertToPrivate": {
+    "message": "Konversi ke Pribadi"
+  },
+  "action.edit": {
+    "message": "Edit"
+  },
+  "action.delete": {
+    "message": "Hapus"
+  },
+  "input.search.placeholder": {
+    "message": "Cari prompt..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "Tidak ditemukan hasil yang relevan, coba perpendek kata pencarian"
+  },
+  "validation.username.required": {
+    "message": "Silakan masukkan nama pengguna atau email terdaftar!"
+  },
+  "validation.password.required": {
+    "message": "Silakan masukkan kata sandi!"
+  },
+  "validation.email.required": {
+    "message": "Silakan masukkan email Anda!"
+  },
+  "validation.email.invalid": {
+    "message": "Silakan masukkan alamat email yang valid!"
+  },
+  "message.error": {
+    "message": "Terjadi kesalahan saat memproses"
+  },
+  "message.success.login": {
+    "message": "Login berhasil!"
+  },
+  "message.success.register": {
+    "message": "Pendaftaran berhasil!"
+  },
+  "message.success.forgotPassword": {
+    "message": "Email reset kata sandi telah dikirim!"
+  },
+  "message.error.forgotPassword": {
+    "message": "Gagal mengirim email reset kata sandi, silakan coba lagi nanti"
+  },
+  "message.success.passwordlessLink": {
+    "message": "Tautan login tanpa kata sandi telah dikirim ke email Anda!"
+  },
+  "message.error.passwordlessLink": {
+    "message": "Pengiriman gagal, silakan periksa email atau nama pengguna"
+  },
+  "login.method.password": {
+    "message": "Login dengan Kata Sandi"
+  },
+  "login.method.code": {
+    "message": "Login Tanpa Kata Sandi"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "Nama pengguna/Email"
+  },
+  "placeholder.password": {
+    "message": "Kata Sandi"
+  },
+  "action.forgotPassword": {
+    "message": "Lupa kata sandi?"
+  },
+  "action.login": {
+    "message": "Login"
+  },
+  "login.passwordless.info": {
+    "message": "Tautan login akan dikirim ke email Anda, klik untuk login"
+  },
+  "action.sendLink": {
+    "message": "Dapatkan Tautan Login"
+  },
+  "login.register.prompt": {
+    "message": "Belum punya akun?"
+  },
+  "action.register": {
+    "message": "Daftar"
+  },
+  "placeholder.username": {
+    "message": "Nama pengguna"
+  },
+  "placeholder.email": {
+    "message": "Email"
+  },
+  "validation.agreement.required": {
+    "message": "Anda harus menyetujui Ketentuan Layanan dan Kebijakan Privasi sebelum menggunakan"
+  },
+  "label.agree": {
+    "message": "Setuju"
+  },
+  "link.terms": {
+    "message": "Ketentuan Layanan"
+  },
+  "link.privacy": {
+    "message": "Kebijakan Privasi"
+  },
+  "login.login.prompt": {
+    "message": "Sudah punya akun?"
+  },
+  "action.sendResetEmail": {
+    "message": "Kirim Email Reset"
+  },
+  "action.backToLogin": {
+    "message": "Kembali ke Login"
+  },
+  "login.title.welcome": {
+    "message": "Selamat Datang Kembali"
+  },
+  "login.title.register": {
+    "message": "Bergabung dengan Komunitas"
+  },
+  "login.title.forgotPassword": {
+    "message": "Lupa Kata Sandi"
+  },
+  "login.subtitle.welcome": {
+    "message": "Masuk untuk menjelajahi lebih banyak prompt premium"
+  },
+  "login.subtitle.register": {
+    "message": "Temukan, bagikan, dan buat prompt yang menakjubkan"
+  },
+  "login.subtitle.forgotPassword": {
+    "message": "Tautan reset akan dikirim ke email Anda"
+  },
+  "myspace.filter.all": {
+    "message": "Semua"
+  },
+  "myspace.filter.prompts": {
+    "message": "Prompt"
+  },
+  "myspace.filter.favorites": {
+    "message": "Favorit"
+  },
+  "myspace.manageTags": {
+    "message": "Kelola Tag"
+  },
+  "myspace.search.placeholder": {
+    "message": "Cari di ruang saya..."
+  },
+  "myspace.tagManager.title": {
+    "message": "Kelola Tag Kustom"
+  },
+  "action.save": {
+    "message": "Simpan"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "Nama tag"
+  },
+  "action.add": {
+    "message": "Tambah"
+  },
+  "myspace.tagManager.empty": {
+    "message": "Belum ada tag kustom"
+  },
+  "message.orderSaved": {
+    "message": "Urutan disimpan"
+  },
+  "message.orderSaveFailed": {
+    "message": "Gagal menyimpan urutan"
+  },
+  "message.tagsUpdated": {
+    "message": "Tag diperbarui"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Gagal memperbarui tag"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Dikonversi ke Prompt pribadi"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Konversi gagal, silakan coba lagi nanti"
+  },
+  "message.noSpaceItems": {
+    "message": "Belum ada konten, silakan tambahkan Prompt atau Favorit."
+  },
+  "message.noPrompts": {
+    "message": "Belum ada Prompt yang dikirim, silakan tambahkan Prompt."
+  },
+  "message.noFavorites": {
+    "message": "Belum ada favorit, silakan tambahkan favorit."
+  },
+  "myspace.assignTag": {
+    "message": "Tetapkan Tag"
+  },
+  "link.myaccount": {
+    "message": "Pengaturan Akun"
+  },
+  "button.logout": {
+    "message": "Keluar"
+  },
+  "message.logout.confirm.title": {
+    "message": "Konfirmasi Keluar"
+  },
+  "message.logout.confirm.content": {
+    "message": "Apakah Anda yakin ingin keluar?"
+  },
+  "nav.explore": {
+    "message": "Jelajahi"
+  },
+  "nav.myCollection": {
+    "message": "Koleksi Saya"
+  },
+  "link.addprompt": {
+    "message": "Tambah Prompt"
+  },
+  "button.settings": {
+    "message": "Pengaturan"
+  },
+  "showcase.header.button": {
+    "message": "Bagikan Prompt Anda"
+  },
+  "message.export.noPrompts": {
+    "message": "Tidak ada Prompt untuk diekspor"
+  },
+  "message.export.success": {
+    "message": "Ekspor Prompt berhasil!"
+  },
+  "message.export.error": {
+    "message": "Ekspor gagal, silakan coba lagi nanti"
+  },
+  "message.cache.cleared": {
+    "message": "Cache dihapus, data disegarkan"
+  },
+  "message.cache.clearError": {
+    "message": "Gagal menghapus cache"
+  },
+  "message.import.invalid": {
+    "message": "Format data tidak valid"
+  },
+  "message.import.success": {
+    "message": "Impor berhasil!"
+  },
+  "message.import.partial": {
+    "message": "Impor sebagian berhasil"
+  },
+  "message.import.failed": {
+    "message": "Impor gagal"
+  },
+  "message.import.parseError": {
+    "message": "Parsing JSON gagal, silakan periksa format file"
+  },
+  "message.success.passwordChanged": {
+    "message": "Kata sandi berhasil diubah!"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "Gagal mengubah kata sandi, silakan coba lagi nanti"
+  },
+  "link.myAccount": {
+    "message": "Pusat Pengguna"
+  },
+  "title.userInfo": {
+    "message": "Info Pengguna"
+  },
+  "stat.sharedPrompts": {
+    "message": "Prompt yang Dibagikan"
+  },
+  "progress.toNextLevel": {
+    "message": "Ke level berikutnya"
+  },
+  "progress.encourage": {
+    "message": "Terus berbagi untuk membuka level yang lebih tinggi!"
+  },
+  "level.max.congrats": {
+    "message": "Selamat mencapai level tertinggi! Anda adalah legenda komunitas!"
+  },
+  "title.security": {
+    "message": "Pengaturan Keamanan"
+  },
+  "modal.forgotPassword.title": {
+    "message": "Lupa Kata Sandi"
+  },
+  "message.forgotPassword.info": {
+    "message": "Kami akan mengirim email berisi tautan reset ke email terdaftar Anda."
+  },
+  "placeholder.currentPassword": {
+    "message": "Kata sandi saat ini"
+  },
+  "validation.currentPassword.required": {
+    "message": "Silakan masukkan kata sandi saat ini!"
+  },
+  "action.changePassword": {
+    "message": "Ubah Kata Sandi"
+  },
+  "title.dataManagement": {
+    "message": "Manajemen Data"
+  },
+  "button.exportPrompts": {
+    "message": "Ekspor Prompt"
+  },
+  "description.exportPrompts.short": {
+    "message": "Ekspor sebagai file JSON untuk cadangan"
+  },
+  "button.export": {
+    "message": "Ekspor Data"
+  },
+  "button.importPrompts": {
+    "message": "Impor Prompt"
+  },
+  "description.importPrompts.short": {
+    "message": "Impor Prompt dan favorit dari file JSON"
+  },
+  "button.import": {
+    "message": "Impor Data"
+  },
+  "button.clearCache": {
+    "message": "Hapus Cache"
+  },
+  "description.clearCache.short": {
+    "message": "Segarkan data cache lokal"
+  },
+  "modal.clearCache.title": {
+    "message": "Konfirmasi Hapus Cache?"
+  },
+  "modal.clearCache.content": {
+    "message": "Sistem menggunakan teknologi ETag untuk mengelola cache secara otomatis, biasanya tidak perlu membersihkan secara manual."
+  },
+  "modal.clearCache.warning": {
+    "message": "Setelah dihapus, semua data akan dimuat ulang."
+  },
+  "button.clearAllCache": {
+    "message": "Hapus Semua Cache"
+  },
+  "placeholder.promptContent": {
+    "message": "Masukkan konten prompt detail di sini..."
+  },
+  "prompt.tokenDanger": {
+    "message": "Prompt terlalu panjang, sangat disarankan untuk membagi menjadi beberapa Prompt"
+  },
+  "prompt.tokenWarning": {
+    "message": "Prompt cukup panjang, disarankan untuk mempersingkat atau membagi"
+  },
+  "action.addPrompt": {
+    "message": "Tambah Prompt"
+  },
+  "modal.editPrompt.title": {
+    "message": "Perbarui Prompt Saat Ini"
+  },
+  "action.updatePrompt": {
+    "message": "Perbarui Prompt"
+  },
+  "label.promptTitle": {
+    "message": "Nama Prompt"
+  },
+  "validation.promptTitle.required": {
+    "message": "Silakan masukkan judul prompt!"
+  },
+  "placeholder.promptTitle": {
+    "message": "Beri nama prompt Anda"
+  },
+  "label.promptContent": {
+    "message": "Konten Prompt"
+  },
+  "validation.promptContent.required": {
+    "message": "Silakan masukkan konten prompt!"
+  },
+  "label.promptRemark": {
+    "message": "Fungsi/Penggunaan"
+  },
+  "placeholder.promptRemark": {
+    "message": "Jelaskan singkat fungsi prompt (opsional)"
+  },
+  "label.promptNotes": {
+    "message": "Catatan"
+  },
+  "label.promptNotes.description": {
+    "message": "Anda dapat memberikan sumber Prompt, versi bahasa lain, atau catatan tambahan di sini."
+  },
+  "placeholder.promptNotes": {
+    "message": "Catatan tambahan tentang prompt ini (opsional)"
+  },
+  "label.sharePrompt": {
+    "message": "Apakah Anda ingin membagikan prompt ini ke halaman publik?"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Terjadi kesalahan.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.blog.archive.title": {
+    "message": "Arsip",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Arsip",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Gulir ke atas",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Navigasi halaman daftar blog",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Entri lebih baru",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Entri lebih lama",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Navigasi halaman posting blog",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Posting lebih baru",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Posting lebih lama",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Lihat semua tag",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "mode sistem",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "mode terang",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "mode gelap",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Beralih antara mode gelap dan terang (saat ini {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} item",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Halaman dokumen",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Sebelumnya",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Selanjutnya",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Satu dokumen ditag|{count} dokumen ditag",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} dengan \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Versi: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Ini adalah dokumentasi yang belum dirilis untuk {siteTitle} versi {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Ini adalah dokumentasi untuk {siteTitle} {versionLabel}, yang tidak lagi dipelihara secara aktif.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Untuk dokumentasi terkini, lihat {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "versi terbaru",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit halaman ini",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Tautan langsung ke {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " pada {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " oleh {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Terakhir diperbarui{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versi",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "Halaman Tidak Ditemukan",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tag:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "hati-hati",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "bahaya",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "catatan",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "peringatan",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Tutup",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Navigasi posting terbaru sidebar blog",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Perluas kategori sidebar '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Ciutkan kategori sidebar '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(buka di tab baru)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Utama",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Kami tidak dapat menemukan apa yang Anda cari.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Silakan hubungi pemilik situs yang menautkan Anda ke URL asli dan beri tahu mereka bahwa tautan mereka rusak.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Bahasa",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Di halaman ini",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 menit baca|{readingTime} menit baca",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Baca selengkapnya",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Baca selengkapnya tentang {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Salin",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Disalin",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Salin kode ke clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Alihkan pembungkusan kata",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Beranda",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Ciutkan sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Ciutkan sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Sidebar dokumen",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Tutup bilah navigasi",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Kembali ke menu utama",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Alihkan bilah navigasi",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Perluas dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Ciutkan dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Perluas sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Perluas sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Satu posting|{count} posting",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} dengan tag \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Penulis",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "Lihat semua penulis",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "Penulis ini belum menulis posting.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Halaman tidak terdaftar",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "Halaman ini tidak terdaftar. Mesin pencari tidak akan mengindeksnya, dan hanya pengguna dengan tautan langsung yang dapat mengakses.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Halaman draf",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "Halaman ini adalah draf. Ini hanya akan terlihat di lingkungan pengembangan dan akan dikecualikan dari build produksi.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Coba lagi",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Lewati ke konten utama",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tag",
+    "description": "The title of the tag list page"
+  }
+}

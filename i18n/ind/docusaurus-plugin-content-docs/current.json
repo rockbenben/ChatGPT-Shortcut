@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Berikutnya",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.使用指南": {
+    "message": "Panduan Penggunaan",
+    "description": "The label for category '使用指南' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.浏览器插件": {
+    "message": "Ekstensi Browser",
+    "description": "The label for category '浏览器插件' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Policies": {
+    "message": "Kebijakan",
+    "description": "The label for category 'Policies' in sidebar 'docs'"
+  }
+}

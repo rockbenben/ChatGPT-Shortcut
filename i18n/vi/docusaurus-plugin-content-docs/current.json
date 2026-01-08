@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Tiếp theo",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.使用指南": {
+    "message": "Hướng dẫn Sử dụng",
+    "description": "The label for category '使用指南' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.浏览器插件": {
+    "message": "Tiện ích Trình duyệt",
+    "description": "The label for category '浏览器插件' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Policies": {
+    "message": "Chính sách",
+    "description": "The label for category 'Policies' in sidebar 'docs'"
+  }
+}

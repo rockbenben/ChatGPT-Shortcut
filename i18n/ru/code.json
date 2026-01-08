@@ -902,9 +902,6 @@
   "prompt.content": {
     "message": "Содержание подсказки"
   },
-  "prompt.description": {
-    "message": "Описание"
-  },
   "action.viewDetails": {
     "message": "Посмотреть детали"
   },
