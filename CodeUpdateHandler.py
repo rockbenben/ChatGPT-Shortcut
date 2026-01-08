@@ -23,8 +23,8 @@ meta_cards_path = os.path.join(current_dir, 'meta_cards.json')
 output_dir_path = os.path.join(current_dir, 'default')
 output_dir_path_cards = os.path.join(current_dir, 'cards')
 
-# 提供的语言列表 - Update: Replace 'zh' with 'zh-Hans' and 'zh-Hant'
-allLanguages = ["zh-Hans", "zh-Hant", "en", "ja", "ko", 'es', 'fr', 'de', 'it', 'ru', 'pt', 'hi', 'ar', 'bn']
+# 提供的语言列表 - 默认第一个为主语言
+allLanguages = ["zh-Hans", "en", "zh-Hant", "ja", "ko", "es", "pt", "hi", "ind", "vi", "th", "fr", "de", "it", "ru", "ar", "tr", "bn"]
 
 # 读取 JSON 数据
 with open(input_path, 'r', encoding='utf-8') as file:

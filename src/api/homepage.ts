@@ -49,6 +49,10 @@ const PROMPT_DATA_MAP: Record<string, () => Promise<any>> = {
   ar: () => import("@site/src/data/prompt_ar.json"),
   hi: () => import("@site/src/data/prompt_hi.json"),
   bn: () => import("@site/src/data/prompt_bn.json"),
+  vi: () => import("@site/src/data/prompt_vi.json"),
+  th: () => import("@site/src/data/prompt_th.json"),
+  tr: () => import("@site/src/data/prompt_tr.json"),
+  ind: () => import("@site/src/data/prompt_ind.json"),
 };
 
 const DEFAULT_FAVOR_MAP: Record<string, () => Promise<any>> = {
@@ -66,6 +70,10 @@ const DEFAULT_FAVOR_MAP: Record<string, () => Promise<any>> = {
   ar: () => import("@site/src/data/default/favor_ar.json"),
   hi: () => import("@site/src/data/default/favor_hi.json"),
   bn: () => import("@site/src/data/default/favor_bn.json"),
+  vi: () => import("@site/src/data/default/favor_vi.json"),
+  th: () => import("@site/src/data/default/favor_th.json"),
+  tr: () => import("@site/src/data/default/favor_tr.json"),
+  ind: () => import("@site/src/data/default/favor_ind.json"),
 };
 
 const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
@@ -83,6 +91,10 @@ const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
   ar: () => import("@site/src/data/default/other_ar.json"),
   hi: () => import("@site/src/data/default/other_hi.json"),
   bn: () => import("@site/src/data/default/other_bn.json"),
+  vi: () => import("@site/src/data/default/other_vi.json"),
+  th: () => import("@site/src/data/default/other_th.json"),
+  tr: () => import("@site/src/data/default/other_tr.json"),
+  ind: () => import("@site/src/data/default/other_ind.json"),
 };
 
 /**

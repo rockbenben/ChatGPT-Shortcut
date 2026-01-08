@@ -7,7 +7,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "build-phased": "docusaurus build --locale zh-Hans --locale en --locale zh-Hant --locale ja --locale ko --locale es --locale fr && docusaurus build --locale de --locale it --locale ru --locale pt --locale hi --locale ar --locale bn",
+    "build-phased": "docusaurus build --locale zh-Hans --locale en --locale zh-Hant --locale ja --locale ko --locale es --locale pt && docusaurus build --locale hi --locale ind --locale vi --locale th --locale fr --locale de --locale it && docusaurus build --locale ru --locale ar --locale tr --locale bn",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

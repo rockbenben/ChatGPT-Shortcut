@@ -36,7 +36,7 @@ const config = {
   // may want to replace "zh-Hans" with "en". "zh-Hant" hidden to avoid build save
   i18n: {
     defaultLocale: "zh-Hans",
-    locales: ["en", "zh-Hans", "ja", "ko", "es", "fr", "de", "it", "ru", "pt", "hi", "ar", "bn"],
+    locales: ["en", "zh-Hans", "ja", "ko", "es", "pt", "fr", "de", "it", "ru", "hi", "ar", "bn"],
     localeConfigs: {
       ar: {
         direction: "rtl",
