@@ -23,7 +23,7 @@ It's that simple! For more features, please continue reading or check the [User 
 
 🔍 **Smart Search**: Quickly find the prompts you need through tag filtering and keyword search.
 
-🌍 **Multi-language Support**: Provides translation for 12 languages, supporting native language replies.
+🌍 **Multi-language Support**: Provides translation for 18 languages, supporting native language replies.
 
 📦 **Ready to Use**: No registration required, simply visit to use.
 

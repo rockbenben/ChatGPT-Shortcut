@@ -1,0 +1,62 @@
+{
+  "title": {
+    "message": "AI Short",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "ChatGPT Shortcuts",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.使用说明": {
+    "message": "Tài liệu",
+    "description": "Navbar item with label 使用说明"
+  },
+  "item.label.社区提示词": {
+    "message": "Prompt Cộng đồng",
+    "description": "Navbar item with label 社区提示词"
+  },
+  "item.label.应用工具": {
+    "message": "Công cụ",
+    "description": "Navbar item with label 应用工具"
+  },
+  "item.label.IMGPrompt": {
+    "message": "IMGPrompt",
+    "description": "Navbar item with label IMGPrompt"
+  },
+  "item.label.工具收藏": {
+    "message": "Bộ sưu tập Công cụ",
+    "description": "Navbar item with label 工具收藏"
+  },
+  "item.label.Find on Product Hunt": {
+    "message": "Tìm trên Product Hunt",
+    "description": "Navbar item with label Find on Product Hunt"
+  },
+  "item.label.反馈建议": {
+    "message": "Phản hồi",
+    "description": "Navbar item with label 反馈建议"
+  },
+  "item.label.脚本扩展": {
+    "message": "Tiện ích mở rộng",
+    "description": "Navbar item with label 脚本扩展"
+  },
+  "item.label.ToolsByAI": {
+    "message": "ToolsByAI",
+    "description": "Navbar item with label ToolsByAI"
+  },
+  "item.label.Telegram": {
+    "message": "Telegram",
+    "description": "Navbar item with label Telegram"
+  },
+  "item.label.支持": {
+    "message": "Hỗ trợ",
+    "description": "Navbar item with label 支持"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.QQ 群": {
+    "message": "Nhóm QQ",
+    "description": "Navbar item with label QQ 群"
+  }
+}

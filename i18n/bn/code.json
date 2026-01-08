@@ -902,9 +902,6 @@
   "prompt.content": {
     "message": "প্রম্পট বিষয়বস্তু"
   },
-  "prompt.description": {
-    "message": "বর্ণনা"
-  },
   "action.viewDetails": {
     "message": "বিস্তারিত দেখুন"
   },

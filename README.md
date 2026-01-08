@@ -1,22 +1,46 @@
 <h1 align="center">
-⚡️AI Short
+    <a href="https://www.aishort.top/">
+        <img src="static/img/logo.png" alt="AiShort Logo" width="120" height="120" />
+    </a>
+    <br>
+    AiShort (ChatGPT Shortcut) - AI Prompt Management Tool
 </h1>
+
 <p align="center">
-    English | <a href="./README-zh.md">中文</a> |
-<a href="./README-lang/README-es.md">Español</a> |
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
+    </a>
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/stargazers">
+        <img src="https://img.shields.io/github/stars/rockbenben/ChatGPT-Shortcut?style=social" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/releases">
+        <img src="https://img.shields.io/github/v/release/rockbenben/ChatGPT-Shortcut?color=green" alt="Version" />
+    </a>
+    <a href="https://discord.gg/PZTQfJ4GjX">
+        <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
+    </a>
+</p>
+
+<p align="center">
+    English | <a href="./README-zh.md">简体中文</a> | <a href="./README-lang/README-zh-hant.md">繁體中文</a> |
 <a href="./README-lang/README-ja.md">日本語</a> |
 <a href="./README-lang/README-ko.md">한국어</a> |
 <a href="./README-lang/README-fr.md">Français</a> |
 <a href="./README-lang/README-de.md">Deutsch</a> |
+<a href="./README-lang/README-es.md">Español</a> |
 <a href="./README-lang/README-it.md">Italiano</a> |
 <a href="./README-lang/README-ru.md">Русский</a> |
 <a href="./README-lang/README-pt.md">Português</a> |
+<a href="./README-lang/README-ind.md">Indonesia</a> |
 <a href="./README-lang/README-ar.md">العربية</a> |
+<a href="./README-lang/README-tr.md">Türkçe</a> |
+<a href="./README-lang/README-vi.md">Tiếng Việt</a> |
+<a href="./README-lang/README-th.md">ภาษาไทย</a> |
 <a href="./README-lang/README-hi.md">हिन्दी</a> |
 <a href="./README-lang/README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>ChatGPT Shortcut - Maximize your Efficiency and Productivity</em>
+    <em>AiShort (ChatGPT Shortcut) - Maximize your Efficiency and Productivity</em>
 </p>
 
 ## ⚡ Quick Start
@@ -24,6 +48,8 @@
 1. Visit [aishort.top](https://www.aishort.top/en/)
 2. Search or browse for the prompt you need
 3. Click "Copy" and paste into any AI model
+
+![AiShort Interface](static/img/docs/interface-home.png)
 
 That's it! For more features, read on or check the [User Guide](https://www.aishort.top/en/docs/guides/getting-started).
 
@@ -37,7 +63,7 @@ AiShort (ChatGPT Shortcut) provides a curated list of AI prompts, helping you qu
 
 🔍 **Smart Search** - Find prompts fast with tag filtering and keyword search.
 
-🌍 **12 Languages** - Translations for all prompts, with native language replies.
+🌍 **18 Languages** - Translations for all prompts, with native language replies.
 
 📦 **Ready to Use** - No registration required, start using immediately.
 

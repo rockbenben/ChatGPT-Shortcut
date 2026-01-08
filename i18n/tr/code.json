@@ -1,0 +1,1124 @@
+{
+  "validation.comment.required": {
+    "message": "Lütfen yorum içeriği girin"
+  },
+  "validation.comment.maxLength": {
+    "message": "Yorum içeriği 2000 karakteri geçmemelidir"
+  },
+  "placeholder.comment": {
+    "message": "Yorumunuzu buraya girin... Markdown ve HTML sözdizimi desteklenir"
+  },
+  "action.reply": {
+    "message": "Yanıtla"
+  },
+  "validation.replyRequired": {
+    "message": "Lütfen yanıt içeriği girin"
+  },
+  "label.comments": {
+    "message": "Yorumlar"
+  },
+  "message.noComments": {
+    "message": "Henüz yorum yok, ilk yorumu yapan siz olun!"
+  },
+  "level.diamond": {
+    "message": "Elmas Efsane"
+  },
+  "level.platinum": {
+    "message": "Platin Usta"
+  },
+  "level.gold": {
+    "message": "Altın Uzman"
+  },
+  "level.silver": {
+    "message": "Gümüş Elit"
+  },
+  "level.bronze": {
+    "message": "Bronz Yeni Yıldız"
+  },
+  "level.newcomer": {
+    "message": "Çaylak Kaşif"
+  },
+  "level.diamond.desc": {
+    "message": "En üst düzey katkıda bulunan, topluluk efsanesi!"
+  },
+  "level.platinum.desc": {
+    "message": "Kıdemli uzman, olağanüstü etki!"
+  },
+  "level.gold.desc": {
+    "message": "Deneyimli, güvenilir!"
+  },
+  "level.silver.desc": {
+    "message": "Aktif katkıda bulunan, sürekli gelişiyor!"
+  },
+  "level.bronze.desc": {
+    "message": "İlk adımı attı, devam et!"
+  },
+  "level.newcomer.desc": {
+    "message": "İlk Prompt'u paylaş, yaratıcılık yolculuğuna başla!"
+  },
+  "prompt.private": {
+    "message": "Özel"
+  },
+  "action.close": {
+    "message": "Kapat"
+  },
+  "prompt.content": {
+    "message": "Prompt İçeriği"
+  },
+  "message.copied": {
+    "message": "Başarıyla kopyalandı"
+  },
+  "action.copy": {
+    "message": "Kopyala"
+  },
+  "action.viewDetails": {
+    "message": "Ayrıntıları Görüntüle"
+  },
+  "label.commentInfo": {
+    "message": "Bu prompt hakkındaki görüşlerinizi, düşüncelerinizi veya paylaşımlarınızı aşağıya yazın."
+  },
+  "homepage.slogan": {
+    "message": "Daha verimli konuşmalar için özenle seçilmiş AI Promptları"
+  },
+  "homepage.title": {
+    "message": "AiShort - AI Prompt Kütüphanesi | AI Verimliliğini Artıran Seçilmiş Promptlar"
+  },
+  "homepage.description": {
+    "message": "AI'ın alakasız cevaplarından bıktınız mı? AiShort, yazma, kodlama ve çeviri için pratik prompt şablonları sunar!"
+  },
+  "community.title": {
+    "message": "AI Prompt Topluluğu | Premium Promptları Keşfedin ve Paylaşın - AiShort"
+  },
+  "community.description": {
+    "message": "Daha fazla test edilmiş AI promptu mu istiyorsunuz? Pratik prompt şablonları keşfetmek için AiShort topluluğuna katılın!"
+  },
+  "showcase.tag.write.label": {
+    "message": "Yazma Yardımı"
+  },
+  "showcase.tag.write.description": {
+    "message": "Makale dilbilgisini düzeltin, ifade stilini optimize edin ve yazma kalitesini artırın"
+  },
+  "showcase.tag.article.label": {
+    "message": "Makale/Rapor"
+  },
+  "showcase.tag.article.description": {
+    "message": "Romanlar, makaleler, basın bültenleri, senaryolar ve araştırma raporları oluşturun"
+  },
+  "showcase.tag.code.label": {
+    "message": "BT/Programlama"
+  },
+  "showcase.tag.code.description": {
+    "message": "Programlama önerileri, kod örnekleri, hata ayıklama çözümleri ve teknik rehberlik sağlayın"
+  },
+  "showcase.tag.ai.label": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "AI ile ilgili promptlar ve uygulama senaryoları"
+  },
+  "showcase.tag.living.label": {
+    "message": "Yaşam Kalitesi"
+  },
+  "showcase.tag.living.description": {
+    "message": "Fitness rehberliği, beslenme tavsiyeleri, yemek ipuçları ve diğer yaşam tarzı hizmetleri"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "Eğlenceli Bilgi"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "İlginç gerçekler, popüler bilim içeriği ve eğlenceli soru-cevaplar"
+  },
+  "showcase.tag.life.label": {
+    "message": "Yaşam Ansiklopedisi"
+  },
+  "showcase.tag.life.description": {
+    "message": "Günlük yaşamda pratik bilgi ve problem çözme"
+  },
+  "showcase.tag.social.label": {
+    "message": "Psikoloji/Sosyal"
+  },
+  "showcase.tag.social.description": {
+    "message": "Psikolojik danışmanlık, duygu analizi, sosyal beceriler ve kişilerarası iletişim"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "Felsefe/Din"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "Felsefi düşünce, dini kültür ve yaşam bilgeliği keşfi"
+  },
+  "showcase.tag.mind.label": {
+    "message": "Zihin Eğitimi"
+  },
+  "showcase.tag.mind.description": {
+    "message": "Yaratıcılık, eleştirel düşünme ve mantıksal akıl yürütme becerilerini geliştirin"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "Eğitim/Öğrenci"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "Özel ders, ödev yardımı, sınav hazırlığı ve öğrenciyle ilgili diğer içerikler"
+  },
+  "showcase.tag.academic.label": {
+    "message": "Akademik/Öğretmen"
+  },
+  "showcase.tag.academic.description": {
+    "message": "Akademik araştırma, öğretim tasarımı, müfredat planlaması ve öğretmen desteği"
+  },
+  "showcase.tag.games.label": {
+    "message": "Eğlenceli Oyunlar"
+  },
+  "showcase.tag.games.description": {
+    "message": "Metin oyunları, rol yapma ve interaktif eğlence"
+  },
+  "showcase.tag.tool.label": {
+    "message": "Verimlilik Araçları"
+  },
+  "showcase.tag.tool.description": {
+    "message": "İş verimliliğini artırmak için pratik araçlar"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "Terminal/Yorumlayıcı"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "Komut satırı terminalleri ve çeşitli programlama dili yorumlayıcılarını simüle edin"
+  },
+  "showcase.tag.language.label": {
+    "message": "Dil/Çeviri"
+  },
+  "showcase.tag.language.description": {
+    "message": "Çok dilli çeviri, dil öğrenimi, metin dönüştürme ve dil tanıma"
+  },
+  "showcase.tag.speech.label": {
+    "message": "Tartışma/Konuşma"
+  },
+  "showcase.tag.speech.description": {
+    "message": "Tartışma becerileri, konuşma yazımı ve hitabet eğitimi"
+  },
+  "showcase.tag.comments.label": {
+    "message": "İnceleme/Değerlendirme"
+  },
+  "showcase.tag.comments.description": {
+    "message": "Profesyonel incelemeler, eser değerlendirmesi ve takdir analizi"
+  },
+  "showcase.tag.text.label": {
+    "message": "Metin/Kelimeler"
+  },
+  "showcase.tag.text.description": {
+    "message": "Metin işleme, kelime analizi ve dille ilgili görevler"
+  },
+  "showcase.tag.company.label": {
+    "message": "Kurumsal İşlevler"
+  },
+  "showcase.tag.company.description": {
+    "message": "Kurumsal yönetim, insan kaynakları, pazarlama ve diğer fonksiyonel roller"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.seo.description": {
+    "message": "Arama motoru optimizasyonu, anahtar kelime genişletme ve içerik pazarlaması"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "Sağlık"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "Sağlık danışmanlığı, hastalık bilgilendirme ve tıbbi tavsiyeler"
+  },
+  "showcase.tag.finance.label": {
+    "message": "Finansal Danışman"
+  },
+  "showcase.tag.finance.description": {
+    "message": "Yatırım yönetimi, finansal analiz ve finansal planlama tavsiyeleri"
+  },
+  "showcase.tag.music.label": {
+    "message": "Müzik ve Sanat"
+  },
+  "showcase.tag.music.description": {
+    "message": "Müzik yaratımı, müzik teorisi öğrenimi ve eser takdiri"
+  },
+  "showcase.tag.professional.label": {
+    "message": "Profesyonel Danışman"
+  },
+  "showcase.tag.professional.description": {
+    "message": "Avukatlar, muhasebeciler, danışmanlar ve diğer profesyonel alan danışmanları"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "Kullanıcı Paylaşımı"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "Topluluk kullanıcıları tarafından paylaşılan premium promptlar"
+  },
+  "message.addFavorite.success": {
+    "message": "Favorilere eklendi"
+  },
+  "message.addFavorite.error": {
+    "message": "Favorilere eklenemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.removeFavorite.error": {
+    "message": "Favorilerden kaldırılamadı, lütfen daha sonra tekrar deneyin"
+  },
+  "message.removeFavorite.success": {
+    "message": "Favorilerden kaldırıldı"
+  },
+  "message.removeFavorite.confirm.title": {
+    "message": "Favoriyi Kaldır"
+  },
+  "message.removeFavorite.confirm.content": {
+    "message": "Bu promptu favorilerden kaldırmak istediğinizden emin misiniz?"
+  },
+  "button.confirm": {
+    "message": "Onayla"
+  },
+  "action.cancel": {
+    "message": "İptal"
+  },
+  "message.addPrompt.success": {
+    "message": "Prompt başarıyla gönderildi!"
+  },
+  "message.addPrompt.error": {
+    "message": "Prompt gönderilemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.updatePrompt.success": {
+    "message": "Prompt başarıyla güncellendi!"
+  },
+  "message.updatePrompt.error": {
+    "message": "Prompt güncellenemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.deletePrompt.success": {
+    "message": "Prompt başarıyla silindi!"
+  },
+  "message.deletePrompt.error": {
+    "message": "Prompt silinemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "Silmeyi Onayla"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "Bu promptu silmek istediğinizden emin misiniz?"
+  },
+  "link.home": {
+    "message": "Ana Sayfa"
+  },
+  "link.communityPrompts": {
+    "message": "Topluluk Promptları"
+  },
+  "field.id": {
+    "message": "Yayınlanma Tarihi"
+  },
+  "field.upvoteDifference": {
+    "message": "Popülerlik"
+  },
+  "order.descending": {
+    "message": "Azalan"
+  },
+  "order.ascending": {
+    "message": "Artan"
+  },
+  "info.communityPrompts": {
+    "message": "Bu sayfadaki Promptlar kullanıcılar tarafından paylaşılmıştır. İçeriğin doğruluğunu, kalitesini veya bütünlüğünü garanti etmiyoruz ve içerikten kaynaklanan yasal sorumluluk kabul etmiyoruz. Herhangi bir ihlal veya sorun bulursanız, lütfen bizimle iletişime geçin."
+  },
+  "feedback.title": {
+    "message": "Geri Bildirim ve Öneriler"
+  },
+  "feedback.description": {
+    "message": "Geri bildiriminiz bizim için çok önemli!"
+  },
+  "feedback.welcome": {
+    "message": "Geri Bildirimi Memnuniyetle Karşılıyoruz"
+  },
+  "feedback.subtitle": {
+    "message": "Her katkınız bu açık kaynak projesini daha iyi hale getiriyor"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut, AI verimliliğini artırmaya adanmış açık kaynaklı bir Prompt yönetim aracıdır. Katılımınızı heyecanla bekliyoruz: hata raporlama, özellik önerme veya kaliteli Prompt paylaşma. Prompt gönderimleri için birden fazla dili destekliyoruz ve kabul edildiğinde atıfla birlikte dahil edilecektir (kullanıcı adıyla aranabilir). Her katkı, topluluk üyelerinin düşüncelerini genişletmesine ve verimliliği artırmasına yardımcı olur. Birlikte mükemmel Prompt kütüphanesini oluşturalım!"
+  },
+  "showcase.filters.title": {
+    "message": "Filtreler"
+  },
+  "action.hideTags": {
+    "message": "Etiketleri Gizle"
+  },
+  "action.showTags": {
+    "message": "Etiketleri Göster"
+  },
+  "showcase.favoritesList.title": {
+    "message": "Favoriler"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "Tüm promptlar"
+  },
+  "myCollection.header.title": {
+    "message": "Koleksiyonum"
+  },
+  "myCollection.header.subtitle": {
+    "message": "Oluşturduğunuz promptları, favorileri ve özel etiketleri yönetin"
+  },
+  "myCollection.stats.total": {
+    "message": "Toplam"
+  },
+  "myCollection.stats.prompts": {
+    "message": "Promptlarım"
+  },
+  "myCollection.stats.favorites": {
+    "message": "Favoriler"
+  },
+  "myCollection.stats.tags": {
+    "message": "Özel Etiketler"
+  },
+  "validation.password.match": {
+    "message": "Şifreler eşleşmiyor!"
+  },
+  "message.resetPassword.success": {
+    "message": "Şifre başarıyla sıfırlandı!"
+  },
+  "message.resetPassword.error": {
+    "message": "Şifre sıfırlanamadı, lütfen daha sonra tekrar deneyin"
+  },
+  "input.newPassword": {
+    "message": "Lütfen yeni şifrenizi girin!"
+  },
+  "validation.password.length": {
+    "message": "Şifre en az 6 karakter olmalıdır"
+  },
+  "button.resetPassword": {
+    "message": "Şifreyi Sıfırla"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "Sıfırlama kodu"
+  },
+  "input.resetPassword.code": {
+    "message": "Lütfen sıfırlama kodunuzu girin!"
+  },
+  "placeholder.newPassword": {
+    "message": "Yeni şifre"
+  },
+  "placeholder.confirmPassword": {
+    "message": "Yeni şifreyi onayla"
+  },
+  "validation.confirmPassword.required": {
+    "message": "Lütfen yeni şifrenizi onaylayın!"
+  },
+  "comment.add": {
+    "message": "Yorum Gönder"
+  },
+  "button.login": {
+    "message": "Giriş"
+  },
+  "action.removeFavorite": {
+    "message": "Favoriyi kaldırmak için tıklayın"
+  },
+  "common.favorites": {
+    "message": "Favoriler"
+  },
+  "action.upvote": {
+    "message": "Beğen"
+  },
+  "action.downvote": {
+    "message": "Beğenme"
+  },
+  "unavailable.unshared": {
+    "message": "Orijinal yazar paylaşımı iptal etti"
+  },
+  "unavailable.unsharedNoCache": {
+    "message": "Orijinal yazar paylaşımı iptal etti ve yerel önbellek yok"
+  },
+  "action.convertToPrivate": {
+    "message": "Özel'e Dönüştür"
+  },
+  "action.edit": {
+    "message": "Düzenle"
+  },
+  "action.delete": {
+    "message": "Sil"
+  },
+  "input.search.placeholder": {
+    "message": "Prompt ara..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "İlgili sonuç bulunamadı, lütfen arama terimlerini kısaltmayı deneyin"
+  },
+  "validation.username.required": {
+    "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin!"
+  },
+  "validation.password.required": {
+    "message": "Lütfen şifrenizi girin!"
+  },
+  "validation.email.required": {
+    "message": "Lütfen e-postanızı girin!"
+  },
+  "validation.email.invalid": {
+    "message": "Lütfen geçerli bir e-posta adresi girin!"
+  },
+  "message.error": {
+    "message": "İşlem sırasında hata oluştu"
+  },
+  "message.success.login": {
+    "message": "Giriş başarılı!"
+  },
+  "message.success.register": {
+    "message": "Kayıt başarılı!"
+  },
+  "message.success.forgotPassword": {
+    "message": "Şifre sıfırlama e-postası gönderildi!"
+  },
+  "message.error.forgotPassword": {
+    "message": "Şifre sıfırlama e-postası gönderilemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "message.success.passwordlessLink": {
+    "message": "Şifresiz giriş bağlantısı e-postanıza gönderildi!"
+  },
+  "message.error.passwordlessLink": {
+    "message": "Gönderme başarısız, lütfen e-posta veya kullanıcı adını kontrol edin"
+  },
+  "login.method.password": {
+    "message": "Şifre ile Giriş"
+  },
+  "login.method.code": {
+    "message": "Şifresiz Giriş"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "Kullanıcı adı/E-posta"
+  },
+  "placeholder.password": {
+    "message": "Şifre"
+  },
+  "action.forgotPassword": {
+    "message": "Şifremi unuttum?"
+  },
+  "action.login": {
+    "message": "Giriş Yap"
+  },
+  "login.passwordless.info": {
+    "message": "Giriş bağlantısı e-postanıza gönderilecek, giriş yapmak için tıklayın"
+  },
+  "action.sendLink": {
+    "message": "Giriş Bağlantısı Al"
+  },
+  "login.register.prompt": {
+    "message": "Hesabınız yok mu?"
+  },
+  "action.register": {
+    "message": "Kayıt Ol"
+  },
+  "placeholder.username": {
+    "message": "Kullanıcı adı"
+  },
+  "placeholder.email": {
+    "message": "E-posta"
+  },
+  "validation.agreement.required": {
+    "message": "Kullanmadan önce Hizmet Şartları ve Gizlilik Politikasını kabul etmelisiniz"
+  },
+  "label.agree": {
+    "message": "Kabul ediyorum"
+  },
+  "link.terms": {
+    "message": "Hizmet Şartları"
+  },
+  "link.privacy": {
+    "message": "Gizlilik Politikası"
+  },
+  "login.login.prompt": {
+    "message": "Zaten hesabınız var mı?"
+  },
+  "action.sendResetEmail": {
+    "message": "Sıfırlama E-postası Gönder"
+  },
+  "action.backToLogin": {
+    "message": "Girişe Dön"
+  },
+  "login.title.welcome": {
+    "message": "Tekrar Hoş Geldiniz"
+  },
+  "login.title.register": {
+    "message": "Topluluğa Katılın"
+  },
+  "login.title.forgotPassword": {
+    "message": "Şifremi Unuttum"
+  },
+  "login.subtitle.welcome": {
+    "message": "Daha fazla premium promptu keşfetmek için giriş yapın"
+  },
+  "login.subtitle.register": {
+    "message": "Harika promptları keşfedin, paylaşın ve oluşturun"
+  },
+  "login.subtitle.forgotPassword": {
+    "message": "Sıfırlama bağlantısı e-postanıza gönderilecek"
+  },
+  "myspace.filter.all": {
+    "message": "Tümü"
+  },
+  "myspace.filter.prompts": {
+    "message": "Prompt"
+  },
+  "myspace.filter.favorites": {
+    "message": "Favoriler"
+  },
+  "myspace.manageTags": {
+    "message": "Etiketleri Yönet"
+  },
+  "myspace.search.placeholder": {
+    "message": "Alanımda ara..."
+  },
+  "myspace.tagManager.title": {
+    "message": "Özel Etiketleri Yönet"
+  },
+  "action.save": {
+    "message": "Kaydet"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "Etiket adı"
+  },
+  "action.add": {
+    "message": "Ekle"
+  },
+  "myspace.tagManager.empty": {
+    "message": "Henüz özel etiket yok"
+  },
+  "message.orderSaved": {
+    "message": "Sıralama kaydedildi"
+  },
+  "message.orderSaveFailed": {
+    "message": "Sıralama kaydedilemedi"
+  },
+  "message.tagsUpdated": {
+    "message": "Etiketler güncellendi"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Etiket güncellenemedi"
+  },
+  "message.convertToPrivate.success": {
+    "message": "Özel Prompt'a dönüştürüldü"
+  },
+  "message.convertToPrivate.error": {
+    "message": "Dönüştürme başarısız, lütfen daha sonra tekrar deneyin"
+  },
+  "message.noSpaceItems": {
+    "message": "Henüz içerik yok, lütfen Prompt veya Favori ekleyin."
+  },
+  "message.noPrompts": {
+    "message": "Henüz gönderilmiş Prompt yok, lütfen Prompt ekleyin."
+  },
+  "message.noFavorites": {
+    "message": "Henüz favori eklenmemiş, lütfen favori ekleyin."
+  },
+  "myspace.assignTag": {
+    "message": "Etiket Ata"
+  },
+  "link.myaccount": {
+    "message": "Hesap Ayarları"
+  },
+  "button.logout": {
+    "message": "Çıkış"
+  },
+  "message.logout.confirm.title": {
+    "message": "Çıkışı Onayla"
+  },
+  "message.logout.confirm.content": {
+    "message": "Çıkış yapmak istediğinizden emin misiniz?"
+  },
+  "nav.explore": {
+    "message": "Keşfet"
+  },
+  "nav.myCollection": {
+    "message": "Koleksiyonum"
+  },
+  "link.addprompt": {
+    "message": "Prompt Ekle"
+  },
+  "button.settings": {
+    "message": "Ayarlar"
+  },
+  "showcase.header.button": {
+    "message": "Prompt'unuzu Paylaşın"
+  },
+  "message.export.noPrompts": {
+    "message": "Dışa aktarılacak Prompt yok"
+  },
+  "message.export.success": {
+    "message": "Prompt başarıyla dışa aktarıldı!"
+  },
+  "message.export.error": {
+    "message": "Dışa aktarma başarısız, lütfen daha sonra tekrar deneyin"
+  },
+  "message.cache.cleared": {
+    "message": "Önbellek temizlendi, veriler yenilendi"
+  },
+  "message.cache.clearError": {
+    "message": "Önbellek temizlenemedi"
+  },
+  "message.import.invalid": {
+    "message": "Geçersiz veri formatı"
+  },
+  "message.import.success": {
+    "message": "İçe aktarma başarılı!"
+  },
+  "message.import.partial": {
+    "message": "Kısmi içe aktarma başarılı"
+  },
+  "message.import.failed": {
+    "message": "İçe aktarma başarısız"
+  },
+  "message.import.parseError": {
+    "message": "JSON ayrıştırma başarısız, lütfen dosya formatını kontrol edin"
+  },
+  "message.success.passwordChanged": {
+    "message": "Şifre başarıyla değiştirildi!"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "Şifre değiştirilemedi, lütfen daha sonra tekrar deneyin"
+  },
+  "link.myAccount": {
+    "message": "Kullanıcı Merkezi"
+  },
+  "title.userInfo": {
+    "message": "Kullanıcı Bilgileri"
+  },
+  "stat.sharedPrompts": {
+    "message": "Paylaşılan Promptlar"
+  },
+  "progress.toNextLevel": {
+    "message": "Sonraki seviyeye"
+  },
+  "progress.encourage": {
+    "message": "Daha yüksek seviyelerin kilidini açmak için paylaşmaya devam edin!"
+  },
+  "level.max.congrats": {
+    "message": "En yüksek seviyeye ulaştığınız için tebrikler! Siz topluluk efsanesisiniz!"
+  },
+  "title.security": {
+    "message": "Güvenlik Ayarları"
+  },
+  "modal.forgotPassword.title": {
+    "message": "Şifremi Unuttum"
+  },
+  "message.forgotPassword.info": {
+    "message": "Kayıtlı e-postanıza sıfırlama bağlantısı içeren bir e-posta göndereceğiz."
+  },
+  "placeholder.currentPassword": {
+    "message": "Mevcut şifre"
+  },
+  "validation.currentPassword.required": {
+    "message": "Lütfen mevcut şifrenizi girin!"
+  },
+  "action.changePassword": {
+    "message": "Şifre Değiştir"
+  },
+  "title.dataManagement": {
+    "message": "Veri Yönetimi"
+  },
+  "button.exportPrompts": {
+    "message": "Promptları Dışa Aktar"
+  },
+  "description.exportPrompts.short": {
+    "message": "Yedekleme için JSON dosyası olarak dışa aktar"
+  },
+  "button.export": {
+    "message": "Verileri Dışa Aktar"
+  },
+  "button.importPrompts": {
+    "message": "Promptları İçe Aktar"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON dosyasından Prompt ve favorileri içe aktar"
+  },
+  "button.import": {
+    "message": "Verileri İçe Aktar"
+  },
+  "button.clearCache": {
+    "message": "Önbelleği Temizle"
+  },
+  "description.clearCache.short": {
+    "message": "Yerel önbellek verilerini yenile"
+  },
+  "modal.clearCache.title": {
+    "message": "Önbelleği Temizlemeyi Onayla?"
+  },
+  "modal.clearCache.content": {
+    "message": "Sistem, önbelleği otomatik olarak yönetmek için ETag teknolojisi kullanır, genellikle manuel temizleme gerekmez."
+  },
+  "modal.clearCache.warning": {
+    "message": "Temizledikten sonra, tüm veriler yeniden yüklenecektir."
+  },
+  "button.clearAllCache": {
+    "message": "Tüm Önbelleği Temizle"
+  },
+  "placeholder.promptContent": {
+    "message": "Ayrıntılı prompt içeriğini buraya girin..."
+  },
+  "prompt.tokenDanger": {
+    "message": "Prompt çok uzun, birden fazla Prompt'a bölmenizi şiddetle tavsiye ederiz"
+  },
+  "prompt.tokenWarning": {
+    "message": "Prompt oldukça uzun, kısaltmanız veya bölmenizi öneririz"
+  },
+  "action.addPrompt": {
+    "message": "Ekle Prompt"
+  },
+  "modal.editPrompt.title": {
+    "message": "Mevcut Prompt'u Güncelle"
+  },
+  "action.updatePrompt": {
+    "message": "Prompt'u Güncelle"
+  },
+  "label.promptTitle": {
+    "message": "Prompt Adı"
+  },
+  "validation.promptTitle.required": {
+    "message": "Lütfen prompt başlığı girin!"
+  },
+  "placeholder.promptTitle": {
+    "message": "Prompt'unuza bir isim verin"
+  },
+  "label.promptContent": {
+    "message": "Prompt İçeriği"
+  },
+  "validation.promptContent.required": {
+    "message": "Lütfen prompt içeriği girin!"
+  },
+  "label.promptRemark": {
+    "message": "İşlev/Kullanım"
+  },
+  "placeholder.promptRemark": {
+    "message": "Prompt'un işlevini kısaca açıklayın (isteğe bağlı)"
+  },
+  "label.promptNotes": {
+    "message": "Notlar"
+  },
+  "label.promptNotes.description": {
+    "message": "Prompt kaynağı, diğer dil sürümleri veya ek notlar sağlayabilirsiniz."
+  },
+  "placeholder.promptNotes": {
+    "message": "Bu prompt hakkında ek notlar (isteğe bağlı)"
+  },
+  "label.sharePrompt": {
+    "message": "Bu prompt'u genel sayfada paylaşmak ister misiniz?"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Bu sayfa çöktü.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Yukarı kaydır",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Arşiv",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Arşiv",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog listesi sayfa navigasyonu",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Daha yeni girdiler",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Daha eski girdiler",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog gönderi sayfası navigasyonu",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Daha yeni gönderi",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Daha eski gönderi",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Tüm etiketleri görüntüle",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "sistem modu",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "açık mod",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "karanlık mod",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Karanlık ve açık mod arasında geçiş yap (şu anda {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Ekmek kırıntıları",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 öğe|{count} öğe",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Doküman sayfası",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Önceki",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Sonraki",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Bir doküman etiketlendi|{count} doküman etiketlendi",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "\"{tagName}\" ile {nDocsTagged}",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Sürüm: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Bu {siteTitle} {versionLabel} sürümü için yayınlanmamış dokümantasyondur.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Bu {siteTitle} {versionLabel} için dokümantasyondur, artık aktif olarak bakımı yapılmamaktadır.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Güncel dokümantasyon için {latestVersionLink} ({versionLabel}) bakın.",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "en son sürüm",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Bu sayfayı düzenle",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} için doğrudan bağlantı",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date} tarihinde",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " {user} tarafından",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Son güncelleme{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "Sayfa Bulunamadı",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Sürümler",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Etiketler:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Kapat",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "dikkat",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "tehlike",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "bilgi",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "not",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "ipucu",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "uyarı",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog kenar çubuğu son gönderi navigasyonu",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "'{label}' kenar çubuğu kategorisini genişlet",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "'{label}' kenar çubuğu kategorisini daralt",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(yeni sekmede açılır)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Ana",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Aradığınızı bulamadık.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Lütfen sizi orijinal URL'ye yönlendiren site sahibiyle iletişime geçin ve bağlantılarının bozuk olduğunu bildirin.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Diller",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Bu sayfada",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 dk okuma|{readingTime} dk okuma",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Devamını oku",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "{title} hakkında daha fazla oku",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Kopyala",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Kopyalandı",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Kodu panoya kopyala",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Sözcük kaydırmayı değiştir",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Ana sayfa",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Doküman kenar çubuğu",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Kenar çubuğunu daralt",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Kenar çubuğunu daralt",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Navigasyon çubuğunu kapat",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Ana menüye dön",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Navigasyon çubuğunu değiştir",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Açılır menüyü genişlet",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Açılır menüyü daralt",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Kenar çubuğunu genişlet",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Kenar çubuğunu genişlet",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Bir gönderi|{count} gönderi",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "\"{tagName}\" etiketli {nPosts}",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Yazarlar",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "Tüm yazarları görüntüle",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "Bu yazar henüz gönderi yazmadı.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Listelenmemiş sayfa",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "Bu sayfa listelenmemiş. Arama motorları tarafından dizinlenmeyecek ve yalnızca doğrudan bağlantıya sahip kullanıcılar erişebilir.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Taslak sayfa",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "Bu sayfa bir taslaktır. Yalnızca geliştirme ortamında görünür ve üretim derlemesinden hariç tutulur.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Tekrar dene",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Ana içeriğe atla",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Etiketler",
+    "description": "The title of the tag list page"
+  }
+}

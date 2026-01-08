@@ -23,7 +23,7 @@ So einfach ist das! Für weitere Funktionen lesen Sie weiter oder schauen Sie im
 
 🔍 **Intelligente Suche**: Finden Sie schnell die benötigten Prompts durch Tag-Filterung und Stichwortsuche.
 
-🌍 **Mehrsprachige Unterstützung**: Bietet Übersetzung für 12 Sprachen und unterstützt Antworten in der Muttersprache.
+🌍 **Mehrsprachige Unterstützung**: Bietet Übersetzung für 18 Sprachen und unterstützt Antworten in der Muttersprache.
 
 📦 **Sofort einsatzbereit**: Keine Registrierung erforderlich, einfach besuchen und nutzen.
 

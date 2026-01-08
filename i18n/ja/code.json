@@ -902,9 +902,6 @@
   "prompt.content": {
     "message": "プロンプトの内容"
   },
-  "prompt.description": {
-    "message": "説明"
-  },
   "action.viewDetails": {
     "message": "詳細を見る"
   },

@@ -894,9 +894,6 @@
   "prompt.content": {
     "message": "Contenu du prompt"
   },
-  "prompt.description": {
-    "message": "Description"
-  },
   "action.viewDetails": {
     "message": "Voir les détails"
   },

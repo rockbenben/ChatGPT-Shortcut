@@ -23,7 +23,7 @@ AI Short (ChatGPT Shortcut) fornisce una lista concisa e facile da usare di prom
 
 🔍 **Ricerca Intelligente**: Trova rapidamente i prompt di cui hai bisogno tramite filtraggio per tag e ricerca per parole chiave.
 
-🌍 **Supporto Multilingue**: Fornisce traduzione in 12 lingue, supportando risposte nella lingua madre.
+🌍 **Supporto Multilingue**: Fornisce traduzione in 18 lingue, supportando risposte nella lingua madre.
 
 📦 **Pronto all'Uso**: Nessuna registrazione richiesta, visita semplicemente per usare.
 
