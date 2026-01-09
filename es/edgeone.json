@@ -1,9 +1,7 @@
 {
   "name": "aishort",
   "redirects": [
-    { "source": "/vi", "destination": "/en", "statusCode": 301 },
-    { "source": "/id", "destination": "/en", "statusCode": 301 },
-    { "source": "/tr", "destination": "/en", "statusCode": 301 },
+    { "source": "/id", "destination": "/ind", "statusCode": 301 },
     { "source": "/docs/guides/extension", "destination": "/docs/extension/usage", "statusCode": 301 },
     { "source": "/en/docs/guides/extension", "destination": "/en/docs/extension/usage", "statusCode": 301 },
     { "source": "/ar/docs/guides/extension", "destination": "/ar/docs/extension/usage", "statusCode": 301 },
@@ -21,6 +19,7 @@
   "headers": [
     { "source": "/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/en/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/zh-Hant/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/ar/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/bn/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/de/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
@@ -34,6 +33,10 @@
     { "source": "/ru/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/hi/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/bn/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/vi/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/th/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/tr/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/ind/assets/*", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     {
       "source": "/*.ico",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]

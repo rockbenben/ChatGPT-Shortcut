@@ -25,18 +25,8 @@
       }
     },
     {
-      "route": "/vi",
-      "redirect": "/en",
-      "statusCode": 301
-    },
-    {
       "route": "/id",
-      "redirect": "/en",
-      "statusCode": 301
-    },
-    {
-      "route": "/tr",
-      "redirect": "/en",
+      "redirect": "/ind",
       "statusCode": 301
     },
     {
