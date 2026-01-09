@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
-        run: yarn build
+        run: yarn build-phased
 
       # - name: Deploy to EdgeOne Pages
       #   run: npx edgeone pages deploy ./build --name aishort --token ${{ secrets.EDGEONE_API_TOKEN }}
