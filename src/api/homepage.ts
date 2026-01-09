@@ -260,7 +260,7 @@ export async function searchCardsLocally(tags: string[], searchName: string | nu
       let searchMatch = true;
       if (searchLower) {
         // 获取当前语言的字段数据
-        const langData = card[safeLang] || card.zh || {};
+        const langData = card[safeLang] || card["zh-Hans"] || {};
         const title = (langData.title || card.title || "").toLowerCase();
         const description = (langData.description || card.description || "").toLowerCase();
         const remark = (langData.remark || card.remark || "").toLowerCase();

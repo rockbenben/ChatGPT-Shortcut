@@ -22,9 +22,24 @@ export interface LanguageContent {
 export interface PromptData {
   id: number;
   zh?: LanguageContent;
+  "zh-Hans"?: LanguageContent;
+  "zh-Hant"?: LanguageContent;
   en?: LanguageContent;
   ja?: LanguageContent;
   ko?: LanguageContent;
+  de?: LanguageContent;
+  fr?: LanguageContent;
+  es?: LanguageContent;
+  it?: LanguageContent;
+  pt?: LanguageContent;
+  ru?: LanguageContent;
+  ar?: LanguageContent;
+  hi?: LanguageContent;
+  bn?: LanguageContent;
+  vi?: LanguageContent;
+  th?: LanguageContent;
+  tr?: LanguageContent;
+  ind?: LanguageContent;
   website: string | null;
   tags: TagType[];
   weight: number;
