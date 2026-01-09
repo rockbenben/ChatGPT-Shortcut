@@ -397,6 +397,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         console.error("Failed to fetch MySpace data:", error);
         if (isMounted) {
           messageApi.error("加载数据失败");
+          hasInitializedRef.current = true;
         }
       } finally {
         if (isMounted) {
