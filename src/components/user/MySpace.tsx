@@ -313,6 +313,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
     // 如果用户相同且 items 没变化，跳过重新加载
     if (initializedUserIdRef.current === currentUserId && itemsHashRef.current === currentHash) {
+      // 即使跳过重新加载，也要标记已初始化（避免卡在 skeleton 状态）
+      hasInitializedRef.current = true;
+      // 重置 dataProcessing：防止上一次被中断的 fetchData 留下的 true 状态
+      setDataProcessing(false);
       return;
     }
     initializedUserIdRef.current = currentUserId;
