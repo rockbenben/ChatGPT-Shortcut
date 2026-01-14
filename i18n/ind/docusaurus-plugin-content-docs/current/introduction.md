@@ -23,7 +23,7 @@ Sesederhana itu! Untuk fitur lebih lanjut, silakan lanjutkan membaca atau lihat 
 
 🔍 **Pencarian Cerdas**: Temukan prompt yang Anda butuhkan dengan cepat melalui filter tag dan pencarian kata kunci.
 
-🌍 **Dukungan Multi-bahasa**: Menyediakan terjemahan untuk 12 bahasa, mendukung balasan bahasa lokal.
+🌍 **Dukungan Multi-bahasa**: Menyediakan terjemahan untuk 18 bahasa, mendukung balasan bahasa lokal.
 
 📦 **Siap Pakai**: Tidak perlu registrasi, cukup kunjungi untuk menggunakan.
 

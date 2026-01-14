@@ -23,7 +23,7 @@ C'est aussi simple que ça ! Pour plus de fonctionnalités, continuez à lire ou
 
 🔍 **Recherche intelligente** : Trouvez rapidement les prompts dont vous avez besoin grâce au filtrage par balises et à la recherche par mots-clés.
 
-🌍 **Support multilingue** : Fournit une traduction en 12 langues, prenant en charge les réponses dans la langue maternelle.
+🌍 **Support multilingue** : Fournit une traduction en 18 langues, prenant en charge les réponses dans la langue maternelle.
 
 📦 **Prêt à l'emploi** : Aucune inscription requise, visitez simplement pour utiliser.
 

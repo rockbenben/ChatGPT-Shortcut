@@ -37,7 +37,7 @@ AiShort (ChatGPT Shortcut) ofrece una lista curada de prompts de IA para ayudart
 
 🔍 **Búsqueda Inteligente** - Encuentra prompts rápido con filtros de etiquetas y búsqueda por palabras clave.
 
-🌍 **12 Idiomas** - Traducciones para todos los prompts, con respuestas en tu idioma nativo.
+🌍 **18 Idiomas** - Traducciones para todos los prompts, con respuestas en tu idioma nativo.
 
 📦 **Listo para Usar** - Sin registro necesario, empieza a usar de inmediato.
 

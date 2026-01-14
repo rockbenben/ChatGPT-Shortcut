@@ -23,7 +23,7 @@ Bu kadar basit! Daha fazla özellik için okumaya devam edin veya [Kullanım Kı
 
 🔍 **Akıllı Arama**: Etiket filtreleme ve anahtar kelime araması ile ihtiyacınız olan promptları hızlıca bulun.
 
-🌍 **Çok Dilli Destek**: 12 dilde çeviri sağlar, yerel dilde yanıt destekler.
+🌍 **Çok Dilli Destek**: 18 dilde çeviri sağlar, yerel dilde yanıt destekler.
 
 📦 **Kullanıma Hazır**: Kayıt gerektirmez, sadece ziyaret edin ve kullanın.
 

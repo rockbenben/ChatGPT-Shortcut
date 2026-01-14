@@ -23,7 +23,7 @@ AI Short (ChatGPT Shortcut) cung cấp danh sách prompt AI ngắn gọn và d�
 
 🔍 **Tìm kiếm thông minh**: Nhanh chóng tìm thấy prompt bạn cần thông qua lọc thẻ và tìm kiếm từ khóa.
 
-🌍 **Hỗ trợ đa ngôn ngữ**: Cung cấp dịch thuật cho 12 ngôn ngữ, hỗ trợ trả lời bằng ngôn ngữ bản địa.
+🌍 **Hỗ trợ đa ngôn ngữ**: Cung cấp dịch thuật cho 18 ngôn ngữ, hỗ trợ trả lời bằng ngôn ngữ bản địa.
 
 📦 **Sẵn sàng sử dụng**: Không cần đăng ký, chỉ cần truy cập để sử dụng.
 

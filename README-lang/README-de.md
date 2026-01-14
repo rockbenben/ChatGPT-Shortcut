@@ -37,7 +37,7 @@ AiShort (ChatGPT Shortcut) bietet eine sorgfältig kuratierte Liste von KI-Promp
 
 🔍 **Intelligente Suche** - Schnell finden mit Tag-Filter und Stichwortsuche.
 
-🌍 **12 Sprachen** - Übersetzungen für alle Prompts, Antworten in deiner Muttersprache.
+🌍 **18 Sprachen** - Übersetzungen für alle Prompts, Antworten in deiner Muttersprache.
 
 📦 **Sofort einsatzbereit** - Keine Registrierung erforderlich, sofort loslegen.
 

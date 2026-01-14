@@ -37,7 +37,7 @@ AiShort (ChatGPT Shortcut) propose une liste soigneusement sélectionnée de pro
 
 🔍 **Recherche Intelligente** - Trouvez rapidement avec le filtrage par tags et la recherche par mots-clés.
 
-🌍 **12 Langues** - Traductions pour tous les prompts, avec réponses dans votre langue maternelle.
+🌍 **18 Langues** - Traductions pour tous les prompts, avec réponses dans votre langue maternelle.
 
 📦 **Prêt à l'Emploi** - Aucune inscription requise, commencez immédiatement.
 
