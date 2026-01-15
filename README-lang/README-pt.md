@@ -1,22 +1,45 @@
 <h1 align="center">
-⚡️AI Short
+    <a href="https://www.aishort.top/">
+        <img src="../static/img/logo.png" alt="AiShort Logo" width="120" height="120" />
+    </a>
+    <br>
+    AiShort (ChatGPT Shortcut) - Ferramenta de gerenciamento de prompts de IA simples e fácil de usar
 </h1>
+
 <p align="center">
-    <a href="../README.md">English</a> | <a href="../README-zh.md">中文</a> |
-<a href="./README-es.md">Español</a> |
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
+    </a>
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/stargazers">
+        <img src="https://img.shields.io/github/stars/rockbenben/ChatGPT-Shortcut?style=social" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/rockbenben/ChatGPT-Shortcut/releases">
+        <img src="https://img.shields.io/github/v/release/rockbenben/ChatGPT-Shortcut?color=green" alt="Version" />
+    </a>
+    <a href="https://discord.gg/PZTQfJ4GjX">
+        <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
+    </a>
+</p>
+<p align="center">
+    <a href="../README.md">English</a> | <a href="../README-zh.md">简体中文</a> | <a href="./README-zh-hant.md">繁體中文</a> |
 <a href="./README-ja.md">日本語</a> |
 <a href="./README-ko.md">한국어</a> |
 <a href="./README-fr.md">Français</a> |
 <a href="./README-de.md">Deutsch</a> |
+<a href="./README-es.md">Español</a> |
 <a href="./README-it.md">Italiano</a> |
 <a href="./README-ru.md">Русский</a> |
 Português |
+<a href="./README-ind.md">Indonesia</a> |
 <a href="./README-ar.md">العربية</a> |
+<a href="./README-tr.md">Türkçe</a> |
+<a href="./README-vi.md">Tiếng Việt</a> |
+<a href="./README-th.md">ภาษาไทย</a> |
 <a href="./README-hi.md">हिन्दी</a> |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>ChatGPT Shortcut - Maximize sua Eficiência e Produtividade</em>
+    <em>AiShort (ChatGPT Shortcut) - Maximize sua Eficiência e Produtividade</em>
 </p>
 
 ## ⚡ Início Rápido
@@ -24,6 +47,8 @@ Português |
 1. Visite [aishort.top](https://www.aishort.top/pt/)
 2. Pesquise ou navegue pelo prompt que você precisa
 3. Clique em "Copiar" e cole em qualquer modelo de IA
+
+![AiShort Interface](../static/img/docs/interface-home.png)
 
 É isso! Para mais funcionalidades, consulte o [Guia do Usuário](https://www.aishort.top/pt/docs/guides/getting-started).
 
