@@ -300,11 +300,9 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
   const [hasDragged, setHasDragged] = useState(false);
 
-  // 使用 ref 跟踪已初始化的用户 ID 和 items hash，避免收藏操作后重复加载
-  const initializedUserIdRef = useRef<number | null>(null);
-  const itemsHashRef = useRef<string>("");
-  // 跟踪是否已完成过首次数据加载（用于区分“正在加载”和“用户真的没有数据”）
-  const hasInitializedRef = useRef(false);
+  // 跟踪已加载的用户数据，避免重复加载
+  // 包含 userId 和 hash，只有两者都匹配且 spaceItems 有数据时才跳过加载
+  const lastLoadedRef = useRef<{ userId: number; hash: string } | null>(null);
 
   // 配置拖拽传感器
   const sensors = useSensors(
@@ -326,16 +324,18 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}_${item.updatedAt || ""}`).join(",");
     const currentUserId = userAuth.data.id;
 
-    // 如果用户相同且 items 没变化，跳过重新加载
-    if (initializedUserIdRef.current === currentUserId && itemsHashRef.current === currentHash) {
-      // 即使跳过重新加载，也要标记已初始化（避免卡在 skeleton 状态）
-      hasInitializedRef.current = true;
-      // 重置 dataProcessing：防止上一次被中断的 fetchData 留下的 true 状态
+    // 用户切换时，重置状态避免显示上一个用户的数据
+    if (lastLoadedRef.current?.userId !== currentUserId) {
+      lastLoadedRef.current = null;
+      setSpaceItems([]);
+    }
+
+    // 只有在已加载相同数据且 spaceItems 有内容时才跳过重新加载
+    // 关键修复：添加 spaceItems.length > 0 检查，防止数据为空时跳过加载
+    if (lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.hash === currentHash && spaceItems.length > 0) {
       setDataProcessing(false);
       return;
     }
-    initializedUserIdRef.current = currentUserId;
-    itemsHashRef.current = currentHash;
 
     let isMounted = true;
 
@@ -397,7 +397,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
         if (isMounted) {
           setSpaceItems(allItems);
-          hasInitializedRef.current = true; // 标记已完成首次加载
+          // 更新已加载标记，记录用户 ID 和数据 hash
+          lastLoadedRef.current = { userId: currentUserId, hash: currentHash };
           // 不再缓存 myspace_items，统一使用 AuthContext 的 user_auth 缓存
 
           // 通知父组件数据已加载（使用实际获取到数据的数量）
@@ -416,7 +417,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         console.error("Failed to fetch MySpace data:", error);
         if (isMounted) {
           messageApi.error("加载数据失败");
-          hasInitializedRef.current = true;
         }
       } finally {
         if (isMounted) {
@@ -662,11 +662,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [spaceItems, customTags, messageApi]
   );
 
-  // 统一的加载状态：
-  // 1. AuthContext 加载中
-  // 2. 数据处理中
-  // 3. 有用户数据但尚未完成首次加载（初始渲染阶段）
-  if (authLoading || dataProcessing || (userAuth?.data && !hasInitializedRef.current)) {
+  // 统一的加载状态：AuthContext 加载中 或 数据处理中
+  if (authLoading || dataProcessing) {
     return <PromptCardSkeleton count={6} />;
   }
 
