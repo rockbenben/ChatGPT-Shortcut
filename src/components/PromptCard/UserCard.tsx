@@ -1,6 +1,7 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
+import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
@@ -9,6 +10,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
+import styles from "./styles.module.css";
 
 interface UserCardProps {
   data: any;
@@ -86,7 +88,13 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
               </div>
             )}
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
-              <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+              {user.share ? (
+                <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+                  {user.title}
+                </Link>
+              ) : (
+                <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+              )}
             </Typography.Title>
           </Flex>
         </Flex>

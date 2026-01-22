@@ -18,7 +18,7 @@ export { register, login, changePassword, forgotPassword, resetPassword, sendPas
 export { getUserAllInfo, updateUsername } from "./user";
 
 // Prompts APIs
-export { getPrompts, submitPrompt, updatePrompt, deletePrompt, getCommPrompts, searchCards, voteOnUserPrompt, fetchAllCopyCounts, updateCopyCount } from "./prompts";
+export { getPrompts, submitPrompt, updatePrompt, deletePrompt, getCommPrompts, searchCards, voteOnUserPrompt, fetchAllCopyCounts, updateCopyCount, getSingleCommPrompt } from "./prompts";
 
 // Favorites APIs
 export { createFavorite, updateFavorite } from "./favorites";

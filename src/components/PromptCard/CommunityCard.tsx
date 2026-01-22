@@ -3,11 +3,13 @@ import { Tooltip, Button, Typography, Flex, theme } from "antd";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { AuthContext } from "../AuthContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
+import styles from "./styles.module.css";
 
 interface CommunityCardProps {
   data: any;
@@ -27,7 +29,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       copyText(user.description);
     },
-    [copyText, user.description]
+    [copyText, user.description],
   );
 
   const handleToggleFavorite = useCallback(
@@ -35,7 +37,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onToggleFavorite?.(user.id, true);
     },
-    [onToggleFavorite, user.id]
+    [onToggleFavorite, user.id],
   );
 
   const handleUpvote = useCallback(
@@ -43,7 +45,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onVote?.(user.id, "upvote");
     },
-    [onVote, user.id]
+    [onVote, user.id],
   );
 
   const handleDownvote = useCallback(
@@ -51,7 +53,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onVote?.(user.id, "downvote");
     },
-    [onVote, user.id]
+    [onVote, user.id],
   );
 
   const handleCardClick = useCallback(() => {
@@ -72,8 +74,10 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
-            <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
+            <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+              {user.title}
+            </Link>
           </Typography.Title>
         </Flex>
       }
