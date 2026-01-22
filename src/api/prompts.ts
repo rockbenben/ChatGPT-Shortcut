@@ -545,3 +545,21 @@ export async function updateCopyCount(cardId: number) {
     return null;
   }
 }
+
+/**
+ * Get a single community prompt by ID
+ * Used for community prompt detail page
+ */
+export async function getSingleCommPrompt(id: number) {
+  if (!id || !Number.isInteger(id) || id <= 0) {
+    return null;
+  }
+
+  try {
+    const results = await getPrompts("commus", [id]);
+    return results.length > 0 ? results[0] : null;
+  } catch (error) {
+    console.error("Error fetching single community prompt:", error);
+    throw error;
+  }
+}

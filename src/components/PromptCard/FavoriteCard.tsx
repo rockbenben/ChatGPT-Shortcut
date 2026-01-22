@@ -170,7 +170,9 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
                   {title}
                 </Link>
               ) : (
-                <span style={{ color: "var(--ifm-color-primary)" }}>{title}</span>
+                <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+                  {title}
+                </Link>
               )}
             </Typography.Title>
           </Flex>

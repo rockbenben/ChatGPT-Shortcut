@@ -3,11 +3,13 @@ import { Tooltip, Button, Typography, Flex } from "antd";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
+import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { AuthContext } from "../AuthContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
+import styles from "./styles.module.css";
 
 interface CommunityCardProps {
   data: any;
@@ -72,7 +74,9 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
           <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
-            <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+            <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+              {user.title}
+            </Link>
           </Typography.Title>
         </Flex>
       }
