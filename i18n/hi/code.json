@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "व्यवस्था सहेजने में विफल"
+  },
+  "message.loginRequired": {
+    "message": "कृपया पहले लॉगिन करें"
+  },
+  "community.loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "community.notFound": {
+    "message": "प्रॉम्प्ट नहीं मिला"
+  },
+  "community.notFoundDesc": {
+    "message": "यह प्रॉम्प्ट हटा दिया गया हो सकता है या निजी पर सेट किया गया हो सकता है"
+  },
+  "community.backToList": {
+    "message": "सूची पर वापस जाएं"
+  },
+  "community.seoSuffix": {
+    "message": "समुदाय प्रॉम्प्ट्स"
   }
 }

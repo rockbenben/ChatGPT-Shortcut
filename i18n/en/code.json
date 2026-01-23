@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Failed to save layout"
+  },
+  "message.loginRequired": {
+    "message": "Please login first"
+  },
+  "community.loading": {
+    "message": "Loading..."
+  },
+  "community.notFound": {
+    "message": "Prompt not found"
+  },
+  "community.notFoundDesc": {
+    "message": "This prompt may have been deleted or set to private"
+  },
+  "community.backToList": {
+    "message": "Back to list"
+  },
+  "community.seoSuffix": {
+    "message": "Community Prompts"
   }
 }

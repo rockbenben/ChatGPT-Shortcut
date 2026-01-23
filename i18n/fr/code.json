@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Échec de l'enregistrement de la disposition"
+  },
+  "message.loginRequired": {
+    "message": "Veuillez d'abord vous connecter"
+  },
+  "community.loading": {
+    "message": "Chargement..."
+  },
+  "community.notFound": {
+    "message": "Prompt non trouvé"
+  },
+  "community.notFoundDesc": {
+    "message": "Ce prompt a peut-être été supprimé ou défini comme privé"
+  },
+  "community.backToList": {
+    "message": "Retour à la liste"
+  },
+  "community.seoSuffix": {
+    "message": "Prompts communautaires"
   }
 }

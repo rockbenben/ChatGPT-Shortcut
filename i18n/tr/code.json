@@ -1120,5 +1120,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiketler",
     "description": "The title of the tag list page"
+  },
+  "message.loginRequired": {
+    "message": "Lütfen önce giriş yapın"
+  },
+  "community.loading": {
+    "message": "Yükleniyor..."
+  },
+  "community.notFound": {
+    "message": "Prompt bulunamadı"
+  },
+  "community.notFoundDesc": {
+    "message": "Bu prompt silinmiş veya özel olarak ayarlanmış olabilir"
+  },
+  "community.backToList": {
+    "message": "Listeye dön"
+  },
+  "community.seoSuffix": {
+    "message": "Topluluk Promptları"
   }
 }

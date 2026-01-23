@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "বিন্যাস সংরক্ষণে ব্যর্থ"
+  },
+  "message.loginRequired": {
+    "message": "অনুগ্রহ করে প্রথমে লগইন করুন"
+  },
+  "community.loading": {
+    "message": "লোড হচ্ছে..."
+  },
+  "community.notFound": {
+    "message": "প্রম্পট পাওয়া যায়নি"
+  },
+  "community.notFoundDesc": {
+    "message": "এই প্রম্পটটি মুছে ফেলা হয়েছে বা ব্যক্তিগত হিসাবে সেট করা হয়েছে"
+  },
+  "community.backToList": {
+    "message": "তালিকায় ফিরে যান"
+  },
+  "community.seoSuffix": {
+    "message": "কমিউনিটি প্রম্পট"
   }
 }

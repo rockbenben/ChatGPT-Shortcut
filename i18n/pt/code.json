@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Falha ao salvar disposição"
+  },
+  "message.loginRequired": {
+    "message": "Por favor, faça login primeiro"
+  },
+  "community.loading": {
+    "message": "Carregando..."
+  },
+  "community.notFound": {
+    "message": "Prompt não encontrado"
+  },
+  "community.notFoundDesc": {
+    "message": "Este prompt pode ter sido excluído ou definido como privado"
+  },
+  "community.backToList": {
+    "message": "Voltar à lista"
+  },
+  "community.seoSuffix": {
+    "message": "Prompts da comunidade"
   }
 }

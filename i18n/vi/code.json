@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Không thể lưu bố cục"
+  },
+  "message.loginRequired": {
+    "message": "Vui lòng đăng nhập trước"
+  },
+  "community.loading": {
+    "message": "Đang tải..."
+  },
+  "community.notFound": {
+    "message": "Không tìm thấy Prompt"
+  },
+  "community.notFoundDesc": {
+    "message": "Prompt này có thể đã bị xóa hoặc được đặt thành riêng tư"
+  },
+  "community.backToList": {
+    "message": "Quay lại danh sách"
+  },
+  "community.seoSuffix": {
+    "message": "Prompt cộng đồng"
   }
 }
