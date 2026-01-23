@@ -1120,5 +1120,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "標籤",
     "description": "The title of the tag list page"
+  },
+  "message.loginRequired": {
+    "message": "請先登入"
+  },
+  "community.loading": {
+    "message": "載入中..."
+  },
+  "community.notFound": {
+    "message": "提示詞未找到"
+  },
+  "community.notFoundDesc": {
+    "message": "該提示詞可能已被刪除或設為私有"
+  },
+  "community.backToList": {
+    "message": "返回列表"
+  },
+  "community.seoSuffix": {
+    "message": "社群提示詞"
   }
 }

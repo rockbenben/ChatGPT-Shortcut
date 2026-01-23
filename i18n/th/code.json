@@ -1120,5 +1120,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "แท็ก",
     "description": "The title of the tag list page"
+  },
+  "message.loginRequired": {
+    "message": "กรุณาเข้าสู่ระบบก่อน"
+  },
+  "community.loading": {
+    "message": "กำลังโหลด..."
+  },
+  "community.notFound": {
+    "message": "ไม่พบพรอมต์"
+  },
+  "community.notFoundDesc": {
+    "message": "พรอมต์นี้อาจถูกลบหรือตั้งค่าเป็นส่วนตัว"
+  },
+  "community.backToList": {
+    "message": "กลับไปยังรายการ"
+  },
+  "community.seoSuffix": {
+    "message": "พรอมต์ชุมชน"
   }
 }

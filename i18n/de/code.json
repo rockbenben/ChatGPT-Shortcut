@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Speichern der Anordnung fehlgeschlagen"
+  },
+  "message.loginRequired": {
+    "message": "Bitte zuerst anmelden"
+  },
+  "community.loading": {
+    "message": "Wird geladen..."
+  },
+  "community.notFound": {
+    "message": "Prompt nicht gefunden"
+  },
+  "community.notFoundDesc": {
+    "message": "Dieser Prompt wurde möglicherweise gelöscht oder auf privat gesetzt"
+  },
+  "community.backToList": {
+    "message": "Zurück zur Liste"
+  },
+  "community.seoSuffix": {
+    "message": "Community-Prompts"
   }
 }

@@ -1120,5 +1120,23 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tag",
     "description": "The title of the tag list page"
+  },
+  "message.loginRequired": {
+    "message": "Silakan login terlebih dahulu"
+  },
+  "community.loading": {
+    "message": "Memuat..."
+  },
+  "community.notFound": {
+    "message": "Prompt tidak ditemukan"
+  },
+  "community.notFoundDesc": {
+    "message": "Prompt ini mungkin telah dihapus atau disetel ke privat"
+  },
+  "community.backToList": {
+    "message": "Kembali ke daftar"
+  },
+  "community.seoSuffix": {
+    "message": "Prompt Komunitas"
   }
 }

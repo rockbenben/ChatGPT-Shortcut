@@ -1120,5 +1120,23 @@
   },
   "message.orderSaveFailed": {
     "message": "Не удалось сохранить расположение"
+  },
+  "message.loginRequired": {
+    "message": "Пожалуйста, сначала войдите"
+  },
+  "community.loading": {
+    "message": "Загрузка..."
+  },
+  "community.notFound": {
+    "message": "Промпт не найден"
+  },
+  "community.notFoundDesc": {
+    "message": "Этот промпт мог быть удален или сделан приватным"
+  },
+  "community.backToList": {
+    "message": "Вернуться к списку"
+  },
+  "community.seoSuffix": {
+    "message": "Промпты сообщества"
   }
 }
