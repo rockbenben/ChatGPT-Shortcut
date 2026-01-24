@@ -494,13 +494,36 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         return;
       }
 
-      const newItems = arrayMove(filteredItems, oldIndex, newIndex);
-      setSpaceItems(newItems);
+      // 当有筛选条件时，需要在完整的 spaceItems 中调整顺序
+      // 而不是用 filteredItems 覆盖 spaceItems
+      let newSpaceItems: typeof spaceItems;
+
+      if (filter === "all" && selectedTags.length === 0 && !searchQuery.trim()) {
+        // 无筛选条件时，直接使用 filteredItems（等于 spaceItems）
+        newSpaceItems = arrayMove(spaceItems, oldIndex, newIndex);
+      } else {
+        // 有筛选条件时，需要在完整列表中找到对应位置并调整
+        const activeItem = filteredItems[oldIndex];
+        const overItem = filteredItems[newIndex];
+
+        // 在完整列表中找到实际位置
+        const activeFullIndex = spaceItems.findIndex((item) => item.id === activeItem.id);
+        const overFullIndex = spaceItems.findIndex((item) => item.id === overItem.id);
+
+        if (activeFullIndex === -1 || overFullIndex === -1) {
+          setHasDragged(false);
+          return;
+        }
+
+        newSpaceItems = arrayMove(spaceItems, activeFullIndex, overFullIndex);
+      }
+
+      setSpaceItems(newSpaceItems);
       setHasDragged(true);
 
-      // 自动保存顺序
+      // 自动保存顺序 - 保存完整列表的顺序
       try {
-        const newOrder = newItems.map((item) => ({
+        const newOrder = newSpaceItems.map((item) => ({
           id: item.sourceId, // 使用 sourceId（数字）而非组合ID
           type: item.type,
           source: item.source,
@@ -513,7 +536,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
       }
     },
-    [filteredItems, messageApi]
+    [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi]
   );
 
   // 编辑提示词
