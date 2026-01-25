@@ -12,7 +12,6 @@ import Comments from "./Comments";
 import { Breadcrumb } from "antd";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
 const { Title, Text } = Typography;
 
@@ -73,7 +72,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
         onVote(prompt.id, action);
       }
     },
-    [userAuth, prompt?.id, onVote, messageApi]
+    [userAuth, prompt?.id, onVote, messageApi],
   );
 
   // Loading state
@@ -263,10 +262,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 </Flex>
               </Flex>
             </Card>
-
-            <Suspense fallback={null}>
-              <AdComponent type="transverse" />
-            </Suspense>
 
             {/* 评论区卡片 */}
             <Suspense fallback={null}>
