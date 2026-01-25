@@ -29,7 +29,7 @@ const parseJwt = (token) => {
         .map(function (c) {
           return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
         })
-        .join("")
+        .join(""),
     );
     return JSON.parse(jsonPayload);
   } catch (error) {
@@ -123,45 +123,64 @@ const Comments = ({ pageId, type }) => {
     }
   }, [pageId, currentPage, pageSize, type]);
 
+  // Draft Storage Keys
+  const getCommentStorageKey = useCallback(() => `draft_comment_${pageId}`, [pageId]);
+  const getReplyStorageKey = useCallback(() => `draft_reply_${pageId}_${replyingTo}`, [pageId, replyingTo]);
+
   useEffect(() => {
     fetchComments();
   }, [fetchComments, replyingTo, refresh]);
 
+  // Load drafts
   useEffect(() => {
-    const savedComment = localStorage.getItem("savedComment");
-    const savedReply = localStorage.getItem("savedReply");
-
+    // Load main comment draft
+    const commentKey = getCommentStorageKey();
+    const savedComment = localStorage.getItem(commentKey);
     if (savedComment) {
       form.setFieldsValue({ comment: savedComment });
+    } else {
+      form.setFieldsValue({ comment: "" });
     }
+  }, [pageId, form, getCommentStorageKey]);
 
-    if (savedReply) {
-      replyForm.setFieldsValue({ reply: savedReply });
+  useEffect(() => {
+    // Load reply draft only when relying logic is active
+    if (replyingTo) {
+      const replyKey = getReplyStorageKey();
+      const savedReply = localStorage.getItem(replyKey);
+      if (savedReply) {
+        replyForm.setFieldsValue({ reply: savedReply });
+      } else {
+        replyForm.setFieldsValue({ reply: "" });
+      }
     }
-  }, []);
+  }, [replyingTo, pageId, replyForm, getReplyStorageKey]);
 
-  // For better performance, debounced saveFormValues and saveReplyFormValues
-  const debouncedSaveFormValues = debounce((comment) => {
-    if (comment) {
-      localStorage.setItem("savedComment", comment);
-    }
-  }, 300);
+  // Debounced save
+  const debouncedSave = useMemo(
+    () =>
+      debounce((key, value) => {
+        if (value) {
+          localStorage.setItem(key, value);
+        } else {
+          localStorage.removeItem(key);
+        }
+      }, 500),
+    [],
+  );
 
-  const debouncedSaveReplyFormValues = debounce((reply) => {
-    if (reply) {
-      localStorage.setItem("savedReply", reply);
-    }
-  }, 300);
-
-  const saveFormValues = (changedValues, allValues) => {
+  const handleValuesChange = (changedValues, allValues) => {
+    const key = getCommentStorageKey();
     if (changedValues.comment !== undefined) {
-      debouncedSaveFormValues(changedValues.comment);
+      debouncedSave(key, changedValues.comment);
     }
   };
 
-  const saveReplyFormValues = (changedValues, allValues) => {
+  const handleReplyValuesChange = (changedValues, allValues) => {
+    if (!replyingTo) return;
+    const key = getReplyStorageKey();
     if (changedValues.reply !== undefined) {
-      debouncedSaveReplyFormValues(changedValues.reply);
+      debouncedSave(key, changedValues.reply);
     }
   };
 
@@ -204,7 +223,10 @@ const Comments = ({ pageId, type }) => {
   const handleLoginModalClose = () => {
     setIsLoginModalOpen(false);
   };
+
   const handleCancelReply = () => {
+    const key = getReplyStorageKey();
+    localStorage.removeItem(key); // Clear draft on cancel
     replyForm.resetFields();
     setReplyingTo(null);
   };
@@ -216,7 +238,7 @@ const Comments = ({ pageId, type }) => {
     }
     await postComment(pageId, values.comment, replyingTo, type);
     form.resetFields();
-    localStorage.removeItem("savedComment");
+    localStorage.removeItem(getCommentStorageKey());
     setReplyingTo(null);
     setRefresh(!refresh);
   };
@@ -228,7 +250,7 @@ const Comments = ({ pageId, type }) => {
     }
     await postComment(pageId, values.reply, replyingTo, type);
     replyForm.resetFields();
-    localStorage.removeItem("savedReply");
+    localStorage.removeItem(getReplyStorageKey());
     setReplyingTo(null);
     setRefresh(!refresh);
   };
@@ -268,7 +290,7 @@ const Comments = ({ pageId, type }) => {
     }
     return (
       <div style={{ marginTop: 12 }}>
-        <Form form={form} onFinish={handleSubmit} onValuesChange={saveFormValues}>
+        <Form form={form} onFinish={handleSubmit} onValuesChange={handleValuesChange}>
           <Form.Item
             name="comment"
             rules={[
@@ -320,7 +342,7 @@ const Comments = ({ pageId, type }) => {
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
-          <Form form={replyForm} onFinish={handleReplySubmit} onValuesChange={saveReplyFormValues}>
+          <Form form={replyForm} onFinish={handleReplySubmit} onValuesChange={handleReplyValuesChange}>
             <Form.Item
               name="reply"
               rules={[
@@ -359,7 +381,7 @@ const Comments = ({ pageId, type }) => {
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, saveReplyFormValues, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply]
+    [currentUserId, replyingTo, handleReplySubmit, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply],
   );
 
   return (
