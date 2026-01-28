@@ -1,6 +1,6 @@
 import React, { Suspense, useContext, useCallback } from "react";
-import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Skeleton, Divider, App, Result, Statistic } from "antd";
-import { CopyOutlined, CheckOutlined, StarOutlined, StarFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, FireOutlined } from "@ant-design/icons";
+import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Skeleton, Divider, App, Result } from "antd";
+import { CopyOutlined, CheckOutlined, StarOutlined, StarFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined } from "@ant-design/icons";
 import { gold } from "@ant-design/colors";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -14,7 +14,7 @@ import { Breadcrumb } from "antd";
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 interface CommunityPromptPageProps {
   prompt: {
@@ -73,7 +73,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
         onVote(prompt.id, action);
       }
     },
-    [userAuth, prompt?.id, onVote, messageApi]
+    [userAuth, prompt?.id, onVote, messageApi],
   );
 
   // Loading state
@@ -151,27 +151,12 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                   style={{ marginBottom: 12 }}
                 />
 
-                {/* 头部：标题行 */}
+                {/* 头部：标题区 */}
                 <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
-                  {/* 标题 */}
-                  <Title level={1} style={{ margin: 0, fontSize: "1.75rem", lineHeight: 1.3 }}>
+                  <Title level={2} style={{ margin: 0 }}>
                     {prompt.title}
                   </Title>
-
-                  {/* 作者 + 投票统计 */}
-                  <Flex gap={12} align="center" wrap="wrap">
-                    {prompt.owner && (
-                      <Text type="secondary" style={{ fontSize: 14 }}>
-                        <UserOutlined style={{ marginRight: 4 }} />
-                        {prompt.owner}
-                      </Text>
-                    )}
-                    <Statistic
-                      value={prompt.upvoteDifference || 0}
-                      prefix={<FireOutlined style={{ color: "var(--ifm-color-danger)" }} />}
-                      styles={{ content: { fontSize: 14, color: "var(--ifm-color-emphasis-500)" } }}
-                    />
-                  </Flex>
+                  {prompt.owner && <Tag icon={<UserOutlined />}>{prompt.owner}</Tag>}
                 </Flex>
 
                 {/* 描述/备注 - Quote Style */}
@@ -241,24 +226,24 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 {/* 底部：操作按钮 */}
                 <Flex justify="space-between" align="center" wrap="wrap" gap="small">
                   <Space size="middle">
-                    {/* 投票按钮 */}
-                    <Button icon={<UpOutlined />} onClick={() => handleVote("upvote")}>
-                      <Translate id="action.upvote">赞</Translate> {prompt.upvotes || 0}
-                    </Button>
-                    <Button icon={<DownOutlined />} onClick={() => handleVote("downvote")}>
-                      <Translate id="action.downvote">踩</Translate> {prompt.downvotes || 0}
-                    </Button>
+                    {/* 投票按钮组 */}
+                    <Space.Compact>
+                      <Button icon={<UpOutlined />} onClick={() => handleVote("upvote")}>
+                        <Translate id="action.upvote">赞</Translate> {prompt.upvotes || 0}
+                      </Button>
+                      <Button icon={<DownOutlined />} onClick={() => handleVote("downvote")}>
+                        <Translate id="action.downvote">踩</Translate> {prompt.downvotes || 0}
+                      </Button>
+                    </Space.Compact>
 
                     {/* 收藏按钮 */}
-                    <Button icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite} type={isFavorite ? "primary" : "default"}>
+                    <Button icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite}>
                       {isFavorite ? <Translate id="action.removeFavorite">取消收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}
                     </Button>
                   </Space>
 
                   <Suspense fallback={null}>
-                    <div className="social-buttons-grayscale">
-                      <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
-                    </div>
+                    <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
                   </Suspense>
                 </Flex>
               </Flex>

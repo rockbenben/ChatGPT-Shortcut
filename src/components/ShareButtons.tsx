@@ -1,43 +1,70 @@
 import React, { useMemo } from "react";
 import { FloatButton } from "antd";
 import { ShareAltOutlined } from "@ant-design/icons";
-import { FacebookShareButton, TelegramShareButton, TumblrShareButton, TwitterShareButton, WeiboShareButton, FacebookIcon, TelegramIcon, TumblrIcon, TwitterIcon, WeiboIcon } from "react-share";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  XIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  RedditShareButton,
+  RedditIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  WeiboShareButton,
+  WeiboIcon,
+} from "react-share";
 
-function ShareButtons({ shareUrl, title, popOver }) {
+interface ShareButtonsProps {
+  shareUrl: string;
+  title: string;
+  popOver?: boolean;
+}
+
+const ICON_SIZE = 32;
+
+function ShareButtons({ shareUrl, title, popOver }: ShareButtonsProps) {
   const buttons = useMemo(
     () => (
       <>
-        <FacebookShareButton url={shareUrl} hashtag={title}>
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
         <TwitterShareButton url={shareUrl} title={title}>
-          <TwitterIcon size={32} round />
+          <XIcon size={ICON_SIZE} round />
         </TwitterShareButton>
+        <FacebookShareButton url={shareUrl} hashtag={title}>
+          <FacebookIcon size={ICON_SIZE} round />
+        </FacebookShareButton>
         <TelegramShareButton url={shareUrl} title={title}>
-          <TelegramIcon size={32} round />
+          <TelegramIcon size={ICON_SIZE} round />
         </TelegramShareButton>
-        <TumblrShareButton url={shareUrl} title={title}>
-          <TumblrIcon size={32} round />
-        </TumblrShareButton>
+        <WhatsappShareButton url={shareUrl} title={title}>
+          <WhatsappIcon size={ICON_SIZE} round />
+        </WhatsappShareButton>
+        <RedditShareButton url={shareUrl} title={title}>
+          <RedditIcon size={ICON_SIZE} round />
+        </RedditShareButton>
+        <LinkedinShareButton url={shareUrl} title={title}>
+          <LinkedinIcon size={ICON_SIZE} round />
+        </LinkedinShareButton>
         <WeiboShareButton url={shareUrl} title={title}>
-          <WeiboIcon size={32} round />
+          <WeiboIcon size={ICON_SIZE} round />
         </WeiboShareButton>
       </>
     ),
-    [shareUrl, title]
+    [shareUrl, title],
   );
 
-  const floatButtons = (
+  if (popOver) {
+    return <div style={{ display: "flex", gap: "8px" }}>{buttons}</div>;
+  }
+
+  return (
     <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className="hideOnSmallScreen" icon={<ShareAltOutlined />}>
       {buttons}
     </FloatButton.Group>
   );
-
-  if (popOver) {
-    return <div style={{ display: "flex", gap: "5px" }}>{buttons}</div>;
-  }
-
-  return floatButtons;
 }
 
 export default ShareButtons;

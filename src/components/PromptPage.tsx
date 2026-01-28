@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
-import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Alert, Statistic, Divider } from "antd";
-import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled } from "@ant-design/icons";
+import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Statistic, Divider, Breadcrumb } from "antd";
+import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import Translate, { translate } from "@docusaurus/Translate";
+import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import Comments from "./Comments";
@@ -38,10 +38,28 @@ function PromptPage({ prompt, currentLanguage }) {
             {/* 提示词信息卡片 */}
             <Card variant="borderless" className="shadow--md" style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
               <Flex vertical gap="small">
+                {/* 面包屑导航 */}
+                <Breadcrumb
+                  items={[
+                    {
+                      title: (
+                        <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
+                          <HomeOutlined style={{ marginRight: 4 }} />
+                          <Translate id="link.home">首页</Translate>
+                        </Link>
+                      ),
+                    },
+                    {
+                      title: title,
+                    },
+                  ]}
+                  style={{ marginBottom: 12 }}
+                />
+
                 {/* 头部：标题行 */}
                 <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
                   {/* 标题 */}
-                  <Title level={1} style={{ margin: 0, fontSize: "1.75rem", lineHeight: 1.3 }}>
+                  <Title level={2} style={{ margin: 0 }}>
                     {title}
                   </Title>
 
@@ -145,12 +163,10 @@ function PromptPage({ prompt, currentLanguage }) {
                 {/* 底部：社交分享与提示 */}
                 <Flex justify="space-between" align="center" wrap="wrap" gap="small" className="hideOnSmallScreen">
                   <Text type="secondary" style={{ fontSize: 12 }}>
-                    <Translate id="label.commentInfo">请在下方回复您对本提示词的意见、想法或分享。</Translate>
+                    <Translate id="label.commentInfo">欢迎在下方留言或分享。</Translate>
                   </Text>
                   <Suspense fallback={null}>
-                    <div className="social-buttons-grayscale">
-                      <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
-                    </div>
+                    <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
                   </Suspense>
                 </Flex>
               </Flex>
