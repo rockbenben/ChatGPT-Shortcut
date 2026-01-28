@@ -381,7 +381,7 @@
     "message": "コピーに成功しました"
   },
   "label.commentInfo": {
-    "message": "このプロンプトに関するご意見、ご感想、共有などを以下に返信してください。"
+    "message": "以下で自由にコメントや共有をしてください。"
   },
   "input.search.placeholder": {
     "message": "プロンプトを検索..."
