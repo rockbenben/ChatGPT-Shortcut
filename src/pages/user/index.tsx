@@ -337,7 +337,7 @@ const UserProfile = () => {
         message.error(<Translate id="message.import.parseError">JSON 解析失败，请检查文件格式</Translate>);
       }
     },
-    [userAuth, message, refreshUserAuth]
+    [userAuth, message, refreshUserAuth],
   );
 
   const handleEditUsernameClick = () => {
@@ -722,16 +722,18 @@ const UserProfile = () => {
                       </Button>
                     }>
                     <Form form={changePasswordForm} onFinish={onFinishChangePassword} layout="vertical" requiredMark={false}>
-                      <Form.Item
-                        name="currentPassword"
-                        label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
-                        rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
-                        <Input.Password
-                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
-                          placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
-                          size="large"
-                        />
-                      </Form.Item>
+                      {userInfo?.provider === "local" && (
+                        <Form.Item
+                          name="currentPassword"
+                          label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
+                          rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
+                          <Input.Password
+                            prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                            placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
+                            size="large"
+                          />
+                        </Form.Item>
+                      )}
                       <Form.Item
                         name="newPassword"
                         label={<Translate id="placeholder.newPassword">新密码</Translate>}

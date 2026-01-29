@@ -27,7 +27,7 @@ export async function getUserAllInfo() {
   }
 
   try {
-    const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email`, {
+    const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email&fields[2]=provider`, {
       headers: {
         // 使用标准 HTTP If-None-Match header
         // 仅当有 ETag 且有缓存数据时才发送
