@@ -63,6 +63,7 @@ const config = {
     ],
   ],
   plugins: [
+    require.resolve("./plugin-gen-geo"),
     /*
     [
       "@docusaurus/plugin-client-redirects",
