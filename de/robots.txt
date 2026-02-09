@@ -8,14 +8,39 @@ Disallow: /*/user/
 
 Sitemap: https://www.aishort.top/sitemap.xml
 Sitemap: https://www.aishort.top/en/sitemap.xml
+Sitemap: https://www.aishort.top/zh-Hant/sitemap.xml
 Sitemap: https://www.aishort.top/ja/sitemap.xml
 Sitemap: https://www.aishort.top/ko/sitemap.xml
 Sitemap: https://www.aishort.top/es/sitemap.xml
+Sitemap: https://www.aishort.top/pt/sitemap.xml
+Sitemap: https://www.aishort.top/hi/sitemap.xml
+Sitemap: https://www.aishort.top/ind/sitemap.xml
+Sitemap: https://www.aishort.top/vi/sitemap.xml
+Sitemap: https://www.aishort.top/th/sitemap.xml
 Sitemap: https://www.aishort.top/fr/sitemap.xml
 Sitemap: https://www.aishort.top/de/sitemap.xml
 Sitemap: https://www.aishort.top/it/sitemap.xml
 Sitemap: https://www.aishort.top/ru/sitemap.xml
-Sitemap: https://www.aishort.top/pt/sitemap.xml
-Sitemap: https://www.aishort.top/hi/sitemap.xml
 Sitemap: https://www.aishort.top/ar/sitemap.xml
+Sitemap: https://www.aishort.top/tr/sitemap.xml
 Sitemap: https://www.aishort.top/bn/sitemap.xml
+
+# LLMs.txt for AI crawlers
+LLMs-txt: https://www.aishort.top/llms.txt
+LLMs-txt: https://www.aishort.top/en/llms.txt
+LLMs-txt: https://www.aishort.top/zh-Hant/llms.txt
+LLMs-txt: https://www.aishort.top/ja/llms.txt
+LLMs-txt: https://www.aishort.top/ko/llms.txt
+LLMs-txt: https://www.aishort.top/es/llms.txt
+LLMs-txt: https://www.aishort.top/pt/llms.txt
+LLMs-txt: https://www.aishort.top/hi/llms.txt
+LLMs-txt: https://www.aishort.top/ind/llms.txt
+LLMs-txt: https://www.aishort.top/vi/llms.txt
+LLMs-txt: https://www.aishort.top/th/llms.txt
+LLMs-txt: https://www.aishort.top/fr/llms.txt
+LLMs-txt: https://www.aishort.top/de/llms.txt
+LLMs-txt: https://www.aishort.top/it/llms.txt
+LLMs-txt: https://www.aishort.top/ru/llms.txt
+LLMs-txt: https://www.aishort.top/ar/llms.txt
+LLMs-txt: https://www.aishort.top/tr/llms.txt
+LLMs-txt: https://www.aishort.top/bn/llms.txt
