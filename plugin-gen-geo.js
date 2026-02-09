@@ -182,19 +182,9 @@ module.exports = function (context, options) {
         llmsContent += `- [${p.title}](${p.url}): ${shortDesc}\n`;
       });
 
-      // 6. Generate llms-full.txt content
-      let fullContent = `# ${projectTitle} - Full Knowledge Base\n\n`;
-      fullContent += `> This file contains the full text of documentation and prompts for AI ingestion.\n\n`;
-
-      fullContent += `# Documentation Content\n\n${docsFullContent}`;
-      fullContent += `# Prompt Library\n\n${promptsFullContent}`;
-
-      // Write files
+      // 6. Write llms.txt
       fs.writeFileSync(path.join(outDir, "llms.txt"), llmsContent);
-      fs.writeFileSync(path.join(outDir, "llms-full.txt"), fullContent);
-
       console.log(`[GEO] Generated llms.txt (${(llmsContent.length / 1024).toFixed(2)} KB)`);
-      console.log(`[GEO] Generated llms-full.txt (${(fullContent.length / 1024).toFixed(2)} KB)`);
     },
   };
 };
