@@ -231,6 +231,40 @@ const Comments = ({ pageId, type }) => {
     setReplyingTo(null);
   };
 
+  /**
+   * 智能轮询检测 AI 回复
+   * 每 3 秒检测一次评论数变化，最多 3 次，检测到新回复则停止
+   */
+  const pollForAIReply = useCallback(
+    (initialCount: number) => {
+      let attempts = 0;
+      const maxAttempts = 3;
+      const pollInterval = setInterval(async () => {
+        attempts++;
+        try {
+          const response = await getComments(pageId, currentPage, pageSize, type);
+          if (response) {
+            const newCount = response.meta.pagination.total;
+            // 如果评论数增加（AI 已回复）或达到最大次数，停止轮询
+            if (newCount > initialCount + 1 || attempts >= maxAttempts) {
+              clearInterval(pollInterval);
+            }
+            // 更新评论列表
+            const nestedComments = nestComments(response.data);
+            setComments(nestedComments);
+            setTotalCommentsCount(newCount);
+          }
+        } catch (err) {
+          console.error("[Comments] Polling error:", err);
+          if (attempts >= maxAttempts) {
+            clearInterval(pollInterval);
+          }
+        }
+      }, 3000);
+    },
+    [pageId, currentPage, pageSize, type],
+  );
+
   const handleSubmit = async (values) => {
     if (!currentUserId) {
       handleLoginModalOpen();
@@ -240,7 +274,10 @@ const Comments = ({ pageId, type }) => {
     form.resetFields();
     localStorage.removeItem(getCommentStorageKey());
     setReplyingTo(null);
+
+    const initialCount = totalCommentsCount;
     setRefresh(!refresh);
+    pollForAIReply(initialCount);
   };
 
   const handleReplySubmit = async (values) => {
@@ -252,7 +289,10 @@ const Comments = ({ pageId, type }) => {
     replyForm.resetFields();
     localStorage.removeItem(getReplyStorageKey());
     setReplyingTo(null);
+
+    const initialCount = totalCommentsCount;
     setRefresh(!refresh);
+    pollForAIReply(initialCount);
   };
 
   // handle emoji
