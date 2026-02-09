@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback, memo } from "react";
+import React, { useEffect, useState, useMemo, useCallback, memo, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { Button, Form, Modal, Pagination, Empty } from "antd";
 import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
@@ -51,6 +51,7 @@ const getCurrentUserId = () => {
 dayjs.extend(relativeTime);
 const avatarColors = [blue[5], green[5], red[5], purple[5], cyan[5], orange[5], gold[5], magenta[5]];
 const pageSize = 12;
+const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000];
 
 // 提取到组件外部的纯函数 - 性能优化
 const nestComments = (flatComments: any[]) => {
@@ -101,13 +102,21 @@ const Comments = ({ pageId, type }) => {
   const [refresh, setRefresh] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const currentPageRef = useRef(currentPage);
   const [totalCommentsCount, setTotalCommentsCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const pollTimeoutRef = useRef<number | null>(null);
+  const pollTokenRef = useRef(0);
 
   // Get current user ID from localStorage
   useEffect(() => {
     setCurrentUserId(getCurrentUserId());
   }, []);
+
+  // Keep currentPageRef in sync for use in closures (e.g. pollForAIReply)
+  useEffect(() => {
+    currentPageRef.current = currentPage;
+  }, [currentPage]);
 
   const fetchComments = useCallback(async () => {
     setIsLoading(true);
@@ -129,7 +138,7 @@ const Comments = ({ pageId, type }) => {
 
   useEffect(() => {
     fetchComments();
-  }, [fetchComments, replyingTo, refresh]);
+  }, [fetchComments, refresh]);
 
   // Load drafts
   useEffect(() => {
@@ -157,7 +166,7 @@ const Comments = ({ pageId, type }) => {
   }, [replyingTo, pageId, replyForm, getReplyStorageKey]);
 
   // Debounced save
-  const debouncedSave = useMemo(
+  const debouncedCommentSave = useMemo(
     () =>
       debounce((key, value) => {
         if (value) {
@@ -169,10 +178,29 @@ const Comments = ({ pageId, type }) => {
     [],
   );
 
+  const debouncedReplySave = useMemo(
+    () =>
+      debounce((key, value) => {
+        if (value) {
+          localStorage.setItem(key, value);
+        } else {
+          localStorage.removeItem(key);
+        }
+      }, 500),
+    [],
+  );
+
+  useEffect(() => {
+    return () => {
+      debouncedCommentSave.cancel();
+      debouncedReplySave.cancel();
+    };
+  }, [debouncedCommentSave, debouncedReplySave]);
+
   const handleValuesChange = (changedValues, allValues) => {
     const key = getCommentStorageKey();
     if (changedValues.comment !== undefined) {
-      debouncedSave(key, changedValues.comment);
+      debouncedCommentSave(key, changedValues.comment);
     }
   };
 
@@ -180,7 +208,7 @@ const Comments = ({ pageId, type }) => {
     if (!replyingTo) return;
     const key = getReplyStorageKey();
     if (changedValues.reply !== undefined) {
-      debouncedSave(key, changedValues.reply);
+      debouncedReplySave(key, changedValues.reply);
     }
   };
 
@@ -231,39 +259,65 @@ const Comments = ({ pageId, type }) => {
     setReplyingTo(null);
   };
 
+  const clearPollTimer = useCallback(() => {
+    if (pollTimeoutRef.current !== null) {
+      clearTimeout(pollTimeoutRef.current);
+      pollTimeoutRef.current = null;
+    }
+  }, []);
+
   /**
    * 智能轮询检测 AI 回复
-   * 每 3 秒检测一次评论数变化，最多 3 次，检测到新回复则停止
+   * 采用阶梯式退避轮询，检测到新回复则停止
    */
   const pollForAIReply = useCallback(
     (initialCount: number) => {
-      let attempts = 0;
-      const maxAttempts = 3;
-      const pollInterval = setInterval(async () => {
-        attempts++;
-        try {
-          const response = await getComments(pageId, currentPage, pageSize, type);
-          if (response) {
-            const newCount = response.meta.pagination.total;
-            // 如果评论数增加（AI 已回复）或达到最大次数，停止轮询
-            if (newCount > initialCount + 1 || attempts >= maxAttempts) {
-              clearInterval(pollInterval);
+      if (!ExecutionEnvironment.canUseDOM) return;
+      clearPollTimer();
+      pollTokenRef.current += 1;
+      const token = pollTokenRef.current;
+
+      const runPoll = (attemptIndex: number) => {
+        if (pollTokenRef.current !== token) return;
+        if (attemptIndex >= AI_REPLY_POLL_DELAYS_MS.length) return;
+
+        const delay = AI_REPLY_POLL_DELAYS_MS[attemptIndex];
+        pollTimeoutRef.current = window.setTimeout(async () => {
+          if (pollTokenRef.current !== token) return;
+
+          try {
+            const response = await getComments(pageId, currentPageRef.current, pageSize, type);
+            if (response) {
+              const newCount = response.meta.pagination.total;
+              // 更新评论列表
+              const nestedComments = nestComments(response.data);
+              setComments(nestedComments);
+              setTotalCommentsCount(newCount);
+              // 如果评论数增加（AI 已回复），停止轮询
+              if (newCount > initialCount + 1) {
+                clearPollTimer();
+                return;
+              }
             }
-            // 更新评论列表
-            const nestedComments = nestComments(response.data);
-            setComments(nestedComments);
-            setTotalCommentsCount(newCount);
+          } catch (err) {
+            console.error("[Comments] Polling error:", err);
           }
-        } catch (err) {
-          console.error("[Comments] Polling error:", err);
-          if (attempts >= maxAttempts) {
-            clearInterval(pollInterval);
-          }
-        }
-      }, 3000);
+
+          runPoll(attemptIndex + 1);
+        }, delay);
+      };
+
+      runPoll(0);
     },
-    [pageId, currentPage, pageSize, type],
+    [pageId, pageSize, type, clearPollTimer],
   );
+
+  useEffect(() => {
+    return () => {
+      pollTokenRef.current += 1;
+      clearPollTimer();
+    };
+  }, [clearPollTimer]);
 
   const handleSubmit = async (values) => {
     if (!currentUserId) {
@@ -276,7 +330,12 @@ const Comments = ({ pageId, type }) => {
     setReplyingTo(null);
 
     const initialCount = totalCommentsCount;
-    setRefresh(!refresh);
+    // 新的顶级评论排序在最前（id:desc），跳到第 1 页让用户看到
+    if (currentPage !== 1) {
+      setCurrentPage(1); // 变更 currentPage 会触发 fetchComments
+    } else {
+      setRefresh((prev) => !prev);
+    }
     pollForAIReply(initialCount);
   };
 
@@ -291,7 +350,7 @@ const Comments = ({ pageId, type }) => {
     setReplyingTo(null);
 
     const initialCount = totalCommentsCount;
-    setRefresh(!refresh);
+    setRefresh((prev) => !prev);
     pollForAIReply(initialCount);
   };
 
