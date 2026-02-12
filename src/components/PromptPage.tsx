@@ -72,7 +72,7 @@ function PromptPage({ prompt, currentLanguage }) {
                     )}
                     <Space size={4} wrap>
                       {tags.map((tag) => (
-                        <Link to={`/?tags=${tag}`}>
+                        <Link to={`/?tags=${tag}&view=explore`}>
                           <Tag color="default" style={{ margin: 0, cursor: "pointer" }}>
                             #{tag}
                           </Tag>
