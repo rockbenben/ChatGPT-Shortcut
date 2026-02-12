@@ -2,6 +2,7 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, S
 import { ViewModeContext, useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import { useHistory } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
@@ -180,7 +181,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
         messageApi.error(errorMessage);
       }
     },
-    [userAuth, messageApi]
+    [userAuth, messageApi],
   );
 
   // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
@@ -285,7 +286,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
         root: null,
         rootMargin: "0px", // 不提前触发，避免首屏自动加载
         threshold: 0.1,
-      }
+      },
     );
 
     observer.observe(loadMoreTriggerRef.current);
@@ -612,6 +613,7 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
 // ==================== 主内容组件 ====================
 const ShowcaseContent: React.FC = () => {
   const { userAuth, authLoading } = useContext(AuthContext);
+  const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<any>({});
   const [viewMode, setViewMode] = useState<ViewMode>("collection");
@@ -644,18 +646,21 @@ const ShowcaseContent: React.FC = () => {
   }, [userAuth, authLoading]);
 
   // 切换视图模式的处理函数
-  const handleViewModeChange = useCallback((newMode: ViewMode) => {
-    setIsAnimating(true);
+  const handleViewModeChange = useCallback(
+    (newMode: ViewMode) => {
+      setIsAnimating(true);
 
-    // 更新 URL
-    if (ExecutionEnvironment.canUseDOM) {
-      const url = new URL(window.location.href);
+      // 通过 React Router 更新 URL，确保 useLocation 感知变化并清除筛选状态
+      const searchParams = new URLSearchParams(window.location.search);
+      searchParams.delete("tags");
+      searchParams.delete("name");
+      searchParams.delete("operator");
       if (newMode === "explore") {
-        url.searchParams.set("view", "explore");
+        searchParams.set("view", "explore");
       } else {
-        url.searchParams.delete("view");
+        searchParams.delete("view");
       }
-      window.history.replaceState({}, "", url.toString());
+      history.replace({ search: searchParams.toString() });
 
       // 保存到 localStorage
       try {
@@ -663,14 +668,15 @@ const ShowcaseContent: React.FC = () => {
       } catch (error) {
         console.error("Failed to save view preference:", error);
       }
-    }
 
-    // 延迟切换以配合动画
-    setTimeout(() => {
-      setViewMode(newMode);
-      setIsAnimating(false);
-    }, 150);
-  }, []);
+      // 延迟切换以配合动画
+      setTimeout(() => {
+        setViewMode(newMode);
+        setIsAnimating(false);
+      }, 150);
+    },
+    [history],
+  );
 
   const handleOpenModal = useCallback((data: any) => {
     setModalData(data);
