@@ -2,7 +2,7 @@
  * Comments APIs - get and post comments
  */
 import { apiClient } from "./client";
-import { setCache, getCache, flushCacheByPrefix, getListCacheKey, CACHE_TTL, CACHE_PREFIX, getETag, setCacheWithETag, extendCache } from "@site/src/utils/cache";
+import { setCache, getCache, flushCacheByPrefix, getListCacheKey, CACHE_TTL, CACHE_PREFIX, getETag, removeETag, setCacheWithETag, extendCache } from "@site/src/utils/cache";
 
 /**
  * Clear comments cache for a specific page
@@ -22,7 +22,6 @@ export async function getComments(id: number, page: number, pageSize: number, ty
 
   // 防御性检查：ETag 存在但数据为 null
   if (cachedEtag && !cachedData) {
-    const { removeETag } = require("@site/src/utils/cache");
     removeETag(cacheKey);
   }
 
@@ -34,7 +33,7 @@ export async function getComments(id: number, page: number, pageSize: number, ty
           ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
         },
         validateStatus: (status) => status === 200 || status === 304,
-      }
+      },
     );
 
     // Handle 304 Not Modified

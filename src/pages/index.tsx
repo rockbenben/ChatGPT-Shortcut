@@ -23,7 +23,7 @@ import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
 import { getWeight } from "@site/src/utils/formatters";
-import { cleanupLegacyCache } from "@site/src/utils/cache";
+import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/utils/cache";
 import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
@@ -582,7 +582,6 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
   const cachedStats =
     typeof window !== "undefined"
       ? (() => {
-          const { getCache } = require("@site/src/utils/cache");
           return getCache("myspace_stats");
         })()
       : null;
@@ -592,7 +591,6 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
   const handleDataLoaded = React.useCallback((newStats: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => {
     setStats(newStats);
     // 缓存 stats
-    const { setCache, CACHE_TTL } = require("@site/src/utils/cache");
     setCache("myspace_stats", newStats, CACHE_TTL.MYSPACE);
   }, []);
 

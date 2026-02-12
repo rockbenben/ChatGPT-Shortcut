@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, startTransition } from "react";
 import { getMySpace, clearMySpaceCache } from "@site/src/api";
 import { deriveLoves, deriveCommLoves, deriveUserprompts } from "@site/src/utils/myspaceUtils";
+import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 
 export const AuthContext = createContext<{
   userAuth: any;
@@ -28,7 +29,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label = "operation"): P
       (err) => {
         clearTimeout(timer);
         reject(err);
-      }
+      },
     );
   });
 }
@@ -39,7 +40,6 @@ function delay(ms: number): Promise<void> {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Stale-While-Revalidate: 用缓存的 userAuth 初始化，避免刷新时闪烁
-  const { getCache } = require("@site/src/utils/cache");
   const cachedUserAuth = typeof window !== "undefined" ? getCache("user_auth") : null;
   const [userAuth, setUserAuth] = useState<any>(cachedUserAuth);
 
@@ -108,7 +108,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const newUserAuth = { data: enrichedData };
       startTransition(() => setUserAuth(newUserAuth));
       // 缓存 userAuth 用于下次快速显示
-      const { setCache, CACHE_TTL } = require("@site/src/utils/cache");
       setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
       return myspaceData;
     };
@@ -151,7 +150,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       refreshUserAuth: fetchUser,
       authLoading,
     }),
-    [userAuth, fetchUser, authLoading]
+    [userAuth, fetchUser, authLoading],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
