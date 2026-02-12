@@ -15,7 +15,6 @@ export async function getMySpace() {
 
   // 防御性检查：ETag 存在但数据为 null
   if (cachedEtag && !cachedData) {
-    console.warn("[MySpace] Found ETag but no cached data, clearing ETag");
     removeCache(`${cacheKey}_etag`);
   }
 
@@ -30,7 +29,6 @@ export async function getMySpace() {
 
     // 处理 304 Not Modified
     if (response.status === 304) {
-      console.log("[MySpace] Data unchanged, extending cache");
       extendCache(cacheKey, CACHE_TTL.MYSPACE);
       return cachedData;
     }

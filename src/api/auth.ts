@@ -279,12 +279,12 @@ export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAut
     if (token) {
       const userFromPayload = coerceUser(payload.user);
       if (userFromPayload) {
-        clearMySpaceCache(); // 清除旧用户的 MySpace 缓存
+        clearMySpaceCache();
         return { token, user: userFromPayload };
       }
 
       const user = await getAuthenticatedUserDetails(token);
-      clearMySpaceCache(); // 清除旧用户的 MySpace 缓存
+      clearMySpaceCache();
       return { token, user };
     }
   }
@@ -319,7 +319,7 @@ export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAut
       throw new Error("Invalid response from Strapi Google callback.");
     }
 
-    clearMySpaceCache(); // 清除旧用户的 MySpace 缓存
+    clearMySpaceCache();
     return { token: data.jwt, user: data.user };
   } catch (error) {
     console.error("Error authenticating user with Google:", error);

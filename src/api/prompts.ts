@@ -376,10 +376,6 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
       }
     });
 
-    if (clearedCount > 0) {
-      console.log(`[getCommPrompts] Cleared ${clearedCount} stale prompt cache(s)`);
-    }
-
     // Fetch prompts (only uncached or rebuilt ones will be fetched)
     const ids = listItems.map((item: { id: number }) => item.id);
     const responseIds = await getPrompts("commus", ids);
@@ -416,7 +412,6 @@ export async function searchCards(tags: string[], search: string, lang: string =
 
     // 防御性检查
     if (cachedEtag && !cachedData) {
-      console.warn("[Search] Found ETag but no cached data, clearing ETag");
       const { removeETag } = require("@site/src/utils/cache");
       removeETag(cacheKey);
     }
@@ -443,7 +438,6 @@ export async function searchCards(tags: string[], search: string, lang: string =
 
       // Handle 304 Not Modified
       if (responseIds.status === 304) {
-        console.log("[Search] Data unchanged, extending cache");
         extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
         return cachedData;
       }
@@ -457,7 +451,6 @@ export async function searchCards(tags: string[], search: string, lang: string =
     } catch (error) {
       // Handle 304 in catch
       if (error?.response?.status === 304) {
-        console.log("[Search] 304 handled in catch, extending cache");
         extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
         return cachedData;
       }

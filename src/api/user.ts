@@ -22,7 +22,6 @@ export async function getUserAllInfo() {
   // 安全检查：如果有 ETag 但数据为 null，清除 ETag 并重新请求
   // 这种情况可能发生在用户清除缓存后但 ETag 未被清除时
   if (cachedEtag && !cachedData) {
-    console.warn("[UserInfo] Found ETag but no cached data, clearing ETag");
     removeCache(`${cacheKey}_etag`);
   }
 
@@ -38,7 +37,6 @@ export async function getUserAllInfo() {
 
     // Handle 304 Not Modified
     if (response.status === 304) {
-      console.log("[UserInfo] Data unchanged, extending cache");
       extendCache(cacheKey, CACHE_TTL.USER_PROFILE);
       return cachedData;
     }
@@ -48,9 +46,6 @@ export async function getUserAllInfo() {
     const normalizedResponse = { data: response.data };
 
     setCacheWithETag(cacheKey, normalizedResponse, CACHE_TTL.USER_PROFILE, newEtag);
-    if (newEtag) {
-      console.log("[UserInfo] ETag cached:", newEtag);
-    }
 
     // 简单预热：异步加载 userprompts 缓存（智能刷新由 MySpace 处理）
     const userprompts = response.data.userprompts;
@@ -69,7 +64,6 @@ export async function getUserAllInfo() {
   } catch (error) {
     // Handle 304 in error handler (some axios configs)
     if (error.response?.status === 304) {
-      console.log("[UserInfo] 304 handled as error, using cache");
       return cachedData;
     }
 
