@@ -75,7 +75,10 @@ export default function Tooltip({ children, id, anchorEl, text }: Props): React.
     };
 
     const handleClose = () => {
-      clearInterval(timeout.current!);
+      if (timeout.current !== null) {
+        clearTimeout(timeout.current);
+        timeout.current = null;
+      }
       setOpen(false);
     };
 

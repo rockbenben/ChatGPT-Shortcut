@@ -59,12 +59,9 @@ function ShowcaseTagSelect({ id, icon, label, tag, checked: propChecked, ...rest
     });
   }, [tag, location, history]);
 
-  const handleChange = useCallback(
-    (nextChecked: boolean) => {
-      toggleTag();
-    },
-    [toggleTag]
-  );
+  const handleChange = useCallback(() => {
+    toggleTag();
+  }, [toggleTag]);
 
   return (
     <span ref={ref} style={{ display: "inline-block" }}>
