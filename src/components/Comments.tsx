@@ -56,7 +56,7 @@ const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000];
 // 提取到组件外部的纯函数 - 性能优化
 const nestComments = (flatComments: any[]) => {
   const commentMap = new Map();
-  const sortedComments = [...flatComments].sort((a, b) => new Date(a.id).getTime() - new Date(b.id).getTime());
+  const sortedComments = [...flatComments].sort((a, b) => a.id - b.id);
 
   const dateCache = new Map();
   const getDate = (id: any) => {
@@ -166,19 +166,7 @@ const Comments = ({ pageId, type }) => {
   }, [replyingTo, pageId, replyForm, getReplyStorageKey]);
 
   // Debounced save
-  const debouncedCommentSave = useMemo(
-    () =>
-      debounce((key, value) => {
-        if (value) {
-          localStorage.setItem(key, value);
-        } else {
-          localStorage.removeItem(key);
-        }
-      }, 500),
-    [],
-  );
-
-  const debouncedReplySave = useMemo(
+  const debouncedDraftSave = useMemo(
     () =>
       debounce((key, value) => {
         if (value) {
@@ -192,15 +180,14 @@ const Comments = ({ pageId, type }) => {
 
   useEffect(() => {
     return () => {
-      debouncedCommentSave.cancel();
-      debouncedReplySave.cancel();
+      debouncedDraftSave.cancel();
     };
-  }, [debouncedCommentSave, debouncedReplySave]);
+  }, [debouncedDraftSave]);
 
   const handleValuesChange = (changedValues, allValues) => {
     const key = getCommentStorageKey();
     if (changedValues.comment !== undefined) {
-      debouncedCommentSave(key, changedValues.comment);
+      debouncedDraftSave(key, changedValues.comment);
     }
   };
 
@@ -208,7 +195,7 @@ const Comments = ({ pageId, type }) => {
     if (!replyingTo) return;
     const key = getReplyStorageKey();
     if (changedValues.reply !== undefined) {
-      debouncedReplySave(key, changedValues.reply);
+      debouncedDraftSave(key, changedValues.reply);
     }
   };
 

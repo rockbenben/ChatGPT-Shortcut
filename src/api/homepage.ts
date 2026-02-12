@@ -209,7 +209,8 @@ export async function fetchCardsByIds(ids: number[], lang: string = "zh-Hans"): 
 export async function fetchNextCards(excludeIds: number[], batchSize: number = 8, lang: string = "zh-Hans"): Promise<CardData[]> {
   try {
     // 从 ALL_IDS 中过滤掉已显示的卡片
-    const availableIds = ALL_IDS.filter((id) => !excludeIds.includes(id));
+    const excludeSet = new Set(excludeIds);
+    const availableIds = ALL_IDS.filter((id) => !excludeSet.has(id));
 
     if (availableIds.length === 0) {
       return [];
