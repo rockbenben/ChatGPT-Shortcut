@@ -220,21 +220,19 @@ export const extendCache = (key, ttlMinutes) => {
 export const needsCacheExtension = (key, ttlMinutes) => {
   if (!canUseCache()) return true; // 无法判断时，保守返回 true
 
-  try {
-    // lscache 格式: lscache-{key}-cacheexpiration
-    const expiryKey = `lscache-${key}-cacheexpiration`;
-    const expiryTime = localStorage.getItem(expiryKey);
+  const expiryKey = `lscache-${key}-cacheexpiration`;
+  const expiryTime = localStorage.getItem(expiryKey);
 
-    if (!expiryTime) return true; // 无过期信息，需要验证
+  if (!expiryTime) return true; // 无过期信息，需要验证
 
-    const now = new Date().getTime();
-    const remaining = parseInt(expiryTime) - now;
-    const ttlMs = ttlMinutes * 60 * 1000;
+  const expiryNum = parseInt(expiryTime, 10);
+  if (isNaN(expiryNum)) return true; // 解析失败，保守返回 true
 
-    return remaining < ttlMs * 0.5;
-  } catch (e) {
-    return true; // 出错时保守返回 true
-  }
+  const now = Date.now();
+  const ttlMs = ttlMinutes * 60 * 1000;
+  const remaining = expiryNum - now;
+
+  return remaining < ttlMs * 0.5;
 };
 
 /**
@@ -299,7 +297,6 @@ export const cleanupLegacyCache = () => {
   }
 
   if (keysToRemove.length > 0) {
-    console.log(`[Cache] Cleaning up ${keysToRemove.length} legacy cache keys`);
     keysToRemove.forEach((key) => localStorage.removeItem(key));
   }
 
