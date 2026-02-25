@@ -22,6 +22,12 @@ Meskipun menggunakan prompt bahasa lokal dapat memberikan hasil yang baik, memas
 
 **Tips**: Simpan percakapan yang sering digunakan sebagai bookmark untuk akses cepat nanti.
 
+## Mengapa saya tidak dapat menemukan prompt terkait?
+
+Hasil pencarian di beranda terutama berasal dari **koleksi prompt pilihan** (termasuk prompt pribadi Anda setelah masuk), dan **tidak termasuk** prompt yang dibagikan secara publik oleh komunitas.
+
+Jika Anda tidak menemukan hasil di beranda menggunakan kata kunci pendek, kami sarankan mencari di halaman [Prompt Komunitas](./community), yang berisi konten lebih kaya yang dibagikan oleh pengguna.
+
 ## Apa yang harus dilakukan jika AI mengeluarkan informasi salah?
 
 AI kadang-kadang "berhalusinasi", mengeluarkan informasi yang tampak masuk akal tetapi sebenarnya salah. Saran penggunaan:

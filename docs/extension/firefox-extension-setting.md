@@ -10,7 +10,7 @@ description: Firefox 插件设置指南：固定扩展到工具栏，授权在 C
 
 ## 1. 固定扩展与访问设置
 
-首先，在 Firefox 工具栏上选择“固定 ChatGPT Shortcut 扩展”（Pin to Toolbar）。然后，进入扩展中心，找到 ChatGPT Shortcut 扩展条目并选择“选项”（Options）。进入扩展的设置界面。具体步骤如下图所示：
+首先，在 Firefox 工具栏上选择“固定 ChatGPT Shortcut 扩展”（Pin to Toolbar）。然后，进入扩展中心，找到 ChatGPT Shortcut 扩展条目，选择“选项”（Options）以进入扩展的设置界面。具体步骤如下图所示：
 
 ![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 

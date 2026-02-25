@@ -25,8 +25,9 @@ Sağ üst köşedeki "Etiket Filtre Kuralı Değiştir" düğmesi aracılığıy
 
 Anahtar kelime arama işlevi, prompt başlıklarını, açıklamalarını ve içeriğini aramayı destekler.
 
-- Etiketler zaten seçiliyse, arama kapsamı bu etiketlerle sınırlıdır
-- Giriş yaptıktan sonra, arama kapsamı koleksiyonlarınızı ve özel promptlarınızı içerir
+- Ana sayfa araması genellikle **seçilmiş komutları** içerir (topluluk komutları hariç). Etiketler zaten seçilmişse, arama kapsamı bu etiketlerle sınırlıdır
+- Giriş yaptıktan sonra, arama kapsamı **koleksiyonlarınızı** ve **özel komutlarınızı** içerecek şekilde genişler
+- Kısa anahtar kelimeler kullanarak ana sayfada beklenen sonuçları bulamazsanız, aramak için lütfen [Topluluk Komutları](./community) sayfasına gidin
 
 ![](/img/docs/interface-search.png)
 

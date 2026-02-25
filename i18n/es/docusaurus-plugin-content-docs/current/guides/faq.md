@@ -22,6 +22,12 @@ Aunque el uso de prompts en chino puede obtener resultados decentes, la entrada 
 
 **Consejo**: Guarda las conversaciones utilizadas frecuentemente como marcadores para un acceso rápido más tarde.
 
+## ¿Por qué no puedo encontrar prompts relacionados?
+
+Los resultados de búsqueda en la página de inicio provienen principalmente de la **biblioteca de prompts seleccionados** (incluidos sus prompts personales después de iniciar sesión), y **no incluyen** los prompts compartidos públicamente por la comunidad.
+
+Si no encuentra resultados en la página de inicio usando palabras clave cortas, le recomendamos buscar en la página de [Prompts de la Comunidad](./community), que contiene contenido más rico compartido por los usuarios.
+
 ## ¿Qué pasa si la IA genera información falsa?
 
 La IA a veces "alucina", generando información que parece plausible pero que en realidad es incorrecta. Sugerencias de uso:

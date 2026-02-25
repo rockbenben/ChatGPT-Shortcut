@@ -22,6 +22,12 @@ Embora o uso de prompts em chinês (ou outros idiomas) possa produzir bons resul
 
 **Dica**: Salve conversas comuns como favoritos para acesso rápido no futuro.
 
+## Por que não consigo encontrar prompts relacionados?
+
+Os resultados da pesquisa na página inicial vêm principalmente da **biblioteca de prompts selecionados** (incluindo seus prompts pessoais após o login) e **não incluem** prompts compartilhados publicamente pela comunidade.
+
+Se você não encontrar resultados na página inicial usando palavras-chave curtas, recomendamos pesquisar na página [Prompts da Comunidade](./community), que contém conteúdo muito mais rico compartilhado por usuários.
+
 ## O que fazer se a IA gerar informações falsas?
 
 A IA às vezes "alucina", gerando informações que parecem plausíveis, mas são factualmente incorretas. Sugestões de uso:

@@ -25,8 +25,9 @@ A través del botón "Cambiar Regla de Filtrado de Etiquetas" en la parte superi
 
 La función de búsqueda por palabras clave soporta la búsqueda de títulos, descripciones y contenido de prompts.
 
-- Si ya hay etiquetas seleccionadas, el alcance de la búsqueda se limita a esas etiquetas
-- Después de iniciar sesión, el alcance de la búsqueda incluye tus colecciones y prompts personalizados
+- La búsqueda en la página de inicio incluye principalmente **prompts seleccionados** (excluyendo los de la comunidad). Si ya hay etiquetas seleccionadas, el alcance de la búsqueda se limita a esas etiquetas
+- Después de iniciar sesión, el alcance de la búsqueda se amplía para incluir tus **colecciones** y **prompts personalizados**
+- Si no encuentra los resultados esperados en la página de inicio al usar palabras clave cortas, diríjase a la página de [Prompts de la Comunidad](./community) para buscar
 
 ![](/img/docs/interface-search.png)
 

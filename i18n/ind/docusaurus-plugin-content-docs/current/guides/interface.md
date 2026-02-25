@@ -25,8 +25,9 @@ Melalui tombol "Beralih Aturan Filter Tag" di kanan atas, Anda dapat melakukan f
 
 Fungsi pencarian kata kunci mendukung pencarian judul, deskripsi, dan konten prompt.
 
-- Jika tag sudah dipilih, ruang lingkup pencarian terbatas pada tag tersebut
-- Setelah login, ruang lingkup pencarian termasuk koleksi dan prompt kustom Anda
+- Pencarian beranda terutama mencakup **prompt pilihan** (tidak termasuk prompt komunitas). Jika tag sudah dipilih, ruang lingkup pencarian dibatasi pada tag tersebut
+- Setelah masuk, ruang lingkup pencarian meluas untuk mencakup **koleksi** dan **prompt kustom** Anda
+- Jika Anda tidak menemukan hasil yang diharapkan di beranda menggunakan kata kunci pendek, silakan buka halaman [Prompt Komunitas](./community) untuk mencari
 
 ![](/img/docs/interface-search.png)
 

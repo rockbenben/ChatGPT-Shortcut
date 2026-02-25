@@ -25,8 +25,9 @@ Use o botão "Alternar Regra de Filtragem de Tags" no canto superior direito par
 
 A função de pesquisa de palavras-chave suporta a pesquisa por título, descrição e conteúdo do prompt.
 
-- Se tags já estiverem selecionadas, o escopo da pesquisa é limitado a essas tags
-- Após o login, o escopo da pesquisa inclui seus favoritos e prompts personalizados
+- A pesquisa na página inicial inclui principalmente **prompts selecionados** (excluindo prompts da comunidade). Se houver tags já selecionadas, o escopo da pesquisa será limitado a essas tags
+- Após o login, o escopo da pesquisa se expande para incluir suas **coleções** e **prompts personalizados**
+- Se você não encontrar os resultados esperados na página inicial usando palavras-chave curtas, acesse a página [Prompts da Comunidade](./community) para pesquisar
 
 ![](/img/docs/interface-search.png)
 

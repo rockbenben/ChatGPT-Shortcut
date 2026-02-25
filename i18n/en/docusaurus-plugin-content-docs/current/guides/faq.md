@@ -22,6 +22,12 @@ Although using Chinese prompts can get decent results, repeated input of the sam
 
 **Tip**: Save frequently used conversations as bookmarks for quick access later.
 
+## Why can't I find related prompts?
+
+Search results on the homepage mainly come from the **curated prompt library** (including your personal prompts after logging in), and **do not include** prompts publicly shared by the community.
+
+If you don't find results on the homepage using short keywords, we recommend searching on the [Community Prompts](./community) page, which contains richer content shared by users.
+
 ## What if AI outputs false information?
 
 AI sometimes "hallucinates", outputting information that seems plausible but is actually incorrect. Suggestions for use:

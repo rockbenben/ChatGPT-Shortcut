@@ -25,8 +25,9 @@ Via the "Tag Filter Rule Switch" button at the top right, you can achieve more p
 
 Keyword search function supports searching for prompt titles, descriptions, and content.
 
-- If tags are already selected, the search scope is limited to those tags
-- After logging in, the search scope includes your collections and custom prompts
+- Homepage search mainly includes **curated prompts** (excluding community prompts). If tags are already selected, the search scope is limited to those tags
+- After logging in, the search scope expands to include your **collections** and **custom prompts**
+- If you don't find the expected results on the homepage using short keywords, please go to the [Community Prompts](./community) page to search
 
 ![](/img/docs/interface-search.png)
 
