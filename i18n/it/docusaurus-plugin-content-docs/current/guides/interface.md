@@ -25,8 +25,9 @@ Tramite il pulsante "Cambia Regola Filtro Tag" in alto a destra, puoi ottenere u
 
 La funzione di ricerca per parole chiave supporta la ricerca di titoli, descrizioni e contenuti dei prompt.
 
-- Se ci sono già tag selezionati, l'ambito della ricerca è limitato a quei tag
-- Dopo l'accesso, l'ambito della ricerca include le tue collezioni e i prompt personalizzati
+- La ricerca in homepage include principalmente **prompt selezionati** (esclusi i prompt della community). Se sono già stati selezionati dei tag, l'ambito di ricerca è limitato a quei tag
+- Dopo l'accesso, l'ambito di ricerca si espande per includere le tue **collezioni** e i **prompt personalizzati**
+- Se non trovi i risultati attesi nella homepage utilizzando parole chiave brevi, vai alla pagina [Prompt della Community](./community) per cercare
 
 ![](/img/docs/interface-search.png)
 

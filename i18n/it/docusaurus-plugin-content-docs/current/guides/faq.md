@@ -22,6 +22,12 @@ Sebbene l'uso di prompt in cinese possa ottenere risultati decenti, l'input ripe
 
 **Suggerimento**: Salva le conversazioni utilizzate frequentemente come segnalibri per un accesso rapido successivo.
 
+## Perché non trovo prompt correlati?
+
+I risultati di ricerca sulla homepage provengono principalmente dalla **libreria di prompt selezionati** (inclusi i tuoi prompt personali dopo l'accesso) e **non includono** i prompt condivisi pubblicamente dalla community.
+
+Se non trovi risultati in homepage usando parole chiave brevi, ti consigliamo di cercare nella pagina [Prompt della Community](./community), che contiene contenuti più ricchi condivisi dagli utenti.
+
 ## Cosa fare se l'IA genera false informazioni?
 
 L'IA a volte ha "allucinazioni", generando informazioni che sembrano plausibili ma sono in realtà errate. Suggerimenti d'uso:

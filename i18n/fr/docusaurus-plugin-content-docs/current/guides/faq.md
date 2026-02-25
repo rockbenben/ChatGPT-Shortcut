@@ -22,6 +22,12 @@ Bien que l'utilisation de prompts en chinois puisse obtenir des résultats déce
 
 **Astuce** : Enregistrez les conversations fréquemment utilisées comme signets pour un accès rapide plus tard.
 
+## Pourquoi ne puis-je pas trouver de prompts associés ?
+
+Les résultats de recherche sur la page d'accueil proviennent principalement de la **bibliothèque de prompts sélectionnés** (y compris vos prompts personnels après la connexion) et **n'incluent pas** les prompts partagés publiquement par la communauté.
+
+Si vous ne trouvez pas de résultats sur la page d'accueil à l'aide de mots clés courts, nous vous recommandons d'effectuer une recherche sur la page [Prompts de la communauté](./community), qui contient un contenu plus riche partagé par les utilisateurs.
+
 ## Que faire si l'IA génère de fausses informations ?
 
 L'IA a parfois des "hallucinations", générant des informations qui semblent plausibles mais qui sont en fait incorrectes. Suggestions d'utilisation :

@@ -25,8 +25,9 @@ Der Tag-Bereich hilft Benutzern, Prompts basierend auf Domäne und Funktion zu f
 
 Die Stichwortsuche unterstützt die Suche nach Prompt-Titeln, Beschreibungen und Inhalten.
 
-- Wenn bereits Tags ausgewählt sind, ist der Suchbereich auf diese Tags beschränkt
-- Nach der Anmeldung umfasst der Suchbereich Ihre Sammlungen und benutzerdefinierten Prompts
+- Die Suche auf der Startseite umfasst hauptsächlich **ausgewählte Prompts** (ohne Community-Prompts). Wenn bereits Tags ausgewählt sind, ist der Suchbereich auf diese Tags beschränkt
+- Nach der Anmeldung wird der Suchbereich erweitert und umfasst Ihre **Sammlungen** und **benutzerdefinierten Prompts**
+- Wenn Sie auf der Startseite mit kurzen Schlüsselwörtern nicht die erwarteten Ergebnisse finden, suchen Sie bitte auf der Seite [Community-Prompts](./community)
 
 ![](/img/docs/interface-search.png)
 

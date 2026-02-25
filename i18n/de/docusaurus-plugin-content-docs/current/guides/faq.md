@@ -22,6 +22,12 @@ Obwohl die Verwendung chinesischer Prompts auch anständige Ergebnisse erzielen 
 
 **Tipp**: Speichern Sie häufig genutzte Konversationen als Lesezeichen für einen schnellen Zugriff später.
 
+## Warum finde ich keine verwandten Prompts?
+
+Die Suchergebnisse auf der Startseite stammen hauptsächlich aus der **kuratieren Prompt-Bibliothek** (einschließlich Ihrer persönlichen Prompts nach der Anmeldung) und **schließen keine** öffentlich von der Community geteilten Prompts ein.
+
+Wenn Sie auf der Startseite mit kurzen Schlüsselwörtern keine Ergebnisse finden, empfehlen wir Ihnen, auf der Seite [Community-Prompts](./community) zu suchen, die reichere, von Benutzern geteilte Inhalte enthält.
+
 ## Was tun, wenn die KI falsche Informationen generiert?
 
 KI hat manchmal "Halluzinationen" und generiert Informationen, die plausibel erscheinen, aber tatsächlich falsch sind. Nutzungsvorschläge:

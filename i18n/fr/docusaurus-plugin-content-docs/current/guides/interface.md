@@ -25,8 +25,9 @@ Via le bouton "Changer la règle de filtrage des balises" en haut à droite, vou
 
 La fonction de recherche par mots-clés prend en charge la recherche des titres, descriptions et contenus des prompts.
 
-- Si des balises sont déjà sélectionnées, la portée de la recherche est limitée à ces balises
-- Après connexion, la portée de la recherche inclut vos collections et prompts personnalisés
+- La recherche sur la page d'accueil inclut principalement des **prompts sélectionnés** (à l'exclusion des prompts de la communauté). Si des balises sont déjà sélectionnées, la portée de la recherche est limitée à ces balises
+- Après connexion, la portée de la recherche s'élargit pour inclure vos **collections** et **prompts personnalisés**
+- Si vous ne trouvez pas les résultats attendus sur la page d'accueil à l'aide de mots-clés courts, veuillez vous rendre sur la page [Prompts de la communauté](./community) pour effectuer une recherche
 
 ![](/img/docs/interface-search.png)
 

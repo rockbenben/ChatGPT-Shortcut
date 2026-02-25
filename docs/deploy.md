@@ -171,7 +171,7 @@ services:
 
 > 如果遇到 Upstream Sync 执行错误，请手动执行一次 Sync Fork！
 
-当你 fork 项目之后，由于 GitHub 的限制，需要手动在你 fork 后的项目的 Actions 页面启用 Workflows，并启用 Upstream Sync Action。启用后，每天会自动执行更新：
+由于 GitHub 的限制，当你 Fork 项目之后，需要手动在你 Fork 的项目的 Actions 页面启用 Workflows，并运行 Upstream Sync Action。启用后，项目将每天自动执行更新：
 
 ![自动更新](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
 

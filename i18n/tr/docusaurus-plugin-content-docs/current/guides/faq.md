@@ -22,6 +22,12 @@ Yerel dilde promptlar kullanmak iyi sonuçlar verse de, aynı yerel dil promptun
 
 **İpucu**: Sık kullanılan konuşmaları daha sonra hızlı erişim için yer imlerine kaydedin.
 
+## Neden ilgili komutları bulamıyorum?
+
+Ana sayfadaki arama sonuçları çoğunlukla **seçilmiş komut kitaplığından** (giriş yaptıktan sonra kişisel komutlarınız dahil) gelir ve topluluk tarafından herkese açık olarak paylaşılan komutları **içermez**.
+
+Kısa anahtar kelimeler kullanarak ana sayfada sonuç bulamazsanız, kullanıcıların paylaştığı daha zengin içeriklerin yer aldığı [Topluluk Komutları](./community) sayfasında arama yapmanızı öneririz.
+
 ## AI yanlış bilgi çıkarırsa ne olur?
 
 AI bazen "halüsinasyon" yapar, makul görünen ama aslında yanlış olan bilgiler çıkarır. Kullanım önerileri:

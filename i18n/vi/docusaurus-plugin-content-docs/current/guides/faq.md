@@ -22,6 +22,12 @@ Mặc dù sử dụng prompt tiếng bản địa có thể cho kết quả tố
 
 **Mẹo**: Lưu các cuộc hội thoại thường dùng làm bookmark để truy cập nhanh sau này.
 
+## Tại sao tôi không thể tìm thấy các lời nhắc liên quan?
+
+Kết quả tìm kiếm trên trang chủ chủ yếu đến từ **thư viện lời nhắc được tuyển chọn** (bao gồm cả lời nhắc cá nhân của bạn sau khi đăng nhập) và **không bao gồm** các lời nhắc được cộng đồng chia sẻ công khai.
+
+Nếu bạn không tìm thấy kết quả trên trang chủ bằng các từ khóa ngắn, chúng tôi khuyên bạn nên tìm kiếm trên trang [Lời nhắc cộng đồng](./community), trang này chứa nội dung phong phú hơn do người dùng chia sẻ.
+
 ## AI xuất thông tin sai thì sao?
 
 AI đôi khi "ảo giác", xuất thông tin có vẻ hợp lý nhưng thực tế không chính xác. Đề xuất sử dụng:
