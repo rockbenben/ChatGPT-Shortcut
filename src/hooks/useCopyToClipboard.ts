@@ -20,7 +20,7 @@ export const useCopyToClipboard = (timeout: number = 2000) => {
     async (text: string, id: number | string) => {
       try {
         copyText(text);
-        await updateCopyCount(id);
+        await updateCopyCount(Number(id));
       } catch (error) {
         console.error("Error updating copy count:", error);
       }

@@ -8,7 +8,7 @@ const compactFormatter = new Intl.NumberFormat("en-US", {
   compactDisplay: "short",
 });
 
-export const formatCompactNumber = (count) => {
+export const formatCompactNumber = (count: number) => {
   return compactFormatter.format(count);
 };
 
