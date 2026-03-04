@@ -27,7 +27,7 @@ interface PromptDetailModalProps {
   };
 }
 
-export const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
+const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
   if (!data) return null;
 
   const { copied, updateCopy } = useCopyToClipboard();

@@ -58,7 +58,6 @@ export async function getMySpace() {
   } catch (error) {
     // 处理 304 在某些配置下被当作错误
     if (error.response?.status === 304) {
-      console.log("[MySpace] 304 handled as error, using cache");
       return cachedData;
     }
 

@@ -22,7 +22,7 @@ interface Props extends ComponentProps<"input"> {
 
 const TagQueryStringKey = "tags";
 
-export function readSearchTags(search: string): (TagType | string)[] {
+function readSearchTags(search: string): (TagType | string)[] {
   return new URLSearchParams(search).getAll(TagQueryStringKey) as (TagType | string)[];
 }
 

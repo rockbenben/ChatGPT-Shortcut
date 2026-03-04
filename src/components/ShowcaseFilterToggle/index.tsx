@@ -13,9 +13,9 @@ import { prepareUserState } from "@site/src/components/SearchBar/index";
 
 export type Operator = "OR" | "AND";
 
-export const OperatorQueryKey = "operator";
+const OperatorQueryKey = "operator";
 
-export function readOperator(search: string): Operator {
+function readOperator(search: string): Operator {
   return (new URLSearchParams(search).get(OperatorQueryKey) ?? "OR") as Operator;
 }
 
