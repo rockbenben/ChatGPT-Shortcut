@@ -40,8 +40,6 @@ export async function getMySpace() {
     setCacheWithETag(cacheKey, newData, CACHE_TTL.MYSPACE, newEtag);
     // Clear stale userprompt caches by comparing updatedAt
     if (newData?.items) {
-      let clearedCount = 0;
-
       newData.items.forEach((item: any) => {
         if (item.type === "prompt" && item.source === "userprompt") {
           const promptCacheKey = getPromptCacheKey("userprompts", item.id);
@@ -51,7 +49,6 @@ export async function getMySpace() {
           if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
             removeCache(promptCacheKey);
             removeCache(`${promptCacheKey}_etag`);
-            clearedCount++;
           }
         }
       });
