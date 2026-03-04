@@ -311,19 +311,23 @@ const Comments = ({ pageId, type }) => {
       handleLoginModalOpen();
       return;
     }
-    await postComment(pageId, values.comment, replyingTo, type);
-    form.resetFields();
-    localStorage.removeItem(getCommentStorageKey());
-    setReplyingTo(null);
+    try {
+      await postComment(pageId, values.comment, replyingTo, type);
+      form.resetFields();
+      localStorage.removeItem(getCommentStorageKey());
+      setReplyingTo(null);
 
-    const initialCount = totalCommentsCount;
-    // 新的顶级评论排序在最前（id:desc），跳到第 1 页让用户看到
-    if (currentPage !== 1) {
-      setCurrentPage(1); // 变更 currentPage 会触发 fetchComments
-    } else {
-      setRefresh((prev) => !prev);
+      const initialCount = totalCommentsCount;
+      // 新的顶级评论排序在最前（id:desc），跳到第 1 页让用户看到
+      if (currentPage !== 1) {
+        setCurrentPage(1); // 变更 currentPage 会触发 fetchComments
+      } else {
+        setRefresh((prev) => !prev);
+      }
+      pollForAIReply(initialCount);
+    } catch (error) {
+      console.error("Failed to post comment:", error);
     }
-    pollForAIReply(initialCount);
   };
 
   const handleReplySubmit = async (values) => {
@@ -331,14 +335,18 @@ const Comments = ({ pageId, type }) => {
       handleLoginModalOpen();
       return;
     }
-    await postComment(pageId, values.reply, replyingTo, type);
-    replyForm.resetFields();
-    localStorage.removeItem(getReplyStorageKey());
-    setReplyingTo(null);
+    try {
+      await postComment(pageId, values.reply, replyingTo, type);
+      replyForm.resetFields();
+      localStorage.removeItem(getReplyStorageKey());
+      setReplyingTo(null);
 
-    const initialCount = totalCommentsCount;
-    setRefresh((prev) => !prev);
-    pollForAIReply(initialCount);
+      const initialCount = totalCommentsCount;
+      setRefresh((prev) => !prev);
+      pollForAIReply(initialCount);
+    } catch (error) {
+      console.error("Failed to post reply:", error);
+    }
   };
 
   // handle emoji
