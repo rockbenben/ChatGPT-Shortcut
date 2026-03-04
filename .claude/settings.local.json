@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"D:\\\\Backup\\\\Libraries\\\\Documents\\\\GitHub\\\\ChatGPT-Shortcut\\\\src\\\\data\"/*.json)",
+      "Bash(ls:*)",
+      "Bash(yarn remove:*)",
+      "Bash(yarn typecheck:*)",
+      "Bash(node:*)",
+      "Bash(mv:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx docusaurus:*)",
+      "Bash(yarn add:*)"
+    ]
+  }
+}
