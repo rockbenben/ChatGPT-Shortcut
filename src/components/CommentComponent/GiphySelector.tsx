@@ -4,13 +4,10 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 import { useColorMode } from "@docusaurus/theme-common";
 
 const GIPHY_API_KEY = "36zezehgQXZMRV6Mko784D9OEBm0UHiP";
-const gf = new GiphyFetch(GIPHY_API_KEY);
 
-export const GiphySelector = ({ onGifSelect, width = 450, height = 300, columns = 3, gutter = 6, limit = 10 }) => {
+export const GiphySelector = ({ onGifSelect, width = 450, height = 300, columns = 3, gutter = 6 }) => {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
-
-  const fetchGifs = (offset) => gf.trending({ offset, limit });
 
   return (
     <SearchContextManager
