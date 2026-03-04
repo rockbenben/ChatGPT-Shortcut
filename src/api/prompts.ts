@@ -363,8 +363,6 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
     const newEtag = response.headers["etag"];
 
     // Clear stale caches by comparing updatedAt
-    let clearedCount = 0;
-
     listItems.forEach((item: { id: number; updatedAt: string }) => {
       const promptCacheKey = getPromptCacheKey("commus", item.id);
       const cachedPrompt = getCache(promptCacheKey);
@@ -372,7 +370,6 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
       // If cached updatedAt differs from latest, clear the cache
       if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
         removeCache(promptCacheKey);
-        clearedCount++;
       }
     });
 
