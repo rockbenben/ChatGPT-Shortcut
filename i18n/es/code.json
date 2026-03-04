@@ -390,7 +390,7 @@
     "message": "Buscar prompts..."
   },
   "showcase.usersList.noResult": {
-    "message": "No se encontraron resultados relevantes, por favor intenta acortar tus términos de búsqueda"
+    "message": "No se encontraron resultados, prueba con otras palabras clave"
   },
   "validation.username.required": {
     "message": "¡Por favor ingresa nombre de usuario o correo electrónico registrado!"
@@ -480,7 +480,7 @@
     "message": "Se enviará un enlace de restablecimiento a tu correo electrónico"
   },
   "message.noFavorites": {
-    "message": "Aún no hay prompts favoritos"
+    "message": "Aún no hay favoritos, descubre prompts que te gusten"
   },
   "action.edit": {
     "message": "Editar"
@@ -489,7 +489,7 @@
     "message": "Eliminar"
   },
   "message.noPrompts": {
-    "message": "Aún no se han enviado prompts, por favor añade un prompt."
+    "message": "Aún no hay prompts, crea uno"
   },
   "message.cache.cleared": {
     "message": "Caché borrada"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "Administrar Etiquetas"
   },
-  "myspace.search.placeholder": {
-    "message": "Buscar en mi espacio..."
-  },
   "myspace.tagManager.title": {
     "message": "Administrar Etiquetas Personalizadas"
   },
@@ -972,7 +969,7 @@
     "message": "Error al actualizar etiquetas"
   },
   "message.noSpaceItems": {
-    "message": "Aún no hay contenido, por favor añade prompts o favoritos."
+    "message": "Aún no hay contenido, ve a añadir prompts o favoritos"
   },
   "nav.explore": {
     "message": "Explorar"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Prompts de la comunidad"
+  },
+  "myspace.fallbackHint": {
+    "message": "No se encontraron coincidencias. Recomendado:"
   }
 }

@@ -408,7 +408,7 @@
     "message": "搜尋提示詞……"
   },
   "showcase.usersList.noResult": {
-    "message": "找不到相關結果，請嘗試縮短搜尋詞"
+    "message": "未找到相關結果，試試其他關鍵詞"
   },
   "action.removeFavorite": {
     "message": "點擊移除收藏"
@@ -557,9 +557,6 @@
   "myspace.manageTags": {
     "message": "管理標籤"
   },
-  "myspace.search.placeholder": {
-    "message": "搜尋我的空間..."
-  },
   "myspace.tagManager.title": {
     "message": "管理自訂標籤"
   },
@@ -594,13 +591,13 @@
     "message": "轉換失敗，請稍後重試"
   },
   "message.noSpaceItems": {
-    "message": "暫無內容，請添加提示詞或收藏。"
+    "message": "暫無內容，去添加提示詞或收藏吧"
   },
   "message.noPrompts": {
-    "message": "尚未提交任何提示詞，請添加提示詞。"
+    "message": "暫無提示詞，去建立一個吧"
   },
   "message.noFavorites": {
-    "message": "尚未收藏任何提示詞，請添加收藏。"
+    "message": "暫無收藏，去發現喜歡的提示詞吧"
   },
   "myspace.assignTag": {
     "message": "分配標籤"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "社群提示詞"
+  },
+  "myspace.fallbackHint": {
+    "message": "未找到匹配結果，為你推薦："
   }
 }

@@ -435,7 +435,7 @@
     "message": "ค้นหาพรอมพ์..."
   },
   "showcase.usersList.noResult": {
-    "message": "ไม่พบผลลัพธ์ที่เกี่ยวข้อง โปรดลองย่อคำค้นหา"
+    "message": "ไม่พบผลลัพธ์ ลองใช้คำค้นหาอื่น"
   },
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
@@ -557,9 +557,6 @@
   "myspace.manageTags": {
     "message": "จัดการแท็ก"
   },
-  "myspace.search.placeholder": {
-    "message": "ค้นหาในพื้นที่ของฉัน..."
-  },
   "myspace.tagManager.title": {
     "message": "จัดการแท็กที่กำหนดเอง"
   },
@@ -594,13 +591,13 @@
     "message": "การแปลงล้มเหลว กรุณาลองอีกครั้งในภายหลัง"
   },
   "message.noSpaceItems": {
-    "message": "ยังไม่มีเนื้อหา กรุณาเพิ่ม Prompt หรือรายการโปรด"
+    "message": "ยังไม่มีเนื้อหา ไปเพิ่ม Prompt หรือรายการโปรดกันเถอะ"
   },
   "message.noPrompts": {
-    "message": "ยังไม่มี Prompt ที่ส่ง กรุณาเพิ่ม Prompt"
+    "message": "ยังไม่มี Prompt ไปสร้างกันเถอะ"
   },
   "message.noFavorites": {
-    "message": "ยังไม่มีรายการโปรด กรุณาเพิ่มรายการโปรด"
+    "message": "ยังไม่มีรายการโปรด ไปค้นหา Prompt ที่ชอบกันเถอะ"
   },
   "myspace.assignTag": {
     "message": "กำหนดแท็ก"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "พรอมต์ชุมชน"
+  },
+  "myspace.fallbackHint": {
+    "message": "ไม่พบผลลัพธ์ที่ตรงกัน แนะนำสำหรับคุณ:"
   }
 }

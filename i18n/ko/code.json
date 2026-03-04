@@ -390,7 +390,7 @@
     "message": "프롬프트 검색..."
   },
   "showcase.usersList.noResult": {
-    "message": "관련 결과를 찾을 수 없습니다. 검색어를 줄여보세요"
+    "message": "관련 결과를 찾을 수 없습니다. 다른 키워드를 시도해 보세요"
   },
   "validation.username.required": {
     "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
@@ -480,7 +480,7 @@
     "message": "재설정 링크가 이메일로 전송됩니다"
   },
   "message.noFavorites": {
-    "message": "즐겨찾는 프롬프트가 없습니다"
+    "message": "아직 즐겨찾기가 없습니다. 마음에 드는 프롬프트를 찾아보세요"
   },
   "action.edit": {
     "message": "수정"
@@ -489,7 +489,7 @@
     "message": "삭제"
   },
   "message.noPrompts": {
-    "message": "아직 프롬프트가 제출되지 않았습니다. 프롬프트를 추가하십시오."
+    "message": "아직 프롬프트가 없습니다. 하나 만들어 보세요"
   },
   "message.cache.cleared": {
     "message": "캐시가 지워졌습니다"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "태그 관리"
   },
-  "myspace.search.placeholder": {
-    "message": "내 공간 검색..."
-  },
   "myspace.tagManager.title": {
     "message": "사용자 지정 태그 관리"
   },
@@ -972,7 +969,7 @@
     "message": "태그 업데이트 실패"
   },
   "message.noSpaceItems": {
-    "message": "콘텐츠가 없습니다. 프롬프트나 즐겨찾기를 추가하세요."
+    "message": "아직 콘텐츠가 없습니다. 프롬프트나 즐겨찾기를 추가해 보세요"
   },
   "nav.explore": {
     "message": "탐색"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "커뮤니티 프롬프트"
+  },
+  "myspace.fallbackHint": {
+    "message": "일치하는 결과가 없습니다. 추천："
   }
 }
