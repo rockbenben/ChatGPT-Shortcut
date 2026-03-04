@@ -13,6 +13,7 @@ import { AuthContext } from "@site/src/components/AuthContext";
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
 import { getPrompts } from "@site/src/api";
+import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
 
 export type UserState = {
@@ -84,44 +85,51 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
       const searchLower = searchName ? searchName.toLowerCase() : "";
       try {
         if (searchMode === "default") {
-          const data = await searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
+          // 精选搜索和本地收藏搜索并行，互不依赖
+          const cardsPromise = searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
+          const commusPromise =
+            userAuth && selectedTags.length === 0
+              ? Promise.all([
+                  userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
+                  userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
+                ]).then(([userprompts, commus]) => [...userprompts, ...commus].filter((prompt) => matchesSearch(prompt, searchLower)))
+              : Promise.resolve([]);
+
+          const [data, localCommus] = await Promise.all([cardsPromise, commusPromise.catch(() => [] as any[])]);
           if (cancelled) return;
+
           startTransition(() => {
             setFilteredCards(data);
+            setFilteredCommus(localCommus);
           });
-          if (userAuth && selectedTags.length === 0) {
-            Promise.all([
-              userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
-              userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
-            ])
-              .then(([userprompts, commus]) => {
-                if (cancelled) return [];
-                return [...userprompts, ...commus].filter((prompt) => matchesSearch(prompt, searchLower));
-              })
-              .then((filteredCommus) => {
-                if (cancelled) return;
-                startTransition(() => setFilteredCommus(filteredCommus));
-              });
+
+          // 降级搜索：精选和本地收藏都无结果时，搜索全量社区提示词（无需登录）
+          if (localCommus.length === 0 && data.length === 0 && searchName) {
+            try {
+              const result = await getCommPrompts(1, 12, "upvoteDifference", "desc", searchName);
+              if (cancelled) return;
+              const communityPrompts = Array.isArray(result) ? result[0] : [];
+              if (communityPrompts.length > 0) {
+                startTransition(() => setFilteredCommus(communityPrompts));
+              }
+            } catch {
+              // 社区搜索失败不影响已有结果
+            }
           }
         } else if (searchMode === "myfavor") {
           if (userAuth?.data?.favorites) {
-            Promise.resolve()
-              .then(async () => {
-                const data = await searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
-                if (cancelled) return { favoriteCards: [], commus: [] };
-                const favoriteCards = userAuth.data.favorites.loves ? data.filter((card) => userAuth.data.favorites.loves.includes(card.id)) : [];
-                startTransition(() => setFilteredCards(favoriteCards));
-                if (userAuth.data.favorites.commLoves) {
-                  const commus = await getPrompts("commus", userAuth.data.favorites.commLoves);
-                  return { favoriteCards, commus };
-                }
-                return { favoriteCards, commus: [] };
-              })
-              .then(({ commus }) => {
-                if (cancelled) return;
-                const filtered = commus.filter((prompt) => matchesSearch(prompt, searchLower));
-                startTransition(() => setFilteredCommus(filtered));
-              });
+            const data = await searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
+            if (cancelled) return;
+            const favoriteCards = userAuth.data.favorites.loves ? data.filter((card) => userAuth.data.favorites.loves.includes(card.id)) : [];
+            startTransition(() => setFilteredCards(favoriteCards));
+
+            let commus: any[] = [];
+            if (userAuth.data.favorites.commLoves) {
+              commus = await getPrompts("commus", userAuth.data.favorites.commLoves);
+              if (cancelled) return;
+            }
+            const filtered = commus.filter((prompt) => matchesSearch(prompt, searchLower));
+            startTransition(() => setFilteredCommus(filtered));
           } else {
             startTransition(() => {
               if (!cancelled) {
@@ -132,16 +140,10 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           }
         } else if (searchMode === "myprompts") {
           if (userAuth?.data?.userprompts) {
-            Promise.resolve()
-              .then(async () => {
-                const userprompts = await getPrompts("userprompts", userAuth.data.userprompts);
-                return userprompts;
-              })
-              .then((userprompts) => {
-                if (cancelled) return;
-                const filtered = userprompts.filter((prompt) => matchesSearch(prompt, searchLower));
-                startTransition(() => setFilteredCommus(filtered));
-              });
+            const userprompts = await getPrompts("userprompts", userAuth.data.userprompts);
+            if (cancelled) return;
+            const filtered = userprompts.filter((prompt) => matchesSearch(prompt, searchLower));
+            startTransition(() => setFilteredCommus(filtered));
           } else {
             startTransition(() => {
               if (!cancelled) setFilteredCommus([]);
@@ -242,7 +244,7 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
           ref={inputRef}
           id="searchbar"
           placeholder={translate({
-            message: "搜索提示词……",
+            message: "搜索提示词...",
             id: "input.search.placeholder",
           })}
           value={value ?? undefined}

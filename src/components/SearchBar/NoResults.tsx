@@ -19,5 +19,5 @@ export const NoResults: React.FC = () => {
     );
   }
 
-  return <Empty description={<Translate id="showcase.usersList.noResult">找不到相关结果，请尝试缩短搜索词</Translate>} />;
+  return <Empty description={<Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>} />;
 };
