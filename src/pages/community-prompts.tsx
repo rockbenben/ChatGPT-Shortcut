@@ -51,8 +51,8 @@ const CommunityPrompts = () => {
   const [sortField, setSortField] = useState("id");
   const [sortOrder, setSortOrder] = useState("desc");
   const [searchTerm, setSearchTerm] = useState("");
-  // Shareurl 使用 useMemo 避免额外的渲染周期
-  const Shareurl = useMemo(() => {
+  // ShareUrl 使用 useMemo 避免额外的渲染周期
+  const ShareUrl = useMemo(() => {
     if (typeof window !== "undefined") {
       return window.location.href;
     }
@@ -91,7 +91,7 @@ const CommunityPrompts = () => {
         setLoading(false);
       }
     },
-    [messageApi]
+    [messageApi],
   );
 
   const handleBeforeSearch = useCallback(() => {
@@ -138,8 +138,8 @@ const CommunityPrompts = () => {
                 downvotes: action === "downvote" ? (prompt.downvotes || 0) + 1 : prompt.downvotes,
                 upvoteDifference: (prompt.upvoteDifference || 0) + (action === "upvote" ? 1 : -1),
               }
-            : prompt
-        )
+            : prompt,
+        ),
       );
 
       try {
@@ -157,8 +157,8 @@ const CommunityPrompts = () => {
                     downvotes,
                     upvoteDifference: upvotes - downvotes,
                   }
-                : prompt
-            )
+                : prompt,
+            ),
           );
         }
 
@@ -176,15 +176,15 @@ const CommunityPrompts = () => {
                     downvotes: originalPrompt.downvotes,
                     upvoteDifference: originalPrompt.upvoteDifference,
                   }
-                : prompt
-            )
+                : prompt,
+            ),
           );
         }
         const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
         messageApi.error(errorMessage);
       }
     },
-    [userAuth, messageApi, userprompts]
+    [userAuth, messageApi, userprompts],
   );
 
   const bookmark = useCallback(
@@ -195,7 +195,7 @@ const CommunityPrompts = () => {
         addFavorite(promptId, true);
       }
     },
-    [userAuth?.data?.favorites?.commLoves, confirmRemoveFavorite, addFavorite]
+    [userAuth?.data?.favorites?.commLoves, confirmRemoveFavorite, addFavorite],
   );
 
   const onChangePage = useCallback((page) => {
@@ -322,7 +322,7 @@ const CommunityPrompts = () => {
               </Suspense>
             )}
             <Suspense fallback={null}>
-              <ShareButtons shareUrl={Shareurl} title={COMMU_TITLE} popOver={false} />
+              <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} popOver={false} />
             </Suspense>
             <FloatButton.BackTop />
           </div>

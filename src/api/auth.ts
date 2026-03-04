@@ -206,7 +206,7 @@ export async function getGoogleAuthUrl(): Promise<string> {
  * 获取认证用户详细信息
  * 使用主 API (http://localhost:1337) 获取用户数据
  */
-export async function getAuthenticatedUserDetails(token: string): Promise<Record<string, unknown>> {
+async function getAuthenticatedUserDetails(token: string): Promise<Record<string, unknown>> {
   if (!token) {
     throw new Error("Missing authentication token.");
   }

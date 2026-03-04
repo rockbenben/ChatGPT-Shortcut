@@ -85,22 +85,6 @@ export function getLevelInfo(sharedCount: number): LevelInfo {
   };
 }
 
-/**
- * Calculate progress percentage to next level
- */
-export function getProgressPercent(sharedCount: number, nextLevel: number | null): number {
-  if (!nextLevel) return 100;
-  return Math.min(100, Math.round((sharedCount / nextLevel) * 100));
-}
-
-/**
- * Get remaining count to next level
- */
-export function getRemainingToNextLevel(sharedCount: number, nextLevel: number | null): number {
-  if (!nextLevel) return 0;
-  return nextLevel - sharedCount;
-}
-
 // ============ React Components ============
 
 interface LevelNameProps {
