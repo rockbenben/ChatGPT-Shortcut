@@ -713,7 +713,7 @@ const ShowcaseContent: React.FC = () => {
 };
 
 export default function Showcase(): React.ReactElement {
-  const [Shareurl, setShareUrl] = useState("");
+  const [shareUrl, setShareUrl] = useState("");
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -729,7 +729,7 @@ export default function Showcase(): React.ReactElement {
           <ShowcaseContent />
         </AuthProvider>
         <Suspense fallback={null}>
-          <ShareButtons shareUrl={Shareurl} title={TITLE} popOver={false} />
+          <ShareButtons shareUrl={shareUrl} title={TITLE} popOver={false} />
         </Suspense>
       </main>
     </Layout>
