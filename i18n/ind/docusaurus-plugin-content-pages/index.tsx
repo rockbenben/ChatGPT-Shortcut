@@ -71,7 +71,7 @@ const ShowcaseFilters: React.FC = React.memo(() => {
   }, []);
 
   return (
-    <section className={`container ${styles.filterContainer}`} style={{ backgroundColor: "var(--site-color-tags-background)" }}>
+    <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
         <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
           <Translate id="showcase.filters.title">Filters</Translate>
@@ -340,9 +340,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                   <FavoriteIcon svgClass={styles.svgIconFavorite} />
                   <SearchBar />
                 </div>
-                <Row gutter={[16, 16]} className={styles.cardRowContainer}>
+                <Row gutter={[16, 16]}>
                   {favoriteUsers.map((user) => (
-                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                    <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
                       <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
                     </Col>
                   ))}
@@ -360,10 +360,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             <Title level={3} className="hideOnSmallScreen">
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Title>
-            <Row gutter={[16, 16]} className={styles.cardRowContainer}>
+            <Row gutter={[16, 16]}>
               {otherUsers.map((user, index) => (
                 <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                     <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
                   </Col>
                 </React.Fragment>
@@ -392,7 +392,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
           <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
             <SearchBar />
           </div>
-          <Row gutter={[16, 16]} className={styles.cardRowContainer}>
+          <Row gutter={[16, 16]}>
             {filteredCommus.map((user, index) => {
               const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
@@ -409,7 +409,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
 
               return (
                 <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                     <PromptCard
                       type={isUserPrompt ? "user" : "community"}
                       data={modifiedData}
@@ -424,7 +424,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             })}
             {filteredCards.map((user, index) => (
               <React.Fragment key={user.id}>
-                <Col xs={24} sm={12} md={8} lg={6} xl={6} className={styles.cardColumn}>
+                <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                   <PromptCard type="data" data={user} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
                 </Col>
               </React.Fragment>

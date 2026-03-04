@@ -1,4 +1,4 @@
-import React, { useContext, useCallback, ReactNode } from "react";
+import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
@@ -7,7 +7,6 @@ import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
-import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -27,7 +26,6 @@ interface FavoriteCardProps {
 }
 
 const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
-  const { userAuth } = useContext(AuthContext);
   const { i18n } = useDocusaurusContext();
   const { token } = theme.useToken();
   const { copied, copyText, updateCopy } = useCopyToClipboard();

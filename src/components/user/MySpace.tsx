@@ -305,7 +305,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   // 编辑提示词弹窗
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
-  const [hasDragged, setHasDragged] = useState(false);
 
   // 跟踪已加载的用户数据，避免重复加载
   // 包含 userId 和 hash，只有两者都匹配且 spaceItems 有数据时才跳过加载
@@ -528,7 +527,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       const { active, over } = event;
 
       if (!over || active.id === over.id) {
-        setHasDragged(false);
         return;
       }
 
@@ -536,7 +534,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       const newIndex = filteredItems.findIndex((item) => item.id === over.id);
 
       if (oldIndex === -1 || newIndex === -1) {
-        setHasDragged(false);
         return;
       }
 
@@ -557,7 +554,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const overFullIndex = spaceItems.findIndex((item) => item.id === overItem.id);
 
         if (activeFullIndex === -1 || overFullIndex === -1) {
-          setHasDragged(false);
           return;
         }
 
@@ -565,7 +561,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       }
 
       setSpaceItems(newSpaceItems);
-      setHasDragged(true);
 
       // 自动保存顺序 - 保存完整列表的顺序
       try {
@@ -602,11 +597,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     },
     [editingPrompt, updateUserPrompt],
   );
-
-  // 管理标签（打开弹窗）
-  const handleManageTags = useCallback(() => {
-    setTagManagerOpen(true);
-  }, []);
 
   // 保存标签管理
   const handleManageTagsSave = async (tags: CustomTag[]) => {

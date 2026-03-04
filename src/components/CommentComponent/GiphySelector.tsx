@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, SearchBar, SearchContext, SearchContextManager } from "@giphy/react-components";
-import { GiphyFetch } from "@giphy/js-fetch-api";
 import { useColorMode } from "@docusaurus/theme-common";
 
 const GIPHY_API_KEY = "36zezehgQXZMRV6Mko784D9OEBm0UHiP";
