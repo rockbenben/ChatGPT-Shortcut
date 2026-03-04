@@ -390,7 +390,7 @@
     "message": "Search prompts..."
   },
   "showcase.usersList.noResult": {
-    "message": "No relevant results found, please try shortening your search terms"
+    "message": "No results found, try other keywords"
   },
   "validation.username.required": {
     "message": "Please enter username or registered email!"
@@ -480,7 +480,7 @@
     "message": "A reset link will be sent to your email"
   },
   "message.noFavorites": {
-    "message": "No favorite prompts yet"
+    "message": "No favorites yet, go discover prompts you like"
   },
   "action.edit": {
     "message": "Edit"
@@ -489,7 +489,7 @@
     "message": "Delete"
   },
   "message.noPrompts": {
-    "message": "No prompts submitted yet, please add a prompt."
+    "message": "No prompts yet, go create one"
   },
   "message.cache.cleared": {
     "message": "Cache cleared"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "Manage Tags"
   },
-  "myspace.search.placeholder": {
-    "message": "Search my space..."
-  },
   "myspace.tagManager.title": {
     "message": "Manage Custom Tags"
   },
@@ -972,7 +969,7 @@
     "message": "Failed to update tags"
   },
   "message.noSpaceItems": {
-    "message": "No content yet, please add prompts or favorites."
+    "message": "No content yet, go add prompts or favorites"
   },
   "nav.explore": {
     "message": "Explore"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Community Prompts"
+  },
+  "myspace.fallbackHint": {
+    "message": "No matching results found. Recommended for you:"
   }
 }

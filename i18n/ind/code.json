@@ -435,7 +435,7 @@
     "message": "Cari prompt..."
   },
   "showcase.usersList.noResult": {
-    "message": "Tidak ditemukan hasil yang relevan, coba perpendek kata pencarian"
+    "message": "Tidak ditemukan hasil, coba kata kunci lain"
   },
   "validation.username.required": {
     "message": "Silakan masukkan nama pengguna atau email terdaftar!"
@@ -557,9 +557,6 @@
   "myspace.manageTags": {
     "message": "Kelola Tag"
   },
-  "myspace.search.placeholder": {
-    "message": "Cari di ruang saya..."
-  },
   "myspace.tagManager.title": {
     "message": "Kelola Tag Kustom"
   },
@@ -594,13 +591,13 @@
     "message": "Konversi gagal, silakan coba lagi nanti"
   },
   "message.noSpaceItems": {
-    "message": "Belum ada konten, silakan tambahkan Prompt atau Favorit."
+    "message": "Belum ada konten, tambahkan Prompt atau Favorit"
   },
   "message.noPrompts": {
-    "message": "Belum ada Prompt yang dikirim, silakan tambahkan Prompt."
+    "message": "Belum ada Prompt, buat satu"
   },
   "message.noFavorites": {
-    "message": "Belum ada favorit, silakan tambahkan favorit."
+    "message": "Belum ada favorit, temukan Prompt yang Anda suka"
   },
   "myspace.assignTag": {
     "message": "Tetapkan Tag"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Prompt Komunitas"
+  },
+  "myspace.fallbackHint": {
+    "message": "Tidak ditemukan hasil yang cocok. Rekomendasi:"
   }
 }

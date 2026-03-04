@@ -390,7 +390,7 @@
     "message": "Tìm kiếm prompt..."
   },
   "showcase.usersList.noResult": {
-    "message": "Không tìm thấy kết quả liên quan, vui lòng thử rút ngắn từ khóa tìm kiếm"
+    "message": "Không tìm thấy kết quả, hãy thử từ khóa khác"
   },
   "validation.username.required": {
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký!"
@@ -480,7 +480,7 @@
     "message": "Liên kết đặt lại sẽ được gửi đến email của bạn"
   },
   "message.noFavorites": {
-    "message": "Chưa có prompt yêu thích nào"
+    "message": "Chưa có mục yêu thích, hãy khám phá prompt bạn thích"
   },
   "action.edit": {
     "message": "Chỉnh sửa"
@@ -489,7 +489,7 @@
     "message": "Xóa"
   },
   "message.noPrompts": {
-    "message": "Chưa có prompt nào được gửi, vui lòng thêm prompt."
+    "message": "Chưa có prompt nào, hãy tạo một prompt"
   },
   "message.cache.cleared": {
     "message": "Đã xóa bộ nhớ cache"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "Quản lý Thẻ"
   },
-  "myspace.search.placeholder": {
-    "message": "Tìm kiếm không gian của tôi..."
-  },
   "myspace.tagManager.title": {
     "message": "Quản lý Thẻ Tùy chỉnh"
   },
@@ -972,7 +969,7 @@
     "message": "Không thể cập nhật thẻ"
   },
   "message.noSpaceItems": {
-    "message": "Chưa có nội dung, vui lòng thêm prompt hoặc yêu thích."
+    "message": "Chưa có nội dung, hãy thêm prompt hoặc yêu thích"
   },
   "nav.explore": {
     "message": "Khám phá"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Prompt cộng đồng"
+  },
+  "myspace.fallbackHint": {
+    "message": "Không tìm thấy kết quả phù hợp. Gợi ý cho bạn:"
   }
 }

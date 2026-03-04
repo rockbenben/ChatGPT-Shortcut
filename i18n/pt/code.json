@@ -390,7 +390,7 @@
     "message": "Pesquisar prompts..."
   },
   "showcase.usersList.noResult": {
-    "message": "Nenhum resultado relevante encontrado, tente encurtar o termo de pesquisa"
+    "message": "Nenhum resultado encontrado, tente outras palavras-chave"
   },
   "validation.username.required": {
     "message": "Por favor, insira o nome de usuário ou e-mail registrado!"
@@ -480,7 +480,7 @@
     "message": "O link de redefinição será enviado para o seu e-mail"
   },
   "message.noFavorites": {
-    "message": "Nenhum prompt favorito ainda"
+    "message": "Nenhum favorito ainda, descubra prompts que você goste"
   },
   "action.edit": {
     "message": "Editar"
@@ -489,7 +489,7 @@
     "message": "Excluir"
   },
   "message.noPrompts": {
-    "message": "Nenhum prompt enviado ainda, por favor adicione um prompt."
+    "message": "Nenhum prompt ainda, crie um"
   },
   "message.cache.cleared": {
     "message": "Cache limpo"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "Gerenciar Tags"
   },
-  "myspace.search.placeholder": {
-    "message": "Pesquisar no meu espaço..."
-  },
   "myspace.tagManager.title": {
     "message": "Gerenciar Tags Personalizadas"
   },
@@ -972,7 +969,7 @@
     "message": "Falha ao atualizar tags"
   },
   "message.noSpaceItems": {
-    "message": "Nenhum conteúdo ainda, por favor adicione prompts ou favoritos."
+    "message": "Nenhum conteúdo ainda, adicione prompts ou favoritos"
   },
   "nav.explore": {
     "message": "Explorar"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Prompts da comunidade"
+  },
+  "myspace.fallbackHint": {
+    "message": "Nenhum resultado correspondente. Recomendado:"
   }
 }

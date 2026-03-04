@@ -390,7 +390,7 @@
     "message": "بحث في التوجيهات..."
   },
   "showcase.usersList.noResult": {
-    "message": "لم يتم العثور على نتائج ذات صلة، يرجى محاولة تقصير مصطلحات البحث"
+    "message": "لم يتم العثور على نتائج، جرّب كلمات مفتاحية أخرى"
   },
   "validation.username.required": {
     "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل!"
@@ -480,7 +480,7 @@
     "message": "سيتم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني"
   },
   "message.noFavorites": {
-    "message": "لا توجد توجيهات مفضلة بعد"
+    "message": "لا توجد مفضلة بعد، اكتشف الموجهات التي تعجبك"
   },
   "action.edit": {
     "message": "تعديل"
@@ -489,7 +489,7 @@
     "message": "حذف"
   },
   "message.noPrompts": {
-    "message": "لم يتم إرسال أي توجيهات بعد، يرجى إضافة توجيه."
+    "message": "لا توجد موجهات بعد، أنشئ واحدة"
   },
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "إدارة الوسوم"
   },
-  "myspace.search.placeholder": {
-    "message": "البحث في مساحتي..."
-  },
   "myspace.tagManager.title": {
     "message": "إدارة الوسوم المخصصة"
   },
@@ -972,7 +969,7 @@
     "message": "فشل تحديث الوسوم"
   },
   "message.noSpaceItems": {
-    "message": "لا يوجد محتوى بعد، يرجى إضافة موجهات أو مفضلة."
+    "message": "لا يوجد محتوى بعد، أضف موجهات أو مفضلة"
   },
   "nav.explore": {
     "message": "استكشاف"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "توجيهات المجتمع"
+  },
+  "myspace.fallbackHint": {
+    "message": "لم يتم العثور على نتائج مطابقة. موصى به:"
   }
 }

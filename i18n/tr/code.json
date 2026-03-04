@@ -435,7 +435,7 @@
     "message": "Prompt ara..."
   },
   "showcase.usersList.noResult": {
-    "message": "İlgili sonuç bulunamadı, lütfen arama terimlerini kısaltmayı deneyin"
+    "message": "Sonuç bulunamadı, başka anahtar kelimeler deneyin"
   },
   "validation.username.required": {
     "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin!"
@@ -557,9 +557,6 @@
   "myspace.manageTags": {
     "message": "Etiketleri Yönet"
   },
-  "myspace.search.placeholder": {
-    "message": "Alanımda ara..."
-  },
   "myspace.tagManager.title": {
     "message": "Özel Etiketleri Yönet"
   },
@@ -594,13 +591,13 @@
     "message": "Dönüştürme başarısız, lütfen daha sonra tekrar deneyin"
   },
   "message.noSpaceItems": {
-    "message": "Henüz içerik yok, lütfen Prompt veya Favori ekleyin."
+    "message": "Henüz içerik yok, Prompt veya Favori ekleyin"
   },
   "message.noPrompts": {
-    "message": "Henüz gönderilmiş Prompt yok, lütfen Prompt ekleyin."
+    "message": "Henüz Prompt yok, bir tane oluşturun"
   },
   "message.noFavorites": {
-    "message": "Henüz favori eklenmemiş, lütfen favori ekleyin."
+    "message": "Henüz favori yok, beğendiğiniz Promptları keşfedin"
   },
   "myspace.assignTag": {
     "message": "Etiket Ata"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Topluluk Promptları"
+  },
+  "myspace.fallbackHint": {
+    "message": "Eşleşen sonuç bulunamadı. Önerilen:"
   }
 }

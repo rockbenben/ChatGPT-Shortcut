@@ -390,7 +390,7 @@
     "message": "Prompts suchen..."
   },
   "showcase.usersList.noResult": {
-    "message": "Keine relevanten Ergebnisse gefunden, bitte versuchen Sie, Ihre Suchbegriffe zu verkürzen"
+    "message": "Keine Ergebnisse gefunden, versuchen Sie andere Suchbegriffe"
   },
   "validation.username.required": {
     "message": "Bitte geben Sie Benutzername oder registrierte E-Mail ein!"
@@ -480,7 +480,7 @@
     "message": "Ein Reset-Link wird an Ihre E-Mail gesendet"
   },
   "message.noFavorites": {
-    "message": "Noch keine Favoriten-Prompts"
+    "message": "Noch keine Favoriten, entdecken Sie Prompts die Ihnen gefallen"
   },
   "action.edit": {
     "message": "Bearbeiten"
@@ -489,7 +489,7 @@
     "message": "Löschen"
   },
   "message.noPrompts": {
-    "message": "Noch keine Prompts eingereicht, bitte fügen Sie einen Prompt hinzu."
+    "message": "Noch keine Prompts, erstellen Sie einen"
   },
   "message.cache.cleared": {
     "message": "Cache geleert"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "Tags verwalten"
   },
-  "myspace.search.placeholder": {
-    "message": "Meinen Bereich durchsuchen..."
-  },
   "myspace.tagManager.title": {
     "message": "Benutzerdefinierte Tags verwalten"
   },
@@ -972,7 +969,7 @@
     "message": "Aktualisierung der Tags fehlgeschlagen"
   },
   "message.noSpaceItems": {
-    "message": "Noch kein Inhalt, bitte fügen Sie Prompts oder Favoriten hinzu."
+    "message": "Noch kein Inhalt, fügen Sie Prompts oder Favoriten hinzu"
   },
   "nav.explore": {
     "message": "Entdecken"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "Community-Prompts"
+  },
+  "myspace.fallbackHint": {
+    "message": "Keine passenden Ergebnisse. Empfohlen:"
   }
 }

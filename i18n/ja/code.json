@@ -387,7 +387,7 @@
     "message": "プロンプトを検索..."
   },
   "showcase.usersList.noResult": {
-    "message": "関連する結果が見つかりませんでした。検索語を短くしてみてください"
+    "message": "結果が見つかりませんでした。他のキーワードをお試しください"
   },
   "comment.add": {
     "message": "コメントを送信"
@@ -480,7 +480,7 @@
     "message": "リセットリンクがメールに送信されます"
   },
   "message.noFavorites": {
-    "message": "お気に入りのプロンプトはまだありません"
+    "message": "まだお気に入りがありません。気に入るプロンプトを探しましょう"
   },
   "action.edit": {
     "message": "編集"
@@ -489,7 +489,7 @@
     "message": "削除"
   },
   "message.noPrompts": {
-    "message": "まだプロンプトが送信されていません。プロンプトを追加してください。"
+    "message": "まだプロンプトがありません。作成しましょう"
   },
   "message.cache.cleared": {
     "message": "キャッシュをクリアしました"
@@ -947,9 +947,6 @@
   "myspace.manageTags": {
     "message": "タグ管理"
   },
-  "myspace.search.placeholder": {
-    "message": "マイスペースを検索..."
-  },
   "myspace.tagManager.title": {
     "message": "カスタムタグの管理"
   },
@@ -972,7 +969,7 @@
     "message": "タグの更新に失敗しました"
   },
   "message.noSpaceItems": {
-    "message": "コンテンツがありません。プロンプトやお気に入りを追加してください。"
+    "message": "まだコンテンツがありません。プロンプトやお気に入りを追加しましょう"
   },
   "nav.explore": {
     "message": "見つける"
@@ -1138,5 +1135,8 @@
   },
   "community.seoSuffix": {
     "message": "コミュニティプロンプト"
+  },
+  "myspace.fallbackHint": {
+    "message": "一致する結果が見つかりませんでした。おすすめ："
   }
 }
