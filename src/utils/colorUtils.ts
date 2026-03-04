@@ -102,7 +102,8 @@ export function updateDOMColors(
 ): void {
   const styleSheet = Array.from(document.styleSheets).find((item) =>
     item.href?.match(/styles(?:\.[\da-f]+)?\.css/),
-  )!;
+  );
+  if (!styleSheet) return;
   const rules = Array.from(styleSheet.cssRules) as CSSStyleRule[];
   // The rule that looks the most like definition for custom theme colors
   const ruleToDelete = rules.findIndex(
