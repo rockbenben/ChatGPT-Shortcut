@@ -7,11 +7,12 @@ import { BasePromptCard } from "@site/src/components/PromptCard/Base";
 import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import cardStyles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
+import { getCommPrompts } from "@site/src/api/prompts";
+import { searchCardsLocally } from "@site/src/api/homepage";
 import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
@@ -69,7 +70,7 @@ const FilterBar: React.FC<{
         setSearchQuery("");
       }
     },
-    [setSearchQuery]
+    [setSearchQuery],
   );
 
   const filterOptions = [
@@ -137,7 +138,7 @@ const FilterBar: React.FC<{
 
       <div className={styles.searchInput} style={{ marginLeft: "auto" }}>
         <Input
-          placeholder={translate({ id: "myspace.search.placeholder", message: "搜索我的空间..." })}
+          placeholder={translate({ id: "input.search.placeholder", message: "搜索提示词..." })}
           value={inputValue}
           onChange={handleChange}
           onPressEnter={handleSearch}
@@ -268,7 +269,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { userAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
 
-  const { confirmRemoveFavorite } = useFavorite();
+  const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
   // 移除本地缓存，统一使用 AuthContext 的数据
@@ -279,6 +280,11 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [customTags, setCustomTags] = useState<CustomTag[]>([]);
   const [tagManagerOpen, setTagManagerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // 降级搜索：精选/社区提示词推荐
+  const [fallbackCards, setFallbackCards] = useState<any[]>([]);
+  const [fallbackSource, setFallbackSource] = useState<"curated" | "community">("curated");
+  const [isFallbackLoading, setIsFallbackLoading] = useState(false);
 
   // 编辑提示词弹窗
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -294,7 +300,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   // 加载数据 - 直接使用 AuthContext 提供的数据
@@ -461,6 +467,45 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     return items;
   }, [spaceItems, filter, selectedTags, searchQuery]);
 
+  // 降级搜索：本地无结果时搜索精选提示词库，精选也无结果则搜索社区
+  useEffect(() => {
+    if (filteredItems.length > 0 || !searchQuery.trim()) {
+      setFallbackCards([]);
+      return;
+    }
+
+    let cancelled = false;
+    setIsFallbackLoading(true);
+
+    (async () => {
+      try {
+        const data = await searchCardsLocally([], searchQuery, currentLanguage);
+        if (cancelled) return;
+
+        if (data.length > 0) {
+          setFallbackSource("curated");
+          setFallbackCards(data.slice(0, 12));
+          return;
+        }
+
+        // 精选也无结果，尝试搜索社区提示词
+        const result = await getCommPrompts(1, 12, "upvoteDifference", "desc", searchQuery);
+        if (cancelled) return;
+        const commuPrompts = Array.isArray(result) ? result[0] : [];
+        setFallbackSource("community");
+        setFallbackCards(commuPrompts);
+      } catch {
+        if (!cancelled) setFallbackCards([]);
+      } finally {
+        if (!cancelled) setIsFallbackLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [filteredItems.length, searchQuery, currentLanguage]);
+
   // 拖拽结束
   const handleDragEnd = useCallback(
     async (event: DragEndEvent) => {
@@ -521,7 +566,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
       }
     },
-    [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi]
+    [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi],
   );
 
   // 编辑提示词
@@ -539,7 +584,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         setEditingPrompt(null);
       }
     },
-    [editingPrompt, updateUserPrompt]
+    [editingPrompt, updateUserPrompt],
   );
 
   // 管理标签（打开弹窗）
@@ -582,7 +627,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     (promptId: string) => {
       confirmRemovePrompt(Number(promptId));
     },
-    [confirmRemovePrompt]
+    [confirmRemovePrompt],
   );
 
   // 转换不可用的收藏提示词为私有提示词
@@ -613,7 +658,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         messageApi.error(<Translate id="message.convertToPrivate.error">转换失败，请稍后重试</Translate>);
       }
     },
-    [addUserPrompt, confirmRemoveFavorite, messageApi, i18n]
+    [addUserPrompt, confirmRemoveFavorite, messageApi, i18n],
   );
 
   // 移除收藏
@@ -621,7 +666,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     (id: string, isComm?: boolean) => {
       confirmRemoveFavorite(Number(id), isComm);
     },
-    [confirmRemoveFavorite]
+    [confirmRemoveFavorite],
   );
 
   // 切换项目标签
@@ -667,7 +712,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         setSpaceItems((items) => items.map((i) => (i.id === itemId ? { ...i, customTags: currentTags } : i)));
       }
     },
-    [spaceItems, customTags, messageApi]
+    [spaceItems, customTags, messageApi],
   );
 
   // 统一的加载状态：AuthContext 加载中 或 数据处理中
@@ -697,23 +742,60 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <Row gutter={[16, 16]}>
             {filteredItems.length === 0 ? (
-              <Col xs={24}>
-                <BasePromptCard>
-                  <div className={cardStyles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
-                    <Empty
-                      description={
-                        filter === "all" ? (
-                          <Translate id="message.noSpaceItems">暂无内容，请添加提示词或收藏。</Translate>
-                        ) : filter === "prompt" ? (
-                          <Translate id="message.noPrompts">尚未提交任何提示词，请添加提示词。</Translate>
-                        ) : (
-                          <Translate id="message.noFavorites">尚未收藏任何提示词，请添加收藏。</Translate>
-                        )
+              <>
+                {fallbackCards.length > 0 ? (
+                  <>
+                    <Col xs={24}>
+                      <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} style={{ margin: "1rem 0 0" }} />
+                    </Col>
+                    {fallbackCards.map((card) => {
+                      if (fallbackSource === "community") {
+                        const isFav = userAuth?.data?.favorites?.commLoves?.includes(card.id);
+                        return (
+                          <Col key={card.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                            <PromptCard
+                              type="community"
+                              data={card}
+                              isFavorite={isFav}
+                              onToggleFavorite={(id, isComm) => (isFav ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
+                              onOpenModal={onOpenModal}
+                            />
+                          </Col>
+                        );
                       }
-                    />
-                  </div>
-                </BasePromptCard>
-              </Col>
+                      return (
+                        <Col key={card.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                          <PromptCard type="data" data={card} copyCount={getWeight(card)} onOpenModal={onOpenModal} />
+                        </Col>
+                      );
+                    })}
+                  </>
+                ) : isFallbackLoading ? (
+                  <Col xs={24}>
+                    <PromptCardSkeleton count={4} />
+                  </Col>
+                ) : (
+                  <Col xs={24}>
+                    <BasePromptCard>
+                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
+                        <Empty
+                          description={
+                            searchQuery.trim() ? (
+                              <Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>
+                            ) : filter === "all" ? (
+                              <Translate id="message.noSpaceItems">暂无内容，去添加提示词或收藏吧</Translate>
+                            ) : filter === "prompt" ? (
+                              <Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>
+                            ) : (
+                              <Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>
+                            )
+                          }
+                        />
+                      </div>
+                    </BasePromptCard>
+                  </Col>
+                )}
+              </>
             ) : (
               <SortableContext items={filteredItems.map((item) => item.id)}>
                 {filteredItems.map((item) => {
