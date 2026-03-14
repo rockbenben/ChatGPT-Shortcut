@@ -130,6 +130,11 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
+  // 用 ref 保存 userAuth，使回调稳定化（不因后台 SWR 刷新而重建）
+  const userAuthRef = useRef(userAuth);
+  userAuthRef.current = userAuth;
+  const isLoggedIn = !!userAuth;
+
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
   const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);
   const [otherPrompts, setOtherPrompts] = useState<any[]>(defaultOtherData);
@@ -141,9 +146,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
   const [voteDeltas, setVoteDeltas] = useState<Record<string | number, { upvoteDelta: number; downvoteDelta: number }>>({});
 
+  // 稳定的投票回调（使用 ref 避免因 userAuth 变化而重建）
   const vote = useCallback(
     async (promptId: number | string, action: "upvote" | "downvote") => {
-      if (!userAuth) {
+      if (!userAuthRef.current) {
         messageApi.warning("Please log in to vote.");
         return;
       }
@@ -180,8 +186,41 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
         messageApi.error(errorMessage);
       }
     },
-    [userAuth, messageApi],
+    [messageApi],
   );
+
+  // 稳定的收藏切换回调（DataCard 用，isComm=false）
+  const handleToggleFavorite = useCallback(
+    (id: number, isComm: boolean) => {
+      const loves = userAuthRef.current?.data?.favorites?.loves || [];
+      if (loves.includes(id)) {
+        confirmRemoveFavorite(id, isComm);
+      } else {
+        addFavorite(id, isComm);
+      }
+    },
+    [confirmRemoveFavorite, addFavorite],
+  );
+
+  // 稳定的社区收藏切换回调（CommunityCard 用，isComm=true）
+  const handleCommToggleFavorite = useCallback(
+    (id: string | number, isComm: boolean) => {
+      const commLoves = userAuthRef.current?.data?.favorites?.commLoves || [];
+      if (commLoves.includes(Number(id))) {
+        confirmRemoveFavorite(Number(id), isComm);
+      } else {
+        addFavorite(Number(id), isComm);
+      }
+    },
+    [confirmRemoveFavorite, addFavorite],
+  );
+
+  // 组件卸载时清除投票记录，防止内存泄漏
+  useEffect(() => {
+    return () => {
+      sessionVotedIdsRef.current.clear();
+    };
+  }, []);
 
   // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
   const initializedUserIdRef = useRef<number | null>(null);
@@ -310,6 +349,16 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     }));
   }, [otherPrompts]);
 
+  // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
+  const favoriteIdSet = useMemo(
+    () => new Set<number>(userAuth?.data?.favorites?.loves || []),
+    [userAuth?.data?.favorites?.loves],
+  );
+  const userPromptIdSet = useMemo(
+    () => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []),
+    [userAuth?.data?.userprompts],
+  );
+
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
 
   if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
@@ -343,7 +392,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                 <Row gutter={[16, 16]}>
                   {favoriteUsers.map((user) => (
                     <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                      <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
+                      <PromptCard type="data" data={user} copyCount={user._cachedWeight} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
                     </Col>
                   ))}
                 </Row>
@@ -364,7 +413,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
               {otherUsers.map((user, index) => (
                 <React.Fragment key={user.id}>
                   <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <PromptCard type="data" data={user} copyCount={user._cachedWeight} onOpenModal={onOpenModal} />
+                    <PromptCard type="data" data={user} copyCount={user._cachedWeight} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
                   </Col>
                 </React.Fragment>
               ))}
@@ -394,7 +443,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
           </div>
           <Row gutter={[16, 16]}>
             {filteredCommus.map((user, index) => {
-              const isUserPrompt = userAuth?.data?.userprompts?.some((p) => p.id === user.id);
+              const isUserPrompt = userPromptIdSet.has(user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
 
               const delta = voteDeltas[user.id];
@@ -414,8 +463,8 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                       type={isUserPrompt ? "user" : "community"}
                       data={modifiedData}
                       isFavorite={isFavorite}
-                      onToggleFavorite={isUserPrompt ? undefined : (id, isComm) => (isFavorite ? confirmRemoveFavorite(Number(id), isComm) : addFavorite(Number(id), isComm))}
-                      onVote={isUserPrompt ? undefined : (id, action) => vote(id, action)}
+                      onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
+                      onVote={isUserPrompt ? undefined : vote}
                       onOpenModal={onOpenModal}
                     />
                   </Col>
@@ -425,7 +474,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             {filteredCards.map((user, index) => (
               <React.Fragment key={user.id}>
                 <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                  <PromptCard type="data" data={user} copyCount={getWeight(user)} onOpenModal={onOpenModal} />
+                  <PromptCard type="data" data={user} copyCount={getWeight(user)} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
                 </Col>
               </React.Fragment>
             ))}
