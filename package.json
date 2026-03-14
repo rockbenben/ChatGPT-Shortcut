@@ -33,7 +33,7 @@
     "@giphy/react-components": "^10.1.1",
     "@mdx-js/react": "^3.1.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^6.3.1",
+    "antd": "^6.3.2",
     "axios": "^1.13.6",
     "boring-avatars": "^2.0.4",
     "buffer": "^6.0.3",
@@ -46,7 +46,7 @@
     "react-dom": "^19.2.4",
     "react-markdown": "^10.1.0",
     "react-popper": "^2.3.0",
-    "react-share": "^5.2.2",
+    "react-share": "^5.3.0",
     "styled-components": "^6.3.11"
   },
   "devDependencies": {
