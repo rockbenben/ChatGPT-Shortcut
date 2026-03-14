@@ -229,51 +229,88 @@ export async function fetchNextCards(excludeIds: number[], batchSize: number = 8
   }
 }
 
+// 倒排标签索引缓存：tag → Set<cardIndex>，按语言分组
+const tagIndexCache: Record<string, Map<string, Set<number>>> = {};
+
+/**
+ * 构建倒排标签索引（首次搜索时自动创建）
+ * 将 O(n*m) 的标签匹配优化为 O(m) 的集合查找
+ */
+function getTagIndex(lang: string, allData: CardData[]): Map<string, Set<number>> {
+  if (tagIndexCache[lang]) return tagIndexCache[lang];
+
+  const index = new Map<string, Set<number>>();
+  allData.forEach((card, i) => {
+    (card.tags || []).forEach((tag: string) => {
+      if (!index.has(tag)) index.set(tag, new Set());
+      index.get(tag)!.add(i);
+    });
+  });
+
+  tagIndexCache[lang] = index;
+  return index;
+}
+
 /**
  * 本地搜索卡片（从静态 JSON）
+ * - 使用倒排索引加速标签过滤
  * - 根据 tags 和关键词过滤
- * - 替代 API 的 searchCards 调用
  */
 export async function searchCardsLocally(tags: string[], searchName: string | null, lang: string = "zh-Hans", operator: "AND" | "OR" = "OR"): Promise<CardData[]> {
   try {
     const allData = await getPromptData(lang);
     const searchLower = searchName ? searchName.toLowerCase().trim() : "";
-
-    // Map legacy 'zh' to 'zh-Hans' to match data structure
     const safeLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "zh-Hans";
 
-    // 过滤逻辑
-    const filtered = allData.filter((card) => {
-      // Tag 过滤
-      let tagMatch = true;
-      if (tags.length > 0) {
-        const cardTags = card.tags || [];
-        if (operator === "AND") {
-          // AND: 卡片必须包含所有选中的标签
-          tagMatch = tags.every((tag) => cardTags.includes(tag));
-        } else {
-          // OR: 卡片只需包含其中一个标签
-          tagMatch = tags.some((tag) => cardTags.includes(tag));
+    // 使用倒排索引快速获取候选卡片
+    let candidateIndices: Set<number> | null = null;
+
+    if (tags.length > 0) {
+      const tagIndex = getTagIndex(safeLang, allData);
+
+      if (operator === "AND") {
+        // AND: 取所有标签结果的交集
+        for (const tag of tags) {
+          const tagSet = tagIndex.get(tag) || new Set<number>();
+          if (candidateIndices === null) {
+            candidateIndices = new Set(tagSet);
+          } else {
+            // 交集
+            for (const idx of candidateIndices) {
+              if (!tagSet.has(idx)) candidateIndices.delete(idx);
+            }
+          }
+          if (candidateIndices.size === 0) return [];
         }
+      } else {
+        // OR: 取所有标签结果的并集
+        candidateIndices = new Set<number>();
+        for (const tag of tags) {
+          const tagSet = tagIndex.get(tag);
+          if (tagSet) {
+            for (const idx of tagSet) candidateIndices.add(idx);
+          }
+        }
+        if (candidateIndices.size === 0) return [];
       }
+    }
 
-      // 关键词过滤
-      let searchMatch = true;
-      if (searchLower) {
-        // 获取当前语言的字段数据
-        const langData = card[safeLang] || card["zh-Hans"] || {};
-        const title = (langData.title || card.title || "").toLowerCase();
-        const description = (langData.description || card.description || "").toLowerCase();
-        const remark = (langData.remark || card.remark || "").toLowerCase();
-        const prompt = (langData.prompt || card.prompt || "").toLowerCase();
+    // 过滤：标签索引筛选 + 关键词搜索
+    const candidates = candidateIndices
+      ? Array.from(candidateIndices).map((i) => allData[i])
+      : allData;
 
-        searchMatch = title.includes(searchLower) || description.includes(searchLower) || remark.includes(searchLower) || prompt.includes(searchLower);
-      }
+    if (!searchLower) return candidates;
 
-      return tagMatch && searchMatch;
+    return candidates.filter((card) => {
+      const langData = card[safeLang] || card["zh-Hans"] || {};
+      const title = (langData.title || card.title || "").toLowerCase();
+      const description = (langData.description || card.description || "").toLowerCase();
+      const remark = (langData.remark || card.remark || "").toLowerCase();
+      const prompt = (langData.prompt || card.prompt || "").toLowerCase();
+
+      return title.includes(searchLower) || description.includes(searchLower) || remark.includes(searchLower) || prompt.includes(searchLower);
     });
-
-    return filtered;
   } catch (error) {
     console.error("[searchCardsLocally] Error searching cards:", error);
     throw error;
