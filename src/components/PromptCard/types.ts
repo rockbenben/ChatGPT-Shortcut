@@ -14,6 +14,7 @@ export interface PromptCardProps {
   onToggleFavorite?: (id: string | number, isComm: boolean) => void;
   onVote?: (id: string | number, action: "upvote" | "downvote") => void;
   isFavorite?: boolean;
+  isLoggedIn?: boolean;
   copyCount?: number;
 
   onOpenModal?: (data: any) => void;

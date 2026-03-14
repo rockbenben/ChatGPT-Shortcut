@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
 import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { gold } from "@ant-design/colors";
@@ -6,9 +6,7 @@ import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { useFavorite } from "@site/src/hooks/useFavorite";
 import styles from "./styles.module.css";
-import { AuthContext } from "../AuthContext";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { formatCompactNumber } from "@site/src/utils/formatters";
 import { PromptRemark } from "./PromptRemark";
@@ -17,19 +15,17 @@ import { PromptCardTag } from "./PromptCardTag";
 interface DataCardProps {
   data: any;
   copyCount?: number;
+  isFavorite?: boolean;
+  isLoggedIn?: boolean;
+  onToggleFavorite?: (id: number, isComm: boolean) => void;
 }
 
-const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
-  const { userAuth } = useContext(AuthContext);
+const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onToggleFavorite, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
   const { i18n } = useDocusaurusContext();
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { token } = theme.useToken();
   const currentLanguage = i18n.currentLocale;
 
   const userInfo = useMemo(() => {
-    // 支持两种数据格式：
-    // 1. 语言分层格式: user.zh.title, user.en.title
-    // 2. 扁平格式: user.title (团队提示词等)
     const langData = user[currentLanguage];
     if (langData && typeof langData === "object") {
       return {
@@ -39,7 +35,6 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
         description: langData.description,
       };
     }
-    // 扁平格式
     return {
       title: user.title || "",
       remark: user.remark || "",
@@ -48,12 +43,7 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
     };
   }, [user, currentLanguage]);
 
-  const [isFavorite, setIsFavorite] = useState(false);
   const { copied, updateCopy } = useCopyToClipboard();
-
-  useEffect(() => {
-    setIsFavorite(userAuth?.data?.favorites?.loves?.includes(user.id) || false);
-  }, [userAuth, user.id]);
 
   const handleCardClick = useCallback(() => {
     onOpenModal?.({
@@ -73,23 +63,15 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
       e.stopPropagation();
       updateCopy(userInfo.prompt, user.id);
     },
-    [updateCopy, userInfo.prompt, user.id]
+    [updateCopy, userInfo.prompt, user.id],
   );
 
-  const handleLove = useCallback(
+  const handleToggleFav = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
-      addFavorite(user.id, false);
+      onToggleFavorite?.(user.id, false);
     },
-    [addFavorite, user.id]
-  );
-
-  const handleRemoveFavorite = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      confirmRemoveFavorite(user.id, false);
-    },
-    [confirmRemoveFavorite, user.id]
+    [onToggleFavorite, user.id],
   );
 
   return (
@@ -113,9 +95,9 @@ const DataCardComponent = ({ data: user, copyCount, onOpenModal }: DataCardProps
         <Tooltip title={<Translate id="action.copy">复制</Translate>}>
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
-        userAuth && (
+        isLoggedIn && onToggleFavorite && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={isFavorite ? handleRemoveFavorite : handleLove} block />
+            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFav} block />
           </Tooltip>
         ),
       ].filter(Boolean)}
