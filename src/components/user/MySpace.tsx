@@ -755,7 +755,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                       }
                       return (
                         <Col key={card.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                          <PromptCard type="data" data={card} copyCount={getWeight(card)} onOpenModal={onOpenModal} />
+                          <PromptCard type="data" data={card} copyCount={getWeight(card)} isLoggedIn={true} isFavorite={userAuth?.data?.favorites?.loves?.includes(card.id)} onToggleFavorite={(id, isComm) => { const numId = Number(id); const loves = userAuth?.data?.favorites?.loves || []; if (loves.includes(numId)) confirmRemoveFavorite(numId, isComm); else addFavorite(numId, isComm); }} onOpenModal={onOpenModal} />
                         </Col>
                       );
                     })}

@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useRef } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
@@ -14,6 +14,12 @@ export const useFavorite = (): UseFavoriteReturn => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext);
   const { message, modal } = App.useApp();
 
+  // Use ref for userAuth to stabilize callbacks.
+  // Without this, every background SWR auth refresh recreates all callbacks,
+  // causing cascading re-renders through every card component.
+  const userAuthRef = useRef(userAuth);
+  userAuthRef.current = userAuth;
+
   // 更新收藏列表（内部函数）- 静默刷新，不触发全屏 loading
   const updateFavorites = useCallback(
     async (userLoves: number[], favoriteId: number, isComm: boolean) => {
@@ -27,14 +33,15 @@ export const useFavorite = (): UseFavoriteReturn => {
   const addFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
-        if (!userAuth?.data?.favorites) {
+        const auth = userAuthRef.current;
+        if (!auth?.data?.favorites) {
           // 新用户：创建收藏记录
           await createFavorite([id], isComm);
           // 静默刷新，不触发全屏 loading
           await refreshUserAuth();
         } else {
-          const currentLoves = isComm ? [...(userAuth.data.favorites.commLoves || [])] : [...(userAuth.data.favorites.loves || [])];
-          const favoriteId = userAuth.data.favorites.id;
+          const currentLoves = isComm ? [...(auth.data.favorites.commLoves || [])] : [...(auth.data.favorites.loves || [])];
+          const favoriteId = auth.data.favorites.id;
 
           if (!currentLoves.includes(id)) {
             currentLoves.unshift(id);
@@ -59,19 +66,20 @@ export const useFavorite = (): UseFavoriteReturn => {
         }
       }
     },
-    [userAuth, message, updateFavorites, refreshUserAuth]
+    [message, updateFavorites, refreshUserAuth]
   );
 
   const removeFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
-        const favoriteId = userAuth?.data?.favorites?.id;
+        const auth = userAuthRef.current;
+        const favoriteId = auth?.data?.favorites?.id;
         if (!favoriteId) {
           message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
           return;
         }
 
-        const currentLoves = isComm ? [...(userAuth?.data?.favorites?.commLoves || [])] : [...(userAuth?.data?.favorites?.loves || [])];
+        const currentLoves = isComm ? [...(auth?.data?.favorites?.commLoves || [])] : [...(auth?.data?.favorites?.loves || [])];
 
         const index = currentLoves.indexOf(id);
         if (index > -1) {
@@ -89,7 +97,7 @@ export const useFavorite = (): UseFavoriteReturn => {
         message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
       }
     },
-    [userAuth, message, updateFavorites]
+    [message, updateFavorites]
   );
 
   const confirmRemoveFavorite = useCallback(

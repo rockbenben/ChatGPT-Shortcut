@@ -1,15 +1,25 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import copy from "copy-to-clipboard";
 import { updateCopyCount } from "@site/src/api";
 
 export const useCopyToClipboard = (timeout: number = 2000) => {
   const [copied, setCopied] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const copyText = useCallback(
     (text: string) => {
       copy(text);
       setCopied(true);
-      setTimeout(() => {
+      // Clear previous timer to prevent stacking on rapid clicks
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
         setCopied(false);
       }, timeout);
     },
