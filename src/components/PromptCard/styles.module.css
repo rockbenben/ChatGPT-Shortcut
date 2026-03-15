@@ -8,12 +8,19 @@
   background-color: var(--site-color-card-background);
   display: flex;
   flex-direction: column;
+  contain: layout paint;
 }
 
 .showcaseCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--site-shadow-lg);
   /* border-color: var(--ifm-color-primary); */
+}
+
+.showcaseCard:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--site-shadow-lg);
 }
 
 .showcaseCardBody {
