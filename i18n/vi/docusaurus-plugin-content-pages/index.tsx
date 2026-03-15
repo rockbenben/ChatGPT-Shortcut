@@ -28,6 +28,7 @@ import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
+import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS } from "@site/src/data/constants";
@@ -143,6 +144,14 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const BATCH_SIZE = 12;
 
+  // Refs 用于稳定 loadMoreData 回调（避免 IntersectionObserver 反复重建）
+  const favoritePromptsRef = useRef(favoritePrompts);
+  favoritePromptsRef.current = favoritePrompts;
+  const otherPromptsRef = useRef(otherPrompts);
+  otherPromptsRef.current = otherPrompts;
+  const hasMoreDataRef = useRef(hasMoreData);
+  const isLoadingMoreRef = useRef(isLoadingMore);
+
   const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
   const [voteDeltas, setVoteDeltas] = useState<Record<string | number, { upvoteDelta: number; downvoteDelta: number }>>({});
 
@@ -245,7 +254,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     try {
       const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
 
-      const { fetchCardsByIds } = await import("@site/src/api/homepage");
       const favorData = await fetchCardsByIds(favorIds, currentLanguage);
 
       // 加载默认的 other 卡片（从 DEFAULT_IDS 中排除收藏）
@@ -255,31 +263,31 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
       setFavoritePrompts(favorData as any);
       setOtherPrompts(otherData as any);
       setHasMoreData(true);
+      hasMoreDataRef.current = true;
     } catch (error) {
       console.error("Error loading user prompts:", error);
       // 加载失败时保持 SSG 默认数据
     }
   }, [userAuth, authLoading, currentLanguage]);
 
-  // 加载更多数据（滚动触发）
+  // 加载更多数据（滚动触发）- 使用 ref 读取数据，依赖数组仅 [currentLanguage]
   const loadMoreData = useCallback(async () => {
-    if (isLoadingMore || !hasMoreData) {
+    if (isLoadingMoreRef.current || !hasMoreDataRef.current) {
       return;
     }
 
     setIsLoadingMore(true);
+    isLoadingMoreRef.current = true;
 
     try {
-      const { fetchNextCards } = await import("@site/src/api/homepage");
+      // 从 ref 读取最新数据，避免回调因 state 变化而重建
+      const displayedIds = [...favoritePromptsRef.current.map((p: any) => p.id), ...otherPromptsRef.current.map((p: any) => p.id)];
 
-      // 收集所有已显示的 ID（收藏 + 其他）
-      const displayedIds = [...favoritePrompts.map((p: any) => p.id), ...otherPrompts.map((p: any) => p.id)];
-
-      // 获取下一批卡片（使用缓存的 prompt_*.json 数据）
       const nextCards = await fetchNextCards(displayedIds, BATCH_SIZE, currentLanguage);
 
       if (nextCards.length === 0) {
         setHasMoreData(false);
+        hasMoreDataRef.current = false;
       } else {
         // 去重：防止并发加载导致重复
         setOtherPrompts((prev) => {
@@ -292,8 +300,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
       console.error("Error loading more prompts:", error);
     } finally {
       setIsLoadingMore(false);
+      isLoadingMoreRef.current = false;
     }
-  }, [favoritePrompts, otherPrompts, isLoadingMore, hasMoreData, currentLanguage]);
+  }, [currentLanguage]);
 
   useEffect(() => {
     initializeData();
@@ -301,28 +310,21 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
 
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
-  const isLoadingMoreRef = useRef(isLoadingMore);
-
-  // Keep ref in sync with state
-  useEffect(() => {
-    isLoadingMoreRef.current = isLoadingMore;
-  }, [isLoadingMore]);
 
   useEffect(() => {
-    if (!loadMoreTriggerRef.current || !hasMoreData) {
+    if (!loadMoreTriggerRef.current || !hasMoreDataRef.current) {
       return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Check loading state from ref to get latest value
         if (entries[0].isIntersecting && !isLoadingMoreRef.current) {
           loadMoreData();
         }
       },
       {
         root: null,
-        rootMargin: "0px", // 不提前触发，避免首屏自动加载
+        rootMargin: "0px",
         threshold: 0.1,
       },
     );
@@ -350,16 +352,30 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   }, [otherPrompts]);
 
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
-  const favoriteIdSet = useMemo(
-    () => new Set<number>(userAuth?.data?.favorites?.loves || []),
-    [userAuth?.data?.favorites?.loves],
-  );
-  const userPromptIdSet = useMemo(
-    () => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []),
-    [userAuth?.data?.userprompts],
-  );
+  const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
+  const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
 
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
+
+  // 预计算投票数据，避免渲染时重复创建对象
+  const filteredCommusWithDeltas = useMemo(() => {
+    return filteredCommus.map((user: any) => {
+      const delta = voteDeltas[user.id];
+      if (!delta) return user;
+      return {
+        ...user,
+        upvotes: (user.upvotes || 0) + delta.upvoteDelta,
+        downvotes: (user.downvotes || 0) + delta.downvoteDelta,
+        upvoteDifference: (user.upvoteDifference || 0) + delta.upvoteDelta - delta.downvoteDelta,
+      };
+    });
+  }, [filteredCommus, voteDeltas]);
+
+  // Phase 5: 追踪已加载卡片数量，用于入场动画
+  const prevOtherCountRef = useRef(otherUsers.length);
+  useEffect(() => {
+    prevOtherCountRef.current = otherUsers.length;
+  }, [otherUsers.length]);
 
   if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
     return (
@@ -392,7 +408,15 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                 <Row gutter={[16, 16]}>
                   {favoriteUsers.map((user) => (
                     <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                      <PromptCard type="data" data={user} copyCount={user._cachedWeight} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
+                      <PromptCard
+                        type="data"
+                        data={user}
+                        copyCount={user._cachedWeight}
+                        isFavorite={favoriteIdSet.has(user.id)}
+                        isLoggedIn={isLoggedIn}
+                        onToggleFavorite={handleToggleFavorite}
+                        onOpenModal={onOpenModal}
+                      />
                     </Col>
                   ))}
                 </Row>
@@ -410,13 +434,31 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
               <Translate id="showcase.usersList.allUsers">All prompts</Translate>
             </Title>
             <Row gutter={[16, 16]}>
-              {otherUsers.map((user, index) => (
-                <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <PromptCard type="data" data={user} copyCount={user._cachedWeight} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
-                  </Col>
-                </React.Fragment>
-              ))}
+              {otherUsers.map((user, index) => {
+                const isNew = index >= prevOtherCountRef.current;
+                return (
+                  <React.Fragment key={user.id}>
+                    <Col
+                      xs={24}
+                      sm={12}
+                      md={8}
+                      lg={6}
+                      xl={6}
+                      className={isNew ? styles.cardEnter : undefined}
+                      style={isNew ? { animationDelay: `${(index - prevOtherCountRef.current) * 0.05}s` } : undefined}>
+                      <PromptCard
+                        type="data"
+                        data={user}
+                        copyCount={user._cachedWeight}
+                        isFavorite={favoriteIdSet.has(user.id)}
+                        isLoggedIn={isLoggedIn}
+                        onToggleFavorite={handleToggleFavorite}
+                        onOpenModal={onOpenModal}
+                      />
+                    </Col>
+                  </React.Fragment>
+                );
+              })}
             </Row>
             {/* Intersection Observer 触发器 - 所有用户滚动自动加载 */}
             {hasMoreData && (
@@ -442,26 +484,16 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             <SearchBar />
           </div>
           <Row gutter={[16, 16]}>
-            {filteredCommus.map((user, index) => {
+            {filteredCommusWithDeltas.map((user, index) => {
               const isUserPrompt = userPromptIdSet.has(user.id);
               const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
-
-              const delta = voteDeltas[user.id];
-              const modifiedData = delta
-                ? {
-                    ...user,
-                    upvotes: (user.upvotes || 0) + delta.upvoteDelta,
-                    downvotes: (user.downvotes || 0) + delta.downvoteDelta,
-                    upvoteDifference: (user.upvoteDifference || 0) + delta.upvoteDelta - delta.downvoteDelta,
-                  }
-                : user;
 
               return (
                 <React.Fragment key={user.id}>
                   <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                     <PromptCard
                       type={isUserPrompt ? "user" : "community"}
-                      data={modifiedData}
+                      data={user}
                       isFavorite={isFavorite}
                       onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
                       onVote={isUserPrompt ? undefined : vote}
@@ -474,7 +506,15 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             {filteredCards.map((user, index) => (
               <React.Fragment key={user.id}>
                 <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                  <PromptCard type="data" data={user} copyCount={getWeight(user)} isFavorite={favoriteIdSet.has(user.id)} isLoggedIn={isLoggedIn} onToggleFavorite={handleToggleFavorite} onOpenModal={onOpenModal} />
+                  <PromptCard
+                    type="data"
+                    data={user}
+                    copyCount={getWeight(user)}
+                    isFavorite={favoriteIdSet.has(user.id)}
+                    isLoggedIn={isLoggedIn}
+                    onToggleFavorite={handleToggleFavorite}
+                    onOpenModal={onOpenModal}
+                  />
                 </Col>
               </React.Fragment>
             ))}
@@ -554,7 +594,7 @@ const PageHeader: React.FC<{
           styles={{ body: { padding: "16px 24px" } }}>
           <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
             {/* Total */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <AppstoreOutlined style={{ marginRight: 4, color: cyan[4] }} />
                 <Translate id="myCollection.stats.total">总计</Translate>
@@ -565,7 +605,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* My Prompts */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <EditOutlined style={{ marginRight: 4, color: green[4] }} />
                 <Translate id="myCollection.stats.prompts">我的提示词</Translate>
@@ -576,7 +616,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* Favorites */}
-            <div style={{ textAlign: "center", minWidth: 60 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <HeartOutlined style={{ marginRight: 4, color: red[4] }} />
                 <Translate id="myCollection.stats.favorites">收藏</Translate>
@@ -587,7 +627,7 @@ const PageHeader: React.FC<{
             <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />
 
             {/* Custom Tags */}
-            <div style={{ textAlign: "center", minWidth: 80 }}>
+            <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 11, color: grey[0], marginBottom: 4 }}>
                 <TagOutlined style={{ marginRight: 4, color: blue[4] }} />
                 <Translate id="myCollection.stats.tags">自定义标签</Translate>
