@@ -27,7 +27,6 @@ import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/uti
 import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
-import { voteOnUserPrompt } from "@site/src/api";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList } from "@site/src/data/tags";
@@ -127,14 +126,13 @@ interface ShowcaseCardsProps {
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal }) => {
   const { userAuth, authLoading } = useContext(AuthContext);
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
-  const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
   // 用 ref 保存 userAuth，使回调稳定化（不因后台 SWR 刷新而重建）
   const userAuthRef = useRef(userAuth);
   userAuthRef.current = userAuth;
-  const isLoggedIn = !!userAuth;
+  const isLoggedIn = true; // 本地模式：收藏始终可用
 
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
   const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);
@@ -152,53 +150,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const hasMoreDataRef = useRef(hasMoreData);
   const isLoadingMoreRef = useRef(isLoadingMore);
 
-  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
-  const [voteDeltas, setVoteDeltas] = useState<Record<string | number, { upvoteDelta: number; downvoteDelta: number }>>({});
-
-  // 稳定的投票回调（使用 ref 避免因 userAuth 变化而重建）
-  const vote = useCallback(
-    async (promptId: number | string, action: "upvote" | "downvote") => {
-      if (!userAuthRef.current) {
-        messageApi.warning("Please log in to vote.");
-        return;
-      }
-
-      const voteKey = `${promptId}_${action}`;
-      if (sessionVotedIdsRef.current.has(voteKey)) {
-        messageApi.info(`You have already ${action}d this prompt in this session.`);
-        return;
-      }
-      sessionVotedIdsRef.current.add(voteKey);
-
-      const delta = { upvoteDelta: action === "upvote" ? 1 : 0, downvoteDelta: action === "downvote" ? 1 : 0 };
-      setVoteDeltas((prev) => ({
-        ...prev,
-        [promptId]: {
-          upvoteDelta: (prev[promptId]?.upvoteDelta || 0) + delta.upvoteDelta,
-          downvoteDelta: (prev[promptId]?.downvoteDelta || 0) + delta.downvoteDelta,
-        },
-      }));
-
-      try {
-        await voteOnUserPrompt(Number(promptId), action);
-        messageApi.success(`Successfully ${action}d!`);
-      } catch (err) {
-        sessionVotedIdsRef.current.delete(voteKey);
-        setVoteDeltas((prev) => ({
-          ...prev,
-          [promptId]: {
-            upvoteDelta: (prev[promptId]?.upvoteDelta || 0) - delta.upvoteDelta,
-            downvoteDelta: (prev[promptId]?.downvoteDelta || 0) - delta.downvoteDelta,
-          },
-        }));
-        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
-        messageApi.error(errorMessage);
-      }
-    },
-    [messageApi],
-  );
-
-  // 稳定的收藏切换回调（DataCard 用，isComm=false）
+  // 稳定的收藏切换回调
   const handleToggleFavorite = useCallback(
     (id: number, isComm: boolean) => {
       const loves = userAuthRef.current?.data?.favorites?.loves || [];
@@ -211,25 +163,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     [confirmRemoveFavorite, addFavorite],
   );
 
-  // 稳定的社区收藏切换回调（CommunityCard 用，isComm=true）
-  const handleCommToggleFavorite = useCallback(
-    (id: string | number, isComm: boolean) => {
-      const commLoves = userAuthRef.current?.data?.favorites?.commLoves || [];
-      if (commLoves.includes(Number(id))) {
-        confirmRemoveFavorite(Number(id), isComm);
-      } else {
-        addFavorite(Number(id), isComm);
-      }
-    },
-    [confirmRemoveFavorite, addFavorite],
-  );
-
-  // 组件卸载时清除投票记录，防止内存泄漏
-  useEffect(() => {
-    return () => {
-      sessionVotedIdsRef.current.clear();
-    };
-  }, []);
 
   // 使用 ref 跟踪已初始化的用户 ID，避免收藏操作后重复加载
   const initializedUserIdRef = useRef<number | null>(null);
@@ -237,22 +170,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   // 初始化数据加载 - 已登录用户立即加载个性化数据
   // prompt_*.json 有缓存机制，首次加载后不会重复请求
   const initializeData = useCallback(async () => {
-    // 未登录或正在加载认证状态时，使用 SSG 默认数据
-    if (authLoading || !userAuth) {
-      return;
-    }
+    if (authLoading || !userAuth) return;
+
+    // 本地模式：没有自定义收藏时保持 SSG 默认数据（更完整）
+    const favorIds = userAuth?.data?.favorites?.loves || [];
+    if (favorIds.length === 0) return;
 
     // 如果已为当前用户初始化过，跳过（避免收藏操作后重复加载）
     const currentUserId = userAuth?.data?.id;
-    if (initializedUserIdRef.current === currentUserId) {
-      return;
-    }
+    if (initializedUserIdRef.current === currentUserId) return;
     initializedUserIdRef.current = currentUserId;
 
-    // 已登录用户：立即加载个性化收藏数据
-    // 注意：prompt_*.json 有缓存机制（promptDataCache），首次加载后后续操作直接使用缓存
     try {
-      const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
 
       const favorData = await fetchCardsByIds(favorIds, currentLanguage);
 
@@ -353,23 +282,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
 
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
   const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
-  const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
-
-  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
-
-  // 预计算投票数据，避免渲染时重复创建对象
-  const filteredCommusWithDeltas = useMemo(() => {
-    return filteredCommus.map((user: any) => {
-      const delta = voteDeltas[user.id];
-      if (!delta) return user;
-      return {
-        ...user,
-        upvotes: (user.upvotes || 0) + delta.upvoteDelta,
-        downvotes: (user.downvotes || 0) + delta.downvoteDelta,
-        upvoteDifference: (user.upvoteDifference || 0) + delta.upvoteDelta - delta.downvoteDelta,
-      };
-    });
-  }, [filteredCommus, voteDeltas]);
+  const { filteredCards, isFiltered } = useFilteredPrompts();
 
   // Phase 5: 追踪已加载卡片数量，用于入场动画
   const prevOtherCountRef = useRef(otherUsers.length);
@@ -377,7 +290,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     prevOtherCountRef.current = otherUsers.length;
   }, [otherUsers.length]);
 
-  if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
+  if (isFiltered && filteredCards.length === 0) {
     return (
       <section className="margin-top--sm margin-bottom--sm">
         <div className="container padding-vert--md text--center">
@@ -484,26 +397,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             <SearchBar />
           </div>
           <Row gutter={[16, 16]}>
-            {filteredCommusWithDeltas.map((user, index) => {
-              const isUserPrompt = userPromptIdSet.has(user.id);
-              const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
-
-              return (
-                <React.Fragment key={user.id}>
-                  <Col xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <PromptCard
-                      type={isUserPrompt ? "user" : "community"}
-                      data={user}
-                      isFavorite={isFavorite}
-                      onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
-                      onVote={isUserPrompt ? undefined : vote}
-                      onOpenModal={onOpenModal}
-                    />
-                  </Col>
-                </React.Fragment>
-              );
-            })}
-            {filteredCards.map((user, index) => (
+            {filteredCards.map((user) => (
               <React.Fragment key={user.id}>
                 <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                   <PromptCard
@@ -666,7 +560,6 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
     return <ExploreView onOpenModal={onOpenModal} />;
   }
 
-  // 仅在 collection 模式才显示 MySpace（避免不必要的 API 调用）
   return (
     <div className="container margin-top--md">
       <PageHeader userAuth={userAuth} {...stats} />

@@ -12,8 +12,6 @@ import { AuthContext } from "@site/src/components/AuthContext";
 
 import { type Operator } from "@site/src/components/ShowcaseFilterToggle";
 import { type TagType, TagList } from "@site/src/data/tags";
-import { getPrompts } from "@site/src/api";
-import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
 
 export type UserState = {
@@ -38,13 +36,6 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-/** Check if a prompt matches a search term across text fields */
-const matchesSearch = (prompt: any, searchLower: string): boolean =>
-  prompt.title.toLowerCase().includes(searchLower) ||
-  prompt.description.toLowerCase().includes(searchLower) ||
-  (prompt.remark && prompt.remark.toLowerCase().includes(searchLower)) ||
-  (prompt.notes && prompt.notes.toLowerCase().includes(searchLower));
-
 export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompts" = "default") {
   const location = useLocation<UserState>();
   const { i18n } = useDocusaurusContext();
@@ -53,7 +44,6 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
   const [filteredCards, setFilteredCards] = useState([]);
-  const [filteredCommus, setFilteredCommus] = useState<any[]>([]);
   const { userAuth } = useContext(AuthContext);
 
   useEffect(() => {
@@ -75,88 +65,24 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     async function fetchAndFilterUsers() {
       if (selectedTags.length === 0 && !searchName) {
         startTransition(() => {
-          if (!cancelled) {
-            setFilteredCards([]);
-            setFilteredCommus([]);
-          }
+          if (!cancelled) setFilteredCards([]);
         });
         return;
       }
-      const searchLower = searchName ? searchName.toLowerCase() : "";
       try {
-        if (searchMode === "default") {
-          // 精选搜索和本地收藏搜索并行，互不依赖
-          const cardsPromise = searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
-          const commusPromise =
-            userAuth && selectedTags.length === 0
-              ? Promise.all([
-                  userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
-                  userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),
-                ]).then(([userprompts, commus]) => [...userprompts, ...commus].filter((prompt) => matchesSearch(prompt, searchLower)))
-              : Promise.resolve([]);
+        const data = await searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
+        if (cancelled) return;
 
-          const [data, localCommus] = await Promise.all([cardsPromise, commusPromise.catch(() => [] as any[])]);
-          if (cancelled) return;
-
-          startTransition(() => {
-            setFilteredCards(data);
-            setFilteredCommus(localCommus);
-          });
-
-          // 降级搜索：精选和本地收藏都无结果时，搜索全量社区提示词（无需登录）
-          if (localCommus.length === 0 && data.length === 0 && searchName) {
-            try {
-              const result = await getCommPrompts(1, 12, "upvoteDifference", "desc", searchName);
-              if (cancelled) return;
-              const communityPrompts = Array.isArray(result) ? result[0] : [];
-              if (communityPrompts.length > 0) {
-                startTransition(() => setFilteredCommus(communityPrompts));
-              }
-            } catch {
-              // 社区搜索失败不影响已有结果
-            }
-          }
-        } else if (searchMode === "myfavor") {
-          if (userAuth?.data?.favorites) {
-            const data = await searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
-            if (cancelled) return;
-            const favoriteCards = userAuth.data.favorites.loves ? data.filter((card) => userAuth.data.favorites.loves.includes(card.id)) : [];
-            startTransition(() => setFilteredCards(favoriteCards));
-
-            let commus: any[] = [];
-            if (userAuth.data.favorites.commLoves) {
-              commus = await getPrompts("commus", userAuth.data.favorites.commLoves);
-              if (cancelled) return;
-            }
-            const filtered = commus.filter((prompt) => matchesSearch(prompt, searchLower));
-            startTransition(() => setFilteredCommus(filtered));
-          } else {
-            startTransition(() => {
-              if (!cancelled) {
-                setFilteredCards([]);
-                setFilteredCommus([]);
-              }
-            });
-          }
-        } else if (searchMode === "myprompts") {
-          if (userAuth?.data?.userprompts) {
-            const userprompts = await getPrompts("userprompts", userAuth.data.userprompts);
-            if (cancelled) return;
-            const filtered = userprompts.filter((prompt) => matchesSearch(prompt, searchLower));
-            startTransition(() => setFilteredCommus(filtered));
-          } else {
-            startTransition(() => {
-              if (!cancelled) setFilteredCommus([]);
-            });
-          }
+        if (searchMode === "myfavor") {
+          const loves = userAuth?.data?.favorites?.loves || [];
+          startTransition(() => setFilteredCards(loves.length > 0 ? data.filter((card) => loves.includes(card.id)) : []));
+        } else {
+          startTransition(() => setFilteredCards(data));
         }
       } catch (error) {
         console.error("Error fetching and filtering prompts:", error);
         if (!cancelled) {
-          startTransition(() => {
-            setFilteredCards([]);
-            setFilteredCommus([]);
-          });
+          startTransition(() => setFilteredCards([]));
         }
       }
     }
@@ -164,11 +90,11 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
     return () => {
       cancelled = true;
     };
-  }, [selectedTags, searchName, operator, currentLanguage, searchMode, userAuth?.data?.userprompts, userAuth?.data?.favorites?.loves, userAuth?.data?.favorites?.commLoves]);
+  }, [selectedTags, searchName, operator, currentLanguage, searchMode, userAuth?.data?.favorites?.loves]);
 
   const isFiltered = selectedTags.length > 0 || searchName !== null;
 
-  return { filteredCommus, filteredCards, isFiltered };
+  return { filteredCards, isFiltered };
 }
 
 const searchBarTheme = {

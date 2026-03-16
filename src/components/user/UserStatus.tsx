@@ -1,9 +1,7 @@
 import React, { useContext, useState, useCallback, useMemo } from "react";
-import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
+import { Button, Dropdown, Space } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
-import { UserOutlined, EditOutlined, LogoutOutlined, LikeFilled, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
-import LoginComponent from "./login";
+import { UserOutlined, EditOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
@@ -11,18 +9,15 @@ import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
 
 const UserStatus = () => {
-  const { userAuth, setUserAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
+  const { userAuth } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
-  const { modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
 
-  // 使用视图模式上下文
   const { viewMode, setViewMode } = useViewMode();
 
   const onFinish = useCallback(
     async (values) => {
       const success = await addPrompt(values, () => {
-        // 成功后自动切换到"我的收藏"视图
         setViewMode("collection");
       });
       if (success) {
@@ -31,24 +26,6 @@ const UserStatus = () => {
     },
     [addPrompt, setViewMode]
   );
-
-  const handleLogout = useCallback(async () => {
-    if (ExecutionEnvironment.canUseDOM) {
-      localStorage.removeItem("auth_token");
-
-      // 清除所有用户相关缓存
-      const { clearUserProfileCache } = await import("@site/src/api/client");
-      const { clearMySpaceCache } = await import("@site/src/api");
-      const { removeCache } = await import("@site/src/utils/cache");
-      clearUserProfileCache();
-      clearMySpaceCache();
-      removeCache("user_auth");
-      removeCache("myspace_items");
-      removeCache("myspace_stats");
-    }
-    setUserAuth(null);
-    window.location.reload();
-  }, [setUserAuth]);
 
   const menuItems = [
     {
@@ -60,10 +37,10 @@ const UserStatus = () => {
       ),
       icon: <UserOutlined />,
     },
-  ].filter(Boolean);
+  ];
 
-  const loggedInButtons = useMemo(
-    () => (
+  return (
+    <>
       <Space wrap size="small">
         <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
           <span className="hideOnSmallScreen">{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
@@ -81,31 +58,6 @@ const UserStatus = () => {
           </Button>
         </Dropdown>
       </Space>
-    ),
-    [menuItems, viewMode, setViewMode]
-  );
-
-  const loggedOutButtons = useMemo(
-    () => (
-      <Space wrap size="middle">
-        <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-          <Translate id="button.login">登录</Translate>
-        </Button>
-        <Link to="/community-prompts">
-          <Button icon={<LikeFilled />}>
-            <span className="hideOnSmallScreen">
-              <Translate id="showcase.header.button">分享你的提示词</Translate>
-            </span>
-          </Button>
-        </Link>
-      </Space>
-    ),
-    []
-  );
-
-  return (
-    <>
-      {loggedInButtons}
       <PromptFormModal
         open={open}
         mode="add"
