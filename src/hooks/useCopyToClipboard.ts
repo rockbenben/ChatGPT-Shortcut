@@ -1,6 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import copy from "copy-to-clipboard";
-import { updateCopyCount } from "@site/src/api";
 
 export const useCopyToClipboard = (timeout: number = 2000) => {
   const [copied, setCopied] = useState(false);
@@ -27,13 +26,8 @@ export const useCopyToClipboard = (timeout: number = 2000) => {
   );
 
   const updateCopy = useCallback(
-    async (text: string, id: number | string) => {
-      try {
-        copyText(text);
-        await updateCopyCount(Number(id));
-      } catch (error) {
-        console.error("Error updating copy count:", error);
-      }
+    (text: string, id: number | string) => {
+      copyText(text);
     },
     [copyText]
   );
