@@ -26,6 +26,7 @@ Lorsque vous conversez avec l'IA, de bons prompts peuvent vous aider à obtenir 
 | Créer mes propres prompts               | [Prompts personnalisés](./user-prompts)              |
 | M'inscrire ou me connecter              | [Gestion de compte](./account)                       |
 | Découvrir les partages de la communauté | [Prompts de la communauté](./community)              |
+| Deploiement hors ligne/Intranet | [Version hors ligne](./offline) |
 
 ## Modèles d'IA courants
 

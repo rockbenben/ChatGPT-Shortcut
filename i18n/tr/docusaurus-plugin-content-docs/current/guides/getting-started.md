@@ -26,6 +26,7 @@ AI ile konuşurken, iyi promptlar kaliteli yanıtları daha hızlı almanıza ya
 | Kendi promptlarımı oluştur     | [Özel Promptlar](./user-prompts)        |
 | Kayıt ol veya Giriş yap        | [Hesap Yönetimi](./account)             |
 | Topluluk paylaşımlarını keşfet | [Topluluk Promptları](./community)      |
+| Çevrimdışı/intranet dağıtımı   | [Çevrimdışı Sürüm](./offline)          |
 
 ## Popüler AI Modelleri
 

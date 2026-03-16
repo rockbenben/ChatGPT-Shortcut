@@ -26,6 +26,7 @@ Saat berbicara dengan AI, prompt yang baik dapat membantu Anda mendapatkan jawab
 | Buat prompt sendiri       | [Prompt Kustom](./user-prompts)             |
 | Daftar atau Masuk         | [Manajemen Akun](./account)                 |
 | Temukan berbagi komunitas | [Prompt Komunitas](./community)             |
+| Deploy offline/intranet   | [Versi Offline](./offline)                  |
 
 ## Model AI Populer
 

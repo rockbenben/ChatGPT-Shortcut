@@ -46,6 +46,18 @@ AI Short là dự án mã nguồn mở cho phép bạn tự do sửa đổi tiê
   python CodeUpdateHandler.py
   ```
 
+## Triển khai Ngoại tuyến (Mạng nội bộ Doanh nghiệp)
+
+Nếu bạn cần triển khai trong mạng nội bộ doanh nghiệp hoặc mạng chính phủ không có quyền truy cập mạng bên ngoài, AI Short cung cấp phiên bản ngoại tuyến chuyên dụng. Không cần máy chủ backend hay đăng ký, tất cả dữ liệu được lưu trữ cục bộ trên trình duyệt.
+
+Triển khai phiên bản ngoại tuyến bằng Docker chỉ với một lệnh:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Xem hướng dẫn chi tiết và các tùy chọn cấu hình tại [Hướng dẫn Triển khai Ngoại tuyến](./guides/offline).
+
 ## Hướng dẫn Triển khai
 
 Yêu cầu Hệ thống:

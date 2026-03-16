@@ -26,6 +26,7 @@ description: 30 秒快速上手！複製提示詞到 ChatGPT、Gemini、DeepSeek
 | 創建自己的提示詞 | [自定義提示詞](./user-prompts) |
 | 註冊或登錄       | [賬戶管理](./account)          |
 | 發現社區分享     | [社區提示詞](./community)      |
+| 離線/內網部署    | [離線部署版](./offline)         |
 
 ## 常用 AI 模型
 

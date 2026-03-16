@@ -39,6 +39,10 @@ It's that simple! For more features, please continue reading or check the [User 
 
 🔐 **Multiple Login Methods**: Supports account password, Google, and passwordless email links.
 
+## Offline Deployment Version
+
+AI Short offers an [offline version](./guides/offline) designed for corporate intranets, government networks, and environments without external network access. No backend server or registration required. Core features preserved, data format compatible with online version.
+
 ## Prompt Sources
 
 Prompts are sourced from internet selections, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). We update regularly to bring you new prompts and inspiration continuously.

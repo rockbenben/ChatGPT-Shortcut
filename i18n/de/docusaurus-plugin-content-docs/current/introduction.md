@@ -39,6 +39,10 @@ So einfach ist das! Für weitere Funktionen lesen Sie weiter oder schauen Sie im
 
 🔐 **Mehrere Anmeldemethoden**: Unterstützt Kontopasswort, Google und passwortlose E-Mail-Links.
 
+## Offline-Bereitstellungsversion
+
+AI Short bietet eine [Offline-Version](./guides/offline), die fuer Firmen-Intranets, Behoerdennetzwerke und Umgebungen ohne externen Netzwerkzugang konzipiert ist. Kein Backend-Server oder Registrierung erforderlich. Kernfunktionen bleiben erhalten, Datenformat ist mit der Online-Version kompatibel.
+
 ## Prompt-Quellen
 
 Prompts stammen aus Internet-Auswahlen, Community-Shares und [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Wir aktualisieren regelmäßig, um Ihnen kontinuierlich neue Prompts und Inspiration zu bringen.

@@ -39,6 +39,10 @@ C'est aussi simple que ça ! Pour plus de fonctionnalités, continuez à lire ou
 
 🔐 **Plusieurs méthodes de connexion** : Prend en charge le mot de passe du compte, Google et les liens e-mail sans mot de passe.
 
+## Version de deploiement hors ligne
+
+AI Short propose une [version hors ligne](./guides/offline) concue pour les intranets d'entreprise, les reseaux gouvernementaux et les environnements sans acces au reseau externe. Aucun serveur backend ni inscription requis. Les fonctionnalites principales sont preservees, le format de donnees est compatible avec la version en ligne.
+
 ## Sources des prompts
 
 Les prompts proviennent de sélections internet, de partages communautaires et de [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Nous mettons régulièrement à jour pour vous apporter continuellement de nouveaux prompts et de l'inspiration.

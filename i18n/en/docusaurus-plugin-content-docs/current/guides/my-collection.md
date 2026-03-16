@@ -8,6 +8,10 @@ description: Collect your favorite AI prompts and manage them with custom tags. 
 
 After logging in, you can collect your favorite prompts and manage them personally. The My Collection view provides rich management functions to help you efficiently organize and use prompts.
 
+:::tip Online vs Offline Version
+In the online version, collection data is synced to the server and accessible from any device. In the [offline version](./offline), all data (favorites, custom prompts, sorting, tags) is stored in the browser's localStorage -- no account needed, but data is tied to the specific browser.
+:::
+
 ## View Switching
 
 The top of the homepage provides view switching buttons, supporting two modes:
@@ -59,7 +63,7 @@ Drag and drop adjustment of card order is supported in the My Collection view:
 
 1. Drag the handle on the left side of the card
 2. Move to the target position and release
-3. The new order is automatically saved to the server
+3. The new order is automatically saved to the server (online version) or browser local storage (offline version)
 
 Sorting function is only available in the My Collection view.
 

@@ -39,6 +39,10 @@ Sesederhana itu! Untuk fitur lebih lanjut, silakan lanjutkan membaca atau lihat 
 
 🔐 **Beberapa Metode Login**: Mendukung kata sandi akun, Google, dan tautan email tanpa kata sandi.
 
+## Versi Deployment Offline
+
+AI Short menyediakan versi deployment offline yang dirancang untuk intranet perusahaan, jaringan pemerintah, dan lingkungan tanpa akses jaringan eksternal. Tidak memerlukan server backend atau registrasi. Fitur inti tetap terjaga, format data kompatibel dengan versi online. Lihat detail di [versi offline](./guides/offline).
+
 ## Sumber Prompt
 
 Prompt bersumber dari pilihan internet, berbagi komunitas, dan [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Kami memperbarui secara teratur untuk terus membawakan prompt dan inspirasi baru.

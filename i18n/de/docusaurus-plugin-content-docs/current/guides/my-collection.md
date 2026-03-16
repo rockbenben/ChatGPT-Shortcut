@@ -8,6 +8,10 @@ description: Organisieren Sie Ihre Lieblings-Prompts mit Tags. Nutzen Sie Drag-a
 
 Nach der Anmeldung können Sie Ihre Lieblingsprompts sammeln und persönlich verwalten. Die Ansicht "Meine Sammlung" bietet umfangreiche Verwaltungsfunktionen, die Ihnen helfen, Prompts effizient zu organisieren und zu nutzen.
 
+:::tip Online- vs. Offline-Version
+In der Online-Version werden Sammlungsdaten mit dem Server synchronisiert und sind von jedem Geraet aus zugaenglich. In der [Offline-Version](./offline) werden alle Daten (Favoriten, benutzerdefinierte Prompts, Sortierung, Tags) im localStorage des Browsers gespeichert -- kein Konto erforderlich, aber die Daten sind an den jeweiligen Browser gebunden.
+:::
+
 ## Ansicht wechseln
 
 Oben auf der Startseite befinden sich Schaltflächen zum Wechseln der Ansicht, die zwei Modi unterstützen:
@@ -59,9 +63,9 @@ Das Anpassen der Kartenreihenfolge durch Drag-and-Drop wird in der Ansicht "Mein
 
 1. Ziehen Sie den Griff links neben der Karte
 2. Bewegen Sie ihn zur Zielposition und lassen Sie los
-3. Die neue Reihenfolge wird automatisch auf dem Server gespeichert
+3. Die neue Reihenfolge wird automatisch auf dem Server (Online-Version) oder im lokalen Browser-Speicher (Offline-Version) gespeichert
 
-Die Sortierfunktion ist nur in der Ansicht "Meine Sammlung" verfügbar.
+Die Sortierfunktion ist nur in der Ansicht "Meine Sammlung" verfuegbar.
 
 ![Drag-and-Drop-Sortierung](/img/docs/my-collection-drag.gif)
 

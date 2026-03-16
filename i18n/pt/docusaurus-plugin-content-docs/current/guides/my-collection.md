@@ -8,6 +8,10 @@ description: Gerencie sua coleção de prompts - Tags personalizadas, ordenaçã
 
 Após o login, você pode favoritar prompts que gosta e gerenciá-los de forma personalizada. A visualização Minha Coleção oferece recursos de gerenciamento avançados para ajudá-lo a organizar e usar prompts de forma eficiente.
 
+:::tip Versao online vs offline
+Na versao online, os dados da colecao sao sincronizados com o servidor e acessiveis de qualquer dispositivo. Na [versao offline](./offline), todos os dados (favoritos, prompts personalizados, ordenacao, tags) sao armazenados no localStorage do navegador -- sem conta necessaria, mas os dados ficam vinculados ao navegador especifico.
+:::
+
 ## Alternância de Visualização
 
 O topo da página inicial oferece botões de alternância de visualização, suportando dois modos:
@@ -59,9 +63,9 @@ Na visualização Minha Coleção, suporta ajuste da ordem dos cartões arrastan
 
 1. Arraste a alça de arrastar no lado esquerdo do cartão
 2. Solte após mover para a posição de destino
-3. A nova ordem é salva automaticamente no servidor
+3. A nova ordem e salva automaticamente no servidor (versao online) ou no armazenamento local do navegador (versao offline)
 
-A função de classificação está disponível apenas na visualização Minha Coleção.
+A funcao de classificacao esta disponivel apenas na visualizacao Minha Colecao.
 
 ![Operação de Ordenação Arrastável](/img/docs/my-collection-drag.gif)
 

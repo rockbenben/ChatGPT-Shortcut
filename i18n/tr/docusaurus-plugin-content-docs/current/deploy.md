@@ -44,6 +44,18 @@ AI Short, web sitesi başlığını, açıklamasını, promptları ve diğer iç
   python CodeUpdateHandler.py
   ```
 
+## Çevrimdışı Dağıtım (Kurumsal Intranet)
+
+Dış ağ erişimi olmayan kurumsal intranet veya devlet ağında dağıtım yapmanız gerekiyorsa, AI Short özel bir çevrimdışı sürüm sunar. Backend sunucusu veya kayıt gerekmez, tüm veriler tarayıcıda yerel olarak saklanır.
+
+Çevrimdışı sürümü Docker ile tek bir komutla dağıtın:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Ayrıntılı kılavuz ve yapılandırma seçenekleri için [Çevrimdışı Dağıtım Kılavuzu](./guides/offline)'na bakın.
+
 ## Dağıtım Talimatları
 
 Sistem Gereksinimleri:

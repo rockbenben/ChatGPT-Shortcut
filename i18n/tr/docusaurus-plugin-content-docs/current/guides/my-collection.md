@@ -59,9 +59,13 @@ Koleksiyonum görünümünde kart sırasının sürükle-bırak ayarlaması dest
 
 1. Kartın sol tarafındaki tutamacı sürükleyin
 2. Hedef konuma taşıyın ve bırakın
-3. Yeni sıra otomatik olarak sunucuya kaydedilir
+3. Yeni sıra otomatik olarak kaydedilir (çevrimiçi sürüm: sunucuya; çevrimdışı sürüm: tarayıcı localStorage'ına)
 
 Sıralama işlevi yalnızca Koleksiyonum görünümünde kullanılabilir.
+
+:::tip Çevrimiçi ve Çevrimdışı Sürüm
+Çevrimiçi sürümde, favoriler ve özel promptlar sunucuya kaydedilir ve giriş gerektirir. [Çevrimdışı sürüm](./offline)'de tüm veriler tarayıcının localStorage'ında saklanır, hesap gerekmez. Veriler, dışa ve içe aktarma yoluyla iki sürüm arasında taşınabilir.
+:::
 
 ![Sürükle-Bırak Sıralama](/img/docs/my-collection-drag.gif)
 

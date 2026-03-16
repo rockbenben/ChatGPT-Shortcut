@@ -26,6 +26,7 @@ Wenn Sie sich mit KI unterhalten, können gute Prompts Ihnen helfen, hochwertige
 | Eigene Prompts erstellen       | [Benutzerdefinierte Prompts](./user-prompts)   |
 | Registrieren oder Anmelden     | [Kontoverwaltung](./account)                   |
 | Community-Shares entdecken     | [Community-Prompts](./community)               |
+| Offline-/Intranet-Bereitstellung | [Offline-Version](./offline) |
 
 ## Gängige KI-Modelle
 

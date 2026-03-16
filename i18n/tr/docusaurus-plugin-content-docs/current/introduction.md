@@ -39,6 +39,10 @@ Bu kadar basit! Daha fazla özellik için okumaya devam edin veya [Kullanım Kı
 
 🔐 **Çoklu Giriş Yöntemleri**: Hesap şifresi, Google ve şifresiz e-posta bağlantılarını destekler.
 
+## Çevrimdışı Dağıtım Sürümü
+
+AI Short, kurumsal intranetler, devlet ağları ve dış ağ erişimi olmayan ortamlar için tasarlanmış bir çevrimdışı dağıtım sürümü sunar. Backend sunucusu veya kayıt gerekmez. Temel özellikler korunur, veri formatı çevrimiçi sürümle uyumludur. Ayrıntılar için [çevrimdışı sürüm](./guides/offline)'e bakın.
+
 ## Prompt Kaynakları
 
 Promptlar internet seçmelerinden, topluluk paylaşımlarından ve [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)'tan alınmaktadır. Size sürekli yeni promptlar ve ilham sunmak için düzenli olarak güncelleme yapıyoruz.

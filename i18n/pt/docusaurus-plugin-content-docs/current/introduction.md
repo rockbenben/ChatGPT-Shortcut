@@ -39,6 +39,10 @@ O AI Short (ChatGPT Shortcut) fornece uma lista de prompts de IA concisa e fáci
 
 🔐 **Múltiplos Métodos de Login**: Suporte para conta e senha, Google e link de e-mail sem senha.
 
+## Versao de Implantacao Offline
+
+O AI Short oferece uma [versao offline](./guides/offline) projetada para intranets corporativas, redes governamentais e ambientes sem acesso a rede externa. Sem servidor backend ou registro necessario. Funcionalidades principais preservadas, formato de dados compativel com a versao online.
+
 ## Fonte dos Prompts
 
 Os prompts vêm de seleções da internet, compartilhamentos da comunidade e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Atualizamos regularmente para trazer novos prompts e inspiração para você.

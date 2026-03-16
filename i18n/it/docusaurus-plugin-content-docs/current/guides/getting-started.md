@@ -26,6 +26,7 @@ Quando conversi con l'IA, buoni prompt possono aiutarti a ottenere risposte di a
 | Creare i miei prompt                  | [Prompt Personalizzati](./user-prompts)   |
 | Registrare o Accedere                 | [Gestione Account](./account)             |
 | Scoprire condivisioni della community | [Prompt della Community](./community)     |
+| Distribuzione offline/Intranet | [Versione Offline](./offline) |
 
 ## Modelli IA Comuni
 

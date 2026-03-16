@@ -65,7 +65,17 @@ O AI Short é um projeto de código aberto, permitindo que você modifique o tí
 
   Este script dividirá o arquivo `prompt.json` de acordo com regras predefinidas e sincronizará as atualizações para a página principal e páginas de prompts em destaque para cada versão de idioma.
 
-## Instruções de Implantação
+## Implantacao Offline (Intranet)
+
+Para intranets corporativas, redes governamentais ou ambientes sem acesso a rede externa, o AI Short fornece uma versao offline dedicada. Sem servidor backend ou registro de usuario necessario. Implante com um unico comando Docker:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Para detalhes completos, incluindo construcao a partir do codigo fonte, importacao/exportacao de dados e uso em equipe, consulte o guia da [versao offline](./guides/offline).
+
+## Instrucoes de Implantacao
 
 Requisitos do Sistema:
 

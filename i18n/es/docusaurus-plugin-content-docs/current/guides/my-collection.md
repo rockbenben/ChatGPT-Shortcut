@@ -8,6 +8,10 @@ description: Organiza tus prompts favoritos con etiquetas personalizadas. Arrast
 
 Después de iniciar sesión, puedes coleccionar tus prompts favoritos y gestionarlos personalmente. La vista Mi Colección proporciona funciones de gestión enriquecidas para ayudarte a organizar y usar prompts de manera eficiente.
 
+:::tip Version en linea vs offline
+En la version en linea, los datos de la coleccion se sincronizan con el servidor y son accesibles desde cualquier dispositivo. En la [version offline](./offline), todos los datos (favoritos, prompts personalizados, ordenamiento, etiquetas) se almacenan en el localStorage del navegador -- sin cuenta necesaria, pero los datos estan vinculados al navegador especifico.
+:::
+
 ## Cambio de Vista
 
 La parte superior de la página de inicio proporciona botones de cambio de vista, soportando dos modos:
@@ -59,9 +63,9 @@ El ajuste del orden de las tarjetas por arrastrar y soltar es compatible en la v
 
 1. Arrastra el controlador a la izquierda de la tarjeta
 2. Mueve a la posición objetivo y suelta
-3. El nuevo orden se guarda automáticamente en el servidor
+3. El nuevo orden se guarda automaticamente en el servidor (version en linea) o en el almacenamiento local del navegador (version offline)
 
-La función de ordenamiento solo está disponible en la vista Mi Colección.
+La funcion de ordenamiento solo esta disponible en la vista Mi Coleccion.
 
 ![Ordenamiento por Arrastrar y Soltar](/img/docs/my-collection-drag.gif)
 

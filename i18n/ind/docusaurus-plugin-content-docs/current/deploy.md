@@ -44,6 +44,18 @@ AI Short adalah proyek open source yang memungkinkan Anda memodifikasi judul web
   python CodeUpdateHandler.py
   ```
 
+## Deployment Offline (Intranet Perusahaan)
+
+Jika Anda perlu men-deploy di intranet perusahaan atau jaringan pemerintah tanpa akses jaringan eksternal, AI Short menyediakan versi offline khusus. Tidak memerlukan server backend atau registrasi, semua data disimpan secara lokal di browser.
+
+Deploy versi offline dengan Docker hanya dengan satu perintah:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Lihat panduan detail dan opsi konfigurasi di [Panduan Deployment Offline](./guides/offline).
+
 ## Petunjuk Deployment
 
 Persyaratan Sistem:

@@ -65,6 +65,16 @@ AI Short는 오픈 소스 프로젝트로, 필요에 따라 웹사이트 제목,
 
   이 스크립트는 사전 설정된 규칙에 따라 `prompt.json` 파일을 분할하고 각 언어 버전의 메인 페이지와 추천 프롬프트 페이지를 동기화하여 업데이트합니다.
 
+## 오프라인 버전 배포 (기업 인트라넷)
+
+기업 인트라넷, 정부 네트워크 등 외부 네트워크에 접속할 수 없는 환경에서는 `offline` 브랜치를 사용할 수 있습니다. 백엔드 서버가 필요 없으며 데이터는 브라우저 로컬에 저장됩니다. Vercel/Cloudflare Pages 배포 시 `offline` 브랜치를 선택하세요. Docker 배포:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+자세한 내용은 [오프라인 버전 문서](./guides/offline)를 참조하세요.
+
 ## 배포 설명
 
 시스템 요구 사항:

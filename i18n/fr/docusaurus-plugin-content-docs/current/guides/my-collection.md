@@ -8,6 +8,10 @@ description: Organisez vos prompts favoris avec des étiquettes personnalisées.
 
 Après connexion, vous pouvez collectionner vos prompts favoris et les gérer personnellement. La vue Ma collection offre des fonctionnalités de gestion riches pour vous aider à organiser et utiliser les prompts efficacement.
 
+:::tip Version en ligne vs hors ligne
+Dans la version en ligne, les donnees de collection sont synchronisees avec le serveur et accessibles depuis n'importe quel appareil. Dans la [version hors ligne](./offline), toutes les donnees (favoris, prompts personnalises, tri, balises) sont stockees dans le localStorage du navigateur -- aucun compte necessaire, mais les donnees sont liees au navigateur specifique.
+:::
+
 ## Changement de vue
 
 Le haut de la page d'accueil propose des boutons de changement de vue, prenant en charge deux modes :
@@ -59,7 +63,7 @@ L'ajustement de l'ordre des cartes par glisser-déposer est pris en charge dans 
 
 1. Faites glisser la poignée à gauche de la carte
 2. Déplacez vers la position cible et relâchez
-3. Le nouvel ordre est automatiquement enregistré sur le serveur
+3. Le nouvel ordre est automatiquement enregistre sur le serveur (version en ligne) ou dans le stockage local du navigateur (version hors ligne)
 
 La fonction de tri est disponible uniquement dans la vue Ma collection.
 

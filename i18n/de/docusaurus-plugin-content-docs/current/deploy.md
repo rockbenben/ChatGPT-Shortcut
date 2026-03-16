@@ -65,6 +65,16 @@ AI Short ist ein Open-Source-Projekt, das es Ihnen ermöglicht, den Website-Tite
 
   Dieses Skript teilt die Datei `prompt.json` gemäß voreingestellten Regeln auf und aktualisiert synchron die Hauptseite und die vorgestellten Prompt-Seiten für jede Sprachversion.
 
+## Offline-Bereitstellung (Intranet)
+
+Fuer Firmen-Intranets, Behoerdennetzwerke oder Umgebungen ohne externen Netzwerkzugang bietet AI Short eine spezielle Offline-Version. Kein Backend-Server oder Benutzerregistrierung erforderlich. Bereitstellung mit einem einzigen Docker-Befehl:
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Fuer vollstaendige Details einschliesslich Quellcode-Builds, Datenimport/-export und Teamnutzung, siehe den Leitfaden zur [Offline-Version](./guides/offline).
+
 ## Bereitstellungsanweisungen
 
 Systemanforderungen:

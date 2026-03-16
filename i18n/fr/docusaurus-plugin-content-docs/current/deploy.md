@@ -65,7 +65,17 @@ AI Short est un projet open source qui vous permet de modifier librement le titr
 
   Ce script divisera le fichier `prompt.json` selon des règles prédéfinies et mettra à jour de manière synchrone la page principale et les pages de prompts en vedette pour chaque version linguistique.
 
-## Instructions de déploiement
+## Deploiement hors ligne (Intranet)
+
+Pour les intranets d'entreprise, les reseaux gouvernementaux ou les environnements sans acces au reseau externe, AI Short propose une version hors ligne dediee. Aucun serveur backend ni inscription utilisateur requis. Deployez avec une seule commande Docker :
+
+```bash
+docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
+```
+
+Pour plus de details, y compris la construction a partir du code source, l'import/export de donnees et l'utilisation en equipe, consultez le guide de la [version hors ligne](./guides/offline).
+
+## Instructions de deploiement
 
 Exigences système :
 

@@ -39,6 +39,10 @@ AI Short (ChatGPT Shortcut) fornisce una lista concisa e facile da usare di prom
 
 🔐 **Metodi di Accesso Multipli**: Supporta password dell'account, Google e link email senza password.
 
+## Versione di Distribuzione Offline
+
+AI Short offre una [versione offline](./guides/offline) progettata per intranet aziendali, reti governative e ambienti senza accesso alla rete esterna. Nessun server backend o registrazione richiesta. Le funzionalita principali sono preservate, il formato dati e compatibile con la versione online.
+
 ## Fonti dei Prompt
 
 I prompt provengono da selezioni internet, condivisioni della community e [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Aggiorniamo regolarmente per portarti continuamente nuovi prompt e ispirazione.

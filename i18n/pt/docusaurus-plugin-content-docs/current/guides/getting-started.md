@@ -26,6 +26,7 @@ Ao conversar com a IA, bons prompts podem ajudá-lo a obter respostas de alta qu
 | Criar meus próprios prompts   | [Prompts Personalizados](./user-prompts)               |
 | Cadastrar ou Logar            | [Gerenciamento de Conta](./account)                    |
 | Descobrir compartilhamentos   | [Prompts da Comunidade](./community)                   |
+| Implantacao offline/Intranet | [Versao Offline](./offline) |
 
 ## Modelos de IA Comuns
 

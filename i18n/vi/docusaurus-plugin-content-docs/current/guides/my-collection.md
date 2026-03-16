@@ -59,9 +59,13 @@ Hỗ trợ điều chỉnh thứ tự thẻ bằng kéo thả trong chế độ 
 
 1. Kéo tay cầm ở bên trái thẻ
 2. Di chuyển đến vị trí mục tiêu và thả
-3. Thứ tự mới tự động được lưu vào máy chủ
+3. Thứ tự mới tự động được lưu (phiên bản trực tuyến: trên máy chủ; phiên bản ngoại tuyến: trong localStorage của trình duyệt)
 
 Chức năng sắp xếp chỉ khả dụng trong chế độ xem Bộ sưu tập của tôi.
+
+:::tip Phiên bản Trực tuyến vs Ngoại tuyến
+Trong phiên bản trực tuyến, bộ sưu tập và prompt tùy chỉnh được lưu trên máy chủ và cần đăng nhập. Trong [phiên bản ngoại tuyến](./offline), tất cả dữ liệu được lưu trong localStorage của trình duyệt, không cần tài khoản. Dữ liệu có thể di chuyển giữa hai phiên bản thông qua xuất-nhập.
+:::
 
 ![Kéo Thả Sắp xếp](/img/docs/my-collection-drag.gif)
 

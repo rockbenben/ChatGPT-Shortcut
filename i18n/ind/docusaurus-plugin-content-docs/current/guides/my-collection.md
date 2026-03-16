@@ -59,9 +59,13 @@ Penyesuaian urutan kartu dengan seret-lepas didukung di tampilan Koleksi Saya:
 
 1. Seret pegangan di sisi kiri kartu
 2. Pindahkan ke posisi target dan lepaskan
-3. Urutan baru secara otomatis disimpan ke server
+3. Urutan baru secara otomatis disimpan (versi online: ke server; versi offline: ke localStorage browser)
 
 Fungsi pengurutan hanya tersedia di tampilan Koleksi Saya.
+
+:::tip Versi Online vs Offline
+Di versi online, koleksi dan prompt kustom disimpan di server dan memerlukan login. Di [versi offline](./offline), semua data disimpan di localStorage browser, tidak perlu akun. Data dapat dimigrasikan antara kedua versi melalui ekspor-impor.
+:::
 
 ![Pengurutan Seret-Lepas](/img/docs/my-collection-drag.gif)
 

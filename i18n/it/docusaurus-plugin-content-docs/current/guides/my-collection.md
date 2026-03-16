@@ -8,6 +8,10 @@ description: Gestisci i tuoi prompt preferiti in "La Mia Collezione" - Usa tag p
 
 Dopo l'accesso, puoi collezionare i tuoi prompt preferiti e gestirli personalmente. La vista La Mia Collezione offre ricche funzioni di gestione per aiutarti a organizzare e utilizzare i prompt in modo efficiente.
 
+:::tip Versione online vs offline
+Nella versione online, i dati della collezione sono sincronizzati con il server e accessibili da qualsiasi dispositivo. Nella [versione offline](./offline), tutti i dati (preferiti, prompt personalizzati, ordinamento, tag) sono archiviati nel localStorage del browser -- nessun account necessario, ma i dati sono legati al browser specifico.
+:::
+
 ## Cambio Vista
 
 La parte superiore della home page fornisce pulsanti per cambiare vista, supportando due modalità:
@@ -59,9 +63,9 @@ La regolazione dell'ordine delle schede tramite drag-and-drop è supportata nell
 
 1. Trascina la maniglia a sinistra della scheda
 2. Sposta nella posizione di destinazione e rilascia
-3. Il nuovo ordine viene salvato automaticamente sul server
+3. Il nuovo ordine viene salvato automaticamente sul server (versione online) o nell'archiviazione locale del browser (versione offline)
 
-La funzione di ordinamento è disponibile solo nella vista La Mia Collezione.
+La funzione di ordinamento e disponibile solo nella vista La Mia Collezione.
 
 ![Ordinamento Drag-and-Drop](/img/docs/my-collection-drag.gif)
 

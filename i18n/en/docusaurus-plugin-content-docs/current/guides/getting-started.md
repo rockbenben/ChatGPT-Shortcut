@@ -26,6 +26,7 @@ When conversing with AI, good prompts can help you get high-quality answers fast
 | Create my own prompts     | [Custom Prompts](./user-prompts)       |
 | Register or Login         | [Account Management](./account)        |
 | Discover community shares | [Community Prompts](./community)       |
+| Offline/Intranet deployment | [Offline Version](./offline) |
 
 ## Common AI Models
 
