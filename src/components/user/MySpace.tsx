@@ -11,9 +11,10 @@ import styles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
-import { getCommPrompts } from "@site/src/api/prompts";
-import { searchCardsLocally } from "@site/src/api/homepage";
+import { searchCardsLocally, fetchCardsByIds } from "@site/src/api/homepage";
+
+const LOCAL_ORDER_KEY = "local_myspace_order";
+const LOCAL_TAGS_KEY = "local_custom_tags";
 import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
@@ -318,26 +319,23 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     }),
   );
 
-  // 加载数据 - 直接使用 AuthContext 提供的数据
+  // 加载数据 - 从 localStorage 读取，卡片数据从本地 JSON 加载
   useEffect(() => {
     if (!userAuth?.data) {
       setSpaceItems([]);
       return;
     }
 
-    // 计算 items 的 hash（用于检测实际的数据变化）
-    const items = userAuth.data.items || [];
-    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}_${item.updatedAt || ""}`).join(",");
+    const userPrompts: any[] = userAuth.data.userprompts || [];
+    const favoriteIds: number[] = userAuth.data.favorites?.loves || [];
     const currentUserId = userAuth.data.id;
+    const currentHash = `${userPrompts.length}_${favoriteIds.join(",")}`;
 
-    // 用户切换时，重置状态避免显示上一个用户的数据
     if (lastLoadedRef.current?.userId !== currentUserId) {
       lastLoadedRef.current = null;
       setSpaceItems([]);
     }
 
-    // 只有在已加载相同数据且 spaceItems 有内容时才跳过重新加载
-    // 关键修复：添加 spaceItems.length > 0 检查，防止数据为空时跳过加载
     if (lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.hash === currentHash && spaceItems.length > 0) {
       setDataProcessing(false);
       return;
@@ -345,97 +343,79 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
     let isMounted = true;
 
-    const fetchData = async () => {
-      if (!userAuth?.data) return;
-
+    const loadData = async () => {
       setDataProcessing(true);
       try {
-        // 直接使用 AuthContext 提供的 items（后端已排序，AuthProvider 已过滤）
-        const { items, customTags: tagsArray } = userAuth.data;
+        // 从本地 JSON 加载卡片数据
+        const cardsData = favoriteIds.length > 0 ? await fetchCardsByIds(favoriteIds, currentLanguage) : [];
+        const cardsMap = new Map(cardsData.map((c: any) => [c.id, c]));
 
-        // 设置自定义标签
-        if (isMounted) {
-          setCustomTags(tagsArray || []);
-        }
+        // 构建统一 items 列表
+        const promptItems = userPrompts.map((p: any) => ({
+          id: `prompt_prompt_${p.id}`,
+          type: "prompt" as const,
+          source: "prompt" as const,
+          sourceId: p.id,
+          data: p,
+          customTags: [] as string[],
+        }));
 
-        // 从 items 提取需要获取详细数据的 IDs
-        const promptIds = items.filter((item) => item.type === "prompt").map((item) => item.id);
-        const cardIds = items.filter((item) => item.source === "card").map((item) => item.id);
-        const commuIds = items.filter((item) => item.source === "community").map((item) => item.id);
-
-        // 批量获取详细数据
-        const [userPromptsData, cardsData, commusData] = await Promise.all([
-          promptIds.length > 0 ? getPrompts("userprompts", promptIds) : Promise.resolve([]),
-          cardIds.length > 0 ? getPrompts("cards", cardIds, currentLanguage) : Promise.resolve([]),
-          commuIds.length > 0 ? getPrompts("commus", commuIds) : Promise.resolve([]),
-        ]);
-
-        // 创建详细数据映射
-        const promptsMap = new Map(userPromptsData.map((p) => [p.id, p]));
-        const cardsMap = new Map(cardsData.map((c) => [c.id, c]));
-        const commusMap = new Map(commusData.map((c) => [c.id, c]));
-
-        // 直接按照 items 的顺序构建 allItems（保持后端排序）
-        const allItems = items
-          .map((item) => {
-            let detailData;
-
-            if (item.type === "prompt") {
-              detailData = promptsMap.get(item.id);
-            } else if (item.source === "card") {
-              detailData = cardsMap.get(item.id);
-            } else if (item.source === "community") {
-              detailData = commusMap.get(item.id);
-            }
-
-            if (!detailData) return null;
-
+        const favoriteItems = favoriteIds
+          .map((id) => {
+            const card = cardsMap.get(id);
+            if (!card) return null;
             return {
-              id: `${item.type}_${item.source}_${item.id}`,
-              type: item.type,
-              source: item.source,
-              sourceId: item.id,
-              data: detailData,
-              customTags: item.tags || [],
+              id: `favorite_card_${id}`,
+              type: "favorite" as const,
+              source: "card" as const,
+              sourceId: id,
+              data: card,
+              customTags: [] as string[],
             };
           })
           .filter(Boolean);
 
-        if (isMounted) {
-          setSpaceItems(allItems);
-          // 更新已加载标记，记录用户 ID 和数据 hash
-          lastLoadedRef.current = { userId: currentUserId, hash: currentHash };
-          // 不再缓存 myspace_items，统一使用 AuthContext 的 user_auth 缓存
+        let allItems = [...promptItems, ...favoriteItems];
 
-          // 通知父组件数据已加载（使用实际获取到数据的数量）
+        // 应用已保存的排序
+        const savedOrder: any[] = JSON.parse(localStorage.getItem(LOCAL_ORDER_KEY) || "[]");
+        if (savedOrder.length > 0) {
+          const orderMap = new Map(savedOrder.map((o: any, i: number) => [`${o.type}_${o.source}_${o.id}`, i]));
+          allItems.sort((a, b) => {
+            const aIdx = orderMap.get(`${a.type}_${a.source}_${a.sourceId}`) ?? Infinity;
+            const bIdx = orderMap.get(`${b.type}_${b.source}_${b.sourceId}`) ?? Infinity;
+            return aIdx - bIdx;
+          });
+        }
+
+        // 应用自定义标签
+        const tagsData = JSON.parse(localStorage.getItem(LOCAL_TAGS_KEY) || "{}");
+        const itemTags: Record<string, string[]> = tagsData.itemTags || {};
+        allItems = allItems.map((item) => ({ ...item, customTags: itemTags[item.id] || [] }));
+
+        if (isMounted) {
+          setCustomTags(tagsData.definitions || []);
+          setSpaceItems(allItems);
+          lastLoadedRef.current = { userId: currentUserId, hash: currentHash };
+
           if (onDataLoaded) {
-            const actualPrompts = allItems.filter((item) => item.type === "prompt").length;
-            const actualFavorites = allItems.filter((item) => item.type === "favorite").length;
             onDataLoaded({
               totalItems: allItems.length,
-              totalPrompts: actualPrompts,
-              totalFavorites: actualFavorites,
-              totalTags: (tagsArray || []).length,
+              totalPrompts: promptItems.length,
+              totalFavorites: favoriteItems.length,
+              totalTags: (tagsData.definitions || []).length,
             });
           }
         }
       } catch (error) {
-        console.error("Failed to fetch MySpace data:", error);
-        if (isMounted) {
-          messageApi.error("加载数据失败");
-        }
+        console.error("Failed to load MySpace data:", error);
       } finally {
-        if (isMounted) {
-          setDataProcessing(false);
-        }
+        if (isMounted) setDataProcessing(false);
       }
     };
 
-    fetchData();
-
-    return () => {
-      isMounted = false;
-    };
+    loadData();
+    return () => { isMounted = false; };
   }, [userAuth, currentLanguage, onDataLoaded, messageApi]);
 
   // 筛选后的项目
@@ -497,18 +477,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const data = await searchCardsLocally([], searchQuery, currentLanguage);
         if (cancelled) return;
 
-        if (data.length > 0) {
-          setFallbackSource("curated");
-          setFallbackCards(data.slice(0, 12));
-          return;
-        }
-
-        // 精选也无结果，尝试搜索社区提示词
-        const result = await getCommPrompts(1, 12, "upvoteDifference", "desc", searchQuery);
-        if (cancelled) return;
-        const commuPrompts = Array.isArray(result) ? result[0] : [];
-        setFallbackSource("community");
-        setFallbackCards(commuPrompts);
+        setFallbackSource("curated");
+        setFallbackCards(data.length > 0 ? data.slice(0, 12) : []);
       } catch {
         if (!cancelled) setFallbackCards([]);
       } finally {
@@ -562,20 +532,14 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       setSpaceItems(newSpaceItems);
 
-      // 自动保存顺序 - 保存完整列表的顺序
-      try {
-        const newOrder = newSpaceItems.map((item) => ({
-          id: item.sourceId, // 使用 sourceId（数字）而非组合ID
-          type: item.type,
-          source: item.source,
-        }));
-        await updateMySpaceOrder(newOrder);
-
-        messageApi.success(<Translate id="message.orderSaved">排列已保存</Translate>);
-      } catch (error) {
-        console.error("Failed to save order:", error);
-        messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
-      }
+      // 自动保存顺序到 localStorage
+      const newOrder = newSpaceItems.map((item) => ({
+        id: item.sourceId,
+        type: item.type,
+        source: item.source,
+      }));
+      localStorage.setItem(LOCAL_ORDER_KEY, JSON.stringify(newOrder));
+      messageApi.success(<Translate id="message.orderSaved">排列已保存</Translate>);
     },
     [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi],
   );
@@ -598,34 +562,19 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [editingPrompt, updateUserPrompt],
   );
 
-  // 保存标签管理
-  const handleManageTagsSave = async (tags: CustomTag[]) => {
-    try {
-      // 构建完整的 itemTags 对象（从当前状态）
-      const newItemTags: Record<string, string[]> = {};
+  // 保存标签管理到 localStorage
+  const handleManageTagsSave = (tags: CustomTag[]) => {
+    const newItemTags: Record<string, string[]> = {};
+    spaceItems.forEach((item) => {
+      if (item.customTags && item.customTags.length > 0) {
+        newItemTags[item.id] = item.customTags;
+      }
+    });
 
-      spaceItems.forEach((item) => {
-        if (item.customTags && item.customTags.length > 0) {
-          newItemTags[item.id] = item.customTags;
-        }
-      });
-
-      // 更新完整的 customTags 对象
-      await updateCustomTags({
-        definitions: tags,
-        itemTags: newItemTags,
-      });
-
-      // 立即更新本地状态
-      setCustomTags(tags);
-      // 不调用 refreshUserAuth() — 避免触发 MySpace useEffect 重新加载数据
-
-      setTagManagerOpen(false);
-      messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
-    } catch (error) {
-      console.error("Failed to update tags:", error);
-      messageApi.error(<Translate id="message.tagsUpdateFailed">标签更新失败</Translate>);
-    }
+    localStorage.setItem(LOCAL_TAGS_KEY, JSON.stringify({ definitions: tags, itemTags: newItemTags }));
+    setCustomTags(tags);
+    setTagManagerOpen(false);
+    messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
   };
 
   // 删除提示词 - 显示确认对话框并删除
@@ -690,33 +639,19 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         newTags = [...currentTags, tagId];
       }
 
-      // 乐观更新 UI
-      setSpaceItems((items) => items.map((i) => (i.id === itemId ? { ...i, customTags: newTags } : i)));
-
-      // 保存到服务器
-      try {
-        // 构建完整的 itemTags 对象（从当前状态）
+      // 更新 UI 并保存到 localStorage
+      setSpaceItems((items) => {
+        const updated = items.map((i) => (i.id === itemId ? { ...i, customTags: newTags } : i));
+        // 同步保存到 localStorage
         const newItemTags: Record<string, string[]> = {};
-
-        spaceItems.forEach((item) => {
-          if (item.id === itemId) {
-            newItemTags[item.id] = newTags;
-          } else if (item.customTags && item.customTags.length > 0) {
-            newItemTags[item.id] = item.customTags;
+        updated.forEach((i) => {
+          if (i.customTags && i.customTags.length > 0) {
+            newItemTags[i.id] = i.customTags;
           }
         });
-
-        // 调用 API 更新
-        await updateCustomTags({
-          definitions: customTags,
-          itemTags: newItemTags,
-        });
-      } catch (error) {
-        console.error("Failed to update item tags:", error);
-        messageApi.error("标签更新失败");
-        // 恢复UI
-        setSpaceItems((items) => items.map((i) => (i.id === itemId ? { ...i, customTags: currentTags } : i)));
-      }
+        localStorage.setItem(LOCAL_TAGS_KEY, JSON.stringify({ definitions: customTags, itemTags: newItemTags }));
+        return updated;
+      });
     },
     [spaceItems, customTags, messageApi],
   );

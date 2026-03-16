@@ -60,25 +60,6 @@ const UserStatus = () => {
       ),
       icon: <UserOutlined />,
     },
-    {
-      type: "divider" as const,
-    },
-    {
-      key: "logout",
-      label: <Translate id="button.logout">退出登录</Translate>,
-      icon: <LogoutOutlined />,
-      danger: true,
-      onClick: () => {
-        modal.confirm({
-          title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
-          content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
-          onOk: handleLogout,
-          okText: <Translate id="button.confirm">确认</Translate>,
-          cancelText: <Translate id="action.cancel">取消</Translate>,
-          centered: true,
-        });
-      },
-    },
   ].filter(Boolean);
 
   const loggedInButtons = useMemo(
@@ -122,38 +103,18 @@ const UserStatus = () => {
     []
   );
 
-  if (authLoading) {
-    return (
-      <Space wrap size="small">
-        <Skeleton.Button active size="default" style={{ width: 80 }} />
-        <Skeleton.Button active size="default" style={{ width: 120 }} />
-      </Space>
-    );
-  }
-
   return (
     <>
-      {userAuth ? (
-        <>
-          {loggedInButtons}
-          <PromptFormModal
-            open={open}
-            mode="add"
-            loading={loading}
-            onSubmit={onFinish}
-            onClose={() => {
-              if (!loading) setOpen(false);
-            }}
-          />
-        </>
-      ) : (
-        <>
-          {loggedOutButtons}
-          <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-            <LoginComponent />
-          </Modal>
-        </>
-      )}
+      {loggedInButtons}
+      <PromptFormModal
+        open={open}
+        mode="add"
+        loading={loading}
+        onSubmit={onFinish}
+        onClose={() => {
+          if (!loading) setOpen(false);
+        }}
+      />
     </>
   );
 };

@@ -134,7 +134,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   // 用 ref 保存 userAuth，使回调稳定化（不因后台 SWR 刷新而重建）
   const userAuthRef = useRef(userAuth);
   userAuthRef.current = userAuth;
-  const isLoggedIn = !!userAuth;
+  const isLoggedIn = true; // 本地模式：收藏始终可用
 
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
   const [favoritePrompts, setFavoritePrompts] = useState<any[]>(defaultFavorData);
@@ -237,22 +237,18 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   // 初始化数据加载 - 已登录用户立即加载个性化数据
   // prompt_*.json 有缓存机制，首次加载后不会重复请求
   const initializeData = useCallback(async () => {
-    // 未登录或正在加载认证状态时，使用 SSG 默认数据
-    if (authLoading || !userAuth) {
-      return;
-    }
+    if (authLoading || !userAuth) return;
+
+    // 本地模式：没有自定义收藏时保持 SSG 默认数据（更完整）
+    const favorIds = userAuth?.data?.favorites?.loves || [];
+    if (favorIds.length === 0) return;
 
     // 如果已为当前用户初始化过，跳过（避免收藏操作后重复加载）
     const currentUserId = userAuth?.data?.id;
-    if (initializedUserIdRef.current === currentUserId) {
-      return;
-    }
+    if (initializedUserIdRef.current === currentUserId) return;
     initializedUserIdRef.current = currentUserId;
 
-    // 已登录用户：立即加载个性化收藏数据
-    // 注意：prompt_*.json 有缓存机制（promptDataCache），首次加载后后续操作直接使用缓存
     try {
-      const favorIds = userAuth?.data?.favorites?.loves || DEFAULT_FAVORITE_IDS;
 
       const favorData = await fetchCardsByIds(favorIds, currentLanguage);
 
@@ -666,7 +662,6 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
     return <ExploreView onOpenModal={onOpenModal} />;
   }
 
-  // 仅在 collection 模式才显示 MySpace（避免不必要的 API 调用）
   return (
     <div className="container margin-top--md">
       <PageHeader userAuth={userAuth} {...stats} />
