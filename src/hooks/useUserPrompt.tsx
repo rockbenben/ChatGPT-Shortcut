@@ -2,7 +2,20 @@ import React, { useState, useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { submitPrompt, updatePrompt as apiUpdatePrompt, deletePrompt as apiDeletePrompt } from "../api";
+
+const LOCAL_PROMPTS_KEY = "local_user_prompts";
+
+function getLocalPrompts(): any[] {
+  try {
+    return JSON.parse(localStorage.getItem(LOCAL_PROMPTS_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalPrompts(prompts: any[]) {
+  localStorage.setItem(LOCAL_PROMPTS_KEY, JSON.stringify(prompts));
+}
 
 interface UseUserPromptReturn {
   loading: boolean;
@@ -13,7 +26,7 @@ interface UseUserPromptReturn {
 }
 
 export const useUserPrompt = (): UseUserPromptReturn => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { refreshUserAuth } = useContext(AuthContext);
   const { message, modal } = App.useApp();
   const [loading, setLoading] = useState(false);
 
@@ -21,10 +34,17 @@ export const useUserPrompt = (): UseUserPromptReturn => {
     async (values: any, onSuccess?: () => void) => {
       setLoading(true);
       try {
-        await submitPrompt(values);
+        const prompts = getLocalPrompts();
+        prompts.unshift({
+          ...values,
+          id: Date.now(),
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        });
+        saveLocalPrompts(prompts);
 
         // 强制刷新，确保获取最新数据
-        await refreshUserAuth();
+        refreshUserAuth();
 
         message.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
 
@@ -42,50 +62,49 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         setLoading(false);
       }
     },
-    [refreshUserAuth, message]
+    [refreshUserAuth, message],
   );
 
   const updatePrompt = useCallback(
     async (id: number, values: any) => {
       setLoading(true);
       try {
-        await apiUpdatePrompt(id, values);
-        await refreshUserAuth();
+        const prompts = getLocalPrompts();
+        const idx = prompts.findIndex((p) => p.id === id);
+        if (idx > -1) {
+          prompts[idx] = { ...prompts[idx], ...values, updatedAt: new Date().toISOString() };
+          saveLocalPrompts(prompts);
+        }
+        refreshUserAuth();
 
         message.success(<Translate id="message.updatePrompt.success">提示词更新成功！</Translate>);
         return true;
       } catch (err) {
         console.error(err);
-        // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth();
-
         message.error(<Translate id="message.updatePrompt.error">提示词更新失败，请稍后重试</Translate>);
         return false;
       } finally {
         setLoading(false);
       }
     },
-    [refreshUserAuth, message]
+    [refreshUserAuth, message],
   );
 
   const removePrompt = useCallback(
     async (id: number) => {
       setLoading(true);
       try {
-        await apiDeletePrompt(id);
-        await refreshUserAuth();
+        saveLocalPrompts(getLocalPrompts().filter((p) => p.id !== id));
+        refreshUserAuth();
         message.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
       } catch (err) {
         console.error(err);
-        // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth();
-
         message.error(<Translate id="message.deletePrompt.error">提示词删除失败，请稍后重试</Translate>);
       } finally {
         setLoading(false);
       }
     },
-    [refreshUserAuth, message]
+    [refreshUserAuth, message],
   );
 
   const confirmRemovePrompt = useCallback(
@@ -101,7 +120,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         centered: true,
       });
     },
-    [modal, removePrompt]
+    [modal, removePrompt],
   );
 
   return { loading, addPrompt, updatePrompt, removePrompt, confirmRemovePrompt };
