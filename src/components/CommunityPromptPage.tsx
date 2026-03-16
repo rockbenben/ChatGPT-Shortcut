@@ -8,7 +8,7 @@ import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
-import Comments from "./Comments";
+// Comments removed for local version
 import { Breadcrumb } from "antd";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -119,9 +119,9 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
-      <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
+      <Row justify="center" style={{ marginTop: 24, marginBottom: 24, flex: 1 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
-          <Flex vertical gap="large" style={{ minHeight: 400 }}>
+          <Flex vertical gap="large">
             {/* 提示词信息卡片 */}
             <Card variant="borderless" className="shadow--md" style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
               <Flex vertical gap="small">
@@ -222,25 +222,8 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
 
                 <Divider />
 
-                {/* 底部：操作按钮 */}
-                <Flex justify="space-between" align="center" wrap="wrap" gap="small">
-                  <Space size="middle">
-                    {/* 投票按钮组 */}
-                    <Space.Compact>
-                      <Button icon={<UpOutlined />} onClick={() => handleVote("upvote")}>
-                        <Translate id="action.upvote">赞</Translate> {prompt.upvotes || 0}
-                      </Button>
-                      <Button icon={<DownOutlined />} onClick={() => handleVote("downvote")}>
-                        <Translate id="action.downvote">踩</Translate> {prompt.downvotes || 0}
-                      </Button>
-                    </Space.Compact>
-
-                    {/* 收藏按钮 */}
-                    <Button icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite}>
-                      {isFavorite ? <Translate id="action.removeFavorite">取消收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}
-                    </Button>
-                  </Space>
-
+                {/* 底部：分享 */}
+                <Flex justify="flex-end" align="center">
                   <Suspense fallback={null}>
                     <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
                   </Suspense>
@@ -248,12 +231,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               </Flex>
             </Card>
 
-            {/* 评论区卡片 */}
-            <Suspense fallback={null}>
-              <Card variant="borderless" className="shadow--md" style={{ minHeight: 480, borderRadius: 12 }}>
-                <Comments pageId={prompt.id} type="userprompt" />
-              </Card>
-            </Suspense>
           </Flex>
         </Col>
       </Row>

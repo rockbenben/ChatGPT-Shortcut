@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
-import Comments from "./Comments";
+// Comments removed for local version
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 
@@ -159,11 +159,8 @@ function PromptPage({ prompt, currentLanguage }) {
 
                 <Divider />
 
-                {/* 底部：社交分享与提示 */}
-                <Flex justify="space-between" align="center" wrap="wrap" gap="small" className="hideOnSmallScreen">
-                  <Text type="secondary" style={{ fontSize: 12 }}>
-                    <Translate id="label.commentInfo">欢迎在下方留言或分享。</Translate>
-                  </Text>
+                {/* 底部：社交分享 */}
+                <Flex justify="flex-end" align="center" className="hideOnSmallScreen">
                   <Suspense fallback={null}>
                     <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark}`} popOver={true} />
                   </Suspense>
@@ -171,12 +168,6 @@ function PromptPage({ prompt, currentLanguage }) {
               </Flex>
             </Card>
 
-            {/* 评论区卡片 */}
-            <Suspense fallback={null}>
-              <Card variant="borderless" className="shadow--md" style={{ minHeight: 480, borderRadius: 12 }}>
-                <Comments pageId={prompt.id} type="page" />
-              </Card>
-            </Suspense>
           </Flex>
         </Col>
       </Row>
