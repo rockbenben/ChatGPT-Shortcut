@@ -12,67 +12,26 @@
     */
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 55%; /* adjusted for better lightness contrast */
-  --site-color-favorite-background: transparent;
+  --site-color-favorite-background: #1d1e1e;
   --site-color-tooltip: #fff;
   --site-color-tooltip-background: #353738;
   --site-color-svg-icon-favorite: #e9669e;
-  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
-  --site-color-feedback-background: #fff;
-  --site-color-tags-background: #fff;
-  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
+  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 10%);
+  --site-color-feedback-background: #f0f8ff;
+  --site-color-tags-background: #1d1e1e;
+  --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
-  --site-primary-font: #3e4042;
-  --site-color-background: white;
-  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
-  --site-color-tag-selected-text: #2d6454; /* Darker primary */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
-}
-
-html[data-theme="dark"] {
-  --site-color-feedback-background: #f0f8ff;
-  --site-color-tags-background: #1d1e1e;
-  --site-color-favorite-background: #1d1e1e;
-  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 10%);
-  --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   --site-primary-font: #c5c5c5;
   --site-color-background: #242526;
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
-  --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
-}
-
-/*
-  * This selector will be dynamically replaced by the color generator. Don't put
-  * other properties here.
-  */
-[data-theme="light"] {
-  --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 36%);
-  --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 32%);
-  --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 29%);
-  --ifm-color-primary-darkest: hsl(var(--site-primary-hue-saturation) 23%);
-
-  --ifm-color-primary-light: hsl(var(--site-primary-hue-saturation-light) 45%);
-  --ifm-color-primary-lighter: hsl(
-    var(--site-primary-hue-saturation-light) 53%
-  );
-  --ifm-color-primary-lightest: hsl(
-    var(--site-primary-hue-saturation-light) 64%
-  );
-}
-
-/*
-  * This selector will be dynamically replaced by the color generator. Don't put
-  * other properties here.
-  */
-[data-theme="dark"] {
+  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15);
+  --site-color-tag-selected-text: #57c2a3;
+  --site-color-tag-selected-border: #397e6a;
+  /* Primary color palette */
   --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 45%);
   --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 41%);
   --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 38%);
@@ -85,6 +44,33 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: hsl(
     var(--site-primary-hue-saturation-light) 73%
   );
+
+  /* Infima dark-mode overrides — 强制暗色，不依赖 data-theme 属性 */
+  --ifm-color-scheme: dark;
+  --ifm-color-emphasis-0: var(--ifm-color-gray-1000);
+  --ifm-color-emphasis-100: var(--ifm-color-gray-900);
+  --ifm-color-emphasis-200: var(--ifm-color-gray-800);
+  --ifm-color-emphasis-300: var(--ifm-color-gray-700);
+  --ifm-color-emphasis-400: var(--ifm-color-gray-600);
+  --ifm-color-emphasis-500: var(--ifm-color-gray-500);
+  --ifm-color-emphasis-600: var(--ifm-color-gray-400);
+  --ifm-color-emphasis-700: var(--ifm-color-gray-300);
+  --ifm-color-emphasis-800: var(--ifm-color-gray-200);
+  --ifm-color-emphasis-900: var(--ifm-color-gray-100);
+  --ifm-color-emphasis-1000: var(--ifm-color-gray-0);
+  --ifm-background-color: #1b1b1d;
+  --ifm-background-surface-color: #242526;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
+  --ifm-color-content: #e3e3e3;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 1);
+  --ifm-breadcrumb-separator-filter: invert(64%) sepia(11%) saturate(0%)
+    hue-rotate(149deg) brightness(99%) contrast(95%);
+  --ifm-code-background: rgba(255, 255, 255, 0.1);
+  --ifm-scrollbar-track-background-color: #444444;
+  --ifm-scrollbar-thumb-background-color: #686868;
+  --ifm-scrollbar-thumb-hover-background-color: #7a7a7a;
+  --ifm-table-stripe-background: rgba(255, 255, 255, 0.07);
+  --ifm-toc-border-color: var(--ifm-color-emphasis-200);
 }
 
 .header-github-link:hover {
@@ -96,11 +82,6 @@ html[data-theme="dark"] {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("@site/static/img/icons/github.svg") no-repeat;
-  background-size: contain;
-}
-
-[data-theme="dark"] .header-github-link::before {
   background: url("@site/static/img/icons/github-dark.svg") no-repeat;
   background-size: contain;
 }
@@ -114,11 +95,6 @@ html[data-theme="dark"] {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("@site/static/img/icons/discord.svg") no-repeat;
-  background-size: contain;
-}
-
-[data-theme="dark"] .header-discord-link::before {
   background: url("@site/static/img/icons/discord-dark.svg") no-repeat;
   background-size: contain;
 }
@@ -133,11 +109,6 @@ html[data-theme="dark"] {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("@site/static/img/icons/telegram.svg") no-repeat;
-  background-size: contain;
-}
-
-[data-theme="dark"] .header-tg-link::before {
   background: url("@site/static/img/icons/telegram-dark.svg") no-repeat;
   background-size: contain;
 }
@@ -172,11 +143,6 @@ html[data-theme="dark"] {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("@site/static/img/icons/qq.svg") no-repeat;
-  background-size: contain;
-}
-
-[data-theme="dark"] .header-qq-link::before {
   background: url("@site/static/img/icons/qq-dark.svg") no-repeat;
   background-size: contain;
 }
@@ -197,33 +163,11 @@ html[data-theme="dark"] {
   background-color: var(--ifm-tabs-color-active);
 }
 
-[data-theme="light"] .themedDocusaurus [fill="#FFFF50"] {
-  fill: greenyellow;
-}
-
-[data-theme="dark"] .themedDocusaurus [fill="#FFFF50"] {
+.themedDocusaurus [fill="#FFFF50"] {
   fill: seagreen;
 }
 
-[data-theme="light"] .DocSearch {
-  /* --docsearch-primary-color: var(--ifm-color-primary); */
-  /* --docsearch-text-color: var(--ifm-font-color-base); */
-  --docsearch-muted-color: var(--ifm-color-emphasis-700);
-  --docsearch-container-background: rgb(94 100 112 / 70%);
-  /* Modal */
-  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
-  /* Search box */
-  --docsearch-searchbox-background: var(--ifm-color-secondary);
-  --docsearch-searchbox-focus-background: var(--ifm-color-white);
-  /* Hit */
-  --docsearch-hit-color: var(--ifm-font-color-base);
-  --docsearch-hit-active-color: var(--ifm-color-white);
-  --docsearch-hit-background: var(--ifm-color-white);
-  /* Footer */
-  --docsearch-footer-background: var(--ifm-color-white);
-}
-
-[data-theme="dark"] .DocSearch {
+.DocSearch {
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgb(47 55 69 / 70%);
@@ -275,8 +219,7 @@ div[class^="announcementBar_"] {
   white-space: nowrap;
 }
 
-[data-theme="light"] img[src$="#gh-dark-mode-only"],
-[data-theme="dark"] img[src$="#gh-light-mode-only"] {
+img[src$="#gh-light-mode-only"] {
   display: none;
 }
 
@@ -316,10 +259,6 @@ div[class^="announcementBar_"] {
 }
 
 [data-rmiz-modal-overlay="visible"] {
-  background-color: rgba(255 255 255 / 95%);
-}
-
-[data-theme="dark"] [data-rmiz-modal-overlay="visible"] {
   background-color: rgba(0 0 0 / 95%);
 }
 
