@@ -203,7 +203,7 @@ const UserProfile = () => {
         }}>
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14}>
-            <Space direction="vertical" size="large" style={{ width: "100%" }}>
+            <Space orientation="vertical" size="large" style={{ width: "100%" }}>
               {/* Breadcrumb Navigation — 保留原版样式 */}
               <Card
                 style={{
@@ -257,7 +257,7 @@ const UserProfile = () => {
                     <Translate id="title.dataManagement">数据管理</Translate>
                   </Space>
                 }>
-                <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+                <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
                   {/* Export Prompts */}
                   <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
                     <Flex align="center" gap={20}>

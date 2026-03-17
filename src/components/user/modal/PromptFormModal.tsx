@@ -36,7 +36,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
     <Modal
       open={open}
       width={600}
-      maskClosable={false}
+      mask={{ closable: false }}
       confirmLoading={loading}
       onOk={form.submit}
       onCancel={onClose}
