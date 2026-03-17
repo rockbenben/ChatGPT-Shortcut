@@ -39,6 +39,10 @@ AI Short (ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，
 
 🔐 **多种登录方式**：支持账号密码、Google 和无密码邮件链接。
 
+## 离线部署版
+
+AI Short 提供[离线部署版](./guides/offline)，专为企业内网、政务网络等无法访问外网的环境设计。无需后端服务器和用户注册，部署后开箱即用。保留提示词浏览、搜索、收藏、自定义提示词等核心功能，数据格式与在线版互通。
+
 ## 提示词来源
 
 提示词来源于网络精选、社区分享，以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)。我们会定期更新，持续为你带来新的提示词和灵感。
@@ -55,4 +59,4 @@ AI Short (ChatGPT Shortcut) 提供了一份简洁易用的 AI 提示词列表，
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
 
-![](https://img.newzone.top/qq963752577.jpg?imageMogr2/thumbnail/300x/format/webp)
+![](https://img.newzone.top/qrcode/qq1092926837.jpg?imageMogr2/thumbnail/300x/format/webp)
