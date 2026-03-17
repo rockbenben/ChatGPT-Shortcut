@@ -634,7 +634,7 @@ const UserProfile = () => {
                                   "0%": "var(--ifm-color-primary)",
                                   "100%": "var(--ifm-color-primary-dark)",
                                 }}
-                                trailColor="var(--ifm-color-emphasis-200)"
+                                railColor="var(--ifm-color-emphasis-200)"
                                 showInfo={false}
                               />
                               <Text type="secondary" style={{ fontSize: 12, textAlign: "center" }}>
@@ -808,7 +808,7 @@ const UserProfile = () => {
                     <Translate id="title.dataManagement">数据管理</Translate>
                   </Space>
                 }>
-                <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+                <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
                   {/* Export Prompts */}
                   <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
                     <Flex align="center" gap={20}>
