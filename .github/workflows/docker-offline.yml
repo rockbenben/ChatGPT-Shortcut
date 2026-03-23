@@ -11,10 +11,19 @@ env:
   IMAGE_NAME: chatgpt-shortcut
 
 jobs:
+  check_branch:
+    name: Verify branch
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/offline'
+    steps:
+      - name: ❌ Wrong branch
+        run: |
+          echo "::error::This workflow must be triggered from the 'offline' branch. Current: ${{ github.ref }}"
+          exit 1
+
   push_offline_image:
     name: Build and push offline Docker image
     runs-on: ubuntu-latest
-    # 仅允许从 offline 分支手动触发
     if: github.ref == 'refs/heads/offline'
     steps:
       - name: 🚚 Check out the repo
@@ -47,7 +56,10 @@ jobs:
 
       - name: 📦 Read package.json version
         id: pkg
-        run: echo "version=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_OUTPUT
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Read version: ${VERSION}"
 
       - name: 🏷️ Generate Docker tags
         id: meta
@@ -58,7 +70,7 @@ jobs:
             ghcr.io/${{ env.GH_OWNER_LC }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=offline
-            type=raw,value=${{ steps.pkg.outputs.version }}-offline
+            type=raw,value=${{ steps.pkg.outputs.version }}-offline,enable=${{ steps.pkg.outputs.version != '' }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v7
