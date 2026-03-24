@@ -27,7 +27,7 @@ jobs:
       fail-fast: false
       matrix:
         # 在这里列出除主站zh外所有的语言代码
-        lang: [en, ja, ko, es, fr, de, it, ru, pt, hi, ar, bn]
+        lang: [en, zh-Hant, ja, ko, es, pt, hi, ind, vi, th, fr, de, it, ru, ar, tr, bn]
 
     steps:
       - name: Submit Sitemap for ${{ matrix.lang }}
