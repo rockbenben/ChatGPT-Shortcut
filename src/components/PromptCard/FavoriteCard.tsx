@@ -122,8 +122,8 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       <div
         style={{
           padding: "12px 16px",
-          background: hasCache ? "#fff7e6" : "#fff2f0",
-          border: `1px solid ${hasCache ? "#ffa940" : "#ff7875"}`,
+          background: hasCache ? "rgba(250, 173, 20, 0.1)" : "rgba(255, 77, 79, 0.1)",
+          border: `1px solid ${hasCache ? "rgba(250, 173, 20, 0.35)" : "rgba(255, 77, 79, 0.35)"}`,
           borderRadius: 8,
           marginBottom: 12,
         }}>

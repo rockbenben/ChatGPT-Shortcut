@@ -28,6 +28,8 @@
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --site-color-card-background: #2a2b2c;
+  --ifm-color-primary-rgb: 57, 126, 106;
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15);
   --site-color-tag-selected-text: #57c2a3;
   --site-color-tag-selected-border: #397e6a;

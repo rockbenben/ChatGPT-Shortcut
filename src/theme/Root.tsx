@@ -1,9 +1,13 @@
 import React from "react";
-import { ConfigProvider, App } from "antd";
+import { ConfigProvider, theme, App } from "antd";
 
 // Dark theme configuration with zero-runtime
 // 注意：需先运行 `yarn gen:antd-css` 生成静态样式
 const darkTheme = {
+  token: {
+    colorPrimary: "#397e6a",
+  },
+  algorithm: theme.darkAlgorithm,
   zeroRuntime: true,
   cssVar: { key: "aishort" },
 };

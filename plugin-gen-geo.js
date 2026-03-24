@@ -68,7 +68,6 @@ module.exports = function (context, options) {
       const docFilePaths = findFiles(defaultDocsDir, ".md");
 
       let docsList = [];
-      let docsFullContent = "";
 
       docFilePaths.forEach((filePath) => {
         const relativePath = path.relative(defaultDocsDir, filePath);
@@ -104,8 +103,6 @@ module.exports = function (context, options) {
         const summary = stripMarkdown(contentBody.slice(0, 200)) + "...";
 
         docsList.push({ title, url, summary });
-
-        docsFullContent += `## Document: ${title}\nLink: ${url}\n\n${contentBody}\n\n---\n\n`;
       });
 
       // 4. Scan Prompts (src/data/prompt_{locale}.json)
@@ -116,7 +113,6 @@ module.exports = function (context, options) {
       }
 
       let promptsList = [];
-      let promptsFullContent = "";
 
       if (fs.existsSync(promptsPath)) {
         try {
@@ -158,8 +154,6 @@ module.exports = function (context, options) {
             }
 
             promptsList.push({ title, url, desc });
-
-            promptsFullContent += `## Prompt: ${title}\nLink: ${url}\n> ${desc}\n\n\`\`\`\n${promptText}\n\`\`\`\n\n---\n\n`;
           });
         } catch (e) {
           console.error(`[GEO] Error reading prompts json (${promptsPath}):`, e);

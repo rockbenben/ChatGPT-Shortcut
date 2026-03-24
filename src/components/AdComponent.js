@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
+let adScriptInjected = false;
+
 const AdComponent = ({ type = "default", className = "", style = {} }) => {
   const [shouldLoad, setShouldLoad] = useState(false);
   const containerRef = useRef(null);
@@ -32,7 +34,8 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
     if (!shouldLoad) return;
 
     try {
-      if (!window.adsbygoogle) {
+      if (!adScriptInjected) {
+        adScriptInjected = true;
         const script = document.createElement("script");
         script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7585955822109216";
         script.async = true;
