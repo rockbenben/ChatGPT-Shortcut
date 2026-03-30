@@ -574,33 +574,43 @@ const ShowcaseContent: React.FC = () => {
   const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<any>({});
-  const [viewMode, setViewMode] = useState<ViewMode>("collection");
+  // 同步初始化视图模式（URL > localStorage > 默认值），避免闪烁
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    if (!ExecutionEnvironment.canUseDOM) return "collection";
+
+    const params = new URLSearchParams(window.location.search);
+    const urlView = params.get("view");
+    if (urlView === "explore" || urlView === "collection") return urlView as ViewMode;
+
+    try {
+      const savedView = localStorage.getItem("preferredViewMode");
+      if (savedView === "explore" || savedView === "collection") return savedView as ViewMode;
+    } catch {}
+
+    // 无显式偏好时，根据缓存的用户数据判断：有内容则 collection，否则 explore
+    const cachedAuth = getCache("user_auth");
+    if (cachedAuth?.data?.items?.length > 0) return "collection";
+
+    return "explore";
+  });
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // 初始化视图模式（优先级：URL > localStorage > 默认值）
+  // 用户数据加载后，根据最新数据修正视图模式（处理缓存与实际数据不一致的情况）
   useEffect(() => {
     if (!userAuth || authLoading) return;
+    if (!ExecutionEnvironment.canUseDOM) return;
 
-    // 从 URL 读取视图参数
-    if (ExecutionEnvironment.canUseDOM) {
-      const params = new URLSearchParams(window.location.search);
-      const urlView = params.get("view");
+    // 有显式偏好（URL 或 localStorage）时不覆盖
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("view") === "explore" || params.get("view") === "collection") return;
+    try {
+      const savedView = localStorage.getItem("preferredViewMode");
+      if (savedView === "explore" || savedView === "collection") return;
+    } catch {}
 
-      if (urlView === "explore" || urlView === "collection") {
-        setViewMode(urlView as ViewMode);
-        return;
-      }
-
-      // 从 localStorage 读取用户偏好
-      try {
-        const savedView = localStorage.getItem("preferredViewMode");
-        if (savedView === "explore" || savedView === "collection") {
-          setViewMode(savedView as ViewMode);
-        }
-      } catch (error) {
-        console.error("Failed to read view preference:", error);
-      }
-    }
+    // 无偏好时：有内容显示 collection，无内容显示 explore
+    const items = userAuth?.data?.items;
+    setViewMode(items && items.length > 0 ? "collection" : "explore");
   }, [userAuth, authLoading]);
 
   // 切换视图模式的处理函数
