@@ -149,6 +149,10 @@ const config = {
                 href: "https://tools.newzone.top/",
               },
               {
+                label: "LegendTalk",
+                href: "https://talk.newzone.top/",
+              },
+              {
                 label: "IMGPrompt",
                 href: "https://prompt.newzone.top/app",
               },
