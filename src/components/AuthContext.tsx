@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, startTransition } from "react";
-import { getMySpace, clearMySpaceCache } from "@site/src/api";
+import { getMySpace, clearMySpaceCache, getPrompts } from "@site/src/api";
 import { deriveLoves, deriveCommLoves, deriveUserprompts } from "@site/src/utils/myspaceUtils";
 import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 
@@ -104,6 +104,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         },
         userprompts: deriveUserprompts(validItems), // ← 使用 validItems
       };
+
+      // 预取提示词详情，消除 MySpace 的请求瀑布流
+      // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
+      const promptIds = validItems.filter((i) => i.type === "prompt").map((i) => i.id);
+      const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
+      if (promptIds.length > 0 || commuIds.length > 0) {
+        try {
+          await withTimeout(
+            Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
+            8_000,
+            "prefetch",
+          );
+        } catch {
+          // 预取超时或失败不阻塞，MySpace 挂载时会重新获取
+        }
+      }
 
       const newUserAuth = { data: enrichedData };
       startTransition(() => setUserAuth(newUserAuth));

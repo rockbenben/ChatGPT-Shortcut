@@ -261,6 +261,13 @@ const TagManagerModal: React.FC<{
   );
 };
 
+// ==================== 模块级缓存（跨挂载保持，用于视图切换时即时显示） ====================
+let _spaceItemsCache: {
+  items: any[];
+  tags: CustomTag[];
+  ref: { userId: number; hash: string; structuralHash: string };
+} | null = null;
+
 // ==================== 主组件 ====================
 
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
@@ -272,12 +279,18 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
-  // 移除本地缓存，统一使用 AuthContext 的数据
-  const [spaceItems, setSpaceItems] = useState<any[]>([]);
+  // 从模块缓存初始化（仅同一用户且数据结构未变时有效），避免 explore→collection 切换时重新加载
+  // 需要验证结构哈希：如果用户在 explore 视图中添加/删除了收藏，缓存就失效
+  const cachedUserId = userAuth?.data?.id;
+  const currentItems = userAuth?.data?.items || [];
+  const initStructuralHash = currentItems.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
+  const validCache = _spaceItemsCache && _spaceItemsCache.ref?.userId === cachedUserId && _spaceItemsCache.ref?.structuralHash === initStructuralHash;
+
+  const [spaceItems, setSpaceItems] = useState<any[]>(validCache ? _spaceItemsCache!.items : []);
   const [dataProcessing, setDataProcessing] = useState(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [customTags, setCustomTags] = useState<CustomTag[]>([]);
+  const [customTags, setCustomTags] = useState<CustomTag[]>(validCache ? _spaceItemsCache!.tags : []);
   const [tagManagerOpen, setTagManagerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -291,8 +304,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
 
   // 跟踪已加载的用户数据，避免重复加载
-  // 包含 userId 和 hash，只有两者都匹配且 spaceItems 有数据时才跳过加载
-  const lastLoadedRef = useRef<{ userId: number; hash: string } | null>(null);
+  const lastLoadedRef = useRef<{ userId: number; hash: string; structuralHash: string } | null>(validCache ? _spaceItemsCache!.ref : null);
 
   // 配置拖拽传感器
   const sensors = useSensors(
@@ -309,35 +321,42 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       return;
     }
 
-    // 计算 items 的 hash（用于检测实际的数据变化）
     const items = userAuth.data.items || [];
-    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}_${item.updatedAt || ""}`).join(",");
     const currentUserId = userAuth.data.id;
+
+    // 结构哈希（增删/排序变化）与完整哈希（含 updatedAt）分离
+    const structuralHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
+    const currentHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}_${item.updatedAt || ""}`).join(",");
 
     // 用户切换时，重置状态避免显示上一个用户的数据
     if (lastLoadedRef.current?.userId !== currentUserId) {
       lastLoadedRef.current = null;
+      _spaceItemsCache = null;
       setSpaceItems([]);
     }
 
-    // 只有在已加载相同数据且 spaceItems 有内容时才跳过重新加载
-    // 关键修复：添加 spaceItems.length > 0 检查，防止数据为空时跳过加载
+    // 完全相同（含 updatedAt）：跳过
     if (lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.hash === currentHash && spaceItems.length > 0) {
       setDataProcessing(false);
       return;
     }
+
+    // 结构不变且已有数据时，静默刷新（不显示骨架屏）
+    const isSilentRefresh = lastLoadedRef.current?.userId === currentUserId && lastLoadedRef.current?.structuralHash === structuralHash && spaceItems.length > 0;
 
     let isMounted = true;
 
     const fetchData = async () => {
       if (!userAuth?.data) return;
 
-      setDataProcessing(true);
+      // 仅在首次加载或结构变化时显示骨架屏
+      if (!isSilentRefresh) {
+        setDataProcessing(true);
+      }
+
       try {
-        // 直接使用 AuthContext 提供的 items（后端已排序，AuthProvider 已过滤）
         const { items, customTags: tagsArray } = userAuth.data;
 
-        // 设置自定义标签
         if (isMounted) {
           setCustomTags(tagsArray || []);
         }
@@ -347,7 +366,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const cardIds = items.filter((item) => item.source === "card").map((item) => item.id);
         const commuIds = items.filter((item) => item.source === "community").map((item) => item.id);
 
-        // 批量获取详细数据
+        // 批量获取详细数据（AuthProvider 已预取，大部分会命中缓存）
         const [userPromptsData, cardsData, commusData] = await Promise.all([
           promptIds.length > 0 ? getPrompts("userprompts", promptIds) : Promise.resolve([]),
           cardIds.length > 0 ? getPrompts("cards", cardIds, currentLanguage) : Promise.resolve([]),
@@ -387,11 +406,12 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
         if (isMounted) {
           setSpaceItems(allItems);
-          // 更新已加载标记，记录用户 ID 和数据 hash
-          lastLoadedRef.current = { userId: currentUserId, hash: currentHash };
-          // 不再缓存 myspace_items，统一使用 AuthContext 的 user_auth 缓存
+          const newRef = { userId: currentUserId, hash: currentHash, structuralHash };
+          lastLoadedRef.current = newRef;
 
-          // 通知父组件数据已加载（使用实际获取到数据的数量）
+          // 更新模块级缓存，供下次挂载时即时显示
+          _spaceItemsCache = { items: allItems, tags: tagsArray || [], ref: newRef };
+
           if (onDataLoaded) {
             const actualPrompts = allItems.filter((item) => item.type === "prompt").length;
             const actualFavorites = allItems.filter((item) => item.type === "favorite").length;
