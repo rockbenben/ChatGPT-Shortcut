@@ -1011,7 +1011,7 @@
     "message": "Tags zuweisen"
   },
   "prompt.tokenDanger": {
-    "message": "Der Prompt ist zu lang; es wird dringend empfohlen, ihn in mehrere Prompts aufzuteilen."
+    "message": "Der Prompt ist sehr lang und kann schwer zu teilen oder wiederzuverwenden sein. Erwägen Sie eine Aufteilung."
   },
   "prompt.tokenWarning": {
     "message": "Der Prompt ist ziemlich lang; erwägen Sie eine Kürzung oder Aufteilung."

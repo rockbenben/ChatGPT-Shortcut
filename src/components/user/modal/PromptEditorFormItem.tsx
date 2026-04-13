@@ -3,12 +3,12 @@ import { useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { green, blue, orange, red } from "@ant-design/colors";
 
-// Token 阈值设计（基于业界最佳实践）
-const OPTIMAL_LIMIT = 1500; // 最佳：精炼高效
-const RECOMMEND_LIMIT = 2500; // 建议：适中，可考虑精简
-const WARNING_LIMIT = 3400; // 偏长：建议拆分
-const DANGER_LIMIT = 3800; // 接近4K上限：警告
-const SAFE_CHAR_LIMIT = 20000;
+// Token 阈值设计（基于现代大模型 128K+ 上下文窗口）
+const OPTIMAL_LIMIT = 2500; // 常规提示词
+const RECOMMEND_LIMIT = 5000; // 复杂提示词（含示例/多步指令）
+const WARNING_LIMIT = 7500; // 偏长，建议精简
+const DANGER_LIMIT = 10000; // 过长，建议拆分
+const SAFE_CHAR_LIMIT = 40000;
 
 const estimateTokens = (text: string): number => {
   let tokens = 0;
@@ -72,7 +72,7 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
       {showWarning && (
         <Alert
           type={isDanger ? "error" : "warning"}
-          title={isDanger ? <Translate id="prompt.tokenDanger">提示词过长，强烈建议拆分为多个 Prompt</Translate> : <Translate id="prompt.tokenWarning">提示词较长，建议精简或拆分</Translate>}
+          title={isDanger ? <Translate id="prompt.tokenDanger">提示词很长，不便于分享和复用，建议拆分</Translate> : <Translate id="prompt.tokenWarning">提示词较长，建议精简或拆分</Translate>}
           style={{ marginTop: 20 }}
           showIcon
           banner

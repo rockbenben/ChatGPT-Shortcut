@@ -744,7 +744,7 @@
     "message": "Masukkan konten prompt detail di sini..."
   },
   "prompt.tokenDanger": {
-    "message": "Prompt terlalu panjang, sangat disarankan untuk membagi menjadi beberapa Prompt"
+    "message": "Prompt sangat panjang dan mungkin sulit untuk dibagikan atau digunakan kembali. Pertimbangkan untuk membaginya."
   },
   "prompt.tokenWarning": {
     "message": "Prompt cukup panjang, disarankan untuk mempersingkat atau membagi"

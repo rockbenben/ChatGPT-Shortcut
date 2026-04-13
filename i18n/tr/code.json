@@ -744,7 +744,7 @@
     "message": "Ayrıntılı prompt içeriğini buraya girin..."
   },
   "prompt.tokenDanger": {
-    "message": "Prompt çok uzun, birden fazla Prompt'a bölmenizi şiddetle tavsiye ederiz"
+    "message": "Prompt çok uzun, paylaşım ve yeniden kullanım için uygun olmayabilir. Bölmeyi düşünün."
   },
   "prompt.tokenWarning": {
     "message": "Prompt oldukça uzun, kısaltmanız veya bölmenizi öneririz"

@@ -1011,7 +1011,7 @@
     "message": "Gán Thẻ"
   },
   "prompt.tokenDanger": {
-    "message": "Prompt quá dài; đề nghị chia thành nhiều prompt."
+    "message": "Prompt rất dài, có thể khó chia sẻ và tái sử dụng. Hãy cân nhắc chia nhỏ."
   },
   "prompt.tokenWarning": {
     "message": "Prompt khá dài; cân nhắc rút ngắn hoặc chia nhỏ."

@@ -1011,7 +1011,7 @@
     "message": "Attribuer des tags"
   },
   "prompt.tokenDanger": {
-    "message": "Le prompt est trop long ; il est fortement recommandé de le diviser en plusieurs prompts."
+    "message": "Le prompt est très long et peut être difficile à partager ou réutiliser. Envisagez de le diviser."
   },
   "prompt.tokenWarning": {
     "message": "Le prompt est assez long ; envisagez de le raccourcir ou de le diviser."
