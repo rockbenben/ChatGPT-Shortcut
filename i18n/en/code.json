@@ -1011,7 +1011,7 @@
     "message": "Assign Tags"
   },
   "prompt.tokenDanger": {
-    "message": "Prompt is too long; strongly suggest splitting into multiple prompts."
+    "message": "Prompt is very long and may be hard to share or reuse. Consider splitting."
   },
   "prompt.tokenWarning": {
     "message": "Prompt is quite long; consider shortening or splitting."

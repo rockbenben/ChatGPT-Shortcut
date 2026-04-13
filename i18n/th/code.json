@@ -744,7 +744,7 @@
     "message": "พิมพ์เนื้อหา prompt โดยละเอียดที่นี่..."
   },
   "prompt.tokenDanger": {
-    "message": "Prompt ยาวเกินไป แนะนำอย่างยิ่งให้แบ่งออกเป็นหลาย Prompt"
+    "message": "Prompt ยาวมาก อาจไม่สะดวกในการแชร์และนำกลับมาใช้ใหม่ แนะนำให้แบ่ง"
   },
   "prompt.tokenWarning": {
     "message": "Prompt ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"

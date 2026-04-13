@@ -58,5 +58,9 @@
   "item.label.QQ 群": {
     "message": "QQ 그룹",
     "description": "Navbar item with label QQ 群"
+  },
+  "item.label.LegendTalk": {
+    "message": "LegendTalk",
+    "description": "Navbar item with label LegendTalk"
   }
 }

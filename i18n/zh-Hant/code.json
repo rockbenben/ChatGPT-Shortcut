@@ -744,7 +744,7 @@
     "message": "在此輸入詳細的提示詞內容..."
   },
   "prompt.tokenDanger": {
-    "message": "提示詞過長，強烈建議拆分為多個 Prompt"
+    "message": "提示詞很長，不便於分享和複用，建議拆分"
   },
   "prompt.tokenWarning": {
     "message": "提示詞較長，建議精簡或拆分"
