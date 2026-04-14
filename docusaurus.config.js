@@ -102,7 +102,13 @@ const config = {
       }),
     },
   ],
-  scripts: [],
+  scripts: [
+    {
+      src: "https://stats.newzone.top:9003/script.js",
+      defer: true,
+      "data-website-id": "e6e2d2a1-3859-48c6-85a3-3f6f4480d93e",
+    },
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
