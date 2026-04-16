@@ -106,7 +106,7 @@ const config = {
       attributes: {
         defer: "true",
         src: "https://s.newzone.top/tracker.js",
-        "data-website-id": "87dc8cf3-57d8-4b62-ba78-80ea78ea60e1",
+        "data-website-id": "680f4413-ce21-4754-a7d5-45e180e8cf69",
       },
     },
   ],
