@@ -4,8 +4,9 @@ import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { useHistory } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
 import { green, red, blue, cyan, grey } from "@ant-design/colors";
@@ -30,7 +31,7 @@ import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList } from "@site/src/data/tags";
-import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS } from "@site/src/data/constants";
+import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -574,33 +575,43 @@ const ShowcaseContent: React.FC = () => {
   const history = useHistory();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<any>({});
-  const [viewMode, setViewMode] = useState<ViewMode>("collection");
+  // 同步初始化视图模式（URL > localStorage > 默认值），避免闪烁
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    if (!ExecutionEnvironment.canUseDOM) return "collection";
+
+    const params = new URLSearchParams(window.location.search);
+    const urlView = params.get("view");
+    if (urlView === "explore" || urlView === "collection") return urlView as ViewMode;
+
+    try {
+      const savedView = localStorage.getItem("preferredViewMode");
+      if (savedView === "explore" || savedView === "collection") return savedView as ViewMode;
+    } catch {}
+
+    // 无显式偏好时，根据缓存的用户数据判断：有内容则 collection，否则 explore
+    const cachedAuth = getCache("user_auth");
+    if (cachedAuth?.data?.items?.length > 0) return "collection";
+
+    return "explore";
+  });
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // 初始化视图模式（优先级：URL > localStorage > 默认值）
+  // 用户数据加载后，根据最新数据修正视图模式（处理缓存与实际数据不一致的情况）
   useEffect(() => {
     if (!userAuth || authLoading) return;
+    if (!ExecutionEnvironment.canUseDOM) return;
 
-    // 从 URL 读取视图参数
-    if (ExecutionEnvironment.canUseDOM) {
-      const params = new URLSearchParams(window.location.search);
-      const urlView = params.get("view");
+    // 有显式偏好（URL 或 localStorage）时不覆盖
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("view") === "explore" || params.get("view") === "collection") return;
+    try {
+      const savedView = localStorage.getItem("preferredViewMode");
+      if (savedView === "explore" || savedView === "collection") return;
+    } catch {}
 
-      if (urlView === "explore" || urlView === "collection") {
-        setViewMode(urlView as ViewMode);
-        return;
-      }
-
-      // 从 localStorage 读取用户偏好
-      try {
-        const savedView = localStorage.getItem("preferredViewMode");
-        if (savedView === "explore" || savedView === "collection") {
-          setViewMode(savedView as ViewMode);
-        }
-      } catch (error) {
-        console.error("Failed to read view preference:", error);
-      }
-    }
+    // 无偏好时：有内容显示 collection，无内容显示 explore
+    const items = userAuth?.data?.items;
+    setViewMode(items && items.length > 0 ? "collection" : "explore");
   }, [userAuth, authLoading]);
 
   // 切换视图模式的处理函数
@@ -674,6 +685,7 @@ const ShowcaseContent: React.FC = () => {
 
 export default function Showcase(): React.ReactElement {
   const [shareUrl, setShareUrl] = useState("");
+  const { siteConfig, i18n } = useDocusaurusContext();
 
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
@@ -682,8 +694,127 @@ export default function Showcase(): React.ReactElement {
     }
   }, []);
 
+  // SSR 安全的站点级 schema.org
+  // - WebSite + SearchAction：让 ChatGPT/Perplexity/Google 在 SERP 直接激活站内搜索框
+  // - Organization + sameAs：建立知识图谱实体关联（GitHub repo）
+  // - SoftwareApplication：让 LLM 在"工具推荐"答案中考虑 AiShort
+  // - FAQPage：让 LLM 直接抓取常见问答
+  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+  const homeUrl = `${siteConfig.url}${localePrefix}/`;
+  const orgId = `${siteConfig.url}/#organization`;
+
+  // FAQ 内容均基于项目自身 README / docs 中的事实信息（非营销卖点、非推测）
+  // 通过 translate() 在 build 时按 locale 渲染
+  const faqs = [
+    {
+      q: translate({ id: "faq.q1", message: 'AiShort 是什么？为什么叫 "ChatGPT Shortcut"？' }),
+      a: translate({
+        id: "faq.a1",
+        message:
+          "AiShort（项目原名 ChatGPT Shortcut）是一个开源的 AI 提示词管理工具，提供精选的提示词列表帮你快速找到适用于不同场景的指令。项目最初聚焦 ChatGPT，所以代码仓库名沿用 ChatGPT-Shortcut；目前已支持所有主流大语言模型（含 Claude、Gemini、DeepSeek、Kimi 等），名字保留是出于历史延续。",
+      }),
+    },
+    {
+      q: translate({ id: "faq.q2", message: "怎么用 AiShort？" }),
+      a: translate({
+        id: "faq.a2",
+        message:
+          "三步完成：(1) 在首页搜索或按标签浏览所需提示词；(2) 点击卡片「复制」按钮；(3) 粘贴到任意 AI 对话工具，按提示词指引补充你的具体问题。",
+      }),
+    },
+    {
+      q: translate({ id: "faq.q3", message: "只能用于 ChatGPT 吗？支持其他 AI 模型吗？" }),
+      a: translate({
+        id: "faq.a3",
+        message:
+          "提示词与模型无关，可用于所有主流大语言模型。国际模型：ChatGPT、Claude、Gemini、Grok。中国模型：DeepSeek、通义千问、文心一言、豆包、Kimi、智谱清言、讯飞星火、腾讯元宝。API 平台：OpenRouter、硅基流动、Groq。",
+      }),
+    },
+    {
+      q: translate({ id: "faq.q4", message: "AiShort 跟 Awesome ChatGPT Prompts 等开源提示词集有什么区别？" }),
+      a: translate({
+        id: "faq.a4",
+        message:
+          "Awesome ChatGPT Prompts 是 AiShort 的内容来源之一，但 AiShort 在其基础上提供了：图形化浏览界面与标签筛选、18 种语言翻译、个人提示词管理（收藏/排序/标签）、社区分享与投票、Chrome/Edge/Firefox 浏览器扩展（Alt+Shift+S 唤出侧边栏）、JSON 数据导出备份、企业内网离线部署版。",
+      }),
+    },
+    {
+      q: translate({ id: "faq.q5", message: "AiShort 免费吗？需要注册吗？" }),
+      a: translate({
+        id: "faq.a5",
+        message:
+          "完全免费且开源（代码托管在 GitHub）。浏览、搜索、复制提示词无需注册。注册后可解锁：收藏与拖拽排序、自定义标签、创建并管理个人提示词、社区分享与投票、JSON 导出备份、跨设备同步。",
+      }),
+    },
+    {
+      q: translate({ id: "faq.q6", message: "AiShort 可以在企业内网或离线环境使用吗？" }),
+      a: translate({
+        id: "faq.a6",
+        message:
+          "提供独立的离线部署版，专为企业内网、政务网络等无法访问外网的环境设计。无需后端服务器和用户账号，部署后开箱即用，保留浏览、搜索、收藏、自定义提示词等核心功能，数据格式与在线版互通。",
+      }),
+    },
+  ];
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        url: homeUrl,
+        name: SITE_NAME,
+        description: DESCRIPTION,
+        inLanguage: i18n.currentLocale,
+        publisher: { "@id": orgId },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteConfig.url}${localePrefix}/?name={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": orgId,
+        url: siteConfig.url,
+        name: SITE_NAME,
+        logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
+        sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${siteConfig.url}/#softwareapplication`,
+        name: SITE_NAME,
+        url: homeUrl,
+        description: DESCRIPTION,
+        applicationCategory: "ProductivityApplication",
+        operatingSystem: "Web, Chrome, Edge, Firefox",
+        inLanguage: i18n.currentLocale,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        publisher: { "@id": orgId },
+      },
+      {
+        "@type": "FAQPage",
+        inLanguage: i18n.currentLocale,
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
+      <Head>
+        <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title={SITE_NAME} />
+        <link rel="llms-txt" href="/llms.txt" />
+        <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+      </Head>
       <main className="margin-vert--md">
         <AuthProvider>
           <ShowcaseContent />

@@ -2,8 +2,10 @@ import React, { Suspense } from "react";
 import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Statistic, Divider, Breadcrumb } from "antd";
 import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 // Comments removed for local version
@@ -14,6 +16,7 @@ const { Title, Text } = Typography;
 
 function PromptPage({ prompt, currentLanguage }) {
   const { copied, updateCopy } = useCopyToClipboard();
+  const { siteConfig, i18n } = useDocusaurusContext();
 
   const promptInfo = prompt[currentLanguage] || prompt;
 
@@ -29,8 +32,55 @@ function PromptPage({ prompt, currentLanguage }) {
   const seoTitle = prompt.metaTitle?.trim() || `${title}-${remark}`;
   const seoDescription = prompt.metaDescription?.trim() || `${promptInfo.description || ""} ${promptInfo.prompt || ""}`.trim();
 
+  // SSR 安全的绝对 URL（不依赖 window）
+  const localePrefix = currentLanguage && currentLanguage !== i18n.defaultLocale ? `/${currentLanguage}` : "";
+  const canonicalUrl = `${siteConfig.url}${localePrefix}/prompt/${prompt.id}`;
+
+  // schema.org Article + BreadcrumbList JSON-LD（提升 LLM/搜索引擎引用率）
+  const homeUrl = `${siteConfig.url}${localePrefix}/`;
+  // datePublished/dateModified 用 build time，避免 Google "missing field" 警告
+  const buildDate = (siteConfig.customFields?.buildDate as string) || new Date().toISOString();
+  // 通过 @id 引用主页定义的 Organization / WebSite 实体（关联知识图谱）
+  const orgId = `${siteConfig.url}/#organization`;
+  const websiteId = `${siteConfig.url}/#website`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: seoTitle,
+        description: seoDescription,
+        url: canonicalUrl,
+        inLanguage: currentLanguage,
+        datePublished: buildDate,
+        dateModified: buildDate,
+        image: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
+        keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
+        author: { "@id": orgId },
+        publisher: { "@id": orgId },
+        isPartOf: { "@id": websiteId },
+        mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl },
+          { "@type": "ListItem", position: 2, name: title, item: canonicalUrl },
+        ],
+      },
+    ],
+  };
+
   return (
     <Layout title={seoTitle} description={seoDescription}>
+      <Head>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="article:section" content="AI Prompt" />
+        {Array.isArray(tags) && tags.map((tag) => <meta key={tag} property="article:tag" content={tag} />)}
+        <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      </Head>
       <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16}>
           <Flex vertical gap="large" style={{ minHeight: 400 }}>
@@ -167,7 +217,6 @@ function PromptPage({ prompt, currentLanguage }) {
                 </Flex>
               </Flex>
             </Card>
-
           </Flex>
         </Col>
       </Row>

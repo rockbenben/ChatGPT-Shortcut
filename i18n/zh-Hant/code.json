@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "未找到匹配結果，為你推薦："
+  },
+  "faq.q1": {
+    "message": "AiShort 是什麼？為什麼叫做 \"ChatGPT Shortcut\"？"
+  },
+  "faq.a1": {
+    "message": "AiShort（專案原名 ChatGPT Shortcut）是一個開源的 AI 提示詞管理工具，提供精選的提示詞列表幫你快速找到適用於不同場景的指令。專案最初聚焦 ChatGPT，所以程式碼倉庫名沿用 ChatGPT-Shortcut；目前已支援所有主流大語言模型（含 Claude、Gemini、DeepSeek、Kimi 等），名字保留是出於歷史延續。"
+  },
+  "faq.q2": {
+    "message": "怎麼使用 AiShort？"
+  },
+  "faq.a2": {
+    "message": "三步完成：(1) 在首頁搜尋或按標籤瀏覽所需提示詞；(2) 點擊卡片「複製」按鈕；(3) 貼到任意 AI 對話工具，按提示詞指引補充你的具體問題。"
+  },
+  "faq.q3": {
+    "message": "只能用於 ChatGPT 嗎？支援其他 AI 模型嗎？"
+  },
+  "faq.a3": {
+    "message": "提示詞與模型無關，可用於所有主流大語言模型。國際模型：ChatGPT、Claude、Gemini、Grok。中國模型：DeepSeek、通義千問、文心一言、豆包、Kimi、智譜清言、訊飛星火、騰訊元寶。API 平台：OpenRouter、矽基流動、Groq。"
+  },
+  "faq.q4": {
+    "message": "AiShort 跟 Awesome ChatGPT Prompts 等開源提示詞集有什麼區別？"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts 是 AiShort 的內容來源之一，但 AiShort 在其基礎上提供了：圖形化瀏覽介面與標籤篩選、18 種語言翻譯、個人提示詞管理（收藏/排序/標籤）、社群分享與投票、Chrome/Edge/Firefox 瀏覽器擴充（Alt+Shift+S 喚出側邊欄）、JSON 資料匯出備份、企業內網離線部署版。"
+  },
+  "faq.q5": {
+    "message": "AiShort 免費嗎？需要註冊嗎？"
+  },
+  "faq.a5": {
+    "message": "完全免費且開源（程式碼託管在 GitHub）。瀏覽、搜尋、複製提示詞無需註冊。註冊後可解鎖：收藏與拖拽排序、自訂標籤、建立並管理個人提示詞、社群分享與投票、JSON 匯出備份、跨裝置同步。"
+  },
+  "faq.q6": {
+    "message": "AiShort 可以在企業內網或離線環境使用嗎？"
+  },
+  "faq.a6": {
+    "message": "提供獨立的離線部署版，專為企業內網、政務網路等無法存取外網的環境設計。無需後端伺服器和使用者帳號，部署後開箱即用，保留瀏覽、搜尋、收藏、自訂提示詞等核心功能，資料格式與線上版互通。"
   }
 }

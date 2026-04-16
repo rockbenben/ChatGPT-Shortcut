@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "일치하는 결과가 없습니다. 추천："
+  },
+  "faq.q1": {
+    "message": "AiShort은 무엇인가요? 왜 \"ChatGPT Shortcut\"이라고 불리나요?"
+  },
+  "faq.a1": {
+    "message": "AiShort(원래 이름 ChatGPT Shortcut)는 다양한 시나리오에 적합한 지침을 빠르게 찾을 수 있도록 엄선된 프롬프트 목록을 제공하는 오픈소스 AI 프롬프트 관리 도구입니다. 프로젝트는 처음에 ChatGPT에 초점을 맞췄기 때문에 GitHub 저장소 이름은 ChatGPT-Shortcut으로 유지되어 있습니다. 현재는 Claude, Gemini, DeepSeek, Kimi 등 모든 주요 대규모 언어 모델을 지원하며, 이름은 역사적 연속성을 위해 유지되고 있습니다."
+  },
+  "faq.q2": {
+    "message": "AiShort을 어떻게 사용하나요?"
+  },
+  "faq.a2": {
+    "message": "3단계: (1) 홈페이지에서 프롬프트를 검색하거나 태그로 탐색; (2) 카드의 \"복사\" 버튼 클릭; (3) 임의의 AI 채팅 도구에 붙여넣고 프롬프트의 안내에 따라 구체적인 질문을 추가합니다."
+  },
+  "faq.q3": {
+    "message": "ChatGPT 전용인가요? 다른 AI 모델도 지원하나요?"
+  },
+  "faq.a3": {
+    "message": "프롬프트는 모델에 종속되지 않으며 모든 주요 대규모 언어 모델에서 사용할 수 있습니다. 국제 모델: ChatGPT, Claude, Gemini, Grok. 중국 모델: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. API 플랫폼: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "AiShort은 Awesome ChatGPT Prompts 같은 오픈소스 프롬프트 모음과 어떻게 다른가요?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts는 AiShort의 콘텐츠 출처 중 하나입니다. AiShort는 이를 기반으로 태그 필터링이 있는 그래픽 탐색 인터페이스, 18개 언어 번역, 개인 프롬프트 관리(즐겨찾기/정렬/태그), 커뮤니티 공유 및 투표, Chrome/Edge/Firefox 브라우저 확장(Alt+Shift+S로 사이드바 호출), JSON 데이터 내보내기 및 백업, 기업 인트라넷용 오프라인 배포 버전을 제공합니다."
+  },
+  "faq.q5": {
+    "message": "AiShort은 무료인가요? 등록이 필요한가요?"
+  },
+  "faq.a5": {
+    "message": "완전 무료 오픈소스(GitHub에 코드 호스팅). 프롬프트 탐색, 검색, 복사는 등록 없이 가능합니다. 등록하면 드래그 앤 드롭 정렬을 지원하는 즐겨찾기, 사용자 정의 태그, 개인 프롬프트 작성 및 관리, 커뮤니티 공유 및 투표, JSON 내보내기 및 백업, 디바이스 간 동기화를 사용할 수 있습니다."
+  },
+  "faq.q6": {
+    "message": "AiShort을 기업 인트라넷이나 오프라인 환경에서 사용할 수 있나요?"
+  },
+  "faq.a6": {
+    "message": "기업 인트라넷, 정부 네트워크 등 외부 네트워크 접근이 불가능한 환경을 위해 별도의 오프라인 배포 버전을 제공합니다. 백엔드 서버나 사용자 계정 없이 배포 후 바로 사용할 수 있으며, 탐색, 검색, 즐겨찾기, 사용자 정의 프롬프트 등 핵심 기능을 유지하고 데이터 형식은 온라인 버전과 호환됩니다."
   }
 }
