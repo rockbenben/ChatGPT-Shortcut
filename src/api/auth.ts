@@ -5,9 +5,17 @@
  */
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { apiClient, persistAuthToken } from "./client";
+import { apiClient, persistAuthToken, clearUserProfileCache } from "./client";
 import { API_URL, GAUTH_API_BASE, USE_LEGACY_GAUTH } from "./config";
 import { clearMySpaceCache } from "./myspace";
+
+/**
+ * 登录后清除所有用户级缓存（旧账号残留 ETag 可能与新账号巧合命中，导致数据泄漏）
+ */
+const clearUserCachesOnLogin = () => {
+  clearUserProfileCache();
+  clearMySpaceCache();
+};
 
 // Google OAuth 路径配置
 const STRAPI_CALLBACK_BASE = API_URL.replace(/\/api$/, ""); // 回调和用户数据请求使用主 API(只替换最后出现的 /api)
@@ -49,7 +57,7 @@ export async function login(values: { username: string; password: string }) {
     identifier: values.username,
     password: values.password,
   });
-  clearMySpaceCache(); // 清除旧用户的 MySpace 缓存
+  clearUserCachesOnLogin(); // 清除旧用户的 USER_PROFILE 与 MySpace 缓存
   return response;
 }
 
@@ -121,7 +129,7 @@ export async function loginWithToken(loginToken: string) {
   try {
     const response = await apiClient.get(`/passwordless/login`, { params: { loginToken } });
     persistAuthToken(response.data.jwt);
-    clearMySpaceCache(); // 清除旧用户的 MySpace 缓存
+    clearUserCachesOnLogin(); // 清除旧用户的 USER_PROFILE 与 MySpace 缓存
     return response.data;
   } catch (error) {
     console.error("Failed to login with token:", error);
@@ -261,7 +269,7 @@ export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAut
       });
       const user = userResponse.data;
 
-      clearMySpaceCache();
+      clearUserCachesOnLogin();
       return { token, user };
     } catch (error) {
       console.error("Error authenticating user with Google:", error);
@@ -279,12 +287,12 @@ export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAut
     if (token) {
       const userFromPayload = coerceUser(payload.user);
       if (userFromPayload) {
-        clearMySpaceCache();
+        clearUserCachesOnLogin();
         return { token, user: userFromPayload };
       }
 
       const user = await getAuthenticatedUserDetails(token);
-      clearMySpaceCache();
+      clearUserCachesOnLogin();
       return { token, user };
     }
   }
@@ -319,7 +327,7 @@ export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAut
       throw new Error("Invalid response from Strapi Google callback.");
     }
 
-    clearMySpaceCache();
+    clearUserCachesOnLogin();
     return { token: data.jwt, user: data.user };
   } catch (error) {
     console.error("Error authenticating user with Google:", error);

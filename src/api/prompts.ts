@@ -13,7 +13,6 @@ import {
   CACHE_TTL,
   CACHE_PREFIX,
   getETag,
-  removeETag,
   setCacheWithETag,
   extendCache,
   extendCacheIfNeeded,
@@ -343,19 +342,18 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
     setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
 
     // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
-    const config = cachedEtag ? { headers: { "If-None-Match": cachedEtag } } : {};
+    // 仅在 ETag 与 cachedData 同时存在时才发条件请求，避免 304 空 body 走到 fallthrough
+    const config = cachedEtag && cachedData ? { headers: { "If-None-Match": cachedEtag } } : {};
     const response = await apiClient.get(url, {
       ...config,
       validateStatus: (status) => status === 200 || status === 304,
     });
 
     // Handle 304 Not Modified
-    if (response.status === 304) {
-      if (cachedData) {
-        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-        return cachedData;
-      }
-      // Fallthrough to 200 logic if cache missing
+    // 进入此分支时 cachedData 必然存在（请求前已做过防御性同步）
+    if (response.status === 304 && cachedData) {
+      extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+      return cachedData;
     }
 
     // Handle 200 OK
@@ -407,11 +405,6 @@ export async function searchCards(tags: string[], search: string, lang: string =
     const cachedData = getCache(cacheKey);
     const cachedEtag = getETag(cacheKey);
 
-    // 防御性检查
-    if (cachedEtag && !cachedData) {
-      removeETag(cacheKey);
-    }
-
     const queryParams = new URLSearchParams();
     normalizedTags.forEach((tag) => {
       queryParams.append("tags", tag);
@@ -433,20 +426,21 @@ export async function searchCards(tags: string[], search: string, lang: string =
       });
 
       // Handle 304 Not Modified
-      if (responseIds.status === 304) {
+      // 仅在 cachedData 存在时短路返回；否则 fallthrough 到 200 处理（getPrompts 对空 ids 返回 []）
+      if (responseIds.status === 304 && cachedData) {
         extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
         return cachedData;
       }
 
       // Handle 200 OK
       const detailedCards = await getPrompts("cards", responseIds.data, lang);
-      const newEtag = responseIds.headers["etag"] || responseIds.headers["ETag"];
+      const newEtag = responseIds.headers["etag"];
       setCacheWithETag(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS, newEtag);
 
       return detailedCards;
     } catch (error) {
       // Handle 304 in catch
-      if (error?.response?.status === 304) {
+      if (error?.response?.status === 304 && cachedData) {
         extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
         return cachedData;
       }

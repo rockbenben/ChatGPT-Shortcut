@@ -2,7 +2,7 @@
  * MySpace APIs - 我的空间数据管理
  */
 import { apiClient } from "./client";
-import { getCache, setCache, removeCache, getPromptCacheKey, removeETag, CACHE_PREFIX, CACHE_TTL, extendCache, setCacheWithETag } from "@site/src/utils/cache";
+import { getCache, setCache, removeCache, getPromptCacheKey, getETag, removeETag, CACHE_PREFIX, CACHE_TTL, extendCache, setCacheWithETag } from "@site/src/utils/cache";
 
 /**
  * 获取 MySpace 完整数据（带 ETag 优化）
@@ -10,13 +10,8 @@ import { getCache, setCache, removeCache, getPromptCacheKey, removeETag, CACHE_P
  */
 export async function getMySpace() {
   const cacheKey = CACHE_PREFIX.MYSPACE;
-  const cachedEtag = getCache(`${cacheKey}_etag`);
+  const cachedEtag = getETag(cacheKey);
   const cachedData = getCache(cacheKey);
-
-  // 防御性检查：ETag 存在但数据为 null
-  if (cachedEtag && !cachedData) {
-    removeCache(`${cacheKey}_etag`);
-  }
 
   try {
     const response = await apiClient.get("/myspace", {
@@ -48,7 +43,6 @@ export async function getMySpace() {
           // If cached updatedAt differs from latest, clear the cache
           if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
             removeCache(promptCacheKey);
-            removeCache(`${promptCacheKey}_etag`);
           }
         }
       });
@@ -56,8 +50,9 @@ export async function getMySpace() {
 
     return newData;
   } catch (error) {
-    // 处理 304 在某些配置下被当作错误
-    if (error.response?.status === 304) {
+    // 处理 304 在某些配置下被当作错误（与 try 内 304 路径保持一致：续期缓存）
+    if (error.response?.status === 304 && cachedData) {
+      extendCache(cacheKey, CACHE_TTL.MYSPACE);
       return cachedData;
     }
 

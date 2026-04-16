@@ -137,16 +137,18 @@ export const getListCacheKey = (prefix, ...parts) => {
 };
 
 // ==================== ETag 缓存验证支持 ====================
+// ETag 与 cachedData 同用 lscache 存储，TTL 一致，避免出现"ETag 残留但数据已过期"的死局
 
 /**
- * 存储 ETag
+ * 存储 ETag（与对应数据用同样的 TTL）
  * @param {string} key - 缓存键
  * @param {string} etag - ETag 值
+ * @param {number} ttlMinutes - 过期时间（分钟），通常应与 setCache 的 TTL 一致
  */
-export const setETag = (key, etag) => {
+export const setETag = (key, etag, ttlMinutes) => {
   if (!canUseCache() || !etag) return;
   try {
-    localStorage.setItem(`${key}_etag`, etag);
+    lscache.set(`${key}_etag`, etag, ttlMinutes);
   } catch (e) {
     console.error("[Cache] Error setting ETag for key:", key, e);
   }
@@ -155,12 +157,12 @@ export const setETag = (key, etag) => {
 /**
  * 获取 ETag
  * @param {string} key - 缓存键
- * @returns {string|null} ETag 值
+ * @returns {string|null} ETag 值（已过期则返回 null）
  */
 export const getETag = (key) => {
   if (!canUseCache()) return null;
   try {
-    return localStorage.getItem(`${key}_etag`);
+    return lscache.get(`${key}_etag`);
   } catch (e) {
     console.error("[Cache] Error getting ETag for key:", key, e);
     return null;
@@ -174,7 +176,7 @@ export const getETag = (key) => {
 export const removeETag = (key) => {
   if (!canUseCache()) return;
   try {
-    localStorage.removeItem(`${key}_etag`);
+    lscache.remove(`${key}_etag`);
   } catch (e) {
     console.error("[Cache] Error removing ETag for key:", key, e);
   }
@@ -182,20 +184,25 @@ export const removeETag = (key) => {
 
 /**
  * 带 ETag 的缓存设置
+ * 原子语义：data 和 ETag 同时写（带相同 TTL）；服务端不返 ETag 时清除旧 ETag，避免错配
  * @param {string} key - 缓存键
  * @param {any} value - 缓存值
  * @param {number} ttlMinutes - 过期时间（分钟）
- * @param {string} etag - ETag 值
+ * @param {string} etag - ETag 值（可能为空）
  */
 export const setCacheWithETag = (key, value, ttlMinutes, etag) => {
   setCache(key, value, ttlMinutes);
   if (etag) {
-    setETag(key, etag);
+    setETag(key, etag, ttlMinutes);
+  } else {
+    // 服务端未返回 ETag 时，清除可能存在的旧 ETag，防止下次请求带旧 ETag 配新数据
+    removeETag(key);
   }
 };
 
 /**
  * 延长缓存时间（用于 304 Not Modified 响应）
+ * 同时连带延长对应的 ETag TTL；prompt-level 缓存（无 ETag）会自动 no-op
  * @param {string} key - 缓存键
  * @param {number} ttlMinutes - 新的过期时间（分钟）
  * @returns {boolean} 是否成功延长
@@ -208,6 +215,13 @@ export const extendCache = (key, ttlMinutes) => {
 
   // 重新设置缓存，更新过期时间
   setCache(key, data, ttlMinutes);
+
+  // 304 表示 ETag 仍有效，连带续期，避免 ETag 比 data 早过期
+  const etag = getETag(key);
+  if (etag) {
+    setETag(key, etag, ttlMinutes);
+  }
+
   return true;
 };
 

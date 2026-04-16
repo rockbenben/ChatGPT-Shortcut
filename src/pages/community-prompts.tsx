@@ -68,31 +68,47 @@ const CommunityPrompts = () => {
     }
   }, [location.search]);
 
+  // 用 cancelled flag 防止过期请求覆盖新的 state（快速切页/搜索/重试期间用户操作场景）
   useEffect(() => {
+    let cancelled = false;
     setLoading(true);
-    fetchData(currentPage, pageSize, sortField, sortOrder, searchTerm);
-  }, [currentPage, sortField, sortOrder, searchTerm]);
 
-  const fetchData = useCallback(
-    async (currentPage, pageSize, sortField, sortOrder, searchTerm) => {
-      try {
-        const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-        if (result && result[0].length > 0) {
-          setUserPrompts(result[0]);
-          setTotal(result[1].pagination.total);
-        } else if (result && result[0].length === 0) {
-          setUserPrompts([]);
-          setTotal(0);
-        }
-      } catch (error) {
-        console.error("Failed to fetch community prompts:", error);
-        messageApi.error("Failed to fetch data");
-      } finally {
-        setLoading(false);
+    const fetchOnce = async () => {
+      const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
+      if (cancelled) return;
+      if (result && result[0].length > 0) {
+        setUserPrompts(result[0]);
+        setTotal(result[1].pagination.total);
+      } else if (result && result[0].length === 0) {
+        setUserPrompts([]);
+        setTotal(0);
       }
-    },
-    [messageApi],
-  );
+    };
+
+    (async () => {
+      try {
+        await fetchOnce();
+      } catch (error) {
+        if (cancelled) return;
+        // 一次性重试瞬时故障（网络抖动、502、超时等）
+        try {
+          await new Promise((resolve) => setTimeout(resolve, 800));
+          if (cancelled) return;
+          await fetchOnce();
+        } catch (retryError) {
+          if (cancelled) return;
+          console.error("Failed to fetch community prompts (after retry):", retryError);
+          messageApi.error("Failed to fetch data");
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [currentPage, sortField, sortOrder, searchTerm, messageApi]);
 
   const handleBeforeSearch = useCallback(() => {
     if (!userAuth) {

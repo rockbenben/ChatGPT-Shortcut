@@ -2,7 +2,7 @@
  * Comments APIs - get and post comments
  */
 import { apiClient } from "./client";
-import { setCache, getCache, flushCacheByPrefix, getListCacheKey, CACHE_TTL, CACHE_PREFIX, getETag, removeETag, setCacheWithETag, extendCache } from "@site/src/utils/cache";
+import { setCache, getCache, flushCacheByPrefix, getListCacheKey, CACHE_TTL, CACHE_PREFIX, getETag, setCacheWithETag, extendCache } from "@site/src/utils/cache";
 
 /**
  * Clear comments cache for a specific page
@@ -19,11 +19,6 @@ export async function getComments(id: number, page: number, pageSize: number, ty
   const cacheKey = getListCacheKey(CACHE_PREFIX.COMMENTS, type, id, page, pageSize);
   const cachedData = getCache(cacheKey);
   const cachedEtag = getETag(cacheKey);
-
-  // 防御性检查：ETag 存在但数据为 null
-  if (cachedEtag && !cachedData) {
-    removeETag(cacheKey);
-  }
 
   try {
     const response = await apiClient.get(
@@ -43,7 +38,7 @@ export async function getComments(id: number, page: number, pageSize: number, ty
     }
 
     // Handle 200 OK
-    const newEtag = response.headers["etag"] || response.headers["ETag"];
+    const newEtag = response.headers["etag"];
     setCacheWithETag(cacheKey, response.data, CACHE_TTL.COMMENTS, newEtag);
     return response.data;
   } catch (error) {

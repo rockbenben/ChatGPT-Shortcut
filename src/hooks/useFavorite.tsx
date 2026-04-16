@@ -84,11 +84,6 @@ export const useFavorite = (): UseFavoriteReturn => {
         const index = currentLoves.indexOf(id);
         if (index > -1) {
           currentLoves.splice(index, 1);
-
-          if (isComm) {
-            localStorage.removeItem(`commus_${id}`);
-          }
-
           await updateFavorites(currentLoves, favoriteId, isComm);
           message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
         }

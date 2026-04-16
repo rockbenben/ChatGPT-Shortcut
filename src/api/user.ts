@@ -2,7 +2,7 @@
  * User APIs - User info, username update
  */
 import { apiClient, getAuthToken } from "./client";
-import { setCache, getCache, removeCache, CACHE_TTL, CACHE_PREFIX, getPromptCacheKey, extendCache, setCacheWithETag } from "@site/src/utils/cache";
+import { setCache, getCache, removeCache, getETag, CACHE_TTL, CACHE_PREFIX, getPromptCacheKey, extendCache, setCacheWithETag } from "@site/src/utils/cache";
 import { getPrompts } from "./prompts";
 
 /**
@@ -16,14 +16,8 @@ export async function getUserAllInfo() {
   }
 
   const cacheKey = CACHE_PREFIX.USER_PROFILE;
-  const cachedEtag = getCache(`${cacheKey}_etag`);
+  const cachedEtag = getETag(cacheKey);
   const cachedData = getCache(cacheKey);
-
-  // 安全检查：如果有 ETag 但数据为 null，清除 ETag 并重新请求
-  // 这种情况可能发生在用户清除缓存后但 ETag 未被清除时
-  if (cachedEtag && !cachedData) {
-    removeCache(`${cacheKey}_etag`);
-  }
 
   try {
     const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email&fields[2]=provider`, {
@@ -42,7 +36,7 @@ export async function getUserAllInfo() {
     }
 
     // Extract and cache new ETag
-    const newEtag = response.headers["etag"] || response.headers["ETag"];
+    const newEtag = response.headers["etag"];
     const normalizedResponse = { data: response.data };
 
     setCacheWithETag(cacheKey, normalizedResponse, CACHE_TTL.USER_PROFILE, newEtag);
@@ -62,8 +56,9 @@ export async function getUserAllInfo() {
 
     return normalizedResponse;
   } catch (error) {
-    // Handle 304 in error handler (some axios configs)
-    if (error.response?.status === 304) {
+    // Handle 304 in error handler (some axios configs) — 与 try 内 304 路径保持一致
+    if (error.response?.status === 304 && cachedData) {
+      extendCache(cacheKey, CACHE_TTL.USER_PROFILE);
       return cachedData;
     }
 

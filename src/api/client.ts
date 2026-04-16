@@ -5,7 +5,7 @@
  */
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { removeCache, CACHE_PREFIX } from "@site/src/utils/cache";
+import { removeCache, removeETag, CACHE_PREFIX } from "@site/src/utils/cache";
 import { API_URL } from "./config";
 
 // Token Management
@@ -17,11 +17,11 @@ if (ExecutionEnvironment.canUseDOM) {
 
 /**
  * 清除用户基本信息缓存（id, username, email）
- * 重要：必须同时清除 ETag，否则会导致 304 响应但数据为 null 的问题
+ * 必须同时清除 ETag，否则下次请求带旧 ETag，服务端命中可能返回旧数据
  */
 export function clearUserProfileCache() {
   removeCache(CACHE_PREFIX.USER_PROFILE);
-  removeCache(`${CACHE_PREFIX.USER_PROFILE}_etag`);
+  removeETag(CACHE_PREFIX.USER_PROFILE);
 }
 
 // 动态导入 clearMySpaceCache 以避免循环依赖
@@ -79,7 +79,9 @@ export const persistAuthToken = (token: string | null): string | null => {
 };
 
 // Create axios instance
-export const apiClient = axios.create({ baseURL: API_URL });
+// timeout: 30s 兜底防止挂起请求（移动网络、Strapi 冷启动、myspace 大数据等场景）
+// 比 AuthContext 中 withTimeout 的 12s 更大，让上层软超时优先生效
+export const apiClient = axios.create({ baseURL: API_URL, timeout: 30000 });
 
 // Request interceptor - add auth token
 apiClient.interceptors.request.use((requestConfig) => {
