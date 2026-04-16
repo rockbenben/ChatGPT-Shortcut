@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "Tidak ditemukan hasil yang cocok. Rekomendasi:"
+  },
+  "faq.q1": {
+    "message": "Apa itu AiShort? Mengapa disebut \"ChatGPT Shortcut\"?"
+  },
+  "faq.a1": {
+    "message": "AiShort (awalnya bernama ChatGPT Shortcut) adalah alat manajemen prompt AI sumber terbuka yang menyediakan daftar prompt terkurasi untuk membantu Anda menemukan instruksi dengan cepat untuk berbagai skenario. Proyek ini awalnya berfokus pada ChatGPT, sehingga nama repositori GitHub tetap ChatGPT-Shortcut; saat ini mendukung semua model bahasa besar utama (termasuk Claude, Gemini, DeepSeek, Kimi, dll.). Nama dipertahankan demi kontinuitas historis."
+  },
+  "faq.q2": {
+    "message": "Bagaimana cara menggunakan AiShort?"
+  },
+  "faq.a2": {
+    "message": "Tiga langkah: (1) Cari atau telusuri prompt berdasarkan tag di halaman beranda; (2) Klik tombol \"Salin\" pada kartu mana saja; (3) Tempel di alat obrolan AI mana saja dan tambahkan pertanyaan spesifik Anda mengikuti instruksi prompt."
+  },
+  "faq.q3": {
+    "message": "Apakah AiShort hanya untuk ChatGPT? Apakah mendukung model AI lain?"
+  },
+  "faq.a3": {
+    "message": "Prompt tidak bergantung pada model dan bekerja dengan semua model bahasa besar utama. Model internasional: ChatGPT, Claude, Gemini, Grok. Model Tiongkok: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. Platform API: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "Apa bedanya AiShort dengan Awesome ChatGPT Prompts dan koleksi prompt sumber terbuka lainnya?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts adalah salah satu sumber konten AiShort. AiShort menambahkan di atasnya: antarmuka penjelajahan grafis dengan penyaringan tag, terjemahan dalam 18 bahasa, manajemen prompt pribadi (favorit/penyortiran/tag), berbagi dan voting komunitas, ekstensi browser Chrome/Edge/Firefox (Alt+Shift+S untuk membuka bilah samping), ekspor dan cadangan data JSON, serta edisi offline untuk intranet perusahaan."
+  },
+  "faq.q5": {
+    "message": "Apakah AiShort gratis? Apakah saya perlu mendaftar?"
+  },
+  "faq.a5": {
+    "message": "Sepenuhnya gratis dan sumber terbuka (kode di-hosting di GitHub). Menjelajahi, mencari, dan menyalin prompt tidak memerlukan pendaftaran. Pendaftaran membuka: favorit dengan penyortiran seret-dan-lepas, tag kustom, membuat dan mengelola prompt pribadi, berbagi dan voting komunitas, ekspor dan cadangan JSON, serta sinkronisasi antar perangkat."
+  },
+  "faq.q6": {
+    "message": "Bisakah AiShort digunakan di intranet perusahaan atau lingkungan offline?"
+  },
+  "faq.a6": {
+    "message": "AiShort menyediakan edisi offline mandiri yang dirancang untuk intranet perusahaan, jaringan pemerintah, dan lingkungan lain tanpa akses internet. Tidak memerlukan server backend atau akun pengguna, berfungsi langsung setelah penerapan, dan mempertahankan fitur inti seperti penjelajahan, pencarian, favorit, dan prompt kustom. Format data kompatibel dengan versi online."
   }
 }

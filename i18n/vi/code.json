@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "Không tìm thấy kết quả phù hợp. Gợi ý cho bạn:"
+  },
+  "faq.q1": {
+    "message": "AiShort là gì? Tại sao nó được gọi là \"ChatGPT Shortcut\"?"
+  },
+  "faq.a1": {
+    "message": "AiShort (ban đầu có tên ChatGPT Shortcut) là một công cụ quản lý prompt AI mã nguồn mở cung cấp danh sách prompt được tuyển chọn để giúp bạn nhanh chóng tìm thấy hướng dẫn cho nhiều tình huống khác nhau. Dự án ban đầu tập trung vào ChatGPT, vì vậy tên kho lưu trữ GitHub vẫn là ChatGPT-Shortcut; ngày nay nó hỗ trợ tất cả các mô hình ngôn ngữ lớn chính (bao gồm Claude, Gemini, DeepSeek, Kimi, v.v.). Tên được giữ lại vì lý do tính liên tục lịch sử."
+  },
+  "faq.q2": {
+    "message": "Tôi sử dụng AiShort như thế nào?"
+  },
+  "faq.a2": {
+    "message": "Ba bước: (1) Tìm kiếm hoặc duyệt prompt theo tag trên trang chủ; (2) Nhấn nút \"Sao chép\" trên bất kỳ thẻ nào; (3) Dán vào bất kỳ công cụ trò chuyện AI nào và thêm câu hỏi cụ thể của bạn theo hướng dẫn của prompt."
+  },
+  "faq.q3": {
+    "message": "AiShort chỉ dành cho ChatGPT thôi sao? Có hỗ trợ các mô hình AI khác không?"
+  },
+  "faq.a3": {
+    "message": "Prompt độc lập với mô hình và hoạt động với tất cả các mô hình ngôn ngữ lớn chính. Mô hình quốc tế: ChatGPT, Claude, Gemini, Grok. Mô hình Trung Quốc: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. Nền tảng API: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "AiShort khác Awesome ChatGPT Prompts và các bộ sưu tập prompt mã nguồn mở khác như thế nào?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts là một trong các nguồn nội dung của AiShort. AiShort bổ sung trên đó: giao diện duyệt đồ họa với lọc theo tag, bản dịch sang 18 ngôn ngữ, quản lý prompt cá nhân (yêu thích/sắp xếp/tag), chia sẻ và bình chọn cộng đồng, tiện ích mở rộng trình duyệt Chrome/Edge/Firefox (Alt+Shift+S để mở thanh bên), xuất và sao lưu dữ liệu JSON, và phiên bản ngoại tuyến cho mạng nội bộ doanh nghiệp."
+  },
+  "faq.q5": {
+    "message": "AiShort có miễn phí không? Tôi có cần đăng ký không?"
+  },
+  "faq.a5": {
+    "message": "Hoàn toàn miễn phí và mã nguồn mở (mã nguồn được lưu trữ trên GitHub). Duyệt, tìm kiếm và sao chép prompt không cần đăng ký. Đăng ký mở khóa: yêu thích với sắp xếp kéo-thả, tag tùy chỉnh, tạo và quản lý prompt cá nhân, chia sẻ và bình chọn cộng đồng, xuất và sao lưu JSON, và đồng bộ giữa các thiết bị."
+  },
+  "faq.q6": {
+    "message": "AiShort có thể sử dụng trong mạng nội bộ doanh nghiệp hoặc môi trường ngoại tuyến không?"
+  },
+  "faq.a6": {
+    "message": "AiShort cung cấp một phiên bản ngoại tuyến độc lập được thiết kế cho mạng nội bộ doanh nghiệp, mạng chính phủ và các môi trường khác không có truy cập internet. Nó không yêu cầu máy chủ backend hoặc tài khoản người dùng, hoạt động ngay sau khi triển khai và giữ lại các tính năng chính như duyệt, tìm kiếm, yêu thích và prompt tùy chỉnh. Định dạng dữ liệu tương thích với phiên bản trực tuyến."
   }
 }

@@ -30,6 +30,12 @@ const config = {
 
   onBrokenLinks: "throw",
 
+  // Build-time injected fields (via webpack DefinePlugin under the hood)
+  // buildDate 用于 schema.org Article 的 datePublished / dateModified
+  customFields: {
+    buildDate: new Date().toISOString(),
+  },
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is English, you
   // may want to replace "zh" with "en".
@@ -82,28 +88,6 @@ const config = {
     {
       tagName: "script",
       attributes: {
-        type: "application/ld+json",
-      },
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            name: "AiShort",
-            url: "https://www.aishort.top/",
-            logo: "https://www.aishort.top/img/logo.png",
-          },
-          {
-            "@type": "WebSite",
-            name: "AiShort",
-            url: "https://www.aishort.top/",
-          },
-        ],
-      }),
-    },
-    {
-      tagName: "script",
-      attributes: {
         defer: "true",
         src: "https://s.newzone.top/tracker.js",
         "data-website-id": "680f4413-ce21-4754-a7d5-45e180e8cf69",
@@ -116,6 +100,8 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/logo.png",
+      // 全局 meta 标签（Docusaurus 默认不加 og:site_name，Facebook/LinkedIn 分享卡片需要）
+      metadata: [{ property: "og:site_name", content: "AiShort" }],
       // autocorrect: false,
       colorMode: {
         defaultMode: "dark",

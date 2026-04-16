@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "Eşleşen sonuç bulunamadı. Önerilen:"
+  },
+  "faq.q1": {
+    "message": "AiShort nedir? Neden \"ChatGPT Shortcut\" olarak adlandırılır?"
+  },
+  "faq.a1": {
+    "message": "AiShort (orijinal adı ChatGPT Shortcut), çeşitli senaryolar için talimatları hızlıca bulmanıza yardımcı olmak üzere küratörlü bir prompt listesi sunan açık kaynaklı bir AI prompt yönetim aracıdır. Proje başlangıçta ChatGPT'ye odaklandığı için GitHub depo adı ChatGPT-Shortcut olarak kalmıştır; bugün Claude, Gemini, DeepSeek, Kimi vb. dahil tüm büyük dil modellerini destekler. Ad, tarihsel süreklilik için korunmuştur."
+  },
+  "faq.q2": {
+    "message": "AiShort'u nasıl kullanırım?"
+  },
+  "faq.a2": {
+    "message": "Üç adım: (1) Ana sayfada prompt arayın veya etikete göre göz atın; (2) Herhangi bir kartın \"Kopyala\" düğmesine tıklayın; (3) Herhangi bir AI sohbet aracına yapıştırın ve prompt'un talimatlarına göre özel sorunuzu ekleyin."
+  },
+  "faq.q3": {
+    "message": "AiShort yalnızca ChatGPT için mi? Diğer AI modellerini destekliyor mu?"
+  },
+  "faq.a3": {
+    "message": "Promptlar modelden bağımsızdır ve tüm büyük dil modelleriyle çalışır. Uluslararası modeller: ChatGPT, Claude, Gemini, Grok. Çin modelleri: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. API platformları: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "AiShort, Awesome ChatGPT Prompts ve diğer açık kaynak prompt koleksiyonlarından nasıl farklıdır?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts, AiShort'un içerik kaynaklarından biridir. AiShort üzerine ekler: etiket filtrelemeli grafik tarama arayüzü, 18 dilde çeviri, kişisel prompt yönetimi (favoriler/sıralama/etiketler), topluluk paylaşımı ve oylama, Chrome/Edge/Firefox tarayıcı uzantıları (yan paneli açmak için Alt+Shift+S), JSON veri dışa aktarma ve yedekleme ve kurumsal intranetler için çevrimdışı sürüm."
+  },
+  "faq.q5": {
+    "message": "AiShort ücretsiz mi? Kayıt olmam gerekiyor mu?"
+  },
+  "faq.a5": {
+    "message": "Tamamen ücretsiz ve açık kaynak (kod GitHub'da barındırılıyor). Promptları gözden geçirmek, aramak ve kopyalamak kayıt gerektirmez. Kayıt olmak şunları açar: sürükle-bırak sıralamalı favoriler, özel etiketler, kişisel prompt oluşturma ve yönetme, topluluk paylaşımı ve oylama, JSON dışa aktarma ve yedekleme ve cihazlar arası senkronizasyon."
+  },
+  "faq.q6": {
+    "message": "AiShort kurumsal intranetlerde veya çevrimdışı ortamlarda kullanılabilir mi?"
+  },
+  "faq.a6": {
+    "message": "AiShort, kurumsal intranetler, devlet ağları ve internet erişimi olmayan diğer ortamlar için tasarlanmış bağımsız bir çevrimdışı sürüm sunar. Backend sunucusu veya kullanıcı hesabı gerektirmez, dağıtımdan hemen sonra çalışır ve tarama, arama, favoriler ve özel promptlar gibi temel özellikleri korur. Veri formatı çevrimiçi sürümle uyumludur."
   }
 }

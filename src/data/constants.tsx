@@ -1,5 +1,9 @@
 import { translate } from "@docusaurus/Translate";
 
+// 站点品牌名，所有 schema.org / SEO 上下文使用（用于 author / publisher / breadcrumb 等）
+// 不通过 translate()——品牌名在所有语言保持一致
+export const SITE_NAME = "AiShort";
+
 export const DEFAULT_FAVORITE_IDS = [2, 209, 251];
 export const DEFAULT_IDS = [2, 185, 209, 251, 197, 109, 20, 1];
 export const ALL_IDS = [

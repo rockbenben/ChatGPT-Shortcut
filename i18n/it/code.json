@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "Nessuna corrispondenza trovata. Consigliati:"
+  },
+  "faq.q1": {
+    "message": "Cos'è AiShort? Perché si chiama \"ChatGPT Shortcut\"?"
+  },
+  "faq.a1": {
+    "message": "AiShort (originariamente chiamato ChatGPT Shortcut) è uno strumento open source di gestione dei prompt AI che fornisce un elenco curato di prompt per aiutarti a trovare rapidamente istruzioni adatte a vari scenari. Il progetto si è inizialmente concentrato su ChatGPT, quindi il nome del repository GitHub rimane ChatGPT-Shortcut; oggi supporta tutti i principali modelli linguistici (inclusi Claude, Gemini, DeepSeek, Kimi, ecc.). Il nome è mantenuto per continuità storica."
+  },
+  "faq.q2": {
+    "message": "Come uso AiShort?"
+  },
+  "faq.a2": {
+    "message": "Tre passi: (1) Cerca o sfoglia i prompt per tag nella home page; (2) Clicca sul pulsante \"Copia\" su qualsiasi scheda; (3) Incollalo in qualsiasi strumento di chat AI e aggiungi la tua domanda specifica seguendo le istruzioni del prompt."
+  },
+  "faq.q3": {
+    "message": "AiShort è solo per ChatGPT? Supporta altri modelli AI?"
+  },
+  "faq.a3": {
+    "message": "I prompt sono indipendenti dal modello e funzionano con tutti i principali modelli linguistici. Modelli internazionali: ChatGPT, Claude, Gemini, Grok. Modelli cinesi: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. Piattaforme API: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "In cosa differisce AiShort da Awesome ChatGPT Prompts e altre raccolte di prompt open source?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts è una delle fonti di contenuto di AiShort. AiShort vi aggiunge: un'interfaccia grafica di navigazione con filtri per tag, traduzioni in 18 lingue, gestione personale dei prompt (preferiti/ordinamento/tag), condivisione e voto in community, estensioni browser Chrome/Edge/Firefox (Alt+Shift+S per aprire la barra laterale), esportazione e backup dati in JSON, e un'edizione offline per intranet aziendali."
+  },
+  "faq.q5": {
+    "message": "AiShort è gratuito? Devo registrarmi?"
+  },
+  "faq.a5": {
+    "message": "Completamente gratuito e open source (codice ospitato su GitHub). Sfogliare, cercare e copiare prompt non richiede registrazione. La registrazione sblocca: preferiti con ordinamento drag-and-drop, tag personalizzati, creazione e gestione di prompt personali, condivisione e voto in community, esportazione e backup JSON, e sincronizzazione tra dispositivi."
+  },
+  "faq.q6": {
+    "message": "AiShort può essere utilizzato in intranet aziendali o ambienti offline?"
+  },
+  "faq.a6": {
+    "message": "AiShort fornisce un'edizione offline indipendente progettata per intranet aziendali, reti governative e altri ambienti senza accesso a internet. Non richiede server backend né account utente, funziona immediatamente dopo il deployment e mantiene funzionalità principali come navigazione, ricerca, preferiti e prompt personalizzati. Il formato dati è compatibile con la versione online."
   }
 }

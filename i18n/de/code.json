@@ -1138,5 +1138,41 @@
   },
   "myspace.fallbackHint": {
     "message": "Keine passenden Ergebnisse. Empfohlen:"
+  },
+  "faq.q1": {
+    "message": "Was ist AiShort? Warum heißt es \"ChatGPT Shortcut\"?"
+  },
+  "faq.a1": {
+    "message": "AiShort (ursprünglich ChatGPT Shortcut genannt) ist ein Open-Source-Tool zur Verwaltung von KI-Prompts, das eine kuratierte Liste von Prompts bereitstellt, um Ihnen zu helfen, schnell Anweisungen für verschiedene Szenarien zu finden. Das Projekt konzentrierte sich anfangs auf ChatGPT, daher bleibt der GitHub-Repo-Name ChatGPT-Shortcut; heute unterstützt es alle wichtigen großen Sprachmodelle (einschließlich Claude, Gemini, DeepSeek, Kimi, usw.). Der Name wird aus historischer Kontinuität beibehalten."
+  },
+  "faq.q2": {
+    "message": "Wie benutze ich AiShort?"
+  },
+  "faq.a2": {
+    "message": "Drei Schritte: (1) Suchen oder durchsuchen Sie Prompts auf der Startseite nach Tag; (2) Klicken Sie auf die Schaltfläche \"Kopieren\" auf einer beliebigen Karte; (3) Fügen Sie sie in ein beliebiges KI-Chat-Tool ein und ergänzen Sie Ihre spezifische Frage gemäß den Anweisungen des Prompts."
+  },
+  "faq.q3": {
+    "message": "Funktioniert AiShort nur mit ChatGPT? Werden andere KI-Modelle unterstützt?"
+  },
+  "faq.a3": {
+    "message": "Prompts sind modellunabhängig und funktionieren mit allen gängigen großen Sprachmodellen. Internationale Modelle: ChatGPT, Claude, Gemini, Grok. Chinesische Modelle: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. API-Plattformen: OpenRouter, SiliconFlow, Groq."
+  },
+  "faq.q4": {
+    "message": "Wie unterscheidet sich AiShort von Awesome ChatGPT Prompts und anderen Open-Source-Prompt-Sammlungen?"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts ist eine der Inhaltsquellen von AiShort. AiShort baut darauf auf mit: einer grafischen Browsing-Oberfläche mit Tag-Filterung, Übersetzungen in 18 Sprachen, persönlicher Prompt-Verwaltung (Favoriten/Sortierung/Tags), Community-Sharing und Abstimmung, Chrome/Edge/Firefox-Browsererweiterungen (Alt+Shift+S zum Öffnen der Seitenleiste), JSON-Datenexport und -sicherung sowie einer Offline-Edition für Unternehmens-Intranets."
+  },
+  "faq.q5": {
+    "message": "Ist AiShort kostenlos? Muss ich mich registrieren?"
+  },
+  "faq.a5": {
+    "message": "Vollständig kostenlos und Open Source (Code auf GitHub gehostet). Das Durchsuchen, Suchen und Kopieren von Prompts erfordert keine Registrierung. Die Registrierung schaltet frei: Favoriten mit Drag-and-Drop-Sortierung, benutzerdefinierte Tags, Erstellen und Verwalten persönlicher Prompts, Community-Sharing und Abstimmung, JSON-Export und -Sicherung sowie geräteübergreifende Synchronisierung."
+  },
+  "faq.q6": {
+    "message": "Kann AiShort in Unternehmens-Intranets oder Offline-Umgebungen verwendet werden?"
+  },
+  "faq.a6": {
+    "message": "AiShort bietet eine eigenständige Offline-Edition, die für Unternehmens-Intranets, Regierungsnetzwerke und andere Umgebungen ohne Internetzugang konzipiert ist. Sie benötigt keinen Backend-Server und kein Benutzerkonto, funktioniert sofort nach der Bereitstellung und behält Kernfunktionen wie Browsing, Suche, Favoriten und benutzerdefinierte Prompts bei. Das Datenformat ist mit der Online-Version kompatibel."
   }
 }

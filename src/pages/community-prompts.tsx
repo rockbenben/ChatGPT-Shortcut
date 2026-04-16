@@ -9,10 +9,12 @@ import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
 import LoginComponent from "@site/src/components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb } from "antd";
 import { UpOutlined, DownOutlined, HomeOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
-import { COMMU_TITLE, COMMU_DESCRIPTION } from "@site/src/data/constants";
+import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
@@ -43,6 +45,40 @@ const CommunityPrompts = () => {
   const { message: messageApi } = App.useApp();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
+  const { siteConfig, i18n } = useDocusaurusContext();
+  // SSR 安全的 CollectionPage schema（仅框架，items 是客户端 fetch 的，故省略）
+  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+  const pageUrl = `${siteConfig.url}${localePrefix}/community-prompts`;
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": pageUrl,
+        url: pageUrl,
+        name: COMMU_TITLE,
+        description: COMMU_DESCRIPTION,
+        inLanguage: i18n.currentLocale,
+        isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
+        // 社区搜索现在公开，加 SearchAction 让 LLM/搜索引擎能引导用户搜社区内容
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${pageUrl}?name={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: SITE_NAME, item: `${siteConfig.url}${localePrefix}/` },
+          { "@type": "ListItem", position: 2, name: COMMU_TITLE, item: pageUrl },
+        ],
+      },
+    ],
+  };
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
@@ -110,14 +146,9 @@ const CommunityPrompts = () => {
     };
   }, [currentPage, sortField, sortOrder, searchTerm, messageApi]);
 
-  const handleBeforeSearch = useCallback(() => {
-    if (!userAuth) {
-      setOpen(true);
-      messageApi.warning("Please log in to search.");
-      return false;
-    }
-    return true;
-  }, [userAuth, messageApi]);
+  // 公开搜索：community prompts 是用户主动分享的公开内容，搜索无需登录
+  // 投票/收藏仍需登录（在 vote / addFavorite 内部检查）
+  const handleBeforeSearch = useCallback(() => true, []);
 
   // 本次会话的投票记录（防止 API 请求期间重复点击）
   const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
@@ -225,6 +256,10 @@ const CommunityPrompts = () => {
 
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
+      <Head>
+        <link rel="canonical" href={pageUrl} />
+        <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
+      </Head>
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">
           <div className="container padding-vert--md">
