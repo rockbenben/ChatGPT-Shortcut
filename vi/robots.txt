@@ -6,6 +6,44 @@ Disallow: /*/reset-password
 Disallow: /user/
 Disallow: /*/user/
 
+# AI / LLM crawlers — explicitly allow indexing of public pages
+# Each bot inherits the global Disallow rules above (private/auth pages stay blocked)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 Sitemap: https://www.aishort.top/sitemap.xml
 Sitemap: https://www.aishort.top/en/sitemap.xml
 Sitemap: https://www.aishort.top/zh-Hant/sitemap.xml
