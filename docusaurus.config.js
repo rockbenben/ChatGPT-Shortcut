@@ -101,14 +101,16 @@ const config = {
         ],
       }),
     },
-  ],
-  scripts: [
     {
-      src: "https://stats.newzone.top:9003/script.js",
-      defer: true,
-      "data-website-id": "e6e2d2a1-3859-48c6-85a3-3f6f4480d93e",
+      tagName: "script",
+      attributes: {
+        defer: "true",
+        src: "https://s.newzone.top/tracker.js",
+        "data-website-id": "87dc8cf3-57d8-4b62-ba78-80ea78ea60e1",
+      },
     },
   ],
+  scripts: [],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
