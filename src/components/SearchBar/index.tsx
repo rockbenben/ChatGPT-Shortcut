@@ -90,7 +90,7 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
           // 精选搜索和本地收藏搜索并行，互不依赖
           const cardsPromise = searchCardsLocally(selectedTags, searchName, currentLanguage, operator);
           const commusPromise =
-            userAuth && selectedTags.length === 0
+            userAuth?.data && selectedTags.length === 0
               ? Promise.all([
                   userAuth.data.userprompts ? getPrompts("userprompts", userAuth.data.userprompts) : Promise.resolve([]),
                   userAuth.data.favorites && userAuth.data.favorites.commLoves ? getPrompts("commus", userAuth.data.favorites.commLoves) : Promise.resolve([]),

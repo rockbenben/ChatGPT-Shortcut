@@ -41,11 +41,16 @@ function delay(ms: number): Promise<void> {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Stale-While-Revalidate: 用缓存的 userAuth 初始化，避免刷新时闪烁
   const cachedUserAuth = typeof window !== "undefined" ? getCache("user_auth") : null;
-  const [userAuth, setUserAuth] = useState<any>(cachedUserAuth);
+  const hasToken = typeof window !== "undefined" && !!localStorage.getItem("auth_token");
 
-  // 如果有缓存，不显示 loading 状态（后台静默刷新）
-  const hasToken = typeof window !== "undefined" && localStorage.getItem("auth_token");
-  const [authLoading, setAuthLoading] = useState(hasToken && !cachedUserAuth);
+  // 有 token 但无缓存时（典型场景：刚登录后 reload），先用 pending 占位视作已登录
+  // 避免显示骨架屏；真实数据由 fetchUser 完成后填充
+  // data 为 null：下游 userAuth?.data?.X 链会返回 undefined；现有的 `if (!userAuth?.data) return` 守卫也正确生效
+  const initialUserAuth = cachedUserAuth || (hasToken ? { pending: true, data: null } : null);
+
+  const [userAuth, setUserAuth] = useState<any>(initialUserAuth);
+  // 有缓存或 pending 占位时不显示骨架；仅在未知状态（既无 token 又无缓存）或强制刷新时才可能开启
+  const [authLoading, setAuthLoading] = useState(false);
 
   const fetchUser = useCallback(async (forceRefresh = false) => {
     // 快速检查：如果没有 token，直接跳过 loading 状态
@@ -105,26 +110,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         userprompts: deriveUserprompts(validItems), // ← 使用 validItems
       };
 
-      // 预取提示词详情，消除 MySpace 的请求瀑布流
-      // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
-      const promptIds = validItems.filter((i) => i.type === "prompt").map((i) => i.id);
-      const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
-      if (promptIds.length > 0 || commuIds.length > 0) {
-        try {
-          await withTimeout(
-            Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
-            8_000,
-            "prefetch",
-          );
-        } catch {
-          // 预取超时或失败不阻塞，MySpace 挂载时会重新获取
-        }
-      }
-
+      // 先更新 UI，再后台预取 —— 预取仅为填充二级缓存，不应阻塞登录态呈现
       const newUserAuth = { data: enrichedData };
       startTransition(() => setUserAuth(newUserAuth));
       // 缓存 userAuth 用于下次快速显示
       setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
+
+      // 后台预取提示词详情（fire-and-forget），消除 MySpace 首次挂载的请求瀑布
+      // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
+      const promptIds = validItems.filter((i) => i.type === "prompt").map((i) => i.id);
+      const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
+      if (promptIds.length > 0 || commuIds.length > 0) {
+        withTimeout(
+          Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
+          8_000,
+          "prefetch",
+        ).catch(() => {
+          // 预取超时或失败不阻塞，MySpace 挂载时会重新获取
+        });
+      }
+
       return myspaceData;
     };
 
