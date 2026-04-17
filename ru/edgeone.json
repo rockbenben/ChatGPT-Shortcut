@@ -2,6 +2,10 @@
   "name": "aishort",
   "redirects": [
     { "source": "/id", "destination": "/ind", "statusCode": 301 },
+    { "source": "/cn", "destination": "/", "statusCode": 301 },
+    { "source": "/cn/*", "destination": "/", "statusCode": 301 },
+    { "source": "/zh", "destination": "/", "statusCode": 301 },
+    { "source": "/zh/*", "destination": "/", "statusCode": 301 },
     { "source": "/docs/guides/extension", "destination": "/docs/extension/usage", "statusCode": 301 },
     { "source": "/en/docs/guides/extension", "destination": "/en/docs/extension/usage", "statusCode": 301 },
     { "source": "/ar/docs/guides/extension", "destination": "/ar/docs/extension/usage", "statusCode": 301 },
