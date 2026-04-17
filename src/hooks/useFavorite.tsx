@@ -3,6 +3,7 @@ import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
 import { createFavorite, updateFavorite, voteOnUserPrompt } from "../api";
+import { getCache } from "../utils/cache";
 
 interface UseFavoriteReturn {
   addFavorite: (id: number, isComm?: boolean) => Promise<void>;
@@ -33,7 +34,14 @@ export const useFavorite = (): UseFavoriteReturn => {
   const addFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       try {
-        const auth = userAuthRef.current;
+        let auth = userAuthRef.current;
+        // pending 窗口（登录后 reload 的 1-2s 内）先等 AuthProvider 首轮数据到位
+        // 否则会把已有用户当成新用户去调 createFavorite，重复建档
+        if (auth?.pending) {
+          await refreshUserAuth();
+          // setCache 在 fetchUser 内同步写入，比等 React 渲染 commit 更可靠
+          auth = getCache("user_auth") || userAuthRef.current;
+        }
         if (!auth?.data?.favorites) {
           // 新用户：创建收藏记录
           await createFavorite([id], isComm);
