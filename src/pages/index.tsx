@@ -77,7 +77,7 @@ const ShowcaseFilters: React.FC = React.memo(() => {
     <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
         <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
-          <Translate id="showcase.filters.title">Filters</Translate>
+          Filters
         </Title>
         <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
           {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
@@ -408,7 +408,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
                   <Title level={3} className="hideOnSmallScreen">
-                    <Translate id="showcase.favoritesList.title">Favorites</Translate>
+                    Favorites
                   </Title>
                   <FavoriteIcon svgClass={styles.svgIconFavorite} />
                   <SearchBar />
@@ -431,7 +431,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
           )}
           <div className="container margin-top--md">
             <Title level={3} className="hideOnSmallScreen">
-              <Translate id="showcase.usersList.allUsers">All prompts</Translate>
+              All prompts
             </Title>
             <Row gutter={[16, 16]}>
               {otherUsers.map((user, index) => {
