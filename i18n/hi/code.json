@@ -1,240 +1,216 @@
 {
-  "homepage.slogan": {
-    "message": "चयनित एआई प्रॉम्प्ट्स, हर बातचीत को अधिक कुशल बनाते हैं"
+  "action.add": {
+    "message": "जोड़ें"
   },
-  "homepage.title": {
-    "message": "AiShort - AI प्रॉम्प्ट लाइब्रेरी | उत्पादकता बढ़ाने के टेम्पलेट"
+  "action.addPrompt": {
+    "message": "प्रॉम्प्ट जोड़ें"
   },
-  "homepage.description": {
-    "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
-  },
-  "community.title": {
-    "message": "AI प्रॉम्प्ट समुदाय | खोजें और साझा करें - AiShort"
-  },
-  "community.description": {
-    "message": "और अधिक परीक्षित AI प्रॉम्प्ट चाहिए? AiShort समुदाय में शामिल होकर व्यावहारिक टेम्पलेट खोजें और अनुकूलन तकनीक साझा करें।"
-  },
-  "common.favorites": {
-    "message": "पसंदीदा"
-  },
-  "showcase.tag.write.label": {
-    "message": "लेखन सहायक"
-  },
-  "showcase.tag.write.description": {
-    "message": "लेख व्याकरण में सुधार करें, अभिव्यक्ति शैली को अनुकूलित करें और लेखन गुणवत्ता में सुधार करें"
-  },
-  "showcase.tag.article.label": {
-    "message": "लेख/रिपोर्ट"
-  },
-  "showcase.tag.article.description": {
-    "message": "उपन्यास, शोध पत्र, प्रेस विज्ञप्ति, पटकथा, शोध रिपोर्ट और अन्य लेख तैयार करें"
-  },
-  "showcase.tag.code.label": {
-    "message": "आईटी/प्रोग्रामिंग"
-  },
-  "showcase.tag.code.description": {
-    "message": "प्रोग्रामिंग सुझाव, कोड उदाहरण, डिबगिंग समाधान और तकनीकी मार्गदर्शन प्रदान करें"
-  },
-  "showcase.tag.ai.label": {
-    "message": "एआई"
-  },
-  "showcase.tag.ai.description": {
-    "message": "एआई से संबंधित प्रॉम्प्ट्स और अनुप्रयोग परिदृश्य"
-  },
-  "showcase.tag.living.label": {
-    "message": "जीवन की गुणवत्ता"
-  },
-  "showcase.tag.living.description": {
-    "message": "फिटनेस मार्गदर्शन, पोषण सलाह, खाना पकाने की तकनीक, मेकअप स्टाइलिंग और अन्य जीवन सेवाएं"
-  },
-  "showcase.tag.interesting.label": {
-    "message": "मजेदार तथ्य"
-  },
-  "showcase.tag.interesting.description": {
-    "message": "मजेदार सामान्य ज्ञान, लोकप्रिय विज्ञान सामग्री और मजेदार प्रश्नोत्तर"
-  },
-  "showcase.tag.life.label": {
-    "message": "जीवन विश्वकोश"
-  },
-  "showcase.tag.life.description": {
-    "message": "दैनिक जीवन में व्यावहारिक ज्ञान और समस्या समाधान"
-  },
-  "showcase.tag.social.label": {
-    "message": "मनोविज्ञान/सामाजिक"
-  },
-  "showcase.tag.social.description": {
-    "message": "मनोवैज्ञानिक परामर्श, भावनात्मक विश्लेषण, सामाजिक कौशल और पारस्परिक संचार"
-  },
-  "showcase.tag.philosophy.label": {
-    "message": "दर्शन/धर्म"
-  },
-  "showcase.tag.philosophy.description": {
-    "message": "दार्शनिक सोच, धार्मिक संस्कृति और जीवन के ज्ञान की खोज"
-  },
-  "showcase.tag.mind.label": {
-    "message": "मानसिक प्रशिक्षण"
-  },
-  "showcase.tag.mind.description": {
-    "message": "रचनात्मकता, आलोचनात्मक सोच और तार्किक तर्क क्षमता को उत्तेजित करें"
-  },
-  "showcase.tag.pedagogy.label": {
-    "message": "शिक्षा/छात्र"
-  },
-  "showcase.tag.pedagogy.description": {
-    "message": "ट्यूशन, होमवर्क सहायता, परीक्षा की तैयारी और अन्य छात्र-संबंधित सामग्री"
-  },
-  "showcase.tag.academic.label": {
-    "message": "अकादमिक/शिक्षक"
-  },
-  "showcase.tag.academic.description": {
-    "message": "अकादमिक शोध, अनुदेशात्मक डिजाइन, पाठ्यक्रम योजना और अन्य शिक्षक सहायता"
-  },
-  "showcase.tag.games.label": {
-    "message": "मजेदार खेल"
-  },
-  "showcase.tag.games.description": {
-    "message": "टेक्स्ट गेम, रोल-प्लेइंग और इंटरैक्टिव मनोरंजन"
-  },
-  "showcase.tag.tool.label": {
-    "message": "उत्पादकता उपकरण"
-  },
-  "showcase.tag.tool.description": {
-    "message": "कार्य कुशलता बढ़ाने के लिए व्यावहारिक उपकरण"
-  },
-  "showcase.tag.interpreter.label": {
-    "message": "टर्मिनल/इंटरप्रेटर"
-  },
-  "showcase.tag.interpreter.description": {
-    "message": "कमांड लाइन टर्मिनल और विभिन्न प्रोग्रामिंग भाषा इंटरप्रेटर्स का अनुकरण करें"
-  },
-  "showcase.tag.language.label": {
-    "message": "भाषा/अनुवाद"
-  },
-  "showcase.tag.language.description": {
-    "message": "बहुभाषी अनुवाद, भाषा सीखना, पाठ रूपांतरण और भाषा पहचान"
-  },
-  "showcase.tag.speech.label": {
-    "message": "वाद-विवाद/भाषण"
-  },
-  "showcase.tag.speech.description": {
-    "message": "वाद-विवाद कौशल, भाषण लेखन और बयानबाजी प्रशिक्षण"
-  },
-  "showcase.tag.comments.label": {
-    "message": "समीक्षा/मूल्यांकन"
-  },
-  "showcase.tag.comments.description": {
-    "message": "पेशेवर समीक्षा, कार्य मूल्यांकन और प्रशंसा विश्लेषण"
-  },
-  "showcase.tag.text.label": {
-    "message": "पाठ/शब्द"
-  },
-  "showcase.tag.text.description": {
-    "message": "पाठ प्रसंस्करण, शब्द विश्लेषण और भाषा संबंधित कार्य"
-  },
-  "showcase.tag.company.label": {
-    "message": "कॉर्पोरेट कार्य"
-  },
-  "showcase.tag.company.description": {
-    "message": "कॉर्पोरेट प्रबंधन, मानव संसाधन, विपणन और अन्य कार्यात्मक भूमिकाएँ"
-  },
-  "showcase.tag.seo.label": {
-    "message": "एसईओ"
-  },
-  "showcase.tag.seo.description": {
-    "message": "खोज इंजन अनुकूलन, कीवर्ड विस्तार और सामग्री विपणन"
-  },
-  "showcase.tag.doctor.label": {
-    "message": "चिकित्सा स्वास्थ्य"
-  },
-  "showcase.tag.doctor.description": {
-    "message": "स्वास्थ्य परामर्श, रोग शिक्षा और चिकित्सा सलाह"
-  },
-  "showcase.tag.finance.label": {
-    "message": "वित्तीय सलाहकार"
-  },
-  "showcase.tag.finance.description": {
-    "message": "निवेश प्रबंधन, वित्तीय विश्लेषण और वित्तीय योजना सलाह"
-  },
-  "showcase.tag.music.label": {
-    "message": "संगीत और कला"
-  },
-  "showcase.tag.music.description": {
-    "message": "संगीत रचना, संगीत सिद्धांत सीखना और कार्यों की प्रशंसा"
-  },
-  "showcase.tag.professional.label": {
-    "message": "पेशेवर सलाहकार"
-  },
-  "showcase.tag.professional.description": {
-    "message": "वकील, लेखाकार, सलाहकार और अन्य पेशेवर क्षेत्र के सलाहकार"
-  },
-  "showcase.tag.contribute.label": {
-    "message": "उपयोगकर्ता योगदान"
-  },
-  "showcase.tag.contribute.description": {
-    "message": "समुदाय उपयोगकर्ताओं द्वारा साझा किए गए उच्च-गुणवत्ता वाले प्रॉम्प्ट्स"
-  },
-  "message.addFavorite.success": {
-    "message": "पसंदीदा में जोड़ा गया"
-  },
-  "message.addFavorite.error": {
-    "message": "पसंदीदा में जोड़ने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.removeFavorite.success": {
-    "message": "पसंदीदा से हटाया गया"
-  },
-  "message.removeFavorite.error": {
-    "message": "पसंदीदा से हटाने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.removeFavorite.confirm.title": {
-    "message": "पसंदीदा हटाएं"
-  },
-  "message.removeFavorite.confirm.content": {
-    "message": "क्या आप वाकई इस प्रॉम्प्ट को पसंदीदा से हटाना चाहते हैं?"
-  },
-  "button.confirm": {
-    "message": "पुष्टि करें"
+  "action.backToLogin": {
+    "message": "लॉगिन पर वापस जाएं"
   },
   "action.cancel": {
     "message": "रद्द करें"
   },
-  "message.addPrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक सबमिट किया गया!"
+  "action.changePassword": {
+    "message": "पासवर्ड बदलें"
   },
-  "message.addPrompt.error": {
-    "message": "प्रॉम्प्ट सबमिट करने में विफल, कृपया बाद में पुनः प्रयास करें"
+  "action.close": {
+    "message": "बंद करें"
   },
-  "message.updatePrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक अपडेट किया गया!"
-  },
-  "message.updatePrompt.error": {
-    "message": "प्रॉम्प्ट अपडेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.deletePrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक हटाया गया!"
-  },
-  "message.deletePrompt.error": {
-    "message": "प्रॉम्प्ट हटाने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.deletePrompt.confirm.title": {
-    "message": "हटाने की पुष्टि करें"
-  },
-  "message.deletePrompt.confirm.content": {
-    "message": "क्या आप वाकई इस प्रॉम्प्ट को हटाना चाहते हैं?"
+  "action.convertToPrivate": {
+    "message": "निजी में बदलें"
   },
   "action.copy": {
     "message": "कॉपी"
   },
+  "action.delete": {
+    "message": "हटाएं"
+  },
+  "action.downvote": {
+    "message": "नापसंद"
+  },
+  "action.edit": {
+    "message": "संपादित करें"
+  },
+  "action.forgotPassword": {
+    "message": "पासवर्ड भूल गए"
+  },
+  "action.hideTags": {
+    "message": "टैग छिपाएं"
+  },
+  "action.login": {
+    "message": "सीधे लॉगिन करें"
+  },
+  "action.register": {
+    "message": "पंजीकरण करें"
+  },
   "action.removeFavorite": {
     "message": "पसंदीदा हटाने के लिए क्लिक करें"
   },
-  "action.upvote": {
-    "message": "अपवोट"
+  "action.reply": {
+    "message": "उत्तर दें"
   },
-  "action.downvote": {
-    "message": "डाउनवोट"
+  "action.save": {
+    "message": "सहेजें"
+  },
+  "action.sendLink": {
+    "message": "लॉगिन लिंक प्राप्त करें"
+  },
+  "action.sendResetEmail": {
+    "message": "रीसेट ईमेल भेजें"
+  },
+  "action.showTags": {
+    "message": "टैग दिखाएं"
+  },
+  "action.updatePrompt": {
+    "message": "प्रॉम्प्ट अपडेट करें"
+  },
+  "action.upvote": {
+    "message": "पसंद"
+  },
+  "action.viewDetails": {
+    "message": "विवरण देखें"
+  },
+  "button.clearAllCache": {
+    "message": "सभी कैश साफ़ करें"
+  },
+  "button.clearCache": {
+    "message": "कैश साफ़ करें"
+  },
+  "button.confirm": {
+    "message": "पुष्टि करें"
+  },
+  "button.export": {
+    "message": "डेटा निर्यात करें"
+  },
+  "button.exportPrompts": {
+    "message": "प्रॉम्प्ट निर्यात करें"
+  },
+  "button.import": {
+    "message": "आयात करें"
+  },
+  "button.importPrompts": {
+    "message": "प्रॉम्प्ट आयात करें"
   },
   "button.login": {
     "message": "लॉगिन"
+  },
+  "button.logout": {
+    "message": "लॉगआउट"
+  },
+  "button.resetPassword": {
+    "message": "पासवर्ड रीसेट करें"
+  },
+  "button.settings": {
+    "message": "सेटिंग्स"
+  },
+  "comment.add": {
+    "message": "टिप्पणी सबमिट करें"
+  },
+  "common.favorites": {
+    "message": "पसंदीदा"
+  },
+  "community.backToList": {
+    "message": "सूची पर वापस जाएं"
+  },
+  "community.description": {
+    "message": "और अधिक परीक्षित AI प्रॉम्प्ट चाहिए? AiShort समुदाय में शामिल होकर व्यावहारिक टेम्पलेट खोजें और अनुकूलन तकनीक साझा करें।"
+  },
+  "community.loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "community.notFound": {
+    "message": "प्रॉम्प्ट नहीं मिला"
+  },
+  "community.notFoundDesc": {
+    "message": "यह प्रॉम्प्ट हटा दिया गया हो सकता है या निजी पर सेट किया गया हो सकता है"
+  },
+  "community.seoSuffix": {
+    "message": "समुदाय प्रॉम्प्ट्स"
+  },
+  "community.title": {
+    "message": "AI प्रॉम्प्ट समुदाय | खोजें और साझा करें - AiShort"
+  },
+  "description.clearCache.short": {
+    "message": "स्थानीय कैश डेटा ताज़ा करें"
+  },
+  "description.exportPrompts.short": {
+    "message": "बैकअप के लिए JSON फ़ाइल के रूप में निर्यात करें"
+  },
+  "description.importPrompts.short": {
+    "message": "JSON फ़ाइल से प्रॉम्प्ट और पसंदीदा आयात करें"
+  },
+  "faq.a1": {
+    "message": "AiShort (मूल रूप से ChatGPT Shortcut नाम से) एक ओपन-सोर्स AI प्रॉम्प्ट प्रबंधन उपकरण है जो विभिन्न परिदृश्यों के लिए निर्देश शीघ्रता से खोजने में सहायता हेतु क्यूरेटेड प्रॉम्प्ट सूची प्रदान करता है। परियोजना ने प्रारंभ में ChatGPT पर ध्यान केंद्रित किया, इसलिए GitHub रिपॉज़िटरी का नाम ChatGPT-Shortcut बना हुआ है; आज यह सभी प्रमुख बड़े भाषा मॉडल (Claude, Gemini, DeepSeek, Kimi आदि सहित) का समर्थन करता है। नाम ऐतिहासिक निरंतरता के लिए रखा गया है।"
+  },
+  "faq.a2": {
+    "message": "तीन चरण: (1) मुख्य पृष्ठ पर प्रॉम्प्ट खोजें या टैग द्वारा ब्राउज़ करें; (2) किसी भी कार्ड पर \"कॉपी\" बटन पर क्लिक करें; (3) इसे किसी भी AI चैट टूल में पेस्ट करें और प्रॉम्प्ट के निर्देशों का पालन करते हुए अपना विशिष्ट प्रश्न जोड़ें।"
+  },
+  "faq.a3": {
+    "message": "प्रॉम्प्ट मॉडल-स्वतंत्र हैं और सभी मुख्यधारा के बड़े भाषा मॉडल के साथ काम करते हैं। अंतरराष्ट्रीय मॉडल: ChatGPT, Claude, Gemini, Grok। चीनी मॉडल: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan। API प्लेटफ़ॉर्म: OpenRouter, SiliconFlow, Groq।"
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts AiShort के सामग्री स्रोतों में से एक है। AiShort इसके ऊपर जोड़ता है: टैग फ़िल्टरिंग के साथ ग्राफ़िकल ब्राउज़िंग इंटरफ़ेस, 18 भाषाओं में अनुवाद, व्यक्तिगत प्रॉम्प्ट प्रबंधन (पसंदीदा/क्रमबद्ध/टैग), समुदाय साझाकरण और मतदान, Chrome/Edge/Firefox ब्राउज़र एक्सटेंशन (साइडबार खोलने के लिए Alt+Shift+S), JSON डेटा निर्यात और बैकअप, और कॉर्पोरेट इंट्रानेट के लिए ऑफ़लाइन संस्करण।"
+  },
+  "faq.a5": {
+    "message": "पूरी तरह से मुफ़्त और ओपन सोर्स (कोड GitHub पर होस्ट किया गया)। प्रॉम्प्ट ब्राउज़ करने, खोजने और कॉपी करने के लिए पंजीकरण की आवश्यकता नहीं है। पंजीकरण से अनलॉक होता है: ड्रैग-एंड-ड्रॉप क्रमबद्धता के साथ पसंदीदा, कस्टम टैग, व्यक्तिगत प्रॉम्प्ट बनाना और प्रबंधित करना, समुदाय साझाकरण और मतदान, JSON निर्यात और बैकअप, और डिवाइस के बीच सिंक।"
+  },
+  "faq.a6": {
+    "message": "AiShort एक स्वतंत्र ऑफ़लाइन संस्करण प्रदान करता है जो कॉर्पोरेट इंट्रानेट, सरकारी नेटवर्क और इंटरनेट पहुँच के बिना अन्य वातावरण के लिए डिज़ाइन किया गया है। इसे बैकएंड सर्वर या उपयोगकर्ता खाते की आवश्यकता नहीं है, परिनियोजन के बाद तुरंत काम करता है, और ब्राउज़िंग, खोज, पसंदीदा और कस्टम प्रॉम्प्ट जैसे मुख्य फ़ीचर बनाए रखता है। डेटा प्रारूप ऑनलाइन संस्करण के अनुकूल है।"
+  },
+  "faq.heading": {
+    "message": "अक्सर पूछे जाने वाले प्रश्न"
+  },
+  "faq.q1": {
+    "message": "AiShort क्या है? इसे \"ChatGPT Shortcut\" क्यों कहा जाता है?"
+  },
+  "faq.q2": {
+    "message": "मैं AiShort का उपयोग कैसे करूं?"
+  },
+  "faq.q3": {
+    "message": "क्या AiShort केवल ChatGPT के लिए है? क्या यह अन्य AI मॉडल का समर्थन करता है?"
+  },
+  "faq.q4": {
+    "message": "AiShort, Awesome ChatGPT Prompts और अन्य ओपन-सोर्स प्रॉम्प्ट संग्रहों से कैसे अलग है?"
+  },
+  "faq.q5": {
+    "message": "क्या AiShort मुफ़्त है? क्या मुझे पंजीकरण करने की आवश्यकता है?"
+  },
+  "faq.q6": {
+    "message": "क्या AiShort का उपयोग कॉर्पोरेट इंट्रानेट या ऑफ़लाइन वातावरण में किया जा सकता है?"
+  },
+  "faq.scenario.a": {
+    "message": "यह इस पेज के शीर्षक और विवरण से जुड़े कार्यों के लिए उपयुक्त है। यदि पहली बार परिणाम संतोषजनक नहीं है, प्लेसहोल्डर में अधिक संदर्भ जोड़ें या “चरणबद्ध उत्तर दें” “उदाहरण दें” जैसी शर्तें जोड़ें।"
+  },
+  "faq.scenario.q": {
+    "message": "यह प्रॉम्प्ट किन स्थितियों के लिए उपयुक्त है?"
+  },
+  "faq.tips.a": {
+    "message": "पहला: [प्लेसहोल्डर] को अधिक विशिष्ट बनाएं (शैली, लंबाई, क्षेत्र जोड़ें)। दूसरा: असंतोषजनक उत्तर पर “इसे और X बनाओ” पूछें। तीसरा: Claude / GPT-4 / Gemini जैसे मॉडलों पर तुलना करें।"
+  },
+  "faq.tips.q": {
+    "message": "मैं आउटपुट की गुणवत्ता कैसे बढ़ा सकता हूँ?"
+  },
+  "faq.usage.a": {
+    "message": "प्रॉम्प्ट कॉपी करें, वर्ग कोष्ठक [प्लेसहोल्डर] को अपने इनपुट से बदलें, फिर ChatGPT, Claude, Gemini, DeepSeek, Qwen या किसी भी बातचीत सक्षम AI इंटरफ़ेस में पेस्ट करके भेज दें।"
+  },
+  "faq.usage.q": {
+    "message": "मैं इस प्रॉम्प्ट का उपयोग कैसे करूँ?"
+  },
+  "feedback.description": {
+    "message": "आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है!"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut एक ओपन सोर्स प्रॉम्प्ट प्रबंधन उपकरण है जो एआई दक्षता में सुधार के लिए समर्पित है। हम आपकी भागीदारी के लिए तत्पर हैं: बग रिपोर्ट करना, सुविधाओं का सुझाव देना या उच्च-गुणवत्ता वाले प्रॉम्प्ट्स साझा करना। प्रॉम्प्ट सबमिशन के लिए, हम कई भाषाओं का समर्थन करते हैं और एक बार स्वीकार किए जाने पर, उन्हें एट्रिब्यूशन (उपयोगकर्ता नाम द्वारा खोजा जा सकता है) के साथ शामिल किया जाएगा। प्रत्येक योगदान समुदाय के सदस्यों को अपनी सोच का विस्तार करने और उत्पादकता बढ़ाने में मदद करता है। आइए एक साथ एक आदर्श प्रॉम्प्ट लाइब्रेरी बनाएं!"
+  },
+  "feedback.subtitle": {
+    "message": "आपका हर योगदान इस ओपन सोर्स प्रोजेक्ट को बेहतर बनाने में मदद करता है"
+  },
+  "feedback.title": {
+    "message": "प्रतिक्रिया और सुझाव"
+  },
+  "feedback.welcome": {
+    "message": "प्रतिक्रिया का स्वागत है"
   },
   "field.id": {
     "message": "प्रकाशन का समय"
@@ -242,257 +218,215 @@
   "field.upvoteDifference": {
     "message": "लोकप्रियता"
   },
-  "order.descending": {
-    "message": "अवरोही"
+  "homepage.description": {
+    "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
   },
-  "order.ascending": {
-    "message": "आरोही"
+  "homepage.slogan": {
+    "message": "चयनित एआई प्रॉम्प्ट्स, हर बातचीत को अधिक कुशल बनाते हैं"
+  },
+  "homepage.title": {
+    "message": "AiShort - AI प्रॉम्प्ट लाइब्रेरी | उत्पादकता बढ़ाने के टेम्पलेट"
+  },
+  "howto.step1.name": {
+    "message": "प्रॉम्प्ट कॉपी करें"
+  },
+  "howto.step1.text": {
+    "message": "प्रॉम्प्ट टेम्पलेट को क्लिपबोर्ड पर कॉपी करें।"
+  },
+  "howto.step2.name": {
+    "message": "प्लेसहोल्डर बदलें"
+  },
+  "howto.step2.text": {
+    "message": "[प्लेसहोल्डर] वाले हिस्सों को अपने विशिष्ट कंटेंट से बदलें।"
+  },
+  "howto.step3.name": {
+    "message": "AI को भेजें"
+  },
+  "howto.step3.text": {
+    "message": "ChatGPT, Claude, Gemini, DeepSeek या किसी अन्य संवादी AI इंटरफ़ेस में पेस्ट करें और चलाएँ।"
   },
   "info.communityPrompts": {
     "message": "इस पृष्ठ पर प्रॉम्प्ट्स उपयोगकर्ताओं द्वारा साझा और अपलोड किए गए हैं। हम सामग्री की सटीकता, गुणवत्ता या पूर्णता की गारंटी नहीं देते हैं, और सामग्री से उत्पन्न होने वाली किसी भी कानूनी जिम्मेदारी को स्वीकार नहीं करते हैं। यदि आपको कोई उल्लंघन या अन्य समस्याएं मिलती हैं, तो कृपया हमसे संपर्क करें।"
   },
-  "feedback.title": {
-    "message": "प्रतिक्रिया और सुझाव"
-  },
-  "feedback.description": {
-    "message": "आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है!"
-  },
-  "feedback.welcome": {
-    "message": "प्रतिक्रिया का स्वागत है"
-  },
-  "feedback.subtitle": {
-    "message": "आपका हर योगदान इस ओपन सोर्स प्रोजेक्ट को बेहतर बनाने में मदद करता है"
-  },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut एक ओपन सोर्स प्रॉम्प्ट प्रबंधन उपकरण है जो एआई दक्षता में सुधार के लिए समर्पित है। हम आपकी भागीदारी के लिए तत्पर हैं: बग रिपोर्ट करना, सुविधाओं का सुझाव देना या उच्च-गुणवत्ता वाले प्रॉम्प्ट्स साझा करना। प्रॉम्प्ट सबमिशन के लिए, हम कई भाषाओं का समर्थन करते हैं और एक बार स्वीकार किए जाने पर, उन्हें एट्रिब्यूशन (उपयोगकर्ता नाम द्वारा खोजा जा सकता है) के साथ शामिल किया जाएगा। प्रत्येक योगदान समुदाय के सदस्यों को अपनी सोच का विस्तार करने और उत्पादकता बढ़ाने में मदद करता है। आइए एक साथ एक आदर्श प्रॉम्प्ट लाइब्रेरी बनाएं!"
-  },
-  "showcase.filters.title": {
-    "message": "फ़िल्टर"
-  },
-  "action.hideTags": {
-    "message": "टैग छिपाएं"
-  },
-  "action.showTags": {
-    "message": "टैग दिखाएं"
-  },
-  "showcase.favoritesList.title": {
-    "message": "पसंदीदा"
-  },
-  "showcase.usersList.allUsers": {
-    "message": "सभी प्रॉम्प्ट्स"
-  },
-  "validation.password.match": {
-    "message": "दो पासवर्ड मेल नहीं खाते!"
-  },
-  "message.resetPassword.success": {
-    "message": "पासवर्ड सफलतापूर्वक रीसेट किया गया!"
-  },
-  "message.resetPassword.error": {
-    "message": "पासवर्ड रीसेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
   "input.newPassword": {
     "message": "कृपया नया पासवर्ड दर्ज करें!"
-  },
-  "validation.password.length": {
-    "message": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए"
-  },
-  "button.resetPassword": {
-    "message": "पासवर्ड रीसेट करें"
-  },
-  "placeholder.resetPassword.code": {
-    "message": "रीसेट कोड"
   },
   "input.resetPassword.code": {
     "message": "कृपया अपना रीसेट कोड दर्ज करें!"
   },
-  "placeholder.newPassword": {
-    "message": "नया पासवर्ड"
-  },
-  "placeholder.confirmPassword": {
-    "message": "नया पासवर्ड पुष्टि करें"
-  },
-  "validation.confirmPassword.required": {
-    "message": "कृपया अपने नए पासवर्ड की पुष्टि करें!"
-  },
-  "message.success.passwordChanged": {
-    "message": "पासवर्ड सफलतापूर्वक बदला गया!"
-  },
-  "message.error.passwordChangeFailed": {
-    "message": "पासवर्ड बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "message.success.forgotPassword": {
-    "message": "पासवर्ड रीसेट ईमेल भेजा गया!"
-  },
-  "message.error.forgotPassword": {
-    "message": "पासवर्ड रीसेट ईमेल भेजने में विफल, कृपया बाद में पुनः प्रयास करें"
-  },
-  "title.userInfo": {
-    "message": "उपयोगकर्ता जानकारी"
-  },
-  "title.security": {
-    "message": "सुरक्षा सेटिंग्स"
-  },
-  "action.changePassword": {
-    "message": "पासवर्ड बदलें"
-  },
-  "action.forgotPassword": {
-    "message": "पासवर्ड भूल गए"
-  },
-  "placeholder.currentPassword": {
-    "message": "वर्तमान पासवर्ड"
-  },
-  "validation.currentPassword.required": {
-    "message": "कृपया अपना वर्तमान पासवर्ड दर्ज करें!"
-  },
-  "message.forgotPassword.info": {
-    "message": "यदि आप अपना वर्तमान पासवर्ड भूल गए हैं, तो आप इसे ईमेल के माध्यम से रीसेट कर सकते हैं। हम आपके पंजीकृत ईमेल पते पर एक रीसेट लिंक के साथ एक ईमेल भेजेंगे।"
-  },
-  "placeholder.email": {
-    "message": "ईमेल"
-  },
-  "validation.email.required": {
-    "message": "कृपया ईमेल दर्ज करें!"
-  },
-  "validation.email.invalid": {
-    "message": "कृपया एक वैध ईमेल पता दर्ज करें!"
-  },
-  "action.sendResetEmail": {
-    "message": "रीसेट ईमेल भेजें"
-  },
-  "validation.comment.required": {
-    "message": "कृपया टिप्पणी सामग्री दर्ज करें"
-  },
-  "validation.comment.maxLength": {
-    "message": "टिप्पणी सामग्री 2000 वर्णों से अधिक नहीं होनी चाहिए"
-  },
-  "placeholder.comment": {
-    "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और एचटीएमएल सिंटैक्स समर्थित"
-  },
-  "action.reply": {
-    "message": "उत्तर दें"
-  },
-  "validation.replyRequired": {
-    "message": "कृपया उत्तर सामग्री दर्ज करें"
-  },
-  "label.comments": {
-    "message": "टिप्पणियाँ"
-  },
-  "message.copied": {
-    "message": "सफलतापूर्वक कॉपी किया गया"
-  },
-  "label.commentInfo": {
-    "message": "नीचे टिप्पणी या साझा करने के लिए स्वतंत्र महसूस करें।"
-  },
-  "comment.add": {
-    "message": "टिप्पणी सबमिट करें"
-  },
   "input.search.placeholder": {
     "message": "प्रॉम्प्ट खोजें..."
-  },
-  "showcase.usersList.noResult": {
-    "message": "कोई परिणाम नहीं मिला, अन्य कीवर्ड आज़माएं"
-  },
-  "validation.username.required": {
-    "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
-  },
-  "validation.password.required": {
-    "message": "कृपया पासवर्ड दर्ज करें!"
-  },
-  "message.error": {
-    "message": "प्रसंस्करण के दौरान एक त्रुटि हुई"
-  },
-  "message.success.login": {
-    "message": "लॉगिन सफल!"
-  },
-  "message.success.register": {
-    "message": "पंजीकरण सफल!"
-  },
-  "message.success.passwordlessLink": {
-    "message": "पासवर्ड रहित लॉगिन लिंक आपके ईमेल पर भेजा गया!"
-  },
-  "message.error.passwordlessLink": {
-    "message": "भेजने में विफल, कृपया अपना ईमेल या उपयोगकर्ता नाम जांचें"
-  },
-  "login.method.password": {
-    "message": "पासवर्ड लॉगिन"
-  },
-  "login.method.code": {
-    "message": "पासवर्ड रहित लॉगिन"
-  },
-  "placeholder.usernameOrEmail": {
-    "message": "उपयोगकर्ता नाम/ईमेल"
-  },
-  "placeholder.password": {
-    "message": "पासवर्ड"
-  },
-  "action.login": {
-    "message": "सीधे लॉगिन करें"
-  },
-  "login.passwordless.info": {
-    "message": "एक लॉगिन लिंक आपके ईमेल पर भेजा जाएगा, लॉगिन करने के लिए क्लिक करें"
-  },
-  "action.sendLink": {
-    "message": "लॉगिन लिंक प्राप्त करें"
-  },
-  "login.register.prompt": {
-    "message": "अभी तक कोई खाता नहीं है?"
-  },
-  "action.register": {
-    "message": "पंजीकरण करें"
-  },
-  "placeholder.username": {
-    "message": "उपयोगकर्ता नाम"
-  },
-  "validation.agreement.required": {
-    "message": "उपयोग करने से पहले आपको सेवा की शर्तों और गोपनीयता नीति से सहमत होना होगा"
   },
   "label.agree": {
     "message": "सहमत"
   },
-  "link.terms": {
-    "message": "सेवा की शर्तें"
+  "label.comments": {
+    "message": "टिप्पणियाँ"
+  },
+  "label.promptContent": {
+    "message": "प्रॉम्प्ट सामग्री"
+  },
+  "label.promptNotes": {
+    "message": "नोट्स"
+  },
+  "label.promptNotes.description": {
+    "message": "आप यहां स्रोत, अन्य भाषा संस्करण, या अतिरिक्त नोट्स प्रदान कर सकते हैं।"
+  },
+  "label.promptRemark": {
+    "message": "उपयोग"
+  },
+  "label.promptTitle": {
+    "message": "प्रॉम्प्ट का नाम"
+  },
+  "label.sharePrompt": {
+    "message": "क्या आप इस प्रॉम्प्ट को सार्वजनिक पृष्ठ पर साझा करना चाहेंगे?"
+  },
+  "level.bronze": {
+    "message": "ब्रॉन्ज स्टार"
+  },
+  "level.bronze.desc": {
+    "message": "बढ़िया शुरुआत! इस गति को बनाए रखें!"
+  },
+  "level.diamond": {
+    "message": "डायमंड लीजेंड"
+  },
+  "level.diamond.desc": {
+    "message": "शीर्ष योगदानकर्ता, समुदाय की एक सच्ची किंवदंती!"
+  },
+  "level.gold": {
+    "message": "गोल्ड एक्सपर्ट"
+  },
+  "level.gold.desc": {
+    "message": "अनुभवी और अत्यधिक भरोसेमंद!"
+  },
+  "level.max.congrats": {
+    "message": "उच्चतम स्तर प्राप्त करने पर बधाई! आप एक किंवदंती योगदानकर्ता हैं!"
+  },
+  "level.newcomer": {
+    "message": "एक्सप्लोरर"
+  },
+  "level.newcomer.desc": {
+    "message": "यात्रा शुरू करने के लिए अपना पहला प्रॉम्प्ट साझा करें!"
+  },
+  "level.platinum": {
+    "message": "प्लैटिनम मास्टर"
+  },
+  "level.platinum.desc": {
+    "message": "अनुभवी विशेषज्ञ, उल्लेखनीय प्रभाव!"
+  },
+  "level.silver": {
+    "message": "सिल्वर एलीट"
+  },
+  "level.silver.desc": {
+    "message": "सक्रिय योगदानकर्ता, मजबूती से बढ़ रहा है!"
+  },
+  "link.addprompt": {
+    "message": "प्रॉम्प्ट जोड़ें"
+  },
+  "link.communityPrompts": {
+    "message": "सामुदायिक प्रॉन्प्ट्स"
+  },
+  "link.home": {
+    "message": "होम"
+  },
+  "link.myAccount": {
+    "message": "मेरा खाता"
+  },
+  "link.myaccount": {
+    "message": "खाता सेटिंग्स"
   },
   "link.privacy": {
     "message": "गोपनीयता नीति"
   },
+  "link.terms": {
+    "message": "सेवा की शर्तें"
+  },
   "login.login.prompt": {
     "message": "पहले से ही एक खाता है?"
   },
-  "action.backToLogin": {
-    "message": "लॉगिन पर वापस जाएं"
+  "login.method.code": {
+    "message": "पासवर्ड रहित लॉगिन"
   },
-  "login.title.welcome": {
-    "message": "वापसी पर स्वागत है"
+  "login.method.password": {
+    "message": "पासवर्ड लॉगिन"
   },
-  "login.title.register": {
-    "message": "समुदाय में शामिल हों"
+  "login.passwordless.info": {
+    "message": "एक लॉगिन लिंक आपके ईमेल पर भेजा जाएगा, लॉगिन करने के लिए क्लिक करें"
   },
-  "login.title.forgotPassword": {
-    "message": "पासवर्ड पुनर्प्राप्त करें"
-  },
-  "login.subtitle.welcome": {
-    "message": "अधिक प्रीमियम प्रॉम्प्ट्स का पता लगाने के लिए लॉगिन करें"
-  },
-  "login.subtitle.register": {
-    "message": "अद्भुत प्रॉम्प्ट्स खोजें, साझा करें और बनाएं"
+  "login.register.prompt": {
+    "message": "अभी तक कोई खाता नहीं है?"
   },
   "login.subtitle.forgotPassword": {
     "message": "एक रीसेट लिंक आपके ईमेल पर भेजा जाएगा"
   },
-  "message.noFavorites": {
-    "message": "अभी तक कोई पसंदीदा नहीं, पसंद के प्रॉम्प्ट खोजें"
+  "login.subtitle.register": {
+    "message": "अद्भुत प्रॉम्प्ट्स खोजें, साझा करें और बनाएं"
   },
-  "action.edit": {
-    "message": "संपादित करें"
+  "login.subtitle.welcome": {
+    "message": "अधिक प्रीमियम प्रॉम्प्ट्स का पता लगाने के लिए लॉगिन करें"
   },
-  "action.delete": {
-    "message": "हटाएं"
+  "login.title.forgotPassword": {
+    "message": "पासवर्ड पुनर्प्राप्त करें"
   },
-  "message.noPrompts": {
-    "message": "अभी तक कोई प्रॉम्प्ट नहीं, एक बनाएं"
+  "login.title.register": {
+    "message": "समुदाय में शामिल हों"
+  },
+  "login.title.welcome": {
+    "message": "वापसी पर स्वागत है"
+  },
+  "message.addFavorite.error": {
+    "message": "पसंदीदा में जोड़ने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.addFavorite.success": {
+    "message": "पसंदीदा में जोड़ा गया"
+  },
+  "message.addPrompt.error": {
+    "message": "प्रॉम्प्ट सबमिट करने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.addPrompt.success": {
+    "message": "प्रॉम्प्ट सफलतापूर्वक सबमिट किया गया!"
+  },
+  "message.cache.clearError": {
+    "message": "कैश साफ़ करने में विफल"
   },
   "message.cache.cleared": {
     "message": "कैश साफ़ किया गया"
+  },
+  "message.convertToPrivate.error": {
+    "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.convertToPrivate.success": {
+    "message": "सफलतापूर्वक निजी प्रॉम्प्ट में बदल दिया गया"
+  },
+  "message.copied": {
+    "message": "सफलतापूर्वक कॉपी किया गया"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "क्या आप वाकई इस प्रॉम्प्ट को हटाना चाहते हैं?"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "हटाने की पुष्टि करें"
+  },
+  "message.deletePrompt.error": {
+    "message": "प्रॉम्प्ट हटाने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.deletePrompt.success": {
+    "message": "प्रॉम्प्ट सफलतापूर्वक हटाया गया!"
+  },
+  "message.error": {
+    "message": "प्रसंस्करण के दौरान एक त्रुटि हुई"
+  },
+  "message.error.forgotPassword": {
+    "message": "पासवर्ड रीसेट ईमेल भेजने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "पासवर्ड बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.error.passwordlessLink": {
+    "message": "भेजने में विफल, कृपया अपना ईमेल या उपयोगकर्ता नाम जांचें"
+  },
+  "message.export.error": {
+    "message": "निर्यात विफल रहा, कृपया बाद में पुनः प्रयास करें"
   },
   "message.export.noPrompts": {
     "message": "निर्यात करने के लिए कोई प्रॉम्प्ट उपलब्ध नहीं है, कृपया बाद में पुनः प्रयास करें"
@@ -500,210 +434,459 @@
   "message.export.success": {
     "message": "प्रॉम्प्ट सफलतापूर्वक निर्यात किए गए!"
   },
-  "message.export.error": {
-    "message": "निर्यात विफल रहा, कृपया बाद में पुनः प्रयास करें"
+  "message.forgotPassword.info": {
+    "message": "यदि आप अपना वर्तमान पासवर्ड भूल गए हैं, तो आप इसे ईमेल के माध्यम से रीसेट कर सकते हैं। हम आपके पंजीकृत ईमेल पते पर एक रीसेट लिंक के साथ एक ईमेल भेजेंगे।"
   },
-  "link.myaccount": {
-    "message": "खाता सेटिंग्स"
+  "message.import.failed": {
+    "message": "आयात विफल"
   },
-  "button.exportPrompts": {
-    "message": "प्रॉम्प्ट निर्यात करें"
+  "message.import.invalid": {
+    "message": "अमान्य डेटा प्रारूप"
   },
-  "button.clearCache": {
-    "message": "कैश साफ़ करें"
+  "message.import.parseError": {
+    "message": "JSON पार्सिंग त्रुटि"
   },
-  "button.logout": {
-    "message": "लॉगआउट"
+  "message.import.partial": {
+    "message": "आंशिक आयात"
   },
-  "message.logout.confirm.title": {
-    "message": "लॉगआउट की पुष्टि करें"
+  "message.import.success": {
+    "message": "आयात सफल!"
+  },
+  "message.loginRequired": {
+    "message": "कृपया पहले लॉगिन करें"
   },
   "message.logout.confirm.content": {
     "message": "क्या आप वाकई लॉगआउट करना चाहते हैं?"
   },
-  "link.addprompt": {
-    "message": "प्रॉम्प्ट जोड़ें"
+  "message.logout.confirm.title": {
+    "message": "लॉगआउट की पुष्टि करें"
   },
-  "button.settings": {
-    "message": "सेटिंग्स"
+  "message.noComments": {
+    "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें!"
   },
-  "showcase.header.button": {
-    "message": "अपना प्रॉम्प्ट साझा करें"
+  "message.noFavorites": {
+    "message": "अभी तक कोई पसंदीदा नहीं, पसंद के प्रॉम्प्ट खोजें"
   },
-  "action.addPrompt": {
-    "message": "प्रॉम्प्ट जोड़ें"
+  "message.noPrompts": {
+    "message": "अभी तक कोई प्रॉम्प्ट नहीं, एक बनाएं"
   },
-  "label.promptTitle": {
-    "message": "प्रॉम्प्ट का नाम"
+  "message.noSpaceItems": {
+    "message": "अभी तक कोई सामग्री नहीं, प्रॉम्प्ट या पसंदीदा जोड़ें"
   },
-  "validation.promptTitle.required": {
-    "message": "कृपया प्रॉम्प्ट शीर्षक दर्ज करें!"
+  "message.orderSaveFailed": {
+    "message": "व्यवस्था सहेजने में विफल"
   },
-  "placeholder.promptTitle": {
-    "message": "अपने प्रॉम्प्ट को एक नाम दें"
+  "message.orderSaved": {
+    "message": "व्यवस्था सहेजी गई"
   },
-  "label.promptContent": {
-    "message": "प्रॉम्प्ट सामग्री"
+  "message.removeFavorite.confirm.content": {
+    "message": "क्या आप वाकई इस प्रॉम्प्ट को पसंदीदा से हटाना चाहते हैं?"
   },
-  "validation.promptContent.required": {
-    "message": "कृपया प्रॉम्प्ट सामग्री दर्ज करें!"
+  "message.removeFavorite.confirm.title": {
+    "message": "पसंदीदा हटाएं"
   },
-  "placeholder.promptContent": {
-    "message": "यहाँ विस्तृत प्रॉम्प्ट सामग्री दर्ज करें..."
+  "message.removeFavorite.error": {
+    "message": "पसंदीदा से हटाने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
-  "label.promptNotes": {
-    "message": "नोट्स"
+  "message.removeFavorite.success": {
+    "message": "पसंदीदा से हटाया गया"
   },
-  "placeholder.promptNotes": {
-    "message": "इस प्रॉम्प्ट के बारे में अतिरिक्त नोट्स (वैकल्पिक)"
+  "message.resetPassword.error": {
+    "message": "पासवर्ड रीसेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
-  "label.sharePrompt": {
-    "message": "क्या आप इस प्रॉम्प्ट को सार्वजनिक पृष्ठ पर साझा करना चाहेंगे?"
+  "message.resetPassword.success": {
+    "message": "पासवर्ड सफलतापूर्वक रीसेट किया गया!"
+  },
+  "message.success.forgotPassword": {
+    "message": "पासवर्ड रीसेट ईमेल भेजा गया!"
+  },
+  "message.success.login": {
+    "message": "लॉगिन सफल!"
+  },
+  "message.success.passwordChanged": {
+    "message": "पासवर्ड सफलतापूर्वक बदला गया!"
+  },
+  "message.success.passwordlessLink": {
+    "message": "पासवर्ड रहित लॉगिन लिंक आपके ईमेल पर भेजा गया!"
+  },
+  "message.success.register": {
+    "message": "पंजीकरण सफल!"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "टैग अपडेट करने में विफल"
+  },
+  "message.tagsUpdated": {
+    "message": "टैग अपडेट किए गए"
+  },
+  "message.updatePrompt.error": {
+    "message": "प्रॉम्प्ट अपडेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.updatePrompt.success": {
+    "message": "प्रॉम्प्ट सफलतापूर्वक अपडेट किया गया!"
+  },
+  "modal.clearCache.content": {
+    "message": "सिस्टम कैश को स्वचालित रूप से प्रबंधित करने के लिए ETag तकनीक का उपयोग करता है, मैन्युअल समाशोधन की आमतौर पर आवश्यकता नहीं होती है।"
+  },
+  "modal.clearCache.title": {
+    "message": "कैश साफ़ करें?"
+  },
+  "modal.clearCache.warning": {
+    "message": "साफ़ करने से सभी डेटा फिर से लोड हो जाएगा।"
   },
   "modal.editPrompt.title": {
     "message": "वर्तमान प्रॉम्प्ट अपडेट करें"
   },
-  "action.updatePrompt": {
-    "message": "प्रॉम्प्ट अपडेट करें"
+  "modal.forgotPassword.title": {
+    "message": "पासवर्ड भूल गए"
   },
-  "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
-    "description": "The title of the fallback page when the page crashed"
+  "myCollection.header.subtitle": {
+    "message": "अपने बनाए गए प्रॉन्प्ट्स, पसंदीदा और कस्टम टैग प्रबंधित करें"
+  },
+  "myCollection.header.title": {
+    "message": "मेरा संग्रह"
+  },
+  "myCollection.stats.favorites": {
+    "message": "पसंदीदा"
+  },
+  "myCollection.stats.prompts": {
+    "message": "मेरे प्रॉन्प्ट्स"
+  },
+  "myCollection.stats.tags": {
+    "message": "कस्टम टैग"
+  },
+  "myCollection.stats.total": {
+    "message": "कुल"
+  },
+  "myspace.assignTag": {
+    "message": "टैग असाइन करें"
+  },
+  "myspace.fallbackHint": {
+    "message": "कोई मिलान नहीं मिला। आपके लिए अनुशंसित:"
+  },
+  "myspace.filter.all": {
+    "message": "सभी"
+  },
+  "myspace.filter.favorites": {
+    "message": "पसंदीदा"
+  },
+  "myspace.filter.prompts": {
+    "message": "प्रॉम्प्ट"
+  },
+  "myspace.manageTags": {
+    "message": "टैग प्रबंधित करें"
+  },
+  "myspace.tagManager.empty": {
+    "message": "कोई कस्टम टैग नहीं"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "टैग का नाम"
+  },
+  "myspace.tagManager.title": {
+    "message": "कस्टम टैग प्रबंधित करें"
+  },
+  "nav.explore": {
+    "message": "अन्वेषण"
+  },
+  "nav.myCollection": {
+    "message": "मेरा संग्रह"
+  },
+  "order.ascending": {
+    "message": "आरोही"
+  },
+  "order.descending": {
+    "message": "अवरोही"
+  },
+  "placeholder.comment": {
+    "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और एचटीएमएल सिंटैक्स समर्थित"
+  },
+  "placeholder.confirmPassword": {
+    "message": "नया पासवर्ड पुष्टि करें"
+  },
+  "placeholder.currentPassword": {
+    "message": "वर्तमान पासवर्ड"
+  },
+  "placeholder.email": {
+    "message": "ईमेल"
+  },
+  "placeholder.newPassword": {
+    "message": "नया पासवर्ड"
+  },
+  "placeholder.password": {
+    "message": "पासवर्ड"
+  },
+  "placeholder.promptContent": {
+    "message": "यहाँ विस्तृत प्रॉम्प्ट सामग्री दर्ज करें..."
+  },
+  "placeholder.promptNotes": {
+    "message": "इस प्रॉम्प्ट के बारे में अतिरिक्त नोट्स (वैकल्पिक)"
+  },
+  "placeholder.promptRemark": {
+    "message": "संक्षेप में बताएं कि इस प्रॉम्प्ट का उपयोग कैसे करें (वैकल्पिक)"
+  },
+  "placeholder.promptTitle": {
+    "message": "अपने प्रॉम्प्ट को एक नाम दें"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "रीसेट कोड"
+  },
+  "placeholder.username": {
+    "message": "उपयोगकर्ता नाम"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "उपयोगकर्ता नाम/ईमेल"
+  },
+  "progress.encourage": {
+    "message": "उच्च स्तर अनलॉक करने के लिए साझा करते रहें!"
+  },
+  "progress.toNextLevel": {
+    "message": "अगले स्तर तक"
+  },
+  "prompt.charsLabel": {
+    "message": "वर्ण"
+  },
+  "prompt.content": {
+    "message": "प्रॉम्प्ट सामग्री"
+  },
+  "prompt.private": {
+    "message": "निजी"
+  },
+  "prompt.tokenDanger": {
+    "message": "प्रॉम्प्ट बहुत लंबा है, जिससे साझा करना और पुन: उपयोग करना कठिन हो सकता है। विभाजित करने पर विचार करें।"
+  },
+  "prompt.tokenWarning": {
+    "message": "प्रॉम्प्ट काफी लंबा है; इसे छोटा करने या विभाजित करने पर विचार करें।"
+  },
+  "showcase.header.button": {
+    "message": "अपना प्रॉम्प्ट साझा करें"
+  },
+  "showcase.tag.academic.description": {
+    "message": "अकादमिक शोध, अनुदेशात्मक डिजाइन, पाठ्यक्रम योजना और अन्य शिक्षक सहायता"
+  },
+  "showcase.tag.academic.label": {
+    "message": "अकादमिक/शिक्षक"
+  },
+  "showcase.tag.ai.description": {
+    "message": "एआई से संबंधित प्रॉम्प्ट्स और अनुप्रयोग परिदृश्य"
+  },
+  "showcase.tag.ai.label": {
+    "message": "एआई"
+  },
+  "showcase.tag.article.description": {
+    "message": "उपन्यास, शोध पत्र, प्रेस विज्ञप्ति, पटकथा, शोध रिपोर्ट और अन्य लेख तैयार करें"
+  },
+  "showcase.tag.article.label": {
+    "message": "लेख/रिपोर्ट"
+  },
+  "showcase.tag.code.description": {
+    "message": "प्रोग्रामिंग सुझाव, कोड उदाहरण, डिबगिंग समाधान और तकनीकी मार्गदर्शन प्रदान करें"
+  },
+  "showcase.tag.code.label": {
+    "message": "आईटी/प्रोग्रामिंग"
+  },
+  "showcase.tag.comments.description": {
+    "message": "पेशेवर समीक्षा, कार्य मूल्यांकन और प्रशंसा विश्लेषण"
+  },
+  "showcase.tag.comments.label": {
+    "message": "समीक्षा/मूल्यांकन"
+  },
+  "showcase.tag.company.description": {
+    "message": "कॉर्पोरेट प्रबंधन, मानव संसाधन, विपणन और अन्य कार्यात्मक भूमिकाएँ"
+  },
+  "showcase.tag.company.label": {
+    "message": "कॉर्पोरेट कार्य"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "समुदाय उपयोगकर्ताओं द्वारा साझा किए गए उच्च-गुणवत्ता वाले प्रॉम्प्ट्स"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "उपयोगकर्ता योगदान"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "स्वास्थ्य परामर्श, रोग शिक्षा और चिकित्सा सलाह"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "चिकित्सा स्वास्थ्य"
+  },
+  "showcase.tag.finance.description": {
+    "message": "निवेश प्रबंधन, वित्तीय विश्लेषण और वित्तीय योजना सलाह"
+  },
+  "showcase.tag.finance.label": {
+    "message": "वित्तीय सलाहकार"
+  },
+  "showcase.tag.games.description": {
+    "message": "टेक्स्ट गेम, रोल-प्लेइंग और इंटरैक्टिव मनोरंजन"
+  },
+  "showcase.tag.games.label": {
+    "message": "मजेदार खेल"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "मजेदार सामान्य ज्ञान, लोकप्रिय विज्ञान सामग्री और मजेदार प्रश्नोत्तर"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "मजेदार तथ्य"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "कमांड लाइन टर्मिनल और विभिन्न प्रोग्रामिंग भाषा इंटरप्रेटर्स का अनुकरण करें"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "टर्मिनल/इंटरप्रेटर"
+  },
+  "showcase.tag.language.description": {
+    "message": "बहुभाषी अनुवाद, भाषा सीखना, पाठ रूपांतरण और भाषा पहचान"
+  },
+  "showcase.tag.language.label": {
+    "message": "भाषा/अनुवाद"
+  },
+  "showcase.tag.life.description": {
+    "message": "दैनिक जीवन में व्यावहारिक ज्ञान और समस्या समाधान"
+  },
+  "showcase.tag.life.label": {
+    "message": "जीवन विश्वकोश"
+  },
+  "showcase.tag.living.description": {
+    "message": "फिटनेस मार्गदर्शन, पोषण सलाह, खाना पकाने की तकनीक, मेकअप स्टाइलिंग और अन्य जीवन सेवाएं"
+  },
+  "showcase.tag.living.label": {
+    "message": "जीवन की गुणवत्ता"
+  },
+  "showcase.tag.mind.description": {
+    "message": "रचनात्मकता, आलोचनात्मक सोच और तार्किक तर्क क्षमता को उत्तेजित करें"
+  },
+  "showcase.tag.mind.label": {
+    "message": "मानसिक प्रशिक्षण"
+  },
+  "showcase.tag.music.description": {
+    "message": "संगीत रचना, संगीत सिद्धांत सीखना और कार्यों की प्रशंसा"
+  },
+  "showcase.tag.music.label": {
+    "message": "संगीत और कला"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "ट्यूशन, होमवर्क सहायता, परीक्षा की तैयारी और अन्य छात्र-संबंधित सामग्री"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "शिक्षा/छात्र"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "दार्शनिक सोच, धार्मिक संस्कृति और जीवन के ज्ञान की खोज"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "दर्शन/धर्म"
+  },
+  "showcase.tag.professional.description": {
+    "message": "वकील, लेखाकार, सलाहकार और अन्य पेशेवर क्षेत्र के सलाहकार"
+  },
+  "showcase.tag.professional.label": {
+    "message": "पेशेवर सलाहकार"
+  },
+  "showcase.tag.seo.description": {
+    "message": "खोज इंजन अनुकूलन, कीवर्ड विस्तार और सामग्री विपणन"
+  },
+  "showcase.tag.seo.label": {
+    "message": "एसईओ"
+  },
+  "showcase.tag.social.description": {
+    "message": "मनोवैज्ञानिक परामर्श, भावनात्मक विश्लेषण, सामाजिक कौशल और पारस्परिक संचार"
+  },
+  "showcase.tag.social.label": {
+    "message": "मनोविज्ञान/सामाजिक"
+  },
+  "showcase.tag.speech.description": {
+    "message": "वाद-विवाद कौशल, भाषण लेखन और बयानबाजी प्रशिक्षण"
+  },
+  "showcase.tag.speech.label": {
+    "message": "वाद-विवाद/भाषण"
+  },
+  "showcase.tag.text.description": {
+    "message": "पाठ प्रसंस्करण, शब्द विश्लेषण और भाषा संबंधित कार्य"
+  },
+  "showcase.tag.text.label": {
+    "message": "पाठ/शब्द"
+  },
+  "showcase.tag.tool.description": {
+    "message": "कार्य कुशलता बढ़ाने के लिए व्यावहारिक उपकरण"
+  },
+  "showcase.tag.tool.label": {
+    "message": "उत्पादकता उपकरण"
+  },
+  "showcase.tag.write.description": {
+    "message": "लेख व्याकरण में सुधार करें, अभिव्यक्ति शैली को अनुकूलित करें और लेखन गुणवत्ता में सुधार करें"
+  },
+  "showcase.tag.write.label": {
+    "message": "लेखन सहायक"
+  },
+  "showcase.usersList.noResult": {
+    "message": "कोई परिणाम नहीं मिला, अन्य कीवर्ड आज़माएं"
+  },
+  "sidebar.related": {
+    "message": "संबंधित प्रॉम्प्ट"
+  },
+  "stat.sharedPrompts": {
+    "message": "साझा किए गए प्रॉम्प्ट"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "बंद करे",
+    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "Scroll back to top",
     "description": "The ARIA label for the back to top button"
   },
-  "theme.blog.archive.title": {
-    "message": "Archive",
-    "description": "The page & hero title of the blog archive page"
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
   },
-  "theme.blog.archive.description": {
-    "message": "Archive",
-    "description": "The page & hero description of the blog archive page"
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
   },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "ब्लॉग सूची पेज नेविगेशन",
-    "description": "The ARIA label for the blog pagination"
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
   },
-  "theme.blog.paginator.newerEntries": {
-    "message": "नए एंट्रीज़",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.blog.paginator.olderEntries": {
-    "message": "पुराने एंट्रीज़",
-    "description": "The label used to navigate to the older blog posts page (next page)"
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
   },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "ब्लॉग पोस्ट पेज नेविगेशन",
-    "description": "The ARIA label for the blog posts pagination"
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
   },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "नए पोस्ट",
-    "description": "The blog post button label to navigate to the newer/previous post"
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
   },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "पुराने पोस्ट",
-    "description": "The blog post button label to navigate to the older/next post"
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
-  "theme.tags.tagsPageLink": {
-    "message": "सारे टैग देखें",
-    "description": "The label of the link targeting the tag list page"
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   },
-  "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
-    "description": "The name for the system color mode"
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
   },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "light mode",
-    "description": "The name for the light color mode"
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
   },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the color mode toggle"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "डॉक्स पेज",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "पिछ्ला",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "अगला",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
-    "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
-  },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "यह {siteTitle} {versionLabel} वर्जन के लिए प्रकाशित डॉक्यूमेंटेशन है।",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "यह {siteTitle} {versionLabel} के लिए डॉक्यूमेंटेशन है, जिसे अब सक्रिय रूप से नहीं बनाए रखा गया है।",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "अप-टू-डेट डॉक्यूमेंटेशन के लिए {latestVersionLink} ({versionLabel}) देखें।",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "सबसे नया वर्जन",
-    "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.common.editThisPage": {
-    "message": "इस पेज को बदलें",
-    "description": "The link label to edit the current page"
-  },
-  "theme.common.headingLinkTitle": {
-    "message": "{heading} का सीधा लिंक",
-    "description": "Title for link to heading"
-  },
-  "theme.lastUpdated.atDate": {
-    "message": " {date} पर",
-    "description": "The words used to describe on which date a page has been last updated"
-  },
-  "theme.lastUpdated.byUser": {
-    "message": " {user} द्वारा",
-    "description": "The words used to describe by who the page has been last updated"
-  },
-  "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "आखरी अपडेट{atDate}{byUser}",
-    "description": "The sentence used to display when a page has been last updated, and by who"
-  },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
-    "description": "The label for the navbar versions dropdown on mobile view"
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
     "message": "पेज नहीं मिला",
     "description": "The title of the 404 page"
   },
-  "theme.tags.tagsListLabel": {
-    "message": "टैग:",
-    "description": "The label alongside a tag list"
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.admonition.caution": {
     "message": "caution",
@@ -729,121 +912,17 @@
     "message": "warning",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
   },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
-    "description": "The label for the mobile language switcher dropdown"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "Read more",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
-  },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
-    "description": "The title of the page for a blog tag"
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -857,173 +936,229 @@
     "message": "View all authors",
     "description": "The label of the link targeting the blog authors page"
   },
-  "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
-    "description": "The text for authors with 0 blog post"
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "ब्लॉग सूची पेज नेविगेशन",
+    "description": "The ARIA label for the blog pagination"
   },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
+  "theme.blog.paginator.newerEntries": {
+    "message": "नए एंट्रीज़",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
+  "theme.blog.paginator.olderEntries": {
+    "message": "पुराने एंट्रीज़",
+    "description": "The label used to navigate to the older blog posts page (next page)"
   },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
-    "description": "The draft content banner title"
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "ब्लॉग पोस्ट पेज नेविगेशन",
+    "description": "The ARIA label for the blog posts pagination"
   },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
-    "description": "The draft content banner message"
+  "theme.blog.post.paginator.newerPost": {
+    "message": "नए पोस्ट",
+    "description": "The blog post button label to navigate to the newer/previous post"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  "theme.blog.post.paginator.olderPost": {
+    "message": "पुराने पोस्ट",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.common.editThisPage": {
+    "message": "इस पेज को बदलें",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} का सीधा लिंक",
+    "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
     "message": "Skip to main content",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "डॉक्स पेज",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.next": {
+    "message": "अगला",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "पिछ्ला",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "सबसे नया वर्जन",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "अप-टू-डेट डॉक्यूमेंटेशन के लिए {latestVersionLink} ({versionLabel}) देखें।",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "यह {siteTitle} {versionLabel} के लिए डॉक्यूमेंटेशन है, जिसे अब सक्रिय रूप से नहीं बनाए रखा गया है।",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "यह {siteTitle} {versionLabel} वर्जन के लिए प्रकाशित डॉक्यूमेंटेशन है।",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date} पर",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " {user} द्वारा",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "आखरी अपडेट{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "टैग:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "सारे टैग देखें",
+    "description": "The label of the link targeting the tag list page"
+  },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myAccount": {
-    "message": "मेरा खाता"
-  },
-  "prompt.private": {
-    "message": "निजी"
-  },
-  "prompt.content": {
-    "message": "प्रॉम्प्ट सामग्री"
-  },
-  "action.viewDetails": {
-    "message": "विवरण देखें"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "बंद करे",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "action.close": {
-    "message": "बंद करें"
-  },
-  "message.noComments": {
-    "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें!"
-  },
-  "link.home": {
-    "message": "होम"
-  },
-  "link.communityPrompts": {
-    "message": "सामुदायिक प्रॉन्प्ट्स"
-  },
-  "myCollection.header.title": {
-    "message": "मेरा संग्रह"
-  },
-  "myCollection.header.subtitle": {
-    "message": "अपने बनाए गए प्रॉन्प्ट्स, पसंदीदा और कस्टम टैग प्रबंधित करें"
-  },
-  "myCollection.stats.total": {
-    "message": "कुल"
-  },
-  "myCollection.stats.prompts": {
-    "message": "मेरे प्रॉन्प्ट्स"
-  },
-  "myCollection.stats.favorites": {
-    "message": "पसंदीदा"
-  },
-  "myCollection.stats.tags": {
-    "message": "कस्टम टैग"
-  },
-  "myspace.filter.all": {
-    "message": "सभी"
-  },
-  "myspace.filter.prompts": {
-    "message": "प्रॉन्प्ट्स"
-  },
-  "myspace.filter.favorites": {
-    "message": "पसंदीदा"
-  },
-  "myspace.manageTags": {
-    "message": "टैग प्रबंधित करें"
-  },
-  "myspace.tagManager.title": {
-    "message": "कस्टम टैग प्रबंधित करें"
-  },
-  "action.save": {
-    "message": "सहेजें"
-  },
-  "myspace.tagManager.namePlaceholder": {
-    "message": "टैग का नाम"
-  },
-  "action.add": {
-    "message": "जोड़ें"
-  },
-  "myspace.tagManager.empty": {
-    "message": "कोई कस्टम टैग नहीं"
-  },
-  "message.tagsUpdated": {
-    "message": "टैग अपडेट किए गए"
-  },
-  "message.tagsUpdateFailed": {
-    "message": "टैग अपडेट करने में विफल"
-  },
-  "message.noSpaceItems": {
-    "message": "अभी तक कोई सामग्री नहीं, प्रॉम्प्ट या पसंदीदा जोड़ें"
-  },
-  "nav.explore": {
-    "message": "अन्वेषण"
-  },
-  "nav.myCollection": {
-    "message": "मेरा संग्रह"
-  },
-  "message.cache.clearError": {
-    "message": "कैश साफ़ करने में विफल"
-  },
   "title.dataManagement": {
     "message": "डेटा प्रबंधन"
   },
-  "description.exportPrompts.short": {
-    "message": "बैकअप के लिए JSON फ़ाइल के रूप में निर्यात करें"
+  "title.security": {
+    "message": "सुरक्षा सेटिंग्स"
   },
-  "button.export": {
-    "message": "डेटा निर्यात करें"
-  },
-  "description.clearCache.short": {
-    "message": "स्थानीय कैश डेटा ताज़ा करें"
-  },
-  "modal.clearCache.title": {
-    "message": "कैश साफ़ करें?"
-  },
-  "modal.clearCache.content": {
-    "message": "सिस्टम कैश को स्वचालित रूप से प्रबंधित करने के लिए ETag तकनीक का उपयोग करता है, मैन्युअल समाशोधन की आमतौर पर आवश्यकता नहीं होती है।"
-  },
-  "modal.clearCache.warning": {
-    "message": "साफ़ करने से सभी डेटा फिर से लोड हो जाएगा।"
-  },
-  "button.clearAllCache": {
-    "message": "सभी कैश साफ़ करें"
-  },
-  "modal.forgotPassword.title": {
-    "message": "पासवर्ड भूल गए"
-  },
-  "myspace.assignTag": {
-    "message": "टैग असाइन करें"
-  },
-  "prompt.tokenDanger": {
-    "message": "प्रॉम्प्ट बहुत लंबा है, जिससे साझा करना और पुन: उपयोग करना कठिन हो सकता है। विभाजित करने पर विचार करें।"
-  },
-  "prompt.tokenWarning": {
-    "message": "प्रॉम्प्ट काफी लंबा है; इसे छोटा करने या विभाजित करने पर विचार करें।"
-  },
-  "label.promptNotes.description": {
-    "message": "आप यहां स्रोत, अन्य भाषा संस्करण, या अतिरिक्त नोट्स प्रदान कर सकते हैं।"
-  },
-  "label.promptRemark": {
-    "message": "उपयोग"
-  },
-  "placeholder.promptRemark": {
-    "message": "संक्षेप में बताएं कि इस प्रॉम्प्ट का उपयोग कैसे करें (वैकल्पिक)"
+  "title.userInfo": {
+    "message": "उपयोगकर्ता जानकारी"
   },
   "unavailable.unshared": {
     "message": "लेखक ने साझा करना बंद कर दिया है"
@@ -1031,148 +1166,46 @@
   "unavailable.unsharedNoCache": {
     "message": "लेखक ने साझा करना बंद कर दिया है और कोई स्थानीय कैश उपलब्ध नहीं है"
   },
-  "action.convertToPrivate": {
-    "message": "निजी में बदलें"
+  "validation.agreement.required": {
+    "message": "उपयोग करने से पहले आपको सेवा की शर्तों और गोपनीयता नीति से सहमत होना होगा"
   },
-  "message.convertToPrivate.success": {
-    "message": "सफलतापूर्वक निजी प्रॉम्प्ट में बदल दिया गया"
+  "validation.comment.maxLength": {
+    "message": "टिप्पणी सामग्री 2000 वर्णों से अधिक नहीं होनी चाहिए"
   },
-  "message.convertToPrivate.error": {
-    "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
+  "validation.comment.required": {
+    "message": "कृपया टिप्पणी सामग्री दर्ज करें"
   },
-  "level.diamond": {
-    "message": "डायमंड लीजेंड"
+  "validation.confirmPassword.required": {
+    "message": "कृपया अपने नए पासवर्ड की पुष्टि करें!"
   },
-  "level.platinum": {
-    "message": "प्लैटिनम मास्टर"
+  "validation.currentPassword.required": {
+    "message": "कृपया अपना वर्तमान पासवर्ड दर्ज करें!"
   },
-  "level.gold": {
-    "message": "गोल्ड एक्सपर्ट"
+  "validation.email.invalid": {
+    "message": "कृपया एक वैध ईमेल पता दर्ज करें!"
   },
-  "level.silver": {
-    "message": "सिल्वर एलीट"
+  "validation.email.required": {
+    "message": "कृपया ईमेल दर्ज करें!"
   },
-  "level.bronze": {
-    "message": "ब्रॉन्ज स्टार"
+  "validation.password.length": {
+    "message": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए"
   },
-  "level.newcomer": {
-    "message": "एक्सप्लोरर"
+  "validation.password.match": {
+    "message": "दो पासवर्ड मेल नहीं खाते!"
   },
-  "level.diamond.desc": {
-    "message": "शीर्ष योगदानकर्ता, समुदाय की एक सच्ची किंवदंती!"
+  "validation.password.required": {
+    "message": "कृपया पासवर्ड दर्ज करें!"
   },
-  "level.platinum.desc": {
-    "message": "अनुभवी विशेषज्ञ, उल्लेखनीय प्रभाव!"
+  "validation.promptContent.required": {
+    "message": "कृपया प्रॉम्प्ट सामग्री दर्ज करें!"
   },
-  "level.gold.desc": {
-    "message": "अनुभवी और अत्यधिक भरोसेमंद!"
+  "validation.promptTitle.required": {
+    "message": "कृपया प्रॉम्प्ट शीर्षक दर्ज करें!"
   },
-  "level.silver.desc": {
-    "message": "सक्रिय योगदानकर्ता, मजबूती से बढ़ रहा है!"
+  "validation.replyRequired": {
+    "message": "कृपया उत्तर सामग्री दर्ज करें"
   },
-  "level.bronze.desc": {
-    "message": "बढ़िया शुरुआत! इस गति को बनाए रखें!"
-  },
-  "level.newcomer.desc": {
-    "message": "यात्रा शुरू करने के लिए अपना पहला प्रॉम्प्ट साझा करें!"
-  },
-  "stat.sharedPrompts": {
-    "message": "साझा किए गए प्रॉम्प्ट"
-  },
-  "progress.toNextLevel": {
-    "message": "अगले स्तर तक"
-  },
-  "progress.encourage": {
-    "message": "उच्च स्तर अनलॉक करने के लिए साझा करते रहें!"
-  },
-  "level.max.congrats": {
-    "message": "उच्चतम स्तर प्राप्त करने पर बधाई! आप एक किंवदंती योगदानकर्ता हैं!"
-  },
-  "message.import.invalid": {
-    "message": "अमान्य डेटा प्रारूप"
-  },
-  "message.import.success": {
-    "message": "आयात सफल!"
-  },
-  "message.import.partial": {
-    "message": "आंशिक आयात"
-  },
-  "message.import.failed": {
-    "message": "आयात विफल"
-  },
-  "message.import.parseError": {
-    "message": "JSON पार्सिंग त्रुटि"
-  },
-  "button.importPrompts": {
-    "message": "प्रॉम्प्ट आयात करें"
-  },
-  "description.importPrompts.short": {
-    "message": "JSON फ़ाइल से प्रॉम्प्ट और पसंदीदा आयात करें"
-  },
-  "button.import": {
-    "message": "आयात करें"
-  },
-  "message.orderSaved": {
-    "message": "व्यवस्था सहेजी गई"
-  },
-  "message.orderSaveFailed": {
-    "message": "व्यवस्था सहेजने में विफल"
-  },
-  "message.loginRequired": {
-    "message": "कृपया पहले लॉगिन करें"
-  },
-  "community.loading": {
-    "message": "लोड हो रहा है..."
-  },
-  "community.notFound": {
-    "message": "प्रॉम्प्ट नहीं मिला"
-  },
-  "community.notFoundDesc": {
-    "message": "यह प्रॉम्प्ट हटा दिया गया हो सकता है या निजी पर सेट किया गया हो सकता है"
-  },
-  "community.backToList": {
-    "message": "सूची पर वापस जाएं"
-  },
-  "community.seoSuffix": {
-    "message": "समुदाय प्रॉम्प्ट्स"
-  },
-  "myspace.fallbackHint": {
-    "message": "कोई मिलान नहीं मिला। आपके लिए अनुशंसित:"
-  },
-  "faq.q1": {
-    "message": "AiShort क्या है? इसे \"ChatGPT Shortcut\" क्यों कहा जाता है?"
-  },
-  "faq.a1": {
-    "message": "AiShort (मूल रूप से ChatGPT Shortcut नाम से) एक ओपन-सोर्स AI प्रॉम्प्ट प्रबंधन उपकरण है जो विभिन्न परिदृश्यों के लिए निर्देश शीघ्रता से खोजने में सहायता हेतु क्यूरेटेड प्रॉम्प्ट सूची प्रदान करता है। परियोजना ने प्रारंभ में ChatGPT पर ध्यान केंद्रित किया, इसलिए GitHub रिपॉज़िटरी का नाम ChatGPT-Shortcut बना हुआ है; आज यह सभी प्रमुख बड़े भाषा मॉडल (Claude, Gemini, DeepSeek, Kimi आदि सहित) का समर्थन करता है। नाम ऐतिहासिक निरंतरता के लिए रखा गया है।"
-  },
-  "faq.q2": {
-    "message": "मैं AiShort का उपयोग कैसे करूं?"
-  },
-  "faq.a2": {
-    "message": "तीन चरण: (1) मुख्य पृष्ठ पर प्रॉम्प्ट खोजें या टैग द्वारा ब्राउज़ करें; (2) किसी भी कार्ड पर \"कॉपी\" बटन पर क्लिक करें; (3) इसे किसी भी AI चैट टूल में पेस्ट करें और प्रॉम्प्ट के निर्देशों का पालन करते हुए अपना विशिष्ट प्रश्न जोड़ें।"
-  },
-  "faq.q3": {
-    "message": "क्या AiShort केवल ChatGPT के लिए है? क्या यह अन्य AI मॉडल का समर्थन करता है?"
-  },
-  "faq.a3": {
-    "message": "प्रॉम्प्ट मॉडल-स्वतंत्र हैं और सभी मुख्यधारा के बड़े भाषा मॉडल के साथ काम करते हैं। अंतरराष्ट्रीय मॉडल: ChatGPT, Claude, Gemini, Grok। चीनी मॉडल: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan। API प्लेटफ़ॉर्म: OpenRouter, SiliconFlow, Groq।"
-  },
-  "faq.q4": {
-    "message": "AiShort, Awesome ChatGPT Prompts और अन्य ओपन-सोर्स प्रॉम्प्ट संग्रहों से कैसे अलग है?"
-  },
-  "faq.a4": {
-    "message": "Awesome ChatGPT Prompts AiShort के सामग्री स्रोतों में से एक है। AiShort इसके ऊपर जोड़ता है: टैग फ़िल्टरिंग के साथ ग्राफ़िकल ब्राउज़िंग इंटरफ़ेस, 18 भाषाओं में अनुवाद, व्यक्तिगत प्रॉम्प्ट प्रबंधन (पसंदीदा/क्रमबद्ध/टैग), समुदाय साझाकरण और मतदान, Chrome/Edge/Firefox ब्राउज़र एक्सटेंशन (साइडबार खोलने के लिए Alt+Shift+S), JSON डेटा निर्यात और बैकअप, और कॉर्पोरेट इंट्रानेट के लिए ऑफ़लाइन संस्करण।"
-  },
-  "faq.q5": {
-    "message": "क्या AiShort मुफ़्त है? क्या मुझे पंजीकरण करने की आवश्यकता है?"
-  },
-  "faq.a5": {
-    "message": "पूरी तरह से मुफ़्त और ओपन सोर्स (कोड GitHub पर होस्ट किया गया)। प्रॉम्प्ट ब्राउज़ करने, खोजने और कॉपी करने के लिए पंजीकरण की आवश्यकता नहीं है। पंजीकरण से अनलॉक होता है: ड्रैग-एंड-ड्रॉप क्रमबद्धता के साथ पसंदीदा, कस्टम टैग, व्यक्तिगत प्रॉम्प्ट बनाना और प्रबंधित करना, समुदाय साझाकरण और मतदान, JSON निर्यात और बैकअप, और डिवाइस के बीच सिंक।"
-  },
-  "faq.q6": {
-    "message": "क्या AiShort का उपयोग कॉर्पोरेट इंट्रानेट या ऑफ़लाइन वातावरण में किया जा सकता है?"
-  },
-  "faq.a6": {
-    "message": "AiShort एक स्वतंत्र ऑफ़लाइन संस्करण प्रदान करता है जो कॉर्पोरेट इंट्रानेट, सरकारी नेटवर्क और इंटरनेट पहुँच के बिना अन्य वातावरण के लिए डिज़ाइन किया गया है। इसे बैकएंड सर्वर या उपयोगकर्ता खाते की आवश्यकता नहीं है, परिनियोजन के बाद तुरंत काम करता है, और ब्राउज़िंग, खोज, पसंदीदा और कस्टम प्रॉम्प्ट जैसे मुख्य फ़ीचर बनाए रखता है। डेटा प्रारूप ऑनलाइन संस्करण के अनुकूल है।"
+  "validation.username.required": {
+    "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
   }
 }

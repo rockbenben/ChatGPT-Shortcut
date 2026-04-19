@@ -1,240 +1,216 @@
 {
-  "homepage.slogan": {
-    "message": "توجيهات ذكاء اصطناعي مختارة، لجعل كل محادثة أكثر كفاءة"
+  "action.add": {
+    "message": "إضافة"
   },
-  "homepage.title": {
-    "message": "AiShort - مكتبة موجهات الذكاء الاصطناعي | قوالب لتعزيز الإنتاجية"
+  "action.addPrompt": {
+    "message": "إضافة Prompt"
   },
-  "homepage.description": {
-    "message": "محبط من إجابات الذكاء الاصطناعي غير ذات الصلة؟ يقدم AiShort قوالب عملية للكتابة والبرمجة والترجمة. انسخ بنقرة واحدة وضاعف كفاءتك!"
-  },
-  "community.title": {
-    "message": "مجتمع موجهات الذكاء الاصطناعي | اكتشف وشارك - AiShort"
-  },
-  "community.description": {
-    "message": "تحتاج المزيد من موجهات الذكاء الاصطناعي المجربة؟ انضم إلى مجتمع AiShort لاكتشاف قوالب عملية ومشاركة تقنيات التحسين."
-  },
-  "common.favorites": {
-    "message": "المفضلة"
-  },
-  "showcase.tag.write.label": {
-    "message": "مساعد الكتابة"
-  },
-  "showcase.tag.write.description": {
-    "message": "تحسين قواعد المقالات، وتحسين أسلوب التعبير، ورفع جودة الكتابة"
-  },
-  "showcase.tag.article.label": {
-    "message": "مقال/تقرير"
-  },
-  "showcase.tag.article.description": {
-    "message": "إنشاء روايات، وأوراق بحثية، وبيانات صحفية، وسيناريوهات، وتقارير بحثية، وغيرها من المقالات"
-  },
-  "showcase.tag.code.label": {
-    "message": "تكنولوجيا المعلومات/البرمجة"
-  },
-  "showcase.tag.code.description": {
-    "message": "تقديم اقتراحات برمجية، وأمثلة للكود، وحلول لتصحيح الأخطاء، وإرشادات تقنية"
-  },
-  "showcase.tag.ai.label": {
-    "message": "الذكاء الاصطناعي"
-  },
-  "showcase.tag.ai.description": {
-    "message": "توجيهات وسيناريوهات تطبيق متعلقة بالذكاء الاصطناعي"
-  },
-  "showcase.tag.living.label": {
-    "message": "جودة الحياة"
-  },
-  "showcase.tag.living.description": {
-    "message": "إرشادات اللياقة البدنية، والنصائح الغذائية، وتقنيات الطهي، وتصفيف التجميل، وغيرها من خدمات الحياة"
-  },
-  "showcase.tag.interesting.label": {
-    "message": "معلومات ممتعة"
-  },
-  "showcase.tag.interesting.description": {
-    "message": "معلومات تافهة مثيرة للاهتمام، ومحتوى علمي مبسط، وأسئلة وأجوبة ممتعة"
-  },
-  "showcase.tag.life.label": {
-    "message": "موسوعة الحياة"
-  },
-  "showcase.tag.life.description": {
-    "message": "معرفة عملية وحلول للمشاكل في الحياة اليومية"
-  },
-  "showcase.tag.social.label": {
-    "message": "علم النفس/الاجتماع"
-  },
-  "showcase.tag.social.description": {
-    "message": "الاستشارات النفسية، والتحليل العاطفي، والمهارات الاجتماعية، والتواصل بين الأشخاص"
-  },
-  "showcase.tag.philosophy.label": {
-    "message": "الفلسفة/الدين"
-  },
-  "showcase.tag.philosophy.description": {
-    "message": "التفكير الفلسفي، والثقافة الدينية، واستكشاف حكمة الحياة"
-  },
-  "showcase.tag.mind.label": {
-    "message": "تدريب العقل"
-  },
-  "showcase.tag.mind.description": {
-    "message": "تحفيز الإبداع، والتفكير النقدي، ومهارات الاستدلال المنطقي"
-  },
-  "showcase.tag.pedagogy.label": {
-    "message": "التعليم/الطلاب"
-  },
-  "showcase.tag.pedagogy.description": {
-    "message": "التدريس الدراسي، والمساعدة في الواجبات المنزلية، والتحضير للامتحانات، وغيرها من المحتويات المتعلقة بالطلاب"
-  },
-  "showcase.tag.academic.label": {
-    "message": "أكاديمي/معلم"
-  },
-  "showcase.tag.academic.description": {
-    "message": "البحث الأكاديمي، والتصميم التعليمي، وتخطيط المناهج، وغيرها من دعم المعلمين"
-  },
-  "showcase.tag.games.label": {
-    "message": "ألعاب ممتعة"
-  },
-  "showcase.tag.games.description": {
-    "message": "ألعاب نصية، ولعب الأدوار، والترفيه التفاعلي"
-  },
-  "showcase.tag.tool.label": {
-    "message": "أدوات الإنتاجية"
-  },
-  "showcase.tag.tool.description": {
-    "message": "أدوات عملية لتحسين كفاءة العمل"
-  },
-  "showcase.tag.interpreter.label": {
-    "message": "محطة طرفية/مترجم"
-  },
-  "showcase.tag.interpreter.description": {
-    "message": "محاكاة محطات سطر الأوامر ومترجمي لغات البرمجة المختلفة"
-  },
-  "showcase.tag.language.label": {
-    "message": "اللغة/الترجمة"
-  },
-  "showcase.tag.language.description": {
-    "message": "الترجمة متعددة اللغات، وتعلم اللغات، وتحويل النص، والتعرف على اللغة"
-  },
-  "showcase.tag.speech.label": {
-    "message": "مناظرة/خطابة"
-  },
-  "showcase.tag.speech.description": {
-    "message": "مهارات المناظرة، وكتابة الخطابات، والتدريب على البلاغة"
-  },
-  "showcase.tag.comments.label": {
-    "message": "تعليق/تقييم"
-  },
-  "showcase.tag.comments.description": {
-    "message": "تعليقات احترافية، وتقييم الأعمال، وتحليل التقدير"
-  },
-  "showcase.tag.text.label": {
-    "message": "نص/كلمات"
-  },
-  "showcase.tag.text.description": {
-    "message": "معالجة النصوص، وتحليل الكلمات، والمهام المتعلقة باللغة"
-  },
-  "showcase.tag.company.label": {
-    "message": "وظائف الشركات"
-  },
-  "showcase.tag.company.description": {
-    "message": "إدارة الشركات، والموارد البشرية، والتسويق، وغيرها من الأدوار الوظيفية"
-  },
-  "showcase.tag.seo.label": {
-    "message": "SEO"
-  },
-  "showcase.tag.seo.description": {
-    "message": "تحسين محركات البحث، وتوسيع الكلمات الرئيسية، وتسويق المحتوى"
-  },
-  "showcase.tag.doctor.label": {
-    "message": "الصحة الطبية"
-  },
-  "showcase.tag.doctor.description": {
-    "message": "الاستشارات الصحية، والتثقيف بالأمراض، والنصائح الطبية"
-  },
-  "showcase.tag.finance.label": {
-    "message": "مستشار مالي"
-  },
-  "showcase.tag.finance.description": {
-    "message": "إدارة الاستثمار، والتحليل المالي، ونصائح التخطيط المالي"
-  },
-  "showcase.tag.music.label": {
-    "message": "الموسقى والفنون"
-  },
-  "showcase.tag.music.description": {
-    "message": "التأليف الموسيقي، وتعلم نظرية الموسيقى، وتقدير الأعمال"
-  },
-  "showcase.tag.professional.label": {
-    "message": "مستشار مهني"
-  },
-  "showcase.tag.professional.description": {
-    "message": "المحامون، والمحاسبون، والمستشارون، وغيرهم من مستشاري المجالات المهنية"
-  },
-  "showcase.tag.contribute.label": {
-    "message": "مشاركات المستخدمين"
-  },
-  "showcase.tag.contribute.description": {
-    "message": "توجيهات عالية الجودة يشاركها مستخدمو المجتمع"
-  },
-  "message.addFavorite.success": {
-    "message": "تمت الإضافة إلى المفضلة"
-  },
-  "message.addFavorite.error": {
-    "message": "فشل الإضافة إلى المفضلة، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.removeFavorite.success": {
-    "message": "تمت الإزالة من المفضلة"
-  },
-  "message.removeFavorite.error": {
-    "message": "فشل الإزالة من المفضلة، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.removeFavorite.confirm.title": {
-    "message": "إزالة المفضلة"
-  },
-  "message.removeFavorite.confirm.content": {
-    "message": "هل أنت متأكد أنك تريد إزالة هذا التوجيه من المفضلة؟"
-  },
-  "button.confirm": {
-    "message": "تأكيد"
+  "action.backToLogin": {
+    "message": "العودة لتسجيل الدخول"
   },
   "action.cancel": {
     "message": "إلغاء"
   },
-  "message.addPrompt.success": {
-    "message": "تم إرسال التوجيه بنجاح!"
+  "action.changePassword": {
+    "message": "تغيير كلمة المرور"
   },
-  "message.addPrompt.error": {
-    "message": "فشل إرسال التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+  "action.close": {
+    "message": "إغلاق"
   },
-  "message.updatePrompt.success": {
-    "message": "تم تحديث التوجيه بنجاح!"
-  },
-  "message.updatePrompt.error": {
-    "message": "فشل تحديث التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.deletePrompt.success": {
-    "message": "تم حذف التوجيه بنجاح!"
-  },
-  "message.deletePrompt.error": {
-    "message": "فشل حذف التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.deletePrompt.confirm.title": {
-    "message": "تأكيد الحذف"
-  },
-  "message.deletePrompt.confirm.content": {
-    "message": "هل أنت متأكد أنك تريد حذف هذا التوجيه؟"
+  "action.convertToPrivate": {
+    "message": "تحويل إلى خاص"
   },
   "action.copy": {
     "message": "نسخ"
   },
-  "action.removeFavorite": {
-    "message": "انقر لإزالة المفضلة"
-  },
-  "action.upvote": {
-    "message": "إعجاب"
+  "action.delete": {
+    "message": "حذف"
   },
   "action.downvote": {
     "message": "عدم إعجاب"
   },
+  "action.edit": {
+    "message": "تعديل"
+  },
+  "action.forgotPassword": {
+    "message": "نسيت كلمة المرور"
+  },
+  "action.hideTags": {
+    "message": "إخفاء الوسوم"
+  },
+  "action.login": {
+    "message": "تسجيل الدخول مباشرة"
+  },
+  "action.register": {
+    "message": "تسجيل"
+  },
+  "action.removeFavorite": {
+    "message": "انقر لإزالة المفضلة"
+  },
+  "action.reply": {
+    "message": "رد"
+  },
+  "action.save": {
+    "message": "حفظ"
+  },
+  "action.sendLink": {
+    "message": "الحصول على رابط تسجيل الدخول"
+  },
+  "action.sendResetEmail": {
+    "message": "إرسال بريد إعادة التعيين"
+  },
+  "action.showTags": {
+    "message": "إظهار الوسوم"
+  },
+  "action.updatePrompt": {
+    "message": "تحديث التوجيه"
+  },
+  "action.upvote": {
+    "message": "إعجاب"
+  },
+  "action.viewDetails": {
+    "message": "عرض التفاصيل"
+  },
+  "button.clearAllCache": {
+    "message": "مسح كل التخزين المؤقت"
+  },
+  "button.clearCache": {
+    "message": "مسح ذاكرة التخزين المؤقت"
+  },
+  "button.confirm": {
+    "message": "تأكيد"
+  },
+  "button.export": {
+    "message": "تصدير البيانات"
+  },
+  "button.exportPrompts": {
+    "message": "تصدير التوجيهات"
+  },
+  "button.import": {
+    "message": "استيراد"
+  },
+  "button.importPrompts": {
+    "message": "استيراد التوجيهات"
+  },
   "button.login": {
     "message": "تسجيل الدخول"
+  },
+  "button.logout": {
+    "message": "تسجيل الخروج"
+  },
+  "button.resetPassword": {
+    "message": "إعادة تعيين كلمة المرور"
+  },
+  "button.settings": {
+    "message": "الإعدادات"
+  },
+  "comment.add": {
+    "message": "إرسال تعليق"
+  },
+  "common.favorites": {
+    "message": "المفضلة"
+  },
+  "community.backToList": {
+    "message": "العودة إلى القائمة"
+  },
+  "community.description": {
+    "message": "تحتاج المزيد من موجهات الذكاء الاصطناعي المجربة؟ انضم إلى مجتمع AiShort لاكتشاف قوالب عملية ومشاركة تقنيات التحسين."
+  },
+  "community.loading": {
+    "message": "جاري التحميل..."
+  },
+  "community.notFound": {
+    "message": "التوجيه غير موجود"
+  },
+  "community.notFoundDesc": {
+    "message": "ربما تم حذف هذا التوجيه أو جعله خاصًا"
+  },
+  "community.seoSuffix": {
+    "message": "توجيهات المجتمع"
+  },
+  "community.title": {
+    "message": "مجتمع موجهات الذكاء الاصطناعي | اكتشف وشارك - AiShort"
+  },
+  "description.clearCache.short": {
+    "message": "تحديث بيانات التخزين المؤقت المحلية"
+  },
+  "description.exportPrompts.short": {
+    "message": "تصدير كملف JSON للنسخ الاحتياطي"
+  },
+  "description.importPrompts.short": {
+    "message": "استيراد التوجيهات والمفضلة من ملف JSON"
+  },
+  "faq.a1": {
+    "message": "AiShort (المسمى أصلًا ChatGPT Shortcut) هو أداة مفتوحة المصدر لإدارة مطالبات الذكاء الاصطناعي توفّر قائمة منتقاة من المطالبات لمساعدتك في العثور بسرعة على التعليمات المناسبة لمختلف السيناريوهات. ركّز المشروع في البداية على ChatGPT، لذلك يظل اسم مستودع GitHub هو ChatGPT-Shortcut؛ يدعم اليوم جميع نماذج اللغة الكبيرة الرئيسية (بما في ذلك Claude وGemini وDeepSeek وKimi وغيرها). الاسم محتفظ به للاستمرارية التاريخية."
+  },
+  "faq.a2": {
+    "message": "ثلاث خطوات: (1) ابحث أو تصفح المطالبات حسب الوسم في الصفحة الرئيسية؛ (2) انقر على زر \"نسخ\" في أي بطاقة؛ (3) الصقه في أي أداة محادثة ذكاء اصطناعي وأضف سؤالك المحدد وفقًا لتعليمات المطالبة."
+  },
+  "faq.a3": {
+    "message": "المطالبات مستقلة عن النموذج وتعمل مع جميع نماذج اللغة الكبيرة الرئيسية. النماذج الدولية: ChatGPT، Claude، Gemini، Grok. النماذج الصينية: DeepSeek، Qwen، ERNIE Bot، Doubao، Kimi، ChatGLM، Spark، Hunyuan. منصات API: OpenRouter، SiliconFlow، Groq."
+  },
+  "faq.a4": {
+    "message": "Awesome ChatGPT Prompts هو أحد مصادر محتوى AiShort. يضيف AiShort فوقه: واجهة تصفح رسومية مع تصفية بالوسوم، ترجمات بـ 18 لغة، إدارة شخصية للمطالبات (المفضلة/الترتيب/الوسوم)، المشاركة والتصويت في المجتمع، إضافات متصفح Chrome/Edge/Firefox (Alt+Shift+S لفتح الشريط الجانبي)، تصدير ونسخ احتياطي للبيانات بصيغة JSON، وإصدار غير متصل للشبكات الداخلية للشركات."
+  },
+  "faq.a5": {
+    "message": "مجاني تمامًا ومفتوح المصدر (الكود مستضاف على GitHub). لا يتطلب التصفح والبحث ونسخ المطالبات تسجيلًا. التسجيل يفتح: المفضلة مع الترتيب بالسحب والإفلات، الوسوم المخصصة، إنشاء وإدارة مطالبات شخصية، المشاركة والتصويت في المجتمع، تصدير ونسخ احتياطي بصيغة JSON، والمزامنة عبر الأجهزة."
+  },
+  "faq.a6": {
+    "message": "يوفّر AiShort إصدارًا مستقلاً غير متصل مصممًا للشبكات الداخلية للشركات والشبكات الحكومية والبيئات الأخرى بدون اتصال بالإنترنت. لا يتطلب خادمًا خلفيًا أو حساب مستخدم، يعمل فور النشر، ويحتفظ بالميزات الأساسية مثل التصفح والبحث والمفضلة والمطالبات المخصصة. صيغة البيانات متوافقة مع الإصدار عبر الإنترنت."
+  },
+  "faq.heading": {
+    "message": "الأسئلة الشائعة"
+  },
+  "faq.q1": {
+    "message": "ما هو AiShort؟ لماذا يُسمى \"ChatGPT Shortcut\"؟"
+  },
+  "faq.q2": {
+    "message": "كيف أستخدم AiShort؟"
+  },
+  "faq.q3": {
+    "message": "هل AiShort مخصص لـ ChatGPT فقط؟ هل يدعم نماذج ذكاء اصطناعي أخرى؟"
+  },
+  "faq.q4": {
+    "message": "كيف يختلف AiShort عن Awesome ChatGPT Prompts ومجموعات المطالبات مفتوحة المصدر الأخرى؟"
+  },
+  "faq.q5": {
+    "message": "هل AiShort مجاني؟ هل أحتاج إلى التسجيل؟"
+  },
+  "faq.q6": {
+    "message": "هل يمكن استخدام AiShort في الشبكات الداخلية للشركات أو البيئات غير المتصلة بالإنترنت؟"
+  },
+  "faq.scenario.a": {
+    "message": "مناسب للمهام المتعلقة بعنوان هذه الصفحة ووصفها. إذا لم تكن المحاولة الأولى مثالية، أضف مزيداً من السياق داخل العنصر النائب، أو أضف قيوداً مثل «أجب خطوة بخطوة» أو «اضرب أمثلة»."
+  },
+  "faq.scenario.q": {
+    "message": "ما السيناريوهات التي يناسبها هذا الطلب؟"
+  },
+  "faq.tips.a": {
+    "message": "أولاً، اجعل [العنصر النائب] أكثر تحديداً (أضف الأسلوب والطول والمجال). ثانياً، ردّ على المخرجات غير المُرضية بعبارة «اجعلها أكثر X». ثالثاً، قارن النتائج بين نماذج مثل Claude و GPT-4 و Gemini."
+  },
+  "faq.tips.q": {
+    "message": "كيف يمكنني تحسين جودة الإخراج؟"
+  },
+  "faq.usage.a": {
+    "message": "انسخ الطلب، واستبدل [العنصر النائب] بين المعقوفين بمدخلاتك الخاصة، ثم الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو Qwen أو أي واجهة ذكاء اصطناعي محادثية تدعم اللغة الطبيعية، وأرسله."
+  },
+  "faq.usage.q": {
+    "message": "كيف أستخدم هذا الطلب؟"
+  },
+  "feedback.description": {
+    "message": "ملاحظاتك مهمة بالنسبة لنا!"
+  },
+  "feedback.paragraph": {
+    "message": "ChatGPT Shortcut هي أداة لإدارة التوجيهات مفتوحة المصدر مخصصة لتحسين كفاءة الذكاء الاصطناعي. نتطلع بشغف إلى مشاركتك: سواء بالإبلاغ عن الأخطاء، أو اقتراح ميزات، أو مشاركة توجيهات (Prompt) عالية الجودة. بالنسبة لمشاركات التوجيهات، ندعم لغات متعددة، وبمجرد قبولها سيتم تضمينها مع الإسناد (يمكن البحث عنها باسم المستخدم). كل مساهمة تساعد أعضاء المجتمع على توسيع تفكيرهم وزيادة الإنتاجية. دعونا نبني مكتبة توجيهات مثالية معًا!"
+  },
+  "feedback.subtitle": {
+    "message": "كل مساهمة تقدمها تساعد في جعل هذا المشروع مفتوح المصدر أفضل"
+  },
+  "feedback.title": {
+    "message": "التعليقات والاقتراحات"
+  },
+  "feedback.welcome": {
+    "message": "نرحب بالملاحظات"
   },
   "field.id": {
     "message": "تاريخ النشر"
@@ -242,257 +218,215 @@
   "field.upvoteDifference": {
     "message": "الشعبية"
   },
-  "order.descending": {
-    "message": "تنازلي"
+  "homepage.description": {
+    "message": "محبط من إجابات الذكاء الاصطناعي غير ذات الصلة؟ يقدم AiShort قوالب عملية للكتابة والبرمجة والترجمة. انسخ بنقرة واحدة وضاعف كفاءتك!"
   },
-  "order.ascending": {
-    "message": "تصاعدي"
+  "homepage.slogan": {
+    "message": "توجيهات ذكاء اصطناعي مختارة، لجعل كل محادثة أكثر كفاءة"
+  },
+  "homepage.title": {
+    "message": "AiShort - مكتبة موجهات الذكاء الاصطناعي | قوالب لتعزيز الإنتاجية"
+  },
+  "howto.step1.name": {
+    "message": "انسخ الطلب"
+  },
+  "howto.step1.text": {
+    "message": "انسخ قالب الطلب إلى الحافظة."
+  },
+  "howto.step2.name": {
+    "message": "خصّص العناصر النائبة"
+  },
+  "howto.step2.text": {
+    "message": "استبدل أقسام [العنصر النائب] بمحتواك الخاص."
+  },
+  "howto.step3.name": {
+    "message": "أرسل إلى الذكاء الاصطناعي"
+  },
+  "howto.step3.text": {
+    "message": "الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو أي واجهة ذكاء اصطناعي محادثية وشغّله."
   },
   "info.communityPrompts": {
     "message": "يتم مشاركة التوجيهات في هذه الصفحة وتحميلها بواسطة المستخدمين. نحن لا نضمن دقة المحتوى أو جودته أو اكتماله، ولا نتحمل أي مسؤولية قانونية عن المشكلات الناشئة عن المحتوى. إذا وجدت أي انتهاك أو مشاكل أخرى، يرجى الاتصال بنا."
   },
-  "feedback.title": {
-    "message": "التعليقات والاقتراحات"
-  },
-  "feedback.description": {
-    "message": "ملاحظاتك مهمة بالنسبة لنا!"
-  },
-  "feedback.welcome": {
-    "message": "نرحب بالملاحظات"
-  },
-  "feedback.subtitle": {
-    "message": "كل مساهمة تقدمها تساعد في جعل هذا المشروع مفتوح المصدر أفضل"
-  },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut هي أداة لإدارة التوجيهات مفتوحة المصدر مخصصة لتحسين كفاءة الذكاء الاصطناعي. نتطلع بشغف إلى مشاركتك: سواء بالإبلاغ عن الأخطاء، أو اقتراح ميزات، أو مشاركة توجيهات (Prompt) عالية الجودة. بالنسبة لمشاركات التوجيهات، ندعم لغات متعددة، وبمجرد قبولها سيتم تضمينها مع الإسناد (يمكن البحث عنها باسم المستخدم). كل مساهمة تساعد أعضاء المجتمع على توسيع تفكيرهم وزيادة الإنتاجية. دعونا نبني مكتبة توجيهات مثالية معًا!"
-  },
-  "showcase.filters.title": {
-    "message": "Filters"
-  },
-  "action.hideTags": {
-    "message": "إخفاء الوسوم"
-  },
-  "action.showTags": {
-    "message": "إظهار الوسوم"
-  },
-  "showcase.favoritesList.title": {
-    "message": "Favorites"
-  },
-  "showcase.usersList.allUsers": {
-    "message": "All prompts"
-  },
-  "validation.password.match": {
-    "message": "كلمتا المرور غير متطابقتين!"
-  },
-  "message.resetPassword.success": {
-    "message": "تم إعادة تعيين كلمة المرور بنجاح!"
-  },
-  "message.resetPassword.error": {
-    "message": "فشل إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
-  },
   "input.newPassword": {
     "message": "يرجى إدخال كلمة مرور جديدة!"
-  },
-  "validation.password.length": {
-    "message": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل"
-  },
-  "button.resetPassword": {
-    "message": "إعادة تعيين كلمة المرور"
-  },
-  "placeholder.resetPassword.code": {
-    "message": "رمز إعادة التعيين"
   },
   "input.resetPassword.code": {
     "message": "يرجى إدخال رمز إعادة التعيين الخاص بك!"
   },
-  "placeholder.newPassword": {
-    "message": "كلمة المرور الجديدة"
-  },
-  "placeholder.confirmPassword": {
-    "message": "تأكيد كلمة المرور الجديدة"
-  },
-  "validation.confirmPassword.required": {
-    "message": "يرجى تأكيد كلمة المرور الجديدة!"
-  },
-  "message.success.passwordChanged": {
-    "message": "تم تغيير كلمة المرور بنجاح!"
-  },
-  "message.error.passwordChangeFailed": {
-    "message": "فشل تغيير كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "message.success.forgotPassword": {
-    "message": "تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور!"
-  },
-  "message.error.forgotPassword": {
-    "message": "فشل إرسال بريد إلكتروني لإعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
-  },
-  "title.userInfo": {
-    "message": "معلومات المستخدم"
-  },
-  "title.security": {
-    "message": "إعدادات الأمان"
-  },
-  "action.changePassword": {
-    "message": "تغيير كلمة المرور"
-  },
-  "action.forgotPassword": {
-    "message": "نسيت كلمة المرور"
-  },
-  "placeholder.currentPassword": {
-    "message": "كلمة المرور الحالية"
-  },
-  "validation.currentPassword.required": {
-    "message": "يرجى إدخال كلمة المرور الحالية!"
-  },
-  "message.forgotPassword.info": {
-    "message": "إذا نسيت كلمة المرور الحالية، يمكنك إعادة تعيينها عبر البريد الإلكتروني. سنرسل بريدًا إلكترونيًا يحتوي على رابط إعادة التعيين إلى عنوان بريدك الإلكتروني المسجل."
-  },
-  "placeholder.email": {
-    "message": "البريد الإلكتروني"
-  },
-  "validation.email.required": {
-    "message": "يرجى إدخال البريد الإلكتروني!"
-  },
-  "validation.email.invalid": {
-    "message": "يرجى إدخال عنوان بريد إلكتروني صالح!"
-  },
-  "action.sendResetEmail": {
-    "message": "إرسال بريد إعادة التعيين"
-  },
-  "validation.comment.required": {
-    "message": "يرجى إدخال محتوى التعليق"
-  },
-  "validation.comment.maxLength": {
-    "message": "يجب ألا يتجاوز محتوى التعليق 2000 حرف"
-  },
-  "placeholder.comment": {
-    "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
-  },
-  "action.reply": {
-    "message": "رد"
-  },
-  "validation.replyRequired": {
-    "message": "يرجى إدخال محتوى الرد"
-  },
-  "label.comments": {
-    "message": "التعليقات"
-  },
-  "message.copied": {
-    "message": "تم النسخ بنجاح"
-  },
-  "label.commentInfo": {
-    "message": "لا تتردد في التعليق أو المشاركة أدناه."
-  },
-  "comment.add": {
-    "message": "إرسال تعليق"
-  },
   "input.search.placeholder": {
     "message": "بحث في التوجيهات..."
-  },
-  "showcase.usersList.noResult": {
-    "message": "لم يتم العثور على نتائج، جرّب كلمات مفتاحية أخرى"
-  },
-  "validation.username.required": {
-    "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل!"
-  },
-  "validation.password.required": {
-    "message": "يرجى إدخال كلمة المرور!"
-  },
-  "message.error": {
-    "message": "حدث خطأ أثناء المعالجة"
-  },
-  "message.success.login": {
-    "message": "تم تسجيل الدخول بنجاح!"
-  },
-  "message.success.register": {
-    "message": "تم التسجيل بنجاح!"
-  },
-  "message.success.passwordlessLink": {
-    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور إلى بريدك الإلكتروني!"
-  },
-  "message.error.passwordlessLink": {
-    "message": "فشل الإرسال، يرجى التحقق من بريدك الإلكتروني أو اسم المستخدم"
-  },
-  "login.method.password": {
-    "message": "تسجيل الدخول بكلمة المرور"
-  },
-  "login.method.code": {
-    "message": "تسجيل الدخول بدون كلمة مرور"
-  },
-  "placeholder.usernameOrEmail": {
-    "message": "اسم المستخدم/البريد الإلكتروني"
-  },
-  "placeholder.password": {
-    "message": "كلمة المرور"
-  },
-  "action.login": {
-    "message": "تسجيل الدخول مباشرة"
-  },
-  "login.passwordless.info": {
-    "message": "سيتم إرسال رابط تسجيل الدخول إلى بريدك الإلكتروني، انقر لتسجيل الدخول"
-  },
-  "action.sendLink": {
-    "message": "الحصول على رابط تسجيل الدخول"
-  },
-  "login.register.prompt": {
-    "message": "ليس لديك حساب؟"
-  },
-  "action.register": {
-    "message": "تسجيل"
-  },
-  "placeholder.username": {
-    "message": "اسم المستخدم"
-  },
-  "validation.agreement.required": {
-    "message": "يجب عليك الموافقة على شروط الخدمة وسياسة الخصوصية قبل الاستخدام"
   },
   "label.agree": {
     "message": "موافق"
   },
-  "link.terms": {
-    "message": "شروط الخدمة"
+  "label.comments": {
+    "message": "التعليقات"
+  },
+  "label.promptContent": {
+    "message": "محتوى التوجيه"
+  },
+  "label.promptNotes": {
+    "message": "ملاحظات"
+  },
+  "label.promptNotes.description": {
+    "message": "يمكنك تقديم المصدر، أو إصدارات لغة أخرى، أو ملاحظات إضافية هنا."
+  },
+  "label.promptRemark": {
+    "message": "الاستخدام"
+  },
+  "label.promptTitle": {
+    "message": "اسم التوجيه"
+  },
+  "label.sharePrompt": {
+    "message": "هل ترغب في مشاركة هذا التوجيه على الصفحة العامة؟"
+  },
+  "level.bronze": {
+    "message": "نجمة البرونز"
+  },
+  "level.bronze.desc": {
+    "message": "بداية رائعة! حافظ على الزخم!"
+  },
+  "level.diamond": {
+    "message": "أسطورة الماس"
+  },
+  "level.diamond.desc": {
+    "message": "مساهم متميز، أسطورة حقيقية في المجتمع!"
+  },
+  "level.gold": {
+    "message": "خبير الذهب"
+  },
+  "level.gold.desc": {
+    "message": "خبير وموثوق للغاية!"
+  },
+  "level.max.congrats": {
+    "message": "تهانينا لوصولك إلى أعلى مستوى! أنت مساهم أسطوري!"
+  },
+  "level.newcomer": {
+    "message": "مستكشف"
+  },
+  "level.newcomer.desc": {
+    "message": "شارك أول موجه لك لبدء الرحلة!"
+  },
+  "level.platinum": {
+    "message": "سيد البلاتين"
+  },
+  "level.platinum.desc": {
+    "message": "خبير متمرس بتأثير ملحوظ!"
+  },
+  "level.silver": {
+    "message": "نخبة الفضة"
+  },
+  "level.silver.desc": {
+    "message": "مساهم نشط، ينمو بقوة!"
+  },
+  "link.addprompt": {
+    "message": "إضافة توجيه"
+  },
+  "link.communityPrompts": {
+    "message": "موجهات المجتمع"
+  },
+  "link.home": {
+    "message": "الرئيسية"
+  },
+  "link.myAccount": {
+    "message": "حسابي"
+  },
+  "link.myaccount": {
+    "message": "إعدادات الحساب"
   },
   "link.privacy": {
     "message": "سياسة الخصوصية"
   },
+  "link.terms": {
+    "message": "شروط الخدمة"
+  },
   "login.login.prompt": {
     "message": "لديك حساب بالفعل؟"
   },
-  "action.backToLogin": {
-    "message": "العودة لتسجيل الدخول"
+  "login.method.code": {
+    "message": "تسجيل الدخول بدون كلمة مرور"
   },
-  "login.title.welcome": {
-    "message": "مرحبًا بعودتك"
+  "login.method.password": {
+    "message": "تسجيل الدخول بكلمة المرور"
   },
-  "login.title.register": {
-    "message": "انضم إلى المجتمع"
+  "login.passwordless.info": {
+    "message": "سيتم إرسال رابط تسجيل الدخول إلى بريدك الإلكتروني، انقر لتسجيل الدخول"
   },
-  "login.title.forgotPassword": {
-    "message": "استرجاع كلمة المرور"
-  },
-  "login.subtitle.welcome": {
-    "message": "سجل الدخول لاستكشاف المزيد من التوجيهات المميزة"
-  },
-  "login.subtitle.register": {
-    "message": "اكتشف وشارك وأنشئ توجيهات مذهلة"
+  "login.register.prompt": {
+    "message": "ليس لديك حساب؟"
   },
   "login.subtitle.forgotPassword": {
     "message": "سيتم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني"
   },
-  "message.noFavorites": {
-    "message": "لا توجد مفضلة بعد، اكتشف الموجهات التي تعجبك"
+  "login.subtitle.register": {
+    "message": "اكتشف وشارك وأنشئ توجيهات مذهلة"
   },
-  "action.edit": {
-    "message": "تعديل"
+  "login.subtitle.welcome": {
+    "message": "سجل الدخول لاستكشاف المزيد من التوجيهات المميزة"
   },
-  "action.delete": {
-    "message": "حذف"
+  "login.title.forgotPassword": {
+    "message": "استرجاع كلمة المرور"
   },
-  "message.noPrompts": {
-    "message": "لا توجد موجهات بعد، أنشئ واحدة"
+  "login.title.register": {
+    "message": "انضم إلى المجتمع"
+  },
+  "login.title.welcome": {
+    "message": "مرحبًا بعودتك"
+  },
+  "message.addFavorite.error": {
+    "message": "فشل الإضافة إلى المفضلة، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.addFavorite.success": {
+    "message": "تمت الإضافة إلى المفضلة"
+  },
+  "message.addPrompt.error": {
+    "message": "فشل إرسال التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.addPrompt.success": {
+    "message": "تم إرسال التوجيه بنجاح!"
+  },
+  "message.cache.clearError": {
+    "message": "فشل مسح ذاكرة التخزين المؤقت"
   },
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
+  },
+  "message.convertToPrivate.error": {
+    "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.convertToPrivate.success": {
+    "message": "تم التحويل إلى مطالبة خاصة بنجاح"
+  },
+  "message.copied": {
+    "message": "تم النسخ بنجاح"
+  },
+  "message.deletePrompt.confirm.content": {
+    "message": "هل أنت متأكد أنك تريد حذف هذا التوجيه؟"
+  },
+  "message.deletePrompt.confirm.title": {
+    "message": "تأكيد الحذف"
+  },
+  "message.deletePrompt.error": {
+    "message": "فشل حذف التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.deletePrompt.success": {
+    "message": "تم حذف التوجيه بنجاح!"
+  },
+  "message.error": {
+    "message": "حدث خطأ أثناء المعالجة"
+  },
+  "message.error.forgotPassword": {
+    "message": "فشل إرسال بريد إلكتروني لإعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.error.passwordChangeFailed": {
+    "message": "فشل تغيير كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.error.passwordlessLink": {
+    "message": "فشل الإرسال، يرجى التحقق من بريدك الإلكتروني أو اسم المستخدم"
+  },
+  "message.export.error": {
+    "message": "فشل التصدير، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.export.noPrompts": {
     "message": "لا توجد توجيهات متاحة للتصدير، يرجى المحاولة مرة أخرى لاحقًا"
@@ -500,210 +434,459 @@
   "message.export.success": {
     "message": "تم تصدير التوجيهات بنجاح!"
   },
-  "message.export.error": {
-    "message": "فشل التصدير، يرجى المحاولة مرة أخرى لاحقًا"
+  "message.forgotPassword.info": {
+    "message": "إذا نسيت كلمة المرور الحالية، يمكنك إعادة تعيينها عبر البريد الإلكتروني. سنرسل بريدًا إلكترونيًا يحتوي على رابط إعادة التعيين إلى عنوان بريدك الإلكتروني المسجل."
   },
-  "link.myaccount": {
-    "message": "إعدادات الحساب"
+  "message.import.failed": {
+    "message": "فشل الاستيراد"
   },
-  "button.exportPrompts": {
-    "message": "تصدير التوجيهات"
+  "message.import.invalid": {
+    "message": "تنسيق بيانات غير صالح"
   },
-  "button.clearCache": {
-    "message": "مسح ذاكرة التخزين المؤقت"
+  "message.import.parseError": {
+    "message": "خطأ في تحليل JSON"
   },
-  "button.logout": {
-    "message": "تسجيل الخروج"
+  "message.import.partial": {
+    "message": "استيراد جزئي"
   },
-  "message.logout.confirm.title": {
-    "message": "تأكيد تسجيل الخروج"
+  "message.import.success": {
+    "message": "تم الاستيراد بنجاح!"
+  },
+  "message.loginRequired": {
+    "message": "يرجى تسجيل الدخول أولاً"
   },
   "message.logout.confirm.content": {
     "message": "هل أنت متأكد أنك تريد تسجيل الخروج؟"
   },
-  "link.addprompt": {
-    "message": "إضافة توجيه"
+  "message.logout.confirm.title": {
+    "message": "تأكيد تسجيل الخروج"
   },
-  "button.settings": {
-    "message": "الإعدادات"
+  "message.noComments": {
+    "message": "لا توجد تعليقات بعد، كن أول من يعلق!"
   },
-  "showcase.header.button": {
-    "message": "شارك توجيهك"
+  "message.noFavorites": {
+    "message": "لا توجد مفضلة بعد، اكتشف الموجهات التي تعجبك"
   },
-  "action.addPrompt": {
-    "message": "إضافة Prompt"
+  "message.noPrompts": {
+    "message": "لا توجد موجهات بعد، أنشئ واحدة"
   },
-  "label.promptTitle": {
-    "message": "اسم التوجيه"
+  "message.noSpaceItems": {
+    "message": "لا يوجد محتوى بعد، أضف موجهات أو مفضلة"
   },
-  "validation.promptTitle.required": {
-    "message": "يرجى إدخال عنوان التوجيه!"
+  "message.orderSaveFailed": {
+    "message": "فشل في حفظ الترتيب"
   },
-  "placeholder.promptTitle": {
-    "message": "قم بتسمية توجيهك"
+  "message.orderSaved": {
+    "message": "تم حفظ الترتيب"
   },
-  "label.promptContent": {
-    "message": "محتوى التوجيه"
+  "message.removeFavorite.confirm.content": {
+    "message": "هل أنت متأكد أنك تريد إزالة هذا التوجيه من المفضلة؟"
   },
-  "validation.promptContent.required": {
-    "message": "يرجى إدخال محتوى التوجيه!"
+  "message.removeFavorite.confirm.title": {
+    "message": "إزالة المفضلة"
   },
-  "placeholder.promptContent": {
-    "message": "أدخل محتوى التوجيه التفصيلي هنا..."
+  "message.removeFavorite.error": {
+    "message": "فشل الإزالة من المفضلة، يرجى المحاولة مرة أخرى لاحقًا"
   },
-  "label.promptNotes": {
-    "message": "ملاحظات"
+  "message.removeFavorite.success": {
+    "message": "تمت الإزالة من المفضلة"
   },
-  "placeholder.promptNotes": {
-    "message": "ملاحظات إضافية حول هذا التوجيه (اختياري)"
+  "message.resetPassword.error": {
+    "message": "فشل إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
   },
-  "label.sharePrompt": {
-    "message": "هل ترغب في مشاركة هذا التوجيه على الصفحة العامة؟"
+  "message.resetPassword.success": {
+    "message": "تم إعادة تعيين كلمة المرور بنجاح!"
+  },
+  "message.success.forgotPassword": {
+    "message": "تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور!"
+  },
+  "message.success.login": {
+    "message": "تم تسجيل الدخول بنجاح!"
+  },
+  "message.success.passwordChanged": {
+    "message": "تم تغيير كلمة المرور بنجاح!"
+  },
+  "message.success.passwordlessLink": {
+    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور إلى بريدك الإلكتروني!"
+  },
+  "message.success.register": {
+    "message": "تم التسجيل بنجاح!"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "فشل تحديث الوسوم"
+  },
+  "message.tagsUpdated": {
+    "message": "تم تحديث الوسوم"
+  },
+  "message.updatePrompt.error": {
+    "message": "فشل تحديث التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
+  },
+  "message.updatePrompt.success": {
+    "message": "تم تحديث التوجيه بنجاح!"
+  },
+  "modal.clearCache.content": {
+    "message": "يستخدم النظام تقنية ETag لإدارة التخزين المؤقت تلقائيًا، عادةً لا يلزم المسح اليدوي."
+  },
+  "modal.clearCache.title": {
+    "message": "مسح ذاكرة التخزين المؤقت؟"
+  },
+  "modal.clearCache.warning": {
+    "message": "سيؤدي المسح إلى إعادة تحميل جميع البيانات."
   },
   "modal.editPrompt.title": {
     "message": "تحديث التوجيه الحالي"
   },
-  "action.updatePrompt": {
-    "message": "تحديث التوجيه"
+  "modal.forgotPassword.title": {
+    "message": "نسيت كلمة المرور"
   },
-  "theme.ErrorPageContent.title": {
-    "message": "هذه الصفحة لا تستجيب.",
-    "description": "The title of the fallback page when the page crashed"
+  "myCollection.header.subtitle": {
+    "message": "إدارة الموجهات التي أنشأتها، والمفضلة، والوسوم المخصصة"
+  },
+  "myCollection.header.title": {
+    "message": "مجموعتي"
+  },
+  "myCollection.stats.favorites": {
+    "message": "المفضلة"
+  },
+  "myCollection.stats.prompts": {
+    "message": "موجهاتي"
+  },
+  "myCollection.stats.tags": {
+    "message": "وسوم مخصصة"
+  },
+  "myCollection.stats.total": {
+    "message": "الإجمالي"
+  },
+  "myspace.assignTag": {
+    "message": "تعيين الوسوم"
+  },
+  "myspace.fallbackHint": {
+    "message": "لم يتم العثور على نتائج مطابقة. موصى به:"
+  },
+  "myspace.filter.all": {
+    "message": "الكل"
+  },
+  "myspace.filter.favorites": {
+    "message": "المفضلة"
+  },
+  "myspace.filter.prompts": {
+    "message": "طلبات"
+  },
+  "myspace.manageTags": {
+    "message": "إدارة الوسوم"
+  },
+  "myspace.tagManager.empty": {
+    "message": "لا توجد وسوم مخصصة"
+  },
+  "myspace.tagManager.namePlaceholder": {
+    "message": "اسم الوسم"
+  },
+  "myspace.tagManager.title": {
+    "message": "إدارة الوسوم المخصصة"
+  },
+  "nav.explore": {
+    "message": "استكشاف"
+  },
+  "nav.myCollection": {
+    "message": "مجموعتي"
+  },
+  "order.ascending": {
+    "message": "تصاعدي"
+  },
+  "order.descending": {
+    "message": "تنازلي"
+  },
+  "placeholder.comment": {
+    "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
+  },
+  "placeholder.confirmPassword": {
+    "message": "تأكيد كلمة المرور الجديدة"
+  },
+  "placeholder.currentPassword": {
+    "message": "كلمة المرور الحالية"
+  },
+  "placeholder.email": {
+    "message": "البريد الإلكتروني"
+  },
+  "placeholder.newPassword": {
+    "message": "كلمة المرور الجديدة"
+  },
+  "placeholder.password": {
+    "message": "كلمة المرور"
+  },
+  "placeholder.promptContent": {
+    "message": "أدخل محتوى التوجيه التفصيلي هنا..."
+  },
+  "placeholder.promptNotes": {
+    "message": "ملاحظات إضافية حول هذا التوجيه (اختياري)"
+  },
+  "placeholder.promptRemark": {
+    "message": "صف بإيجاز كيفية استخدام هذا الموجه (اختياري)"
+  },
+  "placeholder.promptTitle": {
+    "message": "قم بتسمية توجيهك"
+  },
+  "placeholder.resetPassword.code": {
+    "message": "رمز إعادة التعيين"
+  },
+  "placeholder.username": {
+    "message": "اسم المستخدم"
+  },
+  "placeholder.usernameOrEmail": {
+    "message": "اسم المستخدم/البريد الإلكتروني"
+  },
+  "progress.encourage": {
+    "message": "استمر في المشاركة لفتح مستويات أعلى!"
+  },
+  "progress.toNextLevel": {
+    "message": "حتى المستوى التالي"
+  },
+  "prompt.charsLabel": {
+    "message": "حرف"
+  },
+  "prompt.content": {
+    "message": "محتوى المطالبة"
+  },
+  "prompt.private": {
+    "message": "خاص"
+  },
+  "prompt.tokenDanger": {
+    "message": "الموجه (Prompt) طويل جدًا، مما قد يصعب مشاركته وإعادة استخدامه. يُنصح بتقسيمه."
+  },
+  "prompt.tokenWarning": {
+    "message": "الموجه (Prompt) طويل نوعًا ما؛ فكر في اختصاره أو تقسيمه."
+  },
+  "showcase.header.button": {
+    "message": "شارك توجيهك"
+  },
+  "showcase.tag.academic.description": {
+    "message": "البحث الأكاديمي، والتصميم التعليمي، وتخطيط المناهج، وغيرها من دعم المعلمين"
+  },
+  "showcase.tag.academic.label": {
+    "message": "أكاديمي/معلم"
+  },
+  "showcase.tag.ai.description": {
+    "message": "توجيهات وسيناريوهات تطبيق متعلقة بالذكاء الاصطناعي"
+  },
+  "showcase.tag.ai.label": {
+    "message": "الذكاء الاصطناعي"
+  },
+  "showcase.tag.article.description": {
+    "message": "إنشاء روايات، وأوراق بحثية، وبيانات صحفية، وسيناريوهات، وتقارير بحثية، وغيرها من المقالات"
+  },
+  "showcase.tag.article.label": {
+    "message": "مقال/تقرير"
+  },
+  "showcase.tag.code.description": {
+    "message": "تقديم اقتراحات برمجية، وأمثلة للكود، وحلول لتصحيح الأخطاء، وإرشادات تقنية"
+  },
+  "showcase.tag.code.label": {
+    "message": "تكنولوجيا المعلومات/البرمجة"
+  },
+  "showcase.tag.comments.description": {
+    "message": "تعليقات احترافية، وتقييم الأعمال، وتحليل التقدير"
+  },
+  "showcase.tag.comments.label": {
+    "message": "تعليق/تقييم"
+  },
+  "showcase.tag.company.description": {
+    "message": "إدارة الشركات، والموارد البشرية، والتسويق، وغيرها من الأدوار الوظيفية"
+  },
+  "showcase.tag.company.label": {
+    "message": "وظائف الشركات"
+  },
+  "showcase.tag.contribute.description": {
+    "message": "توجيهات عالية الجودة يشاركها مستخدمو المجتمع"
+  },
+  "showcase.tag.contribute.label": {
+    "message": "مشاركات المستخدمين"
+  },
+  "showcase.tag.doctor.description": {
+    "message": "الاستشارات الصحية، والتثقيف بالأمراض، والنصائح الطبية"
+  },
+  "showcase.tag.doctor.label": {
+    "message": "الصحة الطبية"
+  },
+  "showcase.tag.finance.description": {
+    "message": "إدارة الاستثمار، والتحليل المالي، ونصائح التخطيط المالي"
+  },
+  "showcase.tag.finance.label": {
+    "message": "مستشار مالي"
+  },
+  "showcase.tag.games.description": {
+    "message": "ألعاب نصية، ولعب الأدوار، والترفيه التفاعلي"
+  },
+  "showcase.tag.games.label": {
+    "message": "ألعاب ممتعة"
+  },
+  "showcase.tag.interesting.description": {
+    "message": "معلومات تافهة مثيرة للاهتمام، ومحتوى علمي مبسط، وأسئلة وأجوبة ممتعة"
+  },
+  "showcase.tag.interesting.label": {
+    "message": "معلومات ممتعة"
+  },
+  "showcase.tag.interpreter.description": {
+    "message": "محاكاة محطات سطر الأوامر ومترجمي لغات البرمجة المختلفة"
+  },
+  "showcase.tag.interpreter.label": {
+    "message": "الطرفية/المفسر"
+  },
+  "showcase.tag.language.description": {
+    "message": "الترجمة متعددة اللغات، وتعلم اللغات، وتحويل النص، والتعرف على اللغة"
+  },
+  "showcase.tag.language.label": {
+    "message": "اللغة/الترجمة"
+  },
+  "showcase.tag.life.description": {
+    "message": "معرفة عملية وحلول للمشاكل في الحياة اليومية"
+  },
+  "showcase.tag.life.label": {
+    "message": "موسوعة الحياة"
+  },
+  "showcase.tag.living.description": {
+    "message": "إرشادات اللياقة البدنية، والنصائح الغذائية، وتقنيات الطهي، وتصفيف التجميل، وغيرها من خدمات الحياة"
+  },
+  "showcase.tag.living.label": {
+    "message": "جودة الحياة"
+  },
+  "showcase.tag.mind.description": {
+    "message": "تحفيز الإبداع، والتفكير النقدي، ومهارات الاستدلال المنطقي"
+  },
+  "showcase.tag.mind.label": {
+    "message": "تدريب العقل"
+  },
+  "showcase.tag.music.description": {
+    "message": "التأليف الموسيقي، وتعلم نظرية الموسيقى، وتقدير الأعمال"
+  },
+  "showcase.tag.music.label": {
+    "message": "الموسقى والفنون"
+  },
+  "showcase.tag.pedagogy.description": {
+    "message": "التدريس الدراسي، والمساعدة في الواجبات المنزلية، والتحضير للامتحانات، وغيرها من المحتويات المتعلقة بالطلاب"
+  },
+  "showcase.tag.pedagogy.label": {
+    "message": "التعليم/الطلاب"
+  },
+  "showcase.tag.philosophy.description": {
+    "message": "التفكير الفلسفي، والثقافة الدينية، واستكشاف حكمة الحياة"
+  },
+  "showcase.tag.philosophy.label": {
+    "message": "الفلسفة/الدين"
+  },
+  "showcase.tag.professional.description": {
+    "message": "المحامون، والمحاسبون، والمستشارون، وغيرهم من مستشاري المجالات المهنية"
+  },
+  "showcase.tag.professional.label": {
+    "message": "مستشار مهني"
+  },
+  "showcase.tag.seo.description": {
+    "message": "تحسين محركات البحث، وتوسيع الكلمات الرئيسية، وتسويق المحتوى"
+  },
+  "showcase.tag.seo.label": {
+    "message": "SEO"
+  },
+  "showcase.tag.social.description": {
+    "message": "الاستشارات النفسية، والتحليل العاطفي، والمهارات الاجتماعية، والتواصل بين الأشخاص"
+  },
+  "showcase.tag.social.label": {
+    "message": "علم النفس/الاجتماع"
+  },
+  "showcase.tag.speech.description": {
+    "message": "مهارات المناظرة، وكتابة الخطابات، والتدريب على البلاغة"
+  },
+  "showcase.tag.speech.label": {
+    "message": "مناظرة/خطابة"
+  },
+  "showcase.tag.text.description": {
+    "message": "معالجة النصوص، وتحليل الكلمات، والمهام المتعلقة باللغة"
+  },
+  "showcase.tag.text.label": {
+    "message": "نص/كلمات"
+  },
+  "showcase.tag.tool.description": {
+    "message": "أدوات عملية لتحسين كفاءة العمل"
+  },
+  "showcase.tag.tool.label": {
+    "message": "أدوات الإنتاجية"
+  },
+  "showcase.tag.write.description": {
+    "message": "تحسين قواعد المقالات، وتحسين أسلوب التعبير، ورفع جودة الكتابة"
+  },
+  "showcase.tag.write.label": {
+    "message": "مساعد الكتابة"
+  },
+  "showcase.usersList.noResult": {
+    "message": "لم يتم العثور على نتائج، جرّب كلمات مفتاحية أخرى"
+  },
+  "sidebar.related": {
+    "message": "طلبات ذات صلة"
+  },
+  "stat.sharedPrompts": {
+    "message": "الموجهات المشتركة"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "إغلاق",
+    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "إنتقل للأعلى",
     "description": "The ARIA label for the back to top button"
   },
-  "theme.blog.archive.title": {
-    "message": "أرشيف",
-    "description": "The page & hero title of the blog archive page"
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
   },
-  "theme.blog.archive.description": {
-    "message": "أرشيف",
-    "description": "The page & hero description of the blog archive page"
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
   },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "التنقل في صفحة قائمة المدونة",
-    "description": "The ARIA label for the blog pagination"
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
   },
-  "theme.blog.paginator.newerEntries": {
-    "message": "أحدث الإدخالات",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.blog.paginator.olderEntries": {
-    "message": "أقدم الإدخالات",
-    "description": "The label used to navigate to the older blog posts page (next page)"
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
   },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "التنقل في صفحة مقالات المدونة",
-    "description": "The ARIA label for the blog posts pagination"
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
   },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "أحدث المقالات",
-    "description": "The blog post button label to navigate to the newer/previous post"
+  "theme.ErrorPageContent.title": {
+    "message": "هذه الصفحة لا تستجيب.",
+    "description": "The title of the fallback page when the page crashed"
   },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "أقدم المقالات",
-    "description": "The blog post button label to navigate to the older/next post"
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
-  "theme.tags.tagsPageLink": {
-    "message": "عرض كل الوسوم",
-    "description": "The label of the link targeting the tag list page"
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
   },
-  "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
-    "description": "The name for the system color mode"
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
   },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "الوضع الفاتح",
-    "description": "The name for the light color mode"
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
   },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "الوضع الداكن",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "التبديل بين الوضع الداكن والفاتح (الحالي {mode})",
-    "description": "The ARIA label for the color mode toggle"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} مواد",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "التنقل التفصيلي",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "صفحة التوثيق",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "السابق",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "التالي",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "مستند موسوم واحد|{count} مستندات موسومة",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} مستند موسوم بـ \"{tagName}\"",
-    "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "الإصدار: {versionLabel}"
-  },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "هذه الوثائق لم يتم طرحها بَعـد للإصدار {siteTitle} {versionLabel}.",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "هذه هي وثائق {siteTitle} {versionLabel}، التي لم تعد تتم صيانتها بشكل نشط.",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "للحصول على أحدث الوثائق، راجع {latestVersionLink} ({versionLabel}).",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "احدث إصدار",
-    "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.common.editThisPage": {
-    "message": "تعديل هذه الصفحة",
-    "description": "The link label to edit the current page"
-  },
-  "theme.common.headingLinkTitle": {
-    "message": "إرتباط مُبـاشر بالعنوان {heading}",
-    "description": "Title for link to heading"
-  },
-  "theme.lastUpdated.atDate": {
-    "message": " في {date}",
-    "description": "The words used to describe on which date a page has been last updated"
-  },
-  "theme.lastUpdated.byUser": {
-    "message": " بواسطة {user}",
-    "description": "The words used to describe by who the page has been last updated"
-  },
-  "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "آخر تحديث {atDate}{byUser}",
-    "description": "The sentence used to display when a page has been last updated, and by who"
-  },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "الإصدارات",
-    "description": "The label for the navbar versions dropdown on mobile view"
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
     "message": "الصفحة غير موجودة",
     "description": "The title of the 404 page"
   },
-  "theme.tags.tagsListLabel": {
-    "message": "الوسوم:",
-    "description": "The label alongside a tag list"
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.admonition.caution": {
     "message": "حذر",
@@ -729,121 +912,17 @@
     "message": "تحذير",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
+  "theme.blog.archive.description": {
+    "message": "أرشيف",
+    "description": "The page & hero description of the blog archive page"
   },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
+  "theme.blog.archive.title": {
+    "message": "أرشيف",
+    "description": "The page & hero title of the blog archive page"
   },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
-    "description": "The label for the mobile language switcher dropdown"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "Read more",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
-  },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
-    "description": "The title of the page for a blog tag"
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
   },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
@@ -857,173 +936,229 @@
     "message": "View all authors",
     "description": "The label of the link targeting the blog authors page"
   },
-  "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
-    "description": "The text for authors with 0 blog post"
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "التنقل في صفحة قائمة المدونة",
+    "description": "The ARIA label for the blog pagination"
   },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
+  "theme.blog.paginator.newerEntries": {
+    "message": "أحدث الإدخالات",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
+  "theme.blog.paginator.olderEntries": {
+    "message": "أقدم الإدخالات",
+    "description": "The label used to navigate to the older blog posts page (next page)"
   },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
-    "description": "The draft content banner title"
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "التنقل في صفحة مقالات المدونة",
+    "description": "The ARIA label for the blog posts pagination"
   },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
-    "description": "The draft content banner message"
+  "theme.blog.post.paginator.newerPost": {
+    "message": "أحدث المقالات",
+    "description": "The blog post button label to navigate to the newer/previous post"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  "theme.blog.post.paginator.olderPost": {
+    "message": "أقدم المقالات",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "التبديل بين الوضع الداكن والفاتح (الحالي {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "الوضع الداكن",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "الوضع الفاتح",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.common.editThisPage": {
+    "message": "تعديل هذه الصفحة",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "إرتباط مُبـاشر بالعنوان {heading}",
+    "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
     "message": "Skip to main content",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} مواد",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "التنقل التفصيلي",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "صفحة التوثيق",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.next": {
+    "message": "التالي",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "السابق",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} مستند موسوم بـ \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "مستند موسوم واحد|{count} مستندات موسومة",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "الإصدار: {versionLabel}"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "احدث إصدار",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "للحصول على أحدث الوثائق، راجع {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "هذه هي وثائق {siteTitle} {versionLabel}، التي لم تعد تتم صيانتها بشكل نشط.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "هذه الوثائق لم يتم طرحها بَعـد للإصدار {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " في {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " بواسطة {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "آخر تحديث {atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "الإصدارات",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "الوسوم:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "عرض كل الوسوم",
+    "description": "The label of the link targeting the tag list page"
+  },
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "link.myAccount": {
-    "message": "حسابي"
-  },
-  "prompt.private": {
-    "message": "خاص"
-  },
-  "prompt.content": {
-    "message": "محتوى المطالبة"
-  },
-  "action.viewDetails": {
-    "message": "عرض التفاصيل"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "إغلاق",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "action.close": {
-    "message": "إغلاق"
-  },
-  "message.noComments": {
-    "message": "لا توجد تعليقات بعد، كن أول من يعلق!"
-  },
-  "link.home": {
-    "message": "الرئيسية"
-  },
-  "link.communityPrompts": {
-    "message": "موجهات المجتمع"
-  },
-  "myCollection.header.title": {
-    "message": "مجموعتي"
-  },
-  "myCollection.header.subtitle": {
-    "message": "إدارة الموجهات التي أنشأتها، والمفضلة، والوسوم المخصصة"
-  },
-  "myCollection.stats.total": {
-    "message": "الإجمالي"
-  },
-  "myCollection.stats.prompts": {
-    "message": "موجهاتي"
-  },
-  "myCollection.stats.favorites": {
-    "message": "المفضلة"
-  },
-  "myCollection.stats.tags": {
-    "message": "وسوم مخصصة"
-  },
-  "myspace.filter.all": {
-    "message": "الكل"
-  },
-  "myspace.filter.prompts": {
-    "message": "موجهات"
-  },
-  "myspace.filter.favorites": {
-    "message": "المفضلة"
-  },
-  "myspace.manageTags": {
-    "message": "إدارة الوسوم"
-  },
-  "myspace.tagManager.title": {
-    "message": "إدارة الوسوم المخصصة"
-  },
-  "action.save": {
-    "message": "حفظ"
-  },
-  "myspace.tagManager.namePlaceholder": {
-    "message": "اسم الوسم"
-  },
-  "action.add": {
-    "message": "إضافة"
-  },
-  "myspace.tagManager.empty": {
-    "message": "لا توجد وسوم مخصصة"
-  },
-  "message.tagsUpdated": {
-    "message": "تم تحديث الوسوم"
-  },
-  "message.tagsUpdateFailed": {
-    "message": "فشل تحديث الوسوم"
-  },
-  "message.noSpaceItems": {
-    "message": "لا يوجد محتوى بعد، أضف موجهات أو مفضلة"
-  },
-  "nav.explore": {
-    "message": "استكشاف"
-  },
-  "nav.myCollection": {
-    "message": "مجموعتي"
-  },
-  "message.cache.clearError": {
-    "message": "فشل مسح ذاكرة التخزين المؤقت"
-  },
   "title.dataManagement": {
     "message": "إدارة البيانات"
   },
-  "description.exportPrompts.short": {
-    "message": "تصدير كملف JSON للنسخ الاحتياطي"
+  "title.security": {
+    "message": "إعدادات الأمان"
   },
-  "button.export": {
-    "message": "تصدير البيانات"
-  },
-  "description.clearCache.short": {
-    "message": "تحديث بيانات التخزين المؤقت المحلية"
-  },
-  "modal.clearCache.title": {
-    "message": "مسح ذاكرة التخزين المؤقت؟"
-  },
-  "modal.clearCache.content": {
-    "message": "يستخدم النظام تقنية ETag لإدارة التخزين المؤقت تلقائيًا، عادةً لا يلزم المسح اليدوي."
-  },
-  "modal.clearCache.warning": {
-    "message": "سيؤدي المسح إلى إعادة تحميل جميع البيانات."
-  },
-  "button.clearAllCache": {
-    "message": "مسح كل التخزين المؤقت"
-  },
-  "modal.forgotPassword.title": {
-    "message": "نسيت كلمة المرور"
-  },
-  "myspace.assignTag": {
-    "message": "تعيين الوسوم"
-  },
-  "prompt.tokenDanger": {
-    "message": "الموجه (Prompt) طويل جدًا، مما قد يصعب مشاركته وإعادة استخدامه. يُنصح بتقسيمه."
-  },
-  "prompt.tokenWarning": {
-    "message": "الموجه (Prompt) طويل نوعًا ما؛ فكر في اختصاره أو تقسيمه."
-  },
-  "label.promptNotes.description": {
-    "message": "يمكنك تقديم المصدر، أو إصدارات لغة أخرى، أو ملاحظات إضافية هنا."
-  },
-  "label.promptRemark": {
-    "message": "الاستخدام"
-  },
-  "placeholder.promptRemark": {
-    "message": "صف بإيجاز كيفية استخدام هذا الموجه (اختياري)"
+  "title.userInfo": {
+    "message": "معلومات المستخدم"
   },
   "unavailable.unshared": {
     "message": "توقف المؤلف عن المشاركة"
@@ -1031,148 +1166,46 @@
   "unavailable.unsharedNoCache": {
     "message": "توقف المؤلف عن المشاركة ولا تتوفر ذاكرة تخزين مؤقت محلية"
   },
-  "action.convertToPrivate": {
-    "message": "تحويل إلى خاص"
+  "validation.agreement.required": {
+    "message": "يجب عليك الموافقة على شروط الخدمة وسياسة الخصوصية قبل الاستخدام"
   },
-  "message.convertToPrivate.success": {
-    "message": "تم التحويل إلى مطالبة خاصة بنجاح"
+  "validation.comment.maxLength": {
+    "message": "يجب ألا يتجاوز محتوى التعليق 2000 حرف"
   },
-  "message.convertToPrivate.error": {
-    "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
+  "validation.comment.required": {
+    "message": "يرجى إدخال محتوى التعليق"
   },
-  "level.diamond": {
-    "message": "أسطورة الماس"
+  "validation.confirmPassword.required": {
+    "message": "يرجى تأكيد كلمة المرور الجديدة!"
   },
-  "level.platinum": {
-    "message": "سيد البلاتين"
+  "validation.currentPassword.required": {
+    "message": "يرجى إدخال كلمة المرور الحالية!"
   },
-  "level.gold": {
-    "message": "خبير الذهب"
+  "validation.email.invalid": {
+    "message": "يرجى إدخال عنوان بريد إلكتروني صالح!"
   },
-  "level.silver": {
-    "message": "نخبة الفضة"
+  "validation.email.required": {
+    "message": "يرجى إدخال البريد الإلكتروني!"
   },
-  "level.bronze": {
-    "message": "نجمة البرونز"
+  "validation.password.length": {
+    "message": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل"
   },
-  "level.newcomer": {
-    "message": "مستكشف"
+  "validation.password.match": {
+    "message": "كلمتا المرور غير متطابقتين!"
   },
-  "level.diamond.desc": {
-    "message": "مساهم متميز، أسطورة حقيقية في المجتمع!"
+  "validation.password.required": {
+    "message": "يرجى إدخال كلمة المرور!"
   },
-  "level.platinum.desc": {
-    "message": "خبير متمرس بتأثير ملحوظ!"
+  "validation.promptContent.required": {
+    "message": "يرجى إدخال محتوى التوجيه!"
   },
-  "level.gold.desc": {
-    "message": "خبير وموثوق للغاية!"
+  "validation.promptTitle.required": {
+    "message": "يرجى إدخال عنوان التوجيه!"
   },
-  "level.silver.desc": {
-    "message": "مساهم نشط، ينمو بقوة!"
+  "validation.replyRequired": {
+    "message": "يرجى إدخال محتوى الرد"
   },
-  "level.bronze.desc": {
-    "message": "بداية رائعة! حافظ على الزخم!"
-  },
-  "level.newcomer.desc": {
-    "message": "شارك أول موجه لك لبدء الرحلة!"
-  },
-  "stat.sharedPrompts": {
-    "message": "الموجهات المشتركة"
-  },
-  "progress.toNextLevel": {
-    "message": "حتى المستوى التالي"
-  },
-  "progress.encourage": {
-    "message": "استمر في المشاركة لفتح مستويات أعلى!"
-  },
-  "level.max.congrats": {
-    "message": "تهانينا لوصولك إلى أعلى مستوى! أنت مساهم أسطوري!"
-  },
-  "message.import.invalid": {
-    "message": "تنسيق بيانات غير صالح"
-  },
-  "message.import.success": {
-    "message": "تم الاستيراد بنجاح!"
-  },
-  "message.import.partial": {
-    "message": "استيراد جزئي"
-  },
-  "message.import.failed": {
-    "message": "فشل الاستيراد"
-  },
-  "message.import.parseError": {
-    "message": "خطأ في تحليل JSON"
-  },
-  "button.importPrompts": {
-    "message": "استيراد التوجيهات"
-  },
-  "description.importPrompts.short": {
-    "message": "استيراد التوجيهات والمفضلة من ملف JSON"
-  },
-  "button.import": {
-    "message": "استيراد"
-  },
-  "message.orderSaved": {
-    "message": "تم حفظ الترتيب"
-  },
-  "message.orderSaveFailed": {
-    "message": "فشل في حفظ الترتيب"
-  },
-  "message.loginRequired": {
-    "message": "يرجى تسجيل الدخول أولاً"
-  },
-  "community.loading": {
-    "message": "جاري التحميل..."
-  },
-  "community.notFound": {
-    "message": "التوجيه غير موجود"
-  },
-  "community.notFoundDesc": {
-    "message": "ربما تم حذف هذا التوجيه أو جعله خاصًا"
-  },
-  "community.backToList": {
-    "message": "العودة إلى القائمة"
-  },
-  "community.seoSuffix": {
-    "message": "توجيهات المجتمع"
-  },
-  "myspace.fallbackHint": {
-    "message": "لم يتم العثور على نتائج مطابقة. موصى به:"
-  },
-  "faq.q1": {
-    "message": "ما هو AiShort؟ لماذا يُسمى \"ChatGPT Shortcut\"؟"
-  },
-  "faq.a1": {
-    "message": "AiShort (المسمى أصلًا ChatGPT Shortcut) هو أداة مفتوحة المصدر لإدارة مطالبات الذكاء الاصطناعي توفّر قائمة منتقاة من المطالبات لمساعدتك في العثور بسرعة على التعليمات المناسبة لمختلف السيناريوهات. ركّز المشروع في البداية على ChatGPT، لذلك يظل اسم مستودع GitHub هو ChatGPT-Shortcut؛ يدعم اليوم جميع نماذج اللغة الكبيرة الرئيسية (بما في ذلك Claude وGemini وDeepSeek وKimi وغيرها). الاسم محتفظ به للاستمرارية التاريخية."
-  },
-  "faq.q2": {
-    "message": "كيف أستخدم AiShort؟"
-  },
-  "faq.a2": {
-    "message": "ثلاث خطوات: (1) ابحث أو تصفح المطالبات حسب الوسم في الصفحة الرئيسية؛ (2) انقر على زر \"نسخ\" في أي بطاقة؛ (3) الصقه في أي أداة محادثة ذكاء اصطناعي وأضف سؤالك المحدد وفقًا لتعليمات المطالبة."
-  },
-  "faq.q3": {
-    "message": "هل AiShort مخصص لـ ChatGPT فقط؟ هل يدعم نماذج ذكاء اصطناعي أخرى؟"
-  },
-  "faq.a3": {
-    "message": "المطالبات مستقلة عن النموذج وتعمل مع جميع نماذج اللغة الكبيرة الرئيسية. النماذج الدولية: ChatGPT، Claude، Gemini، Grok. النماذج الصينية: DeepSeek، Qwen، ERNIE Bot، Doubao، Kimi، ChatGLM، Spark، Hunyuan. منصات API: OpenRouter، SiliconFlow، Groq."
-  },
-  "faq.q4": {
-    "message": "كيف يختلف AiShort عن Awesome ChatGPT Prompts ومجموعات المطالبات مفتوحة المصدر الأخرى؟"
-  },
-  "faq.a4": {
-    "message": "Awesome ChatGPT Prompts هو أحد مصادر محتوى AiShort. يضيف AiShort فوقه: واجهة تصفح رسومية مع تصفية بالوسوم، ترجمات بـ 18 لغة، إدارة شخصية للمطالبات (المفضلة/الترتيب/الوسوم)، المشاركة والتصويت في المجتمع، إضافات متصفح Chrome/Edge/Firefox (Alt+Shift+S لفتح الشريط الجانبي)، تصدير ونسخ احتياطي للبيانات بصيغة JSON، وإصدار غير متصل للشبكات الداخلية للشركات."
-  },
-  "faq.q5": {
-    "message": "هل AiShort مجاني؟ هل أحتاج إلى التسجيل؟"
-  },
-  "faq.a5": {
-    "message": "مجاني تمامًا ومفتوح المصدر (الكود مستضاف على GitHub). لا يتطلب التصفح والبحث ونسخ المطالبات تسجيلًا. التسجيل يفتح: المفضلة مع الترتيب بالسحب والإفلات، الوسوم المخصصة، إنشاء وإدارة مطالبات شخصية، المشاركة والتصويت في المجتمع، تصدير ونسخ احتياطي بصيغة JSON، والمزامنة عبر الأجهزة."
-  },
-  "faq.q6": {
-    "message": "هل يمكن استخدام AiShort في الشبكات الداخلية للشركات أو البيئات غير المتصلة بالإنترنت؟"
-  },
-  "faq.a6": {
-    "message": "يوفّر AiShort إصدارًا مستقلاً غير متصل مصممًا للشبكات الداخلية للشركات والشبكات الحكومية والبيئات الأخرى بدون اتصال بالإنترنت. لا يتطلب خادمًا خلفيًا أو حساب مستخدم، يعمل فور النشر، ويحتفظ بالميزات الأساسية مثل التصفح والبحث والمفضلة والمطالبات المخصصة. صيغة البيانات متوافقة مع الإصدار عبر الإنترنت."
+  "validation.username.required": {
+    "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل!"
   }
 }
