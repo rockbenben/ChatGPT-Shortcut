@@ -434,7 +434,7 @@ const UserProfile = () => {
           padding: "24px 0",
         }}>
         <Row justify="center">
-          <Col xs={24} sm={22} md={20} lg={16} xl={14}>
+          <Col xs={24} sm={22} md={20} lg={16} xl={14} className="full-width-col">
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
               {/* Breadcrumb Navigation */}
               <Card
