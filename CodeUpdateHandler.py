@@ -131,8 +131,45 @@ process_and_save_data(favor_data, 'favor', favor_ids)
 process_and_save_data(other_data, 'other', other_ids)
 
 os.makedirs(output_dir_path_cards, exist_ok=True)
+
+
+def compute_related_map(all_data, top_n=3):
+    """计算每条 prompt 的 top-N 相关 prompt IDs。
+
+    算法：overlap_tag_count × 100000 + weight，降序取前 top_n
+    tag 重叠度优先，同重叠度按热度
+    返回 { prompt_id: [related_id_1, ...] }
+    """
+    related = {}
+    for cur in all_data:
+        cur_id = cur.get('id')
+        cur_tags = set(cur.get('tags') or [])
+        if cur_id is None:
+            continue
+        if not cur_tags:
+            related[cur_id] = []
+            continue
+        candidates = []
+        for other in all_data:
+            oid = other.get('id')
+            if oid == cur_id or oid is None:
+                continue
+            other_tags = set(other.get('tags') or [])
+            overlap = len(cur_tags & other_tags)
+            if overlap == 0:
+                continue
+            score = overlap * 100_000 + int(other.get('weight') or 0)
+            candidates.append((score, oid))
+        candidates.sort(key=lambda x: -x[0])
+        related[cur_id] = [cid for _, cid in candidates[:top_n]]
+    return related
+
+
 # 处理并保存每个 ID 和语言的数据
 def save_data_by_id_and_language(data):
+    # 预计算全量 related 映射（tag 重叠度 + weight）
+    related_map = compute_related_map(data)
+
     for item in data:
         for lang in allLanguages:
             content = get_lang_content(item, lang)
@@ -144,6 +181,8 @@ def save_data_by_id_and_language(data):
                     "tags": item.get("tags", []),
                     "website": item.get("website", ""),
                     "count": item.get("weight", 0),
+                    # build-time 预计算的相关 prompt IDs（同 tag 按热度 top 3）
+                    "related": related_map.get(item["id"], []),
                     # 合并 meta title（如果存在）
                     "metaTitle": get_meta_content(item["id"], 'title', lang),
                     # 合并 meta description（如果存在）
