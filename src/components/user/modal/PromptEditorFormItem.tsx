@@ -2,6 +2,7 @@ import { Input, Typography, Alert } from "antd";
 import { useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { green, blue, orange, red } from "@ant-design/colors";
+import { estimateTokens } from "@site/src/utils/promptRender";
 
 // Token 阈值设计（基于现代大模型 128K+ 上下文窗口）
 const OPTIMAL_LIMIT = 2500; // 常规提示词
@@ -9,28 +10,6 @@ const RECOMMEND_LIMIT = 5000; // 复杂提示词（含示例/多步指令）
 const WARNING_LIMIT = 7500; // 偏长，建议精简
 const DANGER_LIMIT = 10000; // 过长，建议拆分
 const SAFE_CHAR_LIMIT = 40000;
-
-const estimateTokens = (text: string): number => {
-  let tokens = 0;
-
-  for (const ch of text) {
-    const code = ch.charCodeAt(0);
-
-    if (code >= 0x4e00 && code <= 0x9fa5) {
-      tokens += 2.0; // 中文
-    } else if (code >= 0x3040 && code <= 0x30ff) {
-      tokens += 1.8; // 日文
-    } else if (code >= 0xac00 && code <= 0xd7af) {
-      tokens += 1.8; // 韩文
-    } else if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
-      tokens += 0.25; // 拉丁字母
-    } else {
-      tokens += 0.5; // 其他
-    }
-  }
-
-  return Math.ceil(tokens);
-};
 
 // 渐进式颜色：绿 → 蓝 → 橙 → 红
 const getStatusColor = (tokens: number) => {

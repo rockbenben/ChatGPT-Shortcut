@@ -337,6 +337,16 @@ div[class^="announcementBar_"] {
   }
 }
 
+/* PromptPage 侧栏：桌面 md+ 才 sticky，移动端保持普通流式布局 */
+@media (min-width: 768px) {
+  .prompt-sidebar-col {
+    position: sticky;
+    top: 72px;
+    align-self: flex-start;
+    z-index: 1;
+  }
+}
+
 /* Style external links */
 .theme-doc-markdown {
   font-size: 1rem;
@@ -422,5 +432,11 @@ div[class^="announcementBar_"] {
   .ant-col-xs-24 {
     flex: 0 0 50% !important;
     max-width: 50% !important;
+  }
+  /* 例外：标记为 full-width-col 的 Col（PromptPage / CommunityPromptPage / user 等页面的内容容器）
+     在窄屏保持 100%，不被上面为卡片网格准备的 50% 规则误伤 */
+  .full-width-col.ant-col-xs-24 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 }
