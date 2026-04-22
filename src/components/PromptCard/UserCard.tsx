@@ -92,7 +92,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
                   {user.title}
                 </Link>
               ) : (
-                <span style={{ color: "var(--ifm-color-primary)" }}>{user.title}</span>
+                <span className={styles.showcaseCardLink}>{user.title}</span>
               )}
             </Typography.Title>
           </Flex>
@@ -105,8 +105,8 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--ifm-color-warning)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-warning)" } }}
+              prefix={<LikeFilled style={{ color: "var(--ifm-color-primary)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-primary)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
         </>

@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
-import { gold } from "@ant-design/colors";
+import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
@@ -85,8 +84,8 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
           <Statistic
             value={copyCount}
             formatter={(value) => formatCompactNumber(value as number)}
-            prefix={<FireOutlined style={{ color: "var(--ifm-color-warning)" }} />}
-            styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
+            prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
+            styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
           />
         </Flex>
       }
@@ -96,7 +95,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         </Tooltip>,
         isLoggedIn && onToggleFavorite && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFav} block />
+            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFav} block />
           </Tooltip>
         ),
       ].filter(Boolean)}

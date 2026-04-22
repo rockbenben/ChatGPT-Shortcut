@@ -1,7 +1,6 @@
 import React, { Suspense, useContext, useCallback, useMemo } from "react";
 import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Skeleton, Divider, App, Result, Breadcrumb } from "antd";
-import { CopyOutlined, CheckOutlined, StarOutlined, StarFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined } from "@ant-design/icons";
-import { gold } from "@ant-design/colors";
+import { CopyOutlined, CheckOutlined, HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -239,7 +238,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     </Space.Compact>
 
                     {/* 收藏按钮 */}
-                    <Button icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite}>
+                    <Button icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite}>
                       {isFavorite ? <Translate id="action.removeFavorite">取消收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}
                     </Button>
                   </Space>

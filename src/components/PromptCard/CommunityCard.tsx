@@ -1,11 +1,10 @@
 import React, { useContext, useCallback } from "react";
 import { Tooltip, Button, Typography, Flex } from "antd";
-import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { AuthContext } from "../AuthContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
@@ -92,7 +91,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         </Tooltip>,
         userAuth && onToggleFavorite && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite} block />
+            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite} block />
           </Tooltip>
         ),
         onVote && (

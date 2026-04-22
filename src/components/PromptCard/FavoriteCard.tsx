@@ -1,11 +1,10 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { gold } from "@ant-design/colors";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
@@ -183,16 +182,16 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
             <Statistic
               value={copyCount}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<FireOutlined style={{ color: "var(--ifm-color-warning)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
+              prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
           {user.upvoteDifference > 0 && (
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--ifm-color-warning)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-warning)" } }}
+              prefix={<LikeFilled style={{ color: "var(--ifm-color-primary)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-primary)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
         </>
@@ -202,7 +201,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
         <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-          <Button type="text" icon={<StarFilled style={{ color: gold[5] }} />} onClick={handleRemoveFavorite} block />
+          <Button type="text" icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
         extraActions,
       ].filter(Boolean)}
