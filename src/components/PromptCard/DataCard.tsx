@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo } from "react";
-import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
-import { gold } from "@ant-design/colors";
+import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
+import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
@@ -22,7 +21,6 @@ interface DataCardProps {
 
 const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onToggleFavorite, onOpenModal }: DataCardProps & { onOpenModal?: (data: any) => void }) => {
   const { i18n } = useDocusaurusContext();
-  const { token } = theme.useToken();
   const currentLanguage = i18n.currentLocale;
 
   const userInfo = useMemo(() => {
@@ -63,7 +61,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       e.stopPropagation();
       updateCopy(userInfo.prompt, user.id);
     },
-    [updateCopy, userInfo.prompt, user.id],
+    [updateCopy, userInfo.prompt, user.id]
   );
 
   const handleToggleFav = useCallback(
@@ -71,14 +69,14 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       e.stopPropagation();
       onToggleFavorite?.(user.id, false);
     },
-    [onToggleFavorite, user.id],
+    [onToggleFavorite, user.id]
   );
 
   return (
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: token.marginXS }} ellipsis={{ rows: 2 }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
               {userInfo.title}
             </Link>
@@ -86,8 +84,8 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
           <Statistic
             value={copyCount}
             formatter={(value) => formatCompactNumber(value as number)}
-            prefix={<FireOutlined style={{ color: "var(--ifm-color-warning)" }} />}
-            styles={{ content: { fontSize: token.fontSizeSM, color: "var(--ifm-color-emphasis-500)" } }}
+            prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
+            styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
           />
         </Flex>
       }
@@ -97,7 +95,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         </Tooltip>,
         isLoggedIn && onToggleFavorite && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFav} block />
+            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFav} block />
           </Tooltip>
         ),
       ].filter(Boolean)}
@@ -111,7 +109,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
           <PromptCardTag tags={user.tags} muted />
         </div>
         {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
+          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
             <LinkOutlined style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", opacity: 0.6 }} />
           </a>
         )}

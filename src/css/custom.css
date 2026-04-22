@@ -28,6 +28,8 @@
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --site-color-card-background: #fafafa;
+  --site-color-card-border: transparent; /* Light: no hard outline; shadow + bg define the card */
   --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
   --site-color-tag-selected-text: #2d6454; /* Darker primary */
   --site-color-tag-selected-border: #397e6a; /* Primary border */
@@ -44,6 +46,8 @@ html[data-theme="dark"] {
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --site-color-card-background: #2a2b2c;
+  --site-color-card-border: var(--ifm-color-emphasis-200); /* Dark: subtle outline reads well on dark bg */
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
   --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
   --site-color-tag-selected-border: #397e6a; /* Primary border */
@@ -66,6 +70,7 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: hsl(
     var(--site-primary-hue-saturation-light) 64%
   );
+  --ifm-color-primary-rgb: 57, 126, 106; /* #397e6a — rgba() companion for --ifm-color-primary */
 }
 
 /*
@@ -85,6 +90,7 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: hsl(
     var(--site-primary-hue-saturation-light) 73%
   );
+  --ifm-color-primary-rgb: 71, 158, 134; /* dark-mode primary hsl(163, 38%, 45%) — rgba() companion */
 }
 
 .header-github-link:hover {

@@ -12,9 +12,11 @@ export const PromptRemark = ({ remark, ...props }: { remark?: string } & React.H
       style={{
         fontSize: "0.85rem",
         lineHeight: 1.5,
-        padding: "2px 12px",
-        borderRadius: 6,
-        borderLeft: "3px solid var(--ifm-color-emphasis-200)", // SSG 兼容
+        padding: "4px 12px",
+        borderRadius: "0 6px 6px 0",
+        borderLeft: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
+        background: "linear-gradient(90deg, rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
+        fontStyle: "italic",
         marginBottom: 12,
         ...props.style,
       }}

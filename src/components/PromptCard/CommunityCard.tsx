@@ -1,11 +1,10 @@
 import React, { useContext, useCallback } from "react";
-import { Tooltip, Button, Typography, Flex, theme } from "antd";
-import { gold } from "@ant-design/colors";
+import { Tooltip, Button, Typography, Flex } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarOutlined, StarFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { AuthContext } from "../AuthContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
@@ -21,7 +20,6 @@ interface CommunityCardProps {
 
 const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const { userAuth } = useContext(AuthContext);
-  const { token } = theme.useToken();
   const { copied, copyText } = useCopyToClipboard();
 
   const handleCopy = useCallback(
@@ -29,7 +27,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       copyText(user.description);
     },
-    [copyText, user.description],
+    [copyText, user.description]
   );
 
   const handleToggleFavorite = useCallback(
@@ -37,7 +35,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onToggleFavorite?.(user.id, true);
     },
-    [onToggleFavorite, user.id],
+    [onToggleFavorite, user.id]
   );
 
   const handleUpvote = useCallback(
@@ -45,7 +43,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onVote?.(user.id, "upvote");
     },
-    [onVote, user.id],
+    [onVote, user.id]
   );
 
   const handleDownvote = useCallback(
@@ -53,7 +51,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       e.stopPropagation();
       onVote?.(user.id, "downvote");
     },
-    [onVote, user.id],
+    [onVote, user.id]
   );
 
   const handleCardClick = useCallback(() => {
@@ -93,7 +91,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         </Tooltip>,
         userAuth && onToggleFavorite && (
           <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />} onClick={handleToggleFavorite} block />
+            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite} block />
           </Tooltip>
         ),
         onVote && (
@@ -114,7 +112,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: token.colorTextSecondary }}>
+        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
           {user.description}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center">
@@ -122,8 +120,8 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
             <PromptCardTag tags={user.tags} />
           </div>
           {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
             </a>
           )}
         </Flex>

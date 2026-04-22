@@ -1,11 +1,10 @@
 import React, { useCallback, ReactNode } from "react";
-import { Tooltip, Button, Typography, Flex, theme, Statistic } from "antd";
-import { gold } from "@ant-design/colors";
+import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, StarFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
+import { CheckOutlined, CopyOutlined, HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
@@ -27,7 +26,6 @@ interface FavoriteCardProps {
 
 const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
   const { i18n } = useDocusaurusContext();
-  const { token } = theme.useToken();
   const { copied, copyText, updateCopy } = useCopyToClipboard();
 
   // Check if prompt is unavailable (unshared by author)
@@ -122,16 +120,16 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
     return (
       <div
         style={{
-          padding: `${token.paddingSM}px ${token.padding}px`,
-          background: hasCache ? "#fff7e6" : "#fff2f0",
-          border: `1px solid ${hasCache ? "#ffa940" : "#ff7875"}`,
-          borderRadius: token.borderRadiusLG,
-          marginBottom: token.marginSM,
+          padding: "12px 16px",
+          background: hasCache ? "rgba(250, 173, 20, 0.1)" : "rgba(255, 77, 79, 0.1)",
+          border: `1px solid ${hasCache ? "rgba(250, 173, 20, 0.35)" : "rgba(255, 77, 79, 0.35)"}`,
+          borderRadius: 8,
+          marginBottom: 12,
         }}>
         <Flex vertical gap="small">
           <Flex align="center" gap="small">
             {hasCache ? <ExclamationCircleOutlined style={{ color: "#faad14", fontSize: 18, flexShrink: 0 }} /> : <StopOutlined style={{ color: "#ff4d4f", fontSize: 18, flexShrink: 0 }} />}
-            <Typography.Text style={{ fontSize: token.fontSize, color: token.colorText, flex: 1 }}>
+            <Typography.Text style={{ fontSize: 14, color: "var(--ifm-color-content)", flex: 1 }}>
               {hasCache ? <Translate id="unavailable.unshared">原作者已取消分享</Translate> : <Translate id="unavailable.unsharedNoCache">原作者已取消分享且无本地缓存</Translate>}
             </Typography.Text>
           </Flex>
@@ -157,10 +155,10 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       {...attributes}
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: token.marginXS, overflow: "hidden" }}>
+          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
             {!isFiltered && (
-              <div {...listeners} style={{ cursor: "grab", marginRight: token.marginXS, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: token.colorTextSecondary }} />
+              <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+                <HolderOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
               </div>
             )}
             <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
@@ -175,7 +173,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
               )}
             </Typography.Title>
           </Flex>
-          <Flex align="center" gap={token.marginXXS} style={{ color: token.colorError, flexShrink: 0 }}></Flex>
+          <Flex align="center" gap={4} style={{ color: "var(--ifm-color-danger)", flexShrink: 0 }}></Flex>
         </Flex>
       }
       titleExtra={
@@ -184,16 +182,16 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
             <Statistic
               value={copyCount}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<FireOutlined style={{ color: token.colorWarning }} />}
-              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorTextTertiary } }}
+              prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
           {user.upvoteDifference > 0 && (
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: token.colorWarning }} />}
-              styles={{ content: { fontSize: token.fontSizeSM, color: token.colorWarning } }}
+              prefix={<LikeFilled style={{ color: "var(--ifm-color-primary)" }} />}
+              styles={{ content: { fontSize: 12, color: "var(--ifm-color-primary)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
         </>
@@ -203,7 +201,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
           <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
         </Tooltip>,
         <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
-          <Button type="text" icon={<StarFilled style={{ color: gold[5] }} />} onClick={handleRemoveFavorite} block />
+          <Button type="text" icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
         extraActions,
       ].filter(Boolean)}
@@ -211,10 +209,10 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         {renderUnavailableBanner()}
         <PromptRemark remark={remark} />
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: token.colorTextSecondary }}>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
           {prompt}
         </Typography.Paragraph>
-        <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: token.marginSM }}>
+        <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: 12 }}>
           <div style={{ flex: 1, overflow: "hidden" }}>
             {owner && (
               <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
@@ -226,8 +224,8 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
           </div>
 
           {website && (
-            <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: token.marginXS }}>
-              <LinkOutlined style={{ fontSize: 14, color: token.colorTextSecondary }} />
+            <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
             </a>
           )}
         </Flex>

@@ -1,9 +1,9 @@
 /* New Card Container Style */
 .showcaseCard {
   border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid var(--site-color-card-border);
+  box-shadow: var(--site-shadow-sm), inset 2px 0 0 transparent;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
   background-color: var(--site-color-card-background);
   display: flex;
@@ -11,10 +11,12 @@
   contain: layout paint;
 }
 
+/* Hover: only the left edge lights up; a soft teal bloom radiates inward. No vertical lift, no border-color change. */
 .showcaseCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border-color: var(--ifm-color-primary);
+  box-shadow:
+    var(--site-shadow-lg),
+    inset 2px 0 0 var(--ifm-color-primary),
+    inset 0 0 28px rgba(var(--ifm-color-primary-rgb), 0.14);
 }
 
 .showcaseCard:focus-visible {
@@ -36,14 +38,23 @@
   }
 }
 
+/* Title link cascade:
+   - dormant: primary
+   - card hovered: primary-light (subtle lift)
+   - card + text hovered: primary-lighter + underline (full link affordance) */
 .showcaseCardLink {
   color: var(--ifm-color-primary) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.showcaseCardLink:hover {
-  color: var(--ifm-color-primary-dark) !important;
+.showcaseCard:hover .showcaseCardLink {
+  color: var(--ifm-color-primary-light) !important;
+}
+
+/* Underline + brighter only on anchors — non-link spans (private user cards) should not fake clickability. */
+.showcaseCard:hover a.showcaseCardLink:hover {
+  color: var(--ifm-color-primary-lighter) !important;
   text-decoration: underline !important;
 }
 
@@ -78,4 +89,21 @@
   align-items: center;
   justify-content: center;
   border-radius: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.showcaseCard :global(.ant-card-actions .ant-btn):hover {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.08);
+  color: var(--ifm-color-primary);
+}
+
+/* Top-right stats (fire/copy count, like/vote): dye to primary on card hover. */
+.showcaseCard :global(.ant-statistic-content),
+.showcaseCard :global(.ant-statistic .anticon) {
+  transition: color 0.25s ease;
+}
+
+.showcaseCard:hover :global(.ant-statistic-content),
+.showcaseCard:hover :global(.ant-statistic .anticon) {
+  color: var(--ifm-color-primary-lighter) !important;
 }

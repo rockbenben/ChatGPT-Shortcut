@@ -32,7 +32,6 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          borderColor: "var(--ifm-color-emphasis-200)", // CSS 变量确保 SSG 兼容
           cursor: onCardClick ? "pointer" : undefined,
           ...style,
         }}

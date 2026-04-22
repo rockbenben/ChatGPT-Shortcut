@@ -80,12 +80,28 @@ const TagLayout = ({
           onClick={onClick ? (e) => onClick(e, tagObject.tag) : undefined}
           style={{
             marginRight: 0,
-            opacity: muted ? 0.7 : 1,
-            color: tagObject.color,
-            backgroundColor: `${tagObject.color}18`,
-            borderColor: `${tagObject.color}50`,
+            opacity: muted ? 0.75 : 1,
+            color: "var(--ifm-color-content)",
+            backgroundColor: "rgba(255, 255, 255, 0.04)",
+            border: "1px solid var(--ifm-color-emphasis-300)",
+            borderLeft: 0,
+            borderRadius: "0 2px 2px 0",
+            paddingInlineStart: 10,
+            paddingInlineEnd: 8,
+            position: "relative",
             cursor,
           }}>
+          <span
+            aria-hidden
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: 2,
+              backgroundColor: tagObject.color,
+            }}
+          />
           {tagObject.label}
         </AntTag>
       </Tooltip>
