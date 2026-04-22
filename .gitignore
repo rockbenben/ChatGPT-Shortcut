@@ -20,4 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 CHANGELOG.md
 
+.superpowers
+
 /extension
