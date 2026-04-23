@@ -154,7 +154,7 @@ export const Tags: { [type in TagType]: Tag } = {
       message: "辩论技巧、演讲稿撰写和口才训练",
       id: "showcase.tag.speech.description",
     }),
-    color: blue[4],
+    color: yellow[6],
   },
 
   comments: {
@@ -217,7 +217,7 @@ export const Tags: { [type in TagType]: Tag } = {
       message: "音乐创作、乐理学习和作品鉴赏",
       id: "showcase.tag.music.description",
     }),
-    color: magenta[4],
+    color: magenta[5],
   },
 
   professional: {
@@ -235,7 +235,7 @@ export const Tags: { [type in TagType]: Tag } = {
       message: "社区用户分享的优质提示词",
       id: "showcase.tag.contribute.description",
     }),
-    color: gold[4],
+    color: yellow[5],
   },
 };
 
