@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "ยินดีรับข้อเสนอแนะ"
   },
-  "field.id": {
-    "message": "วันที่โพสต์"
-  },
-  "field.upvoteDifference": {
-    "message": "ความนิยม"
-  },
   "homepage.description": {
     "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมพ์สำหรับการเขียน การเขียนโค้ด และการแปล!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "วางลงใน ChatGPT, Claude, Gemini, DeepSeek หรือ AI สนทนาอื่นแล้วสั่งรัน"
-  },
-  "info.communityPrompts": {
-    "message": "Promptในหนานีäถูกแบงปันโดยผูใช เราไม่รับประกันความถูกต้อง คุณภาพ หรือความสมบูรณ์ของเนื้อหา และไม่รับผิดชอบทางกฎหมายสำหรับปัญหาที่เกิดจากเนื้อหา หากพบการละเมิดหรือปัญหาอื่นๆ โปรดติดต่อเรา"
   },
   "input.newPassword": {
     "message": "กรุณากรอกรหัสผ่านใหม่!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "อัปเดตพรอมพ์สำเร็จ!"
   },
-  "modal.clearCache.content": {
-    "message": "ระบบใช้เทคโนโลยี ETag โดยอัตโนมัติเพื่อจัดการแคช โดยปกติไม่จำเป็นต้องล้างด้วยตนเอง"
-  },
   "modal.clearCache.title": {
     "message": "ยืนยันล้างแคช?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "คอลเลกชันของฉัน"
   },
-  "order.ascending": {
-    "message": "น้อยไปมาก"
-  },
-  "order.descending": {
-    "message": "มากไปน้อย"
-  },
   "placeholder.comment": {
     "message": "พิมพ์ความคิดเห็นที่นี่... รองรับไวยากรณ์ Markdown และ HTML"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "ชื่อผู้ใช้/อีเมล"
-  },
-  "progress.encourage": {
-    "message": "แชร์ต่อไปเพื่อปลดล็อกระดับที่สูงขึ้น!"
   },
   "progress.toNextLevel": {
     "message": "ถึงระดับถัดไป"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "แสดง prompt ที่ตรงกับ tag ทั้งหมดที่เลือก"
+  },
+  "sort.newest": {
+    "message": "ล่าสุด"
+  },
+  "sort.mostUpvoted": {
+    "message": "ถูกใจมากที่สุด"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "แชร์โดยสมาชิกในชุมชน · ความคิดเห็นไม่ได้แสดงถึงโครงการ"
   }
 }

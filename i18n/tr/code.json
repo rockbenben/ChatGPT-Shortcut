@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Geri Bildirimi Memnuniyetle Karşılıyoruz"
   },
-  "field.id": {
-    "message": "Yayınlanma Tarihi"
-  },
-  "field.upvoteDifference": {
-    "message": "Popülerlik"
-  },
   "homepage.description": {
     "message": "AI'ın alakasız cevaplarından bıktınız mı? AiShort, yazma, kodlama ve çeviri için pratik prompt şablonları sunar!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "ChatGPT, Claude, Gemini, DeepSeek ya da başka bir sohbet AI arayüzüne yapıştırıp çalıştırın."
-  },
-  "info.communityPrompts": {
-    "message": "Bu sayfadaki Promptlar kullanıcılar tarafından paylaşılmıştır. İçeriğin doğruluğunu, kalitesini veya bütünlüğünü garanti etmiyoruz ve içerikten kaynaklanan yasal sorumluluk kabul etmiyoruz. Herhangi bir ihlal veya sorun bulursanız, lütfen bizimle iletişime geçin."
   },
   "input.newPassword": {
     "message": "Lütfen yeni şifrenizi girin!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt başarıyla güncellendi!"
   },
-  "modal.clearCache.content": {
-    "message": "Sistem, önbelleği otomatik olarak yönetmek için ETag teknolojisi kullanır, genellikle manuel temizleme gerekmez."
-  },
   "modal.clearCache.title": {
     "message": "Önbelleği Temizlemeyi Onayla?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "Koleksiyonum"
   },
-  "order.ascending": {
-    "message": "Artan"
-  },
-  "order.descending": {
-    "message": "Azalan"
-  },
   "placeholder.comment": {
     "message": "Yorumunuzu buraya girin... Markdown ve HTML sözdizimi desteklenir"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Kullanıcı adı/E-posta"
-  },
-  "progress.encourage": {
-    "message": "Daha yüksek seviyelerin kilidini açmak için paylaşmaya devam edin!"
   },
   "progress.toNextLevel": {
     "message": "Sonraki seviyeye"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Seçilen tüm tag'lerle eşleşen prompt'ları göster"
+  },
+  "sort.newest": {
+    "message": "En yeni"
+  },
+  "sort.mostUpvoted": {
+    "message": "En çok oy alan"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Topluluk üyeleri tarafından paylaşıldı · Görüşler projeyi temsil etmez"
   }
 }

@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "フィードバックを歓迎します"
   },
-  "field.id": {
-    "message": "公開時間"
-  },
-  "field.upvoteDifference": {
-    "message": "人気度"
-  },
   "homepage.description": {
     "message": "AIの回答がいつも的外れ？AiShortは執筆・プログラミング・翻訳に役立つ実用的なプロンプトを収録。ワンクリックでコピーして作業効率を倍増！"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "ChatGPT、Claude、Gemini、DeepSeek などの対話型 AI インターフェースに貼り付けて実行します。"
-  },
-  "info.communityPrompts": {
-    "message": "このページのプロンプトは、ユーザーによって共有およびアップロードされたものです。内容の正確性、品質、完全性を保証するものではなく、内容に起因する法的責任も負いません。侵害やその他の問題を見つけた場合は、ご連絡ください。"
   },
   "input.newPassword": {
     "message": "新しいパスワードを入力してください！"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "プロンプトの更新に成功しました！"
   },
-  "modal.clearCache.content": {
-    "message": "システムはETag技術を使用してキャッシュを自動管理しているため、通常は手動で削除する必要はありません。"
-  },
   "modal.clearCache.title": {
     "message": "キャッシュを削除しますか？"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "マイコレクション"
   },
-  "order.ascending": {
-    "message": "昇順"
-  },
-  "order.descending": {
-    "message": "降順"
-  },
   "placeholder.comment": {
     "message": "ここにコメントを入力... MarkdownとHTML構文をサポート"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "ユーザー名/メールアドレス"
-  },
-  "progress.encourage": {
-    "message": "共有を続けて、より高いレベルを解除しよう！"
   },
   "progress.toNextLevel": {
     "message": "次のレベルまで"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "選択したすべてのタグに一致"
+  },
+  "sort.newest": {
+    "message": "新着順"
+  },
+  "sort.mostUpvoted": {
+    "message": "高評価順"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "コミュニティメンバーによる投稿 · 意見はプロジェクトを代表しません"
   }
 }

@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Hoan nghênh Phản hồi"
   },
-  "field.id": {
-    "message": "Ngày đăng"
-  },
-  "field.upvoteDifference": {
-    "message": "Phổ biến"
-  },
   "homepage.description": {
     "message": "Bực bội vì câu trả lời AI không liên quan? AiShort cung cấp các mẫu prompt thực tế cho viết, lập trình và dịch thuật. Sao chép một cú nhấp để mở khóa đầu ra AI chính xác và tăng gấp đôi hiệu quả!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Dán vào ChatGPT, Claude, Gemini, DeepSeek hoặc giao diện AI hội thoại khác và chạy."
-  },
-  "info.communityPrompts": {
-    "message": "Các prompt trên trang này được chia sẻ và tải lên bởi người dùng. Chúng tôi không đảm bảo tính chính xác, chất lượng hoặc tính đầy đủ của nội dung, cũng không chịu trách nhiệm pháp lý cho các vấn đề phát sinh từ nội dung. Nếu bạn phát hiện bất kỳ vi phạm hoặc vấn đề nào khác, vui lòng liên hệ với chúng tôi."
   },
   "input.newPassword": {
     "message": "Vui lòng nhập mật khẩu mới!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Cập nhật prompt thành công!"
   },
-  "modal.clearCache.content": {
-    "message": "Hệ thống sử dụng ETag để quản lý cache tự động, việc xóa thủ công thường không cần thiết."
-  },
   "modal.clearCache.title": {
     "message": "Xóa Cache?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "Bộ sưu tập của tôi"
   },
-  "order.ascending": {
-    "message": "Tăng dần"
-  },
-  "order.descending": {
-    "message": "Giảm dần"
-  },
   "placeholder.comment": {
     "message": "Nhập bình luận tại đây... Hỗ trợ cú pháp Markdown và HTML"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Tên người dùng/Email"
-  },
-  "progress.encourage": {
-    "message": "Tiếp tục chia sẻ để mở khóa cấp độ cao hơn!"
   },
   "progress.toNextLevel": {
     "message": "Đến cấp tiếp theo"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Hiển thị prompt khớp với tất cả tag được chọn"
+  },
+  "sort.newest": {
+    "message": "Mới nhất"
+  },
+  "sort.mostUpvoted": {
+    "message": "Nhiều lượt thích"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Do thành viên cộng đồng chia sẻ · Quan điểm không đại diện cho dự án"
   }
 }

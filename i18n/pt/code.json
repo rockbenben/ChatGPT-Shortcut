@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Bem-vindo ao dar feedback"
   },
-  "field.id": {
-    "message": "Hora da publicação"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularidade"
-  },
   "homepage.description": {
     "message": "Frustrado com respostas IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Cole no ChatGPT, Claude, Gemini, DeepSeek ou outra interface de IA conversacional e execute."
-  },
-  "info.communityPrompts": {
-    "message": "Os prompts nesta página são compartilhados e enviados por usuários. Não garantimos a precisão, qualidade ou integridade do conteúdo, nem assumimos responsabilidade legal decorrente do conteúdo. Se você encontrar violação ou outros problemas, entre em contato conosco."
   },
   "input.newPassword": {
     "message": "Por favor, insira a nova senha!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt atualizado com sucesso!"
   },
-  "modal.clearCache.content": {
-    "message": "O sistema usa tecnologia ETag para gerenciar automaticamente o cache, a limpeza manual geralmente não é necessária."
-  },
   "modal.clearCache.title": {
     "message": "Limpar Cache?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "Minha Coleção"
   },
-  "order.ascending": {
-    "message": "Crescente"
-  },
-  "order.descending": {
-    "message": "Decrescente"
-  },
   "placeholder.comment": {
     "message": "Insira o comentário aqui... Suporta sintaxe Markdown e HTML"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Nome de usuário/E-mail"
-  },
-  "progress.encourage": {
-    "message": "Continue compartilhando para desbloquear níveis mais altos!"
   },
   "progress.toNextLevel": {
     "message": "Até o próximo nível"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Mostrar prompts que correspondam a todas as tags selecionadas"
+  },
+  "sort.newest": {
+    "message": "Mais recentes"
+  },
+  "sort.mostUpvoted": {
+    "message": "Mais curtidos"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Compartilhado por membros da comunidade · Opiniões não representam o projeto"
   }
 }

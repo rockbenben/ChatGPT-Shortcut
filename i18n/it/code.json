@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Benvenuto per dare il tuo feedback"
   },
-  "field.id": {
-    "message": "Data di pubblicazione"
-  },
-  "field.upvoteDifference": {
-    "message": "Popolarità"
-  },
   "homepage.description": {
     "message": "Frustrato dalle risposte IA irrilevanti? AiShort offre modelli pratici per scrittura, codice e traduzioni. Copia con un clic e raddoppia la tua efficienza!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Incolla in ChatGPT, Claude, Gemini, DeepSeek o un’altra interfaccia IA conversazionale ed eseguilo."
-  },
-  "info.communityPrompts": {
-    "message": "I prompt in questa pagina sono condivisi e caricati dagli utenti. Non garantiamo l'accuratezza, la qualità o la completezza del contenuto e non ci assumiamo alcuna responsabilità legale derivante dal contenuto. Se riscontri una violazione o altri problemi, contattaci."
   },
   "input.newPassword": {
     "message": "Inserisci una nuova password!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt aggiornato con successo!"
   },
-  "modal.clearCache.content": {
-    "message": "Il sistema usa la tecnologia ETag per gestire automaticamente la cache, la pulizia manuale non è solitamente necessaria."
-  },
   "modal.clearCache.title": {
     "message": "Pulire Cache?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "La Mia Collezione"
   },
-  "order.ascending": {
-    "message": "Ascendente"
-  },
-  "order.descending": {
-    "message": "Discendente"
-  },
   "placeholder.comment": {
     "message": "Inserisci il tuo commento qui... Markdown e sintassi HTML supportati"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Nome utente/Email"
-  },
-  "progress.encourage": {
-    "message": "Continua a condividere per sbloccare livelli superiori!"
   },
   "progress.toNextLevel": {
     "message": "Al prossimo livello"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Mostra i prompt che corrispondono a tutti i tag selezionati"
+  },
+  "sort.newest": {
+    "message": "Più recenti"
+  },
+  "sort.mostUpvoted": {
+    "message": "Più votati"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Condiviso da membri della community · Le opinioni non rappresentano il progetto"
   }
 }

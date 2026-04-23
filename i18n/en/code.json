@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Feedback Welcome"
   },
-  "field.id": {
-    "message": "Date Posted"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularity"
-  },
   "homepage.description": {
     "message": "Frustrated by irrelevant AI answers? AiShort offers practical prompt templates for writing, coding, and translation. One-click copy to unlock precise AI outputs and double your efficiency!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Paste into ChatGPT, Claude, Gemini, DeepSeek, or another conversational AI interface and run it."
-  },
-  "info.communityPrompts": {
-    "message": "Prompts on this page are shared and uploaded by users. We do not guarantee the accuracy, quality, or completeness of the content, nor do we assume any legal liability for issues arising from the content. If you find any infringement or other issues, please contact us."
   },
   "input.newPassword": {
     "message": "Please enter a new password!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt updated successfully!"
   },
-  "modal.clearCache.content": {
-    "message": "System uses ETag for automatic cache management, manual clearing is usually unnecessary."
-  },
   "modal.clearCache.title": {
     "message": "Clear Cache?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "My Collection"
   },
-  "order.ascending": {
-    "message": "Ascending"
-  },
-  "order.descending": {
-    "message": "Descending"
-  },
   "placeholder.comment": {
     "message": "Enter comment here... Markdown and HTML syntax supported"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Username/Email"
-  },
-  "progress.encourage": {
-    "message": "Keep sharing to unlock higher levels!"
   },
   "progress.toNextLevel": {
     "message": "To next level"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Show prompts matching all selected tags"
+  },
+  "sort.newest": {
+    "message": "Newest"
+  },
+  "sort.mostUpvoted": {
+    "message": "Most upvoted"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Shared by community members · Views don't represent the project"
   }
 }

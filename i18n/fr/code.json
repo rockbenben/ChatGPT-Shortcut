@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Bienvenue pour donner votre avis"
   },
-  "field.id": {
-    "message": "Date de publication"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularité"
-  },
   "homepage.description": {
     "message": "Frustré par des réponses IA hors sujet? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Collez dans ChatGPT, Claude, Gemini, DeepSeek ou une autre IA conversationnelle et exécutez."
-  },
-  "info.communityPrompts": {
-    "message": "Les prompts de cette page sont partagés et téléchargés par les utilisateurs. Nous ne garantissons pas l'exactitude, la qualité ou l'exhaustivité du contenu, et n'assumons aucune responsabilité légale découlant du contenu. Si vous constatez une infraction ou d'autres problèmes, veuillez nous contacter."
   },
   "input.newPassword": {
     "message": "Veuillez entrer un nouveau mot de passe !"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt mis à jour avec succès !"
   },
-  "modal.clearCache.content": {
-    "message": "Le système utilise la technologie ETag pour gérer automatiquement le cache, un effacement manuel n'est généralement pas nécessaire."
-  },
   "modal.clearCache.title": {
     "message": "Effacer le Cache ?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "Ma Collection"
   },
-  "order.ascending": {
-    "message": "Ascendant"
-  },
-  "order.descending": {
-    "message": "Descendant"
-  },
   "placeholder.comment": {
     "message": "Entrez votre commentaire ici... Markdown et syntaxe HTML pris en charge"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Nom d'utilisateur/Email"
-  },
-  "progress.encourage": {
-    "message": "Continuez à partager pour débloquer des niveaux supérieurs !"
   },
   "progress.toNextLevel": {
     "message": "Jusqu'au prochain niveau"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Afficher les prompts correspondant à tous les tags sélectionnés"
+  },
+  "sort.newest": {
+    "message": "Les plus récents"
+  },
+  "sort.mostUpvoted": {
+    "message": "Les plus votés"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Partagé par des membres de la communauté · Les avis ne représentent pas le projet"
   }
 }

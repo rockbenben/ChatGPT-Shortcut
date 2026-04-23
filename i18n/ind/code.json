@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "Selamat Memberikan Umpan Balik"
   },
-  "field.id": {
-    "message": "Tanggal Diposting"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularitas"
-  },
   "homepage.description": {
     "message": "Frustasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "Tempel ke ChatGPT, Claude, Gemini, DeepSeek, atau antarmuka AI percakapan lain dan jalankan."
-  },
-  "info.communityPrompts": {
-    "message": "Prompt di halaman ini dibagikan oleh pengguna. Kami tidak menjamin keakuratan, kualitas, atau kelengkapan konten, dan tidak bertanggung jawab secara hukum atas masalah yang timbul dari konten. Jika Anda menemukan pelanggaran atau masalah lainnya, silakan hubungi kami."
   },
   "input.newPassword": {
     "message": "Silakan masukkan kata sandi baru!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt berhasil diperbarui!"
   },
-  "modal.clearCache.content": {
-    "message": "Sistem menggunakan teknologi ETag untuk mengelola cache secara otomatis, biasanya tidak perlu membersihkan secara manual."
-  },
   "modal.clearCache.title": {
     "message": "Konfirmasi Hapus Cache?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "Koleksi Saya"
   },
-  "order.ascending": {
-    "message": "Meningkat"
-  },
-  "order.descending": {
-    "message": "Menurun"
-  },
   "placeholder.comment": {
     "message": "Masukkan komentar di sini... Mendukung sintaks Markdown dan HTML"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Nama pengguna/Email"
-  },
-  "progress.encourage": {
-    "message": "Terus berbagi untuk membuka level yang lebih tinggi!"
   },
   "progress.toNextLevel": {
     "message": "Ke level berikutnya"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "Tampilkan prompt yang cocok dengan semua tag yang dipilih"
+  },
+  "sort.newest": {
+    "message": "Terbaru"
+  },
+  "sort.mostUpvoted": {
+    "message": "Paling disukai"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Dibagikan oleh anggota komunitas · Pendapat tidak mewakili proyek"
   }
 }

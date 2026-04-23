@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "نرحب بالملاحظات"
   },
-  "field.id": {
-    "message": "تاريخ النشر"
-  },
-  "field.upvoteDifference": {
-    "message": "الشعبية"
-  },
   "homepage.description": {
     "message": "محبط من إجابات الذكاء الاصطناعي غير ذات الصلة؟ يقدم AiShort قوالب عملية للكتابة والبرمجة والترجمة. انسخ بنقرة واحدة وضاعف كفاءتك!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو أي واجهة ذكاء اصطناعي محادثية وشغّله."
-  },
-  "info.communityPrompts": {
-    "message": "يتم مشاركة التوجيهات في هذه الصفحة وتحميلها بواسطة المستخدمين. نحن لا نضمن دقة المحتوى أو جودته أو اكتماله، ولا نتحمل أي مسؤولية قانونية عن المشكلات الناشئة عن المحتوى. إذا وجدت أي انتهاك أو مشاكل أخرى، يرجى الاتصال بنا."
   },
   "input.newPassword": {
     "message": "يرجى إدخال كلمة مرور جديدة!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "تم تحديث التوجيه بنجاح!"
   },
-  "modal.clearCache.content": {
-    "message": "يستخدم النظام تقنية ETag لإدارة التخزين المؤقت تلقائيًا، عادةً لا يلزم المسح اليدوي."
-  },
   "modal.clearCache.title": {
     "message": "مسح ذاكرة التخزين المؤقت؟"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "مجموعتي"
   },
-  "order.ascending": {
-    "message": "تصاعدي"
-  },
-  "order.descending": {
-    "message": "تنازلي"
-  },
   "placeholder.comment": {
     "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "اسم المستخدم/البريد الإلكتروني"
-  },
-  "progress.encourage": {
-    "message": "استمر في المشاركة لفتح مستويات أعلى!"
   },
   "progress.toNextLevel": {
     "message": "حتى المستوى التالي"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "عرض المطالبات المطابقة لجميع الوسوم المحددة"
+  },
+  "sort.newest": {
+    "message": "الأحدث"
+  },
+  "sort.mostUpvoted": {
+    "message": "الأكثر تصويتًا"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "محتوى مشارَك من أعضاء المجتمع · الآراء لا تمثل المشروع"
   }
 }

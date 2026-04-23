@@ -209,12 +209,6 @@
   "feedback.welcome": {
     "message": "피드백 환영"
   },
-  "field.id": {
-    "message": "게시 시간"
-  },
-  "field.upvoteDifference": {
-    "message": "인기도"
-  },
   "homepage.description": {
     "message": "AI 답변이 항상 엉뚱한가요? AiShort는 글쓰기, 코딩, 번역에 유용한 실용적인 프롬프트를 제공합니다. 원클릭 복사로 작업 효율을 두 배로!"
   },
@@ -241,9 +235,6 @@
   },
   "howto.step3.text": {
     "message": "ChatGPT, Claude, Gemini, DeepSeek 등 대화형 AI 인터페이스에 붙여넣고 실행하세요."
-  },
-  "info.communityPrompts": {
-    "message": "이 페이지의 프롬프트는 사용자가 공유하고 업로드한 것입니다. 우리는 내용의 정확성, 품질 또는 완전성을 보장하지 않으며, 내용으로 인해 발생하는 법적 책임도 지지 않습니다. 침해 또는 기타 문제를 발견하면 당사에 문의하십시오."
   },
   "input.newPassword": {
     "message": "새 비밀번호를 입력하십시오!"
@@ -518,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "프롬프트 업데이트 성공!"
   },
-  "modal.clearCache.content": {
-    "message": "시스템은 ETag 기술을 사용하여 캐시를 자동으로 관리하므로 일반적으로 수동으로 지울 필요가 없습니다."
-  },
   "modal.clearCache.title": {
     "message": "캐시를 지우시겠습니까?"
   },
@@ -584,12 +572,6 @@
   "nav.myCollection": {
     "message": "내 컬렉션"
   },
-  "order.ascending": {
-    "message": "오름차순"
-  },
-  "order.descending": {
-    "message": "내림차순"
-  },
   "placeholder.comment": {
     "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
   },
@@ -628,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "사용자 이름/이메일"
-  },
-  "progress.encourage": {
-    "message": "계속 공유하여 더 높은 레벨을 잠금 해제하세요!"
   },
   "progress.toNextLevel": {
     "message": "다음 레벨까지"
@@ -1210,5 +1189,14 @@
   },
   "filter.operator.all.tip": {
     "message": "선택한 모든 태그에 일치"
+  },
+  "sort.newest": {
+    "message": "최신순"
+  },
+  "sort.mostUpvoted": {
+    "message": "추천순"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "커뮤니티 회원이 공유 · 의견은 프로젝트를 대표하지 않음"
   }
 }
