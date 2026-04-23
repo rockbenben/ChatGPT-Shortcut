@@ -58,6 +58,7 @@ const config = {
           path: "docs",
           sidebarPath: "sidebars.js",
         },
+        blog: false,
         theme: {
           customCss: ["./src/css/antd.dark.css", "./src/css/custom.css"],
         },
