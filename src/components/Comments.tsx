@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback, memo, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button, Form, Modal, Pagination, Empty } from "antd";
 import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
 import BoringAvatar from "boring-avatars";
@@ -89,6 +90,8 @@ const nestComments = (flatComments: any[]) => {
 const Comments = ({ pageId, type }) => {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
+  const { i18n } = useDocusaurusContext();
+  const currentLocale = i18n.currentLocale;
 
   const [currentUserId, setCurrentUserId] = useState(0);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -312,7 +315,7 @@ const Comments = ({ pageId, type }) => {
       return;
     }
     try {
-      await postComment(pageId, values.comment, replyingTo, type);
+      await postComment(pageId, values.comment, replyingTo, type, currentLocale);
       form.resetFields();
       localStorage.removeItem(getCommentStorageKey());
       setReplyingTo(null);
@@ -336,7 +339,7 @@ const Comments = ({ pageId, type }) => {
       return;
     }
     try {
-      await postComment(pageId, values.reply, replyingTo, type);
+      await postComment(pageId, values.reply, replyingTo, type, currentLocale);
       replyForm.resetFields();
       localStorage.removeItem(getReplyStorageKey());
       setReplyingTo(null);
