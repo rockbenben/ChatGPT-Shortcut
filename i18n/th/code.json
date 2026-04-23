@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "รีเซ็ตรหัสผ่าน"
   },
-  "button.settings": {
-    "message": "ตั้งค่า"
-  },
   "comment.add": {
     "message": "ส่งความคิดเห็น"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "ยินดีรับข้อเสนอแนะ"
   },
-  "field.id": {
-    "message": "วันที่โพสต์"
-  },
-  "field.upvoteDifference": {
-    "message": "ความนิยม"
-  },
   "homepage.description": {
     "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมพ์สำหรับการเขียน การเขียนโค้ด และการแปล!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "วางลงใน ChatGPT, Claude, Gemini, DeepSeek หรือ AI สนทนาอื่นแล้วสั่งรัน"
   },
-  "info.communityPrompts": {
-    "message": "Promptในหนานีäถูกแบงปันโดยผูใช เราไม่รับประกันความถูกต้อง คุณภาพ หรือความสมบูรณ์ของเนื้อหา และไม่รับผิดชอบทางกฎหมายสำหรับปัญหาที่เกิดจากเนื้อหา หากพบการละเมิดหรือปัญหาอื่นๆ โปรดติดต่อเรา"
-  },
   "input.newPassword": {
     "message": "กรุณากรอกรหัสผ่านใหม่!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "หมายเหตุ"
-  },
-  "label.promptNotes.description": {
-    "message": "คุณสามารถระบุแหล่งที่มาของ Prompt เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติมที่นี่"
   },
   "label.promptRemark": {
     "message": "หน้าที่/การใช้งาน"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "อัปเดตพรอมพ์สำเร็จ!"
   },
-  "modal.clearCache.content": {
-    "message": "ระบบใช้เทคโนโลยี ETag โดยอัตโนมัติเพื่อจัดการแคช โดยปกติไม่จำเป็นต้องล้างด้วยตนเอง"
-  },
   "modal.clearCache.title": {
     "message": "ยืนยันล้างแคช?"
   },
@@ -534,7 +516,7 @@
     "message": "หลังจากล้าง ข้อมูลทั้งหมดจะถูกโหลดใหม่"
   },
   "modal.editPrompt.title": {
-    "message": "อัปเดต Prompt ปัจจุบัน"
+    "message": "แก้ไข Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "ลืมรหัสผ่าน"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "คอลเลกชันของฉัน"
   },
-  "order.ascending": {
-    "message": "น้อยไปมาก"
-  },
-  "order.descending": {
-    "message": "มากไปน้อย"
-  },
   "placeholder.comment": {
     "message": "พิมพ์ความคิดเห็นที่นี่... รองรับไวยากรณ์ Markdown และ HTML"
   },
@@ -618,7 +594,7 @@
     "message": "พิมพ์เนื้อหา prompt โดยละเอียดที่นี่..."
   },
   "placeholder.promptNotes": {
-    "message": "หมายเหตุเพิ่มเติมเกี่ยวกับ prompt นี้ (ไม่บังคับ)"
+    "message": "แหล่งที่มาของ prompt, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
   },
   "placeholder.promptRemark": {
     "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของ prompt (ไม่บังคับ)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "ชื่อผู้ใช้/อีเมล"
-  },
-  "progress.encourage": {
-    "message": "แชร์ต่อไปเพื่อปลดล็อกระดับที่สูงขึ้น!"
   },
   "progress.toNextLevel": {
     "message": "ถึงระดับถัดไป"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
+  },
+  "action.clearFilters": {
+    "message": "ล้างตัวกรอง ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "แสดง prompt ที่ตรงกับ tag ที่เลือกอย่างน้อยหนึ่งรายการ"
+  },
+  "filter.operator.all.tip": {
+    "message": "แสดง prompt ที่ตรงกับ tag ทั้งหมดที่เลือก"
+  },
+  "sort.newest": {
+    "message": "ล่าสุด"
+  },
+  "sort.mostUpvoted": {
+    "message": "ถูกใจมากที่สุด"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "แชร์โดยสมาชิกในชุมชน · ความคิดเห็นไม่ได้แสดงถึงโครงการ"
   }
 }

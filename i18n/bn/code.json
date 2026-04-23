@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "পাসওয়ার্ড রিসেট করুন"
   },
-  "button.settings": {
-    "message": "সেটিংস"
-  },
   "comment.add": {
     "message": "মন্তব্য জমা দিন"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "প্রতিক্রিয়া স্বাগত"
   },
-  "field.id": {
-    "message": "প্রকাশের সময়"
-  },
-  "field.upvoteDifference": {
-    "message": "জনপ্রিয়তা"
-  },
   "homepage.description": {
     "message": "এআই এর অপ্রাসঙ্গিক উত্তরে হতাশ? AiShort লেখা, কোডিং এবং অনুবাদের জন্য ব্যবহারিক টেমপ্লেট দেয়। এক ক্লিকে কপি করুন এবং দক্ষতা দ্বিগুণ করুন!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "ChatGPT, Claude, Gemini, DeepSeek বা অন্য যেকোনো সংলাপ-এআই ইন্টারফেসে পেস্ট করে চালান।"
   },
-  "info.communityPrompts": {
-    "message": "এই পেজের প্রম্পটগুলি ব্যবহারকারীদের দ্বারা শেয়ার এবং আপলোড করা হয়েছে। আমরা বিষয়বস্তুর নির্ভুলতা, গুণমান বা সম্পূর্ণতার গ্যারান্টি দিই না এবং বিষয়বস্তু থেকে উদ্ভূত কোনো আইনি দায়বদ্ধতা গ্রহণ করি না। যদি আপনি কোনো লঙ্ঘন বা অন্যান্য সমস্যা খুঁজে পান, অনুগ্রহ করে আমাদের সাথে যোগাযোগ করুন।"
-  },
   "input.newPassword": {
     "message": "অনুগ্রহ করে নতুন পাসওয়ার্ড লিখুন!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "নোট"
-  },
-  "label.promptNotes.description": {
-    "message": "আপনি এখানে উৎস, অন্যান্য ভাষার সংস্করণ বা অতিরিক্ত নোট প্রদান করতে পারেন।"
   },
   "label.promptRemark": {
     "message": "ব্যবহার"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "প্রম্পট সফলভাবে আপডেট করা হয়েছে!"
   },
-  "modal.clearCache.content": {
-    "message": "সিস্টেম স্বয়ংক্রিয়ভাবে ক্যাশ পরিচালনা করতে ETag প্রযুক্তি ব্যবহার করে, ম্যানুয়াল সাফ করার সাধারণত প্রয়োজন হয় না।"
-  },
   "modal.clearCache.title": {
     "message": "ক্যাশ সাফ করবেন?"
   },
@@ -534,7 +516,7 @@
     "message": "সাফ করলে সমস্ত ডেটা পুনরায় লোড হবে।"
   },
   "modal.editPrompt.title": {
-    "message": "বর্তমান প্রম্পট আপডেট করুন"
+    "message": "প্রম্পট সম্পাদনা করুন"
   },
   "modal.forgotPassword.title": {
     "message": "পাসওয়ার্ড ভুলে গেছেন"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "আমার সংগ্রহ"
   },
-  "order.ascending": {
-    "message": "আরোহী"
-  },
-  "order.descending": {
-    "message": "অবরোহী"
-  },
   "placeholder.comment": {
     "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং এইচটিএমএল সিনট্যাক্স সমর্থিত"
   },
@@ -618,7 +594,7 @@
     "message": "এখানে বিস্তারিত প্রম্পট বিষয়বস্তু লিখুন..."
   },
   "placeholder.promptNotes": {
-    "message": "এই প্রম্পট সম্পর্কে অতিরিক্ত নোট (ঐচ্ছিক)"
+    "message": "প্রম্পটের উৎস, অন্য ভাষার সংস্করণ বা সম্পূরক নোট (ঐচ্ছিক)"
   },
   "placeholder.promptRemark": {
     "message": "সংক্ষেপে এই প্রম্পটটি কীভাবে ব্যবহার করবেন তা বর্ণনা করুন (ঐচ্ছিক)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "ব্যবহারকারীর নাম/ইমেল"
-  },
-  "progress.encourage": {
-    "message": "উচ্চতর লেভেল আনলক করতে শেয়ার করতে থাকুন!"
   },
   "progress.toNextLevel": {
     "message": "পরবর্তী লেভেলে"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন!"
+  },
+  "action.clearFilters": {
+    "message": "ফিল্টার সাফ করুন ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "যেকোনো একটি নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
+  },
+  "filter.operator.all.tip": {
+    "message": "সব নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
+  },
+  "sort.newest": {
+    "message": "সর্বশেষ"
+  },
+  "sort.mostUpvoted": {
+    "message": "সর্বাধিক ভোট"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "সম্প্রদায়ের সদস্যরা শেয়ার করেছেন · মতামত প্রকল্পের প্রতিনিধিত্ব করে না"
   }
 }

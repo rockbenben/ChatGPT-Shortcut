@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Сбросить пароль"
   },
-  "button.settings": {
-    "message": "Настройки"
-  },
   "comment.add": {
     "message": "Отправить комментарий"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "Приветствуем ваши отзывы"
   },
-  "field.id": {
-    "message": "Время публикации"
-  },
-  "field.upvoteDifference": {
-    "message": "Популярность"
-  },
   "homepage.description": {
     "message": "Надоели нерелевантные ответы ИИ? AiShort предлагает практичные шаблоны для письма, кода и перевода. Копируйте одним кликом и удвойте эффективность!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "Вставьте в ChatGPT, Claude, Gemini, DeepSeek или другой разговорный ИИ и запустите."
   },
-  "info.communityPrompts": {
-    "message": "Промпты на этой странице загружены и предоставлены пользователями. Мы не гарантируем точность, качество или полноту контента, а также не несем юридической ответственности, связанной с контентом. Если вы обнаружите нарушение или другие проблемы, пожалуйста, свяжитесь с нами."
-  },
   "input.newPassword": {
     "message": "Пожалуйста, введите новый пароль!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "Примечания"
-  },
-  "label.promptNotes.description": {
-    "message": "Здесь можно указать источник, другие языковые версии или дополнительные примечания."
   },
   "label.promptRemark": {
     "message": "Использование"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Промпт успешно обновлен!"
   },
-  "modal.clearCache.content": {
-    "message": "Система автоматически управляет кэшем с помощью ETag, ручная очистка обычно не требуется."
-  },
   "modal.clearCache.title": {
     "message": "Очистить кэш?"
   },
@@ -534,7 +516,7 @@
     "message": "Очистка приведет к перезагрузке всех данных."
   },
   "modal.editPrompt.title": {
-    "message": "Обновить текущий Prompt"
+    "message": "Редактировать промпт"
   },
   "modal.forgotPassword.title": {
     "message": "Забыли пароль"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "Моя коллекция"
   },
-  "order.ascending": {
-    "message": "По возрастанию"
-  },
-  "order.descending": {
-    "message": "По убыванию"
-  },
   "placeholder.comment": {
     "message": "Введите комментарий здесь... Поддерживается синтаксис Markdown и HTML"
   },
@@ -618,7 +594,7 @@
     "message": "Введите подробное содержание промпта здесь..."
   },
   "placeholder.promptNotes": {
-    "message": "Дополнительные примечания к этому промпту (необязательно)"
+    "message": "Источник промпта, версии на других языках или дополнительные пояснения (необязательно)"
   },
   "placeholder.promptRemark": {
     "message": "Кратко опишите использование этого промпта (необязательно)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Имя пользователя/Email"
-  },
-  "progress.encourage": {
-    "message": "Продолжайте делиться, чтобы открыть более высокие уровни!"
   },
   "progress.toNextLevel": {
     "message": "До следующего уровня"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "Пожалуйста, введите имя пользователя или зарегистрированный email!"
+  },
+  "action.clearFilters": {
+    "message": "Очистить фильтры ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Показать промпты, соответствующие любому выбранному тегу"
+  },
+  "filter.operator.all.tip": {
+    "message": "Показать промпты, соответствующие всем выбранным тегам"
+  },
+  "sort.newest": {
+    "message": "Новые"
+  },
+  "sort.mostUpvoted": {
+    "message": "Популярные"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Делятся участники сообщества · Мнения не отражают позицию проекта"
   }
 }

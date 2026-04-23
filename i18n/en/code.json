@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Reset Password"
   },
-  "button.settings": {
-    "message": "Settings"
-  },
   "comment.add": {
     "message": "Submit Comment"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "Feedback Welcome"
   },
-  "field.id": {
-    "message": "Date Posted"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularity"
-  },
   "homepage.description": {
     "message": "Frustrated by irrelevant AI answers? AiShort offers practical prompt templates for writing, coding, and translation. One-click copy to unlock precise AI outputs and double your efficiency!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "Paste into ChatGPT, Claude, Gemini, DeepSeek, or another conversational AI interface and run it."
   },
-  "info.communityPrompts": {
-    "message": "Prompts on this page are shared and uploaded by users. We do not guarantee the accuracy, quality, or completeness of the content, nor do we assume any legal liability for issues arising from the content. If you find any infringement or other issues, please contact us."
-  },
   "input.newPassword": {
     "message": "Please enter a new password!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "Notes"
-  },
-  "label.promptNotes.description": {
-    "message": "You can provide the prompt source, other language versions, or additional notes here."
   },
   "label.promptRemark": {
     "message": "Usage"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "Prompt updated successfully!"
   },
-  "modal.clearCache.content": {
-    "message": "System uses ETag for automatic cache management, manual clearing is usually unnecessary."
-  },
   "modal.clearCache.title": {
     "message": "Clear Cache?"
   },
@@ -534,7 +516,7 @@
     "message": "Clearing will reload all data."
   },
   "modal.editPrompt.title": {
-    "message": "Update Current Prompt"
+    "message": "Edit Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Forgot Password"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "My Collection"
   },
-  "order.ascending": {
-    "message": "Ascending"
-  },
-  "order.descending": {
-    "message": "Descending"
-  },
   "placeholder.comment": {
     "message": "Enter comment here... Markdown and HTML syntax supported"
   },
@@ -618,7 +594,7 @@
     "message": "Enter detailed prompt content here..."
   },
   "placeholder.promptNotes": {
-    "message": "Additional notes about this prompt (optional)"
+    "message": "Prompt source, other language versions, or supplementary notes (optional)"
   },
   "placeholder.promptRemark": {
     "message": "Briefly describe how to use this prompt (optional)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Username/Email"
-  },
-  "progress.encourage": {
-    "message": "Keep sharing to unlock higher levels!"
   },
   "progress.toNextLevel": {
     "message": "To next level"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "Please enter username or registered email!"
+  },
+  "action.clearFilters": {
+    "message": "Clear filters ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Show prompts matching any selected tag"
+  },
+  "filter.operator.all.tip": {
+    "message": "Show prompts matching all selected tags"
+  },
+  "sort.newest": {
+    "message": "Newest"
+  },
+  "sort.mostUpvoted": {
+    "message": "Most upvoted"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Shared by community members · Views don't represent the project"
   }
 }

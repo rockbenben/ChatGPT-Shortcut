@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "पासवर्ड रीसेट करें"
   },
-  "button.settings": {
-    "message": "सेटिंग्स"
-  },
   "comment.add": {
     "message": "टिप्पणी सबमिट करें"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "प्रतिक्रिया का स्वागत है"
   },
-  "field.id": {
-    "message": "प्रकाशन का समय"
-  },
-  "field.upvoteDifference": {
-    "message": "लोकप्रियता"
-  },
   "homepage.description": {
     "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "ChatGPT, Claude, Gemini, DeepSeek या किसी अन्य संवादी AI इंटरफ़ेस में पेस्ट करें और चलाएँ।"
   },
-  "info.communityPrompts": {
-    "message": "इस पृष्ठ पर प्रॉम्प्ट्स उपयोगकर्ताओं द्वारा साझा और अपलोड किए गए हैं। हम सामग्री की सटीकता, गुणवत्ता या पूर्णता की गारंटी नहीं देते हैं, और सामग्री से उत्पन्न होने वाली किसी भी कानूनी जिम्मेदारी को स्वीकार नहीं करते हैं। यदि आपको कोई उल्लंघन या अन्य समस्याएं मिलती हैं, तो कृपया हमसे संपर्क करें।"
-  },
   "input.newPassword": {
     "message": "कृपया नया पासवर्ड दर्ज करें!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "नोट्स"
-  },
-  "label.promptNotes.description": {
-    "message": "आप यहां स्रोत, अन्य भाषा संस्करण, या अतिरिक्त नोट्स प्रदान कर सकते हैं।"
   },
   "label.promptRemark": {
     "message": "उपयोग"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "प्रॉम्प्ट सफलतापूर्वक अपडेट किया गया!"
   },
-  "modal.clearCache.content": {
-    "message": "सिस्टम कैश को स्वचालित रूप से प्रबंधित करने के लिए ETag तकनीक का उपयोग करता है, मैन्युअल समाशोधन की आमतौर पर आवश्यकता नहीं होती है।"
-  },
   "modal.clearCache.title": {
     "message": "कैश साफ़ करें?"
   },
@@ -534,7 +516,7 @@
     "message": "साफ़ करने से सभी डेटा फिर से लोड हो जाएगा।"
   },
   "modal.editPrompt.title": {
-    "message": "वर्तमान प्रॉम्प्ट अपडेट करें"
+    "message": "प्रॉम्प्ट संपादित करें"
   },
   "modal.forgotPassword.title": {
     "message": "पासवर्ड भूल गए"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "मेरा संग्रह"
   },
-  "order.ascending": {
-    "message": "आरोही"
-  },
-  "order.descending": {
-    "message": "अवरोही"
-  },
   "placeholder.comment": {
     "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और एचटीएमएल सिंटैक्स समर्थित"
   },
@@ -618,7 +594,7 @@
     "message": "यहाँ विस्तृत प्रॉम्प्ट सामग्री दर्ज करें..."
   },
   "placeholder.promptNotes": {
-    "message": "इस प्रॉम्प्ट के बारे में अतिरिक्त नोट्स (वैकल्पिक)"
+    "message": "प्रॉम्प्ट का स्रोत, अन्य भाषा संस्करण या पूरक नोट्स (वैकल्पिक)"
   },
   "placeholder.promptRemark": {
     "message": "संक्षेप में बताएं कि इस प्रॉम्प्ट का उपयोग कैसे करें (वैकल्पिक)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "उपयोगकर्ता नाम/ईमेल"
-  },
-  "progress.encourage": {
-    "message": "उच्च स्तर अनलॉक करने के लिए साझा करते रहें!"
   },
   "progress.toNextLevel": {
     "message": "अगले स्तर तक"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
+  },
+  "action.clearFilters": {
+    "message": "फ़िल्टर साफ़ करें ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "किसी भी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
+  },
+  "filter.operator.all.tip": {
+    "message": "सभी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
+  },
+  "sort.newest": {
+    "message": "नवीनतम"
+  },
+  "sort.mostUpvoted": {
+    "message": "सर्वाधिक वोट"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "समुदाय के सदस्यों द्वारा साझा · विचार परियोजना का प्रतिनिधित्व नहीं करते"
   }
 }

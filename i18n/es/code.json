@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Restablecer contraseña"
   },
-  "button.settings": {
-    "message": "Configuración"
-  },
   "comment.add": {
     "message": "Enviar comentario"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "Bienvenido a dar comentarios"
   },
-  "field.id": {
-    "message": "Fecha de publicación"
-  },
-  "field.upvoteDifference": {
-    "message": "Popularidad"
-  },
   "homepage.description": {
     "message": "¿Frustrado con respuestas IA irrelevantes? AiShort ofrece plantillas prácticas para escritura, programación y traducción. ¡Copia con un clic y duplica tu eficiencia!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "Pega en ChatGPT, Claude, Gemini, DeepSeek u otra interfaz de IA conversacional y ejecútalo."
   },
-  "info.communityPrompts": {
-    "message": "Los prompts en esta página son compartidos y subidos por usuarios. No garantizamos la precisión, calidad o integridad del contenido, ni asumimos ninguna responsabilidad legal por problemas derivados del contenido. Si encuentras alguna infracción u otros problemas, por favor contáctanos."
-  },
   "input.newPassword": {
     "message": "¡Por favor ingresa una nueva contraseña!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "Notas"
-  },
-  "label.promptNotes.description": {
-    "message": "Puede proporcionar aquí la fuente, otras versiones de idioma o notas adicionales."
   },
   "label.promptRemark": {
     "message": "Uso"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "¡Prompt actualizado con éxito!"
   },
-  "modal.clearCache.content": {
-    "message": "El sistema utiliza tecnología ETag para administrar automáticamente el caché, generalmente no es necesario borrarlo manualmente."
-  },
   "modal.clearCache.title": {
     "message": "¿Borrar Caché?"
   },
@@ -534,7 +516,7 @@
     "message": "Borrar recargará todos los datos."
   },
   "modal.editPrompt.title": {
-    "message": "Actualizar Prompt actual"
+    "message": "Editar Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "¿Olvidó su contraseña?"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "Mi Colección"
   },
-  "order.ascending": {
-    "message": "Ascendente"
-  },
-  "order.descending": {
-    "message": "Descendente"
-  },
   "placeholder.comment": {
     "message": "Ingresa el comentario aquí... Se admite Markdown y sintaxis HTML"
   },
@@ -618,7 +594,7 @@
     "message": "Ingresa el contenido detallado del prompt aquí..."
   },
   "placeholder.promptNotes": {
-    "message": "Notas adicionales sobre este prompt (opcional)"
+    "message": "Fuente del prompt, versiones en otros idiomas o notas complementarias (opcional)"
   },
   "placeholder.promptRemark": {
     "message": "Describa brevemente el uso de este prompt (opcional)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "Nombre de usuario/Correo electrónico"
-  },
-  "progress.encourage": {
-    "message": "¡Sigue compartiendo para desbloquear niveles más altos!"
   },
   "progress.toNextLevel": {
     "message": "Hasta el próximo nivel"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "¡Por favor ingresa nombre de usuario o correo electrónico registrado!"
+  },
+  "action.clearFilters": {
+    "message": "Limpiar filtros ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Mostrar prompts que coincidan con cualquier etiqueta seleccionada"
+  },
+  "filter.operator.all.tip": {
+    "message": "Mostrar prompts que coincidan con todas las etiquetas seleccionadas"
+  },
+  "sort.newest": {
+    "message": "Más recientes"
+  },
+  "sort.mostUpvoted": {
+    "message": "Más votados"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "Compartido por miembros de la comunidad · Las opiniones no representan al proyecto"
   }
 }

@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "비밀번호 재설정"
   },
-  "button.settings": {
-    "message": "설정"
-  },
   "comment.add": {
     "message": "댓글 제출"
   },
@@ -212,12 +209,6 @@
   "feedback.welcome": {
     "message": "피드백 환영"
   },
-  "field.id": {
-    "message": "게시 시간"
-  },
-  "field.upvoteDifference": {
-    "message": "인기도"
-  },
   "homepage.description": {
     "message": "AI 답변이 항상 엉뚱한가요? AiShort는 글쓰기, 코딩, 번역에 유용한 실용적인 프롬프트를 제공합니다. 원클릭 복사로 작업 효율을 두 배로!"
   },
@@ -245,9 +236,6 @@
   "howto.step3.text": {
     "message": "ChatGPT, Claude, Gemini, DeepSeek 등 대화형 AI 인터페이스에 붙여넣고 실행하세요."
   },
-  "info.communityPrompts": {
-    "message": "이 페이지의 프롬프트는 사용자가 공유하고 업로드한 것입니다. 우리는 내용의 정확성, 품질 또는 완전성을 보장하지 않으며, 내용으로 인해 발생하는 법적 책임도 지지 않습니다. 침해 또는 기타 문제를 발견하면 당사에 문의하십시오."
-  },
   "input.newPassword": {
     "message": "새 비밀번호를 입력하십시오!"
   },
@@ -268,9 +256,6 @@
   },
   "label.promptNotes": {
     "message": "비고"
-  },
-  "label.promptNotes.description": {
-    "message": "여기에서 출처, 다른 언어 버전 또는 추가 메모를 제공할 수 있습니다."
   },
   "label.promptRemark": {
     "message": "용도"
@@ -524,9 +509,6 @@
   "message.updatePrompt.success": {
     "message": "프롬프트 업데이트 성공!"
   },
-  "modal.clearCache.content": {
-    "message": "시스템은 ETag 기술을 사용하여 캐시를 자동으로 관리하므로 일반적으로 수동으로 지울 필요가 없습니다."
-  },
   "modal.clearCache.title": {
     "message": "캐시를 지우시겠습니까?"
   },
@@ -534,7 +516,7 @@
     "message": "지우면 모든 데이터가 다시 로드됩니다."
   },
   "modal.editPrompt.title": {
-    "message": "현재 프롬프트 업데이트"
+    "message": "프롬프트 편집"
   },
   "modal.forgotPassword.title": {
     "message": "비밀번호 찾기"
@@ -590,12 +572,6 @@
   "nav.myCollection": {
     "message": "내 컬렉션"
   },
-  "order.ascending": {
-    "message": "오름차순"
-  },
-  "order.descending": {
-    "message": "내림차순"
-  },
   "placeholder.comment": {
     "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
   },
@@ -618,7 +594,7 @@
     "message": "여기에 자세한 프롬프트 내용 입력..."
   },
   "placeholder.promptNotes": {
-    "message": "이 프롬프트에 대한 추가 비고 (선택 사항)"
+    "message": "프롬프트 출처, 다른 언어 버전 또는 보충 설명 (선택 사항)"
   },
   "placeholder.promptRemark": {
     "message": "프롬프트의 용도를 간략하게 설명하세요 (선택 사항)"
@@ -634,9 +610,6 @@
   },
   "placeholder.usernameOrEmail": {
     "message": "사용자 이름/이메일"
-  },
-  "progress.encourage": {
-    "message": "계속 공유하여 더 높은 레벨을 잠금 해제하세요!"
   },
   "progress.toNextLevel": {
     "message": "다음 레벨까지"
@@ -1207,5 +1180,23 @@
   },
   "validation.username.required": {
     "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
+  },
+  "action.clearFilters": {
+    "message": "필터 지우기 ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "선택한 태그 중 하나라도 일치"
+  },
+  "filter.operator.all.tip": {
+    "message": "선택한 모든 태그에 일치"
+  },
+  "sort.newest": {
+    "message": "최신순"
+  },
+  "sort.mostUpvoted": {
+    "message": "추천순"
+  },
+  "communityPrompts.disclaimer": {
+    "message": "커뮤니티 회원이 공유 · 의견은 프로젝트를 대표하지 않음"
   }
 }
