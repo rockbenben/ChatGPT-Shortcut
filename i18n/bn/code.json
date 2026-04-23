@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "পাসওয়ার্ড রিসেট করুন"
   },
-  "button.settings": {
-    "message": "সেটিংস"
-  },
   "comment.add": {
     "message": "মন্তব্য জমা দিন"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "নোট"
-  },
-  "label.promptNotes.description": {
-    "message": "আপনি এখানে উৎস, অন্যান্য ভাষার সংস্করণ বা অতিরিক্ত নোট প্রদান করতে পারেন।"
   },
   "label.promptRemark": {
     "message": "ব্যবহার"
@@ -534,7 +528,7 @@
     "message": "সাফ করলে সমস্ত ডেটা পুনরায় লোড হবে।"
   },
   "modal.editPrompt.title": {
-    "message": "বর্তমান প্রম্পট আপডেট করুন"
+    "message": "প্রম্পট সম্পাদনা করুন"
   },
   "modal.forgotPassword.title": {
     "message": "পাসওয়ার্ড ভুলে গেছেন"
@@ -618,7 +612,7 @@
     "message": "এখানে বিস্তারিত প্রম্পট বিষয়বস্তু লিখুন..."
   },
   "placeholder.promptNotes": {
-    "message": "এই প্রম্পট সম্পর্কে অতিরিক্ত নোট (ঐচ্ছিক)"
+    "message": "প্রম্পটের উৎস, অন্য ভাষার সংস্করণ বা সম্পূরক নোট (ঐচ্ছিক)"
   },
   "placeholder.promptRemark": {
     "message": "সংক্ষেপে এই প্রম্পটটি কীভাবে ব্যবহার করবেন তা বর্ণনা করুন (ঐচ্ছিক)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন!"
+  },
+  "action.clearFilters": {
+    "message": "ফিল্টার সাফ করুন ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "যেকোনো একটি নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
+  },
+  "filter.operator.all.tip": {
+    "message": "সব নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
   }
 }

@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "รีเซ็ตรหัสผ่าน"
   },
-  "button.settings": {
-    "message": "ตั้งค่า"
-  },
   "comment.add": {
     "message": "ส่งความคิดเห็น"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "หมายเหตุ"
-  },
-  "label.promptNotes.description": {
-    "message": "คุณสามารถระบุแหล่งที่มาของ Prompt เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติมที่นี่"
   },
   "label.promptRemark": {
     "message": "หน้าที่/การใช้งาน"
@@ -534,7 +528,7 @@
     "message": "หลังจากล้าง ข้อมูลทั้งหมดจะถูกโหลดใหม่"
   },
   "modal.editPrompt.title": {
-    "message": "อัปเดต Prompt ปัจจุบัน"
+    "message": "แก้ไข Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "ลืมรหัสผ่าน"
@@ -618,7 +612,7 @@
     "message": "พิมพ์เนื้อหา prompt โดยละเอียดที่นี่..."
   },
   "placeholder.promptNotes": {
-    "message": "หมายเหตุเพิ่มเติมเกี่ยวกับ prompt นี้ (ไม่บังคับ)"
+    "message": "แหล่งที่มาของ prompt, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
   },
   "placeholder.promptRemark": {
     "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของ prompt (ไม่บังคับ)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
+  },
+  "action.clearFilters": {
+    "message": "ล้างตัวกรอง ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "แสดง prompt ที่ตรงกับ tag ที่เลือกอย่างน้อยหนึ่งรายการ"
+  },
+  "filter.operator.all.tip": {
+    "message": "แสดง prompt ที่ตรงกับ tag ทั้งหมดที่เลือก"
   }
 }

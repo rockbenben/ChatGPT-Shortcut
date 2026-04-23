@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Đặt lại Mật khẩu"
   },
-  "button.settings": {
-    "message": "Cài đặt"
-  },
   "comment.add": {
     "message": "Gửi Bình luận"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "Ghi chú"
-  },
-  "label.promptNotes.description": {
-    "message": "Bạn có thể cung cấp nguồn prompt, các phiên bản ngôn ngữ khác hoặc ghi chú bổ sung tại đây."
   },
   "label.promptRemark": {
     "message": "Cách sử dụng"
@@ -534,7 +528,7 @@
     "message": "Việc xóa sẽ tải lại tất cả dữ liệu."
   },
   "modal.editPrompt.title": {
-    "message": "Cập nhật Prompt Hiện tại"
+    "message": "Chỉnh sửa Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Quên Mật khẩu"
@@ -618,7 +612,7 @@
     "message": "Nhập nội dung prompt chi tiết tại đây..."
   },
   "placeholder.promptNotes": {
-    "message": "Ghi chú bổ sung về prompt này (tùy chọn)"
+    "message": "Nguồn prompt, phiên bản ở ngôn ngữ khác hoặc ghi chú bổ sung (tùy chọn)"
   },
   "placeholder.promptRemark": {
     "message": "Mô tả ngắn gọn cách sử dụng prompt này (tùy chọn)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký!"
+  },
+  "action.clearFilters": {
+    "message": "Xóa bộ lọc ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Hiển thị prompt khớp với bất kỳ tag nào được chọn"
+  },
+  "filter.operator.all.tip": {
+    "message": "Hiển thị prompt khớp với tất cả tag được chọn"
   }
 }

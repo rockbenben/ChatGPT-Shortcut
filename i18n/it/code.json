@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Reimposta password"
   },
-  "button.settings": {
-    "message": "Impostazioni"
-  },
   "comment.add": {
     "message": "Invia commento"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "Note"
-  },
-  "label.promptNotes.description": {
-    "message": "Qui puoi indicare la fonte, altre versioni linguistiche o note aggiuntive."
   },
   "label.promptRemark": {
     "message": "Utilizzo"
@@ -534,7 +528,7 @@
     "message": "La pulizia ricaricherà tutti i dati."
   },
   "modal.editPrompt.title": {
-    "message": "Aggiorna il Prompt corrente"
+    "message": "Modifica Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Password Dimenticata"
@@ -618,7 +612,7 @@
     "message": "Inserisci il contenuto dettagliato del prompt qui..."
   },
   "placeholder.promptNotes": {
-    "message": "Note aggiuntive su questo prompt (opzionale)"
+    "message": "Fonte del prompt, versioni in altre lingue o note integrative (opzionale)"
   },
   "placeholder.promptRemark": {
     "message": "Descrivi brevemente l'utilizzo di questo prompt (opzionale)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "Inserisci un nome utente o un'email registrata!"
+  },
+  "action.clearFilters": {
+    "message": "Cancella filtri ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Mostra i prompt che corrispondono a uno qualsiasi dei tag selezionati"
+  },
+  "filter.operator.all.tip": {
+    "message": "Mostra i prompt che corrispondono a tutti i tag selezionati"
   }
 }

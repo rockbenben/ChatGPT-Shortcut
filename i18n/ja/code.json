@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "パスワードをリセット"
   },
-  "button.settings": {
-    "message": "設定"
-  },
   "comment.add": {
     "message": "コメントを送信"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "備考"
-  },
-  "label.promptNotes.description": {
-    "message": "ここに出典、他言語版、または追加の説明を記入できます。"
   },
   "label.promptRemark": {
     "message": "用途"
@@ -534,7 +528,7 @@
     "message": "削除すると、すべてのデータが再読み込みされます。"
   },
   "modal.editPrompt.title": {
-    "message": "現在のプロンプトを更新"
+    "message": "プロンプトを編集"
   },
   "modal.forgotPassword.title": {
     "message": "パスワードをお忘れですか"
@@ -618,7 +612,7 @@
     "message": "詳細なプロンプトの内容をここに入力..."
   },
   "placeholder.promptNotes": {
-    "message": "このプロンプトに関する追加の備考（オプション）"
+    "message": "プロンプトの出典、他言語版、または補足情報（任意）"
   },
   "placeholder.promptRemark": {
     "message": "プロンプトの用途を簡単に説明してください（任意）"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "ユーザー名または登録メールアドレスを入力してください！"
+  },
+  "action.clearFilters": {
+    "message": "絞り込みをクリア ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "選択したいずれかのタグに一致"
+  },
+  "filter.operator.all.tip": {
+    "message": "選択したすべてのタグに一致"
   }
 }

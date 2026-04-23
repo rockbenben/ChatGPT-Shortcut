@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "비밀번호 재설정"
   },
-  "button.settings": {
-    "message": "설정"
-  },
   "comment.add": {
     "message": "댓글 제출"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "비고"
-  },
-  "label.promptNotes.description": {
-    "message": "여기에서 출처, 다른 언어 버전 또는 추가 메모를 제공할 수 있습니다."
   },
   "label.promptRemark": {
     "message": "용도"
@@ -534,7 +528,7 @@
     "message": "지우면 모든 데이터가 다시 로드됩니다."
   },
   "modal.editPrompt.title": {
-    "message": "현재 프롬프트 업데이트"
+    "message": "프롬프트 편집"
   },
   "modal.forgotPassword.title": {
     "message": "비밀번호 찾기"
@@ -618,7 +612,7 @@
     "message": "여기에 자세한 프롬프트 내용 입력..."
   },
   "placeholder.promptNotes": {
-    "message": "이 프롬프트에 대한 추가 비고 (선택 사항)"
+    "message": "프롬프트 출처, 다른 언어 버전 또는 보충 설명 (선택 사항)"
   },
   "placeholder.promptRemark": {
     "message": "프롬프트의 용도를 간략하게 설명하세요 (선택 사항)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
+  },
+  "action.clearFilters": {
+    "message": "필터 지우기 ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "선택한 태그 중 하나라도 일치"
+  },
+  "filter.operator.all.tip": {
+    "message": "선택한 모든 태그에 일치"
   }
 }

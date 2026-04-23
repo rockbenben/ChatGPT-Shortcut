@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Şifreyi Sıfırla"
   },
-  "button.settings": {
-    "message": "Ayarlar"
-  },
   "comment.add": {
     "message": "Yorum Gönder"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "Notlar"
-  },
-  "label.promptNotes.description": {
-    "message": "Prompt kaynağı, diğer dil sürümleri veya ek notlar sağlayabilirsiniz."
   },
   "label.promptRemark": {
     "message": "İşlev/Kullanım"
@@ -534,7 +528,7 @@
     "message": "Temizledikten sonra, tüm veriler yeniden yüklenecektir."
   },
   "modal.editPrompt.title": {
-    "message": "Mevcut Prompt'u Güncelle"
+    "message": "Prompt'u düzenle"
   },
   "modal.forgotPassword.title": {
     "message": "Şifremi Unuttum"
@@ -618,7 +612,7 @@
     "message": "Ayrıntılı prompt içeriğini buraya girin..."
   },
   "placeholder.promptNotes": {
-    "message": "Bu prompt hakkında ek notlar (isteğe bağlı)"
+    "message": "Prompt kaynağı, diğer dil sürümleri veya ek notlar (isteğe bağlı)"
   },
   "placeholder.promptRemark": {
     "message": "Prompt'un işlevini kısaca açıklayın (isteğe bağlı)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin!"
+  },
+  "action.clearFilters": {
+    "message": "Filtreleri temizle ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Seçilen tag'lerden herhangi biriyle eşleşen prompt'ları göster"
+  },
+  "filter.operator.all.tip": {
+    "message": "Seçilen tüm tag'lerle eşleşen prompt'ları göster"
   }
 }

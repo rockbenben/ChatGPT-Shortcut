@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "पासवर्ड रीसेट करें"
   },
-  "button.settings": {
-    "message": "सेटिंग्स"
-  },
   "comment.add": {
     "message": "टिप्पणी सबमिट करें"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "नोट्स"
-  },
-  "label.promptNotes.description": {
-    "message": "आप यहां स्रोत, अन्य भाषा संस्करण, या अतिरिक्त नोट्स प्रदान कर सकते हैं।"
   },
   "label.promptRemark": {
     "message": "उपयोग"
@@ -534,7 +528,7 @@
     "message": "साफ़ करने से सभी डेटा फिर से लोड हो जाएगा।"
   },
   "modal.editPrompt.title": {
-    "message": "वर्तमान प्रॉम्प्ट अपडेट करें"
+    "message": "प्रॉम्प्ट संपादित करें"
   },
   "modal.forgotPassword.title": {
     "message": "पासवर्ड भूल गए"
@@ -618,7 +612,7 @@
     "message": "यहाँ विस्तृत प्रॉम्प्ट सामग्री दर्ज करें..."
   },
   "placeholder.promptNotes": {
-    "message": "इस प्रॉम्प्ट के बारे में अतिरिक्त नोट्स (वैकल्पिक)"
+    "message": "प्रॉम्प्ट का स्रोत, अन्य भाषा संस्करण या पूरक नोट्स (वैकल्पिक)"
   },
   "placeholder.promptRemark": {
     "message": "संक्षेप में बताएं कि इस प्रॉम्प्ट का उपयोग कैसे करें (वैकल्पिक)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
+  },
+  "action.clearFilters": {
+    "message": "फ़िल्टर साफ़ करें ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "किसी भी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
+  },
+  "filter.operator.all.tip": {
+    "message": "सभी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
   }
 }

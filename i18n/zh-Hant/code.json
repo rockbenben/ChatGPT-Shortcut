@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "重置密碼"
   },
-  "button.settings": {
-    "message": "設定"
-  },
   "comment.add": {
     "message": "提交評論"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "備註說明"
-  },
-  "label.promptNotes.description": {
-    "message": "您可以在此提供提示詞來源、其他語言版本或拓展說明。"
   },
   "label.promptRemark": {
     "message": "作用/用途"
@@ -534,7 +528,7 @@
     "message": "清除後將重新加載所有數據。"
   },
   "modal.editPrompt.title": {
-    "message": "更新當前 Prompt"
+    "message": "編輯提示詞"
   },
   "modal.forgotPassword.title": {
     "message": "忘記密碼"
@@ -618,7 +612,7 @@
     "message": "在此輸入詳細的提示詞內容..."
   },
   "placeholder.promptNotes": {
-    "message": "關於此提示詞的額外說明（選填）"
+    "message": "提示詞來源、其他語言版本或補充說明（選填）"
   },
   "placeholder.promptRemark": {
     "message": "簡要描述提示詞的作用（選填）"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "請輸入使用者名稱或註冊電子信箱！"
+  },
+  "action.clearFilters": {
+    "message": "清除篩選 ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "命中任一 tag 即顯示"
+  },
+  "filter.operator.all.tip": {
+    "message": "必須同時命中所有 tag"
   }
 }

@@ -101,9 +101,6 @@
   "button.resetPassword": {
     "message": "Reset Password"
   },
-  "button.settings": {
-    "message": "Settings"
-  },
   "comment.add": {
     "message": "Submit Comment"
   },
@@ -268,9 +265,6 @@
   },
   "label.promptNotes": {
     "message": "Notes"
-  },
-  "label.promptNotes.description": {
-    "message": "You can provide the prompt source, other language versions, or additional notes here."
   },
   "label.promptRemark": {
     "message": "Usage"
@@ -534,7 +528,7 @@
     "message": "Clearing will reload all data."
   },
   "modal.editPrompt.title": {
-    "message": "Update Current Prompt"
+    "message": "Edit Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Forgot Password"
@@ -618,7 +612,7 @@
     "message": "Enter detailed prompt content here..."
   },
   "placeholder.promptNotes": {
-    "message": "Additional notes about this prompt (optional)"
+    "message": "Prompt source, other language versions, or supplementary notes (optional)"
   },
   "placeholder.promptRemark": {
     "message": "Briefly describe how to use this prompt (optional)"
@@ -1207,5 +1201,14 @@
   },
   "validation.username.required": {
     "message": "Please enter username or registered email!"
+  },
+  "action.clearFilters": {
+    "message": "Clear filters ({count})"
+  },
+  "filter.operator.any.tip": {
+    "message": "Show prompts matching any selected tag"
+  },
+  "filter.operator.all.tip": {
+    "message": "Show prompts matching all selected tags"
   }
 }
