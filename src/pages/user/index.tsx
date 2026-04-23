@@ -204,45 +204,35 @@ const UserProfile = () => {
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14} className="full-width-col">
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
-              {/* Breadcrumb Navigation — 保留原版样式 */}
-              <Card
-                style={{
-                  borderRadius: 12,
-                  border: "1px solid var(--ifm-color-emphasis-200)",
-                  boxShadow: "var(--site-shadow-sm)",
+              {/* Breadcrumb Navigation — plain, no Card wrapper */}
+              <Breadcrumb
+                itemRender={(item, params, items, paths) => {
+                  const isLast = items.indexOf(item) === items.length - 1;
+                  return isLast || !item.path ? (
+                    <span>{item.title}</span>
+                  ) : (
+                    <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
+                      {item.title}
+                    </Link>
+                  );
                 }}
-                styles={{ body: { padding: "12px 24px" } }}>
-                <Flex justify="space-between" align="center">
-                  <Breadcrumb
-                    itemRender={(item, params, items, paths) => {
-                      const isLast = items.indexOf(item) === items.length - 1;
-                      return isLast || !item.path ? (
-                        <span>{item.title}</span>
-                      ) : (
-                        <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
-                          {item.title}
-                        </Link>
-                      );
-                    }}
-                    items={[
-                      {
-                        path: "/",
-                        title: (
-                          <Flex align="center" gap={4}>
-                            <HomeOutlined />
-                            <span>
-                              <Translate id="link.home">首页</Translate>
-                            </span>
-                          </Flex>
-                        ),
-                      },
-                      {
-                        title: <Translate id="link.myAccount">用户中心</Translate>,
-                      },
-                    ]}
-                  />
-                </Flex>
-              </Card>
+                items={[
+                  {
+                    path: "/",
+                    title: (
+                      <Flex align="center" gap={4}>
+                        <HomeOutlined />
+                        <span>
+                          <Translate id="link.home">首页</Translate>
+                        </span>
+                      </Flex>
+                    ),
+                  },
+                  {
+                    title: <Translate id="link.myAccount">用户中心</Translate>,
+                  },
+                ]}
+              />
 
               {/* Data Management Section — 保留原版样式，数据源替换为 localStorage */}
               <Card
@@ -253,7 +243,7 @@ const UserProfile = () => {
                 }}
                 title={
                   <Space>
-                    <DatabaseOutlined style={{ color: "var(--ifm-color-primary)" }} />
+                    <DatabaseOutlined />
                     <Translate id="title.dataManagement">数据管理</Translate>
                   </Space>
                 }>
