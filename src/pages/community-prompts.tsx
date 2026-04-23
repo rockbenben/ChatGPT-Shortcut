@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback, Suspense, useMemo } from "react";
+import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
@@ -13,7 +13,7 @@ import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
 import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb } from "antd";
-import { UpOutlined, DownOutlined, HomeOutlined, FireOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -26,18 +26,16 @@ const { Text } = Typography;
 
 const pageSize = 12;
 
-interface PromptCardProps {
-  commuPrompt: {
-    id: number;
-    title: string;
-    owner: string;
-    remark?: string;
-    notes?: string;
-    description: string;
-    upvotes?: number;
-    downvotes?: number;
-    upvoteDifference?: number;
-  };
+interface CommunityPromptItem {
+  id: number;
+  title: string;
+  owner: string;
+  remark?: string;
+  notes?: string;
+  description: string;
+  upvotes?: number;
+  downvotes?: number;
+  upvoteDifference?: number;
 }
 
 const CommunityPrompts = () => {
@@ -81,19 +79,13 @@ const CommunityPrompts = () => {
   };
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [userprompts, setUserPrompts] = useState<PromptCardProps["commuPrompt"][]>([]);
+  const [userprompts, setUserPrompts] = useState<CommunityPromptItem[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [sortField, setSortField] = useState("id");
-  const [sortOrder, setSortOrder] = useState("desc");
   const [searchTerm, setSearchTerm] = useState("");
-  // ShareUrl 使用 useMemo 避免额外的渲染周期
-  const ShareUrl = useMemo(() => {
-    if (typeof window !== "undefined") {
-      return window.location.href;
-    }
-    return "";
-  }, []);
+  // 直接读 window.location.href，随路由变化自然更新；避免旧方案的 useMemo 空依赖导致 share link 停留在初次 URL
+  const ShareUrl = typeof window !== "undefined" ? window.location.href : "";
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -104,38 +96,27 @@ const CommunityPrompts = () => {
     }
   }, [location.search]);
 
-  // 用 cancelled flag 防止过期请求覆盖新的 state（快速切页/搜索/重试期间用户操作场景）
+  // cancelled flag 防止过期请求在新 effect 触发后覆盖 state；错误直接 surface，用户通过翻页/排序/搜索自己触发重试
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
 
-    const fetchOnce = async () => {
-      const result = await getCommPrompts(currentPage, pageSize, sortField, sortOrder, searchTerm);
-      if (cancelled) return;
-      if (result && result[0].length > 0) {
-        setUserPrompts(result[0]);
-        setTotal(result[1].pagination.total);
-      } else if (result && result[0].length === 0) {
-        setUserPrompts([]);
-        setTotal(0);
-      }
-    };
-
     (async () => {
       try {
-        await fetchOnce();
+        const result = await getCommPrompts(currentPage, pageSize, sortField, "desc", searchTerm);
+        if (cancelled) return;
+        if (result && result[0].length > 0) {
+          setUserPrompts(result[0]);
+          setTotal(result[1].pagination.total);
+        } else if (result && result[0].length === 0) {
+          setUserPrompts([]);
+          setTotal(0);
+        }
       } catch (error) {
         if (cancelled) return;
-        // 一次性重试瞬时故障（网络抖动、502、超时等）
-        try {
-          await new Promise((resolve) => setTimeout(resolve, 800));
-          if (cancelled) return;
-          await fetchOnce();
-        } catch (retryError) {
-          if (cancelled) return;
-          console.error("Failed to fetch community prompts (after retry):", retryError);
-          messageApi.error("Failed to fetch data");
-        }
+        console.error("Failed to fetch community prompts:", error);
+        // key 去重：快速连续失败不会堆叠多个 toast
+        messageApi.error({ content: "Failed to fetch data", key: "comm-fetch-error" });
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -144,7 +125,7 @@ const CommunityPrompts = () => {
     return () => {
       cancelled = true;
     };
-  }, [currentPage, sortField, sortOrder, searchTerm, messageApi]);
+  }, [currentPage, sortField, searchTerm, messageApi]);
 
   // 公开搜索：community prompts 是用户主动分享的公开内容，搜索无需登录
   // 投票/收藏仍需登录（在 vote / addFavorite 内部检查）
@@ -155,10 +136,16 @@ const CommunityPrompts = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState<any>(null);
 
+  // 用 ref 持有最新 userAuth / userprompts，让 vote 保持稳定引用（不因每次投票后 userprompts 变化而重建，避免 PromptCard 跟着 re-render）
+  const userAuthRef = React.useRef(userAuth);
+  userAuthRef.current = userAuth;
+  const userpromptsRef = React.useRef(userprompts);
+  userpromptsRef.current = userprompts;
+
   const vote = useCallback(
     async (promptId: number, action: "upvote" | "downvote") => {
       // 未登录时引导登录
-      if (!userAuth) {
+      if (!userAuthRef.current) {
         messageApi.warning("Please log in to vote.");
         setOpen(true);
         return;
@@ -173,7 +160,7 @@ const CommunityPrompts = () => {
       sessionVotedIdsRef.current.add(voteKey);
 
       // 保存原始数据用于回滚
-      const originalPrompt = userprompts.find((p) => p.id === promptId);
+      const originalPrompt = userpromptsRef.current.find((p) => p.id === promptId);
 
       // Optimistic UI: 立即更新
       setUserPrompts((prev) =>
@@ -198,19 +185,14 @@ const CommunityPrompts = () => {
           setUserPrompts((prev) =>
             prev.map((prompt) =>
               prompt.id === promptId
-                ? {
-                    ...prompt,
-                    upvotes,
-                    downvotes,
-                    upvoteDifference: upvotes - downvotes,
-                  }
+                ? { ...prompt, upvotes, downvotes, upvoteDifference: upvotes - downvotes }
                 : prompt,
             ),
           );
         }
 
         messageApi.success(`Successfully ${action}d!`);
-      } catch (err) {
+      } catch (err: any) {
         // 回滚到原始数据并移除会话标记
         sessionVotedIdsRef.current.delete(voteKey);
         if (originalPrompt) {
@@ -231,7 +213,7 @@ const CommunityPrompts = () => {
         messageApi.error(errorMessage);
       }
     },
-    [userAuth, messageApi, userprompts],
+    [messageApi],
   );
 
   const bookmark = useCallback(
@@ -263,71 +245,41 @@ const CommunityPrompts = () => {
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">
           <div className="container padding-vert--md">
-            <div
-              style={{
-                marginBottom: 24,
-                padding: "16px 24px",
-                background: "var(--ifm-background-color)",
-                borderRadius: 12,
-                boxShadow: "var(--site-shadow-md)",
-              }}>
-              <Flex wrap="wrap" gap="middle" justify="space-between" align="center">
-                <Breadcrumb
-                  itemRender={(item, params, items, paths) => {
-                    const isLast = items.indexOf(item) === items.length - 1;
-                    return isLast || !item.path ? (
-                      <span>{item.title}</span>
-                    ) : (
-                      <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
-                        {item.title}
-                      </Link>
-                    );
-                  }}
-                  items={[
-                    {
-                      path: "/",
-                      title: (
-                        <>
-                          <HomeOutlined />
-                          <span>
-                            <Translate id="link.home">首页</Translate>
-                          </span>
-                        </>
-                      ),
-                    },
-                    {
-                      title: <Translate id="link.communityPrompts">社区提示词</Translate>,
-                    },
-                  ]}
-                />
+            {/* Breadcrumb — plain, matches community-prompt detail page style */}
+            <Breadcrumb
+              items={[
+                {
+                  title: (
+                    <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
+                      <HomeOutlined style={{ marginRight: 4 }} />
+                      <Translate id="link.home">首页</Translate>
+                    </Link>
+                  ),
+                },
+                {
+                  title: <Translate id="link.communityPrompts">社区提示词</Translate>,
+                },
+              ]}
+              style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
+            />
 
-                <Flex gap="middle" align="center" wrap="wrap">
-                  <Segmented
-                    options={[
-                      { label: translate({ id: "field.id", message: "发布时间" }), value: "id", icon: <ClockCircleOutlined /> },
-                      { label: translate({ id: "field.upvoteDifference", message: "支持度" }), value: "upvoteDifference", icon: <FireOutlined /> },
-                    ]}
-                    value={sortField}
-                    onChange={(value) => {
-                      setSortField(value as string);
-                      setCurrentPage(1);
-                    }}
-                  />
-                  <Segmented
-                    options={[
-                      { label: translate({ id: "order.descending", message: "降序" }), value: "desc", icon: <DownOutlined /> },
-                      { label: translate({ id: "order.ascending", message: "升序" }), value: "asc", icon: <UpOutlined /> },
-                    ]}
-                    value={sortOrder}
-                    onChange={(value) => {
-                      setSortOrder(value as string);
-                      setCurrentPage(1);
-                    }}
-                  />
-                  <SearchBar beforeSearch={handleBeforeSearch} />
-                </Flex>
-              </Flex>
-            </div>
+            {/* Sort + Search — same row; search fills remaining space via flex: 1 */}
+            <Flex wrap="wrap" gap="middle" align="center" style={{ marginBottom: 24 }}>
+              <Segmented
+                options={[
+                  { value: "id", label: translate({ id: "sort.newest", message: "最新发布" }) },
+                  { value: "upvoteDifference", label: translate({ id: "sort.mostUpvoted", message: "最多赞" }) },
+                ]}
+                value={sortField}
+                onChange={(value) => {
+                  setSortField(value as string);
+                  setCurrentPage(1);
+                }}
+              />
+              <div style={{ flex: 1, minWidth: 240 }}>
+                <SearchBar beforeSearch={handleBeforeSearch} />
+              </div>
+            </Flex>
 
             {loading ? (
               <PromptCardSkeleton count={pageSize} />
@@ -358,10 +310,7 @@ const CommunityPrompts = () => {
 
             <div style={{ display: "flex", justifyContent: "center", marginTop: 16, marginBottom: -24 }}>
               <Text type="secondary" style={{ fontSize: "12px", textAlign: "center", maxWidth: 800 }}>
-                {translate({
-                  id: "info.communityPrompts",
-                  message: "本页面提示词由网友分享上传。我们不对内容的准确性、质量或完整性做出保证，也不承担因内容引发的法律责任。如发现侵权或其他问题，请联系我们处理。",
-                })}
+                <Translate id="communityPrompts.disclaimer">社区成员分享 · 观点不代表本项目</Translate>
               </Text>
             </div>
 
