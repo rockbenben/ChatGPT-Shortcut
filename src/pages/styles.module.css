@@ -58,13 +58,12 @@
 
 .heroTitle {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
 }
 
 .heroSubtitle {

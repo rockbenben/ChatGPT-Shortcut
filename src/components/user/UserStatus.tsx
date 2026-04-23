@@ -93,11 +93,7 @@ const UserStatus = () => {
           </span>
         </Button>
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
-          <Button icon={<SettingOutlined />}>
-            <span className="hideOnSmallScreen">
-              <Translate id="button.settings">设置</Translate>
-            </span>
-          </Button>
+          <Button icon={<SettingOutlined />} aria-label="Settings" />
         </Dropdown>
       </Space>
     ),
