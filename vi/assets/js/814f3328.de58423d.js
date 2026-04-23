@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["1833"],{55513(t){t.exports=JSON.parse('{"title":"B\xe0i vi\u1EBFt g\u1EA7n \u0111\xe2y","items":[]}')}}]);
