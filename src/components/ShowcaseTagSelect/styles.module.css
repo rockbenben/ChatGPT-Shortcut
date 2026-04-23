@@ -67,26 +67,26 @@ input:checked + .checkboxLabel:hover {
   border: 1px solid var(--ifm-color-emphasis-200);
 }
 
+/* Hover: no vertical lift — align with the card hover language (border + shadow carry the state). */
 .tagSelect:hover {
   border-color: var(--ifm-color-primary) !important;
   background-color: var(--site-color-card-background) !important;
   box-shadow: var(--site-shadow-sm);
-  transform: translateY(-1px);
 }
 
 .tagSelect:active {
   transform: scale(0.96);
 }
 
-/* Selected state */
+/* Selected state — bg + border already carry the signal; keep a tiny colored glow only as a subtle hint. */
 .tagSelectChecked {
   color: var(--site-color-tag-selected-text);
   background-color: var(--site-color-tag-selected-bg);
   border: 1px solid var(--site-color-tag-selected-border);
-  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
+  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 12%);
 }
 
 .tagSelectChecked:hover {
   background-color: var(--site-color-tag-selected-bg) !important;
-  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
+  box-shadow: 0 2px 10px hsl(var(--site-primary-hue-saturation) 36% / 18%);
 }

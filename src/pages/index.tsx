@@ -2,7 +2,7 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, S
 import { ViewModeContext, useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { useHistory } from "@docusaurus/router";
+import { useHistory, useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import Layout from "@theme/Layout";
@@ -10,7 +10,7 @@ import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
 import { green, red, blue, cyan, grey } from "@ant-design/colors";
-import { MenuOutlined, AppstoreOutlined, HeartOutlined, EditOutlined, TagOutlined } from "@ant-design/icons";
+import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
 
 import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
@@ -66,25 +66,45 @@ const ShowcaseFilters: React.FC = React.memo(() => {
   const toggleTagsOnMobile = useCallback(() => {
     setShowTagsOnMobile((prev) => !prev);
   }, []);
+  const location = useLocation();
+  const history = useHistory();
 
   const modifiedTagList = useMemo(() => {
     return TagList.filter((tag) => tag !== "contribute");
   }, []);
 
+  const selectedTagCount = useMemo(() => new URLSearchParams(location.search).getAll("tags").length, [location.search]);
+
+  const handleClearTags = useCallback(() => {
+    const params = new URLSearchParams(location.search);
+    params.delete("tags");
+    history.push({ ...location, search: params.toString() });
+  }, [location, history]);
+
   return (
     <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
       <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
-        <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
-          Filters
-        </Title>
-        <Button onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<MenuOutlined />} style={{ display: "inline-flex", alignItems: "center" }}>
+        <Button type="text" onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<FilterOutlined />}>
           {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
+          {showTagsOnMobile ? <CaretUpOutlined /> : <CaretDownOutlined />}
         </Button>
+        <Flex align="center" gap="small">
+          <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
+            Filters
+          </Title>
+          {selectedTagCount > 0 && (
+            <Button type="link" size="small" icon={<CloseOutlined />} onClick={handleClearTags} style={{ padding: 0, height: "auto", fontSize: 12, marginTop: 6, color: "var(--ifm-color-content)" }}>
+              <Translate id="action.clearFilters" values={{ count: selectedTagCount }}>
+                {"清除筛选 ({count})"}
+              </Translate>
+            </Button>
+          )}
+        </Flex>
         <Flex gap="small" align="center">
           <ShowcaseFilterToggle />
         </Flex>
       </Flex>
-      <Flex wrap="wrap" gap="small" style={{ marginTop: "0.5rem" }}>
+      <div className={clsx(styles.checkboxList, !showTagsOnMobile && "hideOnSmallScreen")} style={{ marginTop: "1rem" }}>
         {modifiedTagList.map((tag, i) => {
           const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
@@ -114,7 +134,7 @@ const ShowcaseFilters: React.FC = React.memo(() => {
             </div>
           );
         })}
-      </Flex>
+      </div>
     </section>
   );
 });
@@ -718,8 +738,7 @@ export default function Showcase(): React.ReactElement {
       q: translate({ id: "faq.q2", message: "怎么用 AiShort？" }),
       a: translate({
         id: "faq.a2",
-        message:
-          "三步完成：(1) 在首页搜索或按标签浏览所需提示词；(2) 点击卡片「复制」按钮；(3) 粘贴到任意 AI 对话工具，按提示词指引补充你的具体问题。",
+        message: "三步完成：(1) 在首页搜索或按标签浏览所需提示词；(2) 点击卡片「复制」按钮；(3) 粘贴到任意 AI 对话工具，按提示词指引补充你的具体问题。",
       }),
     },
     {
@@ -742,16 +761,14 @@ export default function Showcase(): React.ReactElement {
       q: translate({ id: "faq.q5", message: "AiShort 免费吗？需要注册吗？" }),
       a: translate({
         id: "faq.a5",
-        message:
-          "完全免费且开源（代码托管在 GitHub）。浏览、搜索、复制提示词无需注册。注册后可解锁：收藏与拖拽排序、自定义标签、创建并管理个人提示词、社区分享与投票、JSON 导出备份、跨设备同步。",
+        message: "完全免费且开源（代码托管在 GitHub）。浏览、搜索、复制提示词无需注册。注册后可解锁：收藏与拖拽排序、自定义标签、创建并管理个人提示词、社区分享与投票、JSON 导出备份、跨设备同步。",
       }),
     },
     {
       q: translate({ id: "faq.q6", message: "AiShort 可以在企业内网或离线环境使用吗？" }),
       a: translate({
         id: "faq.a6",
-        message:
-          "提供独立的离线部署版，专为企业内网、政务网络等无法访问外网的环境设计。无需后端服务器和用户账号，部署后开箱即用，保留浏览、搜索、收藏、自定义提示词等核心功能，数据格式与在线版互通。",
+        message: "提供独立的离线部署版，专为企业内网、政务网络等无法访问外网的环境设计。无需后端服务器和用户账号，部署后开箱即用，保留浏览、搜索、收藏、自定义提示词等核心功能，数据格式与在线版互通。",
       }),
     },
   ];

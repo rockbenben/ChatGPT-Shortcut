@@ -7,7 +7,8 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useHistory, useLocation } from "@docusaurus/router";
-import { Switch, ConfigProvider } from "antd";
+import { Segmented, Tooltip } from "antd";
+import Translate from "@docusaurus/Translate";
 
 import { prepareUserState } from "@site/src/components/SearchBar/index";
 
@@ -22,18 +23,18 @@ function readOperator(search: string): Operator {
 export default function ShowcaseFilterToggle(): React.ReactElement {
   const location = useLocation();
   const history = useHistory();
-  const [operator, setOperator] = useState(false);
+  const [operator, setOperator] = useState<Operator>("OR");
 
   useEffect(() => {
-    setOperator(readOperator(location.search) === "AND");
+    setOperator(readOperator(location.search));
   }, [location]);
 
-  const toggleOperator = useCallback(
-    (checked: boolean) => {
-      setOperator(checked);
+  const setOperatorValue = useCallback(
+    (value: Operator) => {
+      setOperator(value);
       const searchParams = new URLSearchParams(location.search);
       searchParams.delete(OperatorQueryKey);
-      if (checked) {
+      if (value === "AND") {
         searchParams.append(OperatorQueryKey, "AND");
       }
       history.push({
@@ -42,23 +43,32 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
         state: prepareUserState(),
       });
     },
-    [location, history]
+    [location, history],
   );
 
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Switch: {
-            handleSize: 14,
-            trackHeight: 20,
-            trackMinWidth: 45,
-            colorPrimary: "var(--ifm-color-primary)",
-            colorPrimaryHover: "var(--ifm-color-primary-dark)",
-          },
+    <Segmented<Operator>
+      value={operator}
+      onChange={setOperatorValue}
+      options={[
+        {
+          value: "OR",
+          label: (
+            <Tooltip title={<Translate id="filter.operator.any.tip">命中任一 tag 即显示</Translate>}>
+              <span>OR</span>
+            </Tooltip>
+          ),
         },
-      }}>
-      <Switch checked={operator} onChange={toggleOperator} checkedChildren="AND" unCheckedChildren="OR" />
-    </ConfigProvider>
+        {
+          value: "AND",
+          label: (
+            <Tooltip title={<Translate id="filter.operator.all.tip">必须同时命中所有 tag</Translate>}>
+              <span>AND</span>
+            </Tooltip>
+          ),
+        },
+      ]}
+      size="small"
+    />
   );
 }
