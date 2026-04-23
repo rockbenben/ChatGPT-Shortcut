@@ -123,7 +123,7 @@ const FilterBar: React.FC<{
               style={{
                 cursor: "pointer",
                 opacity: selectedTags.includes(tag.id) ? 1 : 0.7,
-                boxShadow: selectedTags.includes(tag.id) ? "0 0 0 2px currentColor" : "none",
+                boxShadow: selectedTags.includes(tag.id) ? "0 0 0 2px var(--ifm-color-primary)" : "none",
               }}
               onClick={() => toggleTag(tag.id)}>
               {tag.name}
@@ -132,9 +132,9 @@ const FilterBar: React.FC<{
         </Flex>
       )}
 
-      <Tooltip title={translate({ id: "myspace.manageTags", message: "管理标签" })}>
-        <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small" />
-      </Tooltip>
+      <Button type="text" icon={<TagOutlined />} onClick={onManageTags} size="small">
+        <Translate id="myspace.manageTags">管理标签</Translate>
+      </Button>
 
       <div className={styles.searchInput} style={{ marginLeft: "auto" }}>
         <Input
