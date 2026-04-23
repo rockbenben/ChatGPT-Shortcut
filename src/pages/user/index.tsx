@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress } from "antd";
+import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress, Tooltip } from "antd";
 import {
   HomeOutlined,
   EditOutlined,
@@ -27,7 +27,7 @@ import {
 } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
-import { getLevelInfo, LevelName, LevelDescription } from "@site/src/components/LevelSystem";
+import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
 import { getUserAllInfo } from "@site/src/api/user";
 import { submitPrompt, updatePrompt, createFavorite, updateFavorite, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
 import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
@@ -436,45 +436,35 @@ const UserProfile = () => {
         <Row justify="center">
           <Col xs={24} sm={22} md={20} lg={16} xl={14} className="full-width-col">
             <Space orientation="vertical" size="large" style={{ width: "100%" }}>
-              {/* Breadcrumb Navigation */}
-              <Card
-                style={{
-                  borderRadius: 12,
-                  border: "1px solid var(--ifm-color-emphasis-200)",
-                  boxShadow: "var(--site-shadow-sm)",
+              {/* Breadcrumb Navigation — plain, no Card wrapper */}
+              <Breadcrumb
+                itemRender={(item, params, items, paths) => {
+                  const isLast = items.indexOf(item) === items.length - 1;
+                  return isLast || !item.path ? (
+                    <span>{item.title}</span>
+                  ) : (
+                    <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
+                      {item.title}
+                    </Link>
+                  );
                 }}
-                styles={{ body: { padding: "12px 24px" } }}>
-                <Flex justify="space-between" align="center">
-                  <Breadcrumb
-                    itemRender={(item, params, items, paths) => {
-                      const isLast = items.indexOf(item) === items.length - 1;
-                      return isLast || !item.path ? (
-                        <span>{item.title}</span>
-                      ) : (
-                        <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
-                          {item.title}
-                        </Link>
-                      );
-                    }}
-                    items={[
-                      {
-                        path: "/",
-                        title: (
-                          <Flex align="center" gap={4}>
-                            <HomeOutlined />
-                            <span>
-                              <Translate id="link.home">首页</Translate>
-                            </span>
-                          </Flex>
-                        ),
-                      },
-                      {
-                        title: <Translate id="link.myAccount">用户中心</Translate>,
-                      },
-                    ]}
-                  />
-                </Flex>
-              </Card>
+                items={[
+                  {
+                    path: "/",
+                    title: (
+                      <Flex align="center" gap={4}>
+                        <HomeOutlined />
+                        <span>
+                          <Translate id="link.home">首页</Translate>
+                        </span>
+                      </Flex>
+                    ),
+                  },
+                  {
+                    title: <Translate id="link.myAccount">用户中心</Translate>,
+                  },
+                ]}
+              />
 
               <Row gutter={[24, 24]}>
                 {/* Left Column: Profile Info */}
@@ -488,7 +478,7 @@ const UserProfile = () => {
                     }}
                     title={
                       <Space>
-                        <UserOutlined style={{ color: "var(--ifm-color-primary)" }} />
+                        <UserOutlined />
                         <Translate id="title.userInfo">用户信息</Translate>
                       </Space>
                     }>
@@ -578,11 +568,6 @@ const UserProfile = () => {
                             <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
                           </Tag>
 
-                          {/* Level Description */}
-                          <Text type="secondary" style={{ marginTop: 8, fontSize: 12, textAlign: "center" }}>
-                            <LevelDescription level={levelInfo.level} />
-                          </Text>
-
                           {/* Stats Card - Using Ant Design Card */}
                           <Card
                             size="small"
@@ -617,33 +602,61 @@ const UserProfile = () => {
                             />
                           </Card>
 
-                          {/* Progress to next level */}
-                          {levelInfo.next && (
-                            <Flex vertical gap={8} style={{ width: "100%", marginTop: 16 }}>
-                              <Flex justify="space-between">
-                                <Text type="secondary" style={{ fontSize: 12 }}>
-                                  <Translate id="progress.toNextLevel">距离下一等级</Translate>
-                                </Text>
-                                <Text strong style={{ fontSize: 12, color: "var(--ifm-color-primary)" }}>
-                                  {remaining}
-                                </Text>
+                          {/* Progress to next level — label now carries the next level name (merged encouragement). */}
+                          {levelInfo.next && (() => {
+                            const nextLevelInfo = getLevelInfo(levelInfo.next);
+                            return (
+                              <Flex vertical gap={8} style={{ width: "100%", marginTop: 16 }}>
+                                <Flex justify="space-between">
+                                  <Text type="secondary" style={{ fontSize: 12 }}>
+                                    <Translate
+                                      id="progress.toNextLevel"
+                                      values={{ next: <LevelName level={nextLevelInfo.level} emoji={nextLevelInfo.emoji} /> }}>
+                                      {"距离「{next}」还差"}
+                                    </Translate>
+                                  </Text>
+                                  <Text strong style={{ fontSize: 12, color: "var(--ifm-color-primary)" }}>
+                                    {remaining}
+                                  </Text>
+                                </Flex>
+                                <Progress
+                                  percent={progressPercent}
+                                  strokeColor={{
+                                    "0%": "var(--ifm-color-primary)",
+                                    "100%": "var(--ifm-color-primary-dark)",
+                                  }}
+                                  railColor="var(--ifm-color-emphasis-200)"
+                                  showInfo={false}
+                                />
                               </Flex>
-                              <Progress
-                                percent={progressPercent}
-                                strokeColor={{
-                                  "0%": "var(--ifm-color-primary)",
-                                  "100%": "var(--ifm-color-primary-dark)",
-                                }}
-                                railColor="var(--ifm-color-emphasis-200)"
-                                showInfo={false}
-                              />
-                              <Text type="secondary" style={{ fontSize: 12, textAlign: "center" }}>
-                                <Translate id="progress.encourage">继续分享，解锁更高等级！</Translate> 🎯
-                              </Text>
-                            </Flex>
-                          )}
+                            );
+                          })()}
 
-                          {/* Max level celebration */}
+                          {/* Level ladder — all 6 levels as emojis, reached ones in color, unreached grayscale. */}
+                          <Flex gap={10} justify="center" align="center" style={{ width: "100%", marginTop: 16 }}>
+                            {[0, 1, 3, 10, 20, 50].map((threshold) => {
+                              const info = getLevelInfo(threshold);
+                              const isCurrent = info.level === levelInfo.level;
+                              const isReached = info.level <= levelInfo.level;
+                              return (
+                                <Tooltip key={info.level} title={<LevelName level={info.level} emoji={info.emoji} />}>
+                                  <span
+                                    style={{
+                                      fontSize: isCurrent ? 22 : 16,
+                                      opacity: isReached ? 1 : 0.35,
+                                      filter: isReached ? "none" : "grayscale(1)",
+                                      transition: "all .2s",
+                                      cursor: "default",
+                                      lineHeight: 1,
+                                    }}>
+                                    {info.emoji}
+                                  </span>
+                                </Tooltip>
+                              );
+                            })}
+                          </Flex>
+
+                          {/* Max level acknowledgement — calmer than before */}
                           {!levelInfo.next && sharedCount > 0 && (
                             <Card
                               size="small"
@@ -659,7 +672,7 @@ const UserProfile = () => {
                                 },
                               }}>
                               <Text strong style={{ color: "var(--ifm-color-success)" }}>
-                                🎉 <Translate id="level.max.congrats">恭喜达成最高等级！你是社区的传奇贡献者！</Translate>
+                                <Translate id="level.max.congrats">已达成最高等级 · 感谢你的贡献</Translate>
                               </Text>
                             </Card>
                           )}
@@ -680,7 +693,7 @@ const UserProfile = () => {
                     }}
                     title={
                       <Space>
-                        <SafetyCertificateOutlined style={{ color: "var(--ifm-color-primary)" }} />
+                        <SafetyCertificateOutlined />
                         <Translate id="title.security">安全设置</Translate>
                       </Space>
                     }
@@ -804,7 +817,7 @@ const UserProfile = () => {
                 }}
                 title={
                   <Space>
-                    <DatabaseOutlined style={{ color: "var(--ifm-color-primary)" }} />
+                    <DatabaseOutlined />
                     <Translate id="title.dataManagement">数据管理</Translate>
                   </Space>
                 }>
@@ -885,15 +898,9 @@ const UserProfile = () => {
                     <Popconfirm
                       title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
                       description={
-                        <div>
-                          <Text>
-                            <Translate id="modal.clearCache.content">系统使用 ETag 技术自动管理缓存，通常无需手动清除。</Translate>
-                          </Text>
-                          <br />
-                          <Text type="warning">
-                            <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
-                          </Text>
-                        </div>
+                        <Text type="warning">
+                          <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
+                        </Text>
                       }
                       onConfirm={handleClearCache}
                       okText={<Translate id="button.confirm">确认清除</Translate>}
