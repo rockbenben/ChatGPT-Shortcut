@@ -35,14 +35,14 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
   return (
     <Modal
       open={open}
-      width={600}
+      width={720}
       mask={{ closable: false }}
       confirmLoading={loading}
       onOk={form.submit}
       onCancel={onClose}
       destroyOnHidden
-      title={mode === "add" ? <Translate id="action.addPrompt">添加 Prompt</Translate> : <Translate id="modal.editPrompt.title">更新当前 Prompt</Translate>}
-      okText={mode === "add" ? <Translate id="action.addPrompt">添加 Prompt</Translate> : <Translate id="action.updatePrompt">更新 Prompt</Translate>}
+      title={mode === "add" ? <Translate id="action.addPrompt">添加提示词</Translate> : <Translate id="modal.editPrompt.title">编辑提示词</Translate>}
+      okText={mode === "add" ? <Translate id="action.addPrompt">添加提示词</Translate> : <Translate id="action.updatePrompt">更新提示词</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
       <Form
         form={form}
@@ -97,16 +97,13 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
           />
         </Form.Item>
 
-        <Form.Item
-          name="notes"
-          label={<Translate id="label.promptNotes">备注说明</Translate>}
-          extra={<Translate id="label.promptNotes.description">您可以在此提供提示词来源、其他语言版本或拓展说明。</Translate>}>
+        <Form.Item name="notes" label={<Translate id="label.promptNotes">备注说明</Translate>}>
           <Input.TextArea
-            rows={3}
+            autoSize={{ minRows: 3, maxRows: 8 }}
             maxLength={2000}
             placeholder={translate({
               id: "placeholder.promptNotes",
-              message: "关于此提示词的额外说明（选填）",
+              message: "提示词来源、其他语言版本或补充说明（选填）",
             })}
           />
         </Form.Item>
