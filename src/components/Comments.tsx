@@ -78,10 +78,12 @@ const nestComments = (flatComments: any[]) => {
       const parentComment = commentMap.get(comment.threadOf.id);
       if (parentComment) {
         parentComment.children.push(comment);
+        continue;
       }
-    } else {
-      rootComments.push(comment);
+      // 父评论不在当前分页内（/flat 端点对全部评论分页），
+      // 提升为 root 避免孤立 reply 被静默丢弃导致整页为空
     }
+    rootComments.push(comment);
   }
 
   return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
