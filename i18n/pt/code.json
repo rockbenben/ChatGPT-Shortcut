@@ -3,7 +3,7 @@
     "message": "Adicionar"
   },
   "action.addPrompt": {
-    "message": "Adicionar Prompt"
+    "message": "Criar prompt"
   },
   "action.backToLogin": {
     "message": "Voltar ao login"
@@ -63,7 +63,7 @@
     "message": "Mostrar etiquetas"
   },
   "action.updatePrompt": {
-    "message": "Atualizar Prompt"
+    "message": "Salvar"
   },
   "action.upvote": {
     "message": "Curtir"
@@ -93,7 +93,7 @@
     "message": "Importar prompts"
   },
   "button.login": {
-    "message": "Entrar"
+    "message": "Entrar grátis"
   },
   "button.logout": {
     "message": "Sair"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Seu feedback é importante para nós!"
   },
-  "feedback.paragraph": {
-    "message": "O ChatGPT Shortcut é uma ferramenta de gerenciamento de prompts de código aberto dedicada a melhorar a eficiência da IA. Estamos ansiosos pela sua participação: seja relatando bugs, sugerindo recursos ou compartilhando prompts de qualidade. Para envios de prompts, oferecemos suporte a vários idiomas e, uma vez aceitos, serão incluídos com atribuição (pesquisável por nome de usuário). Cada contribuição sua ajuda os membros da comunidade a expandir seu pensamento e aumentar a produtividade. Vamos construir juntos uma biblioteca de prompts perfeita!"
-  },
   "feedback.subtitle": {
-    "message": "Cada contribuição sua ajuda a tornar este projeto de código aberto melhor"
+    "message": "Reportes de bugs, sugestões de recursos, dúvidas de uso—toda voz é bem-vinda"
   },
   "feedback.title": {
     "message": "Feedback e Sugestões"
   },
   "feedback.welcome": {
-    "message": "Bem-vindo ao dar feedback"
+    "message": "Feedback e Sugestões"
   },
   "homepage.description": {
     "message": "Frustrado com respostas IA irrelevantes? AiShort oferece modelos práticos para escrita, código e tradução. Copie com um clique e duplique sua eficiência!"
   },
   "homepage.slogan": {
-    "message": "Prompts de IA selecionados para tornar cada conversa mais eficiente"
+    "message": "Prompts de IA selecionados, prontos com um clique"
   },
   "homepage.title": {
     "message": "AiShort - Biblioteca de Prompts IA | Modelos para Aumentar Produtividade"
@@ -243,7 +240,7 @@
     "message": "Por favor, insira seu código de redefinição!"
   },
   "input.search.placeholder": {
-    "message": "Pesquisar prompts..."
+    "message": "Buscar: escrita, tradução, programação…"
   },
   "label.agree": {
     "message": "Concordo"
@@ -267,46 +264,25 @@
     "message": "Deseja compartilhar este prompt na página pública?"
   },
   "level.bronze": {
-    "message": "Estrela Bronze"
-  },
-  "level.bronze.desc": {
-    "message": "Ótimo começo! Mantenha o ritmo!"
+    "message": "Bronze"
   },
   "level.diamond": {
-    "message": "Lenda Diamante"
-  },
-  "level.diamond.desc": {
-    "message": "Contribuidor de elite, uma verdadeira lenda da comunidade!"
+    "message": "Diamante"
   },
   "level.gold": {
-    "message": "Especialista Ouro"
-  },
-  "level.gold.desc": {
-    "message": "Experiente e muito confiável!"
-  },
-  "level.max.congrats": {
-    "message": "Parabéns por atingir o nível máximo! Você é um contribuidor lendário!"
+    "message": "Ouro"
   },
   "level.newcomer": {
-    "message": "Explorador"
-  },
-  "level.newcomer.desc": {
-    "message": "Compartilhe seu primeiro prompt para começar a jornada!"
+    "message": "Explorador Novato"
   },
   "level.platinum": {
-    "message": "Mestre Platina"
-  },
-  "level.platinum.desc": {
-    "message": "Especialista experiente com influência notável!"
+    "message": "Platina"
   },
   "level.silver": {
-    "message": "Elite Prata"
-  },
-  "level.silver.desc": {
-    "message": "Contribuidor ativo, crescendo forte!"
+    "message": "Prata"
   },
   "link.addprompt": {
-    "message": "Adicionar prompt"
+    "message": "Criar prompt"
   },
   "link.communityPrompts": {
     "message": "Prompts da Comunidade"
@@ -456,7 +432,7 @@
     "message": "Nenhum prompt ainda, crie um"
   },
   "message.noSpaceItems": {
-    "message": "Nenhum conteúdo ainda, adicione prompts ou favoritos"
+    "message": "Nada aqui ainda — crie um prompt ou favorite algum"
   },
   "message.orderSaveFailed": {
     "message": "Falha ao salvar disposição"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Nome de usuário/E-mail"
   },
-  "progress.toNextLevel": {
-    "message": "Até o próximo nível"
-  },
   "prompt.charsLabel": {
     "message": "caracteres"
   },
@@ -630,7 +603,7 @@
     "message": "O prompt é um tanto longo; considere encurtá-lo ou dividi-lo."
   },
   "showcase.header.button": {
-    "message": "Compartilhar seu prompt"
+    "message": "Explorar comunidade"
   },
   "showcase.tag.academic.description": {
     "message": "Pesquisa acadêmica, design instrucional, planejamento curricular e outro suporte ao trabalho do professor"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Prompts relacionados"
-  },
-  "stat.sharedPrompts": {
-    "message": "Prompts Compartilhados"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Fechar",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Compartilhado por membros da comunidade · Opiniões não representam o projeto"
+  },
+  "level.stardust": {
+    "message": "Pó Estelar"
+  },
+  "level.emerald": {
+    "message": "Esmeralda"
+  },
+  "level.ruby": {
+    "message": "Rubi"
+  },
+  "level.sapphire": {
+    "message": "Safira"
+  },
+  "feedback.type.bug": {
+    "message": "Reportes de Bugs"
+  },
+  "feedback.type.suggestion": {
+    "message": "Sugestões"
+  },
+  "feedback.type.help": {
+    "message": "Ajuda de Uso"
+  },
+  "feedback.spec_label": {
+    "message": "Canal Aberto"
+  },
+  "hero.supportedAiTools": {
+    "message": "Compatível com {tools} e mais",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Nenhum prompt correspondente encontrado",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Tente outra palavra-chave ou limpe os filtros de tags",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "até {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

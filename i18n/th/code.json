@@ -3,7 +3,7 @@
     "message": "เพิ่ม"
   },
   "action.addPrompt": {
-    "message": "เพิ่ม Prompt"
+    "message": "สร้างพรอมต์"
   },
   "action.backToLogin": {
     "message": "กลับไปเข้าสู่ระบบ"
@@ -63,7 +63,7 @@
     "message": "แสดงแท็ก"
   },
   "action.updatePrompt": {
-    "message": "อัปเดต Prompt"
+    "message": "บันทึก"
   },
   "action.upvote": {
     "message": "ชอบ"
@@ -93,7 +93,7 @@
     "message": "นำเข้า Prompt"
   },
   "button.login": {
-    "message": "เข้าสู่ระบบ"
+    "message": "เข้าสู่ระบบฟรี"
   },
   "button.logout": {
     "message": "ออกจากระบบ"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "ข้อเสนอแนะของคุณสำคัญมากสำหรับเรา!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut เป็นเครื่องมือจัดการ Prompt แบบโอเพนซอร์สที่มุ่งปรับปรุงประสิทธิภาพ AI เราตื่นเต้นที่จะได้รับการมีส่วนร่วมของคุณ: รายงานบัก เสนอคุณสมบัติ หรือแบ่งปัน Prompt คุณภาพ สำหรับการส่ง Prompt เรารองรับหลายภาษา และเมื่อได้รับการยอมรับจะถูกรวมพร้อมระบุชื่อ (สามารถค้นหาด้วยชื่อผู้ใช้) ทุกการมีส่วนร่วมช่วยให้สมาชิกชุมชนขยายความคิดและเพิ่มประสิทธิภาพ มาสร้างไลบรารี Prompt ที่สมบูรณ์แบบด้วยกัน!"
-  },
   "feedback.subtitle": {
-    "message": "ทุกการมีส่วนร่วมของคุณทำให้โปรเจกต์โอเพนซอร์สนี้ดีขึ้น"
+    "message": "รายงานบั๊ก ข้อเสนอแนะฟีเจอร์ คำถามการใช้งาน—ทุกเสียงได้รับการต้อนรับ"
   },
   "feedback.title": {
     "message": "ข้อเสนอแนะและคำแนะนำ"
   },
   "feedback.welcome": {
-    "message": "ยินดีรับข้อเสนอแนะ"
+    "message": "คำติชมและข้อเสนอแนะ"
   },
   "homepage.description": {
     "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมพ์สำหรับการเขียน การเขียนโค้ด และการแปล!"
   },
   "homepage.slogan": {
-    "message": "พรอมพ์ AI ที่คัดสรรเพื่อการสนทนาที่มีประสิทธิภาพยิ่งขึ้น"
+    "message": "พรอมต์ AI ที่คัดสรร พร้อมใช้ด้วยคลิกเดียว"
   },
   "homepage.title": {
     "message": "AiShort - ไลบรารีพรอมพ์ AI | พรอมพ์ที่คัดสรรเพื่อเพิ่มประสิทธิภาพ AI"
@@ -243,7 +240,7 @@
     "message": "กรุณากรอกรหัสรีเซ็ต!"
   },
   "input.search.placeholder": {
-    "message": "ค้นหาพรอมพ์..."
+    "message": "ค้นหา: การเขียน การแปล การเขียนโปรแกรม…"
   },
   "label.agree": {
     "message": "ยอมรับ"
@@ -267,46 +264,25 @@
     "message": "คุณต้องการแชร์ prompt นี้ไปยังหน้าสาธารณะหรือไม่?"
   },
   "level.bronze": {
-    "message": "ดาวใหม่บรอนซ์"
-  },
-  "level.bronze.desc": {
-    "message": "ก้าวแรกที่ยอดเยี่ยม สู้ต่อไป!"
+    "message": "บรอนซ์"
   },
   "level.diamond": {
-    "message": "ตำนานเพชร"
-  },
-  "level.diamond.desc": {
-    "message": "ผู้มีส่วนร่วมระดับสูงสุด ตำนานแห่งชุมชน!"
+    "message": "เพชร"
   },
   "level.gold": {
-    "message": "ผู้เชี่ยวชาญทอง"
-  },
-  "level.gold.desc": {
-    "message": "มีประสบการณ์สูง เชื่อถือได้!"
-  },
-  "level.max.congrats": {
-    "message": "ยินดีด้วยที่บรรลุระดับสูงสุด! คุณคือตำนานแห่งชุมชน!"
+    "message": "ทอง"
   },
   "level.newcomer": {
     "message": "นักสำรวจมือใหม่"
   },
-  "level.newcomer.desc": {
-    "message": "แบ่งปัน Prompt แรก เริ่มต้นการเดินทางสร้างสรรค์!"
-  },
   "level.platinum": {
-    "message": "ปรมาจารย์แพลตินัม"
-  },
-  "level.platinum.desc": {
-    "message": "ผู้เชี่ยวชาญอาวุโส มีอิทธิพลอย่างมาก!"
+    "message": "แพลทินัม"
   },
   "level.silver": {
-    "message": "อีลิทเงิน"
-  },
-  "level.silver.desc": {
-    "message": "ผู้มีส่วนร่วมที่กระตือรือร้น เติบโตอย่างต่อเนื่อง!"
+    "message": "เงิน"
   },
   "link.addprompt": {
-    "message": "เพิ่ม Prompt"
+    "message": "สร้างพรอมต์"
   },
   "link.communityPrompts": {
     "message": "Prompt ชุมชน"
@@ -456,7 +432,7 @@
     "message": "ยังไม่มี Prompt ไปสร้างกันเถอะ"
   },
   "message.noSpaceItems": {
-    "message": "ยังไม่มีเนื้อหา ไปเพิ่ม Prompt หรือรายการโปรดกันเถอะ"
+    "message": "ยังไม่มีอะไร — สร้างพรอมต์หรือทำเครื่องหมายเป็นรายการโปรด"
   },
   "message.orderSaveFailed": {
     "message": "บันทึกการจัดเรียงล้มเหลว"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "ชื่อผู้ใช้/อีเมล"
   },
-  "progress.toNextLevel": {
-    "message": "ถึงระดับถัดไป"
-  },
   "prompt.charsLabel": {
     "message": "ตัวอักษร"
   },
@@ -630,7 +603,7 @@
     "message": "Prompt ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"
   },
   "showcase.header.button": {
-    "message": "แชร์ Prompt ของคุณ"
+    "message": "ดูชุมชน"
   },
   "showcase.tag.academic.description": {
     "message": "การวิจัยวิชาการ การออกแบบการสอน การวางแผนหลักสูตร และการสนับสนุนครู"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "พรอมต์ที่เกี่ยวข้อง"
-  },
-  "stat.sharedPrompts": {
-    "message": "Prompt ที่แชร์แล้ว"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "ปิด",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "แชร์โดยสมาชิกในชุมชน · ความคิดเห็นไม่ได้แสดงถึงโครงการ"
+  },
+  "level.stardust": {
+    "message": "ฝุ่นดาว"
+  },
+  "level.emerald": {
+    "message": "มรกต"
+  },
+  "level.ruby": {
+    "message": "ทับทิม"
+  },
+  "level.sapphire": {
+    "message": "แซฟไฟร์"
+  },
+  "feedback.type.bug": {
+    "message": "รายงานบั๊ก"
+  },
+  "feedback.type.suggestion": {
+    "message": "ข้อเสนอแนะ"
+  },
+  "feedback.type.help": {
+    "message": "ความช่วยเหลือ"
+  },
+  "feedback.spec_label": {
+    "message": "ช่องเปิด"
+  },
+  "hero.supportedAiTools": {
+    "message": "รองรับ {tools} และอื่นๆ",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "ไม่พบพรอมต์ที่ตรงกัน",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "ลองคำสำคัญอื่น หรือล้างตัวกรองแท็ก",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "ถึง {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

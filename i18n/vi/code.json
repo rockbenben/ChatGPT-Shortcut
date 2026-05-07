@@ -3,7 +3,7 @@
     "message": "Thêm"
   },
   "action.addPrompt": {
-    "message": "Thêm Prompt"
+    "message": "Tạo prompt"
   },
   "action.backToLogin": {
     "message": "Quay lại Đăng nhập"
@@ -63,7 +63,7 @@
     "message": "Hiện Thẻ"
   },
   "action.updatePrompt": {
-    "message": "Cập nhật Prompt"
+    "message": "Lưu"
   },
   "action.upvote": {
     "message": "Thích"
@@ -93,7 +93,7 @@
     "message": "Nhập Prompt"
   },
   "button.login": {
-    "message": "Đăng nhập"
+    "message": "Đăng nhập miễn phí"
   },
   "button.logout": {
     "message": "Đăng xuất"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Phản hồi của bạn rất quan trọng với chúng tôi!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut là một công cụ quản lý prompt mã nguồn mở dành riêng để cải thiện hiệu quả AI. Chúng tôi rất mong đợi sự tham gia của bạn: báo cáo lỗi, đề xuất tính năng hoặc chia sẻ prompt cao cấp. Đối với việc gửi prompt, chúng tôi hỗ trợ nhiều ngôn ngữ và một khi được chấp nhận, chúng sẽ được đưa vào với ghi nhận tác giả (có thể tìm kiếm theo tên người dùng). Mỗi đóng góp giúp các thành viên cộng đồng mở rộng tư duy và tăng năng suất. Hãy cùng xây dựng thư viện prompt hoàn hảo!"
-  },
   "feedback.subtitle": {
-    "message": "Mỗi đóng góp của bạn giúp dự án mã nguồn mở này tốt hơn"
+    "message": "Báo lỗi, đề xuất tính năng, câu hỏi sử dụng—chào đón mọi ý kiến"
   },
   "feedback.title": {
     "message": "Phản hồi & Góp ý"
   },
   "feedback.welcome": {
-    "message": "Hoan nghênh Phản hồi"
+    "message": "Phản hồi & Gợi ý"
   },
   "homepage.description": {
     "message": "Bực bội vì câu trả lời AI không liên quan? AiShort cung cấp các mẫu prompt thực tế cho viết, lập trình và dịch thuật. Sao chép một cú nhấp để mở khóa đầu ra AI chính xác và tăng gấp đôi hiệu quả!"
   },
   "homepage.slogan": {
-    "message": "Prompt AI được tuyển chọn cho cuộc trò chuyện hiệu quả hơn"
+    "message": "Prompt AI chọn lọc, sẵn sàng sử dụng chỉ với một cú nhấp"
   },
   "homepage.title": {
     "message": "AiShort - Thư viện Prompt AI | Các Prompt được tuyển chọn để tăng năng suất AI"
@@ -243,7 +240,7 @@
     "message": "Vui lòng nhập mã đặt lại!"
   },
   "input.search.placeholder": {
-    "message": "Tìm kiếm prompt..."
+    "message": "Tìm kiếm: viết, dịch, lập trình…"
   },
   "label.agree": {
     "message": "Đồng ý"
@@ -267,46 +264,25 @@
     "message": "Bạn có muốn chia sẻ prompt này lên trang công khai không?"
   },
   "level.bronze": {
-    "message": "Sao Đồng"
-  },
-  "level.bronze.desc": {
-    "message": "Khởi đầu tuyệt vời! Tiếp tục phát huy!"
+    "message": "Đồng"
   },
   "level.diamond": {
-    "message": "Huyền thoại Kim cương"
-  },
-  "level.diamond.desc": {
-    "message": "Người đóng góp ưu tú, một huyền thoại cộng đồng thực sự!"
+    "message": "Kim cương"
   },
   "level.gold": {
-    "message": "Chuyên gia Vàng"
-  },
-  "level.gold.desc": {
-    "message": "Giàu kinh nghiệm và đáng tin cậy cao!"
-  },
-  "level.max.congrats": {
-    "message": "Chúc mừng bạn đã đạt cấp độ cao nhất! Bạn là người đóng góp huyền thoại!"
+    "message": "Vàng"
   },
   "level.newcomer": {
-    "message": "Nhà thám hiểm"
-  },
-  "level.newcomer.desc": {
-    "message": "Chia sẻ prompt đầu tiên của bạn để bắt đầu hành trình!"
+    "message": "Người mới khám phá"
   },
   "level.platinum": {
-    "message": "Bậc thầy Bạch kim"
-  },
-  "level.platinum.desc": {
-    "message": "Chuyên gia dày dạn với ảnh hưởng đáng chú ý!"
+    "message": "Bạch kim"
   },
   "level.silver": {
-    "message": "Tinh hoa Bạc"
-  },
-  "level.silver.desc": {
-    "message": "Người đóng góp tích cực, phát triển mạnh mẽ!"
+    "message": "Bạc"
   },
   "link.addprompt": {
-    "message": "Thêm Prompt"
+    "message": "Tạo prompt"
   },
   "link.communityPrompts": {
     "message": "Prompt Cộng đồng"
@@ -456,7 +432,7 @@
     "message": "Chưa có prompt nào, hãy tạo một prompt"
   },
   "message.noSpaceItems": {
-    "message": "Chưa có nội dung, hãy thêm prompt hoặc yêu thích"
+    "message": "Chưa có gì — tạo prompt hoặc đánh dấu yêu thích"
   },
   "message.orderSaveFailed": {
     "message": "Không thể lưu bố cục"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Tên người dùng/Email"
   },
-  "progress.toNextLevel": {
-    "message": "Đến cấp tiếp theo"
-  },
   "prompt.charsLabel": {
     "message": "ký tự"
   },
@@ -630,7 +603,7 @@
     "message": "Prompt khá dài; cân nhắc rút ngắn hoặc chia nhỏ."
   },
   "showcase.header.button": {
-    "message": "Chia sẻ prompt của bạn"
+    "message": "Khám phá cộng đồng"
   },
   "showcase.tag.academic.description": {
     "message": "Nghiên cứu học thuật, thiết kế giảng dạy, lập kế hoạch chương trình và hỗ trợ giáo viên khác"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Prompt liên quan"
-  },
-  "stat.sharedPrompts": {
-    "message": "Prompt đã chia sẻ"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Đóng",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Do thành viên cộng đồng chia sẻ · Quan điểm không đại diện cho dự án"
+  },
+  "level.stardust": {
+    "message": "Bụi sao"
+  },
+  "level.emerald": {
+    "message": "Lục bảo"
+  },
+  "level.ruby": {
+    "message": "Hồng ngọc"
+  },
+  "level.sapphire": {
+    "message": "Lam ngọc"
+  },
+  "feedback.type.bug": {
+    "message": "Báo lỗi"
+  },
+  "feedback.type.suggestion": {
+    "message": "Đề xuất tính năng"
+  },
+  "feedback.type.help": {
+    "message": "Câu hỏi sử dụng"
+  },
+  "feedback.spec_label": {
+    "message": "Kênh mở"
+  },
+  "hero.supportedAiTools": {
+    "message": "Hỗ trợ {tools} và nhiều hơn",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Không tìm thấy prompt phù hợp",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Thử từ khóa khác, hoặc xóa bộ lọc thẻ",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "đến {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

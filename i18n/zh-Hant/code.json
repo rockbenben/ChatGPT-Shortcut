@@ -3,7 +3,7 @@
     "message": "添加"
   },
   "action.addPrompt": {
-    "message": "添加 Prompt"
+    "message": "建立提示詞"
   },
   "action.backToLogin": {
     "message": "返回登入"
@@ -63,7 +63,7 @@
     "message": "顯示標籤"
   },
   "action.updatePrompt": {
-    "message": "更新 Prompt"
+    "message": "儲存"
   },
   "action.upvote": {
     "message": "讚"
@@ -93,7 +93,7 @@
     "message": "匯入提示詞"
   },
   "button.login": {
-    "message": "登入"
+    "message": "免費登入"
   },
   "button.logout": {
     "message": "登出"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "您的反饋對我們很重要！"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut 是一款開源的提示詞管理工具，致力於提升 AI 使用效率。我們熱切期待您的參與：無論是反饋 Bug、提出功能建議，還是分享優質的提示詞（Prompt）。對於提示詞投稿，我們支援多種語言，一經採納將被收錄並署名（支援使用者名稱搜尋）。您的每一份貢獻，都能幫助社群成員拓展思維、提升生產力。讓我們共同打造更完美的提示詞庫！"
-  },
   "feedback.subtitle": {
-    "message": "您的每一份貢獻，都在讓這個開源專案變得更好"
+    "message": "Bug 回報、功能建議、使用問題——任何聲音都歡迎"
   },
   "feedback.title": {
     "message": "反饋與建議"
   },
   "feedback.welcome": {
-    "message": "歡迎提出反饋"
+    "message": "回饋與建議"
   },
   "homepage.description": {
     "message": "AI 總是答非所問？AiShort 收錄論文寫作、程式設計、翻譯等場景的實用 Prompt 範本，一鍵複製即可讓 AI 精準理解指令，工作效率倍增！"
   },
   "homepage.slogan": {
-    "message": "精選 AI 提示詞，讓每次對話更高效"
+    "message": "精選 AI 提示詞，一鍵複製即用"
   },
   "homepage.title": {
     "message": "AiShort - AI 提示詞庫 | 精選 Prompt 範本，即刻提升 AI 效率"
@@ -243,7 +240,7 @@
     "message": "請輸入您的重置代碼！"
   },
   "input.search.placeholder": {
-    "message": "搜尋提示詞……"
+    "message": "搜尋：寫作、翻譯、程式設計…"
   },
   "label.agree": {
     "message": "同意"
@@ -267,46 +264,25 @@
     "message": "是否願意將該提示詞分享到公開頁面？"
   },
   "level.bronze": {
-    "message": "青銅新星"
-  },
-  "level.bronze.desc": {
-    "message": "已邁出第一步，繼續加油！"
+    "message": "青銅"
   },
   "level.diamond": {
-    "message": "鑽石傳說"
-  },
-  "level.diamond.desc": {
-    "message": "頂級貢獻者，社群傳奇！"
+    "message": "鑽石"
   },
   "level.gold": {
-    "message": "黃金專家"
-  },
-  "level.gold.desc": {
-    "message": "經驗豐富，值得信賴！"
-  },
-  "level.max.congrats": {
-    "message": "恭喜達成最高等級！你是社群的傳奇貢獻者！"
+    "message": "黃金"
   },
   "level.newcomer": {
     "message": "萌新探索者"
   },
-  "level.newcomer.desc": {
-    "message": "分享第一個提示詞，開啟創作之旅！"
-  },
   "level.platinum": {
-    "message": "白金大師"
-  },
-  "level.platinum.desc": {
-    "message": "資深專家，影響力非凡！"
+    "message": "鉑金"
   },
   "level.silver": {
-    "message": "白銀精英"
-  },
-  "level.silver.desc": {
-    "message": "活躍貢獻者，持續成長中！"
+    "message": "白銀"
   },
   "link.addprompt": {
-    "message": "添加提示詞"
+    "message": "建立提示詞"
   },
   "link.communityPrompts": {
     "message": "社群提示詞"
@@ -456,7 +432,7 @@
     "message": "暫無提示詞，去建立一個吧"
   },
   "message.noSpaceItems": {
-    "message": "暫無內容，去添加提示詞或收藏吧"
+    "message": "暫無內容，去建立提示詞或收藏喜歡的吧"
   },
   "message.orderSaveFailed": {
     "message": "排列保存失敗"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "使用者名稱/電子信箱"
   },
-  "progress.toNextLevel": {
-    "message": "距離下一等級"
-  },
   "prompt.charsLabel": {
     "message": "字元"
   },
@@ -630,7 +603,7 @@
     "message": "提示詞較長，建議精簡或拆分"
   },
   "showcase.header.button": {
-    "message": "分享你的提示詞"
+    "message": "瀏覽社群分享"
   },
   "showcase.tag.academic.description": {
     "message": "學術研究、教學設計、課程規劃等教師工作支援"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "相關提示詞"
-  },
-  "stat.sharedPrompts": {
-    "message": "已分享提示詞"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "關閉",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "社群成員分享 · 觀點不代表本專案"
+  },
+  "level.stardust": {
+    "message": "星輝"
+  },
+  "level.emerald": {
+    "message": "翡翠"
+  },
+  "level.ruby": {
+    "message": "紅寶石"
+  },
+  "level.sapphire": {
+    "message": "藍寶石"
+  },
+  "feedback.type.bug": {
+    "message": "Bug 回報"
+  },
+  "feedback.type.suggestion": {
+    "message": "功能建議"
+  },
+  "feedback.type.help": {
+    "message": "使用問題"
+  },
+  "feedback.spec_label": {
+    "message": "公開回饋"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} 等",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "沒有找到匹配的提示詞",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "換個關鍵字，或清除標籤篩選試試",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "距「{next}」",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }
