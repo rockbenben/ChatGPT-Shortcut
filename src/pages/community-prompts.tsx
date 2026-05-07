@@ -243,7 +243,7 @@ const CommunityPrompts = () => {
               items={[
                 {
                   title: (
-                    <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
+                    <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
                       <HomeOutlined style={{ marginRight: 4 }} />
                       <Translate id="link.home">首页</Translate>
                     </Link>

@@ -33,6 +33,16 @@
   --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
   --site-color-tag-selected-text: #2d6454; /* Darker primary */
   --site-color-tag-selected-border: #397e6a; /* Primary border */
+
+  /* Editorial UI tokens — light defaults; dark counterparts in [data-theme="dark"] block */
+  --site-color-text-tertiary: rgba(0, 0, 0, 0.45);
+  --site-color-hairline: rgba(0, 0, 0, 0.08);
+  --site-color-ghost-border: rgba(0, 0, 0, 0.04);
+  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
+  /* Markdown / docs links use brand primary, not Infima default blue */
+  --ifm-link-color: var(--site-color-tag-selected-text);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 45%);
 }
 
 html[data-theme="dark"] {
@@ -51,6 +61,22 @@ html[data-theme="dark"] {
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
   --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
   --site-color-tag-selected-border: #397e6a; /* Primary border */
+
+  /* Editorial UI tokens — dark counterparts of :root values */
+  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --site-color-hairline: rgba(255, 255, 255, 0.08);
+  --site-color-ghost-border: rgba(255, 255, 255, 0.04);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
+
+  /* Brand-voice deep editorial bg + content — deeper than Infima default for refined feel */
+  --ifm-background-color: #0d0d0f;
+  --ifm-background-surface-color: #1a1a1e;
+  --ifm-color-content: #ededed;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
+  --ifm-code-background: rgba(255, 255, 255, 0.1);
+  --ifm-table-stripe-background: rgba(255, 255, 255, 0.07);
+  --ifm-toc-border-color: var(--ifm-color-emphasis-200);
 }
 
 /*
@@ -357,6 +383,19 @@ div[class^="announcementBar_"] {
 .theme-doc-markdown {
   font-size: 1rem;
 }
+
+/* Markdown body links — Infima 默认会被 .theme-doc-markdown 容器内更具体规则染蓝，
+   :root 改 --ifm-link-color 不够，必须显式选中。Sidebar .menu__link 不受此影响。 */
+.theme-doc-markdown a,
+article.markdown a {
+  color: var(--ifm-link-color);
+}
+.theme-doc-markdown a:hover,
+article.markdown a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: underline;
+}
+
 .sidebarLogo_isFc {
   font-size: 1.1rem;
 }

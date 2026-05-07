@@ -73,7 +73,7 @@ const TagLayout = ({
   onClick?: (e: React.MouseEvent, tag: TagType) => void;
   cursor: string;
 }) => (
-  <Space size={[8, 8]} wrap style={{ opacity: muted ? 0.6 : 1 }}>
+  <Space size={[6, 6]} wrap style={{ opacity: muted ? 0.6 : 1 }}>
     {tags.map((tagObject, index) => (
       <Tooltip key={index} title={tagObject.description} id={`showcase_card_tag_${tagObject.tag}`}>
         <AntTag
@@ -81,13 +81,15 @@ const TagLayout = ({
           style={{
             marginRight: 0,
             opacity: muted ? 0.75 : 1,
-            color: "var(--ifm-color-content)",
-            backgroundColor: "rgba(255, 255, 255, 0.04)",
-            border: "1px solid var(--ifm-color-emphasis-300)",
+            color: "var(--ifm-color-content-secondary)",
+            backgroundColor: "transparent",
+            border: "1px solid var(--site-color-hairline)",
             borderLeft: 0,
-            borderRadius: "0 2px 2px 0",
+            borderRadius: 0,
             paddingInlineStart: 10,
             paddingInlineEnd: 8,
+            fontSize: 11,
+            letterSpacing: "0.02em",
             position: "relative",
             cursor,
           }}>

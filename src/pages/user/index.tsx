@@ -27,7 +27,7 @@ import {
 } from "@ant-design/icons";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
-import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
+import { getLevelInfo, LevelName, LevelIcon, type LevelInfo } from "@site/src/components/LevelSystem";
 import { getUserAllInfo } from "@site/src/api/user";
 import { submitPrompt, updatePrompt, createFavorite, updateFavorite, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
 import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
@@ -443,7 +443,7 @@ const UserProfile = () => {
                   return isLast || !item.path ? (
                     <span>{item.title}</span>
                   ) : (
-                    <Link to={item.path} style={{ color: "var(--ifm-color-primary)" }}>
+                    <Link to={item.path} style={{ color: "var(--site-color-tag-selected-text)" }}>
                       {item.title}
                     </Link>
                   );
@@ -473,8 +473,6 @@ const UserProfile = () => {
                     style={{
                       height: "100%",
                       borderRadius: 12,
-                      border: "1px solid var(--ifm-color-emphasis-200)",
-                      boxShadow: "var(--site-shadow-sm)",
                     }}
                     title={
                       <Space>
@@ -486,196 +484,176 @@ const UserProfile = () => {
                       const sharedCount = userAuth?.data?.userprompts?.filter((p) => p.share).length || 0;
                       const levelInfo = getLevelInfo(sharedCount);
                       const progressPercent = levelInfo.next ? Math.min(100, Math.round((sharedCount / levelInfo.next) * 100)) : 100;
-                      const remaining = levelInfo.next ? levelInfo.next - sharedCount : 0;
-
-                      // Icon mapping for visual display
-                      const iconMap: Record<string, React.ReactNode> = {
-                        crown: <CrownOutlined />,
-                        trophy: <TrophyOutlined />,
-                        star: <StarOutlined />,
-                        rocket: <RocketOutlined />,
-                        fire: <FireOutlined />,
-                        thunderbolt: <ThunderboltOutlined />,
-                      };
+                      const nextLevelInfo: LevelInfo | null = levelInfo.next ? getLevelInfo(levelInfo.next) : null;
 
                       return (
-                        <Flex vertical align="center" gap={0}>
-                          {/* Avatar with static gradient ring */}
-                          <div
-                            style={{
-                              position: "relative",
-                              padding: 4,
-                              borderRadius: "50%",
-                              background: levelInfo.color,
-                              marginBottom: 16,
-                            }}>
+                        <Flex vertical>
+                          {/* Identity row — 紧凑横排，avatar 不再带等级渐变环（等级移到下方 spec card） */}
+                          <Flex align="center" gap={16} style={{ marginBottom: 24 }}>
                             <Avatar
-                              size={88}
+                              size={56}
                               icon={<UserOutlined />}
                               style={{
-                                backgroundColor: "var(--ifm-background-color)",
-                                color: "var(--ifm-color-primary)",
-                                fontSize: 36,
-                                border: "3px solid var(--ifm-background-color)",
+                                backgroundColor: "var(--ifm-background-surface-color)",
+                                color: "var(--ifm-color-content-secondary)",
+                                border: "1px solid var(--site-color-hairline)",
+                                flexShrink: 0,
                               }}
                             />
-                            <div
-                              style={{
-                                position: "absolute",
-                                bottom: 0,
-                                right: 0,
-                                background: "var(--ifm-background-color)",
-                                borderRadius: "50%",
-                                padding: 4,
-                                boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-                              }}>
-                              <span style={{ fontSize: 20, color: "var(--ifm-color-primary)" }}>{iconMap[levelInfo.icon]}</span>
-                            </div>
-                          </div>
-
-                          {/* Username */}
-                          {editUsername ? (
-                            <Space.Compact style={{ width: "100%", maxWidth: 240, marginBottom: 8 }}>
-                              <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
-                              <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
-                              <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
-                            </Space.Compact>
-                          ) : (
-                            <Flex align="center" gap={8} style={{ marginBottom: 4 }}>
-                              <Title level={4} style={{ margin: 0 }}>
-                                {userInfo.username}
-                              </Title>
-                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--ifm-color-emphasis-500)" }} />
-                            </Flex>
-                          )}
-
-                          {/* Email */}
-                          <Text type="secondary" style={{ fontSize: 12 }}>
-                            <MailOutlined style={{ marginRight: 4 }} />
-                            {userInfo.email}
-                          </Text>
-
-                          {/* Level Badge */}
-                          <Tag
-                            color={levelInfo.tagColor}
-                            style={{
-                              marginTop: 16,
-                              padding: "6px 16px",
-                              fontSize: 14,
-                              fontWeight: 600,
-                              borderRadius: 8,
-                            }}>
-                            <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
-                          </Tag>
-
-                          {/* Stats Card - Using Ant Design Card */}
-                          <Card
-                            size="small"
-                            style={{
-                              width: "100%",
-                              marginTop: 20,
-                              borderRadius: 12,
-                              overflow: "hidden",
-                              border: "1px solid rgba(var(--ifm-color-primary-rgb), 0.2)",
-                            }}
-                            styles={{
-                              body: {
-                                textAlign: "center",
-                                background: "linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-background-color) 100%)",
-                              },
-                            }}>
-                            <Statistic
-                              title={
-                                <Space style={{ color: "var(--ifm-color-emphasis-500)" }}>
-                                  <ShareAltOutlined />
-                                  <Translate id="stat.sharedPrompts">已分享提示词</Translate>
-                                </Space>
-                              }
-                              value={sharedCount}
-                              styles={{
-                                content: {
-                                  color: "var(--ifm-color-primary)",
-                                  fontSize: 32,
-                                  fontWeight: 700,
-                                },
-                              }}
-                            />
-                          </Card>
-
-                          {/* Progress to next level — label now carries the next level name (merged encouragement). */}
-                          {levelInfo.next && (() => {
-                            const nextLevelInfo = getLevelInfo(levelInfo.next);
-                            return (
-                              <Flex vertical gap={8} style={{ width: "100%", marginTop: 16 }}>
-                                <Flex justify="space-between">
-                                  <Text type="secondary" style={{ fontSize: 12 }}>
-                                    <Translate
-                                      id="progress.toNextLevel"
-                                      values={{ next: <LevelName level={nextLevelInfo.level} emoji={nextLevelInfo.emoji} /> }}>
-                                      {"距离「{next}」还差"}
-                                    </Translate>
-                                  </Text>
-                                  <Text strong style={{ fontSize: 12, color: "var(--ifm-color-primary)" }}>
-                                    {remaining}
-                                  </Text>
-                                </Flex>
-                                <Progress
-                                  percent={progressPercent}
-                                  strokeColor={{
-                                    "0%": "var(--ifm-color-primary)",
-                                    "100%": "var(--ifm-color-primary-dark)",
-                                  }}
-                                  railColor="var(--ifm-color-emphasis-200)"
-                                  showInfo={false}
-                                />
-                              </Flex>
-                            );
-                          })()}
-
-                          {/* Level ladder — all 6 levels as emojis, reached ones in color, unreached grayscale. */}
-                          <Flex gap={10} justify="center" align="center" style={{ width: "100%", marginTop: 16 }}>
-                            {[0, 1, 3, 10, 20, 50].map((threshold) => {
-                              const info = getLevelInfo(threshold);
-                              const isCurrent = info.level === levelInfo.level;
-                              const isReached = info.level <= levelInfo.level;
-                              return (
-                                <Tooltip key={info.level} title={<LevelName level={info.level} emoji={info.emoji} />}>
-                                  <span
+                            <Flex vertical style={{ flex: 1, minWidth: 0 }}>
+                              {editUsername ? (
+                                <Space.Compact style={{ width: "100%" }}>
+                                  <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
+                                  <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
+                                  <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
+                                </Space.Compact>
+                              ) : (
+                                <Flex align="center" gap={4}>
+                                  <Title
+                                    level={4}
                                     style={{
-                                      fontSize: isCurrent ? 22 : 16,
-                                      opacity: isReached ? 1 : 0.35,
-                                      filter: isReached ? "none" : "grayscale(1)",
-                                      transition: "all .2s",
-                                      cursor: "default",
-                                      lineHeight: 1,
+                                      margin: 0,
+                                      fontSize: 18,
+                                      fontWeight: 600,
+                                      letterSpacing: "-0.01em",
+                                      lineHeight: 1.2,
+                                      minWidth: 0,
+                                      overflow: "hidden",
+                                      textOverflow: "ellipsis",
+                                      whiteSpace: "nowrap",
                                     }}>
-                                    {info.emoji}
-                                  </span>
-                                </Tooltip>
-                              );
-                            })}
+                                    {userInfo.username}
+                                  </Title>
+                                  <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--site-color-text-tertiary)", flexShrink: 0 }} />
+                                </Flex>
+                              )}
+                              <Text style={{ fontSize: 12, color: "var(--site-color-text-tertiary)", marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                <MailOutlined style={{ marginRight: 4 }} />
+                                {userInfo.email}
+                              </Text>
+                            </Flex>
                           </Flex>
 
-                          {/* Max level acknowledgement — calmer than before */}
-                          {!levelInfo.next && sharedCount > 0 && (
-                            <Card
-                              size="small"
+                          {/* Level spec card — editorial / mineral specimen style */}
+                          <div style={{ position: "relative", paddingTop: 28, borderTop: "1px solid var(--site-color-hairline)" }}>
+                            {/* level-tinted hairline accent at top */}
+                            <div
+                              aria-hidden
                               style={{
-                                width: "100%",
-                                marginTop: 16,
-                                border: "1px solid var(--ifm-color-success-dark)",
+                                position: "absolute",
+                                top: -1,
+                                left: "20%",
+                                right: "20%",
+                                height: 1,
+                                background: `linear-gradient(90deg, transparent, ${levelInfo.accentColor}, transparent)`,
+                                opacity: 0.7,
                               }}
-                              styles={{
-                                body: {
-                                  textAlign: "center",
-                                  background: "linear-gradient(135deg, var(--ifm-color-success-contrast-background) 0%, var(--ifm-background-color) 100%)",
-                                },
-                              }}>
-                              <Text strong style={{ color: "var(--ifm-color-success)" }}>
-                                <Translate id="level.max.congrats">已达成最高等级 · 感谢你的贡献</Translate>
-                              </Text>
-                            </Card>
-                          )}
+                            />
+
+                            <Flex vertical align="center" gap={14}>
+                              {/* Spec line: LEVEL + index */}
+                              <Flex justify="space-between" align="baseline" style={{ width: "100%" }}>
+                                <span
+                                  style={{
+                                    fontSize: 10,
+                                    fontFamily: "var(--site-font-mono)",
+                                    letterSpacing: "0.18em",
+                                    textTransform: "uppercase",
+                                    color: "var(--site-color-text-tertiary)",
+                                  }}>
+                                  <Translate id="userPage.level.specLabel" description="LEVEL spec card top-left label">LEVEL</Translate>
+                                </span>
+                                <span
+                                  style={{
+                                    fontSize: 10,
+                                    fontFamily: "var(--site-font-mono)",
+                                    letterSpacing: "0.08em",
+                                    color: "var(--site-color-text-tertiary)",
+                                    fontVariantNumeric: "tabular-nums",
+                                  }}>
+                                  <span style={{ color: levelInfo.accentColor }}>{String(levelInfo.level).padStart(2, "0")}</span>
+                                  <span style={{ opacity: 0.5 }}> / 05</span>
+                                </span>
+                              </Flex>
+
+                              {/* Geometric icon with level-tinted radial halo */}
+                              <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 14 }}>
+                                <div
+                                  aria-hidden
+                                  style={{
+                                    position: "absolute",
+                                    inset: 0,
+                                    background: `radial-gradient(circle, ${levelInfo.accentColor}33 0%, transparent 70%)`,
+                                    pointerEvents: "none",
+                                    filter: "blur(2px)",
+                                  }}
+                                />
+                                <LevelIcon level={levelInfo.level} size={64} color={levelInfo.accentColor} strokeWidth={1.5} />
+                              </div>
+
+                              {/* Level name — display weight, no emoji */}
+                              <div style={{ textAlign: "center" }}>
+                                <Title level={3} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2 }}>
+                                  <LevelName level={levelInfo.level} />
+                                </Title>
+                              </div>
+
+                              {/* Progress / Max-state */}
+                              {levelInfo.next ? (
+                                <Flex vertical gap={8} style={{ width: "100%", marginTop: 6 }}>
+                                  <div style={{ height: 3, background: "var(--ifm-color-emphasis-100)", borderRadius: 2, overflow: "hidden" }}>
+                                    <div
+                                      style={{
+                                        height: "100%",
+                                        width: `${progressPercent}%`,
+                                        background: levelInfo.accentColor,
+                                        transition: "width 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+                                        boxShadow: `0 0 8px ${levelInfo.accentColor}66`,
+                                      }}
+                                    />
+                                  </div>
+                                  <Flex justify="space-between" align="center" style={{ width: "100%" }}>
+                                    <span
+                                      style={{
+                                        fontSize: 11,
+                                        fontFamily: "var(--site-font-mono)",
+                                        fontVariantNumeric: "tabular-nums",
+                                        color: "var(--ifm-color-content-secondary)",
+                                        letterSpacing: "0.04em",
+                                      }}>
+                                      {sharedCount} / {levelInfo.next}
+                                    </span>
+                                    <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
+                                      <Translate
+                                        id="userPage.level.toNext"
+                                        description="Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+                                        values={{ next: <LevelName level={(nextLevelInfo as LevelInfo).level} /> }}>
+                                        {"距「{next}」"}
+                                      </Translate>
+                                    </span>
+                                  </Flex>
+                                </Flex>
+                              ) : (
+                                <Flex vertical align="center" gap={4} style={{ marginTop: 6 }}>
+                                  <span
+                                    style={{
+                                      fontSize: 10,
+                                      fontFamily: "var(--site-font-mono)",
+                                      letterSpacing: "0.18em",
+                                      textTransform: "uppercase",
+                                      color: levelInfo.accentColor,
+                                      fontWeight: 500,
+                                    }}>
+                                    <Translate id="userPage.level.maxReached" description="Max level reached label">MAX REACHED</Translate>
+                                  </span>
+                                  <span style={{ fontSize: 11, fontFamily: "var(--site-font-mono)", color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
+                                    <span style={{ fontVariantNumeric: "tabular-nums" }}>{sharedCount}</span>{" "}
+                                    <Translate id="userPage.level.sharedSuffix" description="Suffix after shared count, e.g. 'shared' / '已分享'">shared</Translate>
+                                  </span>
+                                </Flex>
+                              )}
+                            </Flex>
+                          </div>
                         </Flex>
                       );
                     })()}
@@ -688,8 +666,6 @@ const UserProfile = () => {
                     style={{
                       height: "100%",
                       borderRadius: 12,
-                      border: "1px solid var(--ifm-color-emphasis-200)",
-                      boxShadow: "var(--site-shadow-sm)",
                     }}
                     title={
                       <Space>
@@ -700,7 +676,7 @@ const UserProfile = () => {
                     extra={
                       <Button
                         type="link"
-                        style={{ color: "var(--ifm-color-primary)" }}
+                        style={{ color: "var(--site-color-tag-selected-text)" }}
                         onClick={() => {
                           modal.confirm({
                             title: (
@@ -725,7 +701,7 @@ const UserProfile = () => {
                                     ]}
                                     initialValue={userInfo?.email || ""}>
                                     <Input
-                                      prefix={<MailOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                                      prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
                                       placeholder={translate({ id: "placeholder.email", message: "邮箱" })}
                                       size="large"
                                     />
@@ -758,7 +734,7 @@ const UserProfile = () => {
                           label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
                           rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
                           <Input.Password
-                            prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                            prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
                             placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
                             size="large"
                           />
@@ -772,7 +748,7 @@ const UserProfile = () => {
                           { min: 6, message: translate({ id: "validation.password.length", message: "密码长度至少为 6 个字符" }) },
                         ]}>
                         <Input.Password
-                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                          prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
                           placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })}
                           size="large"
                         />
@@ -793,7 +769,7 @@ const UserProfile = () => {
                           }),
                         ]}>
                         <Input.Password
-                          prefix={<LockOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />}
+                          prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
                           placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })}
                           size="large"
                         />
@@ -812,8 +788,6 @@ const UserProfile = () => {
               <Card
                 style={{
                   borderRadius: 12,
-                  border: "1px solid var(--ifm-color-emphasis-200)",
-                  boxShadow: "var(--site-shadow-sm)",
                 }}
                 title={
                   <Space>
@@ -823,14 +797,14 @@ const UserProfile = () => {
                 }>
                 <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
                   {/* Export Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
+                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
                     <Flex align="center" gap={20}>
                       <Avatar
                         icon={<DownloadOutlined />}
                         style={{
-                          backgroundColor: "var(--ifm-color-emphasis-100)",
-                          color: "var(--ifm-color-primary)",
-                          border: "1px solid var(--ifm-color-emphasis-200)",
+                          backgroundColor: "var(--ifm-background-surface-color)",
+                          color: "var(--site-color-tag-selected-text)",
+                          border: "1px solid var(--site-color-hairline)",
                         }}
                       />
                       <div>
@@ -849,14 +823,14 @@ const UserProfile = () => {
                   </Flex>
 
                   {/* Import Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--ifm-color-emphasis-200)" }}>
+                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
                     <Flex align="center" gap={20}>
                       <Avatar
                         icon={<ImportOutlined />}
                         style={{
-                          backgroundColor: "var(--ifm-color-emphasis-100)",
-                          color: "var(--ifm-color-primary)",
-                          border: "1px solid var(--ifm-color-emphasis-200)",
+                          backgroundColor: "var(--ifm-background-surface-color)",
+                          color: "var(--site-color-tag-selected-text)",
+                          border: "1px solid var(--site-color-hairline)",
                         }}
                       />
                       <div>
@@ -880,9 +854,9 @@ const UserProfile = () => {
                       <Avatar
                         icon={<DeleteOutlined />}
                         style={{
-                          backgroundColor: "var(--ifm-color-emphasis-100)",
-                          color: "var(--ifm-color-primary)",
-                          border: "1px solid var(--ifm-color-emphasis-200)",
+                          backgroundColor: "var(--ifm-background-surface-color)",
+                          color: "var(--site-color-text-tertiary)",
+                          border: "1px solid var(--site-color-hairline)",
                         }}
                       />
                       <div>

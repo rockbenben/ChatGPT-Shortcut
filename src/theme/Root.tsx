@@ -1,9 +1,13 @@
 import React, { useLayoutEffect, useState, useMemo } from "react";
 import { ConfigProvider, theme, App } from "antd";
-import "antd/dist/antd.css";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-// 同步读取初始主题，避免 hydration 时的闪烁
+// Dual-theme antd ConfigProvider — switches algorithm + dark-only brand tokens based on
+// Docusaurus data-theme attribute. Universal tokens (radius, motion, components) apply
+// in both modes; dark-only deep editorial bg/content apply only in dark mode.
+// NOTE: main 分支用 antd 默认 runtime CSS 注入（不设 zeroRuntime/cssVar，否则 antd 全失样式）
+// B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
+
 function getInitialTheme(): boolean {
   if (ExecutionEnvironment.canUseDOM) {
     return document.documentElement.getAttribute("data-theme") === "dark";
@@ -22,7 +26,6 @@ export default function Root({ children }) {
       setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
     };
 
-    // 初始化时同步一次（处理可能的 SSR 不匹配）
     updateTheme();
 
     const observer = new MutationObserver(updateTheme);
@@ -33,17 +36,50 @@ export default function Root({ children }) {
     return () => observer.disconnect();
   }, []);
 
-  const themeConfig = useMemo(
-    () => ({
-      token: {
-        colorPrimary: "#397e6a",
+  const themeConfig = useMemo(() => {
+    // Universal brand tokens — applied in both light and dark themes
+    const universalToken = {
+      colorPrimary: "#397e6a",
+      borderRadius: 6,
+      borderRadiusSM: 4,
+      borderRadiusLG: 12,
+      fontFamilyCode: 'ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace',
+      motionDurationFast: "0.12s",
+      motionDurationMid: "0.2s",
+      motionDurationSlow: "0.32s",
+    };
+
+    // Dark-only deep editorial bg/content — overrides antd dark algorithm defaults for refined feel.
+    // Light mode uses antd defaultAlgorithm without these overrides.
+    const darkOnlyToken = isDarkMode
+      ? {
+          colorBgLayout: "#0d0d0f",
+          colorBgContainer: "#1a1a1e",
+          colorBgElevated: "#23232a",
+          colorBorderSecondary: "rgba(255,255,255,0.08)",
+          colorText: "#ededed",
+          colorTextSecondary: "rgba(255,255,255,0.6)",
+          colorTextTertiary: "rgba(255,255,255,0.4)",
+        }
+      : {};
+
+    return {
+      token: { ...universalToken, ...darkOnlyToken },
+      components: {
+        Card: {
+          headerBg: "transparent",
+          paddingLG: 16,
+        },
+        Tag: {
+          borderRadiusSM: 0,
+        },
+        Button: {
+          borderRadius: 6,
+        },
       },
       algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-      zeroRuntime: true,
-      hashed: false,
-    }),
-    [isDarkMode]
-  );
+    };
+  }, [isDarkMode]);
 
   return (
     <ConfigProvider theme={themeConfig}>

@@ -83,10 +83,10 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
           <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
             {!isFiltered && (
               <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
+                <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
               </div>
             )}
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
               {user.share ? (
                 <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {user.title}
@@ -100,13 +100,13 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       }
       titleExtra={
         <>
-          {!user.share && <LockOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />}
+          {!user.share && <LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
           {user.upvoteDifference > 0 && (
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--ifm-color-primary)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-primary)", fontVariantNumeric: "tabular-nums" } }}
+              prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
         </>
@@ -126,7 +126,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {user.description}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center">
@@ -135,7 +135,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
           </div>
           {user.website && (
             <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
+              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
             </a>
           )}
         </Flex>

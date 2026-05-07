@@ -158,10 +158,10 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
           <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
             {!isFiltered && (
               <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
+                <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
               </div>
             )}
-            <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
                 <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {title}
@@ -182,16 +182,16 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
             <Statistic
               value={copyCount}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
+              prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
+              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
           {user.upvoteDifference > 0 && (
             <Statistic
               value={user.upvoteDifference}
               formatter={(value) => formatCompactNumber(value as number)}
-              prefix={<LikeFilled style={{ color: "var(--ifm-color-primary)" }} />}
-              styles={{ content: { fontSize: 12, color: "var(--ifm-color-primary)", fontVariantNumeric: "tabular-nums" } }}
+              prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+              styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
             />
           )}
         </>
@@ -209,7 +209,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         {renderUnavailableBanner()}
         <PromptRemark remark={remark} />
-        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {prompt}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: 12 }}>
@@ -225,7 +225,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
 
           {website && (
             <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
+              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
             </a>
           )}
         </Flex>

@@ -13,7 +13,7 @@ const SAFE_CHAR_LIMIT = 40000;
 const getStatusColor = (tokens: number) => {
   if (tokens >= DANGER_LIMIT) return red[5];
   if (tokens >= WARNING_LIMIT) return orange[5];
-  return "var(--ifm-color-emphasis-600)";
+  return "var(--site-color-text-tertiary)";
 };
 
 interface Props {
@@ -44,7 +44,7 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
         status={isDanger ? "warning" : undefined}
       />
       <div style={{ textAlign: "right" }}>
-        <Typography.Text style={{ color: statusColor, fontSize: 12, fontVariantNumeric: "tabular-nums" }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>
+        <Typography.Text style={{ color: statusColor, fontSize: 11, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>
       </div>
 
       {showWarning && (

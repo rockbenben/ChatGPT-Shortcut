@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { translate } from "@docusaurus/Translate";
 
-import { Input, Button, ConfigProvider } from "antd";
+import { Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/components/AuthContext";
@@ -15,6 +15,8 @@ import { type TagType, TagList } from "@site/src/data/tags";
 import { getPrompts } from "@site/src/api";
 import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
+
+import styles from "./styles.module.css";
 
 export type UserState = {
   scrollTopPosition: number;
@@ -171,24 +173,6 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
   return { filteredCommus, filteredCards, isFiltered };
 }
 
-const searchBarTheme = {
-  components: {
-    Input: {
-      borderRadius: 20,
-      controlHeight: 32,
-      colorBorder: "transparent",
-      activeBorderColor: "transparent",
-      hoverBorderColor: "var(--ifm-color-emphasis-300)",
-      activeShadow: "0 0 0 2px var(--ifm-color-primary-lighter)",
-      colorBgContainer: "var(--site-color-background)",
-    },
-    Button: {
-      colorText: "var(--ifm-color-emphasis-600)",
-      colorPrimaryHover: "var(--ifm-color-primary)",
-    },
-  },
-};
-
 interface SearchBarProps {
   setShowUserPrompts?: (value: boolean) => void;
   beforeSearch?: (value: string | null) => boolean | void;
@@ -238,23 +222,21 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
   };
 
   return (
-    <ConfigProvider theme={searchBarTheme}>
-      <div style={{ marginLeft: "auto" }}>
-        <Input
-          ref={inputRef}
-          id="searchbar"
-          placeholder={translate({
-            message: "搜索提示词...",
-            id: "input.search.placeholder",
-          })}
-          value={value ?? undefined}
-          onChange={handleInput}
-          onPressEnter={handleSearch}
-          allowClear
-          suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />}
-        />
-      </div>
-    </ConfigProvider>
+    <div className={styles.searchInput}>
+      <Input
+        ref={inputRef}
+        id="searchbar"
+        placeholder={translate({
+          message: "搜索：写作、翻译、编程…",
+          id: "input.search.placeholder",
+        })}
+        value={value ?? undefined}
+        onChange={handleInput}
+        onPressEnter={handleSearch}
+        allowClear
+        suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />}
+      />
+    </div>
   );
 }
 

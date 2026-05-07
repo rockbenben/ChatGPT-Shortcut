@@ -76,7 +76,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
             <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
               {userInfo.title}
             </Link>
@@ -84,8 +84,8 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
           <Statistic
             value={copyCount}
             formatter={(value) => formatCompactNumber(value as number)}
-            prefix={<FireOutlined style={{ color: "rgba(var(--ifm-color-primary-rgb), 0.75)" }} />}
-            styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)", fontVariantNumeric: "tabular-nums" } }}
+            prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
+            styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
           />
         </Flex>
       }
@@ -101,7 +101,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <PromptRemark remark={userInfo.remark} style={{ marginBottom: 0 }} />
-      <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ flex: 1 }}>
+      <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ flex: 1, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55, marginBottom: 0 }}>
         {userInfo.prompt}
       </Typography.Paragraph>
       <Flex justify="space-between" align="center">
@@ -110,7 +110,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         </div>
         {user.website && (
           <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", opacity: 0.6 }} />
+            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
           </a>
         )}
       </Flex>

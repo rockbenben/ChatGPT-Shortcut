@@ -11,7 +11,7 @@ import styles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
+import { getPrompts, updateMySpaceOrder, updateCustomTags, clearMySpaceCache } from "@site/src/api";
 import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
 import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
@@ -137,8 +137,8 @@ const FilterBar: React.FC<{
               color={tag.color}
               style={{
                 cursor: "pointer",
-                opacity: selectedTags.includes(tag.id) ? 1 : 0.7,
-                boxShadow: selectedTags.includes(tag.id) ? "0 0 0 2px var(--ifm-color-primary)" : "none",
+                opacity: selectedTags.includes(tag.id) ? 1 : 0.55,
+                transition: "opacity 0.12s cubic-bezier(0.16,1,0.3,1)",
               }}
               onClick={() => toggleTag(tag.id)}>
               {tag.name}
@@ -153,7 +153,7 @@ const FilterBar: React.FC<{
 
       <ConfigProvider theme={searchBarTheme}>
         <Input
-          placeholder={translate({ id: "input.search.placeholder", message: "搜索提示词..." })}
+          placeholder={translate({ id: "input.search.placeholder", message: "搜索：写作、翻译、编程…" })}
           value={inputValue}
           onChange={handleChange}
           onPressEnter={handleSearch}
@@ -309,6 +309,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [customTags, setCustomTags] = useState<CustomTag[]>(validCache ? _spaceItemsCache!.tags : []);
   const [tagManagerOpen, setTagManagerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  // 受控管理"哪张卡片的 tag dropdown 当前展开"——为了 multi-select：点 menu item 不关闭，点外面或 manage 才关
+  const [openTagDropdownItemId, setOpenTagDropdownItemId] = useState<string | null>(null);
 
   // 降级搜索：精选/社区提示词推荐
   const [fallbackCards, setFallbackCards] = useState<any[]>([]);
@@ -638,7 +640,9 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       // 立即更新本地状态
       setCustomTags(tags);
-      // 不调用 refreshUserAuth() — 避免触发 MySpace useEffect 重新加载数据
+      // 不 refreshUserAuth() 避免触发 MySpace useEffect 重 fetch，
+      // 仅清 myspace API 层缓存让下次自然刷新拿到最新
+      clearMySpaceCache();
 
       setTagManagerOpen(false);
       messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
@@ -695,51 +699,80 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     [confirmRemoveFavorite],
   );
 
-  // 切换项目标签
-  const handleToggleTag = useCallback(
-    async (itemId: string, tagId: string) => {
-      const item = spaceItems.find((i) => i.id === itemId);
-      if (!item) return;
+  // ============== 标签分配：save on dropdown close ==============
+  // 心理模型：dropdown 是一次"编辑会话"，关闭即提交。
+  // 点 tag = 纯本地 toggle，关闭 dropdown = 一次 API 提交（无变化跳过）。
+  const spaceItemsRef = useRef(spaceItems);
+  spaceItemsRef.current = spaceItems;
+  const customTagsRef = useRef(customTags);
+  customTagsRef.current = customTags;
+  // 当前打开的 dropdown：itemId + 打开那一刻的 tag 状态（失败回滚 + diff 判断用）
+  const dropdownEditRef = useRef<{ itemId: string; originalTags: string[] } | null>(null);
 
-      const currentTags = item.customTags || [];
-      let newTags: string[];
+  // 浅比较两个 string[]（无序）
+  const tagsEqual = (a: string[], b: string[]) => a.length === b.length && a.every((t) => b.includes(t));
 
-      if (currentTags.includes(tagId)) {
-        newTags = currentTags.filter((t) => t !== tagId);
-      } else {
-        newTags = [...currentTags, tagId];
+  // 把 spaceItemsRef 当前状态构建成 itemTags payload
+  const buildItemTags = useCallback((): Record<string, string[]> => {
+    const itemTags: Record<string, string[]> = {};
+    spaceItemsRef.current.forEach((item) => {
+      if (item.customTags && item.customTags.length > 0) {
+        itemTags[item.id] = item.customTags;
       }
+    });
+    return itemTags;
+  }, []);
 
-      // 乐观更新 UI
-      setSpaceItems((items) => items.map((i) => (i.id === itemId ? { ...i, customTags: newTags } : i)));
+  // 提交当前编辑会话——dropdown 关闭、点"管理标签"、卸载时调用
+  const saveTagAssignment = useCallback(async () => {
+    const editing = dropdownEditRef.current;
+    if (!editing) return;
+    dropdownEditRef.current = null;
 
-      // 保存到服务器
-      try {
-        // 构建完整的 itemTags 对象（从当前状态）
-        const newItemTags: Record<string, string[]> = {};
+    const currentItem = spaceItemsRef.current.find((i) => i.id === editing.itemId);
+    if (!currentItem) return;
+    const currentTags = currentItem.customTags || [];
 
-        spaceItems.forEach((item) => {
-          if (item.id === itemId) {
-            newItemTags[item.id] = newTags;
-          } else if (item.customTags && item.customTags.length > 0) {
-            newItemTags[item.id] = item.customTags;
-          }
-        });
+    // 无变化（开了 dropdown 但什么都没改）→ 跳过 API
+    if (tagsEqual(currentTags, editing.originalTags)) return;
 
-        // 调用 API 更新
-        await updateCustomTags({
-          definitions: customTags,
-          itemTags: newItemTags,
-        });
-      } catch (error) {
-        console.error("Failed to update item tags:", error);
-        messageApi.error("标签更新失败");
-        // 恢复UI
-        setSpaceItems((items) => items.map((i) => (i.id === itemId ? { ...i, customTags: currentTags } : i)));
-      }
-    },
-    [spaceItems, customTags, messageApi],
-  );
+    try {
+      await updateCustomTags({ definitions: customTagsRef.current, itemTags: buildItemTags() });
+      // 清掉 myspace API 层缓存，让下次 getMySpace 跨过本地缓存拿 server 真值
+      clearMySpaceCache();
+    } catch (error) {
+      console.error("Failed to update item tags:", error);
+      messageApi.error("标签更新失败");
+      // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
+      setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
+    }
+  }, [buildItemTags, messageApi]);
+
+  // 切换项目标签——纯本地 toggle，不发 API
+  // functional updater 防 stale state（rapid click 安全）
+  const handleToggleTag = useCallback((itemId: string, tagId: string) => {
+    setSpaceItems((items) =>
+      items.map((i) => {
+        if (i.id !== itemId) return i;
+        const currentTags = i.customTags || [];
+        const newTags = currentTags.includes(tagId) ? currentTags.filter((t) => t !== tagId) : [...currentTags, tagId];
+        return { ...i, customTags: newTags };
+      }),
+    );
+  }, []);
+
+  // 卸载兜底：用户在 dropdown 开着的时候 F5 / 路由跳走 → fire-and-forget 提交
+  // 浏览器在 unload 期间通常会让 in-flight 请求继续完成；rare case 失败接受丢失（用户可重新 toggle）
+  useEffect(() => {
+    return () => {
+      const editing = dropdownEditRef.current;
+      if (!editing) return;
+      dropdownEditRef.current = null;
+      const currentItem = spaceItemsRef.current.find((i) => i.id === editing.itemId);
+      if (!currentItem || tagsEqual(currentItem.customTags || [], editing.originalTags)) return;
+      updateCustomTags({ definitions: customTagsRef.current, itemTags: buildItemTags() }).catch(() => {});
+    };
+  }, [buildItemTags]);
 
   // 统一的加载状态：AuthContext 加载中 或 数据处理中
   if (authLoading || dataProcessing) {
@@ -809,7 +842,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                             searchQuery.trim() ? (
                               <Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>
                             ) : filter === "all" ? (
-                              <Translate id="message.noSpaceItems">暂无内容，去添加提示词或收藏吧</Translate>
+                              <Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>
                             ) : filter === "prompt" ? (
                               <Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>
                             ) : (
@@ -825,29 +858,83 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
             ) : (
               <SortableContext items={filteredItems.map((item) => item.id)}>
                 {filteredItems.map((item) => {
+                  const hasAnyTag = (item.customTags?.length || 0) > 0;
                   // 构建标签分配菜单
-                  const tagMenuItems = customTags.map((tag) => ({
-                    key: tag.id,
-                    label: (
-                      <Flex align="center" gap="small">
-                        <Tag color={tag.color} style={{ margin: 0 }}>
-                          {tag.name}
-                        </Tag>
-                        {item.customTags?.includes(tag.id) && <span>✓</span>}
-                      </Flex>
-                    ),
-                    onClick: (info: any) => {
-                      info.domEvent?.stopPropagation();
-                      handleToggleTag(item.id, tag.id);
+                  const tagMenuItems = [
+                    ...customTags.map((tag) => {
+                      const isAssigned = item.customTags?.includes(tag.id);
+                      return {
+                        key: tag.id,
+                        label: (
+                          <Flex align="center" justify="space-between" gap="small" style={{ minWidth: 160 }}>
+                            <Tag color={tag.color} style={{ margin: 0, opacity: isAssigned ? 1 : 0.55 }}>
+                              {tag.name}
+                            </Tag>
+                            <span
+                              aria-hidden
+                              style={{
+                                color: isAssigned ? "var(--site-color-tag-selected-text)" : "transparent",
+                                fontSize: 14,
+                                fontWeight: 600,
+                                minWidth: 16,
+                                textAlign: "right",
+                                lineHeight: 1,
+                              }}>
+                              ✓
+                            </span>
+                          </Flex>
+                        ),
+                        onClick: (info: any) => {
+                          info.domEvent?.stopPropagation();
+                          handleToggleTag(item.id, tag.id);
+                        },
+                      };
+                    }),
+                    { type: "divider" as const },
+                    {
+                      key: "__manage",
+                      label: (
+                        <span style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
+                          <Translate id="myspace.manageTags">管理标签</Translate>
+                        </span>
+                      ),
+                      onClick: (info: any) => {
+                        info.domEvent?.stopPropagation();
+                        saveTagAssignment(); // 进 manage modal 前先提交当前编辑会话
+                        setOpenTagDropdownItemId(null);
+                        setTagManagerOpen(true);
+                      },
                     },
-                  }));
+                  ];
 
                   // 始终显示标签按钮，没有标签时点击打开管理弹窗
                   const extraActions = (
                     <Tooltip title={translate({ id: "myspace.assignTag", message: "分配标签" })}>
                       {customTags.length > 0 ? (
-                        <Dropdown menu={{ items: tagMenuItems }} trigger={["click"]}>
-                          <Button type="text" size="small" icon={<TagOutlined />} onClick={(e) => e.stopPropagation()} />
+                        <Dropdown
+                          menu={{ items: tagMenuItems }}
+                          trigger={["click"]}
+                          open={openTagDropdownItemId === item.id}
+                          onOpenChange={(open, info) => {
+                            // antd 6: info.source = 'trigger' | 'menu'
+                            // 点 menu item 触发的 close 忽略掉（multi-select 体验：连续点多个 tag）
+                            if (!open && info?.source === "menu") return;
+                            if (open) {
+                              // 开 dropdown：记录 itemId + 打开那一刻的 originalTags（save / rollback / diff 用）
+                              dropdownEditRef.current = { itemId: item.id, originalTags: [...(item.customTags || [])] };
+                              setOpenTagDropdownItemId(item.id);
+                            } else {
+                              // 关 dropdown = 提交本次会话
+                              setOpenTagDropdownItemId(null);
+                              saveTagAssignment();
+                            }
+                          }}>
+                          <Button
+                            type="text"
+                            size="small"
+                            icon={<TagOutlined style={hasAnyTag ? { color: "var(--site-color-tag-selected-text)" } : undefined} />}
+                            onClick={(e) => e.stopPropagation()}
+                          />
                         </Dropdown>
                       ) : (
                         <Button

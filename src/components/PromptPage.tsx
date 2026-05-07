@@ -229,7 +229,7 @@ function PromptPage({ prompt, currentLanguage }) {
                 items={[
                   {
                     title: (
-                      <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
+                      <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
                         <HomeOutlined style={{ marginRight: 4 }} />
                         <Translate id="link.home">首页</Translate>
                       </Link>
@@ -241,12 +241,12 @@ function PromptPage({ prompt, currentLanguage }) {
               />
 
               <Flex vertical gap="middle" style={{ minHeight: 400 }}>
-                {/* 提示词主卡片 */}
-                <Card variant="borderless" className="shadow--sm" style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
+                {/* 提示词主卡片 — 默认 antd border = hairline */}
+                <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
                   <Flex vertical gap="small">
                     {/* 头部：标题 + 右侧紧凑 meta 区（tags / 热度 / 外链） */}
                     <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
-                      <Title level={2} style={{ margin: 0 }}>
+                      <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
                         {title}
                       </Title>
 
@@ -262,13 +262,13 @@ function PromptPage({ prompt, currentLanguage }) {
                             ))}
                           </Space>
                         )}
-                        <span style={{ fontSize: 13, color: "var(--ifm-color-emphasis-500)" }}>
-                          <FireFilled style={{ color: "var(--ifm-color-danger)", marginRight: 4 }} />
+                        <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", display: "inline-flex", alignItems: "center" }}>
+                          <FireFilled style={{ color: "var(--site-color-text-tertiary)", marginRight: 4 }} />
                           {formatCompactNumber(weight as number)}
                         </span>
                         {website && (
                           <Link to={website} target="_blank" rel="noopener noreferrer" title={website}>
-                            <Button type="text" size="small" icon={<LinkOutlined />} />
+                            <Button type="text" size="small" icon={<LinkOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} />
                           </Link>
                         )}
                       </Flex>
@@ -277,17 +277,17 @@ function PromptPage({ prompt, currentLanguage }) {
                     {/* 描述/备注 - Quote Style */}
                     {remark && (
                       <div className="prompt-remark" style={{ marginTop: 12, borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                        <Typography.Text type="secondary" style={{ fontSize: 14 }}>
+                        <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
                           {remark}
                         </Typography.Text>
                       </div>
                     )}
 
-                    {/* 提示词内容 — Item 2: Copy 按钮升级为 large primary 主操作 */}
+                    {/* 提示词内容 — Copy 按钮 large primary 主操作（独立页 CTA） */}
                     <div>
                       {/* Action Row */}
                       <Flex justify="space-between" align="center" style={{ marginBottom: 12 }} wrap="wrap" gap="small">
-                        <Typography.Text strong style={{ fontSize: 16 }}>
+                        <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
                           <Translate id="prompt.content">Prompt 内容</Translate>
                         </Typography.Text>
                         <Button
@@ -301,23 +301,24 @@ function PromptPage({ prompt, currentLanguage }) {
                         </Button>
                       </Flex>
 
-                      {/* Tier 4: CodeSnippet 语义包装（告诉 LLM 这是可复用 prompt 模板） */}
+                      {/* Tier 4: CodeSnippet 语义包装（告诉 LLM 这是可复用 prompt 模板）— 深井效果对齐 Phase 2 */}
                       <div
                         itemScope
                         itemType="https://schema.org/CreativeWork"
                         style={{
-                          backgroundColor: "var(--ifm-color-emphasis-100)",
-                          borderRadius: 12,
-                          padding: 24,
+                          backgroundColor: "var(--ifm-background-color)",
+                          borderRadius: 6,
+                          padding: "20px 24px",
+                          border: "1px solid var(--site-color-hairline)",
                         }}>
                         <meta itemProp="name" content={title} />
                         <meta itemProp="inLanguage" content={currentLanguage} />
-                        {/* Item 1: 占位符高亮 — [xxx] 用主色背景标记出来，无需用户肉眼扫描 */}
+                        {/* 占位符高亮 — [xxx] 用主色背景标记出来，无需用户肉眼扫描 */}
                         <div
                           {...({ itemProp: "text" } as any)}
                           style={{
-                            fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
-                            fontSize: 14,
+                            fontFamily: "var(--site-font-mono)",
+                            fontSize: 13,
                             lineHeight: 1.65,
                             whiteSpace: "pre-wrap",
                             wordBreak: "break-word",
@@ -327,8 +328,8 @@ function PromptPage({ prompt, currentLanguage }) {
                         </div>
                       </div>
 
-                      {/* Item 8: 字符 + token 估算 */}
-                      <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 12, color: "var(--ifm-color-emphasis-500)" }}>
+                      {/* 字符 + token 估算 */}
+                      <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
                         <span>
                           {charCount} <Translate id="prompt.charsLabel">字符</Translate> · ≈ {tokenCount} tokens
                         </span>
@@ -337,13 +338,13 @@ function PromptPage({ prompt, currentLanguage }) {
                       {/* 描述/翻译信息 */}
                       {promptInfo.description !== promptInfo.prompt && (
                         <Typography.Paragraph
-                          type="secondary"
                           copyable={{
                             text: promptInfo.description,
                           }}
                           style={{
-                            fontSize: 14,
-                            lineHeight: 1.6,
+                            fontSize: 13,
+                            lineHeight: 1.55,
+                            color: "var(--ifm-color-content-secondary)",
                             margin: 0,
                             marginTop: 24,
                           }}>
@@ -363,8 +364,8 @@ function PromptPage({ prompt, currentLanguage }) {
               <div className="prompt-sidebar" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {/* 相关推荐（build-time 预计算的 IDs 运行时拉取卡片） */}
                 {related.length > 0 && (
-                  <Card variant="borderless" className="shadow--sm" style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
-                    <Text type="secondary" style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: 0.8, fontWeight: 600 }}>
+                  <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
+                    <Text style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, color: "var(--site-color-text-tertiary)" }}>
                       <Translate id="sidebar.related">相关推荐</Translate>
                     </Text>
                     <Flex vertical style={{ marginTop: 8 }}>
@@ -377,14 +378,14 @@ function PromptPage({ prompt, currentLanguage }) {
                           <Link key={r.id} to={`/prompt/${r.id}`} style={{ color: "inherit" }}>
                             <div
                               style={{
-                                padding: "6px 0",
-                                borderTop: idx === 0 ? "none" : "1px dashed var(--ifm-color-emphasis-200)",
+                                padding: "8px 0",
+                                borderTop: idx === 0 ? "none" : "1px solid var(--site-color-hairline)",
                               }}>
                               <div
                                 style={{
                                   fontSize: 13,
-                                  fontWeight: 400,
-                                  color: "var(--ifm-color-emphasis-700)",
+                                  fontWeight: 500,
+                                  color: "var(--ifm-color-content)",
                                   lineHeight: 1.4,
                                   overflow: "hidden",
                                   textOverflow: "ellipsis",
@@ -396,9 +397,9 @@ function PromptPage({ prompt, currentLanguage }) {
                                 <div
                                   style={{
                                     fontSize: 12,
-                                    color: "var(--ifm-color-emphasis-500)",
-                                    marginTop: 1,
-                                    lineHeight: 1.4,
+                                    color: "var(--ifm-color-content-secondary)",
+                                    marginTop: 2,
+                                    lineHeight: 1.45,
                                     overflow: "hidden",
                                     textOverflow: "ellipsis",
                                     whiteSpace: "nowrap",
@@ -416,15 +417,15 @@ function PromptPage({ prompt, currentLanguage }) {
 
                 {/* 常见问题（侧栏版，与 FAQPage JSON-LD 对应）
                     包 Card 使其与 Related / Share 视觉容器一致，内部文字保持次级灰度小字不抢焦点 */}
-                <Card variant="borderless" className="shadow--sm" style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
-                  <Text type="secondary" style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: 0.8, fontWeight: 600 }}>
+                <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
+                  <Text style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, color: "var(--site-color-text-tertiary)" }}>
                     <Translate id="faq.heading">常见问题</Translate>
                   </Text>
-                  <div style={{ marginTop: 10 }}>
+                  <div style={{ marginTop: 12 }}>
                     {faqList.map((item, i) => (
-                      <div key={i} style={{ marginTop: i === 0 ? 0 : 12 }}>
-                        <div style={{ fontSize: 12, color: "var(--ifm-color-emphasis-700)", fontWeight: 500, lineHeight: 1.45 }}>{item.q}</div>
-                        <div style={{ fontSize: 12, color: "var(--ifm-color-emphasis-500)", lineHeight: 1.5, marginTop: 2 }}>{item.a}</div>
+                      <div key={i} style={{ marginTop: i === 0 ? 0 : 14, paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? "none" : "1px solid var(--site-color-hairline)" }}>
+                        <div style={{ fontSize: 12, color: "var(--ifm-color-content)", fontWeight: 500, lineHeight: 1.45 }}>{item.q}</div>
+                        <div style={{ fontSize: 12, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55, marginTop: 4 }}>{item.a}</div>
                       </div>
                     ))}
                   </div>
@@ -442,7 +443,7 @@ function PromptPage({ prompt, currentLanguage }) {
               <Flex vertical gap="middle">
                 {/* 评论区 */}
                 <Suspense fallback={null}>
-                  <Card variant="borderless" className="shadow--md" style={{ minHeight: 480, borderRadius: 12 }}>
+                  <Card style={{ minHeight: 480, borderRadius: 12 }}>
                     <Comments pageId={prompt.id} type="page" />
                   </Card>
                 </Suspense>
