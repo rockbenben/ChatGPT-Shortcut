@@ -489,11 +489,14 @@ const Comments = ({ pageId, type }) => {
         <div
           style={{
             padding: "12px 0",
-            borderBottom: "1px solid var(--ifm-color-emphasis-200)",
+            borderBottom: "1px solid var(--site-color-hairline)",
             marginBottom: 16,
             fontWeight: 500,
+            fontSize: 13,
+            color: "var(--ifm-color-content)",
           }}>
-          {totalCommentsCount} {translate({ id: "label.comments", message: "评论" })}
+          <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", marginRight: 6 }}>{totalCommentsCount}</span>
+          {translate({ id: "label.comments", message: "评论" })}
         </div>
 
         {/* Content with skeleton/empty/list */}

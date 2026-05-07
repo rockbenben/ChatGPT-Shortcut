@@ -5,15 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* Legacy checkbox-based label — kept for backward compatibility but unused on homepage now */
 .checkboxLabel:hover {
   border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   background-color: var(--site-color-checkbox-checked-bg);
-  box-shadow: var(--site-shadow-sm);
-}
-
-.checkboxLabel:active {
-  transform: scale(0.95);
 }
 
 input[type='checkbox'] + .checkboxLabel {
@@ -21,16 +17,16 @@ input[type='checkbox'] + .checkboxLabel {
   align-items: center;
   cursor: pointer;
   line-height: 1.5;
-  border-radius: 20px;
-  padding: 6px 16px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  background-color: var(--site-color-card-background);
-  font-size: 0.85rem;
+  border-radius: 0;
+  padding: 4px 10px;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--site-color-hairline);
+  background-color: transparent;
+  font-size: 12px;
   font-weight: 500;
   user-select: none;
   white-space: nowrap;
-  color: var(--site-primary-font);
+  color: var(--ifm-color-content-secondary);
 }
 
 input:focus-visible + .checkboxLabel {
@@ -38,55 +34,42 @@ input:focus-visible + .checkboxLabel {
 }
 
 input:checked + .checkboxLabel {
-  background: linear-gradient(135deg, var(--site-color-tag-selected-bg) 0%, var(--site-color-tag-selected-bg) 100%);
+  background-color: rgba(87, 194, 163, 0.1);
   color: var(--site-color-tag-selected-text);
-  border: 1px solid var(--site-color-tag-selected-border);
-  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 35%);
-  text-shadow: none;
+  border-color: rgba(87, 194, 163, 0.4);
 }
 
-input:checked + .checkboxLabel:hover {
-  opacity: 0.95;
-  box-shadow: 0 4px 12px hsl(var(--site-primary-hue-saturation) 36% / 40%);
-  transform: translateY(-1px);
-}
-
-/* Ant Design Tag.CheckableTag base + hover styles */
+/* Ant Design Tag.CheckableTag — B+ filter chips: square, transparent ground, fill on selected */
 .tagSelect {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 0;
+  font-size: 12px;
   cursor: pointer;
   user-select: none;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--site-primary-font);
-  background-color: var(--site-color-card-background);
-  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--ifm-color-content-secondary);
+  background-color: transparent;
+  border: 1px solid var(--site-color-hairline);
+  letter-spacing: 0.02em;
 }
 
-/* Hover: no vertical lift — align with the card hover language (border + shadow carry the state). */
 .tagSelect:hover {
-  border-color: var(--ifm-color-primary) !important;
-  background-color: var(--site-color-card-background) !important;
-  box-shadow: var(--site-shadow-sm);
+  color: var(--ifm-color-content) !important;
+  border-color: var(--ifm-color-emphasis-300) !important;
+  background-color: var(--ifm-hover-overlay) !important;
 }
 
-.tagSelect:active {
-  transform: scale(0.96);
-}
-
-/* Selected state — bg + border already carry the signal; keep a tiny colored glow only as a subtle hint. */
 .tagSelectChecked {
   color: var(--site-color-tag-selected-text);
-  background-color: var(--site-color-tag-selected-bg);
-  border: 1px solid var(--site-color-tag-selected-border);
-  box-shadow: 0 2px 8px hsl(var(--site-primary-hue-saturation) 36% / 12%);
+  background-color: rgba(87, 194, 163, 0.1);
+  border-color: rgba(87, 194, 163, 0.4);
 }
 
 .tagSelectChecked:hover {
-  background-color: var(--site-color-tag-selected-bg) !important;
-  box-shadow: 0 2px 10px hsl(var(--site-primary-hue-saturation) 36% / 18%);
+  color: var(--site-color-tag-selected-text) !important;
+  background-color: rgba(87, 194, 163, 0.14) !important;
+  border-color: rgba(87, 194, 163, 0.6) !important;
 }

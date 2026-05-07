@@ -41,8 +41,8 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
       onOk={form.submit}
       onCancel={onClose}
       destroyOnHidden
-      title={mode === "add" ? <Translate id="action.addPrompt">添加提示词</Translate> : <Translate id="modal.editPrompt.title">编辑提示词</Translate>}
-      okText={mode === "add" ? <Translate id="action.addPrompt">添加提示词</Translate> : <Translate id="action.updatePrompt">更新提示词</Translate>}
+      title={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="modal.editPrompt.title">编辑提示词</Translate>}
+      okText={mode === "add" ? <Translate id="action.addPrompt">创建提示词</Translate> : <Translate id="action.updatePrompt">保存</Translate>}
       cancelText={<Translate id="action.cancel">取消</Translate>}>
       <Form
         form={form}

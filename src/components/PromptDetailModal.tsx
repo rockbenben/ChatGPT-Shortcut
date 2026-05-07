@@ -53,36 +53,35 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
         body: {
           padding: 0,
           overflow: "hidden",
-          borderRadius: 8,
+          borderRadius: 12,
         },
       }}
       closeIcon={null}>
       <Flex vertical style={{ height: "100%", maxHeight: "85vh" }}>
-        {/* Header Section */}
+        {/* Header Section — single elevated bg, separated by hairline only */}
         <div
           style={{
             padding: "20px 24px",
-            borderBottom: "1px solid var(--ifm-color-emphasis-200)",
-            backgroundColor: "var(--ifm-background-color)",
+            borderBottom: "1px solid var(--site-color-hairline)",
           }}>
           <Flex justify="space-between" align="start" gap={16}>
             <div style={{ flex: 1 }}>
-              <Typography.Title level={2} style={{ margin: 0, marginBottom: 8 }}>
+              <Typography.Title level={2} style={{ margin: 0, marginBottom: 8, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
                 {data.title}
               </Typography.Title>
-              <Space separator={<span style={{ color: "var(--ifm-color-emphasis-200)" }}>|</span>} size="small" wrap>
+              <Space separator={<span style={{ color: "var(--site-color-hairline)" }}>|</span>} size="small" wrap>
                 {data.share === false && (
                   <Space size={4}>
-                    <LockOutlined style={{ color: "var(--ifm-color-emphasis-500)" }} />
-                    <Typography.Text type="secondary" style={{ fontSize: 12 }}>
+                    <LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
                       <Translate id="prompt.private">私密</Translate>
                     </Typography.Text>
                   </Space>
                 )}
                 {data.owner && (
                   <Space size={4}>
-                    <UserOutlined style={{ color: "var(--ifm-color-emphasis-400)" }} />
-                    <Typography.Text type="secondary" style={{ fontSize: 12 }}>
+                    <UserOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
                       {data.owner}
                     </Typography.Text>
                   </Space>
@@ -91,66 +90,70 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                   <Statistic
                     value={data.vote}
                     formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<LikeFilled style={{ color: "var(--ifm-color-warning)" }} />}
-                    styles={{ content: { fontSize: 12, color: "var(--ifm-color-warning)" } }}
+                    prefix={<LikeFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+                    styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
                   />
                 )}
                 {data.copyCount > 0 && (
                   <Statistic
                     value={data.copyCount}
                     formatter={(value) => formatCompactNumber(value as number)}
-                    prefix={<FireFilled style={{ color: "var(--ifm-color-danger)" }} />}
-                    styles={{ content: { fontSize: 12, color: "var(--ifm-color-emphasis-500)" } }}
+                    prefix={<FireFilled style={{ color: "var(--site-color-text-tertiary)" }} />}
+                    styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
                   />
                 )}
                 {data.website && (
-                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--ifm-color-primary)" }}>
-                    <LinkOutlined style={{ fontSize: 12 }} />
-                    <Typography.Text style={{ fontSize: 12, color: "inherit" }}>Website</Typography.Text>
+                  <a href={data.website} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 4, color: "var(--site-color-tag-selected-text)" }}>
+                    <LinkOutlined style={{ fontSize: 11 }} />
+                    <Typography.Text style={{ fontSize: 11, color: "inherit" }}>Website</Typography.Text>
                   </a>
                 )}
               </Space>
             </div>
             {/* Close Button (Custom) */}
             <Tooltip title={<Translate id="action.close">关闭</Translate>}>
-              <Button type="text" icon={<CloseOutlined style={{ fontSize: 18, color: "var(--ifm-color-emphasis-400)" }} />} onClick={onCancel} />
+              <Button type="text" icon={<CloseOutlined style={{ fontSize: 16, color: "var(--site-color-text-tertiary)" }} />} onClick={onCancel} />
             </Tooltip>
           </Flex>
         </div>
 
-        {/* Scrollable Content */}
+        {/* Scrollable Content — same bg as modal (no inversion) */}
         <div
           style={{
             overflowY: "auto",
             padding: 24,
             flex: 1,
-            backgroundColor: "var(--ifm-background-surface-color)",
           }}>
-          <Flex vertical gap={24}>
+          <Flex vertical gap={20}>
             {/* Remark / Note - Quote Style */}
             {data.remark && (
               <div style={{ borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                <Typography.Text type="secondary" style={{ fontSize: 14 }}>
+                <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
                   {data.remark}
                 </Typography.Text>
               </div>
             )}
 
-            {/* Prompt Content Block */}
+            {/* Prompt Content Block — recessed deep well */}
             <div>
-              <Flex justify="space-between" align="center" style={{ marginBottom: 8 }}>
-                <Typography.Text strong style={{ fontSize: 16 }}>
+              <Flex justify="space-between" align="center" style={{ marginBottom: 10 }}>
+                <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
                   <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
-                <Button type={copied ? "primary" : "default"} icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
+                <Button
+                  size="small"
+                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                  onClick={handleCopy}
+                  style={copied ? { color: "var(--site-color-tag-selected-text)", borderColor: "var(--site-color-tag-selected-text)" } : undefined}>
                   {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
                 </Button>
               </Flex>
               <div
                 style={{
-                  backgroundColor: "var(--ifm-color-emphasis-100)",
-                  borderRadius: 12,
-                  padding: 24,
+                  backgroundColor: "var(--ifm-background-color)",
+                  borderRadius: 6,
+                  padding: "20px 24px",
+                  border: "1px solid var(--site-color-hairline)",
                 }}>
                 <Typography.Paragraph
                   copyable={{
@@ -158,8 +161,8 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                     tooltips: false,
                   }}
                   style={{
-                    fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
-                    fontSize: 14,
+                    fontFamily: "var(--site-font-mono)",
+                    fontSize: 13,
                     lineHeight: 1.6,
                     color: "var(--ifm-color-content)",
                     whiteSpace: "pre-wrap",
@@ -174,30 +177,28 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             {/* Description */}
             {data.description && data.description !== data.prompt && (
               <Typography.Paragraph
-                type="secondary"
                 copyable={{
                   text: data.description,
                 }}
-                style={{ margin: 0, lineHeight: 1.6, fontSize: 14 }}>
+                style={{ margin: 0, lineHeight: 1.55, fontSize: 13, color: "var(--ifm-color-content-secondary)" }}>
                 {data.description}
               </Typography.Paragraph>
             )}
           </Flex>
         </div>
 
-        {/* Footer Section */}
+        {/* Footer Section — hairline only, no bg fill */}
         <div
           style={{
             padding: "20px 24px",
-            borderTop: "1px solid var(--ifm-color-emphasis-200)",
-            backgroundColor: "var(--ifm-background-color)",
+            borderTop: "1px solid var(--site-color-hairline)",
           }}>
           <Flex justify="space-between" align="center" wrap="wrap" gap={12}>
             <div style={{ flex: 1, minWidth: 0 }}>{data.tags && <PromptCardTag tags={data.tags} />}</div>
 
             {showViewDetails && (
               <Link to={`/prompt/${data.id}`}>
-                <Button type="link" icon={<InfoCircleOutlined />}>
+                <Button type="link" size="small" icon={<InfoCircleOutlined />} style={{ color: "var(--site-color-tag-selected-text)" }}>
                   <Translate id="action.viewDetails">查看详情</Translate>
                 </Button>
               </Link>

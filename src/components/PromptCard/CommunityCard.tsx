@@ -72,7 +72,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
     <BasePromptCard
       title={
         <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: "1rem", flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
+          <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
             <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
               {user.title}
             </Link>
@@ -80,7 +80,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         </Flex>
       }
       titleExtra={
-        <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+        <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
           <UserOutlined style={{ marginRight: 4 }} />
           {user.owner}
         </Typography.Text>
@@ -97,14 +97,14 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         onVote && (
           <Tooltip title={<Translate id="action.upvote">赞</Translate>}>
             <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
-              {user.upvotes || 0}
+              <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.upvotes || 0}</span>
             </Button>
           </Tooltip>
         ),
         onVote && (
           <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
             <Button type="text" icon={<DownOutlined />} onClick={handleDownvote} block>
-              {user.downvotes || 0}
+              <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes || 0}</span>
             </Button>
           </Tooltip>
         ),
@@ -112,7 +112,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: "var(--ifm-color-emphasis-600)" }}>
+        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {user.description}
         </Typography.Paragraph>
         <Flex justify="space-between" align="center">
@@ -121,7 +121,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
           </div>
           {user.website && (
             <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 14, color: "var(--ifm-color-emphasis-500)" }} />
+              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
             </a>
           )}
         </Flex>

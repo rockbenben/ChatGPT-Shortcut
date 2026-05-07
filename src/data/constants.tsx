@@ -18,8 +18,15 @@ export const ALL_IDS = [
 
 export const SLOGAN = translate({
   id: "homepage.slogan",
-  message: "精选 AI 提示词，让每次对话更高效",
+  message: "精选 AI 提示词，一键复制即用",
 });
+
+// 支持的 AI 工具列表 —— 产品名，不翻译；按真实用量降序排
+// ChatGPT 全球第一 → DeepSeek 增速第一 + 中文用户 → Claude 写作/代码 → Gemini Google 生态
+// 显示为 hero subtitle 下方一行 micro credentials line，搭配 "等" 后缀承诺"举例不穷举"
+// 4 个是"代表性 + 简洁"的甜区：超过就成清单噪声、稀释 "等" 的暗示意义；
+// 中文用户独有的 Doubao / Qwen / Kimi 等不列入主行，靠 "等" 涵盖 —— 这些工具的用户不需要看到自己工具被列才信任文本 prompt 通用
+export const SUPPORTED_AI_TOOLS = ["ChatGPT", "DeepSeek", "Claude", "Gemini"];
 export const TITLE = translate({
   id: "homepage.title",
   message: "AiShort - AI提示词库 | 精选Prompt模板，即刻提升AI效率",
