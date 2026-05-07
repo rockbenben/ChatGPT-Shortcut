@@ -3,7 +3,7 @@
     "message": "Добавить"
   },
   "action.addPrompt": {
-    "message": "Добавить Prompt"
+    "message": "Создать промпт"
   },
   "action.backToLogin": {
     "message": "Вернуться ко входу"
@@ -63,7 +63,7 @@
     "message": "Показать теги"
   },
   "action.updatePrompt": {
-    "message": "Обновить Prompt"
+    "message": "Сохранить"
   },
   "action.upvote": {
     "message": "Нравится"
@@ -93,7 +93,7 @@
     "message": "Импортировать промпты"
   },
   "button.login": {
-    "message": "Войти"
+    "message": "Войти бесплатно"
   },
   "button.logout": {
     "message": "Выйти"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Ваш отзыв важен для нас!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut — это инструмент управления промптами с открытым исходным кодом, предназначенный для повышения эффективности использования ИИ. Мы с нетерпением ждем вашего участия: будь то сообщение об ошибках, предложение функций или обмен качественными промптами (Prompt). Мы поддерживаем загрузку промптов на нескольких языках, и после принятия они будут опубликованы с указанием авторства (доступен поиск по имени пользователя). Каждый ваш вклад помогает участникам сообщества расширять мышление и повышать продуктивность. Давайте вместе создадим идеальную библиотеку промптов!"
-  },
   "feedback.subtitle": {
-    "message": "Каждый ваш вклад помогает сделать этот проект с открытым исходным кодом лучше"
+    "message": "Сообщения об ошибках, предложения функций, вопросы использования — все голоса приветствуются"
   },
   "feedback.title": {
     "message": "Отзывы и предложения"
   },
   "feedback.welcome": {
-    "message": "Приветствуем ваши отзывы"
+    "message": "Отзывы и предложения"
   },
   "homepage.description": {
     "message": "Надоели нерелевантные ответы ИИ? AiShort предлагает практичные шаблоны для письма, кода и перевода. Копируйте одним кликом и удвойте эффективность!"
   },
   "homepage.slogan": {
-    "message": "Избранные AI-промпты для более эффективного общения"
+    "message": "Отборные AI-промпты — копируй и используй в один клик"
   },
   "homepage.title": {
     "message": "AiShort - Библиотека ИИ-промптов | Шаблоны для продуктивности"
@@ -243,7 +240,7 @@
     "message": "Пожалуйста, введите код сброса!"
   },
   "input.search.placeholder": {
-    "message": "Поиск промптов..."
+    "message": "Поиск: письмо, перевод, программирование…"
   },
   "label.agree": {
     "message": "Согласен"
@@ -267,46 +264,25 @@
     "message": "Хотите поделиться этим промптом на публичной странице?"
   },
   "level.bronze": {
-    "message": "Бронзовая звезда"
-  },
-  "level.bronze.desc": {
-    "message": "Отличное начало! Продолжайте в том же духе!"
+    "message": "Бронза"
   },
   "level.diamond": {
-    "message": "Бриллиантовая легенда"
-  },
-  "level.diamond.desc": {
-    "message": "Элитный контрибьютор, настоящая легенда сообщества!"
+    "message": "Бриллиант"
   },
   "level.gold": {
-    "message": "Золотой эксперт"
-  },
-  "level.gold.desc": {
-    "message": "Опытный и очень надёжный!"
-  },
-  "level.max.congrats": {
-    "message": "Поздравляем с достижением максимального уровня! Вы легендарный контрибьютор!"
+    "message": "Золото"
   },
   "level.newcomer": {
-    "message": "Исследователь"
-  },
-  "level.newcomer.desc": {
-    "message": "Поделитесь первым промптом, чтобы начать путешествие!"
+    "message": "Юный исследователь"
   },
   "level.platinum": {
-    "message": "Платиновый мастер"
-  },
-  "level.platinum.desc": {
-    "message": "Опытный эксперт с выдающимся влиянием!"
+    "message": "Платина"
   },
   "level.silver": {
-    "message": "Серебряная элита"
-  },
-  "level.silver.desc": {
-    "message": "Активный участник, уверенно растёт!"
+    "message": "Серебро"
   },
   "link.addprompt": {
-    "message": "Добавить промпт"
+    "message": "Создать промпт"
   },
   "link.communityPrompts": {
     "message": "Промпты сообщества"
@@ -456,7 +432,7 @@
     "message": "Промптов пока нет — создайте первый"
   },
   "message.noSpaceItems": {
-    "message": "Пока пусто — добавьте промпты или избранное"
+    "message": "Пока пусто — создай промпт или добавь в избранное"
   },
   "message.orderSaveFailed": {
     "message": "Не удалось сохранить расположение"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Имя пользователя/Email"
   },
-  "progress.toNextLevel": {
-    "message": "До следующего уровня"
-  },
   "prompt.charsLabel": {
     "message": "символов"
   },
@@ -630,7 +603,7 @@
     "message": "Промпт довольно длинный; рассмотрите возможность его сокращения или разделения."
   },
   "showcase.header.button": {
-    "message": "Поделиться своим промптом"
+    "message": "Обзор сообщества"
   },
   "showcase.tag.academic.description": {
     "message": "Академические исследования, педагогический дизайн, планирование учебных программ и другая поддержка работы учителей"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Похожие промпты"
-  },
-  "stat.sharedPrompts": {
-    "message": "Общих промптов"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Закрыть",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Делятся участники сообщества · Мнения не отражают позицию проекта"
+  },
+  "level.stardust": {
+    "message": "Звёздная пыль"
+  },
+  "level.emerald": {
+    "message": "Изумруд"
+  },
+  "level.ruby": {
+    "message": "Рубин"
+  },
+  "level.sapphire": {
+    "message": "Сапфир"
+  },
+  "feedback.type.bug": {
+    "message": "Сообщения об ошибках"
+  },
+  "feedback.type.suggestion": {
+    "message": "Предложения"
+  },
+  "feedback.type.help": {
+    "message": "Помощь"
+  },
+  "feedback.spec_label": {
+    "message": "Открытый канал"
+  },
+  "hero.supportedAiTools": {
+    "message": "Работает с {tools} и другими",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Подходящих промптов не найдено",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Попробуйте другое ключевое слово или очистите фильтры тегов",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "до {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

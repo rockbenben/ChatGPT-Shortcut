@@ -3,7 +3,7 @@
     "message": "إضافة"
   },
   "action.addPrompt": {
-    "message": "إضافة Prompt"
+    "message": "إنشاء مطالبة"
   },
   "action.backToLogin": {
     "message": "العودة لتسجيل الدخول"
@@ -63,7 +63,7 @@
     "message": "إظهار الوسوم"
   },
   "action.updatePrompt": {
-    "message": "تحديث التوجيه"
+    "message": "حفظ"
   },
   "action.upvote": {
     "message": "إعجاب"
@@ -93,7 +93,7 @@
     "message": "استيراد التوجيهات"
   },
   "button.login": {
-    "message": "تسجيل الدخول"
+    "message": "تسجيل الدخول مجاناً"
   },
   "button.logout": {
     "message": "تسجيل الخروج"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "ملاحظاتك مهمة بالنسبة لنا!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut هي أداة لإدارة التوجيهات مفتوحة المصدر مخصصة لتحسين كفاءة الذكاء الاصطناعي. نتطلع بشغف إلى مشاركتك: سواء بالإبلاغ عن الأخطاء، أو اقتراح ميزات، أو مشاركة توجيهات (Prompt) عالية الجودة. بالنسبة لمشاركات التوجيهات، ندعم لغات متعددة، وبمجرد قبولها سيتم تضمينها مع الإسناد (يمكن البحث عنها باسم المستخدم). كل مساهمة تساعد أعضاء المجتمع على توسيع تفكيرهم وزيادة الإنتاجية. دعونا نبني مكتبة توجيهات مثالية معًا!"
-  },
   "feedback.subtitle": {
-    "message": "كل مساهمة تقدمها تساعد في جعل هذا المشروع مفتوح المصدر أفضل"
+    "message": "تقارير الأخطاء، طلبات الميزات، أسئلة الاستخدام — كل صوت مرحب به"
   },
   "feedback.title": {
     "message": "التعليقات والاقتراحات"
   },
   "feedback.welcome": {
-    "message": "نرحب بالملاحظات"
+    "message": "الملاحظات والاقتراحات"
   },
   "homepage.description": {
     "message": "محبط من إجابات الذكاء الاصطناعي غير ذات الصلة؟ يقدم AiShort قوالب عملية للكتابة والبرمجة والترجمة. انسخ بنقرة واحدة وضاعف كفاءتك!"
   },
   "homepage.slogan": {
-    "message": "توجيهات ذكاء اصطناعي مختارة، لجعل كل محادثة أكثر كفاءة"
+    "message": "مطالبات الذكاء الاصطناعي المنتقاة، جاهزة للاستخدام بنقرة واحدة"
   },
   "homepage.title": {
     "message": "AiShort - مكتبة موجهات الذكاء الاصطناعي | قوالب لتعزيز الإنتاجية"
@@ -243,7 +240,7 @@
     "message": "يرجى إدخال رمز إعادة التعيين الخاص بك!"
   },
   "input.search.placeholder": {
-    "message": "بحث في التوجيهات..."
+    "message": "بحث: كتابة، ترجمة، برمجة…"
   },
   "label.agree": {
     "message": "موافق"
@@ -267,46 +264,25 @@
     "message": "هل ترغب في مشاركة هذا التوجيه على الصفحة العامة؟"
   },
   "level.bronze": {
-    "message": "نجمة البرونز"
-  },
-  "level.bronze.desc": {
-    "message": "بداية رائعة! حافظ على الزخم!"
+    "message": "برونزي"
   },
   "level.diamond": {
-    "message": "أسطورة الماس"
-  },
-  "level.diamond.desc": {
-    "message": "مساهم متميز، أسطورة حقيقية في المجتمع!"
+    "message": "ماس"
   },
   "level.gold": {
-    "message": "خبير الذهب"
-  },
-  "level.gold.desc": {
-    "message": "خبير وموثوق للغاية!"
-  },
-  "level.max.congrats": {
-    "message": "تهانينا لوصولك إلى أعلى مستوى! أنت مساهم أسطوري!"
+    "message": "ذهبي"
   },
   "level.newcomer": {
-    "message": "مستكشف"
-  },
-  "level.newcomer.desc": {
-    "message": "شارك أول موجه لك لبدء الرحلة!"
+    "message": "مستكشف مبتدئ"
   },
   "level.platinum": {
-    "message": "سيد البلاتين"
-  },
-  "level.platinum.desc": {
-    "message": "خبير متمرس بتأثير ملحوظ!"
+    "message": "بلاتيني"
   },
   "level.silver": {
-    "message": "نخبة الفضة"
-  },
-  "level.silver.desc": {
-    "message": "مساهم نشط، ينمو بقوة!"
+    "message": "فضي"
   },
   "link.addprompt": {
-    "message": "إضافة توجيه"
+    "message": "إنشاء مطالبة"
   },
   "link.communityPrompts": {
     "message": "موجهات المجتمع"
@@ -456,7 +432,7 @@
     "message": "لا توجد موجهات بعد، أنشئ واحدة"
   },
   "message.noSpaceItems": {
-    "message": "لا يوجد محتوى بعد، أضف موجهات أو مفضلة"
+    "message": "لا يوجد شيء بعد — أنشئ مطالبة أو أضف إلى المفضلة"
   },
   "message.orderSaveFailed": {
     "message": "فشل في حفظ الترتيب"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "اسم المستخدم/البريد الإلكتروني"
   },
-  "progress.toNextLevel": {
-    "message": "حتى المستوى التالي"
-  },
   "prompt.charsLabel": {
     "message": "حرف"
   },
@@ -630,7 +603,7 @@
     "message": "الموجه (Prompt) طويل نوعًا ما؛ فكر في اختصاره أو تقسيمه."
   },
   "showcase.header.button": {
-    "message": "شارك توجيهك"
+    "message": "استكشاف المجتمع"
   },
   "showcase.tag.academic.description": {
     "message": "البحث الأكاديمي، والتصميم التعليمي، وتخطيط المناهج، وغيرها من دعم المعلمين"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "طلبات ذات صلة"
-  },
-  "stat.sharedPrompts": {
-    "message": "الموجهات المشتركة"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "إغلاق",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "محتوى مشارَك من أعضاء المجتمع · الآراء لا تمثل المشروع"
+  },
+  "level.stardust": {
+    "message": "غبار النجوم"
+  },
+  "level.emerald": {
+    "message": "زمرد"
+  },
+  "level.ruby": {
+    "message": "ياقوت أحمر"
+  },
+  "level.sapphire": {
+    "message": "ياقوت أزرق"
+  },
+  "feedback.type.bug": {
+    "message": "تقارير الأخطاء"
+  },
+  "feedback.type.suggestion": {
+    "message": "الاقتراحات"
+  },
+  "feedback.type.help": {
+    "message": "المساعدة"
+  },
+  "feedback.spec_label": {
+    "message": "قناة مفتوحة"
+  },
+  "hero.supportedAiTools": {
+    "message": "متوافق مع {tools} والمزيد",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "لم يتم العثور على مطالبات مطابقة",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "جرّب كلمة مفتاحية أخرى، أو امسح فلاتر الوسوم",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "حتى {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

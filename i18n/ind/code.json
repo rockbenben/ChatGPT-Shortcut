@@ -3,7 +3,7 @@
     "message": "Tambah"
   },
   "action.addPrompt": {
-    "message": "Tambah Prompt"
+    "message": "Buat Prompt"
   },
   "action.backToLogin": {
     "message": "Kembali ke Login"
@@ -63,7 +63,7 @@
     "message": "Tampilkan Tag"
   },
   "action.updatePrompt": {
-    "message": "Perbarui Prompt"
+    "message": "Simpan"
   },
   "action.upvote": {
     "message": "Suka"
@@ -93,7 +93,7 @@
     "message": "Impor Prompt"
   },
   "button.login": {
-    "message": "Masuk"
+    "message": "Masuk Gratis"
   },
   "button.logout": {
     "message": "Keluar"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Umpan balik Anda sangat penting bagi kami!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut adalah alat manajemen Prompt open source yang didedikasikan untuk meningkatkan efisiensi AI. Kami sangat menantikan partisipasi Anda: melaporkan bug, menyarankan fitur, atau berbagi Prompt berkualitas. Untuk pengiriman Prompt, kami mendukung berbagai bahasa, dan setelah diterima akan dimasukkan dengan atribusi (dapat dicari berdasarkan nama pengguna). Setiap kontribusi membantu anggota komunitas memperluas pemikiran dan meningkatkan produktivitas. Mari kita bangun perpustakaan Prompt yang sempurna bersama!"
-  },
   "feedback.subtitle": {
-    "message": "Setiap kontribusi Anda membuat proyek open source ini lebih baik"
+    "message": "Laporan bug, permintaan fitur, pertanyaan penggunaan—semua suara diterima"
   },
   "feedback.title": {
     "message": "Umpan Balik dan Saran"
   },
   "feedback.welcome": {
-    "message": "Selamat Memberikan Umpan Balik"
+    "message": "Umpan Balik & Saran"
   },
   "homepage.description": {
     "message": "Frustasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!"
   },
   "homepage.slogan": {
-    "message": "Prompt AI pilihan untuk percakapan yang lebih efisien"
+    "message": "Prompt AI pilihan, siap pakai dengan satu klik"
   },
   "homepage.title": {
     "message": "AiShort - Perpustakaan Prompt AI | Prompt Pilihan untuk Meningkatkan Produktivitas AI"
@@ -243,7 +240,7 @@
     "message": "Silakan masukkan kode reset Anda!"
   },
   "input.search.placeholder": {
-    "message": "Cari prompt..."
+    "message": "Cari: tulis, terjemahkan, koding…"
   },
   "label.agree": {
     "message": "Setuju"
@@ -267,46 +264,25 @@
     "message": "Apakah Anda ingin membagikan prompt ini ke halaman publik?"
   },
   "level.bronze": {
-    "message": "Bintang Baru Perunggu"
-  },
-  "level.bronze.desc": {
-    "message": "Sudah mengambil langkah pertama, terus semangat!"
+    "message": "Perunggu"
   },
   "level.diamond": {
-    "message": "Legenda Berlian"
-  },
-  "level.diamond.desc": {
-    "message": "Kontributor tingkat atas, legenda komunitas!"
+    "message": "Berlian"
   },
   "level.gold": {
-    "message": "Ahli Emas"
-  },
-  "level.gold.desc": {
-    "message": "Berpengalaman, dapat dipercaya!"
-  },
-  "level.max.congrats": {
-    "message": "Selamat mencapai level tertinggi! Anda adalah legenda komunitas!"
+    "message": "Emas"
   },
   "level.newcomer": {
     "message": "Penjelajah Pemula"
   },
-  "level.newcomer.desc": {
-    "message": "Bagikan Prompt pertama, mulai perjalanan kreasi!"
-  },
   "level.platinum": {
-    "message": "Master Platinum"
-  },
-  "level.platinum.desc": {
-    "message": "Pakar senior, pengaruh luar biasa!"
+    "message": "Platinum"
   },
   "level.silver": {
-    "message": "Elit Perak"
-  },
-  "level.silver.desc": {
-    "message": "Kontributor aktif, terus bertumbuh!"
+    "message": "Perak"
   },
   "link.addprompt": {
-    "message": "Tambah Prompt"
+    "message": "Buat Prompt"
   },
   "link.communityPrompts": {
     "message": "Prompt Komunitas"
@@ -456,7 +432,7 @@
     "message": "Belum ada Prompt, buat satu"
   },
   "message.noSpaceItems": {
-    "message": "Belum ada konten, tambahkan Prompt atau Favorit"
+    "message": "Belum ada — buat prompt atau tandai favorit"
   },
   "message.orderSaveFailed": {
     "message": "Gagal menyimpan urutan"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Nama pengguna/Email"
   },
-  "progress.toNextLevel": {
-    "message": "Ke level berikutnya"
-  },
   "prompt.charsLabel": {
     "message": "karakter"
   },
@@ -630,7 +603,7 @@
     "message": "Prompt cukup panjang, disarankan untuk mempersingkat atau membagi"
   },
   "showcase.header.button": {
-    "message": "Bagikan Prompt Anda"
+    "message": "Jelajahi Komunitas"
   },
   "showcase.tag.academic.description": {
     "message": "Penelitian akademis, desain pengajaran, perencanaan kurikulum, dan dukungan guru"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Prompt terkait"
-  },
-  "stat.sharedPrompts": {
-    "message": "Prompt yang Dibagikan"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Tutup",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Dibagikan oleh anggota komunitas · Pendapat tidak mewakili proyek"
+  },
+  "level.stardust": {
+    "message": "Debu Bintang"
+  },
+  "level.emerald": {
+    "message": "Zamrud"
+  },
+  "level.ruby": {
+    "message": "Rubi"
+  },
+  "level.sapphire": {
+    "message": "Safir"
+  },
+  "feedback.type.bug": {
+    "message": "Laporan Bug"
+  },
+  "feedback.type.suggestion": {
+    "message": "Saran Fitur"
+  },
+  "feedback.type.help": {
+    "message": "Bantuan Penggunaan"
+  },
+  "feedback.spec_label": {
+    "message": "Saluran Terbuka"
+  },
+  "hero.supportedAiTools": {
+    "message": "Mendukung {tools} dan lainnya",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Tidak ada prompt yang cocok",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Coba kata kunci lain, atau hapus filter tag",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "menuju {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

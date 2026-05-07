@@ -3,7 +3,7 @@
     "message": "추가"
   },
   "action.addPrompt": {
-    "message": "프롬프트 추가"
+    "message": "프롬프트 만들기"
   },
   "action.backToLogin": {
     "message": "로그인으로 돌아가기"
@@ -63,7 +63,7 @@
     "message": "태그 표시"
   },
   "action.updatePrompt": {
-    "message": "프롬프트 업데이트"
+    "message": "저장"
   },
   "action.upvote": {
     "message": "추천"
@@ -93,7 +93,7 @@
     "message": "프롬프트 가져오기"
   },
   "button.login": {
-    "message": "로그인"
+    "message": "무료 로그인"
   },
   "button.logout": {
     "message": "로그아웃"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "귀하의 피드백은 우리에게 중요합니다!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut은 AI 효율성을 높이는 데 전념하는 오픈 소스 프롬프트 관리 도구입니다. 버그 보고, 기능 제안 또는 고품질 프롬프트 공유 등 귀하의 참여를 기다립니다. 프롬프트 제출의 경우 여러 언어를 지원하며, 채택되면 귀속 표시(사용자 이름으로 검색 가능)와 함께 게시됩니다. 모든 기여는 커뮤니티 구성원이 사고를 확장하고 생산성을 높이는 데 도움이 됩니다. 함께 완벽한 프롬프트 라이브러리를 만들어 봅시다!"
-  },
   "feedback.subtitle": {
-    "message": "귀하의 모든 기여는 이 오픈 소스 프로젝트를 더 좋게 만드는 데 도움이 됩니다."
+    "message": "버그 신고, 기능 제안, 사용 문의—모든 목소리를 환영합니다"
   },
   "feedback.title": {
     "message": "피드백 및 제안"
   },
   "feedback.welcome": {
-    "message": "피드백 환영"
+    "message": "피드백 및 제안"
   },
   "homepage.description": {
     "message": "AI 답변이 항상 엉뚱한가요? AiShort는 글쓰기, 코딩, 번역에 유용한 실용적인 프롬프트를 제공합니다. 원클릭 복사로 작업 효율을 두 배로!"
   },
   "homepage.slogan": {
-    "message": "엄선된 AI 프롬프트로 대화를 더 효율적으로"
+    "message": "엄선된 AI 프롬프트, 원클릭으로 바로 사용"
   },
   "homepage.title": {
     "message": "AiShort - AI 프롬프트 모음 | 엄선된 템플릿으로 생산성 향상"
@@ -243,7 +240,7 @@
     "message": "재설정 코드를 입력하십시오!"
   },
   "input.search.placeholder": {
-    "message": "프롬프트 검색..."
+    "message": "검색: 작문, 번역, 프로그래밍…"
   },
   "label.agree": {
     "message": "동의"
@@ -267,46 +264,25 @@
     "message": "이 프롬프트를 공개 페이지에 공유하시겠습니까?"
   },
   "level.bronze": {
-    "message": "브론즈 스타"
-  },
-  "level.bronze.desc": {
-    "message": "훌륭한 시작! 이 기세를 유지하세요!"
+    "message": "브론즈"
   },
   "level.diamond": {
-    "message": "다이아몬드 레전드"
-  },
-  "level.diamond.desc": {
-    "message": "최고 기여자, 커뮤니티의 전설!"
+    "message": "다이아몬드"
   },
   "level.gold": {
-    "message": "골드 전문가"
-  },
-  "level.gold.desc": {
-    "message": "경험이 풍부하고 신뢰할 수 있습니다!"
-  },
-  "level.max.congrats": {
-    "message": "최고 레벨 달성을 축하합니다! 당신은 전설적인 기여자입니다!"
+    "message": "골드"
   },
   "level.newcomer": {
-    "message": "탐험가"
-  },
-  "level.newcomer.desc": {
-    "message": "첫 번째 프롬프트를 공유하여 여정을 시작하세요!"
+    "message": "초보 탐험가"
   },
   "level.platinum": {
-    "message": "플래티넘 마스터"
-  },
-  "level.platinum.desc": {
-    "message": "숙련된 전문가, 뛰어난 영향력!"
+    "message": "플래티넘"
   },
   "level.silver": {
-    "message": "실버 엘리트"
-  },
-  "level.silver.desc": {
-    "message": "활발한 기여자, 꾸준히 성장 중!"
+    "message": "실버"
   },
   "link.addprompt": {
-    "message": "프롬프트 추가"
+    "message": "프롬프트 만들기"
   },
   "link.communityPrompts": {
     "message": "커뮤니티 프롬프트"
@@ -456,7 +432,7 @@
     "message": "아직 프롬프트가 없습니다. 하나 만들어 보세요"
   },
   "message.noSpaceItems": {
-    "message": "아직 콘텐츠가 없습니다. 프롬프트나 즐겨찾기를 추가해 보세요"
+    "message": "콘텐츠가 없습니다 — 프롬프트를 만들거나 즐겨찾기에 추가해보세요"
   },
   "message.orderSaveFailed": {
     "message": "배열 저장 실패"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "사용자 이름/이메일"
   },
-  "progress.toNextLevel": {
-    "message": "다음 레벨까지"
-  },
   "prompt.charsLabel": {
     "message": "글자"
   },
@@ -630,7 +603,7 @@
     "message": "프롬프트가 다소 깁니다. 줄이거나 나누는 것을 고려하세요."
   },
   "showcase.header.button": {
-    "message": "프롬프트 공유"
+    "message": "커뮤니티 둘러보기"
   },
   "showcase.tag.academic.description": {
     "message": "학술 연구, 교수 설계, 커리큘럼 계획 등 교사 업무 지원"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "관련 프롬프트"
-  },
-  "stat.sharedPrompts": {
-    "message": "공유한 프롬프트"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "닫기",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "커뮤니티 회원이 공유 · 의견은 프로젝트를 대표하지 않음"
+  },
+  "level.stardust": {
+    "message": "스타더스트"
+  },
+  "level.emerald": {
+    "message": "에메랄드"
+  },
+  "level.ruby": {
+    "message": "루비"
+  },
+  "level.sapphire": {
+    "message": "사파이어"
+  },
+  "feedback.type.bug": {
+    "message": "버그 신고"
+  },
+  "feedback.type.suggestion": {
+    "message": "기능 제안"
+  },
+  "feedback.type.help": {
+    "message": "사용 문의"
+  },
+  "feedback.spec_label": {
+    "message": "공개 채널"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} 등 지원",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "일치하는 프롬프트를 찾을 수 없습니다",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "다른 키워드를 시도하거나 태그 필터를 지워보세요",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」까지",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }
