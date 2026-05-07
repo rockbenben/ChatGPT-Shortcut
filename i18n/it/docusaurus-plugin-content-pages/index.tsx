@@ -10,9 +10,8 @@ import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
 import { cyan, green, red, blue } from "@ant-design/colors";
-import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
+import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
 
-import FavoriteIcon from "@site/src/components/svgIcons/FavoriteIcon";
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/components/ShowcaseTooltip";
@@ -25,14 +24,14 @@ import { NoResults } from "@site/src/components/SearchBar/NoResults";
 import styles from "@site/src/pages/styles.module.css";
 import { getWeight } from "@site/src/utils/formatters";
 import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/utils/cache";
-import { getLevelInfo, LevelName } from "@site/src/components/LevelSystem";
+import { getLevelInfo, LevelName, LevelIcon } from "@site/src/components/LevelSystem";
 
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList } from "@site/src/data/tags";
-import { SLOGAN, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
+import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -50,12 +49,38 @@ const { Title, Paragraph } = Typography;
 const ShowcaseHeader: React.FC = () => (
   <section className={clsx("text--center", styles.heroSection)}>
     <div className="hideOnSmallScreen">
-      <Title level={1} className={styles.heroTitle} style={{ color: "transparent" }}>
+      {/* inline style 必须，因为 antd 的 h1.ant-typography 选择器特异性 0,1,1 会赢过纯类 */}
+      <Title
+        level={1}
+        style={{
+          fontSize: 40,
+          fontWeight: 300,
+          letterSpacing: "-0.04em",
+          lineHeight: 1.05,
+          marginBottom: 8,
+          color: "var(--ifm-color-content)",
+        }}>
         AI Short
       </Title>
-      <Paragraph type="secondary" className={styles.heroSubtitle}>
+      <p style={{ fontSize: 18, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.55, color: "var(--ifm-color-content-secondary)" }}>
         {SLOGAN}
-      </Paragraph>
+      </p>
+      <div
+        aria-label="Supported AI tools"
+        style={{
+          fontSize: 13,
+          color: "var(--site-color-text-tertiary)",
+          letterSpacing: "0.04em",
+          marginBottom: 20,
+          fontFamily: "var(--site-font-mono)",
+        }}>
+        <Translate
+          id="hero.supportedAiTools"
+          values={{ tools: SUPPORTED_AI_TOOLS.join(" · ") }}
+          description="Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once">
+          {"{tools} 等"}
+        </Translate>
+      </div>
     </div>
     <UserStatus />
   </section>
@@ -83,18 +108,27 @@ const ShowcaseFilters: React.FC = React.memo(() => {
   }, [location, history]);
 
   return (
-    <section className="container" style={{ backgroundColor: "var(--site-color-tags-background)" }}>
+    <section className="container">
       <Flex justify="space-between" align="center" className={styles.filterCheckbox}>
         <Button type="text" onClick={toggleTagsOnMobile} className="showOnSmallScreen" icon={<FilterOutlined />}>
           {showTagsOnMobile ? <Translate id="action.hideTags">隐藏标签</Translate> : <Translate id="action.showTags">显示标签</Translate>}
           {showTagsOnMobile ? <CaretUpOutlined /> : <CaretDownOutlined />}
         </Button>
         <Flex align="center" gap="small">
-          <Title level={3} className="hideOnSmallScreen" style={{ margin: 0 }}>
+          <span
+            className="hideOnSmallScreen"
+            style={{
+              fontSize: 11,
+              fontWeight: 500,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "var(--site-color-text-tertiary)",
+              margin: 0,
+            }}>
             Filters
-          </Title>
+          </span>
           {selectedTagCount > 0 && (
-            <Button type="link" size="small" icon={<CloseOutlined />} onClick={handleClearTags} style={{ padding: 0, height: "auto", fontSize: 12, marginTop: 6, color: "var(--ifm-color-content)" }}>
+            <Button type="link" size="small" icon={<CloseOutlined />} onClick={handleClearTags} style={{ padding: 0, height: "auto", fontSize: 11, color: "var(--site-color-tag-selected-text)" }}>
               <Translate id="action.clearFilters" values={{ count: selectedTagCount }}>
                 {"清除筛选 ({count})"}
               </Translate>
@@ -420,10 +454,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             <div id="favorites-section" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Title level={3} className="hideOnSmallScreen">
+                  <Title level={3} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
+                    <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
                     Favorites
                   </Title>
-                  <FavoriteIcon svgClass={styles.svgIconFavorite} />
                   <SearchBar />
                 </div>
                 <Row gutter={[16, 16]}>
@@ -451,9 +485,11 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
             </div>
           )}
           <div className="container margin-top--md">
-            <Title level={3} className="hideOnSmallScreen">
-              All prompts
-            </Title>
+            <div className="hideOnSmallScreen" style={{ paddingBottom: 12, marginBottom: 16, borderBottom: "1px solid var(--site-color-hairline)" }}>
+              <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
+                All Prompts
+              </Title>
+            </div>
             <Row gutter={[16, 16]}>
               {otherUsers.map((user, index) => {
                 const isNew = index >= prevOtherCountRef.current;
@@ -557,13 +593,13 @@ const ExploreView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOpenMod
 };
 
 // ==================== 个人收藏视图 ====================
-// Stat bar — each stat carries its own hue (original 4-color scheme restored).
+// Stat bar — each stat carries its own hue (4-color scheme: cyan/green/red/blue is intentional visual signature).
 const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value: number; color: string }> = ({ icon, label, value, color }) => (
   <div style={{ textAlign: "center", minWidth: 72 }}>
     <div
       style={{
         fontSize: 10,
-        color: "var(--ifm-color-emphasis-600)",
+        color: "var(--site-color-text-tertiary)",
         marginBottom: 6,
         letterSpacing: "0.12em",
         textTransform: "uppercase",
@@ -571,14 +607,15 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
         alignItems: "center",
         gap: 4,
       }}>
-      <span aria-hidden style={{ opacity: 0.85, fontSize: 11, color }}>{icon}</span>
+      <span aria-hidden style={{ fontSize: 11, color }}>{icon}</span>
       <span>{label}</span>
     </div>
     <div
       style={{
         fontSize: 28,
-        fontWeight: 700,
+        fontWeight: 600,
         lineHeight: 1,
+        fontFamily: "var(--site-font-mono)",
         fontVariantNumeric: "tabular-nums",
         color,
       }}>
@@ -587,7 +624,7 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
   </div>
 );
 
-const StatDivider: React.FC = () => <div style={{ width: 1, height: 40, background: "var(--ifm-color-emphasis-200)" }} />;
+const StatDivider: React.FC = () => <div style={{ width: 1, height: 40, background: "var(--site-color-hairline)" }} />;
 
 const PageHeader: React.FC<{
   userAuth: any;
@@ -605,7 +642,7 @@ const PageHeader: React.FC<{
       {/* Title and Level Badge Row */}
       <Flex justify="space-between" align="center" style={{ marginBottom: 16 }}>
         <div>
-          <Title level={2} style={{ marginBottom: 4 }}>
+          <Title level={2} style={{ marginBottom: 4, fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em" }}>
             <Translate id="myCollection.header.title">我的收藏</Translate>
           </Title>
           <Paragraph type="secondary" style={{ fontSize: 14, marginBottom: 0 }}>
@@ -613,24 +650,41 @@ const PageHeader: React.FC<{
           </Paragraph>
         </div>
 
-        {/* Level Badge - Only show when logged in */}
+        {/* Level Badge - Only show when logged in
+            mini spec chip — 和 /user 的 spec card 一脉相承：accent 色 tinted bg + hairline border
+            + SVG geometric icon + mono "L04" 编号 + level name。
+            放弃原 gradient 满色填充（loud），改为 calm editorial 系统统一语言 */}
         {userAuth && (
           <div
             style={{
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
-              padding: "6px 14px",
-              background: levelInfo.color,
-              borderRadius: 16,
-              boxShadow: "var(--site-shadow-sm)",
+              gap: 8,
+              padding: "4px 10px",
+              borderRadius: 12,
+              background: `${levelInfo.accentColor}14`,
+              border: `1px solid ${levelInfo.accentColor}40`,
             }}>
+            <LevelIcon level={levelInfo.level} size={13} color={levelInfo.accentColor} strokeWidth={1.5} />
             <span
               style={{
-                fontSize: 16,
-                fontWeight: 500,
-                color: "#fff",
+                fontSize: 11,
+                color: levelInfo.accentColor,
+                letterSpacing: "0.12em",
+                fontWeight: 600,
+                fontFamily: "var(--site-font-mono)",
+                fontVariantNumeric: "tabular-nums",
               }}>
-              <LevelName level={levelInfo.level} emoji={levelInfo.emoji} />
+              L{String(levelInfo.level).padStart(2, "0")}
+            </span>
+            <span
+              style={{
+                fontSize: 12,
+                color: "var(--ifm-color-content)",
+                fontWeight: 500,
+                letterSpacing: "0.01em",
+              }}>
+              <LevelName level={levelInfo.level} />
             </span>
           </div>
         )}
@@ -640,8 +694,8 @@ const PageHeader: React.FC<{
         <Card
           style={{
             borderRadius: 12,
-            border: "1px solid var(--ifm-color-emphasis-200)",
-            background: "var(--ifm-card-background-color)",
+            border: "1px solid var(--site-color-hairline)",
+            background: "var(--ifm-background-surface-color)",
           }}
           styles={{ body: { padding: "16px 24px" } }}>
           <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
