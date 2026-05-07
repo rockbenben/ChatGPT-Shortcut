@@ -3,10 +3,36 @@ import React from "react";
 import { extractStyle } from "@ant-design/static-style-extract";
 import { ConfigProvider, theme as antdTheme } from "antd";
 
-// 与 Root.tsx 保持一致的暗色主题配置
+// 与 Root.tsx 保持一致的暗色主题配置 — B+ token system
 const darkTheme = {
   token: {
     colorPrimary: "#397e6a",
+    colorBgLayout: "#0d0d0f",
+    colorBgContainer: "#1a1a1e",
+    colorBgElevated: "#23232a",
+    colorBorderSecondary: "rgba(255,255,255,0.08)",
+    colorText: "#ededed",
+    colorTextSecondary: "rgba(255,255,255,0.6)",
+    colorTextTertiary: "rgba(255,255,255,0.4)",
+    borderRadius: 6,
+    borderRadiusSM: 4,
+    borderRadiusLG: 12,
+    fontFamilyCode: 'ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace',
+    motionDurationFast: "0.12s",
+    motionDurationMid: "0.2s",
+    motionDurationSlow: "0.32s",
+  },
+  components: {
+    Card: {
+      headerBg: "transparent",
+      paddingLG: 16,
+    },
+    Tag: {
+      borderRadiusSM: 0,
+    },
+    Button: {
+      borderRadius: 6,
+    },
   },
   algorithm: antdTheme.darkAlgorithm,
   hashed: false,
