@@ -47,6 +47,10 @@
     var(--site-primary-hue-saturation-light) 73%
   );
 
+  /* Markdown / docs 链接走我们的 primary-hi 绿（默认 Infima 是蓝色 #4a90e2） */
+  --ifm-link-color: var(--site-color-tag-selected-text);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
+
   /* Infima dark-mode overrides — 强制暗色，不依赖 data-theme 属性 */
   --ifm-color-scheme: dark;
   --ifm-color-emphasis-0: var(--ifm-color-gray-1000);
@@ -60,11 +64,16 @@
   --ifm-color-emphasis-800: var(--ifm-color-gray-200);
   --ifm-color-emphasis-900: var(--ifm-color-gray-100);
   --ifm-color-emphasis-1000: var(--ifm-color-gray-0);
-  --ifm-background-color: #1b1b1d;
-  --ifm-background-surface-color: #242526;
+  --ifm-background-color: #0d0d0f;
+  --ifm-background-surface-color: #1a1a1e;
   --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
-  --ifm-color-content: #e3e3e3;
-  --ifm-color-content-secondary: rgba(255, 255, 255, 1);
+  --ifm-color-content: #ededed;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
+  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --site-color-hairline: rgba(255, 255, 255, 0.08);
+  --site-color-ghost-border: rgba(255, 255, 255, 0.04);
+  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
   --ifm-breadcrumb-separator-filter: invert(64%) sepia(11%) saturate(0%)
     hue-rotate(149deg) brightness(99%) contrast(95%);
   --ifm-code-background: rgba(255, 255, 255, 0.1);
@@ -291,6 +300,18 @@ img[src$="#gh-light-mode-only"] {
 /* Style external links */
 .theme-doc-markdown {
   font-size: 1rem;
+}
+
+/* Markdown 正文里的 <a> — Infima 默认会被 .theme-doc-markdown 容器内的更具体规则染蓝，
+   :root 里改 --ifm-link-color 不够，必须显式选中。Sidebar 的 .menu__link 不受此影响。 */
+.theme-doc-markdown a,
+article.markdown a {
+  color: var(--site-color-tag-selected-text);
+}
+.theme-doc-markdown a:hover,
+article.markdown a:hover {
+  color: hsl(var(--site-primary-hue-saturation-light) 70%);
+  text-decoration: underline;
 }
 .sidebarLogo_isFc {
   font-size: 1.1rem;

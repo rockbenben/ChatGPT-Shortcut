@@ -85,7 +85,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
       <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
         <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <Card variant="borderless" className="shadow--md" style={{ borderRadius: 12 }}>
+            <Card style={{ borderRadius: 12 }}>
               <Skeleton active paragraph={{ rows: 8 }} />
             </Card>
           </Col>
@@ -130,7 +130,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
             items={[
               {
                 title: (
-                  <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
+                  <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
                     <HomeOutlined style={{ marginRight: 4 }} />
                     <Translate id="link.home">首页</Translate>
                   </Link>
@@ -138,7 +138,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               },
               {
                 title: (
-                  <Link to="/community-prompts" style={{ color: "var(--ifm-color-primary)" }}>
+                  <Link to="/community-prompts" style={{ color: "var(--site-color-tag-selected-text)" }}>
                     <Translate id="link.communityPrompts">社区提示词</Translate>
                   </Link>
                 ),
@@ -149,12 +149,12 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
           />
 
           <Flex vertical gap="middle" style={{ minHeight: 400 }}>
-            {/* 提示词主卡片 — shadow--sm 融入页面而非悬浮 */}
-            <Card variant="borderless" className="shadow--sm" style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
+            {/* 提示词主卡片 — 默认 antd border = hairline，无需额外 shadow */}
+            <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
               <Flex vertical gap="small">
                 {/* 头部：标题 + owner（owner 作为右侧 meta 区） */}
                 <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
-                  <Title level={2} style={{ margin: 0 }}>
+                  <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
                     {prompt.title}
                   </Title>
                   {prompt.owner && <Tag icon={<UserOutlined />}>{prompt.owner}</Tag>}
@@ -163,7 +163,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 {/* 描述/备注 - Quote Style */}
                 {prompt.remark && (
                   <div className="prompt-remark" style={{ marginTop: 12, borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                    <Typography.Text type="secondary" style={{ fontSize: 14 }}>
+                    <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
                       {prompt.remark}
                     </Typography.Text>
                   </div>
@@ -172,7 +172,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 {/* 提示词内容 — Copy 升级为 large primary 主操作 */}
                 <div>
                   <Flex justify="space-between" align="center" style={{ marginBottom: 12 }} wrap="wrap" gap="small">
-                    <Typography.Text strong style={{ fontSize: 16 }}>
+                    <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
                       <Translate id="prompt.content">Prompt 内容</Translate>
                     </Typography.Text>
                     <Button type="primary" size="large" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
@@ -180,17 +180,18 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     </Button>
                   </Flex>
 
-                  {/* CodeSnippet 视觉包装 + 占位符高亮 */}
+                  {/* CodeSnippet 视觉包装 + 占位符高亮 — 深井效果对齐 Phase 2 Modal */}
                   <div
                     style={{
-                      backgroundColor: "var(--ifm-color-emphasis-100)",
-                      borderRadius: 12,
-                      padding: 24,
+                      backgroundColor: "var(--ifm-background-color)",
+                      borderRadius: 6,
+                      padding: "20px 24px",
+                      border: "1px solid var(--site-color-hairline)",
                     }}>
                     <div
                       style={{
-                        fontFamily: "'SF Mono', 'Menlo', 'Consolas', 'Courier New', monospace",
-                        fontSize: 14,
+                        fontFamily: "var(--site-font-mono)",
+                        fontSize: 13,
                         lineHeight: 1.65,
                         whiteSpace: "pre-wrap",
                         wordBreak: "break-word",
@@ -200,8 +201,8 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     </div>
                   </div>
 
-                  {/* 字符 + token 估算 */}
-                  <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 12, color: "var(--ifm-color-emphasis-500)" }}>
+                  {/* 字符 + token 估算 — mono 数字对齐 */}
+                  <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
                     <span>
                       {charCount} <Translate id="prompt.charsLabel">字符</Translate> · ≈ {tokenCount} tokens
                     </span>
@@ -210,10 +211,10 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                   {/* 备注信息 */}
                   {prompt.notes && (
                     <Typography.Paragraph
-                      type="secondary"
                       style={{
-                        fontSize: 14,
-                        lineHeight: 1.6,
+                        fontSize: 13,
+                        lineHeight: 1.55,
+                        color: "var(--ifm-color-content-secondary)",
                         margin: 0,
                         marginTop: 24,
                       }}>
@@ -256,7 +257,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
 
             {/* 评论区卡片 */}
             <Suspense fallback={null}>
-              <Card variant="borderless" className="shadow--md" style={{ minHeight: 480, borderRadius: 12 }}>
+              <Card style={{ minHeight: 480, borderRadius: 12 }}>
                 <Comments pageId={prompt.id} type="userprompt" />
               </Card>
             </Suspense>

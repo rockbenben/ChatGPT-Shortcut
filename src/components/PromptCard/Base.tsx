@@ -30,7 +30,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          borderColor: "var(--ifm-color-emphasis-200)",
+          borderColor: "var(--site-color-hairline)",
           cursor: onCardClick ? "pointer" : undefined,
           ...style,
         }}
@@ -39,13 +39,13 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            padding: 20,
+            padding: 16,
             gap: 8,
             ...bodyStyle,
           },
           actions: {
-            borderTop: "1px solid var(--ifm-color-emphasis-200)",
-            backgroundColor: "var(--ifm-background-surface-color)",
+            borderTop: "1px solid var(--site-color-hairline)",
+            backgroundColor: "transparent",
             padding: "8px 12px",
           },
         }}

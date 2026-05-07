@@ -87,12 +87,10 @@ const ResetPassword = () => {
           style={{
             maxWidth: 440,
             width: "100%",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
-            borderRadius: 16,
-            border: "none",
+            borderRadius: 12,
           }}
-          styles={{ body: { padding: 40 } }}>
-          <Title level={2} style={{ textAlign: "center", marginBottom: 32 }}>
+          styles={{ body: { padding: 32 } }}>
+          <Title level={2} style={{ textAlign: "center", marginBottom: 24, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
             <Translate id="button.resetPassword">重置密码</Translate>
           </Title>
           <Form form={form} layout="vertical" onFinish={onFinishResetPassword} requiredMark={false} initialValues={{ code: resetCode }} size="large">

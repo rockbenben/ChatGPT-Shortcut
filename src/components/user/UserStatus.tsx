@@ -2,9 +2,9 @@ import React, { useContext, useState, useCallback, useMemo } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
-import { UserOutlined, EditOutlined, LogoutOutlined, LikeFilled, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
+import { UserOutlined, EditOutlined, LogoutOutlined, ShareAltOutlined, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
 import LoginComponent from "./login";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
@@ -83,13 +83,13 @@ const UserStatus = () => {
 
   const loggedInButtons = useMemo(
     () => (
-      <Space wrap size="small">
+      <Space wrap size="middle">
         <Button icon={viewMode === "collection" ? <BookOutlined /> : <HeartOutlined />} onClick={() => setViewMode(viewMode === "collection" ? "explore" : "collection")}>
           <span className="hideOnSmallScreen">{viewMode === "collection" ? <Translate id="nav.explore">提示词库</Translate> : <Translate id="nav.myCollection">我的收藏</Translate>}</span>
         </Button>
         <Button icon={<EditOutlined />} onClick={() => setOpen(true)}>
           <span className="hideOnSmallScreen">
-            <Translate id="link.addprompt">添加提示词</Translate>
+            <Translate id="link.addprompt">创建提示词</Translate>
           </span>
         </Button>
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
@@ -102,28 +102,52 @@ const UserStatus = () => {
 
   const loggedOutButtons = useMemo(
     () => (
-      <Space wrap size="middle">
-        <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-          <Translate id="button.login">登录</Translate>
-        </Button>
-        <Link to="/community-prompts">
-          <Button icon={<LikeFilled />}>
-            <span className="hideOnSmallScreen">
-              <Translate id="showcase.header.button">分享你的提示词</Translate>
-            </span>
-          </Button>
-        </Link>
-      </Space>
+      <>
+        {/* Desktop: large CTA, balance hero 40px text。class 挂 wrapper div，避免 display:block !important 干扰 Space 的 inline-flex */}
+        <div className="hideOnSmallScreen">
+          <Space wrap size="middle">
+            <Button type="primary" size="large" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
+              <Translate id="button.login">免费登录</Translate>
+            </Button>
+            <Link to="/community-prompts">
+              <Button size="large" icon={<ShareAltOutlined />}>
+                <Translate id="showcase.header.button">浏览社区分享</Translate>
+              </Button>
+            </Link>
+          </Space>
+        </div>
+        {/* Mobile: default size, share 仅 icon 节省空间 */}
+        <div className="showOnSmallScreen">
+          <Space wrap size="middle">
+            <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
+              <Translate id="button.login">免费登录</Translate>
+            </Button>
+            <Link to="/community-prompts">
+              <Button icon={<ShareAltOutlined />} aria-label={translate({ id: "showcase.header.button", message: "浏览社区分享" })} />
+            </Link>
+          </Space>
+        </div>
+      </>
     ),
     []
   );
 
   if (authLoading) {
     return (
-      <Space wrap size="small">
-        <Skeleton.Button active size="default" style={{ width: 80 }} />
-        <Skeleton.Button active size="default" style={{ width: 120 }} />
-      </Space>
+      <>
+        <div className="hideOnSmallScreen">
+          <Space wrap size="middle">
+            <Skeleton.Button active size="large" style={{ width: 96 }} />
+            <Skeleton.Button active size="large" style={{ width: 144 }} />
+          </Space>
+        </div>
+        <div className="showOnSmallScreen">
+          <Space wrap size="middle">
+            <Skeleton.Button active size="default" style={{ width: 80 }} />
+            <Skeleton.Button active size="default" style={{ width: 32 }} />
+          </Space>
+        </div>
+      </>
     );
   }
 

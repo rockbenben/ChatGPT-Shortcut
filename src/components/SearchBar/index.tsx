@@ -222,12 +222,12 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
   };
 
   return (
-    <div className={styles.searchInput} style={{ marginLeft: "auto" }}>
+    <div className={styles.searchInput}>
       <Input
         ref={inputRef}
         id="searchbar"
         placeholder={translate({
-          message: "搜索提示词...",
+          message: "搜索：写作、翻译、编程…",
           id: "input.search.placeholder",
         })}
         value={value ?? undefined}

@@ -3,12 +3,23 @@
  * Replaces ConfigProvider theme for zeroRuntime compatibility
  */
 
+.searchInput {
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .searchInput {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 .searchInput :global(.ant-input-affix-wrapper) {
   border-radius: 20px;
   height: 32px;
-  border-color: var(--ifm-color-emphasis-100);
-  background: var(--site-color-background);
-  transition: all 0.2s ease;
+  border-color: var(--site-color-hairline);
+  background: var(--ifm-background-surface-color);
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .searchInput :global(.ant-input-affix-wrapper:hover) {

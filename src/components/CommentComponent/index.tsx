@@ -45,7 +45,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
           style={{
             marginTop: 12,
             paddingLeft: 12,
-            borderLeft: "2px solid var(--ifm-color-emphasis-200)",
+            borderLeft: "2px solid var(--site-color-hairline)",
             marginLeft: 8,
           }}>
           {children}
@@ -69,11 +69,11 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
         ...style,
         marginBottom: 16,
         padding: 12,
-        borderRadius: 4,
-        transition: "background-color 0.2s ease",
+        borderRadius: 6,
+        transition: "background-color 0.12s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "var(--ifm-color-emphasis-100)";
+        e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.03)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = "transparent";

@@ -1,34 +1,51 @@
-/* New Card Container Style */
+/* New Card Container Style — B+ design system
+   Card uses hairline border (rgba 0.06) instead of "ghost shadow" for visible definition
+   on the deeper #0d0d0f page background. */
 .showcaseCard {
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  box-shadow: var(--site-shadow-sm), inset 2px 0 0 transparent;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  overflow: hidden;
-  background-color: var(--site-color-card-background);
+  border-radius: 6px;
+  border: 1px solid var(--site-color-hairline);
+  background-color: var(--ifm-background-surface-color);
   display: flex;
   flex-direction: column;
   contain: layout paint;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.12s var(--site-motion-emphasized), box-shadow 0.12s var(--site-motion-emphasized);
 }
 
-/* Hover: only the left edge lights up; a soft teal bloom radiates inward. No vertical lift, no border-color change. */
+/* Top gradient hairline — only on hover. Replaces the old left-edge inset + bloom. */
+.showcaseCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--site-color-tag-selected-text) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.12s var(--site-motion-emphasized);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .showcaseCard:hover {
-  box-shadow:
-    var(--site-shadow-lg),
-    inset 2px 0 0 var(--ifm-color-primary),
-    inset 0 0 28px rgba(var(--ifm-color-primary-rgb), 0.14);
+  border-color: rgba(87, 194, 163, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.showcaseCard:hover::before {
+  opacity: 0.7;
 }
 
 .showcaseCard:focus-visible {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
-  box-shadow: var(--site-shadow-lg);
 }
 
 .showcaseCardBody {
-  line-height: 1.6;
-  color: var(--site-primary-font);
-  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ifm-color-content-secondary);
+  font-size: 13px;
   flex: 1;
 }
 
@@ -38,23 +55,18 @@
   }
 }
 
-/* Title link cascade:
-   - dormant: primary
-   - card hovered: primary-light (subtle lift)
-   - card + text hovered: primary-lighter + underline (full link affordance) */
+/* Title link cascade — B+ keeps card hover quiet:
+   - dormant: colorText (white)
+   - card hovered, link not directly hovered: still colorText (no card-wide tint)
+   - link itself hovered: primary-hi + underline */
 .showcaseCardLink {
-  color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-content) !important;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.12s var(--site-motion-emphasized);
 }
 
-.showcaseCard:hover .showcaseCardLink {
-  color: var(--ifm-color-primary-light) !important;
-}
-
-/* Underline + brighter only on anchors — non-link spans (private user cards) should not fake clickability. */
 .showcaseCard:hover a.showcaseCardLink:hover {
-  color: var(--ifm-color-primary-lighter) !important;
+  color: var(--site-color-tag-selected-text) !important;
   text-decoration: underline !important;
 }
 
@@ -66,6 +78,7 @@
 /* Card Actions - Expand clickable area */
 .showcaseCard :global(.ant-card-actions) {
   display: flex;
+  background-color: transparent;
 }
 
 .showcaseCard :global(.ant-card-actions > li) {
@@ -84,26 +97,35 @@
 .showcaseCard :global(.ant-card-actions .ant-btn) {
   width: 100%;
   height: 100%;
-  min-height: 40px;
+  min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.12s var(--site-motion-emphasized), color 0.12s var(--site-motion-emphasized);
 }
 
 .showcaseCard :global(.ant-card-actions .ant-btn):hover {
-  background-color: rgba(var(--ifm-color-primary-rgb), 0.08);
-  color: var(--ifm-color-primary);
+  background-color: rgba(87, 194, 163, 0.08);
+  color: var(--site-color-tag-selected-text);
 }
 
-/* Top-right stats (fire/copy count, like/vote): dye to primary on card hover. */
-.showcaseCard :global(.ant-statistic-content),
-.showcaseCard :global(.ant-statistic .anticon) {
-  transition: color 0.25s ease;
+/* Top-right stats: tabular mono for numbers */
+.showcaseCard :global(.ant-statistic-content) {
+  font-family: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.12s var(--site-motion-emphasized);
 }
 
-.showcaseCard:hover :global(.ant-statistic-content),
-.showcaseCard:hover :global(.ant-statistic .anticon) {
-  color: var(--ifm-color-primary-lighter) !important;
+/* Card hover "wake-up": all passive icons in card body — lock, drag handle, website link,
+   stat icons (fire/like) and stat numbers — lift to primary-hi together with the card.
+   Excludes .ant-card-actions buttons which have their own per-button hover.
+   HeartFilled (favorite) inline-colored pink in actions stays pink (not in body). */
+.showcaseCard :global(.ant-card-body .anticon) {
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+
+.showcaseCard:hover :global(.ant-card-body .anticon),
+.showcaseCard:hover :global(.ant-statistic-content) {
+  color: var(--site-color-tag-selected-text) !important;
 }

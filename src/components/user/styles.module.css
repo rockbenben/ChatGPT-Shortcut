@@ -6,19 +6,19 @@
 .searchInput :global(.ant-input-affix-wrapper) {
   border-radius: 20px;
   height: 32px;
-  border-color: transparent;
-  background: var(--site-color-background);
-  transition: all 0.2s ease;
+  border-color: var(--site-color-hairline);
+  background: var(--ifm-background-surface-color);
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .searchInput :global(.ant-input-affix-wrapper:hover) {
-  border-color: var(--ifm-color-emphasis-300);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .searchInput :global(.ant-input-affix-wrapper:focus),
 .searchInput :global(.ant-input-affix-wrapper-focused) {
-  border-color: transparent;
-  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+  border-color: var(--site-color-tag-selected-text);
+  box-shadow: 0 0 0 2px rgba(87, 194, 163, 0.2);
 }
 
 .searchInput :global(.ant-input) {
