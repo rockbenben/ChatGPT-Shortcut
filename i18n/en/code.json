@@ -3,7 +3,7 @@
     "message": "Add"
   },
   "action.addPrompt": {
-    "message": "Add Prompt"
+    "message": "Create Prompt"
   },
   "action.backToLogin": {
     "message": "Back to Login"
@@ -63,7 +63,7 @@
     "message": "Show Tags"
   },
   "action.updatePrompt": {
-    "message": "Update Prompt"
+    "message": "Save"
   },
   "action.upvote": {
     "message": "Like"
@@ -93,7 +93,7 @@
     "message": "Import Prompts"
   },
   "button.login": {
-    "message": "Login"
+    "message": "Sign in free"
   },
   "button.logout": {
     "message": "Logout"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Your feedback is important to us!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut is an open-source prompt management tool dedicated to improving AI efficiency. We eagerly look forward to your participation: whether reporting bugs, suggesting features, or sharing premium prompts. For prompt submissions, we support multiple languages, and once accepted, they will be included with attribution (searchable by username). Every contribution helps community members expand their thinking and boost productivity. Let's build a perfect prompt library together!"
-  },
   "feedback.subtitle": {
-    "message": "Every contribution you make helps make this open-source project better"
+    "message": "Bug reports, feature requests, usage questions—every voice welcome"
   },
   "feedback.title": {
     "message": "Feedback & Suggestions"
   },
   "feedback.welcome": {
-    "message": "Feedback Welcome"
+    "message": "Feedback & Suggestions"
   },
   "homepage.description": {
     "message": "Frustrated by irrelevant AI answers? AiShort offers practical prompt templates for writing, coding, and translation. One-click copy to unlock precise AI outputs and double your efficiency!"
   },
   "homepage.slogan": {
-    "message": "Curated AI Prompts for More Efficient Conversations"
+    "message": "Curated AI prompts. One-click ready to use."
   },
   "homepage.title": {
     "message": "AiShort - AI Prompt Library | Curated Prompts to Boost AI Productivity"
@@ -243,7 +240,7 @@
     "message": "Please enter your reset code!"
   },
   "input.search.placeholder": {
-    "message": "Search prompts..."
+    "message": "Search: writing, translation, coding…"
   },
   "label.agree": {
     "message": "Agree"
@@ -267,46 +264,25 @@
     "message": "Would you like to share this prompt to the public page?"
   },
   "level.bronze": {
-    "message": "Bronze Star"
-  },
-  "level.bronze.desc": {
-    "message": "Great start! Keep up the momentum!"
+    "message": "Bronze"
   },
   "level.diamond": {
-    "message": "Diamond Legend"
-  },
-  "level.diamond.desc": {
-    "message": "Elite contributor, a true community legend!"
+    "message": "Diamond"
   },
   "level.gold": {
-    "message": "Gold Expert"
-  },
-  "level.gold.desc": {
-    "message": "Experienced and highly trusted!"
-  },
-  "level.max.congrats": {
-    "message": "Congratulations on reaching the highest level! You are a legendary contributor!"
+    "message": "Gold"
   },
   "level.newcomer": {
-    "message": "Explorer"
-  },
-  "level.newcomer.desc": {
-    "message": "Share your first prompt to begin the journey!"
+    "message": "Novice Explorer"
   },
   "level.platinum": {
-    "message": "Platinum Master"
-  },
-  "level.platinum.desc": {
-    "message": "Seasoned expert with remarkable influence!"
+    "message": "Platinum"
   },
   "level.silver": {
-    "message": "Silver Elite"
-  },
-  "level.silver.desc": {
-    "message": "Active contributor, growing strong!"
+    "message": "Silver"
   },
   "link.addprompt": {
-    "message": "Add Prompt"
+    "message": "Create Prompt"
   },
   "link.communityPrompts": {
     "message": "Community Prompts"
@@ -456,7 +432,7 @@
     "message": "No prompts yet, go create one"
   },
   "message.noSpaceItems": {
-    "message": "No content yet, go add prompts or favorites"
+    "message": "Nothing here yet — create a prompt or favorite some"
   },
   "message.orderSaveFailed": {
     "message": "Failed to save layout"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Username/Email"
   },
-  "progress.toNextLevel": {
-    "message": "To next level"
-  },
   "prompt.charsLabel": {
     "message": "chars"
   },
@@ -630,7 +603,7 @@
     "message": "Prompt is quite long; consider shortening or splitting."
   },
   "showcase.header.button": {
-    "message": "Share your prompt"
+    "message": "Browse Community"
   },
   "showcase.tag.academic.description": {
     "message": "Academic research, instructional design, curriculum planning, and other teacher support"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Related Prompts"
-  },
-  "stat.sharedPrompts": {
-    "message": "Shared Prompts"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Close",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Shared by community members · Views don't represent the project"
+  },
+  "level.stardust": {
+    "message": "Stardust"
+  },
+  "level.emerald": {
+    "message": "Emerald"
+  },
+  "level.ruby": {
+    "message": "Ruby"
+  },
+  "level.sapphire": {
+    "message": "Sapphire"
+  },
+  "feedback.type.bug": {
+    "message": "Bug Reports"
+  },
+  "feedback.type.suggestion": {
+    "message": "Feature Requests"
+  },
+  "feedback.type.help": {
+    "message": "Usage Help"
+  },
+  "feedback.spec_label": {
+    "message": "Open Channel"
+  },
+  "hero.supportedAiTools": {
+    "message": "Works with {tools} & more",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "No matching prompts found",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Try a different keyword, or clear tag filters",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "{next} ahead",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

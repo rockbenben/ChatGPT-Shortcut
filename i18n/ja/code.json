@@ -3,7 +3,7 @@
     "message": "追加"
   },
   "action.addPrompt": {
-    "message": "プロンプトを追加"
+    "message": "プロンプトを作成"
   },
   "action.backToLogin": {
     "message": "ログインに戻る"
@@ -63,7 +63,7 @@
     "message": "タグを表示"
   },
   "action.updatePrompt": {
-    "message": "プロンプトを更新"
+    "message": "保存"
   },
   "action.upvote": {
     "message": "高評価"
@@ -93,7 +93,7 @@
     "message": "プロンプトをインポート"
   },
   "button.login": {
-    "message": "ログイン"
+    "message": "無料ログイン"
   },
   "button.logout": {
     "message": "ログアウト"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "あなたのフィードバックは私たちにとって重要です！"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcutは、AIの効率向上に特化したオープンソースのプロンプト管理ツールです。バグの報告、機能の提案、高品質なプロンプトの共有など、皆様のご参加をお待ちしております。プロンプトの投稿については、多言語に対応しており、採用された場合は帰属表示（ユーザー名で検索可能）付きで掲載されます。すべての貢献は、コミュニティメンバーが思考を広げ、生産性を向上させるのに役立ちます。一緒に完璧なプロンプトライブラリを作りましょう！"
-  },
   "feedback.subtitle": {
-    "message": "あなたのすべての貢献が、このオープンソースプロジェクトをより良くするのに役立ちます"
+    "message": "バグ報告、機能提案、使い方の質問——どんな声も歓迎します"
   },
   "feedback.title": {
     "message": "フィードバックと提案"
   },
   "feedback.welcome": {
-    "message": "フィードバックを歓迎します"
+    "message": "フィードバックと提案"
   },
   "homepage.description": {
     "message": "AIの回答がいつも的外れ？AiShortは執筆・プログラミング・翻訳に役立つ実用的なプロンプトを収録。ワンクリックでコピーして作業効率を倍増！"
   },
   "homepage.slogan": {
-    "message": "厳選されたAIプロンプトで、会話をより効率的に"
+    "message": "厳選AIプロンプト、ワンクリックで使える"
   },
   "homepage.title": {
     "message": "AiShort - AIプロンプト集 | 厳選テンプレートで生産性向上"
@@ -243,7 +240,7 @@
     "message": "リセットコードを入力してください！"
   },
   "input.search.placeholder": {
-    "message": "プロンプトを検索..."
+    "message": "検索：執筆、翻訳、プログラミング…"
   },
   "label.agree": {
     "message": "同意する"
@@ -267,46 +264,25 @@
     "message": "このプロンプトを公開ページで共有しますか？"
   },
   "level.bronze": {
-    "message": "ブロンズスター"
-  },
-  "level.bronze.desc": {
-    "message": "素晴らしいスタート！この調子で！"
+    "message": "ブロンズ"
   },
   "level.diamond": {
-    "message": "ダイヤモンドレジェンド"
-  },
-  "level.diamond.desc": {
-    "message": "トップ貢献者、コミュニティの伝説！"
+    "message": "ダイヤモンド"
   },
   "level.gold": {
-    "message": "ゴールドエキスパート"
-  },
-  "level.gold.desc": {
-    "message": "経験豊富で信頼できる！"
-  },
-  "level.max.congrats": {
-    "message": "最高レベル達成おめでとうございます！あなたは伝説の貢献者です！"
+    "message": "ゴールド"
   },
   "level.newcomer": {
-    "message": "探検家"
-  },
-  "level.newcomer.desc": {
-    "message": "最初のプロンプトを共有して旅を始めよう！"
+    "message": "初心者の探検家"
   },
   "level.platinum": {
-    "message": "プラチナマスター"
-  },
-  "level.platinum.desc": {
-    "message": "ベテラン専門家、並外れた影響力！"
+    "message": "プラチナ"
   },
   "level.silver": {
-    "message": "シルバーエリート"
-  },
-  "level.silver.desc": {
-    "message": "アクティブな貢献者、成長中！"
+    "message": "シルバー"
   },
   "link.addprompt": {
-    "message": "プロンプトを追加"
+    "message": "プロンプトを作成"
   },
   "link.communityPrompts": {
     "message": "コミュニティプロンプト"
@@ -456,7 +432,7 @@
     "message": "まだプロンプトがありません。作成しましょう"
   },
   "message.noSpaceItems": {
-    "message": "まだコンテンツがありません。プロンプトやお気に入りを追加しましょう"
+    "message": "コンテンツがありません — プロンプトを作成するか、お気に入り登録しましょう"
   },
   "message.orderSaveFailed": {
     "message": "配置の保存に失敗しました"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "ユーザー名/メールアドレス"
   },
-  "progress.toNextLevel": {
-    "message": "次のレベルまで"
-  },
   "prompt.charsLabel": {
     "message": "文字"
   },
@@ -630,7 +603,7 @@
     "message": "プロンプトが長めです。短縮するか分割することをお勧めします。"
   },
   "showcase.header.button": {
-    "message": "プロンプトを共有"
+    "message": "コミュニティ投稿を見る"
   },
   "showcase.tag.academic.description": {
     "message": "学術研究、教育設計、カリキュラム計画など、教師の仕事のサポート"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "関連プロンプト"
-  },
-  "stat.sharedPrompts": {
-    "message": "共有プロンプト"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "閉じる",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "コミュニティメンバーによる投稿 · 意見はプロジェクトを代表しません"
+  },
+  "level.stardust": {
+    "message": "スターダスト"
+  },
+  "level.emerald": {
+    "message": "エメラルド"
+  },
+  "level.ruby": {
+    "message": "ルビー"
+  },
+  "level.sapphire": {
+    "message": "サファイア"
+  },
+  "feedback.type.bug": {
+    "message": "バグ報告"
+  },
+  "feedback.type.suggestion": {
+    "message": "機能提案"
+  },
+  "feedback.type.help": {
+    "message": "使い方の質問"
+  },
+  "feedback.spec_label": {
+    "message": "オープンチャンネル"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} などに対応",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "一致するプロンプトが見つかりません",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "別のキーワードを試すか、タグフィルターをクリアしてください",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」まで",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

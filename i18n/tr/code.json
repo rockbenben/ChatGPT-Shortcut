@@ -3,7 +3,7 @@
     "message": "Ekle"
   },
   "action.addPrompt": {
-    "message": "Ekle Prompt"
+    "message": "Prompt Oluştur"
   },
   "action.backToLogin": {
     "message": "Girişe Dön"
@@ -63,7 +63,7 @@
     "message": "Etiketleri Göster"
   },
   "action.updatePrompt": {
-    "message": "Prompt'u Güncelle"
+    "message": "Kaydet"
   },
   "action.upvote": {
     "message": "Beğen"
@@ -93,7 +93,7 @@
     "message": "Promptları İçe Aktar"
   },
   "button.login": {
-    "message": "Giriş"
+    "message": "Ücretsiz Giriş"
   },
   "button.logout": {
     "message": "Çıkış"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Geri bildiriminiz bizim için çok önemli!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut, AI verimliliğini artırmaya adanmış açık kaynaklı bir Prompt yönetim aracıdır. Katılımınızı heyecanla bekliyoruz: hata raporlama, özellik önerme veya kaliteli Prompt paylaşma. Prompt gönderimleri için birden fazla dili destekliyoruz ve kabul edildiğinde atıfla birlikte dahil edilecektir (kullanıcı adıyla aranabilir). Her katkı, topluluk üyelerinin düşüncelerini genişletmesine ve verimliliği artırmasına yardımcı olur. Birlikte mükemmel Prompt kütüphanesini oluşturalım!"
-  },
   "feedback.subtitle": {
-    "message": "Her katkınız bu açık kaynak projesini daha iyi hale getiriyor"
+    "message": "Hata raporları, özellik istekleri, kullanım soruları—her ses memnuniyetle karşılanır"
   },
   "feedback.title": {
     "message": "Geri Bildirim ve Öneriler"
   },
   "feedback.welcome": {
-    "message": "Geri Bildirimi Memnuniyetle Karşılıyoruz"
+    "message": "Geri Bildirim ve Öneriler"
   },
   "homepage.description": {
     "message": "AI'ın alakasız cevaplarından bıktınız mı? AiShort, yazma, kodlama ve çeviri için pratik prompt şablonları sunar!"
   },
   "homepage.slogan": {
-    "message": "Daha verimli konuşmalar için özenle seçilmiş AI Promptları"
+    "message": "Seçilmiş AI promptları, tek tıkla kullanıma hazır"
   },
   "homepage.title": {
     "message": "AiShort - AI Prompt Kütüphanesi | AI Verimliliğini Artıran Seçilmiş Promptlar"
@@ -243,7 +240,7 @@
     "message": "Lütfen sıfırlama kodunuzu girin!"
   },
   "input.search.placeholder": {
-    "message": "Prompt ara..."
+    "message": "Ara: yazma, çeviri, kodlama…"
   },
   "label.agree": {
     "message": "Kabul ediyorum"
@@ -267,46 +264,25 @@
     "message": "Bu prompt'u genel sayfada paylaşmak ister misiniz?"
   },
   "level.bronze": {
-    "message": "Bronz Yeni Yıldız"
-  },
-  "level.bronze.desc": {
-    "message": "İlk adımı attı, devam et!"
+    "message": "Bronz"
   },
   "level.diamond": {
-    "message": "Elmas Efsane"
-  },
-  "level.diamond.desc": {
-    "message": "En üst düzey katkıda bulunan, topluluk efsanesi!"
+    "message": "Elmas"
   },
   "level.gold": {
-    "message": "Altın Uzman"
-  },
-  "level.gold.desc": {
-    "message": "Deneyimli, güvenilir!"
-  },
-  "level.max.congrats": {
-    "message": "En yüksek seviyeye ulaştığınız için tebrikler! Siz topluluk efsanesisiniz!"
+    "message": "Altın"
   },
   "level.newcomer": {
-    "message": "Çaylak Kaşif"
-  },
-  "level.newcomer.desc": {
-    "message": "İlk Prompt'u paylaş, yaratıcılık yolculuğuna başla!"
+    "message": "Acemi Kâşif"
   },
   "level.platinum": {
-    "message": "Platin Usta"
-  },
-  "level.platinum.desc": {
-    "message": "Kıdemli uzman, olağanüstü etki!"
+    "message": "Platin"
   },
   "level.silver": {
-    "message": "Gümüş Elit"
-  },
-  "level.silver.desc": {
-    "message": "Aktif katkıda bulunan, sürekli gelişiyor!"
+    "message": "Gümüş"
   },
   "link.addprompt": {
-    "message": "Prompt Ekle"
+    "message": "Prompt Oluştur"
   },
   "link.communityPrompts": {
     "message": "Topluluk Promptları"
@@ -456,7 +432,7 @@
     "message": "Henüz Prompt yok, bir tane oluşturun"
   },
   "message.noSpaceItems": {
-    "message": "Henüz içerik yok, Prompt veya Favori ekleyin"
+    "message": "Henüz bir şey yok — bir prompt oluştur veya favorilere ekle"
   },
   "message.orderSaveFailed": {
     "message": "Sıralama kaydedilemedi"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Kullanıcı adı/E-posta"
   },
-  "progress.toNextLevel": {
-    "message": "Sonraki seviyeye"
-  },
   "prompt.charsLabel": {
     "message": "karakter"
   },
@@ -630,7 +603,7 @@
     "message": "Prompt oldukça uzun, kısaltmanız veya bölmenizi öneririz"
   },
   "showcase.header.button": {
-    "message": "Prompt'unuzu Paylaşın"
+    "message": "Topluluğu Keşfet"
   },
   "showcase.tag.academic.description": {
     "message": "Akademik araştırma, öğretim tasarımı, müfredat planlaması ve öğretmen desteği"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "İlgili promptlar"
-  },
-  "stat.sharedPrompts": {
-    "message": "Paylaşılan Promptlar"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Kapat",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Topluluk üyeleri tarafından paylaşıldı · Görüşler projeyi temsil etmez"
+  },
+  "level.stardust": {
+    "message": "Yıldız Tozu"
+  },
+  "level.emerald": {
+    "message": "Zümrüt"
+  },
+  "level.ruby": {
+    "message": "Yakut"
+  },
+  "level.sapphire": {
+    "message": "Safir"
+  },
+  "feedback.type.bug": {
+    "message": "Hata Raporları"
+  },
+  "feedback.type.suggestion": {
+    "message": "Öneriler"
+  },
+  "feedback.type.help": {
+    "message": "Yardım"
+  },
+  "feedback.spec_label": {
+    "message": "Açık Kanal"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} ve daha fazlasıyla uyumlu",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Eşleşen prompt bulunamadı",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Farklı bir anahtar kelime deneyin veya etiket filtrelerini temizleyin",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "{next}'e kadar",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

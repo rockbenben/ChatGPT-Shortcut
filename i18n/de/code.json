@@ -3,7 +3,7 @@
     "message": "Hinzufügen"
   },
   "action.addPrompt": {
-    "message": "Prompt hinzufügen"
+    "message": "Prompt erstellen"
   },
   "action.backToLogin": {
     "message": "Zurück zur Anmeldung"
@@ -63,7 +63,7 @@
     "message": "Tags anzeigen"
   },
   "action.updatePrompt": {
-    "message": "Prompt aktualisieren"
+    "message": "Speichern"
   },
   "action.upvote": {
     "message": "Gefällt mir"
@@ -93,7 +93,7 @@
     "message": "Prompts importieren"
   },
   "button.login": {
-    "message": "Anmelden"
+    "message": "Kostenlos anmelden"
   },
   "button.logout": {
     "message": "Abmelden"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "Ihr Feedback ist uns wichtig!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut ist ein Open-Source-Prompt-Management-Tool, das sich der Verbesserung der KI-Effizienz widmet. Wir freuen uns auf Ihre Teilnahme: sei es durch das Melden von Fehlern, das Vorschlagen von Funktionen oder das Teilen von Premium-Prompts. Für Prompt-Einreichungen unterstützen wir mehrere Sprachen, und nach Annahme werden sie mit Namensnennung aufgenommen (durchsuchbar nach Benutzername). Jeder Beitrag hilft den Community-Mitgliedern, ihr Denken zu erweitern und die Produktivität zu steigern. Lassen Sie uns gemeinsam eine perfekte Prompt-Bibliothek aufbauen!"
-  },
   "feedback.subtitle": {
-    "message": "Jeder Beitrag hilft, dieses Open-Source-Projekt besser zu machen"
+    "message": "Bug-Reports, Feature-Wünsche, Nutzungsfragen—jede Stimme willkommen"
   },
   "feedback.title": {
     "message": "Feedback & Vorschläge"
   },
   "feedback.welcome": {
-    "message": "Feedback willkommen"
+    "message": "Feedback & Vorschläge"
   },
   "homepage.description": {
     "message": "Frustriert über irrelevante KI-Antworten? AiShort bietet praktische Vorlagen für Schreiben, Programmieren und Übersetzen. Ein-Klick-Kopie für doppelte Effizienz!"
   },
   "homepage.slogan": {
-    "message": "Ausgewählte KI-Prompts für effizientere Gespräche"
+    "message": "Kuratierte KI-Prompts, mit einem Klick einsatzbereit"
   },
   "homepage.title": {
     "message": "AiShort - KI-Prompt-Bibliothek | Vorlagen für mehr Produktivität"
@@ -243,7 +240,7 @@
     "message": "Bitte geben Sie Ihren Reset-Code ein!"
   },
   "input.search.placeholder": {
-    "message": "Prompts suchen..."
+    "message": "Suchen: Schreiben, Übersetzung, Coding…"
   },
   "label.agree": {
     "message": "Zustimmen"
@@ -267,46 +264,25 @@
     "message": "Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?"
   },
   "level.bronze": {
-    "message": "Bronze-Stern"
-  },
-  "level.bronze.desc": {
-    "message": "Toller Start! Weiter so!"
+    "message": "Bronze"
   },
   "level.diamond": {
-    "message": "Diamant-Legende"
-  },
-  "level.diamond.desc": {
-    "message": "Top-Beitragender, eine echte Community-Legende!"
+    "message": "Diamant"
   },
   "level.gold": {
-    "message": "Gold-Experte"
-  },
-  "level.gold.desc": {
-    "message": "Erfahren und sehr vertrauenswürdig!"
-  },
-  "level.max.congrats": {
-    "message": "Herzlichen Glückwunsch zum Erreichen des höchsten Levels! Sie sind ein legendärer Beitragender!"
+    "message": "Gold"
   },
   "level.newcomer": {
-    "message": "Entdecker"
-  },
-  "level.newcomer.desc": {
-    "message": "Teilen Sie Ihren ersten Prompt, um die Reise zu beginnen!"
+    "message": "Neuling-Forscher"
   },
   "level.platinum": {
-    "message": "Platin-Meister"
-  },
-  "level.platinum.desc": {
-    "message": "Erfahrener Experte mit bemerkenswertem Einfluss!"
+    "message": "Platin"
   },
   "level.silver": {
-    "message": "Silber-Elite"
-  },
-  "level.silver.desc": {
-    "message": "Aktiver Beitragender, wächst stetig!"
+    "message": "Silber"
   },
   "link.addprompt": {
-    "message": "Prompt hinzufügen"
+    "message": "Prompt erstellen"
   },
   "link.communityPrompts": {
     "message": "Community-Prompts"
@@ -456,7 +432,7 @@
     "message": "Noch keine Prompts, erstellen Sie einen"
   },
   "message.noSpaceItems": {
-    "message": "Noch kein Inhalt, fügen Sie Prompts oder Favoriten hinzu"
+    "message": "Noch nichts hier — erstelle einen Prompt oder favorisiere welche"
   },
   "message.orderSaveFailed": {
     "message": "Speichern der Anordnung fehlgeschlagen"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "Benutzername/E-Mail"
   },
-  "progress.toNextLevel": {
-    "message": "Bis zum nächsten Level"
-  },
   "prompt.charsLabel": {
     "message": "Zeichen"
   },
@@ -630,7 +603,7 @@
     "message": "Der Prompt ist ziemlich lang; erwägen Sie eine Kürzung oder Aufteilung."
   },
   "showcase.header.button": {
-    "message": "Teilen Sie Ihren Prompt"
+    "message": "Community erkunden"
   },
   "showcase.tag.academic.description": {
     "message": "Akademische Forschung, Unterrichtsgestaltung, Lehrplanplanung und andere Lehrerunterstützung"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "Verwandte Prompts"
-  },
-  "stat.sharedPrompts": {
-    "message": "Geteilte Prompts"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Schließen",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "Von Community-Mitgliedern geteilt · Ansichten vertreten nicht das Projekt"
+  },
+  "level.stardust": {
+    "message": "Sternenstaub"
+  },
+  "level.emerald": {
+    "message": "Smaragd"
+  },
+  "level.ruby": {
+    "message": "Rubin"
+  },
+  "level.sapphire": {
+    "message": "Saphir"
+  },
+  "feedback.type.bug": {
+    "message": "Bug-Reports"
+  },
+  "feedback.type.suggestion": {
+    "message": "Vorschläge"
+  },
+  "feedback.type.help": {
+    "message": "Hilfe"
+  },
+  "feedback.spec_label": {
+    "message": "Offener Kanal"
+  },
+  "hero.supportedAiTools": {
+    "message": "Funktioniert mit {tools} & mehr",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "Keine passenden Prompts gefunden",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "Versuche ein anderes Stichwort oder entferne die Tag-Filter",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "bis {next}",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }

@@ -3,7 +3,7 @@
     "message": "जोड़ें"
   },
   "action.addPrompt": {
-    "message": "प्रॉम्प्ट जोड़ें"
+    "message": "प्रॉम्प्ट बनाएँ"
   },
   "action.backToLogin": {
     "message": "लॉगिन पर वापस जाएं"
@@ -63,7 +63,7 @@
     "message": "टैग दिखाएं"
   },
   "action.updatePrompt": {
-    "message": "प्रॉम्प्ट अपडेट करें"
+    "message": "सहेजें"
   },
   "action.upvote": {
     "message": "पसंद"
@@ -93,7 +93,7 @@
     "message": "प्रॉम्प्ट आयात करें"
   },
   "button.login": {
-    "message": "लॉगिन"
+    "message": "मुफ्त लॉगिन"
   },
   "button.logout": {
     "message": "लॉगआउट"
@@ -197,23 +197,20 @@
   "feedback.description": {
     "message": "आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है!"
   },
-  "feedback.paragraph": {
-    "message": "ChatGPT Shortcut एक ओपन सोर्स प्रॉम्प्ट प्रबंधन उपकरण है जो एआई दक्षता में सुधार के लिए समर्पित है। हम आपकी भागीदारी के लिए तत्पर हैं: बग रिपोर्ट करना, सुविधाओं का सुझाव देना या उच्च-गुणवत्ता वाले प्रॉम्प्ट्स साझा करना। प्रॉम्प्ट सबमिशन के लिए, हम कई भाषाओं का समर्थन करते हैं और एक बार स्वीकार किए जाने पर, उन्हें एट्रिब्यूशन (उपयोगकर्ता नाम द्वारा खोजा जा सकता है) के साथ शामिल किया जाएगा। प्रत्येक योगदान समुदाय के सदस्यों को अपनी सोच का विस्तार करने और उत्पादकता बढ़ाने में मदद करता है। आइए एक साथ एक आदर्श प्रॉम्प्ट लाइब्रेरी बनाएं!"
-  },
   "feedback.subtitle": {
-    "message": "आपका हर योगदान इस ओपन सोर्स प्रोजेक्ट को बेहतर बनाने में मदद करता है"
+    "message": "बग रिपोर्ट, फीचर सुझाव, उपयोग संबंधी प्रश्न—हर आवाज़ का स्वागत है"
   },
   "feedback.title": {
     "message": "प्रतिक्रिया और सुझाव"
   },
   "feedback.welcome": {
-    "message": "प्रतिक्रिया का स्वागत है"
+    "message": "प्रतिक्रिया और सुझाव"
   },
   "homepage.description": {
     "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
   },
   "homepage.slogan": {
-    "message": "चयनित एआई प्रॉम्प्ट्स, हर बातचीत को अधिक कुशल बनाते हैं"
+    "message": "चुनिंदा AI प्रॉम्प्ट, एक क्लिक में उपयोग के लिए तैयार"
   },
   "homepage.title": {
     "message": "AiShort - AI प्रॉम्प्ट लाइब्रेरी | उत्पादकता बढ़ाने के टेम्पलेट"
@@ -243,7 +240,7 @@
     "message": "कृपया अपना रीसेट कोड दर्ज करें!"
   },
   "input.search.placeholder": {
-    "message": "प्रॉम्प्ट खोजें..."
+    "message": "खोजें: लेखन, अनुवाद, कोडिंग…"
   },
   "label.agree": {
     "message": "सहमत"
@@ -267,46 +264,25 @@
     "message": "क्या आप इस प्रॉम्प्ट को सार्वजनिक पृष्ठ पर साझा करना चाहेंगे?"
   },
   "level.bronze": {
-    "message": "ब्रॉन्ज स्टार"
-  },
-  "level.bronze.desc": {
-    "message": "बढ़िया शुरुआत! इस गति को बनाए रखें!"
+    "message": "कांस्य"
   },
   "level.diamond": {
-    "message": "डायमंड लीजेंड"
-  },
-  "level.diamond.desc": {
-    "message": "शीर्ष योगदानकर्ता, समुदाय की एक सच्ची किंवदंती!"
+    "message": "हीरा"
   },
   "level.gold": {
-    "message": "गोल्ड एक्सपर्ट"
-  },
-  "level.gold.desc": {
-    "message": "अनुभवी और अत्यधिक भरोसेमंद!"
-  },
-  "level.max.congrats": {
-    "message": "उच्चतम स्तर प्राप्त करने पर बधाई! आप एक किंवदंती योगदानकर्ता हैं!"
+    "message": "स्वर्ण"
   },
   "level.newcomer": {
-    "message": "एक्सप्लोरर"
-  },
-  "level.newcomer.desc": {
-    "message": "यात्रा शुरू करने के लिए अपना पहला प्रॉम्प्ट साझा करें!"
+    "message": "नौसिखिया खोजकर्ता"
   },
   "level.platinum": {
-    "message": "प्लैटिनम मास्टर"
-  },
-  "level.platinum.desc": {
-    "message": "अनुभवी विशेषज्ञ, उल्लेखनीय प्रभाव!"
+    "message": "प्लैटिनम"
   },
   "level.silver": {
-    "message": "सिल्वर एलीट"
-  },
-  "level.silver.desc": {
-    "message": "सक्रिय योगदानकर्ता, मजबूती से बढ़ रहा है!"
+    "message": "चाँदी"
   },
   "link.addprompt": {
-    "message": "प्रॉम्प्ट जोड़ें"
+    "message": "प्रॉम्प्ट बनाएँ"
   },
   "link.communityPrompts": {
     "message": "सामुदायिक प्रॉन्प्ट्स"
@@ -456,7 +432,7 @@
     "message": "अभी तक कोई प्रॉम्प्ट नहीं, एक बनाएं"
   },
   "message.noSpaceItems": {
-    "message": "अभी तक कोई सामग्री नहीं, प्रॉम्प्ट या पसंदीदा जोड़ें"
+    "message": "अभी कुछ नहीं — एक प्रॉम्प्ट बनाएँ या किसी को पसंदीदा बनाएँ"
   },
   "message.orderSaveFailed": {
     "message": "व्यवस्था सहेजने में विफल"
@@ -611,9 +587,6 @@
   "placeholder.usernameOrEmail": {
     "message": "उपयोगकर्ता नाम/ईमेल"
   },
-  "progress.toNextLevel": {
-    "message": "अगले स्तर तक"
-  },
   "prompt.charsLabel": {
     "message": "वर्ण"
   },
@@ -630,7 +603,7 @@
     "message": "प्रॉम्प्ट काफी लंबा है; इसे छोटा करने या विभाजित करने पर विचार करें।"
   },
   "showcase.header.button": {
-    "message": "अपना प्रॉम्प्ट साझा करें"
+    "message": "समुदाय देखें"
   },
   "showcase.tag.academic.description": {
     "message": "अकादमिक शोध, अनुदेशात्मक डिजाइन, पाठ्यक्रम योजना और अन्य शिक्षक सहायता"
@@ -793,9 +766,6 @@
   },
   "sidebar.related": {
     "message": "संबंधित प्रॉम्प्ट"
-  },
-  "stat.sharedPrompts": {
-    "message": "साझा किए गए प्रॉम्प्ट"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "बंद करे",
@@ -1198,5 +1168,57 @@
   },
   "communityPrompts.disclaimer": {
     "message": "समुदाय के सदस्यों द्वारा साझा · विचार परियोजना का प्रतिनिधित्व नहीं करते"
+  },
+  "level.stardust": {
+    "message": "तारा-धूल"
+  },
+  "level.emerald": {
+    "message": "पन्ना"
+  },
+  "level.ruby": {
+    "message": "माणिक"
+  },
+  "level.sapphire": {
+    "message": "नीलम"
+  },
+  "feedback.type.bug": {
+    "message": "बग रिपोर्ट"
+  },
+  "feedback.type.suggestion": {
+    "message": "फीचर सुझाव"
+  },
+  "feedback.type.help": {
+    "message": "उपयोग सहायता"
+  },
+  "feedback.spec_label": {
+    "message": "खुला चैनल"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} व अधिक के साथ",
+    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+  },
+  "noResults.title": {
+    "message": "कोई मेल खाता प्रॉम्प्ट नहीं मिला",
+    "description": "No results title"
+  },
+  "noResults.description": {
+    "message": "अलग कीवर्ड आज़माएँ या टैग फ़िल्टर हटाएँ",
+    "description": "No results helpful guidance"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL",
+    "description": "LEVEL spec card top-left label"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」तक",
+    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED",
+    "description": "Max level reached label"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared",
+    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
   }
 }
