@@ -168,10 +168,13 @@ const UserProfile = () => {
           const existingDefs: any[] = existing.definitions || [];
           const existingIds = new Set(existingDefs.map((t: any) => t.id));
           const newDefs = parsed.customTags.filter((t: any) => !existingIds.has(t.id));
-          localStorage.setItem(LOCAL_TAGS_KEY, JSON.stringify({
-            definitions: [...existingDefs, ...newDefs],
-            itemTags: existing.itemTags || {},
-          }));
+          localStorage.setItem(
+            LOCAL_TAGS_KEY,
+            JSON.stringify({
+              definitions: [...existingDefs, ...newDefs],
+              itemTags: existing.itemTags || {},
+            }),
+          );
         }
 
         setImporting(false);
