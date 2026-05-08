@@ -26,10 +26,11 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
   return (
     <div
       style={{
-        border: `1px solid ${focused ? "var(--ifm-color-primary)" : "var(--ifm-color-emphasis-200)"}`,
-        borderRadius: 8,
-        boxShadow: focused ? "0 0 0 2px var(--ifm-color-primary-lightest)" : "none",
-        transition: "all 0.3s",
+        // family: 6px hairline 卡片家族；focused 时 1.5px sage 细晕（项目 quiet 调性）
+        border: `1px solid ${focused ? "var(--ifm-color-primary)" : "var(--site-color-hairline)"}`,
+        borderRadius: 6,
+        boxShadow: focused ? "0 0 0 1.5px rgba(var(--ifm-color-primary-rgb), 0.15)" : "none",
+        transition: "border-color 0.12s var(--site-motion-emphasized), box-shadow 0.12s var(--site-motion-emphasized)",
         overflow: "hidden",
       }}>
       <Input.TextArea

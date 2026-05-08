@@ -398,3 +398,316 @@ article.markdown a:hover {
     max-width: 100% !important;
   }
 }
+
+/* ========================================================================== */
+/* === Community Prompt — Composition Sheet                                ==
+/*    详情页 polish：仅保留 antd 6 没法 token 表达的视觉节点
+/*    容器/Flex/分隔/loading 等结构性样式都改用 antd 组件 + inline style
+/* ========================================================================== */
+
+/* Hero title — 详情页 hierarchy（覆盖 antd Title 默认 size/weight） */
+.comp-sheet-title.ant-typography {
+  margin: 0 !important;
+  font-size: clamp(22px, 2.4vw, 28px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+/* Eyebrow caption — mono uppercase tertiary，4 处复用（hero / body / note / discussion） */
+.comp-sheet-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--site-color-text-tertiary);
+  font-family: var(--site-font-mono);
+  display: inline-block;
+}
+
+/* Remark pull-quote — sage 左竖线，antd 没有原生引语组件 */
+.comp-sheet-remark {
+  margin: 0;
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid var(--ifm-color-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Prompt body — 上下 hairline，无外框；这种 pattern antd Card/Divider 都不对 */
+.comp-sheet-code {
+  padding: 24px 0;
+  border-top: 1px solid var(--site-color-hairline);
+  border-bottom: 1px solid var(--site-color-hairline);
+  font-family: var(--site-font-mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ifm-color-content);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Vote pill — 三段非对称：▲ 主信号 / hairline 分隔 / ▼ 自适应 icon-only */
+.comp-sheet-vote {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--site-color-hairline);
+  border-radius: 6px;
+  background: var(--site-color-ghost-border);
+  overflow: hidden;
+  transition: border-color 0.12s var(--site-motion-emphasized), background 0.12s var(--site-motion-emphasized);
+}
+.comp-sheet-vote:hover {
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
+  background: rgba(var(--ifm-color-primary-rgb), 0.04);
+}
+.comp-sheet-vote-btn.ant-btn {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: auto;
+  padding: 6px 12px !important;
+  gap: 6px;
+  color: var(--site-color-text-tertiary);
+  font-family: var(--site-font-mono);
+  font-size: 13px;
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+.comp-sheet-vote-up.ant-btn { color: var(--ifm-color-content); }
+.comp-sheet-vote-icon-only.ant-btn {
+  padding: 6px 8px !important;
+  min-width: 28px;
+  opacity: 0.7;
+}
+.comp-sheet-vote-icon-only.ant-btn:hover { opacity: 1; }
+.comp-sheet-vote-btn + .comp-sheet-vote-btn {
+  border-left: 1px solid var(--site-color-hairline) !important;
+}
+.comp-sheet-vote-btn.ant-btn:hover,
+.comp-sheet-vote-btn.ant-btn:hover .anticon {
+  color: var(--site-color-tag-selected-text) !important;
+  background: transparent !important;
+}
+.comp-sheet-vote-btn .anticon {
+  transition: color 0.12s var(--site-motion-emphasized), transform 0.12s var(--site-motion-emphasized);
+}
+.comp-sheet-vote-up:active .anticon { transform: translateY(-1px); }
+.comp-sheet-vote-down:active .anticon { transform: translateY(1px); }
+
+/* Favorite — toggle 状态靠 aria-pressed selector 表达，inline style 拿不到 */
+.comp-sheet-fav-btn .anticon {
+  transition: color 0.12s var(--site-motion-emphasized), transform 0.12s var(--site-motion-emphasized);
+}
+.comp-sheet-fav-btn[aria-pressed="true"] .anticon {
+  color: var(--site-color-svg-icon-favorite);
+}
+.comp-sheet-fav-btn:hover .anticon {
+  color: var(--site-color-svg-icon-favorite);
+  transform: scale(1.08);
+}
+
+/* Share — 触发器 hover sage wake-up，跟卡片 .anticon hover 同语言 */
+.comp-sheet-share-btn .anticon {
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+.comp-sheet-share-btn:hover .anticon {
+  color: var(--site-color-tag-selected-text);
+}
+
+/* Mobile — 仅 code body 字号微调，其他 Flex/Card 自适应 */
+@media (max-width: 600px) {
+  .comp-sheet-code { padding: 18px 0; font-size: 13px; }
+}
+
+/* ========================================================================== */
+/* === PromptPage — Sidebar Strip + Tag Link                                ==
+/*    与 Composition Sheet 共用 .comp-sheet-* 容器/字号/eyebrow/code body
+/*    本段仅声明 PromptPage 特有的：tag link 样式 + 侧栏 section 节奏 + related/faq 条目
+/* ========================================================================== */
+
+/* Tag link — hashtag 内核是文字，去 antd Tag box，直接 mono tertiary + sage hover */
+.prompt-tag-link {
+  font-family: var(--site-font-mono);
+  font-size: 12px;
+  color: var(--site-color-text-tertiary);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+.prompt-tag-link:hover {
+  color: var(--site-color-tag-selected-text);
+  text-decoration: none;
+}
+
+/* Sidebar Strip — 不用独立 Card，sections 用 hairline + eyebrow 区分 */
+.prompt-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.prompt-sidebar-section {
+  padding: 16px 0;
+  border-top: 1px solid var(--site-color-hairline);
+}
+.prompt-sidebar-section:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Related items — hover 行 sage 5% tint + title 变 sage tag-selected */
+.prompt-related-item {
+  display: block;
+  padding: 8px 10px;
+  margin: 0 -10px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: background 0.12s var(--site-motion-emphasized);
+}
+.prompt-related-item + .prompt-related-item {
+  margin-top: 2px;
+}
+.prompt-related-item:hover {
+  background: rgba(var(--ifm-color-primary-rgb), 0.05);
+}
+.prompt-related-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ifm-color-content);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.12s var(--site-motion-emphasized);
+}
+.prompt-related-item:hover .prompt-related-title {
+  color: var(--site-color-tag-selected-text);
+}
+.prompt-related-remark {
+  font-size: 12px;
+  color: var(--ifm-color-content-secondary);
+  margin-top: 2px;
+  line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* FAQ items — Q/A 紧凑节奏，条目间 hairline */
+.prompt-faq-item {
+  padding: 10px 0;
+  border-top: 1px solid var(--site-color-hairline);
+}
+.prompt-faq-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.prompt-faq-q {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ifm-color-content);
+  line-height: 1.45;
+}
+.prompt-faq-a {
+  font-size: 12px;
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+/* ========================================================================== */
+/* === Comments — polish for B+ refined modern family                       ==
+/*    AI polling strip / Empty state / 其余在 CommentComponent inline 改完
+/* ========================================================================== */
+
+/* AI polling progress strip — 提交评论后短暂出现，把后台 5 阶段轮询暴露为 first-class UI */
+.comments-polling-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 4px;
+  animation: comments-polling-fade 0.2s var(--site-motion-emphasized);
+}
+.comments-polling-bar {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--ifm-color-primary) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: comments-polling-slide 1.4s ease-in-out infinite;
+}
+.comments-polling-text {
+  font-family: var(--site-font-mono);
+  font-size: 11px;
+  color: var(--site-color-text-tertiary);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.comments-polling-attempt {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+@keyframes comments-polling-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes comments-polling-slide {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* Empty state — 取代 antd <Empty> 默认 cartoon 图，用 hairline + eyebrow + 引导文字 */
+.comments-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 36px 0;
+  text-align: center;
+}
+.comments-empty-text {
+  font-size: 13px;
+  color: var(--ifm-color-content-secondary);
+  margin: 0;
+}
+
+/* ========================================================================== */
+/* === Share UI — Stretch URL + Compact Channels + Native First            ==
+/*    去掉 react-share 默认彩色 round 32px icons，用 antd outlined + label
+/*    + Web Share API 优先 + Copy Link 摆在第一位
+/* ========================================================================== */
+
+/* 仅保留 antd 6 没法 inline 表达的：覆盖 react-share button reset + hover state.
+   容器 / grid / typography / 静态色全部由 ShareButtons.tsx 用 Flex + inline style 承担 */
+
+.share-channel-btn {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px;
+  padding: 8px 4px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+  color: var(--site-color-text-tertiary) !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: color 0.12s var(--site-motion-emphasized), background 0.12s var(--site-motion-emphasized);
+}
+.share-channel-btn:hover {
+  color: var(--site-color-tag-selected-text) !important;
+  background: rgba(var(--ifm-color-primary-rgb), 0.06) !important;
+}
+.share-channel-btn .anticon { font-size: 18px; }
+
+/* Native Share — sage primary 强调；hover bg 必须 CSS（inline 拿不到 :hover） */
+.share-channel-native { color: var(--ifm-color-primary) !important; }
+.share-channel-native:hover {
+  color: var(--ifm-color-primary) !important;
+  background: rgba(var(--ifm-color-primary-rgb), 0.1) !important;
+}

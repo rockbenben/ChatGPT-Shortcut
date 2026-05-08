@@ -24,8 +24,8 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <Text strong>{author || "AI Short"}</Text>
-        <Text type="secondary" style={{ fontSize: 12 }}>
+        <Text strong style={{ fontSize: 14, fontWeight: 500 }}>{author || "AI Short"}</Text>
+        <Text type="secondary" style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
           {datetime}
         </Text>
       </div>
@@ -70,10 +70,11 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
         marginBottom: 16,
         padding: 12,
         borderRadius: 6,
-        transition: "background-color 0.12s cubic-bezier(0.16, 1, 0.3, 1)",
+        transition: "background-color 0.12s var(--site-motion-emphasized)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.03)";
+        // family: sage hover wake-up（与卡片 hover 同语言）
+        e.currentTarget.style.backgroundColor = "rgba(var(--ifm-color-primary-rgb), 0.04)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = "transparent";
