@@ -561,7 +561,7 @@ const UserProfile = () => {
                                     textTransform: "uppercase",
                                     color: "var(--site-color-text-tertiary)",
                                   }}>
-                                  <Translate id="userPage.level.specLabel" description="LEVEL spec card top-left label">LEVEL</Translate>
+                                  <Translate id="userPage.level.specLabel">LEVEL</Translate>
                                 </span>
                                 <span
                                   style={{
@@ -624,10 +624,7 @@ const UserProfile = () => {
                                       {sharedCount} / {levelInfo.next}
                                     </span>
                                     <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
-                                      <Translate
-                                        id="userPage.level.toNext"
-                                        description="Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
-                                        values={{ next: <LevelName level={(nextLevelInfo as LevelInfo).level} /> }}>
+                                      <Translate id="userPage.level.toNext" values={{ next: <LevelName level={(nextLevelInfo as LevelInfo).level} /> }}>
                                         {"距「{next}」"}
                                       </Translate>
                                     </span>
@@ -644,11 +641,11 @@ const UserProfile = () => {
                                       color: levelInfo.accentColor,
                                       fontWeight: 500,
                                     }}>
-                                    <Translate id="userPage.level.maxReached" description="Max level reached label">MAX REACHED</Translate>
+                                    <Translate id="userPage.level.maxReached">MAX REACHED</Translate>
                                   </span>
                                   <span style={{ fontSize: 11, fontFamily: "var(--site-font-mono)", color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
                                     <span style={{ fontVariantNumeric: "tabular-nums" }}>{sharedCount}</span>{" "}
-                                    <Translate id="userPage.level.sharedSuffix" description="Suffix after shared count, e.g. 'shared' / '已分享'">shared</Translate>
+                                    <Translate id="userPage.level.sharedSuffix">shared</Translate>
                                   </span>
                                 </Flex>
                               )}
