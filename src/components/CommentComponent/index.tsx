@@ -25,8 +25,8 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: token.marginXS }}>
-        <Text strong>{author || "AI Short"}</Text>
-        <Text type="secondary" style={{ fontSize: token.fontSizeSM }}>
+        <Text strong style={{ fontSize: 14, fontWeight: 500 }}>{author || "AI Short"}</Text>
+        <Text type="secondary" style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
           {datetime}
         </Text>
       </div>
@@ -46,7 +46,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
           style={{
             marginTop: token.marginSM,
             paddingLeft: token.paddingSM,
-            borderLeft: `2px solid ${token.colorSplit}`,
+            borderLeft: "2px solid var(--site-color-hairline)",
             marginLeft: token.marginXS,
           }}>
           {children}
@@ -70,11 +70,12 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
         ...style,
         marginBottom: token.margin,
         padding: token.paddingSM,
-        borderRadius: token.borderRadiusSM,
-        transition: "background-color 0.2s ease",
+        borderRadius: 6,
+        transition: "background-color 0.12s var(--site-motion-emphasized)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = token.colorFillQuaternary;
+        // family: sage hover wake-up（与卡片 hover 同语言）
+        e.currentTarget.style.backgroundColor = "rgba(var(--ifm-color-primary-rgb), 0.04)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = "transparent";
