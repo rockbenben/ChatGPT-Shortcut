@@ -1,12 +1,11 @@
 import React, { useMemo } from "react";
 import { useLocation } from "@docusaurus/router";
-import { App } from "antd";
-import { AuthProvider } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
 
 const LOCAL_PROMPTS_KEY = "local_user_prompts";
 
-function LocalPromptDetail() {
+// offline 分支：只读 localStorage 渲染本地 prompt detail；不需要 AuthProvider 包装（无登录）
+export default function LocalPromptDetail() {
   const location = useLocation();
 
   const promptId = useMemo(() => {
@@ -30,14 +29,4 @@ function LocalPromptDetail() {
   }, [promptId]);
 
   return <CommunityPromptPage prompt={prompt} loading={false} error={prompt ? null : new Error("Not found")} />;
-}
-
-export default function WrappedLocalPromptDetail() {
-  return (
-    <AuthProvider>
-      <App>
-        <LocalPromptDetail />
-      </App>
-    </AuthProvider>
-  );
 }

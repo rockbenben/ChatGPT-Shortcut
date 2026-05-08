@@ -1,17 +1,16 @@
-import React, { Suspense, useContext, useCallback, useMemo } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Result, Breadcrumb, Popover } from "antd";
-import { CopyOutlined, CheckOutlined, StarOutlined, StarFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
-import { gold } from "@ant-design/colors";
+import React, { Suspense, useMemo } from "react";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Result, Breadcrumb, Popover } from "antd";
+import { CopyOutlined, CheckOutlined, UserOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { AuthContext } from "./AuthContext";
-import { useFavorite } from "@site/src/hooks/useFavorite";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 
+// offline 分支：仅展示本地 prompt detail。无 vote / favorite / auth / comments
+// （这些都是联网功能，已全部移除）
 interface CommunityPromptPageProps {
   prompt: {
     id: number;
@@ -20,13 +19,9 @@ interface CommunityPromptPageProps {
     remark?: string;
     notes?: string;
     owner?: string;
-    upvotes?: number;
-    downvotes?: number;
-    upvoteDifference?: number;
   } | null;
   loading?: boolean;
   error?: Error | null;
-  onVote?: (id: number, action: "upvote" | "downvote") => void;
 }
 
 // Card 容器复用：6px hairline，与 PromptCard 同家族
@@ -35,61 +30,23 @@ const sheetCardStyle: React.CSSProperties = {
   borderColor: "var(--site-color-hairline)",
   background: "var(--ifm-background-surface-color)",
 };
-const sheetCardBodyStyle: React.CSSProperties = {
-  padding: "clamp(20px, 3vw, 32px)",
-};
+const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(20px, 3vw, 32px)" };
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 
-// Eyebrow caption (mono uppercase tertiary)
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
-function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPromptPageProps) {
-  const { userAuth } = useContext(AuthContext);
-  const { message: messageApi } = App.useApp();
+function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProps) {
   const { copied, copyText } = useCopyToClipboard();
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
 
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(prompt?.id);
-
-  // 字符/token 统计：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
   const charCount = (prompt?.description || "").length;
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
 
-  const handleCopy = useCallback(() => {
-    if (prompt?.description) {
-      copyText(prompt.description);
-    }
-  }, [copyText, prompt?.description]);
-
-  const handleToggleFavorite = useCallback(() => {
-    if (!userAuth) {
-      messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
-      return;
-    }
-    if (prompt?.id) {
-      if (isFavorite) {
-        confirmRemoveFavorite(prompt.id, true);
-      } else {
-        addFavorite(prompt.id, true);
-      }
-    }
-  }, [userAuth, prompt?.id, isFavorite, addFavorite, confirmRemoveFavorite, messageApi]);
-
-  const handleVote = useCallback(
-    (action: "upvote" | "downvote") => {
-      if (!userAuth) {
-        messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
-        return;
-      }
-      if (prompt?.id && onVote) {
-        onVote(prompt.id, action);
-      }
-    },
-    [userAuth, prompt?.id, onVote, messageApi],
-  );
+  const handleCopy = () => {
+    if (prompt?.description) copyText(prompt.description);
+  };
 
   // Loading state — composition sheet 同款骨架，零跳变
   if (loading) {
@@ -114,11 +71,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     <Skeleton active title={false} paragraph={{ rows: 6, width: ["100%", "94%", "100%", "86%", "100%", "68%"] }} />
                   </div>
                 </Flex>
-                <Flex justify="space-between" align="center" wrap gap={8}>
-                  <Space size="small">
-                    <Skeleton.Button active style={{ width: 120, height: 36 }} />
-                    <Skeleton.Button active style={{ width: 90, height: 36 }} />
-                  </Space>
+                <Flex justify="flex-end" wrap gap={8}>
                   <Skeleton.Button active style={{ width: 90, height: 36 }} />
                 </Flex>
               </Flex>
@@ -140,9 +93,9 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               title={translate({ id: "community.notFound", message: "提示词未找到" })}
               subTitle={translate({ id: "community.notFoundDesc", message: "该提示词可能已被删除或设为私有" })}
               extra={
-                <Link to="/community-prompts">
+                <Link to="/">
                   <Button type="primary">
-                    <Translate id="community.backToList">返回列表</Translate>
+                    <Translate id="link.home">首页</Translate>
                   </Button>
                 </Link>
               }
@@ -167,13 +120,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                   <Link to="/" style={{ color: "var(--ifm-color-primary)" }}>
                     <HomeOutlined style={{ marginRight: 4 }} />
                     <Translate id="link.home">首页</Translate>
-                  </Link>
-                ),
-              },
-              {
-                title: (
-                  <Link to="/community-prompts" style={{ color: "var(--ifm-color-primary)" }}>
-                    <Translate id="link.communityPrompts">社区提示词</Translate>
                   </Link>
                 ),
               },
@@ -237,39 +183,8 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 </div>
               )}
 
-              {/* ACTIONS: vote pill + favorite (Star + gold, offline 特色) + share */}
-              <Flex justify="space-between" align="center" wrap gap={8} style={{ paddingTop: 4 }}>
-                <Space size="small" wrap>
-                  {/* Asymmetric vote pill：▲ 永远带数字（主信号），▼ 在 downvotes=0 时 icon-only 弱化 */}
-                  <div className="comp-sheet-vote" role="group" aria-label="vote" title={`${prompt.upvotes ?? 0} 上 / ${prompt.downvotes ?? 0} 下`}>
-                    <Button
-                      type="text"
-                      size="small"
-                      icon={<UpOutlined />}
-                      onClick={() => handleVote("upvote")}
-                      aria-label="upvote"
-                      className="comp-sheet-vote-btn comp-sheet-vote-up">
-                      <span style={monoNum}>{prompt.upvotes ?? 0}</span>
-                    </Button>
-                    <Button
-                      type="text"
-                      size="small"
-                      icon={<DownOutlined />}
-                      onClick={() => handleVote("downvote")}
-                      aria-label="downvote"
-                      className={"comp-sheet-vote-btn comp-sheet-vote-down" + ((prompt.downvotes ?? 0) > 0 ? "" : " comp-sheet-vote-icon-only")}>
-                      {(prompt.downvotes ?? 0) > 0 && <span style={monoNum}>{prompt.downvotes}</span>}
-                    </Button>
-                  </div>
-
-                  <Button
-                    icon={isFavorite ? <StarFilled style={{ color: gold[5] }} /> : <StarOutlined />}
-                    onClick={handleToggleFavorite}
-                    aria-pressed={isFavorite}>
-                    <Translate id="common.favorites">收藏</Translate>
-                  </Button>
-                </Space>
-
+              {/* ACTIONS: offline 仅保留 share（vote / favorite 是联网，已全部移除） */}
+              <Flex justify="flex-end" wrap gap={8} style={{ paddingTop: 4 }}>
                 <Popover
                   trigger="click"
                   placement="topRight"
@@ -285,8 +200,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               </Flex>
             </Flex>
           </Card>
-
-          {/* offline 分支：不嵌入 Comments / Discussion 区（Comments 是联网组件） */}
         </Col>
       </Row>
     </Layout>
