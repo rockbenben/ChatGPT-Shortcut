@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Accetto"
   },
-  "label.comments": {
-    "message": "Commenti"
-  },
   "label.promptContent": {
     "message": "Contenuto del prompt"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "Più votati"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Condiviso da membri della community · Le opinioni non rappresentano il progetto"
-  },
   "level.stardust": {
     "message": "Polvere di Stelle"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "L'IA sta rispondendo"
+  },
+  "comments.empty": {
+    "message": "Nessun commento"
+  },
+  "prompt.authorNote": {
+    "message": "Nota dell'autore"
+  },
+  "action.share": {
+    "message": "Condividi"
+  },
+  "comments.heading": {
+    "message": "Discussione"
+  },
+  "prompt.source": {
+    "message": "Fonte"
+  },
+  "prompt.translation": {
+    "message": "Traduzione"
+  },
+  "share.copy": {
+    "message": "Copia"
+  },
+  "share.native": {
+    "message": "Sistema"
+  },
+  "share.shareTo": {
+    "message": "Condividi su"
+  },
+  "feedback.responseTime": {
+    "message": "Risposta generalmente entro 24h"
+  },
+  "feedback.newIssue": {
+    "message": "Nuova issue"
   }
 }

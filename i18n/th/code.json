@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "ยอมรับ"
   },
-  "label.comments": {
-    "message": "ความคิดเห็น"
-  },
   "label.promptContent": {
     "message": "เนื้อหา Prompt"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "ถูกใจมากที่สุด"
   },
-  "communityPrompts.disclaimer": {
-    "message": "แชร์โดยสมาชิกในชุมชน · ความคิดเห็นไม่ได้แสดงถึงโครงการ"
-  },
   "level.stardust": {
     "message": "ฝุ่นดาว"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI กำลังตอบ"
+  },
+  "comments.empty": {
+    "message": "ยังไม่มีความคิดเห็น"
+  },
+  "prompt.authorNote": {
+    "message": "หมายเหตุของผู้เขียน"
+  },
+  "action.share": {
+    "message": "แชร์"
+  },
+  "comments.heading": {
+    "message": "การสนทนา"
+  },
+  "prompt.source": {
+    "message": "แหล่งที่มา"
+  },
+  "prompt.translation": {
+    "message": "คำแปล"
+  },
+  "share.copy": {
+    "message": "คัดลอก"
+  },
+  "share.native": {
+    "message": "ระบบ"
+  },
+  "share.shareTo": {
+    "message": "แชร์ไปที่"
+  },
+  "feedback.responseTime": {
+    "message": "มักตอบภายใน 24 ชั่วโมง"
+  },
+  "feedback.newIssue": {
+    "message": "Issue ใหม่"
   }
 }

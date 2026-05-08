@@ -1,6 +1,6 @@
 {
   "action.add": {
-    "message": "添加"
+    "message": "新增"
   },
   "action.addPrompt": {
     "message": "建立提示詞"
@@ -51,7 +51,7 @@
     "message": "回覆"
   },
   "action.save": {
-    "message": "保存"
+    "message": "儲存"
   },
   "action.sendLink": {
     "message": "獲取登入連結"
@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "同意"
   },
-  "label.comments": {
-    "message": "評論"
-  },
   "label.promptContent": {
     "message": "提示詞內容"
   },
@@ -339,7 +336,7 @@
     "message": "收藏失敗，請稍後重試"
   },
   "message.addFavorite.success": {
-    "message": "已添加到收藏"
+    "message": "已加入收藏"
   },
   "message.addPrompt.error": {
     "message": "提示詞提交失敗，請稍後重試"
@@ -438,7 +435,7 @@
     "message": "排列保存失敗"
   },
   "message.orderSaved": {
-    "message": "排列已保存"
+    "message": "排列已儲存"
   },
   "message.removeFavorite.confirm.content": {
     "message": "確定要取消收藏這個提示詞嗎？"
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "最多讚"
   },
-  "communityPrompts.disclaimer": {
-    "message": "社群成員分享 · 觀點不代表本專案"
-  },
   "level.stardust": {
     "message": "星輝"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI 正在回覆"
+  },
+  "comments.empty": {
+    "message": "暫無評論"
+  },
+  "prompt.authorNote": {
+    "message": "作者備註"
+  },
+  "action.share": {
+    "message": "分享"
+  },
+  "comments.heading": {
+    "message": "討論"
+  },
+  "prompt.source": {
+    "message": "來源"
+  },
+  "prompt.translation": {
+    "message": "譯文"
+  },
+  "share.copy": {
+    "message": "複製"
+  },
+  "share.native": {
+    "message": "系統"
+  },
+  "share.shareTo": {
+    "message": "分享到"
+  },
+  "feedback.responseTime": {
+    "message": "通常 24h 內回覆"
+  },
+  "feedback.newIssue": {
+    "message": "新建 Issue"
   }
 }

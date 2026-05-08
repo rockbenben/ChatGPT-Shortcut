@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Đồng ý"
   },
-  "label.comments": {
-    "message": "Bình luận"
-  },
   "label.promptContent": {
     "message": "Nội dung Prompt"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "Nhiều lượt thích"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Do thành viên cộng đồng chia sẻ · Quan điểm không đại diện cho dự án"
-  },
   "level.stardust": {
     "message": "Bụi sao"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI đang trả lời"
+  },
+  "comments.empty": {
+    "message": "Chưa có bình luận"
+  },
+  "prompt.authorNote": {
+    "message": "Ghi chú của tác giả"
+  },
+  "action.share": {
+    "message": "Chia sẻ"
+  },
+  "comments.heading": {
+    "message": "Thảo luận"
+  },
+  "prompt.source": {
+    "message": "Nguồn"
+  },
+  "prompt.translation": {
+    "message": "Bản dịch"
+  },
+  "share.copy": {
+    "message": "Sao chép"
+  },
+  "share.native": {
+    "message": "Hệ thống"
+  },
+  "share.shareTo": {
+    "message": "Chia sẻ lên"
+  },
+  "feedback.responseTime": {
+    "message": "Thường trả lời trong vòng 24 giờ"
+  },
+  "feedback.newIssue": {
+    "message": "Issue mới"
   }
 }

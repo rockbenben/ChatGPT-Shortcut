@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Kabul ediyorum"
   },
-  "label.comments": {
-    "message": "Yorumlar"
-  },
   "label.promptContent": {
     "message": "Prompt İçeriği"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "En çok oy alan"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Topluluk üyeleri tarafından paylaşıldı · Görüşler projeyi temsil etmez"
-  },
   "level.stardust": {
     "message": "Yıldız Tozu"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "YZ yanıtlıyor"
+  },
+  "comments.empty": {
+    "message": "Henüz yorum yok"
+  },
+  "prompt.authorNote": {
+    "message": "Yazarın notu"
+  },
+  "action.share": {
+    "message": "Paylaş"
+  },
+  "comments.heading": {
+    "message": "Tartışma"
+  },
+  "prompt.source": {
+    "message": "Kaynak"
+  },
+  "prompt.translation": {
+    "message": "Çeviri"
+  },
+  "share.copy": {
+    "message": "Kopyala"
+  },
+  "share.native": {
+    "message": "Sistem"
+  },
+  "share.shareTo": {
+    "message": "Şuraya paylaş"
+  },
+  "feedback.responseTime": {
+    "message": "Genellikle 24 saat içinde yanıt"
+  },
+  "feedback.newIssue": {
+    "message": "Yeni Issue"
   }
 }

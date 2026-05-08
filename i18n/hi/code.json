@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "सहमत"
   },
-  "label.comments": {
-    "message": "टिप्पणियाँ"
-  },
   "label.promptContent": {
     "message": "प्रॉम्प्ट सामग्री"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "सर्वाधिक वोट"
   },
-  "communityPrompts.disclaimer": {
-    "message": "समुदाय के सदस्यों द्वारा साझा · विचार परियोजना का प्रतिनिधित्व नहीं करते"
-  },
   "level.stardust": {
     "message": "तारा-धूल"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI जवाब दे रहा है"
+  },
+  "comments.empty": {
+    "message": "अभी तक कोई टिप्पणी नहीं"
+  },
+  "prompt.authorNote": {
+    "message": "लेखक की टिप्पणी"
+  },
+  "action.share": {
+    "message": "शेयर करें"
+  },
+  "comments.heading": {
+    "message": "चर्चा"
+  },
+  "prompt.source": {
+    "message": "स्रोत"
+  },
+  "prompt.translation": {
+    "message": "अनुवाद"
+  },
+  "share.copy": {
+    "message": "कॉपी"
+  },
+  "share.native": {
+    "message": "सिस्टम"
+  },
+  "share.shareTo": {
+    "message": "शेयर करें"
+  },
+  "feedback.responseTime": {
+    "message": "आमतौर पर 24 घंटे में जवाब"
+  },
+  "feedback.newIssue": {
+    "message": "नया Issue"
   }
 }
