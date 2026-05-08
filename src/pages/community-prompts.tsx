@@ -297,12 +297,6 @@ const CommunityPrompts = () => {
               <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
             </div>
 
-            <div style={{ display: "flex", justifyContent: "center", marginTop: 16, marginBottom: -24 }}>
-              <Text type="secondary" style={{ fontSize: "12px", textAlign: "center", maxWidth: 800 }}>
-                <Translate id="communityPrompts.disclaimer">社区成员分享 · 观点不代表本项目</Translate>
-              </Text>
-            </div>
-
             {open && (
               <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
                 <LoginComponent />
@@ -316,7 +310,8 @@ const CommunityPrompts = () => {
             <Suspense fallback={null}>
               <ShareButtons shareUrl={ShareUrl} title={COMMU_TITLE} popOver={false} />
             </Suspense>
-            <FloatButton.BackTop />
+            {/* BackTop 上推 60px，避免与 ShareButtons FloatButton.Group（默认 bottom=40）重叠 */}
+            <FloatButton.BackTop style={{ bottom: 100 }} />
           </div>
         </section>
       </main>

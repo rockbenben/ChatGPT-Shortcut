@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useMemo, useCallback, memo, useRef } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Button, Form, Modal, Pagination, Empty } from "antd";
-import { blue, green, red, purple, cyan, orange, gold, magenta } from "@ant-design/colors";
+import { Button, Form, Modal, Pagination } from "antd";
 import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/components/CommentComponent";
@@ -50,7 +49,17 @@ const getCurrentUserId = () => {
 };
 
 dayjs.extend(relativeTime);
-const avatarColors = [blue[5], green[5], red[5], purple[5], cyan[5], orange[5], gold[5], magenta[5]];
+// 项目家族化头像调色板 — 同饱和度 / 同明度，仅 hue 旋转，
+// 取代之前 antd 8 色调色板（blue/green/red/purple/cyan/orange/gold/magenta），
+// 跟项目唯一 sage 主色融为"一家人不同肤色"
+const avatarColors = [
+  "hsl(163, 38%, 45%)", // sage primary
+  "hsl(193, 38%, 45%)", // sage→teal
+  "hsl(133, 38%, 45%)", // sage→olive
+  "hsl(223, 28%, 50%)", // muted blue
+  "hsl(43, 38%, 50%)", // muted gold
+  "hsl(13, 38%, 50%)", // muted clay
+];
 const pageSize = 12;
 const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000];
 
@@ -89,7 +98,7 @@ const nestComments = (flatComments: any[]) => {
   return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
 };
 
-const Comments = ({ pageId, type }) => {
+const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onCountChange?: (count: number) => void }) => {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const { i18n } = useDocusaurusContext();
@@ -112,6 +121,14 @@ const Comments = ({ pageId, type }) => {
   const [isLoading, setIsLoading] = useState(true);
   const pollTimeoutRef = useRef<number | null>(null);
   const pollTokenRef = useRef(0);
+  // AI polling progress strip — 提交评论后短暂出现
+  const [aiPolling, setAiPolling] = useState(false);
+  const [pollAttempt, setPollAttempt] = useState(0);
+
+  // 把 count 暴露给外层，让 PromptPage / CommunityPromptPage 的 eyebrow 显示「讨论 · N」
+  useEffect(() => {
+    onCountChange?.(totalCommentsCount);
+  }, [totalCommentsCount, onCountChange]);
 
   // Get current user ID from localStorage
   useEffect(() => {
@@ -268,26 +285,32 @@ const Comments = ({ pageId, type }) => {
       clearPollTimer();
       pollTokenRef.current += 1;
       const token = pollTokenRef.current;
+      setAiPolling(true);
+      setPollAttempt(0);
 
       const runPoll = (attemptIndex: number) => {
         if (pollTokenRef.current !== token) return;
-        if (attemptIndex >= AI_REPLY_POLL_DELAYS_MS.length) return;
+        if (attemptIndex >= AI_REPLY_POLL_DELAYS_MS.length) {
+          setAiPolling(false);
+          return;
+        }
 
         const delay = AI_REPLY_POLL_DELAYS_MS[attemptIndex];
         pollTimeoutRef.current = window.setTimeout(async () => {
           if (pollTokenRef.current !== token) return;
+          setPollAttempt(attemptIndex + 1);
 
           try {
             const response = await getComments(pageId, currentPageRef.current, pageSize, type);
             if (response) {
               const newCount = response.meta.pagination.total;
-              // 更新评论列表
               const nestedComments = nestComments(response.data);
               setComments(nestedComments);
               setTotalCommentsCount(newCount);
               // 如果评论数增加（AI 已回复），停止轮询
               if (newCount > initialCount + 1) {
                 clearPollTimer();
+                setAiPolling(false);
                 return;
               }
             }
@@ -308,6 +331,7 @@ const Comments = ({ pageId, type }) => {
     return () => {
       pollTokenRef.current += 1;
       clearPollTimer();
+      setAiPolling(false);
     };
   }, [clearPollTimer]);
 
@@ -489,26 +513,35 @@ const Comments = ({ pageId, type }) => {
         <LoginComponent />
       </Modal>
       {renderForm()}
-      <div style={{ minHeight: 200 }}>
-        {/* Header */}
-        <div
-          style={{
-            padding: "12px 0",
-            borderBottom: "1px solid var(--site-color-hairline)",
-            marginBottom: 16,
-            fontWeight: 500,
-            fontSize: 13,
-            color: "var(--ifm-color-content)",
-          }}>
-          <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", marginRight: 6 }}>{totalCommentsCount}</span>
-          {translate({ id: "label.comments", message: "评论" })}
-        </div>
 
-        {/* Content with skeleton/empty/list */}
+      {/* AI Polling Strip — 提交评论后短暂出现，把后台 5 阶段轮询暴露为 first-class UI 反馈 */}
+      {aiPolling && (
+        <div className="comments-polling-strip" role="status" aria-live="polite">
+          <div className="comments-polling-bar" />
+          <div className="comments-polling-text">
+            <span>
+              <Translate id="comments.aiReplying">AI 正在回复</Translate>
+            </span>
+            <span className="comments-polling-attempt">
+              {pollAttempt}/{AI_REPLY_POLL_DELAYS_MS.length}
+            </span>
+          </div>
+        </div>
+      )}
+
+      <div style={{ minHeight: 200, marginTop: 16 }}>
+        {/* Internal "{N} 评论" header 已移除：count 通过 onCountChange 暴露给外层 eyebrow «讨论 · N» */}
         {isLoading ? (
           <CommentSkeleton count={10} />
         ) : comments.length === 0 ? (
-          <Empty description={<Translate id="message.noComments">暂无评论，成为第一个评论者吧！</Translate>} style={{ padding: 24 }} />
+          <div className="comments-empty">
+            <span className="comp-sheet-eyebrow">
+              <Translate id="comments.empty">暂无评论</Translate>
+            </span>
+            <p className="comments-empty-text">
+              <Translate id="message.noComments">成为第一个评论者吧</Translate>
+            </p>
+          </div>
         ) : (
           <div className="comment-list">{comments.map(renderComment)}</div>
         )}

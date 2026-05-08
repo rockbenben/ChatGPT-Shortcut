@@ -129,3 +129,14 @@
 .showcaseCard:hover :global(.ant-statistic-content) {
   color: var(--site-color-tag-selected-text) !important;
 }
+
+/* ▼ 在 downvotes === 0 时弱化为 icon-only：opacity 0.6, hover 时恢复 1.
+   与详情页 .comp-sheet-vote-icon-only 同语义。 */
+.cardVoteIconOnly {
+  opacity: 0.6;
+  transition: opacity 0.12s var(--site-motion-emphasized);
+}
+
+.cardVoteIconOnly:hover {
+  opacity: 1;
+}

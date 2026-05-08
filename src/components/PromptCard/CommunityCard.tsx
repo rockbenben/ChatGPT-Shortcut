@@ -101,10 +101,18 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
             </Button>
           </Tooltip>
         ),
+        // 非对称：downvotes === 0 时 icon-only + 弱化（opacity 0.6），> 0 时显示数字与 ▲ 对称
         onVote && (
           <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
-            <Button type="text" icon={<DownOutlined />} onClick={handleDownvote} block>
-              <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes || 0}</span>
+            <Button
+              type="text"
+              icon={<DownOutlined />}
+              onClick={handleDownvote}
+              block
+              className={(user.downvotes ?? 0) > 0 ? undefined : styles.cardVoteIconOnly}>
+              {(user.downvotes ?? 0) > 0 && (
+                <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes}</span>
+              )}
             </Button>
           </Tooltip>
         ),

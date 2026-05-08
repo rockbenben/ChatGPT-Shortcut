@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useMemo, useState } from "react";
-import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Breadcrumb } from "antd";
-import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined } from "@ant-design/icons";
+import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
+import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -16,11 +16,24 @@ import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 
-const { Title, Text } = Typography;
+// Composition Sheet 复用样式（与 CommunityPromptPage 保持家族一致）
+const sheetCardStyle: React.CSSProperties = {
+  borderRadius: 6,
+  borderColor: "var(--site-color-hairline)",
+  background: "var(--ifm-background-surface-color)",
+};
+const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(20px, 3vw, 32px)" };
+const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
+
+const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
+const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function PromptPage({ prompt, currentLanguage }) {
   const { copied, updateCopy } = useCopyToClipboard();
   const { siteConfig, i18n } = useDocusaurusContext();
+
+  // 外层 eyebrow 显示 «讨论 · N» —— 由内层 Comments 通过 onCountChange 回传
+  const [commentCount, setCommentCount] = useState(0);
 
   const promptInfo = prompt[currentLanguage] || prompt;
 
@@ -224,7 +237,6 @@ function PromptPage({ prompt, currentLanguage }) {
           <Row gutter={[24, 24]}>
             {/* 主内容列（75%） */}
             <Col xs={24} sm={24} md={18} lg={18} xl={18} className="full-width-col">
-              {/* 面包屑导航（加 8px 左右 padding，避免窄屏贴到屏幕边缘，并与下方卡片内容形成视觉缩进层级） */}
               <Breadcrumb
                 items={[
                   {
@@ -240,212 +252,171 @@ function PromptPage({ prompt, currentLanguage }) {
                 style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
               />
 
-              <Flex vertical gap="middle" style={{ minHeight: 400 }}>
-                {/* 提示词主卡片 — 默认 antd border = hairline */}
-                <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
-                  <Flex vertical gap="small">
-                    {/* 头部：标题 + 右侧紧凑 meta 区（tags / 热度 / 外链） */}
-                    <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
-                      <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
+              {/* === Composition Sheet === */}
+              <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+                <Flex vertical gap={24}>
+                  {/* HERO: 双层 meta 按语义拆分
+                        Layer 1（同行）: title 左 / tags 右上角对齐 — tags 是分类 metadata，与 title 同语义层
+                        Layer 2（下行）: 🔥 weight · chars · tokens · 来源 — 数值 + 链接 metadata，独立 mono 行 */}
+                  <Flex vertical gap={10}>
+                    <Flex justify="space-between" align="flex-start" wrap gap={12}>
+                      <Typography.Title level={1} className="comp-sheet-title" style={{ flex: 1, minWidth: 0 }}>
                         {title}
-                      </Title>
-
-                      <Flex gap={8} align="center" wrap="wrap">
-                        {Array.isArray(tags) && tags.length > 0 && (
-                          <Space size={4} wrap>
-                            {tags.map((tag) => (
-                              <Link key={tag} to={`/?tags=${tag}&view=explore`}>
-                                <Tag color="default" style={{ margin: 0, cursor: "pointer" }}>
-                                  #{tag}
-                                </Tag>
-                              </Link>
-                            ))}
-                          </Space>
-                        )}
-                        <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums", display: "inline-flex", alignItems: "center" }}>
-                          <FireFilled style={{ color: "var(--site-color-text-tertiary)", marginRight: 4 }} />
-                          {formatCompactNumber(weight as number)}
-                        </span>
-                        {website && (
-                          <Link to={website} target="_blank" rel="noopener noreferrer" title={website}>
-                            <Button type="text" size="small" icon={<LinkOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} />
-                          </Link>
-                        )}
-                      </Flex>
+                      </Typography.Title>
+                      {Array.isArray(tags) && tags.length > 0 && (
+                        <Space size={4} wrap style={{ paddingTop: 6 }}>
+                          {tags.map((tag) => (
+                            <Link key={tag} to={`/?tags=${tag}&view=explore`} className="prompt-tag-link">
+                              #{tag}
+                            </Link>
+                          ))}
+                        </Space>
+                      )}
                     </Flex>
 
-                    {/* 描述/备注 - Quote Style */}
-                    {remark && (
-                      <div className="prompt-remark" style={{ marginTop: 12, borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                        <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
-                          {remark}
-                        </Typography.Text>
-                      </div>
-                    )}
-
-                    {/* 提示词内容 — Copy 按钮 large primary 主操作（独立页 CTA） */}
-                    <div>
-                      {/* Action Row */}
-                      <Flex justify="space-between" align="center" style={{ marginBottom: 12 }} wrap="wrap" gap="small">
-                        <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
-                          <Translate id="prompt.content">Prompt 内容</Translate>
-                        </Typography.Text>
-                        <Button
-                          type="primary"
-                          size="large"
-                          icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                          onClick={() => {
-                            updateCopy(promptInfo.prompt, prompt.id);
-                          }}>
-                          {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                        </Button>
-                      </Flex>
-
-                      {/* Tier 4: CodeSnippet 语义包装（告诉 LLM 这是可复用 prompt 模板）— 深井效果对齐 Phase 2 */}
-                      <div
-                        itemScope
-                        itemType="https://schema.org/CreativeWork"
-                        style={{
-                          backgroundColor: "var(--ifm-background-color)",
-                          borderRadius: 6,
-                          padding: "20px 24px",
-                          border: "1px solid var(--site-color-hairline)",
-                        }}>
-                        <meta itemProp="name" content={title} />
-                        <meta itemProp="inLanguage" content={currentLanguage} />
-                        {/* 占位符高亮 — [xxx] 用主色背景标记出来，无需用户肉眼扫描 */}
-                        <div
-                          {...({ itemProp: "text" } as any)}
-                          style={{
-                            fontFamily: "var(--site-font-mono)",
-                            fontSize: 13,
-                            lineHeight: 1.65,
-                            whiteSpace: "pre-wrap",
-                            wordBreak: "break-word",
-                            color: "var(--ifm-color-content)",
-                          }}>
-                          {renderPromptWithPlaceholders(promptInfo.prompt || "")}
-                        </div>
-                      </div>
-
-                      {/* 字符 + token 估算 */}
-                      <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
-                        <span>
-                          {charCount} <Translate id="prompt.charsLabel">字符</Translate> · ≈ {tokenCount} tokens
-                        </span>
-                      </Flex>
-
-                      {/* 描述/翻译信息 */}
-                      {promptInfo.description !== promptInfo.prompt && (
-                        <Typography.Paragraph
-                          copyable={{
-                            text: promptInfo.description,
-                          }}
-                          style={{
-                            fontSize: 13,
-                            lineHeight: 1.55,
-                            color: "var(--ifm-color-content-secondary)",
-                            margin: 0,
-                            marginTop: 24,
-                          }}>
-                          {promptInfo.description}
-                        </Typography.Paragraph>
+                    <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                      <span style={monoNum}>
+                        <FireFilled style={{ marginRight: 4 }} />
+                        {formatCompactNumber(weight as number)}
+                      </span>
+                      <span style={monoNum}>
+                        {charCount.toLocaleString()} <Translate id="prompt.charsLabel">字符</Translate>
+                      </span>
+                      <span style={monoNum}>≈ {tokenCount.toLocaleString()} tokens</span>
+                      {website && (
+                        <Link to={website} target="_blank" rel="noopener noreferrer" title={website} className="prompt-tag-link">
+                          <LinkOutlined style={{ marginRight: 4 }} />
+                          <Translate id="prompt.source">来源</Translate>
+                        </Link>
                       )}
+                    </Space>
+                  </Flex>
+
+                  {/* REMARK */}
+                  {remark && <blockquote className="comp-sheet-remark prompt-remark">{remark}</blockquote>}
+
+                  {/* PROMPT BODY: 上下 hairline，schema CreativeWork microdata 保留 */}
+                  <Flex vertical gap={14}>
+                    <Flex justify="space-between" align="center" wrap gap={12}>
+                      <Eyebrow>
+                        <Translate id="prompt.content">Prompt 内容</Translate>
+                      </Eyebrow>
+                      <Button
+                        type="primary"
+                        size="large"
+                        icon={copied ? <CheckOutlined /> : <CopyOutlined />}
+                        onClick={() => {
+                          updateCopy(promptInfo.prompt, prompt.id);
+                        }}>
+                        {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
+                      </Button>
+                    </Flex>
+                    <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
+                      <meta itemProp="name" content={title} />
+                      <meta itemProp="inLanguage" content={currentLanguage} />
+                      {renderPromptWithPlaceholders(promptInfo.prompt || "")}
                     </div>
                   </Flex>
-                </Card>
-              </Flex>
+
+                  {/* 译文（双语切换下与 prompt 不同时显示）— 复用 ghost-border 容器 */}
+                  {promptInfo.description && promptInfo.description !== promptInfo.prompt && (
+                    <div
+                      style={{
+                        padding: "14px 16px",
+                        background: "var(--site-color-ghost-border)",
+                        borderRadius: 4,
+                        borderLeft: "2px solid var(--site-color-hairline)",
+                      }}>
+                      <Eyebrow>
+                        <Translate id="prompt.translation">译文</Translate>
+                      </Eyebrow>
+                      <Typography.Paragraph
+                        copyable={{ text: promptInfo.description }}
+                        style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                        {promptInfo.description}
+                      </Typography.Paragraph>
+                    </div>
+                  )}
+                </Flex>
+              </Card>
             </Col>
 
-            {/* 侧栏（Related + Share）— 响应式：
-            桌面（md+）：~25%，sticky 通过 CSS media query 启用
-            移动（xs/sm）：xs={24} 占满整行换行到主内容下方，不 sticky */}
+            {/* === Sidebar Strip === 不用独立 Card，sections 用 hairline + eyebrow 区分
+                桌面（md+）：~25%，sticky 通过 .prompt-sidebar-col CSS media query 启用
+                移动（xs/sm）：xs={24} 占满整行换行到主内容下方 */}
             <Col xs={24} sm={24} md={6} lg={6} xl={6} className="full-width-col prompt-sidebar-col">
-              <div className="prompt-sidebar" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {/* 相关推荐（build-time 预计算的 IDs 运行时拉取卡片） */}
+              <div className="prompt-sidebar">
                 {related.length > 0 && (
-                  <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
-                    <Text style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, color: "var(--site-color-text-tertiary)" }}>
+                  <section className="prompt-sidebar-section">
+                    <Eyebrow>
                       <Translate id="sidebar.related">相关推荐</Translate>
-                    </Text>
-                    <Flex vertical style={{ marginTop: 8 }}>
-                      {related.map((r, idx) => {
-                        // fetchCardsByIds 返回的 record 内容嵌套在 card[lang] 下，需解包
+                    </Eyebrow>
+                    <div style={{ marginTop: 10 }}>
+                      {related.map((r) => {
                         const langData = (r as any)[currentLanguage] || (r as any)["zh-Hans"] || {};
                         const rTitle = langData.title || (r as any).title || "";
                         const rRemark = langData.remark || (r as any).remark || "";
                         return (
-                          <Link key={r.id} to={`/prompt/${r.id}`} style={{ color: "inherit" }}>
-                            <div
-                              style={{
-                                padding: "8px 0",
-                                borderTop: idx === 0 ? "none" : "1px solid var(--site-color-hairline)",
-                              }}>
-                              <div
-                                style={{
-                                  fontSize: 13,
-                                  fontWeight: 500,
-                                  color: "var(--ifm-color-content)",
-                                  lineHeight: 1.4,
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                  whiteSpace: "nowrap",
-                                }}>
-                                {rTitle}
-                              </div>
-                              {rRemark && (
-                                <div
-                                  style={{
-                                    fontSize: 12,
-                                    color: "var(--ifm-color-content-secondary)",
-                                    marginTop: 2,
-                                    lineHeight: 1.45,
-                                    overflow: "hidden",
-                                    textOverflow: "ellipsis",
-                                    whiteSpace: "nowrap",
-                                  }}>
-                                  {rRemark}
-                                </div>
-                              )}
-                            </div>
+                          <Link key={r.id} to={`/prompt/${r.id}`} className="prompt-related-item">
+                            <div className="prompt-related-title">{rTitle}</div>
+                            {rRemark && <div className="prompt-related-remark">{rRemark}</div>}
                           </Link>
                         );
                       })}
-                    </Flex>
-                  </Card>
+                    </div>
+                  </section>
                 )}
 
-                {/* 常见问题（侧栏版，与 FAQPage JSON-LD 对应）
-                    包 Card 使其与 Related / Share 视觉容器一致，内部文字保持次级灰度小字不抢焦点 */}
-                <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 16 } }}>
-                  <Text style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, color: "var(--site-color-text-tertiary)" }}>
+                <section className="prompt-sidebar-section">
+                  <Eyebrow>
                     <Translate id="faq.heading">常见问题</Translate>
-                  </Text>
-                  <div style={{ marginTop: 12 }}>
+                  </Eyebrow>
+                  <div style={{ marginTop: 10 }}>
                     {faqList.map((item, i) => (
-                      <div key={i} style={{ marginTop: i === 0 ? 0 : 14, paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? "none" : "1px solid var(--site-color-hairline)" }}>
-                        <div style={{ fontSize: 12, color: "var(--ifm-color-content)", fontWeight: 500, lineHeight: 1.45 }}>{item.q}</div>
-                        <div style={{ fontSize: 12, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55, marginTop: 4 }}>{item.a}</div>
+                      <div key={i} className="prompt-faq-item">
+                        <div className="prompt-faq-q">{item.q}</div>
+                        <div className="prompt-faq-a">{item.a}</div>
                       </div>
                     ))}
                   </div>
-                </Card>
+                </section>
 
-                {/* 分享（popOver=true 用 inline flex，不走 FloatButton 右下角悬浮分支） */}
-                <Suspense fallback={null}>
-                  <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark || ""}`} />
-                </Suspense>
+                <section className="prompt-sidebar-section">
+                  <Eyebrow>
+                    <Translate id="action.share">分享</Translate>
+                  </Eyebrow>
+                  <div style={{ marginTop: 10 }}>
+                    <Popover
+                      trigger="click"
+                      placement="topLeft"
+                      content={
+                        <Suspense fallback={null}>
+                          <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark || ""}`} popOver={true} />
+                        </Suspense>
+                      }>
+                      <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn" block>
+                        <Translate id="action.share">分享</Translate>
+                      </Button>
+                    </Popover>
+                  </div>
+                </section>
               </div>
             </Col>
 
-            {/* 次级内容（Ad / Comments）—— 与主列同宽对齐（75%），位于前两列之后自动 wrap 到新行 */}
+            {/* DISCUSSION: hairline + eyebrow 续接，count 由内层 Comments 回传 */}
             <Col xs={24} sm={24} md={18} lg={18} xl={18} className="full-width-col">
-              <Flex vertical gap="middle">
-                {/* 评论区 */}
+              <Flex vertical gap={14} style={{ marginTop: 8, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
+                <Eyebrow>
+                  <Translate id="comments.heading">讨论</Translate>
+                  {commentCount > 0 && (
+                    <>
+                      {" · "}
+                      <span style={monoNum}>{commentCount}</span>
+                    </>
+                  )}
+                </Eyebrow>
                 <Suspense fallback={null}>
-                  <Card style={{ minHeight: 480, borderRadius: 12 }}>
-                    <Comments pageId={prompt.id} type="page" />
-                  </Card>
+                  <Comments pageId={prompt.id} type="page" onCountChange={setCommentCount} />
                 </Suspense>
               </Flex>
             </Col>

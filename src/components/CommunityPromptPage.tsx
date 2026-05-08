@@ -1,6 +1,6 @@
-import React, { Suspense, useContext, useCallback, useMemo } from "react";
-import { Card, Typography, Tag, Space, Row, Col, Button, Flex, Skeleton, Divider, App, Result, Breadcrumb } from "antd";
-import { CopyOutlined, CheckOutlined, HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined } from "@ant-design/icons";
+import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Result, Breadcrumb, Popover } from "antd";
+import { CopyOutlined, CheckOutlined, HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -11,8 +11,6 @@ import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/pr
 import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
-
-const { Title } = Typography;
 
 interface CommunityPromptPageProps {
   prompt: {
@@ -31,6 +29,21 @@ interface CommunityPromptPageProps {
   onVote?: (id: number, action: "upvote" | "downvote") => void;
 }
 
+// Card 容器复用：6px hairline，与 PromptCard 同家族
+const sheetCardStyle: React.CSSProperties = {
+  borderRadius: 6,
+  borderColor: "var(--site-color-hairline)",
+  background: "var(--ifm-background-surface-color)",
+};
+const sheetCardBodyStyle: React.CSSProperties = {
+  padding: "clamp(20px, 3vw, 32px)",
+};
+const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
+
+// Eyebrow caption (mono uppercase tertiary) — 4 处复用
+const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
+const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
+
 function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPromptPageProps) {
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
@@ -40,6 +53,9 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(prompt?.id);
+
+  // 外层 eyebrow 显示 «讨论 · N» —— 由内层 Comments 通过 onCountChange 回传
+  const [commentCount, setCommentCount] = useState(0);
 
   // 字符/token 统计：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
   const charCount = (prompt?.description || "").length;
@@ -78,14 +94,37 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
     [userAuth, prompt?.id, onVote, messageApi],
   );
 
-  // Loading state
+  // Loading state — 与正常态共用 Card 容器，零跳变
   if (loading) {
     return (
       <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
-        <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
+        <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <Card style={{ borderRadius: 12 }}>
-              <Skeleton active paragraph={{ rows: 8 }} />
+            <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
+            <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }} aria-busy="true">
+              <Flex vertical gap={24}>
+                <Flex vertical gap={10}>
+                  <Skeleton.Input active size="large" style={{ width: "min(80%, 360px)", height: 30 }} />
+                  <Skeleton.Input active size="small" style={{ width: 240, height: 14 }} />
+                </Flex>
+                <Skeleton active title={false} paragraph={{ rows: 1, width: ["72%"] }} />
+                <Flex vertical gap={14}>
+                  <Flex justify="space-between" align="center" wrap gap={12}>
+                    <Skeleton.Input active size="small" style={{ width: 80, height: 14 }} />
+                    <Skeleton.Button active size="large" style={{ width: 140 }} />
+                  </Flex>
+                  <div className="comp-sheet-code">
+                    <Skeleton active title={false} paragraph={{ rows: 6, width: ["100%", "94%", "100%", "86%", "100%", "68%"] }} />
+                  </div>
+                </Flex>
+                <Flex justify="space-between" align="center" wrap gap={8}>
+                  <Space size="small">
+                    <Skeleton.Button active style={{ width: 120, height: 36 }} />
+                    <Skeleton.Button active style={{ width: 90, height: 36 }} />
+                  </Space>
+                  <Skeleton.Button active style={{ width: 90, height: 36 }} />
+                </Flex>
+              </Flex>
             </Card>
           </Col>
         </Row>
@@ -124,7 +163,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
     <Layout title={seoTitle} description={seoDescription}>
       <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-          {/* 面包屑挪到卡片外，与 PromptPage 保持一致的视觉层级 */}
           <Breadcrumb
             items={[
               {
@@ -147,114 +185,124 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
             style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
           />
 
-          <Flex vertical gap="middle" style={{ minHeight: 400 }}>
-            {/* 提示词主卡片 — 默认 antd border = hairline，无需额外 shadow */}
-            <Card style={{ borderRadius: 12 }} styles={{ body: { padding: 24 } }}>
-              <Flex vertical gap="small">
-                {/* 头部：标题 + owner（owner 作为右侧 meta 区） */}
-                <Flex justify="space-between" align="flex-start" gap="middle" wrap="wrap">
-                  <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.3 }}>
-                    {prompt.title}
-                  </Title>
-                  {prompt.owner && <Tag icon={<UserOutlined />}>{prompt.owner}</Tag>}
-                </Flex>
-
-                {/* 描述/备注 - Quote Style */}
-                {prompt.remark && (
-                  <div className="prompt-remark" style={{ marginTop: 12, borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                    <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
-                      {prompt.remark}
-                    </Typography.Text>
-                  </div>
-                )}
-
-                {/* 提示词内容 — Copy 升级为 large primary 主操作 */}
-                <div>
-                  <Flex justify="space-between" align="center" style={{ marginBottom: 12 }} wrap="wrap" gap="small">
-                    <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
-                      <Translate id="prompt.content">Prompt 内容</Translate>
-                    </Typography.Text>
-                    <Button type="primary" size="large" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
-                      {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                    </Button>
-                  </Flex>
-
-                  {/* CodeSnippet 视觉包装 + 占位符高亮 — 深井效果对齐 Phase 2 Modal */}
-                  <div
-                    style={{
-                      backgroundColor: "var(--ifm-background-color)",
-                      borderRadius: 6,
-                      padding: "20px 24px",
-                      border: "1px solid var(--site-color-hairline)",
-                    }}>
-                    <div
-                      style={{
-                        fontFamily: "var(--site-font-mono)",
-                        fontSize: 13,
-                        lineHeight: 1.65,
-                        whiteSpace: "pre-wrap",
-                        wordBreak: "break-word",
-                        color: "var(--ifm-color-content)",
-                      }}>
-                      {renderPromptWithPlaceholders(prompt.description || "")}
-                    </div>
-                  </div>
-
-                  {/* 字符 + token 估算 — mono 数字对齐 */}
-                  <Flex justify="space-between" align="center" style={{ marginTop: 8, fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
+          <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+            <Flex vertical gap={24}>
+              {/* HERO: title + meta line（owner · chars · tokens 用 Space split 串起来） */}
+              <Flex vertical gap={10}>
+                <Typography.Title level={1} className="comp-sheet-title">
+                  {prompt.title}
+                </Typography.Title>
+                <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                  {prompt.owner && (
                     <span>
-                      {charCount} <Translate id="prompt.charsLabel">字符</Translate> · ≈ {tokenCount} tokens
+                      <UserOutlined style={{ marginRight: 4 }} />
+                      {prompt.owner}
                     </span>
-                  </Flex>
-
-                  {/* 备注信息 */}
-                  {prompt.notes && (
-                    <Typography.Paragraph
-                      style={{
-                        fontSize: 13,
-                        lineHeight: 1.55,
-                        color: "var(--ifm-color-content-secondary)",
-                        margin: 0,
-                        marginTop: 24,
-                      }}>
-                      {prompt.notes}
-                    </Typography.Paragraph>
                   )}
-                </div>
-
-                <Divider />
-
-                {/* 底部：操作按钮 */}
-                <Flex justify="space-between" align="center" wrap="wrap" gap="small">
-                  <Space size="middle">
-                    {/* 投票按钮组 */}
-                    <Space.Compact>
-                      <Button icon={<UpOutlined />} onClick={() => handleVote("upvote")}>
-                        <Translate id="action.upvote">赞</Translate> {prompt.upvotes || 0}
-                      </Button>
-                      <Button icon={<DownOutlined />} onClick={() => handleVote("downvote")}>
-                        <Translate id="action.downvote">踩</Translate> {prompt.downvotes || 0}
-                      </Button>
-                    </Space.Compact>
-
-                    {/* 收藏按钮 */}
-                    <Button icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite}>
-                      {isFavorite ? <Translate id="action.removeFavorite">取消收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}
-                    </Button>
-                  </Space>
-
-                  <Suspense fallback={null}>
-                    <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
-                  </Suspense>
-                </Flex>
+                  <span style={monoNum}>
+                    {charCount.toLocaleString()} <Translate id="prompt.charsLabel">字符</Translate>
+                  </span>
+                  <span style={monoNum}>≈ {tokenCount.toLocaleString()} tokens</span>
+                </Space>
               </Flex>
-            </Card>
 
-            {/* 评论区卡片 */}
-            <Suspense fallback={null}>
-              <Card style={{ minHeight: 480, borderRadius: 12 }}>
-                <Comments pageId={prompt.id} type="userprompt" />
-              </Card>
+              {/* REMARK: sage 左竖线引语 */}
+              {prompt.remark && <blockquote className="comp-sheet-remark">{prompt.remark}</blockquote>}
+
+              {/* PROMPT BODY: 上下 hairline，无外框 */}
+              <Flex vertical gap={14}>
+                <Flex justify="space-between" align="center" wrap gap={12}>
+                  <Eyebrow>
+                    <Translate id="prompt.content">Prompt 内容</Translate>
+                  </Eyebrow>
+                  <Button type="primary" size="large" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
+                    {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
+                  </Button>
+                </Flex>
+                <div className="comp-sheet-code">{renderPromptWithPlaceholders(prompt.description || "")}</div>
+              </Flex>
+
+              {/* AUTHOR'S NOTE: 简易 ghost-border 容器 */}
+              {prompt.notes && (
+                <div
+                  style={{
+                    padding: "14px 16px",
+                    background: "var(--site-color-ghost-border)",
+                    borderRadius: 4,
+                    borderLeft: "2px solid var(--site-color-hairline)",
+                  }}>
+                  <Eyebrow>
+                    <Translate id="prompt.authorNote">作者备注</Translate>
+                  </Eyebrow>
+                  <Typography.Paragraph style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                    {prompt.notes}
+                  </Typography.Paragraph>
+                </div>
+              )}
+
+              {/* ACTIONS: vote pill + favorite + share */}
+              <Flex justify="space-between" align="center" wrap gap={8} style={{ paddingTop: 4 }}>
+                <Space size="small" wrap>
+                  {/* Asymmetric vote pill：▲ 永远带数字（主信号），▼ 在 downvotes=0 时 icon-only 弱化 */}
+                  <div className="comp-sheet-vote" role="group" aria-label="vote" title={`${prompt.upvotes ?? 0} 上 / ${prompt.downvotes ?? 0} 下`}>
+                    <Button
+                      type="text"
+                      size="small"
+                      icon={<UpOutlined />}
+                      onClick={() => handleVote("upvote")}
+                      aria-label="upvote"
+                      className="comp-sheet-vote-btn comp-sheet-vote-up">
+                      <span style={monoNum}>{prompt.upvotes ?? 0}</span>
+                    </Button>
+                    <Button
+                      type="text"
+                      size="small"
+                      icon={<DownOutlined />}
+                      onClick={() => handleVote("downvote")}
+                      aria-label="downvote"
+                      className={"comp-sheet-vote-btn comp-sheet-vote-down" + ((prompt.downvotes ?? 0) > 0 ? "" : " comp-sheet-vote-icon-only")}>
+                      {(prompt.downvotes ?? 0) > 0 && <span style={monoNum}>{prompt.downvotes}</span>}
+                    </Button>
+                  </div>
+
+                  <Button
+                    icon={isFavorite ? <HeartFilled /> : <HeartOutlined />}
+                    onClick={handleToggleFavorite}
+                    aria-pressed={isFavorite}
+                    className="comp-sheet-fav-btn">
+                    <Translate id="common.favorites">收藏</Translate>
+                  </Button>
+                </Space>
+
+                <Popover
+                  trigger="click"
+                  placement="topRight"
+                  content={
+                    <Suspense fallback={null}>
+                      <ShareButtons shareUrl={shareUrl} title={`${prompt.title}: ${prompt.remark || ""}`} popOver={true} />
+                    </Suspense>
+                  }>
+                  <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn">
+                    <Translate id="action.share">分享</Translate>
+                  </Button>
+                </Popover>
+              </Flex>
+            </Flex>
+          </Card>
+
+          {/* DISCUSSION: 一条 hairline + eyebrow，count 由内层 Comments 回传 */}
+          <Flex vertical gap={14} style={{ marginTop: 40, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
+            <Eyebrow>
+              <Translate id="comments.heading">讨论</Translate>
+              {commentCount > 0 && (
+                <>
+                  {" · "}
+                  <span style={monoNum}>{commentCount}</span>
+                </>
+              )}
+            </Eyebrow>
+            <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
+              <Comments pageId={prompt.id} type="userprompt" onCountChange={setCommentCount} />
             </Suspense>
           </Flex>
         </Col>
