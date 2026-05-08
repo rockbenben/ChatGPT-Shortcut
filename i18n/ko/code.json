@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "동의"
   },
-  "label.comments": {
-    "message": "댓글"
-  },
   "label.promptContent": {
     "message": "프롬프트 내용"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "추천순"
   },
-  "communityPrompts.disclaimer": {
-    "message": "커뮤니티 회원이 공유 · 의견은 프로젝트를 대표하지 않음"
-  },
   "level.stardust": {
     "message": "스타더스트"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI가 답장 중"
+  },
+  "comments.empty": {
+    "message": "아직 댓글이 없습니다"
+  },
+  "prompt.authorNote": {
+    "message": "작성자 메모"
+  },
+  "action.share": {
+    "message": "공유"
+  },
+  "comments.heading": {
+    "message": "토론"
+  },
+  "prompt.source": {
+    "message": "출처"
+  },
+  "prompt.translation": {
+    "message": "번역"
+  },
+  "share.copy": {
+    "message": "복사"
+  },
+  "share.native": {
+    "message": "시스템"
+  },
+  "share.shareTo": {
+    "message": "공유 대상"
+  },
+  "feedback.responseTime": {
+    "message": "보통 24시간 이내 답변"
+  },
+  "feedback.newIssue": {
+    "message": "새 Issue"
   }
 }

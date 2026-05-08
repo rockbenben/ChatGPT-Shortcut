@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Согласен"
   },
-  "label.comments": {
-    "message": "Комментарии"
-  },
   "label.promptContent": {
     "message": "Содержание промпта"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "Популярные"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Делятся участники сообщества · Мнения не отражают позицию проекта"
-  },
   "level.stardust": {
     "message": "Звёздная пыль"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "ИИ отвечает"
+  },
+  "comments.empty": {
+    "message": "Пока нет комментариев"
+  },
+  "prompt.authorNote": {
+    "message": "Примечание автора"
+  },
+  "action.share": {
+    "message": "Поделиться"
+  },
+  "comments.heading": {
+    "message": "Обсуждение"
+  },
+  "prompt.source": {
+    "message": "Источник"
+  },
+  "prompt.translation": {
+    "message": "Перевод"
+  },
+  "share.copy": {
+    "message": "Копировать"
+  },
+  "share.native": {
+    "message": "Система"
+  },
+  "share.shareTo": {
+    "message": "Поделиться в"
+  },
+  "feedback.responseTime": {
+    "message": "Обычно отвечаем в течение 24 часов"
+  },
+  "feedback.newIssue": {
+    "message": "Новый issue"
   }
 }
