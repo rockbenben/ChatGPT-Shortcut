@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "موافق"
   },
-  "label.comments": {
-    "message": "التعليقات"
-  },
   "label.promptContent": {
     "message": "محتوى التوجيه"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "الأكثر تصويتًا"
   },
-  "communityPrompts.disclaimer": {
-    "message": "محتوى مشارَك من أعضاء المجتمع · الآراء لا تمثل المشروع"
-  },
   "level.stardust": {
     "message": "غبار النجوم"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "الذكاء الاصطناعي يردّ"
+  },
+  "comments.empty": {
+    "message": "لا توجد تعليقات بعد"
+  },
+  "prompt.authorNote": {
+    "message": "ملاحظة المؤلف"
+  },
+  "action.share": {
+    "message": "مشاركة"
+  },
+  "comments.heading": {
+    "message": "النقاش"
+  },
+  "prompt.source": {
+    "message": "المصدر"
+  },
+  "prompt.translation": {
+    "message": "ترجمة"
+  },
+  "share.copy": {
+    "message": "نسخ"
+  },
+  "share.native": {
+    "message": "النظام"
+  },
+  "share.shareTo": {
+    "message": "مشاركة عبر"
+  },
+  "feedback.responseTime": {
+    "message": "عادةً نرد خلال 24 ساعة"
+  },
+  "feedback.newIssue": {
+    "message": "تقرير جديد"
   }
 }

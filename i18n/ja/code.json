@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "同意する"
   },
-  "label.comments": {
-    "message": "コメント"
-  },
   "label.promptContent": {
     "message": "プロンプトの内容"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "高評価順"
   },
-  "communityPrompts.disclaimer": {
-    "message": "コミュニティメンバーによる投稿 · 意見はプロジェクトを代表しません"
-  },
   "level.stardust": {
     "message": "スターダスト"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI が返信中"
+  },
+  "comments.empty": {
+    "message": "コメントはまだありません"
+  },
+  "prompt.authorNote": {
+    "message": "作者メモ"
+  },
+  "action.share": {
+    "message": "共有"
+  },
+  "comments.heading": {
+    "message": "ディスカッション"
+  },
+  "prompt.source": {
+    "message": "ソース"
+  },
+  "prompt.translation": {
+    "message": "翻訳"
+  },
+  "share.copy": {
+    "message": "コピー"
+  },
+  "share.native": {
+    "message": "システム"
+  },
+  "share.shareTo": {
+    "message": "共有先"
+  },
+  "feedback.responseTime": {
+    "message": "通常 24時間以内に返信"
+  },
+  "feedback.newIssue": {
+    "message": "新規 Issue"
   }
 }

@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "সম্মত"
   },
-  "label.comments": {
-    "message": "মন্তব্য"
-  },
   "label.promptContent": {
     "message": "প্রম্পট বিষয়বস্তু"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "সর্বাধিক ভোট"
   },
-  "communityPrompts.disclaimer": {
-    "message": "সম্প্রদায়ের সদস্যরা শেয়ার করেছেন · মতামত প্রকল্পের প্রতিনিধিত্ব করে না"
-  },
   "level.stardust": {
     "message": "নক্ষত্রধূলি"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI উত্তর দিচ্ছে"
+  },
+  "comments.empty": {
+    "message": "এখনও কোনো মন্তব্য নেই"
+  },
+  "prompt.authorNote": {
+    "message": "লেখকের নোট"
+  },
+  "action.share": {
+    "message": "শেয়ার করুন"
+  },
+  "comments.heading": {
+    "message": "আলোচনা"
+  },
+  "prompt.source": {
+    "message": "উৎস"
+  },
+  "prompt.translation": {
+    "message": "অনুবাদ"
+  },
+  "share.copy": {
+    "message": "কপি"
+  },
+  "share.native": {
+    "message": "সিস্টেম"
+  },
+  "share.shareTo": {
+    "message": "শেয়ার করুন"
+  },
+  "feedback.responseTime": {
+    "message": "সাধারণত 24 ঘণ্টার মধ্যে উত্তর"
+  },
+  "feedback.newIssue": {
+    "message": "নতুন Issue"
   }
 }

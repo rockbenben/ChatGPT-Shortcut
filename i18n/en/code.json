@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Agree"
   },
-  "label.comments": {
-    "message": "Comments"
-  },
   "label.promptContent": {
     "message": "Prompt Content"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "Most upvoted"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Shared by community members · Views don't represent the project"
-  },
   "level.stardust": {
     "message": "Stardust"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI is replying"
+  },
+  "comments.empty": {
+    "message": "No comments yet"
+  },
+  "prompt.authorNote": {
+    "message": "Author's Note"
+  },
+  "action.share": {
+    "message": "Share"
+  },
+  "comments.heading": {
+    "message": "Discussion"
+  },
+  "prompt.source": {
+    "message": "Source"
+  },
+  "prompt.translation": {
+    "message": "Translation"
+  },
+  "share.copy": {
+    "message": "Copy"
+  },
+  "share.native": {
+    "message": "System"
+  },
+  "share.shareTo": {
+    "message": "Share to"
+  },
+  "feedback.responseTime": {
+    "message": "Replies usually within 24h"
+  },
+  "feedback.newIssue": {
+    "message": "New Issue"
   }
 }

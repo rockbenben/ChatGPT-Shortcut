@@ -245,9 +245,6 @@
   "label.agree": {
     "message": "Setuju"
   },
-  "label.comments": {
-    "message": "Komentar"
-  },
   "label.promptContent": {
     "message": "Konten Prompt"
   },
@@ -1166,9 +1163,6 @@
   "sort.mostUpvoted": {
     "message": "Paling disukai"
   },
-  "communityPrompts.disclaimer": {
-    "message": "Dibagikan oleh anggota komunitas · Pendapat tidak mewakili proyek"
-  },
   "level.stardust": {
     "message": "Debu Bintang"
   },
@@ -1220,5 +1214,41 @@
   "userPage.level.sharedSuffix": {
     "message": "shared",
     "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+  },
+  "comments.aiReplying": {
+    "message": "AI sedang membalas"
+  },
+  "comments.empty": {
+    "message": "Belum ada komentar"
+  },
+  "prompt.authorNote": {
+    "message": "Catatan penulis"
+  },
+  "action.share": {
+    "message": "Bagikan"
+  },
+  "comments.heading": {
+    "message": "Diskusi"
+  },
+  "prompt.source": {
+    "message": "Sumber"
+  },
+  "prompt.translation": {
+    "message": "Terjemahan"
+  },
+  "share.copy": {
+    "message": "Salin"
+  },
+  "share.native": {
+    "message": "Sistem"
+  },
+  "share.shareTo": {
+    "message": "Bagikan ke"
+  },
+  "feedback.responseTime": {
+    "message": "Biasanya dibalas dalam 24 jam"
+  },
+  "feedback.newIssue": {
+    "message": "Issue Baru"
   }
 }
