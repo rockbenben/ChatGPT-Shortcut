@@ -1188,32 +1188,25 @@
     "message": "ช่องเปิด"
   },
   "hero.supportedAiTools": {
-    "message": "รองรับ {tools} และอื่นๆ",
-    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+    "message": "{tools} และอื่นๆ"
   },
   "noResults.title": {
-    "message": "ไม่พบพรอมต์ที่ตรงกัน",
-    "description": "No results title"
+    "message": "ไม่พบพรอมต์ที่ตรงกัน"
   },
   "noResults.description": {
-    "message": "ลองคำสำคัญอื่น หรือล้างตัวกรองแท็ก",
-    "description": "No results helpful guidance"
+    "message": "ลองคำสำคัญอื่น หรือล้างตัวกรองแท็ก"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL",
-    "description": "LEVEL spec card top-left label"
+    "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "ถึง {next}",
-    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+    "message": "ถึง {next}"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED",
-    "description": "Max level reached label"
+    "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared",
-    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+    "message": "shared"
   },
   "comments.aiReplying": {
     "message": "AI กำลังตอบ"

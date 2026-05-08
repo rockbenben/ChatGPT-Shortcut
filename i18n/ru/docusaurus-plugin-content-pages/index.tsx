@@ -75,10 +75,8 @@ const ShowcaseHeader: React.FC = () => (
           marginBottom: 20,
           fontFamily: "var(--site-font-mono)",
         }}>
-        <Translate
-          id="hero.supportedAiTools"
-          values={{ tools: SUPPORTED_AI_TOOLS.join(" · ") }}
-          description="Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once">
+        {/* All locales follow the minimal '{tools} <native etc>' pattern — no 'Works with' prefix */}
+        <Translate id="hero.supportedAiTools" values={{ tools: SUPPORTED_AI_TOOLS.join(" · ") }}>
           {"{tools} 等"}
         </Translate>
       </div>
