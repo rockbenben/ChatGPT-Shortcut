@@ -1188,32 +1188,25 @@
     "message": "قناة مفتوحة"
   },
   "hero.supportedAiTools": {
-    "message": "متوافق مع {tools} والمزيد",
-    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+    "message": "{tools} والمزيد"
   },
   "noResults.title": {
-    "message": "لم يتم العثور على مطالبات مطابقة",
-    "description": "No results title"
+    "message": "لم يتم العثور على مطالبات مطابقة"
   },
   "noResults.description": {
-    "message": "جرّب كلمة مفتاحية أخرى، أو امسح فلاتر الوسوم",
-    "description": "No results helpful guidance"
+    "message": "جرّب كلمة مفتاحية أخرى، أو امسح فلاتر الوسوم"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL",
-    "description": "LEVEL spec card top-left label"
+    "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "حتى {next}",
-    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+    "message": "حتى {next}"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED",
-    "description": "Max level reached label"
+    "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared",
-    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+    "message": "shared"
   },
   "comments.aiReplying": {
     "message": "الذكاء الاصطناعي يردّ"

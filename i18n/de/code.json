@@ -1188,32 +1188,25 @@
     "message": "Offener Kanal"
   },
   "hero.supportedAiTools": {
-    "message": "Funktioniert mit {tools} & mehr",
-    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+    "message": "{tools} und mehr"
   },
   "noResults.title": {
-    "message": "Keine passenden Prompts gefunden",
-    "description": "No results title"
+    "message": "Keine passenden Prompts gefunden"
   },
   "noResults.description": {
-    "message": "Versuche ein anderes Stichwort oder entferne die Tag-Filter",
-    "description": "No results helpful guidance"
+    "message": "Versuche ein anderes Stichwort oder entferne die Tag-Filter"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL",
-    "description": "LEVEL spec card top-left label"
+    "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "bis {next}",
-    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+    "message": "bis {next}"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED",
-    "description": "Max level reached label"
+    "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared",
-    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+    "message": "shared"
   },
   "comments.aiReplying": {
     "message": "KI antwortet"

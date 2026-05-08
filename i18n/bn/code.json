@@ -1188,32 +1188,25 @@
     "message": "উন্মুক্ত চ্যানেল"
   },
   "hero.supportedAiTools": {
-    "message": "{tools} এবং আরো",
-    "description": "Hero AI tools line. Default zh keeps it minimal ('{tools} 等'). Translators may add prefix ('Works with {tools}', '{tools} などに対応') as their language warrants — only constraint is {tools} appears once"
+    "message": "{tools} এবং আরো"
   },
   "noResults.title": {
-    "message": "মিলিত প্রম্পট পাওয়া যায়নি",
-    "description": "No results title"
+    "message": "মিলিত প্রম্পট পাওয়া যায়নি"
   },
   "noResults.description": {
-    "message": "অন্য কীওয়ার্ড চেষ্টা করুন, বা ট্যাগ ফিল্টার সাফ করুন",
-    "description": "No results helpful guidance"
+    "message": "অন্য কীওয়ার্ড চেষ্টা করুন, বা ট্যাগ ফিল্টার সাফ করুন"
   },
   "userPage.level.specLabel": {
-    "message": "LEVEL",
-    "description": "LEVEL spec card top-left label"
+    "message": "LEVEL"
   },
   "userPage.level.toNext": {
-    "message": "{next} পর্যন্ত",
-    "description": "Progress hint to next level, e.g. '距「钻石传说」' / 'to Diamond Legend'"
+    "message": "{next} পর্যন্ত"
   },
   "userPage.level.maxReached": {
-    "message": "MAX REACHED",
-    "description": "Max level reached label"
+    "message": "MAX REACHED"
   },
   "userPage.level.sharedSuffix": {
-    "message": "shared",
-    "description": "Suffix after shared count, e.g. 'shared' / '已分享'"
+    "message": "shared"
   },
   "comments.aiReplying": {
     "message": "AI উত্তর দিচ্ছে"
