@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AiShort (ChatGPT Shortcut) is an AI prompt management platform built on **Docusaurus 3.9.2** with **React 19** and **Ant Design 6**. Users browse, search, create, and share AI prompts across 18 languages. The backend is a Strapi instance at `https://api.newzone.top/api`.
+AiShort (ChatGPT Shortcut) is an AI prompt management platform built on **Docusaurus 3.10.1** with **React 19** and **Ant Design 6**. Users browse, search, create, and share AI prompts across 18 languages. The backend is a Strapi instance at `https://api.newzone.top/api`.
 
 Live site: https://www.aishort.top
 
@@ -25,7 +25,7 @@ There is no linter, formatter, or test framework configured. Type checking via `
 ## Architecture
 
 ### Framework Stack
-- **Docusaurus 3.9.2** — static site generator with file-based routing under `src/pages/`
+- **Docusaurus 3.10.1** — static site generator with file-based routing under `src/pages/`
 - **React 19** with Context API for state (no Redux/Zustand)
 - **Ant Design 6** — primary UI library, dark-mode only with zero-runtime CSS (`colorMode.disableSwitch: true`)
 - **Axios** for API calls with JWT auth interceptors
