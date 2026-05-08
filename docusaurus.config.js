@@ -46,6 +46,11 @@ const config = {
       ar: {
         direction: "rtl",
       },
+      // 历史 URL 用 /ind/，但 ind 不是合法的 BCP 47 语言代码（标准印尼语是 id）
+      // 用 htmlLang 把 <html lang> 和 hreflang 输出为 id，URL 路径保持 /ind/ 不动
+      ind: {
+        htmlLang: "id",
+      },
     },
   },
 

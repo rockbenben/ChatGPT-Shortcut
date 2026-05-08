@@ -81,9 +81,11 @@ function PromptPage({ prompt, currentLanguage }) {
   const websiteId = `${siteConfig.url}/#website`;
 
   // Tier 2: hreflang alternates — 对 LLM 和搜索引擎声明 18 locale 互为翻译
+  // hreflang 必须是合法 BCP 47 代码，优先取 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
   const hreflangAlternates = i18n.locales.map((loc) => {
     const pfx = loc === i18n.defaultLocale ? "" : `/${loc}`;
-    return { hreflang: loc, href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
+    const hreflang = i18n.localeConfigs?.[loc]?.htmlLang ?? loc;
+    return { hreflang, href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
   });
 
   // FAQ 结构：
