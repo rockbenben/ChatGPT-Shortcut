@@ -48,9 +48,9 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
 
   // Map data based on card type
   const title = isDataCard ? itemData.title : user.title;
-  // For Community Cards: description field is prompt, note field is description
+  // For Community Cards: description field is prompt, notes field is description
   const prompt = isDataCard ? itemData.prompt : user.description;
-  const description = isDataCard ? itemData.description : user.note || user.description;
+  const description = isDataCard ? itemData.description : user.notes || user.description;
   const remark = isDataCard ? itemData.remark : user.remark;
   const tags = user.tags;
   const website = user.website;

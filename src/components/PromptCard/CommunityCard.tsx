@@ -8,14 +8,15 @@ import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, UserOutlined, 
 import { AuthContext } from "../AuthContext";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
+import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import styles from "./styles.module.css";
 
 interface CommunityCardProps {
-  data: any;
+  data: CommunityPrompt;
   isFavorite?: boolean;
   onToggleFavorite?: (id: number, isComm: boolean) => void;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
-  onEdit?: (data: any) => void;
+  onEdit?: (data: CommunityPrompt) => void;
 }
 
 const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
@@ -59,7 +60,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       id: user.id,
       title: user.title,
       prompt: user.description,
-      description: user.note,
+      description: user.notes,
       remark: user.remark,
       tags: user.tags,
       owner: user.owner,

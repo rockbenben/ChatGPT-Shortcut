@@ -2,29 +2,22 @@ import React, { Suspense, useContext, useCallback, useMemo, useState } from "rea
 import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Result, Breadcrumb, Popover } from "antd";
 import { CopyOutlined, CheckOutlined, HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
 
 interface CommunityPromptPageProps {
-  prompt: {
-    id: number;
-    title: string;
-    description: string;
-    remark?: string;
-    notes?: string;
-    owner?: string;
-    upvotes?: number;
-    downvotes?: number;
-    upvoteDifference?: number;
-  } | null;
+  prompt: CommunityPrompt | null;
   loading?: boolean;
   error?: Error | null;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
@@ -48,6 +41,7 @@ const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPromptPageProps) {
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
+  const { siteConfig, i18n } = useDocusaurusContext();
   const { copied, copyText } = useCopyToClipboard();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
 
@@ -58,9 +52,11 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // 外层 eyebrow 显示 «讨论 · N» —— 由内层 Comments 通过 onCountChange 回传
   const [commentCount, setCommentCount] = useState(0);
 
-  // 字符/token 统计：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
+  // 字符/token 统计 + 占位符渲染：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
+  // renderedPrompt 解析 {{var}} 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
   const charCount = (prompt?.description || "").length;
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
+  const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
 
   const handleCopy = useCallback(() => {
     if (prompt?.description) {
@@ -160,8 +156,15 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const seoTitle = `${prompt.title} - ${translate({ id: "community.seoSuffix", message: "社区提示词" })}`;
   const seoDescription = prompt.remark || prompt.description?.substring(0, 160) || "";
 
+  // Canonical 自指 ?id= 路径（每条 prompt 在每个 locale 都有自己的页面）
+  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+  const canonicalUrl = `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`;
+
   return (
     <Layout title={seoTitle} description={seoDescription}>
+      <Head>
+        <link rel="canonical" href={canonicalUrl} />
+      </Head>
       <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
           <Breadcrumb
@@ -220,7 +223,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
                   </Button>
                 </Flex>
-                <div className="comp-sheet-code">{renderPromptWithPlaceholders(prompt.description || "")}</div>
+                <div className="comp-sheet-code">{renderedPrompt}</div>
               </Flex>
 
               {/* AUTHOR'S NOTE: 简易 ghost-border 容器 */}

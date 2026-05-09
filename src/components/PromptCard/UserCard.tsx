@@ -10,13 +10,14 @@ import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
+import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import styles from "./styles.module.css";
 
 interface UserCardProps {
-  data: any;
+  data: CommunityPrompt;
   sortableId?: string | number;
   isFiltered?: boolean;
-  onEdit?: (data: any) => void;
+  onEdit?: (data: CommunityPrompt) => void;
   onDelete?: (id: string) => void;
   onOpenModal?: (data: any) => void;
   extraActions?: ReactNode;
@@ -63,7 +64,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       id: user.id,
       title: user.title,
       prompt: user.description,
-      description: user.note,
+      description: user.notes,
       remark: user.remark,
       tags: user.tags,
       owner: user.owner,
