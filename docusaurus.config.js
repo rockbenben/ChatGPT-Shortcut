@@ -67,6 +67,11 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        // 裸 /community-prompt（无 ?id=）和各 locale 同名路径只渲染 Invalid prompt ID，
+        // 没有索引价值；从 sitemap 排除，避免搜索引擎抓取无效页
+        sitemap: {
+          ignorePatterns: ["/community-prompt", "/*/community-prompt"],
+        },
       }),
     ],
   ],
