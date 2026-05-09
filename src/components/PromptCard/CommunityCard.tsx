@@ -59,7 +59,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
       id: user.id,
       title: user.title,
       prompt: user.description,
-      description: user.note,
+      description: user.notes,
       remark: user.remark,
       tags: user.tags,
       owner: user.owner,

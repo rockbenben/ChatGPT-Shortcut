@@ -25,6 +25,3 @@ export { createFavorite, updateFavorite } from "./favorites";
 
 // MySpace APIs
 export { getMySpace, clearMySpaceCache, updateMySpaceOrder, updateCustomTags } from "./myspace";
-
-// Comments APIs
-export { getComments, postComment } from "./comments";
