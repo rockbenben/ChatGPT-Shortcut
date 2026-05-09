@@ -33,6 +33,47 @@ export const CACHE_PREFIX = {
  */
 const canUseCache = () => ExecutionEnvironment.canUseDOM;
 
+// ==================== 内存层 dedupe ====================
+// lscache 每次 get 都从 localStorage 反序列化 → 返回新对象引用，导致：
+//   - React useState 比较失败，setState 触发不必要的 re-render
+//   - React.memo/useMemo 浅比较失败，子组件全量重渲
+// memCache 在 lscache 之上加一层 Map：相同 key 多次 get 返回完全同一引用，
+// React diff/memo 都能命中。设计要点：
+//   - expiresAt 跟 lscache 同步（lscache.get 已经返回 null 时，自然降级）
+//   - 跨 tab 通过 storage event 失效本 tab 的 memCache 条目
+//   - 不存 ETag（短字符串，dedupe 无收益）
+const memCache = new Map();
+
+// 跨 tab 同步：另一个 tab 改/删 lscache → 触发本 tab 的 storage event → 失效对应 memCache 条目
+// 自 tab 修改 lscache 时不触发 storage event（浏览器规范），但本文件的 setCache/removeCache
+// 已经同步操作 memCache，无需额外处理
+if (typeof window !== "undefined") {
+  window.addEventListener("storage", (e) => {
+    if (!e.key) {
+      // localStorage.clear() 在另一个 tab 触发，e.key=null
+      memCache.clear();
+      return;
+    }
+    if (!e.key.startsWith("lscache-")) return;
+    const innerKey = e.key.slice("lscache-".length).replace(/-cacheexpiration$/, "");
+    memCache.delete(innerKey);
+  });
+}
+
+// 从 lscache 自身的 -cacheexpiration 元数据反推出 ms 过期时间戳
+// lscache 1.x 内部用分钟为单位（utils.currentTime() = floor(Date.now()/60000)），所以 × 60000 转 ms
+function readLscacheExpiryMs(key) {
+  try {
+    const raw = localStorage.getItem(`lscache-${key}-cacheexpiration`);
+    if (!raw) return null;
+    const minutes = parseInt(raw, 10);
+    if (Number.isNaN(minutes)) return null;
+    return minutes * 60 * 1000;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * 设置缓存
  * @param {string} key - 缓存键
@@ -43,6 +84,7 @@ export const setCache = (key, value, ttlMinutes) => {
   if (!canUseCache()) return;
   try {
     lscache.set(key, value, ttlMinutes);
+    memCache.set(key, { data: value, expiresAt: Date.now() + ttlMinutes * 60 * 1000 });
   } catch (e) {
     console.error("[Cache] Error setting cache for key:", key, e);
   }
@@ -55,7 +97,21 @@ export const setCache = (key, value, ttlMinutes) => {
  */
 export const getCache = (key) => {
   if (!canUseCache()) return null;
-  return lscache.get(key);
+
+  // memCache 命中 → 返回原引用，让 React diff / memo 浅比较成立
+  const mem = memCache.get(key);
+  if (mem) {
+    if (mem.expiresAt > Date.now()) return mem.data;
+    memCache.delete(key); // 自身过期清掉
+  }
+
+  // 降级：从 lscache 读，回填 memCache
+  const fresh = lscache.get(key);
+  if (fresh != null) {
+    const expiresAt = readLscacheExpiryMs(key) ?? Date.now() + 60 * 60 * 1000;
+    memCache.set(key, { data: fresh, expiresAt });
+  }
+  return fresh;
 };
 
 /**
@@ -64,6 +120,7 @@ export const getCache = (key) => {
  */
 export const removeCache = (key) => {
   if (!canUseCache()) return;
+  memCache.delete(key);
   lscache.remove(key);
 };
 
@@ -72,6 +129,7 @@ export const removeCache = (key) => {
  */
 export const flushCache = () => {
   if (!canUseCache()) return;
+  memCache.clear();
   lscache.flush();
 };
 
@@ -82,6 +140,13 @@ export const flushCache = () => {
 export const flushCacheByPrefix = (prefix) => {
   if (!canUseCache()) return;
   lscache.flushExpired();
+
+  // memCache 同步
+  const memKeysToDelete = [];
+  for (const key of memCache.keys()) {
+    if (key.startsWith(prefix)) memKeysToDelete.push(key);
+  }
+  memKeysToDelete.forEach((key) => memCache.delete(key));
 
   // lscache 没有按前缀清除的方法，需要遍历
   const keysToRemove = [];
@@ -234,17 +299,13 @@ export const extendCache = (key, ttlMinutes) => {
 export const needsCacheExtension = (key, ttlMinutes) => {
   if (!canUseCache()) return true; // 无法判断时，保守返回 true
 
-  const expiryKey = `lscache-${key}-cacheexpiration`;
-  const expiryTime = localStorage.getItem(expiryKey);
+  // lscache 内部把过期时间存为分钟（utils.currentTime() = floor(Date.now()/60000)），
+  // readLscacheExpiryMs 统一转成 ms 时间戳；解析失败/无元数据时返回 null → 保守扩展
+  const expiryMs = readLscacheExpiryMs(key);
+  if (expiryMs == null) return true;
 
-  if (!expiryTime) return true; // 无过期信息，需要验证
-
-  const expiryNum = parseInt(expiryTime, 10);
-  if (isNaN(expiryNum)) return true; // 解析失败，保守返回 true
-
-  const now = Date.now();
+  const remaining = expiryMs - Date.now();
   const ttlMs = ttlMinutes * 60 * 1000;
-  const remaining = expiryNum - now;
 
   return remaining < ttlMs * 0.5;
 };

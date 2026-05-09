@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback, Suspense } from "react";
+import React, { useContext, useEffect, useState, useCallback, useMemo, useRef, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
@@ -17,24 +17,41 @@ import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import {
+  primeCacheFromSnapshot,
+  communitySnapshot,
+  COMMUNITY_PAGE_SIZE,
+  type CommunitySortField,
+  type CommunityPrompt,
+} from "@site/src/utils/snapshotPrime";
 const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
 
 const { Text } = Typography;
 
-const pageSize = 12;
+interface SnapshotView {
+  items: CommunityPrompt[];
+  total: number;
+}
 
-interface CommunityPromptItem {
-  id: number;
-  title: string;
-  owner: string;
-  remark?: string;
-  notes?: string;
-  description: string;
-  upvotes?: number;
-  downvotes?: number;
-  upvoteDifference?: number;
+// snapshot 文件里 byNewest/byUpvoted 只存 ids；items 从 byId 拼出，避免 JSON 里同一条 prompt 被存两遍
+// 快照只覆盖首页 + 默认排序，避免分页/搜索/异常排序的旧数据污染
+// 空 stub 兜底：fresh clone 时 ensure-only 写出 ids=[] 的占位 JSON，此时返回 null
+// 让初始渲染走 skeleton + API 兜底，避免闪一下「无结果」
+function getSnapshotView(page: number, sortField: CommunitySortField, searchTerm: string): SnapshotView | null {
+  if (page !== 1 || searchTerm) return null;
+  const index =
+    sortField === "id"
+      ? communitySnapshot.byNewest
+      : sortField === "upvoteDifference"
+        ? communitySnapshot.byUpvoted
+        : null;
+  if (!index || index.ids.length === 0) return null;
+
+  const items = index.ids.map((id) => communitySnapshot.byId[String(id)]).filter(Boolean);
+  if (items.length === 0) return null;
+  return { items, total: index.total };
 }
 
 const CommunityPrompts = () => {
@@ -43,48 +60,77 @@ const CommunityPrompts = () => {
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
   const location = useLocation();
   const { siteConfig, i18n } = useDocusaurusContext();
-  // SSR 安全的 CollectionPage schema（仅框架，items 是客户端 fetch 的，故省略）
-  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
-  const pageUrl = `${siteConfig.url}${localePrefix}/community-prompts`;
-  const collectionSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": pageUrl,
-        url: pageUrl,
-        name: COMMU_TITLE,
-        description: COMMU_DESCRIPTION,
-        inLanguage: i18n.currentLocale,
-        isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
-        // 社区搜索现在公开，加 SearchAction 让 LLM/搜索引擎能引导用户搜社区内容
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${pageUrl}?name={search_term_string}`,
+  // 页面级静态信息（locale + siteConfig.url 在组件生命周期内稳定），合并到一个 useMemo
+  // 避免每次 vote/copy/翻页 re-render 都重建对象 + JSON.stringify
+  const { pageUrl, collectionSchemaJson, localePrefix } = useMemo(() => {
+    const pfx = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+    const url = `${siteConfig.url}${pfx}/community-prompts`;
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": url,
+          url,
+          name: COMMU_TITLE,
+          description: COMMU_DESCRIPTION,
+          inLanguage: i18n.currentLocale,
+          isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
+          // 社区搜索现在公开，加 SearchAction 让 LLM/搜索引擎能引导用户搜社区内容
+          potentialAction: {
+            "@type": "SearchAction",
+            target: { "@type": "EntryPoint", urlTemplate: `${url}?name={search_term_string}` },
+            "query-input": "required name=search_term_string",
           },
-          "query-input": "required name=search_term_string",
         },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: SITE_NAME, item: `${siteConfig.url}${localePrefix}/` },
-          { "@type": "ListItem", position: 2, name: COMMU_TITLE, item: pageUrl },
-        ],
-      },
-    ],
-  };
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, item: `${siteConfig.url}${pfx}/` },
+            { "@type": "ListItem", position: 2, name: COMMU_TITLE, item: url },
+          ],
+        },
+      ],
+    };
+    return { pageUrl: url, collectionSchemaJson: JSON.stringify(schema), localePrefix: pfx };
+  }, [i18n.currentLocale, i18n.defaultLocale, siteConfig.url]);
+  // 默认视图（page=1, sort=id, 无搜索）从构建期快照初始化，让 SSG HTML 里就含真实卡片，
+  // 把 LCP 元素从「等 API 后渲染的 PromptCard」前移到 HTML 解析阶段
+  // useMemo 保证仅初始计算一次：仅 useState 默认值用，subsequent render 不重建 12 项数组
+  const initialSnapshot = useMemo(() => getSnapshotView(1, "id", ""), []);
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [userprompts, setUserPrompts] = useState<CommunityPromptItem[]>([]);
+  const [loading, setLoading] = useState(!initialSnapshot);
+  const [userprompts, setUserPrompts] = useState<CommunityPrompt[]>(initialSnapshot?.items ?? []);
   const [currentPage, setCurrentPage] = useState(1);
-  const [total, setTotal] = useState(0);
-  const [sortField, setSortField] = useState("id");
+  const [total, setTotal] = useState(initialSnapshot?.total ?? 0);
+  const [sortField, setSortField] = useState<CommunitySortField>("id");
   const [searchTerm, setSearchTerm] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalData, setModalData] = useState<any>(null);
   // 直接读 window.location.href，随路由变化自然更新；避免旧方案的 useMemo 空依赖导致 share link 停留在初次 URL
   const ShareUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // useState 已经直接用 initialSnapshot seed 进 state；数据 useEffect 第一次跑时
+  // state 跟 snapshot 完全一致，重复 setUserPrompts 只会触发一次无意义的 parent re-render
+  // （byId items refs 稳定 → PromptCard 全 bail，但 reconciliation 仍跑一次）
+  const skipNextSnapshotFill = useRef<boolean>(!!initialSnapshot);
+
+  // 本次会话的投票记录（防止 API 请求期间重复点击）
+  const sessionVotedIdsRef = useRef<Set<string>>(new Set());
+
+  // 用 ref 持有最新 userAuth / userprompts，让 vote 保持稳定引用（不因每次投票后 userprompts 变化而重建，避免 PromptCard 跟着 re-render）
+  const userAuthRef = useRef(userAuth);
+  userAuthRef.current = userAuth;
+  const userpromptsRef = useRef(userprompts);
+  userpromptsRef.current = userprompts;
+
+  // 把 snapshot 当上次 fetch 的结果塞进 lscache：列表层带 ETag、详情层带真 updatedAt。
+  // 让数据 useEffect 的 getCommPrompts 首次访问就命中（throttle/304），
+  // 同时让用户后续点详情卡片也免一次 bulk POST。
+  // 务必排在数据 useEffect 之前（React 按声明顺序执行）。
+  useEffect(() => {
+    primeCacheFromSnapshot();
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -96,13 +142,29 @@ const CommunityPrompts = () => {
   }, [location.search]);
 
   // cancelled flag 防止过期请求在新 effect 触发后覆盖 state；错误直接 surface，用户通过翻页/排序/搜索自己触发重试
+  // 快照命中时（首页 + 默认排序）走 SWR：立即用快照填充，后台静默刷新；命中失败则保留原 skeleton 体验
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
+    // 首次 mount：useState 已用 initialSnapshot seed 同样数据，跳过重复 set 减少一次 parent reconciliation
+    const wasSeeded = skipNextSnapshotFill.current;
+    skipNextSnapshotFill.current = false;
+
+    const snapshotView = wasSeeded ? null : getSnapshotView(currentPage, sortField, searchTerm);
+    if (!wasSeeded) {
+      if (snapshotView) {
+        setUserPrompts(snapshotView.items);
+        setTotal(snapshotView.total);
+        setLoading(false);
+      } else {
+        setLoading(true);
+      }
+    }
+    // 错误兜底用：seed/snapshot 任一命中都视为已有可见内容，避免 toast 遮挡卡片
+    const hasVisibleContent = wasSeeded || !!snapshotView;
 
     (async () => {
       try {
-        const result = await getCommPrompts(currentPage, pageSize, sortField, "desc", searchTerm);
+        const result = await getCommPrompts(currentPage, COMMUNITY_PAGE_SIZE, sortField, "desc", searchTerm);
         if (cancelled) return;
         if (result && result[0].length > 0) {
           setUserPrompts(result[0]);
@@ -114,8 +176,10 @@ const CommunityPrompts = () => {
       } catch (error) {
         if (cancelled) return;
         console.error("Failed to fetch community prompts:", error);
-        // key 去重：快速连续失败不会堆叠多个 toast
-        messageApi.error({ content: "Failed to fetch data", key: "comm-fetch-error" });
+        if (!hasVisibleContent) {
+          // key 去重：快速连续失败不会堆叠多个 toast
+          messageApi.error({ content: "Failed to fetch data", key: "comm-fetch-error" });
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -129,17 +193,6 @@ const CommunityPrompts = () => {
   // 公开搜索：community prompts 是用户主动分享的公开内容，搜索无需登录
   // 投票/收藏仍需登录（在 vote / addFavorite 内部检查）
   const handleBeforeSearch = useCallback(() => true, []);
-
-  // 本次会话的投票记录（防止 API 请求期间重复点击）
-  const sessionVotedIdsRef = React.useRef<Set<string>>(new Set());
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalData, setModalData] = useState<any>(null);
-
-  // 用 ref 持有最新 userAuth / userprompts，让 vote 保持稳定引用（不因每次投票后 userprompts 变化而重建，避免 PromptCard 跟着 re-render）
-  const userAuthRef = React.useRef(userAuth);
-  userAuthRef.current = userAuth;
-  const userpromptsRef = React.useRef(userprompts);
-  userpromptsRef.current = userprompts;
 
   const vote = useCallback(
     async (promptId: number, action: "upvote" | "downvote") => {
@@ -229,11 +282,21 @@ const CommunityPrompts = () => {
     setModalOpen(true);
   }, []);
 
+  // PromptCard 透传给 onToggleFavorite 的 callback：用 useCallback 锁住引用，
+  // 避免 inline lambda 让 12 张 React.memo 卡片每次父级 re-render 都失效
+  const onToggleFavorite = useCallback((id: string | number) => bookmark(Number(id)), [bookmark]);
+
+  // 收藏 ID Set：12 张卡的 isFavorite 查询从 O(n) Array.includes 改 O(1) Set.has
+  const commLovesSet = useMemo(
+    () => new Set<number>(userAuth?.data?.favorites?.commLoves ?? []),
+    [userAuth?.data?.favorites?.commLoves],
+  );
+
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <Head>
         <link rel="canonical" href={pageUrl} />
-        <script type="application/ld+json">{JSON.stringify(collectionSchema)}</script>
+        <script type="application/ld+json">{collectionSchemaJson}</script>
       </Head>
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">
@@ -265,7 +328,7 @@ const CommunityPrompts = () => {
                 ]}
                 value={sortField}
                 onChange={(value) => {
-                  setSortField(value as string);
+                  setSortField(value as CommunitySortField);
                   setCurrentPage(1);
                 }}
               />
@@ -275,26 +338,23 @@ const CommunityPrompts = () => {
             </Flex>
 
             {loading ? (
-              <PromptCardSkeleton count={pageSize} />
+              <PromptCardSkeleton count={COMMUNITY_PAGE_SIZE} />
             ) : userprompts.length === 0 ? (
               <Flex justify="center" align="center" style={{ minHeight: 300, width: "100%" }}>
                 <NoResults />
               </Flex>
             ) : (
               <Row gutter={[16, 16]}>
-                {userprompts.map((commuPrompt) => {
-                  const isBookmarked = userAuth?.data?.favorites?.commLoves?.includes(commuPrompt.id);
-                  return (
-                    <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                      <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={isBookmarked} onToggleFavorite={(id) => bookmark(Number(id))} onOpenModal={onOpenModal} />
-                    </Col>
-                  );
-                })}
+                {userprompts.map((commuPrompt) => (
+                  <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
+                    <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={commLovesSet.has(commuPrompt.id)} onToggleFavorite={onToggleFavorite} onOpenModal={onOpenModal} />
+                  </Col>
+                ))}
               </Row>
             )}
 
             <div style={{ display: "flex", justifyContent: "center", marginTop: 32 }}>
-              <Pagination current={currentPage} pageSize={pageSize} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
+              <Pagination current={currentPage} pageSize={COMMUNITY_PAGE_SIZE} total={total} showQuickJumper showSizeChanger={false} onChange={onChangePage} />
             </div>
 
             {open && (

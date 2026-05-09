@@ -468,14 +468,11 @@ export async function voteOnUserPrompt(promptId: number, action: "upvote" | "dow
       const { upvotes, downvotes } = result.data.counts;
       const upvoteDifference = upvotes - downvotes;
 
-      // Update prompt single cache
+      // Update prompt single cache（不 mutate cachedData，dedupe 后其他 holder 会共享同一引用）
       const cacheKey = getPromptCacheKey("commus", promptId);
       const cachedData = getCache(cacheKey);
       if (cachedData) {
-        cachedData.upvotes = upvotes;
-        cachedData.downvotes = downvotes;
-        cachedData.upvoteDifference = upvoteDifference;
-        setCache(cacheKey, cachedData, getPromptTTL("commus"));
+        setCache(cacheKey, { ...cachedData, upvotes, downvotes, upvoteDifference }, getPromptTTL("commus"));
       }
 
       // Clear list cache
