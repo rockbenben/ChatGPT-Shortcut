@@ -6,7 +6,6 @@ import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
-import LoginComponent from "@site/src/components/user/login";
 import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
@@ -17,16 +16,12 @@ import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
-import {
-  primeCacheFromSnapshot,
-  communitySnapshot,
-  COMMUNITY_PAGE_SIZE,
-  type CommunitySortField,
-  type CommunityPrompt,
-} from "@site/src/utils/snapshotPrime";
+import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
 const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
 const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
+// LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户打开登录 Modal 才渲染
+const LoginComponent = React.lazy(() => import("@site/src/components/user/login"));
 
 const { Text } = Typography;
 
@@ -41,12 +36,7 @@ interface SnapshotView {
 // 让初始渲染走 skeleton + API 兜底，避免闪一下「无结果」
 function getSnapshotView(page: number, sortField: CommunitySortField, searchTerm: string): SnapshotView | null {
   if (page !== 1 || searchTerm) return null;
-  const index =
-    sortField === "id"
-      ? communitySnapshot.byNewest
-      : sortField === "upvoteDifference"
-        ? communitySnapshot.byUpvoted
-        : null;
+  const index = sortField === "id" ? communitySnapshot.byNewest : sortField === "upvoteDifference" ? communitySnapshot.byUpvoted : null;
   if (!index || index.ids.length === 0) return null;
 
   const items = index.ids.map((id) => communitySnapshot.byId[String(id)]).filter(Boolean);
@@ -287,10 +277,7 @@ const CommunityPrompts = () => {
   const onToggleFavorite = useCallback((id: string | number) => bookmark(Number(id)), [bookmark]);
 
   // 收藏 ID Set：12 张卡的 isFavorite 查询从 O(n) Array.includes 改 O(1) Set.has
-  const commLovesSet = useMemo(
-    () => new Set<number>(userAuth?.data?.favorites?.commLoves ?? []),
-    [userAuth?.data?.favorites?.commLoves],
-  );
+  const commLovesSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves ?? []), [userAuth?.data?.favorites?.commLoves]);
 
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
@@ -359,7 +346,9 @@ const CommunityPrompts = () => {
 
             {open && (
               <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-                <LoginComponent />
+                <Suspense fallback={null}>
+                  <LoginComponent />
+                </Suspense>
               </Modal>
             )}
             {modalOpen && (

@@ -1,9 +1,10 @@
-import React, { useContext, useState, useCallback, useMemo } from "react";
+import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, EditOutlined, LogoutOutlined, ShareAltOutlined, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
-import LoginComponent from "./login";
+// LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
+const LoginComponent = React.lazy(() => import("./login"));
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
@@ -170,7 +171,9 @@ const UserStatus = () => {
         <>
           {loggedOutButtons}
           <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-            <LoginComponent />
+            <Suspense fallback={null}>
+              <LoginComponent />
+            </Suspense>
           </Modal>
         </>
       )}
