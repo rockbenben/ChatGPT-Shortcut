@@ -17,7 +17,6 @@ import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
 import ShowcaseTooltip from "@site/src/components/ShowcaseTooltip";
 
 import UserStatus from "@site/src/components/user/UserStatus";
-import MySpace from "@site/src/components/user/MySpace";
 import SearchBar, { useFilteredPrompts } from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
@@ -43,6 +42,8 @@ import defaultOtherData from "@site/src/data/default/other_ja.json";
 const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
 const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
+// MySpace 仅在 collection 视图 + 登录态下渲染，未登录访客（占大多数流量）不需要
+const MySpace = React.lazy(() => import("@site/src/components/user/MySpace"));
 
 const { Title, Paragraph } = Typography;
 
@@ -63,9 +64,7 @@ const ShowcaseHeader: React.FC = () => (
         }}>
         AI Short
       </Title>
-      <p style={{ fontSize: 18, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.55, color: "var(--ifm-color-content-secondary)" }}>
-        {SLOGAN}
-      </p>
+      <p style={{ fontSize: 18, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.55, color: "var(--ifm-color-content-secondary)" }}>{SLOGAN}</p>
       <div
         aria-label="Supported AI tools"
         style={{
@@ -408,6 +407,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
   const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
   const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
+  const commFavoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves || []), [userAuth?.data?.favorites?.commLoves]);
 
   const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
 
@@ -549,7 +549,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
           <Row gutter={[16, 16]}>
             {filteredCommusWithDeltas.map((user, index) => {
               const isUserPrompt = userPromptIdSet.has(user.id);
-              const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(user.id);
+              const isFavorite = commFavoriteIdSet.has(user.id);
 
               return (
                 <React.Fragment key={user.id}>
@@ -627,7 +627,9 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
         alignItems: "center",
         gap: 4,
       }}>
-      <span aria-hidden style={{ fontSize: 11, color }}>{icon}</span>
+      <span aria-hidden style={{ fontSize: 11, color }}>
+        {icon}
+      </span>
       <span>{label}</span>
     </div>
     <div
@@ -737,14 +739,11 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
   const { userAuth } = useContext(AuthContext);
   const { viewMode } = useViewMode();
 
-  // 从缓存初始化 stats，避免刷新时显示 0
-  const cachedStats =
-    typeof window !== "undefined"
-      ? (() => {
-          return getCache("myspace_stats");
-        })()
-      : null;
-  const [stats, setStats] = React.useState(cachedStats || { totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 });
+  // 从缓存初始化 stats，避免刷新时显示 0；用 lazy initializer 让 getCache 只在 mount 时调用一次
+  const [stats, setStats] = React.useState(() => {
+    const cached = typeof window !== "undefined" ? getCache("myspace_stats") : null;
+    return cached || { totalItems: 0, totalPrompts: 0, totalFavorites: 0, totalTags: 0 };
+  });
 
   // 从 MySpace 组件接收数据更新（避免重复请求）
   const handleDataLoaded = React.useCallback((newStats: { totalItems: number; totalPrompts: number; totalFavorites: number; totalTags: number }) => {
@@ -762,7 +761,9 @@ const MyCollectionView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOp
   return (
     <div className="container margin-top--md">
       <PageHeader userAuth={userAuth} {...stats} />
-      <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
+      <Suspense fallback={null}>
+        <MySpace onOpenModal={onOpenModal} onDataLoaded={handleDataLoaded} />
+      </Suspense>
     </div>
   );
 };
