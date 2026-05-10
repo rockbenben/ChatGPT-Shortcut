@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback, memo, useRef } from "react";
+import React, { useEffect, useState, useMemo, useCallback, memo, useRef, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Button, Form, Modal, Pagination } from "antd";
@@ -8,7 +8,8 @@ import CommentComponent from "@site/src/components/CommentComponent";
 import CommentEditor from "@site/src/components/CommentComponent/CommentEditor";
 import { GiphySelector } from "@site/src/components/CommentComponent/GiphySelector";
 import { CommentSkeleton } from "@site/src/components/CommentComponent/CommentSkeleton";
-import LoginComponent from "@site/src/components/user/login";
+// LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户尝试评论触发登录 Modal 才渲染
+const LoginComponent = React.lazy(() => import("@site/src/components/user/login"));
 import { getComments, postComment } from "@site/src/api";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -510,7 +511,9 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
   return (
     <>
       <Modal open={isLoginModalOpen} onCancel={handleLoginModalClose} footer={null}>
-        <LoginComponent />
+        <Suspense fallback={null}>
+          <LoginComponent />
+        </Suspense>
       </Modal>
       {renderForm()}
 
