@@ -67,15 +67,23 @@ function readValidToken(): string | null {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Stale-While-Revalidate: 用缓存的 userAuth 初始化，避免刷新时闪烁
-  const cachedUserAuth = typeof window !== "undefined" ? getCache("user_auth") : null;
-  const hasValidToken = !!readValidToken();
+  // 一次性计算：每次 re-render 都跑 getCache + readValidToken（含 atob + JSON.parse）是浪费
+  const initialAuthRef = React.useRef<{ initial: any; hadCachedAuth: boolean } | null>(null);
+  if (initialAuthRef.current === null) {
+    if (typeof window === "undefined") {
+      initialAuthRef.current = { initial: null, hadCachedAuth: false };
+    } else {
+      const cached = getCache("user_auth");
+      // 有 token 但无缓存时（典型场景：刚登录后 reload），先用 pending 占位视作已登录
+      // 避免显示骨架屏；真实数据由 fetchUser 完成后填充
+      // data 为 null：下游 userAuth?.data?.X 链会返回 undefined；现有的 `if (!userAuth?.data) return` 守卫也正确生效
+      initialAuthRef.current = cached
+        ? { initial: cached, hadCachedAuth: true }
+        : { initial: readValidToken() ? { pending: true, data: null } : null, hadCachedAuth: false };
+    }
+  }
 
-  // 有 token 但无缓存时（典型场景：刚登录后 reload），先用 pending 占位视作已登录
-  // 避免显示骨架屏；真实数据由 fetchUser 完成后填充
-  // data 为 null：下游 userAuth?.data?.X 链会返回 undefined；现有的 `if (!userAuth?.data) return` 守卫也正确生效
-  const initialUserAuth = cachedUserAuth || (hasValidToken ? { pending: true, data: null } : null);
-
-  const [userAuth, setUserAuth] = useState<any>(initialUserAuth);
+  const [userAuth, setUserAuth] = useState<any>(initialAuthRef.current.initial);
   // 有缓存或 pending 占位时不显示骨架；仅在未知状态（既无 token 又无缓存）或强制刷新时才可能开启
   const [authLoading, setAuthLoading] = useState(false);
 
@@ -98,7 +106,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (forceRefresh) {
       startTransition(() => setAuthLoading(true));
     }
-    const hadCachedAuth = Boolean(cachedUserAuth);
+    const hadCachedAuth = initialAuthRef.current!.hadCachedAuth;
 
     const fetchOnce = async () => {
       // Avoid being stuck in loading forever if the request stalls.
