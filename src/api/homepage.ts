@@ -5,6 +5,7 @@
  */
 import { ALL_IDS, SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
+import { dedupe } from "@site/src/utils/dedupe";
 
 export interface CardData {
   id: number;
@@ -104,43 +105,51 @@ const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
 async function getPromptData(lang: string): Promise<CardData[]> {
   // Fallback to zh-Hans if language not supported
   const safeLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "zh-Hans";
-  const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
 
-  // 1. 检查内存缓存（最快）
+  // 1. 检查内存缓存（最快）—— 命中走快路径，跳过 dedupe 开销
   if (promptDataCache[safeLang]) {
     return promptDataCache[safeLang];
   }
 
-  // 2. 检查 lscache 持久化缓存（100天有效期）
-  const cachedData = getCache(cacheKey);
-  if (cachedData && Array.isArray(cachedData)) {
-    // 存入内存缓存以供后续快速访问
-    promptDataCache[safeLang] = cachedData;
-    return cachedData;
-  }
-
-  // 3. 静态映射导入 JSON 文件
-  try {
-    const loader = PROMPT_DATA_MAP[safeLang];
-    if (!loader) {
-      throw new Error(`Language ${safeLang} not supported in PROMPT_DATA_MAP`);
+  return dedupe(`getPromptData:${safeLang}`, async () => {
+    // 二次内存检查：可能有并发调用在 dedupe 排队期间已回填
+    if (promptDataCache[safeLang]) {
+      return promptDataCache[safeLang];
     }
-    const data = await loader();
-    const promptData = data.default;
 
-    // 同时存入内存缓存和 lscache
-    promptDataCache[safeLang] = promptData;
-    setCache(cacheKey, promptData, CACHE_TTL.PROMPT_CARDS); // 100 天
+    const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
 
-    return promptData;
-  } catch (error) {
-    console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
-    // Fallback to zh-Hans
-    if (safeLang !== "zh-Hans") {
-      return getPromptData("zh-Hans");
+    // 2. 检查 lscache 持久化缓存（100天有效期）
+    const cachedData = getCache(cacheKey);
+    if (cachedData && Array.isArray(cachedData)) {
+      // 存入内存缓存以供后续快速访问
+      promptDataCache[safeLang] = cachedData;
+      return cachedData;
     }
-    throw error;
-  }
+
+    // 3. 静态映射导入 JSON 文件
+    try {
+      const loader = PROMPT_DATA_MAP[safeLang];
+      if (!loader) {
+        throw new Error(`Language ${safeLang} not supported in PROMPT_DATA_MAP`);
+      }
+      const data = await loader();
+      const promptData = data.default;
+
+      // 同时存入内存缓存和 lscache
+      promptDataCache[safeLang] = promptData;
+      setCache(cacheKey, promptData, CACHE_TTL.PROMPT_CARDS); // 100 天
+
+      return promptData;
+    } catch (error) {
+      console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
+      // Fallback to zh-Hans
+      if (safeLang !== "zh-Hans") {
+        return getPromptData("zh-Hans");
+      }
+      throw error;
+    }
+  });
 }
 
 /**
@@ -296,9 +305,7 @@ export async function searchCardsLocally(tags: string[], searchName: string | nu
     }
 
     // 过滤：标签索引筛选 + 关键词搜索
-    const candidates = candidateIndices
-      ? Array.from(candidateIndices).map((i) => allData[i])
-      : allData;
+    const candidates = candidateIndices ? Array.from(candidateIndices).map((i) => allData[i]) : allData;
 
     if (!searchLower) return candidates;
 
