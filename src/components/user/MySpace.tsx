@@ -297,16 +297,24 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
   // 从模块缓存初始化（仅同一用户且数据结构未变时有效），避免 explore→collection 切换时重新加载
   // 需要验证结构哈希：如果用户在 explore 视图中添加/删除了收藏，缓存就失效
-  const cachedUserId = userAuth?.data?.id;
-  const currentItems = userAuth?.data?.items || [];
-  const initStructuralHash = currentItems.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
-  const validCache = _spaceItemsCache && _spaceItemsCache.ref?.userId === cachedUserId && _spaceItemsCache.ref?.structuralHash === initStructuralHash;
+  // 一次性计算：原写法 validCache 在函数体顶部，items.map+join 每次 re-render 都会跑，
+  // 但只在 mount 时被 useState/useRef 用作初始值，subsequent render 重算无意义
+  const initialCacheRef = useRef<{ items: any[]; tags: CustomTag[]; ref: { userId: number; hash: string; structuralHash: string } | null } | null>(null);
+  if (initialCacheRef.current === null) {
+    const userId = userAuth?.data?.id;
+    const items = userAuth?.data?.items || [];
+    const structuralHash = items.map((item: any) => `${item.type}_${item.source}_${item.id}`).join(",");
+    const validCache = _spaceItemsCache && _spaceItemsCache.ref?.userId === userId && _spaceItemsCache.ref?.structuralHash === structuralHash;
+    initialCacheRef.current = validCache
+      ? { items: _spaceItemsCache!.items, tags: _spaceItemsCache!.tags, ref: _spaceItemsCache!.ref }
+      : { items: [], tags: [], ref: null };
+  }
 
-  const [spaceItems, setSpaceItems] = useState<any[]>(validCache ? _spaceItemsCache!.items : []);
+  const [spaceItems, setSpaceItems] = useState<any[]>(initialCacheRef.current.items);
   const [dataProcessing, setDataProcessing] = useState(false);
   const [filter, setFilter] = useState<FilterType>("all");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [customTags, setCustomTags] = useState<CustomTag[]>(validCache ? _spaceItemsCache!.tags : []);
+  const [customTags, setCustomTags] = useState<CustomTag[]>(initialCacheRef.current.tags);
   const [tagManagerOpen, setTagManagerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   // 受控管理"哪张卡片的 tag dropdown 当前展开"——为了 multi-select：点 menu item 不关闭，点外面或 manage 才关
@@ -322,7 +330,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const [editingPrompt, setEditingPrompt] = useState<any>(null);
 
   // 跟踪已加载的用户数据，避免重复加载
-  const lastLoadedRef = useRef<{ userId: number; hash: string; structuralHash: string } | null>(validCache ? _spaceItemsCache!.ref : null);
+  const lastLoadedRef = useRef<{ userId: number; hash: string; structuralHash: string } | null>(initialCacheRef.current.ref);
 
   // 配置拖拽传感器
   const sensors = useSensors(
