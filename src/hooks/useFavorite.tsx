@@ -1,9 +1,9 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, { useCallback, useContext, useRef, startTransition } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
-import { createFavorite, updateFavorite, voteOnUserPrompt } from "../api";
-import { getCache } from "../utils/cache";
+import { patchFavorites, voteOnUserPrompt, type FavoriteDeltaResponse, type FavoriteDeltaOps } from "../api";
+import { setCache, CACHE_TTL } from "../utils/cache";
 
 interface UseFavoriteReturn {
   addFavorite: (id: number, isComm?: boolean) => Promise<void>;
@@ -12,7 +12,7 @@ interface UseFavoriteReturn {
 }
 
 export const useFavorite = (): UseFavoriteReturn => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { userAuth, setUserAuth, refreshUserAuth, syncMySpaceState } = useContext(AuthContext);
   const { message, modal } = App.useApp();
 
   // Use ref for userAuth to stabilize callbacks.
@@ -21,42 +21,124 @@ export const useFavorite = (): UseFavoriteReturn => {
   const userAuthRef = useRef(userAuth);
   userAuthRef.current = userAuth;
 
-  // 更新收藏列表（内部函数）- 静默刷新，不触发全屏 loading
-  const updateFavorites = useCallback(
-    async (userLoves: number[], favoriteId: number, isComm: boolean) => {
-      await updateFavorite(favoriteId, userLoves, isComm);
-      // 使用 false 进行静默刷新，不触发 authLoading 骨架屏
-      await refreshUserAuth();
+  // Optimistic local toggle — instant UI feedback before the server PATCH lands.
+  // Server-side merge handles concurrent-edit safety; this is just for UX latency.
+  // Returns the rollback predicate so callers can undo on error.
+  const applyOptimistic = useCallback(
+    (id: number, isComm: boolean, action: "add" | "remove"): (() => void) | null => {
+      const auth = userAuthRef.current;
+      if (!auth?.data) return null;
+
+      const source = isComm ? "community" : "card";
+      const items: any[] = auth.data.items || [];
+      const exists = items.some((it) => it.id === id && it.type === "favorite" && it.source === source);
+
+      // Skip if state already matches intent
+      if (action === "add" && exists) return null;
+      if (action === "remove" && !exists) return null;
+
+      const newItems =
+        action === "add"
+          ? [{ id, type: "favorite", source, updatedAt: new Date().toISOString() }, ...items]
+          : items.filter((it) => !(it.id === id && it.type === "favorite" && it.source === source));
+
+      const lovesKey = isComm ? "commLoves" : "loves";
+      const newLoves =
+        action === "add"
+          ? [id, ...(auth.data.favorites?.[lovesKey] || []).filter((x: number) => x !== id)]
+          : (auth.data.favorites?.[lovesKey] || []).filter((x: number) => x !== id);
+
+      const newUserAuth = {
+        ...auth,
+        data: {
+          ...auth.data,
+          items: newItems,
+          favorites: {
+            ...auth.data.favorites,
+            [lovesKey]: newLoves,
+          },
+        },
+      };
+      startTransition(() => setUserAuth(newUserAuth));
+      setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
+
+      // Rollback: re-apply the original state
+      return () => {
+        startTransition(() => setUserAuth(auth));
+        setCache("user_auth", auth, CACHE_TTL.MYSPACE);
+      };
     },
-    [refreshUserAuth]
+    [setUserAuth]
   );
+
+  // Reconcile with server delta response.
+  //  - favorites.loves/commLoves: 用 server 权威值覆盖（处理跨设备并发）
+  //  - items: 基于 ops 和 server 的 `added` 重建（去掉 op 触及的项，再 prepend server 的 added）
+  // 已知 trade-off：跨设备并发场景下本地 items 可能缺其他设备加的项，
+  // 但 favorites.loves/commLoves 包含完整 truth；下次 /myspace 刷新自愈。
+  const applyDeltaResponse = useCallback(
+    (delta: FavoriteDeltaResponse, ops: FavoriteDeltaOps) => {
+      const auth = userAuthRef.current;
+      if (!auth?.data) {
+        // 极少：在 patch 期间用户登出。直接放弃 reconcile。
+        return;
+      }
+
+      const removedKeys = new Set<string>();
+      (ops.loves?.remove || []).forEach((id) => removedKeys.add(`card_${id}`));
+      (ops.commLoves?.remove || []).forEach((id) => removedKeys.add(`community_${id}`));
+
+      const addedKeys = new Set<string>();
+      delta.added.forEach((it) => addedKeys.add(`${it.source}_${it.id}`));
+
+      const currentItems: any[] = auth.data.items || [];
+      const kept = currentItems.filter((it: any) => {
+        if (it.type !== "favorite") return true; // 用户自己的 prompts 不动
+        const k = `${it.source}_${it.id}`;
+        return !removedKeys.has(k) && !addedKeys.has(k);
+      });
+      const newItems = [...delta.added, ...kept];
+
+      syncMySpaceState({
+        items: newItems,
+        favoriteId: delta.favoriteId,
+        favorites: { loves: delta.loves, commLoves: delta.commLoves },
+      });
+    },
+    [syncMySpaceState]
+  );
+
+  // pending 窗口（登录/刷新后 AuthProvider 首轮 fetchUser 还在飞行中）：
+  // 等 fetchUser 完成再 PATCH，避免 race（GET 响应晚到时会覆盖掉 PATCH 后的本地 state）。
+  const ensureAuthReady = useCallback(async () => {
+    if (userAuthRef.current?.pending) {
+      await refreshUserAuth();
+    }
+  }, [refreshUserAuth]);
 
   const addFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
+      await ensureAuthReady();
+
+      // 预校验：收藏社区 prompt 时，本地直接拦截"收藏自己 prompt"的情况，
+      // 省一次注定 403 的 PATCH，且提示语走前端 i18n（后端只能返回英文）。
+      // pending/无数据时 owned 为空 → 跳过本地校验，由 server 端兜底。
+      if (isComm) {
+        const owned: number[] = (userAuthRef.current?.data?.userprompts || []).map((p: any) => p.id);
+        if (owned.includes(id)) {
+          message.error(<Translate id="message.cannotFavorOwn">不能收藏自己的提示词</Translate>);
+          return;
+        }
+      }
+
+      const rollback = applyOptimistic(id, isComm, "add");
+      const ops: FavoriteDeltaOps = {
+        [isComm ? "commLoves" : "loves"]: { add: [id], remove: [] },
+      };
+
       try {
-        let auth = userAuthRef.current;
-        // pending 窗口（登录后 reload 的 1-2s 内）先等 AuthProvider 首轮数据到位
-        // 否则会把已有用户当成新用户去调 createFavorite，重复建档
-        if (auth?.pending) {
-          await refreshUserAuth();
-          // setCache 在 fetchUser 内同步写入，比等 React 渲染 commit 更可靠
-          auth = getCache("user_auth") || userAuthRef.current;
-        }
-        if (!auth?.data?.favorites) {
-          // 新用户：创建收藏记录
-          await createFavorite([id], isComm);
-          // 静默刷新，不触发全屏 loading
-          await refreshUserAuth();
-        } else {
-          const currentLoves = isComm ? [...(auth.data.favorites.commLoves || [])] : [...(auth.data.favorites.loves || [])];
-          const favoriteId = auth.data.favorites.id;
-
-          if (!currentLoves.includes(id)) {
-            currentLoves.unshift(id);
-          }
-
-          await updateFavorites(currentLoves, favoriteId, isComm);
-        }
+        const delta = await patchFavorites(ops);
+        applyDeltaResponse(delta, ops);
 
         // 社区提示词：异步投赞成票（不阻塞）
         if (isComm) {
@@ -65,6 +147,7 @@ export const useFavorite = (): UseFavoriteReturn => {
 
         message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
       } catch (err) {
+        rollback?.();
         console.error(err);
         const errorMessage = (err as any)?.strapiMessage;
         if (errorMessage) {
@@ -74,33 +157,29 @@ export const useFavorite = (): UseFavoriteReturn => {
         }
       }
     },
-    [message, updateFavorites, refreshUserAuth]
+    [ensureAuthReady, applyOptimistic, applyDeltaResponse, message]
   );
 
   const removeFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
+      await ensureAuthReady();
+      const rollback = applyOptimistic(id, isComm, "remove");
+      const ops: FavoriteDeltaOps = {
+        [isComm ? "commLoves" : "loves"]: { add: [], remove: [id] },
+      };
+
       try {
-        const auth = userAuthRef.current;
-        const favoriteId = auth?.data?.favorites?.id;
-        if (!favoriteId) {
-          message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
-          return;
-        }
+        const delta = await patchFavorites(ops);
+        applyDeltaResponse(delta, ops);
 
-        const currentLoves = isComm ? [...(auth?.data?.favorites?.commLoves || [])] : [...(auth?.data?.favorites?.loves || [])];
-
-        const index = currentLoves.indexOf(id);
-        if (index > -1) {
-          currentLoves.splice(index, 1);
-          await updateFavorites(currentLoves, favoriteId, isComm);
-          message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
-        }
+        message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
       } catch (err) {
+        rollback?.();
         console.error(err);
         message.error(<Translate id="message.removeFavorite.error">移除收藏失败，请稍后重试</Translate>);
       }
     },
-    [message, updateFavorites]
+    [ensureAuthReady, applyOptimistic, applyDeltaResponse, message]
   );
 
   const confirmRemoveFavorite = useCallback(
