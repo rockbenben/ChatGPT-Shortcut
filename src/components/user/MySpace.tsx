@@ -10,7 +10,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-ki
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { getPrompts, updateMySpaceOrder, updateCustomTags, clearMySpaceCache } from "@site/src/api";
+import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
 import { getCommPrompts } from "@site/src/api/prompts";
 import { searchCardsLocally } from "@site/src/api/homepage";
 import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
@@ -273,7 +273,7 @@ let _spaceItemsCache: {
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
-  const { userAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth, syncMySpaceState, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
 
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
@@ -585,13 +585,29 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         }));
         await updateMySpaceOrder(newOrder);
 
+        // 本地同步 userAuth.data.items 顺序（不走 GET /myspace）：
+        // server controller 不重排，直接写入 newOrder + 加 updatedAt，前端 reorder
+        // 现有 items 即与 server 状态一致。useFavorite 用 items 做 reconcile base，
+        // 不同步会导致拖完后点 ❤️ 时拖动顺序丢失。
+        if (userAuth?.data?.items) {
+          const orderMap = new Map<string, number>();
+          newOrder.forEach((it, i) => orderMap.set(`${it.type}_${it.source}_${it.id}`, i));
+          const oldItems: any[] = userAuth.data.items;
+          const reordered = [...oldItems].sort((a, b) => {
+            const aKey = `${a.type}_${a.source}_${a.id}`;
+            const bKey = `${b.type}_${b.source}_${b.id}`;
+            return (orderMap.get(aKey) ?? oldItems.length) - (orderMap.get(bKey) ?? oldItems.length);
+          });
+          syncMySpaceState({ items: reordered });
+        }
+
         messageApi.success(<Translate id="message.orderSaved">排列已保存</Translate>);
       } catch (error) {
         console.error("Failed to save order:", error);
         messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
       }
     },
-    [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi],
+    [spaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi, userAuth, syncMySpaceState],
   );
 
   // 编辑提示词
@@ -632,9 +648,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
       // 立即更新本地状态
       setCustomTags(tags);
-      // 不 refreshUserAuth() 避免触发 MySpace useEffect 重 fetch，
-      // 仅清 myspace API 层缓存让下次自然刷新拿到最新
-      clearMySpaceCache();
+      // 本地同步 userAuth.data.customTags：让 user/index.tsx 导出、useFavorite 拼 lscache 时读到最新 definitions。
+      // items[i].tags 可能含已删除标签的孤儿 id，server 端会清理，本地短暂保留无视觉影响
+      //（消费者从 customTags definitions 查显示信息，孤儿 id 查不到自然不显示）。
+      syncMySpaceState({ customTags: tags });
 
       setTagManagerOpen(false);
       messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
@@ -729,16 +746,28 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     if (tagsEqual(currentTags, editing.originalTags)) return;
 
     try {
-      await updateCustomTags({ definitions: customTagsRef.current, itemTags: buildItemTags() });
-      // 清掉 myspace API 层缓存，让下次 getMySpace 跨过本地缓存拿 server 真值
-      clearMySpaceCache();
+      const itemTagsPayload = buildItemTags();
+      await updateCustomTags({ definitions: customTagsRef.current, itemTags: itemTagsPayload });
+      // 同步 userAuth.data.items[i].tags（之前此路径漏写造成隐性 drift）：
+      // spaceItems 的 composite id 跟 userAuth.items 的 (type, source, id) 一一对应，
+      // 用同一个 itemTags map 重新拼 tags 字段。空 tags 时移除字段，与 /myspace 返回 shape 一致。
+      if (userAuth?.data?.items) {
+        const newItems = (userAuth.data.items as any[]).map((it) => {
+          const compositeKey = `${it.type}_${it.source}_${it.id}`;
+          const tags = itemTagsPayload[compositeKey];
+          if (tags && tags.length > 0) return { ...it, tags };
+          const { tags: _drop, ...rest } = it;
+          return rest;
+        });
+        syncMySpaceState({ items: newItems });
+      }
     } catch (error) {
       console.error("Failed to update item tags:", error);
       messageApi.error("标签更新失败");
       // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
       setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
     }
-  }, [buildItemTags, messageApi]);
+  }, [buildItemTags, messageApi, userAuth, syncMySpaceState]);
 
   // 切换项目标签——纯本地 toggle，不发 API
   // functional updater 防 stale state（rapid click 安全）
