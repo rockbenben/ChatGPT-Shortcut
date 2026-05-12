@@ -31,7 +31,7 @@ There is no linter, formatter, or test framework configured. Type checking via `
 - **Axios** for API calls with JWT auth interceptors
 
 ### Key Contexts
-- **`AuthContext`** (`src/components/AuthContext.tsx`) — User auth state with Stale-While-Revalidate pattern: loads cached user from `lscache`, refreshes silently in background
+- **`AuthContext`** (`src/components/AuthContext.tsx`) — User auth state with Stale-While-Revalidate pattern: loads cached user from `lscache`, refreshes silently in background. Mounted **once** at `src/theme/Root.tsx` (not per-page) so SPA navigations don't re-trigger `/myspace`. `enrichMySpaceData` (in `src/utils/myspaceUtils.ts`) is the shared shape-builder used by `fetchUser`. Exposes `syncMySpaceState(patch)` — the **single entry point** for any client-side mutation to update `userAuth` state + `lscache-user_auth` + `lscache-myspace` in lockstep (used by useFavorite delta reconcile, MySpace drag/tag mutations). Adds `ensureAuthReady`-style waits in callers for the rare pending-window race.
 - **`ViewModeContext`** (`src/contexts/ViewModeContext.tsx`) — Toggles between "collection" (personal space) and "explore" (public browsing) modes
 
 ### API Layer (`src/api/`)
@@ -41,8 +41,19 @@ Modular barrel-exported API client against Strapi backend:
 - `auth.ts`, `user.ts`, `prompts.ts`, `favorites.ts`, `myspace.ts`, `comments.ts` — Domain modules
 - `homepage.ts` — Loads prompt cards from static JSON (not API), with 3-tier cache: Memory → lscache → Dynamic Import
 
+**Mutation patterns** (decision tree by frequency):
+- **High-frequency** (❤️ via `useFavorite`): `patchFavorites({loves:{add,remove}, commLoves:{add,remove}})` → delta `PATCH /favorites/me`. Server merges against current DB state, so concurrent multi-device edits don't lose entries. Response is intentionally delta-shaped (`{favoriteId, loves, commLoves, added}` — NOT `/myspace` shape), keeping payload proportional to ops not state. Flow: *optimistic update → PATCH → reconcile via `applyDeltaResponse`* — ops + `delta.added` are applied to local `items` (server's `updatedAt` replaces optimistic client time), then `syncMySpaceState` writes both lscache layers.
+- **Low-frequency local state changes** (MySpace drag, tag manager save, item-tag toggle): API call + local manual sync via `syncMySpaceState`. **No GET /myspace round-trip** — we know what we sent and server doesn't reorder, so we mirror the change locally. Documented trade-off: cross-device drift until next cold load.
+- **Complex/multi-entity mutations** (prompt CRUD via `useUserPrompt`, bulk import): API call + `refreshUserAuth()` for a full `/myspace` re-fetch. Justified because prompt operations have server-side lifecycle hooks that modify fields client can't predict.
+
+Legacy `createFavorite`/`updateFavorite` (full-array PUT) are retained for backward-compat; bulk import has been migrated to `patchFavorites`. **Every new mutation should route through `syncMySpaceState`** — never write `lscache-user_auth` or `lscache-myspace` directly from outside AuthContext.
+
 ### Caching (`src/utils/cache.js`)
 Uses `lscache` (localStorage with TTL). Prefixed keys: `cc` (copy counts), `cl_` (comm lists), `pc_` (prompt cards), `pm_` (commu prompts), `pu_` (user prompts), `sr_` (search), `cm_` (comments), `up` (user profile), `myspace`. ETag-based conditional requests for API cache validation.
+
+**Cache key invariant for `getPromptCacheKey(type, id, lang)`**: cards use `${prefix}${id}_${lang}` (per-language); commus/userprompts use `${prefix}${id}` (language-agnostic). Hoist `keyLang = type === "cards" ? sanitizedLang : undefined` once and reuse — passing `sanitizedLang` directly for commus/userprompts produces a different key from what `setCache` writes, silently breaking `needsCacheExtension` (returns `true` for nonexistent key → triggers redundant `check-updates` every page load).
+
+**In-flight dedup** (`src/utils/dedupe.ts`): both `getPromptData` (homepage cards loader) and `getPrompts` (commus/userprompts batch fetch) wrap their network paths with `dedupe(key, fn)` — concurrent calls for the same id set share a Promise instead of racing duplicate cache-validation + check-updates requests. Dedup key for `getPrompts`: `getPrompts_${safeType}_${sorted-ids}_${lang}`.
 
 ### Data Pipeline
 `CodeUpdateHandler.py` (Python) is the build-time data transformer:
