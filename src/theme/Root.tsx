@@ -1,5 +1,6 @@
 import React from "react";
 import { ConfigProvider, theme, App } from "antd";
+import { AuthProvider } from "@site/src/components/AuthContext";
 
 // Dark theme configuration with zero-runtime
 // 注意：需先运行 `yarn gen:antd-css` 生成静态样式
@@ -42,7 +43,9 @@ const darkTheme = {
 export default function Root({ children }) {
   return (
     <ConfigProvider theme={darkTheme}>
-      <App className="app-root">{children}</App>
+      <App className="app-root">
+        <AuthProvider>{children}</AuthProvider>
+      </App>
     </ConfigProvider>
   );
 }
