@@ -21,7 +21,8 @@ export { getUserAllInfo, updateUsername } from "./user";
 export { getPrompts, submitPrompt, updatePrompt, deletePrompt, getCommPrompts, searchCards, voteOnUserPrompt, fetchAllCopyCounts, updateCopyCount, getSingleCommPrompt } from "./prompts";
 
 // Favorites APIs
-export { createFavorite, updateFavorite } from "./favorites";
+export { createFavorite, updateFavorite, patchFavorites } from "./favorites";
+export type { FavoriteDeltaOps, FavoriteFieldOps, FavoriteDeltaResponse, MySpaceShape } from "./favorites";
 
 // MySpace APIs
 export { getMySpace, clearMySpaceCache, updateMySpaceOrder, updateCustomTags } from "./myspace";
