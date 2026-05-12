@@ -20,6 +20,7 @@ import {
 } from "@site/src/utils/cache";
 import { clearMySpaceCache } from "./myspace";
 import { fetchCardsByIds } from "./homepage";
+import { dedupe } from "@site/src/utils/dedupe";
 
 /**
  * Batch fetch prompts by IDs with ETag conditional request support
@@ -62,13 +63,27 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
     return fetchCardsByIds(normalizedIds, sanitizedLang);
   }
 
+  // In-flight dedup for commus/userprompts: AuthContext prefetch + SearchBar/page rendering
+  // can concurrently call getPrompts for the same id set (e.g., user's commLoves [118]).
+  // Without dedup, each call independently runs cache validation → multiple
+  // /userprompts/check-updates requests for the same ids. Sorted key for deterministic match.
+  const dedupKey = `getPrompts_${safeType}_${[...normalizedIds].sort((a, b) => a - b).join(",")}_${sanitizedLang}`;
+  return dedupe(dedupKey, () => fetchPromptsInner(safeType, normalizedIds, sanitizedLang));
+}
+
+async function fetchPromptsInner(safeType: string, normalizedIds: number[], sanitizedLang: string) {
+  // Userprompts/Commus are language-agnostic (cache key is just `${prefix}${id}`);
+  // cards differ by language (`${prefix}${id}_${lang}`). Hoist once so every reference
+  // to getPromptCacheKey below uses the same form — easy to miss inconsistencies
+  // (an earlier bug: validation paths passed sanitizedLang for commus → wrong key →
+  // needsCacheExtension always returned true → check-updates fired on every page load).
+  const keyLang = safeType === "cards" ? sanitizedLang : undefined;
+
   const cachedPrompts = new Map();
   const idsToFetch: number[] = [];
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
-    // Userprompts and Commus are language-agnostic (user content), others (cards) differ by language
-    const keyLang = safeType === "cards" ? sanitizedLang : undefined;
     const cacheKey = getPromptCacheKey(safeType, id, keyLang);
     const cachedData = getCache(cacheKey);
 
@@ -106,13 +121,13 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
       // Auto-extend non-favorited commus
       nonFavoredToExtend.forEach((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         extendCacheIfNeeded(cacheKey, ttl);
       });
 
       // Filter favorited commus: only validate those needing extension (< 50% TTL remaining)
       const favoredNeedingValidation = favoredToValidate.filter((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         return needsCacheExtension(cacheKey, ttl);
       });
 
@@ -129,7 +144,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
           // Process returned (available) prompts
           response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
             const cached = cachedPrompts.get(serverItem.id);
-            const cacheKey = getPromptCacheKey(safeType, serverItem.id, sanitizedLang);
+            const cacheKey = getPromptCacheKey(safeType, serverItem.id, keyLang);
 
             if (cached?.updatedAt === serverItem.updatedAt) {
               // Same → Conditionally extend
@@ -145,7 +160,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
           // Process unavailable prompts (not returned = unshared/deleted)
           favoredNeedingValidation.forEach((id) => {
             if (!returnedIds.has(id)) {
-              const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+              const cacheKey = getPromptCacheKey(safeType, id, keyLang);
               const cached = cachedPrompts.get(id);
 
               if (cached) {
@@ -182,7 +197,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
     } else if (safeType === "userprompts") {
       // For userprompts: trust MySpace validation, conditionally extend
       cachedPrompts.forEach((_, id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         extendCacheIfNeeded(cacheKey, ttl);
       });
     }
@@ -209,7 +224,6 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     // Save fetched data to cache
     response.data.forEach((item: { id: number }) => {
-      const keyLang = safeType === "cards" ? sanitizedLang : undefined;
       const cacheKey = getPromptCacheKey(safeType, item.id, keyLang);
       setCache(cacheKey, item, ttl);
     });
@@ -222,7 +236,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
-    console.error(`Error fetching ${type}:`, error);
+    console.error(`Error fetching ${safeType}:`, error);
     throw error;
   }
 }
