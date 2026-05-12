@@ -26,10 +26,10 @@ import {
   ShareAltOutlined,
 } from "@ant-design/icons";
 
-import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
+import { AuthContext } from "@site/src/components/AuthContext";
 import { getLevelInfo, LevelName, LevelIcon, type LevelInfo } from "@site/src/components/LevelSystem";
 import { getUserAllInfo } from "@site/src/api/user";
-import { submitPrompt, updatePrompt, createFavorite, updateFavorite, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
+import { submitPrompt, updatePrompt, patchFavorites, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
 import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
 
 const { Title, Text } = Typography;
@@ -228,7 +228,6 @@ const UserProfile = () => {
 
         // 获取用户已有提示词ID
         const userPromptIds = userAuth?.data?.userprompts?.map((p: any) => p.id) || [];
-        const favoriteId = userAuth?.data?.favorites?.id;
 
         // 获取现有提示词详情（用于对比内容）
         const conflictIds = prompts.filter((p) => p.id && userPromptIds.includes(p.id)).map((p) => p.id);
@@ -307,27 +306,28 @@ const UserProfile = () => {
           }
         }
 
-        // 处理收藏（合并模式，并行执行）
+        // 处理收藏（合并模式）—— 一次 PATCH 处理 loves 和 commLoves 的增量
+        // server 端 merge 保证多设备并发安全（无 lost-update 风险）
         if (hasFavorites) {
           const items = userAuth?.data?.items || [];
-          const favoriteConfigs = [
-            { importIds: favorites.card, isCommunity: false, derive: deriveLoves },
-            { importIds: favorites.community, isCommunity: true, derive: deriveCommLoves },
-          ] as const;
+          const existingLoves = new Set(deriveLoves(items));
+          const existingCommLoves = new Set(deriveCommLoves(items));
 
-          const tasks = favoriteConfigs.map(async ({ importIds, isCommunity, derive }) => {
-            if (importIds.length === 0) return false;
+          const cardAdds = (favorites.card || []).map(Number).filter((id) => !existingLoves.has(id));
+          const commAdds = (favorites.community || []).map(Number).filter((id) => !existingCommLoves.has(id));
 
-            const existing = derive(items);
-            const merged = [...new Set([...existing, ...importIds])];
-            if (merged.length === existing.length) return false; // 无新增
-
-            favoriteId ? await updateFavorite(favoriteId, merged, isCommunity) : await createFavorite(merged, isCommunity);
-            return true;
-          });
-
-          const results = await Promise.allSettled(tasks);
-          successCount += results.filter((r) => r.status === "fulfilled" && r.value).length;
+          if (cardAdds.length > 0 || commAdds.length > 0) {
+            try {
+              await patchFavorites({
+                loves: { add: cardAdds, remove: [] },
+                commLoves: { add: commAdds, remove: [] },
+              });
+              if (cardAdds.length > 0) successCount++;
+              if (commAdds.length > 0) successCount++;
+            } catch {
+              errorCount++;
+            }
+          }
         }
 
         // myspaceOrder 和 customTags 仅作为导出备份数据保留在 JSON 中
@@ -894,12 +894,6 @@ const UserProfile = () => {
   );
 };
 
-const UserPage = () => (
-  <AuthProvider>
-    <App>
-      <UserProfile />
-    </App>
-  </AuthProvider>
-);
+const UserPage = () => <UserProfile />;
 
 export default UserPage;
