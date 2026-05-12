@@ -25,7 +25,7 @@ import { getWeight } from "@site/src/utils/formatters";
 import { getCache, setCache, CACHE_TTL, cleanupLegacyCache } from "@site/src/utils/cache";
 import { getLevelInfo, LevelName, LevelIcon } from "@site/src/components/LevelSystem";
 
-import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
+import { AuthContext } from "@site/src/components/AuthContext";
 import { voteOnUserPrompt } from "@site/src/api";
 import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
@@ -990,9 +990,7 @@ export default function Showcase(): React.ReactElement {
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
       </Head>
       <main className="margin-vert--md">
-        <AuthProvider>
-          <ShowcaseContent />
-        </AuthProvider>
+        <ShowcaseContent />
         <Suspense fallback={null}>
           <ShareButtons shareUrl={shareUrl} title={TITLE} popOver={false} />
         </Suspense>
