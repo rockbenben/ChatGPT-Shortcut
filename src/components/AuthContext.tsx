@@ -1,17 +1,35 @@
-import React, { createContext, useState, useEffect, useMemo, useCallback, startTransition } from "react";
+import React, { createContext, useState, useEffect, useMemo, useCallback, useRef, startTransition } from "react";
 import { getMySpace, clearMySpaceCache, getPrompts } from "@site/src/api";
-import { deriveLoves, deriveCommLoves, deriveUserprompts } from "@site/src/utils/myspaceUtils";
-import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
+import { enrichMySpaceData } from "@site/src/utils/myspaceUtils";
+import { getCache, setCache, CACHE_PREFIX, CACHE_TTL } from "@site/src/utils/cache";
+
+/**
+ * 部分更新 myspace 相关 state 的 patch 形态。
+ * - items: 完整新 items 数组（包含 type=favorite + type=prompt）
+ * - customTags: definitions array
+ * - favoriteId: 通常不变；新用户首次写入或后端重建时才变
+ * - favorites: server 权威的 loves/commLoves（跟 items 派生不一致时使用，如跨设备 drift）
+ */
+export interface MySpaceStatePatch {
+  items?: any[];
+  customTags?: any[];
+  favoriteId?: number | null;
+  favorites?: { id?: number; loves?: number[]; commLoves?: number[] };
+}
 
 export const AuthContext = createContext<{
   userAuth: any;
   refreshUserAuth: (forceRefresh?: boolean) => void;
   setUserAuth: (userAuth: any) => void;
+  /** 统一更新 myspace 相关 state（userAuth + lscache-user_auth + lscache-myspace），
+   *  各 mutation 路径（useFavorite reconcile、drag、tag 改动）共用此入口避免漏写一处。 */
+  syncMySpaceState: (patch: MySpaceStatePatch) => void;
   authLoading: boolean;
 }>({
   userAuth: null,
   refreshUserAuth: () => {},
   setUserAuth: () => {},
+  syncMySpaceState: () => {},
   authLoading: false,
 });
 
@@ -118,34 +136,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return null;
       }
 
-      // 处理 customTags：后端可能返回嵌套结构或扁平数组
-      const customTagsArray = Array.isArray(myspaceData.customTags) ? myspaceData.customTags : myspaceData.customTags?.definitions || [];
-
-      // 防御性过滤：移除 id 为 null/undefined 的无效项
-      const validItems = (myspaceData.items || []).filter((item) => {
-        if (item.id == null || item.id === undefined) {
-          console.warn("[AuthProvider] Filtered out invalid item with null ID:", item);
-          return false;
-        }
-        return true;
-      });
-
-      // 添加派生数据以保持与现有代码的兼容性
-      const enrichedData = {
-        ...myspaceData,
-        customTags: customTagsArray, // 确保是数组
-        items: validItems, // ← 使用过滤后的 items
-        favorites: {
-          id: myspaceData.favoriteId,
-          loves: deriveLoves(validItems), // ← 使用 validItems
-          commLoves: deriveCommLoves(validItems), // ← 使用 validItems
-          customTags: {
-            definitions: customTagsArray,
-            itemTags: myspaceData.customTags?.itemTags || {},
-          },
-        },
-        userprompts: deriveUserprompts(validItems), // ← 使用 validItems
-      };
+      const enrichedData = enrichMySpaceData(myspaceData);
+      const validItems = enrichedData.items;
 
       // 先更新 UI，再后台预取 —— 预取仅为填充二级缓存，不应阻塞登录态呈现
       const newUserAuth = { data: enrichedData };
@@ -223,14 +215,58 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
 
+  // Ref for current userAuth — syncMySpaceState 用 ref 读最新值，避免每次 userAuth 变都重建 callback
+  const userAuthRef = useRef(userAuth);
+  userAuthRef.current = userAuth;
+
+  /**
+   * 统一更新 myspace 相关 state：
+   *   - userAuth React state（触发依赖此 context 的组件 re-render）
+   *   - lscache-user_auth（跨标签同步 + 下次 mount 的初始 state）
+   *   - lscache-myspace（prompts.ts:92 等 raw cache reader 读它）
+   *
+   * 所有"mutation 后本地同步"路径都通过此 helper，避免漏写其中一层导致 drift。
+   * ETag 不动：下次 getMySpace 仍会 mismatch → 200 全量；接受这次浪费换取代码一致。
+   */
+  const syncMySpaceState = useCallback((patch: MySpaceStatePatch) => {
+    const auth = userAuthRef.current;
+    if (!auth?.data) return;
+
+    const newData: any = { ...auth.data };
+    if (patch.items !== undefined) newData.items = patch.items;
+    if (patch.customTags !== undefined) newData.customTags = patch.customTags;
+    if (patch.favoriteId !== undefined) newData.favoriteId = patch.favoriteId;
+    if (patch.favorites || patch.favoriteId !== undefined) {
+      newData.favorites = {
+        ...auth.data.favorites,
+        ...(patch.favoriteId !== undefined && { id: patch.favoriteId }),
+        ...(patch.favorites || {}),
+      };
+    }
+
+    const newAuth = { ...auth, data: newData };
+    startTransition(() => setUserAuth(newAuth));
+    setCache("user_auth", newAuth, CACHE_TTL.MYSPACE);
+    setCache(
+      CACHE_PREFIX.MYSPACE,
+      {
+        favoriteId: newData.favoriteId,
+        items: newData.items || [],
+        customTags: newData.customTags || [],
+      },
+      CACHE_TTL.MYSPACE,
+    );
+  }, []);
+
   const value = useMemo(
     () => ({
       userAuth,
       setUserAuth,
       refreshUserAuth: fetchUser,
+      syncMySpaceState,
       authLoading,
     }),
-    [userAuth, fetchUser, authLoading],
+    [userAuth, fetchUser, syncMySpaceState, authLoading],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
