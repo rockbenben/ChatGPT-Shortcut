@@ -6,7 +6,7 @@ import { useLocation } from "@docusaurus/router";
 import SearchBar from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 import { getCommPrompts, voteOnUserPrompt } from "@site/src/api";
-import { AuthContext, AuthProvider } from "@site/src/components/AuthContext";
+import { AuthContext } from "@site/src/components/AuthContext";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -369,9 +369,5 @@ const CommunityPrompts = () => {
 };
 
 export default function WrappedCommunityPrompts() {
-  return (
-    <AuthProvider>
-      <CommunityPrompts />
-    </AuthProvider>
-  );
+  return <CommunityPrompts />;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef, useContext, useMemo } from "react";
 import { useLocation } from "@docusaurus/router";
 import { App } from "antd";
-import { AuthProvider, AuthContext } from "@site/src/components/AuthContext";
+import { AuthContext } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
 import { getSingleCommPrompt, voteOnUserPrompt } from "@site/src/api";
 import { primeCacheFromSnapshot, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -122,9 +122,5 @@ function CommunityPromptDetailInner() {
 }
 
 export default function CommunityPromptDetail() {
-  return (
-    <AuthProvider>
-      <CommunityPromptDetailInner />
-    </AuthProvider>
-  );
+  return <CommunityPromptDetailInner />;
 }

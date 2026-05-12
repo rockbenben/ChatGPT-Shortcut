@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState, useMemo } from "react";
 import { ConfigProvider, theme, App } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import { AuthProvider } from "@site/src/components/AuthContext";
 
 // Dual-theme antd ConfigProvider — switches algorithm + dark-only brand tokens based on
 // Docusaurus data-theme attribute. Universal tokens (radius, motion, components) apply
@@ -83,7 +84,9 @@ export default function Root({ children }) {
 
   return (
     <ConfigProvider theme={themeConfig}>
-      <App className="app-root">{children}</App>
+      <App className="app-root">
+        <AuthProvider>{children}</AuthProvider>
+      </App>
     </ConfigProvider>
   );
 }
