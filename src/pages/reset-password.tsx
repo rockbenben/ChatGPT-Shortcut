@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
 import { Form, Input, Button, Typography, Card, App } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { resetPassword } from "@site/src/api";
 
 const { Title } = Typography;
@@ -11,6 +12,7 @@ const ResetPassword = () => {
   const [resetCode, setResetCode] = useState("");
   const [loading, setLoading] = useState(false);
   const { message: messageApi } = App.useApp();
+  const { i18n } = useDocusaurusContext();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -41,12 +43,13 @@ const ResetPassword = () => {
       messageApi.success(<Translate id="message.resetPassword.success">密码重置成功！</Translate>);
       form.resetFields();
 
-      // Delay redirect to show success message
+      // Delay redirect to show success message —— 保留当前 locale 前缀
       setTimeout(() => {
-        window.location.href = "/";
+        const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+        window.location.href = `${localePrefix}/`;
       }, 1500);
     } catch (error) {
-      console.error(translate({ id: "message.resetPassword.error", message: "密码重置失败，请稍后重试：" }), error);
+      console.error(translate({ id: "message.resetPassword.error", message: "密码重置失败，请稍后重试" }), error);
       messageApi.open({
         type: "error",
         content: <Translate id="message.resetPassword.error">密码重置失败，请稍后重试</Translate>,
