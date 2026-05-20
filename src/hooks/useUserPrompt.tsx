@@ -56,9 +56,8 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         return true;
       } catch (err) {
         console.error(err);
-        // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth();
-
+        // 失败直接报错；apiUpdatePrompt 失败时 cache 不会被清、本地 state 也没动（无 optimistic update）
+        // 不需要 refresh 来"同步状态"——状态本来就没变。await refresh 只会推迟 error toast。
         message.error(<Translate id="message.updatePrompt.error">提示词更新失败，请稍后重试</Translate>);
         return false;
       } finally {
@@ -77,9 +76,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         message.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
       } catch (err) {
         console.error(err);
-        // 失败时强制刷新，从服务器重新获取正确状态
-        await refreshUserAuth();
-
+        // 同 updatePrompt：失败时 cache + 本地 state 都没变，无需 refresh。
         message.error(<Translate id="message.deletePrompt.error">提示词删除失败，请稍后重试</Translate>);
       } finally {
         setLoading(false);
