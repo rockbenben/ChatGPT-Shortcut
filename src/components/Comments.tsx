@@ -6,17 +6,20 @@ import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/components/CommentComponent";
 import CommentEditor from "@site/src/components/CommentComponent/CommentEditor";
-import { GiphySelector } from "@site/src/components/CommentComponent/GiphySelector";
 import { CommentSkeleton } from "@site/src/components/CommentComponent/CommentSkeleton";
 // LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户尝试评论触发登录 Modal 才渲染
 const LoginComponent = React.lazy(() => import("@site/src/components/user/login"));
+// GiphySelector 拉入 @giphy/react-components + styled-components(~3MB lib)；
+// 仅用户点 GIF 按钮才渲染，懒加载省 common chunk ~400-700KB gzipped
+const GiphySelector = React.lazy(() => import("@site/src/components/CommentComponent/GiphySelector").then((m) => ({ default: m.GiphySelector })));
+// EmojiPicker 拉入 @emoji-mart/data (27MB raw 表情数据集) + @emoji-mart/react；
+// 仅用户点 😀 才渲染，懒加载省 common chunk ~80-120KB gzipped
+const EmojiPickerLazy = React.lazy(() => import("@site/src/components/CommentComponent/EmojiPickerLazy"));
 import { getComments, postComment } from "@site/src/api";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import debounce from "lodash/debounce";
 import ReactMarkdown from "react-markdown";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 // Simple JWT parsing function
@@ -445,8 +448,16 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
               })}
             />
           </Form.Item>
-          {showEmojiPicker && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelect} />}
-          {showGiphySearchBox && <GiphySelector onGifSelect={handleGiphySelect} />}
+          {showEmojiPicker && (
+            <Suspense fallback={null}>
+              <EmojiPickerLazy isDarkMode={isDarkMode} onEmojiSelect={handleEmojiSelect} />
+            </Suspense>
+          )}
+          {showGiphySearchBox && (
+            <Suspense fallback={null}>
+              <GiphySelector onGifSelect={handleGiphySelect} />
+            </Suspense>
+          )}
         </Form>
       </div>
     );
@@ -498,8 +509,16 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
                 })}
               />
             </Form.Item>
-            {showEmojiPickerReply && <Picker data={data} theme={isDarkMode ? "dark" : "light"} onEmojiSelect={handleEmojiSelectreply} />}
-            {showGiphySearchBoxReply && <GiphySelector onGifSelect={handleGiphySelectreply} />}
+            {showEmojiPickerReply && (
+              <Suspense fallback={null}>
+                <EmojiPickerLazy isDarkMode={isDarkMode} onEmojiSelect={handleEmojiSelectreply} />
+              </Suspense>
+            )}
+            {showGiphySearchBoxReply && (
+              <Suspense fallback={null}>
+                <GiphySelector onGifSelect={handleGiphySelectreply} />
+              </Suspense>
+            )}
           </Form>
         )}
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
