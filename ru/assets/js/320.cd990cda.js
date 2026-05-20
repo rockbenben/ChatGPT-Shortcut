@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["320"],{26643(t,e,a){a.r(e),a.d(e,{default:()=>r});var h=a(74848);a(96540);var c=a(70410),s=a(15748);let r=({isDarkMode:t,onEmojiSelect:e})=>(0,h.jsx)(s.A,{data:c,theme:t?"dark":"light",onEmojiSelect:e})}}]);

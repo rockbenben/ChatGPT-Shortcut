@@ -1,6 +1,6 @@
 # AiShort
 
-> Frustré par des réponses IA hors sujet? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité!
+> Frustré par des réponses IA hors sujet ? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité !
 
 ## Documentation
 

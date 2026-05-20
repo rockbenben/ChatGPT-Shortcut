@@ -1,6 +1,6 @@
 # AiShort
 
-> Frustasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!
+> Frustrasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!
 
 ## Dokumentasi
 
