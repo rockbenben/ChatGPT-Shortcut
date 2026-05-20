@@ -32,7 +32,7 @@ const UserStatus = () => {
       key: "account",
       label: (
         <Link to="/user">
-          <Translate id="link.myaccount">我的账户</Translate>
+          <Translate id="link.myAccount">我的账户</Translate>
         </Link>
       ),
       icon: <UserOutlined />,
