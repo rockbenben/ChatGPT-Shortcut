@@ -18,10 +18,10 @@ export { register, login, changePassword, forgotPassword, resetPassword, sendPas
 export { getUserAllInfo, updateUsername } from "./user";
 
 // Prompts APIs
-export { getPrompts, submitPrompt, updatePrompt, deletePrompt, getCommPrompts, searchCards, voteOnUserPrompt, fetchAllCopyCounts, updateCopyCount, getSingleCommPrompt } from "./prompts";
+export { getPrompts, submitPrompt, updatePrompt, deletePrompt, getCommPrompts, voteOnUserPrompt, fetchAllCopyCounts, updateCopyCount, getSingleCommPrompt } from "./prompts";
 
 // Favorites APIs
-export { createFavorite, updateFavorite, patchFavorites } from "./favorites";
+export { patchFavorites } from "./favorites";
 export type { FavoriteDeltaOps, FavoriteFieldOps, FavoriteDeltaResponse, MySpaceShape } from "./favorites";
 
 // MySpace APIs

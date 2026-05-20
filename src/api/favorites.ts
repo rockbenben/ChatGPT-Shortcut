@@ -1,47 +1,8 @@
 /**
- * Favorites APIs - create, update, and manage favorites
+ * Favorites APIs - delta-based mutation client.
+ * 历史的 createFavorite / updateFavorite (full-array PUT) 已删除，所有路径走 patchFavorites。
  */
 import { apiClient } from "./client";
-import { clearMySpaceCache } from "./myspace";
-
-/**
- * Create a new favorite record
- */
-export async function createFavorite(loves: number[], isComm: boolean = false) {
-  try {
-    const response = await apiClient.post(`/favorites`, {
-      data: {
-        [isComm ? "commLoves" : "loves"]: loves,
-      },
-    });
-    clearMySpaceCache();
-    return response;
-  } catch (error) {
-    console.error("Error creating favorite:", error);
-    throw error;
-  }
-}
-
-/**
- * Update existing favorites (legacy full-array replace — kept for bulk import path).
- * Prefer patchFavorites for single add/remove from useFavorite.
- */
-export async function updateFavorite(favoriteId: number, loves: number[], isComm: boolean = false) {
-  if (!favoriteId) throw new Error("favoriteId is required");
-  try {
-    const response = await apiClient.put(`/favorites/${favoriteId}`, {
-      data: {
-        [isComm ? "commLoves" : "loves"]: loves,
-      },
-    });
-
-    clearMySpaceCache();
-    return response;
-  } catch (error) {
-    console.error("Error updating favorite:", error);
-    throw error;
-  }
-}
 
 export interface FavoriteFieldOps {
   add?: number[];

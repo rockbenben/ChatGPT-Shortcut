@@ -408,65 +408,6 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
 }
 
 /**
- * Search cards by tags or keywords
- */
-export async function searchCards(tags: string[], search: string, lang: string = "zh-Hans", operator: string = "OR") {
-  try {
-    const normalizedTags = Array.isArray(tags) ? Array.from(new Set(tags.map((tag) => (typeof tag === "string" ? tag.trim() : "")).filter(Boolean))) : [];
-    const safeSearch = typeof search === "string" ? search.trim().slice(0, 100) : "";
-
-    const cacheKey = getListCacheKey(CACHE_PREFIX.SEARCH, encodeURIComponent(JSON.stringify(normalizedTags)), encodeURIComponent(safeSearch), lang, operator);
-    const cachedData = getCache(cacheKey);
-    const cachedEtag = getETag(cacheKey);
-
-    const queryParams = new URLSearchParams();
-    normalizedTags.forEach((tag) => {
-      queryParams.append("tags", tag);
-    });
-
-    if (safeSearch) {
-      queryParams.append("search", safeSearch);
-    }
-    queryParams.append("lang", lang);
-    queryParams.append("operator", operator);
-
-    try {
-      const responseIds = await apiClient.get(`/cards/find-with-tag`, {
-        params: queryParams,
-        headers: {
-          ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
-        },
-        validateStatus: (status) => status === 200 || status === 304,
-      });
-
-      // Handle 304 Not Modified
-      // 仅在 cachedData 存在时短路返回；否则 fallthrough 到 200 处理（getPrompts 对空 ids 返回 []）
-      if (responseIds.status === 304 && cachedData) {
-        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
-        return cachedData;
-      }
-
-      // Handle 200 OK
-      const detailedCards = await getPrompts("cards", responseIds.data, lang);
-      const newEtag = responseIds.headers["etag"];
-      setCacheWithETag(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS, newEtag);
-
-      return detailedCards;
-    } catch (error) {
-      // Handle 304 in catch
-      if (error?.response?.status === 304 && cachedData) {
-        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
-        return cachedData;
-      }
-      throw error;
-    }
-  } catch (error) {
-    console.error("Error fetching cards with tags:", error);
-    throw error;
-  }
-}
-
-/**
  * Vote on a user prompt
  */
 export async function voteOnUserPrompt(promptId: number, action: "upvote" | "downvote") {
