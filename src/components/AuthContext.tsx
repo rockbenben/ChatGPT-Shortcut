@@ -19,7 +19,7 @@ export interface MySpaceStatePatch {
 
 export const AuthContext = createContext<{
   userAuth: any;
-  refreshUserAuth: (forceRefresh?: boolean) => void;
+  refreshUserAuth: (forceRefresh?: boolean) => Promise<void>;
   setUserAuth: (userAuth: any) => void;
   /** 统一更新 myspace 相关 state（userAuth + lscache-user_auth + lscache-myspace），
    *  各 mutation 路径（useFavorite reconcile、drag、tag 改动）共用此入口避免漏写一处。 */
@@ -27,7 +27,7 @@ export const AuthContext = createContext<{
   authLoading: boolean;
 }>({
   userAuth: null,
-  refreshUserAuth: () => {},
+  refreshUserAuth: async () => {},
   setUserAuth: () => {},
   syncMySpaceState: () => {},
   authLoading: false,
@@ -105,88 +105,107 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 有缓存或 pending 占位时不显示骨架；仅在未知状态（既无 token 又无缓存）或强制刷新时才可能开启
   const [authLoading, setAuthLoading] = useState(false);
 
-  const fetchUser = useCallback(async (forceRefresh = false) => {
-    // 快速检查：无 token 或本地已判定过期，直接登出态并返回
-    const token = readValidToken();
-    if (!token) {
-      setAuthLoading(false);
-      // 若初始化时挂了 pending 占位，需要降为登出态
-      startTransition(() => setUserAuth((prev) => (prev?.pending ? null : prev)));
-      return;
+  // 共享 in-flight fetch promise：避免 ensureAuthReady / mount effect / 跨标签事件并发触发时
+  // 多次 /myspace round-trip 互踩（last-write-wins 可能覆盖掉刚 reconcile 的 state）。
+  // 仅对非 forceRefresh 复用；用户主动刷新（forceRefresh=true）始终单独跑，保留 UI loading 反馈。
+  const inFlightFetchRef = useRef<Promise<void> | null>(null);
+
+  const fetchUser = useCallback(async (forceRefresh = false): Promise<void> => {
+    // 非 forceRefresh：如已有 fetch 在飞，共享 promise
+    if (!forceRefresh && inFlightFetchRef.current) {
+      return inFlightFetchRef.current;
     }
 
-    // 强制刷新时先清除 MySpace 缓存
-    if (forceRefresh) {
-      clearMySpaceCache();
-    }
-
-    // 仅在 forceRefresh=true 时显示 loading，false 时静默刷新
-    if (forceRefresh) {
-      startTransition(() => setAuthLoading(true));
-    }
-    const hadCachedAuth = initialAuthRef.current!.hadCachedAuth;
-
-    const fetchOnce = async () => {
-      // Avoid being stuck in loading forever if the request stalls.
-      // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
-      const myspaceData = await withTimeout(getMySpace(), 12_000, "getMySpace");
-
-      // If request returned nothing (and no cache), stop loading and keep current state.
-      if (!myspaceData) {
-        return null;
+    const work = (async () => {
+      // 快速检查：无 token 或本地已判定过期，直接登出态并返回
+      const token = readValidToken();
+      if (!token) {
+        setAuthLoading(false);
+        // 若初始化时挂了 pending 占位，需要降为登出态
+        startTransition(() => setUserAuth((prev) => (prev?.pending ? null : prev)));
+        return;
       }
 
-      const enrichedData = enrichMySpaceData(myspaceData);
-      const validItems = enrichedData.items;
-
-      // 先更新 UI，再后台预取 —— 预取仅为填充二级缓存，不应阻塞登录态呈现
-      const newUserAuth = { data: enrichedData };
-      startTransition(() => setUserAuth(newUserAuth));
-      // 缓存 userAuth 用于下次快速显示
-      setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
-
-      // 后台预取提示词详情（fire-and-forget），消除 MySpace 首次挂载的请求瀑布
-      // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
-      const promptIds = validItems.filter((i) => i.type === "prompt").map((i) => i.id);
-      const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
-      if (promptIds.length > 0 || commuIds.length > 0) {
-        withTimeout(
-          Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
-          8_000,
-          "prefetch",
-        ).catch(() => {
-          // 预取超时或失败不阻塞，MySpace 挂载时会重新获取
-        });
+      // 强制刷新时先清除 MySpace 缓存 + 显示 loading
+      if (forceRefresh) {
+        clearMySpaceCache();
+        startTransition(() => setAuthLoading(true));
       }
+      const hadCachedAuth = initialAuthRef.current!.hadCachedAuth;
 
-      return myspaceData;
-    };
+      const fetchOnce = async () => {
+        // Avoid being stuck in loading forever if the request stalls.
+        // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
+        const myspaceData = await withTimeout(getMySpace(), 12_000, "getMySpace");
 
-    try {
-      await fetchOnce();
-    } catch (error) {
-      // One bounded retry for transient failures on the initial/background refresh.
-      // Don't retry force refresh to keep user-triggered actions responsive.
-      if (!forceRefresh) {
-        try {
-          await delay(800);
-          await fetchOnce();
-          return;
-        } catch (retryError) {
-          console.warn("Failed to fetch user data (after retry):", retryError);
+        // If request returned nothing (and no cache), stop loading and keep current state.
+        if (!myspaceData) {
+          return null;
         }
-      } else {
-        console.error("Failed to fetch user data:", error);
-      }
 
-      // Keep any existing cached userAuth to avoid UX regression.
-      // If there was no cached auth to begin with, fall back to logged-out UI by clearing userAuth.
-      if (!hadCachedAuth) {
-        startTransition(() => setUserAuth(null));
+        const enrichedData = enrichMySpaceData(myspaceData);
+        const validItems = enrichedData.items;
+
+        // 先更新 UI，再后台预取 —— 预取仅为填充二级缓存，不应阻塞登录态呈现
+        const newUserAuth = { data: enrichedData };
+        startTransition(() => setUserAuth(newUserAuth));
+        // 缓存 userAuth 用于下次快速显示
+        setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
+
+        // 后台预取提示词详情（fire-and-forget），消除 MySpace 首次挂载的请求瀑布
+        // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
+        const promptIds = validItems.filter((i) => i.type === "prompt").map((i) => i.id);
+        const commuIds = validItems.filter((i) => i.source === "community").map((i) => i.id);
+        if (promptIds.length > 0 || commuIds.length > 0) {
+          withTimeout(
+            Promise.all([promptIds.length > 0 ? getPrompts("userprompts", promptIds) : null, commuIds.length > 0 ? getPrompts("commus", commuIds) : null]),
+            8_000,
+            "prefetch",
+          ).catch(() => {
+            // 预取超时或失败不阻塞，MySpace 挂载时会重新获取
+          });
+        }
+
+        return myspaceData;
+      };
+
+      try {
+        await fetchOnce();
+      } catch (error) {
+        // One bounded retry for transient failures on the initial/background refresh.
+        // Don't retry force refresh to keep user-triggered actions responsive.
+        if (!forceRefresh) {
+          try {
+            await delay(800);
+            await fetchOnce();
+            return;
+          } catch (retryError) {
+            console.warn("Failed to fetch user data (after retry):", retryError);
+          }
+        } else {
+          console.error("Failed to fetch user data:", error);
+        }
+
+        // Keep any existing cached userAuth to avoid UX regression.
+        // If there was no cached auth to begin with, fall back to logged-out UI by clearing userAuth.
+        if (!hadCachedAuth) {
+          startTransition(() => setUserAuth(null));
+        }
+      } finally {
+        startTransition(() => setAuthLoading(false));
       }
-    } finally {
-      startTransition(() => setAuthLoading(false));
+    })();
+
+    // 只对非 force 注册 in-flight ref；force 始终独立跑（不踩 ref）
+    if (!forceRefresh) {
+      inFlightFetchRef.current = work;
+      work.finally(() => {
+        // 只在 ref 仍指向自己时清——避免误清后续 fetch 的 ref
+        if (inFlightFetchRef.current === work) inFlightFetchRef.current = null;
+      });
     }
+
+    return work;
   }, []);
 
   useEffect(() => {

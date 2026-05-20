@@ -1,9 +1,8 @@
-import React, { useCallback, useContext, useRef, startTransition } from "react";
+import React, { useCallback, useContext, useRef } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
 import { patchFavorites, voteOnUserPrompt, type FavoriteDeltaResponse, type FavoriteDeltaOps } from "../api";
-import { setCache, CACHE_TTL } from "../utils/cache";
 
 interface UseFavoriteReturn {
   addFavorite: (id: number, isComm?: boolean) => Promise<void>;
@@ -12,7 +11,7 @@ interface UseFavoriteReturn {
 }
 
 export const useFavorite = (): UseFavoriteReturn => {
-  const { userAuth, setUserAuth, refreshUserAuth, syncMySpaceState } = useContext(AuthContext);
+  const { userAuth, refreshUserAuth, syncMySpaceState } = useContext(AuthContext);
   const { message, modal } = App.useApp();
 
   // Use ref for userAuth to stabilize callbacks.
@@ -23,13 +22,16 @@ export const useFavorite = (): UseFavoriteReturn => {
 
   // Optimistic local toggle — instant UI feedback before the server PATCH lands.
   // Server-side merge handles concurrent-edit safety; this is just for UX latency.
-  // Returns the rollback predicate so callers can undo on error.
+  // 走 syncMySpaceState 统一入口（writes lscache-user_auth + lscache-myspace）。
+  // 回滚走"逆操作"而非快照恢复：并发多次点击时，回滚 op A 不会回到 op B 之前的 state，
+  // 而是基于 *当前* state 把 op A 撤掉，B 的乐观更新保留。
   const applyOptimistic = useCallback(
     (id: number, isComm: boolean, action: "add" | "remove"): (() => void) | null => {
       const auth = userAuthRef.current;
       if (!auth?.data) return null;
 
       const source = isComm ? "community" : "card";
+      const lovesKey = isComm ? "commLoves" : "loves";
       const items: any[] = auth.data.items || [];
       const exists = items.some((it) => it.id === id && it.type === "favorite" && it.source === source);
 
@@ -37,38 +39,39 @@ export const useFavorite = (): UseFavoriteReturn => {
       if (action === "add" && exists) return null;
       if (action === "remove" && !exists) return null;
 
-      const newItems =
-        action === "add"
-          ? [{ id, type: "favorite", source, updatedAt: new Date().toISOString() }, ...items]
-          : items.filter((it) => !(it.id === id && it.type === "favorite" && it.source === source));
-
-      const lovesKey = isComm ? "commLoves" : "loves";
-      const newLoves =
-        action === "add"
-          ? [id, ...(auth.data.favorites?.[lovesKey] || []).filter((x: number) => x !== id)]
-          : (auth.data.favorites?.[lovesKey] || []).filter((x: number) => x !== id);
-
-      const newUserAuth = {
-        ...auth,
-        data: {
-          ...auth.data,
-          items: newItems,
-          favorites: {
-            ...auth.data.favorites,
-            [lovesKey]: newLoves,
-          },
-        },
+      const applyForward = (curAuth: any, op: "add" | "remove") => {
+        const curItems: any[] = curAuth.data.items || [];
+        const curLoves: number[] = curAuth.data.favorites?.[lovesKey] || [];
+        if (op === "add") {
+          return {
+            items: [{ id, type: "favorite", source, updatedAt: new Date().toISOString() }, ...curItems.filter((it) => !(it.id === id && it.type === "favorite" && it.source === source))],
+            loves: [id, ...curLoves.filter((x) => x !== id)],
+          };
+        }
+        return {
+          items: curItems.filter((it) => !(it.id === id && it.type === "favorite" && it.source === source)),
+          loves: curLoves.filter((x) => x !== id),
+        };
       };
-      startTransition(() => setUserAuth(newUserAuth));
-      setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
 
-      // Rollback: re-apply the original state
+      const forward = applyForward(auth, action);
+      syncMySpaceState({
+        items: forward.items,
+        favorites: { [lovesKey]: forward.loves } as any,
+      });
+
+      // Inverse-op rollback against CURRENT state at rollback time
       return () => {
-        startTransition(() => setUserAuth(auth));
-        setCache("user_auth", auth, CACHE_TTL.MYSPACE);
+        const cur = userAuthRef.current;
+        if (!cur?.data) return;
+        const inverse = applyForward(cur, action === "add" ? "remove" : "add");
+        syncMySpaceState({
+          items: inverse.items,
+          favorites: { [lovesKey]: inverse.loves } as any,
+        });
       };
     },
-    [setUserAuth]
+    [syncMySpaceState]
   );
 
   // Reconcile with server delta response.
@@ -185,7 +188,7 @@ export const useFavorite = (): UseFavoriteReturn => {
   const confirmRemoveFavorite = useCallback(
     (id: number, isComm: boolean = false) => {
       modal.confirm({
-        title: <Translate id="message.removeFavorite.confirm.title">取消收藏</Translate>,
+        title: <Translate id="message.removeFavorite.confirm.title">移除收藏</Translate>,
         content: <Translate id="message.removeFavorite.confirm.content">确定要取消收藏这个提示词吗？</Translate>,
         onOk: async () => {
           await removeFavorite(id, isComm);
