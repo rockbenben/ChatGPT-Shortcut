@@ -1,9 +1,9 @@
 import React from "react";
 import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
-import { CopyOutlined, CheckOutlined, LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
+import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
 
@@ -30,16 +30,7 @@ interface PromptDetailModalProps {
 const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
   if (!data) return null;
 
-  const { copied, copyText, updateCopy } = useCopyToClipboard();
-
   const isDataCard = !data.owner;
-  const handleCopy = () => {
-    if (isDataCard) {
-      updateCopy(data.prompt, data.id);
-    } else {
-      copyText(data.prompt);
-    }
-  };
 
   // Show "View Details" only if there is no owner (DataCard)
   const showViewDetails = !data.owner;
@@ -146,13 +137,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                 <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
                   <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
-                <Button
-                  size="small"
-                  icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                  onClick={handleCopy}
-                  style={copied ? { color: "var(--site-color-tag-selected-text)", borderColor: "var(--site-color-tag-selected-text)" } : undefined}>
-                  {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制</Translate>}
-                </Button>
+                <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="outlined" size="small" />
               </Flex>
               <div
                 style={{

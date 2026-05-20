@@ -9,10 +9,10 @@ export interface PromptCardProps {
   sortableId?: string | number; // Custom ID for sortable context (uses data.id if not provided)
   isFiltered?: boolean;
   onEdit?: (data: any) => void;
-  onDelete?: (id: string) => void;
-  onRemoveFavorite?: (id: string, isComm?: boolean) => void;
-  onToggleFavorite?: (id: string | number, isComm: boolean) => void;
-  onVote?: (id: string | number, action: "upvote" | "downvote") => void;
+  onDelete?: (id: number) => void;
+  onRemoveFavorite?: (id: number, isComm?: boolean) => void;
+  onToggleFavorite?: (id: number, isComm: boolean) => void;
+  onVote?: (id: number, action: "upvote" | "downvote") => void;
   isFavorite?: boolean;
   isLoggedIn?: boolean;
   copyCount?: number;

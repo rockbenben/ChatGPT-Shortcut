@@ -1,0 +1,116 @@
+/* ============================================================
+ * Copy button micro-interactions
+ * 7 个站点共享：4 张卡片 / 1 个模态 / 2 个详情页主按钮。
+ *
+ * 反馈策略（不用 toast — 复制是同步本地操作，业界惯例靠按钮自身反馈）：
+ *   L1 即时   icon swap + label swap（React 切换）
+ *   L2 气氛   单次脉冲环 (::after, 720ms 消散) + 变体专属 glow
+ *
+ * 变体（与按钮 type 解耦）：
+ *   .iconOnly  — type="text" 卡片（icon-only，绿色 icon + drop-shadow glow）
+ *   .outlined  — type=default 模态按钮（涂边框与文字为 brand 绿）
+ *   .primary   — type="primary" 详情页主按钮（保持饱和绿底，仅加内层 brand ring + 外层柔光）
+ *
+ * 颜色策略：所有半透明品牌色用 color-mix(in srgb, var(--site-color-tag-selected-text), transparent)
+ * 让品牌色变化时自动联动，无硬编码 rgba。
+ * ============================================================ */
+
+.button {
+  position: relative;
+  transition:
+    color 220ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 220ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 脉冲环：跑在伪元素上，不干扰 antd 自身 box-shadow & wave effect */
+.button::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.copied::after {
+  animation: copy-pulse-ring 720ms ease-out;
+}
+
+/* 复制态：CheckOutlined 软弹入（仅在 mount 时触发） */
+.copied :global(.anticon-check) {
+  animation: copy-icon-in 280ms cubic-bezier(0.34, 1.42, 0.64, 1);
+}
+
+/* ── 变体：iconOnly（卡片） ───────────────────────────── */
+.iconOnly.copied,
+.iconOnly.copied:hover,
+.iconOnly.copied:focus {
+  color: var(--site-color-tag-selected-text);
+}
+
+.iconOnly.copied :global(.anticon) {
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--site-color-tag-selected-text) 42%, transparent));
+}
+
+/* ── 变体：outlined（模态）— 涂边框与字 ───────────── */
+.outlined.copied,
+.outlined.copied:hover,
+.outlined.copied:focus {
+  color: var(--site-color-tag-selected-text);
+  border-color: var(--site-color-tag-selected-text);
+}
+
+/* ── 变体：primary（详情页主按钮）— 不降级，加内层 brand 微环 + 外层柔光 ── */
+.primary.copied,
+.primary.copied:hover,
+.primary.copied:focus {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 0 22px -2px color-mix(in srgb, var(--site-color-tag-selected-text) 28%, transparent);
+}
+
+@keyframes copy-pulse-ring {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--site-color-tag-selected-text) 55%, transparent);
+  }
+  70% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 7px color-mix(in srgb, var(--site-color-tag-selected-text) 0%, transparent);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--site-color-tag-selected-text) 0%, transparent);
+  }
+}
+
+@keyframes copy-icon-in {
+  from {
+    opacity: 0;
+    transform: scale(0.55) rotate(-15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.06) rotate(2deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* ── 可访问性：尊重 prefers-reduced-motion ──
+ * 对 motion sensitivity 用户，禁用所有 keyframes 动画与 transition；
+ * 复制态颜色与 box-shadow 仍保留（即时切换无运动）。
+ */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .copied::after,
+  .copied :global(.anticon-check) {
+    animation: none;
+  }
+}
