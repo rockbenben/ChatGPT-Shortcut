@@ -36,7 +36,7 @@ const rules = {
       required: true,
       message: translate({
         id: "validation.email.required",
-        message: "请输入邮箱！",
+        message: "请输入您的邮箱！",
       }),
     },
     {
@@ -248,7 +248,7 @@ const LoginPage = () => {
         messageApi.error(<Translate id="message.error">发生错误，请稍后再试</Translate>);
       }
     } catch (err) {
-      messageApi.error(<Translate id="message.error">处理错误时发生错误</Translate>);
+      messageApi.error(<Translate id="message.error">发生错误，请稍后再试</Translate>);
     }
   };
 
@@ -408,7 +408,7 @@ const LoginPage = () => {
             <Translate id="login.register.prompt">还没有账号？</Translate>
           </Text>
           <Button type="link" onClick={handleRegister} style={{ padding: 0, fontWeight: 500 }}>
-            <Translate id="action.register">立即注册</Translate>
+            <Translate id="action.registerNow">立即注册</Translate>
           </Button>
         </Flex>
       </div>
@@ -464,7 +464,7 @@ const LoginPage = () => {
           <Translate id="login.login.prompt">已有账号？</Translate>
         </Text>
         <Button type="link" onClick={handleBackToLogin} style={{ padding: 0, fontWeight: 500 }}>
-          <Translate id="action.login">直接登录</Translate>
+          <Translate id="action.loginInstead">直接登录</Translate>
         </Button>
       </Flex>
     </Form>
