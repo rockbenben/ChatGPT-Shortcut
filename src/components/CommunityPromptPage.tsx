@@ -1,12 +1,12 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
 import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Result, Breadcrumb, Popover } from "antd";
-import { CopyOutlined, CheckOutlined, HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
@@ -41,7 +41,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { siteConfig, i18n } = useDocusaurusContext();
-  const { copied, copyText } = useCopyToClipboard();
   const { addFavorite, confirmRemoveFavorite } = useFavorite();
 
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
@@ -57,11 +56,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
 
-  const handleCopy = useCallback(() => {
-    if (prompt?.description) {
-      copyText(prompt.description);
-    }
-  }, [copyText, prompt?.description]);
 
   const handleToggleFavorite = useCallback(() => {
     if (!userAuth) {
@@ -156,7 +150,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const seoDescription = prompt.remark || prompt.description?.substring(0, 160) || "";
 
   // Canonical 自指 ?id= 路径（每条 prompt 在每个 locale 都有自己的页面）
-  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+  const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
   const canonicalUrl = `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`;
 
   return (
@@ -195,7 +189,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 <Typography.Title level={1} className="comp-sheet-title">
                   {prompt.title}
                 </Typography.Title>
-                <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   {prompt.owner && (
                     <span>
                       <UserOutlined style={{ marginRight: 4 }} />
@@ -216,11 +210,9 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               <Flex vertical gap={14}>
                 <Flex justify="space-between" align="center" wrap gap={12}>
                   <Eyebrow>
-                    <Translate id="prompt.content">Prompt 内容</Translate>
+                    <Translate id="prompt.content">提示词内容</Translate>
                   </Eyebrow>
-                  <Button type="primary" size="large" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
-                    {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                  </Button>
+                  <CopyButton text={prompt?.description ?? ""} variant="primary" size="large" />
                 </Flex>
                 <div className="comp-sheet-code">{renderedPrompt}</div>
               </Flex>

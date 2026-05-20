@@ -1,17 +1,17 @@
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
-import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { LinkOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { fetchCardsByIds, type CardData } from "@site/src/api/homepage";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
-import promptFaqData from "@site/src/data/meta_faqs.json";
+import { toBcp47 } from "@site/src/utils/i18n";
 import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -29,7 +29,6 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function PromptPage({ prompt, currentLanguage }) {
-  const { copied, updateCopy } = useCopyToClipboard();
   const { siteConfig, i18n } = useDocusaurusContext();
 
   // 外层 eyebrow 显示 «讨论 · N» —— 由内层 Comments 通过 onCountChange 回传
@@ -72,7 +71,9 @@ function PromptPage({ prompt, currentLanguage }) {
   const seoDescription = prompt.metaDescription?.trim() || `${promptInfo.description || ""} ${promptInfo.prompt || ""}`.trim();
 
   // SSR 安全的绝对 URL（不依赖 window）
-  const localePrefix = currentLanguage && currentLanguage !== i18n.defaultLocale ? `/${currentLanguage}` : "";
+  const localePrefix = currentLanguage === i18n.defaultLocale ? "" : `/${currentLanguage}`;
+  // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
+  const bcp47Locale = toBcp47(currentLanguage, i18n.localeConfigs);
   const canonicalUrl = `${siteConfig.url}${localePrefix}/prompt/${prompt.id}`;
 
   // schema.org Article + BreadcrumbList + HowTo + FAQPage JSON-LD（Tier 1 GEO: 提升 LLM 引用率）
@@ -84,28 +85,18 @@ function PromptPage({ prompt, currentLanguage }) {
   const websiteId = `${siteConfig.url}/#website`;
 
   // Tier 2: hreflang alternates — 对 LLM 和搜索引擎声明 18 locale 互为翻译
-  // hreflang 必须是合法 BCP 47 代码，优先取 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
+  // hreflang 必须是合法 BCP 47 代码，toBcp47 内部读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
   const hreflangAlternates = i18n.locales.map((loc) => {
     const pfx = loc === i18n.defaultLocale ? "" : `/${loc}`;
-    const hreflang = i18n.localeConfigs?.[loc]?.htmlLang ?? loc;
-    return { hreflang, href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
+    return { hreflang: toBcp47(loc, i18n.localeConfigs), href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
   });
 
   // FAQ 结构：
-  //   前 2 条：prompt-specific 定制内容，源自 src/data/meta_faqs.json
+  //   前 2 条：prompt-specific 定制内容，源自 build-time 嵌入到 card 的 `prompt.faq`
   //   第 3 条：通用"使用步骤"，所有 prompt 共享（包括在哪些 AI 模型里用）
-  // 如果该 ID 尚未在 meta_faqs.json 里维护，前 2 条回退为通用模板
-  const customFaqItems: { q: string; a: string }[] = (() => {
-    const entry = (promptFaqData as any)[String(prompt.id)];
-    if (!entry || typeof entry !== "object") return [];
-    // locale 解析优先级：
-    //   1. 精确 locale（user 当前语言）
-    //   2. en（非中文 locale 的通用 fallback）
-    //   3. zh-Hans / zh（中文 locale 的 fallback；仅在 en 也缺时用）
-    const isZh = currentLanguage === "zh-Hans" || currentLanguage === "zh-Hant" || currentLanguage === "zh";
-    const list = entry[currentLanguage] || (isZh ? entry["zh-Hans"] || entry["zh"] : entry["en"]) || entry["zh-Hans"] || entry["en"] || null;
-    return Array.isArray(list) ? list.slice(0, 2) : [];
-  })();
+  // master 在 src/data/meta_faqs.json 编辑，CodeUpdateHandler.py 按 (id, lang) 嵌入到对应 card；
+  // 该 prompt 在当前语言下无 FAQ 时回退为通用模板。
+  const customFaqItems: { q: string; a: string }[] = Array.isArray((prompt as any).faq) ? (prompt as any).faq.slice(0, 2) : [];
 
   const fallbackCustomFaq = [
     {
@@ -119,7 +110,7 @@ function PromptPage({ prompt, currentLanguage }) {
       q: translate({ id: "faq.tips.q", message: "怎么优化输出质量？" }),
       a: translate({
         id: "faq.tips.a",
-        message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / GPT-4 / Gemini 等不同模型对比效果。",
+        message: "一是把 [占位符] 改得更具体（加风格、长度、领域等细节）；二是对不满意的回复追问「请改得更 X」；三是切换 Claude / ChatGPT / Gemini 等不同模型对比效果。",
       }),
     },
   ];
@@ -148,7 +139,7 @@ function PromptPage({ prompt, currentLanguage }) {
         headline: seoTitle,
         description: seoDescription,
         url: canonicalUrl,
-        inLanguage: currentLanguage,
+        inLanguage: bcp47Locale,
         datePublished: buildDate,
         dateModified: buildDate,
         image: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
@@ -184,7 +175,7 @@ function PromptPage({ prompt, currentLanguage }) {
           additionalType: "https://schema.org/SoftwareSourceCode",
           text: promptInfo.prompt,
           encodingFormat: "text/plain",
-          inLanguage: currentLanguage,
+          inLanguage: bcp47Locale,
           name: title,
         },
         // Tier 5: 关联 tags 作为知识图谱实体
@@ -276,7 +267,7 @@ function PromptPage({ prompt, currentLanguage }) {
                       )}
                     </Flex>
 
-                    <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                    <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                       <span style={monoNum}>
                         <FireFilled style={{ marginRight: 4 }} />
                         {formatCompactNumber(weight as number)}
@@ -301,21 +292,13 @@ function PromptPage({ prompt, currentLanguage }) {
                   <Flex vertical gap={14}>
                     <Flex justify="space-between" align="center" wrap gap={12}>
                       <Eyebrow>
-                        <Translate id="prompt.content">Prompt 内容</Translate>
+                        <Translate id="prompt.content">提示词内容</Translate>
                       </Eyebrow>
-                      <Button
-                        type="primary"
-                        size="large"
-                        icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                        onClick={() => {
-                          updateCopy(promptInfo.prompt, prompt.id);
-                        }}>
-                        {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                      </Button>
+                      <CopyButton text={promptInfo.prompt} trackingId={prompt.id} variant="primary" size="large" />
                     </Flex>
                     <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
                       <meta itemProp="name" content={title} />
-                      <meta itemProp="inLanguage" content={currentLanguage} />
+                      <meta itemProp="inLanguage" content={bcp47Locale} />
                       {renderPromptWithPlaceholders(promptInfo.prompt || "")}
                     </div>
                   </Flex>
@@ -332,9 +315,7 @@ function PromptPage({ prompt, currentLanguage }) {
                       <Eyebrow>
                         <Translate id="prompt.translation">译文</Translate>
                       </Eyebrow>
-                      <Typography.Paragraph
-                        copyable={{ text: promptInfo.description }}
-                        style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                      <Typography.Paragraph copyable={{ text: promptInfo.description }} style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
                         {promptInfo.description}
                       </Typography.Paragraph>
                     </div>
