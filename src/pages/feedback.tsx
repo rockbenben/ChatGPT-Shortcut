@@ -48,9 +48,9 @@ const FeedbackPage = () => {
                     <Translate id="feedback.subtitle">Bug 报告、功能建议、使用问题——任何声音都欢迎</Translate>
                   </p>
                   {/* Distinctive — 响应时长承诺 + 维护者署名（mono tertiary，跟项目家族 hero meta line 同款） */}
-                  <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", marginTop: 4 }}>
+                  <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", marginTop: 4 }}>
                     <span>
-                      <Translate id="feedback.responseTime">通常 24h 内回复</Translate>
+                      <Translate id="feedback.responseTime">通常 24 小时内回复</Translate>
                     </span>
                     <span>
                       Maintained by{" "}
