@@ -125,15 +125,6 @@ export const removeCache = (key) => {
 };
 
 /**
- * 清除所有缓存
- */
-export const flushCache = () => {
-  if (!canUseCache()) return;
-  memCache.clear();
-  lscache.flush();
-};
-
-/**
  * 根据前缀清除缓存
  * @param {string} prefix - 缓存键前缀
  */
