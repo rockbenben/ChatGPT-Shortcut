@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Şifre Değiştir"
   },
+  "action.clearFilters": {
+    "message": "Filtreleri temizle ({count})"
+  },
   "action.close": {
     "message": "Kapat"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "Kopyala"
+  },
+  "action.copyPrompt": {
+    "message": "Promptu Kopyala"
   },
   "action.delete": {
     "message": "Sil"
@@ -41,11 +47,17 @@
   "action.login": {
     "message": "Giriş Yap"
   },
+  "action.loginInstead": {
+    "message": "Doğrudan Giriş Yap"
+  },
   "action.register": {
     "message": "Kayıt Ol"
   },
+  "action.registerNow": {
+    "message": "Hemen Kayıt Ol"
+  },
   "action.removeFavorite": {
-    "message": "Favoriyi kaldırmak için tıklayın"
+    "message": "Favorilerden kaldır"
   },
   "action.reply": {
     "message": "Yanıtla"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Sıfırlama E-postası Gönder"
+  },
+  "action.share": {
+    "message": "Paylaş"
   },
   "action.showTags": {
     "message": "Etiketleri Göster"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Onayla"
   },
+  "button.confirmClear": {
+    "message": "Temizlemeyi Onayla"
+  },
   "button.export": {
     "message": "Verileri Dışa Aktar"
   },
@@ -93,7 +111,7 @@
     "message": "Promptları İçe Aktar"
   },
   "button.login": {
-    "message": "Ücretsiz Giriş"
+    "message": "Giriş Yap"
   },
   "button.logout": {
     "message": "Çıkış"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Şifreyi Sıfırla"
   },
+  "button.signInFree": {
+    "message": "Ücretsiz Giriş"
+  },
   "comment.add": {
     "message": "Yorum Gönder"
+  },
+  "comments.aiReplying": {
+    "message": "YZ yanıtlıyor"
+  },
+  "comments.empty": {
+    "message": "Henüz yorum yok"
+  },
+  "comments.heading": {
+    "message": "Tartışma"
   },
   "common.favorites": {
     "message": "Favoriler"
@@ -183,7 +213,7 @@
     "message": "Bu prompt hangi senaryolarda kullanılmalıdır?"
   },
   "faq.tips.a": {
-    "message": "Birincisi, [yer tutucu]yu daha belirgin yap (stil, uzunluk, alan ekle). İkincisi, memnun olmadığın çıktılara “daha X yap” diye yanıt ver. Üçüncüsü, Claude / GPT-4 / Gemini gibi farklı modelleri karşılaştır."
+    "message": "Birincisi, [yer tutucu]yu daha belirgin yap (stil, uzunluk, alan ekle). İkincisi, memnun olmadığın çıktılara “daha X yap” diye yanıt ver. Üçüncüsü, Claude / ChatGPT / Gemini gibi farklı modelleri karşılaştır."
   },
   "faq.tips.q": {
     "message": "Çıktı kalitesini nasıl artırabilirim?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "Geri bildiriminiz bizim için çok önemli!"
   },
+  "feedback.newIssue": {
+    "message": "Yeni Issue"
+  },
+  "feedback.responseTime": {
+    "message": "Genellikle 24 saat içinde yanıt"
+  },
+  "feedback.spec_label": {
+    "message": "Açık Kanal"
+  },
   "feedback.subtitle": {
     "message": "Hata raporları, özellik istekleri, kullanım soruları—her ses memnuniyetle karşılanır"
   },
   "feedback.title": {
     "message": "Geri Bildirim ve Öneriler"
   },
+  "feedback.type.bug": {
+    "message": "Hata Raporları"
+  },
+  "feedback.type.help": {
+    "message": "Yardım"
+  },
+  "feedback.type.suggestion": {
+    "message": "Öneriler"
+  },
   "feedback.welcome": {
     "message": "Geri Bildirim ve Öneriler"
+  },
+  "filter.operator.all.tip": {
+    "message": "Seçilen tüm etiketlerle eşleşen prompt'ları göster"
+  },
+  "filter.operator.any.tip": {
+    "message": "Seçilen etiketlerden herhangi biriyle eşleşen prompt'ları göster"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} ve dahası"
   },
   "homepage.description": {
     "message": "AI'ın alakasız cevaplarından bıktınız mı? AiShort, yazma, kodlama ve çeviri için pratik prompt şablonları sunar!"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "Elmas"
   },
+  "level.emerald": {
+    "message": "Zümrüt"
+  },
   "level.gold": {
     "message": "Altın"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Platin"
   },
+  "level.ruby": {
+    "message": "Yakut"
+  },
+  "level.sapphire": {
+    "message": "Safir"
+  },
   "level.silver": {
     "message": "Gümüş"
+  },
+  "level.stardust": {
+    "message": "Yıldız Tozu"
   },
   "link.addprompt": {
     "message": "Prompt Oluştur"
@@ -288,16 +357,16 @@
     "message": "Ana Sayfa"
   },
   "link.myAccount": {
-    "message": "Kullanıcı Merkezi"
-  },
-  "link.myaccount": {
-    "message": "Hesap Ayarları"
+    "message": "Hesabım"
   },
   "link.privacy": {
     "message": "Gizlilik Politikası"
   },
   "link.terms": {
     "message": "Hizmet Şartları"
+  },
+  "link.userCenter": {
+    "message": "Kullanıcı Merkezi"
   },
   "login.login.prompt": {
     "message": "Zaten hesabınız var mı?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Önbellek temizlendi, veriler yenilendi"
   },
+  "message.cannotFavorOwn": {
+    "message": "Kendi promptunuzu favorilere ekleyemezsiniz"
+  },
   "message.convertToPrivate.error": {
     "message": "Dönüştürme başarısız, lütfen daha sonra tekrar deneyin"
   },
@@ -387,7 +459,7 @@
     "message": "Dışa aktarma başarısız, lütfen daha sonra tekrar deneyin"
   },
   "message.export.noPrompts": {
-    "message": "Dışa aktarılacak Prompt yok"
+    "message": "Dışa aktarılacak prompt yok. Önce prompt oluşturun veya favorilere ekleyin."
   },
   "message.export.success": {
     "message": "Prompt başarıyla dışa aktarıldı!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "Koleksiyonum"
   },
+  "noResults.description": {
+    "message": "Farklı bir anahtar kelime deneyin veya etiket filtrelerini temizleyin"
+  },
+  "noResults.title": {
+    "message": "Eşleşen prompt bulunamadı"
+  },
   "placeholder.comment": {
     "message": "Yorumunuzu buraya girin... Markdown ve HTML sözdizimi desteklenir"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Kullanıcı adı/E-posta"
   },
+  "prompt.authorNote": {
+    "message": "Yazarın notu"
+  },
   "prompt.charsLabel": {
     "message": "karakter"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Özel"
   },
+  "prompt.source": {
+    "message": "Kaynak"
+  },
   "prompt.tokenDanger": {
     "message": "Prompt çok uzun, paylaşım ve yeniden kullanım için uygun olmayabilir. Bölmeyi düşünün."
   },
   "prompt.tokenWarning": {
     "message": "Prompt oldukça uzun, kısaltmanız veya bölmenizi öneririz"
+  },
+  "prompt.translation": {
+    "message": "Çeviri"
+  },
+  "share.copy": {
+    "message": "Kopyala"
+  },
+  "share.native": {
+    "message": "Sistem"
+  },
+  "share.shareTo": {
+    "message": "Şuraya paylaş"
   },
   "showcase.header.button": {
     "message": "Topluluğu Keşfet"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "İlgili promptlar"
+  },
+  "sort.mostUpvoted": {
+    "message": "En çok oy alan"
+  },
+  "sort.newest": {
+    "message": "En yeni"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Kapat",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "Orijinal yazar paylaşımı iptal etti ve yerel önbellek yok"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "{next}'e kadar"
+  },
   "validation.agreement.required": {
     "message": "Kullanmadan önce Hizmet Şartları ve Gizlilik Politikasını kabul etmelisiniz"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin!"
-  },
-  "action.clearFilters": {
-    "message": "Filtreleri temizle ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Seçilen tag'lerden herhangi biriyle eşleşen prompt'ları göster"
-  },
-  "filter.operator.all.tip": {
-    "message": "Seçilen tüm tag'lerle eşleşen prompt'ları göster"
-  },
-  "sort.newest": {
-    "message": "En yeni"
-  },
-  "sort.mostUpvoted": {
-    "message": "En çok oy alan"
-  },
-  "level.stardust": {
-    "message": "Yıldız Tozu"
-  },
-  "level.emerald": {
-    "message": "Zümrüt"
-  },
-  "level.ruby": {
-    "message": "Yakut"
-  },
-  "level.sapphire": {
-    "message": "Safir"
-  },
-  "feedback.type.bug": {
-    "message": "Hata Raporları"
-  },
-  "feedback.type.suggestion": {
-    "message": "Öneriler"
-  },
-  "feedback.type.help": {
-    "message": "Yardım"
-  },
-  "feedback.spec_label": {
-    "message": "Açık Kanal"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} ve dahası"
-  },
-  "noResults.title": {
-    "message": "Eşleşen prompt bulunamadı"
-  },
-  "noResults.description": {
-    "message": "Farklı bir anahtar kelime deneyin veya etiket filtrelerini temizleyin"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "{next}'e kadar"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "YZ yanıtlıyor"
-  },
-  "comments.empty": {
-    "message": "Henüz yorum yok"
-  },
-  "prompt.authorNote": {
-    "message": "Yazarın notu"
-  },
-  "action.share": {
-    "message": "Paylaş"
-  },
-  "comments.heading": {
-    "message": "Tartışma"
-  },
-  "prompt.source": {
-    "message": "Kaynak"
-  },
-  "prompt.translation": {
-    "message": "Çeviri"
-  },
-  "share.copy": {
-    "message": "Kopyala"
-  },
-  "share.native": {
-    "message": "Sistem"
-  },
-  "share.shareTo": {
-    "message": "Şuraya paylaş"
-  },
-  "feedback.responseTime": {
-    "message": "Genellikle 24 saat içinde yanıt"
-  },
-  "feedback.newIssue": {
-    "message": "Yeni Issue"
   }
 }

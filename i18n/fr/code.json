@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Changer le mot de passe"
   },
+  "action.clearFilters": {
+    "message": "Effacer les filtres ({count})"
+  },
   "action.close": {
     "message": "Fermer"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "Copier"
+  },
+  "action.copyPrompt": {
+    "message": "Copier le Prompt"
   },
   "action.delete": {
     "message": "Supprimer"
@@ -39,13 +45,19 @@
     "message": "Masquer les tags"
   },
   "action.login": {
+    "message": "Se connecter"
+  },
+  "action.loginInstead": {
     "message": "Se connecter directement"
   },
   "action.register": {
     "message": "S'inscrire"
   },
+  "action.registerNow": {
+    "message": "S'inscrire maintenant"
+  },
   "action.removeFavorite": {
-    "message": "Cliquez pour retirer des favoris"
+    "message": "Retirer des favoris"
   },
   "action.reply": {
     "message": "Répondre"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Envoyer l'email de réinitialisation"
+  },
+  "action.share": {
+    "message": "Partager"
   },
   "action.showTags": {
     "message": "Afficher les tags"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Confirmer"
   },
+  "button.confirmClear": {
+    "message": "Confirmer l'effacement"
+  },
   "button.export": {
     "message": "Exporter les Données"
   },
@@ -87,13 +105,13 @@
     "message": "Exporter les prompts"
   },
   "button.import": {
-    "message": "Importer"
+    "message": "Importer les données"
   },
   "button.importPrompts": {
     "message": "Importer les prompts"
   },
   "button.login": {
-    "message": "Connexion gratuite"
+    "message": "Se connecter"
   },
   "button.logout": {
     "message": "Se déconnecter"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Réinitialiser le mot de passe"
   },
+  "button.signInFree": {
+    "message": "Connexion gratuite"
+  },
   "comment.add": {
     "message": "Soumettre un commentaire"
+  },
+  "comments.aiReplying": {
+    "message": "L'IA répond"
+  },
+  "comments.empty": {
+    "message": "Aucun commentaire"
+  },
+  "comments.heading": {
+    "message": "Discussion"
   },
   "common.favorites": {
     "message": "Favoris"
@@ -111,7 +141,7 @@
     "message": "Retour à la liste"
   },
   "community.description": {
-    "message": "Besoin de plus de prompts IA éprouvés? Rejoignez la communauté AiShort pour découvrir des modèles pratiques et partager des techniques d'optimisation."
+    "message": "Besoin de plus de prompts IA éprouvés ? Rejoignez la communauté AiShort pour découvrir des modèles pratiques et partager des techniques d'optimisation."
   },
   "community.loading": {
     "message": "Chargement..."
@@ -183,7 +213,7 @@
     "message": "Dans quels cas ce prompt convient-il le mieux ?"
   },
   "faq.tips.a": {
-    "message": "Premièrement, rendez le [placeholder] plus précis (style, longueur, domaine). Deuxièmement, relancez les réponses insatisfaisantes par « rends-le plus X ». Troisièmement, comparez les résultats entre Claude / GPT-4 / Gemini et d’autres modèles."
+    "message": "Premièrement, rendez le [placeholder] plus précis (style, longueur, domaine). Deuxièmement, relancez les réponses insatisfaisantes par « rends-le plus X ». Troisièmement, comparez les résultats entre Claude / ChatGPT / Gemini et d’autres modèles."
   },
   "faq.tips.q": {
     "message": "Comment améliorer la qualité de la réponse ?"
@@ -197,17 +227,44 @@
   "feedback.description": {
     "message": "Vos commentaires sont importants pour nous !"
   },
+  "feedback.newIssue": {
+    "message": "Nouvelle issue"
+  },
+  "feedback.responseTime": {
+    "message": "Réponse généralement sous 24h"
+  },
+  "feedback.spec_label": {
+    "message": "Canal Ouvert"
+  },
   "feedback.subtitle": {
     "message": "Rapports de bugs, demandes de fonctionnalités, questions d'utilisation—chaque voix est bienvenue"
   },
   "feedback.title": {
     "message": "Commentaires et suggestions"
   },
+  "feedback.type.bug": {
+    "message": "Rapports de bugs"
+  },
+  "feedback.type.help": {
+    "message": "Aide"
+  },
+  "feedback.type.suggestion": {
+    "message": "Suggestions"
+  },
   "feedback.welcome": {
     "message": "Retours et Suggestions"
   },
+  "filter.operator.all.tip": {
+    "message": "Afficher les prompts correspondant à tous les tags sélectionnés"
+  },
+  "filter.operator.any.tip": {
+    "message": "Afficher les prompts correspondant à au moins un tag sélectionné"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} et plus"
+  },
   "homepage.description": {
-    "message": "Frustré par des réponses IA hors sujet? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité!"
+    "message": "Frustré par des réponses IA hors sujet ? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité !"
   },
   "homepage.slogan": {
     "message": "Prompts IA sélectionnés, prêts en un clic"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "Diamant"
   },
+  "level.emerald": {
+    "message": "Émeraude"
+  },
   "level.gold": {
     "message": "Or"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Platine"
   },
+  "level.ruby": {
+    "message": "Rubis"
+  },
+  "level.sapphire": {
+    "message": "Saphir"
+  },
   "level.silver": {
     "message": "Argent"
+  },
+  "level.stardust": {
+    "message": "Poussière d'Étoiles"
   },
   "link.addprompt": {
     "message": "Créer un prompt"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "Mon Compte"
   },
-  "link.myaccount": {
-    "message": "Paramètres du compte"
-  },
   "link.privacy": {
     "message": "Politique de confidentialité"
   },
   "link.terms": {
     "message": "Conditions d'utilisation"
+  },
+  "link.userCenter": {
+    "message": "Centre utilisateur"
   },
   "login.login.prompt": {
     "message": "Déjà un compte ?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Cache vidé"
   },
+  "message.cannotFavorOwn": {
+    "message": "Vous ne pouvez pas mettre votre propre prompt en favori"
+  },
   "message.convertToPrivate.error": {
     "message": "Échec de la conversion, veuillez réessayer plus tard"
   },
@@ -387,7 +459,7 @@
     "message": "Échec de l'exportation, veuillez réessayer plus tard"
   },
   "message.export.noPrompts": {
-    "message": "Aucun prompt disponible à l'exportation, veuillez réessayer plus tard"
+    "message": "Aucun prompt à exporter. Créez-en un ou ajoutez-en à vos favoris d'abord."
   },
   "message.export.success": {
     "message": "Prompts exportés avec succès !"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "Ma Collection"
   },
+  "noResults.description": {
+    "message": "Essayez un autre mot-clé, ou effacez les filtres de tags"
+  },
+  "noResults.title": {
+    "message": "Aucun prompt correspondant trouvé"
+  },
   "placeholder.comment": {
     "message": "Entrez votre commentaire ici... Markdown et syntaxe HTML pris en charge"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Nom d'utilisateur/Email"
   },
+  "prompt.authorNote": {
+    "message": "Note de l'auteur"
+  },
   "prompt.charsLabel": {
     "message": "caractères"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Privé"
   },
+  "prompt.source": {
+    "message": "Source"
+  },
   "prompt.tokenDanger": {
     "message": "Le prompt est très long et peut être difficile à partager ou réutiliser. Envisagez de le diviser."
   },
   "prompt.tokenWarning": {
     "message": "Le prompt est assez long ; envisagez de le raccourcir ou de le diviser."
+  },
+  "prompt.translation": {
+    "message": "Traduction"
+  },
+  "share.copy": {
+    "message": "Copier"
+  },
+  "share.native": {
+    "message": "Système"
+  },
+  "share.shareTo": {
+    "message": "Partager sur"
   },
   "showcase.header.button": {
     "message": "Explorer la communauté"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "Prompts associés"
+  },
+  "sort.mostUpvoted": {
+    "message": "Les plus votés"
+  },
+  "sort.newest": {
+    "message": "Les plus récents"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Fermer",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "L'auteur a arrêté le partage, aucun cache local disponible"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "jusqu'à {next}"
+  },
   "validation.agreement.required": {
     "message": "Vous devez accepter les conditions d'utilisation et la politique de confidentialité avant d'utiliser"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Veuillez entrer un nom d'utilisateur ou un email enregistré !"
-  },
-  "action.clearFilters": {
-    "message": "Effacer les filtres ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Afficher les prompts correspondant à au moins un tag sélectionné"
-  },
-  "filter.operator.all.tip": {
-    "message": "Afficher les prompts correspondant à tous les tags sélectionnés"
-  },
-  "sort.newest": {
-    "message": "Les plus récents"
-  },
-  "sort.mostUpvoted": {
-    "message": "Les plus votés"
-  },
-  "level.stardust": {
-    "message": "Poussière d'Étoiles"
-  },
-  "level.emerald": {
-    "message": "Émeraude"
-  },
-  "level.ruby": {
-    "message": "Rubis"
-  },
-  "level.sapphire": {
-    "message": "Saphir"
-  },
-  "feedback.type.bug": {
-    "message": "Rapports de bugs"
-  },
-  "feedback.type.suggestion": {
-    "message": "Suggestions"
-  },
-  "feedback.type.help": {
-    "message": "Aide"
-  },
-  "feedback.spec_label": {
-    "message": "Canal Ouvert"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} et plus"
-  },
-  "noResults.title": {
-    "message": "Aucun prompt correspondant trouvé"
-  },
-  "noResults.description": {
-    "message": "Essayez un autre mot-clé, ou effacez les filtres de tags"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "jusqu'à {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "L'IA répond"
-  },
-  "comments.empty": {
-    "message": "Aucun commentaire"
-  },
-  "prompt.authorNote": {
-    "message": "Note de l'auteur"
-  },
-  "action.share": {
-    "message": "Partager"
-  },
-  "comments.heading": {
-    "message": "Discussion"
-  },
-  "prompt.source": {
-    "message": "Source"
-  },
-  "prompt.translation": {
-    "message": "Traduction"
-  },
-  "share.copy": {
-    "message": "Copier"
-  },
-  "share.native": {
-    "message": "Système"
-  },
-  "share.shareTo": {
-    "message": "Partager sur"
-  },
-  "feedback.responseTime": {
-    "message": "Réponse généralement sous 24h"
-  },
-  "feedback.newIssue": {
-    "message": "Nouvelle issue"
   }
 }

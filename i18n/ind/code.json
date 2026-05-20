@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Ubah Kata Sandi"
   },
+  "action.clearFilters": {
+    "message": "Hapus filter ({count})"
+  },
   "action.close": {
     "message": "Tutup"
   },
@@ -23,6 +26,9 @@
   "action.copy": {
     "message": "Salin"
   },
+  "action.copyPrompt": {
+    "message": "Salin Prompt"
+  },
   "action.delete": {
     "message": "Hapus"
   },
@@ -30,7 +36,7 @@
     "message": "Tidak suka"
   },
   "action.edit": {
-    "message": "Edit"
+    "message": "Ubah"
   },
   "action.forgotPassword": {
     "message": "Lupa kata sandi?"
@@ -41,11 +47,17 @@
   "action.login": {
     "message": "Login"
   },
+  "action.loginInstead": {
+    "message": "Login Langsung"
+  },
   "action.register": {
     "message": "Daftar"
   },
+  "action.registerNow": {
+    "message": "Daftar Sekarang"
+  },
   "action.removeFavorite": {
-    "message": "Klik untuk menghapus favorit"
+    "message": "Hapus dari favorit"
   },
   "action.reply": {
     "message": "Balas"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Kirim Email Reset"
+  },
+  "action.share": {
+    "message": "Bagikan"
   },
   "action.showTags": {
     "message": "Tampilkan Tag"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Konfirmasi"
   },
+  "button.confirmClear": {
+    "message": "Konfirmasi Hapus"
+  },
   "button.export": {
     "message": "Ekspor Data"
   },
@@ -93,7 +111,7 @@
     "message": "Impor Prompt"
   },
   "button.login": {
-    "message": "Masuk Gratis"
+    "message": "Login"
   },
   "button.logout": {
     "message": "Keluar"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Reset Kata Sandi"
   },
+  "button.signInFree": {
+    "message": "Masuk Gratis"
+  },
   "comment.add": {
     "message": "Kirim Komentar"
+  },
+  "comments.aiReplying": {
+    "message": "AI sedang membalas"
+  },
+  "comments.empty": {
+    "message": "Belum ada komentar"
+  },
+  "comments.heading": {
+    "message": "Diskusi"
   },
   "common.favorites": {
     "message": "Favorit"
@@ -183,13 +213,13 @@
     "message": "Prompt ini cocok digunakan untuk skenario apa?"
   },
   "faq.tips.a": {
-    "message": "Pertama, buat [placeholder] lebih spesifik (tambah gaya, panjang, bidang). Kedua, balas hasil yang kurang memuaskan dengan “buat lebih X”. Ketiga, bandingkan hasil antara Claude / GPT-4 / Gemini dan model lainnya."
+    "message": "Pertama, buat [placeholder] lebih spesifik (tambah gaya, panjang, bidang). Kedua, balas hasil yang kurang memuaskan dengan “buat lebih X”. Ketiga, bandingkan hasil antara Claude / ChatGPT / Gemini dan model lainnya."
   },
   "faq.tips.q": {
     "message": "Bagaimana cara meningkatkan kualitas hasil?"
   },
   "faq.usage.a": {
-    "message": "Salin prompt, ganti [placeholder] di dalam tanda kurung siku dengan masukan kamu, lalu tempel ke ChatGPT, Claude, Gemini, DeepSeek, Qwen, atau AI percakapan lain yang mendukung bahasa alami dan kirim."
+    "message": "Salin prompt, ganti [placeholder] di dalam tanda kurung siku dengan masukan Anda, lalu tempel ke ChatGPT, Claude, Gemini, DeepSeek, Qwen, atau AI percakapan lain yang mendukung bahasa alami dan kirim."
   },
   "faq.usage.q": {
     "message": "Bagaimana cara memakai prompt ini?"
@@ -197,17 +227,44 @@
   "feedback.description": {
     "message": "Umpan balik Anda sangat penting bagi kami!"
   },
+  "feedback.newIssue": {
+    "message": "Issue Baru"
+  },
+  "feedback.responseTime": {
+    "message": "Biasanya dibalas dalam 24 jam"
+  },
+  "feedback.spec_label": {
+    "message": "Saluran Terbuka"
+  },
   "feedback.subtitle": {
     "message": "Laporan bug, permintaan fitur, pertanyaan penggunaan—semua suara diterima"
   },
   "feedback.title": {
     "message": "Umpan Balik dan Saran"
   },
+  "feedback.type.bug": {
+    "message": "Laporan Bug"
+  },
+  "feedback.type.help": {
+    "message": "Bantuan Penggunaan"
+  },
+  "feedback.type.suggestion": {
+    "message": "Saran Fitur"
+  },
   "feedback.welcome": {
     "message": "Umpan Balik & Saran"
   },
+  "filter.operator.all.tip": {
+    "message": "Tampilkan prompt yang cocok dengan semua tag yang dipilih"
+  },
+  "filter.operator.any.tip": {
+    "message": "Tampilkan prompt yang cocok dengan salah satu tag yang dipilih"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} dan lainnya"
+  },
   "homepage.description": {
-    "message": "Frustasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!"
+    "message": "Frustrasi dengan jawaban AI yang tidak relevan? AiShort menyediakan template prompt praktis!"
   },
   "homepage.slogan": {
     "message": "Prompt AI pilihan, siap pakai dengan satu klik"
@@ -225,7 +282,7 @@
     "message": "Sesuaikan placeholder"
   },
   "howto.step2.text": {
-    "message": "Ganti bagian [placeholder] dengan konten spesifik kamu."
+    "message": "Ganti bagian [placeholder] dengan konten spesifik Anda."
   },
   "howto.step3.name": {
     "message": "Kirim ke AI"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "Berlian"
   },
+  "level.emerald": {
+    "message": "Zamrud"
+  },
   "level.gold": {
     "message": "Emas"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Platinum"
   },
+  "level.ruby": {
+    "message": "Rubi"
+  },
+  "level.sapphire": {
+    "message": "Safir"
+  },
   "level.silver": {
     "message": "Perak"
+  },
+  "level.stardust": {
+    "message": "Debu Bintang"
   },
   "link.addprompt": {
     "message": "Buat Prompt"
@@ -288,16 +357,16 @@
     "message": "Beranda"
   },
   "link.myAccount": {
-    "message": "Pusat Pengguna"
-  },
-  "link.myaccount": {
-    "message": "Pengaturan Akun"
+    "message": "Akun Saya"
   },
   "link.privacy": {
     "message": "Kebijakan Privasi"
   },
   "link.terms": {
     "message": "Ketentuan Layanan"
+  },
+  "link.userCenter": {
+    "message": "Pusat Pengguna"
   },
   "login.login.prompt": {
     "message": "Sudah punya akun?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Cache dihapus, data disegarkan"
   },
+  "message.cannotFavorOwn": {
+    "message": "Tidak dapat memfavoritkan prompt Anda sendiri"
+  },
   "message.convertToPrivate.error": {
     "message": "Konversi gagal, silakan coba lagi nanti"
   },
@@ -387,7 +459,7 @@
     "message": "Ekspor gagal, silakan coba lagi nanti"
   },
   "message.export.noPrompts": {
-    "message": "Tidak ada Prompt untuk diekspor"
+    "message": "Tidak ada prompt untuk diekspor. Buat atau favoritkan beberapa terlebih dahulu."
   },
   "message.export.success": {
     "message": "Ekspor Prompt berhasil!"
@@ -489,7 +561,7 @@
     "message": "Setelah dihapus, semua data akan dimuat ulang."
   },
   "modal.editPrompt.title": {
-    "message": "Edit Prompt"
+    "message": "Ubah Prompt"
   },
   "modal.forgotPassword.title": {
     "message": "Lupa Kata Sandi"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "Koleksi Saya"
   },
+  "noResults.description": {
+    "message": "Coba kata kunci lain, atau hapus filter tag"
+  },
+  "noResults.title": {
+    "message": "Tidak ada prompt yang cocok"
+  },
   "placeholder.comment": {
     "message": "Masukkan komentar di sini... Mendukung sintaks Markdown dan HTML"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Nama pengguna/Email"
   },
+  "prompt.authorNote": {
+    "message": "Catatan penulis"
+  },
   "prompt.charsLabel": {
     "message": "karakter"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Pribadi"
   },
+  "prompt.source": {
+    "message": "Sumber"
+  },
   "prompt.tokenDanger": {
     "message": "Prompt sangat panjang dan mungkin sulit untuk dibagikan atau digunakan kembali. Pertimbangkan untuk membaginya."
   },
   "prompt.tokenWarning": {
     "message": "Prompt cukup panjang, disarankan untuk mempersingkat atau membagi"
+  },
+  "prompt.translation": {
+    "message": "Terjemahan"
+  },
+  "share.copy": {
+    "message": "Salin"
+  },
+  "share.native": {
+    "message": "Sistem"
+  },
+  "share.shareTo": {
+    "message": "Bagikan ke"
   },
   "showcase.header.button": {
     "message": "Jelajahi Komunitas"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "Prompt terkait"
+  },
+  "sort.mostUpvoted": {
+    "message": "Paling disukai"
+  },
+  "sort.newest": {
+    "message": "Terbaru"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Tutup",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "Penulis asli telah membatalkan berbagi dan tidak ada cache lokal"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "menuju {next}"
+  },
   "validation.agreement.required": {
     "message": "Anda harus menyetujui Ketentuan Layanan dan Kebijakan Privasi sebelum menggunakan"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Silakan masukkan nama pengguna atau email terdaftar!"
-  },
-  "action.clearFilters": {
-    "message": "Hapus filter ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Tampilkan prompt yang cocok dengan salah satu tag yang dipilih"
-  },
-  "filter.operator.all.tip": {
-    "message": "Tampilkan prompt yang cocok dengan semua tag yang dipilih"
-  },
-  "sort.newest": {
-    "message": "Terbaru"
-  },
-  "sort.mostUpvoted": {
-    "message": "Paling disukai"
-  },
-  "level.stardust": {
-    "message": "Debu Bintang"
-  },
-  "level.emerald": {
-    "message": "Zamrud"
-  },
-  "level.ruby": {
-    "message": "Rubi"
-  },
-  "level.sapphire": {
-    "message": "Safir"
-  },
-  "feedback.type.bug": {
-    "message": "Laporan Bug"
-  },
-  "feedback.type.suggestion": {
-    "message": "Saran Fitur"
-  },
-  "feedback.type.help": {
-    "message": "Bantuan Penggunaan"
-  },
-  "feedback.spec_label": {
-    "message": "Saluran Terbuka"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} dan lainnya"
-  },
-  "noResults.title": {
-    "message": "Tidak ada prompt yang cocok"
-  },
-  "noResults.description": {
-    "message": "Coba kata kunci lain, atau hapus filter tag"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "menuju {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI sedang membalas"
-  },
-  "comments.empty": {
-    "message": "Belum ada komentar"
-  },
-  "prompt.authorNote": {
-    "message": "Catatan penulis"
-  },
-  "action.share": {
-    "message": "Bagikan"
-  },
-  "comments.heading": {
-    "message": "Diskusi"
-  },
-  "prompt.source": {
-    "message": "Sumber"
-  },
-  "prompt.translation": {
-    "message": "Terjemahan"
-  },
-  "share.copy": {
-    "message": "Salin"
-  },
-  "share.native": {
-    "message": "Sistem"
-  },
-  "share.shareTo": {
-    "message": "Bagikan ke"
-  },
-  "feedback.responseTime": {
-    "message": "Biasanya dibalas dalam 24 jam"
-  },
-  "feedback.newIssue": {
-    "message": "Issue Baru"
   }
 }

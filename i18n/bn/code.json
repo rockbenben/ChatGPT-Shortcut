@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "পাসওয়ার্ড পরিবর্তন করুন"
   },
+  "action.clearFilters": {
+    "message": "ফিল্টার সাফ করুন ({count})"
+  },
   "action.close": {
     "message": "বন্ধ করুন"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "কপি"
+  },
+  "action.copyPrompt": {
+    "message": "প্রম্পট কপি"
   },
   "action.delete": {
     "message": "মুছুন"
@@ -39,13 +45,19 @@
     "message": "ট্যাগ লুকান"
   },
   "action.login": {
+    "message": "লগইন"
+  },
+  "action.loginInstead": {
     "message": "সরাসরি লগইন করুন"
   },
   "action.register": {
     "message": "নিবন্ধন করুন"
   },
+  "action.registerNow": {
+    "message": "এখনই নিবন্ধন করুন"
+  },
   "action.removeFavorite": {
-    "message": "পছন্দ সরাতে ক্লিক করুন"
+    "message": "পছন্দ থেকে সরান"
   },
   "action.reply": {
     "message": "উত্তর দিন"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "রিসেট ইমেল পাঠান"
+  },
+  "action.share": {
+    "message": "শেয়ার করুন"
   },
   "action.showTags": {
     "message": "ট্যাগ দেখান"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "নিশ্চিত করুন"
   },
+  "button.confirmClear": {
+    "message": "পরিষ্কার নিশ্চিত করুন"
+  },
   "button.export": {
     "message": "ডেটা রপ্তানি করুন"
   },
@@ -87,13 +105,13 @@
     "message": "প্রম্পট রপ্তানি করুন"
   },
   "button.import": {
-    "message": "আমদানি"
+    "message": "ডেটা আমদানি"
   },
   "button.importPrompts": {
     "message": "প্রম্পট আমদানি করুন"
   },
   "button.login": {
-    "message": "বিনামূল্যে লগইন"
+    "message": "লগইন"
   },
   "button.logout": {
     "message": "লগআউট"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "পাসওয়ার্ড রিসেট করুন"
   },
+  "button.signInFree": {
+    "message": "বিনামূল্যে লগইন"
+  },
   "comment.add": {
     "message": "মন্তব্য জমা দিন"
+  },
+  "comments.aiReplying": {
+    "message": "AI উত্তর দিচ্ছে"
+  },
+  "comments.empty": {
+    "message": "এখনও কোনো মন্তব্য নেই"
+  },
+  "comments.heading": {
+    "message": "আলোচনা"
   },
   "common.favorites": {
     "message": "পছন্দসমূহ"
@@ -183,7 +213,7 @@
     "message": "এই প্রম্পট কোন পরিস্থিতিতে ব্যবহার উপযোগী?"
   },
   "faq.tips.a": {
-    "message": "প্রথমত, [প্লেসহোল্ডার] আরও নির্দিষ্ট করুন (ধরন, দৈর্ঘ্য, ক্ষেত্র যোগ করুন)। দ্বিতীয়ত, অসন্তোষজনক উত্তরে “এটাকে আরও X কর” বলে অনুরোধ করুন। তৃতীয়ত, Claude / GPT-4 / Gemini এর মতো ভিন্ন মডেলে তুলনা করুন।"
+    "message": "প্রথমত, [প্লেসহোল্ডার] আরও নির্দিষ্ট করুন (ধরন, দৈর্ঘ্য, ক্ষেত্র যোগ করুন)। দ্বিতীয়ত, অসন্তোষজনক উত্তরে “এটাকে আরও X কর” বলে অনুরোধ করুন। তৃতীয়ত, Claude / ChatGPT / Gemini এর মতো ভিন্ন মডেলে তুলনা করুন।"
   },
   "faq.tips.q": {
     "message": "আউটপুটের মান কীভাবে উন্নত করা যায়?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ!"
   },
+  "feedback.newIssue": {
+    "message": "নতুন Issue"
+  },
+  "feedback.responseTime": {
+    "message": "সাধারণত 24 ঘণ্টার মধ্যে উত্তর"
+  },
+  "feedback.spec_label": {
+    "message": "উন্মুক্ত চ্যানেল"
+  },
   "feedback.subtitle": {
     "message": "বাগ রিপোর্ট, ফিচার অনুরোধ, ব্যবহারের প্রশ্ন—সব মত স্বাগত"
   },
   "feedback.title": {
     "message": "প্রতিক্রিয়া ও পরামর্শ"
   },
+  "feedback.type.bug": {
+    "message": "বাগ রিপোর্ট"
+  },
+  "feedback.type.help": {
+    "message": "সাহায্য"
+  },
+  "feedback.type.suggestion": {
+    "message": "পরামর্শ"
+  },
   "feedback.welcome": {
     "message": "প্রতিক্রিয়া ও পরামর্শ"
+  },
+  "filter.operator.all.tip": {
+    "message": "সব নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
+  },
+  "filter.operator.any.tip": {
+    "message": "যেকোনো একটি নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} এবং আরো"
   },
   "homepage.description": {
     "message": "এআই এর অপ্রাসঙ্গিক উত্তরে হতাশ? AiShort লেখা, কোডিং এবং অনুবাদের জন্য ব্যবহারিক টেমপ্লেট দেয়। এক ক্লিকে কপি করুন এবং দক্ষতা দ্বিগুণ করুন!"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "হীরা"
   },
+  "level.emerald": {
+    "message": "পান্না"
+  },
   "level.gold": {
     "message": "স্বর্ণ"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "প্ল্যাটিনাম"
   },
+  "level.ruby": {
+    "message": "চুনি"
+  },
+  "level.sapphire": {
+    "message": "নীলা"
+  },
   "level.silver": {
     "message": "রূপা"
+  },
+  "level.stardust": {
+    "message": "নক্ষত্রধূলি"
   },
   "link.addprompt": {
     "message": "প্রম্পট তৈরি করুন"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "আমার অ্যাকাউন্ট"
   },
-  "link.myaccount": {
-    "message": "অ্যাকাউন্ট সেটিংস"
-  },
   "link.privacy": {
     "message": "গোপনীয়তা নীতি"
   },
   "link.terms": {
     "message": "পরিষেবার শর্তাবলী"
+  },
+  "link.userCenter": {
+    "message": "ব্যবহারকারী কেন্দ্র"
   },
   "login.login.prompt": {
     "message": "ইতিমধ্যে একটি অ্যাকাউন্ট আছে?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "ক্যাশে সাফ করা হয়েছে"
   },
+  "message.cannotFavorOwn": {
+    "message": "নিজের প্রম্পট প্রিয় তালিকায় যোগ করা যাবে না"
+  },
   "message.convertToPrivate.error": {
     "message": "রূপান্তর করতে ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
@@ -387,7 +459,7 @@
     "message": "রপ্তানি ব্যর্থ হয়েছে, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.export.noPrompts": {
-    "message": "রপ্তানি করার জন্য কোনো প্রম্পট উপলব্ধ নেই, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
+    "message": "রপ্তানি করার মতো কোনো প্রম্পট নেই। প্রথমে কিছু তৈরি করুন বা প্রিয়তে যোগ করুন।"
   },
   "message.export.success": {
     "message": "প্রম্পট সফলভাবে রপ্তানি করা হয়েছে!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "আমার সংগ্রহ"
   },
+  "noResults.description": {
+    "message": "অন্য কীওয়ার্ড চেষ্টা করুন, বা ট্যাগ ফিল্টার সাফ করুন"
+  },
+  "noResults.title": {
+    "message": "মিলিত প্রম্পট পাওয়া যায়নি"
+  },
   "placeholder.comment": {
     "message": "এখানে মন্তব্য লিখুন... মার্কডাউন এবং এইচটিএমএল সিনট্যাক্স সমর্থিত"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "ব্যবহারকারীর নাম/ইমেল"
   },
+  "prompt.authorNote": {
+    "message": "লেখকের নোট"
+  },
   "prompt.charsLabel": {
     "message": "অক্ষর"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "ব্যক্তিগত"
   },
+  "prompt.source": {
+    "message": "উৎস"
+  },
   "prompt.tokenDanger": {
     "message": "প্রম্পটটি খুব দীর্ঘ, যা শেয়ার এবং পুনরায় ব্যবহার করতে অসুবিধাজনক হতে পারে। ভাগ করার কথা বিবেচনা করুন।"
   },
   "prompt.tokenWarning": {
     "message": "প্রম্পটটি বেশ দীর্ঘ; এটি ছোট বা ভাগ করার কথা বিবেচনা করুন।"
+  },
+  "prompt.translation": {
+    "message": "অনুবাদ"
+  },
+  "share.copy": {
+    "message": "কপি"
+  },
+  "share.native": {
+    "message": "সিস্টেম"
+  },
+  "share.shareTo": {
+    "message": "শেয়ার করুন"
   },
   "showcase.header.button": {
     "message": "কমিউনিটি দেখুন"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "সম্পর্কিত প্রম্পট"
+  },
+  "sort.mostUpvoted": {
+    "message": "সর্বাধিক ভোট"
+  },
+  "sort.newest": {
+    "message": "সর্বশেষ"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "বন্ধ করুন",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "লেখক শেয়ার করা বন্ধ করেছেন এবং কোনো স্থানীয় ক্যাশে নেই"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "{next} পর্যন্ত"
+  },
   "validation.agreement.required": {
     "message": "ব্যবহারের আগে আপনাকে অবশ্যই পরিষেবার শর্তাবলী এবং গোপনীয়তা নীতিতে সম্মত হতে হবে"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন!"
-  },
-  "action.clearFilters": {
-    "message": "ফিল্টার সাফ করুন ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "যেকোনো একটি নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
-  },
-  "filter.operator.all.tip": {
-    "message": "সব নির্বাচিত ট্যাগের সাথে মিলে এমন প্রম্পট দেখান"
-  },
-  "sort.newest": {
-    "message": "সর্বশেষ"
-  },
-  "sort.mostUpvoted": {
-    "message": "সর্বাধিক ভোট"
-  },
-  "level.stardust": {
-    "message": "নক্ষত্রধূলি"
-  },
-  "level.emerald": {
-    "message": "পান্না"
-  },
-  "level.ruby": {
-    "message": "চুনি"
-  },
-  "level.sapphire": {
-    "message": "নীলা"
-  },
-  "feedback.type.bug": {
-    "message": "বাগ রিপোর্ট"
-  },
-  "feedback.type.suggestion": {
-    "message": "পরামর্শ"
-  },
-  "feedback.type.help": {
-    "message": "সাহায্য"
-  },
-  "feedback.spec_label": {
-    "message": "উন্মুক্ত চ্যানেল"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} এবং আরো"
-  },
-  "noResults.title": {
-    "message": "মিলিত প্রম্পট পাওয়া যায়নি"
-  },
-  "noResults.description": {
-    "message": "অন্য কীওয়ার্ড চেষ্টা করুন, বা ট্যাগ ফিল্টার সাফ করুন"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "{next} পর্যন্ত"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI উত্তর দিচ্ছে"
-  },
-  "comments.empty": {
-    "message": "এখনও কোনো মন্তব্য নেই"
-  },
-  "prompt.authorNote": {
-    "message": "লেখকের নোট"
-  },
-  "action.share": {
-    "message": "শেয়ার করুন"
-  },
-  "comments.heading": {
-    "message": "আলোচনা"
-  },
-  "prompt.source": {
-    "message": "উৎস"
-  },
-  "prompt.translation": {
-    "message": "অনুবাদ"
-  },
-  "share.copy": {
-    "message": "কপি"
-  },
-  "share.native": {
-    "message": "সিস্টেম"
-  },
-  "share.shareTo": {
-    "message": "শেয়ার করুন"
-  },
-  "feedback.responseTime": {
-    "message": "সাধারণত 24 ঘণ্টার মধ্যে উত্তর"
-  },
-  "feedback.newIssue": {
-    "message": "নতুন Issue"
   }
 }

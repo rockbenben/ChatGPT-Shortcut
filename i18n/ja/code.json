@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "パスワードを変更"
   },
+  "action.clearFilters": {
+    "message": "絞り込みをクリア ({count})"
+  },
   "action.close": {
     "message": "閉じる"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "コピー"
+  },
+  "action.copyPrompt": {
+    "message": "プロンプトをコピー"
   },
   "action.delete": {
     "message": "削除"
@@ -39,13 +45,19 @@
     "message": "タグを隠す"
   },
   "action.login": {
+    "message": "ログイン"
+  },
+  "action.loginInstead": {
     "message": "直接ログイン"
   },
   "action.register": {
     "message": "登録"
   },
+  "action.registerNow": {
+    "message": "今すぐ登録"
+  },
   "action.removeFavorite": {
-    "message": "クリックしてお気に入りから削除"
+    "message": "お気に入りから削除"
   },
   "action.reply": {
     "message": "返信"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "リセットメールを送信"
+  },
+  "action.share": {
+    "message": "共有"
   },
   "action.showTags": {
     "message": "タグを表示"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "確認"
   },
+  "button.confirmClear": {
+    "message": "クリアを確認"
+  },
   "button.export": {
     "message": "データをエクスポート"
   },
@@ -87,13 +105,13 @@
     "message": "プロンプトをエクスポート"
   },
   "button.import": {
-    "message": "インポート"
+    "message": "データをインポート"
   },
   "button.importPrompts": {
     "message": "プロンプトをインポート"
   },
   "button.login": {
-    "message": "無料ログイン"
+    "message": "ログイン"
   },
   "button.logout": {
     "message": "ログアウト"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "パスワードをリセット"
   },
+  "button.signInFree": {
+    "message": "無料ログイン"
+  },
   "comment.add": {
     "message": "コメントを送信"
+  },
+  "comments.aiReplying": {
+    "message": "AI が返信中"
+  },
+  "comments.empty": {
+    "message": "コメントはまだありません"
+  },
+  "comments.heading": {
+    "message": "ディスカッション"
   },
   "common.favorites": {
     "message": "お気に入り"
@@ -183,7 +213,7 @@
     "message": "このプロンプトはどのような場面で使えますか？"
   },
   "faq.tips.a": {
-    "message": "一つ目は [プレースホルダー] をより具体的にすること（スタイル・長さ・分野などを追記）。二つ目は不満足な回答に「もっと X にして」と追質問すること。三つ目は Claude / GPT-4 / Gemini など別モデルで比較することです。"
+    "message": "一つ目は [プレースホルダー] をより具体的にすること（スタイル・長さ・分野などを追記）。二つ目は不満足な回答に「もっと X にして」と追質問すること。三つ目は Claude / ChatGPT / Gemini など別モデルで比較することです。"
   },
   "faq.tips.q": {
     "message": "出力の品質を上げるにはどうすればいいですか？"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "あなたのフィードバックは私たちにとって重要です！"
   },
+  "feedback.newIssue": {
+    "message": "新規 Issue"
+  },
+  "feedback.responseTime": {
+    "message": "通常 24時間以内に返信"
+  },
+  "feedback.spec_label": {
+    "message": "オープンチャンネル"
+  },
   "feedback.subtitle": {
     "message": "バグ報告、機能提案、使い方の質問——どんな声も歓迎します"
   },
   "feedback.title": {
     "message": "フィードバックと提案"
   },
+  "feedback.type.bug": {
+    "message": "バグ報告"
+  },
+  "feedback.type.help": {
+    "message": "使い方の質問"
+  },
+  "feedback.type.suggestion": {
+    "message": "機能提案"
+  },
   "feedback.welcome": {
     "message": "フィードバックと提案"
+  },
+  "filter.operator.all.tip": {
+    "message": "選択したすべてのタグに一致"
+  },
+  "filter.operator.any.tip": {
+    "message": "選択したいずれかのタグに一致"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} など"
   },
   "homepage.description": {
     "message": "AIの回答がいつも的外れ？AiShortは執筆・プログラミング・翻訳に役立つ実用的なプロンプトを収録。ワンクリックでコピーして作業効率を倍増！"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "ダイヤモンド"
   },
+  "level.emerald": {
+    "message": "エメラルド"
+  },
   "level.gold": {
     "message": "ゴールド"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "プラチナ"
   },
+  "level.ruby": {
+    "message": "ルビー"
+  },
+  "level.sapphire": {
+    "message": "サファイア"
+  },
   "level.silver": {
     "message": "シルバー"
+  },
+  "level.stardust": {
+    "message": "スターダスト"
   },
   "link.addprompt": {
     "message": "プロンプトを作成"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "マイアカウント"
   },
-  "link.myaccount": {
-    "message": "アカウント設定"
-  },
   "link.privacy": {
     "message": "プライバシーポリシー"
   },
   "link.terms": {
     "message": "利用規約"
+  },
+  "link.userCenter": {
+    "message": "ユーザーセンター"
   },
   "login.login.prompt": {
     "message": "すでにアカウントをお持ちですか？"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "キャッシュをクリアしました"
   },
+  "message.cannotFavorOwn": {
+    "message": "自分のプロンプトはお気に入りに登録できません"
+  },
   "message.convertToPrivate.error": {
     "message": "変換に失敗しました。後でもう一度お試しください"
   },
@@ -387,7 +459,7 @@
     "message": "エクスポートに失敗しました。後でもう一度お試しください"
   },
   "message.export.noPrompts": {
-    "message": "エクスポートできるプロンプトがありません。後でもう一度お試しください"
+    "message": "エクスポートできるプロンプトがありません。まずプロンプトを作成するか、お気に入りに追加してください。"
   },
   "message.export.success": {
     "message": "プロンプトのエクスポートに成功しました！"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "マイコレクション"
   },
+  "noResults.description": {
+    "message": "別のキーワードを試すか、タグフィルターをクリアしてください"
+  },
+  "noResults.title": {
+    "message": "一致するプロンプトが見つかりません"
+  },
   "placeholder.comment": {
     "message": "ここにコメントを入力... MarkdownとHTML構文をサポート"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "ユーザー名/メールアドレス"
   },
+  "prompt.authorNote": {
+    "message": "作者メモ"
+  },
   "prompt.charsLabel": {
     "message": "文字"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "非公開"
   },
+  "prompt.source": {
+    "message": "ソース"
+  },
   "prompt.tokenDanger": {
     "message": "プロンプトが非常に長く、共有や再利用に不便です。分割をご検討ください。"
   },
   "prompt.tokenWarning": {
     "message": "プロンプトが長めです。短縮するか分割することをお勧めします。"
+  },
+  "prompt.translation": {
+    "message": "翻訳"
+  },
+  "share.copy": {
+    "message": "コピー"
+  },
+  "share.native": {
+    "message": "システム"
+  },
+  "share.shareTo": {
+    "message": "共有先"
   },
   "showcase.header.button": {
     "message": "コミュニティ投稿を見る"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "関連プロンプト"
+  },
+  "sort.mostUpvoted": {
+    "message": "高評価順"
+  },
+  "sort.newest": {
+    "message": "新着順"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "閉じる",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "著者が共有を停止し、ローカルキャッシュもありません"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」まで"
+  },
   "validation.agreement.required": {
     "message": "使用する前に利用規約とプライバシーポリシーに同意する必要があります"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "ユーザー名または登録メールアドレスを入力してください！"
-  },
-  "action.clearFilters": {
-    "message": "絞り込みをクリア ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "選択したいずれかのタグに一致"
-  },
-  "filter.operator.all.tip": {
-    "message": "選択したすべてのタグに一致"
-  },
-  "sort.newest": {
-    "message": "新着順"
-  },
-  "sort.mostUpvoted": {
-    "message": "高評価順"
-  },
-  "level.stardust": {
-    "message": "スターダスト"
-  },
-  "level.emerald": {
-    "message": "エメラルド"
-  },
-  "level.ruby": {
-    "message": "ルビー"
-  },
-  "level.sapphire": {
-    "message": "サファイア"
-  },
-  "feedback.type.bug": {
-    "message": "バグ報告"
-  },
-  "feedback.type.suggestion": {
-    "message": "機能提案"
-  },
-  "feedback.type.help": {
-    "message": "使い方の質問"
-  },
-  "feedback.spec_label": {
-    "message": "オープンチャンネル"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} など"
-  },
-  "noResults.title": {
-    "message": "一致するプロンプトが見つかりません"
-  },
-  "noResults.description": {
-    "message": "別のキーワードを試すか、タグフィルターをクリアしてください"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "「{next}」まで"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI が返信中"
-  },
-  "comments.empty": {
-    "message": "コメントはまだありません"
-  },
-  "prompt.authorNote": {
-    "message": "作者メモ"
-  },
-  "action.share": {
-    "message": "共有"
-  },
-  "comments.heading": {
-    "message": "ディスカッション"
-  },
-  "prompt.source": {
-    "message": "ソース"
-  },
-  "prompt.translation": {
-    "message": "翻訳"
-  },
-  "share.copy": {
-    "message": "コピー"
-  },
-  "share.native": {
-    "message": "システム"
-  },
-  "share.shareTo": {
-    "message": "共有先"
-  },
-  "feedback.responseTime": {
-    "message": "通常 24時間以内に返信"
-  },
-  "feedback.newIssue": {
-    "message": "新規 Issue"
   }
 }
