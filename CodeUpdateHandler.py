@@ -1,6 +1,5 @@
 import json
 import os
-import shutil
 from pathlib import Path
 
 # Try to import opencc for Traditional Chinese conversion
@@ -19,6 +18,7 @@ current_dir = os.path.join(os.getcwd(), 'src', 'data')
 # 指定输入文件的路径
 input_path = os.path.join(current_dir, 'prompt.json')
 meta_cards_path = os.path.join(current_dir, 'meta_cards.json')
+meta_faqs_path = os.path.join(current_dir, 'meta_faqs.json')
 
 output_dir_path = os.path.join(current_dir, 'default')
 output_dir_path_cards = os.path.join(current_dir, 'cards')
@@ -46,6 +46,27 @@ if os.path.exists(meta_cards_path):
     except Exception as e:
         # 如果 meta 文件格式异常，不中断主流程
         print(f"Warn: failed to load meta_description.json: {e}")
+
+# 载入 per-prompt FAQ 映射（id -> {lang: [{q,a},...]}）
+# meta_faqs.json 是 master 编辑源；build 时按 (id, lang) 嵌入到对应 card 文件，
+# 让 PromptPage 直接从已加载的 prompt.faq 取，避免全量 ship meta_faqs.json (~1MB gzipped 砍掉 common.js)
+faq_map = {}
+if os.path.exists(meta_faqs_path):
+    try:
+        with open(meta_faqs_path, 'r', encoding='utf-8') as faq_file:
+            faq_data = json.load(faq_file)
+            # 结构：{ "<id>": { "zh-Hans": [{q,a},...], "en": [...], ... } }
+            for id_key, locales in faq_data.items():
+                if not isinstance(locales, dict):
+                    continue
+                try:
+                    item_id = int(id_key)
+                except (ValueError, TypeError):
+                    # 跳过 _schema 等非数字 key
+                    continue
+                faq_map[item_id] = locales
+    except Exception as e:
+        print(f"Warn: failed to load meta_faqs.json: {e}")
 
 # 初始化最大 ID 值
 max_id = -1
@@ -96,6 +117,14 @@ def get_meta_content(item_id, field, target_lang):
         return content
     return meta_dict.get(target_lang, "")
 
+# Helper for FAQ content
+# 直接按 locale key 取（meta_faqs.json 的 zh-Hant 已经是原生繁体，不需 OpenCC 转换）。
+# 缺失返回空列表 → PromptPage 自动 fallback 到通用模板。
+def get_faq_content(item_id, target_lang):
+    locales = faq_map.get(item_id, {})
+    faq = locales.get(target_lang)
+    return faq if isinstance(faq, list) else []
+
 
 # 处理和保存数据的函数
 def process_and_save_data(filtered_data, file_prefix, ids_order):
@@ -122,11 +151,12 @@ def process_and_save_data(filtered_data, file_prefix, ids_order):
         # 按 ids_order 排列 processed_data
         processed_data_sorted = sorted(processed_data, key=lambda x: ids_order.index(x['id']))
         # 保存为新的 JSON 文件
-        output_file_path = f'{output_dir_path}\\{file_prefix}_{lang}.json'
+        output_file_path = os.path.join(output_dir_path, f'{file_prefix}_{lang}.json')
         with open(output_file_path, 'w', encoding='utf-8') as file:
             json.dump(processed_data_sorted, file, ensure_ascii=False, separators=(',', ':'))
 
 # 处理和保存 favor_ids 和 other_ids 数据
+os.makedirs(output_dir_path, exist_ok=True)
 process_and_save_data(favor_data, 'favor', favor_ids)
 process_and_save_data(other_data, 'other', other_ids)
 
@@ -187,6 +217,9 @@ def save_data_by_id_and_language(data):
                     "metaTitle": get_meta_content(item["id"], 'title', lang),
                     # 合并 meta description（如果存在）
                     "metaDescription": get_meta_content(item["id"], 'description', lang),
+                    # 嵌入该 (id, lang) 的 FAQ —— PromptPage 直接读 prompt.faq，
+                    # 避免运行时再 import 全量 meta_faqs.json
+                    "faq": get_faq_content(item["id"], lang),
                 }
                 # 定义输出文件路径
                 output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
@@ -246,31 +279,6 @@ for lang in languages:
     # 写入数据
     with open(output_path, 'w', encoding='utf-8') as file:
         json.dump(output_data[lang], file, ensure_ascii=False, separators=(',', ':'))
-
-# 在 # 更新 Prompt Page 页面的 prompt 内容 的步骤前，将 os.path.join(current_dir, 'users.zh.tsx') 复制到同路径的 'users.{lang}.tsx'
-# 遍历每个语言
-# Skip the first one? Previous logic was skipping 'zh' which was first.
-# Now 'zh-Hans' is first. We should generate users.zh-Hans.tsx too?
-# Since existing users.zh.tsx is just a template, we can treat it as such.
-# But if users.zh.tsx is NOT used by anything, then it doesn't matter?
-# However, for safety, let's generate for ALL languages including zh-Hans.
-for lang in languages:
-    # 指定原始文件路径
-    original_file_path = os.path.join(current_dir, 'users.template.tsx')
-    # 指定新文件路径
-    new_file_path = os.path.join(current_dir, f'users.{lang}.tsx')
-    # 如果新文件已存在，则先删除它
-    if os.path.exists(new_file_path):
-        os.remove(new_file_path)
-    # 复制并修改文件内容
-    with open(original_file_path, 'r', encoding='utf-8') as original_file:
-        with open(new_file_path, 'w', encoding='utf-8') as new_file:
-            # 读取原始文件内容
-            original_content = original_file.read()
-            # 将内容中的 'prompt_zh.json' 替换为 'prompt_{lang}.json'
-            new_content = original_content.replace('prompt_zh.json', f'prompt_{lang}.json')
-            # 写入新的内容到新文件中
-            new_file.write(new_content)
 
 # 更新 Prompt Page 页面的 prompt 内容
 react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
