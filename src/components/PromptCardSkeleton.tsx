@@ -57,7 +57,7 @@ export const PromptCardSkeleton: React.FC<PromptCardSkeletonProps> = ({ count = 
           <Card
             variant="borderless"
             style={{
-              borderRadius: 12,
+              borderRadius: 6,
               border: `1px solid ${token.colorBorderSecondary}`,
               boxShadow: "none",
               height: "100%",
