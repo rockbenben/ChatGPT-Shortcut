@@ -17,6 +17,10 @@ function getInitialTheme(): boolean {
   return true;
 }
 
+// antd locale 不注入：全项目暴露 antd 默认文案的只有 Pagination 的几个 aria-label / quickJumper
+// 字符串（"Previous Page" / "Go to" 等），其他组件（Modal.confirm/Popconfirm/Empty/Form）
+// 都已在 callsite 用 <Translate> 覆盖。引入 18 个 antd locale pack 换这点收益不划算
+// （~150KB gzipped bundle 膨胀）。Pagination 默认英文可接受。
 export default function Root({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
 
