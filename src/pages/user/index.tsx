@@ -74,11 +74,12 @@ const UserProfile = () => {
   useEffect(() => {
     if (!userLoading && !userInfo) {
       const timer = setTimeout(() => {
-        window.location.href = "/";
+        const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+        window.location.href = `${localePrefix}/`;
       }, 2000);
       return () => clearTimeout(timer);
     }
-  }, [userLoading, userInfo]);
+  }, [userLoading, userInfo, i18n.currentLocale, i18n.defaultLocale]);
 
   const handleExportPrompts = useCallback(async () => {
     try {
@@ -87,7 +88,7 @@ const UserProfile = () => {
       const favoriteItems = userAuth?.data?.items?.filter((item) => item.type === "favorite") || [];
 
       if (userPromptItems.length === 0 && favoriteItems.length === 0) {
-        message.warning(<Translate id="message.export.noPrompts">暂无提示词可导出</Translate>);
+        message.warning(<Translate id="message.export.noPrompts">暂无可导出的提示词，先创建或收藏一些吧</Translate>);
         return;
       }
 
@@ -461,7 +462,7 @@ const UserProfile = () => {
                     ),
                   },
                   {
-                    title: <Translate id="link.myAccount">用户中心</Translate>,
+                    title: <Translate id="link.userCenter">用户中心</Translate>,
                   },
                 ]}
               />
@@ -721,7 +722,7 @@ const UserProfile = () => {
                             width: 480,
                           });
                         }}>
-                        <Translate id="action.forgotPassword">忘记密码？</Translate>
+                        <Translate id="action.forgotPassword">忘记密码</Translate>
                       </Button>
                     }>
                     <Form form={changePasswordForm} onFinish={onFinishChangePassword} layout="vertical" requiredMark={false}>
@@ -874,7 +875,7 @@ const UserProfile = () => {
                         </Text>
                       }
                       onConfirm={handleClearCache}
-                      okText={<Translate id="button.confirm">确认清除</Translate>}
+                      okText={<Translate id="button.confirmClear">确认清除</Translate>}
                       okButtonProps={{ danger: true }}
                       cancelText={<Translate id="action.cancel">取消</Translate>}
                       placement="topRight">
