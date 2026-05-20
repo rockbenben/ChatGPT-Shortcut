@@ -31,6 +31,7 @@ import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
+import { toBcp47 } from "@site/src/utils/i18n";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -550,6 +551,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                       type={isUserPrompt ? "user" : "community"}
                       data={user}
                       isFavorite={isFavorite}
+                      isLoggedIn={isLoggedIn}
                       onToggleFavorite={isUserPrompt ? undefined : handleCommToggleFavorite}
                       onVote={isUserPrompt ? undefined : vote}
                       onOpenModal={onOpenModal}
@@ -876,7 +878,9 @@ export default function Showcase(): React.ReactElement {
   // - Organization + sameAs：建立知识图谱实体关联（GitHub repo）
   // - SoftwareApplication：让 LLM 在"工具推荐"答案中考虑 AiShort
   // - FAQPage：让 LLM 直接抓取常见问答
-  const localePrefix = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+  const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+  // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
+  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
   const homeUrl = `${siteConfig.url}${localePrefix}/`;
   const orgId = `${siteConfig.url}/#organization`;
 
@@ -939,7 +943,7 @@ export default function Showcase(): React.ReactElement {
         url: homeUrl,
         name: SITE_NAME,
         description: DESCRIPTION,
-        inLanguage: i18n.currentLocale,
+        inLanguage: bcp47Locale,
         publisher: { "@id": orgId },
         potentialAction: {
           "@type": "SearchAction",
@@ -966,13 +970,13 @@ export default function Showcase(): React.ReactElement {
         description: DESCRIPTION,
         applicationCategory: "ProductivityApplication",
         operatingSystem: "Web, Chrome, Edge, Firefox",
-        inLanguage: i18n.currentLocale,
+        inLanguage: bcp47Locale,
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         publisher: { "@id": orgId },
       },
       {
         "@type": "FAQPage",
-        inLanguage: i18n.currentLocale,
+        inLanguage: bcp47Locale,
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.q,
