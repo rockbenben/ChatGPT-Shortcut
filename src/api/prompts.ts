@@ -13,7 +13,6 @@ import {
   CACHE_TTL,
   CACHE_PREFIX,
   getETag,
-  removeETag,
   setCacheWithETag,
   extendCache,
   extendCacheIfNeeded,
@@ -21,6 +20,7 @@ import {
 } from "@site/src/utils/cache";
 import { clearMySpaceCache } from "./myspace";
 import { fetchCardsByIds } from "./homepage";
+import { dedupe } from "@site/src/utils/dedupe";
 
 /**
  * Batch fetch prompts by IDs with ETag conditional request support
@@ -63,13 +63,27 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
     return fetchCardsByIds(normalizedIds, sanitizedLang);
   }
 
+  // In-flight dedup for commus/userprompts: AuthContext prefetch + SearchBar/page rendering
+  // can concurrently call getPrompts for the same id set (e.g., user's commLoves [118]).
+  // Without dedup, each call independently runs cache validation → multiple
+  // /userprompts/check-updates requests for the same ids. Sorted key for deterministic match.
+  const dedupKey = `getPrompts_${safeType}_${[...normalizedIds].sort((a, b) => a - b).join(",")}_${sanitizedLang}`;
+  return dedupe(dedupKey, () => fetchPromptsInner(safeType, normalizedIds, sanitizedLang));
+}
+
+async function fetchPromptsInner(safeType: string, normalizedIds: number[], sanitizedLang: string) {
+  // Userprompts/Commus are language-agnostic (cache key is just `${prefix}${id}`);
+  // cards differ by language (`${prefix}${id}_${lang}`). Hoist once so every reference
+  // to getPromptCacheKey below uses the same form — easy to miss inconsistencies
+  // (an earlier bug: validation paths passed sanitizedLang for commus → wrong key →
+  // needsCacheExtension always returned true → check-updates fired on every page load).
+  const keyLang = safeType === "cards" ? sanitizedLang : undefined;
+
   const cachedPrompts = new Map();
   const idsToFetch: number[] = [];
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
-    // Userprompts and Commus are language-agnostic (user content), others (cards) differ by language
-    const keyLang = safeType === "cards" ? sanitizedLang : undefined;
     const cacheKey = getPromptCacheKey(safeType, id, keyLang);
     const cachedData = getCache(cacheKey);
 
@@ -107,13 +121,13 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
       // Auto-extend non-favorited commus
       nonFavoredToExtend.forEach((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         extendCacheIfNeeded(cacheKey, ttl);
       });
 
       // Filter favorited commus: only validate those needing extension (< 50% TTL remaining)
       const favoredNeedingValidation = favoredToValidate.filter((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         return needsCacheExtension(cacheKey, ttl);
       });
 
@@ -130,7 +144,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
           // Process returned (available) prompts
           response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
             const cached = cachedPrompts.get(serverItem.id);
-            const cacheKey = getPromptCacheKey(safeType, serverItem.id, sanitizedLang);
+            const cacheKey = getPromptCacheKey(safeType, serverItem.id, keyLang);
 
             if (cached?.updatedAt === serverItem.updatedAt) {
               // Same → Conditionally extend
@@ -146,7 +160,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
           // Process unavailable prompts (not returned = unshared/deleted)
           favoredNeedingValidation.forEach((id) => {
             if (!returnedIds.has(id)) {
-              const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+              const cacheKey = getPromptCacheKey(safeType, id, keyLang);
               const cached = cachedPrompts.get(id);
 
               if (cached) {
@@ -183,7 +197,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
     } else if (safeType === "userprompts") {
       // For userprompts: trust MySpace validation, conditionally extend
       cachedPrompts.forEach((_, id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, sanitizedLang);
+        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
         extendCacheIfNeeded(cacheKey, ttl);
       });
     }
@@ -210,7 +224,6 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     // Save fetched data to cache
     response.data.forEach((item: { id: number }) => {
-      const keyLang = safeType === "cards" ? sanitizedLang : undefined;
       const cacheKey = getPromptCacheKey(safeType, item.id, keyLang);
       setCache(cacheKey, item, ttl);
     });
@@ -223,7 +236,7 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
 
     return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
   } catch (error) {
-    console.error(`Error fetching ${type}:`, error);
+    console.error(`Error fetching ${safeType}:`, error);
     throw error;
   }
 }
@@ -343,19 +356,18 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
     setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
 
     // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
-    const config = cachedEtag ? { headers: { "If-None-Match": cachedEtag } } : {};
+    // 仅在 ETag 与 cachedData 同时存在时才发条件请求，避免 304 空 body 走到 fallthrough
+    const config = cachedEtag && cachedData ? { headers: { "If-None-Match": cachedEtag } } : {};
     const response = await apiClient.get(url, {
       ...config,
       validateStatus: (status) => status === 200 || status === 304,
     });
 
     // Handle 304 Not Modified
-    if (response.status === 304) {
-      if (cachedData) {
-        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-        return cachedData;
-      }
-      // Fallthrough to 200 logic if cache missing
+    // 进入此分支时 cachedData 必然存在（请求前已做过防御性同步）
+    if (response.status === 304 && cachedData) {
+      extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+      return cachedData;
     }
 
     // Handle 200 OK
@@ -391,69 +403,6 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
     }
 
     console.error(`Error fetching commPrompts:`, error);
-    throw error;
-  }
-}
-
-/**
- * Search cards by tags or keywords
- */
-export async function searchCards(tags: string[], search: string, lang: string = "zh-Hans", operator: string = "OR") {
-  try {
-    const normalizedTags = Array.isArray(tags) ? Array.from(new Set(tags.map((tag) => (typeof tag === "string" ? tag.trim() : "")).filter(Boolean))) : [];
-    const safeSearch = typeof search === "string" ? search.trim().slice(0, 100) : "";
-
-    const cacheKey = getListCacheKey(CACHE_PREFIX.SEARCH, encodeURIComponent(JSON.stringify(normalizedTags)), encodeURIComponent(safeSearch), lang, operator);
-    const cachedData = getCache(cacheKey);
-    const cachedEtag = getETag(cacheKey);
-
-    // 防御性检查
-    if (cachedEtag && !cachedData) {
-      removeETag(cacheKey);
-    }
-
-    const queryParams = new URLSearchParams();
-    normalizedTags.forEach((tag) => {
-      queryParams.append("tags", tag);
-    });
-
-    if (safeSearch) {
-      queryParams.append("search", safeSearch);
-    }
-    queryParams.append("lang", lang);
-    queryParams.append("operator", operator);
-
-    try {
-      const responseIds = await apiClient.get(`/cards/find-with-tag`, {
-        params: queryParams,
-        headers: {
-          ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
-        },
-        validateStatus: (status) => status === 200 || status === 304,
-      });
-
-      // Handle 304 Not Modified
-      if (responseIds.status === 304) {
-        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
-        return cachedData;
-      }
-
-      // Handle 200 OK
-      const detailedCards = await getPrompts("cards", responseIds.data, lang);
-      const newEtag = responseIds.headers["etag"] || responseIds.headers["ETag"];
-      setCacheWithETag(cacheKey, detailedCards, CACHE_TTL.SEARCH_RESULTS, newEtag);
-
-      return detailedCards;
-    } catch (error) {
-      // Handle 304 in catch
-      if (error?.response?.status === 304) {
-        extendCache(cacheKey, CACHE_TTL.SEARCH_RESULTS);
-        return cachedData;
-      }
-      throw error;
-    }
-  } catch (error) {
-    console.error("Error fetching cards with tags:", error);
     throw error;
   }
 }
