@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { formatCompactNumber } from "@site/src/utils/formatters";
@@ -41,8 +41,6 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
     };
   }, [user, currentLanguage]);
 
-  const { copied, updateCopy } = useCopyToClipboard();
-
   const handleCardClick = useCallback(() => {
     onOpenModal?.({
       id: user.id,
@@ -56,13 +54,6 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
     });
   }, [onOpenModal, user.id, userInfo, user.tags, user.website, copyCount]);
 
-  const handleCopy = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      updateCopy(userInfo.prompt, user.id);
-    },
-    [updateCopy, userInfo.prompt, user.id]
-  );
 
   const handleToggleFav = useCallback(
     (e: React.MouseEvent) => {
@@ -90,11 +81,9 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         </Flex>
       }
       actions={[
-        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-        </Tooltip>,
+        <CopyButton key="copy" text={userInfo.prompt} trackingId={user.id} variant="iconOnly" block />,
         isLoggedIn && onToggleFavorite && (
-          <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
+          <Tooltip key="fav" title={isFavorite ? <Translate id="action.removeFavorite">从收藏中移除</Translate> : <Translate id="common.favorites">收藏</Translate>}>
             <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFav} block />
           </Tooltip>
         ),

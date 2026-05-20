@@ -3,8 +3,8 @@ import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
+import { CopyButton } from "@site/src/components/CopyButton";
+import { HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
@@ -18,7 +18,7 @@ interface FavoriteCardProps {
   sortableId?: string | number;
   isFiltered?: boolean;
 
-  onRemoveFavorite?: (id: string, isComm?: boolean) => void;
+  onRemoveFavorite?: (id: number, isComm?: boolean) => void;
   onOpenModal?: (data: any) => void;
   onConvertToPrivate?: (data: any) => void; // New: convert unavailable prompt to private
   extraActions?: ReactNode;
@@ -26,12 +26,10 @@ interface FavoriteCardProps {
 
 const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFavorite, onOpenModal, onConvertToPrivate, extraActions }: FavoriteCardProps) => {
   const { i18n } = useDocusaurusContext();
-  const { copied, copyText, updateCopy } = useCopyToClipboard();
 
   // Check if prompt is unavailable (unshared by author)
   const isUnavailable = user._unavailable === true;
   const hasCache = !user._noCache;
-  const unavailableReason = user._unavailableReason;
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
 
@@ -57,17 +55,6 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
   const owner = user.owner;
   const copyCount = getWeight(user);
 
-  const handleCopy = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      if (isDataCard) {
-        updateCopy(prompt, user.id);
-      } else {
-        copyText(prompt);
-      }
-    },
-    [isDataCard, updateCopy, copyText, prompt, user.id],
-  );
 
   const handleRemoveFavorite = useCallback(
     (e: React.MouseEvent) => {
@@ -173,7 +160,6 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
               )}
             </Typography.Title>
           </Flex>
-          <Flex align="center" gap={4} style={{ color: "var(--ifm-color-danger)", flexShrink: 0 }}></Flex>
         </Flex>
       }
       titleExtra={
@@ -197,13 +183,11 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
         </>
       }
       actions={[
-        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-        </Tooltip>,
-        <Tooltip title={<Translate id="action.removeFavorite">点击移除收藏</Translate>}>
+        <CopyButton key="copy" text={prompt} trackingId={isDataCard ? user.id : undefined} variant="iconOnly" block />,
+        <Tooltip key="remove" title={<Translate id="action.removeFavorite">从收藏中移除</Translate>}>
           <Button type="text" icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />} onClick={handleRemoveFavorite} block />
         </Tooltip>,
-        extraActions,
+        extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>

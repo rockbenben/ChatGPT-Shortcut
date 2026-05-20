@@ -1,11 +1,10 @@
-import React, { useContext, useCallback } from "react";
+import React, { useCallback } from "react";
 import { Tooltip, Button, Typography, Flex } from "antd";
 import { BasePromptCard } from "./Base";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
-import { AuthContext } from "../AuthContext";
+import { CopyButton } from "@site/src/components/CopyButton";
+import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -14,23 +13,12 @@ import styles from "./styles.module.css";
 interface CommunityCardProps {
   data: CommunityPrompt;
   isFavorite?: boolean;
+  isLoggedIn?: boolean;
   onToggleFavorite?: (id: number, isComm: boolean) => void;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
-  onEdit?: (data: CommunityPrompt) => void;
 }
 
-const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVote, onEdit, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
-  const { userAuth } = useContext(AuthContext);
-  const { copied, copyText } = useCopyToClipboard();
-
-  const handleCopy = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      copyText(user.description);
-    },
-    [copyText, user.description]
-  );
-
+const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFavorite, onVote, onOpenModal }: CommunityCardProps & { onOpenModal?: (data: any) => void }) => {
   const handleToggleFavorite = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -87,16 +75,14 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         </Typography.Text>
       }
       actions={[
-        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-        </Tooltip>,
-        userAuth && onToggleFavorite && (
-          <Tooltip title={isFavorite ? <Translate id="action.removeFavorite">点击移除收藏</Translate> : <Translate id="common.favorites">收藏</Translate>}>
+        <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
+        isLoggedIn && onToggleFavorite && (
+          <Tooltip key="fav" title={isFavorite ? <Translate id="action.removeFavorite">从收藏中移除</Translate> : <Translate id="common.favorites">收藏</Translate>}>
             <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite} block />
           </Tooltip>
         ),
         onVote && (
-          <Tooltip title={<Translate id="action.upvote">赞</Translate>}>
+          <Tooltip key="up" title={<Translate id="action.upvote">赞</Translate>}>
             <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
               <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.upvotes || 0}</span>
             </Button>
@@ -104,7 +90,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, onToggleFavorite, onVo
         ),
         // 非对称：downvotes === 0 时 icon-only + 弱化（opacity 0.6），> 0 时显示数字与 ▲ 对称
         onVote && (
-          <Tooltip title={<Translate id="action.downvote">踩</Translate>}>
+          <Tooltip key="down" title={<Translate id="action.downvote">踩</Translate>}>
             <Button
               type="text"
               icon={<DownOutlined />}
