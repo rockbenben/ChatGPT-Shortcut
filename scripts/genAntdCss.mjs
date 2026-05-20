@@ -3,7 +3,10 @@ import React from "react";
 import { extractStyle } from "@ant-design/static-style-extract";
 import { ConfigProvider, theme as antdTheme } from "antd";
 
-// 与 Root.tsx 保持一致的暗色主题配置 — B+ token system
+// 与 Root.tsx 共享 token + cssVar.key（必须一致才能让生成的 CSS 命中运行时的变量名），
+// 但故意不带 zeroRuntime —— 提取器需要 antd 真的注册样式才有东西可提
+// （cssinjs-utils genStyleUtils: 若 zeroRuntime=true 则短路 useStyleRegister，extract 出空文件）。
+// Root.tsx 反过来必须设 zeroRuntime: true，避免运行时重复注入同一份样式。
 const darkTheme = {
   token: {
     colorPrimary: "#397e6a",
