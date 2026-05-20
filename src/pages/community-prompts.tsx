@@ -14,6 +14,7 @@ import Link from "@docusaurus/Link";
 import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
+import { toBcp47 } from "@site/src/utils/i18n";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -54,7 +55,7 @@ const CommunityPrompts = () => {
   // 页面级静态信息（locale + siteConfig.url 在组件生命周期内稳定），合并到一个 useMemo
   // 避免每次 vote/copy/翻页 re-render 都重建对象 + JSON.stringify
   const { pageUrl, collectionSchemaJson, localePrefix } = useMemo(() => {
-    const pfx = i18n.currentLocale && i18n.currentLocale !== i18n.defaultLocale ? `/${i18n.currentLocale}` : "";
+    const pfx = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
     const url = `${siteConfig.url}${pfx}/community-prompts`;
     const schema = {
       "@context": "https://schema.org",
@@ -65,7 +66,7 @@ const CommunityPrompts = () => {
           url,
           name: COMMU_TITLE,
           description: COMMU_DESCRIPTION,
-          inLanguage: i18n.currentLocale,
+          inLanguage: toBcp47(i18n.currentLocale, i18n.localeConfigs),
           isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
           // 社区搜索现在公开，加 SearchAction 让 LLM/搜索引擎能引导用户搜社区内容
           potentialAction: {
@@ -335,7 +336,7 @@ const CommunityPrompts = () => {
               <Row gutter={[16, 16]}>
                 {userprompts.map((commuPrompt) => (
                   <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={commLovesSet.has(commuPrompt.id)} onToggleFavorite={onToggleFavorite} onOpenModal={onOpenModal} />
+                    <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={commLovesSet.has(commuPrompt.id)} isLoggedIn={!!userAuth} onToggleFavorite={onToggleFavorite} onOpenModal={onOpenModal} />
                   </Col>
                 ))}
               </Row>
