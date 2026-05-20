@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "पासवर्ड बदलें"
   },
+  "action.clearFilters": {
+    "message": "फ़िल्टर साफ़ करें ({count})"
+  },
   "action.close": {
     "message": "बंद करें"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "कॉपी"
+  },
+  "action.copyPrompt": {
+    "message": "प्रॉम्प्ट कॉपी करें"
   },
   "action.delete": {
     "message": "हटाएं"
@@ -39,13 +45,19 @@
     "message": "टैग छिपाएं"
   },
   "action.login": {
+    "message": "लॉगिन"
+  },
+  "action.loginInstead": {
     "message": "सीधे लॉगिन करें"
   },
   "action.register": {
     "message": "पंजीकरण करें"
   },
+  "action.registerNow": {
+    "message": "अभी पंजीकरण करें"
+  },
   "action.removeFavorite": {
-    "message": "पसंदीदा हटाने के लिए क्लिक करें"
+    "message": "पसंदीदा से हटाएं"
   },
   "action.reply": {
     "message": "उत्तर दें"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "रीसेट ईमेल भेजें"
+  },
+  "action.share": {
+    "message": "शेयर करें"
   },
   "action.showTags": {
     "message": "टैग दिखाएं"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "पुष्टि करें"
   },
+  "button.confirmClear": {
+    "message": "साफ़ करने की पुष्टि करें"
+  },
   "button.export": {
     "message": "डेटा निर्यात करें"
   },
@@ -87,13 +105,13 @@
     "message": "प्रॉम्प्ट निर्यात करें"
   },
   "button.import": {
-    "message": "आयात करें"
+    "message": "डेटा आयात करें"
   },
   "button.importPrompts": {
     "message": "प्रॉम्प्ट आयात करें"
   },
   "button.login": {
-    "message": "मुफ्त लॉगिन"
+    "message": "लॉगिन"
   },
   "button.logout": {
     "message": "लॉगआउट"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "पासवर्ड रीसेट करें"
   },
+  "button.signInFree": {
+    "message": "मुफ्त लॉगिन"
+  },
   "comment.add": {
     "message": "टिप्पणी सबमिट करें"
+  },
+  "comments.aiReplying": {
+    "message": "AI जवाब दे रहा है"
+  },
+  "comments.empty": {
+    "message": "अभी तक कोई टिप्पणी नहीं"
+  },
+  "comments.heading": {
+    "message": "चर्चा"
   },
   "common.favorites": {
     "message": "पसंदीदा"
@@ -183,7 +213,7 @@
     "message": "यह प्रॉम्प्ट किन स्थितियों के लिए उपयुक्त है?"
   },
   "faq.tips.a": {
-    "message": "पहला: [प्लेसहोल्डर] को अधिक विशिष्ट बनाएं (शैली, लंबाई, क्षेत्र जोड़ें)। दूसरा: असंतोषजनक उत्तर पर “इसे और X बनाओ” पूछें। तीसरा: Claude / GPT-4 / Gemini जैसे मॉडलों पर तुलना करें।"
+    "message": "पहला: [प्लेसहोल्डर] को अधिक विशिष्ट बनाएं (शैली, लंबाई, क्षेत्र जोड़ें)। दूसरा: असंतोषजनक उत्तर पर “इसे और X बनाओ” पूछें। तीसरा: Claude / ChatGPT / Gemini जैसे मॉडलों पर तुलना करें।"
   },
   "faq.tips.q": {
     "message": "मैं आउटपुट की गुणवत्ता कैसे बढ़ा सकता हूँ?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है!"
   },
+  "feedback.newIssue": {
+    "message": "नया Issue"
+  },
+  "feedback.responseTime": {
+    "message": "आमतौर पर 24 घंटे में जवाब"
+  },
+  "feedback.spec_label": {
+    "message": "खुला चैनल"
+  },
   "feedback.subtitle": {
     "message": "बग रिपोर्ट, फीचर सुझाव, उपयोग संबंधी प्रश्न—हर आवाज़ का स्वागत है"
   },
   "feedback.title": {
     "message": "प्रतिक्रिया और सुझाव"
   },
+  "feedback.type.bug": {
+    "message": "बग रिपोर्ट"
+  },
+  "feedback.type.help": {
+    "message": "उपयोग सहायता"
+  },
+  "feedback.type.suggestion": {
+    "message": "फीचर सुझाव"
+  },
   "feedback.welcome": {
     "message": "प्रतिक्रिया और सुझाव"
+  },
+  "filter.operator.all.tip": {
+    "message": "सभी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
+  },
+  "filter.operator.any.tip": {
+    "message": "किसी भी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} व अधिक"
   },
   "homepage.description": {
     "message": "AI के अप्रासंगिक जवाबों से परेशान? AiShort लेखन, कोडिंग और अनुवाद के लिए व्यावहारिक टेम्पलेट प्रदान करता है। एक क्लिक में कॉपी करें और दक्षता दोगुनी करें!"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "हीरा"
   },
+  "level.emerald": {
+    "message": "पन्ना"
+  },
   "level.gold": {
     "message": "स्वर्ण"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "प्लैटिनम"
   },
+  "level.ruby": {
+    "message": "माणिक"
+  },
+  "level.sapphire": {
+    "message": "नीलम"
+  },
   "level.silver": {
     "message": "चाँदी"
+  },
+  "level.stardust": {
+    "message": "तारा-धूल"
   },
   "link.addprompt": {
     "message": "प्रॉम्प्ट बनाएँ"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "मेरा खाता"
   },
-  "link.myaccount": {
-    "message": "खाता सेटिंग्स"
-  },
   "link.privacy": {
     "message": "गोपनीयता नीति"
   },
   "link.terms": {
     "message": "सेवा की शर्तें"
+  },
+  "link.userCenter": {
+    "message": "उपयोगकर्ता केंद्र"
   },
   "login.login.prompt": {
     "message": "पहले से ही एक खाता है?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "कैश साफ़ किया गया"
   },
+  "message.cannotFavorOwn": {
+    "message": "अपने स्वयं के प्रॉम्प्ट को पसंदीदा नहीं बना सकते"
+  },
   "message.convertToPrivate.error": {
     "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
@@ -387,7 +459,7 @@
     "message": "निर्यात विफल रहा, कृपया बाद में पुनः प्रयास करें"
   },
   "message.export.noPrompts": {
-    "message": "निर्यात करने के लिए कोई प्रॉम्प्ट उपलब्ध नहीं है, कृपया बाद में पुनः प्रयास करें"
+    "message": "निर्यात के लिए कोई प्रॉम्प्ट नहीं है। पहले कुछ बनाएं या पसंदीदा में जोड़ें।"
   },
   "message.export.success": {
     "message": "प्रॉम्प्ट सफलतापूर्वक निर्यात किए गए!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "मेरा संग्रह"
   },
+  "noResults.description": {
+    "message": "अलग कीवर्ड आज़माएँ या टैग फ़िल्टर हटाएँ"
+  },
+  "noResults.title": {
+    "message": "कोई मेल खाता प्रॉम्प्ट नहीं मिला"
+  },
   "placeholder.comment": {
     "message": "यहाँ टिप्पणी दर्ज करें... मार्कडाउन और एचटीएमएल सिंटैक्स समर्थित"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "उपयोगकर्ता नाम/ईमेल"
   },
+  "prompt.authorNote": {
+    "message": "लेखक की टिप्पणी"
+  },
   "prompt.charsLabel": {
     "message": "वर्ण"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "निजी"
   },
+  "prompt.source": {
+    "message": "स्रोत"
+  },
   "prompt.tokenDanger": {
     "message": "प्रॉम्प्ट बहुत लंबा है, जिससे साझा करना और पुन: उपयोग करना कठिन हो सकता है। विभाजित करने पर विचार करें।"
   },
   "prompt.tokenWarning": {
     "message": "प्रॉम्प्ट काफी लंबा है; इसे छोटा करने या विभाजित करने पर विचार करें।"
+  },
+  "prompt.translation": {
+    "message": "अनुवाद"
+  },
+  "share.copy": {
+    "message": "कॉपी"
+  },
+  "share.native": {
+    "message": "सिस्टम"
+  },
+  "share.shareTo": {
+    "message": "शेयर करें"
   },
   "showcase.header.button": {
     "message": "समुदाय देखें"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "संबंधित प्रॉम्प्ट"
+  },
+  "sort.mostUpvoted": {
+    "message": "सर्वाधिक वोट"
+  },
+  "sort.newest": {
+    "message": "नवीनतम"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "बंद करे",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "लेखक ने साझा करना बंद कर दिया है और कोई स्थानीय कैश उपलब्ध नहीं है"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」तक"
+  },
   "validation.agreement.required": {
     "message": "उपयोग करने से पहले आपको सेवा की शर्तों और गोपनीयता नीति से सहमत होना होगा"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
-  },
-  "action.clearFilters": {
-    "message": "फ़िल्टर साफ़ करें ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "किसी भी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
-  },
-  "filter.operator.all.tip": {
-    "message": "सभी चयनित टैग से मेल खाने वाले प्रॉम्प्ट दिखाएँ"
-  },
-  "sort.newest": {
-    "message": "नवीनतम"
-  },
-  "sort.mostUpvoted": {
-    "message": "सर्वाधिक वोट"
-  },
-  "level.stardust": {
-    "message": "तारा-धूल"
-  },
-  "level.emerald": {
-    "message": "पन्ना"
-  },
-  "level.ruby": {
-    "message": "माणिक"
-  },
-  "level.sapphire": {
-    "message": "नीलम"
-  },
-  "feedback.type.bug": {
-    "message": "बग रिपोर्ट"
-  },
-  "feedback.type.suggestion": {
-    "message": "फीचर सुझाव"
-  },
-  "feedback.type.help": {
-    "message": "उपयोग सहायता"
-  },
-  "feedback.spec_label": {
-    "message": "खुला चैनल"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} व अधिक"
-  },
-  "noResults.title": {
-    "message": "कोई मेल खाता प्रॉम्प्ट नहीं मिला"
-  },
-  "noResults.description": {
-    "message": "अलग कीवर्ड आज़माएँ या टैग फ़िल्टर हटाएँ"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "「{next}」तक"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI जवाब दे रहा है"
-  },
-  "comments.empty": {
-    "message": "अभी तक कोई टिप्पणी नहीं"
-  },
-  "prompt.authorNote": {
-    "message": "लेखक की टिप्पणी"
-  },
-  "action.share": {
-    "message": "शेयर करें"
-  },
-  "comments.heading": {
-    "message": "चर्चा"
-  },
-  "prompt.source": {
-    "message": "स्रोत"
-  },
-  "prompt.translation": {
-    "message": "अनुवाद"
-  },
-  "share.copy": {
-    "message": "कॉपी"
-  },
-  "share.native": {
-    "message": "सिस्टम"
-  },
-  "share.shareTo": {
-    "message": "शेयर करें"
-  },
-  "feedback.responseTime": {
-    "message": "आमतौर पर 24 घंटे में जवाब"
-  },
-  "feedback.newIssue": {
-    "message": "नया Issue"
   }
 }

@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Change Password"
   },
+  "action.clearFilters": {
+    "message": "Clear filters ({count})"
+  },
   "action.close": {
     "message": "Close"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "Copy"
+  },
+  "action.copyPrompt": {
+    "message": "Copy Prompt"
   },
   "action.delete": {
     "message": "Delete"
@@ -39,13 +45,19 @@
     "message": "Hide Tags"
   },
   "action.login": {
+    "message": "Login"
+  },
+  "action.loginInstead": {
     "message": "Login Directly"
   },
   "action.register": {
     "message": "Register"
   },
+  "action.registerNow": {
+    "message": "Register Now"
+  },
   "action.removeFavorite": {
-    "message": "Click to remove favorite"
+    "message": "Remove from favorites"
   },
   "action.reply": {
     "message": "Reply"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Send Reset Email"
+  },
+  "action.share": {
+    "message": "Share"
   },
   "action.showTags": {
     "message": "Show Tags"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Confirm"
   },
+  "button.confirmClear": {
+    "message": "Confirm Clear"
+  },
   "button.export": {
     "message": "Export Data"
   },
@@ -87,13 +105,13 @@
     "message": "Export Prompts"
   },
   "button.import": {
-    "message": "Import"
+    "message": "Import Data"
   },
   "button.importPrompts": {
     "message": "Import Prompts"
   },
   "button.login": {
-    "message": "Sign in free"
+    "message": "Sign in"
   },
   "button.logout": {
     "message": "Logout"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Reset Password"
   },
+  "button.signInFree": {
+    "message": "Sign in free"
+  },
   "comment.add": {
     "message": "Submit Comment"
+  },
+  "comments.aiReplying": {
+    "message": "AI is replying"
+  },
+  "comments.empty": {
+    "message": "No comments yet"
+  },
+  "comments.heading": {
+    "message": "Discussion"
   },
   "common.favorites": {
     "message": "Favorites"
@@ -183,7 +213,7 @@
     "message": "What scenarios is this prompt best suited for?"
   },
   "faq.tips.a": {
-    "message": "First, make the [placeholder] more specific (add style, length, domain details). Second, follow up unsatisfying replies with “make it more X”. Third, compare outputs across Claude / GPT-4 / Gemini and similar models."
+    "message": "First, make the [placeholder] more specific (add style, length, domain details). Second, follow up unsatisfying replies with “make it more X”. Third, compare outputs across Claude / ChatGPT / Gemini and similar models."
   },
   "faq.tips.q": {
     "message": "How can I improve the output quality?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "Your feedback is important to us!"
   },
+  "feedback.newIssue": {
+    "message": "New Issue"
+  },
+  "feedback.responseTime": {
+    "message": "Replies usually within 24h"
+  },
+  "feedback.spec_label": {
+    "message": "Open Channel"
+  },
   "feedback.subtitle": {
     "message": "Bug reports, feature requests, usage questions—every voice welcome"
   },
   "feedback.title": {
     "message": "Feedback & Suggestions"
   },
+  "feedback.type.bug": {
+    "message": "Bug Reports"
+  },
+  "feedback.type.help": {
+    "message": "Usage Help"
+  },
+  "feedback.type.suggestion": {
+    "message": "Feature Requests"
+  },
   "feedback.welcome": {
     "message": "Feedback & Suggestions"
+  },
+  "filter.operator.all.tip": {
+    "message": "Show prompts matching all selected tags"
+  },
+  "filter.operator.any.tip": {
+    "message": "Show prompts matching any selected tag"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} & more"
   },
   "homepage.description": {
     "message": "Frustrated by irrelevant AI answers? AiShort offers practical prompt templates for writing, coding, and translation. One-click copy to unlock precise AI outputs and double your efficiency!"
@@ -258,13 +315,16 @@
     "message": "Prompt Name"
   },
   "label.sharePrompt": {
-    "message": "Would you like to share this prompt to the public page?"
+    "message": "Would you like to share this prompt on the public page?"
   },
   "level.bronze": {
     "message": "Bronze"
   },
   "level.diamond": {
     "message": "Diamond"
+  },
+  "level.emerald": {
+    "message": "Emerald"
   },
   "level.gold": {
     "message": "Gold"
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Platinum"
   },
+  "level.ruby": {
+    "message": "Ruby"
+  },
+  "level.sapphire": {
+    "message": "Sapphire"
+  },
   "level.silver": {
     "message": "Silver"
+  },
+  "level.stardust": {
+    "message": "Stardust"
   },
   "link.addprompt": {
     "message": "Create Prompt"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "My Account"
   },
-  "link.myaccount": {
-    "message": "Account Settings"
-  },
   "link.privacy": {
     "message": "Privacy Policy"
   },
   "link.terms": {
     "message": "Terms of Service"
+  },
+  "link.userCenter": {
+    "message": "User Center"
   },
   "login.login.prompt": {
     "message": "Already have an account?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Cache cleared"
   },
+  "message.cannotFavorOwn": {
+    "message": "Cannot favorite your own prompt"
+  },
   "message.convertToPrivate.error": {
     "message": "Failed to convert, please try again later"
   },
@@ -387,7 +459,7 @@
     "message": "Export failed, please try again later"
   },
   "message.export.noPrompts": {
-    "message": "No prompts available to export, please try again later"
+    "message": "No prompts to export. Create or favorite some first."
   },
   "message.export.success": {
     "message": "Prompts exported successfully!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "My Collection"
   },
+  "noResults.description": {
+    "message": "Try a different keyword, or clear tag filters"
+  },
+  "noResults.title": {
+    "message": "No matching prompts found"
+  },
   "placeholder.comment": {
     "message": "Enter comment here... Markdown and HTML syntax supported"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Username/Email"
   },
+  "prompt.authorNote": {
+    "message": "Author's Note"
+  },
   "prompt.charsLabel": {
     "message": "chars"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Private"
   },
+  "prompt.source": {
+    "message": "Source"
+  },
   "prompt.tokenDanger": {
     "message": "Prompt is very long and may be hard to share or reuse. Consider splitting."
   },
   "prompt.tokenWarning": {
     "message": "Prompt is quite long; consider shortening or splitting."
+  },
+  "prompt.translation": {
+    "message": "Translation"
+  },
+  "share.copy": {
+    "message": "Copy"
+  },
+  "share.native": {
+    "message": "System"
+  },
+  "share.shareTo": {
+    "message": "Share to"
   },
   "showcase.header.button": {
     "message": "Browse Community"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "Related Prompts"
+  },
+  "sort.mostUpvoted": {
+    "message": "Most upvoted"
+  },
+  "sort.newest": {
+    "message": "Newest"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Close",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "Author has stopped sharing and no local cache available"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "{next} ahead"
+  },
   "validation.agreement.required": {
     "message": "You must agree to the Terms of Service and Privacy Policy before use"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Please enter username or registered email!"
-  },
-  "action.clearFilters": {
-    "message": "Clear filters ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Show prompts matching any selected tag"
-  },
-  "filter.operator.all.tip": {
-    "message": "Show prompts matching all selected tags"
-  },
-  "sort.newest": {
-    "message": "Newest"
-  },
-  "sort.mostUpvoted": {
-    "message": "Most upvoted"
-  },
-  "level.stardust": {
-    "message": "Stardust"
-  },
-  "level.emerald": {
-    "message": "Emerald"
-  },
-  "level.ruby": {
-    "message": "Ruby"
-  },
-  "level.sapphire": {
-    "message": "Sapphire"
-  },
-  "feedback.type.bug": {
-    "message": "Bug Reports"
-  },
-  "feedback.type.suggestion": {
-    "message": "Feature Requests"
-  },
-  "feedback.type.help": {
-    "message": "Usage Help"
-  },
-  "feedback.spec_label": {
-    "message": "Open Channel"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} & more"
-  },
-  "noResults.title": {
-    "message": "No matching prompts found"
-  },
-  "noResults.description": {
-    "message": "Try a different keyword, or clear tag filters"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "{next} ahead"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI is replying"
-  },
-  "comments.empty": {
-    "message": "No comments yet"
-  },
-  "prompt.authorNote": {
-    "message": "Author's Note"
-  },
-  "action.share": {
-    "message": "Share"
-  },
-  "comments.heading": {
-    "message": "Discussion"
-  },
-  "prompt.source": {
-    "message": "Source"
-  },
-  "prompt.translation": {
-    "message": "Translation"
-  },
-  "share.copy": {
-    "message": "Copy"
-  },
-  "share.native": {
-    "message": "System"
-  },
-  "share.shareTo": {
-    "message": "Share to"
-  },
-  "feedback.responseTime": {
-    "message": "Replies usually within 24h"
-  },
-  "feedback.newIssue": {
-    "message": "New Issue"
   }
 }

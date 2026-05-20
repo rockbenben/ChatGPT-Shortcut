@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "修改密碼"
   },
+  "action.clearFilters": {
+    "message": "清除篩選 ({count})"
+  },
   "action.close": {
     "message": "關閉"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "複製"
+  },
+  "action.copyPrompt": {
+    "message": "複製提示詞"
   },
   "action.delete": {
     "message": "刪除"
@@ -39,13 +45,19 @@
     "message": "隱藏標籤"
   },
   "action.login": {
+    "message": "登入"
+  },
+  "action.loginInstead": {
     "message": "直接登入"
   },
   "action.register": {
     "message": "註冊"
   },
+  "action.registerNow": {
+    "message": "立即註冊"
+  },
   "action.removeFavorite": {
-    "message": "點擊移除收藏"
+    "message": "從收藏移除"
   },
   "action.reply": {
     "message": "回覆"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "發送重置郵件"
+  },
+  "action.share": {
+    "message": "分享"
   },
   "action.showTags": {
     "message": "顯示標籤"
@@ -78,22 +93,25 @@
     "message": "清除快取"
   },
   "button.confirm": {
+    "message": "確認"
+  },
+  "button.confirmClear": {
     "message": "確認清除"
   },
   "button.export": {
-    "message": "匯出數據"
+    "message": "匯出資料"
   },
   "button.exportPrompts": {
     "message": "匯出提示詞"
   },
   "button.import": {
-    "message": "匯入數據"
+    "message": "匯入資料"
   },
   "button.importPrompts": {
     "message": "匯入提示詞"
   },
   "button.login": {
-    "message": "免費登入"
+    "message": "登入"
   },
   "button.logout": {
     "message": "登出"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "重置密碼"
   },
+  "button.signInFree": {
+    "message": "免費登入"
+  },
   "comment.add": {
     "message": "提交評論"
+  },
+  "comments.aiReplying": {
+    "message": "AI 正在回覆"
+  },
+  "comments.empty": {
+    "message": "暫無評論"
+  },
+  "comments.heading": {
+    "message": "討論"
   },
   "common.favorites": {
     "message": "收藏"
@@ -111,7 +141,7 @@
     "message": "返回列表"
   },
   "community.description": {
-    "message": "想要更多實戰驗證的 AI 提示詞？加入 AiShort 社群，發現使用者分享的實用範本，交流最佳化技巧，共建高品質 Prompt 資源庫。"
+    "message": "想要更多實戰驗證的 AI 提示詞？加入 AiShort 社群，發現使用者分享的實用範本，交流最佳化技巧，共建高品質提示詞資源庫。"
   },
   "community.loading": {
     "message": "載入中..."
@@ -126,10 +156,10 @@
     "message": "社群提示詞"
   },
   "community.title": {
-    "message": "AI 提示詞社群 | 發現與分享優質 Prompt - AiShort 創作平台"
+    "message": "AI 提示詞社群 | 發現與分享優質提示詞 - AiShort 創作平台"
   },
   "description.clearCache.short": {
-    "message": "重新整理本地快取數據"
+    "message": "重新整理本地快取資料"
   },
   "description.exportPrompts.short": {
     "message": "匯出為 JSON 檔案，方便備份"
@@ -180,10 +210,10 @@
     "message": "適合完成與本頁標題和說明相關的任務。若首次嘗試效果不夠理想，可以在佔位符處提供更多上下文細節，或追加「請分步驟回答」「請舉例說明」等約束詞。"
   },
   "faq.scenario.q": {
-    "message": "這個 prompt 適合什麼場景使用？"
+    "message": "這個提示詞適合什麼場景使用？"
   },
   "faq.tips.a": {
-    "message": "一是把 [佔位符] 改得更具體（加風格、長度、領域等細節）；二是對不滿意的回覆追問「請改得更 X」；三是切換 Claude / GPT-4 / Gemini 等不同模型對比效果。"
+    "message": "一是把 [佔位符] 改得更具體（加風格、長度、領域等細節）；二是對不滿意的回覆追問「請改得更 X」；三是切換 Claude / ChatGPT / Gemini 等不同模型對比效果。"
   },
   "faq.tips.q": {
     "message": "怎麼最佳化輸出品質？"
@@ -197,23 +227,50 @@
   "feedback.description": {
     "message": "您的反饋對我們很重要！"
   },
+  "feedback.newIssue": {
+    "message": "新建 Issue"
+  },
+  "feedback.responseTime": {
+    "message": "通常 24 小時內回覆"
+  },
+  "feedback.spec_label": {
+    "message": "公開回饋"
+  },
   "feedback.subtitle": {
     "message": "Bug 回報、功能建議、使用問題——任何聲音都歡迎"
   },
   "feedback.title": {
     "message": "反饋與建議"
   },
+  "feedback.type.bug": {
+    "message": "Bug 回報"
+  },
+  "feedback.type.help": {
+    "message": "使用問題"
+  },
+  "feedback.type.suggestion": {
+    "message": "功能建議"
+  },
   "feedback.welcome": {
     "message": "回饋與建議"
   },
+  "filter.operator.all.tip": {
+    "message": "必須同時命中所有標籤"
+  },
+  "filter.operator.any.tip": {
+    "message": "命中任一標籤即顯示"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} 等"
+  },
   "homepage.description": {
-    "message": "AI 總是答非所問？AiShort 收錄論文寫作、程式設計、翻譯等場景的實用 Prompt 範本，一鍵複製即可讓 AI 精準理解指令，工作效率倍增！"
+    "message": "AI 總是答非所問？AiShort 收錄論文寫作、程式設計、翻譯等場景的實用提示詞範本，一鍵複製即可讓 AI 精準理解指令，工作效率倍增！"
   },
   "homepage.slogan": {
     "message": "精選 AI 提示詞，一鍵複製即用"
   },
   "homepage.title": {
-    "message": "AiShort - AI 提示詞庫 | 精選 Prompt 範本，即刻提升 AI 效率"
+    "message": "AiShort - AI 提示詞庫 | 精選提示詞範本，即刻提升 AI 效率"
   },
   "howto.step1.name": {
     "message": "複製提示詞"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "鑽石"
   },
+  "level.emerald": {
+    "message": "翡翠"
+  },
   "level.gold": {
     "message": "黃金"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "鉑金"
   },
+  "level.ruby": {
+    "message": "紅寶石"
+  },
+  "level.sapphire": {
+    "message": "藍寶石"
+  },
   "level.silver": {
     "message": "白銀"
+  },
+  "level.stardust": {
+    "message": "星輝"
   },
   "link.addprompt": {
     "message": "建立提示詞"
@@ -288,10 +357,7 @@
     "message": "首頁"
   },
   "link.myAccount": {
-    "message": "使用者中心"
-  },
-  "link.myaccount": {
-    "message": "我的賬戶"
+    "message": "我的帳戶"
   },
   "link.privacy": {
     "message": "隱私政策"
@@ -299,8 +365,11 @@
   "link.terms": {
     "message": "服務條款"
   },
+  "link.userCenter": {
+    "message": "使用者中心"
+  },
   "login.login.prompt": {
-    "message": "已有賬號？"
+    "message": "已有帳號？"
   },
   "login.method.code": {
     "message": "免密登入"
@@ -312,7 +381,7 @@
     "message": "登入連結將發送至您的電子信箱，點擊即可登入"
   },
   "login.register.prompt": {
-    "message": "還沒有賬號？"
+    "message": "還沒有帳號？"
   },
   "login.subtitle.forgotPassword": {
     "message": "重置連結將發送至您的電子信箱"
@@ -348,7 +417,10 @@
     "message": "清除快取失敗"
   },
   "message.cache.cleared": {
-    "message": "快取已清除，數據已更新"
+    "message": "快取已清除，資料已更新"
+  },
+  "message.cannotFavorOwn": {
+    "message": "不能收藏自己的提示詞"
   },
   "message.convertToPrivate.error": {
     "message": "轉換失敗，請稍後重試"
@@ -387,7 +459,7 @@
     "message": "匯出失敗，請稍後重試"
   },
   "message.export.noPrompts": {
-    "message": "暫無提示詞可匯出"
+    "message": "暫無可匯出的提示詞，先建立或收藏一些吧。"
   },
   "message.export.success": {
     "message": "提示詞匯出成功！"
@@ -399,7 +471,7 @@
     "message": "匯入失敗"
   },
   "message.import.invalid": {
-    "message": "無效的數據格式"
+    "message": "無效的資料格式"
   },
   "message.import.parseError": {
     "message": "JSON 解析失敗，請檢查檔案格式"
@@ -432,7 +504,7 @@
     "message": "暫無內容，去建立提示詞或收藏喜歡的吧"
   },
   "message.orderSaveFailed": {
-    "message": "排列保存失敗"
+    "message": "排列儲存失敗"
   },
   "message.orderSaved": {
     "message": "排列已儲存"
@@ -486,7 +558,7 @@
     "message": "確認清除快取？"
   },
   "modal.clearCache.warning": {
-    "message": "清除後將重新加載所有數據。"
+    "message": "清除後將重新載入所有資料。"
   },
   "modal.editPrompt.title": {
     "message": "編輯提示詞"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "我的收藏"
   },
+  "noResults.description": {
+    "message": "換個關鍵字，或清除標籤篩選試試"
+  },
+  "noResults.title": {
+    "message": "沒有找到匹配的提示詞"
+  },
   "placeholder.comment": {
     "message": "在此輸入評論…… 支援使用 Markdown 和 HTML 語法"
   },
@@ -584,20 +662,38 @@
   "placeholder.usernameOrEmail": {
     "message": "使用者名稱/電子信箱"
   },
+  "prompt.authorNote": {
+    "message": "作者備註"
+  },
   "prompt.charsLabel": {
     "message": "字元"
   },
   "prompt.content": {
-    "message": "Prompt 內容"
+    "message": "提示詞內容"
   },
   "prompt.private": {
     "message": "私密"
+  },
+  "prompt.source": {
+    "message": "來源"
   },
   "prompt.tokenDanger": {
     "message": "提示詞很長，不便於分享和複用，建議拆分"
   },
   "prompt.tokenWarning": {
     "message": "提示詞較長，建議精簡或拆分"
+  },
+  "prompt.translation": {
+    "message": "譯文"
+  },
+  "share.copy": {
+    "message": "複製"
+  },
+  "share.native": {
+    "message": "系統"
+  },
+  "share.shareTo": {
+    "message": "分享到"
   },
   "showcase.header.button": {
     "message": "瀏覽社群分享"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "相關提示詞"
+  },
+  "sort.mostUpvoted": {
+    "message": "最多讚"
+  },
+  "sort.newest": {
+    "message": "最新發布"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "關閉",
@@ -1092,7 +1194,7 @@
     "description": "The title of the tag list page"
   },
   "title.dataManagement": {
-    "message": "數據管理"
+    "message": "資料管理"
   },
   "title.security": {
     "message": "安全設定"
@@ -1105,6 +1207,18 @@
   },
   "unavailable.unsharedNoCache": {
     "message": "原作者已取消分享且無本地快取"
+  },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "距「{next}」"
   },
   "validation.agreement.required": {
     "message": "使用前須同意服務條款和隱私政策"
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "請輸入使用者名稱或註冊電子信箱！"
-  },
-  "action.clearFilters": {
-    "message": "清除篩選 ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "命中任一 tag 即顯示"
-  },
-  "filter.operator.all.tip": {
-    "message": "必須同時命中所有 tag"
-  },
-  "sort.newest": {
-    "message": "最新發布"
-  },
-  "sort.mostUpvoted": {
-    "message": "最多讚"
-  },
-  "level.stardust": {
-    "message": "星輝"
-  },
-  "level.emerald": {
-    "message": "翡翠"
-  },
-  "level.ruby": {
-    "message": "紅寶石"
-  },
-  "level.sapphire": {
-    "message": "藍寶石"
-  },
-  "feedback.type.bug": {
-    "message": "Bug 回報"
-  },
-  "feedback.type.suggestion": {
-    "message": "功能建議"
-  },
-  "feedback.type.help": {
-    "message": "使用問題"
-  },
-  "feedback.spec_label": {
-    "message": "公開回饋"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} 等"
-  },
-  "noResults.title": {
-    "message": "沒有找到匹配的提示詞"
-  },
-  "noResults.description": {
-    "message": "換個關鍵字，或清除標籤篩選試試"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "距「{next}」"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI 正在回覆"
-  },
-  "comments.empty": {
-    "message": "暫無評論"
-  },
-  "prompt.authorNote": {
-    "message": "作者備註"
-  },
-  "action.share": {
-    "message": "分享"
-  },
-  "comments.heading": {
-    "message": "討論"
-  },
-  "prompt.source": {
-    "message": "來源"
-  },
-  "prompt.translation": {
-    "message": "譯文"
-  },
-  "share.copy": {
-    "message": "複製"
-  },
-  "share.native": {
-    "message": "系統"
-  },
-  "share.shareTo": {
-    "message": "分享到"
-  },
-  "feedback.responseTime": {
-    "message": "通常 24h 內回覆"
-  },
-  "feedback.newIssue": {
-    "message": "新建 Issue"
   }
 }

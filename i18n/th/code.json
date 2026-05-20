@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "เปลี่ยนรหัสผ่าน"
   },
+  "action.clearFilters": {
+    "message": "ล้างตัวกรอง ({count})"
+  },
   "action.close": {
     "message": "ปิด"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "คัดลอก"
+  },
+  "action.copyPrompt": {
+    "message": "คัดลอกพรอมต์"
   },
   "action.delete": {
     "message": "ลบ"
@@ -41,11 +47,17 @@
   "action.login": {
     "message": "เข้าสู่ระบบ"
   },
+  "action.loginInstead": {
+    "message": "เข้าสู่ระบบโดยตรง"
+  },
   "action.register": {
     "message": "ลงทะเบียน"
   },
+  "action.registerNow": {
+    "message": "ลงทะเบียนทันที"
+  },
   "action.removeFavorite": {
-    "message": "คลิกเพื่อลบรายการโปรด"
+    "message": "ลบจากรายการโปรด"
   },
   "action.reply": {
     "message": "ตอบกลับ"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "ส่งอีเมลรีเซ็ต"
+  },
+  "action.share": {
+    "message": "แชร์"
   },
   "action.showTags": {
     "message": "แสดงแท็ก"
@@ -80,20 +95,23 @@
   "button.confirm": {
     "message": "ยืนยัน"
   },
+  "button.confirmClear": {
+    "message": "ยืนยันการล้าง"
+  },
   "button.export": {
     "message": "ส่งออกข้อมูล"
   },
   "button.exportPrompts": {
-    "message": "ส่งออก Prompt"
+    "message": "ส่งออก พรอมต์"
   },
   "button.import": {
     "message": "นำเข้าข้อมูล"
   },
   "button.importPrompts": {
-    "message": "นำเข้า Prompt"
+    "message": "นำเข้า พรอมต์"
   },
   "button.login": {
-    "message": "เข้าสู่ระบบฟรี"
+    "message": "เข้าสู่ระบบ"
   },
   "button.logout": {
     "message": "ออกจากระบบ"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "รีเซ็ตรหัสผ่าน"
   },
+  "button.signInFree": {
+    "message": "เข้าสู่ระบบฟรี"
+  },
   "comment.add": {
     "message": "ส่งความคิดเห็น"
+  },
+  "comments.aiReplying": {
+    "message": "AI กำลังตอบ"
+  },
+  "comments.empty": {
+    "message": "ยังไม่มีความคิดเห็น"
+  },
+  "comments.heading": {
+    "message": "การสนทนา"
   },
   "common.favorites": {
     "message": "รายการโปรด"
@@ -135,25 +165,25 @@
     "message": "ส่งออกเป็นไฟล์ JSON สำหรับสำรองข้อมูล"
   },
   "description.importPrompts.short": {
-    "message": "นำเข้า Prompt และรายการโปรดจากไฟล์ JSON"
+    "message": "นำเข้า พรอมต์ และรายการโปรดจากไฟล์ JSON"
   },
   "faq.a1": {
-    "message": "AiShort (เดิมชื่อ ChatGPT Shortcut) เป็นเครื่องมือจัดการ prompt AI โอเพนซอร์สที่จัดทำรายการ prompt คัดสรรเพื่อช่วยให้คุณค้นหาคำสั่งสำหรับสถานการณ์ต่าง ๆ ได้อย่างรวดเร็ว โครงการเริ่มแรกเน้น ChatGPT จึงคงชื่อรีโพ GitHub เป็น ChatGPT-Shortcut ปัจจุบันรองรับโมเดลภาษาขนาดใหญ่ทุกตัวรวมถึง Claude, Gemini, DeepSeek, Kimi เป็นต้น ชื่อยังคงไว้เพื่อความต่อเนื่องทางประวัติศาสตร์"
+    "message": "AiShort (เดิมชื่อ ChatGPT Shortcut) เป็นเครื่องมือจัดการ พรอมต์ AI โอเพนซอร์สที่จัดทำรายการ พรอมต์ คัดสรรเพื่อช่วยให้คุณค้นหาคำสั่งสำหรับสถานการณ์ต่าง ๆ ได้อย่างรวดเร็ว โครงการเริ่มแรกเน้น ChatGPT จึงคงชื่อรีโพ GitHub เป็น ChatGPT-Shortcut ปัจจุบันรองรับโมเดลภาษาขนาดใหญ่ทุกตัวรวมถึง Claude, Gemini, DeepSeek, Kimi เป็นต้น ชื่อยังคงไว้เพื่อความต่อเนื่องทางประวัติศาสตร์"
   },
   "faq.a2": {
-    "message": "สามขั้นตอน: (1) ค้นหาหรือเรียกดู prompt ตามแท็กในหน้าแรก; (2) คลิกปุ่ม \"คัดลอก\" บนการ์ดใดก็ได้; (3) วางในเครื่องมือแชต AI ใดก็ได้ และเพิ่มคำถามเฉพาะของคุณตามคำแนะนำของ prompt"
+    "message": "สามขั้นตอน: (1) ค้นหาหรือเรียกดู พรอมต์ ตามแท็กในหน้าแรก; (2) คลิกปุ่ม \"คัดลอก\" บนการ์ดใดก็ได้; (3) วางในเครื่องมือแชต AI ใดก็ได้ และเพิ่มคำถามเฉพาะของคุณตามคำแนะนำของ พรอมต์"
   },
   "faq.a3": {
-    "message": "Prompt เป็นอิสระจากโมเดลและทำงานกับโมเดลภาษาขนาดใหญ่หลักทั้งหมด โมเดลสากล: ChatGPT, Claude, Gemini, Grok โมเดลจีน: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan แพลตฟอร์ม API: OpenRouter, SiliconFlow, Groq"
+    "message": "พรอมต์ เป็นอิสระจากโมเดลและทำงานกับโมเดลภาษาขนาดใหญ่หลักทั้งหมด โมเดลสากล: ChatGPT, Claude, Gemini, Grok โมเดลจีน: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan แพลตฟอร์ม API: OpenRouter, SiliconFlow, Groq"
   },
   "faq.a4": {
-    "message": "Awesome ChatGPT Prompts เป็นหนึ่งในแหล่งเนื้อหาของ AiShort AiShort เพิ่มเติม: อินเทอร์เฟซเรียกดูแบบกราฟิกพร้อมตัวกรองแท็ก คำแปลใน 18 ภาษา การจัดการ prompt ส่วนบุคคล (รายการโปรด/การจัดเรียง/แท็ก) การแบ่งปันและโหวตในชุมชน ส่วนขยายเบราว์เซอร์ Chrome/Edge/Firefox (Alt+Shift+S เพื่อเปิดแถบด้านข้าง) การส่งออกและสำรองข้อมูล JSON และเวอร์ชันออฟไลน์สำหรับอินทราเน็ตองค์กร"
+    "message": "Awesome ChatGPT Prompts เป็นหนึ่งในแหล่งเนื้อหาของ AiShort AiShort เพิ่มเติม: อินเทอร์เฟซเรียกดูแบบกราฟิกพร้อมตัวกรองแท็ก คำแปลใน 18 ภาษา การจัดการ พรอมต์ ส่วนบุคคล (รายการโปรด/การจัดเรียง/แท็ก) การแบ่งปันและโหวตในชุมชน ส่วนขยายเบราว์เซอร์ Chrome/Edge/Firefox (Alt+Shift+S เพื่อเปิดแถบด้านข้าง) การส่งออกและสำรองข้อมูล JSON และเวอร์ชันออฟไลน์สำหรับอินทราเน็ตองค์กร"
   },
   "faq.a5": {
-    "message": "ฟรีอย่างสมบูรณ์และเป็นโอเพนซอร์ส (โค้ดโฮสต์บน GitHub) การเรียกดู ค้นหา และคัดลอก prompt ไม่ต้องลงทะเบียน การลงทะเบียนปลดล็อก: รายการโปรดพร้อมการจัดเรียงด้วยการลากและวาง แท็กที่กำหนดเอง การสร้างและจัดการ prompt ส่วนบุคคล การแบ่งปันและโหวตในชุมชน การส่งออกและสำรอง JSON และการซิงค์ระหว่างอุปกรณ์"
+    "message": "ฟรีอย่างสมบูรณ์และเป็นโอเพนซอร์ส (โค้ดโฮสต์บน GitHub) การเรียกดู ค้นหา และคัดลอก พรอมต์ ไม่ต้องลงทะเบียน การลงทะเบียนปลดล็อก: รายการโปรดพร้อมการจัดเรียงด้วยการลากและวาง แท็กที่กำหนดเอง การสร้างและจัดการ พรอมต์ ส่วนบุคคล การแบ่งปันและโหวตในชุมชน การส่งออกและสำรอง JSON และการซิงค์ระหว่างอุปกรณ์"
   },
   "faq.a6": {
-    "message": "AiShort มอบเวอร์ชันออฟไลน์อิสระที่ออกแบบสำหรับอินทราเน็ตองค์กร เครือข่ายภาครัฐ และสภาพแวดล้อมอื่น ๆ ที่ไม่มีอินเทอร์เน็ต ไม่ต้องการเซิร์ฟเวอร์แบ็กเอนด์หรือบัญชีผู้ใช้ ใช้งานได้ทันทีหลังการปรับใช้ และยังคงคุณสมบัติหลักเช่น การเรียกดู การค้นหา รายการโปรด และ prompt ที่กำหนดเอง รูปแบบข้อมูลเข้ากันได้กับเวอร์ชันออนไลน์"
+    "message": "AiShort มอบเวอร์ชันออฟไลน์อิสระที่ออกแบบสำหรับอินทราเน็ตองค์กร เครือข่ายภาครัฐ และสภาพแวดล้อมอื่น ๆ ที่ไม่มีอินเทอร์เน็ต ไม่ต้องการเซิร์ฟเวอร์แบ็กเอนด์หรือบัญชีผู้ใช้ ใช้งานได้ทันทีหลังการปรับใช้ และยังคงคุณสมบัติหลักเช่น การเรียกดู การค้นหา รายการโปรด และ พรอมต์ ที่กำหนดเอง รูปแบบข้อมูลเข้ากันได้กับเวอร์ชันออนไลน์"
   },
   "faq.heading": {
     "message": "คำถามที่พบบ่อย"
@@ -168,7 +198,7 @@
     "message": "AiShort ใช้ได้กับ ChatGPT เท่านั้นหรือ? รองรับโมเดล AI อื่นหรือไม่?"
   },
   "faq.q4": {
-    "message": "AiShort แตกต่างจาก Awesome ChatGPT Prompts และคอลเลกชัน prompt โอเพนซอร์สอื่น ๆ อย่างไร?"
+    "message": "AiShort แตกต่างจาก Awesome ChatGPT Prompts และคอลเลกชัน พรอมต์ โอเพนซอร์สอื่น ๆ อย่างไร?"
   },
   "faq.q5": {
     "message": "AiShort ฟรีหรือไม่? ต้องลงทะเบียนหรือไม่?"
@@ -183,7 +213,7 @@
     "message": "พรอมต์นี้เหมาะกับสถานการณ์แบบไหน?"
   },
   "faq.tips.a": {
-    "message": "หนึ่ง ทำให้ [พรอมต์แทน] จำเพาะมากขึ้น (ใส่สไตล์ ความยาว สาขา); สอง ถ้าผลลัพธ์ไม่ถูกใจ ให้พิมพ์ต่อว่า “ทำให้ X มากกว่าเดิม”; สาม ลองเปรียบเทียบกับโมเดลอื่น ๆ เช่น Claude / GPT-4 / Gemini"
+    "message": "หนึ่ง ทำให้ [พรอมต์แทน] จำเพาะมากขึ้น (ใส่สไตล์ ความยาว สาขา); สอง ถ้าผลลัพธ์ไม่ถูกใจ ให้พิมพ์ต่อว่า “ทำให้ X มากกว่าเดิม”; สาม ลองเปรียบเทียบกับโมเดลอื่น ๆ เช่น Claude / ChatGPT / Gemini"
   },
   "faq.tips.q": {
     "message": "จะปรับปรุงคุณภาพผลลัพธ์ได้อย่างไร?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "ข้อเสนอแนะของคุณสำคัญมากสำหรับเรา!"
   },
+  "feedback.newIssue": {
+    "message": "Issue ใหม่"
+  },
+  "feedback.responseTime": {
+    "message": "มักตอบภายใน 24 ชั่วโมง"
+  },
+  "feedback.spec_label": {
+    "message": "ช่องเปิด"
+  },
   "feedback.subtitle": {
     "message": "รายงานบั๊ก ข้อเสนอแนะฟีเจอร์ คำถามการใช้งาน—ทุกเสียงได้รับการต้อนรับ"
   },
   "feedback.title": {
     "message": "ข้อเสนอแนะและคำแนะนำ"
   },
+  "feedback.type.bug": {
+    "message": "รายงานบั๊ก"
+  },
+  "feedback.type.help": {
+    "message": "ความช่วยเหลือ"
+  },
+  "feedback.type.suggestion": {
+    "message": "ข้อเสนอแนะ"
+  },
   "feedback.welcome": {
     "message": "คำติชมและข้อเสนอแนะ"
+  },
+  "filter.operator.all.tip": {
+    "message": "แสดงพรอมต์ที่ตรงกับแท็กทั้งหมดที่เลือก"
+  },
+  "filter.operator.any.tip": {
+    "message": "แสดงพรอมต์ที่ตรงกับแท็กที่เลือกอย่างน้อยหนึ่งรายการ"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} และอื่นๆ"
   },
   "homepage.description": {
     "message": "หงุดหงิดกับคำตอบ AI ที่ไม่เกี่ยวข้อง? AiShort มีเทมเพลตพรอมพ์สำหรับการเขียน การเขียนโค้ด และการแปล!"
@@ -246,7 +303,7 @@
     "message": "ยอมรับ"
   },
   "label.promptContent": {
-    "message": "เนื้อหา Prompt"
+    "message": "เนื้อหา พรอมต์"
   },
   "label.promptNotes": {
     "message": "หมายเหตุ"
@@ -255,16 +312,19 @@
     "message": "หน้าที่/การใช้งาน"
   },
   "label.promptTitle": {
-    "message": "ชื่อ Prompt"
+    "message": "ชื่อ พรอมต์"
   },
   "label.sharePrompt": {
-    "message": "คุณต้องการแชร์ prompt นี้ไปยังหน้าสาธารณะหรือไม่?"
+    "message": "คุณต้องการแชร์ พรอมต์ นี้ไปยังหน้าสาธารณะหรือไม่?"
   },
   "level.bronze": {
     "message": "บรอนซ์"
   },
   "level.diamond": {
     "message": "เพชร"
+  },
+  "level.emerald": {
+    "message": "มรกต"
   },
   "level.gold": {
     "message": "ทอง"
@@ -275,29 +335,38 @@
   "level.platinum": {
     "message": "แพลทินัม"
   },
+  "level.ruby": {
+    "message": "ทับทิม"
+  },
+  "level.sapphire": {
+    "message": "แซฟไฟร์"
+  },
   "level.silver": {
     "message": "เงิน"
+  },
+  "level.stardust": {
+    "message": "ฝุ่นดาว"
   },
   "link.addprompt": {
     "message": "สร้างพรอมต์"
   },
   "link.communityPrompts": {
-    "message": "Prompt ชุมชน"
+    "message": "พรอมต์ ชุมชน"
   },
   "link.home": {
     "message": "หน้าแรก"
   },
   "link.myAccount": {
-    "message": "ศูนย์ผู้ใช้"
-  },
-  "link.myaccount": {
-    "message": "การตั้งค่าบัญชี"
+    "message": "บัญชีของฉัน"
   },
   "link.privacy": {
     "message": "นโยบายความเป็นส่วนตัว"
   },
   "link.terms": {
     "message": "ข้อกำหนดการให้บริการ"
+  },
+  "link.userCenter": {
+    "message": "ศูนย์ผู้ใช้"
   },
   "login.login.prompt": {
     "message": "มีบัญชีแล้ว?"
@@ -350,11 +419,14 @@
   "message.cache.cleared": {
     "message": "ล้างแคชแล้ว ข้อมูลได้รีเฟรชแล้ว"
   },
+  "message.cannotFavorOwn": {
+    "message": "ไม่สามารถบันทึกพรอมต์ของตัวเองเป็นรายการโปรดได้"
+  },
   "message.convertToPrivate.error": {
     "message": "การแปลงล้มเหลว กรุณาลองอีกครั้งในภายหลัง"
   },
   "message.convertToPrivate.success": {
-    "message": "แปลงเป็น Prompt ส่วนตัวแล้ว"
+    "message": "แปลงเป็น พรอมต์ ส่วนตัวแล้ว"
   },
   "message.copied": {
     "message": "คัดลอกสำเร็จ"
@@ -387,10 +459,10 @@
     "message": "ส่งออกล้มเหลว กรุณาลองอีกครั้ง"
   },
   "message.export.noPrompts": {
-    "message": "ไม่มี Prompt ที่จะส่งออก"
+    "message": "ไม่มีพรอมต์ที่จะส่งออก สร้างหรือเพิ่มเป็นรายการโปรดก่อน"
   },
   "message.export.success": {
-    "message": "ส่งออก Prompt สำเร็จ!"
+    "message": "ส่งออก พรอมต์ สำเร็จ!"
   },
   "message.forgotPassword.info": {
     "message": "เราจะส่งอีเมลพร้อมลิงก์รีเซ็ตไปยังอีเมลที่ลงทะเบียนของคุณ"
@@ -423,10 +495,10 @@
     "message": "ยังไม่มีความคิดเห็น เป็นคนแรกที่แสดงความคิดเห็นกันเถอะ!"
   },
   "message.noFavorites": {
-    "message": "ยังไม่มีรายการโปรด ไปค้นหา Prompt ที่ชอบกันเถอะ"
+    "message": "ยังไม่มีรายการโปรด ไปค้นหา พรอมต์ ที่ชอบกันเถอะ"
   },
   "message.noPrompts": {
-    "message": "ยังไม่มี Prompt ไปสร้างกันเถอะ"
+    "message": "ยังไม่มี พรอมต์ ไปสร้างกันเถอะ"
   },
   "message.noSpaceItems": {
     "message": "ยังไม่มีอะไร — สร้างพรอมต์หรือทำเครื่องหมายเป็นรายการโปรด"
@@ -489,13 +561,13 @@
     "message": "หลังจากล้าง ข้อมูลทั้งหมดจะถูกโหลดใหม่"
   },
   "modal.editPrompt.title": {
-    "message": "แก้ไข Prompt"
+    "message": "แก้ไข พรอมต์"
   },
   "modal.forgotPassword.title": {
     "message": "ลืมรหัสผ่าน"
   },
   "myCollection.header.subtitle": {
-    "message": "จัดการ prompt ที่สร้าง รายการโปรด และแท็กที่กำหนดเอง"
+    "message": "จัดการ พรอมต์ ที่สร้าง รายการโปรด และแท็กที่กำหนดเอง"
   },
   "myCollection.header.title": {
     "message": "คอลเลกชันของฉัน"
@@ -504,7 +576,7 @@
     "message": "รายการโปรด"
   },
   "myCollection.stats.prompts": {
-    "message": "Prompt ของฉัน"
+    "message": "พรอมต์ ของฉัน"
   },
   "myCollection.stats.tags": {
     "message": "แท็กที่กำหนดเอง"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "คอลเลกชันของฉัน"
   },
+  "noResults.description": {
+    "message": "ลองคำสำคัญอื่น หรือล้างตัวกรองแท็ก"
+  },
+  "noResults.title": {
+    "message": "ไม่พบพรอมต์ที่ตรงกัน"
+  },
   "placeholder.comment": {
     "message": "พิมพ์ความคิดเห็นที่นี่... รองรับไวยากรณ์ Markdown และ HTML"
   },
@@ -564,16 +642,16 @@
     "message": "รหัสผ่าน"
   },
   "placeholder.promptContent": {
-    "message": "พิมพ์เนื้อหา prompt โดยละเอียดที่นี่..."
+    "message": "พิมพ์เนื้อหา พรอมต์ โดยละเอียดที่นี่..."
   },
   "placeholder.promptNotes": {
-    "message": "แหล่งที่มาของ prompt, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
+    "message": "แหล่งที่มาของ พรอมต์, เวอร์ชันภาษาอื่น หรือหมายเหตุเพิ่มเติม (ไม่บังคับ)"
   },
   "placeholder.promptRemark": {
-    "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของ prompt (ไม่บังคับ)"
+    "message": "อธิบายสั้นๆ เกี่ยวกับหน้าที่ของ พรอมต์ (ไม่บังคับ)"
   },
   "placeholder.promptTitle": {
-    "message": "ตั้งชื่อให้ prompt ของคุณ"
+    "message": "ตั้งชื่อให้ พรอมต์ ของคุณ"
   },
   "placeholder.resetPassword.code": {
     "message": "รหัสรีเซ็ต"
@@ -584,20 +662,38 @@
   "placeholder.usernameOrEmail": {
     "message": "ชื่อผู้ใช้/อีเมล"
   },
+  "prompt.authorNote": {
+    "message": "หมายเหตุของผู้เขียน"
+  },
   "prompt.charsLabel": {
     "message": "ตัวอักษร"
   },
   "prompt.content": {
-    "message": "เนื้อหา Prompt"
+    "message": "เนื้อหาพรอมต์"
   },
   "prompt.private": {
     "message": "ส่วนตัว"
   },
+  "prompt.source": {
+    "message": "แหล่งที่มา"
+  },
   "prompt.tokenDanger": {
-    "message": "Prompt ยาวมาก อาจไม่สะดวกในการแชร์และนำกลับมาใช้ใหม่ แนะนำให้แบ่ง"
+    "message": "พรอมต์ ยาวมาก อาจไม่สะดวกในการแชร์และนำกลับมาใช้ใหม่ แนะนำให้แบ่ง"
   },
   "prompt.tokenWarning": {
-    "message": "Prompt ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"
+    "message": "พรอมต์ ค่อนข้างยาว แนะนำให้ย่อหรือแบ่ง"
+  },
+  "prompt.translation": {
+    "message": "คำแปล"
+  },
+  "share.copy": {
+    "message": "คัดลอก"
+  },
+  "share.native": {
+    "message": "ระบบ"
+  },
+  "share.shareTo": {
+    "message": "แชร์ไปที่"
   },
   "showcase.header.button": {
     "message": "ดูชุมชน"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "พรอมต์ที่เกี่ยวข้อง"
+  },
+  "sort.mostUpvoted": {
+    "message": "ถูกใจมากที่สุด"
+  },
+  "sort.newest": {
+    "message": "ล่าสุด"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "ปิด",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "ผู้แต่งต้นฉบับได้ยกเลิกการแชร์และไม่มีแคชในเครื่อง"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "ถึง {next}"
+  },
   "validation.agreement.required": {
     "message": "คุณต้องยอมรับข้อกำหนดการให้บริการและนโยบายความเป็นส่วนตัวก่อนใช้งาน"
   },
@@ -1137,111 +1251,15 @@
     "message": "กรุณากรอกรหัสผ่าน!"
   },
   "validation.promptContent.required": {
-    "message": "กรุณากรอกเนื้อหา prompt!"
+    "message": "กรุณากรอกเนื้อหา พรอมต์!"
   },
   "validation.promptTitle.required": {
-    "message": "กรุณากรอกหัวข้อ prompt!"
+    "message": "กรุณากรอกหัวข้อ พรอมต์!"
   },
   "validation.replyRequired": {
     "message": "กรุณากรอกเนื้อหาตอบกลับ"
   },
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
-  },
-  "action.clearFilters": {
-    "message": "ล้างตัวกรอง ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "แสดง prompt ที่ตรงกับ tag ที่เลือกอย่างน้อยหนึ่งรายการ"
-  },
-  "filter.operator.all.tip": {
-    "message": "แสดง prompt ที่ตรงกับ tag ทั้งหมดที่เลือก"
-  },
-  "sort.newest": {
-    "message": "ล่าสุด"
-  },
-  "sort.mostUpvoted": {
-    "message": "ถูกใจมากที่สุด"
-  },
-  "level.stardust": {
-    "message": "ฝุ่นดาว"
-  },
-  "level.emerald": {
-    "message": "มรกต"
-  },
-  "level.ruby": {
-    "message": "ทับทิม"
-  },
-  "level.sapphire": {
-    "message": "แซฟไฟร์"
-  },
-  "feedback.type.bug": {
-    "message": "รายงานบั๊ก"
-  },
-  "feedback.type.suggestion": {
-    "message": "ข้อเสนอแนะ"
-  },
-  "feedback.type.help": {
-    "message": "ความช่วยเหลือ"
-  },
-  "feedback.spec_label": {
-    "message": "ช่องเปิด"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} และอื่นๆ"
-  },
-  "noResults.title": {
-    "message": "ไม่พบพรอมต์ที่ตรงกัน"
-  },
-  "noResults.description": {
-    "message": "ลองคำสำคัญอื่น หรือล้างตัวกรองแท็ก"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "ถึง {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI กำลังตอบ"
-  },
-  "comments.empty": {
-    "message": "ยังไม่มีความคิดเห็น"
-  },
-  "prompt.authorNote": {
-    "message": "หมายเหตุของผู้เขียน"
-  },
-  "action.share": {
-    "message": "แชร์"
-  },
-  "comments.heading": {
-    "message": "การสนทนา"
-  },
-  "prompt.source": {
-    "message": "แหล่งที่มา"
-  },
-  "prompt.translation": {
-    "message": "คำแปล"
-  },
-  "share.copy": {
-    "message": "คัดลอก"
-  },
-  "share.native": {
-    "message": "ระบบ"
-  },
-  "share.shareTo": {
-    "message": "แชร์ไปที่"
-  },
-  "feedback.responseTime": {
-    "message": "มักตอบภายใน 24 ชั่วโมง"
-  },
-  "feedback.newIssue": {
-    "message": "Issue ใหม่"
   }
 }

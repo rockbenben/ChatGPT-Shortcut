@@ -3,7 +3,7 @@
     "message": "إضافة"
   },
   "action.addPrompt": {
-    "message": "إنشاء مطالبة"
+    "message": "إنشاء موجه"
   },
   "action.backToLogin": {
     "message": "العودة لتسجيل الدخول"
@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "تغيير كلمة المرور"
   },
+  "action.clearFilters": {
+    "message": "مسح الفلاتر ({count})"
+  },
   "action.close": {
     "message": "إغلاق"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "نسخ"
+  },
+  "action.copyPrompt": {
+    "message": "نسخ الموجه"
   },
   "action.delete": {
     "message": "حذف"
@@ -39,13 +45,19 @@
     "message": "إخفاء الوسوم"
   },
   "action.login": {
+    "message": "تسجيل الدخول"
+  },
+  "action.loginInstead": {
     "message": "تسجيل الدخول مباشرة"
   },
   "action.register": {
     "message": "تسجيل"
   },
+  "action.registerNow": {
+    "message": "سجّل الآن"
+  },
   "action.removeFavorite": {
-    "message": "انقر لإزالة المفضلة"
+    "message": "إزالة من المفضلة"
   },
   "action.reply": {
     "message": "رد"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "إرسال بريد إعادة التعيين"
+  },
+  "action.share": {
+    "message": "مشاركة"
   },
   "action.showTags": {
     "message": "إظهار الوسوم"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "تأكيد"
   },
+  "button.confirmClear": {
+    "message": "تأكيد المسح"
+  },
   "button.export": {
     "message": "تصدير البيانات"
   },
@@ -87,13 +105,13 @@
     "message": "تصدير التوجيهات"
   },
   "button.import": {
-    "message": "استيراد"
+    "message": "استيراد البيانات"
   },
   "button.importPrompts": {
     "message": "استيراد التوجيهات"
   },
   "button.login": {
-    "message": "تسجيل الدخول مجاناً"
+    "message": "تسجيل الدخول"
   },
   "button.logout": {
     "message": "تسجيل الخروج"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "إعادة تعيين كلمة المرور"
   },
+  "button.signInFree": {
+    "message": "تسجيل الدخول مجاناً"
+  },
   "comment.add": {
     "message": "إرسال تعليق"
+  },
+  "comments.aiReplying": {
+    "message": "الذكاء الاصطناعي يردّ"
+  },
+  "comments.empty": {
+    "message": "لا توجد تعليقات بعد"
+  },
+  "comments.heading": {
+    "message": "النقاش"
   },
   "common.favorites": {
     "message": "المفضلة"
@@ -138,22 +168,22 @@
     "message": "استيراد التوجيهات والمفضلة من ملف JSON"
   },
   "faq.a1": {
-    "message": "AiShort (المسمى أصلًا ChatGPT Shortcut) هو أداة مفتوحة المصدر لإدارة مطالبات الذكاء الاصطناعي توفّر قائمة منتقاة من المطالبات لمساعدتك في العثور بسرعة على التعليمات المناسبة لمختلف السيناريوهات. ركّز المشروع في البداية على ChatGPT، لذلك يظل اسم مستودع GitHub هو ChatGPT-Shortcut؛ يدعم اليوم جميع نماذج اللغة الكبيرة الرئيسية (بما في ذلك Claude وGemini وDeepSeek وKimi وغيرها). الاسم محتفظ به للاستمرارية التاريخية."
+    "message": "AiShort (المسمى أصلًا ChatGPT Shortcut) هو أداة مفتوحة المصدر لإدارة موجهات الذكاء الاصطناعي توفّر قائمة منتقاة من الموجهات لمساعدتك في العثور بسرعة على التعليمات المناسبة لمختلف السيناريوهات. ركّز المشروع في البداية على ChatGPT، لذلك يظل اسم مستودع GitHub هو ChatGPT-Shortcut؛ يدعم اليوم جميع نماذج اللغة الكبيرة الرئيسية (بما في ذلك Claude وGemini وDeepSeek وKimi وغيرها). الاسم محتفظ به للاستمرارية التاريخية."
   },
   "faq.a2": {
-    "message": "ثلاث خطوات: (1) ابحث أو تصفح المطالبات حسب الوسم في الصفحة الرئيسية؛ (2) انقر على زر \"نسخ\" في أي بطاقة؛ (3) الصقه في أي أداة محادثة ذكاء اصطناعي وأضف سؤالك المحدد وفقًا لتعليمات المطالبة."
+    "message": "ثلاث خطوات: (1) ابحث أو تصفح الموجهات حسب الوسم في الصفحة الرئيسية؛ (2) انقر على زر \"نسخ\" في أي بطاقة؛ (3) الصقه في أي أداة محادثة ذكاء اصطناعي وأضف سؤالك المحدد وفقًا لتعليمات الموجه."
   },
   "faq.a3": {
-    "message": "المطالبات مستقلة عن النموذج وتعمل مع جميع نماذج اللغة الكبيرة الرئيسية. النماذج الدولية: ChatGPT، Claude، Gemini، Grok. النماذج الصينية: DeepSeek، Qwen، ERNIE Bot، Doubao، Kimi، ChatGLM، Spark، Hunyuan. منصات API: OpenRouter، SiliconFlow، Groq."
+    "message": "الموجهات مستقلة عن النموذج وتعمل مع جميع نماذج اللغة الكبيرة الرئيسية. النماذج الدولية: ChatGPT، Claude، Gemini، Grok. النماذج الصينية: DeepSeek، Qwen، ERNIE Bot، Doubao، Kimi، ChatGLM، Spark، Hunyuan. منصات API: OpenRouter، SiliconFlow، Groq."
   },
   "faq.a4": {
-    "message": "Awesome ChatGPT Prompts هو أحد مصادر محتوى AiShort. يضيف AiShort فوقه: واجهة تصفح رسومية مع تصفية بالوسوم، ترجمات بـ 18 لغة، إدارة شخصية للمطالبات (المفضلة/الترتيب/الوسوم)، المشاركة والتصويت في المجتمع، إضافات متصفح Chrome/Edge/Firefox (Alt+Shift+S لفتح الشريط الجانبي)، تصدير ونسخ احتياطي للبيانات بصيغة JSON، وإصدار غير متصل للشبكات الداخلية للشركات."
+    "message": "Awesome ChatGPT Prompts هو أحد مصادر محتوى AiShort. يضيف AiShort فوقه: واجهة تصفح رسومية مع تصفية بالوسوم، ترجمات بـ 18 لغة، إدارة شخصية للموجهات (المفضلة/الترتيب/الوسوم)، المشاركة والتصويت في المجتمع، إضافات متصفح Chrome/Edge/Firefox (Alt+Shift+S لفتح الشريط الجانبي)، تصدير ونسخ احتياطي للبيانات بصيغة JSON، وإصدار غير متصل للشبكات الداخلية للشركات."
   },
   "faq.a5": {
-    "message": "مجاني تمامًا ومفتوح المصدر (الكود مستضاف على GitHub). لا يتطلب التصفح والبحث ونسخ المطالبات تسجيلًا. التسجيل يفتح: المفضلة مع الترتيب بالسحب والإفلات، الوسوم المخصصة، إنشاء وإدارة مطالبات شخصية، المشاركة والتصويت في المجتمع، تصدير ونسخ احتياطي بصيغة JSON، والمزامنة عبر الأجهزة."
+    "message": "مجاني تمامًا ومفتوح المصدر (الكود مستضاف على GitHub). لا يتطلب التصفح والبحث ونسخ الموجهات تسجيلًا. التسجيل يفتح: المفضلة مع الترتيب بالسحب والإفلات، الوسوم المخصصة، إنشاء وإدارة موجهات شخصية، المشاركة والتصويت في المجتمع، تصدير ونسخ احتياطي بصيغة JSON، والمزامنة عبر الأجهزة."
   },
   "faq.a6": {
-    "message": "يوفّر AiShort إصدارًا مستقلاً غير متصل مصممًا للشبكات الداخلية للشركات والشبكات الحكومية والبيئات الأخرى بدون اتصال بالإنترنت. لا يتطلب خادمًا خلفيًا أو حساب مستخدم، يعمل فور النشر، ويحتفظ بالميزات الأساسية مثل التصفح والبحث والمفضلة والمطالبات المخصصة. صيغة البيانات متوافقة مع الإصدار عبر الإنترنت."
+    "message": "يوفّر AiShort إصدارًا مستقلاً غير متصل مصممًا للشبكات الداخلية للشركات والشبكات الحكومية والبيئات الأخرى بدون اتصال بالإنترنت. لا يتطلب خادمًا خلفيًا أو حساب مستخدم، يعمل فور النشر، ويحتفظ بالميزات الأساسية مثل التصفح والبحث والمفضلة والموجهات المخصصة. صيغة البيانات متوافقة مع الإصدار عبر الإنترنت."
   },
   "faq.heading": {
     "message": "الأسئلة الشائعة"
@@ -168,7 +198,7 @@
     "message": "هل AiShort مخصص لـ ChatGPT فقط؟ هل يدعم نماذج ذكاء اصطناعي أخرى؟"
   },
   "faq.q4": {
-    "message": "كيف يختلف AiShort عن Awesome ChatGPT Prompts ومجموعات المطالبات مفتوحة المصدر الأخرى؟"
+    "message": "كيف يختلف AiShort عن Awesome ChatGPT Prompts ومجموعات الموجهات مفتوحة المصدر الأخرى؟"
   },
   "faq.q5": {
     "message": "هل AiShort مجاني؟ هل أحتاج إلى التسجيل؟"
@@ -183,7 +213,7 @@
     "message": "ما السيناريوهات التي يناسبها هذا الطلب؟"
   },
   "faq.tips.a": {
-    "message": "أولاً، اجعل [العنصر النائب] أكثر تحديداً (أضف الأسلوب والطول والمجال). ثانياً، ردّ على المخرجات غير المُرضية بعبارة «اجعلها أكثر X». ثالثاً، قارن النتائج بين نماذج مثل Claude و GPT-4 و Gemini."
+    "message": "أولاً، اجعل [العنصر النائب] أكثر تحديداً (أضف الأسلوب والطول والمجال). ثانياً، ردّ على المخرجات غير المُرضية بعبارة «اجعلها أكثر X». ثالثاً، قارن النتائج بين نماذج مثل Claude و ChatGPT و Gemini."
   },
   "faq.tips.q": {
     "message": "كيف يمكنني تحسين جودة الإخراج؟"
@@ -197,20 +227,47 @@
   "feedback.description": {
     "message": "ملاحظاتك مهمة بالنسبة لنا!"
   },
+  "feedback.newIssue": {
+    "message": "تقرير جديد"
+  },
+  "feedback.responseTime": {
+    "message": "عادةً نرد خلال 24 ساعة"
+  },
+  "feedback.spec_label": {
+    "message": "قناة مفتوحة"
+  },
   "feedback.subtitle": {
     "message": "تقارير الأخطاء، طلبات الميزات، أسئلة الاستخدام — كل صوت مرحب به"
   },
   "feedback.title": {
     "message": "التعليقات والاقتراحات"
   },
+  "feedback.type.bug": {
+    "message": "تقارير الأخطاء"
+  },
+  "feedback.type.help": {
+    "message": "المساعدة"
+  },
+  "feedback.type.suggestion": {
+    "message": "الاقتراحات"
+  },
   "feedback.welcome": {
     "message": "الملاحظات والاقتراحات"
+  },
+  "filter.operator.all.tip": {
+    "message": "عرض الموجهات المطابقة لجميع الوسوم المحددة"
+  },
+  "filter.operator.any.tip": {
+    "message": "عرض الموجهات المطابقة لأي وسم محدد"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} والمزيد"
   },
   "homepage.description": {
     "message": "محبط من إجابات الذكاء الاصطناعي غير ذات الصلة؟ يقدم AiShort قوالب عملية للكتابة والبرمجة والترجمة. انسخ بنقرة واحدة وضاعف كفاءتك!"
   },
   "homepage.slogan": {
-    "message": "مطالبات الذكاء الاصطناعي المنتقاة، جاهزة للاستخدام بنقرة واحدة"
+    "message": "موجهات الذكاء الاصطناعي المنتقاة، جاهزة للاستخدام بنقرة واحدة"
   },
   "homepage.title": {
     "message": "AiShort - مكتبة موجهات الذكاء الاصطناعي | قوالب لتعزيز الإنتاجية"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "ماس"
   },
+  "level.emerald": {
+    "message": "زمرد"
+  },
   "level.gold": {
     "message": "ذهبي"
   },
@@ -275,11 +335,20 @@
   "level.platinum": {
     "message": "بلاتيني"
   },
+  "level.ruby": {
+    "message": "ياقوت أحمر"
+  },
+  "level.sapphire": {
+    "message": "ياقوت أزرق"
+  },
   "level.silver": {
     "message": "فضي"
   },
+  "level.stardust": {
+    "message": "غبار النجوم"
+  },
   "link.addprompt": {
-    "message": "إنشاء مطالبة"
+    "message": "إنشاء موجه"
   },
   "link.communityPrompts": {
     "message": "موجهات المجتمع"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "حسابي"
   },
-  "link.myaccount": {
-    "message": "إعدادات الحساب"
-  },
   "link.privacy": {
     "message": "سياسة الخصوصية"
   },
   "link.terms": {
     "message": "شروط الخدمة"
+  },
+  "link.userCenter": {
+    "message": "مركز المستخدم"
   },
   "login.login.prompt": {
     "message": "لديك حساب بالفعل؟"
@@ -350,11 +419,14 @@
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
   },
+  "message.cannotFavorOwn": {
+    "message": "لا يمكنك تفضيل موجهك الخاص"
+  },
   "message.convertToPrivate.error": {
     "message": "فشل التحويل، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.convertToPrivate.success": {
-    "message": "تم التحويل إلى مطالبة خاصة بنجاح"
+    "message": "تم التحويل إلى موجه خاصة بنجاح"
   },
   "message.copied": {
     "message": "تم النسخ بنجاح"
@@ -387,7 +459,7 @@
     "message": "فشل التصدير، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.export.noPrompts": {
-    "message": "لا توجد توجيهات متاحة للتصدير، يرجى المحاولة مرة أخرى لاحقًا"
+    "message": "لا توجد موجهات للتصدير. أنشئ بعضها أو أضفها إلى المفضلة أولاً."
   },
   "message.export.success": {
     "message": "تم تصدير التوجيهات بنجاح!"
@@ -429,7 +501,7 @@
     "message": "لا توجد موجهات بعد، أنشئ واحدة"
   },
   "message.noSpaceItems": {
-    "message": "لا يوجد شيء بعد — أنشئ مطالبة أو أضف إلى المفضلة"
+    "message": "لا يوجد شيء بعد — أنشئ موجه أو أضف إلى المفضلة"
   },
   "message.orderSaveFailed": {
     "message": "فشل في حفظ الترتيب"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "مجموعتي"
   },
+  "noResults.description": {
+    "message": "جرّب كلمة مفتاحية أخرى، أو امسح فلاتر الوسوم"
+  },
+  "noResults.title": {
+    "message": "لم يتم العثور على موجهات مطابقة"
+  },
   "placeholder.comment": {
     "message": "أدخل التعليق هنا... يدعم Markdown و HTML"
   },
@@ -584,20 +662,38 @@
   "placeholder.usernameOrEmail": {
     "message": "اسم المستخدم/البريد الإلكتروني"
   },
+  "prompt.authorNote": {
+    "message": "ملاحظة المؤلف"
+  },
   "prompt.charsLabel": {
     "message": "حرف"
   },
   "prompt.content": {
-    "message": "محتوى المطالبة"
+    "message": "محتوى الموجه"
   },
   "prompt.private": {
     "message": "خاص"
+  },
+  "prompt.source": {
+    "message": "المصدر"
   },
   "prompt.tokenDanger": {
     "message": "الموجه (Prompt) طويل جدًا، مما قد يصعب مشاركته وإعادة استخدامه. يُنصح بتقسيمه."
   },
   "prompt.tokenWarning": {
     "message": "الموجه (Prompt) طويل نوعًا ما؛ فكر في اختصاره أو تقسيمه."
+  },
+  "prompt.translation": {
+    "message": "ترجمة"
+  },
+  "share.copy": {
+    "message": "نسخ"
+  },
+  "share.native": {
+    "message": "النظام"
+  },
+  "share.shareTo": {
+    "message": "مشاركة عبر"
   },
   "showcase.header.button": {
     "message": "استكشاف المجتمع"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "طلبات ذات صلة"
+  },
+  "sort.mostUpvoted": {
+    "message": "الأكثر تصويتًا"
+  },
+  "sort.newest": {
+    "message": "الأحدث"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "إغلاق",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "توقف المؤلف عن المشاركة ولا تتوفر ذاكرة تخزين مؤقت محلية"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "حتى {next}"
+  },
   "validation.agreement.required": {
     "message": "يجب عليك الموافقة على شروط الخدمة وسياسة الخصوصية قبل الاستخدام"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل!"
-  },
-  "action.clearFilters": {
-    "message": "مسح الفلاتر ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "عرض المطالبات المطابقة لأي وسم محدد"
-  },
-  "filter.operator.all.tip": {
-    "message": "عرض المطالبات المطابقة لجميع الوسوم المحددة"
-  },
-  "sort.newest": {
-    "message": "الأحدث"
-  },
-  "sort.mostUpvoted": {
-    "message": "الأكثر تصويتًا"
-  },
-  "level.stardust": {
-    "message": "غبار النجوم"
-  },
-  "level.emerald": {
-    "message": "زمرد"
-  },
-  "level.ruby": {
-    "message": "ياقوت أحمر"
-  },
-  "level.sapphire": {
-    "message": "ياقوت أزرق"
-  },
-  "feedback.type.bug": {
-    "message": "تقارير الأخطاء"
-  },
-  "feedback.type.suggestion": {
-    "message": "الاقتراحات"
-  },
-  "feedback.type.help": {
-    "message": "المساعدة"
-  },
-  "feedback.spec_label": {
-    "message": "قناة مفتوحة"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} والمزيد"
-  },
-  "noResults.title": {
-    "message": "لم يتم العثور على مطالبات مطابقة"
-  },
-  "noResults.description": {
-    "message": "جرّب كلمة مفتاحية أخرى، أو امسح فلاتر الوسوم"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "حتى {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "الذكاء الاصطناعي يردّ"
-  },
-  "comments.empty": {
-    "message": "لا توجد تعليقات بعد"
-  },
-  "prompt.authorNote": {
-    "message": "ملاحظة المؤلف"
-  },
-  "action.share": {
-    "message": "مشاركة"
-  },
-  "comments.heading": {
-    "message": "النقاش"
-  },
-  "prompt.source": {
-    "message": "المصدر"
-  },
-  "prompt.translation": {
-    "message": "ترجمة"
-  },
-  "share.copy": {
-    "message": "نسخ"
-  },
-  "share.native": {
-    "message": "النظام"
-  },
-  "share.shareTo": {
-    "message": "مشاركة عبر"
-  },
-  "feedback.responseTime": {
-    "message": "عادةً نرد خلال 24 ساعة"
-  },
-  "feedback.newIssue": {
-    "message": "تقرير جديد"
   }
 }

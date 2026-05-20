@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "비밀번호 변경"
   },
+  "action.clearFilters": {
+    "message": "필터 지우기 ({count})"
+  },
   "action.close": {
     "message": "닫기"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "복사"
+  },
+  "action.copyPrompt": {
+    "message": "프롬프트 복사"
   },
   "action.delete": {
     "message": "삭제"
@@ -39,10 +45,16 @@
     "message": "태그 숨기기"
   },
   "action.login": {
+    "message": "로그인"
+  },
+  "action.loginInstead": {
     "message": "직접 로그인"
   },
   "action.register": {
     "message": "등록"
+  },
+  "action.registerNow": {
+    "message": "지금 가입하기"
   },
   "action.removeFavorite": {
     "message": "즐겨찾기 제거"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "재설정 이메일 보내기"
+  },
+  "action.share": {
+    "message": "공유"
   },
   "action.showTags": {
     "message": "태그 표시"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "확인"
   },
+  "button.confirmClear": {
+    "message": "지우기 확인"
+  },
   "button.export": {
     "message": "데이터 내보내기"
   },
@@ -87,13 +105,13 @@
     "message": "프롬프트 내보내기"
   },
   "button.import": {
-    "message": "가져오기"
+    "message": "데이터 가져오기"
   },
   "button.importPrompts": {
     "message": "프롬프트 가져오기"
   },
   "button.login": {
-    "message": "무료 로그인"
+    "message": "로그인"
   },
   "button.logout": {
     "message": "로그아웃"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "비밀번호 재설정"
   },
+  "button.signInFree": {
+    "message": "무료 로그인"
+  },
   "comment.add": {
     "message": "댓글 제출"
+  },
+  "comments.aiReplying": {
+    "message": "AI가 답장 중"
+  },
+  "comments.empty": {
+    "message": "아직 댓글이 없습니다"
+  },
+  "comments.heading": {
+    "message": "토론"
   },
   "common.favorites": {
     "message": "즐겨찾기"
@@ -183,7 +213,7 @@
     "message": "이 프롬프트는 어떤 상황에 적합합니까?"
   },
   "faq.tips.a": {
-    "message": "첫째, [플레이스홀더]를 더 구체적으로 작성하세요(스타일·길이·분야 등 세부 추가). 둘째, 만족스럽지 않은 답변에는 “더 X하게 만들어”라고 후속 요청하세요. 셋째, Claude / GPT-4 / Gemini 등 다른 모델로 비교해 보세요."
+    "message": "첫째, [플레이스홀더]를 더 구체적으로 작성하세요(스타일·길이·분야 등 세부 추가). 둘째, 만족스럽지 않은 답변에는 “더 X하게 만들어”라고 후속 요청하세요. 셋째, Claude / ChatGPT / Gemini 등 다른 모델로 비교해 보세요."
   },
   "faq.tips.q": {
     "message": "출력 품질을 어떻게 높일 수 있나요?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "귀하의 피드백은 우리에게 중요합니다!"
   },
+  "feedback.newIssue": {
+    "message": "새 Issue"
+  },
+  "feedback.responseTime": {
+    "message": "보통 24시간 이내 답변"
+  },
+  "feedback.spec_label": {
+    "message": "공개 채널"
+  },
   "feedback.subtitle": {
     "message": "버그 신고, 기능 제안, 사용 문의—모든 목소리를 환영합니다"
   },
   "feedback.title": {
     "message": "피드백 및 제안"
   },
+  "feedback.type.bug": {
+    "message": "버그 신고"
+  },
+  "feedback.type.help": {
+    "message": "사용 문의"
+  },
+  "feedback.type.suggestion": {
+    "message": "기능 제안"
+  },
   "feedback.welcome": {
     "message": "피드백 및 제안"
+  },
+  "filter.operator.all.tip": {
+    "message": "선택한 모든 태그에 일치"
+  },
+  "filter.operator.any.tip": {
+    "message": "선택한 태그 중 하나라도 일치"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} 등"
   },
   "homepage.description": {
     "message": "AI 답변이 항상 엉뚱한가요? AiShort는 글쓰기, 코딩, 번역에 유용한 실용적인 프롬프트를 제공합니다. 원클릭 복사로 작업 효율을 두 배로!"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "다이아몬드"
   },
+  "level.emerald": {
+    "message": "에메랄드"
+  },
   "level.gold": {
     "message": "골드"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "플래티넘"
   },
+  "level.ruby": {
+    "message": "루비"
+  },
+  "level.sapphire": {
+    "message": "사파이어"
+  },
   "level.silver": {
     "message": "실버"
+  },
+  "level.stardust": {
+    "message": "스타더스트"
   },
   "link.addprompt": {
     "message": "프롬프트 만들기"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "내 계정"
   },
-  "link.myaccount": {
-    "message": "계정 설정"
-  },
   "link.privacy": {
     "message": "개인 정보 보호 정책"
   },
   "link.terms": {
     "message": "서비스 약관"
+  },
+  "link.userCenter": {
+    "message": "사용자 센터"
   },
   "login.login.prompt": {
     "message": "이미 계정이 있으신가요?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "캐시가 지워졌습니다"
   },
+  "message.cannotFavorOwn": {
+    "message": "본인의 프롬프트는 즐겨찾기에 추가할 수 없습니다"
+  },
   "message.convertToPrivate.error": {
     "message": "변환에 실패했습니다. 나중에 다시 시도해 주세요"
   },
@@ -387,7 +459,7 @@
     "message": "내보내기 실패, 나중에 다시 시도하십시오."
   },
   "message.export.noPrompts": {
-    "message": "내보낼 프롬프트가 없습니다. 나중에 다시 시도하십시오."
+    "message": "내보낼 프롬프트가 없습니다. 먼저 프롬프트를 만들거나 즐겨찾기에 추가하세요."
   },
   "message.export.success": {
     "message": "프롬프트 내보내기 성공!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "내 컬렉션"
   },
+  "noResults.description": {
+    "message": "다른 키워드를 시도하거나 태그 필터를 지워보세요"
+  },
+  "noResults.title": {
+    "message": "일치하는 프롬프트를 찾을 수 없습니다"
+  },
   "placeholder.comment": {
     "message": "여기에 댓글 입력... Markdown 및 HTML 구문 지원"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "사용자 이름/이메일"
   },
+  "prompt.authorNote": {
+    "message": "작성자 메모"
+  },
   "prompt.charsLabel": {
     "message": "글자"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "비공개"
   },
+  "prompt.source": {
+    "message": "출처"
+  },
   "prompt.tokenDanger": {
     "message": "프롬프트가 매우 길어 공유 및 재사용이 어려울 수 있습니다. 분할을 고려해 주세요."
   },
   "prompt.tokenWarning": {
     "message": "프롬프트가 다소 깁니다. 줄이거나 나누는 것을 고려하세요."
+  },
+  "prompt.translation": {
+    "message": "번역"
+  },
+  "share.copy": {
+    "message": "복사"
+  },
+  "share.native": {
+    "message": "시스템"
+  },
+  "share.shareTo": {
+    "message": "공유 대상"
   },
   "showcase.header.button": {
     "message": "커뮤니티 둘러보기"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "관련 프롬프트"
+  },
+  "sort.mostUpvoted": {
+    "message": "추천순"
+  },
+  "sort.newest": {
+    "message": "최신순"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "닫기",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "작성자가 공유를 중단했으며 로컬 캐시가 없습니다"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "「{next}」까지"
+  },
   "validation.agreement.required": {
     "message": "사용하기 전에 서비스 약관 및 개인 정보 보호 정책에 동의해야 합니다"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
-  },
-  "action.clearFilters": {
-    "message": "필터 지우기 ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "선택한 태그 중 하나라도 일치"
-  },
-  "filter.operator.all.tip": {
-    "message": "선택한 모든 태그에 일치"
-  },
-  "sort.newest": {
-    "message": "최신순"
-  },
-  "sort.mostUpvoted": {
-    "message": "추천순"
-  },
-  "level.stardust": {
-    "message": "스타더스트"
-  },
-  "level.emerald": {
-    "message": "에메랄드"
-  },
-  "level.ruby": {
-    "message": "루비"
-  },
-  "level.sapphire": {
-    "message": "사파이어"
-  },
-  "feedback.type.bug": {
-    "message": "버그 신고"
-  },
-  "feedback.type.suggestion": {
-    "message": "기능 제안"
-  },
-  "feedback.type.help": {
-    "message": "사용 문의"
-  },
-  "feedback.spec_label": {
-    "message": "공개 채널"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} 등"
-  },
-  "noResults.title": {
-    "message": "일치하는 프롬프트를 찾을 수 없습니다"
-  },
-  "noResults.description": {
-    "message": "다른 키워드를 시도하거나 태그 필터를 지워보세요"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "「{next}」까지"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI가 답장 중"
-  },
-  "comments.empty": {
-    "message": "아직 댓글이 없습니다"
-  },
-  "prompt.authorNote": {
-    "message": "작성자 메모"
-  },
-  "action.share": {
-    "message": "공유"
-  },
-  "comments.heading": {
-    "message": "토론"
-  },
-  "prompt.source": {
-    "message": "출처"
-  },
-  "prompt.translation": {
-    "message": "번역"
-  },
-  "share.copy": {
-    "message": "복사"
-  },
-  "share.native": {
-    "message": "시스템"
-  },
-  "share.shareTo": {
-    "message": "공유 대상"
-  },
-  "feedback.responseTime": {
-    "message": "보통 24시간 이내 답변"
-  },
-  "feedback.newIssue": {
-    "message": "새 Issue"
   }
 }
