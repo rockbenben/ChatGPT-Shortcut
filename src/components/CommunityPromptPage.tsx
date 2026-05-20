@@ -1,10 +1,10 @@
 import React, { Suspense, useMemo } from "react";
 import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Result, Breadcrumb, Popover } from "antd";
-import { CopyOutlined, CheckOutlined, UserOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { UserOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -37,16 +37,10 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProps) {
-  const { copied, copyText } = useCopyToClipboard();
-
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const charCount = (prompt?.description || "").length;
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
-
-  const handleCopy = () => {
-    if (prompt?.description) copyText(prompt.description);
-  };
 
   // Loading state — composition sheet 同款骨架，零跳变
   if (loading) {
@@ -135,7 +129,7 @@ function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProp
                 <Typography.Title level={1} className="comp-sheet-title">
                   {prompt.title}
                 </Typography.Title>
-                <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   {prompt.owner && (
                     <span>
                       <UserOutlined style={{ marginRight: 4 }} />
@@ -158,9 +152,7 @@ function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProp
                   <Eyebrow>
                     <Translate id="prompt.content">Prompt 内容</Translate>
                   </Eyebrow>
-                  <Button type="primary" size="large" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy}>
-                    {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                  </Button>
+                  <CopyButton text={prompt.description || ""} variant="primary" size="large" />
                 </Flex>
                 <div className="comp-sheet-code">{renderPromptWithPlaceholders(prompt.description || "")}</div>
               </Flex>

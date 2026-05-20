@@ -1,17 +1,18 @@
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
-import { LinkOutlined, CopyOutlined, CheckOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { LinkOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
+import { CopyButton } from "@site/src/components/CopyButton";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { fetchCardsByIds, type CardData } from "@site/src/api/homepage";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import promptFaqData from "@site/src/data/meta_faqs.json";
+import { toBcp47 } from "@site/src/utils/i18n";
 // Comments removed for local version
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -29,7 +30,6 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function PromptPage({ prompt, currentLanguage }) {
-  const { copied, updateCopy } = useCopyToClipboard();
   const { siteConfig, i18n } = useDocusaurusContext();
 
   const promptInfo = prompt[currentLanguage] || prompt;
@@ -69,7 +69,9 @@ function PromptPage({ prompt, currentLanguage }) {
   const seoDescription = prompt.metaDescription?.trim() || `${promptInfo.description || ""} ${promptInfo.prompt || ""}`.trim();
 
   // SSR 安全的绝对 URL（不依赖 window）
-  const localePrefix = currentLanguage && currentLanguage !== i18n.defaultLocale ? `/${currentLanguage}` : "";
+  const localePrefix = currentLanguage === i18n.defaultLocale ? "" : `/${currentLanguage}`;
+  // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
+  const bcp47Locale = toBcp47(currentLanguage, i18n.localeConfigs);
   const canonicalUrl = `${siteConfig.url}${localePrefix}/prompt/${prompt.id}`;
 
   // schema.org Article + BreadcrumbList + HowTo + FAQPage JSON-LD（Tier 1 GEO: 提升 LLM 引用率）
@@ -81,11 +83,10 @@ function PromptPage({ prompt, currentLanguage }) {
   const websiteId = `${siteConfig.url}/#website`;
 
   // Tier 2: hreflang alternates — 对 LLM 和搜索引擎声明 18 locale 互为翻译
-  // hreflang 必须是合法 BCP 47 代码，优先取 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
+  // hreflang 必须是合法 BCP 47 代码，toBcp47 内部读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
   const hreflangAlternates = i18n.locales.map((loc) => {
     const pfx = loc === i18n.defaultLocale ? "" : `/${loc}`;
-    const hreflang = i18n.localeConfigs?.[loc]?.htmlLang ?? loc;
-    return { hreflang, href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
+    return { hreflang: toBcp47(loc, i18n.localeConfigs), href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
   });
 
   // FAQ 结构：
@@ -145,7 +146,7 @@ function PromptPage({ prompt, currentLanguage }) {
         headline: seoTitle,
         description: seoDescription,
         url: canonicalUrl,
-        inLanguage: currentLanguage,
+        inLanguage: bcp47Locale,
         datePublished: buildDate,
         dateModified: buildDate,
         image: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
@@ -181,7 +182,7 @@ function PromptPage({ prompt, currentLanguage }) {
           additionalType: "https://schema.org/SoftwareSourceCode",
           text: promptInfo.prompt,
           encodingFormat: "text/plain",
-          inLanguage: currentLanguage,
+          inLanguage: bcp47Locale,
           name: title,
         },
         // Tier 5: 关联 tags 作为知识图谱实体
@@ -273,7 +274,7 @@ function PromptPage({ prompt, currentLanguage }) {
                       )}
                     </Flex>
 
-                    <Space split={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                    <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                       <span style={monoNum}>
                         <FireFilled style={{ marginRight: 4 }} />
                         {formatCompactNumber(weight as number)}
@@ -300,19 +301,11 @@ function PromptPage({ prompt, currentLanguage }) {
                       <Eyebrow>
                         <Translate id="prompt.content">Prompt 内容</Translate>
                       </Eyebrow>
-                      <Button
-                        type="primary"
-                        size="large"
-                        icon={copied ? <CheckOutlined /> : <CopyOutlined />}
-                        onClick={() => {
-                          updateCopy(promptInfo.prompt, prompt.id);
-                        }}>
-                        {copied ? <Translate id="message.copied">复制成功</Translate> : <Translate id="action.copy">复制 Prompt</Translate>}
-                      </Button>
+                      <CopyButton text={promptInfo.prompt} trackingId={prompt.id} variant="primary" size="large" />
                     </Flex>
                     <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
                       <meta itemProp="name" content={title} />
-                      <meta itemProp="inLanguage" content={currentLanguage} />
+                      <meta itemProp="inLanguage" content={bcp47Locale} />
                       {renderPromptWithPlaceholders(promptInfo.prompt || "")}
                     </div>
                   </Flex>
