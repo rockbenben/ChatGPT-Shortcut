@@ -3,27 +3,27 @@ import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { BasePromptCard } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
-import { CheckOutlined, CopyOutlined, EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
+import { CopyButton } from "@site/src/components/CopyButton";
+import { EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
+import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import styles from "./styles.module.css";
 
 interface UserCardProps {
-  data: any;
+  data: CommunityPrompt;
   sortableId?: string | number;
   isFiltered?: boolean;
-  onEdit?: (data: any) => void;
-  onDelete?: (id: string) => void;
+  onEdit?: (data: CommunityPrompt) => void;
+  onDelete?: (id: number) => void;
   onOpenModal?: (data: any) => void;
   extraActions?: ReactNode;
 }
 
 const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelete, onOpenModal, extraActions }: UserCardProps) => {
-  const { copied, copyText } = useCopyToClipboard();
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: sortableId ?? user.id });
 
@@ -34,13 +34,6 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
     height: "100%",
   };
 
-  const handleCopy = useCallback(
-    (e: React.MouseEvent) => {
-      e.stopPropagation();
-      copyText(user.description);
-    },
-    [copyText, user.description],
-  );
 
   const handleEdit = useCallback(
     (e: React.MouseEvent) => {
@@ -112,16 +105,14 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         </>
       }
       actions={[
-        <Tooltip title={<Translate id="action.copy">复制</Translate>}>
-          <Button type="text" icon={copied ? <CheckOutlined /> : <CopyOutlined />} onClick={handleCopy} block />
-        </Tooltip>,
-        <Tooltip title={<Translate id="action.edit">编辑</Translate>}>
+        <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
+        <Tooltip key="edit" title={<Translate id="action.edit">编辑</Translate>}>
           <Button type="text" icon={<EditOutlined />} onClick={handleEdit} block />
         </Tooltip>,
-        <Tooltip title={<Translate id="action.delete">删除</Translate>}>
+        <Tooltip key="delete" title={<Translate id="action.delete">删除</Translate>}>
           <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
         </Tooltip>,
-        extraActions,
+        extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
