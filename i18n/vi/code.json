@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Đổi Mật khẩu"
   },
+  "action.clearFilters": {
+    "message": "Xóa bộ lọc ({count})"
+  },
   "action.close": {
     "message": "Đóng"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "Sao chép"
+  },
+  "action.copyPrompt": {
+    "message": "Sao chép Prompt"
   },
   "action.delete": {
     "message": "Xóa"
@@ -39,13 +45,19 @@
     "message": "Ẩn Thẻ"
   },
   "action.login": {
-    "message": "Đăng nhập Trực tiếp"
+    "message": "Đăng nhập"
+  },
+  "action.loginInstead": {
+    "message": "Đăng nhập trực tiếp"
   },
   "action.register": {
     "message": "Đăng ký"
   },
+  "action.registerNow": {
+    "message": "Đăng ký ngay"
+  },
   "action.removeFavorite": {
-    "message": "Nhấp để xóa yêu thích"
+    "message": "Bỏ khỏi yêu thích"
   },
   "action.reply": {
     "message": "Trả lời"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Gửi Email Đặt lại"
+  },
+  "action.share": {
+    "message": "Chia sẻ"
   },
   "action.showTags": {
     "message": "Hiện Thẻ"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Xác nhận"
   },
+  "button.confirmClear": {
+    "message": "Xác nhận xóa"
+  },
   "button.export": {
     "message": "Xuất Dữ liệu"
   },
@@ -87,13 +105,13 @@
     "message": "Xuất Prompt"
   },
   "button.import": {
-    "message": "Nhập"
+    "message": "Nhập dữ liệu"
   },
   "button.importPrompts": {
     "message": "Nhập Prompt"
   },
   "button.login": {
-    "message": "Đăng nhập miễn phí"
+    "message": "Đăng nhập"
   },
   "button.logout": {
     "message": "Đăng xuất"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Đặt lại Mật khẩu"
   },
+  "button.signInFree": {
+    "message": "Đăng nhập miễn phí"
+  },
   "comment.add": {
     "message": "Gửi Bình luận"
+  },
+  "comments.aiReplying": {
+    "message": "AI đang trả lời"
+  },
+  "comments.empty": {
+    "message": "Chưa có bình luận"
+  },
+  "comments.heading": {
+    "message": "Thảo luận"
   },
   "common.favorites": {
     "message": "Yêu thích"
@@ -183,7 +213,7 @@
     "message": "Prompt này phù hợp với tình huống nào?"
   },
   "faq.tips.a": {
-    "message": "Thứ nhất, viết [chỗ giữ chỗ] cụ thể hơn (thêm phong cách, độ dài, lĩnh vực). Thứ hai, trả lời kết quả chưa ưng ý bằng “làm nó X hơn”. Thứ ba, so sánh giữa Claude / GPT-4 / Gemini và các mô hình khác."
+    "message": "Thứ nhất, viết [chỗ giữ chỗ] cụ thể hơn (thêm phong cách, độ dài, lĩnh vực). Thứ hai, trả lời kết quả chưa ưng ý bằng “làm nó X hơn”. Thứ ba, so sánh giữa Claude / ChatGPT / Gemini và các mô hình khác."
   },
   "faq.tips.q": {
     "message": "Làm sao để cải thiện chất lượng đầu ra?"
@@ -197,14 +227,41 @@
   "feedback.description": {
     "message": "Phản hồi của bạn rất quan trọng với chúng tôi!"
   },
+  "feedback.newIssue": {
+    "message": "Issue mới"
+  },
+  "feedback.responseTime": {
+    "message": "Thường trả lời trong vòng 24 giờ"
+  },
+  "feedback.spec_label": {
+    "message": "Kênh mở"
+  },
   "feedback.subtitle": {
     "message": "Báo lỗi, đề xuất tính năng, câu hỏi sử dụng—chào đón mọi ý kiến"
   },
   "feedback.title": {
     "message": "Phản hồi & Góp ý"
   },
+  "feedback.type.bug": {
+    "message": "Báo lỗi"
+  },
+  "feedback.type.help": {
+    "message": "Câu hỏi sử dụng"
+  },
+  "feedback.type.suggestion": {
+    "message": "Đề xuất tính năng"
+  },
   "feedback.welcome": {
     "message": "Phản hồi & Gợi ý"
+  },
+  "filter.operator.all.tip": {
+    "message": "Hiển thị prompt khớp với tất cả tag được chọn"
+  },
+  "filter.operator.any.tip": {
+    "message": "Hiển thị prompt khớp với bất kỳ tag nào được chọn"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} và hơn nữa"
   },
   "homepage.description": {
     "message": "Bực bội vì câu trả lời AI không liên quan? AiShort cung cấp các mẫu prompt thực tế cho viết, lập trình và dịch thuật. Sao chép một cú nhấp để mở khóa đầu ra AI chính xác và tăng gấp đôi hiệu quả!"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "Kim cương"
   },
+  "level.emerald": {
+    "message": "Lục bảo"
+  },
   "level.gold": {
     "message": "Vàng"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Bạch kim"
   },
+  "level.ruby": {
+    "message": "Hồng ngọc"
+  },
+  "level.sapphire": {
+    "message": "Lam ngọc"
+  },
   "level.silver": {
     "message": "Bạc"
+  },
+  "level.stardust": {
+    "message": "Bụi sao"
   },
   "link.addprompt": {
     "message": "Tạo prompt"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "Tài khoản của tôi"
   },
-  "link.myaccount": {
-    "message": "Cài đặt Tài khoản"
-  },
   "link.privacy": {
     "message": "Chính sách Bảo mật"
   },
   "link.terms": {
     "message": "Điều khoản Dịch vụ"
+  },
+  "link.userCenter": {
+    "message": "Trung tâm Người dùng"
   },
   "login.login.prompt": {
     "message": "Đã có tài khoản?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Đã xóa bộ nhớ cache"
   },
+  "message.cannotFavorOwn": {
+    "message": "Không thể yêu thích prompt của chính bạn"
+  },
   "message.convertToPrivate.error": {
     "message": "Không thể chuyển đổi, vui lòng thử lại sau"
   },
@@ -387,7 +459,7 @@
     "message": "Xuất thất bại, vui lòng thử lại sau"
   },
   "message.export.noPrompts": {
-    "message": "Không có prompt để xuất, vui lòng thử lại sau"
+    "message": "Không có prompt để xuất. Tạo hoặc yêu thích một số trước."
   },
   "message.export.success": {
     "message": "Xuất prompt thành công!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "Bộ sưu tập của tôi"
   },
+  "noResults.description": {
+    "message": "Thử từ khóa khác, hoặc xóa bộ lọc thẻ"
+  },
+  "noResults.title": {
+    "message": "Không tìm thấy prompt phù hợp"
+  },
   "placeholder.comment": {
     "message": "Nhập bình luận tại đây... Hỗ trợ cú pháp Markdown và HTML"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Tên người dùng/Email"
   },
+  "prompt.authorNote": {
+    "message": "Ghi chú của tác giả"
+  },
   "prompt.charsLabel": {
     "message": "ký tự"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Riêng tư"
   },
+  "prompt.source": {
+    "message": "Nguồn"
+  },
   "prompt.tokenDanger": {
     "message": "Prompt rất dài, có thể khó chia sẻ và tái sử dụng. Hãy cân nhắc chia nhỏ."
   },
   "prompt.tokenWarning": {
     "message": "Prompt khá dài; cân nhắc rút ngắn hoặc chia nhỏ."
+  },
+  "prompt.translation": {
+    "message": "Bản dịch"
+  },
+  "share.copy": {
+    "message": "Sao chép"
+  },
+  "share.native": {
+    "message": "Hệ thống"
+  },
+  "share.shareTo": {
+    "message": "Chia sẻ lên"
   },
   "showcase.header.button": {
     "message": "Khám phá cộng đồng"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "Prompt liên quan"
+  },
+  "sort.mostUpvoted": {
+    "message": "Nhiều lượt thích"
+  },
+  "sort.newest": {
+    "message": "Mới nhất"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Đóng",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "Tác giả đã ngừng chia sẻ và không có cache cục bộ"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "đến {next}"
+  },
   "validation.agreement.required": {
     "message": "Bạn phải đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật trước khi sử dụng"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký!"
-  },
-  "action.clearFilters": {
-    "message": "Xóa bộ lọc ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Hiển thị prompt khớp với bất kỳ tag nào được chọn"
-  },
-  "filter.operator.all.tip": {
-    "message": "Hiển thị prompt khớp với tất cả tag được chọn"
-  },
-  "sort.newest": {
-    "message": "Mới nhất"
-  },
-  "sort.mostUpvoted": {
-    "message": "Nhiều lượt thích"
-  },
-  "level.stardust": {
-    "message": "Bụi sao"
-  },
-  "level.emerald": {
-    "message": "Lục bảo"
-  },
-  "level.ruby": {
-    "message": "Hồng ngọc"
-  },
-  "level.sapphire": {
-    "message": "Lam ngọc"
-  },
-  "feedback.type.bug": {
-    "message": "Báo lỗi"
-  },
-  "feedback.type.suggestion": {
-    "message": "Đề xuất tính năng"
-  },
-  "feedback.type.help": {
-    "message": "Câu hỏi sử dụng"
-  },
-  "feedback.spec_label": {
-    "message": "Kênh mở"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} và hơn nữa"
-  },
-  "noResults.title": {
-    "message": "Không tìm thấy prompt phù hợp"
-  },
-  "noResults.description": {
-    "message": "Thử từ khóa khác, hoặc xóa bộ lọc thẻ"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "đến {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "AI đang trả lời"
-  },
-  "comments.empty": {
-    "message": "Chưa có bình luận"
-  },
-  "prompt.authorNote": {
-    "message": "Ghi chú của tác giả"
-  },
-  "action.share": {
-    "message": "Chia sẻ"
-  },
-  "comments.heading": {
-    "message": "Thảo luận"
-  },
-  "prompt.source": {
-    "message": "Nguồn"
-  },
-  "prompt.translation": {
-    "message": "Bản dịch"
-  },
-  "share.copy": {
-    "message": "Sao chép"
-  },
-  "share.native": {
-    "message": "Hệ thống"
-  },
-  "share.shareTo": {
-    "message": "Chia sẻ lên"
-  },
-  "feedback.responseTime": {
-    "message": "Thường trả lời trong vòng 24 giờ"
-  },
-  "feedback.newIssue": {
-    "message": "Issue mới"
   }
 }

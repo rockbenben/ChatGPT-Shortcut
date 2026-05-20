@@ -14,6 +14,9 @@
   "action.changePassword": {
     "message": "Изменить пароль"
   },
+  "action.clearFilters": {
+    "message": "Очистить фильтры ({count})"
+  },
   "action.close": {
     "message": "Закрыть"
   },
@@ -22,6 +25,9 @@
   },
   "action.copy": {
     "message": "Копировать"
+  },
+  "action.copyPrompt": {
+    "message": "Копировать промпт"
   },
   "action.delete": {
     "message": "Удалить"
@@ -41,11 +47,17 @@
   "action.login": {
     "message": "Войти"
   },
+  "action.loginInstead": {
+    "message": "Войти напрямую"
+  },
   "action.register": {
     "message": "Зарегистрироваться"
   },
+  "action.registerNow": {
+    "message": "Зарегистрироваться сейчас"
+  },
   "action.removeFavorite": {
-    "message": "Нажмите, чтобы удалить из избранного"
+    "message": "Удалить из избранного"
   },
   "action.reply": {
     "message": "Ответить"
@@ -58,6 +70,9 @@
   },
   "action.sendResetEmail": {
     "message": "Отправить письмо для сброса"
+  },
+  "action.share": {
+    "message": "Поделиться"
   },
   "action.showTags": {
     "message": "Показать теги"
@@ -80,6 +95,9 @@
   "button.confirm": {
     "message": "Подтвердить"
   },
+  "button.confirmClear": {
+    "message": "Подтвердить очистку"
+  },
   "button.export": {
     "message": "Экспорт данных"
   },
@@ -87,13 +105,13 @@
     "message": "Экспортировать промпты"
   },
   "button.import": {
-    "message": "Импорт"
+    "message": "Импорт данных"
   },
   "button.importPrompts": {
     "message": "Импортировать промпты"
   },
   "button.login": {
-    "message": "Войти бесплатно"
+    "message": "Войти"
   },
   "button.logout": {
     "message": "Выйти"
@@ -101,8 +119,20 @@
   "button.resetPassword": {
     "message": "Сбросить пароль"
   },
+  "button.signInFree": {
+    "message": "Войти бесплатно"
+  },
   "comment.add": {
     "message": "Отправить комментарий"
+  },
+  "comments.aiReplying": {
+    "message": "ИИ отвечает"
+  },
+  "comments.empty": {
+    "message": "Пока нет комментариев"
+  },
+  "comments.heading": {
+    "message": "Обсуждение"
   },
   "common.favorites": {
     "message": "Избранное"
@@ -183,7 +213,7 @@
     "message": "Для каких задач подходит этот промпт?"
   },
   "faq.tips.a": {
-    "message": "Во-первых, сделайте [плейсхолдер] более конкретным (стиль, длина, тематика). Во-вторых, отвечайте «сделай это более X» на неудачные ответы. В-третьих, сравнивайте результаты разных моделей: Claude / GPT-4 / Gemini."
+    "message": "Во-первых, сделайте [плейсхолдер] более конкретным (стиль, длина, тематика). Во-вторых, отвечайте «сделай это более X» на неудачные ответы. В-третьих, сравнивайте результаты разных моделей: Claude / ChatGPT / Gemini."
   },
   "faq.tips.q": {
     "message": "Как повысить качество ответа?"
@@ -197,20 +227,47 @@
   "feedback.description": {
     "message": "Ваш отзыв важен для нас!"
   },
+  "feedback.newIssue": {
+    "message": "Новый issue"
+  },
+  "feedback.responseTime": {
+    "message": "Обычно отвечаем в течение 24 часов"
+  },
+  "feedback.spec_label": {
+    "message": "Открытый канал"
+  },
   "feedback.subtitle": {
     "message": "Сообщения об ошибках, предложения функций, вопросы использования — все голоса приветствуются"
   },
   "feedback.title": {
     "message": "Отзывы и предложения"
   },
+  "feedback.type.bug": {
+    "message": "Сообщения об ошибках"
+  },
+  "feedback.type.help": {
+    "message": "Помощь"
+  },
+  "feedback.type.suggestion": {
+    "message": "Предложения"
+  },
   "feedback.welcome": {
     "message": "Отзывы и предложения"
+  },
+  "filter.operator.all.tip": {
+    "message": "Показать промпты, соответствующие всем выбранным тегам"
+  },
+  "filter.operator.any.tip": {
+    "message": "Показать промпты, соответствующие любому выбранному тегу"
+  },
+  "hero.supportedAiTools": {
+    "message": "{tools} и другие"
   },
   "homepage.description": {
     "message": "Надоели нерелевантные ответы ИИ? AiShort предлагает практичные шаблоны для письма, кода и перевода. Копируйте одним кликом и удвойте эффективность!"
   },
   "homepage.slogan": {
-    "message": "Отборные AI-промпты — копируй и используй в один клик"
+    "message": "Отборные AI-промпты — копируйте и используйте в один клик"
   },
   "homepage.title": {
     "message": "AiShort - Библиотека ИИ-промптов | Шаблоны для продуктивности"
@@ -266,6 +323,9 @@
   "level.diamond": {
     "message": "Бриллиант"
   },
+  "level.emerald": {
+    "message": "Изумруд"
+  },
   "level.gold": {
     "message": "Золото"
   },
@@ -275,8 +335,17 @@
   "level.platinum": {
     "message": "Платина"
   },
+  "level.ruby": {
+    "message": "Рубин"
+  },
+  "level.sapphire": {
+    "message": "Сапфир"
+  },
   "level.silver": {
     "message": "Серебро"
+  },
+  "level.stardust": {
+    "message": "Звёздная пыль"
   },
   "link.addprompt": {
     "message": "Создать промпт"
@@ -290,14 +359,14 @@
   "link.myAccount": {
     "message": "Мой Аккаунт"
   },
-  "link.myaccount": {
-    "message": "Настройки аккаунта"
-  },
   "link.privacy": {
     "message": "Политика конфиденциальности"
   },
   "link.terms": {
     "message": "Условия обслуживания"
+  },
+  "link.userCenter": {
+    "message": "Личный кабинет"
   },
   "login.login.prompt": {
     "message": "Уже есть аккаунт?"
@@ -350,6 +419,9 @@
   "message.cache.cleared": {
     "message": "Кэш очищен"
   },
+  "message.cannotFavorOwn": {
+    "message": "Нельзя добавить собственный промпт в избранное"
+  },
   "message.convertToPrivate.error": {
     "message": "Не удалось преобразовать, попробуйте еще раз позже"
   },
@@ -387,7 +459,7 @@
     "message": "Не удалось экспортировать, попробуйте позже"
   },
   "message.export.noPrompts": {
-    "message": "Нет промптов для экспорта, попробуйте позже"
+    "message": "Нет промптов для экспорта. Сначала создайте промпт или добавьте в избранное."
   },
   "message.export.success": {
     "message": "Промпты успешно экспортированы!"
@@ -545,6 +617,12 @@
   "nav.myCollection": {
     "message": "Моя коллекция"
   },
+  "noResults.description": {
+    "message": "Попробуйте другое ключевое слово или очистите фильтры тегов"
+  },
+  "noResults.title": {
+    "message": "Подходящих промптов не найдено"
+  },
   "placeholder.comment": {
     "message": "Введите комментарий здесь... Поддерживается синтаксис Markdown и HTML"
   },
@@ -584,6 +662,9 @@
   "placeholder.usernameOrEmail": {
     "message": "Имя пользователя/Email"
   },
+  "prompt.authorNote": {
+    "message": "Примечание автора"
+  },
   "prompt.charsLabel": {
     "message": "символов"
   },
@@ -593,11 +674,26 @@
   "prompt.private": {
     "message": "Частный"
   },
+  "prompt.source": {
+    "message": "Источник"
+  },
   "prompt.tokenDanger": {
     "message": "Промпт очень длинный, что может затруднить его передачу и повторное использование. Рекомендуется разбить."
   },
   "prompt.tokenWarning": {
     "message": "Промпт довольно длинный; рассмотрите возможность его сокращения или разделения."
+  },
+  "prompt.translation": {
+    "message": "Перевод"
+  },
+  "share.copy": {
+    "message": "Копировать"
+  },
+  "share.native": {
+    "message": "Система"
+  },
+  "share.shareTo": {
+    "message": "Поделиться в"
   },
   "showcase.header.button": {
     "message": "Обзор сообщества"
@@ -763,6 +859,12 @@
   },
   "sidebar.related": {
     "message": "Похожие промпты"
+  },
+  "sort.mostUpvoted": {
+    "message": "Популярные"
+  },
+  "sort.newest": {
+    "message": "Новые"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "Закрыть",
@@ -1106,6 +1208,18 @@
   "unavailable.unsharedNoCache": {
     "message": "Автор прекратил делиться, и нет локального кэша"
   },
+  "userPage.level.maxReached": {
+    "message": "MAX REACHED"
+  },
+  "userPage.level.sharedSuffix": {
+    "message": "shared"
+  },
+  "userPage.level.specLabel": {
+    "message": "LEVEL"
+  },
+  "userPage.level.toNext": {
+    "message": "до {next}"
+  },
   "validation.agreement.required": {
     "message": "Перед использованием необходимо согласиться с условиями обслуживания и политикой конфиденциальности"
   },
@@ -1147,101 +1261,5 @@
   },
   "validation.username.required": {
     "message": "Пожалуйста, введите имя пользователя или зарегистрированный email!"
-  },
-  "action.clearFilters": {
-    "message": "Очистить фильтры ({count})"
-  },
-  "filter.operator.any.tip": {
-    "message": "Показать промпты, соответствующие любому выбранному тегу"
-  },
-  "filter.operator.all.tip": {
-    "message": "Показать промпты, соответствующие всем выбранным тегам"
-  },
-  "sort.newest": {
-    "message": "Новые"
-  },
-  "sort.mostUpvoted": {
-    "message": "Популярные"
-  },
-  "level.stardust": {
-    "message": "Звёздная пыль"
-  },
-  "level.emerald": {
-    "message": "Изумруд"
-  },
-  "level.ruby": {
-    "message": "Рубин"
-  },
-  "level.sapphire": {
-    "message": "Сапфир"
-  },
-  "feedback.type.bug": {
-    "message": "Сообщения об ошибках"
-  },
-  "feedback.type.suggestion": {
-    "message": "Предложения"
-  },
-  "feedback.type.help": {
-    "message": "Помощь"
-  },
-  "feedback.spec_label": {
-    "message": "Открытый канал"
-  },
-  "hero.supportedAiTools": {
-    "message": "{tools} и другие"
-  },
-  "noResults.title": {
-    "message": "Подходящих промптов не найдено"
-  },
-  "noResults.description": {
-    "message": "Попробуйте другое ключевое слово или очистите фильтры тегов"
-  },
-  "userPage.level.specLabel": {
-    "message": "LEVEL"
-  },
-  "userPage.level.toNext": {
-    "message": "до {next}"
-  },
-  "userPage.level.maxReached": {
-    "message": "MAX REACHED"
-  },
-  "userPage.level.sharedSuffix": {
-    "message": "shared"
-  },
-  "comments.aiReplying": {
-    "message": "ИИ отвечает"
-  },
-  "comments.empty": {
-    "message": "Пока нет комментариев"
-  },
-  "prompt.authorNote": {
-    "message": "Примечание автора"
-  },
-  "action.share": {
-    "message": "Поделиться"
-  },
-  "comments.heading": {
-    "message": "Обсуждение"
-  },
-  "prompt.source": {
-    "message": "Источник"
-  },
-  "prompt.translation": {
-    "message": "Перевод"
-  },
-  "share.copy": {
-    "message": "Копировать"
-  },
-  "share.native": {
-    "message": "Система"
-  },
-  "share.shareTo": {
-    "message": "Поделиться в"
-  },
-  "feedback.responseTime": {
-    "message": "Обычно отвечаем в течение 24 часов"
-  },
-  "feedback.newIssue": {
-    "message": "Новый issue"
   }
 }
