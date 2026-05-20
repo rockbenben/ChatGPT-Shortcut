@@ -44,7 +44,6 @@ const UserStatus = () => {
       clearUserProfileCache();
       clearMySpaceCache();
       removeCache("user_auth");
-      removeCache("myspace_items");
       removeCache("myspace_stats");
     }
     setUserAuth(null);
@@ -56,7 +55,7 @@ const UserStatus = () => {
       key: "account",
       label: (
         <Link to="/user">
-          <Translate id="link.myaccount">我的账户</Translate>
+          <Translate id="link.myAccount">我的账户</Translate>
         </Link>
       ),
       icon: <UserOutlined />,
@@ -108,7 +107,7 @@ const UserStatus = () => {
         <div className="hideOnSmallScreen">
           <Space wrap size="middle">
             <Button type="primary" size="large" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-              <Translate id="button.login">免费登录</Translate>
+              <Translate id="button.signInFree">免费登录</Translate>
             </Button>
             <Link to="/community-prompts">
               <Button size="large" icon={<ShareAltOutlined />}>
@@ -121,7 +120,7 @@ const UserStatus = () => {
         <div className="showOnSmallScreen">
           <Space wrap size="middle">
             <Button type="primary" icon={<LoginOutlined />} onClick={() => setOpen(true)}>
-              <Translate id="button.login">免费登录</Translate>
+              <Translate id="button.signInFree">免费登录</Translate>
             </Button>
             <Link to="/community-prompts">
               <Button icon={<ShareAltOutlined />} aria-label={translate({ id: "showcase.header.button", message: "浏览社区分享" })} />

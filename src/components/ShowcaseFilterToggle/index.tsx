@@ -54,7 +54,7 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
         {
           value: "OR",
           label: (
-            <Tooltip title={<Translate id="filter.operator.any.tip">命中任一 tag 即显示</Translate>}>
+            <Tooltip title={<Translate id="filter.operator.any.tip">命中任一标签即显示</Translate>}>
               <span>OR</span>
             </Tooltip>
           ),
@@ -62,7 +62,7 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
         {
           value: "AND",
           label: (
-            <Tooltip title={<Translate id="filter.operator.all.tip">必须同时命中所有 tag</Translate>}>
+            <Tooltip title={<Translate id="filter.operator.all.tip">必须同时命中所有标签</Translate>}>
               <span>AND</span>
             </Tooltip>
           ),
