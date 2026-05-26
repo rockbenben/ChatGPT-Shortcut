@@ -1,55 +1,53 @@
 ---
 sidebar_label: Arayüz Kılavuzu
 title: AI Short Arayüz Kılavuzu | Etiket Filtreleme ve Akıllı Arama
-description: AI Short arayüzünde ustalaşın! Etiket filtreleme ve anahtar kelime araması ile promptları hızlıca bulun, kart ayrıntılarını ve koleksiyon işlemlerini anlayın.
+description: AI Short arayüzünü tanıyın: etiket filtreleme, OR/AND mantığı ve anahtar kelime aramasıyla istediğiniz promptu saniyeler içinde bulun, kart ayrıntılarını ve koleksiyon işlemlerini keşfedin.
 ---
 
 # Arayüz Kılavuzu
 
-AiShort sayfası, kullanıcılara promptlara göz atmak ve filtrelemek için sezgisel bir arayüz sunar. Sayfa esas olarak etiket alanı, arama alanı ve prompt görüntüleme alanından oluşur.
+Bu bölüm, AiShort ana sayfasının üç ana bölgesini—**Etiket alanı** (üstteki senaryo etiketleri), **Arama alanı** (anahtar kelime kutusu), **Prompt görüntüleme alanı** (alttaki kart listesi)—ve istediğiniz promptu hızla bulmak için bu bölgeleri nasıl kullanacağınızı tanıtır.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Etiket Filtreleme
 
-Etiket alanı, kullanıcıların alan ve işleve göre promptları filtrelemesini kolaylaştırır.
+Promptları alan ve işleve göre filtreler. Sağ üstteki **OR / AND** geçişi, çoklu etiket filtreleme kuralını belirler:
 
-Sağ üst köşedeki "Etiket Filtre Kuralı Değiştir" düğmesi aracılığıyla daha hassas çoklu etiket filtreleme yapabilirsiniz:
-
-- **OR Kuralı** (Varsayılan): Seçilen etiketlerden herhangi birine sahip promptları gösterir
-- **AND Kuralı**: Yalnızca tüm seçili etiketlere aynı anda sahip promptları gösterir
+- **OR** (Varsayılan): Herhangi bir etiketle eşleşen gösterilir
+- **AND**: Yalnızca tüm seçili etiketleri aynı anda taşıyan promptlar gösterilir
 
 ![](/img/docs/interface-filter.png)
 
 ## 🔍 Anahtar Kelime Araması
 
-Anahtar kelime arama işlevi, prompt başlıklarını, açıklamalarını ve içeriğini aramayı destekler.
+Prompt başlıklarını, açıklamalarını ve içeriğini aramayı destekler.
 
-- Ana sayfa araması genellikle **seçilmiş komutları** içerir (topluluk komutları hariç). Etiketler zaten seçilmişse, arama kapsamı bu etiketlerle sınırlıdır
-- Giriş yaptıktan sonra, arama kapsamı **koleksiyonlarınızı** ve **özel komutlarınızı** içerecek şekilde genişler
-- Kısa anahtar kelimeler kullanarak ana sayfada beklenen sonuçları bulamazsanız, aramak için lütfen [Topluluk Komutları](./community) sayfasına gidin
+- Ana sayfadaki arama yalnızca **seçilmiş promptlar** üzerinde çalışır (topluluk içeriği hariç). Etiket seçiliyse arama yalnızca o etiketlerle sınırlanır
+- Giriş yaptıktan sonra arama kapsamı **koleksiyonlarınıza** ve **özel promptlarınıza** genişler
+- Ana sayfada kısa anahtar kelimelerle bulamıyorsanız, [Topluluk Promptları](./community) sayfasında tekrar arayın
 
 ![](/img/docs/interface-search.png)
 
-## 🔬 Prompt Kartları
+## 🔬 Prompt Kartı
 
 ### Ayrıntıları Görüntüle
 
-Ayrıntı açılır penceresini açmak için bir prompt kartına tıklayın; burada başlığı, açıklamayı, tam prompt içeriğini, notları ve kopyala düğmesini görebilirsiniz.
+Karta tıklayarak ayrıntı penceresini açın—tam içeriği, notları görün, tek tıkla kopyalayın.
 
 ![](/img/docs/prompt-card.gif)
 
 ### Promptu Kopyala
 
-Promptu almak için kartın altındaki "Kopyala" düğmesine tıklayın. Kullanmak için bir AI modeline yapıştırın.
+Kartın altındaki "Kopyala" düğmesine tıklayın, herhangi bir AI aracına (sohbet, kodlama araçları, API vb.) yapıştırarak kullanın.
 
 ### Promptu Topla
 
-Giriş yaptıktan sonra, kartta bir toplama düğmesi görünecektir. Promptu Koleksiyonuma eklemek için tıklayın.
+Giriş yaptıktan sonra kartta toplama düğmesi görünür; tıklayarak Koleksiyonum'a ekleyin.
 
 ## 🔥 Popülerlik Sıralaması
 
-Sayfa, trend içerikleri hızlıca keşfetmenize yardımcı olmak için promptları popülerliklerine göre sıralar.
+Promptlar popülerliklerine göre sıralanır ve trend içerikleri kolayca keşfedebilirsiniz. Etiket sıralaması da popülerliğe göre güncellenerek topluluktaki güncel eğilimleri yansıtır.
 
 ## İlgili Belgeler
 

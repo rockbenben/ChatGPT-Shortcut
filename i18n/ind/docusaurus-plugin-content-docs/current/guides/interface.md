@@ -1,33 +1,31 @@
 ---
 sidebar_label: Panduan Antarmuka
 title: Panduan Antarmuka AI Short | Filter Tag & Pencarian Cerdas
-description: Kuasai antarmuka AI Short! Temukan prompt dengan cepat melalui filter tag dan pencarian kata kunci, pahami detail kartu dan operasi koleksi.
+description: Kuasai antarmuka AI Short — temukan prompt AI lewat filter tag dan pencarian kata kunci, pahami detail kartu serta cara menyimpan ke Koleksi Saya.
 ---
 
 # Panduan Antarmuka
 
-Halaman AiShort menyediakan antarmuka intuitif bagi pengguna untuk menjelajahi dan memfilter prompt. Halaman ini terutama terdiri dari area tag, area pencarian, dan area tampilan prompt.
+Bagian ini memperkenalkan tiga area utama di beranda AiShort — **area tag** (tag skenario di bagian atas), **area pencarian** (kotak kata kunci), dan **area daftar prompt** (kartu di bagian bawah) — serta cara memanfaatkannya untuk menemukan prompt yang Anda butuhkan dengan cepat.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Filter Tag
 
-Area tag memudahkan pengguna untuk memfilter prompt berdasarkan domain dan fungsi.
+Saring prompt berdasarkan bidang dan fungsinya. Tombol **OR / AND** di kanan atas menentukan logika saat Anda memilih lebih dari satu tag:
 
-Melalui tombol "Beralih Aturan Filter Tag" di kanan atas, Anda dapat melakukan filter multi-tag yang lebih presisi:
-
-- **Aturan OR** (Default): Menampilkan prompt yang memiliki salah satu tag yang dipilih
-- **Aturan AND**: Hanya menampilkan prompt yang memiliki semua tag yang dipilih secara bersamaan
+- **OR** (Default): Tampilkan prompt yang cocok dengan tag mana pun
+- **AND**: Hanya tampilkan prompt yang cocok dengan semua tag sekaligus
 
 ![](/img/docs/interface-filter.png)
 
 ## 🔍 Pencarian Kata Kunci
 
-Fungsi pencarian kata kunci mendukung pencarian judul, deskripsi, dan konten prompt.
+Mendukung pencarian judul, deskripsi, maupun isi prompt.
 
-- Pencarian beranda terutama mencakup **prompt pilihan** (tidak termasuk prompt komunitas). Jika tag sudah dipilih, ruang lingkup pencarian dibatasi pada tag tersebut
-- Setelah masuk, ruang lingkup pencarian meluas untuk mencakup **koleksi** dan **prompt kustom** Anda
-- Jika Anda tidak menemukan hasil yang diharapkan di beranda menggunakan kata kunci pendek, silakan buka halaman [Prompt Komunitas](./community) untuk mencari
+- Pencarian di beranda mencakup **prompt pilihan** (tidak termasuk komunitas). Bila tag sudah dipilih, hasil pencarian akan terbatas pada tag tersebut
+- Setelah login, cakupan pencarian otomatis diperluas ke **koleksi** dan **prompt kustom** Anda
+- Kalau kata kunci pendek tidak membuahkan hasil di beranda, coba cari ulang di halaman [Prompt Komunitas](./community)
 
 ![](/img/docs/interface-search.png)
 
@@ -35,21 +33,21 @@ Fungsi pencarian kata kunci mendukung pencarian judul, deskripsi, dan konten pro
 
 ### Lihat Detail
 
-Klik kartu prompt untuk membuka popup detail, di mana Anda dapat melihat judul, deskripsi, konten prompt lengkap, catatan, dan tombol salin.
+Klik kartu untuk membuka popup detail — lihat konten lengkap, catatan, dan salin sekali klik.
 
 ![](/img/docs/prompt-card.gif)
 
 ### Salin Prompt
 
-Klik tombol "Salin" di bagian bawah kartu untuk mendapatkan prompt. Tempelkan ke model AI untuk digunakan.
+Klik tombol "Salin" di bawah kartu, lalu tempel ke alat AI mana pun (halaman percakapan, tool coding, panggilan API, dll.).
 
 ### Kumpulkan Prompt
 
-Setelah login, tombol kumpulkan akan muncul di kartu. Klik untuk menambahkan prompt ke Koleksi Saya.
+Setelah login, tombol koleksi akan muncul di kartu, klik untuk menambahkan ke Koleksi Saya.
 
 ## 🔥 Pengurutan Popularitas
 
-Halaman mengurutkan prompt berdasarkan popularitasnya untuk membantu Anda dengan cepat menemukan konten yang sedang tren.
+Mengurutkan prompt berdasarkan tingkat popularitasnya — cara cepat melihat apa yang sedang tren. Urutan tag pun ikut menyesuaikan, mencerminkan preferensi komunitas terkini.
 
 ## Dokumentasi Terkait
 

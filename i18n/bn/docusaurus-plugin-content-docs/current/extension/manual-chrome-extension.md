@@ -6,14 +6,11 @@ description: Chrome এ AI Short এক্সটেনশনটি CRX ফাই
 
 # Chrome CRX এক্সটেনশন স্থানীয় ইনস্টলেশন গাইড
 
-## CRX ইনস্টলেশন প্যাকেজ ডাউনলোড করুন
-
-ChatGPT Shortcut crx ইনস্টলেশন প্যাকেজ (ChatGPT_Shortcut-crx-3.x.x.zip) ডাউনলোড করুন, এবং এটি আনজিপ করুন (crx ফাইলটি আনজিপ করা ফোল্ডারে রয়েছে)।
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **ঘরোয়া ডাউনলোড**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), পাসওয়ার্ড: 1qow
-
-![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
+> এই গাইডটি ধরে নিচ্ছে যে আপনি ইতিমধ্যেই [ইনস্টলেশন পৃষ্ঠা](./README.md) থেকে CRX প্যাকেজটি ডাউনলোড ও আনজিপ করেছেন (.crx ফাইলটি আনজিপ করা ফোল্ডারের ভেতরে রয়েছে)।
+>
+> ⚠️ **দুটি সাধারণ ভুল**:
+> ১. অবশ্যই **`.crx` ফাইলটি** (আনজিপ করা) এক্সটেনশন পৃষ্ঠায় টেনে আনতে হবে, zip ইনস্টলেশন প্যাকেজ নিজে নয়
+> ২. অবশ্যই **টেনে আনুন** — "আনপ্যাক করা এক্সটেনশন লোড করুন" বাটনে ক্লিক করবেন না (এটি zip সংস্করণের জন্য)
 
 ## ডেভেলপার মোড সক্ষম করুন
 

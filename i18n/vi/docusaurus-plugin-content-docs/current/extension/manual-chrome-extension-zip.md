@@ -6,11 +6,11 @@ description: Cài đặt tiện ích AI Short trong Chrome qua tệp ZIP. Giải
 
 # Hướng dẫn Cài đặt Tiện ích Chrome ZIP Cục bộ
 
-## Tải xuống Tiện ích
-
-Tải xuống gói cài đặt ZIP tiện ích ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) và giải nén. (Thư mục đã giải nén cần được giữ trên máy tính, nên nhớ giải nén đến vị trí cố định.)
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+> Hướng dẫn này giả định bạn đã tải xuống và giải nén gói cài đặt ZIP từ [trang cài đặt](./README.md).
+>
+> ⚠️ **Hai lỗi phổ biến**:
+> 1. Thư mục đã giải nén phải được **giữ lâu dài** (tiện ích sẽ đọc thư mục này khi chạy) — hãy đặt vào một vị trí cố định trước khi tiếp tục
+> 2. Kéo vào là **toàn bộ thư mục đã giải nén** (không phải bản thân tệp zip, cũng không phải các tệp lẻ bên trong thư mục)
 
 ## Bật Chế độ Nhà phát triển
 

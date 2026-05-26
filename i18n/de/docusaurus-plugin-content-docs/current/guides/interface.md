@@ -1,33 +1,31 @@
 ---
 sidebar_label: Schnittstellen-Leitfaden
-title: Schnittstellen-Guide - Suche & Filter
-description: Meistern Sie AI Short. Filtern Sie nach Tags und nutzen Sie die intelligente Suche, um den perfekten Prompt zu finden.
+title: AI Short Schnittstellen-Leitfaden | Tag-Filterung und intelligente Suche
+description: Finden Sie schnell den passenden KI-Prompt — mit Tag-Filter (UND/ODER), Stichwortsuche und Kartendetails auf der AI Short-Startseite.
 ---
 
 # Schnittstellen-Leitfaden
 
-Die AiShort-Seite bietet Benutzern eine intuitive Benutzeroberfläche zum Durchsuchen und Filtern von Prompts. Die Seite besteht hauptsächlich aus dem Tag-Bereich, dem Suchbereich und dem Prompt-Anzeigebereich.
+In diesem Abschnitt werden die drei Hauptbereiche der AiShort-Startseite vorgestellt — **Tag-Bereich** (Szenario-Tags oben), **Suchbereich** (Stichwort-Eingabefeld) und **Prompt-Anzeigebereich** (Kartenliste darunter) — und wie Sie damit schnell den passenden Prompt finden.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Tag-Filterung
 
-Der Tag-Bereich hilft Benutzern, Prompts basierend auf Domäne und Funktion zu filtern.
+Filtern Sie Prompts nach Themengebiet und Funktion. Der **OR / AND**-Umschalter oben rechts bestimmt die Regel bei mehreren Tags:
 
-Über die Schaltfläche "Tag-Filterregel wechseln" oben rechts können Sie eine präzisere Multi-Tag-Filterung erreichen:
-
-- **ODER-Regel** (Standard): Zeigt Prompts an, die eines der ausgewählten Tags haben
-- **UND-Regel**: Zeigt nur Prompts an, die alle ausgewählten Tags gleichzeitig haben
+- **OR** (Standard): Zeigt Prompts an, die mindestens einem der Tags entsprechen
+- **AND**: Zeigt nur Prompts an, auf die alle Tags zutreffen
 
 ![](/img/docs/interface-filter.png)
 
 ## 🔍 Stichwortsuche
 
-Die Stichwortsuche unterstützt die Suche nach Prompt-Titeln, Beschreibungen und Inhalten.
+Durchsucht Titel, Beschreibung und Inhalt der Prompts.
 
-- Die Suche auf der Startseite umfasst hauptsächlich **ausgewählte Prompts** (ohne Community-Prompts). Wenn bereits Tags ausgewählt sind, ist der Suchbereich auf diese Tags beschränkt
-- Nach der Anmeldung wird der Suchbereich erweitert und umfasst Ihre **Sammlungen** und **benutzerdefinierten Prompts**
-- Wenn Sie auf der Startseite mit kurzen Schlüsselwörtern nicht die erwarteten Ergebnisse finden, suchen Sie bitte auf der Seite [Community-Prompts](./community)
+- Die Suche auf der Startseite umfasst **kuratierte Prompts** (ohne Community). Bei ausgewählten Tags ist der Suchbereich auf diese Tags beschränkt
+- Nach der Anmeldung wird der Suchbereich auf Ihre **Sammlung** und **benutzerdefinierten Prompts** erweitert
+- Wenn Sie auf der Startseite mit kurzen Stichwörtern nichts finden, suchen Sie erneut auf der Seite [Community-Prompts](./community)
 
 ![](/img/docs/interface-search.png)
 
@@ -35,13 +33,13 @@ Die Stichwortsuche unterstützt die Suche nach Prompt-Titeln, Beschreibungen und
 
 ### Details ansehen
 
-Klicken Sie auf eine Prompt-Karte, um das Detail-Popup zu öffnen, in dem Sie Titel, Beschreibung, vollständigen Prompt-Inhalt, Bemerkungen und Kopier-Schaltfläche sehen können.
+Klicken Sie auf eine Karte, um das Detail-Popup zu öffnen — sehen Sie den vollständigen Inhalt und die Bemerkungen und kopieren Sie mit einem Klick.
 
 ![](/img/docs/prompt-card.gif)
 
 ### Prompt kopieren
 
-Klicken Sie auf die Schaltfläche "Kopieren" unten auf der Karte, um den Prompt zu erhalten. Fügen Sie ihn zur Verwendung in ein KI-Modell ein.
+Klicken Sie unten auf der Karte auf "Kopieren" und fügen Sie den Prompt in ein beliebiges KI-Tool ein — Chat-Oberflächen, Coding-Tools, API-Aufrufe und vieles mehr.
 
 ### Prompt sammeln
 
@@ -49,9 +47,7 @@ Nach der Anmeldung erscheint eine Sammeln-Schaltfläche auf der Karte. Klicken S
 
 ## 🔥 Beliebte Sortierung
 
-Die Seite sortiert Prompts nach ihrer Beliebtheit, damit Sie trendige Inhalte schnell entdecken können.
-
-Die Tag-Sortierung wird auch basierend auf Heat-Werten angepasst, um sicherzustellen, dass sie die neuesten Vorlieben der Community widerspiegelt.
+Prompts werden nach Beliebtheit sortiert, damit Sie aktuelle Trendinhalte schnell entdecken. Auch die Tag-Reihenfolge richtet sich nach den Beliebtheitswerten und spiegelt so die aktuellen Interessen der Community wider.
 
 ## Verwandte Dokumentation
 

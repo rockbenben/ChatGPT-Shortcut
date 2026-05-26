@@ -1,43 +1,41 @@
 ---
 sidebar_label: Prompt Komunitas
-title: Komunitas AI Short | Temukan & Bagikan Prompt AI Berkualitas
-description: Temukan prompt AI dengan rating tertinggi di komunitas! Filter berdasarkan suara, bagikan ide terbaik Anda untuk eksposur, atau kelola prompt pribadi untuk penggunaan personal.
+title: Komunitas AI Short | Temukan & Bagikan Prompt AI Pilihan
+description: Jelajahi prompt AI pilihan komunitas — sistem voting menyaring konten berkualitas, bagikan kreasi Anda agar lebih banyak dilihat, atau simpan sebagai prompt pribadi.
 ---
 
 # Prompt Komunitas
 
-Bagian Prompt Komunitas menampilkan prompt kustom yang dibagikan oleh pengguna. Anda dapat menemukan inspirasi di sini atau membagikan kreativitas Anda sendiri.
+Prompt komunitas dibagikan langsung oleh pengguna — tempat Anda menemukan inspirasi sekaligus membagikan karya sendiri. **Sistem voting** otomatis mengangkat konten yang berkualitas: prompt yang dinilai berguna akan tampil lebih sering, sementara yang kurang bermanfaat lambat laun jarang muncul.
 
 ![](/img/docs/community-page.png)
 
 ## Pengurutan dan Penyaringan
 
-Halaman komunitas menyediakan beberapa metode penyaringan:
-
-- **Waktu Publikasi**: Lihat prompt yang dibagikan terbaru
-- **Pengurutan Suara**: Lihat prompt dengan suara terbanyak
-- **Pencarian Kata Kunci**: Cari prompt tentang topik tertentu
+- **Waktu Publikasi**: Lihat berbagi terbaru
+- **Pengurutan Suara**: Lihat prompt dengan upvote terbanyak
+- **Pencarian Kata Kunci**: Cari topik tertentu
 
 ## Mekanisme Voting
 
-Tentukan eksposur prompt dengan upvote/downvote:
+Upvote/downvote menentukan eksposur prompt:
 
-- **Upvote**: Membantu konten berkualitas mendapatkan lebih banyak eksposur
-- **Downvote**: Setelah jumlah downvote mencapai jumlah tertentu, prompt akan disembunyikan
+- **Upvote**: Membantu prompt berkualitas menjangkau lebih banyak orang
+- **Downvote**: Begitu jumlah downvote mencapai ambang batas, prompt otomatis disembunyikan
 
-**Tautan Koleksi**: Saat mengumpulkan prompt komunitas, sistem akan secara otomatis memberikan upvote.
+**Terhubung dengan Koleksi**: Menyimpan prompt komunitas otomatis memberikan satu upvote.
 
 ![Status Tombol Voting](/img/docs/community-vote.png)
 
-> Voting hanya terbuka untuk pengguna yang login, dan suara setiap orang untuk prompt yang sama didasarkan pada suara terbaru.
+> Voting hanya tersedia bagi pengguna yang sudah login. Untuk prompt yang sama, hanya vote terakhir Anda yang dihitung.
 
 ## Prompt Pribadi
 
-Kreativitas yang tidak ingin Anda publikasikan dapat diatur menjadi pribadi:
+Kalau Anda belum siap memublikasikan sebuah ide, simpan saja sebagai prompt pribadi:
 
-- Saat membuat atau mengedit prompt, hapus centang opsi "Bagikan ke Komunitas"
-- Prompt pribadi hanya terlihat oleh Anda sendiri
-- Anda dapat beralih antara status publik/pribadi kapan saja
+- Saat membuat atau mengedit, hilangkan centang pada "Bagikan ke Komunitas"
+- Prompt pribadi hanya bisa dilihat oleh Anda sendiri
+- Anda bebas mengubahnya menjadi publik atau pribadi kapan saja
 
 ## Dokumentasi Terkait
 

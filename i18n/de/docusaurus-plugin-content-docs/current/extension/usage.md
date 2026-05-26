@@ -6,17 +6,17 @@ description: Meistern Sie die AI Short Erweiterung! Seitenleiste mit Alt+Shift+S
 
 # Wie verwende ich die Browser-Erweiterung?
 
-ChatGPT Shortcut unterstützt 13 Hauptsprachen. Die Sprache der Erweiterung wird automatisch nach Ihrer Browser-Umgebung eingestellt. Sie können sie auch manuell in den Einstellungen ändern.
+ChatGPT Shortcut unterstützt 18 Hauptsprachen. Die Sprache der Erweiterung wird automatisch nach Ihrer Browser-Umgebung eingestellt. Sie können sie auch manuell in den Einstellungen ändern.
 
 ![](/img/docs/extension-settings.png)
 
 ## Anzeigemodus
 
-Die Erweiterung unterstützt drei Anzeigemodi:
+Die Erweiterung unterstützt drei Anzeigemodi — wählen Sie nach Ihren Gewohnheiten:
 
-- **Seitenleisten-Modus**: Öffnet sich in der Browser-Seitenleiste neben dem Webinhalt
-- **Popup-Modus**: Zeigt sich als Popup beim Klicken auf das Symbol
-- **Fenster-Modus**: Öffnet sich in einem separaten schwebenden Fenster
+- **Seitenleisten-Modus**: Öffnet sich in der Browser-Seitenleiste — neben der Webseite angezeigt, ideal, wenn Sie KI-Konversation und Prompts gleichzeitig sehen möchten
+- **Popup-Modus**: Klick auf das Erweiterungssymbol öffnet ein kleines Fenster — schnell nachsehen und wieder schließen, ohne Bildschirmplatz zu beanspruchen
+- **Fenster-Modus**: Öffnet sich in einem separaten schwebenden Fenster — kann auf einen zweiten Monitor gezogen oder frei platziert werden
 
 ## Seitenleiste geöffnet halten
 

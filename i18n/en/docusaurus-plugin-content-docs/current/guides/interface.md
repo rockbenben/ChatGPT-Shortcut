@@ -6,28 +6,26 @@ description: Master the AI Short interface! Quickly locate prompts via tag filte
 
 # Interface Guide
 
-The AiShort page provides users with an intuitive interface to browse and filter prompts. The page mainly consists of the tag area, search area, and prompt display area.
+This section walks through the three parts of the AiShort homepage — the **tags** at the top, the **search bar** below them, and the **prompt cards** that fill the rest of the page — and how to use them together to find the prompt you need.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Tag Filtering
 
-The tag area facilitates users to filter prompts based on domain and function.
+Filter prompts by domain and function. The **OR / AND** switcher in the top right controls how multiple tags are combined:
 
-Via the "Tag Filter Rule Switch" button at the top right, you can achieve more precise multi-tag filtering:
-
-- **OR Rule** (Default): Show prompts that have any of the selected tags
-- **AND Rule**: Only show prompts that have all selected tags simultaneously
+- **OR** (default): Show prompts matching any of the selected tags
+- **AND**: Show only prompts matching all selected tags
 
 ![](/img/docs/interface-filter.png)
 
 ## 🔍 Keyword Search
 
-Keyword search function supports searching for prompt titles, descriptions, and content.
+Searches across prompt titles, descriptions, and content.
 
-- Homepage search mainly includes **curated prompts** (excluding community prompts). If tags are already selected, the search scope is limited to those tags
-- After logging in, the search scope expands to include your **collections** and **custom prompts**
-- If you don't find the expected results on the homepage using short keywords, please go to the [Community Prompts](./community) page to search
+- Homepage search covers the **curated prompts** (community excluded). When tags are selected, search is scoped to those tags
+- After logging in, search expands to include your **collections** and **custom prompts**
+- If short keywords return nothing on the homepage, search again on the [Community Prompts](./community) page
 
 ![](/img/docs/interface-search.png)
 
@@ -35,26 +33,24 @@ Keyword search function supports searching for prompt titles, descriptions, and 
 
 ### View Details
 
-Click on a prompt card to open the details popup, where you can view the title, description, complete prompt content, remarks, and copy button.
+Click a card to open the details popup — read the full content and notes, then copy in one click.
 
 ![](/img/docs/prompt-card.gif)
 
 ### Copy Prompt
 
-Click the "Copy" button at the bottom of the card to get the prompt. Paste it into an AI model to use.
+Click the "Copy" button at the bottom of the card, then paste into any AI tool (chat pages, coding tools, API calls, etc.).
 
 ### Collect Prompt
 
-After logging in, a collect button will appear on the card. Click to add the prompt to My Collection.
+After logging in, a collect button appears on each card — click it to add the prompt to My Collection.
 
 ## 🔥 Popular Sorting
 
-The page sorts prompts based on their popularity to help you quickly discover trending content.
-
-Tag sorting is also adjusted based on heat values to ensure it reflects the community's latest preferences.
+Sorts prompts by popularity so trending picks rise to the top. Tags reorder by popularity too, so the list always mirrors what the community is using right now.
 
 ## Related Documentation
 
-- [Getting Started](./getting-started) - Basic usage methods
+- [Getting Started](./getting-started) - Basic usage
 - [My Collection](./my-collection) - Collection, tags, and sorting
 - [Community Prompts](./community) - Discover and share

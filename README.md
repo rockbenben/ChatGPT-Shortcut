@@ -22,6 +22,13 @@
 </p>
 
 <p align="center">
+    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
+</p>
+
+<p align="center">
     English | <a href="./README-zh.md">简体中文</a> | <a href="./README-lang/README-zh-hant.md">繁體中文</a> |
 <a href="./README-lang/README-ja.md">日本語</a> |
 <a href="./README-lang/README-ko.md">한국어</a> |
@@ -39,82 +46,115 @@
 <a href="./README-lang/README-hi.md">हिन्दी</a> |
 <a href="./README-lang/README-bn.md">বাংলা</a>
 </p>
+
 <p align="center">
-    <em>AiShort (ChatGPT Shortcut) - Maximize your Efficiency and Productivity</em>
+    <em>Thousands of battle-tested AI prompts — turn ChatGPT, Cursor, and any AI tool from mediocre to expert-grade.</em>
 </p>
+
+## 📖 Table of Contents
+
+- [⚡ Quick Start](#-quick-start)
+- [💎 Why AiShort?](#-why-aishort)
+- [📸 Screenshots](#-screenshots)
+- [🧩 Browser Extension](#-browser-extension)
+- [🚀 Deploy](#-deploy)
+- [🤝 Contributing](#-contributing)
+- [💬 Community](#-community)
+- [🌟 Star History](#-star-history)
+- [📜 License](#-license)
 
 ## ⚡ Quick Start
 
 1. Visit [aishort.top](https://www.aishort.top/en/)
 2. Search or browse for the prompt you need
-3. Click "Copy" and paste into any AI model
+3. Click "Copy" and paste into any AI tool — ChatGPT-style chat pages, coding tools like Cursor, your own API calls, etc.
 
 ![AiShort Interface](static/img/docs/interface-home.png)
 
-That's it! For more features, read on or check the [User Guide](https://www.aishort.top/en/docs/guides/getting-started).
+That's it! For more features, check the [User Guide](https://www.aishort.top/en/docs/guides/getting-started).
 
-## Why Use AiShort?
+## 💎 Why AiShort?
 
-AiShort (ChatGPT Shortcut) provides a curated list of AI prompts, helping you quickly find prompts for any scenario.
+**The gap between using AI and using AI well is one good prompt.**
+
+Same question, different prompts — and AI output goes from generic to genuinely useful. Writing expert-level prompts yourself takes years of iteration. AiShort hands you a curated library of prompts already battle-tested by the community, across writing, coding, office work, learning, design, marketing, and more. Copy → paste → expert-grade output, instantly.
+
+No signup. No paywall. No install. Open and use.
 
 ### Core Features
 
-🚀 **One-Click Prompts** - Curated professional prompts, one click to copy and use.
+🚀 **Curated Prompts** — Covering writing, coding, office work, and more — ready to copy and use.
 
-🔍 **Smart Search** - Find prompts fast with tag filtering and keyword search.
+🔍 **Tag + Keyword Search** — Filter by scenario tags, or search by keyword.
 
-🌍 **18 Languages** - Translations for all prompts, with native language replies.
+🌍 **18 Languages** — Full UI and prompt translation, with replies in your native language.
 
-📦 **Ready to Use** - No registration required, start using immediately.
+📦 **Ready to Use** — No registration required, just open and go.
 
-### Advanced Features (Login Required)
+### Advanced Features (After Login)
 
-📂 **My Collection** - Save favorite prompts with drag-and-drop sorting and custom tags.
+📂 **My Collection** — Drag-and-drop sorting, custom tag classification.
 
-✏️ **Custom Prompts** - Create, edit, and manage your own prompts.
+✏️ **Custom Prompts** — Create, edit, and manage your own prompts.
 
-🗳️ **Community** - Share prompts and vote on community contributions.
+🗳️ **Community** — Share prompts to the community and vote.
 
-📤 **Export** - Backup all your prompts as JSON.
+📤 **Data Export** — One-click export of all prompts as JSON.
 
-🔐 **Multiple Login Options** - Password, Google, or passwordless email link.
+🔐 **Multiple Login Methods** — Password, Google, or passwordless email link.
 
-## Browser Extension
+## 📸 Screenshots
 
-Access AiShort prompts anytime with our browser extension. Supports Chrome, Edge, and Firefox with a sidebar that opens with `Alt + Shift + S`.
+<table>
+  <tr>
+    <td width="50%"><img src="static/img/docs/my-collection-view.gif" alt="My Collection" /></td>
+    <td width="50%"><img src="static/img/docs/extension-sidebar.gif" alt="Browser Extension" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>My Collection</strong> — drag, tag, organize</td>
+    <td align="center"><strong>Browser Extension</strong> — sidebar in ChatGPT, Gemini, Claude…</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="static/img/docs/prompt-card.gif" alt="Prompt Card" /></td>
+    <td width="50%"><img src="static/img/docs/community-page.png" alt="Community" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Prompt Card</strong> — preview & one-click copy</td>
+    <td align="center"><strong>Community</strong> — discover & vote</td>
+  </tr>
+</table>
+
+## 🧩 Browser Extension
+
+Access AiShort prompts anywhere with our browser extension. Supports Chrome, Edge, and Firefox — open the sidebar with `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-We also offer the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey script for using AiShort sidebar on any website.
+Or use the [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey script to summon the AiShort sidebar on any website.
 
-## Deploy
+## 🚀 Deploy
 
-Deploy your own instance via Vercel, Cloudflare Pages, Docker, or locally. See the [Deployment Guide](https://www.aishort.top/en/docs/deploy).
+Deploy your own instance via Vercel, Cloudflare Pages, Docker, or locally. See the [Deployment Guide](https://www.aishort.top/en/docs/deploy) for full details.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## Sync Updates
+> **Tip**: Vercel's one-click deploy creates a new project (not a fork), so the upstream-update check won't work. To get auto-sync, fork the repo first, then import the fork in Vercel — full instructions in the [deploy guide](https://www.aishort.top/en/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
 
-If you deployed via Vercel's one-click deploy, you may see constant update prompts. This happens because Vercel creates a new project instead of forking. To fix:
+## 🤝 Contributing
 
-1. Delete the existing repository
-2. Fork this project using the "Fork" button
-3. Redeploy on [Vercel](https://vercel.com/new) using your fork
+Contributions of all kinds are welcome:
 
-### Auto Updates
+- **Suggest a prompt** or **report a bug** → open a [GitHub Issue](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)
+- **Submit a PR** → fork the repo, create a branch, send a pull request
+- **Add a translation** or **improve docs** → see the `i18n/` and `docs/` directories
+- **Star ⭐ and share** to help others discover useful prompts
 
-After forking, enable Workflows on the Actions page and activate Upstream Sync Action for daily automatic updates.
+For local development setup, see the [Deployment Guide](https://www.aishort.top/en/docs/deploy).
 
-![Auto Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-### Manual Updates
-
-See [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) for syncing forks.
-
-## Community
+## 💬 Community
 
 Join us for discussions and feedback:
 
@@ -124,6 +164,14 @@ Join us for discussions and feedback:
 <a href="https://discord.gg/PZTQfJ4GjX">
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+
+## 📜 License
+
+[MIT](LICENSE) © [rockbenben](https://github.com/rockbenben)
 
 ---
 

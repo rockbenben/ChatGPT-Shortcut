@@ -1,47 +1,53 @@
 ---
 slug: /
 sidebar_label: AI Short Einführung
-title: AI Short - Kuratierte ChatGPT Prompt-Bibliothek
-description: Optimieren Sie Ihre ChatGPT-Antworten. Kopieren Sie beste Prompts und verwalten Sie Ihre Sammlung für mehr Produktivität.
+title: AI Short - Kuratierte KI Prompt-Bibliothek | Ein-Klick-Kopieren
+description: AI Short - kuratierte Bibliothek mit KI-Prompts für ChatGPT, Gemini, Claude, Mistral Le Chat und weitere Modelle. Ein-Klick-Kopieren, Sammlungsverwaltung und DSGVO-konforme Offline-Variante mit lokaler Datenspeicherung für Unternehmen.
 ---
 
 # Einführung in AI Short
 
-AI Short (ChatGPT Shortcut) bietet eine prägnante und einfach zu bedienende Liste von KI-Prompts, um Benutzern zu helfen, schnell geeignete Prompts für verschiedene Szenarien zu finden.
+AI Short (ChatGPT Shortcut) ist eine nach Szenarien kategorisierte KI-Prompt-Bibliothek zum sofortigen Kopieren und Verwenden.
+
+> **Was ist ein „Prompt"?** Ein Prompt ist die Anweisung, die Sie der KI geben — sie bestimmt die Qualität der Ausgabe. Gute Prompts liefern professionelle, präzise Antworten; vage Prompts nur mittelmäßige. AiShort sammelt für Sie hochwertige Prompts für verschiedene Szenarien (Schreiben, Programmieren, Büro, Lernen ...), damit Sie sich nicht selbst überlegen müssen, wie Sie die richtige Frage stellen.
 
 ## ⚡ 30-Sekunden Schnellstart
 
 1. Öffnen Sie AI Short
 2. Suchen oder durchsuchen Sie den benötigten Prompt
-3. Klicken Sie auf "Kopieren" und fügen Sie ihn in ein beliebiges KI-Konversationsmodell ein
+3. Klicken Sie auf "Kopieren" und fügen Sie ihn in ein beliebiges KI-Tool ein — Chat-Seiten wie ChatGPT, Gemini oder Claude, Programmier-Tools wie Cursor, API-Aufrufe oder andere KI-Anwendungen
 
-So einfach ist das! Für weitere Funktionen lesen Sie weiter oder schauen Sie im [Benutzerhandbuch](./guides/getting-started) nach.
+So einfach ist das — weitere Funktionen finden Sie im [Erste-Schritte-Leitfaden](./guides/getting-started).
 
 ## Kernfunktionen
 
-🚀 **Ein-Klick-Prompts**: Ausgewählte professionelle Prompts, bereit zum Kopieren und Verwenden mit einem Klick.
+🚀 **Kuratierte Prompts**: Abdeckung von Schreiben, Programmieren, Büro und mehr — sofort einsatzbereit.
 
-🔍 **Intelligente Suche**: Finden Sie schnell die benötigten Prompts durch Tag-Filterung und Stichwortsuche.
+🔍 **Tag- und Stichwortsuche**: Nach Szenario-Tags filtern oder direkt Stichwörter suchen.
 
-🌍 **Mehrsprachige Unterstützung**: Bietet Übersetzung für 18 Sprachen und unterstützt Antworten in der Muttersprache.
+🌍 **18 Sprachen**: Vollständige Übersetzung der Oberfläche und Prompts, Antwort in der Muttersprache möglich.
 
 📦 **Sofort einsatzbereit**: Keine Registrierung erforderlich, einfach besuchen und nutzen.
 
 ## Erweiterte Funktionen (Nach Anmeldung)
 
-📂 **Meine Sammlung**: Sammeln Sie Lieblingsprompts, unterstützt Drag-and-Drop-Sortierung und benutzerdefinierte Tag-Klassifizierung.
+📂 **Meine Sammlung**: Drag-and-Drop-Sortierung, benutzerdefinierte Tag-Klassifizierung.
 
 ✏️ **Benutzerdefinierte Prompts**: Erstellen, bearbeiten und verwalten Sie Ihre eigenen Prompts.
 
-🗳️ **Community-Interaktion**: Teilen Sie Prompts im Community-Bereich und nehmen Sie an Abstimmungen teil.
+🗳️ **Community-Interaktion**: Teilen Sie Prompts in der Community und nehmen Sie an Abstimmungen teil.
 
-📤 **Datenexport**: Exportieren Sie alle Prompts als JSON-Datei mit einem Klick.
+📤 **Datenexport**: Exportieren Sie alle Prompts mit einem Klick als JSON.
 
-🔐 **Mehrere Anmeldemethoden**: Unterstützt Kontopasswort, Google und passwortlose E-Mail-Links.
+🔐 **Mehrere Anmeldemethoden**: Konto-Passwort, Google, passwortlose E-Mail-Links.
+
+## Offline-Version
+
+Die [Offline-Version](./guides/offline) ist speziell für Unternehmens-Intranets, Behördennetzwerke und andere Szenarien ohne Internetzugang konzipiert. Es ist kein Backend-Server und kein Konto erforderlich — nach der Bereitstellung sofort einsatzbereit. Sie behält die Kernfunktionen Browsen, Suchen, Sammeln und Anpassen bei, und das Datenformat ist mit der Online-Version kompatibel.
 
 ## Prompt-Quellen
 
-Prompts stammen aus Internet-Auswahlen, Community-Shares und [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Wir aktualisieren regelmäßig, um Ihnen kontinuierlich neue Prompts und Inspiration zu bringen.
+Prompts stammen aus Internet-Auswahlen, Community-Beiträgen und [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) und werden kontinuierlich aktualisiert.
 
 ## Treten Sie der Community bei
 

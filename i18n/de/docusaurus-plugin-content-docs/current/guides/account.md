@@ -1,12 +1,12 @@
 ---
 sidebar_label: Kontoverwaltung
-title: AI Short Konto - Google-Login & E-Mail
-description: Greifen Sie per Google oder E-Mail auf Ihre Prompts zu. Einfache Kontoverwaltung und Datenwiederherstellung.
+title: AI Short Kontoverwaltung | Google- und passwortlose Anmeldung
+description: Anmelden mit Google oder passwortlosem E-Mail-Link — geräteübergreifende Synchronisierung Ihrer Sammlung. DSGVO-konform, Passwortzurücksetzung per Klick.
 ---
 
 # Kontoverwaltung
 
-AiShort bietet mehrere Anmeldemethoden, um Ihnen jederzeit einen einfachen Zugriff auf Ihre persönlichen Daten zu ermöglichen.
+Sie können AiShort auch ohne Anmeldung nutzen — **aber nach der Anmeldung** können Sie Ihre Lieblings-Prompts sammeln, eigene Prompts erstellen, mit der Community teilen und geräteübergreifend synchronisieren. Im Folgenden werden Anmeldung, Registrierung, Passwort- und Cache-Operationen erklärt.
 
 ## Anmeldemethoden
 
@@ -14,13 +14,11 @@ AiShort bietet mehrere Anmeldemethoden, um Ihnen jederzeit einen einfachen Zugri
 
 Melden Sie sich mit Ihrem Benutzernamen oder Ihrer registrierten E-Mail-Adresse und einem Passwort an.
 
-Wenn Sie Ihr Passwort vergessen haben, klicken Sie auf der Anmeldeseite auf "Passwort vergessen", geben Sie Ihre registrierte E-Mail-Adresse ein, und das System sendet Ihnen einen Link zum Zurücksetzen.
+Passwort vergessen: Klicken Sie auf der Anmeldeseite auf "Passwort vergessen", geben Sie Ihre registrierte E-Mail-Adresse ein, und Sie erhalten einen Link zum Zurücksetzen.
 
 ### Google-Anmeldung
 
-Klicken Sie auf das Google-Symbol auf der Anmeldeseite, um sich mit einem Klick mit Ihrem Google-Konto anzumelden.
-
-Wenn Sie die Google-Anmeldung zum ersten Mal verwenden, wird automatisch ein Konto erstellt, ohne dass eine separate Registrierung erforderlich ist.
+Klicken Sie auf der Anmeldeseite auf das Google-Symbol, um sich mit einem Klick anzumelden. Bei der ersten Anmeldung wird automatisch ein Konto erstellt — eine separate Registrierung ist nicht erforderlich.
 
 ![](/img/docs/account-login.png)
 
@@ -28,37 +26,36 @@ Wenn Sie die Google-Anmeldung zum ersten Mal verwenden, wird automatisch ein Kon
 
 1. Geben Sie Ihre registrierte E-Mail-Adresse auf der Anmeldeseite ein
 2. Klicken Sie auf "Anmeldelink senden"
-3. Überprüfen Sie Ihre E-Mails und klicken Sie auf den Link, um sich anzumelden
+3. Öffnen Sie den Link in der E-Mail, um sich anzumelden
 
-Diese Methode erfordert kein Merken eines Passworts und ist für Benutzer geeignet, die sich nicht häufig anmelden.
+Sie müssen sich kein Passwort merken — praktisch für gelegentliche Anmeldungen.
 
 ## Konto registrieren
 
-1. Klicken Sie auf die Option "Registrieren" auf der Anmeldeseite
+1. Klicken Sie auf der Anmeldeseite auf "Registrieren"
 2. Geben Sie Benutzername, E-Mail und Passwort ein
-3. Automatische Anmeldung nach Abschluss der Registrierung
+3. Nach dem Absenden werden Sie automatisch angemeldet
 
 ![](/img/docs/account-register.png)
 
 ## Passwort ändern
 
-Nach der Anmeldung können Sie Ihr Passwort im Benutzerzentrum ändern:
+Nach der Anmeldung können Sie Ihr Passwort unter „Mein Konto" ändern:
 
-![Benutzerzentrum-Seite](/img/docs/account-profile.png)
+![Mein-Konto-Seite](/img/docs/account-profile.png)
 
-1. Geben Sie das aktuelle Passwort ein
-2. Geben Sie das neue Passwort ein und bestätigen Sie es
-3. Änderungen speichern
+1. Aktuelles Passwort eingeben
+2. Neues Passwort eingeben und bestätigen
+3. Auf "Passwort ändern" klicken
 
 ## Cache leeren
 
-Wenn Sie auf Datensynchronisierungsprobleme oder Anzeigeanomalien stoßen:
+Bei Synchronisierungsproblemen oder Anzeigefehlern:
 
-1. Gehen Sie ins Benutzerzentrum
-2. Klicken Sie auf die Schaltfläche "Cache leeren"
-3. Die Seite wird automatisch aktualisiert und ruft Daten erneut vom Server ab
+1. Gehen Sie zu „Mein Konto" → finden Sie den Bereich „Datenverwaltung → Cache leeren"
+2. Klicken Sie auf "Cache leeren" — nach Bestätigung werden alle Daten automatisch neu geladen
 
-Das Leeren des Caches löscht Ihre Sammlungen oder benutzerdefinierten Prompts nicht; es erzwingt lediglich eine Neusynchronisierung der Daten vom Server.
+Sammlungen und benutzerdefinierte Prompts bleiben erhalten — es wird lediglich eine neue Synchronisierung angestoßen.
 
 ## Verwandte Dokumentation
 

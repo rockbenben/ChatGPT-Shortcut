@@ -1,22 +1,22 @@
 ---
 sidebar_label: Chrome ZIP Kurulum Kılavuzu
-title: Chrome ZIP Kurulumu - Manuel AI Short Uzantı Kurulumu
-description: Chrome'da AI Short uzantısını ZIP dosyası aracılığıyla kurun. Açın ve uzantılar sayfasına sürükleyin. CRX yüklenemediğinde uygundur.
+title: AI Short Chrome ZIP Kurulumu | Açılan Klasörü Uzantı Olarak Yükle
+description: Chrome'da AI Short uzantısını ZIP dosyası üzerinden kurun; açtıktan sonra uzantı sayfasına sürükleyip bırakın. CRX kurulamadığı durumlarda uygundur.
 ---
 
 # Chrome ZIP Uzantısı Yerel Kurulum Kılavuzu
 
-## Uzantıyı İndirin
-
-ChatGPT Shortcut uzantısı ZIP kurulum paketini (ChatGPT_Shortcut-zip-3.x.x.zip) indirin ve açın. (Açılan klasörün bilgisayarda tutulması gerekir, bu nedenle kalıcı bir konuma açmayı unutmayın.)
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+> Bu kılavuz, ZIP kurulum paketini [kurulum sayfasından](./README.md) indirip açtığınızı varsayar.
+>
+> ⚠️ **İki yaygın hata**:
+> 1. Açılan klasör **kalıcı olarak saklanmalıdır** (uzantı çalışırken bu dizinden okuma yapar)—devam etmeden önce kalıcı bir konuma yerleştirin
+> 2. Sürüklenen şey **açılan klasörün tamamıdır** (zip dosyasının kendisi veya klasörün içindeki tek bir dosya değil)
 
 ## Geliştirici Modunu Etkinleştirin
 
-Chrome'un "Uzantıları Yönet" sayfasını açın ve "Geliştirici modu"nu açın.
+Chrome'un "Uzantıları Yönet" sayfasını açın ve "Geliştirici modu"nu etkinleştirin.
 
-Aşağıdaki adresi kopyalayın ve tarayıcı adres çubuğuna yapıştırın, ardından açmak için Enter'a basın. Sayfanın sağ üst köşesinde "Geliştirici modu"nu açın.
+Aşağıdaki adresi kopyalayıp tarayıcı adres çubuğuna yapıştırın, Enter'a basarak açın. Sayfanın sağ üst köşesinde "Geliştirici modu"nu açın.
 
 ```txt
 chrome://extensions
@@ -30,4 +30,4 @@ Kurulumu tamamlamak için açılan klasörü uzantılar sayfasına sürükleyin.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Başarılı kurulumdan sonra, [Plugin Kullanım Öğreticisi](./usage.md)'ni kontrol edin.
+Başarılı kurulumdan sonra [Plugin Kullanım Öğreticisi](./usage.md)'ni inceleyin.

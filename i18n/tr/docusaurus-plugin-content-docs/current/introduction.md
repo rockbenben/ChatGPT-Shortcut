@@ -1,47 +1,53 @@
 ---
 slug: /
-sidebar_label: Giriş
-title: AI Short - Seçilmiş ChatGPT & AI Prompt Kütüphanesi
-description: AI yanıtlarıyla mı zorlanıyorsunuz? AI Short, ChatGPT, Claude ve daha fazlası için seçilmiş promptlar sunar. Promptları kopyalayın, koleksiyonları yönetin ve verimliliğinizi anında artırın.
+sidebar_label: AI Short Giriş
+title: AI Short - Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır
+description: AI Short, ChatGPT Türkçe, Gemini ve DeepSeek için seçilmiş AI istemleri (prompt) kütüphanesidir. Profesyoneller, öğrenciler ve içerik üreticileri için tek tıkla kopyalanan hazır prompt'lar, çok dilli arayüz, kişisel koleksiyon ve topluluk paylaşımıyla iş akışınızı hızlandırın.
 ---
 
-# AI Short'a Giriş
+# AI Short Giriş
 
-AI Short (ChatGPT Shortcut), kullanıcıların farklı senaryolara uygun promptları hızlıca bulmasına yardımcı olan özlü ve kullanımı kolay bir AI prompt listesi sunar.
+AI Short (ChatGPT Shortcut), senaryolara göre kategorilere ayrılmış, kopyalayıp kullanmaya hazır bir AI prompt kütüphanesidir.
+
+> **"Prompt" nedir?** Prompt, AI'a verdiğiniz talimattır ve çıktının kalitesini doğrudan belirler. İyi bir prompt, AI'ın profesyonel ve isabetli yanıtlar vermesini sağlar; belirsiz bir prompt ise yalnızca ortalama yanıtlar getirir. AiShort, farklı senaryolar (yazma, programlama, ofis, öğrenme...) için kaliteli promptları sizin için derler ve nasıl soracağınızı düşünme zahmetinden kurtarır.
 
 ## ⚡ 30 Saniyede Hızlı Başlangıç
 
 1. AI Short'u açın
 2. İhtiyacınız olan promptu arayın veya göz atın
-3. "Kopyala"ya tıklayın ve herhangi bir AI konuşma modeline yapıştırın
+3. "Kopyala"ya tıklayın ve herhangi bir AI aracına yapıştırın — ChatGPT gibi sohbet sayfaları, Cursor gibi kodlama araçları, API çağrıları vb.
 
-Bu kadar basit! Daha fazla özellik için okumaya devam edin veya [Kullanım Kılavuzu](./guides/getting-started)'na bakın.
+Bu kadar basit—daha fazla özellik için [Başlarken Kılavuzu](./guides/getting-started)'na bakın.
 
 ## Temel Özellikler
 
-🚀 **Tek Tıkla Promptlar**: Seçkin profesyonel promptlar, tek tıkla kopyalanmaya hazır.
+🚀 **Seçilmiş Promptlar**: Yazma, programlama, ofis gibi senaryoları kapsar, kopyalayıp hemen kullanın.
 
-🔍 **Akıllı Arama**: Etiket filtreleme ve anahtar kelime araması ile ihtiyacınız olan promptları hızlıca bulun.
+🔍 **Etiket + Anahtar Kelime Araması**: Senaryo etiketlerine göre filtreleyin veya doğrudan anahtar kelime arayın.
 
-🌍 **Çok Dilli Destek**: 18 dilde çeviri sağlar, yerel dilde yanıt destekler.
+🌍 **18 Dil**: Arayüz ve prompt çevirileri eksiksiz, ana dilinizde yanıt isteyebilirsiniz.
 
-📦 **Kullanıma Hazır**: Kayıt gerektirmez, sadece ziyaret edin ve kullanın.
+📦 **Kullanıma Hazır**: Kayıt gerektirmez, açıp hemen kullanın.
 
 ## Gelişmiş Özellikler (Giriş Yaptıktan Sonra)
 
-📂 **Koleksiyonum**: Favori promptları toplayın, sürükle-bırak sıralama ve özel etiket sınıflandırmasını destekler.
+📂 **Koleksiyonum**: Sürükle-bırak ile sıralayın, özel etiketlerle sınıflandırın.
 
 ✏️ **Özel Promptlar**: Kendi promptlarınızı oluşturun, düzenleyin ve yönetin.
 
-🗳️ **Topluluk Etkileşimi**: Topluluk bölümünde promptları paylaşın ve oylamaya katılın.
+🗳️ **Topluluk Etkileşimi**: Promptları toplulukta paylaşın, oylamaya katılın.
 
-📤 **Veri Dışa Aktarma**: Tüm promptları tek tıkla JSON dosyası olarak dışa aktarın.
+📤 **Veri Dışa Aktarma**: Tüm promptları tek tıkla JSON olarak dışa aktarın.
 
-🔐 **Çoklu Giriş Yöntemleri**: Hesap şifresi, Google ve şifresiz e-posta bağlantılarını destekler.
+🔐 **Çoklu Giriş Yöntemleri**: Hesap şifresi, Google, şifresiz e-posta bağlantısı.
+
+## Çevrimdışı Dağıtım Sürümü
+
+[Çevrimdışı Dağıtım Sürümü](./guides/offline), kurumsal intranet, kamu ağı gibi dış ağa erişilemeyen senaryolar için tasarlanmıştır. Arka uç sunucu ve hesap gerektirmez; dağıtım sonrası kutudan çıkar çıkmaz kullanılır. Göz atma, arama, koleksiyon ve özelleştirme gibi temel özellikleri korur; veri formatı çevrimiçi sürümle uyumludur.
 
 ## Prompt Kaynakları
 
-Promptlar internet seçmelerinden, topluluk paylaşımlarından ve [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)'tan alınmaktadır. Size sürekli yeni promptlar ve ilham sunmak için düzenli olarak güncelleme yapıyoruz.
+Promptlar internet seçmelerinden, topluluk paylaşımlarından ve [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)'tan derlenmiştir ve sürekli güncellenmektedir.
 
 ## Topluluğa Katılın
 

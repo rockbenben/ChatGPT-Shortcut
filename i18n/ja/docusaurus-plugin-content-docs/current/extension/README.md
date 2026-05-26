@@ -1,20 +1,32 @@
 ---
 sidebar_label: ブラウザ拡張機能のインストール
-title: AI Short 拡張機能：Chrome/Edge/Firefox
-description: AI作業を効率化！Chrome、Edge、Firefox対応の拡張機能をダウンロード。サイドバーからプロンプトを即座に呼び出せます。
+title: AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール
+description: ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーから直接 AiShort プロンプトを呼び出せます。タブを切り替えてコピー＆ペーストする必要はありません。Chrome、Edge、Firefox にワンクリックでインストール。
 ---
 
 # ブラウザ拡張機能のインストール
 
-AiShort (ChatGPT Shortcut) 拡張機能は、いつでも AIShort プロンプトライブラリを呼び出すのに役立ち、仕事や学習の効率を向上させます。Chrome、Edge、Firefox などの主流ブラウザをサポートし、サイドバーとショートカット機能を提供します。`Alt + Shift + S` で拡張機能をすばやく呼び出すことができます。
+AiShort (ChatGPT Shortcut) 拡張機能は、プロンプトライブラリを ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーに直接埋め込みます。aishort.top に戻ってコピー＆ペーストする必要はありません。Chrome、Edge、Firefox に対応し、`Alt + Shift + S` ですばやく呼び出せます。
 
-## 📥 公式ダウンロードチャンネル
+## 📥 インストール方法
+
+### 1. アプリストア（推奨、ワンクリックインストール）
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)（インストール後に一度[権限設定](./firefox-extension-setting.md)が必要です。設定しないと ChatGPT 上でサイドバーが表示されません）
+
+### 2. ストアが開けない？ローカルインストールパッケージ
+
+以下のチャンネルからダウンロードし、対応するチュートリアルに従ってインストールしてください。
+
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **国内ミラーダウンロード（ストアにアクセスできない場合に使用）**: [Alist クラウドドライブ](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[藍奏雲（パスワード: 1qow）](https://wwva.lanzouq.com/b01lsc9vi)
+
+> 📖 インストールガイド：[CRX ファイル](./manual-chrome-extension.md) · [ZIP ファイル](./manual-chrome-extension-zip.md)
+
+## ✅ インストール後
+
+`Alt + Shift + S` で呼び出すか、ツールバーのアイコンをクリックします。詳しい使い方は[使用ガイド](./usage.md)をご覧ください。
 
 ## 🧩 Tampermonkey スクリプト
 
@@ -23,3 +35,7 @@ Tampermonkey は、ユーザーがカスタムスクリプトを実行して Web
 
 このスクリプトを使用すると、任意の Web サイトで AiShort サイドバーを呼び出すことができます。
 ただし、ChatGPT の公式ページのスクリプト注入制限により、そのページではスクリプトはサイドバーではなく**ポップアップ**として実行されることに注意してください。
+
+AiShort サイドバーを有効化すると、対応ページの右下に緑色のアイコンスイッチが表示されます。このアイコンをクリックすると、サイドバーのオン／オフを切り替えられます。現在、ChatGPT、Gemini、Claude、Doubao などにデフォルトで対応しています。
+
+![](/img/docs/extension-sidebar.gif)

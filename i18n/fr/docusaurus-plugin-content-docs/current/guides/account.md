@@ -1,64 +1,61 @@
 ---
 sidebar_label: Gestion de compte
-title: Compte AI Short - Connexion Google et Email
-description: Accédez à vos prompts via Google ou email sans mot de passe. Gérez votre compte et récupérez vos données facilement.
+title: Compte AI Short | Connexion Google et lien magique
+description: Connectez-vous en un clic avec Google ou par lien magique envoyé par e-mail, sans mot de passe à retenir. Retrouvez votre collection sur tous vos appareils et reprenez vos prompts là où vous les avez laissés.
 ---
 
 # Gestion de compte
 
-AiShort fournit plusieurs méthodes de connexion pour faciliter l'accès à vos données personnelles à tout moment.
+AiShort s'utilise sans compte — mais **une fois connecté**, vous pouvez constituer votre collection de prompts favoris, créer vos propres prompts, les partager avec la communauté et synchroniser vos données entre tous vos appareils. Cette page couvre la connexion, l'inscription, la gestion du mot de passe et du cache.
 
 ## Méthodes de connexion
 
 ### Connexion par mot de passe
 
-Connectez-vous en utilisant votre nom d'utilisateur ou votre e-mail enregistré combiné avec un mot de passe.
+Connectez-vous avec votre nom d'utilisateur ou votre e-mail enregistré + un mot de passe.
 
-Si vous oubliez votre mot de passe, cliquez sur "Mot de passe oublié" sur la page de connexion, entrez votre e-mail enregistré, et le système vous enverra un lien de réinitialisation.
+Mot de passe oublié : sur la page de connexion, cliquez sur «&nbsp;Mot de passe oublié&nbsp;», saisissez votre e-mail, puis ouvrez le lien de réinitialisation reçu dans votre boîte.
 
 ### Connexion Google
 
-Cliquez sur l'icône Google sur la page de connexion pour vous connecter avec votre compte Google en un clic.
-
-L'utilisation de la connexion Google pour la première fois créera automatiquement un compte sans inscription séparée.
+Cliquez sur l'icône Google sur la page de connexion pour vous connecter en un clic. La première connexion crée automatiquement votre compte — aucune inscription séparée n'est nécessaire.
 
 ![](/img/docs/account-login.png)
 
 ### Connexion sans mot de passe
 
-1. Entrez votre e-mail enregistré sur la page de connexion
+1. Sur la page de connexion, saisissez votre e-mail enregistré
 2. Cliquez sur "Envoyer le lien de connexion"
-3. Vérifiez votre e-mail et cliquez sur le lien pour vous connecter
+3. Ouvrez le lien reçu par e-mail pour vous connecter
 
-Cette méthode ne nécessite pas de retenir un mot de passe et convient aux utilisateurs qui ne se connectent pas fréquemment.
+Aucun mot de passe à retenir — pratique si vous ne vous connectez pas souvent.
 
 ## Inscription au compte
 
-1. Cliquez sur l'option "S'inscrire" sur la page de connexion
+1. Sur la page de connexion, cliquez sur "S'inscrire"
 2. Remplissez le nom d'utilisateur, l'e-mail et le mot de passe
-3. Connectez-vous automatiquement après avoir terminé l'inscription
+3. La connexion est automatique après validation
 
 ![](/img/docs/account-register.png)
 
 ## Changer de mot de passe
 
-Après connexion, vous pouvez changer votre mot de passe dans le Centre utilisateur :
+Après connexion, modifiez votre mot de passe depuis "Mon Compte" :
 
-![Page du Centre utilisateur](/img/docs/account-profile.png)
+![Page Mon Compte](/img/docs/account-profile.png)
 
-1. Entrez le mot de passe actuel
-2. Entrez le nouveau mot de passe et confirmez
-3. Enregistrez les modifications
+1. Saisissez le mot de passe actuel
+2. Saisissez le nouveau mot de passe et confirmez-le
+3. Cliquez sur "Modifier le mot de passe" pour valider
 
 ## Vider le cache
 
-Si vous rencontrez des problèmes de synchronisation des données ou des anomalies d'affichage :
+En cas de problème de synchronisation ou d'affichage anormal :
 
-1. Entrez dans le Centre utilisateur
-2. Cliquez sur le bouton "Vider le cache"
-3. La page s'actualisera automatiquement et récupérera à nouveau les données du serveur
+1. Allez dans "Mon Compte" → rubrique "Gestion des données → Vider le cache"
+2. Cliquez sur "Vider le cache" ; après confirmation, toutes les données seront rechargées automatiquement
 
-Vider le cache ne supprimera pas vos collections ou prompts personnalisés ; cela force simplement une resynchronisation des données du serveur.
+Pas d'inquiétude : vos favoris et vos prompts personnalisés sont conservés — il ne s'agit que d'une resynchronisation forcée.
 
 ## Documentation associée
 

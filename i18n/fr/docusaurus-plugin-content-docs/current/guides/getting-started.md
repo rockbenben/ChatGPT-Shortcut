@@ -1,57 +1,58 @@
 ---
 sidebar_label: Bien commencer
-title: Débuter avec AI Short - ChatGPT en 30s
-description: Commencez en 30 secondes. Copiez des prompts pour ChatGPT et Gemini et améliorez instantanément la qualité de vos conversations.
+title: Guide de démarrage AI Short | Copiez des prompts vers ChatGPT, DeepSeek
+description: Prise en main en 30 secondes ! Copiez des prompts vers ChatGPT, Gemini, DeepSeek et d'autres modèles d'IA pour améliorer instantanément la qualité de vos conversations et votre productivité.
 ---
 
 # Bien commencer
 
-Lorsque vous conversez avec l'IA, de bons prompts peuvent vous aider à obtenir des réponses de haute qualité plus rapidement. AiShort a organisé un grand nombre de prompts pratiques pour vous, prêts à être copiés et utilisés.
+Un bon prompt détermine la qualité de la réponse de l'IA. AiShort rassemble une grande sélection de prompts éprouvés, prêts à copier-coller.
+
+> 📋 **Avant de commencer**, vous aurez besoin : d'un navigateur + d'un outil d'IA — page de chat (ChatGPT, Gemini, Claude, Le Chat de Mistral…), outil de programmation (Cursor, Copilot…), accès API, agent ou tout autre client. La version web d'AiShort ne nécessite aucune inscription.
 
 ## Utilisation de base
 
-1. Recherchez ou sélectionnez le prompt dont vous avez besoin sur la page d'accueil
-2. Cliquez sur la carte pour voir les détails, ou cliquez directement sur le bouton "Copier"
-3. Ouvrez n'importe quel modèle d'IA et collez le prompt
-4. Suivez les instructions du prompt pour ajouter votre question spécifique
+1. Recherchez ou parcourez les prompts qui vous intéressent sur la page d'accueil
+2. Une fois le bon prompt trouvé, cliquez sur "Copier" (ou ouvrez d'abord la carte pour voir le contenu complet)
+3. Collez-le dans n'importe quel outil d'IA — page de chat, outil de programmation, appel d'API, agent, etc.
+4. Complétez les **espaces réservés** du prompt (par exemple `[contenu]`, `[sujet]`) avec vos besoins spécifiques, puis envoyez à l'IA
 
 ![](/img/docs/how-to-use-aishort.gif)
+
+> 💡 **Astuce** : la plupart des prompts utilisent des crochets `[...]` pour marquer le contenu que vous devez fournir — remplacez simplement le texte entre crochets par votre contenu spécifique.
 
 ## Accès rapide
 
 | Je veux...                              | Où aller                                             |
 | --------------------------------------- | ---------------------------------------------------- |
 | Copier et utiliser des prompts          | Rechercher ou parcourir directement sur [Accueil](/) |
+| Appeler un prompt depuis une page IA    | [Extension navigateur](../extension/)                |
 | Collectionner et gérer des prompts      | [Ma collection](./my-collection)                     |
 | Créer mes propres prompts               | [Prompts personnalisés](./user-prompts)              |
 | M'inscrire ou me connecter              | [Gestion de compte](./account)                       |
 | Découvrir les partages de la communauté | [Prompts de la communauté](./community)              |
+| Déploiement hors ligne / intranet       | [Version déploiement hors ligne](./offline)          |
 
 ## Modèles d'IA courants
 
-### Modèles internationaux
+### Principaux modèles internationaux
 
-- [ChatGPT](https://chatgpt.com)
-- [Gemini](https://gemini.google.com/app)
-- [Claude](https://claude.ai/chats)
-- [Grok](https://grok.com/)
+- [ChatGPT](https://chatgpt.com) (OpenAI)
+- [Gemini](https://gemini.google.com/app) (Google)
+- [Claude](https://claude.ai/chats) (Anthropic)
+- [Le Chat](https://chat.mistral.ai/) (Mistral AI, France)
+- [Grok](https://grok.com/) (xAI)
+- [DeepSeek](https://chat.deepseek.com) (open source, performant et gratuit)
 
-### Modèles chinois
+### Plateformes API et agrégateurs
 
-- [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
-- [Ernie Bot](https://yiyan.baidu.com)
-- [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
-- [ChatGLM](https://chatglm.cn/detail)
-- [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
-- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
+- [OpenRouter](https://openrouter.ai/chat) — accès unifié à de nombreux modèles
+- [Groq](https://groq.com/) — inférence à très faible latence
+- [Hugging Face Chat](https://huggingface.co/chat/) — modèles open source hébergés
 
-### Plateformes API
+### Modèles de Chine continentale
 
-- [OpenRouter](https://openrouter.ai/chat)
-- [SiliconFlow](https://cloud.siliconflow.cn/playground/chat)
-- [Groq](https://groq.com/)
+Si vous travaillez avec un public sinophone ou recherchez des alternatives spécifiques, il existe également plusieurs modèles chinois : Tongyi Qianwen, Ernie Bot, Doubao, Kimi, ChatGLM, iFLYTEK Spark, Tencent Yuanbao. Ces services exigent en général une inscription avec un numéro de téléphone chinois.
 
 ## Documentation associée
 

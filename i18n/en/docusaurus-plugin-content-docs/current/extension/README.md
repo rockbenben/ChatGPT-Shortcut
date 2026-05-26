@@ -1,20 +1,32 @@
 ---
 sidebar_label: Install Browser Extension
-title: Install AI Short Extension - Chrome, Edge & Firefox Download
-description: Boost your AI workflow with the AI Short extension. Download for Chrome, Edge, or Firefox and access prompts instantly via sidebar or shortcut.
+title: AI Short Extension | ChatGPT/Gemini/Claude Sidebar · Chrome/Edge/Firefox
+description: AiShort prompts inside the sidebar of ChatGPT, Gemini, Claude, Doubao — no tab-switching or copy-pasting. One-click install for Chrome, Edge, Firefox.
 ---
 
 # Install Browser Extension
 
-AiShort (ChatGPT Shortcut) extension helps you access the AIShort prompt library at any time, improving work and study efficiency. It supports mainstream browsers like Chrome, Edge, Firefox, and provides sidebar and shortcut features. You can quickly invoke the extension via `Alt + Shift + S`.
+The AiShort (ChatGPT Shortcut) extension embeds the prompt library directly into the sidebar of AI chat pages like ChatGPT, Gemini, Claude, and Doubao, so you no longer have to switch back to aishort.top to copy and paste. It supports Chrome, Edge, and Firefox, and can be summoned instantly with `Alt + Shift + S`.
 
-## 📥 Official Download Channels
+## 📥 Installation
+
+### 1. App Stores (Recommended, One-Click Install)
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (after install, you'll need a one-time [permission setup](./firefox-extension-setting.md), otherwise the sidebar won't appear on ChatGPT)
+
+### 2. Store Blocked? Manual Install Package
+
+Download from one of the sources below, then follow the matching guide to install:
+
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **China Mirror (Use when store is inaccessible)**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud (Password: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
+
+> 📖 Install guides: [CRX file](./manual-chrome-extension.md) · [ZIP file](./manual-chrome-extension-zip.md)
+
+## ✅ After Installing
+
+Press `Alt + Shift + S` to invoke, or click the toolbar icon. See the [usage guide](./usage.md) for details.
 
 ## 🧩 Tampermonkey Script
 
@@ -23,3 +35,7 @@ Tampermonkey is a browser extension that allows users to run custom scripts to e
 
 With this script, you can invoke the AiShort sidebar on any website.
 However, due to ChatGPT official page restrictions on script injection, the script will run as a **popup** rather than a sidebar on that page.
+
+Once the AiShort sidebar is enabled, you'll see a green icon toggle in the bottom-right corner of supported pages. Click it to open or close the sidebar. ChatGPT, Gemini, Claude, and Doubao are supported by default.
+
+![](/img/docs/extension-sidebar.gif)

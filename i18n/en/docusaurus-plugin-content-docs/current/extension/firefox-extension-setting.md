@@ -1,22 +1,22 @@
 ---
 sidebar_label: Firefox Extension Settings
 title: Firefox Extension Setup - Pinning & Permissions Guide
-description: Firefox extension setup guide - Pin extension to toolbar, authorize to run on websites like ChatGPT, Gemini, ensuring sidebar displays correctly.
+description: Firefox extension setup guide - Pin the extension to the toolbar and authorize it to run on websites like ChatGPT and Gemini so the sidebar displays correctly.
 ---
 
 # Firefox Extension Settings
 
-Before using the Firefox extension, it is recommended to follow these two steps for setup.
+Firefox uses a stricter permission model than Chrome — after installing the extension, you need to complete two more setup steps before the sidebar will show up on sites like ChatGPT and Gemini.
 
 ## 1. Pin Extension and Access Settings
 
-First, select "Pin ChatGPT Shortcut Extension" (Pin to Toolbar) on the Firefox toolbar. Then, enter the Extension Center, find the ChatGPT Shortcut extension entry and select "Options". Enter the extension's settings interface. Specific steps are shown below:
+First, choose "Pin ChatGPT Shortcut Extension" (Pin to Toolbar) on the Firefox toolbar. Then open the Extensions page, find the ChatGPT Shortcut entry, and select "Options" to enter the extension's settings interface. The specific steps are shown below:
 
 ![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 
-## 2. Authorize Extension to Run
+## 2. Authorize the Extension to Run
 
-Secondly, to ensure the extension runs normally on websites like ChatGPT, Gemini, you need to right-click the extension icon on these websites and select "Always allow on \*\*\*". This operation grants the extension permission to add a sidebar on the specified domain.
+Next, to ensure the extension runs correctly on sites like ChatGPT and Gemini, right-click the extension icon while on those sites and select "Always allow on \*\*\*". This grants the extension permission to add a sidebar on the specified domain.
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 

@@ -20,6 +20,14 @@
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
 </p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
+</p>
+
 <p align="center">
     <a href="../README.md">English</a> | <a href="../README-zh.md">简体中文</a> | <a href="./README-zh-hant.md">繁體中文</a> |
 <a href="./README-ja.md">日本語</a> |
@@ -39,22 +47,38 @@ Tiếng Việt |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>AiShort (ChatGPT Shortcut) - Tối đa hóa Hiệu quả và Năng suất của bạn</em>
+    <em>Hàng nghìn prompt AI đã được kiểm chứng — biến ChatGPT, Cursor và bất kỳ công cụ AI nào từ tầm thường thành đẳng cấp chuyên gia.</em>
 </p>
+
+## 📖 Mục lục
+
+- [⚡ Bắt đầu nhanh](#-bắt-đầu-nhanh)
+- [💎 Tại sao AiShort?](#-tại-sao-aishort)
+- [📸 Ảnh chụp màn hình](#-ảnh-chụp-màn-hình)
+- [🧩 Tiện ích trình duyệt](#-tiện-ích-trình-duyệt)
+- [🚀 Triển khai](#-triển-khai)
+- [🤝 Đóng góp](#-đóng-góp)
+- [💬 Cộng đồng](#-cộng-đồng)
+- [🌟 Lịch sử Star](#-lịch-sử-star)
+- [📜 Giấy phép](#-giấy-phép)
 
 ## ⚡ Bắt đầu nhanh
 
 1. Truy cập [aishort.top](https://www.aishort.top/vi/)
 2. Tìm kiếm hoặc duyệt các prompt bạn cần
-3. Nhấn "Copy" và dán vào bất kỳ mô hình AI nào
+3. Nhấn "Copy" và dán vào bất kỳ công cụ AI nào — trang chat như ChatGPT, công cụ lập trình như Cursor, gọi API, v.v.
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
-Đơn giản vậy thôi! Để biết thêm tính năng, hãy đọc tiếp hoặc xem [Hướng dẫn sử dụng](https://www.aishort.top/vi/docs/guides/getting-started).
+Đơn giản vậy thôi! Để biết thêm tính năng, hãy xem [Hướng dẫn sử dụng](https://www.aishort.top/vi/docs/guides/getting-started).
 
-## Tại sao nên dùng AiShort?
+## 💎 Tại sao AiShort?
 
-AiShort (ChatGPT Shortcut) cung cấp danh sách các prompt AI được chọn lọc, giúp bạn nhanh chóng tìm thấy prompt cho mọi tình huống.
+**Khác biệt giữa "dùng AI" và "dùng AI giỏi" chỉ là một prompt tốt.**
+
+Cùng một câu hỏi, cách diễn đạt khác nhau sẽ cho ra kết quả khác biệt một trời một vực — một bên là câu trả lời chung chung, một bên là sản phẩm sẵn sàng dùng được. Những prompt cấp chuyên gia phải mất nhiều năm thử nghiệm và tinh chỉnh mới có được. AiShort mang đến cho bạn một thư viện đã được cộng đồng kiểm chứng cho viết lách, lập trình, công việc văn phòng, học tập, thiết kế, marketing và nhiều hơn nữa. Sao chép → dán → kết quả đẳng cấp chuyên gia, ngay lập tức.
+
+Không cần đăng ký. Không thu phí. Không cài đặt. Mở ra và dùng ngay.
 
 ### Tính năng cốt lõi
 
@@ -78,42 +102,58 @@ AiShort (ChatGPT Shortcut) cung cấp danh sách các prompt AI được chọn 
 
 🔐 **Nhiều tùy chọn đăng nhập** - Mật khẩu, Google, hoặc liên kết email không cần mật khẩu.
 
-## Tiện ích mở rộng trình duyệt
+## 📸 Ảnh chụp màn hình
 
-Truy cập AiShort prompt mọi lúc với tiện ích mở rộng trình duyệt của chúng tôi. Hỗ trợ Chrome, Edge, và Firefox với thanh bên mở bằng `Alt + Shift + S`.
+<table>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Bộ sưu tập của tôi" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Tiện ích trình duyệt" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Bộ sưu tập của tôi</strong> — kéo thả, gắn thẻ, sắp xếp</td>
+    <td align="center"><strong>Tiện ích trình duyệt</strong> — thanh bên trong ChatGPT, Gemini, Claude…</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Thẻ Prompt" /></td>
+    <td width="50%"><img src="../static/img/docs/community-page.png" alt="Cộng đồng" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Thẻ Prompt</strong> — xem trước & sao chép một cú nhấp</td>
+    <td align="center"><strong>Cộng đồng</strong> — khám phá & bình chọn</td>
+  </tr>
+</table>
+
+## 🧩 Tiện ích trình duyệt
+
+Truy cập AiShort prompt mọi lúc với tiện ích mở rộng trình duyệt của chúng tôi. Hỗ trợ Chrome, Edge, và Firefox — mở thanh bên bằng `Alt + Shift + S`.
 
 - **Chrome**: [Cửa hàng Chrome trực tuyến](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Tiện ích bổ trợ Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Tiện ích bổ trợ Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [Bản phát hành](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-Chúng tôi cũng cung cấp script Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) để sử dụng thanh bên AiShort trên mọi trang web.
+Hoặc sử dụng script Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) để gọi thanh bên AiShort trên mọi trang web.
 
-## Triển khai
+## 🚀 Triển khai
 
-Triển khai instance của riêng bạn qua Vercel, Cloudflare Pages, Docker hoặc cục bộ. Xem [Hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy).
+Triển khai instance của riêng bạn qua Vercel, Cloudflare Pages, Docker hoặc cục bộ. Xem [Hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy) để biết chi tiết đầy đủ.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## Đồng bộ cập nhật
+> **Mẹo**: Tính năng one-click deploy của Vercel tạo một dự án mới (không phải fork), nên kiểm tra cập nhật từ upstream sẽ không hoạt động. Để tự động đồng bộ, hãy fork repo trước, sau đó import bản fork vào Vercel — hướng dẫn đầy đủ trong [hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
 
-Nếu bạn triển khai qua tính năng one-click deploy của Vercel, bạn có thể thấy thông báo cập nhật liên tục. Điều này xảy ra vì Vercel tạo một dự án mới thay vì fork. Để khắc phục:
+## 🤝 Đóng góp
 
-1. Xóa kho lưu trữ hiện tại
-2. Fork dự án này bằng nút "Fork"
-3. Triển khai lại trên [Vercel](https://vercel.com/new) sử dụng bản fork của bạn
+Hoan nghênh mọi đóng góp:
 
-### Tự động cập nhật
+- **Đề xuất prompt** hoặc **báo lỗi** → mở một [GitHub Issue](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)
+- **Gửi PR** → fork repo, tạo nhánh, gửi pull request
+- **Thêm bản dịch** hoặc **cải thiện tài liệu** → xem thư mục `i18n/` và `docs/`
+- **Gắn sao ⭐ và chia sẻ** để giúp người khác khám phá những prompt hữu ích
 
-Sau khi fork, kích hoạt Workflows trên trang Actions và kích hoạt Upstream Sync Action để cập nhật tự động hàng ngày.
+Để thiết lập môi trường phát triển cục bộ, xem [Hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy).
 
-![Auto Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-### Cập nhật thủ công
-
-Xem [Tài liệu GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) để đồng bộ fork.
-
-## Cộng đồng
+## 💬 Cộng đồng
 
 Tham gia cùng chúng tôi để thảo luận và phản hồi:
 
@@ -123,6 +163,14 @@ Tham gia cùng chúng tôi để thảo luận và phản hồi:
 <a href="https://discord.gg/PZTQfJ4GjX">
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
+
+## 🌟 Lịch sử Star
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+
+## 📜 Giấy phép
+
+[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
 
 ---
 

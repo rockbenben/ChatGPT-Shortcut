@@ -1,56 +1,76 @@
 ---
 sidebar_label: FAQ
-title: FAQ AI Short | Optimasi Prompt & Memperbaiki Halusinasi AI
-description: AI memberikan jawaban salah? Pelajari cara memperbaiki masalah prompt, menghindari "halusinasi" AI, dan mengamankan data Anda dengan panduan lengkap kami.
+title: FAQ AI Short | Optimasi Prompt & Penanganan Halusinasi AI
+description: Hasil prompt kurang ideal? Bagaimana jika AI memberikan informasi palsu? Panduan ini menjawab pertanyaan umum, mengajarkan cara mengoptimalkan prompt, menghindari halusinasi AI, dan mencadangkan data.
 ---
 
 # FAQ
 
-## Mengapa menggunakan prompt bahasa Inggris?
+## Apakah AiShort berbayar?
 
-Model AI umumnya memiliki pemahaman bahasa Inggris yang lebih baik, dan menggunakan prompt bahasa Inggris dapat memberikan hasil output yang lebih stabil.
+Versi web AiShort **sepenuhnya gratis**, menjelajah, menyalin, dan mencari prompt semuanya tidak memerlukan biaya, bahkan tidak perlu mendaftar akun. Fitur lanjutan setelah login (koleksi, prompt kustom, berbagi komunitas) juga gratis.
 
-Meskipun menggunakan prompt bahasa lokal dapat memberikan hasil yang baik, memasukkan prompt bahasa lokal yang sama berulang kali dapat menyebabkan variasi yang signifikan dalam hasil. Oleh karena itu, disarankan untuk menggunakan prompt bahasa Inggris dalam skenario penting.
+Catatan: AiShort hanya menyediakan prompt, **apakah memanggil model AI itu sendiri berbayar ditentukan oleh layanan AI yang Anda gunakan** (misalnya versi gratis/berbayar ChatGPT, penagihan API, dll.).
 
-**Tentukan Balasan dalam Bahasa Indonesia**: Tambahkan `respond in Indonesian` di akhir prompt untuk mendapatkan balasan dalam bahasa Indonesia.
+## Model AI apa saja yang didukung?
+
+Prompt AiShort bersifat universal — dapat digunakan di **skenario AI mana pun yang menerima input prompt**: bukan hanya halaman percakapan, tapi juga tool coding seperti Cursor, panggilan API, AI agent, dll. Berikut model percakapan yang umum digunakan:
+
+- Internasional: ChatGPT, Gemini, Claude, Grok
+- Lokal Indonesia: Sahabat AI, Kata.ai
+- Tiongkok Daratan: DeepSeek, Tongyi Qianwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Xinghuo, Tencent Yuanbao
+- Platform API: OpenRouter, SiliconFlow, Groq
+
+Untuk daftar model selengkapnya, lihat [Memulai → Model AI Populer](./getting-started#model-ai-populer).
+
+## Mengapa prompt menggunakan bahasa Inggris?
+
+Sebagian besar pekerja teknologi dan kreatif di Indonesia sudah terbiasa bekerja bilingual — dokumentasi, tooling, dan kode umumnya berbahasa Inggris. Model AI juga memiliki pemahaman bahasa Inggris yang lebih akurat dan output yang lebih konsisten dibandingkan bahasa lain. Menjalankan prompt yang sama dalam Bahasa Indonesia berulang kali kadang menghasilkan variasi yang cukup signifikan, sementara prompt bahasa Inggris cenderung lebih stabil.
+
+Pola yang biasanya bekerja paling lancar: **prompt dalam bahasa Inggris + minta jawaban dalam Bahasa Indonesia**.
+
+> 💡 Ingin balasan dalam Bahasa Indonesia? Tambahkan salah satu instruksi berikut di akhir prompt:
+> - `respond in Indonesian` (versi Inggris, paling reliable)
+> - `balas dalam Bahasa Indonesia` (versi lokal, juga dipahami model utama)
 
 ## Apakah saya perlu memasukkan prompt setiap kali?
 
-**Penggunaan API**: Anda dapat mengatur prompt sebagai "system prompt", yang akan secara otomatis diterapkan ke percakapan berikutnya.
+**Penggunaan API**: Atur prompt sebagai `system prompt`, percakapan selanjutnya akan otomatis berlaku.
 
-**Versi Web**: Jika Anda belum mengganti topik, ChatGPT akan mengingat pengaturan prompt percakapan saat ini. Ketika balasan mulai menyimpang dari harapan, berarti AI telah "melupakan" prompt, dan Anda perlu memasukkannya kembali.
+**Versi Web**: Jika tidak berganti percakapan, ChatGPT akan mengingat prompt saat ini. Jika balasan mulai menyimpang dari harapan, berarti AI sudah "lupa", tempelkan kembali prompt sekali.
 
-**Tips**: Simpan percakapan yang sering digunakan sebagai bookmark untuk akses cepat nanti.
+**Tips**: Simpan percakapan yang sering digunakan sebagai bookmark browser, buka langsung di lain waktu.
 
 ## Mengapa saya tidak dapat menemukan prompt terkait?
 
-Hasil pencarian di beranda terutama berasal dari **koleksi prompt pilihan** (termasuk prompt pribadi Anda setelah masuk), dan **tidak termasuk** prompt yang dibagikan secara publik oleh komunitas.
+Ruang lingkup pencarian beranda adalah **perpustakaan prompt pilihan** (termasuk prompt pribadi Anda setelah login), **tidak termasuk** prompt yang dibagikan komunitas.
 
-Jika Anda tidak menemukan hasil di beranda menggunakan kata kunci pendek, kami sarankan mencari di halaman [Prompt Komunitas](./community), yang berisi konten lebih kaya yang dibagikan oleh pengguna.
+Jika menggunakan kata kunci pendek tidak menemukan hasil di beranda, buka halaman [Prompt Komunitas](./community) dan cari di sana — terdapat lebih banyak konten yang dibagikan pengguna.
 
-## Apa yang harus dilakukan jika AI mengeluarkan informasi salah?
+## Apa yang harus dilakukan jika AI mengeluarkan informasi palsu?
 
-AI kadang-kadang "berhalusinasi", mengeluarkan informasi yang tampak masuk akal tetapi sebenarnya salah. Saran penggunaan:
+AI terkadang menghasilkan "halusinasi", mengeluarkan informasi yang tampak masuk akal tetapi sebenarnya salah. Cara menangani:
 
 1. **Verifikasi Informasi Penting**: Terutama data, kutipan, kode, dll.
-2. **Optimasi Multi-putaran**: Biarkan AI memeriksa dan mengoptimalkan jawaban lagi.
-3. **Verifikasi Silang**: Gunakan prompt atau model yang berbeda untuk memverifikasi kesimpulan penting.
+2. **Optimasi Multi-putaran**: Biarkan AI memeriksa dan mengoptimalkan jawaban lagi
+3. **Verifikasi Silang**: Gunakan prompt atau model berbeda untuk memverifikasi kesimpulan penting
 
-Prompt yang tepat dapat membantu Anda mengurangi terjadinya halusinasi AI.
+Prompt yang tepat dapat mengurangi terjadinya halusinasi AI.
 
 ## Bagaimana cara mencadangkan prompt saya?
 
-1. Masuk ke Pusat Pengguna
-2. Klik tombol "Ekspor Prompt"
-3. Sistem secara otomatis menghasilkan file JSON untuk diunduh
+1. Masuk ke "Akun Saya" → temukan kolom "Manajemen Data → Ekspor Prompt"
+2. Klik tombol "Ekspor Data"
+3. Sistem otomatis menghasilkan file JSON untuk diunduh
 
-Disarankan untuk mencadangkan secara teratur untuk mencegah kehilangan data.
+Disarankan mencadangkan secara berkala untuk mencegah kehilangan data.
 
-## Hasil prompt tidak ideal?
+## Hasil prompt kurang ideal?
 
-1. **Coba Optimasi**: Biarkan AI mengoptimalkan jawaban lagi.
-2. **Ubah Perspektif**: Gunakan prompt yang berbeda untuk mengekspresikan kebutuhan yang sama.
-3. **Umpan Balik & Berbagi**: Jika Anda menemukan masalah atau memiliki prompt yang bagus, silakan beri tahu kami melalui [Umpan Balik](/feedback) atau bagikan di komunitas.
+1. **Minta AI Mengoptimalkan**: Biarkan AI menilai dan memperbaiki jawabannya sendiri
+2. **Ubah Sudut Pandang**: Gunakan prompt berbeda untuk mengekspresikan kebutuhan yang sama
+3. **Coba Komunitas**: Di [Prompt Komunitas](./community) mungkin ada versi yang lebih cocok — kami juga menyambut prompt bagus Anda untuk dibagikan di sana
+4. **Saran Umpan Balik**: Menemui masalah atau punya saran perbaikan? Kirimkan [umpan balik](/feedback) Anda
 
 ## Dokumentasi Terkait
 

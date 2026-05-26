@@ -6,17 +6,17 @@ description: Firefox 插件设置指南：固定扩展到工具栏，授权在 C
 
 # Firefox 插件设置
 
-使用 Firefox 插件前，推荐按以下两步进行设置。
+Firefox 的权限模型比 Chrome 更严格——装完插件后还需要做两步设置，才能在 ChatGPT、Gemini 等网站上正常显示侧边栏。
 
 ## 1. 固定扩展与访问设置
 
-首先，在 Firefox 工具栏上选择“固定 ChatGPT Shortcut 扩展”（Pin to Toolbar）。然后，进入扩展中心，找到 ChatGPT Shortcut 扩展条目，选择“选项”（Options）以进入扩展的设置界面。具体步骤如下图所示：
+首先，在 Firefox 工具栏上选择「固定 ChatGPT Shortcut 扩展」（Pin to Toolbar）。然后，进入扩展中心，找到 ChatGPT Shortcut 扩展条目，选择「选项」（Options）以进入扩展的设置界面。具体步骤如下图所示：
 
 ![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
 
 ## 2. 授权扩展运行
 
-其次，为确保扩展在 ChatGPT、Gemini 等网站上正常运行，您需要在这些网站上右键点击扩展图标，选择“始终允许在此网站上运行”（Always allow on \*\*\*）。此操作将授予扩展在指定域名上添加侧边栏的权限。
+其次，为确保扩展在 ChatGPT、Gemini 等网站上正常运行，你需要在这些网站上右键点击扩展图标，选择「始终允许在此网站上运行」（Always allow on \*\*\*）。此操作将授予扩展在指定域名上添加侧边栏的权限。
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
