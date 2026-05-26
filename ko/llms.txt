@@ -8,17 +8,17 @@
 - [Firefox 설정 - 핀 고정 및 권한 허용 가이드](https://www.aishort.top/ko/docs/extension/firefox-extension-setting): Firefox 설정 방법 해설. 툴바 고정이나 ChatGPT 등에서의 실행 권한을 허용하여 사이드바를 원활하게 이용하세요.
 - [Chrome 수동 설치 - CRX 파일 버전 도입 가이드](https://www.aishort.top/ko/docs/extension/manual-chrome-extension): 개발자 모드로 CRX 파일 간편 설치. 드래그 앤 드롭 설치 절차와 자주 발생하는 문제의 해결책을 소개합니다.
 - [Chrome 수동 설치 - ZIP 파일 버전 도입 가이드](https://www.aishort.top/ko/docs/extension/manual-chrome-extension-zip): CRX 사용 불가 시 해결책. ZIP 파일 압축 해제 후 Chrome 확장 프로그램 페이지에 드래그하는 수동 설치 절차 안내.
-- [AI Short 확장 프로그램 - Chrome/Edge/Firefox](https://www.aishort.top/ko/docs/extension/README): AI 작업 효율화! Chrome, Edge, Firefox 지원 확장 프로그램 다운로드. 사이드바에서 프롬프트를 즉시 불러오세요.
+- [AI Short 확장 프로그램 | ChatGPT/Gemini/Claude 사이드바 · Chrome/Edge/Firefox 설치](https://www.aishort.top/ko/docs/extension/README): ChatGPT, Gemini, Claude, Doubao 등 AI 대화 페이지의 사이드바에서 AiShort 프롬프트를 바로 불러오세요. 탭을 전환해 복사·붙여넣기할 필요가 없습니다. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
 - [AI Short 확장 프로그램 가이드 - 사이드바 및 단축키](https://www.aishort.top/ko/docs/extension/usage): AI Short 브라우저 확장 프로그램 마스터! Alt+Shift+S로 프롬프트 라이브러리 호출.
-- [AI Short 계정 - Google 및 패스워드리스 로그인](https://www.aishort.top/ko/docs/guides/account): Google이나 이메일로 간편 로그인! 개인 프롬프트 컬렉션에 어디서든 접속하세요. 비밀번호 재설정 등 계정 관리 기능도 상세 안내.
-- [AI Short 커뮤니티 - 프롬프트 공유·발견·투표](https://www.aishort.top/ko/docs/guides/community): 인기 AI 프롬프트를 찾아보세요! 투표로 좋은 프롬프트를 발굴하고 내 아이디어 공유. 비공개 저장으로 나만의 라이브러리도 생성 가능.
+- [AI Short 계정 관리 - 구글·비밀번호 없는 로그인 완벽 가이드](https://www.aishort.top/ko/docs/guides/account): 구글 계정이나 이메일 링크로 30초 만에 로그인. 즐겨찾기 프롬프트를 기기 간에 동기화하고 비밀번호 재설정, 캐시 초기화까지 한 곳에서 관리하세요.
+- [AI Short 커뮤니티 프롬프트 - 공유·발견·투표 가이드](https://www.aishort.top/ko/docs/guides/community): 다른 사용자가 만든 AI 프롬프트를 발견하고 내 아이디어도 공유해 보세요. 투표로 좋은 글을 띄우고, 비공개 설정으로 나만의 라이브러리도 함께 운영할 수 있습니다.
 - [AI Short FAQ - 프롬프트 최적화·환각 대처법](https://www.aishort.top/ko/docs/guides/faq): AI 답변이 이상한가요? 프롬프트 작성 팁부터 AI '환각' 대처, 데이터 백업 방법까지 자주 묻는 문제 해결법을 정리했습니다.
 - [AI Short 퀵스타트 - 30초 만에 ChatGPT 활용](https://www.aishort.top/ko/docs/guides/getting-started): 30초 만에 AI 활용 효율 UP! ChatGPT, Gemini 등에 최적화된 프롬프트를 복사해 대화 품질을 즉시 향상시키세요.
-- [사용 가이드 - 태그 검색 및 필터링 완벽 해설](https://www.aishort.top/ko/docs/guides/interface): AI Short 100% 활용하기! 태그 필터링과 키워드 검색으로 원하는 프롬프트를 즉시 발견. 카드 상세 정보와 컬렉션 기능도 설명.
-- [마이 컬렉션 - 태그 정리 및 드래그 정렬](https://www.aishort.top/ko/docs/guides/my-collection): 즐겨찾는 프롬프트를 태그로 정리! 드래그 앤 드롭으로 자유롭게 순서 변경, 당신만의 AI 프롬프트 사전을 만들고 관리하세요.
-- [AI Short 离线部署 | 企业内网无需外部服务器](https://www.aishort.top/ko/docs/guides/offline): AI Short 离线版专为无法访问外网的企业和团队设计。无需后端服务器，无需注册账户，数据存储在浏览器本地，开箱即用。
+- [AI Short 인터페이스 가이드 - 태그·키워드 검색 완벽 정리](https://www.aishort.top/ko/docs/guides/interface): AI Short 홈 화면을 100% 활용해 보세요. 태그 필터와 키워드 검색으로 원하는 프롬프트를 바로 찾고, 카드 상세 보기와 즐겨찾기까지 한눈에 익힐 수 있습니다.
+- [마이 컬렉션 - 즐겨찾기 태그 정리와 드래그 정렬](https://www.aishort.top/ko/docs/guides/my-collection): 마음에 드는 AI 프롬프트를 태그로 묶고 드래그 한 번으로 순서를 바꿔 보세요. 나만의 프롬프트 사전을 손쉽게 만들고 여러 기기에서 동기화할 수 있습니다.
+- [AI Short 오프라인 배포 | 사내 인트라넷용 외부 서버 불필요](https://www.aishort.top/ko/docs/guides/offline): AI Short 오프라인 버전은 외부망에 접속할 수 없는 기업과 팀을 위해 설계되었습니다. 백엔드 서버나 계정 등록이 필요 없으며, 데이터는 브라우저 로컬에 저장되어 즉시 사용할 수 있습니다.
 - [커스텀 프롬프트 - 생성·저장·커뮤니티 공유](https://www.aishort.top/ko/docs/guides/user-prompts): 나만의 프롬프트 생성·저장! 커뮤니티 공유나 비공개 설정도 자유롭게. 소중한 데이터는 원클릭으로 백업 가능합니다.
-- [AI Short - 엄선된 ChatGPT 프롬프트 라이브러리](https://www.aishort.top/ko/docs/introduction): ChatGPT, Claude 답변 품질이 고민이신가요? 엄선된 프롬프트를 즉시 복사해 생산성을 높이세요. 컬렉션 관리 기능으로 더 편리하게.
+- [AI Short - 엄선된 AI 프롬프트 라이브러리 | 원클릭 복사로 효율 향상](https://www.aishort.top/ko/docs/introduction): AI Short는 ChatGPT 한국어 활용을 한 단계 끌어올리는 AI 프롬프트 라이브러리입니다. ChatGPT, Gemini, Claude는 물론 HyperCLOVA X 등 한국어 특화 모델까지 지원하며 원클릭 복사, 컬렉션 관리, 커뮤니티 공유로 업무 효율을 높여 드립니다.
 - [AiShort Privacy Policy](https://www.aishort.top/ko/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/ko/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...
 
