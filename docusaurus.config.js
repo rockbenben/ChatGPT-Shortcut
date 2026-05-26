@@ -69,8 +69,19 @@ const config = {
         },
         // 裸 /community-prompt（无 ?id=）和各 locale 同名路径只渲染 Invalid prompt ID，
         // 没有索引价值；从 sitemap 排除，避免搜索引擎抓取无效页
+        // 私有页（feedback/reset-password/user/）已在 robots.txt Disallow，
+        // 同步在 sitemap 排除，避免给爬虫互相矛盾的信号
         sitemap: {
-          ignorePatterns: ["/community-prompt", "/*/community-prompt"],
+          // 2023+ Google 完全忽略 priority/changefreq，但仍读 lastmod；
+          // 默认实现要求 route 有 sourceFilePath（从 git 取时间），动态生成的 pages 没有
+          // → 用 createSitemapItems 回退：default 给不出 lastmod 的，用 buildDate 顶上
+          lastmod: "date",
+          ignorePatterns: ["/community-prompt", "/*/community-prompt", "/feedback", "/*/feedback", "/reset-password", "/*/reset-password", "/user/**", "/*/user/**"],
+          createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
+            const items = await defaultCreateSitemapItems(rest);
+            const fallback = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+            return items.map((it) => ({ ...it, lastmod: it.lastmod || fallback }));
+          },
         },
       }),
     ],
