@@ -1,7 +1,7 @@
 ---
 sidebar_label: Guide d'installation ZIP pour Chrome
 title: Installation Chrome ZIP AI Short | Charger le dossier décompressé
-description: Installez l'extension AI Short dans Chrome via un fichier ZIP : décompressez puis glissez le dossier dans la page des extensions. Solution alternative quand le CRX n'est pas installable.
+description: "Installez l'extension AI Short dans Chrome via un fichier ZIP : décompressez puis glissez le dossier dans la page des extensions. Solution alternative quand le CRX n'est pas installable."
 ---
 
 # Guide d'installation locale de l'extension ZIP pour Chrome

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Guide d'installation CRX pour Chrome
 title: Installation Chrome CRX AI Short | Mode développeur manuel
-description: Installez manuellement l'extension AI Short via un fichier CRX : activez le mode développeur, puis glissez-déposez. Solutions aux problèmes courants incluses.
+description: "Installez manuellement l'extension AI Short via un fichier CRX : activez le mode développeur, puis glissez-déposez. Solutions aux problèmes courants incluses."
 ---
 
 # Guide d'installation locale de l'extension CRX pour Chrome

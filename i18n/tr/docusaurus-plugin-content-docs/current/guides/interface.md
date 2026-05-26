@@ -1,7 +1,7 @@
 ---
 sidebar_label: Arayüz Kılavuzu
 title: AI Short Arayüz Kılavuzu | Etiket Filtreleme ve Akıllı Arama
-description: AI Short arayüzünü tanıyın: etiket filtreleme, OR/AND mantığı ve anahtar kelime aramasıyla istediğiniz promptu saniyeler içinde bulun, kart ayrıntılarını ve koleksiyon işlemlerini keşfedin.
+description: "AI Short arayüzünü tanıyın: etiket filtreleme, OR/AND mantığı ve anahtar kelime aramasıyla istediğiniz promptu saniyeler içinde bulun, kart ayrıntılarını ve koleksiyon işlemlerini keşfedin."
 ---
 
 # Arayüz Kılavuzu
