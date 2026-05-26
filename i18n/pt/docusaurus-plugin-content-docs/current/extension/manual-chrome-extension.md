@@ -1,19 +1,16 @@
 ---
 sidebar_label: Guia de Instalação CRX para Chrome
-title: Instalação da Extensão AI Short via Arquivo CRX
-description: Como instalar manualmente o arquivo CRX da extensão AI Short no Chrome - Modo desenvolvedor e solução de problemas.
+title: Instalação AI Short Chrome CRX | Instalação Manual via Modo Desenvolvedor
+description: Instale manualmente a extensão AI Short via arquivo CRX, com instalação por arrastar após ativar o modo desenvolvedor. Inclui solução de problemas comuns.
 ---
 
 # Guia de Instalação Local de Extensão CRX para Chrome
 
-## Baixar Pacote de Instalação CRX
-
-Baixe o pacote de instalação crx do ChatGPT Shortcut (ChatGPT_Shortcut-crx-3.x.x.zip) e descompacte-o (o arquivo crx está na pasta descompactada).
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **Download Local**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), Senha: 1qow
-
-![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
+> Este tutorial assume que você já baixou e descompactou o pacote CRX a partir da [página de instalação](./README.md) (o arquivo .crx está dentro da pasta descompactada).
+>
+> ⚠️ **Dois erros comuns**:
+> 1. Você precisa arrastar o **arquivo `.crx`** (descompactado) para a página de extensões, não o pacote zip em si
+> 2. Você precisa **arrastar** — não clique em "Carregar sem compactação" (esse botão é para a versão zip)
 
 ## Ativar Modo de Desenvolvedor
 
@@ -29,7 +26,7 @@ chrome://extensions
 
 ## Instalar Extensão
 
-Instale a extensão ChatGPT Shortcut (Nota ⚠️: Você precisa arrastar o arquivo .crx, não clique em [Carregar sem compactação])
+Instale a extensão ChatGPT Shortcut (Nota ⚠️: Você precisa arrastar o arquivo .crx, não clique em "Carregar sem compactação")
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
@@ -37,10 +34,10 @@ Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensã
 
 ## Problemas de Instalação?
 
-1. Usuários do Windows, verifiquem se descompactaram o pacote de instalação baixado (em vez de clicar duas vezes para abrir)?
+1. Usuários do Windows, verifiquem se descompactaram o pacote de instalação baixado (em vez de clicar duas vezes para abrir).
 
 2. O "Modo de desenvolvedor" está ativado? Se não, consulte o segundo passo.
 
-3. Você arrastou o arquivo crx para a página "Extensões"? Nota ⚠️: Não clique em [Carregar sem compactação], você deve arrastar o arquivo crx.
+3. Você arrastou o arquivo crx para a página "Extensões"? Nota ⚠️: não clique em "Carregar sem compactação", você precisa arrastar o arquivo crx.
 
 4. O navegador não permite a instalação de arquivos crx? Tente instalar o arquivo zip! [Clique aqui para ver o tutorial de instalação zip](./manual-chrome-extension-zip.md).

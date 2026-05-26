@@ -20,6 +20,14 @@
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
 </p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
+</p>
+
 <p align="center">
     <a href="../README.md">English</a> | <a href="../README-zh.md">简体中文</a> | <a href="./README-zh-hant.md">繁體中文</a> |
 <a href="./README-ja.md">日本語</a> |
@@ -39,22 +47,38 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>AiShort (ChatGPT Shortcut) - زيادة الكفاءة والإنتاجية</em>
+    <em>آلاف الأوامر المُختبرة ميدانياً للذكاء الاصطناعي — حوّل ChatGPT وCursor وأي أداة ذكاء اصطناعي من أداء متوسط إلى مستوى الخبراء.</em>
 </p>
+
+## 📖 جدول المحتويات
+
+- [⚡ البدء السريع](#-البدء-السريع)
+- [💎 لماذا AiShort؟](#-لماذا-aishort)
+- [📸 لقطات الشاشة](#-لقطات-الشاشة)
+- [🧩 إضافة المتصفح](#-إضافة-المتصفح)
+- [🚀 النشر](#-النشر)
+- [🤝 المساهمة](#-المساهمة)
+- [💬 المجتمع](#-المجتمع)
+- [🌟 سجل النجوم](#-سجل-النجوم)
+- [📜 الترخيص](#-الترخيص)
 
 ## ⚡ البدء السريع
 
 1. قم بزيارة [aishort.top](https://www.aishort.top/ar/)
 2. ابحث أو تصفح الأمر الذي تحتاجه
-3. انقر على "نسخ" والصقه في أي نموذج ذكاء اصطناعي
+3. انقر على "نسخ" والصقه في أي أداة ذكاء اصطناعي — صفحات الدردشة مثل ChatGPT و Gemini و Claude، أدوات البرمجة مثل Cursor، استدعاءات API، وغيرها
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
 هذا كل شيء! لمزيد من الميزات، راجع [دليل المستخدم](https://www.aishort.top/ar/docs/guides/getting-started).
 
-## لماذا AiShort؟
+## 💎 لماذا AiShort؟
 
-يوفر AiShort (ChatGPT Shortcut) قائمة منسقة من أوامر الذكاء الاصطناعي لمساعدتك في العثور بسرعة على الأوامر المناسبة لأي موقف.
+**الفجوة بين استخدام الذكاء الاصطناعي واستخدامه بإتقان هي مطالبة واحدة جيدة.**
+
+السؤال ذاته، لكن بأوامر مختلفة — وتتحوّل مخرجات الذكاء الاصطناعي من إجابات عامة إلى نتائج مفيدة فعلاً. صياغة أوامر بمستوى الخبراء بنفسك تتطلّب سنوات من التجربة والتكرار. يضع AiShort بين يديك مكتبة منسّقة من الأوامر المُختبرة ميدانياً من قِبل المجتمع، تغطّي الكتابة والبرمجة والعمل المكتبي والتعلّم والتصميم والتسويق والمزيد. انسخ ← الصق ← مخرجات بمستوى الخبراء، فوراً.
+
+لا تسجيل. لا اشتراك مدفوع. لا تثبيت. افتح واستخدم.
 
 ### الميزات الأساسية
 
@@ -78,7 +102,28 @@
 
 🔐 **خيارات تسجيل دخول متعددة** - كلمة مرور، جوجل، أو رابط بريد إلكتروني.
 
-## إضافة المتصفح
+## 📸 لقطات الشاشة
+
+<table>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="مجموعتي" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="إضافة المتصفح" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>مجموعتي</strong> — السحب والإفلات، العلامات، والتنظيم</td>
+    <td align="center"><strong>إضافة المتصفح</strong> — شريط جانبي في ChatGPT و Gemini و Claude…</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="بطاقة الأمر" /></td>
+    <td width="50%"><img src="../static/img/docs/community-page.png" alt="المجتمع" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>بطاقة الأمر</strong> — معاينة ونسخ بنقرة واحدة</td>
+    <td align="center"><strong>المجتمع</strong> — اكتشف وصوّت</td>
+  </tr>
+</table>
+
+## 🧩 إضافة المتصفح
 
 الوصول إلى أوامر AiShort في أي وقت. يدعم Chrome وEdge وFirefox مع شريط جانبي عبر `Alt + Shift + S`.
 
@@ -87,13 +132,28 @@
 - **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-## النشر
+أو استخدم سكربت Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) لاستدعاء شريط AiShort الجانبي على أي موقع.
 
-انشر نسختك الخاصة عبر Vercel أو Cloudflare Pages أو Docker أو محلياً. راجع [دليل النشر](https://www.aishort.top/ar/docs/deploy).
+## 🚀 النشر
+
+انشر نسختك الخاصة عبر Vercel أو Cloudflare Pages أو Docker أو محلياً. راجع [دليل النشر](https://www.aishort.top/ar/docs/deploy) للتفاصيل الكاملة.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## المجتمع
+> **نصيحة**: نشر Vercel بنقرة واحدة ينشئ مشروعاً جديداً (وليس fork)، لذا لن يعمل التحقق من تحديثات المستودع الأصلي. للحصول على المزامنة التلقائية، قم بعمل fork للمستودع أولاً، ثم استورد الـ fork في Vercel — التعليمات الكاملة في [دليل النشر](https://www.aishort.top/ar/docs/deploy).
+
+## 🤝 المساهمة
+
+نرحّب بالمساهمات بجميع أشكالها:
+
+- **اقترح أمراً** أو **أبلغ عن خطأ** ← افتح [GitHub Issue](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)
+- **أرسل PR** ← اعمل fork للمستودع، أنشئ فرعاً، ثم أرسل pull request
+- **أضف ترجمة** أو **حسّن التوثيق** ← راجع مجلدَي `i18n/` و`docs/`
+- **ضع نجمة ⭐ وشارك** لمساعدة الآخرين على اكتشاف أوامر مفيدة
+
+لإعداد بيئة التطوير المحلية، راجع [دليل النشر](https://www.aishort.top/ar/docs/deploy).
+
+## 💬 المجتمع
 
 انضم إلينا للنقاشات والملاحظات:
 
@@ -103,6 +163,14 @@
 <a href="https://discord.gg/PZTQfJ4GjX">
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
+
+## 🌟 سجل النجوم
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+
+## 📜 الترخيص
+
+[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
 
 ---
 

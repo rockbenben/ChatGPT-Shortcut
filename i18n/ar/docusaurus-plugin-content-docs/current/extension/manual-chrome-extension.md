@@ -6,14 +6,11 @@ description: دليل لتثبيت إضافة AI Short باستخدام ملف C
 
 # دليل التثبيت المحلي لإضافة Chrome CRX
 
-## تنزيل حزمة تثبيت CRX
-
-قم بتنزيل حزمة تثبيت crx لـ ChatGPT Shortcut (ChatGPT_Shortcut-crx-3.x.x.zip)، وقم بفك ضغطها (ملف crx موجود في المجلد الذي تم فك ضغطه).
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **التنزيل المحلي**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi)، كلمة المرور: 1qow
-
-![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
+> يفترض هذا الدليل أنك قد نزّلت وفككت ضغط حزمة CRX من [صفحة التثبيت](./README.md) (ملف .crx موجود داخل المجلد الذي تم فك ضغطه).
+>
+> ⚠️ **خطأان شائعان**:
+> 1. يجب سحب **ملف `.crx`** (المستخرج) إلى صفحة الإضافات، وليس حزمة zip نفسها
+> 2. يجب **السحب** — لا تنقر فوق زر "تحميل تم فك حزمه" (هذا الزر مخصص لنسخة zip)
 
 ## تمكين وضع المطور
 

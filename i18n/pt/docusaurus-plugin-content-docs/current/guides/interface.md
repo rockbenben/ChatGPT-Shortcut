@@ -1,33 +1,31 @@
 ---
 sidebar_label: Explicação da Interface
-title: Interface do AI Short - Filtros de Tags e Pesquisa Inteligente
-description: Aprenda a usar a interface do AI Short - Busque prompts por tags e palavras-chave e gerencie seus favoritos.
+title: Guia da Interface AI Short | Filtros por Tag e Busca Inteligente
+description: Aprenda a usar a interface do AI Short. Encontre prompts na hora com filtros de tag e palavras-chave e conheça os detalhes dos cartões e o fluxo de favoritos.
 ---
 
 # Explicação da Interface
 
-A página do AI Short oferece aos usuários uma interface intuitiva para navegar e filtrar prompts. A página consiste principalmente na área de tags, área de pesquisa e área de exibição de prompts.
+Esta seção apresenta as três áreas principais da página inicial do AI Short — a **área de tags** (tags de cenário no topo), a **área de pesquisa** (campo de palavras-chave) e a **área de exibição de prompts** (lista de cartões abaixo) — e como usá-las para encontrar rapidamente o prompt desejado.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Filtragem por Tags
 
-A área de tags permite aos usuários filtrar prompts com base em domínio e função.
+Filtre prompts por domínio e função. O seletor **OR / AND** no canto superior direito define a regra para múltiplas tags:
 
-Use o botão "Alternar Regra de Filtragem de Tags" no canto superior direito para filtragem multi-tag mais precisa:
-
-- **Regra OR** (Padrão): Mostra prompts que correspondem a qualquer uma das tags selecionadas
-- **Regra AND**: Mostra apenas prompts que possuem todas as tags selecionadas
+- **OR** (Padrão): exibe prompts que correspondam a qualquer uma das tags
+- **AND**: exibe apenas prompts que correspondam a todas as tags
 
 ![](/img/docs/interface-filter.png)
 
-## 🔍 Pesquisa de Palavras-chave
+## 🔍 Pesquisa por Palavras-chave
 
-A função de pesquisa de palavras-chave suporta a pesquisa por título, descrição e conteúdo do prompt.
+Pesquisa por título, descrição e conteúdo do prompt.
 
-- A pesquisa na página inicial inclui principalmente **prompts selecionados** (excluindo prompts da comunidade). Se houver tags já selecionadas, o escopo da pesquisa será limitado a essas tags
-- Após o login, o escopo da pesquisa se expande para incluir suas **coleções** e **prompts personalizados**
-- Se você não encontrar os resultados esperados na página inicial usando palavras-chave curtas, acesse a página [Prompts da Comunidade](./community) para pesquisar
+- A pesquisa na página inicial cobre **prompts selecionados** (não inclui comunidade). Se houver tags selecionadas, a pesquisa fica restrita a essas tags
+- Após o login, o escopo da pesquisa se expande para incluir seus **favoritos** e **prompts personalizados**
+- Se palavras-chave curtas não retornam resultados na página inicial, pesquise novamente na página [Prompts da Comunidade](./community)
 
 ![](/img/docs/interface-search.png)
 
@@ -35,23 +33,21 @@ A função de pesquisa de palavras-chave suporta a pesquisa por título, descri�
 
 ### Ver Detalhes
 
-Clique no cartão de prompt para abrir uma janela pop-up com detalhes, mostrando o título, descrição, conteúdo completo do prompt, observações e botão de copiar.
+Clique no cartão para abrir uma janela com os detalhes — veja o conteúdo completo, as observações e copie com um clique.
 
 ![](/img/docs/prompt-card.gif)
 
 ### Copiar Prompt
 
-Clique no botão "Copiar" na parte inferior do cartão para obter o prompt. Cole-o no modelo de IA para usar.
+Clique no botão "Copiar" abaixo do cartão e cole em qualquer ferramenta de IA — chat, editores de código, API e outros.
 
 ### Favoritar Prompt
 
-Após o login, um botão de favoritos aparecerá no cartão. Clique para adicionar o prompt à Minha Coleção.
+Após o login, o botão de favoritar aparece no cartão. Clique para adicionar à Minha Coleção.
 
 ## 🔥 Ordenação por Popularidade
 
-A página ordena os prompts com base na popularidade, ajudando você a descobrir rapidamente o conteúdo em alta.
-
-A ordenação das tags também se ajusta com base nos valores de popularidade, garantindo que reflita as preferências mais recentes da comunidade.
+Ordena os prompts por popularidade para você descobrir o que está em alta. A ordem das tags também acompanha a popularidade, refletindo as preferências mais recentes da comunidade.
 
 ## Documentação Relacionada
 

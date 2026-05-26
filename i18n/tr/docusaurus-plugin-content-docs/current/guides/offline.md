@@ -1,87 +1,89 @@
 ---
-sidebar_label: Çevrimdışı Sürüm (Kurumsal Intranet)
-title: AI Short Çevrimdışı Dağıtım | Kurumsal Intranette Harici Sunucu Gerekmez
-description: AI Short çevrimdışı sürümü, dış ağa erişemeyen kuruluşlar ve ekipler için özel olarak tasarlanmıştır. Backend sunucusu gerekmez, kayıt gerekmez, veriler tarayıcıda yerel olarak saklanır, anında kullanıma hazır.
+sidebar_label: Çevrimdışı Sürüm (Kurumsal İntranet)
+title: AI Short Çevrimdışı Dağıtım | Kurumsal İntranet, Dış Sunucu Gerekmez
+description: AI Short çevrimdışı sürümü, internet erişimi olmayan veya KVKK uyumluluğu nedeniyle verilerini yurt içinde tutması gereken şirketler ve kamu kurumları için tasarlanmıştır. Arka uç sunucusu, hesap kaydı gerektirmez; tüm veriler tarayıcıda yerel olarak saklanır.
 ---
 
 # Çevrimdışı Dağıtım Sürümü
 
-**Uygun senaryolar**: Kurumsal intranet, devlet ağları, gizli ortamlar, kampüs ağları ve **dış ağa erişimin mümkün olmadığı veya elverişsiz olduğu** diğer senaryolar.
+> **Hedef okuyucu**: Dağıtımdan sorumlu IT yöneticileri veya teknik sorumlular. Son kullanıcıların bu belgeyi okumasına gerek yoktur; yöneticinin paylaştığı intranet adresini açmaları yeterlidir.
 
-AI Short çevrimdışı sürümü backend sunucusu ve kullanıcı kaydı gerektirmez, tüm veriler tarayıcıda yerel olarak saklanır. Dağıtımdan sonra ekip doğrudan intranette kullanabilir.
+**Kullanım senaryoları**: Şirket içi ağlar, kamu kurumu ağları, KVKK uyumluluğu kapsamında verilerin yurt içinde tutulması gereken ortamlar, finans sektörü (BDDK regülasyonları kapsamındaki bankalar ve aracı kurumlar), sağlık kuruluşları, savunma sanayii, üniversite kampüs ağları ve **internete çıkışın kısıtlı ya da yasak olduğu** diğer tüm ortamlar.
 
-## Ekip Kullanım Yöntemi
+Arka uç yok, kayıt gerekmez—tüm veriler tarayıcıda yerel olarak saklanır. Dağıtımdan sonra intranet ekibiniz yalnızca tarayıcı açarak kullanmaya başlar.
 
-Çevrimdışı sürüm tamamen statik bir web sitesidir, intranet sunucusuna dağıtıldıktan sonra ekip üyeleri tarayıcılarından o intranet adresine giderek kullanabilirler:
+## Ekibin Kullanım Şekli
 
-1. **Yönetici** çevrimdışı sürümü intranet sunucusuna dağıtır (örneğin `http://192.168.1.100:3000`)
-2. **Ekip üyeleri** tarayıcıdan o adrese gider, promptları tarayabilir, arayabilir ve kopyalayabilir
-3. Her kişinin **favorileri ve özel promptları kendi tarayıcısında saklanır**, birbirini etkilemez
-4. Hesap kaydı gerekmez, herhangi bir yazılım yüklemeye gerek yok, açın ve kullanın
+Çevrimdışı sürüm tamamen statik bir web sitesidir. Intranet sunucusuna dağıtıldıktan sonra ekip üyeleri tarayıcılarıyla intranet adresine erişerek kullanabilir:
+
+1. **Yönetici** çevrimdışı sürümü intranet sunucusuna dağıtır (örn. `http://192.168.1.100:3000`)
+2. **Ekip üyeleri** bu adresi tarayıcıyla açar; promptlara göz atabilir, arayabilir ve kopyalayabilir
+3. Her kişinin **koleksiyonu ve özel promptları kendi tarayıcısında** saklanır; birbirlerini etkilemez
+4. Hesap kaydı gerekmez, herhangi bir yazılım kurulumu gerekmez; aç ve kullan
 
 ```
-Intranet sunucusu (çevrimdışı sürüm dağıtımı)
-   ├── Prompt kütüphanesi verileri (herkes için paylaşılan, statik JSON'dan)
+İntranet Sunucusu (Çevrimdışı sürüm dağıtılır)
+   ├── Prompt kütüphanesi verileri (herkesle paylaşılır, statik JSON'dan gelir)
    │
-   ├── Kullanıcı A'nın tarayıcısı → localStorage (A'nın favorileri ve özel promptları)
-   ├── Kullanıcı B'nın tarayıcısı → localStorage (B'nin favorileri ve özel promptları)
-   └── Kullanıcı C'nin tarayıcısı → localStorage (C'nin favorileri ve özel promptları)
+   ├── Kullanıcı A'nın tarayıcısı → localStorage (A'nın koleksiyonu ve özel promptları)
+   ├── Kullanıcı B'nin tarayıcısı → localStorage (B'nin koleksiyonu ve özel promptları)
+   └── Kullanıcı C'nin tarayıcısı → localStorage (C'nin koleksiyonu ve özel promptları)
 ```
 
 :::tip İpucu
-Prompt kütüphanesi içeriği (seçilmiş promptlar) build zamanında paketlenen statik veridir, tüm kullanıcılar aynı içeriği görür. Her kullanıcının favorileri, özel promptları, sıralaması ve etiketleri kendi tarayıcısının localStorage'ında saklanır, birbirinden bağımsızdır.
+Prompt kütüphanesi (seçilmiş promptlar), derleme aşamasında paketlenen statik bir veridir; tüm kullanıcılar aynı içeriği görür. Her kullanıcının koleksiyonu, özel promptları, sıralaması ve etiketleri kendi tarayıcısının localStorage'ında saklanır ve birbirinden bağımsızdır.
 :::
 
-## Çevrimiçi Sürümle Farklar
+## Çevrimiçi Sürümle Farkları
 
 | Özellik | Çevrimiçi Sürüm | Çevrimdışı Sürüm |
 | ---- | ------ | ------ |
-| Prompt tarama/arama/filtreleme | ✅ | ✅ |
+| Prompt göz atma/arama/filtreleme | ✅ | ✅ |
 | Prompt kopyalama | ✅ | ✅ |
-| Favori yönetimi | Sunucu depolama | Tarayıcı yerel depolama |
-| Özel promptlar | Sunucu depolama | Tarayıcı yerel depolama |
-| Koleksiyonum (sürükle-bırak, etiketler) | ✅ | ✅ |
-| Çok dilli destek (18 dil) | ✅ | ✅ |
-| Veri içe/dışa aktarma | ✅ | ✅ (format uyumlu) |
+| Koleksiyon yönetimi | Sunucu depolaması | Tarayıcı yerel depolaması |
+| Özel promptlar | Sunucu depolaması | Tarayıcı yerel depolaması |
+| Koleksiyonum (sürükle-bırak sıralama, etiketler) | ✅ | ✅ |
+| Çoklu dil desteği (18 dil) | ✅ | ✅ |
+| Veri içe/dışa aktarma | ✅ | ✅ (formatlar birbirine uyumlu) |
 | Prompt detay sayfası | ✅ | ✅ (statik veri, yorum yok) |
-| Kullanıcı kaydı/girişi | ✅ | ❌ (hesap gerekmez) |
+| Kullanıcı kaydı/girişi | ✅ | ❌ (hesap gerektirmez) |
 | Topluluk prompt listesi/oylama | ✅ | ❌ |
-| Yorum geri bildirimi | ✅ | ❌ |
+| Yorum ve geri bildirim | ✅ | ❌ |
 
 ## Veri Depolama
 
-Her kullanıcının verileri **kendi tarayıcısının** localStorage'ında saklanır, sunucuyla ilgisi yoktur:
+Her kullanıcının verisi **kendi tarayıcısının** localStorage'ında saklanır, sunucuyla ilgisi yoktur:
 
-| Veri | Depolama anahtarı | Açıklama |
+| Veri | Depolama Anahtarı | Açıklama |
 | ---- | ------ | ---- |
-| Favori listesi | `local_favorites` | Favori prompt ID dizisi |
+| Koleksiyon listesi | `local_favorites` | Koleksiyona eklenen prompt ID dizisi |
 | Özel promptlar | `local_user_prompts` | Kullanıcının oluşturduğu prompt verileri |
-| Sıralama düzeni | `local_myspace_order` | Koleksiyonum'daki kart sırası |
-| Özel etiketler | `local_custom_tags` | Etiket tanımları ve atama ilişkileri |
+| Sıralama düzeni | `local_myspace_order` | Koleksiyonum'daki kart sıralaması |
+| Özel etiketler | `local_custom_tags` | Etiket tanımları ve atamaları |
 
 :::caution Dikkat
-- Tarayıcı yerel depolamanın yaklaşık 5MB kapasite sınırı vardır, günlük kullanım için tamamen yeterlidir.
-- Tarayıcı verilerini temizlemek kişisel verilerin kaybolmasına neden olur, düzenli olarak "Ayarlar > Veri Dışa Aktar" yoluyla yedekleme yapılması önerilir.
-- Bilgisayar veya tarayıcı değiştirdikten sonra verileri yeniden içe aktarmak gerekir.
+- Tarayıcı yerel deposunun kapasitesi yaklaşık 5MB ile sınırlıdır; günlük kullanım için yeterlidir.
+- Tarayıcı verilerini temizlemek kişisel verilerin kaybolmasına yol açar—düzenli olarak "Ayarlar > Verileri Dışa Aktar" yoluyla yedek almanız önerilir.
+- Bilgisayar veya tarayıcı değişikliğinde verileri yeniden içe aktarmanız gerekir.
 :::
 
 ## Dağıtım
 
-Çevrimdışı sürüm `offline` dalına dayanmaktadır. Yönetici dağıtımı bir kez tamamladıktan sonra, ekip üyelerinin herhangi bir işlem yapmasına gerek yoktur.
+Çevrimdışı sürüm `offline` dalına dayalıdır. Yönetici dağıtımı bir kez tamamladıktan sonra ekip üyelerinin herhangi bir işlem yapmasına gerek kalmaz.
 
-### Docker Dağıtımı (Önerilen)
+### Docker ile Dağıtım (Önerilen)
 
-En basit dağıtım yöntemi, tek bir komutla intranet sunucusunda çalıştırılabilir:
+En basit dağıtım yöntemidir; tek bir komutla intranet sunucusunda çalıştırabilirsiniz:
 
 ```bash
-# Önceden oluşturulmuş çevrimdışı sürüm imajını kullanın
+# Önceden derlenmiş çevrimdışı sürüm imajını kullanın
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# Veya Docker Hub kullanın
+# Veya Docker Hub üzerinden
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-Dağıtımdan sonra ekip üyeleri `http://<Sunucu IP>:3000` adresine giderek kullanabilir.
+Dağıtımdan sonra ekip üyeleri `http://<sunucu-IP>:3000` adresine erişerek kullanabilir.
 
 `docker-compose` kullanımı:
 
@@ -95,12 +97,12 @@ services:
     restart: unless-stopped
 ```
 
-### Kaynak Koddan Derleme
+### Kaynak Kodundan Derleme
 
-Prompt içeriğini özelleştirmeniz veya yapılandırmayı değiştirmeniz gerekiyorsa:
+Prompt içeriğini özelleştirmek veya yapılandırmayı değiştirmek istiyorsanız:
 
 ```bash
-# Offline dalını klonlayın
+# Çevrimdışı sürüm dalını klonlayın
 git clone -b offline https://github.com/rockbenben/ChatGPT-Shortcut.git
 cd ChatGPT-Shortcut
 
@@ -110,14 +112,14 @@ yarn
 # Yerel geliştirme
 yarn start
 
-# Tek dilli sürüm derleyin (Çince)
-yarn build --locale zh-Hans
+# Tek dilli sürüm derleyin (Türkçe)
+yarn build --locale tr
 
 # Tüm dilleri derleyin
 yarn build
 ```
 
-Derleme çıktısı `build/` dizinindedir, herhangi bir statik dosya sunucusuna (Nginx, Apache, Caddy vb.) dağıtılabilir.
+Derleme çıktısı `build/` dizinindedir ve herhangi bir statik dosya sunucusuna (Nginx, Apache, Caddy vb.) dağıtılabilir.
 
 ### Nginx Yapılandırma Örneği
 
@@ -136,64 +138,73 @@ server {
 
 ### Platform Dağıtımı
 
-Vercel, Cloudflare Pages ve diğer platformlara dağıtırken `offline` dalını seçin, diğer adımlar çevrimiçi sürümle aynıdır, ayrıntılar için [Proje Dağıtımı](../deploy)'na bakın.
+Vercel, Cloudflare Pages gibi platformlarda dağıtım yaparken `offline` dalını seçmeniz yeterlidir; diğer adımlar çevrimiçi sürümle aynıdır, ayrıntılar için [Proje Dağıtımı](../deploy) belgesine bakın.
 
-## Veri İçe-Dışa Aktarma
+## Veri İçe/Dışa Aktarma
 
 ### Dışa Aktarma
 
-"Ayarlar > Veri Dışa Aktar"a gidin, kişisel favorileri ve özel promptları JSON dosyası olarak dışa aktarın.
+"Ayarlar > Verileri Dışa Aktar" bölümüne girip kişisel koleksiyonunuzu ve özel promptlarınızı JSON dosyası olarak dışa aktarın.
 
 ### İçe Aktarma
 
-Aşağıdaki formatlardaki JSON dosyalarının içe aktarılmasını destekler:
+Aşağıdaki formatlardaki JSON dosyalarının içe aktarılması desteklenir:
 
-- **Çevrimdışı sürümden dışa aktarılan dosya**: Favoriler, promptlar, sıralama ve etiketler tamamen geri yüklenir
-- **Çevrimiçi sürümden dışa aktarılan dosya**: Otomatik olarak uyumlu
-  - Kullanıcı promptları → Yerele birleştir (başlığa göre tekrar kaldırma)
-  - Seçilmiş favoriler (card) → Yerel favorilere birleştir
-  - Topluluk favorileri (community) → Otomatik olarak yerel özel promptlara dönüştür
-  - MySpace sıralaması → Yerel olarak geri yükle
-  - Özel etiketler → Ekle ve birleştir (mevcut olanları geçersiz kılmaz)
+- **Çevrimdışı sürümden dışa aktarılan dosyalar**: Koleksiyon, promptlar, sıralama ve etiketler tam olarak geri yüklenir
+- **Çevrimiçi sürümden dışa aktarılan dosyalar**: Otomatik uyumluluk işlemi uygulanır
+  - Kullanıcı promptları → Yerele birleştirilir (başlığa göre tekrarlar elenir)
+  - Seçilmiş koleksiyon (card) → Yerel koleksiyona birleştirilir
+  - Topluluk koleksiyonu (community) → Otomatik olarak yerel özel promptlara dönüştürülür
+  - MySpace sıralaması → Yerele geri yüklenir
+  - Özel etiketler → Eklenerek birleştirilir (mevcutların üzerine yazılmaz)
 
-### Çevrimiçi Sürümden Göç
+### Çevrimiçi Sürümden Geçiş
 
-1. Çevrimiçi sürümde (aishort.top) "Hesabım" sayfasından verileri dışa aktarın
-2. Çevrimdışı sürümün "Ayarlar" sayfasında o JSON dosyasını içe aktarın
-3. Topluluk favorileri otomatik olarak yerel promptlara dönüştürülecek, seçilmiş favoriler normal şekilde senkronize olacaktır
+1. Çevrimiçi sürümün (aishort.top) "Hesabım" sayfasından verileri dışa aktarın
+2. Çevrimdışı sürümün "Ayarlar" sayfasında bu JSON dosyasını içe aktarın
+3. Topluluk koleksiyonu otomatik olarak yerel promptlara dönüştürülür; seçilmiş koleksiyon normal şekilde senkronize edilir
 
 ## Sıkça Sorulan Sorular
 
 ### Dağıtımdan sonra ekip nasıl kullanır?
 
-Yönetici intranet sunucusuna dağıtıktan sonra, ekip üyelerine erişim adresini (örneğin `http://192.168.1.100:3000`) bildirin. Herkes tarayıcıdan açar, yükleme gerekmez, kayıt gerekmez.
+Yönetici intranet sunucusuna dağıttıktan sonra erişim adresini (örn. `http://192.168.1.100:3000`) ekip üyelerine iletmesi yeterlidir. Her kişi tarayıcıyla açar; kurulum gerektirmez, kayıt gerektirmez.
 
-### Herkesin verileri birbirini etkiler mi?
+### Kullanıcıların verileri birbirini etkiler mi?
 
-Hayır. Herkesin favorileri ve özel promptları kendi tarayıcısının localStorage'ında saklanır, tamamen bağımsızdır. Sunucuda yalnızca paylaşılan prompt kütüphanesi (salt okunur) bulunur.
+Hayır. Her kullanıcının koleksiyonu ve özel promptları kendi tarayıcısının localStorage'ında saklanır ve tamamen bağımsızdır. Sunucuda yalnızca paylaşılan prompt kütüphanesi (salt okunur) bulunur.
 
-### Veriler kaybolabilir mi?
+### Veriler kaybolur mu?
 
-Aşağıdaki işlemler kişisel verilerin kaybolmasına neden olabilir:
+Aşağıdaki işlemler kişisel verilerin kaybolmasına yol açar:
 
-- Tarayıcı verilerini/önbelleği temizleme
-- Gizli/incognito mod kullanma
-- Bilgisayar veya tarayıcı değiştirme
+- Tarayıcı verilerini/önbelleğini temizlemek
+- Gizli/InPrivate modunda gezinmek
+- Bilgisayar veya tarayıcı değiştirmek
 
-Önemli verilerin düzenli olarak "Ayarlar > Veri Dışa Aktar" yoluyla JSON dosyası olarak yedeklenmesi önerilir.
+Önemli verilerin düzenli olarak "Ayarlar > Verileri Dışa Aktar" yoluyla JSON dosyası olarak yedeklenmesi önerilir.
 
-### Ekip arasında özel promptlar paylaşılabilir mi?
+### Özel promptlar ekipler arasında paylaşılabilir mi?
 
-Evet. Bir kişi JSON dosyasını dışa aktarır, ardından diğer üyeler "Ayarlar > Veri İçe Aktar"da içe aktarır. İçe aktarma sırasında otomatik olarak tekrarlar kaldırılır.
+Evet. Bir kişi JSON dosyasını dışa aktardıktan sonra diğer üyeler "Ayarlar > Verileri İçe Aktar" bölümünden içe aktarabilir; tekrarlar otomatik olarak elenir.
 
 ### Prompt kütüphanesi nasıl güncellenir?
 
-Prompt kütüphanesi build zamanında paketlenen statik veridir. Güncelleme yöntemi:
+Prompt kütüphanesi, derleme aşamasında paketlenen statik bir veridir. Güncelleme yöntemi:
 
-1. Yönetici en son `offline` dalı kodunu çeker
-2. Yeniden derleyip dağıtır (veya en son Docker imajını çeker)
-3. Ekip üyeleri tarayıcı sayfasını yenilediklerinde yeni içeriği göreceklerdir (kişisel veriler etkilenmez)
+1. Yönetici en güncel `offline` dalı kodunu çeker
+2. Yeniden derleyip dağıtır (veya en güncel Docker imajını çeker)
+3. Ekip üyeleri tarayıcıyı yenileyerek yeni içeriği görebilir (kişisel veriler etkilenmez)
 
 ### Çevrimdışı sürümün veri formatı çevrimiçi sürümle uyumlu mu?
 
-Uyumludur. Dışa aktarılan JSON formatı aynıdır, iki sürüm arasında karşılıklı içe/dışa aktarma yapılabilir. Prompt ID'leri iki sürümde farklıdır (çevrimiçi sunucu ID'si, çevrimdışı zaman damgası ID'si kullanır), ancak içe aktarırken başlığa göre tekrar kaldırılır, çakışma olmaz.
+Uyumludur. Dışa aktarılan JSON formatı aynıdır; iki sürüm arasında karşılıklı içe aktarılabilir. Prompt ID'leri farklıdır (çevrimiçi sürüm sunucu ID'si, çevrimdışı sürüm zaman damgalı ID kullanır) ancak içe aktarma başlığa göre tekrarları eler, çakışma olmaz.
+
+### KVKK uyumluluğu açısından çevrimdışı sürüm ne avantaj sağlar?
+
+Çevrimdışı sürüm, KVKK (Kişisel Verilerin Korunması Kanunu) kapsamında veri yerelliği ve veri minimizasyonu ilkelerine doğal olarak uyumlu bir mimariye sahiptir:
+
+- **Veri yurt dışına çıkmaz**: Tüm kişisel veriler (koleksiyon, özel promptlar, etiketler) yalnızca kullanıcının kendi cihazında, kurumunuzun intranet sınırları içinde kalır
+- **Açık rıza ve hesap gerekmez**: Hesap kaydı bulunmadığından kişisel veri toplama yükümlülüğü en aza iner
+- **Veri sorumlusu kurum içindedir**: Sunucu sizin kontrolünüzde olduğundan VERBİS bildirimi ve veri işleme envanteri yönetimi kolaylaşır
+- **Finans sektörü için BDDK uyumu**: BDDK'nın bulut bilişim ve dış hizmet alımı düzenlemeleri kapsamındaki bankalar ve aracı kurumlar, üçüncü taraf sunucu bağımlılığı olmadan AI Short'u kendi veri merkezlerinde çalıştırabilir

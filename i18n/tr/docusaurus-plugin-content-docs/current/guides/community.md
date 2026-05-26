@@ -1,43 +1,41 @@
 ---
 sidebar_label: Topluluk Promptları
 title: AI Short Topluluğu | Kaliteli AI Promptlarını Keşfedin ve Paylaşın
-description: Toplulukta en çok oy alan AI promptlarını keşfedin! Oylara göre filtreleyin, en iyi fikirlerinizi görünürlük için paylaşın veya kişisel kullanım için özel promptları yönetin.
+description: AI Short topluluğunda kullanıcıların paylaştığı kaliteli AI promptlarını keşfedin. Oylama mekanizmasıyla öne çıkan içerikleri görün, kendi promptlarınızı paylaşın veya yalnızca size görünür özel promptlar oluşturun.
 ---
 
 # Topluluk Promptları
 
-Topluluk Promptları bölümü, kullanıcılar tarafından paylaşılan özel promptları görüntüler. Burada ilham bulabilir veya kendi yaratıcılığınızı paylaşabilirsiniz.
+Topluluk promptları kullanıcılar tarafından paylaşılır; burada ilham bulabilir, kendi çalışmalarınızı da paylaşıma açabilirsiniz. **Oylama mekanizması** kaliteli içeriğin öne çıkmasını sağlar—faydalı bulunan promptlar daha geniş kitlelere ulaşır, düşük kaliteli olanlar zamanla arka planda kalır.
 
 ![](/img/docs/community-page.png)
 
 ## Sıralama ve Filtreleme
 
-Topluluk sayfası birden fazla filtreleme yöntemi sunar:
-
-- **Yayınlanma Zamanı**: En son paylaşılan promptları görüntüleyin
-- **Oy Sıralaması**: En çok oy alan promptları görüntüleyin
-- **Anahtar Kelime Araması**: Belirli konulardaki promptları arayın
+- **Yayın Zamanı**: En son paylaşılanları görün
+- **Oy Sıralaması**: En çok beğeni alan promptları görün
+- **Anahtar Kelime Araması**: Belirli konuları arayın
 
 ## Oylama Mekanizması
 
-Oylayarak/oylamayarak promptların görünürlüğünü belirleyin:
+Olumlu/olumsuz oylar promptun görünürlüğünü belirler:
 
-- **Oy Ver**: Kaliteli içeriğin daha fazla görünürlük kazanmasına yardımcı olun
-- **Oy Verme**: Olumsuz oy sayısı belirli bir miktara ulaştıktan sonra prompt gizlenir
+- **Olumlu oy**: Kaliteli içeriğin daha fazla kişiye ulaşmasını sağlar
+- **Olumsuz oy**: Olumsuz oy sayısı eşiğe ulaşınca prompt gizlenir
 
-**Koleksiyon Bağlantısı**: Bir topluluk promptunu toplarken, sistem otomatik olarak oy verir.
+**Koleksiyon bağlantısı**: Bir topluluk promptunu koleksiyonunuza eklediğinizde otomatik olarak olumlu oy verilmiş sayılır.
 
 ![Oylama Düğmesi Durumu](/img/docs/community-vote.png)
 
-> Oylama yalnızca giriş yapmış kullanıcılara açıktır ve her kişinin aynı prompt için oyu en son verilen oya dayanır.
+> Oylama yalnızca giriş yapmış kullanıcılara açıktır; aynı prompt için yalnızca en son verdiğiniz oy dikkate alınır.
 
 ## Özel Promptlar
 
-Herkese açık yapmak istemediğiniz yaratıcılığınız özel olarak ayarlanabilir:
+Herkesle paylaşmak istemediğiniz çalışmalarınızı özel olarak ayarlayabilirsiniz:
 
-- Prompt oluştururken veya düzenlerken "Topluluğa Paylaş" seçeneğinin işaretini kaldırın
+- Oluştururken veya düzenlerken "Topluluğa Paylaş" seçeneğini kapatın
 - Özel promptlar yalnızca size görünür
-- İstediğiniz zaman genel/özel durum arasında geçiş yapabilirsiniz
+- İstediğiniz zaman genel/özel arasında geçiş yapabilirsiniz
 
 ## İlgili Belgeler
 

@@ -1,55 +1,57 @@
 ---
 slug: /
-sidebar_label: Pengantar
-title: AI Short - Perpustakaan Prompt ChatGPT & AI Pilihan
-description: Kesulitan dengan respons AI? AI Short menyediakan prompt pilihan untuk ChatGPT, Claude dan lainnya. Salin prompt, kelola koleksi, dan tingkatkan produktivitas seketika.
+sidebar_label: Pengantar AI Short
+title: AI Short - Perpustakaan Prompt AI Pilihan | Salin Sekali Klik Tingkatkan Produktivitas
+description: Perpustakaan prompt AI bahasa Indonesia siap pakai untuk ChatGPT, Gemini, Claude, Sahabat AI, dan DeepSeek. Salin sekali klik, dengan koleksi pribadi, prompt kustom, dan berbagi komunitas untuk mempercepat alur kerja harian Anda.
 ---
 
 # Pengantar AI Short
 
-AI Short (ChatGPT Shortcut) menyediakan daftar prompt AI yang ringkas dan mudah digunakan untuk membantu pengguna dengan cepat menemukan prompt yang sesuai untuk berbagai skenario.
+AI Short (ChatGPT Shortcut) adalah perpustakaan prompt AI yang dikategorikan berdasarkan skenario, siap salin dan pakai.
+
+> **Apa itu "prompt"?** Prompt adalah instruksi yang Anda berikan ke AI, yang menentukan kualitas output AI. Prompt yang baik membuat AI memberikan jawaban yang profesional dan akurat; prompt yang kabur hanya menghasilkan jawaban biasa-biasa saja. AiShort merangkum prompt berkualitas untuk berbagai skenario (menulis, pemrograman, kantor, belajar, dan lainnya), menghemat waktu Anda untuk memikirkan cara bertanya.
 
 ## ⚡ Mulai Cepat dalam 30 Detik
 
 1. Buka AI Short
 2. Cari atau jelajahi prompt yang Anda butuhkan
-3. Klik "Salin" dan tempelkan ke model percakapan AI mana pun
+3. Klik "Salin", lalu tempel ke alat AI apa pun — halaman chat seperti ChatGPT, Gemini, Claude, atau DeepSeek, alat coding seperti Cursor, panggilan API, agen, dll.
 
-Sesederhana itu! Untuk fitur lebih lanjut, silakan lanjutkan membaca atau lihat [Panduan Pengguna](./guides/getting-started).
+Sesederhana itu — untuk cara penggunaan lainnya, lihat [Panduan Memulai](./guides/getting-started).
 
 ## Fitur Inti
 
-🚀 **Prompt Satu Klik**: Prompt profesional pilihan, siap digunakan dengan satu klik salin.
+🚀 **Prompt Pilihan**: Mencakup skenario menulis, pemrograman, kantor, dan lainnya, siap salin dan pakai.
 
-🔍 **Pencarian Cerdas**: Temukan prompt yang Anda butuhkan dengan cepat melalui filter tag dan pencarian kata kunci.
+🔍 **Tag + Pencarian Kata Kunci**: Filter berdasarkan tag skenario atau cari langsung dengan kata kunci.
 
-🌍 **Dukungan Multi-bahasa**: Menyediakan terjemahan untuk 18 bahasa, mendukung balasan bahasa lokal.
+🌍 **18 Bahasa**: Antarmuka dan terjemahan prompt lengkap, dapat menentukan balasan dalam bahasa lokal.
 
-📦 **Siap Pakai**: Tidak perlu registrasi, cukup kunjungi untuk menggunakan.
+📦 **Siap Pakai**: Tanpa perlu mendaftar akun, buka langsung pakai.
 
 ## Fitur Lanjutan (Setelah Login)
 
-📂 **Koleksi Saya**: Kumpulkan prompt favorit, mendukung pengurutan seret-lepas dan klasifikasi tag kustom.
+📂 **Koleksi Saya**: Pengurutan seret-lepas, klasifikasi tag kustom.
 
 ✏️ **Prompt Kustom**: Buat, edit, dan kelola prompt Anda sendiri.
 
-🗳️ **Interaksi Komunitas**: Bagikan prompt di bagian komunitas dan berpartisipasi dalam voting.
+🗳️ **Interaksi Komunitas**: Bagikan prompt ke komunitas, berpartisipasi dalam voting.
 
-📤 **Ekspor Data**: Ekspor semua prompt sebagai file JSON dengan satu klik.
+📤 **Ekspor Data**: Semua prompt dapat diekspor sebagai JSON dengan satu klik.
 
-🔐 **Beberapa Metode Login**: Mendukung kata sandi akun, Google, dan tautan email tanpa kata sandi.
+🔐 **Beberapa Metode Login**: Kata sandi akun, Google, tautan email tanpa kata sandi.
 
-## Versi Deployment Offline
+## Versi Deploy Offline
 
-AI Short menyediakan versi deployment offline yang dirancang untuk intranet perusahaan, jaringan pemerintah, dan lingkungan tanpa akses jaringan eksternal. Tidak memerlukan server backend atau registrasi. Fitur inti tetap terjaga, format data kompatibel dengan versi online. Lihat detail di [versi offline](./guides/offline).
+[Versi deploy offline](./guides/offline) dirancang khusus untuk skenario yang tidak dapat mengakses jaringan luar, seperti intranet perusahaan atau jaringan pemerintahan. Tanpa perlu server backend dan akun, siap pakai setelah deploy, mempertahankan fitur inti seperti penjelajahan, pencarian, koleksi, dan kustomisasi, dengan format data yang kompatibel dengan versi online.
 
 ## Sumber Prompt
 
-Prompt bersumber dari pilihan internet, berbagi komunitas, dan [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Kami memperbarui secara teratur untuk terus membawakan prompt dan inspirasi baru.
+Prompt bersumber dari pilihan internet, berbagi komunitas, dan [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts), terus diperbarui.
 
 ## Bergabung dengan Komunitas
 
-Selamat bergabung dengan komunitas kami untuk bertukar ide dan umpan balik:
+Bergabunglah dengan komunitas kami untuk berdiskusi dan berbagi umpan balik:
 
 <a href="https://t.me/aishort_top">
    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="bergabung grup Telegram" />
@@ -58,3 +60,4 @@ Selamat bergabung dengan komunitas kami untuk bertukar ide dan umpan balik:
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="obrolan di Discord" />
 </a>
+

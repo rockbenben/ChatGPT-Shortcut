@@ -6,51 +6,68 @@ description: Soluciona problemas comunes con IA - mejora tus prompts, evita "alu
 
 # Preguntas Frecuentes
 
-## ¿Por qué usar prompts en inglés?
+## ¿AiShort es de pago?
 
-Los modelos de IA generalmente tienen una mejor comprensión del inglés, y el uso de prompts en inglés puede producir resultados más estables.
+La versión web de AiShort es **completamente gratuita**: navegar, copiar y buscar prompts no tiene costo, y ni siquiera requiere registrarse. Las funciones avanzadas tras iniciar sesión (favoritos, prompts personalizados, compartir en la comunidad) también son gratuitas.
 
-Aunque el uso de prompts en chino puede obtener resultados decentes, la entrada repetida del mismo prompt en chino puede llevar a variaciones significativas en los resultados. Por lo tanto, se recomienda usar prompts en inglés en escenarios importantes.
+Nota: AiShort solo proporciona los prompts. **Si el uso del modelo de IA tiene costo, eso lo decide el servicio de IA que uses** (por ejemplo, la versión gratuita o de pago de ChatGPT, la facturación por API, etc.).
 
-**Especificar respuesta en chino**: Agrega `respond in Chinese` al final del prompt para obtener una respuesta en chino.
+## ¿Qué modelos de IA son compatibles?
+
+Los prompts de AiShort son universales — funcionan en **cualquier escenario de IA en el que introduzcas un prompt**: no solo páginas de chat, también herramientas de programación como Cursor, llamadas a API, agentes de IA, etc. Estos son los modelos de chat más habituales:
+
+- Internacionales: ChatGPT, Gemini, Claude, Grok
+- China continental: DeepSeek, Tongyi Qianwen, Ernie Bot, Doubao, Kimi, ChatGLM, iFLYTEK Spark, Tencent Yuanbao
+- Plataformas API: OpenRouter, SiliconFlow, Groq
+
+Consulta la lista completa en [Inicio Rápido → Modelos de IA Comunes](./getting-started#modelos-de-ia-comunes).
+
+## ¿Por qué los prompts están en inglés?
+
+La mayoría de modelos se entrenaron principalmente con texto en inglés, por lo que entienden mejor las instrucciones en ese idioma y devuelven resultados más consistentes. Los prompts en español también funcionan bien, pero al repetir la misma consulta los resultados pueden variar más.
+
+No necesitas hablar inglés con fluidez para aprovecharlos: basta con copiar el prompt tal cual y pedir la respuesta en español. Es el flujo que usa la mayoría de la comunidad hispanohablante y la calidad de la salida en español sigue siendo excelente.
+
+> 💡 ¿Quieres la respuesta en español? Añade `respond in Spanish` al final del prompt (o `responde en español` si lo prefieres en castellano). Para una variante regional concreta, indícalo: `respond in Latin American Spanish` o `respond in Spanish from Spain`.
 
 ## ¿Necesito ingresar el prompt cada vez?
 
-**Uso de API**: Puedes configurar el prompt como "system prompt", que se aplicará automáticamente a conversaciones posteriores.
+**Uso vía API**: Configura el prompt como `system prompt` y se aplicará automáticamente a todas las conversaciones siguientes.
 
-**Versión Web**: Si no has cambiado de tema, ChatGPT recordará la configuración de prompts de la conversación actual. Cuando la respuesta comienza a desviarse de las expectativas, significa que la IA ha "olvidado" el prompt y necesitas volver a ingresarlo.
+**Versión web**: Mientras no cambies de conversación, ChatGPT recordará el prompt actual. Cuando la respuesta empiece a desviarse, significa que lo ha "olvidado" — basta con volver a pegarlo.
 
-**Consejo**: Guarda las conversaciones utilizadas frecuentemente como marcadores para un acceso rápido más tarde.
+**Consejo**: Guarda las conversaciones utilizadas con frecuencia como marcadores del navegador para acceder rápido la próxima vez.
 
-## ¿Por qué no puedo encontrar prompts relacionados?
+## ¿Por qué no encuentro prompts relacionados?
 
-Los resultados de búsqueda en la página de inicio provienen principalmente de la **biblioteca de prompts seleccionados** (incluidos sus prompts personales después de iniciar sesión), y **no incluyen** los prompts compartidos públicamente por la comunidad.
+La búsqueda de la página de inicio cubre la **biblioteca de prompts curados** (más tus prompts personales tras iniciar sesión), pero **no incluye** los prompts compartidos por la comunidad.
 
-Si no encuentra resultados en la página de inicio usando palabras clave cortas, le recomendamos buscar en la página de [Prompts de la Comunidad](./community), que contiene contenido más rico compartido por los usuarios.
+Si no encuentras resultados con palabras clave cortas en la página de inicio, vuelve a buscar en la página de [Prompts de la Comunidad](./community) — allí hay más contenido compartido por los usuarios.
 
-## ¿Qué pasa si la IA genera información falsa?
+## ¿Qué hago si la IA genera información falsa?
 
-La IA a veces "alucina", generando información que parece plausible pero que en realidad es incorrecta. Sugerencias de uso:
+La IA a veces "alucina", generando información que parece plausible pero que en realidad es incorrecta. Cómo manejarlo:
 
-1. **Verificar información clave**: Especialmente datos, citas, código, etc.
-2. **Optimización de múltiples rondas**: Pide a la IA que verifique y optimice la respuesta nuevamente.
-3. **Verificación cruzada**: Usa diferentes prompts o modelos para verificar conclusiones importantes.
+1. **Verifica la información clave**: especialmente datos, citas, código, etc.
+2. **Optimización en varias rondas**: pide a la IA que revise y mejore su propia respuesta.
+3. **Verificación cruzada**: usa distintos prompts o modelos para validar las conclusiones importantes.
 
-Los prompts adecuados pueden ayudarte a reducir la ocurrencia de alucinaciones de IA.
+Un prompt adecuado puede reducir las alucinaciones de la IA.
 
-## ¿Cómo hacer una copia de seguridad de mis prompts?
+## ¿Cómo hago una copia de seguridad de mis prompts?
 
-1. Ingresa al Centro de Usuario
-2. Haz clic en el botón "Exportar Prompts"
-3. El sistema genera automáticamente un archivo JSON para descargar
+1. Ve a "Mi Cuenta" → busca la fila "Gestión de Datos → Exportar Prompts"
+2. Haz clic en el botón "Exportar Datos"
+3. El sistema genera y descarga automáticamente un archivo JSON
 
-Se recomienda hacer copias de seguridad regularmente para evitar la pérdida de datos.
+Se recomienda hacer copias de seguridad periódicamente para evitar la pérdida de datos.
 
 ## ¿Los resultados de los prompts no son ideales?
 
-1. **Intenta Optimizar**: Deja que la IA optimice la respuesta nuevamente.
-2. **Cambia de Perspectiva**: Usa diferentes prompts para expresar el mismo requisito.
-3. **Comentarios y Compartir**: Si encuentras problemas o tienes buenos prompts, bienvenido a informarnos a través de [Comentarios](/feedback) o compartir en la comunidad.
+1. **Pide a la IA que optimice**: deja que la propia IA puntúe y mejore su respuesta.
+2. **Cambia el enfoque**: usa prompts distintos para expresar la misma necesidad.
+3. **Prueba en la comunidad**: en [Prompts de la Comunidad](./community) puede haber una versión más adecuada — y también puedes compartir allí los tuyos.
+4. **Enviar sugerencias**: ¿problemas o ideas de mejora? Comparte tus [comentarios](/feedback).
 
 ## Documentación Relacionada
 

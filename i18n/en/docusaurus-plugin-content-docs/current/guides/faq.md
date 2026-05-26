@@ -1,59 +1,74 @@
 ---
 sidebar_label: FAQ
-title: AI Short FAQ | Prompt Optimization & Fixing Hallucinations
-description: Getting wrong AI answers? Learn how to fix prompt issues, avoid AI hallucinations, and secure your data with our comprehensive troubleshooting guide.
+title: AI Short FAQ | Prompt Optimization & Fixing AI Hallucinations
+description: Prompts not working as expected? AI making things up? This guide answers common questions and shows you how to optimize prompts, avoid hallucinations, and back up your data.
 ---
 
 # FAQ
 
-## Why use prompts in English?
+## Is AiShort free?
 
-AI models generally have better understanding of English, and using English prompts can yield more stable output results.
+The AiShort web app is **completely free** — browsing, copying, and searching for prompts is free, and you don't even need to register. The advanced features available after logging in (collections, custom prompts, community sharing) are also free.
 
-Although using Chinese prompts can get decent results, repeated input of the same Chinese prompt may lead to significant variations in results. Therefore, it is recommended to use English prompts in important scenarios.
+Note: AiShort only provides prompts. **Whether the AI model itself charges you depends on the AI service you use** (e.g. ChatGPT free vs. paid tier, API billing, etc.).
 
-**Specify Chinese Reply**: Add `respond in Chinese` at the end of the prompt to get a reply in Chinese.
+## Which AI models are supported?
+
+AiShort prompts are universal — they work in **any AI scenario where you input prompts**: not just chat pages, but also coding tools like Cursor, API calls, AI agents, etc. Here are the common chat-style models:
+
+- International: ChatGPT, Gemini, Claude, Grok
+- Mainland China: DeepSeek, Tongyi Qianwen, Ernie Bot, Doubao, Kimi, ChatGLM, iFLYTEK Spark, Tencent Yuanbao
+- API platforms: OpenRouter, SiliconFlow, Groq
+
+See the full list at [Getting Started → Common AI Models](./getting-started#common-ai-models).
+
+## Why are the prompts written in English?
+
+Most large language models are trained predominantly on English, so English prompts tend to be interpreted more accurately and produce more consistent output across runs. Writing the instructions in English also makes a single prompt reusable across languages — you can ask for the reply in any language you want without rewriting the prompt itself.
+
+> 💡 Want the reply in a different language? Add a line like `respond in Spanish` (or any target language) at the end of the prompt.
 
 ## Do I need to enter the prompt every time?
 
-**API Use**: You can set the prompt as "system prompt", which will be automatically applied to subsequent conversations.
+**API usage**: Set the prompt as the `system prompt` and it will apply automatically to subsequent turns.
 
-**Web Version**: If you haven't switched topics, ChatGPT will remember the current conversation's prompt settings. When the reply starts to deviate from expectations, it means the AI has "forgotten" the prompt, and you need to re-enter it.
+**Web version**: As long as you don't switch conversations, ChatGPT will remember the current prompt. When replies start to drift, it means it has "forgotten" — just paste the prompt again.
 
-**Tip**: Save frequently used conversations as bookmarks for quick access later.
+**Tip**: Save frequently used conversations as browser bookmarks for quick access later.
 
-## Why can't I find related prompts?
+## Why can't I find a related prompt?
 
-Search results on the homepage mainly come from the **curated prompt library** (including your personal prompts after logging in), and **do not include** prompts publicly shared by the community.
+Homepage search covers the **curated prompt library** (plus your personal prompts after logging in), but **does not include** community-shared prompts.
 
-If you don't find results on the homepage using short keywords, we recommend searching on the [Community Prompts](./community) page, which contains richer content shared by users.
+If short keywords don't return results on the homepage, search again on the [Community Prompts](./community) page — there's far more user-shared content there.
 
-## What if AI outputs false information?
+## What if the AI outputs false information?
 
-AI sometimes "hallucinates", outputting information that seems plausible but is actually incorrect. Suggestions for use:
+AI sometimes "hallucinates", producing information that sounds plausible but is actually wrong. How to handle it:
 
-1. **Verify Key Information**: Especially data, citations, code, etc.
-2. **Multi-round Optimization**: Let AI check and optimize the answer again.
-3. **Cross-verification**: Use different prompts or models to verify important conclusions.
+1. **Verify key information**: Especially data, citations, and code
+2. **Iterate**: Ask the AI to review and improve its own answer
+3. **Cross-check**: Use different prompts or models to verify important conclusions
 
-Appropriate prompts can help you reduce the occurrence of AI hallucinations.
+Better prompts can also reduce hallucinations.
 
-## How to back up my prompts?
+## How do I back up my prompts?
 
-1. Enter User Center
-2. Click "Export Prompts" button
-3. The system automatically generates a JSON file for download
+1. Go to "My Account" and find the "Data Management → Export Prompts" section
+2. Click the "Export Data" button
+3. The system will generate a JSON file and download it automatically
 
-It is recommended to back up regularly to prevent data loss.
+Backing up regularly is recommended to prevent data loss.
 
-## Prompt results are not ideal?
+## The prompt isn't working well?
 
-1. **Try Optimization**: Let AI optimize the answer again.
-2. **Change Perspective**: Use different prompts to express the same requirement.
-3. **Feedback & Share**: If you find problems or have good prompts, welcome to inform us via [Feedback](/feedback) or share in the community.
+1. **Ask the AI to refine**: Have the AI rate and improve its own answer
+2. **Rephrase**: Try a different prompt expressing the same need
+3. **Try the community**: [Community Prompts](./community) may have a better version — and feel free to share your own good prompts there
+4. **Send us feedback**: Found a problem or have a suggestion? Let us know via [Feedback](/feedback)
 
 ## Related Documentation
 
-- [Getting Started](./getting-started) - Basic usage methods
+- [Getting Started](./getting-started) - Basic usage
 - [My Collection](./my-collection) - Collection and tag management
 - [Community Prompts](./community) - Discover and share

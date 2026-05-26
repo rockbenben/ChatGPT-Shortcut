@@ -1,26 +1,24 @@
 ---
 sidebar_label: Gestione Account
-title: Gestione Account AI Short - Accesso Google e Senza Password
-description: Gestisci il tuo account AI Short - Accedi con Google o senza password per sincronizzare le tue collezioni. Recupera facilmente i tuoi dati.
+title: Gestione Account AI Short | Accesso Google e Senza Password
+description: Accedi ad AI Short con Google o con un link via email senza password. Recupera la password in pochi clic e ritrova subito collezioni e prompt personali.
 ---
 
 # Gestione Account
 
-AiShort fornisce molteplici metodi di accesso per facilitare l'accesso ai tuoi dati personali in qualsiasi momento.
+AiShort si può usare anche senza accesso, ma **dopo l'accesso** puoi collezionare i prompt preferiti, creare i tuoi prompt, condividerli nella community e sincronizzarli tra dispositivi. Di seguito sono descritte le operazioni di accesso, registrazione, password e cache.
 
 ## Metodi di Accesso
 
 ### Accesso con Password
 
-Accedi usando il tuo nome utente o email registrata combinati con una password.
+Accedi usando il nome utente o l'email registrata con la password.
 
-Se dimentichi la password, clicca su "Password dimenticata" nella pagina di accesso, inserisci la tua email registrata, e il sistema ti invierà un link di ripristino.
+Password dimenticata: nella pagina di accesso clicca su "Password dimenticata", inserisci la tua email registrata e riceverai un link di reimpostazione.
 
 ### Accesso Google
 
-Clicca sull'icona Google nella pagina di accesso per accedere con il tuo account Google in un clic.
-
-Usare l'accesso Google per la prima volta creerà automaticamente un account senza bisogno di una registrazione separata.
+Clicca sull'icona Google nella pagina di accesso per entrare con un clic. Al primo accesso, l'account viene creato in automatico: non serve registrarsi a parte.
 
 ![](/img/docs/account-login.png)
 
@@ -28,37 +26,36 @@ Usare l'accesso Google per la prima volta creerà automaticamente un account sen
 
 1. Inserisci la tua email registrata nella pagina di accesso
 2. Clicca su "Invia link di accesso"
-3. Controlla la tua email e clicca sul link per accedere
+3. Apri il link nell'email per accedere
 
-Questo metodo non richiede di ricordare una password ed è adatto agli utenti che non accedono frequentemente.
+Non serve ricordare alcuna password: comodo se entri di rado.
 
 ## Registra Account
 
-1. Clicca sull'opzione "Registrati" nella pagina di accesso
+1. Nella pagina di accesso clicca su "Registrati"
 2. Compila nome utente, email e password
-3. Accesso automatico dopo aver completato la registrazione
+3. Accesso automatico dopo l'invio
 
 ![](/img/docs/account-register.png)
 
 ## Cambia Password
 
-Dopo l'accesso, puoi cambiare la tua password nel Centro Utente:
+Dopo l'accesso, modificala in "Il mio account":
 
-![Pagina del Centro Utente](/img/docs/account-profile.png)
+![Pagina Il mio account](/img/docs/account-profile.png)
 
 1. Inserisci la password attuale
 2. Inserisci la nuova password e confermala
-3. Salva le modifiche
+3. Clicca su "Cambia password" per inviare
 
 ## Cancella Cache
 
-Se incontri problemi di sincronizzazione dati o anomalie di visualizzazione:
+Quando i dati non si sincronizzano o la visualizzazione presenta anomalie:
 
-1. Entra nel Centro Utente
-2. Clicca sul pulsante "Cancella Cache"
-3. La pagina si aggiornerà automaticamente e recupererà nuovamente i dati dal server
+1. Entra in "Il mio account" → trova la sezione "Gestione dati → Cancella cache"
+2. Clicca sul pulsante "Cancella cache" e, dopo la conferma, tutti i dati verranno ricaricati automaticamente
 
-Cancellare la cache non eliminerà le tue collezioni o prompt personalizzati; forza semplicemente una risincronizzazione dei dati dal server.
+Collezioni e prompt personalizzati restano al loro posto: viene semplicemente forzata una nuova sincronizzazione.
 
 ## Documentazione Correlata
 

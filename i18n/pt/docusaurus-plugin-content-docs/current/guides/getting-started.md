@@ -1,32 +1,37 @@
 ---
 sidebar_label: Início Rápido
-title: Início Rápido no AI Short - Prompts para ChatGPT e DeepSeek
-description: Comece a usar o AI Short em 30 segundos - Prompts prontos para ChatGPT, Gemini e DeepSeek.
+title: Guia de Início Rápido do AI Short | Copie Prompts para ChatGPT/DeepSeek
+description: Comece em 30 segundos! Copie prompts para ChatGPT, Gemini, DeepSeek e outros modelos de IA e melhore imediatamente a qualidade do diálogo e a produtividade.
 ---
 
 # Início Rápido
 
-Ao conversar com a IA, bons prompts podem ajudá-lo a obter respostas de alta qualidade mais rapidamente. O AI Short compilou um grande número de prompts práticos para você copiar e usar.
+Bons prompts determinam a qualidade da resposta da IA. O AI Short reúne uma grande coleção de prompts selecionados, prontos para copiar e colar.
+
+> 📋 **Antes de começar você precisa de**: um navegador + qualquer ferramenta de IA acessível — páginas de chat (ChatGPT, Gemini, Claude, DeepSeek), ferramentas de programação (Cursor, Copilot), agentes, chamadas de API ou similares. A versão web do AI Short não exige cadastro.
 
 ## Uso Básico
 
-1. Pesquise ou selecione o prompt que você precisa na página inicial
-2. Clique no cartão para ver detalhes ou clique diretamente no botão "Copiar"
-3. Abra qualquer modelo de IA e cole o prompt
-4. Siga as instruções do prompt para complementar sua pergunta específica
+1. Pesquise ou navegue pelos prompts de seu interesse na página inicial
+2. Encontre um prompt adequado e clique em "Copiar" (ou abra o cartão antes para ver o conteúdo completo)
+3. Cole em qualquer ferramenta de IA — páginas de chat como ChatGPT, ferramentas de programação como Cursor, chamadas de API, etc.
+4. Complete os **espaços reservados** do prompt (como `[conteúdo]`, `[tema]`) com suas necessidades específicas e envie à IA
 
 ![](/img/docs/how-to-use-aishort.gif)
 
+> 💡 **Dica**: a maioria dos prompts usa colchetes `[...]` para marcar os campos que você precisa preencher — basta substituir o texto entre colchetes pelo seu conteúdo específico.
+
 ## Acesso Rápido
 
-| Eu quero...                   | Onde ir                                                |
-| ----------------------------- | ------------------------------------------------------ |
-| Copiar e usar prompts         | Pesquise ou navegue diretamente na [Página Inicial](/) |
-| Favoritar e gerenciar prompts | [Minha Coleção](./my-collection)                       |
-| Criar meus próprios prompts   | [Prompts Personalizados](./user-prompts)               |
-| Cadastrar ou Logar            | [Gerenciamento de Conta](./account)                    |
-| Descobrir compartilhamentos   | [Prompts da Comunidade](./community)                   |
-| Implantacao offline/Intranet | [Versao Offline](./offline) |
+| Eu quero...                          | Onde ir                                                |
+| ------------------------------------ | ------------------------------------------------------ |
+| Copiar e usar prompts                | Pesquise ou navegue diretamente na [Página Inicial](/) |
+| Acessar em qualquer página de IA     | [Extensão de Navegador](../extension/)                 |
+| Favoritar e gerenciar prompts        | [Minha Coleção](./my-collection)                       |
+| Criar meus próprios prompts          | [Prompts Personalizados](./user-prompts)               |
+| Cadastrar ou Logar                   | [Gerenciamento de Conta](./account)                    |
+| Descobrir compartilhamentos          | [Prompts da Comunidade](./community)                   |
+| Implantação offline / em rede local  | [Versão Offline](./offline)                            |
 
 ## Modelos de IA Comuns
 
@@ -37,7 +42,13 @@ Ao conversar com a IA, bons prompts podem ajudá-lo a obter respostas de alta qu
 - [Claude](https://claude.ai/chats)
 - [Grok](https://grok.com/)
 
-### Modelos Chineses
+> 💡 ChatGPT, Gemini e Claude têm excelente domínio do português brasileiro — você pode conversar com eles diretamente em português, sem perda significativa de qualidade.
+
+### Modelos com foco em português
+
+- [Maritalk](https://chat.maritaca.ai/) — desenvolvido pela Maritaca AI (Brasil), treinado e otimizado especificamente para o português, com bom desempenho em tarefas em PT-BR e custo competitivo via API
+
+### Modelos da China continental
 
 - [DeepSeek](https://chat.deepseek.com)
 - [Tongyi Qianwen](https://www.tongyi.com/qianwen/)

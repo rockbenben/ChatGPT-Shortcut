@@ -1,26 +1,24 @@
 ---
-sidebar_label: Hesap
-title: AI Short Hesabı | Google ve Şifresiz Giriş Kılavuzu
-description: AI Short promptlarınıza Google veya şifresiz giriş ile her yerden erişin. Hesap ayarlarınızı yönetin ve verilerinizi saniyeler içinde güvenle kurtarın.
+sidebar_label: Hesap Yönetimi
+title: AI Short Hesap Yönetimi | Google ve Şifresiz Giriş
+description: AI Short'ta Google ile tek tıkla giriş yapın veya e-posta tabanlı şifresiz girişi kullanın. Şifrenizi sıfırlayın, önbelleği temizleyin ve koleksiyonlarınıza tüm cihazlarınızdan saniyeler içinde erişin.
 ---
 
 # Hesap Yönetimi
 
-AiShort, kişisel verilerinize her zaman erişimi kolaylaştırmak için birden fazla giriş yöntemi sunar.
+AiShort'u giriş yapmadan da kullanabilirsiniz—ancak **giriş yaptıktan sonra** sevdiğiniz promptları toplayabilir, kendi promptlarınızı oluşturabilir, toplulukta paylaşabilir ve cihazlar arasında senkronize edebilirsiniz. Aşağıda giriş, kayıt, şifre ve önbellek işlemleri açıklanmıştır.
 
 ## Giriş Yöntemleri
 
 ### Şifre ile Giriş
 
-Kullanıcı adınız veya kayıtlı e-postanız ile şifrenizi kullanarak giriş yapın.
+Kullanıcı adınız veya kayıtlı e-postanız + şifrenizle giriş yapın.
 
-Şifrenizi unuttuysanız, giriş sayfasında "Şifremi Unuttum"a tıklayın, kayıtlı e-postanızı girin ve sistem sıfırlama bağlantısı gönderecektir.
+Şifrenizi unuttuysanız: Giriş sayfasında "Şifremi Unuttum"a tıklayın, kayıtlı e-postanızı girin; sıfırlama bağlantısı gönderilecektir.
 
 ### Google ile Giriş
 
-Giriş sayfasındaki Google simgesine tıklayarak Google hesabınızla tek tıkla giriş yapın.
-
-Google girişini ilk kez kullanmak, ayrı kayıt olmadan otomatik olarak hesap oluşturacaktır.
+Giriş sayfasındaki Google simgesine tıklayarak tek adımda giriş yapın. İlk kullanımda hesabınız otomatik oluşturulur; ayrıca kayıt olmanıza gerek kalmaz.
 
 ![](/img/docs/account-login.png)
 
@@ -28,35 +26,36 @@ Google girişini ilk kez kullanmak, ayrı kayıt olmadan otomatik olarak hesap o
 
 1. Giriş sayfasında kayıtlı e-postanızı girin
 2. "Giriş Bağlantısı Gönder"e tıklayın
-3. E-postanızı kontrol edin ve giriş yapmak için bağlantıya tıklayın
+3. E-postadaki bağlantıyı açın; giriş yapılır
 
-Bu yöntem şifre hatırlamayı gerektirmez ve sık giriş yapmayan kullanıcılar için uygundur.
+Şifre hatırlamanıza gerek kalmaz; seyrek giriş yapanlar için ideal bir yöntemdir.
 
 ## Hesap Kaydı
 
-1. Giriş sayfasında "Kayıt Ol" seçeneğine tıklayın
-2. Kullanıcı adı, e-posta ve şifre girin
-3. Kayıt tamamlandıktan sonra otomatik giriş yapılır
+1. Giriş sayfasında "Kayıt Ol"a tıklayın
+2. Kullanıcı adı, e-posta ve şifrenizi girin
+3. Gönderdikten sonra otomatik olarak giriş yapılır
 
 ![](/img/docs/account-register.png)
 
 ## Şifre Değiştirme
 
-Giriş yaptıktan sonra, Kullanıcı Merkezinde şifrenizi değiştirebilirsiniz:
+Giriş yaptıktan sonra "Hesabım" sayfasında değiştirin:
+
+![Hesabım sayfası](/img/docs/account-profile.png)
 
 1. Mevcut şifrenizi girin
 2. Yeni şifrenizi girin ve onaylayın
-3. Değişiklikleri kaydedin
+3. "Şifreyi Değiştir"e tıklayıp gönderin
 
 ## Önbelleği Temizle
 
-Veri senkronizasyon sorunları veya görüntüleme anormallikleriyle karşılaşırsanız:
+Verileriniz senkronize olmuyorsa veya görüntülemede beklenmedik bir sorun yaşıyorsanız:
 
-1. Kullanıcı Merkezine girin
-2. "Önbelleği Temizle" düğmesine tıklayın
-3. Sayfa otomatik olarak yenilenecek ve sunucudan verileri yeniden alacaktır
+1. "Hesabım" sayfasına gidin → "Veri Yönetimi → Önbelleği Temizle" bölümünü bulun
+2. "Önbelleği Temizle" düğmesine tıklayın; onayladıktan sonra tüm veriler otomatik yeniden yüklenir
 
-Önbelleği temizlemek koleksiyonlarınızı ve özel promptlarınızı silmez; yalnızca sunucu verilerinin yeniden senkronizasyonunu zorlar.
+Koleksiyonlarınız ve özel promptlarınız silinmez—yalnızca zorla yeniden senkronizasyon yapılır.
 
 ## İlgili Belgeler
 

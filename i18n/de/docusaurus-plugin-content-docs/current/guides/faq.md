@@ -1,56 +1,71 @@
 ---
 sidebar_label: Häufig gestellte Fragen
-title: AI Short FAQ - Optimierung & Halluzinationen
-description: Lösen Sie häufige KI-Probleme. Erfahren Sie, wie Sie Prompts optimieren, Halluzinationen vermeiden und Daten sichern.
+title: AI Short FAQ | Prompt-Optimierung und KI-Halluzinationen
+description: Prompts liefern keine guten Ergebnisse? KI gibt falsche Informationen aus? Dieser Leitfaden beantwortet häufige Fragen — Prompts optimieren, Halluzinationen vermeiden, Daten sichern.
 ---
 
 # Häufig gestellte Fragen
 
+## Ist AiShort kostenpflichtig?
+
+Die Web-Version von AiShort ist **vollständig kostenlos** — Browsen, Kopieren und Suchen von Prompts kosten nichts und erfordern nicht einmal eine Registrierung. Die erweiterten Funktionen nach der Anmeldung (Sammlung, benutzerdefinierte Prompts, Community-Sharing) sind ebenfalls kostenlos.
+
+Hinweis: AiShort stellt nur die Prompts bereit. **Ob die Nutzung des KI-Modells selbst kostenpflichtig ist, bestimmt der von Ihnen verwendete KI-Dienst** (z. B. ChatGPT Kostenlos/Plus, API-Abrechnung usw.).
+
+## Welche KI-Modelle werden unterstützt?
+
+Die Prompts von AiShort sind universell und funktionieren in **jedem KI-Szenario** — Chat-Oberflächen, Coding-Tools wie Cursor, API-Aufrufe, KI-Agenten und mehr. Gängige Optionen:
+
+- International: ChatGPT, Gemini, Claude, Grok, Mistral Le Chat (EU/DSGVO-konform)
+- China: DeepSeek, Tongyi Qianwen, Ernie Bot, Doubao, Kimi, ChatGLM, iFLYTEK Spark, Tencent Yuanbao
+- API-Plattformen: OpenRouter, SiliconFlow, Groq
+
+Eine vollständige Modellliste finden Sie unter [Erste Schritte → Gängige KI-Modelle](./getting-started#gängige-ki-modelle).
+
 ## Warum englische Prompts verwenden?
 
-KI-Modelle haben im Allgemeinen ein besseres Verständnis von Englisch, und die Verwendung englischer Prompts kann stabilere Ausgabeergebnisse liefern.
+Englische Prompts liefern in der Regel präzisere und konsistentere Ergebnisse — auch wenn Sie eine deutsche Antwort möchten. Der Grund: Die meisten Modelle wurden überwiegend mit englischsprachigen Daten trainiert, weshalb Instruktionen auf Englisch zuverlässiger interpretiert werden. Deutsche Prompts funktionieren ebenfalls, weichen bei wiederholten Ausführungen aber stärker voneinander ab. Für produktive oder geschäftskritische Szenarien empfehlen wir daher englische Prompts.
 
-Obwohl die Verwendung chinesischer Prompts auch anständige Ergebnisse erzielen kann, kann die wiederholte Eingabe desselben chinesischen Prompts zu erheblichen Abweichungen in den Ergebnissen führen. Daher wird empfohlen, in wichtigen Szenarien englische Prompts zu verwenden.
-
-**Antwort auf Chinesisch spezifizieren**: Fügen Sie `respond in Chinese` am Ende des Prompts hinzu, um eine Antwort auf Chinesisch zu erhalten.
+> 💡 Sie möchten die Antwort auf Deutsch erhalten? Hängen Sie einfach `Respond in German.` (oder spezifischer: `Respond in German, using the formal Sie register.`) an das Ende des Prompts an.
 
 ## Muss ich den Prompt jedes Mal eingeben?
 
-**API-Nutzung**: Sie können den Prompt als "system prompt" festlegen, der automatisch auf nachfolgende Konversationen angewendet wird.
+**API-Nutzung**: Setzen Sie den Prompt als `system prompt` — er wird automatisch auf nachfolgende Konversationen angewendet.
 
-**Web-Version**: Wenn Sie das Thema nicht gewechselt haben, merkt sich ChatGPT die Prompt-Einstellungen der aktuellen Konversation. Wenn die Antwort beginnt, von den Erwartungen abzuweichen, bedeutet dies, dass die KI den Prompt "vergessen" hat und Sie ihn erneut eingeben müssen.
+**Web-Version**: Solange Sie die Konversation nicht wechseln, merkt sich ChatGPT den aktuellen Prompt. Wenn die Antworten abzudriften beginnen, hat die KI ihn "vergessen" — fügen Sie ihn einfach erneut ein.
 
-**Tipp**: Speichern Sie häufig genutzte Konversationen als Lesezeichen für einen schnellen Zugriff später.
+**Tipp**: Speichern Sie häufig genutzte Konversationen als Browser-Lesezeichen für schnellen Zugriff.
 
 ## Warum finde ich keine verwandten Prompts?
 
-Die Suchergebnisse auf der Startseite stammen hauptsächlich aus der **kuratieren Prompt-Bibliothek** (einschließlich Ihrer persönlichen Prompts nach der Anmeldung) und **schließen keine** öffentlich von der Community geteilten Prompts ein.
+Die Suche auf der Startseite umfasst die **kuratierte Prompt-Bibliothek** (nach der Anmeldung auch Ihre persönlichen Prompts), aber **keine** Community-Beiträge.
 
-Wenn Sie auf der Startseite mit kurzen Schlüsselwörtern keine Ergebnisse finden, empfehlen wir Ihnen, auf der Seite [Community-Prompts](./community) zu suchen, die reichere, von Benutzern geteilte Inhalte enthält.
+Wenn Sie mit kurzen Stichwörtern auf der Startseite nichts finden, suchen Sie noch einmal auf der Seite [Community-Prompts](./community) — dort gibt es mehr von Nutzern geteilte Inhalte.
 
 ## Was tun, wenn die KI falsche Informationen generiert?
 
-KI hat manchmal "Halluzinationen" und generiert Informationen, die plausibel erscheinen, aber tatsächlich falsch sind. Nutzungsvorschläge:
+KI kann „halluzinieren" und Informationen ausgeben, die plausibel erscheinen, aber falsch sind. Vorgehen:
 
 1. **Schlüsselinformationen überprüfen**: Besonders Daten, Zitate, Code usw.
-2. **Mehrrunden-Optimierung**: Bitten Sie die KI, die Antwort erneut zu überprüfen und zu optimieren.
+2. **Mehrrunden-Optimierung**: Bitten Sie die KI, die Antwort erneut zu überprüfen und zu verbessern.
 3. **Kreuzvalidierung**: Verwenden Sie verschiedene Prompts oder Modelle, um wichtige Schlussfolgerungen zu überprüfen.
 
-Geeignete Prompts können Ihnen helfen, das Auftreten von KI-Halluzinationen zu reduzieren.
+Geeignete Prompts können KI-Halluzinationen reduzieren.
 
 ## Wie sichere ich meine Prompts?
 
-1. Gehen Sie ins Benutzerzentrum
-2. Klicken Sie auf die Schaltfläche "Prompts exportieren"
+1. Gehen Sie zu „Mein Konto" → finden Sie den Bereich „Datenverwaltung → Prompts exportieren"
+2. Klicken Sie auf die Schaltfläche "Daten exportieren"
 3. Das System generiert automatisch eine JSON-Datei zum Herunterladen
 
 Es wird empfohlen, regelmäßig Backups zu erstellen, um Datenverlust zu vermeiden.
 
 ## Prompt-Ergebnisse sind nicht ideal?
 
-1. **Versuchen Sie zu optimieren**: Lassen Sie die KI die Antwort erneut optimieren.
-2. **Perspektive wechseln**: Verwenden Sie verschiedene Prompts, um dieselbe Anforderung auszudrücken.
-3. **Feedback und Teilen**: Wenn Sie Probleme finden oder gute Prompts haben, können Sie uns gerne über [Feedback](/feedback) informieren oder in der Community teilen.
+1. **KI zur Optimierung auffordern**: Lassen Sie die KI ihre Antwort bewerten und verbessern
+2. **Perspektive wechseln**: Drücken Sie dieselbe Anforderung mit anderen Prompts aus
+3. **Community ausprobieren**: Unter [Community-Prompts](./community) gibt es möglicherweise besser passende Versionen — und Sie sind willkommen, Ihre guten Prompts dort zu teilen
+4. **Feedback geben**: Probleme oder Verbesserungsvorschläge? Geben Sie [Feedback](/feedback)
 
 ## Verwandte Dokumentation
 

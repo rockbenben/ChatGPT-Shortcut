@@ -1,89 +1,91 @@
 ---
-sidebar_label: Versione Offline (Intranet Aziendale)
-title: Distribuzione Offline di AI Short | Intranet Aziendale senza Server Esterno
-description: La versione offline di AI Short e progettata per aziende e team senza accesso alla rete esterna. Nessun server backend richiesto, nessuna registrazione necessaria, dati archiviati localmente nel browser, pronta all'uso.
+sidebar_label: Deploy Offline
+title: Deploy Offline AI Short | Self-hosted per intranet aziendali
+description: La versione offline di AI Short è pensata per aziende e team che non possono raggiungere internet pubblica. Niente backend, niente account, i dati restano nel browser — un solo deploy e il team è operativo.
 ---
 
-# Versione di Distribuzione Offline
+# Deploy Offline
 
-**Scenari applicabili**: Intranet aziendali, reti governative, ambienti classificati, reti di campus e altri scenari in cui **l'accesso alla rete esterna non e disponibile o e scomodo**.
+> **Destinatari**: amministratori IT o responsabili tecnici incaricati del deploy. Gli utenti finali aprono semplicemente l'URL interno fornito dall'amministratore: non hanno bisogno di leggere questa pagina.
 
-La versione offline di AI Short non richiede server backend ne registrazione utente. Tutti i dati sono archiviati localmente nel browser. Una volta distribuita, puo essere utilizzata direttamente dai team sulla intranet.
+**Quando serve**: intranet aziendali, reti della Pubblica Amministrazione, ambienti sanitari soggetti al GDPR (ospedali, ASL, cliniche), settori regolamentati (banche, assicurazioni, studi legali, difesa), reti universitarie e di ricerca, ambienti air-gapped o classificati, e in generale qualsiasi contesto in cui l'**accesso a internet pubblica è impossibile o vietato dalle policy aziendali**.
 
-## Utilizzo in Team
+Niente backend, niente registrazione: tutti i dati vivono nel browser. Una volta fatto il deploy, i membri del team interno aprono il browser e iniziano a usarlo.
 
-La versione offline e un sito web puramente statico. Dopo averla distribuita su un server intranet, i membri del team devono semplicemente aprire l'indirizzo intranet nel loro browser:
+## Come lo usa il team
 
-1. L'**amministratore** distribuisce la versione offline su un server intranet (es. `http://192.168.1.100:3000`)
-2. I **membri del team** aprono l'indirizzo nel browser per sfogliare, cercare e copiare prompt
-3. I **preferiti e i prompt personalizzati di ogni persona sono salvati nel proprio browser**, indipendenti l'uno dall'altro
-4. Nessuna registrazione richiesta, nessuna installazione software necessaria, pronto all'uso immediatamente
+La versione offline è un sito statico puro. Dopo il deploy su un server interno, i membri del team vi accedono dal browser tramite la rete aziendale:
+
+1. **L'amministratore** fa il deploy della versione offline su un server interno (es. `http://192.168.1.100:3000`)
+2. **I membri del team** aprono quell'indirizzo nel browser per sfogliare, cercare e copiare i prompt
+3. Le **collezioni e i prompt personalizzati di ciascuno vivono nel proprio browser** — completamente isolati l'uno dall'altro
+4. Nessun account, nessun software da installare: si apre e si usa
 
 ```
-Server intranet (versione offline distribuita)
-   ├── Dati della libreria prompt (condivisi da tutti, da JSON statico)
+Server interno (versione offline deployata)
+   ├── Dati della libreria di prompt (condivisi da tutti, da JSON statico)
    │
-   ├── Browser dell'utente A → localStorage (preferiti e prompt personalizzati di A)
-   ├── Browser dell'utente B → localStorage (preferiti e prompt personalizzati di B)
-   └── Browser dell'utente C → localStorage (preferiti e prompt personalizzati di C)
+   ├── Browser dell'utente A → localStorage (collezioni e prompt di A)
+   ├── Browser dell'utente B → localStorage (collezioni e prompt di B)
+   └── Browser dell'utente C → localStorage (collezioni e prompt di C)
 ```
 
-:::tip Nota
-Il contenuto della libreria prompt (prompt selezionati) e costituito da dati statici confezionati al momento della build, e tutti gli utenti vedono lo stesso contenuto. I preferiti, i prompt personalizzati, l'ordinamento e i tag di ogni utente sono salvati nel localStorage del proprio browser, completamente indipendenti l'uno dall'altro.
+:::tip Suggerimento
+La libreria di prompt (prompt curati) è un dato statico incluso in fase di build, quindi tutti gli utenti vedono gli stessi contenuti. Le collezioni, i prompt personalizzati, l'ordinamento e i tag di ciascun utente vengono mantenuti nel localStorage del proprio browser, in modo completamente indipendente.
 :::
 
-## Differenze dalla Versione Online
+## Differenze rispetto alla versione online
 
-| Funzionalita | Versione Online | Versione Offline |
-| ---- | ------ | ------ |
-| Navigazione/ricerca/filtro prompt | ✅ | ✅ |
-| Copia prompt | ✅ | ✅ |
-| Gestione preferiti | Archiviazione server | Archiviazione locale browser |
-| Prompt personalizzati | Archiviazione server | Archiviazione locale browser |
-| La Mia Collezione (ordinamento drag, tag) | ✅ | ✅ |
-| Supporto multilingue (18 lingue) | ✅ | ✅ |
-| Importazione/esportazione dati | ✅ | ✅ (formato compatibile) |
-| Pagine di dettaglio prompt | ✅ | ✅ (dati statici, senza commenti) |
-| Registrazione/accesso utente | ✅ | ❌ (nessun account necessario) |
-| Lista prompt della community/voto | ✅ | ❌ |
-| Feedback commenti | ✅ | ❌ |
+| Funzionalità | Versione Online | Versione Offline |
+| ------------ | --------------- | ---------------- |
+| Sfoglia / cerca / filtra prompt | Sì | Sì |
+| Copia prompt | Sì | Sì |
+| Gestione collezioni | Storage lato server | Storage locale del browser |
+| Prompt personalizzati | Storage lato server | Storage locale del browser |
+| La Mia Collezione (drag-and-drop, tag) | Sì | Sì |
+| Supporto multilingue (18 lingue) | Sì | Sì |
+| Import / export dati | Sì | Sì (formati interoperabili) |
+| Pagine di dettaglio prompt | Sì | Sì (dati statici, senza commenti) |
+| Registrazione / accesso utente | Sì | No (nessun account) |
+| Lista prompt community / voti | Sì | No |
+| Commenti e feedback | Sì | No |
 
-## Archiviazione Dati
+## Archiviazione dei dati
 
-I dati di ogni utente sono salvati nel localStorage del **proprio browser**, indipendente dal server:
+I dati di ciascun utente sono salvati nel localStorage del **proprio browser**, in modo indipendente da qualsiasi server:
 
-| Dati | Chiave di archiviazione | Descrizione |
-| ---- | ------ | ---- |
-| Lista preferiti | `local_favorites` | Array di ID prompt preferiti |
-| Prompt personalizzati | `local_user_prompts` | Dati prompt creati dall'utente |
-| Ordine di classificazione | `local_myspace_order` | Ordinamento schede in La Mia Collezione |
-| Tag personalizzati | `local_custom_tags` | Definizioni e assegnazioni tag |
+| Dato | Chiave di storage | Descrizione |
+| ---- | ----------------- | ----------- |
+| Lista collezioni | `local_favorites` | Array degli ID dei prompt collezionati |
+| Prompt personalizzati | `local_user_prompts` | Dati dei prompt creati dall'utente |
+| Ordine di visualizzazione | `local_myspace_order` | Ordinamento delle schede in La Mia Collezione |
+| Tag personalizzati | `local_custom_tags` | Definizioni dei tag e assegnazioni |
 
 :::caution Attenzione
-- L'archiviazione locale del browser ha un limite di capacita di circa 5 MB, piu che sufficiente per l'uso quotidiano.
-- La cancellazione dei dati del browser causera la perdita dei dati personali. Si raccomanda di eseguire regolarmente il backup tramite "Impostazioni > Esporta dati".
-- I dati devono essere reimportati dopo aver cambiato computer o browser.
+- Il local storage del browser ha un limite di circa 5 MB, più che sufficiente per l'uso quotidiano.
+- Cancellare i dati del browser comporta la perdita dei dati personali — invita gli utenti a fare backup regolari da "Impostazioni > Esporta dati".
+- Cambiando computer o browser è necessario reimportare i dati.
 :::
 
-## Distribuzione
+## Deploy
 
-La versione offline e basata sul branch `offline`. Una volta che l'amministratore completa la distribuzione, i membri del team possono utilizzarla senza passaggi aggiuntivi.
+La versione offline risiede sul branch `offline`. Dopo un singolo deploy iniziale da parte dell'amministratore, i membri del team possono usarla senza ulteriori operazioni.
 
-### Distribuzione Docker (Consigliata)
+### Deploy Docker (consigliato)
 
-Il metodo di distribuzione piu semplice -- un singolo comando da eseguire sul server intranet:
+L'opzione più semplice: un solo comando per avviarla su qualsiasi server interno:
 
 ```bash
-# Usare l'immagine offline pre-costruita
+# Usa l'immagine offline pre-compilata
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# O usare Docker Hub
+# Oppure scarica da Docker Hub
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-Dopo la distribuzione, i membri del team possono accedere a `http://<IP-del-server>:3000`.
+Una volta fatto il deploy, i membri del team accedono all'indirizzo `http://<ip-server>:3000`.
 
-Utilizzo di `docker-compose`:
+Con `docker-compose`:
 
 ```yml
 services:
@@ -95,31 +97,31 @@ services:
     restart: unless-stopped
 ```
 
-### Compilare dal Codice Sorgente
+### Build da sorgente
 
-Se hai bisogno di personalizzare il contenuto dei prompt o modificare le configurazioni:
+Se devi personalizzare i contenuti dei prompt o modificare la configurazione:
 
 ```bash
-# Clonare il branch offline
+# Clona il branch offline
 git clone -b offline https://github.com/rockbenben/ChatGPT-Shortcut.git
 cd ChatGPT-Shortcut
 
-# Installare le dipendenze
+# Installa le dipendenze
 yarn
 
 # Sviluppo locale
 yarn start
 
-# Compilare versione monolingua (cinese)
-yarn build --locale zh-Hans
+# Build di una singola lingua (italiano)
+yarn build --locale it
 
-# Compilare tutte le lingue
+# Build di tutte le lingue
 yarn build
 ```
 
-Il risultato della build si trova nella directory `build/` e puo essere distribuito su qualsiasi server di file statici (Nginx, Apache, Caddy, ecc.).
+L'output della build viene generato nella directory `build/` e può essere servito da qualsiasi web server statico (Nginx, Apache, Caddy, ecc.).
 
-### Esempio di Configurazione Nginx
+### Esempio di configurazione Nginx
 
 ```nginx
 server {
@@ -134,66 +136,66 @@ server {
 }
 ```
 
-### Distribuzione su Piattaforma
+### Deploy su piattaforme
 
-Quando distribuisci su piattaforme come Vercel o Cloudflare Pages, seleziona il branch `offline`. Tutti gli altri passaggi sono identici alla versione online. Vedi [Distribuzione del Progetto](../deploy) per i dettagli.
+Per il deploy su Vercel, Cloudflare Pages o piattaforme simili, basta selezionare il branch `offline`: tutti gli altri passaggi coincidono con la versione online. Vedi [Distribuzione del Progetto](../deploy) per i dettagli.
 
-## Importazione ed Esportazione Dati
+## Import ed export dati
 
-### Esporta
+### Export
 
-Vai su "Impostazioni > Esporta dati" per esportare i tuoi preferiti personali e prompt personalizzati come file JSON.
+Vai in "Impostazioni > Esporta dati" per salvare le tue collezioni e i tuoi prompt personalizzati come file JSON.
 
-### Importa
+### Import
 
-I seguenti formati di file JSON sono supportati per l'importazione:
+Sono supportati i seguenti formati JSON:
 
-- **File esportati dalla versione offline**: Ripristino completo di preferiti, prompt, ordinamento e tag
-- **File esportati dalla versione online**: Elaborazione automatica per la compatibilita
-  - Prompt utente → Uniti nell'archiviazione locale (deduplicati per titolo)
-  - Preferiti selezionati (card) → Uniti nei preferiti locali
-  - Preferiti della community (community) → Convertiti automaticamente in prompt personalizzati locali
-  - Ordinamento MySpace → Ripristinato nell'archiviazione locale
-  - Tag personalizzati → Aggiunti e uniti (non sovrascrive quelli esistenti)
+- **File esportati dalla versione offline**: ripristina completamente collezioni, prompt, ordinamento e tag
+- **File esportati dalla versione online**: convertiti automaticamente per garantire la compatibilità
+  - Prompt utente → uniti in locale (deduplicati per titolo)
+  - Collezioni curate (card) → unite alle collezioni locali
+  - Collezioni community (community) → convertite automaticamente in prompt personalizzati locali
+  - Ordinamento MySpace → ripristinato in locale
+  - Tag personalizzati → aggiunti in coda (i tag esistenti non vengono sovrascritti)
 
-### Migrazione dalla Versione Online
+### Migrazione dalla versione online
 
-1. Esporta i dati dalla pagina "Il Mio Account" della versione online (aishort.top)
-2. Importa il file JSON nella pagina "Impostazioni" della versione offline
-3. I preferiti della community saranno automaticamente convertiti in prompt locali, e i preferiti selezionati si sincronizzeranno normalmente
+1. Esporta i tuoi dati dalla pagina "Il mio account" sulla versione online (aishort.top)
+2. Importa quel file JSON dalla pagina "Impostazioni" sulla versione offline
+3. Le collezioni community vengono convertite automaticamente in prompt locali; le collezioni curate si sincronizzano normalmente
 
-## Domande Frequenti
+## Domande frequenti
 
-### Come usa il team dopo la distribuzione?
+### Come usa il team la versione dopo il deploy?
 
-Dopo che l'amministratore lo distribuisce su un server intranet, basta condividere l'URL di accesso (es. `http://192.168.1.100:3000`) con i membri del team. Ognuno lo apre nel browser -- nessuna installazione, nessuna registrazione necessaria.
+Una volta che l'amministratore ha fatto il deploy su un server interno, basta comunicare al team l'URL di accesso (es. `http://192.168.1.100:3000`). Ognuno lo apre nel browser — niente installazioni, niente account.
 
-### I dati di utenti diversi si influenzano a vicenda?
+### I dati degli utenti possono interferire tra loro?
 
-No. I preferiti e i prompt personalizzati di ogni persona sono salvati nel localStorage del proprio browser, completamente indipendenti. Il server ospita solo la libreria prompt condivisa (sola lettura).
+No. Le collezioni e i prompt personalizzati di ciascuno vivono nel localStorage del proprio browser, in totale isolamento. Sul server c'è solo la libreria di prompt condivisa (in sola lettura).
 
 ### I dati possono andare persi?
 
-Le seguenti azioni causeranno la perdita dei dati personali:
+Le seguenti azioni cancellano i dati personali di un utente:
 
-- Cancellazione dei dati/cache del browser
-- Navigazione in modalita privata/incognito
-- Cambio di computer o browser
+- Cancellazione dei dati o della cache del browser
+- Navigazione in modalità privata / in incognito
+- Cambio di computer o di browser
 
-Si raccomanda di eseguire regolarmente il backup dei dati importanti tramite "Impostazioni > Esporta dati" come file JSON.
+Per i dati importanti raccomandiamo backup regolari su file JSON da "Impostazioni > Esporta dati".
 
-### I prompt personalizzati possono essere condivisi tra i membri del team?
+### Si possono condividere i prompt personalizzati nel team?
 
-Si. Una persona esporta il file JSON, e gli altri membri lo importano tramite "Impostazioni > Importa dati". I duplicati vengono rimossi automaticamente durante l'importazione.
+Sì. Una persona esporta un file JSON e gli altri lo importano da "Impostazioni > Importa dati" — i duplicati vengono gestiti automaticamente.
 
-### Come aggiornare la libreria prompt?
+### Come si aggiorna la libreria di prompt?
 
-La libreria prompt e costituita da dati statici confezionati al momento della build. Per aggiornare:
+La libreria di prompt è un dato statico incluso in fase di build. Per aggiornarla:
 
-1. L'amministratore ottiene il codice piu recente del branch `offline`
-2. Ricompila e ridistribuisce (o scarica l'immagine Docker piu recente)
-3. I membri del team aggiornano la pagina del browser per vedere i nuovi contenuti (i dati personali non sono influenzati)
+1. L'amministratore scarica l'ultimo codice dal branch `offline`
+2. Esegue una nuova build e ridistribuisce (oppure scarica l'ultima immagine Docker)
+3. I membri del team ricaricano il browser per vedere i nuovi contenuti — i dati personali restano intatti
 
-### Il formato dati della versione offline e compatibile con la versione online?
+### Il formato dati della versione offline è compatibile con quella online?
 
-Si. Il formato JSON esportato e identico e puo essere importato tra le due versioni. Gli ID dei prompt differiscono tra le due versioni (la versione online usa ID del server, la versione offline usa ID timestamp), ma la deduplicazione avviene per titolo durante l'importazione, quindi non ci sono conflitti.
+Sì. Il formato JSON esportato è lo stesso e può essere importato in entrambe le direzioni. Gli ID dei prompt differiscono (la versione online usa ID lato server, mentre quella offline usa ID basati su timestamp), ma l'import deduplica per titolo, quindi non ci sono conflitti.

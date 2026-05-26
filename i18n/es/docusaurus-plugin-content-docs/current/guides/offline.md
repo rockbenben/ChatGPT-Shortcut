@@ -1,27 +1,29 @@
 ---
-sidebar_label: Version Offline (Intranet Corporativa)
-title: Despliegue Offline de AI Short | Intranet Corporativa sin Servidor Externo
-description: La version offline de AI Short esta disenada para empresas y equipos sin acceso a red externa. Sin servidor backend, sin registro necesario, datos almacenados localmente en el navegador, listo para usar.
+sidebar_label: Versión Offline (intranet corporativa)
+title: Despliegue Offline de AI Short | Intranet corporativa sin servidores externos
+description: La versión offline de AI Short está pensada para empresas y equipos que no pueden acceder a internet. Sin backend, sin registro de cuentas, los datos se almacenan localmente en el navegador. Listo para usar.
 ---
 
-# Version de Despliegue Offline
+# Despliegue en Versión Offline
 
-**Escenarios aplicables**: Intranets corporativas, redes gubernamentales, entornos clasificados, redes de campus y otros escenarios donde **el acceso a la red externa no esta disponible o es inconveniente**.
+> **Audiencia objetivo**: administradores de TI o responsables técnicos encargados del despliegue. Los usuarios finales solo necesitan acceder a la dirección interna que el administrador haya desplegado; no necesitan leer este documento.
 
-La version offline de AI Short no requiere servidor backend ni registro de usuario. Todos los datos se almacenan localmente en el navegador. Una vez desplegada, puede ser utilizada directamente por los equipos en la intranet.
+**Escenarios de uso**: intranets corporativas, redes del sector gobierno, entornos clasificados, sectores regulados (banca, salud, seguros), redes universitarias y cualquier otro entorno en el que **no se pueda o no convenga acceder a internet**.
 
-## Uso en Equipo
+Sin backend, sin registro: todos los datos se guardan localmente en el navegador. Una vez desplegado, el equipo solo tiene que abrir el navegador en la red interna para empezar a usarlo.
 
-La version offline es un sitio web puramente estatico. Despues de desplegarlo en un servidor de intranet, los miembros del equipo simplemente necesitan abrir la direccion de la intranet en su navegador:
+## Cómo lo usa el equipo
 
-1. El **administrador** despliega la version offline en un servidor de intranet (ej: `http://192.168.1.100:3000`)
-2. Los **miembros del equipo** abren la direccion en su navegador para buscar, explorar y copiar prompts
-3. Los **favoritos y prompts personalizados de cada persona se guardan en su propio navegador**, independientes entre si
-4. Sin registro necesario, sin instalacion de software, listo para usar inmediatamente
+La versión offline es un sitio estático puro. Tras desplegarlo en un servidor de la intranet, los miembros del equipo acceden a la dirección interna desde su navegador:
+
+1. El **administrador** despliega la versión offline en un servidor de la intranet (por ejemplo, `http://192.168.1.100:3000`)
+2. Los **miembros del equipo** abren esa dirección en su navegador y pueden explorar, buscar y copiar prompts
+3. Los **favoritos y prompts personalizados de cada persona se guardan en su propio navegador**, sin interferir entre sí
+4. No hace falta registrarse ni instalar ningún software: se abre y se usa
 
 ```
-Servidor de intranet (version offline desplegada)
-   ├── Datos de la biblioteca de prompts (compartidos por todos, desde JSON estatico)
+Servidor de la intranet (versión offline desplegada)
+   ├── Biblioteca de prompts (compartida por todos, desde JSON estático)
    │
    ├── Navegador del usuario A → localStorage (favoritos y prompts personalizados de A)
    ├── Navegador del usuario B → localStorage (favoritos y prompts personalizados de B)
@@ -29,61 +31,61 @@ Servidor de intranet (version offline desplegada)
 ```
 
 :::tip Nota
-El contenido de la biblioteca de prompts (prompts seleccionados) son datos estaticos empaquetados en tiempo de construccion, y todos los usuarios ven el mismo contenido. Los favoritos, prompts personalizados, ordenamiento y etiquetas de cada usuario se guardan en el localStorage de su propio navegador, completamente independientes entre si.
+La biblioteca de prompts (prompts curados) son datos estáticos empaquetados en tiempo de compilación, por lo que todos los usuarios ven el mismo contenido. Los favoritos, prompts personalizados, orden y etiquetas de cada usuario se guardan en el localStorage de su propio navegador y son completamente independientes.
 :::
 
-## Diferencias con la Version en Linea
+## Diferencias con la versión online
 
-| Funcionalidad | Version en Linea | Version Offline |
-| ---- | ------ | ------ |
-| Navegacion/busqueda/filtrado de prompts | ✅ | ✅ |
-| Copia de prompts | ✅ | ✅ |
-| Gestion de favoritos | Almacenamiento en servidor | Almacenamiento local del navegador |
-| Prompts personalizados | Almacenamiento en servidor | Almacenamiento local del navegador |
-| Mi Coleccion (ordenar arrastrando, etiquetas) | ✅ | ✅ |
-| Soporte multilingue (18 idiomas) | ✅ | ✅ |
-| Importacion/exportacion de datos | ✅ | ✅ (formato compatible) |
-| Paginas de detalle de prompts | ✅ | ✅ (datos estaticos, sin comentarios) |
-| Registro/inicio de sesion de usuario | ✅ | ❌ (sin cuenta necesaria) |
-| Lista de prompts comunitarios/votacion | ✅ | ❌ |
-| Retroalimentacion por comentarios | ✅ | ❌ |
+| Función | Versión online | Versión offline |
+| ------- | -------------- | --------------- |
+| Explorar/buscar/filtrar prompts | ✅ | ✅ |
+| Copiar prompts | ✅ | ✅ |
+| Gestión de favoritos | Servidor | Navegador local |
+| Prompts personalizados | Servidor | Navegador local |
+| Mi Colección (arrastrar para ordenar, etiquetas) | ✅ | ✅ |
+| Soporte multilingüe (18 idiomas) | ✅ | ✅ |
+| Importación/exportación de datos | ✅ | ✅ (formatos compatibles) |
+| Página de detalle del prompt | ✅ | ✅ (datos estáticos, sin comentarios) |
+| Registro/inicio de sesión | ✅ | ❌ (sin cuentas) |
+| Listado/votación de prompts de la comunidad | ✅ | ❌ |
+| Comentarios y feedback | ✅ | ❌ |
 
-## Almacenamiento de Datos
+## Almacenamiento de datos
 
-Los datos de cada usuario se guardan en el localStorage de **su propio navegador**, independiente del servidor:
+Los datos de cada usuario se guardan en el localStorage de **su propio navegador**, sin relación con el servidor:
 
-| Datos | Clave de almacenamiento | Descripcion |
-| ---- | ------ | ---- |
-| Lista de favoritos | `local_favorites` | Array de IDs de prompts favoritos |
-| Prompts personalizados | `local_user_prompts` | Datos de prompts creados por el usuario |
-| Orden de clasificacion | `local_myspace_order` | Ordenamiento de tarjetas en Mi Coleccion |
-| Etiquetas personalizadas | `local_custom_tags` | Definiciones y asignaciones de etiquetas |
+| Datos | Clave de almacenamiento | Descripción |
+| ----- | ----------------------- | ----------- |
+| Lista de favoritos | `local_favorites` | Array con los IDs de los prompts favoritos |
+| Prompts personalizados | `local_user_prompts` | Datos de los prompts creados por el usuario |
+| Orden de presentación | `local_myspace_order` | Orden de las tarjetas en Mi Colección |
+| Etiquetas personalizadas | `local_custom_tags` | Definición de etiquetas y sus asignaciones |
 
-:::caution Advertencia
-- El almacenamiento local del navegador tiene un limite de capacidad de aproximadamente 5 MB, lo cual es mas que suficiente para el uso diario.
-- Borrar los datos del navegador causara la perdida de datos personales. Se recomienda hacer copias de seguridad regularmente a traves de "Configuracion > Exportar datos".
-- Los datos deben ser reimportados despues de cambiar de computadora o navegador.
+:::caution Atención
+- El almacenamiento local del navegador tiene un límite de aproximadamente 5 MB, suficiente para el uso diario.
+- Borrar los datos del navegador implica perder los datos personales — se recomienda hacer copia de seguridad periódica desde "Ajustes > Exportar datos".
+- Al cambiar de equipo o de navegador será necesario reimportar los datos.
 :::
 
 ## Despliegue
 
-La version offline se basa en la rama `offline`. Una vez que el administrador completa el despliegue, los miembros del equipo pueden usarla sin pasos adicionales.
+La versión offline se basa en la rama `offline`. Una vez que el administrador haya hecho el despliegue, los miembros del equipo no tendrán que hacer absolutamente nada para empezar a usarlo.
 
-### Despliegue con Docker (Recomendado)
+### Despliegue con Docker (recomendado)
 
-El metodo de despliegue mas simple -- un solo comando para ejecutar en su servidor de intranet:
+Es la forma más sencilla: una sola línea de comando para levantarlo en un servidor de la intranet:
 
 ```bash
-# Usar la imagen offline pre-construida
+# Usando la imagen offline preconstruida
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# O usar Docker Hub
+# O desde Docker Hub
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-Despues del despliegue, los miembros del equipo pueden acceder a `http://<IP-del-servidor>:3000`.
+Tras el despliegue, los miembros del equipo acceden desde `http://<IP-del-servidor>:3000`.
 
-Usando `docker-compose`:
+Con `docker-compose`:
 
 ```yml
 services:
@@ -95,9 +97,9 @@ services:
     restart: unless-stopped
 ```
 
-### Construccion desde Codigo Fuente
+### Construcción desde el código fuente
 
-Si necesita personalizar el contenido de prompts o modificar configuraciones:
+Si necesita personalizar el contenido de los prompts o modificar la configuración:
 
 ```bash
 # Clonar la rama offline
@@ -110,16 +112,16 @@ yarn
 # Desarrollo local
 yarn start
 
-# Construir version de un solo idioma (chino)
-yarn build --locale zh-Hans
+# Construir una sola versión de idioma (español)
+yarn build --locale es
 
 # Construir todos los idiomas
 yarn build
 ```
 
-El resultado de la construccion esta en el directorio `build/` y puede ser desplegado en cualquier servidor de archivos estaticos (Nginx, Apache, Caddy, etc.).
+El resultado de la construcción queda en el directorio `build/` y puede desplegarse en cualquier servidor de archivos estáticos (Nginx, Apache, Caddy, etc.).
 
-### Ejemplo de Configuracion Nginx
+### Ejemplo de configuración de Nginx
 
 ```nginx
 server {
@@ -134,66 +136,66 @@ server {
 }
 ```
 
-### Despliegue en Plataformas
+### Despliegue en plataformas
 
-Al desplegar en plataformas como Vercel o Cloudflare Pages, seleccione la rama `offline`. Todos los demas pasos son iguales a la version en linea. Consulte [Despliegue del Proyecto](../deploy) para mas detalles.
+Al desplegar en Vercel, Cloudflare Pages u otras plataformas, basta con seleccionar la rama `offline`; el resto de los pasos coincide con el despliegue de la versión online, descrito en [Despliegue del proyecto](../deploy).
 
-## Importacion y Exportacion de Datos
+## Importación y exportación de datos
 
 ### Exportar
 
-Vaya a "Configuracion > Exportar datos" para exportar sus favoritos personales y prompts personalizados como un archivo JSON.
+Acceda a "Ajustes > Exportar datos" para exportar sus favoritos y prompts personalizados a un archivo JSON.
 
 ### Importar
 
-Se admiten los siguientes formatos de archivos JSON para importacion:
+Se admite la importación de archivos JSON en los siguientes formatos:
 
-- **Archivos exportados desde la version offline**: Restauracion completa de favoritos, prompts, ordenamiento y etiquetas
-- **Archivos exportados desde la version en linea**: Procesamiento automatico de compatibilidad
-  - Prompts de usuario → Fusionados en almacenamiento local (deduplicados por titulo)
-  - Favoritos seleccionados (card) → Fusionados en favoritos locales
-  - Favoritos comunitarios (community) → Convertidos automaticamente en prompts personalizados locales
-  - Ordenamiento MySpace → Restaurado en almacenamiento local
-  - Etiquetas personalizadas → Anadidas y fusionadas (no sobrescriben las existentes)
+- **Archivos exportados desde la versión offline**: restauración completa de favoritos, prompts, orden y etiquetas
+- **Archivos exportados desde la versión online**: compatibilidad automática
+  - Prompts de usuario → se fusionan localmente (deduplicación por título)
+  - Favoritos curados (card) → se fusionan con los favoritos locales
+  - Favoritos de la comunidad (community) → se convierten automáticamente en prompts personalizados locales
+  - Orden de MySpace → se restaura localmente
+  - Etiquetas personalizadas → se añaden sin sobrescribir las existentes
 
-### Migracion desde la Version en Linea
+### Migración desde la versión online
 
-1. Exporte datos desde la pagina "Mi Cuenta" de la version en linea (aishort.top)
-2. Importe el archivo JSON en la pagina "Configuracion" de la version offline
-3. Los favoritos comunitarios se convertiran automaticamente en prompts locales, y los favoritos seleccionados se sincronizaran normalmente
+1. En la versión online (aishort.top), exporte sus datos desde la página "Mi Cuenta"
+2. En la versión offline, importe ese archivo JSON desde la página "Ajustes"
+3. Los favoritos de la comunidad se convierten automáticamente en prompts locales y los favoritos curados se sincronizan con normalidad
 
-## Preguntas Frecuentes
+## Preguntas frecuentes
 
-### Como usa el equipo despues del despliegue?
+### Tras el despliegue, ¿cómo lo usa el equipo?
 
-Despues de que el administrador lo despliegue en un servidor de intranet, simplemente comparta la URL de acceso (ej: `http://192.168.1.100:3000`) con los miembros del equipo. Cada uno lo abre en su navegador -- sin instalacion, sin registro necesario.
+Una vez que el administrador haya desplegado la aplicación en un servidor de la intranet, basta con comunicar a los miembros del equipo la dirección de acceso (por ejemplo, `http://192.168.1.100:3000`). Cada persona la abre en su navegador, sin instalación ni registro.
 
-### Se afectan mutuamente los datos de diferentes usuarios?
+### ¿Los datos de unos usuarios afectan a los de otros?
 
-No. Los favoritos y prompts personalizados de cada persona se guardan en el localStorage de su propio navegador, completamente independientes. El servidor solo aloja la biblioteca de prompts compartida (solo lectura).
+No. Los favoritos y prompts personalizados de cada usuario se guardan en el localStorage de su propio navegador y son completamente independientes. En el servidor solo reside la biblioteca de prompts compartida (de solo lectura).
 
-### Se pueden perder los datos?
+### ¿Se pueden perder los datos?
 
-Las siguientes acciones causaran la perdida de datos personales:
+Las siguientes acciones provocan la pérdida de datos personales:
 
-- Borrar datos/cache del navegador
-- Navegar en modo privado/incognito
-- Cambiar de computadora o navegador
+- Borrar los datos o la caché del navegador
+- Navegar en modo incógnito/privado
+- Cambiar de equipo o de navegador
 
-Se recomienda hacer copias de seguridad de datos importantes regularmente a traves de "Configuracion > Exportar datos" como un archivo JSON.
+Se recomienda hacer copia de seguridad periódica de los datos importantes en un archivo JSON desde "Ajustes > Exportar datos".
 
-### Se pueden compartir prompts personalizados entre miembros del equipo?
+### ¿Se pueden compartir prompts personalizados dentro del equipo?
 
-Si. Una persona exporta el archivo JSON, y los demas miembros lo importan a traves de "Configuracion > Importar datos". Los duplicados se eliminan automaticamente durante la importacion.
+Sí. Una persona exporta el archivo JSON y el resto del equipo lo importa desde "Ajustes > Importar datos"; la deduplicación es automática.
 
-### Como actualizar la biblioteca de prompts?
+### ¿Cómo se actualiza la biblioteca de prompts?
 
-La biblioteca de prompts son datos estaticos empaquetados en tiempo de construccion. Para actualizar:
+La biblioteca de prompts son datos estáticos empaquetados en tiempo de compilación. Para actualizarla:
 
-1. El administrador obtiene el codigo mas reciente de la rama `offline`
-2. Reconstruir y redesplegar (o descargar la imagen Docker mas reciente)
-3. Los miembros del equipo actualizan la pagina del navegador para ver el nuevo contenido (los datos personales no se ven afectados)
+1. El administrador descarga el código más reciente de la rama `offline`
+2. Reconstruye y despliega (o descarga la imagen Docker más reciente)
+3. Los miembros del equipo solo tienen que refrescar el navegador para ver el contenido nuevo (sus datos personales no se ven afectados)
 
-### Es compatible el formato de datos de la version offline con la version en linea?
+### ¿El formato de datos de la versión offline es compatible con el de la versión online?
 
-Si. El formato JSON exportado es identico y puede ser importado entre ambas versiones. Los IDs de prompts difieren entre las dos versiones (la version en linea usa IDs del servidor, la version offline usa IDs de marca de tiempo), pero la deduplicacion se realiza por titulo durante la importacion, por lo que no hay conflictos.
+Sí, son compatibles. El formato JSON exportado es el mismo y los archivos se pueden importar en ambas versiones. Los IDs de los prompts difieren (la versión online usa IDs de servidor y la offline usa IDs basados en marca de tiempo), pero la importación deduplica por título, por lo que no hay conflictos.

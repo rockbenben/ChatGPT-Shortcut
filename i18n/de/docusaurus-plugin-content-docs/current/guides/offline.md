@@ -1,89 +1,91 @@
 ---
-sidebar_label: Offline-Version (Firmen-Intranet)
-title: AI Short Offline-Bereitstellung | Firmen-Intranet ohne externen Server
-description: Die AI Short Offline-Version wurde fuer Unternehmen und Teams ohne Zugang zum externen Netzwerk entwickelt. Kein Backend-Server erforderlich, keine Registrierung noetig, Daten werden lokal im Browser gespeichert, sofort einsatzbereit.
+sidebar_label: Offline-Version (Unternehmens-Intranet)
+title: AI Short Offline-Bereitstellung | Intranet-Lösung ohne externe Server
+description: Die Offline-Version von AI Short ist für Unternehmen, Behörden und regulierte Branchen konzipiert, die keinen externen Internetzugang nutzen dürfen. Kein Backend-Server, keine Registrierung, alle Daten verbleiben lokal im Browser — DSGVO-konform und sofort einsatzbereit.
 ---
 
-# Offline-Bereitstellungsversion
+# Offline-Bereitstellung
 
-**Anwendbare Szenarien**: Firmen-Intranets, Behoerdennetzwerke, Sicherheitsumgebungen, Campus-Netzwerke und andere Szenarien, in denen **der Zugang zum externen Netzwerk nicht verfuegbar oder unpraktisch** ist.
+> **Zielgruppe**: IT-Administratoren oder technisch Verantwortliche, die die Bereitstellung durchführen. Endanwender rufen lediglich die vom Administrator bereitgestellte Intranet-Adresse auf und müssen dieses Dokument nicht lesen.
 
-Die AI Short Offline-Version benoetigt keinen Backend-Server und keine Benutzerregistrierung. Alle Daten werden lokal im Browser gespeichert. Nach der Bereitstellung kann sie direkt von Teams im Intranet genutzt werden.
+**Einsatzszenarien**: Unternehmens-Intranets, Behördennetze, Banken und Versicherungen, regulierte Branchen mit strengen Compliance-Anforderungen (BaFin, KRITIS), Forschungs- und Bildungsnetze sowie sonstige Umgebungen, in denen der Zugriff auf das öffentliche Internet **nicht möglich oder nicht erwünscht** ist.
+
+Kein Backend, keine Registrierung — sämtliche Daten verbleiben im Browser des jeweiligen Benutzers. Damit ist die Offline-Version besonders geeignet für **DSGVO-konforme Bereitstellungen** mit strikter Datenresidenz in Deutschland, Österreich oder der Schweiz: Es findet keinerlei Übertragung personenbezogener Daten an externe Server statt. Nach der einmaligen Bereitstellung im Intranet genügt für die Nutzung ein moderner Browser.
 
 ## Nutzung im Team
 
-Die Offline-Version ist eine rein statische Website. Nach der Bereitstellung auf einem Intranet-Server muessen Teammitglieder lediglich die Intranet-Adresse im Browser oeffnen:
+Die Offline-Version ist eine rein statische Website. Sobald sie auf einem Intranet-Server bereitgestellt ist, rufen die Teammitglieder die interne Adresse im Browser auf:
 
-1. Der **Administrator** stellt die Offline-Version auf einem Intranet-Server bereit (z.B. `http://192.168.1.100:3000`)
-2. **Teammitglieder** oeffnen die Adresse im Browser, um Prompts zu durchsuchen, zu suchen und zu kopieren
-3. Die **Favoriten und benutzerdefinierten Prompts jeder Person werden in ihrem eigenen Browser** gespeichert, unabhaengig voneinander
-4. Keine Registrierung erforderlich, keine Softwareinstallation noetig, sofort nutzbar
+1. **Der Administrator** stellt die Offline-Version auf einem Intranet-Server bereit (z. B. `http://192.168.1.100:3000`)
+2. **Teammitglieder** öffnen diese Adresse im Browser, um Prompts zu durchsuchen, zu filtern und zu kopieren
+3. Sammlungen und selbst erstellte Prompts jedes Benutzers werden **ausschließlich im jeweils eigenen Browser** gespeichert und beeinflussen sich gegenseitig nicht
+4. Keine Kontoanmeldung, keine Installation — einfach öffnen und verwenden
 
 ```
 Intranet-Server (Offline-Version bereitgestellt)
-   ├── Prompt-Bibliothek-Daten (von allen geteilt, aus statischem JSON)
+   ├── Prompt-Bibliothek (für alle gleich, aus statischem JSON)
    │
-   ├── Browser von Benutzer A → localStorage (As Favoriten und benutzerdefinierte Prompts)
-   ├── Browser von Benutzer B → localStorage (Bs Favoriten und benutzerdefinierte Prompts)
-   └── Browser von Benutzer C → localStorage (Cs Favoriten und benutzerdefinierte Prompts)
+   ├── Browser Benutzer A → localStorage (Sammlung und Prompts von A)
+   ├── Browser Benutzer B → localStorage (Sammlung und Prompts von B)
+   └── Browser Benutzer C → localStorage (Sammlung und Prompts von C)
 ```
 
 :::tip Hinweis
-Die Prompt-Bibliothek (kuratierte Prompts) besteht aus statischen Daten, die beim Build verpackt werden, und alle Benutzer sehen den gleichen Inhalt. Die Favoriten, benutzerdefinierten Prompts, Sortierung und Tags jedes Benutzers werden im localStorage des jeweiligen Browsers gespeichert und sind vollstaendig voneinander unabhaengig.
+Die Prompt-Bibliothek (kuratierte Prompts) wird zur Build-Zeit als statisches Datenpaket erzeugt — alle Benutzer sehen denselben Inhalt. Sammlungen, eigene Prompts, Sortierreihenfolge und Tags werden im localStorage des jeweiligen Browsers abgelegt und bleiben strikt voneinander getrennt.
 :::
 
 ## Unterschiede zur Online-Version
 
 | Funktion | Online-Version | Offline-Version |
 | ---- | ------ | ------ |
-| Prompt-Durchsuchen/-Suche/-Filterung | ✅ | ✅ |
-| Prompt-Kopieren | ✅ | ✅ |
-| Favoritenverwaltung | Server-Speicherung | Lokale Browser-Speicherung |
-| Benutzerdefinierte Prompts | Server-Speicherung | Lokale Browser-Speicherung |
-| Meine Sammlung (Drag-Sortierung, Tags) | ✅ | ✅ |
-| Mehrsprachige Unterstuetzung (18 Sprachen) | ✅ | ✅ |
-| Datenimport/-export | ✅ | ✅ (Format kompatibel) |
-| Prompt-Detailseiten | ✅ | ✅ (Statische Daten, keine Kommentare) |
-| Benutzerregistrierung/-anmeldung | ✅ | ❌ (Kein Konto erforderlich) |
-| Community-Prompt-Liste/-Abstimmung | ✅ | ❌ |
-| Kommentar-Feedback | ✅ | ❌ |
+| Prompts durchsuchen/filtern | ✅ | ✅ |
+| Prompts kopieren | ✅ | ✅ |
+| Sammlungsverwaltung | Serverseitig gespeichert | Lokal im Browser |
+| Eigene Prompts | Serverseitig gespeichert | Lokal im Browser |
+| Meine Sammlung (Drag-and-Drop-Sortierung, Tags) | ✅ | ✅ |
+| Mehrsprachigkeit (18 Sprachen) | ✅ | ✅ |
+| Datenimport/-export | ✅ | ✅ (Formate kompatibel) |
+| Prompt-Detailseite | ✅ | ✅ (statische Daten, ohne Kommentare) |
+| Registrierung/Anmeldung | ✅ | ❌ (kein Konto erforderlich) |
+| Community-Prompts/Abstimmungen | ✅ | ❌ |
+| Kommentare und Feedback | ✅ | ❌ |
 
 ## Datenspeicherung
 
-Die Daten jedes Benutzers werden im localStorage des **eigenen Browsers** gespeichert, unabhaengig vom Server:
+Die Daten jedes Benutzers werden **im jeweils eigenen Browser** im localStorage abgelegt — es findet keinerlei Serverkommunikation statt:
 
-| Daten | Speicherschluessel | Beschreibung |
+| Daten | Speicherschlüssel | Beschreibung |
 | ---- | ------ | ---- |
-| Favoritenliste | `local_favorites` | Array der Favoriten-Prompt-IDs |
-| Benutzerdefinierte Prompts | `local_user_prompts` | Vom Benutzer erstellte Prompt-Daten |
-| Sortierreihenfolge | `local_myspace_order` | Kartensortierung in Meine Sammlung |
-| Benutzerdefinierte Tags | `local_custom_tags` | Tag-Definitionen und -Zuweisungen |
+| Sammlungsliste | `local_favorites` | Array der gesammelten Prompt-IDs |
+| Eigene Prompts | `local_user_prompts` | Vom Benutzer erstellte Prompt-Daten |
+| Sortierreihenfolge | `local_myspace_order` | Kartensortierung in „Meine Sammlung" |
+| Eigene Tags | `local_custom_tags` | Tag-Definitionen und Zuordnungen |
 
 :::caution Achtung
-- Die lokale Browser-Speicherung hat ein Kapazitaetslimit von etwa 5 MB, was fuer den taeglichen Gebrauch vollstaendig ausreichend ist.
-- Das Loeschen von Browserdaten fuehrt zum Verlust persoenlicher Daten. Es wird empfohlen, regelmaessig ueber "Einstellungen > Daten exportieren" zu sichern.
-- Nach dem Wechsel des Computers oder Browsers muessen Daten neu importiert werden.
+- Der localStorage des Browsers ist auf etwa 5 MB begrenzt — für den normalen Betrieb ist das ausreichend.
+- Das Löschen der Browserdaten führt zum Verlust der persönlichen Daten. Wir empfehlen daher, regelmäßig über „Einstellungen > Daten exportieren" eine Sicherung anzulegen.
+- Beim Wechsel des Geräts oder Browsers müssen die Daten neu importiert werden.
 :::
 
 ## Bereitstellung
 
-Die Offline-Version basiert auf dem `offline`-Branch. Nachdem ein Administrator die Bereitstellung abgeschlossen hat, koennen Teammitglieder sie ohne weitere Schritte nutzen.
+Die Offline-Version basiert auf dem Branch `offline`. Nach der einmaligen Bereitstellung durch den Administrator können die Teammitglieder die Anwendung ohne weitere Vorbereitung nutzen.
 
-### Docker-Bereitstellung (Empfohlen)
+### Docker-Bereitstellung (empfohlen)
 
-Die einfachste Bereitstellungsmethode -- ein einziger Befehl zum Ausfuehren auf Ihrem Intranet-Server:
+Die einfachste Variante — eine einzige Zeile genügt, um die Anwendung auf einem Intranet-Server zu starten:
 
 ```bash
-# Verwenden Sie das vorgefertigte Offline-Image
+# Vorgefertigtes Offline-Image verwenden
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# Oder verwenden Sie Docker Hub
+# Alternativ über Docker Hub
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-Nach der Bereitstellung koennen Teammitglieder auf `http://<Server-IP>:3000` zugreifen.
+Anschließend rufen die Teammitglieder `http://<Server-IP>:3000` auf.
 
-Verwendung von `docker-compose`:
+Mit `docker-compose`:
 
 ```yml
 services:
@@ -95,31 +97,31 @@ services:
     restart: unless-stopped
 ```
 
-### Aus Quellcode bauen
+### Build aus dem Quellcode
 
-Wenn Sie Prompt-Inhalte anpassen oder Konfigurationen aendern muessen:
+Falls Sie Prompt-Inhalte anpassen oder die Konfiguration verändern möchten:
 
 ```bash
 # Offline-Branch klonen
 git clone -b offline https://github.com/rockbenben/ChatGPT-Shortcut.git
 cd ChatGPT-Shortcut
 
-# Abhaengigkeiten installieren
+# Abhängigkeiten installieren
 yarn
 
 # Lokale Entwicklung
 yarn start
 
-# Einzelsprachige Version bauen (Chinesisch)
-yarn build --locale zh-Hans
+# Build für eine einzelne Sprache (z. B. Deutsch)
+yarn build --locale de
 
-# Alle Sprachen bauen
+# Build für alle Sprachen
 yarn build
 ```
 
-Das Build-Ergebnis befindet sich im Verzeichnis `build/` und kann auf jedem statischen Dateiserver bereitgestellt werden (Nginx, Apache, Caddy usw.).
+Die Build-Artefakte liegen anschließend im Verzeichnis `build/` und können auf einem beliebigen statischen Webserver (Nginx, Apache, Caddy usw.) bereitgestellt werden.
 
-### Nginx-Konfigurationsbeispiel
+### Beispiel-Konfiguration für Nginx
 
 ```nginx
 server {
@@ -134,66 +136,66 @@ server {
 }
 ```
 
-### Plattform-Bereitstellung
+### Bereitstellung über Plattformen
 
-Bei der Bereitstellung auf Plattformen wie Vercel oder Cloudflare Pages waehlen Sie den `offline`-Branch. Alle anderen Schritte sind identisch mit der Online-Version. Siehe [Projektbereitstellung](../deploy) fuer Details.
+Für Vercel, Cloudflare Pages und vergleichbare Plattformen wählen Sie einfach den Branch `offline` aus. Die übrigen Schritte entsprechen der Online-Version — Details siehe [Projektbereitstellung](../deploy).
 
 ## Datenimport und -export
 
 ### Export
 
-Gehen Sie zu "Einstellungen > Daten exportieren", um Ihre persoenlichen Favoriten und benutzerdefinierten Prompts als JSON-Datei zu exportieren.
+Öffnen Sie „Einstellungen > Daten exportieren", um persönliche Sammlungen und eigene Prompts als JSON-Datei zu sichern.
 
 ### Import
 
-Folgende JSON-Dateiformate werden fuer den Import unterstuetzt:
+Es werden JSON-Dateien in den folgenden Formaten unterstützt:
 
-- **Dateien aus der Offline-Version**: Stellen Favoriten, Prompts, Sortierung und Tags vollstaendig wieder her
-- **Dateien aus der Online-Version**: Werden automatisch kompatibel verarbeitet
-  - Benutzer-Prompts → In lokalen Speicher zusammengefuehrt (nach Titel dedupliziert)
-  - Kuratierte Favoriten (card) → In lokale Favoriten zusammengefuehrt
-  - Community-Favoriten (community) → Automatisch in lokale benutzerdefinierte Prompts konvertiert
-  - MySpace-Sortierung → Im lokalen Speicher wiederhergestellt
-  - Benutzerdefinierte Tags → Angehaengt und zusammengefuehrt (ueberschreibt vorhandene nicht)
+- **Exporte aus der Offline-Version**: vollständige Wiederherstellung von Sammlung, Prompts, Sortierung und Tags
+- **Exporte aus der Online-Version**: werden automatisch kompatibel verarbeitet
+  - Eigene Prompts → werden lokal zusammengeführt (Deduplizierung anhand des Titels)
+  - Kuratierte Sammlung (card) → wird mit der lokalen Sammlung zusammengeführt
+  - Community-Sammlung (community) → wird automatisch in lokale, eigene Prompts überführt
+  - MySpace-Sortierung → wird lokal wiederhergestellt
+  - Eigene Tags → werden ergänzend zusammengeführt (vorhandene Tags bleiben erhalten)
 
-### Migration von der Online-Version
+### Migration aus der Online-Version
 
-1. Daten von der Seite "Mein Konto" der Online-Version (aishort.top) exportieren
-2. Die JSON-Datei auf der Seite "Einstellungen" der Offline-Version importieren
-3. Community-Favoriten werden automatisch in lokale Prompts konvertiert, kuratierte Favoriten werden normal synchronisiert
+1. Exportieren Sie Ihre Daten in der Online-Version (aishort.top) unter „Mein Konto"
+2. Importieren Sie die JSON-Datei in der Offline-Version unter „Einstellungen"
+3. Community-Sammlungen werden automatisch in lokale Prompts überführt, kuratierte Sammlungen werden regulär übernommen
 
-## Haeufig gestellte Fragen
+## Häufige Fragen
 
-### Wie nutzt das Team es nach der Bereitstellung?
+### Wie nutzt das Team die Anwendung nach der Bereitstellung?
 
-Nachdem der Administrator es auf einem Intranet-Server bereitgestellt hat, teilen Sie einfach die Zugangs-URL (z.B. `http://192.168.1.100:3000`) mit den Teammitgliedern. Jeder oeffnet sie im Browser -- keine Installation, keine Registrierung erforderlich.
+Nach der Bereitstellung auf dem Intranet-Server teilen Sie den Teammitgliedern lediglich die Zugriffsadresse mit (z. B. `http://192.168.1.100:3000`). Jeder öffnet diese im Browser — ohne Installation und ohne Registrierung.
 
-### Beeinflussen sich die Daten verschiedener Benutzer gegenseitig?
+### Beeinflussen sich die Daten der einzelnen Benutzer gegenseitig?
 
-Nein. Die Favoriten und benutzerdefinierten Prompts jeder Person werden im localStorage des eigenen Browsers gespeichert, vollstaendig unabhaengig. Der Server hostet nur die gemeinsame Prompt-Bibliothek (schreibgeschuetzt).
+Nein. Sammlung und eigene Prompts jedes Benutzers liegen im localStorage des jeweils eigenen Browsers und sind vollständig voneinander getrennt. Auf dem Server befindet sich ausschließlich die gemeinsam genutzte Prompt-Bibliothek (Read-only).
 
-### Koennen Daten verloren gehen?
+### Können Daten verloren gehen?
 
-Folgende Aktionen fuehren zum Verlust persoenlicher Daten:
+Folgende Aktionen führen zum Verlust der persönlichen Daten:
 
-- Loeschen von Browserdaten/Cache
-- Surfen im privaten/Inkognito-Modus
-- Wechsel des Computers oder Browsers
+- Löschen der Browserdaten bzw. des Caches
+- Nutzung im Privat- oder Inkognito-Modus
+- Wechsel des Geräts oder Browsers
 
-Es wird empfohlen, wichtige Daten regelmaessig ueber "Einstellungen > Daten exportieren" als JSON-Datei zu sichern.
+Wir empfehlen, wichtige Daten regelmäßig über „Einstellungen > Daten exportieren" als JSON-Datei zu sichern.
 
-### Koennen benutzerdefinierte Prompts im Team geteilt werden?
+### Lassen sich eigene Prompts im Team austauschen?
 
-Ja. Eine Person exportiert die JSON-Datei, und andere Mitglieder importieren sie ueber "Einstellungen > Daten importieren". Duplikate werden beim Import automatisch entfernt.
+Ja. Eine Person exportiert die JSON-Datei, die übrigen Teammitglieder importieren sie unter „Einstellungen > Daten importieren". Die Deduplizierung erfolgt automatisch.
 
-### Wie aktualisiert man die Prompt-Bibliothek?
+### Wie wird die Prompt-Bibliothek aktualisiert?
 
-Die Prompt-Bibliothek besteht aus statischen Daten, die beim Build verpackt werden. Zum Aktualisieren:
+Die Prompt-Bibliothek ist zum Build-Zeitpunkt fest verankert. Zur Aktualisierung:
 
-1. Der Administrator holt den neuesten `offline`-Branch-Code
-2. Neu bauen und bereitstellen (oder das neueste Docker-Image laden)
-3. Teammitglieder aktualisieren die Browser-Seite, um neue Inhalte zu sehen (persoenliche Daten werden nicht beeinflusst)
+1. Der Administrator ruft den aktuellen Stand des Branches `offline` ab
+2. Anschließend wird die Anwendung neu gebaut und bereitgestellt (oder das aktuelle Docker-Image gezogen)
+3. Die Teammitglieder sehen die neuen Inhalte nach einem Browser-Refresh — persönliche Daten bleiben unverändert erhalten
 
-### Ist das Datenformat der Offline-Version mit der Online-Version kompatibel?
+### Sind die Datenformate von Offline- und Online-Version kompatibel?
 
-Ja. Das exportierte JSON-Format ist identisch und kann zwischen beiden Versionen importiert werden. Die Prompt-IDs unterscheiden sich zwischen den Versionen (die Online-Version verwendet Server-IDs, die Offline-Version verwendet Zeitstempel-IDs), aber die Deduplizierung erfolgt beim Import nach Titel, sodass es keine Konflikte gibt.
+Ja. Die exportierten JSON-Dateien folgen demselben Format und können zwischen beiden Varianten ausgetauscht werden. Die Prompt-IDs unterscheiden sich (Online: Server-IDs, Offline: Zeitstempel-IDs), beim Import erfolgt die Deduplizierung jedoch über den Titel — es kommt also nicht zu Konflikten.

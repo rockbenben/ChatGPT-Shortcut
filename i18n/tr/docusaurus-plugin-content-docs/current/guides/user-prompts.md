@@ -1,67 +1,87 @@
 ---
 sidebar_label: Özel Promptlar
-title: AI Short Özel Promptlar | Oluştur, Kaydet ve Paylaş
-description: Anında erişim için kendi AI promptlarınızı oluşturun ve kaydedin. Toplulukla paylaşın veya özel tutun ve istediğiniz zaman yedek dışa aktarın.
+title: AI Short Özel Promptlar | Oluştur, Düzenle ve Paylaş
+description: Kendi AI promptlarınızı oluşturun, hesabınıza kaydedin ve istediğiniz zaman çağırın. Toplulukla paylaşın veya özel tutun; verilerinizi tek tıkla dışa aktararak yedekleyin.
 ---
 
 # Özel Promptlar
 
-Giriş yaptıktan sonra, daha sonra hızlı erişim için kendi promptlarınızı oluşturabilirsiniz. Özel promptlar hesabınıza kaydedilir ve Koleksiyonum görünümünde görüntülenir.
+Giriş yaptıktan sonra kendi promptlarınızı oluşturabilir, hesabınıza kaydedip istediğiniz zaman çağırabilirsiniz. Özel promptlar "Koleksiyonum" görünümünde görüntülenir.
 
 ## Prompt Oluştur
 
-1. Sayfanın sağ üst köşesindeki "Prompt Ekle" düğmesine tıklayın
-2. Prompt bilgilerini doldurun:
-   - **Başlık**: Promptun amacının kısa açıklaması
-   - **Açıklama**: Promptun tam içeriği
-   - **Not**: Kullanım talimatları veya notlar (isteğe bağlı)
-3. Topluluğa paylaşıp paylaşmayacağınızı seçin
-4. Gönder'e tıklayın
+1. Sağ üst köşedeki "Ekle" düğmesine tıklayın
+2. Açılan "Prompt Oluştur" penceresinde formu doldurun:
+   - **Prompt adı** (zorunlu): Promptunuza bir ad verin
+   - **Prompt içeriği** (zorunlu): Promptun gövde metni
+   - **Rol / Kullanım** (isteğe bağlı): Promptun ne işe yaradığının kısa açıklaması
+   - **Notlar** (isteğe bağlı): Kaynak, diğer dil sürümleri veya ek açıklamalar
+3. Alttaki "Bu promptu herkese açık sayfada paylaşmak istiyor musunuz?" anahtarı varsayılan olarak açıktır—kapatırsanız yalnızca size görünür
+4. "Prompt Oluştur"a tıklayarak gönderin
 
-![Prompt Ekle Açılır Penceresi](/img/docs/user-prompts-create.png)
+![Prompt Oluştur penceresi](/img/docs/user-prompts-create.png)
+
+> 💡 **Doldurma örneği**—bir "Toplantı tutanak asistanı" promptu:
+> - **Prompt adı**: Toplantı tutanak asistanı
+> - **Prompt içeriği**: Profesyonel bir tutanak yazarı olarak görev yapın. Aşağıdaki ham notlardan resmi bir toplantı tutanağı hazırlayın; gündem maddeleri, alınan kararlar, sorumlu kişiler ve takip eylemleri açıkça ayrılmış olsun: [toplantı notlarınız]
+> - **Rol / Kullanım**: Dağınık toplantı notlarını paydaşlara gönderilebilecek resmi tutanağa dönüştürür
+> - **Notlar**: Her toplantıdan hemen sonra kullanın; çıktıyı e-posta şablonuna kopyalayın
 
 ## Promptu Düzenle
 
-Koleksiyonum görünümünde, oluşturduğunuz prompt kartına tıklayarak:
+Koleksiyonum görünümünde, oluşturduğunuz prompt kartına tıklayarak "Prompt Düzenle" penceresini açın:
 
-- Başlık, açıklama ve notu değiştirin
-- Paylaşım durumunu değiştirin (Genel/Özel)
-- Değişiklikleri kaydedin
+- Ad, içerik, rol ve notları değiştirin
+- Paylaşım durumunu değiştirin (genel/özel)
+- "Kaydet"e tıklayarak güncelleyin
 
-![Prompt Düzenleme Arayüzü](/img/docs/user-prompts-edit.png)
+![Prompt düzenleme arayüzü](/img/docs/user-prompts-edit.png)
 
 ## Promptu Sil
 
-Promptu silmek için düzenleme arayüzündeki "Sil" düğmesine tıklayın. Silme işlemi geri alınamaz, lütfen dikkatli olun.
+Düzenleme penceresinde "Sil"e tıklayın. Silme işlemi geri alınamaz; dikkatli olun.
 
 ## Topluluğa Paylaş
 
-Prompt oluştururken veya düzenlerken "Topluluğa Paylaş" seçeneğini işaretleyin:
+Oluşturma veya düzenleme sırasında alttaki "Bu promptu herkese açık sayfada paylaşmak istiyor musunuz?" anahtarı görünürlüğü kontrol eder:
 
-- **Genel**: Prompt topluluk sayfasında görüntülenir, diğer kullanıcılar görebilir ve toplayabilir
-- **Özel**: Yalnızca size görünür, topluluk sayfasında görünmez
+- **Açık (varsayılan)**: Prompt [Topluluk Promptları](./community) sayfasında görüntülenir; diğer kullanıcılar görebilir ve toplayabilir
+- **Kapalı**: Özel prompt; yalnızca size görünür
 
 Paylaşım durumunu istediğiniz zaman değiştirebilirsiniz.
 
-## Yedek Dışa Aktar
+## Yedek Dışa Aktarma
 
-Oluşturduğunuz tüm promptları dışa aktarın:
-
-1. Kullanıcı Merkezine girin
-2. "Promptları Dışa Aktar" düğmesine tıklayın
+1. "Hesabım" sayfasına gidin → "Veri Yönetimi → Promptları Dışa Aktar" bölümünü bulun
+2. "Verileri Dışa Aktar" düğmesine tıklayın
 3. Sistem bir JSON dosyası oluşturur ve otomatik olarak indirir
+
+Dışa aktarılan içerik şunları kapsar:
+
+- Promptun adı, içeriği, rol/kullanım, notlar
+- Oluşturma ve güncelleme zamanı
+- Paylaşım durumu
+
+Veri kaybını önlemek için düzenli olarak dışa aktarıp yedeklemeniz önerilir.
 
 ## Promptları İçe Aktar
 
-Promptları ve favorileri bir JSON dosyasından içe aktarın:
+Promptları ve koleksiyonları bir JSON dosyasından içe aktarın:
 
-1. Kullanıcı Merkezine girin
-2. "Promptları İçe Aktar" düğmesine tıklayın
+1. "Hesabım" sayfasına gidin → "Veri Yönetimi → Promptları İçe Aktar" bölümünü bulun
+2. "Verileri İçe Aktar" düğmesine tıklayın
 3. Bir JSON dosyası seçin
-4. Sistem verileri otomatik olarak birleştirir
+4. Sistem verileri otomatik olarak birleştirir (başlığa göre yinelenenleri kaldırır; başkasına ait ID'li promptlar otomatik olarak özel olarak ayarlanır)
+
+### Takım İşbirliği
+
+Takım içinde prompt paylaşımı için önerilen iş akışı:
+
+1. **Filtreleme ve paylaşım**: Dışa aktardıktan sonra koleksiyon listesini elle silin veya paylaşmak istediğiniz promptları filtreleyin; dosyayı takım üyelerine gönderin ve içe aktarmalarını sağlayın
+2. **Gizlilik koruması**: Başkasının paylaştığı promptları içe aktarmak (ID mevcut hesaba ait değilse) otomatik olarak **özel** olarak ayarlanır; üye verileri birbirini etkilemez
 
 ## İlgili Belgeler
 
 - [Koleksiyonum](./my-collection) - Koleksiyon ve etiket yönetimi
-- [Topluluk Promptları](./community) - Paylaş ve oy ver
+- [Topluluk Promptları](./community) - Paylaşım ve oylama
 - [Hesap Yönetimi](./account) - Giriş ve ayarlar

@@ -1,33 +1,31 @@
 ---
 sidebar_label: Guide de l'interface
-title: Guide de l'interface - Recherche et Filtres
-description: Maîtrisez AI Short. Apprenez à filtrer par étiquettes et utiliser la recherche intelligente pour trouver le prompt parfait.
+title: Guide de l'interface AI Short | Filtres par balises et recherche
+description: Prenez en main l'interface d'AI Short en quelques minutes. Trouvez le bon prompt grâce au filtrage par balises et à la recherche par mots-clés, puis copiez-le en un clic pour ChatGPT, Le Chat ou Claude.
 ---
 
 # Guide de l'interface
 
-La page AiShort offre aux utilisateurs une interface intuitive pour parcourir et filtrer les prompts. La page se compose principalement de la zone de balises, de la zone de recherche et de la zone d'affichage des prompts.
+La page d'accueil d'AiShort s'articule autour de trois zones&nbsp;: **les balises de scénario** en haut, **le champ de recherche** par mots-clés juste en dessous, et **la liste des cartes de prompts**. Voici comment les combiner pour mettre la main sur le bon prompt en quelques secondes.
 
 ![](/img/docs/interface-home.png)
 
 ## 🏷︎ Filtrage par balises
 
-La zone de balises aide les utilisateurs à filtrer les prompts en fonction du domaine et de la fonction.
+Filtrez les prompts par domaine et par fonction. Le sélecteur **OU / ET** en haut à droite définit la règle de combinaison des balises&nbsp;:
 
-Via le bouton "Changer la règle de filtrage des balises" en haut à droite, vous pouvez obtenir un filtrage multi-balises plus précis :
-
-- **Règle OU** (Par défaut) : Affiche les prompts ayant l'une des balises sélectionnées
-- **Règle ET** : Affiche uniquement les prompts ayant toutes les balises sélectionnées simultanément
+- **OU** (par défaut)&nbsp;: affiche les prompts ayant au moins une des balises sélectionnées
+- **ET**&nbsp;: n'affiche que les prompts portant toutes les balises sélectionnées
 
 ![](/img/docs/interface-filter.png)
 
 ## 🔍 Recherche par mots-clés
 
-La fonction de recherche par mots-clés prend en charge la recherche des titres, descriptions et contenus des prompts.
+La recherche couvre le titre, la description et le contenu des prompts.
 
-- La recherche sur la page d'accueil inclut principalement des **prompts sélectionnés** (à l'exclusion des prompts de la communauté). Si des balises sont déjà sélectionnées, la portée de la recherche est limitée à ces balises
-- Après connexion, la portée de la recherche s'élargit pour inclure vos **collections** et **prompts personnalisés**
-- Si vous ne trouvez pas les résultats attendus sur la page d'accueil à l'aide de mots-clés courts, veuillez vous rendre sur la page [Prompts de la communauté](./community) pour effectuer une recherche
+- Sur la page d'accueil, la recherche porte sur les **prompts sélectionnés** (hors communauté). Si des balises sont déjà sélectionnées, la recherche se limite à ces balises
+- Après connexion, la recherche s'étend à votre **collection** et à vos **prompts personnalisés**
+- Si vous ne trouvez rien sur la page d'accueil avec un mot-clé court, relancez la recherche sur la page [Prompts de la communauté](./community)
 
 ![](/img/docs/interface-search.png)
 
@@ -35,23 +33,21 @@ La fonction de recherche par mots-clés prend en charge la recherche des titres,
 
 ### Voir les détails
 
-Cliquez sur une carte de prompt pour ouvrir la fenêtre contextuelle des détails, où vous pouvez voir le titre, la description, le contenu complet du prompt, les remarques et le bouton de copie.
+Cliquez sur une carte pour ouvrir sa fenêtre de détails&nbsp;: vous y retrouvez le contenu complet et les remarques, et vous pouvez tout copier en un clic.
 
 ![](/img/docs/prompt-card.gif)
 
-### Copier le prompt
+### Copier un prompt
 
-Cliquez sur le bouton "Copier" en bas de la carte pour obtenir le prompt. Collez-le dans un modèle d'IA pour l'utiliser.
+Cliquez sur «&nbsp;Copier&nbsp;» en bas de la carte, puis collez le prompt dans n'importe quel outil d'IA&nbsp;: pages de conversation (ChatGPT, Le Chat, Claude), outils de codage, appels API, etc.
 
-### Collectionner le prompt
+### Collectionner un prompt
 
-Après connexion, un bouton de collection apparaîtra sur la carte. Cliquez pour ajouter le prompt à Ma collection.
+Une fois connecté, un bouton de collection apparaît sur la carte&nbsp;; un clic suffit pour l'ajouter à votre collection.
 
-## 🔥 Tri populaire
+## 🔥 Tri par popularité
 
-La page trie les prompts en fonction de leur popularité pour vous aider à découvrir rapidement le contenu tendance.
-
-Le tri des balises est également ajusté en fonction des valeurs de chaleur pour s'assurer qu'il reflète les dernières préférences de la communauté.
+Les prompts sont classés par popularité pour mettre en avant les contenus les plus utilisés. L'ordre des balises évolue lui aussi selon les tendances récentes de la communauté.
 
 ## Documentation associée
 

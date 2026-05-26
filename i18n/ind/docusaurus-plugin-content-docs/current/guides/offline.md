@@ -1,27 +1,29 @@
 ---
 sidebar_label: Versi Offline (Intranet Perusahaan)
-title: AI Short Deployment Offline | Tanpa Server Eksternal untuk Intranet Perusahaan
-description: Versi offline AI Short dirancang khusus untuk perusahaan dan tim yang tidak dapat mengakses jaringan eksternal. Tidak perlu server backend, tidak perlu registrasi, data disimpan secara lokal di browser, siap pakai langsung.
+title: Deploy Offline AI Short | Intranet Perusahaan Tanpa Server Eksternal
+description: Versi offline AI Short dirancang untuk perusahaan dan tim yang tidak dapat mengakses internet eksternal. Tanpa server backend, tanpa registrasi akun, data tersimpan lokal di browser, siap pakai langsung.
 ---
 
-# Versi Deployment Offline
+# Versi Deploy Offline
 
-**Skenario yang cocok**: Intranet perusahaan, jaringan pemerintah, lingkungan rahasia, jaringan kampus, dan skenario lainnya di mana **tidak dapat atau tidak nyaman mengakses jaringan eksternal**.
+> **Pembaca yang dituju**: administrator IT atau penanggung jawab teknis yang melakukan deployment. Pengguna biasa cukup mengakses alamat intranet yang sudah disiapkan administrator dan tidak perlu membaca dokumen ini.
 
-Versi offline AI Short tidak memerlukan server backend dan registrasi pengguna, semua data disimpan secara lokal di browser. Setelah deployment, tim dapat langsung menggunakan di intranet.
+**Skenario yang sesuai**: intranet perusahaan, jaringan pemerintah, lingkungan rahasia, jaringan kampus, instansi pemerintah, perbankan, BUMN dengan kebutuhan data residency, serta lingkungan lain yang **tidak dapat atau tidak diizinkan mengakses internet eksternal**.
+
+Tanpa backend, tanpa registrasi — semua data tersimpan lokal di browser. Setelah di-deploy, tim intranet cukup membuka browser untuk langsung menggunakannya.
 
 ## Cara Penggunaan Tim
 
-Versi offline adalah website statis murni, setelah di-deploy ke server intranet, anggota tim cukup membuka browser dan mengakses alamat intranet tersebut untuk menggunakan:
+Versi offline adalah situs statis murni. Setelah di-deploy ke server intranet, anggota tim dapat menggunakannya dengan mengakses alamat intranet melalui browser:
 
-1. **Admin** men-deploy versi offline ke server intranet (misalnya `http://192.168.1.100:3000`)
-2. **Anggota tim** membuka browser ke alamat tersebut, dapat menjelajahi, mencari, dan menyalin prompt
-3. **Koleksi dan prompt kustom** setiap orang disimpan di browser masing-masing, tidak saling mempengaruhi
-4. Tidak perlu registrasi akun, tidak perlu menginstal software apa pun, buka dan gunakan
+1. **Administrator** men-deploy versi offline ke server intranet (misalnya `http://192.168.1.100:3000`)
+2. **Anggota tim** membuka alamat tersebut di browser untuk menjelajah, mencari, dan menyalin prompt
+3. **Koleksi dan prompt kustom setiap orang tersimpan di browser masing-masing**, tidak saling memengaruhi
+4. Tanpa perlu mendaftar akun, tanpa perlu menginstal software apa pun, buka dan langsung pakai
 
 ```
-Server intranet (deploy versi offline)
-   ├── Data perpustakaan prompt (dibagikan untuk semua, dari JSON statis)
+Server Intranet (deploy versi offline)
+   ├── Data perpustakaan prompt (dibagikan ke semua orang, dari JSON statis)
    │
    ├── Browser Pengguna A → localStorage (koleksi dan prompt kustom A)
    ├── Browser Pengguna B → localStorage (koleksi dan prompt kustom B)
@@ -29,59 +31,59 @@ Server intranet (deploy versi offline)
 ```
 
 :::tip Tips
-Konten perpustakaan prompt (prompt pilihan) adalah data statis yang dikemas saat build, semua pengguna melihat konten yang sama. Koleksi, prompt kustom, urutan, dan tag setiap pengguna disimpan di localStorage browser masing-masing, saling independen.
+Perpustakaan prompt (prompt pilihan) adalah data statis yang dipaket saat build, semua pengguna melihat konten yang sama. Koleksi, prompt kustom, urutan, dan tag setiap pengguna tersimpan di localStorage browser masing-masing, terpisah satu sama lain.
 :::
 
 ## Perbedaan dengan Versi Online
 
 | Fitur | Versi Online | Versi Offline |
 | ---- | ------ | ------ |
-| Jelajahi/cari/filter prompt | ✅ | ✅ |
+| Jelajah/cari/filter prompt | ✅ | ✅ |
 | Salin prompt | ✅ | ✅ |
-| Manajemen koleksi | Penyimpanan server | Penyimpanan lokal browser |
-| Prompt kustom | Penyimpanan server | Penyimpanan lokal browser |
+| Manajemen koleksi | Tersimpan di server | Tersimpan lokal di browser |
+| Prompt kustom | Tersimpan di server | Tersimpan lokal di browser |
 | Koleksi Saya (seret-lepas, tag) | ✅ | ✅ |
 | Dukungan multi-bahasa (18 bahasa) | ✅ | ✅ |
 | Impor/ekspor data | ✅ | ✅ (format kompatibel) |
 | Halaman detail prompt | ✅ | ✅ (data statis, tanpa komentar) |
-| Registrasi/login pengguna | ✅ | ❌ (tidak perlu akun) |
-| Daftar prompt komunitas/voting | ✅ | ❌ |
+| Registrasi/login pengguna | ✅ | ❌ (tanpa akun) |
+| Daftar/voting prompt komunitas | ✅ | ❌ |
 | Komentar umpan balik | ✅ | ❌ |
 
 ## Penyimpanan Data
 
-Data setiap pengguna disimpan di localStorage **browser masing-masing**, tidak terkait dengan server:
+Data setiap pengguna tersimpan di localStorage **browser masing-masing**, tidak berhubungan dengan server:
 
-| Data | Kunci penyimpanan | Deskripsi |
+| Data | Kunci Penyimpanan | Keterangan |
 | ---- | ------ | ---- |
-| Daftar koleksi | `local_favorites` | Array ID prompt yang dikumpulkan |
+| Daftar koleksi | `local_favorites` | Array ID prompt yang dikoleksi |
 | Prompt kustom | `local_user_prompts` | Data prompt yang dibuat pengguna |
-| Urutan pengurutan | `local_myspace_order` | Urutan kartu di Koleksi Saya |
-| Tag kustom | `local_custom_tags` | Definisi tag dan hubungan penugasan |
+| Urutan tampilan | `local_myspace_order` | Urutan kartu di Koleksi Saya |
+| Tag kustom | `local_custom_tags` | Definisi tag dan relasi penugasan |
 
 :::caution Perhatian
-- localStorage browser memiliki batas kapasitas sekitar 5MB, sepenuhnya cukup untuk penggunaan harian.
-- Menghapus data browser akan menyebabkan data pribadi hilang, disarankan untuk membuat cadangan secara berkala melalui "Pengaturan > Ekspor Data".
-- Setelah mengganti komputer atau browser, data perlu diimpor ulang.
+- Penyimpanan lokal browser memiliki batas kapasitas sekitar 5MB, cukup untuk penggunaan harian.
+- Membersihkan data browser akan menghapus data pribadi — disarankan mencadangkan secara berkala melalui "Pengaturan > Ekspor Data".
+- Setelah berganti komputer atau browser, perlu mengimpor ulang data.
 :::
 
 ## Deployment
 
-Versi offline berbasis branch `offline`. Setelah admin menyelesaikan deployment sekali, anggota tim tidak perlu melakukan tindakan apa pun.
+Versi offline berbasis branch `offline`. Setelah administrator menyelesaikan deployment sekali, anggota tim dapat langsung menggunakannya tanpa operasi apa pun.
 
 ### Deployment Docker (Direkomendasikan)
 
-Metode deployment paling sederhana, satu baris perintah dapat menjalankan di server intranet:
+Cara deployment paling sederhana, satu baris perintah cukup untuk menjalankan di server intranet:
 
 ```bash
-# Gunakan image versi offline yang sudah di-build
+# Menggunakan image versi offline pre-built
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# Atau gunakan Docker Hub
+# Atau menggunakan Docker Hub
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-Setelah deployment, anggota tim mengakses `http://<IP server>:3000` untuk menggunakan.
+Setelah deployment, anggota tim mengakses `http://<IP-server>:3000` untuk langsung menggunakannya.
 
 Menggunakan `docker-compose`:
 
@@ -95,29 +97,29 @@ services:
     restart: unless-stopped
 ```
 
-### Build dari Kode Sumber
+### Build dari Source Code
 
-Jika perlu menyesuaikan konten prompt atau mengubah konfigurasi:
+Jika ingin mengkustomisasi konten prompt atau mengubah konfigurasi:
 
 ```bash
-# Clone branch offline
+# Clone branch versi offline
 git clone -b offline https://github.com/rockbenben/ChatGPT-Shortcut.git
 cd ChatGPT-Shortcut
 
-# Instal dependensi
+# Instalasi dependensi
 yarn
 
 # Pengembangan lokal
 yarn start
 
-# Build versi satu bahasa (Cina)
-yarn build --locale zh-Hans
+# Build versi satu bahasa (Bahasa Indonesia)
+yarn build --locale ind
 
 # Build semua bahasa
 yarn build
 ```
 
-Hasil build ada di direktori `build/`, dapat di-deploy ke server file statis apa pun (Nginx, Apache, Caddy, dll.).
+Hasil build berada di direktori `build/`, dapat di-deploy ke server file statis mana pun (Nginx, Apache, Caddy, dll.).
 
 ### Contoh Konfigurasi Nginx
 
@@ -136,9 +138,9 @@ server {
 
 ### Deployment Platform
 
-Saat men-deploy di Vercel, Cloudflare Pages dan platform lainnya, pilih branch `offline`, langkah lainnya sama dengan versi online, lihat detail di [Deployment Proyek](../deploy).
+Saat deploy ke platform seperti Vercel, Cloudflare Pages, dll., cukup pilih branch `offline`. Langkah lainnya sama dengan versi online, lihat selengkapnya di [Deployment Proyek](../deploy).
 
-## Impor-Ekspor Data
+## Impor dan Ekspor Data
 
 ### Ekspor
 
@@ -148,52 +150,52 @@ Masuk ke "Pengaturan > Ekspor Data", ekspor koleksi pribadi dan prompt kustom se
 
 Mendukung impor file JSON dengan format berikut:
 
-- **File ekspor dari versi offline**: Pulihkan sepenuhnya koleksi, prompt, urutan, dan tag
-- **File ekspor dari versi online**: Kompatibel secara otomatis
-  - Prompt pengguna → Gabung ke lokal (deduplikasi berdasarkan judul)
-  - Koleksi pilihan (card) → Gabung ke koleksi lokal
-  - Koleksi komunitas (community) → Otomatis dikonversi menjadi prompt kustom lokal
-  - Urutan MySpace → Pulihkan ke lokal
-  - Tag kustom → Tambah dan gabung (tidak menimpa yang ada)
+- **File ekspor dari versi offline**: pemulihan penuh koleksi, prompt, urutan, dan tag
+- **File ekspor dari versi online**: ditangani otomatis dengan kompatibilitas
+  - Prompt pengguna → digabungkan ke lokal (deduplikasi berdasarkan judul)
+  - Koleksi pilihan (card) → digabungkan ke koleksi lokal
+  - Koleksi komunitas (community) → otomatis dikonversi menjadi prompt kustom lokal
+  - Urutan MySpace → dipulihkan ke lokal
+  - Tag kustom → digabungkan dengan menambahkan (tidak menimpa yang sudah ada)
 
 ### Migrasi dari Versi Online
 
-1. Ekspor data dari halaman "Akun Saya" di versi online (aishort.top)
+1. Ekspor data di halaman "Akun Saya" versi online (aishort.top)
 2. Impor file JSON tersebut di halaman "Pengaturan" versi offline
-3. Koleksi komunitas akan otomatis dikonversi menjadi prompt lokal, koleksi pilihan disinkronkan secara normal
+3. Koleksi komunitas otomatis dikonversi menjadi prompt lokal, koleksi pilihan tersinkron normal
 
 ## Pertanyaan Umum
 
-### Setelah deployment, bagaimana tim menggunakannya?
+### Bagaimana tim menggunakannya setelah di-deploy?
 
-Setelah admin men-deploy ke server intranet, beritahu anggota tim alamat akses (misalnya `http://192.168.1.100:3000`). Setiap orang buka browser, tidak perlu menginstal, tidak perlu registrasi.
+Setelah administrator men-deploy ke server intranet, cukup beritahukan alamat akses (misalnya `http://192.168.1.100:3000`) kepada anggota tim. Setiap orang membuka melalui browser, tanpa perlu instalasi, tanpa perlu registrasi.
 
-### Apakah data setiap orang akan saling mempengaruhi?
+### Apakah data setiap orang saling memengaruhi?
 
-Tidak. Koleksi dan prompt kustom setiap orang disimpan di localStorage browser masing-masing, sepenuhnya independen. Di server hanya ada perpustakaan prompt bersama (hanya-baca).
+Tidak. Koleksi dan prompt kustom setiap orang tersimpan di localStorage browser masing-masing, sepenuhnya independen. Di server hanya ada perpustakaan prompt bersama (read-only).
 
 ### Apakah data bisa hilang?
 
 Operasi berikut dapat menyebabkan data pribadi hilang:
 
-- Menghapus data/cache browser
-- Menggunakan mode pribadi/incognito
-- Mengganti komputer atau browser
+- Membersihkan data/cache browser
+- Menggunakan mode privat/incognito untuk browsing
+- Berganti komputer atau browser
 
-Disarankan untuk membuat cadangan data penting secara berkala melalui "Pengaturan > Ekspor Data" sebagai file JSON.
+Disarankan mencadangkan data penting secara berkala sebagai file JSON melalui "Pengaturan > Ekspor Data".
 
-### Bisakah prompt kustom dibagikan antar tim?
+### Bisakah berbagi prompt kustom antar anggota tim?
 
-Bisa. Satu orang mengekspor file JSON, lalu anggota lain mengimpor di "Pengaturan > Impor Data". Saat mengimpor, deduplikasi otomatis dilakukan.
+Bisa. Satu orang mengekspor file JSON, kemudian anggota lain mengimpornya di "Pengaturan > Impor Data", deduplikasi berjalan otomatis.
 
 ### Bagaimana cara memperbarui perpustakaan prompt?
 
-Perpustakaan prompt adalah data statis yang dikemas saat build. Cara memperbarui:
+Perpustakaan prompt adalah data statis yang dipaket saat build. Cara pembaruan:
 
-1. Admin pull kode branch `offline` terbaru
-2. Build ulang dan deploy (atau pull image Docker terbaru)
-3. Anggota tim me-refresh halaman browser untuk melihat konten baru (data pribadi tidak terpengaruh)
+1. Administrator menarik kode branch `offline` terbaru
+2. Build ulang dan deploy (atau tarik image Docker terbaru)
+3. Anggota tim cukup me-refresh browser untuk melihat konten baru (data pribadi tidak terpengaruh)
 
 ### Apakah format data versi offline kompatibel dengan versi online?
 
-Kompatibel. Format JSON yang diekspor sama, dapat diimpor-ekspor antar kedua versi. ID prompt berbeda di kedua versi (online menggunakan ID server, offline menggunakan ID timestamp), tetapi saat mengimpor dideduplikasi berdasarkan judul, tidak ada konflik.
+Kompatibel. Format JSON yang diekspor identik, dapat diimpor timbal-balik antara kedua versi. ID prompt berbeda (versi online menggunakan ID server, versi offline menggunakan ID timestamp), tetapi impor melakukan deduplikasi berdasarkan judul sehingga tidak akan terjadi konflik.

@@ -1,26 +1,24 @@
 ---
-sidebar_label: Akun
-title: Akun AI Short | Panduan Login Google & Tanpa Kata Sandi
-description: Akses prompt AI Short Anda di mana saja dengan login Google atau tanpa kata sandi. Kelola pengaturan akun dan pulihkan data dengan aman dalam hitungan detik.
+sidebar_label: Manajemen Akun
+title: Manajemen Akun AI Short | Login Google & Login Tanpa Kata Sandi
+description: Login Google satu klik atau magic link via email, langsung akses koleksi prompt AI pribadi Anda. Lupa kata sandi? Reset cepat lewat email, data akun aman tersinkron lintas perangkat.
 ---
 
 # Manajemen Akun
 
-AiShort menyediakan beberapa metode login untuk memudahkan akses ke data pribadi Anda kapan saja.
+AiShort bisa langsung dipakai tanpa login — tapi **setelah login** Anda bisa menyimpan prompt favorit, membuat prompt sendiri, membagikannya ke komunitas, dan menyinkronkannya antar perangkat. Panduan ini membahas cara login, daftar akun, mengatur kata sandi, dan membersihkan cache.
 
 ## Metode Login
 
-### Login Kata Sandi
+### Login dengan Kata Sandi
 
-Login menggunakan nama pengguna atau email terdaftar yang dikombinasikan dengan kata sandi.
+Gunakan nama pengguna atau email terdaftar + kata sandi untuk login.
 
-Jika Anda lupa kata sandi, klik "Lupa Kata Sandi" di halaman login, masukkan email terdaftar, dan sistem akan mengirimkan tautan reset.
+Lupa kata sandi: Klik "Lupa Kata Sandi" di halaman login, masukkan email terdaftar dan Anda akan menerima tautan reset.
 
 ### Login Google
 
-Klik ikon Google di halaman login untuk masuk dengan akun Google Anda dengan satu klik.
-
-Menggunakan login Google untuk pertama kali akan secara otomatis membuat akun tanpa registrasi terpisah.
+Klik ikon Google di halaman login untuk login sekali klik. Akun akan otomatis dibuat saat pertama kali, tidak perlu mendaftar terpisah.
 
 ![](/img/docs/account-login.png)
 
@@ -28,35 +26,36 @@ Menggunakan login Google untuk pertama kali akan secara otomatis membuat akun ta
 
 1. Masukkan email terdaftar di halaman login
 2. Klik "Kirim Tautan Login"
-3. Periksa email Anda dan klik tautan untuk login
+3. Buka tautan di email untuk login
 
-Metode ini tidak memerlukan mengingat kata sandi dan cocok untuk pengguna yang tidak sering login.
+Tidak perlu hafal kata sandi — cocok kalau Anda jarang login.
 
 ## Daftar Akun
 
-1. Klik opsi "Daftar" di halaman login
+1. Klik "Daftar" di halaman login
 2. Isi nama pengguna, email, dan kata sandi
-3. Login otomatis setelah menyelesaikan pendaftaran
+3. Otomatis login setelah dikirim
 
 ![](/img/docs/account-register.png)
 
 ## Ubah Kata Sandi
 
-Setelah login, Anda dapat mengubah kata sandi di Pusat Pengguna:
+Setelah login, ubah di "Akun Saya":
+
+![Halaman Akun Saya](/img/docs/account-profile.png)
 
 1. Masukkan kata sandi saat ini
 2. Masukkan kata sandi baru dan konfirmasi
-3. Simpan perubahan
+3. Klik "Ubah Kata Sandi" untuk mengirim
 
 ## Hapus Cache
 
-Jika Anda mengalami masalah sinkronisasi data atau anomali tampilan:
+Saat data tidak sinkron atau tampilan tidak normal:
 
-1. Masuk ke Pusat Pengguna
-2. Klik tombol "Hapus Cache"
-3. Halaman akan secara otomatis menyegarkan dan mengambil ulang data dari server
+1. Masuk ke "Akun Saya" → temukan kolom "Manajemen Data → Hapus Cache"
+2. Klik tombol "Hapus Cache", setelah konfirmasi semua data akan otomatis dimuat ulang
 
-Menghapus cache tidak akan menghapus koleksi dan prompt kustom Anda; ini hanya memaksa sinkronisasi ulang data server.
+Koleksi dan prompt kustom Anda aman — proses ini hanya menyinkronkan ulang data dari server.
 
 ## Dokumentasi Terkait
 

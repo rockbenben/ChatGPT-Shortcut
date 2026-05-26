@@ -1,73 +1,75 @@
 ---
 sidebar_label: Koleksiyonum
-title: Koleksiyonum | AI Promptlarını Etiketler ve Sıralama ile Düzenleyin
-description: Favori AI promptlarınızı toplayın ve özel etiketlerle yönetin. Kişiselleştirilmiş prompt kütüphanesi oluşturmak için sürükle-bırak sıralamayı destekler.
+title: AI Short Koleksiyonum | Etiket Sınıflandırması ve Sürükle-Bırak Sıralama
+description: AI Short'ta sevdiğiniz promptları toplayın, özel etiketlerle sınıflandırın ve sürükle-bırak sıralamayla kişisel prompt kütüphanenizi oluşturun. Tüm cihazlarınız arasında otomatik senkronize olur.
 ---
 
 # Koleksiyonum
 
-Giriş yaptıktan sonra, favori promptlarınızı toplayabilir ve kişisel olarak yönetebilirsiniz. Koleksiyonum görünümü, promptları verimli bir şekilde düzenlemenize ve kullanmanıza yardımcı olmak için zengin yönetim işlevleri sunar.
+Giriş yaptıktan sonra, **Koleksiyonum** görünümü sevdiğiniz promptları yer imlerinizi düzenler gibi yönetmenize olanak tanır—sürükle-bırak ile sıralayın, özel etiketler ekleyin, etikete göre filtreleyin ve istediğiniz an hızlıca erişin.
+
+:::tip Çevrimiçi ve Çevrimdışı Sürüm
+Çevrimiçi sürümde koleksiyon verileri sunucuda saklanır (giriş gerektirir); [Çevrimdışı Dağıtım Sürümü](./offline)'nde koleksiyon verileri tarayıcı yerel deposunda (localStorage, giriş gerektirmez) saklanır; işlevler aynıdır.
+
+> 🔒 **KVKK notu**: Çevrimdışı sürümde tüm koleksiyon ve özel prompt verileriniz yalnızca kendi cihazınızda kalır—hiçbir sunucuya aktarılmaz. Bu yaklaşım, kişisel verilerin yurt içinde işlenmesini öngören KVKK ilkeleriyle uyumludur ve kurumsal intranet senaryolarında veri yerelliğini garanti eder.
+:::
 
 ## Görünüm Değiştirme
 
-Ana sayfanın üst kısmında iki modu destekleyen görünüm değiştirme düğmeleri bulunur:
+Ana sayfa üstündeki görünüm değiştirme düğmeleri iki mod sunar:
 
-- **Koleksiyonum**: Topladığınız promptları ve özel promptlarınızı görüntüler
-- **Prompt Kütüphanesi**: Yeni içerikleri keşfetmek için herkese açık prompt kütüphanesine göz atın
+- **Koleksiyonum**: Koleksiyonunuzu + özel promptlarınızı görüntüler
+- **Prompt Kütüphanesi**: Herkese açık prompt kütüphanesine göz atın
 
-Tarayıcı görünüm seçiminizi otomatik olarak hatırlayacak ve bir sonraki ziyaretinizde son görünüme geçecektir.
+Tarayıcı seçiminizi hatırlar; bir sonraki ziyaretinizde site doğrudan en son kullandığınız görünümde açılır.
 
-![Koleksiyonum Görünümü](/img/docs/my-collection-view.gif)
+![Koleksiyonum görünümü](/img/docs/my-collection-view.gif)
 
 ## Koleksiyona Ekle
 
-Koleksiyonuma eklemek için prompt kartındaki "Topla" düğmesine tıklayın.
+Karttaki "Topla" düğmesine tıklayarak Koleksiyonum'a ekleyin.
 
-Bir topluluk promptunu toplarken, sistem otomatik olarak ona oy verir ve kaliteli içeriğin daha fazla görünürlük kazanmasına yardımcı olur.
+Bir topluluk promptunu koleksiyonunuza eklediğinizde otomatik olarak olumlu oy verilmiş sayılır; bu, kaliteli içeriğin daha fazla görünürlük kazanmasına yardımcı olur.
 
 ## Koleksiyondan Kaldır
 
-Koleksiyonum görünümünde, toplamayı iptal etmek için karttaki kalp simgesine tıklayın.
+Koleksiyonum görünümündeki kartta yer alan kalp simgesine tıklayarak promptu koleksiyonunuzdan çıkarabilirsiniz.
 
 ## Özel Etiketler
 
-Rahat sınıflandırma yönetimi için toplanan promptlara kişisel etiketler ekleyin:
+Topladığınız promptlara sınıflandırma için etiket ekleyin:
 
 ### Etiket Ekle
 
 1. Kontrol çubuğundaki etiket simgesine tıklayın
-2. Mevcut bir etiketi seçin veya yeni etiket oluşturmak için "+"ya tıklayın
-3. Yeni etiketler özel adlara ve renklere sahip olabilir
+2. Mevcut bir etiketi seçin veya yeni eklemek için "+"ya tıklayın
+3. Yeni etiketin adını ve rengini özelleştirebilirsiniz
 
 ### Etiketleri Yönet
 
-Etiket yönetim arayüzüne girmek için "Etiketleri Yönet"e tıklayın:
+"Etiketleri Yönet"e tıklayarak yönetim arayüzüne girin:
 
 - Etiket adını değiştirin
-- Etiket rengini değiştirin (11 önceden ayarlanmış renk mevcut)
-- İstenmeyen etiketleri silin
+- Etiket rengini değiştirin (11 önceden tanımlı renk)
+- Etiketleri silin
 
-![Etiket Yönetimi Açılır Penceresi](/img/docs/my-collection-tag.png)
+![Etiket yönetimi penceresi](/img/docs/my-collection-tag.png)
 
 ### Etikete Göre Filtrele
 
-Koleksiyonum görünümünün filtre çubuğunda, içeriği özel etiketlere göre filtreleyebilirsiniz.
+Koleksiyonum görünümünün filtre çubuğu özel etiketlere göre filtrelemenizi sağlar.
 
 ## Sürükle-Bırak Sıralama
 
-Koleksiyonum görünümünde kart sırasının sürükle-bırak ayarlaması desteklenir:
+Koleksiyonum görünümünde kart sırasını sürükle-bırak ile ayarlayabilirsiniz:
 
-1. Kartın sol tarafındaki tutamacı sürükleyin
-2. Hedef konuma taşıyın ve bırakın
-3. Yeni sıra otomatik olarak kaydedilir (çevrimiçi sürüm: sunucuya; çevrimdışı sürüm: tarayıcı localStorage'ına)
+1. Kartın sol tarafındaki sürükleme tutamacını çekin
+2. Hedef konuma taşıyıp bırakın
+3. Yeni sıralama otomatik olarak kaydedilir (çevrimiçi sürüm sunucuda, çevrimdışı sürüm tarayıcı yerel deposunda)
 
-Sıralama işlevi yalnızca Koleksiyonum görünümünde kullanılabilir.
+Sıralama yalnızca Koleksiyonum görünümünde kullanılabilir.
 
-:::tip Çevrimiçi ve Çevrimdışı Sürüm
-Çevrimiçi sürümde, favoriler ve özel promptlar sunucuya kaydedilir ve giriş gerektirir. [Çevrimdışı sürüm](./offline)'de tüm veriler tarayıcının localStorage'ında saklanır, hesap gerekmez. Veriler, dışa ve içe aktarma yoluyla iki sürüm arasında taşınabilir.
-:::
-
-![Sürükle-Bırak Sıralama](/img/docs/my-collection-drag.gif)
+![Sürükle-bırak sıralama](/img/docs/my-collection-drag.gif)
 
 ## İlgili Belgeler
 

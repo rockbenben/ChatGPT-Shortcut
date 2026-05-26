@@ -6,12 +6,11 @@ description: Alternativa al CRX. Guía paso a paso para instalar la extensión d
 
 # Guía de Instalación Local de Extensión ZIP para Chrome
 
-## Descargar Extensión
-
-Descarga el paquete de instalación ZIP de la extensión ChatGPT Shortcut (ChatGPT_Shortcut-zip-3.x.x.zip) y descomprímelo. (La carpeta descomprimida debe mantenerse en la computadora, así que recuerda descomprimirla en una ubicación permanente).
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **Descarga en China**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), contraseña: 1qow
+> Este tutorial asume que ya has descargado y descomprimido el paquete ZIP desde la [página de instalación](./README.md).
+>
+> ⚠️ **Dos errores comunes**:
+> 1. La carpeta descomprimida debe **conservarse de forma permanente** (la extensión lee de este directorio en tiempo de ejecución) — colócala en una ubicación permanente antes de continuar
+> 2. Lo que arrastras es la **carpeta descomprimida completa** (no el archivo zip en sí, ni un archivo individual dentro de la carpeta)
 
 ## Habilitar Modo Desarrollador
 

@@ -1,32 +1,37 @@
 ---
 sidebar_label: Başlarken
-title: AI Short Hızlı Başlangıç | Promptları ChatGPT/DeepSeek'e Kopyalayın
-description: 30 saniyede AI verimliliğinizi artırmaya başlayın! Özelleştirilmiş promptları ChatGPT, Gemini ve DeepSeek'e kopyalayarak anında konuşma iyileştirmeleri sağlayın.
+title: AI Short Başlangıç Kılavuzu | Promptları ChatGPT/DeepSeek'e Kopyalayın
+description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi AI modellerine kopyalayın ve konuşma kalitenizi ile verimliliğinizi anında artırın.
 ---
 
 # Başlarken
 
-AI ile konuşurken, iyi promptlar kaliteli yanıtları daha hızlı almanıza yardımcı olabilir. AiShort, sizin için kopyalamaya ve kullanmaya hazır çok sayıda pratik prompt derlemiştir.
+İyi bir prompt, AI çıktısının kalitesini belirler. AiShort, kopyalayıp yapıştırarak kullanabileceğiniz çok sayıda seçilmiş prompt sunar.
+
+> 📋 **Başlamadan önce gerekenler**: Bir tarayıcı + erişebileceğiniz herhangi bir AI aracı (ChatGPT gibi sohbet sayfaları, Cursor gibi kodlama araçları, API çağrıları, ajanlar vb.). AiShort web sürümü kayıt gerektirmez.
 
 ## Temel Kullanım
 
-1. Ana sayfada ihtiyacınız olan promptu arayın veya seçin
-2. Ayrıntıları görmek için karta tıklayın veya doğrudan "Kopyala" düğmesine tıklayın
-3. Herhangi bir AI modelini açın ve promptu yapıştırın
-4. Promptun talimatlarını izleyerek özel sorunuzu ekleyin
+1. Ana sayfada ilgilendiğiniz promptu arayın veya göz atın
+2. Uygun bir prompt bulun, "Kopyala" düğmesine tıklayın (ya da önce kartı açıp tam içeriği görün)
+3. Herhangi bir AI aracına yapıştırın — ChatGPT gibi sohbet sayfaları, Cursor gibi kodlama araçları, API çağrıları vb.
+4. Prompttaki **yer tutucuları** (örn. `[içerik]`, `[konu]`) kendi ihtiyacınızla doldurun ve AI'a gönderin
 
 ![](/img/docs/how-to-use-aishort.gif)
 
+> 💡 **İpucu**: Promptların çoğu, doldurmanız gereken bölümleri köşeli parantez `[...]` ile işaretler—köşeli parantez içindeki yer tutucu metni kendi içeriğinizle değiştirmeniz yeterli.
+
 ## Hızlı Erişim
 
-| Yapmak istediğim...            | Gidilecek yer                           |
-| ------------------------------ | --------------------------------------- |
-| Promptları kopyala ve kullan   | [Ana Sayfa](/) üzerinde ara veya göz at |
-| Promptları topla ve yönet      | [Koleksiyonum](./my-collection)         |
-| Kendi promptlarımı oluştur     | [Özel Promptlar](./user-prompts)        |
-| Kayıt ol veya Giriş yap        | [Hesap Yönetimi](./account)             |
-| Topluluk paylaşımlarını keşfet | [Topluluk Promptları](./community)      |
-| Çevrimdışı/intranet dağıtımı   | [Çevrimdışı Sürüm](./offline)          |
+| Yapmak istediğim...            | Gidilecek yer                                       |
+| ------------------------------ | --------------------------------------------------- |
+| Promptları kopyalayıp kullan   | Doğrudan [Ana Sayfa](/)'da ara veya göz at          |
+| AI konuşma sayfasında çağır    | [Tarayıcı Uzantısı](../extension/)                  |
+| Promptları topla ve yönet      | [Koleksiyonum](./my-collection)                     |
+| Kendi promptlarımı oluştur     | [Özel Promptlar](./user-prompts)                    |
+| Kayıt ol veya giriş yap        | [Hesap Yönetimi](./account)                         |
+| Topluluk paylaşımlarını keşfet | [Topluluk Promptları](./community)                  |
+| Çevrimdışı/intranet dağıtımı   | [Çevrimdışı Dağıtım Sürümü](./offline)              |
 
 ## Popüler AI Modelleri
 
@@ -36,6 +41,19 @@ AI ile konuşurken, iyi promptlar kaliteli yanıtları daha hızlı almanıza ya
 - [Gemini](https://gemini.google.com/app)
 - [Claude](https://claude.ai/chats)
 - [Grok](https://grok.com/)
+
+> 🇹🇷 **Türkiye'den kullanıcılar için not**: Yukarıdaki modellerin tümü Türkçeyi akıcı şekilde anlar ve yanıt verir. ChatGPT, Gemini ve Claude AB bölgesinde resmi olarak kullanılabilir; bazı yeni özellikler ülkenize göre kademeli olarak açılır. Erişim sorunu yaşarsanız OpenRouter veya Groq gibi API geçitleri üzerinden de aynı modellere ulaşabilirsiniz.
+
+### Çin Anakarası Modelleri
+
+- [DeepSeek](https://chat.deepseek.com)
+- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Wenxin Yiyan](https://yiyan.baidu.com)
+- [Doubao](https://www.doubao.com/chat/)
+- [Kimi](https://kimi.moonshot.cn/)
+- [ChatGLM](https://chatglm.cn/detail)
+- [Xunfei Spark](https://xinghuo.xfyun.cn/)
+- [Tencent Yuanbao](https://yuanbao.tencent.com/chat)
 
 ### API Platformları
 

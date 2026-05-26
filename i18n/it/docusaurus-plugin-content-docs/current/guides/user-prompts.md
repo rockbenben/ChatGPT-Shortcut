@@ -1,59 +1,64 @@
 ---
 sidebar_label: Prompt Personalizzati
-title: Crea Prompt Personalizzati su AI Short - Modifica e Condividi
-description: Crea e gestisci i tuoi prompt personalizzati - Salvataggio nel cloud, opzioni di condivisione pubblica o privata e backup facili.
+title: Prompt personalizzati AI Short | Crea, modifica e condividi
+description: Crea prompt IA personali, salvali nel tuo account personale e richiamali quando vuoi. Supporta la condivisione con la community o l'impostazione come privati e il backup dati con un clic.
 ---
 
 # Prompt Personalizzati
 
-Dopo l'accesso, puoi creare i tuoi prompt per un rapido accesso futuro. I prompt personalizzati saranno salvati nel tuo account e mostrati nella vista La Mia Collezione.
+Dopo l'accesso, puoi creare i tuoi prompt e salvarli nell'account per richiamarli quando vuoi. I prompt personalizzati appariranno nella vista "La Mia Collezione".
 
 ## Crea Prompt
 
-1. Clicca sul pulsante "Aggiungi Prompt" in alto a destra della pagina
-2. Compila le informazioni del prompt:
-   - **Titolo**: Breve descrizione dello scopo del prompt
-   - **Descrizione**: Il contenuto completo del prompt
-   - **Nota**: Istruzioni d'uso o appunti (opzionale)
-3. Scegli se condividere con la community
-4. Clicca su Invia
+1. Clicca sul pulsante "Aggiungi" in alto a destra
+2. Nel popup "Crea prompt" che appare, compila il modulo:
+   - **Nome del prompt** (obbligatorio): Dai un nome al prompt
+   - **Contenuto del prompt** (obbligatorio): Il testo del prompt
+   - **Scopo/Uso** (opzionale): Breve descrizione di cosa fa il prompt
+   - **Note** (opzionale): Fonte, versioni in altre lingue o annotazioni aggiuntive
+3. Lo switch in basso "Vuoi condividere questo prompt nella pagina pubblica?" è attivato per impostazione predefinita — disattivalo per renderlo visibile solo a te
+4. Clicca su "Crea prompt" per inviare
 
-![Popup Aggiungi Prompt](/img/docs/user-prompts-create.png)
+![Popup Crea prompt](/img/docs/user-prompts-create.png)
+
+> 💡 **Esempio di compilazione** — un prompt "Assistente per verbali di riunione":
+> - **Nome del prompt**: Assistente per verbali di riunione
+> - **Contenuto del prompt**: Sei un assistente di redazione professionale. A partire dagli appunti seguenti, redigi un verbale chiaro e sintetico, suddiviso in: partecipanti, ordine del giorno, decisioni prese, azioni assegnate (con responsabile e scadenza). Mantieni un tono formale e neutro. Appunti: [incolla qui gli appunti della riunione]
+> - **Scopo/Uso**: Trasformare appunti grezzi in un verbale strutturato pronto da condividere via email
+> - **Note**: Utile dopo riunioni di team, comitati o call con clienti
 
 ## Modifica Prompt
 
-Nella vista La Mia Collezione, clicca sulla scheda del prompt che hai creato per:
+Nella vista La Mia Collezione, clicca sulla scheda di un prompt che hai creato per aprire il popup "Modifica prompt", dove puoi:
 
-- Modificare titolo, descrizione e nota
-- Cambiare stato di condivisione (Pubblico/Privato)
-- Salvare le modifiche
+- Modificare nome, contenuto, scopo, note
+- Cambiare lo stato di condivisione (pubblico/privato)
+- Cliccare su "Salva" per aggiornare
 
 ![Interfaccia Modifica Prompt](/img/docs/user-prompts-edit.png)
 
 ## Elimina Prompt
 
-Clicca sul pulsante "Elimina" nell'interfaccia di modifica per rimuovere il prompt. L'eliminazione non può essere annullata, per favore opera con cautela.
+Nel popup di modifica clicca su "Elimina". Dopo l'eliminazione non è possibile ripristinare, procedi con cautela.
 
 ## Condividi con la Community
 
-Quando crei o modifichi un prompt, spunta l'opzione "Condividi con la Community":
+Durante la creazione o modifica, lo switch in basso "Vuoi condividere questo prompt nella pagina pubblica?" controlla la visibilità:
 
-- **Pubblico**: Il prompt sarà mostrato nella pagina della community, e altri utenti possono vederlo e collezionarlo
-- **Privato**: Visibile solo a te, non apparirà nella pagina della community
+- **Attivato (predefinito)**: Il prompt appare nella pagina [Prompt della Community](./community) e altri utenti possono vederlo e collezionarlo
+- **Disattivato**: Prompt privato, visibile solo a te
 
-Puoi modificare lo stato di condivisione in qualsiasi momento.
+Lo stato di condivisione può essere modificato in qualsiasi momento.
 
 ## Esporta Backup
 
-Esporta tutti i prompt creati da te:
-
-1. Entra nel Centro Utente
-2. Clicca sul pulsante "Esporta Prompt"
+1. Entra in "Il mio account" → trova la sezione "Gestione dati → Esporta prompt"
+2. Clicca sul pulsante "Esporta dati"
 3. Il sistema genera un file JSON e lo scarica automaticamente
 
 Il contenuto dell'esportazione include:
 
-- Titolo del prompt, descrizione, nota
+- Nome del prompt, contenuto, scopo/uso, note
 - Ora di creazione e aggiornamento
 - Stato di condivisione
 
@@ -61,19 +66,19 @@ Si raccomanda di esportare backup regolarmente per evitare la perdita di dati.
 
 ## Importa Prompt
 
-Importa prompt e preferiti da un file JSON:
+Importa prompt e collezioni da un file JSON:
 
-1. Entra nel Centro Utente
-2. Clicca sul pulsante "Importa Prompt"
+1. Entra in "Il mio account" → trova la sezione "Gestione dati → Importa prompt"
+2. Clicca sul pulsante "Importa dati"
 3. Seleziona un file JSON
-4. Il sistema unisce i dati automaticamente
+4. Il sistema unisce automaticamente i dati (deduplicazione per titolo; i prompt con ID di altri utenti vengono automaticamente impostati come privati)
 
 ### Collaborazione del Team
 
 Workflow consigliato per condividere prompt all'interno di un team:
 
-1. **Filtra e condividi**: Dopo aver esportato i dati, rimuovi manualmente la tua lista dei preferiti o filtra prompt specifici, poi condividi il file con i membri del team per l'importazione
-2. **Protezione della privacy**: I prompt importati da altri (i cui ID non appartengono al tuo account) vengono automaticamente impostati su **Privato**, garantendo l'isolamento dei dati tra i membri
+1. **Filtra e condividi**: Dopo l'esportazione, rimuovi manualmente l'elenco delle collezioni o filtra i prompt specifici da condividere, poi invia il file ai membri del team per l'importazione
+2. **Protezione della privacy**: I prompt importati condivisi da altri (con ID che non appartengono all'account corrente) vengono automaticamente impostati come **privati**, garantendo che i dati dei membri non interferiscano tra loro
 
 ## Documentazione Correlata
 

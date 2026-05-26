@@ -1,26 +1,24 @@
 ---
 sidebar_label: Gerenciamento de Conta
-title: Gerenciamento de Conta AI Short - Login Google e Sem Senha
-description: Acesse o AI Short - Login rápido via Google ou e-mail. Recupere senhas e sincronize suas coleções facilmente.
+title: Gerenciamento de Conta AI Short | Login com Google e Sem Senha
+description: Entre no AI Short com Google em um clique ou login sem senha por e-mail e acesse seus favoritos na hora. Recuperação de senha rápida para você nunca perder seus dados.
 ---
 
 # Gerenciamento de Conta
 
-O AI Short oferece vários métodos de login para que você possa acessar seus dados pessoais a qualquer momento.
+O AI Short pode ser usado sem login — mas **após o login** você pode favoritar prompts, criar seus próprios prompts, compartilhar na comunidade e sincronizar entre dispositivos. A seguir, explicamos como fazer login, registrar-se, gerenciar senhas e cache.
 
 ## Métodos de Login
 
 ### Login com Conta e Senha
 
-Faça login usando seu nome de usuário ou e-mail registrado e senha.
+Faça login usando seu nome de usuário ou e-mail registrado + senha.
 
-Se esquecer sua senha, clique em "Esqueceu a senha" na página de login, insira seu e-mail registrado e o sistema enviará um link de redefinição.
+Esqueceu a senha: clique em "Esqueci minha senha" na página de login e insira o e-mail registrado para receber o link de redefinição.
 
 ### Login com Google
 
-Clique no ícone do Google na página de login para fazer login com um clique usando sua conta do Google.
-
-O primeiro login com o Google criará automaticamente uma conta, sem necessidade de registro separado.
+Clique no ícone do Google na página de login para entrar com um único clique. Na primeira vez, sua conta é criada automaticamente — sem necessidade de cadastro separado.
 
 ![](/img/docs/account-login.png)
 
@@ -28,37 +26,36 @@ O primeiro login com o Google criará automaticamente uma conta, sem necessidade
 
 1. Insira seu e-mail registrado na página de login
 2. Clique em "Enviar Link de Login"
-3. Verifique seu e-mail e clique no link para fazer login
+3. Abra o link recebido por e-mail para fazer login
 
-Este método elimina a necessidade de lembrar senhas e é adequado para usuários que não fazem login com frequência.
+Sem precisar lembrar senha — ideal para quem não faz login com frequência.
 
 ## Registrar Conta
 
-1. Clique na opção "Registrar" na página de login
+1. Clique em "Registrar" na página de login
 2. Preencha o nome de usuário, e-mail e senha
-3. Login automático após o registro
+3. Login automático após o envio
 
 ![](/img/docs/account-register.png)
 
 ## Alterar Senha
 
-Após o login, você pode alterar sua senha no Centro Pessoal:
+Após o login, altere sua senha em "Minha Conta":
 
-![Página do Centro Pessoal](/img/docs/account-profile.png)
+![Página Minha Conta](/img/docs/account-profile.png)
 
 1. Insira a senha atual
 2. Insira a nova senha e confirme
-3. Salve as alterações
+3. Clique em "Alterar Senha" para enviar
 
 ## Limpar Cache
 
-Se encontrar dados dessincronizados ou anomalias de exibição:
+Quando os dados não sincronizam ou a exibição está anormal:
 
-1. Vá para o Centro Pessoal
-2. Clique no botão "Limpar Cache"
-3. A página será atualizada automaticamente e buscará novamente os dados do servidor
+1. Acesse "Minha Conta" e vá até a seção "Gerenciamento de Dados → Limpar Cache"
+2. Clique no botão "Limpar Cache" e confirme — todos os dados serão recarregados automaticamente
 
-Limpar o cache não excluirá seus favoritos e prompts personalizados, apenas forçará uma ressincronização dos dados do servidor.
+Seus favoritos e prompts personalizados não serão perdidos — é apenas uma ressincronização forçada.
 
 ## Documentação Relacionada
 

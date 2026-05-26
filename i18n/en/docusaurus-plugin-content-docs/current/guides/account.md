@@ -1,26 +1,24 @@
 ---
 sidebar_label: Account
 title: AI Short Account | Google & Passwordless Login Guide
-description: Access your AI Short prompts anywhere with Google or passwordless login. Manage your account settings and recover data securely in seconds.
+description: Sign in with Google or passwordless email links to access your personal collection on AiShort. Reset your password in one click and recover your account data easily.
 ---
 
 # Account Management
 
-AiShort provides multiple login methods to facilitate access to your personal data at any time.
+AiShort works without an account — but **logging in** lets you collect your favorite prompts, create your own, share them to the community, and sync across devices. This page covers login, registration, passwords, and cache.
 
 ## Login Methods
 
 ### Password Login
 
-Login using your username or registered email combined with a password.
+Log in with your username or registered email plus your password.
 
-If you forget your password, click "Forgot Password" on the login page, enter your registered email, and the system will send a reset link.
+Forgot your password? On the login page, click "Forgot Password", enter your registered email, and you'll receive a reset link.
 
 ### Google Login
 
-Click the Google icon on the login page to log in with your Google account with one click.
-
-Using Google login for the first time will automatically create an account without separate registration.
+Click the Google icon on the login page for one-click sign-in. The first time you do this, we create an account for you automatically — no separate registration step.
 
 ![](/img/docs/account-login.png)
 
@@ -28,40 +26,39 @@ Using Google login for the first time will automatically create an account witho
 
 1. Enter your registered email on the login page
 2. Click "Send Login Link"
-3. Check your email and click the link to log in
+3. Open the link in your inbox to log in
 
-This method does not require remembering a password and is suitable for users who do not log in frequently.
+Nothing to remember — handy if you only sign in now and then.
 
 ## Register Account
 
-1. Click the "Register" option on the login page
+1. Click "Register" on the login page
 2. Fill in username, email, and password
-3. Automatically log in after completing registration
+3. You'll be logged in automatically after submitting
 
 ![](/img/docs/account-register.png)
 
 ## Change Password
 
-After logging in, you can change your password in the User Center:
+After logging in, change your password from "My Account":
 
-![User Center Page](/img/docs/account-profile.png)
+![My Account Page](/img/docs/account-profile.png)
 
-1. Enter current password
-2. Enter new password and confirm
-3. Save changes
+1. Enter your current password
+2. Enter your new password and confirm
+3. Click "Change Password" to submit
 
 ## Clear Cache
 
-If you encounter data synchronization issues or display anomalies:
+If your data isn't syncing or the display looks off:
 
-1. Enter the User Center
-2. Click the "Clear Cache" button
-3. The page will automatically refresh and re-fetch data from the server
+1. Go to "My Account" and find the "Data Management → Clear Cache" section
+2. Click the "Clear Cache" button — after confirmation, all data will be reloaded automatically
 
-Clearing the cache will not delete your collections and custom prompts; it only forces a re-sync of server data.
+Your collections and custom prompts won't be lost — this just forces a re-sync.
 
 ## Related Documentation
 
-- [Getting Started](./getting-started) - Basic usage methods
+- [Getting Started](./getting-started) - Basic usage
 - [My Collection](./my-collection) - Collection management
-- [Custom Prompts](./user-prompts) - Creation and management
+- [Custom Prompts](./user-prompts) - Create and manage

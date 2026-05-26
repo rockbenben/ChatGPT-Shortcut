@@ -1,87 +1,89 @@
 ---
-sidebar_label: Offline Version (Corporate Intranet)
-title: AI Short Offline Deployment | Corporate Intranet without External Server
-description: AI Short offline version is designed for enterprises and teams without external network access. No backend server required, no registration needed, data stored locally in the browser, ready to use out of the box.
+sidebar_label: Offline Deployment
+title: AI Short Offline Deployment | Self-Hosted for Corporate Intranets
+description: The AI Short offline edition is built for enterprises and teams that can't reach the public internet. No backend server, no account required, data stays in the browser — deploy once and your team is ready to go.
 ---
 
-# Offline Deployment Version
+# Offline Deployment
 
-**Applicable Scenarios**: Corporate intranets, government networks, classified environments, campus networks, and other scenarios where **external network access is unavailable or inconvenient**.
+> **Audience**: IT administrators or technical leads responsible for deployment. End users just open the internal URL the admin provides — they don't need to read this page.
 
-The AI Short offline version requires no backend server and no user registration. All data is stored locally in the browser. Once deployed, it can be used directly by teams on the intranet.
+**When to use it**: corporate intranets, government networks, air-gapped or classified environments, regulated industries (HIPAA, SOC 2, FedRAMP, financial), campus networks, and any other setting where **public internet access is unavailable or restricted**.
 
-## Team Usage
+No backend, no sign-up — all data lives in the browser. Once deployed, internal team members just open a browser and start using it.
 
-The offline version is a purely static website. After deploying it to an intranet server, team members simply need to open the intranet address in their browser to use it:
+## How Your Team Uses It
 
-1. **Administrator** deploys the offline version to an intranet server (e.g., `http://192.168.1.100:3000`)
-2. **Team members** open the address in their browser to browse, search, and copy prompts
-3. Each person's **favorites and custom prompts are saved in their own browser**, independent of each other
-4. No registration required, no software installation needed, ready to use immediately
+The offline edition is a pure static site. Deploy it to an internal server, and team members access it from their browsers over the internal network:
+
+1. **The admin** deploys the offline edition to an internal server (e.g. `http://192.168.1.100:3000`)
+2. **Team members** open that address in a browser to browse, search, and copy prompts
+3. Each person's **collections and custom prompts live in their own browser** — fully isolated from each other
+4. No accounts, no software to install, just open and use
 
 ```
-Intranet Server (offline version deployed)
-   ├── Prompt library data (shared by all, from static JSON)
+Internal Server (offline edition deployed)
+   ├── Prompt library data (shared by everyone, from static JSON)
    │
-   ├── User A's browser → localStorage (A's favorites and custom prompts)
-   ├── User B's browser → localStorage (B's favorites and custom prompts)
-   └── User C's browser → localStorage (C's favorites and custom prompts)
+   ├── User A's browser → localStorage (A's collections and custom prompts)
+   ├── User B's browser → localStorage (B's collections and custom prompts)
+   └── User C's browser → localStorage (C's collections and custom prompts)
 ```
 
-:::tip Note
-The prompt library content (curated prompts) is static data packaged at build time, and all users see the same content. Each user's favorites, custom prompts, sorting, and tags are saved in their own browser's localStorage, completely independent of each other.
+:::tip
+The prompt library (curated prompts) is static data bundled at build time, so every user sees the same content. Each user's collections, custom prompts, ordering, and tags are kept in their own browser's localStorage, completely independent.
 :::
 
-## Differences from the Online Version
+## Differences vs. the Online Edition
 
-| Feature | Online Version | Offline Version |
-| ---- | ------ | ------ |
-| Prompt browsing/search/filtering | ✅ | ✅ |
-| Prompt copying | ✅ | ✅ |
-| Favorites management | Server storage | Browser local storage |
-| Custom prompts | Server storage | Browser local storage |
-| My Collection (drag-sort, tags) | ✅ | ✅ |
-| Multi-language support (18 languages) | ✅ | ✅ |
-| Data import/export | ✅ | ✅ (format compatible) |
-| Prompt detail pages | ✅ | ✅ (static data, no comments) |
-| User registration/login | ✅ | ❌ (no account needed) |
-| Community prompt list/voting | ✅ | ❌ |
-| Comment feedback | ✅ | ❌ |
+| Feature | Online Edition | Offline Edition |
+| ------- | -------------- | --------------- |
+| Browse / search / filter prompts | Yes | Yes |
+| Copy prompts | Yes | Yes |
+| Collection management | Server-side storage | Browser local storage |
+| Custom prompts | Server-side storage | Browser local storage |
+| My Collection (drag sorting, tags) | Yes | Yes |
+| Multi-language support (18 languages) | Yes | Yes |
+| Data import / export | Yes | Yes (formats interchangeable) |
+| Prompt detail pages | Yes | Yes (static data, no comments) |
+| User registration / login | Yes | No (no accounts) |
+| Community prompts list / voting | Yes | No |
+| Comments and feedback | Yes | No |
 
 ## Data Storage
 
-Each user's data is saved in their **own browser's** localStorage, independent of the server:
+Each user's data is saved in **their own browser's** localStorage, independent of any server:
 
 | Data | Storage Key | Description |
-| ---- | ------ | ---- |
-| Favorites list | `local_favorites` | Array of favorited prompt IDs |
+| ---- | ----------- | ----------- |
+| Collection list | `local_favorites` | Array of collected prompt IDs |
 | Custom prompts | `local_user_prompts` | User-created prompt data |
-| Sort order | `local_myspace_order` | Card sorting in My Collection |
+| Display order | `local_myspace_order` | Card order within My Collection |
 | Custom tags | `local_custom_tags` | Tag definitions and assignments |
 
-:::caution Warning
-- Browser local storage has an approximately 5MB capacity limit, which is more than sufficient for daily use.
-- Clearing browser data will cause personal data loss. It is recommended to regularly back up via "Settings > Export Data".
-- Data must be re-imported after switching computers or browsers.
+:::caution
+- Browser local storage caps out around 5 MB, which is plenty for typical use.
+- Clearing browser data will wipe a user's personal data — encourage regular backups via "Settings > Export Data".
+- Switching computers or browsers requires re-importing the data.
 :::
 
 ## Deployment
 
-The offline version is based on the `offline` branch. Once an administrator completes the deployment, team members can use it without any additional steps.
+The offline edition lives on the `offline` branch. After a one-time deployment by the admin, team members can use it with no further action.
 
 ### Docker Deployment (Recommended)
 
-The simplest deployment method -- a single command to run on your intranet server:
+The simplest option — a single command brings it up on any internal server:
 
 ```bash
-# Use the pre-built offline image
+# Use the prebuilt offline image
 docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
 
-# Or use Docker Hub
+# Or pull from Docker Hub
 docker run -d -p 3000:3000 --name aishort-offline rockben/chatgpt-shortcut:offline
 ```
 
-After deployment, team members can access `http://<server-IP>:3000` to start using it.
+Once deployed, team members access it at `http://<server-ip>:3000`.
 
 Using `docker-compose`:
 
@@ -97,7 +99,7 @@ services:
 
 ### Build from Source
 
-If you need to customize prompt content or modify configurations:
+If you need to customize prompt content or change configuration:
 
 ```bash
 # Clone the offline branch
@@ -110,16 +112,16 @@ yarn
 # Local development
 yarn start
 
-# Build single language version (Chinese)
-yarn build --locale zh-Hans
+# Build a single-language version (English)
+yarn build --locale en
 
 # Build all languages
 yarn build
 ```
 
-The build output is in the `build/` directory and can be deployed to any static file server (Nginx, Apache, Caddy, etc.).
+Build output goes to the `build/` directory and can be served by any static file server (Nginx, Apache, Caddy, etc.).
 
-### Nginx Configuration Example
+### Sample Nginx Configuration
 
 ```nginx
 server {
@@ -136,64 +138,64 @@ server {
 
 ### Platform Deployment
 
-When deploying on platforms like Vercel or Cloudflare Pages, select the `offline` branch. All other steps are the same as the online version. See [Project Deployment](../deploy) for details.
+When deploying to Vercel, Cloudflare Pages, or similar platforms, just select the `offline` branch — every other step matches the online edition. See [Project Deployment](../deploy) for details.
 
-## Data Import and Export
+## Data Import & Export
 
 ### Export
 
-Go to "Settings > Export Data" to export your personal favorites and custom prompts as a JSON file.
+Go to "Settings > Export Data" to save your collections and custom prompts as a JSON file.
 
 ### Import
 
-The following JSON file formats are supported for import:
+The following JSON formats are supported:
 
-- **Files exported from the offline version**: Fully restores favorites, prompts, sorting, and tags
-- **Files exported from the online version**: Automatically handled for compatibility
-  - User prompts → Merged into local storage (deduplicated by title)
-  - Curated favorites (card) → Merged into local favorites
-  - Community favorites (community) → Automatically converted to local custom prompts
-  - MySpace sorting → Restored to local storage
-  - Custom tags → Appended and merged (does not overwrite existing ones)
+- **Files exported from the offline edition**: fully restores collections, prompts, ordering, and tags
+- **Files exported from the online edition**: automatically converted for compatibility
+  - User prompts → merged locally (deduped by title)
+  - Curated collections (card) → merged into local collections
+  - Community collections (community) → automatically converted to local custom prompts
+  - MySpace ordering → restored locally
+  - Custom tags → appended (existing tags are not overwritten)
 
-### Migrating from the Online Version
+### Migrating from the Online Edition
 
-1. Export data from the "My Account" page on the online version (aishort.top)
-2. Import the JSON file on the "Settings" page of the offline version
-3. Community favorites will be automatically converted to local prompts, and curated favorites will sync normally
+1. Export your data from the "My Account" page on the online edition (aishort.top)
+2. Import that JSON file from the "Settings" page on the offline edition
+3. Community collections are converted to local prompts automatically; curated collections sync as expected
 
 ## FAQ
 
 ### How does the team use it after deployment?
 
-After the administrator deploys it to an intranet server, simply share the access URL (e.g., `http://192.168.1.100:3000`) with team members. Everyone opens it in their browser -- no installation, no registration needed.
+Once the admin has deployed it to an internal server, share the access URL (e.g. `http://192.168.1.100:3000`) with the team. Everyone opens it in a browser — no installs, no accounts.
 
-### Will different users' data affect each other?
+### Will users' data interfere with each other?
 
-No. Each person's favorites and custom prompts are saved in their own browser's localStorage, completely independent. The server only hosts the shared prompt library (read-only).
+No. Each person's collections and custom prompts live in their own browser's localStorage, completely isolated. The server only holds the shared prompt library (read-only).
 
 ### Can data be lost?
 
-The following actions will cause personal data loss:
+The following actions will erase a user's personal data:
 
-- Clearing browser data/cache
-- Browsing in private/incognito mode
-- Switching computers or browsers
+- Clearing browser data or cache
+- Using private / incognito browsing
+- Switching to a different computer or browser
 
-It is recommended to regularly back up important data via "Settings > Export Data" as a JSON file.
+Recommend backing up important data regularly to a JSON file via "Settings > Export Data".
 
-### Can custom prompts be shared among team members?
+### Can custom prompts be shared across the team?
 
-Yes. One person exports the JSON file, and other members import it via "Settings > Import Data". Duplicates are automatically removed during import.
+Yes. One person exports a JSON file, and others import it from "Settings > Import Data" — duplicates are handled automatically.
 
-### How to update the prompt library?
+### How do I update the prompt library?
 
-The prompt library is static data packaged at build time. To update:
+The prompt library is static data bundled at build time. To update it:
 
-1. The administrator pulls the latest `offline` branch code
-2. Rebuild and deploy (or pull the latest Docker image)
-3. Team members refresh their browser page to see the new content (personal data is not affected)
+1. The admin pulls the latest code from the `offline` branch
+2. Rebuild and redeploy (or pull the latest Docker image)
+3. Team members just refresh the browser to see the new content — personal data is untouched
 
-### Is the offline version data format compatible with the online version?
+### Is the offline edition's data format compatible with the online edition?
 
-Yes. The exported JSON format is the same and can be imported between the two versions. Prompt IDs differ between the two versions (the online version uses server IDs, the offline version uses timestamp IDs), but deduplication is done by title during import, so there are no conflicts.
+Yes. The exported JSON format is the same and can be imported in either direction. The prompt IDs differ (the online edition uses server-side IDs while the offline edition uses timestamp IDs), but imports dedupe by title, so there's no conflict.

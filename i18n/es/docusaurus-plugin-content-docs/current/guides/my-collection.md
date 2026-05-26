@@ -1,76 +1,76 @@
 ---
 sidebar_label: Mi Colección
 title: Mi Colección - Organiza y Ordena tus Prompts
-description: Organiza tus prompts favoritos con etiquetas personalizadas. Arrastra y suelta para ordenar tu biblioteca de IA personal.
+description: Reúne tus prompts favoritos en una biblioteca personal: arrastra y suelta para reordenarlos, y agrúpalos con etiquetas de colores propias.
 ---
 
 # Mi Colección
 
-Después de iniciar sesión, puedes coleccionar tus prompts favoritos y gestionarlos personalmente. La vista Mi Colección proporciona funciones de gestión enriquecidas para ayudarte a organizar y usar prompts de manera eficiente.
+Tras iniciar sesión, la vista **Mi Colección** te permite organizar tus prompts favoritos como si fueran marcadores del navegador: reordénalos arrastrando, ponles etiquetas a tu gusto y fíltralos por etiqueta para tenerlos siempre a mano.
 
-:::tip Version en linea vs offline
-En la version en linea, los datos de la coleccion se sincronizan con el servidor y son accesibles desde cualquier dispositivo. En la [version offline](./offline), todos los datos (favoritos, prompts personalizados, ordenamiento, etiquetas) se almacenan en el localStorage del navegador -- sin cuenta necesaria, pero los datos estan vinculados al navegador especifico.
+:::tip Versión online vs versión offline
+En la versión online, los favoritos se guardan en el servidor (requiere iniciar sesión); en la [versión offline](./offline) se guardan en el navegador local (localStorage, sin necesidad de iniciar sesión). Las funciones son las mismas.
 :::
 
 ## Cambio de Vista
 
-La parte superior de la página de inicio proporciona botones de cambio de vista, soportando dos modos:
+El botón de cambio de vista en la parte superior de la página de inicio ofrece dos modos:
 
-- **Mi Colección**: Muestra tus prompts coleccionados y prompts personalizados
-- **Biblioteca de Prompts**: Navega por la biblioteca de prompts pública para descubrir nuevo contenido
+- **Mi Colección**: muestra tus favoritos + prompts personalizados
+- **Biblioteca de Prompts**: navega por la biblioteca pública de prompts
 
-El navegador recordará automáticamente tu selección de vista y cambiará a la última vista en tu próxima visita.
+El navegador recuerda tu selección y vuelve a la última vista en tu próxima visita.
 
 ![Vista Mi Colección](/img/docs/my-collection-view.gif)
 
 ## Agregar a la Colección
 
-Haz clic en el botón "Coleccionar" en una tarjeta de prompt para agregarla a Mi Colección.
+Haz clic en el botón "Coleccionar" de una tarjeta para añadirla a Mi Colección.
 
-Al coleccionar un prompt de la comunidad, el sistema emitirá automáticamente un voto a favor, ayudando a que el contenido de calidad obtenga más exposición.
+Al coleccionar un prompt de la comunidad, el sistema emite automáticamente un voto a favor, ayudando a que el contenido de calidad llegue a más usuarios.
 
 ## Eliminar de la Colección
 
-En la vista Mi Colección, haz clic en el icono de corazón en la tarjeta para eliminar de la colección.
+En la vista Mi Colección, haz clic en el icono de corazón de la tarjeta para eliminarla de la colección.
 
 ## Etiquetas Personalizadas
 
-Agrega etiquetas personales a los prompts coleccionados para una gestión de clasificación conveniente:
+Añade etiquetas a tus prompts coleccionados para clasificarlos cómodamente:
 
-### Agregar Etiqueta
+### Añadir Etiqueta
 
-1. Haz clic en el icono de etiqueta en la barra de control
-2. Selecciona una etiqueta existente o haz clic en "+" para crear una nueva etiqueta
-3. Las nuevas etiquetas pueden tener nombres y colores personalizados
+1. Haz clic en el icono de etiqueta de la barra de control
+2. Elige una etiqueta existente o haz clic en "+" para crear una nueva
+3. Las etiquetas nuevas pueden tener nombre y color personalizados
 
 ### Gestionar Etiquetas
 
-Haz clic en "Gestionar Etiquetas" para ingresar a la interfaz de gestión de etiquetas:
+Haz clic en "Gestionar Etiquetas" para entrar en la interfaz de gestión:
 
-- Modificar nombre de etiqueta
-- Cambiar color de etiqueta (11 colores preestablecidos disponibles)
-- Eliminar etiquetas no deseadas
+- Cambiar el nombre de una etiqueta
+- Cambiar su color (11 colores predefinidos)
+- Eliminar etiquetas
 
-![Ventana Emergente de Gestión de Etiquetas](/img/docs/my-collection-tag.png)
+![Ventana de Gestión de Etiquetas](/img/docs/my-collection-tag.png)
 
 ### Filtrar por Etiqueta
 
-En la barra de filtrado de la vista Mi Colección, puedes filtrar contenido por etiquetas personalizadas.
+La barra de filtrado de la vista Mi Colección permite filtrar por etiquetas personalizadas.
 
-## Ordenamiento por Arrastrar y Soltar
+## Reordenar Arrastrando
 
-El ajuste del orden de las tarjetas por arrastrar y soltar es compatible en la vista Mi Colección:
+En la vista Mi Colección puedes reordenar las tarjetas arrastrándolas:
 
-1. Arrastra el controlador a la izquierda de la tarjeta
-2. Mueve a la posición objetivo y suelta
-3. El nuevo orden se guarda automaticamente en el servidor (version en linea) o en el almacenamiento local del navegador (version offline)
+1. Sujeta el tirador situado a la izquierda de la tarjeta
+2. Suéltala en la posición que prefieras
+3. El nuevo orden se guarda solo (en el servidor en la versión online y en el navegador en la versión offline)
 
-La funcion de ordenamiento solo esta disponible en la vista Mi Coleccion.
+Esta función solo está disponible en la vista Mi Colección.
 
-![Ordenamiento por Arrastrar y Soltar](/img/docs/my-collection-drag.gif)
+![Reordenar arrastrando](/img/docs/my-collection-drag.gif)
 
 ## Documentación Relacionada
 
 - [Prompts Personalizados](./user-prompts) - Crear y gestionar prompts
-- [Guía de Interfaz](./interface) - Búsqueda y filtrado
-- [Gestión de Cuenta](./account) - Inicio de sesión y configuración
+- [Guía de Interfaz](./interface) - Búsqueda y filtros
+- [Gestión de Cuenta](./account) - Inicio de sesión y ajustes

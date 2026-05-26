@@ -1,19 +1,18 @@
 ---
 sidebar_label: Chrome ZIP インストールガイド
-title: Chrome手動インストール：ZIPファイル版導入ガイド
-description: CRXが使えない場合はこちら。ZIPファイルを解凍し、Chrome拡張機能ページにドラッグするだけの手動インストール手順を解説。
+title: AI Short Chrome ZIP インストール｜解凍フォルダで拡張機能を読み込み
+description: ZIP ファイルから Chrome に AI Short 拡張機能をインストール。解凍後、拡張機能ページにドラッグするだけ。CRX がインストールできない場合に最適。
 ---
 
 # Chrome ZIP 拡張機能ローカルインストールガイド
 
-## 拡張機能のダウンロード
+> 本ガイドは、[インストール入口](./README.md)から ZIP インストールパッケージをすでにダウンロードして解凍済みであることを前提としています。
+>
+> ⚠️ **よくある 2 つの落とし穴**：
+> 1. 解凍したフォルダは**長期保存**してください (拡張機能の実行時にこのディレクトリを読み込みます) — 続行する前に永続的な場所に配置してください
+> 2. ドラッグするのは**解凍したフォルダ全体**です (zip ファイル本体でも、フォルダ内の個別ファイルでもありません)
 
-ChatGPT Shortcut 拡張機能の Zip インストールパッケージ（ChatGPT_Shortcut-zip-3.x.x.zip）をダウンロードし、解凍します。（解凍したフォルダはコンピュータに保持する必要があるため、永続的な場所に解凍することを忘れないでください）
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **国内ダウンロード**: [Alist クラウドドライブ](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension)；[藍奏雲](https://wwva.lanzouq.com/b01lsc9vi), パスワード: 1qow
-
-## 開発者モードを有効にする
+## デベロッパーモードを有効にする
 
 Chrome の「拡張機能を管理」ページを開き、「デベロッパーモード」をオンにします。
 

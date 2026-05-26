@@ -6,7 +6,7 @@ description: Konfigurieren Sie Firefox richtig. Heften Sie die Erweiterung an un
 
 # Firefox-Erweiterungseinstellungen
 
-Bevor Sie die Firefox-Erweiterung verwenden, wird empfohlen, diese zwei Schritte zur Einrichtung zu befolgen.
+Das Berechtigungsmodell von Firefox ist strenger als das von Chrome — nach der Installation der Erweiterung sind zwei zusätzliche Schritte erforderlich, damit die Seitenleiste auf Websites wie ChatGPT und Gemini korrekt angezeigt wird.
 
 ## 1. Erweiterung anheften und Zugriffseinstellungen
 

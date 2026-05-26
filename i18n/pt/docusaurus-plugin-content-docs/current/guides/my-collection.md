@@ -1,33 +1,33 @@
 ---
 sidebar_label: Minha Coleção
-title: Minha Coleção AI Short - Organize seus Prompts e Tags
-description: Gerencie sua coleção de prompts - Tags personalizadas, ordenação drag-and-drop e biblioteca pessoal.
+title: Minha Coleção AI Short | Classificação por Tags e Ordenação por Arrastar
+description: Salve seus prompts de IA favoritos e organize com tags personalizadas. Reordene arrastando e solte para montar uma biblioteca de prompts do seu jeito.
 ---
 
 # Minha Coleção
 
-Após o login, você pode favoritar prompts que gosta e gerenciá-los de forma personalizada. A visualização Minha Coleção oferece recursos de gerenciamento avançados para ajudá-lo a organizar e usar prompts de forma eficiente.
+Após o login, a visualização **Minha Coleção** permite organizar seus prompts favoritos como você faria com os favoritos do navegador — reordene arrastando, crie tags personalizadas e filtre por tag para acessar tudo na hora.
 
-:::tip Versao online vs offline
-Na versao online, os dados da colecao sao sincronizados com o servidor e acessiveis de qualquer dispositivo. Na [versao offline](./offline), todos os dados (favoritos, prompts personalizados, ordenacao, tags) sao armazenados no localStorage do navegador -- sem conta necessaria, mas os dados ficam vinculados ao navegador especifico.
+:::tip Versão Online vs Versão Offline
+Na versão online, os dados de favoritos ficam no servidor (requer login); na [versão offline](./offline) ficam localmente no navegador (localStorage, sem necessidade de login), com funcionalidades idênticas.
 :::
 
 ## Alternância de Visualização
 
-O topo da página inicial oferece botões de alternância de visualização, suportando dois modos:
+O botão de alternância de visualização no topo da página inicial oferece dois modos:
 
-- **Minha Coleção**: Exibe seus prompts favoritos e prompts personalizados
-- **Biblioteca de Prompts**: Navegue pela biblioteca pública de prompts e descubra novos conteúdos
+- **Minha Coleção**: exibe seus favoritos + prompts personalizados
+- **Biblioteca de Prompts**: navegue pela biblioteca pública de prompts
 
-O navegador lembrará automaticamente sua escolha de visualização e alternará para a última visualização na próxima visita.
+O navegador lembra sua escolha e, na próxima visita, retorna automaticamente à última visualização usada.
 
 ![Visualização Minha Coleção](/img/docs/my-collection-view.gif)
 
 ## Adicionar aos Favoritos
 
-Clique no botão "Favoritar" no cartão de prompt para adicioná-lo à Minha Coleção.
+Clique no botão "Favoritar" no cartão para adicioná-lo à Minha Coleção.
 
-Ao favoritar um prompt da comunidade, o sistema automaticamente computará um voto positivo para ele, ajudando conteúdo de alta qualidade a obter mais exposição.
+Favoritar um prompt da comunidade conta automaticamente como um voto positivo, ajudando o conteúdo de qualidade a ganhar mais visibilidade.
 
 ## Remover dos Favoritos
 
@@ -35,39 +35,39 @@ Na visualização Minha Coleção, clique no ícone de coração no cartão para
 
 ## Tags Personalizadas
 
-Adicione tags pessoais aos prompts favoritos para facilitar o gerenciamento categorizado:
+Adicione tags aos prompts favoritos para classificá-los facilmente:
 
 ### Adicionar Tag
 
 1. Clique no ícone de tag na barra de controle
-2. Selecione uma tag existente ou clique em "+" para criar uma nova tag
-3. Novas tags podem ter nome e cor personalizados
+2. Selecione uma tag existente ou clique em "+" para criar uma nova
+3. As novas tags podem ter nome e cor personalizados
 
 ### Gerenciar Tags
 
-Clique em "Gerenciar Tags" para entrar na interface de gerenciamento de tags:
+Clique em "Gerenciar Tags" para entrar na interface de gerenciamento:
 
-- Modificar nomes de tags
-- Alterar cores das tags (11 cores predefinidas disponíveis)
-- Excluir tags indesejadas
+- Alterar nomes de tags
+- Alterar cores de tags (11 cores predefinidas)
+- Excluir tags
 
 ![Janela de Gerenciamento de Tags](/img/docs/my-collection-tag.png)
 
 ### Filtrar por Tag
 
-Na barra de filtro da visualização Minha Coleção, você pode filtrar conteúdo por tags personalizadas.
+A barra de filtro da visualização Minha Coleção permite filtrar por tags personalizadas.
 
-## Ordenação "Arrastar e Soltar"
+## Ordenação por Arrastar e Soltar
 
-Na visualização Minha Coleção, suporta ajuste da ordem dos cartões arrastando:
+A visualização Minha Coleção suporta reordenação por arrastar:
 
-1. Arraste a alça de arrastar no lado esquerdo do cartão
-2. Solte após mover para a posição de destino
-3. A nova ordem e salva automaticamente no servidor (versao online) ou no armazenamento local do navegador (versao offline)
+1. Arraste pela alça à esquerda do cartão
+2. Solte na posição desejada
+3. A nova ordem é salva automaticamente (no servidor na versão online, localmente na versão offline)
 
-A funcao de classificacao esta disponivel apenas na visualizacao Minha Colecao.
+A ordenação está disponível apenas na visualização Minha Coleção.
 
-![Operação de Ordenação Arrastável](/img/docs/my-collection-drag.gif)
+![Operação de Ordenação por Arrastar](/img/docs/my-collection-drag.gif)
 
 ## Documentação Relacionada
 

@@ -6,7 +6,7 @@ description: Configura Firefox correctamente. Aprende a anclar la extensión y a
 
 # Configuración de Extensión de Firefox
 
-Antes de usar la extensión de Firefox, se recomienda seguir estos dos pasos para la configuración.
+El modelo de permisos de Firefox es más estricto que el de Chrome — tras instalar la extensión necesitas hacer dos pasos adicionales de configuración para que la barra lateral funcione correctamente en sitios como ChatGPT, Gemini, etc.
 
 ## 1. Anclar Extensión y Configuración de Acceso
 

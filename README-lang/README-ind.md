@@ -20,6 +20,14 @@
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
 </p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
+</p>
+
 <p align="center">
     <a href="../README.md">English</a> | <a href="../README-zh.md">简体中文</a> | <a href="./README-zh-hant.md">繁體中文</a> |
 <a href="./README-ja.md">日本語</a> |
@@ -39,22 +47,38 @@ Indonesia |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>AiShort (ChatGPT Shortcut) - Maksimalkan Efisiensi dan Produktivitas Anda</em>
+    <em>Ribuan prompt AI yang sudah teruji — ubah ChatGPT, Cursor, dan alat AI apa pun dari biasa menjadi kelas pakar.</em>
 </p>
+
+## 📖 Daftar Isi
+
+- [⚡ Mulai Cepat](#-mulai-cepat)
+- [💎 Mengapa AiShort](#-mengapa-aishort)
+- [📸 Tangkapan Layar](#-tangkapan-layar)
+- [🧩 Ekstensi Browser](#-ekstensi-browser)
+- [🚀 Deploy](#-deploy)
+- [🤝 Kontribusi](#-kontribusi)
+- [💬 Komunitas](#-komunitas)
+- [🌟 Riwayat Star](#-riwayat-star)
+- [📜 Lisensi](#-lisensi)
 
 ## ⚡ Mulai Cepat
 
 1. Kunjungi [aishort.top](https://www.aishort.top/ind/)
 2. Cari atau telusuri prompt yang Anda butuhkan
-3. Klik "Copy" dan tempel ke model AI apa pun
+3. Klik "Copy" dan tempel ke alat AI apa pun — halaman chat seperti ChatGPT, Gemini, atau Claude, alat coding seperti Cursor, panggilan API, agen, dll.
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
 Semudah itu! Untuk fitur lebih lanjut, baca terus atau periksa [Panduan Pengguna](https://www.aishort.top/ind/docs/guides/getting-started).
 
-## Mengapa Menggunakan AiShort?
+## 💎 Mengapa AiShort
 
-AiShort (ChatGPT Shortcut) menyediakan daftar prompt AI pilihan, membantu Anda menemukan prompt dengan cepat untuk skenario apa pun.
+**Beda antara menggunakan AI dan menggunakan AI dengan baik adalah satu prompt yang bagus.**
+
+Pertanyaan yang sama bisa menghasilkan jawaban biasa-biasa saja atau hasil kelas pakar — semua tergantung cara Anda menyusun prompt. AiShort adalah pustaka prompt yang sudah teruji untuk menulis, coding, kantor, belajar, dan ratusan skenario lain — semuanya sudah diasah supaya AI memberikan output terbaiknya sejak percobaan pertama, tanpa Anda perlu menebak-nebak kata kunci.
+
+Tanpa pendaftaran. Tanpa biaya. Tanpa instalasi. Buka dan gunakan.
 
 ### Fitur Utama
 
@@ -78,7 +102,28 @@ AiShort (ChatGPT Shortcut) menyediakan daftar prompt AI pilihan, membantu Anda m
 
 🔐 **Banyak Pilihan Login** - Kata sandi, Google, atau tautan email tanpa kata sandi.
 
-## Ekstensi Browser
+## 📸 Tangkapan Layar
+
+<table>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Koleksi Saya" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Ekstensi Browser" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Koleksi Saya</strong> — seret, tag, atur</td>
+    <td align="center"><strong>Ekstensi Browser</strong> — sidebar di ChatGPT, Gemini, Claude…</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Kartu Prompt" /></td>
+    <td width="50%"><img src="../static/img/docs/community-page.png" alt="Komunitas" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Kartu Prompt</strong> — pratinjau & salin satu klik</td>
+    <td align="center"><strong>Komunitas</strong> — temukan & beri suara</td>
+  </tr>
+</table>
+
+## 🧩 Ekstensi Browser
 
 Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, Edge, dan Firefox dengan sidebar yang terbuka dengan `Alt + Shift + S`.
 
@@ -89,31 +134,26 @@ Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, 
 
 Kami juga menawarkan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) untuk menggunakan sidebar AiShort di situs web mana pun.
 
-## Deploy
+## 🚀 Deploy
 
-Deploy instance Anda sendiri melalui Vercel, Cloudflare Pages, Docker, atau secara lokal. Lihat [Panduan Deployment](https://www.aishort.top/ind/docs/deploy).
+Deploy instance Anda sendiri melalui Vercel, Cloudflare Pages, Docker, atau secara lokal. Lihat [Panduan Deployment](https://www.aishort.top/ind/docs/deploy) untuk detail lengkap.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## Sinkronisasi Pembaruan
+> **Tips**: One-click deploy Vercel membuat proyek baru (bukan fork), sehingga pemeriksaan pembaruan upstream tidak akan berfungsi. Untuk mendapatkan sinkronisasi otomatis, fork repositori terlebih dahulu, lalu impor fork tersebut di Vercel — instruksi lengkap ada di [panduan deploy](https://www.aishort.top/ind/docs/deploy).
 
-Jika Anda men-deploy melalui one-click deploy Vercel, Anda mungkin melihat prompt pembaruan terus-menerus. Ini terjadi karena Vercel membuat proyek baru, bukan melakukan fork. Untuk memperbaikinya:
+## 🤝 Kontribusi
 
-1. Hapus repositori yang ada
-2. Fork proyek ini menggunakan tombol "Fork"
-3. Deploy ulang di [Vercel](https://vercel.com/new) menggunakan fork Anda
+Kontribusi dalam segala bentuk sangat kami harapkan:
 
-### Pembaruan Otomatis
+- **Usulkan prompt** atau **laporkan bug** → buka [GitHub Issue](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new)
+- **Kirim PR** → fork repositori, buat branch, ajukan pull request
+- **Tambahkan terjemahan** atau **perbaiki dokumen** → lihat direktori `i18n/` dan `docs/`
+- **Beri bintang ⭐ dan bagikan** untuk membantu orang lain menemukan prompt yang berguna
 
-Setelah fork, aktifkan Workflows di halaman Actions dan aktifkan Upstream Sync Action untuk pembaruan otomatis harian.
+Untuk pengaturan pengembangan lokal, lihat [Panduan Deployment](https://www.aishort.top/ind/docs/deploy).
 
-![Auto Updates](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
-
-### Pembaruan Manual
-
-Lihat [Dokumen GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) untuk menyinkronkan fork.
-
-## Komunitas
+## 💬 Komunitas
 
 Bergabunglah bersama kami untuk diskusi dan umpan balik:
 
@@ -123,6 +163,14 @@ Bergabunglah bersama kami untuk diskusi dan umpan balik:
 <a href="https://discord.gg/PZTQfJ4GjX">
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
+
+## 🌟 Riwayat Star
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+
+## 📜 Lisensi
+
+[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
 
 ---
 

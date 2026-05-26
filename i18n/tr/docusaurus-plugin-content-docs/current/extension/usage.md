@@ -1,33 +1,33 @@
 ---
-sidebar_label: Uzantı Nasıl Kullanılır
-title: AI Short Uzantı Kılavuzu - Kenar Çubuğu ve Kısayollar
-description: AI Short tarayıcı uzantısında ustalaşın! Kenar çubuğunu etkinleştirin, Alt+Shift+S ile tek tıkla prompt kütüphanesini çağırın.
+sidebar_label: Tarayıcı Uzantısı Nasıl Kullanılır
+title: AI Short Uzantı Kullanımı | Kenar Çubuğu ve Alt+Shift+S Kısayolu
+description: AI Short tarayıcı uzantısında ustalaşın! Kenar çubuğunu etkinleştirin, Alt+Shift+S kısayoluyla prompt kütüphanesini tek tıkla çağırın.
 ---
 
 # Tarayıcı Uzantısı Nasıl Kullanılır?
 
-ChatGPT Shortcut 13 ana dili destekler ve uzantı dili tarayıcı ortamınıza göre otomatik olarak ayarlanır. Dili ayarlar sayfasından manuel olarak da değiştirebilirsiniz.
+ChatGPT Shortcut 18 ana dili destekler; uzantı dili tarayıcı ortamınıza göre otomatik olarak ayarlanır. Ayarlar sayfasından dili manuel olarak da değiştirebilirsiniz.
 
 ![](/img/docs/extension-settings.png)
 
 ## Görünüm Modu
 
-Uzantı üç görünüm modunu destekler:
+Uzantı üç görünüm modunu destekler; kullanım alışkanlığınıza göre seçin:
 
-- **Kenar Çubuğu Modu**: Tarayıcı kenar çubuğunda açılır, web içeriğiyle birlikte görüntülenir
-- **Popup Modu**: Uzantı simgesine tıklandığında popup olarak görüntülenir
-- **Pencere Modu**: Ayrı bir kayan pencerede açılır
+- **Kenar Çubuğu Modu**: Tarayıcının kenar çubuğunda açılır—web sayfasıyla yan yana görüntülenir, AI konuşma sayfasına bakarken promptlara göz atmak için uygundur
+- **Popup Modu**: Uzantı simgesine tıklayınca küçük bir pencere açılır—hızlıca bakıp kapatın, ekran kaplamaz
+- **Pencere Modu**: Ayrı bir kayan pencerede açılır—ikinci ekrana taşıyabilir veya bağımsız konumlandırabilirsiniz
 
 ## Yan Paneli Açık Tut
 
-Etkinleştirildiğinde, tarayıcı sekmelerini değiştirirken kenar çubuğu açık kalır.
+Bu seçenek etkinleştirildiğinde, tarayıcı sekmeleri arasında geçiş yaparken kenar çubuğu açık kalır; sürekli kullanım için elverişlidir.
 
 ## Karanlık Mod
 
-Uzantı karanlık modu destekler. Arayüzü karanlık görünüme geçirmek için ayarlar sayfasında "Karanlık Mod"u etkinleştirin.
+Uzantı karanlık modu destekler. Ayarlar sayfasında "Karanlık Mod" seçeneğini etkinleştirin; arayüz karanlık görünüme geçer.
 
 ![](/img/docs/extension-sidebar.png)
 
 ## Kısayol Tuşu Aktivasyonu
 
-Uzantıyı doğrudan etkinleştirmek için `Alt+Shift+S` kısayolunu kullanın.
+`Alt+Shift+S` kısayoluyla uzantıyı doğrudan etkinleştirebilirsiniz.
