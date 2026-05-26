@@ -1,7 +1,7 @@
 ---
 sidebar_label: FAQ
 title: FAQ AI Short | Optimisation des prompts et gestion des hallucinations
-description: Les résultats des prompts ne sont pas satisfaisants ? L'IA produit de fausses informations ? Ce guide répond aux questions fréquentes : optimisez vos prompts, évitez les hallucinations et sauvegardez vos données.
+description: "Les résultats des prompts ne sont pas satisfaisants ? L'IA produit de fausses informations ? Ce guide répond aux questions fréquentes : optimisez vos prompts, évitez les hallucinations et sauvegardez vos données."
 ---
 
 # FAQ

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Guía de Interfaz
 title: Guía de Interfaz - Búsqueda y Filtros Avanzados
-description: Saca partido a AiShort: combina etiquetas con los modos OR/AND y la búsqueda por palabras clave para dar con el prompt ideal en segundos.
+description: "Saca partido a AiShort: combina etiquetas con los modos OR/AND y la búsqueda por palabras clave para dar con el prompt ideal en segundos."
 ---
 
 # Guía de Interfaz

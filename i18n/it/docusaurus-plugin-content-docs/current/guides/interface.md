@@ -1,7 +1,7 @@
 ---
 sidebar_label: Guida Interfaccia
 title: Guida Interfaccia AI Short | Filtro tag e ricerca intelligente
-description: Scopri come usare l'interfaccia di AI Short: filtri per tag, ricerca per parole chiave, dettagli delle schede e gestione della collezione per trovare subito il prompt giusto.
+description: "Scopri come usare l'interfaccia di AI Short: filtri per tag, ricerca per parole chiave, dettagli delle schede e gestione della collezione per trovare subito il prompt giusto."
 ---
 
 # Guida Interfaccia

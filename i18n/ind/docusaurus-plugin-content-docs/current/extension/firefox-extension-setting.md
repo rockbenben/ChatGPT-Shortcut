@@ -1,7 +1,7 @@
 ---
 sidebar_label: Pengaturan Ekstensi Firefox
 title: Pengaturan AI Short Firefox | Pin Ekstensi & Otorisasi Berjalan
-description: Panduan pengaturan ekstensi Firefox: Pin ekstensi ke toolbar, otorisasi untuk berjalan di situs seperti ChatGPT dan Gemini, pastikan sidebar ditampilkan dengan benar.
+description: "Panduan pengaturan ekstensi Firefox: Pin ekstensi ke toolbar, otorisasi untuk berjalan di situs seperti ChatGPT dan Gemini, pastikan sidebar ditampilkan dengan benar."
 ---
 
 # Pengaturan Ekstensi Firefox

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Paramètres de l'extension Firefox
 title: Configuration Firefox AI Short | Épingler l'extension et autoriser l'exécution
-description: Guide de configuration de l'extension Firefox : épinglez l'extension à la barre d'outils et autorisez son exécution sur ChatGPT, Gemini, etc., pour un affichage correct de la barre latérale.
+description: "Guide de configuration de l'extension Firefox : épinglez l'extension à la barre d'outils et autorisez son exécution sur ChatGPT, Gemini, etc., pour un affichage correct de la barre latérale."
 ---
 
 # Paramètres de l'extension Firefox
