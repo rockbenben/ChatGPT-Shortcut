@@ -396,6 +396,19 @@ article.markdown a:hover {
   text-decoration: underline;
 }
 
+/* docs/category 自动生成的 DocCard 列表 —— Docusaurus 主题在 .cardContainer_* 里
+   把 --ifm-link-color 改成 emphasis-800，在我们暗色模式下实际值是 #ebedf0（Infima 默认浅灰偏蓝）。
+   标题用 --ifm-color-primary（45% 亮度，比 tag-selected-text 稳重不刺眼），
+   描述用 content-secondary（半透白，无蓝色 cast），保持主次层次。 */
+.theme-doc-card-container .theme-doc-card-heading {
+  color: var(--ifm-color-primary);
+}
+.theme-doc-card-container:hover .theme-doc-card-heading {
+  color: var(--ifm-color-primary-light);
+}
+.theme-doc-card-container .theme-doc-card-description {
+  color: var(--ifm-color-content-secondary);
+}
 .sidebarLogo_isFc {
   font-size: 1.1rem;
 }
@@ -501,7 +514,7 @@ article.markdown a:hover {
   line-height: 1.25 !important;
 }
 
-/* Eyebrow caption — mono uppercase tertiary，4 处复用（hero / body / note / discussion） */
+/* Eyebrow caption — mono uppercase tertiary；现在渲染为 <h2> 给 AI 引擎 chunk 入口 */
 .comp-sheet-eyebrow {
   font-size: 11px;
   font-weight: 500;
@@ -510,6 +523,7 @@ article.markdown a:hover {
   color: var(--site-color-text-tertiary);
   font-family: var(--site-font-mono);
   display: inline-block;
+  margin: 0;
 }
 
 /* Remark pull-quote — sage 左竖线，antd 没有原生引语组件 */
@@ -695,6 +709,7 @@ article.markdown a:hover {
   font-weight: 500;
   color: var(--ifm-color-content);
   line-height: 1.45;
+  margin: 0;
 }
 .prompt-faq-a {
   font-size: 12px;
