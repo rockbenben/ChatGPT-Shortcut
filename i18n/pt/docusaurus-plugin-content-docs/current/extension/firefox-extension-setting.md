@@ -1,7 +1,7 @@
 ---
 sidebar_label: Configuração da Extensão Firefox
 title: Configuração AI Short no Firefox | Fixar Extensão e Autorizar Execução
-description: Guia de configuração da extensão Firefox: fixe a extensão na barra de ferramentas e autorize a execução em sites como ChatGPT, Gemini para garantir a exibição correta da barra lateral.
+description: "Guia de configuração da extensão Firefox: fixe a extensão na barra de ferramentas e autorize a execução em sites como ChatGPT, Gemini para garantir a exibição correta da barra lateral."
 ---
 
 # Configuração da Extensão Firefox

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Hướng dẫn Giao diện
 title: Hướng dẫn Giao diện AI Short | Lọc Thẻ, Tìm kiếm & Thao tác Prompt
-description: Làm chủ giao diện AI Short: tìm prompt nhanh bằng bộ lọc thẻ và tìm kiếm từ khóa, xem chi tiết, sao chép và thu thập prompt chỉ trong vài giây.
+description: "Làm chủ giao diện AI Short: tìm prompt nhanh bằng bộ lọc thẻ và tìm kiếm từ khóa, xem chi tiết, sao chép và thu thập prompt chỉ trong vài giây."
 ---
 
 # Hướng dẫn Giao diện

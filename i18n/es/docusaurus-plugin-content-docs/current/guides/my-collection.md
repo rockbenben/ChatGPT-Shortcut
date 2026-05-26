@@ -1,7 +1,7 @@
 ---
 sidebar_label: Mi Colección
 title: Mi Colección - Organiza y Ordena tus Prompts
-description: Reúne tus prompts favoritos en una biblioteca personal: arrastra y suelta para reordenarlos, y agrúpalos con etiquetas de colores propias.
+description: "Reúne tus prompts favoritos en una biblioteca personal: arrastra y suelta para reordenarlos, y agrúpalos con etiquetas de colores propias."
 ---
 
 # Mi Colección
