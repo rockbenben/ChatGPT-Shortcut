@@ -1,56 +1,71 @@
 ---
 sidebar_label: FAQ
-title: FAQ AI Short - Optimisation et Hallucinations
-description: Résolvez les problèmes courants d'IA. Apprenez à optimiser vos prompts, éviter les hallucinations et sauvegarder vos données.
+title: FAQ AI Short | Optimisation des prompts et gestion des hallucinations
+description: Les résultats des prompts ne sont pas satisfaisants ? L'IA produit de fausses informations ? Ce guide répond aux questions fréquentes : optimisez vos prompts, évitez les hallucinations et sauvegardez vos données.
 ---
 
 # FAQ
 
+## AiShort est-il payant ?
+
+La version web d'AiShort est **entièrement gratuite** : parcourir, copier et rechercher des prompts ne nécessite aucun paiement, ni même d'inscription. Les fonctionnalités avancées disponibles après connexion (collection, prompts personnalisés, partage communautaire) sont également gratuites.
+
+Remarque : AiShort ne fournit que les prompts. **L'utilisation du modèle d'IA lui-même peut être payante ou non selon le service que vous utilisez** (par exemple ChatGPT version gratuite/payante, facturation à l'API, etc.).
+
+## Quels modèles d'IA sont pris en charge ?
+
+Les prompts d'AiShort sont universels et fonctionnent dans **n'importe quel scénario d'IA** : pages de conversation, outils de codage de type Cursor, appels API, agents, etc. Ils sont compatibles avec :
+
+- Principaux modèles : ChatGPT, Gemini, Claude, Le Chat (Mistral AI), Grok, DeepSeek
+- Plateformes API : OpenRouter, Groq, Hugging Face Chat
+- Modèles chinois (Tongyi Qianwen, Ernie Bot, Doubao, Kimi, etc.) : disponibles si vous travaillez avec un public sinophone
+
+Pour plus de modèles, voir [Bien commencer → Modèles d'IA courants](./getting-started#modèles-dia-courants).
+
 ## Pourquoi utiliser des prompts en anglais ?
 
-Les modèles d'IA ont généralement une meilleure compréhension de l'anglais, et l'utilisation de prompts en anglais peut produire des résultats plus stables.
+La plupart des modèles d'IA ont été entraînés majoritairement sur des données en anglais : ils comprennent donc mieux les instructions anglaises et produisent des résultats plus stables et plus cohérents. Les prompts en français fonctionnent aussi — surtout avec Le Chat de Mistral ou les versions récentes de ChatGPT, Claude et Gemini — mais reformuler plusieurs fois un même prompt en français peut entraîner des variations notables. Pour les usages exigeants (rédaction structurée, code, raisonnement), préférez l'anglais.
 
-Bien que l'utilisation de prompts en chinois puisse obtenir des résultats décents, la saisie répétée du même prompt en chinois peut entraîner des variations significatives dans les résultats. Par conséquent, il est recommandé d'utiliser des prompts en anglais dans des scénarios importants.
-
-**Spécifier une réponse en chinois** : Ajoutez `respond in Chinese` à la fin du prompt pour obtenir une réponse en chinois.
+> 💡 Vous voulez quand même une réponse en français ? Ajoutez simplement `Réponds en français.` ou `Respond in French.` à la fin du prompt anglais — vous bénéficiez ainsi de la précision de l'instruction anglaise et d'une sortie dans votre langue.
 
 ## Dois-je entrer le prompt à chaque fois ?
 
-**Utilisation de l'API** : Vous pouvez définir le prompt comme "system prompt", qui s'appliquera automatiquement aux conversations ultérieures.
+**Utilisation de l'API** : définissez le prompt comme `system prompt`, il s'appliquera automatiquement aux conversations suivantes.
 
-**Version Web** : Si vous n'avez pas changé de sujet, ChatGPT se souviendra des paramètres de prompt de la conversation actuelle. Lorsque la réponse commence à s'écarter des attentes, cela signifie que l'IA a "oublié" le prompt et vous devez le saisir à nouveau.
+**Version web** : tant que vous ne changez pas de conversation, ChatGPT mémorise le prompt actuel. Si la réponse commence à dévier, c'est qu'il l'a "oublié" — recollez-le simplement.
 
-**Astuce** : Enregistrez les conversations fréquemment utilisées comme signets pour un accès rapide plus tard.
+**Astuce** : enregistrez les conversations fréquemment utilisées comme signets pour un accès rapide.
 
 ## Pourquoi ne puis-je pas trouver de prompts associés ?
 
-Les résultats de recherche sur la page d'accueil proviennent principalement de la **bibliothèque de prompts sélectionnés** (y compris vos prompts personnels après la connexion) et **n'incluent pas** les prompts partagés publiquement par la communauté.
+La recherche sur la page d'accueil porte sur la **bibliothèque de prompts sélectionnés** (et, après connexion, sur vos prompts personnels), **mais pas** sur les prompts partagés par la communauté.
 
-Si vous ne trouvez pas de résultats sur la page d'accueil à l'aide de mots clés courts, nous vous recommandons d'effectuer une recherche sur la page [Prompts de la communauté](./community), qui contient un contenu plus riche partagé par les utilisateurs.
+Si vous ne trouvez rien sur la page d'accueil avec un mot-clé court, relancez la recherche sur la page [Prompts de la communauté](./community) — vous y trouverez davantage de contenus partagés par les utilisateurs.
 
-## Que faire si l'IA génère de fausses informations ?
+## Que faire si l'IA produit de fausses informations ?
 
-L'IA a parfois des "hallucinations", générant des informations qui semblent plausibles mais qui sont en fait incorrectes. Suggestions d'utilisation :
+L'IA produit parfois des "hallucinations" : des informations qui paraissent plausibles mais sont en réalité fausses. Pour y remédier :
 
-1. **Vérifier les informations clés** : Surtout les données, citations, code, etc.
-2. **Optimisation en plusieurs tours** : Demandez à l'IA de vérifier et d'optimiser la réponse à nouveau.
-3. **Vérification croisée** : Utilisez différents prompts ou modèles pour vérifier les conclusions importantes.
+1. **Vérifier les informations clés** : surtout les données, citations, code, etc.
+2. **Optimisation en plusieurs tours** : demandez à l'IA de revérifier et d'améliorer sa réponse
+3. **Vérification croisée** : utilisez d'autres prompts ou modèles pour valider les conclusions importantes
 
-Des prompts appropriés peuvent vous aider à réduire l'apparition d'hallucinations de l'IA.
+Des prompts bien formulés réduisent les hallucinations de l'IA.
 
 ## Comment sauvegarder mes prompts ?
 
-1. Entrez dans le Centre utilisateur
-2. Cliquez sur le bouton "Exporter les prompts"
+1. Allez dans "Mon Compte" → rubrique "Gestion des données → Exporter les prompts"
+2. Cliquez sur le bouton "Exporter les données"
 3. Le système génère automatiquement un fichier JSON à télécharger
 
-Il est recommandé de faire des sauvegardes régulières pour éviter la perte de données.
+Il est recommandé de sauvegarder régulièrement pour éviter toute perte de données.
 
 ## Les résultats des prompts ne sont pas idéaux ?
 
-1. **Essayez d'optimiser** : Laissez l'IA optimiser la réponse à nouveau.
-2. **Changez de perspective** : Utilisez différents prompts pour exprimer la même exigence.
-3. **Commentaires et partage** : Si vous trouvez des problèmes ou avez de bons prompts, bienvenue pour nous informer via [Commentaires](/feedback) ou partager dans la communauté.
+1. **Demandez à l'IA d'optimiser** : faites-lui noter sa propre réponse et l'améliorer
+2. **Changez d'angle** : utilisez des prompts différents pour exprimer le même besoin
+3. **Essayez la communauté** : les [Prompts de la communauté](./community) contiennent peut-être une version plus adaptée — et n'hésitez pas à y partager vos propres trouvailles
+4. **Faites-nous part de vos retours** : si vous rencontrez un problème ou avez une suggestion, contactez-nous via [Retour d'expérience](/feedback)
 
 ## Documentation associée
 

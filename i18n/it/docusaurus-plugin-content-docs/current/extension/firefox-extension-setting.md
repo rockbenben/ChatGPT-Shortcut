@@ -6,7 +6,7 @@ description: Configura l'estensione AI Short su Firefox - Appunta alla barra, au
 
 # Impostazioni Estensione Firefox
 
-Prima di usare l'estensione Firefox, si raccomanda di seguire questi due passaggi per la configurazione.
+Il modello di permessi di Firefox è più rigido di quello di Chrome — dopo aver installato l'estensione devi completare due ulteriori passaggi di configurazione perché la barra laterale venga visualizzata correttamente su siti come ChatGPT, Gemini, ecc.
 
 ## 1. Appunta Estensione e Impostazioni Accesso
 

@@ -1,47 +1,53 @@
 ---
 slug: /
 sidebar_label: Introducción a AI Short
-title: AI Short - Biblioteca de Prompts ChatGPT Curada
-description: Mejora tus respuestas de ChatGPT y Claude. Copia prompts curados al instante y gestiona tu colección personal para mayor productividad.
+title: AI Short - Biblioteca Curada de Prompts de IA | Copia con un Clic
+description: Biblioteca curada de prompts de IA en español para ChatGPT, Gemini, Claude y DeepSeek. Cópialos al instante — diseñada para profesionales y creadores de España y Latinoamérica, con favoritos, comunidad y soporte multilingüe.
 ---
 
 # Introducción a AI Short
 
-AI Short (ChatGPT Shortcut) proporciona una lista concisa y fácil de usar de prompts de IA para ayudar a los usuarios a encontrar rápidamente prompts adecuados para diferentes escenarios.
+AI Short (ChatGPT Shortcut) es una biblioteca de prompts de IA organizados por escenario, lista para copiar y usar.
+
+> **¿Qué es un "prompt"?** Un prompt es la instrucción que le das a la IA, y determina la calidad de su respuesta. Un buen prompt logra respuestas profesionales y precisas; uno vago solo consigue respuestas mediocres. AiShort recopila prompts de calidad para todo tipo de escenarios (escritura, programación, oficina, estudio…), ahorrándote el tiempo de pensar cómo formular tu pregunta.
 
 ## ⚡ Inicio Rápido en 30 Segundos
 
 1. Abre AI Short
 2. Busca o navega por el prompt que necesitas
-3. Haz clic en "Copiar" y pégalo en cualquier modelo de conversación de IA
+3. Haz clic en "Copiar" y pégalo en cualquier herramienta de IA — páginas de chat como ChatGPT, herramientas de programación como Cursor, llamadas a la API, etc.
 
-¡Es así de simple! Para más funciones, continúa leyendo o consulta el [Manual de Usuario](./guides/getting-started).
+Así de simple. Descubre más usos en la [Guía de Inicio](./guides/getting-started).
 
 ## Funciones Principales
 
-🚀 **Prompts de Un Clic**: Prompts profesionales seleccionados, listos para copiar y usar con un clic.
+🚀 **Prompts curados**: Cubren escritura, programación, oficina y más, listos para copiar.
 
-🔍 **Búsqueda Inteligente**: Encuentra rápidamente los prompts que necesitas a través del filtrado de etiquetas y la búsqueda por palabras clave.
+🔍 **Etiquetas + búsqueda por palabras clave**: Filtra por escenario o busca directamente por palabra clave.
 
-🌍 **Soporte Multilingüe**: Proporciona traducción a 18 idiomas, soportando respuestas en el idioma nativo.
+🌍 **18 idiomas**: Interfaz y prompts traducidos por completo, con opción a respuestas en tu idioma.
 
-📦 **Listo para Usar**: No requiere registro, simplemente visita para usar.
+📦 **Listo para usar**: No requiere registro, simplemente abre y empieza a usar.
 
-## Funciones Avanzadas (Después de Iniciar Sesión)
+## Funciones Avanzadas (Tras Iniciar Sesión)
 
-📂 **Mi Colección**: Colecciona prompts favoritos, soportando ordenamiento por arrastrar y soltar y clasificación por etiquetas personalizadas.
+📂 **Mi Colección**: Ordenamiento por arrastrar y soltar, clasificación por etiquetas personalizadas.
 
-✏️ **Prompts Personalizados**: Crea, edita y gestiona tus propios prompts.
+✏️ **Prompts personalizados**: Crea, edita y gestiona tus propios prompts.
 
-🗳️ **Interacción Comunitaria**: Comparte prompts en la sección de la comunidad y participa en la votación.
+🗳️ **Interacción comunitaria**: Comparte prompts en la comunidad y participa en la votación.
 
-📤 **Exportación de Datos**: Exporta todos los prompts como un archivo JSON con un clic.
+📤 **Exportación de datos**: Exporta todos tus prompts como archivo JSON con un clic.
 
-🔐 **Múltiples Métodos de Inicio de Sesión**: Soporta contraseña de cuenta, Google y enlaces de correo electrónico sin contraseña.
+🔐 **Múltiples métodos de inicio de sesión**: Contraseña, Google y enlaces de correo sin contraseña.
+
+## Versión de Despliegue Offline
+
+La [versión de despliegue offline](./guides/offline) está diseñada para escenarios sin acceso a internet, como intranets corporativas o redes gubernamentales. No requiere servidor backend ni cuenta, está lista para usar tras el despliegue, conserva las funciones principales de navegación, búsqueda, favoritos y personalización, y comparte el mismo formato de datos con la versión online.
 
 ## Fuentes de Prompts
 
-Los prompts provienen de selecciones de internet, compartidos por la comunidad y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Actualizamos regularmente para traerte nuevos prompts e inspiración continuamente.
+Los prompts provienen de selecciones de internet, contribuciones de la comunidad y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Actualizamos continuamente.
 
 ## Únete a la Comunidad
 
@@ -54,3 +60,4 @@ Bienvenido a unirte a nuestra comunidad para intercambiar ideas y comentarios:
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
+

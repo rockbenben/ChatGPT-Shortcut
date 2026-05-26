@@ -6,12 +6,11 @@ description: CRX 사용 불가 시 해결책. ZIP 파일 압축 해제 후 Chrom
 
 # Chrome ZIP 확장 프로그램 로컬 설치 가이드
 
-## 확장 프로그램 다운로드
-
-ChatGPT Shortcut 확장 프로그램 Zip 설치 패키지(ChatGPT_Shortcut-zip-3.x.x.zip)를 다운로드하고 압축을 풉니다. (압축을 푼 폴더는 컴퓨터에 보관해야 하므로 영구적인 위치에 압축을 풀어야 합니다)
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **중국 다운로드**: [Alist 클라우드 드라이브](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), 비밀번호: 1qow
+> 본 가이드는 [설치 페이지](./README.md)에서 이미 ZIP 설치 패키지를 다운로드하고 압축을 푼 상태를 전제로 합니다.
+>
+> ⚠️ **자주 발생하는 두 가지 실수**:
+> 1. 압축을 푼 폴더는 **영구적으로 보관**해야 합니다 (확장 프로그램이 실행 시 이 디렉터리를 읽습니다). 계속 진행하기 전에 영구적인 위치에 두세요
+> 2. 드래그하는 것은 **압축을 푼 폴더 전체**입니다 (zip 파일 자체도 아니고 폴더 안의 개별 파일도 아닙니다)
 
 ## 개발자 모드 활성화
 

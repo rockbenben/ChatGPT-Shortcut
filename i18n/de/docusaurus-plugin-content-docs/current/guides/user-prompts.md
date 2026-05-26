@@ -1,79 +1,84 @@
 ---
 sidebar_label: Benutzerdefinierte Prompts
-title: Eigene Prompts - Erstellen & Verwalten
-description: Erstellen und speichern Sie eigene Prompts. Teilen Sie sie mit der Community oder nutzen Sie sie privat. Einfacher Datenexport.
+title: AI Short Benutzerdefinierte Prompts | Erstellen, Bearbeiten und Teilen
+description: Erstellen Sie exklusive KI-Prompts, speichern Sie sie in Ihrem Konto und rufen Sie sie jederzeit ab. Mit der Community teilen oder privat setzen — Backup-Daten mit einem Klick exportieren.
 ---
 
 # Benutzerdefinierte Prompts
 
-Nach der Anmeldung können Sie Ihre eigenen Prompts für einen schnellen Zugriff später erstellen. Benutzerdefinierte Prompts werden in Ihrem Konto gespeichert und in der Ansicht "Meine Sammlung" angezeigt.
+Nach der Anmeldung können Sie eigene Prompts erstellen, in Ihrem Konto speichern und jederzeit abrufen. Benutzerdefinierte Prompts erscheinen in der Ansicht „Meine Sammlung".
 
 ## Prompt erstellen
 
-1. Klicken Sie oben rechts auf der Seite auf die Schaltfläche "Prompt hinzufügen"
-2. Füllen Sie die Prompt-Informationen aus:
-   - **Titel**: Kurze Beschreibung des Zwecks des Prompts
-   - **Beschreibung**: Der vollständige Inhalt des Prompts
-   - **Bemerkung**: Gebrauchsanweisungen oder Notizen (optional)
-3. Wählen Sie aus, ob Sie mit der Community teilen möchten
-4. Klicken Sie auf Senden
+1. Klicken Sie oben rechts auf die Schaltfläche "Hinzufügen"
+2. Füllen Sie im Popup "Prompt erstellen" das Formular aus:
+   - **Prompt-Name** (Pflichtfeld): Geben Sie dem Prompt einen Namen
+   - **Prompt-Inhalt** (Pflichtfeld): Der eigentliche Prompt-Text
+   - **Zweck/Verwendung** (optional): Kurzbeschreibung, was der Prompt leistet
+   - **Bemerkungen** (optional): Quelle, andere Sprachversionen oder Zusatzinformationen
+3. Der Schalter unten „Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?" ist standardmäßig aktiviert — deaktivieren Sie ihn, um den Prompt privat zu halten
+4. Klicken Sie auf "Prompt erstellen", um zu speichern
 
-![Prompt hinzufügen Popup](/img/docs/user-prompts-create.png)
+![Prompt-erstellen-Popup](/img/docs/user-prompts-create.png)
+
+> 💡 **Beispiel** — ein Prompt „Meeting-Protokoll-Assistent":
+> - **Prompt-Name**: Meeting-Protokoll-Assistent
+> - **Prompt-Inhalt**: Sie sind ein professioneller Protokollant für Geschäftsmeetings. Erstellen Sie auf Basis der folgenden Notizen ein strukturiertes Besprechungsprotokoll mit den Abschnitten Teilnehmer, Tagesordnung, Beschlüsse und nächste Schritte (mit Verantwortlichen und Fristen): [Meeting-Notizen]
+> - **Zweck/Verwendung**: Unstrukturierte Mitschriften in ein professionelles Sitzungsprotokoll überführen
+> - **Bemerkungen**: Nach jedem Jour fixe oder Projektmeeting einsetzen
 
 ## Prompt bearbeiten
 
-Klicken Sie in der Ansicht "Meine Sammlung" auf die Prompt-Karte, die Sie erstellt haben, um:
+Klicken Sie in der Ansicht Meine Sammlung auf eine von Ihnen erstellte Prompt-Karte, um das Fenster "Prompt bearbeiten" zu öffnen. Sie können:
 
-- Titel, Beschreibung und Bemerkung zu ändern
+- Name, Inhalt, Zweck und Bemerkungen ändern
 - Teilungsstatus umschalten (Öffentlich/Privat)
-- Änderungen speichern
+- Auf "Speichern" klicken, um zu aktualisieren
 
 ![Prompt-Bearbeitungsoberfläche](/img/docs/user-prompts-edit.png)
 
 ## Prompt löschen
 
-Klicken Sie in der Bearbeitungsoberfläche auf die Schaltfläche "Löschen", um den Prompt zu entfernen. Das Löschen kann nicht rückgängig gemacht werden, bitte gehen Sie vorsichtig vor.
+Klicken Sie im Bearbeitungsfenster auf "Löschen". Die Löschung kann nicht rückgängig gemacht werden — gehen Sie vorsichtig vor.
 
 ## Mit der Community teilen
 
-Aktivieren Sie beim Erstellen oder Bearbeiten eines Prompts die Option "Mit Community teilen":
+Beim Erstellen oder Bearbeiten steuert der Schalter „Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?" die Sichtbarkeit:
 
-- **Öffentlich**: Der Prompt wird auf der Community-Seite angezeigt, und andere Benutzer können ihn sehen und sammeln
-- **Privat**: Nur für Sie sichtbar, erscheint nicht auf der Community-Seite
+- **Aktiviert (Standard)**: Der Prompt erscheint auf der Seite [Community-Prompts](./community), andere Nutzer können ihn sehen und sammeln
+- **Deaktiviert**: Privater Prompt, nur für Sie sichtbar
 
-Sie können den Teilungsstatus jederzeit ändern.
+Der Teilungsstatus kann jederzeit geändert werden.
 
 ## Backup exportieren
 
-Exportieren Sie alle von Ihnen erstellten Prompts:
-
-1. Gehen Sie ins Benutzerzentrum
-2. Klicken Sie auf die Schaltfläche "Prompts exportieren"
-3. Das System generiert automatisch eine JSON-Datei und lädt sie herunter
+1. Gehen Sie zu „Mein Konto" → finden Sie den Bereich „Datenverwaltung → Prompts exportieren"
+2. Klicken Sie auf die Schaltfläche "Daten exportieren"
+3. Das System generiert eine JSON-Datei und lädt sie automatisch herunter
 
 Der Exportinhalt umfasst:
 
-- Prompt-Titel, Beschreibung, Bemerkung
+- Name, Inhalt, Zweck/Verwendung und Bemerkungen der Prompts
 - Erstellungs- und Aktualisierungszeit
 - Teilungsstatus
 
-Es wird empfohlen, regelmäßig Backups zu exportieren, um Datenverlust zu vermeiden.
+Es wird empfohlen, regelmäßig zu exportieren, um Datenverlust zu vermeiden.
 
 ## Prompts importieren
 
-Importieren Sie Prompts und Favoriten aus einer JSON-Datei:
+Importieren Sie Prompts und Sammlung aus einer JSON-Datei:
 
-1. Gehen Sie ins Benutzerzentrum
-2. Klicken Sie auf die Schaltfläche "Prompts importieren"
+1. Gehen Sie zu „Mein Konto" → finden Sie den Bereich „Datenverwaltung → Prompts importieren"
+2. Klicken Sie auf die Schaltfläche "Daten importieren"
 3. Wählen Sie eine JSON-Datei aus
-4. Das System führt die Daten automatisch zusammen
+4. Das System führt die Daten automatisch zusammen (Deduplizierung nach Titel; Prompts mit fremder ID werden automatisch auf privat gesetzt)
 
 ### Team-Zusammenarbeit
 
-Empfohlener Workflow für das Teilen von Prompts innerhalb eines Teams:
+Empfohlener Workflow zum Teilen von Prompts im Team:
 
-1. **Filtern & Teilen**: Nach dem Datenexport können Sie Ihre Favoritenliste entfernen oder bestimmte Prompts filtern und dann die Datei mit Teammitgliedern zum Import teilen
-2. **Datenschutz**: Prompts, die von anderen importiert werden (deren IDs nicht zu Ihrem Konto gehören), werden automatisch auf **Privat** gesetzt, um die Datenisolierung zwischen Mitgliedern zu gewährleisten
+1. **Filtern und Teilen**: Nach dem Export manuell die Sammlungsliste entfernen oder nur die zu teilenden Prompts auswählen, dann die Datei zum Import an Teammitglieder senden
+2. **Datenschutz**: Importierte Prompts anderer Personen (deren IDs nicht zum aktuellen Konto gehören) werden automatisch auf **privat** gesetzt — so bleiben die Daten der einzelnen Teammitglieder klar voneinander getrennt
 
 ## Verwandte Dokumentation
 

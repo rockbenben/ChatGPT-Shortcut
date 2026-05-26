@@ -6,14 +6,11 @@ description: Installieren Sie die CRX-Datei einfach im Entwicklermodus. Drag-and
 
 # Chrome CRX Erweiterung Lokale Installationsanleitung
 
-## CRX-Installationspaket herunterladen
-
-Laden Sie das ChatGPT Shortcut crx-Installationspaket (ChatGPT_Shortcut-crx-3.x.x.zip) herunter und entpacken Sie es (die crx-Datei befindet sich im entpackten Ordner).
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **China Download**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), Passwort: 1qow
-
-![](https://img.newzone.top/2024-08-12-21-47-10.png?imageMogr2/format/webp)
+> Diese Anleitung setzt voraus, dass Sie das CRX-Installationspaket bereits über die [Installationsseite](./README.md) heruntergeladen und entpackt haben (die .crx-Datei befindet sich im entpackten Ordner).
+>
+> ⚠️ **Zwei häufige Stolpersteine**:
+> 1. Sie müssen die **`.crx`-Datei** (die entpackte) auf die Erweiterungsseite ziehen, nicht das ZIP-Installationspaket selbst
+> 2. Sie müssen sie **ziehen** — klicken Sie nicht auf "Entpackte Erweiterung laden" (das ist für die ZIP-Version)
 
 ## Entwicklermodus aktivieren
 

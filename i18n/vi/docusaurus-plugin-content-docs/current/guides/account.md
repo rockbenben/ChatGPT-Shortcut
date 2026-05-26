@@ -1,62 +1,61 @@
 ---
 sidebar_label: Tài khoản
-title: Tài khoản AI Short | Hướng dẫn Đăng nhập Google & Không mật khẩu
-description: Truy cập prompt AI Short của bạn ở mọi nơi với đăng nhập Google hoặc không mật khẩu. Quản lý cài đặt tài khoản và khôi phục dữ liệu an toàn trong vài giây.
+title: Tài khoản AI Short | Đăng nhập Google, Không mật khẩu & Đặt lại mật khẩu
+description: Đăng nhập AI Short bằng Google chỉ với một cú nhấp, hoặc dùng liên kết email không cần mật khẩu. Đồng bộ bộ sưu tập trên mọi thiết bị, đặt lại mật khẩu và xóa cache khi cần.
 ---
 
 # Quản lý Tài khoản
 
-AiShort cung cấp nhiều phương thức đăng nhập để thuận tiện truy cập dữ liệu cá nhân của bạn bất cứ lúc nào.
+AiShort dùng được mà không cần đăng nhập — nhưng **sau khi đăng nhập** bạn có thể thu thập các prompt yêu thích, tạo prompt riêng, chia sẻ lên cộng đồng và đồng bộ giữa các thiết bị. Dưới đây giới thiệu các thao tác về đăng nhập, đăng ký, mật khẩu và cache.
 
 ## Phương thức Đăng nhập
 
 ### Đăng nhập Mật khẩu
 
-Đăng nhập bằng tên người dùng hoặc email đã đăng ký kết hợp với mật khẩu.
+Đăng nhập bằng tên người dùng hoặc email đã đăng ký + mật khẩu.
 
-Nếu bạn quên mật khẩu, nhấp "Quên Mật khẩu" trên trang đăng nhập, nhập email đã đăng ký và hệ thống sẽ gửi liên kết đặt lại.
+Quên mật khẩu: Nhấp "Quên mật khẩu" trên trang đăng nhập, nhập email đã đăng ký để nhận liên kết đặt lại.
 
 ### Đăng nhập Google
 
-Nhấp biểu tượng Google trên trang đăng nhập để đăng nhập bằng tài khoản Google của bạn chỉ với một cú nhấp.
-
-Sử dụng đăng nhập Google lần đầu sẽ tự động tạo tài khoản mà không cần đăng ký riêng.
+Nhấp biểu tượng Google trên trang đăng nhập để vào ngay chỉ với một cú nhấp. Lần đầu sử dụng, hệ thống sẽ tự tạo tài khoản cho bạn — không cần đăng ký riêng.
 
 ![](/img/docs/account-login.png)
 
 ### Đăng nhập Không mật khẩu
 
 1. Nhập email đã đăng ký trên trang đăng nhập
-2. Nhấp "Gửi liên kết Đăng nhập"
-3. Kiểm tra email và nhấp vào liên kết để đăng nhập
+2. Nhấp "Gửi liên kết đăng nhập"
+3. Mở liên kết trong hộp thư của bạn để vào tài khoản
 
-Phương thức này không cần nhớ mật khẩu và phù hợp với người dùng không đăng nhập thường xuyên.
+Khỏi cần nhớ mật khẩu — rất tiện khi bạn không đăng nhập thường xuyên.
 
 ## Đăng ký Tài khoản
 
-1. Nhấp tùy chọn "Đăng ký" trên trang đăng nhập
+1. Nhấp "Đăng ký" trên trang đăng nhập
 2. Điền tên người dùng, email và mật khẩu
-3. Tự động đăng nhập sau khi hoàn thành đăng ký
+3. Tự động đăng nhập sau khi gửi
 
 ![](/img/docs/account-register.png)
 
 ## Đổi Mật khẩu
 
-Sau khi đăng nhập, bạn có thể đổi mật khẩu trong Trung tâm Người dùng:
+Sau khi đăng nhập, đổi mật khẩu trong "Tài khoản của tôi":
+
+![Trang Tài khoản của tôi](/img/docs/account-profile.png)
 
 1. Nhập mật khẩu hiện tại
 2. Nhập mật khẩu mới và xác nhận
-3. Lưu thay đổi
+3. Nhấp "Đổi mật khẩu" để gửi
 
 ## Xóa Cache
 
-Nếu bạn gặp vấn đề đồng bộ dữ liệu hoặc hiển thị bất thường:
+Khi dữ liệu không đồng bộ hoặc hiển thị bất thường:
 
-1. Vào Trung tâm Người dùng
-2. Nhấp nút "Xóa Cache"
-3. Trang sẽ tự động làm mới và lấy lại dữ liệu từ máy chủ
+1. Vào "Tài khoản của tôi" → tìm mục "Quản lý dữ liệu → Xóa cache"
+2. Nhấp nút "Xóa cache", sau khi xác nhận sẽ tự động tải lại toàn bộ dữ liệu
 
-Xóa cache sẽ không xóa bộ sưu tập và prompt tùy chỉnh của bạn; nó chỉ buộc đồng bộ lại dữ liệu máy chủ.
+Bộ sưu tập và prompt tùy chỉnh sẽ không bị mất — thao tác này chỉ buộc đồng bộ lại từ máy chủ.
 
 ## Tài liệu Liên quan
 

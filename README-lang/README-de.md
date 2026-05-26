@@ -20,6 +20,14 @@
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
 </p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
+</p>
+
 <p align="center">
     <a href="../README.md">English</a> | <a href="../README-zh.md">简体中文</a> | <a href="./README-zh-hant.md">繁體中文</a> |
 <a href="./README-ja.md">日本語</a> |
@@ -38,23 +46,40 @@ Deutsch |
 <a href="./README-hi.md">हिन्दी</a> |
 <a href="./README-bn.md">বাংলা</a>
 </p>
+
 <p align="center">
-    <em>AiShort (ChatGPT Shortcut) - Maximiere deine Effizienz und Produktivität</em>
+    <em>Tausende erprobter KI-Prompts — verwandeln Sie ChatGPT, Cursor und jedes andere KI-Tool von mittelmäßig in Expertenklasse.</em>
 </p>
+
+## 📖 Inhaltsverzeichnis
+
+- [⚡ Schnellstart](#-schnellstart)
+- [💎 Warum AiShort?](#-warum-aishort)
+- [📸 Screenshots](#-screenshots)
+- [🧩 Browser-Erweiterung](#-browser-erweiterung)
+- [🚀 Bereitstellung](#-bereitstellung)
+- [🤝 Mitwirken](#-mitwirken)
+- [💬 Community](#-community)
+- [🌟 Star History](#-star-history)
+- [📜 Lizenz](#-lizenz)
 
 ## ⚡ Schnellstart
 
-1. Besuche [aishort.top](https://www.aishort.top/de/)
-2. Suche oder durchsuche den benötigten Prompt
-3. Klicke auf „Kopieren" und füge ihn in ein beliebiges KI-Modell ein
+1. Besuchen Sie [aishort.top](https://www.aishort.top/de/)
+2. Suchen oder durchsuchen Sie den benötigten Prompt
+3. Klicken Sie auf „Kopieren" und fügen Sie es in ein beliebiges KI-Tool ein — Chat-Seiten wie ChatGPT, Gemini oder Claude, Programmier-Tools wie Cursor, API-Aufrufe oder andere KI-Anwendungen
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
-Das war's! Weitere Funktionen findest du im [Benutzerhandbuch](https://www.aishort.top/de/docs/guides/getting-started).
+Das war's! Weitere Funktionen finden Sie im [Benutzerhandbuch](https://www.aishort.top/de/docs/guides/getting-started).
 
-## Warum AiShort?
+## 💎 Warum AiShort?
 
-AiShort (ChatGPT Shortcut) bietet eine sorgfältig kuratierte Liste von KI-Prompts, die dir hilft, schnell passende Prompts für jede Situation zu finden.
+**Der Unterschied zwischen KI nutzen und KI gut nutzen ist ein guter Prompt.**
+
+Dieselbe Frage, völlig unterschiedliche Ergebnisse — der einzige Unterschied liegt im Prompt. Experten-Prompts zu formulieren erfordert jahrelange Übung und unzählige Iterationen. AiShort stellt Ihnen eine erprobte Bibliothek hochwertiger Prompts für jedes Szenario (Schreiben, Programmierung, Büro, Lernen) zur Verfügung, damit Sie sofort professionelle Ergebnisse erzielen.
+
+Keine Anmeldung. Kein Abo. Keine Installation. Einfach öffnen und loslegen.
 
 ### Kernfunktionen
 
@@ -70,7 +95,7 @@ AiShort (ChatGPT Shortcut) bietet eine sorgfältig kuratierte Liste von KI-Promp
 
 📂 **Meine Sammlung** - Favoriten speichern mit Drag-and-Drop-Sortierung und benutzerdefinierten Tags.
 
-✏️ **Eigene Prompts** - Erstelle, bearbeite und verwalte deine eigenen Prompts.
+✏️ **Eigene Prompts** - Erstellen, bearbeiten und verwalten Sie Ihre eigenen Prompts.
 
 🗳️ **Community** - Prompts teilen und für Community-Beiträge abstimmen.
 
@@ -78,24 +103,58 @@ AiShort (ChatGPT Shortcut) bietet eine sorgfältig kuratierte Liste von KI-Promp
 
 🔐 **Mehrere Anmeldeoptionen** - Passwort, Google oder passwortloser E-Mail-Link.
 
-## Browser-Erweiterung
+## 📸 Screenshots
 
-Greife jederzeit auf AiShort-Prompts zu. Unterstützt Chrome, Edge und Firefox mit Seitenleiste über `Alt + Shift + S`.
+<table>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Meine Sammlung" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Browser-Erweiterung" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Meine Sammlung</strong> — ziehen, taggen, organisieren</td>
+    <td align="center"><strong>Browser-Erweiterung</strong> — Seitenleiste in ChatGPT, Gemini, Claude…</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Prompt-Karte" /></td>
+    <td width="50%"><img src="../static/img/docs/community-page.png" alt="Community" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Prompt-Karte</strong> — Vorschau & Ein-Klick-Kopieren</td>
+    <td align="center"><strong>Community</strong> — entdecken & abstimmen</td>
+  </tr>
+</table>
+
+## 🧩 Browser-Erweiterung
+
+Greifen Sie jederzeit auf AiShort-Prompts zu. Unterstützt Chrome, Edge und Firefox mit Seitenleiste über `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-## Bereitstellung
+## 🚀 Bereitstellung
 
-Deploye deine eigene Instanz über Vercel, Cloudflare Pages, Docker oder lokal. Siehe [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy).
+Deployen Sie Ihre eigene Instanz über Vercel, Cloudflare Pages, Docker oder lokal. Siehe [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy).
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-## Community
+> **Tipp**: Die Ein-Klick-Bereitstellung von Vercel erstellt ein neues Projekt (keinen Fork), sodass die Prüfung auf Upstream-Aktualisierungen nicht funktioniert. Um eine automatische Synchronisierung zu erhalten, forken Sie zunächst das Repository und importieren Sie anschließend den Fork in Vercel — eine vollständige Anleitung finden Sie in der [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
 
-Tritt uns bei für Diskussionen und Feedback:
+## 🤝 Mitwirken
+
+Beiträge aller Art sind willkommen:
+
+- **Prompt vorschlagen** oder **Bug melden** → ein [GitHub Issue](https://github.com/rockbenben/ChatGPT-Shortcut/issues/new) eröffnen
+- **PR einreichen** → Repository forken, Branch erstellen, Pull Request senden
+- **Übersetzung beisteuern** oder **Dokumentation verbessern** → siehe Verzeichnisse `i18n/` und `docs/`
+- **Star ⭐ und teilen**, damit auch andere nützliche Prompts entdecken
+
+Anleitungen zur lokalen Entwicklungseinrichtung finden Sie in der [Bereitstellungsanleitung](https://www.aishort.top/de/docs/deploy).
+
+## 💬 Community
+
+Treten Sie uns bei für Diskussionen und Feedback:
 
 <a href="https://t.me/aishort_top">
     <img src="https://img.shields.io/badge/Telegram-Gruppe-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
@@ -104,6 +163,14 @@ Tritt uns bei für Diskussionen und Feedback:
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
 </a>
 
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+
+## 📜 Lizenz
+
+[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+
 ---
 
-⭐ Gib diesem Projekt einen Stern, um über neue Funktionen informiert zu bleiben!
+⭐ Geben Sie diesem Projekt einen Stern, um über neue Funktionen informiert zu bleiben!

@@ -6,7 +6,7 @@ description: Hướng dẫn thiết lập tiện ích Firefox - Ghim tiện ích
 
 # Cài đặt Tiện ích Firefox
 
-Trước khi sử dụng tiện ích Firefox, khuyến nghị làm theo hai bước sau để thiết lập.
+Mô hình quyền của Firefox nghiêm ngặt hơn Chrome — sau khi cài tiện ích còn cần làm thêm hai bước thiết lập nữa để thanh bên hiển thị đúng trên các trang như ChatGPT, Gemini.
 
 ## 1. Ghim Tiện ích và Truy cập Cài đặt
 

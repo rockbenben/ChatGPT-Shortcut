@@ -1,18 +1,16 @@
 ---
 sidebar_label: Prompt della Community
-title: Community AI Short - Scopri e Condividi Prompt IA
-description: Esplora la Community di AI Short - Trova prompt votati dagli utenti, condividi le tue creazioni o salvale privatamente. Unisciti all'ispirazione collettiva.
+title: Community AI Short | Scopri e condividi prompt IA di qualità
+description: Esplora i prompt IA condivisi dalla community AI Short. Il sistema di voto fa emergere i migliori; condividi i tuoi o tienili privati a tua scelta.
 ---
 
 # Prompt della Community
 
-La sezione Prompt della Community mostra prompt personalizzati condivisi dagli utenti. Puoi trovare ispirazione qui o condividere la tua creatività.
+I Prompt della Community sono condivisi dagli utenti: qui puoi trovare ispirazione e proporre le tue idee. Il **sistema di voto** fa emergere i contenuti migliori: i prompt apprezzati dalla community raggiungono più persone, mentre quelli di scarsa qualità perdono visibilità col tempo.
 
 ![](/img/docs/community-page.png)
 
 ## Ordinare e Filtrare
-
-La pagina della community offre molteplici metodi di filtraggio:
 
 - **Ora di pubblicazione**: Vedi gli ultimi prompt condivisi
 - **Ordine di voto**: Vedi i prompt con più voti positivi
@@ -20,24 +18,24 @@ La pagina della community offre molteplici metodi di filtraggio:
 
 ## Meccanismo di Voto
 
-Decidi l'esposizione dei prompt votando a favore/contro:
+I voti a favore/contro determinano la visibilità dei prompt:
 
-- **A favore**: Aiuta i contenuti di alta qualità a ottenere maggiore esposizione
-- **Contro**: Dopo che il numero di voti contrari raggiunge una certa quantità, il prompt verrà nascosto
+- **A favore**: dà più visibilità ai contenuti di qualità
+- **Contro**: quando i voti contrari superano una certa soglia, il prompt viene nascosto
 
-**Collegamento Collezione**: Quando collezioni un prompt dalla community, il sistema emetterà automaticamente un voto a favore.
+**Legame con la collezione**: aggiungere un prompt della community alla collezione vale anche come voto a favore.
 
 ![Stato del Pulsante di Voto](/img/docs/community-vote.png)
 
-> Il voto è aperto solo agli utenti loggati, e il voto di ogni persona per lo stesso prompt si basa sul più recente.
+> Il voto è riservato agli utenti che hanno effettuato l'accesso; sullo stesso prompt vale sempre l'ultimo voto espresso.
 
 ## Prompt Privati
 
-La creatività che non desideri rendere pubblica può essere impostata come privata:
+La creatività che non vuoi rendere pubblica può essere impostata come privata:
 
-- Quando crei o modifichi un prompt, deseleziona l'opzione "Condividi con la community"
+- Quando crei o modifichi un prompt, disattiva "Condividi con la community"
 - I prompt privati sono visibili solo a te
-- Puoi cambiare tra stato pubblico/privato in qualsiasi momento
+- Puoi passare tra pubblico/privato in qualsiasi momento
 
 ## Documentazione Correlata
 

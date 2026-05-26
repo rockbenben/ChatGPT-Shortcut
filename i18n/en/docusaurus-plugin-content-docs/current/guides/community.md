@@ -1,43 +1,41 @@
 ---
 sidebar_label: Community Prompts
 title: AI Short Community | Discover & Share Quality AI Prompts
-description: Discover top-rated AI prompts in the community! Filter by votes, share your best ideas for exposure, or manage private prompts for personal use.
+description: Discover top-rated AI prompts in the community! Voting helps quality content surface — share your best ideas for exposure, or set yours to private.
 ---
 
 # Community Prompts
 
-The Community Prompts section displays custom prompts shared by users. You can find inspiration here or share your own creativity.
+Community Prompts come from other users — browse for inspiration, then share what you've made. **Voting** keeps the good stuff on top: useful prompts climb, and weaker ones quietly fall away.
 
 ![](/img/docs/community-page.png)
 
 ## Sorting and Filtering
 
-The community page provides multiple filtering methods:
+- **Publish Time**: See the latest shares
+- **Vote Sorting**: See the most upvoted prompts
+- **Keyword Search**: Search for specific topics
 
-- **Publish Time**: View the latest shared prompts
-- **Vote Sorting**: View prompts with the most upvotes
-- **Keyword Search**: Search for prompts on specific topics
+## How Voting Works
 
-## Voting Mechanism
+Upvotes and downvotes decide how visible a prompt becomes:
 
-Decide the exposure of prompts by upvoting/downvoting:
+- **Upvote**: Pushes good content in front of more people
+- **Downvote**: Once a prompt collects enough downvotes, it's hidden from the feed
 
-- **Upvote**: Help high-quality content get more exposure
-- **Downvote**: After the number of downvotes reaches a certain amount, the prompt will be hidden
-
-**Collection Link**: When collecting a community prompt, the system will automatically cast an upvote.
+**Collect = Upvote**: Adding a community prompt to your collection automatically casts an upvote for it.
 
 ![Voting Button Status](/img/docs/community-vote.png)
 
-> Voting is only open to logged-in users, and each person's vote for the same prompt is based on the most recent one.
+> Voting is only open to logged-in users; for each prompt, only your most recent vote counts.
 
 ## Private Prompts
 
-Creativity you don't want to make public can be set to private:
+Ideas you'd rather keep to yourself can be set to private:
 
-- When creating or editing a prompt, uncheck the "Share to Community" option
-- Private prompts are only visible to yourself
-- You can switch between public/private status at any time
+- Turn off "Share to Community" when creating or editing
+- Private prompts are visible only to you
+- You can switch between public and private at any time
 
 ## Related Documentation
 

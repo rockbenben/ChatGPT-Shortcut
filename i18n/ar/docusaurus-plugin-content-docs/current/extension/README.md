@@ -1,20 +1,32 @@
 ---
 sidebar_label: تثبيت إضافة المتصفح
-title: إضافة AI Short للمتصفح - Chrome و Edge و Firefox
-description: حمل إضافة AI Short لـ Chrome و Edge و Firefox. تكامل سلس مع أدوات الذكاء الاصطناعي لتعزيز إنتاجيتك.
+title: إضافة AI Short | الشريط الجانبي لـ ChatGPT/Gemini/Claude · تثبيت على Chrome/Edge/Firefox
+description: استدعِ مطالبات AiShort مباشرةً من الشريط الجانبي لصفحات محادثات الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، دون الحاجة إلى التنقل بين علامات التبويب للنسخ واللصق. تثبيت بنقرة واحدة على Chrome و Edge و Firefox.
 ---
 
 # تثبيت إضافة المتصفح
 
-تساعدك إضافة AiShort (ChatGPT Shortcut) على الوصول إلى مكتبة مطالبات AIShort في أي وقت، مما يحسن كفاءة العمل والدراسة. وهي تدعم المتصفحات السائدة مثل Chrome و Edge و Firefox، وتوفر ميزات الشريط الجانبي والاختصارات. يمكنك استخدام `Alt + Shift + S` لتنشيط الإضافة بسرعة.
+تدمج إضافة AiShort (ChatGPT Shortcut) مكتبة المطالبات مباشرةً في الشريط الجانبي لصفحات محادثة الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، فلا تحتاج إلى العودة إلى aishort.top للنسخ واللصق. تدعم Chrome و Edge و Firefox، ويمكنك استدعاؤها بسرعة عبر `Alt + Shift + S`.
 
-## 📥 قنوات التنزيل الرسمية
+## 📥 طرق التثبيت
+
+### 1. متاجر التطبيقات (موصى به، تثبيت بنقرة واحدة)
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (بعد التثبيت يلزم [ضبط الأذونات لمرة واحدة](./firefox-extension-setting.md)، وإلا لن يظهر الشريط الجانبي في ChatGPT)
+
+### 2. لا يمكن فتح المتجر؟ حزمة التثبيت المحلية
+
+نزّل من القنوات التالية، ثم اتبع الدليل المناسب للتثبيت:
+
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **تنزيل المرآة (استخدمه عندما لا يمكن الوصول إلى المتجر)**: [Alist Cloud](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud (كلمة المرور: 1qow)](https://wwva.lanzouq.com/b01lsc9vi)
+
+> 📖 أدلة التثبيت: [ملف CRX](./manual-chrome-extension.md) · [ملف ZIP](./manual-chrome-extension-zip.md)
+
+## ✅ بعد التثبيت
+
+اضغط `Alt + Shift + S` لاستدعاء الإضافة، أو انقر على أيقونتها في شريط الأدوات. لمزيد من التفاصيل راجع [دليل الاستخدام](./usage.md).
 
 ## 🧩 برنامج Tampermonkey النصي (Tampermonkey Script)
 
@@ -23,3 +35,7 @@ description: حمل إضافة AI Short لـ Chrome و Edge و Firefox. تكام
 
 من خلال هذا البرنامج النصي، يمكنك إحضار الشريط الجانبي لـ AiShort إلى أي موقع ويب.
 ومع ذلك، يرجى ملاحظة أنه نظرًا لقيود حقن البرنامج النصي في صفحة ChatGPT الرسمية، سيعمل البرنامج النصي كـ **نافذة منبثقة** بدلاً من شريط جانبي على تلك الصفحة.
+
+بعد تفعيل الشريط الجانبي لـ AiShort، سترى أيقونة خضراء تعمل كمفتاح تبديل في الزاوية السفلية اليمنى من المواقع المدعومة. انقر على هذه الأيقونة لفتح الشريط الجانبي أو إغلاقه. تشمل المواقع المدعومة افتراضيًا ChatGPT و Gemini و Claude و Doubao وغيرها.
+
+![](/img/docs/extension-sidebar.gif)

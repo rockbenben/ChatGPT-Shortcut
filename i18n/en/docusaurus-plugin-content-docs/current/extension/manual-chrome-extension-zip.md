@@ -1,23 +1,22 @@
 ---
 sidebar_label: Chrome ZIP Install Guide
 title: Chrome ZIP Install - Manual AI Short Extension Setup
-description: Install AI Short extension in Chrome via ZIP file. Unzip and drag into extensions page. Suitable when CRX cannot be installed.
+description: Install the AI Short extension in Chrome via a ZIP file. Unzip and drag into the extensions page. Suitable when CRX cannot be installed.
 ---
 
 # Chrome ZIP Extension Local Installation Guide
 
-## Download Extension
-
-Download the ChatGPT Shortcut extension ZIP installation package (ChatGPT_Shortcut-zip-3.x.x.zip) and unzip it. (The unzipped folder needs to be kept on the computer, so remember to unzip it to a permanent location.)
-
-- **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
-- **China Download**: [Alist Drive](https://alist.newzone.top:9003/apps/ChatGPT%20Shortcut%20Extension); [Lanzou Cloud](https://wwva.lanzouq.com/b01lsc9vi), password: 1qow
+> This guide assumes you've already downloaded and extracted the ZIP package from the [installation page](./README.md).
+>
+> ⚠️ **Two common pitfalls**:
+> 1. The extracted folder must be **kept permanently** (the extension reads from this directory at runtime) — put it in a permanent location before continuing
+> 2. You drag in the **entire extracted folder** — not the zip file itself, and not an individual file inside the folder
 
 ## Enable Developer Mode
 
 Open Chrome's "Manage Extensions" page and turn on "Developer mode".
 
-Copy the following address and paste it into the browser address bar, then press Enter to open. Turn on "Developer mode" in the top right corner of the page.
+Copy the following address, paste it into the browser address bar, and press Enter. Turn on "Developer mode" in the top right corner of the page.
 
 ```txt
 chrome://extensions
