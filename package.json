@@ -12,7 +12,7 @@
     "prebuild": "node scripts/genCommunitySnapshot.mjs",
     "build": "docusaurus build",
     "prebuild-phased": "node scripts/genCommunitySnapshot.mjs",
-    "build-phased": "docusaurus build --locale zh-Hans --locale en --locale zh-Hant --locale ja --locale ko --locale es --locale pt && docusaurus build --locale hi --locale ind --locale vi --locale th --locale fr --locale de --locale it && docusaurus build --locale ru --locale ar --locale tr --locale bn",
+    "build-phased": "docusaurus build --locale zh-Hans --locale en --locale zh-Hant && docusaurus build --locale ja --locale ko --locale es && docusaurus build --locale pt --locale hi --locale ind && docusaurus build --locale vi --locale th --locale fr && docusaurus build --locale de --locale it --locale ru && docusaurus build --locale ar --locale tr --locale bn",
     "pretypecheck": "node scripts/genCommunitySnapshot.mjs --ensure-only",
     "typecheck": "tsc",
     "swizzle": "docusaurus swizzle",
