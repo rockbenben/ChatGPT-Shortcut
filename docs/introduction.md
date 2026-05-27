@@ -49,6 +49,8 @@ AI Short (ChatGPT Shortcut) 是一个按场景分类的 AI 提示词库，复制
 
 提示词来源于网络精选、社区分享，以及 [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)，持续更新中。
 
+> 还有疑问？看 [常见问题](./guides/faq) ——免费/API Key、跨模型通用、商用授权、数据隐私 13 条整理清楚。
+
 ## 加入社群
 
 欢迎加入我们的社群，交流想法与反馈：

@@ -141,7 +141,7 @@
     "message": "Volver a la lista"
   },
   "community.description": {
-    "message": "¿Necesitas más prompts IA probados? Únete a la comunidad AiShort para descubrir plantillas prácticas, compartir técnicas de optimización y construir una biblioteca de calidad."
+    "message": "Descubre prompts IA compartidos por la comunidad en AiShort. Explora plantillas, intercambia consejos de optimización y contribuye tus propios prompts."
   },
   "community.loading": {
     "message": "Cargando..."
@@ -167,44 +167,8 @@
   "description.importPrompts.short": {
     "message": "Importar prompts y favoritos desde archivo JSON"
   },
-  "faq.a1": {
-    "message": "AiShort (originalmente llamado ChatGPT Shortcut) es una herramienta de gestión de prompts de IA de código abierto que ofrece una lista curada de prompts para ayudarte a encontrar rápidamente instrucciones para diversos escenarios. El proyecto se centró inicialmente en ChatGPT, por lo que el nombre del repositorio en GitHub sigue siendo ChatGPT-Shortcut; actualmente admite todos los principales modelos de lenguaje (incluidos Claude, Gemini, DeepSeek, Kimi, etc.). El nombre se mantiene por continuidad histórica."
-  },
-  "faq.a2": {
-    "message": "Tres pasos: (1) Busca o explora prompts por etiqueta en la página principal; (2) Haz clic en el botón \"Copiar\" en cualquier tarjeta; (3) Pégalo en cualquier herramienta de chat con IA y añade tu pregunta específica siguiendo las instrucciones del prompt."
-  },
-  "faq.a3": {
-    "message": "Los prompts son independientes del modelo y funcionan con todos los principales modelos de lenguaje. Modelos internacionales: ChatGPT, Claude, Gemini, Grok. Modelos chinos: DeepSeek, Qwen, ERNIE Bot, Doubao, Kimi, ChatGLM, Spark, Hunyuan. Plataformas API: OpenRouter, SiliconFlow, Groq."
-  },
-  "faq.a4": {
-    "message": "Awesome ChatGPT Prompts es una de las fuentes de contenido de AiShort. AiShort añade encima: una interfaz gráfica de navegación con filtrado por etiquetas, traducciones en 18 idiomas, gestión personal de prompts (favoritos/ordenación/etiquetas), compartición y votación en comunidad, extensiones para Chrome/Edge/Firefox (Alt+Shift+S para abrir la barra lateral), exportación y respaldo de datos en JSON, y una edición offline para intranets corporativas."
-  },
-  "faq.a5": {
-    "message": "Completamente gratis y de código abierto (código alojado en GitHub). Navegar, buscar y copiar prompts no requiere registro. El registro desbloquea: favoritos con ordenación por arrastrar y soltar, etiquetas personalizadas, creación y gestión de prompts personales, compartición y votación en comunidad, exportación y respaldo en JSON, y sincronización entre dispositivos."
-  },
-  "faq.a6": {
-    "message": "AiShort ofrece una edición offline independiente diseñada para intranets corporativas, redes gubernamentales y otros entornos sin acceso a internet. No requiere servidor backend ni cuenta de usuario, funciona inmediatamente tras la implementación y mantiene funciones básicas como navegación, búsqueda, favoritos y prompts personalizados. El formato de datos es compatible con la versión en línea."
-  },
   "faq.heading": {
     "message": "Preguntas frecuentes"
-  },
-  "faq.q1": {
-    "message": "¿Qué es AiShort? ¿Por qué se llama \"ChatGPT Shortcut\"?"
-  },
-  "faq.q2": {
-    "message": "¿Cómo uso AiShort?"
-  },
-  "faq.q3": {
-    "message": "¿AiShort es solo para ChatGPT? ¿Soporta otros modelos de IA?"
-  },
-  "faq.q4": {
-    "message": "¿En qué se diferencia AiShort de Awesome ChatGPT Prompts y otras colecciones de prompts de código abierto?"
-  },
-  "faq.q5": {
-    "message": "¿AiShort es gratis? ¿Necesito registrarme?"
-  },
-  "faq.q6": {
-    "message": "¿Se puede usar AiShort en intranets corporativas o entornos offline?"
   },
   "faq.scenario.a": {
     "message": "Funciona bien para tareas relacionadas con el título y la descripción de esta página. Si el primer intento no es ideal, añade más contexto en el marcador, o agrega restricciones como «responde paso a paso» o «da ejemplos»."
@@ -264,13 +228,13 @@
     "message": "{tools} y más"
   },
   "homepage.description": {
-    "message": "¿Frustrado con respuestas IA irrelevantes? AiShort ofrece plantillas prácticas para escritura, programación y traducción. ¡Copia con un clic y duplica tu eficiencia!"
+    "message": "Plantillas de prompts IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos."
   },
   "homepage.slogan": {
     "message": "Prompts de IA seleccionados, listos con un clic"
   },
   "homepage.title": {
-    "message": "AiShort - Biblioteca de Prompts IA | Plantillas para Aumentar Productividad"
+    "message": "Biblioteca de Prompts IA para ChatGPT, Claude y Gemini"
   },
   "howto.step1.name": {
     "message": "Copia el prompt"
@@ -1261,5 +1225,11 @@
   },
   "validation.username.required": {
     "message": "¡Por favor ingresa nombre de usuario o correo electrónico registrado!"
+  },
+  "community.heading": {
+    "message": "Comunidad de Prompts IA"
+  },
+  "community.tagline": {
+    "message": "Prompts de IA compartidos por usuarios. Ordena por más recientes o más votados, busca y filtra; tras iniciar sesión, dale like y guárdalos."
   }
 }
