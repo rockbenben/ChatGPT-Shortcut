@@ -1,6 +1,6 @@
 # AiShort
 
-> ¿Frustrado con respuestas IA irrelevantes? AiShort ofrece plantillas prácticas para escritura, programación y traducción. ¡Copia con un clic y duplica tu eficiencia!
+> Plantillas de prompts IA para escritura, código y traducción. Copia con un clic en ChatGPT, Claude, Gemini o DeepSeek para resultados precisos.
 
 ## Documentación
 
@@ -12,7 +12,7 @@
 - [Guía de extensión AI Short - Barra lateral y atajos](https://www.aishort.top/es/docs/extension/usage): Domina la extensión AI Short! Activa la barra lateral con Alt+Shift+S.
 - [Cuenta AI Short - Login Google y Sin Contraseña](https://www.aishort.top/es/docs/guides/account): Inicia sesión con Google o por enlace mágico al correo, sin contraseñas. Aprende a recuperar el acceso y a vaciar la caché para resincronizar tus prompts.
 - [Comunidad AI Short - Comparte y Vota Prompts](https://www.aishort.top/es/docs/guides/community): Explora los prompts mejor valorados por la comunidad, vota lo que te resulta útil y publica los tuyos, o guárdalos en privado solo para ti.
-- [AI Short FAQ - Optimización y Alucinaciones IA](https://www.aishort.top/es/docs/guides/faq): Soluciona problemas comunes con IA - mejora tus prompts, evita "alucinaciones" y aprende a respaldar tus datos importantes.
+- [AI Short Preguntas Frecuentes | Uso, Optimización, Uso Comercial y Privacidad](https://www.aishort.top/es/docs/guides/faq): ¿AiShort es gratis? ¿Los prompts son multi-modelo? ¿Uso comercial permitido? Esta guía responde 13 preguntas sobre uso, optimización, uso comercial y privacidad de datos.
 - [AI Short Inicio Rápido - ChatGPT en 30 Segundos](https://www.aishort.top/es/docs/guides/getting-started): Comienza en 30 segundos. Copia prompts para ChatGPT y Gemini y mejora instantáneamente la calidad de tus conversaciones.
 - [Guía de Interfaz - Búsqueda y Filtros Avanzados](https://www.aishort.top/es/docs/guides/interface): Saca partido a AiShort: combina etiquetas con los modos OR/AND y la búsqueda por palabras clave para dar con el prompt ideal en segundos.
 - [Mi Colección - Organiza y Ordena tus Prompts](https://www.aishort.top/es/docs/guides/my-collection): Reúne tus prompts favoritos en una biblioteca personal: arrastra y suelta para reordenarlos, y agrúpalos con etiquetas de colores propias.

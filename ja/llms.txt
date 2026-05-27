@@ -12,7 +12,7 @@
 - [AI Short 拡張機能の使い方｜サイドバーとショートカット Alt+Shift+S](https://www.aishort.top/ja/docs/extension/usage): AI Short ブラウザ拡張機能をマスター！サイドバーを有効化、Alt+Shift+S ショートカットでプロンプトライブラリをワンキー呼び出し。
 - [AI Short アカウント管理｜Google ログインとパスワードレスログイン](https://www.aishort.top/ja/docs/guides/account): Google アカウントでのログインとメールリンクによるパスワードレスログインに対応。お気に入りのプロンプトへすぐにアクセスでき、パスワードのリセットやアカウントデータの復元も簡単に行えます。
 - [AI Short コミュニティ｜優れた AI プロンプトを発見・共有](https://www.aishort.top/ja/docs/guides/community): コミュニティで共有された AI プロンプトを発見できます。投票の仕組みにより優れたコンテンツが上位に表示され、ご自身のアイデアを共有することも、非公開設定で個人ライブラリとして活用することも可能です。
-- [AI Short よくある質問｜プロンプト最適化と AI ハルシネーション対策](https://www.aishort.top/ja/docs/guides/faq): プロンプトの効果が今ひとつ？AI が偽情報を出力したら？このガイドではよくある質問に答え、プロンプトの最適化、AI ハルシネーションの回避、データのバックアップ方法を解説します。
+- [AI Short よくある質問 | 使い方・最適化・商用・プライバシー](https://www.aishort.top/ja/docs/guides/faq): AiShort は無料？モデル横断利用は可能？商用利用は？本ガイドでは 13 項目で使い方・最適化・商用利用・データプライバシーを解説します。
 - [AI Short 入門ガイド｜ChatGPT/DeepSeek へプロンプトをコピー](https://www.aishort.top/ja/docs/guides/getting-started): 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek などの AI モデルにプロンプトをコピーし、対話品質と作業効率を即座にアップさせましょう。
 - [AI Short インターフェースガイド｜タグフィルタリングとスマート検索](https://www.aishort.top/ja/docs/guides/interface): AI Short のインターフェース機能の使い方をご紹介します。タグフィルタリングやキーワード検索で目的のプロンプトを素早く見つけ、カードの詳細表示やコレクション操作の手順も詳しく解説します。
 - [AI Short マイコレクション｜タグ分類とドラッグ並び替え](https://www.aishort.top/ja/docs/guides/my-collection): お気に入りの AI プロンプトを保存し、カスタムタグで分類して管理できます。ドラッグ＆ドロップによる並べ替えにも対応し、自分専用のプロンプトライブラリを構築できます。

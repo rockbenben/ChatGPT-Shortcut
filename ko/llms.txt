@@ -12,7 +12,7 @@
 - [AI Short 확장 프로그램 가이드 - 사이드바 및 단축키](https://www.aishort.top/ko/docs/extension/usage): AI Short 브라우저 확장 프로그램 마스터! Alt+Shift+S로 프롬프트 라이브러리 호출.
 - [AI Short 계정 관리 - 구글·비밀번호 없는 로그인 완벽 가이드](https://www.aishort.top/ko/docs/guides/account): 구글 계정이나 이메일 링크로 30초 만에 로그인. 즐겨찾기 프롬프트를 기기 간에 동기화하고 비밀번호 재설정, 캐시 초기화까지 한 곳에서 관리하세요.
 - [AI Short 커뮤니티 프롬프트 - 공유·발견·투표 가이드](https://www.aishort.top/ko/docs/guides/community): 다른 사용자가 만든 AI 프롬프트를 발견하고 내 아이디어도 공유해 보세요. 투표로 좋은 글을 띄우고, 비공개 설정으로 나만의 라이브러리도 함께 운영할 수 있습니다.
-- [AI Short FAQ - 프롬프트 최적화·환각 대처법](https://www.aishort.top/ko/docs/guides/faq): AI 답변이 이상한가요? 프롬프트 작성 팁부터 AI '환각' 대처, 데이터 백업 방법까지 자주 묻는 문제 해결법을 정리했습니다.
+- [AI Short 자주 묻는 질문 | 사용법・최적화・상업 이용・개인정보](https://www.aishort.top/ko/docs/guides/faq): AiShort은 무료인가요? 모델 간 호환되나요? 상업 이용 가능? 이 가이드는 사용법, 최적화, 상업 이용, 데이터 프라이버시 등 13가지 자주 묻는 질문을 답변합니다.
 - [AI Short 퀵스타트 - 30초 만에 ChatGPT 활용](https://www.aishort.top/ko/docs/guides/getting-started): 30초 만에 AI 활용 효율 UP! ChatGPT, Gemini 등에 최적화된 프롬프트를 복사해 대화 품질을 즉시 향상시키세요.
 - [AI Short 인터페이스 가이드 - 태그·키워드 검색 완벽 정리](https://www.aishort.top/ko/docs/guides/interface): AI Short 홈 화면을 100% 활용해 보세요. 태그 필터와 키워드 검색으로 원하는 프롬프트를 바로 찾고, 카드 상세 보기와 즐겨찾기까지 한눈에 익힐 수 있습니다.
 - [마이 컬렉션 - 즐겨찾기 태그 정리와 드래그 정렬](https://www.aishort.top/ko/docs/guides/my-collection): 마음에 드는 AI 프롬프트를 태그로 묶고 드래그 한 번으로 순서를 바꿔 보세요. 나만의 프롬프트 사전을 손쉽게 만들고 여러 기기에서 동기화할 수 있습니다.

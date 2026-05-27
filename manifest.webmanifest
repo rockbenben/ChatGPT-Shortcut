@@ -1,0 +1,26 @@
+{
+  "name": "AiShort - AI Prompt Library",
+  "short_name": "AiShort",
+  "description": "AiShort 收录论文写作、编程、翻译等场景的实用 AI 提示词模板，一键复制即可让 AI 精准理解指令。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0f",
+  "theme_color": "#397e6a",
+  "lang": "zh-Hans",
+  "icons": [
+    {
+      "src": "/img/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/logo.png",
+      "type": "image/png",
+      "sizes": "200x200",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["productivity", "education", "utilities"]
+}

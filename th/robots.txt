@@ -8,6 +8,10 @@ Disallow: /*/user/
 
 # AI / LLM crawlers — explicitly allow indexing of public pages
 # Each bot inherits the global Disallow rules above (private/auth pages stay blocked)
+#
+# 用户触发型 fetcher（ChatGPT-User / Kimi-User / Perplexity-User）—— 来自用户主动「让 AI 打开此链接」
+
+# --- OpenAI ---
 User-agent: GPTBot
 Allow: /
 
@@ -17,6 +21,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# --- Anthropic ---
 User-agent: ClaudeBot
 Allow: /
 
@@ -26,13 +31,18 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# --- Perplexity ---
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
+# --- Google / Meta / 其他 ---
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: CCBot
@@ -41,7 +51,114 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# === 中文 AI 答案引擎爬虫 ===
+# 中文用户基数大，AiShort 默认 locale 为 zh-Hans，下列爬虫覆盖主流国产 AI 产品
+
+# --- 字节系（今日头条/抖音搜索/豆包）---
 User-agent: Bytespider
+Allow: /
+
+User-agent: Doubaobot
+Allow: /
+
+User-agent: ByteDance-AI
+Allow: /
+
+# --- 月之暗面 Kimi（Kimibot / Kimi-User / Kimi-SearchBot 来自官方 Kimi Crawlers 文档；MoonshotBot 见于 Akamai/SVT robots.txt）---
+User-agent: Kimibot
+Allow: /
+
+User-agent: MoonshotBot
+Allow: /
+
+User-agent: Kimi-User
+Allow: /
+
+User-agent: Kimi-SearchBot
+Allow: /
+
+# --- DeepSeek ---
+User-agent: DeepSeekBot
+Allow: /
+
+# --- 智谱 GLM / 清言（ChatGLM-Spider 见 NVIDIA / Rankly；ZhipuBot 见 Akamai / bagofchina）---
+User-agent: ChatGLM-Spider
+Allow: /
+
+User-agent: ZhipuBot
+Allow: /
+
+# --- 阿里 通义/Qwen（QwenBot/TongyiBot 见 xSeek 官方 UA 汇总；Qwen/Tongyi token 形式见 NVIDIA / Akamai；AliyunBot 是官方品牌名）---
+User-agent: Qwen
+Allow: /
+
+User-agent: QwenBot
+Allow: /
+
+User-agent: Tongyi
+Allow: /
+
+User-agent: TongyiBot
+Allow: /
+
+User-agent: AliyunBot
+Allow: /
+
+# --- 腾讯 混元/元宝 ---
+User-agent: HunyuanBot
+Allow: /
+
+User-agent: TencentBot
+Allow: /
+
+User-agent: Yuanbaobot
+Allow: /
+
+User-agent: Wenxiaobai
+Allow: /
+
+# --- 华为 Petal/盘古 ---
+User-agent: PetalBot
+Allow: /
+
+User-agent: PanguBot
+Allow: /
+
+# --- 讯飞星火 / 百川 / 商汤 / 零一万物 / 昆仑万维 ---
+User-agent: SparkBot
+Allow: /
+
+User-agent: Xinghuo
+Allow: /
+
+User-agent: BaichuanBot
+Allow: /
+
+User-agent: SenseNovaBot
+Allow: /
+
+User-agent: YiBot
+Allow: /
+
+User-agent: SkyworkBot
 Allow: /
 
 Sitemap: https://www.aishort.top/sitemap.xml

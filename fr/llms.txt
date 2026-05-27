@@ -1,6 +1,6 @@
 # AiShort
 
-> Frustré par des réponses IA hors sujet ? AiShort propose des modèles pratiques pour l'écriture, le code et la traduction. Copiez en un clic et doublez votre efficacité !
+> Modèles de prompts IA pour l'écriture, le code et la traduction. Copiez en un clic dans ChatGPT, Claude, Gemini ou DeepSeek pour des résultats précis.
 
 ## Documentation
 
@@ -12,7 +12,7 @@
 - [Utilisation de lextension AI Short | Barre latérale et raccourci Alt+Shift+S](https://www.aishort.top/fr/docs/extension/usage): Maîtrisez l'extension navigateur AI Short ! Activez la barre latérale et appelez votre bibliothèque de prompts d'un seul raccourci Alt+Shift+S.
 - [Compte AI Short | Connexion Google et lien magique](https://www.aishort.top/fr/docs/guides/account): Connectez-vous en un clic avec Google ou par lien magique envoyé par e-mail, sans mot de passe à retenir. Retrouvez votre collection sur tous vos appareils et reprenez vos prompts là où vous les avez laissés.
 - [Communauté AI Short | Prompts ChatGPT et Le Chat partagés](https://www.aishort.top/fr/docs/guides/community): Explorez les prompts ChatGPT, Le Chat et Claude partagés par la communauté francophone. Les votes font remonter les meilleures idées ; publiez vos créations pour gagner en visibilité ou gardez-les privées.
-- [FAQ AI Short | Optimisation des prompts et gestion des hallucinations](https://www.aishort.top/fr/docs/guides/faq): Les résultats des prompts ne sont pas satisfaisants ? L'IA produit de fausses informations ? Ce guide répond aux questions fréquentes : optimisez vos prompts, évitez les hallucinations et sauvegardez vos données.
+- [AI Short FAQ | Utilisation, Optimisation, Commercial & Confidentialité](https://www.aishort.top/fr/docs/guides/faq): AiShort est-il gratuit ? Les prompts sont-ils multi-modèles ? Usage commercial possible ? Ce guide répond à 13 questions sur utilisation, optimisation, commercial et confidentialité.
 - [Guide de démarrage AI Short | Copiez des prompts vers ChatGPT, DeepSeek](https://www.aishort.top/fr/docs/guides/getting-started): Prise en main en 30 secondes ! Copiez des prompts vers ChatGPT, Gemini, DeepSeek et d'autres modèles d'IA pour améliorer instantanément la qualité de vos conversations et votre productivité.
 - [Guide de linterface AI Short | Filtres par balises et recherche](https://www.aishort.top/fr/docs/guides/interface): Prenez en main l'interface d'AI Short en quelques minutes. Trouvez le bon prompt grâce au filtrage par balises et à la recherche par mots-clés, puis copiez-le en un clic pour ChatGPT, Le Chat ou Claude.
 - [Ma collection AI Short | Balises personnalisées et tri par glisser-déposer](https://www.aishort.top/fr/docs/guides/my-collection): Organisez vos prompts IA favoris avec des balises personnalisées et un tri par glisser-déposer. Construisez votre bibliothèque de prompts sur mesure pour ChatGPT, Le Chat et Claude, synchronisée entre vos appareils.

@@ -12,7 +12,7 @@
 - [AI Short 擴展使用 | 側邊欄與快捷鍵 Alt+Shift+S](https://www.aishort.top/zh-Hant/docs/extension/usage): 掌握 AI Short 瀏覽器擴展！啓用側邊欄、Alt+Shift+S 快捷鍵一鍵喚出提示詞庫。
 - [AI Short 賬戶管理 | Google 登錄與無密碼登錄](https://www.aishort.top/zh-Hant/docs/guides/account): AI Short 支持 Google 一鍵登錄、郵箱無密碼登錄，快速訪問個人收藏與跨設備同步。忘記密碼可一鍵重置，輕鬆找回賬戶數據。
 - [AI Short 社區 | 發現分享優質 AI 提示詞](https://www.aishort.top/zh-Hant/docs/guides/community): 在 AI Short 社區發現精選提示詞，通過投票機制篩選優質內容，分享你的創意獲得曝光，或設爲私密僅自己可見。
-- [AI Short 常見問題 | 提示詞優化與 AI 幻覺處理](https://www.aishort.top/zh-Hant/docs/guides/faq): 提示詞效果不理想？AI 輸出虛假信息怎麼辦？本指南解答常見問題，教你優化提示詞、避免 AI 幻覺、備份數據。
+- [AI Short 常見問題 | 使用、優化、商用與資料隱私](https://www.aishort.top/zh-Hant/docs/guides/faq): AiShort 免費嗎？跨模型通用？可商用？本指南解答 13 條常見問題，涵蓋使用、優化、商用授權與資料隱私。
 - [AI Short 入門指南 | 複製提示詞到 ChatGPT/DeepSeek](https://www.aishort.top/zh-Hant/docs/guides/getting-started): 30 秒快速上手！複製提示詞到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升對話質量與工作效率。
 - [AI Short 界面指南 | 標籤篩選與智能搜索功能](https://www.aishort.top/zh-Hant/docs/guides/interface): 掌握 AI Short 首頁界面，通過標籤篩選與關鍵詞搜索快速定位提示詞，瞭解卡片詳情、複製與收藏操作。
 - [AI Short 我的收藏 | 標籤分類與拖拽排序](https://www.aishort.top/zh-Hant/docs/guides/my-collection): 在 AI Short 收藏喜歡的提示詞，通過自定義標籤分類管理，支持拖拽排序與跨設備同步，打造個性化提示詞庫。
