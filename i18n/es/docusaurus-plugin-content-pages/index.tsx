@@ -425,7 +425,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     });
   }, [filteredCommus, voteDeltas]);
 
-  // Phase 5: 追踪已加载卡片数量，用于入场动画
+  // 已加载卡片数量，用于入场动画
   const prevOtherCountRef = useRef(otherUsers.length);
   useEffect(() => {
     prevOtherCountRef.current = otherUsers.length;
@@ -869,7 +869,7 @@ export default function Showcase(): React.ReactElement {
   useEffect(() => {
     if (ExecutionEnvironment.canUseDOM) {
       setShareUrl(window.location.href);
-      cleanupLegacyCache(); // 清理遗留缓存数据
+      cleanupLegacyCache();
     }
   }, []);
 
@@ -877,62 +877,11 @@ export default function Showcase(): React.ReactElement {
   // - WebSite + SearchAction：让 ChatGPT/Perplexity/Google 在 SERP 直接激活站内搜索框
   // - Organization + sameAs：建立知识图谱实体关联（GitHub repo）
   // - SoftwareApplication：让 LLM 在"工具推荐"答案中考虑 AiShort
-  // - FAQPage：让 LLM 直接抓取常见问答
   const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
   // schema.org 要 BCP-47：读 docusaurus.config.js localeConfigs[locale].htmlLang（覆盖 ind→id 这种历史命名）
   const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
   const homeUrl = `${siteConfig.url}${localePrefix}/`;
   const orgId = `${siteConfig.url}/#organization`;
-
-  // FAQ 内容均基于项目自身 README / docs 中的事实信息（非营销卖点、非推测）
-  // 通过 translate() 在 build 时按 locale 渲染
-  const faqs = [
-    {
-      q: translate({ id: "faq.q1", message: 'AiShort 是什么？为什么叫 "ChatGPT Shortcut"？' }),
-      a: translate({
-        id: "faq.a1",
-        message:
-          "AiShort（项目原名 ChatGPT Shortcut）是一个开源的 AI 提示词管理工具，提供精选的提示词列表帮你快速找到适用于不同场景的指令。项目最初聚焦 ChatGPT，所以代码仓库名沿用 ChatGPT-Shortcut；目前已支持所有主流大语言模型（含 Claude、Gemini、DeepSeek、Kimi 等），名字保留是出于历史延续。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.q2", message: "怎么用 AiShort？" }),
-      a: translate({
-        id: "faq.a2",
-        message: "三步完成：(1) 在首页搜索或按标签浏览所需提示词；(2) 点击卡片「复制」按钮；(3) 粘贴到任意 AI 对话工具，按提示词指引补充你的具体问题。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.q3", message: "只能用于 ChatGPT 吗？支持其他 AI 模型吗？" }),
-      a: translate({
-        id: "faq.a3",
-        message:
-          "提示词与模型无关，可用于所有主流大语言模型。国际模型：ChatGPT、Claude、Gemini、Grok。中国模型：DeepSeek、通义千问、文心一言、豆包、Kimi、智谱清言、讯飞星火、腾讯元宝。API 平台：OpenRouter、硅基流动、Groq。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.q4", message: "AiShort 跟 Awesome ChatGPT Prompts 等开源提示词集有什么区别？" }),
-      a: translate({
-        id: "faq.a4",
-        message:
-          "Awesome ChatGPT Prompts 是 AiShort 的内容来源之一，但 AiShort 在其基础上提供了：图形化浏览界面与标签筛选、18 种语言翻译、个人提示词管理（收藏/排序/标签）、社区分享与投票、Chrome/Edge/Firefox 浏览器扩展（Alt+Shift+S 唤出侧边栏）、JSON 数据导出备份、企业内网离线部署版。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.q5", message: "AiShort 免费吗？需要注册吗？" }),
-      a: translate({
-        id: "faq.a5",
-        message: "完全免费且开源（代码托管在 GitHub）。浏览、搜索、复制提示词无需注册。注册后可解锁：收藏与拖拽排序、自定义标签、创建并管理个人提示词、社区分享与投票、JSON 导出备份、跨设备同步。",
-      }),
-    },
-    {
-      q: translate({ id: "faq.q6", message: "AiShort 可以在企业内网或离线环境使用吗？" }),
-      a: translate({
-        id: "faq.a6",
-        message: "提供独立的离线部署版，专为企业内网、政务网络等无法访问外网的环境设计。无需后端服务器和用户账号，部署后开箱即用，保留浏览、搜索、收藏、自定义提示词等核心功能，数据格式与在线版互通。",
-      }),
-    },
-  ];
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -959,6 +908,7 @@ export default function Showcase(): React.ReactElement {
         "@id": orgId,
         url: siteConfig.url,
         name: SITE_NAME,
+        alternateName: ["ChatGPT Shortcut", "AI Short"],
         logo: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
         sameAs: ["https://github.com/rockbenben/ChatGPT-Shortcut"],
       },
@@ -974,21 +924,15 @@ export default function Showcase(): React.ReactElement {
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         publisher: { "@id": orgId },
       },
-      {
-        "@type": "FAQPage",
-        inLanguage: bcp47Locale,
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
     ],
   };
 
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <Head>
+        {/* X 官方文档（2026 仍生效）说 twitter: 标签与 og: 「类似但不完全相同」，建议同时提供；fallback 到 og: 不应作唯一方案 */}
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title={SITE_NAME} />
         <link rel="llms-txt" href="/llms.txt" />
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
