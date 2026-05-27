@@ -49,6 +49,8 @@ Sesederhana itu — untuk cara penggunaan lainnya, lihat [Panduan Memulai](./gui
 
 Prompt bersumber dari pilihan internet, berbagi komunitas, dan [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts), terus diperbarui.
 
+> Pertanyaan lain? Lihat [Pertanyaan Umum](./guides/faq) — 13 topik tentang gratis/API Key, kompatibilitas multi-model, penggunaan komersial, dan privasi data.
+
 ## Bergabung dengan Komunitas
 
 Bergabunglah dengan komunitas kami untuk berdiskusi dan berbagi umpan balik:

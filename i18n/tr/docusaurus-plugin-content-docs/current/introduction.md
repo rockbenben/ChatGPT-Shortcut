@@ -49,6 +49,8 @@ Bu kadar basit—daha fazla özellik için [Başlarken Kılavuzu](./guides/getti
 
 Promptlar internet seçmelerinden, topluluk paylaşımlarından ve [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)'tan derlenmiştir ve sürekli güncellenmektedir.
 
+> Başka sorularınız mı var? [SSS](./guides/faq) sayfasına bakın — ücretsiz/API Key, modeller arası uyumluluk, ticari kullanım ve veri gizliliği konularında 13 başlık.
+
 ## Topluluğa Katılın
 
 Fikir alışverişi ve geri bildirim için topluluğumuza katılmaya hoş geldiniz:
