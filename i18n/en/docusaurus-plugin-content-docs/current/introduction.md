@@ -49,6 +49,8 @@ The [offline edition](./guides/offline) is designed for corporate intranets, gov
 
 Prompts are sourced from curated picks, community shares, and [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) — continuously updated.
 
+> Got more questions? See the [FAQ](./guides/faq) — 13 topics covering free / API Key, cross-model compat, commercial use, and data privacy.
+
 ## Join the Community
 
 Welcome to join our community to exchange ideas and feedback:

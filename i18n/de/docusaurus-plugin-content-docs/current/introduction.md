@@ -49,6 +49,8 @@ Die [Offline-Version](./guides/offline) ist speziell für Unternehmens-Intranets
 
 Prompts stammen aus Internet-Auswahlen, Community-Beiträgen und [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) und werden kontinuierlich aktualisiert.
 
+> Noch Fragen? Siehe [FAQ](./guides/faq) — 13 Themen zu Kostenlos/API-Key, Modellkompatibilität, kommerzieller Nutzung und Datenschutz.
+
 ## Treten Sie der Community bei
 
 Willkommen in unserer Community, um Ideen und Feedback auszutauschen:

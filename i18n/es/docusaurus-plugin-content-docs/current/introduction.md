@@ -49,6 +49,8 @@ La [versión de despliegue offline](./guides/offline) está diseñada para escen
 
 Los prompts provienen de selecciones de internet, contribuciones de la comunidad y [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts). Actualizamos continuamente.
 
+> ¿Más preguntas? Consulta las [Preguntas Frecuentes](./guides/faq) — 13 temas sobre gratis/API Key, compatibilidad multi-modelo, uso comercial y privacidad.
+
 ## Únete a la Comunidad
 
 Bienvenido a unirte a nuestra comunidad para intercambiar ideas y comentarios:

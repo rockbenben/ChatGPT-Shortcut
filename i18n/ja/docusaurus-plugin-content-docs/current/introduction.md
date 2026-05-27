@@ -49,6 +49,8 @@ AI Short (ChatGPT Shortcut) は、シーン別に整理された AI プロンプ
 
 プロンプトはインターネットの厳選、コミュニティ共有、および [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts) から提供されています。継続的に更新中です。
 
+> もっと知りたい？[よくある質問](./guides/faq) —— 無料/API Key、モデル互換、商用利用、データプライバシーの 13 項目を整理。
+
 ## コミュニティに参加
 
 アイデアやフィードバックを交換するために、私たちのコミュニティに参加することを歓迎します：

@@ -49,6 +49,8 @@ AI Short (ChatGPT Shortcut) là thư viện prompt AI được phân loại theo
 
 Các prompt được lấy từ tuyển chọn trên internet, chia sẻ cộng đồng và [Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts), liên tục được cập nhật.
 
+> Còn thắc mắc? Xem [Câu hỏi thường gặp](./guides/faq) — 13 chủ đề về miễn phí/API Key, tương thích đa mô hình, sử dụng thương mại và bảo mật dữ liệu.
+
 ## Tham gia cộng đồng
 
 Chào mừng bạn tham gia cộng đồng của chúng tôi để trao đổi ý tưởng và phản hồi:
