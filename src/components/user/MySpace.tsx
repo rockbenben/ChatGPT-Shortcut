@@ -577,7 +577,6 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
   };
 
-  // 删除提示词 - 显示确认对话框并删除
   const handleDeletePrompt = useCallback(
     (promptId: string) => {
       confirmRemovePrompt(Number(promptId));
@@ -593,13 +592,12 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const itemData = data[currentLanguage] || data["zh-Hans"] || data["en"];
         const isDataCard = !!(itemData && itemData.title);
 
-        // 构建提示词数据
         const promptData = {
           title: isDataCard ? itemData.title : data.title,
           description: isDataCard ? itemData.prompt : data.description,
           remark: isDataCard ? itemData.remark : data.remark,
           notes: `从社区提示词转换（原ID: ${data.id}）`,
-          share: false, // 设为私有
+          share: false,
         };
 
         const success = await addUserPrompt(promptData);

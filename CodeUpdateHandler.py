@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Try to import opencc for Traditional Chinese conversion
@@ -10,6 +11,40 @@ try:
 except ImportError:
     converter = None
     print("Warning: opencc-python-reimplemented not found. Traditional Chinese conversion will be skipped (content will remain Simplified).")
+
+# 给每张卡片注入 (id, lang) 维度的 datePublished / dateModified。
+# Card 本身充当 manifest：脚本读旧 card 内容 → 与新内容（去掉 date 字段）比对
+#   - 内容相同：保留旧 dates（哪怕跨多次重建也稳定）
+#   - 内容改了：dateModified 更新为本次 build 时间，datePublished 保留（首发日不变）
+#   - 卡片不存在：两个 date 都用 build 时间
+# 不走「git log of cards」路线，因为 cards 是批量生成 + 批量提交，
+# 同一 commit 会把 5000 张卡同时打上相同 timestamp，反而稀释 freshness 信号。
+BUILD_DATE_ISO = datetime.now(timezone.utc).isoformat(timespec='seconds')
+
+
+def compute_card_dates(card_abs_path, new_lang_data):
+    old_data = None
+    if os.path.exists(card_abs_path):
+        try:
+            with open(card_abs_path, 'r', encoding='utf-8') as f:
+                old_data = json.load(f)
+        except Exception:
+            old_data = None
+
+    if old_data is None:
+        return (BUILD_DATE_ISO, BUILD_DATE_ISO)
+
+    old_no_dates = {k: v for k, v in old_data.items() if k not in ('datePublished', 'dateModified')}
+    if old_no_dates == new_lang_data:
+        return (
+            old_data.get('datePublished') or BUILD_DATE_ISO,
+            old_data.get('dateModified') or BUILD_DATE_ISO,
+        )
+    return (
+        old_data.get('datePublished') or BUILD_DATE_ISO,
+        BUILD_DATE_ISO,
+    )
+
 
 # 将 prompt.json 按语言分割成多个文件
 # 获取当前目录的路径
@@ -199,11 +234,29 @@ def compute_related_map(all_data, top_n=3):
 def save_data_by_id_and_language(data):
     # 预计算全量 related 映射（tag 重叠度 + weight）
     related_map = compute_related_map(data)
+    # 索引：{id: full_item} 用来在写卡片时反查 related 的 title/remark
+    by_id = {item.get('id'): item for item in data if item.get('id') is not None}
 
     for item in data:
         for lang in allLanguages:
             content = get_lang_content(item, lang)
             if content:
+                # 把 related 从 [id, id, id] 展开成 [{id, title, remark}, ...]
+                # SSR HTML 里就能直接渲染 H2 + 3 个 <a> 卡片，AI 引擎不执行 JS 也能抓到
+                related_full = []
+                for rid in related_map.get(item["id"], []):
+                    related_item = by_id.get(rid)
+                    if related_item is None:
+                        continue
+                    rcontent = get_lang_content(related_item, lang)
+                    if not rcontent:
+                        continue
+                    related_full.append({
+                        "id": rid,
+                        "title": rcontent.get("title", ""),
+                        "remark": rcontent.get("remark", ""),
+                    })
+
                 # 提取当前语言的数据
                 lang_data = {
                     "id": item["id"],
@@ -211,8 +264,8 @@ def save_data_by_id_and_language(data):
                     "tags": item.get("tags", []),
                     "website": item.get("website", ""),
                     "count": item.get("weight", 0),
-                    # build-time 预计算的相关 prompt IDs（同 tag 按热度 top 3）
-                    "related": related_map.get(item["id"], []),
+                    # build-time 预计算的相关 prompt 完整显示数据（同 tag 按热度 top 3）
+                    "related": related_full,
                     # 合并 meta title（如果存在）
                     "metaTitle": get_meta_content(item["id"], 'title', lang),
                     # 合并 meta description（如果存在）
@@ -223,6 +276,10 @@ def save_data_by_id_and_language(data):
                 }
                 # 定义输出文件路径
                 output_file_path = os.path.join(output_dir_path_cards, f'{item["id"]}_{lang}.json')
+                # 注入 datePublished / dateModified（内容未变就保留旧值）
+                date_pub, date_mod = compute_card_dates(output_file_path, lang_data)
+                lang_data["datePublished"] = date_pub
+                lang_data["dateModified"] = date_mod
                 # 保存为 JSON 文件
                 with open(output_file_path, 'w', encoding='utf-8') as file:
                     json.dump(lang_data, file, ensure_ascii=False, separators=(',', ':'))
