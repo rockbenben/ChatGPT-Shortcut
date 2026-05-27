@@ -57,7 +57,6 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
 
-
   const handleToggleFavorite = useCallback(() => {
     if (!userAuth) {
       messageApi.warning(translate({ id: "message.loginRequired", message: "请先登录" }));
@@ -157,7 +156,15 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   return (
     <Layout title={seoTitle} description={seoDescription}>
       <Head>
+        {/* CSR-only：Docusaurus 默认对 SPA 路由 /community-prompt 只能发静态 canonical/og;
+            JS 执行后用真实 ?id= 与 prompt 标题覆盖（Googlebot 执行 JS 会读到）。
+            twitter: 与 og: 同时提供，因为 X 官方文档说 fallback「类似但不完全相同」 */}
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
       </Head>
       <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
         <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">

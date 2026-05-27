@@ -85,7 +85,7 @@ const CommunityPrompts = () => {
       ],
     };
     return { pageUrl: url, collectionSchemaJson: JSON.stringify(schema), localePrefix: pfx };
-  }, [i18n.currentLocale, i18n.defaultLocale, siteConfig.url]);
+  }, [i18n.currentLocale, i18n.defaultLocale, i18n.localeConfigs, siteConfig.url]);
   // 默认视图（page=1, sort=id, 无搜索）从构建期快照初始化，让 SSG HTML 里就含真实卡片，
   // 把 LCP 元素从「等 API 后渲染的 PromptCard」前移到 HTML 解析阶段
   // useMemo 保证仅初始计算一次：仅 useState 默认值用，subsequent render 不重建 12 项数组
@@ -284,7 +284,9 @@ const CommunityPrompts = () => {
   return (
     <Layout title={COMMU_TITLE} description={COMMU_DESCRIPTION}>
       <Head>
-        <link rel="canonical" href={pageUrl} />
+        {/* X 官方建议 twitter: 与 og: 同时提供（fallback 不完全等价） */}
+        <meta name="twitter:title" content={COMMU_TITLE} />
+        <meta name="twitter:description" content={COMMU_DESCRIPTION} />
         <script type="application/ld+json">{collectionSchemaJson}</script>
       </Head>
       <main className="margin-vert--md">
@@ -307,6 +309,18 @@ const CommunityPrompts = () => {
               ]}
               style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
             />
+
+            {/* H1 + tagline — 给 AI 引擎主标题 chunk 入口；视觉上简洁不抢主体 */}
+            <div style={{ marginBottom: 24, paddingLeft: 8, paddingRight: 8 }}>
+              <h1 style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em", margin: 0, color: "var(--ifm-color-content)" }}>
+                <Translate id="community.heading">AI 提示词社区</Translate>
+              </h1>
+              <h2 style={{ marginTop: 6, marginBottom: 0, fontSize: 14, fontWeight: 500, color: "var(--site-color-text-tertiary)", lineHeight: 1.55 }}>
+                <Translate id="community.tagline">由用户投稿与分享的 AI 提示词。按最新发布或最多赞排序，支持搜索筛选，登录后可点赞与收藏。</Translate>
+              </h2>
+            </div>
+
+            {/* H2 — Sort + Search 区段标题，给 AI 引擎第二个 chunk 入口 */}
 
             {/* Sort + Search — same row; search fills remaining space via flex: 1 */}
             <Flex wrap="wrap" gap="middle" align="center" style={{ marginBottom: 24 }}>
@@ -336,7 +350,15 @@ const CommunityPrompts = () => {
               <Row gutter={[16, 16]}>
                 {userprompts.map((commuPrompt) => (
                   <Col key={commuPrompt.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                    <PromptCard type="community" data={commuPrompt} onVote={vote} isFavorite={commLovesSet.has(commuPrompt.id)} isLoggedIn={!!userAuth} onToggleFavorite={onToggleFavorite} onOpenModal={onOpenModal} />
+                    <PromptCard
+                      type="community"
+                      data={commuPrompt}
+                      onVote={vote}
+                      isFavorite={commLovesSet.has(commuPrompt.id)}
+                      isLoggedIn={!!userAuth}
+                      onToggleFavorite={onToggleFavorite}
+                      onOpenModal={onOpenModal}
+                    />
                   </Col>
                 ))}
               </Row>

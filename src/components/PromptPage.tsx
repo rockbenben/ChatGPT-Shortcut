@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo, useState } from "react";
+import React, { Suspense, useMemo, useState } from "react";
 import { Card, Typography, Space, Row, Col, Button, Flex, Breadcrumb, Popover } from "antd";
 import { LinkOutlined, FireFilled, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
@@ -9,7 +9,6 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
-import { fetchCardsByIds, type CardData } from "@site/src/api/homepage";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import Comments from "./Comments";
@@ -26,7 +25,9 @@ const sheetCardStyle: React.CSSProperties = {
 const sheetCardBodyStyle: React.CSSProperties = { padding: "clamp(20px, 3vw, 32px)" };
 const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 
-const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
+// 提升为 <h2> 给 AI 引擎按 H2 chunk 抓取（详情页 6 个 section 各自一个 H2 入口）；
+// 视觉仍由 .comp-sheet-eyebrow 控制（uppercase mono tertiary），margin:0 防止 browser h2 默认大间距
+const Eyebrow = ({ children }: { children: React.ReactNode }) => <h2 className="comp-sheet-eyebrow">{children}</h2>;
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function PromptPage({ prompt, currentLanguage }) {
@@ -37,23 +38,11 @@ function PromptPage({ prompt, currentLanguage }) {
 
   const promptInfo = prompt[currentLanguage] || prompt;
 
-  // Item 10: prompt.related 由 CodeUpdateHandler.py 在 build-time 预计算并写入各 card JSON
-  // 运行时仅用 IDs 拉取精简卡片数据
-  const [related, setRelated] = useState<CardData[]>([]);
-  useEffect(() => {
-    const ids: number[] = Array.isArray((prompt as any).related) ? (prompt as any).related : [];
-    if (ids.length === 0) return;
-    let cancelled = false;
-    fetchCardsByIds(ids, currentLanguage)
-      .then((cards) => {
-        if (cancelled) return;
-        setRelated(cards.filter((c) => c.id !== prompt.id).slice(0, 3));
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [prompt.id, currentLanguage]);
+  // related 在 CodeUpdateHandler.py 已展开成 [{id, title, remark}, ...]（按当前 lang），
+  // 直接同步读取 → SSR HTML 就含完整 H2 + 3 个 <a>，不执行 JS 的 AI 爬虫也能抓到
+  const related: Array<{ id: number; title: string; remark: string }> = Array.isArray((prompt as any).related)
+    ? (prompt as any).related
+    : [];
 
   // Item 8: 字符 / token 统计（useMemo 缓存）
   const charCount = useMemo(() => (promptInfo.prompt || "").length, [promptInfo.prompt]);
@@ -77,16 +66,17 @@ function PromptPage({ prompt, currentLanguage }) {
   const bcp47Locale = toBcp47(currentLanguage, i18n.localeConfigs);
   const canonicalUrl = `${siteConfig.url}${localePrefix}/prompt/${prompt.id}`;
 
-  // schema.org Article + BreadcrumbList + HowTo + FAQPage JSON-LD（Tier 1 GEO: 提升 LLM 引用率）
   const homeUrl = `${siteConfig.url}${localePrefix}/`;
-  // datePublished/dateModified 用 build time，避免 Google "missing field" 警告
+  // CodeUpdateHandler.py 给每张卡片注入 (id, lang) 维度的 git 历史；新增 prompt 尚未提交时回退 buildDate
   const buildDate = (siteConfig.customFields?.buildDate as string) || new Date().toISOString();
+  const datePublished = (prompt as any).datePublished || buildDate;
+  const dateModified = (prompt as any).dateModified || buildDate;
   // 通过 @id 引用主页定义的 Organization / WebSite 实体（关联知识图谱）
   const orgId = `${siteConfig.url}/#organization`;
   const websiteId = `${siteConfig.url}/#website`;
 
-  // Tier 2: hreflang alternates — 对 LLM 和搜索引擎声明 18 locale 互为翻译
-  // hreflang 必须是合法 BCP 47 代码，toBcp47 内部读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
+  // hreflang × 18 locales 互为翻译，给 LLM 与搜索引擎用；
+  // toBcp47 内部读 localeConfigs.htmlLang，覆盖 ind→id 这种历史命名
   const hreflangAlternates = i18n.locales.map((loc) => {
     const pfx = loc === i18n.defaultLocale ? "" : `/${loc}`;
     return { hreflang: toBcp47(loc, i18n.localeConfigs), href: `${siteConfig.url}${pfx}/prompt/${prompt.id}` };
@@ -144,15 +134,14 @@ function PromptPage({ prompt, currentLanguage }) {
         description: seoDescription,
         url: canonicalUrl,
         inLanguage: bcp47Locale,
-        datePublished: buildDate,
-        dateModified: buildDate,
-        image: { "@type": "ImageObject", url: `${siteConfig.url}/img/logo.png`, width: 200, height: 200 },
+        datePublished,
+        dateModified,
+        image: { "@type": "ImageObject", url: `${siteConfig.url}/img/social-card.png`, width: 1280, height: 640 },
         keywords: Array.isArray(tags) ? tags.join(", ") : undefined,
         author: { "@id": orgId },
         publisher: { "@id": orgId },
         isPartOf: { "@id": websiteId },
         mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
-        // Tier 1 GEO: prompt-specific semantic fields
         about: Array.isArray(tags) ? tags.map((t) => ({ "@type": "Thing", name: t })) : undefined,
         audience: {
           "@type": "Audience",
@@ -163,9 +152,8 @@ function PromptPage({ prompt, currentLanguage }) {
         genre: "AI Prompt",
         license: "https://creativecommons.org/licenses/by-sa/4.0/",
         copyrightHolder: { "@id": orgId },
-        copyrightYear: new Date(buildDate).getFullYear(),
+        copyrightYear: new Date(datePublished).getFullYear(),
         speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".prompt-remark"] },
-        // HowTo steps (composite Article + HowTo)
         totalTime: "PT1M",
         step: howToSteps.map((s, i) => ({
           "@type": "HowToStep",
@@ -173,7 +161,7 @@ function PromptPage({ prompt, currentLanguage }) {
           name: s.name,
           text: s.text,
         })),
-        // Tier 4: 把 prompt body 标为可复用代码片段（CodeSnippet）
+        // prompt body 作为可复用 CreativeWork（SoftwareSourceCode/CodeSnippet 语义）
         hasPart: {
           "@type": "CreativeWork",
           additionalType: "https://schema.org/SoftwareSourceCode",
@@ -182,7 +170,7 @@ function PromptPage({ prompt, currentLanguage }) {
           inLanguage: bcp47Locale,
           name: title,
         },
-        // Tier 5: 关联 tags 作为知识图谱实体
+        // tags 作为 schema.org Thing 实体，关联知识图谱
         mentions: Array.isArray(tags)
           ? tags.map((t) => ({
               "@type": "Thing",
@@ -191,7 +179,6 @@ function PromptPage({ prompt, currentLanguage }) {
             }))
           : undefined,
       },
-      // Tier 1: FAQPage
       {
         "@type": "FAQPage",
         mainEntity: [
@@ -219,6 +206,9 @@ function PromptPage({ prompt, currentLanguage }) {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="article:section" content="AI Prompt" />
         {Array.isArray(tags) && tags.map((tag) => <meta key={tag} property="article:tag" content={tag} />)}
+        {/* X 官方建议 twitter: 与 og: 同时提供（fallback 不完全等价） */}
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
         <link rel="canonical" href={canonicalUrl} />
         {/* Tier 2: hreflang alternates — 对 LLM / 搜索引擎声明多语言版本 */}
         {hreflangAlternates.map((h) => (
@@ -341,17 +331,12 @@ function PromptPage({ prompt, currentLanguage }) {
                       <Translate id="sidebar.related">相关推荐</Translate>
                     </Eyebrow>
                     <div style={{ marginTop: 10 }}>
-                      {related.map((r) => {
-                        const langData = (r as any)[currentLanguage] || (r as any)["zh-Hans"] || {};
-                        const rTitle = langData.title || (r as any).title || "";
-                        const rRemark = langData.remark || (r as any).remark || "";
-                        return (
-                          <Link key={r.id} to={`/prompt/${r.id}`} className="prompt-related-item">
-                            <div className="prompt-related-title">{rTitle}</div>
-                            {rRemark && <div className="prompt-related-remark">{rRemark}</div>}
-                          </Link>
-                        );
-                      })}
+                      {related.map((r) => (
+                        <Link key={r.id} to={`/prompt/${r.id}`} className="prompt-related-item">
+                          <div className="prompt-related-title">{r.title}</div>
+                          {r.remark && <div className="prompt-related-remark">{r.remark}</div>}
+                        </Link>
+                      ))}
                     </div>
                   </section>
                 )}
@@ -363,7 +348,8 @@ function PromptPage({ prompt, currentLanguage }) {
                   <div style={{ marginTop: 10 }}>
                     {faqList.map((item, i) => (
                       <div key={i} className="prompt-faq-item">
-                        <div className="prompt-faq-q">{item.q}</div>
+                        {/* H3 给 AI 引擎按问题做 chunk；视觉由 .prompt-faq-q 控制 */}
+                        <h3 className="prompt-faq-q">{item.q}</h3>
                         <div className="prompt-faq-a">{item.a}</div>
                       </div>
                     ))}

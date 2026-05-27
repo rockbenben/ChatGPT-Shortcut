@@ -8,7 +8,9 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "AiShort - Advanced AI Agent & Prompt Platform | Build, Share, and Multiply Productivity with One Click",
+  // 仅保留品牌名（7 字符）；具体描述在各页面 Layout title 自定义。
+  // 旧值 113 字符英文长 title 会让每个页面 <title> 被拼成 ~170 字符，Google SERP 截断 60。
+  title: "AiShort",
   // tagline: '方便中文使用 ChatGPT 快捷指令',
   favicon: "img/favicon.ico",
 
@@ -22,6 +24,10 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+
+  // app boot 时跑的 client modules（SPA 路由切换不重触发）。
+  // aiReferralTracker 把 AI 引擎来源 referrer 推到 GTM dataLayer，让 GA4 能单独分组
+  clientModules: [require.resolve("./src/clientModules/aiReferralTracker.ts")],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -124,15 +130,40 @@ const config = {
         "data-website-id": "680f4413-ce21-4754-a7d5-45e180e8cf69",
       },
     },
+    // PWA manifest — 移动安装 + 部分 AI 答案引擎/搜索抓 manifest 识别站点身份
+    {
+      tagName: "link",
+      attributes: { rel: "manifest", href: "/manifest.webmanifest" },
+    },
+    // iOS 主屏图标（Safari 收藏到主屏时显示）
+    {
+      tagName: "link",
+      attributes: { rel: "apple-touch-icon", href: "/img/logo.png" },
+    },
+    // theme-color — 同 antd ConfigProvider 的 colorPrimary，移动 Chrome 地址栏会染色
+    {
+      tagName: "meta",
+      attributes: { name: "theme-color", content: "#397e6a" },
+    },
+    // Apple Mobile Web App 全屏模式（PWA 安装到 iOS 主屏后用全屏 webview 启动）
+    // 现代 iOS 16+ 会读 manifest 的 display: standalone，但保留这个 tag 兼容老版本
+    {
+      tagName: "meta",
+      attributes: { name: "apple-mobile-web-app-capable", content: "yes" },
+    },
   ],
   scripts: [],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: "img/logo.png",
-      // 全局 meta 标签（Docusaurus 默认不加 og:site_name，Facebook/LinkedIn 分享卡片需要）
-      metadata: [{ property: "og:site_name", content: "AiShort" }],
+      image: "img/social-card.png",
+      // Docusaurus 默认不发 og:site_name 与 og:image dims
+      metadata: [
+        { property: "og:site_name", content: "AiShort" },
+        { property: "og:image:width", content: "1280" },
+        { property: "og:image:height", content: "640" },
+        { property: "og:image:type", content: "image/png" },
+      ],
       // autocorrect: false,
       colorMode: {
         defaultMode: "dark",
