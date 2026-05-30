@@ -14,7 +14,7 @@
   --site-primary-hue-saturation-light: 163 55%; /* adjusted for better lightness contrast */
   --site-color-favorite-background: transparent;
   --site-color-tooltip: #fff;
-  --site-color-tooltip-background: #353738;
+  --site-color-tooltip-background: #323a41;
   --site-color-svg-icon-favorite: #e9669e;
   --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
   --site-color-feedback-background: #fff;
@@ -47,16 +47,16 @@
 
 html[data-theme="dark"] {
   --site-color-feedback-background: #f0f8ff;
-  --site-color-tags-background: #1d1e1e;
-  --site-color-favorite-background: #1d1e1e;
+  --site-color-tags-background: #1a1f24;
+  --site-color-favorite-background: #1a1f24;
   --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 10%);
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   --site-primary-font: #c5c5c5;
-  --site-color-background: #242526;
+  --site-color-background: #1d2126;
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --site-color-card-background: #2a2b2c;
+  --site-color-card-background: #272d33;
   --site-color-card-border: var(--ifm-color-emphasis-200); /* Dark: subtle outline reads well on dark bg */
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
   --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
@@ -69,8 +69,8 @@ html[data-theme="dark"] {
   --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
 
   /* Brand-voice deep editorial bg + content — deeper than Infima default for refined feel */
-  --ifm-background-color: #0d0d0f;
-  --ifm-background-surface-color: #1a1a1e;
+  --ifm-background-color: #14171a;
+  --ifm-background-surface-color: #1d2126;
   --ifm-color-content: #ededed;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
   --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
@@ -214,7 +214,7 @@ html[data-theme="dark"] {
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #2b3137;
+  --ifm-footer-background-color: #272d33;
 }
 
 .unique-tabs .tabs__item {
@@ -258,12 +258,12 @@ html[data-theme="dark"] {
 [data-theme="dark"] .DocSearch {
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
-  --docsearch-container-background: rgb(47 55 69 / 70%);
+  --docsearch-container-background: rgb(13 16 18 / 70%);
   /* Modal */
   --docsearch-modal-background: var(--ifm-background-color);
   /* Search box */
   --docsearch-searchbox-background: var(--ifm-background-color);
-  --docsearch-searchbox-focus-background: var(--ifm-color-black);
+  --docsearch-searchbox-focus-background: var(--ifm-background-surface-color);
   /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
