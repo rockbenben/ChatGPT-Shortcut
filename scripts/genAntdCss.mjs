@@ -10,9 +10,9 @@ import { ConfigProvider, theme as antdTheme } from "antd";
 const darkTheme = {
   token: {
     colorPrimary: "#397e6a",
-    colorBgLayout: "#0d0d0f",
-    colorBgContainer: "#1a1a1e",
-    colorBgElevated: "#23232a",
+    colorBgLayout: "#14171a",
+    colorBgContainer: "#1d2126",
+    colorBgElevated: "#272d33",
     colorBorderSecondary: "rgba(255,255,255,0.08)",
     colorText: "#ededed",
     colorTextSecondary: "rgba(255,255,255,0.6)",
