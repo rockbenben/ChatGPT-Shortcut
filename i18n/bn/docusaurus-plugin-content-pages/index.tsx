@@ -32,6 +32,7 @@ import { fetchCardsByIds, fetchNextCards } from "@site/src/api/homepage";
 import { Tags, TagList } from "@site/src/data/tags";
 import { SLOGAN, SUPPORTED_AI_TOOLS, TITLE, DESCRIPTION, DEFAULT_FAVORITE_IDS, DEFAULT_IDS, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
+import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
@@ -390,20 +391,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     };
   }, [hasMoreData, loadMoreData]);
 
-  // 使用 useMemo 缓存卡片数据和权重计算，避免每次渲染都重新计算 getWeight
-  const favoriteUsers = useMemo(() => {
-    return favoritePrompts.map((user: any) => ({
-      ...user,
-      _cachedWeight: getWeight(user),
-    }));
-  }, [favoritePrompts]);
-
-  const otherUsers = useMemo(() => {
-    return otherPrompts.map((user: any) => ({
-      ...user,
-      _cachedWeight: getWeight(user),
-    }));
-  }, [otherPrompts]);
+  // 注意：不要把卡片 map 成 {...user, _cachedWeight} 新对象——无限滚动每追加一批，
+  // useMemo 会为数组中【全部】元素（含已渲染卡片）生成新引用，使 PromptCard 的 React.memo
+  // 整体失效，每批次重渲染整张网格（O(N)）。getWeight 仅 `count ?? weight ?? 0`，O(1)，
+  // 直接在渲染处内联即可（与下方 filteredCards 分支一致），data 沿用原始稳定引用以保住 memo。
 
   // 预计算收藏 ID 集合，O(1) 查找代替 O(n) includes
   const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
@@ -427,10 +418,10 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   }, [filteredCommus, voteDeltas]);
 
   // 已加载卡片数量，用于入场动画
-  const prevOtherCountRef = useRef(otherUsers.length);
+  const prevOtherCountRef = useRef(otherPrompts.length);
   useEffect(() => {
-    prevOtherCountRef.current = otherUsers.length;
-  }, [otherUsers.length]);
+    prevOtherCountRef.current = otherPrompts.length;
+  }, [otherPrompts.length]);
 
   if (isFiltered && filteredCards.length === 0 && filteredCommus.length === 0) {
     return (
@@ -450,7 +441,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
       {!isFiltered ? (
         <>
           {/* Favorites Section - 仅当有收藏时显示 */}
-          {favoriteUsers.length > 0 ? (
+          {favoritePrompts.length > 0 ? (
             <div id="favorites-section" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
@@ -461,12 +452,12 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                   <SearchBar />
                 </div>
                 <Row gutter={[16, 16]}>
-                  {favoriteUsers.map((user) => (
+                  {favoritePrompts.map((user) => (
                     <Col key={user.id} xs={24} sm={12} md={8} lg={6} xl={6}>
                       <PromptCard
                         type="data"
                         data={user}
-                        copyCount={user._cachedWeight}
+                        copyCount={getWeight(user)}
                         isFavorite={favoriteIdSet.has(user.id)}
                         isLoggedIn={isLoggedIn}
                         onToggleFavorite={handleToggleFavorite}
@@ -491,7 +482,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
               </Title>
             </div>
             <Row gutter={[16, 16]}>
-              {otherUsers.map((user, index) => {
+              {otherPrompts.map((user, index) => {
                 const isNew = index >= prevOtherCountRef.current;
                 return (
                   <React.Fragment key={user.id}>
@@ -506,7 +497,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
                       <PromptCard
                         type="data"
                         data={user}
-                        copyCount={user._cachedWeight}
+                        copyCount={getWeight(user)}
                         isFavorite={favoriteIdSet.has(user.id)}
                         isLoggedIn={isLoggedIn}
                         onToggleFavorite={handleToggleFavorite}
@@ -957,7 +948,7 @@ export default function Showcase(): React.ReactElement {
         <meta name="twitter:description" content={DESCRIPTION} />
         <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title={SITE_NAME} />
         <link rel="llms-txt" href="/llms.txt" />
-        <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+        <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
       </Head>
       <main className="margin-vert--md">
         <ShowcaseContent />
