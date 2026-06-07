@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short 소개
-title: AI Short - 엄선된 AI 프롬프트 라이브러리 | 원클릭 복사로 효율 향상
+title: 엄선된 AI 프롬프트 라이브러리 | 원클릭 복사로 효율 향상
 description: AI Short는 ChatGPT 한국어 활용을 한 단계 끌어올리는 AI 프롬프트 라이브러리입니다. ChatGPT, Gemini, Claude는 물론 HyperCLOVA X 등 한국어 특화 모델까지 지원하며 원클릭 복사, 컬렉션 관리, 커뮤니티 공유로 업무 효율을 높여 드립니다.
 ---
 

@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Introduzione a AI Short
-title: AI Short - Libreria di prompt IA curata | Copia con un clic per migliorare la produttività
+title: Libreria di prompt IA curata | Copia con un clic
 description: AI Short è una libreria curata di prompt IA in italiano, compatibile con ChatGPT, Mistral Le Chat, Claude, Gemini e DeepSeek. Copia con un clic, gestione preferiti, condivisione community e versione offline per uso aziendale conforme al GDPR — senza registrazione.
 ---
 

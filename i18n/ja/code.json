@@ -156,7 +156,7 @@
     "message": "コミュニティプロンプト"
   },
   "community.title": {
-    "message": "AIプロンプトコミュニティ | 発見・共有 - AiShort"
+    "message": "AIプロンプトコミュニティ | 発見・共有"
   },
   "description.clearCache.short": {
     "message": "ローカルキャッシュデータを更新"
@@ -234,7 +234,7 @@
     "message": "厳選AIプロンプト、ワンクリックで使える"
   },
   "homepage.title": {
-    "message": "AiShort - AIプロンプト集 | 厳選テンプレートで生産性向上"
+    "message": "AIプロンプト集 | ChatGPT・Claude・Gemini 対応テンプレート"
   },
   "howto.step1.name": {
     "message": "プロンプトをコピー"

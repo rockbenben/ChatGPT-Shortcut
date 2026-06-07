@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Introdução ao AI Short
-title: AI Short - Biblioteca Selecionada de Prompts de IA | Copie em um Clique e Aumente a Produtividade
+title: Biblioteca de Prompts de IA | Copie e Aumente a Produtividade
 description: AI Short é uma biblioteca selecionada de prompts de IA em português, compatível com ChatGPT, Gemini, Claude, DeepSeek e Maritalk. Copie e use em um clique, com tradução multilíngue, gerenciamento de favoritos e compartilhamento comunitário para acelerar seu fluxo de trabalho com IA no Brasil.
 ---
 

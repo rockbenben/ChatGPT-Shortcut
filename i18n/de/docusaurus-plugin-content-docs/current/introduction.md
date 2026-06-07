@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short Einführung
-title: AI Short - Kuratierte KI Prompt-Bibliothek | Ein-Klick-Kopieren
+title: Kuratierte KI Prompt-Bibliothek | Ein-Klick-Kopieren
 description: AI Short - kuratierte Bibliothek mit KI-Prompts für ChatGPT, Gemini, Claude, Mistral Le Chat und weitere Modelle. Ein-Klick-Kopieren, Sammlungsverwaltung und DSGVO-konforme Offline-Variante mit lokaler Datenspeicherung für Unternehmen.
 ---
 

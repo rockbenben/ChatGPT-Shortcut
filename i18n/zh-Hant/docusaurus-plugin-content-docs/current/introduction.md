@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short 介紹
-title: AI Short - 精選 AI 提示詞庫 | 一鍵複製提升效率
+title: 精選 AI 提示詞庫 | 一鍵複製提升效率
 description: AI Short 精選繁體中文 AI 提示詞庫，覆蓋 ChatGPT 中文、Gemini、Claude、DeepSeek、TAIDE 等主流模型。一鍵複製即用，含 18 種語言翻譯、收藏管理、社區分享，提升你的 AI 對話質量與工作效率。
 ---
 

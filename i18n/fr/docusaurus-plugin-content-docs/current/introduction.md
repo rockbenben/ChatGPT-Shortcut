@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Introduction à AI Short
-title: AI Short - Bibliothèque de prompts IA sélectionnés | Copie en un clic pour gagner en productivité
+title: Bibliothèque de prompts IA sélectionnés | Copie en un clic
 description: Bibliothèque de prompts IA sélectionnés pour ChatGPT français, Le Chat (Mistral), Claude, Gemini et DeepSeek. Copiez-collez en un clic, gérez vos favoris, partagez avec la communauté — gagnez en productivité dès maintenant.
 ---
 

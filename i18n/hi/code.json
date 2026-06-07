@@ -156,7 +156,7 @@
     "message": "समुदाय प्रॉम्प्ट्स"
   },
   "community.title": {
-    "message": "AI प्रॉम्प्ट समुदाय | खोजें और साझा करें - AiShort"
+    "message": "AI प्रॉम्प्ट समुदाय | खोजें और साझा करें"
   },
   "description.clearCache.short": {
     "message": "स्थानीय कैश डेटा ताज़ा करें"
@@ -234,7 +234,7 @@
     "message": "चुनिंदा AI प्रॉम्प्ट, एक क्लिक में उपयोग के लिए तैयार"
   },
   "homepage.title": {
-    "message": "ChatGPT, Claude के लिए AI प्रॉम्प्ट लाइब्रेरी"
+    "message": "ChatGPT, Claude, Gemini के लिए AI प्रॉम्प्ट लाइब्रेरी"
   },
   "howto.step1.name": {
     "message": "प्रॉम्प्ट कॉपी करें"
