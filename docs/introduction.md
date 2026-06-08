@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short 介绍
-title: AI Short - 精选 AI 提示词库 | 一键复制提升效率
+title: 精选 AI 提示词库 | 一键复制提升效率
 description: AI Short 精选 AI 提示词库，支持 ChatGPT、DeepSeek 等主流模型。一键复制即用，含多语言翻译、收藏管理、社区分享，简化你的工作流程。
 ---
 

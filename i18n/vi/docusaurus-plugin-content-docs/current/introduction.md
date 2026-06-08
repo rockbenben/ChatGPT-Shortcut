@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Giới thiệu AI Short
-title: AI Short - Thư viện Prompt AI được tuyển chọn | Sao chép một cú nhấp để tăng hiệu quả
+title: Thư viện Prompt AI chọn lọc | Sao chép một cú nhấp
 description: Thư viện prompt AI tiếng Việt tuyển chọn cho ChatGPT, Gemini, Claude, DeepSeek và PhoGPT. Sao chép-dán là dùng được, dịch đa ngôn ngữ, quản lý bộ sưu tập và chia sẻ cộng đồng — giúp dân văn phòng, lập trình viên và sinh viên Việt Nam dùng AI hiệu quả hơn.
 ---
 

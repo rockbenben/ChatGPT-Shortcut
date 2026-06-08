@@ -156,7 +156,7 @@
     "message": "社群提示詞"
   },
   "community.title": {
-    "message": "AI 提示詞社群 | 發現與分享優質提示詞 - AiShort 創作平台"
+    "message": "AI 提示詞社群 | 發現與分享優質提示詞"
   },
   "description.clearCache.short": {
     "message": "重新整理本地快取資料"
@@ -234,7 +234,7 @@
     "message": "精選 AI 提示詞，一鍵複製即用"
   },
   "homepage.title": {
-    "message": "AiShort - AI 提示詞庫 | 精選提示詞範本，即刻提升 AI 效率"
+    "message": "AI 提示詞庫 | ChatGPT、DeepSeek 提示詞範本，一鍵複製"
   },
   "howto.step1.name": {
     "message": "複製提示詞"

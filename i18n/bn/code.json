@@ -156,7 +156,7 @@
     "message": "কমিউনিটি প্রম্পট"
   },
   "community.title": {
-    "message": "এআই প্রম্পট কমিউনিটি | আবিষ্কার এবং শেয়ার - AiShort"
+    "message": "এআই প্রম্পট কমিউনিটি | আবিষ্কার এবং শেয়ার"
   },
   "description.clearCache.short": {
     "message": "স্থানীয় ক্যাশ ডেটা রিফ্রেশ করুন"
@@ -234,7 +234,7 @@
     "message": "নির্বাচিত AI প্রম্পট, এক ক্লিকে প্রস্তুত"
   },
   "homepage.title": {
-    "message": "ChatGPT, Claude-এর জন্য AI প্রম্পট লাইব্রেরি"
+    "message": "ChatGPT, Claude, Gemini-এর জন্য AI প্রম্পট লাইব্রেরি"
   },
   "howto.step1.name": {
     "message": "প্রম্পট কপি করুন"

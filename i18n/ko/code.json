@@ -156,7 +156,7 @@
     "message": "커뮤니티 프롬프트"
   },
   "community.title": {
-    "message": "AI 프롬프트 커뮤니티 | 발견 및 공유 - AiShort"
+    "message": "AI 프롬프트 커뮤니티 | 발견 및 공유"
   },
   "description.clearCache.short": {
     "message": "로컬 캐시 데이터 새로 고침"
@@ -234,7 +234,7 @@
     "message": "엄선된 AI 프롬프트, 원클릭으로 바로 사용"
   },
   "homepage.title": {
-    "message": "AiShort - AI 프롬프트 모음 | 엄선된 템플릿으로 생산성 향상"
+    "message": "AI 프롬프트 모음 | ChatGPT, Claude, Gemini 템플릿"
   },
   "howto.step1.name": {
     "message": "프롬프트 복사"

@@ -156,7 +156,7 @@
     "message": "พรอมต์ชุมชน"
   },
   "community.title": {
-    "message": "ชุมชนพรอมพ์ AI | ค้นพบและแบ่งปันพรอมพ์พรีเมียม - AiShort"
+    "message": "ชุมชนพรอมพ์ AI | ค้นพบและแบ่งปันพรอมพ์พรีเมียม"
   },
   "description.clearCache.short": {
     "message": "รีเฟรชข้อมูลแคชในเครื่อง"
@@ -234,7 +234,7 @@
     "message": "พรอมต์ AI ที่คัดสรร พร้อมใช้ด้วยคลิกเดียว"
   },
   "homepage.title": {
-    "message": "ไลบรารีพรอมพ์ AI สำหรับ ChatGPT, Claude"
+    "message": "ไลบรารีพรอมพ์ AI สำหรับ ChatGPT, Claude, Gemini"
   },
   "howto.step1.name": {
     "message": "คัดลอกพรอมต์"

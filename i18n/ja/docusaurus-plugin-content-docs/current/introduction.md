@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short 紹介
-title: AI Short - 厳選 AI プロンプトライブラリ｜ワンクリックコピーで効率アップ
+title: 厳選 AI プロンプト集｜ワンクリックコピーで効率アップ
 description: AI Short は ChatGPT 日本語対応をはじめ Gemini・Claude・DeepSeek など主要モデルで使える、シーン別 AI プロンプトライブラリです。ワンクリックコピーで即利用でき、多言語翻訳・コレクション管理・コミュニティ共有によりビジネスや学習のワークフローを効率化いたします。
 ---
 
