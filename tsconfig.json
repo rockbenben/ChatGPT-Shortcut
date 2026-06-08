@@ -1,7 +1,13 @@
 {
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    // TS 6.x 把 baseUrl 标记为废弃（TS5101 直接中止编译），但 @docusaurus/tsconfig 的 paths 仍依赖它，
+    // 在 Docusaurus 跟进 TS 7 之前先静默该废弃告警。
+    "ignoreDeprecations": "6.0",
+    // TS 6.0 将 strict 族默认值翻转为开启；本项目在 TS 5.x 下从未启用 strict，
+    // 显式关闭以保持 `yarn typecheck` 门禁的既有语义（否则会涌出数百个历史 implicit-any 报错）。
+    "strict": false
   },
   "exclude": [".docusaurus", "build"]
 }
