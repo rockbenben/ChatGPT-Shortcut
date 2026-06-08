@@ -4,11 +4,12 @@
 
 ## 文档
 
+- [精选 AI 提示词库 | 一键复制提升效率](https://www.aishort.top/docs/): AI Short 精选 AI 提示词库，支持 ChatGPT、DeepSeek 等主流模型。一键复制即用，含多语言翻译、收藏管理、社区分享，简化你的工作流程。
 - [AI Short 部署指南 | Vercel/Docker 一键部署配置](https://www.aishort.top/docs/deploy): 快速部署 AI Short 提示词项目！支持 Vercel、Cloudflare、Docker 多种方式，含自定义配置与自动更新教程。
+- [AI Short 插件 | ChatGPT/Gemini/Claude 侧边栏 · Chrome/Edge/Firefox 安装](https://www.aishort.top/docs/extension): 在 ChatGPT、Gemini、Claude、豆包等 AI 对话页的侧边栏直接调用 AiShort 提示词，不用切换标签页复制粘贴。Chrome、Edge、Firefox 一键安装。
 - [AI Short Firefox 设置 | 固定扩展与授权运行](https://www.aishort.top/docs/extension/firefox-extension-setting): Firefox 插件设置指南：固定扩展到工具栏，授权在 ChatGPT、Gemini 等网站运行，确保侧边栏正常显示。
 - [AI Short Chrome CRX 安装 | 开发者模式手动安装](https://www.aishort.top/docs/extension/manual-chrome-extension): 通过 CRX 文件手动安装 AI Short 插件，开启开发者模式后拖拽安装。含常见问题解决方案。
 - [AI Short Chrome ZIP 安装 | 解压文件夹加载扩展](https://www.aishort.top/docs/extension/manual-chrome-extension-zip): 通过 ZIP 文件在 Chrome 中安装 AI Short 插件，解压后拖入扩展页面即可。适用于无法安装 CRX 的情况。
-- [AI Short 插件 | ChatGPT/Gemini/Claude 侧边栏 · Chrome/Edge/Firefox 安装](https://www.aishort.top/docs/extension/README): 在 ChatGPT、Gemini、Claude、豆包等 AI 对话页的侧边栏直接调用 AiShort 提示词，不用切换标签页复制粘贴。Chrome、Edge、Firefox 一键安装。
 - [AI Short 扩展使用 | 侧边栏与快捷键 Alt+Shift+S](https://www.aishort.top/docs/extension/usage): 掌握 AI Short 浏览器扩展！启用侧边栏、Alt+Shift+S 快捷键一键唤出提示词库。
 - [AI Short 账户管理 | Google 登录与无密码登录](https://www.aishort.top/docs/guides/account): 支持 Google 一键登录、邮箱无密码登录，快速访问个人收藏。忘记密码可一键重置，轻松找回账户数据。
 - [AI Short 社区 | 发现分享优质 AI 提示词](https://www.aishort.top/docs/guides/community): 发现社区精选 AI 提示词！通过投票筛选优质内容，分享你的创意获得曝光，或设为私密仅自己可见。
@@ -18,7 +19,6 @@
 - [AI Short 我的收藏 | 标签分类与拖拽排序](https://www.aishort.top/docs/guides/my-collection): 收藏喜欢的 AI 提示词，通过自定义标签分类管理。支持拖拽排序，打造个性化提示词库。
 - [AI Short 离线部署 | 企业内网无需外部服务器](https://www.aishort.top/docs/guides/offline): AI Short 离线版专为无法访问外网的企业和团队设计。无需后端服务器，无需注册账户，数据存储在浏览器本地，开箱即用。
 - [AI Short 自定义提示词 | 创建编辑与分享](https://www.aishort.top/docs/guides/user-prompts): 创建专属 AI 提示词，保存到个人账户随时调用。支持分享到社区或设为私密，一键导出备份数据。
-- [AI Short - 精选 AI 提示词库 | 一键复制提升效率](https://www.aishort.top/docs/introduction): AI Short 精选 AI 提示词库，支持 ChatGPT、DeepSeek 等主流模型。一键复制即用，含多语言翻译、收藏管理、社区分享，简化你的工作流程。
 - [AiShort Privacy Policy](https://www.aishort.top/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...
 

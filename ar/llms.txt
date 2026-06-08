@@ -4,11 +4,12 @@
 
 ## التوثيق
 
+- [مكتبة مطالبات AI المختارة | انسخ بنقرة واحدة لتعزيز الكفاءة](https://www.aishort.top/ar/docs/): مكتبة موجهات AI جاهزة للنسخ واللصق، تدعم ChatGPT و Gemini و Claude و DeepSeek وغيرها. موجَّهة للمحترفين والطلاب الناطقين بالعربية، مع بحث ذكي وترجمة متعددة اللغات وإدارة شخصية للمفضلة.
 - [دليل نشر AI Short - Vercel و Docker](https://www.aishort.top/ar/docs/deploy): انشر AI Short بسهولة مع Vercel و Docker و Cloudflare. دليل خطوة بخطوة للإعداد والتحديث التلقائي.
+- [إضافة AI Short | الشريط الجانبي لـ ChatGPT/Gemini/Claude · تثبيت على Chrome/Edge/Firefox](https://www.aishort.top/ar/docs/extension): استدعِ مطالبات AiShort مباشرةً من الشريط الجانبي لصفحات محادثات الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، دون الحاجة إلى التنقل بين علامات التبويب للنسخ واللصق. تثبيت بنقرة واحدة على Chrome و Edge و Firefox.
 - [إعداد إضافة AI Short لـ Firefox - التثبيت والتفويض](https://www.aishort.top/ar/docs/extension/firefox-extension-setting): دليل خطوة بخطوة لتثبيت وتفويض إضافة AI Short على Firefox. تمكين الشريط الجانبي لـ ChatGPT و Gemini بسهولة.
 - [تثبيت AI Short على Chrome عبر ملف CRX](https://www.aishort.top/ar/docs/extension/manual-chrome-extension): دليل لتثبيت إضافة AI Short باستخدام ملف CRX في وضع المطور على Chrome. حلول لأخطاء التثبيت الشائعة.
 - [تثبيت AI Short على Chrome عبر ملف ZIP](https://www.aishort.top/ar/docs/extension/manual-chrome-extension-zip): طريقة يدوية لتثبيت AI Short على Chrome باستخدام ملف ZIP. مثالية عندما لا يتوفر تثبيت CRX - فك الضغط وحمل الإضافة.
-- [إضافة AI Short | الشريط الجانبي لـ ChatGPT/Gemini/Claude · تثبيت على Chrome/Edge/Firefox](https://www.aishort.top/ar/docs/extension/README): استدعِ مطالبات AiShort مباشرةً من الشريط الجانبي لصفحات محادثات الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، دون الحاجة إلى التنقل بين علامات التبويب للنسخ واللصق. تثبيت بنقرة واحدة على Chrome و Edge و Firefox.
 - [دليل AI Short - الشريط الجانبي والاختصارات](https://www.aishort.top/ar/docs/extension/usage): أتقن إضافة AI Short! فعّل الشريط الجانبي باستخدام Alt+Shift+S.
 - [إدارة حساب AI Short - تسجيل الدخول بـ Google وبدون كلمة مرور](https://www.aishort.top/ar/docs/guides/account): يدعم تسجيل الدخول بنقرة واحدة عبر Google والبريد الإلكتروني بدون كلمة مرور، للوصول السريع إلى مفضلاتك الشخصية. ويمكنك إعادة تعيين كلمة المرور بسهولة لاستعادة بيانات حسابك.
 - [مجتمع AI Short - اكتشف وشارك مطالبات AI المميزة](https://www.aishort.top/ar/docs/guides/community): اكتشف مطالبات AI المختارة من المجتمع! يتيح نظام التصويت تصفية المحتوى الجيد، شارك إبداعاتك لتحظى بالظهور، أو احتفظ بها خاصة لرؤيتك وحدك.
@@ -18,7 +19,6 @@
 - [مجموعتي في AI Short - تصنيف بالعلامات وفرز بالسحب](https://www.aishort.top/ar/docs/guides/my-collection): فضِّل مطالبات AI التي تحبها، ونظِّمها بعلامات مخصصة. يدعم الفرز بالسحب والإفلات لبناء مكتبة مطالبات شخصية.
 - [نشر AI Short دون اتصال | شبكة داخلية للمؤسسات بدون خادم خارجي](https://www.aishort.top/ar/docs/guides/offline): النسخة دون اتصال من AI Short مصممة للمؤسسات والفرق التي لا يمكنها الوصول إلى الإنترنت. لا حاجة إلى خادم خلفي ولا إلى تسجيل حساب — البيانات محفوظة محليًا في المتصفح، جاهزة للاستخدام مباشرة.
 - [مطالبات AI Short المخصصة - إنشاء وتحرير ومشاركة](https://www.aishort.top/ar/docs/guides/user-prompts): أنشئ مطالبات AI خاصة بك، احفظها في حسابك الشخصي للاستدعاء في أي وقت. شاركها مع المجتمع أو احتفظ بها خاصة، وصدِّر نسخة احتياطية بنقرة واحدة.
-- [AI Short - مكتبة مطالبات AI المختارة | انسخ بنقرة واحدة لتعزيز الكفاءة](https://www.aishort.top/ar/docs/introduction): مكتبة موجهات AI جاهزة للنسخ واللصق، تدعم ChatGPT و Gemini و Claude و DeepSeek وغيرها. موجَّهة للمحترفين والطلاب الناطقين بالعربية، مع بحث ذكي وترجمة متعددة اللغات وإدارة شخصية للمفضلة.
 - [AiShort Privacy Policy](https://www.aishort.top/ar/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/ar/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...
 

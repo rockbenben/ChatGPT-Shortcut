@@ -4,11 +4,12 @@
 
 ## ドキュメント
 
+- [厳選 AI プロンプト集｜ワンクリックコピーで効率アップ](https://www.aishort.top/ja/docs/): AI Short は ChatGPT 日本語対応をはじめ Gemini・Claude・DeepSeek など主要モデルで使える、シーン別 AI プロンプトライブラリです。ワンクリックコピーで即利用でき、多言語翻訳・コレクション管理・コミュニティ共有によりビジネスや学習のワークフローを効率化いたします。
 - [AI Short デプロイ：Vercel/Docker構築ガイド](https://www.aishort.top/ja/docs/deploy): 自分だけのAIプロンプトライブラリを構築！Vercel、DockerでAI Shortを簡単デプロイ。自動更新設定も解説。
+- [AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール](https://www.aishort.top/ja/docs/extension): ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーから直接 AiShort プロンプトを呼び出せます。タブを切り替えてコピー＆ペーストする必要はありません。Chrome、Edge、Firefox にワンクリックでインストール。
 - [AI Short Firefox 設定｜拡張機能のピン留めと実行許可](https://www.aishort.top/ja/docs/extension/firefox-extension-setting): Firefox 拡張機能の設定ガイド：ツールバーへの拡張機能のピン留め、ChatGPT、Gemini などのサイトでの実行許可で、サイドバーを正常に表示。
 - [AI Short Chrome CRX インストール｜デベロッパーモードで手動インストール](https://www.aishort.top/ja/docs/extension/manual-chrome-extension): CRX ファイルを使って AI Short 拡張機能を手動インストール。デベロッパーモードを有効にしてドラッグでインストール。よくある問題の解決策も解説。
 - [AI Short Chrome ZIP インストール｜解凍フォルダで拡張機能を読み込み](https://www.aishort.top/ja/docs/extension/manual-chrome-extension-zip): ZIP ファイルから Chrome に AI Short 拡張機能をインストール。解凍後、拡張機能ページにドラッグするだけ。CRX がインストールできない場合に最適。
-- [AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール](https://www.aishort.top/ja/docs/extension/README): ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーから直接 AiShort プロンプトを呼び出せます。タブを切り替えてコピー＆ペーストする必要はありません。Chrome、Edge、Firefox にワンクリックでインストール。
 - [AI Short 拡張機能の使い方｜サイドバーとショートカット Alt+Shift+S](https://www.aishort.top/ja/docs/extension/usage): AI Short ブラウザ拡張機能をマスター！サイドバーを有効化、Alt+Shift+S ショートカットでプロンプトライブラリをワンキー呼び出し。
 - [AI Short アカウント管理｜Google ログインとパスワードレスログイン](https://www.aishort.top/ja/docs/guides/account): Google アカウントでのログインとメールリンクによるパスワードレスログインに対応。お気に入りのプロンプトへすぐにアクセスでき、パスワードのリセットやアカウントデータの復元も簡単に行えます。
 - [AI Short コミュニティ｜優れた AI プロンプトを発見・共有](https://www.aishort.top/ja/docs/guides/community): コミュニティで共有された AI プロンプトを発見できます。投票の仕組みにより優れたコンテンツが上位に表示され、ご自身のアイデアを共有することも、非公開設定で個人ライブラリとして活用することも可能です。
@@ -18,7 +19,6 @@
 - [AI Short マイコレクション｜タグ分類とドラッグ並び替え](https://www.aishort.top/ja/docs/guides/my-collection): お気に入りの AI プロンプトを保存し、カスタムタグで分類して管理できます。ドラッグ＆ドロップによる並べ替えにも対応し、自分専用のプロンプトライブラリを構築できます。
 - [AI Short オフラインデプロイ｜社内イントラネット向け、外部サーバー不要](https://www.aishort.top/ja/docs/guides/offline): AI Short オフライン版は、外部ネットワークにアクセスできない企業やチーム向けに設計されています。バックエンドサーバー不要、アカウント登録不要、データはブラウザのローカルに保存され、すぐに利用を開始できます。
 - [AI Short カスタムプロンプト｜作成・編集・共有](https://www.aishort.top/ja/docs/guides/user-prompts): 専用の AI プロンプトを作成し、個人アカウントに保存していつでも呼び出し可能。コミュニティに共有も非公開設定も自由自在、ワンクリックでデータをエクスポート＆バックアップ。
-- [AI Short - 厳選 AI プロンプトライブラリ｜ワンクリックコピーで効率アップ](https://www.aishort.top/ja/docs/introduction): AI Short は ChatGPT 日本語対応をはじめ Gemini・Claude・DeepSeek など主要モデルで使える、シーン別 AI プロンプトライブラリです。ワンクリックコピーで即利用でき、多言語翻訳・コレクション管理・コミュニティ共有によりビジネスや学習のワークフローを効率化いたします。
 - [AiShort Privacy Policy](https://www.aishort.top/ja/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/ja/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...
 
