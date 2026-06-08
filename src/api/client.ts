@@ -27,6 +27,10 @@ export function clearUserProfileCache() {
 // 动态导入 clearMySpaceCache 以避免循环依赖
 const clearAllUserCaches = async () => {
   clearUserProfileCache();
+  // 与手动登出（UserStatus.tsx）对齐：必须清 user_auth 快照，否则 401 吊销 token 后
+  // 下次 mount 仍从 lscache-user_auth（TTL 30 天）恢复登录态 UI，形成最长 30 天的僵尸登录。
+  removeCache("user_auth");
+  removeCache("myspace_stats");
   const { clearMySpaceCache } = await import("./myspace");
   clearMySpaceCache();
 };

@@ -110,6 +110,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 仅对非 forceRefresh 复用；用户主动刷新（forceRefresh=true）始终单独跑，保留 UI loading 反馈。
   const inFlightFetchRef = useRef<Promise<void> | null>(null);
 
+  // mutation 代际计数：每次 syncMySpaceState（客户端 mutation 的唯一本地同步入口）递增。
+  // 后台 GET /myspace 在飞期间若 gen 变化，说明本地已发生更新，GET 不应覆盖（见 fetchOnce 竞态保护）。
+  const mutationGenRef = useRef(0);
+
   const fetchUser = useCallback(async (forceRefresh = false): Promise<void> => {
     // 非 forceRefresh：如已有 fetch 在飞，共享 promise
     if (!forceRefresh && inFlightFetchRef.current) {
@@ -134,6 +138,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const hadCachedAuth = initialAuthRef.current!.hadCachedAuth;
 
       const fetchOnce = async () => {
+        // 记录发起时刻的 mutation 代际，用于下方竞态保护
+        const genAtStart = mutationGenRef.current;
+
         // Avoid being stuck in loading forever if the request stalls.
         // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
         const myspaceData = await withTimeout(getMySpace(), 12_000, "getMySpace");
@@ -141,6 +148,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // If request returned nothing (and no cache), stop loading and keep current state.
         if (!myspaceData) {
           return null;
+        }
+
+        // 竞态保护：若 GET 在飞期间发生了客户端 mutation（syncMySpaceState 递增 gen），本地 state 已含更新
+        // 并已与服务器 PATCH reconcile。此 GET 可能读到 mutation 之前的服务器快照，覆盖会回滚刚收藏/改标签的结果。
+        // 仅后台刷新需防护；forceRefresh 是用户主动请求权威数据，照常覆盖。
+        if (!forceRefresh && mutationGenRef.current !== genAtStart) {
+          return myspaceData;
         }
 
         const enrichedData = enrichMySpaceData(myspaceData);
@@ -250,6 +264,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const syncMySpaceState = useCallback((patch: MySpaceStatePatch) => {
     const auth = userAuthRef.current;
     if (!auth?.data) return;
+
+    // 递增 mutation 代际，让在飞的后台 GET /myspace 知道本地已发生更新、不要用旧快照覆盖
+    mutationGenRef.current += 1;
 
     const newData: any = { ...auth.data };
     if (patch.items !== undefined) newData.items = patch.items;

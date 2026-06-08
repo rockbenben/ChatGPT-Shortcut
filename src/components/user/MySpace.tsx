@@ -480,6 +480,16 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   // 跟踪已加载的用户数据，避免重复加载
   const lastLoadedRef = useRef<{ userId: number; hash: string; structuralHash: string } | null>(initialCacheRef.current.ref);
 
+  // 把当前本地 spaceItems/customTags 镜像进模块级缓存。
+  // 标签 mutation（toggle 提交 / 管理标签保存）只改 item.tags 与 definitions，不改
+  // structuralHash/hash，所以加载 effect 会走「完全相同：跳过」分支、永不重写 _spaceItemsCache。
+  // 若不在此同步，explore→collection 切视图 remount 时会命中带旧 tags 的缓存：UI 回退，
+  // 且下次全量 PATCH /favorites/custom-tags 会用旧 itemTags 覆盖服务器已保存的标签——真实数据丢失。
+  // 沿用 lastLoadedRef 当前 ref（tags 变更不影响它）；无有效 ref 时清空缓存，强制下次 remount 重建。
+  const syncSpaceCache = useCallback((items: any[], tags: CustomTag[]) => {
+    _spaceItemsCache = lastLoadedRef.current ? { items, tags, ref: lastLoadedRef.current } : null;
+  }, []);
+
   // 配置拖拽传感器
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -816,6 +826,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       // items[i].tags 可能含已删除标签的孤儿 id，server 端会清理，本地短暂保留无视觉影响
       //（消费者从 customTags definitions 查显示信息，孤儿 id 查不到自然不显示）。
       syncMySpaceState({ customTags: tags });
+      // 镜像进模块缓存：item 分配未变（spaceItemsRef）、definitions 变为 tags
+      syncSpaceCache(spaceItemsRef.current, tags);
 
       setTagManagerOpen(false);
       messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
@@ -923,13 +935,15 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         });
         syncMySpaceState({ items: newItems });
       }
+      // 镜像进模块缓存：spaceItemsRef 已含本次 toggle 结果，definitions 未变
+      syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     } catch (error) {
       console.error("Failed to update item tags:", error);
       messageApi.error("标签更新失败");
       // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
       setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
     }
-  }, [buildItemTags, messageApi, userAuth, syncMySpaceState]);
+  }, [buildItemTags, messageApi, userAuth, syncMySpaceState, syncSpaceCache]);
 
   // 切换项目标签——纯本地 toggle，不发 API
   // functional updater 防 stale state（rapid click 安全）
@@ -954,8 +968,10 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       const currentItem = spaceItemsRef.current.find((i) => i.id === editing.itemId);
       if (!currentItem || tagsEqual(currentItem.customTags || [], editing.originalTags)) return;
       updateCustomTags({ definitions: customTagsRef.current, itemTags: buildItemTags() }).catch(() => {});
+      // 卸载时也镜像本地最新状态进模块缓存，避免下次 remount 读到旧 tags 并触发全量覆盖
+      syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     };
-  }, [buildItemTags]);
+  }, [buildItemTags, syncSpaceCache]);
 
   // 统一的加载状态：AuthContext 加载中 或 数据处理中
   if (authLoading || dataProcessing) {
