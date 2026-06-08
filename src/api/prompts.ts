@@ -348,7 +348,10 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   let url = `/userprompts?pagination[withCount]=true&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=${sortField}:${sortOrder}`;
 
   if (trimmedSearchTerm) {
-    url += `&filters[$or][0][description][$containsi]=${limitedSearchTerm}&filters[$or][1][title][$containsi]=${limitedSearchTerm}&filters[$or][2][remark][$containsi]=${limitedSearchTerm}`;
+    // 必须对查询值做 percent-encode：含 # 的词会被 XHR 当作 fragment 截断（"C#" → "C"），
+    // 含 & 的词会注入额外 query 参数，含 + 的词被服务端解码成空格 —— 全部导致搜错内容。
+    // encodedSearchKey 在此分支必为编码后的词（非 "noTerm"），与 cacheKey 用同一份值保持一致。
+    url += `&filters[$or][0][description][$containsi]=${encodedSearchKey}&filters[$or][1][title][$containsi]=${encodedSearchKey}&filters[$or][2][remark][$containsi]=${encodedSearchKey}`;
   }
 
   try {
