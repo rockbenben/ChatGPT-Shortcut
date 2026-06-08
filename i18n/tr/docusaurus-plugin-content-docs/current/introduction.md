@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: AI Short Giriş
-title: AI Short - Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır
+title: Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır
 description: AI Short, ChatGPT Türkçe, Gemini ve DeepSeek için seçilmiş AI istemleri (prompt) kütüphanesidir. Profesyoneller, öğrenciler ve içerik üreticileri için tek tıkla kopyalanan hazır prompt'lar, çok dilli arayüz, kişisel koleksiyon ve topluluk paylaşımıyla iş akışınızı hızlandırın.
 ---
 

@@ -156,7 +156,7 @@
     "message": "Prompts communautaires"
   },
   "community.title": {
-    "message": "Communauté de Prompts IA | Découvrez et Partagez - AiShort"
+    "message": "Communauté de Prompts IA | Découvrez et Partagez"
   },
   "description.clearCache.short": {
     "message": "Actualiser les données du cache local"
@@ -234,7 +234,7 @@
     "message": "Prompts IA sélectionnés, prêts en un clic"
   },
   "homepage.title": {
-    "message": "Bibliothèque de Prompts IA pour ChatGPT et Claude"
+    "message": "Bibliothèque de Prompts IA pour ChatGPT, Claude et Gemini"
   },
   "howto.step1.name": {
     "message": "Copier le prompt"

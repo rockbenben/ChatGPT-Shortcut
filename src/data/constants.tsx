@@ -29,7 +29,9 @@ export const SLOGAN = translate({
 export const SUPPORTED_AI_TOOLS = ["ChatGPT", "DeepSeek", "Claude", "Gemini"];
 export const TITLE = translate({
   id: "homepage.title",
-  message: "AiShort - AI提示词库 | 精选提示词模板，即刻提升AI效率",
+  // 不要以 "AiShort -" 开头：Docusaurus 会自动追加 " | AiShort"（siteTitle），写了就品牌重复。
+  // 关键词式标题：模型名匹配 "ChatGPT提示词/DeepSeek提示词" 等头部中文查询；DeepSeek 为中文用户第二主力必列。
+  message: "AI 提示词库 | ChatGPT、DeepSeek 提示词模板，一键复制",
 });
 export const DESCRIPTION = translate({
   id: "homepage.description",
@@ -39,7 +41,8 @@ export const DESCRIPTION = translate({
 // community-prompts
 export const COMMU_TITLE = translate({
   id: "community.title",
-  message: "AI提示词社区 | 发现与分享优质提示词 - AiShort创作平台",
+  // 不要以 "- AiShort..." 结尾：Docusaurus 会自动追加 " | AiShort"（siteTitle），写了就品牌重复
+  message: "AI提示词社区 | 发现与分享优质提示词",
 });
 export const COMMU_DESCRIPTION = translate({
   id: "community.description",

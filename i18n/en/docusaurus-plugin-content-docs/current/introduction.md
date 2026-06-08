@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Introduction
-title: AI Short - Curated AI Prompt Library | Copy & Boost Productivity
+title: Curated AI Prompt Library | Copy & Boost Productivity
 description: AI Short is a curated library of AI prompts for ChatGPT, Claude, Gemini, and other major models. Built for professionals and students — copy prompts instantly, translate across 18 languages, organize your personal collection, and share with the community.
 ---
 

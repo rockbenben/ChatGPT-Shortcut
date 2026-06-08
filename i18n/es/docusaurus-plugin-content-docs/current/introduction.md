@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Introducción a AI Short
-title: AI Short - Biblioteca Curada de Prompts de IA | Copia con un Clic
+title: Biblioteca Curada de Prompts de IA | Copia con un Clic
 description: Biblioteca curada de prompts de IA en español para ChatGPT, Gemini, Claude y DeepSeek. Cópialos al instante — diseñada para profesionales y creadores de España y Latinoamérica, con favoritos, comunidad y soporte multilingüe.
 ---
 

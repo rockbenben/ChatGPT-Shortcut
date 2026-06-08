@@ -1,7 +1,7 @@
 ---
 slug: /
 sidebar_label: Pengantar AI Short
-title: AI Short - Perpustakaan Prompt AI Pilihan | Salin Sekali Klik Tingkatkan Produktivitas
+title: Perpustakaan Prompt AI Pilihan | Salin Sekali Klik
 description: Perpustakaan prompt AI bahasa Indonesia siap pakai untuk ChatGPT, Gemini, Claude, Sahabat AI, dan DeepSeek. Salin sekali klik, dengan koleksi pribadi, prompt kustom, dan berbagi komunitas untuk mempercepat alur kerja harian Anda.
 ---
 
