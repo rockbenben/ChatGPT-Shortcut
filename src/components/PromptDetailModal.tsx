@@ -50,7 +50,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           padding: 0,
           overflow: "hidden",
           borderRadius: 12,
-          backgroundColor: "var(--aishort-color-bg-elevated, #272d33)",
+          backgroundColor: "var(--ant-color-bg-elevated, #272d33)",
         },
       }}
       closeIcon={null}>
