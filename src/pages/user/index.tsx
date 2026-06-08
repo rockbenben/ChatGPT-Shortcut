@@ -99,7 +99,7 @@ const UserProfile = () => {
 
       const [userPromptsData, cardFavoritesData, commFavoritesData] = await Promise.all([
         promptIds.length > 0 ? getPrompts("userprompts", promptIds) : [],
-        cardFavoriteIds.length > 0 ? getPrompts("cards", cardFavoriteIds) : [],
+        cardFavoriteIds.length > 0 ? getPrompts("cards", cardFavoriteIds, currentLanguage) : [],
         commFavoriteIds.length > 0 ? getPrompts("commus", commFavoriteIds) : [],
       ]);
 
