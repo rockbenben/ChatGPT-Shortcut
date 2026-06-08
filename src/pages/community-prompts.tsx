@@ -15,6 +15,7 @@ import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, 
 import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
+import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -83,7 +84,7 @@ const CommunityPrompts = () => {
         },
       ],
     };
-    return { pageUrl: url, collectionSchemaJson: JSON.stringify(schema), localePrefix: pfx };
+    return { pageUrl: url, collectionSchemaJson: toJsonLd(schema), localePrefix: pfx };
   }, [i18n.currentLocale, i18n.defaultLocale, i18n.localeConfigs, siteConfig.url]);
   // 默认视图（page=1, sort=id, 无搜索）从构建期快照初始化，让 SSG HTML 里就含真实卡片，
   // 把 LCP 元素从「等 API 后渲染的 PromptCard」前移到 HTML 解析阶段

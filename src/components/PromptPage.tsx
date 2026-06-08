@@ -11,6 +11,7 @@ import { getWeight, formatCompactNumber } from "@site/src/utils/formatters";
 import { SITE_NAME } from "@site/src/data/constants";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
+import { toJsonLd } from "@site/src/utils/jsonLd";
 import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -211,7 +212,7 @@ function PromptPage({ prompt, currentLanguage }) {
           <link key={h.hreflang} rel="alternate" hrefLang={h.hreflang} href={h.href} />
         ))}
         <link rel="alternate" hrefLang="x-default" href={`${siteConfig.url}/prompt/${prompt.id}`} />
-        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{toJsonLd(articleSchema)}</script>
       </Head>
       {/* 外层 Row：保持原有的居中 + 最大宽度约束（xl 约 66% container 宽度） */}
       <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
@@ -263,9 +264,10 @@ function PromptPage({ prompt, currentLanguage }) {
                         {formatCompactNumber(weight as number)}
                       </span>
                       <span style={monoNum}>
-                        {charCount.toLocaleString()} <Translate id="prompt.charsLabel">字符</Translate>
+                        {/* 用页面 locale（非运行宿主/浏览器 locale）格式化：SSR 与 hydration 两端都确定且一致，避免数字分组失配 */}
+                        {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
                       </span>
-                      <span style={monoNum}>≈ {tokenCount.toLocaleString()} tokens</span>
+                      <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
                       {website && (
                         <Link to={website} target="_blank" rel="noopener noreferrer" title={website} className="prompt-tag-link">
                           <LinkOutlined style={{ marginRight: 4 }} />

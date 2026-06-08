@@ -29,6 +29,9 @@ const sidebars = {
       label: "使用指南",
       link: {
         type: "generated-index",
+        // 必须显式 ASCII slug：不写时 Docusaurus 直接用中文 label 派生路径段，
+        // 18 个 locale（含 en/de/ar）的 URL、canonical、sitemap 都会带 /docs/category/使用指南 这种简中段
+        slug: "/category/guides",
       },
       collapsed: false,
       items: ["guides/interface", "guides/my-collection", "guides/user-prompts", "guides/account", "guides/community", "guides/offline", "guides/faq"],
@@ -38,6 +41,7 @@ const sidebars = {
       label: "浏览器插件",
       link: {
         type: "generated-index",
+        slug: "/category/extension",
       },
       collapsed: false,
       items: ["extension/README", "extension/usage", "extension/manual-chrome-extension", "extension/manual-chrome-extension-zip", "extension/firefox-extension-setting"],

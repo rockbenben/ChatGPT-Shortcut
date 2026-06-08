@@ -125,6 +125,14 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   if (error || !prompt) {
     return (
       <Layout title={translate({ id: "community.notFound", message: "提示词未找到" })}>
+        <Head>
+          {/* CSR 注入：仅裸路径 / 无效 id / 已删除 prompt 渲染到这里。
+              noindex 不能写在静态壳（src/pages/community-prompt.tsx）——
+              那会连带所有 ?id= URL 一起被排除收录且阻止 Google 渲染 JS。
+              Google 渲染后读到这里的 noindex，会把无效 URL 排除；
+              有效 ?id= 走下方正常分支，靠 per-id canonical/og 被收录。 */}
+          <meta name="robots" content="noindex" />
+        </Head>
         <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <Result
@@ -148,7 +156,10 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const seoTitle = `${prompt.title} - ${translate({ id: "community.seoSuffix", message: "社区提示词" })}`;
   const seoDescription = prompt.remark || prompt.description?.substring(0, 160) || "";
 
-  // Canonical 自指 ?id= 路径（每条 prompt 在每个 locale 都有自己的页面）
+  // Canonical 按 locale 自指：UGC 正文虽不随 locale 翻译，但 UI 框架是翻译的——
+  // 若全部 canonical 合并到根路径，Google 只收录中文界面版，英文搜索用户
+  // 点进来满屏中文导航/按钮。权衡：接受跨 locale 的正文重复（Google 会自行聚类挑选），
+  // 换取各语言用户落地到本地化界面。与 sitemap 的 per-locale 注入保持一致。
   const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
   const canonicalUrl = `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`;
 

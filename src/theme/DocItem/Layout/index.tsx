@@ -6,6 +6,7 @@ import Head from "@docusaurus/Head";
 import { useDoc } from "@docusaurus/plugin-content-docs/client";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { toBcp47 } from "@site/src/utils/i18n";
+import { toJsonLd } from "@site/src/utils/jsonLd";
 
 type Props = WrapperProps<typeof LayoutType>;
 
@@ -24,8 +25,9 @@ export default function DocItemLayoutWrapper(props: Props): React.JSX.Element {
   const { siteConfig, i18n } = useDocusaurusContext();
 
   const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
-  const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
-  const canonicalUrl = `${siteConfig.url}${localePrefix}${metadata.permalink}`;
+  // metadata.permalink 在非默认 locale 已含 `/{locale}/` 前缀（Docusaurus 自动推断 baseUrl），
+  // 不能再额外拼 localePrefix，否则 en 等 17 个 locale 会双写成 /en/en/docs/...（404）。
+  const canonicalUrl = `${siteConfig.url}${metadata.permalink}`;
   const buildDate = (siteConfig.customFields?.buildDate as string) || new Date().toISOString();
   const orgId = `${siteConfig.url}/#organization`;
   const websiteId = `${siteConfig.url}/#website`;
@@ -64,7 +66,7 @@ export default function DocItemLayoutWrapper(props: Props): React.JSX.Element {
         {/* X 官方建议 twitter: 与 og: 同时提供（fallback 不完全等价） */}
         <meta name="twitter:title" content={headline} />
         {description && <meta name="twitter:description" content={description} />}
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">{toJsonLd(schema)}</script>
       </Head>
       <OriginalLayout {...props} />
     </>
