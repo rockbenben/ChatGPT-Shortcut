@@ -57,8 +57,13 @@ export async function getMySpace() {
     }
 
     console.error("[MySpace] Error fetching data:", error);
-    // 错误时返回缓存（如果有）
-    return cachedData || null;
+    // 有缓存时降级返回缓存；无缓存时必须抛出（而非吞错返回 null）。
+    // 否则有 token 无缓存的用户遇到快速失败（5xx/网络拒绝/DNS）时，fetchOnce 拿到 null 直接 return，
+    // 既不触发 800ms 重试也不触发降级登出，userAuth 永久停在 {pending:true} → 骨架屏永不消失。
+    if (cachedData) {
+      return cachedData;
+    }
+    throw error;
   }
 }
 
