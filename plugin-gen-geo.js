@@ -176,11 +176,29 @@ module.exports = function (context, options) {
         else if (titleMatch) title = titleMatch[1];
 
         // URL construction
-        // Windows path fix
-        const slug = relativePath
-          .replace(/\\/g, "/")
-          .replace(/\.md$/, "")
-          .replace(/\/index$/, "");
+        // 解析 frontmatter `slug:` 覆盖，并把 README/readme 当作目录索引页（同 index）。
+        // 否则纯靠文件路径推导会生成与真实路由不符的死链：
+        //   docs/introduction.md（slug: /）真实路由 /docs/，被错推成 /docs/introduction；
+        //   docs/extension/README.md 真实路由 /docs/extension，被错推成 /docs/extension/README。
+        const fmSlugMatch = content.match(/^slug:\s*(.*)$/m);
+        let slug;
+        if (fmSlugMatch) {
+          const raw = fmSlugMatch[1].replace(/^['"]|['"]$/g, "").trim();
+          if (raw.startsWith("/")) {
+            // 绝对 slug：相对 docs 路由根
+            slug = raw.replace(/^\/+/, "").replace(/\/+$/, "");
+          } else {
+            // 相对 slug：替换所在目录下的最后一段
+            const dir = relativePath.replace(/\\/g, "/").replace(/\/?[^/]*$/, "");
+            slug = `${dir ? dir + "/" : ""}${raw}`.replace(/\/+$/, "");
+          }
+        } else {
+          slug = relativePath
+            .replace(/\\/g, "/")
+            .replace(/\.md$/, "")
+            .replace(/\/(index|readme)$/i, "")
+            .replace(/^(index|readme)$/i, "");
+        }
         const url = `${urlPrefix}/docs/${slug}`;
 
         // Summary 优先级：frontmatter description > body 智能截断
