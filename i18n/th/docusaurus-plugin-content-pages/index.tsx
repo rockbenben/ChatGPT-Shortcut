@@ -363,9 +363,14 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     initializeData();
   }, [initializeData]);
 
+  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
+
   // Intersection Observer for auto-loading more cards
   const loadMoreTriggerRef = useRef<HTMLDivElement>(null);
 
+  // isFiltered 必须在依赖里：过滤视图与非过滤视图是两棵不同子树，触发器 <div ref> 在切到
+  // 过滤视图时卸载、切回时以【新 DOM 节点】重挂载。ref 重挂载不触发 effect，若依赖不含 isFiltered，
+  // observer 会继续盯着已脱离文档的旧节点 → 清除筛选后无限滚动彻底失效（滚到底也不再加载）。
   useEffect(() => {
     if (!loadMoreTriggerRef.current || !hasMoreDataRef.current) {
       return;
@@ -389,7 +394,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
     return () => {
       observer.disconnect();
     };
-  }, [hasMoreData, loadMoreData]);
+  }, [hasMoreData, loadMoreData, isFiltered]);
 
   // 注意：不要把卡片 map 成 {...user, _cachedWeight} 新对象——无限滚动每追加一批，
   // useMemo 会为数组中【全部】元素（含已渲染卡片）生成新引用，使 PromptCard 的 React.memo
@@ -400,8 +405,6 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const favoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.loves || []), [userAuth?.data?.favorites?.loves]);
   const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
   const commFavoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves || []), [userAuth?.data?.favorites?.commLoves]);
-
-  const { filteredCommus, filteredCards, isFiltered } = useFilteredPrompts();
 
   // 预计算投票数据，避免渲染时重复创建对象
   const filteredCommusWithDeltas = useMemo(() => {
