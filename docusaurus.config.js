@@ -43,7 +43,7 @@ const config = {
 
   // app boot 时跑的 client modules（SPA 路由切换不重触发）。
   // aiReferralTracker 把 AI 引擎来源 referrer 推到 GTM dataLayer，让 GA4 能单独分组
-  clientModules: [require.resolve("./src/clientModules/aiReferralTracker.ts")],
+  clientModules: [require.resolve("./src/clientModules/aiReferralTracker.ts"), require.resolve("./src/clientModules/chunkReload.js")],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
