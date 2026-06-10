@@ -144,17 +144,23 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
     currentPageRef.current = currentPage;
   }, [currentPage]);
 
+  // 防乱序竞态：快速翻页/切换排序时多个 getComments 并发在飞，
+  // 慢的旧请求若后到会用上一页数据覆盖当前页（pagination 显示 N 页、列表却是 M 页）。
+  // 用单调递增的 seq 标记每次调用，await 回来后只让"最新一次"写 state。
+  const fetchSeqRef = useRef(0);
   const fetchComments = useCallback(async () => {
+    const seq = ++fetchSeqRef.current;
     setIsLoading(true);
     try {
       const response = await getComments(pageId, currentPage, pageSize, type);
+      if (fetchSeqRef.current !== seq) return; // 已被更新的请求取代，丢弃陈旧结果
       if (response) {
         const nestedComments = nestComments(response.data);
         setComments(nestedComments);
         setTotalCommentsCount(response.meta.pagination.total);
       }
     } finally {
-      setIsLoading(false);
+      if (fetchSeqRef.current === seq) setIsLoading(false);
     }
   }, [pageId, currentPage, pageSize, type]);
 
@@ -305,8 +311,13 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
           setPollAttempt(attemptIndex + 1);
 
           try {
-            const response = await getComments(pageId, currentPageRef.current, pageSize, type);
-            if (response) {
+            // 记录发起时刻的页号：轮询与 fetchComments 是两个并发写入者，
+            // fetchComments 已用 fetchSeqRef 防乱序，但轮询不在其守卫内。
+            // 若用户在轮询请求在飞期间翻页，迟到的旧页响应会盖掉当前页 → 分页器与列表错位。
+            // await 回来后只在页号未变时才写 state，丢弃陈旧的跨页结果。
+            const pageAtRequest = currentPageRef.current;
+            const response = await getComments(pageId, pageAtRequest, pageSize, type);
+            if (pollTokenRef.current === token && currentPageRef.current === pageAtRequest && response) {
               const newCount = response.meta.pagination.total;
               const nestedComments = nestComments(response.data);
               setComments(nestedComments);
