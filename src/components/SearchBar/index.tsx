@@ -41,9 +41,13 @@ function readSearchName(search: string) {
 }
 
 /** Check if a prompt matches a search term across text fields */
+// title/description 用可选链：getPrompts 对「已收藏但作者取消分享且本地无缓存」的社区提示词
+// 会返回 {id,_unavailable,_noCache} 占位对象（无 title/description）。裸 .toLowerCase() 会抛错，
+// 而该调用在 [...userprompts,...commus].filter 里——一个占位对象就会中断整组过滤，
+// 导致用户自有/收藏提示词的搜索结果被整体吞空。占位对象无可搜索内容，应安静地不匹配。
 const matchesSearch = (prompt: any, searchLower: string): boolean =>
-  prompt.title.toLowerCase().includes(searchLower) ||
-  prompt.description.toLowerCase().includes(searchLower) ||
+  prompt.title?.toLowerCase().includes(searchLower) ||
+  prompt.description?.toLowerCase().includes(searchLower) ||
   (prompt.remark && prompt.remark.toLowerCase().includes(searchLower)) ||
   (prompt.notes && prompt.notes.toLowerCase().includes(searchLower));
 
