@@ -748,6 +748,9 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         newSpaceItems = arrayMove(spaceItems, activeFullIndex, overFullIndex);
       }
 
+      // 乐观更新前快照旧顺序：保存失败时回滚，避免「保存失败」toast 与界面（卡片停在新位）自相矛盾。
+      // 与本仓其余乐观路径（useFavorite / 投票）一致。
+      const previousSpaceItems = spaceItems;
       setSpaceItems(newSpaceItems);
 
       // 自动保存顺序 - 保存完整列表的顺序
@@ -778,6 +781,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         messageApi.success(<Translate id="message.orderSaved">排列已保存</Translate>);
       } catch (error) {
         console.error("Failed to save order:", error);
+        // 回滚乐观更新：保存失败 → 卡片回到拖动前的位置，与 toast 一致
+        setSpaceItems(previousSpaceItems);
         messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
       }
     },
