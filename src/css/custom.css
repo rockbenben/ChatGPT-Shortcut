@@ -813,3 +813,14 @@ article.markdown a:hover {
   color: var(--ifm-color-primary) !important;
   background: rgba(var(--ifm-color-primary-rgb), 0.1) !important;
 }
+
+/* ===== UserStatus 登录态首屏占位（防发版冷缓存下已登录用户闪「未登录」CTA） =====
+   配合 docusaurus.config.js 的 auth-boot-flag 内联脚本（水合前给 <html> 打 data-auth-boot=in）
+   与 UserStatus 挂载后设的 data-auth-ready。
+   用 display:contents 包装，两个 wrapper 都不产生布局盒子，零 CLS、零布局回退。
+   - 默认（未登录 / 已水合）：live 正常显示，boot 隐藏。
+   - 已登录且未水合：live 隐藏、boot（骨架）显示 —— 仅这一种状态被改写。 */
+.userstatus-boot { display: none; }
+.userstatus-live { display: contents; }
+html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-boot { display: contents; }
+html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: none; }
