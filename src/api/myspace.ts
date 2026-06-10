@@ -57,10 +57,12 @@ export async function getMySpace() {
     }
 
     console.error("[MySpace] Error fetching data:", error);
-    // 有缓存时降级返回缓存；无缓存时必须抛出（而非吞错返回 null）。
-    // 否则有 token 无缓存的用户遇到快速失败（5xx/网络拒绝/DNS）时，fetchOnce 拿到 null 直接 return，
-    // 既不触发 800ms 重试也不触发降级登出，userAuth 永久停在 {pending:true} → 骨架屏永不消失。
-    if (cachedData) {
+    // 有缓存时降级返回缓存（应对 5xx/网络拒绝/DNS 等瞬时失败）；无缓存时必须抛出（而非吞错返回 null），
+    // 否则有 token 无缓存的用户遇到快速失败时 fetchOnce 拿到 null 直接 return，既不重试也不降级登出，
+    // userAuth 永久停在 {pending:true} → 骨架屏永不消失。
+    // 例外：401（token 已失效，如服务端密钥轮换）绝不返回缓存——否则 AuthContext 误判为登录成功，
+    // 当前会话变成"僵尸登录"（UI 显示已登录但所有写操作都 401）。与 getUserAllInfo 的 401 行为一致。
+    if (error.response?.status !== 401 && cachedData) {
       return cachedData;
     }
     throw error;

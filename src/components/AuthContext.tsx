@@ -202,7 +202,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
         // Keep any existing cached userAuth to avoid UX regression.
         // If there was no cached auth to begin with, fall back to logged-out UI by clearing userAuth.
-        if (!hadCachedAuth) {
+        // 但 token 已被移除（401 吊销/密钥轮换，拦截器已清 token）时必须登出——否则当前会话保留
+        // hadCachedAuth 的缓存，呈"僵尸登录"。token 仍有效的瞬时失败（5xx/离线）下 readValidToken 非空，保留缓存不变。
+        if (!hadCachedAuth || !readValidToken()) {
           startTransition(() => setUserAuth(null));
         }
       } finally {
