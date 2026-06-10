@@ -20,6 +20,11 @@ export const useFavorite = (): UseFavoriteReturn => {
   const userAuthRef = useRef(userAuth);
   userAuthRef.current = userAuth;
 
+  // 收藏 PATCH 的单调序号：快速切换同一收藏会发出多个 patchFavorites，其响应可能乱序到达。
+  // applyDeltaResponse 用 delta.loves（该请求时刻的权威列表）覆盖本地，旧响应后到会盖掉新状态
+  // （心形错位、与服务端不一致，刷新才自愈）。只应用最新一次操作的协调。
+  const patchSeqRef = useRef(0);
+
   // Optimistic local toggle — instant UI feedback before the server PATCH lands.
   // Server-side merge handles concurrent-edit safety; this is just for UX latency.
   // 走 syncMySpaceState 统一入口（writes lscache-user_auth + lscache-myspace）。
@@ -138,10 +143,14 @@ export const useFavorite = (): UseFavoriteReturn => {
       const ops: FavoriteDeltaOps = {
         [isComm ? "commLoves" : "loves"]: { add: [id], remove: [] },
       };
+      const seq = ++patchSeqRef.current;
 
       try {
         const delta = await patchFavorites(ops);
-        applyDeltaResponse(delta, ops);
+        // 仅最新一次操作的响应可写本地：避免乱序的旧响应覆盖更新的收藏态
+        if (patchSeqRef.current === seq) {
+          applyDeltaResponse(delta, ops);
+        }
 
         // 社区提示词：异步投赞成票（不阻塞）
         if (isComm) {
@@ -170,10 +179,14 @@ export const useFavorite = (): UseFavoriteReturn => {
       const ops: FavoriteDeltaOps = {
         [isComm ? "commLoves" : "loves"]: { add: [], remove: [id] },
       };
+      const seq = ++patchSeqRef.current;
 
       try {
         const delta = await patchFavorites(ops);
-        applyDeltaResponse(delta, ops);
+        // 仅最新一次操作的响应可写本地：避免乱序的旧响应覆盖更新的收藏态
+        if (patchSeqRef.current === seq) {
+          applyDeltaResponse(delta, ops);
+        }
 
         message.success(<Translate id="message.removeFavorite.success">已取消收藏</Translate>);
       } catch (err) {
