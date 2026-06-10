@@ -5,6 +5,21 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from "prism-react-renderer";
+import { execSync } from "node:child_process";
+
+// 构建日期取 HEAD commit 时间而非 new Date()：
+// Docusaurus 对每个 locale 构建都会重新求值本 config，new Date() 会让 18 个 locale 的
+// schema.org datePublished/dateModified 各不相同（同一篇文档 18 个语言版本宣称 18 个发布时间），
+// 且每次重新构建都漂移。commit 时间跨 locale/跨重建稳定，仅在内容真正变更时才变化。
+// 非 git 环境（裸源码包构建）回退当前时间。
+function resolveBuildDate() {
+  try {
+    return execSync("git log -1 --format=%cI", { encoding: "utf8" }).trim() || new Date().toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+}
+const buildDate = resolveBuildDate();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -37,9 +52,9 @@ const config = {
   onBrokenLinks: "throw",
 
   // Build-time injected fields (via webpack DefinePlugin under the hood)
-  // buildDate 用于 schema.org Article 的 datePublished / dateModified
+  // buildDate 用于 schema.org Article 的 datePublished / dateModified（HEAD commit 时间，见顶部 resolveBuildDate）
   customFields: {
-    buildDate: new Date().toISOString(),
+    buildDate,
   },
 
   // Even if you don't use internationalization, you can use this field to set
@@ -68,6 +83,7 @@ const config = {
         docs: {
           path: "docs",
           sidebarPath: "sidebars.js",
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
