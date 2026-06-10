@@ -578,8 +578,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   };
 
   const handleDeletePrompt = useCallback(
-    (promptId: string) => {
-      confirmRemovePrompt(Number(promptId));
+    (promptId: number) => {
+      confirmRemovePrompt(promptId);
     },
     [confirmRemovePrompt],
   );
@@ -616,8 +616,8 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
 
   // 移除收藏
   const handleRemoveFavorite = useCallback(
-    (id: string, isComm?: boolean) => {
-      confirmRemoveFavorite(Number(id), isComm);
+    (id: number, isComm?: boolean) => {
+      confirmRemoveFavorite(id, isComm);
     },
     [confirmRemoveFavorite],
   );

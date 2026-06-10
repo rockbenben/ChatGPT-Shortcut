@@ -10,7 +10,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import { formatCompactNumber } from "@site/src/utils/formatters";
-import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
+import type { CommunityPrompt } from "./types";
 import styles from "./styles.module.css";
 
 interface UserCardProps {
@@ -106,12 +106,18 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       }
       actions={[
         <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
-        <Tooltip key="edit" title={<Translate id="action.edit">编辑</Translate>}>
-          <Button type="text" icon={<EditOutlined />} onClick={handleEdit} block />
-        </Tooltip>,
-        <Tooltip key="delete" title={<Translate id="action.delete">删除</Translate>}>
-          <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
-        </Tooltip>,
+        // 仅在传入 handler 时渲染编辑/删除：explore/搜索视图复用 UserCard 但不接 onEdit/onDelete，
+        // 此时不应显示点击无反应的「编辑/删除」按钮（真正入口在 MySpace 收藏页）。
+        onEdit && (
+          <Tooltip key="edit" title={<Translate id="action.edit">编辑</Translate>}>
+            <Button type="text" icon={<EditOutlined />} onClick={handleEdit} block />
+          </Tooltip>
+        ),
+        onDelete && (
+          <Tooltip key="delete" title={<Translate id="action.delete">删除</Translate>}>
+            <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
+          </Tooltip>
+        ),
         extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>

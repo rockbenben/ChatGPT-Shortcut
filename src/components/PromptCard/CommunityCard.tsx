@@ -7,7 +7,7 @@ import { CopyButton } from "@site/src/components/CopyButton";
 import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
-import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
+import type { CommunityPrompt } from "./types";
 import styles from "./styles.module.css";
 
 interface CommunityCardProps {
