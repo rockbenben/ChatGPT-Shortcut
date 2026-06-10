@@ -11,7 +11,3 @@ const compactFormatter = new Intl.NumberFormat("en-US", {
 export const formatCompactNumber = (count: number) => {
   return compactFormatter.format(count);
 };
-
-// truncate
-const MAX_LENGTH = 200;
-export const truncate = (str: string, num: number = MAX_LENGTH): string => (str.length <= num ? str : `${str.slice(0, num)}...`);
