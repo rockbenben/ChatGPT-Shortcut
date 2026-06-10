@@ -330,7 +330,12 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   const limitedSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
   const encodedSearchKey = trimmedSearchTerm ? encodeURIComponent(limitedSearchTerm) : "noTerm";
 
-  const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, page, pageSize, sortField, sortOrder, encodedSearchKey);
+  // 缓存键的搜索段不能与"无搜索"哨兵 "noTerm" 碰撞：搜索词恰为 "noTerm" 时
+  // encodeURIComponent 原样返回 "noTerm"，会与默认列表 key 撞键，导致搜索结果与默认列表互相污染
+  //（搜 "noTerm" 命中默认全量，或清空搜索后默认页显示上次 "noTerm" 的搜索结果）。
+  // 非空搜索加 "q_" 前缀隔离；空搜索仍用 "noTerm"，与 snapshotPrime 的默认列表 key 保持一致。
+  const searchCacheSegment = trimmedSearchTerm ? `q_${encodedSearchKey}` : "noTerm";
+  const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, page, pageSize, sortField, sortOrder, searchCacheSegment);
   const cachedData = getCache(cacheKey);
   const cachedEtag = getETag(cacheKey);
 
@@ -350,7 +355,7 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
   if (trimmedSearchTerm) {
     // 必须对查询值做 percent-encode：含 # 的词会被 XHR 当作 fragment 截断（"C#" → "C"），
     // 含 & 的词会注入额外 query 参数，含 + 的词被服务端解码成空格 —— 全部导致搜错内容。
-    // encodedSearchKey 在此分支必为编码后的词（非 "noTerm"），与 cacheKey 用同一份值保持一致。
+    // 注意：URL 用 encodedSearchKey（真实编码词）；缓存键另用 searchCacheSegment（带 "q_" 前缀防哨兵碰撞）。
     url += `&filters[$or][0][description][$containsi]=${encodedSearchKey}&filters[$or][1][title][$containsi]=${encodedSearchKey}&filters[$or][2][remark][$containsi]=${encodedSearchKey}`;
   }
 
