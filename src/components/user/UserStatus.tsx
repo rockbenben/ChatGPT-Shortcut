@@ -1,4 +1,4 @@
-import React, { useContext, useState, useCallback, useMemo, Suspense } from "react";
+import React, { useContext, useState, useCallback, useMemo, useEffect, useLayoutEffect, Suspense } from "react";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
@@ -11,6 +11,10 @@ import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
 
+// data-auth-ready 必须在 paint 前置位：SPA 从非首页跳进首页时，useEffect（paint 后）会先闪一帧
+// boot 骨架再换按钮。useLayoutEffect 在 commit 后、paint 前跑，首帧即正确。SSR 上退化为 useEffect 避免告警。
+const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : useEffect;
+
 const UserStatus = () => {
   const { userAuth, setUserAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
@@ -19,6 +23,12 @@ const UserStatus = () => {
 
   // 使用视图模式上下文
   const { viewMode, setViewMode } = useViewMode();
+
+  // 水合/挂载后给 <html> 加 data-auth-ready：撤掉内联脚本（auth-boot-flag）设的 boot 占位，
+  // 露出 React 渲染的真实按钮。此后 data-auth-boot 残留也无害（CSS 仅在 :not([data-auth-ready]) 时生效）。
+  useIsoLayoutEffect(() => {
+    document.documentElement.setAttribute("data-auth-ready", "");
+  }, []);
 
   const onFinish = useCallback(
     async (values) => {
@@ -132,50 +142,60 @@ const UserStatus = () => {
     []
   );
 
+  const authSkeleton = (
+    <>
+      <div className="hideOnSmallScreen">
+        <Space wrap size="middle">
+          <Skeleton.Button active size="large" style={{ width: 96 }} />
+          <Skeleton.Button active size="large" style={{ width: 144 }} />
+        </Space>
+      </div>
+      <div className="showOnSmallScreen">
+        <Space wrap size="middle">
+          <Skeleton.Button active size="default" style={{ width: 80 }} />
+          <Skeleton.Button active size="default" style={{ width: 32 }} />
+        </Space>
+      </div>
+    </>
+  );
+
   if (authLoading) {
-    return (
-      <>
-        <div className="hideOnSmallScreen">
-          <Space wrap size="middle">
-            <Skeleton.Button active size="large" style={{ width: 96 }} />
-            <Skeleton.Button active size="large" style={{ width: 144 }} />
-          </Space>
-        </div>
-        <div className="showOnSmallScreen">
-          <Space wrap size="middle">
-            <Skeleton.Button active size="default" style={{ width: 80 }} />
-            <Skeleton.Button active size="default" style={{ width: 32 }} />
-          </Space>
-        </div>
-      </>
-    );
+    return authSkeleton;
   }
 
   return (
     <>
-      {userAuth ? (
-        <>
-          {loggedInButtons}
-          <PromptFormModal
-            open={open}
-            mode="add"
-            loading={loading}
-            onSubmit={onFinish}
-            onClose={() => {
-              if (!loading) setOpen(false);
-            }}
-          />
-        </>
-      ) : (
-        <>
-          {loggedOutButtons}
-          <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-            <Suspense fallback={null}>
-              <LoginComponent />
-            </Suspense>
-          </Modal>
-        </>
-      )}
+      {/* boot 占位：仅「已登录且尚未水合」时由 CSS 显示（见 custom.css + auth-boot-flag 内联脚本），
+          避免发版冷缓存下已登录用户首屏几秒看到 SSR 静态 HTML 里的「免费登录」CTA。
+          display:contents 包装，不产生布局盒子（零 CLS）。 */}
+      <div className="userstatus-boot" aria-hidden>
+        {authSkeleton}
+      </div>
+      <div className="userstatus-live">
+        {userAuth ? (
+          <>
+            {loggedInButtons}
+            <PromptFormModal
+              open={open}
+              mode="add"
+              loading={loading}
+              onSubmit={onFinish}
+              onClose={() => {
+                if (!loading) setOpen(false);
+              }}
+            />
+          </>
+        ) : (
+          <>
+            {loggedOutButtons}
+            <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+              <Suspense fallback={null}>
+                <LoginComponent />
+              </Suspense>
+            </Modal>
+          </>
+        )}
+      </div>
     </>
   );
 };

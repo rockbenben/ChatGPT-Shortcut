@@ -126,6 +126,25 @@ const config = {
   ],
   plugins: [
     require.resolve("./plugin-gen-geo"),
+    // auth-boot：在主 JS 包下载/水合之前，于 <head> 同步读 localStorage 的 token，
+    // 给 <html> 打 data-auth-boot=in。配合 custom.css，让已登录用户在水合前看到的是骨架占位
+    // 而非静态 HTML 里烤死的「免费登录」CTA——发版后冷缓存（主包重新下载的那几秒）尤其明显。
+    // 仅检测 token 存在性即可驱动占位 UI；真伪/过期由水合后的 AuthProvider 兜底。未登录用户不打标记、零影响。
+    function authBootFlagPlugin() {
+      return {
+        name: "auth-boot-flag",
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: "script",
+                innerHTML: "(function(){try{if(localStorage.getItem('auth_token'))document.documentElement.setAttribute('data-auth-boot','in')}catch(e){}})();",
+              },
+            ],
+          };
+        },
+      };
+    },
     /*
     [
       "@docusaurus/plugin-client-redirects",
