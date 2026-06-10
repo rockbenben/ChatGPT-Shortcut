@@ -406,6 +406,13 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal })
   const userPromptIdSet = useMemo(() => new Set<number>(userAuth?.data?.userprompts?.map((p: any) => p.id) || []), [userAuth?.data?.userprompts]);
   const commFavoriteIdSet = useMemo(() => new Set<number>(userAuth?.data?.favorites?.commLoves || []), [userAuth?.data?.favorites?.commLoves]);
 
+  // filteredCommus 被新一轮搜索/筛选拉取替换后，其计数已含投票后的服务端真值（voteOnUserPrompt 已写 pm_ 缓存）。
+  // 此时若保留 voteDeltas 再叠加，会把同一票算两次（投票→改筛选使该卡重现→显示 +2）。
+  // 投票本身不改 filteredCommus 引用，故此 reset 不会清掉刚做的乐观更新。
+  useEffect(() => {
+    setVoteDeltas({});
+  }, [filteredCommus]);
+
   // 预计算投票数据，避免渲染时重复创建对象
   const filteredCommusWithDeltas = useMemo(() => {
     return filteredCommus.map((user: any) => {
