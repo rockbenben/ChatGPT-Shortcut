@@ -48,10 +48,10 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
         form={form}
         layout="vertical"
         requiredMark="optional"
-        onFinish={async (values) => {
-          await onSubmit(values);
-          form.resetFields();
-        }}>
+        // 不在此 resetFields：onSubmit 内部失败时是 catch 后返回 false（不抛），此处会无条件清空表单，
+        // 而调用方失败时不关弹窗 → 用户输入被清空丢失。表单初始化交给「打开时的 useEffect」+ destroyOnHidden，
+        // 成功时调用方关弹窗、下次打开自然重置；失败时保留输入供用户修正重提。
+        onFinish={onSubmit}>
         <Form.Item
           name="title"
           label={<Translate id="label.promptTitle">提示词名称</Translate>}
