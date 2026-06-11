@@ -54,7 +54,7 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
           justifyContent: "space-between",
           alignItems: "center",
           padding: "8px 12px",
-          borderTop: "1px solid var(--ifm-color-emphasis-200)",
+          borderTop: "1px solid var(--site-color-hairline)",
         }}>
         <div style={{ display: "flex", gap: 8 }}>
           <Button type="text" size="small" icon={<SmileOutlined />} onClick={onEmojiToggle} />

@@ -1,6 +1,7 @@
 import React, { useContext, memo } from "react";
 import classNames from "classnames";
 import { ConfigProvider, Typography } from "antd";
+import { CheckCircleFilled } from "@ant-design/icons";
 import type { ReactNode } from "react";
 
 const { Text, Paragraph } = Typography;
@@ -24,7 +25,18 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
   const contentDom = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: 0 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <Text strong style={{ fontSize: 14, fontWeight: 500 }}>{author || "AI Short"}</Text>
+        {/* author 为空 = 官方账号回复（内容可能是 AI 也可能是站长人工，所以用"认证对勾"而非 AI 字样——
+            语言中立、18 locale 零 i18n 负担，且不误标人工回复 */}
+        {/* 间距用图标 marginLeft 而非 flex gap：Text strong 内部会再包一层 <strong>，
+            名字和图标在同一 flex 子项里，外层 gap 不生效 */}
+        <Text strong style={{ fontSize: 14, fontWeight: 500 }}>
+          {author || (
+            <>
+              AI Short
+              <CheckCircleFilled aria-label="official" style={{ fontSize: 13, color: "var(--site-color-tag-selected-text)", marginLeft: 8 }} />
+            </>
+          )}
+        </Text>
         <Text type="secondary" style={{ fontSize: 11.5, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>
           {datetime}
         </Text>

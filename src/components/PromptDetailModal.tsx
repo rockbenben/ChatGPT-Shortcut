@@ -50,7 +50,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           padding: 0,
           overflow: "hidden",
           borderRadius: 12,
-          backgroundColor: "var(--ant-color-bg-elevated, #272d33)",
+          backgroundColor: "var(--ant-color-bg-elevated, #1b1f22)",
         },
       }}
       closeIcon={null}>
@@ -122,10 +122,18 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             flex: 1,
           }}>
           <Flex vertical gap={20}>
-            {/* Remark / Note - Quote Style */}
+            {/* Remark / Note — 与卡片 PromptRemark 同语言：3px 弱化 accent 竖线 + 渐隐底 + 斜体
+                （原 4px 全亮 accent 在磷光绿下过响，静态内容不抢交互信号） */}
             {data.remark && (
-              <div style={{ borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
+              <div
+                style={{
+                  borderLeft: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
+                  background: "linear-gradient(90deg, rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
+                  borderRadius: "0 6px 6px 0",
+                  padding: "6px 16px",
+                }}>
+                {/* pre-line：备注数据含 \n，默认 white-space 会把换行折叠成空格 */}
+                <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55, fontStyle: "italic", whiteSpace: "pre-line" }}>
                   {data.remark}
                 </Typography.Text>
               </div>
@@ -134,10 +142,13 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             {/* Prompt Content Block — recessed deep well */}
             <div>
               <Flex justify="space-between" align="center" style={{ marginBottom: 10 }}>
-                <Typography.Text style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)" }}>
+                {/* mono 眉题，与详情页 .comp-sheet-eyebrow 同语言 */}
+                <Typography.Text
+                  style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   <Translate id="prompt.content">Prompt 内容</Translate>
                 </Typography.Text>
-                <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="outlined" size="small" />
+                {/* 复制是 modal 的英雄动作，与详情页同配重（primary）；此前 outlined small 层级偏弱 */}
+                <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="primary" size="middle" />
               </Flex>
               <div
                 style={{
@@ -178,7 +189,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           </Flex>
         </div>
 
-        {/* Footer Section — hairline only, no bg fill */}
+        {/* Footer Section — hairline only, no bg fill。
+            无标签且非精选（社区/用户提示词常见）时整段不渲染，避免空 footer 占 60px 死区 */}
+        {(Boolean(data.tags?.length) || showViewDetails) && (
         <div
           style={{
             padding: "20px 24px",
@@ -196,6 +209,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             )}
           </Flex>
         </div>
+        )}
       </Flex>
     </Modal>
   );
