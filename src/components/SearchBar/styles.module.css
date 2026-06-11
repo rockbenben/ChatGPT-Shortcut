@@ -2,7 +2,7 @@
  * SearchBar custom styles for antd Input component
  * Replaces ConfigProvider theme for zeroRuntime compatibility
  *
- * Phosphor Index 命令行式搜索框，节奏是「空闲低调 → 聚焦醒来」：
+ * 命令行式搜索框，节奏是「空闲低调 → 聚焦醒来」：
  *   空闲：`>` 提示符与块光标都是中性灰、慢闪，CTRL K 键帽可见
  *   聚焦：`>` 点亮 accent、框体加宽、键帽提示退场、原生 caret（accent）接管
  */

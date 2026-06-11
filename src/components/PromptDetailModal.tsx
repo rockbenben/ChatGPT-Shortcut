@@ -122,7 +122,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           }}>
           <Flex vertical gap={20}>
             {/* Remark / Note — 与卡片 PromptRemark 同语言：3px 弱化 accent 竖线 + 渐隐底 + 斜体
-                （原 4px 全亮 accent 在磷光绿下过响，静态内容不抢交互信号） */}
+                （原 4px 全亮 accent 在品牌绿下过响，静态内容不抢交互信号） */}
             {data.remark && (
               <div
                 style={{
