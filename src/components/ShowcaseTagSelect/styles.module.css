@@ -63,7 +63,7 @@ input:checked + .checkboxLabel {
 }
 
 /* 分类圆点：默认中性灰，选中时点亮为 accent 并带微光。
-   原 tags.tsx 的 24 色彩虹圆点与单 accent 体系冲突（稀释磷光绿的信号价值），
+   原 tags.tsx 的 24 色彩虹圆点与单 accent 体系冲突（稀释品牌绿的信号价值），
    颜色数据保留在 tags.tsx，仅渲染层收敛。 */
 .tagSelect :global(.tagFilterDot) {
   width: 6px;

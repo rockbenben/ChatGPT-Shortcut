@@ -2,11 +2,10 @@ import React, { useLayoutEffect, useState, useMemo } from "react";
 import { ConfigProvider, theme, App } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
-// Dual-theme antd ConfigProvider — switches algorithm + per-mode brand tokens based on
+// Dual-theme antd ConfigProvider — switches algorithm + dark-only brand tokens based on
 // Docusaurus data-theme attribute. Universal tokens (radius, motion, components) apply
-// in both modes; Phosphor Index graphite bg/content tokens apply only in dark mode.
-// NOTE: 用 antd 默认 runtime CSS 注入（不设 zeroRuntime/cssVar，否则 antd 全失样式——
-// 那种模式需要配套 gen:antd-css 静态 CSS pipeline，本分支未配置）
+// in both modes; dark-only deep editorial bg/content apply only in dark mode.
+// NOTE: main 分支用 antd 默认 runtime CSS 注入（不设 zeroRuntime/cssVar，否则 antd 全失样式）
 // B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
 
 function getInitialTheme(): boolean {
@@ -42,8 +41,13 @@ export default function Root({ children }) {
   }, []);
 
   const themeConfig = useMemo(() => {
-    // Universal brand tokens — applied in both light and dark themes
+    // Universal brand tokens — applied in both light and dark themes.
+    // teal-ink 海沉绿 #397e6a：白字对比达标，dark 算法自动提亮，无需墨字按钮 hack。
+    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable 图标、
+    // type="link" 按钮会漏出蓝色，必须显式对齐到品牌绿（与 custom.css --ifm-link-color 同源）。
     const universalToken = {
+      colorPrimary: "#397e6a",
+      colorLink: "#2d6454", // light 链接/copyable 图标（dark 在 darkOnlyToken 提亮）
       borderRadius: 6,
       borderRadiusSM: 4,
       borderRadiusLG: 12,
@@ -53,35 +57,23 @@ export default function Root({ children }) {
       motionDurationSlow: "0.32s",
     };
 
-    // Phosphor Index 双主题 brand token：dark = 石墨三层底 + 磷光黄绿 accent #d8ff4a；
-    // light = 同 hue 74 暗化橄榄绿（白底上磷光绿对比度不可用）。与 custom.css 的
-    // --ifm-color-primary / --site-color-tag-selected-* 保持同源。
-    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable
-    // 图标、type="link" 按钮会漏出蓝色，两种模式都必须显式对齐
-    const modeToken = isDarkMode
+    // Dark-only deep editorial bg/content — overrides antd dark algorithm defaults for refined feel.
+    // 与 custom.css 的 --ifm-background-* 炭黑三层底同源。Light mode 走 antd defaultAlgorithm。
+    const darkOnlyToken = isDarkMode
       ? {
-          colorPrimary: "#d8ff4a",
-          colorLink: "#d8ff4a",
-          colorBgLayout: "#0c0e0f",
-          colorBgContainer: "#131619",
-          colorBgElevated: "#1b1f22",
+          colorLink: "#57c2a3", // dark 链接/copyable 图标，提亮版品牌绿（与 --site-color-tag-selected-text 同源）
+          colorBgLayout: "#14171a",
+          colorBgContainer: "#1d2126",
+          colorBgElevated: "#272d33",
           colorBorderSecondary: "rgba(255,255,255,0.08)",
           colorText: "#ededed",
           colorTextSecondary: "rgba(255,255,255,0.6)",
           colorTextTertiary: "rgba(255,255,255,0.4)",
         }
-      : {
-          colorPrimary: "#657a1f",
-          colorLink: "#526515",
-          // 浅色"纸面"三层底（与 custom.css --ifm-background-* 同源）：
-          // 页面不刷纯白减少眩光,纯白只留给 elevated 弹层
-          colorBgLayout: "#f0f1ea",
-          colorBgContainer: "#f8f9f3",
-          colorBgElevated: "#ffffff",
-        };
+      : {};
 
     return {
-      token: { ...universalToken, ...modeToken },
+      token: { ...universalToken, ...darkOnlyToken },
       components: {
         Card: {
           headerBg: "transparent",
@@ -92,9 +84,6 @@ export default function Root({ children }) {
         },
         Button: {
           borderRadius: 6,
-          // 磷光黄绿 primary 亮度太高，白字对比度不达标 → 暗色主按钮文字用墨色；
-          // 浅色橄榄绿底（#657a1f）白字 ~4.8:1 达标，走 antd 默认
-          ...(isDarkMode ? { primaryColor: "#101213" } : {}),
         },
       },
       algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,

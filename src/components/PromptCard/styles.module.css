@@ -1,6 +1,6 @@
 /* New Card Container Style — B+ design system
    Card uses hairline border (rgba 0.06) instead of "ghost shadow" for visible definition
-   on the deeper #0c0e0f page background. */
+   on the deeper #14171a page background. */
 .showcaseCard {
   border-radius: 6px;
   border: 1px solid var(--site-color-hairline);

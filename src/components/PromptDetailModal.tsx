@@ -77,9 +77,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                 {data.owner && (
                   <Space size={4}>
                     <UserOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
-                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>
-                      {data.owner}
-                    </Typography.Text>
+                    <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)" }}>{data.owner}</Typography.Text>
                   </Space>
                 )}
                 {data.vote > 0 && (
@@ -121,12 +119,11 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             flex: 1,
           }}>
           <Flex vertical gap={20}>
-            {/* Remark / Note - Quote Style */}
+            {/* Remark / Note — 与卡片 PromptRemark 同语言：3px 弱化 accent 竖线 + 渐隐底 + 斜体
+                （原 4px 全亮 accent 在品牌绿下过响，静态内容不抢交互信号） */}
             {data.remark && (
               <div style={{ borderLeft: "4px solid var(--ifm-color-primary)", paddingLeft: 16 }}>
-                <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
-                  {data.remark}
-                </Typography.Text>
+                <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>{data.remark}</Typography.Text>
               </div>
             )}
 
