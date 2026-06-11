@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo, useCallback, memo, useRef, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button, Form, Modal, Pagination } from "antd";
 import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -53,16 +54,16 @@ const getCurrentUserId = () => {
 };
 
 dayjs.extend(relativeTime);
-// 项目家族化头像调色板 — 同饱和度 / 同明度，仅 hue 旋转，
-// 取代之前 antd 8 色调色板（blue/green/red/purple/cyan/orange/gold/magenta），
-// 跟项目唯一 sage 主色融为"一家人不同肤色"
+// 项目家族化头像调色板 — 同饱和度 / 同明度，仅 hue 旋转。
+// 头像多色是身份语义（区分用户），允许多色；但家族锚点必须跟品牌主 hue 走：
+// 旧版锚定 sage 163°，Phosphor 换肤后重锚到磷光黄绿 74°
 const avatarColors = [
-  "hsl(163, 38%, 45%)", // sage primary
-  "hsl(193, 38%, 45%)", // sage→teal
-  "hsl(133, 38%, 45%)", // sage→olive
-  "hsl(223, 28%, 50%)", // muted blue
-  "hsl(43, 38%, 50%)", // muted gold
-  "hsl(13, 38%, 50%)", // muted clay
+  "hsl(74, 45%, 45%)", // phosphor olive（品牌锚点）
+  "hsl(104, 38%, 45%)", // green
+  "hsl(44, 42%, 50%)", // muted gold
+  "hsl(164, 32%, 45%)", // teal（旧色致敬位）
+  "hsl(214, 26%, 52%)", // muted blue
+  "hsl(14, 36%, 52%)", // muted clay
 ];
 const pageSize = 12;
 const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000];
@@ -103,6 +104,7 @@ const nestComments = (flatComments: any[]) => {
 };
 
 const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onCountChange?: (count: number) => void }) => {
+  const logoUrl = useBaseUrl("/img/logo.svg");
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
   const { i18n } = useDocusaurusContext();
@@ -484,7 +486,26 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
           </Button>,
         ]}
         author={comment.author?.name}
-        avatar={<BoringAvatar size={40} name={comment.author?.name || "anonymous"} variant="beam" colors={avatarColors} />}
+        avatar={
+          comment.author?.name ? (
+            <BoringAvatar size={40} name={comment.author.name} variant="beam" colors={avatarColors} />
+          ) : (
+            // 官方账号回复用站点 logo 作头像（身份最强标识），替代随机 BoringAvatar
+            <div
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
+                background: "rgba(var(--ifm-color-primary-rgb), 0.08)",
+                border: "1px solid var(--site-color-hairline)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+              <img src={logoUrl} width={26} height={26} alt="AI Short" />
+            </div>
+          )
+        }
         content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
         datetime={dayjs(comment.createdAt).fromNow()}>
         {replyingTo === comment.id && (
@@ -535,7 +556,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply],
+    [currentUserId, replyingTo, handleReplySubmit, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply, logoUrl],
   );
 
   return (
