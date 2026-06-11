@@ -113,14 +113,19 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           </Flex>
         </div>
 
-        {/* Scrollable Content — same bg as modal (no inversion) */}
+        {/* Content area — header & footer stay pinned. The prompt body box (below) is the
+            scroll region, so the eyebrow + copy button stay visible while scrolling a long prompt.
+            overflowY:auto here is only a fallback for the rare case remark+description also overflow. */}
         <div
           style={{
+            flex: 1,
+            minHeight: 0,
+            display: "flex",
+            flexDirection: "column",
             overflowY: "auto",
             padding: 24,
-            flex: 1,
           }}>
-          <Flex vertical gap={20}>
+          <Flex vertical gap={20} style={{ flex: 1, minHeight: 0 }}>
             {/* Remark / Note — 与卡片 PromptRemark 同语言：3px 弱化 accent 竖线 + 渐隐底 + 斜体
                 （原 4px 全亮 accent 在品牌绿下过响，静态内容不抢交互信号） */}
             {data.remark && (
@@ -130,6 +135,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                   background: "linear-gradient(90deg, rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
                   borderRadius: "0 6px 6px 0",
                   padding: "6px 16px",
+                  flexShrink: 0,
                 }}>
                 {/* pre-line：备注数据含 \n，默认 white-space 会把换行折叠成空格 */}
                 <Typography.Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55, fontStyle: "italic", whiteSpace: "pre-line" }}>
@@ -138,9 +144,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               </div>
             )}
 
-            {/* Prompt Content Block — recessed deep well */}
-            <div>
-              <Flex justify="space-between" align="center" style={{ marginBottom: 10 }}>
+            {/* Prompt Content Block — fills remaining height; the body box below is the scroll region */}
+            <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
+              <Flex justify="space-between" align="center" style={{ marginBottom: 10, flexShrink: 0 }}>
                 {/* mono 眉题，与详情页 .comp-sheet-eyebrow 同语言 */}
                 <Typography.Text
                   style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
@@ -151,6 +157,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               </Flex>
               <div
                 style={{
+                  flex: 1,
+                  minHeight: 0,
+                  overflowY: "auto",
                   backgroundColor: "var(--ifm-background-color)",
                   borderRadius: 6,
                   padding: "20px 24px",
@@ -175,13 +184,14 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               </div>
             </div>
 
-            {/* Description */}
+            {/* Description (译文) — 精选提示词的译文可能很长；限制最大高度并独立滚动，
+                避免它把上面的 Prompt 原文挤到很小的高度（原文优先拿剩余空间） */}
             {data.description && data.description !== data.prompt && (
               <Typography.Paragraph
                 copyable={{
                   text: data.description,
                 }}
-                style={{ margin: 0, lineHeight: 1.55, fontSize: 13, color: "var(--ifm-color-content-secondary)" }}>
+                style={{ margin: 0, lineHeight: 1.55, fontSize: 13, color: "var(--ifm-color-content-secondary)", flexShrink: 0, maxHeight: "20vh", overflowY: "auto" }}>
                 {data.description}
               </Typography.Paragraph>
             )}
