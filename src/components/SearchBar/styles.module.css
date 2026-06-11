@@ -1,25 +1,37 @@
 /**
  * SearchBar custom styles for antd Input component
  * Replaces ConfigProvider theme for zeroRuntime compatibility
+ *
+ * Phosphor Index 命令行式搜索框，节奏是「空闲低调 → 聚焦醒来」：
+ *   空闲：`>` 提示符与块光标都是中性灰、慢闪，CTRL K 键帽可见
+ *   聚焦：`>` 点亮 accent、框体加宽、键帽提示退场、原生 caret（accent）接管
  */
 
 .searchInput {
-  margin-left: auto;
+  /* 逻辑属性：RTL（ar locale）下随排版方向镜像，物理 margin-left 不会 */
+  margin-inline-start: auto;
+  width: 264px;
+  transition: width 0.2s var(--site-motion-emphasized);
+}
+
+.searchInput:focus-within {
+  width: 330px;
 }
 
 @media (max-width: 767px) {
-  .searchInput {
-    margin-left: 0;
+  .searchInput,
+  .searchInput:focus-within {
+    margin-inline-start: 0;
     width: 100%;
   }
 }
 
 .searchInput :global(.ant-input-affix-wrapper) {
-  border-radius: 20px;
+  border-radius: 6px;
   height: 32px;
   border-color: var(--site-color-hairline);
   background: var(--ifm-background-surface-color);
-  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .searchInput :global(.ant-input-affix-wrapper:hover) {
@@ -28,12 +40,19 @@
 
 .searchInput :global(.ant-input-affix-wrapper:focus),
 .searchInput :global(.ant-input-affix-wrapper-focused) {
-  border-color: transparent;
-  box-shadow: 0 0 0 2px var(--ifm-color-primary-lighter);
+  border-color: var(--site-color-tag-selected-border);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.12);
 }
 
 .searchInput :global(.ant-input) {
   background: transparent;
+  font-family: var(--site-font-mono);
+  font-size: 13px;
+  caret-color: var(--site-color-tag-selected-text);
+}
+
+.searchInput :global(.ant-input)::placeholder {
+  color: var(--site-color-text-tertiary);
 }
 
 .searchInput :global(.ant-btn) {
@@ -42,4 +61,79 @@
 
 .searchInput :global(.ant-btn:hover) {
   color: var(--ifm-color-primary);
+}
+
+/* allowClear 的 × — hover 点亮，和其他可交互信号同语言 */
+.searchInput :global(.ant-input-clear-icon:hover) {
+  color: var(--site-color-tag-selected-text) !important;
+}
+
+/* `>` 提示符：空闲中性灰，聚焦点亮 accent（终端"激活"信号） */
+.promptChar {
+  font-family: var(--site-font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--site-color-text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  transition: color 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.searchInput :global(.ant-input-affix-wrapper-focused) .promptChar {
+  color: var(--site-color-tag-selected-text);
+}
+
+/* 空闲态块光标：中性灰慢闪（accent 留给聚焦态）；聚焦或已有输入时隐藏，原生 caret 接管。
+   :has 不支持的老浏览器仅退化为"有输入时仍闪"，无功能影响。 */
+.fakeCaret {
+  width: 6px;
+  height: 14px;
+  margin-left: 4px;
+  background: var(--site-color-text-tertiary);
+  display: inline-block;
+  animation: caret-blink 1.4s steps(1) infinite;
+}
+
+.searchInput :global(.ant-input-affix-wrapper-focused) .fakeCaret,
+.searchInput :global(.ant-input-affix-wrapper:has(input:not(:placeholder-shown))) .fakeCaret {
+  display: none;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 不闪的"光标"没有光标语义，减弱动画环境下整个隐藏（`>` 提示符已足够表达终端隐喻） */
+  .fakeCaret {
+    display: none;
+  }
+
+  .searchInput,
+  .searchInput:focus-within {
+    transition: none;
+  }
+}
+
+/* CTRL K 键帽提示（桌面 only，hideOnSmallScreen 由调用处挂）；聚焦后退场——它是入口指引，不是状态栏 */
+.kbdHint {
+  font-family: var(--site-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  color: var(--site-color-text-tertiary);
+  border: 1px solid var(--site-color-hairline);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 2px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.searchInput :global(.ant-input-affix-wrapper-focused) .kbdHint {
+  display: none;
 }

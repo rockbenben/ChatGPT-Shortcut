@@ -120,6 +120,18 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
     }
   }, [location.state]);
 
+  // Ctrl+K / ⌘K 聚焦搜索框（终端 command palette 惯例，与 suffix 键帽提示对应）
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const handleSearch = useCallback(() => {
     if (beforeSearch && beforeSearch(value) === false) {
       return;
@@ -159,8 +171,26 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
         value={value ?? undefined}
         onChange={handleInput}
         onPressEnter={handleSearch}
+        onKeyDown={(e) => {
+          // Esc 退出聚焦（终端惯例，与 Ctrl+K 进入对应）。
+          // isComposing 守卫：拼音输入中按 Esc 是取消 IME 候选词，焦点必须留在框内
+          if (e.key === "Escape" && !e.nativeEvent.isComposing) (e.target as HTMLInputElement).blur();
+        }}
         allowClear
-        suffix={<Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />}
+        prefix={
+          <span className={styles.promptChar} aria-hidden>
+            &gt;
+            <span className={styles.fakeCaret} />
+          </span>
+        }
+        suffix={
+          <>
+            <kbd className={`${styles.kbdHint} hideOnSmallScreen`} aria-hidden>
+              CTRL K
+            </kbd>
+            <Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />
+          </>
+        }
       />
     </div>
   );
