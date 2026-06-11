@@ -9,7 +9,6 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
-import { cyan, green, red, blue } from "@ant-design/colors";
 import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
@@ -140,30 +139,14 @@ const ShowcaseFilters: React.FC = React.memo(() => {
       </Flex>
       <div className={clsx(styles.checkboxList, !showTagsOnMobile && "hideOnSmallScreen")} style={{ marginTop: "1rem" }}>
         {modifiedTagList.map((tag, i) => {
-          const { label, description, color } = Tags[tag];
+          const { label, description } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
 
           return (
             <div key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`}>
               <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
-                <ShowcaseTagSelect
-                  tag={tag}
-                  id={id}
-                  label={label}
-                  icon={
-                    <span
-                      style={{
-                        backgroundColor: color,
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                        marginLeft: 8,
-                        display: "inline-block",
-                        flexShrink: 0,
-                      }}
-                    />
-                  }
-                />
+                {/* 圆点收敛为中性灰、选中时点亮 accent（单 accent 体系）——样式见 ShowcaseTagSelect/styles.module.css */}
+                <ShowcaseTagSelect tag={tag} id={id} label={label} icon={<span className="tagFilterDot" />} />
               </ShowcaseTooltip>
             </div>
           );
@@ -594,8 +577,9 @@ const ExploreView: React.FC<{ onOpenModal: (data: any) => void }> = ({ onOpenMod
 };
 
 // ==================== 个人收藏视图 ====================
-// Stat bar — each stat carries its own hue (4-color scheme: cyan/green/red/blue is intentional visual signature).
-const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value: number; color: string }> = ({ icon, label, value, color }) => (
+// Stat bar — 单 accent 体系：图标/数字全中性（原 cyan/green/red/blue 四色已收敛），
+// 数字用 content 主色 + mono，和卡片统计同语言；区分靠图标形状 + label。
+const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value: number }> = ({ icon, label, value }) => (
   <div style={{ textAlign: "center", minWidth: 72 }}>
     <div
       style={{
@@ -608,7 +592,7 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
         alignItems: "center",
         gap: 4,
       }}>
-      <span aria-hidden style={{ fontSize: 11, color }}>
+      <span aria-hidden style={{ fontSize: 11 }}>
         {icon}
       </span>
       <span>{label}</span>
@@ -620,7 +604,7 @@ const StatItem: React.FC<{ icon: React.ReactNode; label: React.ReactNode; value:
         lineHeight: 1,
         fontFamily: "var(--site-font-mono)",
         fontVariantNumeric: "tabular-nums",
-        color,
+        color: "var(--ifm-color-content)",
       }}>
       {value}
     </div>
@@ -702,13 +686,13 @@ const PageHeader: React.FC<{
           }}
           styles={{ body: { padding: "16px 24px" } }}>
           <Flex justify="space-around" align="center" wrap="wrap" gap={16}>
-            <StatItem icon={<AppstoreOutlined />} label={<Translate id="myCollection.stats.total">总计</Translate>} value={totalItems} color={cyan[4]} />
+            <StatItem icon={<AppstoreOutlined />} label={<Translate id="myCollection.stats.total">总计</Translate>} value={totalItems} />
             <StatDivider />
-            <StatItem icon={<EditOutlined />} label={<Translate id="myCollection.stats.prompts">我的提示词</Translate>} value={totalPrompts} color={green[4]} />
+            <StatItem icon={<EditOutlined />} label={<Translate id="myCollection.stats.prompts">我的提示词</Translate>} value={totalPrompts} />
             <StatDivider />
-            <StatItem icon={<HeartOutlined />} label={<Translate id="myCollection.stats.favorites">收藏</Translate>} value={totalFavorites} color={red[4]} />
+            <StatItem icon={<HeartOutlined />} label={<Translate id="myCollection.stats.favorites">收藏</Translate>} value={totalFavorites} />
             <StatDivider />
-            <StatItem icon={<TagOutlined />} label={<Translate id="myCollection.stats.tags">自定义标签</Translate>} value={totalTags} color={blue[4]} />
+            <StatItem icon={<TagOutlined />} label={<Translate id="myCollection.stats.tags">自定义标签</Translate>} value={totalTags} />
           </Flex>
         </Card>
       )}

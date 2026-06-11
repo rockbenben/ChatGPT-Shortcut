@@ -34,9 +34,9 @@ input:focus-visible + .checkboxLabel {
 }
 
 input:checked + .checkboxLabel {
-  background-color: rgba(87, 194, 163, 0.1);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
   color: var(--site-color-tag-selected-text);
-  border-color: rgba(87, 194, 163, 0.4);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
 }
 
 /* Ant Design Tag.CheckableTag — B+ filter chips: square, transparent ground, fill on selected */
@@ -62,14 +62,33 @@ input:checked + .checkboxLabel {
   background-color: var(--ifm-hover-overlay) !important;
 }
 
+/* 分类圆点：默认中性灰，选中时点亮为 accent 并带微光。
+   原 tags.tsx 的 24 色彩虹圆点与单 accent 体系冲突（稀释磷光绿的信号价值），
+   颜色数据保留在 tags.tsx，仅渲染层收敛。 */
+.tagSelect :global(.tagFilterDot) {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  margin-left: 8px;
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: var(--site-color-neutral-marker);
+  transition: background-color 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tagSelectChecked :global(.tagFilterDot) {
+  background-color: var(--site-color-tag-selected-text);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--site-color-tag-selected-text) 50%, transparent);
+}
+
 .tagSelectChecked {
   color: var(--site-color-tag-selected-text);
-  background-color: rgba(87, 194, 163, 0.1);
-  border-color: rgba(87, 194, 163, 0.4);
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.4);
 }
 
 .tagSelectChecked:hover {
   color: var(--site-color-tag-selected-text) !important;
-  background-color: rgba(87, 194, 163, 0.14) !important;
-  border-color: rgba(87, 194, 163, 0.6) !important;
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.14) !important;
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.6) !important;
 }
