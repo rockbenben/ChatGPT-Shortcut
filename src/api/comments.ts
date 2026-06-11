@@ -8,7 +8,10 @@ import { setCache, getCache, flushCacheByPrefix, getListCacheKey, CACHE_TTL, CAC
  * Clear comments cache for a specific page
  */
 function clearCommentsCache(id: number, type: string = "card") {
-  const prefix = `${CACHE_PREFIX.COMMENTS}${type}_${id}`;
+  // 末尾补 "_" 与完整 key（cm_${type}_${id}_${page}_${pageSize}）的分隔符对齐：
+  // 否则 "cm_card_42" 作为纯字符串前缀会连带命中 "cm_card_420"、"cm_card_421"… 把
+  // 无关卡片的评论缓存一并清掉（多余的 refetch）。
+  const prefix = `${CACHE_PREFIX.COMMENTS}${type}_${id}_`;
   flushCacheByPrefix(prefix);
 }
 
