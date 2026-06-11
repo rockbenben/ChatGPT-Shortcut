@@ -93,6 +93,8 @@ const TagLayout = ({
             position: "relative",
             cursor,
           }}>
+          {/* 左侧 tick 收敛为中性灰（原 tagObject.color 彩虹色与单 accent 体系冲突）——
+              双主题用 var（浅色黑系 / 暗色白系），硬编码白色在浅色卡片上不可见 */}
           <span
             aria-hidden
             style={{
@@ -101,7 +103,7 @@ const TagLayout = ({
               top: 0,
               bottom: 0,
               width: 2,
-              backgroundColor: tagObject.color,
+              backgroundColor: "var(--site-color-neutral-marker)",
             }}
           />
           {tagObject.label}

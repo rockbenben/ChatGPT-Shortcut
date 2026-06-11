@@ -10,67 +10,82 @@
    See css var + hsl color palette technique:
    https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
     */
-  --site-primary-hue-saturation: 163 38%;
-  --site-primary-hue-saturation-light: 163 55%; /* adjusted for better lightness contrast */
+  /* Phosphor Index 检索终端：石墨黑中性底（去茶青蓝调）+ 单一磷光黄绿 accent #d8ff4a (hsl 74 100% 65%)。
+     浅色模式走同 hue 74 的暗化橄榄绿（白底上磷光绿对比度 ~1.4:1 不可用），
+     暗色在 html[data-theme="dark"] 块提饱和并点亮纯 accent */
+  --site-primary-hue-saturation: 74 60%;
+  --site-primary-hue-saturation-light: 74 70%;
   --site-color-favorite-background: transparent;
   --site-color-tooltip: #fff;
-  --site-color-tooltip-background: #323a41;
+  --site-color-tooltip-background: #2a2f33;
   --site-color-svg-icon-favorite: #e9669e;
-  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
-  --site-color-feedback-background: #fff;
-  --site-color-tags-background: #fff;
+  --site-color-checkbox-checked-bg: hsl(74deg 60% 45% / 25%);
+  --site-color-feedback-background: #f8f9f3;
+  --site-color-tags-background: #f8f9f3;
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
   --site-primary-font: #3e4042;
-  --site-color-background: white;
+  --site-color-background: #f8f9f3;
+
+  /* Phosphor 浅色"纸面索引卡"三层底（与暗色石墨三层对偶,同 hue 74 微暖纸感）：
+     page #f0f1ea < card/surface #f8f9f3 < elevated 纯白——纯白只留给弹层,页面不刷白减少眩光 */
+  --ifm-background-color: #f0f1ea;
+  --ifm-background-surface-color: #f8f9f3;
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --site-color-card-background: #fafafa;
+  --site-color-card-background: #f8f9f3;
   --site-color-card-border: transparent; /* Light: no hard outline; shadow + bg define the card */
-  --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
-  --site-color-tag-selected-text: #2d6454; /* Darker primary */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
+  --site-color-tag-selected-bg: hsl(74deg 60% 92%); /* Light mode tint */
+  --site-color-tag-selected-text: #526515; /* Darker primary */
+  --site-color-tag-selected-border: #657a1f; /* Primary border */
 
   /* Editorial UI tokens — light defaults; dark counterparts in [data-theme="dark"] block */
   --site-color-text-tertiary: rgba(0, 0, 0, 0.45);
   --site-color-hairline: rgba(0, 0, 0, 0.08);
   --site-color-ghost-border: rgba(0, 0, 0, 0.04);
+  /* 中性标记（卡片 tag tick、分类圆点）——彩虹色收敛后的默认态，选中才点亮 accent */
+  --site-color-neutral-marker: rgba(0, 0, 0, 0.2);
   --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
   --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
   /* Markdown / docs links use brand primary, not Infima default blue */
   --ifm-link-color: var(--site-color-tag-selected-text);
-  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 45%);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 36%);
 }
 
 html[data-theme="dark"] {
+  /* 暗色提饱和：--ifm-color-primary 走 hsl(74 70% 45%) 哑光黄绿做大面积主色，
+     纯 accent #d8ff4a 留给选中态 / antd token / rgba tint，避免大面积磷光刺眼 */
+  --site-primary-hue-saturation: 74 70%;
+  --site-primary-hue-saturation-light: 74 100%;
   --site-color-feedback-background: #f0f8ff;
-  --site-color-tags-background: #1a1f24;
-  --site-color-favorite-background: #1a1f24;
-  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 10%);
+  --site-color-tags-background: #15181a;
+  --site-color-favorite-background: #15181a;
+  --site-color-checkbox-checked-bg: hsl(74deg 100% 65% / 10%);
   --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   --site-primary-font: #c5c5c5;
-  --site-color-background: #1d2126;
+  --site-color-background: #131619;
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --site-color-card-background: #272d33;
+  --site-color-card-background: #1b1f22;
   --site-color-card-border: var(--ifm-color-emphasis-200); /* Dark: subtle outline reads well on dark bg */
-  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
-  --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
+  --site-color-tag-selected-bg: rgba(216, 255, 74, 0.1); /* Dark mode tint */
+  --site-color-tag-selected-text: #d8ff4a; /* 纯磷光 accent */
+  --site-color-tag-selected-border: rgba(216, 255, 74, 0.5);
 
   /* Editorial UI tokens — dark counterparts of :root values */
   --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
   --site-color-hairline: rgba(255, 255, 255, 0.08);
   --site-color-ghost-border: rgba(255, 255, 255, 0.04);
-  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
+  --site-color-neutral-marker: rgba(255, 255, 255, 0.22);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 73%);
 
-  /* Brand-voice deep editorial bg + content — deeper than Infima default for refined feel */
-  --ifm-background-color: #14171a;
-  --ifm-background-surface-color: #1d2126;
+  /* Phosphor 石墨三层底（layout #0c0e0f / container #131619 / elevated #1b1f22，与 antd token 同步） */
+  --ifm-background-color: #0c0e0f;
+  --ifm-background-surface-color: #131619;
   --ifm-color-content: #ededed;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
   --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
@@ -84,19 +99,19 @@ html[data-theme="dark"] {
   * other properties here.
   */
 [data-theme="light"] {
-  --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 36%);
-  --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 32%);
-  --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 29%);
-  --ifm-color-primary-darkest: hsl(var(--site-primary-hue-saturation) 23%);
+  --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 30%);
+  --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 27%);
+  --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 24%);
+  --ifm-color-primary-darkest: hsl(var(--site-primary-hue-saturation) 19%);
 
-  --ifm-color-primary-light: hsl(var(--site-primary-hue-saturation-light) 45%);
+  --ifm-color-primary-light: hsl(var(--site-primary-hue-saturation-light) 38%);
   --ifm-color-primary-lighter: hsl(
-    var(--site-primary-hue-saturation-light) 53%
+    var(--site-primary-hue-saturation-light) 46%
   );
   --ifm-color-primary-lightest: hsl(
-    var(--site-primary-hue-saturation-light) 64%
+    var(--site-primary-hue-saturation-light) 56%
   );
-  --ifm-color-primary-rgb: 57, 126, 106; /* #397e6a — rgba() companion for --ifm-color-primary */
+  --ifm-color-primary-rgb: 101, 122, 31; /* #657a1f — rgba() companion for --ifm-color-primary */
 }
 
 /*
@@ -116,7 +131,13 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: hsl(
     var(--site-primary-hue-saturation-light) 73%
   );
-  --ifm-color-primary-rgb: 71, 158, 134; /* dark-mode primary hsl(163, 38%, 45%) — rgba() companion */
+  --ifm-color-primary-rgb: 216, 255, 74; /* #d8ff4a accent — rgba() tint 走纯磷光绿（与哑光主色刻意分离） */
+}
+
+/* Phosphor Index 签名纹理：极淡横向扫描线，给石墨底一层"终端屏幕"质感（强度 0.6% 白，几乎不可察觉）。
+   仅暗色——浅色纸面没有"屏幕"隐喻，白色扫描线在白底上也无意义 */
+html[data-theme="dark"] body {
+  background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(255, 255, 255, 0.006) 2px 4px);
 }
 
 .header-github-link:hover {
@@ -214,7 +235,7 @@ html[data-theme="dark"] {
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #272d33;
+  --ifm-footer-background-color: #1b1f22;
 }
 
 .unique-tabs .tabs__item {
@@ -526,7 +547,8 @@ article.markdown a:hover {
   margin: 0;
 }
 
-/* Remark pull-quote — sage 左竖线，antd 没有原生引语组件 */
+/* Remark pull-quote — 左竖线引语，antd 没有原生引语组件。
+   pre-line：备注数据含 \n，默认 white-space 会把换行折叠成空格 */
 .comp-sheet-remark {
   margin: 0;
   padding: 4px 0 4px 16px;
@@ -534,6 +556,7 @@ article.markdown a:hover {
   font-size: 14px;
   line-height: 1.6;
   color: var(--ifm-color-content-secondary);
+  white-space: pre-line;
 }
 
 /* Prompt body — 上下 hairline，无外框；这种 pattern antd Card/Divider 都不对 */

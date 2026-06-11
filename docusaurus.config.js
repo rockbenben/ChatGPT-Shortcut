@@ -135,10 +135,11 @@ const config = {
       tagName: "link",
       attributes: { rel: "apple-touch-icon", href: "/img/logo.png" },
     },
-    // theme-color — 同 antd ConfigProvider 的 colorPrimary，移动 Chrome 地址栏会染色
+    // theme-color — 移动 Chrome 地址栏染色。磷光黄绿 accent 做整条地址栏太刺眼，
+    // 改用页面石墨底色（同 antd colorBgLayout），地址栏与页面无缝衔接
     {
       tagName: "meta",
-      attributes: { name: "theme-color", content: "#397e6a" },
+      attributes: { name: "theme-color", content: "#0c0e0f" },
     },
     // Apple Mobile Web App 全屏模式（PWA 安装到 iOS 主屏后用全屏 webview 启动）
     // 现代 iOS 16+ 会读 manifest 的 display: standalone，但保留这个 tag 兼容老版本

@@ -18,7 +18,7 @@
 .searchInput :global(.ant-input-affix-wrapper:focus),
 .searchInput :global(.ant-input-affix-wrapper-focused) {
   border-color: var(--site-color-tag-selected-text);
-  box-shadow: 0 0 0 2px rgba(87, 194, 163, 0.2);
+  box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.2);
 }
 
 .searchInput :global(.ant-input) {
