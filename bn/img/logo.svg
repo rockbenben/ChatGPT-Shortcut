@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
   <defs>
     <linearGradient id="bio" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e3ff6e"/><stop offset="1" stop-color="#cdf138"/>
+      <stop offset="0" stop-color="#6fd0b3"/><stop offset="1" stop-color="#34a085"/>
     </linearGradient>
     <linearGradient id="chip" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#eceeef"/><stop offset="1" stop-color="#d2d6d8"/>
@@ -46,12 +46,12 @@
   </g>
   <circle cx="574" cy="460" r="21" fill="#43474a"/>
   <circle cx="720" cy="377" r="25" fill="none" stroke="#43474a" stroke-width="15"/>
-  <circle cx="790" cy="487" r="23" fill="#d8ff4a" stroke="#43474a" stroke-width="12"/>
+  <circle cx="790" cy="487" r="23" fill="#2d8a72" stroke="#43474a" stroke-width="12"/>
   <circle cx="856" cy="612" r="23" fill="none" stroke="#43474a" stroke-width="15"/>
   <circle cx="700" cy="708" r="20" fill="#43474a"/>
   <circle cx="710" cy="760" r="19" fill="#43474a"/>
   <rect x="735" y="195" width="34" height="34" rx="8" fill="#43474a"/>
   <rect x="810" y="665" width="30" height="30" rx="8" fill="#43474a"/>
-  <circle cx="549" cy="500" r="21" fill="#d8ff4a" stroke="#43474a" stroke-width="10"/>
+  <circle cx="549" cy="500" r="21" fill="#2d8a72" stroke="#43474a" stroke-width="10"/>
   </g>
 </svg>

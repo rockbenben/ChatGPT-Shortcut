@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <!-- AiShort OG / social card — teal-ink 海沉绿配色源文件。
+       改色后用 Chrome headless 渲染为 static/img/social-card.png（1280x640）。
+       品牌脑插画与 logo.svg 同源（bio 半 teal 渐变 / chip 半灰）。 -->
+  <defs>
+    <linearGradient id="bio" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fd0b3"/><stop offset="1" stop-color="#34a085"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eceeef"/><stop offset="1" stop-color="#d2d6d8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#57c2a3" stop-opacity="0.30"/>
+      <stop offset="0.55" stop-color="#57c2a3" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#57c2a3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg" cx="0.78" cy="0.42" r="0.72">
+      <stop offset="0" stop-color="#1b2024"/><stop offset="1" stop-color="#101315"/>
+    </radialGradient>
+    <path id="halfShape" d="M 494 140 A 112 112 0 0 0 285 177 A 132 132 0 0 0 141 365 A 165 165 0 0 0 141 635 A 132 132 0 0 0 285 823 A 112 112 0 0 0 494 860 Z"/>
+    <symbol id="brain" viewBox="0 0 1024 1024">
+      <g transform="translate(512,512) scale(1.07) translate(-512,-500)">
+        <use href="#halfShape" fill="url(#bio)" stroke="#43474a" stroke-width="20" stroke-linejoin="round"/>
+        <g fill="none" stroke="#43474a" stroke-width="16" stroke-linecap="round">
+          <path d="M 230 255 C 285 195 375 200 396 268 C 410 312 368 340 336 320 C 316 308 320 280 338 275"/>
+          <path d="M 420 170 C 448 158 476 168 480 198"/>
+          <path d="M 150 430 C 205 392 275 406 290 460 C 300 498 264 520 240 502 C 226 490 230 470 246 466"/>
+          <path d="M 348 420 C 383 400 421 412 428 448 C 433 477 408 491 390 475"/>
+          <path d="M 175 620 C 225 590 282 602 292 650 C 299 682 270 696 252 678"/>
+          <path d="M 280 760 C 325 735 378 745 388 788 C 394 818 367 830 351 814"/>
+          <path d="M 420 680 C 452 662 484 674 488 708"/>
+          <path d="M 430 500 L 458 500"/>
+        </g>
+        <circle cx="471" cy="500" r="17" fill="#43474a"/>
+        <g transform="translate(1024,0) scale(-1,1)">
+          <use href="#halfShape" fill="url(#chip)" stroke="#43474a" stroke-width="20" stroke-linejoin="round"/>
+        </g>
+        <g fill="none" stroke="#43474a" stroke-width="16" stroke-linecap="round">
+          <path d="M 574 240 L 574 430"/>
+          <path d="M 645 185 L 645 280 L 720 280 L 720 345"/>
+          <path d="M 790 250 L 790 455"/>
+          <path d="M 856 430 L 856 580"/>
+          <path d="M 700 560 L 700 680"/>
+          <path d="M 576 500 L 645 500 L 645 558"/>
+          <path d="M 600 760 L 678 760"/>
+        </g>
+        <circle cx="574" cy="460" r="21" fill="#43474a"/>
+        <circle cx="720" cy="377" r="25" fill="none" stroke="#43474a" stroke-width="15"/>
+        <circle cx="790" cy="487" r="23" fill="#2d8a72" stroke="#43474a" stroke-width="12"/>
+        <circle cx="856" cy="612" r="23" fill="none" stroke="#43474a" stroke-width="15"/>
+        <circle cx="700" cy="708" r="20" fill="#43474a"/>
+        <circle cx="710" cy="760" r="19" fill="#43474a"/>
+        <rect x="735" y="195" width="34" height="34" rx="8" fill="#43474a"/>
+        <rect x="810" y="665" width="30" height="30" rx="8" fill="#43474a"/>
+        <circle cx="549" cy="500" r="21" fill="#2d8a72" stroke="#43474a" stroke-width="10"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- right brain + teal glow -->
+  <circle cx="1058" cy="318" r="250" fill="url(#glow)"/>
+  <use href="#brain" x="905" y="165" width="306" height="306"/>
+
+  <!-- header -->
+  <use href="#brain" x="48" y="34" width="36" height="36"/>
+  <text x="96" y="60" fill="#ededed" font-size="23" font-weight="700" letter-spacing="1.5">AISHORT</text>
+  <text x="214" y="59" fill="rgba(255,255,255,0.38)" font-size="14" letter-spacing="4.5" font-family="Cascadia Code, Consolas, monospace">PROMPT INDEX</text>
+
+  <!-- title -->
+  <text x="62" y="252" fill="#ededed" font-size="94" font-weight="300" letter-spacing="-2.5">AI Short</text>
+
+  <!-- subtitle -->
+  <text x="66" y="322" font-size="30" font-weight="600">
+    <tspan fill="#57c2a3">5000+ AI Prompts</tspan><tspan fill="#ededed" font-weight="400"> | One-Click Use</tspan>
+  </text>
+
+  <!-- engines -->
+  <text x="66" y="364" fill="rgba(255,255,255,0.45)" font-size="19" letter-spacing="1.5" font-family="Cascadia Code, Consolas, monospace">ChatGPT · DeepSeek · Claude · Gemini</text>
+
+  <!-- terminal command box -->
+  <rect x="66" y="400" width="342" height="56" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(87,194,163,0.38)"/>
+  <text x="88" y="436" font-size="20" font-family="Cascadia Code, Consolas, monospace">
+    <tspan fill="#57c2a3">&gt;&#160;</tspan><tspan fill="rgba(255,255,255,0.72)">find the right prompt</tspan>
+  </text>
+  <rect x="360" y="419" width="11" height="22" fill="#57c2a3"/>
+
+  <!-- footer -->
+  <line x1="48" y1="568" x2="1232" y2="568" stroke="rgba(255,255,255,0.08)"/>
+  <text x="62" y="602" fill="rgba(255,255,255,0.4)" font-size="15" letter-spacing="2.5" font-family="Cascadia Code, Consolas, monospace">PROMPT MANAGER / 18 LANGUAGES / OPEN SOURCE</text>
+  <text x="1218" y="602" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="15" letter-spacing="1" font-family="Cascadia Code, Consolas, monospace">www.aishort.top</text>
+</svg>
