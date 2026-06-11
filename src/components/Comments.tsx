@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useCallback, memo, useRef, Suspens
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { Button, Form, Modal, Pagination } from "antd";
+import { App, Button, Form, Modal, Pagination } from "antd";
 import BoringAvatar from "boring-avatars";
 import { useColorMode } from "@docusaurus/theme-common";
 import CommentComponent from "@site/src/components/CommentComponent";
@@ -109,8 +109,12 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
   const isDarkMode = colorMode === "dark";
   const { i18n } = useDocusaurusContext();
   const currentLocale = i18n.currentLocale;
+  const { message } = App.useApp();
 
   const [currentUserId, setCurrentUserId] = useState(0);
+  // 防双击重复提交：ref 即时拦截（state 重渲染前的窗口期），state 驱动按钮 loading
+  const [submitting, setSubmitting] = useState(false);
+  const submittingRef = useRef(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [showGiphySearchBox, setShowGiphySearchBox] = useState(false);
   const [showEmojiPickerReply, setShowEmojiPickerReply] = useState(false);
@@ -275,6 +279,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
 
   const handleCancelReply = () => {
     const key = getReplyStorageKey();
+    debouncedDraftSave.cancel(); // 取消在途的草稿保存，避免 removeItem 后草稿被重新写回
     localStorage.removeItem(key); // Clear draft on cancel
     replyForm.resetFields();
     setReplyingTo(null);
@@ -357,9 +362,16 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
       handleLoginModalOpen();
       return;
     }
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setSubmitting(true);
     try {
-      await postComment(pageId, values.comment, replyingTo, type, currentLocale);
+      // 顶部主评论框始终发顶级评论（threadOf=null）。不能用 replyingTo：用户点过某条
+      // 「回复」后未取消、转而在顶部框发新评论时，会被错挂成该评论的子回复（位置错乱）。
+      // 回复有独立的内联编辑器走 handleReplySubmit，那里才用 replyingTo。
+      await postComment(pageId, values.comment, null, type, currentLocale);
       form.resetFields();
+      debouncedDraftSave.cancel(); // 取消在途的草稿保存，避免已发表内容被重新写回草稿
       localStorage.removeItem(getCommentStorageKey());
       setReplyingTo(null);
 
@@ -373,6 +385,15 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
       pollForAIReply(initialCount);
     } catch (error) {
       console.error("Failed to post comment:", error);
+      message.error(
+        translate({
+          id: "message.postComment.error",
+          message: "评论发送失败，请稍后重试",
+        }),
+      );
+    } finally {
+      submittingRef.current = false;
+      setSubmitting(false);
     }
   };
 
@@ -381,9 +402,13 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
       handleLoginModalOpen();
       return;
     }
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setSubmitting(true);
     try {
       await postComment(pageId, values.reply, replyingTo, type, currentLocale);
       replyForm.resetFields();
+      debouncedDraftSave.cancel(); // 同 handleSubmit：防止已发表的回复被 debounce 写回草稿
       localStorage.removeItem(getReplyStorageKey());
       setReplyingTo(null);
 
@@ -392,6 +417,15 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
       pollForAIReply(initialCount);
     } catch (error) {
       console.error("Failed to post reply:", error);
+      message.error(
+        translate({
+          id: "message.postComment.error",
+          message: "评论发送失败，请稍后重试",
+        }),
+      );
+    } finally {
+      submittingRef.current = false;
+      setSubmitting(false);
     }
   };
 
@@ -451,6 +485,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
             ]}>
             <CommentEditor
               onSubmit={form.submit}
+              submitting={submitting}
               isLoggedIn={!!currentUserId}
               onLogin={handleLoginModalOpen}
               onEmojiToggle={() => handleEmojiGiphyToggle("emojiPicker", "comment")}
@@ -530,6 +565,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
               ]}>
               <CommentEditor
                 onSubmit={replyForm.submit}
+                submitting={submitting}
                 isLoggedIn={!!currentUserId}
                 onLogin={handleLoginModalOpen}
                 onEmojiToggle={() => handleEmojiGiphyToggle("emojiPicker", "reply")}
@@ -556,7 +592,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
         {comment.children && comment.children.map((childComment) => renderComment(childComment))}
       </CommentComponent>
     ),
-    [currentUserId, replyingTo, handleReplySubmit, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply, logoUrl],
+    [currentUserId, replyingTo, handleReplySubmit, submitting, isDarkMode, showEmojiPickerReply, showGiphySearchBoxReply, logoUrl],
   );
 
   return (
