@@ -10,49 +10,24 @@
    See css var + hsl color palette technique:
    https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
     */
-  /* Phosphor Index 检索终端：石墨黑中性底（去茶青蓝调）+ 单一磷光黄绿 accent #d8ff4a (hsl 74 100% 65%) */
-  --site-primary-hue-saturation: 74 70%;
-  --site-primary-hue-saturation-light: 74 100%;
-  --site-color-favorite-background: #15181a;
+  /* Teal-ink 海沉绿单主题（dark-only，zeroRuntime 静态管线）：accent #397e6a，选中态/链接提亮 #57c2a3。
+     选择器分层刻意与 main 双主题分支同构（:root 共享 / html[data-theme="dark"] 暗色 token /
+     [data-theme="dark"] 主色阶），方便两分支互相 cherry-pick。本分支强制 dark，dark 块恒生效，无 light 块。 */
+  --site-primary-hue-saturation: 163 38%;
+  --site-primary-hue-saturation-light: 163 55%;
   --site-color-tooltip: #fff;
   --site-color-tooltip-background: #2a2f33;
   --site-color-svg-icon-favorite: #e9669e;
-  --site-color-checkbox-checked-bg: hsl(74deg 100% 65% / 10%);
-  --site-color-feedback-background: #f0f8ff;
-  --site-color-tags-background: #15181a;
-  --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
-  --site-primary-font: #c5c5c5;
-  --site-color-background: #131619;
-  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --site-color-card-background: #1b1f22;
-  --ifm-color-primary-rgb: 216, 255, 74;
-  --site-color-tag-selected-bg: rgba(216, 255, 74, 0.1);
-  --site-color-tag-selected-text: #d8ff4a;
-  --site-color-tag-selected-border: rgba(216, 255, 74, 0.5);
-  /* Primary color palette */
-  --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 45%);
-  --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 41%);
-  --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 38%);
-  --ifm-color-primary-darkest: hsl(var(--site-primary-hue-saturation) 32%);
-
-  --ifm-color-primary-light: hsl(var(--site-primary-hue-saturation-light) 54%);
-  --ifm-color-primary-lighter: hsl(
-    var(--site-primary-hue-saturation-light) 62%
-  );
-  --ifm-color-primary-lightest: hsl(
-    var(--site-primary-hue-saturation-light) 73%
-  );
-
-  /* Markdown / docs 链接走我们的 primary-hi 绿（默认 Infima 是蓝色 #4a90e2） */
+  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
+  /* Markdown / docs 链接走品牌绿（默认 Infima 是蓝色 #4a90e2） */
   --ifm-link-color: var(--site-color-tag-selected-text);
-  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
 
-  /* Infima dark-mode overrides — 强制暗色，不依赖 data-theme 属性 */
+  /* zeroRuntime 强制暗色脚手架 —— main 靠 Docusaurus 暗色模式提供，单主题分支需自带；
+     main 无对应物，cherry-pick 时为本分支独有增量 */
   --ifm-color-scheme: dark;
   --ifm-color-emphasis-0: var(--ifm-color-gray-1000);
   --ifm-color-emphasis-100: var(--ifm-color-gray-900);
@@ -65,29 +40,63 @@
   --ifm-color-emphasis-800: var(--ifm-color-gray-200);
   --ifm-color-emphasis-900: var(--ifm-color-gray-100);
   --ifm-color-emphasis-1000: var(--ifm-color-gray-0);
-  --ifm-background-color: #0c0e0f;
-  --ifm-background-surface-color: #131619;
-  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
-  --ifm-color-content: #ededed;
-  --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
-  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
-  --site-color-hairline: rgba(255, 255, 255, 0.08);
-  --site-color-ghost-border: rgba(255, 255, 255, 0.04);
-  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
-  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
   --ifm-breadcrumb-separator-filter: invert(64%) sepia(11%) saturate(0%)
     hue-rotate(149deg) brightness(99%) contrast(95%);
-  --ifm-code-background: rgba(255, 255, 255, 0.1);
   --ifm-scrollbar-track-background-color: #444444;
   --ifm-scrollbar-thumb-background-color: #686868;
   --ifm-scrollbar-thumb-hover-background-color: #7a7a7a;
+}
+
+html[data-theme="dark"] {
+  /* 暗色 token —— 与 main 的 html[data-theme="dark"] 块同 property 同 dark 值，便于 cherry-pick */
+  --site-primary-hue-saturation: 163 38%;
+  --site-primary-hue-saturation-light: 163 55%;
+  --site-color-feedback-background: #f0f8ff;
+  --site-color-tags-background: #1a1f24;
+  --site-color-favorite-background: #1a1f24;
+  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 10%);
+  --docusaurus-highlighted-code-line-bg: rgb(66 66 66 / 35%);
+  --site-primary-font: #c5c5c5;
+  --site-color-background: #1d2126;
+  --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --site-color-card-background: #272d33;
+  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.1);
+  --site-color-tag-selected-text: #57c2a3;
+  --site-color-tag-selected-border: rgba(57, 126, 106, 0.5);
+  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --site-color-hairline: rgba(255, 255, 255, 0.08);
+  --site-color-ghost-border: rgba(255, 255, 255, 0.04);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
+  --ifm-background-color: #14171a;
+  --ifm-background-surface-color: #1d2126;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
+  --ifm-color-content: #ededed;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
+  --ifm-code-background: rgba(255, 255, 255, 0.1);
   --ifm-table-stripe-background: rgba(255, 255, 255, 0.07);
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);
 }
 
-/* Phosphor Index 签名纹理：极淡横向扫描线，给石墨底一层"终端屏幕"质感（强度 0.6% 白，几乎不可察觉） */
-body {
-  background-image: repeating-linear-gradient(0deg, transparent 0 2px, rgba(255, 255, 255, 0.006) 2px 4px);
+/*
+  * This selector will be dynamically replaced by the color generator. Don't put
+  * other properties here.
+  */
+[data-theme="dark"] {
+  --ifm-color-primary: hsl(var(--site-primary-hue-saturation) 45%);
+  --ifm-color-primary-dark: hsl(var(--site-primary-hue-saturation) 41%);
+  --ifm-color-primary-darker: hsl(var(--site-primary-hue-saturation) 38%);
+  --ifm-color-primary-darkest: hsl(var(--site-primary-hue-saturation) 32%);
+
+  --ifm-color-primary-light: hsl(var(--site-primary-hue-saturation-light) 54%);
+  --ifm-color-primary-lighter: hsl(
+    var(--site-primary-hue-saturation-light) 62%
+  );
+  --ifm-color-primary-lightest: hsl(
+    var(--site-primary-hue-saturation-light) 73%
+  );
+  --ifm-color-primary-rgb: 71, 158, 134; /* dark-mode primary hsl(163 38% 45%) — rgba() companion */
 }
 
 .header-github-link:hover {
@@ -165,7 +174,7 @@ body {
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #1b1f22;
+  --ifm-footer-background-color: #272d33;
 }
 
 .unique-tabs .tabs__item {

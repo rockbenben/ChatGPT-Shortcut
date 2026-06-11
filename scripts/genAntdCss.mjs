@@ -7,15 +7,17 @@ import { ConfigProvider, theme as antdTheme } from "antd";
 // 但故意不带 zeroRuntime —— 提取器需要 antd 真的注册样式才有东西可提
 // （cssinjs-utils genStyleUtils: 若 zeroRuntime=true 则短路 useStyleRegister，extract 出空文件）。
 // Root.tsx 反过来必须设 zeroRuntime: true，避免运行时重复注入同一份样式。
+// 必须与 Root.tsx 的 darkTheme token 完全一致（teal-ink 海沉绿 #397e6a）。
+// 改这里后务必 `yarn gen:antd-css` 重新生成 antd.dark.css，否则按钮/hover 仍是旧色。
 const darkTheme = {
   token: {
-    colorPrimary: "#d8ff4a",
-    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——
-    // Typography copyable 图标、type="link" 按钮会漏出蓝色，必须显式对齐
-    colorLink: "#d8ff4a",
-    colorBgLayout: "#0c0e0f",
-    colorBgContainer: "#131619",
-    colorBgElevated: "#1b1f22",
+    colorPrimary: "#397e6a",
+    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable
+    // 图标、type="link" 按钮会漏出蓝色，必须显式对齐到提亮版品牌绿
+    colorLink: "#57c2a3",
+    colorBgLayout: "#14171a",
+    colorBgContainer: "#1d2126",
+    colorBgElevated: "#272d33",
     colorBorderSecondary: "rgba(255,255,255,0.08)",
     colorText: "#ededed",
     colorTextSecondary: "rgba(255,255,255,0.6)",
@@ -38,8 +40,6 @@ const darkTheme = {
     },
     Button: {
       borderRadius: 6,
-      // 磷光黄绿 primary 亮度太高，白字对比度不达标 → 主按钮文字用墨色
-      primaryColor: "#101213",
     },
   },
   algorithm: antdTheme.darkAlgorithm,

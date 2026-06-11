@@ -5,15 +5,16 @@ import { AuthProvider } from "@site/src/components/AuthContext";
 // Dark theme configuration with zero-runtime
 // 注意：需先运行 `yarn gen:antd-css` 生成静态样式
 // B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
+// teal-ink 海沉绿 #397e6a：白字对比达标，无需墨字按钮 hack（磷光黄绿才需要）。
 const darkTheme = {
   token: {
-    colorPrimary: "#d8ff4a",
-    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——
-    // Typography copyable 图标、type="link" 按钮会漏出蓝色，必须显式对齐
-    colorLink: "#d8ff4a",
-    colorBgLayout: "#0c0e0f",
-    colorBgContainer: "#131619",
-    colorBgElevated: "#1b1f22",
+    colorPrimary: "#397e6a",
+    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable
+    // 图标、type="link" 按钮会漏出蓝色，必须显式对齐到提亮版品牌绿（dark-only 单主题）
+    colorLink: "#57c2a3",
+    colorBgLayout: "#14171a",
+    colorBgContainer: "#1d2126",
+    colorBgElevated: "#272d33",
     colorBorderSecondary: "rgba(255,255,255,0.08)",
     colorText: "#ededed",
     colorTextSecondary: "rgba(255,255,255,0.6)",
@@ -36,8 +37,6 @@ const darkTheme = {
     },
     Button: {
       borderRadius: 6,
-      // 磷光黄绿 primary 亮度太高，白字对比度不达标 → 主按钮文字用墨色
-      primaryColor: "#101213",
     },
   },
   algorithm: theme.darkAlgorithm,

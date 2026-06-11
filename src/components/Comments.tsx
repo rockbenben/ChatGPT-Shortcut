@@ -56,12 +56,12 @@ const getCurrentUserId = () => {
 dayjs.extend(relativeTime);
 // 项目家族化头像调色板 — 同饱和度 / 同明度，仅 hue 旋转。
 // 头像多色是身份语义（区分用户），允许多色；但家族锚点必须跟品牌主 hue 走：
-// 旧版锚定 sage 163°，Phosphor 换肤后重锚到磷光黄绿 74°
+// 家族锚点跟品牌主 hue 走：teal-ink 海沉绿 163°
 const avatarColors = [
-  "hsl(74, 45%, 45%)", // phosphor olive（品牌锚点）
+  "hsl(163, 38%, 45%)", // teal（品牌锚点）
   "hsl(104, 38%, 45%)", // green
   "hsl(44, 42%, 50%)", // muted gold
-  "hsl(164, 32%, 45%)", // teal（旧色致敬位）
+  "hsl(194, 32%, 45%)", // cyan
   "hsl(214, 26%, 52%)", // muted blue
   "hsl(14, 36%, 52%)", // muted clay
 ];
