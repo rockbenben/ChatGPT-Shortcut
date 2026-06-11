@@ -9,10 +9,13 @@ import { ConfigProvider, theme as antdTheme } from "antd";
 // Root.tsx 反过来必须设 zeroRuntime: true，避免运行时重复注入同一份样式。
 const darkTheme = {
   token: {
-    colorPrimary: "#397e6a",
-    colorBgLayout: "#14171a",
-    colorBgContainer: "#1d2126",
-    colorBgElevated: "#272d33",
+    colorPrimary: "#d8ff4a",
+    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——
+    // Typography copyable 图标、type="link" 按钮会漏出蓝色，必须显式对齐
+    colorLink: "#d8ff4a",
+    colorBgLayout: "#0c0e0f",
+    colorBgContainer: "#131619",
+    colorBgElevated: "#1b1f22",
     colorBorderSecondary: "rgba(255,255,255,0.08)",
     colorText: "#ededed",
     colorTextSecondary: "rgba(255,255,255,0.6)",
@@ -35,6 +38,8 @@ const darkTheme = {
     },
     Button: {
       borderRadius: 6,
+      // 磷光黄绿 primary 亮度太高，白字对比度不达标 → 主按钮文字用墨色
+      primaryColor: "#101213",
     },
   },
   algorithm: antdTheme.darkAlgorithm,

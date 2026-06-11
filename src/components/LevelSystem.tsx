@@ -38,6 +38,7 @@ export const LEVEL_THRESHOLDS = [0, 1, 3, 8, 18, 35, 60, 100, 160, 260];
 
 /**
  * Get level information based on shared prompts count
+ * 等级保留各自宝石色（语义化的成就梯度，用户确认不并入单 accent 体系）
  */
 export function getLevelInfo(sharedCount: number): LevelInfo {
   if (sharedCount >= 260) return { level: 9, accentColor: "#f0d896", next: null }; // 星辉——warm starlight gold

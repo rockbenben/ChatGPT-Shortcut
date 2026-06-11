@@ -368,8 +368,8 @@ const LoginPage = () => {
             style={{
               marginBottom: 24,
               padding: "12px 16px",
-              background: "rgba(87,194,163,0.06)",
-              border: "1px solid rgba(87,194,163,0.2)",
+              background: "rgba(var(--ifm-color-primary-rgb),0.06)",
+              border: "1px solid rgba(var(--ifm-color-primary-rgb),0.2)",
               borderRadius: 6,
               display: "flex",
               gap: 12,

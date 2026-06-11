@@ -152,8 +152,9 @@ const UserStatus = () => {
       </div>
       <div className="showOnSmallScreen">
         <Space wrap size="middle">
-          <Skeleton.Button active size="default" style={{ width: 80 }} />
-          <Skeleton.Button active size="default" style={{ width: 32 }} />
+          {/* antd 6 弃用 size="default"（v7 将移除），等价值为 "medium" */}
+          <Skeleton.Button active size="medium" style={{ width: 80 }} />
+          <Skeleton.Button active size="medium" style={{ width: 32 }} />
         </Space>
       </div>
     </>
