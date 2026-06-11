@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown, ConfigProvider } from "antd";
+import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown } from "antd";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, PlusOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
 import { BasePromptCard } from "@site/src/components/PromptCard/Base";
 import PromptCard from "@site/src/components/PromptCard";
@@ -20,6 +20,7 @@ import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import searchStyles from "@site/src/components/SearchBar/styles.module.css";
 
 // ==================== 类型定义 ====================
 
@@ -38,21 +39,6 @@ interface MySpaceProps {
 
 type FilterType = "all" | "prompt" | "favorite";
 
-// SearchBar 样式主题
-const searchBarTheme = {
-  components: {
-    Input: {
-      borderRadius: 20,
-      controlHeight: 32,
-      colorBorder: "transparent",
-      activeBorderColor: "transparent",
-      hoverBorderColor: "var(--ifm-color-emphasis-300)",
-      activeShadow: "0 0 0 2px var(--ifm-color-primary-lighter)",
-      colorBgContainer: "var(--site-color-background)",
-    },
-  },
-};
-
 // ==================== 辅助组件 ====================
 
 const FilterBar: React.FC<{
@@ -66,11 +52,25 @@ const FilterBar: React.FC<{
   setSearchQuery: (query: string) => void;
 }> = ({ filter, setFilter, customTags, selectedTags, setSelectedTags, onManageTags, searchQuery, setSearchQuery }) => {
   const [inputValue, setInputValue] = useState(searchQuery);
+  const inputRef = React.useRef<any>(null);
 
   // 同步外部searchQuery变化到本地inputValue
   useEffect(() => {
     setInputValue(searchQuery);
   }, [searchQuery]);
+
+  // Ctrl+K / ⌘K 聚焦搜索框（与首页 SearchBar 一致的终端 command palette 惯例，对应 suffix 键帽提示）。
+  // MySpace 与首页 SearchBar 互斥渲染（collection 视图下首页不挂 SearchBar），不会出现双重 Ctrl+K 监听
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const handleSearch = useCallback(() => {
     setSearchQuery(inputValue);
@@ -151,17 +151,35 @@ const FilterBar: React.FC<{
         <Translate id="myspace.manageTags">管理标签</Translate>
       </Button>
 
-      <ConfigProvider theme={searchBarTheme}>
+      <div className={searchStyles.searchInput}>
         <Input
+          ref={inputRef}
           placeholder={translate({ id: "input.search.placeholder", message: "搜索：写作、翻译、编程…" })}
           value={inputValue}
           onChange={handleChange}
           onPressEnter={handleSearch}
+          onKeyDown={(e) => {
+            // Esc 退出聚焦（终端惯例，与 Ctrl+K 进入对应）。
+            // isComposing 守卫：拼音输入中按 Esc 是取消 IME 候选词，焦点必须留在框内
+            if (e.key === "Escape" && !e.nativeEvent.isComposing) (e.target as HTMLInputElement).blur();
+          }}
           allowClear
-          style={{ marginLeft: "auto", width: "auto" }}
-          suffix={<Button type="text" icon={<SearchOutlined />} onClick={handleSearch} style={{ margin: -8 }} />}
+          prefix={
+            <span className={searchStyles.promptChar} aria-hidden>
+              &gt;
+              <span className={searchStyles.fakeCaret} />
+            </span>
+          }
+          suffix={
+            <>
+              <kbd className={`${searchStyles.kbdHint} hideOnSmallScreen`} aria-hidden>
+                CTRL K
+              </kbd>
+              <Button type="text" icon={<SearchOutlined />} onClick={handleSearch} />
+            </>
+          }
         />
-      </ConfigProvider>
+      </div>
     </Flex>
   );
 };
