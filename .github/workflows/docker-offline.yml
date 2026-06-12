@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: 🚚 Check out the repo
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # showLastUpdateTime 需要完整 git 历史读取文档最后更新时间
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
