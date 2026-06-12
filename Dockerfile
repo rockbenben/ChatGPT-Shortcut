@@ -4,6 +4,10 @@ FROM node:24-alpine AS builder
 # 设置工作目录
 WORKDIR /app
 
+# 安装 git：showLastUpdateTime 需要 git 读取文档的最后更新时间，
+# 缺失会报 "This Docusaurus site is outside any Git worktree" 并中断构建
+RUN apk add --no-cache git
+
 # 复制项目中的 package.json 和 yarn.lock 到工作目录中
 COPY package.json yarn.lock ./
 

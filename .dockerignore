@@ -6,7 +6,8 @@ build/
 .docusaurus/
 
 # Version control
-.git/
+# 不要忽略 .git/：showLastUpdateTime 需要 git 历史读取文档最后更新时间
+# （.git 只进 builder 阶段，多阶段构建后不会带进最终 nginx 镜像）
 .gitignore
 
 # IDE and editor

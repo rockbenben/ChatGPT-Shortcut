@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: 🚚 Check out the repo
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # showLastUpdateTime 需要完整 git 历史读取文档最后更新时间
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
@@ -45,6 +47,13 @@ jobs:
         env:
           OWNER: "${{ github.repository_owner }}"
 
+      - name: 📦 Read package.json version
+        id: pkg
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Read version: ${VERSION}"
+
       - name: 🏷️ Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v6
@@ -52,10 +61,12 @@ jobs:
           images: |
             ${{ vars.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}
             ghcr.io/${{ env.GH_OWNER_LC }}/${{ env.IMAGE_NAME }}
+          # value= 让 semver tag 取 package.json 版本号而非 git tag，
+          # 这样手动触发（workflow_dispatch，无 tag）也能得到版本号 + latest
           tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=semver,pattern={{version}},value=${{ steps.pkg.outputs.version }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ steps.pkg.outputs.version }}
+            type=semver,pattern={{major}},value=${{ steps.pkg.outputs.version }}
             type=raw,value=latest
 
       - name: Build and push Docker image
