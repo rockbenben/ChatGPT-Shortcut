@@ -3,7 +3,7 @@
  *
  * docusaurus.config.js 与 scripts/buildPhased.mjs 都从这里读，保证「配置里的 locales」
  * 和「分段构建实际要 build 的 locales」永远一致 —— 历史上两者脱钩（config 7 个、
- * build-phased 18 个）正是 /th/es/zh-Hant//th 这类脏 URL 的根源之一。
+ * 分段构建 18 个）正是 /th/es/zh-Hant//th 这类脏 URL 的根源之一。
  *
  * ── 改默认语言 ──
  *   改 defaultLocale，并保持它在 locales 数组【首位】（分段构建第一块要含默认语言，
