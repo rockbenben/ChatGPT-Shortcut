@@ -3,7 +3,7 @@
  * All data is loaded from static JSON files (no API calls)
  * Uses lscache for persistent caching (100 days)
  */
-import { ALL_IDS, SUPPORTED_LANGUAGES } from "@site/src/data/constants";
+import { ALL_IDS } from "@site/src/data/constants";
 import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 import { dedupe } from "@site/src/utils/dedupe";
 
@@ -55,6 +55,11 @@ const PROMPT_DATA_MAP: Record<string, () => Promise<any>> = {
   tr: () => import("@site/src/data/prompt_tr.json"),
   ind: () => import("@site/src/data/prompt_ind.json"),
 };
+
+// 支持的语言 = 我们拥有 prompt 数据文件（prompt_<lang>.json）的语言集合，即数据导入表的 key。
+// 这是「数据维度」，与 i18n 构建 locale（docusaurus.config.js 的 locales，可因构建内存裁剪）
+// 是不同的轴：构建 locale 变了，数据语言不随之变。lang 不在此列时回退 zh-Hans 数据。
+export const SUPPORTED_LANGUAGES = Object.keys(PROMPT_DATA_MAP);
 
 const DEFAULT_FAVOR_MAP: Record<string, () => Promise<any>> = {
   "zh-Hans": () => import("@site/src/data/default/favor_zh-Hans.json"),
