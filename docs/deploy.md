@@ -99,7 +99,7 @@ yarn start
 # 构建：生成静态产物到 `build` 目录
 yarn build
 
-# 修改 `docusaurus.config.js` 中的 `defaultLocale`，然后按需构建指定语言版本
+# 修改 `scripts/i18nLocales.mjs` 中的 `defaultLocale`，然后按需构建指定语言版本
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en
