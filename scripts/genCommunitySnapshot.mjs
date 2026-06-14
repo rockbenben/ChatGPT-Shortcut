@@ -117,7 +117,7 @@ function ensureFallback(reason) {
 
 // --ensure-only：仅在文件缺失时写空 stub，不发网络请求。
 // 用途：本地 fresh clone 跑 yarn start / typecheck / build 时，先保证 webpack/tsc 的
-//      静态 import 能解析；真实数据由 prebuild-phased 触发完整生成。
+//      静态 import 能解析；真实数据由 prebuild 触发完整生成。
 function ensureOnlyMode() {
   if (!fs.existsSync(SNAPSHOT_PATH)) {
     writeJson(SNAPSHOT_PATH, EMPTY_SNAPSHOT);
