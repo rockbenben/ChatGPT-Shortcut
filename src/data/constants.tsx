@@ -49,4 +49,3 @@ export const COMMU_DESCRIPTION = translate({
   message: "想要更多实战验证的AI提示词？加入AiShort社区，发现用户分享的实用模板，交流优化技巧，共建高质量提示词资源库。",
 });
 
-export const SUPPORTED_LANGUAGES = ["zh-Hans", "en", "zh-Hant", "ja", "ko", "es", "pt", "hi", "ind", "vi", "th", "fr", "de", "it", "ru", "ar", "tr", "bn"];

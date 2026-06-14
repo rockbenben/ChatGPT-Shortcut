@@ -12,8 +12,7 @@ import { getWeight } from "@site/src/utils/formatters";
 
 import { getPrompts, updateMySpaceOrder, updateCustomTags } from "@site/src/api";
 import { getCommPrompts } from "@site/src/api/prompts";
-import { searchCardsLocally } from "@site/src/api/homepage";
-import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
+import { searchCardsLocally, SUPPORTED_LANGUAGES } from "@site/src/api/homepage";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
