@@ -11,11 +11,10 @@ import styles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
-import { searchCardsLocally, fetchCardsByIds } from "@site/src/api/homepage";
+import { searchCardsLocally, fetchCardsByIds, SUPPORTED_LANGUAGES } from "@site/src/api/homepage";
 
 const LOCAL_ORDER_KEY = "local_myspace_order";
 const LOCAL_TAGS_KEY = "local_custom_tags";
-import { SUPPORTED_LANGUAGES } from "@site/src/data/constants";
 import { AuthContext } from "../AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
