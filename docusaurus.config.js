@@ -21,7 +21,8 @@ function resolveBuildDate() {
     return new Date().toISOString();
   }
 }
-const buildDate = resolveBuildDate();
+// Docker 构建（SKIP_GIT_INFO=true）不带 .git，直接用当前时间，省去注定失败的 git 调用
+const buildDate = process.env.SKIP_GIT_INFO === "true" ? new Date().toISOString() : resolveBuildDate();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -84,7 +85,8 @@ const config = {
         docs: {
           path: "docs",
           sidebarPath: "sidebars.js",
-          showLastUpdateTime: true,
+          // 默认开启；Docker 构建设 SKIP_GIT_INFO=true 关掉，从而不依赖 git/.git（见 Dockerfile）
+          showLastUpdateTime: process.env.SKIP_GIT_INFO !== "true",
         },
         blog: false,
         theme: {

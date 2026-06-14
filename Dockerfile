@@ -7,9 +7,9 @@ FROM --platform=$BUILDPLATFORM node:24-alpine AS builder
 # 设置工作目录
 WORKDIR /app
 
-# 安装 git：showLastUpdateTime 需要 git 读取文档的最后更新时间，
-# 缺失会报 "This Docusaurus site is outside any Git worktree" 并中断构建
-RUN apk add --no-cache git
+# SKIP_GIT_INFO=true：关掉 showLastUpdateTime + 用当前时间作 buildDate（见 docusaurus.config.js），
+# 从而完全不依赖 git/.git —— 无需装 git，并可把 .git 排除出构建上下文（context 从 ~1.2GB 大幅缩小）。
+ENV SKIP_GIT_INFO=true
 
 # 复制项目中的 package.json 和 yarn.lock 到工作目录中
 COPY package.json yarn.lock ./
