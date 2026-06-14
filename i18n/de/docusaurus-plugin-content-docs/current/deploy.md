@@ -86,7 +86,7 @@ yarn start
 # Build: Dieser Befehl generiert statischen Inhalt im Verzeichnis `build`
 yarn build
 
-# Aktualisieren Sie das `defaultLocale` in der Datei `docusaurus.config.js` und führen Sie dann einen Build für die gewünschte Sprache durch.
+# Aktualisieren Sie das `defaultLocale` in der Datei `scripts/i18nLocales.mjs` und führen Sie dann einen Build für die gewünschte Sprache durch.
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en
