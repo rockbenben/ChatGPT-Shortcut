@@ -7,6 +7,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import { execSync } from "node:child_process";
 import { communityPromptSitemapItems } from "./scripts/sitemapCommunityItems.mjs";
+// 语言列表单一数据源（与 scripts/buildPhased.mjs 共用，避免 config 与分段构建脱钩）
+import { defaultLocale, locales } from "./scripts/i18nLocales.mjs";
 
 // 构建日期取 HEAD commit 时间而非 new Date()：
 // Docusaurus 对每个 locale 构建都会重新求值本 config，new Date() 会让 18 个 locale 的
@@ -58,12 +60,11 @@ const config = {
     buildDate,
   },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is English, you
-  // may want to replace "zh" with "en".
+  // defaultLocale / locales 来自 scripts/i18nLocales.mjs（单一数据源，与分段构建共用）。
+  // 增删语言只改那一处；不要在这里硬编码数组，否则会与 buildPhased 脱钩。
   i18n: {
-    defaultLocale: "zh-Hans",
-    locales: ["en", "zh-Hans", "zh-Hant", "ja", "ko", "es", "pt", "hi", "ind", "vi", "th", "fr", "de", "it", "ru", "ar", "tr", "bn"],
+    defaultLocale,
+    locales,
     localeConfigs: {
       ar: {
         direction: "rtl",
@@ -102,16 +103,7 @@ const config = {
           // 默认实现要求 route 有 sourceFilePath（从 git 取时间），动态生成的 pages 没有
           // → 用 createSitemapItems 回退：default 给不出 lastmod 的，用 buildDate 顶上
           lastmod: "date",
-          ignorePatterns: [
-            "/community-prompt",
-            "/*/community-prompt",
-            "/feedback",
-            "/*/feedback",
-            "/reset-password",
-            "/*/reset-password",
-            "/user/**",
-            "/*/user/**",
-          ],
+          ignorePatterns: ["/community-prompt", "/*/community-prompt", "/feedback", "/*/feedback", "/reset-password", "/*/reset-password", "/user/**", "/*/user/**"],
           createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
             const items = await defaultCreateSitemapItems(rest);
             const fallback = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
@@ -196,7 +188,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/social-card.png",
+      image: "/img/social-card.png",
       // Docusaurus 默认不发 og:site_name 与 og:image dims
       metadata: [
         { property: "og:site_name", content: "AiShort" },
@@ -215,7 +207,7 @@ const config = {
         title: "AI Short",
         logo: {
           alt: "ChatGPT Shortcuts",
-          src: "img/logo.svg",
+          src: "/img/logo.svg",
           width: 32,
           height: 32,
         },
@@ -226,7 +218,7 @@ const config = {
             position: "left",
           },
           {
-            to: "docs",
+            to: "/docs",
             label: "使用说明",
             position: "left",
           },

@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "4.3.0",
+  "version": "4.4.1",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -11,9 +11,7 @@
     "start": "docusaurus start",
     "dev": "docusaurus start",
     "prebuild": "node scripts/genCommunitySnapshot.mjs",
-    "build": "docusaurus build",
-    "prebuild-phased": "node scripts/genCommunitySnapshot.mjs",
-    "build-phased": "docusaurus build --locale zh-Hans --locale en --locale zh-Hant && docusaurus build --locale ja --locale ko --locale es && docusaurus build --locale pt --locale hi --locale ind && docusaurus build --locale vi --locale th --locale fr && docusaurus build --locale de --locale it --locale ru && docusaurus build --locale ar --locale tr --locale bn",
+    "build": "node scripts/buildPhased.mjs",
     "pretypecheck": "node scripts/genCommunitySnapshot.mjs --ensure-only",
     "typecheck": "tsc",
     "swizzle": "docusaurus swizzle",
