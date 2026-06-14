@@ -6,8 +6,9 @@ build/
 .docusaurus/
 
 # Version control
-# 不要忽略 .git/：showLastUpdateTime 需要 git 历史读取文档最后更新时间
-# （.git 只进 builder 阶段，多阶段构建后不会带进最终 nginx 镜像）
+# 排除 .git/：Docker 构建已设 SKIP_GIT_INFO=true 关掉 showLastUpdateTime，不再需要 git 历史。
+# 这是构建上下文从 ~1.2GB 大幅缩小的主因。
+.git/
 .gitignore
 
 # IDE and editor
