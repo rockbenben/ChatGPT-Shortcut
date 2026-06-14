@@ -17,9 +17,15 @@
  * 覆盖默认语言。下面的分块逻辑保证不出现「单个非默认 locale 独占一块」。
  */
 import { execSync } from "node:child_process";
+import { createRequire } from "node:module";
 import fs from "node:fs";
 import path from "node:path";
 import { defaultLocale, locales } from "./i18nLocales.mjs";
+
+// 包管理器无关：直接用 node 跑 docusaurus 的 bin —— npm / yarn / pnpm 用户都能构建，
+// 不依赖任何特定 PM，也没有 npx→npm 的 "Unknown env config" 噪音。
+// createRequire 按 node 解析规则定位 bin，兼容各 PM 的 node_modules 布局（含 pnpm 软链）。
+const docusaurusBin = createRequire(import.meta.url).resolve("@docusaurus/core/bin/docusaurus.mjs");
 
 // 透传模式：显式带参运行（如 `yarn build --locale pt` 单语言部署、`yarn build --locale a --locale b`）
 // → 直接转交给单次 docusaurus build，不分段。用于 Vercel/Cloudflare 等只部署单一/少数语言的场景，
@@ -27,7 +33,7 @@ import { defaultLocale, locales } from "./i18nLocales.mjs";
 const passthrough = process.argv.slice(2);
 if (passthrough.length > 0) {
   console.log(`[build] passthrough → docusaurus build ${passthrough.join(" ")}`);
-  execSync(`yarn docusaurus build ${passthrough.join(" ")}`, { stdio: "inherit" });
+  execSync(`node "${docusaurusBin}" build ${passthrough.join(" ")}`, { stdio: "inherit" });
   process.exit(0);
 }
 
@@ -60,7 +66,7 @@ chunks.forEach((chunk, i) => {
   const localeArgs = chunk.map((l) => `--locale ${l}`).join(" ");
   console.log(`\n[build] chunk ${i + 1}/${chunks.length}: ${chunk.join(", ")}`);
   // stdio: inherit → docusaurus 的进度/错误直接透传到终端；构建失败会抛错中断整个流程。
-  execSync(`yarn docusaurus build ${localeArgs}`, { stdio: "inherit" });
+  execSync(`node "${docusaurusBin}" build ${localeArgs}`, { stdio: "inherit" });
 });
 
 mergeSitemaps();
