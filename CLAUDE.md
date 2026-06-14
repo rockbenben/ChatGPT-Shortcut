@@ -12,8 +12,7 @@ Live site: https://www.aishort.top
 
 ```bash
 yarn start          # Dev server (default locale zh-Hans)
-yarn build          # Full production build (all 18 locales)
-yarn build-phased   # Memory-efficient build in 3 locale batches
+yarn build          # Production build — all 18 locales, memory-safe (6×3 phased)
 yarn typecheck      # TypeScript type checking (tsc)
 yarn gen:antd-css   # Regenerate Ant Design dark theme static CSS
 yarn clear          # Clear Docusaurus cache
@@ -95,4 +94,4 @@ Uses `lscache` (localStorage with TTL). Prefixed keys: `cc` (copy counts), `cl_`
 
 ## CI/CD
 
-Primary deployment workflow (`.github/workflows/main.yml`): triggers on push to `speedup/data-retrieval` branch, runs `yarn build-phased`, deploys to GitHub Pages via `gh-pages` branch. Uses Node 24 with yarn cache.
+Primary deployment workflow (`.github/workflows/main.yml`): triggers on push to `speedup/data-retrieval` branch, runs `yarn build` (memory-safe phased build), deploys to GitHub Pages via `gh-pages` branch. Uses Node 24 with yarn cache.

@@ -20,7 +20,7 @@ import { defaultLocale, locales } from "./i18nLocales.mjs";
 // 与 docs/deploy.md、docs/guides/offline.md 里文档化的命令保持一致。
 const passthrough = process.argv.slice(2);
 if (passthrough.length > 0) {
-  console.log(`[build-phased] passthrough → docusaurus build ${passthrough.join(" ")}`);
+  console.log(`[build] passthrough → docusaurus build ${passthrough.join(" ")}`);
   execSync(`npx docusaurus build ${passthrough.join(" ")}`, { stdio: "inherit" });
   process.exit(0);
 }
@@ -48,13 +48,13 @@ if (chunks.length >= 2) {
   }
 }
 
-console.log(`[build-phased] ${ordered.length} locales → ${chunks.length} chunk(s) of ≤${CHUNK_SIZE}`);
+console.log(`[build] ${ordered.length} locales → ${chunks.length} chunk(s) of ≤${CHUNK_SIZE}`);
 
 chunks.forEach((chunk, i) => {
   const localeArgs = chunk.map((l) => `--locale ${l}`).join(" ");
-  console.log(`\n[build-phased] chunk ${i + 1}/${chunks.length}: ${chunk.join(", ")}`);
+  console.log(`\n[build] chunk ${i + 1}/${chunks.length}: ${chunk.join(", ")}`);
   // stdio: inherit → docusaurus 的进度/错误直接透传到终端；构建失败会抛错中断整个流程。
   execSync(`npx docusaurus build ${localeArgs}`, { stdio: "inherit" });
 });
 
-console.log(`\n[build-phased] ✓ all ${ordered.length} locales built into build/`);
+console.log(`\n[build] ✓ all ${ordered.length} locales built into build/`);
