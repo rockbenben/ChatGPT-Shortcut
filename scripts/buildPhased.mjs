@@ -27,7 +27,7 @@ import { defaultLocale, locales } from "./i18nLocales.mjs";
 const passthrough = process.argv.slice(2);
 if (passthrough.length > 0) {
   console.log(`[build] passthrough → docusaurus build ${passthrough.join(" ")}`);
-  execSync(`npx docusaurus build ${passthrough.join(" ")}`, { stdio: "inherit" });
+  execSync(`yarn docusaurus build ${passthrough.join(" ")}`, { stdio: "inherit" });
   process.exit(0);
 }
 
@@ -60,7 +60,7 @@ chunks.forEach((chunk, i) => {
   const localeArgs = chunk.map((l) => `--locale ${l}`).join(" ");
   console.log(`\n[build] chunk ${i + 1}/${chunks.length}: ${chunk.join(", ")}`);
   // stdio: inherit → docusaurus 的进度/错误直接透传到终端；构建失败会抛错中断整个流程。
-  execSync(`npx docusaurus build ${localeArgs}`, { stdio: "inherit" });
+  execSync(`yarn docusaurus build ${localeArgs}`, { stdio: "inherit" });
 });
 
 mergeSitemaps();
