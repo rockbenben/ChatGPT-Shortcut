@@ -1,5 +1,8 @@
 # 第一阶段: 构建静态网站
-FROM node:24-alpine AS builder
+# --platform=$BUILDPLATFORM：静态产物与 CPU 架构无关，固定在原生构建架构（amd64）只构建一次。
+# 否则多架构构建会让 arm64 在 QEMU 模拟下也重跑一遍 yarn build，与 amd64 并发 → 双倍内存 → OOM(SIGKILL)。
+# 最终 nginx 阶段仍按目标架构出多架构镜像，只是 COPY 同一份静态文件。
+FROM --platform=$BUILDPLATFORM node:24-alpine AS builder
 
 # 设置工作目录
 WORKDIR /app
