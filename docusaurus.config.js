@@ -102,7 +102,9 @@ const config = {
           // 2023+ Google 完全忽略 priority/changefreq，但仍读 lastmod；
           // 默认实现要求 route 有 sourceFilePath（从 git 取时间），动态生成的 pages 没有
           // → 用 createSitemapItems 回退：default 给不出 lastmod 的，用 buildDate 顶上
-          lastmod: "date",
+          // Docker 构建（SKIP_GIT_INFO=true）无 .git：lastmod 设 null 跳过 git 取时间，
+          // 全部走下面 createSitemapItems 的 fallback（今天），避免 "outside Git worktree" 中断
+          lastmod: process.env.SKIP_GIT_INFO === "true" ? null : "date",
           ignorePatterns: ["/community-prompt", "/*/community-prompt", "/feedback", "/*/feedback", "/reset-password", "/*/reset-password", "/user/**", "/*/user/**"],
           createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
             const items = await defaultCreateSitemapItems(rest);
