@@ -98,7 +98,7 @@ yarn start
 # البناء: ينشئ هذا الأمر محتوى ثابتًا في دليل `build`
 yarn build
 
-# قم بتحديث `defaultLocale` في ملف `docusaurus.config.js`، ثم قم بالبناء للغة المطلوبة.
+# قم بتحديث `defaultLocale` في ملف `scripts/i18nLocales.mjs`، ثم قم بالبناء للغة المطلوبة.
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en

@@ -98,7 +98,7 @@ yarn start
 # बिल्ड: यह कमांड `build` निर्देशिका में स्थिर सामग्री उत्पन्न करता है
 yarn build
 
-# `docusaurus.config.js` फ़ाइल में `defaultLocale` को अपडेट करें, फिर वांछित भाषा के लिए बिल्ड करें।
+# `scripts/i18nLocales.mjs` फ़ाइल में `defaultLocale` को अपडेट करें, फिर वांछित भाषा के लिए बिल्ड करें।
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en

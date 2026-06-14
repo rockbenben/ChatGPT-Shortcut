@@ -96,7 +96,7 @@ yarn start
 # ビルド：このコマンドは静的コンテンツを `build` ディレクトリに生成します
 yarn build
 
-# `docusaurus.config.js` ファイルの `defaultLocale` を更新し、希望する言語のビルドを実行します。
+# `scripts/i18nLocales.mjs` ファイルの `defaultLocale` を更新し、希望する言語のビルドを実行します。
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en

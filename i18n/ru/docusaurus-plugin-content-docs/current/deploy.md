@@ -96,7 +96,7 @@ yarn start
 # Сборка: Эта команда генерирует статический контент в директории `build`
 yarn build
 
-# Обновите `defaultLocale` в файле `docusaurus.config.js`, затем выполните сборку для желаемого языка.
+# Обновите `defaultLocale` в файле `scripts/i18nLocales.mjs`, затем выполните сборку для желаемого языка.
 yarn build --locale zh-Hans
 yarn build --locale zh-Hant
 yarn build --locale en
