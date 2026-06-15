@@ -341,7 +341,7 @@ for lang in languages:
 react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
 react_jsx_dir.mkdir(parents=True, exist_ok=True)
 
-# Loop from 1 to 278 for each prompt ID
+# Loop from 1 to max_id for each prompt ID
 for prompt_id in range(1, max_id+1):
     # Loop through each language
     for lang in allLanguages:
