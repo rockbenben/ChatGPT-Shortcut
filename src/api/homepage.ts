@@ -4,7 +4,6 @@
  * Uses lscache for persistent caching (100 days)
  */
 import { ALL_IDS } from "@site/src/data/constants";
-import { getCache, setCache, CACHE_TTL } from "@site/src/utils/cache";
 import { dedupe } from "@site/src/utils/dedupe";
 
 export interface CardData {
@@ -30,9 +29,6 @@ export interface PagedCardsResult {
 
 // 内存缓存（会话级别，快速访问）
 const promptDataCache: Record<string, CardData[]> = {};
-
-// lscache 缓存键前缀
-const PROMPT_CACHE_KEY = "prompt_data_";
 
 // Define explicit import maps to ensure bundlers (like in extensions) can resolve them statically
 const PROMPT_DATA_MAP: Record<string, () => Promise<any>> = {
@@ -105,13 +101,18 @@ const DEFAULT_OTHER_MAP: Record<string, () => Promise<any>> = {
 
 /**
  * Load all prompt data for a specific language
- * Cache hierarchy: Memory -> lscache (100 days) -> Dynamic Import
+ * Cache hierarchy: Memory (会话级) -> Dynamic Import (bundle)
+ *
+ * 不再叠 lscache：prompt_<lang>.json 是 import() 进来的静态 chunk，文件名带 webpack
+ * content-hash —— 数据没变浏览器 HTTP 缓存直接命中（零网络），数据变则文件名变自动拉新。
+ * 失效完全交给构建层 hash，比手写 TTL/版本号更可靠；旧的 lscache 100 天 TTL 反而导致
+ * 新增提示词最长 100 天不可见，故移除。跨会话由 HTTP 缓存的 bundle 兜底，仅多一次 JSON.parse。
  */
 async function getPromptData(lang: string): Promise<CardData[]> {
   // Fallback to zh-Hans if language not supported
   const safeLang = SUPPORTED_LANGUAGES.includes(lang) ? lang : "zh-Hans";
 
-  // 1. 检查内存缓存（最快）—— 命中走快路径，跳过 dedupe 开销
+  // 内存缓存命中（会话级）—— 命中走快路径，跳过 dedupe 开销
   if (promptDataCache[safeLang]) {
     return promptDataCache[safeLang];
   }
@@ -122,17 +123,7 @@ async function getPromptData(lang: string): Promise<CardData[]> {
       return promptDataCache[safeLang];
     }
 
-    const cacheKey = `${PROMPT_CACHE_KEY}${safeLang}`;
-
-    // 2. 检查 lscache 持久化缓存（100天有效期）
-    const cachedData = getCache(cacheKey);
-    if (cachedData && Array.isArray(cachedData)) {
-      // 存入内存缓存以供后续快速访问
-      promptDataCache[safeLang] = cachedData;
-      return cachedData;
-    }
-
-    // 3. 静态映射导入 JSON 文件
+    // 静态映射导入 JSON 文件（HTTP 缓存兜底跨会话）
     try {
       const loader = PROMPT_DATA_MAP[safeLang];
       if (!loader) {
@@ -141,10 +132,7 @@ async function getPromptData(lang: string): Promise<CardData[]> {
       const data = await loader();
       const promptData = data.default;
 
-      // 同时存入内存缓存和 lscache
       promptDataCache[safeLang] = promptData;
-      setCache(cacheKey, promptData, CACHE_TTL.PROMPT_CARDS); // 100 天
-
       return promptData;
     } catch (error) {
       console.error(`[getPromptData] Failed to load prompt_${safeLang}.json:`, error);
