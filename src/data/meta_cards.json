@@ -11396,5 +11396,46 @@
       "tr": "Politika Uyumlu Görsel Promptu",
       "ind": "Prompt Gambar Sesuai Kebijakan"
     }
+  },
+  {
+    "id": 279,
+    "description": {
+      "en": "Recurring AI task? Turn it into a reusable workflow with inputs, steps, output format, quality checks, and iteration notes.",
+      "zh": "重复 AI 任务怎么流程化？拆清边界、输入、步骤、输出和质检清单，复制后直接套用。",
+      "ja": "繰り返す AI タスクを、入力・手順・出力形式・品質チェック付きの再利用可能なワークフローへ。",
+      "ko": "반복되는 AI 작업을 입력, 단계, 출력 형식, 품질 체크와 반복 기록이 있는 재사용 워크플로로 바꿉니다.",
+      "es": "¿Tarea de IA repetida? Conviértala en un flujo reutilizable con entradas, pasos, salida y control de calidad.",
+      "fr": "Tâche IA répétée ? Transformez-la en workflow réutilisable avec entrées, étapes, format de sortie et contrôle qualité.",
+      "de": "Wiederkehrende KI-Aufgabe? Machen Sie daraus einen Workflow mit Eingaben, Schritten, Ausgabeformat und Qualitätscheck.",
+      "it": "Attività IA ricorrente? Trasformala in workflow riutilizzabile con input, passaggi, output e controlli di qualità.",
+      "ru": "Повторяющаяся AI-задача? Превратите ее в воркфлоу с входами, шагами, форматом результата и проверкой качества.",
+      "pt": "Tarefa de IA repetida? Transforme em fluxo reutilizável com entradas, etapas, saída, qualidade e iteração.",
+      "hi": "दोहराया जाने वाला AI कार्य? उसे इनपुट, चरण, आउटपुट, गुणवत्ता जांच और सुधार नोट वाले वर्कफ़्लो में बदलें।",
+      "ar": "مهمة ذكاء اصطناعي متكررة؟ حوّلها إلى سير عمل قابل لإعادة الاستخدام مع مدخلات وخطوات ومخرجات وفحص جودة.",
+      "bn": "পুনরাবৃত্ত AI কাজ? ইনপুট, ধাপ, আউটপুট, গুণমান যাচাই ও উন্নয়ন নোটসহ পুনর্ব্যবহারযোগ্য ওয়ার্কফ্লো বানান।",
+      "vi": "Tác vụ AI lặp lại? Biến thành quy trình tái sử dụng với đầu vào, bước xử lý, đầu ra và kiểm tra chất lượng.",
+      "th": "งาน AI ที่ทำซ้ำ? เปลี่ยนเป็นเวิร์กโฟลว์ใช้ซ้ำได้ พร้อมอินพุต ขั้นตอน ผลลัพธ์ และตรวจคุณภาพ",
+      "tr": "Tekrarlanan AI görevi? Girdiler, adımlar, çıktı biçimi, kalite kontrolü ve yineleme notlarıyla iş akışına çevirin.",
+      "ind": "Tugas AI berulang? Ubah menjadi alur kerja reusable dengan input, langkah, format keluaran, checklist kualitas, dan iterasi."
+    },
+    "title": {
+      "en": "AI Workflow Diagnostic Advisor",
+      "zh": "AI 工作流诊断顾问",
+      "ja": "AI ワークフロー診断アドバイザー",
+      "ko": "AI 워크플로 진단가",
+      "es": "Asesor Workflow IA",
+      "fr": "Conseiller Workflow IA",
+      "de": "KI-Workflow-Berater",
+      "it": "Consulente Workflow IA",
+      "ru": "Диагност AI-воркфлоу",
+      "pt": "Consultor de Workflow IA",
+      "hi": "AI वर्कफ़्लो सलाहकार",
+      "ar": "مستشار سير عمل AI",
+      "bn": "AI ওয়ার্কফ্লো উপদেষ্টা",
+      "vi": "Cố vấn Quy trình AI",
+      "th": "ที่ปรึกษาเวิร์กโฟลว์ AI",
+      "tr": "AI İş Akışı Danışmanı",
+      "ind": "Penasihat Alur Kerja AI"
+    }
   }
 ]
