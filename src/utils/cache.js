@@ -8,7 +8,7 @@ export const CACHE_TTL = {
   PROMPT_CARDS: 100 * 24 * 60, // 100 天（ETag）
   PROMPT_COMMUS: 30 * 24 * 60, // 30 天（ETag）
   PROMPT_USER: 30 * 24 * 60, // 30 天（ETag）
-  SEARCH_RESULTS: 30 * 24 * 60, // 30 天（ETag）
+  COMMENTS: 30 * 24 * 60, // 30 天（ETag）
   USER_PROFILE: 30 * 24 * 60, // 30 天（ETag）
   MYSPACE: 30 * 24 * 60, // 30 天（ETag）
   UNAVAILABLE_CACHE: 365 * 24 * 60, // 1 年（不可用内容缓存）
@@ -21,7 +21,7 @@ export const CACHE_PREFIX = {
   PROMPT_CARD: "pc_",
   PROMPT_COMMU: "pm_",
   PROMPT_USER: "pu_",
-  SEARCH: "sr_",
+  COMMENTS: "cm_",
   USER_PROFILE: "up", // 用户基本信息 (id, username, email)
   MYSPACE: "myspace", //新的统一 MySpace 数据
 };
