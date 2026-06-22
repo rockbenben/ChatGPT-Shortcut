@@ -6,95 +6,25 @@ description: Muốn tự lưu trữ thư viện prompt AI của riêng bạn? Tr
 
 # Triển khai Dự án
 
-## Cấu hình và Tùy chỉnh
+> **Dành cho ai**: các nhà phát triển muốn tự lưu trữ hoặc tùy chỉnh AiShort. Người dùng thông thường chỉ cần truy cập [aishort.top](https://www.aishort.top) — không cần đọc tài liệu này.
 
-AI Short là dự án mã nguồn mở cho phép bạn tự do sửa đổi tiêu đề trang web, mô tả, prompt và nội dung khác theo nhu cầu của bạn. Dưới đây là các tùy chọn sửa đổi phổ biến và hướng dẫn thao tác:
+## Chọn Mô hình Triển khai
 
-- **Sửa đổi Tiêu đề và Mô tả Trang web**
-  Để thay đổi thông tin tiêu đề và mô tả của trang web, vui lòng chỉnh sửa tệp cấu hình `docusaurus.config.js`.
+Chọn mô hình phù hợp với nhu cầu của bạn:
 
-- **Sửa đổi Hướng dẫn Sử dụng và Giới thiệu Dự án**
-  Các tệp hướng dẫn sử dụng và giới thiệu dự án nằm trong thư mục `docs`. Mở các tệp liên quan trong thư mục đó để thực hiện các sửa đổi cần thiết.
+| Mô hình                          | Backend                                       | Ghi chú                                                                                                                                                                           |
+| -------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tiêu chuẩn** (mặc định)        | Dùng lại backend chính thức dùng chung        | Sau khi fork, bạn có thể tùy chỉnh tên trang web, mô tả, prompt, v.v. (xem [Cấu hình](./deploy/configuration)); đăng nhập, yêu thích, cộng đồng và đồng bộ hoạt động ngay lập tức |
+| **Phiên bản Ngoại tuyến**        | Không có backend, dữ liệu lưu cục bộ trên trình duyệt | Mạng nội bộ doanh nghiệp hoặc chính phủ bị cô lập; không cần tài khoản                                                                                                          |
+| **Backend tự lưu trữ hoàn toàn** | Backend độc lập của riêng bạn                 | Khi bạn cần hệ thống tài khoản độc lập, toàn quyền sở hữu dữ liệu và cộng đồng riêng tư                                                                                         |
 
-- **Sửa đổi Prompt Trang chủ**
-  Prompt trang chủ được lưu trữ trong tệp `src/data/prompt.json`. Nếu bạn cần sửa đổi prompt cho một ngôn ngữ cụ thể, chẳng hạn như tiếng Trung, bạn có thể chỉnh sửa trực tiếp tệp `src/data/prompt_es.json`. Khi thêm prompt mới, định dạng như sau:
+Hai mô hình đầu được đề cập trong hướng dẫn này. Đối với mô hình thứ ba, vì dịch vụ backend không phải mã nguồn mở, vui lòng [gửi email cho nhà phát triển](mailto:qingwhat@gmail.com) kèm mô tả ngắn về trường hợp sử dụng và quy mô của bạn để nhận kế hoạch triển khai và hỗ trợ.
 
-  ```json
-  {
-    "es": {
-      "title": "prompt tùy chỉnh",
-      "prompt": "prompt tùy chỉnh",
-      "description": "mô tả tùy chỉnh",
-      "remark": "ghi chú tùy chỉnh"
-    },
-    "website": null,
-    "tags": ["music"],
-    "id": 500,
-    "weight": 1
-  }
-  ```
+## Tài liệu Triển khai
 
-  **Lưu ý**: Khuyến nghị đặt `id` từ 500 trở lên. Prompt mới thêm sẽ không có trang riêng hoặc phần bình luận.
+Quy trình triển khai được tách thành các tài liệu sau, tham khảo khi cần:
 
-- **Backend Tùy chỉnh**
-  Dự án hiện tại được kết nối với hệ thống backend dùng chung. Nếu bạn muốn xây dựng backend riêng, bạn có thể tham khảo hướng dẫn giao diện trong thư mục `src/api`.
-
-- **Hỗ trợ Đa ngôn ngữ và Triển khai**
-  Sau khi hoàn thành các sửa đổi đa ngôn ngữ, bạn có thể sử dụng script `CodeUpdateHandler.py` để xử lý hàng loạt:
-
-  ```bash
-  python CodeUpdateHandler.py
-  ```
-
-## Triển khai Ngoại tuyến (Mạng nội bộ Doanh nghiệp)
-
-Nếu bạn cần triển khai trong mạng nội bộ doanh nghiệp hoặc mạng chính phủ không có quyền truy cập mạng bên ngoài, AI Short cung cấp phiên bản ngoại tuyến chuyên dụng. Không cần máy chủ backend hay đăng ký, tất cả dữ liệu được lưu trữ cục bộ trên trình duyệt.
-
-Triển khai phiên bản ngoại tuyến bằng Docker chỉ với một lệnh:
-
-```bash
-docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
-```
-
-Xem hướng dẫn chi tiết và các tùy chọn cấu hình tại [Hướng dẫn Triển khai Ngoại tuyến](./guides/offline).
-
-## Hướng dẫn Triển khai
-
-Yêu cầu Hệ thống:
-
-- [Node.js 20.0](https://nodejs.org/) hoặc mới hơn.
-- Hỗ trợ macOS, Windows (bao gồm WSL) và Linux.
-
-### Triển khai Cục bộ
-
-```shell
-# Cài đặt
-yarn
-
-# Phát triển Cục bộ
-yarn start
-
-# Build
-yarn build
-
-# Build cho ngôn ngữ cụ thể
-yarn build --locale vi
-```
-
-### Triển khai Vercel
-
-Nhấp nút bên dưới để triển khai một cú nhấp ChatGPT-Shortcut lên nền tảng Vercel:
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Triển khai Docker
-
-```bash
-docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-shortcut:latest
-```
-
-## Bật Đồng bộ Cập nhật
-
-Sau khi fork dự án, bạn cần bật thủ công Workflows trong trang Actions của dự án đã fork và bật Upstream Sync Action. Sau khi bật, cập nhật sẽ được thực hiện tự động mỗi ngày.
-
-![Tự động Cập nhật](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+- **[Triển khai Tiêu chuẩn](./deploy/standard)** — Dùng lại backend chính thức dùng chung, hỗ trợ build cục bộ, Vercel, Cloudflare Pages và Docker.
+- **[Phiên bản ngoại tuyến (Mạng nội bộ)](./deploy/offline)** — Giải pháp ngoại tuyến cho mạng nội bộ doanh nghiệp, mạng cơ quan nhà nước và các môi trường bị cô lập, không cần backend hay tài khoản.
+- **[Cấu hình và Tùy chỉnh](./deploy/configuration)** — Sửa tiêu đề trang web, mô tả, prompt và đối tác backend tùy chỉnh.
+- **[Bật Đồng bộ Cập nhật](./deploy/sync-updates)** — Để fork của bạn tự động cập nhật theo upstream, tránh bị tụt hậu tính năng.

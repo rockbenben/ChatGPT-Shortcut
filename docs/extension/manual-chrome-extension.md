@@ -30,7 +30,7 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-安装成功后，可查看[插件使用教程](./usage.md)。
+安装成功后，可查看[插件使用教程](./usage)。
 
 ## 安装遇到了问题？
 
@@ -40,4 +40,4 @@ chrome://extensions
 
 3. 是否是将 crx 文件拖入到「扩展程序」页面？注意 ⚠️：不要点击「加载已解压的扩展程序」，必须要拖入 crx 文件。
 
-4. 浏览器不允许安装 crx 文件？尝试安装 zip 文件吧！[点击此处查看 zip 安装教程](./manual-chrome-extension-zip.md)。
+4. 浏览器不允许安装 crx 文件？尝试安装 zip 文件吧！[点击此处查看 zip 安装教程](./manual-chrome-extension-zip)。

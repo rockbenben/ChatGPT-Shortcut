@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -48,7 +48,7 @@
 </p>
 
 <p align="center">
-    <em>Thousands of battle-tested AI prompts — turn ChatGPT, Cursor, and any AI tool from mediocre to expert-grade.</em>
+    <em>5000+ ready-to-use AI prompts — turn ChatGPT, Cursor, and any AI tool from mediocre to expert-grade.</em>
 </p>
 
 ## 📖 Table of Contents
@@ -56,6 +56,7 @@
 - [⚡ Quick Start](#-quick-start)
 - [💎 Why AiShort?](#-why-aishort)
 - [📸 Screenshots](#-screenshots)
+- [📚 Documentation](#-documentation)
 - [🧩 Browser Extension](#-browser-extension)
 - [🚀 Deploy](#-deploy)
 - [🤝 Contributing](#-contributing)
@@ -97,25 +98,27 @@ No signup. No paywall. No install. Open and use.
 
 ✏️ **Custom Prompts** — Create, edit, and manage your own prompts.
 
-🗳️ **Community** — Share prompts to the community and vote.
+🗳️ **Community** — Share prompts to the community, vote, and discuss in comments.
 
 📤 **Data Export** — One-click export of all prompts as JSON.
 
 🔐 **Multiple Login Methods** — Password, Google, or passwordless email link.
 
+🏆 **Levels** — Earn levels (L0–L9) as you share prompts with the community.
+
 ## 📸 Screenshots
 
 <table>
   <tr>
-    <td width="50%"><img src="static/img/docs/my-collection-view.gif" alt="My Collection" /></td>
-    <td width="50%"><img src="static/img/docs/extension-sidebar.gif" alt="Browser Extension" /></td>
+    <td width="50%"><img src="static/img/docs/my-collection-view.webp" alt="My Collection" /></td>
+    <td width="50%"><img src="static/img/docs/extension-sidebar.webp" alt="Browser Extension" /></td>
   </tr>
   <tr>
     <td align="center"><strong>My Collection</strong> — drag, tag, organize</td>
     <td align="center"><strong>Browser Extension</strong> — sidebar in ChatGPT, Gemini, Claude…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="static/img/docs/prompt-card.gif" alt="Prompt Card" /></td>
+    <td width="50%"><img src="static/img/docs/prompt-card.webp" alt="Prompt Card" /></td>
     <td width="50%"><img src="static/img/docs/community-page.png" alt="Community" /></td>
   </tr>
   <tr>
@@ -123,6 +126,18 @@ No signup. No paywall. No install. Open and use.
     <td align="center"><strong>Community</strong> — discover & vote</td>
   </tr>
 </table>
+
+## 📚 Documentation
+
+Full guides on [aishort.top](https://www.aishort.top/en/docs/):
+
+- [Getting Started](https://www.aishort.top/en/docs/guides/getting-started) — basic usage in 30 seconds
+- [Interface Guide](https://www.aishort.top/en/docs/guides/interface) — tag filters & smart search
+- [My Collection](https://www.aishort.top/en/docs/guides/my-collection) — collect, tag, drag-to-organize
+- [Custom Prompts](https://www.aishort.top/en/docs/guides/user-prompts) — create, edit, import/export
+- [Community Prompts](https://www.aishort.top/en/docs/guides/community) — discover, vote, discuss
+- [Account](https://www.aishort.top/en/docs/guides/account) — login methods & data management
+- [Deployment](https://www.aishort.top/en/docs/deploy) — self-host your own instance
 
 ## 🧩 Browser Extension
 
@@ -141,7 +156,9 @@ Deploy your own instance via Vercel, Cloudflare Pages, Docker, or locally. See t
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **Tip**: Vercel's one-click deploy creates a new project (not a fork), so the upstream-update check won't work. To get auto-sync, fork the repo first, then import the fork in Vercel — full instructions in the [deploy guide](https://www.aishort.top/en/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
+> **Offline / intranet?** There's an [Offline Edition](https://www.aishort.top/en/docs/deploy/offline) built for air-gapped enterprise or government networks — no backend or account needed, data stored locally in the browser, with the same browse/search/collect/custom-prompt features.
+
+> **Tip**: Vercel's one-click deploy creates a new project (not a fork), so the upstream-update check won't work. To get auto-sync, fork the repo first, then import the fork in Vercel — full instructions in the [deploy guide](https://www.aishort.top/en/docs/deploy/sync-updates).
 
 ## 🤝 Contributing
 

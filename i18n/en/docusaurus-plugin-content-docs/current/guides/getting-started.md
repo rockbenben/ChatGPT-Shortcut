@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Getting Started
 title: AI Short Quick Start | Copy Prompts to ChatGPT/DeepSeek
 description: Start boosting AI productivity in 30 seconds! Copy curated prompts to ChatGPT, Gemini, Claude, DeepSeek and other AI models to instantly improve conversation quality.
@@ -17,7 +17,7 @@ Good prompts determine the quality of AI output. AiShort offers a large library 
 3. Paste it into any AI tool — a chat page, a coding tool like Cursor, or your own API calls
 4. Fill in the **placeholders** in the prompt (such as `[content]`, `[topic]`) with your specific request, then send it to the AI
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Tip**: Most prompts use square brackets `[...]` to mark text you should replace — swap the placeholder inside the brackets for your own content.
 
@@ -31,7 +31,7 @@ Good prompts determine the quality of AI output. AiShort offers a large library 
 | Create my own prompts      | [Custom Prompts](./user-prompts)       |
 | Register or log in         | [Account Management](./account)        |
 | Discover community shares  | [Community Prompts](./community)       |
-| Offline / intranet deploy  | [Offline Edition](./offline)           |
+| Offline / intranet deploy  | [Offline Edition](../deploy/offline)           |
 
 ## Common AI Models
 
@@ -45,10 +45,10 @@ Good prompts determine the quality of AI output. AiShort offers a large library 
 ### Mainland China Models
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

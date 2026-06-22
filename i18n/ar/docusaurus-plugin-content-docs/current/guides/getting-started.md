@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: ابدأ
 title: دليل البدء السريع لـ AI Short - انسخ المطالبات إلى ChatGPT/DeepSeek
 description: ابدأ في 30 ثانية! انسخ المطالبات إلى ChatGPT و Gemini و DeepSeek وغيرها من نماذج AI، لتعزيز جودة الحوار والكفاءة فورًا.
@@ -17,7 +17,7 @@ description: ابدأ في 30 ثانية! انسخ المطالبات إلى Cha
 3. الصقها في أي أداة ذكاء اصطناعي — صفحات الدردشة، أدوات البرمجة مثل Cursor، استدعاءات API، أو أي وكيل ذكاء اصطناعي
 4. أكمل المتطلبات المحددة وفقًا لـ**العناصر النائبة** في المطالبة (مثل `[المحتوى]`، `[الموضوع]`)، ثم أرسلها إلى الـ AI
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **نصيحة**: معظم المطالبات تستخدم الأقواس المربعة `[...]` للإشارة إلى المحتوى الذي يجب أن تكمله — استبدل النص النائب داخل الأقواس بمحتواك الخاص.
 
@@ -31,7 +31,7 @@ description: ابدأ في 30 ثانية! انسخ المطالبات إلى Cha
 | إنشاء مطالباتي الخاصة              | [مطالبات مخصصة](./user-prompts)                |
 | التسجيل أو تسجيل الدخول            | [إدارة الحساب](./account)                      |
 | اكتشاف المشاركة المجتمعية          | [مطالبات المجتمع](./community)                 |
-| النشر دون اتصال / الشبكة الداخلية  | [النسخة المحلية للنشر](./offline)              |
+| النشر دون اتصال / الشبكة الداخلية  | [النسخة المحلية للنشر](../deploy/offline)              |
 
 ## نماذج AI الشائعة
 
@@ -49,10 +49,10 @@ description: ابدأ في 30 ثانية! انسخ المطالبات إلى Cha
 > ملاحظة: هذه النماذج طُوِّرت داخل الصين القارية، وقد يحتاج المستخدمون خارج المنطقة إلى تسجيل بأرقام محلية أو يواجهون قيود وصول. يُفضَّل للمستخدمين في منطقة الشرق الأوسط وشمال إفريقيا الاعتماد على النماذج الدولية والإقليمية أعلاه.
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [ERNIE Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [Spark Desk](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

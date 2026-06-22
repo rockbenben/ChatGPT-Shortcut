@@ -1,41 +1,45 @@
 ---
 sidebar_label: Prompts de la Comunidad
-title: Comunidad AI Short - Comparte y Vota Prompts
-description: Explora los prompts mejor valorados por la comunidad, vota lo que te resulta útil y publica los tuyos, o guárdalos en privado solo para ti.
+title: Comunidad AI Short | Descubre y Comparte Prompts de IA de Calidad
+description: "¡Descubre los prompts de IA mejor valorados en la comunidad! Los votos hacen que el contenido de calidad salga a flote — comparte tus mejores ideas para ganar visibilidad, o establécelas como privadas."
 ---
 
 # Prompts de la Comunidad
 
-Los prompts de la comunidad los aportan los propios usuarios. Aquí puedes inspirarte y compartir tus ideas. El **sistema de votación** hace que el buen contenido salga a flote: los prompts que más gente considera útiles llegan a más personas, mientras que los de menor calidad pierden visibilidad.
+Los Prompts de la Comunidad provienen de otros usuarios — explóralos para inspirarte y comparte lo que has creado. El **sistema de votación** mantiene lo mejor arriba: los prompts útiles suben, y los más débiles quedan en segundo plano.
 
 ![](/img/docs/community-page.png)
 
 ## Ordenar y Filtrar
 
-- **Fecha de publicación**: descubre los últimos prompts compartidos
-- **Orden por votos**: consulta los prompts con más votos positivos
-- **Búsqueda por palabras clave**: encuentra prompts sobre temas concretos
+- **Más recientes**: ve los últimos compartidos (predeterminado)
+- **Más votados**: ve los prompts con más votos positivos
+- **Búsqueda por palabras clave**: busca temas específicos
 
-## Mecanismo de Votación
+## Cómo Funciona la Votación
 
-Los votos positivos y negativos determinan la visibilidad de los prompts:
+Los votos positivos y negativos deciden la visibilidad de un prompt:
 
-- **A favor**: ayuda a que el contenido de calidad llegue a más usuarios
-- **En contra**: cuando los votos negativos alcanzan cierto umbral, el prompt se oculta
+- **Voto positivo**: impulsa el buen contenido frente a más personas
+- **Voto negativo**: cuando un prompt acumula suficientes votos negativos, se oculta del feed
 
-**Vínculo con favoritos**: al coleccionar un prompt de la comunidad, el sistema emite automáticamente un voto a favor.
+**Coleccionar = Votar positivo**: añadir un prompt de la comunidad a tu colección emite automáticamente un voto positivo.
 
-![Estado del botón de votación](/img/docs/community-vote.png)
+![Estado del Botón de Votación](/img/docs/community-vote.png)
 
-> Solo puedes votar tras iniciar sesión, y de cada usuario se contabiliza únicamente el voto más reciente sobre un mismo prompt.
+> La votación solo está disponible para usuarios que han iniciado sesión; de cada prompt, solo cuenta tu voto más reciente.
 
 ## Prompts Privados
 
-Las ideas que no quieras hacer públicas se pueden configurar como privadas:
+Las ideas que prefieres guardar para ti se pueden establecer como privadas:
 
-- Al crear o editar un prompt, desactiva el interruptor "Compartir en la comunidad"
-- Los prompts privados solo son visibles para ti
-- Puedes alternar entre público/privado en cualquier momento
+- Desactiva "Compartir en la comunidad" al crear o editar
+- Los prompts privados son visibles solo para ti
+- Puedes alternar entre público y privado en cualquier momento
+
+## Discusión
+
+Abre la página de detalles de cualquier prompt de la comunidad y, junto al contenido completo, tras iniciar sesión podrás comentar y unirte a la conversación (se admiten emojis y GIFs).
 
 ## Documentación Relacionada
 

@@ -6,36 +6,40 @@ description: AI Short topluluğunda kullanıcıların paylaştığı kaliteli AI
 
 # Topluluk Promptları
 
-Topluluk promptları kullanıcılar tarafından paylaşılır; burada ilham bulabilir, kendi çalışmalarınızı da paylaşıma açabilirsiniz. **Oylama mekanizması** kaliteli içeriğin öne çıkmasını sağlar—faydalı bulunan promptlar daha geniş kitlelere ulaşır, düşük kaliteli olanlar zamanla arka planda kalır.
+Topluluk Promptları diğer kullanıcılardan gelir — ilham aramak için göz atın, ardından yaptıklarınızı paylaşın. **Oylama** kalitelileri üstte tutar: faydalı promptlar yükselir, zayıf olanlar sessizce geriye düşer.
 
 ![](/img/docs/community-page.png)
 
 ## Sıralama ve Filtreleme
 
-- **Yayın Zamanı**: En son paylaşılanları görün
-- **Oy Sıralaması**: En çok beğeni alan promptları görün
+- **En yeni**: En son paylaşılanları görün (varsayılan)
+- **En çok oy alan**: En çok olumlu oy alan promptları görün
 - **Anahtar Kelime Araması**: Belirli konuları arayın
 
-## Oylama Mekanizması
+## Oylama Nasıl Çalışır
 
-Olumlu/olumsuz oylar promptun görünürlüğünü belirler:
+Olumlu ve olumsuz oylar bir promptun ne kadar görünür olacağını belirler:
 
-- **Olumlu oy**: Kaliteli içeriğin daha fazla kişiye ulaşmasını sağlar
-- **Olumsuz oy**: Olumsuz oy sayısı eşiğe ulaşınca prompt gizlenir
+- **Olumlu oy**: Kaliteli içeriği daha fazla kişinin önüne taşır
+- **Olumsuz oy**: Bir prompt yeterli olumsuz oy topladığında akıştan gizlenir
 
-**Koleksiyon bağlantısı**: Bir topluluk promptunu koleksiyonunuza eklediğinizde otomatik olarak olumlu oy verilmiş sayılır.
+**Topla = Olumlu Oy**: Bir topluluk promptunu koleksiyonunuza eklemek otomatik olarak olumlu oy kullanır.
 
 ![Oylama Düğmesi Durumu](/img/docs/community-vote.png)
 
-> Oylama yalnızca giriş yapmış kullanıcılara açıktır; aynı prompt için yalnızca en son verdiğiniz oy dikkate alınır.
+> Oylama yalnızca giriş yapmış kullanıcılara açıktır; her prompt için yalnızca en son verdiğiniz oy dikkate alınır.
 
 ## Özel Promptlar
 
-Herkesle paylaşmak istemediğiniz çalışmalarınızı özel olarak ayarlayabilirsiniz:
+Kendinize saklamak istediğiniz fikirler özel olarak ayarlanabilir:
 
-- Oluştururken veya düzenlerken "Topluluğa Paylaş" seçeneğini kapatın
+- Oluştururken veya düzenlerken "Topluluğa Paylaş"ı kapatın
 - Özel promptlar yalnızca size görünür
-- İstediğiniz zaman genel/özel arasında geçiş yapabilirsiniz
+- İstediğiniz zaman genel ve özel arasında geçiş yapabilirsiniz
+
+## Tartışma
+
+Herhangi bir topluluk promptunun ayrıntı sayfasını açın; tam içeriğin yanı sıra giriş yaptıktan sonra yorum yapabilir ve sohbete katılabilirsiniz (emoji ve GIF desteklenir).
 
 ## İlgili Belgeler
 

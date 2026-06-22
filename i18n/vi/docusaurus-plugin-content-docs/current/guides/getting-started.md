@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Bắt đầu
 title: AI Short Khởi động Nhanh | Sao chép Prompt vào ChatGPT/DeepSeek
 description: Bắt đầu nhanh trong 30 giây! Sao chép prompt vào ChatGPT, Gemini, DeepSeek và các mô hình AI khác để nâng chất lượng hội thoại và hiệu quả công việc ngay lập tức.
@@ -17,7 +17,7 @@ Prompt tốt quyết định chất lượng đầu ra của AI. AiShort tuyển
 3. Dán vào bất kỳ công cụ AI nào — trang chat như ChatGPT, công cụ lập trình như Cursor, gọi API, v.v.
 4. Theo các **placeholder** trong prompt (như `[nội dung]`, `[chủ đề]`) bổ sung nhu cầu cụ thể của bạn, rồi gửi cho AI
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Mẹo nhỏ**: Hầu hết prompt dùng dấu ngoặc vuông `[...]` để đánh dấu nội dung bạn cần bổ sung — chỉ cần thay phần văn bản trong ngoặc vuông bằng nội dung cụ thể của bạn.
 
@@ -31,7 +31,7 @@ Prompt tốt quyết định chất lượng đầu ra của AI. AiShort tuyển
 | Tạo prompt riêng           | [Prompt Tùy chỉnh](./user-prompts)                |
 | Đăng ký hoặc Đăng nhập     | [Quản lý Tài khoản](./account)                    |
 | Khám phá chia sẻ cộng đồng | [Prompt Cộng đồng](./community)                   |
-| Triển khai ngoại tuyến/nội bộ | [Phiên bản ngoại tuyến](./offline)             |
+| Triển khai ngoại tuyến/nội bộ | [Phiên bản ngoại tuyến](../deploy/offline)             |
 
 ## Các Mô hình AI Phổ biến
 
@@ -53,10 +53,10 @@ Prompt tốt quyết định chất lượng đầu ra của AI. AiShort tuyển
 > Phần lớn các mô hình bên dưới giao diện chính bằng tiếng Trung. Bạn vẫn có thể dùng tiếng Việt khi trò chuyện, nhưng chất lượng phản hồi tiếng Việt không ổn định bằng nhóm quốc tế ở trên.
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [Zhipu Qingyan](https://chatglm.cn/detail)
 - [Xinghuo](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

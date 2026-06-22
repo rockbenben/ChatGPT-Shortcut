@@ -30,7 +30,7 @@ Installieren Sie die ChatGPT Shortcut Erweiterung (Hinweis ⚠️: Sie müssen d
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage.md) ansehen.
+Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage) ansehen.
 
 ## Installationsprobleme?
 
@@ -40,4 +40,4 @@ Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usa
 
 3. Haben Sie die crx-Datei auf die "Erweiterungen"-Seite gezogen? Hinweis ⚠️: Klicken Sie nicht auf "Entpackte Erweiterung laden", Sie müssen die crx-Datei ziehen.
 
-4. Erlaubt der Browser die Installation von crx-Dateien nicht? Versuchen Sie, die zip-Datei zu installieren! [Klicken Sie hier, um das Zip-Installations-Tutorial anzusehen](./manual-chrome-extension-zip.md).
+4. Erlaubt der Browser die Installation von crx-Dateien nicht? Versuchen Sie, die zip-Datei zu installieren! [Klicken Sie hier, um das Zip-Installations-Tutorial anzusehen](./manual-chrome-extension-zip).

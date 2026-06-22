@@ -37,7 +37,7 @@ Prompt của AiShort là phổ quát, **dùng được trong bất kỳ tình hu
 
 Xem danh sách mô hình đầy đủ tại [Bắt đầu → Các Mô hình AI Phổ biến](./getting-started#các-mô-hình-ai-phổ-biến).
 
-**Tính phổ quát đa mô hình**: Đại đa số prompt văn bản đều dùng được trên nhiều mô hình — viết lách, dịch thuật, lập trình, hỏi đáp là các tác vụ phổ quát, cùng một prompt chạy trên các mô hình ngôn ngữ lớn chủ đạo đều cho kết quả hiệu quả, và mặc định mỗi prompt của AiShort không bị ràng buộc vào mô hình cụ thể. Tuy nhiên **hiệu quả vẫn có khác biệt**: với mảng viết lách Claude thường tinh tế hơn về chi tiết, ChatGPT-5 bám sát chỉ thị hơn; mảng lập trình GPT-5, Gemini Pro, DeepSeek mỗi mô hình có thế mạnh riêng; với các bài đòi hỏi suy luận sâu thì Claude Opus / Gemini Deep Thinking / dòng o-series thường ổn định hơn. Prompt vẽ tranh (Midjourney / Stable Diffusion / DALL·E) thì không dùng chung được, cần điều chỉnh theo cú pháp riêng của từng công cụ.
+**Tính phổ quát đa mô hình**: prompt văn bản về cơ bản không kén mô hình — viết lách, dịch thuật, lập trình, hỏi đáp là các tác vụ phổ quát, cùng một prompt chạy trên các mô hình ngôn ngữ lớn chủ đạo đều cho kết quả hiệu quả, và mặc định mỗi prompt của AiShort không bị ràng buộc vào mô hình cụ thể. Ngoại lệ duy nhất là prompt vẽ tranh (Midjourney / Stable Diffusion / DALL·E), cần điều chỉnh theo cú pháp riêng của từng công cụ.
 
 ## Tại sao prompt được viết bằng tiếng Anh?
 
@@ -79,7 +79,7 @@ Prompt phù hợp có thể giúp giảm sự xuất hiện của AI ảo giác.
 
 1. **Viết cụ thể hơn ở các `[ô giữ chỗ]` trong ngoặc vuông** — bổ sung phong cách, độ dài, lĩnh vực, chân dung độc giả, v.v.
 2. **Hỏi tiếp để AI tự tối ưu**: Với câu trả lời chưa ưng, hỏi tiếp "hãy viết lại theo hướng X hơn" hoặc "viết lại theo phong cách Y", AI thường chỉ cần một, hai lượt là bám sát mục tiêu; cũng có thể yêu cầu AI tự chấm điểm và cải thiện câu trả lời của chính mình
-3. **So sánh đổi mô hình**: Cùng một prompt chạy trên Claude Sonnet / ChatGPT / Gemini / DeepSeek đôi khi cho kết quả khác biệt rất lớn — viết lách Claude thường tinh tế hơn, lập trình GPT-5 / DeepSeek ổn định hơn
+3. **So sánh đổi mô hình**: Cùng một prompt thử lại trên một mô hình khác (Claude / ChatGPT / Gemini / DeepSeek, v.v.); mỗi mô hình có thế mạnh riêng, kết quả có thể khác biệt không nhỏ
 4. **Thử cộng đồng**: Trong [Prompt Cộng đồng](./community) có thể có phiên bản phù hợp hơn — và cũng hoan nghênh bạn chia sẻ prompt tốt của mình ở đó
 5. **Gửi phản hồi**: Gặp vấn đề hoặc có gợi ý cải thiện? Hoan nghênh [phản hồi](/feedback)
 

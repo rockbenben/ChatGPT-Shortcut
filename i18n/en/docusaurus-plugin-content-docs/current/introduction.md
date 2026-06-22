@@ -1,4 +1,4 @@
----
+﻿---
 slug: /
 sidebar_label: Introduction
 title: Curated AI Prompt Library | Copy & Boost Productivity
@@ -11,7 +11,7 @@ AI Short (ChatGPT Shortcut) is a scenario-based AI prompt library — copy and u
 
 > **What is a "prompt"?** A prompt is the instruction you give to an AI, and it determines the quality of what comes back. A good prompt yields professional, precise answers; a vague one only earns a mediocre reply. AiShort organizes high-quality prompts for every scenario (writing, coding, office work, learning, and more) so you don't have to spend time figuring out how to ask.
 
-## ⚡ 30-Second Quick Start
+## 30-Second Quick Start
 
 1. Open AI Short
 2. Search or browse for the prompt you need
@@ -41,9 +41,11 @@ That's it — for more, see the [Getting Started guide](./guides/getting-started
 
 🔐 **Multiple Login Methods**: Username & password, Google, and passwordless email links.
 
+🏆 **Levels**: Earn levels (L0–L9) as you share prompts with the community.
+
 ## Offline Edition
 
-The [offline edition](./guides/offline) is designed for corporate intranets, government networks, and other environments without internet access. It requires no backend server or account, works out of the box after deployment, and retains core features like browsing, searching, favorites, and custom prompts. The data format is compatible with the online version.
+The [offline edition](./deploy/offline) is designed for corporate intranets, government networks, and other environments without internet access. It requires no backend server or account, works out of the box after deployment, and retains core features like browsing, searching, favorites, and custom prompts. The data format is compatible with the online version.
 
 ## Prompt Sources
 

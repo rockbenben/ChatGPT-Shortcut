@@ -20,4 +20,4 @@ Next, to ensure the extension runs correctly on sites like ChatGPT and Gemini, r
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-After successful installation, check the [Plugin Usage Tutorial](./usage.md).
+After successful installation, check the [Plugin Usage Tutorial](./usage).

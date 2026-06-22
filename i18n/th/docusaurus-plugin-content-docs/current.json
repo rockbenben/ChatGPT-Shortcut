@@ -14,5 +14,9 @@
   "sidebar.docs.category.Policies": {
     "message": "นโยบาย",
     "description": "The label for category 'Policies' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.项目部署": {
+    "message": "การติดตั้ง",
+    "description": "The label for category '项目部署' in sidebar 'docs'"
   }
 }

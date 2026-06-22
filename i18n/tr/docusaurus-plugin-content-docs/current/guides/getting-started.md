@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Başlarken
 title: AI Short Başlangıç Kılavuzu | Promptları ChatGPT/DeepSeek'e Kopyalayın
 description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi AI modellerine kopyalayın ve konuşma kalitenizi ile verimliliğinizi anında artırın.
@@ -17,7 +17,7 @@ description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi 
 3. Herhangi bir AI aracına yapıştırın — ChatGPT gibi sohbet sayfaları, Cursor gibi kodlama araçları, API çağrıları vb.
 4. Prompttaki **yer tutucuları** (örn. `[içerik]`, `[konu]`) kendi ihtiyacınızla doldurun ve AI'a gönderin
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **İpucu**: Promptların çoğu, doldurmanız gereken bölümleri köşeli parantez `[...]` ile işaretler—köşeli parantez içindeki yer tutucu metni kendi içeriğinizle değiştirmeniz yeterli.
 
@@ -31,7 +31,7 @@ description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi 
 | Kendi promptlarımı oluştur     | [Özel Promptlar](./user-prompts)                    |
 | Kayıt ol veya giriş yap        | [Hesap Yönetimi](./account)                         |
 | Topluluk paylaşımlarını keşfet | [Topluluk Promptları](./community)                  |
-| Çevrimdışı/intranet dağıtımı   | [Çevrimdışı Dağıtım Sürümü](./offline)              |
+| Çevrimdışı/intranet dağıtımı   | [Çevrimdışı Dağıtım Sürümü](../deploy/offline)              |
 
 ## Popüler AI Modelleri
 
@@ -47,10 +47,10 @@ description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi 
 ### Çin Anakarası Modelleri
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Wenxin Yiyan](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [Xunfei Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

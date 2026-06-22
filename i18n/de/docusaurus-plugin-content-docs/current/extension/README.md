@@ -8,13 +8,13 @@ description: Rufen Sie AiShort-Prompts direkt in der Seitenleiste von ChatGPT, G
 
 Die AiShort (ChatGPT Shortcut) Erweiterung bettet die Prompt-Bibliothek direkt in die Seitenleiste von ChatGPT, Gemini, Claude, Doubao und weiteren KI-Chat-Seiten ein, sodass Sie nicht mehr zu aishort.top zurückwechseln und per Copy & Paste arbeiten müssen. Unterstützt Chrome, Edge und Firefox. Mit `Alt + Shift + S` schnell aufrufen.
 
-## 📥 Installationsmöglichkeiten
+## Installationsmöglichkeiten
 
 ### 1. App-Store (empfohlen, Installation mit einem Klick)
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (nach der Installation ist eine einmalige [Berechtigungseinrichtung](./firefox-extension-setting.md) erforderlich, sonst wird die Seitenleiste auf ChatGPT nicht angezeigt)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (nach der Installation ist eine einmalige [Berechtigungseinrichtung](./firefox-extension-setting) erforderlich, sonst wird die Seitenleiste auf ChatGPT nicht angezeigt)
 
 ### 2. Store nicht erreichbar? Lokales Installationspaket
 
@@ -22,13 +22,13 @@ Laden Sie es über die folgenden Kanäle herunter und folgen Sie der jeweiligen 
 
 - **GitHub**: [GitHub Release](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-> 📖 Installationsanleitungen: [CRX-Datei](./manual-chrome-extension.md) · [ZIP-Datei](./manual-chrome-extension-zip.md)
+> 📖 Installationsanleitungen: [CRX-Datei](./manual-chrome-extension) · [ZIP-Datei](./manual-chrome-extension-zip)
 
-## ✅ Nach der Installation
+## Nach der Installation
 
-Drücken Sie `Alt + Shift + S`, um die Erweiterung aufzurufen, oder klicken Sie auf das Symbol in der Symbolleiste. Eine ausführliche Anleitung finden Sie im [Nutzungs-Tutorial](./usage.md).
+Drücken Sie `Alt + Shift + S`, um die Erweiterung aufzurufen, oder klicken Sie auf das Symbol in der Symbolleiste. Eine ausführliche Anleitung finden Sie im [Nutzungs-Tutorial](./usage).
 
-## 🧩 Tampermonkey Skript
+## Tampermonkey Skript
 
 Neben dem Erweiterungsformat bieten wir auch das [**ChatGPT Shortcut Anywhere Tampermonkey Skript**](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) an.
 Tampermonkey ist eine Browser-Erweiterung, die es Benutzern ermöglicht, benutzerdefinierte Skripte auszuführen, um Webseitenfunktionen zu verbessern.
@@ -37,4 +37,4 @@ Mit diesem Skript können Sie die AiShort-Seitenleiste auf jeder Website aufrufe
 
 Nachdem Sie die AiShort-Seitenleiste aktiviert haben, sehen Sie unten rechts auf unterstützten Webseiten einen grünen Symbol-Schalter. Klicken Sie auf dieses Symbol, um die Seitenleiste ein- oder auszuschalten. Standardmäßig werden derzeit ChatGPT, Gemini, Claude, Doubao und weitere unterstützt.
 
-![](/img/docs/extension-sidebar.gif)
+![](/img/docs/extension-sidebar.webp)

@@ -37,7 +37,7 @@ Los prompts de AiShort son universales: **funcionan en cualquier escenario de IA
 
 Consulta la lista completa en [Inicio Rápido → Modelos de IA Comunes](./getting-started#modelos-de-ia-comunes).
 
-**Compatibilidad entre modelos**: la gran mayoría de los prompts de texto funcionan en todos los modelos — escritura, traducción, programación y preguntas-respuestas son tareas universales y un mismo prompt produce buenos resultados en los principales LLM. Por eso ninguno de los prompts de AiShort está atado a un modelo concreto. Pero **el rendimiento varía**: para escritura, Claude suele dar más detalle y matiz, y ChatGPT-5 sigue mejor las instrucciones; para programación, GPT-5, Gemini Pro y DeepSeek destacan en distintas áreas; en razonamiento intenso, Claude Opus, Gemini Deep Thinking o los modelos serie o suelen ser más estables. Los prompts para generación de imágenes (Midjourney, Stable Diffusion, DALL·E) no son intercambiables: hay que adaptarlos a la sintaxis de cada uno.
+**Compatibilidad entre modelos**: la gran mayoría de los prompts de texto funcionan en todos los modelos — escritura, traducción, programación y preguntas-respuestas son tareas universales y un mismo prompt produce buenos resultados en los principales LLM. Por eso ninguno de los prompts de AiShort está atado a un modelo concreto. La única excepción son los prompts para generación de imágenes (Midjourney / Stable Diffusion / DALL·E), que hay que adaptar a la sintaxis de cada herramienta.
 
 ## ¿Por qué los prompts están en inglés?
 
@@ -79,7 +79,7 @@ No cambies el prompt directamente; ajusta antes en estas direcciones:
 
 1. **Haz más específicos los `[marcadores]` entre corchetes**: añade detalles como estilo, longitud, ámbito, perfil del lector, etc.
 2. **Pide optimización a la IA**: ante una respuesta poco satisfactoria, indícale «hazlo más X» o «reescríbelo con el estilo Y». La IA suele acercarse al objetivo en una o dos iteraciones. También puedes pedirle que puntúe su propia respuesta y la mejore.
-3. **Compara entre modelos**: el mismo prompt puede dar resultados muy distintos en Claude Sonnet / ChatGPT / Gemini / DeepSeek — en escritura, Claude suele dar más matiz; en programación, GPT-5 / DeepSeek son más estables.
+3. **Compara entre modelos**: prueba el mismo prompt en otro modelo (Claude / ChatGPT / Gemini / DeepSeek, etc.); cada modelo tiene sus puntos fuertes y los resultados pueden variar bastante.
 4. **Prueba en la comunidad**: en [Prompts de la Comunidad](./community) puede haber una versión más adecuada — y también puedes compartir allí los tuyos.
 5. **Envía sugerencias**: ¿problemas o ideas de mejora? Comparte tus [comentarios](/feedback).
 

@@ -12,8 +12,8 @@ Community Prompts come from other users — browse for inspiration, then share w
 
 ## Sorting and Filtering
 
-- **Publish Time**: See the latest shares
-- **Vote Sorting**: See the most upvoted prompts
+- **Latest published**: See the latest shares (default)
+- **Most upvoted**: See the most upvoted prompts
 - **Keyword Search**: Search for specific topics
 
 ## How Voting Works
@@ -36,6 +36,10 @@ Ideas you'd rather keep to yourself can be set to private:
 - Turn off "Share to Community" when creating or editing
 - Private prompts are visible only to you
 - You can switch between public and private at any time
+
+## Discussion
+
+Open any community prompt's detail page and, alongside the full content, log in to comment and join the discussion (emoji and GIF supported).
 
 ## Related Documentation
 

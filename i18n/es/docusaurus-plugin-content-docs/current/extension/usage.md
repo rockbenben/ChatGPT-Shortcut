@@ -26,7 +26,7 @@ Al activar esta opción, la barra lateral permanecerá abierta al cambiar de pes
 
 La extensión soporta modo oscuro. Activa "Modo oscuro" en configuración para cambiar la interfaz a apariencia oscura.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Activación por atajo
 

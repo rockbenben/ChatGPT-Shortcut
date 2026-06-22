@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -46,15 +46,17 @@ Indonesia |
 <a href="./README-hi.md">हिन्दी</a> |
 <a href="./README-bn.md">বাংলা</a>
 </p>
+
 <p align="center">
-    <em>Ribuan prompt AI yang sudah teruji — ubah ChatGPT, Cursor, dan alat AI apa pun dari biasa menjadi kelas pakar.</em>
+    <em>5000+ prompt AI siap pakai — ubah ChatGPT, Cursor, dan alat AI apa pun dari biasa menjadi kelas pakar.</em>
 </p>
 
 ## 📖 Daftar Isi
 
 - [⚡ Mulai Cepat](#-mulai-cepat)
-- [💎 Mengapa AiShort](#-mengapa-aishort)
+- [💎 Mengapa AiShort?](#-mengapa-aishort)
 - [📸 Tangkapan Layar](#-tangkapan-layar)
+- [📚 Dokumentasi](#-dokumentasi)
 - [🧩 Ekstensi Browser](#-ekstensi-browser)
 - [🚀 Deploy](#-deploy)
 - [🤝 Kontribusi](#-kontribusi)
@@ -66,55 +68,57 @@ Indonesia |
 
 1. Kunjungi [aishort.top](https://www.aishort.top/ind/)
 2. Cari atau telusuri prompt yang Anda butuhkan
-3. Klik "Copy" dan tempel ke alat AI apa pun — halaman chat seperti ChatGPT, Gemini, atau Claude, alat coding seperti Cursor, panggilan API, agen, dll.
+3. Klik "Copy" dan tempel ke alat AI apa pun — halaman chat seperti ChatGPT, alat coding seperti Cursor, panggilan API Anda sendiri, dll.
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
-Semudah itu! Untuk fitur lebih lanjut, baca terus atau periksa [Panduan Pengguna](https://www.aishort.top/ind/docs/guides/getting-started).
+Semudah itu! Untuk fitur lebih lanjut, periksa [Panduan Pengguna](https://www.aishort.top/ind/docs/guides/getting-started).
 
-## 💎 Mengapa AiShort
+## 💎 Mengapa AiShort?
 
 **Beda antara menggunakan AI dan menggunakan AI dengan baik adalah satu prompt yang bagus.**
 
-Pertanyaan yang sama bisa menghasilkan jawaban biasa-biasa saja atau hasil kelas pakar — semua tergantung cara Anda menyusun prompt. AiShort adalah pustaka prompt yang sudah teruji untuk menulis, coding, kantor, belajar, dan ratusan skenario lain — semuanya sudah diasah supaya AI memberikan output terbaiknya sejak percobaan pertama, tanpa Anda perlu menebak-nebak kata kunci.
+Pertanyaan yang sama, prompt yang berbeda — dan hasil AI berubah dari generik menjadi benar-benar berguna. Menulis prompt tingkat pakar sendiri membutuhkan bertahun-tahun iterasi. AiShort menyediakan pustaka prompt yang sudah teruji oleh komunitas, mencakup penulisan, coding, pekerjaan kantor, belajar, desain, pemasaran, dan lainnya. Salin → tempel → hasil kelas pakar, seketika.
 
 Tanpa pendaftaran. Tanpa biaya. Tanpa instalasi. Buka dan gunakan.
 
 ### Fitur Utama
 
-🚀 **Prompt Satu Klik** - Prompt profesional pilihan, satu klik untuk menyalin dan menggunakan.
+🚀 **Prompt Pilihan** — Mencakup penulisan, coding, pekerjaan kantor, dan lainnya — siap disalin dan digunakan.
 
-🔍 **Pencarian Cerdas** - Temukan prompt dengan cepat menggunakan filter tag dan pencarian kata kunci.
+🔍 **Pencarian Tag + Kata Kunci** — Filter berdasarkan tag skenario, atau cari berdasarkan kata kunci.
 
-🌍 **18 Bahasa** - Terjemahan untuk semua prompt, dengan balasan bahasa asli.
+🌍 **18 Bahasa** — Terjemahan UI dan prompt lengkap, dengan balasan dalam bahasa asli Anda.
 
-📦 **Siap Pakai** - Tidak perlu pendaftaran, langsung gunakan.
+📦 **Siap Pakai** — Tidak perlu pendaftaran, buka langsung dan gunakan.
 
-### Fitur Lanjutan (Perlu Login)
+### Fitur Lanjutan (Setelah Login)
 
-📂 **Koleksi Saya** - Simpan prompt favorit dengan pengurutan drag-and-drop dan tag khusus.
+📂 **Koleksi Saya** — Pengurutan drag-and-drop, klasifikasi tag khusus.
 
-✏️ **Prompt Kustom** - Buat, edit, dan kelola prompt Anda sendiri.
+✏️ **Prompt Kustom** — Buat, edit, dan kelola prompt Anda sendiri.
 
-🗳️ **Komunitas** - Bagikan prompt dan pilih kontribusi komunitas.
+🗳️ **Komunitas** — Bagikan prompt ke komunitas, beri suara, dan diskusi di kolom komentar.
 
-📤 **Ekspor** - Cadangkan semua prompt Anda sebagai JSON.
+📤 **Ekspor Data** — Ekspor semua prompt sebagai JSON dengan satu klik.
 
-🔐 **Banyak Pilihan Login** - Kata sandi, Google, atau tautan email tanpa kata sandi.
+🔐 **Berbagai Metode Login** — Kata sandi, Google, atau tautan email tanpa kata sandi.
+
+🏆 **Level** — Dapatkan level (L0–L9) saat Anda berbagi prompt bersama komunitas.
 
 ## 📸 Tangkapan Layar
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Koleksi Saya" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Ekstensi Browser" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="Koleksi Saya" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="Ekstensi Browser" /></td>
   </tr>
   <tr>
     <td align="center"><strong>Koleksi Saya</strong> — seret, tag, atur</td>
     <td align="center"><strong>Ekstensi Browser</strong> — sidebar di ChatGPT, Gemini, Claude…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Kartu Prompt" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="Kartu Prompt" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="Komunitas" /></td>
   </tr>
   <tr>
@@ -123,16 +127,28 @@ Tanpa pendaftaran. Tanpa biaya. Tanpa instalasi. Buka dan gunakan.
   </tr>
 </table>
 
+## 📚 Dokumentasi
+
+Panduan lengkap tersedia di [aishort.top](https://www.aishort.top/ind/docs/):
+
+- [Memulai](https://www.aishort.top/ind/docs/guides/getting-started) — penggunaan dasar dalam 30 detik
+- [Panduan Antarmuka](https://www.aishort.top/ind/docs/guides/interface) — filter tag & pencarian cerdas
+- [Koleksi Saya](https://www.aishort.top/ind/docs/guides/my-collection) — kumpulkan, beri tag, atur dengan seret
+- [Prompt Kustom](https://www.aishort.top/ind/docs/guides/user-prompts) — buat, edit, impor/ekspor
+- [Prompt Komunitas](https://www.aishort.top/ind/docs/guides/community) — temukan, beri suara, diskusi
+- [Akun](https://www.aishort.top/ind/docs/guides/account) — metode login & manajemen data
+- [Deployment](https://www.aishort.top/ind/docs/deploy) — hosting instance Anda sendiri
+
 ## 🧩 Ekstensi Browser
 
-Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, Edge, dan Firefox dengan sidebar yang terbuka dengan `Alt + Shift + S`.
+Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, Edge, dan Firefox — buka sidebar dengan `Alt + Shift + S`.
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
 - **GitHub**: [Rilis](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
-Kami juga menawarkan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) untuk menggunakan sidebar AiShort di situs web mana pun.
+Atau gunakan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) untuk menghadirkan sidebar AiShort di situs web mana pun.
 
 ## 🚀 Deploy
 
@@ -140,7 +156,9 @@ Deploy instance Anda sendiri melalui Vercel, Cloudflare Pages, Docker, atau seca
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **Tips**: One-click deploy Vercel membuat proyek baru (bukan fork), sehingga pemeriksaan pembaruan upstream tidak akan berfungsi. Untuk mendapatkan sinkronisasi otomatis, fork repositori terlebih dahulu, lalu impor fork tersebut di Vercel — instruksi lengkap ada di [panduan deploy](https://www.aishort.top/ind/docs/deploy).
+> **Offline / intranet?** Tersedia [Edisi Offline](https://www.aishort.top/ind/docs/deploy/offline) yang dirancang untuk jaringan enterprise atau pemerintah yang terisolasi — tanpa backend atau akun, data tersimpan secara lokal di browser, dengan fitur telusur/cari/koleksi/prompt-kustom yang sama.
+
+> **Tips**: One-click deploy Vercel membuat proyek baru (bukan fork), sehingga pemeriksaan pembaruan upstream tidak akan berfungsi. Untuk mendapatkan sinkronisasi otomatis, fork repositori terlebih dahulu, lalu impor fork tersebut di Vercel — instruksi lengkap ada di [panduan deploy](https://www.aishort.top/ind/docs/deploy/sync-updates).
 
 ## 🤝 Kontribusi
 

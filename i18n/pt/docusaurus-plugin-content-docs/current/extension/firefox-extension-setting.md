@@ -20,4 +20,4 @@ Em seguida, para garantir que a extensão funcione corretamente em sites como Ch
 
 ![Permissão da Extensão Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage.md).
+Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage).

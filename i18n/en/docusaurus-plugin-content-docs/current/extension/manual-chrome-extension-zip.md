@@ -30,4 +30,4 @@ Drag the unzipped folder into the extensions page to complete the installation.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-After successful installation, check the [Plugin Usage Tutorial](./usage.md).
+After successful installation, check the [Plugin Usage Tutorial](./usage).

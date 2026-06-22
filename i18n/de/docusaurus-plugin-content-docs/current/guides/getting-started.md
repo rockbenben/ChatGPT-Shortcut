@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Erste Schritte
 title: AI Short Erste Schritte | Prompts in ChatGPT/DeepSeek kopieren
 description: In 30 Sekunden starten! Kopieren Sie Prompts in ChatGPT, Gemini, DeepSeek und andere KI-Modelle, um sofort Gesprächsqualität und Produktivität zu steigern.
@@ -17,7 +17,7 @@ Gute Prompts bestimmen die Qualität der KI-Ausgabe. AiShort bietet eine große 
 3. Fügen Sie den Prompt in ein beliebiges KI-Tool ein — Chat-Seiten wie ChatGPT, Gemini oder Claude, Programmier-Tools wie Cursor, API-Aufrufe oder andere KI-Anwendungen
 4. Ersetzen Sie die **Platzhalter** im Prompt (wie `[Inhalt]`, `[Thema]`) durch Ihre konkreten Anforderungen und senden Sie ihn an die KI
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Tipp**: Die meisten Prompts markieren mit eckigen Klammern `[...]` die Stellen, die Sie ergänzen müssen — ersetzen Sie einfach den Platzhaltertext in den Klammern durch Ihren konkreten Inhalt.
 
@@ -31,7 +31,7 @@ Gute Prompts bestimmen die Qualität der KI-Ausgabe. AiShort bietet eine große 
 | Eigene Prompts erstellen            | [Benutzerdefinierte Prompts](./user-prompts)   |
 | Registrieren oder Anmelden          | [Kontoverwaltung](./account)                   |
 | Community-Beiträge entdecken        | [Community-Prompts](./community)               |
-| Offline-/Intranet-Bereitstellung    | [Offline-Version](./offline)                   |
+| Offline-/Intranet-Bereitstellung    | [Offline-Version](../deploy/offline)                   |
 
 ## Gängige KI-Modelle
 
@@ -48,10 +48,10 @@ Gute Prompts bestimmen die Qualität der KI-Ausgabe. AiShort bietet eine große 
 In der DACH-Region weniger verbreitet, aber teils stark in Mathematik, Programmierung und mehrsprachigen Aufgaben. Bitte prüfen Sie vor der Nutzung die Datenschutzbestimmungen — insbesondere bei sensiblen oder personenbezogenen Daten (DSGVO).
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

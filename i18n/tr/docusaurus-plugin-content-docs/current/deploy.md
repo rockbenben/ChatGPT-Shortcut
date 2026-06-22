@@ -6,93 +6,25 @@ description: Kendi AI prompt kitaplığınızı barındırmak mı istiyorsunuz? 
 
 # Proje Dağıtımı
 
-## Yapılandırma ve Özelleştirme
+> **Bu kimin için**: AiShort'u kendi sunucusunda barındırmak veya özelleştirmek isteyen geliştiriciler için. Sıradan kullanıcılar [aishort.top](https://www.aishort.top) adresini doğrudan kullanabilir — bu belgeyi okumaları gerekmez.
 
-AI Short, web sitesi başlığını, açıklamasını, promptları ve diğer içerikleri ihtiyaçlarınıza göre özgürce değiştirmenize olanak tanıyan açık kaynaklı bir projedir. Aşağıda yaygın değişiklik seçenekleri ve işlem talimatları bulunmaktadır:
+## Dağıtım Modeli Seçin
 
-- **Web Sitesi Başlığı ve Açıklamasını Değiştirin**
-  Web sitesinin başlık ve açıklama bilgilerini değiştirmek için lütfen `docusaurus.config.js` yapılandırma dosyasını düzenleyin.
+İhtiyacınıza uygun modeli seçin:
 
-- **Proje Kullanım Talimatları ve Tanıtımını Değiştirin**
-  Projenin kullanım talimatları ve tanıtım dosyaları `docs` dizininde bulunmaktadır. Gerekli değişiklikleri yapmak için o dizindeki ilgili dosyaları açın.
+| Model                          | Backend                                      | Notlar                                                                                                                                                                              |
+| ------------------------------ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Standart** (varsayılan)      | Resmi paylaşımlı backend'i yeniden kullanır | Fork ettikten sonra site adı, açıklama, promptlar vb. özelleştirilebilir (bkz. [Yapılandırma](./deploy/configuration)); giriş, favoriler, topluluk ve senkronizasyon hazır çalışır |
+| **Çevrimdışı Sürüm**           | Backend yok, veriler tarayıcıda yerel olarak saklanır | Hava boşluklu kurumsal veya devlet ağları; hesap gerekmez                                                                                                                          |
+| **Tamamen kendi kendine barındırılan backend** | Kendi bağımsız backend'iniz        | Bağımsız hesap sistemi, tam veri sahipliği ve özel topluluk gerektiğinde                                                                                                            |
 
-- **Ana Sayfa Promptlarını Değiştirin**
-  Ana sayfa promptları `src/data/prompt.json` dosyasında saklanır. Belirli bir dil için promptları değiştirmeniz gerekiyorsa, `src/data/prompt_tr.json` dosyasını doğrudan düzenleyebilirsiniz.
+İlk iki seçenek bu kılavuzda ele alınmaktadır. Üçüncüsü için backend hizmetinin kaynak kodu kamuya açık olmadığından, kullanım senaryonuz ve ölçeğiniz hakkında kısa bir not içeren bir e-posta ile [geliştiriciyle iletişime geçin](mailto:qingwhat@gmail.com); bir dağıtım planı ve destek alın.
 
-  ```json
-  {
-    "tr": {
-      "title": "özel prompt",
-      "prompt": "özel prompt",
-      "description": "özel açıklama",
-      "remark": "özel not"
-    },
-    "website": null,
-    "tags": ["music"],
-    "id": 500,
-    "weight": 1
-  }
-  ```
+## Dağıtım Belgeleri
 
-- **Özel Backend**
-  Mevcut proje paylaşılan bir backend sistemine bağlıdır. Kendi backend'inizi oluşturmak istiyorsanız, `src/api` klasöründeki arayüz talimatlarına başvurabilirsiniz.
+Dağıtım sürecine göre aşağıdaki bölümlere ayrılmıştır; ihtiyacınıza göre inceleyin:
 
-- **Çok Dilli Destek ve Dağıtım**
-  Çok dilli değişiklikleri tamamladıktan sonra, toplu işleme için `CodeUpdateHandler.py` scriptini kullanabilirsiniz:
-
-  ```bash
-  python CodeUpdateHandler.py
-  ```
-
-## Çevrimdışı Dağıtım (Kurumsal Intranet)
-
-Dış ağ erişimi olmayan kurumsal intranet veya devlet ağında dağıtım yapmanız gerekiyorsa, AI Short özel bir çevrimdışı sürüm sunar. Backend sunucusu veya kayıt gerekmez, tüm veriler tarayıcıda yerel olarak saklanır.
-
-Çevrimdışı sürümü Docker ile tek bir komutla dağıtın:
-
-```bash
-docker run -d -p 3000:3000 --name aishort-offline ghcr.io/rockbenben/chatgpt-shortcut:offline
-```
-
-Ayrıntılı kılavuz ve yapılandırma seçenekleri için [Çevrimdışı Dağıtım Kılavuzu](./guides/offline)'na bakın.
-
-## Dağıtım Talimatları
-
-Sistem Gereksinimleri:
-
-- [Node.js 20.0](https://nodejs.org/) veya üstü.
-- macOS, Windows (WSL dahil) ve Linux desteklenir.
-
-### Yerel Dağıtım
-
-```shell
-# Kurulum
-yarn
-
-# Yerel Geliştirme
-yarn start
-
-# Build
-yarn build
-
-# Belirli dil için build
-yarn build --locale tr
-```
-
-### Vercel Dağıtımı
-
-ChatGPT-Shortcut'u Vercel platformuna tek tıkla dağıtmak için aşağıdaki düğmeye tıklayın:
-
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
-
-### Docker Dağıtımı
-
-```bash
-docker run -d -p 3000:3000 --name chatgpt-shortcut ghcr.io/rockbenben/chatgpt-shortcut:latest
-```
-
-## Senkronizasyon Güncellemelerini Etkinleştirin
-
-Projeyi fork ettikten sonra, fork ettiğiniz projenin Actions sayfasında Workflows'u manuel olarak etkinleştirmeniz ve Upstream Sync Action'ı etkinleştirmeniz gerekir. Etkinleştirildikten sonra, güncellemeler her gün otomatik olarak yürütülecektir.
-
-![Otomatik Güncelleme](https://img.newzone.top/2023-05-19-11-57-59.png?imageMogr2/format/webp)
+- **[Standart Dağıtım](./deploy/standard)** — Resmi paylaşımlı backend'i yeniden kullanır; yerel derleme, Vercel, Cloudflare Pages ve Docker olmak üzere dört yöntemi destekler.
+- **[Çevrimdışı Sürüm (Kurumsal İntranet)](./deploy/offline)** — Kurumsal veya devlet intranetleri gibi hava boşluklu ortamlar için çevrimdışı çözüm; backend ve hesap gerekmez.
+- **[Yapılandırma ve Özelleştirme](./deploy/configuration)** — Site başlığını, açıklamasını ve promptları değiştirin ve özel bir backend'e bağlanın.
+- **[Senkronize Güncellemeleri Etkinleştirin](./deploy/sync-updates)** — Fork'unuzun yukarı akışı otomatik olarak takip etmesini sağlayın, böylece özellikleriniz geride kalmaz.

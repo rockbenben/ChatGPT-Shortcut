@@ -6,36 +6,40 @@ description: Jelajahi prompt AI pilihan komunitas — sistem voting menyaring ko
 
 # Prompt Komunitas
 
-Prompt komunitas dibagikan langsung oleh pengguna — tempat Anda menemukan inspirasi sekaligus membagikan karya sendiri. **Sistem voting** otomatis mengangkat konten yang berkualitas: prompt yang dinilai berguna akan tampil lebih sering, sementara yang kurang bermanfaat lambat laun jarang muncul.
+Prompt Komunitas berasal dari pengguna lain — telusuri untuk inspirasi, lalu bagikan apa yang telah Anda buat. **Voting** menjaga konten terbaik di atas: prompt yang berguna naik peringkat, sedangkan yang kurang bermanfaat perlahan menghilang.
 
 ![](/img/docs/community-page.png)
 
 ## Pengurutan dan Penyaringan
 
-- **Waktu Publikasi**: Lihat berbagi terbaru
-- **Pengurutan Suara**: Lihat prompt dengan upvote terbanyak
+- **Terbaru**: Lihat berbagi terbaru (default)
+- **Paling banyak disukai**: Lihat prompt dengan upvote terbanyak
 - **Pencarian Kata Kunci**: Cari topik tertentu
 
-## Mekanisme Voting
+## Cara Kerja Voting
 
-Upvote/downvote menentukan eksposur prompt:
+Upvote dan downvote menentukan seberapa terlihat sebuah prompt:
 
-- **Upvote**: Membantu prompt berkualitas menjangkau lebih banyak orang
-- **Downvote**: Begitu jumlah downvote mencapai ambang batas, prompt otomatis disembunyikan
+- **Upvote**: Mendorong konten berkualitas agar dilihat lebih banyak orang
+- **Downvote**: Begitu sebuah prompt mendapatkan cukup downvote, prompt tersebut disembunyikan dari feed
 
-**Terhubung dengan Koleksi**: Menyimpan prompt komunitas otomatis memberikan satu upvote.
+**Kumpulkan = Upvote**: Menambahkan prompt komunitas ke koleksi Anda secara otomatis memberikan satu upvote.
 
 ![Status Tombol Voting](/img/docs/community-vote.png)
 
-> Voting hanya tersedia bagi pengguna yang sudah login. Untuk prompt yang sama, hanya vote terakhir Anda yang dihitung.
+> Voting hanya tersedia bagi pengguna yang sudah login; untuk setiap prompt, hanya vote terakhir Anda yang dihitung.
 
 ## Prompt Pribadi
 
-Kalau Anda belum siap memublikasikan sebuah ide, simpan saja sebagai prompt pribadi:
+Ide yang ingin Anda simpan sendiri dapat diatur sebagai pribadi:
 
-- Saat membuat atau mengedit, hilangkan centang pada "Bagikan ke Komunitas"
-- Prompt pribadi hanya bisa dilihat oleh Anda sendiri
-- Anda bebas mengubahnya menjadi publik atau pribadi kapan saja
+- Matikan "Bagikan ke Komunitas" saat membuat atau mengedit
+- Prompt pribadi hanya terlihat oleh Anda
+- Anda dapat beralih antara publik dan pribadi kapan saja
+
+## Diskusi
+
+Buka halaman detail prompt komunitas mana pun dan, di samping konten lengkapnya, setelah login Anda dapat menulis komentar dan bergabung dalam diskusi (mendukung emoji dan GIF).
 
 ## Dokumentasi Terkait
 

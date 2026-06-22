@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Inicio Rápido
 title: AI Short Inicio Rápido - ChatGPT en 30 Segundos
 description: Comienza en 30 segundos. Copia prompts para ChatGPT y Gemini y mejora instantáneamente la calidad de tus conversaciones.
@@ -17,7 +17,7 @@ Un buen prompt determina la calidad de la respuesta de la IA. AiShort recopila g
 3. Pégalo en cualquier herramienta de IA — páginas de chat, editores de código (Cursor, etc.), llamadas a la API o agentes
 4. Sustituye los **marcadores de posición** del prompt (como `[contenido]`, `[tema]`) con tu necesidad concreta y envíalo a la IA
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Consejo**: La mayoría de prompts usan corchetes `[...]` para señalar lo que debes completar — solo tienes que reemplazar el texto entre corchetes con tu contenido específico.
 
@@ -31,7 +31,7 @@ Un buen prompt determina la calidad de la respuesta de la IA. AiShort recopila g
 | Crear mis propios prompts          | [Prompts Personalizados](./user-prompts)     |
 | Registrarme o Iniciar sesión       | [Gestión de Cuenta](./account)               |
 | Descubrir compartidos de comunidad | [Prompts de la Comunidad](./community)       |
-| Despliegue offline / intranet      | [Versión Offline](./offline)                 |
+| Despliegue offline / intranet      | [Versión Offline](../deploy/offline)                 |
 
 ## Modelos de IA Comunes
 
@@ -47,10 +47,10 @@ Un buen prompt determina la calidad de la respuesta de la IA. AiShort recopila g
 Una alternativa útil si quieres comparar resultados o si los modelos anteriores no están disponibles en tu zona. La interfaz suele estar en chino, aunque los modelos responden en español sin problema.
 
 - [DeepSeek](https://chat.deepseek.com) — gratuito y con muy buen rendimiento en español
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

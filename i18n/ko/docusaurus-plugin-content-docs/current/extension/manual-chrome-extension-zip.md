@@ -30,4 +30,4 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-설치 성공 후 [플러그인 사용 튜토리얼](./usage.md)을 확인할 수 있습니다.
+설치 성공 후 [플러그인 사용 튜토리얼](./usage)을 확인할 수 있습니다.
