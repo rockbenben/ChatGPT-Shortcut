@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="264" viewBox="0 0 900 264" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace" role="img" aria-label="Build-time data pipeline: the master src/data/prompt.json (all 18 languages) is processed by python CodeUpdateHandler.py, which splits it into per-language prompt files, generates per-id card JSON and detail pages, and runs OpenCC Simplified-to-Traditional conversion.">
+  <defs>
+    <linearGradient id="eng" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23312d"/><stop offset="1" stop-color="#1a2023"/>
+    </linearGradient>
+    <radialGradient id="g2" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#397e6a" stop-opacity="0.18"/><stop offset="1" stop-color="#397e6a" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9" fill="none" stroke="#5fa890" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="263" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <rect x="300" y="40" width="270" height="200" fill="url(#g2)"/>
+  <text x="40" y="46" fill="#7cc0a8" font-size="12.5" letter-spacing="3" font-weight="600">DATA&#160;PIPELINE&#8201;&#183;&#8201;BUILD-TIME</text>
+  <text x="860" y="46" text-anchor="end" fill="#6b7670" font-size="11.5" letter-spacing="1.5">one master file&#8201;&#8594;&#8201;many generated outputs</text>
+
+  <!-- input -->
+  <g>
+    <rect x="40" y="78" width="234" height="128" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="60" y="104" fill="#8a938e" font-size="10.5" letter-spacing="2">SOURCE</text>
+    <text x="60" y="130" fill="#ededed" font-size="14.5" font-weight="600">src/data/</text>
+    <text x="60" y="150" fill="#9fd3c2" font-size="14.5" font-weight="600">prompt.json</text>
+    <text x="60" y="176" fill="#8a938e" font-size="10.5">master &#183; all 18 languages,</text>
+    <text x="60" y="191" fill="#8a938e" font-size="10.5">keyed by zh / en / ja &#8230;</text>
+  </g>
+  <line x1="280" y1="142" x2="304" y2="142" stroke="#5fa890" stroke-width="1.6" marker-end="url(#a2)"/>
+
+  <!-- engine -->
+  <g>
+    <rect x="310" y="62" width="254" height="160" rx="13" fill="url(#eng)" stroke="#397e6a" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <path d="M334 92 l-10 8 l10 8 M348 92 l10 8 l-10 8"/>
+    </g>
+    <text x="372" y="98" fill="#ededed" font-size="13.5" font-weight="600">python</text>
+    <text x="334" y="120" fill="#9fd3c2" font-size="13.5" font-weight="600">CodeUpdateHandler.py</text>
+    <line x1="334" y1="132" x2="540" y2="132" stroke="#397e6a" stroke-opacity="0.3"/>
+    <g font-size="10.5" fill="#aeb6b1">
+      <text x="334" y="153"><tspan fill="#5fa890">&#9656;</tspan>&#160; split master by language</text>
+      <text x="334" y="174"><tspan fill="#5fa890">&#9656;</tspan>&#160; generate cards + detail pages</text>
+      <text x="334" y="195"><tspan fill="#5fa890">&#9656;</tspan>&#160; OpenCC: Simplified &#8594; Traditional</text>
+    </g>
+  </g>
+  <line x1="570" y1="142" x2="594" y2="142" stroke="#5fa890" stroke-width="1.6" marker-end="url(#a2)"/>
+
+  <!-- outputs -->
+  <g>
+    <rect x="600" y="62" width="260" height="160" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="620" y="86" fill="#8a938e" font-size="10.5" letter-spacing="2">GENERATED&#160;EACH&#160;BUILD</text>
+    <g font-size="11" fill="#cdd6d1">
+      <text x="620" y="112"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; prompt_&lt;locale&gt;.json&#160;&#160;<tspan fill="#8a938e">&#215;18</tspan></text>
+      <text x="620" y="136"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; src/data/cards/&lt;id&gt;_&lt;lc&gt;.json</text>
+      <text x="620" y="160"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; src/pages/prompt/&lt;id&gt;.tsx</text>
+      <text x="620" y="184"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; per-locale homepage data</text>
+    </g>
+    <text x="620" y="206" fill="#6b7670" font-size="10">committed to the repo, served as static assets</text>
+  </g>
+</svg>

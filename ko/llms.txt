@@ -6,6 +6,10 @@
 
 - [엄선된 AI 프롬프트 라이브러리 | 원클릭 복사로 효율 향상](https://www.aishort.top/ko/docs/): AI Short는 ChatGPT 한국어 활용을 한 단계 끌어올리는 AI 프롬프트 라이브러리입니다. ChatGPT, Gemini, Claude는 물론 HyperCLOVA X 등 한국어 특화 모델까지 지원하며 원클릭 복사, 컬렉션 관리, 커뮤니티 공유로 업무 효율을 높여 드립니다.
 - [AI Short 배포 - Vercel/Docker 원클릭 구축](https://www.aishort.top/ko/docs/deploy): 나만의 AI 프롬프트 라이브러리 구축! Vercel, Docker로 AI Short를 쉽게 배포하고 자동 업데이트 설정까지 완벽 가이드.
+- [AI Short 구성 및 커스터마이징 | 제목, 프롬프트, 커스텀 백엔드 수정](https://www.aishort.top/ko/docs/deploy/configuration): AI Short 커스터마이징 — 사이트 제목과 설명 수정, 홈페이지 프롬프트 추가, 커스텀 백엔드 연동. API 모듈 구조와 캐싱 메커니즘 설명 포함.
+- [AI Short 오프라인 배포 | 사내 인트라넷용 외부 서버 불필요](https://www.aishort.top/ko/docs/deploy/offline): AI Short 오프라인 버전은 외부망에 접속할 수 없는 기업과 팀을 위해 설계되었습니다. 백엔드 서버나 계정 등록이 필요 없으며, 데이터는 브라우저 로컬에 저장되어 즉시 사용할 수 있습니다.
+- [AI Short Standard 배포 | 로컬 빌드, Vercel, Cloudflare, Docker](https://www.aishort.top/ko/docs/deploy/standard): AI Short Standard 배포 가이드. 공식 공유 백엔드를 재사용하며 로컬 빌드, Vercel 원클릭 배포, Cloudflare Pages, Docker를 지원해 바로 사용할 수 있습니다.
+- [AI Short 동기화 업데이트 | 포크가 업스트림을 자동으로 따라가기](https://www.aishort.top/ko/docs/deploy/sync-updates): AI Short 포크가 업스트림 업데이트를 자동으로 따라가도록 설정 — Vercel 배포가 업데이트를 표시하지 않는 문제를 해결하고 GitHub Actions 자동 동기화를 활성화합니다.
 - [AI Short 확장 프로그램 | ChatGPT/Gemini/Claude 사이드바 · Chrome/Edge/Firefox 설치](https://www.aishort.top/ko/docs/extension): ChatGPT, Gemini, Claude, Doubao 등 AI 대화 페이지의 사이드바에서 AiShort 프롬프트를 바로 불러오세요. 탭을 전환해 복사·붙여넣기할 필요가 없습니다. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
 - [Firefox 설정 - 핀 고정 및 권한 허용 가이드](https://www.aishort.top/ko/docs/extension/firefox-extension-setting): Firefox 설정 방법 해설. 툴바 고정이나 ChatGPT 등에서의 실행 권한을 허용하여 사이드바를 원활하게 이용하세요.
 - [Chrome 수동 설치 - CRX 파일 버전 도입 가이드](https://www.aishort.top/ko/docs/extension/manual-chrome-extension): 개발자 모드로 CRX 파일 간편 설치. 드래그 앤 드롭 설치 절차와 자주 발생하는 문제의 해결책을 소개합니다.
@@ -17,7 +21,6 @@
 - [AI Short 퀵스타트 - 30초 만에 ChatGPT 활용](https://www.aishort.top/ko/docs/guides/getting-started): 30초 만에 AI 활용 효율 UP! ChatGPT, Gemini 등에 최적화된 프롬프트를 복사해 대화 품질을 즉시 향상시키세요.
 - [AI Short 인터페이스 가이드 - 태그·키워드 검색 완벽 정리](https://www.aishort.top/ko/docs/guides/interface): AI Short 홈 화면을 100% 활용해 보세요. 태그 필터와 키워드 검색으로 원하는 프롬프트를 바로 찾고, 카드 상세 보기와 즐겨찾기까지 한눈에 익힐 수 있습니다.
 - [마이 컬렉션 - 즐겨찾기 태그 정리와 드래그 정렬](https://www.aishort.top/ko/docs/guides/my-collection): 마음에 드는 AI 프롬프트를 태그로 묶고 드래그 한 번으로 순서를 바꿔 보세요. 나만의 프롬프트 사전을 손쉽게 만들고 여러 기기에서 동기화할 수 있습니다.
-- [AI Short 오프라인 배포 | 사내 인트라넷용 외부 서버 불필요](https://www.aishort.top/ko/docs/guides/offline): AI Short 오프라인 버전은 외부망에 접속할 수 없는 기업과 팀을 위해 설계되었습니다. 백엔드 서버나 계정 등록이 필요 없으며, 데이터는 브라우저 로컬에 저장되어 즉시 사용할 수 있습니다.
 - [커스텀 프롬프트 - 생성·저장·커뮤니티 공유](https://www.aishort.top/ko/docs/guides/user-prompts): 나만의 프롬프트 생성·저장! 커뮤니티 공유나 비공개 설정도 자유롭게. 소중한 데이터는 원클릭으로 백업 가능합니다.
 - [AiShort Privacy Policy](https://www.aishort.top/ko/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/ko/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...

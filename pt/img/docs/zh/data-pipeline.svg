@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="264" viewBox="0 0 900 264" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', monospace" role="img" aria-label="构建时数据流水线：主数据 src/data/prompt.json（全部 18 种语言）由 python CodeUpdateHandler.py 处理，按语言拆分、生成各 id 的卡片 JSON 与详情页，并用 OpenCC 做简体到繁体转换。">
+  <defs>
+    <linearGradient id="eng" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23312d"/><stop offset="1" stop-color="#1a2023"/>
+    </linearGradient>
+    <radialGradient id="g2" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#397e6a" stop-opacity="0.18"/><stop offset="1" stop-color="#397e6a" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9" fill="none" stroke="#5fa890" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="263" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <rect x="300" y="40" width="270" height="200" fill="url(#g2)"/>
+  <text x="40" y="46" fill="#7cc0a8" font-size="13.5" letter-spacing="1" font-weight="600">数据流水线&#8201;&#183;&#8201;构建时</text>
+  <text x="860" y="46" text-anchor="end" fill="#6b7670" font-size="12">一个主文件&#8201;&#8594;&#8201;多种生成产物</text>
+
+  <!-- input -->
+  <g>
+    <rect x="40" y="78" width="234" height="128" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="60" y="104" fill="#8a938e" font-size="11" letter-spacing="1">源文件</text>
+    <text x="60" y="130" fill="#ededed" font-size="14.5" font-weight="600">src/data/</text>
+    <text x="60" y="150" fill="#9fd3c2" font-size="14.5" font-weight="600">prompt.json</text>
+    <text x="60" y="176" fill="#8a938e" font-size="10.5">主数据 &#183; 全部 18 种语言，</text>
+    <text x="60" y="191" fill="#8a938e" font-size="10.5">按 zh / en / ja 键存放</text>
+  </g>
+  <line x1="280" y1="142" x2="304" y2="142" stroke="#5fa890" stroke-width="1.6" marker-end="url(#a2)"/>
+
+  <!-- engine -->
+  <g>
+    <rect x="310" y="62" width="254" height="160" rx="13" fill="url(#eng)" stroke="#397e6a" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <path d="M334 92 l-10 8 l10 8 M348 92 l10 8 l-10 8"/>
+    </g>
+    <text x="372" y="98" fill="#ededed" font-size="13.5" font-weight="600">python</text>
+    <text x="334" y="120" fill="#9fd3c2" font-size="13.5" font-weight="600">CodeUpdateHandler.py</text>
+    <line x1="334" y1="132" x2="540" y2="132" stroke="#397e6a" stroke-opacity="0.3"/>
+    <g font-size="11" fill="#aeb6b1">
+      <text x="334" y="153"><tspan fill="#5fa890">&#9656;</tspan>&#160; 按语言拆分主数据</text>
+      <text x="334" y="174"><tspan fill="#5fa890">&#9656;</tspan>&#160; 生成卡片 + 详情页</text>
+      <text x="334" y="195"><tspan fill="#5fa890">&#9656;</tspan>&#160; OpenCC：简体 &#8594; 繁体</text>
+    </g>
+  </g>
+  <line x1="570" y1="142" x2="594" y2="142" stroke="#5fa890" stroke-width="1.6" marker-end="url(#a2)"/>
+
+  <!-- outputs -->
+  <g>
+    <rect x="600" y="62" width="260" height="160" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="620" y="86" fill="#8a938e" font-size="11" letter-spacing="1">每次构建生成</text>
+    <g font-size="11" fill="#cdd6d1">
+      <text x="620" y="112"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; prompt_&lt;locale&gt;.json&#160;&#160;<tspan fill="#8a938e">&#215;18</tspan></text>
+      <text x="620" y="136"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; src/data/cards/&lt;id&gt;_&lt;lc&gt;.json</text>
+      <text x="620" y="160"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; src/pages/prompt/&lt;id&gt;.tsx</text>
+      <text x="620" y="184"><tspan fill="#7cc0a8">&#9642;</tspan>&#160; 各语言主页数据</text>
+    </g>
+    <text x="620" y="206" fill="#6b7670" font-size="10">提交进仓库，作为静态资源分发</text>
+  </g>
+</svg>

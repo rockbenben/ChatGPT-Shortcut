@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace" role="img" aria-label="Standard deployment topology: fork the repository, deploy it any way (local build, Vercel, Cloudflare Pages, or Docker), and it reuses the official shared backend for login, favorites, community, comments and cross-device sync.">
+  <defs>
+    <linearGradient id="bk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23312d"/>
+      <stop offset="1" stop-color="#1a2023"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9" fill="none" stroke="#5fa890" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="299" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <text x="40" y="48" fill="#7cc0a8" font-size="12.5" letter-spacing="3" font-weight="600">STANDARD&#160;DEPLOYMENT&#8201;&#183;&#8201;TOPOLOGY</text>
+  <text x="860" y="48" text-anchor="end" fill="#6b7670" font-size="11.5" letter-spacing="1.5">reuses the official backend&#8201;&#183;&#8201;works out of the box</text>
+
+  <!-- ① Fork -->
+  <g>
+    <rect x="40" y="98" width="176" height="120" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="66" cy="126" r="12" fill="#397e6a" fill-opacity="0.16" stroke="#397e6a" stroke-opacity="0.6"/>
+    <text x="66" y="130" text-anchor="middle" fill="#9fd3c2" font-size="13" font-weight="700">1</text>
+    <text x="88" y="124" fill="#ededed" font-size="14" font-weight="600">FORK</text>
+    <text x="88" y="142" fill="#8a938e" font-size="11">the project</text>
+    <!-- fork glyph -->
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <circle cx="74" cy="176" r="5"/><circle cx="74" cy="200" r="5"/><circle cx="110" cy="176" r="5"/>
+      <path d="M74 181 v14 M74 188 q0 -12 36 -12"/>
+    </g>
+    <text x="128" y="184" fill="#aeb6b1" font-size="11.5">your own</text>
+    <text x="128" y="200" fill="#aeb6b1" font-size="11.5">GitHub repo</text>
+  </g>
+  <line x1="222" y1="158" x2="284" y2="158" stroke="#5fa890" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- ② Deploy (choose any) -->
+  <g>
+    <rect x="290" y="80" width="250" height="156" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="316" cy="108" r="12" fill="#397e6a" fill-opacity="0.16" stroke="#397e6a" stroke-opacity="0.6"/>
+    <text x="316" y="112" text-anchor="middle" fill="#9fd3c2" font-size="13" font-weight="700">2</text>
+    <text x="338" y="106" fill="#ededed" font-size="14" font-weight="600">DEPLOY</text>
+    <text x="338" y="124" fill="#8a938e" font-size="11">choose any method</text>
+    <g font-size="12.5" fill="#cdd6d1">
+      <text x="316" y="156"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Local&#160;&#183;&#160;<tspan fill="#9fd3c2">yarn build</tspan></text>
+      <text x="316" y="180"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Vercel</text>
+      <text x="316" y="204"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Cloudflare&#160;Pages</text>
+      <text x="316" y="228"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Docker</text>
+    </g>
+  </g>
+  <line x1="546" y1="158" x2="608" y2="158" stroke="#5fa890" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- backend -->
+  <g>
+    <rect x="614" y="80" width="246" height="156" rx="13" fill="url(#bk)" stroke="#397e6a" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <ellipse cx="642" cy="110" rx="13" ry="5"/>
+      <path d="M629 110 v12 a13 5 0 0 0 26 0 v-12"/>
+    </g>
+    <text x="666" y="108" fill="#ededed" font-size="13.5" font-weight="600">OFFICIAL&#160;BACKEND</text>
+    <text x="666" y="125" fill="#8a938e" font-size="10.5">shared&#160;&#183;&#160;hosted by AiShort</text>
+    <rect x="630" y="140" width="214" height="80" rx="9" fill="#397e6a" fill-opacity="0.10" stroke="#397e6a" stroke-opacity="0.32"/>
+    <g font-size="12" fill="#9fd3c2">
+      <text x="646" y="162">login&#8197;&#183;&#8197;favorites</text>
+      <text x="646" y="184">community&#8197;&#183;&#8197;comments</text>
+      <text x="646" y="206">cross-device sync</text>
+    </g>
+  </g>
+
+  <text x="450" y="276" text-anchor="middle" fill="#6b7670" font-size="11.5" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">Need an independent backend instead? That's the full self-hosted model &#8212; see the deployment guide.</text>
+</svg>

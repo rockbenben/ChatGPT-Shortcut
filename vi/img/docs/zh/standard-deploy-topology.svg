@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', monospace" role="img" aria-label="标准部署拓扑：fork 项目后，用本地构建、Vercel、Cloudflare Pages 或 Docker 任选一种方式部署，全部开箱即用地复用官方共享后端（登录、收藏、社区、评论、跨设备同步）。">
+  <defs>
+    <linearGradient id="bk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23312d"/>
+      <stop offset="1" stop-color="#1a2023"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9" fill="none" stroke="#5fa890" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="299" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <text x="40" y="48" fill="#7cc0a8" font-size="13.5" letter-spacing="1" font-weight="600">标准部署&#8201;&#183;&#8201;拓扑</text>
+  <text x="860" y="48" text-anchor="end" fill="#6b7670" font-size="12">复用官方后端&#8201;&#183;&#8201;开箱即用</text>
+
+  <!-- ① Fork -->
+  <g>
+    <rect x="40" y="98" width="176" height="120" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="66" cy="126" r="12" fill="#397e6a" fill-opacity="0.16" stroke="#397e6a" stroke-opacity="0.6"/>
+    <text x="66" y="130" text-anchor="middle" fill="#9fd3c2" font-size="13" font-weight="700">1</text>
+    <text x="88" y="124" fill="#ededed" font-size="14.5" font-weight="600">FORK</text>
+    <text x="88" y="142" fill="#8a938e" font-size="11">本项目</text>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <circle cx="74" cy="176" r="5"/><circle cx="74" cy="200" r="5"/><circle cx="110" cy="176" r="5"/>
+      <path d="M74 181 v14 M74 188 q0 -12 36 -12"/>
+    </g>
+    <text x="128" y="184" fill="#aeb6b1" font-size="11.5">你自己的</text>
+    <text x="128" y="200" fill="#aeb6b1" font-size="11.5">GitHub 仓库</text>
+  </g>
+  <line x1="222" y1="158" x2="284" y2="158" stroke="#5fa890" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- ② Deploy -->
+  <g>
+    <rect x="290" y="80" width="250" height="156" rx="13" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="316" cy="108" r="12" fill="#397e6a" fill-opacity="0.16" stroke="#397e6a" stroke-opacity="0.6"/>
+    <text x="316" y="112" text-anchor="middle" fill="#9fd3c2" font-size="13" font-weight="700">2</text>
+    <text x="338" y="106" fill="#ededed" font-size="14.5" font-weight="600">部署</text>
+    <text x="368" y="106" fill="#8a938e" font-size="11">任选一种方式</text>
+    <g font-size="12.5" fill="#cdd6d1">
+      <text x="316" y="156"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;本地&#160;&#183;&#160;<tspan fill="#9fd3c2">yarn build</tspan></text>
+      <text x="316" y="180"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Vercel</text>
+      <text x="316" y="204"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Cloudflare&#160;Pages</text>
+      <text x="316" y="228"><tspan fill="#5fa890">&#9656;</tspan>&#160;&#160;Docker</text>
+    </g>
+  </g>
+  <line x1="546" y1="158" x2="608" y2="158" stroke="#5fa890" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- backend -->
+  <g>
+    <rect x="614" y="80" width="246" height="156" rx="13" fill="url(#bk)" stroke="#397e6a" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <ellipse cx="642" cy="110" rx="13" ry="5"/>
+      <path d="M629 110 v12 a13 5 0 0 0 26 0 v-12"/>
+    </g>
+    <text x="666" y="109" fill="#ededed" font-size="14" font-weight="600">官方后端</text>
+    <text x="666" y="126" fill="#8a938e" font-size="10.5">共享&#160;&#183;&#160;由 AiShort 托管</text>
+    <rect x="630" y="140" width="214" height="80" rx="9" fill="#397e6a" fill-opacity="0.10" stroke="#397e6a" stroke-opacity="0.32"/>
+    <g font-size="12.5" fill="#9fd3c2">
+      <text x="646" y="162">登录&#8197;&#183;&#8197;收藏</text>
+      <text x="646" y="184">社区&#8197;&#183;&#8197;评论</text>
+      <text x="646" y="206">跨设备同步</text>
+    </g>
+  </g>
+
+  <text x="450" y="276" text-anchor="middle" fill="#6b7670" font-size="12" font-family="'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif">想要独立后端？那属于「带后端的完整自部署」&#8201;&#8212;&#8201;详见部署指南。</text>
+</svg>

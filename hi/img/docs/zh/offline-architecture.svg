@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', monospace" role="img" aria-label="离线部署版数据架构：一台内网服务器托管共享只读的提示词库，每位用户的收藏、提示词、排序和标签各自存在浏览器 localStorage，互不影响，无需账户。">
+  <defs>
+    <linearGradient id="srv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23312d"/>
+      <stop offset="1" stop-color="#1a2023"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#397e6a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#397e6a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="899" height="559" rx="16" fill="#14171a" stroke="#397e6a" stroke-opacity="0.22"/>
+  <rect x="120" y="60" width="660" height="280" fill="url(#glow)"/>
+
+  <text x="40" y="50" fill="#7cc0a8" font-size="13.5" letter-spacing="1" font-weight="600">离线部署版&#8201;&#183;&#8201;数据架构</text>
+  <text x="860" y="50" text-anchor="end" fill="#6b7670" font-size="12">无后端&#8201;&#183;&#8201;无需登录&#8201;&#183;&#8201;不联网同步</text>
+
+  <!-- ===== server node ===== -->
+  <g>
+    <rect x="250" y="84" width="400" height="116" rx="13" fill="url(#srv)" stroke="#397e6a" stroke-opacity="0.55" stroke-width="1.5"/>
+    <g stroke="#7cc0a8" stroke-width="1.6" fill="none">
+      <ellipse cx="290" cy="116" rx="16" ry="6"/>
+      <path d="M274 116 v14 a16 6 0 0 0 32 0 v-14"/>
+      <ellipse cx="290" cy="130" rx="16" ry="6" stroke-opacity="0.5"/>
+    </g>
+    <text x="322" y="117" fill="#ededed" font-size="16" font-weight="600">内网服务器</text>
+    <text x="322" y="137" fill="#8a938e" font-size="11.5">离线构建&#8201;&#183;&#8201;对外提供静态站点</text>
+    <rect x="266" y="156" width="368" height="30" rx="15" fill="#397e6a" fill-opacity="0.14" stroke="#397e6a" stroke-opacity="0.5"/>
+    <circle cx="288" cy="171" r="4.5" fill="#7cc0a8"/>
+    <text x="304" y="175" fill="#9fd3c2" font-size="12.5">提示词库&#8197;&#183;&#8197;共享静态 JSON&#8197;&#183;&#8197;只读</text>
+  </g>
+
+  <!-- ===== connectors ===== -->
+  <g fill="none" stroke="#397e6a" stroke-opacity="0.5" stroke-width="1.5">
+    <path d="M400 200 C 400 250 150 248 150 300"/>
+    <path d="M450 200 L 450 300"/>
+    <path d="M500 200 C 500 250 750 248 750 300"/>
+  </g>
+  <g fill="#7cc0a8">
+    <circle cx="150" cy="300" r="3"/><circle cx="450" cy="300" r="3"/><circle cx="750" cy="300" r="3"/>
+  </g>
+  <text x="450" y="244" text-anchor="middle" fill="#6b7670" font-size="11">同一应用分发给每个浏览器</text>
+
+  <!-- ===== browser nodes ===== -->
+  <g>
+    <!-- A -->
+    <g transform="translate(40,300)">
+      <rect x="0" y="0" width="220" height="186" rx="12" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.07"/>
+      <rect x="0" y="0" width="220" height="30" rx="12" fill="#272d33"/>
+      <rect x="0" y="18" width="220" height="12" fill="#272d33"/>
+      <circle cx="18" cy="15" r="3.2" fill="#3c454b"/><circle cx="30" cy="15" r="3.2" fill="#3c454b"/><circle cx="42" cy="15" r="3.2" fill="#3c454b"/>
+      <text x="206" y="19" text-anchor="end" fill="#aeb6b1" font-size="12" font-weight="600">浏览器&#8197;&#183;&#8197;用户 A</text>
+      <rect x="14" y="44" width="192" height="128" rx="9" fill="#cba35e" fill-opacity="0.08" stroke="#cba35e" stroke-opacity="0.42"/>
+      <text x="28" y="66" fill="#e0c07f" font-size="12" font-weight="600">localStorage</text>
+      <line x1="28" y1="74" x2="192" y2="74" stroke="#cba35e" stroke-opacity="0.22"/>
+      <text x="28" y="93" fill="#cabfa6" font-size="11">local_favorites</text>
+      <text x="28" y="113" fill="#cabfa6" font-size="11">local_user_prompts</text>
+      <text x="28" y="133" fill="#cabfa6" font-size="11">local_myspace_order</text>
+      <text x="28" y="153" fill="#cabfa6" font-size="11">local_custom_tags</text>
+    </g>
+    <!-- B -->
+    <g transform="translate(340,300)">
+      <rect x="0" y="0" width="220" height="186" rx="12" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.07"/>
+      <rect x="0" y="0" width="220" height="30" rx="12" fill="#272d33"/>
+      <rect x="0" y="18" width="220" height="12" fill="#272d33"/>
+      <circle cx="18" cy="15" r="3.2" fill="#3c454b"/><circle cx="30" cy="15" r="3.2" fill="#3c454b"/><circle cx="42" cy="15" r="3.2" fill="#3c454b"/>
+      <text x="206" y="19" text-anchor="end" fill="#aeb6b1" font-size="12" font-weight="600">浏览器&#8197;&#183;&#8197;用户 B</text>
+      <rect x="14" y="44" width="192" height="128" rx="9" fill="#cba35e" fill-opacity="0.08" stroke="#cba35e" stroke-opacity="0.42"/>
+      <text x="28" y="66" fill="#e0c07f" font-size="12" font-weight="600">localStorage</text>
+      <line x1="28" y1="74" x2="192" y2="74" stroke="#cba35e" stroke-opacity="0.22"/>
+      <text x="28" y="93" fill="#cabfa6" font-size="11">local_favorites</text>
+      <text x="28" y="113" fill="#cabfa6" font-size="11">local_user_prompts</text>
+      <text x="28" y="133" fill="#cabfa6" font-size="11">local_myspace_order</text>
+      <text x="28" y="153" fill="#cabfa6" font-size="11">local_custom_tags</text>
+    </g>
+    <!-- C -->
+    <g transform="translate(640,300)">
+      <rect x="0" y="0" width="220" height="186" rx="12" fill="#1d2126" stroke="#ffffff" stroke-opacity="0.07"/>
+      <rect x="0" y="0" width="220" height="30" rx="12" fill="#272d33"/>
+      <rect x="0" y="18" width="220" height="12" fill="#272d33"/>
+      <circle cx="18" cy="15" r="3.2" fill="#3c454b"/><circle cx="30" cy="15" r="3.2" fill="#3c454b"/><circle cx="42" cy="15" r="3.2" fill="#3c454b"/>
+      <text x="206" y="19" text-anchor="end" fill="#aeb6b1" font-size="12" font-weight="600">浏览器&#8197;&#183;&#8197;用户 C</text>
+      <rect x="14" y="44" width="192" height="128" rx="9" fill="#cba35e" fill-opacity="0.08" stroke="#cba35e" stroke-opacity="0.42"/>
+      <text x="28" y="66" fill="#e0c07f" font-size="12" font-weight="600">localStorage</text>
+      <line x1="28" y1="74" x2="192" y2="74" stroke="#cba35e" stroke-opacity="0.22"/>
+      <text x="28" y="93" fill="#cabfa6" font-size="11">local_favorites</text>
+      <text x="28" y="113" fill="#cabfa6" font-size="11">local_user_prompts</text>
+      <text x="28" y="133" fill="#cabfa6" font-size="11">local_myspace_order</text>
+      <text x="28" y="153" fill="#cabfa6" font-size="11">local_custom_tags</text>
+    </g>
+  </g>
+
+  <!-- ===== legend ===== -->
+  <g font-family="'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif">
+    <rect x="40" y="516" width="13" height="13" rx="3" fill="#397e6a" fill-opacity="0.7"/>
+    <text x="61" y="527" fill="#9aa39e" font-size="12.5">共享&#160;&#183;&#160;只读</text>
+    <rect x="180" y="516" width="13" height="13" rx="3" fill="#cba35e" fill-opacity="0.75"/>
+    <text x="201" y="527" fill="#9aa39e" font-size="12.5">每位用户&#160;&#183;&#160;本地&#160;&#183;&#160;互相独立</text>
+    <text x="860" y="527" text-anchor="end" fill="#6b7670" font-size="11.5">清除浏览器数据只会清掉该用户自己的副本</text>
+  </g>
+</svg>

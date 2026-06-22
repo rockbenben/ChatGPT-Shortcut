@@ -6,6 +6,10 @@
 
 - [精選 AI 提示詞庫 | 一鍵複製提升效率](https://www.aishort.top/zh-Hant/docs/): AI Short 精選繁體中文 AI 提示詞庫，覆蓋 ChatGPT 中文、Gemini、Claude、DeepSeek、TAIDE 等主流模型。一鍵複製即用，含 18 種語言翻譯、收藏管理、社區分享，提升你的 AI 對話質量與工作效率。
 - [AI Short 部署指南 | Vercel/Docker 一鍵部署配置](https://www.aishort.top/zh-Hant/docs/deploy): 快速部署 AI Short 提示詞項目！支持 Vercel、Cloudflare、Docker 多種方式，含自定義配置與自動更新教程。
+- [AI Short 配置與自定義 | 修改標題、提示詞、自定義後端](https://www.aishort.top/zh-Hant/docs/deploy/configuration): 自定義 AI Short——修改網站標題與描述、新增主頁提示詞、對接自定義後端，含 API 模組結構與快取機制說明。
+- [AI Short 離線部署 | 企業內網無需外部服務器](https://www.aishort.top/zh-Hant/docs/deploy/offline): AI Short 離線版專爲無法訪問外網的企業和團隊設計。無需後端服務器，無需註冊賬戶，數據存儲在瀏覽器本地，開箱即用。
+- [AI Short 標準部署 | 本地建置、Vercel、Cloudflare、Docker](https://www.aishort.top/zh-Hant/docs/deploy/standard): AI Short 標準部署教程，復用官方共享後端，支持本地建置、Vercel 一鍵部署、Cloudflare Pages 與 Docker，開箱即用。
+- [AI Short 同步更新 | Fork 自動跟隨上游](https://www.aishort.top/zh-Hant/docs/deploy/sync-updates): 讓你的 AI Short fork 自動跟隨上游更新——解決 Vercel 部署不提示更新的問題，開啟 GitHub Actions 自動同步。
 - [AI Short 插件 | ChatGPT/Gemini/Claude 側邊欄 · Chrome/Edge/Firefox 安裝](https://www.aishort.top/zh-Hant/docs/extension): 在 ChatGPT、Gemini、Claude、豆包等 AI 對話頁的側邊欄直接調用 AiShort 提示詞，不用切換標籤頁複製粘貼。Chrome、Edge、Firefox 一鍵安裝。
 - [AI Short Firefox 設置 | 固定擴展與授權運行](https://www.aishort.top/zh-Hant/docs/extension/firefox-extension-setting): Firefox 插件設置指南：固定擴展到工具欄，授權在 ChatGPT、Gemini 等網站運行，確保側邊欄正常顯示。
 - [AI Short Chrome CRX 安裝 | 開發者模式手動安裝](https://www.aishort.top/zh-Hant/docs/extension/manual-chrome-extension): 通過 CRX 文件手動安裝 AI Short 插件，開啓開發者模式後拖拽安裝。含常見問題解決方案。
@@ -17,7 +21,6 @@
 - [AI Short 入門指南 | 複製提示詞到 ChatGPT/DeepSeek](https://www.aishort.top/zh-Hant/docs/guides/getting-started): 30 秒快速上手！複製提示詞到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升對話質量與工作效率。
 - [AI Short 界面指南 | 標籤篩選與智能搜索功能](https://www.aishort.top/zh-Hant/docs/guides/interface): 掌握 AI Short 首頁界面，通過標籤篩選與關鍵詞搜索快速定位提示詞，瞭解卡片詳情、複製與收藏操作。
 - [AI Short 我的收藏 | 標籤分類與拖拽排序](https://www.aishort.top/zh-Hant/docs/guides/my-collection): 在 AI Short 收藏喜歡的提示詞，通過自定義標籤分類管理，支持拖拽排序與跨設備同步，打造個性化提示詞庫。
-- [AI Short 離線部署 | 企業內網無需外部服務器](https://www.aishort.top/zh-Hant/docs/guides/offline): AI Short 離線版專爲無法訪問外網的企業和團隊設計。無需後端服務器，無需註冊賬戶，數據存儲在瀏覽器本地，開箱即用。
 - [AI Short 自定義提示詞 | 創建編輯與分享](https://www.aishort.top/zh-Hant/docs/guides/user-prompts): 創建專屬 AI 提示詞，保存到個人賬戶隨時調用。支持分享到社區或設爲私密，一鍵導出備份數據。
 - [AiShort Privacy Policy](https://www.aishort.top/zh-Hant/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/zh-Hant/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...

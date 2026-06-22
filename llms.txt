@@ -6,6 +6,10 @@
 
 - [精选 AI 提示词库 | 一键复制提升效率](https://www.aishort.top/docs/): AI Short 精选 AI 提示词库，支持 ChatGPT、DeepSeek 等主流模型。一键复制即用，含多语言翻译、收藏管理、社区分享，简化你的工作流程。
 - [AI Short 部署指南 | Vercel/Docker 一键部署配置](https://www.aishort.top/docs/deploy): 快速部署 AI Short 提示词项目！支持 Vercel、Cloudflare、Docker 多种方式，含自定义配置与自动更新教程。
+- [AI Short 配置与自定义 | 修改标题、提示词、自定义后端](https://www.aishort.top/docs/deploy/configuration): 自定义 AI Short——修改网站标题与描述、新增主页提示词、对接自定义后端，含 API 模块结构与缓存机制说明。
+- [AI Short 离线部署 | 企业内网无需外部服务器](https://www.aishort.top/docs/deploy/offline): AI Short 离线版专为无法访问外网的企业和团队设计。无需后端服务器，无需注册账户，数据存储在浏览器本地，开箱即用。
+- [AI Short 标准部署 | 本地构建、Vercel、Cloudflare、Docker](https://www.aishort.top/docs/deploy/standard): AI Short 标准部署教程，复用官方共享后端，支持本地构建、Vercel 一键部署、Cloudflare Pages 与 Docker，开箱即用。
+- [AI Short 同步更新 | Fork 自动跟随上游](https://www.aishort.top/docs/deploy/sync-updates): 让你的 AI Short fork 自动跟随上游更新——解决 Vercel 部署不提示更新的问题，开启 GitHub Actions 自动同步。
 - [AI Short 插件 | ChatGPT/Gemini/Claude 侧边栏 · Chrome/Edge/Firefox 安装](https://www.aishort.top/docs/extension): 在 ChatGPT、Gemini、Claude、豆包等 AI 对话页的侧边栏直接调用 AiShort 提示词，不用切换标签页复制粘贴。Chrome、Edge、Firefox 一键安装。
 - [AI Short Firefox 设置 | 固定扩展与授权运行](https://www.aishort.top/docs/extension/firefox-extension-setting): Firefox 插件设置指南：固定扩展到工具栏，授权在 ChatGPT、Gemini 等网站运行，确保侧边栏正常显示。
 - [AI Short Chrome CRX 安装 | 开发者模式手动安装](https://www.aishort.top/docs/extension/manual-chrome-extension): 通过 CRX 文件手动安装 AI Short 插件，开启开发者模式后拖拽安装。含常见问题解决方案。
@@ -17,7 +21,6 @@
 - [AI Short 入门指南 | 复制提示词到 ChatGPT/DeepSeek](https://www.aishort.top/docs/guides/getting-started): 30 秒快速上手！复制提示词到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升对话质量与工作效率。
 - [AI Short 界面指南 | 标签筛选与智能搜索功能](https://www.aishort.top/docs/guides/interface): 掌握 AI Short 界面功能！通过标签筛选、关键词搜索快速定位提示词，了解卡片详情与收藏操作。
 - [AI Short 我的收藏 | 标签分类与拖拽排序](https://www.aishort.top/docs/guides/my-collection): 收藏喜欢的 AI 提示词，通过自定义标签分类管理。支持拖拽排序，打造个性化提示词库。
-- [AI Short 离线部署 | 企业内网无需外部服务器](https://www.aishort.top/docs/guides/offline): AI Short 离线版专为无法访问外网的企业和团队设计。无需后端服务器，无需注册账户，数据存储在浏览器本地，开箱即用。
 - [AI Short 自定义提示词 | 创建编辑与分享](https://www.aishort.top/docs/guides/user-prompts): 创建专属 AI 提示词，保存到个人账户随时调用。支持分享到社区或设为私密，一键导出备份数据。
 - [AiShort Privacy Policy](https://www.aishort.top/docs/privacy-policy): AiShort Privacy Policy Last updated May 25, 2023 This privacy notice for aishort.top ("we," "us," or "our") describes how and why we might collect, store, use,...
 - [Terms of Service](https://www.aishort.top/docs/terms-of-service): Terms of Service Last updated May 25, 2023 1. Introduction These Terms of Service ("Terms") govern your access to and use of the website, products, and services (collectively,...
