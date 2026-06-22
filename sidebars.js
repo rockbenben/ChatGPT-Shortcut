@@ -34,7 +34,17 @@ const sidebars = {
         slug: "/category/guides",
       },
       collapsed: false,
-      items: ["guides/interface", "guides/my-collection", "guides/user-prompts", "guides/account", "guides/community", "guides/offline", "guides/faq"],
+      items: ["guides/interface", "guides/account", "guides/my-collection", "guides/user-prompts", "guides/community", "guides/faq"],
+    },
+    {
+      type: "category",
+      label: "项目部署",
+      link: {
+        type: "doc",
+        id: "deploy",
+      },
+      collapsed: false,
+      items: ["deploy/standard", "deploy/offline", "deploy/configuration", "deploy/sync-updates"],
     },
     {
       type: "category",
@@ -43,12 +53,8 @@ const sidebars = {
         type: "generated-index",
         slug: "/category/extension",
       },
-      collapsed: false,
+      collapsed: true,
       items: ["extension/README", "extension/usage", "extension/manual-chrome-extension", "extension/manual-chrome-extension-zip", "extension/firefox-extension-setting"],
-    },
-    {
-      type: "doc",
-      id: "deploy",
     },
     {
       type: "category",

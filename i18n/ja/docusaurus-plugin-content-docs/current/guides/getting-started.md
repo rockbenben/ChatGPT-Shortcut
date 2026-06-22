@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: 始め方
 title: AI Short 入門ガイド｜ChatGPT/DeepSeek へプロンプトをコピー
 description: 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek などの AI モデルにプロンプトをコピーし、対話品質と作業効率を即座にアップさせましょう。
@@ -17,7 +17,7 @@ description: 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek など
 3. 任意の AI ツールに貼り付ける——ChatGPT などのチャットページ、Cursor などのコーディングツール、API 呼び出しなど
 4. プロンプト内の**プレースホルダー** (例：`[内容]`、`[テーマ]`) を、自分の具体的な要件に置き換えて AI に送信する
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **ヒント**：多くのプロンプトは大括弧 `[...]` で補足すべき内容をマークしています — 大括弧内のプレースホルダーテキストを、自分の具体的な内容に置き換えるだけです。
 
@@ -31,7 +31,7 @@ description: 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek など
 | 独自のプロンプトを作成           | [カスタムプロンプト](./user-prompts)  |
 | 登録またはログイン               | [アカウント管理](./account)           |
 | コミュニティの共有を発見         | [コミュニティプロンプト](./community) |
-| オフライン／イントラネット展開   | [オフラインデプロイ版](./offline)     |
+| オフライン／イントラネット展開   | [オフラインデプロイ版](../deploy/offline)     |
 
 ## 一般的な AI モデル
 
@@ -45,10 +45,10 @@ description: 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek など
 ### 中国モデル (日本からのアクセスには制限がある場合があります)
 
 - [DeepSeek](https://chat.deepseek.com)
-- [通義千問 (Qwen)](https://www.tongyi.com/qianwen/)
+- [通義千問 (Qwen)](https://www.qianwen.com/)
 - [文心一言 (ERNIE Bot)](https://yiyan.baidu.com)
 - [豆包 (Doubao)](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [智譜清言 (ChatGLM)](https://chatglm.cn/detail)
 - [訊飛星火 (iFLYTEK Spark)](https://xinghuo.xfyun.cn/)
 - [テンセント元宝](https://yuanbao.tencent.com/chat)

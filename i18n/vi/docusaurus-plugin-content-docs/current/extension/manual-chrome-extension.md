@@ -30,7 +30,7 @@ Cài đặt tiện ích ChatGPT Shortcut (Lưu ý ⚠️: Bạn cần kéo vào 
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin](./usage.md).
+Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin](./usage).
 
 ## Gặp vấn đề Cài đặt?
 
@@ -40,4 +40,4 @@ Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin]
 
 3. Bạn đã kéo tệp crx vào trang "Tiện ích" chưa? Lưu ý ⚠️: Không nhấp "Tải tiện ích đã giải nén", bạn phải kéo tệp crx.
 
-4. Trình duyệt không cho phép cài đặt tệp crx? Thử cài đặt tệp zip! [Nhấp đây để xem hướng dẫn cài đặt zip](./manual-chrome-extension-zip.md).
+4. Trình duyệt không cho phép cài đặt tệp crx? Thử cài đặt tệp zip! [Nhấp đây để xem hướng dẫn cài đặt zip](./manual-chrome-extension-zip).

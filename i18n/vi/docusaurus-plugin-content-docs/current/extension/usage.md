@@ -26,7 +26,7 @@ Khi bật tùy chọn này, thanh bên sẽ giữ trạng thái mở khi chuyể
 
 Tiện ích hỗ trợ chế độ tối, có thể bật tùy chọn "Chế độ Tối" trong trang cài đặt, sau khi bật giao diện sẽ chuyển sang giao diện tối.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Kích hoạt Phím tắt
 

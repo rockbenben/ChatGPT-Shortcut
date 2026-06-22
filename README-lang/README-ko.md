@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -46,8 +46,9 @@
 <a href="./README-hi.md">हिन्दी</a> |
 <a href="./README-bn.md">বাংলা</a>
 </p>
+
 <p align="center">
-    <em>실전에서 검증된 수천 개의 AI 프롬프트——ChatGPT, Cursor 등 어떤 AI 도구든 평범한 결과를 전문가급으로 끌어올립니다.</em>
+    <em>5000개 이상의 바로 쓰는 AI 프롬프트 — ChatGPT, Cursor, 그리고 어떤 AI 도구든 평범한 결과를 전문가급으로 끌어올립니다.</em>
 </p>
 
 ## 📖 목차
@@ -55,6 +56,7 @@
 - [⚡ 빠른 시작](#-빠른-시작)
 - [💎 왜 AiShort인가요?](#-왜-aishort인가요)
 - [📸 스크린샷](#-스크린샷)
+- [📚 문서](#-문서)
 - [🧩 브라우저 확장 프로그램](#-브라우저-확장-프로그램)
 - [🚀 배포](#-배포)
 - [🤝 기여하기](#-기여하기)
@@ -66,11 +68,11 @@
 
 1. [aishort.top](https://www.aishort.top/ko/) 방문
 2. 필요한 프롬프트 검색 또는 탐색
-3. "복사"를 클릭하고 어떤 AI 도구에든 붙여넣기 — ChatGPT·Gemini·Claude 같은 채팅 페이지, Cursor·Copilot 같은 코딩 도구, API 호출, AI 에이전트 등
+3. "복사"를 클릭하고 어떤 AI 도구에든 붙여넣기 — ChatGPT 같은 채팅 페이지, Cursor 같은 코딩 도구, 나만의 API 호출 등
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
-간단하죠! 자세한 내용은 [사용 가이드](https://www.aishort.top/ko/docs/guides/getting-started)를 확인하세요.
+간단하죠! 더 많은 기능은 [사용 가이드](https://www.aishort.top/ko/docs/guides/getting-started)를 확인하세요.
 
 ## 💎 왜 AiShort인가요?
 
@@ -78,7 +80,7 @@
 
 같은 질문이라도 어떻게 묻느냐에 따라 결과는 완전히 달라집니다. 전문가 수준의 프롬프트를 직접 다듬으려면 수년의 시행착오가 필요합니다. AiShort는 글쓰기, 코딩, 업무, 학습, 디자인, 마케팅 등 다양한 시나리오에서 커뮤니티가 검증한 프롬프트 라이브러리를 제공합니다. **복사 → 붙여넣기 → 즉시 전문가급 결과.**
 
-회원가입 없음, 결제 없음, 설치 없음——열어서 바로 사용합니다.
+회원가입 없음, 결제 없음, 설치 없음 — 열어서 바로 사용합니다.
 
 ### 핵심 기능
 
@@ -96,25 +98,27 @@
 
 ✏️ **사용자 정의 프롬프트** — 나만의 프롬프트 생성, 편집, 관리.
 
-🗳️ **커뮤니티** — 프롬프트 공유 및 커뮤니티 투표 참여.
+🗳️ **커뮤니티** — 프롬프트를 공유하고, 투표하고, 댓글로 토론하기.
 
 📤 **데이터 내보내기** — 모든 프롬프트를 JSON으로 원클릭 내보내기.
 
 🔐 **다양한 로그인 방식** — 비밀번호, Google, 비밀번호 없는 이메일 링크.
 
+🏆 **레벨** — 커뮤니티에 프롬프트를 공유하면서 레벨(L0–L9)을 획득하세요.
+
 ## 📸 스크린샷
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="내 컬렉션" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="브라우저 확장" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="내 컬렉션" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="브라우저 확장" /></td>
   </tr>
   <tr>
     <td align="center"><strong>내 컬렉션</strong> — 드래그, 태그, 정리</td>
-    <td align="center"><strong>브라우저 확장</strong> — ChatGPT/Gemini/Claude 사이드바</td>
+    <td align="center"><strong>브라우저 확장</strong> — ChatGPT, Gemini, Claude… 사이드바</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="프롬프트 카드" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="프롬프트 카드" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="커뮤니티" /></td>
   </tr>
   <tr>
@@ -123,9 +127,21 @@
   </tr>
 </table>
 
+## 📚 문서
+
+전체 가이드는 [aishort.top](https://www.aishort.top/ko/docs/)에서 확인하세요:
+
+- [시작하기](https://www.aishort.top/ko/docs/guides/getting-started) — 30초 만에 기본 사용법 익히기
+- [인터페이스 가이드](https://www.aishort.top/ko/docs/guides/interface) — 태그 필터 및 스마트 검색
+- [내 컬렉션](https://www.aishort.top/ko/docs/guides/my-collection) — 수집, 태그, 드래그로 정리
+- [사용자 정의 프롬프트](https://www.aishort.top/ko/docs/guides/user-prompts) — 생성, 편집, 가져오기/내보내기
+- [커뮤니티 프롬프트](https://www.aishort.top/ko/docs/guides/community) — 발견, 투표, 토론
+- [계정](https://www.aishort.top/ko/docs/guides/account) — 로그인 방법 및 데이터 관리
+- [배포](https://www.aishort.top/ko/docs/deploy) — 나만의 인스턴스 셀프 호스팅
+
 ## 🧩 브라우저 확장 프로그램
 
-언제든지 AiShort 프롬프트에 접근. Chrome, Edge, Firefox 지원. `Alt + Shift + S`로 사이드바 열기.
+어디서든 AiShort 프롬프트에 접근. Chrome, Edge, Firefox 지원 — `Alt + Shift + S`로 사이드바 열기.
 
 - **Chrome**: [Chrome 웹 스토어](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge 추가 기능](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
@@ -136,11 +152,13 @@
 
 ## 🚀 배포
 
-Vercel, Cloudflare Pages, Docker 또는 로컬에서 배포 가능. [배포 가이드](https://www.aishort.top/ko/docs/deploy)를 참조하세요.
+Vercel, Cloudflare Pages, Docker 또는 로컬에서 인스턴스를 배포할 수 있습니다. 자세한 내용은 [배포 가이드](https://www.aishort.top/ko/docs/deploy)를 참조하세요.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **팁**: Vercel의 원클릭 배포는 새 프로젝트를 생성하므로(fork가 아님) 업스트림 업데이트 감지가 작동하지 않습니다. 자동 동기화를 받으려면 먼저 저장소를 fork한 후 Vercel에서 fork를 가져오세요. 자세한 단계는 [배포 가이드](https://www.aishort.top/ko/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0)를 참조하세요.
+> **오프라인 / 인트라넷 환경?** 에어갭 기업·공공기관 네트워크용 [오프라인 에디션](https://www.aishort.top/ko/docs/deploy/offline)이 있습니다 — 백엔드나 계정 없이 데이터를 브라우저 로컬에 저장하며, 검색·수집·사용자 정의 프롬프트 등 동일한 기능을 제공합니다.
+
+> **팁**: Vercel의 원클릭 배포는 새 프로젝트를 생성하므로(fork가 아님) 업스트림 업데이트 감지가 작동하지 않습니다. 자동 동기화를 받으려면 먼저 저장소를 fork한 후 Vercel에서 fork를 가져오세요. 자세한 단계는 [배포 가이드](https://www.aishort.top/ko/docs/deploy/sync-updates)를 참조하세요.
 
 ## 🤝 기여하기
 

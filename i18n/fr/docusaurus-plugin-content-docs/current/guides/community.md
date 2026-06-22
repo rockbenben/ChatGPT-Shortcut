@@ -6,24 +6,24 @@ description: Explorez les prompts ChatGPT, Le Chat et Claude partagés par la co
 
 # Prompts de la communauté
 
-Les prompts de la communauté sont partagés par les utilisateurs&nbsp;: une mine d'inspiration où vous pouvez aussi publier vos propres créations. Le **système de vote** fait émerger les meilleurs contenus — les prompts jugés utiles gagnent en visibilité, tandis que les moins pertinents s'effacent peu à peu.
+Les prompts de la communauté proviennent d'autres utilisateurs — parcourez-les pour trouver l'inspiration, puis partagez vos créations. Le **système de vote** maintient la qualité au sommet&nbsp;: les prompts utiles progressent, tandis que les moins pertinents s'effacent discrètement.
 
 ![](/img/docs/community-page.png)
 
 ## Tri et filtrage
 
-- **Date de publication** : voir les derniers prompts partagés
-- **Tri par votes** : voir les prompts ayant reçu le plus de votes positifs
-- **Recherche par mots-clés** : rechercher sur un sujet précis
+- **Dernières publications**&nbsp;: voir les derniers partages (par défaut)
+- **Les plus votés**&nbsp;: voir les prompts ayant reçu le plus de votes positifs
+- **Recherche par mots-clés**&nbsp;: rechercher sur un sujet précis
 
-## Mécanisme de vote
+## Fonctionnement du vote
 
-Les votes pour/contre déterminent la visibilité des prompts :
+Les votes pour/contre déterminent la visibilité d'un prompt&nbsp;:
 
-- **Pour** : aide les contenus de qualité à atteindre plus d'utilisateurs
-- **Contre** : une fois un certain seuil de votes négatifs atteint, le prompt est masqué
+- **Pour**&nbsp;: aide les contenus de qualité à atteindre plus d'utilisateurs
+- **Contre**&nbsp;: une fois un certain seuil de votes négatifs atteint, le prompt est masqué du fil
 
-**Lien avec la collection** : collectionner un prompt de la communauté équivaut automatiquement à un vote positif.
+**Collecter = Voter pour**&nbsp;: ajouter un prompt de la communauté à votre collection équivaut automatiquement à un vote positif.
 
 ![État du bouton de vote](/img/docs/community-vote.png)
 
@@ -31,11 +31,15 @@ Les votes pour/contre déterminent la visibilité des prompts :
 
 ## Prompts privés
 
-Vous pouvez garder privées les créations que vous ne souhaitez pas publier :
+Les idées que vous préférez garder pour vous peuvent être définies comme privées&nbsp;:
 
-- Lors de la création ou de l'édition, désactivez "Partager avec la communauté"
+- Désactivez «&nbsp;Partager avec la communauté&nbsp;» lors de la création ou de l'édition
 - Les prompts privés ne sont visibles que par vous
-- Vous pouvez basculer public/privé à tout moment
+- Vous pouvez basculer entre public et privé à tout moment
+
+## Discussion
+
+Ouvrez la page de détail d'un prompt de la communauté&nbsp;: en plus du contenu complet, vous pouvez, une fois connecté, publier des commentaires et participer à la discussion (emoji et GIF pris en charge).
 
 ## Documentation associée
 

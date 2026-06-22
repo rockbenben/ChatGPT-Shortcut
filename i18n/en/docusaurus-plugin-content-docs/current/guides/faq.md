@@ -37,7 +37,7 @@ AiShort prompts are universal — they work in **any AI scenario where you input
 
 See the full list at [Getting Started → Common AI Models](./getting-started#common-ai-models).
 
-**Cross-model compatibility**: Most text-based prompts work across models — writing, translation, coding, and Q&A are general tasks where the same prompt produces solid results on all mainstream large language models, and every AiShort prompt is model-agnostic by default. But **results differ**: for writing, Claude often nails the nuance and ChatGPT-5 tends to follow instructions more tightly; for coding, GPT-5, Gemini Pro, and DeepSeek each have their strengths; for reasoning-heavy problems, Claude Opus, Gemini Deep Thinking, and the o-series are usually the most reliable. Image-generation prompts (Midjourney, Stable Diffusion, DALL·E) are **not** cross-compatible and need to be adjusted to each tool's syntax.
+**Cross-model compatibility**: Most text-based prompts work across models — writing, translation, coding, and Q&A are general tasks where the same prompt produces solid results on all mainstream large language models, and every AiShort prompt is model-agnostic by default. The only exception is image-generation prompts (Midjourney / Stable Diffusion / DALL·E), which need to be adjusted to each tool's own syntax.
 
 ## Why are the prompts written in English?
 
@@ -79,7 +79,7 @@ Don't swap out the prompt right away — try tuning it in these directions first
 
 1. **Make the `[placeholders]` more specific** — add style, length, domain, target audience, and other details
 2. **Ask the AI to refine its answer**: For replies you're not happy with, follow up with "please make it more X" or "please rewrite this in Y style" — usually one or two rounds get you close to the target. You can also ask the AI to rate its own answer and improve it
-3. **Switch models to compare**: The same prompt can perform very differently across Claude Sonnet, ChatGPT, Gemini, and DeepSeek — for writing, Claude is often more nuanced; for coding, GPT-5 and DeepSeek are usually more reliable
+3. **Switch models to compare**: Try the same prompt on a different model (Claude / ChatGPT / Gemini / DeepSeek, etc.) — models have different strengths, and results can vary noticeably
 4. **Try the community**: [Community Prompts](./community) may have a better version — and feel free to share your own good prompts there
 5. **Send us feedback**: Found a problem or have a suggestion? Let us know via [Feedback](/feedback)
 

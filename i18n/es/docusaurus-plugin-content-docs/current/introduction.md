@@ -1,4 +1,4 @@
----
+﻿---
 slug: /
 sidebar_label: Introducción a AI Short
 title: Biblioteca Curada de Prompts de IA | Copia con un Clic
@@ -11,7 +11,7 @@ AI Short (ChatGPT Shortcut) es una biblioteca de prompts de IA organizados por e
 
 > **¿Qué es un "prompt"?** Un prompt es la instrucción que le das a la IA, y determina la calidad de su respuesta. Un buen prompt logra respuestas profesionales y precisas; uno vago solo consigue respuestas mediocres. AiShort recopila prompts de calidad para todo tipo de escenarios (escritura, programación, oficina, estudio…), ahorrándote el tiempo de pensar cómo formular tu pregunta.
 
-## ⚡ Inicio Rápido en 30 Segundos
+## Inicio Rápido en 30 Segundos
 
 1. Abre AI Short
 2. Busca o navega por el prompt que necesitas
@@ -41,9 +41,11 @@ Así de simple. Descubre más usos en la [Guía de Inicio](./guides/getting-star
 
 🔐 **Múltiples métodos de inicio de sesión**: Contraseña, Google y enlaces de correo sin contraseña.
 
+🏆 **Niveles**: Gana niveles (L0–L9) al compartir prompts con la comunidad.
+
 ## Versión de Despliegue Offline
 
-La [versión de despliegue offline](./guides/offline) está diseñada para escenarios sin acceso a internet, como intranets corporativas o redes gubernamentales. No requiere servidor backend ni cuenta, está lista para usar tras el despliegue, conserva las funciones principales de navegación, búsqueda, favoritos y personalización, y comparte el mismo formato de datos con la versión online.
+La [versión de despliegue offline](./deploy/offline) está diseñada para escenarios sin acceso a internet, como intranets corporativas o redes gubernamentales. No requiere servidor backend ni cuenta, está lista para usar tras el despliegue, conserva las funciones principales de navegación, búsqueda, favoritos y personalización, y comparte el mismo formato de datos con la versión online.
 
 ## Fuentes de Prompts
 

@@ -14,5 +14,9 @@
   "sidebar.docs.category.浏览器插件": {
     "message": "Extensión del Navegador",
     "description": "The label for category '浏览器插件' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.项目部署": {
+    "message": "Despliegue",
+    "description": "The label for category '项目部署' in sidebar 'docs'"
   }
 }

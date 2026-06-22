@@ -37,7 +37,7 @@ Die Prompts von AiShort sind universell und funktionieren **in jedem KI-Szenario
 
 Die vollständige Modellliste finden Sie unter [Erste Schritte → Gängige KI-Modelle](./getting-started#gängige-ki-modelle).
 
-**Modellübergreifende Verwendbarkeit**: Die meisten textbasierten Prompts funktionieren modellübergreifend — bei allgemeinen Aufgaben wie Schreiben, Übersetzen, Programmieren und Frage-Antwort liefert derselbe Prompt auf allen gängigen großen Sprachmodellen brauchbare Ergebnisse, und AiShort-Prompts sind standardmäßig nicht an ein bestimmtes Modell gebunden. **Die Ergebnisqualität variiert jedoch**: Beim Schreiben liefert Claude typischerweise mehr Nuancen, ChatGPT-5 folgt Anweisungen strenger; bei Programmieraufgaben haben GPT-5, Gemini Pro und DeepSeek je eigene Stärken; bei anspruchsvollen Schlussfolgerungen liefern Claude Opus, Gemini Deep Thinking und die o-Serie meist stabilere Ergebnisse. Prompts für die Bildgenerierung (Midjourney, Stable Diffusion, DALL·E) sind hingegen **nicht** modellübergreifend nutzbar und müssen an die jeweilige Syntax angepasst werden.
+**Modellübergreifende Verwendbarkeit**: Die meisten textbasierten Prompts funktionieren modellübergreifend — bei allgemeinen Aufgaben wie Schreiben, Übersetzen, Programmieren und Frage-Antwort liefert derselbe Prompt auf allen gängigen großen Sprachmodellen brauchbare Ergebnisse, und AiShort-Prompts sind standardmäßig nicht an ein bestimmtes Modell gebunden. Die einzige Ausnahme sind Prompts für die Bildgenerierung (Midjourney / Stable Diffusion / DALL·E), die an die jeweilige Syntax des Tools angepasst werden müssen.
 
 ## Warum sind die Prompts auf Englisch?
 
@@ -79,7 +79,7 @@ Wechseln Sie nicht sofort den Prompt — justieren Sie zuerst an folgenden Stell
 
 1. **Die eckigen Klammern `[Platzhalter]` konkreter machen** — fügen Sie Stil, Länge, Fachgebiet, Zielgruppe und ähnliche Details hinzu
 2. **KI zur Optimierung auffordern**: Bei unbefriedigenden Antworten fragen Sie nach „Bitte ändern Sie das Ergebnis hinsichtlich X" oder „Bitte schreiben Sie das im Stil Y neu" — meist liefert die KI nach ein bis zwei Iterationen ein passendes Ergebnis; Sie können die KI auch ihre eigene Antwort bewerten und verbessern lassen
-3. **Modelle vergleichen**: Derselbe Prompt liefert auf Claude Sonnet, ChatGPT, Gemini und DeepSeek manchmal sehr unterschiedliche Ergebnisse — beim Schreiben ist Claude meist nuancierter, beim Programmieren sind GPT-5 und DeepSeek meist stabiler
+3. **Modell wechseln und vergleichen**: Probieren Sie denselben Prompt auf einem anderen Modell aus (Claude / ChatGPT / Gemini / DeepSeek usw.) — verschiedene Modelle haben je eigene Stärken, und die Ergebnisse können sich deutlich unterscheiden
 4. **Community ausprobieren**: Unter [Community-Prompts](./community) finden Sie möglicherweise besser passende Versionen — und Sie sind willkommen, Ihre eigenen guten Prompts dort zu teilen
 5. **Feedback geben**: Probleme oder Verbesserungsvorschläge? Hinterlassen Sie [Feedback](/feedback)
 

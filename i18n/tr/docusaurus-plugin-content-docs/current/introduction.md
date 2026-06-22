@@ -1,4 +1,4 @@
----
+﻿---
 slug: /
 sidebar_label: AI Short Giriş
 title: Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır
@@ -11,7 +11,7 @@ AI Short (ChatGPT Shortcut), senaryolara göre kategorilere ayrılmış, kopyala
 
 > **"Prompt" nedir?** Prompt, AI'a verdiğiniz talimattır ve çıktının kalitesini doğrudan belirler. İyi bir prompt, AI'ın profesyonel ve isabetli yanıtlar vermesini sağlar; belirsiz bir prompt ise yalnızca ortalama yanıtlar getirir. AiShort, farklı senaryolar (yazma, programlama, ofis, öğrenme...) için kaliteli promptları sizin için derler ve nasıl soracağınızı düşünme zahmetinden kurtarır.
 
-## ⚡ 30 Saniyede Hızlı Başlangıç
+## 30 Saniyede Hızlı Başlangıç
 
 1. AI Short'u açın
 2. İhtiyacınız olan promptu arayın veya göz atın
@@ -41,9 +41,11 @@ Bu kadar basit—daha fazla özellik için [Başlarken Kılavuzu](./guides/getti
 
 🔐 **Çoklu Giriş Yöntemleri**: Hesap şifresi, Google, şifresiz e-posta bağlantısı.
 
+🏆 **Seviyeler**: Toplulukla prompt paylaştıkça seviye kazanın (L0–L9).
+
 ## Çevrimdışı Dağıtım Sürümü
 
-[Çevrimdışı Dağıtım Sürümü](./guides/offline), kurumsal intranet, kamu ağı gibi dış ağa erişilemeyen senaryolar için tasarlanmıştır. Arka uç sunucu ve hesap gerektirmez; dağıtım sonrası kutudan çıkar çıkmaz kullanılır. Göz atma, arama, koleksiyon ve özelleştirme gibi temel özellikleri korur; veri formatı çevrimiçi sürümle uyumludur.
+[Çevrimdışı Dağıtım Sürümü](./deploy/offline), kurumsal intranet, kamu ağı gibi dış ağa erişilemeyen senaryolar için tasarlanmıştır. Arka uç sunucu ve hesap gerektirmez; dağıtım sonrası kutudan çıkar çıkmaz kullanılır. Göz atma, arama, koleksiyon ve özelleştirme gibi temel özellikleri korur; veri formatı çevrimiçi sürümle uyumludur.
 
 ## Prompt Kaynakları
 

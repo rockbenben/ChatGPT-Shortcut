@@ -20,4 +20,4 @@ description: "Настройка расширения для Firefox: закре
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-После успешной установки см. [Руководство по использованию расширения](./usage.md).
+После успешной установки см. [Руководство по использованию расширения](./usage).

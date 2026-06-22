@@ -20,4 +20,4 @@ Thứ hai, để đảm bảo tiện ích chạy bình thường trên các tran
 
 ![Quyền Tiện ích Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin](./usage.md).
+Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin](./usage).

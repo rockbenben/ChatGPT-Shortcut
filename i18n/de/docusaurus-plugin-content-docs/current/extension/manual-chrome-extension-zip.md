@@ -30,4 +30,4 @@ Ziehen Sie den entpackten Ordner auf die Erweiterungsseite, um die Installation 
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage.md) ansehen.
+Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage) ansehen.

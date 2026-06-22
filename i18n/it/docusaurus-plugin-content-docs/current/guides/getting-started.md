@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Avvio Rapido
 title: Guida introduttiva AI Short | Copia prompt in ChatGPT/DeepSeek
 description: Avvio rapido in 30 secondi! Copia prompt in ChatGPT, Gemini, DeepSeek e altri modelli IA per migliorare immediatamente la qualità delle conversazioni e l'efficienza lavorativa.
@@ -17,7 +17,7 @@ Buoni prompt determinano la qualità delle risposte dell'IA. AiShort raccoglie u
 3. Incolla in qualsiasi strumento IA — pagine di chat come ChatGPT, strumenti di programmazione come Cursor, chiamate API, ecc.
 4. Completa con le tue esigenze specifiche dove indicato dai **segnaposto** del prompt (come `[contenuto]`, `[argomento]`) e invia all'IA
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Suggerimento**: La maggior parte dei prompt usa parentesi quadre `[...]` per segnare i contenuti che devi completare — sostituisci semplicemente il testo segnaposto tra parentesi con il tuo contenuto specifico.
 
@@ -31,7 +31,7 @@ Buoni prompt determinano la qualità delle risposte dell'IA. AiShort raccoglie u
 | Creare i miei prompt                  | [Prompt Personalizzati](./user-prompts)   |
 | Registrare o Accedere                 | [Gestione Account](./account)             |
 | Scoprire condivisioni della community | [Prompt della Community](./community)     |
-| Deploy offline/intranet               | [Versione Deploy Offline](./offline)      |
+| Deploy offline/intranet               | [Versione Deploy Offline](../deploy/offline)      |
 
 ## Modelli IA Comuni
 
@@ -48,10 +48,10 @@ Buoni prompt determinano la qualità delle risposte dell'IA. AiShort raccoglie u
 ### Modelli della Cina continentale
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

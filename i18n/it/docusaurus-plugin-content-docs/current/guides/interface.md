@@ -6,48 +6,62 @@ description: "Scopri come usare l'interfaccia di AI Short: filtri per tag, ricer
 
 # Guida Interfaccia
 
-Questa sezione presenta le tre aree principali della home page di AiShort — **area tag** (i tag di scenario in alto), **area di ricerca** (la barra delle parole chiave) e **area dei prompt** (l'elenco di schede in basso) — e come usarle per trovare subito il prompt che ti serve.
+La home page di AiShort è composta da quattro aree — i **pulsanti di titolo e accesso** in cima, i **filtri tag** subito sotto, la **barra di ricerca** e le **schede prompt** che riempiono il resto della pagina. Questa sezione spiega come usarle insieme per trovare il prompt che cerchi.
 
 ![](/img/docs/interface-home.png)
 
-## 🏷︎ Filtro Tag
+## Pulsanti di Accesso in Cima
 
-Filtra i prompt per dominio e funzione. Lo switch **OR / AND** in alto a destra determina la regola di filtraggio multi-tag:
+I pulsanti sotto il titolo della pagina cambiano leggermente prima e dopo l'accesso:
 
-- **OR** (predefinito): mostra i prompt che corrispondono ad almeno uno dei tag
-- **AND**: mostra solo i prompt che li soddisfano tutti
+- **Non autenticato**: "**Accedi gratis**" + "**Esplora la community**"
+- **Autenticato**: uno switcher di vista ("**Esplora**" ⇄ "**La Mia Collezione**"), "**Crea prompt**" e un menu impostazioni a destra ("Il mio account", "Disconnetti")
+
+> 💡 Puoi sfogliare, cercare e copiare ogni prompt curato senza accedere. L'accesso aggiunge solo le funzioni di raccolta, creazione e sincronizzazione tra dispositivi.
+
+## Filtro Tag
+
+Filtra i prompt per dominio e funzione. Lo switch **OR / AND** in alto a destra determina la regola di combinazione per più tag:
+
+- **OR** (predefinito): mostra i prompt che corrispondono ad almeno uno dei tag selezionati
+- **AND**: mostra solo i prompt che corrispondono a tutti i tag selezionati
+
+Quando sono selezionati dei tag, compare un pulsante "**Cancella filtri**" per azzerarli in un clic. Su mobile i tag sono compressi di default — tocca "**Mostra tag**" per espanderli.
 
 ![](/img/docs/interface-filter.png)
 
-## 🔍 Ricerca per Parole Chiave
+## Ricerca per Parole Chiave
 
-Supporta la ricerca di titoli, descrizioni e contenuti dei prompt.
+Cerca nei titoli, nelle descrizioni, nel contenuto e nelle note dei prompt.
 
-- L'ambito di ricerca della home page è composto dai **prompt curati** (esclusi quelli della community). Se sono già selezionati dei tag, la ricerca è limitata a tali tag
-- Dopo l'accesso, l'ambito di ricerca si espande alle tue **collezioni** e ai **prompt personalizzati**
-- Se non trovi risultati nella home page usando parole chiave brevi, vai alla pagina [Prompt della Community](./community) e cerca di nuovo
+- Su desktop, premi **`Ctrl + K`** (`⌘ + K` su macOS) per portare il focus sulla casella di ricerca; `Esc` per uscire
+- La ricerca nella home page riguarda i **prompt curati**. Se sono selezionati dei tag, la ricerca è circoscritta a quei tag
+- Dopo l'accesso, la ricerca si estende alle tue **collezioni** e ai tuoi **prompt personalizzati**
+- Se parole chiave brevi non restituiscono risultati nella home page, AiShort cerca automaticamente anche i [Prompt della Community](./community)
 
 ![](/img/docs/interface-search.png)
 
-## 🔬 Schede Prompt
+## Schede Prompt
+
+I prompt curati sono ordinati per numero cumulativo di copie, così i contenuti più usati emergono in cima.
+
+### Informazioni sulla Scheda
+
+Ogni scheda mostra il titolo, la descrizione, l'anteprima del contenuto e i tag del prompt. L'icona a fiamma e il numero nell'angolo in alto a destra indicano il conteggio cumulativo delle copie.
 
 ### Visualizza Dettagli
 
-Clicca su una scheda per aprire il popup dei dettagli — visualizza il contenuto completo, le note, e copia con un clic.
+Clicca su una scheda per aprire il popup dei dettagli — leggi il contenuto completo e le note, poi copia con un clic.
 
-![](/img/docs/prompt-card.gif)
+![](/img/docs/prompt-card.webp)
 
 ### Copia Prompt
 
-Clicca su "Copia" in fondo alla scheda, poi incolla il testo in qualsiasi strumento IA per usarlo (pagine di chat, strumenti di coding, chiamate API, ecc.).
+Clicca sul pulsante "**Copia**" nella scheda o nel popup dei dettagli, poi incolla il testo in qualsiasi strumento IA (pagine di chat, strumenti di coding, chiamate API, ecc.).
 
 ### Colleziona Prompt
 
-Dopo l'accesso, sulla scheda appare un pulsante di collezione: cliccalo per aggiungerlo a La Mia Collezione.
-
-## 🔥 Ordinamento Popolare
-
-Ordina i prompt in base alla popolarità per aiutarti a scoprire i contenuti di tendenza. Anche l'ordinamento dei tag viene regolato in base alla popolarità, riflettendo le ultime preferenze della community.
+Dopo l'accesso, su ogni scheda compare un pulsante a cuore — cliccalo per aggiungere il prompt a [La Mia Collezione](./my-collection).
 
 ## Documentazione Correlata
 

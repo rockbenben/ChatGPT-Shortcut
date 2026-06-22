@@ -1,4 +1,4 @@
----
+﻿---
 slug: /
 sidebar_label: Giới thiệu AI Short
 title: Thư viện Prompt AI chọn lọc | Sao chép một cú nhấp
@@ -11,7 +11,7 @@ AI Short (ChatGPT Shortcut) là thư viện prompt AI được phân loại theo
 
 > **"Prompt" là gì?** Prompt chính là đoạn hướng dẫn mà bạn đưa cho AI, nó quyết định chất lượng đầu ra. Prompt tốt giúp AI trả lời chuyên nghiệp và chính xác; prompt mơ hồ chỉ nhận lại câu trả lời tầm thường. AiShort đã tuyển chọn sẵn các prompt chất lượng cho nhiều tình huống (viết lách, lập trình, văn phòng, học tập...), giúp bạn tiết kiệm thời gian tự nghĩ cách hỏi.
 
-## ⚡ Bắt đầu nhanh trong 30 giây
+## Bắt đầu nhanh trong 30 giây
 
 1. Mở AI Short
 2. Tìm kiếm hoặc duyệt prompt bạn cần
@@ -41,9 +41,11 @@ AI Short (ChatGPT Shortcut) là thư viện prompt AI được phân loại theo
 
 🔐 **Nhiều cách đăng nhập**: Tài khoản mật khẩu, Google, hoặc liên kết email không cần mật khẩu.
 
+🏆 **Cấp độ**: Kiếm cấp độ (L0–L9) khi bạn chia sẻ prompt với cộng đồng.
+
 ## Phiên bản triển khai ngoại tuyến
 
-[Phiên bản triển khai ngoại tuyến](./guides/offline) được thiết kế riêng cho các tình huống không truy cập được internet như mạng nội bộ doanh nghiệp, mạng chính phủ. Không cần máy chủ backend và tài khoản, triển khai xong là dùng ngay, giữ lại các tính năng cốt lõi như duyệt, tìm kiếm, bộ sưu tập, tùy chỉnh, định dạng dữ liệu tương thích với phiên bản trực tuyến.
+[Phiên bản triển khai ngoại tuyến](./deploy/offline) được thiết kế riêng cho các tình huống không truy cập được internet như mạng nội bộ doanh nghiệp, mạng chính phủ. Không cần máy chủ backend và tài khoản, triển khai xong là dùng ngay, giữ lại các tính năng cốt lõi như duyệt, tìm kiếm, bộ sưu tập, tùy chỉnh, định dạng dữ liệu tương thích với phiên bản trực tuyến.
 
 ## Nguồn Prompt
 

@@ -6,59 +6,70 @@ description: Anmelden mit Google oder passwortlosem E-Mail-Link — geräteüber
 
 # Kontoverwaltung
 
-Sie können AiShort auch ohne Anmeldung nutzen — **aber nach der Anmeldung** können Sie Ihre Lieblings-Prompts sammeln, eigene Prompts erstellen, mit der Community teilen und geräteübergreifend synchronisieren. Im Folgenden werden Anmeldung, Registrierung, Passwort- und Cache-Operationen erklärt.
+AiShort funktioniert auch ohne Konto — aber **nach der Anmeldung** können Sie Ihre Lieblings-Prompts sammeln, eigene Prompts erstellen, mit der Community teilen und geräteübergreifend synchronisieren. Diese Seite beschreibt Anmeldung, Registrierung, Passwörter und Datenverwaltung.
 
 ## Anmeldemethoden
+
+Der Anmeldedialog bietet die Tabs „**Passwort-Anmeldung**" und „**Passwortlose Anmeldung**" sowie die Google-Anmeldung mit einem Klick.
 
 ### Passwort-Anmeldung
 
 Melden Sie sich mit Ihrem Benutzernamen oder Ihrer registrierten E-Mail-Adresse und einem Passwort an.
 
-Passwort vergessen: Klicken Sie auf der Anmeldeseite auf "Passwort vergessen", geben Sie Ihre registrierte E-Mail-Adresse ein, und Sie erhalten einen Link zum Zurücksetzen.
+### Passwortlose Anmeldung
+
+1. Wechseln Sie zu „Passwortlose Anmeldung" und geben Sie Ihre registrierte E-Mail-Adresse ein
+2. Klicken Sie auf „**Anmeldelink erhalten**" — ein Anmeldelink wird an Ihr Postfach gesendet
+3. Öffnen Sie den Link, um sich anzumelden
+
+Kein Passwort nötig — praktisch, wenn Sie sich nur gelegentlich anmelden.
 
 ### Google-Anmeldung
 
-Klicken Sie auf der Anmeldeseite auf das Google-Symbol, um sich mit einem Klick anzumelden. Bei der ersten Anmeldung wird automatisch ein Konto erstellt — eine separate Registrierung ist nicht erforderlich.
+Klicken Sie im Anmeldedialog auf die Google-Schaltfläche für die Anmeldung mit einem Klick. Bei der ersten Anmeldung wird automatisch ein Konto für Sie erstellt — eine separate Registrierung ist nicht erforderlich.
 
 ![](/img/docs/account-login.png)
 
-### Passwortlose Anmeldung
-
-1. Geben Sie Ihre registrierte E-Mail-Adresse auf der Anmeldeseite ein
-2. Klicken Sie auf "Anmeldelink senden"
-3. Öffnen Sie den Link in der E-Mail, um sich anzumelden
-
-Sie müssen sich kein Passwort merken — praktisch für gelegentliche Anmeldungen.
-
 ## Konto registrieren
 
-1. Klicken Sie auf der Anmeldeseite auf "Registrieren"
-2. Geben Sie Benutzername, E-Mail und Passwort ein
+1. Klicken Sie im Anmeldedialog auf „**Jetzt registrieren**", um zur Registrierung zu wechseln
+2. Geben Sie E-Mail, Benutzername und Passwort ein und stimmen Sie der Datenschutzrichtlinie und den Nutzungsbedingungen zu
 3. Nach dem Absenden werden Sie automatisch angemeldet
 
 ![](/img/docs/account-register.png)
 
-## Passwort ändern
+## Mein Konto
 
-Nach der Anmeldung können Sie Ihr Passwort unter „Mein Konto" ändern:
+Nach der Anmeldung öffnen Sie die Seite „**Mein Konto**", um Ihr Profil, Passwort, Level und Daten zu verwalten.
 
 ![Mein-Konto-Seite](/img/docs/account-profile.png)
 
+### Benutzernamen ändern
+
+Klicken Sie auf das Bearbeiten-Symbol neben Ihrem Benutzernamen und speichern Sie.
+
+### Passwort ändern
+
 1. Aktuelles Passwort eingeben
 2. Neues Passwort eingeben und bestätigen
-3. Auf "Passwort ändern" klicken
+3. Auf „Passwort ändern" klicken
 
-## Cache leeren
+Passwort vergessen? Wechseln Sie im Anmeldedialog zu „Passwort vergessen", geben Sie Ihre registrierte E-Mail-Adresse ein, klicken Sie auf „Reset-E-Mail senden" und folgen Sie dem Link.
 
-Bei Synchronisierungsproblemen oder Anzeigefehlern:
+### Mein Level
 
-1. Gehen Sie zu „Mein Konto" → finden Sie den Bereich „Datenverwaltung → Cache leeren"
-2. Klicken Sie auf "Cache leeren" — nach Bestätigung werden alle Daten automatisch neu geladen
+Die Kontoseite zeigt Ihr **Level (L0–L9)** und den Fortschritt bis zur nächsten Stufe — Ihr Level wird dadurch bestimmt, **wie viele Prompts Sie mit der Community geteilt haben**.
 
-Sammlungen und benutzerdefinierte Prompts bleiben erhalten — es wird lediglich eine neue Synchronisierung angestoßen.
+## Datenverwaltung
+
+Der Bereich „Mein Konto → Datenverwaltung" bietet drei Aktionen:
+
+- **Cache leeren** — aktualisiert lokal zwischengespeicherte Daten; nützlich, wenn Daten nicht synchronisiert werden oder die Anzeige fehlerhaft aussieht. Ihre Sammlungen und benutzerdefinierten Prompts gehen dabei nicht verloren, es wird lediglich eine neue Synchronisierung angestoßen
+- **Prompts exportieren** — exportiert eine JSON-Datei als Backup (siehe [Benutzerdefinierte Prompts](./user-prompts#prompts-exportieren))
+- **Prompts importieren** — importiert Prompts und Sammlungen aus einer JSON-Datei
 
 ## Verwandte Dokumentation
 
-- [Erste Schritte](./getting-started) - Grundlegende Nutzungsmethoden
+- [Erste Schritte](./getting-started) - Grundlegende Nutzung
 - [Meine Sammlung](./my-collection) - Sammlungsverwaltung
-- [Benutzerdefinierte Prompts](./user-prompts) - Erstellung und Verwaltung
+- [Benutzerdefinierte Prompts](./user-prompts) - Erstellen und Verwalten

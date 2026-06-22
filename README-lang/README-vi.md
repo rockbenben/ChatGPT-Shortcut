@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -47,7 +47,7 @@ Tiếng Việt |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 <p align="center">
-    <em>Hàng nghìn prompt AI đã được kiểm chứng — biến ChatGPT, Cursor và bất kỳ công cụ AI nào từ tầm thường thành đẳng cấp chuyên gia.</em>
+    <em>5000+ prompt AI sẵn sàng dùng — biến ChatGPT, Cursor và bất kỳ công cụ AI nào từ tầm thường thành đẳng cấp chuyên gia.</em>
 </p>
 
 ## 📖 Mục lục
@@ -55,6 +55,7 @@ Tiếng Việt |
 - [⚡ Bắt đầu nhanh](#-bắt-đầu-nhanh)
 - [💎 Tại sao AiShort?](#-tại-sao-aishort)
 - [📸 Ảnh chụp màn hình](#-ảnh-chụp-màn-hình)
+- [📚 Tài liệu](#-tài-liệu)
 - [🧩 Tiện ích trình duyệt](#-tiện-ích-trình-duyệt)
 - [🚀 Triển khai](#-triển-khai)
 - [🤝 Đóng góp](#-đóng-góp)
@@ -82,39 +83,41 @@ Không cần đăng ký. Không thu phí. Không cài đặt. Mở ra và dùng 
 
 ### Tính năng cốt lõi
 
-🚀 **Prompt Một Cú Nhấp** - Các prompt chuyên nghiệp được chọn lọc, một cú nhấp để sao chép và sử dụng.
+🚀 **Prompt được tuyển chọn** — Bao gồm viết lách, lập trình, công việc văn phòng và nhiều hơn nữa — sẵn sàng để sao chép và dùng ngay.
 
-🔍 **Tìm kiếm Thông minh** - Tìm prompt nhanh chóng với bộ lọc thẻ và từ khóa.
+🔍 **Tìm kiếm theo thẻ + từ khóa** — Lọc theo thẻ tình huống, hoặc tìm theo từ khóa.
 
-🌍 **18 Ngôn ngữ** - Dịch thuật cho tất cả các prompt, với phản hồi bằng ngôn ngữ bản địa.
+🌍 **18 ngôn ngữ** — Giao diện và prompt được dịch đầy đủ, với phản hồi bằng ngôn ngữ bản địa.
 
-📦 **Sẵn sàng sử dụng** - Không cần đăng ký, sử dụng ngay lập tức.
+📦 **Sẵn sàng sử dụng** — Không cần đăng ký, mở ra là dùng được ngay.
 
 ### Tính năng nâng cao (Cần đăng nhập)
 
-📂 **Bộ sưu tập của tôi** - Lưu các prompt yêu thích với sắp xếp kéo thả và thẻ tùy chỉnh.
+📂 **Bộ sưu tập của tôi** — Sắp xếp kéo thả, phân loại thẻ tùy chỉnh.
 
-✏️ **Prompt Tùy chỉnh** - Tạo, chỉnh sửa và quản lý prompt của riêng bạn.
+✏️ **Prompt tùy chỉnh** — Tạo, chỉnh sửa và quản lý prompt của riêng bạn.
 
-🗳️ **Cộng đồng** - Chia sẻ prompt và bình chọn cho các đóng góp từ cộng đồng.
+🗳️ **Cộng đồng** — Chia sẻ prompt lên cộng đồng, bình chọn và thảo luận trong phần bình luận.
 
-📤 **Xuất dữ liệu** - Sao lưu tất cả prompt của bạn dưới dạng JSON.
+📤 **Xuất dữ liệu** — Xuất tất cả prompt dưới dạng JSON chỉ với một cú nhấp.
 
-🔐 **Nhiều tùy chọn đăng nhập** - Mật khẩu, Google, hoặc liên kết email không cần mật khẩu.
+🔐 **Nhiều phương thức đăng nhập** — Mật khẩu, Google, hoặc liên kết email không cần mật khẩu.
+
+🏆 **Cấp độ** — Kiếm cấp độ (L0–L9) khi bạn chia sẻ prompt với cộng đồng.
 
 ## 📸 Ảnh chụp màn hình
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Bộ sưu tập của tôi" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Tiện ích trình duyệt" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="Bộ sưu tập của tôi" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="Tiện ích trình duyệt" /></td>
   </tr>
   <tr>
     <td align="center"><strong>Bộ sưu tập của tôi</strong> — kéo thả, gắn thẻ, sắp xếp</td>
     <td align="center"><strong>Tiện ích trình duyệt</strong> — thanh bên trong ChatGPT, Gemini, Claude…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Thẻ Prompt" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="Thẻ Prompt" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="Cộng đồng" /></td>
   </tr>
   <tr>
@@ -122,6 +125,18 @@ Không cần đăng ký. Không thu phí. Không cài đặt. Mở ra và dùng 
     <td align="center"><strong>Cộng đồng</strong> — khám phá & bình chọn</td>
   </tr>
 </table>
+
+## 📚 Tài liệu
+
+Hướng dẫn đầy đủ trên [aishort.top](https://www.aishort.top/vi/docs/):
+
+- [Bắt đầu](https://www.aishort.top/vi/docs/guides/getting-started) — sử dụng cơ bản trong 30 giây
+- [Hướng dẫn giao diện](https://www.aishort.top/vi/docs/guides/interface) — bộ lọc thẻ & tìm kiếm thông minh
+- [Bộ sưu tập của tôi](https://www.aishort.top/vi/docs/guides/my-collection) — thu thập, gắn thẻ, kéo thả sắp xếp
+- [Prompt tùy chỉnh](https://www.aishort.top/vi/docs/guides/user-prompts) — tạo, chỉnh sửa, nhập/xuất
+- [Prompt cộng đồng](https://www.aishort.top/vi/docs/guides/community) — khám phá, bình chọn, thảo luận
+- [Tài khoản](https://www.aishort.top/vi/docs/guides/account) — phương thức đăng nhập & quản lý dữ liệu
+- [Triển khai](https://www.aishort.top/vi/docs/deploy) — tự host instance của riêng bạn
 
 ## 🧩 Tiện ích trình duyệt
 
@@ -140,7 +155,9 @@ Triển khai instance của riêng bạn qua Vercel, Cloudflare Pages, Docker ho
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **Mẹo**: Tính năng one-click deploy của Vercel tạo một dự án mới (không phải fork), nên kiểm tra cập nhật từ upstream sẽ không hoạt động. Để tự động đồng bộ, hãy fork repo trước, sau đó import bản fork vào Vercel — hướng dẫn đầy đủ trong [hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
+> **Offline / mạng nội bộ?** Có [Phiên bản Offline](https://www.aishort.top/vi/docs/deploy/offline) được xây dựng cho các mạng doanh nghiệp hoặc chính phủ cách ly — không cần backend hay tài khoản, dữ liệu được lưu cục bộ trong trình duyệt, với đầy đủ tính năng duyệt/tìm kiếm/thu thập/prompt tùy chỉnh.
+
+> **Mẹo**: Tính năng one-click deploy của Vercel tạo một dự án mới (không phải fork), nên kiểm tra cập nhật từ upstream sẽ không hoạt động. Để tự động đồng bộ, hãy fork repo trước, sau đó import bản fork vào Vercel — hướng dẫn đầy đủ trong [hướng dẫn triển khai](https://www.aishort.top/vi/docs/deploy/sync-updates).
 
 ## 🤝 Đóng góp
 

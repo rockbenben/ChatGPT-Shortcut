@@ -26,7 +26,7 @@ Quando ativada, a barra lateral permanece aberta ao alternar entre abas do naveg
 
 A extensão suporta modo escuro. Ative a opção "Modo escuro" nas configurações para mudar a interface para a aparência escura.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Atalho de Teclado
 

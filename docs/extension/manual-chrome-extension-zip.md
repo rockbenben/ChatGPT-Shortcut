@@ -30,4 +30,4 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-安装成功后，可查看[插件使用教程](./usage.md)。
+安装成功后，可查看[插件使用教程](./usage)。

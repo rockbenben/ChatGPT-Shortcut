@@ -20,4 +20,4 @@ Zweitens, um sicherzustellen, dass die Erweiterung auf Websites wie ChatGPT, Gem
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage.md) ansehen.
+Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage) ansehen.
