@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: शुरुआत करें
 title: AI Short शुरुआत गाइड | ChatGPT/DeepSeek में प्रॉम्प्ट कॉपी करें
 description: 30 सेकंड में जल्दी शुरुआत करें! ChatGPT, Gemini, DeepSeek जैसे AI मॉडल में प्रॉम्प्ट कॉपी करें और तुरंत संवाद की गुणवत्ता और कार्य कुशलता बढ़ाएँ।
@@ -17,7 +17,7 @@ description: 30 सेकंड में जल्दी शुरुआत क
 3. किसी भी AI टूल में पेस्ट करें — ChatGPT जैसे चैट पेज, Cursor जैसे कोडिंग टूल, API कॉल, एजेंट आदि
 4. प्रॉम्प्ट में दिए गए **प्लेसहोल्डर** (जैसे `[सामग्री]`, `[विषय]`) के अनुसार अपनी विशिष्ट आवश्यकताओं को पूरा करें और AI को भेजें
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **सुझाव**: अधिकांश प्रॉम्प्ट वर्ग कोष्ठक `[...]` का उपयोग उस सामग्री को चिह्नित करने के लिए करते हैं जिसे आपको भरना है — बस वर्ग कोष्ठक के अंदर के प्लेसहोल्डर टेक्स्ट को अपनी विशिष्ट सामग्री से बदल दें।
 
@@ -31,7 +31,7 @@ description: 30 सेकंड में जल्दी शुरुआत क
 | अपने स्वयं के प्रॉम्प्ट बनाएं              | [कस्टम प्रॉम्प्ट](./user-prompts)         |
 | रजिस्टर या लॉगिन                           | [खाता प्रबंधन](./account)                 |
 | सामुदायिक साझाकरण खोजें                    | [समुदाय प्रॉम्प्ट](./community)           |
-| ऑफ़लाइन/इंट्रानेट परिनियोजन                | [ऑफ़लाइन परिनियोजन संस्करण](./offline)    |
+| ऑफ़लाइन/इंट्रानेट परिनियोजन                | [ऑफ़लाइन परिनियोजन संस्करण](../deploy/offline)    |
 
 ## सामान्य AI मॉडल
 
@@ -53,10 +53,10 @@ description: 30 सेकंड में जल्दी शुरुआत क
 ### मेनलैंड चीन के मॉडल
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [ERNIE Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [Spark Desk](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

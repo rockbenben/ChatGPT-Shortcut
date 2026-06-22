@@ -30,4 +30,4 @@ Seret folder yang diekstrak ke halaman ekstensi untuk menyelesaikan instalasi.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage.md).
+Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage).

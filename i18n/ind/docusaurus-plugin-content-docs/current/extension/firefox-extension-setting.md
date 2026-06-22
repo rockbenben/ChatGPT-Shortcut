@@ -20,4 +20,4 @@ Kedua, untuk memastikan ekstensi berjalan normal di situs seperti ChatGPT, Gemin
 
 ![Izin Ekstensi Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage.md).
+Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage).

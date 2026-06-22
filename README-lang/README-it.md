@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -48,7 +48,7 @@ Italiano |
 </p>
 
 <p align="center">
-    <em>Migliaia di prompt IA collaudati — trasforma ChatGPT, Cursor e qualsiasi strumento IA da mediocre a livello esperto.</em>
+    <em>5000+ prompt AI pronti all'uso — trasforma ChatGPT, Cursor e qualsiasi strumento IA da mediocre a livello esperto.</em>
 </p>
 
 ## 📖 Indice
@@ -56,6 +56,7 @@ Italiano |
 - [⚡ Avvio Rapido](#-avvio-rapido)
 - [💎 Perché AiShort?](#-perché-aishort)
 - [📸 Screenshot](#-screenshot)
+- [📚 Documentazione](#-documentazione)
 - [🧩 Estensione Browser](#-estensione-browser)
 - [🚀 Deployment](#-deployment)
 - [🤝 Contribuire](#-contribuire)
@@ -77,45 +78,47 @@ Tutto qui! Per altre funzionalità consulta la [Guida Utente](https://www.aishor
 
 **La differenza tra usare l'IA e usarla bene è un buon prompt.**
 
-Stessa domanda, prompt diversi, risultati radicalmente diversi: una risposta generica oppure quella di un esperto. AiShort è una libreria di prompt collaudati e organizzati per scenario (scrittura, programmazione, ufficio, studio), pronti all'uso — così non parti mai da zero e ottieni subito output di livello professionale.
+Stessa domanda, prompt diversi — e l'output dell'IA passa da generico a genuinamente utile. Scrivere prompt di livello esperto richiede anni di iterazione. AiShort ti consegna una libreria curata di prompt già collaudati dalla community, in ambiti come scrittura, programmazione, lavoro d'ufficio, apprendimento, design, marketing e altro. Copia → incolla → output da esperto, all'istante.
 
-Niente registrazione. Niente abbonamento. Niente installazione. Apri e usa.
+Nessuna registrazione. Nessun paywall. Nessuna installazione. Apri e usa.
 
 ### Funzionalità Principali
 
-🚀 **Prompt con Un Clic** — Prompt professionali selezionati, un clic per copiare e usare.
+🚀 **Prompt Selezionati** — Per scrittura, programmazione, lavoro d'ufficio e altro — pronti da copiare e usare.
 
-🔍 **Ricerca Intelligente** — Trova rapidamente con filtri tag e ricerca per parole chiave.
+🔍 **Ricerca per Tag e Parole Chiave** — Filtra per tag di scenario o cerca per parola chiave.
 
-🌍 **18 Lingue** — Traduzioni per tutti i prompt, risposte nella tua lingua madre.
+🌍 **18 Lingue** — Interfaccia e prompt tradotti, con risposte nella tua lingua madre.
 
-📦 **Pronto all'Uso** — Nessuna registrazione richiesta, inizia subito.
+📦 **Pronto all'Uso** — Nessuna registrazione richiesta, apri e inizia.
 
 ### Funzionalità Avanzate (Accesso Richiesto)
 
-📂 **La Mia Collezione** — Salva i preferiti con ordinamento drag-and-drop e tag personalizzati.
+📂 **La Mia Collezione** — Ordinamento drag-and-drop, classificazione con tag personalizzati.
 
 ✏️ **Prompt Personalizzati** — Crea, modifica e gestisci i tuoi prompt.
 
-🗳️ **Community** — Condividi prompt e vota i contributi della community.
+🗳️ **Community** — Condividi prompt con la community, vota e discuti nei commenti.
 
-📤 **Esporta** — Backup di tutti i tuoi prompt in JSON.
+📤 **Esporta Dati** — Esporta tutti i prompt in JSON con un clic.
 
-🔐 **Opzioni Multiple di Accesso** — Password, Google o link email senza password.
+🔐 **Metodi di Accesso Multipli** — Password, Google o link email senza password.
+
+🏆 **Livelli** — Guadagna livelli (L0–L9) condividendo prompt con la community.
 
 ## 📸 Screenshot
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="La Mia Collezione" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Estensione Browser" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="La Mia Collezione" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="Estensione Browser" /></td>
   </tr>
   <tr>
     <td align="center"><strong>La Mia Collezione</strong> — trascina, etichetta, organizza</td>
     <td align="center"><strong>Estensione Browser</strong> — barra laterale in ChatGPT, Gemini, Claude…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="Scheda Prompt" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="Scheda Prompt" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="Community" /></td>
   </tr>
   <tr>
@@ -123,6 +126,18 @@ Niente registrazione. Niente abbonamento. Niente installazione. Apri e usa.
     <td align="center"><strong>Community</strong> — scopri e vota</td>
   </tr>
 </table>
+
+## 📚 Documentazione
+
+Guide complete su [aishort.top](https://www.aishort.top/it/docs/):
+
+- [Per Iniziare](https://www.aishort.top/it/docs/guides/getting-started) — utilizzo di base in 30 secondi
+- [Guida all'Interfaccia](https://www.aishort.top/it/docs/guides/interface) — filtri per tag e ricerca intelligente
+- [La Mia Collezione](https://www.aishort.top/it/docs/guides/my-collection) — raccogli, etichetta, organizza con trascinamento
+- [Prompt Personalizzati](https://www.aishort.top/it/docs/guides/user-prompts) — crea, modifica, importa/esporta
+- [Prompt della Community](https://www.aishort.top/it/docs/guides/community) — scopri, vota, discuti
+- [Account](https://www.aishort.top/it/docs/guides/account) — metodi di accesso e gestione dati
+- [Deployment](https://www.aishort.top/it/docs/deploy) — ospita la tua istanza
 
 ## 🧩 Estensione Browser
 
@@ -141,7 +156,9 @@ Distribuisci la tua istanza tramite Vercel, Cloudflare Pages, Docker o localment
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **Suggerimento**: Il deploy con un clic di Vercel crea un nuovo progetto (non un fork), quindi il controllo aggiornamenti upstream non funzionerà. Per ottenere la sincronizzazione automatica, fai prima il fork del repository, poi importa il fork in Vercel — istruzioni complete nella [guida al deployment](https://www.aishort.top/it/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0).
+> **Offline / intranet?** Esiste un'[Edizione Offline](https://www.aishort.top/it/docs/deploy/offline) pensata per reti aziendali o governative air-gapped — nessun backend né account richiesto, dati memorizzati localmente nel browser, con le stesse funzionalità di navigazione, ricerca, collezione e prompt personalizzati.
+
+> **Suggerimento**: Il deploy con un clic di Vercel crea un nuovo progetto (non un fork), quindi il controllo aggiornamenti upstream non funzionerà. Per ottenere la sincronizzazione automatica, fai prima il fork del repository, poi importa il fork in Vercel — istruzioni complete nella [guida al deployment](https://www.aishort.top/it/docs/deploy/sync-updates).
 
 ## 🤝 Contribuire
 

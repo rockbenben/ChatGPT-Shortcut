@@ -26,7 +26,7 @@ Bu seçenek etkinleştirildiğinde, tarayıcı sekmeleri arasında geçiş yapar
 
 Uzantı karanlık modu destekler. Ayarlar sayfasında "Karanlık Mod" seçeneğini etkinleştirin; arayüz karanlık görünüme geçer.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Kısayol Tuşu Aktivasyonu
 

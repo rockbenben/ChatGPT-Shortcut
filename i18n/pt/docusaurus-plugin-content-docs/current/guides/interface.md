@@ -6,48 +6,62 @@ description: Aprenda a usar a interface do AI Short. Encontre prompts na hora co
 
 # Explicação da Interface
 
-Esta seção apresenta as três áreas principais da página inicial do AI Short — a **área de tags** (tags de cenário no topo), a **área de pesquisa** (campo de palavras-chave) e a **área de exibição de prompts** (lista de cartões abaixo) — e como usá-las para encontrar rapidamente o prompt desejado.
+A página inicial do AiShort é composta por quatro áreas — os **botões de título e acesso** no topo, os **filtros de tag** abaixo deles, a **barra de busca** e os **cartões de prompt** que preenchem o restante da página. Esta seção explica como usar cada área para encontrar o prompt que você precisa.
 
 ![](/img/docs/interface-home.png)
 
-## 🏷︎ Filtragem por Tags
+## Botões de Acesso no Topo
 
-Filtre prompts por domínio e função. O seletor **OR / AND** no canto superior direito define a regra para múltiplas tags:
+Os botões abaixo do título da página variam conforme o status de login:
 
-- **OR** (Padrão): exibe prompts que correspondam a qualquer uma das tags
-- **AND**: exibe apenas prompts que correspondam a todas as tags
+- **Sem login**: "**Entrar grátis**" + "**Explorar comunidade**"
+- **Com login**: alternador de visualização ("**Explorar**" ⇄ "**Minha Coleção**"), "**Criar prompt**" e um menu de configurações à direita ("Minha Conta", "Sair")
+
+> 💡 Você pode navegar, pesquisar e copiar todos os prompts selecionados sem fazer login. Fazer login apenas adiciona coleta, criação e sincronização entre dispositivos.
+
+## Filtros de Tag
+
+Filtre prompts por domínio e função. O seletor **OR / AND** no canto superior direito controla como múltiplas tags são combinadas:
+
+- **OR** (padrão): exibe prompts que correspondam a qualquer uma das tags selecionadas
+- **AND**: exibe apenas prompts que correspondam a todas as tags selecionadas
+
+Após selecionar tags, o botão "**Limpar filtros**" aparece para removê-las com um clique. No mobile, as tags ficam recolhidas por padrão — toque em "**Mostrar etiquetas**" para expandir.
 
 ![](/img/docs/interface-filter.png)
 
-## 🔍 Pesquisa por Palavras-chave
+## Busca por Palavras-chave
 
-Pesquisa por título, descrição e conteúdo do prompt.
+Pesquisa por título, descrição, conteúdo e observações do prompt.
 
-- A pesquisa na página inicial cobre **prompts selecionados** (não inclui comunidade). Se houver tags selecionadas, a pesquisa fica restrita a essas tags
-- Após o login, o escopo da pesquisa se expande para incluir seus **favoritos** e **prompts personalizados**
-- Se palavras-chave curtas não retornam resultados na página inicial, pesquise novamente na página [Prompts da Comunidade](./community)
+- No desktop, pressione **`Ctrl + K`** (`⌘ + K` no macOS) para focar a caixa de busca; `Esc` para sair
+- A busca na página inicial cobre os **prompts selecionados**. Se houver tags selecionadas, a busca fica restrita a essas tags
+- Após o login, a busca se expande para incluir suas **coleções** e **prompts personalizados**
+- Se palavras-chave curtas não retornam resultados na página inicial, o AiShort busca automaticamente nos [Prompts da Comunidade](./community) também
 
 ![](/img/docs/interface-search.png)
 
-## 🔬 Cartão de Prompt
+## Cartões de Prompt
+
+Os prompts em destaque são ordenados pela contagem acumulada de cópias, de modo que o conteúdo mais utilizado aparece primeiro.
+
+### Informações do Cartão
+
+Cada cartão exibe o título, a descrição, uma prévia do conteúdo e as tags do prompt. O ícone de chama e o número no canto superior direito são a contagem acumulada de cópias.
 
 ### Ver Detalhes
 
-Clique no cartão para abrir uma janela com os detalhes — veja o conteúdo completo, as observações e copie com um clique.
+Clique em um cartão para abrir o popup de detalhes — leia o conteúdo completo e as observações e copie com um clique.
 
-![](/img/docs/prompt-card.gif)
+![](/img/docs/prompt-card.webp)
 
 ### Copiar Prompt
 
-Clique no botão "Copiar" abaixo do cartão e cole em qualquer ferramenta de IA — chat, editores de código, API e outros.
+Clique no botão "**Copiar**" no cartão ou no popup de detalhes e cole em qualquer ferramenta de IA (páginas de chat, ferramentas de código, chamadas de API etc.).
 
 ### Favoritar Prompt
 
-Após o login, o botão de favoritar aparece no cartão. Clique para adicionar à Minha Coleção.
-
-## 🔥 Ordenação por Popularidade
-
-Ordena os prompts por popularidade para você descobrir o que está em alta. A ordem das tags também acompanha a popularidade, refletindo as preferências mais recentes da comunidade.
+Após o login, um botão de coração aparece em cada cartão — clique para adicionar o prompt à [Minha Coleção](./my-collection).
 
 ## Documentação Relacionada
 

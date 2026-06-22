@@ -26,7 +26,7 @@ When this option is enabled, the sidebar stays open as you switch browser tabs â
 
 The extension supports dark mode. Enable "Dark Mode" on the settings page to switch the interface to a dark appearance.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Hotkey Activation
 

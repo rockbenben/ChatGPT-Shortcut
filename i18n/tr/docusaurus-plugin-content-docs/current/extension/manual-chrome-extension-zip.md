@@ -30,4 +30,4 @@ Kurulumu tamamlamak için açılan klasörü uzantılar sayfasına sürükleyin.
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Başarılı kurulumdan sonra [Plugin Kullanım Öğreticisi](./usage.md)'ni inceleyin.
+Başarılı kurulumdan sonra [Eklenti Kullanım Öğreticisi](./usage)'ni inceleyin.

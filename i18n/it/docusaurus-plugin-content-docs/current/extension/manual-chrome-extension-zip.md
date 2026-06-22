@@ -30,4 +30,4 @@ Trascina la cartella decompressa nella pagina delle estensioni per completare l'
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Dopo un'installazione riuscita, puoi consultare il [Tutorial Uso Plugin](./usage.md).
+Dopo un'installazione riuscita, puoi consultare il [Tutorial Uso Plugin](./usage).

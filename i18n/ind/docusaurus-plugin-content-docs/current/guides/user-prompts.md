@@ -6,79 +6,79 @@ description: Buat prompt AI eksklusif Anda sendiri, simpan ke akun pribadi untuk
 
 # Prompt Kustom
 
-Setelah login, Anda dapat membuat prompt sendiri, menyimpannya ke akun untuk dipanggil kapan saja. Prompt kustom akan muncul di tampilan "Koleksi Saya".
+Setelah login, Anda dapat membuat prompt sendiri dan menyimpannya ke akun untuk diakses kapan saja. Prompt kustom akan muncul di tampilan "Koleksi Saya".
 
 ## Buat Prompt
 
-1. Klik tombol "Tambah" di kanan atas halaman
-2. Isi formulir di jendela "Buat Prompt" yang muncul:
-   - **Nama Prompt** (wajib): Beri nama untuk prompt Anda
-   - **Isi Prompt** (wajib): Konten utama prompt
-   - **Tujuan/Kegunaan** (opsional): Deskripsi singkat apa yang dapat dilakukan prompt
-   - **Catatan** (opsional): Sumber, versi bahasa lain, atau penjelasan tambahan
-3. Sakelar "Apakah Anda bersedia membagikan prompt ini ke halaman publik?" di bagian bawah secara default aktif — matikan jika hanya untuk diri sendiri
+1. Setelah login, klik tombol "**Buat Prompt**" di bagian atas halaman
+2. Isi dialog "Buat Prompt":
+   - **Nama Prompt** (wajib): Nama untuk prompt Anda
+   - **Konten Prompt** (wajib): Isi utama prompt; teks dalam tanda kurung siku `[...]` disorot sebagai placeholder saat ditampilkan
+   - **Fungsi/Penggunaan** (opsional): Deskripsi singkat apa yang dilakukan prompt
+   - **Catatan** (opsional): Sumber, versi bahasa lain, atau catatan tambahan
+3. Sakelar "**Apakah Anda ingin membagikan prompt ini ke halaman publik?**" di bagian bawah aktif secara default — matikan untuk menyimpan prompt sebagai pribadi
 4. Klik "Buat Prompt" untuk mengirim
 
-![Popup Buat Prompt](/img/docs/user-prompts-create.png)
+![Dialog Buat Prompt](/img/docs/user-prompts-create.png)
 
-> 💡 **Contoh pengisian** — prompt "Asisten Notulen Rapat":
-> - **Nama Prompt**: Asisten Notulen Rapat
-> - **Isi Prompt**: Anda adalah notulis profesional. Susun notulen rapat yang rapi berdasarkan transkrip berikut: rangkum poin pembahasan, daftar keputusan yang diambil, dan tuliskan action items lengkap dengan PIC dan tenggat waktunya. Gunakan format bullet points yang ringkas. Transkrip: [tempelkan transkrip atau catatan rapat]
-> - **Tujuan/Kegunaan**: Mengubah catatan rapat yang berantakan menjadi notulen terstruktur dengan action items yang jelas
-> - **Catatan**: Cocok untuk rapat tim mingguan, sprint review, atau diskusi proyek
+> 💡 **Contoh** — prompt "Generator Update Standup":
+> - **Nama Prompt**: Generator Update Standup
+> - **Konten Prompt**: Anda adalah asisten komunikasi yang ringkas. Ubah catatan berikut menjadi update standup harian dengan tiga bagian — Kemarin, Hari Ini, Hambatan. Buat setiap poin singkat dan berorientasi pada hasil: [catatan mentah saya]
+> - **Fungsi/Penggunaan**: Mengubah catatan yang berantakan menjadi update standup yang rapi
+> - **Catatan**: Jalankan sebelum standup pagi
 
 ## Edit Prompt
 
-Di tampilan Koleksi Saya, klik kartu prompt yang Anda buat untuk membuka jendela "Edit Prompt", Anda dapat:
+Di tampilan Koleksi Saya, klik tombol edit (pensil) pada kartu prompt yang Anda buat untuk membuka dialog "Edit Prompt". Anda dapat:
 
-- Ubah nama, isi, tujuan, dan catatan
-- Beralih status berbagi (Publik/Pribadi)
+- Mengubah nama, konten, fungsi/penggunaan, dan catatan
+- Beralih status berbagi (publik / pribadi)
 - Klik "Simpan" untuk memperbarui
 
 ![Antarmuka Edit Prompt](/img/docs/user-prompts-edit.png)
 
 ## Hapus Prompt
 
-Klik "Hapus" di jendela edit. Penghapusan tidak dapat dipulihkan, harap berhati-hati.
+Klik "Hapus" di dialog edit. Penghapusan tidak dapat dibatalkan — lanjutkan dengan hati-hati.
 
 ## Bagikan ke Komunitas
 
-Saat membuat atau mengedit, sakelar "Apakah Anda bersedia membagikan prompt ini ke halaman publik?" di bagian bawah mengontrol visibilitas:
+Saat membuat atau mengedit, sakelar "**Apakah Anda ingin membagikan prompt ini ke halaman publik?**" di bagian bawah mengontrol visibilitas:
 
 - **Aktif (default)**: Prompt ditampilkan di halaman [Prompt Komunitas](./community), pengguna lain dapat melihat dan mengumpulkannya
-- **Nonaktif**: Prompt pribadi, hanya terlihat oleh diri sendiri
+- **Nonaktif**: Pribadi — hanya terlihat oleh Anda
 
 Status berbagi dapat diubah kapan saja.
 
-## Ekspor Cadangan
+## Ekspor Prompt
 
-1. Masuk ke "Akun Saya" → temukan kolom "Manajemen Data → Ekspor Prompt"
+1. Masuk ke "Akun Saya" dan temukan bagian "Manajemen Data → **Ekspor Prompt**"
 2. Klik tombol "Ekspor Data"
-3. Sistem menghasilkan file JSON dan otomatis mengunduhnya
+3. Sistem menghasilkan file JSON dan mengunduhnya secara otomatis
 
 Konten yang diekspor mencakup:
 
-- Nama, isi, tujuan/kegunaan, dan catatan prompt
-- Waktu pembuatan dan pembaruan
+- Nama, konten, fungsi/penggunaan, dan catatan prompt
 - Status berbagi
+- Koleksi Anda, urutan koleksi, dan tag kustom
 
-Disarankan untuk mengekspor cadangan secara berkala untuk mencegah kehilangan data.
+Ekspor secara berkala direkomendasikan untuk mencegah kehilangan data.
 
 ## Impor Prompt
 
 Impor prompt dan koleksi dari file JSON:
 
-1. Masuk ke "Akun Saya" → temukan kolom "Manajemen Data → Impor Prompt"
+1. Masuk ke "Akun Saya" dan temukan bagian "Manajemen Data → **Impor Prompt**"
 2. Klik tombol "Impor Data"
 3. Pilih file JSON
-4. Sistem otomatis menggabungkan data (deduplikasi berdasarkan judul; prompt dengan ID pengguna lain otomatis diatur sebagai pribadi)
+4. Sistem menggabungkan data secara otomatis (deduplikasi berdasarkan judul; prompt yang ID-nya milik akun lain diatur sebagai pribadi)
 
 ### Kolaborasi Tim
 
 Alur kerja yang direkomendasikan untuk berbagi prompt dalam tim:
 
-1. **Filter dan Bagikan**: Setelah ekspor, hapus secara manual daftar koleksi atau filter prompt yang ingin dibagikan, kirim file ke anggota tim untuk diimpor
-2. **Perlindungan Privasi**: Mengimpor prompt yang dibagikan orang lain (ID tidak termasuk akun saat ini) akan otomatis diatur sebagai **pribadi**, data antar anggota tidak saling mengganggu
+1. **Filter dan Bagikan**: Setelah ekspor, hapus secara manual daftar koleksi atau saring prompt yang ingin dibagikan, lalu kirim file ke anggota tim untuk diimpor
+2. **Perlindungan Privasi**: Prompt yang diimpor milik orang lain (ID tidak termasuk akun saat ini) secara otomatis diatur sebagai **pribadi**, sehingga data setiap anggota tetap terpisah
 
 ## Dokumentasi Terkait
 

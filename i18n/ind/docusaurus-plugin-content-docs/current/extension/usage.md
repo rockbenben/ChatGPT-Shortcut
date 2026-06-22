@@ -26,7 +26,7 @@ Setelah opsi ini diaktifkan, sidebar akan tetap terbuka saat beralih tab browser
 
 Ekstensi mendukung mode gelap, aktifkan opsi "Mode Gelap" di halaman pengaturan, antarmuka akan beralih ke tampilan gelap.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Aktivasi Pintasan
 

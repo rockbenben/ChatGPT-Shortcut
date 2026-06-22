@@ -26,7 +26,7 @@ ChatGPT Shortcut은 18개 주요 언어를 지원합니다. 확장 프로그램 
 
 확장 프로그램은 다크 모드를 지원합니다. 설정 페이지에서 "다크 모드" 옵션을 활성화하면 인터페이스가 다크 모드로 전환됩니다.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## 단축키 활성화
 

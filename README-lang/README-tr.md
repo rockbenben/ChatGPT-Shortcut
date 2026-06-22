@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -48,7 +48,7 @@ Türkçe |
 </p>
 
 <p align="center">
-    <em>Binlerce kanıtlanmış AI prompt'u — ChatGPT, Cursor ve herhangi bir AI aracını sıradan çıktıdan uzman seviyesine çıkarın.</em>
+    <em>5000'den fazla kullanıma hazır AI prompt'u — ChatGPT, Cursor ve her AI aracını sıradan çıktıdan uzman seviyesine taşıyın.</em>
 </p>
 
 ## 📖 İçindekiler
@@ -56,6 +56,7 @@ Türkçe |
 - [⚡ Hızlı Başlangıç](#-hızlı-başlangıç)
 - [💎 Neden AiShort?](#-neden-aishort)
 - [📸 Ekran Görüntüleri](#-ekran-görüntüleri)
+- [📚 Belgeler](#-belgeler)
 - [🧩 Tarayıcı Eklentisi](#-tarayıcı-eklentisi)
 - [🚀 Dağıtım](#-dağıtım)
 - [🤝 Katkıda Bulunma](#-katkıda-bulunma)
@@ -75,47 +76,49 @@ Türkçe |
 
 ## 💎 Neden AiShort?
 
-**AI'yı kullanmak ile AI'yı iyi kullanmak arasındaki fark, iyi bir prompt'tur.**
+**AI'yı kullanmak ile AI'yı iyi kullanmak arasındaki fark, tek bir iyi prompt'tur.**
 
-Aynı soru, farklı şekilde sorulduğunda tamamen farklı bir çıktı verir. Uzman seviyesinde prompt'lar hazırlamak yıllarca süren deneme yanılma gerektirir — ipuçlarını çözmek, kalıpları öğrenmek, ne işe yaradığını keşfetmek. AiShort bu işi sizin için yapar: yazı, kodlama, ofis ve öğrenme için topluluk tarafından doğrulanmış, savaşta sınanmış prompt'lardan oluşan bir kütüphane.
+Aynı soru, farklı prompt'larla sorulduğunda AI çıktısı genel ve sıradan olmaktan gerçekten kullanışlı olmaya dönüşür. Uzman seviyesinde prompt yazmak yıllarca süren deneme yanılma gerektirir. AiShort, topluluk tarafından doğrulanmış, yazı, kodlama, ofis işleri, öğrenme, tasarım, pazarlama ve daha fazlasında savaşta sınanmış prompt'lardan oluşan seçkin bir kütüphanedir. Kopyalayın → yapıştırın → anında uzman kalitesinde çıktı.
 
 Kayıt yok. Ücret yok. Kurulum yok. Açın ve kullanın.
 
 ### Temel Özellikler
 
-🚀 **Tek Tıkla İstemler** - Seçilmiş profesyonel istemler, kopyalayıp kullanmak için tek tık yeterli.
+🚀 **Seçkin Prompt'lar** — Yazı, kodlama, ofis işleri ve daha fazlasını kapsayan, kopyalayıp kullanmaya hazır prompt'lar.
 
-🔍 **Akıllı Arama** - Etiket filtreleme ve anahtar kelime araması ile istemleri hızlıca bulun.
+🔍 **Etiket + Anahtar Kelime Araması** — Senaryo etiketlerine göre filtreleyin veya anahtar kelimeyle arayın.
 
-🌍 **18 Dil** - Tüm istemler için çeviriler ve ana dilde yanıtlar.
+🌍 **18 Dil** — Tam arayüz ve prompt çevirisi, ana dilinizde yanıtlar.
 
-📦 **Kullanıma Hazır** - Kayıt gerekmez, hemen kullanmaya başlayın.
+📦 **Kullanıma Hazır** — Kayıt gerekmez, hemen açıp kullanın.
 
 ### Gelişmiş Özellikler (Giriş Gerektirir)
 
-📂 **Koleksiyonum** - Favori istemlerinizi sürükle-bırak sıralaması ve özel etiketlerle kaydedin.
+📂 **Koleksiyonum** — Sürükle-bırak sıralama, özel etiket sınıflandırması.
 
-✏️ **Özel İstemler** - Kendi istemlerinizi oluşturun, düzenleyin ve yönetin.
+✏️ **Özel Prompt'lar** — Kendi prompt'larınızı oluşturun, düzenleyin ve yönetin.
 
-🗳️ **Topluluk** - İstemleri paylaşın ve topluluk katkılarını oylayın.
+🗳️ **Topluluk** — Prompt'ları toplulukla paylaşın, oylayın ve yorumlarda tartışın.
 
-📤 **Dışa Aktar** - Tüm istemlerinizi JSON olarak yedekleyin.
+📤 **Veri Dışa Aktarma** — Tüm prompt'ları tek tıkla JSON olarak dışa aktarın.
 
-🔐 **Çoklu Giriş Seçenekleri** - Şifre, Google veya şifresiz e-posta bağlantısı.
+🔐 **Çoklu Giriş Yöntemleri** — Şifre, Google veya şifresiz e-posta bağlantısı.
+
+🏆 **Seviyeler** — Toplulukla prompt paylaştıkça seviye kazanın (L0–L9).
 
 ## 📸 Ekran Görüntüleri
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="Koleksiyonum" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="Tarayıcı Eklentisi" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="Koleksiyonum" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="Tarayıcı Eklentisi" /></td>
   </tr>
   <tr>
     <td align="center"><strong>Koleksiyonum</strong> — sürükleyin, etiketleyin, düzenleyin</td>
     <td align="center"><strong>Tarayıcı Eklentisi</strong> — ChatGPT, Gemini, Claude'da kenar çubuğu…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="İstem Kartı" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="İstem Kartı" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="Topluluk" /></td>
   </tr>
   <tr>
@@ -123,6 +126,18 @@ Kayıt yok. Ücret yok. Kurulum yok. Açın ve kullanın.
     <td align="center"><strong>Topluluk</strong> — keşfedin & oylayın</td>
   </tr>
 </table>
+
+## 📚 Belgeler
+
+Tam kılavuzlar için [aishort.top](https://www.aishort.top/tr/docs/):
+
+- [Başlarken](https://www.aishort.top/tr/docs/guides/getting-started) — 30 saniyede temel kullanım
+- [Arayüz Kılavuzu](https://www.aishort.top/tr/docs/guides/interface) — etiket filtreleri & akıllı arama
+- [Koleksiyonum](https://www.aishort.top/tr/docs/guides/my-collection) — topla, etiketle, sürükleyerek düzenle
+- [Özel Prompt'lar](https://www.aishort.top/tr/docs/guides/user-prompts) — oluştur, düzenle, içe/dışa aktar
+- [Topluluk Prompt'ları](https://www.aishort.top/tr/docs/guides/community) — keşfet, oyla, tartış
+- [Hesap](https://www.aishort.top/tr/docs/guides/account) — giriş yöntemleri & veri yönetimi
+- [Dağıtım](https://www.aishort.top/tr/docs/deploy) — kendi örneğinizi barındırın
 
 ## 🧩 Tarayıcı Eklentisi
 
@@ -141,7 +156,9 @@ Kendi örneğinizi Vercel, Cloudflare Pages, Docker veya yerel olarak dağıtın
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **İpucu**: Vercel'in tek tıkla dağıtımı yeni bir proje oluşturur (fork değil), bu yüzden upstream güncelleme kontrolü çalışmaz. Otomatik eşitleme için önce depoyu fork'layın, ardından fork'unuzu Vercel'e içe aktarın — tüm talimatlar [dağıtım kılavuzunda](https://www.aishort.top/tr/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0) yer almaktadır.
+> **Çevrimdışı / intranet?** Hava boşluklu kurumsal veya devlet ağları için tasarlanmış bir [Çevrimdışı Sürüm](https://www.aishort.top/tr/docs/deploy/offline) mevcuttur — arka uç veya hesap gerekmez, veriler tarayıcıda yerel olarak saklanır ve aynı göz atma/arama/koleksiyon/özel-prompt özellikleri sunulur.
+
+> **İpucu**: Vercel'in tek tıkla dağıtımı yeni bir proje oluşturur (fork değil), bu yüzden upstream güncelleme kontrolü çalışmaz. Otomatik eşitleme için önce depoyu fork'layın, ardından fork'unuzu Vercel'e içe aktarın — tüm talimatlar [dağıtım kılavuzunda](https://www.aishort.top/tr/docs/deploy/sync-updates) yer almaktadır.
 
 ## 🤝 Katkıda Bulunma
 

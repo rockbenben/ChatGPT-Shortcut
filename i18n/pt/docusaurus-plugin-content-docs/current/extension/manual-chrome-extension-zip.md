@@ -30,4 +30,4 @@ Arraste a pasta descompactada para a página de extensões para completar a inst
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage.md).
+Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage).

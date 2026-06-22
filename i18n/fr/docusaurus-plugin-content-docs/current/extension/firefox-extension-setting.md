@@ -20,4 +20,4 @@ Ensuite, pour que l'extension fonctionne correctement sur des sites comme ChatGP
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Après une installation réussie, vous pouvez consulter le [Tutoriel d'utilisation de l'extension](./usage.md).
+Après une installation réussie, vous pouvez consulter le [Tutoriel d'utilisation de l'extension](./usage).

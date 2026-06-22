@@ -6,36 +6,40 @@ description: Entdecken Sie von der Community kuratierte KI-Prompts. Hochwertige 
 
 # Community-Prompts
 
-Community-Prompts werden von Nutzern geteilt — holen Sie sich hier Inspiration und teilen Sie eigene Ideen. Über den **Abstimmungsmechanismus** rücken hochwertige Beiträge nach oben: Prompts, die viele für nützlich halten, werden sichtbarer; schwächere rutschen nach unten.
+Community-Prompts stammen von anderen Nutzern — holen Sie sich Inspiration und teilen Sie Ihre eigenen Ideen. Durch **Abstimmungen** bleibt das Beste oben: Nützliche Prompts steigen auf, schwächere sinken still nach unten.
 
 ![](/img/docs/community-page.png)
 
 ## Sortieren und Filtern
 
-- **Veröffentlichungszeit**: Zeigt die zuletzt geteilten Prompts an
-- **Abstimmungsreihenfolge**: Zeigt Prompts mit den meisten positiven Stimmen an
-- **Stichwortsuche**: Sucht gezielt nach Prompts zu bestimmten Themen
+- **Neueste**: Zeigt die zuletzt geteilten Prompts an (Standard)
+- **Meiste Likes**: Zeigt Prompts mit den meisten positiven Stimmen an
+- **Stichwortsuche**: Sucht gezielt nach bestimmten Themen
 
-## Abstimmungsmechanismus
+## Wie Abstimmungen funktionieren
 
-Dafür/Dagegen-Stimmen entscheiden über die Sichtbarkeit eines Prompts:
+Positive und negative Stimmen entscheiden über die Sichtbarkeit eines Prompts:
 
-- **Dafür**: Hilft hochwertigen Inhalten, mehr Sichtbarkeit zu erhalten
-- **Dagegen**: Nach Erreichen eines Schwellenwerts wird der Prompt ausgeblendet
+- **Positiv**: Bringt gute Inhalte mehr Menschen zu Gesicht
+- **Negativ**: Sobald ein Prompt genug negative Stimmen gesammelt hat, wird er aus dem Feed ausgeblendet
 
-**Sammlungsverknüpfung**: Wenn Sie einen Community-Prompt sammeln, wird automatisch eine positive Stimme abgegeben.
+**Sammeln = Positive Stimme**: Wenn Sie einen Community-Prompt zu Ihrer Sammlung hinzufügen, wird automatisch eine positive Stimme dafür abgegeben.
 
 ![Abstimmungsschalter-Status](/img/docs/community-vote.png)
 
-> Die Abstimmung steht nur angemeldeten Nutzern offen. Pro Prompt zählt jeweils nur Ihre zuletzt abgegebene Stimme.
+> Abstimmungen stehen nur angemeldeten Nutzern offen; pro Prompt zählt jeweils nur Ihre zuletzt abgegebene Stimme.
 
 ## Private Prompts
 
-Ideen, die Sie nicht öffentlich machen möchten, können als privat eingestellt werden:
+Ideen, die Sie lieber für sich behalten möchten, können als privat eingestellt werden:
 
-- Deaktivieren Sie beim Erstellen oder Bearbeiten die Option "Mit Community teilen"
+- Deaktivieren Sie beim Erstellen oder Bearbeiten die Option „Mit Community teilen"
 - Private Prompts sind nur für Sie sichtbar
 - Sie können jederzeit zwischen öffentlichem und privatem Status wechseln
+
+## Diskussion
+
+Öffnen Sie die Detailseite eines Community-Prompts — neben dem vollständigen Inhalt können Sie nach der Anmeldung kommentieren und an der Unterhaltung teilnehmen (Emoji und GIF werden unterstützt).
 
 ## Verwandte Dokumentation
 

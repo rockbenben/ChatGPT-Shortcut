@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Memulai
 title: Panduan Memulai AI Short | Salin Prompt ke ChatGPT/DeepSeek
 description: Mulai cepat dalam 30 detik! Salin prompt ke model AI seperti ChatGPT, Gemini, dan DeepSeek untuk langsung meningkatkan kualitas percakapan dan produktivitas kerja.
@@ -17,7 +17,7 @@ Prompt yang baik menentukan kualitas output AI. AiShort mengumpulkan banyak prom
 3. Tempel ke alat AI apa pun — halaman chat seperti ChatGPT, alat coding seperti Cursor, panggilan API, dll.
 4. Sesuai dengan **placeholder** dalam prompt (seperti `[konten]`, `[topik]`), lengkapi kebutuhan spesifik Anda, lalu kirim ke AI
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Tips**: Sebagian besar prompt menggunakan tanda kurung siku `[...]` untuk menandai konten yang perlu Anda lengkapi — ganti teks placeholder di dalam kurung siku dengan konten spesifik Anda.
 
@@ -31,7 +31,7 @@ Prompt yang baik menentukan kualitas output AI. AiShort mengumpulkan banyak prom
 | Buat prompt sendiri                 | [Prompt Kustom](./user-prompts)         |
 | Daftar atau Masuk                   | [Manajemen Akun](./account)             |
 | Temukan berbagi komunitas           | [Prompt Komunitas](./community)         |
-| Deploy offline/intranet             | [Versi Deploy Offline](./offline)       |
+| Deploy offline/intranet             | [Versi Deploy Offline](../deploy/offline)       |
 
 ## Model AI Populer
 
@@ -52,10 +52,10 @@ Prompt yang baik menentukan kualitas output AI. AiShort mengumpulkan banyak prom
 ### Model Tiongkok Daratan
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [ERNIE Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [Xinghuo](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

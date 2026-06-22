@@ -20,4 +20,4 @@ En segundo lugar, para asegurar que la extensión funcione normalmente en sitios
 
 ![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage.md).
+Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage).

@@ -26,7 +26,7 @@ Se attivato, la barra laterale rimane aperta quando si cambiano le schede del br
 
 L'estensione supporta la modalità scura. Attiva "Modalità scura" nelle impostazioni per passare l'interfaccia all'aspetto scuro.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Scorciatoia da tastiera
 

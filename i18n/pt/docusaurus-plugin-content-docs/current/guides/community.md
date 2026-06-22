@@ -6,38 +6,42 @@ description: Explore prompts de IA criados pela comunidade. O sistema de votaç�
 
 # Prompts da Comunidade
 
-Os prompts da comunidade são compartilhados pelos próprios usuários. Aqui você encontra inspiração e pode publicar suas criações. O **sistema de votação** destaca o conteúdo de qualidade — prompts úteis para a maioria ganham mais alcance, enquanto os de baixa qualidade vão perdendo espaço aos poucos.
+Os Prompts da Comunidade vêm de outros usuários — navegue em busca de inspiração e compartilhe o que você criou. A **votação** mantém o melhor conteúdo no topo: prompts úteis sobem e os mais fracos vão caindo aos poucos.
 
 ![](/img/docs/community-page.png)
 
 ## Ordenação e Filtragem
 
-- **Tempo de Publicação**: veja os compartilhamentos mais recentes
-- **Ordenação por Votos**: veja os prompts mais votados
+- **Mais recentes**: veja os compartilhamentos mais recentes (padrão)
+- **Mais votados**: veja os prompts mais votados positivamente
 - **Pesquisa por Palavras-chave**: pesquise por tópicos específicos
 
-## Mecanismo de Votação
+## Como a Votação Funciona
 
-Votos positivos/negativos determinam a exposição do prompt:
+Votos positivos e negativos determinam a visibilidade de um prompt:
 
-- **Voto Positivo**: ajuda o conteúdo de qualidade a alcançar mais pessoas
-- **Voto Negativo**: ao atingir o limite de votos negativos, o prompt é ocultado
+- **Voto Positivo**: impulsiona conteúdo de qualidade para mais pessoas
+- **Voto Negativo**: quando um prompt acumula votos negativos suficientes, é ocultado do feed
 
-**Vínculo com Coleção**: favoritar um prompt da comunidade conta automaticamente como um voto positivo.
+**Coletar = Votar Positivo**: adicionar um prompt da comunidade à sua coleção conta automaticamente como um voto positivo.
 
 ![Botão de status de votação](/img/docs/community-vote.png)
 
-> A votação está aberta apenas para usuários logados; para o mesmo prompt, vale a ação mais recente.
+> A votação está aberta apenas para usuários logados; para cada prompt, apenas o voto mais recente é contabilizado.
 
 ## Prompts Privados
 
-Ideias que você não deseja tornar públicas podem ser definidas como privadas:
+Ideias que você prefere guardar para si podem ser definidas como privadas:
 
-- Ao criar ou editar, desmarque "Compartilhar na Comunidade"
+- Desative "Compartilhar na Comunidade" ao criar ou editar
 - Prompts privados são visíveis apenas para você
-- Você pode alternar entre público/privado a qualquer momento
+- Você pode alternar entre público e privado a qualquer momento
+
+## Discussão
+
+Abra a página de detalhes de qualquer prompt da comunidade e, além do conteúdo completo, faça login para comentar e participar da conversa (emoji e GIF suportados).
 
 ## Documentação Relacionada
 
 - [Prompts Personalizados](./user-prompts) - Criar e gerenciar prompts
-- [Minha Coleção](./my-collection) - Gerenciamento de favoritos
+- [Minha Coleção](./my-collection) - Gerenciamento de coleção

@@ -26,7 +26,7 @@ Wenn aktiviert, bleibt die Seitenleiste beim Wechseln von Browser-Tabs geöffnet
 
 Die Erweiterung unterstützt den dunklen Modus. Aktivieren Sie "Dunkler Modus" in den Einstellungen, um die Oberfläche in dunkle Darstellung zu wechseln.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Tastenkürzel
 

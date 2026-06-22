@@ -24,7 +24,7 @@
 <p align="center">
     <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
     <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
@@ -48,7 +48,7 @@
 </p>
 
 <p align="center">
-    <em>হাজার হাজার যুদ্ধ-পরীক্ষিত AI প্রম্পট — ChatGPT, Cursor এবং যেকোনো AI টুলকে সাধারণ থেকে বিশেষজ্ঞ-পর্যায়ে রূপান্তর করুন।</em>
+    <em>৫০০০+ ব্যবহারের জন্য প্রস্তুত AI প্রম্পট — ChatGPT, Cursor এবং যেকোনো AI টুলকে সাধারণ থেকে বিশেষজ্ঞ-পর্যায়ে রূপান্তর করুন।</em>
 </p>
 
 ## 📖 সূচিপত্র
@@ -56,6 +56,7 @@
 - [⚡ দ্রুত শুরু](#-দ্রুত-শুরু)
 - [💎 কেন AiShort?](#-কেন-aishort)
 - [📸 স্ক্রিনশট](#-স্ক্রিনশট)
+- [📚 ডকুমেন্টেশন](#-ডকুমেন্টেশন)
 - [🧩 ব্রাউজার এক্সটেনশন](#-ব্রাউজার-এক্সটেনশন)
 - [🚀 ডেপ্লয়মেন্ট](#-ডেপ্লয়মেন্ট)
 - [🤝 অবদান রাখুন](#-অবদান-রাখুন)
@@ -67,7 +68,7 @@
 
 1. [aishort.top](https://www.aishort.top/bn/) এ যান
 2. আপনার প্রয়োজনীয় প্রম্পট খুঁজুন বা ব্রাউজ করুন
-3. "কপি" ক্লিক করুন এবং যেকোনো AI টুলে পেস্ট করুন — ChatGPT/Gemini/Claude-এর মতো চ্যাট পেজ, Cursor-এর মতো কোডিং টুল, API কল ইত্যাদি
+3. "কপি" ক্লিক করুন এবং যেকোনো AI টুলে পেস্ট করুন — ChatGPT-এর মতো চ্যাট পেজ, Cursor-এর মতো কোডিং টুল, আপনার নিজের API কল ইত্যাদি
 
 ![AiShort Interface](../static/img/docs/interface-home.png)
 
@@ -75,45 +76,49 @@
 
 ## 💎 কেন AiShort?
 
-**AI ব্যবহার করা আর AI ভালোভাবে ব্যবহার করার মধ্যে পার্থক্য হলো একটি ভালো প্রম্পট।** একই প্রশ্ন, ভিন্ন শব্দচয়ন — সম্পূর্ণ ভিন্ন উত্তর। AiShort বিভিন্ন পরিস্থিতির (লেখালেখি, কোডিং, অফিস, শেখা…) জন্য উচ্চমানের প্রম্পট কিউরেট করে রেখেছে, যাতে কীভাবে প্রশ্ন করতে হবে তা আপনাকে শূন্য থেকে ভাবতে না হয়।
+**AI ব্যবহার করা আর AI ভালোভাবে ব্যবহার করার মধ্যে পার্থক্য হলো একটি ভালো প্রম্পট।**
+
+একই প্রশ্ন, ভিন্ন প্রম্পট — এবং AI-এর আউটপুট সাধারণ থেকে সত্যিই উপকারী হয়ে ওঠে। বিশেষজ্ঞ-মানের প্রম্পট নিজে লিখতে বছরের পর বছর অভিজ্ঞতা লাগে। AiShort আপনাকে কমিউনিটি-পরীক্ষিত একটি কিউরেটেড লাইব্রেরি দেয় — লেখালেখি, কোডিং, অফিস, শেখা, ডিজাইন, মার্কেটিং এবং আরও অনেক ক্ষেত্রে। কপি → পেস্ট → বিশেষজ্ঞ-মানের আউটপুট, সঙ্গে সঙ্গে।
 
 কোনো সাইন-আপ নেই। কোনো পেওয়াল নেই। কোনো ইনস্টল নেই। খুলুন এবং ব্যবহার করুন।
 
 ### মূল বৈশিষ্ট্য
 
-🚀 **এক-ক্লিক প্রম্পট** - নির্বাচিত পেশাদার প্রম্পট, এক ক্লিকে কপি এবং ব্যবহার।
+🚀 **কিউরেটেড প্রম্পট** — লেখালেখি, কোডিং, অফিস এবং আরও অনেক ক্ষেত্র কভার করে — কপি করে সঙ্গে সঙ্গে ব্যবহার করুন।
 
-🔍 **স্মার্ট সার্চ** - ট্যাগ ফিল্টার এবং কীওয়ার্ড সার্চ দিয়ে দ্রুত খুঁজুন।
+🔍 **ট্যাগ + কীওয়ার্ড সার্চ** — পরিস্থিতির ট্যাগ দিয়ে ফিল্টার করুন, বা কীওয়ার্ড দিয়ে খুঁজুন।
 
-🌍 **18 ভাষা** - সব প্রম্পটের অনুবাদ, মাতৃভাষায় উত্তর।
+🌍 **১৮টি ভাষা** — সম্পূর্ণ UI এবং প্রম্পট অনুবাদ, মাতৃভাষায় উত্তর।
 
-📦 **ব্যবহারের জন্য প্রস্তুত** - রেজিস্ট্রেশনের প্রয়োজন নেই, এখনই শুরু করুন।
+📦 **ব্যবহারের জন্য প্রস্তুত** — রেজিস্ট্রেশনের প্রয়োজন নেই, খুলুন এবং শুরু করুন।
 
-### উন্নত বৈশিষ্ট্য (লগইন প্রয়োজন)
+### উন্নত বৈশিষ্ট্য (লগইনের পরে)
 
-📂 **আমার সংগ্রহ** - ড্র্যাগ-অ্যান্ড-ড্রপ সাজানো এবং কাস্টম ট্যাগ সহ পছন্দ সংরক্ষণ।
+📂 **আমার সংগ্রহ** — ড্র্যাগ-অ্যান্ড-ড্রপ সাজানো, কাস্টম ট্যাগ শ্রেণীবিন্যাস।
 
-✏️ **কাস্টম প্রম্পট** - নিজের প্রম্পট তৈরি, সম্পাদনা এবং পরিচালনা।
+✏️ **কাস্টম প্রম্পট** — নিজের প্রম্পট তৈরি, সম্পাদনা এবং পরিচালনা।
 
-🗳️ **কমিউনিটি** - প্রম্পট শেয়ার করুন এবং কমিউনিটি অবদানে ভোট দিন।
+🗳️ **কমিউনিটি** — কমিউনিটিতে প্রম্পট শেয়ার করুন, ভোট দিন এবং মন্তব্যে আলোচনা করুন।
 
-📤 **এক্সপোর্ট** - সব প্রম্পট JSON এ ব্যাকআপ।
+📤 **ডেটা এক্সপোর্ট** — সব প্রম্পট JSON হিসেবে এক-ক্লিকে এক্সপোর্ট।
 
-🔐 **একাধিক লগইন বিকল্প** - পাসওয়ার্ড, Google, বা পাসওয়ার্ডবিহীন ইমেল লিংক।
+🔐 **একাধিক লগইন পদ্ধতি** — পাসওয়ার্ড, Google, বা পাসওয়ার্ডবিহীন ইমেল লিংক।
+
+🏆 **স্তর** — কমিউনিটিতে প্রম্পট শেয়ার করে স্তর অর্জন করুন (L0–L9)।
 
 ## 📸 স্ক্রিনশট
 
 <table>
   <tr>
-    <td width="50%"><img src="../static/img/docs/my-collection-view.gif" alt="আমার সংগ্রহ" /></td>
-    <td width="50%"><img src="../static/img/docs/extension-sidebar.gif" alt="ব্রাউজার এক্সটেনশন" /></td>
+    <td width="50%"><img src="../static/img/docs/my-collection-view.webp" alt="আমার সংগ্রহ" /></td>
+    <td width="50%"><img src="../static/img/docs/extension-sidebar.webp" alt="ব্রাউজার এক্সটেনশন" /></td>
   </tr>
   <tr>
     <td align="center"><strong>আমার সংগ্রহ</strong> — ড্র্যাগ, ট্যাগ, সংগঠিত</td>
     <td align="center"><strong>ব্রাউজার এক্সটেনশন</strong> — ChatGPT, Gemini, Claude-এ সাইডবার…</td>
   </tr>
   <tr>
-    <td width="50%"><img src="../static/img/docs/prompt-card.gif" alt="প্রম্পট কার্ড" /></td>
+    <td width="50%"><img src="../static/img/docs/prompt-card.webp" alt="প্রম্পট কার্ড" /></td>
     <td width="50%"><img src="../static/img/docs/community-page.png" alt="কমিউনিটি" /></td>
   </tr>
   <tr>
@@ -122,9 +127,21 @@
   </tr>
 </table>
 
+## 📚 ডকুমেন্টেশন
+
+[aishort.top](https://www.aishort.top/bn/docs/)-এ সম্পূর্ণ গাইড:
+
+- [শুরু করুন](https://www.aishort.top/bn/docs/guides/getting-started) — ৩০ সেকেন্ডে মৌলিক ব্যবহার
+- [ইন্টারফেস গাইড](https://www.aishort.top/bn/docs/guides/interface) — ট্যাগ ফিল্টার ও স্মার্ট সার্চ
+- [আমার সংগ্রহ](https://www.aishort.top/bn/docs/guides/my-collection) — সংগ্রহ করুন, ট্যাগ করুন, ড্র্যাগ করে সাজান
+- [কাস্টম প্রম্পট](https://www.aishort.top/bn/docs/guides/user-prompts) — তৈরি করুন, সম্পাদনা করুন, আমদানি/রপ্তানি করুন
+- [কমিউনিটি প্রম্পট](https://www.aishort.top/bn/docs/guides/community) — আবিষ্কার করুন, ভোট দিন, আলোচনা করুন
+- [অ্যাকাউন্ট](https://www.aishort.top/bn/docs/guides/account) — লগইন পদ্ধতি ও ডেটা ম্যানেজমেন্ট
+- [ডেপ্লয়মেন্ট](https://www.aishort.top/bn/docs/deploy) — নিজের ইনস্ট্যান্স সেলফ-হোস্ট করুন
+
 ## 🧩 ব্রাউজার এক্সটেনশন
 
-যেকোনো সময় AiShort প্রম্পট অ্যাক্সেস করুন। Chrome, Edge এবং Firefox সমর্থিত, `Alt + Shift + S` দিয়ে সাইডবার খুলুন।
+যেকোনো সময় AiShort প্রম্পট অ্যাক্সেস করুন আমাদের ব্রাউজার এক্সটেনশন দিয়ে। Chrome, Edge এবং Firefox সমর্থিত — `Alt + Shift + S` দিয়ে সাইডবার খুলুন।
 
 - **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
@@ -139,7 +156,9 @@ Vercel, Cloudflare Pages, Docker বা স্থানীয়ভাবে আ
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frockbenben%2FChatGPT-Shortcut%2Ftree%2Fmain)
 
-> **টিপ**: Vercel-এর এক-ক্লিক ডেপ্লয় একটি নতুন প্রজেক্ট তৈরি করে (ফর্ক নয়), তাই আপস্ট্রিম আপডেট চেক কাজ করবে না। অটো-সিঙ্ক পেতে প্রথমে রেপো ফর্ক করুন, তারপর Vercel-এ ফর্কটি ইম্পোর্ট করুন — সম্পূর্ণ নির্দেশনা [ডেপ্লয় গাইডে](https://www.aishort.top/bn/docs/deploy#%E5%BC%80%E5%90%AF%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0) রয়েছে।
+> **অফলাইন / ইন্ট্রানেট?** এয়ার-গ্যাপড এন্টারপ্রাইজ বা সরকারি নেটওয়ার্কের জন্য একটি [অফলাইন সংস্করণ](https://www.aishort.top/bn/docs/deploy/offline) রয়েছে — কোনো ব্যাকএন্ড বা অ্যাকাউন্টের প্রয়োজন নেই, ব্রাউজারে স্থানীয়ভাবে ডেটা সংরক্ষিত হয়, একই ব্রাউজ/সার্চ/সংগ্রহ/কাস্টম-প্রম্পট বৈশিষ্ট্য সহ।
+
+> **টিপ**: Vercel-এর এক-ক্লিক ডেপ্লয় একটি নতুন প্রজেক্ট তৈরি করে (ফর্ক নয়), তাই আপস্ট্রিম আপডেট চেক কাজ করবে না। অটো-সিঙ্ক পেতে প্রথমে রেপো ফর্ক করুন, তারপর Vercel-এ ফর্কটি ইম্পোর্ট করুন — সম্পূর্ণ নির্দেশনা [ডেপ্লয় গাইডে](https://www.aishort.top/bn/docs/deploy/sync-updates) রয়েছে।
 
 ## 🤝 অবদান রাখুন
 
@@ -157,7 +176,7 @@ Vercel, Cloudflare Pages, Docker বা স্থানীয়ভাবে আ
 আলোচনা এবং ফিডব্যাকের জন্য যোগ দিন:
 
 <a href="https://t.me/aishort_top">
-    <img src="https://img.shields.io/badge/Telegram-গ্রুপ-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
+    <img src="https://img.shields.io/badge/Telegram-Group-blue?logo=telegram&style=for-the-badge" alt="Telegram" />
 </a>
 <a href="https://discord.gg/PZTQfJ4GjX">
     <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord" />
@@ -173,4 +192,4 @@ Vercel, Cloudflare Pages, Docker বা স্থানীয়ভাবে আ
 
 ---
 
-⭐ নতুন বৈশিষ্ট্য সম্পর্কে জানতে স্টার দিন!
+⭐ নতুন বৈশিষ্ট্য সম্পর্কে জানতে এই প্রজেক্টটি স্টার করুন!

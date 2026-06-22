@@ -30,7 +30,7 @@ ChatGPT Shortcut uzantısını kurun (Not ⚠️: .crx dosyasını sürüklemeni
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Başarılı kurulumdan sonra [Plugin Kullanım Öğreticisi](./usage.md)'ni inceleyin.
+Başarılı kurulumdan sonra [Eklenti Kullanım Öğreticisi](./usage)'ni inceleyin.
 
 ## Kurulum Sırasında Sorun mu Var?
 
@@ -40,4 +40,4 @@ Başarılı kurulumdan sonra [Plugin Kullanım Öğreticisi](./usage.md)'ni ince
 
 3. crx dosyasını "Uzantılar" sayfasına sürüklediniz mi? Not ⚠️: "Paketlenmemiş öğe yükle"ye tıklamayın; crx dosyasını sürüklemeniz gerekir.
 
-4. Tarayıcı crx dosyalarını yüklemeye izin vermiyor mu? zip dosyasını yüklemeyi deneyin! [zip kurulum öğreticisi için tıklayın](./manual-chrome-extension-zip.md).
+4. Tarayıcı crx dosyalarını yüklemeye izin vermiyor mu? zip dosyasını yüklemeyi deneyin! [zip kurulum öğreticisi için tıklayın](./manual-chrome-extension-zip).

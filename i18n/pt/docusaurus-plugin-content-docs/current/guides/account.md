@@ -6,59 +6,70 @@ description: Entre no AI Short com Google em um clique ou login sem senha por e-
 
 # Gerenciamento de Conta
 
-O AI Short pode ser usado sem login — mas **após o login** você pode favoritar prompts, criar seus próprios prompts, compartilhar na comunidade e sincronizar entre dispositivos. A seguir, explicamos como fazer login, registrar-se, gerenciar senhas e cache.
+O AiShort funciona sem conta — mas **fazer login** permite coletar seus prompts favoritos, criar os seus próprios, compartilhá-los com a comunidade e sincronizar entre dispositivos. Esta página cobre login, registro, senhas e dados.
 
 ## Métodos de Login
 
-### Login com Conta e Senha
+O diálogo de login oferece as abas "**Login com senha**" e "**Login sem senha**", além do login com Google em um clique.
 
-Faça login usando seu nome de usuário ou e-mail registrado + senha.
+### Login com Senha
 
-Esqueceu a senha: clique em "Esqueci minha senha" na página de login e insira o e-mail registrado para receber o link de redefinição.
+Faça login com seu nome de usuário ou e-mail registrado mais a senha.
+
+### Login sem Senha
+
+1. Alterne para "Login sem senha" e insira seu e-mail registrado
+2. Clique em "**Obter link de login**" — um link de acesso é enviado para sua caixa de entrada
+3. Abra o link para fazer login
+
+Sem necessidade de memorizar nada — prático para quem faz login de vez em quando.
 
 ### Login com Google
 
-Clique no ícone do Google na página de login para entrar com um único clique. Na primeira vez, sua conta é criada automaticamente — sem necessidade de cadastro separado.
+Clique no botão do Google no diálogo de login para entrar com um clique. Na primeira vez, criamos uma conta para você automaticamente — sem etapa de registro separada.
 
 ![](/img/docs/account-login.png)
 
-### Login Sem Senha
-
-1. Insira seu e-mail registrado na página de login
-2. Clique em "Enviar Link de Login"
-3. Abra o link recebido por e-mail para fazer login
-
-Sem precisar lembrar senha — ideal para quem não faz login com frequência.
-
 ## Registrar Conta
 
-1. Clique em "Registrar" na página de login
-2. Preencha o nome de usuário, e-mail e senha
-3. Login automático após o envio
+1. No diálogo de login, clique em "**Cadastre-se agora**" para alternar para o registro
+2. Preencha e-mail, nome de usuário e senha, e concorde com a Política de Privacidade e os Termos de Serviço
+3. Você será conectado automaticamente após o envio
 
 ![](/img/docs/account-register.png)
 
-## Alterar Senha
+## Minha Conta
 
-Após o login, altere sua senha em "Minha Conta":
+Após o login, abra a página "**Minha Conta**" para gerenciar seu perfil, senha, nível e dados.
 
 ![Página Minha Conta](/img/docs/account-profile.png)
 
-1. Insira a senha atual
+### Alterar Nome de Usuário
+
+Clique no ícone de edição ao lado do seu nome de usuário e salve.
+
+### Alterar Senha
+
+1. Insira sua senha atual
 2. Insira a nova senha e confirme
 3. Clique em "Alterar Senha" para enviar
 
-## Limpar Cache
+Esqueceu a senha? No diálogo de login, clique em "Esqueceu a senha?", insira seu e-mail registrado, clique em "Enviar e-mail de redefinição" e siga o link.
 
-Quando os dados não sincronizam ou a exibição está anormal:
+### Meu Nível
 
-1. Acesse "Minha Conta" e vá até a seção "Gerenciamento de Dados → Limpar Cache"
-2. Clique no botão "Limpar Cache" e confirme — todos os dados serão recarregados automaticamente
+A página da conta exibe seu **nível (L0–L9)** e o progresso até o próximo nível — seu nível é determinado por **quantos prompts você compartilhou com a comunidade**.
 
-Seus favoritos e prompts personalizados não serão perdidos — é apenas uma ressincronização forçada.
+## Gerenciamento de Dados
+
+A seção "Minha Conta → Gerenciamento de Dados" oferece três ações:
+
+- **Limpar cache** — atualiza os dados armazenados localmente em cache; use quando os dados não estiverem sincronizando ou a exibição parecer incorreta. Suas coleções e prompts personalizados não são perdidos, isso apenas força uma ressincronização
+- **Exportar prompts** — exporta um arquivo JSON para backup (consulte [Prompts Personalizados](./user-prompts#exportar-prompts))
+- **Importar prompts** — importa prompts e coleções de um arquivo JSON
 
 ## Documentação Relacionada
 
 - [Início Rápido](./getting-started) - Uso básico
-- [Minha Coleção](./my-collection) - Gerenciamento de favoritos
-- [Prompts Personalizados](./user-prompts) - Criação e gerenciamento
+- [Minha Coleção](./my-collection) - Gerenciamento de coleção
+- [Prompts Personalizados](./user-prompts) - Criar e gerenciar

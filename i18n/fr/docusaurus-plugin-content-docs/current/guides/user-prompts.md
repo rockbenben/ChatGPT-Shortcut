@@ -6,79 +6,79 @@ description: Créez vos propres prompts IA et sauvegardez-les dans votre compte 
 
 # Prompts personnalisés
 
-Après connexion, vous pouvez créer vos propres prompts et les enregistrer dans votre compte pour les réutiliser à volonté. Vos prompts personnalisés apparaissent dans la vue "Ma collection".
+Après connexion, vous pouvez créer vos propres prompts et les enregistrer dans votre compte pour y accéder rapidement par la suite. Les prompts personnalisés apparaissent dans la vue «&nbsp;Ma Collection&nbsp;».
 
 ## Créer un prompt
 
-1. Cliquez sur le bouton "Ajouter" en haut à droite
-2. Dans la fenêtre "Créer un prompt" qui s'ouvre, remplissez le formulaire :
-   - **Nom du prompt** (obligatoire) : donnez un nom à votre prompt
-   - **Contenu du prompt** (obligatoire) : le texte du prompt
-   - **Utilisation** (facultatif) : brève description de ce que fait le prompt
-   - **Remarques** (facultatif) : source, versions en d'autres langues, notes complémentaires
-3. L'interrupteur "Souhaitez-vous partager ce prompt sur la page publique ?" en bas est activé par défaut — désactivez-le pour le rendre privé
-4. Cliquez sur "Créer un prompt" pour valider
+1. Après connexion, cliquez sur le bouton «&nbsp;**Créer un prompt**&nbsp;» en haut de la page
+2. Remplissez le dialogue «&nbsp;Créer un prompt&nbsp;»&nbsp;:
+   - **Nom du prompt** (obligatoire)&nbsp;: un nom pour le prompt
+   - **Contenu du prompt** (obligatoire)&nbsp;: le corps du prompt&nbsp;; le texte entre crochets `[...]` est mis en évidence comme espace réservé à l'affichage
+   - **Utilisation** (facultatif)&nbsp;: une brève description de ce que fait le prompt
+   - **Remarques** (facultatif)&nbsp;: source, versions en d'autres langues, ou notes complémentaires
+3. L'interrupteur «&nbsp;Souhaitez-vous partager ce prompt sur la page publique&nbsp;?&nbsp;» en bas est activé par défaut — désactivez-le pour rendre le prompt privé
+4. Cliquez sur «&nbsp;Créer un prompt&nbsp;» pour valider
 
 ![Fenêtre de création de prompt](/img/docs/user-prompts-create.png)
 
-> 💡 **Exemple concret** — un prompt « Assistant de compte-rendu de réunion » :
-> - **Nom du prompt** : Assistant de compte-rendu de réunion
-> - **Contenu du prompt** : Tu es un assistant de rédaction professionnel. À partir des notes brutes ci-dessous, rédige un compte-rendu de réunion clair et structuré, comprenant : un résumé de l'ordre du jour, les principales décisions prises, les actions à mener avec leurs responsables et échéances. Reste concis et factuel. Notes : [coller ici vos notes de réunion]
-> - **Utilisation** : transformer des notes prises au fil de l'eau en compte-rendu diffusable aux participants
-> - **Remarques** : idéal après les réunions d'équipe ou les points clients ; vérifier les noms et les échéances avant envoi
+> 💡 **Exemple** — un prompt «&nbsp;Générateur de compte-rendu de standup&nbsp;»&nbsp;:
+> - **Nom du prompt**&nbsp;: Générateur de compte-rendu de standup
+> - **Contenu du prompt**&nbsp;: Tu es un assistant de communication concis. Transforme les notes suivantes en un compte-rendu de standup quotidien avec trois sections — Hier, Aujourd'hui, Blocages. Garde chaque point court et axé sur les résultats&nbsp;: [mes notes brutes]
+> - **Utilisation**&nbsp;: Convertit des notes désorganisées en un compte-rendu de standup propre
+> - **Remarques**&nbsp;: À utiliser avant le standup matinal
 
 ## Éditer un prompt
 
-Dans la vue Ma collection, cliquez sur la carte d'un prompt que vous avez créé pour ouvrir la fenêtre "Éditer le prompt". Vous pouvez :
+Dans la vue Ma Collection, cliquez sur le bouton d'édition (crayon) sur la carte d'un prompt que vous avez créé pour ouvrir le dialogue «&nbsp;Éditer le prompt&nbsp;». Vous pouvez&nbsp;:
 
-- Modifier le nom, le contenu, l'utilisation, les remarques
+- Modifier le nom, le contenu, l'utilisation et les remarques
 - Basculer le statut de partage (public / privé)
-- Cliquer sur "Enregistrer" pour mettre à jour
+- Cliquer sur «&nbsp;Enregistrer&nbsp;» pour mettre à jour
 
 ![Interface d'édition de prompt](/img/docs/user-prompts-edit.png)
 
 ## Supprimer un prompt
 
-Dans la fenêtre d'édition, cliquez sur "Supprimer". La suppression est irréversible — soyez prudent.
+Cliquez sur «&nbsp;Supprimer&nbsp;» dans le dialogue d'édition. La suppression est irréversible — soyez prudent.
 
 ## Partager avec la communauté
 
-Lors de la création ou de l'édition, l'interrupteur "Souhaitez-vous partager ce prompt sur la page publique ?" en bas contrôle la visibilité :
+Lors de la création ou de l'édition, l'interrupteur «&nbsp;Souhaitez-vous partager ce prompt sur la page publique&nbsp;?&nbsp;» en bas contrôle la visibilité&nbsp;:
 
-- **Activé (par défaut)** : le prompt apparaît sur la page [Prompts de la communauté](./community) ; les autres utilisateurs peuvent le voir et le collectionner
-- **Désactivé** : prompt privé, visible uniquement par vous
+- **Activé (par défaut)**&nbsp;: le prompt apparaît sur la page [Prompts de la communauté](./community), où les autres utilisateurs peuvent le voir et le collectionner
+- **Désactivé**&nbsp;: prompt privé — visible uniquement par vous
 
 Le statut de partage peut être modifié à tout moment.
 
-## Exporter une sauvegarde
+## Exporter les prompts
 
-1. Allez dans "Mon Compte" → rubrique "Gestion des données → Exporter les prompts"
-2. Cliquez sur le bouton "Exporter les données"
+1. Allez dans «&nbsp;Mon Compte&nbsp;» et trouvez la rubrique «&nbsp;Gestion des Données → Exporter les prompts&nbsp;»
+2. Cliquez sur le bouton «&nbsp;Exporter les Données&nbsp;»
 3. Le système génère un fichier JSON et le télécharge automatiquement
 
-L'exportation contient :
+Le contenu exporté comprend&nbsp;:
 
-- Le nom, le contenu, l'utilisation et les remarques de chaque prompt
-- Les dates de création et de mise à jour
+- Le nom, le contenu, l'utilisation et les remarques du prompt
 - Le statut de partage
+- Vos collections, l'ordre de vos collections et vos balises personnalisées
 
-Il est recommandé d'exporter régulièrement pour éviter toute perte de données.
+Des exports réguliers sont recommandés pour éviter toute perte de données.
 
 ## Importer des prompts
 
-Importez des prompts et des favoris depuis un fichier JSON :
+Importez des prompts et des collections depuis un fichier JSON&nbsp;:
 
-1. Allez dans "Mon Compte" → rubrique "Gestion des données → Importer les prompts"
-2. Cliquez sur le bouton "Importer les données"
-3. Sélectionnez le fichier JSON
-4. Le système fusionne automatiquement les données (déduplication par titre ; les prompts dont l'ID appartient à un autre utilisateur passent automatiquement en privé)
+1. Allez dans «&nbsp;Mon Compte&nbsp;» et trouvez la rubrique «&nbsp;Gestion des Données → Importer les prompts&nbsp;»
+2. Cliquez sur le bouton «&nbsp;Importer les données&nbsp;»
+3. Sélectionnez un fichier JSON
+4. Le système fusionne automatiquement les données (déduplication par titre&nbsp;; les prompts dont l'ID appartient à un autre compte passent automatiquement en privé)
 
 ### Collaboration en équipe
 
-Workflow recommandé pour partager des prompts au sein d'une équipe :
+Workflow recommandé pour partager des prompts au sein d'une équipe&nbsp;:
 
-1. **Filtrer et partager** : après l'export, supprimez manuellement la liste des favoris ou ne conservez que les prompts à partager, puis envoyez le fichier aux membres de l'équipe pour qu'ils l'importent
-2. **Protection de la vie privée** : les prompts importés provenant d'un autre utilisateur (ID n'appartenant pas au compte courant) passent automatiquement en **privé**, garantissant l'isolation des données entre les membres
+1. **Filtrer et partager**&nbsp;: après l'export, supprimez manuellement la liste de vos collections ou filtrez pour ne conserver que les prompts à partager, puis envoyez le fichier aux membres de l'équipe pour qu'ils l'importent
+2. **Protection de la vie privée**&nbsp;: les prompts importés appartenant à d'autres utilisateurs (ID n'appartenant pas au compte courant) passent automatiquement en **privé**, de sorte que les données de chaque membre restent séparées
 
 ## Documentation associée
 

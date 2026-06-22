@@ -30,4 +30,4 @@ chrome://extensions
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-インストールが成功したら、[プラグイン使用チュートリアル](./usage.md)を確認できます。
+インストールが成功したら、[プラグイン使用チュートリアル](./usage)を確認できます。

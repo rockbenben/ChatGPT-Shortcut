@@ -37,7 +37,7 @@ AiShort'taki promptlar geneldir; **prompt girişi kabul eden her AI senaryosunda
 
 Daha fazla model listesi için [Başlarken → Popüler AI Modelleri](./getting-started#popüler-ai-modelleri) sayfasına bakın.
 
-**Modeller arası uyumluluk**: Metin tabanlı promptların büyük çoğunluğu modeller arası uyumludur — yazma, çeviri, programlama, soru-cevap gibi genel görevlerde aynı prompt başlıca büyük dil modellerinde etkili sonuçlar verir; AiShort'taki her prompt varsayılan olarak belirli bir modele bağlı değildir. Ancak **performans farkları olabilir**: yazma için Claude genellikle daha incelikli, ChatGPT-5 talimatlara daha sıkı bağlı kalır; programlama için GPT-5, Gemini Pro ve DeepSeek farklı güçlü yönlere sahiptir; yoğun akıl yürütme gerektiren sorularda Claude Opus / Gemini Deep Thinking / o-serisi genellikle daha tutarlıdır. Görsel üretim promptları (Midjourney / Stable Diffusion / DALL·E) ise uyumlu değildir; her birinin kendi sözdizimine göre ayarlanması gerekir.
+**Modeller arası uyumluluk**: Metin tabanlı promptlar büyük ölçüde modelden bağımsızdır — yazma, çeviri, programlama, soru-cevap gibi genel görevlerde aynı prompt başlıca büyük dil modellerinde etkili sonuçlar verir; AiShort'taki her prompt varsayılan olarak belirli bir modele bağlı değildir. Tek istisna görsel üretim promptlarıdır (Midjourney / Stable Diffusion / DALL·E); bunların her birinin kendi sözdizimine göre ayarlanması gerekir.
 
 ## Promptlar neden İngilizce yazılmış?
 
@@ -81,7 +81,7 @@ Promptu hemen değiştirmek yerine önce şu yönlerden ayarlama yapın:
 
 1. **Köşeli parantezdeki `[yer tutucuları]` daha somut hale getirin** — stil, uzunluk, alan, hedef okuyucu profili gibi ayrıntılar ekleyin
 2. **AI'dan iyileştirme isteyin**: Memnun olmadığınız yanıtlar için "lütfen daha X biçimde değiştir" veya "lütfen Y stilinde yeniden yaz" gibi takip soruları sorun; AI genellikle bir iki turda hedefe yaklaşır. AI'a kendi yanıtını puanlayıp geliştirmesini de söyleyebilirsiniz
-3. **Modeller arasında karşılaştırma yapın**: Aynı prompt Claude Sonnet / ChatGPT / Gemini / DeepSeek üzerinde bazen çok farklı sonuç verir — yazma için Claude genellikle daha incelikli, programlama için GPT-5 / DeepSeek daha tutarlıdır
+3. **Modeller arasında karşılaştırma yapın**: Aynı promptu başka bir modelde (Claude / ChatGPT / Gemini / DeepSeek vb.) tekrar deneyin; modellerin güçlü yönleri farklıdır ve sonuçlar küçümsenmeyecek ölçüde değişebilir
 4. **Topluluğa bakın**: [Topluluk Promptları](./community) içinde daha uygun bir sürüm bulabilirsiniz — iyi promptlarınızı da orada paylaşabilirsiniz
 5. **Geri bildirim verin**: Sorun yaşıyor veya öneriniz var mı? [Geri bildirim](/feedback) sayfasına bekleriz
 

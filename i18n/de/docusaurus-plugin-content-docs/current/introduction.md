@@ -1,4 +1,4 @@
----
+﻿---
 slug: /
 sidebar_label: AI Short Einführung
 title: Kuratierte KI Prompt-Bibliothek | Ein-Klick-Kopieren
@@ -11,7 +11,7 @@ AI Short (ChatGPT Shortcut) ist eine nach Szenarien kategorisierte KI-Prompt-Bib
 
 > **Was ist ein „Prompt"?** Ein Prompt ist die Anweisung, die Sie der KI geben — sie bestimmt die Qualität der Ausgabe. Gute Prompts liefern professionelle, präzise Antworten; vage Prompts nur mittelmäßige. AiShort sammelt für Sie hochwertige Prompts für verschiedene Szenarien (Schreiben, Programmieren, Büro, Lernen ...), damit Sie sich nicht selbst überlegen müssen, wie Sie die richtige Frage stellen.
 
-## ⚡ 30-Sekunden Schnellstart
+## 30-Sekunden Schnellstart
 
 1. Öffnen Sie AI Short
 2. Suchen oder durchsuchen Sie den benötigten Prompt
@@ -41,9 +41,11 @@ So einfach ist das — weitere Funktionen finden Sie im [Erste-Schritte-Leitfade
 
 🔐 **Mehrere Anmeldemethoden**: Konto-Passwort, Google, passwortlose E-Mail-Links.
 
+🏆 **Level**: Verdienen Sie Level (L0–L9), indem Sie Prompts mit der Community teilen.
+
 ## Offline-Version
 
-Die [Offline-Version](./guides/offline) ist speziell für Unternehmens-Intranets, Behördennetzwerke und andere Szenarien ohne Internetzugang konzipiert. Es ist kein Backend-Server und kein Konto erforderlich — nach der Bereitstellung sofort einsatzbereit. Sie behält die Kernfunktionen Browsen, Suchen, Sammeln und Anpassen bei, und das Datenformat ist mit der Online-Version kompatibel.
+Die [Offline-Version](./deploy/offline) ist speziell für Unternehmens-Intranets, Behördennetzwerke und andere Szenarien ohne Internetzugang konzipiert. Es ist kein Backend-Server und kein Konto erforderlich — nach der Bereitstellung sofort einsatzbereit. Sie behält die Kernfunktionen Browsen, Suchen, Sammeln und Anpassen bei, und das Datenformat ist mit der Online-Version kompatibel.
 
 ## Prompt-Quellen
 

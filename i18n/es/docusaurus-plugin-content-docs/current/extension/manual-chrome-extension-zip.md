@@ -30,4 +30,4 @@ Arrastra la carpeta descomprimida a la página de extensiones para completar la 
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage.md).
+Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage).

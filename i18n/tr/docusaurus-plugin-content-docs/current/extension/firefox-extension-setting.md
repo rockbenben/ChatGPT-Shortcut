@@ -20,4 +20,4 @@ Firefox'un izin modeli Chrome'dan daha katıdır—uzantı kurulduktan sonra, Ch
 
 ![Firefox Uzantı İzni](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
 
-Başarılı kurulumdan sonra [Plugin Kullanım Öğreticisi](./usage.md)'ni inceleyin.
+Başarılı kurulumdan sonra [Eklenti Kullanım Öğreticisi](./usage)'ni inceleyin.

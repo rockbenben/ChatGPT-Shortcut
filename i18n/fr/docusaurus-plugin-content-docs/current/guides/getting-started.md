@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Bien commencer
 title: Guide de démarrage AI Short | Copiez des prompts vers ChatGPT, DeepSeek
 description: Prise en main en 30 secondes ! Copiez des prompts vers ChatGPT, Gemini, DeepSeek et d'autres modèles d'IA pour améliorer instantanément la qualité de vos conversations et votre productivité.
@@ -17,7 +17,7 @@ Un bon prompt détermine la qualité de la réponse de l'IA. AiShort rassemble u
 3. Collez-le dans n'importe quel outil d'IA — page de chat, outil de programmation, appel d'API, agent, etc.
 4. Complétez les **espaces réservés** du prompt (par exemple `[contenu]`, `[sujet]`) avec vos besoins spécifiques, puis envoyez à l'IA
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Astuce** : la plupart des prompts utilisent des crochets `[...]` pour marquer le contenu que vous devez fournir — remplacez simplement le texte entre crochets par votre contenu spécifique.
 
@@ -31,7 +31,7 @@ Un bon prompt détermine la qualité de la réponse de l'IA. AiShort rassemble u
 | Créer mes propres prompts               | [Prompts personnalisés](./user-prompts)              |
 | M'inscrire ou me connecter              | [Gestion de compte](./account)                       |
 | Découvrir les partages de la communauté | [Prompts de la communauté](./community)              |
-| Déploiement hors ligne / intranet       | [Version déploiement hors ligne](./offline)          |
+| Déploiement hors ligne / intranet       | [Version déploiement hors ligne](../deploy/offline)          |
 
 ## Modèles d'IA courants
 

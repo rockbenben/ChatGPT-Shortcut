@@ -26,7 +26,7 @@ description: أتقن إضافة AI Short! فعّل الشريط الجانبي 
 
 تدعم الإضافة الوضع الداكن. فعّل "الوضع الداكن" في الإعدادات لتحويل الواجهة إلى المظهر الداكن.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## اختصار لوحة المفاتيح
 

@@ -14,5 +14,9 @@
   "sidebar.docs.category.浏览器插件": {
     "message": "브라우저 확장 프로그램",
     "description": "The label for category '浏览器插件' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.项目部署": {
+    "message": "프로젝트 배포",
+    "description": "The label for category '项目部署' in sidebar 'docs'"
   }
 }

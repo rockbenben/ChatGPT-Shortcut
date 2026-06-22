@@ -10,10 +10,10 @@ After logging in, you can create your own prompts and save them to your account 
 
 ## Create Prompt
 
-1. Click the "Add" button in the top right corner
+1. After logging in, click the "**Create Prompt**" button at the top of the page
 2. Fill in the "Create Prompt" dialog:
    - **Prompt Name** (required): A name for the prompt
-   - **Prompt Content** (required): The body of the prompt
+   - **Prompt Content** (required): The body of the prompt; text in square brackets `[...]` is highlighted as a placeholder when displayed
    - **Usage** (optional): A short description of what the prompt does
    - **Notes** (optional): Source, other-language versions, or supplementary notes
 3. The "Would you like to share this prompt on the public page?" switch at the bottom is on by default — turn it off to keep the prompt private
@@ -29,7 +29,7 @@ After logging in, you can create your own prompts and save them to your account 
 
 ## Edit Prompt
 
-In the My Collection view, click a prompt card you created to open the "Edit Prompt" dialog. You can:
+In the My Collection view, click the edit (pencil) button on a prompt card you created to open the "Edit Prompt" dialog. You can:
 
 - Modify name, content, usage, and notes
 - Toggle sharing status (public / private)
@@ -59,8 +59,8 @@ Sharing status can be toggled at any time.
 Exported content includes:
 
 - Prompt name, content, usage, and notes
-- Creation and update timestamps
 - Sharing status
+- Your collections, collection order, and custom tags
 
 Regular exports are recommended to prevent data loss.
 

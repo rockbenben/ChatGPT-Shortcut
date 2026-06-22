@@ -30,7 +30,7 @@ Instal ekstensi ChatGPT Shortcut (Catatan ⚠️: Anda harus menyeret file .crx,
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage.md).
+Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage).
 
 ## Masalah Instalasi?
 
@@ -40,4 +40,4 @@ Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage.md).
 
 3. Apakah Anda menyeret file crx ke halaman "Ekstensi"? Catatan ⚠️: Jangan klik "Muat ekstensi yang belum dikemas", Anda harus menyeret file crx.
 
-4. Browser tidak mengizinkan instalasi file crx? Coba instal file zip! [Klik di sini untuk tutorial instalasi zip](./manual-chrome-extension-zip.md).
+4. Browser tidak mengizinkan instalasi file crx? Coba instal file zip! [Klik di sini untuk tutorial instalasi zip](./manual-chrome-extension-zip).

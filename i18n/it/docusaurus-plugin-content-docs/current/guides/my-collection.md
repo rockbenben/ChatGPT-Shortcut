@@ -6,32 +6,49 @@ description: Salva i tuoi prompt IA preferiti su AI Short, organizzali con tag p
 
 # La Mia Collezione
 
-Dopo l'accesso, la vista **La Mia Collezione** ti permette di organizzare i prompt preferiti come faresti con i segnalibri: ordinamento drag-and-drop, tag personalizzati e filtri per ritrovarli al volo.
+Una volta effettuato l'accesso, **La Mia Collezione** ti offre uno spazio stile segnalibri per i tuoi prompt preferiti — trascina per riordinare, aggiungi tag per contesto e filtra per tag quando hai bisogno di trovare qualcosa rapidamente. I prompt che crei compaiono qui.
 
-:::tip Versione Online vs Versione Offline
-Nella versione online i dati di collezione sono salvati sul server (richiede accesso); nella [versione deploy offline](./offline) i dati sono salvati localmente nel browser (localStorage, senza accesso). Le funzionalità sono identiche.
+:::tip[Versione Online vs Versione Offline]
+
+Nella versione online i dati di collezione sono salvati sul server (richiede accesso); nella [versione deploy offline](../deploy/offline) i dati sono salvati localmente nel browser (localStorage, senza accesso). Le funzionalità sono identiche.
+
 :::
 
 ## Cambio Vista
 
-I pulsanti di cambio vista in alto nella home page offrono due modalità:
+Lo switcher di vista in cima alla home page offre due modalità:
 
-- **La Mia Collezione**: Mostra le tue collezioni + prompt personalizzati
-- **Libreria Prompt**: Sfoglia la libreria di prompt pubblica
+- **La Mia Collezione**: mostra i prompt raccolti e quelli personalizzati
+- **Esplora**: sfoglia la libreria pubblica di prompt curati
 
-Il browser memorizza la tua preferenza e ti riporta all'ultima vista usata alla visita successiva.
+Il browser ricorda l'ultima vista usata, così riprendi esattamente da dove avevi lasciato.
 
-![Vista La Mia Collezione](/img/docs/my-collection-view.gif)
+![Vista La Mia Collezione](/img/docs/my-collection-view.webp)
+
+## Riepilogo della Collezione
+
+Una scheda riepilogativa in cima alla vista La Mia Collezione ti mostra i punti salienti a colpo d'occhio:
+
+- Quattro statistiche — **Totale** / **Miei Prompt** / **Preferiti** / **Tag Personalizzati**
+- Un **badge di livello** (L0–L9) che sale man mano che **condividi più prompt con la community**
 
 ## Aggiungi alla Collezione
 
-Clicca sul pulsante "Colleziona" su una scheda per aggiungerla a La Mia Collezione.
+Clicca il pulsante "Colleziona" a cuore su una scheda per aggiungerla a La Mia Collezione.
 
-Aggiungere alla collezione un prompt della community vale anche come voto a favore e contribuisce a dare maggiore visibilità ai contenuti di qualità.
+Aggiungere alla collezione un prompt della community vale anche come voto a favore, aiutando i contenuti di qualità ad avere più visibilità.
 
 ## Rimuovi dalla Collezione
 
-Nella vista La Mia Collezione, clicca sull'icona del cuore sulla scheda per rimuoverla dalla collezione.
+Nella vista La Mia Collezione, clicca sull'icona del cuore su una scheda per rimuoverla.
+
+## Filtra e Cerca
+
+La barra degli strumenti in cima alla vista collezione ti aiuta a trovare rapidamente quello che cerchi:
+
+- Uno switch segmentato **Tutto / Prompt / Preferiti** per filtrare per tipo
+- Chip dei tag personalizzati — clicca per filtrare per tag
+- Una casella di ricerca (`Ctrl + K` per portare il focus) per la ricerca per parole chiave
 
 ## Tag Personalizzati
 
@@ -39,35 +56,29 @@ Aggiungi tag ai prompt collezionati per una classificazione più comoda:
 
 ### Aggiungi Tag
 
-1. Clicca sull'icona del tag nella barra di controllo
-2. Seleziona un tag esistente o clicca su "+" per crearne uno nuovo
-3. I nuovi tag possono avere nome e colore personalizzati
+1. Clicca su "**Gestisci Tag**" nella barra degli strumenti
+2. Inserisci il nome del tag e scegli uno degli **11 colori preimpostati**
+3. Salva — il tag è ora disponibile nella barra dei filtri
 
 ### Gestisci Tag
 
-Clicca su "Gestisci Tag" per accedere all'interfaccia di gestione:
+Nel dialogo "Gestisci Tag" puoi:
 
-- Modifica il nome del tag
-- Cambia il colore del tag (11 colori preimpostati)
-- Elimina i tag
+- Rinominare i tag
+- Cambiare il colore del tag (11 colori preimpostati)
+- Eliminare i tag
 
 ![Popup Gestione Tag](/img/docs/my-collection-tag.png)
 
-### Filtra per Tag
-
-Nella barra di filtro della vista La Mia Collezione, puoi filtrare per tag personalizzati.
-
 ## Ordinamento Drag-and-Drop
 
-Nella vista La Mia Collezione è supportato l'ordinamento delle schede tramite drag-and-drop:
+Nella vista La Mia Collezione è supportato il riordinamento tramite drag-and-drop:
 
-1. Trascina la maniglia a sinistra della scheda
-2. Sposta nella posizione di destinazione e rilascia
-3. Il nuovo ordine viene salvato automaticamente (online sul server, offline localmente nel browser)
+1. Afferra la maniglia di trascinamento sul bordo sinistro della scheda
+2. Rilasciala nella posizione di destinazione
+3. Il nuovo ordine viene salvato automaticamente (sul server nella versione online, nel browser nella versione offline)
 
-L'ordinamento è disponibile solo nella vista La Mia Collezione.
-
-![Ordinamento Drag-and-Drop](/img/docs/my-collection-drag.gif)
+![Ordinamento Drag-and-Drop](/img/docs/my-collection-drag.webp)
 
 ## Documentazione Correlata
 

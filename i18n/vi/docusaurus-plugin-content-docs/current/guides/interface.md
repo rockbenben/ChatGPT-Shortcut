@@ -1,53 +1,67 @@
 ---
 sidebar_label: Hướng dẫn Giao diện
-title: Hướng dẫn Giao diện AI Short | Lọc Thẻ, Tìm kiếm & Thao tác Prompt
-description: "Làm chủ giao diện AI Short: tìm prompt nhanh bằng bộ lọc thẻ và tìm kiếm từ khóa, xem chi tiết, sao chép và thu thập prompt chỉ trong vài giây."
+title: Hướng dẫn Giao diện AI Short | Lọc Thẻ & Tìm kiếm Thông minh
+description: Làm chủ giao diện AI Short! Nhanh chóng tìm prompt bằng bộ lọc thẻ và tìm kiếm từ khóa, hiểu chi tiết thẻ và thao tác thu thập.
 ---
 
 # Hướng dẫn Giao diện
 
-Mục này giới thiệu ba khu vực chính trên trang chủ AiShort — **Khu vực thẻ** (các thẻ tình huống ở trên cùng), **Khu vực tìm kiếm** (ô nhập từ khóa), **Khu vực hiển thị prompt** (danh sách thẻ phía dưới) — cùng cách dùng chúng để tìm prompt mong muốn một cách nhanh chóng.
+Trang chủ AiShort gồm bốn phần — **tiêu đề và nút điều hướng** ở trên cùng, **bộ lọc thẻ** bên dưới, **thanh tìm kiếm**, và **thẻ prompt** chiếm phần còn lại. Mục này hướng dẫn cách phối hợp chúng để tìm đúng prompt bạn cần.
 
 ![](/img/docs/interface-home.png)
 
-## 🏷︎ Lọc theo Thẻ
+## Nút Điều hướng Phía trên
 
-Lọc theo lĩnh vực và chức năng của prompt. Bộ chuyển đổi **OR / AND** ở phía trên bên phải quyết định quy tắc lọc đa thẻ:
+Các nút bên dưới tiêu đề trang thay đổi tùy trạng thái đăng nhập:
 
-- **OR** (mặc định): Hiển thị nếu khớp bất kỳ thẻ nào
-- **AND**: Phải khớp đồng thời tất cả các thẻ
+- **Chưa đăng nhập**: "**Đăng nhập miễn phí**" + "**Khám phá cộng đồng**"
+- **Đã đăng nhập**: nút chuyển chế độ xem ("**Khám phá**" ⇄ "**Bộ sưu tập của tôi**"), "**Tạo prompt**", và menu cài đặt bên phải ("Tài khoản của tôi", "Đăng xuất")
+
+> 💡 Bạn có thể duyệt, tìm kiếm và sao chép mọi prompt tuyển chọn mà không cần đăng nhập. Đăng nhập chỉ để thêm tính năng thu thập, tạo prompt và đồng bộ đa thiết bị.
+
+## Lọc theo Thẻ
+
+Lọc prompt theo lĩnh vực và chức năng. Bộ chuyển đổi **OR / AND** ở góc trên bên phải quyết định cách kết hợp nhiều thẻ:
+
+- **OR** (mặc định): Hiển thị prompt khớp với bất kỳ thẻ nào đã chọn
+- **AND**: Chỉ hiển thị prompt khớp với tất cả các thẻ đã chọn
+
+Sau khi chọn thẻ, nút "**Xóa bộ lọc**" xuất hiện để xóa tất cả chỉ với một cú nhấp. Trên di động, thẻ bị thu gọn theo mặc định — nhấp "**Hiện Thẻ**" để mở rộng.
 
 ![](/img/docs/interface-filter.png)
 
-## 🔍 Tìm kiếm Từ khóa
+## Tìm kiếm Từ khóa
 
-Hỗ trợ tìm kiếm tiêu đề, mô tả và nội dung của prompt.
+Tìm kiếm trên tiêu đề, mô tả, nội dung và ghi chú của prompt.
 
-- Phạm vi tìm trên trang chủ là **prompt tuyển chọn** (không bao gồm cộng đồng). Khi đã chọn thẻ, phạm vi tìm kiếm bị giới hạn trong các thẻ đó
-- Sau khi đăng nhập, phạm vi tìm kiếm mở rộng đến **bộ sưu tập** và **prompt tùy chỉnh** của bạn
-- Nếu tìm bằng từ khóa ngắn mà không thấy kết quả trên trang chủ, hãy thử lại tại trang [Prompt Cộng đồng](./community)
+- Trên máy tính, nhấn **`Ctrl + K`** (`⌘ + K` trên macOS) để đặt con trỏ vào ô tìm kiếm; nhấn `Esc` để thoát
+- Tìm kiếm ở trang chủ bao gồm **prompt tuyển chọn**. Khi đã chọn thẻ, phạm vi tìm kiếm giới hạn trong các thẻ đó
+- Sau khi đăng nhập, tìm kiếm mở rộng thêm **bộ sưu tập** và **prompt tùy chỉnh** của bạn
+- Nếu từ khóa ngắn không ra kết quả trên trang chủ, AiShort tự động tìm kiếm trong trang [Prompt Cộng đồng](./community) luôn
 
 ![](/img/docs/interface-search.png)
 
-## 🔬 Thẻ Prompt
+## Thẻ Prompt
+
+Prompt tuyển chọn được sắp xếp theo tổng số lần sao chép, giúp nội dung được dùng nhiều nhất hiển thị đầu tiên.
+
+### Thông tin Trên Thẻ
+
+Mỗi thẻ hiển thị tiêu đề, mô tả, xem trước nội dung và thẻ tag của prompt. Biểu tượng ngọn lửa và con số ở góc trên bên phải là tổng số lần đã được sao chép.
 
 ### Xem Chi tiết
 
-Nhấp vào thẻ để mở popup chi tiết — xem nội dung đầy đủ, ghi chú và sao chép một cú nhấp.
+Nhấp vào thẻ để mở popup chi tiết — đọc toàn bộ nội dung và ghi chú, rồi sao chép chỉ với một cú nhấp.
 
-![](/img/docs/prompt-card.gif)
+![](/img/docs/prompt-card.webp)
 
 ### Sao chép Prompt
 
-Nhấp nút "Sao chép" ở dưới thẻ, sau đó dán vào bất kỳ công cụ AI nào (trang hội thoại, công cụ lập trình, gọi API, v.v.).
+Nhấp nút "**Sao chép**" trên thẻ hoặc trong popup chi tiết, rồi dán vào bất kỳ công cụ AI nào (trang hội thoại, công cụ lập trình, gọi API, v.v.).
 
 ### Thu thập Prompt
 
-Sau khi đăng nhập, nút thu thập sẽ hiển thị trên thẻ, nhấp để thêm vào Bộ sưu tập của tôi.
-
-## 🔥 Sắp xếp theo Độ phổ biến
-
-Sắp xếp prompt theo mức độ phổ biến, giúp bạn khám phá nội dung đang thịnh hành. Thứ tự thẻ cũng sẽ điều chỉnh theo độ phổ biến, phản ánh sở thích mới nhất của cộng đồng.
+Sau khi đăng nhập, nút trái tim xuất hiện trên mỗi thẻ — nhấp để thêm prompt vào [Bộ sưu tập của tôi](./my-collection).
 
 ## Tài liệu Liên quan
 

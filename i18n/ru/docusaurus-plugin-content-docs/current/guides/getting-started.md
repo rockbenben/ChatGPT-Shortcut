@@ -1,4 +1,4 @@
----
+﻿---
 sidebar_label: Быстрый старт
 title: Руководство по началу работы с AI Short | Копируйте промпты в ChatGPT/DeepSeek
 description: Освойте AI Short за 30 секунд! Копируйте промпты в ChatGPT, Gemini, DeepSeek и другие ИИ-модели, чтобы мгновенно улучшить качество диалога и продуктивность.
@@ -17,7 +17,7 @@ description: Освойте AI Short за 30 секунд! Копируйте п
 3. Вставьте промпт в любой ИИ-инструмент — чат-страницы вроде ChatGPT, инструменты для разработчиков вроде Cursor, вызовы API и т. д.
 4. Заполните **плейсхолдеры** в промпте (например, `[содержание]`, `[тема]`) своими данными и отправьте ИИ
 
-![](/img/docs/how-to-use-aishort.gif)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **Подсказка**: большинство промптов помечают то, что нужно заполнить, квадратными скобками `[...]` — просто замените текст внутри скобок на ваш конкретный запрос.
 
@@ -31,7 +31,7 @@ description: Освойте AI Short за 30 секунд! Копируйте п
 | Создавать свои промпты             | [Свои промпты](./user-prompts)                 |
 | Зарегистрироваться или войти       | [Управление аккаунтом](./account)              |
 | Находить публикации сообщества     | [Промпты сообщества](./community)              |
-| Офлайн-/интранет-развёртывание     | [Офлайн-версия](./offline)                     |
+| Офлайн-/интранет-развёртывание     | [Офлайн-версия](../deploy/offline)                     |
 
 ## Популярные ИИ-модели
 
@@ -52,10 +52,10 @@ description: Освойте AI Short за 30 секунд! Копируйте п
 ### Модели материкового Китая
 
 - [DeepSeek](https://chat.deepseek.com)
-- [Tongyi Qianwen](https://www.tongyi.com/qianwen/)
+- [Tongyi Qianwen](https://www.qianwen.com/)
 - [Ernie Bot](https://yiyan.baidu.com)
 - [Doubao](https://www.doubao.com/chat/)
-- [Kimi](https://kimi.moonshot.cn/)
+- [Kimi](https://www.kimi.com/)
 - [ChatGLM](https://chatglm.cn/detail)
 - [iFLYTEK Spark](https://xinghuo.xfyun.cn/)
 - [Tencent Yuanbao](https://yuanbao.tencent.com/chat)

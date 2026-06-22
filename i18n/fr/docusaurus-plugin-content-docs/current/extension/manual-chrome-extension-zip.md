@@ -30,4 +30,4 @@ Glissez le dossier décompressé dans la page des extensions pour finaliser l'in
 
 ![](https://img.newzone.top/2024-08-12-22-27-47.png?imageMogr2/format/webp)
 
-Après une installation réussie, vous pouvez consulter le [Tutoriel d'utilisation de l'extension](./usage.md).
+Après une installation réussie, vous pouvez consulter le [Tutoriel d'utilisation de l'extension](./usage).

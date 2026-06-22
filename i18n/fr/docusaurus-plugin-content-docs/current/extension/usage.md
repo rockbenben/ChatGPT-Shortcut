@@ -26,7 +26,7 @@ Une fois cette option activée, la barre latérale reste ouverte lors du changem
 
 L'extension prend en charge le mode sombre : activez l'option "Mode sombre" dans les paramètres pour basculer l'interface en apparence sombre.
 
-![](/img/docs/extension-sidebar.png)
+![](/img/docs/extension-sidebar.webp)
 
 ## Raccourci clavier
 

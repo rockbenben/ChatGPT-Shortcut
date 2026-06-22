@@ -37,7 +37,7 @@ Prompt AiShort bersifat universal, **dapat digunakan di skenario AI mana pun yan
 
 Untuk daftar model selengkapnya, lihat [Memulai → Model AI Populer](./getting-started#model-ai-populer).
 
-**Kompatibilitas antar model**: sebagian besar prompt teks bersifat universal — tugas umum seperti penulisan, terjemahan, pemrograman, dan tanya jawab dapat dijalankan dengan prompt yang sama di model bahasa besar populer, dan setiap prompt AiShort secara default tidak terikat ke satu model tertentu. Namun **performanya berbeda-beda**: untuk penulisan, Claude biasanya lebih detail dan ChatGPT-5 lebih disiplin mengikuti instruksi; untuk pemrograman, GPT-5, Gemini Pro, dan DeepSeek punya keunggulan masing-masing; untuk tugas penalaran berat, Claude Opus, Gemini Deep Thinking, dan seri o biasanya lebih stabil. Untuk prompt gambar (Midjourney, Stable Diffusion, DALL·E) tidak bersifat universal — perlu disesuaikan dengan sintaks masing-masing.
+**Kompatibilitas antar model**: sebagian besar prompt teks bersifat universal — tugas umum seperti penulisan, terjemahan, pemrograman, dan tanya jawab dapat dijalankan dengan prompt yang sama di model bahasa besar populer, dan setiap prompt AiShort secara default tidak terikat ke satu model tertentu. Satu-satunya pengecualian adalah prompt gambar (Midjourney / Stable Diffusion / DALL·E), yang perlu disesuaikan dengan sintaks masing-masing.
 
 ## Mengapa prompt ditulis dalam bahasa Inggris?
 
@@ -79,7 +79,7 @@ Jangan langsung mengganti prompt, coba sesuaikan dari beberapa arah berikut:
 
 1. **Buat isi tanda kurung `[placeholder]` lebih spesifik** — tambahkan detail seperti gaya, panjang, bidang, profil pembaca, dan lainnya
 2. **Minta AI mengoptimalkan**: untuk jawaban yang kurang memuaskan, tindak lanjuti dengan "tolong buat lebih X" atau "tolong tulis ulang dengan gaya Y"; biasanya setelah satu-dua iterasi, AI sudah mendekati target. Anda juga bisa meminta AI menilai jawabannya sendiri lalu memperbaikinya
-3. **Bandingkan antar model**: prompt yang sama bisa memberikan hasil sangat berbeda di Claude Sonnet, ChatGPT, Gemini, dan DeepSeek — untuk penulisan, Claude biasanya lebih detail; untuk pemrograman, GPT-5 dan DeepSeek lebih stabil
+3. **Bandingkan antar model**: coba prompt yang sama di model lain (Claude / ChatGPT / Gemini / DeepSeek, dll.); tiap model punya keunggulan masing-masing, sehingga hasilnya bisa cukup berbeda
 4. **Coba komunitas**: di [Prompt Komunitas](./community) mungkin ada versi yang lebih cocok — kami juga menyambut prompt bagus Anda untuk dibagikan di sana
 5. **Saran umpan balik**: menemui masalah atau punya saran perbaikan? Kirimkan [umpan balik](/feedback) Anda
 

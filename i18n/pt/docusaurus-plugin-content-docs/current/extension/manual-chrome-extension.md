@@ -30,7 +30,7 @@ Instale a extensão ChatGPT Shortcut (Nota ⚠️: Você precisa arrastar o arqu
 
 ![](https://img.newzone.top/2024-08-12-22-16-38.png?imageMogr2/format/webp)
 
-Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage.md).
+Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensão](./usage).
 
 ## Problemas de Instalação?
 
@@ -40,4 +40,4 @@ Após a instalação bem-sucedida, você pode ver o [Tutorial de Uso da Extensã
 
 3. Você arrastou o arquivo crx para a página "Extensões"? Nota ⚠️: não clique em "Carregar sem compactação", você precisa arrastar o arquivo crx.
 
-4. O navegador não permite a instalação de arquivos crx? Tente instalar o arquivo zip! [Clique aqui para ver o tutorial de instalação zip](./manual-chrome-extension-zip.md).
+4. O navegador não permite a instalação de arquivos crx? Tente instalar o arquivo zip! [Clique aqui para ver o tutorial de instalação zip](./manual-chrome-extension-zip).
