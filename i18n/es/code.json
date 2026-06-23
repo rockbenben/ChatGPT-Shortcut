@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Prompts de IA compartidos por usuarios. Ordena por más recientes o más votados, busca y filtra; tras iniciar sesión, dale like y guárdalos."
+  },
+  "message.postComment.error": {
+    "message": "No se pudo enviar el comentario. Inténtalo de nuevo más tarde."
   }
 }

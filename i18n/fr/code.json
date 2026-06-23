@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Prompts IA partagés par les utilisateurs. Triez par plus récents ou plus appréciés, recherchez et filtrez ; connectez-vous pour aimer et enregistrer."
+  },
+  "message.postComment.error": {
+    "message": "Échec de l’envoi du commentaire. Veuillez réessayer plus tard."
   }
 }

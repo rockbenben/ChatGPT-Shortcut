@@ -19,29 +19,9 @@
     "message": "Herramientas",
     "description": "Navbar item with label 应用工具"
   },
-  "item.label.IMGPrompt": {
-    "message": "IMGPrompt",
-    "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.工具收藏": {
-    "message": "Colección de herramientas",
-    "description": "Navbar item with label 工具收藏"
-  },
-  "item.label.Find on Product Hunt": {
-    "message": "Buscar en Product Hunt",
-    "description": "Navbar item with label Find on Product Hunt"
-  },
   "item.label.反馈建议": {
     "message": "Comentarios",
     "description": "Navbar item with label 反馈建议"
-  },
-  "item.label.脚本扩展": {
-    "message": "Extensiones",
-    "description": "Navbar item with label 脚本扩展"
-  },
-  "item.label.ToolsByAI": {
-    "message": "ToolsByAI",
-    "description": "Navbar item with label ToolsByAI"
   },
   "item.label.Telegram": {
     "message": "Telegram",
@@ -59,8 +39,20 @@
     "message": "Grupo QQ",
     "description": "Navbar item with label QQ 群"
   },
-  "item.label.LegendTalk": {
-    "message": "LegendTalk",
-    "description": "Navbar item with label LegendTalk"
+  "item.label.AI 工具箱": {
+    "message": "Caja de herramientas IA",
+    "description": "Navbar item with label AI 工具箱"
+  },
+  "item.label.AI 绘图提示词": {
+    "message": "Prompts de imagen IA",
+    "description": "Navbar item with label AI 绘图提示词"
+  },
+  "item.label.浏览器插件": {
+    "message": "Extensión del navegador",
+    "description": "Navbar item with label 浏览器插件"
+  },
+  "item.label.AI 思想家圆桌": {
+    "message": "Mesa redonda de pensadores IA",
+    "description": "Navbar item with label AI 思想家圆桌"
   }
 }

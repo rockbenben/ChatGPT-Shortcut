@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Prompt IA condivisi dagli utenti. Ordina per più recenti o più apprezzati, cerca e filtra; dopo il login puoi mettere like e salvare."
+  },
+  "message.postComment.error": {
+    "message": "Invio del commento non riuscito. Riprova più tardi."
   }
 }

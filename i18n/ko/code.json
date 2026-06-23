@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "사용자가 공유한 AI 프롬프트. 최신순 또는 좋아요순으로 정렬, 검색·필터 지원, 로그인 후 좋아요와 즐겨찾기 가능."
+  },
+  "message.postComment.error": {
+    "message": "댓글 전송에 실패했습니다. 잠시 후 다시 시도해 주세요."
   }
 }

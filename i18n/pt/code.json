@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Prompts de IA compartilhados por usuários. Ordene por mais recentes ou mais curtidos, busque e filtre; após login, curta e salve."
+  },
+  "message.postComment.error": {
+    "message": "Falha ao enviar o comentário. Tente novamente mais tarde."
   }
 }

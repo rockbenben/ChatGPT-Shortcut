@@ -12,36 +12,16 @@
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
-    "message": "مطالب المجتمع",
+    "message": "موجّهات المجتمع",
     "description": "Navbar item with label 社区提示词"
   },
   "item.label.应用工具": {
     "message": "الأدوات",
     "description": "Navbar item with label 应用工具"
   },
-  "item.label.IMGPrompt": {
-    "message": "IMGPrompt",
-    "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.工具收藏": {
-    "message": "مجموعة الأدوات",
-    "description": "Navbar item with label 工具收藏"
-  },
-  "item.label.Find on Product Hunt": {
-    "message": "ابحث على Product Hunt",
-    "description": "Navbar item with label Find on Product Hunt"
-  },
   "item.label.反馈建议": {
-    "message": "التعليقات",
+    "message": "ملاحظات",
     "description": "Navbar item with label 反馈建议"
-  },
-  "item.label.脚本扩展": {
-    "message": "الإضافات",
-    "description": "Navbar item with label 脚本扩展"
-  },
-  "item.label.ToolsByAI": {
-    "message": "ToolsByAI",
-    "description": "Navbar item with label ToolsByAI"
   },
   "item.label.Telegram": {
     "message": "Telegram",
@@ -59,8 +39,20 @@
     "message": "مجموعة QQ",
     "description": "Navbar item with label QQ 群"
   },
-  "item.label.LegendTalk": {
-    "message": "LegendTalk",
-    "description": "Navbar item with label LegendTalk"
+  "item.label.AI 工具箱": {
+    "message": "صندوق أدوات الذكاء الاصطناعي",
+    "description": "Navbar item with label AI 工具箱"
+  },
+  "item.label.AI 绘图提示词": {
+    "message": "موجّهات الصور بالذكاء الاصطناعي",
+    "description": "Navbar item with label AI 绘图提示词"
+  },
+  "item.label.浏览器插件": {
+    "message": "إضافة المتصفح",
+    "description": "Navbar item with label 浏览器插件"
+  },
+  "item.label.AI 思想家圆桌": {
+    "message": "طاولة المفكرين بالذكاء الاصطناعي",
+    "description": "Navbar item with label AI 思想家圆桌"
   }
 }
