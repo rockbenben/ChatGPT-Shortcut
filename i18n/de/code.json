@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Von Nutzern geteilte KI-Prompts. Sortieren nach neuesten oder beliebtesten, suchen und filtern; nach Anmeldung liken und speichern."
+  },
+  "message.postComment.error": {
+    "message": "Kommentar konnte nicht gesendet werden. Bitte versuche es später erneut."
   }
 }

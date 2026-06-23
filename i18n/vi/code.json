@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Các prompt AI do người dùng đóng góp và chia sẻ. Sắp xếp theo mới nhất hoặc được thích nhất, hỗ trợ tìm kiếm và lọc; đăng nhập để thích và lưu."
+  },
+  "message.postComment.error": {
+    "message": "Gửi bình luận thất bại. Vui lòng thử lại sau."
   }
 }

@@ -12,36 +12,16 @@
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
-    "message": "Prompt ชุมชน",
+    "message": "พรอมต์ชุมชน",
     "description": "Navbar item with label 社区提示词"
   },
   "item.label.应用工具": {
     "message": "เครื่องมือ",
     "description": "Navbar item with label 应用工具"
   },
-  "item.label.IMGPrompt": {
-    "message": "IMGPrompt",
-    "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.工具收藏": {
-    "message": "คอลเลกชันเครื่องมือ",
-    "description": "Navbar item with label 工具收藏"
-  },
-  "item.label.Find on Product Hunt": {
-    "message": "ค้นหาบน Product Hunt",
-    "description": "Navbar item with label Find on Product Hunt"
-  },
   "item.label.反馈建议": {
     "message": "ข้อเสนอแนะ",
     "description": "Navbar item with label 反馈建议"
-  },
-  "item.label.脚本扩展": {
-    "message": "ส่วนขยาย",
-    "description": "Navbar item with label 脚本扩展"
-  },
-  "item.label.ToolsByAI": {
-    "message": "ToolsByAI",
-    "description": "Navbar item with label ToolsByAI"
   },
   "item.label.Telegram": {
     "message": "Telegram",
@@ -59,8 +39,20 @@
     "message": "กลุ่ม QQ",
     "description": "Navbar item with label QQ 群"
   },
-  "item.label.LegendTalk": {
-    "message": "LegendTalk",
-    "description": "Navbar item with label LegendTalk"
+  "item.label.AI 工具箱": {
+    "message": "กล่องเครื่องมือ AI",
+    "description": "Navbar item with label AI 工具箱"
+  },
+  "item.label.AI 绘图提示词": {
+    "message": "พรอมต์รูปภาพ AI",
+    "description": "Navbar item with label AI 绘图提示词"
+  },
+  "item.label.浏览器插件": {
+    "message": "ส่วนขยายเบราว์เซอร์",
+    "description": "Navbar item with label 浏览器插件"
+  },
+  "item.label.AI 思想家圆桌": {
+    "message": "วงสนทนานักคิด AI",
+    "description": "Navbar item with label AI 思想家圆桌"
   }
 }

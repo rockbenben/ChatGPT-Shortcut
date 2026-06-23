@@ -230,29 +230,20 @@ const config = {
             position: "left",
             items: [
               {
-                label: "脚本扩展",
-                to: "/docs/extension",
-              },
-              {
-                label: "ToolsByAI",
+                label: "AI 工具箱",
                 href: "https://tools.newzone.top/",
               },
               {
-                label: "LegendTalk",
+                label: "AI 绘图提示词",
+                href: "https://prompt.newzone.top/",
+              },
+              {
+                label: "AI 思想家圆桌",
                 href: "https://talk.newzone.top/",
               },
               {
-                label: "IMGPrompt",
-                href: "https://prompt.newzone.top/app",
-              },
-              { type: "html", value: '<hr style="margin: 4px 0;">' },
-              {
-                label: "工具收藏",
-                href: "https://nav.newzone.top",
-              },
-              {
-                label: "Find on Product Hunt",
-                href: "https://www.producthunt.com/posts/chatgpt-shortcut?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-chatgpt&#0045;shortcut",
+                label: "浏览器插件",
+                to: "/docs/extension",
               },
             ],
           },

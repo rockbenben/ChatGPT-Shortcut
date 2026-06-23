@@ -27,26 +27,6 @@
     "message": "支援",
     "description": "Navbar item with label 支持"
   },
-  "item.label.脚本扩展": {
-    "message": "腳本擴充",
-    "description": "Navbar item with label 脚本扩展"
-  },
-  "item.label.ToolsByAI": {
-    "message": "ToolsByAI",
-    "description": "Navbar item with label ToolsByAI"
-  },
-  "item.label.IMGPrompt": {
-    "message": "IMGPrompt",
-    "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.工具收藏": {
-    "message": "工具收藏",
-    "description": "Navbar item with label 工具收藏"
-  },
-  "item.label.Find on Product Hunt": {
-    "message": "Find on Product Hunt",
-    "description": "Navbar item with label Find on Product Hunt"
-  },
   "item.label.Telegram": {
     "message": "Telegram",
     "description": "Navbar item with label Telegram"
@@ -59,8 +39,20 @@
     "message": "QQ 群",
     "description": "Navbar item with label QQ 群"
   },
-  "item.label.LegendTalk": {
-    "message": "LegendTalk",
-    "description": "Navbar item with label LegendTalk"
+  "item.label.AI 工具箱": {
+    "message": "AI 工具箱",
+    "description": "Navbar item with label AI 工具箱"
+  },
+  "item.label.AI 绘图提示词": {
+    "message": "AI 繪圖提示詞",
+    "description": "Navbar item with label AI 绘图提示词"
+  },
+  "item.label.浏览器插件": {
+    "message": "瀏覽器外掛",
+    "description": "Navbar item with label 浏览器插件"
+  },
+  "item.label.AI 思想家圆桌": {
+    "message": "AI 思想家圓桌",
+    "description": "Navbar item with label AI 思想家圆桌"
   }
 }

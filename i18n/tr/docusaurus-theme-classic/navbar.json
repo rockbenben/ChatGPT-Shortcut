@@ -8,7 +8,7 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.使用说明": {
-    "message": "Dökümanlar",
+    "message": "Dokümanlar",
     "description": "Navbar item with label 使用说明"
   },
   "item.label.社区提示词": {
@@ -19,29 +19,9 @@
     "message": "Araçlar",
     "description": "Navbar item with label 应用工具"
   },
-  "item.label.IMGPrompt": {
-    "message": "IMGPrompt",
-    "description": "Navbar item with label IMGPrompt"
-  },
-  "item.label.工具收藏": {
-    "message": "Araç Koleksiyonu",
-    "description": "Navbar item with label 工具收藏"
-  },
-  "item.label.Find on Product Hunt": {
-    "message": "Product Hunt'ta Bul",
-    "description": "Navbar item with label Find on Product Hunt"
-  },
   "item.label.反馈建议": {
     "message": "Geri Bildirim",
     "description": "Navbar item with label 反馈建议"
-  },
-  "item.label.脚本扩展": {
-    "message": "Uzantılar",
-    "description": "Navbar item with label 脚本扩展"
-  },
-  "item.label.ToolsByAI": {
-    "message": "ToolsByAI",
-    "description": "Navbar item with label ToolsByAI"
   },
   "item.label.Telegram": {
     "message": "Telegram",
@@ -59,8 +39,20 @@
     "message": "QQ Grubu",
     "description": "Navbar item with label QQ 群"
   },
-  "item.label.LegendTalk": {
-    "message": "LegendTalk",
-    "description": "Navbar item with label LegendTalk"
+  "item.label.AI 工具箱": {
+    "message": "AI Araç Kutusu",
+    "description": "Navbar item with label AI 工具箱"
+  },
+  "item.label.AI 绘图提示词": {
+    "message": "AI Görsel Promptları",
+    "description": "Navbar item with label AI 绘图提示词"
+  },
+  "item.label.浏览器插件": {
+    "message": "Tarayıcı Eklentisi",
+    "description": "Navbar item with label 浏览器插件"
+  },
+  "item.label.AI 思想家圆桌": {
+    "message": "AI Düşünürler Yuvarlak Masası",
+    "description": "Navbar item with label AI 思想家圆桌"
   }
 }

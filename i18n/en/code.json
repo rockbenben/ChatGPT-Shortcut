@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "User-contributed AI prompts. Sort by newest or most-liked, search and filter; like and save after logging in."
+  },
+  "message.postComment.error": {
+    "message": "Failed to send comment. Please try again later."
   }
 }
