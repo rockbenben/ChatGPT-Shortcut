@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Kullanıcıların paylaştığı AI promptları. En yeni veya en çok beğenilenlere göre sırala, ara ve filtrele; giriş yaptıktan sonra beğen ve kaydet."
+  },
+  "message.postComment.error": {
+    "message": "Yorum gönderilemedi. Lütfen daha sonra tekrar deneyin."
   }
 }

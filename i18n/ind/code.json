@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "Prompt AI yang dibagikan pengguna. Urutkan berdasarkan terbaru atau terpopuler, dengan pencarian dan filter; setelah login, Anda bisa menyukai dan menyimpan."
+  },
+  "message.postComment.error": {
+    "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
   }
 }

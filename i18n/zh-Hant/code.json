@@ -1231,5 +1231,8 @@
   },
   "community.tagline": {
     "message": "由使用者投稿與分享的 AI 提示詞。按最新發佈或最多讚排序，支援搜尋篩選，登入後可點讚與收藏。"
+  },
+  "message.postComment.error": {
+    "message": "評論發送失敗，請稍後重試"
   }
 }
