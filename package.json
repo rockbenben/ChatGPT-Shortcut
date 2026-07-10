@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "4.4.1",
+  "version": "4.4.3",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -31,8 +31,8 @@
     "@giphy/react-components": "^10.1.2",
     "@mdx-js/react": "^3.1.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^6.4.4",
-    "axios": "^1.17.0",
+    "antd": "^6.5.0",
+    "axios": "^1.18.1",
     "boring-avatars": "^2.0.4",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
