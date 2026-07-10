@@ -1,42 +1,25 @@
-import React, { useContext, useEffect, useState, useCallback, useRef } from "react";
+import React, { useContext, useEffect, useState, useCallback } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Card, Form, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Tag, Popconfirm, Flex, Statistic, Breadcrumb, Progress, Tooltip } from "antd";
-import {
-  HomeOutlined,
-  EditOutlined,
-  SaveOutlined,
-  LockOutlined,
-  MailOutlined,
-  UserOutlined,
-  SafetyCertificateOutlined,
-  DownloadOutlined,
-  ImportOutlined,
-  DatabaseOutlined,
-  DeleteOutlined,
-  TrophyOutlined,
-  RocketOutlined,
-  StarOutlined,
-  CrownOutlined,
-  FireOutlined,
-  ThunderboltOutlined,
-  ShareAltOutlined,
-} from "@ant-design/icons";
+import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb } from "antd";
+import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "@site/src/components/AuthContext";
-import { getLevelInfo, LevelName, LevelIcon, type LevelInfo } from "@site/src/components/LevelSystem";
 import { getUserAllInfo } from "@site/src/api/user";
-import { submitPrompt, updatePrompt, patchFavorites, changePassword, forgotPassword, updateUsername, getPrompts, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
-import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
+import { updateUsername, clearUserProfileCache, clearMySpaceCache } from "@site/src/api";
+import LevelSpecCard from "@site/src/components/user/account/LevelSpecCard";
+import SecurityCard from "@site/src/components/user/account/SecurityCard";
+import DataManagementCard from "@site/src/components/user/account/DataManagementCard";
+import { useImportExport } from "@site/src/components/user/account/useImportExport";
 
 const { Title, Text } = Typography;
 
 const UserProfile = () => {
   const { userAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
-  const { message, modal } = App.useApp();
+  const { message } = App.useApp();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
@@ -46,10 +29,7 @@ const UserProfile = () => {
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState("");
 
-  const [changePasswordForm] = Form.useForm();
-  const [forgotPasswordForm] = Form.useForm();
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [importing, setImporting] = useState(false);
+  const { fileInputRef, importing, handleExportPrompts, handleImportPrompts } = useImportExport({ userAuth, currentLanguage, refreshUserAuth });
 
   // Fetch user info from /me endpoint
   const fetchUserInfo = useCallback(async () => {
@@ -81,99 +61,6 @@ const UserProfile = () => {
     }
   }, [userLoading, userInfo, i18n.currentLocale, i18n.defaultLocale]);
 
-  const handleExportPrompts = useCallback(async () => {
-    try {
-      // 从 userAuth.data.items 获取用户提示词和收藏
-      const userPromptItems = userAuth?.data?.items?.filter((item) => item.type === "prompt") || [];
-      const favoriteItems = userAuth?.data?.items?.filter((item) => item.type === "favorite") || [];
-
-      if (userPromptItems.length === 0 && favoriteItems.length === 0) {
-        message.warning(<Translate id="message.export.noPrompts">暂无可导出的提示词，先创建或收藏一些吧</Translate>);
-        return;
-      }
-
-      // 获取提示词和收藏的详细数据
-      const promptIds = userPromptItems.map((item) => item.id);
-      const cardFavoriteIds = favoriteItems.filter((item) => item.source === "card").map((item) => item.id);
-      const commFavoriteIds = favoriteItems.filter((item) => item.source === "community").map((item) => item.id);
-
-      const [userPromptsData, cardFavoritesData, commFavoritesData] = await Promise.all([
-        promptIds.length > 0 ? getPrompts("userprompts", promptIds) : [],
-        cardFavoriteIds.length > 0 ? getPrompts("cards", cardFavoriteIds, currentLanguage) : [],
-        commFavoriteIds.length > 0 ? getPrompts("commus", commFavoriteIds) : [],
-      ]);
-
-      // favorites: 只包含 ID 数组（用于导入）
-      const favorites = {
-        card: cardFavoriteIds,
-        community: commFavoriteIds,
-      };
-
-      // favoriteDetails: 详细内容供用户查看（导入时忽略）
-      const favoriteDetails = [
-        ...cardFavoritesData.map((p: any) => {
-          const langData = p[currentLanguage] || p["zh-Hans"] || p["en"] || {};
-          return {
-            id: p.id,
-            source: "card" as const,
-            ...(langData.title && { title: langData.title }),
-            ...(langData.prompt && { prompt: langData.prompt }),
-            ...(langData.remark && { remark: langData.remark }),
-          };
-        }),
-        ...commFavoritesData.map((p: any) => ({
-          id: p.id,
-          source: "community" as const,
-          ...(p.title && { title: p.title }),
-          ...(p.description && { prompt: p.description }),
-          ...(p.remark && { remark: p.remark }),
-        })),
-      ];
-
-      // MySpace 排序和自定义标签（导入时可恢复布局）
-      const items = userAuth?.data?.items || [];
-      const myspaceOrder = items.map((item: any) => ({
-        id: item.id,
-        type: item.type,
-        source: item.source,
-      }));
-      const customTags = userAuth?.data?.customTags || [];
-
-      const exportData = {
-        exportTime: new Date().toISOString(),
-        prompts: userPromptsData.map((prompt: any) => ({
-          id: prompt.id,
-          title: prompt.title,
-          prompt: prompt.description,
-          ...(prompt.remark && { remark: prompt.remark }),
-          ...(prompt.notes && { notes: prompt.notes }),
-          share: prompt.share,
-        })),
-        favorites,
-        ...(favoriteDetails.length > 0 && { favoriteDetails }),
-        ...(myspaceOrder.length > 0 && { myspaceOrder }),
-        ...(customTags.length > 0 && { customTags }),
-      };
-
-      const dataStr = JSON.stringify(exportData, null, 2);
-      const dataBlob = new Blob([dataStr], { type: "application/json" });
-      const url = URL.createObjectURL(dataBlob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `my-prompts-${new Date().toISOString().split("T")[0]}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-
-      message.success(<Translate id="message.export.success">提示词导出成功！</Translate>);
-    } catch (error) {
-      console.error("Export error:", error);
-      message.error(<Translate id="message.export.error">导出失败，请稍后重试</Translate>);
-    }
-  }, [userAuth, message, currentLanguage]);
-
   const handleClearCache = useCallback(async () => {
     try {
       // 清除所有用户相关缓存
@@ -186,177 +73,6 @@ const UserProfile = () => {
       message.error(<Translate id="message.cache.clearError">清除缓存失败</Translate>);
     }
   }, [fetchUserInfo, message]);
-
-  // 导入提示词处理
-  const handleImportPrompts = useCallback(
-    async (event: React.ChangeEvent<HTMLInputElement>) => {
-      const file = event.target.files?.[0];
-      if (!file) return;
-
-      // 重置 input 以允许重复选择同一文件
-      event.target.value = "";
-
-      try {
-        const content = await file.text();
-        const parsed = JSON.parse(content);
-
-        // 解析数据
-        let prompts: any[] = [];
-        let favorites: { card: number[]; community: number[] } = { card: [], community: [] };
-
-        if (Array.isArray(parsed)) {
-          prompts = parsed;
-        } else if (parsed.prompts) {
-          prompts = parsed.prompts;
-          if (parsed.favorites) {
-            favorites.card = parsed.favorites.card || [];
-            favorites.community = parsed.favorites.community || [];
-          }
-        } else if (parsed.title && (parsed.prompt || parsed.description)) {
-          prompts = [parsed];
-        }
-
-        // 标准化 prompt 字段
-        prompts = prompts.map((p) => ({ ...p, prompt: p.prompt || p.description || "" })).filter((p) => p.title && p.prompt);
-
-        const hasFavorites = favorites.card.length > 0 || favorites.community.length > 0;
-        if (prompts.length === 0 && !hasFavorites) {
-          message.error(<Translate id="message.import.invalid">无效的数据格式</Translate>);
-          return;
-        }
-
-        setImporting(true);
-
-        // 获取用户已有提示词ID
-        const userPromptIds = userAuth?.data?.userprompts?.map((p: any) => p.id) || [];
-
-        // 获取现有提示词详情（用于对比内容）
-        const conflictIds = prompts.filter((p) => p.id && userPromptIds.includes(p.id)).map((p) => p.id);
-        let existingPromptsMap: Record<number, any> = {};
-        if (conflictIds.length > 0) {
-          try {
-            const existingPrompts = await getPrompts("userprompts", conflictIds);
-            existingPromptsMap = existingPrompts.reduce((acc: Record<number, any>, p: any) => {
-              acc[p.id] = p;
-              return acc;
-            }, {});
-          } catch {
-            // 获取失败时继续导入，只是无法跳过相同内容
-          }
-        }
-
-        let successCount = 0;
-        let errorCount = 0;
-
-        // 处理提示词（并发执行，提升性能）
-        const promptTasks = prompts.map(async (prompt) => {
-          if (prompt.id && userPromptIds.includes(prompt.id)) {
-            // 检查内容是否相同，相同则跳过
-            const existing = existingPromptsMap[prompt.id];
-            if (existing) {
-              const isSame =
-                existing.title === prompt.title &&
-                existing.description === prompt.prompt &&
-                (existing.remark || "") === (prompt.remark || "") &&
-                (existing.notes || "") === (prompt.notes || "") &&
-                existing.share === (prompt.share ?? false);
-              if (isSame) {
-                return { status: "skipped" as const };
-              }
-            }
-            // 更新现有提示词
-            await updatePrompt(prompt.id, {
-              title: prompt.title,
-              description: prompt.prompt,
-              remark: prompt.remark,
-              notes: prompt.notes,
-              share: prompt.share ?? false,
-            });
-            return { status: "success" as const };
-          } else if (!prompt.id) {
-            // 没有 id：新创建提示词，默认公开
-            await submitPrompt({
-              title: prompt.title,
-              description: prompt.prompt,
-              remark: prompt.remark,
-              notes: prompt.notes,
-              share: prompt.share ?? true,
-            });
-            return { status: "success" as const };
-          } else {
-            // 有 id 但不属于当前用户：导入为新提示词，强制私密
-            await submitPrompt({
-              title: prompt.title,
-              description: prompt.prompt,
-              remark: prompt.remark,
-              notes: prompt.notes,
-              share: false,
-            });
-            return { status: "success" as const };
-          }
-        });
-
-        const promptResults = await Promise.allSettled(promptTasks);
-        for (const result of promptResults) {
-          if (result.status === "fulfilled") {
-            if (result.value.status !== "skipped") {
-              successCount++;
-            }
-          } else {
-            errorCount++;
-          }
-        }
-
-        // 处理收藏（合并模式）—— 一次 PATCH 处理 loves 和 commLoves 的增量
-        // server 端 merge 保证多设备并发安全（无 lost-update 风险）
-        if (hasFavorites) {
-          const items = userAuth?.data?.items || [];
-          const existingLoves = new Set(deriveLoves(items));
-          const existingCommLoves = new Set(deriveCommLoves(items));
-
-          const cardAdds = (favorites.card || []).map(Number).filter((id) => !existingLoves.has(id));
-          const commAdds = (favorites.community || []).map(Number).filter((id) => !existingCommLoves.has(id));
-
-          if (cardAdds.length > 0 || commAdds.length > 0) {
-            try {
-              await patchFavorites({
-                loves: { add: cardAdds, remove: [] },
-                commLoves: { add: commAdds, remove: [] },
-              });
-              if (cardAdds.length > 0) successCount++;
-              if (commAdds.length > 0) successCount++;
-            } catch {
-              errorCount++;
-            }
-          }
-        }
-
-        // myspaceOrder 和 customTags 仅作为导出备份数据保留在 JSON 中
-        // 联网版导入时不恢复排序和标签：
-        // - 排序中的 prompt ID 是源用户的，导入后新建 prompt 有新 ID，无法对应
-        // - 覆盖式写入会破坏目标用户已有的排序和标签体系
-        // 本地版可安全使用这些字段（写入 localStorage，不涉及多用户冲突）
-
-        setImporting(false);
-
-        if (errorCount === 0) {
-          message.success(<Translate id="message.import.success">导入成功！</Translate>);
-        } else if (successCount > 0) {
-          message.warning(`${translate({ id: "message.import.partial", message: "部分导入成功" })} (${successCount}/${successCount + errorCount})`);
-        } else {
-          message.error(<Translate id="message.import.failed">导入失败</Translate>);
-        }
-
-        // 刷新 MySpace 数据（prompts 和 favorites）
-        await refreshUserAuth();
-      } catch (error) {
-        setImporting(false);
-        console.error("Import error:", error);
-        message.error(<Translate id="message.import.parseError">JSON 解析失败，请检查文件格式</Translate>);
-      }
-    },
-    [userAuth, message, refreshUserAuth],
-  );
 
   const handleEditUsernameClick = () => {
     setNewUsername(userInfo?.username || "");
@@ -389,34 +105,6 @@ const UserProfile = () => {
     }
   };
 
-  const onFinishChangePassword = async (values) => {
-    setLoading(true);
-    try {
-      await changePassword(values);
-      message.success(<Translate id="message.success.passwordChanged">密码修改成功！</Translate>);
-      changePasswordForm.resetFields();
-    } catch (error) {
-      console.error("Error changing password:", error);
-      message.error(<Translate id="message.error.passwordChangeFailed">密码修改失败，请稍后重试</Translate>);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const onFinishForgotPassword = async (values) => {
-    setLoading(true);
-    try {
-      await forgotPassword(values.email);
-      message.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
-      forgotPasswordForm.resetFields();
-    } catch (error) {
-      console.error("Error sending forgot password email:", error);
-      message.error(<Translate id="message.error.forgotPassword">发送密码重置邮件失败，请稍后重试</Translate>);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   if (userLoading || !userInfo) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
@@ -426,6 +114,8 @@ const UserProfile = () => {
       </Layout>
     );
   }
+
+  const sharedCount = userAuth?.data?.userprompts?.filter((p) => p.share).length || 0;
 
   return (
     <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
@@ -481,411 +171,72 @@ const UserProfile = () => {
                         <Translate id="title.userInfo">用户信息</Translate>
                       </Space>
                     }>
-                    {(() => {
-                      const sharedCount = userAuth?.data?.userprompts?.filter((p) => p.share).length || 0;
-                      const levelInfo = getLevelInfo(sharedCount);
-                      const progressPercent = levelInfo.next ? Math.min(100, Math.round((sharedCount / levelInfo.next) * 100)) : 100;
-                      const nextLevelInfo: LevelInfo | null = levelInfo.next ? getLevelInfo(levelInfo.next) : null;
-
-                      return (
-                        <Flex vertical>
-                          {/* Identity row — 紧凑横排，avatar 不再带等级渐变环（等级移到下方 spec card） */}
-                          <Flex align="center" gap={16} style={{ marginBottom: 24 }}>
-                            <Avatar
-                              size={56}
-                              icon={<UserOutlined />}
-                              style={{
-                                backgroundColor: "var(--ifm-background-surface-color)",
-                                color: "var(--ifm-color-content-secondary)",
-                                border: "1px solid var(--site-color-hairline)",
-                                flexShrink: 0,
-                              }}
-                            />
-                            <Flex vertical style={{ flex: 1, minWidth: 0 }}>
-                              {editUsername ? (
-                                <Space.Compact style={{ width: "100%" }}>
-                                  <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
-                                  <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
-                                  <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
-                                </Space.Compact>
-                              ) : (
-                                <Flex align="center" gap={4}>
-                                  <Title
-                                    level={4}
-                                    style={{
-                                      margin: 0,
-                                      fontSize: 18,
-                                      fontWeight: 600,
-                                      letterSpacing: "-0.01em",
-                                      lineHeight: 1.2,
-                                      minWidth: 0,
-                                      overflow: "hidden",
-                                      textOverflow: "ellipsis",
-                                      whiteSpace: "nowrap",
-                                    }}>
-                                    {userInfo.username}
-                                  </Title>
-                                  <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--site-color-text-tertiary)", flexShrink: 0 }} />
-                                </Flex>
-                              )}
-                              <Text style={{ fontSize: 12, color: "var(--site-color-text-tertiary)", marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                                <MailOutlined style={{ marginRight: 4 }} />
-                                {userInfo.email}
-                              </Text>
+                    <Flex vertical>
+                      {/* Identity row — 紧凑横排，avatar 不再带等级渐变环（等级移到下方 spec card） */}
+                      <Flex align="center" gap={16} style={{ marginBottom: 24 }}>
+                        <Avatar
+                          size={56}
+                          icon={<UserOutlined />}
+                          style={{
+                            backgroundColor: "var(--ifm-background-surface-color)",
+                            color: "var(--ifm-color-content-secondary)",
+                            border: "1px solid var(--site-color-hairline)",
+                            flexShrink: 0,
+                          }}
+                        />
+                        <Flex vertical style={{ flex: 1, minWidth: 0 }}>
+                          {editUsername ? (
+                            <Space.Compact style={{ width: "100%" }}>
+                              <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
+                              <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
+                              <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
+                            </Space.Compact>
+                          ) : (
+                            <Flex align="center" gap={4}>
+                              <Title
+                                level={4}
+                                style={{
+                                  margin: 0,
+                                  fontSize: 18,
+                                  fontWeight: 600,
+                                  letterSpacing: "-0.01em",
+                                  lineHeight: 1.2,
+                                  minWidth: 0,
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}>
+                                {userInfo.username}
+                              </Title>
+                              <Button type="text" icon={<EditOutlined />} onClick={handleEditUsernameClick} size="small" style={{ color: "var(--site-color-text-tertiary)", flexShrink: 0 }} />
                             </Flex>
-                          </Flex>
-
-                          {/* Level spec card — editorial / mineral specimen style */}
-                          <div style={{ position: "relative", paddingTop: 28, borderTop: "1px solid var(--site-color-hairline)" }}>
-                            {/* level-tinted hairline accent at top */}
-                            <div
-                              aria-hidden
-                              style={{
-                                position: "absolute",
-                                top: -1,
-                                left: "20%",
-                                right: "20%",
-                                height: 1,
-                                background: `linear-gradient(90deg, transparent, ${levelInfo.accentColor}, transparent)`,
-                                opacity: 0.7,
-                              }}
-                            />
-
-                            <Flex vertical align="center" gap={14}>
-                              {/* Spec line: LEVEL + index */}
-                              <Flex justify="space-between" align="baseline" style={{ width: "100%" }}>
-                                <span
-                                  style={{
-                                    fontSize: 10,
-                                    fontFamily: "var(--site-font-mono)",
-                                    letterSpacing: "0.18em",
-                                    textTransform: "uppercase",
-                                    color: "var(--site-color-text-tertiary)",
-                                  }}>
-                                  <Translate id="userPage.level.specLabel">LEVEL</Translate>
-                                </span>
-                                <span
-                                  style={{
-                                    fontSize: 10,
-                                    fontFamily: "var(--site-font-mono)",
-                                    letterSpacing: "0.08em",
-                                    color: "var(--site-color-text-tertiary)",
-                                    fontVariantNumeric: "tabular-nums",
-                                  }}>
-                                  <span style={{ color: levelInfo.accentColor }}>{String(levelInfo.level).padStart(2, "0")}</span>
-                                  <span style={{ opacity: 0.5 }}> / 05</span>
-                                </span>
-                              </Flex>
-
-                              {/* Geometric icon with level-tinted radial halo */}
-                              <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 14 }}>
-                                <div
-                                  aria-hidden
-                                  style={{
-                                    position: "absolute",
-                                    inset: 0,
-                                    background: `radial-gradient(circle, ${levelInfo.accentColor}33 0%, transparent 70%)`,
-                                    pointerEvents: "none",
-                                    filter: "blur(2px)",
-                                  }}
-                                />
-                                <LevelIcon level={levelInfo.level} size={64} color={levelInfo.accentColor} strokeWidth={1.5} />
-                              </div>
-
-                              {/* Level name — display weight, no emoji */}
-                              <div style={{ textAlign: "center" }}>
-                                <Title level={3} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.2 }}>
-                                  <LevelName level={levelInfo.level} />
-                                </Title>
-                              </div>
-
-                              {/* Progress / Max-state */}
-                              {levelInfo.next ? (
-                                <Flex vertical gap={8} style={{ width: "100%", marginTop: 6 }}>
-                                  <div style={{ height: 3, background: "var(--ifm-color-emphasis-100)", borderRadius: 2, overflow: "hidden" }}>
-                                    <div
-                                      style={{
-                                        height: "100%",
-                                        width: `${progressPercent}%`,
-                                        background: levelInfo.accentColor,
-                                        transition: "width 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-                                        boxShadow: `0 0 8px ${levelInfo.accentColor}66`,
-                                      }}
-                                    />
-                                  </div>
-                                  <Flex justify="space-between" align="center" style={{ width: "100%" }}>
-                                    <span
-                                      style={{
-                                        fontSize: 11,
-                                        fontFamily: "var(--site-font-mono)",
-                                        fontVariantNumeric: "tabular-nums",
-                                        color: "var(--ifm-color-content-secondary)",
-                                        letterSpacing: "0.04em",
-                                      }}>
-                                      {sharedCount} / {levelInfo.next}
-                                    </span>
-                                    <span style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
-                                      <Translate id="userPage.level.toNext" values={{ next: <LevelName level={(nextLevelInfo as LevelInfo).level} /> }}>
-                                        {"距「{next}」"}
-                                      </Translate>
-                                    </span>
-                                  </Flex>
-                                </Flex>
-                              ) : (
-                                <Flex vertical align="center" gap={4} style={{ marginTop: 6 }}>
-                                  <span
-                                    style={{
-                                      fontSize: 10,
-                                      fontFamily: "var(--site-font-mono)",
-                                      letterSpacing: "0.18em",
-                                      textTransform: "uppercase",
-                                      color: levelInfo.accentColor,
-                                      fontWeight: 500,
-                                    }}>
-                                    <Translate id="userPage.level.maxReached">MAX REACHED</Translate>
-                                  </span>
-                                  <span style={{ fontSize: 11, fontFamily: "var(--site-font-mono)", color: "var(--site-color-text-tertiary)", letterSpacing: "0.04em" }}>
-                                    <span style={{ fontVariantNumeric: "tabular-nums" }}>{sharedCount}</span>{" "}
-                                    <Translate id="userPage.level.sharedSuffix">shared</Translate>
-                                  </span>
-                                </Flex>
-                              )}
-                            </Flex>
-                          </div>
+                          )}
+                          <Text style={{ fontSize: 12, color: "var(--site-color-text-tertiary)", marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                            <MailOutlined style={{ marginRight: 4 }} />
+                            {userInfo.email}
+                          </Text>
                         </Flex>
-                      );
-                    })()}
+                      </Flex>
+
+                      <LevelSpecCard sharedCount={sharedCount} />
+                    </Flex>
                   </Card>
                 </Col>
 
                 {/* Right Column: Security Settings */}
                 <Col xs={24} md={14}>
-                  <Card
-                    style={{
-                      height: "100%",
-                      borderRadius: 12,
-                    }}
-                    title={
-                      <Space>
-                        <SafetyCertificateOutlined />
-                        <Translate id="title.security">安全设置</Translate>
-                      </Space>
-                    }
-                    extra={
-                      <Button
-                        type="link"
-                        style={{ color: "var(--site-color-tag-selected-text)" }}
-                        onClick={() => {
-                          modal.confirm({
-                            title: (
-                              <Space>
-                                <MailOutlined style={{ color: "var(--ifm-color-primary)" }} />
-                                <Translate id="modal.forgotPassword.title">忘记密码</Translate>
-                              </Space>
-                            ),
-                            icon: null,
-                            content: (
-                              <div style={{ marginTop: 16 }}>
-                                <Text type="secondary" style={{ display: "block", marginBottom: 16 }}>
-                                  <Translate id="message.forgotPassword.info">我们会向您的注册邮箱发送一封包含重置链接的邮件。</Translate>
-                                </Text>
-                                <Form form={forgotPasswordForm} layout="vertical">
-                                  <Form.Item
-                                    name="email"
-                                    label={<Translate id="placeholder.email">邮箱</Translate>}
-                                    rules={[
-                                      { required: true, message: translate({ id: "validation.email.required", message: "请输入您的邮箱！" }) },
-                                      { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址！" }) },
-                                    ]}
-                                    initialValue={userInfo?.email || ""}>
-                                    <Input
-                                      prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-                                      placeholder={translate({ id: "placeholder.email", message: "邮箱" })}
-                                      size="large"
-                                    />
-                                  </Form.Item>
-                                </Form>
-                              </div>
-                            ),
-                            onOk: async () => {
-                              try {
-                                await forgotPasswordForm.validateFields();
-                                const values = forgotPasswordForm.getFieldsValue();
-                                await onFinishForgotPassword(values);
-                              } catch (error) {
-                                return Promise.reject(error);
-                              }
-                            },
-                            okText: <Translate id="action.sendResetEmail">发送重置邮件</Translate>,
-                            cancelText: <Translate id="action.cancel">取消</Translate>,
-                            centered: true,
-                            width: 480,
-                          });
-                        }}>
-                        <Translate id="action.forgotPassword">忘记密码</Translate>
-                      </Button>
-                    }>
-                    <Form form={changePasswordForm} onFinish={onFinishChangePassword} layout="vertical" requiredMark={false}>
-                      {userInfo?.provider === "local" && (
-                        <Form.Item
-                          name="currentPassword"
-                          label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
-                          rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
-                          <Input.Password
-                            prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-                            placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
-                            size="large"
-                          />
-                        </Form.Item>
-                      )}
-                      <Form.Item
-                        name="newPassword"
-                        label={<Translate id="placeholder.newPassword">新密码</Translate>}
-                        rules={[
-                          { required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) },
-                          { min: 6, message: translate({ id: "validation.password.length", message: "密码长度至少为 6 个字符" }) },
-                        ]}>
-                        <Input.Password
-                          prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-                          placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })}
-                          size="large"
-                        />
-                      </Form.Item>
-                      <Form.Item
-                        name="confirmPassword"
-                        label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
-                        dependencies={["newPassword"]}
-                        rules={[
-                          { required: true, message: translate({ id: "validation.confirmPassword.required", message: "请确认新密码！" }) },
-                          ({ getFieldValue }) => ({
-                            validator(_, value) {
-                              if (!value || getFieldValue("newPassword") === value) {
-                                return Promise.resolve();
-                              }
-                              return Promise.reject(new Error(translate({ id: "validation.password.match", message: "两次输入的密码不一致！" })));
-                            },
-                          }),
-                        ]}>
-                        <Input.Password
-                          prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-                          placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })}
-                          size="large"
-                        />
-                      </Form.Item>
-                      <Form.Item style={{ marginBottom: 0 }}>
-                        <Button type="primary" htmlType="submit" loading={loading} block size="large">
-                          <Translate id="action.changePassword">修改密码</Translate>
-                        </Button>
-                      </Form.Item>
-                    </Form>
-                  </Card>
+                  <SecurityCard userInfo={userInfo} />
                 </Col>
               </Row>
 
               {/* Data Management Section */}
-              <Card
-                style={{
-                  borderRadius: 12,
-                }}
-                title={
-                  <Space>
-                    <DatabaseOutlined />
-                    <Translate id="title.dataManagement">数据管理</Translate>
-                  </Space>
-                }>
-                <Space orientation="vertical" size="middle" style={{ width: "100%" }}>
-                  {/* Export Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
-                    <Flex align="center" gap={20}>
-                      <Avatar
-                        icon={<DownloadOutlined />}
-                        style={{
-                          backgroundColor: "var(--ifm-background-surface-color)",
-                          color: "var(--site-color-tag-selected-text)",
-                          border: "1px solid var(--site-color-hairline)",
-                        }}
-                      />
-                      <div>
-                        <Text strong>
-                          <Translate id="button.exportPrompts">导出提示词</Translate>
-                        </Text>
-                        <br />
-                        <Text type="secondary" style={{ fontSize: 12 }}>
-                          <Translate id="description.exportPrompts.short">导出为 JSON 文件，方便备份</Translate>
-                        </Text>
-                      </div>
-                    </Flex>
-                    <Button icon={<DownloadOutlined />} onClick={handleExportPrompts} disabled={!userAuth?.data?.items?.some((item) => item.type === "prompt" || item.type === "favorite")}>
-                      <Translate id="button.export">导出数据</Translate>
-                    </Button>
-                  </Flex>
-
-                  {/* Import Prompts */}
-                  <Flex justify="space-between" align="center" style={{ padding: "12px 0", borderBottom: "1px solid var(--site-color-hairline)" }}>
-                    <Flex align="center" gap={20}>
-                      <Avatar
-                        icon={<ImportOutlined />}
-                        style={{
-                          backgroundColor: "var(--ifm-background-surface-color)",
-                          color: "var(--site-color-tag-selected-text)",
-                          border: "1px solid var(--site-color-hairline)",
-                        }}
-                      />
-                      <div>
-                        <Text strong>
-                          <Translate id="button.importPrompts">导入提示词</Translate>
-                        </Text>
-                        <br />
-                        <Text type="secondary" style={{ fontSize: 12 }}>
-                          <Translate id="description.importPrompts.short">从 JSON 文件导入提示词和收藏</Translate>
-                        </Text>
-                      </div>
-                    </Flex>
-                    <Button icon={<ImportOutlined />} loading={importing} onClick={() => fileInputRef.current?.click()}>
-                      <Translate id="button.import">导入数据</Translate>
-                    </Button>
-                  </Flex>
-
-                  {/* Clear Cache */}
-                  <Flex justify="space-between" align="center" style={{ padding: "12px 0" }}>
-                    <Flex align="center" gap={20}>
-                      <Avatar
-                        icon={<DeleteOutlined />}
-                        style={{
-                          backgroundColor: "var(--ifm-background-surface-color)",
-                          color: "var(--site-color-text-tertiary)",
-                          border: "1px solid var(--site-color-hairline)",
-                        }}
-                      />
-                      <div>
-                        <Text strong>
-                          <Translate id="button.clearCache">清除缓存</Translate>
-                        </Text>
-                        <br />
-                        <Text type="secondary" style={{ fontSize: 12 }}>
-                          <Translate id="description.clearCache.short">刷新本地缓存数据</Translate>
-                        </Text>
-                      </div>
-                    </Flex>
-                    <Popconfirm
-                      title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
-                      description={
-                        <Text type="warning">
-                          <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
-                        </Text>
-                      }
-                      onConfirm={handleClearCache}
-                      okText={<Translate id="button.confirmClear">确认清除</Translate>}
-                      okButtonProps={{ danger: true }}
-                      cancelText={<Translate id="action.cancel">取消</Translate>}
-                      placement="topRight">
-                      <Button danger icon={<DeleteOutlined />}>
-                        <Translate id="button.clearAllCache">清除所有缓存</Translate>
-                      </Button>
-                    </Popconfirm>
-                  </Flex>
-                </Space>
-              </Card>
+              <DataManagementCard
+                canExport={!!userAuth?.data?.items?.some((item) => item.type === "prompt" || item.type === "favorite")}
+                importing={importing}
+                onExport={handleExportPrompts}
+                onImportClick={() => fileInputRef.current?.click()}
+                onClearCache={handleClearCache}
+              />
             </Space>
           </Col>
         </Row>
