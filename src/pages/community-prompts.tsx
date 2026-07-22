@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState, useCallback, useMemo, useRef, Suspense } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
+import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 
 import { useLocation } from "@docusaurus/router";
@@ -47,9 +48,9 @@ function getSnapshotView(page: number, sortField: CommunitySortField, searchTerm
 }
 
 const CommunityPrompts = () => {
-  const { userAuth } = useContext(AuthContext);
+  const { userAuth, getUserAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const { toggleFavorite } = useFavorite();
   const location = useLocation();
   const { siteConfig, i18n } = useDocusaurusContext();
   // 页面级静态信息（locale + siteConfig.url 在组件生命周期内稳定），合并到一个 useMemo
@@ -110,9 +111,9 @@ const CommunityPrompts = () => {
   // 本次会话的投票记录（防止 API 请求期间重复点击）
   const sessionVotedIdsRef = useRef<Set<string>>(new Set());
 
-  // 用 ref 持有最新 userAuth / userprompts，让 vote 保持稳定引用（不因每次投票后 userprompts 变化而重建，避免 PromptCard 跟着 re-render）
-  const userAuthRef = useRef(userAuth);
-  userAuthRef.current = userAuth;
+  // userAuth 读 context 的 getUserAuth()（权威当前值，且不会因渲染期快照而滞后）；
+  // userprompts 是本页局部 state，继续用 ref 让 vote 保持稳定引用，
+  // 避免每次投票后 PromptCard 全量 re-render
   const userpromptsRef = useRef(userprompts);
   userpromptsRef.current = userprompts;
 
@@ -170,7 +171,7 @@ const CommunityPrompts = () => {
         console.error("Failed to fetch community prompts:", error);
         if (!hasVisibleContent) {
           // key 去重：快速连续失败不会堆叠多个 toast
-          messageApi.error({ content: "Failed to fetch data", key: "comm-fetch-error" });
+          messageApi.error({ content: translate({ id: "community.fetchError", message: "获取数据失败" }), key: "comm-fetch-error" });
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -189,8 +190,8 @@ const CommunityPrompts = () => {
   const vote = useCallback(
     async (promptId: number, action: "upvote" | "downvote") => {
       // 未登录时引导登录
-      if (!userAuthRef.current) {
-        messageApi.warning("Please log in to vote.");
+      if (!getUserAuth()) {
+        messageApi.warning(voteLoginRequiredText());
         setOpen(true);
         return;
       }
@@ -198,7 +199,7 @@ const CommunityPrompts = () => {
       // 防止 API 请求期间重复点击（后端会处理实际的重复投票逻辑）
       const voteKey = `${promptId}_${action}`;
       if (sessionVotedIdsRef.current.has(voteKey)) {
-        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        messageApi.info(voteAlreadyVotedText(action));
         return;
       }
       sessionVotedIdsRef.current.add(voteKey);
@@ -229,7 +230,7 @@ const CommunityPrompts = () => {
           setUserPrompts((prev) => prev.map((prompt) => (prompt.id === promptId ? { ...prompt, upvotes, downvotes, upvoteDifference: upvotes - downvotes } : prompt)));
         }
 
-        messageApi.success(`Successfully ${action}d!`);
+        messageApi.success(voteSuccessText(action));
       } catch (err: any) {
         // 回滚到原始数据并移除会话标记
         sessionVotedIdsRef.current.delete(voteKey);
@@ -247,23 +248,15 @@ const CommunityPrompts = () => {
             ),
           );
         }
-        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
+        const errorMessage = err?.strapiMessage || voteFailedText(action);
         messageApi.error(errorMessage);
       }
     },
     [messageApi],
   );
 
-  const bookmark = useCallback(
-    async (promptId) => {
-      if (userAuth?.data?.favorites?.commLoves?.includes(promptId)) {
-        confirmRemoveFavorite(promptId, true);
-      } else {
-        addFavorite(promptId, true);
-      }
-    },
-    [userAuth?.data?.favorites?.commLoves, confirmRemoveFavorite, addFavorite],
-  );
+  // add/remove 的判定在 useFavorite 内部用权威值完成，调用点不再自行分支
+  const bookmark = useCallback(async (promptId) => toggleFavorite(promptId, true), [toggleFavorite]);
 
   const onChangePage = useCallback((page) => {
     setCurrentPage(page);

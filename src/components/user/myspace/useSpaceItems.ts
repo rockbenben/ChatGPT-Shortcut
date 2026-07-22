@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { translate } from "@docusaurus/Translate";
 import { getPrompts } from "@site/src/api";
 import type { CustomTag } from "./types";
 
@@ -171,7 +172,7 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
       } catch (error) {
         console.error("Failed to fetch MySpace data:", error);
         if (isMounted) {
-          messageApi.error("加载数据失败");
+          messageApi.error(translate({ id: "message.loadFailed", message: "加载数据失败" }));
         }
       } finally {
         if (isMounted) {

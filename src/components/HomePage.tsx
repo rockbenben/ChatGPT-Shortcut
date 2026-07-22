@@ -14,6 +14,7 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { useHistory, useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
+import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
@@ -173,15 +174,16 @@ interface ShowcaseCardsProps extends HomeData {
 }
 
 const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, defaultFavorData, defaultOtherData }) => {
-  const { userAuth, authLoading } = useContext(AuthContext);
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const { userAuth, getUserAuth, authLoading } = useContext(AuthContext);
+  const { toggleFavorite } = useFavorite();
   const { message: messageApi } = App.useApp();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
 
-  // 用 ref 保存 userAuth，使回调稳定化（不因后台 SWR 刷新而重建）
-  const userAuthRef = useRef(userAuth);
-  userAuthRef.current = userAuth;
+  // 读 userAuth 走 context 的 getUserAuth()：回调保持稳定引用（不因后台 SWR 刷新而重建），
+  // 且拿到的一定是权威当前值。自持 useRef(userAuth) 是渲染期快照——收藏走 startTransition
+  // 发布新 state，快照要等 commit 才更新，这段窗口内再点一次会误判 add/remove，
+  // 直接多打一发 PATCH /favorites/me 和一次投票请求。
   const isLoggedIn = !!userAuth;
 
   // SSG: 使用静态导入的数据作为初始值，避免首屏 CLS
@@ -206,14 +208,14 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
   // 稳定的投票回调（使用 ref 避免因 userAuth 变化而重建）
   const vote = useCallback(
     async (promptId: number | string, action: "upvote" | "downvote") => {
-      if (!userAuthRef.current) {
-        messageApi.warning("Please log in to vote.");
+      if (!getUserAuth()) {
+        messageApi.warning(voteLoginRequiredText());
         return;
       }
 
       const voteKey = `${promptId}_${action}`;
       if (sessionVotedIdsRef.current.has(voteKey)) {
-        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        messageApi.info(voteAlreadyVotedText(action));
         return;
       }
       sessionVotedIdsRef.current.add(voteKey);
@@ -229,7 +231,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 
       try {
         await voteOnUserPrompt(Number(promptId), action);
-        messageApi.success(`Successfully ${action}d!`);
+        messageApi.success(voteSuccessText(action));
       } catch (err) {
         sessionVotedIdsRef.current.delete(voteKey);
         setVoteDeltas((prev) => ({
@@ -239,38 +241,16 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
             downvoteDelta: (prev[promptId]?.downvoteDelta || 0) - delta.downvoteDelta,
           },
         }));
-        const errorMessage = err?.strapiMessage || `Failed to ${action}. Please try again.`;
+        const errorMessage = err?.strapiMessage || voteFailedText(action);
         messageApi.error(errorMessage);
       }
     },
     [messageApi],
   );
 
-  // 稳定的收藏切换回调（DataCard 用，isComm=false）
-  const handleToggleFavorite = useCallback(
-    (id: number, isComm: boolean) => {
-      const loves = userAuthRef.current?.data?.favorites?.loves || [];
-      if (loves.includes(id)) {
-        confirmRemoveFavorite(id, isComm);
-      } else {
-        addFavorite(id, isComm);
-      }
-    },
-    [confirmRemoveFavorite, addFavorite],
-  );
-
-  // 稳定的社区收藏切换回调（CommunityCard 用，isComm=true）
-  const handleCommToggleFavorite = useCallback(
-    (id: string | number, isComm: boolean) => {
-      const commLoves = userAuthRef.current?.data?.favorites?.commLoves || [];
-      if (commLoves.includes(Number(id))) {
-        confirmRemoveFavorite(Number(id), isComm);
-      } else {
-        addFavorite(Number(id), isComm);
-      }
-    },
-    [confirmRemoveFavorite, addFavorite],
-  );
+  // 收藏切换：add/remove 的判定在 useFavorite 内部完成（读权威值），这里只透传
+  const handleToggleFavorite = toggleFavorite;
+  const handleCommToggleFavorite = useCallback((id: string | number, isComm: boolean) => toggleFavorite(Number(id), isComm), [toggleFavorite]);
 
   // 组件卸载时清除投票记录，防止内存泄漏
   useEffect(() => {
