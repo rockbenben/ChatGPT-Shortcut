@@ -36,7 +36,7 @@
     "@giphy/react-components": "^10.1.2",
     "@mdx-js/react": "^3.1.1",
     "@popperjs/core": "^2.11.8",
-    "antd": "^6.5.0",
+    "antd": "^6.5.1",
     "axios": "^1.18.1",
     "boring-avatars": "^2.0.4",
     "buffer": "^6.0.3",
