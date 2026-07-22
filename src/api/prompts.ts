@@ -322,6 +322,11 @@ export async function deletePrompt(id: number) {
   }
 }
 
+// 请求发出前写入的 lastFetch 时效（分钟）。请求成功会被完整 TTL 覆盖；
+// 失败时它就是"别再打了"的抑制窗口：按「优先保护后端」取 1 小时——一次瞬时抖动后
+// 最多 1 小时内不重试、直接吃缓存，代价是这段时间拿不到新数据（可接受）。
+const FAILED_FETCH_TTL_MIN = 60;
+
 /**
  * Get community prompts with pagination
  */
@@ -359,60 +364,80 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
     url += `&filters[$or][0][description][$containsi]=${encodedSearchKey}&filters[$or][1][title][$containsi]=${encodedSearchKey}&filters[$or][2][remark][$containsi]=${encodedSearchKey}`;
   }
 
-  try {
-    // Record fetch time
-    setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
+  // In-flight dedup（与 getPrompts 同一模式）：真正并发的调用共享同一个 Promise。
+  // cacheKey 已含 page/size/sort/搜索词，直接用作 dedup key。
+  return dedupe(cacheKey, async () => {
+    // 发请求**前**先写一个短时效的 lastFetch。这一行同时提供两件事：
+    //  - **并发闸门**：第二个并发/紧随其后的调用在上面的节流判断处直接吃缓存，不重复打后端；
+    //  - **失败抑制**：请求失败时标记留着，FAILED_FETCH_TTL_MIN 分钟内的重试直接吃缓存，
+    //    不会对着已经挂掉的 Strapi 反复重试。
+    // 成功后会用完整 TTL 覆盖，恢复正常的 1 小时轮询节流。
+    //
+    // 不要改成模块级的熔断器/退避状态机：这一行已经覆盖了并发与失败两种情况，
+    // 而状态机需要额外处理探测、恢复、慢失败等分支，收益不抵复杂度。
+    setCache(lastFetchKey, now, FAILED_FETCH_TTL_MIN);
+    try {
+      // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
+      // 仅在 ETag 与 cachedData 同时存在时才发条件请求，避免 304 空 body 走到 fallthrough
+      const config = cachedEtag && cachedData ? { headers: { "If-None-Match": cachedEtag } } : {};
+      const response = await apiClient.get(url, {
+        ...config,
+        validateStatus: (status) => status === 200 || status === 304,
+      });
 
-    // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
-    // 仅在 ETag 与 cachedData 同时存在时才发条件请求，避免 304 空 body 走到 fallthrough
-    const config = cachedEtag && cachedData ? { headers: { "If-None-Match": cachedEtag } } : {};
-    const response = await apiClient.get(url, {
-      ...config,
-      validateStatus: (status) => status === 200 || status === 304,
-    });
-
-    // Handle 304 Not Modified
-    // 进入此分支时 cachedData 必然存在（请求前已做过防御性同步）
-    if (response.status === 304 && cachedData) {
-      extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-      return cachedData;
-    }
-
-    // Handle 200 OK
-    const listItems = response.data.data; // [{ id: 73, updatedAt: "..." }, ...]
-    const newEtag = response.headers["etag"];
-
-    // Clear stale caches by comparing updatedAt
-    listItems.forEach((item: { id: number; updatedAt: string }) => {
-      const promptCacheKey = getPromptCacheKey("commus", item.id);
-      const cachedPrompt = getCache(promptCacheKey);
-
-      // If cached updatedAt differs from latest, clear the cache
-      if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
-        removeCache(promptCacheKey);
+      // Handle 304 Not Modified
+      // 进入此分支时 cachedData 必然存在（请求前已做过防御性同步）
+      if (response.status === 304 && cachedData) {
+        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+        // 只有真正拿到可用结果才记录 fetch 时间：网络失败/后续取详情失败时不设置，
+        // 否则会在有旧 cachedData 的情况下被 throttle 满一小时，拿不到新数据
+        setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
+        return cachedData;
       }
-    });
 
-    // Fetch prompts (only uncached or rebuilt ones will be fetched)
-    const ids = listItems.map((item: { id: number }) => item.id);
-    const responseIds = await getPrompts("commus", ids);
+      // Handle 200 OK
+      const listItems = response.data.data; // [{ id: 73, updatedAt: "..." }, ...]
+      const newEtag = response.headers["etag"];
 
-    const result = [responseIds, { pagination: response.data.meta.pagination }];
+      // Clear stale caches by comparing updatedAt
+      listItems.forEach((item: { id: number; updatedAt: string }) => {
+        const promptCacheKey = getPromptCacheKey("commus", item.id);
+        const cachedPrompt = getCache(promptCacheKey);
 
-    // Save with ETag
-    setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, newEtag);
+        // If cached updatedAt differs from latest, clear the cache
+        if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
+          removeCache(promptCacheKey);
+        }
+      });
 
-    return result;
-  } catch (error) {
-    // Handle 304 in catch block
-    if (error?.response?.status === 304 && cachedData) {
-      extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-      return cachedData;
+      // Fetch prompts (only uncached or rebuilt ones will be fetched)
+      const ids = listItems.map((item: { id: number }) => item.id);
+      const responseIds = await getPrompts("commus", ids);
+
+      const result = [responseIds, { pagination: response.data.meta.pagination }];
+
+      // Save with ETag
+      setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, newEtag);
+      // 同上：结果已完整落盘后才记 fetch 时间（getPrompts 可能抛，抛了就不该 throttle）
+      setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
+
+      return result;
+    } catch (error) {
+      // Handle 304 in catch block
+      if (error?.response?.status === 304 && cachedData) {
+        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
+        // 304 也是一次成功的校验，同样要记 fetch 时间，否则每次调用都会重新发条件请求
+        setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
+        return cachedData;
+      }
+
+      // 不清 lastFetch：上面写的短时效标记正是失败抑制窗口，留着它。
+      // 仍然 rethrow：吞掉错误会让 community-prompts.tsx 把任意旧缓存当成新鲜结果渲染，
+      // 分页 total 与服务端不符、投票数是旧的，用户却完全看不出失败了。
+      console.error(`Error fetching commPrompts:`, error);
+      throw error;
     }
-
-    console.error(`Error fetching commPrompts:`, error);
-    throw error;
-  }
+  });
 }
 
 /**
