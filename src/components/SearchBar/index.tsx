@@ -100,11 +100,10 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
 }
 
 interface SearchBarProps {
-  setShowUserPrompts?: (value: boolean) => void;
   beforeSearch?: (value: string | null) => boolean | void;
 }
 
-function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarProps) {
+function SearchBar({ beforeSearch }: SearchBarProps) {
   const history = useHistory();
   const location = useLocation<UserState>();
   const [value, setValue] = useState<string | null>(null);
@@ -136,17 +135,27 @@ function SearchBar({ setShowUserPrompts = () => {}, beforeSearch }: SearchBarPro
     if (beforeSearch && beforeSearch(value) === false) {
       return;
     }
+    // 避免重复 push：清空搜索时 effect 会因 handleSearch 重建而二次触发，
+    // 若搜索词没变就跳过，防止产生重复历史记录（用户按返回键需按两次）。
+    //
+    // 只比对 name 参数本身，不比对整个 query 串——handleSearch 唯一改动的就是它，
+    // 而 delete + set 会把 name 挪到参数列表末尾，串比较在 URL 还带 tags 等参数时
+    // 必然不等（"name=a&tags=b" vs "tags=b&name=a"），守卫会静默失效。
+    const nextName = value || null;
+    if (readSearchName(location.search) === nextName) {
+      return;
+    }
+
     const newSearch = new URLSearchParams(location.search);
     newSearch.delete(SearchNameQueryKey);
-    if (value) {
-      newSearch.set(SearchNameQueryKey, value);
+    if (nextName) {
+      newSearch.set(SearchNameQueryKey, nextName);
     }
     history.push({
       ...location,
       search: newSearch.toString(),
       state: prepareUserState(),
     });
-    setShowUserPrompts(false);
   }, [value, location, history, beforeSearch]);
 
   useEffect(() => {
