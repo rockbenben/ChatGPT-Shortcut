@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect, useMemo, useCallback, useRef, startTransition } from "react";
-import { getMySpace, clearMySpaceCache, getPrompts } from "@site/src/api";
+import { getMySpace, clearMySpaceCache, getPrompts, persistAuthToken } from "@site/src/api";
+import { clearUserSessionCaches } from "@site/src/api/sessionCache";
+import { AUTH_EXPIRED_EVENT } from "@site/src/api/config";
 import { enrichMySpaceData } from "@site/src/utils/myspaceUtils";
 import { getCache, setCache, CACHE_PREFIX, CACHE_TTL } from "@site/src/utils/cache";
 
@@ -21,6 +23,15 @@ export const AuthContext = createContext<{
   userAuth: any;
   refreshUserAuth: (forceRefresh?: boolean) => Promise<void>;
   setUserAuth: (userAuth: any) => void;
+  /** 本地登出：递增 auth 世代作废在飞请求 + 清会话缓存 + 降为登出态。
+   *  手动登出必须走它而不是 setUserAuth(null)——后者不动世代号，
+   *  在飞的 GET /myspace 回来仍会把登录态写回去。 */
+  clearAuth: () => void;
+  /** 读当前 userAuth 的权威即时值。
+   *  消费方**不要**自己 `const ref = useRef(userAuth); ref.current = userAuth`——那是渲染期快照，
+   *  `await refreshUserAuth()` 之后 React 尚未 commit，读到的仍是旧数据，
+   *  拿它算出的 items 再写回去会把刚拉到的内容整个覆盖掉。 */
+  getUserAuth: () => any;
   /** 统一更新 myspace 相关 state（userAuth + lscache-user_auth + lscache-myspace），
    *  各 mutation 路径（useFavorite reconcile、drag、tag 改动）共用此入口避免漏写一处。 */
   syncMySpaceState: (patch: MySpaceStatePatch) => void;
@@ -29,6 +40,8 @@ export const AuthContext = createContext<{
   userAuth: null,
   refreshUserAuth: async () => {},
   setUserAuth: () => {},
+  clearAuth: () => {},
+  getUserAuth: () => null,
   syncMySpaceState: () => {},
   authLoading: false,
 });
@@ -79,7 +92,8 @@ function readValidToken(): string | null {
   const raw = localStorage.getItem("auth_token");
   if (!raw) return null;
   if (isValidToken(raw)) return raw;
-  localStorage.removeItem("auth_token");
+  // 走 persistAuthToken 而非直接 removeItem：同步清掉 client.ts 的模块级 authToken
+  persistAuthToken(null);
   return null;
 }
 
@@ -113,6 +127,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // mutation 代际计数：每次 syncMySpaceState（客户端 mutation 的唯一本地同步入口）递增。
   // 后台 GET /myspace 在飞期间若 gen 变化，说明本地已发生更新，GET 不应覆盖（见 fetchOnce 竞态保护）。
   const mutationGenRef = useRef(0);
+  // 本标签最后一次写 user_auth 快照的时间戳，用于跨标签 storage 事件的比较（见下方 onStorage）。
+  // 用挂载时读到的缓存快照播种，避免把已经加载过的同一份快照再套用一次。
+
+  // 登录态的**权威**当前值。注意这里刻意没有 `userAuthRef.current = userAuth` 那样的
+  // 渲染期镜像——镜像会在 React 19 并发渲染下被一次仍带旧 state 的渲染退回去，
+  // 之前正是靠一层层守卫去堵这个洞，堵一次漏一个。现在反过来：ref 是唯一真相，
+  // state 只是它的投影，所有写入必须经 applyAuth，任何地方都不得直接 setUserAuth。
+  const userAuthRef = useRef(userAuth);
+
+  /** 登录态的唯一写入口：ref 与 state 一起改，两者永不脱节。 */
+  const applyAuth = useCallback((next: any) => {
+    userAuthRef.current = next;
+    startTransition(() => setUserAuth(next));
+  }, []);
+
+  /**
+   * 写 user_auth 快照：同时落 ref / state / lscache，三者永不脱节。
+   */
+  const writeAuthCache = useCallback(
+    (auth: any) => {
+      setCache("user_auth", auth, CACHE_TTL.MYSPACE);
+      applyAuth(auth);
+    },
+    [applyAuth],
+  );
+
+  /**
+   * 本地登出：清 state + 清会话缓存。在飞的 fetchUser 写回前会自查 token，无需额外协议。
+   * 供三条「token 已失效」路径共用：本地过期、服务端吊销（AUTH_EXPIRED_EVENT）、
+   * 另一标签登出。不发任何请求，也不碰 token（调用方已清或本就没有）。
+   */
+  const clearAuth = useCallback(() => {
+    clearUserSessionCaches();
+    applyAuth(null);
+  }, [applyAuth]);
 
   const fetchUser = useCallback(async (forceRefresh = false): Promise<void> => {
     // 非 forceRefresh：如已有 fetch 在飞，共享 promise
@@ -125,8 +174,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const token = readValidToken();
       if (!token) {
         setAuthLoading(false);
-        // 若初始化时挂了 pending 占位，需要降为登出态
-        startTransition(() => setUserAuth((prev) => (prev?.pending ? null : prev)));
+        // 无 token 是确定性的登出（readValidToken 已清掉过期 token），
+        // 必须连缓存快照一起清：否则 initialAuthRef 下次挂载又从 lscache-user_auth
+        // 恢复出登录态 UI，用户看着像登录着、每次交互都发注定 401 的请求，
+        // 直到手动登出为止（TTL 30 天）。降 pending 占位不足以覆盖这种情况。
+        clearAuth();
         return;
       }
 
@@ -140,6 +192,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const fetchOnce = async () => {
         // 记录发起时刻的 mutation 代际，用于下方竞态保护
         const genAtStart = mutationGenRef.current;
+        // 记录发起时刻的 token 本身。写回前比对的是**同一个 token 吗**，
+        // 而不只是"还有 token 吗"——后者漏掉"换号"：A 的请求在飞时 B 登录成功，
+        // token 非空于是守卫放行，A 的 items 被写进 B 的会话缓存（串号）。
+        const tokenAtStart = token;
 
         // Avoid being stuck in loading forever if the request stalls.
         // getMySpace() itself catches and may return cache/null, but it cannot resolve if the underlying request never completes.
@@ -150,9 +206,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           return null;
         }
 
-        // 竞态保护：若 GET 在飞期间发生了客户端 mutation（syncMySpaceState 递增 gen），本地 state 已含更新
-        // 并已与服务器 PATCH reconcile。此 GET 可能读到 mutation 之前的服务器快照，覆盖会回滚刚收藏/改标签的结果。
-        // 仅后台刷新需防护；forceRefresh 是用户主动请求权威数据，照常覆盖。
+        // GET 在飞期间 token 变了——被清空（401 吊销 / 手动登出 / 本地过期）或被换成
+        // 另一个账号的。这份属于旧 token 的响应绝不能写回去：前者会让登录态连同 30 天
+        // TTL 的缓存快照一起复活，后者会把 A 的数据写进 B 的会话（串号）。
+        // getMySpace() 已把响应连同 ETag 落进 lscache，只丢弃返回值不够，必须连缓存一起清。
+        const tokenNow = readValidToken();
+        if (tokenNow !== tokenAtStart) {
+          if (!tokenNow) {
+            clearAuth();
+          } else {
+            // 已是另一个账号：只清掉这份旧数据，别动新会话的登录态
+            clearUserSessionCaches();
+          }
+          return myspaceData;
+        }
+
         if (!forceRefresh && mutationGenRef.current !== genAtStart) {
           return myspaceData;
         }
@@ -161,10 +229,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const validItems = enrichedData.items;
 
         // 先更新 UI，再后台预取 —— 预取仅为填充二级缓存，不应阻塞登录态呈现
-        const newUserAuth = { data: enrichedData };
-        startTransition(() => setUserAuth(newUserAuth));
-        // 缓存 userAuth 用于下次快速显示
-        setCache("user_auth", newUserAuth, CACHE_TTL.MYSPACE);
+        // 缓存 userAuth 用于下次快速显示；state 与缓存用同一个对象，保持两边一致
+        writeAuthCache({ data: enrichedData });
 
         // 后台预取提示词详情（fire-and-forget），消除 MySpace 首次挂载的请求瀑布
         // userprompts/commus 不依赖语言，cards 使用本地 JSON（已经很快）
@@ -191,6 +257,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!forceRefresh) {
           try {
             await delay(800);
+            // 重试前复查 token：首次失败若是 401，拦截器已清掉 token，
+            // 此时重试只会无 Authorization 头再打一发注定 401 的请求，白白压后端。
+            if (!readValidToken()) {
+              clearAuth();
+              return;
+            }
             await fetchOnce();
             return;
           } catch (retryError) {
@@ -204,8 +276,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // If there was no cached auth to begin with, fall back to logged-out UI by clearing userAuth.
         // 但 token 已被移除（401 吊销/密钥轮换，拦截器已清 token）时必须登出——否则当前会话保留
         // hadCachedAuth 的缓存，呈"僵尸登录"。token 仍有效的瞬时失败（5xx/离线）下 readValidToken 非空，保留缓存不变。
-        if (!hadCachedAuth || !readValidToken()) {
-          startTransition(() => setUserAuth(null));
+        // token 已没了（401 吊销 / 本地过期）才是确定性登出，此时必须连缓存一起清。
+        // 反之只是网络抖动 / 5xx：保留缓存与登录态，绝不能因为一次瞬时失败就把
+        // 用户的 MySpace 缓存销毁——那会逼出一次完整的重新拉取。
+        if (!readValidToken()) {
+          clearAuth();
+        } else if (!getCache("user_auth")) {
+          // 此刻确实没有可回退的快照，才降到登出态。
+          // 注意要查**当前**缓存而非挂载时的一次性快照——否则"登录时没有缓存"的会话
+          // 会在之后任何一次瞬时失败中被强制登出，尽管 token 和快照都还在。
+          applyAuth(null);
         }
       } finally {
         startTransition(() => setAuthLoading(false));
@@ -222,7 +302,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     return work;
-  }, []);
+    // writeAuthCache 自身 deps 为空、引用恒定，列出它不会破坏 fetchUser 的稳定性
+    // （多处 effect 依赖 fetchUser 不变）
+  }, [writeAuthCache]);
 
   useEffect(() => {
     fetchUser();
@@ -231,28 +313,67 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // 跨标签页同步：另一标签页登出或写入新 user_auth 快照时，当前标签实时跟进
   useEffect(() => {
     if (typeof window === "undefined") return;
+
     const onStorage = (e: StorageEvent) => {
       if (e.storageArea && e.storageArea !== localStorage) return;
-      // 另一标签登出（localStorage.removeItem("auth_token")）
-      if (e.key === "auth_token" && !e.newValue) {
-        startTransition(() => setUserAuth(null));
+      if (e.key === "auth_token") {
+        // 另一标签登出（persistAuthToken(null)）
+        if (!e.newValue) {
+          clearAuth();
+          return;
+        }
+        // 另一标签登录或换号。window.location.reload() 只发生在**执行登录的那个标签**，
+        // 而免密登录是从邮件客户端打开新标签完成的，原标签必然留在原地——必须在这里处理，
+        // 否则串号：原标签继续显示 A 的界面、localStorage 已是 B 的 token，此时点收藏会带着
+        // B 的 Authorization 发出，还会把 A 的 items 写进共享缓存显示给 B。
+        //
+        // 只 clearAuth()（纯本地，不发请求）：把这个陈旧标签降到登出态即可根除串号。
+        // 不主动拉 B 的数据——那会让一个用户没在看的后台标签白发一次 GET /myspace；
+        // 用户想在该标签看 B 的空间，刷新一下即可。
+        if (e.newValue !== e.oldValue) {
+          clearAuth();
+        }
         return;
       }
-      // 另一标签刷新了 user_auth 缓存（收藏、新增提示词等），复用其结果避免重复请求
+      // 另一标签刷新了 user_auth 快照（收藏、新增提示词等），直接复用其结果，不再发请求。
+      // last-write-wins，不做时间戳排序：两个标签在同一秒内各改各的，对本站来说罕见到
+      // 不值得为它维护一套排序协议（那套东西前后引发过十来个缺陷）；收藏路径的
+      // applyDeltaResponse 本身也会用服务端权威值自愈。
+      //
+      // 刻意不改成"收到事件就重新 GET /myspace"——那会形成跨标签死循环：
+      // fetchUser 成功后同样写 user_auth，对方收到事件又去 GET，来回不休。
+      // 采纳快照不产生任何写入，链条自然终止。
       if (e.key === "lscache-user_auth") {
+        // 本地已无有效 token（401 吊销 / 过期）：不仅不能采纳对方快照（会把刚清掉的
+        // 登录态装回来），本标签自己也该就地登出——否则它继续显示登录 UI，
+        // 每次交互都发注定 401 的请求。
+        if (!readValidToken()) {
+          clearAuth();
+          return;
+        }
         const fresh = getCache("user_auth");
         if (fresh) {
-          startTransition(() => setUserAuth(fresh));
+          // 递增 gen：采纳外来快照同样让本地 state 领先于「在飞的后台 GET」发起时的世界，
+          // 不递增的话那个 GET 回来会用更旧的服务端数据盖掉刚采纳的内容，并写回共享缓存。
+          mutationGenRef.current += 1;
+          applyAuth(fresh);
         }
       }
     };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
 
-  // Ref for current userAuth — syncMySpaceState 用 ref 读最新值，避免每次 userAuth 变都重建 callback
-  const userAuthRef = useRef(userAuth);
-  userAuthRef.current = userAuth;
+    // 服务端吊销 token（401）：api 层清完缓存后派发此事件，这里把 React 登录态一并降下来
+    const onAuthExpired = () => clearAuth();
+
+    window.addEventListener("storage", onStorage);
+    window.addEventListener(AUTH_EXPIRED_EVENT, onAuthExpired);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(AUTH_EXPIRED_EVENT, onAuthExpired);
+    };
+  }, [clearAuth]);
+
+  // 这里**没有**渲染期回写 ref。ref 是唯一真相、state 只是投影，全部写入经 applyAuth，
+  // 因此不存在「并发渲染用旧 state 把 ref 退回去」的窗口，也就不需要任何守卫。
 
   /**
    * 统一更新 myspace 相关 state：
@@ -282,9 +403,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       };
     }
 
-    const newAuth = { ...auth, data: newData };
-    startTransition(() => setUserAuth(newAuth));
-    setCache("user_auth", newAuth, CACHE_TTL.MYSPACE);
+    // writeAuthCache 内部会 applyAuth，ref / state / lscache 一起更新
+    writeAuthCache({ ...auth, data: newData });
     setCache(
       CACHE_PREFIX.MYSPACE,
       {
@@ -294,17 +414,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       },
       CACHE_TTL.MYSPACE,
     );
-  }, []);
+  }, [writeAuthCache]);
+
+  // 权威即时读取口：消费方不要各自持有渲染期 ref（见 AuthContext 类型定义上的说明）
+  const getUserAuth = useCallback(() => userAuthRef.current, []);
 
   const value = useMemo(
     () => ({
       userAuth,
-      setUserAuth,
+      // 对外只给受控 setter：直接暴露 useState 的 setUserAuth 会绕过 ref，
+      // 让 ref 与 state 脱节（正是之前一连串竞态的根源）。
+      setUserAuth: applyAuth,
+      clearAuth,
+      getUserAuth,
       refreshUserAuth: fetchUser,
       syncMySpaceState,
       authLoading,
     }),
-    [userAuth, fetchUser, syncMySpaceState, authLoading],
+    [userAuth, applyAuth, clearAuth, getUserAuth, fetchUser, syncMySpaceState, authLoading],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
