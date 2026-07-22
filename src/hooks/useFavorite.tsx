@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, { useCallback, useContext } from "react";
 import { App } from "antd";
 import Translate from "@docusaurus/Translate";
 import { AuthContext } from "../components/AuthContext";
@@ -20,23 +20,17 @@ interface UseFavoriteReturn {
 }
 
 export const useFavorite = (): UseFavoriteReturn => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext);
+  const { refreshUserAuth } = useContext(AuthContext);
   const { message, modal } = App.useApp();
-
-  // Use ref for userAuth to stabilize callbacks.
-  // Without this, every background SWR auth refresh recreates all callbacks,
-  // causing cascading re-renders through every card component.
-  const userAuthRef = useRef(userAuth);
-  userAuthRef.current = userAuth;
 
   const addFavorite = useCallback(
     async (id: number, isComm: boolean = false) => {
       const favorites = getLocalFavorites();
-      if (!favorites.includes(id)) {
-        favorites.unshift(id);
-        localStorage.setItem(LOCAL_FAVORITES_KEY, JSON.stringify(favorites));
-        refreshUserAuth();
-      }
+      // 已在收藏里就静默返回：不重复写、也不弹「已添加」的误导提示（双击时会命中）
+      if (favorites.includes(id)) return;
+      favorites.unshift(id);
+      localStorage.setItem(LOCAL_FAVORITES_KEY, JSON.stringify(favorites));
+      refreshUserAuth();
       message.success(<Translate id="message.addFavorite.success">已添加到收藏</Translate>);
     },
     [message, refreshUserAuth],
