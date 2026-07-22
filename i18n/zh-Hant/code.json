@@ -143,6 +143,12 @@
   "community.description": {
     "message": "想要更多實戰驗證的 AI 提示詞？加入 AiShort 社群，發現使用者分享的實用範本，交流最佳化技巧，共建高品質提示詞資源庫。"
   },
+  "community.fetchError": {
+    "message": "取得資料失敗"
+  },
+  "community.heading": {
+    "message": "AI 提示詞社群"
+  },
   "community.loading": {
     "message": "載入中..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "社群提示詞"
+  },
+  "community.tagline": {
+    "message": "由使用者投稿與分享的 AI 提示詞。按最新發佈或最多讚排序，支援搜尋篩選，登入後可點讚與收藏。"
   },
   "community.title": {
     "message": "AI 提示詞社群 | 發現與分享優質提示詞"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "使用者中心"
   },
+  "login.google.button": {
+    "message": "透過 Google 登入"
+  },
+  "login.google.error": {
+    "message": "Google 登入發生錯誤，請稍後再試（{error}）"
+  },
+  "login.google.failed": {
+    "message": "Google 登入失敗"
+  },
+  "login.google.redirecting": {
+    "message": "正在跳轉到 Google 登入..."
+  },
   "login.login.prompt": {
     "message": "已有帳號？"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "提示詞提交成功！"
   },
-  "message.cache.clearError": {
-    "message": "清除快取失敗"
-  },
   "message.cache.cleared": {
     "message": "快取已清除，資料已更新"
+  },
+  "message.cache.clearError": {
+    "message": "清除快取失敗"
   },
   "message.cannotFavorOwn": {
     "message": "不能收藏自己的提示詞"
   },
   "message.convertToPrivate.error": {
     "message": "轉換失敗，請稍後重試"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "已建立私有提示詞，但原收藏未能移除，請手動刪除以免重複"
   },
   "message.convertToPrivate.success": {
     "message": "已轉為私有提示詞"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "匯入成功！"
   },
+  "message.loadFailed": {
+    "message": "載入資料失敗"
+  },
   "message.loginRequired": {
     "message": "請先登入"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "暫無內容，去建立提示詞或收藏喜歡的吧"
   },
+  "message.orderSaved": {
+    "message": "排列已儲存"
+  },
   "message.orderSaveFailed": {
     "message": "排列儲存失敗"
   },
-  "message.orderSaved": {
-    "message": "排列已儲存"
+  "message.postComment.error": {
+    "message": "評論發送失敗，請稍後重試"
   },
   "message.removeFavorite.confirm.content": {
     "message": "確定要取消收藏這個提示詞嗎？"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "註冊成功！"
   },
-  "message.tagsUpdateFailed": {
-    "message": "標籤更新失敗"
-  },
   "message.tagsUpdated": {
     "message": "標籤已更新"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "標籤更新失敗"
   },
   "message.updatePrompt.error": {
     "message": "提示詞更新失敗，請稍後重試"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "最新發布"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "關閉",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "回到頂部",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "複製成功",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "複製",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "複製程式碼至剪貼簿",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "切換自動換行",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "收起側邊欄分類 '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "展開側邊欄分類 '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "此頁已當機。",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重試",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "主導航",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "我們沒有您要找的頁面。",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "請聯絡原始連結來源網站的所有者，並通知他們連結已毀損。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "找不到頁面",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "本頁導覽",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "警告",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "關閉",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到頂部",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "歷史文章",
@@ -970,6 +944,10 @@
     "message": "{count} 篇文章",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "閱讀時間約 {readingTime} 分鐘",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "閱讀更多",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "閱讀 {title} 全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "閱讀時間約 {readingTime} 分鐘",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近部落格文章導覽",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} 含有標籤「{tagName}」",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "複製成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "複製",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "複製程式碼至剪貼簿",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切換自動換行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "切換淺色/深色模式（當前為{mode}）",
@@ -1034,10 +1024,6 @@
     "message": "未列出頁",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count} 個項目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "主頁面",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "頁面路徑",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 個項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "文件選項卡",
@@ -1113,6 +1103,26 @@
     "message": "此為 {siteTitle} {versionLabel} 版尚未發行的文件。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "收起側邊欄分類 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展開側邊欄分類 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "此頁已當機。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重試",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": "於 {date} ",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "選擇版本",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主導航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "我們沒有您要找的頁面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "請聯絡原始連結來源網站的所有者，並通知他們連結已毀損。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到頁面",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "標籤：",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "標籤",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本頁導覽",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "資料管理"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "請輸入使用者名稱或註冊電子信箱！"
   },
-  "community.heading": {
-    "message": "AI 提示詞社群"
+  "vote.downvote.alreadyVoted": {
+    "message": "本次工作階段中你已踩過該提示詞"
   },
-  "community.tagline": {
-    "message": "由使用者投稿與分享的 AI 提示詞。按最新發佈或最多讚排序，支援搜尋篩選，登入後可點讚與收藏。"
+  "vote.downvote.failed": {
+    "message": "踩失敗，請重試"
   },
-  "message.postComment.error": {
-    "message": "評論發送失敗，請稍後重試"
+  "vote.downvote.success": {
+    "message": "已踩！"
+  },
+  "vote.loginRequired": {
+    "message": "請先登入後再投票"
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "本次工作階段中你已讚過該提示詞"
+  },
+  "vote.upvote.failed": {
+    "message": "按讚失敗，請重試"
+  },
+  "vote.upvote.success": {
+    "message": "已讚！"
   }
 }

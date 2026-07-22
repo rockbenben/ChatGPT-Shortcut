@@ -143,6 +143,12 @@
   "community.description": {
     "message": "और अधिक परीक्षित AI प्रॉम्प्ट चाहिए? AiShort समुदाय में शामिल होकर व्यावहारिक टेम्पलेट खोजें और अनुकूलन तकनीक साझा करें।"
   },
+  "community.fetchError": {
+    "message": "डेटा प्राप्त करने में विफल"
+  },
+  "community.heading": {
+    "message": "AI प्रॉम्प्ट समुदाय"
+  },
   "community.loading": {
     "message": "लोड हो रहा है..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "समुदाय प्रॉम्प्ट्स"
+  },
+  "community.tagline": {
+    "message": "उपयोगकर्ताओं द्वारा साझा किए गए AI प्रॉम्प्ट। नवीनतम या सबसे लोकप्रिय के अनुसार क्रमबद्ध करें, खोजें और फ़िल्टर करें; लॉगिन के बाद लाइक और सहेजें।"
   },
   "community.title": {
     "message": "AI प्रॉम्प्ट समुदाय | खोजें और साझा करें"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "उपयोगकर्ता केंद्र"
   },
+  "login.google.button": {
+    "message": "Google से लॉगिन करें"
+  },
+  "login.google.error": {
+    "message": "Google लॉगिन में त्रुटि, कृपया बाद में पुनः प्रयास करें ({error})"
+  },
+  "login.google.failed": {
+    "message": "Google लॉगिन विफल"
+  },
+  "login.google.redirecting": {
+    "message": "Google साइन-इन पर पुनर्निर्देशित हो रहा है..."
+  },
   "login.login.prompt": {
     "message": "पहले से ही एक खाता है?"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "प्रॉम्प्ट सफलतापूर्वक सबमिट किया गया!"
   },
-  "message.cache.clearError": {
-    "message": "कैश साफ़ करने में विफल"
-  },
   "message.cache.cleared": {
     "message": "कैश साफ़ किया गया"
+  },
+  "message.cache.clearError": {
+    "message": "कैश साफ़ करने में विफल"
   },
   "message.cannotFavorOwn": {
     "message": "अपने स्वयं के प्रॉम्प्ट को पसंदीदा नहीं बना सकते"
   },
   "message.convertToPrivate.error": {
     "message": "बदलने में विफल, कृपया बाद में पुनः प्रयास करें"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "निजी प्रॉम्प्ट बन गया, लेकिन मूल पसंदीदा हटाया नहीं जा सका। दोहराव से बचने के लिए इसे मैन्युअल रूप से हटाएँ।"
   },
   "message.convertToPrivate.success": {
     "message": "सफलतापूर्वक निजी प्रॉम्प्ट में बदल दिया गया"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "आयात सफल!"
   },
+  "message.loadFailed": {
+    "message": "डेटा लोड करने में विफल"
+  },
   "message.loginRequired": {
     "message": "कृपया पहले लॉगिन करें"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "अभी कुछ नहीं — एक प्रॉम्प्ट बनाएँ या किसी को पसंदीदा बनाएँ"
   },
+  "message.orderSaved": {
+    "message": "व्यवस्था सहेजी गई"
+  },
   "message.orderSaveFailed": {
     "message": "व्यवस्था सहेजने में विफल"
   },
-  "message.orderSaved": {
-    "message": "व्यवस्था सहेजी गई"
+  "message.postComment.error": {
+    "message": "टिप्पणी भेजने में विफल। कृपया बाद में पुनः प्रयास करें।"
   },
   "message.removeFavorite.confirm.content": {
     "message": "क्या आप वाकई इस प्रॉम्प्ट को पसंदीदा से हटाना चाहते हैं?"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "पंजीकरण सफल!"
   },
-  "message.tagsUpdateFailed": {
-    "message": "टैग अपडेट करने में विफल"
-  },
   "message.tagsUpdated": {
     "message": "टैग अपडेट किए गए"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "टैग अपडेट करने में विफल"
   },
   "message.updatePrompt.error": {
     "message": "प्रॉम्प्ट अपडेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "नवीनतम"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "बंद करे",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "पेज नहीं मिला",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "caution",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "warning",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "बंद करे",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Archive",
@@ -970,6 +944,10 @@
     "message": "One post|{count} posts",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "Read more",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "Read more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} tagged with \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
@@ -1034,10 +1024,6 @@
     "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "डॉक्स पेज",
@@ -1113,6 +1103,26 @@
     "message": "यह {siteTitle} {versionLabel} वर्जन के लिए प्रकाशित डॉक्यूमेंटेशन है।",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": " {date} पर",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "Versions",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "पेज नहीं मिला",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "टैग:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "डेटा प्रबंधन"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
   },
-  "community.heading": {
-    "message": "AI प्रॉम्प्ट समुदाय"
+  "vote.downvote.alreadyVoted": {
+    "message": "आपने इस सत्र में इस प्रॉम्प्ट को पहले ही नापसंद किया है।"
   },
-  "community.tagline": {
-    "message": "उपयोगकर्ताओं द्वारा साझा किए गए AI प्रॉम्प्ट। नवीनतम या सबसे लोकप्रिय के अनुसार क्रमबद्ध करें, खोजें और फ़िल्टर करें; लॉगिन के बाद लाइक और सहेजें।"
+  "vote.downvote.failed": {
+    "message": "नापसंद करने में विफल। कृपया पुनः प्रयास करें।"
   },
-  "message.postComment.error": {
-    "message": "टिप्पणी भेजने में विफल। कृपया बाद में पुनः प्रयास करें।"
+  "vote.downvote.success": {
+    "message": "सफलतापूर्वक नापसंद किया गया!"
+  },
+  "vote.loginRequired": {
+    "message": "वोट करने के लिए लॉगिन करें।"
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "आपने इस सत्र में इस प्रॉम्प्ट को पहले ही पसंद किया है।"
+  },
+  "vote.upvote.failed": {
+    "message": "पसंद करने में विफल। कृपया पुनः प्रयास करें।"
+  },
+  "vote.upvote.success": {
+    "message": "सफलतापूर्वक पसंद किया गया!"
   }
 }

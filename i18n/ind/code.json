@@ -143,6 +143,12 @@
   "community.description": {
     "message": "Ingin lebih banyak prompt AI yang teruji? Bergabunglah dengan komunitas AiShort untuk menemukan template prompt praktis!"
   },
+  "community.fetchError": {
+    "message": "Gagal mengambil data"
+  },
+  "community.heading": {
+    "message": "Komunitas Prompt AI"
+  },
   "community.loading": {
     "message": "Memuat..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "Prompt Komunitas"
+  },
+  "community.tagline": {
+    "message": "Prompt AI yang dibagikan pengguna. Urutkan berdasarkan terbaru atau terpopuler, dengan pencarian dan filter; setelah login, Anda bisa menyukai dan menyimpan."
   },
   "community.title": {
     "message": "Komunitas Prompt AI"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "Pusat Pengguna"
   },
+  "login.google.button": {
+    "message": "Masuk dengan Google"
+  },
+  "login.google.error": {
+    "message": "Kesalahan saat login Google, silakan coba lagi nanti ({error})"
+  },
+  "login.google.failed": {
+    "message": "Login Google gagal"
+  },
+  "login.google.redirecting": {
+    "message": "Mengalihkan ke login Google..."
+  },
   "login.login.prompt": {
     "message": "Sudah punya akun?"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "Prompt berhasil dikirim!"
   },
-  "message.cache.clearError": {
-    "message": "Gagal menghapus cache"
-  },
   "message.cache.cleared": {
     "message": "Cache dihapus, data disegarkan"
+  },
+  "message.cache.clearError": {
+    "message": "Gagal menghapus cache"
   },
   "message.cannotFavorOwn": {
     "message": "Tidak dapat memfavoritkan prompt Anda sendiri"
   },
   "message.convertToPrivate.error": {
     "message": "Konversi gagal, silakan coba lagi nanti"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "Prompt privat dibuat, tetapi favorit asli tidak dapat dihapus. Hapus secara manual untuk menghindari duplikasi."
   },
   "message.convertToPrivate.success": {
     "message": "Dikonversi ke Prompt pribadi"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "Impor berhasil!"
   },
+  "message.loadFailed": {
+    "message": "Gagal memuat data"
+  },
   "message.loginRequired": {
     "message": "Silakan login terlebih dahulu"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "Belum ada — buat prompt atau tandai favorit"
   },
+  "message.orderSaved": {
+    "message": "Urutan disimpan"
+  },
   "message.orderSaveFailed": {
     "message": "Gagal menyimpan urutan"
   },
-  "message.orderSaved": {
-    "message": "Urutan disimpan"
+  "message.postComment.error": {
+    "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
   },
   "message.removeFavorite.confirm.content": {
     "message": "Yakin ingin menghapus prompt ini dari favorit?"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "Pendaftaran berhasil!"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Gagal memperbarui tag"
-  },
   "message.tagsUpdated": {
     "message": "Tag diperbarui"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Gagal memperbarui tag"
   },
   "message.updatePrompt.error": {
     "message": "Gagal memperbarui prompt, silakan coba lagi nanti"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "Terbaru"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Tutup",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Gulir ke atas",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Disalin",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Salin",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Salin kode ke clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Alihkan pembungkusan kata",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Ciutkan kategori sidebar '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Perluas kategori sidebar '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Terjadi kesalahan.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Coba lagi",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(buka di tab baru)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Utama",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Kami tidak dapat menemukan apa yang Anda cari.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Silakan hubungi pemilik situs yang menautkan Anda ke URL asli dan beri tahu mereka bahwa tautan mereka rusak.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Halaman Tidak Ditemukan",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Di halaman ini",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "hati-hati",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "peringatan",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Tutup",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Gulir ke atas",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Arsip",
@@ -970,6 +944,10 @@
     "message": "Satu posting|{count} posting",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 menit baca|{readingTime} menit baca",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "Baca selengkapnya",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "Baca selengkapnya tentang {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 menit baca|{readingTime} menit baca",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Navigasi posting terbaru sidebar blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} dengan tag \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Disalin",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Salin",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Salin kode ke clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Alihkan pembungkusan kata",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Beralih antara mode gelap dan terang (saat ini {mode})",
@@ -1034,10 +1024,6 @@
     "message": "Halaman tidak terdaftar",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} item",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "Beranda",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Breadcrumbs",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} item",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Halaman dokumen",
@@ -1113,6 +1103,26 @@
     "message": "Ini adalah dokumentasi yang belum dirilis untuk {siteTitle} versi {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Ciutkan kategori sidebar '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Perluas kategori sidebar '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Terjadi kesalahan.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Coba lagi",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(buka di tab baru)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": " pada {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "Versi",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Utama",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Kami tidak dapat menemukan apa yang Anda cari.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Silakan hubungi pemilik situs yang menautkan Anda ke URL asli dan beri tahu mereka bahwa tautan mereka rusak.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Halaman Tidak Ditemukan",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "Tag:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tag",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Di halaman ini",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Manajemen Data"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "Silakan masukkan nama pengguna atau email terdaftar!"
   },
-  "community.heading": {
-    "message": "Komunitas Prompt AI"
+  "vote.downvote.alreadyVoted": {
+    "message": "Anda sudah menandai tidak suka pada prompt ini di sesi ini."
   },
-  "community.tagline": {
-    "message": "Prompt AI yang dibagikan pengguna. Urutkan berdasarkan terbaru atau terpopuler, dengan pencarian dan filter; setelah login, Anda bisa menyukai dan menyimpan."
+  "vote.downvote.failed": {
+    "message": "Gagal menandai tidak suka. Silakan coba lagi."
   },
-  "message.postComment.error": {
-    "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
+  "vote.downvote.success": {
+    "message": "Berhasil menandai tidak suka!"
+  },
+  "vote.loginRequired": {
+    "message": "Silakan masuk untuk memberikan suara."
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "Anda sudah menyukai prompt ini di sesi ini."
+  },
+  "vote.upvote.failed": {
+    "message": "Gagal menyukai. Silakan coba lagi."
+  },
+  "vote.upvote.success": {
+    "message": "Berhasil menyukai prompt ini!"
   }
 }

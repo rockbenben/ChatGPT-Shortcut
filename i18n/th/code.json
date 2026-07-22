@@ -143,6 +143,12 @@
   "community.description": {
     "message": "ต้องการพรอมพ์ AI ที่ผ่านการทดสอบแล้ว? เข้าร่วมชุมชน AiShort เพื่อค้นพบเทมเพลตพรอมพ์ที่ใช้งานได้จริง!"
   },
+  "community.fetchError": {
+    "message": "ดึงข้อมูลไม่สำเร็จ"
+  },
+  "community.heading": {
+    "message": "ชุมชน Prompt AI"
+  },
   "community.loading": {
     "message": "กำลังโหลด..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "พรอมต์ชุมชน"
+  },
+  "community.tagline": {
+    "message": "prompt AI ที่ผู้ใช้แบ่งปัน เรียงตามล่าสุดหรือยอดถูกใจสูงสุด รองรับการค้นหาและกรอง เข้าสู่ระบบเพื่อกดถูกใจและบันทึก"
   },
   "community.title": {
     "message": "ชุมชนพรอมพ์ AI | ค้นพบและแบ่งปันพรอมพ์พรีเมียม"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "ศูนย์ผู้ใช้"
   },
+  "login.google.button": {
+    "message": "เข้าสู่ระบบด้วย Google"
+  },
+  "login.google.error": {
+    "message": "เกิดข้อผิดพลาดในการเข้าสู่ระบบ Google กรุณาลองใหม่ภายหลัง（{error}）"
+  },
+  "login.google.failed": {
+    "message": "เข้าสู่ระบบ Google ไม่สำเร็จ"
+  },
+  "login.google.redirecting": {
+    "message": "กำลังเปลี่ยนเส้นทางไปยังการเข้าสู่ระบบ Google..."
+  },
   "login.login.prompt": {
     "message": "มีบัญชีแล้ว?"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "ส่งพรอมพ์สำเร็จ!"
   },
-  "message.cache.clearError": {
-    "message": "ล้างแคชล้มเหลว"
-  },
   "message.cache.cleared": {
     "message": "ล้างแคชแล้ว ข้อมูลได้รีเฟรชแล้ว"
+  },
+  "message.cache.clearError": {
+    "message": "ล้างแคชล้มเหลว"
   },
   "message.cannotFavorOwn": {
     "message": "ไม่สามารถบันทึกพรอมต์ของตัวเองเป็นรายการโปรดได้"
   },
   "message.convertToPrivate.error": {
     "message": "การแปลงล้มเหลว กรุณาลองอีกครั้งในภายหลัง"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "สร้างพรอมต์ส่วนตัวแล้ว แต่ไม่สามารถลบรายการโปรดเดิมได้ กรุณาลบด้วยตนเองเพื่อไม่ให้ซ้ำ"
   },
   "message.convertToPrivate.success": {
     "message": "แปลงเป็น พรอมต์ ส่วนตัวแล้ว"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "นำเข้าสำเร็จ!"
   },
+  "message.loadFailed": {
+    "message": "โหลดข้อมูลไม่สำเร็จ"
+  },
   "message.loginRequired": {
     "message": "กรุณาเข้าสู่ระบบก่อน"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "ยังไม่มีอะไร — สร้างพรอมต์หรือทำเครื่องหมายเป็นรายการโปรด"
   },
+  "message.orderSaved": {
+    "message": "บันทึกการจัดเรียงแล้ว"
+  },
   "message.orderSaveFailed": {
     "message": "บันทึกการจัดเรียงล้มเหลว"
   },
-  "message.orderSaved": {
-    "message": "บันทึกการจัดเรียงแล้ว"
+  "message.postComment.error": {
+    "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
   },
   "message.removeFavorite.confirm.content": {
     "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมพ์นี้ออกจากรายการโปรด?"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "ลงทะเบียนสำเร็จ!"
   },
-  "message.tagsUpdateFailed": {
-    "message": "อัปเดตแท็กล้มเหลว"
-  },
   "message.tagsUpdated": {
     "message": "อัปเดตแท็กแล้ว"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "อัปเดตแท็กล้มเหลว"
   },
   "message.updatePrompt.error": {
     "message": "ไม่สามารถอัปเดตพรอมพ์ได้ โปรดลองอีกครั้ง"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "ล่าสุด"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "ปิด",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "เลื่อนกลับไปด้านบน",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "คัดลอกแล้ว",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "คัดลอก",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "คัดลอกโค้ดไปยังคลิปบอร์ด",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "สลับการห่อคำ",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "ยุบหมวดหมู่แถบด้านข้าง '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "ขยายหมวดหมู่แถบด้านข้าง '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "หน้านี้ขัดข้อง",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "ลองอีกครั้ง",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(เปิดในแท็บใหม่)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "หลัก",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "เราไม่พบสิ่งที่คุณกำลังมองหา",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์คุณไปยัง URL ต้นทางและแจ้งให้พวกเขาทราบว่าลิงก์ของพวกเขาเสีย",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "ไม่พบหน้า",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "ในหน้านี้",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "ระวัง",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "คำเตือน",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "ปิด",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "เลื่อนกลับไปด้านบน",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "คลังเก็บ",
@@ -970,6 +944,10 @@
     "message": "หนึ่งโพสต์|{count} โพสต์",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "อ่าน 1 นาที|อ่าน {readingTime} นาที",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "อ่านเพิ่มเติม",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "อ่านเพิ่มเติมเกี่ยวกับ {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "อ่าน 1 นาที|อ่าน {readingTime} นาที",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "การนำทางโพสต์ล่าสุดในบล็อก",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} ที่ติดแท็ก \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "คัดลอกแล้ว",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "คัดลอก",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "คัดลอกโค้ดไปยังคลิปบอร์ด",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "สลับการห่อคำ",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "สลับระหว่างโหมดมืดและสว่าง (ขณะนี้ {mode})",
@@ -1034,10 +1024,6 @@
     "message": "หน้าที่ไม่ได้ลงรายการ",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 รายการ|{count} รายการ",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "หน้าแรก",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "เส้นทาง",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 รายการ|{count} รายการ",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "หน้าเอกสาร",
@@ -1113,6 +1103,26 @@
     "message": "นี่คือเอกสารที่ยังไม่ได้เผยแพร่สำหรับ {siteTitle} เวอร์ชัน {versionLabel}",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "ยุบหมวดหมู่แถบด้านข้าง '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "ขยายหมวดหมู่แถบด้านข้าง '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "หน้านี้ขัดข้อง",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "ลองอีกครั้ง",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(เปิดในแท็บใหม่)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": " เมื่อ {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "เวอร์ชัน",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "หลัก",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "เราไม่พบสิ่งที่คุณกำลังมองหา",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "กรุณาติดต่อเจ้าของเว็บไซต์ที่ลิงก์คุณไปยัง URL ต้นทางและแจ้งให้พวกเขาทราบว่าลิงก์ของพวกเขาเสีย",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "ไม่พบหน้า",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "แท็ก:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "แท็ก",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "ในหน้านี้",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "การจัดการข้อมูล"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
   },
-  "community.heading": {
-    "message": "ชุมชน Prompt AI"
+  "vote.downvote.alreadyVoted": {
+    "message": "คุณได้กดไม่ชอบพรอมต์นี้แล้วในเซสชันนี้"
   },
-  "community.tagline": {
-    "message": "prompt AI ที่ผู้ใช้แบ่งปัน เรียงตามล่าสุดหรือยอดถูกใจสูงสุด รองรับการค้นหาและกรอง เข้าสู่ระบบเพื่อกดถูกใจและบันทึก"
+  "vote.downvote.failed": {
+    "message": "กดไม่ชอบไม่สำเร็จ กรุณาลองใหม่"
   },
-  "message.postComment.error": {
-    "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
+  "vote.downvote.success": {
+    "message": "บันทึกการกดไม่ชอบแล้ว!"
+  },
+  "vote.loginRequired": {
+    "message": "กรุณาเข้าสู่ระบบเพื่อโหวต"
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "คุณได้กดชอบพรอมต์นี้แล้วในเซสชันนี้"
+  },
+  "vote.upvote.failed": {
+    "message": "กดชอบไม่สำเร็จ กรุณาลองใหม่"
+  },
+  "vote.upvote.success": {
+    "message": "บันทึกการกดชอบแล้ว!"
   }
 }

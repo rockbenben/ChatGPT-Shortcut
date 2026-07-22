@@ -143,6 +143,12 @@
   "community.description": {
     "message": "Khám phá prompt AI do cộng đồng AiShort chia sẻ. Duyệt mẫu của người dùng, trao đổi kỹ thuật tối ưu và đóng góp prompt của riêng bạn."
   },
+  "community.fetchError": {
+    "message": "Không thể tải dữ liệu"
+  },
+  "community.heading": {
+    "message": "Cộng đồng Prompt AI"
+  },
   "community.loading": {
     "message": "Đang tải..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "Prompt cộng đồng"
+  },
+  "community.tagline": {
+    "message": "Các prompt AI do người dùng đóng góp và chia sẻ. Sắp xếp theo mới nhất hoặc được thích nhất, hỗ trợ tìm kiếm và lọc; đăng nhập để thích và lưu."
   },
   "community.title": {
     "message": "Cộng đồng Prompt AI"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "Trung tâm Người dùng"
   },
+  "login.google.button": {
+    "message": "Đăng nhập bằng Google"
+  },
+  "login.google.error": {
+    "message": "Lỗi khi đăng nhập Google, vui lòng thử lại sau ({error})"
+  },
+  "login.google.failed": {
+    "message": "Đăng nhập Google thất bại"
+  },
+  "login.google.redirecting": {
+    "message": "Đang chuyển hướng đến đăng nhập Google..."
+  },
   "login.login.prompt": {
     "message": "Đã có tài khoản?"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "Gửi prompt thành công!"
   },
-  "message.cache.clearError": {
-    "message": "Không thể xóa cache"
-  },
   "message.cache.cleared": {
     "message": "Đã xóa bộ nhớ cache"
+  },
+  "message.cache.clearError": {
+    "message": "Không thể xóa cache"
   },
   "message.cannotFavorOwn": {
     "message": "Không thể yêu thích prompt của chính bạn"
   },
   "message.convertToPrivate.error": {
     "message": "Không thể chuyển đổi, vui lòng thử lại sau"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "Đã tạo prompt riêng tư, nhưng không thể xoá mục yêu thích gốc. Vui lòng xoá thủ công để tránh trùng lặp."
   },
   "message.convertToPrivate.success": {
     "message": "Đã chuyển thành prompt riêng tư thành công"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "Nhập thành công!"
   },
+  "message.loadFailed": {
+    "message": "Không thể tải dữ liệu"
+  },
   "message.loginRequired": {
     "message": "Vui lòng đăng nhập trước"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "Chưa có gì — tạo prompt hoặc đánh dấu yêu thích"
   },
+  "message.orderSaved": {
+    "message": "Đã lưu bố cục"
+  },
   "message.orderSaveFailed": {
     "message": "Không thể lưu bố cục"
   },
-  "message.orderSaved": {
-    "message": "Đã lưu bố cục"
+  "message.postComment.error": {
+    "message": "Gửi bình luận thất bại. Vui lòng thử lại sau."
   },
   "message.removeFavorite.confirm.content": {
     "message": "Bạn có chắc muốn xóa prompt này khỏi yêu thích?"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "Đăng ký thành công!"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Không thể cập nhật thẻ"
-  },
   "message.tagsUpdated": {
     "message": "Đã cập nhật thẻ"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Không thể cập nhật thẻ"
   },
   "message.updatePrompt.error": {
     "message": "Không thể cập nhật prompt, vui lòng thử lại sau"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "Mới nhất"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Đóng",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Cuộn lên đầu trang",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Đã sao chép",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Sao chép",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Sao chép mã vào clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Bật/tắt xuống dòng",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Thu gọn danh mục thanh bên '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Mở rộng danh mục thanh bên '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Trang này đã bị lỗi.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Thử lại",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(mở trong tab mới)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Chính",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "Chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Vui lòng liên hệ chủ sở hữu của trang web đã liên kết bạn đến URL gốc và cho họ biết liên kết của họ bị hỏng.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Không tìm thấy Trang",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "Trên trang này",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "cẩn thận",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "cảnh báo",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Đóng",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Cuộn lên đầu trang",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Lưu trữ",
@@ -970,6 +944,10 @@
     "message": "Một bài viết|{count} bài viết",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "1 phút đọc|{readingTime} phút đọc",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "Đọc thêm",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "Đọc thêm về {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "1 phút đọc|{readingTime} phút đọc",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Điều hướng bài viết gần đây trong blog",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} được gắn thẻ \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Đã sao chép",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Sao chép",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Sao chép mã vào clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Bật/tắt xuống dòng",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Chuyển đổi giữa chế độ tối và sáng (hiện tại {mode})",
@@ -1034,10 +1024,6 @@
     "message": "Trang không niêm yết",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 mục|{count} mục",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "Trang chủ",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Đường dẫn",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 mục|{count} mục",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Trang tài liệu",
@@ -1113,6 +1103,26 @@
     "message": "Đây là tài liệu chưa phát hành cho {siteTitle} phiên bản {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Thu gọn danh mục thanh bên '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Mở rộng danh mục thanh bên '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Trang này đã bị lỗi.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Thử lại",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(mở trong tab mới)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": " vào {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "Phiên bản",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Chính",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "Chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Vui lòng liên hệ chủ sở hữu của trang web đã liên kết bạn đến URL gốc và cho họ biết liên kết của họ bị hỏng.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Không tìm thấy Trang",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "Thẻ:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "Thẻ",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Trên trang này",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Quản lý Dữ liệu"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký!"
   },
-  "community.heading": {
-    "message": "Cộng đồng Prompt AI"
+  "vote.downvote.alreadyVoted": {
+    "message": "Bạn đã không thích prompt này trong phiên này."
   },
-  "community.tagline": {
-    "message": "Các prompt AI do người dùng đóng góp và chia sẻ. Sắp xếp theo mới nhất hoặc được thích nhất, hỗ trợ tìm kiếm và lọc; đăng nhập để thích và lưu."
+  "vote.downvote.failed": {
+    "message": "Không thể bỏ thích. Vui lòng thử lại."
   },
-  "message.postComment.error": {
-    "message": "Gửi bình luận thất bại. Vui lòng thử lại sau."
+  "vote.downvote.success": {
+    "message": "Đã không thích prompt này!"
+  },
+  "vote.loginRequired": {
+    "message": "Vui lòng đăng nhập để bình chọn."
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "Bạn đã thích prompt này trong phiên này."
+  },
+  "vote.upvote.failed": {
+    "message": "Không thể thích. Vui lòng thử lại."
+  },
+  "vote.upvote.success": {
+    "message": "Đã thích prompt này!"
   }
 }
