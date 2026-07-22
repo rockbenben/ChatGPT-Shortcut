@@ -3,7 +3,9 @@ import { Button, Card, Form, Input, Checkbox, Typography, App, Flex, Divider, Se
 import { GoogleOutlined, MailOutlined, LockOutlined, UserOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import Translate, { translate } from "@docusaurus/Translate";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { login, register, forgotPassword, sendPasswordlessLink, getGoogleAuthUrl, googleLogin } from "@site/src/api";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { login, register, forgotPassword, sendPasswordlessLink, getGoogleAuthUrl, googleLogin, persistAuthToken } from "@site/src/api";
+import { setCache, PASSWORDLESS_LOCALE_KEY } from "@site/src/utils/cache";
 
 const { Title, Text } = Typography;
 
@@ -77,6 +79,7 @@ const LoginPage = () => {
   const [viewState, setViewState] = useState<"login" | "register" | "forgot-password">("login");
   const [loginType, setLoginType] = useState<"password" | "code">("password");
   const { message: messageApi } = App.useApp();
+  const { i18n } = useDocusaurusContext();
   const [formKey, setFormKey] = useState(Date.now()); // For resetting forms
   const [loading, setLoading] = useState(false);
 
@@ -109,7 +112,8 @@ const LoginPage = () => {
 
   const handleSuccess = useCallback((username, jwt) => {
     if (ExecutionEnvironment.canUseDOM) {
-      localStorage.setItem("auth_token", jwt);
+      // 走 persistAuthToken 而非直接 setItem：同步更新 client.ts 的模块级 authToken
+      persistAuthToken(jwt);
 
       // Send message to extension
       window.postMessage({ action: "login", username, jwt }, "*");
@@ -148,7 +152,7 @@ const LoginPage = () => {
       } catch (error) {
         console.error("Google login handler failed:", error);
         const errorMessage = error instanceof Error ? error.message : "Unknown error";
-        messageApi.error("Login failed: " + errorMessage);
+        messageApi.error(translate({ id: "login.google.failed", message: "Google 登录失败" }) + ": " + errorMessage);
       } finally {
         setLoading(false);
       }
@@ -208,7 +212,7 @@ const LoginPage = () => {
       spinner.className = "spinner";
 
       const text = doc.createElement("p");
-      text.textContent = "Redirecting to Google sign-in...";
+      text.textContent = translate({ id: "login.google.redirecting", message: "正在跳转到 Google 登录..." });
 
       wrapper.appendChild(spinner);
       wrapper.appendChild(text);
@@ -229,7 +233,8 @@ const LoginPage = () => {
       const errorMessage = error instanceof Error ? error.message : "Unknown error";
       messageApi.open({
         type: "error",
-        content: "Error while attempting Google login: " + errorMessage,
+        // 原始错误走 {error} 占位符而非字符串拼接：拼在句尾会渲染成"…请稍后重试: Network Error"
+        content: translate({ id: "login.google.error", message: "Google 登录出错，请稍后重试（{error}）" }, { error: errorMessage }),
       });
     } finally {
       setLoading(false);
@@ -305,6 +310,18 @@ const LoginPage = () => {
     const isValidEmail = (email) => {
       return /\S+@\S+\.\S+/.test(email);
     };
+
+    // 存储当前语言前缀：Strapi Confirmation URL 固定为 /user/auth（默认语言），
+    // 回调页用此前缀还原用户原始语言首页。
+    // 走带 TTL 的 lscache（30 分钟）而非裸 localStorage：裸写入只在免密回调那一条分支里
+    // 删除，用户放弃/发送失败/走 Google 登录都不会清理，残值会无限期留着，
+    // 几周后点开一封旧邮件仍会被导到当时那个语言的首页。
+    // 独立 try：Safari 无痕/配额满时写入会抛，若与发信共用 try 会让邮件根本没发出去
+    // 却提示"发送失败"。写入失败只是丢掉语言还原（回落默认语言），不该阻断登录。
+    try {
+      const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
+      setCache(PASSWORDLESS_LOCALE_KEY, localePrefix, 30);
+    } catch {}
 
     try {
       // Dynamically determine parameters to pass to backend
@@ -400,7 +417,7 @@ const LoginPage = () => {
         </Divider>
 
         <Button block size="large" onClick={handleGoogleLogin} icon={<GoogleOutlined />} style={{ marginBottom: 24 }}>
-          Login via Google
+          <Translate id="login.google.button">通过 Google 登录</Translate>
         </Button>
 
         <Flex justify="center" align="center" gap="small">

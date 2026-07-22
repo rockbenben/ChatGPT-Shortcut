@@ -69,14 +69,9 @@ export async function getMySpace() {
   }
 }
 
-/**
- * 清除 MySpace 缓存
- * 在修改收藏、提示词、排序、标签等操作后调用
- */
-export function clearMySpaceCache() {
-  removeCache(CACHE_PREFIX.MYSPACE);
-  removeETag(CACHE_PREFIX.MYSPACE);
-}
+// 本体在 sessionCache.ts；这里同时 import（本文件内部要用）并 re-export（保持既有 import 路径不变）
+import { clearMySpaceCache } from "./sessionCache";
+export { clearMySpaceCache };
 
 /**
  * 更新我的空间排序

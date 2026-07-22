@@ -15,6 +15,14 @@ export const CACHE_TTL = {
 };
 
 // 缓存键前缀
+/**
+ * 免密登录发起时暂存的 locale 前缀（如 "/ja"）。回调页 /user/auth 用它把用户送回
+ * 原本的语言首页——Strapi 后台的 Confirmation URL 固定为默认语言的 /user/auth。
+ * 走带 TTL 的 lscache（写入方给 30 分钟）：裸 localStorage 只在回调那一条分支里删除，
+ * 用户放弃/发送失败/改走 Google 登录都不会清理，残值会无限期留着导错语言。
+ */
+export const PASSWORDLESS_LOCALE_KEY = "passwordless_locale";
+
 export const CACHE_PREFIX = {
   COPY_COUNTS: "cc",
   COMM_LISTS: "cl_",

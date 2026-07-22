@@ -7,6 +7,7 @@ import { UserOutlined, EditOutlined, LogoutOutlined, ShareAltOutlined, SettingOu
 const LoginComponent = React.lazy(() => import("./login"));
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
+import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
@@ -16,7 +17,7 @@ import Link from "@docusaurus/Link";
 const useIsoLayoutEffect = ExecutionEnvironment.canUseDOM ? useLayoutEffect : useEffect;
 
 const UserStatus = () => {
-  const { userAuth, setUserAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
+  const { userAuth, clearAuth, refreshUserAuth, authLoading } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
   const { modal } = App.useApp();
   const { addPrompt, loading } = useUserPrompt();
@@ -43,53 +44,53 @@ const UserStatus = () => {
     [addPrompt, setViewMode]
   );
 
-  const handleLogout = useCallback(async () => {
+  // 全同步：这些模块（api barrel、utils/cache）已随 useUserPrompt / AuthContext 静态入图，
+  // 曾经的 await import() 省不下任何字节，却让清 token 落在 await 之后 ——
+  // chunk 加载失败会中断整个函数，导致点了退出却仍是登录态。
+  const handleLogout = useCallback(() => {
     if (ExecutionEnvironment.canUseDOM) {
-      localStorage.removeItem("auth_token");
-
-      // 清除所有用户相关缓存
-      const { clearUserProfileCache } = await import("@site/src/api/client");
-      const { clearMySpaceCache } = await import("@site/src/api");
-      const { removeCache } = await import("@site/src/utils/cache");
-      clearUserProfileCache();
-      clearMySpaceCache();
-      removeCache("user_auth");
-      removeCache("myspace_stats");
+      persistAuthToken(null);
     }
-    setUserAuth(null);
+    // 走 clearAuth 而非 setUserAuth(null)：它会递增 auth 世代号作废在飞的 GET /myspace，
+    // 否则那份已授权的响应回来还会把登录态连同 30 天 TTL 的缓存写回去。清缓存也由它负责。
+    clearAuth();
     window.location.reload();
-  }, [setUserAuth]);
+  }, [clearAuth]);
 
-  const menuItems = [
-    {
-      key: "account",
-      label: (
-        <Link to="/user">
-          <Translate id="link.myAccount">我的账户</Translate>
-        </Link>
-      ),
-      icon: <UserOutlined />,
-    },
-    {
-      type: "divider" as const,
-    },
-    {
-      key: "logout",
-      label: <Translate id="button.logout">退出登录</Translate>,
-      icon: <LogoutOutlined />,
-      danger: true,
-      onClick: () => {
-        modal.confirm({
-          title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
-          content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
-          onOk: handleLogout,
-          okText: <Translate id="button.confirm">确认</Translate>,
-          cancelText: <Translate id="action.cancel">取消</Translate>,
-          centered: true,
-        });
-      },
-    },
-  ].filter(Boolean);
+  const menuItems = useMemo(
+    () =>
+      [
+        {
+          key: "account",
+          label: (
+            <Link to="/user">
+              <Translate id="link.myAccount">我的账户</Translate>
+            </Link>
+          ),
+          icon: <UserOutlined />,
+        },
+        {
+          type: "divider" as const,
+        },
+        {
+          key: "logout",
+          label: <Translate id="button.logout">退出登录</Translate>,
+          icon: <LogoutOutlined />,
+          danger: true,
+          onClick: () => {
+            modal.confirm({
+              title: <Translate id="message.logout.confirm.title">确认退出</Translate>,
+              content: <Translate id="message.logout.confirm.content">确定要退出登录吗？</Translate>,
+              onOk: handleLogout,
+              okText: <Translate id="button.confirm">确认</Translate>,
+              cancelText: <Translate id="action.cancel">取消</Translate>,
+              centered: true,
+            });
+          },
+        },
+      ],
+    [modal, handleLogout],
+  );
 
   const loggedInButtons = useMemo(
     () => (

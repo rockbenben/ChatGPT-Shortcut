@@ -5,44 +5,35 @@
  */
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { removeCache, removeETag, CACHE_PREFIX } from "@site/src/utils/cache";
-import { API_URL } from "./config";
+import { clearUserSessionCaches } from "./sessionCache";
+import { API_URL, AUTH_EXPIRED_EVENT } from "./config";
 
 // Token Management
+// 约定：对 auth_token 的**写入**统一走 persistAuthToken，不直接调用 localStorage.setItem/removeItem。
+// 注意这只是一致性约定，不是正确性依赖 —— getAuthToken() 在浏览器分支直读 localStorage，
+// 下面这个模块级变量实际只在 SSR 分支被读到（那里恒为 null）。别围绕它设计运行期逻辑。
 let authToken: string | null = null;
 
 if (ExecutionEnvironment.canUseDOM) {
   authToken = localStorage.getItem("auth_token");
 }
 
-/**
- * 清除用户基本信息缓存（id, username, email）
- * 必须同时清除 ETag，否则下次请求带旧 ETag，服务端命中可能返回旧数据
- */
-export function clearUserProfileCache() {
-  removeCache(CACHE_PREFIX.USER_PROFILE);
-  removeETag(CACHE_PREFIX.USER_PROFILE);
-}
-
-// 动态导入 clearMySpaceCache 以避免循环依赖
-const clearAllUserCaches = async () => {
-  clearUserProfileCache();
-  // 与手动登出（UserStatus.tsx）对齐：必须清 user_auth 快照，否则 401 吊销 token 后
-  // 下次 mount 仍从 lscache-user_auth（TTL 30 天）恢复登录态 UI，形成最长 30 天的僵尸登录。
-  removeCache("user_auth");
-  removeCache("myspace_stats");
-  const { clearMySpaceCache } = await import("./myspace");
-  clearMySpaceCache();
-};
+// 本体在 sessionCache.ts，这里只做 re-export 以保持既有 import 路径不变
+export { clearUserProfileCache } from "./sessionCache";
 
 /**
  * Handle API errors uniformly
  */
 const handleApiError = (error: any) => {
   if (error?.response?.status === 401) {
-    localStorage.removeItem("auth_token");
-    // 401 时清除所有用户缓存
-    clearAllUserCaches();
+    persistAuthToken(null);
+    // 清除所有与该会话绑定的缓存（同步，无 dynamic import）
+    clearUserSessionCaches();
+    // 通知 React 层把登录态降下来。只清缓存不够：本次会话的 UI 仍是登录样子，
+    // 用户每次收藏/投票都会再打一发注定 401 的请求，白白压后端。
+    if (ExecutionEnvironment.canUseDOM) {
+      window.dispatchEvent(new CustomEvent(AUTH_EXPIRED_EVENT));
+    }
   }
 
   // Extract Strapi error message and attach to error object

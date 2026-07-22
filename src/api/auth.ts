@@ -5,17 +5,14 @@
  */
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { apiClient, persistAuthToken, clearUserProfileCache } from "./client";
+import { apiClient, persistAuthToken } from "./client";
 import { API_URL, GAUTH_API_BASE, USE_LEGACY_GAUTH } from "./config";
-import { clearMySpaceCache } from "./myspace";
+import { clearUserSessionCaches } from "./sessionCache";
 
 /**
  * 登录后清除所有用户级缓存（旧账号残留 ETag 可能与新账号巧合命中，导致数据泄漏）
  */
-const clearUserCachesOnLogin = () => {
-  clearUserProfileCache();
-  clearMySpaceCache();
-};
+const clearUserCachesOnLogin = () => clearUserSessionCaches();
 
 // Google OAuth 路径配置
 const STRAPI_CALLBACK_BASE = API_URL.replace(/\/api$/, ""); // 回调和用户数据请求使用主 API(只替换最后出现的 /api)
