@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef, useContext, useMemo } from "react";
 import { useLocation } from "@docusaurus/router";
+import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
 import { App } from "antd";
 import { AuthContext } from "@site/src/components/AuthContext";
 import CommunityPromptPage from "@site/src/components/CommunityPromptPage";
@@ -72,13 +73,13 @@ function CommunityPromptDetailInner() {
   const handleVote = useCallback(
     async (id: number, action: "upvote" | "downvote") => {
       if (!userAuth) {
-        messageApi.warning("Please log in to vote.");
+        messageApi.warning(voteLoginRequiredText());
         return;
       }
 
       const voteKey = `${id}_${action}`;
       if (sessionVotedIdsRef.current.has(voteKey)) {
-        messageApi.info(`You have already ${action}d this prompt in this session.`);
+        messageApi.info(voteAlreadyVotedText(action));
         return;
       }
       sessionVotedIdsRef.current.add(voteKey);
@@ -105,13 +106,13 @@ function CommunityPromptDetailInner() {
             prev && prev.id === id ? { ...prev, upvotes, downvotes, upvoteDifference: upvotes - downvotes } : prev,
           );
         }
-        messageApi.success(`Successfully ${action}d!`);
+        messageApi.success(voteSuccessText(action));
       } catch (err) {
         sessionVotedIdsRef.current.delete(voteKey);
         if (originalPrompt) {
           setPrompt((prev) => (prev && prev.id === id ? originalPrompt : prev));
         }
-        const errorMessage = (err as any)?.strapiMessage || `Failed to ${action}. Please try again.`;
+        const errorMessage = (err as any)?.strapiMessage || voteFailedText(action);
         messageApi.error(errorMessage);
       }
     },

@@ -143,6 +143,12 @@
   "community.description": {
     "message": "Vuoi più prompt IA testati? Unisciti alla community AiShort per scoprire modelli pratici e condividere tecniche di ottimizzazione."
   },
+  "community.fetchError": {
+    "message": "Impossibile recuperare i dati"
+  },
+  "community.heading": {
+    "message": "Community di prompt IA"
+  },
   "community.loading": {
     "message": "Caricamento..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "Prompt della comunità"
+  },
+  "community.tagline": {
+    "message": "Prompt IA condivisi dagli utenti. Ordina per più recenti o più apprezzati, cerca e filtra; dopo il login puoi mettere like e salvare."
   },
   "community.title": {
     "message": "Community Prompt IA | Scopri e Condividi"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "Centro utente"
   },
+  "login.google.button": {
+    "message": "Accedi con Google"
+  },
+  "login.google.error": {
+    "message": "Errore durante l'accesso con Google, riprova più tardi ({error})"
+  },
+  "login.google.failed": {
+    "message": "Accesso con Google non riuscito"
+  },
+  "login.google.redirecting": {
+    "message": "Reindirizzamento all'accesso Google..."
+  },
   "login.login.prompt": {
     "message": "Hai già un account?"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "Prompt inviato con successo!"
   },
-  "message.cache.clearError": {
-    "message": "Pulizia cache fallita"
-  },
   "message.cache.cleared": {
     "message": "Cache svuotata"
+  },
+  "message.cache.clearError": {
+    "message": "Pulizia cache fallita"
   },
   "message.cannotFavorOwn": {
     "message": "Non puoi aggiungere il tuo prompt ai preferiti"
   },
   "message.convertToPrivate.error": {
     "message": "Conversione fallita, riprova più tardi"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "Prompt privato creato, ma non è stato possibile rimuovere il preferito originale. Eliminalo manualmente per evitare duplicati."
   },
   "message.convertToPrivate.success": {
     "message": "Convertito in prompt privato con successo"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "Importazione riuscita!"
   },
+  "message.loadFailed": {
+    "message": "Impossibile caricare i dati"
+  },
   "message.loginRequired": {
     "message": "Effettua prima il login"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "Niente qui ancora — crea un prompt o aggiungi ai preferiti"
   },
+  "message.orderSaved": {
+    "message": "Disposizione salvata"
+  },
   "message.orderSaveFailed": {
     "message": "Salvataggio della disposizione fallito"
   },
-  "message.orderSaved": {
-    "message": "Disposizione salvata"
+  "message.postComment.error": {
+    "message": "Invio del commento non riuscito. Riprova più tardi."
   },
   "message.removeFavorite.confirm.content": {
     "message": "Sei sicuro di voler rimuovere questo prompt dai preferiti?"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "Registrazione riuscita!"
   },
-  "message.tagsUpdateFailed": {
-    "message": "Aggiornamento tag fallito"
-  },
   "message.tagsUpdated": {
     "message": "Tag aggiornati"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "Aggiornamento tag fallito"
   },
   "message.updatePrompt.error": {
     "message": "Impossibile aggiornare il prompt, riprova più tardi"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "Più recenti"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Chiudi",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Torna indietro all'inizio",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "Questa pagina è andata in crash.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "Pagina non trovata",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "attenzione",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "avviso",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Chiudi",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Torna indietro all'inizio",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "Archivio",
@@ -970,6 +944,10 @@
     "message": "One post|{count} posts",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "Read more",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "Read more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} tagged with \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Passa dalla modalità scura a quella chiara (currently {mode})",
@@ -1034,10 +1024,6 @@
     "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 elemento|{count} elementi",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "Briciole di pane",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 elemento|{count} elementi",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Pagina del documento",
@@ -1113,6 +1103,26 @@
     "message": "Questa è documentazione inedita per {siteTitle} versione {versionLabel}.",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Questa pagina è andata in crash.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": " il {date}",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "Versioni",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "Pagina non trovata",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "Etichette:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "Gestione Dati"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "Inserisci un nome utente o un'email registrata!"
   },
-  "community.heading": {
-    "message": "Community di prompt IA"
+  "vote.downvote.alreadyVoted": {
+    "message": "Hai già indicato «Non mi piace» per questo prompt in questa sessione."
   },
-  "community.tagline": {
-    "message": "Prompt IA condivisi dagli utenti. Ordina per più recenti o più apprezzati, cerca e filtra; dopo il login puoi mettere like e salvare."
+  "vote.downvote.failed": {
+    "message": "Impossibile registrare «Non mi piace». Riprova."
   },
-  "message.postComment.error": {
-    "message": "Invio del commento non riuscito. Riprova più tardi."
+  "vote.downvote.success": {
+    "message": "«Non mi piace» registrato!"
+  },
+  "vote.loginRequired": {
+    "message": "Accedi per votare."
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "Hai già indicato «Mi piace» per questo prompt in questa sessione."
+  },
+  "vote.upvote.failed": {
+    "message": "Impossibile registrare «Mi piace». Riprova."
+  },
+  "vote.upvote.success": {
+    "message": "«Mi piace» registrato!"
   }
 }

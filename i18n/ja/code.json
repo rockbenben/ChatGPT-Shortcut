@@ -143,6 +143,12 @@
   "community.description": {
     "message": "もっと実用的なAIプロンプトが欲しい？AiShortコミュニティで高品質なテンプレートを発見し、最適化のコツを交換しましょう。"
   },
+  "community.fetchError": {
+    "message": "データの取得に失敗しました"
+  },
+  "community.heading": {
+    "message": "AI プロンプトコミュニティ"
+  },
   "community.loading": {
     "message": "読み込み中..."
   },
@@ -154,6 +160,9 @@
   },
   "community.seoSuffix": {
     "message": "コミュニティプロンプト"
+  },
+  "community.tagline": {
+    "message": "ユーザーが投稿・シェアした AI プロンプト。新着順またはいいね順で並べ替え、検索とフィルタに対応、ログイン後にいいねと保存ができます。"
   },
   "community.title": {
     "message": "AIプロンプトコミュニティ | 発見・共有"
@@ -332,6 +341,18 @@
   "link.userCenter": {
     "message": "ユーザーセンター"
   },
+  "login.google.button": {
+    "message": "Google でログイン"
+  },
+  "login.google.error": {
+    "message": "Google ログイン中にエラーが発生しました。後でもう一度お試しください（{error}）"
+  },
+  "login.google.failed": {
+    "message": "Google ログインに失敗しました"
+  },
+  "login.google.redirecting": {
+    "message": "Google サインインにリダイレクト中..."
+  },
   "login.login.prompt": {
     "message": "すでにアカウントをお持ちですか？"
   },
@@ -377,17 +398,20 @@
   "message.addPrompt.success": {
     "message": "プロンプトの送信に成功しました！"
   },
-  "message.cache.clearError": {
-    "message": "キャッシュの削除に失敗しました"
-  },
   "message.cache.cleared": {
     "message": "キャッシュをクリアしました"
+  },
+  "message.cache.clearError": {
+    "message": "キャッシュの削除に失敗しました"
   },
   "message.cannotFavorOwn": {
     "message": "自分のプロンプトはお気に入りに登録できません"
   },
   "message.convertToPrivate.error": {
     "message": "変換に失敗しました。後でもう一度お試しください"
+  },
+  "message.convertToPrivate.favoriteKept": {
+    "message": "プライベートプロンプトを作成しましたが、元のお気に入りを削除できませんでした。重複を避けるため手動で削除してください。"
   },
   "message.convertToPrivate.success": {
     "message": "プライベートプロンプトに変換されました"
@@ -446,6 +470,9 @@
   "message.import.success": {
     "message": "インポート成功！"
   },
+  "message.loadFailed": {
+    "message": "データの読み込みに失敗しました"
+  },
   "message.loginRequired": {
     "message": "先にログインしてください"
   },
@@ -467,11 +494,14 @@
   "message.noSpaceItems": {
     "message": "コンテンツがありません — プロンプトを作成するか、お気に入り登録しましょう"
   },
+  "message.orderSaved": {
+    "message": "配置を保存しました"
+  },
   "message.orderSaveFailed": {
     "message": "配置の保存に失敗しました"
   },
-  "message.orderSaved": {
-    "message": "配置を保存しました"
+  "message.postComment.error": {
+    "message": "コメントの送信に失敗しました。しばらくしてからもう一度お試しください。"
   },
   "message.removeFavorite.confirm.content": {
     "message": "このプロンプトをお気に入りから削除してもよろしいですか？"
@@ -506,11 +536,11 @@
   "message.success.register": {
     "message": "登録成功！"
   },
-  "message.tagsUpdateFailed": {
-    "message": "タグの更新に失敗しました"
-  },
   "message.tagsUpdated": {
     "message": "タグを更新しました"
+  },
+  "message.tagsUpdateFailed": {
+    "message": "タグの更新に失敗しました"
   },
   "message.updatePrompt.error": {
     "message": "プロンプトの更新に失敗しました。後でもう一度お試しください"
@@ -830,70 +860,6 @@
   "sort.newest": {
     "message": "新着順"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "閉じる",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "先頭へ戻る",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "エラーが発生しました",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
-    "description": "The ARIA label for the external link icon"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.NotFound.title": {
-    "message": "ページが見つかりません",
-    "description": "The title of the 404 page"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
   "theme.admonition.caution": {
     "message": "注意",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -917,6 +883,14 @@
   "theme.admonition.warning": {
     "message": "警告",
     "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "閉じる",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "先頭へ戻る",
+    "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
     "message": "アーカイブ",
@@ -970,6 +944,10 @@
     "message": "One post|{count} posts",
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
     "message": "Read more",
     "description": "The label used in blog post item excerpts to link to full blog posts"
@@ -978,10 +956,6 @@
     "message": "Read more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -989,6 +963,22 @@
   "theme.blog.tagTitle": {
     "message": "{nPosts} tagged with \"{tagName}\"",
     "description": "The title of the page for a blog tag"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
     "message": "ダークモードを切り替える(現在は{mode})",
@@ -1034,10 +1024,6 @@
     "message": "Unlisted page",
     "description": "The unlisted content banner title"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "{count}項目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
@@ -1045,6 +1031,10 @@
   "theme.docs.breadcrumbs.navAriaLabel": {
     "message": "パンくずリストのナビゲーション",
     "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count}項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "ドキュメントページ",
@@ -1113,6 +1103,26 @@
     "message": "これはリリース前のバージョン{versionLabel}の{siteTitle}のドキュメントです。",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "エラーが発生しました",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.lastUpdated.atDate": {
     "message": "{date}に",
     "description": "The words used to describe on which date a page has been last updated"
@@ -1145,6 +1155,22 @@
     "message": "他のバージョン",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NotFound.title": {
+    "message": "ページが見つかりません",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
     "message": "タグ:",
     "description": "The label alongside a tag list"
@@ -1156,6 +1182,10 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
     "message": "データ管理"
@@ -1226,13 +1256,25 @@
   "validation.username.required": {
     "message": "ユーザー名または登録メールアドレスを入力してください！"
   },
-  "community.heading": {
-    "message": "AI プロンプトコミュニティ"
+  "vote.downvote.alreadyVoted": {
+    "message": "このセッションで既にこのプロンプトを低評価しました。"
   },
-  "community.tagline": {
-    "message": "ユーザーが投稿・シェアした AI プロンプト。新着順またはいいね順で並べ替え、検索とフィルタに対応、ログイン後にいいねと保存ができます。"
+  "vote.downvote.failed": {
+    "message": "低評価に失敗しました。もう一度お試しください。"
   },
-  "message.postComment.error": {
-    "message": "コメントの送信に失敗しました。しばらくしてからもう一度お試しください。"
+  "vote.downvote.success": {
+    "message": "低評価しました！"
+  },
+  "vote.loginRequired": {
+    "message": "投票するにはログインしてください。"
+  },
+  "vote.upvote.alreadyVoted": {
+    "message": "このセッションで既にこのプロンプトを高評価しました。"
+  },
+  "vote.upvote.failed": {
+    "message": "高評価に失敗しました。もう一度お試しください。"
+  },
+  "vote.upvote.success": {
+    "message": "高評価しました！"
   }
 }
