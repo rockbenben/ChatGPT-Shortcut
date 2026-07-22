@@ -6,12 +6,13 @@ import { deriveLoves, deriveCommLoves } from "@site/src/utils/myspaceUtils";
 
 interface UseImportExportParams {
   userAuth: any;
+  getUserAuth: () => any;
   currentLanguage: string;
   refreshUserAuth: () => Promise<any>;
 }
 
 /** 用户中心的提示词导出（JSON 下载）与导入（更新/新建/合并收藏）流程 */
-export function useImportExport({ userAuth, currentLanguage, refreshUserAuth }: UseImportExportParams) {
+export function useImportExport({ userAuth, getUserAuth, currentLanguage, refreshUserAuth }: UseImportExportParams) {
   const { message } = App.useApp();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [importing, setImporting] = useState(false);
@@ -149,8 +150,15 @@ export function useImportExport({ userAuth, currentLanguage, refreshUserAuth }: 
 
         setImporting(true);
 
-        // 获取用户已有提示词ID
-        const userPromptIds = userAuth?.data?.userprompts?.map((p: any) => p.id) || [];
+        // 就绪守卫：冷缓存/刚登录时 userAuth 还是 {pending, data:null} 占位，
+        // 此刻读 userPromptIds 会得到空数组，让**每一条**带 id 的提示词都走新建分支，
+        // 把用户整个提示词库静默复制一份私有副本。先把 /myspace 拉完再读。
+        // 只在 data 未就绪时等待（pending/null）；用户本就没有提示词时 data 已就绪、userprompts 为空，不触发。
+        if (!getUserAuth()?.data) {
+          await refreshUserAuth();
+        }
+        // 读权威即时值（refreshUserAuth 走 startTransition，await 后 state 未必已 commit，但 ref 已更新）
+        const userPromptIds = getUserAuth()?.data?.userprompts?.map((p: any) => p.id) || [];
 
         // 获取现有提示词详情（用于对比内容）
         const conflictIds = prompts.filter((p) => p.id && userPromptIds.includes(p.id)).map((p) => p.id);
@@ -232,7 +240,9 @@ export function useImportExport({ userAuth, currentLanguage, refreshUserAuth }: 
         // 处理收藏（合并模式）—— 一次 PATCH 处理 loves 和 commLoves 的增量
         // server 端 merge 保证多设备并发安全（无 lost-update 风险）
         if (hasFavorites) {
-          const items = userAuth?.data?.items || [];
+          // 读权威值：上面导入提示词的循环里已 await 过多次，闭包里的渲染期快照已经过时。
+          // 用旧快照去重会把服务端已有的 id 重新塞进 PATCH，白白加大请求体。
+          const items = getUserAuth()?.data?.items || [];
           const existingLoves = new Set(deriveLoves(items));
           const existingCommLoves = new Set(deriveCommLoves(items));
 

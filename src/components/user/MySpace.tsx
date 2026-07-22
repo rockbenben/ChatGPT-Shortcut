@@ -33,10 +33,10 @@ interface MySpaceProps {
 const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
-  const { userAuth, syncMySpaceState, authLoading } = useContext(AuthContext);
+  const { userAuth, getUserAuth, syncMySpaceState, authLoading } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
 
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const { removeFavorite, confirmRemoveFavorite, toggleFavorite } = useFavorite();
   const { addPrompt: addUserPrompt, updatePrompt: updateUserPrompt, confirmRemovePrompt } = useUserPrompt();
 
   const [filter, setFilter] = useState<FilterType>("all");
@@ -56,7 +56,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
     spaceItems,
     customTags,
     setSpaceItems,
-    userAuth,
+    getUserAuth,
     syncMySpaceState,
     syncSpaceCache,
     messageApi,
@@ -174,10 +174,15 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         // server controller 不重排，直接写入 newOrder + 加 updatedAt，前端 reorder
         // 现有 items 即与 server 状态一致。useFavorite 用 items 做 reconcile base，
         // 不同步会导致拖完后点 ❤️ 时拖动顺序丢失。
-        if (userAuth?.data?.items) {
+        // await 之后重新读权威值：闭包里的渲染期快照可能早于并发的收藏操作，
+        // 用它重排会把刚收藏的条目丢掉
+        const auth = getUserAuth();
+        if (auth?.data?.items) {
           const orderMap = new Map<string, number>();
           newOrder.forEach((it, i) => orderMap.set(`${it.type}_${it.source}_${it.id}`, i));
-          const oldItems: any[] = userAuth.data.items;
+          const oldItems: any[] = auth.data.items;
+          // 不在 newOrder 里的条目（并发收藏刚加进来的）统一取 oldItems.length，排在已知条目之后。
+          // 它们之间的相对次序由 Array.sort 的稳定性保证（ES2019 起规范强制），无需额外处理。
           const reordered = [...oldItems].sort((a, b) => {
             const aKey = `${a.type}_${a.source}_${a.id}`;
             const bKey = `${b.type}_${b.source}_${b.id}`;
@@ -276,15 +281,21 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         const success = await addUserPrompt(promptData);
         if (success) {
           messageApi.success(<Translate id="message.convertToPrivate.success">已转为私有提示词</Translate>);
-          // 转换成功后，从收藏中移除原提示词
-          await confirmRemoveFavorite(data.id, !isDataCard);
+          // 用户点击“转为私有”按钮（FavoriteCard 失效横幅）即已表达意图，
+          // 直接移除收藏；此处若用 confirmRemoveFavorite 会在转换成功后再弹一次确认框。
+          // removeFavorite 自己吞错并提示，所以必须看返回值：移除失败时该条收藏仍在列表里，
+          // 用户再点一次「转为私有」就会创建第二份一模一样的私有提示词，且无从分辨。
+          const removed = await removeFavorite(data.id, !isDataCard);
+          if (!removed) {
+            messageApi.warning(<Translate id="message.convertToPrivate.favoriteKept">已创建私有提示词，但原收藏未能移除，请手动删除以免重复</Translate>);
+          }
         }
       } catch (error) {
         console.error("Failed to convert prompt:", error);
         messageApi.error(<Translate id="message.convertToPrivate.error">转换失败，请稍后重试</Translate>);
       }
     },
-    [addUserPrompt, confirmRemoveFavorite, messageApi, i18n],
+    [addUserPrompt, removeFavorite, messageApi, i18n],
   );
 
   // 移除收藏
@@ -338,7 +349,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                               data={card}
                               isFavorite={isFav}
                               isLoggedIn={true}
-                              onToggleFavorite={(id, isComm) => (isFav ? confirmRemoveFavorite(id, isComm) : addFavorite(id, isComm))}
+                              onToggleFavorite={toggleFavorite}
                               onOpenModal={onOpenModal}
                             />
                           </Col>
@@ -346,7 +357,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                       }
                       return (
                         <Col key={card.id} xs={24} sm={12} md={8} lg={6} xl={6}>
-                          <PromptCard type="data" data={card} copyCount={getWeight(card)} isLoggedIn={true} isFavorite={userAuth?.data?.favorites?.loves?.includes(card.id)} onToggleFavorite={(id, isComm) => { const loves = userAuth?.data?.favorites?.loves || []; if (loves.includes(id)) confirmRemoveFavorite(id, isComm); else addFavorite(id, isComm); }} onOpenModal={onOpenModal} />
+                          <PromptCard type="data" data={card} copyCount={getWeight(card)} isLoggedIn={true} isFavorite={userAuth?.data?.favorites?.loves?.includes(card.id)} onToggleFavorite={toggleFavorite} onOpenModal={onOpenModal} />
                         </Col>
                       );
                     })}

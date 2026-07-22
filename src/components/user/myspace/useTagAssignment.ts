@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { translate } from "@docusaurus/Translate";
 import { updateCustomTags } from "@site/src/api";
 import type { CustomTag } from "./types";
 
@@ -6,7 +7,7 @@ interface UseTagAssignmentParams {
   spaceItems: any[];
   customTags: CustomTag[];
   setSpaceItems: React.Dispatch<React.SetStateAction<any[]>>;
-  userAuth: any;
+  getUserAuth: () => any;
   syncMySpaceState: (partial: any) => void;
   syncSpaceCache: (items: any[], tags: CustomTag[]) => void;
   messageApi: any;
@@ -20,7 +21,7 @@ const tagsEqual = (a: string[], b: string[]) => a.length === b.length && a.every
  * 心理模型：dropdown 是一次"编辑会话"，关闭即提交。
  * 点 tag = 纯本地 toggle，关闭 dropdown = 一次 API 提交（无变化跳过）。
  */
-export function useTagAssignment({ spaceItems, customTags, setSpaceItems, userAuth, syncMySpaceState, syncSpaceCache, messageApi }: UseTagAssignmentParams) {
+export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUserAuth, syncMySpaceState, syncSpaceCache, messageApi }: UseTagAssignmentParams) {
   // 受控管理"哪张卡片的 tag dropdown 当前展开"——为了 multi-select：点 menu item 不关闭，点外面或 manage 才关
   const [openTagDropdownItemId, setOpenTagDropdownItemId] = useState<string | null>(null);
 
@@ -61,8 +62,11 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, userAu
       // 同步 userAuth.data.items[i].tags（之前此路径漏写造成隐性 drift）：
       // spaceItems 的 composite id 跟 userAuth.items 的 (type, source, id) 一一对应，
       // 用同一个 itemTags map 重新拼 tags 字段。空 tags 时移除字段，与 /myspace 返回 shape 一致。
-      if (userAuth?.data?.items) {
-        const newItems = (userAuth.data.items as any[]).map((it) => {
+      // 必须在 await 之后重新读权威值：闭包里的渲染期快照可能早于并发的收藏操作，
+      // 拿它重建整份 items 会把刚收藏的条目从 state 和两层缓存里一起抹掉。
+      const auth = getUserAuth();
+      if (auth?.data?.items) {
+        const newItems = (auth.data.items as any[]).map((it) => {
           const compositeKey = `${it.type}_${it.source}_${it.id}`;
           const tags = itemTagsPayload[compositeKey];
           if (tags && tags.length > 0) return { ...it, tags };
@@ -75,11 +79,11 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, userAu
       syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     } catch (error) {
       console.error("Failed to update item tags:", error);
-      messageApi.error("标签更新失败");
+      messageApi.error(translate({ id: "message.tagsUpdateFailed", message: "标签更新失败" }));
       // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
       setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
     }
-  }, [buildItemTags, messageApi, userAuth, syncMySpaceState, syncSpaceCache, setSpaceItems]);
+  }, [buildItemTags, messageApi, getUserAuth, syncMySpaceState, syncSpaceCache, setSpaceItems]);
 
   // 切换项目标签——纯本地 toggle，不发 API
   // functional updater 防 stale state（rapid click 安全）

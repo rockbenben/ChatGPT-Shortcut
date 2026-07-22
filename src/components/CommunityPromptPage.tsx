@@ -42,7 +42,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { siteConfig, i18n } = useDocusaurusContext();
-  const { addFavorite, confirmRemoveFavorite } = useFavorite();
+  const { toggleFavorite } = useFavorite();
 
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
@@ -63,13 +63,10 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
       return;
     }
     if (prompt?.id) {
-      if (isFavorite) {
-        confirmRemoveFavorite(prompt.id, true);
-      } else {
-        addFavorite(prompt.id, true);
-      }
+      // 是否已收藏由 useFavorite 内部用权威值判定，这里不能读渲染期的 isFavorite
+      toggleFavorite(prompt.id, true);
     }
-  }, [userAuth, prompt?.id, isFavorite, addFavorite, confirmRemoveFavorite, messageApi]);
+  }, [userAuth, prompt?.id, toggleFavorite, messageApi]);
 
   const handleVote = useCallback(
     (action: "upvote" | "downvote") => {

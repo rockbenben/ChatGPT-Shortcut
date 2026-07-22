@@ -18,7 +18,7 @@ import { useImportExport } from "@site/src/components/user/account/useImportExpo
 const { Title, Text } = Typography;
 
 const UserProfile = () => {
-  const { userAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
+  const { userAuth, getUserAuth, refreshUserAuth } = useContext(AuthContext); // 用于获取 userprompts share 信息
   const { message } = App.useApp();
   const { i18n } = useDocusaurusContext();
   const currentLanguage = i18n.currentLocale;
@@ -29,7 +29,7 @@ const UserProfile = () => {
   const [editUsername, setEditUsername] = useState(false);
   const [newUsername, setNewUsername] = useState("");
 
-  const { fileInputRef, importing, handleExportPrompts, handleImportPrompts } = useImportExport({ userAuth, currentLanguage, refreshUserAuth });
+  const { fileInputRef, importing, handleExportPrompts, handleImportPrompts } = useImportExport({ userAuth, getUserAuth, currentLanguage, refreshUserAuth });
 
   // Fetch user info from /me endpoint
   const fetchUserInfo = useCallback(async () => {
