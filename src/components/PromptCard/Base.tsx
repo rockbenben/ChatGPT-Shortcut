@@ -3,6 +3,15 @@ import { Card, Flex, theme } from "antd";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
+/**
+ * antd 多行省略靠 `display:-webkit-box` + `-webkit-line-clamp`，而 flex 子项的 display
+ * 会被 blockify（Chrome 算成 flow-root）——clamp 失效，只剩 overflow:hidden 把最后一行
+ * 拦腰切断。所以放进 flex 容器的 Typography 都垫这层普通块盒：flex 属性由盒子承担。
+ */
+export const ClampBox: React.FC<{ children: ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+  <div style={{ flex: 1, minWidth: 0, minHeight: 0, ...style }}>{children}</div>
+);
+
 interface BasePromptCardProps {
   title?: ReactNode;
   titleExtra?: ReactNode;
@@ -54,7 +63,12 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         {(title || titleExtra) && (
           <Flex justify="space-between" align="start" style={{ marginBottom: token.marginSM, minHeight: 32 }}>
             <div style={{ flex: 1, overflow: "hidden", marginRight: token.marginXS }}>{title}</div>
-            {titleExtra && <div>{titleExtra}</div>}
+            {/* flexShrink:0：角标是定宽信息，标题再长也不该压扁它 */}
+            {titleExtra && (
+              <Flex align="center" gap={token.marginXS} style={{ flexShrink: 0 }}>
+                {titleExtra}
+              </Flex>
+            )}
           </Flex>
         )}
         {children}

@@ -1,6 +1,6 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard } from "./Base";
+import { BasePromptCard, ClampBox } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
@@ -141,14 +141,14 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       style={style}
       {...attributes}
       title={
-        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
-            {!isFiltered && (
-              <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
-              </div>
-            )}
-            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
+        <Flex align="start" style={{ overflow: "hidden" }}>
+          {!isFiltered && (
+            <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+              <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+            </div>
+          )}
+          <ClampBox>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
               {isDataCard ? (
                 <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {title}
@@ -159,7 +159,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
                 </Link>
               )}
             </Typography.Title>
-          </Flex>
+          </ClampBox>
         </Flex>
       }
       titleExtra={
@@ -190,30 +190,30 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
         extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
-      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        {renderUnavailableBanner()}
-        <PromptRemark remark={remark} />
+      {renderUnavailableBanner()}
+      <PromptRemark remark={remark} />
+      <ClampBox>
         <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {prompt}
         </Typography.Paragraph>
-        <Flex justify="space-between" align="center" style={{ marginTop: "auto", paddingTop: 12 }}>
-          <div style={{ flex: 1, overflow: "hidden" }}>
-            {owner && (
-              <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-                <UserOutlined style={{ marginRight: 4 }} />
-                {owner}
-              </Typography.Text>
-            )}
-            <PromptCardTag tags={tags} muted clickable={false} />
-          </div>
-
-          {website && (
-            <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-            </a>
+      </ClampBox>
+      <Flex justify="space-between" align="center">
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          {owner && (
+            <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
+              <UserOutlined style={{ marginRight: 4 }} />
+              {owner}
+            </Typography.Text>
           )}
-        </Flex>
-      </div>
+          <PromptCardTag tags={tags} muted clickable={false} />
+        </div>
+
+        {website && (
+          <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
+          </a>
+        )}
+      </Flex>
     </BasePromptCard>
   );
 };
