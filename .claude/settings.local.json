@@ -9,7 +9,9 @@
       "Bash(mv:*)",
       "Bash(npx tsc:*)",
       "Bash(npx docusaurus:*)",
-      "Bash(yarn add:*)"
+      "Bash(yarn add:*)",
+      "Workflow(code-review)",
+      "Skill(browse)"
     ]
   }
 }
