@@ -1,6 +1,9 @@
 import React, { Suspense, useMemo } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Result, Breadcrumb, Popover } from "antd";
-import { UserOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, Breadcrumb, Popover } from "antd";
+import { UserOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined } from "@ant-design/icons";
+import { EmptyState } from "@site/src/components/EmptyState";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { toBcp47 } from "@site/src/utils/i18n";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -37,6 +40,10 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
 function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProps) {
+  const { i18n } = useDocusaurusContext();
+  // 数字格式化要 BCP-47：读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
+  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
+
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const charCount = (prompt?.description || "").length;
@@ -82,12 +89,12 @@ function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProp
       <Layout title={translate({ id: "community.notFound", message: "提示词未找到" })}>
         <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <Result
-              status="404"
-              title={translate({ id: "community.notFound", message: "提示词未找到" })}
-              subTitle={translate({ id: "community.notFoundDesc", message: "该提示词可能已被删除或设为私有" })}
-              extra={
-                <Link to="/">
+            <EmptyState
+              icon={<FileSearchOutlined />}
+              title={<Translate id="community.notFound">提示词未找到</Translate>}
+              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+              action={
+                <Link to="/community-prompts">
                   <Button type="primary">
                     <Translate id="link.home">首页</Translate>
                   </Button>
@@ -136,10 +143,11 @@ function CommunityPromptPage({ prompt, loading, error }: CommunityPromptPageProp
                       {prompt.owner}
                     </span>
                   )}
+                  {/* 显式传页面 locale：裸 toLocaleString() 跟的是宿主 locale，会和界面语言错配 */}
                   <span style={monoNum}>
-                    {charCount.toLocaleString()} <Translate id="prompt.charsLabel">字符</Translate>
+                    {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
                   </span>
-                  <span style={monoNum}>≈ {tokenCount.toLocaleString()} tokens</span>
+                  <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
                 </Space>
               </Flex>
 

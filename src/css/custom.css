@@ -713,7 +713,7 @@ article.markdown a:hover {
 
 /* ========================================================================== */
 /* === Comments — polish for B+ refined modern family                       ==
-/*    AI polling strip / Empty state / 其余在 CommentComponent inline 改完
+/*    AI polling strip；空状态走共用的 <EmptyState>，其余在 CommentComponent inline 改完
 /* ========================================================================== */
 
 /* AI polling progress strip — 提交评论后短暂出现，把后台 5 阶段轮询暴露为 first-class UI */
@@ -754,21 +754,6 @@ article.markdown a:hover {
 @keyframes comments-polling-slide {
   0%   { background-position: 200% 0; }
   100% { background-position: -100% 0; }
-}
-
-/* Empty state — 取代 antd <Empty> 默认 cartoon 图，用 hairline + eyebrow + 引导文字 */
-.comments-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 36px 0;
-  text-align: center;
-}
-.comments-empty-text {
-  font-size: 13px;
-  color: var(--ifm-color-content-secondary);
-  margin: 0;
 }
 
 /* ========================================================================== */

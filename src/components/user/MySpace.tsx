@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Empty, App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown } from "antd";
+import { App, Row, Col, Segmented, Tag, Button, Space, Modal, Input, Flex, Tooltip, Dropdown } from "antd";
+import { presetPrimaryColors } from "@ant-design/colors";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, PlusOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
-import { BasePromptCard } from "@site/src/components/PromptCard/Base";
+import { EmptyState } from "@site/src/components/EmptyState";
 import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import styles from "@site/src/components/PromptCard/styles.module.css";
 import isEqual from "lodash/isEqual";
 import { getWeight } from "@site/src/utils/formatters";
 
@@ -198,6 +198,7 @@ const TagManagerModal: React.FC<{
   const [localTags, setLocalTags] = useState<CustomTag[]>(tags);
   const [newTagName, setNewTagName] = useState("");
   const [newTagColor, setNewTagColor] = useState(PRESET_COLORS[4]); // gold as default
+  const colorLabel = translate({ id: "myspace.tagManager.color", message: "标签颜色" });
 
   useEffect(() => {
     setLocalTags(tags);
@@ -236,24 +237,37 @@ const TagManagerModal: React.FC<{
     onClose();
   };
 
-  // 颜色选择器组件
+  // 色块即标签。原来直接显示 antd 调色板的 key（"gold"/"geekblue"）——实现细节，且 18 种
+  // 语言全是英文。填充用调色板原色而非 <Tag color>：暗色模式下 Tag 底色太重，抽掉文字后
+  // gold 和 lime 分辨不出。
+  const Swatch = ({ color }: { color: string }) => (
+    <span
+      aria-label={color}
+      style={{
+        display: "inline-block",
+        width: 28,
+        height: 22,
+        borderRadius: 4,
+        background: presetPrimaryColors[color],
+        border: "1px solid var(--site-color-hairline)",
+      }}
+    />
+  );
+
+  // 触发器用真 <button>：原来的 <Tag>（span）无法聚焦，键盘用户改不了颜色
   const ColorSelector = ({ value, onChange }: { value: string; onChange: (color: string) => void }) => (
     <Dropdown
       trigger={["click"]}
       menu={{
         items: PRESET_COLORS.map((color) => ({
           key: color,
-          label: (
-            <Tag color={color} style={{ margin: 0, cursor: "pointer" }}>
-              {color}
-            </Tag>
-          ),
+          label: <Swatch color={color} />,
           onClick: () => onChange(color),
         })),
       }}>
-      <Tag color={value} style={{ cursor: "pointer", minWidth: 60 }}>
-        {value}
-      </Tag>
+      <button type="button" aria-label={colorLabel} style={{ background: "none", border: 0, padding: 0, lineHeight: 0, cursor: "pointer" }}>
+        <Swatch color={value} />
+      </button>
     </Dropdown>
   );
 
@@ -288,7 +302,9 @@ const TagManagerModal: React.FC<{
               <Button icon={<DeleteOutlined />} danger size="small" onClick={() => handleDeleteTag(tag.id)} />
             </Flex>
           ))}
-          {localTags.length === 0 && <Empty description={<Translate id="myspace.tagManager.empty">暂无自定义标签</Translate>} />}
+          {localTags.length === 0 && (
+            <EmptyState compact icon={<TagOutlined />} title={<Translate id="myspace.tagManager.empty">暂无自定义标签</Translate>} description={<Translate id="myspace.tagManager.emptyHint">在上面输入名称、选个颜色，就能建第一个标签</Translate>} />
+          )}
         </div>
       </Space>
     </Modal>
@@ -704,7 +720,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                 {fallbackCards.length > 0 ? (
                   <>
                     <Col xs={24}>
-                      <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} style={{ margin: "1rem 0 0" }} />
+                      <EmptyState compact icon={<SearchOutlined />} title={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} />
                     </Col>
                     {fallbackCards.map((card) => {
                       if (fallbackSource === "community") {
@@ -747,23 +763,15 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                   </Col>
                 ) : (
                   <Col xs={24}>
-                    <BasePromptCard>
-                      <div className={styles.cardBodyHeight} style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
-                        <Empty
-                          description={
-                            searchQuery.trim() ? (
-                              <Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>
-                            ) : filter === "all" ? (
-                              <Translate id="message.noSpaceItems">暂无内容，去添加提示词或收藏吧</Translate>
-                            ) : filter === "prompt" ? (
-                              <Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>
-                            ) : (
-                              <Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>
-                            )
-                          }
-                        />
-                      </div>
-                    </BasePromptCard>
+                    {searchQuery.trim() ? (
+                      <EmptyState icon={<SearchOutlined />} title={<Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>} />
+                    ) : filter === "prompt" ? (
+                      <EmptyState icon={<EditOutlined />} title={<Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>} />
+                    ) : filter === "all" ? (
+                      <EmptyState icon={<AppstoreOutlined />} title={<Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>} />
+                    ) : (
+                      <EmptyState icon={<HeartOutlined />} title={<Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>} />
+                    )}
                   </Col>
                 )}
               </>

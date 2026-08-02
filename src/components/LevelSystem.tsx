@@ -53,6 +53,9 @@ const LEVELS = [
   { threshold: 260, accentColor: "#f0d896" }, // 星辉——warm starlight gold
 ];
 
+/** 最高等级编号。别再手抄：LevelSpecCard 曾写死 " / 05"，过了 L5 就显示 "06 / 05"。 */
+export const MAX_LEVEL = LEVELS.length - 1;
+
 /**
  * Get level information based on shared prompts count
  */
