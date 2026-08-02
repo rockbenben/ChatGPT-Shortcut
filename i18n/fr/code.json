@@ -261,7 +261,7 @@
     "message": "Veuillez entrer votre code de réinitialisation !"
   },
   "input.search.placeholder": {
-    "message": "Rechercher : écriture, traduction, programmation…"
+    "message": "écriture, traduction…"
   },
   "label.agree": {
     "message": "J'accepte"
@@ -279,7 +279,7 @@
     "message": "Nom du prompt"
   },
   "label.sharePrompt": {
-    "message": "Souhaitez-vous partager ce prompt sur la page publique ?"
+    "message": "Partager sur la page communauté : les autres pourront le voir et l'ajouter aux favoris"
   },
   "level.bronze": {
     "message": "Bronze"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "Échec de l’envoi du commentaire. Veuillez réessayer plus tard."
+  },
+  "auth.callback.title": {
+    "message": "Finaliser la connexion"
+  },
+  "auth.callback.working": {
+    "message": "Connexion en cours…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Ne fermez pas cette page : vous serez redirigé vers l'accueil dans un instant."
+  },
+  "auth.callback.failed": {
+    "message": "La connexion n'a pas abouti"
+  },
+  "auth.callback.failedHint": {
+    "message": "Le lien de connexion a peut-être expiré ou déjà été utilisé. Revenez à l'accueil et reconnectez-vous."
+  },
+  "auth.callback.idle": {
+    "message": "Aucune connexion en attente ici"
+  },
+  "auth.callback.idleHint": {
+    "message": "Cette page ne sert qu'aux redirections de connexion : inutile de l'ajouter aux favoris."
+  },
+  "auth.callback.backHome": {
+    "message": "Revenir à l'accueil pour se connecter"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Saisissez un nom ci-dessus, choisissez une couleur et votre premier tag est prêt."
+  },
+  "validation.username.empty": {
+    "message": "Le nom d'utilisateur ne peut pas être vide"
+  },
+  "message.username.updated": {
+    "message": "Nom d'utilisateur mis à jour"
+  },
+  "message.username.updateError": {
+    "message": "Impossible de mettre à jour le nom d'utilisateur. Réessayez dans un instant."
+  },
+  "message.requestTimeout": {
+    "message": "La requête a expiré. Réessayez."
+  },
+  "message.tooManyRequests": {
+    "message": "Trop de tentatives. Réessayez dans un instant."
+  },
+  "account.signInRequired": {
+    "message": "Connectez-vous pour voir votre compte"
+  },
+  "account.signInRequiredHint": {
+    "message": "Retour à l'accueil en cours — ou utilisez le bouton ci-dessous."
+  },
+  "myspace.tagManager.color": {
+    "message": "Couleur du tag"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Rechercher des GIF"
   }
 }

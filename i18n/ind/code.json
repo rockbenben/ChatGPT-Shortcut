@@ -261,7 +261,7 @@
     "message": "Silakan masukkan kode reset Anda!"
   },
   "input.search.placeholder": {
-    "message": "Cari: tulis, terjemahkan, koding…"
+    "message": "menulis, menerjemahkan…"
   },
   "label.agree": {
     "message": "Setuju"
@@ -279,7 +279,7 @@
     "message": "Nama Prompt"
   },
   "label.sharePrompt": {
-    "message": "Apakah Anda ingin membagikan prompt ini ke halaman publik?"
+    "message": "Bagikan ke halaman komunitas — orang lain bisa melihat dan menyimpannya"
   },
   "level.bronze": {
     "message": "Perunggu"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
+  },
+  "auth.callback.title": {
+    "message": "Menyelesaikan masuk"
+  },
+  "auth.callback.working": {
+    "message": "Sedang masuk…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Jangan tutup halaman ini, kamu akan kembali ke beranda sebentar lagi."
+  },
+  "auth.callback.failed": {
+    "message": "Proses masuk belum selesai"
+  },
+  "auth.callback.failedHint": {
+    "message": "Tautan masuk mungkin sudah kedaluwarsa atau pernah dipakai. Kembali ke beranda dan masuk lagi."
+  },
+  "auth.callback.idle": {
+    "message": "Tidak ada proses masuk yang tertunda di sini"
+  },
+  "auth.callback.idleHint": {
+    "message": "Halaman ini hanya menangani pengalihan saat masuk — tidak perlu ditandai."
+  },
+  "auth.callback.backHome": {
+    "message": "Kembali ke beranda untuk masuk"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Ketik nama di atas, pilih warna, dan tag pertamamu siap."
+  },
+  "validation.username.empty": {
+    "message": "Nama pengguna tidak boleh kosong"
+  },
+  "message.username.updated": {
+    "message": "Nama pengguna diperbarui"
+  },
+  "message.username.updateError": {
+    "message": "Nama pengguna gagal diperbarui. Coba lagi sebentar."
+  },
+  "message.requestTimeout": {
+    "message": "Permintaan kehabisan waktu. Coba lagi."
+  },
+  "message.tooManyRequests": {
+    "message": "Terlalu sering mencoba. Coba lagi sebentar."
+  },
+  "account.signInRequired": {
+    "message": "Masuk untuk melihat akunmu"
+  },
+  "account.signInRequiredHint": {
+    "message": "Kamu sedang diarahkan ke beranda — atau pakai tombol di bawah."
+  },
+  "myspace.tagManager.color": {
+    "message": "Warna tag"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Cari GIF"
   }
 }

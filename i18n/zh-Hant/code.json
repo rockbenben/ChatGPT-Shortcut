@@ -261,7 +261,7 @@
     "message": "請輸入您的重置代碼！"
   },
   "input.search.placeholder": {
-    "message": "搜尋：寫作、翻譯、程式設計…"
+    "message": "寫作、翻譯…"
   },
   "label.agree": {
     "message": "同意"
@@ -279,7 +279,7 @@
     "message": "提示詞名稱"
   },
   "label.sharePrompt": {
-    "message": "是否願意將該提示詞分享到公開頁面？"
+    "message": "分享到社群頁面，其他人可以瀏覽和收藏"
   },
   "level.bronze": {
     "message": "青銅"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "評論發送失敗，請稍後重試"
+  },
+  "auth.callback.title": {
+    "message": "完成登入"
+  },
+  "auth.callback.working": {
+    "message": "正在完成登入…"
+  },
+  "auth.callback.workingHint": {
+    "message": "請不要關閉本頁，稍後會自動跳回首頁"
+  },
+  "auth.callback.failed": {
+    "message": "登入沒有完成"
+  },
+  "auth.callback.failedHint": {
+    "message": "登入連結可能已過期或已被使用過。回到首頁重新登入即可。"
+  },
+  "auth.callback.idle": {
+    "message": "這裡沒有待處理的登入"
+  },
+  "auth.callback.idleHint": {
+    "message": "本頁只用於登入跳轉，不需要收藏。"
+  },
+  "auth.callback.backHome": {
+    "message": "返回首頁登入"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "在上面輸入名稱、選個顏色，就能建第一個標籤"
+  },
+  "validation.username.empty": {
+    "message": "使用者名稱不能為空"
+  },
+  "message.username.updated": {
+    "message": "使用者名稱已更新"
+  },
+  "message.username.updateError": {
+    "message": "使用者名稱更新失敗，請稍後重試"
+  },
+  "message.requestTimeout": {
+    "message": "請求逾時，請重試"
+  },
+  "message.tooManyRequests": {
+    "message": "操作太頻繁，請稍後再試"
+  },
+  "account.signInRequired": {
+    "message": "登入後查看帳戶"
+  },
+  "account.signInRequiredHint": {
+    "message": "正在帶你回首頁，也可以直接點下面的按鈕。"
+  },
+  "myspace.tagManager.color": {
+    "message": "標籤顏色"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "搜尋 GIF"
   }
 }

@@ -83,7 +83,7 @@ function CopyLinkBar({ url }: { url: string }) {
         size="small"
         icon={copied ? <CheckOutlined /> : null}
         onClick={() => copyText(url)}
-        aria-label="Copy link"
+        aria-label={translate({ id: "share.copy", message: "复制" })}
         style={{ ...monoFont, flexShrink: 0, height: 24, fontSize: 12 }}>
         {copied ? null : <Translate id="share.copy">复制</Translate>}
       </Button>

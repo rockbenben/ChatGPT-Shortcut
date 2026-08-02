@@ -150,7 +150,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
                 {/* mono 眉题，与详情页 .comp-sheet-eyebrow 同语言 */}
                 <Typography.Text
                   style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
-                  <Translate id="prompt.content">Prompt 内容</Translate>
+                  <Translate id="prompt.content">提示词内容</Translate>
                 </Typography.Text>
                 {/* 复制是 modal 的英雄动作，与详情页同配重（primary）；此前 outlined small 层级偏弱 */}
                 <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="primary" size="middle" />

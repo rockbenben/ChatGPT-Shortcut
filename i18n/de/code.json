@@ -261,7 +261,7 @@
     "message": "Bitte geben Sie Ihren Reset-Code ein!"
   },
   "input.search.placeholder": {
-    "message": "Suchen: Schreiben, Übersetzung, Coding…"
+    "message": "Schreiben, Übersetzen…"
   },
   "label.agree": {
     "message": "Zustimmen"
@@ -279,7 +279,7 @@
     "message": "Prompt-Name"
   },
   "label.sharePrompt": {
-    "message": "Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?"
+    "message": "Auf der Community-Seite teilen – andere können ihn ansehen und speichern"
   },
   "level.bronze": {
     "message": "Bronze"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "Kommentar konnte nicht gesendet werden. Bitte versuche es später erneut."
+  },
+  "auth.callback.title": {
+    "message": "Anmeldung abschließen"
+  },
+  "auth.callback.working": {
+    "message": "Anmeldung läuft…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Lass diese Seite offen – du wirst gleich zur Startseite zurückgeleitet."
+  },
+  "auth.callback.failed": {
+    "message": "Anmeldung nicht abgeschlossen"
+  },
+  "auth.callback.failedHint": {
+    "message": "Der Anmeldelink ist möglicherweise abgelaufen oder wurde bereits verwendet. Geh zurück zur Startseite und melde dich erneut an."
+  },
+  "auth.callback.idle": {
+    "message": "Hier ist keine Anmeldung offen"
+  },
+  "auth.callback.idleHint": {
+    "message": "Diese Seite dient nur der Anmelde-Weiterleitung – ein Lesezeichen ist nicht nötig."
+  },
+  "auth.callback.backHome": {
+    "message": "Zur Startseite und anmelden"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Oben einen Namen eingeben, eine Farbe wählen – fertig ist dein erster Tag."
+  },
+  "validation.username.empty": {
+    "message": "Der Benutzername darf nicht leer sein"
+  },
+  "message.username.updated": {
+    "message": "Benutzername aktualisiert"
+  },
+  "message.username.updateError": {
+    "message": "Der Benutzername konnte nicht aktualisiert werden. Versuch es gleich noch einmal."
+  },
+  "message.requestTimeout": {
+    "message": "Zeitüberschreitung der Anfrage. Versuch es erneut."
+  },
+  "message.tooManyRequests": {
+    "message": "Zu viele Versuche. Versuch es gleich noch einmal."
+  },
+  "account.signInRequired": {
+    "message": "Melde dich an, um dein Konto zu sehen"
+  },
+  "account.signInRequiredHint": {
+    "message": "Du wirst zur Startseite geleitet – oder nutze den Button unten."
+  },
+  "myspace.tagManager.color": {
+    "message": "Tag-Farbe"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIFs suchen"
   }
 }

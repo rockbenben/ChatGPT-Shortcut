@@ -173,8 +173,9 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
       <Input
         ref={inputRef}
         id="searchbar"
+        // 只留示例词：`>` 和放大镜已说明是搜索框，加前缀后任何语言都会被截断
         placeholder={translate({
-          message: "搜索：写作、翻译、编程…",
+          message: "写作、翻译…",
           id: "input.search.placeholder",
         })}
         value={value ?? undefined}

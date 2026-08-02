@@ -1,6 +1,8 @@
-import React, { useLayoutEffect, useState, useMemo } from "react";
+import React, { useEffect, useLayoutEffect, useState, useMemo } from "react";
 import { ConfigProvider, theme, App } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { ANTD_LOCALE } from "@site/src/utils/i18n";
 
 // Dual-theme antd ConfigProvider — switches algorithm + dark-only brand tokens based on
 // Docusaurus data-theme attribute. Universal tokens (radius, motion, components) apply
@@ -16,12 +18,43 @@ function getInitialTheme(): boolean {
   return true;
 }
 
-// antd locale 不注入：全项目暴露 antd 默认文案的只有 Pagination 的几个 aria-label / quickJumper
-// 字符串（"Previous Page" / "Go to" 等），其他组件（Modal.confirm/Popconfirm/Empty/Form）
-// 都已在 callsite 用 <Translate> 覆盖。引入 18 个 antd locale pack 换这点收益不划算
-// （~150KB gzipped bundle 膨胀）。Pagination 默认英文可接受。
+/**
+ * antd 语言包按需加载。唯一还漏英文的是 Pagination（showQuickJumper 显示 "Go to __ Page"），
+ * 其余组件都已在 callsite 用 <Translate> 覆盖。动态 import 让每种语言各成懒加载 chunk，
+ * 运行时只取当前语言那份（~3KB gzip）；首帧到落地之间 Pagination 短暂英文，可接受。
+ */
+function useAntdLocale() {
+  const { i18n } = useDocusaurusContext();
+  const [locale, setLocale] = useState<any>(undefined);
+
+  useEffect(() => {
+    const name = ANTD_LOCALE[i18n.currentLocale];
+    if (!name) return;
+    let alive = true;
+    // webpackInclude 必须与 ANTD_LOCALE 的 value 一致：不加会把 antd/locale 下全部
+    // 75 个语言包各编成一个 chunk（运行时只用 1 个，其余是死文件）
+    import(
+      /* webpackChunkName: "antd-locale" */
+      /* webpackInclude: /(ar_EG|bn_BD|de_DE|en_US|es_ES|fr_FR|hi_IN|id_ID|it_IT|ja_JP|ko_KR|pt_BR|ru_RU|th_TH|tr_TR|vi_VN|zh_CN|zh_TW)\.js$/ */
+      `antd/locale/${name}.js`
+    )
+      .then((mod) => {
+        if (alive) setLocale(mod.default);
+      })
+      .catch(() => {
+        // 语言包拉取失败只让 Pagination 退回英文，不该连累整个应用
+      });
+    return () => {
+      alive = false;
+    };
+  }, [i18n.currentLocale]);
+
+  return locale;
+}
+
 export default function Root({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
+  const locale = useAntdLocale();
 
   useLayoutEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
@@ -91,7 +124,7 @@ export default function Root({ children }) {
   }, [isDarkMode]);
 
   return (
-    <ConfigProvider theme={themeConfig}>
+    <ConfigProvider theme={themeConfig} locale={locale}>
       <App className="app-root">{children}</App>
     </ConfigProvider>
   );

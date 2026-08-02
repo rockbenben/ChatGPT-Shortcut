@@ -25,3 +25,25 @@ type LocaleConfigs = Record<string, { htmlLang?: string }>;
 export function toBcp47(locale: string, localeConfigs: LocaleConfigs): string {
   return localeConfigs[locale]?.htmlLang ?? locale;
 }
+
+/** Docusaurus locale → antd 语言包文件名（`antd/locale/<name>.js`），见 theme/Root.tsx。 */
+export const ANTD_LOCALE: Record<string, string> = {
+  "zh-Hans": "zh_CN",
+  "zh-Hant": "zh_TW",
+  en: "en_US",
+  ja: "ja_JP",
+  ko: "ko_KR",
+  es: "es_ES",
+  pt: "pt_BR",
+  hi: "hi_IN",
+  ind: "id_ID",
+  vi: "vi_VN",
+  th: "th_TH",
+  fr: "fr_FR",
+  de: "de_DE",
+  it: "it_IT",
+  ru: "ru_RU",
+  ar: "ar_EG",
+  tr: "tr_TR",
+  bn: "bn_BD",
+};

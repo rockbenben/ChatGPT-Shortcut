@@ -261,7 +261,7 @@
     "message": "¡Por favor ingresa tu código de restablecimiento!"
   },
   "input.search.placeholder": {
-    "message": "Buscar: escritura, traducción, programación…"
+    "message": "escritura, traducción…"
   },
   "label.agree": {
     "message": "Acepto"
@@ -279,7 +279,7 @@
     "message": "Nombre del prompt"
   },
   "label.sharePrompt": {
-    "message": "¿Te gustaría compartir este prompt en la página pública?"
+    "message": "Compartir en la página de la comunidad: otros podrán verlo y guardarlo"
   },
   "level.bronze": {
     "message": "Bronce"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "No se pudo enviar el comentario. Inténtalo de nuevo más tarde."
+  },
+  "auth.callback.title": {
+    "message": "Completar el inicio de sesión"
+  },
+  "auth.callback.working": {
+    "message": "Iniciando sesión…"
+  },
+  "auth.callback.workingHint": {
+    "message": "No cierres esta página: volverás al inicio en un momento."
+  },
+  "auth.callback.failed": {
+    "message": "El inicio de sesión no se completó"
+  },
+  "auth.callback.failedHint": {
+    "message": "El enlace de inicio de sesión puede haber caducado o ya haberse usado. Vuelve al inicio e inicia sesión de nuevo."
+  },
+  "auth.callback.idle": {
+    "message": "No hay ningún inicio de sesión pendiente aquí"
+  },
+  "auth.callback.idleHint": {
+    "message": "Esta página solo gestiona redirecciones de inicio de sesión; no hace falta guardarla."
+  },
+  "auth.callback.backHome": {
+    "message": "Volver al inicio para iniciar sesión"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Escribe un nombre arriba, elige un color y tendrás tu primera etiqueta."
+  },
+  "validation.username.empty": {
+    "message": "El nombre de usuario no puede estar vacío"
+  },
+  "message.username.updated": {
+    "message": "Nombre de usuario actualizado"
+  },
+  "message.username.updateError": {
+    "message": "No se pudo actualizar el nombre de usuario. Inténtalo de nuevo en un momento."
+  },
+  "message.requestTimeout": {
+    "message": "La solicitud ha caducado. Inténtalo de nuevo."
+  },
+  "message.tooManyRequests": {
+    "message": "Demasiados intentos. Inténtalo de nuevo en un momento."
+  },
+  "account.signInRequired": {
+    "message": "Inicia sesión para ver tu cuenta"
+  },
+  "account.signInRequiredHint": {
+    "message": "Te llevamos al inicio; también puedes usar el botón de abajo."
+  },
+  "myspace.tagManager.color": {
+    "message": "Color de la etiqueta"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Buscar GIF"
   }
 }

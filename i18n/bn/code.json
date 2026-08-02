@@ -261,7 +261,7 @@
     "message": "অনুগ্রহ করে আপনার রিসেট কোড লিখুন!"
   },
   "input.search.placeholder": {
-    "message": "অনুসন্ধান: লেখা, অনুবাদ, কোডিং…"
+    "message": "লেখা, অনুবাদ…"
   },
   "label.agree": {
     "message": "সম্মত"
@@ -279,7 +279,7 @@
     "message": "প্রম্পটের নাম"
   },
   "label.sharePrompt": {
-    "message": "আপনি কি এই প্রম্পটটি সর্বজনীন পেজে শেয়ার করতে চান?"
+    "message": "কমিউনিটি পেজে শেয়ার করুন — অন্যরা এটি দেখতে ও সংরক্ষণ করতে পারবে"
   },
   "level.bronze": {
     "message": "ব্রোঞ্জ"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "মন্তব্য পাঠাতে ব্যর্থ হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
+  },
+  "auth.callback.title": {
+    "message": "সাইন ইন সম্পূর্ণ করুন"
+  },
+  "auth.callback.working": {
+    "message": "সাইন ইন করা হচ্ছে…"
+  },
+  "auth.callback.workingHint": {
+    "message": "এই পৃষ্ঠাটি বন্ধ করবেন না — একটু পরেই আপনাকে হোম পেজে ফিরিয়ে নেওয়া হবে।"
+  },
+  "auth.callback.failed": {
+    "message": "সাইন ইন সম্পূর্ণ হয়নি"
+  },
+  "auth.callback.failedHint": {
+    "message": "সাইন ইন লিঙ্কের মেয়াদ শেষ হয়ে থাকতে পারে বা এটি আগেই ব্যবহার হয়েছে। হোম পেজে ফিরে আবার সাইন ইন করুন।"
+  },
+  "auth.callback.idle": {
+    "message": "এখানে সম্পূর্ণ করার মতো কোনো সাইন ইন নেই"
+  },
+  "auth.callback.idleHint": {
+    "message": "এই পৃষ্ঠাটি কেবল সাইন ইন রিডাইরেক্টের জন্য — বুকমার্ক করার দরকার নেই।"
+  },
+  "auth.callback.backHome": {
+    "message": "সাইন ইন করতে হোম পেজে ফিরুন"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "উপরে একটি নাম লিখুন, রং বেছে নিন — আপনার প্রথম ট্যাগ তৈরি।"
+  },
+  "validation.username.empty": {
+    "message": "ব্যবহারকারীর নাম খালি রাখা যাবে না"
+  },
+  "message.username.updated": {
+    "message": "ব্যবহারকারীর নাম আপডেট হয়েছে"
+  },
+  "message.username.updateError": {
+    "message": "ব্যবহারকারীর নাম আপডেট করা যায়নি। একটু পরে আবার চেষ্টা করুন।"
+  },
+  "message.requestTimeout": {
+    "message": "অনুরোধের সময় শেষ হয়ে গেছে। আবার চেষ্টা করুন।"
+  },
+  "message.tooManyRequests": {
+    "message": "অনেক বেশি চেষ্টা হয়েছে। একটু পরে আবার চেষ্টা করুন।"
+  },
+  "account.signInRequired": {
+    "message": "আপনার অ্যাকাউন্ট দেখতে সাইন ইন করুন"
+  },
+  "account.signInRequiredHint": {
+    "message": "আপনাকে হোম পেজে নিয়ে যাওয়া হচ্ছে — অথবা নিচের বোতামটি ব্যবহার করুন।"
+  },
+  "myspace.tagManager.color": {
+    "message": "ট্যাগের রং"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF খুঁজুন"
   }
 }

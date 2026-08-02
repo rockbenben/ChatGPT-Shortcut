@@ -261,7 +261,7 @@
     "message": "กรุณากรอกรหัสรีเซ็ต!"
   },
   "input.search.placeholder": {
-    "message": "ค้นหา: การเขียน การแปล การเขียนโปรแกรม…"
+    "message": "การเขียน การแปล…"
   },
   "label.agree": {
     "message": "ยอมรับ"
@@ -279,7 +279,7 @@
     "message": "ชื่อ พรอมต์"
   },
   "label.sharePrompt": {
-    "message": "คุณต้องการแชร์ พรอมต์ นี้ไปยังหน้าสาธารณะหรือไม่?"
+    "message": "แชร์ไปยังหน้าชุมชน ผู้อื่นสามารถดูและบันทึกได้"
   },
   "level.bronze": {
     "message": "บรอนซ์"
@@ -1237,5 +1237,59 @@
   },
   "message.postComment.error": {
     "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
+  },
+  "auth.callback.title": {
+    "message": "เสร็จสิ้นการเข้าสู่ระบบ"
+  },
+  "auth.callback.working": {
+    "message": "กำลังเข้าสู่ระบบ…"
+  },
+  "auth.callback.workingHint": {
+    "message": "อย่าปิดหน้านี้ ระบบจะพากลับไปหน้าแรกในอีกสักครู่"
+  },
+  "auth.callback.failed": {
+    "message": "เข้าสู่ระบบไม่สำเร็จ"
+  },
+  "auth.callback.failedHint": {
+    "message": "ลิงก์เข้าสู่ระบบอาจหมดอายุหรือถูกใช้ไปแล้ว กลับไปหน้าแรกแล้วเข้าสู่ระบบใหม่"
+  },
+  "auth.callback.idle": {
+    "message": "ไม่มีการเข้าสู่ระบบที่ค้างอยู่ที่นี่"
+  },
+  "auth.callback.idleHint": {
+    "message": "หน้านี้ใช้สำหรับเปลี่ยนเส้นทางตอนเข้าสู่ระบบเท่านั้น ไม่ต้องบุ๊กมาร์ก"
+  },
+  "auth.callback.backHome": {
+    "message": "กลับหน้าแรกเพื่อเข้าสู่ระบบ"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "พิมพ์ชื่อด้านบน เลือกสี แล้วแท็กแรกของคุณก็พร้อมใช้งาน"
+  },
+  "validation.username.empty": {
+    "message": "ชื่อผู้ใช้ต้องไม่เว้นว่าง"
+  },
+  "message.username.updated": {
+    "message": "อัปเดตชื่อผู้ใช้แล้ว"
+  },
+  "message.username.updateError": {
+    "message": "อัปเดตชื่อผู้ใช้ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง"
+  },
+  "message.requestTimeout": {
+    "message": "คำขอหมดเวลา กรุณาลองใหม่"
+  },
+  "message.tooManyRequests": {
+    "message": "ทำรายการถี่เกินไป กรุณาลองใหม่อีกครั้ง"
+  },
+  "account.signInRequired": {
+    "message": "เข้าสู่ระบบเพื่อดูบัญชีของคุณ"
+  },
+  "account.signInRequiredHint": {
+    "message": "กำลังพากลับไปหน้าแรก หรือกดปุ่มด้านล่างก็ได้"
+  },
+  "myspace.tagManager.color": {
+    "message": "สีของแท็ก"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "ค้นหา GIF"
   }
 }

@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback, useMemo } from "react";
 import { Button, Dropdown, Space } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, EditOutlined, SettingOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
@@ -51,7 +51,7 @@ const UserStatus = () => {
           </span>
         </Button>
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
-          <Button icon={<SettingOutlined />} aria-label="Settings" />
+          <Button icon={<SettingOutlined />} aria-label={translate({ id: "link.myAccount", message: "我的账户" })} />
         </Dropdown>
       </Space>
       <PromptFormModal

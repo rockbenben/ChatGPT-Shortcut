@@ -1,8 +1,10 @@
 import { Input, Typography, Alert } from "antd";
 import { useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { orange, red } from "@ant-design/colors";
 import { estimateTokens } from "@site/src/utils/promptRender";
+import { toBcp47 } from "@site/src/utils/i18n";
 
 // Token 阈值设计（基于现代大模型 128K+ 上下文窗口）
 const WARNING_LIMIT = 7500; // 偏长，建议精简
@@ -22,6 +24,8 @@ interface Props {
 }
 
 const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
+  const { i18n } = useDocusaurusContext();
+  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
   const tokens = useMemo(() => estimateTokens(value), [value]);
   const statusColor = getStatusColor(tokens);
   const showWarning = tokens >= WARNING_LIMIT;
@@ -44,7 +48,7 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
         status={isDanger ? "warning" : undefined}
       />
       <div style={{ textAlign: "right" }}>
-        <Typography.Text style={{ color: statusColor, fontSize: 11, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>
+        <Typography.Text style={{ color: statusColor, fontSize: 11, fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>≈ {tokens.toLocaleString(bcp47Locale)} tokens</Typography.Text>
       </div>
 
       {showWarning && (
