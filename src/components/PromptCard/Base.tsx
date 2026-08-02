@@ -3,29 +3,27 @@ import { Card, Flex, theme } from "antd";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
-export interface BasePromptCardProps {
+interface BasePromptCardProps {
   title?: ReactNode;
   titleExtra?: ReactNode;
   actions?: ReactNode[];
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
   loading?: boolean;
-  hoverable?: boolean;
   id?: string;
   onCardClick?: () => void;
 }
 
 export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardProps>(
-  ({ title, titleExtra, actions, children, className, style, bodyStyle, loading, hoverable = true, id, onCardClick, ...rest }, ref) => {
+  ({ title, titleExtra, actions, children, className, style, loading, id, onCardClick, ...rest }, ref) => {
     const { token } = theme.useToken();
 
     return (
       <Card
         ref={ref}
         id={id}
-        hoverable={hoverable}
+        hoverable
         loading={loading}
         className={clsx(styles.showcaseCard, className)}
         style={{
@@ -42,7 +40,6 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             flexDirection: "column",
             padding: token.paddingMD,
             gap: token.marginXS,
-            ...bodyStyle,
           },
           actions: {
             // 使用 CSS 变量替代 JS token，确保 SSG 主题兼容

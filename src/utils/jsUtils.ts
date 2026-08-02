@@ -5,17 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// Inspired by https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_sortby-and-_orderby
-// 本分支保留：PromptCardTag 按 TagList 顺序排标签时在用（main 分支已无调用者，故在那边删除）
-export function sortBy<T>(array: T[], getter: (item: T) => string | number | boolean): T[] {
-  const sortedArray = [...array];
-  sortedArray.sort((a, b) =>
-    // eslint-disable-next-line no-nested-ternary
-    getter(a) > getter(b) ? 1 : getter(b) > getter(a) ? -1 : 0,
-  );
-  return sortedArray;
-}
-
 export function toggleListItem<T>(list: T[], item: T): T[] {
   const itemIndex = list.indexOf(item);
   if (itemIndex === -1) {

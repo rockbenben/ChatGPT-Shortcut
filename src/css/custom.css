@@ -15,8 +15,6 @@
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 55%;
   --site-color-favorite-background: transparent;
-  --site-color-tooltip: #fff;
-  --site-color-tooltip-background: #2a2f33;
   --site-color-svg-icon-favorite: #e9669e;
   --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
   --site-color-feedback-background: #f8f9f3;
@@ -479,26 +477,6 @@ article.markdown a:hover {
   min-height: 100vh;
 }
 
-/* Social Buttons Grayscale Effect */
-.social-buttons-grayscale {
-  display: inline-block;
-}
-
-.social-buttons-grayscale button, 
-.social-buttons-grayscale a,
-.social-buttons-grayscale .react-share__ShareButton {
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.social-buttons-grayscale:hover button,
-.social-buttons-grayscale:hover a,
-.social-buttons-grayscale:hover .react-share__ShareButton {
-  filter: none;
-  opacity: 1;
-}
-
 @media (min-width: 450px) and (max-width: 575px) {
   .ant-col-xs-24 {
     flex: 0 0 50% !important;
@@ -799,7 +777,7 @@ article.markdown a:hover {
 /*    + Web Share API 优先 + Copy Link 摆在第一位
 /* ========================================================================== */
 
-/* 仅保留 antd 6 没法 inline 表达的：覆盖 react-share button reset + hover state.
+/* 仅保留 antd 6 没法 inline 表达的：原生 button 的 reset + hover state。
    容器 / grid / typography / 静态色全部由 ShareButtons.tsx 用 Flex + inline style 承担 */
 
 .share-channel-btn {

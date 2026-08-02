@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "مشاركة عبر"
   },
+  "share.shareOn": {
+    "message": "مشاركة عبر {channel}"
+  },
   "showcase.header.button": {
     "message": "استكشاف المجتمع"
   },

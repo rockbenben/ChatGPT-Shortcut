@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "共有先"
   },
+  "share.shareOn": {
+    "message": "{channel} で共有"
+  },
   "showcase.header.button": {
     "message": "コミュニティ投稿を見る"
   },

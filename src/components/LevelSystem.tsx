@@ -33,24 +33,42 @@ export interface LevelInfo {
   next: number | null;
 }
 
-/** 10 个级别的"shared prompts"阈值——用于 progress / 进度计算 */
-export const LEVEL_THRESHOLDS = [0, 1, 3, 8, 18, 35, 60, 100, 160, 260];
+/**
+ * 等级表：阈值 + 各自宝石色（语义化的成就梯度，用户确认不并入单 accent 体系）。
+ * 阈值与色值只在这里出现一次，getLevelInfo 从它派生 level / accentColor / next。
+ *
+ * 名称不放进本表：LevelName 必须把 <Translate id> 写成字面量，
+ * Docusaurus 的 write-translations 才扫得到，动态 id 会让这 10 条文案从 code.json 掉队。
+ */
+const LEVELS = [
+  { threshold: 0, accentColor: "#94a3a8" }, // 萌新——neutral graphite
+  { threshold: 1, accentColor: "#c8956b" }, // 青铜——warm bronze
+  { threshold: 3, accentColor: "#a8b8c5" }, // 白银——cool silver
+  { threshold: 8, accentColor: "#d8a55a" }, // 黄金——warm muted gold
+  { threshold: 18, accentColor: "#b0c8d8" }, // 铂金——cool light platinum
+  { threshold: 35, accentColor: "#cdb8ff" }, // 钻石——pale violet prism
+  { threshold: 60, accentColor: "#6f95d0" }, // 蓝宝石——cool sapphire blue
+  { threshold: 100, accentColor: "#d97a8e" }, // 红宝石——rose ruby
+  { threshold: 160, accentColor: "#5fb088" }, // 翡翠——deep emerald green
+  { threshold: 260, accentColor: "#f0d896" }, // 星辉——warm starlight gold
+];
 
 /**
  * Get level information based on shared prompts count
- * 等级保留各自宝石色（语义化的成就梯度，用户确认不并入单 accent 体系）
  */
 export function getLevelInfo(sharedCount: number): LevelInfo {
-  if (sharedCount >= 260) return { level: 9, accentColor: "#f0d896", next: null }; // 星辉——warm starlight gold
-  if (sharedCount >= 160) return { level: 8, accentColor: "#5fb088", next: 260 }; // 翡翠——deep emerald green
-  if (sharedCount >= 100) return { level: 7, accentColor: "#d97a8e", next: 160 }; // 红宝石——rose ruby
-  if (sharedCount >= 60) return { level: 6, accentColor: "#6f95d0", next: 100 }; // 蓝宝石——cool sapphire blue
-  if (sharedCount >= 35) return { level: 5, accentColor: "#cdb8ff", next: 60 }; // 钻石——pale violet prism
-  if (sharedCount >= 18) return { level: 4, accentColor: "#b0c8d8", next: 35 }; // 铂金——cool light platinum
-  if (sharedCount >= 8) return { level: 3, accentColor: "#d8a55a", next: 18 }; // 黄金——warm muted gold
-  if (sharedCount >= 3) return { level: 2, accentColor: "#a8b8c5", next: 8 }; // 白银——cool silver
-  if (sharedCount >= 1) return { level: 1, accentColor: "#c8956b", next: 3 }; // 青铜——warm bronze
-  return { level: 0, accentColor: "#94a3a8", next: 1 }; // 萌新——neutral graphite
+  let level = 0;
+  for (let i = LEVELS.length - 1; i >= 0; i--) {
+    if (sharedCount >= LEVELS[i].threshold) {
+      level = i;
+      break;
+    }
+  }
+  return {
+    level,
+    accentColor: LEVELS[level].accentColor,
+    next: LEVELS[level + 1]?.threshold ?? null,
+  };
 }
 
 // ============ React Components ============

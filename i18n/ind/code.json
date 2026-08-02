@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "Bagikan ke"
   },
+  "share.shareOn": {
+    "message": "Bagikan ke {channel}"
+  },
   "showcase.header.button": {
     "message": "Jelajahi Komunitas"
   },

@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "Teilen auf"
   },
+  "share.shareOn": {
+    "message": "Teilen auf {channel}"
+  },
   "showcase.header.button": {
     "message": "Community erkunden"
   },

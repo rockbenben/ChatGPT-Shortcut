@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "शेयर करें"
   },
+  "share.shareOn": {
+    "message": "{channel} पर शेयर करें"
+  },
   "showcase.header.button": {
     "message": "समुदाय देखें"
   },

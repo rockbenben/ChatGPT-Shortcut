@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "Поделиться в"
   },
+  "share.shareOn": {
+    "message": "Поделиться в {channel}"
+  },
   "showcase.header.button": {
     "message": "Обзор сообщества"
   },

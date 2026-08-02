@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "শেয়ার করুন"
   },
+  "share.shareOn": {
+    "message": "{channel}-এ শেয়ার করুন"
+  },
   "showcase.header.button": {
     "message": "কমিউনিটি দেখুন"
   },

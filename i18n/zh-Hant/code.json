@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "分享到"
   },
+  "share.shareOn": {
+    "message": "分享到 {channel}"
+  },
   "showcase.header.button": {
     "message": "瀏覽社群分享"
   },

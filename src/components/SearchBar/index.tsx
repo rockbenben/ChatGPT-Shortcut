@@ -16,7 +16,7 @@ import { searchCardsLocally } from "@site/src/api/homepage";
 
 import styles from "./styles.module.css";
 
-export type UserState = {
+type UserState = {
   scrollTopPosition: number;
   focusedElementId: string | undefined;
 };

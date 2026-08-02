@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import type { TagType } from "@site/src/data/User.d";
 
-export type CardType = "user" | "favorite" | "data" | "community";
-
 // Prompt 卡片数据类型。
 // 原从 @site/src/utils/snapshotPrime 导入；offline 分支已移除该联网 util
 // （快照 prime 依赖社区 API），类型随消费它的卡片组件就近保留，字段与在线版一致。
@@ -32,7 +30,7 @@ export interface CommunityPrompt extends CommunityPromptSnapshot {
 }
 
 export interface PromptCardProps {
-  type: CardType;
+  type: "user" | "favorite" | "data" | "community";
   data: any; // We'll refine this type as we go
   index?: number; // For sortable items
   sortableId?: string | number; // Custom ID for sortable context (uses data.id if not provided)
@@ -49,5 +47,4 @@ export interface PromptCardProps {
   onOpenModal?: (data: any) => void;
   onConvertToPrivate?: (data: any) => void; // Convert unavailable prompt to private
   extraActions?: ReactNode;
-  typeBadge?: ReactNode;
 }

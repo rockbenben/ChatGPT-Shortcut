@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "공유 대상"
   },
+  "share.shareOn": {
+    "message": "{channel}에 공유"
+  },
   "showcase.header.button": {
     "message": "커뮤니티 둘러보기"
   },

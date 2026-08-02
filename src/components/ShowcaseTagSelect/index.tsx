@@ -63,8 +63,12 @@ function ShowcaseTagSelect({ id, icon, label, tag, checked: propChecked, ...rest
     toggleTag();
   }, [toggleTag]);
 
+  // rest 必须展开到 span 上：antd Tooltip 通过给子元素注入 onMouseEnter/onMouseLeave/
+  // onFocus/onBlur 与 aria-describedby 来工作，丢掉它们 tooltip 就不会触发。
+  // （旧的自研 ShowcaseTooltip 走 addEventListener 直接挂 DOM，绕开 React props，
+  //  所以那时丢掉 rest 也看不出问题，连 id / aria-describedby 一起被吞了。）
   return (
-    <span ref={ref} style={{ display: "inline-block" }}>
+    <span ref={ref} id={id} style={{ display: "inline-block" }} {...rest}>
       <Tag.CheckableTag className={`${styles.tagSelect} ${selected ? styles.tagSelectChecked : ""}`} checked={selected} onChange={handleChange}>
         {label}
         {icon}

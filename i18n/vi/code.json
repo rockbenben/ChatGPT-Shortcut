@@ -659,6 +659,9 @@
   "share.shareTo": {
     "message": "Chia sẻ lên"
   },
+  "share.shareOn": {
+    "message": "Chia sẻ lên {channel}"
+  },
   "showcase.header.button": {
     "message": "Khám phá cộng đồng"
   },
