@@ -197,7 +197,7 @@ export const getListCacheKey = (prefix, ...parts) => {
  * @param {string} key - 缓存键
  * @param {string} etag - ETag 值
  */
-export const setETag = (key, etag) => {
+const setETag = (key, etag) => {
   if (!canUseCache() || !etag) return;
   try {
     localStorage.setItem(`${key}_etag`, etag);

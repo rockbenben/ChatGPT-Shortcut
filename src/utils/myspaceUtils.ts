@@ -3,7 +3,7 @@
  * 从 items 数组推导 loves, commLoves, userprompts
  */
 
-export interface MySpaceItem {
+interface MySpaceItem {
   id: number;
   type: "favorite" | "prompt";
   source: "card" | "community" | "userprompt";
@@ -29,7 +29,7 @@ export function deriveCommLoves(items: MySpaceItem[]): number[] {
 /**
  * 从 items 推导出 userprompts（用户提示词）
  */
-export function deriveUserprompts(items: MySpaceItem[]): Array<{ id: number; share: boolean; updatedAt?: string }> {
+function deriveUserprompts(items: MySpaceItem[]): Array<{ id: number; share: boolean; updatedAt?: string }> {
   return items
     .filter((item) => item.type === "prompt" && item.source === "userprompt")
     .map((item) => ({

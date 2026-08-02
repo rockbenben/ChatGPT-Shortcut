@@ -6,10 +6,8 @@
  */
 
 // Inspired by https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_sortby-and-_orderby
-export function sortBy<T>(
-  array: T[],
-  getter: (item: T) => string | number | boolean,
-): T[] {
+// 本分支保留：PromptCardTag 按 TagList 顺序排标签时在用（main 分支已无调用者，故在那边删除）
+export function sortBy<T>(array: T[], getter: (item: T) => string | number | boolean): T[] {
   const sortedArray = [...array];
   sortedArray.sort((a, b) =>
     // eslint-disable-next-line no-nested-ternary
