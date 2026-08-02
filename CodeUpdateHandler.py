@@ -337,36 +337,13 @@ for lang in languages:
     with open(output_path, 'w', encoding='utf-8') as file:
         json.dump(output_data[lang], file, ensure_ascii=False, separators=(',', ':'))
 
-# 更新 Prompt Page 页面的 prompt 内容
-react_jsx_dir = Path(os.path.join(os.getcwd(), 'src', 'pages', 'prompt'))
-react_jsx_dir.mkdir(parents=True, exist_ok=True)
-
-# Loop from 1 to max_id for each prompt ID
-for prompt_id in range(1, max_id+1):
-    # Loop through each language
-    for lang in allLanguages:
-        # 如果是中文(zh-Hans)，则直接在 base_react_jsx_dir 下创建文件
-        # Use zh-Hans as the default logic
-        if lang == "zh-Hans":
-            output_path = react_jsx_dir / f"{prompt_id}.tsx"
-        # 对于其他语言，创建或使用指定的 i18n 目录
-        else:
-            prompt_i18n_dir = Path(os.path.join(os.getcwd(), 'i18n', lang, 'docusaurus-plugin-content-pages', 'prompt'))
-            prompt_i18n_dir.mkdir(parents=True, exist_ok=True)
-            # 设置输出文件的路径
-            output_path = prompt_i18n_dir / f"{prompt_id}.tsx"
-
-        content = f'''import PromptPage from "@site/src/components/PromptPage";
-import prompt from "@site/src/data/cards/{prompt_id}_{lang}.json";
-
-export default function PromptDetail() {{
-  return <PromptPage prompt={{prompt}} currentLanguage="{lang}" />;
-}}
-'''
-
-        # Write the content to a new file named {prompt_id}.tsx
-        with open(output_path, 'w', encoding='utf-8') as file:
-            file.write(content)
+# prompt 详情页薄壳（src/pages/prompt/<id>.tsx 与 i18n/<locale>/.../prompt/<id>.tsx）
+# 已改由 scripts/genPromptPages.mjs 生成，本脚本不再写它们：
+#   - 那些文件已 gitignore，由 prestart/prebuild/pretypecheck/predeploy 现生成；
+#   - 两个生成器写同一批文件会因行尾（Python 在 Windows 写 CRLF、Node 写 LF）
+#     互判"内容不一致"，每次交替都全量重写 5022 个文件，抖动 dev server 的 watcher；
+#   - Node 版还会在 card JSON 缺失时 fail-fast、清理孤儿页面，这些本脚本都没有。
+# 本脚本仍然负责它们的**数据源** src/data/cards/<id>_<locale>.json（含 dateModified 状态）。
 
 # 将./src/pages/index.tsx 文档复制到 ./i18n/{lang}/docusaurus-plugin-content-pages/index.tsx，并进行变量替换
 def replace_and_write(source_file, destination_file, replacements):

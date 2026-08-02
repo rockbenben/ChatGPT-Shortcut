@@ -26,6 +26,13 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+      # 类型检查必须单独跑：Docusaurus 用 swc 剥离类型、构建期**不做**类型检查
+      # （实测：带 TS2322 的代码 yarn build 仍以退出码 0 成功），类型错误会直接上线。
+      # pretypecheck 还会顺带跑 scripts/checkClipboardFallback.mjs，
+      # 否则那份自检在 CI 里永远不会执行。
+      # 生成器在这里首次产出 5022 个薄壳，随后 prebuild 命中 .genstamp 快路径（~0.2s）。
+      - name: Typecheck
+        run: yarn typecheck
       - name: Build website
         run: yarn build
 
