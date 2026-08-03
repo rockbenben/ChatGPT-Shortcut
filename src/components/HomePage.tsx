@@ -11,7 +11,7 @@ import React, { useContext, useState, useMemo, useEffect, useCallback, useRef, S
 import { ViewModeContext, useViewMode, type ViewMode } from "@site/src/contexts/ViewModeContext";
 import clsx from "clsx";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
-import { useHistory, useLocation } from "@docusaurus/router";
+import { useHistory } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
@@ -25,7 +25,7 @@ import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
 
 import UserStatus from "@site/src/components/user/UserStatus";
-import SearchBar, { useFilteredPrompts } from "@site/src/components/SearchBar";
+import SearchBar, { useFilteredPrompts, useClearFilters } from "@site/src/components/SearchBar";
 import { NoResults } from "@site/src/components/SearchBar/NoResults";
 
 import styles from "@site/src/pages/styles.module.css";
@@ -96,20 +96,13 @@ const ShowcaseFilters: React.FC = React.memo(() => {
   const toggleTagsOnMobile = useCallback(() => {
     setShowTagsOnMobile((prev) => !prev);
   }, []);
-  const location = useLocation();
-  const history = useHistory();
 
   const modifiedTagList = useMemo(() => {
     return TagList.filter((tag) => tag !== "contribute");
   }, []);
 
-  const selectedTagCount = useMemo(() => new URLSearchParams(location.search).getAll("tags").length, [location.search]);
-
-  const handleClearTags = useCallback(() => {
-    const params = new URLSearchParams(location.search);
-    params.delete("tags");
-    history.push({ ...location, search: params.toString() });
-  }, [location, history]);
+  // 与无结果空状态共用同一份定义：同屏两个「清除筛选」必须清同样的东西、显示同样的数字
+  const { activeFilterCount, clearFilters } = useClearFilters();
 
   return (
     <section className="container">
@@ -131,9 +124,9 @@ const ShowcaseFilters: React.FC = React.memo(() => {
             }}>
             Filters
           </span>
-          {selectedTagCount > 0 && (
-            <Button type="link" size="small" icon={<CloseOutlined />} onClick={handleClearTags} style={{ padding: 0, height: "auto", fontSize: 11, color: "var(--site-color-tag-selected-text)" }}>
-              <Translate id="action.clearFilters" values={{ count: selectedTagCount }}>
+          {activeFilterCount > 0 && (
+            <Button type="link" size="small" icon={<CloseOutlined />} onClick={clearFilters} style={{ padding: 0, height: "auto", fontSize: 11, color: "var(--site-color-tag-selected-text)" }}>
+              <Translate id="action.clearFilters" values={{ count: activeFilterCount }}>
                 {"清除筛选 ({count})"}
               </Translate>
             </Button>

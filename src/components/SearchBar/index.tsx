@@ -177,6 +177,31 @@ export function useFilteredPrompts(searchMode: "default" | "myfavor" | "myprompt
   return { filteredCommus, filteredCards, isFiltered };
 }
 
+/**
+ * 「清除筛选」的唯一定义，供筛选栏与无结果空状态共用。
+ * 两处曾各算各的：筛选栏只数标签、空状态数标签+关键词，同屏出现两个同名按钮却显示不同数字。
+ * 计数与清除范围必须是同一件事，所以合并到这里。
+ */
+export function useClearFilters() {
+  const location = useLocation();
+  const history = useHistory();
+
+  const activeFilterCount = React.useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.getAll("tags").length + (params.get(SearchNameQueryKey) ? 1 : 0);
+  }, [location.search]);
+
+  const clearFilters = useCallback(() => {
+    const params = new URLSearchParams(location.search);
+    params.delete("tags");
+    params.delete(SearchNameQueryKey);
+    params.delete("operator");
+    history.push({ ...location, search: params.toString() });
+  }, [location, history]);
+
+  return { activeFilterCount, clearFilters };
+}
+
 interface SearchBarProps {
   beforeSearch?: (value: string | null) => boolean | void;
 }
