@@ -83,21 +83,13 @@ Disallow: /user/
 Disallow: /*/user/
 Allow: /
 
+# 只声明这一个 sitemap。它由 scripts/buildPhased.mjs 的 mergeSitemaps() 在分段构建后合并，
+# 含全部 18 种语言约 5900 条 URL（每语言 327 条），爬虫读这一个就拿到全站。
+#
+# 各语言自己那份 /<locale>/sitemap.xml 构建时照常生成、也照常可访问，只是不在这里声明：
+# 它们是根 sitemap 的子集，列出来只会让 Search Console 出现 19 条相互重叠的记录。
+# 想按语言看收录率时（"ja 收录 300/327"），在 Search Console 手动提交对应那份即可。
+#
+# hreflang 不写进 sitemap：全站 HTML <head> 已由 Docusaurus 输出（PromptPage 另有显式补充），
+# Google 对 HTML 标签 / HTTP 头 / sitemap 三种方式是三选一而非叠加。
 Sitemap: https://www.aishort.top/sitemap.xml
-Sitemap: https://www.aishort.top/en/sitemap.xml
-Sitemap: https://www.aishort.top/zh-Hant/sitemap.xml
-Sitemap: https://www.aishort.top/ja/sitemap.xml
-Sitemap: https://www.aishort.top/ko/sitemap.xml
-Sitemap: https://www.aishort.top/es/sitemap.xml
-Sitemap: https://www.aishort.top/pt/sitemap.xml
-Sitemap: https://www.aishort.top/hi/sitemap.xml
-Sitemap: https://www.aishort.top/ind/sitemap.xml
-Sitemap: https://www.aishort.top/vi/sitemap.xml
-Sitemap: https://www.aishort.top/th/sitemap.xml
-Sitemap: https://www.aishort.top/fr/sitemap.xml
-Sitemap: https://www.aishort.top/de/sitemap.xml
-Sitemap: https://www.aishort.top/it/sitemap.xml
-Sitemap: https://www.aishort.top/ru/sitemap.xml
-Sitemap: https://www.aishort.top/ar/sitemap.xml
-Sitemap: https://www.aishort.top/tr/sitemap.xml
-Sitemap: https://www.aishort.top/bn/sitemap.xml
