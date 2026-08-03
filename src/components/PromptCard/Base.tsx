@@ -28,6 +28,19 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
   ({ title, titleExtra, actions, children, className, style, loading, id, onCardClick, ...rest }, ref) => {
     const { token } = theme.useToken();
 
+    // 整卡可点开详情弹窗，但 antd Card 渲染的是裸 <div>：不给 role/tabIndex/键盘处理，
+    // 键盘与读屏用户就完全够不到这个入口（styles 里的 :focus-visible 规则也永远不触发）。
+    // 卡内还有标题链接与操作按钮，所以只在事件源就是卡片本身时响应，避免 Enter 双触发。
+    const handleCardKeyDown = onCardClick
+      ? (e: React.KeyboardEvent<HTMLDivElement>) => {
+          if (e.target !== e.currentTarget) return;
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onCardClick();
+          }
+        }
+      : undefined;
+
     return (
       <Card
         ref={ref}
@@ -35,6 +48,9 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         hoverable
         loading={loading}
         className={clsx(styles.showcaseCard, className)}
+        role={onCardClick ? "button" : undefined}
+        tabIndex={onCardClick ? 0 : undefined}
+        onKeyDown={handleCardKeyDown}
         style={{
           height: "100%",
           display: "flex",
