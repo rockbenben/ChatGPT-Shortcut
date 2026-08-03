@@ -1,20 +1,20 @@
 ---
 sidebar_label: Cài đặt Tiện ích Trình duyệt
 title: Tiện ích AI Short | Thanh bên ChatGPT/Gemini/Claude · Cài đặt trên Chrome/Edge/Firefox
-description: Gọi trực tiếp prompt AiShort trong thanh bên của các trang trò chuyện AI như ChatGPT, Gemini, Claude, Doubao mà không cần chuyển tab để sao chép và dán. Cài đặt một chạm trên Chrome, Edge, Firefox.
+description: Gọi prompt AiShort từ thanh bên, cửa sổ bật lên hoặc cửa sổ riêng của trình duyệt, ngay cạnh ChatGPT, Gemini, Claude. Cài đặt một chạm trên Chrome, Edge, Firefox.
 ---
 
 # Cài đặt Tiện ích Trình duyệt
 
-Tiện ích AiShort (ChatGPT Shortcut) nhúng trực tiếp thư viện prompt vào thanh bên của các trang trò chuyện AI như ChatGPT, Gemini, Claude, Doubao, bạn không cần phải quay lại aishort.top để sao chép và dán nữa. Hỗ trợ Chrome, Edge, Firefox, nhấn `Alt + Shift + S` để kích hoạt nhanh.
+Tiện ích AI Short (ChatGPT Shortcut) đóng gói hơn 5.000 prompt ngay trong tiện ích và mở chúng dưới dạng **thanh bên, cửa sổ bật lên hoặc cửa sổ riêng** bên cạnh ChatGPT, Gemini, Claude, DeepSeek và các cuộc trò chuyện AI khác, bạn không cần phải quay lại aishort.top để sao chép và dán nữa. Hỗ trợ Chrome, Edge, Firefox, nhấn `Alt + Shift + S` để kích hoạt nhanh.
 
 ## Cách cài đặt
 
 ### 1. Cửa hàng ứng dụng (khuyến nghị, cài đặt một chạm)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (Sau khi cài đặt cần thực hiện [thiết lập cấp quyền](./firefox-extension-setting) một lần, nếu không thanh bên sẽ không hiển thị trên ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (từ v4.4.0 giống hệt bản Chrome; xem [khác biệt](./firefox-extension-setting))
 
 ### 2. Cửa hàng không mở được? Gói cài đặt cục bộ
 

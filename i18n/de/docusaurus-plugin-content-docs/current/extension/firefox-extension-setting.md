@@ -1,23 +1,26 @@
 ---
 sidebar_label: Firefox-Erweiterungseinstellungen
-title: Firefox Config - Anheften & Autorisieren
-description: Konfigurieren Sie Firefox richtig. Heften Sie die Erweiterung an und autorisieren Sie die Seitenleiste für ChatGPT.
+title: Firefox Config - Native Seitenleiste & Kürzel
+description: AI Short unter Firefox einrichten. Seit v4.4.0 identisch zur Chrome-Version, mit nativer Seitenleiste ohne Berechtigung pro Website und Alt+Shift+D.
 ---
 
 # Firefox-Erweiterungseinstellungen
 
-Das Berechtigungsmodell von Firefox ist strenger als das von Chrome — nach der Installation der Erweiterung sind zwei zusätzliche Schritte erforderlich, damit die Seitenleiste auf Websites wie ChatGPT und Gemini korrekt angezeigt wird.
+Seit v4.4.0 entspricht die Firefox-Version der Chrome-Version: dieselben drei Anzeigemodi — **Seitenleiste, Popup und eigenes Fenster** — mit der Prompt-Bibliothek direkt in der Erweiterung.
 
-## 1. Erweiterung anheften und Zugriffseinstellungen
+Die Erweiterung fordert nur die Berechtigung `storage` an. Sie liest und verändert die von Ihnen besuchten Seiten nicht, daher ist **keine Freigabe pro Website mehr nötig**.
 
-Wählen Sie zuerst "ChatGPT Shortcut Erweiterung anheften" (Pin to Toolbar) in der Firefox-Symbolleiste. Gehen Sie dann ins Erweiterungscenter, suchen Sie den Eintrag für die ChatGPT Shortcut Erweiterung und wählen Sie "Optionen" (Options). Betreten Sie die Erweiterungs-Einstellungsoberfläche. Die spezifischen Schritte sind unten dargestellt:
+> Ältere Versionen (v4.3 und früher) haben die Seitenleiste per Content Script in die ChatGPT-Seite eingefügt; dafür musste man mit der rechten Maustaste auf das Symbol klicken und „Auf \*\*\* immer erlauben" wählen. Dieser Mechanismus wurde entfernt — nach dem Update entfällt dieser Schritt.
 
-![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## Tastenkürzel
 
-## 2. Erweiterungsausführung autorisieren
+- `Alt + Shift + S`: öffnet die Erweiterung im aktuellen Anzeigemodus
+- `Alt + Shift + D`: blendet die native Firefox-Seitenleiste ein oder aus
 
-Zweitens, um sicherzustellen, dass die Erweiterung auf Websites wie ChatGPT, Gemini normal funktioniert, müssen Sie mit der rechten Maustaste auf das Erweiterungssymbol auf diesen Websites klicken und "Immer auf dieser Website zulassen" (Always allow on \*\*\*) auswählen. Diese Operation gewährt der Erweiterung die Berechtigung, eine Seitenleiste auf der angegebenen Domain hinzuzufügen.
+Anpassen unter `about:addons` → Zahnradsymbol → „Erweiterungs-Tastenkombinationen verwalten".
 
-![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## Einstellungsseite
 
-Nach erfolgreicher Installation können Sie das [Plugin-Nutzungs-Tutorial](./usage) ansehen.
+Heften Sie AI Short an die Firefox-Symbolleiste und öffnen Sie die „Optionen" auf der Erweiterungsseite, um Sprache, Anzeigemodus und Dunkelmodus zu ändern.
+
+Was die einzelnen Optionen bewirken, steht in der [Bedienungsanleitung](./usage).

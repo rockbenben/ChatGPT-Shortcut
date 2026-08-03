@@ -1,20 +1,20 @@
 ---
 sidebar_label: ब्राउज़र एक्सटेंशन इंस्टॉल करें
 title: AI Short एक्सटेंशन | ChatGPT/Gemini/Claude साइडबार · Chrome/Edge/Firefox इंस्टॉल
-description: ChatGPT, Gemini, Claude, Doubao जैसे AI चैट पेजों के साइडबार में सीधे AiShort प्रॉम्प्ट का उपयोग करें, टैब बदलकर कॉपी-पेस्ट करने की ज़रूरत नहीं। Chrome, Edge, Firefox पर एक-क्लिक इंस्टॉल।
+description: ब्राउज़र के साइडबार, पॉपअप या अलग विंडो से AiShort प्रॉम्प्ट का उपयोग करें — ChatGPT, Gemini, Claude के ठीक बगल में। Chrome, Edge, Firefox पर एक-क्लिक इंस्टॉल।
 ---
 
 # ब्राउज़र एक्सटेंशन इंस्टॉल करें
 
-AiShort (ChatGPT Shortcut) एक्सटेंशन प्रॉम्प्ट लाइब्रेरी को सीधे ChatGPT, Gemini, Claude, Doubao जैसे AI चैट पेजों के साइडबार में एम्बेड कर देता है, जिससे आपको प्रॉम्प्ट कॉपी करने के लिए हर बार aishort.top पर वापस जाने की ज़रूरत नहीं पड़ती। यह Chrome, Edge और Firefox का समर्थन करता है, और `Alt + Shift + S` दबाकर तुरंत बुलाया जा सकता है।
+AI Short (ChatGPT Shortcut) एक्सटेंशन 5,000+ प्रॉम्प्ट एक्सटेंशन के भीतर ही बंडल करता है और उन्हें **साइडबार, पॉपअप या अलग विंडो** के रूप में ChatGPT, Gemini, Claude, DeepSeek जैसे AI चैट के बगल में खोलता है, जिससे आपको प्रॉम्प्ट कॉपी करने के लिए हर बार aishort.top पर वापस जाने की ज़रूरत नहीं पड़ती। यह Chrome, Edge और Firefox का समर्थन करता है, और `Alt + Shift + S` दबाकर तुरंत बुलाया जा सकता है।
 
 ## इंस्टॉलेशन के तरीके
 
 ### 1. ऐप स्टोर (अनुशंसित, एक-क्लिक इंस्टॉल)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (इंस्टॉल करने के बाद एक बार [अनुमति सेटिंग](./firefox-extension-setting) करनी होगी, अन्यथा ChatGPT पर साइडबार नहीं दिखेगा)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (v4.4.0 से Chrome संस्करण के समान; अंतर के लिए [Firefox एक्सटेंशन सेटिंग्स](./firefox-extension-setting) देखें)
 
 ### 2. स्टोर नहीं खुल रहा? लोकल इंस्टॉलेशन पैकेज
 

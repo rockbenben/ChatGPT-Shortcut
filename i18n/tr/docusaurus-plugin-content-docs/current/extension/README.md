@@ -1,20 +1,20 @@
 ---
 sidebar_label: Tarayıcı Uzantısını Yükle
 title: AI Short Uzantısı | ChatGPT/Gemini/Claude Kenar Çubuğu · Chrome/Edge/Firefox Kurulumu
-description: AiShort promptlarını ChatGPT, Gemini, Claude, Doubao gibi AI sohbet sayfalarının kenar çubuğundan doğrudan çağırın; sekme değiştirip kopyala-yapıştır yapmanıza gerek kalmaz. Chrome, Edge ve Firefox için tek tıkla kurulum.
+description: AiShort promptlarını tarayıcının kenar çubuğundan, açılır penceresinden veya bağımsız bir pencereden ChatGPT, Gemini ve Claude'un yanında çağırın. Chrome, Edge ve Firefox için tek tıkla kurulum.
 ---
 
 # Tarayıcı Uzantısını Yükle
 
-AiShort (ChatGPT Shortcut) uzantısı, prompt kütüphanesini doğrudan ChatGPT, Gemini, Claude, Doubao gibi AI sohbet sayfalarının kenar çubuğuna yerleştirir; böylece aishort.top adresine geri dönüp kopyala-yapıştır yapmanıza gerek kalmaz. Chrome, Edge ve Firefox'u destekler; `Alt + Shift + S` ile hızlıca çağırabilirsiniz.
+AI Short (ChatGPT Shortcut) uzantısı 5.000'den fazla promptu uzantının içinde paketler ve bunları **kenar çubuğu, açılır pencere veya bağımsız pencere** olarak ChatGPT, Gemini, Claude, DeepSeek gibi AI sohbetlerinin yanında açar; böylece aishort.top adresine geri dönüp kopyala-yapıştır yapmanıza gerek kalmaz. Chrome, Edge ve Firefox'u destekler; `Alt + Shift + S` ile hızlıca çağırabilirsiniz.
 
 ## Kurulum
 
 ### 1. Uygulama Mağazaları (Önerilen, tek tıkla kurulum)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (Kurulumdan sonra bir kez [izin ayarı](./firefox-extension-setting) yapmanız gerekir; aksi takdirde ChatGPT üzerinde kenar çubuğu görüntülenmez)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (v4.4.0'dan itibaren Chrome sürümüyle aynı; [farklar](./firefox-extension-setting) için bakın)
 
 ### 2. Mağaza açılmıyor mu? Yerel kurulum paketi
 

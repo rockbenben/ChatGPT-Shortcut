@@ -1,23 +1,26 @@
 ---
 sidebar_label: Firefox 插件设置
-title: AI Short Firefox 设置 | 固定扩展与授权运行
-description: Firefox 插件设置指南：固定扩展到工具栏，授权在 ChatGPT、Gemini 等网站运行，确保侧边栏正常显示。
+title: AI Short Firefox 设置 | 原生侧边栏与快捷键
+description: Firefox 版 AI Short 设置指南：自 v4.4.0 起与 Chrome 对齐，原生侧边栏免逐站授权，Alt+Shift+D 开关侧边栏。
 ---
 
 # Firefox 插件设置
 
-Firefox 的权限模型比 Chrome 更严格——装完插件后还需要做两步设置，才能在 ChatGPT、Gemini 等网站上正常显示侧边栏。
+Firefox 版自 v4.4.0 起与 Chrome 版对齐：同样是**侧边栏、弹窗、独立窗口**三种显示模式，提示词库随扩展本地打包。
 
-## 1. 固定扩展与访问设置
+扩展只申请 `storage` 权限，不读取也不修改你访问的网页，因此**不需要**再逐个网站授权。
 
-首先，在 Firefox 工具栏上选择「固定 ChatGPT Shortcut 扩展」（Pin to Toolbar）。然后，进入扩展中心，找到 ChatGPT Shortcut 扩展条目，选择「选项」（Options）以进入扩展的设置界面。具体步骤如下图所示：
+> 旧版（v4.3 及以前）靠内容脚本把侧边栏注入 ChatGPT 页面，装完得右键图标选「始终允许在此网站上运行」。新版已移除该机制，升级后可忽略这一步。
 
-![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## 快捷键
 
-## 2. 授权扩展运行
+- `Alt + Shift + S`：按当前显示模式打开扩展
+- `Alt + Shift + D`：开关 Firefox 原生侧边栏
 
-其次，为确保扩展在 ChatGPT、Gemini 等网站上正常运行，你需要在这些网站上右键点击扩展图标，选择「始终允许在此网站上运行」（Always allow on \*\*\*）。此操作将授予扩展在指定域名上添加侧边栏的权限。
+在 `about:addons` → 右上角齿轮 → 「管理扩展快捷键」中可自定义。
 
-![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## 设置界面
 
-安装成功后，可查看[插件使用教程](./usage)。
+在 Firefox 工具栏上把 AI Short 固定出来（Pin to Toolbar），再从扩展中心进入 AI Short 的「选项」（Options），即可切换语言、显示模式与深色模式。
+
+各项设置的含义见[插件使用教程](./usage)。

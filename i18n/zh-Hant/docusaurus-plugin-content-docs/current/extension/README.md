@@ -1,20 +1,20 @@
 ---
 sidebar_label: 安裝瀏覽器插件
 title: AI Short 插件 | ChatGPT/Gemini/Claude 側邊欄 · Chrome/Edge/Firefox 安裝
-description: 在 ChatGPT、Gemini、Claude、豆包等 AI 對話頁的側邊欄直接調用 AiShort 提示詞，不用切換標籤頁複製粘貼。Chrome、Edge、Firefox 一鍵安裝。
+description: 在瀏覽器側邊欄直接調用 AiShort 提示詞，與 ChatGPT、Gemini、Claude 對話頁並排，不用切換標籤頁複製粘貼。Chrome、Edge、Firefox 一鍵安裝。
 ---
 
 # 安裝瀏覽器插件
 
-AiShort（ChatGPT Shortcut）擴展把提示詞庫直接嵌進 ChatGPT、Gemini、Claude、豆包等 AI 對話頁的側邊欄，不用再切回 aishort.top 複製粘貼。支持 Chrome、Edge、Firefox，按 `Alt + Shift + S` 快速喚出。
+AI Short（ChatGPT Shortcut）擴展把 5000+ 提示詞隨擴展本地打包，以**側邊欄、彈窗、獨立視窗**三種形式貼著 ChatGPT、Gemini、Claude、DeepSeek 等對話頁使用，不用再切回 aishort.top 複製粘貼。支持 Chrome、Edge、Firefox，按 `Alt + Shift + S` 快速喚出。
 
 ## 安裝方式
 
 ### 1. 應用商店（推薦，一鍵安裝）
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)（裝完需做一次[授權設置](./firefox-extension-setting)，否則在 ChatGPT 上不顯示側邊欄）
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/)（自 v4.4.0 起與 Chrome 版對齊，差異見 [Firefox 插件設置](./firefox-extension-setting)）
 
 ### 2. 商店打不開？本地安裝包
 

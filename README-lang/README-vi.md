@@ -142,9 +142,9 @@ Hướng dẫn đầy đủ trên [aishort.top](https://www.aishort.top/vi/docs/
 
 Truy cập AiShort prompt mọi lúc với tiện ích mở rộng trình duyệt của chúng tôi. Hỗ trợ Chrome, Edge, và Firefox — mở thanh bên bằng `Alt + Shift + S`.
 
-- **Chrome**: [Cửa hàng Chrome trực tuyến](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Tiện ích bổ trợ Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Tiện ích bổ trợ Firefox](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Cửa hàng Chrome trực tuyến](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Tiện ích bổ trợ Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Tiện ích bổ trợ Firefox](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [Bản phát hành](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Hoặc sử dụng script Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) để gọi thanh bên AiShort trên mọi trang web.

@@ -1,23 +1,26 @@
 ---
 sidebar_label: Firefox 확장 프로그램 설정
-title: Firefox 설정 - 핀 고정 및 권한 허용 가이드
-description: Firefox 설정 방법 해설. 툴바 고정이나 ChatGPT 등에서의 실행 권한을 허용하여 사이드바를 원활하게 이용하세요.
+title: Firefox 설정 - 네이티브 사이드바와 단축키
+description: Firefox용 AI Short 설정 가이드. v4.4.0부터 Chrome 버전과 동일하며, 사이트별 권한 없이 네이티브 사이드바를 Alt+Shift+D로 전환합니다.
 ---
 
 # Firefox 확장 프로그램 설정
 
-Firefox의 권한 모델은 Chrome보다 엄격합니다. 확장 프로그램 설치 후에도 두 단계의 추가 설정을 거쳐야 ChatGPT, Gemini 등의 웹사이트에서 사이드바가 정상적으로 표시됩니다.
+Firefox 버전은 v4.4.0부터 Chrome 버전과 동일합니다. **사이드바, 팝업, 독립 창**의 세 가지 표시 모드를 지원하며, 프롬프트 라이브러리는 확장 프로그램에 함께 포함되어 있습니다.
 
-## 1. 확장 프로그램 고정 및 액세스 설정
+확장 프로그램은 `storage` 권한만 요청하며 방문하는 페이지를 읽거나 수정하지 않습니다. 따라서 **사이트별 권한 허용이 필요 없습니다**.
 
-먼저 Firefox 툴바에서 "ChatGPT Shortcut 확장 프로그램 고정"(Pin to Toolbar)을 선택합니다. 그런 다음 확장 프로그램 센터에 들어가 ChatGPT Shortcut 확장 프로그램 항목을 찾아 "옵션"(Options)을 선택하여 확장 프로그램 설정 인터페이스로 들어갑니다. 구체적인 단계는 아래 그림과 같습니다.
+> 이전 버전(v4.3 이하)은 콘텐츠 스크립트로 ChatGPT 페이지에 사이드바를 삽입했기 때문에 아이콘을 우클릭해 "이 사이트에서 항상 허용"을 선택해야 했습니다. 새 버전에서는 이 방식이 제거되었으므로 업데이트 후에는 이 단계를 건너뛰어도 됩니다.
 
-![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## 단축키
 
-## 2. 확장 프로그램 실행 승인
+- `Alt + Shift + S`: 현재 표시 모드로 확장 프로그램 열기
+- `Alt + Shift + D`: Firefox 네이티브 사이드바 전환
 
-다음으로 ChatGPT, Gemini와 같은 웹사이트에서 확장 프로그램이 정상적으로 실행되도록 하려면 해당 웹사이트에서 확장 프로그램 아이콘을 마우스 오른쪽 버튼으로 클릭하고 "이 웹사이트에서 항상 실행 허용"(Always allow on \*\*\*)을 선택해야 합니다. 이 작업은 확장 프로그램에 지정된 도메인에 사이드바를 추가할 수 있는 권한을 부여합니다.
+`about:addons` → 오른쪽 위 톱니바퀴 → "확장 기능 단축키 관리"에서 변경할 수 있습니다.
 
-![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## 설정 화면
 
-설치 성공 후 [플러그인 사용 튜토리얼](./usage)을 확인할 수 있습니다.
+Firefox 툴바에 AI Short를 고정한 뒤, 확장 프로그램 페이지에서 AI Short의 "옵션"(Options)을 열면 언어, 표시 모드, 다크 모드를 전환할 수 있습니다.
+
+각 설정의 의미는 [사용 가이드](./usage)를 참고하세요.

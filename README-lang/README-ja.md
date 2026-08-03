@@ -143,9 +143,9 @@
 
 いつでも AiShort プロンプトにアクセス。Chrome、Edge、Firefox 対応。`Alt + Shift + S` でサイドバーを表示。
 
-- **Chrome**: [Chrome ウェブストア](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox アドオン](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox アドオン](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey スクリプトを使えば、任意のサイトで AiShort サイドバーを呼び出すこともできます。

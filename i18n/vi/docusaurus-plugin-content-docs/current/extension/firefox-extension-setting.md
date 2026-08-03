@@ -1,23 +1,26 @@
 ---
 sidebar_label: Cài đặt Tiện ích Firefox
-title: Thiết lập Tiện ích Firefox - Hướng dẫn Ghim & Quyền
-description: Hướng dẫn thiết lập tiện ích Firefox - Ghim tiện ích vào thanh công cụ, cấp quyền chạy trên các trang web như ChatGPT, Gemini, đảm bảo thanh bên hiển thị đúng.
+title: Thiết lập Tiện ích Firefox - Thanh bên gốc & Phím tắt
+description: Hướng dẫn thiết lập AI Short trên Firefox - từ v4.4.0 giống hệt bản Chrome, thanh bên gốc không cần cấp quyền theo trang, Alt+Shift+D để bật tắt.
 ---
 
 # Cài đặt Tiện ích Firefox
 
-Mô hình quyền của Firefox nghiêm ngặt hơn Chrome — sau khi cài tiện ích còn cần làm thêm hai bước thiết lập nữa để thanh bên hiển thị đúng trên các trang như ChatGPT, Gemini.
+Từ v4.4.0, bản Firefox giống hệt bản Chrome: cùng ba chế độ hiển thị — **thanh bên, cửa sổ bật lên và cửa sổ riêng** — với thư viện prompt được đóng gói ngay trong tiện ích.
 
-## 1. Ghim Tiện ích và Truy cập Cài đặt
+Tiện ích chỉ yêu cầu quyền `storage`; nó không đọc cũng không sửa các trang bạn truy cập, nên **không cần cấp quyền cho từng trang nữa**.
 
-Đầu tiên, chọn "Ghim Tiện ích ChatGPT Shortcut" (Ghim vào Thanh công cụ) trên thanh công cụ Firefox. Sau đó, vào Trung tâm Tiện ích, tìm mục tiện ích ChatGPT Shortcut và chọn "Tùy chọn". Vào giao diện cài đặt của tiện ích. Các bước cụ thể được hiển thị bên dưới:
+> Các bản cũ (v4.3 trở về trước) chèn thanh bên vào trang ChatGPT bằng content script, nên bạn phải nhấp chuột phải vào biểu tượng và chọn "Always allow on \*\*\*". Cơ chế này đã bị loại bỏ — sau khi cập nhật, hãy bỏ qua bước này.
 
-![Cài đặt Firefox](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## Phím tắt
 
-## 2. Cấp quyền Tiện ích Chạy
+- `Alt + Shift + S`: mở tiện ích theo chế độ hiển thị hiện tại
+- `Alt + Shift + D`: bật/tắt thanh bên gốc của Firefox
 
-Thứ hai, để đảm bảo tiện ích chạy bình thường trên các trang web như ChatGPT, Gemini, bạn cần nhấp chuột phải vào biểu tượng tiện ích trên các trang web này và chọn "Luôn cho phép trên \*\*\*". Thao tác này cấp quyền cho tiện ích thêm thanh bên trên miền được chỉ định.
+Tùy chỉnh trong `about:addons` → biểu tượng bánh răng → "Manage Extension Shortcuts".
 
-![Quyền Tiện ích Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## Trang cài đặt
 
-Sau khi cài đặt thành công, kiểm tra [Hướng dẫn Sử dụng Plugin](./usage).
+Ghim AI Short lên thanh công cụ Firefox, rồi mở "Options" từ trang tiện ích để đổi ngôn ngữ, chế độ hiển thị và chế độ tối.
+
+Ý nghĩa từng tùy chọn xem trong [hướng dẫn sử dụng](./usage).

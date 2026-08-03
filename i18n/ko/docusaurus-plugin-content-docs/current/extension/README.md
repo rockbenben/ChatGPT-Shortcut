@@ -1,20 +1,20 @@
 ---
 sidebar_label: 브라우저 확장 프로그램 설치
 title: AI Short 확장 프로그램 | ChatGPT/Gemini/Claude 사이드바 · Chrome/Edge/Firefox 설치
-description: ChatGPT, Gemini, Claude, Doubao 등 AI 대화 페이지의 사이드바에서 AiShort 프롬프트를 바로 불러오세요. 탭을 전환해 복사·붙여넣기할 필요가 없습니다. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
+description: 브라우저 사이드바·팝업·독립 창에서 AiShort 프롬프트를 바로 불러와 ChatGPT, Gemini, Claude 대화 페이지 옆에 나란히 쓰세요. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
 ---
 
 # 브라우저 확장 프로그램 설치
 
-AiShort(ChatGPT Shortcut) 확장 프로그램은 프롬프트 라이브러리를 ChatGPT, Gemini, Claude, Doubao 등 AI 대화 페이지의 사이드바에 직접 내장하여, aishort.top으로 돌아가 복사하여 붙여넣을 필요가 없습니다. Chrome, Edge, Firefox를 지원하며, `Alt + Shift + S`로 빠르게 호출할 수 있습니다.
+AI Short(ChatGPT Shortcut) 확장 프로그램은 5,000개 이상의 프롬프트를 확장 프로그램에 함께 담아 **사이드바, 팝업, 독립 창** 세 가지 형태로 ChatGPT, Gemini, Claude, DeepSeek 등 AI 대화 페이지 옆에 띄웁니다. aishort.top으로 돌아가 복사하여 붙여넣을 필요가 없습니다. Chrome, Edge, Firefox를 지원하며, `Alt + Shift + S`로 빠르게 호출할 수 있습니다.
 
 ## 설치 방법
 
 ### 1. 앱 스토어 (권장, 원클릭 설치)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (설치 후 한 번 [권한 설정](./firefox-extension-setting)이 필요합니다. 그렇지 않으면 ChatGPT에서 사이드바가 표시되지 않습니다)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (v4.4.0부터 Chrome 버전과 동일합니다. 차이점은 [Firefox 확장 프로그램 설정](./firefox-extension-setting) 참고)
 
 ### 2. 스토어 접속이 안 되시나요? 로컬 설치 패키지
 

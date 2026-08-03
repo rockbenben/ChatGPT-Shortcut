@@ -6,7 +6,7 @@ description: 掌握 AI Short 瀏覽器擴展！啓用側邊欄、Alt+Shift+S 快
 
 # 如何使用瀏覽器擴展？
 
-ChatGPT Shortcut 支持 18 種主流語言，擴展語言將根據你的瀏覽器環境自動設置。你也可以在設置頁面手動更改語言。
+AI Short 支持 18 種主流語言，擴展語言將根據你的瀏覽器環境自動設置。你也可以在設置頁面手動更改語言。
 
 ![](/img/docs/zh/extension-settings.png)
 
@@ -30,4 +30,6 @@ ChatGPT Shortcut 支持 18 種主流語言，擴展語言將根據你的瀏覽�
 
 ## 熱鍵激活
 
-使用 `Alt+Shift+S` 快捷鍵可以直接激活擴展。
+使用 `Alt+Shift+S` 快捷鍵可以直接激活擴展（macOS 為 `Control+Shift+S`）；Firefox 另有 `Alt+Shift+D` 用於開關原生側邊欄。
+
+快捷鍵可在 `chrome://extensions/shortcuts`（Firefox 為 `about:addons` → 齒輪 → 管理擴展快捷鍵）中自定義。
