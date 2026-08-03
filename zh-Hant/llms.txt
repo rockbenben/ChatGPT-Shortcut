@@ -10,8 +10,8 @@
 - [AI Short 離線部署 | 企業內網無需外部服務器](https://www.aishort.top/zh-Hant/docs/deploy/offline): AI Short 離線版專爲無法訪問外網的企業和團隊設計。無需後端服務器，無需註冊賬戶，數據存儲在瀏覽器本地，開箱即用。
 - [AI Short 標準部署 | 本地建置、Vercel、Cloudflare、Docker](https://www.aishort.top/zh-Hant/docs/deploy/standard): AI Short 標準部署教程，復用官方共享後端，支持本地建置、Vercel 一鍵部署、Cloudflare Pages 與 Docker，開箱即用。
 - [AI Short 同步更新 | Fork 自動跟隨上游](https://www.aishort.top/zh-Hant/docs/deploy/sync-updates): 讓你的 AI Short fork 自動跟隨上游更新——解決 Vercel 部署不提示更新的問題，開啟 GitHub Actions 自動同步。
-- [AI Short 插件 | ChatGPT/Gemini/Claude 側邊欄 · Chrome/Edge/Firefox 安裝](https://www.aishort.top/zh-Hant/docs/extension): 在 ChatGPT、Gemini、Claude、豆包等 AI 對話頁的側邊欄直接調用 AiShort 提示詞，不用切換標籤頁複製粘貼。Chrome、Edge、Firefox 一鍵安裝。
-- [AI Short Firefox 設置 | 固定擴展與授權運行](https://www.aishort.top/zh-Hant/docs/extension/firefox-extension-setting): Firefox 插件設置指南：固定擴展到工具欄，授權在 ChatGPT、Gemini 等網站運行，確保側邊欄正常顯示。
+- [AI Short 插件 | ChatGPT/Gemini/Claude 側邊欄 · Chrome/Edge/Firefox 安裝](https://www.aishort.top/zh-Hant/docs/extension): 在瀏覽器側邊欄直接調用 AiShort 提示詞，與 ChatGPT、Gemini、Claude 對話頁並排，不用切換標籤頁複製粘貼。Chrome、Edge、Firefox 一鍵安裝。
+- [AI Short Firefox 設置 | 原生側邊欄與快捷鍵](https://www.aishort.top/zh-Hant/docs/extension/firefox-extension-setting): Firefox 版 AI Short 設置指南：自 v4.4.0 起與 Chrome 對齊，原生側邊欄免逐站授權，Alt+Shift+D 開關側邊欄。
 - [AI Short Chrome CRX 安裝 | 開發者模式手動安裝](https://www.aishort.top/zh-Hant/docs/extension/manual-chrome-extension): 通過 CRX 文件手動安裝 AI Short 插件，開啓開發者模式後拖拽安裝。含常見問題解決方案。
 - [AI Short Chrome ZIP 安裝 | 解壓文件夾加載擴展](https://www.aishort.top/zh-Hant/docs/extension/manual-chrome-extension-zip): 通過 ZIP 文件在 Chrome 中安裝 AI Short 插件，解壓後拖入擴展頁面即可。適用於無法安裝 CRX 的情況。
 - [AI Short 擴展使用 | 側邊欄與快捷鍵 Alt+Shift+S](https://www.aishort.top/zh-Hant/docs/extension/usage): 掌握 AI Short 瀏覽器擴展！啓用側邊欄、Alt+Shift+S 快捷鍵一鍵喚出提示詞庫。

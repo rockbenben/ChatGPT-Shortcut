@@ -10,8 +10,8 @@
 - [AI Short 离线部署 | 企业内网无需外部服务器](https://www.aishort.top/docs/deploy/offline): AI Short 离线版专为无法访问外网的企业和团队设计。无需后端服务器，无需注册账户，数据存储在浏览器本地，开箱即用。
 - [AI Short 标准部署 | 本地构建、Vercel、Cloudflare、Docker](https://www.aishort.top/docs/deploy/standard): AI Short 标准部署教程，复用官方共享后端，支持本地构建、Vercel 一键部署、Cloudflare Pages 与 Docker，开箱即用。
 - [AI Short 同步更新 | Fork 自动跟随上游](https://www.aishort.top/docs/deploy/sync-updates): 让你的 AI Short fork 自动跟随上游更新——解决 Vercel 部署不提示更新的问题，开启 GitHub Actions 自动同步。
-- [AI Short 插件 | ChatGPT/Gemini/Claude 侧边栏 · Chrome/Edge/Firefox 安装](https://www.aishort.top/docs/extension): 在 ChatGPT、Gemini、Claude、豆包等 AI 对话页的侧边栏直接调用 AiShort 提示词，不用切换标签页复制粘贴。Chrome、Edge、Firefox 一键安装。
-- [AI Short Firefox 设置 | 固定扩展与授权运行](https://www.aishort.top/docs/extension/firefox-extension-setting): Firefox 插件设置指南：固定扩展到工具栏，授权在 ChatGPT、Gemini 等网站运行，确保侧边栏正常显示。
+- [AI Short 插件 | ChatGPT/Gemini/Claude 侧边栏 · Chrome/Edge/Firefox 安装](https://www.aishort.top/docs/extension): 在浏览器侧边栏直接调用 AiShort 提示词，与 ChatGPT、Gemini、Claude 对话页并排，不用切换标签页复制粘贴。Chrome、Edge、Firefox 一键安装。
+- [AI Short Firefox 设置 | 原生侧边栏与快捷键](https://www.aishort.top/docs/extension/firefox-extension-setting): Firefox 版 AI Short 设置指南：自 v4.4.0 起与 Chrome 对齐，原生侧边栏免逐站授权，Alt+Shift+D 开关侧边栏。
 - [AI Short Chrome CRX 安装 | 开发者模式手动安装](https://www.aishort.top/docs/extension/manual-chrome-extension): 通过 CRX 文件手动安装 AI Short 插件，开启开发者模式后拖拽安装。含常见问题解决方案。
 - [AI Short Chrome ZIP 安装 | 解压文件夹加载扩展](https://www.aishort.top/docs/extension/manual-chrome-extension-zip): 通过 ZIP 文件在 Chrome 中安装 AI Short 插件，解压后拖入扩展页面即可。适用于无法安装 CRX 的情况。
 - [AI Short 扩展使用 | 侧边栏与快捷键 Alt+Shift+S](https://www.aishort.top/docs/extension/usage): 掌握 AI Short 浏览器扩展！启用侧边栏、Alt+Shift+S 快捷键一键唤出提示词库。

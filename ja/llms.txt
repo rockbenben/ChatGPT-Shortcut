@@ -10,8 +10,8 @@
 - [AI Short オフラインデプロイ｜社内イントラネット向け、外部サーバー不要](https://www.aishort.top/ja/docs/deploy/offline): AI Short オフライン版は、外部ネットワークにアクセスできない企業やチーム向けに設計されています。バックエンドサーバー不要、アカウント登録不要、データはブラウザのローカルに保存され、すぐに利用を開始できます。
 - [AI Short スタンダードデプロイ｜ローカルビルド、Vercel、Cloudflare、Docker](https://www.aishort.top/ja/docs/deploy/standard): AI Short のスタンダードデプロイガイド。公式共有バックエンドを再利用し、ローカルビルド、Vercel ワンクリックデプロイ、Cloudflare Pages、Docker に対応。そのまますぐに利用できます。
 - [AI Short 同期更新｜フォークをアップストリームに自動追従](https://www.aishort.top/ja/docs/deploy/sync-updates): AI Short のフォークをアップストリームの更新に自動追従させます。Vercel デプロイで更新が通知されない問題を解決し、GitHub Actions の自動同期をオンにします。
-- [AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール](https://www.aishort.top/ja/docs/extension): ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーから直接 AiShort プロンプトを呼び出せます。タブを切り替えてコピー＆ペーストする必要はありません。Chrome、Edge、Firefox にワンクリックでインストール。
-- [AI Short Firefox 設定｜拡張機能のピン留めと実行許可](https://www.aishort.top/ja/docs/extension/firefox-extension-setting): Firefox 拡張機能の設定ガイド：ツールバーへの拡張機能のピン留め、ChatGPT、Gemini などのサイトでの実行許可で、サイドバーを正常に表示。
+- [AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール](https://www.aishort.top/ja/docs/extension): ブラウザのサイドバー・ポップアップ・独立ウィンドウから AiShort プロンプトを直接呼び出し、ChatGPT や Gemini、Claude の横に並べて使えます。Chrome、Edge、Firefox にワンクリックでインストール。
+- [AI Short Firefox 設定｜ネイティブサイドバーとショートカット](https://www.aishort.top/ja/docs/extension/firefox-extension-setting): Firefox 版 AI Short の設定ガイド：v4.4.0 以降は Chrome 版と同等、ネイティブサイドバーはサイトごとの許可が不要、Alt+Shift+D で開閉。
 - [AI Short Chrome CRX インストール｜デベロッパーモードで手動インストール](https://www.aishort.top/ja/docs/extension/manual-chrome-extension): CRX ファイルを使って AI Short 拡張機能を手動インストール。デベロッパーモードを有効にしてドラッグでインストール。よくある問題の解決策も解説。
 - [AI Short Chrome ZIP インストール｜解凍フォルダで拡張機能を読み込み](https://www.aishort.top/ja/docs/extension/manual-chrome-extension-zip): ZIP ファイルから Chrome に AI Short 拡張機能をインストール。解凍後、拡張機能ページにドラッグするだけ。CRX がインストールできない場合に最適。
 - [AI Short 拡張機能の使い方｜サイドバーとショートカット Alt+Shift+S](https://www.aishort.top/ja/docs/extension/usage): AI Short ブラウザ拡張機能をマスター！サイドバーを有効化、Alt+Shift+S ショートカットでプロンプトライブラリをワンキー呼び出し。

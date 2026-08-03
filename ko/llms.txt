@@ -10,8 +10,8 @@
 - [AI Short 오프라인 배포 | 사내 인트라넷용 외부 서버 불필요](https://www.aishort.top/ko/docs/deploy/offline): AI Short 오프라인 버전은 외부망에 접속할 수 없는 기업과 팀을 위해 설계되었습니다. 백엔드 서버나 계정 등록이 필요 없으며, 데이터는 브라우저 로컬에 저장되어 즉시 사용할 수 있습니다.
 - [AI Short Standard 배포 | 로컬 빌드, Vercel, Cloudflare, Docker](https://www.aishort.top/ko/docs/deploy/standard): AI Short Standard 배포 가이드. 공식 공유 백엔드를 재사용하며 로컬 빌드, Vercel 원클릭 배포, Cloudflare Pages, Docker를 지원해 바로 사용할 수 있습니다.
 - [AI Short 동기화 업데이트 | 포크가 업스트림을 자동으로 따라가기](https://www.aishort.top/ko/docs/deploy/sync-updates): AI Short 포크가 업스트림 업데이트를 자동으로 따라가도록 설정 — Vercel 배포가 업데이트를 표시하지 않는 문제를 해결하고 GitHub Actions 자동 동기화를 활성화합니다.
-- [AI Short 확장 프로그램 | ChatGPT/Gemini/Claude 사이드바 · Chrome/Edge/Firefox 설치](https://www.aishort.top/ko/docs/extension): ChatGPT, Gemini, Claude, Doubao 등 AI 대화 페이지의 사이드바에서 AiShort 프롬프트를 바로 불러오세요. 탭을 전환해 복사·붙여넣기할 필요가 없습니다. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
-- [Firefox 설정 - 핀 고정 및 권한 허용 가이드](https://www.aishort.top/ko/docs/extension/firefox-extension-setting): Firefox 설정 방법 해설. 툴바 고정이나 ChatGPT 등에서의 실행 권한을 허용하여 사이드바를 원활하게 이용하세요.
+- [AI Short 확장 프로그램 | ChatGPT/Gemini/Claude 사이드바 · Chrome/Edge/Firefox 설치](https://www.aishort.top/ko/docs/extension): 브라우저 사이드바·팝업·독립 창에서 AiShort 프롬프트를 바로 불러와 ChatGPT, Gemini, Claude 대화 페이지 옆에 나란히 쓰세요. Chrome, Edge, Firefox에서 원클릭으로 설치할 수 있습니다.
+- [Firefox 설정 - 네이티브 사이드바와 단축키](https://www.aishort.top/ko/docs/extension/firefox-extension-setting): Firefox용 AI Short 설정 가이드. v4.4.0부터 Chrome 버전과 동일하며, 사이트별 권한 없이 네이티브 사이드바를 Alt+Shift+D로 전환합니다.
 - [Chrome 수동 설치 - CRX 파일 버전 도입 가이드](https://www.aishort.top/ko/docs/extension/manual-chrome-extension): 개발자 모드로 CRX 파일 간편 설치. 드래그 앤 드롭 설치 절차와 자주 발생하는 문제의 해결책을 소개합니다.
 - [Chrome 수동 설치 - ZIP 파일 버전 도입 가이드](https://www.aishort.top/ko/docs/extension/manual-chrome-extension-zip): CRX 사용 불가 시 해결책. ZIP 파일 압축 해제 후 Chrome 확장 프로그램 페이지에 드래그하는 수동 설치 절차 안내.
 - [AI Short 확장 프로그램 가이드 - 사이드바 및 단축키](https://www.aishort.top/ko/docs/extension/usage): AI Short 브라우저 확장 프로그램 마스터! Alt+Shift+S로 프롬프트 라이브러리 호출.
