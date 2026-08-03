@@ -1,20 +1,20 @@
 ---
 sidebar_label: Instal Ekstensi Browser
 title: Ekstensi AI Short | Sidebar ChatGPT/Gemini/Claude · Instal di Chrome/Edge/Firefox
-description: Panggil prompt AiShort langsung dari sidebar halaman obrolan AI seperti ChatGPT, Gemini, Claude, dan Doubao, tanpa berpindah tab untuk menyalin dan menempel. Instal sekali klik di Chrome, Edge, dan Firefox.
+description: Panggil prompt AiShort dari sidebar, popup, atau jendela terpisah di browser, tepat di samping ChatGPT, Gemini, dan Claude. Instal sekali klik di Chrome, Edge, dan Firefox.
 ---
 
 # Instal Ekstensi Browser
 
-Ekstensi AiShort (ChatGPT Shortcut) menyematkan perpustakaan prompt langsung ke sidebar halaman obrolan AI seperti ChatGPT, Gemini, Claude, Doubao, dll., sehingga Anda tidak perlu kembali ke aishort.top untuk menyalin dan menempel. Mendukung Chrome, Edge, Firefox, dan dapat dipanggil cepat dengan `Alt + Shift + S`.
+Ekstensi AI Short (ChatGPT Shortcut) membundel 5.000+ prompt di dalam ekstensi dan membukanya sebagai **sidebar, popup, atau jendela terpisah** di samping ChatGPT, Gemini, Claude, DeepSeek, dan obrolan AI lainnya, sehingga Anda tidak perlu kembali ke aishort.top untuk menyalin dan menempel. Mendukung Chrome, Edge, Firefox, dan dapat dipanggil cepat dengan `Alt + Shift + S`.
 
 ## Cara Instalasi
 
 ### 1. Toko Aplikasi (Direkomendasikan, instal sekali klik)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (setelah dipasang perlu melakukan [pengaturan izin](./firefox-extension-setting) satu kali, jika tidak sidebar tidak akan muncul di ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (sejak v4.4.0 sama dengan versi Chrome; lihat [perbedaannya](./firefox-extension-setting))
 
 ### 2. Toko Tidak Bisa Dibuka? Paket Instalasi Lokal
 

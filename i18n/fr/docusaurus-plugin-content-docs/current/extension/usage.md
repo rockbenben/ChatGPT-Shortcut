@@ -6,7 +6,7 @@ description: Maîtrisez l'extension navigateur AI Short ! Activez la barre laté
 
 # Comment utiliser l'extension ?
 
-ChatGPT Shortcut prend en charge 18 langues principales. La langue de l'extension est définie automatiquement selon l'environnement de votre navigateur. Vous pouvez aussi la changer manuellement dans les paramètres.
+AI Short prend en charge 18 langues principales. La langue de l'extension est définie automatiquement selon l'environnement de votre navigateur. Vous pouvez aussi la changer manuellement dans les paramètres.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ L'extension prend en charge le mode sombre : activez l'option "Mode sombre" dans
 
 ## Raccourci clavier
 
-Utilisez le raccourci `Alt+Shift+S` pour activer directement l'extension.
+Utilisez le raccourci `Alt+Shift+S` pour activer directement l'extension (`Control+Shift+S` sur macOS) ; sur Firefox, `Alt+Shift+D` affiche ou masque la barre latérale native.
+
+Les raccourcis se personnalisent dans `chrome://extensions/shortcuts` (sur Firefox : `about:addons` → engrenage → Gérer les raccourcis des extensions).

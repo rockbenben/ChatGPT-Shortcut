@@ -6,7 +6,7 @@ description: Kuasai ekstensi browser AI Short! Aktifkan sidebar, panggil perpust
 
 # Cara Menggunakan Ekstensi Browser?
 
-ChatGPT Shortcut mendukung 18 bahasa utama, bahasa ekstensi akan otomatis diatur sesuai dengan lingkungan browser Anda. Anda juga dapat mengubah bahasa secara manual di halaman pengaturan.
+AI Short mendukung 18 bahasa utama, bahasa ekstensi akan otomatis diatur sesuai dengan lingkungan browser Anda. Anda juga dapat mengubah bahasa secara manual di halaman pengaturan.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ Ekstensi mendukung mode gelap, aktifkan opsi "Mode Gelap" di halaman pengaturan,
 
 ## Aktivasi Pintasan
 
-Gunakan pintasan `Alt+Shift+S` untuk langsung mengaktifkan ekstensi.
+Gunakan pintasan `Alt+Shift+S` untuk langsung mengaktifkan ekstensi (`Control+Shift+S` di macOS); di Firefox, `Alt+Shift+D` membuka/menutup sidebar bawaan.
+
+Pintasan dapat diubah di `chrome://extensions/shortcuts` (di Firefox: `about:addons` → roda gigi → Manage Extension Shortcuts).

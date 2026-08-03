@@ -143,9 +143,9 @@ Panduan lengkap tersedia di [aishort.top](https://www.aishort.top/ind/docs/):
 
 Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, Edge, dan Firefox — buka sidebar dengan `Alt + Shift + S`.
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [Rilis](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Atau gunakan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) untuk menghadirkan sidebar AiShort di situs web mana pun.

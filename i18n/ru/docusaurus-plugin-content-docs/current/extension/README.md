@@ -1,20 +1,20 @@
 ---
 sidebar_label: Установить Расширение Браузера
 title: Расширение AI Short | Боковая панель ChatGPT/Gemini/Claude · Установка для Chrome/Edge/Firefox
-description: Вызывайте промпты AiShort прямо в боковой панели ChatGPT, Gemini, Claude, Doubao и других AI-чатов — без переключения вкладок и копирования. Установка в один клик для Chrome, Edge и Firefox.
+description: Вызывайте промпты AiShort в боковой панели, всплывающем или отдельном окне браузера — рядом с ChatGPT, Gemini и Claude. Установка в один клик для Chrome, Edge и Firefox.
 ---
 
 # Установить Расширение Браузера
 
-Расширение AiShort (ChatGPT Shortcut) встраивает библиотеку промптов прямо в боковую панель страниц ChatGPT, Gemini, Claude, Doubao и других AI-чатов — больше не нужно возвращаться на aishort.top и копировать вручную. Поддерживает Chrome, Edge и Firefox; для быстрого вызова нажмите `Alt + Shift + S`.
+Расширение AI Short (ChatGPT Shortcut) хранит более 5000 промптов внутри себя и открывает их в виде **боковой панели, всплывающего или отдельного окна** рядом со страницами ChatGPT, Gemini, Claude, DeepSeek и других AI-чатов — больше не нужно возвращаться на aishort.top и копировать вручную. Поддерживает Chrome, Edge и Firefox; для быстрого вызова нажмите `Alt + Shift + S`.
 
 ## Способы Установки
 
 ### 1. Магазины расширений (рекомендуется, установка в один клик)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (после установки потребуется однократная [настройка разрешений](./firefox-extension-setting), иначе боковая панель не появится на ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (с версии v4.4.0 совпадает со сборкой для Chrome; см. [отличия](./firefox-extension-setting))
 
 ### 2. Магазин недоступен? Локальный установочный пакет
 

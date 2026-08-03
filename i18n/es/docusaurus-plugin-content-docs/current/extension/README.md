@@ -1,20 +1,20 @@
 ---
 sidebar_label: Instalar Extensión del Navegador
 title: Extensión AI Short | Barra lateral de ChatGPT/Gemini/Claude · Instalación en Chrome/Edge/Firefox
-description: Usa los prompts de AiShort directamente desde la barra lateral en páginas de chat de IA como ChatGPT, Gemini, Claude y Doubao, sin cambiar de pestaña para copiar y pegar. Instalación con un clic en Chrome, Edge y Firefox.
+description: Usa los prompts de AiShort desde la barra lateral, la ventana emergente o una ventana independiente del navegador, junto a ChatGPT, Gemini y Claude. Instalación con un clic en Chrome, Edge y Firefox.
 ---
 
 # Instalar Extensión del Navegador
 
-La extensión AiShort (ChatGPT Shortcut) incrusta la biblioteca de prompts directamente en la barra lateral de páginas de chat de IA como ChatGPT, Gemini, Claude y Doubao, para que no tengas que volver a aishort.top a copiar y pegar. Compatible con Chrome, Edge y Firefox, e invocable rápidamente con `Alt + Shift + S`.
+La extensión AI Short (ChatGPT Shortcut) empaqueta más de 5.000 prompts dentro de la propia extensión y los abre como **barra lateral, ventana emergente o ventana independiente** junto a ChatGPT, Gemini, Claude, DeepSeek y otros chats de IA, para que no tengas que volver a aishort.top a copiar y pegar. Compatible con Chrome, Edge y Firefox, e invocable rápidamente con `Alt + Shift + S`.
 
 ## Instalación
 
 ### 1. Tienda de aplicaciones (recomendado, instalación con un clic)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (después de instalar necesitas hacer una [configuración de permisos](./firefox-extension-setting), o la barra lateral no aparecerá en ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (alineada con la versión de Chrome desde la v4.4.0; consulta las [diferencias](./firefox-extension-setting))
 
 ### 2. ¿No puedes abrir la tienda? Paquete de instalación local
 

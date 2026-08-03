@@ -6,7 +6,7 @@ description: Meistern Sie die AI Short Erweiterung! Seitenleiste mit Alt+Shift+S
 
 # Wie verwende ich die Browser-Erweiterung?
 
-ChatGPT Shortcut unterstützt 18 Hauptsprachen. Die Sprache der Erweiterung wird automatisch nach Ihrer Browser-Umgebung eingestellt. Sie können sie auch manuell in den Einstellungen ändern.
+AI Short unterstützt 18 Hauptsprachen. Die Sprache der Erweiterung wird automatisch nach Ihrer Browser-Umgebung eingestellt. Sie können sie auch manuell in den Einstellungen ändern.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ Die Erweiterung unterstützt den dunklen Modus. Aktivieren Sie "Dunkler Modus" i
 
 ## Tastenkürzel
 
-Verwenden Sie das Tastenkürzel `Alt+Shift+S`, um die Erweiterung direkt zu aktivieren.
+Verwenden Sie das Tastenkürzel `Alt+Shift+S`, um die Erweiterung direkt zu aktivieren (unter macOS `Control+Shift+S`); in Firefox blendet `Alt+Shift+D` die native Seitenleiste ein und aus.
+
+Anpassen lassen sich die Kürzel unter `chrome://extensions/shortcuts` (in Firefox: `about:addons` → Zahnrad → Erweiterungs-Tastenkombinationen verwalten).

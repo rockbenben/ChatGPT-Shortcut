@@ -6,7 +6,7 @@ description: Master the AI Short browser extension! Enable the sidebar and invok
 
 # How to Use the Browser Extension?
 
-ChatGPT Shortcut supports 18 mainstream languages, and the extension language is set automatically based on your browser environment. You can also change it manually on the settings page.
+AI Short supports 18 mainstream languages, and the extension language is set automatically based on your browser environment. You can also change it manually on the settings page.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ The extension supports dark mode. Enable "Dark Mode" on the settings page to swi
 
 ## Hotkey Activation
 
-Use the `Alt+Shift+S` shortcut to activate the extension directly.
+Use the `Alt+Shift+S` shortcut to activate the extension directly (`Control+Shift+S` on macOS); on Firefox, `Alt+Shift+D` toggles the native sidebar.
+
+Shortcuts can be customised at `chrome://extensions/shortcuts` (on Firefox: `about:addons` → gear icon → Manage Extension Shortcuts).

@@ -143,9 +143,9 @@
 
 어디서든 AiShort 프롬프트에 접근. Chrome, Edge, Firefox 지원 — `Alt + Shift + S`로 사이드바 열기.
 
-- **Chrome**: [Chrome 웹 스토어](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge 추가 기능](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox 부가 기능](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Chrome 웹 스토어](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge 추가 기능](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox 부가 기능](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [릴리스](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 또는 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey 스크립트로 어떤 웹사이트에서든 AiShort 사이드바를 호출할 수 있습니다.

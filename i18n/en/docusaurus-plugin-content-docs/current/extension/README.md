@@ -1,20 +1,20 @@
 ---
 sidebar_label: Install Browser Extension
 title: AI Short Extension | ChatGPT/Gemini/Claude Sidebar · Chrome/Edge/Firefox
-description: AiShort prompts inside the sidebar of ChatGPT, Gemini, Claude, Doubao — no tab-switching or copy-pasting. One-click install for Chrome, Edge, Firefox.
+description: AiShort prompts in a browser side panel, popup or standalone window, right beside ChatGPT, Gemini and Claude. One-click install for Chrome, Edge, Firefox.
 ---
 
 # Install Browser Extension
 
-The AiShort (ChatGPT Shortcut) extension embeds the prompt library directly into the sidebar of AI chat pages like ChatGPT, Gemini, Claude, and Doubao, so you no longer have to switch back to aishort.top to copy and paste. It supports Chrome, Edge, and Firefox, and can be summoned instantly with `Alt + Shift + S`.
+The AI Short (ChatGPT Shortcut) extension bundles 5,000+ prompts inside the extension itself and opens them as a **side panel, popup or standalone window** right beside ChatGPT, Gemini, Claude, DeepSeek and other AI chats, so you no longer have to switch back to aishort.top to copy and paste. It supports Chrome, Edge, and Firefox, and can be summoned instantly with `Alt + Shift + S`.
 
 ## Installation
 
 ### 1. App Stores (Recommended, One-Click Install)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (after install, you'll need a one-time [permission setup](./firefox-extension-setting), otherwise the sidebar won't appear on ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (aligned with the Chrome build since v4.4.0 — see [Firefox extension settings](./firefox-extension-setting) for the differences)
 
 ### 2. Store Blocked? Manual Install Package
 

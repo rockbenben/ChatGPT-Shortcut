@@ -1,23 +1,26 @@
 ---
 sidebar_label: Firefox Extension Settings
-title: Firefox Extension Setup - Pinning & Permissions Guide
-description: Firefox extension setup guide - Pin the extension to the toolbar and authorize it to run on websites like ChatGPT and Gemini so the sidebar displays correctly.
+title: AI Short on Firefox - Native Sidebar & Shortcuts
+description: Firefox setup guide for AI Short - aligned with the Chrome build since v4.4.0, a native sidebar that needs no per-site permission, Alt+Shift+D to toggle.
 ---
 
 # Firefox Extension Settings
 
-Firefox uses a stricter permission model than Chrome — after installing the extension, you need to complete two more setup steps before the sidebar will show up on sites like ChatGPT and Gemini.
+Since v4.4.0 the Firefox build matches the Chrome one: the same **side panel, popup and standalone window** display modes, with the prompt library bundled inside the extension.
 
-## 1. Pin Extension and Access Settings
+The extension only requests the `storage` permission — it neither reads nor modifies the pages you visit, so **no per-site authorization is needed**.
 
-First, choose "Pin ChatGPT Shortcut Extension" (Pin to Toolbar) on the Firefox toolbar. Then open the Extensions page, find the ChatGPT Shortcut entry, and select "Options" to enter the extension's settings interface. The specific steps are shown below:
+> Older builds (v4.3 and earlier) injected the sidebar into the ChatGPT page with a content script, so you had to right-click the icon and choose "Always allow on \*\*\*". That mechanism is gone; after upgrading you can skip this step.
 
-![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## Shortcuts
 
-## 2. Authorize the Extension to Run
+- `Alt + Shift + S` — open the extension in the current display mode
+- `Alt + Shift + D` — toggle the native Firefox sidebar
 
-Next, to ensure the extension runs correctly on sites like ChatGPT and Gemini, right-click the extension icon while on those sites and select "Always allow on \*\*\*". This grants the extension permission to add a sidebar on the specified domain.
+Customize them under `about:addons` → gear icon → "Manage Extension Shortcuts".
 
-![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## Settings Page
 
-After successful installation, check the [Plugin Usage Tutorial](./usage).
+Pin AI Short to the Firefox toolbar, then open its "Options" from the Extensions page to switch language, display mode and dark mode.
+
+See the [usage guide](./usage) for what each setting does.

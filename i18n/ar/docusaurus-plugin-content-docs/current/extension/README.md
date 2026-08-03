@@ -1,20 +1,20 @@
 ---
 sidebar_label: تثبيت إضافة المتصفح
 title: إضافة AI Short | الشريط الجانبي لـ ChatGPT/Gemini/Claude · تثبيت على Chrome/Edge/Firefox
-description: استدعِ مطالبات AiShort مباشرةً من الشريط الجانبي لصفحات محادثات الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، دون الحاجة إلى التنقل بين علامات التبويب للنسخ واللصق. تثبيت بنقرة واحدة على Chrome و Edge و Firefox.
+description: استدعِ مطالبات AiShort من الشريط الجانبي أو النافذة المنبثقة أو نافذة مستقلة في المتصفح، بجوار ChatGPT و Gemini و Claude. تثبيت بنقرة واحدة على Chrome و Edge و Firefox.
 ---
 
 # تثبيت إضافة المتصفح
 
-تدمج إضافة AiShort (ChatGPT Shortcut) مكتبة المطالبات مباشرةً في الشريط الجانبي لصفحات محادثة الذكاء الاصطناعي مثل ChatGPT و Gemini و Claude و Doubao، فلا تحتاج إلى العودة إلى aishort.top للنسخ واللصق. تدعم Chrome و Edge و Firefox، ويمكنك استدعاؤها بسرعة عبر `Alt + Shift + S`.
+تضم إضافة AI Short (ChatGPT Shortcut) أكثر من 5000 مطالبة داخل الإضافة نفسها، وتعرضها في **الشريط الجانبي أو نافذة منبثقة أو نافذة مستقلة** بجوار صفحات ChatGPT و Gemini و Claude و DeepSeek وغيرها، فلا تحتاج إلى العودة إلى aishort.top للنسخ واللصق. تدعم Chrome و Edge و Firefox، ويمكنك استدعاؤها بسرعة عبر `Alt + Shift + S`.
 
 ## طرق التثبيت
 
 ### 1. متاجر التطبيقات (موصى به، تثبيت بنقرة واحدة)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (بعد التثبيت يلزم [ضبط الأذونات لمرة واحدة](./firefox-extension-setting)، وإلا لن يظهر الشريط الجانبي في ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (متوافقة مع نسخة Chrome منذ الإصدار v4.4.0؛ راجع [الفروقات](./firefox-extension-setting))
 
 ### 2. لا يمكن فتح المتجر؟ حزمة التثبيت المحلية
 

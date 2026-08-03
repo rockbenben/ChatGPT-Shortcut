@@ -6,7 +6,7 @@ description: Padroneggia l'estensione AI Short! Attiva la barra laterale con Alt
 
 # Come usare l'estensione del browser?
 
-ChatGPT Shortcut supporta 18 lingue principali. La lingua dell'estensione viene impostata automaticamente in base al browser. Puoi anche cambiarla manualmente nelle impostazioni.
+AI Short supporta 18 lingue principali. La lingua dell'estensione viene impostata automaticamente in base al browser. Puoi anche cambiarla manualmente nelle impostazioni.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ L'estensione supporta la modalità scura. Attiva "Modalità scura" nelle imposta
 
 ## Scorciatoia da tastiera
 
-Usa la scorciatoia `Alt+Shift+S` per attivare direttamente l'estensione.
+Usa la scorciatoia `Alt+Shift+S` per attivare direttamente l'estensione (`Control+Shift+S` su macOS); su Firefox, `Alt+Shift+D` mostra o nasconde la barra laterale nativa.
+
+Le scorciatoie si personalizzano in `chrome://extensions/shortcuts` (su Firefox: `about:addons` → ingranaggio → Gestisci scorciatoie delle estensioni).

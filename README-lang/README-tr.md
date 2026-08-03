@@ -143,9 +143,9 @@ Tam kılavuzlar için [aishort.top](https://www.aishort.top/tr/docs/):
 
 AiShort istemlerine tarayıcı eklentimizle istediğiniz zaman erişin. Chrome, Edge ve Firefox'u destekler — kenar çubuğunu `Alt + Shift + S` ile açın.
 
-- **Chrome**: [Chrome Web Mağazası](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Eklentileri](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Eklentileri](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Chrome Web Mağazası](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Eklentileri](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Eklentileri](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [Sürümler](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Ayrıca AiShort kenar çubuğunu herhangi bir web sitesinde çağırmak için [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey betiğini kullanabilirsiniz.

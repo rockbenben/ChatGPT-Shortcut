@@ -143,9 +143,9 @@
 
 AiShort 扩展让你随时调用提示词库。支持 Chrome、Edge、Firefox，使用 `Alt + Shift + S` 快速唤出侧边栏。
 
-- **Chrome**: [Chrome 应用商店](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Edge 扩展商店](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox 附加组件](https://addons.mozilla.org/addon/chatgpt-shortcut/)
+- **Chrome**: [Chrome 应用商店](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Edge 扩展商店](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox 附加组件](https://addons.mozilla.org/firefox/addon/aishort/)
 - **GitHub**: [下载地址](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 也可使用[油猴脚本](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 在任意网站调出 AiShort 侧边栏。

@@ -6,7 +6,7 @@ description: AI Short tarayıcı uzantısında ustalaşın! Kenar çubuğunu etk
 
 # Tarayıcı Uzantısı Nasıl Kullanılır?
 
-ChatGPT Shortcut 18 ana dili destekler; uzantı dili tarayıcı ortamınıza göre otomatik olarak ayarlanır. Ayarlar sayfasından dili manuel olarak da değiştirebilirsiniz.
+AI Short 18 ana dili destekler; uzantı dili tarayıcı ortamınıza göre otomatik olarak ayarlanır. Ayarlar sayfasından dili manuel olarak da değiştirebilirsiniz.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ Uzantı karanlık modu destekler. Ayarlar sayfasında "Karanlık Mod" seçeneği
 
 ## Kısayol Tuşu Aktivasyonu
 
-`Alt+Shift+S` kısayoluyla uzantıyı doğrudan etkinleştirebilirsiniz.
+`Alt+Shift+S` kısayoluyla uzantıyı doğrudan etkinleştirebilirsiniz (macOS'ta `Control+Shift+S`); Firefox'ta `Alt+Shift+D` yerel kenar çubuğunu açıp kapatır.
+
+Kısayolları `chrome://extensions/shortcuts` (Firefox'ta: `about:addons` → dişli → Uzantı Kısayollarını Yönet) üzerinden özelleştirebilirsiniz.

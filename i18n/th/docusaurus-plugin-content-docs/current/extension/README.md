@@ -1,20 +1,20 @@
 ---
 sidebar_label: ติดตั้งส่วนขยายเบราว์เซอร์
 title: ส่วนขยาย AI Short | แถบด้านข้าง ChatGPT/Gemini/Claude · ติดตั้งบน Chrome/Edge/Firefox
-description: เรียกใช้ prompt ของ AiShort ได้โดยตรงจากแถบด้านข้างของหน้าสนทนา AI อย่าง ChatGPT, Gemini, Claude, Doubao ไม่ต้องสลับแท็บเพื่อคัดลอกและวาง ติดตั้งคลิกเดียวบน Chrome, Edge, Firefox
+description: เรียกใช้ prompt ของ AiShort จากแถบด้านข้าง ป๊อปอัป หรือหน้าต่างแยกของเบราว์เซอร์ วางคู่กับ ChatGPT, Gemini, Claude ติดตั้งคลิกเดียวบน Chrome, Edge, Firefox
 ---
 
 # ติดตั้งส่วนขยายเบราว์เซอร์
 
-ส่วนขยาย AiShort (ChatGPT Shortcut) ฝังคลัง prompt ไว้ในแถบด้านข้างของหน้าสนทนา AI อย่าง ChatGPT, Gemini, Claude, Doubao โดยตรง ไม่ต้องสลับกลับมาที่ aishort.top เพื่อคัดลอกและวางอีกต่อไป รองรับ Chrome, Edge, Firefox และเรียกใช้ได้อย่างรวดเร็วด้วย `Alt + Shift + S`
+ส่วนขยาย AI Short (ChatGPT Shortcut) รวม prompt กว่า 5,000 รายการไว้ในตัวส่วนขยาย และเปิดในรูปแบบ**แถบด้านข้าง ป๊อปอัป หรือหน้าต่างแยก** ข้างหน้าสนทนา AI อย่าง ChatGPT, Gemini, Claude, DeepSeek ไม่ต้องสลับกลับมาที่ aishort.top เพื่อคัดลอกและวางอีกต่อไป รองรับ Chrome, Edge, Firefox และเรียกใช้ได้อย่างรวดเร็วด้วย `Alt + Shift + S`
 
 ## วิธีติดตั้ง
 
 ### 1. ผ่านสโตร์ (แนะนำ ติดตั้งคลิกเดียว)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (หลังติดตั้งต้อง[ตั้งค่าการอนุญาตหนึ่งครั้ง](./firefox-extension-setting) ไม่เช่นนั้นแถบด้านข้างจะไม่แสดงบน ChatGPT)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (ตั้งแต่ v4.4.0 เหมือนเวอร์ชัน Chrome ดู[ความแตกต่าง](./firefox-extension-setting))
 
 ### 2. เปิดสโตร์ไม่ได้? ใช้แพ็คเกจติดตั้งในเครื่อง
 

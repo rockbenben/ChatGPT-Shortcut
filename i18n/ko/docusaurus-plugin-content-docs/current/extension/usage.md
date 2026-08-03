@@ -6,7 +6,7 @@ description: AI Short 브라우저 확장 프로그램 마스터! Alt+Shift+S로
 
 # 브라우저 확장 프로그램 사용법
 
-ChatGPT Shortcut은 18개 주요 언어를 지원합니다. 확장 프로그램 언어는 브라우저 환경에 따라 자동 설정됩니다. 설정 페이지에서 수동으로 변경할 수도 있습니다.
+AI Short는 18개 주요 언어를 지원합니다. 확장 프로그램 언어는 브라우저 환경에 따라 자동 설정됩니다. 설정 페이지에서 수동으로 변경할 수도 있습니다.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ ChatGPT Shortcut은 18개 주요 언어를 지원합니다. 확장 프로그램 
 
 ## 단축키 활성화
 
-`Alt+Shift+S` 단축키로 확장 프로그램을 직접 활성화할 수 있습니다.
+`Alt+Shift+S` 단축키로 확장 프로그램을 직접 활성화할 수 있습니다(macOS는 `Control+Shift+S`). Firefox에서는 `Alt+Shift+D`로 네이티브 사이드바를 켜고 끕니다.
+
+단축키는 `chrome://extensions/shortcuts`(Firefox는 `about:addons` → 톱니바퀴 → 확장 기능 단축키 관리)에서 변경할 수 있습니다.

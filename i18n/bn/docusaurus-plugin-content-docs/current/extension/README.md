@@ -1,20 +1,20 @@
 ---
 sidebar_label: ব্রাউজার এক্সটেনশন ইনস্টল করুন
 title: AI Short এক্সটেনশন | ChatGPT/Gemini/Claude সাইডবার · Chrome/Edge/Firefox ইনস্টলেশন
-description: ChatGPT, Gemini, Claude, Doubao প্রভৃতি AI চ্যাট পৃষ্ঠার সাইডবারে সরাসরি AiShort প্রম্পট ব্যবহার করুন, ট্যাব পাল্টে কপি-পেস্ট করার দরকার নেই। Chrome, Edge, Firefox-এ এক ক্লিকে ইনস্টল।
+description: ব্রাউজারের সাইডবার, পপআপ বা আলাদা উইন্ডো থেকে AiShort প্রম্পট ব্যবহার করুন—ChatGPT, Gemini, Claude-এর ঠিক পাশে। Chrome, Edge, Firefox-এ এক ক্লিকে ইনস্টল।
 ---
 
 # ব্রাউজার এক্সটেনশন ইনস্টল করুন
 
-AiShort (ChatGPT Shortcut) এক্সটেনশন প্রম্পট লাইব্রেরিটিকে সরাসরি ChatGPT, Gemini, Claude, Doubao প্রভৃতি AI চ্যাট পৃষ্ঠার সাইডবারে এমবেড করে দেয়, ফলে কপি-পেস্ট করার জন্য আর aishort.top-এ ফিরে যেতে হয় না। Chrome, Edge এবং Firefox সমর্থিত; দ্রুত আনতে চাপুন `Alt + Shift + S`।
+AI Short (ChatGPT Shortcut) এক্সটেনশন ৫,০০০+ প্রম্পট এক্সটেনশনের ভেতরেই বান্ডল করে রাখে এবং সেগুলো **সাইডবার, পপআপ বা আলাদা উইন্ডো** হিসেবে ChatGPT, Gemini, Claude, DeepSeek প্রভৃতি AI চ্যাটের পাশে খোলে, ফলে কপি-পেস্ট করার জন্য আর aishort.top-এ ফিরে যেতে হয় না। Chrome, Edge এবং Firefox সমর্থিত; দ্রুত আনতে চাপুন `Alt + Shift + S`।
 
 ## ইনস্টলেশন পদ্ধতি
 
 ### ১. অ্যাপ স্টোর (প্রস্তাবিত, এক-ক্লিকে ইনস্টল)
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/) (ইনস্টলের পর একবার [অনুমতি সেটআপ](./firefox-extension-setting) করতে হবে, না হলে ChatGPT-তে সাইডবার দেখাবে না)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/) (v4.4.0 থেকে Chrome সংস্করণের সমান; পার্থক্য দেখুন [Firefox এক্সটেনশন সেটিংস](./firefox-extension-setting))
 
 ### ২. স্টোর খুলছে না? লোকাল ইনস্টলেশন প্যাকেজ
 

@@ -6,7 +6,7 @@ description: AI Short ブラウザ拡張機能をマスター！サイドバー�
 
 # ブラウザ拡張機能の使い方
 
-ChatGPT Shortcut は 18 の主要言語をサポートしています。拡張機能の言語はブラウザ環境に応じて自動設定されます。設定ページで手動変更も可能です。
+AI Short は 18 の主要言語をサポートしています。拡張機能の言語はブラウザ環境に応じて自動設定されます。設定ページで手動変更も可能です。
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ ChatGPT Shortcut は 18 の主要言語をサポートしています。拡張�
 
 ## ホットキー起動
 
-`Alt+Shift+S` ショートカットで拡張機能を直接起動できます。
+`Alt+Shift+S` ショートカットで拡張機能を直接起動できます（macOS は `Control+Shift+S`）。Firefox では `Alt+Shift+D` でネイティブサイドバーを開閉できます。
+
+ショートカットは `chrome://extensions/shortcuts`（Firefox は `about:addons` → 歯車 →「拡張機能のショートカットを管理」）で変更できます。

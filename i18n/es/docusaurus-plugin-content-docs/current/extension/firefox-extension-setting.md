@@ -1,23 +1,26 @@
 ---
 sidebar_label: Configuración de Extensión de Firefox
-title: Configuración Firefox - Anclar y Autorizar
-description: Configura Firefox correctamente. Aprende a anclar la extensión y autorizar la barra lateral en ChatGPT y Gemini.
+title: Configuración Firefox - Barra lateral nativa y atajos
+description: Configura AI Short en Firefox. Desde la v4.4.0 es igual que en Chrome, con barra lateral nativa sin permisos por sitio y Alt+Shift+D para alternarla.
 ---
 
 # Configuración de Extensión de Firefox
 
-El modelo de permisos de Firefox es más estricto que el de Chrome — tras instalar la extensión necesitas hacer dos pasos adicionales de configuración para que la barra lateral funcione correctamente en sitios como ChatGPT, Gemini, etc.
+Desde la v4.4.0, la versión de Firefox está alineada con la de Chrome: los mismos tres modos de visualización — **barra lateral, ventana emergente y ventana independiente** — con la biblioteca de prompts empaquetada dentro de la extensión.
 
-## 1. Anclar Extensión y Configuración de Acceso
+La extensión solo solicita el permiso `storage`: no lee ni modifica las páginas que visitas, así que **no hace falta autorizarla sitio por sitio**.
 
-Primero, selecciona "Anclar extensión ChatGPT Shortcut" (Pin to Toolbar) en la barra de herramientas de Firefox. Luego, ingresa al Centro de Extensiones, encuentra la entrada de la extensión ChatGPT Shortcut y selecciona "Opciones" (Options). Ingresa a la interfaz de configuración de la extensión. Los pasos específicos se muestran a continuación:
+> Las versiones antiguas (v4.3 y anteriores) inyectaban la barra lateral en la página de ChatGPT mediante un content script, por lo que había que hacer clic derecho en el icono y elegir «Permitir siempre en \*\*\*». Ese mecanismo ya no existe; tras actualizar puedes saltarte este paso.
 
-![Firefox settings](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## Atajos de teclado
 
-## 2. Autorizar Ejecución de la Extensión
+- `Alt + Shift + S`: abre la extensión en el modo de visualización actual
+- `Alt + Shift + D`: alterna la barra lateral nativa de Firefox
 
-En segundo lugar, para asegurar que la extensión funcione normalmente en sitios web como ChatGPT, Gemini, necesitas hacer clic derecho en el icono de la extensión en estos sitios web y seleccionar "Permitir siempre en este sitio web" (Always allow on \*\*\*). Esta operación otorga a la extensión permiso para agregar una barra lateral en el dominio especificado.
+Puedes personalizarlos en `about:addons` → icono de engranaje → «Administrar atajos de extensiones».
 
-![Firefox Extension Permission](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## Página de configuración
 
-Después de una instalación exitosa, puedes consultar el [Tutorial de Uso del Complemento](./usage).
+Ancla AI Short a la barra de herramientas de Firefox y abre sus «Opciones» desde la página de extensiones para cambiar el idioma, el modo de visualización y el modo oscuro.
+
+Consulta la [guía de uso](./usage) para saber qué hace cada opción.

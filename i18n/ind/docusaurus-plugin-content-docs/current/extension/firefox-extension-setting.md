@@ -1,23 +1,26 @@
 ---
 sidebar_label: Pengaturan Ekstensi Firefox
-title: Pengaturan AI Short Firefox | Pin Ekstensi & Otorisasi Berjalan
-description: "Panduan pengaturan ekstensi Firefox: Pin ekstensi ke toolbar, otorisasi untuk berjalan di situs seperti ChatGPT dan Gemini, pastikan sidebar ditampilkan dengan benar."
+title: Pengaturan AI Short Firefox | Sidebar Bawaan & Pintasan
+description: "Panduan pengaturan AI Short di Firefox: sejak v4.4.0 sama dengan versi Chrome, sidebar bawaan tanpa izin per situs, Alt+Shift+D untuk membukanya."
 ---
 
 # Pengaturan Ekstensi Firefox
 
-Model perizinan Firefox lebih ketat dibandingkan Chrome — setelah menginstal ekstensi, masih perlu melakukan dua langkah pengaturan agar sidebar dapat ditampilkan dengan normal di situs seperti ChatGPT, Gemini, dll.
+Sejak v4.4.0 versi Firefox sama dengan versi Chrome: tiga mode tampilan yang sama — **sidebar, popup, dan jendela terpisah** — dengan pustaka prompt yang dibundel di dalam ekstensi.
 
-## 1. Pin Ekstensi dan Akses Pengaturan
+Ekstensi hanya meminta izin `storage`; ia tidak membaca maupun mengubah halaman yang Anda kunjungi, sehingga **tidak perlu lagi memberi izin di tiap situs**.
 
-Pertama, di toolbar Firefox, pilih "Pin Ekstensi ChatGPT Shortcut" (Pin ke Toolbar). Kemudian, masuk ke Pusat Ekstensi, temukan entri ekstensi ChatGPT Shortcut dan pilih "Opsi" (Options) untuk masuk ke antarmuka pengaturan ekstensi. Langkah-langkah spesifik ditunjukkan pada gambar di bawah:
+> Versi lama (v4.3 dan sebelumnya) menyuntikkan sidebar ke halaman ChatGPT lewat content script, sehingga Anda harus klik kanan ikonnya dan memilih "Always allow on \*\*\*". Mekanisme itu sudah dihapus—setelah pembaruan, lewati langkah ini.
 
-![Pengaturan Firefox](https://img.newzone.top/2023-12-25-05-51-47.png?imageMogr2/format/webp)
+## Pintasan
 
-## 2. Otorisasi Ekstensi untuk Berjalan
+- `Alt + Shift + S`: membuka ekstensi sesuai mode tampilan saat ini
+- `Alt + Shift + D`: membuka/menutup sidebar bawaan Firefox
 
-Kedua, untuk memastikan ekstensi berjalan normal di situs seperti ChatGPT, Gemini, dll., Anda perlu klik kanan ikon ekstensi di situs tersebut dan pilih "Selalu izinkan di situs ini" (Always allow on \*\*\*). Operasi ini akan memberikan izin ekstensi untuk menambahkan sidebar di domain yang ditentukan.
+Sesuaikan di `about:addons` → ikon roda gigi → "Manage Extension Shortcuts".
 
-![Izin Ekstensi Firefox](https://img.newzone.top/2023-12-25-05-59-48.png?imageMogr2/format/webp)
+## Halaman pengaturan
 
-Setelah instalasi berhasil, periksa [Tutorial Penggunaan Plugin](./usage).
+Sematkan AI Short di toolbar Firefox, lalu buka "Options" dari halaman ekstensi untuk mengubah bahasa, mode tampilan, dan mode gelap.
+
+Arti tiap pengaturan dijelaskan di [panduan penggunaan](./usage).

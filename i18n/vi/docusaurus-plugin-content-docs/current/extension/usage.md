@@ -6,7 +6,7 @@ description: Làm chủ tiện ích trình duyệt AI Short! Bật thanh bên, k
 
 # Cách Sử dụng Tiện ích Trình duyệt?
 
-ChatGPT Shortcut hỗ trợ 18 ngôn ngữ chính, ngôn ngữ tiện ích sẽ được tự động đặt theo môi trường trình duyệt của bạn. Bạn cũng có thể thay đổi ngôn ngữ thủ công trong trang cài đặt.
+AI Short hỗ trợ 18 ngôn ngữ chính, ngôn ngữ tiện ích sẽ được tự động đặt theo môi trường trình duyệt của bạn. Bạn cũng có thể thay đổi ngôn ngữ thủ công trong trang cài đặt.
 
 ![](/img/docs/extension-settings.png)
 
@@ -30,4 +30,6 @@ Tiện ích hỗ trợ chế độ tối, có thể bật tùy chọn "Chế đ�
 
 ## Kích hoạt Phím tắt
 
-Sử dụng phím tắt `Alt+Shift+S` để kích hoạt tiện ích trực tiếp.
+Sử dụng phím tắt `Alt+Shift+S` để kích hoạt tiện ích trực tiếp (trên macOS là `Control+Shift+S`); trên Firefox, `Alt+Shift+D` bật/tắt thanh bên gốc.
+
+Có thể tùy chỉnh phím tắt tại `chrome://extensions/shortcuts` (Firefox: `about:addons` → bánh răng → Manage Extension Shortcuts).

@@ -1,20 +1,20 @@
 ---
 sidebar_label: ブラウザ拡張機能のインストール
 title: AI Short 拡張機能 | ChatGPT/Gemini/Claude サイドバー · Chrome/Edge/Firefox インストール
-description: ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーから直接 AiShort プロンプトを呼び出せます。タブを切り替えてコピー＆ペーストする必要はありません。Chrome、Edge、Firefox にワンクリックでインストール。
+description: ブラウザのサイドバー・ポップアップ・独立ウィンドウから AiShort プロンプトを直接呼び出し、ChatGPT や Gemini、Claude の横に並べて使えます。Chrome、Edge、Firefox にワンクリックでインストール。
 ---
 
 # ブラウザ拡張機能のインストール
 
-AiShort (ChatGPT Shortcut) 拡張機能は、プロンプトライブラリを ChatGPT、Gemini、Claude、Doubao などの AI チャットページのサイドバーに直接埋め込みます。aishort.top に戻ってコピー＆ペーストする必要はありません。Chrome、Edge、Firefox に対応し、`Alt + Shift + S` ですばやく呼び出せます。
+AI Short (ChatGPT Shortcut) 拡張機能は 5000 以上のプロンプトを拡張機能内にローカル同梱し、**サイドバー・ポップアップ・独立ウィンドウ**の 3 つの形式で ChatGPT、Gemini、Claude、DeepSeek などのチャットページの横に表示します。aishort.top に戻ってコピー＆ペーストする必要はありません。Chrome、Edge、Firefox に対応し、`Alt + Shift + S` ですばやく呼び出せます。
 
 ## インストール方法
 
 ### 1. アプリストア（推奨、ワンクリックインストール）
 
-- **Chrome**: [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-shortcut/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-shortcut/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/addon/chatgpt-shortcut/)（インストール後に一度[権限設定](./firefox-extension-setting)が必要です。設定しないと ChatGPT 上でサイドバーが表示されません）
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Browser ADD-ONS](https://addons.mozilla.org/firefox/addon/aishort/)（v4.4.0 以降は Chrome 版と同等です。差分は [Firefox 拡張機能の設定](./firefox-extension-setting) を参照）
 
 ### 2. ストアが開けない？ローカルインストールパッケージ
 
