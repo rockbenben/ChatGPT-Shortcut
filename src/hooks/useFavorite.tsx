@@ -226,7 +226,7 @@ export const useFavorite = (): UseFavoriteReturn => {
         onOk: async () => {
           await removeFavorite(id, isComm);
         },
-        okText: <Translate id="button.confirm">确认</Translate>,
+        okText: <Translate id="message.removeFavorite.confirm.title">移除收藏</Translate>,
         cancelText: <Translate id="action.cancel">取消</Translate>,
         centered: true,
       });

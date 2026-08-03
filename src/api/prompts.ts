@@ -18,7 +18,7 @@ import {
   extendCacheIfNeeded,
   needsCacheExtension,
 } from "@site/src/utils/cache";
-import { clearMySpaceCache } from "./myspace";
+import { clearMySpaceCache } from "./sessionCache";
 import { fetchCardsByIds } from "./homepage";
 import { dedupe } from "@site/src/utils/dedupe";
 
@@ -67,24 +67,20 @@ export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: 
   // can concurrently call getPrompts for the same id set (e.g., user's commLoves [118]).
   // Without dedup, each call independently runs cache validation → multiple
   // /userprompts/check-updates requests for the same ids. Sorted key for deterministic match.
-  const dedupKey = `getPrompts_${safeType}_${[...normalizedIds].sort((a, b) => a - b).join(",")}_${sanitizedLang}`;
-  return dedupe(dedupKey, () => fetchPromptsInner(safeType, normalizedIds, sanitizedLang));
+  const dedupKey = `getPrompts_${safeType}_${[...normalizedIds].sort((a, b) => a - b).join(",")}`;
+  return dedupe(dedupKey, () => fetchPromptsInner(safeType, normalizedIds));
 }
 
-async function fetchPromptsInner(safeType: string, normalizedIds: number[], sanitizedLang: string) {
-  // Userprompts/Commus are language-agnostic (cache key is just `${prefix}${id}`);
-  // cards differ by language (`${prefix}${id}_${lang}`). Hoist once so every reference
-  // to getPromptCacheKey below uses the same form — easy to miss inconsistencies
-  // (an earlier bug: validation paths passed sanitizedLang for commus → wrong key →
-  // needsCacheExtension always returned true → check-updates fired on every page load).
-  const keyLang = safeType === "cards" ? sanitizedLang : undefined;
-
+// safeType 只可能是 "commus" / "userprompts" —— cards 在 getPrompts 里已短路到 fetchCardsByIds。
+// 两者的缓存键都与语言无关（`${prefix}${id}`），故一律不传 lang：曾经这里按语言传过 key，
+// 导致 needsCacheExtension 恒为 true、每次页面加载都白打一发 check-updates。
+async function fetchPromptsInner(safeType: string, normalizedIds: number[]) {
   const cachedPrompts = new Map();
   const idsToFetch: number[] = [];
 
   // Check cache for each id
   normalizedIds.forEach((id) => {
-    const cacheKey = getPromptCacheKey(safeType, id, keyLang);
+    const cacheKey = getPromptCacheKey(safeType, id);
     const cachedData = getCache(cacheKey);
 
     if (cachedData) {
@@ -121,13 +117,13 @@ async function fetchPromptsInner(safeType: string, normalizedIds: number[], sani
 
       // Auto-extend non-favorited commus
       nonFavoredToExtend.forEach((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
+        const cacheKey = getPromptCacheKey(safeType, id);
         extendCacheIfNeeded(cacheKey, ttl);
       });
 
       // Filter favorited commus: only validate those needing extension (< 50% TTL remaining)
       const favoredNeedingValidation = favoredToValidate.filter((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
+        const cacheKey = getPromptCacheKey(safeType, id);
         return needsCacheExtension(cacheKey, ttl);
       });
 
@@ -144,7 +140,7 @@ async function fetchPromptsInner(safeType: string, normalizedIds: number[], sani
           // Process returned (available) prompts
           response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
             const cached = cachedPrompts.get(serverItem.id);
-            const cacheKey = getPromptCacheKey(safeType, serverItem.id, keyLang);
+            const cacheKey = getPromptCacheKey(safeType, serverItem.id);
 
             if (cached?.updatedAt === serverItem.updatedAt) {
               // Same → Conditionally extend
@@ -160,7 +156,7 @@ async function fetchPromptsInner(safeType: string, normalizedIds: number[], sani
           // Process unavailable prompts (not returned = unshared/deleted)
           favoredNeedingValidation.forEach((id) => {
             if (!returnedIds.has(id)) {
-              const cacheKey = getPromptCacheKey(safeType, id, keyLang);
+              const cacheKey = getPromptCacheKey(safeType, id);
               const cached = cachedPrompts.get(id);
 
               if (cached) {
@@ -197,11 +193,10 @@ async function fetchPromptsInner(safeType: string, normalizedIds: number[], sani
     } else if (safeType === "userprompts") {
       // For userprompts: trust MySpace validation, conditionally extend
       cachedPrompts.forEach((_, id) => {
-        const cacheKey = getPromptCacheKey(safeType, id, keyLang);
+        const cacheKey = getPromptCacheKey(safeType, id);
         extendCacheIfNeeded(cacheKey, ttl);
       });
     }
-    // Cards: no extension (pure cache)
   }
 
   // Return cached data if all present
@@ -209,59 +204,41 @@ async function fetchPromptsInner(safeType: string, normalizedIds: number[], sani
     return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
   }
 
-  const apiEndpoints = {
-    cards: "/cards/bulk",
-    commus: "/userprompts/bulk",
-    userprompts: "/userprompts/favorbulk",
-  };
+  const apiEndpoint = safeType === "userprompts" ? "/userprompts/favorbulk" : "/userprompts/bulk";
 
-  const apiEndpoint = apiEndpoints[safeType] || apiEndpoints["commus"];
-  const postData = safeType === "cards" ? { ids: idsToFetch, lang: sanitizedLang } : { ids: idsToFetch };
+  const response = await apiClient.post(apiEndpoint, { ids: idsToFetch });
+  const ttl = getPromptTTL(safeType);
 
-  try {
-    const response = await apiClient.post(apiEndpoint, postData);
-    const ttl = getPromptTTL(safeType);
+  // Save fetched data to cache
+  response.data.forEach((item: { id: number }) => {
+    setCache(getPromptCacheKey(safeType, item.id), item, ttl);
+  });
 
-    // Save fetched data to cache
-    response.data.forEach((item: { id: number }) => {
-      const cacheKey = getPromptCacheKey(safeType, item.id, keyLang);
-      setCache(cacheKey, item, ttl);
-    });
+  // Merge cached and fetched data
+  const allData = new Map(cachedPrompts);
+  response.data.forEach((item: { id: number }) => {
+    allData.set(item.id, item);
+  });
 
-    // Merge cached and fetched data
-    const allData = new Map(cachedPrompts);
-    response.data.forEach((item: { id: number }) => {
-      allData.set(item.id, item);
-    });
-
-    return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
-  } catch (error) {
-    console.error(`Error fetching ${safeType}:`, error);
-    throw error;
-  }
+  return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
 }
 
 /**
  * Submit a new user prompt
  */
 export async function submitPrompt(values: { title: string; description: string; remark?: string; notes?: string; share?: boolean }) {
-  try {
-    const response = await apiClient.post(`/userprompts`, {
-      data: {
-        title: values.title,
-        description: values.description,
-        remark: values.remark,
-        notes: values.notes,
-        share: values.share,
-        promptLength: values.description.length,
-      },
-    });
-    clearMySpaceCache();
-    return response.data;
-  } catch (error) {
-    console.error("Error submitting prompt:", error);
-    throw error;
-  }
+  const response = await apiClient.post(`/userprompts`, {
+    data: {
+      title: values.title,
+      description: values.description,
+      remark: values.remark,
+      notes: values.notes,
+      share: values.share,
+      promptLength: values.description.length,
+    },
+  });
+  clearMySpaceCache();
+  return response.data;
 }
 
 /**
@@ -278,28 +255,22 @@ export async function updatePrompt(
   },
 ) {
   if (!id) throw new Error("prompt id is required");
-  try {
-    const response = await apiClient.put(`/userprompts/${id}`, {
-      data: {
-        title: values.title,
-        description: values.description,
-        remark: values.remark,
-        notes: values.notes,
-        share: values.share,
-        promptLength: values.description.length,
-      },
-    });
+  const response = await apiClient.put(`/userprompts/${id}`, {
+    data: {
+      title: values.title,
+      description: values.description,
+      remark: values.remark,
+      notes: values.notes,
+      share: values.share,
+      promptLength: values.description.length,
+    },
+  });
 
-    // Clear cache
-    const cacheKey = getPromptCacheKey("userprompts", id);
-    removeCache(cacheKey);
-    clearMySpaceCache();
+  // Clear cache
+  removeCache(getPromptCacheKey("userprompts", id));
+  clearMySpaceCache();
 
-    return response.data;
-  } catch (error) {
-    console.error("Error updating prompt:", error);
-    throw error;
-  }
+  return response.data;
 }
 
 /**
@@ -307,19 +278,13 @@ export async function updatePrompt(
  */
 export async function deletePrompt(id: number) {
   if (!id) throw new Error("prompt id is required");
-  try {
-    const response = await apiClient.delete(`/userprompts/${id}`);
+  const response = await apiClient.delete(`/userprompts/${id}`);
 
-    // Clear cache
-    const cacheKey = getPromptCacheKey("userprompts", id);
-    removeCache(cacheKey);
-    clearMySpaceCache();
+  // Clear cache
+  removeCache(getPromptCacheKey("userprompts", id));
+  clearMySpaceCache();
 
-    return response;
-  } catch (error) {
-    console.error("Error deleting prompt:", error);
-    throw error;
-  }
+  return response;
 }
 
 // 请求发出前写入的 lastFetch 时效（分钟）。请求成功会被完整 TTL 覆盖；
@@ -445,33 +410,25 @@ export async function getCommPrompts(page: number, pageSize: number, sortField: 
  */
 export async function voteOnUserPrompt(promptId: number, action: "upvote" | "downvote") {
   if (!promptId) throw new Error("promptId is required");
-  try {
-    if (!["upvote", "downvote"].includes(action)) {
-      throw new Error("Invalid vote action");
-    }
-    const result = await apiClient.post(`/userprompts/${promptId}/vote`, { action: action });
+  const result = await apiClient.post(`/userprompts/${promptId}/vote`, { action: action });
 
-    // Update local cache with backend response
-    if (result?.data?.counts) {
-      const { upvotes, downvotes } = result.data.counts;
-      const upvoteDifference = upvotes - downvotes;
+  // Update local cache with backend response
+  if (result?.data?.counts) {
+    const { upvotes, downvotes } = result.data.counts;
+    const upvoteDifference = upvotes - downvotes;
 
-      // Update prompt single cache（不 mutate cachedData，dedupe 后其他 holder 会共享同一引用）
-      const cacheKey = getPromptCacheKey("commus", promptId);
-      const cachedData = getCache(cacheKey);
-      if (cachedData) {
-        setCache(cacheKey, { ...cachedData, upvotes, downvotes, upvoteDifference }, getPromptTTL("commus"));
-      }
-
-      // Clear list cache
-      flushCacheByPrefix(CACHE_PREFIX.COMM_LISTS);
+    // Update prompt single cache（不 mutate cachedData，dedupe 后其他 holder 会共享同一引用）
+    const cacheKey = getPromptCacheKey("commus", promptId);
+    const cachedData = getCache(cacheKey);
+    if (cachedData) {
+      setCache(cacheKey, { ...cachedData, upvotes, downvotes, upvoteDifference }, getPromptTTL("commus"));
     }
 
-    return result;
-  } catch (error) {
-    console.error("Error voting on user prompt:", error);
-    throw error;
+    // Clear list cache
+    flushCacheByPrefix(CACHE_PREFIX.COMM_LISTS);
   }
+
+  return result;
 }
 
 /**
@@ -522,12 +479,6 @@ export async function getSingleCommPrompt(id: number) {
   if (!id || !Number.isInteger(id) || id <= 0) {
     return null;
   }
-
-  try {
-    const results = await getPrompts("commus", [id]);
-    return results.length > 0 ? results[0] : null;
-  } catch (error) {
-    console.error("Error fetching single community prompt:", error);
-    throw error;
-  }
+  // getPrompts 已过滤非法 id 并返回 []，取首项即可
+  return (await getPrompts("commus", [id]))[0] ?? null;
 }

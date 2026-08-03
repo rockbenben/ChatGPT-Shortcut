@@ -18,9 +18,6 @@ if (ExecutionEnvironment.canUseDOM) {
   authToken = localStorage.getItem("auth_token");
 }
 
-// 本体在 sessionCache.ts，这里只做 re-export 以保持既有 import 路径不变
-export { clearUserProfileCache } from "./sessionCache";
-
 /**
  * Handle API errors uniformly
  */

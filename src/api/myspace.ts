@@ -2,7 +2,8 @@
  * MySpace APIs - 我的空间数据管理
  */
 import { apiClient } from "./client";
-import { getCache, setCache, removeCache, getPromptCacheKey, getETag, removeETag, CACHE_PREFIX, CACHE_TTL, extendCache, setCacheWithETag } from "@site/src/utils/cache";
+import { clearMySpaceCache } from "./sessionCache";
+import { getCache, setCache, removeCache, getPromptCacheKey, getETag, CACHE_PREFIX, CACHE_TTL, extendCache, setCacheWithETag } from "@site/src/utils/cache";
 
 /**
  * 获取 MySpace 完整数据（带 ETag 优化）
@@ -69,26 +70,13 @@ export async function getMySpace() {
   }
 }
 
-// 本体在 sessionCache.ts；这里同时 import（本文件内部要用）并 re-export（保持既有 import 路径不变）
-import { clearMySpaceCache } from "./sessionCache";
-export { clearMySpaceCache };
-
 /**
  * 更新我的空间排序
  * @param order - 排序数组
  */
 export async function updateMySpaceOrder(order: Array<{ id: number; type: string; source: string }>) {
-  try {
-    await apiClient.patch("/favorites/myspace-order", {
-      order,
-    });
-
-    // 清除 MySpace 缓存
-    clearMySpaceCache();
-  } catch (error) {
-    console.error("Error updating MySpace order:", error);
-    throw error;
-  }
+  await apiClient.patch("/favorites/myspace-order", { order });
+  clearMySpaceCache();
 }
 
 /**
@@ -96,15 +84,6 @@ export async function updateMySpaceOrder(order: Array<{ id: number; type: string
  * @param customTags - 完整的 customTags 对象
  */
 export async function updateCustomTags(customTags: { definitions: Array<{ id: string; name: string; color: string; order: number }>; itemTags: Record<string, string[]> }) {
-  try {
-    await apiClient.patch("/favorites/custom-tags", {
-      customTags,
-    });
-
-    // 清除 MySpace 缓存
-    clearMySpaceCache();
-  } catch (error) {
-    console.error("Error updating custom tags:", error);
-    throw error;
-  }
+  await apiClient.patch("/favorites/custom-tags", { customTags });
+  clearMySpaceCache();
 }

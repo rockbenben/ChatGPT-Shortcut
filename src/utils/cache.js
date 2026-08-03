@@ -207,7 +207,7 @@ export const getListCacheKey = (prefix, ...parts) => {
  * @param {string} etag - ETag 值
  * @param {number} ttlMinutes - 过期时间（分钟），通常应与 setCache 的 TTL 一致
  */
-export const setETag = (key, etag, ttlMinutes) => {
+const setETag = (key, etag, ttlMinutes) => {
   if (!canUseCache() || !etag) return;
   try {
     lscache.set(`${key}_etag`, etag, ttlMinutes);

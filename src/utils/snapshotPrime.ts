@@ -88,13 +88,13 @@ export interface CommunityPrompt extends CommunityPromptSnapshot {
   _noCache?: boolean;
 }
 
-export interface CommunitySnapshotIndex {
+interface CommunitySnapshotIndex {
   ids: number[];
   total: number;
   etag?: string | null;
 }
 
-export interface CommunitySnapshot {
+interface CommunitySnapshot {
   generatedAt: string | null;
   byNewest: CommunitySnapshotIndex;
   byUpvoted: CommunitySnapshotIndex;

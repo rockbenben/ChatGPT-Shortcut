@@ -2,8 +2,7 @@
  * User APIs - User info, username update
  */
 import { apiClient, getAuthToken } from "./client";
-import { setCache, getCache, removeCache, getETag, CACHE_TTL, CACHE_PREFIX, getPromptCacheKey, extendCache, setCacheWithETag } from "@site/src/utils/cache";
-import { getPrompts } from "./prompts";
+import { getCache, getETag, CACHE_TTL, CACHE_PREFIX, extendCache, setCacheWithETag } from "@site/src/utils/cache";
 
 /**
  * Get complete user info for logged-in user
@@ -40,20 +39,6 @@ export async function getUserAllInfo() {
     const normalizedResponse = { data: response.data };
 
     setCacheWithETag(cacheKey, normalizedResponse, CACHE_TTL.USER_PROFILE, newEtag);
-
-    // 简单预热：异步加载 userprompts 缓存（智能刷新由 MySpace 处理）
-    const userprompts = response.data.userprompts;
-    if (userprompts && userprompts.length > 0) {
-      const uncachedPrompts = userprompts.filter((p: { id: number }) => {
-        const promptCacheKey = getPromptCacheKey("userprompts", p.id);
-        return !getCache(promptCacheKey);
-      });
-
-      if (uncachedPrompts.length > 0) {
-        getPrompts("userprompts", uncachedPrompts);
-      }
-    }
-
     return normalizedResponse;
   } catch (error) {
     // Handle 304 in error handler (some axios configs) — 与 try 内 304 路径保持一致
@@ -71,13 +56,7 @@ export async function getUserAllInfo() {
  * Update username
  */
 export async function updateUsername(username: string) {
-  try {
-    const response = await apiClient.put(`/favorites/update-username`, {
-      data: { newUsername: username },
-    });
-    return response;
-  } catch (error) {
-    console.error("Error updating Username:", error);
-    throw error;
-  }
+  return apiClient.put(`/favorites/update-username`, {
+    data: { newUsername: username },
+  });
 }

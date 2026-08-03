@@ -11,7 +11,7 @@
  */
 import { translate } from "@docusaurus/Translate";
 
-export type VoteAction = "upvote" | "downvote";
+type VoteAction = "upvote" | "downvote";
 
 export const voteLoginRequiredText = () => translate({ id: "vote.loginRequired", message: "请先登录后再投票" });
 

@@ -93,7 +93,8 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         onOk: async () => {
           await removePrompt(id);
         },
-        okText: <Translate id="button.confirm">确认</Translate>,
+        okText: <Translate id="action.delete">删除</Translate>,
+        okButtonProps: { danger: true },
         cancelText: <Translate id="action.cancel">取消</Translate>,
         centered: true,
       });

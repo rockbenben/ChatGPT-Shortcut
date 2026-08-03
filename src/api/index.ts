@@ -9,7 +9,8 @@
 export { API_URL, GAUTH_API_BASE } from "./config";
 
 // Client utilities
-export { clearUserProfileCache, getAuthToken, persistAuthToken, apiClient } from "./client";
+export { getAuthToken, persistAuthToken, apiClient } from "./client";
+export { clearUserProfileCache, clearMySpaceCache } from "./sessionCache";
 
 // Auth APIs
 export { register, login, changePassword, forgotPassword, resetPassword, sendPasswordlessLink, loginWithToken, getGoogleAuthUrl, googleLogin } from "./auth";
@@ -25,7 +26,7 @@ export { patchFavorites } from "./favorites";
 export type { FavoriteDeltaOps, FavoriteFieldOps, FavoriteDeltaResponse, MySpaceShape } from "./favorites";
 
 // MySpace APIs
-export { getMySpace, clearMySpaceCache, updateMySpaceOrder, updateCustomTags } from "./myspace";
+export { getMySpace, updateMySpaceOrder, updateCustomTags } from "./myspace";
 
 // Comments APIs
 export { getComments, postComment } from "./comments";

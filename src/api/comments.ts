@@ -60,17 +60,12 @@ export async function getComments(id: number, page: number, pageSize: number, ty
  * Post a new comment
  */
 export async function postComment(pageId: number, commentContent: string, threadOf: number | null = null, type: string = "card", locale?: string) {
-  try {
-    const response = await apiClient.post(`/comments/api::${type}.${type}:${pageId}`, {
-      content: commentContent,
-      threadOf,
-      ...(locale ? { locale } : {}),
-    });
+  const response = await apiClient.post(`/comments/api::${type}.${type}:${pageId}`, {
+    content: commentContent,
+    threadOf,
+    ...(locale ? { locale } : {}),
+  });
 
-    clearCommentsCache(pageId, type);
-    return response;
-  } catch (error) {
-    console.error("Error posting comment:", error);
-    throw error;
-  }
+  clearCommentsCache(pageId, type);
+  return response;
 }

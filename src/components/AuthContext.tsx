@@ -12,7 +12,7 @@ import { getCache, setCache, CACHE_PREFIX, CACHE_TTL } from "@site/src/utils/cac
  * - favoriteId: 通常不变；新用户首次写入或后端重建时才变
  * - favorites: server 权威的 loves/commLoves（跟 items 派生不一致时使用，如跨设备 drift）
  */
-export interface MySpaceStatePatch {
+interface MySpaceStatePatch {
   items?: any[];
   customTags?: any[];
   favoriteId?: number | null;
@@ -47,22 +47,8 @@ export const AuthContext = createContext<{
 });
 
 function withTimeout<T>(promise: Promise<T>, ms: number, label = "operation"): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
-    const timer = setTimeout(() => {
-      reject(new Error(`[AuthProvider] ${label} timed out after ${ms}ms`));
-    }, ms);
-
-    promise.then(
-      (value) => {
-        clearTimeout(timer);
-        resolve(value);
-      },
-      (err) => {
-        clearTimeout(timer);
-        reject(err);
-      },
-    );
-  });
+  const timeout = new Promise<never>((_, reject) => setTimeout(() => reject(new Error(`[AuthProvider] ${label} timed out after ${ms}ms`)), ms));
+  return Promise.race([promise, timeout]);
 }
 
 function delay(ms: number): Promise<void> {
