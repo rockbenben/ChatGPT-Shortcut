@@ -11,9 +11,12 @@
  *
  * ── 增 / 删一个语言（两条轴，必须同步，否则会「有数据却不显示」或「构建了却没数据」）──
  *   1) 构建/UI 轴（本文件）：在 locales 增删该 locale；并准备好 i18n/<locale>/ 下的翻译。
- *   2) 数据轴（src/api/homepage.ts）：在 PROMPT_DATA_MAP / DEFAULT_FAVOR_MAP / DEFAULT_OTHER_MAP
- *      增删对应 import，并放好 src/data/prompt_<locale>.json 等数据文件。
- *      （SUPPORTED_LANGUAGES 由这些表的 key 派生，会自动跟随，无需单独改。）
+ *   2) 数据轴（src/api/homepage.ts）：**手动**在 SUPPORTED_LANGUAGES 数组里增删该 locale，
+ *      并放好 src/data/prompt_<locale>.json。
+ *      注意：它曾由 PROMPT_DATA_MAP 的 key 自动派生，2026-08 改成模板字面量 import() 后
+ *      变成手维护的字面量数组——漏改不会报错，只会让该 locale 的首页/搜索静默回落中文数据。
+ *      scripts/genPromptPages.mjs 会校验每个 locale 的 prompt_<locale>.json 是否存在并中止构建，
+ *      但它管不到 SUPPORTED_LANGUAGES 数组本身，这一处仍需人工同步。
  */
 export const defaultLocale = "zh-Hans";
 

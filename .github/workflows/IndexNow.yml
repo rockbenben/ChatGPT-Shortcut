@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Submit Root Sitemap
-        uses: bojieyang/indexnow-action@v2
+        uses: bojieyang/indexnow-action@v3
         with:
           # 这里填写主站的 sitemap 地址
           sitemap-location: "https://www.aishort.top/sitemap.xml"
@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Submit Sitemap for ${{ matrix.lang }}
-        uses: bojieyang/indexnow-action@v2
+        uses: bojieyang/indexnow-action@v3
         with:
           # 动态拼接地址：例如 https://www.aishort.top/en/sitemap.xml
           sitemap-location: "https://www.aishort.top/${{ matrix.lang }}/sitemap.xml"

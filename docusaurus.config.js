@@ -7,6 +7,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import { execSync } from "node:child_process";
 import { communityPromptSitemapItems } from "./scripts/sitemapCommunityItems.mjs";
+import { withPromptLastmod } from "./scripts/sitemapPromptLastmod.mjs";
 // 语言列表单一数据源（与 scripts/buildPhased.mjs 共用，避免 config 与分段构建脱钩）
 import { defaultLocale, locales } from "./scripts/i18nLocales.mjs";
 
@@ -109,7 +110,10 @@ const config = {
           createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
             const items = await defaultCreateSitemapItems(rest);
             const fallback = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-            const result = items.map((it) => ({ ...it, lastmod: it.lastmod || fallback }));
+            // prompt 详情页的薄壳不入库（现生成），git 时间已无意义 —— 改读 card JSON 的
+            // dateModified，见 scripts/sitemapPromptLastmod.mjs
+            const withPrompt = withPromptLastmod(items, fallback);
+            const result = withPrompt.map((it) => ({ ...it, lastmod: it.lastmod || fallback }));
             // 社区提示词详情页 ?id=N（快照精选 ≤24 条，per-locale）→ scripts/sitemapCommunityItems.mjs
             result.push(...communityPromptSitemapItems(result, fallback));
             return result;
