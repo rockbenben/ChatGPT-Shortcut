@@ -118,7 +118,7 @@ const FilterBar: React.FC<{
       <div className={searchStyles.searchInput}>
         <Input
           ref={inputRef}
-          placeholder={translate({ id: "input.search.placeholder", message: "搜索：写作、翻译、编程…" })}
+          placeholder={translate({ id: "input.search.placeholder", message: "写作、翻译…" })}
           value={inputValue}
           onChange={handleChange}
           onPressEnter={handleSearch}

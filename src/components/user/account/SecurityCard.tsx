@@ -64,7 +64,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
                 { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址！" }) },
               ]}
               initialValue={userInfo?.email || ""}>
-              <Input prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} placeholder={translate({ id: "placeholder.email", message: "邮箱" })} size="large" />
+              <Input prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} size="large" />
             </Form.Item>
           </Form>
         </div>
@@ -110,7 +110,6 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
             rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
             <Input.Password
               prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-              placeholder={translate({ id: "placeholder.currentPassword", message: "当前密码" })}
               size="large"
             />
           </Form.Item>
@@ -124,7 +123,6 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
           ]}>
           <Input.Password
             prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-            placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })}
             size="large"
           />
         </Form.Item>
@@ -145,7 +143,6 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
           ]}>
           <Input.Password
             prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-            placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })}
             size="large"
           />
         </Form.Item>

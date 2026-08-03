@@ -244,11 +244,11 @@ const LoginPage = () => {
   const handleErrors = (err) => {
     try {
       if (err.message === "Request timed out. Please try again.") {
-        messageApi.error(err.message);
+        messageApi.error(translate({ id: "message.requestTimeout", message: "请求超时，请重试" }));
       } else if (err.response?.status === 400) {
         messageApi.error(err.response.data.error.message);
       } else if (err.response?.status === 429) {
-        messageApi.error("Requests are too frequent. Please try again later.");
+        messageApi.error(translate({ id: "message.tooManyRequests", message: "操作太频繁，请稍后再试" }));
       } else {
         messageApi.error(<Translate id="message.error">发生错误，请稍后再试</Translate>);
       }

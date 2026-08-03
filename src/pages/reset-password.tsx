@@ -109,11 +109,11 @@ const ResetPassword = () => {
                   }),
                 },
               ]}>
-              <Input placeholder={translate({ id: "placeholder.resetPassword.code", message: "重置代码" })} />
+              <Input />
             </Form.Item>
 
             <Form.Item name="newPassword" label={<Translate id="placeholder.newPassword">新密码</Translate>} rules={passwordRules} hasFeedback>
-              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.newPassword", message: "新密码" })} />
+              <Input.Password autoComplete="new-password" />
             </Form.Item>
 
             <Form.Item
@@ -145,7 +145,7 @@ const ResetPassword = () => {
                   },
                 }),
               ]}>
-              <Input.Password autoComplete="new-password" placeholder={translate({ id: "placeholder.confirmPassword", message: "确认新密码" })} />
+              <Input.Password autoComplete="new-password" />
             </Form.Item>
 
             <Form.Item style={{ marginBottom: 0 }}>

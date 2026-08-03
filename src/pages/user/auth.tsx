@@ -1,12 +1,23 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
+import { Button, Spin } from "antd";
+import { LoginOutlined } from "@ant-design/icons";
 import { loginWithToken } from "@site/src/api";
+import { EmptyState } from "@site/src/components/EmptyState";
 import { getCache, removeCache, PASSWORDLESS_LOCALE_KEY } from "@site/src/utils/cache";
+
+/** 三种状态都要给用户看得懂的画面（原来一律 return null，白屏） */
+type CallbackState = "working" | "idle" | "failed";
 
 const CallbackPage = () => {
   const location = useLocation();
   const { i18n } = useDocusaurusContext();
+  // 首帧按"处理中"渲染（带参进来的占绝大多数）；命名 phase 是为了避开下面的 OAuth `state` 参数
+  const [phase, setPhase] = useState<CallbackState>("working");
 
   useEffect(() => {
     const params = mergeSearchAndHashParams(location.search, location.hash);
@@ -44,11 +55,18 @@ const CallbackPage = () => {
           );
           window.close();
         } else {
+          // 发起登录的那个窗口已经关了，postMessage 无处可送 —— 用户必须回原窗口重来
           console.error("Please do not close the main login page during the login process");
+          setPhase("failed");
         }
+        return;
       }
+
+      // 没有任何可处理的参数：多半是直接打开/收藏了这个中转地址
+      setPhase("idle");
     } catch (error) {
       console.error("An error occurred while handling the OAuth callback:", error);
+      setPhase("failed");
     }
   }, [location]);
 
@@ -76,7 +94,34 @@ const CallbackPage = () => {
     }
   };
 
-  return null; // or a loading spinner, or whatever you want to show while waiting
+  // 登录成功会 location.replace 离开本页，这里只覆盖"处理中"和两种走不下去的情况
+  const backHome = (
+    <Link to="/">
+      <Button type="primary" icon={<LoginOutlined />}>
+        <Translate id="auth.callback.backHome">返回首页登录</Translate>
+      </Button>
+    </Link>
+  );
+
+  return (
+    <Layout title={translate({ id: "auth.callback.title", message: "完成登录" })} noFooter>
+      {phase === "working" ? (
+        <EmptyState icon={<Spin />} title={<Translate id="auth.callback.working">正在完成登录…</Translate>} description={<Translate id="auth.callback.workingHint">请不要关闭本页，稍后会自动跳回首页</Translate>} />
+      ) : phase === "failed" ? (
+        <EmptyState
+          title={<Translate id="auth.callback.failed">登录没有完成</Translate>}
+          description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可。</Translate>}
+          action={backHome}
+        />
+      ) : (
+        <EmptyState
+          title={<Translate id="auth.callback.idle">这里没有待处理的登录</Translate>}
+          description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏。</Translate>}
+          action={backHome}
+        />
+      )}
+    </Layout>
+  );
 };
 
 const mergeSearchAndHashParams = (search: string, hash: string): URLSearchParams => {

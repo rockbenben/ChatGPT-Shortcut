@@ -17,6 +17,7 @@ interface PromptFormModalProps {
 
 const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, initialValues, onSubmit, onClose }) => {
   const [form] = Form.useForm();
+  const shareLabel = translate({ id: "label.sharePrompt", message: "分享到社区页面，其他人可以浏览和收藏" });
 
   useEffect(() => {
     if (!open) return;
@@ -109,14 +110,15 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
         </Form.Item>
 
         <Form.Item>
-          <div style={{ display: "flex", alignItems: "center" }}>
+          {/* 开关默认开启，标签要说清打开后会发生什么；<label> 包住让整行可点、读屏也有名字 */}
+          <label style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
             <Form.Item name="share" valuePropName="checked" noStyle>
-              <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} />
+              <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} aria-label={shareLabel} />
             </Form.Item>
             <Typography.Text type="secondary" style={{ marginLeft: 8 }}>
-              <Translate id="label.sharePrompt">是否愿意将该提示词分享到公开页面？</Translate>
+              {shareLabel}
             </Typography.Text>
-          </div>
+          </label>
         </Form.Item>
       </Form>
     </Modal>

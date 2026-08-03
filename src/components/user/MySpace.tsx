@@ -1,8 +1,9 @@
 import React, { useContext, useState, useCallback, useMemo, useRef } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate from "@docusaurus/Translate";
-import { Empty, App, Row, Col } from "antd";
-import { BasePromptCard } from "@site/src/components/PromptCard/Base";
+import { App, Row, Col } from "antd";
+import { SearchOutlined, EditOutlined, AppstoreOutlined, HeartOutlined } from "@ant-design/icons";
+import { EmptyState } from "@site/src/components/EmptyState";
 import PromptCard from "@site/src/components/PromptCard";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from "@dnd-kit/core";
 import { arrayMove, SortableContext, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
@@ -337,7 +338,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                 {fallbackCards.length > 0 ? (
                   <>
                     <Col xs={24}>
-                      <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} style={{ margin: "1rem 0 0" }} />
+                      <EmptyState compact icon={<SearchOutlined />} title={<Translate id="myspace.fallbackHint">未找到匹配结果，为你推荐：</Translate>} />
                     </Col>
                     {fallbackCards.map((card) => {
                       if (fallbackSource === "community") {
@@ -368,23 +369,15 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
                   </Col>
                 ) : (
                   <Col xs={24}>
-                    <BasePromptCard>
-                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "2rem" }}>
-                        <Empty
-                          description={
-                            searchQuery.trim() ? (
-                              <Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>
-                            ) : filter === "all" ? (
-                              <Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>
-                            ) : filter === "prompt" ? (
-                              <Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>
-                            ) : (
-                              <Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>
-                            )
-                          }
-                        />
-                      </div>
-                    </BasePromptCard>
+                    {searchQuery.trim() ? (
+                      <EmptyState icon={<SearchOutlined />} title={<Translate id="showcase.usersList.noResult">未找到相关结果，试试其他关键词</Translate>} />
+                    ) : filter === "prompt" ? (
+                      <EmptyState icon={<EditOutlined />} title={<Translate id="message.noPrompts">暂无提示词，去创建一个吧</Translate>} />
+                    ) : filter === "all" ? (
+                      <EmptyState icon={<AppstoreOutlined />} title={<Translate id="message.noSpaceItems">暂无内容，去创建提示词或收藏喜欢的吧</Translate>} />
+                    ) : (
+                      <EmptyState icon={<HeartOutlined />} title={<Translate id="message.noFavorites">暂无收藏，去发现喜欢的提示词吧</Translate>} />
+                    )}
                   </Col>
                 )}
               </>

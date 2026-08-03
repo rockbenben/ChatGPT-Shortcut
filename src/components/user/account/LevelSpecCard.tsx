@@ -1,7 +1,7 @@
 import React from "react";
 import Translate from "@docusaurus/Translate";
 import { Typography, Flex } from "antd";
-import { getLevelInfo, LevelName, LevelIcon, type LevelInfo } from "@site/src/components/LevelSystem";
+import { getLevelInfo, LevelName, LevelIcon, MAX_LEVEL, type LevelInfo } from "@site/src/components/LevelSystem";
 
 const { Title } = Typography;
 
@@ -49,7 +49,7 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
               fontVariantNumeric: "tabular-nums",
             }}>
             <span style={{ color: levelInfo.accentColor }}>{String(levelInfo.level).padStart(2, "0")}</span>
-            <span style={{ opacity: 0.5 }}> / 05</span>
+            <span style={{ opacity: 0.5 }}> / {String(MAX_LEVEL).padStart(2, "0")}</span>
           </span>
         </Flex>
 

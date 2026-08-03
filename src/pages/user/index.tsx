@@ -5,7 +5,8 @@ import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { Card, Input, Button, Spin, Space, Row, Col, Typography, App, Avatar, Flex, Breadcrumb } from "antd";
-import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { HomeOutlined, EditOutlined, SaveOutlined, MailOutlined, UserOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
+import { EmptyState } from "@site/src/components/EmptyState";
 
 import { AuthContext } from "@site/src/components/AuthContext";
 import { getUserAllInfo } from "@site/src/api/user";
@@ -81,7 +82,8 @@ const UserProfile = () => {
 
   const submitNewUsername = async () => {
     if (!newUsername.trim()) {
-      message.error("Username cannot be empty");
+      // 不能复用 validation.username.required：那条是登录框的「请输入用户名或注册邮箱」
+      message.error(translate({ id: "validation.username.empty", message: "用户名不能为空" }));
       return;
     }
 
@@ -94,23 +96,42 @@ const UserProfile = () => {
     try {
       await updateUsername(newUsername);
       await fetchUserInfo();
-      message.success("Username updated successfully!");
+      message.success(translate({ id: "message.username.updated", message: "用户名已更新" }));
       setEditUsername(false);
     } catch (error) {
       console.error("Error updating username:", error);
-      const errorMessage = error?.response?.data?.error?.message || "Unknown error";
-      message.error(`Failed to update username: ${errorMessage}`);
+      const detail = error?.response?.data?.error?.message;
+      message.error(detail || translate({ id: "message.username.updateError", message: "用户名更新失败，请稍后重试" }));
     } finally {
       setLoading(false);
     }
   };
 
-  if (userLoading || !userInfo) {
+  if (userLoading) {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
           <Spin size="large" />
         </div>
+      </Layout>
+    );
+  }
+
+  if (!userInfo) {
+    return (
+      <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
+        <EmptyState
+          icon={<UserOutlined />}
+          title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
+          description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮。</Translate>}
+          action={
+            <Link to="/">
+              <Button type="primary" icon={<LoginOutlined />}>
+                <Translate id="auth.callback.backHome">返回首页登录</Translate>
+              </Button>
+            </Link>
+          }
+        />
       </Layout>
     );
   }
@@ -188,8 +209,8 @@ const UserProfile = () => {
                           {editUsername ? (
                             <Space.Compact style={{ width: "100%" }}>
                               <Input value={newUsername} onChange={(e) => setNewUsername(e.target.value)} onPressEnter={submitNewUsername} autoFocus />
-                              <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} />
-                              <Button icon={<EditOutlined />} onClick={() => setEditUsername(false)} />
+                              <Button type="primary" icon={<SaveOutlined />} onClick={submitNewUsername} loading={loading} aria-label={translate({ id: "action.save", message: "保存" })} />
+                              <Button icon={<CloseOutlined />} onClick={() => setEditUsername(false)} aria-label={translate({ id: "action.cancel", message: "取消" })} />
                             </Space.Compact>
                           ) : (
                             <Flex align="center" gap={4}>

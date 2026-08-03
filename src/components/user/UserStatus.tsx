@@ -104,7 +104,7 @@ const UserStatus = () => {
           </span>
         </Button>
         <Dropdown menu={{ items: menuItems }} placement="bottomRight">
-          <Button icon={<SettingOutlined />} aria-label="Settings" />
+          <Button icon={<SettingOutlined />} aria-label={translate({ id: "link.myAccount", message: "我的账户" })} />
         </Dropdown>
       </Space>
     ),
