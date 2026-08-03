@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from "react";
 import { Tooltip, Space, Tag as AntTag } from "antd";
 import { useHistory, useLocation } from "@docusaurus/router";
 import { Tags, TagList, type TagType } from "@site/src/data/tags";
-import { sortBy, toggleListItem } from "@site/src/utils/jsUtils";
+import { toggleListItem } from "@site/src/utils/jsUtils";
 import { prepareUserState } from "@site/src/components/SearchBar/index";
 
 interface PromptCardTagProps {
@@ -27,8 +27,9 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
 }
 
 function sortTags(tags: TagType[]) {
-  const tagObjects = (tags || []).map((tag) => ({ tag, ...Tags[tag] }));
-  return sortBy(tagObjects, (t) => TagList.indexOf(t.tag));
+  return (tags || [])
+    .map((tag) => ({ tag, ...Tags[tag] }))
+    .sort((a, b) => TagList.indexOf(a.tag) - TagList.indexOf(b.tag));
 }
 
 /** Renders tag list with click-to-filter behavior */

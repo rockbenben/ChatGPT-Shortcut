@@ -18,12 +18,11 @@ import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFaile
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
-import { App, Button, Typography, Flex, Row, Col, Card } from "antd";
+import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
 import { FilterOutlined, CaretDownOutlined, CaretUpOutlined, AppstoreOutlined, HeartOutlined, HeartFilled, EditOutlined, TagOutlined, CloseOutlined } from "@ant-design/icons";
 
 import ShowcaseTagSelect from "@site/src/components/ShowcaseTagSelect";
 import ShowcaseFilterToggle from "@site/src/components/ShowcaseFilterToggle";
-import ShowcaseTooltip from "@site/src/components/ShowcaseTooltip";
 
 import UserStatus from "@site/src/components/user/UserStatus";
 import SearchBar, { useFilteredPrompts } from "@site/src/components/SearchBar";
@@ -151,10 +150,10 @@ const ShowcaseFilters: React.FC = React.memo(() => {
 
           return (
             <div key={i} className={`${styles.checkboxListItem} ${!showTagsOnMobile ? "hideOnSmallScreen" : ""}`}>
-              <ShowcaseTooltip id={id} text={description} anchorEl="#__docusaurus">
+              <Tooltip title={description} mouseEnterDelay={0.4}>
                 {/* 圆点收敛为中性灰、选中时点亮 accent（单 accent 体系）——样式见 ShowcaseTagSelect/styles.module.css */}
                 <ShowcaseTagSelect tag={tag} id={id} label={label} icon={<span className="tagFilterDot" />} />
-              </ShowcaseTooltip>
+              </Tooltip>
             </div>
           );
         })}

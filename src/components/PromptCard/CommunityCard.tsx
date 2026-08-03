@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Tooltip, Button, Typography, Flex } from "antd";
-import { BasePromptCard } from "./Base";
+import { BasePromptCard, ClampBox } from "./Base";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
@@ -60,13 +60,11 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
   return (
     <BasePromptCard
       title={
-        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
-            <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
-              {user.title}
-            </Link>
-          </Typography.Title>
-        </Flex>
+        <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+          <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+            {user.title}
+          </Link>
+        </Typography.Title>
       }
       titleExtra={
         <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
@@ -105,22 +103,22 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
         ),
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
-      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <PromptRemark remark={user.remark} />
-        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ flex: 1, marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
+      <PromptRemark remark={user.remark} />
+      <ClampBox>
+        <Typography.Paragraph ellipsis={{ rows: 5 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {user.description}
         </Typography.Paragraph>
-        <Flex justify="space-between" align="center">
-          <div style={{ flex: 1, overflow: "hidden" }}>
-            <PromptCardTag tags={user.tags} />
-          </div>
-          {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-            </a>
-          )}
-        </Flex>
-      </div>
+      </ClampBox>
+      <Flex justify="space-between" align="center">
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          <PromptCardTag tags={user.tags} />
+        </div>
+        {user.website && (
+          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
+          </a>
+        )}
+      </Flex>
     </BasePromptCard>
   );
 };

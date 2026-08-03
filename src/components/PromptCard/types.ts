@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
 
-export type CardType = "user" | "favorite" | "data" | "community";
-
 export interface PromptCardProps {
-  type: CardType;
+  type: "user" | "favorite" | "data" | "community";
   data: any; // We'll refine this type as we go
   index?: number; // For sortable items
   sortableId?: string | number; // Custom ID for sortable context (uses data.id if not provided)
@@ -20,5 +18,4 @@ export interface PromptCardProps {
   onOpenModal?: (data: any) => void;
   onConvertToPrivate?: (data: any) => void; // Convert unavailable prompt to private
   extraActions?: ReactNode;
-  typeBadge?: ReactNode;
 }

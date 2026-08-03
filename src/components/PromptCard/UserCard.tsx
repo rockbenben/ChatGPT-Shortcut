@@ -1,6 +1,6 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard } from "./Base";
+import { BasePromptCard, ClampBox } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
@@ -72,14 +72,14 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       style={style}
       {...attributes}
       title={
-        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Flex align="start" style={{ flex: 1, minWidth: 0, marginRight: 8, overflow: "hidden" }}>
-            {!isFiltered && (
-              <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
-                <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
-              </div>
-            )}
-            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, minWidth: 0 }} ellipsis={{ rows: 2 }}>
+        <Flex align="start" style={{ overflow: "hidden" }}>
+          {!isFiltered && (
+            <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+              <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
+            </div>
+          )}
+          <ClampBox>
+            <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
               {user.share ? (
                 <Link href={`/community-prompt?id=${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
                   {user.title}
@@ -88,7 +88,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
                 <span className={styles.showcaseCardLink}>{user.title}</span>
               )}
             </Typography.Title>
-          </Flex>
+          </ClampBox>
         </Flex>
       }
       titleExtra={
@@ -121,22 +121,22 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
-      <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-        <PromptRemark remark={user.remark} />
+      <PromptRemark remark={user.remark} />
+      <ClampBox>
         <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ marginBottom: 0, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55 }}>
           {user.description}
         </Typography.Paragraph>
-        <Flex justify="space-between" align="center">
-          <div style={{ flex: 1, overflow: "hidden" }}>
-            <PromptCardTag tags={user.tags} clickable={false} />
-          </div>
-          {user.website && (
-            <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-              <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-            </a>
-          )}
-        </Flex>
-      </div>
+      </ClampBox>
+      <Flex justify="space-between" align="center">
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          <PromptCardTag tags={user.tags} clickable={false} />
+        </div>
+        {user.website && (
+          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
+            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
+          </a>
+        )}
+      </Flex>
     </BasePromptCard>
   );
 };

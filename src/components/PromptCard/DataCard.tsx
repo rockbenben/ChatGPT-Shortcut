@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
 import { HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
-import { BasePromptCard } from "./Base";
+import { BasePromptCard, ClampBox } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
@@ -66,19 +66,19 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
   return (
     <BasePromptCard
       title={
-        <Flex justify="space-between" align="start" style={{ width: "100%" }}>
-          <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4, flex: 1, marginRight: 8 }} ellipsis={{ rows: 2 }}>
-            <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
-              {userInfo.title}
-            </Link>
-          </Typography.Title>
-          <Statistic
-            value={copyCount}
-            formatter={(value) => formatCompactNumber(value as number)}
-            prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
-            styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
-          />
-        </Flex>
+        <Typography.Title level={5} style={{ margin: 0, fontSize: 14, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.4 }} ellipsis={{ rows: 2 }}>
+          <Link href={`/prompt/${user.id}`} className={styles.showcaseCardLink} onClick={(e) => e.stopPropagation()}>
+            {userInfo.title}
+          </Link>
+        </Typography.Title>
+      }
+      titleExtra={
+        <Statistic
+          value={copyCount}
+          formatter={(value) => formatCompactNumber(value as number)}
+          prefix={<FireOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
+          styles={{ content: { fontSize: 11, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" } }}
+        />
       }
       actions={[
         <CopyButton key="copy" text={userInfo.prompt} trackingId={user.id} variant="iconOnly" block />,
@@ -90,9 +90,11 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
       <PromptRemark remark={userInfo.remark} style={{ marginBottom: 0 }} />
-      <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ flex: 1, color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55, marginBottom: 0 }}>
-        {userInfo.prompt}
-      </Typography.Paragraph>
+      <ClampBox>
+        <Typography.Paragraph ellipsis={{ rows: 3 }} style={{ color: "var(--ifm-color-content-secondary)", fontSize: 13, lineHeight: 1.55, marginBottom: 0 }}>
+          {userInfo.prompt}
+        </Typography.Paragraph>
+      </ClampBox>
       <Flex justify="space-between" align="center">
         <div style={{ flex: 1 }}>
           <PromptCardTag tags={user.tags} muted />

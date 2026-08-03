@@ -15,8 +15,6 @@
      [data-theme="dark"] 主色阶），方便两分支互相 cherry-pick。本分支强制 dark，dark 块恒生效，无 light 块。 */
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 55%;
-  --site-color-tooltip: #fff;
-  --site-color-tooltip-background: #2a2f33;
   --site-color-svg-icon-favorite: #e9669e;
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
@@ -395,26 +393,6 @@ article.markdown a:hover {
   min-height: 100vh;
 }
 
-/* Social Buttons Grayscale Effect */
-.social-buttons-grayscale {
-  display: inline-block;
-}
-
-.social-buttons-grayscale button, 
-.social-buttons-grayscale a,
-.social-buttons-grayscale .react-share__ShareButton {
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.social-buttons-grayscale:hover button,
-.social-buttons-grayscale:hover a,
-.social-buttons-grayscale:hover .react-share__ShareButton {
-  filter: none;
-  opacity: 1;
-}
-
 @media (min-width: 450px) and (max-width: 575px) {
   .ant-col-xs-24 {
     flex: 0 0 50% !important;
@@ -651,7 +629,7 @@ article.markdown a:hover {
 
 /* ========================================================================== */
 /* === Comments — polish for B+ refined modern family                       ==
-/*    AI polling strip / Empty state / 其余在 CommentComponent inline 改完
+/*    AI polling strip；空状态走共用的 <EmptyState>，其余在 CommentComponent inline 改完
 /* ========================================================================== */
 
 /* AI polling progress strip — 提交评论后短暂出现，把后台 5 阶段轮询暴露为 first-class UI */
@@ -694,28 +672,13 @@ article.markdown a:hover {
   100% { background-position: -100% 0; }
 }
 
-/* Empty state — 取代 antd <Empty> 默认 cartoon 图，用 hairline + eyebrow + 引导文字 */
-.comments-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 36px 0;
-  text-align: center;
-}
-.comments-empty-text {
-  font-size: 13px;
-  color: var(--ifm-color-content-secondary);
-  margin: 0;
-}
-
 /* ========================================================================== */
 /* === Share UI — Stretch URL + Compact Channels + Native First            ==
 /*    去掉 react-share 默认彩色 round 32px icons，用 antd outlined + label
 /*    + Web Share API 优先 + Copy Link 摆在第一位
 /* ========================================================================== */
 
-/* 仅保留 antd 6 没法 inline 表达的：覆盖 react-share button reset + hover state.
+/* 仅保留 antd 6 没法 inline 表达的：原生 button 的 reset + hover state。
    容器 / grid / typography / 静态色全部由 ShareButtons.tsx 用 Flex + inline style 承担 */
 
 .share-channel-btn {

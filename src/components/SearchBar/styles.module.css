@@ -10,12 +10,14 @@
 .searchInput {
   /* 逻辑属性：RTL（ar locale）下随排版方向镜像，物理 margin-left 不会 */
   margin-inline-start: auto;
-  width: 264px;
+  /* 360 而非 264：提示符/键帽/按钮吃掉约 165px，264px 下文字只剩 ~100px 会截断示例。
+     360px 留 ~195px，最长的德语/印尼语（约 190px）也放得下 */
+  width: 360px;
   transition: width 0.2s var(--site-motion-emphasized);
 }
 
 .searchInput:focus-within {
-  width: 330px;
+  width: 420px;
 }
 
 @media (max-width: 767px) {

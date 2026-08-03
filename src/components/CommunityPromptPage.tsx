@@ -1,6 +1,6 @@
 import React, { Suspense, useContext, useCallback, useMemo, useState } from "react";
-import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Result, Breadcrumb, Popover } from "antd";
-import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined } from "@ant-design/icons";
+import { Card, Typography, Space, Flex, Row, Col, Button, Skeleton, App, Breadcrumb, Popover } from "antd";
+import { HeartOutlined, HeartFilled, UserOutlined, UpOutlined, DownOutlined, HomeOutlined, ShareAltOutlined, FileSearchOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
@@ -11,6 +11,8 @@ import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
+import { EmptyState } from "@site/src/components/EmptyState";
+import { toBcp47 } from "@site/src/utils/i18n";
 import Comments from "./Comments";
 
 const ShareButtons = React.lazy(() => import("./ShareButtons"));
@@ -43,6 +45,14 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const { message: messageApi } = App.useApp();
   const { siteConfig, i18n } = useDocusaurusContext();
   const { toggleFavorite } = useFavorite();
+
+  // schema.org / 数字格式化都要 BCP-47：读 localeConfigs.htmlLang（覆盖 ind→id 这种历史命名）
+  const bcp47Locale = toBcp47(i18n.currentLocale, i18n.localeConfigs);
+
+  // 投票控件的 title / aria-label 需要纯字符串（不能塞 <Translate> 节点），复用已有词条
+  const upvoteLabel = translate({ id: "action.upvote", message: "赞" });
+  const downvoteLabel = translate({ id: "action.downvote", message: "踩" });
+  const voteLabel = `${upvoteLabel} / ${downvoteLabel}`;
 
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
@@ -133,11 +143,11 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
         </Head>
         <Row justify="center" style={{ marginTop: 24, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
-            <Result
-              status="404"
-              title={translate({ id: "community.notFound", message: "提示词未找到" })}
-              subTitle={translate({ id: "community.notFoundDesc", message: "该提示词可能已被删除或设为私有" })}
-              extra={
+            <EmptyState
+              icon={<FileSearchOutlined />}
+              title={<Translate id="community.notFound">提示词未找到</Translate>}
+              description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+              action={
                 <Link to="/community-prompts">
                   <Button type="primary">
                     <Translate id="community.backToList">返回列表</Translate>
@@ -212,10 +222,11 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                       {prompt.owner}
                     </span>
                   )}
+                  {/* 显式传页面 locale：裸 toLocaleString() 跟的是宿主 locale，会和界面语言错配 */}
                   <span style={monoNum}>
-                    {charCount.toLocaleString()} <Translate id="prompt.charsLabel">字符</Translate>
+                    {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
                   </span>
-                  <span style={monoNum}>≈ {tokenCount.toLocaleString()} tokens</span>
+                  <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
                 </Space>
               </Flex>
 
@@ -255,13 +266,18 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               <Flex justify="space-between" align="center" wrap gap={8} style={{ paddingTop: 4 }}>
                 <Space size="small" wrap>
                   {/* Asymmetric vote pill：▲ 永远带数字（主信号），▼ 在 downvotes=0 时 icon-only 弱化 */}
-                  <div className="comp-sheet-vote" role="group" aria-label="vote" title={`${prompt.upvotes ?? 0} 上 / ${prompt.downvotes ?? 0} 下`}>
+                  {/* 原来是硬编码中文「N 上 / N 下」，18 种语言照发；改用已有译文 */}
+                  <div
+                    className="comp-sheet-vote"
+                    role="group"
+                    aria-label={voteLabel}
+                    title={`${prompt.upvotes ?? 0} ${upvoteLabel} / ${prompt.downvotes ?? 0} ${downvoteLabel}`}>
                     <Button
                       type="text"
                       size="small"
                       icon={<UpOutlined />}
                       onClick={() => handleVote("upvote")}
-                      aria-label="upvote"
+                      aria-label={upvoteLabel}
                       className="comp-sheet-vote-btn comp-sheet-vote-up">
                       <span style={monoNum}>{prompt.upvotes ?? 0}</span>
                     </Button>
@@ -270,7 +286,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                       size="small"
                       icon={<DownOutlined />}
                       onClick={() => handleVote("downvote")}
-                      aria-label="downvote"
+                      aria-label={downvoteLabel}
                       className={"comp-sheet-vote-btn comp-sheet-vote-down" + ((prompt.downvotes ?? 0) > 0 ? "" : " comp-sheet-vote-icon-only")}>
                       {(prompt.downvotes ?? 0) > 0 && <span style={monoNum}>{prompt.downvotes}</span>}
                     </Button>
