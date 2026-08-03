@@ -1,56 +1,27 @@
 import React from "react";
 import { ConfigProvider, theme, App } from "antd";
 import { AuthProvider } from "@site/src/components/AuthContext";
+import { useAntdLocale } from "./useAntdLocale";
+import { antdDarkTokens } from "./antdTokens.mjs";
 
 // Dark theme configuration with zero-runtime
-// 注意：需先运行 `yarn gen:antd-css` 生成静态样式
-// B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
-// teal-ink 海沉绿 #397e6a：白字对比达标，无需墨字按钮 hack（磷光黄绿才需要）。
+// token 本体在 ./antdTokens.mjs（与 scripts/genAntdCss.mjs 共用），
+// 静态样式 src/css/antd.dark.css 由 scripts/genAntdCss.mjs 经 scripts/generate.mjs
+// 在 prestart/predev/pretypecheck/prebuild/predeploy 自动生成（不入库），改 token 无需手动重跑
 const darkTheme = {
-  token: {
-    colorPrimary: "#397e6a",
-    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable
-    // 图标、type="link" 按钮会漏出蓝色，必须显式对齐到提亮版品牌绿（dark-only 单主题）
-    colorLink: "#57c2a3",
-    colorBgLayout: "#14171a",
-    colorBgContainer: "#1d2126",
-    colorBgElevated: "#272d33",
-    colorBorderSecondary: "rgba(255,255,255,0.08)",
-    colorText: "#ededed",
-    colorTextSecondary: "rgba(255,255,255,0.6)",
-    colorTextTertiary: "rgba(255,255,255,0.4)",
-    borderRadius: 6,
-    borderRadiusSM: 4,
-    borderRadiusLG: 12,
-    fontFamilyCode: 'ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace',
-    motionDurationFast: "0.12s",
-    motionDurationMid: "0.2s",
-    motionDurationSlow: "0.32s",
-  },
-  components: {
-    Card: {
-      headerBg: "transparent",
-      paddingLG: 16,
-    },
-    Tag: {
-      borderRadiusSM: 0,
-    },
-    Button: {
-      borderRadius: 6,
-    },
-  },
+  ...antdDarkTokens,
   algorithm: theme.darkAlgorithm,
+  // zeroRuntime 只在运行期加：提取器需要 antd 真的注册样式才有东西可提。
+  // ⚠ 本行是分支专属：main（双主题）走 antd 默认 runtime 注入且没有静态 CSS 产出管线，
+  // 把 zeroRuntime/cssVar 带过去会让 antd 组件全部失样式。
   zeroRuntime: true,
-  cssVar: { key: "aishort" },
 };
 
-// antd locale 不注入：全项目暴露 antd 默认文案的只有 Pagination 的几个 aria-label / quickJumper
-// 字符串（"Previous Page" / "Go to" 等），其他组件（Modal.confirm/Popconfirm/Empty/Form）
-// 都已在 callsite 用 <Translate> 覆盖。引入 18 个 antd locale pack 换这点收益不划算
-// （~150KB gzipped bundle 膨胀）。Pagination 默认英文可接受。
 export default function Root({ children }) {
+  const locale = useAntdLocale();
+
   return (
-    <ConfigProvider theme={darkTheme}>
+    <ConfigProvider theme={darkTheme} locale={locale}>
       <App className="app-root">
         <AuthProvider>{children}</AuthProvider>
       </App>
