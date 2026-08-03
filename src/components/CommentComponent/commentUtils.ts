@@ -1,7 +1,7 @@
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 
 // JWT payload 解析——仅取 id 判断"是否已登录"。有效期校验在 AuthContext.isValidToken，职责不同勿合并
-export const parseJwt = (token: string) => {
+const parseJwt = (token: string) => {
   try {
     const base64Url = token.split(".")[1];
     const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
@@ -35,14 +35,6 @@ export const nestComments = (flatComments: any[]) => {
   const commentMap = new Map();
   const sortedComments = [...flatComments].sort((a, b) => a.id - b.id);
 
-  const dateCache = new Map();
-  const getDate = (id: any) => {
-    if (!dateCache.has(id)) {
-      dateCache.set(id, new Date(id).getTime());
-    }
-    return dateCache.get(id);
-  };
-
   for (const comment of sortedComments) {
     comment.children = [];
     commentMap.set(comment.id, comment);
@@ -62,5 +54,6 @@ export const nestComments = (flatComments: any[]) => {
     rootComments.push(comment);
   }
 
-  return rootComments.sort((a, b) => getDate(b.id) - getDate(a.id));
+  // id 递增即时间递增，直接按 id 倒序（原先绕道 new Date(id).getTime()，结果就是 id 本身）
+  return rootComments.sort((a, b) => b.id - a.id);
 };

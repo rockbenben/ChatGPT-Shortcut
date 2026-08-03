@@ -3,11 +3,10 @@ import Translate from "@docusaurus/Translate";
 import { Button } from "antd";
 import BoringAvatar from "boring-avatars";
 import ReactMarkdown from "react-markdown";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CommentComponent from "@site/src/components/CommentComponent";
-
-dayjs.extend(relativeTime);
+import { formatRelativeTime } from "@site/src/utils/formatters";
+import { toBcp47 } from "@site/src/utils/i18n";
 
 // 项目家族化头像调色板 — 同饱和度 / 同明度，仅 hue 旋转。
 // 头像多色是身份语义（区分用户），允许多色；但家族锚点必须跟品牌主 hue 走：
@@ -31,42 +30,47 @@ interface CommentThreadProps {
 }
 
 /** 单条评论 + 递归子回复的展示 */
-const CommentThread: React.FC<CommentThreadProps> = ({ comment, logoUrl, replyingTo, onReply, replyFormNode }) => (
-  <CommentComponent
-    actions={[
-      <Button key="comment-basic-reply-to" type="text" size="small" onClick={() => onReply(comment.id)}>
-        <Translate id="action.reply">回复</Translate>
-      </Button>,
-    ]}
-    author={comment.author?.name}
-    avatar={
-      comment.author?.name ? (
-        <BoringAvatar size={40} name={comment.author.name} variant="beam" colors={avatarColors} />
-      ) : (
-        // 官方账号回复用站点 logo 作头像（身份最强标识），替代随机 BoringAvatar
-        <div
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            background: "rgba(var(--ifm-color-primary-rgb), 0.08)",
-            border: "1px solid var(--site-color-hairline)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-          <img src={logoUrl} width={26} height={26} alt="AI Short" />
-        </div>
-      )
-    }
-    content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
-    datetime={dayjs(comment.createdAt).fromNow()}>
-    {replyingTo === comment.id && replyFormNode}
-    {comment.children &&
-      comment.children.map((childComment: any) => (
-        <CommentThread key={childComment.id} comment={childComment} logoUrl={logoUrl} replyingTo={replyingTo} onReply={onReply} replyFormNode={replyFormNode} />
-      ))}
-  </CommentComponent>
-);
+const CommentThread: React.FC<CommentThreadProps> = ({ comment, logoUrl, replyingTo, onReply, replyFormNode }) => {
+  const { i18n } = useDocusaurusContext();
+  const bcp47 = toBcp47(i18n.currentLocale, i18n.localeConfigs);
+
+  return (
+    <CommentComponent
+      actions={[
+        <Button key="comment-basic-reply-to" type="text" size="small" onClick={() => onReply(comment.id)}>
+          <Translate id="action.reply">回复</Translate>
+        </Button>,
+      ]}
+      author={comment.author?.name}
+      avatar={
+        comment.author?.name ? (
+          <BoringAvatar size={40} name={comment.author.name} variant="beam" colors={avatarColors} />
+        ) : (
+          // 官方账号回复用站点 logo 作头像（身份最强标识），替代随机 BoringAvatar
+          <div
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: "50%",
+              background: "rgba(var(--ifm-color-primary-rgb), 0.08)",
+              border: "1px solid var(--site-color-hairline)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+            <img src={logoUrl} width={26} height={26} alt="AI Short" />
+          </div>
+        )
+      }
+      content={<ReactMarkdown>{comment.content}</ReactMarkdown>}
+      datetime={formatRelativeTime(comment.createdAt, bcp47)}>
+      {replyingTo === comment.id && replyFormNode}
+      {comment.children &&
+        comment.children.map((childComment: any) => (
+          <CommentThread key={childComment.id} comment={childComment} logoUrl={logoUrl} replyingTo={replyingTo} onReply={onReply} replyFormNode={replyFormNode} />
+        ))}
+    </CommentComponent>
+  );
+};
 
 export default CommentThread;

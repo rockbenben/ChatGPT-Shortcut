@@ -3,6 +3,8 @@ import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { App, Modal, Pagination } from "antd";
+import { MessageOutlined } from "@ant-design/icons";
+import { EmptyState } from "@site/src/components/EmptyState";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommentSkeleton } from "@site/src/components/CommentComponent/CommentSkeleton";
 import CommentForm, { type PanelType } from "@site/src/components/CommentComponent/CommentForm";
@@ -234,14 +236,12 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
         {isLoading ? (
           <CommentSkeleton count={10} />
         ) : comments.length === 0 ? (
-          <div className="comments-empty">
-            <span className="comp-sheet-eyebrow">
-              <Translate id="comments.empty">暂无评论</Translate>
-            </span>
-            <p className="comments-empty-text">
-              <Translate id="message.noComments">成为第一个评论者吧</Translate>
-            </p>
-          </div>
+          <EmptyState
+            compact
+            icon={<MessageOutlined />}
+            title={<Translate id="comments.empty">暂无评论</Translate>}
+            description={<Translate id="message.noComments">成为第一个评论者吧</Translate>}
+          />
         ) : (
           <div className="comment-list">
             {comments.map((comment) => (

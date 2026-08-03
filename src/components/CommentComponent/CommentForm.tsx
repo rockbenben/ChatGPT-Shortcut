@@ -7,7 +7,10 @@ import CommentEditor from "./CommentEditor";
 // GiphySelector 拉入 @giphy/react-components + styled-components(~3MB lib)；
 // 仅用户点 GIF 按钮才渲染，懒加载省 common chunk ~400-700KB gzipped
 const GiphySelector = React.lazy(() => import("./GiphySelector").then((m) => ({ default: m.GiphySelector })));
-// EmojiPicker 拉入 @emoji-mart/data (27MB raw 表情数据集) + @emoji-mart/react；
+// EmojiPicker 拉入 @emoji-mart/data + @emoji-mart/react。
+// 注意 @emoji-mart/data 在 node_modules 里是 27MB，但那是全部表情集（14/15 两代 ×
+// apple/google/facebook/twitter/native）；package.json main 只指向 sets/15/native.json，
+// 实际进 bundle 的是单独一个 chunk：533KB raw / 108KB gzip。
 // 仅用户点 😀 才渲染，懒加载省 common chunk ~80-120KB gzipped
 const EmojiPickerLazy = React.lazy(() => import("./EmojiPickerLazy"));
 
@@ -97,33 +100,37 @@ const CommentForm: React.FC<CommentFormProps> = ({ draftKey, requiredMessage, su
   };
 
   return (
-    <Form form={form} onFinish={handleFinish} onValuesChange={handleValuesChange}>
-      <Form.Item
-        name="content"
-        rules={[
-          { required: true, message: requiredMessage },
-          {
-            max: 2000,
-            message: translate({
-              id: "validation.comment.maxLength",
-              message: "评论内容不应超过2000个字符",
-            }),
-          },
-        ]}>
-        <CommentEditor
-          onSubmit={form.submit}
-          submitting={submitting}
-          isLoggedIn={isLoggedIn}
-          onLogin={onLogin}
-          onEmojiToggle={() => onTogglePanel("emoji")}
-          onGifToggle={() => onTogglePanel("gif")}
-          onCancel={handleCancel}
-          placeholder={translate({
-            id: "placeholder.comment",
-            message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
-          })}
-        />
-      </Form.Item>
+    <>
+      <Form form={form} onFinish={handleFinish} onValuesChange={handleValuesChange}>
+        <Form.Item
+          name="content"
+          rules={[
+            { required: true, message: requiredMessage },
+            {
+              max: 2000,
+              message: translate({
+                id: "validation.comment.maxLength",
+                message: "评论内容不应超过2000个字符",
+              }),
+            },
+          ]}>
+          <CommentEditor
+            onSubmit={form.submit}
+            submitting={submitting}
+            isLoggedIn={isLoggedIn}
+            onLogin={onLogin}
+            onEmojiToggle={() => onTogglePanel("emoji")}
+            onGifToggle={() => onTogglePanel("gif")}
+            onCancel={handleCancel}
+            placeholder={translate({
+              id: "placeholder.comment",
+              message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
+            })}
+          />
+        </Form.Item>
+      </Form>
+      {/* 面板必须在 <Form> 之外：Giphy 搜索框是原生 <input>，放在 form 内按回车会触发
+          隐式提交，弹出「请输入评论内容」这种无关的校验错误。位置不变，仍走 setFieldsValue 回填。 */}
       {activePanel === "emoji" && (
         <Suspense fallback={null}>
           <EmojiPickerLazy isDarkMode={isDarkMode} onEmojiSelect={handleEmojiSelect} />
@@ -134,7 +141,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ draftKey, requiredMessage, su
           <GiphySelector onGifSelect={handleGiphySelect} />
         </Suspense>
       )}
-    </Form>
+    </>
   );
 };
 
