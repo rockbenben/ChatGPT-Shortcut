@@ -270,7 +270,7 @@
     "message": "Пожалуйста, введите код сброса!"
   },
   "input.search.placeholder": {
-    "message": "Поиск: письмо, перевод, программирование…"
+    "message": "письмо, перевод…"
   },
   "label.agree": {
     "message": "Согласен"
@@ -288,7 +288,7 @@
     "message": "Название промпта"
   },
   "label.sharePrompt": {
-    "message": "Хотите поделиться этим промптом на публичной странице?"
+    "message": "Опубликовать на странице сообщества — другие смогут увидеть и добавить в избранное"
   },
   "level.bronze": {
     "message": "Бронза"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Поделиться в"
+  },
+  "share.shareOn": {
+    "message": "Поделиться в {channel}"
   },
   "showcase.header.button": {
     "message": "Обзор сообщества"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "Отметка «Нравится» сохранена!"
+  },
+  "auth.callback.title": {
+    "message": "Завершение входа"
+  },
+  "auth.callback.working": {
+    "message": "Выполняется вход…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Не закрывайте эту страницу — скоро вы вернётесь на главную."
+  },
+  "auth.callback.failed": {
+    "message": "Вход не завершён"
+  },
+  "auth.callback.failedHint": {
+    "message": "Ссылка для входа могла истечь или уже была использована. Вернитесь на главную и войдите снова."
+  },
+  "auth.callback.idle": {
+    "message": "Здесь нет ожидающего входа"
+  },
+  "auth.callback.idleHint": {
+    "message": "Эта страница нужна только для перенаправления при входе — добавлять её в закладки не нужно."
+  },
+  "auth.callback.backHome": {
+    "message": "На главную, чтобы войти"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Введите название выше, выберите цвет — и первый тег готов."
+  },
+  "validation.username.empty": {
+    "message": "Имя пользователя не может быть пустым"
+  },
+  "message.username.updated": {
+    "message": "Имя пользователя обновлено"
+  },
+  "message.username.updateError": {
+    "message": "Не удалось обновить имя пользователя. Повторите попытку чуть позже."
+  },
+  "message.requestTimeout": {
+    "message": "Время запроса истекло. Повторите попытку."
+  },
+  "message.tooManyRequests": {
+    "message": "Слишком много попыток. Повторите чуть позже."
+  },
+  "account.signInRequired": {
+    "message": "Войдите, чтобы открыть аккаунт"
+  },
+  "account.signInRequiredHint": {
+    "message": "Возвращаем вас на главную — или нажмите кнопку ниже."
+  },
+  "myspace.tagManager.color": {
+    "message": "Цвет тега"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Поиск GIF"
   }
 }

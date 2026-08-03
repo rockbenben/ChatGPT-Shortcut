@@ -270,7 +270,7 @@
     "message": "Por favor, insira seu código de redefinição!"
   },
   "input.search.placeholder": {
-    "message": "Buscar: escrita, tradução, programação…"
+    "message": "escrita, tradução…"
   },
   "label.agree": {
     "message": "Concordo"
@@ -288,7 +288,7 @@
     "message": "Nome do prompt"
   },
   "label.sharePrompt": {
-    "message": "Deseja compartilhar este prompt na página pública?"
+    "message": "Compartilhar na página da comunidade — outras pessoas poderão ver e favoritar"
   },
   "level.bronze": {
     "message": "Bronze"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Compartilhar em"
+  },
+  "share.shareOn": {
+    "message": "Compartilhar em {channel}"
   },
   "showcase.header.button": {
     "message": "Explorar comunidade"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "Prompt curtido!"
+  },
+  "auth.callback.title": {
+    "message": "Concluir o login"
+  },
+  "auth.callback.working": {
+    "message": "Entrando…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Não feche esta página: você voltará à página inicial em instantes."
+  },
+  "auth.callback.failed": {
+    "message": "O login não foi concluído"
+  },
+  "auth.callback.failedHint": {
+    "message": "O link de login pode ter expirado ou já ter sido usado. Volte à página inicial e entre novamente."
+  },
+  "auth.callback.idle": {
+    "message": "Não há login pendente aqui"
+  },
+  "auth.callback.idleHint": {
+    "message": "Esta página só trata dos redirecionamentos de login — não precisa salvá-la."
+  },
+  "auth.callback.backHome": {
+    "message": "Voltar ao início para entrar"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Digite um nome acima, escolha uma cor e sua primeira etiqueta estará pronta."
+  },
+  "validation.username.empty": {
+    "message": "O nome de usuário não pode ficar vazio"
+  },
+  "message.username.updated": {
+    "message": "Nome de usuário atualizado"
+  },
+  "message.username.updateError": {
+    "message": "Não foi possível atualizar o nome de usuário. Tente novamente em instantes."
+  },
+  "message.requestTimeout": {
+    "message": "A solicitação expirou. Tente novamente."
+  },
+  "message.tooManyRequests": {
+    "message": "Tentativas em excesso. Tente novamente em instantes."
+  },
+  "account.signInRequired": {
+    "message": "Entre para ver sua conta"
+  },
+  "account.signInRequiredHint": {
+    "message": "Levando você para a página inicial — ou use o botão abaixo."
+  },
+  "myspace.tagManager.color": {
+    "message": "Cor da etiqueta"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Buscar GIFs"
   }
 }

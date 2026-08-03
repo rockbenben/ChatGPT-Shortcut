@@ -270,7 +270,7 @@
     "message": "Lütfen sıfırlama kodunuzu girin!"
   },
   "input.search.placeholder": {
-    "message": "Ara: yazma, çeviri, kodlama…"
+    "message": "yazma, çeviri…"
   },
   "label.agree": {
     "message": "Kabul ediyorum"
@@ -288,7 +288,7 @@
     "message": "Prompt Adı"
   },
   "label.sharePrompt": {
-    "message": "Bu prompt'u genel sayfada paylaşmak ister misiniz?"
+    "message": "Topluluk sayfasında paylaş — diğerleri görebilir ve favorilerine ekleyebilir"
   },
   "level.bronze": {
     "message": "Bronz"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Şuraya paylaş"
+  },
+  "share.shareOn": {
+    "message": "{channel} üzerinden paylaş"
   },
   "showcase.header.button": {
     "message": "Topluluğu Keşfet"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "Beğeni kaydedildi!"
+  },
+  "auth.callback.title": {
+    "message": "Girişi tamamla"
+  },
+  "auth.callback.working": {
+    "message": "Giriş yapılıyor…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Bu sayfayı kapatmayın, birazdan ana sayfaya döneceksiniz."
+  },
+  "auth.callback.failed": {
+    "message": "Giriş tamamlanmadı"
+  },
+  "auth.callback.failedHint": {
+    "message": "Giriş bağlantısının süresi dolmuş ya da daha önce kullanılmış olabilir. Ana sayfaya dönüp tekrar giriş yapın."
+  },
+  "auth.callback.idle": {
+    "message": "Burada bekleyen bir giriş yok"
+  },
+  "auth.callback.idleHint": {
+    "message": "Bu sayfa yalnızca giriş yönlendirmeleri için kullanılır; yer imlerine eklemeye gerek yok."
+  },
+  "auth.callback.backHome": {
+    "message": "Giriş için ana sayfaya dön"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Yukarıya bir ad yazın, renk seçin; ilk etiketiniz hazır."
+  },
+  "validation.username.empty": {
+    "message": "Kullanıcı adı boş olamaz"
+  },
+  "message.username.updated": {
+    "message": "Kullanıcı adı güncellendi"
+  },
+  "message.username.updateError": {
+    "message": "Kullanıcı adı güncellenemedi. Birazdan tekrar deneyin."
+  },
+  "message.requestTimeout": {
+    "message": "İstek zaman aşımına uğradı. Tekrar deneyin."
+  },
+  "message.tooManyRequests": {
+    "message": "Çok fazla deneme yapıldı. Birazdan tekrar deneyin."
+  },
+  "account.signInRequired": {
+    "message": "Hesabınızı görmek için giriş yapın"
+  },
+  "account.signInRequiredHint": {
+    "message": "Sizi ana sayfaya götürüyoruz; aşağıdaki düğmeyi de kullanabilirsiniz."
+  },
+  "myspace.tagManager.color": {
+    "message": "Etiket rengi"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF ara"
   }
 }

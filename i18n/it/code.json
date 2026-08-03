@@ -270,7 +270,7 @@
     "message": "Inserisci il tuo codice di reimpostazione!"
   },
   "input.search.placeholder": {
-    "message": "Cerca: scrittura, traduzione, programmazione…"
+    "message": "scrittura, traduzione…"
   },
   "label.agree": {
     "message": "Accetto"
@@ -288,7 +288,7 @@
     "message": "Nome del prompt"
   },
   "label.sharePrompt": {
-    "message": "Vuoi condividere questo prompt sulla pagina pubblica?"
+    "message": "Condividi nella pagina della community: gli altri potranno vederlo e salvarlo"
   },
   "level.bronze": {
     "message": "Bronzo"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Condividi su"
+  },
+  "share.shareOn": {
+    "message": "Condividi su {channel}"
   },
   "showcase.header.button": {
     "message": "Esplora la community"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "«Mi piace» registrato!"
+  },
+  "auth.callback.title": {
+    "message": "Completa l'accesso"
+  },
+  "auth.callback.working": {
+    "message": "Accesso in corso…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Non chiudere questa pagina: tornerai alla home tra poco."
+  },
+  "auth.callback.failed": {
+    "message": "Accesso non completato"
+  },
+  "auth.callback.failedHint": {
+    "message": "Il link di accesso potrebbe essere scaduto o già utilizzato. Torna alla home e accedi di nuovo."
+  },
+  "auth.callback.idle": {
+    "message": "Nessun accesso in sospeso qui"
+  },
+  "auth.callback.idleHint": {
+    "message": "Questa pagina gestisce solo i reindirizzamenti di accesso: non serve salvarla nei preferiti."
+  },
+  "auth.callback.backHome": {
+    "message": "Torna alla home per accedere"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Scrivi un nome qui sopra, scegli un colore e il primo tag è pronto."
+  },
+  "validation.username.empty": {
+    "message": "Il nome utente non può essere vuoto"
+  },
+  "message.username.updated": {
+    "message": "Nome utente aggiornato"
+  },
+  "message.username.updateError": {
+    "message": "Impossibile aggiornare il nome utente. Riprova tra poco."
+  },
+  "message.requestTimeout": {
+    "message": "Richiesta scaduta. Riprova."
+  },
+  "message.tooManyRequests": {
+    "message": "Troppi tentativi. Riprova tra poco."
+  },
+  "account.signInRequired": {
+    "message": "Accedi per vedere il tuo account"
+  },
+  "account.signInRequiredHint": {
+    "message": "Ti stiamo riportando alla home, oppure usa il pulsante qui sotto."
+  },
+  "myspace.tagManager.color": {
+    "message": "Colore del tag"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Cerca GIF"
   }
 }

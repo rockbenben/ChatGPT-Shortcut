@@ -270,7 +270,7 @@
     "message": "कृपया अपना रीसेट कोड दर्ज करें!"
   },
   "input.search.placeholder": {
-    "message": "खोजें: लेखन, अनुवाद, कोडिंग…"
+    "message": "लेखन, अनुवाद…"
   },
   "label.agree": {
     "message": "सहमत"
@@ -288,7 +288,7 @@
     "message": "प्रॉम्प्ट का नाम"
   },
   "label.sharePrompt": {
-    "message": "क्या आप इस प्रॉम्प्ट को सार्वजनिक पृष्ठ पर साझा करना चाहेंगे?"
+    "message": "कम्युनिटी पेज पर साझा करें — दूसरे लोग इसे देख और सहेज सकेंगे"
   },
   "level.bronze": {
     "message": "कांस्य"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "शेयर करें"
+  },
+  "share.shareOn": {
+    "message": "{channel} पर शेयर करें"
   },
   "showcase.header.button": {
     "message": "समुदाय देखें"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "सफलतापूर्वक पसंद किया गया!"
+  },
+  "auth.callback.title": {
+    "message": "साइन इन पूरा करें"
+  },
+  "auth.callback.working": {
+    "message": "साइन इन किया जा रहा है…"
+  },
+  "auth.callback.workingHint": {
+    "message": "यह पेज खुला रखें — कुछ ही देर में आप होम पेज पर वापस पहुँच जाएँगे।"
+  },
+  "auth.callback.failed": {
+    "message": "साइन इन पूरा नहीं हुआ"
+  },
+  "auth.callback.failedHint": {
+    "message": "साइन इन लिंक की अवधि समाप्त हो चुकी है या वह पहले ही इस्तेमाल हो चुका है। होम पेज पर लौटकर दोबारा साइन इन करें।"
+  },
+  "auth.callback.idle": {
+    "message": "यहाँ पूरा करने के लिए कोई साइन इन नहीं है"
+  },
+  "auth.callback.idleHint": {
+    "message": "यह पेज सिर्फ़ साइन इन रीडायरेक्ट के लिए है — इसे बुकमार्क करने की ज़रूरत नहीं।"
+  },
+  "auth.callback.backHome": {
+    "message": "साइन इन के लिए होम पेज पर लौटें"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "ऊपर नाम लिखें, रंग चुनें — आपका पहला टैग तैयार।"
+  },
+  "validation.username.empty": {
+    "message": "उपयोगकर्ता नाम खाली नहीं हो सकता"
+  },
+  "message.username.updated": {
+    "message": "उपयोगकर्ता नाम अपडेट हो गया"
+  },
+  "message.username.updateError": {
+    "message": "उपयोगकर्ता नाम अपडेट नहीं हो सका। थोड़ी देर बाद फिर कोशिश करें।"
+  },
+  "message.requestTimeout": {
+    "message": "अनुरोध का समय समाप्त हो गया। फिर कोशिश करें।"
+  },
+  "message.tooManyRequests": {
+    "message": "बहुत ज़्यादा कोशिशें। थोड़ी देर बाद फिर प्रयास करें।"
+  },
+  "account.signInRequired": {
+    "message": "अपना अकाउंट देखने के लिए साइन इन करें"
+  },
+  "account.signInRequiredHint": {
+    "message": "आपको होम पेज पर ले जाया जा रहा है — या नीचे दिए बटन का उपयोग करें।"
+  },
+  "myspace.tagManager.color": {
+    "message": "टैग का रंग"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF खोजें"
   }
 }

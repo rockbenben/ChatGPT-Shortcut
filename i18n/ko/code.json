@@ -270,7 +270,7 @@
     "message": "재설정 코드를 입력하십시오!"
   },
   "input.search.placeholder": {
-    "message": "검색: 작문, 번역, 프로그래밍…"
+    "message": "작문, 번역…"
   },
   "label.agree": {
     "message": "동의"
@@ -288,7 +288,7 @@
     "message": "프롬프트 이름"
   },
   "label.sharePrompt": {
-    "message": "이 프롬프트를 공개 페이지에 공유하시겠습니까?"
+    "message": "커뮤니티 페이지에 공유 — 다른 사용자가 보고 즐겨찾기할 수 있습니다"
   },
   "level.bronze": {
     "message": "브론즈"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "공유 대상"
+  },
+  "share.shareOn": {
+    "message": "{channel}에 공유"
   },
   "showcase.header.button": {
     "message": "커뮤니티 둘러보기"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "추천했습니다!"
+  },
+  "auth.callback.title": {
+    "message": "로그인 완료"
+  },
+  "auth.callback.working": {
+    "message": "로그인하는 중…"
+  },
+  "auth.callback.workingHint": {
+    "message": "이 페이지를 닫지 마세요. 곧 홈으로 돌아갑니다."
+  },
+  "auth.callback.failed": {
+    "message": "로그인이 완료되지 않았습니다"
+  },
+  "auth.callback.failedHint": {
+    "message": "로그인 링크가 만료되었거나 이미 사용되었을 수 있습니다. 홈으로 돌아가 다시 로그인하세요."
+  },
+  "auth.callback.idle": {
+    "message": "처리할 로그인이 없습니다"
+  },
+  "auth.callback.idleHint": {
+    "message": "이 페이지는 로그인 리디렉션 전용입니다. 즐겨찾기에 추가할 필요가 없습니다."
+  },
+  "auth.callback.backHome": {
+    "message": "홈으로 돌아가 로그인"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "위에 이름을 입력하고 색을 고르면 첫 태그가 만들어집니다."
+  },
+  "validation.username.empty": {
+    "message": "사용자 이름을 입력하세요"
+  },
+  "message.username.updated": {
+    "message": "사용자 이름을 변경했습니다"
+  },
+  "message.username.updateError": {
+    "message": "사용자 이름을 변경하지 못했습니다. 잠시 후 다시 시도하세요."
+  },
+  "message.requestTimeout": {
+    "message": "요청 시간이 초과되었습니다. 다시 시도하세요."
+  },
+  "message.tooManyRequests": {
+    "message": "요청이 너무 잦습니다. 잠시 후 다시 시도하세요."
+  },
+  "account.signInRequired": {
+    "message": "로그인하면 계정을 볼 수 있습니다"
+  },
+  "account.signInRequiredHint": {
+    "message": "홈으로 돌아갑니다. 아래 버튼을 눌러도 됩니다."
+  },
+  "myspace.tagManager.color": {
+    "message": "태그 색상"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF 검색"
   }
 }

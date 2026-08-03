@@ -270,7 +270,7 @@
     "message": "リセットコードを入力してください！"
   },
   "input.search.placeholder": {
-    "message": "検索：執筆、翻訳、プログラミング…"
+    "message": "執筆、翻訳…"
   },
   "label.agree": {
     "message": "同意する"
@@ -288,7 +288,7 @@
     "message": "プロンプト名"
   },
   "label.sharePrompt": {
-    "message": "このプロンプトを公開ページで共有しますか？"
+    "message": "コミュニティページで共有する（他のユーザーが閲覧・お気に入り登録できます）"
   },
   "level.bronze": {
     "message": "ブロンズ"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "共有先"
+  },
+  "share.shareOn": {
+    "message": "{channel} で共有"
   },
   "showcase.header.button": {
     "message": "コミュニティ投稿を見る"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "高評価しました！"
+  },
+  "auth.callback.title": {
+    "message": "ログインの完了"
+  },
+  "auth.callback.working": {
+    "message": "ログイン処理中…"
+  },
+  "auth.callback.workingHint": {
+    "message": "このページを閉じないでください。まもなくホームに戻ります。"
+  },
+  "auth.callback.failed": {
+    "message": "ログインが完了しませんでした"
+  },
+  "auth.callback.failedHint": {
+    "message": "ログインリンクの有効期限が切れているか、すでに使用済みの可能性があります。ホームに戻って再度ログインしてください。"
+  },
+  "auth.callback.idle": {
+    "message": "処理中のログインはありません"
+  },
+  "auth.callback.idleHint": {
+    "message": "このページはログインのリダイレクト専用です。ブックマークの必要はありません。"
+  },
+  "auth.callback.backHome": {
+    "message": "ホームに戻ってログイン"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "上で名前を入力して色を選ぶと、最初のタグができます。"
+  },
+  "validation.username.empty": {
+    "message": "ユーザー名を入力してください"
+  },
+  "message.username.updated": {
+    "message": "ユーザー名を更新しました"
+  },
+  "message.username.updateError": {
+    "message": "ユーザー名を更新できませんでした。しばらくしてからもう一度お試しください。"
+  },
+  "message.requestTimeout": {
+    "message": "リクエストがタイムアウトしました。もう一度お試しください。"
+  },
+  "message.tooManyRequests": {
+    "message": "操作が頻繁すぎます。しばらくしてからお試しください。"
+  },
+  "account.signInRequired": {
+    "message": "ログインするとアカウントを表示できます"
+  },
+  "account.signInRequiredHint": {
+    "message": "ホームに戻ります。下のボタンからも移動できます。"
+  },
+  "myspace.tagManager.color": {
+    "message": "タグの色"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "GIF を検索"
   }
 }

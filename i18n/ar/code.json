@@ -270,7 +270,7 @@
     "message": "يرجى إدخال رمز إعادة التعيين الخاص بك!"
   },
   "input.search.placeholder": {
-    "message": "بحث: كتابة، ترجمة، برمجة…"
+    "message": "كتابة، ترجمة…"
   },
   "label.agree": {
     "message": "موافق"
@@ -288,7 +288,7 @@
     "message": "اسم التوجيه"
   },
   "label.sharePrompt": {
-    "message": "هل ترغب في مشاركة هذا التوجيه على الصفحة العامة؟"
+    "message": "المشاركة في صفحة المجتمع — سيتمكن الآخرون من عرضه وحفظه"
   },
   "level.bronze": {
     "message": "برونزي"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "مشاركة عبر"
+  },
+  "share.shareOn": {
+    "message": "مشاركة عبر {channel}"
   },
   "showcase.header.button": {
     "message": "استكشاف المجتمع"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "تم تسجيل الإعجاب!"
+  },
+  "auth.callback.title": {
+    "message": "إكمال تسجيل الدخول"
+  },
+  "auth.callback.working": {
+    "message": "جارٍ تسجيل الدخول…"
+  },
+  "auth.callback.workingHint": {
+    "message": "لا تغلق هذه الصفحة، سنعيدك إلى الصفحة الرئيسية بعد قليل."
+  },
+  "auth.callback.failed": {
+    "message": "لم يكتمل تسجيل الدخول"
+  },
+  "auth.callback.failedHint": {
+    "message": "قد يكون رابط تسجيل الدخول منتهي الصلاحية أو مستخدَمًا من قبل. عد إلى الصفحة الرئيسية وسجّل الدخول مرة أخرى."
+  },
+  "auth.callback.idle": {
+    "message": "لا يوجد تسجيل دخول قيد الانتظار هنا"
+  },
+  "auth.callback.idleHint": {
+    "message": "هذه الصفحة مخصّصة لإعادة توجيه تسجيل الدخول فقط، ولا حاجة لحفظها في المفضلة."
+  },
+  "auth.callback.backHome": {
+    "message": "العودة إلى الصفحة الرئيسية لتسجيل الدخول"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "اكتب اسمًا في الأعلى واختر لونًا، وسيصبح أول وسم لديك جاهزًا."
+  },
+  "validation.username.empty": {
+    "message": "لا يمكن ترك اسم المستخدم فارغًا"
+  },
+  "message.username.updated": {
+    "message": "تم تحديث اسم المستخدم"
+  },
+  "message.username.updateError": {
+    "message": "تعذّر تحديث اسم المستخدم. حاول مرة أخرى بعد قليل."
+  },
+  "message.requestTimeout": {
+    "message": "انتهت مهلة الطلب. حاول مرة أخرى."
+  },
+  "message.tooManyRequests": {
+    "message": "محاولات كثيرة جدًا. حاول مرة أخرى بعد قليل."
+  },
+  "account.signInRequired": {
+    "message": "سجّل الدخول لعرض حسابك"
+  },
+  "account.signInRequiredHint": {
+    "message": "جارٍ إعادتك إلى الصفحة الرئيسية، أو استخدم الزر أدناه."
+  },
+  "myspace.tagManager.color": {
+    "message": "لون الوسم"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "البحث عن صور GIF"
   }
 }

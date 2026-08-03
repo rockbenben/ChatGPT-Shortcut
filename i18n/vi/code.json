@@ -270,7 +270,7 @@
     "message": "Vui lòng nhập mã đặt lại!"
   },
   "input.search.placeholder": {
-    "message": "Tìm kiếm: viết, dịch, lập trình…"
+    "message": "viết, dịch…"
   },
   "label.agree": {
     "message": "Đồng ý"
@@ -288,7 +288,7 @@
     "message": "Tên Prompt"
   },
   "label.sharePrompt": {
-    "message": "Bạn có muốn chia sẻ prompt này lên trang công khai không?"
+    "message": "Chia sẻ lên trang cộng đồng — người khác có thể xem và lưu"
   },
   "level.bronze": {
     "message": "Đồng"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Chia sẻ lên"
+  },
+  "share.shareOn": {
+    "message": "Chia sẻ lên {channel}"
   },
   "showcase.header.button": {
     "message": "Khám phá cộng đồng"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "Đã thích prompt này!"
+  },
+  "auth.callback.title": {
+    "message": "Hoàn tất đăng nhập"
+  },
+  "auth.callback.working": {
+    "message": "Đang đăng nhập…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Đừng đóng trang này, bạn sẽ quay lại trang chủ ngay."
+  },
+  "auth.callback.failed": {
+    "message": "Đăng nhập chưa hoàn tất"
+  },
+  "auth.callback.failedHint": {
+    "message": "Liên kết đăng nhập có thể đã hết hạn hoặc đã được dùng. Hãy quay lại trang chủ và đăng nhập lại."
+  },
+  "auth.callback.idle": {
+    "message": "Không có đăng nhập nào cần xử lý ở đây"
+  },
+  "auth.callback.idleHint": {
+    "message": "Trang này chỉ dùng để chuyển hướng đăng nhập, không cần đánh dấu."
+  },
+  "auth.callback.backHome": {
+    "message": "Về trang chủ để đăng nhập"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Nhập tên ở trên, chọn một màu là bạn có thẻ đầu tiên."
+  },
+  "validation.username.empty": {
+    "message": "Tên người dùng không được để trống"
+  },
+  "message.username.updated": {
+    "message": "Đã cập nhật tên người dùng"
+  },
+  "message.username.updateError": {
+    "message": "Không cập nhật được tên người dùng. Hãy thử lại sau giây lát."
+  },
+  "message.requestTimeout": {
+    "message": "Yêu cầu đã hết thời gian chờ. Hãy thử lại."
+  },
+  "message.tooManyRequests": {
+    "message": "Bạn thao tác quá nhanh. Hãy thử lại sau giây lát."
+  },
+  "account.signInRequired": {
+    "message": "Đăng nhập để xem tài khoản"
+  },
+  "account.signInRequiredHint": {
+    "message": "Đang đưa bạn về trang chủ, hoặc dùng nút bên dưới."
+  },
+  "myspace.tagManager.color": {
+    "message": "Màu thẻ"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Tìm GIF"
   }
 }

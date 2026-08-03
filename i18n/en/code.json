@@ -270,7 +270,7 @@
     "message": "Please enter your reset code!"
   },
   "input.search.placeholder": {
-    "message": "Search: writing, translation, coding…"
+    "message": "writing, translation…"
   },
   "label.agree": {
     "message": "Agree"
@@ -288,7 +288,7 @@
     "message": "Prompt Name"
   },
   "label.sharePrompt": {
-    "message": "Would you like to share this prompt on the public page?"
+    "message": "Share on the community page — others can browse and favorite it"
   },
   "level.bronze": {
     "message": "Bronze"
@@ -688,6 +688,9 @@
   },
   "share.shareTo": {
     "message": "Share to"
+  },
+  "share.shareOn": {
+    "message": "Share on {channel}"
   },
   "showcase.header.button": {
     "message": "Browse Community"
@@ -1276,5 +1279,59 @@
   },
   "vote.upvote.success": {
     "message": "Liked successfully!"
+  },
+  "auth.callback.title": {
+    "message": "Finish signing in"
+  },
+  "auth.callback.working": {
+    "message": "Signing you in…"
+  },
+  "auth.callback.workingHint": {
+    "message": "Keep this page open — you'll be sent back to the home page shortly."
+  },
+  "auth.callback.failed": {
+    "message": "Sign-in didn't complete"
+  },
+  "auth.callback.failedHint": {
+    "message": "The sign-in link may have expired or already been used. Head back home and sign in again."
+  },
+  "auth.callback.idle": {
+    "message": "No sign-in to finish here"
+  },
+  "auth.callback.idleHint": {
+    "message": "This page only handles sign-in redirects — no need to bookmark it."
+  },
+  "auth.callback.backHome": {
+    "message": "Back to home to sign in"
+  },
+  "myspace.tagManager.emptyHint": {
+    "message": "Type a name above, pick a color, and your first tag is ready."
+  },
+  "validation.username.empty": {
+    "message": "Username can't be empty"
+  },
+  "message.username.updated": {
+    "message": "Username updated"
+  },
+  "message.username.updateError": {
+    "message": "Couldn't update the username. Try again in a moment."
+  },
+  "message.requestTimeout": {
+    "message": "The request timed out. Try again."
+  },
+  "message.tooManyRequests": {
+    "message": "Too many attempts. Try again in a moment."
+  },
+  "account.signInRequired": {
+    "message": "Sign in to view your account"
+  },
+  "account.signInRequiredHint": {
+    "message": "Taking you back to the home page — or use the button below."
+  },
+  "myspace.tagManager.color": {
+    "message": "Tag color"
+  },
+  "comments.gif.searchPlaceholder": {
+    "message": "Search GIFs"
   }
 }
