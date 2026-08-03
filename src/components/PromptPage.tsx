@@ -227,7 +227,7 @@ function PromptPage({ prompt, currentLanguage }) {
           {/* 内层 Row：在约束后的宽度内做 75/25 三栏分布 */}
           <Row gutter={[24, 24]}>
             {/* 主内容列（75%） */}
-            <Col xs={24} sm={24} md={18} lg={18} xl={18} className="full-width-col">
+            <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
               <Breadcrumb
                 items={[
                   {
@@ -326,9 +326,9 @@ function PromptPage({ prompt, currentLanguage }) {
             </Col>
 
             {/* === Sidebar Strip === 不用独立 Card，sections 用 hairline + eyebrow 区分
-                桌面（md+）：~25%，sticky 通过 .prompt-sidebar-col CSS media query 启用
+                桌面（lg+）：~25%，sticky 通过 .prompt-sidebar-col CSS media query 启用
                 移动（xs/sm）：xs={24} 占满整行换行到主内容下方 */}
-            <Col xs={24} sm={24} md={6} lg={6} xl={6} className="full-width-col prompt-sidebar-col">
+            <Col xs={24} sm={24} md={24} lg={6} xl={6} className="full-width-col prompt-sidebar-col">
               <div className="prompt-sidebar">
                 {related.length > 0 && (
                   <section className="prompt-sidebar-section">

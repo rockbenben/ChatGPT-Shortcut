@@ -380,8 +380,9 @@ div[class^="announcementBar_"] {
   }
 }
 
-/* PromptPage 侧栏：桌面 md+ 才 sticky，移动端保持普通流式布局 */
-@media (min-width: 768px) {
+/* PromptPage 侧栏：桌面 lg+（≥992px，与 Col 的 lg 分栏断点一致）才 sticky。
+   md 及以下侧栏是整行块，sticky 会把它钉在正文和讨论区中间。 */
+@media (min-width: 992px) {
   .prompt-sidebar-col {
     position: sticky;
     top: 72px;
