@@ -6,7 +6,7 @@
 import axios from "axios";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { apiClient, persistAuthToken } from "./client";
-import { API_URL, GAUTH_API_BASE } from "./config";
+import { API_URL, GAUTH_API_BASE, USE_LEGACY_GAUTH } from "./config";
 // 登录后清除所有用户级缓存（旧账号残留 ETag 可能与新账号巧合命中，导致数据泄漏）
 import { clearUserSessionCaches } from "./sessionCache";
 
@@ -19,6 +19,8 @@ const FRONTEND_CALLBACK_PATH = "/user/auth";
 const REDIRECT_PARAM_KEY = "redirect";
 
 const buildCallbackUrl = (path: string) => `${STRAPI_CALLBACK_BASE}${path}`;
+// 旧流程（扩展端）专用：打到独立的 gauth 服务，而非主 API
+const buildGauthUrl = (path: string) => `${GAUTH_API_BASE}${path}`;
 
 const resolveRedirectUrl = (): string | null => {
   if (ExecutionEnvironment.canUseDOM) {
@@ -148,11 +150,19 @@ const coerceUser = (userCandidate: unknown): Record<string, unknown> | undefined
 };
 
 /**
- * 获取 Google 认证 URL —— 构建 Strapi 原生 /api/connect/google 入口
+ * 获取 Google 认证 URL
+ * 根据 USE_LEGACY_GAUTH 开关选择流程：
+ * - true:  旧版流程（扩展端），调用 /init 端点获取 URL
+ * - false: 新版流程（本站），构建 Strapi 原生 /api/connect/google URL
  */
 export async function getGoogleAuthUrl(): Promise<string> {
+  if (USE_LEGACY_GAUTH) {
+    const response = await axios.get(buildCallbackUrl("/strapi-google-auth/init"));
+    return response.data.url;
+  }
+
   const redirectUrl = resolveRedirectUrl();
-  const url = new URL(`${GAUTH_API_BASE}${GOOGLE_CONNECT_PATH}`);
+  const url = new URL(buildGauthUrl(GOOGLE_CONNECT_PATH));
 
   if (redirectUrl) {
     url.searchParams.set(REDIRECT_PARAM_KEY, redirectUrl);
@@ -179,14 +189,54 @@ async function getAuthenticatedUserDetails(token: string): Promise<Record<string
 }
 
 /**
- * Google 登录：使用来自 Strapi 回调的数据完成认证
+ * Google 登录：使用来自回调的数据完成认证
+ * 根据 USE_LEGACY_GAUTH 开关选择流程：
+ * - true:  旧版流程（扩展端），/user-profile 换 token + /me 取用户
+ * - false: 新版流程（本站），使用 Strapi callback 或直接解析 JWT
  */
 export async function googleLogin(payload: GoogleAuthPayload): Promise<GoogleAuthResult> {
   if (!payload) {
     throw new Error("Missing Google authentication payload.");
   }
 
-  // 直接接收 Strapi 重定向返回的 jwt 与用户信息
+  // 旧版流程：使用 /user-profile + /me 端点
+  if (USE_LEGACY_GAUTH) {
+    const code = typeof payload === "string" ? payload : payload.code;
+    if (!code) {
+      throw new Error("Missing authorization code for legacy Google authentication.");
+    }
+
+    try {
+      // Step 1: 调用 /user-profile 获取 token
+      const profileResponse = await axios.post(buildGauthUrl("/strapi-google-auth/user-profile"), { code }, { timeout: 30000 });
+      const profileData = profileResponse.data.data;
+
+      // 从返回数据中提取 token
+      const token = profileData.jwt || profileData.token || profileData.access_token;
+      if (!token) {
+        throw new Error("No token received from /user-profile endpoint.");
+      }
+
+      // Step 2: 调用 /me 获取完整用户信息
+      const userResponse = await axios.get(buildCallbackUrl("/strapi-google-auth/me"), {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      clearUserSessionCaches();
+      return { token, user: userResponse.data };
+    } catch (error) {
+      // 这层 catch 不是 log-and-rethrow：它把超时翻译成调用点会匹配的固定文案
+      // （user/login.tsx 按这个英文串挑出"请求超时"的本地化提示），别顺手删掉。
+      if ((error as { code?: string })?.code === "ECONNABORTED") {
+        throw new Error("Request timed out. Please try again.");
+      }
+      throw error;
+    }
+  }
+
+  // 新流程：直接接收 Strapi 重定向返回的 jwt 与用户信息
   if (typeof payload === "object") {
     const token = payload.jwt || payload.access_token || payload.id_token || payload.token;
 

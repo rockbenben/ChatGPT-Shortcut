@@ -21,3 +21,14 @@ export const API_URL = "https://api.newzone.top/api";
 // 生产环境: https://gauth.aishort.top
 // 开发环境: http://localhost:1337
 export const GAUTH_API_BASE = "https://gauth.aishort.top";
+
+/**
+ * Google OAuth 模式开关
+ * - true:  使用旧版流程（/init 获取 URL + /user-profile 认证）
+ * - false: 使用新版流程（Strapi 原生 /api/connect/google）
+ *
+ * ⚠ 本站恒为 false，但**两条分支都要留着**：浏览器扩展端复用这份 api 层，
+ * 它没有可承接 Strapi 重定向的页面，只能走 /init + /user-profile 这条旧流程。
+ * 别因为"站内搜不到 true 的赋值"就当死代码删掉。
+ */
+export const USE_LEGACY_GAUTH = false;
