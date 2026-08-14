@@ -184,7 +184,7 @@ Vercel, Cloudflare Pages, Docker 또는 로컬에서 인스턴스를 배포할 �
 
 ## 🌟 Star 히스토리
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut&Date)
 
 ## 📜 라이선스
 
