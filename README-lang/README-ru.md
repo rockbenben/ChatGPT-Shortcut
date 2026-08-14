@@ -184,7 +184,7 @@
 
 ## 🌟 История Star
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut&Date)
 
 ## 📜 Лицензия
 

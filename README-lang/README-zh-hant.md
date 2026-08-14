@@ -186,7 +186,7 @@ AiShort 擴充套件讓你隨時呼叫提示詞庫。支援 Chrome、Edge、Fire
 
 ## 🌟 Star 歷史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut&Date)
 
 ## 📜 開源協議
 
