@@ -9,8 +9,9 @@ import Link from "@docusaurus/Link";
 import Translate, { translate } from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
+import { lazyOptional } from "@site/src/utils/lazyRetry";
 
-const ShareButtons = React.lazy(() => import("./ShareButtons"));
+const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 
 // offline 分支：仅展示本地 prompt detail。无 vote / favorite / auth / comments
 // （这些都是联网功能，已全部移除）

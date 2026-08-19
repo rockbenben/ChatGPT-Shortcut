@@ -14,8 +14,9 @@ import promptFaqData from "@site/src/data/meta_faqs.json";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
 // Comments removed for local version
+import { lazyOptional } from "@site/src/utils/lazyRetry";
 
-const ShareButtons = React.lazy(() => import("./ShareButtons"));
+const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 
 // Composition Sheet 复用样式（与 CommunityPromptPage 保持家族一致）
 const sheetCardStyle: React.CSSProperties = {

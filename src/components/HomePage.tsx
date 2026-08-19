@@ -43,9 +43,10 @@ import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
 
-const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
-const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
+const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
 
 const { Title, Paragraph } = Typography;
 
