@@ -3,16 +3,17 @@ import { translate } from "@docusaurus/Translate";
 import { Form } from "antd";
 import debounce from "lodash/debounce";
 import CommentEditor from "./CommentEditor";
+import { lazyOptional } from "@site/src/utils/lazyRetry";
 
 // GiphySelector 拉入 @giphy/react-components + styled-components(~3MB lib)；
 // 仅用户点 GIF 按钮才渲染，懒加载省 common chunk ~400-700KB gzipped
-const GiphySelector = React.lazy(() => import("./GiphySelector").then((m) => ({ default: m.GiphySelector })));
+const GiphySelector = lazyOptional(() => import("./GiphySelector").then((m) => ({ default: m.GiphySelector })));
 // EmojiPicker 拉入 @emoji-mart/data + @emoji-mart/react。
 // 注意 @emoji-mart/data 在 node_modules 里是 27MB，但那是全部表情集（14/15 两代 ×
 // apple/google/facebook/twitter/native）；package.json main 只指向 sets/15/native.json，
 // 实际进 bundle 的是单独一个 chunk：533KB raw / 108KB gzip。
 // 仅用户点 😀 才渲染，懒加载省 common chunk ~80-120KB gzipped
-const EmojiPickerLazy = React.lazy(() => import("./EmojiPickerLazy"));
+const EmojiPickerLazy = lazyOptional(() => import("./EmojiPickerLazy"));
 
 export type PanelType = "emoji" | "gif";
 

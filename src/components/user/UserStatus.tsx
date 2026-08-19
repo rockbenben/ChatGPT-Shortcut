@@ -3,14 +3,16 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { Button, Modal, App, Dropdown, Space, Skeleton } from "antd";
 import { useViewMode } from "@site/src/contexts/ViewModeContext";
 import { UserOutlined, EditOutlined, LogoutOutlined, ShareAltOutlined, SettingOutlined, LoginOutlined, BookOutlined, HeartOutlined } from "@ant-design/icons";
-// LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
-const LoginComponent = React.lazy(() => import("./login"));
 import Translate, { translate } from "@docusaurus/Translate";
 import { AuthContext } from "../AuthContext";
 import { persistAuthToken } from "@site/src/api";
 import { useUserPrompt } from "@site/src/hooks/useUserPrompt";
 import PromptFormModal from "./modal/PromptFormModal";
 import Link from "@docusaurus/Link";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
+
+// LoginComponent (520 行 + antd Form/Card/Input) 仅在未登录用户点登录按钮时打开 Modal 才渲染
+const LoginComponent = lazyWithRetry(() => import("./login"));
 
 // data-auth-ready 必须在 paint 前置位：SPA 从非首页跳进首页时，useEffect（paint 后）会先闪一帧
 // boot 骨架再换按钮。useLayoutEffect 在 commit 后、paint 前跑，首帧即正确。SSR 上退化为 useEffect 避免告警。
@@ -191,7 +193,7 @@ const UserStatus = () => {
           <>
             {loggedOutButtons}
             <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-              <Suspense fallback={null}>
+              <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
                 <LoginComponent />
               </Suspense>
             </Modal>

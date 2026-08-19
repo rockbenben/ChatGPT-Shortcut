@@ -31,7 +31,7 @@ const EMOJI_LOCALE: Record<string, string> = {
 };
 
 // 单独 chunk 包 @emoji-mart/data (大表情数据集) + @emoji-mart/react (Picker)；
-// 仅用户点 😀 才被 Comments.tsx 通过 React.lazy 触发下载。
+// 仅用户点 😀 才被 CommentForm.tsx 通过 lazyOptional 触发下载。
 const EmojiPickerLazy: React.FC<Props> = ({ isDarkMode, onEmojiSelect }) => {
   const { i18n: siteI18n } = useDocusaurusContext();
   const localeName = EMOJI_LOCALE[siteI18n.currentLocale];

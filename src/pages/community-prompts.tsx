@@ -12,7 +12,7 @@ import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Link from "@docusaurus/Link";
-import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb } from "antd";
+import { Modal, Typography, Pagination, App, Flex, Segmented, FloatButton, Row, Col, Breadcrumb, Skeleton } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { COMMU_TITLE, COMMU_DESCRIPTION, SITE_NAME } from "@site/src/data/constants";
 import { toBcp47 } from "@site/src/utils/i18n";
@@ -20,12 +20,13 @@ import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import { primeCacheFromSnapshot, communitySnapshot, COMMUNITY_PAGE_SIZE, type CommunitySortField, type CommunityPrompt } from "@site/src/utils/snapshotPrime";
-const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
+const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 
-const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
+const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
+const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 // LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户打开登录 Modal 才渲染
-const LoginComponent = React.lazy(() => import("@site/src/components/user/login"));
+const LoginComponent = lazyWithRetry(() => import("@site/src/components/user/login"));
 
 const { Text } = Typography;
 
@@ -369,7 +370,7 @@ const CommunityPrompts = () => {
 
             {open && (
               <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
-                <Suspense fallback={null}>
+                <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
                   <LoginComponent />
                 </Suspense>
               </Modal>

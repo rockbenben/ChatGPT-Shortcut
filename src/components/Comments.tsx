@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, memo, useRef, Suspense } from 
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { App, Modal, Pagination } from "antd";
+import { App, Modal, Pagination, Skeleton } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { useColorMode } from "@docusaurus/theme-common";
@@ -12,9 +12,10 @@ import CommentThread from "@site/src/components/CommentComponent/CommentThread";
 import { usePollForAIReply, AI_REPLY_POLL_DELAYS_MS } from "@site/src/components/CommentComponent/usePollForAIReply";
 import { getCurrentUserId, nestComments } from "@site/src/components/CommentComponent/commentUtils";
 import { getComments, postComment } from "@site/src/api";
+import { lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 // LoginComponent (520 行 + antd Form/Card/Input) 仅当未登录用户尝试评论触发登录 Modal 才渲染
-const LoginComponent = React.lazy(() => import("@site/src/components/user/login"));
+const LoginComponent = lazyWithRetry(() => import("@site/src/components/user/login"));
 
 const pageSize = 12;
 
@@ -193,7 +194,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
   return (
     <>
       <Modal open={isLoginModalOpen} onCancel={() => setIsLoginModalOpen(false)} footer={null}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
           <LoginComponent />
         </Suspense>
       </Modal>

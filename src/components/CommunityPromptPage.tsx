@@ -14,9 +14,10 @@ import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { toBcp47 } from "@site/src/utils/i18n";
 import Comments from "./Comments";
+import { lazyOptional } from "@site/src/utils/lazyRetry";
 
-const ShareButtons = React.lazy(() => import("./ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
+const ShareButtons = lazyOptional(() => import("./ShareButtons"));
+const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;

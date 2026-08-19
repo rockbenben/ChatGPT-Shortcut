@@ -44,12 +44,13 @@ import { toJsonLd } from "@site/src/utils/jsonLd";
 import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
+import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
 
-const PromptDetailModal = React.lazy(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
-const ShareButtons = React.lazy(() => import("@site/src/components/ShareButtons"));
-const AdComponent = React.lazy(() => import("@site/src/components/AdComponent"));
+const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
+const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
+const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
 // MySpace 仅在 collection 视图 + 登录态下渲染，未登录访客（占大多数流量）不需要
-const MySpace = React.lazy(() => import("@site/src/components/user/MySpace"));
+const MySpace = lazyWithRetry(() => import("@site/src/components/user/MySpace"));
 
 const { Title, Paragraph } = Typography;
 
