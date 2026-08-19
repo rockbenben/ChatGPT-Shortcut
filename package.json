@@ -11,7 +11,7 @@
     "dev": "docusaurus start",
     "prebuild": "node scripts/generate.mjs --prod",
     "build": "node scripts/buildPhased.mjs",
-    "pretypecheck": "node scripts/generate.mjs && node scripts/checkClipboardFallback.mjs",
+    "pretypecheck": "node scripts/generate.mjs && node scripts/checkClipboardFallback.mjs && node scripts/checkChunkReloadGuard.mjs",
     "typecheck": "tsc",
     "swizzle": "docusaurus swizzle",
     "predeploy": "node scripts/generate.mjs --prod",
@@ -35,7 +35,7 @@
     "@emoji-mart/react": "^1.1.1",
     "@giphy/react-components": "^10.1.2",
     "@mdx-js/react": "^3.1.1",
-    "antd": "^6.5.3",
+    "antd": "^6.6.1",
     "axios": "^1.19.0",
     "boring-avatars": "^2.0.4",
     "clsx": "^2.1.1",
@@ -44,8 +44,8 @@
     "lodash": "^4.17.23",
     "lscache": "^1.3.2",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "react-markdown": "^10.1.0",
     "styled-components": "^6"
   },
@@ -53,7 +53,7 @@
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.18",
     "typescript": "~6.0.3"
   },
   "browserslist": {
