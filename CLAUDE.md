@@ -14,7 +14,7 @@ Live site: https://www.aishort.top
 yarn start          # Dev server (default locale zh-Hans)
 yarn dev            # Alias for start (has its own predev hook — do not add aliases without one)
 yarn build          # Production build — all 18 locales, memory-safe (6×3 phased)
-yarn typecheck      # Runs the generators + clipboard self-check, then tsc
+yarn typecheck      # Runs the generators + self-checks (clipboard, chunk fallback), then tsc
 yarn gen:snapshot   # Fetch the real community snapshot (dev hooks only write an empty stub)
 yarn serve          # Serve built site locally
 yarn clear          # Clear Docusaurus cache
@@ -36,8 +36,10 @@ reason). To force one, call the script directly: `node scripts/genAntdCss.mjs --
 *deliberately* write only a stub, so it is the only way to get real data locally.
 
 There is no linter, formatter, or test framework configured. `yarn typecheck` is the primary
-quality gate — it runs `tsc` **plus** `scripts/checkClipboardFallback.mjs` (an assert-based
-self-check for the clipboard fallback chain). CI runs it before building, because the Docusaurus
+quality gate — it runs `tsc` **plus** the assert-based self-checks
+(`scripts/checkClipboardFallback.mjs` for the clipboard fallback chain,
+`scripts/checkChunkReloadGuard.mjs` for the chunk-failure fallback; both guard logic whose failure
+mode is invisible to the compiler — add new ones to the `pretypecheck` chain). CI runs it before building, because the Docusaurus
 build strips types with swc and does **not** type-check: code with a TS error still builds with
 exit code 0.
 
@@ -96,7 +98,17 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
   `<Empty>` / `<Result>` (light cartoon illustrations, loudest thing on a dark page) and don't add
   another CSS-only variant — a parallel `.comments-empty` implementation already existed once and has
   been folded in.
-- `React.lazy()` for code-splitting: `PromptDetailModal`, `ShareButtons`, `AdComponent`
+- **Lazy 组件一律走 `src/utils/lazyRetry.ts`，不要裸用 `React.lazy`**：裸用时 chunk 抖一次
+  就永久红框（React.lazy 缓存失败的 promise，root ErrorBoundary 的 "Try again" 不会重新发
+  请求），且调用处都没有局部 error boundary —— 一个广告位没加载出来会把整页 crash 掉。
+  两个入口按「缺了它页面还成不成立」选，且都套**可重置外壳**——chunk 层面的最终失败会
+  丢弃 lazy 实例，下一次渲染（红框 "Try again"、用户再点一次按钮）换新实例真正重新请求：
+  - `lazyWithRetry` — 页面主体功能（`PromptDetailModal`、`MySpace`、`LoginComponent`）。
+    重试一次；仍是 chunk 失败先 `reloadOnce`（此时页面反正要被 root ErrorBoundary 整页替换，
+    刷新还能自愈发版陈旧），刷新发起则挂起不闪红框，冷却内才抛红框。
+  - `lazyOptional` — 装饰性组件（`AdComponent`、`ShareButtons`、emoji/Giphy 选择器）。
+    仍失败降级成空组件 + `console.error`，**永不刷新**（会冲掉用户正在写的评论）。
+  模块自身抛错（非 chunk）一律不重试、不重置：重试必抛的模块只会把真错误延后。
 - `React.memo()` on performance-sensitive components
 - Custom hooks in `src/hooks/`: `useFavorite`, `useCopyToClipboard`, `useUserPrompt`, `useFilteredPrompts`
 
@@ -135,6 +147,12 @@ It does **not** generate the `prompt/{id}.tsx` shells any more — `scripts/genP
 - **Theme root** (`src/theme/Root.tsx`) wraps entire app with Ant Design `ConfigProvider` (theme key: "aishort")
 - **Config files** use ES module syntax; `plugin-gen-geo.js` is CommonJS
 - Voting uses **optimistic UI** updates with rollback on error
+- **Chunk 失败兜底的分工不变量**（`src/clientModules/chunkReload.js` + `src/utils/lazyRetry.ts`，
+  由 `scripts/checkChunkReloadGuard.mjs` 自检守护）：整页刷新只发生在「页面已经/即将不可用」
+  的两处——React 未挂载的首屏死壳，和主体 lazy 组件重试后仍 chunk 失败（ErrorBoundary 即将
+  整页替换）。**其余已挂载场景一律不刷** —— Docusaurus 的
+  hover 预载 / rel=prefetch 失败会冒到 window 但页面完全正常，扩大兜底范围会重新引入
+  「鼠标扫过链接就把用户当前页面整页重载」的实测回归。路由切换的失败 Docusaurus 自己会 reload，不要重复处理
 
 ## CI/CD
 
