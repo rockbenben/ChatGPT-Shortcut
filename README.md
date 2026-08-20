@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>5000+ ready-to-use AI prompts — turn ChatGPT, Cursor, and any AI tool from mediocre to expert-grade.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/en/"><b>▶ Try it online</b></a> ·
+    <a href="https://www.aishort.top/en/docs/extension/">⬇ Browser extension</a> ·
+    <a href="https://www.aishort.top/en/docs/guides/getting-started">📖 User guide</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 <a href="./README-lang/README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>5000+ ready-to-use AI prompts — turn ChatGPT, Cursor, and any AI tool from mediocre to expert-grade.</em>
-</p>
-
-## 📖 Table of Contents
-
-- [⚡ Quick Start](#-quick-start)
-- [💎 Why AiShort?](#-why-aishort)
-- [📸 Screenshots](#-screenshots)
-- [📚 Documentation](#-documentation)
-- [🧩 Browser Extension](#-browser-extension)
-- [🚀 Deploy](#-deploy)
-- [🤝 Contributing](#-contributing)
-- [💬 Community](#-community)
-- [🌟 Star History](#-star-history)
-- [📜 License](#-license)
-
 ## ⚡ Quick Start
 
 1. Visit [aishort.top](https://www.aishort.top/en/)
@@ -78,19 +64,17 @@ That's it! For more features, check the [User Guide](https://www.aishort.top/en/
 
 **The gap between using AI and using AI well is one good prompt.**
 
-Same question, different prompts — and AI output goes from generic to genuinely useful. Writing expert-level prompts yourself takes years of iteration. AiShort hands you a curated library of prompts already battle-tested by the community, across writing, coding, office work, learning, design, marketing, and more. Copy → paste → expert-grade output, instantly.
+Same question, different prompts — and AI output goes from generic to genuinely useful. Writing expert-level prompts yourself takes years of iteration. AiShort gives you 5000+ prompts — hand-picked plus community-contributed — across writing, coding, office work, learning, design, marketing, and more. Copy → paste → expert-grade output, instantly.
 
 No signup. No paywall. No install. Open and use.
 
 ### Core Features
 
-🚀 **Curated Prompts** — Covering writing, coding, office work, and more — ready to copy and use.
+🚀 **One-click copy** — Tap a card and the prompt is on your clipboard, ready to paste into any chat box.
 
-🔍 **Tag + Keyword Search** — Filter by scenario tags, or search by keyword.
+🔍 **Tag + keyword search** — Filter by 26 scenario tags, or hit `Ctrl / ⌘ + K` to search.
 
 🌍 **18 Languages** — Full UI and prompt translation, with replies in your native language.
-
-📦 **Ready to Use** — No registration required, just open and go.
 
 ### Advanced Features (After Login)
 
@@ -184,11 +168,13 @@ Join us for discussions and feedback:
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 License
-
-[MIT](LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

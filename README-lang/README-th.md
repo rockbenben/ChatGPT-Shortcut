@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>พรอมต์ AI กว่า 5000 รายการที่พร้อมใช้งาน — เปลี่ยน ChatGPT, Cursor และเครื่องมือ AI ใดก็ตามจากระดับธรรมดาให้กลายเป็นระดับผู้เชี่ยวชาญ</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/th/"><b>▶ ใช้งานออนไลน์</b></a> ·
+    <a href="https://www.aishort.top/th/docs/extension/">⬇ ส่วนขยายเบราว์เซอร์</a> ·
+    <a href="https://www.aishort.top/th/docs/guides/getting-started">📖 เอกสาร</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>พรอมต์ AI กว่า 5000 รายการที่พร้อมใช้งาน — เปลี่ยน ChatGPT, Cursor และเครื่องมือ AI ใดก็ตามจากระดับธรรมดาให้กลายเป็นระดับผู้เชี่ยวชาญ</em>
-</p>
-
-## 📖 สารบัญ
-
-- [⚡ เริ่มต้นใช้งาน](#-เริ่มต้นใช้งาน)
-- [💎 ทำไมต้อง AiShort?](#-ทำไมต้อง-aishort)
-- [📸 ภาพหน้าจอ](#-ภาพหน้าจอ)
-- [📚 เอกสาร](#-เอกสาร)
-- [🧩 ส่วนขยายเบราว์เซอร์](#-ส่วนขยายเบราว์เซอร์)
-- [🚀 ติดตั้ง](#-ติดตั้ง)
-- [🤝 มีส่วนร่วม](#-มีส่วนร่วม)
-- [💬 ชุมชน](#-ชุมชน)
-- [🌟 ประวัติ Star](#-ประวัติ-star)
-- [📜 ใบอนุญาต](#-ใบอนุญาต)
-
 ## ⚡ เริ่มต้นใช้งาน
 
 1. ไปที่ [aishort.top](https://www.aishort.top/th/)
@@ -84,13 +70,11 @@
 
 ### ฟีเจอร์หลัก
 
-🚀 **พรอมต์ที่คัดสรรแล้ว** — ครอบคลุมการเขียน การเขียนโค้ด งานออฟฟิศ และอื่นๆ — พร้อมคัดลอกและใช้งาน
+🚀 **คัดลอกด้วยคลิกเดียว** — แตะที่การ์ดแล้วพรอมต์จะเข้าคลิปบอร์ดทันที วางในช่องแชทใดก็ได้
 
-🔍 **ค้นหาด้วยแท็ก + คำหลัก** — กรองด้วยแท็กตามสถานการณ์ หรือค้นหาด้วยคำหลัก
+🔍 **ค้นหาด้วยแท็ก + คำหลัก** — กรองด้วยแท็กตามสถานการณ์ 26 แท็ก หรือกด `Ctrl / ⌘ + K` เพื่อค้นหา
 
 🌍 **18 ภาษา** — มีการแปล UI และพรอมต์ครบถ้วน พร้อมตอบกลับในภาษาของคุณ
-
-📦 **พร้อมใช้งาน** — ไม่ต้องลงทะเบียน เปิดแล้วใช้เลย
 
 ### ฟีเจอร์ขั้นสูง (ต้องเข้าสู่ระบบ)
 
@@ -184,11 +168,13 @@
 
 ## 🌟 ประวัติ Star
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 ใบอนุญาต
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>أكثر من 5000 أمر ذكاء اصطناعي جاهز للاستخدام — حوّل ChatGPT وCursor وأي أداة ذكاء اصطناعي من أداء متوسط إلى مستوى الخبراء.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/ar/"><b>▶ جرّبه أونلاين</b></a> ·
+    <a href="https://www.aishort.top/ar/docs/extension/">⬇ إضافة المتصفح</a> ·
+    <a href="https://www.aishort.top/ar/docs/guides/getting-started">📖 التوثيق</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>أكثر من 5000 أمر ذكاء اصطناعي جاهز للاستخدام — حوّل ChatGPT وCursor وأي أداة ذكاء اصطناعي من أداء متوسط إلى مستوى الخبراء.</em>
-</p>
-
-## 📖 جدول المحتويات
-
-- [⚡ البدء السريع](#-البدء-السريع)
-- [💎 لماذا AiShort؟](#-لماذا-aishort)
-- [📸 لقطات الشاشة](#-لقطات-الشاشة)
-- [📚 التوثيق](#-التوثيق)
-- [🧩 إضافة المتصفح](#-إضافة-المتصفح)
-- [🚀 النشر](#-النشر)
-- [🤝 المساهمة](#-المساهمة)
-- [💬 المجتمع](#-المجتمع)
-- [🌟 سجل النجوم](#-سجل-النجوم)
-- [📜 الترخيص](#-الترخيص)
-
 ## ⚡ البدء السريع
 
 1. قم بزيارة [aishort.top](https://www.aishort.top/ar/)
@@ -84,13 +70,11 @@
 
 ### الميزات الأساسية
 
-🚀 **أوامر منسّقة** — تشمل الكتابة والبرمجة والعمل المكتبي والمزيد — جاهزة للنسخ والاستخدام.
+🚀 **نسخ بنقرة واحدة** — انقر على البطاقة لينتقل الأمر إلى الحافظة، ثم الصقه في أي محادثة مباشرة.
 
-🔍 **بحث بالعلامات والكلمات المفتاحية** — فلترة حسب علامات السيناريو، أو البحث بالكلمة المفتاحية.
+🔍 **بحث بالعلامات والكلمات المفتاحية** — فلترة عبر 26 علامة سيناريو، أو اضغط `Ctrl / ⌘ + K` للبحث.
 
 🌍 **18 لغة** — ترجمة كاملة للواجهة والأوامر، مع ردود بلغتك الأم.
-
-📦 **جاهز للاستخدام** — لا حاجة للتسجيل، افتح وابدأ فوراً.
 
 ### ميزات متقدمة (تتطلب تسجيل الدخول)
 
@@ -184,11 +168,13 @@
 
 ## 🌟 سجل النجوم
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 الترخيص
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

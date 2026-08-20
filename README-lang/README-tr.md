@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>5000'den fazla kullanıma hazır AI prompt'u — ChatGPT, Cursor ve her AI aracını sıradan çıktıdan uzman seviyesine taşıyın.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/tr/"><b>▶ Çevrimiçi dene</b></a> ·
+    <a href="https://www.aishort.top/tr/docs/extension/">⬇ Tarayıcı Eklentisi</a> ·
+    <a href="https://www.aishort.top/tr/docs/guides/getting-started">📖 Belgeler</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@ Türkçe |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>5000'den fazla kullanıma hazır AI prompt'u — ChatGPT, Cursor ve her AI aracını sıradan çıktıdan uzman seviyesine taşıyın.</em>
-</p>
-
-## 📖 İçindekiler
-
-- [⚡ Hızlı Başlangıç](#-hızlı-başlangıç)
-- [💎 Neden AiShort?](#-neden-aishort)
-- [📸 Ekran Görüntüleri](#-ekran-görüntüleri)
-- [📚 Belgeler](#-belgeler)
-- [🧩 Tarayıcı Eklentisi](#-tarayıcı-eklentisi)
-- [🚀 Dağıtım](#-dağıtım)
-- [🤝 Katkıda Bulunma](#-katkıda-bulunma)
-- [💬 Topluluk](#-topluluk)
-- [🌟 Star Geçmişi](#-star-geçmişi)
-- [📜 Lisans](#-lisans)
-
 ## ⚡ Hızlı Başlangıç
 
 1. [aishort.top](https://www.aishort.top/tr/) adresini ziyaret edin
@@ -84,13 +70,11 @@ Kayıt yok. Ücret yok. Kurulum yok. Açın ve kullanın.
 
 ### Temel Özellikler
 
-🚀 **Seçkin Prompt'lar** — Yazı, kodlama, ofis işleri ve daha fazlasını kapsayan, kopyalayıp kullanmaya hazır prompt'lar.
+🚀 **Tek tıkla kopyalama** — Karta dokunun, prompt panoya gelsin; herhangi bir sohbet kutusuna yapıştırın.
 
-🔍 **Etiket + Anahtar Kelime Araması** — Senaryo etiketlerine göre filtreleyin veya anahtar kelimeyle arayın.
+🔍 **Etiket + Anahtar Kelime Araması** — 26 senaryo etiketine göre filtreleyin veya `Ctrl / ⌘ + K` ile arayın.
 
 🌍 **18 Dil** — Tam arayüz ve prompt çevirisi, ana dilinizde yanıtlar.
-
-📦 **Kullanıma Hazır** — Kayıt gerekmez, hemen açıp kullanın.
 
 ### Gelişmiş Özellikler (Giriş Gerektirir)
 
@@ -143,10 +127,10 @@ Tam kılavuzlar için [aishort.top](https://www.aishort.top/tr/docs/):
 
 AiShort istemlerine tarayıcı eklentimizle istediğiniz zaman erişin. Chrome, Edge ve Firefox'u destekler — kenar çubuğunu `Alt + Shift + S` ile açın.
 
-- **Chrome**: [Chrome Web Mağazası](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge Eklentileri](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox Eklentileri](https://addons.mozilla.org/firefox/addon/aishort/)
-- **GitHub**: [Sürümler](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Ayrıca AiShort kenar çubuğunu herhangi bir web sitesinde çağırmak için [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey betiğini kullanabilirsiniz.
 
@@ -184,11 +168,13 @@ Tartışmalar ve geri bildirimler için bize katılın:
 
 ## 🌟 Star Geçmişi
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 Lisans
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

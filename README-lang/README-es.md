@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>Más de 5000 prompts de IA listos para usar — transforma ChatGPT, Cursor y cualquier herramienta de IA de mediocre a nivel experto.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/es/"><b>▶ Pruébalo online</b></a> ·
+    <a href="https://www.aishort.top/es/docs/extension/">⬇ Extensión de Navegador</a> ·
+    <a href="https://www.aishort.top/es/docs/guides/getting-started">📖 Documentación</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@ Español |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>Más de 5000 prompts de IA listos para usar — transforma ChatGPT, Cursor y cualquier herramienta de IA de mediocre a nivel experto.</em>
-</p>
-
-## 📖 Tabla de Contenidos
-
-- [⚡ Inicio Rápido](#-inicio-rápido)
-- [💎 ¿Por qué AiShort?](#-por-qué-aishort)
-- [📸 Capturas](#-capturas)
-- [📚 Documentación](#-documentación)
-- [🧩 Extensión de Navegador](#-extensión-de-navegador)
-- [🚀 Despliegue](#-despliegue)
-- [🤝 Contribuir](#-contribuir)
-- [💬 Comunidad](#-comunidad)
-- [🌟 Historial de Stars](#-historial-de-stars)
-- [📜 Licencia](#-licencia)
-
 ## ⚡ Inicio Rápido
 
 1. Visita [aishort.top](https://www.aishort.top/es/)
@@ -84,13 +70,11 @@ Sin registro. Sin pago. Sin instalación. Abre y usa.
 
 ### Funciones Principales
 
-🚀 **Prompts Curados** — Para escritura, programación, trabajo de oficina y más — listos para copiar y usar.
+🚀 **Copia con un clic** — Toca la tarjeta y el prompt queda en el portapapeles, listo para pegar en cualquier chat.
 
-🔍 **Búsqueda por Etiquetas y Palabras Clave** — Filtra por etiquetas de escenario o busca por palabra clave.
+🔍 **Búsqueda por Etiquetas y Palabras Clave** — Filtra por 26 etiquetas de escenario o pulsa `Ctrl / ⌘ + K` para buscar.
 
 🌍 **18 Idiomas** — Interfaz y prompts completamente traducidos, con respuestas en tu idioma nativo.
-
-📦 **Listo para Usar** — Sin registro necesario, empieza a usar de inmediato.
 
 ### Funciones Avanzadas (Tras Iniciar Sesión)
 
@@ -184,11 +168,13 @@ Para la configuración del desarrollo local, consulta la [Guía de Despliegue](h
 
 ## 🌟 Historial de Stars
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 Licencia
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

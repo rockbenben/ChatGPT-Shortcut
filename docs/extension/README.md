@@ -38,4 +38,4 @@ AI Short (ChatGPT Shortcut) 扩展把 5000+ 提示词随扩展本地打包，以
 
 启用 AiShort 侧边栏后，你会在支持网页的右下角看到一个绿色图标开关。点击此图标，便可开启或关闭侧边栏。目前默认支持 ChatGPT、Gemini、Claude、豆包等。
 
-![](/img/docs/zh/extension-sidebar.webp)
+![](/img/docs/extension-sidebar.webp)

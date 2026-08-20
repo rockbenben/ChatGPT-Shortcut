@@ -53,7 +53,7 @@ AiShort 首页由四个区域组成——顶部的**标题与入口按钮**、�
 
 点击卡片打开详情弹窗——查看完整内容、备注，并一键复制。
 
-![](/img/docs/zh/prompt-card.webp)
+![](/img/docs/prompt-card.webp)
 
 ### 复制提示词
 

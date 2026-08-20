@@ -53,7 +53,7 @@ AiShort 首頁由四個區域組成——頂部的**標題與入口按鈕**、�
 
 點擊卡片開啟詳情彈窗——查看完整內容、備註，並一鍵複製。
 
-![](/img/docs/zh/prompt-card.webp)
+![](/img/docs/prompt-card.webp)
 
 ### 複製提示詞
 

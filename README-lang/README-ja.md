@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>すぐに使える AI プロンプト 5000 以上——ChatGPT、Cursor、あらゆる AI ツールの出力を凡庸から専門家レベルへ。</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/ja/"><b>▶ オンラインで使う</b></a> ·
+    <a href="https://www.aishort.top/ja/docs/extension/">⬇ ブラウザ拡張機能</a> ·
+    <a href="https://www.aishort.top/ja/docs/guides/getting-started">📖 ドキュメント</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>すぐに使える AI プロンプト 5000 以上——ChatGPT、Cursor、あらゆる AI ツールの出力を凡庸から専門家レベルへ。</em>
-</p>
-
-## 📖 目次
-
-- [⚡ クイックスタート](#-クイックスタート)
-- [💎 なぜ AiShort?](#-なぜ-aishort)
-- [📸 スクリーンショット](#-スクリーンショット)
-- [📚 ドキュメント](#-ドキュメント)
-- [🧩 ブラウザ拡張機能](#-ブラウザ拡張機能)
-- [🚀 デプロイ](#-デプロイ)
-- [🤝 コントリビューション](#-コントリビューション)
-- [💬 コミュニティ](#-コミュニティ)
-- [🌟 Star 履歴](#-star-履歴)
-- [📜 ライセンス](#-ライセンス)
-
 ## ⚡ クイックスタート
 
 1. [aishort.top](https://www.aishort.top/ja/) にアクセス
@@ -84,13 +70,11 @@
 
 ### 基本機能
 
-🚀 **厳選プロンプト** — 執筆、プログラミング、業務などのシーンを網羅、コピーしてすぐ使える。
+🚀 **ワンクリックでコピー** — カードをタップするだけでクリップボードに入り、どのチャット欄にもそのまま貼り付けられる。
 
-🔍 **タグ + キーワード検索** — シーンタグでフィルタ、またはキーワードで直接検索。
+🔍 **タグ + キーワード検索** — 26 種類のシーンタグで絞り込み、または `Ctrl / ⌘ + K` で直接検索。
 
 🌍 **18 言語対応** — UI とプロンプトの翻訳が完備、母国語での返答にも対応。
-
-📦 **すぐに使える** — 登録不要、開いてすぐ利用開始。
 
 ### 高度な機能（ログイン後）
 
@@ -143,10 +127,10 @@
 
 いつでも AiShort プロンプトにアクセス。Chrome、Edge、Firefox 対応。`Alt + Shift + S` でサイドバーを表示。
 
-- **Chrome**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Microsoft Edge アドオン](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox アドオン](https://addons.mozilla.org/firefox/addon/aishort/)
-- **GitHub**: [リリース](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) Tampermonkey スクリプトを使えば、任意のサイトで AiShort サイドバーを呼び出すこともできます。
 
@@ -184,11 +168,13 @@ Vercel、Cloudflare Pages、Docker、またはローカル環境でデプロイ�
 
 ## 🌟 Star 履歴
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 ライセンス
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

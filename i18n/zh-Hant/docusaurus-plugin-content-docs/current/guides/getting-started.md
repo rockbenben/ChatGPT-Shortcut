@@ -17,7 +17,7 @@ description: 30 秒快速上手！複製提示詞到 ChatGPT、Gemini、DeepSeek
 3. 粘貼到任意 AI 工具——對話頁、編程工具、API 調用均可
 4. 按提示詞中的**佔位符**（如 `[內容]`、`[主題]`）補充你的具體需求，發送給 AI
 
-![](/img/docs/zh/how-to-use-aishort.webp)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **小貼士**：大部分提示詞用方括號 `[...]` 標記需要你補充的內容——把方括號裏的佔位文本換成你的具體內容即可。
 
