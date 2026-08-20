@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>5000+ prompt AI siap pakai — ubah ChatGPT, Cursor, dan alat AI apa pun dari biasa menjadi kelas pakar.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/ind/"><b>▶ Coba online</b></a> ·
+    <a href="https://www.aishort.top/ind/docs/extension/">⬇ Ekstensi Browser</a> ·
+    <a href="https://www.aishort.top/ind/docs/guides/getting-started">📖 Dokumentasi</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@ Indonesia |
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>5000+ prompt AI siap pakai — ubah ChatGPT, Cursor, dan alat AI apa pun dari biasa menjadi kelas pakar.</em>
-</p>
-
-## 📖 Daftar Isi
-
-- [⚡ Mulai Cepat](#-mulai-cepat)
-- [💎 Mengapa AiShort?](#-mengapa-aishort)
-- [📸 Tangkapan Layar](#-tangkapan-layar)
-- [📚 Dokumentasi](#-dokumentasi)
-- [🧩 Ekstensi Browser](#-ekstensi-browser)
-- [🚀 Deploy](#-deploy)
-- [🤝 Kontribusi](#-kontribusi)
-- [💬 Komunitas](#-komunitas)
-- [🌟 Riwayat Star](#-riwayat-star)
-- [📜 Lisensi](#-lisensi)
-
 ## ⚡ Mulai Cepat
 
 1. Kunjungi [aishort.top](https://www.aishort.top/ind/)
@@ -84,13 +70,11 @@ Tanpa pendaftaran. Tanpa biaya. Tanpa instalasi. Buka dan gunakan.
 
 ### Fitur Utama
 
-🚀 **Prompt Pilihan** — Mencakup penulisan, coding, pekerjaan kantor, dan lainnya — siap disalin dan digunakan.
+🚀 **Salin sekali klik** — Ketuk kartu dan prompt langsung masuk clipboard, tinggal tempel di kotak chat mana pun.
 
-🔍 **Pencarian Tag + Kata Kunci** — Filter berdasarkan tag skenario, atau cari berdasarkan kata kunci.
+🔍 **Pencarian Tag + Kata Kunci** — Filter berdasarkan 26 tag skenario, atau tekan `Ctrl / ⌘ + K` untuk mencari.
 
 🌍 **18 Bahasa** — Terjemahan UI dan prompt lengkap, dengan balasan dalam bahasa asli Anda.
-
-📦 **Siap Pakai** — Tidak perlu pendaftaran, buka langsung dan gunakan.
 
 ### Fitur Lanjutan (Setelah Login)
 
@@ -146,7 +130,7 @@ Akses prompt AiShort kapan saja dengan ekstensi browser kami. Mendukung Chrome, 
 - **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
 - **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
 - **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
-- **GitHub**: [Rilis](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Atau gunakan skrip Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) untuk menghadirkan sidebar AiShort di situs web mana pun.
 
@@ -184,11 +168,13 @@ Bergabunglah bersama kami untuk diskusi dan umpan balik:
 
 ## 🌟 Riwayat Star
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 Lisensi
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

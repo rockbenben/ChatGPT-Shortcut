@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>৫০০০+ ব্যবহারের জন্য প্রস্তুত AI প্রম্পট — ChatGPT, Cursor এবং যেকোনো AI টুলকে সাধারণ থেকে বিশেষজ্ঞ-পর্যায়ে রূপান্তর করুন।</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/bn/"><b>▶ অনলাইনে ব্যবহার করুন</b></a> ·
+    <a href="https://www.aishort.top/bn/docs/extension/">⬇ ব্রাউজার এক্সটেনশন</a> ·
+    <a href="https://www.aishort.top/bn/docs/guides/getting-started">📖 ডকুমেন্টেশন</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 বাংলা
 </p>
 
-<p align="center">
-    <em>৫০০০+ ব্যবহারের জন্য প্রস্তুত AI প্রম্পট — ChatGPT, Cursor এবং যেকোনো AI টুলকে সাধারণ থেকে বিশেষজ্ঞ-পর্যায়ে রূপান্তর করুন।</em>
-</p>
-
-## 📖 সূচিপত্র
-
-- [⚡ দ্রুত শুরু](#-দ্রুত-শুরু)
-- [💎 কেন AiShort?](#-কেন-aishort)
-- [📸 স্ক্রিনশট](#-স্ক্রিনশট)
-- [📚 ডকুমেন্টেশন](#-ডকুমেন্টেশন)
-- [🧩 ব্রাউজার এক্সটেনশন](#-ব্রাউজার-এক্সটেনশন)
-- [🚀 ডেপ্লয়মেন্ট](#-ডেপ্লয়মেন্ট)
-- [🤝 অবদান রাখুন](#-অবদান-রাখুন)
-- [💬 কমিউনিটি](#-কমিউনিটি)
-- [🌟 স্টার ইতিহাস](#-স্টার-ইতিহাস)
-- [📜 লাইসেন্স](#-লাইসেন্স)
-
 ## ⚡ দ্রুত শুরু
 
 1. [aishort.top](https://www.aishort.top/bn/) এ যান
@@ -84,13 +70,11 @@
 
 ### মূল বৈশিষ্ট্য
 
-🚀 **কিউরেটেড প্রম্পট** — লেখালেখি, কোডিং, অফিস এবং আরও অনেক ক্ষেত্র কভার করে — কপি করে সঙ্গে সঙ্গে ব্যবহার করুন।
+🚀 **এক ক্লিকে কপি** — কার্ডে একবার ট্যাপ করলেই প্রম্পট ক্লিপবোর্ডে চলে আসে, যেকোনো চ্যাট বক্সে পেস্ট করে ব্যবহার করুন।
 
-🔍 **ট্যাগ + কীওয়ার্ড সার্চ** — পরিস্থিতির ট্যাগ দিয়ে ফিল্টার করুন, বা কীওয়ার্ড দিয়ে খুঁজুন।
+🔍 **ট্যাগ + কীওয়ার্ড সার্চ** — ২৬টি পরিস্থিতির ট্যাগ দিয়ে ফিল্টার করুন, বা `Ctrl / ⌘ + K` চেপে খুঁজুন।
 
 🌍 **১৮টি ভাষা** — সম্পূর্ণ UI এবং প্রম্পট অনুবাদ, মাতৃভাষায় উত্তর।
-
-📦 **ব্যবহারের জন্য প্রস্তুত** — রেজিস্ট্রেশনের প্রয়োজন নেই, খুলুন এবং শুরু করুন।
 
 ### উন্নত বৈশিষ্ট্য (লগইনের পরে)
 
@@ -184,11 +168,13 @@ Vercel, Cloudflare Pages, Docker বা স্থানীয়ভাবে আ
 
 ## 🌟 স্টার ইতিহাস
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 লাইসেন্স
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

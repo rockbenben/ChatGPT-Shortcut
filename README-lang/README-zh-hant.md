@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>5000+ 即用 AI 提示詞庫——讓 ChatGPT、Cursor 等任意 AI 工具的輸出從平庸變專業。</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/zh-Hant/"><b>▶ 線上使用</b></a> ·
+    <a href="https://www.aishort.top/zh-Hant/docs/extension/">⬇ 瀏覽器擴充套件</a> ·
+    <a href="https://www.aishort.top/zh-Hant/docs/guides/getting-started">📖 文檔</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -47,23 +50,6 @@
 <a href="./README-bn.md">বাংলা</a>
 </p>
 
-<p align="center">
-    <em>5000+ 即用 AI 提示詞庫——讓 ChatGPT、Cursor 等任意 AI 工具的輸出從平庸變專業。</em>
-</p>
-
-## 📖 目錄
-
-- [⚡ 30 秒快速開始](#-30-秒快速開始)
-- [💎 為什麼選擇 AiShort？](#-為什麼選擇-aishort)
-- [📸 截圖預覽](#-截圖預覽)
-- [📚 文檔](#-文檔)
-- [🧩 瀏覽器擴充套件](#-瀏覽器擴充套件)
-- [🚀 部署](#-部署)
-- [🤝 貢獻指南](#-貢獻指南)
-- [💬 社群交流](#-社群交流)
-- [🌟 Star 歷史](#-star-歷史)
-- [📜 開源協議](#-開源協議)
-
 ## ⚡ 30 秒快速開始
 
 1. 開啟 [aishort.top](https://www.aishort.top/zh-Hant/)
@@ -78,19 +64,17 @@
 
 **會用 AI，和會用好 AI，差的是一段好提示詞。**
 
-同樣的問題，專業的提示詞能讓 AI 輸出從泛泛而談變得精準專業——但自己寫出這種提示詞，往往要長期實踐與反覆調整。AiShort 收錄上千條已被社群驗證的精選提示詞，涵蓋寫作、程式設計、辦公、學習、設計、行銷等場景。**複製 → 貼上 → 立刻獲得專業級輸出。**
+同樣的問題，專業的提示詞能讓 AI 輸出從泛泛而談變得精準專業——但自己寫出這種提示詞，往往要長期實踐與反覆調整。AiShort 收錄 5000+ 條提示詞，人工精選 + 社群投稿，涵蓋寫作、程式設計、辦公、學習、設計、行銷等場景。**複製 → 貼上 → 立刻獲得專業級輸出。**
 
 無需註冊、無需付費、無需安裝——開啟即用。
 
 ### 核心功能
 
-🚀 **精選提示詞** — 涵蓋寫作、程式設計、辦公等場景，複製即用。
+🚀 **一鍵複製** — 卡片上點一下就進剪貼簿，貼進任意對話框直接用。
 
-🔍 **標籤 + 關鍵字搜尋** — 按場景標籤篩選，或直接搜尋關鍵字。
+🔍 **標籤 + 關鍵字搜尋** — 26 個場景標籤篩選，或 `Ctrl / ⌘ + K` 直接搜尋關鍵字。
 
 🌍 **18 種語言** — 介面與提示詞翻譯完整，可指定母語回覆。
-
-📦 **開箱即用** — 無需註冊帳號，開啟即可使用。
 
 ### 高級功能（登入後）
 
@@ -143,10 +127,10 @@
 
 AiShort 擴充套件讓你隨時呼叫提示詞庫。支援 Chrome、Edge、Firefox，使用 `Alt + Shift + S` 快速喚出側邊欄。
 
-- **Chrome**: [Chrome 線上應用程式商店](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Edge 擴充套件商店](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Firefox 附加元件](https://addons.mozilla.org/firefox/addon/aishort/)
-- **GitHub**: [下載位址](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 也可使用[油猴腳本](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) 在任意網站喚出 AiShort 側邊欄。
 
@@ -186,11 +170,13 @@ AiShort 擴充套件讓你隨時呼叫提示詞庫。支援 Chrome、Edge、Fire
 
 ## 🌟 Star 歷史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 開源協議
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 

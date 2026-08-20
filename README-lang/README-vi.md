@@ -7,6 +7,16 @@
 </h1>
 
 <p align="center">
+    <em>5000+ prompt AI sẵn sàng dùng — biến ChatGPT, Cursor và bất kỳ công cụ AI nào từ tầm thường thành đẳng cấp chuyên gia.</em>
+</p>
+
+<p align="center">
+    <a href="https://www.aishort.top/vi/"><b>▶ Dùng thử trực tuyến</b></a> ·
+    <a href="https://www.aishort.top/vi/docs/extension/">⬇ Tiện ích trình duyệt</a> ·
+    <a href="https://www.aishort.top/vi/docs/guides/getting-started">📖 Tài liệu</a>
+</p>
+
+<p align="center">
     <a href="https://github.com/rockbenben/ChatGPT-Shortcut/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rockbenben/ChatGPT-Shortcut?color=blue&label=License" alt="License" />
     </a>
@@ -19,13 +29,6 @@
     <a href="https://discord.gg/PZTQfJ4GjX">
         <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=flat" alt="Discord" />
     </a>
-</p>
-
-<p align="center">
-    <img src="https://img.shields.io/badge/Docusaurus-3-2EE6F0?logo=docusaurus&logoColor=white" alt="Docusaurus" />
-    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Ant_Design-6-0170FE?logo=antdesign&logoColor=white" alt="Ant Design" />
 </p>
 
 <p align="center">
@@ -46,23 +49,6 @@ Tiếng Việt |
 <a href="./README-hi.md">हिन्दी</a> |
 <a href="./README-bn.md">বাংলা</a>
 </p>
-<p align="center">
-    <em>5000+ prompt AI sẵn sàng dùng — biến ChatGPT, Cursor và bất kỳ công cụ AI nào từ tầm thường thành đẳng cấp chuyên gia.</em>
-</p>
-
-## 📖 Mục lục
-
-- [⚡ Bắt đầu nhanh](#-bắt-đầu-nhanh)
-- [💎 Tại sao AiShort?](#-tại-sao-aishort)
-- [📸 Ảnh chụp màn hình](#-ảnh-chụp-màn-hình)
-- [📚 Tài liệu](#-tài-liệu)
-- [🧩 Tiện ích trình duyệt](#-tiện-ích-trình-duyệt)
-- [🚀 Triển khai](#-triển-khai)
-- [🤝 Đóng góp](#-đóng-góp)
-- [💬 Cộng đồng](#-cộng-đồng)
-- [🌟 Lịch sử Star](#-lịch-sử-star)
-- [📜 Giấy phép](#-giấy-phép)
-
 ## ⚡ Bắt đầu nhanh
 
 1. Truy cập [aishort.top](https://www.aishort.top/vi/)
@@ -83,13 +69,11 @@ Không cần đăng ký. Không thu phí. Không cài đặt. Mở ra và dùng 
 
 ### Tính năng cốt lõi
 
-🚀 **Prompt được tuyển chọn** — Bao gồm viết lách, lập trình, công việc văn phòng và nhiều hơn nữa — sẵn sàng để sao chép và dùng ngay.
+🚀 **Sao chép một chạm** — Chạm vào thẻ là prompt vào clipboard, dán thẳng vào bất kỳ khung chat nào.
 
-🔍 **Tìm kiếm theo thẻ + từ khóa** — Lọc theo thẻ tình huống, hoặc tìm theo từ khóa.
+🔍 **Tìm kiếm theo thẻ + từ khóa** — Lọc theo 26 thẻ tình huống, hoặc nhấn `Ctrl / ⌘ + K` để tìm.
 
 🌍 **18 ngôn ngữ** — Giao diện và prompt được dịch đầy đủ, với phản hồi bằng ngôn ngữ bản địa.
-
-📦 **Sẵn sàng sử dụng** — Không cần đăng ký, mở ra là dùng được ngay.
 
 ### Tính năng nâng cao (Cần đăng nhập)
 
@@ -142,10 +126,10 @@ Hướng dẫn đầy đủ trên [aishort.top](https://www.aishort.top/vi/docs/
 
 Truy cập AiShort prompt mọi lúc với tiện ích mở rộng trình duyệt của chúng tôi. Hỗ trợ Chrome, Edge, và Firefox — mở thanh bên bằng `Alt + Shift + S`.
 
-- **Chrome**: [Cửa hàng Chrome trực tuyến](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
-- **Edge**: [Tiện ích bổ trợ Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
-- **Firefox**: [Tiện ích bổ trợ Firefox](https://addons.mozilla.org/firefox/addon/aishort/)
-- **GitHub**: [Bản phát hành](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
+- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/ai-short-ai-prompt-shortc/blcgeoojgdpodnmnhfpohphdhfncblnj)
+- **Edge**: [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/ai-short-ai-prompt-shor/hnggpalhfjmdhhmgfjpmhlfilnbmjoin)
+- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/aishort/)
+- **GitHub**: [Releases](https://github.com/rockbenben/ChatGPT-Shortcut/releases/latest)
 
 Hoặc sử dụng script Tampermonkey [ChatGPT Shortcut Anywhere](https://greasyfork.org/scripts/482907-chatgpt-shortcut-anywhere) để gọi thanh bên AiShort trên mọi trang web.
 
@@ -183,11 +167,13 @@ Tham gia cùng chúng tôi để thảo luận và phản hồi:
 
 ## 🌟 Lịch sử Star
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rockbenben/ChatGPT-Shortcut&type=Date)](https://star-history.com/#rockbenben/ChatGPT-Shortcut&Date)
-
-## 📜 Giấy phép
-
-[MIT](../LICENSE) © [rockbenben](https://github.com/rockbenben)
+<a href="https://star-history.dera.page/#rockbenben/ChatGPT-Shortcut">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=rockbenben/ChatGPT-Shortcut" />
+ </picture>
+</a>
 
 ---
 
