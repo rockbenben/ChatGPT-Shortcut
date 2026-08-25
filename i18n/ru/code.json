@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "ИИ отвечает"
   },
+  "comments.emoji.label": {
+    "message": "Вставить эмодзи"
+  },
   "comments.empty": {
     "message": "Пока нет комментариев"
+  },
+  "comments.gif.label": {
+    "message": "Вставить GIF"
   },
   "comments.heading": {
     "message": "Обсуждение"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "Перевод"
+  },
+  "search.submit": {
+    "message": "Поиск"
   },
   "share.copy": {
     "message": "Копировать"

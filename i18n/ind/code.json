@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI sedang membalas"
   },
+  "comments.emoji.label": {
+    "message": "Sisipkan emoji"
+  },
   "comments.empty": {
     "message": "Belum ada komentar"
+  },
+  "comments.gif.label": {
+    "message": "Sisipkan GIF"
   },
   "comments.heading": {
     "message": "Diskusi"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "Terjemahan"
+  },
+  "search.submit": {
+    "message": "Cari"
   },
   "share.copy": {
     "message": "Salin"

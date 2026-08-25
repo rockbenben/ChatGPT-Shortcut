@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI กำลังตอบ"
   },
+  "comments.emoji.label": {
+    "message": "แทรกอิโมจิ"
+  },
   "comments.empty": {
     "message": "ยังไม่มีความคิดเห็น"
+  },
+  "comments.gif.label": {
+    "message": "แทรก GIF"
   },
   "comments.heading": {
     "message": "การสนทนา"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "คำแปล"
+  },
+  "search.submit": {
+    "message": "ค้นหา"
   },
   "share.copy": {
     "message": "คัดลอก"

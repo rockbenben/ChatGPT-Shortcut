@@ -159,10 +159,21 @@ const openShareWindow = (key: Channel["key"], url: string, title: string) => {
 
 function ShareFloatGroup({ shareUrl, title }: { shareUrl: string; title: string }) {
   return (
-    <FloatButton.Group trigger="hover" type="primary" style={{ right: 24 }} className="hideOnSmallScreen" icon={<ShareAltOutlined />}>
+    <FloatButton.Group
+      trigger="hover"
+      type="primary"
+      style={{ right: 24 }}
+      className="hideOnSmallScreen"
+      icon={<ShareAltOutlined />}
+      // 不给名字的话读屏念的是 @ant-design/icons 的英文图标名 "share-alt"
+      aria-label={translate({ id: "share.shareTo", message: "分享到" })}>
       {CHANNELS.map(({ key, Icon, label }) => (
         <Tooltip key={key} title={label} placement="left">
-          <FloatButton icon={<Icon />} onClick={() => openShareWindow(key, shareUrl, title)} />
+          <FloatButton
+            icon={<Icon />}
+            aria-label={translate({ id: "share.shareOn", message: "分享到 {channel}" }, { channel: label })}
+            onClick={() => openShareWindow(key, shareUrl, title)}
+          />
         </Tooltip>
       ))}
     </FloatButton.Group>

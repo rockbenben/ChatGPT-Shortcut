@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI が返信中"
   },
+  "comments.emoji.label": {
+    "message": "絵文字を挿入"
+  },
   "comments.empty": {
     "message": "コメントはまだありません"
+  },
+  "comments.gif.label": {
+    "message": "GIF を挿入"
   },
   "comments.heading": {
     "message": "ディスカッション"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "翻訳"
+  },
+  "search.submit": {
+    "message": "検索"
   },
   "share.copy": {
     "message": "コピー"

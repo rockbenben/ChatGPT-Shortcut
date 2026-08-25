@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI जवाब दे रहा है"
   },
+  "comments.emoji.label": {
+    "message": "इमोजी जोड़ें"
+  },
   "comments.empty": {
     "message": "अभी तक कोई टिप्पणी नहीं"
+  },
+  "comments.gif.label": {
+    "message": "GIF जोड़ें"
   },
   "comments.heading": {
     "message": "चर्चा"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "अनुवाद"
+  },
+  "search.submit": {
+    "message": "खोजें"
   },
   "share.copy": {
     "message": "कॉपी"

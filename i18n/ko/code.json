@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI가 답장 중"
   },
+  "comments.emoji.label": {
+    "message": "이모지 삽입"
+  },
   "comments.empty": {
     "message": "아직 댓글이 없습니다"
+  },
+  "comments.gif.label": {
+    "message": "GIF 삽입"
   },
   "comments.heading": {
     "message": "토론"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "번역"
+  },
+  "search.submit": {
+    "message": "검색"
   },
   "share.copy": {
     "message": "복사"

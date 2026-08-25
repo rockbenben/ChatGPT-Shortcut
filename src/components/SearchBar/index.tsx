@@ -301,7 +301,7 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
             <kbd className={`${styles.kbdHint} hideOnSmallScreen`} aria-hidden>
               CTRL K
             </kbd>
-            <Button icon={<SearchOutlined />} onClick={handleSearch} type="text" />
+            <Button icon={<SearchOutlined />} onClick={handleSearch} type="text" aria-label={translate({ id: "search.submit", message: "搜索" })} />
           </>
         }
       />

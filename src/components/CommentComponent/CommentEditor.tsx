@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Input, Button } from "antd";
 import { SmileOutlined, GifOutlined, SendOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
+import { IconAction } from "@site/src/components/IconAction";
 
 interface CommentEditorProps {
   value?: string;
@@ -57,8 +58,8 @@ const CommentEditor: React.FC<CommentEditorProps> = ({ value, onChange, onSubmit
           borderTop: "1px solid var(--site-color-hairline)",
         }}>
         <div style={{ display: "flex", gap: 8 }}>
-          <Button type="text" size="small" icon={<SmileOutlined />} onClick={onEmojiToggle} />
-          <Button type="text" size="small" icon={<GifOutlined />} onClick={onGifToggle} />
+          <IconAction size="small" label={translate({ id: "comments.emoji.label", message: "插入表情" })} icon={<SmileOutlined />} onClick={onEmojiToggle} />
+          <IconAction size="small" label={translate({ id: "comments.gif.label", message: "插入 GIF" })} icon={<GifOutlined />} onClick={onGifToggle} />
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           {onCancel && (

@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "الذكاء الاصطناعي يردّ"
   },
+  "comments.emoji.label": {
+    "message": "إدراج رمز تعبيري"
+  },
   "comments.empty": {
     "message": "لا توجد تعليقات بعد"
+  },
+  "comments.gif.label": {
+    "message": "إدراج GIF"
   },
   "comments.heading": {
     "message": "النقاش"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "ترجمة"
+  },
+  "search.submit": {
+    "message": "بحث"
   },
   "share.copy": {
     "message": "نسخ"

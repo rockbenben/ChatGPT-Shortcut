@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI 正在回覆"
   },
+  "comments.emoji.label": {
+    "message": "插入表情"
+  },
   "comments.empty": {
     "message": "暫無評論"
+  },
+  "comments.gif.label": {
+    "message": "插入 GIF"
   },
   "comments.heading": {
     "message": "討論"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "譯文"
+  },
+  "search.submit": {
+    "message": "搜索"
   },
   "share.copy": {
     "message": "複製"

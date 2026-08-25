@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI đang trả lời"
   },
+  "comments.emoji.label": {
+    "message": "Chèn biểu tượng cảm xúc"
+  },
   "comments.empty": {
     "message": "Chưa có bình luận"
+  },
+  "comments.gif.label": {
+    "message": "Chèn GIF"
   },
   "comments.heading": {
     "message": "Thảo luận"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "Bản dịch"
+  },
+  "search.submit": {
+    "message": "Tìm kiếm"
   },
   "share.copy": {
     "message": "Sao chép"

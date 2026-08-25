@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI উত্তর দিচ্ছে"
   },
+  "comments.emoji.label": {
+    "message": "ইমোজি যোগ করুন"
+  },
   "comments.empty": {
     "message": "এখনও কোনো মন্তব্য নেই"
+  },
+  "comments.gif.label": {
+    "message": "GIF যোগ করুন"
   },
   "comments.heading": {
     "message": "আলোচনা"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "অনুবাদ"
+  },
+  "search.submit": {
+    "message": "অনুসন্ধান"
   },
   "share.copy": {
     "message": "কপি"

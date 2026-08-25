@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "L'IA répond"
   },
+  "comments.emoji.label": {
+    "message": "Insérer un emoji"
+  },
   "comments.empty": {
     "message": "Aucun commentaire"
+  },
+  "comments.gif.label": {
+    "message": "Insérer un GIF"
   },
   "comments.heading": {
     "message": "Discussion"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "Traduction"
+  },
+  "search.submit": {
+    "message": "Rechercher"
   },
   "share.copy": {
     "message": "Copier"

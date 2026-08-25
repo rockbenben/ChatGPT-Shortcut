@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "YZ yanıtlıyor"
   },
+  "comments.emoji.label": {
+    "message": "Emoji ekle"
+  },
   "comments.empty": {
     "message": "Henüz yorum yok"
+  },
+  "comments.gif.label": {
+    "message": "GIF ekle"
   },
   "comments.heading": {
     "message": "Tartışma"
@@ -676,6 +682,9 @@
   },
   "prompt.translation": {
     "message": "Çeviri"
+  },
+  "search.submit": {
+    "message": "Ara"
   },
   "share.copy": {
     "message": "Kopyala"
