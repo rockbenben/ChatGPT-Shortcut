@@ -13,11 +13,13 @@ import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/pr
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { toBcp47 } from "@site/src/utils/i18n";
-import Comments from "./Comments";
-import { lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
+// 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
+// 全链拖进 eager common chunk，每个页面都要下载。
+const Comments = lazyWithRetry(() => import("./Comments"));
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;

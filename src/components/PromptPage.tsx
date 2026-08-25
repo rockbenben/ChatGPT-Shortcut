@@ -12,11 +12,14 @@ import { SITE_NAME } from "@site/src/data/constants";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 import { toJsonLd } from "@site/src/utils/jsonLd";
-import Comments from "./Comments";
-import { lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
 const AdComponent = lazyOptional(() => import("@site/src/components/AdComponent"));
+// 评论必须懒加载：它拖着 Pagination、Form 和整条 react-markdown 解析链
+// （micromark / unified / mdast / vfile）。静态 import 时被三个路由共享，
+// webpack 会把整棵树提进 eager 的 common chunk，首页明明不渲染评论也要付这份钱。
+const Comments = lazyWithRetry(() => import("./Comments"));
 
 // Composition Sheet 复用样式（与 CommunityPromptPage 保持家族一致）
 const sheetCardStyle: React.CSSProperties = {
