@@ -78,7 +78,7 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
         {/* Progress / Max-state */}
         {levelInfo.next ? (
           <Flex vertical gap={8} style={{ width: "100%", marginTop: 6 }}>
-            <div style={{ height: 3, background: "rgba(255,255,255,0.06)", borderRadius: 2, overflow: "hidden" }}>
+            <div style={{ height: 3, background: "var(--site-color-hairline)", borderRadius: 2, overflow: "hidden" }}>
               <div
                 style={{
                   height: "100%",

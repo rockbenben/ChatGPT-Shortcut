@@ -43,7 +43,10 @@
   --site-color-tag-selected-bg: hsl(163deg 38% 92%);
   --site-color-tag-selected-text: #2d6454;
   --site-color-tag-selected-border: #397e6a;
-  --site-color-text-tertiary: rgba(0, 0, 0, 0.45);
+  /* 三级文字承载的是信息不是装饰（复制数、字符/token 数、时间、FILTERS 标签、来源图标），
+     11px 下 .45/.40 实测只有 3.32:1 / 3.74:1，AA 小字要 4.5:1。抬到 .56/.50 后
+     两个模式都过线，观感仍明显低于正文与次级文字。 */
+  --site-color-text-tertiary: rgba(0, 0, 0, 0.56);
   --site-color-hairline: rgba(0, 0, 0, 0.08);
   --site-color-ghost-border: rgba(0, 0, 0, 0.04);
   /* 中性标记（卡片 tag tick、分类圆点）——彩虹色收敛后的默认态，选中才点亮 accent */
@@ -72,7 +75,7 @@ html[data-theme="dark"] {
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.1);
   --site-color-tag-selected-text: #57c2a3;
   --site-color-tag-selected-border: rgba(57, 126, 106, 0.5);
-  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --site-color-text-tertiary: rgba(255, 255, 255, 0.5);
   --site-color-hairline: rgba(255, 255, 255, 0.08);
   --site-color-ghost-border: rgba(255, 255, 255, 0.04);
   --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
@@ -438,6 +441,20 @@ article.markdown a:hover {
 .buttonLink:hover,
 .pagination-nav__label:hover {
   color: var(--site-primary-font);
+}
+
+/* 渐变的排版方向。
+   CSS 渐变没有逻辑属性对应物：`linear-gradient(90deg, …)` 在阿拉伯语（dir=rtl）下
+   仍然从左往右淡出，于是 remark 引用块的着色会从「强调条那一侧起」变成「从末尾起」，
+   跟同一块上已经改成 borderInlineStart 的强调条背道而驰。用一个继承变量把角度也
+   翻过来，调用处（PromptRemark / PromptDetailModal 的内联样式）只写 var()。
+   新增会淡出的渐变一律用它，别再写死 90deg。 */
+:root {
+  --site-fade-dir: 90deg;
+}
+
+html[dir="rtl"] {
+  --site-fade-dir: 270deg;
 }
 
 /* Sticky Footer Fix */
