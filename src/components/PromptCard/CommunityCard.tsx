@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { Tooltip, Button, Typography, Flex } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Translate from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, UpOutlined } from "@ant-design/icons";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -113,11 +113,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
         <div style={{ flex: 1, overflow: "hidden" }}>
           <PromptCardTag tags={user.tags} />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );

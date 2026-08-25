@@ -1,10 +1,10 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
+import { HeartFilled, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
@@ -208,11 +208,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
           <PromptCardTag tags={tags} muted clickable={false} />
         </div>
 
-        {website && (
-          <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={website} />
       </Flex>
     </BasePromptCard>
   );

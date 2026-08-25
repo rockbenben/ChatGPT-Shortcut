@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 import { Card, Flex } from "antd";
+import { LinkOutlined } from "@ant-design/icons";
+import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
@@ -11,6 +13,31 @@ import styles from "./styles.module.css";
 export const ClampBox: React.FC<{ children: ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
   <div style={{ flex: 1, minWidth: 0, minHeight: 0, ...style }}>{children}</div>
 );
+
+/**
+ * 卡片角落的原文链接。DataCard / CommunityCard / FavoriteCard / UserCard 曾各写一份
+ * 逐字相同的裸 `<a><LinkOutlined/></a>`，四份一起带着两个缺陷：
+ *
+ *   1. 命中区只有 12×22 —— 图标 12px、外层 `<a>` 无内边距。WCAG 2.2 AA(2.5.8) 要求
+ *      24×24，手机上实测很容易点空。这里把 `<a>` 撑成 24×24 的 inline-flex 盒子，
+ *      图标视觉尺寸不变，纯粹加大命中区。
+ *   2. 没有可访问名称 —— 图标链接无文本、无 aria-label，读屏只念「链接」。复用已在
+ *      17 个 locale 里译好的 `prompt.source`，不必为此新增 id（新增就得同步改 17 份
+ *      code.json，漏一份那门语言就回落中文）。
+ *
+ * marginLeft 从 8 收到 4：新盒子自带 6px 内边距，视觉间距与改动前保持一致。
+ */
+export const PromptSourceLink: React.FC<{ href?: string }> = ({ href }) =>
+  href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={translate({ id: "prompt.source", message: "来源" })}
+      style={{ marginLeft: 4, display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 24, minHeight: 24 }}>
+      <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
+    </a>
+  ) : null;
 
 interface BasePromptCardProps {
   title?: ReactNode;

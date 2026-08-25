@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
-import { BasePromptCard, ClampBox } from "./Base";
+import { HeartOutlined, HeartFilled, FireOutlined } from "@ant-design/icons";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
@@ -99,11 +99,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         <div style={{ flex: 1 }}>
           <PromptCardTag tags={user.tags} muted />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );

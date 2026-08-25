@@ -1,10 +1,10 @@
 import React, { useCallback, ReactNode } from "react";
 import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined, HolderOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
@@ -131,11 +131,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         <div style={{ flex: 1, overflow: "hidden" }}>
           <PromptCardTag tags={user.tags} clickable={false} />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );
