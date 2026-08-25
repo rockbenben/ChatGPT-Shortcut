@@ -257,6 +257,7 @@ const Comments = ({ pageId, type, onCountChange }: { pageId: any; type: any; onC
           pageSize={pageSize}
           total={totalCommentsCount}
           showQuickJumper
+          align="center"
           showSizeChanger={false}
           onChange={(page) => setCurrentPage(page)}
           style={{ textAlign: "center", marginTop: 24 }}

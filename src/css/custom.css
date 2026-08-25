@@ -719,3 +719,18 @@ article.markdown a:hover {
 .userstatus-live { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-boot { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: none; }
+
+/* Pagination — 允许换行。窄屏下 9 个页码（prev + 1..7 + next）总跨度 352px，超出
+   313px 的容器，而 antd 的 .ant-pagination 是 flex-wrap:nowrap + overflow:visible，
+   最后一个按钮直接戳出视口造成横向滚动（实测 360px 溢出 8px、320px 溢出 48px）。
+
+   本该用 `size="small"` / `responsive` 缩小尺寸，但 **antd 6.6.1 自身对不上号**：
+   组件发的是 `.ant-pagination-mini`（Pagination.js:186），它自带的样式表打的却是
+   `.ant-pagination-small`（style/index.js:179）——两个 class 名对不上，所以缩小尺寸
+   这条路在上游修好前完全无效（与本项目的静态提取无关，运行时 CSS-in-JS 同样失效）。
+   改用换行，不依赖上游。居中由各调用处的 antd `align="center"` 负责，这里不写
+   justify-content，免得盖掉 antd 的 -start/-end 变体。 */
+.ant-pagination {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
