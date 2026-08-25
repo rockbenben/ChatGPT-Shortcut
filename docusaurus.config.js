@@ -57,7 +57,7 @@ const config = {
 
   onBrokenLinks: "throw",
 
-  // Build-time injected fields (via webpack DefinePlugin under the hood)
+  // Build-time injected fields (via the bundler's DefinePlugin under the hood — Rspack here, via @docusaurus/faster)
   // buildDate 用于 schema.org Article 的 datePublished / dateModified（HEAD commit 时间，见顶部 resolveBuildDate）
   customFields: {
     buildDate,
@@ -126,6 +126,40 @@ const config = {
   ],
   plugins: [
     require.resolve("./plugin-gen-geo"),
+    // theme-classic 无条件把 lib/prism-include-languages.js 注册成 client module（见其
+    // getClientModules），client module 走 eager 入口，于是那句 `import { Prism } from
+    // 'prism-react-renderer'` 把 132 KB 单文件包拽进 main.js，全站每页都下载。
+    // 实测 prism-react-renderer 82.6 KB + prismjs 26.6 KB，而它只负责注册
+    // themeConfig.prism.additionalLanguages —— 本站一个都没配，纯空转。
+    // 别名成 false（= 忽略该模块，产出空实现）。本站经 @docusaurus/faster 用的是 Rspack，
+    // 其 ResolveAlias 类型显式含 false（config/types.d.ts），语义与 webpack 对齐——
+    // 万一哪天关掉 faster 退回 webpack，这行也照常工作。代码高亮不受影响：真正渲染的 @theme/CodeBlock
+    // 自己 import prism，只出现在 docs 的路由 chunk 里按需加载。
+    // 两处失效都是硬报错而非静默胖回去，所以不需要额外的自检脚本：
+    //   - theme-classic 改名/移除该文件 → require.resolve 抛
+    //   - 有人配了 additionalLanguages（那些语言将不会被注册）→ 下面直接抛
+    function dropPrismIncludeLanguagesClientModule(context) {
+      // themeConfig 在 @ts-check 下是 unknown，这里只读一个字段，就地断言即可
+      const prismConfig = /** @type {{ additionalLanguages?: string[] } | undefined} */ (context.siteConfig.themeConfig?.prism);
+      const extra = prismConfig?.additionalLanguages ?? [];
+      if (extra.length > 0) {
+        throw new Error(
+          `themeConfig.prism.additionalLanguages 配了 [${extra}]，但注册它们的 client module 被本插件去掉了，` +
+            `代码块会静默退化成纯文本。要么清空该配置，要么删掉本插件（每页多背 ~109 KB）。`,
+        );
+      }
+      return {
+        name: "drop-prism-include-languages-client-module",
+        configureWebpack(_config, isServer) {
+          if (isServer) return {};
+          return {
+            resolve: {
+              alias: { [require.resolve("@docusaurus/theme-classic/lib/prism-include-languages")]: false },
+            },
+          };
+        },
+      };
+    },
     // auth-boot：在主 JS 包下载/水合之前，于 <head> 同步读 localStorage 的 token，
     // 给 <html> 打 data-auth-boot=in。配合 custom.css，让已登录用户在水合前看到的是骨架占位
     // 而非静态 HTML 里烤死的「免费登录」CTA——发版后冷缓存（主包重新下载的那几秒）尤其明显。
@@ -208,7 +242,11 @@ const config = {
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        // 跟随系统。SSR 只能按 defaultMode 渲染，data-theme 由 <head> 的预绘制脚本
+        // 按 prefers-color-scheme 纠正，所以系统浅色的新访客首帧拿到的是「浅色页面 +
+        // 构建期定死的 .aishort 暗色组件」。这一情形由 genAntdCss.mjs 生成的
+        // `html[data-theme="light"] .aishort…` 选择器兜住；没有那条就别开这个。
+        respectPrefersColorScheme: true,
       },
       navbar: {
         hideOnScroll: true,
