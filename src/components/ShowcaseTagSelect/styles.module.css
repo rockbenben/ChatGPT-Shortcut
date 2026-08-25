@@ -69,7 +69,7 @@ input:checked + .checkboxLabel {
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  margin-left: 8px;
+  margin-inline-start: 8px;
   display: inline-block;
   flex-shrink: 0;
   background-color: var(--site-color-neutral-marker);

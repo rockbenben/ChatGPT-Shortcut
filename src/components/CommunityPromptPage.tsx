@@ -194,7 +194,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               {
                 title: (
                   <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                    <HomeOutlined style={{ marginRight: 4 }} />
+                    <HomeOutlined style={{ marginInlineEnd: 4 }} />
                     <Translate id="link.home">首页</Translate>
                   </Link>
                 ),
@@ -221,7 +221,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   {prompt.owner && (
                     <span>
-                      <UserOutlined style={{ marginRight: 4 }} />
+                      <UserOutlined style={{ marginInlineEnd: 4 }} />
                       {prompt.owner}
                     </span>
                   )}
@@ -254,7 +254,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     padding: "14px 16px",
                     background: "var(--site-color-ghost-border)",
                     borderRadius: 4,
-                    borderLeft: "2px solid var(--site-color-hairline)",
+                    borderInlineStart: "2px solid var(--site-color-hairline)",
                   }}>
                   <Eyebrow>
                     <Translate id="prompt.authorNote">作者备注</Translate>

@@ -33,7 +33,7 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
           {author || (
             <>
               AI Short
-              <CheckCircleFilled aria-label="official" style={{ fontSize: 13, color: "var(--site-color-tag-selected-text)", marginLeft: 8 }} />
+              <CheckCircleFilled aria-label="official" style={{ fontSize: 13, color: "var(--site-color-tag-selected-text)", marginInlineStart: 8 }} />
             </>
           )}
         </Text>
@@ -59,9 +59,9 @@ const CommentComponent: React.FC<CommentComponentProps> = ({ actions, author, av
         <div
           style={{
             marginTop: 12,
-            paddingLeft: 12,
-            borderLeft: "2px solid var(--site-color-hairline)",
-            marginLeft: 8,
+            paddingInlineStart: 12,
+            borderInlineStart: "2px solid var(--site-color-hairline)",
+            marginInlineStart: 8,
           }}>
           {children}
         </div>

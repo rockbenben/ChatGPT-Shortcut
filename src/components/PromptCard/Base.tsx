@@ -34,7 +34,7 @@ export const PromptSourceLink: React.FC<{ href?: string }> = ({ href }) =>
       target="_blank"
       rel="noopener noreferrer"
       aria-label={translate({ id: "prompt.source", message: "来源" })}
-      style={{ marginLeft: 4, display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 24, minHeight: 24 }}>
+      style={{ marginInlineStart: 4, display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 24, minHeight: 24 }}>
       <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
     </a>
   ) : null;
@@ -103,7 +103,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
         {...rest}>
         {(title || titleExtra) && (
           <Flex justify="space-between" align="start" style={{ marginBottom: 12, minHeight: 32 }}>
-            <div style={{ flex: 1, overflow: "hidden", marginRight: 8 }}>{title}</div>
+            <div style={{ flex: 1, overflow: "hidden", marginInlineEnd: 8 }}>{title}</div>
             {/* flexShrink:0：角标是定宽信息，标题再长也不该压扁它 */}
             {titleExtra && <Flex align="center" gap={8} style={{ flexShrink: 0 }}>{titleExtra}</Flex>}
           </Flex>

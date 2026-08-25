@@ -132,8 +132,8 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             {data.remark && (
               <div
                 style={{
-                  borderLeft: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
-                  background: "linear-gradient(90deg, rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
+                  borderInlineStart: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
+                  background: "linear-gradient(var(--site-fade-dir), rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
                   borderRadius: "0 6px 6px 0",
                   padding: "6px 16px",
                   flexShrink: 0,

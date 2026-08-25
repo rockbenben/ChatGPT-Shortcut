@@ -21,7 +21,7 @@ export const GiphySelector = ({ onGifSelect, width = 450, height = 300, columns 
         darkMode: isDarkMode,
         searchbarHeight: 32,
       }}>
-      <div className="giphy-selector" style={{ maxWidth: width, marginLeft: "5px" }}>
+      <div className="giphy-selector" style={{ maxWidth: width, marginInlineStart: "5px" }}>
         <SearchBar placeholder={translate({ id: "comments.gif.searchPlaceholder", message: "搜索 GIF" })} />
         <div
           style={{
