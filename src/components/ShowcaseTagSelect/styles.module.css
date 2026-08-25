@@ -20,7 +20,7 @@ input[type='checkbox'] + .checkboxLabel {
   border-radius: 0;
   padding: 4px 10px;
   transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--site-color-hairline);
   background-color: transparent;
   font-size: 12px;
   font-weight: 500;
@@ -52,14 +52,14 @@ input:checked + .checkboxLabel {
   transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ifm-color-content-secondary);
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--site-color-hairline);
   letter-spacing: 0.02em;
 }
 
 .tagSelect:hover {
   color: var(--ifm-color-content) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  background-color: rgba(255, 255, 255, 0.02) !important;
+  border-color: color-mix(in srgb, var(--ifm-color-content) 18%, transparent) !important;
+  background-color: color-mix(in srgb, var(--ifm-color-content) 3%, transparent) !important;
 }
 
 /* 分类圆点：默认中性灰，选中时点亮为 accent 并带微光。
@@ -72,7 +72,7 @@ input:checked + .checkboxLabel {
   margin-left: 8px;
   display: inline-block;
   flex-shrink: 0;
-  background-color: rgba(255, 255, 255, 0.22);
+  background-color: var(--site-color-neutral-marker);
   transition: background-color 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
