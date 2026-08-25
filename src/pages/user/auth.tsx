@@ -106,15 +106,17 @@ const CallbackPage = () => {
   return (
     <Layout title={translate({ id: "auth.callback.title", message: "完成登录" })} noFooter>
       {phase === "working" ? (
-        <EmptyState icon={<Spin />} title={<Translate id="auth.callback.working">正在完成登录…</Translate>} description={<Translate id="auth.callback.workingHint">请不要关闭本页，稍后会自动跳回首页</Translate>} />
+        <EmptyState fullPage icon={<Spin />} title={<Translate id="auth.callback.working">正在完成登录…</Translate>} description={<Translate id="auth.callback.workingHint">请不要关闭本页，稍后会自动跳回首页</Translate>} />
       ) : phase === "failed" ? (
         <EmptyState
+          fullPage
           title={<Translate id="auth.callback.failed">登录没有完成</Translate>}
           description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可。</Translate>}
           action={backHome}
         />
       ) : (
         <EmptyState
+          fullPage
           title={<Translate id="auth.callback.idle">这里没有待处理的登录</Translate>}
           description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏。</Translate>}
           action={backHome}

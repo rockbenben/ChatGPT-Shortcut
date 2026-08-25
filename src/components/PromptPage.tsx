@@ -222,8 +222,12 @@ function PromptPage({ prompt, currentLanguage }) {
         <link rel="alternate" hrefLang="x-default" href={`${siteConfig.url}/prompt/${prompt.id}`} />
         <script type="application/ld+json">{toJsonLd(articleSchema)}</script>
       </Head>
-      {/* 外层 Row：保持原有的居中 + 最大宽度约束（xl 约 66% container 宽度） */}
-      <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
+      {/* 外层 Row：保持原有的居中 + 最大宽度约束（xl 约 66% container 宽度）。
+          paddingInline 必须等于内层 gutter 的一半：antd 的 Row gutter 是「负 margin +
+          子 Col 正 padding」实现的，父级没有这 12px 抵消时 Row 会左右各溢出 12px。
+          窄屏 Col 全部 xs=24 占满，右侧那 12px 直接变成整页横向滚动（360/375/390 实测都中招，
+          414 以上才因别的约束躲开）——5022 个 prompt 页全部受影响，且 CLS 报 0、构建全绿。 */}
+      <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
         <Col xs={24} sm={22} md={22} lg={20} xl={18} className="full-width-col">
           {/* 内层 Row：在约束后的宽度内做 75/25 三栏分布 */}
           <Row gutter={[24, 24]}>
@@ -234,7 +238,7 @@ function PromptPage({ prompt, currentLanguage }) {
                   {
                     title: (
                       <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                        <HomeOutlined style={{ marginRight: 4 }} />
+                        <HomeOutlined style={{ marginInlineEnd: 4 }} />
                         <Translate id="link.home">首页</Translate>
                       </Link>
                     ),

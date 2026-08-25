@@ -20,6 +20,7 @@ export default function NotFoundContent({ className }: { className?: string }): 
   return (
     <main className={clsx("container margin-vert--xl", className)}>
       <EmptyState
+        fullPage
         icon={<CompassOutlined />}
         title={
           <Translate id="theme.NotFound.title" description="The title of the 404 page">

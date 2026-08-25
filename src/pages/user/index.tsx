@@ -121,6 +121,7 @@ const UserProfile = () => {
     return (
       <Layout title={translate({ id: "link.myAccount", message: "我的账户" })}>
         <EmptyState
+          fullPage
           icon={<UserOutlined />}
           title={<Translate id="account.signInRequired">登录后查看账户</Translate>}
           description={<Translate id="account.signInRequiredHint">正在带你回首页，也可以直接点下面的按钮。</Translate>}
