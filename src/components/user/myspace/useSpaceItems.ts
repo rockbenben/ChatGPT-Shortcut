@@ -172,7 +172,7 @@ export function useSpaceItems({ userAuth, currentLanguage, onDataLoaded, message
       } catch (error) {
         console.error("Failed to fetch MySpace data:", error);
         if (isMounted) {
-          messageApi.error(translate({ id: "message.loadFailed", message: "加载数据失败" }));
+          messageApi.error(translate({ id: "message.loadFailed", message: "加载数据失败，请稍后重试" }));
         }
       } finally {
         if (isMounted) {

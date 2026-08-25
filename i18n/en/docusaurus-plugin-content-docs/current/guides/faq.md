@@ -85,8 +85,8 @@ Don't swap out the prompt right away — try tuning it in these directions first
 
 ## How do I back up my prompts?
 
-1. Go to "My Account" and find the "Data Management → Export Prompts" section
-2. Click the "Export Data" button
+1. Go to "My account" and find the "Data management → Export prompts" section
+2. Click the "Export data" button
 3. The system will generate a JSON file and download it automatically
 
 Backing up regularly is recommended to prevent data loss.

@@ -59,7 +59,7 @@ Each user's data is saved in **their own browser's** localStorage, independent o
 :::caution
 
 - Browser local storage caps out around 5 MB, which is plenty for typical use.
-- Clearing browser data will wipe a user's personal data — encourage regular backups via "My Account → Data Management → Export Data".
+- Clearing browser data will wipe a user's personal data — encourage regular backups via "My account → Data management → Export data".
 - Switching computers or browsers requires re-importing the data.
 
 :::
@@ -141,7 +141,7 @@ When deploying to Vercel, Cloudflare Pages, or similar platforms, just select th
 
 ### Export
 
-Go to "My Account → Data Management → Export Data" to save your collections and custom prompts as a JSON file.
+Go to "My account → Data management → Export data" to save your collections and custom prompts as a JSON file.
 
 ### Import
 
@@ -157,8 +157,8 @@ The following JSON formats are supported:
 
 ### Migrating from the Online Edition
 
-1. Export your data from the "My Account" page on the online edition (aishort.top)
-2. Import that JSON file from "My Account → Data Management" on the offline edition
+1. Export your data from the "My account" page on the online edition (aishort.top)
+2. Import that JSON file from "My account → Data management" on the offline edition
 3. Community collections are converted to local prompts automatically; curated collections sync as expected
 
 ## FAQ
@@ -179,11 +179,11 @@ The following actions will erase a user's personal data:
 - Using private / incognito browsing
 - Switching to a different computer or browser
 
-Recommend backing up important data regularly to a JSON file via "My Account → Data Management → Export Data".
+Recommend backing up important data regularly to a JSON file via "My account → Data management → Export data".
 
 ### Can custom prompts be shared across the team?
 
-Yes. One person exports a JSON file, and others import it from "My Account → Data Management → Import Data" — duplicates are handled automatically.
+Yes. One person exports a JSON file, and others import it from "My account → Data management → Import data" — duplicates are handled automatically.
 
 ### How do I update the prompt library?
 

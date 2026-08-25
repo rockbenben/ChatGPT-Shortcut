@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
 import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
@@ -191,6 +191,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               <Typography.Paragraph
                 copyable={{
                   text: data.description,
+                  // 不传 tooltips 会落到 antd 语言包（zh_CN 是「复制 / 复制成功」），与站内
+                  // CopyButton 的「复制 / 已复制」分叉。复用已有 id，18 个 locale 都已译好。
+                  tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
                 }}
                 style={{ margin: 0, lineHeight: 1.55, fontSize: 13, color: "var(--ifm-color-content-secondary)", flexShrink: 0, maxHeight: "20vh", overflowY: "auto" }}>
                 {data.description}

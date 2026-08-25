@@ -21,7 +21,7 @@ export const voteAlreadyVotedText = (action: VoteAction) =>
     : translate({ id: "vote.downvote.alreadyVoted", message: "本次会话中你已踩过该提示词" });
 
 export const voteSuccessText = (action: VoteAction) =>
-  action === "upvote" ? translate({ id: "vote.upvote.success", message: "已赞！" }) : translate({ id: "vote.downvote.success", message: "已踩！" });
+  action === "upvote" ? translate({ id: "vote.upvote.success", message: "已赞" }) : translate({ id: "vote.downvote.success", message: "已踩" });
 
 export const voteFailedText = (action: VoteAction) =>
   action === "upvote" ? translate({ id: "vote.upvote.failed", message: "点赞失败，请重试" }) : translate({ id: "vote.downvote.failed", message: "点踩失败，请重试" });

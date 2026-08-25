@@ -17,7 +17,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
     setLoading(true);
     try {
       await changePassword(values);
-      message.success(<Translate id="message.success.passwordChanged">密码修改成功！</Translate>);
+      message.success(<Translate id="message.success.passwordChanged">密码已修改</Translate>);
       changePasswordForm.resetFields();
     } catch (error) {
       console.error("Error changing password:", error);
@@ -31,7 +31,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      message.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
+      message.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送</Translate>);
       forgotPasswordForm.resetFields();
     } catch (error) {
       console.error("Error sending forgot password email:", error);
@@ -60,8 +60,8 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
               name="email"
               label={<Translate id="placeholder.email">邮箱</Translate>}
               rules={[
-                { required: true, message: translate({ id: "validation.email.required", message: "请输入您的邮箱！" }) },
-                { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址！" }) },
+                { required: true, message: translate({ id: "validation.email.required", message: "请输入您的邮箱" }) },
+                { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址" }) },
               ]}
               initialValue={userInfo?.email || ""}>
               <Input prefix={<MailOutlined style={{ color: "var(--site-color-text-tertiary)" }} />} size="large" />
@@ -107,7 +107,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
           <Form.Item
             name="currentPassword"
             label={<Translate id="placeholder.currentPassword">当前密码</Translate>}
-            rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码！" }) }]}>
+            rules={[{ required: true, message: translate({ id: "validation.currentPassword.required", message: "请输入当前密码" }) }]}>
             <Input.Password
               prefix={<LockOutlined style={{ color: "var(--site-color-text-tertiary)" }} />}
               size="large"
@@ -118,7 +118,7 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
           name="newPassword"
           label={<Translate id="placeholder.newPassword">新密码</Translate>}
           rules={[
-            { required: true, message: translate({ id: "input.newPassword", message: "请输入新密码！" }) },
+            { required: true, message: translate({ id: "input.newPassword", message: "请输入新密码" }) },
             { min: 6, message: translate({ id: "validation.password.length", message: "密码长度至少为 6 个字符" }) },
           ]}>
           <Input.Password
@@ -131,13 +131,13 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
           label={<Translate id="placeholder.confirmPassword">确认新密码</Translate>}
           dependencies={["newPassword"]}
           rules={[
-            { required: true, message: translate({ id: "validation.confirmPassword.required", message: "请确认新密码！" }) },
+            { required: true, message: translate({ id: "validation.confirmPassword.required", message: "请确认新密码" }) },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue("newPassword") === value) {
                   return Promise.resolve();
                 }
-                return Promise.reject(new Error(translate({ id: "validation.password.match", message: "两次输入的密码不一致！" })));
+                return Promise.reject(new Error(translate({ id: "validation.password.match", message: "两次输入的密码不一致" })));
               },
             }),
           ]}>

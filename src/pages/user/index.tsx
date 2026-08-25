@@ -71,7 +71,7 @@ const UserProfile = () => {
       message.success(<Translate id="message.cache.cleared">缓存已清除，数据已刷新</Translate>);
     } catch (error) {
       console.error("Clear cache error:", error);
-      message.error(<Translate id="message.cache.clearError">清除缓存失败</Translate>);
+      message.error(<Translate id="message.cache.clearError">清除缓存失败，请稍后重试</Translate>);
     }
   }, [fetchUserInfo, message]);
 
@@ -173,7 +173,11 @@ const UserProfile = () => {
                     ),
                   },
                   {
-                    title: <Translate id="link.userCenter">用户中心</Translate>,
+                    // 与导航菜单项、Layout title 同名：三处指的都是这一个页面。
+                    // 之前面包屑单独用 link.userCenter「用户中心 / User center」，
+                    // 菜单点进来却写「我的账户」——18 个语言都这么分叉，不是英文独有问题。
+                    // 那个 id 已从本分支各 code.json 移除（每个分支自带一份，互不影响）。
+                    title: <Translate id="link.myAccount">我的账户</Translate>,
                   },
                 ]}
               />

@@ -79,7 +79,7 @@ export function useTagAssignment({ spaceItems, customTags, setSpaceItems, getUse
       syncSpaceCache(spaceItemsRef.current, customTagsRef.current);
     } catch (error) {
       console.error("Failed to update item tags:", error);
-      messageApi.error(translate({ id: "message.tagsUpdateFailed", message: "标签更新失败" }));
+      messageApi.error(translate({ id: "message.tagsUpdateFailed", message: "标签更新失败，请稍后重试" }));
       // 回滚到打开 dropdown 那一刻的 originalTags（中间的 toggle 全部撤销）
       setSpaceItems((items) => items.map((i) => (i.id === editing.itemId ? { ...i, customTags: editing.originalTags } : i)));
     }

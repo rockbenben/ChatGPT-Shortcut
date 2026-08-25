@@ -61,7 +61,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
               required: true,
               message: translate({
                 id: "validation.promptTitle.required",
-                message: "请输入提示词标题！",
+                message: "请输入提示词标题",
               }),
             },
           ]}>
@@ -81,7 +81,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
               required: true,
               message: translate({
                 id: "validation.promptContent.required",
-                message: "请输入提示词内容！",
+                message: "请输入提示词内容",
               }),
             },
           ]}>

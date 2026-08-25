@@ -103,7 +103,7 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
 
-      message.success(<Translate id="message.export.success">提示词导出成功！</Translate>);
+      message.success(<Translate id="message.export.success">提示词已导出</Translate>);
     } catch (error) {
       console.error("Export error:", error);
       message.error(<Translate id="message.export.error">导出失败，请稍后重试</Translate>);
@@ -272,9 +272,9 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
         setImporting(false);
 
         if (errorCount === 0) {
-          message.success(<Translate id="message.import.success">导入成功！</Translate>);
+          message.success(<Translate id="message.import.success">已导入</Translate>);
         } else if (successCount > 0) {
-          message.warning(`${translate({ id: "message.import.partial", message: "部分导入成功" })} (${successCount}/${successCount + errorCount})`);
+          message.warning(`${translate({ id: "message.import.partial", message: "部分提示词已导入" })} (${successCount}/${successCount + errorCount})`);
         } else {
           message.error(<Translate id="message.import.failed">导入失败</Translate>);
         }

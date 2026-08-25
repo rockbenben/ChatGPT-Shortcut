@@ -31,7 +31,7 @@ That's it — for more, see the [Getting Started guide](./guides/getting-started
 
 ## Advanced Features (After Login)
 
-📂 **My Collection**: Drag-and-drop sorting and custom tag classification.
+📂 **My collection**: Drag-and-drop sorting and custom tag classification.
 
 ✏️ **Custom Prompts**: Create, edit, and manage your own prompts.
 

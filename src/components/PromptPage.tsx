@@ -313,7 +313,11 @@ function PromptPage({ prompt, currentLanguage }) {
                         <Translate id="prompt.translation">译文</Translate>
                       </Eyebrow>
                       <Typography.Paragraph
-                        copyable={{ text: promptInfo.description }}
+                        copyable={{
+                          text: promptInfo.description,
+                          // 见 PromptDetailModal 同处注释：避免 antd 语言包的「复制成功」与站内文案分叉
+                          tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
+                        }}
                         style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
                         {promptInfo.description}
                       </Typography.Paragraph>

@@ -10,7 +10,7 @@ AiShort works without an account — but **logging in** lets you collect your fa
 
 ## Login Methods
 
-The login dialog offers "**Password Login**" and "**Passwordless Login**" tabs, plus one-click Google sign-in.
+The login dialog offers "**Password sign-in**" and "**Passwordless sign-in**" tabs, plus one-click Google sign-in.
 
 ### Password Login
 
@@ -18,8 +18,8 @@ Log in with your username or registered email plus your password.
 
 ### Passwordless Login
 
-1. Switch to "Passwordless Login" and enter your registered email
-2. Click "**Get Login Link**" — a sign-in link is sent to your inbox
+1. Switch to "Passwordless sign-in" and enter your registered email
+2. Click "**Get sign-in link**" — a sign-in link is sent to your inbox
 3. Open the link to log in
 
 Nothing to remember — handy if you only sign in now and then.
@@ -32,7 +32,7 @@ Click the Google button in the login dialog for one-click sign-in. The first tim
 
 ## Register Account
 
-1. In the login dialog, click "**Register now**" to switch to register
+1. In the login dialog, click "**Create account**" to switch to register
 2. Fill in email, username, and password, and agree to the Privacy Policy and Terms of Service
 3. You'll be logged in automatically after submitting
 
@@ -40,7 +40,7 @@ Click the Google button in the login dialog for one-click sign-in. The first tim
 
 ## My Account
 
-After logging in, open the "**My Account**" page to manage your profile, password, level, and data.
+After logging in, open the "**My account**" page to manage your profile, password, level, and data.
 
 ![My Account Page](/img/docs/account-profile.png)
 
@@ -52,7 +52,7 @@ Click the edit icon next to your username, then save.
 
 1. Enter your current password
 2. Enter your new password and confirm
-3. Click "Change Password" to submit
+3. Click "Change password" to submit
 
 Forgot your password? In the login dialog, click "Forgot Password", enter your registered email, click "Send Reset Email", and follow the link.
 
@@ -62,11 +62,11 @@ The account page shows your **level (L0–L9)** and progress to the next tier �
 
 ## Data Management
 
-The "My Account → Data Management" section offers three actions:
+The "My account → Data management" section offers three actions:
 
-- **Clear Cache** — refreshes locally cached data; use it when data isn't syncing or the display looks off. Your collections and custom prompts aren't lost, this just forces a re-sync
-- **Export Prompts** — exports a JSON file for backup (see [Custom Prompts](./user-prompts#export-prompts))
-- **Import Prompts** — imports prompts and collections from a JSON file
+- **Clear cache** — refreshes locally cached data; use it when data isn't syncing or the display looks off. Your collections and custom prompts aren't lost, this just forces a re-sync
+- **Export prompts** — exports a JSON file for backup (see [Custom Prompts](./user-prompts#export-prompts))
+- **Import prompts** — imports prompts and collections from a JSON file
 
 ## Related Documentation
 

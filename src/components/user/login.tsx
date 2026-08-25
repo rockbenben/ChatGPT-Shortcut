@@ -16,14 +16,14 @@ const rules = {
       required: true,
       message: translate({
         id: "validation.username.required",
-        message: "请输入用户名或注册邮箱！",
+        message: "请输入用户名或注册邮箱",
       }),
     },
   ],
   password: [
     {
       required: true,
-      message: translate({ id: "validation.password.required", message: "请输入密码！" }),
+      message: translate({ id: "validation.password.required", message: "请输入密码" }),
     },
     {
       min: 6,
@@ -38,14 +38,14 @@ const rules = {
       required: true,
       message: translate({
         id: "validation.email.required",
-        message: "请输入您的邮箱！",
+        message: "请输入您的邮箱",
       }),
     },
     {
       type: "email" as const,
       message: translate({
         id: "validation.email.invalid",
-        message: "请输入有效的邮箱地址！",
+        message: "请输入有效的邮箱地址",
       }),
     },
   ],
@@ -54,7 +54,7 @@ const rules = {
       required: true,
       message: translate({
         id: "validation.confirmPassword.required",
-        message: "请确认新密码！",
+        message: "请确认新密码",
       }),
     },
     ({ getFieldValue }) => ({
@@ -66,7 +66,7 @@ const rules = {
           new Error(
             translate({
               id: "validation.password.match",
-              message: "两次输入的密码不一致！",
+              message: "两次输入的密码不一致",
             })
           )
         );
@@ -274,18 +274,18 @@ const LoginPage = () => {
   );
 
   const onFinishLogin = async (values) => {
-    handleAuth(values, login, <Translate id="message.success.login">登录成功！</Translate>);
+    handleAuth(values, login, <Translate id="message.success.login">已登录</Translate>);
   };
 
   const onFinishRegister = async (values) => {
-    handleAuth(values, register, <Translate id="message.success.register">注册成功！</Translate>);
+    handleAuth(values, register, <Translate id="message.success.register">已注册</Translate>);
   };
 
   const handleForgotPassword = async (values) => {
     setLoading(true);
     try {
       await forgotPassword(values.email);
-      messageApi.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送！</Translate>);
+      messageApi.success(<Translate id="message.success.forgotPassword">密码重置邮件已发送</Translate>);
       form.resetFields();
     } catch (error) {
       console.error(
@@ -327,7 +327,7 @@ const LoginPage = () => {
       // Dynamically determine parameters to pass to backend
       const payload = isValidEmail(target) ? { email: target } : { username: target };
       await sendPasswordlessLink(payload);
-      messageApi.success(<Translate id="message.success.passwordlessLink">免密码登录链接已发送到您的邮箱！</Translate>);
+      messageApi.success(<Translate id="message.success.passwordlessLink">登录链接已发送到您的邮箱</Translate>);
       form.resetFields();
     } catch (error) {
       console.error("Error sending passwordless login link:", error);

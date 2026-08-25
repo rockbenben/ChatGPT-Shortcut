@@ -32,7 +32,7 @@ interface CopyButtonProps {
   tooltipLabel?: React.ReactNode;
   /** Label for outlined/primary variants (idle state). Defaults to <Translate id="action.copyPrompt">复制提示词</Translate>. */
   children?: React.ReactNode;
-  /** Label for outlined/primary variants (copied state). Defaults to <Translate id="message.copied">复制成功</Translate>. */
+  /** Label for outlined/primary variants (copied state). Defaults to <Translate id="message.copied">已复制</Translate>. */
   copiedLabel?: React.ReactNode;
   /**
    * Side-effect fired immediately after copy is initiated (e.g. close a modal).
@@ -108,7 +108,7 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
       onClick={handleClick}
       className={composedClassName}>
       {variant !== "iconOnly" &&
-        (copied ? copiedLabel ?? <Translate id="message.copied">复制成功</Translate> : children ?? <Translate id="action.copyPrompt">复制提示词</Translate>)}
+        (copied ? copiedLabel ?? <Translate id="message.copied">已复制</Translate> : children ?? <Translate id="action.copyPrompt">复制提示词</Translate>)}
     </Button>
   );
 

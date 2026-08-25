@@ -30,7 +30,7 @@ const ResetPassword = () => {
         type: "error",
         content: translate({
           id: "validation.password.match",
-          message: "两次输入的密码不一致！",
+          message: "两次输入的密码不一致",
         }),
         duration: 5,
       });
@@ -40,7 +40,7 @@ const ResetPassword = () => {
     setLoading(true);
     try {
       await resetPassword(values);
-      messageApi.success(<Translate id="message.resetPassword.success">密码重置成功！</Translate>);
+      messageApi.success(<Translate id="message.resetPassword.success">密码已重置</Translate>);
       form.resetFields();
 
       // Delay redirect to show success message —— 保留当前 locale 前缀
@@ -64,7 +64,7 @@ const ResetPassword = () => {
   const passwordRules = [
     {
       required: true,
-      message: translate({ id: "input.newPassword", message: "请输入新密码！" }),
+      message: translate({ id: "input.newPassword", message: "请输入新密码" }),
     },
     {
       min: 6,
@@ -105,7 +105,7 @@ const ResetPassword = () => {
                   required: true,
                   message: translate({
                     id: "input.resetPassword.code",
-                    message: "请输入您的重置代码！",
+                    message: "请输入您的重置代码",
                   }),
                 },
               ]}>
@@ -126,7 +126,7 @@ const ResetPassword = () => {
                   required: true,
                   message: translate({
                     id: "validation.confirmPassword.required",
-                    message: "请确认新密码！",
+                    message: "请确认新密码",
                   }),
                 },
                 ({ getFieldValue }) => ({
@@ -138,7 +138,7 @@ const ResetPassword = () => {
                       new Error(
                         translate({
                           id: "validation.password.match",
-                          message: "两次输入的密码不一致！",
+                          message: "两次输入的密码不一致",
                         })
                       )
                     );
