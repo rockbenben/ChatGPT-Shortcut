@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "Geçersiz veri formatı"
   },
+  "message.import.nothing": {
+    "message": "Dosyadaki her şey zaten mevcut, içe aktarılacak bir şey yok"
+  },
   "message.import.parseError": {
     "message": "JSON ayrıştırma başarısız, lütfen dosya formatını kontrol edin"
   },

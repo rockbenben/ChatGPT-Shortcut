@@ -103,7 +103,7 @@ const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, impo
           title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
           description={
             <Text type="warning">
-              <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
+              <Translate id="modal.clearCache.warning">清除后将重新加载所有数据</Translate>
             </Text>
           }
           onConfirm={onClearCache}

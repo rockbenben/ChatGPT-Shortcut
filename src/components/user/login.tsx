@@ -38,7 +38,7 @@ const rules = {
       required: true,
       message: translate({
         id: "validation.email.required",
-        message: "请输入您的邮箱",
+        message: "请输入邮箱",
       }),
     },
     {
@@ -212,7 +212,7 @@ const LoginPage = () => {
       spinner.className = "spinner";
 
       const text = doc.createElement("p");
-      text.textContent = translate({ id: "login.google.redirecting", message: "正在跳转到 Google 登录..." });
+      text.textContent = translate({ id: "login.google.redirecting", message: "正在跳转到 Google 登录…" });
 
       wrapper.appendChild(spinner);
       wrapper.appendChild(text);
@@ -327,7 +327,7 @@ const LoginPage = () => {
       // Dynamically determine parameters to pass to backend
       const payload = isValidEmail(target) ? { email: target } : { username: target };
       await sendPasswordlessLink(payload);
-      messageApi.success(<Translate id="message.success.passwordlessLink">登录链接已发送到您的邮箱</Translate>);
+      messageApi.success(<Translate id="message.success.passwordlessLink">登录链接已发送到你的邮箱</Translate>);
       form.resetFields();
     } catch (error) {
       console.error("Error sending passwordless login link:", error);
@@ -394,7 +394,7 @@ const LoginPage = () => {
             }}>
             <InfoCircleOutlined style={{ color: "var(--site-color-tag-selected-text)", marginTop: 4 }} />
             <Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)", lineHeight: 1.55 }}>
-              <Translate id="login.passwordless.info">登录链接将发送至您的邮箱，点击即可登录</Translate>
+              <Translate id="login.passwordless.info">登录链接将发送至你的邮箱，点击即可登录</Translate>
             </Text>
           </div>
           <Form.Item name="email" rules={rules.username} style={{ marginBottom: 24 }}>
@@ -518,7 +518,7 @@ const LoginPage = () => {
             <Text style={{ fontSize: 13, color: "var(--ifm-color-content-secondary)" }}>
               {viewState === "login" && <Translate id="login.subtitle.welcome">登录探索更多优质提示词</Translate>}
               {viewState === "register" && <Translate id="login.subtitle.register">发现、分享和创造精彩提示词</Translate>}
-              {viewState === "forgot-password" && <Translate id="login.subtitle.forgotPassword">重置链接将发送至您的邮箱</Translate>}
+              {viewState === "forgot-password" && <Translate id="login.subtitle.forgotPassword">重置链接将发送至你的邮箱</Translate>}
             </Text>
           </div>
         </>

@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "Định dạng dữ liệu không hợp lệ"
   },
+  "message.import.nothing": {
+    "message": "Mọi thứ trong tệp đã có sẵn, không có gì để nhập"
+  },
   "message.import.parseError": {
     "message": "Lỗi phân tích JSON"
   },

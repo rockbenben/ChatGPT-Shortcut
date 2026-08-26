@@ -97,7 +97,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // Loading state — 与正常态共用 Card 容器，零跳变
   if (loading) {
     return (
-      <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
+      <Layout title={translate({ id: "community.loading", message: "加载中…" })}>
         <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />

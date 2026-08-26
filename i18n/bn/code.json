@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "অবৈধ ডেটা ফরম্যাট"
   },
+  "message.import.nothing": {
+    "message": "ফাইলের সবকিছু ইতিমধ্যে আছে, আমদানি করার কিছু নেই"
+  },
   "message.import.parseError": {
     "message": "JSON পার্সিং ত্রুটি"
   },

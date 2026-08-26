@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "अमान्य डेटा प्रारूप"
   },
+  "message.import.nothing": {
+    "message": "फ़ाइल की सभी सामग्री पहले से मौजूद है, आयात करने के लिए कुछ नहीं"
+  },
   "message.import.parseError": {
     "message": "JSON पार्सिंग त्रुटि"
   },

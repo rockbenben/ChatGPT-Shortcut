@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "無効なデータ形式"
   },
+  "message.import.nothing": {
+    "message": "このファイルの内容はすべて既にあります。取り込むものはありません"
+  },
   "message.import.parseError": {
     "message": "JSON解析エラー"
   },

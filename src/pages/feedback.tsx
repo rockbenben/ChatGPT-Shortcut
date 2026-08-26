@@ -31,7 +31,7 @@ const FeedbackPage = () => {
       title={translate({ id: "feedback.title", message: "反馈与建议" })}
       description={translate({
         id: "feedback.description",
-        message: "您的反馈对我们很重要！",
+        message: "你的反馈对我们很重要！",
       })}>
       <main className="margin-vert--md">
         <section className="margin-top--sm margin-bottom--sm">

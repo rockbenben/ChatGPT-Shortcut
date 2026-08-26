@@ -53,14 +53,14 @@ const SecurityCard: React.FC<{ userInfo: any }> = ({ userInfo }) => {
       content: (
         <div style={{ marginTop: 16 }}>
           <Text type="secondary" style={{ display: "block", marginBottom: 16 }}>
-            <Translate id="message.forgotPassword.info">我们会向您的注册邮箱发送一封包含重置链接的邮件。</Translate>
+            <Translate id="message.forgotPassword.info">我们会向你的注册邮箱发送一封包含重置链接的邮件</Translate>
           </Text>
           <Form form={forgotPasswordForm} layout="vertical">
             <Form.Item
               name="email"
               label={<Translate id="placeholder.email">邮箱</Translate>}
               rules={[
-                { required: true, message: translate({ id: "validation.email.required", message: "请输入您的邮箱" }) },
+                { required: true, message: translate({ id: "validation.email.required", message: "请输入邮箱" }) },
                 { type: "email", message: translate({ id: "validation.email.invalid", message: "请输入有效的邮箱地址" }) },
               ]}
               initialValue={userInfo?.email || ""}>

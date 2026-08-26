@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "Format data tidak valid"
   },
+  "message.import.nothing": {
+    "message": "Semua isi berkas sudah ada, tidak ada yang perlu diimpor"
+  },
   "message.import.parseError": {
     "message": "Parsing JSON gagal, silakan periksa format file"
   },

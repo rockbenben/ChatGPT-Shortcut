@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "잘못된 데이터 형식"
   },
+  "message.import.nothing": {
+    "message": "파일의 내용이 모두 이미 있습니다. 가져올 항목이 없습니다"
+  },
   "message.import.parseError": {
     "message": "JSON 파싱 오류"
   },

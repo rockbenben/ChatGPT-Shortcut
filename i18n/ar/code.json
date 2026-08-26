@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "تنسيق بيانات غير صالح"
   },
+  "message.import.nothing": {
+    "message": "كل ما في الملف موجود بالفعل، لا شيء للاستيراد"
+  },
   "message.import.parseError": {
     "message": "خطأ في تحليل JSON"
   },

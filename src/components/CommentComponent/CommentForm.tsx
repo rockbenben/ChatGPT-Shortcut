@@ -125,7 +125,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ draftKey, requiredMessage, su
             onCancel={handleCancel}
             placeholder={translate({
               id: "placeholder.comment",
-              message: "在此输入评论…… 支持使用 Markdown 和 HTML 语法",
+              message: "在此输入评论… 支持使用 Markdown 和 HTML 语法",
             })}
           />
         </Form.Item>

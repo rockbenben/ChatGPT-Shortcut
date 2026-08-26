@@ -111,14 +111,14 @@ const CallbackPage = () => {
         <EmptyState
           fullPage
           title={<Translate id="auth.callback.failed">登录没有完成</Translate>}
-          description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可。</Translate>}
+          description={<Translate id="auth.callback.failedHint">登录链接可能已过期或已被使用过。回到首页重新登录即可</Translate>}
           action={backHome}
         />
       ) : (
         <EmptyState
           fullPage
           title={<Translate id="auth.callback.idle">这里没有待处理的登录</Translate>}
-          description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏。</Translate>}
+          description={<Translate id="auth.callback.idleHint">本页只用于登录跳转，不需要收藏</Translate>}
           action={backHome}
         />
       )}

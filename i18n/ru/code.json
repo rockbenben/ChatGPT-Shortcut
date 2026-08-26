@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "Неверный формат данных"
   },
+  "message.import.nothing": {
+    "message": "Всё из файла уже есть — импортировать нечего"
+  },
   "message.import.parseError": {
     "message": "Ошибка разбора JSON"
   },

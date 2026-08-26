@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "รูปแบบข้อมูลไม่ถูกต้อง"
   },
+  "message.import.nothing": {
+    "message": "ทุกอย่างในไฟล์มีอยู่แล้ว ไม่มีอะไรต้องนำเข้า"
+  },
   "message.import.parseError": {
     "message": "การแยกวิเคราะห์ JSON ล้มเหลว กรุณาตรวจสอบรูปแบบไฟล์"
   },

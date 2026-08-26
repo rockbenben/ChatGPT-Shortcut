@@ -464,6 +464,9 @@
   "message.import.invalid": {
     "message": "Formato de datos inválido"
   },
+  "message.import.nothing": {
+    "message": "Todo lo del archivo ya está aquí, no hay nada que importar"
+  },
   "message.import.parseError": {
     "message": "Error de análisis JSON"
   },
