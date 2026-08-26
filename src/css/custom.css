@@ -42,6 +42,8 @@
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --site-color-tag-selected-bg: hsl(163deg 38% 92%);
   --site-color-tag-selected-text: #2d6454;
+  --site-color-error-text: #cf1322;
+  --site-color-warning-text: #ad4e00;
   --site-color-tag-selected-border: #397e6a;
   /* 三级文字承载的是信息不是装饰（复制数、字符/token 数、时间、FILTERS 标签、来源图标），
      11px 下 .45/.40 实测只有 3.32:1 / 3.74:1，AA 小字要 4.5:1。抬到 .56/.50 后
@@ -49,6 +51,37 @@
   --site-color-text-tertiary: rgba(0, 0, 0, 0.56);
   --site-color-hairline: rgba(0, 0, 0, 0.08);
   --site-color-ghost-border: rgba(0, 0, 0, 0.04);
+  /* 页脚底色。不设的话落回 Infima 的 --ifm-color-emphasis-100：浅色是 #f5f6f7 的冷灰，
+     撞在这套微暖纸底（page #f0f1ea）上就是一条发白发冷的带子，明显不属于同一个色系。
+     此前只写过 .footer--dark，而 docusaurus.config 的 footer 没有 style:"dark"，
+     DOM 里也就从来没有 .footer--dark 这个 class —— 那条规则是死的，两个模式都没被覆盖过。
+     取 surface 一层（与卡片同色），让页脚相对页面有一点抬升又不跳出色系。 */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  /* 等级色（LevelSystem 的 10 级）。原本只有一套为暗底设计的粉彩，浅色主题上线后没回头改：
+     10 级在浅色下是 1.33–2.88:1，等级图标、进度条、10px 序号几乎看不见，于是补了这组
+     浅色变体（保持色相、饱和度收到 42% 上限后压亮度）。
+
+     那次是按 surface #f8f9f3 的纯色底算的，得出「每级 ≥4.6」—— 但徽章真实的底不是它：
+     HomePage 的等级徽章是「accent 文字 + 同色 8% 淡底」，坐在 page #f0f1ea 上，11px。
+     按真实底重测，10 级是 3.87–3.96，全部不到 4.5。而且不是淡底的锅：把叠加降到 0%
+     最差也只有 4.28 —— 是色值本身对近白页面上的 11px 文字太亮。
+     压暗后浏览器实测 4.71–4.76（10 级逐个注入真实徽章元素量的，不是模型算的）。注意底色要取「徽章实际叠出来的那层」：徽章坐的不是
+     page #f0f1ea 而是一层更暗的面板（由实测反解约 #e9eae2），按 page 算会高估 0.3 左右，
+     第一次压暗就是这么压不够的（算得 4.71，实测只有 4.40）。
+     暗色那组不用改，同口径实测 5.99–13.03 全部通过。
+
+     教训写在这儿：改这组值时，底色要取「徽章实际叠出来的那层」，不是 surface 纯色。 */
+  --site-level-0: #536165; /* 萌新 graphite */
+  --site-level-1: #7f5634; /* 青铜 bronze */
+  --site-level-2: #4c6172; /* 白银 silver */
+  --site-level-3: #755a30; /* 黄金 gold */
+  --site-level-4: #3d637c; /* 铂金 platinum */
+  --site-level-5: #6a4ab4; /* 钻石 prism */
+  --site-level-6: #3d5f95; /* 蓝宝石 sapphire */
+  --site-level-7: #9b4053; /* 红宝石 ruby */
+  --site-level-8: #33694f; /* 翡翠 emerald */
+  --site-level-9: #6f5d2d; /* 星辉 starlight */
+
   /* 中性标记（卡片 tag tick、分类圆点）——彩虹色收敛后的默认态，选中才点亮 accent */
   --site-color-neutral-marker: rgba(0, 0, 0, 0.2);
   --site-color-favorite-background: transparent;
@@ -74,10 +107,13 @@ html[data-theme="dark"] {
   --site-color-card-background: #272d33;
   --site-color-tag-selected-bg: rgba(57, 126, 106, 0.1);
   --site-color-tag-selected-text: #57c2a3;
+  --site-color-error-text: #dc8885;
+  --site-color-warning-text: #fa8c16;
   --site-color-tag-selected-border: rgba(57, 126, 106, 0.5);
   --site-color-text-tertiary: rgba(255, 255, 255, 0.5);
   --site-color-hairline: rgba(255, 255, 255, 0.08);
   --site-color-ghost-border: rgba(255, 255, 255, 0.04);
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
   --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
   --ifm-background-color: #14171a;
   --ifm-background-surface-color: #1d2126;
@@ -91,6 +127,18 @@ html[data-theme="dark"] {
      —— neutral-marker 的 rgba(0,0,0,.2) 在深色底上等于隐形 */
   --site-color-card-border: var(--ifm-color-emphasis-200);
   --site-color-neutral-marker: rgba(255, 255, 255, 0.22);
+
+  /* 等级色暗色值（原始那套粉彩，为暗底设计） */
+  --site-level-0: #94a3a8;
+  --site-level-1: #c8956b;
+  --site-level-2: #a8b8c5;
+  --site-level-3: #d8a55a;
+  --site-level-4: #b0c8d8;
+  --site-level-5: #cdb8ff;
+  --site-level-6: #6f95d0;
+  --site-level-7: #d97a8e;
+  --site-level-8: #5fb088;
+  --site-level-9: #f0d896;
 }
 
 /*
@@ -225,10 +273,6 @@ html[data-theme="dark"] {
 [data-theme="dark"] .header-qq-link::before {
   background: url("@site/static/img/icons/qq-dark.svg") no-repeat;
   background-size: contain;
-}
-
-.footer--dark {
-  --ifm-footer-background-color: #272d33;
 }
 
 .unique-tabs .tabs__item {
@@ -803,4 +847,59 @@ html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: non
 .ant-pagination {
   flex-wrap: wrap;
   row-gap: 8px;
+}
+
+/* 密码可见性切换的命中区补到 24×24（WCAG 2.2 AA, 2.5.8）。antd 的语义是齐的
+   —— role=button、tabindex、aria-label 都在 —— 缺的只是可点面积：图标本身就 16×16。
+   它嵌在输入框内部，24px 判定圆必然与输入框自身的目标相交，spacing 例外用不上，
+   属实打实不达标。登录 / 改密 / 重置密码共 7 处 Input.Password 走的都是这个类。
+
+   用居中的透明伪元素扩命中区，不参与布局：实测图标 border-box 仍是 16×16，输入框
+   高度 39、suffix 16×24 均未变，elementFromPoint ±11px 四向全部命中，而图标左侧
+   20px 处仍归输入框——没有越界抢点击。
+
+   **不要顺手把 .ant-typography-copy 一起加进来**：它 13×15，看着是同类问题，但四周
+   60px 内没有别的目标，靠 spacing 例外本来就合规。而它嵌在 Typography 段落的最后一行，
+   行高只有 20.15px（13px × 1.55），24px 的命中区无论怎么对齐都会溢出行盒约 3px；
+   一旦外层是 overflow-y:auto 的滚动容器（提示词 modal 的译文段落、正文框都是），
+   这 3px 就让 scrollHeight 超过 clientHeight，两行文字也长出滚动条。加过一次，
+   实测 sh 43 / ch 40，撤掉即回 40。 */
+.ant-input-password-icon {
+  position: relative;
+}
+.ant-input-password-icon::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  margin: -12px;
+}
+
+/* 表单校验提示的文字色。antd 的 .ant-form-item-explain-error 取 colorError 本身
+   （不是 colorErrorText），而 colorError 在暗色下被三处用着、需求方向不一致：
+     ① 实心 danger 按钮的【底】（Modal.confirm 的 okButtonProps danger）—— 要更暗，白字才读得出
+     ② 文字/描边型 danger 按钮的【字】—— 要更亮
+     ③ 这里的校验提示【字】—— 要更亮
+   ②③ 同向、只有 ① 相反，单个值无解：实测把暗色种子压到 #f04a4a（派生 #cf4242），
+   ①的白字能到 4.66，但 ②③ 作为文字只剩 2.99。
+
+   ① 维持现状，是明确决定，不要再改：暗色下实心 danger 按钮（Modal.confirm 的
+   okButtonProps danger，用在删除确认等处）白字压在 #dc6966 上只有 3.36:1，这是 antd
+   自身 colorError 与白字的默认关系，不是本项目引入的（浅色 5.57 正常）。要修只能改
+   调用点、把实心换成描边 danger，会让确认弹窗的视觉分量降一档 —— 权衡后选择不动。
+   对比度扫描会一直报这一条，属已知并接受，不必再提。
+
+   也试过按组件覆盖 components.Form.colorError —— 无效：Form 的组件 token 里没有
+   colorError，生成物里那条规则始终引用全局的 var(--ant-color-error)（已验证生成的
+   --ant-form-* 变量清单里没有它）。所以只能在 CSS 这层单独给校验文字上色，按钮不动。
+
+   暗色 #dc8885 实测 elevated #272d33 上 5.24、container #1d2126 上 6.09
+   （原 #dc6966 分别是 4.14 / 4.82，弹窗里的表单不达标）。
+   浅色沿用 #cf1322，本来就过（#ffffff 5.57 / #f8f9f3 5.26），写出来是为了成对，
+   免得哪天只改一边。
+
+   选择器要带 .ant-form-item：antd 真正生效的那条是 `.ant-form-item .ant-form-item-explain-error`
+   （0,2,0），文件里另有一条同名的裸选择器（0,1,0）容易误导 —— 只写裸的压不过去，
+   实测颜色纹丝不动。 */
+.ant-form-item .ant-form-item-explain-error {
+  color: var(--site-color-error-text);
 }

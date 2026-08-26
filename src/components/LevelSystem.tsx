@@ -41,16 +41,16 @@ export interface LevelInfo {
  * Docusaurus 的 write-translations 才扫得到，动态 id 会让这 10 条文案从 code.json 掉队。
  */
 const LEVELS = [
-  { threshold: 0, accentColor: "#94a3a8" }, // 萌新——neutral graphite
-  { threshold: 1, accentColor: "#c8956b" }, // 青铜——warm bronze
-  { threshold: 3, accentColor: "#a8b8c5" }, // 白银——cool silver
-  { threshold: 8, accentColor: "#d8a55a" }, // 黄金——warm muted gold
-  { threshold: 18, accentColor: "#b0c8d8" }, // 铂金——cool light platinum
-  { threshold: 35, accentColor: "#cdb8ff" }, // 钻石——pale violet prism
-  { threshold: 60, accentColor: "#6f95d0" }, // 蓝宝石——cool sapphire blue
-  { threshold: 100, accentColor: "#d97a8e" }, // 红宝石——rose ruby
-  { threshold: 160, accentColor: "#5fb088" }, // 翡翠——deep emerald green
-  { threshold: 260, accentColor: "#f0d896" }, // 星辉——warm starlight gold
+  { threshold: 0 },
+  { threshold: 1 },
+  { threshold: 3 },
+  { threshold: 8 },
+  { threshold: 18 },
+  { threshold: 35 },
+  { threshold: 60 },
+  { threshold: 100 },
+  { threshold: 160 },
+  { threshold: 260 },
 ];
 
 /** 最高等级编号。别再手抄：LevelSpecCard 曾写死 " / 05"，过了 L5 就显示 "06 / 05"。 */
@@ -69,7 +69,10 @@ export function getLevelInfo(sharedCount: number): LevelInfo {
   }
   return {
     level,
-    accentColor: LEVELS[level].accentColor,
+    // 色值不再写在这里：明暗两套值在 custom.css 的 --site-level-N（写死单模式色会让
+    // 浅色主题拿到为暗底调的粉彩，实测 10 级全部低于 AA）。消费方都是内联 style，能解析 var()；
+    // 唯一例外是 LevelIcon —— SVG 的 presentation attribute 不解析 var()，改由父级 color 继承。
+    accentColor: `var(--site-level-${level})`,
     next: LEVELS[level + 1]?.threshold ?? null,
   };
 }

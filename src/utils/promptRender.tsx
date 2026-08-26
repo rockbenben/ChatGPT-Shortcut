@@ -18,7 +18,13 @@ export function renderPromptWithPlaceholders(text: string): React.ReactNode {
             margin: "0 1px",
             borderRadius: 4,
             backgroundColor: "rgba(var(--ifm-color-primary-rgb, 24 144 255), 0.12)",
-            color: "var(--ifm-color-primary)",
+            // 文字不用 --ifm-color-primary：底色就是同一个颜色的 12% 叠加，等于让底
+            // 朝着文字自己的色相染过去，对比度天然被压住。实测 13.5px 下浅色 3.87、
+            // 暗色 4.23，两边都低于 4.5（WCAG 1.4.3）。这不是装饰字 —— 它告诉用户
+            // 该替换哪一段，是要读的。
+            // 改用站内已有的 --site-color-tag-selected-text（强调色文字配强调色淡底，
+            // 语义正对得上，49 处在用）：浅色 5.59、暗色 6.28。
+            color: "var(--site-color-tag-selected-text)",
             fontWeight: 500,
           }}>
           {part}

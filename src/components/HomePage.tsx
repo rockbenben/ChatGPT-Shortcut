@@ -481,7 +481,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                         onOpenModal={onOpenModal}
                       />
                     </Col>
-                    {(index + 1) % 12 === 0 && (
+                    {(index + 1) % 12 === 0 && index + 1 < otherPrompts.length && (
                       <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                         <Suspense fallback={null}>
                           <AdComponent />
@@ -533,7 +533,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                       onOpenModal={onOpenModal}
                     />
                   </Col>
-                  {(index + 1) % 12 === 0 && (
+                  {(index + 1) % 12 === 0 && index + 1 < filteredCommusWithDeltas.length && (
                     <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                       <Suspense fallback={null}>
                         <AdComponent />
@@ -556,7 +556,7 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                     onOpenModal={onOpenModal}
                   />
                 </Col>
-                {(filteredCommus.length + index + 1) % 12 === 0 && (
+                {(filteredCommus.length + index + 1) % 12 === 0 && index + 1 < filteredCards.length && (
                   <Col xs={24} sm={12} md={8} lg={6} xl={6}>
                     <Suspense fallback={null}>
                       <AdComponent />
@@ -639,7 +639,7 @@ const PageHeader: React.FC<{
             <Translate id="myCollection.header.title">我的收藏</Translate>
           </Title>
           <Paragraph type="secondary" style={{ fontSize: 14, marginBottom: 0 }}>
-            <Translate id="myCollection.header.subtitle">管理您创建的提示词、收藏的内容和自定义标签</Translate>
+            <Translate id="myCollection.header.subtitle">管理你创建的提示词、收藏的内容和自定义标签</Translate>
           </Paragraph>
         </div>
 
@@ -655,10 +655,14 @@ const PageHeader: React.FC<{
               gap: 8,
               padding: "4px 10px",
               borderRadius: 12,
-              background: `${levelInfo.accentColor}14`,
-              border: `1px solid ${levelInfo.accentColor}40`,
+              // accentColor 现在是 var(--site-level-N)，不能再用 `${hex}14` 拼透明度
+              background: `color-mix(in srgb, ${levelInfo.accentColor} 8%, transparent)`,
+              border: `1px solid color-mix(in srgb, ${levelInfo.accentColor} 25%, transparent)`,
+              // LevelIcon 内部把颜色写在 SVG 的 stroke/fill 属性上，presentation attribute 不解析
+              // var()，所以这里给父级设 color，图标走默认的 currentColor 继承下去
+              color: levelInfo.accentColor,
             }}>
-            <LevelIcon level={levelInfo.level} size={13} color={levelInfo.accentColor} strokeWidth={1.5} />
+            <LevelIcon level={levelInfo.level} size={13} strokeWidth={1.5} />
             <span
               style={{
                 fontSize: 11,

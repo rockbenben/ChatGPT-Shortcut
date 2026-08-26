@@ -60,6 +60,16 @@ const universalToken = {
  * 纯白只留给 elevated（弹层、Modal、Dropdown），页面与控件都不刷白，减少眩光。
  */
 const lightOnlyToken = {
+  // colorTextDescription 是 <Typography type="secondary"> 实际取的 token（不是 colorTextSecondary，
+  // 后者只管 colorText 那条链）。不覆盖就落回 antd 默认 rgba(0,0,0,.45)，12px 下实测 3.32:1，
+  // AA 小字要 4.5:1。取值与 custom.css 的 --site-color-text-tertiary 一致，两套体系不再各走各的。
+  colorTextDescription: "rgba(0,0,0,0.56)",
+  // 浅色纸底(#f8f9f3)上 antd 默认的 #ff4d4f 只有 3.09:1，AA 要 4.5。受影响的不止一处：
+  // 每个表单的校验提示、danger 按钮文字、Typography type="danger" 全都是这个色。
+  // 必须改根 token 而不是 colorErrorText —— Button 的 danger 变体是从 colorError 派生
+  // color-base 的（见 antd/es/button/style/variant.js），改 colorErrorText 对按钮无效（实测过）。
+  // 取 antd 红阶 red-7，同色系；Bg/Border/Hover 由 antd 自己重新派生，保持一致。
+  colorError: "#cf1322",
   colorBgLayout: "#f0f1ea",
   colorBgContainer: "#f8f9f3",
   colorBgElevated: "#ffffff",
@@ -74,6 +84,10 @@ const lightOnlyToken = {
  * colorText 用 #ededed（~93%）而非近纯白，暗底上纯白会过亮。
  */
 const darkOnlyToken = {
+  // 同上：暗色下 antd 默认给的是 rgba(255,255,255,.4)/#dc4446，实测 3.74 / 3.82，同样不过 AA。
+  colorTextDescription: "rgba(255,255,255,0.5)",
+  // 暗底上要往【亮】走（浅色底是往深走），实测默认派生出的 #dc4446 只有 3.82:1。红阶 red-4。
+  colorError: "#ff7875",
   colorLink: "#57c2a3", // 提亮版品牌绿，与 --site-color-tag-selected-text 同源
   colorBgLayout: "#14171a",
   colorBgContainer: "#1d2126",
@@ -84,7 +98,8 @@ const darkOnlyToken = {
   colorTextTertiary: "rgba(255,255,255,0.4)",
 };
 
-const components = {
+/** 与模式无关的组件覆盖。需要分明暗的放 componentsFor()。 */
+const sharedComponents = {
   Card: {
     headerBg: "transparent",
     paddingLG: 16,
@@ -98,15 +113,46 @@ const components = {
 };
 
 /**
+ * 分页当前页码（.ant-pagination-item-active a）的文字色。
+ *
+ * 默认取 colorPrimary，而 colorPrimary 在 universalToken 里是两个模式共用的 #397e6a，
+ * antd 的暗色算法又会把它压成 #336e5d —— 暗底上方向正好反了，实测只有 2.72:1；
+ * 浅色侧 4.54:1 刚过线也没余量。它是「你在第几页」的唯一标识，值得单独给值。
+ *
+ * 为什么不写成 var(--site-color-tag-selected-text) 省掉分模式：
+ * 试过，刷新后两边数值都对（浅 6.48 / 暗 7.44），但【客户端切主题时颜色不跟着变】——
+ * 自定义属性里再套一层 var()、而内层变量随 html[data-theme] 变化时，Chrome 不做重绘失效。
+ * 同一个元素上走普通 scope 硬编码的 border-color 立刻更新、经这层间接的 color 停在上一个
+ * 主题，对照实验复现过。所以只能像其它 token 一样，两个模式各给一个字面值。
+ */
+const componentsFor = (mode) => ({
+  ...sharedComponents,
+  Pagination: {
+    itemActiveColor: mode === "dark" ? "#57c2a3" : "#2d6454",
+    itemActiveColorHover: mode === "dark" ? "#57c2a3" : "#2d6454",
+  },
+});
+
+/**
  * 构造某个模式的 theme 配置（不含 algorithm —— 调用方各自传，避免本文件 import antd：
  * genAntdCss.mjs 要在指纹命中时跳过 antd 的 ~1.3s 模块加载）。
  */
 export const antdThemeFor = (mode) => ({
   token: { ...universalToken, ...(mode === "dark" ? darkOnlyToken : lightOnlyToken) },
-  components,
+  components: componentsFor(mode),
   hashed: false,
   cssVar: { key: CSS_VAR_KEY[mode] },
 });
 
 /** 指纹用：token 内容变了要触发 CSS 重建。 */
-export const antdTokenFingerprint = { universalToken, lightOnlyToken, darkOnlyToken, components, CSS_VAR_KEY };
+/** 指纹用：token 内容变了要触发 CSS 重建。
+ *  components 必须按【两个模式各展开一次】写进来 —— 只塞 sharedComponents 的话，
+ *  改 Pagination 这类分明暗的组件覆盖不会改变哈希，本地 antd.dark.css 就停在旧输出上
+ *  （CI 是全新 clone，永远复现不出这一类 bug）。 */
+export const antdTokenFingerprint = {
+  universalToken,
+  lightOnlyToken,
+  darkOnlyToken,
+  components: { light: componentsFor("light"), dark: componentsFor("dark") },
+  CSS_VAR_KEY,
+};
