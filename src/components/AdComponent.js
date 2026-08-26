@@ -93,7 +93,13 @@ const AdComponent = ({ type = "default", className = "", style = {} }) => {
   }
 
   return (
-    <div ref={containerRef} className={className} style={{ width: "100%", ...style }}>
+    // overflow:hidden 是兜底，不是常态裁剪。广告位自身守得住 width:100%，但外层没有任何
+    // 包含性时，比广告位更宽的素材会整个逃出去把【页面】撑出横向滚动条 —— 实测 320px 视口
+    // 下 336×280（移动端很常见的尺寸）溢出 35px、728 溢出 427px；375px 下 728 溢出 372px；
+    // 768px 下 728 溢出 9px、970 溢出 251px。桌面够宽才躲得过。
+    // 正常情况（responsive 单元按容器宽度取素材）什么都不裁，只有上面那种病态尺寸才生效 ——
+    // 裁掉一条广告边，好过整站在手机上横向滚动。
+    <div ref={containerRef} className={className} style={{ width: "100%", overflow: "hidden", ...style }}>
       {shouldLoad && (
         <ins
           ref={insRef}
