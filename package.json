@@ -12,7 +12,8 @@
     "dev": "docusaurus start",
     "prebuild": "node scripts/generate.mjs --prod",
     "build": "node scripts/buildPhased.mjs",
-    "pretypecheck": "node scripts/generate.mjs && node scripts/checkClipboardFallback.mjs && node scripts/checkChunkReloadGuard.mjs",
+    "checks": "node scripts/checkClipboardFallback.mjs && node scripts/checkChunkReloadGuard.mjs && node scripts/checkAntdStyleWiring.mjs",
+    "pretypecheck": "node scripts/generate.mjs && yarn checks",
     "typecheck": "tsc",
     "swizzle": "docusaurus swizzle",
     "predeploy": "node scripts/generate.mjs --prod",
@@ -21,7 +22,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "update": "ncu -u && yarn install"
+    "update": "npx --yes npm-check-updates -u && yarn install"
   },
   "dependencies": {
     "@ant-design/icons": "^6.3.2",
@@ -37,7 +38,7 @@
     "@giphy/react-components": "^10.1.2",
     "@mdx-js/react": "^3.1.1",
     "antd": "^6.6.1",
-    "axios": "^1.19.0",
+    "axios": "^1.20.0",
     "boring-avatars": "^2.0.4",
     "clsx": "^2.1.1",
     "copy-text-to-clipboard": "^3.2.2",
