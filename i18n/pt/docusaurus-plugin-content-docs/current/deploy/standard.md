@@ -39,12 +39,15 @@ Clique no botão abaixo para implantar na Vercel com um clique:
 
 Primeiro 👉 [Faça um fork deste projeto](https://github.com/rockbenben/ChatGPT-Shortcut/fork) e depois implante:
 
-1. Entre no [Cloudflare Pages](https://pages.cloudflare.com/) e selecione **Create a project**
+1. Abra a [página de criação do Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) e selecione **Connect to Git**. Se cair em Create a Worker, a entrada do Pages é o link **Get started** no rodapé
 2. Conecte o repositório que você acabou de fazer o fork
 3. Configure o build:
    - **Build command**: `yarn build --locale zh-Hans` (troque o locale pelo idioma que deseja implantar, ex.: `yarn build --locale pt` para Português)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Clique em **Deploy** e aguarde o Cloudflare Pages concluir o build
+
+> **`YARN_VERSION` é obrigatória**: o sistema de build v3 do Cloudflare usa Yarn 4.9.1 por padrão e já não deduz a versão do `yarn.lock` como o v2 fazia. Este repositório tem um lockfile v1 do Yarn Classic, então sem fixá-la o Yarn 4 assume. O Node não precisa ser configurado: o v3 usa 22.16.0 por padrão, já acima do 20 exigido pelo projeto.
 
 Cada push posterior aciona automaticamente um novo build e implantação.
 
