@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import { Form, Input, Button, Typography, Card, App } from "antd";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -105,7 +106,7 @@ const ResetPassword = () => {
                   required: true,
                   message: translate({
                     id: "input.resetPassword.code",
-                    message: "请输入您的重置代码",
+                    message: "请输入重置代码",
                   }),
                 },
               ]}>
@@ -154,6 +155,14 @@ const ResetPassword = () => {
               </Button>
             </Form.Item>
           </Form>
+          {/* 出口。重置代码由邮件链接的 ?code= 自动填入，但有人会直接打开/收藏这个地址，
+              或者拿到的链接已过期 —— 没有这条链接时整页是死胡同（同类的 /user/auth 三个
+              状态都给了出口）。复用 auth.callback.backHome，17 个 locale 已译，不新增 id。 */}
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            <Link to="/" style={{ fontSize: 13 }}>
+              <Translate id="auth.callback.backHome">返回首页登录</Translate>
+            </Link>
+          </div>
         </Card>
       </div>
     </Layout>

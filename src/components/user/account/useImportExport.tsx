@@ -271,7 +271,13 @@ export function useImportExport({ userAuth, getUserAuth, currentLanguage, refres
 
         setImporting(false);
 
-        if (errorCount === 0) {
+        // successCount === 0 && errorCount === 0 是「一条都没导入」——不是失败，而是文件里的东西
+        // 目标账号已经全有了（收藏去重后 cardAdds/commAdds 皆空，patchFavorites 整块被跳过）。
+        // 这一支此前也落进下面的 success，于是导入一份自己刚导出的文件会提示「已导入」，
+        // 而计数一个没变。实测复现过：报成功，实际零变更。成功提示必须对应真的发生过的事。
+        if (errorCount === 0 && successCount === 0) {
+          message.info(<Translate id="message.import.nothing">文件里的内容都已存在，没有需要导入的</Translate>);
+        } else if (errorCount === 0) {
           message.success(<Translate id="message.import.success">已导入</Translate>);
         } else if (successCount > 0) {
           message.warning(`${translate({ id: "message.import.partial", message: "部分提示词已导入" })} (${successCount}/${successCount + errorCount})`);
