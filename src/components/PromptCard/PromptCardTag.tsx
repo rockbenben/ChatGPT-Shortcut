@@ -69,7 +69,7 @@ const TagLayout = ({
   onClick,
   cursor,
 }: {
-  tags: Array<{ tag: TagType; label: string; description: string; color: string }>;
+  tags: Array<{ tag: TagType; label: string; description: string }>;
   muted: boolean;
   onClick?: (e: React.MouseEvent, tag: TagType) => void;
   cursor: string;

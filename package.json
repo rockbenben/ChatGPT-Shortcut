@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-shortcut",
-  "version": "4.4.5",
+  "version": "4.5.0",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -24,7 +24,6 @@
     "update": "ncu -u && yarn install"
   },
   "dependencies": {
-    "@ant-design/colors": "^8.0.1",
     "@ant-design/icons": "^6.3.2",
     "@ant-design/static-style-extract": "^2.1.0",
     "@dnd-kit/core": "^6.3.1",
