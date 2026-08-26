@@ -227,196 +227,201 @@ function PromptPage({ prompt, currentLanguage }) {
           子 Col 正 padding」实现的，父级没有这 12px 抵消时 Row 会左右各溢出 12px。
           窄屏 Col 全部 xs=24 占满，右侧那 12px 直接变成整页横向滚动（360/375/390 实测都中招，
           414 以上才因别的约束躲开）——5022 个 prompt 页全部受影响，且 CLS 报 0、构建全绿。 */}
-      <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
-        <Col xs={24} sm={22} md={22} lg={20} xl={18} className="full-width-col">
-          {/* 内层 Row：在约束后的宽度内做 75/25 三栏分布 */}
-          <Row gutter={[24, 24]}>
-            {/* 主内容列（75%） */}
-            <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
-              <Breadcrumb
-                items={[
-                  {
-                    title: (
-                      <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                        <HomeOutlined style={{ marginInlineEnd: 4 }} />
-                        <Translate id="link.home">首页</Translate>
-                      </Link>
-                    ),
-                  },
-                  { title: title },
-                ]}
-                style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
-              />
-
-              {/* === Composition Sheet === */}
-              <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
-                <Flex vertical gap={24}>
-                  {/* HERO: 双层 meta 按语义拆分
-                        Layer 1（同行）: title 左 / tags 右上角对齐 — tags 是分类 metadata，与 title 同语义层
-                        Layer 2（下行）: 🔥 weight · chars · tokens · 来源 — 数值 + 链接 metadata，独立 mono 行 */}
-                  <Flex vertical gap={10}>
-                    <Flex justify="space-between" align="flex-start" wrap gap={12}>
-                      <Typography.Title level={1} className="comp-sheet-title" style={{ flex: 1, minWidth: 0 }}>
-                        {title}
-                      </Typography.Title>
-                      {Array.isArray(tags) && tags.length > 0 && (
-                        <Space size={4} wrap style={{ paddingTop: 6 }}>
-                          {tags.map((tag) => (
-                            <Link key={tag} to={`/?tags=${tag}&view=explore`} className="prompt-tag-link">
-                              #{tag}
-                            </Link>
-                          ))}
-                        </Space>
-                      )}
-                    </Flex>
-
-                    <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
-                      <span style={monoNum}>
-                        <FireFilled style={{ marginRight: 4 }} />
-                        {formatCompactNumber(weight as number)}
-                      </span>
-                      <span style={monoNum}>
-                        {/* 用页面 locale（非运行宿主/浏览器 locale）格式化：SSR 与 hydration 两端都确定且一致，避免数字分组失配 */}
-                        {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
-                      </span>
-                      <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
-                      {website && (
-                        <Link to={website} target="_blank" rel="noopener noreferrer" title={website} className="prompt-tag-link">
-                          <LinkOutlined style={{ marginRight: 4 }} />
-                          <Translate id="prompt.source">来源</Translate>
+      {/* 唯一没有 <main> 的页面模板 —— 首页/社区列表/反馈/我的账户都有。缺 main 时
+          landmark 导航里没有主内容区，跳转链接也只能落到 Docusaurus 的兜底 div 上。
+          外层 Row 自带 marginTop/marginBottom，所以不套其他页那个 margin-vert--md。 */}
+      <main>
+        <Row justify="center" style={{ marginTop: 16, marginBottom: 24, paddingInline: 12 }}>
+          <Col xs={24} sm={22} md={22} lg={20} xl={18} className="full-width-col">
+            {/* 内层 Row：在约束后的宽度内做 75/25 三栏分布 */}
+            <Row gutter={[24, 24]}>
+              {/* 主内容列（75%） */}
+              <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
+                <Breadcrumb
+                  items={[
+                    {
+                      title: (
+                        <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
+                          <HomeOutlined style={{ marginInlineEnd: 4 }} />
+                          <Translate id="link.home">首页</Translate>
                         </Link>
-                      )}
-                    </Space>
-                  </Flex>
+                      ),
+                    },
+                    { title: title },
+                  ]}
+                  style={{ marginBottom: 12, paddingLeft: 8, paddingRight: 8 }}
+                />
 
-                  {/* REMARK */}
-                  {remark && <blockquote className="comp-sheet-remark prompt-remark">{remark}</blockquote>}
+                {/* === Composition Sheet === */}
+                <Card variant="outlined" style={sheetCardStyle} styles={{ body: sheetCardBodyStyle }}>
+                  <Flex vertical gap={24}>
+                    {/* HERO: 双层 meta 按语义拆分
+                          Layer 1（同行）: title 左 / tags 右上角对齐 — tags 是分类 metadata，与 title 同语义层
+                          Layer 2（下行）: 🔥 weight · chars · tokens · 来源 — 数值 + 链接 metadata，独立 mono 行 */}
+                    <Flex vertical gap={10}>
+                      <Flex justify="space-between" align="flex-start" wrap gap={12}>
+                        <Typography.Title level={1} className="comp-sheet-title" style={{ flex: 1, minWidth: 0 }}>
+                          {title}
+                        </Typography.Title>
+                        {Array.isArray(tags) && tags.length > 0 && (
+                          <Space size={4} wrap style={{ paddingTop: 6 }}>
+                            {tags.map((tag) => (
+                              <Link key={tag} to={`/?tags=${tag}&view=explore`} className="prompt-tag-link">
+                                #{tag}
+                              </Link>
+                            ))}
+                          </Space>
+                        )}
+                      </Flex>
 
-                  {/* PROMPT BODY: 上下 hairline，schema CreativeWork microdata 保留 */}
-                  <Flex vertical gap={14}>
-                    <Flex justify="space-between" align="center" wrap gap={12}>
-                      <Eyebrow>
-                        <Translate id="prompt.content">提示词内容</Translate>
-                      </Eyebrow>
-                      <CopyButton text={promptInfo.prompt} trackingId={prompt.id} variant="primary" size="large" />
+                      <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                        <span style={monoNum}>
+                          <FireFilled style={{ marginRight: 4 }} />
+                          {formatCompactNumber(weight as number)}
+                        </span>
+                        <span style={monoNum}>
+                          {/* 用页面 locale（非运行宿主/浏览器 locale）格式化：SSR 与 hydration 两端都确定且一致，避免数字分组失配 */}
+                          {charCount.toLocaleString(bcp47Locale)} <Translate id="prompt.charsLabel">字符</Translate>
+                        </span>
+                        <span style={monoNum}>≈ {tokenCount.toLocaleString(bcp47Locale)} tokens</span>
+                        {website && (
+                          <Link to={website} target="_blank" rel="noopener noreferrer" title={website} className="prompt-tag-link">
+                            <LinkOutlined style={{ marginRight: 4 }} />
+                            <Translate id="prompt.source">来源</Translate>
+                          </Link>
+                        )}
+                      </Space>
                     </Flex>
-                    <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
-                      <meta itemProp="name" content={title} />
-                      <meta itemProp="inLanguage" content={bcp47Locale} />
-                      {renderPromptWithPlaceholders(promptInfo.prompt || "")}
-                    </div>
+
+                    {/* REMARK */}
+                    {remark && <blockquote className="comp-sheet-remark prompt-remark">{remark}</blockquote>}
+
+                    {/* PROMPT BODY: 上下 hairline，schema CreativeWork microdata 保留 */}
+                    <Flex vertical gap={14}>
+                      <Flex justify="space-between" align="center" wrap gap={12}>
+                        <Eyebrow>
+                          <Translate id="prompt.content">提示词内容</Translate>
+                        </Eyebrow>
+                        <CopyButton text={promptInfo.prompt} trackingId={prompt.id} variant="primary" size="large" />
+                      </Flex>
+                      <div itemScope itemType="https://schema.org/CreativeWork" className="comp-sheet-code" {...({ itemProp: "text" } as any)}>
+                        <meta itemProp="name" content={title} />
+                        <meta itemProp="inLanguage" content={bcp47Locale} />
+                        {renderPromptWithPlaceholders(promptInfo.prompt || "")}
+                      </div>
+                    </Flex>
+
+                    {/* 译文（双语切换下与 prompt 不同时显示）— 复用 ghost-border 容器 */}
+                    {promptInfo.description && promptInfo.description !== promptInfo.prompt && (
+                      <div
+                        style={{
+                          padding: "14px 16px",
+                          background: "var(--site-color-ghost-border)",
+                          borderRadius: 4,
+                          borderInlineStart: "2px solid var(--site-color-hairline)",
+                        }}>
+                        <Eyebrow>
+                          <Translate id="prompt.translation">译文</Translate>
+                        </Eyebrow>
+                        <Typography.Paragraph
+                          copyable={{
+                            text: promptInfo.description,
+                            // 见 PromptDetailModal 同处注释：避免 antd 语言包的「复制成功」与站内文案分叉
+                            tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
+                          }}
+                          style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
+                          {promptInfo.description}
+                        </Typography.Paragraph>
+                      </div>
+                    )}
                   </Flex>
+                </Card>
+              </Col>
 
-                  {/* 译文（双语切换下与 prompt 不同时显示）— 复用 ghost-border 容器 */}
-                  {promptInfo.description && promptInfo.description !== promptInfo.prompt && (
-                    <div
-                      style={{
-                        padding: "14px 16px",
-                        background: "var(--site-color-ghost-border)",
-                        borderRadius: 4,
-                        borderLeft: "2px solid var(--site-color-hairline)",
-                      }}>
+              {/* === Sidebar Strip === 不用独立 Card，sections 用 hairline + eyebrow 区分
+                  桌面（lg+）：~25%，sticky 通过 .prompt-sidebar-col CSS media query 启用
+                  移动（xs/sm）：xs={24} 占满整行换行到主内容下方 */}
+              <Col xs={24} sm={24} md={24} lg={6} xl={6} className="full-width-col prompt-sidebar-col">
+                <div className="prompt-sidebar">
+                  {related.length > 0 && (
+                    <section className="prompt-sidebar-section">
                       <Eyebrow>
-                        <Translate id="prompt.translation">译文</Translate>
+                        <Translate id="sidebar.related">相关推荐</Translate>
                       </Eyebrow>
-                      <Typography.Paragraph
-                        copyable={{
-                          text: promptInfo.description,
-                          // 见 PromptDetailModal 同处注释：避免 antd 语言包的「复制成功」与站内文案分叉
-                          tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
-                        }}
-                        style={{ margin: "6px 0 0", fontSize: 14, lineHeight: 1.6, color: "var(--ifm-color-content-secondary)" }}>
-                        {promptInfo.description}
-                      </Typography.Paragraph>
-                    </div>
+                      <div style={{ marginTop: 10 }}>
+                        {related.map((r) => (
+                          <Link key={r.id} to={`/prompt/${r.id}`} className="prompt-related-item">
+                            <div className="prompt-related-title">{r.title}</div>
+                            {r.remark && <div className="prompt-related-remark">{r.remark}</div>}
+                          </Link>
+                        ))}
+                      </div>
+                    </section>
                   )}
-                </Flex>
-              </Card>
-            </Col>
 
-            {/* === Sidebar Strip === 不用独立 Card，sections 用 hairline + eyebrow 区分
-                桌面（lg+）：~25%，sticky 通过 .prompt-sidebar-col CSS media query 启用
-                移动（xs/sm）：xs={24} 占满整行换行到主内容下方 */}
-            <Col xs={24} sm={24} md={24} lg={6} xl={6} className="full-width-col prompt-sidebar-col">
-              <div className="prompt-sidebar">
-                {related.length > 0 && (
                   <section className="prompt-sidebar-section">
                     <Eyebrow>
-                      <Translate id="sidebar.related">相关推荐</Translate>
+                      <Translate id="faq.heading">常见问题</Translate>
                     </Eyebrow>
                     <div style={{ marginTop: 10 }}>
-                      {related.map((r) => (
-                        <Link key={r.id} to={`/prompt/${r.id}`} className="prompt-related-item">
-                          <div className="prompt-related-title">{r.title}</div>
-                          {r.remark && <div className="prompt-related-remark">{r.remark}</div>}
-                        </Link>
+                      {faqList.map((item, i) => (
+                        <div key={i} className="prompt-faq-item">
+                          {/* H3 给 AI 引擎按问题做 chunk；视觉由 .prompt-faq-q 控制 */}
+                          <h3 className="prompt-faq-q">{item.q}</h3>
+                          <div className="prompt-faq-a">{item.a}</div>
+                        </div>
                       ))}
                     </div>
                   </section>
-                )}
 
-                <section className="prompt-sidebar-section">
-                  <Eyebrow>
-                    <Translate id="faq.heading">常见问题</Translate>
-                  </Eyebrow>
-                  <div style={{ marginTop: 10 }}>
-                    {faqList.map((item, i) => (
-                      <div key={i} className="prompt-faq-item">
-                        {/* H3 给 AI 引擎按问题做 chunk；视觉由 .prompt-faq-q 控制 */}
-                        <h3 className="prompt-faq-q">{item.q}</h3>
-                        <div className="prompt-faq-a">{item.a}</div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
+                  <section className="prompt-sidebar-section">
+                    <Eyebrow>
+                      <Translate id="action.share">分享</Translate>
+                    </Eyebrow>
+                    <div style={{ marginTop: 10 }}>
+                      <Popover
+                        trigger="click"
+                        placement="topLeft"
+                        content={
+                          <Suspense fallback={null}>
+                            <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark || ""}`} popOver={true} />
+                          </Suspense>
+                        }>
+                        <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn" block>
+                          <Translate id="action.share">分享</Translate>
+                        </Button>
+                      </Popover>
+                    </div>
+                  </section>
+                </div>
+              </Col>
 
-                <section className="prompt-sidebar-section">
-                  <Eyebrow>
-                    <Translate id="action.share">分享</Translate>
-                  </Eyebrow>
-                  <div style={{ marginTop: 10 }}>
-                    <Popover
-                      trigger="click"
-                      placement="topLeft"
-                      content={
-                        <Suspense fallback={null}>
-                          <ShareButtons shareUrl={shareUrl} title={`${title}: ${remark || ""}`} popOver={true} />
-                        </Suspense>
-                      }>
-                      <Button icon={<ShareAltOutlined />} className="comp-sheet-share-btn" block>
-                        <Translate id="action.share">分享</Translate>
-                      </Button>
-                    </Popover>
-                  </div>
-                </section>
-              </div>
-            </Col>
-
-            {/* DISCUSSION: hairline + eyebrow 续接，count 由内层 Comments 回传 */}
-            <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
-              {/* 广告 — speedup 分支专属，置于讨论区上方（hairline 之外） */}
-              <Suspense fallback={null}>
-                <AdComponent type="transverse" />
-              </Suspense>
-
-              <Flex vertical gap={14} style={{ marginTop: 8, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
-                <Eyebrow>
-                  <Translate id="comments.heading">讨论</Translate>
-                  {commentCount > 0 && (
-                    <>
-                      {" · "}
-                      <span style={monoNum}>{commentCount}</span>
-                    </>
-                  )}
-                </Eyebrow>
+              {/* DISCUSSION: hairline + eyebrow 续接，count 由内层 Comments 回传 */}
+              <Col xs={24} sm={24} md={24} lg={18} xl={18} className="full-width-col">
+                {/* 广告 — speedup 分支专属，置于讨论区上方（hairline 之外） */}
                 <Suspense fallback={null}>
-                  <Comments pageId={prompt.id} type="page" onCountChange={setCommentCount} />
+                  <AdComponent type="transverse" />
                 </Suspense>
-              </Flex>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+
+                <Flex vertical gap={14} style={{ marginTop: 8, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
+                  <Eyebrow>
+                    <Translate id="comments.heading">讨论</Translate>
+                    {commentCount > 0 && (
+                      <>
+                        {" · "}
+                        <span style={monoNum}>{commentCount}</span>
+                      </>
+                    )}
+                  </Eyebrow>
+                  <Suspense fallback={null}>
+                    <Comments pageId={prompt.id} type="page" onCountChange={setCommentCount} />
+                  </Suspense>
+                </Flex>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </main>
     </Layout>
   );
 }
