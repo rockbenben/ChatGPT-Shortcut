@@ -3,7 +3,7 @@ import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { getComments } from "@site/src/api";
 import { nestComments } from "./commentUtils";
 
-export const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000];
+export const AI_REPLY_POLL_DELAYS_MS = [3000, 6000, 10000, 15000, 20000, 30000];
 
 interface UsePollForAIReplyParams {
   pageId: any;
