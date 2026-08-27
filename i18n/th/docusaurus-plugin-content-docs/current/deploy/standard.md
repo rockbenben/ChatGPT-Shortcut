@@ -21,7 +21,7 @@ yarn
 # พัฒนาในเครื่อง
 yarn start
 
-# build: ออก static files ไปยังไดเรกทอรี build โดยใช้ defaultLocale ใน scripts/i18nLocales.mjs
+# build: สร้างครบทั้ง 18 ภาษาแบบแบ่งชุด (ทำครั้งเดียวจะหน่วยความจำหมด) ผลลัพธ์อยู่ใน build/ — ถ้าต้องการภาษาเดียวดู --locale ด้านล่าง
 yarn build
 ```
 

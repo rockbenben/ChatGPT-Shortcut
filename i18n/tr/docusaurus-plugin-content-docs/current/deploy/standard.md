@@ -21,7 +21,7 @@ yarn
 # yerel geliştirme
 yarn start
 
-# derleme: statik dosyaları build dizinine çıkarır; scripts/i18nLocales.mjs içindeki defaultLocale kullanılır
+# derleme: 18 dilin tamamını parçalar hâlinde derler (tek seferde bellek yetmez); çıktı build/ içine — tek dil için aşağıdaki --locale'a bakın
 yarn build
 ```
 

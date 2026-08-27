@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introduction
 title: Curated AI Prompt Library | Copy & Boost Productivity

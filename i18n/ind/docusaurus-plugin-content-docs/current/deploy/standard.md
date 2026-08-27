@@ -21,7 +21,7 @@ yarn
 # pengembangan lokal
 yarn start
 
-# build: menghasilkan file statis ke direktori build, menggunakan defaultLocale di scripts/i18nLocales.mjs
+# build: membangun seluruh 18 bahasa secara bertahap (sekali jalan kehabisan memori); hasil di build/ — untuk satu bahasa lihat --locale di bawah
 yarn build
 ```
 

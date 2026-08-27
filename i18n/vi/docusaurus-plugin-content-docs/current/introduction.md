@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Giới thiệu AI Short
 title: Thư viện Prompt AI chọn lọc | Sao chép một cú nhấp

@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Pengantar AI Short
 title: Perpustakaan Prompt AI Pilihan | Salin Sekali Klik

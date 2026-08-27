@@ -21,7 +21,7 @@ yarn
 # 로컬 개발
 yarn start
 
-# 빌드: 정적 파일을 build 디렉터리에 출력합니다. scripts/i18nLocales.mjs의 defaultLocale을 사용합니다
+# 빌드: 18개 언어를 청크로 나눠 빌드(한 번에 하면 OOM). 출력은 build/ — 한 언어만 필요하면 아래 --locale 참고
 yarn build
 ```
 

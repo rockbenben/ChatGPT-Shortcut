@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short Einführung
 title: Kuratierte KI Prompt-Bibliothek | Ein-Klick-Kopieren

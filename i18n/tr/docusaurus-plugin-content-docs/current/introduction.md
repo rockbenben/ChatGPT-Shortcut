@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short Giriş
 title: Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır

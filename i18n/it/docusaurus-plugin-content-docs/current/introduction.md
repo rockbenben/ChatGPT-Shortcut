@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introduzione a AI Short
 title: Libreria di prompt IA curata | Copia con un clic

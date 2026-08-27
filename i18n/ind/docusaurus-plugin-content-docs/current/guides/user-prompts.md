@@ -16,7 +16,7 @@ Setelah login, Anda dapat membuat prompt sendiri dan menyimpannya ke akun untuk 
    - **Konten Prompt** (wajib): Isi utama prompt; teks dalam tanda kurung siku `[...]` disorot sebagai placeholder saat ditampilkan
    - **Fungsi/Penggunaan** (opsional): Deskripsi singkat apa yang dilakukan prompt
    - **Catatan** (opsional): Sumber, versi bahasa lain, atau catatan tambahan
-3. Sakelar "**Apakah Anda ingin membagikan prompt ini ke halaman publik?**" di bagian bawah aktif secara default — matikan untuk menyimpan prompt sebagai pribadi
+3. Sakelar berbagi di bagian bawah aktif secara bawaan — matikan agar prompt hanya terlihat oleh Anda
 4. Klik "Buat Prompt" untuk mengirim
 
 ![Dialog Buat Prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Di tampilan Koleksi Saya, klik tombol edit (pensil) pada kartu prompt yang Anda 
 
 ## Hapus Prompt
 
-Klik "Hapus" di dialog edit. Penghapusan tidak dapat dibatalkan — lanjutkan dengan hati-hati.
+Di tampilan "Koleksi Saya", klik tombol hapus (tempat sampah) pada kartu prompt Anda lalu konfirmasi. Penghapusan tidak dapat dibatalkan — lakukan dengan hati-hati.
 
 ## Bagikan ke Komunitas
 
-Saat membuat atau mengedit, sakelar "**Apakah Anda ingin membagikan prompt ini ke halaman publik?**" di bagian bawah mengontrol visibilitas:
+Saat membuat atau mengedit, sakelar berbagi di bagian bawah menentukan visibilitas:
 
 - **Aktif (default)**: Prompt ditampilkan di halaman [Prompt Komunitas](./community), pengguna lain dapat melihat dan mengumpulkannya
 - **Nonaktif**: Pribadi — hanya terlihat oleh Anda
@@ -71,7 +71,7 @@ Impor prompt dan koleksi dari file JSON:
 1. Masuk ke "Akun Saya" dan temukan bagian "Manajemen Data → **Impor Prompt**"
 2. Klik tombol "Impor Data"
 3. Pilih file JSON
-4. Sistem menggabungkan data secara otomatis (deduplikasi berdasarkan judul; prompt yang ID-nya milik akun lain diatur sebagai pribadi)
+4. Sistem menggabungkan data secara otomatis (dicocokkan berdasarkan ID: prompt dengan ID sama seperti milik Anda akan diperbarui, atau dilewati jika isinya identik; yang tanpa ID atau ber-ID akun lain diimpor sebagai entri baru dan yang terakhir dipaksa menjadi privat)
 
 ### Kolaborasi Tim
 

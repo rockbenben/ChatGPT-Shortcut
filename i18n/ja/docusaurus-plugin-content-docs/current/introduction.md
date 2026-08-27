@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short 紹介
 title: 厳選 AI プロンプト集｜ワンクリックコピーで効率アップ

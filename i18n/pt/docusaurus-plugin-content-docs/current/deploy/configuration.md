@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # dados dos cartões da página inicial (apenas JSON estático, sem backend)
+└── sessionCache.ts # rastros locais a limpar no logout (3 caminhos compartilham)
 ```
 
 Cache: os dados da API são armazenados em cache de forma inteligente via `lscache` combinado com ETag — quando o servidor retorna 304 Not Modified, o cache local é reutilizado para reduzir a transferência de dados.

@@ -16,7 +16,7 @@ Após o login, você pode criar seus próprios prompts e salvá-los na conta par
    - **Conteúdo do prompt** (obrigatório): o corpo do prompt; texto entre colchetes `[...]` é destacado como marcador de posição na exibição
    - **Uso** (opcional): uma descrição breve do que o prompt faz
    - **Observações** (opcional): origem, versões em outros idiomas ou notas complementares
-3. O controle "**Deseja compartilhar este prompt na página pública?**" na parte inferior vem ativado por padrão — desative para manter o prompt privado
+3. O interruptor de compartilhamento na parte inferior vem ativado — desative-o para manter o prompt privado
 4. Clique em "Criar Prompt" para enviar
 
 ![Janela de Criar Prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Na visualização Minha Coleção, clique no botão de edição (lápis) em um c
 
 ## Excluir Prompt
 
-Clique em "Excluir" no diálogo de edição. A exclusão é irreversível — prossiga com cuidado.
+Em "Minha coleção", clique no botão excluir (lixeira) no card do seu prompt e confirme. A exclusão não pode ser desfeita — prossiga com cuidado.
 
 ## Compartilhar na Comunidade
 
-Ao criar ou editar, o controle "**Deseja compartilhar este prompt na página pública?**" na parte inferior controla a visibilidade:
+Ao criar ou editar, o interruptor de compartilhamento na parte inferior controla a visibilidade:
 
 - **Ativado (padrão)**: o prompt aparece na página de [Prompts da Comunidade](./community), onde outros usuários podem vê-lo e coletá-lo
 - **Desativado**: privado — visível apenas para você
@@ -71,7 +71,7 @@ Importe prompts e coleções de um arquivo JSON:
 1. Vá para "Minha Conta" e localize a seção "Gerenciamento de Dados → Importar prompts"
 2. Clique no botão "Importar dados"
 3. Selecione um arquivo JSON
-4. O sistema mescla os dados automaticamente (deduplicação por título; prompts com IDs pertencentes a outra conta são marcados como privados)
+4. O sistema mescla os dados automaticamente (correspondência por ID: prompts com o mesmo ID que os seus são atualizados, ou ignorados se o conteúdo for idêntico; os sem ID ou com ID de outra conta entram como novos registros, estes últimos forçados a privado)
 
 ### Colaboração em Equipe
 

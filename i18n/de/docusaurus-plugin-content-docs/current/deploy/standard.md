@@ -21,7 +21,7 @@ yarn
 # Lokale Entwicklung
 yarn start
 
-# Build: Gibt statische Dateien in das Build-Verzeichnis aus, verwendet das defaultLocale in scripts/i18nLocales.mjs
+# Build: baut alle 18 Sprachen in Blöcken (ein einzelner Durchlauf sprengt den Speicher); Ausgabe nach build/ — für nur eine Sprache siehe --locale unten
 yarn build
 ```
 

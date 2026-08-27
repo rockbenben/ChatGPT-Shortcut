@@ -21,7 +21,7 @@ yarn
 # ローカル開発
 yarn start
 
-# ビルド：静的ファイルを build ディレクトリに出力。使用言語は scripts/i18nLocales.mjs の defaultLocale に従う
+# ビルド：18 言語すべてを分割ビルド（一括だと OOM）。出力は build/ ——1 言語だけなら下の --locale を参照
 yarn build
 ```
 

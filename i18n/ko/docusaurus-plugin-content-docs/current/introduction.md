@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short 소개
 title: 엄선된 AI 프롬프트 라이브러리 | 원클릭 복사로 효율 향상

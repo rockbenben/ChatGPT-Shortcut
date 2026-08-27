@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: শুরু করুন
 title: AI Short শুরুর নির্দেশিকা | ChatGPT/DeepSeek এ প্রম্পট কপি করুন
 description: ৩০ সেকেন্ডে দ্রুত শুরু করুন! ChatGPT, Gemini, DeepSeek এবং অন্যান্য AI মডেলে প্রম্পট কপি করুন, অবিলম্বে কথোপকথনের গুণমান এবং কাজের দক্ষতা উন্নত করুন।

@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Memulai
 title: Panduan Memulai AI Short | Salin Prompt ke ChatGPT/DeepSeek
 description: Mulai cepat dalam 30 detik! Salin prompt ke model AI seperti ChatGPT, Gemini, dan DeepSeek untuk langsung meningkatkan kualitas percakapan dan produktivitas kerja.

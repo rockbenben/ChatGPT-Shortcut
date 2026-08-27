@@ -16,7 +16,7 @@ Tras iniciar sesión, puedes crear tus propios prompts y guardarlos en tu cuenta
    - **Contenido del prompt** (obligatorio): el cuerpo del prompt; el texto entre corchetes `[...]` se resalta como marcador de posición al mostrarse
    - **Uso** (opcional): una descripción breve de lo que hace el prompt
    - **Notas** (opcional): origen, versiones en otros idiomas o notas complementarias
-3. El interruptor "¿Te gustaría compartir este prompt en la página pública?" en la parte inferior está activado por defecto — desactívalo para mantener el prompt privado
+3. El interruptor de compartir de abajo está activado por defecto — desactívalo para que el prompt sea privado
 4. Haz clic en "Crear Prompt" para enviar
 
 ![Diálogo Crear Prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ En la vista Mi Colección, haz clic en el botón de edición (lápiz) de una tar
 
 ## Eliminar Prompt
 
-Haz clic en "Eliminar" en el diálogo de edición. La eliminación no se puede deshacer — procede con precaución.
+En «Mi colección», pulsa el botón de eliminar (papelera) de la tarjeta de tu prompt y confirma. La eliminación no se puede deshacer, procede con cuidado.
 
 ## Compartir con la Comunidad
 
-Al crear o editar, el interruptor "¿Te gustaría compartir este prompt en la página pública?" en la parte inferior controla la visibilidad:
+Al crear o editar, el interruptor de compartir de abajo controla la visibilidad:
 
 - **Activado (por defecto)**: el prompt aparece en la página de [Prompts de la Comunidad](./community), donde otros usuarios pueden verlo y coleccionarlo
 - **Desactivado**: privado — visible solo para ti
@@ -71,7 +71,7 @@ Importa prompts y colecciones desde un archivo JSON:
 1. Ve a "Mi Cuenta" y busca la sección "Gestión de Datos → Importar prompts"
 2. Haz clic en el botón "Importar datos"
 3. Selecciona un archivo JSON
-4. El sistema combina los datos automáticamente (deduplica por título; los prompts cuyos IDs pertenecen a otra cuenta se establecen como privados)
+4. El sistema fusiona los datos automáticamente (coincidencia por ID: los prompts con el mismo ID que los tuyos se actualizan, o se omiten si el contenido es idéntico; los que no tienen ID o llevan un ID de otra cuenta se importan como nuevos y estos últimos quedan forzosamente privados)
 
 ### Colaboración en Equipo
 

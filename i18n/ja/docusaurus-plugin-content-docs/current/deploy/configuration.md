@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # ホームのカードデータ（静的 JSON のみ、バックエンド不使用）
+└── sessionCache.ts # ログアウト時に消す端末側の痕跡（3 つの経路で共用）
 ```
 
 キャッシュ：API データは `lscache` と ETag を組み合わせてスマートキャッシュされます。サーバーが 304 Not Modified を返すとローカルキャッシュを再利用し、データ転送量を削減します。

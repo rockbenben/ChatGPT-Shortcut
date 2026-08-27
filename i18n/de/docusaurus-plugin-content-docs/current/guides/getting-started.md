@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Erste Schritte
 title: AI Short Erste Schritte | Prompts in ChatGPT/DeepSeek kopieren
 description: In 30 Sekunden starten! Kopieren Sie Prompts in ChatGPT, Gemini, DeepSeek und andere KI-Modelle, um sofort Gesprächsqualität und Produktivität zu steigern.

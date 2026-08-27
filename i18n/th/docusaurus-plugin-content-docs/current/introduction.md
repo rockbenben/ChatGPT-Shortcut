@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: แนะนำ AI Short
 title: ไลบรารี Prompt AI ที่คัดสรร | คัดลอกเพื่อใช้งานทันที

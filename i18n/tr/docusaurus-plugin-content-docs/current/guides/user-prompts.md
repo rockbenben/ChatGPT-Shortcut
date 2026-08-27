@@ -16,7 +16,7 @@ Giriş yaptıktan sonra kendi promptlarınızı oluşturabilir, hesabınıza kay
    - **Prompt İçeriği** (zorunlu): Promptun gövdesi; köşeli parantez `[...]` yer tutucuları, görüntülenirken yer tutucu olarak vurgulanır
    - **İşlev/Kullanım** (isteğe bağlı): Promptun ne yaptığının kısa açıklaması
    - **Notlar** (isteğe bağlı): Kaynak, diğer dil sürümleri veya ek notlar
-3. Alttaki "Bu prompt'u genel sayfada paylaşmak ister misiniz?" anahtarı varsayılan olarak açıktır — promptu özel tutmak için kapatın
+3. Alttaki paylaşım anahtarı varsayılan olarak açıktır — kapatırsanız istem yalnızca size görünür
 4. Göndermek için "Prompt Oluştur"a tıklayın
 
 ![Prompt Oluştur penceresi](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Koleksiyonum görünümünde, oluşturduğunuz prompt kartındaki düzenle (kale
 
 ## Promptu Sil
 
-Düzenleme iletişim kutusunda "Sil"e tıklayın. Silme işlemi geri alınamaz — dikkatli olun.
+"Koleksiyonum" görünümünde kendi istem kartınızdaki sil (çöp kutusu) düğmesine basıp onaylayın. Silme geri alınamaz, dikkatli ilerleyin.
 
 ## Topluluğa Paylaş
 
-Oluştururken veya düzenlerken, alttaki "Bu prompt'u genel sayfada paylaşmak ister misiniz?" anahtarı görünürlüğü kontrol eder:
+Oluştururken veya düzenlerken alttaki paylaşım anahtarı görünürlüğü belirler:
 
 - **Açık (varsayılan)**: Prompt [Topluluk Promptları](./community) sayfasında görünür; diğer kullanıcılar görebilir ve toplayabilir
 - **Kapalı**: Özel — yalnızca size görünür
@@ -71,7 +71,7 @@ Bir JSON dosyasından promptları ve koleksiyonları içe aktarın:
 1. "Hesabım" sayfasına gidin ve "Veri Yönetimi → Promptları İçe Aktar" bölümünü bulun
 2. "Verileri İçe Aktar" düğmesine tıklayın
 3. Bir JSON dosyası seçin
-4. Sistem verileri otomatik olarak birleştirir (başlığa göre yinelenenleri kaldırır; ID'si başka bir hesaba ait promptlar özel olarak ayarlanır)
+4. Veriler otomatik birleştirilir (ID eşleşmesiyle: sizinkiyle aynı ID'ye sahip istemler güncellenir, içerik aynıysa atlanır; ID'si olmayan veya başka bir hesaba ait ID taşıyanlar yeni kayıt olarak eklenir ve bunlar zorunlu olarak gizli yapılır)
 
 ### Takım İşbirliği
 

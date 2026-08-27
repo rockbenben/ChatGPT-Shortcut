@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: 시작하기
 title: AI Short 퀵스타트 - 30초 만에 ChatGPT 활용
 description: 30초 만에 AI 활용 효율 UP! ChatGPT, Gemini 등에 최적화된 프롬프트를 복사해 대화 품질을 즉시 향상시키세요.

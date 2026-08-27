@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introduction à AI Short
 title: Bibliothèque de prompts IA sélectionnés | Copie en un clic

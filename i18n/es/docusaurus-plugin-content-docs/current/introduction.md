@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introducción a AI Short
 title: Biblioteca Curada de Prompts de IA | Copia con un Clic

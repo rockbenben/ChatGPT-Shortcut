@@ -29,7 +29,6 @@
  * 否则 antd 全失样式」即为此）。
  *
  * teal-ink 海沉绿 #397e6a：白字对比达标，无需墨字按钮 hack（磷光黄绿才需要）。
- * B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
  */
 
 /** cssVar scope key —— 每个模式一个，两套变量并存于同一份静态 CSS。 */

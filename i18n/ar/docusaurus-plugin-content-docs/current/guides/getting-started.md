@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: ابدأ
 title: دليل البدء السريع لـ AI Short - انسخ المطالبات إلى ChatGPT/DeepSeek
 description: ابدأ في 30 ثانية! انسخ المطالبات إلى ChatGPT و Gemini و DeepSeek وغيرها من نماذج AI، لتعزيز جودة الحوار والكفاءة فورًا.

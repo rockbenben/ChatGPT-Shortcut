@@ -134,7 +134,7 @@ export function mergeSitemaps() {
 
 function main() {
   // 带参（`yarn build --locale pt`）→ 转交单次 build，不分批也不合并 sitemap。
-  // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy.md。
+  // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy/standard.md。
   const passthrough = process.argv.slice(2);
   if (passthrough.length > 0) {
     console.log(`[build] passthrough → docusaurus build ${passthrough.join(" ")}`);

@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # 收藏操作
 ├── myspace.ts     # 我的空間資料（核心資料來源）
 ├── comments.ts    # 評論系統
-└── user.ts        # 用戶資訊
+├── user.ts        # 用戶資訊
+├── homepage.ts    # 首頁卡片資料（全部讀靜態 JSON，不走後端）
+└── sessionCache.ts # 登出時要清的本機痕跡（三條登出路徑共用）
 ```
 
 快取機制：API 資料透過 `lscache` 結合 ETag 實現智慧快取——伺服器返回 304 Not Modified 時直接復用本地快取，減少資料傳輸。

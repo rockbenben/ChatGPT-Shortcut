@@ -21,7 +21,7 @@ yarn
 # 本地开发
 yarn start
 
-# 构建：默认按 scripts/i18nLocales.mjs 的 defaultLocale 生成静态产物到 build 目录
+# 构建：分块构建全部 18 种语言（一次性构建会 OOM），产物在 build 目录；只要一种语言见下方 --locale
 yarn build
 ```
 

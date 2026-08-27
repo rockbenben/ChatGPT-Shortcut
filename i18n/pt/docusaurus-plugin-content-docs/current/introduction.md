@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introdução ao AI Short
 title: Biblioteca de Prompts de IA | Copie e Aumente a Produtividade

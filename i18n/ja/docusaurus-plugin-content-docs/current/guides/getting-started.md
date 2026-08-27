@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: 始め方
 title: AI Short 入門ガイド｜ChatGPT/DeepSeek へプロンプトをコピー
 description: 30 秒で使い始められる！ChatGPT、Gemini、DeepSeek などの AI モデルにプロンプトをコピーし、対話品質と作業効率を即座にアップさせましょう。

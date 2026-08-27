@@ -16,7 +16,7 @@ After logging in, you can create your own prompts and save them to your account 
    - **Prompt content** (required): The body of the prompt; text in square brackets `[...]` is highlighted as a placeholder when displayed
    - **Usage** (optional): A short description of what the prompt does
    - **Notes** (optional): Source, other-language versions, or supplementary notes
-3. The "Would you like to share this prompt on the public page?" switch at the bottom is on by default — turn it off to keep the prompt private
+3. The share switch at the bottom is on by default — turn it off to keep the prompt private
 4. Click "Create prompt" to submit
 
 ![Create Prompt Dialog](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ In the My Collection view, click the edit (pencil) button on a prompt card you c
 
 ## Delete Prompt
 
-Click "Delete" in the edit dialog. Deletion cannot be undone — proceed with care.
+In the My Collection view, click the delete (trash) button on your prompt card and confirm. Deletion cannot be undone — proceed with care.
 
 ## Share to Community
 
-When creating or editing, the "Would you like to share this prompt on the public page?" switch at the bottom controls visibility:
+When creating or editing, the share switch at the bottom controls visibility:
 
 - **On (default)**: The prompt appears on the [Community Prompts](./community) page, where other users can see and collect it
 - **Off**: Private — visible only to you
@@ -71,7 +71,7 @@ Import prompts and collections from a JSON file:
 1. Go to "My account" and find the "Data management → Import prompts" section
 2. Click the "Import data" button
 3. Select a JSON file
-4. The system merges the data automatically (deduplicated by title; prompts whose IDs belong to another account are set to private)
+4. The system merges the data automatically (matched by ID: prompts sharing an ID with yours are updated, or skipped when identical; those with no ID or an ID from another account are imported as new entries, the latter forced to private)
 
 ### Team Collaboration
 

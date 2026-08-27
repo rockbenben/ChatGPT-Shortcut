@@ -21,7 +21,7 @@ yarn
 # phát triển cục bộ
 yarn start
 
-# build: xuất file tĩnh ra thư mục build, sử dụng defaultLocale trong scripts/i18nLocales.mjs
+# build: build toàn bộ 18 ngôn ngữ theo từng khối (chạy một lượt sẽ hết bộ nhớ); kết quả ở build/ — chỉ một ngôn ngữ xem --locale bên dưới
 yarn build
 ```
 

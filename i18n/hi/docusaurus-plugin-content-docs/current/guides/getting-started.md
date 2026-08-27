@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: शुरुआत करें
 title: AI Short शुरुआत गाइड | ChatGPT/DeepSeek में प्रॉम्प्ट कॉपी करें
 description: 30 सेकंड में जल्दी शुरुआत करें! ChatGPT, Gemini, DeepSeek जैसे AI मॉडल में प्रॉम्प्ट कॉपी करें और तुरंत संवाद की गुणवत्ता और कार्य कुशलता बढ़ाएँ।

@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Başlarken
 title: AI Short Başlangıç Kılavuzu | Promptları ChatGPT/DeepSeek'e Kopyalayın
 description: 30 saniyede başlayın! Promptları ChatGPT, Gemini, DeepSeek gibi AI modellerine kopyalayın ve konuşma kalitenizi ile verimliliğinizi anında artırın.

@@ -16,7 +16,7 @@ Sau khi đăng nhập, bạn có thể tạo prompt của riêng mình và lưu 
    - **Nội dung Prompt** (bắt buộc): Phần thân của prompt; văn bản trong dấu ngoặc vuông `[...]` sẽ được tô sáng như vị trí chờ điền khi hiển thị
    - **Cách sử dụng** (tùy chọn): Mô tả ngắn gọn prompt này làm được gì
    - **Ghi chú** (tùy chọn): Nguồn, phiên bản ngôn ngữ khác hoặc ghi chú bổ sung
-3. Công tắc "**Bạn có muốn chia sẻ prompt này lên trang công khai không?**" ở dưới cùng mặc định bật — tắt để giữ prompt riêng tư
+3. Công tắc chia sẻ ở dưới cùng bật sẵn — tắt đi để prompt chỉ mình bạn thấy
 4. Nhấp "Tạo prompt" để gửi
 
 ![Hộp thoại Tạo Prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Trong chế độ xem Bộ sưu tập của tôi, nhấp nút chỉnh sửa (bú
 
 ## Xóa Prompt
 
-Nhấp "Xóa" trong hộp thoại chỉnh sửa. Không thể khôi phục sau khi xóa — hãy thao tác cẩn thận.
+Trong "Bộ sưu tập của tôi", nhấn nút xóa (thùng rác) trên thẻ prompt của bạn rồi xác nhận. Đã xóa thì không khôi phục được — hãy thao tác cẩn thận.
 
 ## Chia sẻ lên Cộng đồng
 
-Khi tạo hoặc chỉnh sửa, công tắc "**Bạn có muốn chia sẻ prompt này lên trang công khai không?**" ở dưới cùng kiểm soát mức độ hiển thị:
+Khi tạo hoặc chỉnh sửa, công tắc chia sẻ ở dưới cùng quyết định phạm vi hiển thị:
 
 - **Bật (mặc định)**: Prompt xuất hiện trên trang [Prompt Cộng đồng](./community), người dùng khác có thể xem và thu thập
 - **Tắt**: Riêng tư — chỉ mình bạn thấy
@@ -71,7 +71,7 @@ Nhập prompt và bộ sưu tập từ tệp JSON:
 1. Vào "Tài khoản của tôi" và tìm mục "Quản lý dữ liệu → Nhập Prompt"
 2. Nhấp nút "Nhập dữ liệu"
 3. Chọn tệp JSON
-4. Hệ thống tự động hợp nhất dữ liệu (loại trùng theo tiêu đề; prompt có ID thuộc tài khoản khác sẽ được đặt thành riêng tư)
+4. Hệ thống tự động hợp nhất dữ liệu (đối chiếu theo ID: prompt trùng ID với của bạn sẽ được cập nhật, hoặc bỏ qua nếu nội dung giống hệt; những mục không có ID hoặc mang ID của tài khoản khác sẽ nhập thành mục mới và bị đặt riêng tư)
 
 ### Hợp tác Nhóm
 

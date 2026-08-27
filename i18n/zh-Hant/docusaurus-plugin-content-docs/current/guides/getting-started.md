@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: 開始上手
 title: AI Short 入門指南 | 複製提示詞到 ChatGPT/DeepSeek
 description: 30 秒快速上手！複製提示詞到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升對話質量與工作效率。

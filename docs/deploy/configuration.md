@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # 收藏操作
 ├── myspace.ts     # 我的空间数据（核心数据源）
 ├── comments.ts    # 评论系统
-└── user.ts        # 用户信息
+├── user.ts        # 用户信息
+├── homepage.ts    # 首页卡片数据（全部读静态 JSON，不走后端）
+└── sessionCache.ts # 登出时要清的本地痕迹（三条登出路径共用）
 ```
 
 缓存机制：API 数据通过 `lscache` 结合 ETag 实现智能缓存——服务器返回 304 Not Modified 时直接复用本地缓存，减少数据传输。

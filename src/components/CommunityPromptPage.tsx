@@ -65,7 +65,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   const [commentCount, setCommentCount] = useState(0);
 
   // 字符/token 统计 + 占位符渲染：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
-  // renderedPrompt 解析 {{var}} 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
+  // renderedPrompt 解析 [xxx] 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
   const charCount = (prompt?.description || "").length;
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
