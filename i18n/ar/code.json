@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "الذكاء الاصطناعي يردّ"
   },
+  "comments.emoji.label": {
+    "message": "إدراج رمز تعبيري"
+  },
   "comments.empty": {
     "message": "لا توجد تعليقات بعد"
+  },
+  "comments.gif.label": {
+    "message": "إدراج GIF"
   },
   "comments.heading": {
     "message": "النقاش"
@@ -264,10 +270,10 @@
     "message": "الصقه في ChatGPT أو Claude أو Gemini أو DeepSeek أو أي واجهة ذكاء اصطناعي محادثية وشغّله."
   },
   "input.newPassword": {
-    "message": "يرجى إدخال كلمة مرور جديدة!"
+    "message": "يرجى إدخال كلمة مرور جديدة"
   },
   "input.resetPassword.code": {
-    "message": "يرجى إدخال رمز إعادة التعيين الخاص بك!"
+    "message": "يرجى إدخال رمز إعادة التعيين الخاص بك"
   },
   "input.search.placeholder": {
     "message": "كتابة، ترجمة…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "شروط الخدمة"
   },
-  "link.userCenter": {
-    "message": "مركز المستخدم"
-  },
   "login.google.button": {
     "message": "تسجيل الدخول عبر Google"
   },
@@ -396,13 +399,13 @@
     "message": "فشل إرسال التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.addPrompt.success": {
-    "message": "تم إرسال التوجيه بنجاح!"
+    "message": "تم إرسال التوجيه"
   },
   "message.cache.cleared": {
     "message": "تم مسح ذاكرة التخزين المؤقت"
   },
   "message.cache.clearError": {
-    "message": "فشل مسح ذاكرة التخزين المؤقت"
+    "message": "فشل مسح ذاكرة التخزين المؤقت، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.cannotFavorOwn": {
     "message": "لا يمكنك تفضيل موجهك الخاص"
@@ -414,10 +417,10 @@
     "message": "تم إنشاء موجّه خاص، لكن تعذّرت إزالة المفضلة الأصلية. يرجى حذفها يدويًا لتجنّب التكرار."
   },
   "message.convertToPrivate.success": {
-    "message": "تم التحويل إلى موجه خاصة بنجاح"
+    "message": "تم التحويل إلى موجه خاصة"
   },
   "message.copied": {
-    "message": "تم النسخ بنجاح"
+    "message": "تم النسخ"
   },
   "message.deletePrompt.confirm.content": {
     "message": "هل أنت متأكد أنك تريد حذف هذا التوجيه؟"
@@ -429,7 +432,7 @@
     "message": "فشل حذف التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.deletePrompt.success": {
-    "message": "تم حذف التوجيه بنجاح!"
+    "message": "تم حذف التوجيه"
   },
   "message.error": {
     "message": "حدث خطأ أثناء المعالجة"
@@ -450,7 +453,7 @@
     "message": "لا توجد موجهات للتصدير. أنشئ بعضها أو أضفها إلى المفضلة أولاً."
   },
   "message.export.success": {
-    "message": "تم تصدير التوجيهات بنجاح!"
+    "message": "تم تصدير التوجيهات"
   },
   "message.forgotPassword.info": {
     "message": "إذا نسيت كلمة المرور الحالية، يمكنك إعادة تعيينها عبر البريد الإلكتروني. سنرسل بريدًا إلكترونيًا يحتوي على رابط إعادة التعيين إلى عنوان بريدك الإلكتروني المسجل."
@@ -461,6 +464,9 @@
   "message.import.invalid": {
     "message": "تنسيق بيانات غير صالح"
   },
+  "message.import.nothing": {
+    "message": "كل ما في الملف موجود بالفعل، لا شيء للاستيراد"
+  },
   "message.import.parseError": {
     "message": "خطأ في تحليل JSON"
   },
@@ -468,10 +474,10 @@
     "message": "استيراد جزئي"
   },
   "message.import.success": {
-    "message": "تم الاستيراد بنجاح!"
+    "message": "تم الاستيراد"
   },
   "message.loadFailed": {
-    "message": "فشل في تحميل البيانات"
+    "message": "فشل في تحميل البيانات، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.loginRequired": {
     "message": "يرجى تسجيل الدخول أولاً"
@@ -483,7 +489,7 @@
     "message": "تأكيد تسجيل الخروج"
   },
   "message.noComments": {
-    "message": "لا توجد تعليقات بعد، كن أول من يعلق!"
+    "message": "لا توجد تعليقات بعد، كن أول من يعلق"
   },
   "message.noFavorites": {
     "message": "لا توجد مفضلة بعد، اكتشف الموجهات التي تعجبك"
@@ -498,7 +504,7 @@
     "message": "تم حفظ الترتيب"
   },
   "message.orderSaveFailed": {
-    "message": "فشل في حفظ الترتيب"
+    "message": "فشل في حفظ الترتيب، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.postComment.error": {
     "message": "فشل إرسال التعليق. يرجى المحاولة مرة أخرى لاحقًا."
@@ -519,34 +525,34 @@
     "message": "فشل إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.resetPassword.success": {
-    "message": "تم إعادة تعيين كلمة المرور بنجاح!"
+    "message": "تم إعادة تعيين كلمة المرور"
   },
   "message.success.forgotPassword": {
-    "message": "تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور!"
+    "message": "تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور"
   },
   "message.success.login": {
-    "message": "تم تسجيل الدخول بنجاح!"
+    "message": "تم تسجيل الدخول"
   },
   "message.success.passwordChanged": {
-    "message": "تم تغيير كلمة المرور بنجاح!"
+    "message": "تم تغيير كلمة المرور"
   },
   "message.success.passwordlessLink": {
-    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور إلى بريدك الإلكتروني!"
+    "message": "تم إرسال رابط تسجيل الدخول بدون كلمة مرور إلى بريدك الإلكتروني"
   },
   "message.success.register": {
-    "message": "تم التسجيل بنجاح!"
+    "message": "تم التسجيل"
   },
   "message.tagsUpdated": {
     "message": "تم تحديث الوسوم"
   },
   "message.tagsUpdateFailed": {
-    "message": "فشل تحديث الوسوم"
+    "message": "فشل تحديث الوسوم، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.updatePrompt.error": {
     "message": "فشل تحديث التوجيه، يرجى المحاولة مرة أخرى لاحقًا"
   },
   "message.updatePrompt.success": {
-    "message": "تم تحديث التوجيه بنجاح!"
+    "message": "تم تحديث التوجيه"
   },
   "modal.clearCache.title": {
     "message": "مسح ذاكرة التخزين المؤقت؟"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "ترجمة"
+  },
+  "search.submit": {
+    "message": "بحث"
   },
   "share.copy": {
     "message": "نسخ"
@@ -968,19 +977,19 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "تم النسخ",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "نسخ",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "نسخ الكود إلى الحافظة",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "تبديل ميزة التفاف النص",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
@@ -996,7 +1005,7 @@
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "وضع النظام",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1008,27 +1017,27 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "الانتقال إلى المحتوى الرئيسي",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "هذه الصفحة مسودة. لن تكون مرئية إلا في بيئة التطوير وستُستبعد من الإصدار النهائي.",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "صفحة مسودة",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "هذه الصفحة غير مدرجة. لن تقوم محركات البحث بفهرستها، ولن يتمكن من الوصول إليها سوى المستخدمين الذين لديهم رابط مباشر.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "صفحة غير مدرجة",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "الصفحة الرئيسية",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -1052,31 +1061,31 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "إغلاق شريط التنقل",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "طي الشريط الجانبي",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "طي الشريط الجانبي",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "توسيع الشريط الجانبي",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "توسيع الشريط الجانبي",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "الشريط الجانبي للوثائق",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "تبديل شريط التنقل",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -1107,11 +1116,11 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "طي فئة الشريط الجانبي «{label}»",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "توسيع فئة الشريط الجانبي «{label}»",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
@@ -1119,19 +1128,19 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "حاول مرة أخرى",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "(يفتح في علامة تبويب جديدة)",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " في {date}",
+    "message": "في {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " بواسطة {user}",
+    "message": "بواسطة {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1139,19 +1148,19 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "طي القائمة المنسدلة",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "توسيع القائمة المنسدلة",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "اللغات",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← العودة إلى القائمة الرئيسية",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -1159,15 +1168,15 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "الرئيسية",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "لم نتمكن من العثور على ما كنت تبحث عنه.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "يرجى الاتصال بمالك الموقع الذي قادك إلى عنوان URL الأصلي وإبلاغه بأن الرابط معطل.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "العلامات",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "في هذه الصفحة",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "يرجى إدخال محتوى التعليق"
   },
   "validation.confirmPassword.required": {
-    "message": "يرجى تأكيد كلمة المرور الجديدة!"
+    "message": "يرجى تأكيد كلمة المرور الجديدة"
   },
   "validation.currentPassword.required": {
-    "message": "يرجى إدخال كلمة المرور الحالية!"
+    "message": "يرجى إدخال كلمة المرور الحالية"
   },
   "validation.email.invalid": {
-    "message": "يرجى إدخال عنوان بريد إلكتروني صالح!"
+    "message": "يرجى إدخال عنوان بريد إلكتروني صالح"
   },
   "validation.email.required": {
-    "message": "يرجى إدخال البريد الإلكتروني!"
+    "message": "يرجى إدخال البريد الإلكتروني"
   },
   "validation.password.length": {
     "message": "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل"
   },
   "validation.password.match": {
-    "message": "كلمتا المرور غير متطابقتين!"
+    "message": "كلمتا المرور غير متطابقتين"
   },
   "validation.password.required": {
-    "message": "يرجى إدخال كلمة المرور!"
+    "message": "يرجى إدخال كلمة المرور"
   },
   "validation.promptContent.required": {
-    "message": "يرجى إدخال محتوى التوجيه!"
+    "message": "يرجى إدخال محتوى التوجيه"
   },
   "validation.promptTitle.required": {
-    "message": "يرجى إدخال عنوان التوجيه!"
+    "message": "يرجى إدخال عنوان التوجيه"
   },
   "validation.replyRequired": {
     "message": "يرجى إدخال محتوى الرد"
   },
   "validation.username.required": {
-    "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل!"
+    "message": "يرجى إدخال اسم المستخدم أو البريد الإلكتروني المسجل"
   },
   "vote.downvote.alreadyVoted": {
     "message": "لقد سجّلت عدم إعجابك بهذا الموجّه بالفعل في هذه الجلسة."
@@ -1266,7 +1275,7 @@
     "message": "فشل تسجيل عدم الإعجاب. يرجى المحاولة مرة أخرى."
   },
   "vote.downvote.success": {
-    "message": "تم تسجيل عدم الإعجاب!"
+    "message": "تم تسجيل عدم الإعجاب"
   },
   "vote.loginRequired": {
     "message": "يرجى تسجيل الدخول للتصويت."
@@ -1278,7 +1287,7 @@
     "message": "فشل تسجيل الإعجاب. يرجى المحاولة مرة أخرى."
   },
   "vote.upvote.success": {
-    "message": "تم تسجيل الإعجاب!"
+    "message": "تم تسجيل الإعجاب"
   },
   "auth.callback.title": {
     "message": "إكمال تسجيل الدخول"

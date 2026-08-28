@@ -81,7 +81,7 @@ Jangan langsung mengganti prompt, coba sesuaikan dari beberapa arah berikut:
 2. **Minta AI mengoptimalkan**: untuk jawaban yang kurang memuaskan, tindak lanjuti dengan "tolong buat lebih X" atau "tolong tulis ulang dengan gaya Y"; biasanya setelah satu-dua iterasi, AI sudah mendekati target. Anda juga bisa meminta AI menilai jawabannya sendiri lalu memperbaikinya
 3. **Bandingkan antar model**: coba prompt yang sama di model lain (Claude / ChatGPT / Gemini / DeepSeek, dll.); tiap model punya keunggulan masing-masing, sehingga hasilnya bisa cukup berbeda
 4. **Coba komunitas**: di [Prompt Komunitas](./community) mungkin ada versi yang lebih cocok — kami juga menyambut prompt bagus Anda untuk dibagikan di sana
-5. **Saran umpan balik**: menemui masalah atau punya saran perbaikan? Kirimkan [umpan balik](/feedback) Anda
+5. **Saran umpan balik**: menemui masalah atau punya saran perbaikan? Kirimkan [umpan balik](https://www.aishort.top/ind/feedback) Anda
 
 ## Bagaimana cara mencadangkan prompt saya?
 

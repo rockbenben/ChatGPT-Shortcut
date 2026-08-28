@@ -21,7 +21,7 @@ yarn
 # स्थानीय विकास
 yarn start
 
-# बिल्ड: स्थिर फ़ाइलें build डायरेक्टरी में आउटपुट करता है, scripts/i18nLocales.mjs में defaultLocale का उपयोग करके
+# build: सभी 18 भाषाएँ खंडों में बनाता है (एक ही बार में मेमोरी खत्म हो जाती है); आउटपुट build/ में — केवल एक भाषा के लिए नीचे --locale देखें
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Vercel पर एक क्लिक में तैनात करने क�
 
 पहले 👉 [इस प्रोजेक्ट को Fork करें](https://github.com/rockbenben/ChatGPT-Shortcut/fork), फिर तैनात करें:
 
-1. [Cloudflare Pages](https://pages.cloudflare.com/) में साइन इन करें और **Create a project** चुनें
+1. [Pages निर्माण पेज](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) खोलें और **Connect to Git** चुनें। अगर Create a Worker पेज खुले, तो Pages का प्रवेश नीचे दिए **Get started** लिंक से है
 2. आपने जो रिपॉजिटरी Fork की है उसे कनेक्ट करें
 3. बिल्ड कॉन्फ़िगर करें:
    - **Build command**: `yarn build --locale zh-Hans` (जो भाषा तैनात करनी हो उसके अनुसार locale बदलें, जैसे पुर्तगाली के लिए `yarn build --locale pt`)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. **Deploy** क्लिक करें और Cloudflare Pages के बिल्ड पूरा होने की प्रतीक्षा करें
+
+> **`YARN_VERSION` ज़रूरी है**: Cloudflare का v3 बिल्ड सिस्टम डिफ़ॉल्ट रूप से Yarn 4.9.1 लेता है और v2 की तरह `yarn.lock` से वर्ज़न नहीं पहचानता। इस रिपॉज़िटरी में Yarn Classic का v1 lockfile है, इसलिए पिन किए बिना Yarn 4 संभाल लेगा। Node सेट करने की ज़रूरत नहीं: v3 डिफ़ॉल्ट 22.16.0 है, जो आवश्यक 20 से पहले ही ऊपर है।
 
 इसके बाद हर push पर स्वचालित रूप से बिल्ड और तैनाती ट्रिगर होती है।
 

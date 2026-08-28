@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # data kartu beranda (hanya JSON statis, tanpa backend)
+└── sessionCache.ts # jejak lokal yang dihapus saat logout (dipakai 3 jalur logout)
 ```
 
 Caching: data API di-cache secara cerdas melalui `lscache` ditambah ETag — ketika server mengembalikan 304 Not Modified, cache lokal digunakan kembali untuk mengurangi transfer data.

@@ -1,7 +1,12 @@
 services:
-  chatgpt-shortcut:
-    container_name: chatgpt-shortcut
-    image: ghcr.io/rockbenben/chatgpt-shortcut:latest
+  aishort-offline:
+    container_name: aishort-offline
+    # 必须是 :offline，不能是 :latest —— :latest 由 docker.yml 从 main 推送，是**在线版**镜像，
+    # 会去调用自建部署没有的后端。离线镜像由 docker-offline.yml 推送（该工作流硬性限定
+    # refs/heads/offline），tag 为 offline 与 {version}-offline。
+    # 与 docs/deploy/offline.md 里的片段保持一致：克隆本分支直接 docker compose up 的人
+    # 拿到的应该就是文档描述的那个东西。
+    image: ghcr.io/rockbenben/chatgpt-shortcut:offline
     ports:
       - "3000:3000"
     restart: unless-stopped

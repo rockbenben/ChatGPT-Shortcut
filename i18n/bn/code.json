@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI উত্তর দিচ্ছে"
   },
+  "comments.emoji.label": {
+    "message": "ইমোজি যোগ করুন"
+  },
   "comments.empty": {
     "message": "এখনও কোনো মন্তব্য নেই"
+  },
+  "comments.gif.label": {
+    "message": "GIF যোগ করুন"
   },
   "comments.heading": {
     "message": "আলোচনা"
@@ -264,10 +270,10 @@
     "message": "ChatGPT, Claude, Gemini, DeepSeek বা অন্য যেকোনো সংলাপ-এআই ইন্টারফেসে পেস্ট করে চালান।"
   },
   "input.newPassword": {
-    "message": "অনুগ্রহ করে নতুন পাসওয়ার্ড লিখুন!"
+    "message": "অনুগ্রহ করে নতুন পাসওয়ার্ড লিখুন"
   },
   "input.resetPassword.code": {
-    "message": "অনুগ্রহ করে আপনার রিসেট কোড লিখুন!"
+    "message": "অনুগ্রহ করে আপনার রিসেট কোড লিখুন"
   },
   "input.search.placeholder": {
     "message": "লেখা, অনুবাদ…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "পরিষেবার শর্তাবলী"
   },
-  "link.userCenter": {
-    "message": "ব্যবহারকারী কেন্দ্র"
-  },
   "login.google.button": {
     "message": "Google দিয়ে লগইন করুন"
   },
@@ -396,13 +399,13 @@
     "message": "প্রম্পট জমা দিতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.addPrompt.success": {
-    "message": "প্রম্পট সফলভাবে জমা দেওয়া হয়েছে!"
+    "message": "প্রম্পট জমা দেওয়া হয়েছে"
   },
   "message.cache.cleared": {
     "message": "ক্যাশে সাফ করা হয়েছে"
   },
   "message.cache.clearError": {
-    "message": "ক্যাশ সাফ করতে ব্যর্থ"
+    "message": "ক্যাশ সাফ করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.cannotFavorOwn": {
     "message": "নিজের প্রম্পট প্রিয় তালিকায় যোগ করা যাবে না"
@@ -414,10 +417,10 @@
     "message": "ব্যক্তিগত প্রম্পট তৈরি হয়েছে, কিন্তু মূল পছন্দসই সরানো যায়নি। পুনরাবৃত্তি এড়াতে এটি নিজে মুছে ফেলুন।"
   },
   "message.convertToPrivate.success": {
-    "message": "সফলভাবে ব্যক্তিগত প্রম্পটে রূপান্তর করা হয়েছে"
+    "message": "ব্যক্তিগত প্রম্পটে রূপান্তর করা হয়েছে"
   },
   "message.copied": {
-    "message": "সফলভাবে কপি করা হয়েছে"
+    "message": "কপি করা হয়েছে"
   },
   "message.deletePrompt.confirm.content": {
     "message": "আপনি কি নিশ্চিত যে আপনি এই প্রম্পটটি মুছতে চান?"
@@ -429,7 +432,7 @@
     "message": "প্রম্পট মুছতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.deletePrompt.success": {
-    "message": "প্রম্পট সফলভাবে মুছে ফেলা হয়েছে!"
+    "message": "প্রম্পট মুছে ফেলা হয়েছে"
   },
   "message.error": {
     "message": "প্রক্রিয়াকরণের সময় একটি ত্রুটি ঘটেছে"
@@ -450,7 +453,7 @@
     "message": "রপ্তানি করার মতো কোনো প্রম্পট নেই। প্রথমে কিছু তৈরি করুন বা প্রিয়তে যোগ করুন।"
   },
   "message.export.success": {
-    "message": "প্রম্পট সফলভাবে রপ্তানি করা হয়েছে!"
+    "message": "প্রম্পট রপ্তানি করা হয়েছে"
   },
   "message.forgotPassword.info": {
     "message": "আপনি যদি আপনার বর্তমান পাসওয়ার্ড ভুলে যান, তবে আপনি ইমেলের মাধ্যমে এটি রিসেট করতে পারেন। আমরা আপনার নিবন্ধিত ইমেল ঠিকানায় একটি রিসেট লিঙ্ক সহ একটি ইমেল পাঠাব।"
@@ -461,6 +464,9 @@
   "message.import.invalid": {
     "message": "অবৈধ ডেটা ফরম্যাট"
   },
+  "message.import.nothing": {
+    "message": "ফাইলের সবকিছু ইতিমধ্যে আছে, আমদানি করার কিছু নেই"
+  },
   "message.import.parseError": {
     "message": "JSON পার্সিং ত্রুটি"
   },
@@ -468,10 +474,10 @@
     "message": "আংশিক আমদানি"
   },
   "message.import.success": {
-    "message": "আমদানি সফল!"
+    "message": "আমদানি করা হয়েছে"
   },
   "message.loadFailed": {
-    "message": "ডেটা লোড করতে ব্যর্থ"
+    "message": "ডেটা লোড করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.loginRequired": {
     "message": "অনুগ্রহ করে প্রথমে লগইন করুন"
@@ -483,7 +489,7 @@
     "message": "লগআউট নিশ্চিত করুন"
   },
   "message.noComments": {
-    "message": "এখনও কোনো মন্তব্য নেই, প্রথম মন্তব্যকারী হোন!"
+    "message": "এখনও কোনো মন্তব্য নেই, প্রথম মন্তব্যকারী হোন"
   },
   "message.noFavorites": {
     "message": "এখনও কোনো পছন্দের নেই, আপনার পছন্দের প্রম্পট খুঁজুন"
@@ -498,7 +504,7 @@
     "message": "বিন্যাস সংরক্ষিত হয়েছে"
   },
   "message.orderSaveFailed": {
-    "message": "বিন্যাস সংরক্ষণে ব্যর্থ"
+    "message": "বিন্যাস সংরক্ষণে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.postComment.error": {
     "message": "মন্তব্য পাঠাতে ব্যর্থ হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।"
@@ -519,34 +525,34 @@
     "message": "পাসওয়ার্ড রিসেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.resetPassword.success": {
-    "message": "পাসওয়ার্ড সফলভাবে রিসেট করা হয়েছে!"
+    "message": "পাসওয়ার্ড রিসেট করা হয়েছে"
   },
   "message.success.forgotPassword": {
-    "message": "পাসওয়ার্ড রিসেট ইমেল পাঠানো হয়েছে!"
+    "message": "পাসওয়ার্ড রিসেট ইমেল পাঠানো হয়েছে"
   },
   "message.success.login": {
-    "message": "লগইন সফল হয়েছে!"
+    "message": "লগ ইন করা হয়েছে"
   },
   "message.success.passwordChanged": {
-    "message": "পাসওয়ার্ড সফলভাবে পরিবর্তন করা হয়েছে!"
+    "message": "পাসওয়ার্ড পরিবর্তন করা হয়েছে"
   },
   "message.success.passwordlessLink": {
-    "message": "পাসওয়ার্ডহীন লগইন লিঙ্ক আপনার ইমেলে পাঠানো হয়েছে!"
+    "message": "পাসওয়ার্ডহীন লগইন লিঙ্ক আপনার ইমেলে পাঠানো হয়েছে"
   },
   "message.success.register": {
-    "message": "নিবন্ধন সফল হয়েছে!"
+    "message": "অ্যাকাউন্ট তৈরি করা হয়েছে"
   },
   "message.tagsUpdated": {
     "message": "ট্যাগ আপডেট করা হয়েছে"
   },
   "message.tagsUpdateFailed": {
-    "message": "ট্যাগ আপডেট করতে ব্যর্থ"
+    "message": "ট্যাগ আপডেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.updatePrompt.error": {
     "message": "প্রম্পট আপডেট করতে ব্যর্থ, অনুগ্রহ করে পরে আবার চেষ্টা করুন"
   },
   "message.updatePrompt.success": {
-    "message": "প্রম্পট সফলভাবে আপডেট করা হয়েছে!"
+    "message": "প্রম্পট আপডেট করা হয়েছে"
   },
   "modal.clearCache.title": {
     "message": "ক্যাশ সাফ করবেন?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "অনুবাদ"
+  },
+  "search.submit": {
+    "message": "অনুসন্ধান"
   },
   "share.copy": {
     "message": "কপি"
@@ -864,27 +873,27 @@
     "message": "সর্বশেষ"
   },
   "theme.admonition.caution": {
-    "message": "caution",
+    "message": "সতর্কতা",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "বিপদ",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "info",
+    "message": "তথ্য",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
-    "message": "note",
+    "message": "নোট",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "tip",
+    "message": "পরামর্শ",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
-    "message": "warning",
+    "message": "সতর্কবার্তা",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
@@ -892,7 +901,7 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
+    "message": "শীর্ষে ফিরে যান",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
@@ -968,35 +977,35 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "কপি করা হয়েছে",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "কপি করুন",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "ক্লিপবোর্ডে কোড কপি করুন",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "ওয়ার্ড র‍্যাপ টগল করুন",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Switch between dark and light mode (currently {mode})",
+    "message": "ডার্ক এবং লাইট মোডের মধ্যে পরিবর্তন করুন (বর্তমানে {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
+    "message": "ডার্ক মোড",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "light mode",
+    "message": "লাইট মোড",
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "সিস্টেম মোড",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1008,31 +1017,31 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "মূল বিষয়বস্তুতে যান",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "এই পৃষ্ঠাটি একটি খসড়া। এটি শুধুমাত্র ডেভ-এ দৃশ্যমান হবে এবং প্রোডাকশন বিল্ড থেকে বাদ দেওয়া হবে।",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "খসড়া পৃষ্ঠা",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "এই পৃষ্ঠাটি তালিকাভুক্ত নয়। সার্চ ইঞ্জিন এটিকে সূচিবদ্ধ করবে না, এবং শুধুমাত্র সরাসরি লিঙ্ক থাকা ব্যবহারকারীরা এটিতে অ্যাক্সেস করতে পারবে।",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "তালিকাভুক্ত নয় এমন পৃষ্ঠা",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "হোম পৃষ্ঠা",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "ব্রেডক্রাম্বস",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -1052,35 +1061,35 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "নেভিগেশন বার বন্ধ করুন",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "সাইডবার সঙ্কুচিত করুন",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "সাইডবার সঙ্কুচিত করুন",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "সাইডবার প্রসারিত করুন",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "সাইডবার প্রসারিত করুন",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "ডক্স সাইডবার",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "নেভিগেশন বার টগল করুন",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "\"{tagName}\" সহ {nDocsTagged}",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
@@ -1088,7 +1097,7 @@
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "সংস্করণ: {versionLabel}"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "লেটেস্ট ভার্সন",
@@ -1107,27 +1116,27 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "সাইডবার বিভাগ '{label}' সঙ্কুচিত করুন",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "সাইডবার বিভাগ '{label}' প্রসারিত করুন",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
+    "message": "এই পৃষ্ঠা ক্র্যাশ করেছে।",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "আবার চেষ্টা করুন",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "(নতুন ট্যাবে খোলে)",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " {date} তারিখে",
+    "message": "{date} তারিখে",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
@@ -1139,35 +1148,35 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "ড্রপডাউন সঙ্কুচিত করুন",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "ড্রপডাউন প্রসারিত করুন",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "ভাষা",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← প্রধান মেনুতে ফিরে যান",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "সংস্করণসমূহ",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "প্রধান",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "আমরা আপনি যা খুঁজছিলেন তা খুঁজে পাইনি।",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "অনুগ্রহ করে আপনাকে মূল URL-এ লিঙ্ক করা সাইটের মালিকের সাথে যোগাযোগ করুন এবং তাদের জানাতে দিন যে তাদের লিঙ্কটি ভেঙে গেছে।",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "ট্যাগসমূহ",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "এই পৃষ্ঠায়",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "অনুগ্রহ করে মন্তব্যের বিষয়বস্তু লিখুন"
   },
   "validation.confirmPassword.required": {
-    "message": "অনুগ্রহ করে আপনার নতুন পাসওয়ার্ড নিশ্চিত করুন!"
+    "message": "অনুগ্রহ করে আপনার নতুন পাসওয়ার্ড নিশ্চিত করুন"
   },
   "validation.currentPassword.required": {
-    "message": "অনুগ্রহ করে আপনার বর্তমান পাসওয়ার্ড লিখুন!"
+    "message": "অনুগ্রহ করে আপনার বর্তমান পাসওয়ার্ড লিখুন"
   },
   "validation.email.invalid": {
-    "message": "অনুগ্রহ করে একটি বৈধ ইমেল ঠিকানা লিখুন!"
+    "message": "অনুগ্রহ করে একটি বৈধ ইমেল ঠিকানা লিখুন"
   },
   "validation.email.required": {
-    "message": "অনুগ্রহ করে ইমেল লিখুন!"
+    "message": "অনুগ্রহ করে ইমেল লিখুন"
   },
   "validation.password.length": {
     "message": "পাসওয়ার্ডটি কমপক্ষে ৬ অক্ষরের হতে হবে"
   },
   "validation.password.match": {
-    "message": "পাসওয়ার্ড দুটি মিলছে না!"
+    "message": "পাসওয়ার্ড দুটি মিলছে না"
   },
   "validation.password.required": {
-    "message": "অনুগ্রহ করে পাসওয়ার্ড লিখুন!"
+    "message": "অনুগ্রহ করে পাসওয়ার্ড লিখুন"
   },
   "validation.promptContent.required": {
-    "message": "অনুগ্রহ করে প্রম্পট বিষয়বস্তু লিখুন!"
+    "message": "অনুগ্রহ করে প্রম্পট বিষয়বস্তু লিখুন"
   },
   "validation.promptTitle.required": {
-    "message": "অনুগ্রহ করে প্রম্পট শিরোনাম লিখুন!"
+    "message": "অনুগ্রহ করে প্রম্পট শিরোনাম লিখুন"
   },
   "validation.replyRequired": {
     "message": "অনুগ্রহ করে উত্তরের বিষয়বস্তু লিখুন"
   },
   "validation.username.required": {
-    "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন!"
+    "message": "অনুগ্রহ করে ব্যবহারকারীর নাম বা নিবন্ধিত ইমেল লিখুন"
   },
   "vote.downvote.alreadyVoted": {
     "message": "আপনি এই সেশনে ইতিমধ্যে এই প্রম্পটটি ডিসলাইক করেছেন।"
@@ -1266,7 +1275,7 @@
     "message": "ডিসলাইক করা ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
   },
   "vote.downvote.success": {
-    "message": "সফলভাবে ডিসলাইক করা হয়েছে!"
+    "message": "ডিসলাইক করা হয়েছে"
   },
   "vote.loginRequired": {
     "message": "ভোট দিতে লগইন করুন।"
@@ -1278,7 +1287,7 @@
     "message": "লাইক করা ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
   },
   "vote.upvote.success": {
-    "message": "সফলভাবে লাইক করা হয়েছে!"
+    "message": "লাইক করা হয়েছে"
   },
   "auth.callback.title": {
     "message": "সাইন ইন সম্পূর্ণ করুন"

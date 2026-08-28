@@ -16,7 +16,7 @@ Nach der Anmeldung können Sie eigene Prompts erstellen, in Ihrem Konto speicher
    - **Prompt-Inhalt** (Pflichtfeld): Der eigentliche Prompt-Text; Text in eckigen Klammern `[...]` wird bei der Anzeige als Platzhalter hervorgehoben
    - **Verwendung** (optional): Eine kurze Beschreibung, was der Prompt leistet
    - **Anmerkungen** (optional): Quelle, andere Sprachversionen oder ergänzende Hinweise
-3. Der Schalter „Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?" unten ist standardmäßig aktiviert — deaktivieren Sie ihn, um den Prompt privat zu halten
+3. Der Teilen-Schalter unten ist standardmäßig aktiviert — deaktiviere ihn, damit der Prompt privat bleibt
 4. Klicken Sie auf „Prompt erstellen", um zu speichern
 
 ![Prompt-erstellen-Dialog](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Klicken Sie in der Ansicht „Meine Sammlung" auf einer von Ihnen erstellten Pro
 
 ## Prompt löschen
 
-Klicken Sie im Bearbeitungsdialog auf „Löschen". Die Löschung kann nicht rückgängig gemacht werden — gehen Sie vorsichtig vor.
+Klicke in „Meine Sammlung“ auf den Löschen-Button (Papierkorb) deiner Prompt-Karte und bestätige. Löschen lässt sich nicht rückgängig machen — bitte sorgfältig vorgehen.
 
 ## Mit der Community teilen
 
-Beim Erstellen oder Bearbeiten steuert der Schalter „Möchten Sie diesen Prompt auf der öffentlichen Seite teilen?" die Sichtbarkeit:
+Beim Erstellen oder Bearbeiten steuert der Teilen-Schalter unten die Sichtbarkeit:
 
 - **Aktiviert (Standard)**: Der Prompt erscheint auf der Seite [Community-Prompts](./community), andere Nutzer können ihn sehen und sammeln
 - **Deaktiviert**: Privat — nur für Sie sichtbar
@@ -71,7 +71,7 @@ Importieren Sie Prompts und Sammlungen aus einer JSON-Datei:
 1. Gehen Sie zu „Mein Konto" und suchen Sie den Bereich „Datenverwaltung → Prompts importieren"
 2. Klicken Sie auf die Schaltfläche „Daten importieren"
 3. Wählen Sie eine JSON-Datei aus
-4. Das System führt die Daten automatisch zusammen (Deduplizierung nach Titel; Prompts, deren IDs einem anderen Konto gehören, werden auf privat gesetzt)
+4. Die Daten werden automatisch zusammengeführt (Abgleich per ID: Prompts mit derselben ID wie deine werden aktualisiert bzw. bei identischem Inhalt übersprungen; Einträge ohne ID oder mit fremder ID kommen als neue Einträge hinzu, letztere zwingend privat)
 
 ### Team-Zusammenarbeit
 

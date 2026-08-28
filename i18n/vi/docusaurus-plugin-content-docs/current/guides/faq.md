@@ -81,7 +81,7 @@ Prompt phù hợp có thể giúp giảm sự xuất hiện của AI ảo giác.
 2. **Hỏi tiếp để AI tự tối ưu**: Với câu trả lời chưa ưng, hỏi tiếp "hãy viết lại theo hướng X hơn" hoặc "viết lại theo phong cách Y", AI thường chỉ cần một, hai lượt là bám sát mục tiêu; cũng có thể yêu cầu AI tự chấm điểm và cải thiện câu trả lời của chính mình
 3. **So sánh đổi mô hình**: Cùng một prompt thử lại trên một mô hình khác (Claude / ChatGPT / Gemini / DeepSeek, v.v.); mỗi mô hình có thế mạnh riêng, kết quả có thể khác biệt không nhỏ
 4. **Thử cộng đồng**: Trong [Prompt Cộng đồng](./community) có thể có phiên bản phù hợp hơn — và cũng hoan nghênh bạn chia sẻ prompt tốt của mình ở đó
-5. **Gửi phản hồi**: Gặp vấn đề hoặc có gợi ý cải thiện? Hoan nghênh [phản hồi](/feedback)
+5. **Gửi phản hồi**: Gặp vấn đề hoặc có gợi ý cải thiện? Hoan nghênh [phản hồi](https://www.aishort.top/vi/feedback)
 
 ## Sao lưu prompt của tôi như thế nào?
 

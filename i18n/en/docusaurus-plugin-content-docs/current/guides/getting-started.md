@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Getting Started
 title: AI Short Quick Start | Copy Prompts to ChatGPT/DeepSeek
 description: Start boosting AI productivity in 30 seconds! Copy curated prompts to ChatGPT, Gemini, Claude, DeepSeek and other AI models to instantly improve conversation quality.

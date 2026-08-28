@@ -64,7 +64,7 @@ Hesap sayfası **seviyenizi (L0–L9)** ve bir sonraki aşamaya ilerlemenizi gö
 
 "Hesabım → Veri Yönetimi" bölümü üç işlem sunar:
 
-- **Önbelleği Temizle** — yerel önbelleğe alınmış verileri yeniler; veriler senkronize olmadığında veya görüntülemede sorun yaşandığında kullanın. Koleksiyonlarınız ve özel promptlarınız kaybolmaz, bu yalnızca yeniden senkronizasyonu zorlar
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Promptları Dışa Aktar** — yedekleme için bir JSON dosyası dışa aktarır (bkz. [Özel Promptlar](./user-prompts#promptları-dışa-aktar))
 - **Promptları İçe Aktar** — bir JSON dosyasından promptları ve koleksiyonları içe aktarır
 

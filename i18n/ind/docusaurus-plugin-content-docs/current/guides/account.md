@@ -64,7 +64,7 @@ Halaman akun menampilkan **level Anda (L0–L9)** dan progres menuju tier beriku
 
 Bagian "Akun Saya → Manajemen Data" menawarkan tiga tindakan:
 
-- **Hapus Cache** — menyegarkan data yang tersimpan secara lokal; gunakan saat data tidak tersinkron atau tampilan terlihat tidak normal. Koleksi dan prompt kustom Anda tidak hilang, ini hanya memaksa sinkronisasi ulang
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Ekspor Prompt** — mengekspor file JSON untuk cadangan (lihat [Prompt Kustom](./user-prompts#ekspor-prompt))
 - **Impor Prompt** — mengimpor prompt dan koleksi dari file JSON
 

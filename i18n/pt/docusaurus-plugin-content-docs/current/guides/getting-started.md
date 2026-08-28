@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Início Rápido
 title: Guia de Início Rápido do AI Short | Copie Prompts para ChatGPT/DeepSeek
 description: Comece em 30 segundos! Copie prompts para ChatGPT, Gemini, DeepSeek e outros modelos de IA e melhore imediatamente a qualidade do diálogo e a produtividade.

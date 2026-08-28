@@ -3,16 +3,16 @@
     "message": "Add"
   },
   "action.addPrompt": {
-    "message": "Create Prompt"
+    "message": "Create prompt"
   },
   "action.backToLogin": {
-    "message": "Back to Login"
+    "message": "Back to sign in"
   },
   "action.cancel": {
     "message": "Cancel"
   },
   "action.changePassword": {
-    "message": "Change Password"
+    "message": "Change password"
   },
   "action.clearFilters": {
     "message": "Clear filters ({count})"
@@ -21,13 +21,13 @@
     "message": "Close"
   },
   "action.convertToPrivate": {
-    "message": "Convert to Private"
+    "message": "Convert to private"
   },
   "action.copy": {
     "message": "Copy"
   },
   "action.copyPrompt": {
-    "message": "Copy Prompt"
+    "message": "Copy prompt"
   },
   "action.delete": {
     "message": "Delete"
@@ -39,22 +39,22 @@
     "message": "Edit"
   },
   "action.forgotPassword": {
-    "message": "Forgot Password"
+    "message": "Forgot password"
   },
   "action.hideTags": {
-    "message": "Hide Tags"
+    "message": "Hide tags"
   },
   "action.login": {
-    "message": "Login"
+    "message": "Sign in"
   },
   "action.loginInstead": {
-    "message": "Login Directly"
+    "message": "Sign in instead"
   },
   "action.register": {
-    "message": "Register"
+    "message": "Create account"
   },
   "action.registerNow": {
-    "message": "Register Now"
+    "message": "Create account"
   },
   "action.removeFavorite": {
     "message": "Remove from favorites"
@@ -66,16 +66,16 @@
     "message": "Save"
   },
   "action.sendLink": {
-    "message": "Get Login Link"
+    "message": "Get sign-in link"
   },
   "action.sendResetEmail": {
-    "message": "Send Reset Email"
+    "message": "Send reset email"
   },
   "action.share": {
     "message": "Share"
   },
   "action.showTags": {
-    "message": "Show Tags"
+    "message": "Show tags"
   },
   "action.updatePrompt": {
     "message": "Save"
@@ -84,52 +84,58 @@
     "message": "Like"
   },
   "action.viewDetails": {
-    "message": "View Details"
+    "message": "View details"
   },
   "button.clearAllCache": {
-    "message": "Clear All Cache"
+    "message": "Clear all cache"
   },
   "button.clearCache": {
-    "message": "Clear Cache"
+    "message": "Clear cache"
   },
   "button.confirm": {
     "message": "Confirm"
   },
   "button.confirmClear": {
-    "message": "Confirm Clear"
+    "message": "Clear"
   },
   "button.export": {
-    "message": "Export Data"
+    "message": "Export data"
   },
   "button.exportPrompts": {
-    "message": "Export Prompts"
+    "message": "Export prompts"
   },
   "button.import": {
-    "message": "Import Data"
+    "message": "Import data"
   },
   "button.importPrompts": {
-    "message": "Import Prompts"
+    "message": "Import prompts"
   },
   "button.login": {
     "message": "Sign in"
   },
   "button.logout": {
-    "message": "Logout"
+    "message": "Sign out"
   },
   "button.resetPassword": {
-    "message": "Reset Password"
+    "message": "Reset password"
   },
   "button.signInFree": {
-    "message": "Sign in free"
+    "message": "Sign in for free"
   },
   "comment.add": {
-    "message": "Submit Comment"
+    "message": "Post comment"
   },
   "comments.aiReplying": {
     "message": "AI is replying"
   },
+  "comments.emoji.label": {
+    "message": "Insert emoji"
+  },
   "comments.empty": {
     "message": "No comments yet"
+  },
+  "comments.gif.label": {
+    "message": "Insert GIF"
   },
   "comments.heading": {
     "message": "Discussion"
@@ -144,13 +150,13 @@
     "message": "Discover community-shared AI prompts on AiShort. Browse user templates, swap optimization tips, and contribute your own to grow the library."
   },
   "community.fetchError": {
-    "message": "Failed to fetch data"
+    "message": "Couldn't load the data. Try again in a moment."
   },
   "community.heading": {
-    "message": "AI Prompt Community"
+    "message": "AI prompt community"
   },
   "community.loading": {
-    "message": "Loading..."
+    "message": "Loading…"
   },
   "community.notFound": {
     "message": "Prompt not found"
@@ -162,7 +168,7 @@
     "message": "Community Prompts"
   },
   "community.tagline": {
-    "message": "User-contributed AI prompts. Sort by newest or most-liked, search and filter; like and save after logging in."
+    "message": "User-contributed AI prompts. Sort by newest or most-liked, search and filter; like and save after signing in."
   },
   "community.title": {
     "message": "AI Prompt Community - Discover & Share"
@@ -171,10 +177,10 @@
     "message": "Refresh local cache data"
   },
   "description.exportPrompts.short": {
-    "message": "Export as JSON file for backup"
+    "message": "Export as a JSON file for backup"
   },
   "description.importPrompts.short": {
-    "message": "Import prompts and favorites from JSON file"
+    "message": "Import prompts and favorites from a JSON file"
   },
   "faq.heading": {
     "message": "FAQ"
@@ -201,31 +207,31 @@
     "message": "Your feedback is important to us!"
   },
   "feedback.newIssue": {
-    "message": "New Issue"
+    "message": "New issue"
   },
   "feedback.responseTime": {
     "message": "Replies usually within 24h"
   },
   "feedback.spec_label": {
-    "message": "Open Channel"
+    "message": "Open channel"
   },
   "feedback.subtitle": {
-    "message": "Bug reports, feature requests, usage questions—every voice welcome"
+    "message": "Bug reports, feature requests, usage questions — every voice welcome"
   },
   "feedback.title": {
-    "message": "Feedback & Suggestions"
+    "message": "Feedback & suggestions"
   },
   "feedback.type.bug": {
-    "message": "Bug Reports"
+    "message": "Bug reports"
   },
   "feedback.type.help": {
-    "message": "Usage Help"
+    "message": "Usage help"
   },
   "feedback.type.suggestion": {
-    "message": "Feature Requests"
+    "message": "Feature requests"
   },
   "feedback.welcome": {
-    "message": "Feedback & Suggestions"
+    "message": "Feedback & suggestions"
   },
   "filter.operator.all.tip": {
     "message": "Show prompts matching all selected tags"
@@ -264,10 +270,10 @@
     "message": "Paste into ChatGPT, Claude, Gemini, DeepSeek, or another conversational AI interface and run it."
   },
   "input.newPassword": {
-    "message": "Please enter a new password!"
+    "message": "Enter a new password"
   },
   "input.resetPassword.code": {
-    "message": "Please enter your reset code!"
+    "message": "Enter your reset code"
   },
   "input.search.placeholder": {
     "message": "writing, translation…"
@@ -276,7 +282,7 @@
     "message": "Agree"
   },
   "label.promptContent": {
-    "message": "Prompt Content"
+    "message": "Prompt content"
   },
   "label.promptNotes": {
     "message": "Notes"
@@ -285,7 +291,7 @@
     "message": "Usage"
   },
   "label.promptTitle": {
-    "message": "Prompt Name"
+    "message": "Prompt name"
   },
   "label.sharePrompt": {
     "message": "Share on the community page — others can browse and favorite it"
@@ -321,16 +327,16 @@
     "message": "Stardust"
   },
   "link.addprompt": {
-    "message": "Create Prompt"
+    "message": "Create prompt"
   },
   "link.communityPrompts": {
-    "message": "Community Prompts"
+    "message": "Community prompts"
   },
   "link.home": {
     "message": "Home"
   },
   "link.myAccount": {
-    "message": "My Account"
+    "message": "My account"
   },
   "link.privacy": {
     "message": "Privacy Policy"
@@ -338,158 +344,158 @@
   "link.terms": {
     "message": "Terms of Service"
   },
-  "link.userCenter": {
-    "message": "User Center"
-  },
   "login.google.button": {
-    "message": "Login via Google"
+    "message": "Sign in with Google"
   },
   "login.google.error": {
-    "message": "Error while attempting Google login, please try again later ({error})"
+    "message": "Couldn't sign in with Google. Try again in a moment."
   },
   "login.google.failed": {
-    "message": "Google login failed"
+    "message": "Google sign-in failed"
   },
   "login.google.redirecting": {
-    "message": "Redirecting to Google sign-in..."
+    "message": "Redirecting to Google sign-in…"
   },
   "login.login.prompt": {
     "message": "Already have an account?"
   },
   "login.method.code": {
-    "message": "Passwordless Login"
+    "message": "Passwordless sign-in"
   },
   "login.method.password": {
-    "message": "Password Login"
+    "message": "Password sign-in"
   },
   "login.passwordless.info": {
-    "message": "A login link will be sent to your email, click to log in"
+    "message": "We'll email you a sign-in link. Click it to sign in."
   },
   "login.register.prompt": {
     "message": "Don't have an account?"
   },
   "login.subtitle.forgotPassword": {
-    "message": "A reset link will be sent to your email"
+    "message": "We'll email you a reset link."
   },
   "login.subtitle.register": {
     "message": "Discover, share, and create amazing prompts"
   },
   "login.subtitle.welcome": {
-    "message": "Login to explore more premium prompts"
+    "message": "Sign in to explore more prompts"
   },
   "login.title.forgotPassword": {
-    "message": "Retrieve Password"
+    "message": "Reset password"
   },
   "login.title.register": {
-    "message": "Join the Community"
+    "message": "Join the community"
   },
   "login.title.welcome": {
-    "message": "Welcome Back"
+    "message": "Welcome back"
   },
   "message.addFavorite.error": {
-    "message": "Failed to add to favorites, please try again later"
+    "message": "Couldn't add to favorites. Try again in a moment."
   },
   "message.addFavorite.success": {
     "message": "Added to favorites"
   },
   "message.addPrompt.error": {
-    "message": "Failed to submit prompt, please try again later"
+    "message": "Couldn't submit the prompt. Try again in a moment."
   },
   "message.addPrompt.success": {
-    "message": "Prompt submitted successfully!"
+    "message": "Prompt submitted"
   },
   "message.cache.cleared": {
     "message": "Cache cleared"
   },
   "message.cache.clearError": {
-    "message": "Failed to clear cache"
+    "message": "Couldn't clear the cache. Try again in a moment."
   },
   "message.cannotFavorOwn": {
     "message": "Cannot favorite your own prompt"
   },
   "message.convertToPrivate.error": {
-    "message": "Failed to convert, please try again later"
+    "message": "Couldn't convert the prompt. Try again in a moment."
   },
   "message.convertToPrivate.favoriteKept": {
-    "message": "Private prompt created, but the original favorite could not be removed — please delete it manually to avoid duplicates."
+    "message": "Private prompt created, but the original favorite couldn't be removed — delete it manually to avoid duplicates."
   },
   "message.convertToPrivate.success": {
-    "message": "Converted to private prompt successfully"
+    "message": "Converted to a private prompt"
   },
   "message.copied": {
-    "message": "Copied successfully"
+    "message": "Copied"
   },
   "message.deletePrompt.confirm.content": {
     "message": "Are you sure you want to delete this prompt?"
   },
   "message.deletePrompt.confirm.title": {
-    "message": "Confirm Delete"
+    "message": "Delete prompt?"
   },
   "message.deletePrompt.error": {
-    "message": "Failed to delete prompt, please try again later"
+    "message": "Couldn't delete the prompt. Try again in a moment."
   },
   "message.deletePrompt.success": {
-    "message": "Prompt deleted successfully!"
+    "message": "Prompt deleted"
   },
   "message.error": {
-    "message": "An error occurred while processing"
+    "message": "Something went wrong. Try again in a moment."
   },
   "message.error.forgotPassword": {
-    "message": "Failed to send password reset email, please try again later"
+    "message": "Couldn't send the reset email. Try again in a moment."
   },
   "message.error.passwordChangeFailed": {
-    "message": "Failed to change password, please try again later"
+    "message": "Couldn't change the password. Try again in a moment."
   },
   "message.error.passwordlessLink": {
-    "message": "Failed to send, please check your email or username"
+    "message": "Couldn't send the link. Check your email or username."
   },
   "message.export.error": {
-    "message": "Export failed, please try again later"
+    "message": "Couldn't export. Try again in a moment."
   },
   "message.export.noPrompts": {
     "message": "No prompts to export. Create or favorite some first."
   },
   "message.export.success": {
-    "message": "Prompts exported successfully!"
+    "message": "Prompts exported"
   },
   "message.forgotPassword.info": {
     "message": "If you have forgotten your current password, you can reset it via email. We will send an email with a reset link to your registered email address."
   },
   "message.import.failed": {
-    "message": "Import failed"
+    "message": "Couldn't import the file."
   },
   "message.import.invalid": {
     "message": "Invalid data format"
   },
+  "message.import.nothing": {
+    "message": "Everything in this file is already here — nothing to import"
+  },
   "message.import.parseError": {
-    "message": "JSON parse error"
+    "message": "Couldn't read the JSON file. Check the file format."
   },
   "message.import.partial": {
-    "message": "Partial import"
+    "message": "Some prompts imported"
   },
   "message.import.success": {
-    "message": "Import successful!"
+    "message": "Imported"
   },
   "message.loadFailed": {
-    "message": "Failed to load data"
+    "message": "Couldn't load the data. Try again in a moment."
   },
   "message.loginRequired": {
-    "message": "Please login first"
+    "message": "Sign in first"
   },
   "message.logout.confirm.content": {
-    "message": "Are you sure you want to logout?"
+    "message": "Are you sure you want to sign out?"
   },
   "message.logout.confirm.title": {
-    "message": "Confirm Logout"
+    "message": "Sign out?"
   },
   "message.noComments": {
-    "message": "No comments yet, be the first to comment!"
+    "message": "No comments yet. Be the first to comment."
   },
   "message.noFavorites": {
-    "message": "No favorites yet, go discover prompts you like"
+    "message": "No favorites yet — find prompts you like"
   },
   "message.noPrompts": {
-    "message": "No prompts yet, go create one"
+    "message": "No prompts yet — create your first one"
   },
   "message.noSpaceItems": {
     "message": "Nothing here yet — create a prompt or favorite some"
@@ -498,88 +504,88 @@
     "message": "Layout saved"
   },
   "message.orderSaveFailed": {
-    "message": "Failed to save layout"
+    "message": "Couldn't save the layout. Try again in a moment."
   },
   "message.postComment.error": {
-    "message": "Failed to send comment. Please try again later."
+    "message": "Couldn't post the comment. Try again in a moment."
   },
   "message.removeFavorite.confirm.content": {
     "message": "Are you sure you want to remove this prompt from favorites?"
   },
   "message.removeFavorite.confirm.title": {
-    "message": "Remove Favorite"
+    "message": "Remove from favorites?"
   },
   "message.removeFavorite.error": {
-    "message": "Failed to remove from favorites, please try again later"
+    "message": "Couldn't remove from favorites. Try again in a moment."
   },
   "message.removeFavorite.success": {
     "message": "Removed from favorites"
   },
   "message.resetPassword.error": {
-    "message": "Failed to reset password, please try again later"
+    "message": "Couldn't reset the password. Try again in a moment."
   },
   "message.resetPassword.success": {
-    "message": "Password reset successfully!"
+    "message": "Password reset"
   },
   "message.success.forgotPassword": {
-    "message": "Password reset email sent!"
+    "message": "Password reset email sent"
   },
   "message.success.login": {
-    "message": "Login successful!"
+    "message": "Signed in"
   },
   "message.success.passwordChanged": {
-    "message": "Password changed successfully!"
+    "message": "Password changed"
   },
   "message.success.passwordlessLink": {
-    "message": "Passwordless login link has been sent to your email!"
+    "message": "Sign-in link sent to your email"
   },
   "message.success.register": {
-    "message": "Registration successful!"
+    "message": "Account created"
   },
   "message.tagsUpdated": {
     "message": "Tags updated"
   },
   "message.tagsUpdateFailed": {
-    "message": "Failed to update tags"
+    "message": "Couldn't update the tags. Try again in a moment."
   },
   "message.updatePrompt.error": {
-    "message": "Failed to update prompt, please try again later"
+    "message": "Couldn't update the prompt. Try again in a moment."
   },
   "message.updatePrompt.success": {
-    "message": "Prompt updated successfully!"
+    "message": "Prompt updated"
   },
   "modal.clearCache.title": {
-    "message": "Clear Cache?"
+    "message": "Clear cache?"
   },
   "modal.clearCache.warning": {
     "message": "Clearing will reload all data."
   },
   "modal.editPrompt.title": {
-    "message": "Edit Prompt"
+    "message": "Edit prompt"
   },
   "modal.forgotPassword.title": {
-    "message": "Forgot Password"
+    "message": "Reset password"
   },
   "myCollection.header.subtitle": {
     "message": "Manage your created prompts, favorites, and custom tags"
   },
   "myCollection.header.title": {
-    "message": "My Collection"
+    "message": "My collection"
   },
   "myCollection.stats.favorites": {
     "message": "Favorites"
   },
   "myCollection.stats.prompts": {
-    "message": "My Prompts"
+    "message": "My prompts"
   },
   "myCollection.stats.tags": {
-    "message": "Custom Tags"
+    "message": "Custom tags"
   },
   "myCollection.stats.total": {
     "message": "Total"
   },
   "myspace.assignTag": {
-    "message": "Assign Tags"
+    "message": "Assign tags"
   },
   "myspace.fallbackHint": {
     "message": "No matching results found. Recommended for you:"
@@ -594,22 +600,22 @@
     "message": "Prompts"
   },
   "myspace.manageTags": {
-    "message": "Manage Tags"
+    "message": "Manage tags"
   },
   "myspace.tagManager.empty": {
     "message": "No custom tags"
   },
   "myspace.tagManager.namePlaceholder": {
-    "message": "Tag Name"
+    "message": "Tag name"
   },
   "myspace.tagManager.title": {
-    "message": "Manage Custom Tags"
+    "message": "Manage custom tags"
   },
   "nav.explore": {
     "message": "Explore"
   },
   "nav.myCollection": {
-    "message": "My Collection"
+    "message": "My collection"
   },
   "noResults.description": {
     "message": "Try a different keyword, or clear tag filters"
@@ -618,25 +624,25 @@
     "message": "No matching prompts found"
   },
   "placeholder.comment": {
-    "message": "Enter comment here... Markdown and HTML syntax supported"
+    "message": "Enter comment here… Markdown and HTML syntax supported"
   },
   "placeholder.confirmPassword": {
-    "message": "Confirm New Password"
+    "message": "Confirm new password"
   },
   "placeholder.currentPassword": {
-    "message": "Current Password"
+    "message": "Current password"
   },
   "placeholder.email": {
     "message": "Email"
   },
   "placeholder.newPassword": {
-    "message": "New Password"
+    "message": "New password"
   },
   "placeholder.password": {
     "message": "Password"
   },
   "placeholder.promptContent": {
-    "message": "Enter detailed prompt content here..."
+    "message": "Enter detailed prompt content here…"
   },
   "placeholder.promptNotes": {
     "message": "Prompt source, other language versions, or supplementary notes (optional)"
@@ -648,22 +654,22 @@
     "message": "Name your prompt"
   },
   "placeholder.resetPassword.code": {
-    "message": "Reset Code"
+    "message": "Reset code"
   },
   "placeholder.username": {
     "message": "Username"
   },
   "placeholder.usernameOrEmail": {
-    "message": "Username/Email"
+    "message": "Username or email"
   },
   "prompt.authorNote": {
-    "message": "Author's Note"
+    "message": "Author's note"
   },
   "prompt.charsLabel": {
     "message": "chars"
   },
   "prompt.content": {
-    "message": "Prompt Content"
+    "message": "Prompt content"
   },
   "prompt.private": {
     "message": "Private"
@@ -680,6 +686,9 @@
   "prompt.translation": {
     "message": "Translation"
   },
+  "search.submit": {
+    "message": "Search"
+  },
   "share.copy": {
     "message": "Copy"
   },
@@ -693,7 +702,7 @@
     "message": "Share on {channel}"
   },
   "showcase.header.button": {
-    "message": "Browse Community"
+    "message": "Browse community"
   },
   "showcase.tag.academic.description": {
     "message": "Academic research, instructional design, curriculum planning, and other teacher support"
@@ -1127,11 +1136,11 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " on {date}",
+    "message": "on {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " by {user}",
+    "message": "by {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1191,19 +1200,19 @@
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
-    "message": "Data Management"
+    "message": "Data management"
   },
   "title.security": {
-    "message": "Security Settings"
+    "message": "Security settings"
   },
   "title.userInfo": {
-    "message": "User Info"
+    "message": "User info"
   },
   "unavailable.unshared": {
     "message": "Author has stopped sharing"
   },
   "unavailable.unsharedNoCache": {
-    "message": "Author has stopped sharing and no local cache available"
+    "message": "Author stopped sharing — not cached locally"
   },
   "userPage.level.maxReached": {
     "message": "MAX REACHED"
@@ -1218,67 +1227,67 @@
     "message": "{next} ahead"
   },
   "validation.agreement.required": {
-    "message": "You must agree to the Terms of Service and Privacy Policy before use"
+    "message": "Agree to the Terms of Service and Privacy Policy to continue"
   },
   "validation.comment.maxLength": {
-    "message": "Comment content should not exceed 2000 characters"
+    "message": "Comments can't be longer than 2,000 characters"
   },
   "validation.comment.required": {
-    "message": "Please enter comment content"
+    "message": "Enter a comment"
   },
   "validation.confirmPassword.required": {
-    "message": "Please confirm your new password!"
+    "message": "Confirm your new password"
   },
   "validation.currentPassword.required": {
-    "message": "Please enter your current password!"
+    "message": "Enter your current password"
   },
   "validation.email.invalid": {
-    "message": "Please enter a valid email address!"
+    "message": "Enter a valid email address"
   },
   "validation.email.required": {
-    "message": "Please enter your email!"
+    "message": "Enter your email"
   },
   "validation.password.length": {
-    "message": "Password must be at least 6 characters long"
+    "message": "Password must be at least 6 characters"
   },
   "validation.password.match": {
-    "message": "Passwords do not match!"
+    "message": "Passwords don't match"
   },
   "validation.password.required": {
-    "message": "Please enter password!"
+    "message": "Enter your password"
   },
   "validation.promptContent.required": {
-    "message": "Please enter prompt content!"
+    "message": "Enter the prompt content"
   },
   "validation.promptTitle.required": {
-    "message": "Please enter prompt title!"
+    "message": "Enter the prompt title"
   },
   "validation.replyRequired": {
-    "message": "Please enter reply content"
+    "message": "Enter a reply"
   },
   "validation.username.required": {
-    "message": "Please enter username or registered email!"
+    "message": "Enter your username or registered email"
   },
   "vote.downvote.alreadyVoted": {
-    "message": "You have already disliked this prompt in this session."
+    "message": "You already disliked this prompt in this session."
   },
   "vote.downvote.failed": {
-    "message": "Failed to dislike. Please try again."
+    "message": "Couldn't dislike this prompt. Try again."
   },
   "vote.downvote.success": {
-    "message": "Disliked successfully!"
+    "message": "Disliked"
   },
   "vote.loginRequired": {
-    "message": "Please log in to vote."
+    "message": "Sign in to vote."
   },
   "vote.upvote.alreadyVoted": {
-    "message": "You have already liked this prompt in this session."
+    "message": "You already liked this prompt in this session."
   },
   "vote.upvote.failed": {
-    "message": "Failed to like. Please try again."
+    "message": "Couldn't like this prompt. Try again."
   },
   "vote.upvote.success": {
-    "message": "Liked successfully!"
+    "message": "Liked"
   },
   "auth.callback.title": {
     "message": "Finish signing in"

@@ -15,7 +15,7 @@ The AiShort homepage has four parts — the **title and entry buttons** at the t
 The buttons under the page title differ slightly before and after you log in:
 
 - **Logged out**: "**Sign in free**" + "**Browse Community**"
-- **Logged in**: a view switcher ("**Explore**" ⇄ "**My Collection**"), "**Create Prompt**", and a settings menu on the right ("My Account", "Logout")
+- **Logged in**: a view switcher ("**Explore**" ⇄ "**My collection**"), "**Create prompt**", and a settings menu on the right ("My account", "Logout")
 
 > 💡 You can browse, search, and copy every curated prompt without logging in. Logging in just adds collecting, creating, and cross-device sync.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Bien commencer
 title: Guide de démarrage AI Short | Copiez des prompts vers ChatGPT, DeepSeek
 description: Prise en main en 30 secondes ! Copiez des prompts vers ChatGPT, Gemini, DeepSeek et d'autres modèles d'IA pour améliorer instantanément la qualité de vos conversations et votre productivité.

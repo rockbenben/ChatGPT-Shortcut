@@ -21,7 +21,7 @@ yarn
 # Lokale Entwicklung
 yarn start
 
-# Build: Gibt statische Dateien in das Build-Verzeichnis aus, verwendet das defaultLocale in scripts/i18nLocales.mjs
+# Build: baut alle 18 Sprachen in Blöcken (ein einzelner Durchlauf sprengt den Speicher); Ausgabe nach build/ — für nur eine Sprache siehe --locale unten
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Klicken Sie auf die Schaltfläche unten für eine Ein-Klick-Bereitstellung auf V
 
 Zuerst 👉 [Dieses Projekt forken](https://github.com/rockbenben/ChatGPT-Shortcut/fork), dann bereitstellen:
 
-1. Melden Sie sich bei [Cloudflare Pages](https://pages.cloudflare.com/) an und wählen Sie **Create a project**
+1. Öffnen Sie die [Pages-Erstellungsseite](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) und wählen Sie **Connect to Git**. Landen Sie stattdessen bei Create a Worker, ist der Pages-Einstieg der Link **Get started** ganz unten
 2. Verbinden Sie das Repository, das Sie gerade geforkt haben
 3. Konfigurieren Sie den Build:
    - **Build command**: `yarn build --locale zh-Hans` (ersetzen Sie das Locale durch die gewünschte Sprache, z. B. `yarn build --locale pt` für Portugiesisch)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Klicken Sie auf **Deploy** und warten Sie, bis Cloudflare Pages den Build abgeschlossen hat
+
+> **`YARN_VERSION` ist zwingend**: Cloudflares v3-Buildsystem nutzt standardmäßig Yarn 4.9.1 und leitet die Version nicht mehr wie v2 aus der `yarn.lock` ab. Dieses Repository liefert eine Yarn-Classic-Lockfile im v1-Format — ohne Fixierung übernimmt Yarn 4. Node muss nicht gesetzt werden: v3 nutzt standardmäßig 22.16.0 und liegt damit bereits über den geforderten 20.
 
 Jeder spätere Push löst automatisch einen Build und eine Bereitstellung aus.
 

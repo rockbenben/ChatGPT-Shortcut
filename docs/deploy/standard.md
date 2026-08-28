@@ -21,7 +21,7 @@ yarn
 # 本地开发
 yarn start
 
-# 构建：默认按 scripts/i18nLocales.mjs 的 defaultLocale 生成静态产物到 build 目录
+# 构建：分块构建全部 18 种语言（一次性构建会 OOM），产物在 build 目录；只要一种语言见下方 --locale
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 先 👉 [Fork 本项目](https://github.com/rockbenben/ChatGPT-Shortcut/fork)，再按以下步骤部署：
 
-1. 登录 [Cloudflare Pages](https://pages.cloudflare.com/)，选 **Create a project**
+1. 打开 [Pages 创建页](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages)，选 **Connect to Git**。若落到 Create a Worker 页面，Pages 入口在底部的 **Get started**
 2. 绑定刚 Fork 的仓库
 3. 配置构建：
    - **Build command**：`yarn build --locale zh-Hans`（按要部署的语言换 locale，葡萄牙语用 `yarn build --locale pt`）
    - **Output directory**：`build`
+   - **Environment variables**：`YARN_VERSION` = `1.22.22`
 4. 点 **部署**，等待 Cloudflare Pages 构建完成
+
+> **`YARN_VERSION` 不能省**：Cloudflare 的 v3 构建系统默认 Yarn 4.9.1，且不再像 v2 那样从 `yarn.lock` 推断版本。本仓库是 Yarn Classic 的 v1 lockfile，不锁版本就会被 Yarn 4 接管。Node 不用设 —— v3 默认 22.16.0，已满足本项目要求的 20 以上。
 
 之后每次推新代码会自动触发构建和部署。
 

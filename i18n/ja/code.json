@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI が返信中"
   },
+  "comments.emoji.label": {
+    "message": "絵文字を挿入"
+  },
   "comments.empty": {
     "message": "コメントはまだありません"
+  },
+  "comments.gif.label": {
+    "message": "GIF を挿入"
   },
   "comments.heading": {
     "message": "ディスカッション"
@@ -264,10 +270,10 @@
     "message": "ChatGPT、Claude、Gemini、DeepSeek などの対話型 AI インターフェースに貼り付けて実行します。"
   },
   "input.newPassword": {
-    "message": "新しいパスワードを入力してください！"
+    "message": "新しいパスワードを入力してください"
   },
   "input.resetPassword.code": {
-    "message": "リセットコードを入力してください！"
+    "message": "リセットコードを入力してください"
   },
   "input.search.placeholder": {
     "message": "執筆、翻訳…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "利用規約"
   },
-  "link.userCenter": {
-    "message": "ユーザーセンター"
-  },
   "login.google.button": {
     "message": "Google でログイン"
   },
@@ -396,13 +399,13 @@
     "message": "プロンプトの送信に失敗しました。後でもう一度お試しください"
   },
   "message.addPrompt.success": {
-    "message": "プロンプトの送信に成功しました！"
+    "message": "プロンプトを送信しました"
   },
   "message.cache.cleared": {
     "message": "キャッシュをクリアしました"
   },
   "message.cache.clearError": {
-    "message": "キャッシュの削除に失敗しました"
+    "message": "キャッシュの削除に失敗しました。後でもう一度お試しください"
   },
   "message.cannotFavorOwn": {
     "message": "自分のプロンプトはお気に入りに登録できません"
@@ -417,7 +420,7 @@
     "message": "プライベートプロンプトに変換されました"
   },
   "message.copied": {
-    "message": "コピーに成功しました"
+    "message": "コピーしました"
   },
   "message.deletePrompt.confirm.content": {
     "message": "このプロンプトを削除してもよろしいですか？"
@@ -429,7 +432,7 @@
     "message": "プロンプトの削除に失敗しました。後でもう一度お試しください"
   },
   "message.deletePrompt.success": {
-    "message": "プロンプトの削除に成功しました！"
+    "message": "プロンプトを削除しました"
   },
   "message.error": {
     "message": "処理中にエラーが発生しました"
@@ -450,7 +453,7 @@
     "message": "エクスポートできるプロンプトがありません。まずプロンプトを作成するか、お気に入りに追加してください。"
   },
   "message.export.success": {
-    "message": "プロンプトのエクスポートに成功しました！"
+    "message": "プロンプトをエクスポートしました"
   },
   "message.forgotPassword.info": {
     "message": "現在のパスワードをお忘れの場合は、メールでリセットできます。登録されたメールアドレスにリセットリンクを含むメールを送信します。"
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "無効なデータ形式"
   },
+  "message.import.nothing": {
+    "message": "このファイルの内容はすべて既にあります。取り込むものはありません"
+  },
   "message.import.parseError": {
     "message": "JSON解析エラー"
   },
   "message.import.partial": {
-    "message": "一部インポート成功"
+    "message": "一部のプロンプトをインポートしました"
   },
   "message.import.success": {
-    "message": "インポート成功！"
+    "message": "インポートしました"
   },
   "message.loadFailed": {
-    "message": "データの読み込みに失敗しました"
+    "message": "データの読み込みに失敗しました。後でもう一度お試しください"
   },
   "message.loginRequired": {
     "message": "先にログインしてください"
@@ -483,7 +489,7 @@
     "message": "ログアウトの確認"
   },
   "message.noComments": {
-    "message": "まだコメントはありません。最初のコメントを投稿しましょう！"
+    "message": "まだコメントはありません。最初のコメントを投稿しましょう"
   },
   "message.noFavorites": {
     "message": "まだお気に入りがありません。気に入るプロンプトを探しましょう"
@@ -498,7 +504,7 @@
     "message": "配置を保存しました"
   },
   "message.orderSaveFailed": {
-    "message": "配置の保存に失敗しました"
+    "message": "配置の保存に失敗しました。後でもう一度お試しください"
   },
   "message.postComment.error": {
     "message": "コメントの送信に失敗しました。しばらくしてからもう一度お試しください。"
@@ -519,34 +525,34 @@
     "message": "パスワードのリセットに失敗しました。後でもう一度お試しください"
   },
   "message.resetPassword.success": {
-    "message": "パスワードのリセットに成功しました！"
+    "message": "パスワードをリセットしました"
   },
   "message.success.forgotPassword": {
-    "message": "パスワードリセットメールを送信しました！"
+    "message": "パスワードリセットメールを送信しました"
   },
   "message.success.login": {
-    "message": "ログイン成功！"
+    "message": "ログインしました"
   },
   "message.success.passwordChanged": {
-    "message": "パスワードの変更に成功しました！"
+    "message": "パスワードを変更しました"
   },
   "message.success.passwordlessLink": {
-    "message": "パスワードレスログインリンクをメールに送信しました！"
+    "message": "パスワードレスログインリンクをメールに送信しました"
   },
   "message.success.register": {
-    "message": "登録成功！"
+    "message": "アカウントを作成しました"
   },
   "message.tagsUpdated": {
     "message": "タグを更新しました"
   },
   "message.tagsUpdateFailed": {
-    "message": "タグの更新に失敗しました"
+    "message": "タグの更新に失敗しました。後でもう一度お試しください"
   },
   "message.updatePrompt.error": {
     "message": "プロンプトの更新に失敗しました。後でもう一度お試しください"
   },
   "message.updatePrompt.success": {
-    "message": "プロンプトの更新に成功しました！"
+    "message": "プロンプトを更新しました"
   },
   "modal.clearCache.title": {
     "message": "キャッシュを削除しますか？"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "翻訳"
+  },
+  "search.submit": {
+    "message": "検索"
   },
   "share.copy": {
     "message": "コピー"
@@ -968,19 +977,19 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "コピーしました",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "コピー",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "コードをクリップボードにコピー",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "行の折り返しを切り替え",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
@@ -1008,27 +1017,27 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "メインコンテンツへスキップ",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "このページは下書きです。開発環境でのみ表示され、本番ビルドからは除外されます。",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "下書きページ",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "このページは非公開です。検索エンジンにはインデックスされず、直接リンクを持っているユーザーのみがアクセスできます。",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "非公開ページ",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "ホームページ",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -1052,31 +1061,31 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "ナビゲーションバーを閉じる",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "サイドバーを折りたたむ",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "サイドバーを折りたたむ",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "サイドバーを展開する",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "サイドバーを展開する",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "ドキュメントサイドバー",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "ナビゲーションバーの表示/非表示を切り替える",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -1107,11 +1116,11 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "サイドバーのカテゴリ「{label}」を折りたたむ",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "サイドバーのカテゴリ「{label}」を展開する",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
@@ -1119,11 +1128,11 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "再試行",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "（新しいタブで開きます）",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
@@ -1139,19 +1148,19 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "ドロップダウンを折りたたむ",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "ドロップダウンを展開する",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "言語",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← メインメニューに戻る",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -1159,15 +1168,15 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "メイン",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "お探しのコンテンツが見つかりませんでした。",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "元のURLにリンクしているサイトの管理者に連絡し、リンクが切れていることをお知らせください。",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "タグ",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "このページについて",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "コメントの内容を入力してください"
   },
   "validation.confirmPassword.required": {
-    "message": "新しいパスワードを確認してください！"
+    "message": "新しいパスワードを確認してください"
   },
   "validation.currentPassword.required": {
-    "message": "現在のパスワードを入力してください！"
+    "message": "現在のパスワードを入力してください"
   },
   "validation.email.invalid": {
-    "message": "有効なメールアドレスを入力してください！"
+    "message": "有効なメールアドレスを入力してください"
   },
   "validation.email.required": {
-    "message": "メールアドレスを入力してください！"
+    "message": "メールアドレスを入力してください"
   },
   "validation.password.length": {
     "message": "パスワードは少なくとも6文字である必要があります"
   },
   "validation.password.match": {
-    "message": "2つのパスワードが一致しません！"
+    "message": "2つのパスワードが一致しません"
   },
   "validation.password.required": {
-    "message": "パスワードを入力してください！"
+    "message": "パスワードを入力してください"
   },
   "validation.promptContent.required": {
-    "message": "プロンプトの内容を入力してください！"
+    "message": "プロンプトの内容を入力してください"
   },
   "validation.promptTitle.required": {
-    "message": "プロンプトのタイトルを入力してください！"
+    "message": "プロンプトのタイトルを入力してください"
   },
   "validation.replyRequired": {
     "message": "返信の内容を入力してください"
   },
   "validation.username.required": {
-    "message": "ユーザー名または登録メールアドレスを入力してください！"
+    "message": "ユーザー名または登録メールアドレスを入力してください"
   },
   "vote.downvote.alreadyVoted": {
     "message": "このセッションで既にこのプロンプトを低評価しました。"
@@ -1266,7 +1275,7 @@
     "message": "低評価に失敗しました。もう一度お試しください。"
   },
   "vote.downvote.success": {
-    "message": "低評価しました！"
+    "message": "低評価しました"
   },
   "vote.loginRequired": {
     "message": "投票するにはログインしてください。"
@@ -1278,7 +1287,7 @@
     "message": "高評価に失敗しました。もう一度お試しください。"
   },
   "vote.upvote.success": {
-    "message": "高評価しました！"
+    "message": "高評価しました"
   },
   "auth.callback.title": {
     "message": "ログインの完了"

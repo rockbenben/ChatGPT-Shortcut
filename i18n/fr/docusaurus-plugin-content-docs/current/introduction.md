@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introduction à AI Short
 title: Bibliothèque de prompts IA sélectionnés | Copie en un clic
@@ -64,4 +64,3 @@ Bienvenue dans notre communauté pour échanger des idées et des retours :
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

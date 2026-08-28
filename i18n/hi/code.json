@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI जवाब दे रहा है"
   },
+  "comments.emoji.label": {
+    "message": "इमोजी जोड़ें"
+  },
   "comments.empty": {
     "message": "अभी तक कोई टिप्पणी नहीं"
+  },
+  "comments.gif.label": {
+    "message": "GIF जोड़ें"
   },
   "comments.heading": {
     "message": "चर्चा"
@@ -264,10 +270,10 @@
     "message": "ChatGPT, Claude, Gemini, DeepSeek या किसी अन्य संवादी AI इंटरफ़ेस में पेस्ट करें और चलाएँ।"
   },
   "input.newPassword": {
-    "message": "कृपया नया पासवर्ड दर्ज करें!"
+    "message": "कृपया नया पासवर्ड दर्ज करें"
   },
   "input.resetPassword.code": {
-    "message": "कृपया अपना रीसेट कोड दर्ज करें!"
+    "message": "कृपया अपना रीसेट कोड दर्ज करें"
   },
   "input.search.placeholder": {
     "message": "लेखन, अनुवाद…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "सेवा की शर्तें"
   },
-  "link.userCenter": {
-    "message": "उपयोगकर्ता केंद्र"
-  },
   "login.google.button": {
     "message": "Google से लॉगिन करें"
   },
@@ -396,13 +399,13 @@
     "message": "प्रॉम्प्ट सबमिट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.addPrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक सबमिट किया गया!"
+    "message": "प्रॉम्प्ट सबमिट किया गया"
   },
   "message.cache.cleared": {
     "message": "कैश साफ़ किया गया"
   },
   "message.cache.clearError": {
-    "message": "कैश साफ़ करने में विफल"
+    "message": "कैश साफ़ करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.cannotFavorOwn": {
     "message": "अपने स्वयं के प्रॉम्प्ट को पसंदीदा नहीं बना सकते"
@@ -414,10 +417,10 @@
     "message": "निजी प्रॉम्प्ट बन गया, लेकिन मूल पसंदीदा हटाया नहीं जा सका। दोहराव से बचने के लिए इसे मैन्युअल रूप से हटाएँ।"
   },
   "message.convertToPrivate.success": {
-    "message": "सफलतापूर्वक निजी प्रॉम्प्ट में बदल दिया गया"
+    "message": "निजी प्रॉम्प्ट में बदल दिया गया"
   },
   "message.copied": {
-    "message": "सफलतापूर्वक कॉपी किया गया"
+    "message": "कॉपी किया गया"
   },
   "message.deletePrompt.confirm.content": {
     "message": "क्या आप वाकई इस प्रॉम्प्ट को हटाना चाहते हैं?"
@@ -429,7 +432,7 @@
     "message": "प्रॉम्प्ट हटाने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.deletePrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक हटाया गया!"
+    "message": "प्रॉम्प्ट हटाया गया"
   },
   "message.error": {
     "message": "प्रसंस्करण के दौरान एक त्रुटि हुई"
@@ -450,7 +453,7 @@
     "message": "निर्यात के लिए कोई प्रॉम्प्ट नहीं है। पहले कुछ बनाएं या पसंदीदा में जोड़ें।"
   },
   "message.export.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक निर्यात किए गए!"
+    "message": "प्रॉम्प्ट निर्यात किए गए"
   },
   "message.forgotPassword.info": {
     "message": "यदि आप अपना वर्तमान पासवर्ड भूल गए हैं, तो आप इसे ईमेल के माध्यम से रीसेट कर सकते हैं। हम आपके पंजीकृत ईमेल पते पर एक रीसेट लिंक के साथ एक ईमेल भेजेंगे।"
@@ -461,6 +464,9 @@
   "message.import.invalid": {
     "message": "अमान्य डेटा प्रारूप"
   },
+  "message.import.nothing": {
+    "message": "फ़ाइल की सभी सामग्री पहले से मौजूद है, आयात करने के लिए कुछ नहीं"
+  },
   "message.import.parseError": {
     "message": "JSON पार्सिंग त्रुटि"
   },
@@ -468,10 +474,10 @@
     "message": "आंशिक आयात"
   },
   "message.import.success": {
-    "message": "आयात सफल!"
+    "message": "आयात किया गया"
   },
   "message.loadFailed": {
-    "message": "डेटा लोड करने में विफल"
+    "message": "डेटा लोड करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.loginRequired": {
     "message": "कृपया पहले लॉगिन करें"
@@ -483,7 +489,7 @@
     "message": "लॉगआउट की पुष्टि करें"
   },
   "message.noComments": {
-    "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें!"
+    "message": "अभी तक कोई टिप्पणी नहीं, पहले टिप्पणीकर्ता बनें"
   },
   "message.noFavorites": {
     "message": "अभी तक कोई पसंदीदा नहीं, पसंद के प्रॉम्प्ट खोजें"
@@ -498,7 +504,7 @@
     "message": "व्यवस्था सहेजी गई"
   },
   "message.orderSaveFailed": {
-    "message": "व्यवस्था सहेजने में विफल"
+    "message": "व्यवस्था सहेजने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.postComment.error": {
     "message": "टिप्पणी भेजने में विफल। कृपया बाद में पुनः प्रयास करें।"
@@ -519,34 +525,34 @@
     "message": "पासवर्ड रीसेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.resetPassword.success": {
-    "message": "पासवर्ड सफलतापूर्वक रीसेट किया गया!"
+    "message": "पासवर्ड रीसेट किया गया"
   },
   "message.success.forgotPassword": {
-    "message": "पासवर्ड रीसेट ईमेल भेजा गया!"
+    "message": "पासवर्ड रीसेट ईमेल भेजा गया"
   },
   "message.success.login": {
-    "message": "लॉगिन सफल!"
+    "message": "लॉग इन किया गया"
   },
   "message.success.passwordChanged": {
-    "message": "पासवर्ड सफलतापूर्वक बदला गया!"
+    "message": "पासवर्ड बदला गया"
   },
   "message.success.passwordlessLink": {
-    "message": "पासवर्ड रहित लॉगिन लिंक आपके ईमेल पर भेजा गया!"
+    "message": "पासवर्ड रहित लॉगिन लिंक आपके ईमेल पर भेजा गया"
   },
   "message.success.register": {
-    "message": "पंजीकरण सफल!"
+    "message": "खाता बनाया गया"
   },
   "message.tagsUpdated": {
     "message": "टैग अपडेट किए गए"
   },
   "message.tagsUpdateFailed": {
-    "message": "टैग अपडेट करने में विफल"
+    "message": "टैग अपडेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.updatePrompt.error": {
     "message": "प्रॉम्प्ट अपडेट करने में विफल, कृपया बाद में पुनः प्रयास करें"
   },
   "message.updatePrompt.success": {
-    "message": "प्रॉम्प्ट सफलतापूर्वक अपडेट किया गया!"
+    "message": "प्रॉम्प्ट अपडेट किया गया"
   },
   "modal.clearCache.title": {
     "message": "कैश साफ़ करें?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "अनुवाद"
+  },
+  "search.submit": {
+    "message": "खोजें"
   },
   "share.copy": {
     "message": "कॉपी"
@@ -864,27 +873,27 @@
     "message": "नवीनतम"
   },
   "theme.admonition.caution": {
-    "message": "caution",
+    "message": "सावधानी",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.admonition.danger": {
-    "message": "danger",
+    "message": "खतरा",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "info",
+    "message": "जानकारी",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
-    "message": "note",
+    "message": "नोट",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "tip",
+    "message": "सुझाव",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
-    "message": "warning",
+    "message": "चेतावनी",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
@@ -892,7 +901,7 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
+    "message": "शीर्ष पर वापस जाएं",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.description": {
@@ -968,35 +977,35 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "कॉपी किया गया",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "नकल करें",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "क्लिपबोर्ड में कोड कॉपी करें",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "वर्ड रैप टॉगल करें",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "Switch between dark and light mode (currently {mode})",
+    "message": "डार्क और लाइट मोड के बीच स्विच करें (वर्तमान में {mode})",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
+    "message": "डार्क मोड",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "light mode",
+    "message": "लाइट मोड",
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "सिस्टम मोड",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1008,31 +1017,31 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "मुख्य सामग्री पर जाएं",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "यह पृष्ठ एक मसौदा है। यह केवल डेवलपमेंट (dev) में दिखाई देगा और प्रोडक्शन बिल्ड से बाहर रखा जाएगा।",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "मसौदा पृष्ठ",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "यह पृष्ठ सूचीबद्ध नहीं है। सर्च इंजन इसे इंडेक्स नहीं करेंगे, और केवल प्रत्यक्ष लिंक वाले उपयोगकर्ता ही इसे एक्सेस कर सकते हैं।",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "असूचीबद्ध पृष्ठ",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "मुख्य पृष्ठ",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "ब्रेडक्रंब्स",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -1052,35 +1061,35 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "नेविगेशन बार बंद करें",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "साइडबार संकुचित करें",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "साइडबार संक्षिप्त करें",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "साइडबार विस्तार करें",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "साइडबार विस्तार करें",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "डॉक्स साइडबार",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "नेविगेशन बार टॉगल करें",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "\"{tagName}\" के साथ {nDocsTagged}",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
@@ -1088,7 +1097,7 @@
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "संस्करण: {versionLabel}"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "सबसे नया वर्जन",
@@ -1107,31 +1116,31 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "साइडबार श्रेणी '{label}' संक्षिप्त करें",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "साइडबार श्रेणी '{label}' विस्तार करें",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
+    "message": "यह पृष्ठ क्रैश हो गया।",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "फिर से प्रयास करें",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "(नए टैब में खुलता है)",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " {date} पर",
+    "message": "{date} पर",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " {user} द्वारा",
+    "message": "{user} द्वारा",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1139,35 +1148,35 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "ड्रॉपडाउन को संकुचित करें",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "ड्रॉपडाउन का विस्तार करें",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "भाषाएँ",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← मुख्य मेनू पर वापस जाएं",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "संस्करण",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "मुख्य",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "हमें वह नहीं मिला जिसकी आप तलाश कर रहे थे।",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "कृपया उस साइट के मालिक से संपर्क करें जिसने आपको मूल URL पर लिंक किया है और उन्हें बताएं कि उनका लिंक टूटा हुआ है।",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "टैग",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "इस पृष्ठ पर",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "कृपया टिप्पणी सामग्री दर्ज करें"
   },
   "validation.confirmPassword.required": {
-    "message": "कृपया अपने नए पासवर्ड की पुष्टि करें!"
+    "message": "कृपया अपने नए पासवर्ड की पुष्टि करें"
   },
   "validation.currentPassword.required": {
-    "message": "कृपया अपना वर्तमान पासवर्ड दर्ज करें!"
+    "message": "कृपया अपना वर्तमान पासवर्ड दर्ज करें"
   },
   "validation.email.invalid": {
-    "message": "कृपया एक वैध ईमेल पता दर्ज करें!"
+    "message": "कृपया एक वैध ईमेल पता दर्ज करें"
   },
   "validation.email.required": {
-    "message": "कृपया ईमेल दर्ज करें!"
+    "message": "कृपया ईमेल दर्ज करें"
   },
   "validation.password.length": {
     "message": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए"
   },
   "validation.password.match": {
-    "message": "दो पासवर्ड मेल नहीं खाते!"
+    "message": "दो पासवर्ड मेल नहीं खाते"
   },
   "validation.password.required": {
-    "message": "कृपया पासवर्ड दर्ज करें!"
+    "message": "कृपया पासवर्ड दर्ज करें"
   },
   "validation.promptContent.required": {
-    "message": "कृपया प्रॉम्प्ट सामग्री दर्ज करें!"
+    "message": "कृपया प्रॉम्प्ट सामग्री दर्ज करें"
   },
   "validation.promptTitle.required": {
-    "message": "कृपया प्रॉम्प्ट शीर्षक दर्ज करें!"
+    "message": "कृपया प्रॉम्प्ट शीर्षक दर्ज करें"
   },
   "validation.replyRequired": {
     "message": "कृपया उत्तर सामग्री दर्ज करें"
   },
   "validation.username.required": {
-    "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें!"
+    "message": "कृपया उपयोगकर्ता नाम या पंजीकृत ईमेल दर्ज करें"
   },
   "vote.downvote.alreadyVoted": {
     "message": "आपने इस सत्र में इस प्रॉम्प्ट को पहले ही नापसंद किया है।"
@@ -1266,7 +1275,7 @@
     "message": "नापसंद करने में विफल। कृपया पुनः प्रयास करें।"
   },
   "vote.downvote.success": {
-    "message": "सफलतापूर्वक नापसंद किया गया!"
+    "message": "नापसंद किया गया"
   },
   "vote.loginRequired": {
     "message": "वोट करने के लिए लॉगिन करें।"
@@ -1278,7 +1287,7 @@
     "message": "पसंद करने में विफल। कृपया पुनः प्रयास करें।"
   },
   "vote.upvote.success": {
-    "message": "सफलतापूर्वक पसंद किया गया!"
+    "message": "पसंद किया गया"
   },
   "auth.callback.title": {
     "message": "साइन इन पूरा करें"

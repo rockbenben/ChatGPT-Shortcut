@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short 介紹
 title: 精選 AI 提示詞庫 | 一鍵複製提升效率

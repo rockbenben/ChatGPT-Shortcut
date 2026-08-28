@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short 介绍
 title: 精选 AI 提示词库 | 一键复制提升效率

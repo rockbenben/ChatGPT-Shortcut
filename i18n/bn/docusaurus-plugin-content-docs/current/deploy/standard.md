@@ -21,7 +21,7 @@ yarn
 # লোকাল ডেভেলপমেন্ট
 yarn start
 
-# বিল্ড: build ডিরেক্টরিতে স্ট্যাটিক ফাইল আউটপুট করে, scripts/i18nLocales.mjs-এ defaultLocale ব্যবহার করে
+# build: সব ১৮টি ভাষা ধাপে ধাপে বিল্ড করে (একবারে করলে মেমরি ফুরিয়ে যায়); আউটপুট build/ — একটি ভাষার জন্য নিচের --locale দেখুন
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Vercel-এ এক ক্লিকে ডিপ্লয় করতে নি�
 
 প্রথমে 👉 [এই প্রজেক্টটি Fork করুন](https://github.com/rockbenben/ChatGPT-Shortcut/fork), তারপর ডিপ্লয় করুন:
 
-1. [Cloudflare Pages](https://pages.cloudflare.com/)-এ সাইন ইন করুন এবং **Create a project** বেছে নিন
+1. [Pages তৈরির পেজ](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) খুলুন এবং **Connect to Git** বেছে নিন। যদি Create a Worker পেজে পৌঁছান, Pages-এর প্রবেশপথ হলো নিচের **Get started** লিঙ্ক
 2. আপনি যে রিপোজিটরিটি এইমাত্র Fork করেছেন সেটি সংযুক্ত করুন
 3. বিল্ড কনফিগার করুন:
    - **Build command**: `yarn build --locale zh-Hans` (আপনি যে ভাষায় ডিপ্লয় করতে চান সেই locale দিয়ে প্রতিস্থাপন করুন, যেমন পর্তুগিজের জন্য `yarn build --locale pt`)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. **Deploy** ক্লিক করুন এবং Cloudflare Pages বিল্ড শেষ করার জন্য অপেক্ষা করুন
+
+> **`YARN_VERSION` দরকার**: Cloudflare-এর v3 বিল্ড সিস্টেম ডিফল্ট Yarn 4.9.1 ব্যবহার করে এবং v2-এর মতো `yarn.lock` থেকে সংস্করণ অনুমান করে না। এই রিপোজিটরিতে Yarn Classic-এর v1 lockfile আছে, তাই পিন না করলে Yarn 4 দায়িত্ব নেবে। Node সেট করার দরকার নেই — v3-এর ডিফল্ট 22.16.0, যা প্রকল্পের প্রয়োজনীয় 20-এর চেয়ে আগেই বেশি।
 
 পরবর্তীতে প্রতিটি push স্বয়ংক্রিয়ভাবে একটি বিল্ড এবং ডিপ্লয় ট্রিগার করবে।
 

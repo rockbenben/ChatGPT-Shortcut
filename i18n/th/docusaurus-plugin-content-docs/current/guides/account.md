@@ -64,7 +64,7 @@ AiShort ใช้งานได้แม้ไม่ได้เข้าสู
 
 ส่วน "บัญชีของฉัน → การจัดการข้อมูล" มีสามตัวเลือก:
 
-- **ล้างแคช** — รีเฟรชข้อมูลที่แคชไว้ในเครื่อง ใช้เมื่อข้อมูลไม่ซิงค์หรือแสดงผลผิดปกติ คอลเลกชันและ prompt ที่กำหนดเองของคุณจะไม่หายไป เป็นเพียงการบังคับให้ซิงค์ข้อมูลใหม่
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **ส่งออก พรอมต์** — ส่งออกไฟล์ JSON เพื่อสำรองข้อมูล (ดู [Prompt ที่กำหนดเอง](./user-prompts#ส่งออก-prompt))
 - **นำเข้า พรอมต์** — นำเข้า prompt และคอลเลกชันจากไฟล์ JSON
 

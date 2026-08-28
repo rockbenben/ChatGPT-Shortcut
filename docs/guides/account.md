@@ -64,7 +64,7 @@ AiShort 不登录也能用——但**登录后**你可以收藏喜欢的提示�
 
 「我的账户 → 数据管理」一栏提供三项操作：
 
-- **清除缓存** — 刷新本地缓存数据；数据不同步或显示异常时使用，收藏和自定义提示词不会丢，只是强制重新同步
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **导出提示词** — 导出为 JSON 文件，方便备份（详见[自定义提示词](./user-prompts#导出备份)）
 - **导入提示词** — 从 JSON 文件导入提示词和收藏
 

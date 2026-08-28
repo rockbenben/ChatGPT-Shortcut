@@ -81,12 +81,12 @@ Don't swap out the prompt right away — try tuning it in these directions first
 2. **Ask the AI to refine its answer**: For replies you're not happy with, follow up with "please make it more X" or "please rewrite this in Y style" — usually one or two rounds get you close to the target. You can also ask the AI to rate its own answer and improve it
 3. **Switch models to compare**: Try the same prompt on a different model (Claude / ChatGPT / Gemini / DeepSeek, etc.) — models have different strengths, and results can vary noticeably
 4. **Try the community**: [Community Prompts](./community) may have a better version — and feel free to share your own good prompts there
-5. **Send us feedback**: Found a problem or have a suggestion? Let us know via [Feedback](/feedback)
+5. **Send us feedback**: Found a problem or have a suggestion? Let us know via [Feedback](https://www.aishort.top/en/feedback)
 
 ## How do I back up my prompts?
 
-1. Go to "My Account" and find the "Data Management → Export Prompts" section
-2. Click the "Export Data" button
+1. Go to "My account" and find the "Data management → Export prompts" section
+2. Click the "Export data" button
 3. The system will generate a JSON file and download it automatically
 
 Backing up regularly is recommended to prevent data loss.

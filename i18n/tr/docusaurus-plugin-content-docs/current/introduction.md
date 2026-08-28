@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short Giriş
 title: Seçilmiş AI Prompt Kütüphanesi | Tek Tıkla Kopyala Verimliliği Artır
@@ -64,4 +64,3 @@ Fikir alışverişi ve geri bildirim için topluluğumuza katılmaya hoş geldin
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="Discord'da sohbet edin" />
 </a>
-

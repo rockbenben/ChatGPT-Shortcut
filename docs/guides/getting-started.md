@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: 开始上手
 title: AI Short 入门指南 | 复制提示词到 ChatGPT/DeepSeek
 description: 30 秒快速上手！复制提示词到 ChatGPT、Gemini、DeepSeek 等 AI 模型，立即提升对话质量与工作效率。
@@ -17,7 +17,7 @@ description: 30 秒快速上手！复制提示词到 ChatGPT、Gemini、DeepSeek
 3. 粘贴到任意 AI 工具——ChatGPT 等对话页、Cursor 等编程工具、API 调用等
 4. 按提示词中的**占位符**（如 `[内容]`、`[主题]`）补充你的具体需求，发送给 AI
 
-![](/img/docs/zh/how-to-use-aishort.webp)
+![](/img/docs/how-to-use-aishort.webp)
 
 > 💡 **小贴士**：大部分提示词用方括号 `[...]` 标记需要你补充的内容——把方括号里的占位文本换成你的具体内容即可。
 

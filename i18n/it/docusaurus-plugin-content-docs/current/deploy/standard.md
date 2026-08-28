@@ -21,7 +21,7 @@ yarn
 # sviluppo locale
 yarn start
 
-# build: genera i file statici nella directory build, usando il defaultLocale in scripts/i18nLocales.mjs
+# build: compila tutte le 18 lingue a blocchi (un'unica passata esaurisce la memoria); output in build/ — per una sola lingua vedi --locale sotto
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Clicca il pulsante qui sotto per distribuire su Vercel con un clic:
 
 Prima 👉 [Fai il fork di questo progetto](https://github.com/rockbenben/ChatGPT-Shortcut/fork), poi distribuisci:
 
-1. Accedi a [Cloudflare Pages](https://pages.cloudflare.com/) e scegli **Create a project**
+1. Apri la [pagina di creazione di Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) e scegli **Connect to Git**. Se finisci su Create a Worker, l'accesso a Pages è il link **Get started** in fondo
 2. Collega il repository che hai appena forkato
 3. Configura la build:
    - **Build command**: `yarn build --locale zh-Hans` (sostituisci il locale con la lingua che vuoi distribuire, es. `yarn build --locale pt` per il portoghese)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Clicca su **Deploy** e attendi che Cloudflare Pages completi la build
+
+> **`YARN_VERSION` è obbligatoria**: il sistema di build v3 di Cloudflare usa Yarn 4.9.1 come predefinito e non deduce più la versione da `yarn.lock` come faceva v2. Questo repository ha un lockfile v1 di Yarn Classic, quindi senza fissarla subentra Yarn 4. Node non va configurato: v3 usa 22.16.0 come predefinito, già sopra il 20 richiesto dal progetto.
 
 Ogni push successivo attiva automaticamente una build e una distribuzione.
 

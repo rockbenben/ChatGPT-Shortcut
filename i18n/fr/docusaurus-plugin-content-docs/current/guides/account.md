@@ -64,7 +64,7 @@ La page de compte affiche votre **niveau (L0–L9)** et votre progression vers l
 
 La rubrique «&nbsp;Mon Compte → Gestion des Données&nbsp;» propose trois actions&nbsp;:
 
-- **Vider le cache** — actualise les données mises en cache localement&nbsp;; utilisez cette option lorsque les données ne se synchronisent pas ou que l'affichage semble anormal. Vos collections et prompts personnalisés ne sont pas perdus, cela force simplement une resynchronisation
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Exporter les prompts** — exporte un fichier JSON pour la sauvegarde (voir [Prompts personnalisés](./user-prompts#exporter-les-prompts))
 - **Importer les prompts** — importe des prompts et des collections depuis un fichier JSON
 

@@ -21,7 +21,7 @@ yarn
 # 로컬 개발
 yarn start
 
-# 빌드: 정적 파일을 build 디렉터리에 출력합니다. scripts/i18nLocales.mjs의 defaultLocale을 사용합니다
+# 빌드: 18개 언어를 청크로 나눠 빌드(한 번에 하면 OOM). 출력은 build/ — 한 언어만 필요하면 아래 --locale 참고
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 먼저 👉 [이 프로젝트 포크하기](https://github.com/rockbenben/ChatGPT-Shortcut/fork), 그런 다음 배포하세요:
 
-1. [Cloudflare Pages](https://pages.cloudflare.com/)에 로그인하고 **Create a project**를 선택합니다
+1. [Pages 생성 페이지](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages)를 열고 **Connect to Git**을 선택합니다. Create a Worker 화면이 나오면 Pages 입구는 하단의 **Get started** 링크입니다
 2. 방금 포크한 저장소를 연결합니다
 3. 빌드를 구성합니다:
    - **Build command**: `yarn build --locale zh-Hans` (배포할 언어에 맞게 로케일을 변경하세요, 예: 포르투갈어는 `yarn build --locale pt`)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. **Deploy**를 클릭하고 Cloudflare Pages 빌드가 완료될 때까지 기다립니다
+
+> **`YARN_VERSION`은 생략할 수 없습니다**: Cloudflare의 v3 빌드 시스템은 Yarn 4.9.1을 기본으로 쓰며, v2처럼 `yarn.lock`에서 버전을 추론하지 않습니다. 이 저장소는 Yarn Classic v1 lockfile이라 고정하지 않으면 Yarn 4가 처리합니다. Node는 설정할 필요가 없습니다 — v3 기본값이 22.16.0으로, 이 프로젝트가 요구하는 20 이상을 이미 충족합니다.
 
 이후 모든 푸시는 자동으로 빌드 및 배포를 트리거합니다.
 

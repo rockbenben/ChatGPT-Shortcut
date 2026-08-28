@@ -21,7 +21,7 @@ yarn
 # yerel geliştirme
 yarn start
 
-# derleme: statik dosyaları build dizinine çıkarır; scripts/i18nLocales.mjs içindeki defaultLocale kullanılır
+# derleme: 18 dilin tamamını parçalar hâlinde derler (tek seferde bellek yetmez); çıktı build/ içine — tek dil için aşağıdaki --locale'a bakın
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Vercel'e tek tıkla dağıtmak için aşağıdaki düğmeye tıklayın:
 
 Önce 👉 [Bu projeyi fork edin](https://github.com/rockbenben/ChatGPT-Shortcut/fork), ardından dağıtın:
 
-1. [Cloudflare Pages](https://pages.cloudflare.com/) oturumu açın ve **Create a project** seçeneğini seçin
+1. [Pages oluşturma sayfasını](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) açın ve **Connect to Git** seçin. Create a Worker ekranına düşerseniz Pages girişi en alttaki **Get started** bağlantısıdır
 2. Az önce fork ettiğiniz depoyu bağlayın
 3. Derlemeyi yapılandırın:
    - **Build command**: `yarn build --locale zh-Hans` (dağıtmak istediğiniz dille değiştirin, örn. Portekizce için `yarn build --locale pt`)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. **Deploy**'a tıklayın ve Cloudflare Pages'in derlemeyi tamamlamasını bekleyin
+
+> **`YARN_VERSION` zorunlu**: Cloudflare'in v3 derleme sistemi varsayılan olarak Yarn 4.9.1 kullanır ve sürümü artık v2'deki gibi `yarn.lock` üzerinden çıkarmaz. Bu depo Yarn Classic'in v1 lockfile'ını içerir; sabitlenmezse işi Yarn 4 devralır. Node'u ayarlamaya gerek yok: v3 varsayılanı 22.16.0 ve bu zaten projenin istediği 20'nin üzerinde.
 
 Bundan sonra her push otomatik olarak bir derleme ve dağıtımı tetikler.
 

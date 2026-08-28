@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI กำลังตอบ"
   },
+  "comments.emoji.label": {
+    "message": "แทรกอิโมจิ"
+  },
   "comments.empty": {
     "message": "ยังไม่มีความคิดเห็น"
+  },
+  "comments.gif.label": {
+    "message": "แทรก GIF"
   },
   "comments.heading": {
     "message": "การสนทนา"
@@ -141,7 +147,7 @@
     "message": "กลับไปยังรายการ"
   },
   "community.description": {
-    "message": "ต้องการพรอมพ์ AI ที่ผ่านการทดสอบแล้ว? เข้าร่วมชุมชน AiShort เพื่อค้นพบเทมเพลตพรอมพ์ที่ใช้งานได้จริง!"
+    "message": "ต้องการพรอมพ์ AI ที่ผ่านการทดสอบแล้ว? เข้าร่วมชุมชน AiShort เพื่อค้นพบเทมเพลตพรอมพ์ที่ใช้งานได้จริง"
   },
   "community.fetchError": {
     "message": "ดึงข้อมูลไม่สำเร็จ"
@@ -264,10 +270,10 @@
     "message": "วางลงใน ChatGPT, Claude, Gemini, DeepSeek หรือ AI สนทนาอื่นแล้วสั่งรัน"
   },
   "input.newPassword": {
-    "message": "กรุณากรอกรหัสผ่านใหม่!"
+    "message": "กรุณากรอกรหัสผ่านใหม่"
   },
   "input.resetPassword.code": {
-    "message": "กรุณากรอกรหัสรีเซ็ต!"
+    "message": "กรุณากรอกรหัสรีเซ็ต"
   },
   "input.search.placeholder": {
     "message": "การเขียน การแปล…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "ข้อกำหนดการให้บริการ"
   },
-  "link.userCenter": {
-    "message": "ศูนย์ผู้ใช้"
-  },
   "login.google.button": {
     "message": "เข้าสู่ระบบด้วย Google"
   },
@@ -396,13 +399,13 @@
     "message": "ไม่สามารถส่งพรอมพ์ได้ โปรดลองอีกครั้ง"
   },
   "message.addPrompt.success": {
-    "message": "ส่งพรอมพ์สำเร็จ!"
+    "message": "ส่งพรอมต์แล้ว"
   },
   "message.cache.cleared": {
     "message": "ล้างแคชแล้ว ข้อมูลได้รีเฟรชแล้ว"
   },
   "message.cache.clearError": {
-    "message": "ล้างแคชล้มเหลว"
+    "message": "ล้างแคชล้มเหลว โปรดลองอีกครั้ง"
   },
   "message.cannotFavorOwn": {
     "message": "ไม่สามารถบันทึกพรอมต์ของตัวเองเป็นรายการโปรดได้"
@@ -417,7 +420,7 @@
     "message": "แปลงเป็น พรอมต์ ส่วนตัวแล้ว"
   },
   "message.copied": {
-    "message": "คัดลอกสำเร็จ"
+    "message": "คัดลอกแล้ว"
   },
   "message.deletePrompt.confirm.content": {
     "message": "คุณแน่ใจหรือไม่ว่าต้องการลบพรอมพ์นี้?"
@@ -429,7 +432,7 @@
     "message": "ไม่สามารถลบพรอมพ์ได้ โปรดลองอีกครั้ง"
   },
   "message.deletePrompt.success": {
-    "message": "ลบพรอมพ์สำเร็จ!"
+    "message": "ลบพรอมต์แล้ว"
   },
   "message.error": {
     "message": "เกิดข้อผิดพลาดขณะประมวลผล"
@@ -450,7 +453,7 @@
     "message": "ไม่มีพรอมต์ที่จะส่งออก สร้างหรือเพิ่มเป็นรายการโปรดก่อน"
   },
   "message.export.success": {
-    "message": "ส่งออก พรอมต์ สำเร็จ!"
+    "message": "ส่งออกพรอมต์แล้ว"
   },
   "message.forgotPassword.info": {
     "message": "เราจะส่งอีเมลพร้อมลิงก์รีเซ็ตไปยังอีเมลที่ลงทะเบียนของคุณ"
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "รูปแบบข้อมูลไม่ถูกต้อง"
   },
+  "message.import.nothing": {
+    "message": "ทุกอย่างในไฟล์มีอยู่แล้ว ไม่มีอะไรต้องนำเข้า"
+  },
   "message.import.parseError": {
     "message": "การแยกวิเคราะห์ JSON ล้มเหลว กรุณาตรวจสอบรูปแบบไฟล์"
   },
   "message.import.partial": {
-    "message": "นำเข้าบางส่วนสำเร็จ"
+    "message": "พรอมต์บางส่วนได้ถูกนำเข้าแล้ว"
   },
   "message.import.success": {
-    "message": "นำเข้าสำเร็จ!"
+    "message": "นำเข้าแล้ว"
   },
   "message.loadFailed": {
-    "message": "โหลดข้อมูลไม่สำเร็จ"
+    "message": "โหลดข้อมูลไม่สำเร็จ โปรดลองอีกครั้ง"
   },
   "message.loginRequired": {
     "message": "กรุณาเข้าสู่ระบบก่อน"
@@ -483,7 +489,7 @@
     "message": "ยืนยันออกจากระบบ"
   },
   "message.noComments": {
-    "message": "ยังไม่มีความคิดเห็น เป็นคนแรกที่แสดงความคิดเห็นกันเถอะ!"
+    "message": "ยังไม่มีความคิดเห็น เป็นคนแรกที่แสดงความคิดเห็นกันเถอะ"
   },
   "message.noFavorites": {
     "message": "ยังไม่มีรายการโปรด ไปค้นหา พรอมต์ ที่ชอบกันเถอะ"
@@ -498,7 +504,7 @@
     "message": "บันทึกการจัดเรียงแล้ว"
   },
   "message.orderSaveFailed": {
-    "message": "บันทึกการจัดเรียงล้มเหลว"
+    "message": "บันทึกการจัดเรียงล้มเหลว โปรดลองอีกครั้ง"
   },
   "message.postComment.error": {
     "message": "ส่งความคิดเห็นไม่สำเร็จ โปรดลองอีกครั้งในภายหลัง"
@@ -519,34 +525,34 @@
     "message": "รีเซ็ตรหัสผ่านล้มเหลว กรุณาลองอีกครั้ง"
   },
   "message.resetPassword.success": {
-    "message": "รีเซ็ตรหัสผ่านสำเร็จ!"
+    "message": "ตั้งรหัสผ่านใหม่แล้ว"
   },
   "message.success.forgotPassword": {
-    "message": "อีเมลรีเซ็ตรหัสผ่านถูกส่งแล้ว!"
+    "message": "อีเมลรีเซ็ตรหัสผ่านถูกส่งแล้ว"
   },
   "message.success.login": {
-    "message": "เข้าสู่ระบบสำเร็จ!"
+    "message": "เข้าสู่ระบบแล้ว"
   },
   "message.success.passwordChanged": {
-    "message": "เปลี่ยนรหัสผ่านสำเร็จ!"
+    "message": "เปลี่ยนรหัสผ่านแล้ว"
   },
   "message.success.passwordlessLink": {
-    "message": "ลิงก์เข้าสู่ระบบแบบไม่ใช้รหัสผ่านถูกส่งไปยังอีเมลของคุณแล้ว!"
+    "message": "ลิงก์เข้าสู่ระบบแบบไม่ใช้รหัสผ่านถูกส่งไปยังอีเมลของคุณแล้ว"
   },
   "message.success.register": {
-    "message": "ลงทะเบียนสำเร็จ!"
+    "message": "ลงทะเบียนแล้ว"
   },
   "message.tagsUpdated": {
     "message": "อัปเดตแท็กแล้ว"
   },
   "message.tagsUpdateFailed": {
-    "message": "อัปเดตแท็กล้มเหลว"
+    "message": "อัปเดตแท็กล้มเหลว โปรดลองอีกครั้ง"
   },
   "message.updatePrompt.error": {
     "message": "ไม่สามารถอัปเดตพรอมพ์ได้ โปรดลองอีกครั้ง"
   },
   "message.updatePrompt.success": {
-    "message": "อัปเดตพรอมพ์สำเร็จ!"
+    "message": "อัปเดตพรอมต์แล้ว"
   },
   "modal.clearCache.title": {
     "message": "ยืนยันล้างแคช?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "คำแปล"
+  },
+  "search.submit": {
+    "message": "ค้นหา"
   },
   "share.copy": {
     "message": "คัดลอก"
@@ -1127,11 +1136,11 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " เมื่อ {date}",
+    "message": "เมื่อ {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " โดย {user}",
+    "message": "โดย {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1227,37 +1236,37 @@
     "message": "กรุณากรอกเนื้อหาความคิดเห็น"
   },
   "validation.confirmPassword.required": {
-    "message": "กรุณายืนยันรหัสผ่านใหม่!"
+    "message": "กรุณายืนยันรหัสผ่านใหม่"
   },
   "validation.currentPassword.required": {
-    "message": "กรุณากรอกรหัสผ่านปัจจุบัน!"
+    "message": "กรุณากรอกรหัสผ่านปัจจุบัน"
   },
   "validation.email.invalid": {
-    "message": "กรุณากรอกที่อยู่อีเมลที่ถูกต้อง!"
+    "message": "กรุณากรอกที่อยู่อีเมลที่ถูกต้อง"
   },
   "validation.email.required": {
-    "message": "กรุณากรอกอีเมล!"
+    "message": "กรุณากรอกอีเมล"
   },
   "validation.password.length": {
     "message": "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร"
   },
   "validation.password.match": {
-    "message": "รหัสผ่านไม่ตรงกัน!"
+    "message": "รหัสผ่านไม่ตรงกัน"
   },
   "validation.password.required": {
-    "message": "กรุณากรอกรหัสผ่าน!"
+    "message": "กรุณากรอกรหัสผ่าน"
   },
   "validation.promptContent.required": {
-    "message": "กรุณากรอกเนื้อหา พรอมต์!"
+    "message": "กรุณากรอกเนื้อหา พรอมต์"
   },
   "validation.promptTitle.required": {
-    "message": "กรุณากรอกหัวข้อ พรอมต์!"
+    "message": "กรุณากรอกหัวข้อ พรอมต์"
   },
   "validation.replyRequired": {
     "message": "กรุณากรอกเนื้อหาตอบกลับ"
   },
   "validation.username.required": {
-    "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน!"
+    "message": "กรุณากรอกชื่อผู้ใช้หรืออีเมลที่ลงทะเบียน"
   },
   "vote.downvote.alreadyVoted": {
     "message": "คุณได้กดไม่ชอบพรอมต์นี้แล้วในเซสชันนี้"
@@ -1266,7 +1275,7 @@
     "message": "กดไม่ชอบไม่สำเร็จ กรุณาลองใหม่"
   },
   "vote.downvote.success": {
-    "message": "บันทึกการกดไม่ชอบแล้ว!"
+    "message": "บันทึกการกดไม่ชอบแล้ว"
   },
   "vote.loginRequired": {
     "message": "กรุณาเข้าสู่ระบบเพื่อโหวต"
@@ -1278,7 +1287,7 @@
     "message": "กดชอบไม่สำเร็จ กรุณาลองใหม่"
   },
   "vote.upvote.success": {
-    "message": "บันทึกการกดชอบแล้ว!"
+    "message": "บันทึกการกดชอบแล้ว"
   },
   "auth.callback.title": {
     "message": "เสร็จสิ้นการเข้าสู่ระบบ"

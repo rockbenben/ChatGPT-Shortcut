@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # ana sayfa kart verisi (yalnızca statik JSON, backend yok)
+└── sessionCache.ts # çıkışta silinecek yerel izler (3 çıkış yolu ortak kullanır)
 ```
 
 Önbellekleme: API verileri `lscache` ve ETag aracılığıyla akıllıca önbelleğe alınır — sunucu 304 Not Modified döndürdüğünde veri aktarımını azaltmak için yerel önbellek yeniden kullanılır.

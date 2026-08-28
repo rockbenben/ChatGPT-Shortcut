@@ -78,7 +78,7 @@ description: 在 AI Short 收藏喜歡的提示詞，通過自定義標籤分類
 2. 移到目標位置後釋放
 3. 新順序自動儲存（線上版存伺服器，離線版存瀏覽器本地）
 
-![拖拽排序操作](/img/docs/zh/my-collection-drag.webp)
+![拖拽排序操作](/img/docs/my-collection-drag.webp)
 
 ## 相關文件
 

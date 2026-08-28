@@ -81,7 +81,7 @@ Wechseln Sie nicht sofort den Prompt — justieren Sie zuerst an folgenden Stell
 2. **KI zur Optimierung auffordern**: Bei unbefriedigenden Antworten fragen Sie nach „Bitte ändern Sie das Ergebnis hinsichtlich X" oder „Bitte schreiben Sie das im Stil Y neu" — meist liefert die KI nach ein bis zwei Iterationen ein passendes Ergebnis; Sie können die KI auch ihre eigene Antwort bewerten und verbessern lassen
 3. **Modell wechseln und vergleichen**: Probieren Sie denselben Prompt auf einem anderen Modell aus (Claude / ChatGPT / Gemini / DeepSeek usw.) — verschiedene Modelle haben je eigene Stärken, und die Ergebnisse können sich deutlich unterscheiden
 4. **Community ausprobieren**: Unter [Community-Prompts](./community) finden Sie möglicherweise besser passende Versionen — und Sie sind willkommen, Ihre eigenen guten Prompts dort zu teilen
-5. **Feedback geben**: Probleme oder Verbesserungsvorschläge? Hinterlassen Sie [Feedback](/feedback)
+5. **Feedback geben**: Probleme oder Verbesserungsvorschläge? Hinterlassen Sie [Feedback](https://www.aishort.top/de/feedback)
 
 ## Wie sichere ich meine Prompts?
 

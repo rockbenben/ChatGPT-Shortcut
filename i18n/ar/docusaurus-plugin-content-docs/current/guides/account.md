@@ -64,7 +64,7 @@ description: يدعم تسجيل الدخول بنقرة واحدة عبر Googl
 
 يوفر قسم "حسابي ← إدارة البيانات" ثلاثة إجراءات:
 
-- **مسح ذاكرة التخزين المؤقت** — يُحدِّث البيانات المخزنة محليًا؛ استخدمه حين لا تتزامن البيانات أو يبدو العرض غير طبيعي. لن تفقد مجموعاتك ومطالباتك المخصصة، بل يُجبر النظام فقط على إعادة المزامنة
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **تصدير التوجيهات** — يُصدِّر ملف JSON للنسخ الاحتياطي (انظر [مطالبات مخصصة](./user-prompts#تصدير-التوجيهات))
 - **استيراد التوجيهات** — يستورد المطالبات والمجموعات من ملف JSON
 

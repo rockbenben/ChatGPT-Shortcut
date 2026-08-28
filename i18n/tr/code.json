@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "YZ yanıtlıyor"
   },
+  "comments.emoji.label": {
+    "message": "Emoji ekle"
+  },
   "comments.empty": {
     "message": "Henüz yorum yok"
+  },
+  "comments.gif.label": {
+    "message": "GIF ekle"
   },
   "comments.heading": {
     "message": "Tartışma"
@@ -141,7 +147,7 @@
     "message": "Listeye dön"
   },
   "community.description": {
-    "message": "Daha fazla test edilmiş AI promptu mu istiyorsunuz? Pratik prompt şablonları keşfetmek için AiShort topluluğuna katılın!"
+    "message": "Daha fazla test edilmiş AI promptu mu istiyorsunuz? Pratik prompt şablonları keşfetmek için AiShort topluluğuna katılın"
   },
   "community.fetchError": {
     "message": "Veriler alınamadı"
@@ -264,10 +270,10 @@
     "message": "ChatGPT, Claude, Gemini, DeepSeek ya da başka bir sohbet AI arayüzüne yapıştırıp çalıştırın."
   },
   "input.newPassword": {
-    "message": "Lütfen yeni şifrenizi girin!"
+    "message": "Lütfen yeni şifrenizi girin"
   },
   "input.resetPassword.code": {
-    "message": "Lütfen sıfırlama kodunuzu girin!"
+    "message": "Lütfen sıfırlama kodunuzu girin"
   },
   "input.search.placeholder": {
     "message": "yazma, çeviri…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "Hizmet Şartları"
   },
-  "link.userCenter": {
-    "message": "Kullanıcı Merkezi"
-  },
   "login.google.button": {
     "message": "Google ile giriş yap"
   },
@@ -396,13 +399,13 @@
     "message": "Prompt gönderilemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.addPrompt.success": {
-    "message": "Prompt başarıyla gönderildi!"
+    "message": "Prompt gönderildi"
   },
   "message.cache.cleared": {
     "message": "Önbellek temizlendi, veriler yenilendi"
   },
   "message.cache.clearError": {
-    "message": "Önbellek temizlenemedi"
+    "message": "Önbellek temizlenemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.cannotFavorOwn": {
     "message": "Kendi promptunuzu favorilere ekleyemezsiniz"
@@ -417,7 +420,7 @@
     "message": "Özel Prompt'a dönüştürüldü"
   },
   "message.copied": {
-    "message": "Başarıyla kopyalandı"
+    "message": "Kopyalandı"
   },
   "message.deletePrompt.confirm.content": {
     "message": "Bu promptu silmek istediğinizden emin misiniz?"
@@ -429,7 +432,7 @@
     "message": "Prompt silinemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.deletePrompt.success": {
-    "message": "Prompt başarıyla silindi!"
+    "message": "Prompt silindi"
   },
   "message.error": {
     "message": "İşlem sırasında hata oluştu"
@@ -450,7 +453,7 @@
     "message": "Dışa aktarılacak prompt yok. Önce prompt oluşturun veya favorilere ekleyin."
   },
   "message.export.success": {
-    "message": "Prompt başarıyla dışa aktarıldı!"
+    "message": "Prompt dışa aktarıldı"
   },
   "message.forgotPassword.info": {
     "message": "Kayıtlı e-postanıza sıfırlama bağlantısı içeren bir e-posta göndereceğiz."
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "Geçersiz veri formatı"
   },
+  "message.import.nothing": {
+    "message": "Dosyadaki her şey zaten mevcut, içe aktarılacak bir şey yok"
+  },
   "message.import.parseError": {
     "message": "JSON ayrıştırma başarısız, lütfen dosya formatını kontrol edin"
   },
   "message.import.partial": {
-    "message": "Kısmi içe aktarma başarılı"
+    "message": "Bazı promptlar içe aktarıldı"
   },
   "message.import.success": {
-    "message": "İçe aktarma başarılı!"
+    "message": "İçe aktarıldı"
   },
   "message.loadFailed": {
-    "message": "Veriler yüklenemedi"
+    "message": "Veriler yüklenemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.loginRequired": {
     "message": "Lütfen önce giriş yapın"
@@ -483,7 +489,7 @@
     "message": "Çıkışı Onayla"
   },
   "message.noComments": {
-    "message": "Henüz yorum yok, ilk yorumu yapan siz olun!"
+    "message": "Henüz yorum yok, ilk yorumu yapan siz olun"
   },
   "message.noFavorites": {
     "message": "Henüz favori yok, beğendiğiniz Promptları keşfedin"
@@ -498,7 +504,7 @@
     "message": "Sıralama kaydedildi"
   },
   "message.orderSaveFailed": {
-    "message": "Sıralama kaydedilemedi"
+    "message": "Sıralama kaydedilemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.postComment.error": {
     "message": "Yorum gönderilemedi. Lütfen daha sonra tekrar deneyin."
@@ -519,34 +525,34 @@
     "message": "Şifre sıfırlanamadı, lütfen daha sonra tekrar deneyin"
   },
   "message.resetPassword.success": {
-    "message": "Şifre başarıyla sıfırlandı!"
+    "message": "Şifre sıfırlandı"
   },
   "message.success.forgotPassword": {
-    "message": "Şifre sıfırlama e-postası gönderildi!"
+    "message": "Şifre sıfırlama e-postası gönderildi"
   },
   "message.success.login": {
-    "message": "Giriş başarılı!"
+    "message": "Giriş yapıldı"
   },
   "message.success.passwordChanged": {
-    "message": "Şifre başarıyla değiştirildi!"
+    "message": "Şifre değiştirildi"
   },
   "message.success.passwordlessLink": {
-    "message": "Şifresiz giriş bağlantısı e-postanıza gönderildi!"
+    "message": "Şifresiz giriş bağlantısı e-postanıza gönderildi"
   },
   "message.success.register": {
-    "message": "Kayıt başarılı!"
+    "message": "Hesap oluşturuldu"
   },
   "message.tagsUpdated": {
     "message": "Etiketler güncellendi"
   },
   "message.tagsUpdateFailed": {
-    "message": "Etiket güncellenemedi"
+    "message": "Etiket güncellenemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.updatePrompt.error": {
     "message": "Prompt güncellenemedi, lütfen daha sonra tekrar deneyin"
   },
   "message.updatePrompt.success": {
-    "message": "Prompt başarıyla güncellendi!"
+    "message": "Prompt güncellendi"
   },
   "modal.clearCache.title": {
     "message": "Önbelleği Temizlemeyi Onayla?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "Çeviri"
+  },
+  "search.submit": {
+    "message": "Ara"
   },
   "share.copy": {
     "message": "Kopyala"
@@ -1127,11 +1136,11 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " {date} tarihinde",
+    "message": "{date} tarihinde",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " {user} tarafından",
+    "message": "{user} tarafından",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1227,37 +1236,37 @@
     "message": "Lütfen yorum içeriği girin"
   },
   "validation.confirmPassword.required": {
-    "message": "Lütfen yeni şifrenizi onaylayın!"
+    "message": "Lütfen yeni şifrenizi onaylayın"
   },
   "validation.currentPassword.required": {
-    "message": "Lütfen mevcut şifrenizi girin!"
+    "message": "Lütfen mevcut şifrenizi girin"
   },
   "validation.email.invalid": {
-    "message": "Lütfen geçerli bir e-posta adresi girin!"
+    "message": "Lütfen geçerli bir e-posta adresi girin"
   },
   "validation.email.required": {
-    "message": "Lütfen e-postanızı girin!"
+    "message": "Lütfen e-postanızı girin"
   },
   "validation.password.length": {
     "message": "Şifre en az 6 karakter olmalıdır"
   },
   "validation.password.match": {
-    "message": "Şifreler eşleşmiyor!"
+    "message": "Şifreler eşleşmiyor"
   },
   "validation.password.required": {
-    "message": "Lütfen şifrenizi girin!"
+    "message": "Lütfen şifrenizi girin"
   },
   "validation.promptContent.required": {
-    "message": "Lütfen prompt içeriği girin!"
+    "message": "Lütfen prompt içeriği girin"
   },
   "validation.promptTitle.required": {
-    "message": "Lütfen prompt başlığı girin!"
+    "message": "Lütfen prompt başlığı girin"
   },
   "validation.replyRequired": {
     "message": "Lütfen yanıt içeriği girin"
   },
   "validation.username.required": {
-    "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin!"
+    "message": "Lütfen kullanıcı adı veya kayıtlı e-posta girin"
   },
   "vote.downvote.alreadyVoted": {
     "message": "Bu oturumda bu promptu zaten beğenmediniz."
@@ -1266,7 +1275,7 @@
     "message": "Beğenmeme kaydedilemedi. Lütfen tekrar deneyin."
   },
   "vote.downvote.success": {
-    "message": "Beğenmeme kaydedildi!"
+    "message": "Beğenmeme kaydedildi"
   },
   "vote.loginRequired": {
     "message": "Oy vermek için giriş yapın."
@@ -1278,7 +1287,7 @@
     "message": "Beğeni kaydedilemedi. Lütfen tekrar deneyin."
   },
   "vote.upvote.success": {
-    "message": "Beğeni kaydedildi!"
+    "message": "Beğeni kaydedildi"
   },
   "auth.callback.title": {
     "message": "Girişi tamamla"

@@ -64,7 +64,7 @@ Trang tài khoản hiển thị **cấp độ (L0–L9)** và tiến độ đế
 
 Mục "Tài khoản của tôi → Quản lý dữ liệu" cung cấp ba thao tác:
 
-- **Xóa Cache** — làm mới dữ liệu được lưu trong bộ nhớ cục bộ; dùng khi dữ liệu không đồng bộ hoặc hiển thị bất thường. Bộ sưu tập và prompt tùy chỉnh của bạn không bị mất, thao tác này chỉ buộc đồng bộ lại từ đầu
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Xuất Prompt** — xuất tệp JSON để sao lưu (xem [Prompt Tùy chỉnh](./user-prompts#xuất-prompt))
 - **Nhập Prompt** — nhập prompt và bộ sưu tập từ tệp JSON
 

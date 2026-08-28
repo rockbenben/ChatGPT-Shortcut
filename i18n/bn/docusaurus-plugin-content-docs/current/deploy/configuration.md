@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # হোমপেজ কার্ড ডেটা (শুধু স্ট্যাটিক JSON, ব্যাকএন্ড নেই)
+└── sessionCache.ts # লগআউটে মোছার লোকাল চিহ্ন (৩টি পথে ভাগ করা)
 ```
 
 ক্যাশিং: API ডেটা `lscache` এবং ETag-এর মাধ্যমে বুদ্ধিমানভাবে ক্যাশ করা হয় — সার্ভার 304 Not Modified ফেরত দিলে, ডেটা ট্রান্সফার কমাতে লোকাল ক্যাশ পুনরায় ব্যবহার করা হয়।

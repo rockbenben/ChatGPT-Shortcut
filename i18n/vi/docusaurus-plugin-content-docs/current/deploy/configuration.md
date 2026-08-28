@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # dữ liệu thẻ trang chủ (chỉ JSON tĩnh, không backend)
+└── sessionCache.ts # dấu vết cục bộ cần xóa khi đăng xuất (3 lối đăng xuất dùng chung)
 ```
 
 Bộ nhớ đệm: dữ liệu API được cache thông minh qua `lscache` kết hợp ETag — khi máy chủ trả về 304 Not Modified, cache cục bộ sẽ được dùng lại để giảm truyền dữ liệu.

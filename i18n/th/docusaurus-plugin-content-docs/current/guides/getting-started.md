@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: เริ่มต้น
 title: AI Short เริ่มต้นอย่างรวดเร็ว | คัดลอก Prompt ไปยัง ChatGPT/DeepSeek
 description: เริ่มต้นใน 30 วินาที! คัดลอก prompt ไปยัง ChatGPT, Gemini, DeepSeek และโมเดล AI อื่น ๆ ยกระดับคุณภาพการสนทนาและประสิทธิภาพการทำงานของคุณทันที

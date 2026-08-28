@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Giới thiệu AI Short
 title: Thư viện Prompt AI chọn lọc | Sao chép một cú nhấp
@@ -64,4 +64,3 @@ Chào mừng bạn tham gia cộng đồng của chúng tôi để trao đổi �
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="trò chuyện trên Discord" />
 </a>
-

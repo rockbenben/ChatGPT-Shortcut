@@ -6,30 +6,30 @@ description: Create your own AI prompts and save them to your account for instan
 
 # Custom Prompts
 
-After logging in, you can create your own prompts and save them to your account for quick access later. Custom prompts appear in the "My Collection" view.
+After logging in, you can create your own prompts and save them to your account for quick access later. Custom prompts appear in the "My collection" view.
 
 ## Create Prompt
 
-1. After logging in, click the "**Create Prompt**" button at the top of the page
-2. Fill in the "Create Prompt" dialog:
+1. After logging in, click the "**Create prompt**" button at the top of the page
+2. Fill in the "Create prompt" dialog:
    - **Prompt Name** (required): A name for the prompt
-   - **Prompt Content** (required): The body of the prompt; text in square brackets `[...]` is highlighted as a placeholder when displayed
+   - **Prompt content** (required): The body of the prompt; text in square brackets `[...]` is highlighted as a placeholder when displayed
    - **Usage** (optional): A short description of what the prompt does
    - **Notes** (optional): Source, other-language versions, or supplementary notes
-3. The "Would you like to share this prompt on the public page?" switch at the bottom is on by default — turn it off to keep the prompt private
-4. Click "Create Prompt" to submit
+3. The share switch at the bottom is on by default — turn it off to keep the prompt private
+4. Click "Create prompt" to submit
 
 ![Create Prompt Dialog](/img/docs/user-prompts-create.png)
 
 > 💡 **Example** — a "Standup Update Generator" prompt:
 > - **Prompt Name**: Standup Update Generator
-> - **Prompt Content**: You are a concise communication assistant. Turn the following notes into a daily standup update with three sections — Yesterday, Today, Blockers. Keep each bullet short and outcome-focused: [my raw notes]
+> - **Prompt content**: You are a concise communication assistant. Turn the following notes into a daily standup update with three sections — Yesterday, Today, Blockers. Keep each bullet short and outcome-focused: [my raw notes]
 > - **Usage**: Converts messy notes into a clean standup update
 > - **Notes**: Run before the morning standup
 
 ## Edit Prompt
 
-In the My Collection view, click the edit (pencil) button on a prompt card you created to open the "Edit Prompt" dialog. You can:
+In the My Collection view, click the edit (pencil) button on a prompt card you created to open the "Edit prompt" dialog. You can:
 
 - Modify name, content, usage, and notes
 - Toggle sharing status (public / private)
@@ -39,11 +39,11 @@ In the My Collection view, click the edit (pencil) button on a prompt card you c
 
 ## Delete Prompt
 
-Click "Delete" in the edit dialog. Deletion cannot be undone — proceed with care.
+In the My Collection view, click the delete (trash) button on your prompt card and confirm. Deletion cannot be undone — proceed with care.
 
 ## Share to Community
 
-When creating or editing, the "Would you like to share this prompt on the public page?" switch at the bottom controls visibility:
+When creating or editing, the share switch at the bottom controls visibility:
 
 - **On (default)**: The prompt appears on the [Community Prompts](./community) page, where other users can see and collect it
 - **Off**: Private — visible only to you
@@ -52,8 +52,8 @@ Sharing status can be toggled at any time.
 
 ## Export Prompts
 
-1. Go to "My Account" and find the "Data Management → Export Prompts" section
-2. Click the "Export Data" button
+1. Go to "My account" and find the "Data management → Export prompts" section
+2. Click the "Export data" button
 3. The system generates a JSON file and downloads it automatically
 
 Exported content includes:
@@ -68,10 +68,10 @@ Regular exports are recommended to prevent data loss.
 
 Import prompts and collections from a JSON file:
 
-1. Go to "My Account" and find the "Data Management → Import Prompts" section
-2. Click the "Import Data" button
+1. Go to "My account" and find the "Data management → Import prompts" section
+2. Click the "Import data" button
 3. Select a JSON file
-4. The system merges the data automatically (deduplicated by title; prompts whose IDs belong to another account are set to private)
+4. The system merges the data automatically (matched by ID: prompts sharing an ID with yours are updated, or skipped when identical; those with no ID or an ID from another account are imported as new entries, the latter forced to private)
 
 ### Team Collaboration
 

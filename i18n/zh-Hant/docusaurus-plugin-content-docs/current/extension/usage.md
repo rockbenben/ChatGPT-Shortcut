@@ -26,7 +26,7 @@ AI Short 支持 18 種主流語言，擴展語言將根據你的瀏覽器環境�
 
 擴展支持深色模式，可在設置頁面中開啓「深色模式」選項，啓用後界面將切換爲深色外觀。
 
-![](/img/docs/zh/extension-sidebar.webp)
+![](/img/docs/extension-sidebar.webp)
 
 ## 熱鍵激活
 

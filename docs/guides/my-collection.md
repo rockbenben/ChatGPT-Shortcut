@@ -78,7 +78,7 @@ description: 收藏喜欢的 AI 提示词，通过自定义标签分类管理。
 2. 移到目标位置后释放
 3. 新顺序自动保存（在线版存服务器，离线版存浏览器本地）
 
-![拖拽排序操作](/img/docs/zh/my-collection-drag.webp)
+![拖拽排序操作](/img/docs/my-collection-drag.webp)
 
 ## 相关文档
 

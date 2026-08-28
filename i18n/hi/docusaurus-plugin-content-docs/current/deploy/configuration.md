@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # होमपेज कार्ड डेटा (केवल स्टैटिक JSON, कोई बैकएंड नहीं)
+└── sessionCache.ts # लॉगआउट पर मिटाया जाने वाला लोकल डेटा (3 रास्तों में साझा)
 ```
 
 कैशिंग: API डेटा `lscache` और ETag के माध्यम से बुद्धिमानी से कैश होता है — जब सर्वर 304 Not Modified लौटाता है, तो डेटा ट्रांसफर कम करने के लिए स्थानीय कैश पुनः उपयोग किया जाता है।

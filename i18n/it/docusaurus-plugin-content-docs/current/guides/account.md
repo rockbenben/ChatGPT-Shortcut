@@ -64,7 +64,7 @@ La pagina dell'account mostra il tuo **livello (L0–L9)** e i progressi verso i
 
 La sezione "Il mio account → Gestione dati" offre tre azioni:
 
-- **Svuota cache** — aggiorna i dati memorizzati localmente; usalo quando i dati non si sincronizzano o la visualizzazione presenta anomalie. Le tue collezioni e i prompt personalizzati non vengono persi, viene semplicemente forzata una nuova sincronizzazione
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Esporta prompt** — esporta un file JSON come backup (vedi [Prompt Personalizzati](./user-prompts#esporta-prompt))
 - **Importa prompt** — importa prompt e collezioni da un file JSON
 

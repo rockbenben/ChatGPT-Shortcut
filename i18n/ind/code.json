@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI sedang membalas"
   },
+  "comments.emoji.label": {
+    "message": "Sisipkan emoji"
+  },
   "comments.empty": {
     "message": "Belum ada komentar"
+  },
+  "comments.gif.label": {
+    "message": "Sisipkan GIF"
   },
   "comments.heading": {
     "message": "Diskusi"
@@ -141,7 +147,7 @@
     "message": "Kembali ke daftar"
   },
   "community.description": {
-    "message": "Ingin lebih banyak prompt AI yang teruji? Bergabunglah dengan komunitas AiShort untuk menemukan template prompt praktis!"
+    "message": "Ingin lebih banyak prompt AI yang teruji? Bergabunglah dengan komunitas AiShort untuk menemukan template prompt praktis"
   },
   "community.fetchError": {
     "message": "Gagal mengambil data"
@@ -264,10 +270,10 @@
     "message": "Tempel ke ChatGPT, Claude, Gemini, DeepSeek, atau antarmuka AI percakapan lain dan jalankan."
   },
   "input.newPassword": {
-    "message": "Silakan masukkan kata sandi baru!"
+    "message": "Silakan masukkan kata sandi baru"
   },
   "input.resetPassword.code": {
-    "message": "Silakan masukkan kode reset Anda!"
+    "message": "Silakan masukkan kode reset Anda"
   },
   "input.search.placeholder": {
     "message": "menulis, menerjemahkan…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "Ketentuan Layanan"
   },
-  "link.userCenter": {
-    "message": "Pusat Pengguna"
-  },
   "login.google.button": {
     "message": "Masuk dengan Google"
   },
@@ -396,13 +399,13 @@
     "message": "Gagal mengirim prompt, silakan coba lagi nanti"
   },
   "message.addPrompt.success": {
-    "message": "Prompt berhasil dikirim!"
+    "message": "Prompt dikirim"
   },
   "message.cache.cleared": {
     "message": "Cache dihapus, data disegarkan"
   },
   "message.cache.clearError": {
-    "message": "Gagal menghapus cache"
+    "message": "Gagal menghapus cache, silakan coba lagi nanti"
   },
   "message.cannotFavorOwn": {
     "message": "Tidak dapat memfavoritkan prompt Anda sendiri"
@@ -417,7 +420,7 @@
     "message": "Dikonversi ke Prompt pribadi"
   },
   "message.copied": {
-    "message": "Berhasil disalin"
+    "message": "Disalin"
   },
   "message.deletePrompt.confirm.content": {
     "message": "Yakin ingin menghapus prompt ini?"
@@ -429,7 +432,7 @@
     "message": "Gagal menghapus prompt, silakan coba lagi nanti"
   },
   "message.deletePrompt.success": {
-    "message": "Prompt berhasil dihapus!"
+    "message": "Prompt dihapus"
   },
   "message.error": {
     "message": "Terjadi kesalahan saat memproses"
@@ -450,7 +453,7 @@
     "message": "Tidak ada prompt untuk diekspor. Buat atau favoritkan beberapa terlebih dahulu."
   },
   "message.export.success": {
-    "message": "Ekspor Prompt berhasil!"
+    "message": "Prompt diekspor"
   },
   "message.forgotPassword.info": {
     "message": "Kami akan mengirim email berisi tautan reset ke email terdaftar Anda."
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "Format data tidak valid"
   },
+  "message.import.nothing": {
+    "message": "Semua isi berkas sudah ada, tidak ada yang perlu diimpor"
+  },
   "message.import.parseError": {
     "message": "Parsing JSON gagal, silakan periksa format file"
   },
   "message.import.partial": {
-    "message": "Impor sebagian berhasil"
+    "message": "Sebagian prompt diimpor"
   },
   "message.import.success": {
-    "message": "Impor berhasil!"
+    "message": "Diimpor"
   },
   "message.loadFailed": {
-    "message": "Gagal memuat data"
+    "message": "Gagal memuat data, silakan coba lagi nanti"
   },
   "message.loginRequired": {
     "message": "Silakan login terlebih dahulu"
@@ -483,7 +489,7 @@
     "message": "Konfirmasi Keluar"
   },
   "message.noComments": {
-    "message": "Belum ada komentar, jadilah yang pertama berkomentar!"
+    "message": "Belum ada komentar, jadilah yang pertama berkomentar"
   },
   "message.noFavorites": {
     "message": "Belum ada favorit, temukan Prompt yang Anda suka"
@@ -498,7 +504,7 @@
     "message": "Urutan disimpan"
   },
   "message.orderSaveFailed": {
-    "message": "Gagal menyimpan urutan"
+    "message": "Gagal menyimpan urutan, silakan coba lagi nanti"
   },
   "message.postComment.error": {
     "message": "Gagal mengirim komentar. Silakan coba lagi nanti."
@@ -519,34 +525,34 @@
     "message": "Reset kata sandi gagal, silakan coba lagi nanti"
   },
   "message.resetPassword.success": {
-    "message": "Reset kata sandi berhasil!"
+    "message": "Kata sandi direset"
   },
   "message.success.forgotPassword": {
-    "message": "Email reset kata sandi telah dikirim!"
+    "message": "Email reset kata sandi telah dikirim"
   },
   "message.success.login": {
-    "message": "Login berhasil!"
+    "message": "Sudah masuk"
   },
   "message.success.passwordChanged": {
-    "message": "Kata sandi berhasil diubah!"
+    "message": "Kata sandi diubah"
   },
   "message.success.passwordlessLink": {
-    "message": "Tautan login tanpa kata sandi telah dikirim ke email Anda!"
+    "message": "Tautan login tanpa kata sandi telah dikirim ke email Anda"
   },
   "message.success.register": {
-    "message": "Pendaftaran berhasil!"
+    "message": "Akun dibuat"
   },
   "message.tagsUpdated": {
     "message": "Tag diperbarui"
   },
   "message.tagsUpdateFailed": {
-    "message": "Gagal memperbarui tag"
+    "message": "Gagal memperbarui tag, silakan coba lagi nanti"
   },
   "message.updatePrompt.error": {
     "message": "Gagal memperbarui prompt, silakan coba lagi nanti"
   },
   "message.updatePrompt.success": {
-    "message": "Prompt berhasil diperbarui!"
+    "message": "Prompt diperbarui"
   },
   "modal.clearCache.title": {
     "message": "Konfirmasi Hapus Cache?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "Terjemahan"
+  },
+  "search.submit": {
+    "message": "Cari"
   },
   "share.copy": {
     "message": "Salin"
@@ -880,7 +889,7 @@
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "tip",
+    "message": "tips",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
@@ -1032,7 +1041,7 @@
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
+    "message": "Jejak navigasi",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.DocCard.categoryDescription.plurals": {
@@ -1127,11 +1136,11 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " pada {date}",
+    "message": "pada {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " oleh {user}",
+    "message": "oleh {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1227,37 +1236,37 @@
     "message": "Silakan masukkan konten komentar"
   },
   "validation.confirmPassword.required": {
-    "message": "Silakan konfirmasi kata sandi baru!"
+    "message": "Silakan konfirmasi kata sandi baru"
   },
   "validation.currentPassword.required": {
-    "message": "Silakan masukkan kata sandi saat ini!"
+    "message": "Silakan masukkan kata sandi saat ini"
   },
   "validation.email.invalid": {
-    "message": "Silakan masukkan alamat email yang valid!"
+    "message": "Silakan masukkan alamat email yang valid"
   },
   "validation.email.required": {
-    "message": "Silakan masukkan email Anda!"
+    "message": "Silakan masukkan email Anda"
   },
   "validation.password.length": {
     "message": "Kata sandi harus minimal 6 karakter"
   },
   "validation.password.match": {
-    "message": "Kata sandi tidak cocok!"
+    "message": "Kata sandi tidak cocok"
   },
   "validation.password.required": {
-    "message": "Silakan masukkan kata sandi!"
+    "message": "Silakan masukkan kata sandi"
   },
   "validation.promptContent.required": {
-    "message": "Silakan masukkan konten prompt!"
+    "message": "Silakan masukkan konten prompt"
   },
   "validation.promptTitle.required": {
-    "message": "Silakan masukkan judul prompt!"
+    "message": "Silakan masukkan judul prompt"
   },
   "validation.replyRequired": {
     "message": "Silakan masukkan konten balasan"
   },
   "validation.username.required": {
-    "message": "Silakan masukkan nama pengguna atau email terdaftar!"
+    "message": "Silakan masukkan nama pengguna atau email terdaftar"
   },
   "vote.downvote.alreadyVoted": {
     "message": "Anda sudah menandai tidak suka pada prompt ini di sesi ini."
@@ -1266,7 +1275,7 @@
     "message": "Gagal menandai tidak suka. Silakan coba lagi."
   },
   "vote.downvote.success": {
-    "message": "Berhasil menandai tidak suka!"
+    "message": "Menandai tidak suka"
   },
   "vote.loginRequired": {
     "message": "Silakan masuk untuk memberikan suara."
@@ -1278,7 +1287,7 @@
     "message": "Gagal menyukai. Silakan coba lagi."
   },
   "vote.upvote.success": {
-    "message": "Berhasil menyukai prompt ini!"
+    "message": "Menyukai prompt ini"
   },
   "auth.callback.title": {
     "message": "Menyelesaikan masuk"

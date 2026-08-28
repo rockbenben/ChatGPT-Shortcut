@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short পরিচিতি
 title: নির্বাচিত AI প্রম্পট লাইব্রেরি | এক ক্লিকে কপি করুন
@@ -64,4 +64,3 @@ AI Short (ChatGPT Shortcut) পরিস্থিতি অনুসারে �
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

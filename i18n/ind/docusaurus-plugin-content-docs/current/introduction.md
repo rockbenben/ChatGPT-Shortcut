@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Pengantar AI Short
 title: Perpustakaan Prompt AI Pilihan | Salin Sekali Klik
@@ -64,4 +64,3 @@ Bergabunglah dengan komunitas kami untuk berdiskusi dan berbagi umpan balik:
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="obrolan di Discord" />
 </a>
-

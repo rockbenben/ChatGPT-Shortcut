@@ -21,7 +21,7 @@ yarn
 # phát triển cục bộ
 yarn start
 
-# build: xuất file tĩnh ra thư mục build, sử dụng defaultLocale trong scripts/i18nLocales.mjs
+# build: build toàn bộ 18 ngôn ngữ theo từng khối (chạy một lượt sẽ hết bộ nhớ); kết quả ở build/ — chỉ một ngôn ngữ xem --locale bên dưới
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Nhấp nút bên dưới để triển khai một lần lên Vercel:
 
 Trước tiên 👉 [Fork dự án này](https://github.com/rockbenben/ChatGPT-Shortcut/fork), sau đó triển khai:
 
-1. Đăng nhập vào [Cloudflare Pages](https://pages.cloudflare.com/) và chọn **Create a project**
+1. Mở [trang tạo Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) rồi chọn **Connect to Git**. Nếu bạn vào nhầm Create a Worker, lối vào Pages là liên kết **Get started** ở dưới cùng
 2. Kết nối repository bạn vừa fork
 3. Cấu hình build:
    - **Build command**: `yarn build --locale zh-Hans` (thay locale bằng ngôn ngữ bạn muốn triển khai, ví dụ: `yarn build --locale pt` cho tiếng Bồ Đào Nha)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Nhấp **Deploy** và chờ Cloudflare Pages hoàn tất build
+
+> **`YARN_VERSION` là bắt buộc**: hệ thống build v3 của Cloudflare mặc định dùng Yarn 4.9.1 và không còn suy ra phiên bản từ `yarn.lock` như v2 nữa. Kho này dùng lockfile v1 của Yarn Classic, nên nếu không ghim thì Yarn 4 sẽ tiếp quản. Node không cần đặt: v3 mặc định 22.16.0, đã cao hơn mức 20 mà dự án yêu cầu.
 
 Mỗi lần push sau đó sẽ tự động kích hoạt quá trình build và deploy.
 

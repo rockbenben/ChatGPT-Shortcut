@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI가 답장 중"
   },
+  "comments.emoji.label": {
+    "message": "이모지 삽입"
+  },
   "comments.empty": {
     "message": "아직 댓글이 없습니다"
+  },
+  "comments.gif.label": {
+    "message": "GIF 삽입"
   },
   "comments.heading": {
     "message": "토론"
@@ -264,10 +270,10 @@
     "message": "ChatGPT, Claude, Gemini, DeepSeek 등 대화형 AI 인터페이스에 붙여넣고 실행하세요."
   },
   "input.newPassword": {
-    "message": "새 비밀번호를 입력하십시오!"
+    "message": "새 비밀번호를 입력하십시오"
   },
   "input.resetPassword.code": {
-    "message": "재설정 코드를 입력하십시오!"
+    "message": "재설정 코드를 입력하십시오"
   },
   "input.search.placeholder": {
     "message": "작문, 번역…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "서비스 약관"
   },
-  "link.userCenter": {
-    "message": "사용자 센터"
-  },
   "login.google.button": {
     "message": "Google로 로그인"
   },
@@ -396,13 +399,13 @@
     "message": "프롬프트 제출 실패, 나중에 다시 시도하십시오."
   },
   "message.addPrompt.success": {
-    "message": "프롬프트 제출 성공!"
+    "message": "프롬프트가 제출되었습니다"
   },
   "message.cache.cleared": {
     "message": "캐시가 지워졌습니다"
   },
   "message.cache.clearError": {
-    "message": "캐시 지우기 실패"
+    "message": "캐시 지우기 실패, 나중에 다시 시도하십시오."
   },
   "message.cannotFavorOwn": {
     "message": "본인의 프롬프트는 즐겨찾기에 추가할 수 없습니다"
@@ -414,10 +417,10 @@
     "message": "비공개 프롬프트를 만들었지만 원래 즐겨찾기를 제거하지 못했습니다. 중복을 피하려면 직접 삭제해 주세요."
   },
   "message.convertToPrivate.success": {
-    "message": "비공개 프롬프트로 성공적으로 변환되었습니다"
+    "message": "비공개 프롬프트로 변환되었습니다"
   },
   "message.copied": {
-    "message": "복사 성공"
+    "message": "복사됨"
   },
   "message.deletePrompt.confirm.content": {
     "message": "이 프롬프트를 삭제하시겠습니까?"
@@ -429,7 +432,7 @@
     "message": "프롬프트 삭제 실패, 나중에 다시 시도하십시오."
   },
   "message.deletePrompt.success": {
-    "message": "프롬프트 삭제 성공!"
+    "message": "프롬프트가 삭제되었습니다"
   },
   "message.error": {
     "message": "처리 중 오류가 발생했습니다"
@@ -450,7 +453,7 @@
     "message": "내보낼 프롬프트가 없습니다. 먼저 프롬프트를 만들거나 즐겨찾기에 추가하세요."
   },
   "message.export.success": {
-    "message": "프롬프트 내보내기 성공!"
+    "message": "프롬프트를 내보냈습니다"
   },
   "message.forgotPassword.info": {
     "message": "현재 비밀번호를 잊으신 경우 이메일을 통해 재설정할 수 있습니다. 등록된 이메일 주소로 재설정 링크가 포함된 이메일을 보내드립니다."
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "잘못된 데이터 형식"
   },
+  "message.import.nothing": {
+    "message": "파일의 내용이 모두 이미 있습니다. 가져올 항목이 없습니다"
+  },
   "message.import.parseError": {
     "message": "JSON 파싱 오류"
   },
   "message.import.partial": {
-    "message": "일부 가져오기 성공"
+    "message": "일부 프롬프트를 가져왔습니다"
   },
   "message.import.success": {
-    "message": "가져오기 성공!"
+    "message": "가져왔습니다"
   },
   "message.loadFailed": {
-    "message": "데이터를 불러오지 못했습니다"
+    "message": "데이터를 불러오지 못했습니다. 잠시 후 다시 시도하세요."
   },
   "message.loginRequired": {
     "message": "먼저 로그인해 주세요"
@@ -483,7 +489,7 @@
     "message": "로그아웃 확인"
   },
   "message.noComments": {
-    "message": "아직 댓글이 없습니다. 첫 번째 댓글을 남겨보세요!"
+    "message": "아직 댓글이 없습니다. 첫 번째 댓글을 남겨보세요"
   },
   "message.noFavorites": {
     "message": "아직 즐겨찾기가 없습니다. 마음에 드는 프롬프트를 찾아보세요"
@@ -498,7 +504,7 @@
     "message": "배열이 저장되었습니다"
   },
   "message.orderSaveFailed": {
-    "message": "배열 저장 실패"
+    "message": "배열 저장 실패, 나중에 다시 시도하십시오."
   },
   "message.postComment.error": {
     "message": "댓글 전송에 실패했습니다. 잠시 후 다시 시도해 주세요."
@@ -519,34 +525,34 @@
     "message": "비밀번호 재설정 실패, 나중에 다시 시도하십시오."
   },
   "message.resetPassword.success": {
-    "message": "비밀번호 재설정 성공!"
+    "message": "비밀번호가 재설정되었습니다"
   },
   "message.success.forgotPassword": {
-    "message": "비밀번호 재설정 이메일이 전송되었습니다!"
+    "message": "비밀번호 재설정 이메일이 전송되었습니다"
   },
   "message.success.login": {
-    "message": "로그인 성공!"
+    "message": "로그인되었습니다"
   },
   "message.success.passwordChanged": {
-    "message": "비밀번호 변경 성공!"
+    "message": "비밀번호가 변경되었습니다"
   },
   "message.success.passwordlessLink": {
-    "message": "비밀번호 없는 로그인 링크가 이메일로 전송되었습니다!"
+    "message": "비밀번호 없는 로그인 링크가 이메일로 전송되었습니다"
   },
   "message.success.register": {
-    "message": "등록 성공!"
+    "message": "계정이 생성되었습니다"
   },
   "message.tagsUpdated": {
     "message": "태그가 업데이트되었습니다"
   },
   "message.tagsUpdateFailed": {
-    "message": "태그 업데이트 실패"
+    "message": "태그 업데이트 실패, 나중에 다시 시도하십시오."
   },
   "message.updatePrompt.error": {
     "message": "프롬프트 업데이트 실패, 나중에 다시 시도하십시오."
   },
   "message.updatePrompt.success": {
-    "message": "프롬프트 업데이트 성공!"
+    "message": "프롬프트가 업데이트되었습니다"
   },
   "modal.clearCache.title": {
     "message": "캐시를 지우시겠습니까?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "번역"
+  },
+  "search.submit": {
+    "message": "검색"
   },
   "share.copy": {
     "message": "복사"
@@ -968,19 +977,19 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "복사됨",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "복사",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "코드를 클립보드에 복사",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "줄 바꿈 토글",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
@@ -996,7 +1005,7 @@
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "시스템 모드",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1008,27 +1017,27 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "본문으로 건너뛰기",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "이 페이지는 초안입니다. 개발 환경에서만 표시되며,本番 빌드에서는 제외됩니다.",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "초안 페이지",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "이 페이지는 비공개입니다. 검색 엔진에 색인되지 않으며, 직접 링크를 가진 사용자만 액세스할 수 있습니다.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "비공개 페이지",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "홈 페이지",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -1052,31 +1061,31 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "탐색 모음 닫기",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "사이드바 접기",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "사이드바 접기",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "사이드바 펼치기",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "사이드바 펼치기",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "문서 사이드바",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "탐색 모음 토글",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -1107,11 +1116,11 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "사이드바 카테고리 '{label}' 접기",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "사이드바 카테고리 '{label}' 펼치기",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
@@ -1119,19 +1128,19 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "다시 시도",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "(새 탭에서 열림)",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " {date}에",
+    "message": "{date}에",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " {user}가",
+    "message": "{user}가",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1139,19 +1148,19 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "드롭다운 접기",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "드롭다운 펼치기",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "언어",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← 메인 메뉴로 돌아가기",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -1159,15 +1168,15 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "메인",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "찾으시는 내용을 찾을 수 없습니다.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "원본 URL로 연결해 준 사이트의 관리자에게 연락하여 링크가 끊어졌음을 알려 주십시오.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "태그",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "이 페이지에서",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "댓글 내용을 입력하십시오"
   },
   "validation.confirmPassword.required": {
-    "message": "새 비밀번호를 확인하십시오!"
+    "message": "새 비밀번호를 확인하십시오"
   },
   "validation.currentPassword.required": {
-    "message": "현재 비밀번호를 입력하십시오!"
+    "message": "현재 비밀번호를 입력하십시오"
   },
   "validation.email.invalid": {
-    "message": "유효한 이메일 주소를 입력하십시오!"
+    "message": "유효한 이메일 주소를 입력하십시오"
   },
   "validation.email.required": {
-    "message": "이메일을 입력하십시오!"
+    "message": "이메일을 입력하십시오"
   },
   "validation.password.length": {
     "message": "비밀번호는 최소 6자 이상이어야 합니다."
   },
   "validation.password.match": {
-    "message": "두 비밀번호가 일치하지 않습니다!"
+    "message": "두 비밀번호가 일치하지 않습니다"
   },
   "validation.password.required": {
-    "message": "비밀번호를 입력하십시오!"
+    "message": "비밀번호를 입력하십시오"
   },
   "validation.promptContent.required": {
-    "message": "프롬프트 내용을 입력하십시오!"
+    "message": "프롬프트 내용을 입력하십시오"
   },
   "validation.promptTitle.required": {
-    "message": "프롬프트 제목을 입력하십시오!"
+    "message": "프롬프트 제목을 입력하십시오"
   },
   "validation.replyRequired": {
     "message": "답글 내용을 입력하십시오"
   },
   "validation.username.required": {
-    "message": "사용자 이름 또는 등록 이메일을 입력하십시오!"
+    "message": "사용자 이름 또는 등록 이메일을 입력하십시오"
   },
   "vote.downvote.alreadyVoted": {
     "message": "이 세션에서 이미 이 프롬프트를 비추천했습니다."
@@ -1266,7 +1275,7 @@
     "message": "비추천에 실패했습니다. 다시 시도해 주세요."
   },
   "vote.downvote.success": {
-    "message": "비추천했습니다!"
+    "message": "비추천했습니다"
   },
   "vote.loginRequired": {
     "message": "투표하려면 로그인해 주세요."
@@ -1278,7 +1287,7 @@
     "message": "추천에 실패했습니다. 다시 시도해 주세요."
   },
   "vote.upvote.success": {
-    "message": "추천했습니다!"
+    "message": "추천했습니다"
   },
   "auth.callback.title": {
     "message": "로그인 완료"

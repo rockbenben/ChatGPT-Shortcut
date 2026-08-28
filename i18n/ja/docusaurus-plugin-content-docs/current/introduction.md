@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: AI Short 紹介
 title: 厳選 AI プロンプト集｜ワンクリックコピーで効率アップ
@@ -64,4 +64,3 @@ AI Short (ChatGPT Shortcut) は、シーン別に整理された AI プロンプ
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

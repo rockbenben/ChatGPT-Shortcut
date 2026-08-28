@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Введение в AI Short
 title: Подборка ИИ-промптов | Копируйте в один клик
@@ -64,4 +64,3 @@ AI Short (ChatGPT Shortcut) — это библиотека промптов д�
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

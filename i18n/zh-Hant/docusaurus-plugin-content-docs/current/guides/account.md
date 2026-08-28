@@ -64,7 +64,7 @@ AiShort 不登入也能用——但**登入後**你可以收藏喜歡的提示�
 
 「我的帳戶 → 資料管理」一欄提供三項操作：
 
-- **清除快取** — 刷新本地快取資料；資料不同步或顯示異常時使用，收藏和自訂提示詞不會丟，只是強制重新同步
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **匯出提示詞** — 匯出為 JSON 檔案，方便備份（詳見[自定義提示詞](./user-prompts#導出備份)）
 - **匯入提示詞** — 從 JSON 檔案匯入提示詞和收藏
 

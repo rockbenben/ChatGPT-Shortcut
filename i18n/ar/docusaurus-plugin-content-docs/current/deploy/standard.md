@@ -21,7 +21,7 @@ yarn
 # local development
 yarn start
 
-# build: outputs static files to the build directory, using the defaultLocale in scripts/i18nLocales.mjs
+# build: يبني كل اللغات الـ18 على دفعات (تمريرة واحدة تستنفد الذاكرة)؛ الناتج في build/ — للغة واحدة انظر --locale أدناه
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 أولًا 👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork)، ثم انشر:
 
-1. سجّل الدخول إلى [Cloudflare Pages](https://pages.cloudflare.com/) واختر **Create a project**
+1. افتح [صفحة إنشاء Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) واختر **Connect to Git**. إذا وصلت إلى صفحة Create a Worker بدلًا من ذلك، فمدخل Pages هو رابط **Get started** في الأسفل
 2. اربط المستودع الذي قمت بعمل Fork له للتو
 3. اضبط إعدادات البناء:
    - **Build command**: `yarn build --locale zh-Hans` (استبدل اللغة بالمطلوبة، مثل `yarn build --locale pt` للبرتغالية)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. انقر **Deploy** وانتظر حتى ينتهي Cloudflare Pages من البناء
+
+> **`YARN_VERSION` مطلوب**: يستخدم نظام البناء v3 من Cloudflare الإصدار Yarn 4.9.1 افتراضيًا، ولم يعد يستنتج الإصدار من `yarn.lock` كما كان يفعل v2. هذا المستودع يستخدم lockfile بصيغة v1 من Yarn Classic، لذا بدون تثبيته سيتولاه Yarn 4. أما Node فلا يحتاج إلى ضبط: الإصدار الافتراضي في v3 هو 22.16.0، وهو بالفعل أعلى من الـ 20 المطلوبة.
 
 كل push لاحق يُشغّل البناء والنشر تلقائيًا.
 

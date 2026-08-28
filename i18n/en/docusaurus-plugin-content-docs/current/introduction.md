@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: Introduction
 title: Curated AI Prompt Library | Copy & Boost Productivity
@@ -31,7 +31,7 @@ That's it — for more, see the [Getting Started guide](./guides/getting-started
 
 ## Advanced Features (After Login)
 
-📂 **My Collection**: Drag-and-drop sorting and custom tag classification.
+📂 **My collection**: Drag-and-drop sorting and custom tag classification.
 
 ✏️ **Custom Prompts**: Create, edit, and manage your own prompts.
 
@@ -64,4 +64,3 @@ Welcome to join our community to exchange ideas and feedback:
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

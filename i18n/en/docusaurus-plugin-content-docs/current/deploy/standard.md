@@ -21,7 +21,7 @@ yarn
 # local development
 yarn start
 
-# build: outputs static files to the build directory, using the defaultLocale in scripts/i18nLocales.mjs
+# build: builds all 18 locales in chunks (a single pass runs out of memory); output goes to build/ — see --locale below for just one language
 yarn build
 ```
 
@@ -39,12 +39,15 @@ Click the button below for one-click deployment to Vercel:
 
 First 👉 [Fork this project](https://github.com/rockbenben/ChatGPT-Shortcut/fork), then deploy:
 
-1. Sign in to [Cloudflare Pages](https://pages.cloudflare.com/) and choose **Create a project**
+1. Open the [Pages creation page](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) and choose **Connect to Git**. If you land on Create a Worker instead, the Pages entry is the **Get started** link at the bottom
 2. Connect the repository you just forked
 3. Configure the build:
    - **Build command**: `yarn build --locale zh-Hans` (swap the locale for the language you want to deploy, e.g. `yarn build --locale pt` for Portuguese)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Click **Deploy** and wait for Cloudflare Pages to finish building
+
+> **`YARN_VERSION` is required**: Cloudflare's v3 build system defaults to Yarn 4.9.1 and no longer infers the version from `yarn.lock` the way v2 did. This repository ships a Yarn Classic v1 lockfile, so without pinning it, Yarn 4 takes over. Node needs no setting — v3 defaults to 22.16.0, already above the 20 this project requires.
 
 Every push afterwards automatically triggers a build and deploy.
 

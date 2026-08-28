@@ -6,7 +6,7 @@ description: Collect your favorite AI prompts and organize them with custom tags
 
 # My Collection
 
-Once you're logged in, **My Collection** gives you a bookmarks-style space for your favorite prompts — drag to reorder, tag for context, and filter by tag when you need something fast. Prompts you create show up here too.
+Once you're logged in, **My collection** gives you a bookmarks-style space for your favorite prompts — drag to reorder, tag for context, and filter by tag when you need something fast. Prompts you create show up here too.
 
 :::tip[Online vs. Offline]
 
@@ -18,7 +18,7 @@ In the online edition, collection data is stored on the server (login required).
 
 The view switcher at the top of the homepage offers two modes:
 
-- **My Collection**: Shows your collected and custom prompts
+- **My collection**: Shows your collected and custom prompts
 - **Explore**: Browses the public curated library
 
 Your browser remembers the last view you used, so you pick up right where you left off.

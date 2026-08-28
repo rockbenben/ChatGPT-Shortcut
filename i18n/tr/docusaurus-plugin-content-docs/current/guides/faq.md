@@ -83,7 +83,7 @@ Promptu hemen değiştirmek yerine önce şu yönlerden ayarlama yapın:
 2. **AI'dan iyileştirme isteyin**: Memnun olmadığınız yanıtlar için "lütfen daha X biçimde değiştir" veya "lütfen Y stilinde yeniden yaz" gibi takip soruları sorun; AI genellikle bir iki turda hedefe yaklaşır. AI'a kendi yanıtını puanlayıp geliştirmesini de söyleyebilirsiniz
 3. **Modeller arasında karşılaştırma yapın**: Aynı promptu başka bir modelde (Claude / ChatGPT / Gemini / DeepSeek vb.) tekrar deneyin; modellerin güçlü yönleri farklıdır ve sonuçlar küçümsenmeyecek ölçüde değişebilir
 4. **Topluluğa bakın**: [Topluluk Promptları](./community) içinde daha uygun bir sürüm bulabilirsiniz — iyi promptlarınızı da orada paylaşabilirsiniz
-5. **Geri bildirim verin**: Sorun yaşıyor veya öneriniz var mı? [Geri bildirim](/feedback) sayfasına bekleriz
+5. **Geri bildirim verin**: Sorun yaşıyor veya öneriniz var mı? [Geri bildirim](https://www.aishort.top/tr/feedback) sayfasına bekleriz
 
 ## Promptlarımı nasıl yedeklerim?
 

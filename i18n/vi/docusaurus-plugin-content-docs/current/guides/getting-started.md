@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Bắt đầu
 title: AI Short Khởi động Nhanh | Sao chép Prompt vào ChatGPT/DeepSeek
 description: Bắt đầu nhanh trong 30 giây! Sao chép prompt vào ChatGPT, Gemini, DeepSeek và các mô hình AI khác để nâng chất lượng hội thoại và hiệu quả công việc ngay lập tức.

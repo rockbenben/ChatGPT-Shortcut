@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # 홈 카드 데이터(정적 JSON만 사용, 백엔드 없음)
+└── sessionCache.ts # 로그아웃 시 지울 로컬 흔적(로그아웃 경로 3곳 공용)
 ```
 
 캐싱: API 데이터는 `lscache`와 ETag를 통해 지능적으로 캐시됩니다 — 서버가 304 Not Modified를 반환하면 로컬 캐시를 재사용하여 데이터 전송을 줄입니다.

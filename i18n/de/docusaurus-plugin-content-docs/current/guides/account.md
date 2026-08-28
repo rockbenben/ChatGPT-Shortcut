@@ -64,7 +64,7 @@ Die Kontoseite zeigt Ihr **Level (L0–L9)** und den Fortschritt bis zur nächst
 
 Der Bereich „Mein Konto → Datenverwaltung" bietet drei Aktionen:
 
-- **Cache leeren** — aktualisiert lokal zwischengespeicherte Daten; nützlich, wenn Daten nicht synchronisiert werden oder die Anzeige fehlerhaft aussieht. Ihre Sammlungen und benutzerdefinierten Prompts gehen dabei nicht verloren, es wird lediglich eine neue Synchronisierung angestoßen
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Prompts exportieren** — exportiert eine JSON-Datei als Backup (siehe [Benutzerdefinierte Prompts](./user-prompts#prompts-exportieren))
 - **Prompts importieren** — importiert Prompts und Sammlungen aus einer JSON-Datei
 

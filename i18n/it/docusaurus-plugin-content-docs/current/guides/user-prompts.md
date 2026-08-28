@@ -16,7 +16,7 @@ Dopo l'accesso, puoi creare i tuoi prompt e salvarli nell'account per richiamarl
    - **Contenuto del prompt** (obbligatorio): Il testo del prompt; il testo tra parentesi quadre `[...]` viene evidenziato come segnaposto al momento della visualizzazione
    - **Utilizzo** (opzionale): Una breve descrizione di cosa fa il prompt
    - **Note** (opzionale): Fonte, versioni in altre lingue o annotazioni aggiuntive
-3. Lo switch in basso "**Vuoi condividere questo prompt sulla pagina pubblica?**" è attivato per impostazione predefinita — disattivalo per tenere il prompt privato
+3. L'interruttore di condivisione in basso è attivo per impostazione predefinita — disattivalo per mantenere il prompt privato
 4. Clicca su "Crea prompt" per inviare
 
 ![Popup Crea prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Nella vista La Mia Collezione, clicca sul pulsante di modifica (matita) sulla sc
 
 ## Elimina Prompt
 
-Clicca su "Elimina" nel dialogo di modifica. L'eliminazione non può essere annullata — procedi con cautela.
+In «La mia raccolta», premi il pulsante elimina (cestino) sulla card del tuo prompt e conferma. L'eliminazione non è reversibile: procedi con attenzione.
 
 ## Condividi con la Community
 
-Durante la creazione o la modifica, lo switch in basso "**Vuoi condividere questo prompt sulla pagina pubblica?**" controlla la visibilità:
+Durante la creazione o la modifica, l'interruttore di condivisione in basso controlla la visibilità:
 
 - **Attivato (predefinito)**: Il prompt appare nella pagina [Prompt della Community](./community), dove altri utenti possono vederlo e collezionarlo
 - **Disattivato**: Privato — visibile solo a te
@@ -71,7 +71,7 @@ Importa prompt e collezioni da un file JSON:
 1. Vai su "Il mio account" e trova la sezione "Gestione dati → Importa prompt"
 2. Clicca sul pulsante "**Importa prompt**"
 3. Seleziona un file JSON
-4. Il sistema unisce i dati automaticamente (deduplicazione per titolo; i prompt con ID appartenenti a un altro account vengono impostati come privati)
+4. Il sistema unisce i dati automaticamente (confronto per ID: i prompt con lo stesso ID dei tuoi vengono aggiornati, o saltati se il contenuto è identico; quelli senza ID o con ID di un altro account entrano come nuove voci, queste ultime forzate a privato)
 
 ### Collaborazione del Team
 

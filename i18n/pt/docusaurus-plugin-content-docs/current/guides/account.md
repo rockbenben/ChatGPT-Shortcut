@@ -64,7 +64,7 @@ A página da conta exibe seu **nível (L0–L9)** e o progresso até o próximo 
 
 A seção "Minha Conta → Gerenciamento de Dados" oferece três ações:
 
-- **Limpar cache** — atualiza os dados armazenados localmente em cache; use quando os dados não estiverem sincronizando ou a exibição parecer incorreta. Suas coleções e prompts personalizados não são perdidos, isso apenas força uma ressincronização
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **Exportar prompts** — exporta um arquivo JSON para backup (consulte [Prompts Personalizados](./user-prompts#exportar-prompts))
 - **Importar prompts** — importa prompts e coleções de um arquivo JSON
 

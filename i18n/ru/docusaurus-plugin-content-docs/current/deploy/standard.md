@@ -21,7 +21,7 @@ yarn
 # локальная разработка
 yarn start
 
-# сборка: статические файлы выводятся в директорию build, используется defaultLocale из scripts/i18nLocales.mjs
+# сборка: собирает все 18 языков блоками (за один проход не хватает памяти); результат в build/ — для одного языка см. --locale ниже
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 Сначала 👉 [сделайте форк этого проекта](https://github.com/rockbenben/ChatGPT-Shortcut/fork), затем выполните развертывание:
 
-1. Войдите в [Cloudflare Pages](https://pages.cloudflare.com/) и выберите **Create a project**
+1. Откройте [страницу создания Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) и выберите **Connect to Git**. Если попали на Create a Worker, вход в Pages — ссылка **Get started** внизу
 2. Подключите только что форкнутый репозиторий
 3. Настройте сборку:
    - **Build command**: `yarn build --locale zh-Hans` (замените локаль на нужный язык, например `yarn build --locale pt` для португальского)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. Нажмите **Deploy** и дождитесь завершения сборки Cloudflare Pages
+
+> **`YARN_VERSION` обязательна**: система сборки v3 у Cloudflare по умолчанию берёт Yarn 4.9.1 и больше не определяет версию по `yarn.lock`, как это делала v2. В этом репозитории lockfile формата v1 от Yarn Classic, поэтому без закрепления его возьмёт на себя Yarn 4. Node настраивать не нужно: v3 по умолчанию даёт 22.16.0 — уже выше требуемых 20.
 
 Каждый последующий push автоматически запускает сборку и развертывание.
 

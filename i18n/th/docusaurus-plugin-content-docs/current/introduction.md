@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: แนะนำ AI Short
 title: ไลบรารี Prompt AI ที่คัดสรร | คัดลอกเพื่อใช้งานทันที
@@ -64,4 +64,3 @@ Prompt มาจากการคัดสรรจากอินเทอร�
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="สนทนาบน Discord" />
 </a>
-

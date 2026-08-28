@@ -81,7 +81,7 @@ Ne changez pas tout de suite de prompt ; commencez par ajuster sur ces axes :
 2. **Faites itérer l'IA** : à une réponse insatisfaisante, demandez « rends-la plus X » ou « réécris dans le style Y ». En une ou deux itérations, l'IA s'approche du résultat voulu ; vous pouvez aussi lui demander de noter sa propre réponse et de l'améliorer
 3. **Comparez les modèles** : reprenez le même prompt sur un autre modèle (Claude / ChatGPT / Gemini / DeepSeek, etc.) — chaque modèle a ses points forts, et les résultats peuvent varier sensiblement
 4. **Essayez la communauté** : les [Prompts de la communauté](./community) contiennent peut-être une variante plus adaptée — et n'hésitez pas à y partager vos meilleurs prompts
-5. **Faites un retour** : si vous rencontrez un problème ou avez une suggestion, partagez-le via [Retour d'expérience](/feedback)
+5. **Faites un retour** : si vous rencontrez un problème ou avez une suggestion, partagez-le via [Retour d'expérience](https://www.aishort.top/fr/feedback)
 
 ## Comment sauvegarder mes prompts ?
 

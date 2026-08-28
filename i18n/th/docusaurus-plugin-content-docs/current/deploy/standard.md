@@ -21,7 +21,7 @@ yarn
 # พัฒนาในเครื่อง
 yarn start
 
-# build: ออก static files ไปยังไดเรกทอรี build โดยใช้ defaultLocale ใน scripts/i18nLocales.mjs
+# build: สร้างครบทั้ง 18 ภาษาแบบแบ่งชุด (ทำครั้งเดียวจะหน่วยความจำหมด) ผลลัพธ์อยู่ใน build/ — ถ้าต้องการภาษาเดียวดู --locale ด้านล่าง
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 ก่อนอื่น 👉 [Fork โปรเจกต์นี้](https://github.com/rockbenben/ChatGPT-Shortcut/fork) จากนั้นติดตั้ง:
 
-1. ลงชื่อเข้าใช้ [Cloudflare Pages](https://pages.cloudflare.com/) แล้วเลือก **Create a project**
+1. เปิด [หน้าสร้าง Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) แล้วเลือก **Connect to Git** หากไปโผล่ที่หน้า Create a Worker ทางเข้า Pages คือลิงก์ **Get started** ที่ด้านล่าง
 2. เชื่อมต่อ repository ที่คุณ fork มา
 3. กำหนดค่า build:
    - **Build command**: `yarn build --locale zh-Hans` (เปลี่ยน locale เป็นภาษาที่ต้องการ เช่น `yarn build --locale pt` สำหรับโปรตุเกส)
    - **Output directory**: `build`
+   - **Environment variables**: `YARN_VERSION` = `1.22.22`
 4. คลิก **Deploy** แล้วรอให้ Cloudflare Pages build เสร็จ
+
+> **ต้องตั้ง `YARN_VERSION`**: ระบบบิลด์ v3 ของ Cloudflare ใช้ Yarn 4.9.1 เป็นค่าเริ่มต้น และไม่อนุมานเวอร์ชันจาก `yarn.lock` อีกต่อไปเหมือน v2 รีโพนี้ใช้ lockfile แบบ v1 ของ Yarn Classic หากไม่ล็อกไว้ Yarn 4 จะเข้ามาจัดการแทน ส่วน Node ไม่ต้องตั้ง — v3 ใช้ 22.16.0 เป็นค่าเริ่มต้น ซึ่งสูงกว่า 20 ที่โครงการต้องการอยู่แล้ว
 
 ทุก push หลังจากนี้จะ trigger การ build และ deploy โดยอัตโนมัติ
 

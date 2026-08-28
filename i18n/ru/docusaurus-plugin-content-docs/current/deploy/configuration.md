@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # данные карточек главной (только статический JSON, без бэкенда)
+└── sessionCache.ts # локальные следы, стираемые при выходе (общее для 3 путей)
 ```
 
 Кэширование: данные API кэшируются интеллектуально с помощью `lscache` и ETag — когда сервер возвращает 304 Not Modified, используется локальный кэш, что снижает объём передаваемых данных.

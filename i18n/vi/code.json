@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI đang trả lời"
   },
+  "comments.emoji.label": {
+    "message": "Chèn biểu tượng cảm xúc"
+  },
   "comments.empty": {
     "message": "Chưa có bình luận"
+  },
+  "comments.gif.label": {
+    "message": "Chèn GIF"
   },
   "comments.heading": {
     "message": "Thảo luận"
@@ -264,10 +270,10 @@
     "message": "Dán vào ChatGPT, Claude, Gemini, DeepSeek hoặc giao diện AI hội thoại khác và chạy."
   },
   "input.newPassword": {
-    "message": "Vui lòng nhập mật khẩu mới!"
+    "message": "Vui lòng nhập mật khẩu mới"
   },
   "input.resetPassword.code": {
-    "message": "Vui lòng nhập mã đặt lại!"
+    "message": "Vui lòng nhập mã đặt lại"
   },
   "input.search.placeholder": {
     "message": "viết, dịch…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "Điều khoản Dịch vụ"
   },
-  "link.userCenter": {
-    "message": "Trung tâm Người dùng"
-  },
   "login.google.button": {
     "message": "Đăng nhập bằng Google"
   },
@@ -396,13 +399,13 @@
     "message": "Không thể gửi prompt, vui lòng thử lại sau"
   },
   "message.addPrompt.success": {
-    "message": "Gửi prompt thành công!"
+    "message": "Đã gửi prompt"
   },
   "message.cache.cleared": {
     "message": "Đã xóa bộ nhớ cache"
   },
   "message.cache.clearError": {
-    "message": "Không thể xóa cache"
+    "message": "Không thể xóa cache, vui lòng thử lại sau"
   },
   "message.cannotFavorOwn": {
     "message": "Không thể yêu thích prompt của chính bạn"
@@ -414,10 +417,10 @@
     "message": "Đã tạo prompt riêng tư, nhưng không thể xoá mục yêu thích gốc. Vui lòng xoá thủ công để tránh trùng lặp."
   },
   "message.convertToPrivate.success": {
-    "message": "Đã chuyển thành prompt riêng tư thành công"
+    "message": "Đã chuyển thành prompt riêng tư"
   },
   "message.copied": {
-    "message": "Sao chép thành công"
+    "message": "Đã sao chép"
   },
   "message.deletePrompt.confirm.content": {
     "message": "Bạn có chắc muốn xóa prompt này?"
@@ -429,7 +432,7 @@
     "message": "Không thể xóa prompt, vui lòng thử lại sau"
   },
   "message.deletePrompt.success": {
-    "message": "Xóa prompt thành công!"
+    "message": "Đã xóa prompt"
   },
   "message.error": {
     "message": "Đã xảy ra lỗi khi xử lý"
@@ -450,7 +453,7 @@
     "message": "Không có prompt để xuất. Tạo hoặc yêu thích một số trước."
   },
   "message.export.success": {
-    "message": "Xuất prompt thành công!"
+    "message": "Đã xuất prompt"
   },
   "message.forgotPassword.info": {
     "message": "Nếu bạn quên mật khẩu hiện tại, bạn có thể đặt lại qua email. Chúng tôi sẽ gửi email có liên kết đặt lại đến địa chỉ email đã đăng ký của bạn."
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "Định dạng dữ liệu không hợp lệ"
   },
+  "message.import.nothing": {
+    "message": "Mọi thứ trong tệp đã có sẵn, không có gì để nhập"
+  },
   "message.import.parseError": {
     "message": "Lỗi phân tích JSON"
   },
   "message.import.partial": {
-    "message": "Nhập một phần"
+    "message": "Đã nhập một số prompt"
   },
   "message.import.success": {
-    "message": "Nhập thành công!"
+    "message": "Đã nhập"
   },
   "message.loadFailed": {
-    "message": "Không thể tải dữ liệu"
+    "message": "Không thể tải dữ liệu, vui lòng thử lại sau"
   },
   "message.loginRequired": {
     "message": "Vui lòng đăng nhập trước"
@@ -483,7 +489,7 @@
     "message": "Xác nhận Đăng xuất"
   },
   "message.noComments": {
-    "message": "Chưa có bình luận nào, hãy là người đầu tiên bình luận!"
+    "message": "Chưa có bình luận nào, hãy là người đầu tiên bình luận"
   },
   "message.noFavorites": {
     "message": "Chưa có mục yêu thích, hãy khám phá prompt bạn thích"
@@ -498,7 +504,7 @@
     "message": "Đã lưu bố cục"
   },
   "message.orderSaveFailed": {
-    "message": "Không thể lưu bố cục"
+    "message": "Không thể lưu bố cục, vui lòng thử lại sau"
   },
   "message.postComment.error": {
     "message": "Gửi bình luận thất bại. Vui lòng thử lại sau."
@@ -519,34 +525,34 @@
     "message": "Không thể đặt lại mật khẩu, vui lòng thử lại sau"
   },
   "message.resetPassword.success": {
-    "message": "Đặt lại mật khẩu thành công!"
+    "message": "Đã đặt lại mật khẩu"
   },
   "message.success.forgotPassword": {
-    "message": "Email đặt lại mật khẩu đã được gửi!"
+    "message": "Email đặt lại mật khẩu đã được gửi"
   },
   "message.success.login": {
-    "message": "Đăng nhập thành công!"
+    "message": "Đã đăng nhập"
   },
   "message.success.passwordChanged": {
-    "message": "Đổi mật khẩu thành công!"
+    "message": "Đã đổi mật khẩu"
   },
   "message.success.passwordlessLink": {
-    "message": "Liên kết đăng nhập không mật khẩu đã được gửi đến email của bạn!"
+    "message": "Liên kết đăng nhập không mật khẩu đã được gửi đến email của bạn"
   },
   "message.success.register": {
-    "message": "Đăng ký thành công!"
+    "message": "Đã tạo tài khoản"
   },
   "message.tagsUpdated": {
     "message": "Đã cập nhật thẻ"
   },
   "message.tagsUpdateFailed": {
-    "message": "Không thể cập nhật thẻ"
+    "message": "Không thể cập nhật thẻ, vui lòng thử lại sau"
   },
   "message.updatePrompt.error": {
     "message": "Không thể cập nhật prompt, vui lòng thử lại sau"
   },
   "message.updatePrompt.success": {
-    "message": "Cập nhật prompt thành công!"
+    "message": "Đã cập nhật prompt"
   },
   "modal.clearCache.title": {
     "message": "Xóa Cache?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "Bản dịch"
+  },
+  "search.submit": {
+    "message": "Tìm kiếm"
   },
   "share.copy": {
     "message": "Sao chép"
@@ -1127,11 +1136,11 @@
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " vào {date}",
+    "message": "vào {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " bởi {user}",
+    "message": "bởi {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1227,37 +1236,37 @@
     "message": "Vui lòng nhập nội dung bình luận"
   },
   "validation.confirmPassword.required": {
-    "message": "Vui lòng xác nhận mật khẩu mới!"
+    "message": "Vui lòng xác nhận mật khẩu mới"
   },
   "validation.currentPassword.required": {
-    "message": "Vui lòng nhập mật khẩu hiện tại!"
+    "message": "Vui lòng nhập mật khẩu hiện tại"
   },
   "validation.email.invalid": {
-    "message": "Vui lòng nhập địa chỉ email hợp lệ!"
+    "message": "Vui lòng nhập địa chỉ email hợp lệ"
   },
   "validation.email.required": {
-    "message": "Vui lòng nhập email!"
+    "message": "Vui lòng nhập email"
   },
   "validation.password.length": {
     "message": "Mật khẩu phải có ít nhất 6 ký tự"
   },
   "validation.password.match": {
-    "message": "Mật khẩu không khớp!"
+    "message": "Mật khẩu không khớp"
   },
   "validation.password.required": {
-    "message": "Vui lòng nhập mật khẩu!"
+    "message": "Vui lòng nhập mật khẩu"
   },
   "validation.promptContent.required": {
-    "message": "Vui lòng nhập nội dung prompt!"
+    "message": "Vui lòng nhập nội dung prompt"
   },
   "validation.promptTitle.required": {
-    "message": "Vui lòng nhập tiêu đề prompt!"
+    "message": "Vui lòng nhập tiêu đề prompt"
   },
   "validation.replyRequired": {
     "message": "Vui lòng nhập nội dung trả lời"
   },
   "validation.username.required": {
-    "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký!"
+    "message": "Vui lòng nhập tên người dùng hoặc email đã đăng ký"
   },
   "vote.downvote.alreadyVoted": {
     "message": "Bạn đã không thích prompt này trong phiên này."
@@ -1266,7 +1275,7 @@
     "message": "Không thể bỏ thích. Vui lòng thử lại."
   },
   "vote.downvote.success": {
-    "message": "Đã không thích prompt này!"
+    "message": "Đã không thích prompt này"
   },
   "vote.loginRequired": {
     "message": "Vui lòng đăng nhập để bình chọn."
@@ -1278,7 +1287,7 @@
     "message": "Không thể thích. Vui lòng thử lại."
   },
   "vote.upvote.success": {
-    "message": "Đã thích prompt này!"
+    "message": "Đã thích prompt này"
   },
   "auth.callback.title": {
     "message": "Hoàn tất đăng nhập"

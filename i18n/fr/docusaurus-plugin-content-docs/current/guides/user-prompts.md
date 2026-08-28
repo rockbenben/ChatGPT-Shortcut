@@ -16,7 +16,7 @@ Après connexion, vous pouvez créer vos propres prompts et les enregistrer dans
    - **Contenu du prompt** (obligatoire)&nbsp;: le corps du prompt&nbsp;; le texte entre crochets `[...]` est mis en évidence comme espace réservé à l'affichage
    - **Utilisation** (facultatif)&nbsp;: une brève description de ce que fait le prompt
    - **Remarques** (facultatif)&nbsp;: source, versions en d'autres langues, ou notes complémentaires
-3. L'interrupteur «&nbsp;Souhaitez-vous partager ce prompt sur la page publique&nbsp;?&nbsp;» en bas est activé par défaut — désactivez-le pour rendre le prompt privé
+3. L'interrupteur de partage en bas est activé par défaut — désactivez-le pour garder le prompt privé
 4. Cliquez sur «&nbsp;Créer un prompt&nbsp;» pour valider
 
 ![Fenêtre de création de prompt](/img/docs/user-prompts-create.png)
@@ -39,11 +39,11 @@ Dans la vue Ma Collection, cliquez sur le bouton d'édition (crayon) sur la cart
 
 ## Supprimer un prompt
 
-Cliquez sur «&nbsp;Supprimer&nbsp;» dans le dialogue d'édition. La suppression est irréversible — soyez prudent.
+Dans « Ma collection », cliquez sur le bouton de suppression (corbeille) de la carte de votre prompt, puis confirmez. La suppression est irréversible, procédez avec prudence.
 
 ## Partager avec la communauté
 
-Lors de la création ou de l'édition, l'interrupteur «&nbsp;Souhaitez-vous partager ce prompt sur la page publique&nbsp;?&nbsp;» en bas contrôle la visibilité&nbsp;:
+Lors de la création ou de la modification, l'interrupteur de partage en bas contrôle la visibilité :
 
 - **Activé (par défaut)**&nbsp;: le prompt apparaît sur la page [Prompts de la communauté](./community), où les autres utilisateurs peuvent le voir et le collectionner
 - **Désactivé**&nbsp;: prompt privé — visible uniquement par vous
@@ -71,7 +71,7 @@ Importez des prompts et des collections depuis un fichier JSON&nbsp;:
 1. Allez dans «&nbsp;Mon Compte&nbsp;» et trouvez la rubrique «&nbsp;Gestion des Données → Importer les prompts&nbsp;»
 2. Cliquez sur le bouton «&nbsp;Importer les données&nbsp;»
 3. Sélectionnez un fichier JSON
-4. Le système fusionne automatiquement les données (déduplication par titre&nbsp;; les prompts dont l'ID appartient à un autre compte passent automatiquement en privé)
+4. Les données sont fusionnées automatiquement (correspondance par ID : les prompts partageant un ID avec les vôtres sont mis à jour, ou ignorés si le contenu est identique ; ceux sans ID ou avec un ID d'un autre compte sont importés comme nouvelles entrées, ces derniers forcés en privé)
 
 ### Collaboration en équipe
 

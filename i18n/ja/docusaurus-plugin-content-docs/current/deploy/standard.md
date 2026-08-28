@@ -21,7 +21,7 @@ yarn
 # ローカル開発
 yarn start
 
-# ビルド：静的ファイルを build ディレクトリに出力。使用言語は scripts/i18nLocales.mjs の defaultLocale に従う
+# ビルド：18 言語すべてを分割ビルド（一括だと OOM）。出力は build/ ——1 言語だけなら下の --locale を参照
 yarn build
 ```
 
@@ -39,12 +39,15 @@ yarn build
 
 まず 👉 [このプロジェクトをフォーク](https://github.com/rockbenben/ChatGPT-Shortcut/fork) してから、以下の手順でデプロイします：
 
-1. [Cloudflare Pages](https://pages.cloudflare.com/) にサインインし、**Create a project** を選択します
+1. [Pages 作成ページ](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/pages) を開き、**Connect to Git** を選択します。Create a Worker の画面に着いた場合、Pages の入口は下部の **Get started** です
 2. フォークしたリポジトリを接続します
 3. ビルド設定を行います：
    - **Build command**：`yarn build --locale zh-Hans`（デプロイしたい言語の locale に変更してください。例：ポルトガル語の場合は `yarn build --locale pt`）
    - **Output directory**：`build`
+   - **Environment variables**：`YARN_VERSION` = `1.22.22`
 4. **Deploy** をクリックし、Cloudflare Pages のビルド完了を待ちます
+
+> **`YARN_VERSION` は省略できません**：Cloudflare の v3 ビルドシステムは Yarn 4.9.1 が既定で、v2 のように `yarn.lock` からバージョンを推定しなくなりました。本リポジトリは Yarn Classic の v1 lockfile なので、固定しないと Yarn 4 が処理します。Node は設定不要です —— v3 の既定は 22.16.0 で、本プロジェクトが要求する 20 以上を満たしています。
 
 以降はコードをプッシュするたびに自動でビルドとデプロイがトリガーされます。
 

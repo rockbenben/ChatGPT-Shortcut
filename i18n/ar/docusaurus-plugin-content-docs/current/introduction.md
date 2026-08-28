@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_label: مقدمة AI Short
 title: مكتبة مطالبات AI المختارة | انسخ بنقرة واحدة لتعزيز الكفاءة
@@ -64,4 +64,3 @@ AI Short (ChatGPT Shortcut) هي مكتبة مطالبات AI مصنّفة حس�
 <a href="https://discord.gg/PZTQfJ4GjX">
    <img src="https://img.shields.io/discord/1048780149899939881?color=%2385c8c8&label=Discord&logo=discord&style=for-the-badge" alt="chat on Discord" />
 </a>
-

@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Avvio Rapido
 title: Guida introduttiva AI Short | Copia prompt in ChatGPT/DeepSeek
 description: Avvio rapido in 30 secondi! Copia prompt in ChatGPT, Gemini, DeepSeek e altri modelli IA per migliorare immediatamente la qualità delle conversazioni e l'efficienza lavorativa.

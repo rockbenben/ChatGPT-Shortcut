@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "La IA está respondiendo"
   },
+  "comments.emoji.label": {
+    "message": "Insertar emoji"
+  },
   "comments.empty": {
     "message": "Aún no hay comentarios"
+  },
+  "comments.gif.label": {
+    "message": "Insertar GIF"
   },
   "comments.heading": {
     "message": "Discusión"
@@ -264,10 +270,10 @@
     "message": "Pega en ChatGPT, Claude, Gemini, DeepSeek u otra interfaz de IA conversacional y ejecútalo."
   },
   "input.newPassword": {
-    "message": "¡Por favor ingresa una nueva contraseña!"
+    "message": "Por favor ingresa una nueva contraseña"
   },
   "input.resetPassword.code": {
-    "message": "¡Por favor ingresa tu código de restablecimiento!"
+    "message": "Por favor ingresa tu código de restablecimiento"
   },
   "input.search.placeholder": {
     "message": "escritura, traducción…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "Términos de servicio"
   },
-  "link.userCenter": {
-    "message": "Centro de usuario"
-  },
   "login.google.button": {
     "message": "Iniciar sesión con Google"
   },
@@ -396,13 +399,13 @@
     "message": "Error al enviar el prompt, por favor inténtalo de nuevo más tarde"
   },
   "message.addPrompt.success": {
-    "message": "¡Prompt enviado con éxito!"
+    "message": "Prompt enviado"
   },
   "message.cache.cleared": {
     "message": "Caché borrada"
   },
   "message.cache.clearError": {
-    "message": "Error al borrar caché"
+    "message": "Error al borrar caché, por favor inténtalo de nuevo más tarde"
   },
   "message.cannotFavorOwn": {
     "message": "No puedes marcar como favorito tu propio prompt"
@@ -414,10 +417,10 @@
     "message": "Prompt privado creado, pero no se pudo quitar el favorito original. Elimínalo manualmente para evitar duplicados."
   },
   "message.convertToPrivate.success": {
-    "message": "Convertido a prompt privado con éxito"
+    "message": "Convertido a prompt privado"
   },
   "message.copied": {
-    "message": "Copiado con éxito"
+    "message": "Copiado"
   },
   "message.deletePrompt.confirm.content": {
     "message": "¿Estás seguro de que quieres eliminar este prompt?"
@@ -429,7 +432,7 @@
     "message": "Error al eliminar el prompt, por favor inténtalo de nuevo más tarde"
   },
   "message.deletePrompt.success": {
-    "message": "¡Prompt eliminado con éxito!"
+    "message": "Prompt eliminado"
   },
   "message.error": {
     "message": "Ocurrió un error durante el procesamiento"
@@ -450,7 +453,7 @@
     "message": "No hay prompts para exportar. Crea o marca algunos como favoritos primero."
   },
   "message.export.success": {
-    "message": "¡Prompts exportados con éxito!"
+    "message": "Prompts exportados"
   },
   "message.forgotPassword.info": {
     "message": "Si olvidaste tu contraseña actual, puedes restablecerla por correo electrónico. Enviaremos un correo electrónico con un enlace de restablecimiento a tu dirección de correo electrónico registrada."
@@ -461,6 +464,9 @@
   "message.import.invalid": {
     "message": "Formato de datos inválido"
   },
+  "message.import.nothing": {
+    "message": "Todo lo del archivo ya está aquí, no hay nada que importar"
+  },
   "message.import.parseError": {
     "message": "Error de análisis JSON"
   },
@@ -468,10 +474,10 @@
     "message": "Importación parcial"
   },
   "message.import.success": {
-    "message": "¡Importación exitosa!"
+    "message": "Importado"
   },
   "message.loadFailed": {
-    "message": "Error al cargar los datos"
+    "message": "Error al cargar los datos, por favor inténtalo de nuevo más tarde"
   },
   "message.loginRequired": {
     "message": "Por favor, inicia sesión primero"
@@ -483,7 +489,7 @@
     "message": "Confirmar cierre de sesión"
   },
   "message.noComments": {
-    "message": "Aún no hay comentarios, ¡sé el primero en comentar!"
+    "message": "Aún no hay comentarios, sé el primero en comentar"
   },
   "message.noFavorites": {
     "message": "Aún no hay favoritos, descubre prompts que te gusten"
@@ -498,7 +504,7 @@
     "message": "Disposición guardada"
   },
   "message.orderSaveFailed": {
-    "message": "Error al guardar la disposición"
+    "message": "Error al guardar la disposición, por favor inténtalo de nuevo más tarde"
   },
   "message.postComment.error": {
     "message": "No se pudo enviar el comentario. Inténtalo de nuevo más tarde."
@@ -519,34 +525,34 @@
     "message": "Error al restablecer la contraseña, por favor inténtalo de nuevo más tarde"
   },
   "message.resetPassword.success": {
-    "message": "¡Contraseña restablecida con éxito!"
+    "message": "Contraseña restablecida"
   },
   "message.success.forgotPassword": {
-    "message": "¡Correo electrónico de restablecimiento de contraseña enviado!"
+    "message": "Correo electrónico de restablecimiento de contraseña enviado"
   },
   "message.success.login": {
-    "message": "¡Inicio de sesión exitoso!"
+    "message": "Sesión iniciada"
   },
   "message.success.passwordChanged": {
-    "message": "¡Contraseña cambiada con éxito!"
+    "message": "Contraseña cambiada"
   },
   "message.success.passwordlessLink": {
-    "message": "¡Enlace de inicio de sesión sin contraseña enviado a tu correo electrónico!"
+    "message": "Enlace de inicio de sesión sin contraseña enviado a tu correo electrónico"
   },
   "message.success.register": {
-    "message": "¡Registro exitoso!"
+    "message": "Cuenta creada"
   },
   "message.tagsUpdated": {
     "message": "Etiquetas actualizadas"
   },
   "message.tagsUpdateFailed": {
-    "message": "Error al actualizar etiquetas"
+    "message": "Error al actualizar etiquetas, por favor inténtalo de nuevo más tarde"
   },
   "message.updatePrompt.error": {
     "message": "Error al actualizar el prompt, por favor inténtalo de nuevo más tarde"
   },
   "message.updatePrompt.success": {
-    "message": "¡Prompt actualizado con éxito!"
+    "message": "Prompt actualizado"
   },
   "modal.clearCache.title": {
     "message": "¿Borrar Caché?"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "Traducción"
+  },
+  "search.submit": {
+    "message": "Buscar"
   },
   "share.copy": {
     "message": "Copiar"
@@ -872,7 +881,7 @@
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "info",
+    "message": "información",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
@@ -880,7 +889,7 @@
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "tip",
+    "message": "consejo",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
@@ -920,7 +929,7 @@
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Navegación por la página de la lista de blogs ",
+    "message": "Navegación por la página de la lista de blogs",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
@@ -968,19 +977,19 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copied",
+    "message": "Copiado",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copy",
+    "message": "Copiar",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
+    "message": "Copiar código al portapapeles",
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
+    "message": "Activar/desactivar ajuste de línea",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.colorToggle.ariaLabel": {
@@ -996,7 +1005,7 @@
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "modo del sistema",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1008,27 +1017,27 @@
     "description": "Title for link to heading"
   },
   "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
+    "message": "Ir al contenido principal",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "Esta página es un borrador. Solo será visible en el entorno de desarrollo y se excluirá de la versión de producción.",
     "description": "The draft content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "Página en borrador",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "message": "Esta página no está indexada. Los motores de búsqueda no la indexarán y solo podrán acceder a ella los usuarios que dispongan de un enlace directo.",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
+    "message": "Página no indexada",
     "description": "The unlisted content banner title"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
+    "message": "Página de inicio",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -1052,31 +1061,31 @@
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "Cerrar barra de navegación",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
+    "message": "Contraer barra lateral",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
+    "message": "Contraer barra lateral",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
+    "message": "Expandir barra lateral",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
+    "message": "Expandir barra lateral",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
+    "message": "Barra lateral de documentación",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "Mostrar/ocultar barra de navegación",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.docs.tagDocListPageTitle": {
@@ -1088,7 +1097,7 @@
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
+    "message": "Versión: {versionLabel}"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
     "message": "última versión",
@@ -1107,11 +1116,11 @@
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
+    "message": "Contraer la categoría de la barra lateral «{label}»",
     "description": "The ARIA label to collapse the sidebar category"
   },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
+    "message": "Expandir la categoría de la barra lateral «{label}»",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.ErrorPageContent.title": {
@@ -1119,19 +1128,19 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "Inténtalo de nuevo",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "(se abre en una nueva pestaña)",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": " en {date}",
+    "message": "en {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " por {user}",
+    "message": "por {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1139,19 +1148,19 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "Contraer el menú desplegable",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "Expandir el menú desplegable",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
+    "message": "Idiomas",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← Volver al menú principal",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
@@ -1159,15 +1168,15 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NavBar.navAriaLabel": {
-    "message": "Main",
+    "message": "Principal",
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
+    "message": "No hemos podido encontrar lo que buscabas.",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "message": "Ponte en contacto con el propietario del sitio web que te ha redirigido a la URL original e infórmale de que su enlace no funciona.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.NotFound.title": {
@@ -1183,11 +1192,11 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Tags",
+    "message": "Etiquetas",
     "description": "The title of the tag list page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "En esta página",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "title.dataManagement": {
@@ -1227,37 +1236,37 @@
     "message": "Por favor ingresa el contenido del comentario"
   },
   "validation.confirmPassword.required": {
-    "message": "¡Por favor confirma tu nueva contraseña!"
+    "message": "Por favor confirma tu nueva contraseña"
   },
   "validation.currentPassword.required": {
-    "message": "¡Por favor ingresa tu contraseña actual!"
+    "message": "Por favor ingresa tu contraseña actual"
   },
   "validation.email.invalid": {
-    "message": "¡Por favor ingresa una dirección de correo electrónico válida!"
+    "message": "Por favor ingresa una dirección de correo electrónico válida"
   },
   "validation.email.required": {
-    "message": "¡Por favor ingresa tu correo electrónico!"
+    "message": "Por favor ingresa tu correo electrónico"
   },
   "validation.password.length": {
     "message": "La contraseña debe tener al menos 6 caracteres"
   },
   "validation.password.match": {
-    "message": "¡Las contraseñas no coinciden!"
+    "message": "Las contraseñas no coinciden"
   },
   "validation.password.required": {
-    "message": "¡Por favor ingresa la contraseña!"
+    "message": "Por favor ingresa la contraseña"
   },
   "validation.promptContent.required": {
-    "message": "¡Por favor ingresa el contenido del prompt!"
+    "message": "Por favor ingresa el contenido del prompt"
   },
   "validation.promptTitle.required": {
-    "message": "¡Por favor ingresa el título del prompt!"
+    "message": "Por favor ingresa el título del prompt"
   },
   "validation.replyRequired": {
     "message": "Por favor ingresa el contenido de la respuesta"
   },
   "validation.username.required": {
-    "message": "¡Por favor ingresa nombre de usuario o correo electrónico registrado!"
+    "message": "Por favor ingresa nombre de usuario o correo electrónico registrado"
   },
   "vote.downvote.alreadyVoted": {
     "message": "Ya has indicado «No me gusta» en este prompt en esta sesión."

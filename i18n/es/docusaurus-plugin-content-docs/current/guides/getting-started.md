@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_label: Inicio Rápido
 title: AI Short Inicio Rápido - ChatGPT en 30 Segundos
 description: Comienza en 30 segundos. Copia prompts para ChatGPT y Gemini y mejora instantáneamente la calidad de tus conversaciones.

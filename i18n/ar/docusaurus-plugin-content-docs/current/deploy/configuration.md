@@ -63,7 +63,9 @@ src/api/
 ├── favorites.ts   # favorites operations
 ├── myspace.ts     # My Space data (core data source)
 ├── comments.ts    # comment system
-└── user.ts        # user info
+├── user.ts        # user info
+├── homepage.ts    # بيانات بطاقات الصفحة الرئيسية (JSON ثابت فقط، بدون خادم)
+└── sessionCache.ts # آثار محلية تُمسح عند تسجيل الخروج (مشتركة بين 3 مسارات)
 ```
 
 التخزين المؤقت: يُخزَّن بيانات API بذكاء عبر `lscache` مع ETag — عندما يُرجع الخادم 304 Not Modified، يُعاد استخدام التخزين المؤقت المحلي لتقليل نقل البيانات.

@@ -64,7 +64,7 @@ AiShort はログイン不要でご利用いただけます。しかし**ログ�
 
 「マイアカウント → データ管理」セクションでは 3 つの操作が行えます：
 
-- **キャッシュをクリア** — ローカルキャッシュデータを更新します。データが同期されない、または表示がおかしいときに使用してください。コレクションやカスタムプロンプトは失われません。再同期を強制するだけの操作です
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **プロンプトをエクスポート** — バックアップ用の JSON ファイルをエクスポートします（[カスタムプロンプト](./user-prompts#プロンプトをエクスポート) を参照）
 - **プロンプトをインポート** — JSON ファイルからプロンプトとコレクションをインポートします
 

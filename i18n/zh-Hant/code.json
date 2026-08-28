@@ -128,8 +128,14 @@
   "comments.aiReplying": {
     "message": "AI 正在回覆"
   },
+  "comments.emoji.label": {
+    "message": "插入表情"
+  },
   "comments.empty": {
     "message": "暫無評論"
+  },
+  "comments.gif.label": {
+    "message": "插入 GIF"
   },
   "comments.heading": {
     "message": "討論"
@@ -150,7 +156,7 @@
     "message": "AI 提示詞社群"
   },
   "community.loading": {
-    "message": "載入中..."
+    "message": "載入中…"
   },
   "community.notFound": {
     "message": "提示詞未找到"
@@ -198,7 +204,7 @@
     "message": "如何使用這個提示詞？"
   },
   "feedback.description": {
-    "message": "您的反饋對我們很重要！"
+    "message": "你的反饋對我們很重要！"
   },
   "feedback.newIssue": {
     "message": "新建 Issue"
@@ -264,10 +270,10 @@
     "message": "貼上到 ChatGPT、Claude、Gemini、DeepSeek 或其他對話式 AI 介面執行即可。"
   },
   "input.newPassword": {
-    "message": "請輸入新密碼！"
+    "message": "請輸入新密碼"
   },
   "input.resetPassword.code": {
-    "message": "請輸入您的重置代碼！"
+    "message": "請輸入重置代碼"
   },
   "input.search.placeholder": {
     "message": "寫作、翻譯…"
@@ -338,9 +344,6 @@
   "link.terms": {
     "message": "服務條款"
   },
-  "link.userCenter": {
-    "message": "使用者中心"
-  },
   "login.google.button": {
     "message": "透過 Google 登入"
   },
@@ -351,7 +354,7 @@
     "message": "Google 登入失敗"
   },
   "login.google.redirecting": {
-    "message": "正在跳轉到 Google 登入..."
+    "message": "正在跳轉到 Google 登入…"
   },
   "login.login.prompt": {
     "message": "已有帳號？"
@@ -363,13 +366,13 @@
     "message": "密碼登入"
   },
   "login.passwordless.info": {
-    "message": "登入連結將發送至您的電子信箱，點擊即可登入"
+    "message": "登入連結將發送至你的電子信箱，點擊即可登入"
   },
   "login.register.prompt": {
     "message": "還沒有帳號？"
   },
   "login.subtitle.forgotPassword": {
-    "message": "重置連結將發送至您的電子信箱"
+    "message": "重置連結將發送至你的電子信箱"
   },
   "login.subtitle.register": {
     "message": "發現、分享和創造精彩提示詞"
@@ -396,13 +399,13 @@
     "message": "提示詞提交失敗，請稍後重試"
   },
   "message.addPrompt.success": {
-    "message": "提示詞提交成功！"
+    "message": "提示詞已提交"
   },
   "message.cache.cleared": {
     "message": "快取已清除，資料已更新"
   },
   "message.cache.clearError": {
-    "message": "清除快取失敗"
+    "message": "清除快取失敗，請稍後重試"
   },
   "message.cannotFavorOwn": {
     "message": "不能收藏自己的提示詞"
@@ -417,10 +420,10 @@
     "message": "已轉為私有提示詞"
   },
   "message.copied": {
-    "message": "複製成功"
+    "message": "已複製"
   },
   "message.deletePrompt.confirm.content": {
-    "message": "您確定要刪除該提示詞嗎？"
+    "message": "確定要刪除該提示詞嗎？"
   },
   "message.deletePrompt.confirm.title": {
     "message": "確認刪除"
@@ -429,7 +432,7 @@
     "message": "提示詞刪除失敗，請稍後重試"
   },
   "message.deletePrompt.success": {
-    "message": "提示詞刪除成功！"
+    "message": "提示詞已刪除"
   },
   "message.error": {
     "message": "處理錯誤時發生錯誤"
@@ -450,10 +453,10 @@
     "message": "暫無可匯出的提示詞，先建立或收藏一些吧。"
   },
   "message.export.success": {
-    "message": "提示詞匯出成功！"
+    "message": "提示詞已匯出"
   },
   "message.forgotPassword.info": {
-    "message": "我們會向您的註冊電子信箱發送一封包含重置連結的郵件。"
+    "message": "我們會向你的註冊電子信箱發送一封包含重置連結的郵件"
   },
   "message.import.failed": {
     "message": "匯入失敗"
@@ -461,17 +464,20 @@
   "message.import.invalid": {
     "message": "無效的資料格式"
   },
+  "message.import.nothing": {
+    "message": "檔案裡的內容都已存在，沒有需要匯入的"
+  },
   "message.import.parseError": {
     "message": "JSON 解析失敗，請檢查檔案格式"
   },
   "message.import.partial": {
-    "message": "部分匯入成功"
+    "message": "部分提示詞已匯入"
   },
   "message.import.success": {
-    "message": "匯入成功！"
+    "message": "已匯入"
   },
   "message.loadFailed": {
-    "message": "載入資料失敗"
+    "message": "載入資料失敗，請稍後重試"
   },
   "message.loginRequired": {
     "message": "請先登入"
@@ -483,7 +489,7 @@
     "message": "確認登出"
   },
   "message.noComments": {
-    "message": "暫無評論，成為第一個評論者吧！"
+    "message": "暫無評論，成為第一個評論者吧"
   },
   "message.noFavorites": {
     "message": "暫無收藏，去發現喜歡的提示詞吧"
@@ -498,7 +504,7 @@
     "message": "排列已儲存"
   },
   "message.orderSaveFailed": {
-    "message": "排列儲存失敗"
+    "message": "排列儲存失敗，請稍後重試"
   },
   "message.postComment.error": {
     "message": "評論發送失敗，請稍後重試"
@@ -519,40 +525,40 @@
     "message": "密碼重置失敗，請稍後重試"
   },
   "message.resetPassword.success": {
-    "message": "密碼重置成功！"
+    "message": "密碼已重置"
   },
   "message.success.forgotPassword": {
-    "message": "密碼重置郵件已發送！"
+    "message": "密碼重置郵件已發送"
   },
   "message.success.login": {
-    "message": "登入成功！"
+    "message": "已登入"
   },
   "message.success.passwordChanged": {
-    "message": "密碼修改成功！"
+    "message": "密碼已修改"
   },
   "message.success.passwordlessLink": {
-    "message": "免密碼登入連結已發送到您的電子信箱！"
+    "message": "免密碼登入連結已發送到你的電子信箱"
   },
   "message.success.register": {
-    "message": "註冊成功！"
+    "message": "已註冊"
   },
   "message.tagsUpdated": {
     "message": "標籤已更新"
   },
   "message.tagsUpdateFailed": {
-    "message": "標籤更新失敗"
+    "message": "標籤更新失敗，請稍後重試"
   },
   "message.updatePrompt.error": {
     "message": "提示詞更新失敗，請稍後重試"
   },
   "message.updatePrompt.success": {
-    "message": "提示詞更新成功！"
+    "message": "提示詞已更新"
   },
   "modal.clearCache.title": {
     "message": "確認清除快取？"
   },
   "modal.clearCache.warning": {
-    "message": "清除後將重新載入所有資料。"
+    "message": "清除後將重新載入所有資料"
   },
   "modal.editPrompt.title": {
     "message": "編輯提示詞"
@@ -561,7 +567,7 @@
     "message": "忘記密碼"
   },
   "myCollection.header.subtitle": {
-    "message": "管理您建立的提示詞、收藏的內容和自訂標籤"
+    "message": "管理你建立的提示詞、收藏的內容和自訂標籤"
   },
   "myCollection.header.title": {
     "message": "我的收藏"
@@ -618,7 +624,7 @@
     "message": "沒有找到匹配的提示詞"
   },
   "placeholder.comment": {
-    "message": "在此輸入評論…… 支援使用 Markdown 和 HTML 語法"
+    "message": "在此輸入評論… 支援使用 Markdown 和 HTML 語法"
   },
   "placeholder.confirmPassword": {
     "message": "確認新密碼"
@@ -636,13 +642,13 @@
     "message": "密碼"
   },
   "placeholder.promptContent": {
-    "message": "在此輸入詳細的提示詞內容..."
+    "message": "在此輸入詳細的提示詞內容…"
   },
   "placeholder.promptNotes": {
-    "message": "提示詞來源、其他語言版本或補充說明（選填）"
+    "message": "提示詞來源、其他語言版本或補充說明（可選）"
   },
   "placeholder.promptRemark": {
-    "message": "簡要描述提示詞的作用（選填）"
+    "message": "簡要描述提示詞的作用（可選）"
   },
   "placeholder.promptTitle": {
     "message": "給你的提示詞起個名字"
@@ -679,6 +685,9 @@
   },
   "prompt.translation": {
     "message": "譯文"
+  },
+  "search.submit": {
+    "message": "搜索"
   },
   "share.copy": {
     "message": "複製"
@@ -968,7 +977,7 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.CodeBlock.copied": {
-    "message": "複製成功",
+    "message": "已複製",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copy": {
@@ -996,7 +1005,7 @@
     "description": "The name for the light color mode"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "系統模式",
     "description": "The name for the system color mode"
   },
   "theme.common.editThisPage": {
@@ -1123,15 +1132,15 @@
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.IconExternalLink.ariaLabel": {
-    "message": "(opens in new tab)",
+    "message": "（在新分頁中開啟）",
     "description": "The ARIA label for the external link icon"
   },
   "theme.lastUpdated.atDate": {
-    "message": "於 {date} ",
+    "message": "於 {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": "由 {user} ",
+    "message": "由 {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -1139,11 +1148,11 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "收起下拉選單",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "展開下拉選單",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
@@ -1163,7 +1172,7 @@
     "description": "The ARIA label for the main navigation"
   },
   "theme.NotFound.p1": {
-    "message": "我們沒有您要找的頁面。",
+    "message": "我們沒有你要找的頁面。",
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
@@ -1227,37 +1236,37 @@
     "message": "請輸入評論內容"
   },
   "validation.confirmPassword.required": {
-    "message": "請確認新密碼！"
+    "message": "請確認新密碼"
   },
   "validation.currentPassword.required": {
-    "message": "請輸入當前密碼！"
+    "message": "請輸入當前密碼"
   },
   "validation.email.invalid": {
-    "message": "請輸入有效的電子信箱地址！"
+    "message": "請輸入有效的電子信箱地址"
   },
   "validation.email.required": {
-    "message": "請輸入您的電子信箱！"
+    "message": "請輸入電子信箱"
   },
   "validation.password.length": {
     "message": "密碼長度至少為 6 個字元"
   },
   "validation.password.match": {
-    "message": "兩次輸入的密碼不一致！"
+    "message": "兩次輸入的密碼不一致"
   },
   "validation.password.required": {
-    "message": "請輸入密碼！"
+    "message": "請輸入密碼"
   },
   "validation.promptContent.required": {
-    "message": "請輸入提示詞內容！"
+    "message": "請輸入提示詞內容"
   },
   "validation.promptTitle.required": {
-    "message": "請輸入提示詞標題！"
+    "message": "請輸入提示詞標題"
   },
   "validation.replyRequired": {
     "message": "請輸入回覆內容"
   },
   "validation.username.required": {
-    "message": "請輸入使用者名稱或註冊電子信箱！"
+    "message": "請輸入使用者名稱或註冊電子信箱"
   },
   "vote.downvote.alreadyVoted": {
     "message": "本次工作階段中你已踩過該提示詞"
@@ -1266,7 +1275,7 @@
     "message": "踩失敗，請重試"
   },
   "vote.downvote.success": {
-    "message": "已踩！"
+    "message": "已踩"
   },
   "vote.loginRequired": {
     "message": "請先登入後再投票"
@@ -1278,7 +1287,7 @@
     "message": "按讚失敗，請重試"
   },
   "vote.upvote.success": {
-    "message": "已讚！"
+    "message": "已讚"
   },
   "auth.callback.title": {
     "message": "完成登入"
@@ -1293,13 +1302,13 @@
     "message": "登入沒有完成"
   },
   "auth.callback.failedHint": {
-    "message": "登入連結可能已過期或已被使用過。回到首頁重新登入即可。"
+    "message": "登入連結可能已過期或已被使用過。回到首頁重新登入即可"
   },
   "auth.callback.idle": {
     "message": "這裡沒有待處理的登入"
   },
   "auth.callback.idleHint": {
-    "message": "本頁只用於登入跳轉，不需要收藏。"
+    "message": "本頁只用於登入跳轉，不需要收藏"
   },
   "auth.callback.backHome": {
     "message": "返回首頁登入"
@@ -1326,7 +1335,7 @@
     "message": "登入後查看帳戶"
   },
   "account.signInRequiredHint": {
-    "message": "正在帶你回首頁，也可以直接點下面的按鈕。"
+    "message": "正在帶你回首頁，也可以直接點下面的按鈕"
   },
   "myspace.tagManager.color": {
     "message": "標籤顏色"

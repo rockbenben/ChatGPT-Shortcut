@@ -95,14 +95,14 @@
 <table>
   <tr>
     <td width="50%"><img src="static/img/docs/zh/my-collection-view.webp" alt="我的收藏" /></td>
-    <td width="50%"><img src="static/img/docs/zh/extension-sidebar.webp" alt="浏览器扩展" /></td>
+    <td width="50%"><img src="static/img/docs/extension-sidebar.webp" alt="浏览器扩展" /></td>
   </tr>
   <tr>
     <td align="center"><strong>我的收藏</strong> — 拖拽、打标签、个性化组织</td>
     <td align="center"><strong>浏览器扩展</strong> — 内嵌 ChatGPT/Gemini/Claude 侧边栏</td>
   </tr>
   <tr>
-    <td width="50%"><img src="static/img/docs/zh/prompt-card.webp" alt="提示词卡片" /></td>
+    <td width="50%"><img src="static/img/docs/prompt-card.webp" alt="提示词卡片" /></td>
     <td width="50%"><img src="static/img/docs/zh/community-page.png" alt="社区" /></td>
   </tr>
   <tr>

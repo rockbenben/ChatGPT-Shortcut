@@ -64,7 +64,7 @@ AiShort는 로그인 없이도 자유롭게 둘러볼 수 있지만, **로그인
 
 "내 계정 → 데이터 관리" 섹션에서 세 가지 작업을 수행할 수 있습니다:
 
-- **캐시 지우기** — 로컬에 캐시된 데이터를 새로 고칩니다. 데이터가 동기화되지 않거나 화면 표시가 이상할 때 사용하세요. 즐겨찾기와 직접 만든 프롬프트는 사라지지 않으며, 서버에서 다시 동기화할 뿐입니다
+- **Clear local data** — permanently deletes everything this site stores in your browser: favorites, prompts, tags, ordering, and your display name. There is no backup and no undo; export first.
 - **프롬프트 내보내기** — JSON 파일로 백업을 내보냅니다 ([커스텀 프롬프트](./user-prompts#프롬프트-내보내기) 참고)
 - **프롬프트 가져오기** — JSON 파일에서 프롬프트와 즐겨찾기를 가져옵니다
 

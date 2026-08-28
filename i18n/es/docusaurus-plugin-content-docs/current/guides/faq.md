@@ -81,7 +81,7 @@ No cambies el prompt directamente; ajusta antes en estas direcciones:
 2. **Pide optimización a la IA**: ante una respuesta poco satisfactoria, indícale «hazlo más X» o «reescríbelo con el estilo Y». La IA suele acercarse al objetivo en una o dos iteraciones. También puedes pedirle que puntúe su propia respuesta y la mejore.
 3. **Compara entre modelos**: prueba el mismo prompt en otro modelo (Claude / ChatGPT / Gemini / DeepSeek, etc.); cada modelo tiene sus puntos fuertes y los resultados pueden variar bastante.
 4. **Prueba en la comunidad**: en [Prompts de la Comunidad](./community) puede haber una versión más adecuada — y también puedes compartir allí los tuyos.
-5. **Envía sugerencias**: ¿problemas o ideas de mejora? Comparte tus [comentarios](/feedback).
+5. **Envía sugerencias**: ¿problemas o ideas de mejora? Comparte tus [comentarios](https://www.aishort.top/es/feedback).
 
 ## ¿Cómo hago una copia de seguridad de mis prompts?
 
