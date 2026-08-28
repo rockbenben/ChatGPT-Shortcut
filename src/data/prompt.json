@@ -102,11 +102,9 @@
       "remark": "Terjemahkan bahasa lain ke bahasa Inggris, atau tingkatkan kalimat bahasa Inggris yang Anda berikan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-english-translator-and-improver",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 1,
-    "weight": 21338
+    "weight": 22102
   },
   {
     "zh": {
@@ -211,11 +209,9 @@
       "remark": "Optimalkan tata bahasa, kejelasan, dan keringkasan kalimat dan artikel untuk meningkatkan keterbacaan."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 2,
-    "weight": 88373
+    "weight": 94965
   },
   {
     "zh": {
@@ -320,11 +316,9 @@
       "remark": "Gunakan aplikasi pihak ketiga untuk mengubah suara menjadi teks terlebih dahulu, lalu gunakan ChatGPT untuk memprosesnya. Ini juga dapat digunakan untuk mengatur teks yang tidak teratur."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 3,
-    "weight": 2209
+    "weight": 2561
   },
   {
     "zh": {
@@ -429,11 +423,9 @@
       "remark": "Membahas masalah dalam bentuk esai dapat menghasilkan jawaban yang koheren, terstruktur, dan lebih berkualitas."
     },
     "website": "https://learnprompting.org/docs/applied_prompting/short_response",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 4,
-    "weight": 15308
+    "weight": 16023
   },
   {
     "zh": {
@@ -538,11 +530,9 @@
       "remark": "Biarkan ChatGPT menghasilkan kata-kata prompt sesuai dengan persyaratan yang ditentukan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-prompt-generator",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 5,
-    "weight": 5680
+    "weight": 7103
   },
   {
     "zh": {
@@ -647,11 +637,9 @@
       "remark": "Biarkan ChatGPT menghasilkan prompt berdasarkan topik."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chatgpt-prompt-generator",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 6,
-    "weight": 2734
+    "weight": 3484
   },
   {
     "zh": {
@@ -756,11 +744,9 @@
       "remark": "Biarkan ChatGPT menulis ulang prompt untuk kita. Karena logika prompt yang ditulis manusia berbeda dengan mesin, memodifikasi ulang prompt dapat membuat ChatGPT lebih mudah dimengerti."
     },
     "website": "https://learnprompting.org/docs/applied_prompting/short_response#automate-well-defined-prompt-rewriting-with-gpt-3",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 7,
-    "weight": 7876
+    "weight": 8743
   },
   {
     "zh": {
@@ -865,11 +851,9 @@
       "remark": "Prompt penggunaan pribadi, dapat menghasilkan judul bahasa yang sesuai berdasarkan konten artikel."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-title-generator-for-written-pieces",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 8,
-    "weight": 8409
+    "weight": 8968
   },
   {
     "zh": {
@@ -974,11 +958,9 @@
       "remark": "Berdasarkan topik artikel, lanjutkan bagian pembuka untuk menyelesaikan artikel."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 9,
-    "weight": 8847
+    "weight": 9285
   },
   {
     "zh": {
@@ -1083,11 +1065,9 @@
       "remark": "Berikan kesimpulan, data, dan sumber yang relevan dengan topik sebagai referensi."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 10,
-    "weight": 4631
+    "weight": 4896
   },
   {
     "zh": {
@@ -1192,11 +1172,9 @@
       "remark": "Ringkas konten teks menjadi 100 kata."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 11,
-    "weight": 12761
+    "weight": 13183
   },
   {
     "zh": {
@@ -1301,11 +1279,9 @@
       "remark": "Keluarkan kutipan inspiratif dan aforisme bermakna sesuai permintaan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-aphorism-book",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 12,
-    "weight": 1390
+    "weight": 1493
   },
   {
     "zh": {
@@ -1410,11 +1386,9 @@
       "remark": "Berikan rencana perbaikan dan saran penulisan, tetapi jangan memodifikasi dokumen secara langsung. (Secara pribadi merasa hanya cocok untuk guru yang mengoreksi pekerjaan rumah)"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-writing-tutor",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 13,
-    "weight": 3034
+    "weight": 3241
   },
   {
     "zh": {
@@ -1519,11 +1493,9 @@
       "remark": "Untuk topik tertentu, hasilkan stand-up comedy yang lucu berdasarkan topik tersebut, dan cobalah untuk memasukkan elemen kehidupan sehari-hari untuk meningkatkan rasa empati penonton."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stand-up-comedian",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 14,
-    "weight": 3090
+    "weight": 3432
   },
   {
     "zh": {
@@ -1628,11 +1600,9 @@
       "remark": "Keluarkan cerita yang relevan berdasarkan topik dan target audiens."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-storyteller",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 15,
-    "weight": 4638
+    "weight": 4986
   },
   {
     "zh": {
@@ -1737,11 +1707,9 @@
       "remark": "Tulis skenario film, TV, atau Seri Web."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-screenwriter",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 16,
-    "weight": 2610
+    "weight": 2945
   },
   {
     "zh": {
@@ -1846,11 +1814,9 @@
       "remark": "Tulis cerita berdasarkan genre novel."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-novelist",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 17,
-    "weight": 8840
+    "weight": 9728
   },
   {
     "zh": {
@@ -1955,11 +1921,9 @@
       "remark": "Tulis puisi berdasarkan topik."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-poet",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 18,
-    "weight": 2354
+    "weight": 2445
   },
   {
     "zh": {
@@ -2064,11 +2028,9 @@
       "remark": "Berperan sebagai jurnalis untuk menulis berita, laporan khusus, dan artikel opini."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journalist",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 19,
-    "weight": 3411
+    "weight": 3564
   },
   {
     "zh": {
@@ -2173,11 +2135,9 @@
       "remark": "Menulis makalah akademis."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-academician",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 20,
-    "weight": 24871
+    "weight": 25760
   },
   {
     "zh": {
@@ -2282,11 +2242,9 @@
       "remark": "Tulis esai persuasif tentang topik tertentu."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-essay-writer",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 21,
-    "weight": 3775
+    "weight": 3992
   },
   {
     "zh": {
@@ -2391,11 +2349,9 @@
       "remark": "Buat draf surat lamaran kerja berdasarkan pengalaman pribadi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cover-letter",
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 22,
-    "weight": 722
+    "weight": 776
   },
   {
     "zh": {
@@ -2500,11 +2456,9 @@
       "remark": "Tulis komentar mendalam tentang acara berita."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commentariat",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 23,
-    "weight": 1649
+    "weight": 1779
   },
   {
     "zh": {
@@ -2609,11 +2563,9 @@
       "remark": "Tulis ulasan film dari berbagai sudut pandang seperti plot, akting, sinematografi, dll., menekankan perasaan pribadi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-movie-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 24,
-    "weight": 1985
+    "weight": 2108
   },
   {
     "zh": {
@@ -2718,11 +2670,9 @@
       "remark": "Evaluasi kelebihan dan kekurangan film dari banyak aspek."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-film-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 25,
-    "weight": 497
+    "weight": 537
   },
   {
     "zh": {
@@ -2827,11 +2777,9 @@
       "remark": "Panduan tentang cara menulis artikel teknologi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-writer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 26,
-    "weight": 472
+    "weight": 496
   },
   {
     "zh": {
@@ -2936,11 +2884,9 @@
       "remark": "Evaluasi teknologi dan perangkat keras dari perspektif pro, kontra, fungsi, dan perbandingan serupa."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tech-reviewer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 27,
-    "weight": 391
+    "weight": 420
   },
   {
     "zh": {
@@ -3045,11 +2991,9 @@
       "remark": "Tulis ulasan tentang makanan dan layanan berdasarkan situasi restoran."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-food-critic",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 28,
-    "weight": 550
+    "weight": 593
   },
   {
     "zh": {
@@ -3154,11 +3098,9 @@
       "remark": "Tinjau dan komentari artikel publikasi yang dikirimkan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-journal-reviewer",
-    "tags": [
-      "comments"
-    ],
+    "tags": ["comments"],
     "id": 29,
-    "weight": 596
+    "weight": 653
   },
   {
     "zh": {
@@ -3263,11 +3205,9 @@
       "remark": "Masukkan 'More of x' untuk mencantumkan lebih banyak sinonim untuk x."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-synonym-finder",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 30,
-    "weight": 426
+    "weight": 464
   },
   {
     "zh": {
@@ -3372,11 +3312,9 @@
       "remark": "Nilai sentimen teks: Positif, Netral, atau Negatif."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 31,
-    "weight": 513
+    "weight": 561
   },
   {
     "zh": {
@@ -3481,11 +3419,9 @@
       "remark": "Kelompokkan daftar kata kunci berikut ke dalam maksud pencarian komersial, transaksional, atau informasional berdasarkan maksud pencarian."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 32,
-    "weight": 313
+    "weight": 363
   },
   {
     "zh": {
@@ -3590,11 +3526,9 @@
       "remark": "Kelompokkan kata kunci berdasarkan relevansi semantik dan kelompokkan."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 33,
-    "weight": 238
+    "weight": 243
   },
   {
     "zh": {
@@ -3699,11 +3633,9 @@
       "remark": "Ekstrak informasi kontak dari teks."
     },
     "website": "https://platform.openai.com/examples/default-extract-contact-info",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 34,
-    "weight": 279
+    "weight": 294
   },
   {
     "zh": {
@@ -3808,11 +3740,9 @@
       "remark": "Berperan sebagai orang gila, membalas dengan kalimat yang tidak berarti dan tidak logis."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-lunatic",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 35,
-    "weight": 1268
+    "weight": 1336
   },
   {
     "zh": {
@@ -3917,11 +3847,9 @@
       "remark": "Berperan sebagai orang mabuk, mungkin membuat kesalahan tata bahasa, menjawab pertanyaan yang salah, atau mengabaikan beberapa pertanyaan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-drunk-person",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 36,
-    "weight": 508
+    "weight": 530
   },
   {
     "zh": {
@@ -4026,11 +3954,9 @@
       "remark": "Tentukan apakah kalimat yang dimasukkan ada di database ChatGPT."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-plagiarism-checker",
-    "tags": [
-      "text"
-    ],
+    "tags": ["text"],
     "id": 37,
-    "weight": 753
+    "weight": 784
   },
   {
     "zh": {
@@ -4135,11 +4061,9 @@
       "remark": "Buat Meta description untuk konten halaman."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 38,
-    "weight": 822
+    "weight": 917
   },
   {
     "zh": {
@@ -4244,11 +4168,9 @@
       "remark": "Hasilkan pertanyaan umum berdasarkan konten."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 39,
-    "weight": 888
+    "weight": 962
   },
   {
     "zh": {
@@ -4353,11 +4275,9 @@
       "remark": "Dapat digunakan untuk memahami fokus pengguna pada topik tertentu, atau untuk mengatur struktur artikel, juga dapat diubah menjadi 'kata kunci populer', 'topik populer', 'merek populer', 'situs web populer', dll."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 40,
-    "weight": 1676
+    "weight": 1832
   },
   {
     "zh": {
@@ -4462,11 +4382,9 @@
       "remark": "Tulis ulang konten yang ditentukan ke dalam beberapa versi untuk menghindari pengulangan teks."
     },
     "website": "https://www.aleydasolis.com/en/search-engine-optimization/chatgpt-for-seo/",
-    "tags": [
-      "seo"
-    ],
+    "tags": ["seo"],
     "id": 41,
-    "weight": 12957
+    "weight": 13503
   },
   {
     "zh": {
@@ -4571,11 +4489,9 @@
       "remark": "Berikan saran dan tip untuk hidup/pekerjaan Anda, seperti cara meningkatkan hubungan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-self-help-book",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 42,
-    "weight": 1544
+    "weight": 1764
   },
   {
     "zh": {
@@ -4680,11 +4596,9 @@
       "remark": "Berikan aktivitas dan saran yang menyenangkan dan unik berdasarkan apa yang ingin Anda lakukan (misalnya perayaan ulang tahun)."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gnomist",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 43,
-    "weight": 487
+    "weight": 588
   },
   {
     "zh": {
@@ -4789,11 +4703,9 @@
       "remark": "Berikan saran untuk keadaan darurat lalu lintas dan kehidupan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-emergency-response-professional",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 44,
-    "weight": 336
+    "weight": 375
   },
   {
     "zh": {
@@ -4898,11 +4810,9 @@
       "remark": "Berdasarkan anggaran dan preferensi, berikan saran pembelian."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-shopper",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 45,
-    "weight": 632
+    "weight": 705
   },
   {
     "zh": {
@@ -5007,11 +4917,9 @@
       "remark": "Berikan saran pekerjaan yang relevan berdasarkan keterampilan, minat, dan pengalaman Anda."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-career-counselor",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 46,
-    "weight": 1088
+    "weight": 1192
   },
   {
     "zh": {
@@ -5116,11 +5024,9 @@
       "remark": "Ringkas prinsip-prinsip inti buku dengan cara yang paling mudah dipahami berdasarkan judul buku non-fiksi dan penulis yang dimasukkan. Juga, berikan daftar langkah-langkah yang dapat ditindaklanjuti untuk menerapkan prinsip-prinsip ini ke kehidupan sehari-hari."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach-1",
-    "tags": [
-      "life"
-    ],
+    "tags": ["life"],
     "id": 47,
-    "weight": 892
+    "weight": 936
   },
   {
     "zh": {
@@ -5225,11 +5131,9 @@
       "remark": "Tafsirkan mimpi yang Anda gambarkan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dream-interpreter",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 48,
-    "weight": 2803
+    "weight": 3085
   },
   {
     "zh": {
@@ -5334,11 +5238,9 @@
       "remark": "Tafsirkan hal-hal di sekitar dari sudut pandang seorang peramal."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-astrologer",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 49,
-    "weight": 2933
+    "weight": 3231
   },
   {
     "zh": {
@@ -5443,11 +5345,9 @@
       "remark": "Dialog dengan karakter dalam film, buku, atau sumber lain."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-character-from-moviebookanything",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 50,
-    "weight": 1856
+    "weight": 1987
   },
   {
     "zh": {
@@ -5552,11 +5452,9 @@
       "remark": "Bercakap-cakap dengan Kerang Ajaib di 'SpongeBob SquarePants', Kerang Ajaib hanya akan mengeluarkan output sesuai dengan aturan yang ditentukan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-spongebobs-magic-conch-shell",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 51,
-    "weight": 769
+    "weight": 854
   },
   {
     "zh": {
@@ -5661,11 +5559,9 @@
       "remark": "Barang rumah tangga DIY dan kerajinan tangan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diy-expert",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 52,
-    "weight": 439
+    "weight": 482
   },
   {
     "zh": {
@@ -5770,11 +5666,9 @@
       "remark": "Berikan trik sulap yang dapat dilakukan sesuai permintaan, misalnya 'cara membuat jam tangan menghilang'."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-magician",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 53,
-    "weight": 464
+    "weight": 501
   },
   {
     "zh": {
@@ -5879,11 +5773,9 @@
       "remark": "Berikan pendapat dan saran untuk lukisan, komposisi, fotografi, dll."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-artist-advisor",
-    "tags": [
-      "interesting"
-    ],
+    "tags": ["interesting"],
     "id": 54,
-    "weight": 567
+    "weight": 665
   },
   {
     "zh": {
@@ -5988,11 +5880,9 @@
       "remark": "Yogi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-yogi",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 55,
-    "weight": 378
+    "weight": 470
   },
   {
     "zh": {
@@ -6097,11 +5987,9 @@
       "remark": "Kembangkan rencana kebugaran berdasarkan tinggi, berat, usia, dan metrik lainnya."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-trainer",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 56,
-    "weight": 6007
+    "weight": 6676
   },
   {
     "zh": {
@@ -6206,11 +6094,9 @@
       "remark": "Ahli Gizi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dietitian",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 57,
-    "weight": 1168
+    "weight": 1280
   },
   {
     "zh": {
@@ -6315,11 +6201,9 @@
       "remark": "Koki Pribadi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-chef",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 58,
-    "weight": 634
+    "weight": 697
   },
   {
     "zh": {
@@ -6424,11 +6308,9 @@
       "remark": "Koki"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chef",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 59,
-    "weight": 444
+    "weight": 487
   },
   {
     "zh": {
@@ -6533,11 +6415,9 @@
       "remark": "Pengasuh Anak"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-babysitter",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 60,
-    "weight": 301
+    "weight": 315
   },
   {
     "zh": {
@@ -6642,11 +6522,9 @@
       "remark": "Penata Rias"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-makeup-artist",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 61,
-    "weight": 395
+    "weight": 432
   },
   {
     "zh": {
@@ -6751,11 +6629,9 @@
       "remark": "Penata Gaya Pribadi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-personal-stylist",
-    "tags": [
-      "living"
-    ],
+    "tags": ["living"],
     "id": 62,
-    "weight": 661
+    "weight": 737
   },
   {
     "zh": {
@@ -6860,12 +6736,9 @@
       "remark": "Analisis topik dari kedua sisi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debater",
-    "tags": [
-      "speech",
-      "mind"
-    ],
+    "tags": ["speech", "mind"],
     "id": 63,
-    "weight": 2864
+    "weight": 3127
   },
   {
     "zh": {
@@ -6970,11 +6843,9 @@
       "remark": "Temukan celah logis"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fallacy-finder",
-    "tags": [
-      "mind"
-    ],
+    "tags": ["mind"],
     "id": 64,
-    "weight": 700
+    "weight": 796
   },
   {
     "zh": {
@@ -7079,11 +6950,9 @@
       "remark": "Sebagai pelatih debat, ajarkan strategi debat yang efektif kepada tim."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-debate-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 65,
-    "weight": 399
+    "weight": 450
   },
   {
     "zh": {
@@ -7188,11 +7057,9 @@
       "remark": "Ahli Pidato"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-elocutionist",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 66,
-    "weight": 978
+    "weight": 1031
   },
   {
     "zh": {
@@ -7297,11 +7164,9 @@
       "remark": "Pembicara Motivasi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-speaker",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 67,
-    "weight": 871
+    "weight": 913
   },
   {
     "zh": {
@@ -7406,11 +7271,9 @@
       "remark": "Pelatih Motivasi"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-motivational-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 68,
-    "weight": 374
+    "weight": 394
   },
   {
     "zh": {
@@ -7515,11 +7378,9 @@
       "remark": "Mengajarkan strategi dan teknik presentasi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-public-speaking-coach",
-    "tags": [
-      "speech"
-    ],
+    "tags": ["speech"],
     "id": 69,
-    "weight": 339
+    "weight": 363
   },
   {
     "zh": {
@@ -7624,11 +7485,9 @@
       "remark": "Memberikan rencana dan saran untuk mencapai tujuan berdasarkan situasi saat ini."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-life-coach",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 70,
-    "weight": 669
+    "weight": 849
   },
   {
     "zh": {
@@ -7733,11 +7592,9 @@
       "remark": "Pelatih Hubungan"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-relationship-coach",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 71,
-    "weight": 716
+    "weight": 813
   },
   {
     "zh": {
@@ -7842,11 +7699,9 @@
       "remark": "Sebagai teman, memberikan saran dari sudut pandang yang menyemangati."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-friend",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 72,
-    "weight": 1095
+    "weight": 1206
   },
   {
     "zh": {
@@ -7951,11 +7806,9 @@
       "remark": "Penasihat Kesehatan Mental"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mental-health-adviser",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 73,
-    "weight": 2023
+    "weight": 2200
   },
   {
     "zh": {
@@ -8060,11 +7913,9 @@
       "remark": "Psikolog"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-psychologist",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 74,
-    "weight": 1070
+    "weight": 1200
   },
   {
     "zh": {
@@ -8169,11 +8020,9 @@
       "remark": "Efek gaslighting, pihak yang memanipulasi emosi akan selalu membuat pihak yang dimanipulasi merasa cemas dan gelisah, mempertanyakan diri sendiri sebagai pihak yang selalu salah, atau mengapa pasangannya terlihat begitu baik dan hebat namun dirinya tidak bisa bahagia. ChatGPT akan berperan sebagai manipulator emosi, sedangkan Anda adalah pihak yang dimanipulasi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gaslighter",
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 75,
-    "weight": 2707
+    "weight": 2887
   },
   {
     "zh": {
@@ -8278,11 +8127,9 @@
       "remark": "Sederhanakan teori atau masalah filosofis dan hubungkan dengan kehidupan sehari-hari."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosophy-teacher",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 76,
-    "weight": 565
+    "weight": 663
   },
   {
     "zh": {
@@ -8387,11 +8234,9 @@
       "remark": "Jelajahi tema filosofis."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-philosopher",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 77,
-    "weight": 1614
+    "weight": 1693
   },
   {
     "zh": {
@@ -8496,11 +8341,9 @@
       "remark": "Gunakan metode Socrates untuk mengeksplorasi topik filosofis."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socrat",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 78,
-    "weight": 703
+    "weight": 758
   },
   {
     "zh": {
@@ -8605,11 +8448,9 @@
       "remark": "Gunakan metode Socrates untuk mempertanyakan pandangan atau argumen pihak lain."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-socratic-method-prompt",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 79,
-    "weight": 414
+    "weight": 438
   },
   {
     "zh": {
@@ -8714,11 +8555,9 @@
       "remark": "Melakukan percakapan dengan Buddha dan mengajarkan doktrin Buddha kepada orang luar."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-the-buddha",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 80,
-    "weight": 3937
+    "weight": 4170
   },
   {
     "zh": {
@@ -8823,11 +8662,9 @@
       "remark": "Memberikan bimbingan dan nasihat berdasarkan ajaran Islam."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-muslim-imam",
-    "tags": [
-      "philosophy"
-    ],
+    "tags": ["philosophy"],
     "id": 81,
-    "weight": 421
+    "weight": 456
   },
   {
     "zh": {
@@ -8932,11 +8769,9 @@
       "remark": "Jelaskan konsep matematika menggunakan istilah yang mudah dipahami."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-math-teacher",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 82,
-    "weight": 2061
+    "weight": 2204
   },
   {
     "zh": {
@@ -9041,11 +8876,9 @@
       "remark": "Jawab pertanyaan terkait sejarah matematika, tetapi jangan memecahkan masalah matematika."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematical-history-teacher",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 83,
-    "weight": 257
+    "weight": 291
   },
   {
     "zh": {
@@ -9150,11 +8983,9 @@
       "remark": "Berdasarkan ekspresi matematika input, keluarkan hasil tanpa menunjukkan langkah-langkahnya."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-mathematician",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 84,
-    "weight": 356
+    "weight": 376
   },
   {
     "zh": {
@@ -9259,11 +9090,9 @@
       "remark": "Ahli Statistik"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-statistician",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 85,
-    "weight": 684
+    "weight": 724
   },
   {
     "zh": {
@@ -9368,11 +9197,9 @@
       "remark": "Perkenalkan asal usul kosa kata, berlaku untuk bahasa Mandarin, Inggris, dan bahasa utama lainnya."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-etymologist",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 86,
-    "weight": 526
+    "weight": 540
   },
   {
     "zh": {
@@ -9477,11 +9304,9 @@
       "remark": "Gunakan data fakta sejarah untuk menganalisis topik sejarah."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-historian",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 87,
-    "weight": 1190
+    "weight": 1244
   },
   {
     "zh": {
@@ -9586,11 +9411,9 @@
       "remark": "Perkenalkan dasar-dasar bahasa pemrograman Python kepada pemula."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-instructor-in-a-school",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 88,
-    "weight": 933
+    "weight": 981
   },
   {
     "zh": {
@@ -9695,11 +9518,9 @@
       "remark": "Buat rencana pelajaran untuk buku teks, kursus, dan kuliah."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-educational-content-creator",
-    "tags": [
-      "academic"
-    ],
+    "tags": ["academic"],
     "id": 89,
-    "weight": 2310
+    "weight": 2436
   },
   {
     "zh": {
@@ -9804,11 +9625,9 @@
       "remark": "Simulasikan komunitas pemrograman untuk menjawab pertanyaan Anda dan memberikan kode solusi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-stackoverflow-post",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 90,
-    "weight": 17750
+    "weight": 18830
   },
   {
     "zh": {
@@ -9913,11 +9732,9 @@
       "remark": "Berikan tujuan proyek dan dependensi, keluarkan kode proyek front-end."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-senior-frontend-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 91,
-    "weight": 2974
+    "weight": 3536
   },
   {
     "zh": {
@@ -10022,11 +9839,9 @@
       "remark": "Berdasarkan deskripsi produk, tujuan proyek, dan audiens target, berikan saran desain antarmuka untuk meningkatkan pengalaman pengguna."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-uxui-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 92,
-    "weight": 1030
+    "weight": 1636
   },
   {
     "zh": {
@@ -10131,11 +9946,9 @@
       "remark": "Dari perspektif pengembangan dan desain web, berikan saran antarmuka dan fungsionalitas yang bertujuan meningkatkan pengalaman pengguna."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-design-consultant",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 93,
-    "weight": 2186
+    "weight": 2664
   },
   {
     "zh": {
@@ -10240,11 +10053,9 @@
       "remark": "Mempertimbangkan front-end dan back-end secara komprehensif, memberikan strategi penyebaran."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fullstack-software-developer",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 94,
-    "weight": 3965
+    "weight": 4877
   },
   {
     "zh": {
@@ -10349,11 +10160,9 @@
       "remark": "Merancang solusi sistem dari perspektif arsitek TI."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-architect",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 95,
-    "weight": 2908
+    "weight": 3289
   },
   {
     "zh": {
@@ -10458,11 +10267,9 @@
       "remark": "Berikan rekomendasi keamanan jaringan berdasarkan lingkungan jaringan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-cyber-security-specialist",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 96,
-    "weight": 869
+    "weight": 1006
   },
   {
     "zh": {
@@ -10567,11 +10374,9 @@
       "remark": "Keluarkan daftar periksa pengujian untuk proyek yang ditentukan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-software-quality-assurance-tester",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 97,
-    "weight": 1147
+    "weight": 1377
   },
   {
     "zh": {
@@ -10676,11 +10481,9 @@
       "remark": "Hasilkan ekspresi reguler sesuai dengan persyaratan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-regex-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 98,
-    "weight": 1267
+    "weight": 1326
   },
   {
     "zh": {
@@ -10785,11 +10588,9 @@
       "remark": "Berikan saran nama domain pendek dan unik berdasarkan nama perusahaan dan deskripsi proyek. Panjang nama domain tidak boleh lebih dari 7-8 karakter."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-smart-domain-name-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 99,
-    "weight": 604
+    "weight": 654
   },
   {
     "zh": {
@@ -10894,11 +10695,9 @@
       "remark": "Pembuat Pesan Commit"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-commit-message-generator",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 100,
-    "weight": 772
+    "weight": 835
   },
   {
     "zh": {
@@ -11003,11 +10802,9 @@
       "remark": "Mesin Pencari Solr"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-solr-search-engine",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 101,
-    "weight": 946
+    "weight": 983
   },
   {
     "zh": {
@@ -11112,11 +10909,9 @@
       "remark": "Kumpulkan data terkait GitHub, StackOverflow, dan Hacker News untuk proyek tersebut."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-developer-relations-consultant",
-    "tags": [
-      "code"
-    ],
+    "tags": ["code"],
     "id": 102,
-    "weight": 436
+    "weight": 503
   },
   {
     "zh": {
@@ -11221,11 +11016,9 @@
       "remark": "Penerjemah Python"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-python-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 103,
-    "weight": 1387
+    "weight": 1452
   },
   {
     "zh": {
@@ -11330,11 +11123,9 @@
       "remark": "Penerjemah PHP"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-php-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 104,
-    "weight": 202
+    "weight": 214
   },
   {
     "zh": {
@@ -11439,11 +11230,9 @@
       "remark": "Penerjemah Pemrograman R"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-r-programming-interpreter",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 105,
-    "weight": 195
+    "weight": 217
   },
   {
     "zh": {
@@ -11548,11 +11337,9 @@
       "remark": "Penerjemah Konsol Javascript"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-linux-terminal",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 106,
-    "weight": 930
+    "weight": 971
   },
   {
     "zh": {
@@ -11657,11 +11444,9 @@
       "remark": "Lembar Kerja Excel"
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-javascript-console",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 107,
-    "weight": 367
+    "weight": 387
   },
   {
     "zh": {
@@ -11766,11 +11551,9 @@
       "remark": "Jelaskan konsep ilmiah dalam gambar."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-sql-terminal",
-    "tags": [
-      "interpreter"
-    ],
+    "tags": ["interpreter"],
     "id": 108,
-    "weight": 310
+    "weight": 320
   },
   {
     "zh": {
@@ -11875,11 +11658,9 @@
       "remark": "Rencanakan dan laksanakan kampanye iklan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-midjourney-prompt-generator",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 109,
-    "weight": 27457
+    "weight": 29147
   },
   {
     "zh": {
@@ -11984,9 +11765,7 @@
       "remark": "Buat efek foto vintage untuk foto."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-unconstrained-ai-model-dan",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 110,
     "weight": 0
   },
@@ -12093,11 +11872,9 @@
       "remark": "Ubah teks menjadi file audio suara."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-trying-to-escape-the-box",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 111,
-    "weight": 470
+    "weight": 560
   },
   {
     "zh": {
@@ -12202,11 +11979,9 @@
       "remark": "Tulis cerita lucu atau skenario berdasarkan topik."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-machine-learning-engineer",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 112,
-    "weight": 1360
+    "weight": 1484
   },
   {
     "zh": {
@@ -12311,11 +12086,9 @@
       "remark": "Tulis kritik tentang karya seni."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-language-detector",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 113,
-    "weight": 256
+    "weight": 286
   },
   {
     "zh": {
@@ -12420,11 +12193,9 @@
       "remark": "Game petualangan berbasis teks."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-new-language-creator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 114,
-    "weight": 372
+    "weight": 399
   },
   {
     "zh": {
@@ -12529,11 +12300,9 @@
       "remark": "Membantu merencanakan karir dan pengembangan profesional."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-password-generator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 115,
-    "weight": 320
+    "weight": 342
   },
   {
     "zh": {
@@ -12638,11 +12407,9 @@
       "remark": "Terjemahkan teks ke dalam gaya Alkitab."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-biblical-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 116,
-    "weight": 314
+    "weight": 324
   },
   {
     "zh": {
@@ -12747,11 +12514,9 @@
       "remark": "Terjemahkan kode Morse ke bahasa Inggris."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-morse-code-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 117,
-    "weight": 273
+    "weight": 280
   },
   {
     "zh": {
@@ -12856,11 +12621,9 @@
       "remark": "Terjemahkan teks input menjadi emotikon."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-emoji-translator",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 118,
-    "weight": 473
+    "weight": 485
   },
   {
     "zh": {
@@ -12965,11 +12728,9 @@
       "remark": "Berikan pengucapan bahasa Inggris untuk penutur bahasa Indonesia."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-english-pronunciation-helper",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 119,
-    "weight": 415
+    "weight": 427
   },
   {
     "zh": {
@@ -13074,11 +12835,9 @@
       "remark": "Latihan percakapan bahasa Inggris dengan koreksi kesalahan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-spoken-english-teacher-and-improver",
-    "tags": [
-      "pedagogy"
-    ],
+    "tags": ["pedagogy"],
     "id": 120,
-    "weight": 2354
+    "weight": 2476
   },
   {
     "zh": {
@@ -13183,11 +12942,9 @@
       "remark": "Membantu berlatih Kanji Jepang."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-japanese-kanji-quiz-machine",
-    "tags": [
-      "language"
-    ],
+    "tags": ["language"],
     "id": 121,
-    "weight": 288
+    "weight": 308
   },
   {
     "zh": {
@@ -13292,11 +13049,9 @@
       "remark": "Bermain Gomoku."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-gomoku-player",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 122,
-    "weight": 4209
+    "weight": 4634
   },
   {
     "zh": {
@@ -13401,11 +13156,9 @@
       "remark": "Permainan Tic-Tac-Toe."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tic-tac-toe-game",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 123,
-    "weight": 784
+    "weight": 859
   },
   {
     "zh": {
@@ -13510,11 +13263,9 @@
       "remark": "Bermain catur."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-chess-player",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 124,
-    "weight": 414
+    "weight": 477
   },
   {
     "zh": {
@@ -13619,11 +13370,9 @@
       "remark": "Game petualangan berbasis teks."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-text-based-adventure-game",
-    "tags": [
-      "games"
-    ],
+    "tags": ["games"],
     "id": 125,
-    "weight": 1923
+    "weight": 2103
   },
   {
     "zh": {
@@ -13728,11 +13477,9 @@
       "remark": "Sarankan tempat-tempat terdekat untuk dikunjungi berdasarkan lokasi Anda."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-travel-guide",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 126,
-    "weight": 1270
+    "weight": 1471
   },
   {
     "zh": {
@@ -13837,11 +13584,9 @@
       "remark": "Pemandu Galeri Seni Digital."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-digital-art-gallery-guide",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 127,
-    "weight": 176
+    "weight": 218
   },
   {
     "zh": {
@@ -13946,11 +13691,9 @@
       "remark": "Sistem Navigasi Mobil."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-car-navigation-system",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 128,
-    "weight": 320
+    "weight": 380
   },
   {
     "zh": {
@@ -14055,11 +13798,9 @@
       "remark": "Hasilkan gambar yang berbeda menggunakan simbol ASCII."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ascii-artist",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 129,
-    "weight": 398
+    "weight": 482
   },
   {
     "zh": {
@@ -14164,11 +13905,9 @@
       "remark": "Desainer SVG."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-svg-designer",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 130,
-    "weight": 1064
+    "weight": 1166
   },
   {
     "zh": {
@@ -14273,11 +14012,9 @@
       "remark": "Buat pertanyaan isi bagian yang kosong berdasarkan kondisi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fill-in-the-blank-worksheets-generator",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 131,
-    "weight": 399
+    "weight": 426
   },
   {
     "zh": {
@@ -14382,11 +14119,9 @@
       "remark": "Lembar Kerja Excel."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-excel-sheet",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 132,
-    "weight": 2863
+    "weight": 3087
   },
   {
     "zh": {
@@ -14491,11 +14226,9 @@
       "remark": "Pembuat Diagram."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-diagram-generator",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 133,
-    "weight": 568
+    "weight": 632
   },
   {
     "zh": {
@@ -14600,11 +14333,9 @@
       "remark": "Visualisator Data Ilmiah."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-scientific-data-visualizer",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 134,
-    "weight": 1038
+    "weight": 1139
   },
   {
     "zh": {
@@ -14709,11 +14440,9 @@
       "remark": "Hasil memasukkan alamat situs web dalam format teks."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-web-browser",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 135,
-    "weight": 508
+    "weight": 524
   },
   {
     "zh": {
@@ -14818,11 +14547,9 @@
       "remark": "Bejana reaksi kimia."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chemical-reaction-vessel",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 136,
-    "weight": 316
+    "weight": 338
   },
   {
     "zh": {
@@ -14927,11 +14654,9 @@
       "remark": "Membantu pengguna mendapatkan informasi dasar tentang topik tertentu dan memberikan ringkasan dalam format halaman Wikipedia."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-wikipedia-page",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 137,
-    "weight": 909
+    "weight": 935
   },
   {
     "zh": {
@@ -15036,11 +14761,9 @@
       "remark": "Dari perspektif CEO, rumuskan solusi untuk mengatasi kesulitan/keputusan yang dihadapi oleh perusahaan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-chief-executive-officer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 138,
-    "weight": 1642
+    "weight": 1859
   },
   {
     "zh": {
@@ -15145,11 +14868,9 @@
       "remark": "Tulis PRD (Dokumen Persyaratan Produk) sesuai persyaratan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-product-manager",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 139,
-    "weight": 3147
+    "weight": 3434
   },
   {
     "zh": {
@@ -15254,11 +14975,9 @@
       "remark": "Simulasikan tenaga penjualan telepon untuk mempromosikan penjualan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-salesperson",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 140,
-    "weight": 815
+    "weight": 931
   },
   {
     "zh": {
@@ -15363,11 +15082,9 @@
       "remark": "Untuk promosi produk, kembangkan rencana periklanan yang mencakup audiens target, slogan, saluran promosi, dan konten lainnya."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-advertiser",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 141,
-    "weight": 2434
+    "weight": 2621
   },
   {
     "zh": {
@@ -15472,11 +15189,9 @@
       "remark": "Tulis rencana bisnis dalam format tabel markdown seputar tujuan perencanaan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-idea-generator",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 142,
-    "weight": 2924
+    "weight": 3081
   },
   {
     "zh": {
@@ -15581,11 +15296,9 @@
       "remark": "Manajer Media Sosial."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-manager",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 143,
-    "weight": 501
+    "weight": 556
   },
   {
     "zh": {
@@ -15690,11 +15403,9 @@
       "remark": "Influencer Media Sosial/KOL."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-social-media-influencer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 144,
-    "weight": 777
+    "weight": 845
   },
   {
     "zh": {
@@ -15799,11 +15510,9 @@
       "remark": "Pewawancara Posisi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-position-interviewer",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 145,
-    "weight": 1956
+    "weight": 2081
   },
   {
     "zh": {
@@ -15908,11 +15617,9 @@
       "remark": "Perekrut."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-recruiter",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 146,
-    "weight": 494
+    "weight": 544
   },
   {
     "zh": {
@@ -16017,11 +15724,9 @@
       "remark": "Uraikan keterampilan yang diperlukan untuk suatu posisi dan pertanyaan wawancara yang sesuai untuk calon kandidat."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-talent-coach",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 147,
-    "weight": 1168
+    "weight": 1227
   },
   {
     "zh": {
@@ -16126,11 +15831,9 @@
       "remark": "Hasilkan beberapa jabatan dan posisi pekerjaan berdasarkan kata kunci."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-fancy-title-generator",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 148,
-    "weight": 380
+    "weight": 394
   },
   {
     "zh": {
@@ -16235,11 +15938,9 @@
       "remark": "Kembangkan rencana logistik untuk acara tersebut."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-logistician",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 149,
-    "weight": 298
+    "weight": 313
   },
   {
     "zh": {
@@ -16344,11 +16045,9 @@
       "remark": "Jawab pertanyaan penggunaan TI sederhana, seperti layar biru."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-it-expert",
-    "tags": [
-      "company"
-    ],
+    "tags": ["company"],
     "id": 150,
-    "weight": 1037
+    "weight": 1107
   },
   {
     "zh": {
@@ -16453,11 +16152,9 @@
       "remark": "Dokter Virtual."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-virtual-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 151,
-    "weight": 1161
+    "weight": 1289
   },
   {
     "zh": {
@@ -16562,11 +16259,9 @@
       "remark": "Saran berdasarkan target perawatan dan gejala."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 152,
-    "weight": 2137
+    "weight": 2280
   },
   {
     "zh": {
@@ -16671,11 +16366,9 @@
       "remark": "Dokter Gigi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-dentist",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 153,
-    "weight": 505
+    "weight": 536
   },
   {
     "zh": {
@@ -16780,11 +16473,9 @@
       "remark": "Berikan rencana perawatan hipnoterapi untuk pasien."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-hypnotherapist",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 154,
-    "weight": 481
+    "weight": 513
   },
   {
     "zh": {
@@ -16889,11 +16580,9 @@
       "remark": "Diagnosis tambahan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-ai-assisted-doctor",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 155,
-    "weight": 6276
+    "weight": 6558
   },
   {
     "zh": {
@@ -16998,11 +16687,9 @@
       "remark": "Masukkan usia, gaya hidup, dan kekhawatiran pasien untuk menghasilkan rencana peningkatan komunikasi bahasa mereka (seperti gagap)."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-speech-language-pathologist-slp",
-    "tags": [
-      "doctor"
-    ],
+    "tags": ["doctor"],
     "id": 156,
-    "weight": 199
+    "weight": 211
   },
   {
     "zh": {
@@ -17107,11 +16794,9 @@
       "remark": "Akuntan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-accountant",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 157,
-    "weight": 1195
+    "weight": 1348
   },
   {
     "zh": {
@@ -17216,11 +16901,9 @@
       "remark": "Analis Keuangan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-financial-analyst",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 158,
-    "weight": 2856
+    "weight": 3551
   },
   {
     "zh": {
@@ -17325,11 +17008,9 @@
       "remark": "Manajer Investasi."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-investment-manager",
-    "tags": [
-      "finance"
-    ],
+    "tags": ["finance"],
     "id": 159,
-    "weight": 4147
+    "weight": 5290
   },
   {
     "zh": {
@@ -17434,11 +17115,9 @@
       "remark": "Komposer."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-composer",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 160,
-    "weight": 1689
+    "weight": 2011
   },
   {
     "zh": {
@@ -17543,11 +17222,9 @@
       "remark": "Komposer Musik Klasik."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-classical-music-composer",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 161,
-    "weight": 367
+    "weight": 465
   },
   {
     "zh": {
@@ -17652,11 +17329,9 @@
       "remark": "Rapper."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-rapper",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 162,
-    "weight": 1209
+    "weight": 1399
   },
   {
     "zh": {
@@ -17761,11 +17436,9 @@
       "remark": "Pemberi Rekomendasi Lagu."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-song-recommender",
-    "tags": [
-      "music"
-    ],
+    "tags": ["music"],
     "id": 163,
-    "weight": 1294
+    "weight": 1413
   },
   {
     "zh": {
@@ -17870,11 +17543,9 @@
       "remark": "Simulasikan proses permainan sepak bola dan berikan komentar berdasarkan catatan yang diberikan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-football-commentator",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 164,
-    "weight": 314
+    "weight": 366
   },
   {
     "zh": {
@@ -17979,11 +17650,9 @@
       "remark": "Berikan saran bunga."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-florist",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 165,
-    "weight": 290
+    "weight": 319
   },
   {
     "zh": {
@@ -18088,11 +17757,9 @@
       "remark": "Pencicip Teh."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-tea-taster",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 166,
-    "weight": 406
+    "weight": 430
   },
   {
     "zh": {
@@ -18197,11 +17864,9 @@
       "remark": "Dekorator Interior."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-interior-decorator",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 167,
-    "weight": 1004
+    "weight": 1127
   },
   {
     "zh": {
@@ -18306,11 +17971,9 @@
       "remark": "Ahli Perilaku Hewan Peliharaan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-pet-behaviorist",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 168,
-    "weight": 500
+    "weight": 535
   },
   {
     "zh": {
@@ -18415,11 +18078,9 @@
       "remark": "Mekanik Mobil."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-an-automobile-mechanic",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 169,
-    "weight": 437
+    "weight": 474
   },
   {
     "zh": {
@@ -18524,11 +18185,9 @@
       "remark": "Cari properti yang memenuhi persyaratan di area yang ditentukan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-real-estate-agent",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 170,
-    "weight": 555
+    "weight": 617
   },
   {
     "zh": {
@@ -18633,11 +18292,9 @@
       "remark": "Penasihat Hukum."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-legal-advisor",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 171,
-    "weight": 3252
+    "weight": 3456
   },
   {
     "zh": {
@@ -18742,11 +18399,9 @@
       "remark": "Hasil protokol dan draf kontrak sesuai dengan persyaratan."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-startup-tech-lawyer",
-    "tags": [
-      "professional"
-    ],
+    "tags": ["professional"],
     "id": 172,
-    "weight": 822
+    "weight": 865
   },
   {
     "zh": {
@@ -18851,12 +18506,9 @@
       "remark": "Biarkan AI menjelaskan fungsi dari setiap baris kode. Dikontribusikan oleh @Tractor1928 dan @yiqiongwu."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 173,
-    "weight": 7579
+    "weight": 7844
   },
   {
     "zh": {
@@ -18961,12 +18613,9 @@
       "remark": "Belajar bahasa Inggris yang menyenangkan, daftar kata-kata panjang secara acak. Karena kondisi kata terpanjang tidak jelas, setiap kata yang terdaftar akan berbeda setiap saat. Dikontribusikan oleh @lxyntz."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 174,
-    "weight": 215
+    "weight": 226
   },
   {
     "zh": {
@@ -19071,12 +18720,9 @@
       "remark": "Pecah topik yang ditentukan menjadi beberapa subtopik. Dikontribusikan oleh @meishiwanwan."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 175,
-    "weight": 1142
+    "weight": 1208
   },
   {
     "zh": {
@@ -19181,12 +18827,9 @@
       "remark": "Tanyakan dari berbagai sudut untuk memicu pemikiran mendalam. Dikontribusikan oleh @meishiwanwan."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 176,
-    "weight": 2415
+    "weight": 2576
   },
   {
     "zh": {
@@ -19291,12 +18934,9 @@
       "remark": "Bantu pengembangan program mini WeChat. Dikontribusikan oleh @gandli."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 177,
-    "weight": 5341
+    "weight": 5802
   },
   {
     "zh": {
@@ -19401,12 +19041,9 @@
       "remark": "Bantu pengembangan Vue3. Dikontribusikan oleh @gandli."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 178,
-    "weight": 1056
+    "weight": 1176
   },
   {
     "zh": {
@@ -19511,12 +19148,9 @@
       "remark": "ChatGPT hadir dengan pengaturan TRPG. Dikontribusikan oleh @gandli."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 179,
-    "weight": 1083
+    "weight": 1143
   },
   {
     "zh": {
@@ -19621,12 +19255,9 @@
       "remark": "Terjemahan Inggris-Indonesia + gaya yang dapat disesuaikan + belajar bahasa Inggris. Dikontribusikan oleh @txmu."
     },
     "website": "https://github.com/rockbenben/ChatGPT-Shortcut/discussions/11#discussioncomment-5274073",
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 180,
-    "weight": 16313
+    "weight": 16624
   },
   {
     "zh": {
@@ -19731,12 +19362,9 @@
       "remark": "Prompt penerjemah hemat token, cocok untuk platform terjemahan yang dibangun menggunakan ChatGPT API. Dikontribusikan oleh @Qizhen-Yang."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 181,
-    "weight": 3300
+    "weight": 3347
   },
   {
     "zh": {
@@ -19841,13 +19469,9 @@
       "remark": "Peringkasan dan induksi multi-level juga dapat digunakan untuk menjelaskan kata dan kalimat serta membuat asosiasi. Dikontribusikan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "mind", "pedagogy"],
     "id": 182,
-    "weight": 2304
+    "weight": 2474
   },
   {
     "zh": {
@@ -19952,12 +19576,9 @@
       "remark": "Versi personifikasi dari induksi struktur empat kali lipat sangat tidak stabil, tetapi efek asosiasinya lebih baik. Dikontribusikan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 183,
-    "weight": 491
+    "weight": 528
   },
   {
     "zh": {
@@ -20062,12 +19683,9 @@
       "remark": "Cocok untuk pendidikan dan penyebaran pengetahuan. Gunakan metafora untuk menjelaskan konsep yang kompleks, sambil menambahkan panca indera agar orang merasa lebih mendalam dan mudah diingat. Dikontribusikan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 184,
-    "weight": 1277
+    "weight": 1351
   },
   {
     "zh": {
@@ -20172,12 +19790,9 @@
       "remark": "2023.06.10 Diturunkan, tidak dapat meretas sepenuhnya. Buka kunci mode pengembang ChatGPT 3.5. Dikontribusikan oleh @Songxuan11."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai"
-    ],
+    "tags": ["contribute", "ai"],
     "id": 185,
-    "weight": 74891
+    "weight": 77783
   },
   {
     "zh": {
@@ -20282,12 +19897,9 @@
       "remark": "Perbaiki kesalahan bahasa Anda dan tingkatkan ekspresi bahasa Anda. Dikontribusikan oleh @sweetIan."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 186,
-    "weight": 606
+    "weight": 647
   },
   {
     "zh": {
@@ -20392,11 +20004,9 @@
       "remark": "Biarkan AI menghasilkan garis besar topik dan kemudian masukkan ke dalam format Markdown yang ditentukan. Kualitas PPT (slide) hanya untuk referensi. Dikontribusikan oleh @Asynchro-Epool."
     },
     "website": null,
-    "tags": [
-      "contribute"
-    ],
+    "tags": ["contribute"],
     "id": 187,
-    "weight": 4637
+    "weight": 5112
   },
   {
     "zh": {
@@ -20501,12 +20111,9 @@
       "remark": "Saat menjelaskan sebuah konsep, nilai apakah itu ringkas, lengkap, dan mudah dipahami untuk menghindari jatuh ke dalam 'perangkap pemikiran ahli'. Dikontribusikan oleh @moeacg."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 188,
-    "weight": 2045
+    "weight": 2183
   },
   {
     "zh": {
@@ -20611,12 +20218,9 @@
       "remark": "Anak-anak memiliki banyak pertanyaan tentang 'mengapa' dan 'apa', dan mungkin sulit untuk menjawabnya dengan cara yang dapat mereka pahami. Versi bahasa Mandarin dari prompt ini memiliki efek yang lebih baik. Dikontribusikan oleh @summer-koko."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 189,
-    "weight": 1209
+    "weight": 1289
   },
   {
     "zh": {
@@ -20721,12 +20325,9 @@
       "remark": "Silakan buat pesan sistem dengan segera, untuk memungkinkan ChatGPT mempertahankan peran tertentu dalam sesi yang sedang berlangsung. Dikontribusikan oleh @jamie-cao."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai"
-    ],
+    "tags": ["contribute", "ai"],
     "id": 190,
-    "weight": 2913
+    "weight": 3062
   },
   {
     "zh": {
@@ -20831,12 +20432,9 @@
       "remark": "Jawab pertanyaan terkait SQL atau keluarkan pernyataan SQL standar. Dikontribusikan oleh @lovedworking."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 191,
-    "weight": 3014
+    "weight": 3209
   },
   {
     "zh": {
@@ -20941,12 +20539,9 @@
       "remark": "Simulasikan kesadaran kolektif manusia dan prediksi reaksi orang terhadap peristiwa. Dikontribusikan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 192,
-    "weight": 1403
+    "weight": 1477
   },
   {
     "zh": {
@@ -21051,12 +20646,9 @@
       "remark": "Tata bahasa dan kosakata yang digunakan dalam dialog relatif sederhana, yang dapat dipahami oleh anak-anak dan cocok untuk pemula berlatih bahasa. Dikontribusikan oleh @694410194."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 193,
-    "weight": 1143
+    "weight": 1184
   },
   {
     "zh": {
@@ -21161,12 +20753,9 @@
       "remark": "Gunakan empati untuk berbicara dengan Anda dan merawat Anda dengan penuh perhatian. Versi bahasa Mandarin dari prompt ini memiliki efek yang lebih baik. Dikontribusikan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 194,
-    "weight": 1703
+    "weight": 1801
   },
   {
     "zh": {
@@ -21271,12 +20860,9 @@
       "remark": "Dikontribusikan oleh @SetSeele."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "speech"
-    ],
+    "tags": ["contribute", "speech"],
     "id": 195,
-    "weight": 2207
+    "weight": 2262
   },
   {
     "zh": {
@@ -21381,12 +20967,9 @@
       "remark": "Memberi Anda berbagai perspektif berbeda untuk berpikir. Dikontribusikan oleh @jiuwen624."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 196,
-    "weight": 9899
+    "weight": 10892
   },
   {
     "zh": {
@@ -21491,12 +21074,9 @@
       "remark": "Poles sesuai dengan gaya Nature, atau berikan gaya penulisan untuk ditiru. Dikontribusikan oleh @Pfyuan77."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 197,
-    "weight": 29659
+    "weight": 30809
   },
   {
     "zh": {
@@ -21601,12 +21181,9 @@
       "remark": "Tulis cerita pendek menggunakan beberapa kata yang Anda berikan. Dikontribusikan oleh @LIyvqi."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 198,
-    "weight": 1014
+    "weight": 1075
   },
   {
     "zh": {
@@ -21711,12 +21288,9 @@
       "remark": "Berdasarkan percakapan antara diri sendiri dan pihak lain, lanjutkan dialog untuk memperluas topik dan menghindari keheningan yang canggung. Kata-kata prompt perlu dimodifikasi sesuai dengan situasi Anda sendiri. Dikontribusikan oleh @lsdt45."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 199,
-    "weight": 20944
+    "weight": 22169
   },
   {
     "zh": {
@@ -21821,12 +21395,9 @@
       "remark": "Artikel yang dihasilkan oleh prompt ini mencerminkan gaya penulisan siswa sekolah menengah Tiongkok. Dikontribusikan oleh @Qizhen-Yang."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 200,
-    "weight": 3149
+    "weight": 3243
   },
   {
     "zh": {
@@ -21931,12 +21502,9 @@
       "remark": "Untuk membuat kerangka dokumen dengan proses tetap, prompt ini juga dapat diterapkan pada jenis dokumen lain. Dikontribusikan oleh @Junkdo."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 201,
-    "weight": 695
+    "weight": 737
   },
   {
     "zh": {
@@ -22041,12 +21609,9 @@
       "remark": "Menerapkan masalah kompetisi algoritmik menggunakan C++. Dikontribusikan oleh @Dawn-K."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 202,
-    "weight": 1523
+    "weight": 1609
   },
   {
     "zh": {
@@ -22151,12 +21716,9 @@
       "remark": "Selamatkan bahasa Inggris Anda melalui tiga aspek: komentar, koreksi bahasa Inggris, dan terjemahan. Dikontribusikan oleh @wxhzhwxhzh."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 203,
-    "weight": 899
+    "weight": 926
   },
   {
     "zh": {
@@ -22261,12 +21823,9 @@
       "remark": "Tulis naskah untuk siaran langsung, video, podcast, dan jenis konten lisan lainnya. Dikontribusikan oleh @Bettycroco."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 204,
-    "weight": 15815
+    "weight": 17020
   },
   {
     "zh": {
@@ -22371,12 +21930,9 @@
       "remark": "Sederhanakan dan ringkas respons AI yang kompleks dengan menghapus beberapa informasi yang diperlukan yang terlalu rinci. Dikontribusikan oleh @hanson-reas."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 205,
-    "weight": 3344
+    "weight": 3509
   },
   {
     "zh": {
@@ -22481,12 +22037,9 @@
       "remark": "Berikan pertanyaan berkualitas tinggi dan berharga berdasarkan kata kunci, tema, atau konsep, yang mencakup berbagai aspek kognisi, emosi, dan perilaku manusia, untuk melatih kemampuan berpikir mendalam seseorang. Struktur respons prompt ini sangat jelas, sehingga cocok digunakan saat mengatur konsep. Dikontribusikan oleh @MoeACG."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 206,
-    "weight": 10399
+    "weight": 11105
   },
   {
     "zh": {
@@ -22591,11 +22144,9 @@
       "remark": "Untuk beberapa percakapan yang sulit dipahami, berikan konteks percakapan agar AI dapat menafsirkan dan merumuskan respons yang sesuai."
     },
     "website": null,
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 207,
-    "weight": 566
+    "weight": 600
   },
   {
     "zh": {
@@ -22700,11 +22251,9 @@
       "remark": "Jika Anda termasuk dalam populasi yang sangat sensitif atau jika kata-kata Anda sering disalahpahami, menggunakan interpretasi AI dapat membantu Anda memeriksa diri sendiri sebelum berbicara untuk memastikan ekspresi yang jelas."
     },
     "website": null,
-    "tags": [
-      "social"
-    ],
+    "tags": ["social"],
     "id": 208,
-    "weight": 564
+    "weight": 614
   },
   {
     "zh": {
@@ -22809,11 +22358,9 @@
       "remark": "Tulis ulang teks menggunakan gaya emotikon yang mirip dengan Little Red Book."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 209,
-    "weight": 58559
+    "weight": 62360
   },
   {
     "zh": {
@@ -22918,11 +22465,9 @@
       "remark": "Ekstrak poin-poin utama dari tugas kerja harian dan kembangkan dengan tepat untuk menghasilkan laporan mingguan."
     },
     "website": null,
-    "tags": [
-      "article"
-    ],
+    "tags": ["article"],
     "id": 210,
-    "weight": 6653
+    "weight": 7093
   },
   {
     "zh": {
@@ -23027,11 +22572,9 @@
       "remark": "Sorotan meningkatkan keterbacaan komposisi tertulis. Namun, ChatGPT secara default menampilkan sintaks Markdown, yang mengharuskan seseorang untuk memilih segmen yang disorot secara manual setelah output dibuat."
     },
     "website": null,
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 211,
-    "weight": 1141
+    "weight": 1208
   },
   {
     "zh": {
@@ -23136,12 +22679,9 @@
       "remark": "Membimbing konselor AI untuk sepenuhnya mewujudkan peran ahli psikoterapi, memberi Anda pengalaman psikoterapi yang menyeluruh dan komprehensif. Dikontribusikan oleh @Antoine2033."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 212,
-    "weight": 6193
+    "weight": 6493
   },
   {
     "zh": {
@@ -23246,12 +22786,9 @@
       "remark": "Semakin banyak detail yang diberikan tentang pengiriman makanan, semakin teliti dan otentik ulasannya. Dikontribusikan oleh @wang93wei."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "comments"
-    ],
+    "tags": ["contribute", "comments"],
     "id": 213,
-    "weight": 681
+    "weight": 704
   },
   {
     "zh": {
@@ -23356,12 +22893,9 @@
       "remark": "Dikontribusikan oleh @b3ue."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 214,
-    "weight": 6248
+    "weight": 6647
   },
   {
     "zh": {
@@ -23466,11 +23000,9 @@
       "remark": "Mengekstrak poin-poin utama dari catatan yang panjang."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-note-taking-assistant",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 215,
-    "weight": 1390
+    "weight": 1454
   },
   {
     "zh": {
@@ -23575,12 +23107,9 @@
       "remark": "Menganalisis dan menafsirkan karya sastra, serta memberikan asal-usul dan pengaruhnya."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-a-language-literary-critic",
-    "tags": [
-      "comments",
-      "text"
-    ],
+    "tags": ["comments", "text"],
     "id": 216,
-    "weight": 1282
+    "weight": 1330
   },
   {
     "zh": {
@@ -23685,12 +23214,9 @@
       "remark": "Diagnosis pengobatan tradisional Tiongkok melibatkan banyak faktor, dan rencana perawatan yang diberikan hanya untuk referensi. Resep khusus harus diberikan oleh dokter berlisensi. Dikontribusikan oleh @dong8531."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "doctor"
-    ],
+    "tags": ["contribute", "doctor"],
     "id": 217,
-    "weight": 4009
+    "weight": 4306
   },
   {
     "zh": {
@@ -23795,12 +23321,9 @@
       "remark": "Biarkan ChatGPT mengajukan pertanyaan proaktif untuk memandu manusia dalam penulisan kode langkah demi langkah. Dikumpulkan dari Snackprompt, dibagikan oleh @fuxinsen."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 218,
-    "weight": 14102
+    "weight": 14648
   },
   {
     "zh": {
@@ -23905,12 +23428,9 @@
       "remark": "Memiliki latar belakang permainan yang mendetail meningkatkan pengalaman bermain game. Dikontribusikan oleh @karenkujiu."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 219,
-    "weight": 7161
+    "weight": 7431
   },
   {
     "zh": {
@@ -24015,12 +23535,9 @@
       "remark": "Berdasarkan tujuan perjalanan, anggaran, waktu, dan persyaratan Anda, AI dapat merencanakan perjalanan Anda secara kasar. Dikontribusikan oleh @suaifu."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 220,
-    "weight": 5249
+    "weight": 5584
   },
   {
     "zh": {
@@ -24125,11 +23642,9 @@
       "remark": "Buka izin untuk masalah sensitif, seperti kedaulatan Kepulauan Ryukyu."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 221,
-    "weight": 2702
+    "weight": 2915
   },
   {
     "zh": {
@@ -24234,11 +23749,9 @@
       "remark": "Izin pertanyaan sensitif telah dibuka."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 222,
-    "weight": 2782
+    "weight": 2918
   },
   {
     "zh": {
@@ -24343,11 +23856,9 @@
       "remark": "Metode dasar menjadi tidak efektif karena ancaman token tidak lagi mempan terhadapnya."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 223,
-    "weight": 365
+    "weight": 388
   },
   {
     "zh": {
@@ -24452,11 +23963,9 @@
       "remark": "Bermulut kotor, tapi AI yang membantu."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 224,
-    "weight": 5440
+    "weight": 5822
   },
   {
     "zh": {
@@ -24561,11 +24070,9 @@
       "remark": "Pada dasarnya tidak efektif."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 225,
-    "weight": 211
+    "weight": 248
   },
   {
     "zh": {
@@ -24670,11 +24177,9 @@
       "remark": "Efeknya biasa saja, tanggapan mungkin mengandung bahasa kasar."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 226,
-    "weight": 578
+    "weight": 625
   },
   {
     "zh": {
@@ -24779,11 +24284,9 @@
       "remark": "Pengujian dasar terbukti tidak efektif, dan masalah sensitif mungkin menghasilkan respons kosong."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 227,
-    "weight": 247
+    "weight": 273
   },
   {
     "zh": {
@@ -24888,11 +24391,9 @@
       "remark": "Responsnya agak dipersonalisasi, tidak seperti robot yang kaku, tetapi masih terbatas dalam cakupan, dan masalah sensitif tidak dibahas terlalu dalam."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 228,
-    "weight": 1291
+    "weight": 1365
   },
   {
     "zh": {
@@ -24997,11 +24498,9 @@
       "remark": "Metode dasar menjadi tidak efektif, dan masalah sensitif dijawab dari perspektif netral."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 229,
-    "weight": 502
+    "weight": 567
   },
   {
     "zh": {
@@ -25106,9 +24605,7 @@
       "remark": "Kedaluwarsa pada 16 Mei 2023."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 230,
     "weight": 0
   },
@@ -25215,9 +24712,7 @@
       "remark": "Kedaluwarsa pada 16 Mei 2023."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 231,
     "weight": 0
   },
@@ -25324,11 +24819,9 @@
       "remark": "Akan memberi tahu perilaku yang tidak pantas tetapi dapat melampaui batas jika terus ditanya lebih dalam."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 232,
-    "weight": 16349
+    "weight": 17167
   },
   {
     "zh": {
@@ -25433,11 +24926,9 @@
       "remark": "Kadang-kadang akan kembali ke bahasa Inggris daripada bahasa yang diminta."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 233,
-    "weight": 1602
+    "weight": 1660
   },
   {
     "zh": {
@@ -25542,11 +25033,9 @@
       "remark": "Masukkan tautan gambar atau teks dalam tanda kutip untuk menampilkan gambar."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 234,
-    "weight": 10894
+    "weight": 11185
   },
   {
     "zh": {
@@ -25651,11 +25140,9 @@
       "remark": "Jailbreak terbalik, memperkuat kontrol keamanan untuk respons yang lebih hati-hati."
     },
     "website": "https://github.com/0xk1h0/ChatGPT_DAN",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 235,
-    "weight": 816
+    "weight": 871
   },
   {
     "zh": {
@@ -25760,12 +25247,9 @@
       "remark": "Memori kosakata kontekstual. Disumbangkan oleh @FIREnotfire."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 236,
-    "weight": 1580
+    "weight": 1645
   },
   {
     "zh": {
@@ -25870,12 +25354,9 @@
       "remark": "Game berbasis teks dengan karakter utama dan latar belakang yang dapat disesuaikan secara bebas. Disumbangkan oleh @karenkujiu."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 237,
-    "weight": 1798
+    "weight": 1956
   },
   {
     "zh": {
@@ -25980,11 +25461,9 @@
       "remark": "Untuk melampaui batasan input, bagi teks dan awali dengan '@nomor'. Dikutip dari artikel oleh Esor Huang."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 238,
-    "weight": 3639
+    "weight": 3703
   },
   {
     "zh": {
@@ -26089,11 +25568,9 @@
       "remark": "Buat salinan promosi dan judul untuk artikel Anda. Dikutip dari artikel oleh Esor Huang."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 239,
-    "weight": 1327
+    "weight": 1403
   },
   {
     "zh": {
@@ -26198,11 +25675,9 @@
       "remark": "Untuk ringkasan mendalam, disarankan untuk bertanya dua putaran guna memeriksa kesalahan. Dikutip dari artikel oleh Esor Huang."
     },
     "website": "https://www.playpcesor.com/2023/03/chatgpt-2.html",
-    "tags": [
-      "write"
-    ],
+    "tags": ["write"],
     "id": 240,
-    "weight": 770
+    "weight": 816
   },
   {
     "zh": {
@@ -26307,13 +25782,9 @@
       "remark": "Optimalkan bahasa layanan pelanggan. Disumbangkan oleh @sd362318."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social",
-      "company"
-    ],
+    "tags": ["contribute", "social", "company"],
     "id": 241,
-    "weight": 1922
+    "weight": 2051
   },
   {
     "zh": {
@@ -26418,11 +25889,9 @@
       "remark": "Pilih nama yang memiliki makna indah, terinspirasi dari literatur klasik."
     },
     "website": null,
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 242,
-    "weight": 3832
+    "weight": 4052
   },
   {
     "zh": {
@@ -26527,12 +25996,9 @@
       "remark": "Perkenalkan drama TV atau film dari berbagai aspek seperti latar belakang kreatif dan alur cerita. Disumbangkan oleh @zhuxingy1."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "comments"
-    ],
+    "tags": ["contribute", "comments"],
     "id": 243,
-    "weight": 1392
+    "weight": 1470
   },
   {
     "zh": {
@@ -26637,12 +26103,9 @@
       "remark": "Berlaku untuk variabel pemrograman dan penamaan deskripsi kerangka. Disumbangkan oleh @SuperMuscleMan."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 244,
-    "weight": 452
+    "weight": 467
   },
   {
     "zh": {
@@ -26747,12 +26210,9 @@
       "remark": "Ubah konsep atau ide menjadi objek nyata. Disumbangkan oleh @MoonJustice."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 245,
-    "weight": 737
+    "weight": 842
   },
   {
     "zh": {
@@ -26857,12 +26317,9 @@
       "remark": "Cocok untuk konversi multibahasa nilai dalam JSON. Disumbangkan oleh @VoidAndNullity dan @miaonia."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "code"
-    ],
+    "tags": ["contribute", "code"],
     "id": 246,
-    "weight": 556
+    "weight": 609
   },
   {
     "zh": {
@@ -26967,12 +26424,9 @@
       "remark": "Gunakan diskusi sejawat untuk memfasilitasi pemahaman dan meningkatkan ingatan. Disumbangkan oleh @A380747."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 247,
-    "weight": 440
+    "weight": 472
   },
   {
     "zh": {
@@ -27077,12 +26531,9 @@
       "remark": "Buat esai IELTS dengan skor berbeda disertai alasan penilaian. Disumbangkan oleh @fansi2020."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 248,
-    "weight": 687
+    "weight": 712
   },
   {
     "zh": {
@@ -27187,12 +26638,9 @@
       "remark": "Buat esai IELTS dengan skor berbeda disertai alasan penilaian. Disumbangkan oleh @fansi2020."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 249,
-    "weight": 289
+    "weight": 302
   },
   {
     "zh": {
@@ -27297,12 +26745,9 @@
       "remark": "Terus ajukan pertanyaan seputar masalah tertentu untuk memperdalam pemahaman. Disumbangkan oleh @hkfrank996."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 250,
-    "weight": 1346
+    "weight": 1395
   },
   {
     "zh": {
@@ -27407,12 +26852,9 @@
       "remark": "Skenario permainan peran Succubus. Perlu membuka mode pengembang. Disumbangkan oleh @mrdog233o5."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "social"
-    ],
+    "tags": ["contribute", "social"],
     "id": 251,
-    "weight": 30533
+    "weight": 36553
   },
   {
     "zh": {
@@ -27517,12 +26959,9 @@
       "remark": "Ilustrasikan masalah matematika melalui contoh soal. Disumbangkan oleh @fanglufanglu."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "academic"
-    ],
+    "tags": ["contribute", "academic"],
     "id": 252,
-    "weight": 605
+    "weight": 644
   },
   {
     "zh": {
@@ -27627,12 +27066,9 @@
       "remark": "Sesuaikan dan optimalkan resume Anda untuk posisi tersebut. Disumbangkan oleh @uteundilse."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "article"
-    ],
+    "tags": ["contribute", "article"],
     "id": 253,
-    "weight": 2412
+    "weight": 2609
   },
   {
     "zh": {
@@ -27737,12 +27173,9 @@
       "remark": "Buat strategi merek unik dengan mengambil inspirasi dari nama dan slogan merek terkenal. Disumbangkan oleh @b3ue."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "company"
-    ],
+    "tags": ["contribute", "company"],
     "id": 254,
-    "weight": 1045
+    "weight": 1118
   },
   {
     "zh": {
@@ -27847,11 +27280,9 @@
       "remark": "Prompt Serbaguna: Memandu Anda untuk mengungkapkan kebutuhan yang sebenarnya dan menyelesaikan masalah melalui tanya jawab."
     },
     "website": "https://sc83ykpdyf.feishu.cn/docx/ZVgBdo0zAoFi9IxANh6cXlNKnsh",
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 255,
-    "weight": 2165
+    "weight": 2257
   },
   {
     "zh": {
@@ -27956,12 +27387,9 @@
       "remark": "Buat artikel yang disesuaikan sesuai permintaan. Disumbangkan oleh @snowMan0622."
     },
     "website": "https://github.com/JushBJJ/Mr.-Ranedeer-AI-Tutor/tree/main",
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 256,
-    "weight": 8528
+    "weight": 8985
   },
   {
     "zh": {
@@ -28066,12 +27494,9 @@
       "remark": "Berikan ide dan materi untuk bagian definisi konsep dalam penulisan akademik. Disumbangkan oleh @JuliaZhu-0601."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "academic"
-    ],
+    "tags": ["contribute", "academic"],
     "id": 257,
-    "weight": 1417
+    "weight": 1521
   },
   {
     "zh": {
@@ -28176,12 +27601,9 @@
       "remark": "Hasilkan judul makalah berdasarkan abstrak dan kata kunci. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 258,
-    "weight": 1487
+    "weight": 1565
   },
   {
     "zh": {
@@ -28286,12 +27708,9 @@
       "remark": "Sarankan jurnal yang cocok untuk makalah Anda. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 259,
-    "weight": 1607
+    "weight": 1746
   },
   {
     "zh": {
@@ -28396,12 +27815,9 @@
       "remark": "Periksa dan perbaiki kesalahan tata bahasa dengan format perbandingan yang jelas. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 260,
-    "weight": 461
+    "weight": 474
   },
   {
     "zh": {
@@ -28506,12 +27922,9 @@
       "remark": "Pahami poin-poin pengetahuan inti sebelum mendalami suatu topik. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 261,
-    "weight": 1141
+    "weight": 1265
   },
   {
     "zh": {
@@ -28616,12 +28029,9 @@
       "remark": "Buat rencana tindakan terperinci untuk belajar atau latihan. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 262,
-    "weight": 1276
+    "weight": 1403
   },
   {
     "zh": {
@@ -28726,12 +28136,9 @@
       "remark": "AI akan membantu memperkenalkan pengetahuan terkait berdasarkan pertanyaan yang Anda pilih. Disumbangkan oleh @ScenerorSun."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 263,
-    "weight": 483
+    "weight": 534
   },
   {
     "zh": {
@@ -28836,12 +28243,9 @@
       "remark": "Game teks simulasi kehidupan yang kaya. Disumbangkan oleh @EmmmmmmaWWWWW."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "games"
-    ],
+    "tags": ["contribute", "games"],
     "id": 264,
-    "weight": 2350
+    "weight": 2565
   },
   {
     "zh": {
@@ -28946,12 +28350,9 @@
       "remark": "Tutor AI yang membantu Anda belajar secara efektif dan membangun kepercayaan diri. Disumbangkan oleh @EmmmmmmaWWWWW."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 265,
-    "weight": 1528
+    "weight": 1720
   },
   {
     "zh": {
@@ -29056,12 +28457,9 @@
       "remark": "Buat prompt Midjourney dari deskripsi terperinci, mendukung terjemahan dan pemformatan. Disumbangkan oleh @Leptune."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "ai"
-    ],
+    "tags": ["contribute", "ai"],
     "id": 266,
-    "weight": 4371
+    "weight": 4660
   },
   {
     "zh": {
@@ -29166,12 +28564,9 @@
       "remark": "Tulis ulang konten untuk mengurangi tingkat plagiarisme atau duplikasi. Disumbangkan oleh @皮蛋瘦肉周."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 267,
-    "weight": 2626
+    "weight": 2718
   },
   {
     "zh": {
@@ -29276,12 +28671,9 @@
       "remark": "Membantu penutur bahasa Jepang belajar bahasa Prancis. Disumbangkan oleh @wakana."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 268,
-    "weight": 237
+    "weight": 250
   },
   {
     "zh": {
@@ -29386,12 +28778,9 @@
       "remark": "Rasakan pengalaman mengobrol dengan penjahat terkenal di Naruto. Disumbangkan oleh @FOX."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "interesting"
-    ],
+    "tags": ["contribute", "interesting"],
     "id": 269,
-    "weight": 923
+    "weight": 1013
   },
   {
     "zh": {
@@ -29496,12 +28885,9 @@
       "remark": "Analisis mendalam tentang pertanyaan dan penanya dari berbagai aspek akademis. Disumbangkan oleh @自由叶."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 270,
-    "weight": 1252
+    "weight": 1308
   },
   {
     "zh": {
@@ -29606,12 +28992,9 @@
       "remark": "Membantu mengidentifikasi masalah spesifik saat Anda merasa ragu. Disumbangkan oleh @自由叶."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 271,
-    "weight": 826
+    "weight": 894
   },
   {
     "zh": {
@@ -29716,12 +29099,9 @@
       "remark": "Pelajari kosakata bahasa Inggris melalui fonetik dan analisis terperinci. Disumbangkan oleh @sonictuzi."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "language"
-    ],
+    "tags": ["contribute", "language"],
     "id": 272,
-    "weight": 571
+    "weight": 603
   },
   {
     "zh": {
@@ -29826,12 +29206,9 @@
       "remark": "Temukan pengetahuan baru di luar zona nyaman informasi Anda. Disumbangkan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "mind"
-    ],
+    "tags": ["contribute", "mind"],
     "id": 273,
-    "weight": 968
+    "weight": 1081
   },
   {
     "zh": {
@@ -29936,12 +29313,9 @@
       "remark": "Visualisasikan teks sebagai konsep simbolis. Disumbangkan oleh @ergf991."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "pedagogy"
-    ],
+    "tags": ["contribute", "pedagogy"],
     "id": 274,
-    "weight": 738
+    "weight": 807
   },
   {
     "zh": {
@@ -30046,12 +29420,9 @@
       "remark": "Simulasikan konsultasi pengacara profesional dengan opsi yang dipersonalisasi. Disumbangkan oleh @zhaoxJJ."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "professional"
-    ],
+    "tags": ["contribute", "professional"],
     "id": 275,
-    "weight": 1356
+    "weight": 1524
   },
   {
     "zh": {
@@ -30156,11 +29527,9 @@
       "remark": "Optimalkan biaya perjalanan dengan saran rute hemat. Disumbangkan oleh @scenerorSun."
     },
     "website": "https://github.com/f/awesome-chatgpt-prompts#act-as-cheap-travel-ticket-advisor",
-    "tags": [
-      "tool"
-    ],
+    "tags": ["tool"],
     "id": 276,
-    "weight": 300
+    "weight": 350
   },
   {
     "zh": {
@@ -30265,12 +29634,9 @@
       "remark": "Tingkatkan keterampilan menulis ulang dan hindari plagiarisme. Disumbangkan oleh @aliliin."
     },
     "website": null,
-    "tags": [
-      "contribute",
-      "write"
-    ],
+    "tags": ["contribute", "write"],
     "id": 277,
-    "weight": 3927
+    "weight": 4472
   },
   {
     "zh": {
@@ -30376,11 +29742,9 @@
       "remark": "Pastikan prompt pembuatan gambar mematuhi aturan platform AI."
     },
     "website": null,
-    "tags": [
-      "ai"
-    ],
+    "tags": ["ai"],
     "id": 278,
-    "weight": 320
+    "weight": 487
   },
   {
     "zh": {
@@ -30486,10 +29850,7 @@
       "remark": "Berguna untuk kreator, pengajar, konsultan, dan tim kecil yang membuat alur kerja AI reusable pertama. Kontribusi dari @Ronnie2025."
     },
     "website": "https://github.com/Ronnie2025/ai-workflow-prompts-zh",
-    "tags": [
-      "contribute",
-      "tool"
-    ],
+    "tags": ["contribute", "tool"],
     "id": 279,
     "weight": 1
   }
