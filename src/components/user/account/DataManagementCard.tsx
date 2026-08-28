@@ -89,30 +89,34 @@ const DataManagementCard: React.FC<DataManagementCardProps> = ({ canExport, impo
               border: "1px solid var(--site-color-hairline)",
             }}
           />
+          {/* 这段文案**刻意硬编码英文、不走 i18n**，不要改回 <Translate>：
+              在线版这个按钮只清客户端缓存，清完从服务端重取，原译文「清除后将重新加载所有数据」是准确的；
+              离线版的 localStorage 就是数据库，同一个按钮是永久删掉收藏 / 自建提示词 / 标签 / 排序，
+              没有任何备份也无法撤销 —— 沿用那套译文会让用户以为数据还能回来。
+              不新增 i18n key：同一句话要铺 17 个 locale，而这里语义的正确性比本地化要紧。
+              cancelText 保留译文：“取消”是安全选项，用母语看懂更重要，也不会误导。 */}
           <div>
-            <Text strong>
-              <Translate id="button.clearCache">清除缓存</Translate>
-            </Text>
+            <Text strong>Clear local data</Text>
             <br />
             <Text type="secondary" style={{ fontSize: 12 }}>
-              <Translate id="description.clearCache.short">刷新本地缓存数据</Translate>
+              Permanently deletes everything this site stores in your browser
             </Text>
           </div>
         </Flex>
         <Popconfirm
-          title={<Translate id="modal.clearCache.title">确认清除缓存？</Translate>}
-          description={
-            <Text type="warning">
-              <Translate id="modal.clearCache.warning">清除后将重新加载所有数据。</Translate>
-            </Text>
-          }
+          title="Delete all local data?"
+          // 不用 <Text type="warning">：antd 的 colorWarningText 在浅色主题下是 #faad14，
+          // 压白底只有 1.9:1（14px 要求 4.5:1）—— 实测几乎看不见，而这是整个界面上
+          // 最需要被看清的一句话。改用站点自己那对达标的 token（浅 #ad4e00 / 暗 #fa8c16）。
+          description={<Text style={{ color: "var(--site-color-warning-text)" }}>This browser is the only place it is stored. Export a backup first — this cannot be undone.</Text>}
           onConfirm={onClearCache}
-          okText={<Translate id="button.confirmClear">确认清除</Translate>}
+          okText="Delete permanently"
           okButtonProps={{ danger: true }}
           cancelText={<Translate id="action.cancel">取消</Translate>}
+          styles={{ root: { maxWidth: 340 } }}
           placement="topRight">
           <Button danger icon={<DeleteOutlined />}>
-            <Translate id="button.clearAllCache">清除所有缓存</Translate>
+            Delete all
           </Button>
         </Popconfirm>
       </Flex>

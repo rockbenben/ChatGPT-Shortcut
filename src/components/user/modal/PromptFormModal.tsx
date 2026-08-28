@@ -49,6 +49,13 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
         form={form}
         layout="vertical"
         requiredMark="optional"
+        // preserve={false}：字段卸载时把值从 store 移除。useForm() 的 store 活在本组件上，
+        // 不随 destroyOnHidden 一起销毁，光靠下面那个「打开时 resetFields」的 useEffect 会
+        // 和字段重新挂载抢跑（effect 先跑在尚未连接的实例上、静默失效，字段随后又从旧 store
+        // 读回值）——实测提交成功后、以及点「取消」后重开，标题与内容都还是上一条的，
+        // 「创建提示词」弹窗带着刚提交过的内容打开，很容易误提交重复条目。
+        // 提交失败时弹窗不关、字段没卸载，输入照样保留，与下方注释的意图一致。
+        preserve={false}
         // 不在此 resetFields：onSubmit 内部失败时是 catch 后返回 false（不抛），此处会无条件清空表单，
         // 而调用方失败时不关弹窗 → 用户输入被清空丢失。表单初始化交给「打开时的 useEffect」+ destroyOnHidden，
         // 成功时调用方关弹窗、下次打开自然重置；失败时保留输入供用户修正重提。
@@ -61,7 +68,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
               required: true,
               message: translate({
                 id: "validation.promptTitle.required",
-                message: "请输入提示词标题！",
+                message: "请输入提示词标题",
               }),
             },
           ]}>
@@ -81,7 +88,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
               required: true,
               message: translate({
                 id: "validation.promptContent.required",
-                message: "请输入提示词内容！",
+                message: "请输入提示词内容",
               }),
             },
           ]}>
@@ -93,7 +100,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
             maxLength={100}
             placeholder={translate({
               id: "placeholder.promptRemark",
-              message: "简要描述提示词的作用（选填）",
+              message: "简要描述提示词的作用（可选）",
             })}
           />
         </Form.Item>
@@ -104,7 +111,7 @@ const PromptFormModal: React.FC<PromptFormModalProps> = ({ open, mode, loading, 
             maxLength={2000}
             placeholder={translate({
               id: "placeholder.promptNotes",
-              message: "提示词来源、其他语言版本或补充说明（选填）",
+              message: "提示词来源、其他语言版本或补充说明（可选）",
             })}
           />
         </Form.Item>

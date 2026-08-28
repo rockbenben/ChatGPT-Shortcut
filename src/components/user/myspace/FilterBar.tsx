@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
-import { Segmented, Tag, Button, Input, Flex } from "antd";
+import { Segmented, Button, Input, Flex } from "antd";
 import { AppstoreOutlined, EditOutlined, HeartOutlined, TagOutlined, SearchOutlined } from "@ant-design/icons";
 import searchStyles from "@site/src/components/SearchBar/styles.module.css";
 import type { CustomTag, FilterType } from "./types";
@@ -96,17 +96,51 @@ const FilterBar: React.FC<{
       {customTags.length > 0 && (
         <Flex wrap="wrap" gap="small" style={{ marginLeft: 8 }}>
           {customTags.map((tag) => (
-            <Tag
+            <button
               key={tag.id}
-              color={tag.color}
+              type="button"
+              // 用真 <button> 而不是 antd <Tag>（span）：同 TagManagerModal 里的颜色触发器。
+              // <Tag onClick> 看着能点（cursor:pointer），但没有 tabindex / role，
+              // 键盘用户 Tab 不到、读屏当纯文本念，自定义标签筛选实际上用不了。
+              // aria-pressed 而非 role="button"：这是个可切换的筛选开关，选中态要能被拿到。
+              aria-pressed={selectedTags.includes(tag.id)}
+              // 不走 antd 预设色标签（color-6 文字 + color-1 底）：gold/lime 这类中间调在浅底上
+              // 只有 2.48~2.76:1，12px 文字不达标，且三种 variant 都救不回来。
+              // 改成与首页筛选标签同一套语言（中性文字 + 末尾圆点，见 ShowcaseTagSelect），
+              // 用户选的颜色收敛到圆点上：--ant-<preset>-6 由 antd 按主题各出一份值。
+              onClick={() => toggleTag(tag.id)}
               style={{
                 cursor: "pointer",
-                opacity: selectedTags.includes(tag.id) ? 1 : 0.55,
-                transition: "opacity 0.12s cubic-bezier(0.16,1,0.3,1)",
-              }}
-              onClick={() => toggleTag(tag.id)}>
+                display: "inline-flex",
+                alignItems: "center",
+                margin: 0,
+                padding: "4px 10px",
+                borderRadius: 0,
+                // <button> 不继承页面字体，不写会变成系统 UI 字体
+                fontFamily: "inherit",
+                fontSize: 12,
+                fontWeight: 500,
+                lineHeight: 1.5,
+                letterSpacing: "0.02em",
+                border: `1px solid ${selectedTags.includes(tag.id) ? "rgba(var(--ifm-color-primary-rgb), 0.4)" : "var(--site-color-hairline)"}`,
+                background: selectedTags.includes(tag.id) ? "rgba(var(--ifm-color-primary-rgb), 0.1)" : "transparent",
+                color: selectedTags.includes(tag.id) ? "var(--site-color-tag-selected-text)" : "var(--ifm-color-content-secondary)",
+                transition: "all 0.12s cubic-bezier(0.16,1,0.3,1)",
+              }}>
               {tag.name}
-            </Tag>
+              <span
+                aria-hidden
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: 1,
+                  marginInlineStart: 8,
+                  display: "inline-block",
+                  flexShrink: 0,
+                  background: `var(--ant-${tag.color}-6)`,
+                }}
+              />
+            </button>
           ))}
         </Flex>
       )}
@@ -139,7 +173,7 @@ const FilterBar: React.FC<{
               <kbd className={`${searchStyles.kbdHint} hideOnSmallScreen`} aria-hidden>
                 CTRL K
               </kbd>
-              <Button type="text" icon={<SearchOutlined />} onClick={handleSearch} />
+              <Button type="text" icon={<SearchOutlined />} onClick={handleSearch} aria-label={translate({ id: "search.submit", message: "搜索" })} />
             </>
           }
         />

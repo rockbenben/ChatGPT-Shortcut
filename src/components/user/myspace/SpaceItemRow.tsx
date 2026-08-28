@@ -94,8 +94,11 @@ const SpaceItemRow = React.memo<SpaceItemRowProps>(
       [customTags, item.id, item.customTags, onToggleTag, saveTagAssignment, setOpenTagDropdownItemId, setTagManagerOpen],
     );
 
+    // antd Tooltip 不会把 title 写进子元素的 aria-label，纯图标按钮的无障碍名会回落到
+    // @ant-design/icons 的英文图标名（实测读屏念 "tag"）。同一份文案喂给 Tooltip 与 aria-label。
+    const assignTagLabel = translate({ id: "myspace.assignTag", message: "分配标签" });
     const extraActions = (
-      <Tooltip title={translate({ id: "myspace.assignTag", message: "分配标签" })}>
+      <Tooltip title={assignTagLabel}>
         {customTags.length > 0 ? (
           <Dropdown
             menu={{ items: tagMenuItems }}
@@ -115,6 +118,7 @@ const SpaceItemRow = React.memo<SpaceItemRowProps>(
               type="text"
               size="small"
               icon={<TagOutlined style={hasAnyTag ? { color: "var(--site-color-tag-selected-text)" } : undefined} />}
+              aria-label={assignTagLabel}
               onClick={(e) => e.stopPropagation()}
             />
           </Dropdown>
@@ -123,6 +127,7 @@ const SpaceItemRow = React.memo<SpaceItemRowProps>(
             type="text"
             size="small"
             icon={<TagOutlined />}
+            aria-label={assignTagLabel}
             onClick={(e) => {
               e.stopPropagation();
               setTagManagerOpen(true);

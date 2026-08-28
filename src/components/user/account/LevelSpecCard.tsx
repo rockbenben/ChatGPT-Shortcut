@@ -54,18 +54,19 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
         </Flex>
 
         {/* Geometric icon with level-tinted radial halo */}
-        <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 14 }}>
+        <div style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 14, color: levelInfo.accentColor }}>
           <div
             aria-hidden
             style={{
               position: "absolute",
               inset: 0,
-              background: `radial-gradient(circle, ${levelInfo.accentColor}33 0%, transparent 70%)`,
+              background: `radial-gradient(circle, color-mix(in srgb, ${levelInfo.accentColor} 20%, transparent) 0%, transparent 70%)`,
               pointerEvents: "none",
               filter: "blur(2px)",
             }}
           />
-          <LevelIcon level={levelInfo.level} size={64} color={levelInfo.accentColor} strokeWidth={1.5} />
+          {/* 颜色由外层 color 继承（见 style），不走 SVG 属性 —— presentation attribute 不解析 var() */}
+          <LevelIcon level={levelInfo.level} size={64} strokeWidth={1.5} />
         </div>
 
         {/* Level name — display weight, no emoji */}
@@ -78,14 +79,14 @@ const LevelSpecCard: React.FC<{ sharedCount: number }> = ({ sharedCount }) => {
         {/* Progress / Max-state */}
         {levelInfo.next ? (
           <Flex vertical gap={8} style={{ width: "100%", marginTop: 6 }}>
-            <div style={{ height: 3, background: "var(--ifm-color-emphasis-100)", borderRadius: 2, overflow: "hidden" }}>
+            <div style={{ height: 3, background: "var(--site-color-hairline)", borderRadius: 2, overflow: "hidden" }}>
               <div
                 style={{
                   height: "100%",
                   width: `${progressPercent}%`,
                   background: levelInfo.accentColor,
                   transition: "width 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-                  boxShadow: `0 0 8px ${levelInfo.accentColor}66`,
+                  boxShadow: `0 0 8px color-mix(in srgb, ${levelInfo.accentColor} 40%, transparent)`,
                 }}
               />
             </div>

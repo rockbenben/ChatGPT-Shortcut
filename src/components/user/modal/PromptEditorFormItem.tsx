@@ -2,7 +2,6 @@ import { Input, Typography, Alert } from "antd";
 import { useMemo } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { orange, red } from "@ant-design/colors";
 import { estimateTokens } from "@site/src/utils/promptRender";
 import { toBcp47 } from "@site/src/utils/i18n";
 
@@ -12,9 +11,13 @@ const DANGER_LIMIT = 10000; // 过长，建议拆分
 const SAFE_CHAR_LIMIT = 40000;
 
 // 计数颜色：默认中性，仅超阈值时染色（不再为"正常长度"铺 4 色渐变）。
+//
+// 原本直接取 @ant-design/colors 的 red[5] / orange[5]。那是固定 hex，两个主题共用一个值，
+// 11px 下必然只能顾一头 —— 实测 red[5] #f5222d 浅 4.08 / 暗 3.41 两边都不到 4.5，
+// orange[5] #fa8c16 暗色 5.85 没问题但浅色只有 2.38。改用配对 token，各模式各取各的值。
 const getStatusColor = (tokens: number) => {
-  if (tokens >= DANGER_LIMIT) return red[5];
-  if (tokens >= WARNING_LIMIT) return orange[5];
+  if (tokens >= DANGER_LIMIT) return "var(--site-color-error-text)";
+  if (tokens >= WARNING_LIMIT) return "var(--site-color-warning-text)";
   return "var(--site-color-text-tertiary)";
 };
 
@@ -40,11 +43,12 @@ const PromptEditorFormItem: React.FC<Props> = ({ value = "", onChange }) => {
         maxLength={SAFE_CHAR_LIMIT}
         placeholder={translate({
           id: "placeholder.promptContent",
-          message: "在此输入详细的提示词内容...",
+          message: "在此输入详细的提示词内容…",
         })}
-        showCount={{
-          formatter: () => <Typography.Text style={{ color: statusColor, fontSize: 12 }}>≈ {tokens.toLocaleString()} tokens</Typography.Text>,
-        }}
+        // 本组件返回 Fragment（TextArea + token 计数 + Alert），antd Form.Item 只会把
+        // 生成的 id 挂到单一子控件上，这里挂不上 —— label 的 htmlFor 落空，读屏念不出字段名。
+        // 同表单其余三个字段都有 label[for]，只有最主要的内容框是空的。复用同一个 label id。
+        aria-label={translate({ id: "label.promptContent", message: "提示词内容" })}
         status={isDanger ? "warning" : undefined}
       />
       <div style={{ textAlign: "right" }}>

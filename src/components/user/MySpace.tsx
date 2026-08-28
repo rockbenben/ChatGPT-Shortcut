@@ -197,7 +197,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
         console.error("Failed to save order:", error);
         // 回滚乐观更新：保存失败 → 卡片回到拖动前的位置，与 toast 一致
         setSpaceItems(previousSpaceItems);
-        messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败</Translate>);
+        messageApi.error(<Translate id="message.orderSaveFailed">排列保存失败，请稍后重试</Translate>);
       }
     },
     [spaceItems, setSpaceItems, filteredItems, filter, selectedTags, searchQuery, messageApi, userAuth, syncMySpaceState],
@@ -252,7 +252,7 @@ const MySpace: React.FC<MySpaceProps> = ({ onOpenModal, onDataLoaded }) => {
       messageApi.success(<Translate id="message.tagsUpdated">标签已更新</Translate>);
     } catch (error) {
       console.error("Failed to update tags:", error);
-      messageApi.error(<Translate id="message.tagsUpdateFailed">标签更新失败</Translate>);
+      messageApi.error(<Translate id="message.tagsUpdateFailed">标签更新失败，请稍后重试</Translate>);
     }
   };
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import { Button, Space, Modal, Input, Flex, Dropdown } from "antd";
-import { presetPrimaryColors } from "@ant-design/colors";
 import { PlusOutlined, DeleteOutlined, TagOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 import type { CustomTag } from "./types";
@@ -68,7 +67,11 @@ const TagManagerModal: React.FC<{
         width: 28,
         height: 22,
         borderRadius: 4,
-        background: presetPrimaryColors[color],
+        // 用 CSS 变量而不是 @ant-design/colors 的 presetPrimaryColors：后者是固定 hex，
+        // 只有浅色那一份值。暗色下色块会显示 #eb2f96，可选完渲染出来的 <Tag> 是 #cb2b83
+        // （antd 的暗色调色板），色块和实际结果对不上。CSS 变量两个主题各有一份，
+        // 与下面 <Tag color={...}> 和 FilterBar 的圆点同源。
+        background: `var(--ant-${color}-6)`,
         border: "1px solid var(--site-color-hairline)",
       }}
     />
@@ -102,6 +105,7 @@ const TagManagerModal: React.FC<{
       <Space orientation="vertical" style={{ width: "100%" }}>
         <Flex gap="small">
           <Input
+            aria-label={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
             placeholder={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
             value={newTagName}
             onChange={(e) => setNewTagName(e.target.value)}
@@ -117,9 +121,14 @@ const TagManagerModal: React.FC<{
         <div style={{ marginTop: 16 }}>
           {localTags.map((tag) => (
             <Flex key={tag.id} align="center" gap="small" style={{ marginBottom: 8 }}>
-              <Input value={tag.name} onChange={(e) => handleUpdateTagName(tag.id, e.target.value)} style={{ flex: 1 }} />
+              <Input
+                value={tag.name}
+                onChange={(e) => handleUpdateTagName(tag.id, e.target.value)}
+                aria-label={translate({ id: "myspace.tagManager.namePlaceholder", message: "标签名称" })}
+                style={{ flex: 1 }}
+              />
               <ColorSelector value={tag.color} onChange={(color) => handleUpdateTagColor(tag.id, color)} />
-              <Button icon={<DeleteOutlined />} danger size="small" onClick={() => handleDeleteTag(tag.id)} />
+              <Button icon={<DeleteOutlined />} danger size="small" aria-label={translate({ id: "action.delete", message: "删除" })} onClick={() => handleDeleteTag(tag.id)} />
             </Flex>
           ))}
           {localTags.length === 0 && (

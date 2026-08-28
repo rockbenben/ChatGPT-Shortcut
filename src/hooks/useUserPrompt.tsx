@@ -26,7 +26,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         // 强制刷新，确保获取最新数据
         await refreshUserAuth();
 
-        message.success(<Translate id="message.addPrompt.success">提示词提交成功！</Translate>);
+        message.success(<Translate id="message.addPrompt.success">提示词已提交</Translate>);
 
         // 调用成功回调（用于导航）
         if (onSuccess) {
@@ -52,7 +52,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
         await apiUpdatePrompt(id, values);
         await refreshUserAuth();
 
-        message.success(<Translate id="message.updatePrompt.success">提示词更新成功！</Translate>);
+        message.success(<Translate id="message.updatePrompt.success">提示词已更新</Translate>);
         return true;
       } catch (err) {
         console.error(err);
@@ -73,7 +73,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
       try {
         await apiDeletePrompt(id);
         await refreshUserAuth();
-        message.success(<Translate id="message.deletePrompt.success">提示词删除成功！</Translate>);
+        message.success(<Translate id="message.deletePrompt.success">提示词已删除</Translate>);
       } catch (err) {
         console.error(err);
         // 同 updatePrompt：失败时 cache + 本地 state 都没变，无需 refresh。
@@ -89,7 +89,7 @@ export const useUserPrompt = (): UseUserPromptReturn => {
     (id: number) => {
       modal.confirm({
         title: <Translate id="message.deletePrompt.confirm.title">确认删除</Translate>,
-        content: <Translate id="message.deletePrompt.confirm.content">您确定要删除该提示词吗？</Translate>,
+        content: <Translate id="message.deletePrompt.confirm.content">确定要删除该提示词吗？</Translate>,
         onOk: async () => {
           await removePrompt(id);
         },
