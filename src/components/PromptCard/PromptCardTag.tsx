@@ -69,23 +69,25 @@ const TagLayout = ({
   onClick,
   cursor,
 }: {
-  tags: Array<{ tag: TagType; label: string; description: string; color: string }>;
+  tags: Array<{ tag: TagType; label: string; description: string }>;
   muted: boolean;
   onClick?: (e: React.MouseEvent, tag: TagType) => void;
   cursor: string;
 }) => (
-  <Space size={[6, 6]} wrap style={{ opacity: muted ? 0.6 : 1 }}>
+  // muted 一律不压文字的透明度：原来 Space 0.6 × Tag 0.75 = 0.45，11px 标签在浅色底上
+  // 实测 2.05:1（AA 小字要 4.5:1），压成单层 0.75 也只有 3.75:1，仍不合格。
+  // 层级改由左侧 tick 承担（见下），文字保持全强度 —— 该弱化的是装饰，不是标签本身。
+  <Space size={[6, 6]} wrap>
     {tags.map((tagObject, index) => (
       <Tooltip key={index} title={tagObject.description} id={`showcase_card_tag_${tagObject.tag}`}>
         <AntTag
           onClick={onClick ? (e) => onClick(e, tagObject.tag) : undefined}
           style={{
             marginRight: 0,
-            opacity: muted ? 0.75 : 1,
             color: "var(--ifm-color-content-secondary)",
             backgroundColor: "transparent",
             border: "1px solid var(--site-color-hairline)",
-            borderLeft: 0,
+            borderInlineStart: 0,
             borderRadius: 0,
             paddingInlineStart: 10,
             paddingInlineEnd: 8,
@@ -94,17 +96,19 @@ const TagLayout = ({
             position: "relative",
             cursor,
           }}>
-          {/* 左侧 tick 收敛为中性灰（原 tagObject.color 彩虹色与单 accent 体系冲突）——
-              双主题用 var（浅色黑系 / 暗色白系），硬编码白色在浅色卡片上不可见 */}
+          {/* 左侧 tick 收敛为中性灰（原 tagObject.color 彩虹色与单 accent 体系冲突）；
+              muted 与否的唯一视觉差别就在这条 tick 的深浅 */}
           <span
             aria-hidden
             style={{
               position: "absolute",
-              left: 0,
+              insetInlineStart: 0,
               top: 0,
               bottom: 0,
               width: 2,
-              backgroundColor: "var(--site-color-neutral-marker)",
+              // 别写死 rgba(255,255,255,…)：浅色模式下白色 22% 等于隐形，tick 直接消失。
+              // 配对 token 在两个模式各有值（暗色 white .22 / 浅色 black .2）
+              backgroundColor: muted ? "var(--site-color-ghost-border)" : "var(--site-color-neutral-marker)",
             }}
           />
           {tagObject.label}

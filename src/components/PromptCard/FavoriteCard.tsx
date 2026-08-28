@@ -1,10 +1,11 @@
 import React, { useCallback, ReactNode } from "react";
-import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
+import { Button, Typography, Flex, Statistic } from "antd";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
+import { IconAction } from "@site/src/components/IconAction";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { HeartFilled, LinkOutlined, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
+import { HeartFilled, UserOutlined, FireOutlined, LikeFilled, HolderOutlined, ExclamationCircleOutlined, StopOutlined } from "@ant-design/icons";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useSortable } from "@dnd-kit/sortable";
@@ -143,7 +144,7 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
           {!isFiltered && (
-            <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+            <div {...listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}
@@ -184,9 +185,13 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
       }
       actions={[
         <CopyButton key="copy" text={prompt} trackingId={isDataCard ? user.id : undefined} variant="iconOnly" block />,
-        <Tooltip key="remove" title={<Translate id="action.removeFavorite">从收藏中移除</Translate>}>
-          <Button type="text" icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />} onClick={handleRemoveFavorite} block />
-        </Tooltip>,
+        <IconAction
+          key="remove"
+          label={translate({ id: "action.removeFavorite", message: "从收藏中移除" })}
+          icon={<HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} />}
+          onClick={handleRemoveFavorite}
+          block
+        />,
         extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
@@ -201,18 +206,14 @@ const FavoriteCardComponent = ({ data: user, sortableId, isFiltered, onRemoveFav
         <div style={{ flex: 1, overflow: "hidden" }}>
           {owner && (
             <Typography.Text type="secondary" style={{ fontSize: "12px", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-              <UserOutlined style={{ marginRight: 4 }} />
+              <UserOutlined style={{ marginInlineEnd: 4 }} />
               {owner}
             </Typography.Text>
           )}
           <PromptCardTag tags={tags} muted clickable={false} />
         </div>
 
-        {website && (
-          <a href={website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={website} />
       </Flex>
     </BasePromptCard>
   );

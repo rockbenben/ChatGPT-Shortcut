@@ -43,7 +43,7 @@ export default function ShowcaseFilterToggle(): React.ReactElement {
         state: prepareUserState(),
       });
     },
-    [location, history],
+    [location, history]
   );
 
   return (

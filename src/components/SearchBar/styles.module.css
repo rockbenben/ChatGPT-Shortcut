@@ -91,7 +91,7 @@
 .fakeCaret {
   width: 6px;
   height: 14px;
-  margin-left: 4px;
+  margin-inline-start: 4px;
   background: var(--site-color-text-tertiary);
   display: inline-block;
   animation: caret-blink 1.4s steps(1) infinite;
@@ -131,7 +131,7 @@
   border-bottom-width: 2px;
   border-radius: 4px;
   padding: 1px 6px;
-  margin-right: 2px;
+  margin-inline-end: 2px;
   user-select: none;
   white-space: nowrap;
 }

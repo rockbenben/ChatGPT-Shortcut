@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
-import { Tooltip, Button, Typography, Flex } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
-import Translate from "@docusaurus/Translate";
+import { Typography, Flex } from "antd";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
+import { translate } from "@docusaurus/Translate";
+import { IconAction } from "@site/src/components/IconAction";
 import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, LinkOutlined, UpOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled, UserOutlined, DownOutlined, UpOutlined } from "@ant-design/icons";
 import { PromptRemark } from "./PromptRemark";
 import { PromptCardTag } from "./PromptCardTag";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
@@ -68,38 +69,37 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
       }
       titleExtra={
         <Typography.Text style={{ fontSize: 11, color: "var(--site-color-text-tertiary)", display: "flex", alignItems: "center", maxWidth: 75 }} ellipsis={{ tooltip: true }}>
-          <UserOutlined style={{ marginRight: 4 }} />
+          <UserOutlined style={{ marginInlineEnd: 4 }} />
           {user.owner}
         </Typography.Text>
       }
       actions={[
         <CopyButton key="copy" text={user.description} variant="iconOnly" block />,
         isLoggedIn && onToggleFavorite && (
-          <Tooltip key="fav" title={isFavorite ? <Translate id="action.removeFavorite">从收藏中移除</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFavorite} block />
-          </Tooltip>
+          <IconAction
+            key="fav"
+            label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
+            icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
+            onClick={handleToggleFavorite}
+            block
+          />
         ),
         onVote && (
-          <Tooltip key="up" title={<Translate id="action.upvote">赞</Translate>}>
-            <Button type="text" icon={<UpOutlined />} onClick={handleUpvote} block>
-              <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.upvotes || 0}</span>
-            </Button>
-          </Tooltip>
+          <IconAction key="up" label={translate({ id: "action.upvote", message: "赞" })} icon={<UpOutlined />} onClick={handleUpvote} block>
+            <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.upvotes || 0}</span>
+          </IconAction>
         ),
         // 非对称：downvotes === 0 时 icon-only + 弱化（opacity 0.6），> 0 时显示数字与 ▲ 对称
         onVote && (
-          <Tooltip key="down" title={<Translate id="action.downvote">踩</Translate>}>
-            <Button
-              type="text"
-              icon={<DownOutlined />}
-              onClick={handleDownvote}
-              block
-              className={(user.downvotes ?? 0) > 0 ? undefined : styles.cardVoteIconOnly}>
-              {(user.downvotes ?? 0) > 0 && (
-                <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes}</span>
-              )}
-            </Button>
-          </Tooltip>
+          <IconAction
+            key="down"
+            label={translate({ id: "action.downvote", message: "踩" })}
+            icon={<DownOutlined />}
+            onClick={handleDownvote}
+            block
+            className={(user.downvotes ?? 0) > 0 ? undefined : styles.cardVoteIconOnly}>
+            {(user.downvotes ?? 0) > 0 && <span style={{ fontFamily: "var(--site-font-mono)", fontVariantNumeric: "tabular-nums" }}>{user.downvotes}</span>}
+          </IconAction>
         ),
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
@@ -113,11 +113,7 @@ const CommunityCardComponent = ({ data: user, isFavorite, isLoggedIn, onToggleFa
         <div style={{ flex: 1, overflow: "hidden" }}>
           <PromptCardTag tags={user.tags} />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );

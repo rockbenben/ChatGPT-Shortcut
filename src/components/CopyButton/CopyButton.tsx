@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { Button, Tooltip } from "antd";
 import type { ButtonProps } from "antd";
 import { CopyOutlined, CheckOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import { useCopyToClipboard } from "@site/src/hooks/useCopyToClipboard";
 import styles from "./styles.module.css";
 
@@ -32,7 +32,7 @@ interface CopyButtonProps {
   tooltipLabel?: React.ReactNode;
   /** Label for outlined/primary variants (idle state). Defaults to <Translate id="action.copyPrompt">复制提示词</Translate>. */
   children?: React.ReactNode;
-  /** Label for outlined/primary variants (copied state). Defaults to <Translate id="message.copied">复制成功</Translate>. */
+  /** Label for outlined/primary variants (copied state). Defaults to <Translate id="message.copied">已复制</Translate>. */
   copiedLabel?: React.ReactNode;
   /**
    * Side-effect fired immediately after copy is initiated (e.g. close a modal).
@@ -98,6 +98,9 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
 
   const icon = copied ? <CheckOutlined /> : <CopyOutlined />;
 
+  // iconOnly 没有文本子节点：不显式给 aria-label，读屏只能念 @ant-design/icons 写在
+  // <span role="img"> 上的英文图标名 "copy"（18 个 locale 全都念英文），触屏还完全看不到
+  // Tooltip。整站最主要的动作不能只靠一个悬停提示存在。
   const button = (
     <Button
       type={variantToButtonType[variant]}
@@ -106,9 +109,10 @@ export const CopyButton: React.FC<CopyButtonProps> = ({
       disabled={disabled}
       icon={icon}
       onClick={handleClick}
+      aria-label={variant === "iconOnly" ? translate({ id: "action.copy", message: "复制" }) : undefined}
       className={composedClassName}>
       {variant !== "iconOnly" &&
-        (copied ? copiedLabel ?? <Translate id="message.copied">复制成功</Translate> : children ?? <Translate id="action.copyPrompt">复制提示词</Translate>)}
+        (copied ? copiedLabel ?? <Translate id="message.copied">已复制</Translate> : children ?? <Translate id="action.copyPrompt">复制提示词</Translate>)}
     </Button>
   );
 

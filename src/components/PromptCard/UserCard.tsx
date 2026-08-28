@@ -1,10 +1,11 @@
 import React, { useCallback, ReactNode } from "react";
-import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { BasePromptCard, ClampBox } from "./Base";
+import { Typography, Flex, Statistic } from "antd";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
+import { translate } from "@docusaurus/Translate";
+import { IconAction } from "@site/src/components/IconAction";
 import { CopyButton } from "@site/src/components/CopyButton";
-import { EditOutlined, DeleteOutlined, HolderOutlined, LinkOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined, HolderOutlined, LikeFilled, LockOutlined } from "@ant-design/icons";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { PromptRemark } from "./PromptRemark";
@@ -74,7 +75,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
       title={
         <Flex align="start" style={{ overflow: "hidden" }}>
           {!isFiltered && (
-            <div {...listeners} style={{ cursor: "grab", marginRight: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
+            <div {...listeners} style={{ cursor: "grab", marginInlineEnd: 8, display: "flex", alignItems: "center", flexShrink: 0, paddingTop: 6 }}>
               <HolderOutlined style={{ color: "var(--site-color-text-tertiary)" }} />
             </div>
           )}
@@ -109,14 +110,10 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         // 仅在传入 handler 时渲染编辑/删除：explore/搜索视图复用 UserCard 但不接 onEdit/onDelete，
         // 此时不应显示点击无反应的「编辑/删除」按钮（真正入口在 MySpace 收藏页）。
         onEdit && (
-          <Tooltip key="edit" title={<Translate id="action.edit">编辑</Translate>}>
-            <Button type="text" icon={<EditOutlined />} onClick={handleEdit} block />
-          </Tooltip>
+          <IconAction key="edit" label={translate({ id: "action.edit", message: "编辑" })} icon={<EditOutlined />} onClick={handleEdit} block />
         ),
         onDelete && (
-          <Tooltip key="delete" title={<Translate id="action.delete">删除</Translate>}>
-            <Button type="text" danger icon={<DeleteOutlined />} onClick={handleDelete} block />
-          </Tooltip>
+          <IconAction key="delete" label={translate({ id: "action.delete", message: "删除" })} icon={<DeleteOutlined />} onClick={handleDelete} danger block />
         ),
         extraActions && <React.Fragment key="extra">{extraActions}</React.Fragment>,
       ].filter(Boolean)}
@@ -131,11 +128,7 @@ const UserCardComponent = ({ data: user, sortableId, isFiltered, onEdit, onDelet
         <div style={{ flex: 1, overflow: "hidden" }}>
           <PromptCardTag tags={user.tags} clickable={false} />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );

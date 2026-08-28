@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo } from "react";
-import { Tooltip, Button, Typography, Flex, Statistic } from "antd";
-import { HeartOutlined, HeartFilled, LinkOutlined, FireOutlined } from "@ant-design/icons";
-import { BasePromptCard, ClampBox } from "./Base";
+import { Typography, Flex, Statistic } from "antd";
+import { HeartOutlined, HeartFilled, FireOutlined } from "@ant-design/icons";
+import { BasePromptCard, ClampBox, PromptSourceLink } from "./Base";
 import Link from "@docusaurus/Link";
-import Translate from "@docusaurus/Translate";
+import { translate } from "@docusaurus/Translate";
+import { IconAction } from "@site/src/components/IconAction";
 import { CopyButton } from "@site/src/components/CopyButton";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -83,9 +84,13 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
       actions={[
         <CopyButton key="copy" text={userInfo.prompt} trackingId={user.id} variant="iconOnly" block />,
         isLoggedIn && onToggleFavorite && (
-          <Tooltip key="fav" title={isFavorite ? <Translate id="action.removeFavorite">从收藏中移除</Translate> : <Translate id="common.favorites">收藏</Translate>}>
-            <Button type="text" icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />} onClick={handleToggleFav} block />
-          </Tooltip>
+          <IconAction
+            key="fav"
+            label={isFavorite ? translate({ id: "action.removeFavorite", message: "从收藏中移除" }) : translate({ id: "common.favorites", message: "收藏" })}
+            icon={isFavorite ? <HeartFilled style={{ color: "var(--site-color-svg-icon-favorite)" }} /> : <HeartOutlined />}
+            onClick={handleToggleFav}
+            block
+          />
         ),
       ].filter(Boolean)}
       onCardClick={handleCardClick}>
@@ -99,11 +104,7 @@ const DataCardComponent = ({ data: user, copyCount, isFavorite, isLoggedIn, onTo
         <div style={{ flex: 1 }}>
           <PromptCardTag tags={user.tags} muted />
         </div>
-        {user.website && (
-          <a href={user.website} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 8 }}>
-            <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
-          </a>
-        )}
+        <PromptSourceLink href={user.website} />
       </Flex>
     </BasePromptCard>
   );

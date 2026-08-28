@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
-import { Card, Flex, theme } from "antd";
+import { Card, Flex } from "antd";
+import { LinkOutlined } from "@ant-design/icons";
+import { translate } from "@docusaurus/Translate";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
@@ -11,6 +13,31 @@ import styles from "./styles.module.css";
 export const ClampBox: React.FC<{ children: ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
   <div style={{ flex: 1, minWidth: 0, minHeight: 0, ...style }}>{children}</div>
 );
+
+/**
+ * 卡片角落的原文链接。DataCard / CommunityCard / FavoriteCard / UserCard 曾各写一份
+ * 逐字相同的裸 `<a><LinkOutlined/></a>`，四份一起带着两个缺陷：
+ *
+ *   1. 命中区只有 12×22 —— 图标 12px、外层 `<a>` 无内边距。WCAG 2.2 AA(2.5.8) 要求
+ *      24×24，手机上实测很容易点空。这里把 `<a>` 撑成 24×24 的 inline-flex 盒子，
+ *      图标视觉尺寸不变，纯粹加大命中区。
+ *   2. 没有可访问名称 —— 图标链接无文本、无 aria-label，读屏只念「链接」。复用已在
+ *      17 个 locale 里译好的 `prompt.source`，不必为此新增 id（新增就得同步改 17 份
+ *      code.json，漏一份那门语言就回落中文）。
+ *
+ * marginLeft 从 8 收到 4：新盒子自带 6px 内边距，视觉间距与改动前保持一致。
+ */
+export const PromptSourceLink: React.FC<{ href?: string }> = ({ href }) =>
+  href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={translate({ id: "prompt.source", message: "来源" })}
+      style={{ marginInlineStart: 4, display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 24, minHeight: 24 }}>
+      <LinkOutlined style={{ fontSize: 12, color: "var(--site-color-text-tertiary)" }} />
+    </a>
+  ) : null;
 
 interface BasePromptCardProps {
   title?: ReactNode;
@@ -26,8 +53,6 @@ interface BasePromptCardProps {
 
 export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardProps>(
   ({ title, titleExtra, actions, children, className, style, loading, id, onCardClick, ...rest }, ref) => {
-    const { token } = theme.useToken();
-
     // 整卡可点开详情弹窗，但 antd Card 渲染的是裸 <div>：不给 role/tabIndex/键盘处理，
     // 键盘与读屏用户就完全够不到这个入口（styles 里的 :focus-visible 规则也永远不触发）。
     // 卡内还有标题链接与操作按钮，所以只在事件源就是卡片本身时响应，避免 Enter 双触发。
@@ -55,6 +80,7 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
           height: "100%",
           display: "flex",
           flexDirection: "column",
+          borderColor: "var(--site-color-hairline)",
           cursor: onCardClick ? "pointer" : undefined,
           ...style,
         }}
@@ -63,28 +89,23 @@ export const BasePromptCard = React.forwardRef<HTMLDivElement, BasePromptCardPro
             flex: 1,
             display: "flex",
             flexDirection: "column",
-            padding: token.paddingMD,
-            gap: token.marginXS,
+            padding: 16,
+            gap: 8,
           },
           actions: {
-            // 使用 CSS 变量替代 JS token，确保 SSG 主题兼容
-            borderTop: "1px solid var(--ifm-color-emphasis-200)",
-            backgroundColor: "var(--ifm-background-surface-color)",
-            padding: `${token.paddingXS}px ${token.paddingSM}px`,
+            borderTop: "1px solid var(--site-color-hairline)",
+            backgroundColor: "transparent",
+            padding: "8px 12px",
           },
         }}
         actions={actions}
         onClick={onCardClick}
         {...rest}>
         {(title || titleExtra) && (
-          <Flex justify="space-between" align="start" style={{ marginBottom: token.marginSM, minHeight: 32 }}>
-            <div style={{ flex: 1, overflow: "hidden", marginRight: token.marginXS }}>{title}</div>
+          <Flex justify="space-between" align="start" style={{ marginBottom: 12, minHeight: 32 }}>
+            <div style={{ flex: 1, overflow: "hidden", marginInlineEnd: 8 }}>{title}</div>
             {/* flexShrink:0：角标是定宽信息，标题再长也不该压扁它 */}
-            {titleExtra && (
-              <Flex align="center" gap={token.marginXS} style={{ flexShrink: 0 }}>
-                {titleExtra}
-              </Flex>
-            )}
+            {titleExtra && <Flex align="center" gap={8} style={{ flexShrink: 0 }}>{titleExtra}</Flex>}
           </Flex>
         )}
         {children}

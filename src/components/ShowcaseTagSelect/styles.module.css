@@ -58,8 +58,8 @@ input:checked + .checkboxLabel {
 
 .tagSelect:hover {
   color: var(--ifm-color-content) !important;
-  border-color: var(--ifm-color-emphasis-300) !important;
-  background-color: var(--ifm-hover-overlay) !important;
+  border-color: color-mix(in srgb, var(--ifm-color-content) 18%, transparent) !important;
+  background-color: color-mix(in srgb, var(--ifm-color-content) 3%, transparent) !important;
 }
 
 /* 分类圆点：默认中性灰，选中时点亮为 accent 并带微光。
@@ -69,7 +69,7 @@ input:checked + .checkboxLabel {
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  margin-left: 8px;
+  margin-inline-start: 8px;
   display: inline-block;
   flex-shrink: 0;
   background-color: var(--site-color-neutral-marker);

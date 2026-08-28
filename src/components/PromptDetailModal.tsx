@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Typography, Space, Button, Tooltip, Flex, Statistic } from "antd";
 import { LinkOutlined, InfoCircleOutlined, FireFilled, LikeFilled, UserOutlined, LockOutlined, CloseOutlined } from "@ant-design/icons";
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import Link from "@docusaurus/Link";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { PromptCardTag } from "./PromptCard/PromptCardTag";
@@ -27,6 +27,15 @@ interface PromptDetailModalProps {
   };
 }
 
+// mono 眉题，与详情页 .comp-sheet-eyebrow 同语言。提示词内容 / 译文两处共用，
+// 免得同一套字号字距在文件里抄两遍、改一处漏一处。
+const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <Typography.Text
+    style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)", flexShrink: 0 }}>
+    {children}
+  </Typography.Text>
+);
+
 const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, onCancel, data }) => {
   if (!data) return null;
 
@@ -50,6 +59,7 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
           padding: 0,
           overflow: "hidden",
           borderRadius: 12,
+          backgroundColor: "var(--ant-color-bg-elevated, #272d33)",
         },
       }}
       closeIcon={null}>
@@ -131,8 +141,8 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             {data.remark && (
               <div
                 style={{
-                  borderLeft: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
-                  background: "linear-gradient(90deg, rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
+                  borderInlineStart: "3px solid rgba(var(--ifm-color-primary-rgb), 0.45)",
+                  background: "linear-gradient(var(--site-fade-dir), rgba(var(--ifm-color-primary-rgb), 0.06) 0%, transparent 100%)",
                   borderRadius: "0 6px 6px 0",
                   padding: "6px 16px",
                   flexShrink: 0,
@@ -147,11 +157,9 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
             {/* Prompt Content Block — fills remaining height; the body box below is the scroll region */}
             <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
               <Flex justify="space-between" align="center" style={{ marginBottom: 10, flexShrink: 0 }}>
-                {/* mono 眉题，与详情页 .comp-sheet-eyebrow 同语言 */}
-                <Typography.Text
-                  style={{ fontSize: 11, fontWeight: 500, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
+                <Eyebrow>
                   <Translate id="prompt.content">提示词内容</Translate>
-                </Typography.Text>
+                </Eyebrow>
                 {/* 复制是 modal 的英雄动作，与详情页同配重（primary）；此前 outlined small 层级偏弱 */}
                 <CopyButton text={data.prompt} trackingId={isDataCard ? data.id : undefined} variant="primary" size="middle" />
               </Flex>
@@ -184,16 +192,50 @@ const PromptDetailModalComponent: React.FC<PromptDetailModalProps> = ({ open, on
               </div>
             </div>
 
-            {/* Description (译文) — 精选提示词的译文可能很长；限制最大高度并独立滚动，
-                避免它把上面的 Prompt 原文挤到很小的高度（原文优先拿剩余空间） */}
+            {/* 译文 — 之前这里是一段没有标题的灰字，读者看不出它是什么；详情页早就有
+                「译文」眉题 + ghost 容器（PromptPage.tsx 同处），modal 没跟上。对齐它。
+                对中文读者来说 prompt 是英文，译文才是理解这条提示词的入口，不该弱成脚注。
+                眉题在容器内固定、正文单独滚动，与上面的提示词内容同一套结构。 */}
             {data.description && data.description !== data.prompt && (
-              <Typography.Paragraph
-                copyable={{
-                  text: data.description,
-                }}
-                style={{ margin: 0, lineHeight: 1.55, fontSize: 13, color: "var(--ifm-color-content-secondary)", flexShrink: 0, maxHeight: "20vh", overflowY: "auto" }}>
-                {data.description}
-              </Typography.Paragraph>
+              <div
+                style={{
+                  flexShrink: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  minHeight: 0,
+                  padding: "14px 16px",
+                  // 详情页那边用的是 ghost（rgba 白 4%）。这里不能照抄：详情页的容器坐在
+                  // Card 上，而 modal 的 body 本来就是 --ant-color-bg-elevated 抬升面，
+                  // 再叠一层白只会把底色推得更亮、把浅色文字的对比度压下去。实测暗色下
+                  // 眉题落到 4.38:1（低于 4.5），而同一个 modal 里上面的提示词框用的是
+                  // --ifm-background-color 下沉到页面底色 —— 一个 modal 里两个相反方向。
+                  // 统一成下沉：暗色眉题 4.38 → 5.21，浅色 4.82 → 4.77（都过线），
+                  // 两个内容块也变成同一套面板语言。
+                  backgroundColor: "var(--ifm-background-color)",
+                  borderRadius: 6,
+                  border: "1px solid var(--site-color-hairline)",
+                }}>
+                <Eyebrow>
+                  <Translate id="prompt.translation">译文</Translate>
+                </Eyebrow>
+                {/* 滚动放在这个 wrapper 上，不要放回 Paragraph 自己身上：Paragraph 里
+                    antd 的 copyable 按钮是行内元素，它一旦比行盒高（比如给它加内边距或
+                    伪元素扩命中区），Paragraph 当滚动容器就会长出幽灵滚动条 —— 两行文字
+                    也有。详见 custom.css 里 .ant-typography-copy 那段。
+                    保留高度上限：译文和原文一样长，不封顶会把上面的原文挤到几乎没有。 */}
+                <div style={{ overflowY: "auto", minHeight: 0, maxHeight: "20vh", marginTop: 6 }}>
+                  <Typography.Paragraph
+                    copyable={{
+                      text: data.description,
+                      // 不传 tooltips 会落到 antd 语言包（zh_CN 是「复制 / 复制成功」），与站内
+                      // CopyButton 的「复制 / 已复制」分叉。复用已有 id，18 个 locale 都已译好。
+                      tooltips: [translate({ id: "action.copy", message: "复制" }), translate({ id: "message.copied", message: "已复制" })],
+                    }}
+                    style={{ margin: 0, lineHeight: 1.6, fontSize: 13, color: "var(--ifm-color-content-secondary)" }}>
+                    {data.description}
+                  </Typography.Paragraph>
+                </div>
+              </div>
             )}
           </Flex>
         </div>
