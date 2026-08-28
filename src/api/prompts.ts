@@ -1,484 +1,97 @@
 /**
- * Prompts APIs - CRUD for prompts, search, voting
+ * 提示词读写的离线实现。
+ *
+ * 精选卡片仍走 api/homepage.ts（它读的是打进产物的静态 JSON，本来就不联网，两条线共用）；
+ * 自建提示词落 localStorage；社区相关一律返回空 —— 离线版没有社区。
  */
-import { apiClient } from "./client";
-import {
-  setCache,
-  getCache,
-  removeCache,
-  flushCacheByPrefix,
-  getPromptCacheKey,
-  getPromptTTL,
-  getListCacheKey,
-  CACHE_TTL,
-  CACHE_PREFIX,
-  getETag,
-  setCacheWithETag,
-  extendCache,
-  extendCacheIfNeeded,
-  needsCacheExtension,
-} from "@site/src/utils/cache";
-import { clearMySpaceCache } from "./sessionCache";
 import { fetchCardsByIds } from "./homepage";
-import { dedupe } from "@site/src/utils/dedupe";
+import { loadPrompts, savePrompts, nextLocalPromptId, type LocalPrompt } from "./localStore";
+
+const nowIso = () => new Date().toISOString();
 
 /**
- * Batch fetch prompts by IDs with ETag conditional request support
- * Note: For "cards" type, uses local JSON data instead of API
+ * 与在线版同签名。cards 交给 fetchCardsByIds（静态 JSON），userprompts 读本地，commus 恒空。
+ * ids 允许是 number[] 或 { id }[]，与在线版一致 —— AuthContext 传的就是后者。
  */
 export async function getPrompts(type: "cards" | "commus" | "userprompts", ids: number[] | { id: number }[], lang?: string) {
-  if (!ids || ids.length === 0) {
-    return [];
-  }
+  if (!ids || ids.length === 0) return [];
 
-  // If type is "userprompts", extract id values
-  let normalizedInputIds: number[] = ids as number[];
-  if (type === "userprompts" && ids.length > 0 && typeof ids[0] === "object") {
-    normalizedInputIds = (ids as { id: number }[]).map((prompt) => prompt.id);
-  }
+  const normalized: number[] = typeof (ids as any[])[0] === "object" ? (ids as { id: number }[]).map((p) => p.id) : (ids as number[]);
 
-  const normalizedType = typeof type === "string" ? type.trim() : "";
-  const allowedTypes = new Set(["cards", "commus", "userprompts"]);
-  const safeType = allowedTypes.has(normalizedType) ? normalizedType : "commus";
-  const sanitizedLang = typeof lang === "string" && lang.trim() ? lang.trim() : "zh-Hans";
+  if (type === "cards") return fetchCardsByIds(normalized, lang);
+  if (type === "commus") return [];
 
-  // Deduplicate and validate IDs
-  const idsSeen = new Set<number>();
-  const normalizedIds: number[] = [];
-  normalizedInputIds.forEach((value) => {
-    const numericId = Number(value);
-    if (Number.isInteger(numericId) && numericId > 0 && !idsSeen.has(numericId)) {
-      idsSeen.add(numericId);
-      normalizedIds.push(numericId);
-    }
-  });
-
-  if (!normalizedIds.length) {
-    return [];
-  }
-
-  // === Cards: Use local JSON data with lscache caching ===
-  // This avoids API calls and uses the same cached prompt_*.json as search/filter
-  if (safeType === "cards") {
-    return fetchCardsByIds(normalizedIds, sanitizedLang);
-  }
-
-  // In-flight dedup for commus/userprompts: AuthContext prefetch + SearchBar/page rendering
-  // can concurrently call getPrompts for the same id set (e.g., user's commLoves [118]).
-  // Without dedup, each call independently runs cache validation → multiple
-  // /userprompts/check-updates requests for the same ids. Sorted key for deterministic match.
-  const dedupKey = `getPrompts_${safeType}_${[...normalizedIds].sort((a, b) => a - b).join(",")}`;
-  return dedupe(dedupKey, () => fetchPromptsInner(safeType, normalizedIds));
+  // userprompts：按传入 id 顺序返回，缺失的跳过（条目可能已被删除，但排序表里还留着）
+  const byId = new Map(loadPrompts().map((p) => [p.id, p]));
+  return normalized.map((id) => byId.get(id)).filter(Boolean) as LocalPrompt[];
 }
 
-// safeType 只可能是 "commus" / "userprompts" —— cards 在 getPrompts 里已短路到 fetchCardsByIds。
-// 两者的缓存键都与语言无关（`${prefix}${id}`），故一律不传 lang：曾经这里按语言传过 key，
-// 导致 needsCacheExtension 恒为 true、每次页面加载都白打一发 check-updates。
-async function fetchPromptsInner(safeType: string, normalizedIds: number[]) {
-  const cachedPrompts = new Map();
-  const idsToFetch: number[] = [];
-
-  // Check cache for each id
-  normalizedIds.forEach((id) => {
-    const cacheKey = getPromptCacheKey(safeType, id);
-    const cachedData = getCache(cacheKey);
-
-    if (cachedData) {
-      cachedPrompts.set(id, cachedData);
-    } else {
-      idsToFetch.push(id);
-    }
-  });
-
-  // Smart cache extension based on type
-  // - Cards: Pure cache (count changes frequently, not reliable)
-  // - Commus: Validate ONLY favorited items, auto-extend others
-  // - Userprompts: Already validated by MySpace API, auto-extend
-
-  if (cachedPrompts.size > 0) {
-    const ttl = getPromptTTL(safeType);
-
-    if (safeType === "commus") {
-      // Get favorited commu IDs from MySpace cache
-      const myspace = getCache("myspace");
-      const favoredCommIds = new Set(myspace?.items?.filter((item: any) => item.type === "favorite" && item.source === "community")?.map((item: any) => item.id) || []);
-
-      // Separate favorited and non-favorited
-      const favoredToValidate: number[] = [];
-      const nonFavoredToExtend: number[] = [];
-
-      Array.from(cachedPrompts.keys()).forEach((id) => {
-        if (favoredCommIds.size > 0 && favoredCommIds.has(id) && cachedPrompts.get(id)?.updatedAt) {
-          favoredToValidate.push(id);
-        } else {
-          nonFavoredToExtend.push(id);
-        }
-      });
-
-      // Auto-extend non-favorited commus
-      nonFavoredToExtend.forEach((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id);
-        extendCacheIfNeeded(cacheKey, ttl);
-      });
-
-      // Filter favorited commus: only validate those needing extension (< 50% TTL remaining)
-      const favoredNeedingValidation = favoredToValidate.filter((id) => {
-        const cacheKey = getPromptCacheKey(safeType, id);
-        return needsCacheExtension(cacheKey, ttl);
-      });
-
-      // Validate favorited commus (only those needing validation)
-      if (favoredNeedingValidation.length > 0) {
-        try {
-          const response = await apiClient.get("/userprompts/check-updates", {
-            params: { ids: favoredNeedingValidation },
-          });
-
-          // Track which IDs were returned (still available)
-          const returnedIds = new Set(response.data.map((item: { id: number }) => item.id));
-
-          // Process returned (available) prompts
-          response.data.forEach((serverItem: { id: number; updatedAt: string }) => {
-            const cached = cachedPrompts.get(serverItem.id);
-            const cacheKey = getPromptCacheKey(safeType, serverItem.id);
-
-            if (cached?.updatedAt === serverItem.updatedAt) {
-              // Same → Conditionally extend
-              extendCacheIfNeeded(cacheKey, ttl);
-            } else {
-              // Changed → Clear and mark for refetch
-              removeCache(cacheKey);
-              cachedPrompts.delete(serverItem.id);
-              idsToFetch.push(serverItem.id);
-            }
-          });
-
-          // Process unavailable prompts (not returned = unshared/deleted)
-          favoredNeedingValidation.forEach((id) => {
-            if (!returnedIds.has(id)) {
-              const cacheKey = getPromptCacheKey(safeType, id);
-              const cached = cachedPrompts.get(id);
-
-              if (cached) {
-                // Has cache → Mark as unavailable, extend TTL to 1 year
-                // User can still access cached content while it's private/deleted
-                const unavailablePrompt = {
-                  ...cached,
-                  _unavailable: true,
-                  _unavailableReason: "unshared",
-                  _unavailableAt: new Date().toISOString(),
-                };
-                setCache(cacheKey, unavailablePrompt, CACHE_TTL.UNAVAILABLE_CACHE);
-                cachedPrompts.set(id, unavailablePrompt);
-                console.warn(`[getPrompts] Prompt ${id} is unavailable (unshared), cached for 1 year`);
-              } else {
-                // No cache → Mark for frontend handling (will be fetched via favorBulk)
-                const placeholderPrompt = {
-                  id,
-                  _unavailable: true,
-                  _unavailableReason: "unshared",
-                  _noCache: true,
-                  _unavailableAt: new Date().toISOString(),
-                };
-                setCache(cacheKey, placeholderPrompt, CACHE_TTL.UNAVAILABLE_CACHE);
-                cachedPrompts.set(id, placeholderPrompt);
-                console.warn(`[getPrompts] Prompt ${id} is unavailable and has no cache`);
-              }
-            }
-          });
-        } catch (error) {
-          console.warn("[getPrompts] Favorited commus validation failed:", error);
-        }
-      }
-    } else if (safeType === "userprompts") {
-      // For userprompts: trust MySpace validation, conditionally extend
-      cachedPrompts.forEach((_, id) => {
-        const cacheKey = getPromptCacheKey(safeType, id);
-        extendCacheIfNeeded(cacheKey, ttl);
-      });
-    }
-  }
-
-  // Return cached data if all present
-  if (idsToFetch.length === 0) {
-    return normalizedIds.map((id) => cachedPrompts.get(id)).filter(Boolean);
-  }
-
-  const apiEndpoint = safeType === "userprompts" ? "/userprompts/favorbulk" : "/userprompts/bulk";
-
-  const response = await apiClient.post(apiEndpoint, { ids: idsToFetch });
-  const ttl = getPromptTTL(safeType);
-
-  // Save fetched data to cache
-  response.data.forEach((item: { id: number }) => {
-    setCache(getPromptCacheKey(safeType, item.id), item, ttl);
-  });
-
-  // Merge cached and fetched data
-  const allData = new Map(cachedPrompts);
-  response.data.forEach((item: { id: number }) => {
-    allData.set(item.id, item);
-  });
-
-  return normalizedIds.map((id) => allData.get(id)).filter(Boolean);
-}
-
-/**
- * Submit a new user prompt
- */
 export async function submitPrompt(values: { title: string; description: string; remark?: string; notes?: string; share?: boolean }) {
-  const response = await apiClient.post(`/userprompts`, {
-    data: {
-      title: values.title,
-      description: values.description,
-      remark: values.remark,
-      notes: values.notes,
-      share: values.share,
-      promptLength: values.description.length,
-    },
-  });
-  clearMySpaceCache();
-  return response.data;
+  const list = loadPrompts();
+  const prompt: LocalPrompt = {
+    id: nextLocalPromptId(list),
+    title: values.title,
+    description: values.description,
+    remark: values.remark,
+    notes: values.notes,
+    // share 在离线版没有意义（没有社区可分享），但保留字段：
+    // 导出的备份要能被在线版导入，丢字段会让那边的条目全部变成未分享。
+    share: values.share ?? false,
+    createdAt: nowIso(),
+    updatedAt: nowIso(),
+    copyCount: 0,
+  };
+  savePrompts([prompt, ...list]);
+  return { data: { id: prompt.id, attributes: prompt } };
 }
 
-/**
- * Update an existing user prompt
- */
-export async function updatePrompt(
-  id: number,
-  values: {
-    title: string;
-    description: string;
-    remark?: string;
-    notes?: string;
-    share?: boolean;
-  },
-) {
+export async function updatePrompt(id: number, values: { title: string; description: string; remark?: string; notes?: string; share?: boolean }) {
   if (!id) throw new Error("prompt id is required");
-  const response = await apiClient.put(`/userprompts/${id}`, {
-    data: {
-      title: values.title,
-      description: values.description,
-      remark: values.remark,
-      notes: values.notes,
-      share: values.share,
-      promptLength: values.description.length,
-    },
-  });
-
-  // Clear cache
-  removeCache(getPromptCacheKey("userprompts", id));
-  clearMySpaceCache();
-
-  return response.data;
+  const list = loadPrompts();
+  const idx = list.findIndex((p) => p.id === id);
+  if (idx === -1) throw new Error(`prompt ${id} not found`);
+  list[idx] = { ...list[idx], ...values, updatedAt: nowIso() };
+  savePrompts(list);
+  return { data: { id, attributes: list[idx] } };
 }
 
-/**
- * Delete a user prompt
- */
 export async function deletePrompt(id: number) {
-  if (!id) throw new Error("prompt id is required");
-  const response = await apiClient.delete(`/userprompts/${id}`);
-
-  // Clear cache
-  removeCache(getPromptCacheKey("userprompts", id));
-  clearMySpaceCache();
-
-  return response;
-}
-
-// 请求发出前写入的 lastFetch 时效（分钟）。请求成功会被完整 TTL 覆盖；
-// 失败时它就是"别再打了"的抑制窗口：按「优先保护后端」取 1 小时——一次瞬时抖动后
-// 最多 1 小时内不重试、直接吃缓存，代价是这段时间拿不到新数据（可接受）。
-const FAILED_FETCH_TTL_MIN = 60;
-
-/**
- * Get community prompts with pagination
- */
-export async function getCommPrompts(page: number, pageSize: number, sortField: string, sortOrder: string, searchTerm?: string) {
-  const trimmedSearchTerm = typeof searchTerm === "string" ? searchTerm.trim() : "";
-  const limitedSearchTerm = trimmedSearchTerm.length > 100 ? trimmedSearchTerm.substring(0, 100) : trimmedSearchTerm;
-  const encodedSearchKey = trimmedSearchTerm ? encodeURIComponent(limitedSearchTerm) : "noTerm";
-
-  // 缓存键的搜索段不能与"无搜索"哨兵 "noTerm" 碰撞：搜索词恰为 "noTerm" 时
-  // encodeURIComponent 原样返回 "noTerm"，会与默认列表 key 撞键，导致搜索结果与默认列表互相污染
-  //（搜 "noTerm" 命中默认全量，或清空搜索后默认页显示上次 "noTerm" 的搜索结果）。
-  // 非空搜索加 "q_" 前缀隔离；空搜索仍用 "noTerm"，与 snapshotPrime 的默认列表 key 保持一致。
-  const searchCacheSegment = trimmedSearchTerm ? `q_${encodedSearchKey}` : "noTerm";
-  const cacheKey = getListCacheKey(CACHE_PREFIX.COMM_LISTS, page, pageSize, sortField, sortOrder, searchCacheSegment);
-  const cachedData = getCache(cacheKey);
-  const cachedEtag = getETag(cacheKey);
-
-  // Poll throttling: only validate if >1 hour since last fetch
-  const lastFetchKey = `${cacheKey}_lastFetch`;
-  const lastFetchTime = getCache(lastFetchKey);
-  const now = Date.now();
-  const ONE_HOUR = 60 * 60 * 1000;
-
-  if (cachedData && lastFetchTime && now - lastFetchTime < ONE_HOUR) {
-    // Within 1 hour, return cached data directly
-    return cachedData;
-  }
-
-  let url = `/userprompts?pagination[withCount]=true&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=${sortField}:${sortOrder}`;
-
-  if (trimmedSearchTerm) {
-    // 必须对查询值做 percent-encode：含 # 的词会被 XHR 当作 fragment 截断（"C#" → "C"），
-    // 含 & 的词会注入额外 query 参数，含 + 的词被服务端解码成空格 —— 全部导致搜错内容。
-    // 注意：URL 用 encodedSearchKey（真实编码词）；缓存键另用 searchCacheSegment（带 "q_" 前缀防哨兵碰撞）。
-    url += `&filters[$or][0][description][$containsi]=${encodedSearchKey}&filters[$or][1][title][$containsi]=${encodedSearchKey}&filters[$or][2][remark][$containsi]=${encodedSearchKey}`;
-  }
-
-  // In-flight dedup（与 getPrompts 同一模式）：真正并发的调用共享同一个 Promise。
-  // cacheKey 已含 page/size/sort/搜索词，直接用作 dedup key。
-  return dedupe(cacheKey, async () => {
-    // 发请求**前**先写一个短时效的 lastFetch。这一行同时提供两件事：
-    //  - **并发闸门**：第二个并发/紧随其后的调用在上面的节流判断处直接吃缓存，不重复打后端；
-    //  - **失败抑制**：请求失败时标记留着，FAILED_FETCH_TTL_MIN 分钟内的重试直接吃缓存，
-    //    不会对着已经挂掉的 Strapi 反复重试。
-    // 成功后会用完整 TTL 覆盖，恢复正常的 1 小时轮询节流。
-    //
-    // 不要改成模块级的熔断器/退避状态机：这一行已经覆盖了并发与失败两种情况，
-    // 而状态机需要额外处理探测、恢复、慢失败等分支，收益不抵复杂度。
-    setCache(lastFetchKey, now, FAILED_FETCH_TTL_MIN);
-    try {
-      // Always fetch to check for updates (ETag will prevent unnecessary data transfer)
-      // 仅在 ETag 与 cachedData 同时存在时才发条件请求，避免 304 空 body 走到 fallthrough
-      const config = cachedEtag && cachedData ? { headers: { "If-None-Match": cachedEtag } } : {};
-      const response = await apiClient.get(url, {
-        ...config,
-        validateStatus: (status) => status === 200 || status === 304,
-      });
-
-      // Handle 304 Not Modified
-      // 进入此分支时 cachedData 必然存在（请求前已做过防御性同步）
-      if (response.status === 304 && cachedData) {
-        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-        // 只有真正拿到可用结果才记录 fetch 时间：网络失败/后续取详情失败时不设置，
-        // 否则会在有旧 cachedData 的情况下被 throttle 满一小时，拿不到新数据
-        setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
-        return cachedData;
-      }
-
-      // Handle 200 OK
-      const listItems = response.data.data; // [{ id: 73, updatedAt: "..." }, ...]
-      const newEtag = response.headers["etag"];
-
-      // Clear stale caches by comparing updatedAt
-      listItems.forEach((item: { id: number; updatedAt: string }) => {
-        const promptCacheKey = getPromptCacheKey("commus", item.id);
-        const cachedPrompt = getCache(promptCacheKey);
-
-        // If cached updatedAt differs from latest, clear the cache
-        if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
-          removeCache(promptCacheKey);
-        }
-      });
-
-      // Fetch prompts (only uncached or rebuilt ones will be fetched)
-      const ids = listItems.map((item: { id: number }) => item.id);
-      const responseIds = await getPrompts("commus", ids);
-
-      const result = [responseIds, { pagination: response.data.meta.pagination }];
-
-      // Save with ETag
-      setCacheWithETag(cacheKey, result, CACHE_TTL.COMM_PROMPT_LISTS, newEtag);
-      // 同上：结果已完整落盘后才记 fetch 时间（getPrompts 可能抛，抛了就不该 throttle）
-      setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
-
-      return result;
-    } catch (error) {
-      // Handle 304 in catch block
-      if (error?.response?.status === 304 && cachedData) {
-        extendCache(cacheKey, CACHE_TTL.COMM_PROMPT_LISTS);
-        // 304 也是一次成功的校验，同样要记 fetch 时间，否则每次调用都会重新发条件请求
-        setCache(lastFetchKey, now, CACHE_TTL.COMM_PROMPT_LISTS);
-        return cachedData;
-      }
-
-      // 不清 lastFetch：上面写的短时效标记正是失败抑制窗口，留着它。
-      // 仍然 rethrow：吞掉错误会让 community-prompts.tsx 把任意旧缓存当成新鲜结果渲染，
-      // 分页 total 与服务端不符、投票数是旧的，用户却完全看不出失败了。
-      console.error(`Error fetching commPrompts:`, error);
-      throw error;
-    }
-  });
+  savePrompts(loadPrompts().filter((p) => p.id !== id));
+  return { success: true };
 }
 
 /**
- * Vote on a user prompt
- */
-export async function voteOnUserPrompt(promptId: number, action: "upvote" | "downvote") {
-  if (!promptId) throw new Error("promptId is required");
-  const result = await apiClient.post(`/userprompts/${promptId}/vote`, { action: action });
-
-  // Update local cache with backend response
-  if (result?.data?.counts) {
-    const { upvotes, downvotes } = result.data.counts;
-    const upvoteDifference = upvotes - downvotes;
-
-    // Update prompt single cache（不 mutate cachedData，dedupe 后其他 holder 会共享同一引用）
-    const cacheKey = getPromptCacheKey("commus", promptId);
-    const cachedData = getCache(cacheKey);
-    if (cachedData) {
-      setCache(cacheKey, { ...cachedData, upvotes, downvotes, upvoteDifference }, getPromptTTL("commus"));
-    }
-
-    // Clear list cache
-    flushCacheByPrefix(CACHE_PREFIX.COMM_LISTS);
-  }
-
-  return result;
-}
-
-/**
- * Fetch all copy counts
- */
-export async function fetchAllCopyCounts() {
-  try {
-    const cacheKey = CACHE_PREFIX.COPY_COUNTS;
-    const cachedData = getCache(cacheKey);
-
-    if (cachedData) {
-      return cachedData;
-    }
-
-    const response = await apiClient.get(`/cards/allcounts`);
-    const counts = response.data.reduce((acc: Record<number, number>, item: { card_id: number; count: number }) => {
-      acc[item.card_id] = item.count;
-      return acc;
-    }, {});
-
-    setCache(cacheKey, counts, CACHE_TTL.COPY_COUNTS);
-    return counts;
-  } catch (error) {
-    console.error("Error fetching all copy counts:", error);
-    return {};
-  }
-}
-
-/**
- * Update copy count for a card
+ * 复制次数：在线版打到服务端做全站统计，离线版只累加本机计数。
+ * 它驱动等级系统（LevelSystem 按累计复制数算等级），所以不能直接空实现 —— 那样等级永远停在 L00。
  */
 export async function updateCopyCount(cardId: number) {
-  if (!cardId) return null;
-  try {
-    const response = await apiClient.post(`/cards/${cardId}/copy`);
-    return response.data.count;
-  } catch (error) {
-    console.error("Error updating copy count:", error);
-    return null;
+  const list = loadPrompts();
+  const idx = list.findIndex((p) => p.id === cardId);
+  if (idx !== -1) {
+    list[idx] = { ...list[idx], copyCount: (list[idx].copyCount ?? 0) + 1 };
+    savePrompts(list);
   }
+  return { success: true };
 }
 
 /**
- * Get a single community prompt by ID
- * Used for community prompt detail page
+ * 社区列表：恒返回空页。形状必须与在线版一致（[ids, { pagination }] 元组）——
+ * 调用方 SearchBar / useFallbackSearch / community-prompts 都按元组解构，
+ * 返回 undefined 或裸数组会让它们抛错而不是优雅显示「无结果」。
  */
-export async function getSingleCommPrompt(id: number) {
-  if (!id || !Number.isInteger(id) || id <= 0) {
-    return null;
-  }
-  // getPrompts 已过滤非法 id 并返回 []，取首项即可
-  return (await getPrompts("commus", [id]))[0] ?? null;
+export async function getCommPrompts(
+  page: number,
+  pageSize: number,
+  _sortField?: string,
+  _sortOrder?: string,
+  _searchTerm?: string,
+): Promise<[any[], { pagination: { page: number; pageSize: number; pageCount: number; total: number } }]> {
+  // 返回类型显式写成元组而不是让 TS 推成联合数组：调用方按 result[0] / result[1] 解构，
+  // 推断成 (any[] | {pagination})[] 会让每个解构点都报「属性不存在」。
+  return [[], { pagination: { page, pageSize, pageCount: 0, total: 0 } }];
+}
+
+/** 投票需要服务端计数，离线版无从落地：空操作，UI 侧的乐观更新会自行回滚 */
+export async function voteOnUserPrompt(_promptId: number, _action: "upvote" | "downvote") {
+  return {};
 }

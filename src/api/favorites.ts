@@ -1,35 +1,25 @@
 /**
- * Favorites APIs - delta-based mutation client.
- * 历史的 createFavorite / updateFavorite (full-array PUT) 已删除，所有路径走 patchFavorites。
+ * 收藏的离线实现。类型与在线版逐字段一致 —— useFavorite 的乐观更新 + delta reconcile
+ * 那条链路直接复用，不用为离线单开一份。
  */
-import { apiClient } from "./client";
+import { loadFavorites, saveFavorites, buildItems } from "./localStore";
 
 export interface FavoriteFieldOps {
   add?: number[];
   remove?: number[];
 }
+
 export interface FavoriteDeltaOps {
   loves?: FavoriteFieldOps;
   commLoves?: FavoriteFieldOps;
 }
 
-/**
- * /myspace 端点的响应形态（GET /api/myspace）。仅用于 AuthContext.fetchUser
- * 和 bulk-import-后续 refresh。每次 PATCH 不再使用这个 shape。
- */
 export interface MySpaceShape {
   favoriteId: number | null;
   items: Array<{ id: number; type: string; source: string; updatedAt?: string; share?: boolean; tags?: string[] }>;
   customTags: Array<{ id: string; name: string; color: string; order: number }>;
 }
 
-/**
- * PATCH /favorites/me 的 delta 响应形态。
- *  - loves/commLoves: server 端 merge 后的权威 id 数组
- *  - added: 本次操作中真正新加进 mySpaceOrder 的 items（含 server 的 updatedAt）；
- *    幂等 add 不计入 added。
- * 客户端拿 ops 和 added 自行调整本地 items，避免每次重传完整列表。
- */
 export interface FavoriteDeltaResponse {
   favoriteId: number;
   loves: number[];
@@ -38,15 +28,33 @@ export interface FavoriteDeltaResponse {
 }
 
 /**
- * Apply delta favorite ops (add / remove) — server merges against current DB state,
- * so concurrent edits on different devices don't lose entries.
- * Auto-creates the favorite record if the user doesn't have one yet.
+ * 在线版是 PATCH /favorites/me，服务端按当前 DB 状态合并 add/remove，所以多设备并发编辑不会互相覆盖。
+ * 离线版只有本机一份数据，不存在并发，但**仍按 delta 语义处理**而不是整份覆盖：
+ * 调用方传的就是 delta，整份覆盖会把它没提到的收藏一并抹掉。
  *
- * 返回 delta（不是完整 items）以避免每次 PATCH 都重传所有收藏。
- * 调用方（useFavorite）负责把 ops + delta 应用到本地 items 上，
- * 并写入 lscache-user_auth + lscache-myspace 保持一致。
+ * commLoves（社区收藏）恒为空：离线版没有社区。传进来的 commLoves 直接忽略，
+ * 不报错 —— 导入在线版备份时会带上它，报错会让整个导入失败。
  */
 export async function patchFavorites(ops: FavoriteDeltaOps): Promise<FavoriteDeltaResponse> {
-  const response = await apiClient.patch<FavoriteDeltaResponse>("/favorites/me", ops);
-  return response.data;
+  const before = loadFavorites();
+  const add = ops.loves?.add ?? [];
+  const remove = new Set(ops.loves?.remove ?? []);
+
+  const next = [...before.filter((id) => !remove.has(id)), ...add.filter((id) => !before.includes(id))];
+  saveFavorites(next);
+
+  const actuallyAdded = add.filter((id) => !before.includes(id));
+  return {
+    favoriteId: 1,
+    loves: next,
+    commLoves: [],
+    // added 供调用方把新条目并进本地 items。离线没有服务端时间戳，
+    // 用本机时间：MySpace 的「最近添加」排序读它，缺了会让新收藏排到末尾。
+    added: actuallyAdded.map((id) => ({ id, type: "favorite", source: "card", updatedAt: new Date().toISOString() })),
+  };
+}
+
+/** 供导入流程在整体写入后重新取一份完整形状 */
+export async function getFavoritesSnapshot(): Promise<MySpaceShape> {
+  return { favoriteId: 1, items: buildItems(), customTags: [] };
 }

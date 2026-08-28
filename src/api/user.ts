@@ -1,62 +1,18 @@
 /**
- * User APIs - User info, username update
+ * 本地用户资料 —— 离线版没有账号体系，但账户页仍需要一个显示名。
+ * 读写走 localStore：那边的 KEY 表是唯一真源，也是「清除数据」清理范围的依据，
+ * 在这里另抄一份 key 字面量迟早对不上（清了数据、名字还留着）。
  */
-import { apiClient, getAuthToken } from "./client";
-import { getCache, getETag, CACHE_TTL, CACHE_PREFIX, extendCache, setCacheWithETag } from "@site/src/utils/cache";
+import { loadDisplayName, saveDisplayName } from "./localStore";
 
-/**
- * Get complete user info for logged-in user
- * Uses ETag for efficient caching
- */
+const DEFAULT_NAME = "本地用户";
+
+/** 形状对齐在线版 GET /users/me?populate=*：调用方读的是 data.data.username */
 export async function getUserAllInfo() {
-  const token = getAuthToken();
-  if (!token) {
-    return null;
-  }
-
-  const cacheKey = CACHE_PREFIX.USER_PROFILE;
-  const cachedEtag = getETag(cacheKey);
-  const cachedData = getCache(cacheKey);
-
-  try {
-    const response = await apiClient.get(`/users/me?fields[0]=username&fields[1]=email&fields[2]=provider`, {
-      headers: {
-        // 使用标准 HTTP If-None-Match header
-        // 仅当有 ETag 且有缓存数据时才发送
-        ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
-      },
-      validateStatus: (status) => status === 200 || status === 304,
-    });
-
-    // Handle 304 Not Modified
-    if (response.status === 304) {
-      extendCache(cacheKey, CACHE_TTL.USER_PROFILE);
-      return cachedData;
-    }
-
-    // Extract and cache new ETag
-    const newEtag = response.headers["etag"];
-    const normalizedResponse = { data: response.data };
-
-    setCacheWithETag(cacheKey, normalizedResponse, CACHE_TTL.USER_PROFILE, newEtag);
-    return normalizedResponse;
-  } catch (error) {
-    // Handle 304 in error handler (some axios configs) — 与 try 内 304 路径保持一致
-    if (error.response?.status === 304 && cachedData) {
-      extendCache(cacheKey, CACHE_TTL.USER_PROFILE);
-      return cachedData;
-    }
-
-    console.error("Error fetching user data:", error);
-    throw error;
-  }
+  return { data: { username: loadDisplayName() || DEFAULT_NAME, email: "", id: 0 } };
 }
 
-/**
- * Update username
- */
 export async function updateUsername(username: string) {
-  return apiClient.put(`/favorites/update-username`, {
-    data: { newUsername: username },
-  });
+  saveDisplayName(username);
+  return { success: true };
 }

@@ -1,7 +1,7 @@
 /**
  * Homepage Data Service - Manages card data loading for the homepage
  * All data is loaded from static JSON files (no API calls)
- * Uses lscache for persistent caching (100 days)
+ * 仅会话级内存缓存；跨会话由 import() chunk 的 content-hash + HTTP immutable 缓存兜底
  */
 import { ALL_IDS } from "@site/src/data/constants";
 import { dedupe } from "@site/src/utils/dedupe";

@@ -1,89 +1,39 @@
 /**
- * MySpace APIs - 我的空间数据管理
+ * MySpace 的离线实现 —— 形状与在线版 /myspace 完全一致，数据来自 localStorage。
+ * 组件层（AuthContext、MySpace 及其 myspace/* 模块）因此一行都不用改。
  */
-import { apiClient } from "./client";
-import { clearMySpaceCache } from "./sessionCache";
-import { getCache, setCache, removeCache, getPromptCacheKey, getETag, CACHE_PREFIX, CACHE_TTL, extendCache, setCacheWithETag } from "@site/src/utils/cache";
+import { buildItems, loadTags, saveTags, saveOrder, type CustomTagDefinition } from "./localStore";
 
 /**
- * 获取 MySpace 完整数据（带 ETag 优化）
- * 包含：favorites（收藏、排序、标签）、userprompts、updatedAt
+ * 在线版这里是带 ETag 条件请求的 GET /myspace。离线版没有网络，直接从四个 key 拼出同形数据。
+ *
+ * favoriteId 固定为 1：在线版它是服务端 favorite 记录的主键，离线没有对应概念，
+ * 但调用方（useFavorite 的 delta reconcile）会读它，给 null 会让那条链路误判成「还没初始化」。
  */
+export function getMySpaceSync() {
+  return {
+    favoriteId: 1,
+    items: buildItems(),
+    customTags: loadTags().definitions,
+  };
+}
+
+/** 与在线版同签名的异步入口；离线版没有 IO，直接包一层同步实现 */
 export async function getMySpace() {
-  const cacheKey = CACHE_PREFIX.MYSPACE;
-  const cachedEtag = getETag(cacheKey);
-  const cachedData = getCache(cacheKey);
-
-  try {
-    const response = await apiClient.get("/myspace", {
-      headers: {
-        // 使用标准 If-None-Match header
-        ...(cachedEtag && cachedData && { "If-None-Match": cachedEtag }),
-      },
-      validateStatus: (status) => status === 200 || status === 304,
-    });
-
-    // 处理 304 Not Modified
-    if (response.status === 304) {
-      extendCache(cacheKey, CACHE_TTL.MYSPACE);
-      return cachedData;
-    }
-
-    // 提取新 ETag 并更新缓存
-    const newEtag = response.headers["etag"];
-    const newData = response.data;
-
-    setCacheWithETag(cacheKey, newData, CACHE_TTL.MYSPACE, newEtag);
-    // Clear stale userprompt caches by comparing updatedAt
-    if (newData?.items) {
-      newData.items.forEach((item: any) => {
-        if (item.type === "prompt" && item.source === "userprompt") {
-          const promptCacheKey = getPromptCacheKey("userprompts", item.id);
-          const cachedPrompt = getCache(promptCacheKey);
-
-          // If cached updatedAt differs from latest, clear the cache
-          if (cachedPrompt && cachedPrompt.updatedAt !== item.updatedAt) {
-            removeCache(promptCacheKey);
-          }
-        }
-      });
-    }
-
-    return newData;
-  } catch (error) {
-    // 处理 304 在某些配置下被当作错误（与 try 内 304 路径保持一致：续期缓存）
-    if (error.response?.status === 304 && cachedData) {
-      extendCache(cacheKey, CACHE_TTL.MYSPACE);
-      return cachedData;
-    }
-
-    console.error("[MySpace] Error fetching data:", error);
-    // 有缓存时降级返回缓存（应对 5xx/网络拒绝/DNS 等瞬时失败）；无缓存时必须抛出（而非吞错返回 null），
-    // 否则有 token 无缓存的用户遇到快速失败时 fetchOnce 拿到 null 直接 return，既不重试也不降级登出，
-    // userAuth 永久停在 {pending:true} → 骨架屏永不消失。
-    // 例外：401（token 已失效，如服务端密钥轮换）绝不返回缓存——否则 AuthContext 误判为登录成功，
-    // 当前会话变成"僵尸登录"（UI 显示已登录但所有写操作都 401）。与 getUserAllInfo 的 401 行为一致。
-    if (error.response?.status !== 401 && cachedData) {
-      return cachedData;
-    }
-    throw error;
-  }
+  return getMySpaceSync();
 }
 
-/**
- * 更新我的空间排序
- * @param order - 排序数组
- */
+/** 拖拽排序：整份覆盖，与在线版语义一致（服务端也不做增量合并） */
 export async function updateMySpaceOrder(order: Array<{ id: number; type: string; source: string }>) {
-  await apiClient.patch("/favorites/myspace-order", { order });
-  clearMySpaceCache();
+  saveOrder(order);
+  return { success: true };
 }
 
 /**
- * 更新自定义标签
- * @param customTags - 完整的 customTags 对象
+ * 自定义标签：definitions（标签本身）与 itemTags（条目→标签 id 列表）一起整份覆盖。
+ * 两者必须同写：只写 definitions 会留下指向已删标签的 itemTags，MySpace 侧筛选出空结果。
  */
-export async function updateCustomTags(customTags: { definitions: Array<{ id: string; name: string; color: string; order: number }>; itemTags: Record<string, string[]> }) {
-  await apiClient.patch("/favorites/custom-tags", { customTags });
-  clearMySpaceCache();
+export async function updateCustomTags(customTags: { definitions: CustomTagDefinition[]; itemTags: Record<string, string[]> }) {
+  saveTags({ definitions: customTags.definitions ?? [], itemTags: customTags.itemTags ?? {} });
+  return { success: true };
 }
