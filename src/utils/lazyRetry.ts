@@ -7,7 +7,7 @@ import { isChunkError, reloadOnce } from "./chunkReloadGuard";
  *
  *  1. React.lazy 会**永久缓存** settled 结果：chunk 抖一次，之后每次渲染都直接拿那个
  *     已 reject 的 promise，root ErrorBoundary 红框上的 "Try again" 重渲染也不会重新发请求。
- *  2. 调用处都没有局部 error boundary，失败一路冒到 root ErrorBoundary —— 一个广告位
+ *  2. 调用处都没有局部 error boundary，失败一路冒到 root ErrorBoundary —— 一个装饰性组件
  *     没加载出来，整页被 "This page crashed" 替换。
  *
  * 解法分两层：
@@ -61,7 +61,7 @@ export function lazyWithRetry<T extends React.ComponentType<any>>(factory: Loade
  * 渲染成空，不惊动 ErrorBoundary、不刷新 —— 它们缺席页面照常可用，为它们 crash 整页
  * 或刷掉用户正在写的评论完全不成比例。chunk 失败会重置外壳，网络恢复后用户下一次
  * 交互（再点分享/表情按钮）就能加载出来；console.error 保证真出 bug 时可见，
- * 不至于和广告拦截器的静默 null 混为一谈。
+ * 不至于和被浏览器扩展拦截时的静默 null 混为一谈。
  */
 export function lazyOptional<T extends React.ComponentType<any>>(factory: Loader<T>) {
   return makeResettableLazy<T>(factory, (err) => {

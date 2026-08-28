@@ -1,93 +1,56 @@
-import React, { useLayoutEffect, useState, useMemo } from "react";
+import React, { useLayoutEffect, useMemo, useState } from "react";
 import { ConfigProvider, theme, App } from "antd";
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import { AuthProvider } from "@site/src/components/AuthContext";
 import { useAntdLocale } from "./useAntdLocale";
+import { antdThemeFor } from "./antdTokens.mjs";
 
-// Dual-theme antd ConfigProvider — switches algorithm + dark-only brand tokens based on
-// Docusaurus data-theme attribute. Universal tokens (radius, motion, components) apply
-// in both modes; dark-only deep editorial bg/content apply only in dark mode.
-// NOTE: main 分支用 antd 默认 runtime CSS 注入（不设 zeroRuntime/cssVar，否则 antd 全失样式）
-// B+ token system — see docs/superpowers/specs/2026-05-07-ui-optimization-b-plus-design.md
-
-function getInitialTheme(): boolean {
+// 明暗双主题 + zero-runtime 静态样式。
+// token 本体在 ./antdTokens.mjs（与 scripts/genAntdCss.mjs 共用），静态样式
+// src/css/antd.dark.css 由 scripts/genAntdCss.mjs 经 scripts/generate.mjs 在
+// prestart/predev/pretypecheck/prebuild/predeploy 自动生成（不入库），改 token 无需手动重跑。
+//
+// 切主题为什么不需要运行时注入：cssVar 让组件规则只引用 var(--ant-*)，明暗两套变量
+// 都已静态存在于 antd.dark.css，切换只是让 antd 给组件换一个 scope class
+// （aishort / aishort-light）。所以 zeroRuntime 可以一直开着。
+//
+// ⚠ 用 MutationObserver 读 data-theme 而不是 useColorMode()：Root 位于 Docusaurus 的
+// ColorModeProvider **外层**，在这里调 useColorMode 会抛「called outside the
+// ColorModeProvider」。main 分支同因同解，两边保持同构便于 cherry-pick。
+function getInitialDark(): boolean {
   if (ExecutionEnvironment.canUseDOM) {
     return document.documentElement.getAttribute("data-theme") === "dark";
   }
-  // SSR 时返回 true，匹配 Docusaurus 的 defaultMode: "dark"
+  // SSR 时返回 true，匹配 docusaurus.config.js 的 colorMode.defaultMode: "dark"
   return true;
 }
 
 export default function Root({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
+  const [isDarkMode, setIsDarkMode] = useState(getInitialDark);
   const locale = useAntdLocale();
 
   useLayoutEffect(() => {
     if (!ExecutionEnvironment.canUseDOM) return;
 
-    const updateTheme = () => {
-      setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
-    };
+    const update = () => setIsDarkMode(document.documentElement.getAttribute("data-theme") === "dark");
+    update();
 
-    updateTheme();
-
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-theme"],
-    });
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     return () => observer.disconnect();
   }, []);
 
-  const themeConfig = useMemo(() => {
-    // Universal brand tokens — applied in both light and dark themes.
-    // teal-ink 海沉绿 #397e6a：白字对比达标，dark 算法自动提亮，无需墨字按钮 hack。
-    // colorLink 默认派生自 colorInfo（蓝），不跟随 colorPrimary——Typography copyable 图标、
-    // type="link" 按钮会漏出蓝色，必须显式对齐到品牌绿（与 custom.css --ifm-link-color 同源）。
-    const universalToken = {
-      colorPrimary: "#397e6a",
-      colorLink: "#2d6454", // light 链接/copyable 图标（dark 在 darkOnlyToken 提亮）
-      borderRadius: 6,
-      borderRadiusSM: 4,
-      borderRadiusLG: 12,
-      fontFamilyCode: 'ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace',
-      motionDurationFast: "0.12s",
-      motionDurationMid: "0.2s",
-      motionDurationSlow: "0.32s",
-    };
-
-    // Dark-only deep editorial bg/content — overrides antd dark algorithm defaults for refined feel.
-    // 与 custom.css 的 --ifm-background-* 炭黑三层底同源。Light mode 走 antd defaultAlgorithm。
-    const darkOnlyToken = isDarkMode
-      ? {
-          colorLink: "#57c2a3", // dark 链接/copyable 图标，提亮版品牌绿（与 --site-color-tag-selected-text 同源）
-          colorBgLayout: "#14171a",
-          colorBgContainer: "#1d2126",
-          colorBgElevated: "#272d33",
-          colorBorderSecondary: "rgba(255,255,255,0.08)",
-          colorText: "#ededed",
-          colorTextSecondary: "rgba(255,255,255,0.6)",
-          colorTextTertiary: "rgba(255,255,255,0.4)",
-        }
-      : {};
-
-    return {
-      token: { ...universalToken, ...darkOnlyToken },
-      components: {
-        Card: {
-          headerBg: "transparent",
-          paddingLG: 16,
-        },
-        Tag: {
-          borderRadiusSM: 0,
-        },
-        Button: {
-          borderRadius: 6,
-        },
-      },
+  const themeConfig = useMemo(
+    () => ({
+      ...antdThemeFor(isDarkMode ? "dark" : "light"),
       algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-    };
-  }, [isDarkMode]);
+      // zeroRuntime 只在运行期加：提取器需要 antd 真的注册样式才有东西可提。
+      // ⚠ 本行是分支专属：main 走 antd 默认 runtime 注入且没有静态 CSS 产出管线，
+      // 把 zeroRuntime/cssVar 带过去会让 antd 组件全部失样式。
+      zeroRuntime: true,
+    }),
+    [isDarkMode],
+  );
 
   return (
     <ConfigProvider theme={themeConfig} locale={locale}>

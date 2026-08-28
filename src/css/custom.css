@@ -10,50 +10,88 @@
    See css var + hsl color palette technique:
    https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
     */
-  /* Teal-ink 品牌色：海沉绿 accent #397e6a (hsl 163 38% 36%)，沉稳、白字对比达标。
-     浅色用品牌绿本体，暗色在 html[data-theme="dark"] 块提亮做对比 */
+  /* Teal-ink 海沉绿明暗双主题（zeroRuntime 静态管线）：accent #397e6a，暗色下选中态/链接提亮 #57c2a3。
+     选择器分层与 main 双主题分支同构（:root 浅色默认 / html[data-theme="dark"] 暗色 token /
+     [data-theme="dark"] 主色阶），方便两分支互相 cherry-pick。
+     本块即浅色态：Docusaurus 未加 data-theme="dark" 时生效，暗色由下面两个块覆盖。 */
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 55%;
-  --site-color-favorite-background: transparent;
   --site-color-svg-icon-favorite: #e9669e;
-  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
-  --site-color-feedback-background: #f8f9f3;
-  --site-color-tags-background: #f8f9f3;
-  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   /* Use a darker color to ensure contrast, ideally we don't need important */
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
-  --site-primary-font: #3e4042;
-  --site-color-background: #f8f9f3;
+  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
+  /* Markdown / docs 链接走品牌绿（默认 Infima 是蓝色 #4a90e2） */
+  --ifm-link-color: var(--site-color-tag-selected-text);
 
-  /* 浅色"纸面索引卡"三层底（与暗色炭黑三层对偶，近中性微暖纸感）：
-     page #f0f1ea < card/surface #f8f9f3 < elevated 纯白——纯白只留给弹层,页面不刷白减少眩光 */
+  /* 浅色「纸面索引卡」三层底（与暗色炭黑三层对偶，近中性微暖纸感）：
+     page #f0f1ea < card/surface #f8f9f3 < elevated 纯白——纯白只留给弹层，页面不刷白减少眩光。
+     与 main 同源；此前本分支强制 dark，这里放的是反转 Infima emphasis 色阶的暗色脚手架，
+     改双主题后由 Docusaurus 自己的浅色默认值接管，脚手架整块删除。 */
   --ifm-background-color: #f0f1ea;
   --ifm-background-surface-color: #f8f9f3;
+  --site-color-background: #f8f9f3;
+  --site-color-card-background: #f8f9f3;
+  --site-color-card-border: transparent; /* 浅色不描硬边，靠阴影 + 底色区分卡片 */
+  --site-color-feedback-background: #f8f9f3;
+  --site-color-tags-background: #f8f9f3;
+  --site-primary-font: #3e4042;
   --site-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --site-color-card-background: #f8f9f3;
-  --site-color-card-border: transparent; /* Light: no hard outline; shadow + bg define the card */
-  --site-color-tag-selected-bg: hsl(163deg 38% 92%); /* Light mode tint */
-  --site-color-tag-selected-text: #2d6454; /* Darker primary */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
-
-  /* Editorial UI tokens — light defaults; dark counterparts in [data-theme="dark"] block */
-  --site-color-text-tertiary: rgba(0, 0, 0, 0.45);
+  --site-color-tag-selected-bg: hsl(163deg 38% 92%);
+  --site-color-tag-selected-text: #2d6454;
+  --site-color-error-text: #cf1322;
+  --site-color-warning-text: #ad4e00;
+  --site-color-tag-selected-border: #397e6a;
+  /* 三级文字承载的是信息不是装饰（复制数、字符/token 数、时间、FILTERS 标签、来源图标），
+     11px 下 .45/.40 实测只有 3.32:1 / 3.74:1，AA 小字要 4.5:1。抬到 .56/.50 后
+     两个模式都过线，观感仍明显低于正文与次级文字。 */
+  --site-color-text-tertiary: rgba(0, 0, 0, 0.56);
   --site-color-hairline: rgba(0, 0, 0, 0.08);
   --site-color-ghost-border: rgba(0, 0, 0, 0.04);
+  /* 页脚底色。不设的话落回 Infima 的 --ifm-color-emphasis-100：浅色是 #f5f6f7 的冷灰，
+     撞在这套微暖纸底（page #f0f1ea）上就是一条发白发冷的带子，明显不属于同一个色系。
+     此前只写过 .footer--dark，而 docusaurus.config 的 footer 没有 style:"dark"，
+     DOM 里也就从来没有 .footer--dark 这个 class —— 那条规则是死的，两个模式都没被覆盖过。
+     取 surface 一层（与卡片同色），让页脚相对页面有一点抬升又不跳出色系。 */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  /* 等级色（LevelSystem 的 10 级）。原本只有一套为暗底设计的粉彩，浅色主题上线后没回头改：
+     10 级在浅色下是 1.33–2.88:1，等级图标、进度条、10px 序号几乎看不见，于是补了这组
+     浅色变体（保持色相、饱和度收到 42% 上限后压亮度）。
+
+     那次是按 surface #f8f9f3 的纯色底算的，得出「每级 ≥4.6」—— 但徽章真实的底不是它：
+     HomePage 的等级徽章是「accent 文字 + 同色 8% 淡底」，坐在 page #f0f1ea 上，11px。
+     按真实底重测，10 级是 3.87–3.96，全部不到 4.5。而且不是淡底的锅：把叠加降到 0%
+     最差也只有 4.28 —— 是色值本身对近白页面上的 11px 文字太亮。
+     压暗后浏览器实测 4.71–4.76（10 级逐个注入真实徽章元素量的，不是模型算的）。注意底色要取「徽章实际叠出来的那层」：徽章坐的不是
+     page #f0f1ea 而是一层更暗的面板（由实测反解约 #e9eae2），按 page 算会高估 0.3 左右，
+     第一次压暗就是这么压不够的（算得 4.71，实测只有 4.40）。
+     暗色那组不用改，同口径实测 5.99–13.03 全部通过。
+
+     教训写在这儿：改这组值时，底色要取「徽章实际叠出来的那层」，不是 surface 纯色。 */
+  --site-level-0: #536165; /* 萌新 graphite */
+  --site-level-1: #7f5634; /* 青铜 bronze */
+  --site-level-2: #4c6172; /* 白银 silver */
+  --site-level-3: #755a30; /* 黄金 gold */
+  --site-level-4: #3d637c; /* 铂金 platinum */
+  --site-level-5: #6a4ab4; /* 钻石 prism */
+  --site-level-6: #3d5f95; /* 蓝宝石 sapphire */
+  --site-level-7: #9b4053; /* 红宝石 ruby */
+  --site-level-8: #33694f; /* 翡翠 emerald */
+  --site-level-9: #6f5d2d; /* 星辉 starlight */
+
   /* 中性标记（卡片 tag tick、分类圆点）——彩虹色收敛后的默认态，选中才点亮 accent */
   --site-color-neutral-marker: rgba(0, 0, 0, 0.2);
-  --site-motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
-  --site-font-mono: ui-monospace, SFMono-Regular, "Menlo", "Cascadia Code", monospace;
-  /* Markdown / docs links use brand primary, not Infima default blue */
-  --ifm-link-color: var(--site-color-tag-selected-text);
+  --site-color-favorite-background: transparent;
+  --site-color-checkbox-checked-bg: hsl(163deg 38% 73% / 25%);
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 45%);
 }
 
 html[data-theme="dark"] {
-  /* 暗色提亮：--ifm-color-primary 走 hsl(163 38% 45%)，选中态点亮 #57c2a3 做对比 */
+  /* 暗色 token —— 与 main 的 html[data-theme="dark"] 块同 property 同 dark 值，便于 cherry-pick */
   --site-primary-hue-saturation: 163 38%;
   --site-primary-hue-saturation-light: 163 55%;
   --site-color-feedback-background: #f0f8ff;
@@ -67,27 +105,40 @@ html[data-theme="dark"] {
   --site-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
   --site-shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
   --site-color-card-background: #272d33;
-  --site-color-card-border: var(--ifm-color-emphasis-200); /* Dark: subtle outline reads well on dark bg */
-  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.15); /* Dark mode tint */
-  --site-color-tag-selected-text: #57c2a3; /* Light primary for contrast */
-  --site-color-tag-selected-border: #397e6a; /* Primary border */
-
-  /* Editorial UI tokens — dark counterparts of :root values */
-  --site-color-text-tertiary: rgba(255, 255, 255, 0.4);
+  --site-color-tag-selected-bg: rgba(57, 126, 106, 0.1);
+  --site-color-tag-selected-text: #57c2a3;
+  --site-color-error-text: #dc8885;
+  --site-color-warning-text: #fa8c16;
+  --site-color-tag-selected-border: rgba(57, 126, 106, 0.5);
+  --site-color-text-tertiary: rgba(255, 255, 255, 0.5);
   --site-color-hairline: rgba(255, 255, 255, 0.08);
   --site-color-ghost-border: rgba(255, 255, 255, 0.04);
-  --site-color-neutral-marker: rgba(255, 255, 255, 0.22);
-  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 73%);
-
-  /* Teal-ink 炭黑三层底（layout #14171a / container #1d2126 / elevated #272d33，与 antd token 同步） */
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-link-hover-color: hsl(var(--site-primary-hue-saturation-light) 70%);
   --ifm-background-color: #14171a;
   --ifm-background-surface-color: #1d2126;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
   --ifm-color-content: #ededed;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
-  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
   --ifm-code-background: rgba(255, 255, 255, 0.1);
   --ifm-table-stripe-background: rgba(255, 255, 255, 0.07);
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+  /* :root 现在放的是浅色默认值，这两个必须在暗色块覆盖，否则暗底上会拿到浅色值
+     —— neutral-marker 的 rgba(0,0,0,.2) 在深色底上等于隐形 */
+  --site-color-card-border: var(--ifm-color-emphasis-200);
+  --site-color-neutral-marker: rgba(255, 255, 255, 0.22);
+
+  /* 等级色暗色值（原始那套粉彩，为暗底设计） */
+  --site-level-0: #94a3a8;
+  --site-level-1: #c8956b;
+  --site-level-2: #a8b8c5;
+  --site-level-3: #d8a55a;
+  --site-level-4: #b0c8d8;
+  --site-level-5: #cdb8ff;
+  --site-level-6: #6f95d0;
+  --site-level-7: #d97a8e;
+  --site-level-8: #5fb088;
+  --site-level-9: #f0d896;
 }
 
 /*
@@ -224,10 +275,6 @@ html[data-theme="dark"] {
   background-size: contain;
 }
 
-.footer--dark {
-  --ifm-footer-background-color: #272d33;
-}
-
 .unique-tabs .tabs__item {
   line-height: 16px;
   margin-right: 8px;
@@ -240,33 +287,11 @@ html[data-theme="dark"] {
   background-color: var(--ifm-tabs-color-active);
 }
 
-[data-theme="light"] .themedDocusaurus [fill="#FFFF50"] {
-  fill: greenyellow;
-}
-
-[data-theme="dark"] .themedDocusaurus [fill="#FFFF50"] {
+.themedDocusaurus [fill="#FFFF50"] {
   fill: seagreen;
 }
 
-[data-theme="light"] .DocSearch {
-  /* --docsearch-primary-color: var(--ifm-color-primary); */
-  /* --docsearch-text-color: var(--ifm-font-color-base); */
-  --docsearch-muted-color: var(--ifm-color-emphasis-700);
-  --docsearch-container-background: rgb(94 100 112 / 70%);
-  /* Modal */
-  --docsearch-modal-background: var(--ifm-color-secondary-lighter);
-  /* Search box */
-  --docsearch-searchbox-background: var(--ifm-color-secondary);
-  --docsearch-searchbox-focus-background: var(--ifm-color-white);
-  /* Hit */
-  --docsearch-hit-color: var(--ifm-font-color-base);
-  --docsearch-hit-active-color: var(--ifm-color-white);
-  --docsearch-hit-background: var(--ifm-color-white);
-  /* Footer */
-  --docsearch-footer-background: var(--ifm-color-white);
-}
-
-[data-theme="dark"] .DocSearch {
+.DocSearch {
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgb(13 16 18 / 70%);
@@ -318,8 +343,7 @@ div[class^="announcementBar_"] {
   white-space: nowrap;
 }
 
-[data-theme="light"] img[src$="#gh-dark-mode-only"],
-[data-theme="dark"] img[src$="#gh-light-mode-only"] {
+img[src$="#gh-light-mode-only"] {
   display: none;
 }
 
@@ -359,10 +383,6 @@ div[class^="announcementBar_"] {
 }
 
 [data-rmiz-modal-overlay="visible"] {
-  background-color: rgba(255 255 255 / 95%);
-}
-
-[data-theme="dark"] [data-rmiz-modal-overlay="visible"] {
   background-color: rgba(0 0 0 / 95%);
 }
 
@@ -396,15 +416,15 @@ div[class^="announcementBar_"] {
   font-size: 1rem;
 }
 
-/* Markdown body links — Infima 默认会被 .theme-doc-markdown 容器内更具体规则染蓝，
-   :root 改 --ifm-link-color 不够，必须显式选中。Sidebar .menu__link 不受此影响。 */
+/* Markdown 正文里的 <a> — Infima 默认会被 .theme-doc-markdown 容器内的更具体规则染蓝，
+   :root 里改 --ifm-link-color 不够，必须显式选中。Sidebar 的 .menu__link 不受此影响。 */
 .theme-doc-markdown a,
 article.markdown a {
-  color: var(--ifm-link-color);
+  color: var(--site-color-tag-selected-text);
 }
 .theme-doc-markdown a:hover,
 article.markdown a:hover {
-  color: var(--ifm-link-hover-color);
+  color: hsl(var(--site-primary-hue-saturation-light) 70%);
   text-decoration: underline;
 }
 
@@ -426,10 +446,6 @@ article.markdown a:hover {
 }
 
 /* CLS 修复：导航栏预留高度，防止 hydration 时推动内容 */
-.navbar {
-  min-height: 60px; /* Docusaurus 默认导航栏高度 */
-}
-
 .navbar__title {
   color: var(--site-primary-font);
   font-size: 1.1rem;
@@ -469,6 +485,20 @@ article.markdown a:hover {
 .buttonLink:hover,
 .pagination-nav__label:hover {
   color: var(--site-primary-font);
+}
+
+/* 渐变的排版方向。
+   CSS 渐变没有逻辑属性对应物：`linear-gradient(90deg, …)` 在阿拉伯语（dir=rtl）下
+   仍然从左往右淡出，于是 remark 引用块的着色会从「强调条那一侧起」变成「从末尾起」，
+   跟同一块上已经改成 borderInlineStart 的强调条背道而驰。用一个继承变量把角度也
+   翻过来，调用处（PromptRemark / PromptDetailModal 的内联样式）只写 var()。
+   新增会淡出的渐变一律用它，别再写死 90deg。 */
+:root {
+  --site-fade-dir: 90deg;
+}
+
+html[dir="rtl"] {
+  --site-fade-dir: 270deg;
 }
 
 /* Sticky Footer Fix */
@@ -803,3 +833,73 @@ article.markdown a:hover {
 .userstatus-live { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-boot { display: contents; }
 html[data-auth-boot="in"]:not([data-auth-ready]) .userstatus-live { display: none; }
+
+/* Pagination — 允许换行。窄屏下 9 个页码（prev + 1..7 + next）总跨度 352px，超出
+   313px 的容器，而 antd 的 .ant-pagination 是 flex-wrap:nowrap + overflow:visible，
+   最后一个按钮直接戳出视口造成横向滚动（实测 360px 溢出 8px、320px 溢出 48px）。
+
+   本该用 `size="small"` / `responsive` 缩小尺寸，但 **antd 6.6.1 自身对不上号**：
+   组件发的是 `.ant-pagination-mini`（Pagination.js:186），它自带的样式表打的却是
+   `.ant-pagination-small`（style/index.js:179）——两个 class 名对不上，所以缩小尺寸
+   这条路在上游修好前完全无效（与本项目的静态提取无关，运行时 CSS-in-JS 同样失效）。
+   改用换行，不依赖上游。居中由各调用处的 antd `align="center"` 负责，这里不写
+   justify-content，免得盖掉 antd 的 -start/-end 变体。 */
+.ant-pagination {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+/* 密码可见性切换的命中区补到 24×24（WCAG 2.2 AA, 2.5.8）。antd 的语义是齐的
+   —— role=button、tabindex、aria-label 都在 —— 缺的只是可点面积：图标本身就 16×16。
+   它嵌在输入框内部，24px 判定圆必然与输入框自身的目标相交，spacing 例外用不上，
+   属实打实不达标。登录 / 改密 / 重置密码共 7 处 Input.Password 走的都是这个类。
+
+   用居中的透明伪元素扩命中区，不参与布局：实测图标 border-box 仍是 16×16，输入框
+   高度 39、suffix 16×24 均未变，elementFromPoint ±11px 四向全部命中，而图标左侧
+   20px 处仍归输入框——没有越界抢点击。
+
+   **不要顺手把 .ant-typography-copy 一起加进来**：它 13×15，看着是同类问题，但四周
+   60px 内没有别的目标，靠 spacing 例外本来就合规。而它嵌在 Typography 段落的最后一行，
+   行高只有 20.15px（13px × 1.55），24px 的命中区无论怎么对齐都会溢出行盒约 3px；
+   一旦外层是 overflow-y:auto 的滚动容器（提示词 modal 的译文段落、正文框都是），
+   这 3px 就让 scrollHeight 超过 clientHeight，两行文字也长出滚动条。加过一次，
+   实测 sh 43 / ch 40，撤掉即回 40。 */
+.ant-input-password-icon {
+  position: relative;
+}
+.ant-input-password-icon::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  margin: -12px;
+}
+
+/* 表单校验提示的文字色。antd 的 .ant-form-item-explain-error 取 colorError 本身
+   （不是 colorErrorText），而 colorError 在暗色下被三处用着、需求方向不一致：
+     ① 实心 danger 按钮的【底】（Modal.confirm 的 okButtonProps danger）—— 要更暗，白字才读得出
+     ② 文字/描边型 danger 按钮的【字】—— 要更亮
+     ③ 这里的校验提示【字】—— 要更亮
+   ②③ 同向、只有 ① 相反，单个值无解：实测把暗色种子压到 #f04a4a（派生 #cf4242），
+   ①的白字能到 4.66，但 ②③ 作为文字只剩 2.99。
+
+   ① 维持现状，是明确决定，不要再改：暗色下实心 danger 按钮（Modal.confirm 的
+   okButtonProps danger，用在删除确认等处）白字压在 #dc6966 上只有 3.36:1，这是 antd
+   自身 colorError 与白字的默认关系，不是本项目引入的（浅色 5.57 正常）。要修只能改
+   调用点、把实心换成描边 danger，会让确认弹窗的视觉分量降一档 —— 权衡后选择不动。
+   对比度扫描会一直报这一条，属已知并接受，不必再提。
+
+   也试过按组件覆盖 components.Form.colorError —— 无效：Form 的组件 token 里没有
+   colorError，生成物里那条规则始终引用全局的 var(--ant-color-error)（已验证生成的
+   --ant-form-* 变量清单里没有它）。所以只能在 CSS 这层单独给校验文字上色，按钮不动。
+
+   暗色 #dc8885 实测 elevated #272d33 上 5.24、container #1d2126 上 6.09
+   （原 #dc6966 分别是 4.14 / 4.82，弹窗里的表单不达标）。
+   浅色沿用 #cf1322，本来就过（#ffffff 5.57 / #f8f9f3 5.26），写出来是为了成对，
+   免得哪天只改一边。
+
+   选择器要带 .ant-form-item：antd 真正生效的那条是 `.ant-form-item .ant-form-item-explain-error`
+   （0,2,0），文件里另有一条同名的裸选择器（0,1,0）容易误导 —— 只写裸的压不过去，
+   实测颜色纹丝不动。 */
+.ant-form-item .ant-form-item-explain-error {
+  color: var(--site-color-error-text);
+}

@@ -48,7 +48,7 @@ if (ExecutionEnvironment.canUseDOM) {
   };
 
   // ① 资源加载失败（<script>/<link> 404 或 5xx）—— 走捕获阶段，target 是元素、message 常为空。
-  //    仅对本站 /assets/ 下的 chunk 触发；第三方脚本（adsense / tracker）失败不重载。
+  //    仅对本站 /assets/ 下的 chunk 触发；第三方脚本（统计 / 嵌入等）失败不重载。
   window.addEventListener(
     "error",
     (e) => {

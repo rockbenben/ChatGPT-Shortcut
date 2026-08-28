@@ -6,7 +6,6 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 import { execSync } from "node:child_process";
-import { communityPromptSitemapItems } from "./scripts/sitemapCommunityItems.mjs";
 import { withPromptLastmod } from "./scripts/sitemapPromptLastmod.mjs";
 // 语言列表单一数据源（与 scripts/buildPhased.mjs 共用，避免 config 与分段构建脱钩）
 import { defaultLocale, locales } from "./scripts/i18nLocales.mjs";
@@ -25,6 +24,21 @@ function resolveBuildDate() {
 }
 // Docker 构建（SKIP_GIT_INFO=true）不带 .git，直接用当前时间，省去注定失败的 git 调用
 const buildDate = process.env.SKIP_GIT_INFO === "true" ? new Date().toISOString() : resolveBuildDate();
+
+/**
+ * 社区与反馈在离线版没有后端，导航直接指向主站。
+ *
+ * 不走本地路由再跳：早先那版是 `location.replace` 裸跳转（断网部署里直接白屏），
+ * 后来改成页内提示页，但那让联网用户白多点一次。直接给外链既只需一次点击，
+ * Docusaurus 还会给外链自动加↗图标 —— 用户点之前就知道要离开本站。
+ * 两个提示页本身保留：旧书签、旧链接、直接输入 URL 还会落到它们上。
+ *
+ * 配置每个 locale 各求值一次，所以能把语言前缀带上（日语用户落到 /ja/… 而不是中文站）；
+ * 环境变量缺失时退回默认语言，是降级不是报错。
+ */
+const ONLINE_ORIGIN = "https://www.aishort.top";
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || defaultLocale;
+const onlineUrl = (path) => `${ONLINE_ORIGIN}${currentLocale === defaultLocale ? "" : `/${currentLocale}`}${path}`;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -58,7 +72,7 @@ const config = {
 
   onBrokenLinks: "throw",
 
-  // Build-time injected fields (via webpack DefinePlugin under the hood)
+  // Build-time injected fields (via the bundler's DefinePlugin under the hood — Rspack here, via @docusaurus/faster)
   // buildDate 用于 schema.org Article 的 datePublished / dateModified（HEAD commit 时间，见顶部 resolveBuildDate）
   customFields: {
     buildDate,
@@ -94,7 +108,11 @@ const config = {
         },
         blog: false,
         theme: {
-          customCss: "./src/css/custom.css",
+          // antd.dark.css 必须排在 custom.css 之前，并且**必须在这里加载**：Root.tsx 开了
+          // zeroRuntime，antd 不再运行时注入样式，样式全部来自这份构建期提取的静态表。
+          // 只留 custom.css 的话 antd 组件会完全没有样式，而构建照样成功、typecheck 照样过。
+          // 该文件不入库，由 pre* 钩子经 scripts/generate.mjs → genAntdCss.mjs 重新生成。
+          customCss: ["./src/css/antd.dark.css", "./src/css/custom.css"],
         },
         // 裸 /community-prompt（无 ?id=）和各 locale 同名路径只渲染 Invalid prompt ID，
         // 没有索引价值；从 sitemap 排除，避免搜索引擎抓取无效页
@@ -115,8 +133,8 @@ const config = {
             // dateModified，见 scripts/sitemapPromptLastmod.mjs
             const withPrompt = withPromptLastmod(items, fallback);
             const result = withPrompt.map((it) => ({ ...it, lastmod: it.lastmod || fallback }));
-            // 社区提示词详情页 ?id=N（快照精选 ≤24 条，per-locale）→ scripts/sitemapCommunityItems.mjs
-            result.push(...communityPromptSitemapItems(result, fallback));
+            // 离线版没有社区提示词，也没有 communitySnapshot（genCommunitySnapshot.mjs 不在这条线上），
+            // 因此不追加 ?id=N 的社区详情页条目 —— 在线版在这里 push communityPromptSitemapItems。
             return result;
           },
         },
@@ -124,6 +142,40 @@ const config = {
     ],
   ],
   plugins: [
+    require.resolve("./plugin-gen-geo"),
+    // theme-classic 无条件把 lib/prism-include-languages.js 注册成 client module（见其
+    // getClientModules），client module 走 eager 入口，于是那句 `import { Prism } from
+    // 'prism-react-renderer'` 把 132 KB 单文件包拽进 main.js，全站每页都下载。
+    // 实测 prism-react-renderer 82.6 KB + prismjs 26.6 KB，而它只负责注册
+    // themeConfig.prism.additionalLanguages —— 本站一个都没配，纯空转。
+    // 别名成 false（= 忽略该模块，产出空实现）。本站经 @docusaurus/faster 用的是 Rspack，
+    // 其 ResolveAlias 类型显式含 false（config/types.d.ts），语义与 webpack 对齐——
+    // 万一哪天关掉 faster 退回 webpack，这行也照常工作。代码高亮不受影响：真正渲染的 @theme/CodeBlock
+    // 自己 import prism，只出现在 docs 的路由 chunk 里按需加载。
+    // 两处失效都是硬报错而非静默胖回去，所以不需要额外的自检脚本：
+    //   - theme-classic 改名/移除该文件 → require.resolve 抛
+    //   - 有人配了 additionalLanguages（那些语言将不会被注册）→ 下面直接抛
+    function dropPrismIncludeLanguagesClientModule(context) {
+      // themeConfig 在 @ts-check 下是 unknown，这里只读一个字段，就地断言即可
+      const prismConfig = /** @type {{ additionalLanguages?: string[] } | undefined} */ (context.siteConfig.themeConfig?.prism);
+      const extra = prismConfig?.additionalLanguages ?? [];
+      if (extra.length > 0) {
+        throw new Error(
+          `themeConfig.prism.additionalLanguages 配了 [${extra}]，但注册它们的 client module 被本插件去掉了，` + `代码块会静默退化成纯文本。要么清空该配置，要么删掉本插件（每页多背 ~109 KB）。`,
+        );
+      }
+      return {
+        name: "drop-prism-include-languages-client-module",
+        configureWebpack(_config, isServer) {
+          if (isServer) return {};
+          return {
+            resolve: {
+              alias: { [require.resolve("@docusaurus/theme-classic/lib/prism-include-languages")]: false },
+            },
+          };
+        },
+      };
+    },
     // auth-boot：在主 JS 包下载/水合之前，于 <head> 同步读 localStorage 的 token，
     // 给 <html> 打 data-auth-boot=in。配合 custom.css，让已登录用户在水合前看到的是骨架占位
     // 而非静态 HTML 里烤死的「免费登录」CTA——发版后冷缓存（主包重新下载的那几秒）尤其明显。
@@ -198,7 +250,11 @@ const config = {
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        // 跟随系统。SSR 只能按 defaultMode 渲染，data-theme 由 <head> 的预绘制脚本
+        // 按 prefers-color-scheme 纠正，所以系统浅色的新访客首帧拿到的是「浅色页面 +
+        // 构建期定死的 .aishort 暗色组件」。这一情形由 genAntdCss.mjs 生成的
+        // `html[data-theme="light"] .aishort…` 选择器兜住；没有那条就别开这个。
+        respectPrefersColorScheme: true,
       },
       navbar: {
         hideOnScroll: true,
@@ -211,7 +267,7 @@ const config = {
         },
         items: [
           {
-            to: "/community-prompts",
+            href: onlineUrl("/community-prompts"),
             label: "社区提示词",
             position: "left",
           },
@@ -244,7 +300,7 @@ const config = {
             ],
           },
           {
-            to: "/feedback",
+            href: onlineUrl("/feedback"),
             label: "反馈建议",
             position: "left",
           },

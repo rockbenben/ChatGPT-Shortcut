@@ -9,5 +9,8 @@
     // 显式关闭以保持 `yarn typecheck` 门禁的既有语义（否则会涌出数百个历史 implicit-any 报错）。
     "strict": false
   },
-  "exclude": [".docusaurus", "build"]
+  // build* 而非 build：任何 `docusaurus build --out-dir <别的名字>`（analyzer、A/B 对照、
+  // 单语言试构建）产出的目录都会被 tsc 扫进来，minify 后的 bundle 立刻抛出成片
+  // TS2451「Cannot redeclare block-scoped variable」，看起来像是源码坏了。
+  "exclude": [".docusaurus", "build*"]
 }

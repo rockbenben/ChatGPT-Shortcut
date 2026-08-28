@@ -1,0 +1,95 @@
+User-agent: *
+Disallow: /feedback
+Disallow: /*/feedback
+Disallow: /reset-password
+Disallow: /*/reset-password
+Disallow: /user/
+Disallow: /*/user/
+
+# AI / LLM crawlers — explicitly welcome indexing of public pages.
+#
+# 重要（RFC 9309）：robots.txt 的 group 不会“继承”。爬虫只采用与自身 UA 最匹配的
+# 那一个 group 并忽略其他 group（含 `User-agent: *`）。因此下列每个命名爬虫都必须
+# 自己重申私有/鉴权路由的 Disallow，否则它们就绕过了顶部 `*` 的屏蔽。
+# 这里把全部 AI 爬虫合并到同一个 group（RFC 9309 允许连续多行 User-agent 共享一组规则），
+# 统一 Disallow 私有路由 + Allow 其余，新增爬虫只需在末尾补一行 User-agent。
+#
+# 用户触发型 fetcher（ChatGPT-User / Kimi-User / Perplexity-User）—— 来自用户主动「让 AI 打开此链接」
+
+# --- OpenAI ---
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+# --- Anthropic ---
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+# --- Perplexity ---
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+# --- Google / Meta / 其他 ---
+User-agent: Google-Extended
+User-agent: Meta-ExternalAgent
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Applebot-Extended
+User-agent: Diffbot
+User-agent: omgilibot
+User-agent: Amazonbot
+User-agent: YouBot
+User-agent: MistralAI-User
+# === 中文 AI 答案引擎爬虫 ===
+# 中文用户基数大，AiShort 默认 locale 为 zh-Hans，下列爬虫覆盖主流国产 AI 产品
+# --- 字节系（今日头条/抖音搜索/豆包）---
+User-agent: Bytespider
+User-agent: Doubaobot
+User-agent: ByteDance-AI
+# --- 月之暗面 Kimi（Kimibot / Kimi-User / Kimi-SearchBot 来自官方 Kimi Crawlers 文档；MoonshotBot 见于 Akamai/SVT robots.txt）---
+User-agent: Kimibot
+User-agent: MoonshotBot
+User-agent: Kimi-User
+User-agent: Kimi-SearchBot
+# --- DeepSeek ---
+User-agent: DeepSeekBot
+# --- 智谱 GLM / 清言（ChatGLM-Spider 见 NVIDIA / Rankly；ZhipuBot 见 Akamai / bagofchina）---
+User-agent: ChatGLM-Spider
+User-agent: ZhipuBot
+# --- 阿里 通义/Qwen（QwenBot/TongyiBot 见 xSeek 官方 UA 汇总；Qwen/Tongyi token 形式见 NVIDIA / Akamai；AliyunBot 是官方品牌名）---
+User-agent: Qwen
+User-agent: QwenBot
+User-agent: Tongyi
+User-agent: TongyiBot
+User-agent: AliyunBot
+# --- 腾讯 混元/元宝 ---
+User-agent: HunyuanBot
+User-agent: TencentBot
+User-agent: Yuanbaobot
+User-agent: Wenxiaobai
+# --- 华为 Petal/盘古 ---
+User-agent: PetalBot
+User-agent: PanguBot
+# --- 讯飞星火 / 百川 / 商汤 / 零一万物 / 昆仑万维 ---
+User-agent: SparkBot
+User-agent: Xinghuo
+User-agent: BaichuanBot
+User-agent: SenseNovaBot
+User-agent: YiBot
+User-agent: SkyworkBot
+Disallow: /feedback
+Disallow: /*/feedback
+Disallow: /reset-password
+Disallow: /*/reset-password
+Disallow: /user/
+Disallow: /*/user/
+Allow: /
+
+# 只声明这一个 sitemap。它由 scripts/buildPhased.mjs 的 mergeSitemaps() 在分段构建后合并，
+# 含全部 18 种语言约 5900 条 URL（每语言 327 条），爬虫读这一个就拿到全站。
+#
+# 各语言自己那份 /<locale>/sitemap.xml 构建时照常生成、也照常可访问，只是不在这里声明：
+# 它们是根 sitemap 的子集，列出来只会让 Search Console 出现 19 条相互重叠的记录。
+# 想按语言看收录率时（"ja 收录 300/327"），在 Search Console 手动提交对应那份即可。
+#
+# hreflang 不写进 sitemap：全站 HTML <head> 已由 Docusaurus 输出（PromptPage 另有显式补充），
+# Google 对 HTML 标签 / HTTP 头 / sitemap 三种方式是三选一而非叠加。
+Sitemap: https://www.aishort.top/sitemap.xml

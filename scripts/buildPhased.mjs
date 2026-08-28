@@ -59,8 +59,8 @@ function readUrlBlocks(xml) {
 /**
  * 把各 locale 的 sitemap 合并进根 sitemap.xml。
  *
- * 合并结果 /sitemap.xml 是搜索引擎主要读的那一份，漏掉一门语言是静默失败——站点照常
- * 访问，只是那门语言再也不被收录。所以缺文件、空文件一律抛错，宁可让构建红掉。
+ * robots.txt 只声明 /sitemap.xml 这一个入口，漏掉一门语言不再有东西兜底，且这种缺失是
+ * 静默的（站点照常访问，只是搜索引擎看不到那门语言）——所以缺文件/空文件一律抛错。
  *
  * 规模：18 语言 × 327 条 = 5886 条 / 809KB，约占上限 1/9。到 80% 会警告、越界直接失败，
  * 届时改用 <sitemapindex> 指向那 18 份分语言 sitemap（文件本来就已生成）。
@@ -134,7 +134,7 @@ export function mergeSitemaps() {
 
 function main() {
   // 带参（`yarn build --locale pt`）→ 转交单次 build，不分批也不合并 sitemap。
-  // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy.md。
+  // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy/standard.md。
   const passthrough = process.argv.slice(2);
   if (passthrough.length > 0) {
     console.log(`[build] passthrough → docusaurus build ${passthrough.join(" ")}`);
