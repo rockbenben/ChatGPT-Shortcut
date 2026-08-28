@@ -9,14 +9,16 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { CopyButton } from "@site/src/components/CopyButton";
 import { AuthContext } from "./AuthContext";
 import { useFavorite } from "@site/src/hooks/useFavorite";
+import { useOnlineUrl } from "@site/src/utils/onlineUrl";
 import { renderPromptWithPlaceholders, estimateTokens } from "@site/src/utils/promptRender";
 import type { CommunityPrompt } from "@site/src/utils/snapshotPrime";
 import { EmptyState } from "@site/src/components/EmptyState";
 import { toBcp47 } from "@site/src/utils/i18n";
-import Comments from "./Comments";
-import { lazyOptional } from "@site/src/utils/lazyRetry";
+import { lazyOptional, lazyWithRetry } from "@site/src/utils/lazyRetry";
 
 const ShareButtons = lazyOptional(() => import("./ShareButtons"));
+// 见 PromptPage 同名注释：静态 import 会把 Pagination + Form + react-markdown
+// 全链拖进 eager common chunk，每个页面都要下载。
 
 interface CommunityPromptPageProps {
   prompt: CommunityPrompt | null;
@@ -56,13 +58,16 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
 
   // 所有 hook 都必须在 early return 之前调用（React 的 rules-of-hooks）
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const onlineCommunityUrl = useOnlineUrl("/community-prompts");
   const isFavorite = userAuth?.data?.favorites?.commLoves?.includes(prompt?.id);
+  // 自己的提示词不显示收藏按钮：toggleFavorite 本来就会拒绝（「不能收藏自己的提示词」），
+  // 显示一个必定被拒的按钮只会让人怀疑到底成没成。离线版这一页展示的**全部**是自建
+  // 提示词，因此收藏永远不适用；在线版看别人的社区提示词时照常显示。
+  const isOwnPrompt = !!prompt?.id && !!userAuth?.data?.userprompts?.some((p: any) => p.id === prompt.id);
 
-  // 外层 eyebrow 显示 «讨论 · N» —— 由内层 Comments 通过 onCountChange 回传
-  const [commentCount, setCommentCount] = useState(0);
 
   // 字符/token 统计 + 占位符渲染：放在 early return 之前，避免 loading/error 路径跳过 useMemo 导致 hook 数量变化
-  // renderedPrompt 解析 {{var}} 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
+  // renderedPrompt 解析 [xxx] 占位符，prompt 体可能上千字符，每次操作（复制/点赞/收藏）都重渲染会触发 regex 重跑
   const charCount = (prompt?.description || "").length;
   const tokenCount = useMemo(() => estimateTokens(prompt?.description || ""), [prompt?.description]);
   const renderedPrompt = useMemo(() => renderPromptWithPlaceholders(prompt?.description || ""), [prompt?.description]);
@@ -94,7 +99,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // Loading state — 与正常态共用 Card 容器，零跳变
   if (loading) {
     return (
-      <Layout title={translate({ id: "community.loading", message: "加载中..." })}>
+      <Layout title={translate({ id: "community.loading", message: "加载中…" })}>
         <Row justify="center" style={{ marginTop: 16, marginBottom: 24 }}>
           <Col xs={24} sm={22} md={20} lg={18} xl={16} className="full-width-col">
             <div style={{ height: 22, marginBottom: 12 }} aria-hidden="true" />
@@ -147,8 +152,10 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               icon={<FileSearchOutlined />}
               title={<Translate id="community.notFound">提示词未找到</Translate>}
               description={<Translate id="community.notFoundDesc">该提示词可能已被删除或设为私有</Translate>}
+              // 回本地首页而不是主站社区：这个空状态出现在「本地提示词没找到」时
+              // （旧书签、已删条目），用户想回的是自己的列表，把他送去互联网是答非所问。
               action={
-                <Link to="/community-prompts">
+                <Link to="/">
                   <Button type="primary">
                     <Translate id="community.backToList">返回列表</Translate>
                   </Button>
@@ -191,16 +198,16 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
               {
                 title: (
                   <Link to="/" style={{ color: "var(--site-color-tag-selected-text)" }}>
-                    <HomeOutlined style={{ marginRight: 4 }} />
+                    <HomeOutlined style={{ marginInlineEnd: 4 }} />
                     <Translate id="link.home">首页</Translate>
                   </Link>
                 ),
               },
               {
                 title: (
-                  <Link to="/community-prompts" style={{ color: "var(--site-color-tag-selected-text)" }}>
+                  <a href={onlineCommunityUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--site-color-tag-selected-text)" }}>
                     <Translate id="link.communityPrompts">社区提示词</Translate>
-                  </Link>
+                  </a>
                 ),
               },
               { title: prompt.title },
@@ -218,7 +225,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                 <Space separator={<Dot />} wrap style={{ fontSize: 11.5, color: "var(--site-color-text-tertiary)", fontFamily: "var(--site-font-mono)" }}>
                   {prompt.owner && (
                     <span>
-                      <UserOutlined style={{ marginRight: 4 }} />
+                      <UserOutlined style={{ marginInlineEnd: 4 }} />
                       {prompt.owner}
                     </span>
                   )}
@@ -251,7 +258,7 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     padding: "14px 16px",
                     background: "var(--site-color-ghost-border)",
                     borderRadius: 4,
-                    borderLeft: "2px solid var(--site-color-hairline)",
+                    borderInlineStart: "2px solid var(--site-color-hairline)",
                   }}>
                   <Eyebrow>
                     <Translate id="prompt.authorNote">作者备注</Translate>
@@ -264,7 +271,12 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
 
               {/* ACTIONS: vote pill + favorite + share */}
               <Flex justify="space-between" align="center" wrap gap={8} style={{ paddingTop: 4 }}>
+                {/* 投票依赖服务端计数，跟 CommunityCard 一样只在调用方传了 onVote 时才渲染；
+                    离线版的 community-prompt 页不传，整个 vote pill 自然不出现。 */}
+                {(onVote || !isOwnPrompt) && (
                 <Space size="small" wrap>
+                  {onVote && (
+                  <>
                   {/* Asymmetric vote pill：▲ 永远带数字（主信号），▼ 在 downvotes=0 时 icon-only 弱化 */}
                   {/* 原来是硬编码中文「N 上 / N 下」，18 种语言照发；改用已有译文 */}
                   <div
@@ -291,7 +303,10 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                       {(prompt.downvotes ?? 0) > 0 && <span style={monoNum}>{prompt.downvotes}</span>}
                     </Button>
                   </div>
+                  </>
+                  )}
 
+                  {!isOwnPrompt && (
                   <Button
                     icon={isFavorite ? <HeartFilled /> : <HeartOutlined />}
                     onClick={handleToggleFavorite}
@@ -299,7 +314,9 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
                     className="comp-sheet-fav-btn">
                     <Translate id="common.favorites">收藏</Translate>
                   </Button>
+                  )}
                 </Space>
+                )}
 
                 <Popover
                   trigger="click"
@@ -317,21 +334,8 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
             </Flex>
           </Card>
 
-          {/* DISCUSSION: 一条 hairline + eyebrow，count 由内层 Comments 回传 */}
-          <Flex vertical gap={14} style={{ marginTop: 40, paddingTop: 22, borderTop: "1px solid var(--site-color-hairline)" }}>
-            <Eyebrow>
-              <Translate id="comments.heading">讨论</Translate>
-              {commentCount > 0 && (
-                <>
-                  {" · "}
-                  <span style={monoNum}>{commentCount}</span>
-                </>
-              )}
-            </Eyebrow>
-            <Suspense fallback={<Skeleton active paragraph={{ rows: 4 }} />}>
-              <Comments pageId={prompt.id} type="userprompt" onCountChange={setCommentCount} />
-            </Suspense>
-          </Flex>
+            {/* 离线版不嵌讨论区：Comments 依赖后端存取评论，这条线没有后端。
+                在线版这里是 hairline + eyebrow «讨论 · N» + <Comments>。 */}
         </Col>
       </Row>
     </Layout>

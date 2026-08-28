@@ -12,14 +12,17 @@ import React, { type ReactNode } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import { useOnlineUrl } from "@site/src/utils/onlineUrl";
 import { Button, Space } from "antd";
 import { HomeOutlined, ShareAltOutlined, CompassOutlined } from "@ant-design/icons";
 import { EmptyState } from "@site/src/components/EmptyState";
 
 export default function NotFoundContent({ className }: { className?: string }): ReactNode {
+  const onlineCommunityUrl = useOnlineUrl("/community-prompts");
   return (
     <main className={clsx("container margin-vert--xl", className)}>
       <EmptyState
+        fullPage
         icon={<CompassOutlined />}
         title={
           <Translate id="theme.NotFound.title" description="The title of the 404 page">
@@ -38,11 +41,11 @@ export default function NotFoundContent({ className }: { className?: string }): 
                 <Translate id="link.home">首页</Translate>
               </Button>
             </Link>
-            <Link to="/community-prompts">
-              <Button icon={<ShareAltOutlined />}>
-                <Translate id="showcase.header.button">浏览社区分享</Translate>
-              </Button>
-            </Link>
+            {/* 直接给主站外链：离线版没有社区，本地 /community-prompts 只是个提示页，
+                让已经迷路的用户再多点一次没意义。target=_blank 不抛弃他当前的本地页。 */}
+            <Button icon={<ShareAltOutlined />} href={onlineCommunityUrl} target="_blank" rel="noopener noreferrer">
+              <Translate id="showcase.header.button">浏览社区分享</Translate>
+            </Button>
           </Space>
         }
       />
