@@ -49,9 +49,16 @@ function CommunityPromptDetailInner() {
         // 多数场景命中 cache，无网络往返
         const data = await getSingleCommPrompt(promptId);
         if (cancelled) return;
-        if (data) {
+        // 收藏校验路径（src/api/prompts.ts 里 favoredNeedingValidation 那段）发现某条
+        // 已被作者取消分享时，会往 lscache 写一个打了 _unavailable 的占位对象、TTL 一年。
+        // 此后再打开该条详情页，getSingleCommPrompt 命中的就是这个占位对象 —— 它是 truthy，
+        // 只判 `if (data)` 会把它当正文渲染：带缓存的那种是一份**过期正文**（读者看不出
+        // 已下架），_noCache 的那种连 title/description 都没有、页面一片空白。
+        // 两种都该走下面已有的「提示词未找到」空状态。
+        if (data && !data._unavailable) {
           setPrompt(data);
         } else {
+          setPrompt(null);
           setError(new Error("Prompt not found"));
         }
       } catch (err) {
