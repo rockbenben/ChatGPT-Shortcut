@@ -5,11 +5,38 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from "prism-react-renderer";
+import fs from "node:fs";
 import { execSync } from "node:child_process";
-import { communityPromptSitemapItems } from "./scripts/sitemapCommunityItems.mjs";
 import { withPromptLastmod } from "./scripts/sitemapPromptLastmod.mjs";
 // 语言列表单一数据源（与 scripts/buildPhased.mjs 共用，避免 config 与分段构建脱钩）
 import { defaultLocale, locales } from "./scripts/i18nLocales.mjs";
+import { communitySitemapItems } from "./scripts/sitemapCommunityItems.mjs";
+
+// ── 社区提示词全量静态化的总开关（本分支唯一的一处）──
+// true  = 默认 locale 的每条 UGC 有一个构建期直出正文的 /community-prompt/<id>
+//         （plugin-community-pages.js 注册路由，scripts/genCommunityData.mjs 抓正文）
+// false = 社区详情全部走 /community-prompt?id=N 的 CSR 壳，构建期不联网抓 UGC
+//
+// **同步到 main 时把这里改成 false 即可**：插件不注册路由、卡片链接与 canonical 回到 ?id=、
+// sitemap 回到精选 24 条。另外 main 不带 src/data/community/，genCommunityData 见目录不在
+// 会直接跳过（见该文件头），所以即使脚本被一起合过去也不会去抓。
+const COMMUNITY_STATIC_PAGES = true;
+
+// 真正生效还要看正文数据在不在。src/data/community/ 入库但**不该**同步到 main，
+// 于是「只合了代码、忘了翻开关」这种半吊子状态也不会出事：没有数据 → 插件注册 0 条路由，
+// 若此时 customFields 仍说 true，卡片链接与 canonical 就会指向一批空路由。
+// 两个条件与在一起，安全的那一侧永远是默认值。
+const communityStaticActive = COMMUNITY_STATIC_PAGES && fs.existsSync("./src/data/community");
+
+// 静态页覆盖到哪条 id 为止。提示词 id 单调递增，所以「id <= 水位线」等价于「有静态页」。
+// ?id= 壳靠它判断 canonical 该不该指向静态页：列表页最新的条目正是上次构建之后才提交的，
+// 实测 /community-prompt/15501 是 404 而 ?id=15501 是 200 —— 没有这条水位线，
+// 那批最新条目的 canonical 会全部指向 404。
+const communityStaticMaxId = communityStaticActive
+  ? fs
+      .readdirSync("./src/data/community")
+      .reduce((max, f) => (/^(\d+)\.json$/.test(f) ? Math.max(max, parseInt(f, 10)) : max), 0)
+  : 0;
 
 // 构建日期取 HEAD commit 时间而非 new Date()：
 // Docusaurus 对每个 locale 构建都会重新求值本 config，new Date() 会让 18 个 locale 的
@@ -61,6 +88,9 @@ const config = {
   // buildDate 用于 schema.org Article 的 datePublished / dateModified（HEAD commit 时间，见顶部 resolveBuildDate）
   customFields: {
     buildDate,
+    // 运行时读它决定社区详情页链接与 canonical 的形态，见 src/utils/i18n.ts
+    communityStaticPages: communityStaticActive,
+    communityStaticMaxId,
   },
 
   // defaultLocale / locales 来自 scripts/i18nLocales.mjs（单一数据源，与分段构建共用）。
@@ -116,9 +146,10 @@ const config = {
             // dateModified，见 scripts/sitemapPromptLastmod.mjs
             const withPrompt = withPromptLastmod(items, fallback);
             const result = withPrompt.map((it) => ({ ...it, lastmod: it.lastmod || fallback }));
-            // 社区提示词详情页 ?id=N（快照精选 ≤24 条，per-locale）→ scripts/sitemapCommunityItems.mjs
-            result.push(...communityPromptSitemapItems(result, fallback));
-            return result;
+            // 社区提示词 → scripts/sitemapCommunityItems.mjs
+            // 默认 locale：把默认实现产出的 /community-prompt/<id> 按质量过滤；
+            // 其余 locale：注入精选 ≤24 条 ?id=（这些 locale 没有静态路由）
+            return communitySitemapItems(result, fallback, communityStaticActive);
           },
         },
       }),
@@ -126,6 +157,8 @@ const config = {
   ],
   plugins: [
     require.resolve("./plugin-gen-geo"),
+    // 社区提示词详情页的静态路由。为什么用 addRoute 而不是 src/pages 薄壳，见该文件头。
+    [require.resolve("./plugin-community-pages"), { enabled: communityStaticActive }],
     // theme-classic 无条件把 lib/prism-include-languages.js 注册成 client module（见其
     // getClientModules），client module 走 eager 入口，于是那句 `import { Prism } from
     // 'prism-react-renderer'` 把 132 KB 单文件包拽进 main.js，全站每页都下载。
@@ -155,6 +188,36 @@ const config = {
           return {
             resolve: {
               alias: { [require.resolve("@docusaurus/theme-classic/lib/prism-include-languages")]: false },
+            },
+          };
+        },
+      };
+    },
+    // Docusaurus 对 **server 编译**关死了 splitChunks（node_modules/@docusaurus/core/lib/
+    // webpack/base.js: `splitChunks: isServer ? false : {...}`），于是每个异步路由 chunk
+    // 都要把 antd / @ant-design/icons / react 这些共享依赖各复制一份。
+    // 这不是社区提示词静态化带来的——现有的 279 个 prompt 详情页早就在这么干：
+    // 实测 __server 每次构建写出 1.3 GB，构建耗时被磁盘 I/O 拖到 2m14s。
+    // 只给 server 侧开 splitChunks，让共享依赖落一份：同一份产物 2m14s → 32s。
+    // __server/ 只是 SSG 的中间产物，构建结束即删，不进 build 输出、不影响线上任何资源。
+    function serverSplitChunksPlugin() {
+      return {
+        name: "server-split-chunks",
+        configureWebpack(_config, isServer) {
+          if (!isServer) return {};
+          return {
+            optimization: {
+              splitChunks: {
+                chunks: "all",
+                // 默认 20KB 起分；这里要的是「被两个以上路由用到就抽出去」，
+                // 门槛设 0 才能把 antd 里成百上千个小模块也收进共享 chunk。
+                minSize: 0,
+                cacheGroups: {
+                  default: false,
+                  defaultVendors: false,
+                  serverShared: { name: "server-shared", minChunks: 2, priority: 10, reuseExistingChunk: true },
+                },
+              },
             },
           };
         },

@@ -17,13 +17,13 @@
  * the moment it is cherry-picked to another branch — and the generator sets
  * really do differ per branch:
  *
- *   - main (the dual-theme branch): has genCommunitySnapshot, but no genAntdCss
- *     and no genPromptPages. It does not "lack" genAntdCss, it **does not need**
- *     it — main relies on antd's default runtime CSS injection (no zeroRuntime /
- *     cssVar), so customCss carries no antd.dark.css; and its prompt page shells
- *     are tracked in git, so nothing has to be generated.
- *   - offline (the enterprise intranet build): scripts/ only holds buildPhased
- *     and i18nLocales — none of the three.
+ *   - speedup/data-retrieval (this branch, the deployed one): the full set. It is
+ *     the only branch with genCommunityData（配 plugin-community-pages.js），
+ *     即社区提示词全量静态化的数据侧。
+ *   - main: has genAntdCss / genPromptPages / genCommunitySnapshot, but **not**
+ *     genCommunityData —— 社区提示词详情继续走 ?id= 的 CSR 壳。
+ *   - offline (the enterprise intranet build): no genCommunitySnapshot either —
+ *     内网构建不联网，社区提示词整块不存在。
  *
  * A missing step logs one line and is skipped, the present ones run as usual, so
  * the same file works on every branch without a per-branch copy.
@@ -43,15 +43,10 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const exists = (file) => fs.existsSync(path.join(here, file));
 
 // Run in-process: pure local computation, saves one node startup each (~179ms)
-const inProcess = [
-  { file: "genAntdCss.mjs", label: "antd-css" },
-  { file: "genPromptPages.mjs", label: "prompt-pages" },
-];
-
-for (const { file, label } of inProcess) {
+async function local(file, label) {
   if (!exists(file)) {
     console.log(`[generate] skip ${label} — scripts/${file} not on this branch`);
-    continue;
+    return;
   }
   try {
     const mod = await import(pathToFileURL(path.join(here, file)).href);
@@ -62,13 +57,23 @@ for (const { file, label } of inProcess) {
   }
 }
 
-// genCommunitySnapshot runs in a child process: it is a self-executing script
-// with network retries/timeouts, so isolating it keeps a failure there from
-// taking down the generation steps that already succeeded.
-const SNAPSHOT = "genCommunitySnapshot.mjs";
-if (!exists(SNAPSHOT)) {
-  console.log(`[generate] skip snapshot — scripts/${SNAPSHOT} not on this branch`);
-} else {
-  const r = spawnSync(process.execPath, [path.join(here, SNAPSHOT), ...(prod ? [] : ["--ensure-only"])], { stdio: "inherit" });
+// Network steps run in a child process: they are self-executing scripts with
+// retries/timeouts, so isolating them keeps a failure there from taking down the
+// generation steps that already succeeded.
+function remote(file, label) {
+  if (!exists(file)) {
+    console.log(`[generate] skip ${label} — scripts/${file} not on this branch`);
+    return;
+  }
+  const r = spawnSync(process.execPath, [path.join(here, file), ...(prod ? [] : ["--ensure-only"])], { stdio: "inherit" });
   if (r.status !== 0) process.exit(r.status ?? 1);
 }
+
+await local("genAntdCss.mjs", "antd-css");
+await local("genPromptPages.mjs", "prompt-pages");
+
+remote("genCommunitySnapshot.mjs", "snapshot");
+
+// 社区提示词全量静态化的数据侧：增量抓正文到 src/data/community/。
+// 路由那一半在 plugin-community-pages.js 里（构建期直接 addRoute，不生成薄壳文件）。
+remote("genCommunityData.mjs", "community-data");

@@ -48,7 +48,7 @@ function stripLeadingLocales(pathname: string): string {
 function useLocaleDropdownUtils() {
   const {
     siteConfig,
-    i18n: {localeConfigs},
+    i18n: {localeConfigs, defaultLocale},
   } = useDocusaurusContext();
   const {pathname} = useLocation();
   const search = useHistorySelector((history) => history.location.search);
@@ -65,10 +65,18 @@ function useLocaleDropdownUtils() {
   // 关键：用「剥掉全部 locale 前缀后的页面后缀」重建链接，保证只拼一层目标前缀。
   const pathnameSuffix = stripLeadingLocales(pathname);
 
+  // /community-prompt/<id> 是**只有默认 locale 才存在**的静态页（plugin-community-pages.js
+  // 只在默认 locale 注册这些路由）。
+  // 照常拼前缀会得到 /en/community-prompt/6474 —— 那页不存在，切语言直接落到 404。
+  // 切到其他语言时改指该 id 的 CSR 壳 /en/community-prompt?id=6474（内容等价，只是客户端取数）。
+  const staticCommunityId = /^community-prompt\/(\d+)$/.exec(pathnameSuffix)?.[1];
+  const usesIdQuery = (locale: string) => Boolean(staticCommunityId) && locale !== defaultLocale;
+
   const getBaseURLForLocale = (locale: string) => {
     const localeConfig = getLocaleConfig(locale);
+    const suffix = usesIdQuery(locale) ? "community-prompt" : pathnameSuffix;
     // localeConfig.baseUrl 形如 "/fr/"（默认 locale 为 "/"），始终带前后斜杠。
-    const localizedPath = `${localeConfig.baseUrl}${pathnameSuffix}`;
+    const localizedPath = `${localeConfig.baseUrl}${suffix}`;
     const isSameDomain = localeConfig.url === siteConfig.url;
     if (isSameDomain) {
       // 同域：用 pathname:// 触发整页导航（目标 locale 是另一个 build，非客户端路由）。
@@ -79,7 +87,8 @@ function useLocaleDropdownUtils() {
 
   return {
     getURL: (locale: string, options: {queryString: string | undefined}) => {
-      const finalSearch = mergeSearchStrings([search, options.queryString], "append");
+      const idQuery = usesIdQuery(locale) ? `?id=${staticCommunityId}` : undefined;
+      const finalSearch = mergeSearchStrings([search, options.queryString, idQuery], "append");
       return `${getBaseURLForLocale(locale)}${finalSearch}${hash}`;
     },
     getLabel: (locale: string) => getLocaleConfig(locale).label,

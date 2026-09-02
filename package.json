@@ -6,6 +6,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "gen:snapshot": "node scripts/genCommunitySnapshot.mjs",
+    "gen:community": "node scripts/genCommunityData.mjs",
     "prestart": "node scripts/generate.mjs",
     "start": "docusaurus start",
     "predev": "node scripts/generate.mjs",

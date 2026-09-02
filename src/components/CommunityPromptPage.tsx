@@ -171,8 +171,18 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // 若全部 canonical 合并到根路径，Google 只收录中文界面版，英文搜索用户
   // 点进来满屏中文导航/按钮。权衡：接受跨 locale 的正文重复（Google 会自行聚类挑选），
   // 换取各语言用户落地到本地化界面。与 sitemap 的 per-locale 注入保持一致。
+  // 默认 locale 且静态化开关打开（docusaurus.config.js 的 COMMUNITY_STATIC_PAGES，经
+  // customFields 透过来）→ canonical 指向构建期直出正文的 /community-prompt/<id>。
+  // ?id= 的 CSR 壳也这么指，把 Search Console 里那 587 个 ?id= URL 收敛到静态页那一份。
+  // 站内卡片链接**故意仍用 ?id=**：列表页最新的条目正是上次构建之后才出现、还没有静态页的，
+  // 链过去就是 404；而卡片点击是客户端路由，CrUX 不计，静态页对它没有收益。
+  // 开关关闭 / 非默认 locale / 读不到 customFields → 自指 ?id=，与静态化之前完全一致。
+  // id 必须落在构建期水位线之内：上次构建之后新提交的条目还没有静态页，
+  // 指过去就是 canonical 到 404（实测过 /community-prompt/15501）。
+  const staticMaxId = Number(siteConfig.customFields?.communityStaticMaxId ?? 0);
+  const hasStaticPage = siteConfig.customFields?.communityStaticPages === true && i18n.currentLocale === i18n.defaultLocale && prompt.id <= staticMaxId;
   const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
-  const canonicalUrl = `${siteConfig.url}${localePrefix}/community-prompt?id=${prompt.id}`;
+  const canonicalUrl = `${siteConfig.url}${localePrefix}${hasStaticPage ? `/community-prompt/${prompt.id}` : `/community-prompt?id=${prompt.id}`}`;
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
