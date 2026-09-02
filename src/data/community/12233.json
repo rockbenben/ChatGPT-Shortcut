@@ -1,0 +1,9 @@
+{
+  "id": 12233,
+  "title": "frontend-design skill 前端打磨",
+  "description": "用 frontend-design skill 根据本项目的定位与内容重新设计 UI。\n设计方向不预设，由你根据项目主题（它是什么、给谁用、核心场景）自行确定。\n\n技术约束（最终落地用）：\n- 框架 antd 6（默认 CSS variables 主题）+ React 19 + TS\n- antd 组件仅作底座，负责交互逻辑与可达性；视觉层通过 theme token + CSS variables 深度定制，避免\"开箱即用的 antd 默认观感\"\n\n流程：\n1. 开头用一两句交代你从项目里读出的主题与目标受众，作为下面方案的依据（不用等我确认，直接继续）。\n2. 给 2–3 个差异明确的视觉方向，每个做成可直接渲染的 HTML 预览（纯 HTML/CSS，展示同一个代表性页面/区块即可，聚焦配色、字体、布局、签名元素），不接 antd，方便我快速对比。\n3. 我选定一个方向后，你再按上面的技术约束（antd 6 + 深度定制）完整落地，自检模板化后写代码。",
+  "owner": "test",
+  "upvotes": 0,
+  "downvotes": 0,
+  "updatedAt": "2026-06-09T13:51:07.767Z"
+}

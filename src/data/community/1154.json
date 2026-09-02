@@ -1,0 +1,11 @@
+{
+  "id": 1154,
+  "title": "Panning an image and turning it into a video",
+  "description": "This image is a panoramic shot. \n\nHelp me turn it into a video with aspect ratio 3:2, with the image filling the entire video (so the sides are cut off).  The video should be centered in the middle of the image.\n\nThen, pan the video smoothly (with no sudden jumps) as follows:\n\nStart: Center --> Right --> Center --> Left --> Center: End\n\nUse the imageio library to help you. Save the frames directly to a video file instead of into a list.\n\nUse a frame step of 8 pixels. If necessary, crop the edges of the image so that the size of the image is divisible by the frame step.",
+  "notes": "https://github.com/ChaseLean/gpt-prompts",
+  "owner": "jjh",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:14.675Z"
+}

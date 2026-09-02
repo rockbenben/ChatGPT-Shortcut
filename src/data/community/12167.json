@@ -1,0 +1,10 @@
+{
+  "id": 12167,
+  "title": "关键词标签化提取(Keyword,/Tag Extraction)",
+  "description": "请不要使用完整的句子。请仔细观察图像，并输出一系列以逗号分隔的高质量英文标签（Tags）。标签应涵盖：主体、动作、服装、环境、风格、媒介、光照、艺术家参考。请确保包含描述画质的词汇（如 masterpiece, best quality, 8k）。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-28T07:10:38.340Z"
+}

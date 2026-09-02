@@ -1,0 +1,10 @@
+{
+  "id": 13986,
+  "title": "word公式",
+  "description": "公式请全部用 Word 可转换的 LaTeX 线性输入格式输出，例如 b=1.70\\ \\mathrm{m}、\\frac{N_k}{A}、\\gamma_G=20\\ \\mathrm{kN/m^3}；不要用 Markdown 公式渲染，不要加 $$。计算过程中的每一步代入式也按这种格式单独成行输出。",
+  "owner": "Royal",
+  "upvotes": 1,
+  "downvotes": 1,
+  "upvoteDifference": 0,
+  "updatedAt": "2026-07-04T05:00:36.789Z"
+}

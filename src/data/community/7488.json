@@ -1,0 +1,12 @@
+{
+  "id": 7488,
+  "title": "Git 智能分批提交助手",
+  "description": "分析当前 git 仓库中所有未提交的改动（modified、staged、untracked 全包括），按【功能相关性】智能分组,逐组执行 git add + git commit。\n\n## 分组前\n先 `git status` + `git diff --stat`(必要时 `git diff <file>` 看具体内容), 逐文件理解改了什么,再决定分组。\n\n## 分组原则（核心:按功能域,不按单次改动拆分）\n1. 粒度 =【功能域 / 子系统】。一个功能域的全部相关改动归为【一个】commit, 即使里面含多个修复/调整/小改。目标是「一个连贯的功能单元」,绝不拆成一堆细碎原子 commit。\n2. 相关联的文件同组:同一功能的 组件 + 样式 + 测试 + 配置 一起走。\n3. 分界线是【功能/子系统】,不是「单次改动」——只有【不同功能域】之间才分成不同 commit。\n4. 拿不准两块算不算同一功能域 → 倾向【合并】(宁粗勿碎),除非明显无关。\n\n## Commit message（Conventional Commits）\n- 标题:`type(scope): 简明描述`(英文)。type ∈ feat/fix/refactor/chore/ docs/style/perf/test;一组若混多种改动,取最能代表本组的主导 type。\n- body(可选):有必要时用中文概括本功能域改了什么、为什么。\n- 【严禁任何模型签名 / Co-Authored-By / 工具署名】。\n\n## 执行\n逐组 `git add <该组文件>` + `git commit`。每组提交后报:hash · 标题 · 含哪些文件。全部完成后确认剩余未提交 = 0。",
+  "remark": "把未提交的改动按【功能域】智能分组，批量提交 Conventional Commits 入库",
+  "notes": "- 适用场景:一次性改了一堆文件(一整个 feature / 一轮重构 / 一个会话的成果),想干净地分批提交,但既不想揉成一个巨型 commit,也不想拆成几十个原子 commit——要的是「一个功能域一个 commit」的中间粒度。\n- 核心取向:刻意不做原子提交。决胜规则是「宁粗勿碎」——拿不准就合并。如果你恰恰想要细粒度原子 commit(一 bugfix 一 commit),这个工具不适合,用相反取向的提示词。\n- 边界:只处理【未提交】的改动(modified/staged/untracked),只 commit、不 push;分组靠读 diff 决定,改动量特别大、特别杂时,建议提交后扫一眼分组是否合你意(它倾向合并,极端情况下可能把两个边缘相关的域并到一起)。\n- 约定:Conventional Commits 标题(英文),必要时中文 body;不带 Co-Authored-By / 任何模型署名(按需求内置)。",
+  "owner": "test",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-06-08T11:35:05.159Z"
+}

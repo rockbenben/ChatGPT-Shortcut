@@ -1,0 +1,10 @@
+{
+  "id": 8665,
+  "title": "PTCF框架提示词",
+  "description": "（Persona/角色)：赋予AI一个具体的专业身份\nT（Task/任务)：明确、具体的写作任务，【关键）必须明确指定法定文种（如：通知，请示\nC（Context/背景：提供必要的背景信息机关键要素\nF（Format/格式)：指定输出的格式、结构和风格",
+  "owner": "chen charles",
+  "upvotes": 5,
+  "downvotes": 1,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:51.439Z"
+}

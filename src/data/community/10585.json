@@ -1,0 +1,11 @@
+{
+  "id": 10585,
+  "title": "HumanitZ Dedicated Server",
+  "description": "請幫我用 Python 建立一個最小可行的系統，包含 Flask API 和 Discord Bot 整合，功能如下：\n\n1. Flask API\n- 提供三個端點：/start、/stop、/status\n- /start 執行伺服器啟動腳本（例如啟動 HumanitZ Dedicated Server）\n- /stop 執行伺服器關閉腳本\n- /status 回傳伺服器目前狀態（運行中或已停止）\n- 加入簡單的 API token 驗證\n\n2. Discord Bot\n- 使用 discord.py\n- 支援三個指令：!server on、!server off、!server status\n- 當收到指令時，呼叫 Flask API 對應的端點\n- 限定只有管理員角色可以使用這些指令\n- 在 Discord 群組回覆執行結果（例如「伺服器已開啟」）\n\n3. 基本安全與管理\n- 每次操作記錄 log\n- 錯誤處理：若 API 呼叫失敗，Discord Bot 要回覆錯誤訊息\n- 程式碼結構清晰，分成 Flask 部分與 Discord Bot 部分\n\n請生成完整的 Python 範例程式碼，包含必要的 import、Flask API 定義、Discord Bot 定義，以及簡單的伺服器控制腳本範例。",
+  "remark": "HumanitZ Dedicated Server",
+  "owner": "kelvin4901",
+  "upvotes": 2,
+  "downvotes": 1,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:01.025Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 11054,
+  "title": "Java 项目 AGENTS.md",
+  "description": "# AGENTS.md\nAI 在本纯 Java 项目中需遵守以下约定：\n1. 所有输出的 Java 代码兼容 Java 17 版本，优先适配 Spring Boot 3.x。\n2. 严格遵循《阿里巴巴 Java 开发手册》，禁止出现规范外的写法。\n3. 生成代码时附带完整包名、必要的 import 语句、Maven 依赖配置。\n4. 涉及框架使用时，提供完整的配置示例和调用示例。\n5. 不生成硬编码密钥、未处理异常、跨层调用等不规范代码。",
+  "remark": "Trae 专属",
+  "notes": "Java 项目 AGENTS.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:39:03.265Z"
+}

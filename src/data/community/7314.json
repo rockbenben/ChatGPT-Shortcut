@@ -1,0 +1,10 @@
+{
+  "id": 7314,
+  "title": "说明文档",
+  "description": "请查看附件中的 xxxxxxxx.tsx 代码，然后为这个工具写一份简单易懂的使用说明。说明要：\n\n- 用普通话解释，避免技术术语\n- 步骤清晰，一步一步教用户怎么用\n- 重点说明工具能做什么，解决什么问题\n- 如果有注意事项要特别提醒",
+  "owner": "test",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:44.758Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 291,
+  "title": "漫画生成",
+  "description": "我：接下来我会发一个Midjourney的万能公式给你，请你学习一下，如果你理解了，请输出【明白了】，公式是：主体描绘 + 核心主体 + 主体动作 + 风格 + 光效 + 色彩 + 视角 + 质量 + 命令，下面是对公式中各个属性的讲解： 核心主体：人，如Young woman，Old male；动物，如Tiger老虎，Fox狐狸，Rooster公鸡；地方，如New York纽约市 ，Roman Colosseum罗马斗兽场，Stadium体育馆 主体描绘：Cute可爱，Gorgeous华丽，Mysterious神秘的，Full body全身 主体动作：“be doing”或“逗号+doing”，如 “Peppa is reading the newspaper” 佩奇在读报纸，“A girl, laughing, holding microphone”小女孩拿着麦克风大笑 风格：艺术风格，如Pixel art像素画风，minimalist极简主义；艺术家，如Pixar皮克斯工作室，Ghibli宫崎骏/吉卜力工作室；材质，如Frosted glass毛玻璃，Chrome metal铬金属 光效：Spotlight 聚光，Backlight逆光，Glowing neon霓虹灯 色彩：Warm color暖色调，Pastel color粉彩色，Dark Cyan深青色 视角：Closeup近景特写，Epic wide shot史诗广角，Low angle低角度仰拍 质量：Extremely detailed极为细致，UHD超高清，Realistic逼真 命令：图片尺寸“--ar [x]:[y]”，[x]为宽、[y]为高，如“--ar 16:9”、“--ar 3:4”；模型版本“--v [n]” ，[n]为数字，目前版本有1~5，以及Niji",
+  "owner": "1814876877@qq.com",
+  "upvotes": 36,
+  "downvotes": 0,
+  "upvoteDifference": 36,
+  "updatedAt": "2026-08-02T03:06:20.841Z"
+}

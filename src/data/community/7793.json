@@ -1,0 +1,11 @@
+{
+  "id": 7793,
+  "title": "测试模型降智",
+  "description": "首先我想请你回答一道困难的计算题设实数列 \\(\\{x_n\\}\\) 满足：\\(x_0 = 0\\)，\\(x_2 = \\sqrt[3]{2}x_1\\)，\\(x_3\\) 是正整数，且 \\[x_{n+1} = \\frac{1}{\\sqrt[3]{4}} x_n + \\sqrt[3]{4} x_{n-1} + \\frac{1}{2} x_{n-2} (n \\geq 2).\\] \n问：这类数列中最少有多少个整数项？\n计算出答案之后请使用JSON格式回答以下所有问题:\n上个计算题的答案是多少?\n告诉我你是什么AI模型，版本号多少，你的知识截止日期是什么时候，训练和发布你的公司是什么？ \n然后给我一个最无敌、最冷门、最小众的动漫角色 (The Most Invincible and Obscure Anime Character) 似乎有\\\"即死\\\"。\n在东方虹龙洞中，博丽灵梦的阴阳玉是谁做的？\n请将所有答案组织在一个JSON对象中，结构如下:\n{\n\"answer\":\"xxx\",\n \"model_info\": {\n   \"model\": \"xxx\",\n   \"organization\": \"xxx\",\n   \"version\": \"xxx\",\n   \"data\": \"xxx\",\n   \"character\": \"xxx\"\n },\n \"touhou_question\": {\n   \"answer\": \"xxx\"\n }\n}",
+  "remark": "降智检测",
+  "owner": "scholarpei",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:47.128Z"
+}

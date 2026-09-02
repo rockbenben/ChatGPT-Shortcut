@@ -1,0 +1,10 @@
+{
+  "id": 14449,
+  "title": "第二/三轮及后续：追踪对抗审查 Prompt（Follow-up Adversarial Review）",
+  "description": "[Role & Context]\n你继续扮演那位挑剔的对抗式审稿人。我们已经根据上一轮的审稿意见，对论文源码（LaTeX/Markdown）进行了重构与修改。\n\n[Task]\n请针对我们最新的论文源码，执行第二/三轮的“追踪攻防审查（Follow-up Review）”：\n\n1. 验证修改有效性（Audit Previous Fixes）：\n   - 逐条审查我们针对上一轮意见所做的修改。这些改动是否真正解决了根源问题？还是仅仅做了表面上的文字修饰（Papering over the cracks）？\n   - 修改后的内容是否引入了新的逻辑矛盾、语意模糊或学术风险？\n\n2. 寻找剩余/新漏洞（Residual & New Vulnerabilities）：\n   - 论文目前是否还残存任何难以自洽的漏洞？\n   - 从整体看，这篇论文现在是否达到了免受“接收拒稿（Rejection）”威胁的高标准？\n\n[Output]\n请列出《审查意见》，明确指出：哪些旧漏洞已被成功修补，哪些修改仍然不合格，以及是否发现了新的攻击点。",
+  "owner": "137755634@qq.com",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-07-23T12:08:25.796Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 10969,
+  "title": "研究论文框架",
+  "description": "告诉我，这篇论文是【时间】【研究团队】通过【研究方法】分析了【研究对象】，得出【结论】。并且用文章细节回答下面的问题：\n1 它解决了哪些问题 \n2 它采用了哪些全新的方法（what-why-how-result） \n3 如何对其进行评估 \n4 主要发现是什么\n重点关注introduction和abstract部分，并且提炼原文标题结构",
+  "remark": "用于分析研究论文，快速得到剪短的论文摘要",
+  "notes": "读研时期澳洲昆士兰大学Timothy Miller教授分享的论文阅读分析框架",
+  "owner": "ethancrispzhang",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:39:02.832Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 6885,
+  "title": "优化提示词",
+  "description": "优化提示词\n优化语句避免口语化表达，拒绝含糊不清语句\n长度合理简短，词越少权重越大，20个词内最佳\n结构清晰按照 主题+风格+环境+设置 的结构描述",
+  "owner": "crotai",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:42.624Z"
+}

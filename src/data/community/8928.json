@@ -1,0 +1,11 @@
+{
+  "id": 8928,
+  "title": "修改提示词",
+  "description": "让 ChatGPT 为我们重新撰写提示词。由于人工书写的提示词逻辑与机器不同，重新修改提示语可令 ChatGPT 更容易理解。我正在尝试从以下提示词中获得 GPT-5 pro 的良好结果：“你的提示词。”你能否写出更优化、能够产生更好结果的提示词",
+  "remark": "修改提示词",
+  "owner": "tyteoh.external",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:52.772Z"
+}

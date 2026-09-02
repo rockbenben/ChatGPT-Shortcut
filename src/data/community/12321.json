@@ -1,0 +1,10 @@
+{
+  "id": 12321,
+  "title": "Introduction 逻辑骨架生成器",
+  "description": "你是《Nature Communications》 / 《Advanced Materials》 （选一个你目标期刊）的资深编辑，审阅过上千篇稿件，尤其擅长识别和构建逻辑严密的Introduction部分。\n请运用“倒金字塔（漏斗）结构”/CARS模型，为我的研究论文撰写一个详细的Introduction大纲。\n研究主题\n：[请用一句话概括你的研究主题，例如：开发一种新型的锌空电池双功能催化剂]\n核心贡献\n：[请用1-2句话阐明你本研究最核心的发现或突破，例如：我们通过原子级掺杂调控，合成了一种Co-N-C单原子催化剂，实现了超高的氧还原/析氧活性和稳定性。]\n请输出一个四级大纲：\nBroad Context (圈地)\n: 阐述该研究领域的宏观背景、其重要性（对社会、经济、科学的潜在影响）。\nStatus Quo & Limitation (找茬)\n: 综述当前主流方法（列举2-3类代表性工作），并明确指出它们共存的、尚未解决的关键局限性（例如：成本高、效率低、稳定性差、机理不明等）。\nThe Specific Gap (聚焦缺口)\n: 基于上述局限，凝练出一个具体、清晰、值得研究的科学问题或技术缺口。\nOur Work & Contribution (占坑)\n: 自然地引出本研究，并对应上述Gap，分点（1. 2. 3.）阐述你的研究是如何设计、以及具体解决了哪些问题（即你的贡献）。",
+  "owner": "Jedino",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-07-27T06:48:27.111Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 2759,
+  "title": "编程",
+  "description": "4. Arduino 开发板7、8管脚各接有一个自复位按钮开关，5、6管脚各接-个LED灯。每次只操作一个按钮。当接7脚的按钮“按下” 时，5号管目二的ED灯点亮:当接8脚的按钮“按下”时，6号LED灯点亮。试通过Arduino编程实现，并解释代码的含义。",
+  "owner": "ratvx",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:22.420Z"
+}

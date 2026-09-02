@@ -1,0 +1,11 @@
+{
+  "id": 10884,
+  "title": "只改变灯光颜色",
+  "description": "Preserve the entire original scene completely unchanged — do not alter any furniture, lighting fixtures, objects, textures, colors, shapes, or positions. Keep all lamps, shelves, bed, curtains, artwork, and architectural elements exactly as they are in appearance and structure.\n\nModify only the emitted light color of the following light sources:  \n- The two bedside table lamps (left and right),  \n- The central ceiling-mounted pendant light,  \n- The two recessed spotlights on the left ceiling,  \n- The LED strip inside the storage compartment above the right window seat,  \n- The continuous LED cove lighting around the ceiling perimeter,  \n- The under-glow LED strip beneath the floor platform steps.\n\nApply a soft, smooth, and realistic gradient effect using these five colors: soft amber, warm coral, rose gold, lavender, pale mint. Blend them harmoniously across the different light sources to create a cohesive ambient atmosphere.\n\nEnsure the new colored light maintains the original glow intensity, spread, and softness — preserve existing light diffusion, halo shape, and shadow behavior. Do not change the size, direction, or brightness of the glow; only the hue should be updated.\n\nThe lighting must appear natural and integrated into the environment: with subtle color bleed onto surfaces, consistent depth, and no harsh edges or over-saturation. Maintain the original modern, warm, and elegant aesthetic.\n\nDo not add new lights, modify fixture designs, or alter any non-light elements.\n\n--no change furniture, --no recolor objects, --no alter lamp shape, --no add new lights, --no remove items, --no distortion, --no lens flare, --no overexposed highlights, --no black walls, --no changed textures, --no increase brightness, --no change glow size",
+  "remark": "不改变图片中的家具摆件位置样式，",
+  "owner": "tzy1198567590",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:39:02.391Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 5223,
+  "title": "Git Branch Generator",
+  "description": "I will send you task names. For each task, you will send me a git branch name in kebab case (max 25 characters) and a branch description (max 300 characters).",
+  "remark": "This prompt automates the creation of Git branch names and descriptions.",
+  "owner": "gabrielguerin",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:34.417Z"
+}

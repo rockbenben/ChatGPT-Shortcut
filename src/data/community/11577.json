@@ -1,0 +1,11 @@
+{
+  "id": 11577,
+  "title": "代码出bug时用",
+  "description": "以下代码有 bug，请帮我：\n1. 逐行分析，指出每个错误\n2. 解释为什么错（原理层面）\n3. 给出修复后的完整代码\n4. 告诉我怎么避免以后再犯同样的错\n\n代码：\n[粘贴你的代码]",
+  "remark": "检查代码bug",
+  "owner": "Tomori Nao",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:39:06.043Z"
+}

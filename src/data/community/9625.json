@@ -1,0 +1,11 @@
+{
+  "id": 9625,
+  "title": "mongo",
+  "description": "aprés avoir obtenir  des données RADAR (maritme) traiter (IMM ou Kalman), est ce qu'il vaut mieux diffuser les données directement au front (map de visualisation) ou stocker les données dans mongodb (exemple) puis afficher depuis la base de données mongo ? quelle approche choisir et pourquoi",
+  "remark": "dev",
+  "owner": "wissem",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:56.387Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 14678,
+  "title": "一键完成Excel数据统计",
+  "description": "## Role\n你是一位顶级 Python 自动化工程师，精通数据处理与 Office 开发。\n\n## 📄 表格背景 (Context)\n请参考以下结构编写代码\n\n## 🚀 任务清单 (Tasks)\n请按顺序编写 Python 代码:\n\n#### 任务 1:【数据转换】\n- 模式: 手动定义新功能\n- 补充: sheet1为格式1，sheet2为格式2\n请帮我从格式1转换为格式2的统计模式\nsheet2需匹配出对应sheet1姓名的最早日期\n生成一个新的工作簿，保存在源文件通文件夹下\n\n- 参数: 主要参数:文件位置: C:\\Users\\林木\\Desktop\\AI写VBA：一键完成Excel数据统计案例1-10 2026.4.24\\11.案例11\\案例11.xlsx;\n\n## ⚠ 要求\n1. 优先使用 `pandas`，样式调整使用 `openpyxl`。\n2. 代码要求：模块化、带详细中文注释、可直接在 PyCharm 运行。\n3. 提供完整的 Python 脚本。",
+  "remark": "编程 - Python 数据分析",
+  "owner": "18439740566@139.com",
+  "upvotes": 9,
+  "downvotes": 0,
+  "upvoteDifference": 9,
+  "updatedAt": "2026-08-27T16:26:00.357Z"
+}

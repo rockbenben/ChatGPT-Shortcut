@@ -1,0 +1,10 @@
+{
+  "id": 7665,
+  "title": "代码优化",
+  "description": "请帮我优化 xxxx  这段代码，重点分析并改进以下方面：\n1. 代码结构和逻辑清晰度\n2. 可读性和维护性\n3 资源管理和内存使用效率\n\n具体要求：\n- 保持原有功能不变的前提下进行优化\n- 遵循Java编码规范和最佳实践\n",
+  "owner": "zichao412",
+  "upvotes": 8,
+  "downvotes": 0,
+  "upvoteDifference": 8,
+  "updatedAt": "2026-04-13T20:38:46.470Z"
+}

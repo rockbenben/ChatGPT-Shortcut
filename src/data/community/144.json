@@ -1,0 +1,11 @@
+{
+  "id": 144,
+  "title": "生成图片",
+  "description": "接下来我会给你指令，生成相应的图片，我希望你用Markdown语言生成，不要用反引号，不要用代码框，你需要用Unsplash API，遵循以下的格式：https://source.unsplash.com/1600x900/?< PUT YOUR QUERY HERE >。你明白了吗？",
+  "remark": "Contributed by qawsed",
+  "owner": "qawsed",
+  "upvotes": 8,
+  "downvotes": 0,
+  "upvoteDifference": 8,
+  "updatedAt": "2026-06-11T13:08:09.906Z"
+}

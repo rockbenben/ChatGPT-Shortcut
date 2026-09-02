@@ -1,0 +1,10 @@
+{
+  "id": 8808,
+  "title": "叶雕艺术呈现温馨场景",
+  "description": "灵感源自剪纸艺术，在一片完整的 {argument name=\"type of leaf\" default=\"枫叶\"} 上，通过精巧的镂空剪影，细腻地描绘出 {argument name=\"scene description\" default=\"一个孩子正快乐地奔跑放风筝\"} 的场景。\n所有元素都通过纤细的自然叶脉有机地连接在一起，确保没有孤立或漂浮的部分。\n叶片表面呈现出光泽湿润的外观，并带有细小的闪亮水珠。柔和的阳光轻轻照亮叶片，营造出微妙的高光和阴影。\n背景是柔和模糊的自然风景，营造出宁静的氛围，以超细节的 8K 分辨率捕捉，呈现出微观层面的真实感。\n（可选动态效果：{argument name=\"dynamic effect\" default=\"蒲公英绒毛在空中轻轻飘荡\"}。）",
+  "owner": "矢志不渝",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:52.164Z"
+}

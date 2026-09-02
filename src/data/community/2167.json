@@ -1,0 +1,10 @@
+{
+  "id": 2167,
+  "title": "语法错误修改",
+  "description": "Please check my grammar and spelling. If there are no mistakes, please let me know that the paragraph is good. If you find any errors, please list them in a two-column markdown table with the original text in the first column, the corrected text in the second column, and the corrected key words highlighted. For example: \n\n| Original sentence | Corrected sentence |\n| :--- | :--- |\n| How is you? | How are you? |\n| Do you knows what is it? | Do you know what it is? |\n\nBelow is a paragraph from an academic paper. Please report all grammar and spelling mistakes as shown in the example above. \n\nParagraph:Can you help me ensure that the grammar and the spelling is correct?Do not try to polish the text, if no mistake is found, tell me that this paragraph is good. If you find grammar or spelling mistakes, please list mistakes you find in a two-column markdown table, put the original text in the first column, put the corrected text in the second column and highlight the key words you fixed. Example: Paragraph: How is you? Do you knows what is it?|Original sentence |Corrected sentence ||:--- |:--- ||How is you?|How are you?||Do you knows what is it?|Do you know what it is ?|Below is a paragraph from an academic paper.You need to report all grammar and spelling mistakes as the example before. Paragraph:",
+  "owner": "Jiang Binxun",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:19.549Z"
+}

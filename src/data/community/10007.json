@@ -1,0 +1,10 @@
+{
+  "id": 10007,
+  "title": "seedance运镜",
+  "description": "一、基础平移（左右 / 上下移动）\npan left → 镜头向左平移\npan right → 镜头向右平移\npedestal up → 镜头向上平移\npedestal down → 镜头向下平移\ntruck left /truck right → 镜头横向左移 / 右移\n二、推拉运镜（前进 / 后退）\npush in /dolly in → 镜头向前推进\npull back /dolly out → 镜头向后拉远\nslow push in → 缓慢推进\ngentle dolly out → 轻柔拉远\n三、环绕运镜（你做三体最常用、最出效果）\norbit around center → 围绕中心环绕\nslow 360 orbit around center → 缓慢 360° 环绕中心\ncircular camera movement → 环形镜头运动\nclockwise orbit → 顺时针环绕\n四、俯仰运镜（抬头 / 低头）\ntilt up → 镜头向上仰拍\ntilt down → 镜头向下俯拍\nlow angle tilt up → 低角度仰拍\nhigh angle tilt down → 高角度俯拍\n五、摇镜 / 旋转\npan up → 摇镜向上\npan down → 摇镜向下\nrotate clockwise → 顺时针旋转\nrotate counterclockwise → 逆时针旋转\n六、稳定 / 氛围类（必加，画面更舒服）\nsmooth movement → 运镜流畅\nslow and steady → 缓慢且稳定\ncinematic camera movement → 电影级运镜\nno shaking → 无抖动",
+  "owner": "xm wang",
+  "upvotes": 11,
+  "downvotes": 1,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-09-01T06:09:54.519Z"
+}

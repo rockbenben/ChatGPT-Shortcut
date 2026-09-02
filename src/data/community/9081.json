@@ -1,0 +1,10 @@
+{
+  "id": 9081,
+  "title": "表格罗列",
+  "description": "把这个图里面所有的字段都罗列成表格；输出格式：\n| **字段**  | **逻辑** |\n| --------- | -------- |\n| 上级agent |          |",
+  "owner": "dongjiang",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:53.483Z"
+}

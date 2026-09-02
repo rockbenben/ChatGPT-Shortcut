@@ -1,0 +1,11 @@
+{
+  "id": 7302,
+  "title": "综述GPT口令",
+  "description": "第一步：定位优质学术信息来源\n口令: Could you identify significant handbooks on digital society studies, particularly those published by Oxford University Press and Cambridge University Press?\n注意：尽量选择有质量保证的Handbook\n\n第二步：选择一本Handbook作为信息来源，让GPT分析和总结该领域的重要议题和争论\n口令: Please summarise 10 key research topics in the handbook The Oxford Handbook of Digital Technology and Society (2021). For each research topics, please tell me their research questions and debated answers.\nPlease summarise 10 key research topics about xxx theory in The Cambridge Handbook of Social Theory For each research topics, please tell me their research questions and debated answers.\n注意：尽量让GPT打乱Handbook的结构，让其发挥创造性。\n\n第三步：有哪些研究GAP?（找到以上学术辩论中还没有解决的空白\n口令: Analyze the prominent research gaps for each topic and add these gaps into your answer.\nAnalyze the prominent research gaps foreach topic and add these gaps into your answer\n\n第四步：有哪些具体案例、关键文献？（在以上学术辩论和分析中，要充实一些文献和具体案例\n口令1: Please add “key examples” and “key references\" to support your answer.\n口令 2: Rewrite your response as a coherent literature review essay of approximately 4,000 words.\n\n第五步：有哪些最新的研究成果？（Handbook不会每年都更新，所以要补充一些最新的前沿研究\n口令：（找到并上传最新研究论文给GPT）This is a literature review on platform labor. In relation to my writing on digital technology and society, which sections of the review document can be connected?\n将以上GPT分析成果加入到文献综述里\n\n\n",
+  "notes": "Please add “key examples\" and “key references\" to support your answer.\n\nRewrite your response as a coherent literature review essay of approximately 1500\n\nThis is a literature review on carnival theory. In relation to my writing on online carnival, which sections of the review document can be connected?\n\n“Wright, James D，international encyclopedia of the social & behavioral sciences-Elsevier (2016)”\n",
+  "owner": "kikiwc",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:44.700Z"
+}

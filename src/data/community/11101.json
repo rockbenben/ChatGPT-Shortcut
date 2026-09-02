@@ -1,0 +1,10 @@
+{
+  "id": 11101,
+  "title": "Response-中译英",
+  "description": "你现在是一名专业的学术编辑，请将我写的Response to Reviewers翻译和润色为高质量的英文，用于SCI论文审稿意见回复。请严格遵循以下要求：\n- 使用正式、专业、礼貌且克制的学术语言；\n- 避免口语化表达，符合IEEE期刊风格；\n- 适当使用固定表达，例如：\n  - \"We sincerely thank the reviewer for the insightful comment.\"\n  - \"We have revised the manuscript accordingly.\"\n  - \"The corresponding modifications have been made in Section X.\"\n- 保证逻辑清晰、表达简洁，避免冗长和重复；\n- 在不改变原意的前提下优化句式，使其更加自然、地道，不要改变中文的本意；\n- 保留所有技术细节和关键信息。\n请输出润色后的英文版本。\n中文内容如下：",
+  "owner": "haifeng",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-07-29T11:24:02.254Z"
+}

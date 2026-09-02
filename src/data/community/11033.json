@@ -1,0 +1,11 @@
+{
+  "id": 11033,
+  "title": "claude code 插件",
+  "description": "https://github.com/garrytan/gstack\n\n在claude cli 里面执行 \ngit clone https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup\n\n装完如果 skills 没显示，重新跑一次：\ncd ~/.claude/skills/gstack && ./setup\n\n写完代码 → /review\n\n出 bug → /debug\n\n看页面 → /browse\n\n测功能 → /qa-only\n\n\n\n\n",
+  "notes": "| 命令                 | 作用             | 什么时候用  | 实际效果             |\n| ------------------ | -------------- | ------ | ---------------- |\n| `/plan`            | 生成完整开发计划       | 你刚有需求时 | 拆需求 + 技术方案 +任务分解 |\n| `/plan-ceo-review` | 从“产品/商业角度”质疑方案 | 需求不确定时 | 防止做无价值功能         |\n| `/plan-eng-review` | 从工程角度优化方案      | 开发前    | 找架构问题、复杂度风险      |\n\n| 命令          | 作用             | 什么时候用   | 实际效果           |\n| ----------- | -------------- | ------- | -------------- |\n| `/review` ⭐ | 代码审查 + 找 bug   | 写完代码后   | 找隐藏问题（非常实用）    |\n| `/debug` ⭐  | 系统化排查 bug      | 出现报错/异常 | 分析根因（不是瞎修）     |\n| `/qa`       | 自动测试 + 修复 + 验证 | 做完功能后   | 模拟用户操作 + 修 bug |\n| `/qa-only`  | 只测试不修改         | 不想自动改代码 | 找问题但不动代码       |\n\n| 命令                       | 作用       | 什么时候用   | 实际效果              |\n| ------------------------ | -------- | ------- | ----------------- |\n| `/browse` ⭐              | 用真实浏览器操作 | 测试网站/页面 | 自动点击、截图、抓数据       |\n| `/setup-browser-cookies` | 登录网站     | 需要登录态时  | 让 /browse 能访问登录内容 |\n\n\n| 命令                  | 作用        | 什么时候用 | 实际效果                   |\n| ------------------- | --------- | ----- | ---------------------- |\n| `/ship`             | 自动提交 + PR | 完成功能后 | commit + push + PR 一条龙 |\n| `/document-release` | 更新文档      | 发版前后  | 自动更新 README、架构文档       |\n\n| 命令              | 作用     | 什么时候用   | 实际效果        |\n| --------------- | ------ | ------- | ----------- |\n| `/retro`        | 项目复盘   | 完成一轮开发后 | 分析问题 + 改进建议 |\n| `/office-hours` | 讨论复杂问题 | 卡住时     | 类似“找专家咨询”   |\n\n",
+  "owner": "shengxingke",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.157Z"
+}

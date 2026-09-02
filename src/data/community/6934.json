@@ -1,0 +1,10 @@
+{
+  "id": 6934,
+  "title": "表单label处理",
+  "description": "import { h } from 'vue';\nimport { QuestionCircleOutlined } from '@ant-design/icons-vue';\n\n/**\n * 创建带有可选Tooltip的表单标签\n * @param label 标签文本\n * @param tips Tooltip提示内容，如果不提供则不显示Tooltip\n * @returns 渲染函数\n */\nconst renderLabelWithTooltip = (label: string, tips?: string) => {\n  // 如果没有提供tips，则只渲染标签文本\n  if (!tips) {\n    return () => h('span', {}, label);\n  }\n  \n  // 如果提供了tips，则渲染带有Tooltip的标签\n  return () => h('div', { style: { display: 'flex', alignItems: 'center' } }, [\n    h('span', {}, label),\n    h('a-tooltip', { title: tips }, {\n      default: () => h(QuestionCircleOutlined, { \n        style: { \n          marginLeft: '4px',\n          color: 'rgba(0, 0, 0, 0.45)',\n          cursor: 'pointer',\n          fontSize: '14px'\n        } \n      })\n    })\n  ]);\n};",
+  "owner": "tmx",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:42.869Z"
+}

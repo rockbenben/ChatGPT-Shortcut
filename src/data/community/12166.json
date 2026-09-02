@@ -1,0 +1,10 @@
+{
+  "id": 12166,
+  "title": "面部特征专项(Facial Features Specifics)",
+  "description": "请对人物的面部特征进行特写级描述。详细说明眼睛的颜色和形状、妆容细节（如眼线、口红质感）、皮肤的纹理（如雀斑、毛孔、水珠）、发型及其颜色，以及眼神所传达的情感。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-05-09T14:59:30.764Z"
+}

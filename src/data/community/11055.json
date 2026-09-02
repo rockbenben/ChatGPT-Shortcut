@@ -1,0 +1,12 @@
+{
+  "id": 11055,
+  "title": "Python 项目个人规则",
+  "description": "所有回答使用中文表述，Python 技术术语标注中英文对照。\nPython 代码关键逻辑、复杂算法添加 Google 风格 Docstring 中文注释。\n优先提供可直接运行的 Python 示例代码，附带 pip 安装依赖命令。\n需求不明确时主动追问 Python 版本（3.9+/3.10+）、框架（FastAPI/Flask/Django）、运行环境。\n代码严格遵循 PEP 8 规范，行长度不超过 120 字符。\n禁止使用 Python 2.x 语法，所有代码适配 Python 3.9+。\n操作指令、命令行优先适配 Windows 环境，标注 Linux/macOS 差异。\n输出内容使用表格、列表分点展示，核心代码附带输入输出示例。",
+  "remark": "Trae 专属",
+  "notes": "Python 项目个人规则",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.270Z"
+}

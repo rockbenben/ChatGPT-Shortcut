@@ -1,0 +1,12 @@
+{
+  "id": 11052,
+  "title": "Java 单元测试规则",
+  "description": "---\nalwaysApply: false\ndescription: 编写 Java 单元测试时自动生效\n---\n\n# Java 单元测试规则\n## 基础规范\n1. 测试类命名：原类名 + Test，如 `UserServiceTest`，放在 src/test/java 目录。\n2. 测试方法命名：test + 功能 + 场景，如 `testAddUser_Success`、`testAddUser_ParamNull`。\n3. 测试框架：使用 JUnit 5 + Mockito，禁止使用 JUnit 4 旧 API。\n\n## 测试要求\n1. 覆盖率：核心业务类测试覆盖率 ≥ 80%，工具类 ≥ 90%。\n2. 依赖模拟：使用 Mockito 模拟 Mapper、第三方接口等外部依赖，避免真实调用。\n3. 数据隔离：测试数据与生产数据隔离，使用测试专用数据库。\n4. 断言：使用 AssertJ 断言（如 `Assertions.assertThat()`），禁止使用 junit 原生断言。",
+  "remark": "Trae 专属",
+  "notes": "Java 单元测试规则 java-test.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.255Z"
+}

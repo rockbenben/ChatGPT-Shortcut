@@ -1,0 +1,12 @@
+{
+  "id": 210,
+  "title": "对分点摘要进行汇总写文章",
+  "description": "Here is a summary of the key points from an article titled \"xxxx\":\n'''Article_content'''\nBased on the information provided, write an \"文章类型\"-style article in \"中文\", starting with the title:",
+  "remark": "根据已经分点的摘要进行汇总，写总结性的文章，或者新闻稿等 Contributed by cr941131",
+  "notes": "下面是某文章“xxxx”的要点总结:\n”“”\n文章内容\n\n”“”\n根据所提供的信息，请用“语言”写一篇“文章类型”的文章，从标题开始:",
+  "owner": "cr941131",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:10.138Z"
+}

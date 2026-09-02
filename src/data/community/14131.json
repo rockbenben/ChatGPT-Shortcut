@@ -1,0 +1,11 @@
+{
+  "id": 14131,
+  "title": "开发要求",
+  "description": "我之后的项目都会给AI一个ADS文档和DEMO.html文件（DEMO.html是根据ADS文档出了一版，而且经过了客户最终确认的效果），我需要你根据ADS文档出个计划书或者时间排期，可以是P1,P2的标题，然后里面的内容是这个阶段的提示词，样式需要参考DEMO.html文件做的一样",
+  "notes": "",
+  "owner": "wjqwangjunq",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-07-02T06:26:16.575Z"
+}

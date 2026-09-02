@@ -1,0 +1,10 @@
+{
+  "id": 9632,
+  "title": "股票交易日志",
+  "description": "【交易日志】\n日期：2026-02-18\n股票：XXXXXX\n买入理由：策略信号（具体说明）\n买入价格：XX.XX元\n仓位：XX%\n预期持有：X个月\n目标价位：XX.XX元（+45%）\n止损价位：XX.XX元（-15%）\n\n【复盘记录】\n实际卖出日期：\n实际卖出价格：\n实际盈亏：\n策略执行偏差：\n经验教训：",
+  "owner": "Aalto",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:56.420Z"
+}

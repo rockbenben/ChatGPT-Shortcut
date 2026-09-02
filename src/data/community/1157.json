@@ -1,0 +1,11 @@
+{
+  "id": 1157,
+  "title": "Avengers Disintegration animation",
+  "description": "Are you familiar with the disintegration effect from Avengers after Thanos snaps his fingers? I want to apply this effect to the PNG image I uploaded. By turning it into a video, can you do it for me?\n\nUsing the pixels from the transparent layer, group them into blocks of 4x4 pixels. Then, give each block an index. For each frame, several blocks at random. Then translate those blocks to the left. Keep doing this for the frames until all the blocks have left the image, and only a blank image remains.\n\nUse the imageio library to help you. Save the frames directly to a video file instead of into a list.",
+  "notes": "https://github.com/ChaseLean/gpt-prompts",
+  "owner": "jjh",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:14.691Z"
+}

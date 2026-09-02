@@ -1,0 +1,12 @@
+{
+  "id": 11051,
+  "title": "Java 框架规范",
+  "description": "---\nalwaysApply: false\nglobs: src/main/java/com/**/*.java, src/test/java/com/**/*.java\ndescription: Java 框架（Spring Boot）专属规则，匹配业务代码时生效\n---\n\n# Java 框架（Spring Boot）开发规则\n## 技术栈约束\n1. 框架版本：优先使用 Spring Boot 3.x，Spring Cloud 2022.x。\n2. 数据库操作：使用 MyBatis-Plus，禁止手写复杂 SQL，分页使用 PageHelper。\n3. 接口规范：RESTful 风格，返回格式统一为 {code: int, msg: String, data: Object}。\n4. 配置管理：使用 application.yml 管理配置，区分 dev/test/prod 环境。\n\n## 控制器（Controller）规范\n1. 注解：统一使用 @RestController，请求映射使用 @GetMapping/@PostMapping 等。\n2. 参数校验：使用 JSR-380 注解（@NotNull/@NotBlank），全局异常处理器统一捕获校验异常。\n3. 禁止：Controller 层编写业务逻辑，仅处理参数接收和结果返回。\n\n## 服务层（Service）规范\n1. 接口+实现类：Service 层必须定义接口（IUserService）+ 实现类（UserServiceImpl）。\n2. 事务管理：使用 @Transactional 注解，明确事务传播行为和隔离级别。\n3. 禁止：Service 层直接调用 Mapper 以外的底层接口。",
+  "remark": "Trae 专属",
+  "notes": "Java 框架规范 Trae 专属 java-framework.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.250Z"
+}

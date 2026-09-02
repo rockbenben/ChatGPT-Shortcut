@@ -1,0 +1,12 @@
+{
+  "id": 11059,
+  "title": "Python 重构规则",
+  "description": "---\nalwaysApply: false\ndescription: Python 代码重构专用规则，手动 #Rule 触发\n---\n\n# Python 重构规则\n1. 重构目标：\n   - 补全所有函数的类型注解；\n   - 拆分超长函数（超过 50 行）和超大模块（超过 1000 行）；\n   - 替换低效循环为 Pandas/NumPy 向量化操作；\n   - 修复裸 try-except、未关闭资源等问题；\n   - 优化命名，使其符合 PEP 8 规范。\n2. 约束：重构后功能完全一致，不新增/删减业务逻辑，兼容原调用方式。\n3. 验证：重构后必须保证所有 pytest 测试用例通过，代码覆盖率不下降。\n4. 输出：重构完成后，输出「变更清单」，说明修改点和优化原因。",
+  "remark": "Trae 专属",
+  "notes": "Python 重构规则 python-refactor.md \n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.292Z"
+}

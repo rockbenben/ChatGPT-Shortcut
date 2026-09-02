@@ -1,0 +1,10 @@
+{
+  "id": 2508,
+  "title": "xmind",
+  "description": "请基于上文信息，帮我画出思维导图，内容是英语。用markdown格式输出。然后，写一段python 代码，将以上code粘贴到“文本编辑”中，纯文本格式，mac简体中文。保存到桌面. 然后将后缀改为md",
+  "owner": "ruijunduan@qq.com",
+  "upvotes": 13,
+  "downvotes": 0,
+  "upvoteDifference": 13,
+  "updatedAt": "2026-04-13T20:38:21.170Z"
+}

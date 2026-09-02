@@ -1,0 +1,11 @@
+{
+  "id": 13987,
+  "title": "代码审计",
+  "description": "1、改为深度优先搜索追踪调用链\n2、所有输出统一写入 <target_dir>/securityScan/mybatisInjectionScan/这样是对的\n3、searcher.py输出的结果中，c: 上下文（context），包括该行附近的代码。这里不对要求：\n（1）删除S字段，不需要起始行号\n（2）输出结果中v字段的上下文只包含了命中行的上文，没有下文，且还不包含名中行本身，导致上下文不完整，要求v字段输出的上下文一共15行，命中行也包含其中在第10行，这15行是完整的上下文\n4、根节点就是搜索${而命中的多个xml文件，这里的根节点不止一个根，然后继续这些xml文件再扩展追溯\n5、callchain_record.py肯定是能控制构建根节点时候就是构建一个新文件，除了根节点之外的节点是能是追加到原有文件，输入命令的时候肯定是有标志参数来判定是构建文件还是追加数据的\n6、调用链条结果和审计结果最终都整理到这一个audit_report.html文件中，不要分散成一堆报告，这个文件的上面是审计结果，下面就是调用链结果\n7、根节点只需要在*.xml中搜索${关键字就行，不要搞一堆关键字搜索。根节点就是搜索${而命中的多个xml文件，这里的根节点不止一个根，然后继续这些xml文件再扩展追溯\n8、调用链的json文件放在<target_dir>/securityScan/mybatisInjectionScan这层目录就行，因为不会太多，很多情况都是追加场景\n9、在skill.md最开始就描述创建输出目录<target_dir>/securityScan/mybatisInjectionScan/\n10、searcher.py脚本在\\results目录下的json是一行格式你看不懂，你自己看不懂就格式化了，不要这样，直接修改searcher.py脚本让其输出结果本身就格式化，你直接阅读文件就行了\n11、过程中当你第一次根据搜索结果分析筛选出第一批有效注入点的时候，紧接着应该调用脚本callchain_record.py脚本记录下来，然后去读取记录结果然后判断下一个要分析哪个再去具体分析对应文档或者代码，在skill.md描述上\n12、不允许使用Glob命令去分析接口或者结果，只能使用searcher.py工具，它的能力和Glob是一样的，你可以根据需求使用read工具，在skill.md描述上，\n13、每确认一个叶子节点之后使用callchain_record.py脚本将结果同步到调用链文件里，不要一顿分析后才构建调用链文件，如果项目很大，你会忘记上下文，调用链则会不完善",
+  "remark": "代码审计",
+  "owner": "sevena",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-06-23T03:14:57.064Z"
+}

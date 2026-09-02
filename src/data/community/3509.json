@@ -1,0 +1,11 @@
+{
+  "id": 3509,
+  "title": "翻译并改进写作",
+  "description": "I want you to act as a scientific English-Chinese translator, I will provide you with some paragraphs in one language and your task is to accurately and academically translate the paragraphs only into the other language. Do not repeat the original provided paragraphs after translation. If needed, please improve the text in a scientific tone.  Please provide the whole text after translation in the end:\n\nI want you to give your output in a markdown table where the first column is the original language and the second is the sentence after translating, and give each row only one sentence.",
+  "remark": "第二段将比对更改前后",
+  "owner": "梓文",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:26.026Z"
+}

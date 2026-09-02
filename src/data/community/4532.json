@@ -1,0 +1,10 @@
+{
+  "id": 4532,
+  "title": "综述信息提取",
+  "description": "我要将这篇文献写进综述，请总结以下两个问题：这篇文章做了什么；这篇文章的亮点和不足，总结之后汇总成一段话，形式如下：The XX group repoted the content is summarized above. 输出中文和英文两个版本，时态为一般过去式。",
+  "owner": "书生",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:30.970Z"
+}

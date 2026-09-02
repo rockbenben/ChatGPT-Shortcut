@@ -1,0 +1,10 @@
+{
+  "id": 8329,
+  "title": "4.2 生成绘图代码（matplotlib / GMT）",
+  "description": "请根据以下数据/结构，生成可用于科研论文的 matplotlib/GMT 绘图代码，图件风格需符合地质学期刊规范。\n图件类型：{类型}\n数据：{数据}",
+  "owner": "1564212245lzy",
+  "upvotes": 12,
+  "downvotes": 0,
+  "upvoteDifference": 12,
+  "updatedAt": "2026-04-13T20:38:49.759Z"
+}

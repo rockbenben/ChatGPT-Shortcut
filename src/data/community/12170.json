@@ -1,0 +1,10 @@
+{
+  "id": 12170,
+  "title": "跨模态\"风格迁移\"推导指令(Cross-Modal Style Extraction)",
+  "description": "提取这张人像照片的情绪内核和构图神髓，并将其转化为‘18 世纪荷兰黄金时代油画’的视觉逻辑。请不要直接说‘油画风格’，而是详细描述：光线应如何模仿伦勃朗式布光（Rembrandt Lighting）、皮肤质感应如何呈现出油彩的厚涂感（Impasto）、以及背景暗部的层次感应如何处理。请输出一段详细的画面改写指南。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 3,
+  "downvotes": 1,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-05-20T11:16:01.611Z"
+}

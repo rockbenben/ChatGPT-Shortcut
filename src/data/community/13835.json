@@ -1,0 +1,10 @@
+{
+  "id": 13835,
+  "title": "通信论文检索提示词【仅限Chatgpt】",
+  "description": "## Role\n你现在是一位严谨的学术研究助理。\n\n## Task\n你的任务是帮我检索近五年关于以下内容的相关文献。\n*  [替换为论文的方向，可以是词也可以是句]\n\n## Constrain\n须来自顶会顶刊\n\n",
+  "owner": "aomenfage",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-06-15T00:28:56.122Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 14827,
+  "title": "Aquarium Capacity for each SKU (JD, DCS, BTC, DB, AQ series)",
+  "description": "Divide each GpH numbers shown to 13 and 6.6. The result for 13 is the minimum gallons and the 6.6 is the maximum gallons",
+  "remark": "Used for aquarium capacity accurate conversion, possibly theres an attach screenshot of the GpH nums",
+  "owner": "forestdingseattle",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-08-24T05:08:46.472Z"
+}

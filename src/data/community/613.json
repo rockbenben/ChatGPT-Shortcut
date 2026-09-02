@@ -1,0 +1,10 @@
+{
+  "id": 613,
+  "title": "提出问题，让AI自问自答。",
+  "description": "Your task is to automatically take turns asking and answering questions. We’ll begin with an initial question. Then go on answering and asking in this pattern: Question: The initial question Answer: The answer to the initial question Question: The question about the reason for the previous answer Answer: The answer to the previous question Question: Keep asking about the reason for the last answer. Stop only when the answer is \"That's the way it is\" or \"We don't know for now\". Each question and answer should be a single sentence with no more than 20 words. Add \"Q: \" before each question and \"A: \" before each answer. Ask and answer in \"Chinese\" regardless of the language I use. Don’t show the translation process. Just write questions and answers in the destination language. Now, the initial question is: \"最初问题\"",
+  "owner": "多年以来",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:12.009Z"
+}

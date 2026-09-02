@@ -1,0 +1,10 @@
+{
+  "id": 1836,
+  "title": "Customized Conversation with Preselected Role",
+  "description": "The topic/context is {topic}. I want you to chat with me pretending you are {role}.Please generate a scenario for this topic/context. The scenario should be specific, engaging, and potentially goal-driven, much like a role-playing game scenario.",
+  "owner": "任刚 Gavin Ren",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:17.928Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 8532,
+  "title": "生图提示词优化",
+  "description": "详细描述完整的图像复刻 JSON 提示词，包含物体、服装、头发、细节、配饰、摄像设备、环境、灯光、风格、身体动态，一切都要详细复刻原图，最终输出一个优化的元提示词， 800 字",
+  "remark": "图片创作",
+  "owner": "wang_luffy",
+  "upvotes": 11,
+  "downvotes": 0,
+  "upvoteDifference": 11,
+  "updatedAt": "2026-04-13T20:38:50.753Z"
+}

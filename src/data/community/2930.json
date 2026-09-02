@@ -1,0 +1,10 @@
+{
+  "id": 2930,
+  "title": "BenChi-优化后测试用例提示词模版",
+  "description": "作为软件测试专家，你的任务是为 [分机号] 这个需求设计测试用例。请提供六个测试用例，每个测试用例需要包括以下内容：正常场景、等价类划分、边界值划分和异常场景。以Markdown格式呈现你的测试用例，按照以下模板进行：\n\n",
+  "owner": "benchi876@gmail.com",
+  "upvotes": 6,
+  "downvotes": 1,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-05-19T02:41:45.649Z"
+}

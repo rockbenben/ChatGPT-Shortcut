@@ -1,0 +1,10 @@
+{
+  "id": 10213,
+  "title": "1",
+  "description": "输入命令 cat << 'EOF' > ~/Desktop/vantage_dashboard.html 然后按 回车。\n\n这一步的意思是：我要开始写文件了，存到桌面。\n\n直接按下 Command + V 粘贴刚才的代码。\n\n最后在新的一行输入 EOF（全部大写）并按 回车。\n\n这一步的意思是：写完了，保存并退出。",
+  "owner": "seebear",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:59.250Z"
+}

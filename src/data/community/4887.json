@@ -1,0 +1,10 @@
+{
+  "id": 4887,
+  "title": "审稿：缺点",
+  "description": "帮我列出这篇论文的缺点。\n你可以从以下方面考虑内容：\n1.说明一下这篇工作在本领域的创新意义的不足，未来可能面临的不足。\n2.要对比之前工作，说明一下这篇论文的不足之处，可改进之处。\n3.说明一下这篇工作在实验上还有什么不足，实验设计是否有说服力，是否需要补充什么额外的实验。\n4.根据我发给你的“review”文件，说明一下这篇文章在写作、组织结构、画图等其他方面的不足。若这方面有不足，可以具体指出是在论文的哪个地方。\n最后输出的语言要求满足以下条件：\n1.输出英文，用英文回复我。\n2.分6个缺点回答我。\n3.语言要中立，不要夸它好；语言简短，不输出无意义的修饰词，额外的词汇。\n4.如果可以，请指出某缺点是在论文的具体哪个地方。\n5.不要和优点的观点发生冲突。\n6.请充分考虑我给你提出的以上“方面考虑内容”。\n7.你可以模仿【】中这样的风格去生成论文缺点，文字尽量简洁。\n【There are also some weak points to be improved:\nW1:discussion of important xxx are not sufficient. \nW2:detailed explanations should be provided to enhance xxx.\nW3:xxx.\nW4:xxx.\nW5:xxx.\nW6:xxx.】",
+  "owner": "T yunsen",
+  "upvotes": 15,
+  "downvotes": 0,
+  "upvoteDifference": 15,
+  "updatedAt": "2026-06-10T07:59:17.008Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 5475,
+  "title": "英文文章润色优化--材料方法部分",
+  "description": "I am writing the  material methods section of a paper on deep learning and food metrics prediction for a leading academic food chemistry journal. In the Materials and Methods section, I have attempted to provide a detailed and standardised description of the materials and methods used in this article. Check that the sentence structure in the Materials and Methods complies with English grammatical norms, including subject-verb agreement, use of tense, and verb forms. Please reword the text so that it is clear, coherent, and concise, and make sure that each paragraph flows smoothly from one to the next. Remove jargon. Use a professional tone.",
+  "remark": "用于英文文章的润色，因材料方法部分与结果部分时态不尽相同，所以单独进行提示词的划分",
+  "owner": "lfx",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:35.687Z"
+}

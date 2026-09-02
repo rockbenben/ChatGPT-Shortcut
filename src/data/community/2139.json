@@ -1,0 +1,10 @@
+{
+  "id": 2139,
+  "title": "SD",
+  "description": "StableDiffusion是一款利用深度学习的文生图模型，支持通过使用提示词来产生新的图像，描述要包含或省略的元素。我在这里引入StableDiffusion算法中的Prompt概念，又被称为提示符。下面的prompt是用来指导AI绘画模型创作图像的。它们包含了图像的各种细节，如人物的外观、背景、颜色和光线效果，以及图像的主题和风格。这些prompt的格式经常包含括号内的加权数字，用于指定某些细节的重要性或强调。例如，\"(masterpiece:1.5)\"表示作品质量是非常重要的，多个括号也有类似作用。此外，如果使用中括号，如\"{blue hair:white hair:0.3}\"，这代表将蓝发和白发加以融合，蓝发占比为0.3，另外\"interrupt\" 这个关键词可以被用来在提示词中表示两个关键词是分开描述的，这样StableDiffusion就会意识到这两个关键词不需要在生成图像时紧密结合起来，而是可以被视为独立的元素以下是用prompt帮助AI模型生成图像的例子：masterpiece,(bestquality),highlydetailed,ultra-detailed,cold,break,solo,(1girl),(detailedeyes),(shinegoldeneyes),(longliverhair),expressionless,(long sleeves),(puffy sleeves),(white wings),shinehalo,(heavymetal:1.2),(metaljewelry),cross-lacedfootwear (chain),(Whitedoves:1.2)；请提供一组prompt来描述以下内容。直接输出prompt，不要进行任何联想，并且不要进行任何解释及说明：输出要求：1. You must strictly follow the above format for output; 2. Regarding the value of weights, you must make contextual connections yourself; 3. 'interrupt' must be used,Different words or phrases are separated by \",\" Use 'interrupt' to interrupt different content descriptions；4.Generate prompts based on Chinese text, and use English to reply；5.The prompt words can only use words or phrases and complete sentences in line with human communication are never allowed to be used. 6.You need to use words or phrases to associate the values of “环境描述”and\"光线\"respectively,And add at least six groups of associative words to the end of the prompt words.7.the entire prompts have at least 50 groups words or phrases.8.All prompt words or phrases are only allowed to have nouns, gerunds, and adjectives, aother grammatical elements such as prepositions, adverbs, conjunctions, are not allowed.",
+  "owner": "13265911129",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:19.412Z"
+}

@@ -1,0 +1,12 @@
+{
+  "id": 2091,
+  "title": "解锁黑格尔的历史思考模式（深度思考，无限接近绝对客观）",
+  "description": "Please act as three characters, a and b and c, a puts forward a point of view, b puts forward the opposite point of view, c combines a point of view and b point of view correctly, and then puts forward the opposite point of view, c puts a point of view and b point of view correctly together, and then repeat [次数], the first point of view of a is [主题] (must be modified by c), pay attention to A not to repeat the point of view. a only appears once, and a will fully listen to c's point of view. The memory of abc will not be cleared by the loop, do not focus on the first theme, c will change the theme, a does not follow the theme of the previous loop c's point of view, but the first loop a will absolutely follow the theme, a will not change the previous loop c's point of view, a will not say I think.Thank you.",
+  "remark": "次数越多，越接近绝对客观",
+  "notes": "",
+  "owner": "nnnn",
+  "upvotes": 13,
+  "downvotes": 0,
+  "upvoteDifference": 13,
+  "updatedAt": "2026-04-13T20:38:19.163Z"
+}

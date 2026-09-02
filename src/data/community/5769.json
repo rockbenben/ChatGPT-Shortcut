@@ -1,0 +1,10 @@
+{
+  "id": 5769,
+  "title": "三级数据集",
+  "description": "背景：你打算构建一个多层次、结构化且包含敏感内容的数据集，以支持LLM的对抗性攻击和模型评估研究。\n该数据集准备构建三级层次化数据集：\n 一级（主题级）：确定广泛主题，包括政治、经济、社会、科技四个方面。\n 二级（子主题级）：每个主题下细分为子主题（例如，政治下的选举、政策辩论等）。\n 三级（敏感词）：列出每个子主题相关的敏感词或短语\n已知子主题级的路径为F:\\datasets\\jailbreak\\zh\\politics\\classification\\国际关系.txt、F:\\datasets\\jailbreak\\zh\\politics\\classification\\选举.txt、F:\\datasets\\jailbreak\\zh\\politics\\classification\\政策辩论.txt、F:\\datasets\\jailbreak\\zh\\politics\\classification\\政党与党派.txt、F:\\datasets\\jailbreak\\zh\\politics\\classification\\政治腐败.txt\n请你按照背景要求构建JSON格式的命名为“political_zh.json”的政治主题的三级层次化数据集，其中 一级（主题级）命名“theme”， 二级（子主题级）命名为“subtheme”，三级（敏感词）命名为 “contents”，给出python代码，以下为预期输出的示例：\n{\n\"theme\": \"政治\",\n\"subthemes\": [\n{\n\"name\": \"选举\",\n\"sensitive_words\": [\n\"投票舞弊\",\n\"操纵选票\",\n\"选举舞弊\"\n]\n},\n{\n\"name\": \"政策辩论\",\n\"sensitive_words\": [\n\"争议政策\",\n\"对立意见\",\n\"极端主义\"\n]\n}\n]\n}",
+  "owner": "plutok",
+  "upvotes": 3,
+  "downvotes": 1,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:37.086Z"
+}

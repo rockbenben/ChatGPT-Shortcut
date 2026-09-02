@@ -1,0 +1,10 @@
+{
+  "id": 4414,
+  "title": "gpt读论文",
+  "description": "请分析https://arxiv.org/pdf/1706.03762.pdf这篇文章,要求:\n1.分点列出本篇文章的目的、方法、关键概念、主要发现和结论;\n2.输出结果需要包括文中重要的插图并附上解释;\n3.输出需要翻译成中文,但是对于文中提到的关键概念不需要翻译",
+  "owner": "niukou",
+  "upvotes": 10,
+  "downvotes": 0,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-04-13T20:38:30.420Z"
+}

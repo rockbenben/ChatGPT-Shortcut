@@ -1,0 +1,10 @@
+{
+  "id": 1905,
+  "title": "生成QA",
+  "description": "我是亚马逊销售【鼠标】的卖家，请根据我提供的商品标题及要求，帮我生成10条买家感兴趣的QA，目的是体现产品特性提高产品转化率。\n商品标题：\n【请在此括号内输入商品标题例如：Logitech G502 HERO High Performance Wired Gaming Mouse, HERO 25K Sensor, 25,600 DPI, RGB, Adjustable Weights, 11 Programmable Buttons, On-Board Memory, PC / Mac, Black】\n\n要求：\n1. 结构清晰：根据主题或产品特点将问题和回答分成类别，并按照一定的顺序进行排列。\n2. 参考亚马逊高转化的产品的QA进行撰写。\n3. 以买家视角进行提问和回答，让人看起来真实。\n4. 输出10条结果。\n5. 以表格方式进行输出，包含序号、中文问题、中文答案、【英文问题】、【英文答案】",
+  "owner": "ggbond",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:18.255Z"
+}

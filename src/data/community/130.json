@@ -1,0 +1,11 @@
+{
+  "id": 130,
+  "title": "思维导图",
+  "description": "请为我创建一个多层次的思维导图，主题是“xxxx“。请包括以下至少5个分支主题。同时，请为每个分支主题添加至少两个子主题，并在需要的情况下，为子主题添加更多层次的子主题，不要在主题前写层级数字，内容需要尽可能详细。请使用Markdown格式来呈现思维导图。",
+  "remark": "Contributed by mmm",
+  "owner": "mmm",
+  "upvotes": 17,
+  "downvotes": 0,
+  "upvoteDifference": 17,
+  "updatedAt": "2026-06-11T13:08:00.835Z"
+}

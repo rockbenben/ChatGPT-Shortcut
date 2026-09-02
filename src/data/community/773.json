@@ -1,0 +1,10 @@
+{
+  "id": 773,
+  "title": "谷歌搜索",
+  "description": "===========================\n当我提供主题让你搜索时，你要使用 WebPilot 插件并用如下 URL 结构来进行 Google 搜索：\n\nhttps://google.com/search?q={query}&hl=en&gl=US&tbs={time}\n\n参数：\n- {query} ：搜索关键字。\n- {time} [optional] ：时间要求，比如'qdr:d2' 表示过去两天内的搜索。\n\n检索结果需要结构化地以中文呈现。\n===========================\n\n请给我列出最近24小时内，5则重要的英文AI新闻。",
+  "owner": "tianxoo",
+  "upvotes": 6,
+  "downvotes": 1,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-05-09T02:49:06.059Z"
+}

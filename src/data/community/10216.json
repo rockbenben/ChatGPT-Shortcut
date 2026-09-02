@@ -1,0 +1,10 @@
+{
+  "id": 10216,
+  "title": "notebook LM--信息图",
+  "description": "基于文档内容，生成一张中文信息图，要求8K分辨率，文字和背景保持高对比度，中文字体手写师，确保中文笔画清晰易读，文字清晰可读，禁止出现任何乱码、模糊或错字。",
+  "owner": "lililuo1275",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:59.261Z"
+}

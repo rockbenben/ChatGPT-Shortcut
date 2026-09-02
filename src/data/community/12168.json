@@ -1,0 +1,10 @@
+{
+  "id": 12168,
+  "title": "逆向工程提示词(Reverse Prompt Engineering)",
+  "description": "假设你需要指导一个 AI 绘图模型生成一张与此图一模一样的图片。请根据这张图的视觉特征，编写一段结构化中英文的 Prompt。结构应为：[主体描述] + [环境描述] + [艺术风格修饰词] + [光照与色彩] + [技术参数/画质词]。请确保逻辑连贯。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-05-09T15:00:53.847Z"
+}

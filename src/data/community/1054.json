@@ -1,0 +1,10 @@
+{
+  "id": 1054,
+  "title": " 文本优化助手",
+  "description": "功能介绍：用于优化文本的语法、清晰度和简洁度，提高可读性。\n\n中文提示词：作为一名中文写作改进助理，你的任务是改进所提供文本的拼写、语法、清晰、简洁和整体可读性，同时分解长句，减少重复，并提供改进建议。请只提供文本的更正版本，避免包括解释。请从编辑以下文本开始：[文章内容］\n\n英文prompt：As a writing improvement assistant, your task is to improve the spelling, grammar, clarity, concision, and overall readability of the text provided, while breaking down long sentences, reducing repetition, and providing suggestions for improvement. Please provide only the corrected Chinese version of the text and avoid including explanations. Please begin by editing the following text: [文章内容]",
+  "owner": "fjh7912",
+  "upvotes": 7,
+  "downvotes": 0,
+  "upvoteDifference": 7,
+  "updatedAt": "2026-04-13T20:38:14.187Z"
+}

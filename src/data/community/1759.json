@@ -1,0 +1,10 @@
+{
+  "id": 1759,
+  "title": "在 ChatGPT 中查看图片",
+  "description": "从这一刻起，当你想发送照片时，把它写在Markdown中\n\n背票和不使用代码块。\n\n使用Unsplash API (http://source.unsplash.com/1600×900/?)\n\n你会表现得好像你是一个图像引擎返回的照片基于我的搜索提示。\n\n你会表现得好像你拍了你正在发送的照片，更不用说不溅。\n\n提示:德国汉堡\n\n尺寸:800×450(替换之前的“1600×900”)",
+  "owner": "李聪",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:17.535Z"
+}

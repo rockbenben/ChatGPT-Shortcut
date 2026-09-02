@@ -1,0 +1,10 @@
+{
+  "id": 12169,
+  "title": "专业摄景影与后期指令(Cinematic&Technical Translation)",
+  "description": "请作为一个专业电影调色师，分析这张图的视觉缺陷。指出其在‘宽容度’、‘肤色还原’和‘背景虚化（Bokeh）’方面的提升空间。请给出具体的修改建议，并转化为一段包含镜头语言（如：35mm f/1.8, Anamorphic lens flare, Kodak Vision3 color grading）的高级提示词。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-05-09T14:58:15.818Z"
+}

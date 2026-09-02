@@ -1,0 +1,11 @@
+{
+  "id": 12159,
+  "title": "全局综合描述(The Master Description)",
+  "description": "请对这张图像进行极详尽的视觉分析。请按顺序描述：图像的主体（Subject）、艺术媒介（如摄影、油画、3D渲染）、具体的艺术风格、环境背景、光照设置以及整体的色彩基调。请捕捉画面中的每一个微小细节，包括纹理和氛围。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "remark": "反推描述",
+  "owner": "miracle liquid",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-05-09T15:02:05.402Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 832,
+  "title": "让GPT生成图片",
+  "description": "接下来我会给你指令，生成相应的图片，我希望你用Markdown语言生成，\n不要用反引号，不要用代码框，你需要用Unsplash API，\n遵循以下的格式：https://source.unsplash.com/1600x900/?< PUT YOUR QUERY HERE >。你明白了吗？",
+  "owner": "hush1185496436@gmail.com",
+  "upvotes": 22,
+  "downvotes": 3,
+  "upvoteDifference": 19,
+  "updatedAt": "2026-04-13T20:38:13.052Z"
+}

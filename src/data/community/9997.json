@@ -1,0 +1,10 @@
+{
+  "id": 9997,
+  "title": "网页生成要求",
+  "description": "要求单文件结构：请 Manus 把 HTML、CSS 和 JavaScript（如果有）写在一起，或者清晰地分块，但不要依赖外部框架（比如不要用 Tailwind 或 Bootstrap，除非通过 CDN 引入），纯手写（Vanilla CSS）最好。\n要求 CSS 作用域隔离：请 Manus 给最外层加一个特有的 ID 或 Class（例如 <div id=\"saas-custom-homepage\">），并且所有的 CSS 都要包裹在这个父级下（例如 #saas-custom-homepage .card { ... }），防止影响你现有的数字员工和资产页面。\n响应式要求：要求代码适配 PC 和手机端",
+  "owner": "seebear",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-05-20T05:40:33.153Z"
+}

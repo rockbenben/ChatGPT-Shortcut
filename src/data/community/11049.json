@@ -1,0 +1,12 @@
+{
+  "id": 11049,
+  "title": "Java 项目个人规则",
+  "description": "所有回答使用中文表述，Java 技术术语标注中英文对照。\nJava 代码关键逻辑、复杂算法、设计模式添加详细中文注释。\n优先提供可直接运行的 Java 示例代码，附带 Maven/Gradle 依赖配置。\n需求不明确时主动追问 Java 版本（如 8/17）、框架（Spring Boot/Spring Cloud）、运行环境。\n代码超过 20 行优先拆分为方法/类，遵循单一职责原则，避免超长方法。\n严格遵循《阿里巴巴 Java 开发手册》（最新版）。\n操作指令、命令行优先适配 Windows 环境，标注 Linux 差异（如路径分隔符）。\n输出内容使用表格、列表分点展示，核心代码附带执行结果示例。",
+  "remark": "Java 项目个人规则",
+  "notes": "Java 专属 TRAE 规则模板包",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.239Z"
+}

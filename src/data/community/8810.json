@@ -1,0 +1,10 @@
+{
+  "id": 8810,
+  "title": "动漫角色横幅设计工具",
+  "description": "# ===== 用户控制 =====\ntitle_text: \"{argument name=\"显示字符串\" default=\"<<你的文本>>\"}\"\ntitle_style_preset: \"{argument name=\"标志设计预设\" default=\"cool\"}\" # cool, cute, cool_cute, luxury, pop, cyber, minimal, retro, kawaii\nface_zoom: \"{argument name=\"面部缩放开/关\" default=\"off\"}\"            # off, on\n\nsubject: >\n  使用提供的参考图像内容创建一个 3:1 的宽幅横幅。\n  主要面部必须居中于一个不可见的“安全区”（不绘制），\n  并且标题标志（由 title_text + title_style_preset 生成）必须放置在同一个安全区内。\n\ncomposition: >\n  长宽比 3:1。\n  不可见的安全区（请勿绘制）：\n  - 左边距：宽度的 15%\n  - 右边距：宽度的 15%\n  - 上边距：高度的 16%\n  - 下边距：高度的 16%\n  将整个面部和整个标题标志完全保持在此安全区内。\n  背景可以延伸到边缘。\n\naction: >\n  以最高保真度放置参考图像内容。\n  自动裁剪/缩放/重新定位以适应 3:1 的横幅，不拉伸。\n  检测主要面部（如果有多张面部，选择最大/最突出的）。\n  将主要面部在安全区内水平和垂直居中。\n  切勿裁剪面部/眼睛；将整个面部舒适地保持在安全区内（不要靠近边缘）。\n\n  面部缩放行为：\n  - 如果 face_zoom 为 OFF：尽可能保持原始构图，同时将面部居中于安全区。\n  - 如果 face_zoom 为 ON：缩放/裁剪为以面部为中心的半身像\n    （头部和肩膀可见；包括上半身；不要裁剪头顶或下巴；保持面部特征突出）。\n\n  通过调整裁剪/重新定位/输出，在安全区内为标题标志创建负空间。",
+  "owner": "矢志不渝",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:52.174Z"
+}

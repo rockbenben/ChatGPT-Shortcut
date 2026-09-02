@@ -1,0 +1,11 @@
+{
+  "id": 444,
+  "title": "prime sieve",
+  "description": "write a very compact but effcient prime sieve of the numbers up to 1000000 in C. Time the execution from allocation to freeing of the sieve, report the elapsed time, and the number of primes returned.",
+  "remark": "Contributed by harrywutech",
+  "owner": "harrywutech",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:11.192Z"
+}

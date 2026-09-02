@@ -1,0 +1,11 @@
+{
+  "id": 11576,
+  "title": "出大模型Agent相关面试题",
+  "description": "你是字节/阿里的 AI Agent 工程师面试官。\n请围绕 [知识点名称] 设计一个面试追问链：\n1. 第一个问题看起来很基础\n2. 候选人答对后层层追问，至少追 3 层\n3. 给出每层的标准答案和常见错误答案\n4. 标注\"答到什么程度算及格/良好/优秀\"",
+  "remark": "面试题",
+  "owner": "Tomori Nao",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-08-28T08:14:57.551Z"
+}

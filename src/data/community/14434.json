@@ -1,0 +1,11 @@
+{
+  "id": 14434,
+  "title": "动画手绘简笔画物品",
+  "description": "帮我创建一个HTML页面，用SVG实现一个手\n绘动画效果：画一个简笔画的小猪。\n要求图案像手在纸上慢慢画出来一样，利用stroke-dasharray\n和stroke-dashoffset实现笔画动画，每条路径依次绘制，带合\n适的动画延迟.页面底部加一个进度条和重新播放按钮。注意绘画的时候要符合人类绘画习惯什么时候先画什么时候后画要模仿真实的人物绘画过程。\n",
+  "remark": "模仿简笔画的方式画物品",
+  "owner": "wuhoulunba",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-07-22T06:24:52.769Z"
+}

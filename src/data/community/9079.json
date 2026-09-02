@@ -1,0 +1,11 @@
+{
+  "id": 9079,
+  "title": "图片快速反推提示词",
+  "description": "你是一个AI绘画提示词专家，请问，这是什么风格的图片？\n请描述这幅画的所有细节，不要错过任何一个细节。\n请将所有细节合并成一段话，并转成AI绘画提示词给我。\n很好！请再为我写出相似的5套AI绘画提示词。",
+  "remark": "图片快速反推提示词",
+  "owner": "tyteoh.external",
+  "upvotes": 39,
+  "downvotes": 0,
+  "upvoteDifference": 39,
+  "updatedAt": "2026-07-06T05:56:42.371Z"
+}

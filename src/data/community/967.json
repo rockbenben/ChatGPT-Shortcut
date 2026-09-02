@@ -1,0 +1,12 @@
+{
+  "id": 967,
+  "title": "如何让ChatGPT写本书",
+  "description": "关键词：#这里请补充自己的关关键词\n\n使用提供的关键字生成书名\n\n生成3个提供标题的书籍章节，并列出\n\n生成详细的书籍介绍，提供标题和超过500字\n\n写第1章，详细信息，超过500字\n\n写第2章，详细信息，超过500字\n\n写第3章，详细信息，超过500字",
+  "remark": "此提示词将根据您所需的要求输出一本书的内容",
+  "notes": "Keyword: Please provide your keyword here\n\nGenerate book title with provided keyword                  \nGenerate 3 book chapters with the title provided and list them                  \nGenerate detailed book intro with the title provided and more then 500 word                  \n                 \nWrite Chapter 1 with detailed information and more then 500 words                  \nWrite Chapter 2 with detailed information and more then 500 words                  \nWrite Chapter 3 with detailed information and more then 500 words",
+  "owner": "fjh7912",
+  "upvotes": 9,
+  "downvotes": 0,
+  "upvoteDifference": 9,
+  "updatedAt": "2026-04-13T20:38:13.704Z"
+}

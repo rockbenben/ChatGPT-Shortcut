@@ -1,0 +1,11 @@
+{
+  "id": 750,
+  "title": "控制润色程度",
+  "description": "1.“Subtle edits only”：仅进行微调\n2.“Minor edits”：进行轻微编辑\n3.“Rephrasefor clarity”：改写以增强清晰度\n4.“simplify sentence structure”：简化句子结构\n5.“Check grammar and spelling”：检查语法\n6.“Enhance flow andcoherence'”：提升流畅度和连贯性\n7.“Improve word choice”：优化用词\n8.“Revise forstyle”：调整文本风格\n9.“significant edits”：进行大幅度编辑\n10.“Restructurecontent”：重塑内容结构",
+  "remark": "在使用ChatGPT时，若不希望AI对文本大幅修改，可要求限制润色程度和方向。",
+  "owner": "",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:12.651Z"
+}

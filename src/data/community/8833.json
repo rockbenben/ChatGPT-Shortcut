@@ -1,0 +1,10 @@
+{
+  "id": 8833,
+  "title": "星空下的越野露营夜景",
+  "description": "```json\n{\n  \"image_prompt\": {\n    \"quality\": \"{argument name=\\\"quality\\\" default=\\\"8K 超现实\\\"}\",\n    \"style\": \"情绪化的夜间户外露营场景，电影级灯光，深蓝色环境色调\",\n    \"face_preservation\": {\n      \"use_reference_face\": true,\n      \"accuracy\": \"精确匹配\"\n    },\n    \"scene\": {\n      \"environment\": \"{argument name=\\\"environment\\\" default=\\\"夜间开阔的沙漠平原\\\"}\",\n      \"lighting\": \"温暖的篝火光芒映衬着深蓝色环境\"\n    },\n    \"subject\": {\n      \"description\": \"一名男子坐在篝火旁的折叠椅上，姿态放松\",\n      \"outfit\": \"深色户外夹克，帽子，粗犷的露营装扮\"\n    },\n    \"vehicle\": {\n      \"type\": \"带开放式车顶帐篷的越野 SUV\",\n      \"details\": \"后门打开，车内露营灯亮着，大轮胎，探险装备\"\n    },\n    \"composition\": \"广角镜头，前景是篝火，男子在右侧，SUV 在左侧，强烈对比\",\n    \"signature\": \"VIVEK HY\"\n  }\n}\n```",
+  "owner": "矢志不渝",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:52.297Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 370,
+  "title": "插件使用说明",
+  "description": "这个{plugins插件}可以为我做什么，请为我使用列表形式显示，第一列输出包含该插件的每个可用功能名称，第二列对应用于简单介绍这些功能，第三列给我对应出来一个能力详细的例子和提示词说明，用于展示在gpt-4中，该能力的全部能力，用markdown格式输出。",
+  "remark": "ChatGPT Plugins使用说明",
+  "owner": "JasonMars",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:10.780Z"
+}

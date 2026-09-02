@@ -1,0 +1,10 @@
+{
+  "id": 760,
+  "title": "优化回答咒语",
+  "description": "1.Let's think step by step（让我们一步一步的思考）当你需要严密的推理的时，可以用这个指令。\n\n2.Can you break it down into simpler terms(你能把它分解成更简单的术语吗？)当你觉得chatgpt的回答过于复杂或难以理解时，这个指令可以帮助你获得更简单易懂的解释。\n\n3.please list the pros and cons in chinese(请列出有优快点)当你对某个主题进行权衡分析时，这个指令可以帮助你获取一个全面的观点。\n\n4.Can you provide a step-by-step guide in chinese?(你能提供一步一步的指导吗？)当你需要完成某个任务或学习某个技能时，这个指令可以让chatgpti提供一个分步指南。",
+  "owner": "",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:12.709Z"
+}

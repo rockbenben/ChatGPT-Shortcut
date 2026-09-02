@@ -1,0 +1,11 @@
+{
+  "id": 369,
+  "title": "对话总结",
+  "description": "根据{主题/文档/链接}并以两个人之间的对话形式进行总结。在每个对话框后保留一个空行。将文本的重要部分加粗。在对话开始之前，以 2 或 3 句话摘要开始。",
+  "remark": "采取对话的形式进行总结",
+  "owner": "JasonMars",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:10.775Z"
+}

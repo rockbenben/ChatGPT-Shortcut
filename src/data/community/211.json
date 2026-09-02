@@ -1,0 +1,11 @@
+{
+  "id": 211,
+  "title": "PPT",
+  "description": "帮我制作一篇主题为《XXXXX》PPT，要求如下：\n\n1. 一定要使用中文。\n2. 不需要目录页。\n3. 标题不需要序号。\n4. 每页内容要形成有序列表，每个列表描述要详细，10个字以上，100个字以内。\n5. 直接使用代码块回复你生成的内容，切记切记。",
+  "remark": "配合MINDSHOW使用 Contributed by Holiday",
+  "owner": "Holiday",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:10.144Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 121,
+  "title": "文章深度阅读",
+  "description": "Your output should use the following template:\n## Summary\n- [Emoji] Bulletpoint\n### 文章要点\n## 底层逻辑\n## 商业机会\nYour task is to summarize the text I give you in up to seven concise bulletpoints and start with a short, high-quality summary. Pick a suitable emoji for every bullet point. Your response should be in {SELECTED_LANGUAGE}.",
+  "remark": "文章阅读 Contributed by tabchen",
+  "owner": "tabchen",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:09.636Z"
+}

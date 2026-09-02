@@ -1,0 +1,11 @@
+{
+  "id": 12274,
+  "title": "【AI 造型師】相片轉髮型分析對比圖卡：直觀解碼最適合你的視覺造型",
+  "description": "Create a hairstyle analysis\ngraphic using this portrait. Show side by side hairstyles comparison to highlight which hairstyle suit the subject best. Make it visual first with short labels only and no paragraphs",
+  "remark": "專為尋找新髮型設計。上傳自拍照，自動產出分屏對比的視覺分析圖卡。精確匹配臉型特徵，生成多種適合的髮型模擬。純視覺呈現，僅使用極簡繁體中文標籤標註造型重點，讓你一目瞭然哪種髮型最修飾輪廓。",
+  "notes": "本工具執行「視覺優先、極簡標註」規範：\n• 輸出格式：Side-by-Side 造型對比圖（或多宮格）。\n• 分析重點：臉型比例、修飾效果、髮質模擬。\n• 標籤規範：嚴禁段落，僅使用如「更顯臉小」、「修飾寬額」、「增加蓬鬆感」等短語。\n• 光影要求：高真實感、電影級光影。\n關鍵字標籤：\n#髮型分析 #AI變髮 #臉型匹配 #造型對比 #視覺設計 #Midjourney #自拍轉造型 #極簡標籤",
+  "owner": "skyo0spring1",
+  "upvotes": 0,
+  "downvotes": 0,
+  "updatedAt": "2026-04-25T00:39:03.002Z"
+}

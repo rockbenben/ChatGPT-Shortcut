@@ -1,0 +1,11 @@
+{
+  "id": 10158,
+  "title": "opencode命令",
+  "description": "创建agent\nopencode agent create\n\n团队协作\nulw\nawesome\n/init\t              初始化项目，生成 AGENTS. md\n/undo\t       销上一次代码修改\n/share\t       生成分享链接\n/compact\t       压缩上下文，节省 Token\n/start-work\t执行 Prometheus 制定的计划\n\n\nSisyphus\t主智能体 / 团队负责人\nPrometheus\t规划器\nHephaestus\t自主深度工作者\nAtlas\t重型任务承载者\n\n\n\n\n",
+  "remark": "opencode",
+  "owner": "shengxingke",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:58.991Z"
+}

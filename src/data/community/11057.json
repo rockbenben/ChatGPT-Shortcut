@@ -1,0 +1,12 @@
+{
+  "id": 11057,
+  "title": "Python 框架规范",
+  "description": "---\nalwaysApply: false\nglobs: src/**/*.py, app/**/*.py, tests/**/*.py\ndescription: Python 框架（FastAPI/Flask）专属规则，匹配业务代码时生效\n---\n\n# Python 框架开发规则\n## 技术栈约束\n1. Web 框架：优先使用 FastAPI（高性能场景）/Flask（轻量场景），禁止混用多框架。\n2. 数据处理：使用 Pandas 2.x、NumPy 1.24+，避免低效的循环处理数据。\n3. ORM 框架：使用 SQLAlchemy 2.0+，数据库连接使用连接池。\n4. 依赖管理：使用 pyproject.toml（推荐）/requirements.txt，标注依赖版本号（如 `fastapi==0.104.1`）。\n\n## FastAPI 规范\n1. 路由定义：使用 `@app.get()`/`@app.post()` 注解，路径参数/查询参数添加类型注解。\n2. 响应模型：使用 Pydantic 模型定义请求/响应结构，开启数据校验。\n3. 文档：自动生成 OpenAPI 文档，接口添加 `summary`/`description` 注释。\n\n## Flask 规范\n1. 应用结构：使用蓝图（Blueprint）拆分路由，避免单文件路由过多。\n2. 配置：使用 `app.config.from_object()` 加载配置，区分开发/生产环境。\n3. 扩展：使用 Flask-SQLAlchemy、Flask-RESTful 等官方推荐扩展。\n\n## 项目结构规范\n1. 主入口：项目入口文件为 main.py，放在项目根目录。\n2. 目录划分：\n   - utils/: 工具函数/类；\n   - config/: 配置文件；\n   - api/: 接口路由；\n   - service/: 业务逻辑；\n   - models/: 数据模型；\n   - tests/: 单元测试。",
+  "remark": "Trae 专属",
+  "notes": "Python 框架规范 python-framework.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:39:03.281Z"
+}

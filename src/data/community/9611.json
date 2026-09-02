@@ -1,0 +1,10 @@
+{
+  "id": 9611,
+  "title": "ui",
+  "description": "Create a high-fidelity screen for a Premium Fintech Application using React and Tailwind CSS.\n\n**Design System Requirements:**\n\n1.  **Theme & Colors (Dark Mode)**:\n    *   **Background**: Deep Slate / Navy (`#0F172A`).\n    *   **Primary Accent**: Electric Blue (`#3B82F6`) for active states/buttons.\n    *   **Secondary Accent**: Indigo (`#6366F1`) for gradients.\n    *   **Text**: Slate-200 (`#E2E8F0`) for headings, Slate-400 (`#94A3B8`) for body.\n    *   **Status Colors**: Emerald (#10B981), Amber (#F59E0B), Red (#EF4444).\n\n2.  **Visual Style (Glassmorphism)**:\n    *   **Panels/Cards**: `rounded-2xl`, `bg-slate-900/40` or `bg-white/5`, `backdrop-blur-md`, border `white/5`.\n    *   **Shadows**: Soft colored shadows (e.g., `shadow-blue-900/20`).\n\n3.  **Layout Elements**:\n    *   **Sidebar Style**: Dark glass (`bg-[#0F172A]/80`), glowing active tabs (blue vertical bar + blue-500/10 bg).\n    *   **Header Style**: Sticky, minimalist, with pill-shaped search bar (`bg-slate-800/50`).\n\n4.  **UI Components**:\n    *   **Buttons**: Blue gradients or ghost styles with hover/white effects.\n    *   **Inputs**: Dark background `bg-slate-800/50`, border `white/10`.\n    *   **Tables**: Transparent background, border-b rows, hover highlights.\n\n**Goal**: The interface must look expensive, secure, and futuristic. Use Lucide-React icons.",
+  "owner": "lamine.iard",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:56.322Z"
+}

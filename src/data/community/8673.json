@@ -1,0 +1,12 @@
+{
+  "id": 8673,
+  "title": "女主图像",
+  "description": "<lora:你的风格Lora模型（如有）:0.8> 1girl, (masterpiece, best quality, ultra-detailed, realistic photo), a beautiful young woman, face portrait, looking at viewer,\n### 核心特征描述 ###\n**面部基因融合要求**：融合三张参考图的面部特征，以第一张图为脸型基础（权重40%），融合第二、三张图的五官细节与神态（总权重60%），生成一张全新的、具有辨识度的脸。\n**外貌细节**：冷艳可爱，清冷气质，混合有微妙的异域风情（建议偏向中亚或东欧特征），皮肤白皙，五官立体且精致，眼神柔和但疏离，唇形优美。\n**基础设定**：年龄约22-25岁，身高168cm，体型纤细修长（50kg）。\n### 画面控制 ###\npure white background, professional studio lighting, sharp focus, 8k uhd, film grain\n### 负面提示词（必须）###\n(worst quality, low quality, normal quality:1.4), deformed, mutated, disfigured, blurry, watermark, text, signature, extra limbs, bad anatomy, ugly, cartoon, 3d, render, doll",
+  "remark": "图片生成",
+  "notes": "要中文",
+  "owner": "18289162772",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-27T08:06:20.382Z"
+}

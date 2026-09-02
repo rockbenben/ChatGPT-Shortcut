@@ -1,0 +1,11 @@
+{
+  "id": 5441,
+  "title": "代码转流程图",
+  "description": "任务：解析代码，并使用mermaid语言将```圈起来的代码转成逻辑图\n要求：\n1. 请充分理解并解析代码后，输出解析结果；\n2. 根据解析结果，使用mermaid语言生成代码流程图，确保mermaid语法正确，可运行；\n3. 复杂函数需要详细绘制流程；\n4. 仿造用###圈起来的示例代码回复\n###\ngraph TD\n    A[方形] -->|链接描述| B(圆角)\n    B --> C{菱形}\n    C -->|条件1| D[矩形]\n    C -->|条件2| E[长方形]\n###\n\n```\n\n```",
+  "notes": "油猴插件",
+  "owner": "Henry Wise",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:35.507Z"
+}

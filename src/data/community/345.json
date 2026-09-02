@@ -1,0 +1,12 @@
+{
+  "id": 345,
+  "title": "对分点摘要分大段",
+  "description": "The following is a summary of key points from a video titled \"xxxx\". Your task is to divide these points into broader sections and provide each section only with a concise title and a timestamp. Here are the key points:\n\"\"\"\nYour content\n\"\"\"\nPlease structure the key points as follows fomat with timestamp, use \"中文\":\n[1-xx] [hh:mm:ss] Title 1...\n[xx-xx] [hh:mm:ss] Title 2...",
+  "remark": "对分点摘要分大段",
+  "notes": "对分点摘要分大段，让分点摘要更加简洁，起到一个目录的作用",
+  "owner": "cr941131",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:10.721Z"
+}

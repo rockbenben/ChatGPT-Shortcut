@@ -1,0 +1,10 @@
+{
+  "id": 9568,
+  "title": "LeetCode SQL 转 Pandas 解法转换通用提示词模板",
+  "description": "请将以下 SQL 查询转换为 Pandas 解法（LeetCode 风格）。要求：只使用 Python + pandas；假设输入表已经作为 pandas DataFrame 提供；不要在 Python 中使用 SQL 语法；必须严格按照 LeetCode 函数格式 import pandas as pd 以及 def solution_name(table1: pd.DataFrame, table2: pd.DataFrame) -> pd.DataFrame:；使用 pandas 向量化操作（不要使用循环）；正确处理 NULL 值（SQL 的 NULL 对应 Pandas 的 NaN）；返回的 DataFrame 必须与 SQL 查询结果的列名和列顺序完全一致；代码保持简洁、清晰、可读。SQL 查询如下：sql -- 在此粘贴你的 SQL",
+  "owner": "l gs",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:56.102Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 8449,
+  "title": "Nano Banana P图指令英文通用版V26.1.6（通常效果更好）",
+  "description": "Prompt: Identify all manual annotations (scribbles, arrows, circles) and handwritten text instructions in the image.\n\nUnderstand & Edit: Apply the edits described by the text to the specific areas indicated by the markings.\n\nConsistency: Ensure the edited content matches the original image's lighting, perspective, texture, and noise level (Seamless Integration).\n\nClean Output: Completely remove all annotation markers, text, and scribbles from the final output. The result should look like a raw, unedited photograph with no visual artifacts remaining.",
+  "remark": "Nano Banana P图指令，英文通用版（通常效果更好）",
+  "owner": "Ethanfpu",
+  "upvotes": 10,
+  "downvotes": 0,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-04-13T20:38:50.331Z"
+}

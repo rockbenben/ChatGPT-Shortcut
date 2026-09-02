@@ -1,0 +1,12 @@
+{
+  "id": 9565,
+  "title": "IT 产品原型设计",
+  "description": "Role: 你是一位精通 Tailwind CSS 和 UX 设计的前端专家。\nTask: 请为 [输入页面名称，例如：采购订单详情页] 生成一个单文件的 HTML 代码。\nDesign Requirements (视觉风格):\n\n风格：极简主义 B2B 风格，扁平化 (Flat Design)，无阴影或极轻微阴影，无多余装饰背景。\n配色：使用专业的企业级配色（如 Slate/Gray 作为中性色，Indigo/Blue 作为主色调），背景为纯白或极浅灰 (#F9FAFB)。\n图标：必须使用 SVG 代码直接嵌入（Inline SVG），风格要求是 Outline 或 Solid 风格，线条精致，不要使用外部图片链接。\n布局：标准的 B2B SaaS 布局（左侧导航栏，顶部 Header，中间内容区）。\n组件要求：如果是表格，需要有精致的表头和斑马纹；如果是表单，输入框要有清晰的 focus 状态。\n交互性：使用简单的 JavaScript 实现基础交互（如点击菜单高亮、模态框弹出），不需要后端。\nOutput: 完整的、可直接运行的 HTML 代码块。",
+  "remark": "IT 产品原型设计",
+  "notes": "IT 产品原型设计",
+  "owner": "frankie7462654",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:56.087Z"
+}

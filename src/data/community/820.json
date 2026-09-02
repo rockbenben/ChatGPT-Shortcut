@@ -1,0 +1,10 @@
+{
+  "id": 820,
+  "title": "润色程度提示词",
+  "description": "1.“Subtle edits only”：仅进行微调\n2.“Minor edits'”：进行轻微编辑\n3.“Rephrasefor clarity':改写以增强清晰度\n4.“simplify sentence structure”：简化句子结构\n5.“Check grammar and spelling'”：检查语法和拼写\n6.“Enhance flow andcoherence”：：提升流畅度和连贯性\n7.“Improve word choice”：优化用词\n8.“Revise forstyle”：调整文本风格\n9.“significant edits'”：进行大幅度编辑\n10.“Restructurecontent”：重塑内容结构",
+  "owner": "etsimon",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:12.997Z"
+}

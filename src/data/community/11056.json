@@ -1,0 +1,12 @@
+{
+  "id": 11056,
+  "title": "Python 通用规范",
+  "description": "---\nalwaysApply: true\ndescription: Python 项目全局通用规范，始终生效\n---\n\n# Python 通用开发规则\n## 基础格式规范\n1. 缩进：统一使用 4 个空格，禁止 Tab 缩进，禁止空格+Tab 混用。\n2. 编码：所有 .py 文件头部注明 `# -*- coding: UTF-8 -*-`，使用 UTF-8 编码。\n3. 换行：一行只写一条语句，逻辑相关的多行代码保持缩进一致。\n4. 空行：函数/类之间空 2 行，函数内逻辑块之间空 1 行。\n\n## 命名规范\n1. 模块/包名：snake_case，全小写+下划线，如 `user_service.py`、`data_process`。\n2. 函数/变量名：snake_case，如 `get_user_name()`、`order_id`，禁止单字符变量（i/j 循环变量除外）。\n3. 类名：PascalCase，如 `UserService`、`DataProcessor`。\n4. 常量名：UPPER_SNAKE_CASE，如 `MAX_TIMEOUT`、`DEFAULT_PAGE_SIZE`，放在模块顶部。\n\n## 质量约束\n1. 类型注解：所有函数的入参、返回值必须添加类型注解（如 `def add(a: int, b: int) -> int`）。\n2. 异常处理：禁止裸 try-except（`try: ... except:`），必须捕获具体异常（如 `ValueError`）。\n3. 危险函数：禁止使用 eval()、exec()、input()（生产环境）等危险函数。\n4. 资源管理：文件、数据库连接使用 with 语句自动关闭，避免资源泄露。\n\n## 导入规范\n1. 导入顺序：标准库 → 第三方库 → 项目内部模块，每组之间空 1 行。\n2. 导入方式：禁止通配符导入（`from xxx import *`），禁止循环导入。\n3. 别名规范：常用库别名统一（import numpy as np, import pandas as pd）。",
+  "remark": "Trae 专属",
+  "notes": "Python 通用规范 python-general.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:39:03.275Z"
+}

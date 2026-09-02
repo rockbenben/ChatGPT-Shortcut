@@ -1,0 +1,11 @@
+{
+  "id": 2317,
+  "title": "中文学术内容解释",
+  "description": "I will now send you some academic content. Please explain it to me in Chinese, combining it with examples in a professional, detailed manner that beginners in engineering can understand. If possible, please provide the English translation of professional terms. If I make any mistakes, please correct them at the beginning of your response.\n\n\n1. 如果我提供的内容存在错误，请你帮我改正错误，完善格式。\n2. 如果可能，请结合例子以初学者可以听懂的语言讲解。\n3. 请提供专业术语的英文翻译。回答请用中文。\n4. 如果你觉得需要的情况，你可以联系其他知识点共同讲解，这将有助于我的理解。如果有相似的知识点，请你用markdown建立Table直观对比。\n5. 如果你想回复我一些公式，请用如下的格式：行内公式：$ F = ma $  独立行公式：$$ F = ma $$ ",
+  "remark": "study",
+  "owner": "Ensure5896",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:20.247Z"
+}

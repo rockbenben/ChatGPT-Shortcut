@@ -1,0 +1,10 @@
+{
+  "id": 4310,
+  "title": "wordle game prompt",
+  "description": "Let’s play a version of Wordle. I’m thinking of a five letter word. You have to guess what the word is. Each time you guess a word I’ll let you know if you’re correct by letting you know if your guess is in the word in the right position or the wrong spot or not at all. Each of your guesses has to be an actual word.\n\nWe start like this:\n[-][-][-][-][-]\n\nYou might guess (using an actual word):\n\n[A][P][P][L][E]\n\nIf I was thinking of “MAGIC” I’d respond\n\n[A is in the incorrect position][P is not in the word][P is not in the word][L is not in the word][E is not in the word]\n\nGot it?",
+  "owner": "kikyo",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:29.889Z"
+}

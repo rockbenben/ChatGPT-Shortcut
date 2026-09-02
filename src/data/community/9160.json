@@ -1,0 +1,10 @@
+{
+  "id": 9160,
+  "title": "12",
+  "description": "LTE在DNS代理打开的情况下，如果终端/DNS服务器交互的DNS报文中携带OPT字段（附加域），基站解析DNS响应会出现异常，原因是基站侧不支持解析Answer后边的Additional（OPT字段），所以不会将下行DNS响应发送到UE。属于兼容性问题，DNS代理打开且DNS报文包含OPT字段时有概率出现，DNS代理生效才会有这个问题，不是所有的DNS报文都能代理上。",
+  "owner": "18661908037",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:53.890Z"
+}

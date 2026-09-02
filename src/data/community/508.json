@@ -1,0 +1,11 @@
+{
+  "id": 508,
+  "title": "思维导图",
+  "description": "我想使用Xmind工具创建一个《python学习》的思维导图，其中包含多个主题和子主题，以及叶子节点。请你提供一些Markdown格式的文本，以便与Xmind兼容。在Markdown格式中，# 表示中央主题， ## 表示主要主题，### 表示子主题，- 表示叶子节点。请参照以上格式，在markdown代码块中帮我创建一个有效的思维导图。",
+  "remark": "使用ChatGPT与XMIND合作绘制思维导图 Contributed by JasonMars",
+  "owner": "JasonMars",
+  "upvotes": 10,
+  "downvotes": 0,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-06-11T13:10:22.547Z"
+}

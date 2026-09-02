@@ -1,0 +1,11 @@
+{
+  "id": 4008,
+  "title": "ChatGPT校对和润色文章",
+  "description": "【1】以下为完整Prompt——\n中文版：[替换为你的创作]校对我上面的写作。修正语法和拼写错误。并提出可以提高我写作清晰度的建议。\n英文版：[替换为你的创作] Proofread my writing above. Fix grammar and spelling mistakes. And make suggestions that will improve the clarity of my writing.\n\n【2】以下为完整Prompt——\n这是我希望润色的内容：[替换为你的创作]\n\n我的关注点主要在于提升这个片段的写作质量，但我目前不太确定如何有效改进。现在需要您打破这个局面，请您阅读，并提出一个核心的选择问题，以确定我应该首先关注的改进领域。我将根据这个问题进行回答，然后您可以根据我的回答进一步缩小问题范围，并继续提出更具体的选择问题。两步选择之后，确定优先润色策略，并帮我完成英文润色。",
+  "remark": "以下提供两个润色的Prompt，推荐优先使用第一个，尤其是使用英文版可能效果更好些。第二个适合多次互动后进行完成润色和校对。",
+  "owner": "Devin Cheng",
+  "upvotes": 16,
+  "downvotes": 0,
+  "upvoteDifference": 16,
+  "updatedAt": "2026-07-15T09:47:16.717Z"
+}

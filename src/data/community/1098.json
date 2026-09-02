@@ -1,0 +1,10 @@
+{
+  "id": 1098,
+  "title": "英语学习的提示例子",
+  "description": "\n1、用 [中文/英文] 解释以下英文单字：[填入一个或多个单字]。请用表格的方式呈现，并且表格内须包含单字、词性、解释与例句。\n\n用中文解释以下英文单字：apple, orange, doctor, car, run。请用表格的方式呈现，并且表格内须包含单字、词性、解释与例句。\n\n2、解释英文单字 [英文单字]，并且给我 [数字] 个常用句子\n\n解释英文单字 divest，并且给我 5 个常用句子。\n\n3、英语对话\n\nCan we have a conversation about 话题?\n\nCan we have a conversation about machine learning?\n\n4、校阅英文文法\n\nCan you check the spelling and grammar in the following text? [附上英文文字]\n\n5、英文作文修改与解释\n\n校阅以下英文文章，并用表格的方式呈现，要有三个栏位，分别是原文、修正后的版本，以及用中文详解为什么要这样修改：附上英文文章\n\n6、纠正文法和拼字错误\n\nPlease correct my grammar and spelling mistakes in the text above: 附上英文文字\n\nPlease correct my grammar and spelling mistakes in the text above: I love eat fooded",
+  "owner": "fjh7912",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:14.401Z"
+}

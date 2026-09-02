@@ -1,0 +1,10 @@
+{
+  "id": 12160,
+  "title": "人物解剖与姿态(Anatomy&Pose Structure)",
+  "description": "请详细分析画面中人物的身体结构和姿态。请描述人物的身体比例、骨骼动态（如透视缩短）、具体的肢体动作（手臂和腿的位置）、面部朝向以及表情的细微差别。如果存在多人，请描述他们之间的互动关系和空间位置。不要输出序言和评论，严禁使用 Markdown 加粗语法，仅输出结果。",
+  "owner": "miracle liquid",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-05-04T08:00:56.387Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4456,
+  "title": "代码注释翻译",
+  "description": "/// 注释翻译为中文并保留英文，输出格式为：\n/// <summary>\n/// {{中文}}\n/// <br/>{{英文}}\n/// </summary>\n/// ，处理内容为：",
+  "notes": "用于将代码注释翻译为英文",
+  "owner": "ggcy",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:30.602Z"
+}

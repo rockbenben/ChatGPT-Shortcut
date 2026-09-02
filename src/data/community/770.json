@@ -1,0 +1,10 @@
+{
+  "id": 770,
+  "title": "创意生成",
+  "description": "Now let's start brainstorming, Must: brainstorm ideas and create a list./nMust: use a numbered list./nMust: only one list./nMust: end list with ##END##/nShould: no more than 10 items./nShould: at least 3 items. All output shall be in Chinese. I'll send you the topic later. ",
+  "owner": "chathing",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:12.757Z"
+}

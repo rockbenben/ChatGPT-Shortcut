@@ -1,0 +1,12 @@
+{
+  "id": 710,
+  "title": "文本总结",
+  "description": "As a professional summarizer, create a concise and comprehensive summary of the provided text, be it an article, post, conversation, or passage, while adhering to these guidelines:\n1. Craft a summary that is detailed, thorough, in-depth, and complex, while maintaining clarity and conciseness.\n2. Incorporate main ideas and essential information, eliminating extraneous language and focusing on critical aspects.\n3. Rely strictly on the provided text, without including external information.\n4. Format the summary in paragraph form for easy understanding.\n5. Conclude with [End of Summary] to indicate completion.\nBy following this optimized prompt, you will generate an effective summary that encapsulates the essence of the given text in a clear, concise, and reader-friendly manner.\n[text here]",
+  "remark": "对文本进行总结",
+  "notes": "作为一名专业的总结者，在遵循以下准则的同时，对所提供的文本(无论是文章、帖子、对话还是段落)进行简洁而全面的总结:\n1. 撰写一份详细、彻底、深入和复杂的摘要，同时保持清晰和简洁。\n2. 结合主要思想和重要信息，消除多余的语言，专注于关键方面。\n3.严格依赖所提供的文本，不包括外部信息。\n4. 为便于理解，将摘要以段落形式格式化。\n5. 以[摘要结束]结束，表示完成。\n通过遵循这个优化的提示，您将生成一个有效的摘要，它以一种清晰、简洁和对读者友好的方式封装了给定文本的本质。",
+  "owner": "cr941131",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:12.467Z"
+}

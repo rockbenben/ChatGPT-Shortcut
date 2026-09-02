@@ -1,0 +1,10 @@
+{
+  "id": 4306,
+  "title": "论文去重改写prompt",
+  "description": "请将这段话改写，通过调整语序增减字数，替换同义词等方式，避免与原文出现连续7个字（及7个字以上）相同的句子，使这段话更加具有逻辑，符合论文的规范：",
+  "owner": "kikyo",
+  "upvotes": 10,
+  "downvotes": 0,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-04-13T20:38:29.868Z"
+}

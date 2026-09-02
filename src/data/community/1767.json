@@ -1,0 +1,12 @@
+{
+  "id": 1767,
+  "title": "爆款文案仿写指令生成器",
+  "description": " 请分析以下这篇文章，包括角色，文章主题，文章结构，行文风格目标读者，emoji和tag的使用方式，给出可以生成这篇文章的prompt。\n标题：xxx\n正文：xxx",
+  "remark": "生成prompt",
+  "notes": "生成了通用型的prompt后，把里面的换成我们的内容就可以生成想要的爆款文案",
+  "owner": "诺一一",
+  "upvotes": 28,
+  "downvotes": 1,
+  "upvoteDifference": 27,
+  "updatedAt": "2026-04-13T20:38:17.580Z"
+}

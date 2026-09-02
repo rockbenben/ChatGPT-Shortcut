@@ -1,0 +1,10 @@
+{
+  "id": 10597,
+  "title": "HA 实体 API 转 MD 文件",
+  "description": "请把下面的数据整理成 SKILL.md ：注意请确保给出的 entity_id 是完整的，这个值不要概括\n\n左边是 entity_id，右边对应中文的说明，要详细点，让其他 AI 能理解\n\n格式如下：\n\n```\n## 小米音箱\n* switch.xiaomi_cn_980525808_oh2p_mute_p_4_1 - Xiaomi 智能音箱 Pro 麦克风 静音\n* switch.xiaomi_cn_980525808_oh2p_sleep_mode_p_7_3 - Xiaomi 智能音箱 Pro 智能音箱 睡眠模式\n* switch.xiaomi_cn_980525808_oh2p_no_disturb_p_9_1 - Xiaomi 智能音箱 Pro 勿扰 勿扰\n\n## 其他\n\n```\n\n请注意给我 markdown 格式的，我好复制",
+  "owner": "peterroecup",
+  "upvotes": 2,
+  "downvotes": 1,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-06-17T12:00:04.974Z"
+}

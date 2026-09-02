@@ -1,0 +1,12 @@
+{
+  "id": 9123,
+  "title": "用Gemini3搭配NotebookLM生PPT",
+  "description": "写一个让notebooklm绘制10页ppt的prompt，ppt风格为漫画，ppt主题为漫画风格，ppt页数为10页，由于notebook对英文框架的识别性更好，所以框架说明要用英文，由于我们要做的是中文PPT，所以PPT内容都要用中文，每页slide都要有一个单独的prompt，最后合成一个总的md文件输出给我。（严格按照source中的内容来生成PPT，选用不会出现乱码的中文字体来写内容）",
+  "remark": "qicheng",
+  "notes": "",
+  "owner": "minhchonuwwgitcl",
+  "upvotes": 12,
+  "downvotes": 1,
+  "upvoteDifference": 11,
+  "updatedAt": "2026-06-23T06:34:50.590Z"
+}

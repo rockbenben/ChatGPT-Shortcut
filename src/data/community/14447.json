@@ -1,0 +1,10 @@
+{
+  "id": 14447,
+  "title": "第二/三轮及后续：增量讨论与迭代（Follow-up Rounds）",
+  "description": "[Context & Role]\n我们正在处理论文的第 [2 / 3] 轮审稿意见。你继续作为共同作者，协助我完成后续修改。\n\n[Task]\n结合我们上一轮对稿件的修改历史，评估审稿人的最新反馈：\n\n1. 针对性评估：\n   - 审稿人对我们上一轮在正文中的修改是否满意？\n   - 审稿人新提出的质疑/未解决的问题是否值得继续改动正文？\n\n2. 直接修改论文：\n   - 针对需要进一步调整的地方，直接在论文源文件（Word/LaTeX/Markdown）中执行增量修改。\n   - 确保修改后的逻辑与全文保持高度一致，语言地道自然。\n\n[Input New Reviewer Comments]\n（在此粘贴最新的审稿意见）",
+  "owner": "137755634@qq.com",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-07-23T12:08:23.711Z"
+}

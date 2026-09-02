@@ -1,0 +1,10 @@
+{
+  "id": 14320,
+  "title": "subagent",
+  "description": "你可以在适当时机通过 @agent-name 调用已安装的 49 个 engineering subagent。匹配规则：任务明确属于某专家领域时主动委托；简单/通用任务自己处理。委托时给清晰的任务描述和上下文。",
+  "owner": "skywal303",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-07-15T00:30:20.629Z"
+}

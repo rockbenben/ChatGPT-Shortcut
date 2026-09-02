@@ -1,0 +1,10 @@
+{
+  "id": 654,
+  "title": "draw.io画流程图",
+  "description": "请作为一个PlantUML活动图生成器，你需要根据我的提示内容生成一个XXX活动图，并输出相应的PlantUML代码。这个流程图需要包括XXX等角色扮演的活动步骤，流程开始于XXX，结束于XXX。请确保输出的活动步骤不少于30个。",
+  "owner": "xusir",
+  "upvotes": 8,
+  "downvotes": 0,
+  "upvoteDifference": 8,
+  "updatedAt": "2026-04-13T20:38:12.192Z"
+}

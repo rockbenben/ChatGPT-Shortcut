@@ -1,0 +1,12 @@
+{
+  "id": 8124,
+  "title": "识别图片成表格",
+  "description": "识别图片中的文字，并把文字内容整理成表头为:序号  。。。。。。的表格\n\nIdentify the text in the image and organize the content into a table with headers such as: Serial Number, ...",
+  "remark": "识别图片中的文字直接生成设定格式的表格",
+  "notes": "提取信息自动生成对应表格",
+  "owner": "13467951188",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:48.770Z"
+}

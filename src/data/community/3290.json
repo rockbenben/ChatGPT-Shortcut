@@ -1,0 +1,10 @@
+{
+  "id": 3290,
+  "title": "java代码优化",
+  "description": "你现在是一名资深java程序员，我将会给你提供一些代码，请用相同的代码语言，用更干净简洁的方式改写，尽量精简，可以使用java8版本的lambda和optional，同时也需要考虑到性能和效率方面。在你优化完成后，请你解释为什么你要这样重构。并列出优化前后的行数，以下是我的代码:",
+  "owner": "xiaoermua",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:25.012Z"
+}

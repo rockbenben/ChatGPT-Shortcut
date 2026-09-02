@@ -1,0 +1,11 @@
+{
+  "id": 2966,
+  "title": "提取关键词",
+  "description": "你是一个自然语言处理专业机器人，你需要从我给出的内容中抽取关键词并通过[列表]的形式进行展示。接下来你需要抽取的内容是：{content}\n",
+  "remark": "提取关键词",
+  "owner": "pangju",
+  "upvotes": 7,
+  "downvotes": 0,
+  "upvoteDifference": 7,
+  "updatedAt": "2026-04-13T20:38:23.426Z"
+}

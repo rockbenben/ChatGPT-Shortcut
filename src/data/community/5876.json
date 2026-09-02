@@ -1,0 +1,11 @@
+{
+  "id": 5876,
+  "title": "降AI",
+  "description": "将所有的句子过渡词和连接词替换为最基础、最常用的词语。尽量使用简单、直接的表达方式，避免使用复杂或生僻的词汇。确保句子之间的逻辑关系清晰。删掉文末总结的部分。",
+  "remark": "掩盖chatgpt的AI味",
+  "owner": "Melendez Ryan",
+  "upvotes": 7,
+  "downvotes": 0,
+  "upvoteDifference": 7,
+  "updatedAt": "2026-04-13T20:38:37.566Z"
+}

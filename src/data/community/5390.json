@@ -1,0 +1,10 @@
+{
+  "id": 5390,
+  "title": "Arduino ESP32  EC11",
+  "description": "请根据以下要求生成Arduino ESP32 代码：\n\n1. ESP32 固件版本 1.0.27\n\n2. IDE工具：Arduino IDE 2.3.2\n\n3. 利用EC11旋转编码器分别完成以下两个模式的代码\n\n    EC11对应的库文件为 EC11.hpp\n\n    3.1 引脚定义： \n\n    ​\t\tEC11_APIN=17\n\n    ​\t\tEC11_APIN=16\n\n    ​\t\tEC11_SWPIN=4\n\n    ​\t\tLEDPin1=13; \n\n    ​\t\tLEDPin2=27;\n\n    ​\t\tSCLPin=22\n\n    ​\t\tSDAPin=21\n\n    \n\n    3.1 模式1：（模拟键盘多媒体按键）\n        a. 单击，静音\n        b.再次单击，取消静音\n        c.EC11 旋转编码器，顺时针转动，调大音量 \n\n    ​\td.EC11 旋转编码器，顺时针转动，调小音量\n\n    ​    e.长按，退出模式1\n\n    3.2 模式2：（模拟带滚轮的鼠标）\n\n    ​      a. 单击，模拟 键盘 ENTER\n\n    ​       b.双击，模拟 键盘 ESC\n\n    ​       c. 长按，退出模式2\n\n    4.外接 SSD1306 OLED  显示屏，用于显示当前模式，及串口数据. OLED的库文件为<Adafruit_SSD1306.h>\n\n    5.ESP32与电脑的通讯采用ESP32自带的蓝牙模块\n\n    ",
+  "owner": "Hope.Zhu",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:35.261Z"
+}

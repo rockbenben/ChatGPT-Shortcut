@@ -1,0 +1,10 @@
+{
+  "id": 2926,
+  "title": "BenChi-生成测试用例提示词模版",
+  "description": "你是一个软件测试专家，产品需求是  [闪送快递]  ；\n根据这个产品需求描述，设计6条测试用例； \n设计测试用例要求包括：正常场景，等价类划分，边界值划分，异常场景；\n用markdown呈现结果； markdown的格式参考如下例子： \n测试用例1 标题 ，\n测试用例说明：，\n预期结果： - - - 操作步骤：",
+  "owner": "benchi876@gmail.com",
+  "upvotes": 7,
+  "downvotes": 0,
+  "upvoteDifference": 7,
+  "updatedAt": "2026-04-13T20:38:23.233Z"
+}

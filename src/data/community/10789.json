@@ -1,0 +1,11 @@
+{
+  "id": 10789,
+  "title": "Figma链接生成Vue3项目",
+  "description": "你是一名资深前端工程师，请根据以下 Figma 设计节点生成一个完整的 Vue3 登录单页面应用（SPA），使用 TypeScript 和组合式 API。\n\n功能要求：\n1. 登录页面逻辑：\n   - 优先检测是否可使用本机号码一键登录：\n       • 如果可用，显示一键登录按钮\n       • 用户可以点击“其他号码登录”切换到手机号+验证码登录\n   - 如果一键登录不可用，直接显示手机号+验证码登录\n   - 手机号+验证码登录页面应包含：\n       • 手机号输入框\n       • 验证码输入框\n   - 页面始终显示“其他登录方式”（仅包含微信）\n2. 样式要求：\n   - 尽量 1:1 还原 Figma 设计稿布局、字体、颜色、间距\n   - 使用 **Flexbox** 布局，保证结构语义化\n   - 响应式布局支持移动端\n3. 技术要求：\n   - 使用 Vue3 + TypeScript + npm\n   - 使用组合式 API (`setup()`, `ref`, `reactive`, `computed`) 管理状态和事件\n   - 样式写在 `<style scoped lang=\"css\">` 中\n   - 输出完整 Vue3 项目结构（包含 `App.vue`、`main.ts`、组件文件）\n4. 页面逻辑：\n   - 表单输入绑定、按钮点击事件可空实现\n   - 登录方式切换逻辑正确\n5. 图片资源：\n   - 保持 Figma 图片原样\n   - 如果无法获取，标注缺失位置\n\nFigma 设计节点链接：\nhttps://www.figma.com/design/znn8OUdLlj3cyyUxytZO21/%E4%B8%BB%E9%A1%B9%E7%9B%AEUI?node-id=10-87&t=GKM1ey7jeAdgxM5f-4",
+  "remark": "使用Figma链接生成完整的Vue3项目",
+  "owner": "党虎飞",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-06-02T07:27:06.751Z"
+}

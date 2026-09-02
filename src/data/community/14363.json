@@ -1,0 +1,10 @@
+{
+  "id": 14363,
+  "title": "启动",
+  "description": "使用 $workflow-orchestrator 管理本次数学建模：依次调用题目解析、分类、数据审计、方法选择；关键取舍用决策提示让我确认。再调用代码生成/审查、结果报告、稳健性、图表、方案包、论文与三层审计。每步报告产物和下一技能。",
+  "owner": "skywal303",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-07-20T00:38:48.362Z"
+}

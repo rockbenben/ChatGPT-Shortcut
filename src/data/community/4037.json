@@ -1,0 +1,12 @@
+{
+  "id": 4037,
+  "title": "英文小说创作",
+  "description": "Please craft a novel based on the following scenario, emphasizing [希望小说凸显的内容、主题、人物情感等], and do not forget to include dialogue: [情境描述]",
+  "remark": "根据用户提供的情境来创作英文小说，实测创作出的小说章节结构清晰、细节丰富、文笔优美",
+  "notes": "不适合用来创作中文小说，与英文创作的水平相差甚远",
+  "owner": "冷浸一天秋碧",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:28.591Z"
+}

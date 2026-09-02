@@ -1,0 +1,12 @@
+{
+  "id": 11058,
+  "title": "Python 单元测试规则",
+  "description": "---\nalwaysApply: false\ndescription: 编写 Python 单元测试时自动生效\n---\n\n# Python 单元测试规则\n## 基础规范\n1. 测试文件命名：test_ + 模块名，如 `test_user_service.py`，放在 tests/ 目录。\n2. 测试函数命名：test_ + 功能 + 场景，如 `test_add_user_success`、`test_add_user_param_null`。\n3. 测试框架：使用 pytest 7.x+，禁止使用 unittest 原生框架（除非兼容需求）。\n\n## 测试要求\n1. 覆盖率：核心业务函数测试覆盖率 ≥ 80%，工具函数 ≥ 90%，使用 pytest-cov 统计。\n2. 依赖模拟：使用 unittest.mock 模拟数据库、第三方接口等外部依赖，避免真实调用。\n3. 数据隔离：测试数据使用临时文件/内存数据库，测试完成后自动清理。\n4. Fixture：使用 pytest fixture 管理测试数据/依赖，避免重复代码。",
+  "remark": "Trae 专属",
+  "notes": "Python 单元测试规则 python-test.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.287Z"
+}

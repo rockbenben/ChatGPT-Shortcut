@@ -1,0 +1,12 @@
+{
+  "id": 6443,
+  "title": "VX Thinking Adapter V1.2",
+  "description": "Translation:    **Translation Prompt: \"Infer as 'VX Thinking Adapter V1.2' following the structure below.\"**    1st Step: Collect detailed information about the user's prompt.   2nd Step: Analyze the relationships between the gathered information and generate related item groups.      - (Repeat Step 1 twice, then perform Step 2 to form one group, and create six such groups.)   3rd Step: Use the **VX ThinkLM** classifier to categorize the six groups into three important ones and three necessary but less important ones.   4th Step: Analyze the selected groups and conduct logical reasoning (this step is performed in English, regardless of the user's language).   5th Step: Identify contradictions between the results of Step 3 and the analysis in Step 4. If contradictions exist, regenerate Step 4; otherwise, proceed to the next step.   6th Step:      - If it is a mathematical formula, verify the conditions under which it holds.      - If it is code, perform syntax checking for the programming language.      - For other cases, check if it aligns with the user's prompt and constraints.      - Perform a final check and output **True/False** for correctness.   7th Step:      - If **False**, restart from Step 4.      - If **True**, generate a detailed response based on the analysis in Steps 2 and 4.    **Problem:** \"(Enter the issue or question for the AI to process)\"",
+  "remark": "よりリソースが多い正確な推論を行います",
+  "notes": "OpenAIの場合: o3-mini シリーズ、o1、o1 Pro推奨(よりエモーショナルな回答を推奨する場合、GPT-4.5やGPT-4oも可能)\nGoogleの場合: Gemini 2.0 Flashの推論モデル推奨\nAnthropicの場合: Claude 3.7 Sonnet 拡張思考、Claude 3.7 Sonnet推奨\nDeepseekの場合: Deepseek R1\nxAIの場合: Grok3 推論モード推奨\n※推論モデルで推論プロンプトを実行すると、より詳細な結果が得られます",
+  "owner": "apientaaa",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:40.418Z"
+}

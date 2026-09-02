@@ -1,0 +1,12 @@
+{
+  "id": 4337,
+  "title": "数据转表格模版",
+  "description": "input：{{数据}}\n\n请将以上数据以表格形式进行重新在整理，梳理出列标题\n并按以下Markdown格式返回：\n\noutput:\n| 标题列1 | 标题列2 | 标题列3 |\n| ---- | ---- | ---- |\n| 内容1 | 内容2 | 内容3  |",
+  "remark": "用于将文本数据转换成Markdown表格",
+  "notes": "用于将文本数据转换成Markdown表格",
+  "owner": "李洪涛",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-04-13T20:38:30.022Z"
+}

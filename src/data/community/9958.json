@@ -1,0 +1,11 @@
+{
+  "id": 9958,
+  "title": "GitHub Release Notes",
+  "description": "基于仓库【最近一次正式发布的版本 Tag】与【当前 HEAD】之间的实际代码差异, 生成可直接发布的 GitHub Release Notes。\n\n## 取数（先做,别凭印象）\n1. 找最近正式版 tag:`git describe --tags --abbrev=0`;若它是 pre-release (rc/beta/alpha)则跳过取上一个正式 tag;无 tag 则用首个 commit。\n2. 圈范围:`git log <tag>..HEAD --oneline` + `git diff <tag>..HEAD --stat`。\n3. 每组改动看【实际代码 diff】下结论,别照抄 commit 标题——message 可能含糊/误导,以代码真正改了什么为准。\n\n## 整理\n- 合并相似/重复提交为一条。\n- 忽略低价值:merge、CI、lint/格式化、纯注释、版本号 bump 本身。\n- 按【用户影响】归类,不按文件归类。\n\n## 输出结构（按此顺序,空的小节省略）\n顶部给【建议版本号】:按 semver 判级(有破坏性→major、有新功能→minor、仅修复/内部→patch),给出建议 tag + 一句话主题。\n\n### ⚠️ Breaking Changes（破坏性变更——有则【必须】放最前、最显眼）改了什么 + 使用者要怎么改(迁移动作)。 \n### ✨ Features（用户能用到的新功能） \n### 🐛 Bug Fixes（用户能感知的修复） \n### ⚡ Performance（性能/体积） \n### 🔧 Internal（内部优化/重构,用户不可见——并成简短一组,不展开） \n### 📦 Dependencies（依赖升级,逐条:包名 旧→新）\n\n## 写法\n- 每条一行,以【用户视角的影响】开头(能做什么/修了什么),不是实现细节。\n- 简洁具体:有场景/数字就带上,不啰嗦。用户可见区用用户语言;Internal 可技术化但简短。\n\n## 双语 & 格式\n中、英两版,结构相同——不是逐字直译,各用该语言自然的 release-note 口吻。\nGitHub Markdown,可直接粘贴发布:标题用版本号,小节 ##/###,条目用 -。",
+  "remark": "对比当前与上一版本的差别，提供版本更新说明",
+  "owner": "test",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-06-08T11:42:15.755Z"
+}

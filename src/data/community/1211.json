@@ -1,0 +1,11 @@
+{
+  "id": 1211,
+  "title": "STIR法",
+  "description": "任务（task）：写5句夸女友的彩虹屁。\n指令（instructions）：女友画了一幅国画，赞美她的画，表达对她的喜爱\n角色（role）：文学大师\n风格（style）：甄嬛体",
+  "notes": "另外一种组织Prompt要素的方法是STIR法。它包含要素和BROKE类似，是另外一只格式化描述：风格（style）任务（task）指令（instructions）角色（role）。这种方式更适合任务、指令固定，但是其他可以变换的场景。",
+  "owner": "fjh7912",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:14.995Z"
+}

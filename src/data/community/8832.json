@@ -1,0 +1,10 @@
+{
+  "id": 8832,
+  "title": "未来科技工程师工作场景",
+  "description": "```json\n{\n  \"scene\": \"AI 工程师在未来主义风格的办公桌前工作，桌上有多块全息显示屏\",\n  \"camera\": {\n    \"angle\": \"{argument name=\\\"camera angle\\\" default=\\\"过肩，略微抬高\\\"}\",\n    \"focal_length\": \"{argument name=\\\"focal length\\\" default=\\\"50mm 人像镜头\\\"}\",\n    \"depth_of_field\": \"{argument name=\\\"depth of field\\\" default=\\\"浅景深，主体清晰对焦，背景略微模糊\\\"}\"\n  },\n  \"lighting\": {\n    \"type\": \"{argument name=\\\"lighting type\\\" default=\\\"戏剧性侧光，带蓝色点缀光\\\"}\",\n    \"time_of_day\": \"{argument name=\\\"time of day\\\" default=\\\"深夜\\\"}\",\n    \"mood\": \"{argument name=\\\"mood\\\" default=\\\"专注，科技黑色电影氛围\\\"}\",\n    \"shadows\": \"深邃但不生硬\"\n  },\n  \"color_grade\": \"{argument name=\\\"color grade\\\" default=\\\"冷色调，青色和橙色配色方案\\\"}\"\n}\n```",
+  "owner": "矢志不渝",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:52.291Z"
+}

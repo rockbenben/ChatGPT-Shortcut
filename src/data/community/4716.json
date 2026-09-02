@@ -1,0 +1,11 @@
+{
+  "id": 4716,
+  "title": "通读文献",
+  "description": "Act as an academic research expert. Read and digest the content of the research paper titled [xx]. Produce a concise and clear summary that encapsulates the main findings, methodology, results, and implications of the study. Ensure that the summary is written in a manner that is accessible to a general audience while retaining the core insights and nuances of the original paper.",
+  "remark": "作为[xx]领域的研究专家，阅读并总结标题为[xx]的研究论文的核心内容。请提供一个简洁明了的摘要，概括研究的主要发现、方法、结果及其意义。确保摘要以易于非专业读者理解的方式撰写，同时保留原论文的核心见解和细微差别。",
+  "owner": "刘雅石（演绎法）",
+  "upvotes": 14,
+  "downvotes": 0,
+  "upvoteDifference": 14,
+  "updatedAt": "2026-04-13T20:38:31.896Z"
+}

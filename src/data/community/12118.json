@@ -1,0 +1,11 @@
+{
+  "id": 12118,
+  "title": "一键生成 Markdown/LaTeX 模板",
+  "description": "请把当前稿件整理为可直接提交的模板：\n1) 输出 Markdown 与 LaTeX 各一份骨架（标题、作者、摘要、IMRaD 结构）；\n2) 自动插入参考文献占位符、图表路径、附录结构；\n3) 在注释中标注“需替换内容”；\n4) 若需遵循特定期刊格式，请附 class/模板引用建议。",
+  "notes": "场景：从草稿快速迁移到 Overleaf 或 Docs，避免手动复制粘贴出错",
+  "owner": "cyanzz",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-17T06:18:28.222Z"
+}

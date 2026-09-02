@@ -1,0 +1,12 @@
+{
+  "id": 14077,
+  "title": "CAD工程制图",
+  "description": "\n在我已经打开的AutoCAD2026软件Drawing1图纸中，按照这个建筑平面图纸照片的标注尺寸，绘制轴网线、图形和标注，图纸为拍摄的照片，线条有点倾斜，请忽略，按照正交方向绘制图纸中的线条，不要跟随照片倾斜。 \nPS:智能识别图中构件（墙体/门窗/轴网/楼梯/柱/标注），有什么建什么图层，包含施工图\n    │\n    ├── 图层（Layer）\n    ├── 块（Block）\n    ├── 属性（Attribute）\n    ├── 标注（Dimension）\n    ├── 文字（Text）\n    ├── 外部参照（Xref）\n    ├── 打印样式（CTB）\n    ├── 布局（Layout）\n    ├── 图签（Title Block）\n    ├── 比例（Scale）\n    ├── 建筑规范\n    ├── 制图规范\n    ├── 命名规范\n    └── 设计逻辑\n没有识别到的的跳过",
+  "remark": "我想让codex帮我直接操控电脑中的AUTOCAD软件，跟据我发给他的工程制图截图，画出与图中一模一样的cad制图",
+  "notes": "包含图层规范，细节打磨刻画惊喜，不失细节整体",
+  "owner": "fethelander",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-07-31T08:11:18.984Z"
+}

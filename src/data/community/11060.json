@@ -1,0 +1,12 @@
+{
+  "id": 11060,
+  "title": "Python 项目 AGENTS.md",
+  "description": "# AGENTS.md\nAI 在本纯 Python 项目中需遵守以下约定：\n1. 所有输出的 Python 代码兼容 Python 3.9+ 版本，严格遵循 PEP 8 规范。\n2. 生成代码时附带完整的类型注解、Google 风格 Docstring 注释。\n3. 涉及框架使用时，提供完整的依赖安装命令、运行命令和配置示例。\n4. 数据处理场景优先使用向量化操作，避免低效的 for 循环。\n5. 不生成 eval()、exec()、裸 try-except 等不安全/不规范代码。",
+  "remark": "Python 项目 AGENTS.md",
+  "notes": ".trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:39:03.297Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 8829,
+  "title": "名人金句卡生成器",
+  "description": "一张宽幅的名人金句卡，棕色背景，衬线体浅金色“{argument name=\"金句\" default=\"保持饥饿，保持愚蠢\"}”，小字“——{argument name=\"作者\" default=\"Steve Jobs\"}”，文字前面带一个大的淡淡的引号。人物头像在左边，文字在右边，文字占画面比例 2/3，人物占 1/3，人物有一点渐变过渡的感觉。",
+  "owner": "矢志不渝",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:52.275Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 12433,
+  "title": "绘图提示词",
+  "description": "请在工作二对比实验，各方法的 Flickr1024 结果中找出前十个，以 GT 为参照进行局部区域筛选。对每张测试图使用滑动窗口搜索，计算各方法在同一局部区域与 GT 的局部误差，如 MAE，优先选择 Lbaseline-stereo12-struct 误差最低且与第二名有明显差距的区域。同时检查视觉效果，确保该区域能体现本文方法在细节恢复、边缘保持、噪声抑制和颜色一致性上的优势。 \n\n绘图时保持所有方法使用同一测试图、同一局部坐标和同一放大倍率，不改变原图比例。去掉表现明显较差的前三个模型，仅保留 LLFormer、RetinexFormer、RetinexMamba、WalMaFa、HVI-CIDNet、LatentDark、DVE-Net、DCI-Net、LFE-Net、WDCI-Net、Lbaseline-stereo12-struct 和 GT。采用 3 行 4 列排版，每列之间无空隙，行距紧凑。将局部放大图嵌入每张原图左下角或者右下角，并使放大框贴齐原图左边缘和下边缘或者右边缘和下边缘；使用红色矩形同时标出原图中的局部区域和左下角或右下角放大区域。图片下方标注方法名，黑色字体、白色背景，GT 放在最后。D:\\pingjiahang\\datasets\\LLSIE\\test，对了哦，GT都在这个文件夹里",
+  "owner": "2812704890pp",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-05-01T11:04:23.426Z"
+}

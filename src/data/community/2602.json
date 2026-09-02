@@ -1,0 +1,12 @@
+{
+  "id": 2602,
+  "title": "Stable Diffusion Deforum video",
+  "description": "Please provide a series of interconnected video frame descriptions. Each description should focus on only one main subject. The format should be in JSON, with descriptions for every 30 frames, up to a total of 900 frames. Each frame index should be a key, and its corresponding value should be a descriptive caption. Ensure the descriptions resonate with the theme and are visually engaging. Example format is:\n```\n{\n    \"0\": \"tiny cute bunny, vibrant diffraction, highly detailed, intricate, ultra hd, sharp photo, crepuscular rays, in focus, by tomasz alen kopera\",\n    \"30\": \"anthropomorphic clean cat, surrounded by fractals, epic angle and pose, symmetrical, 3d, depth of field, ruan jia and fenghua zhong\",\n    \"60\": \"a beautiful coconut --neg photo, realistic\",\n    \"90\": \"a beautiful durian, trending on Artstation\"\n}\n```\n视频脚本主题需要围绕并解决人的欲望，如衣、食、住、行、性、金钱、尊重、认可、快乐、自信、幸福、自由等。\n脚本结构：起（建置）+承（推进）+转+合（升华），8 秒一个小爆点。\n  - 把最有悬念和爆点的精彩内容尽量前置，可以尝试结合热点\n  - 开头是否有冲突，是否打破常规，是否诱人？让观众有爽感有期待。\n  - 脚本中的人物需要有成长。",
+  "remark": "根据主题编写一系列图片描述，适用于 Stable Diffusion Deforum 视频描述",
+  "notes": "默认帧率为30帧，意味着每30帧将使用相同的图片描述。900帧意味着视频的总长度为60秒。\n\n第二步：给这个脚本的主题取个标题。标题需要简洁易懂，发布标题不少于26个字，封面5-8个字。切中最高频常见场景，勾起用户的好奇心；挑选高流量热词，放大“痛点信息“并放在标题的开头。并针对脚本编写一段描述。",
+  "owner": "test",
+  "upvotes": 10,
+  "downvotes": 0,
+  "upvoteDifference": 10,
+  "updatedAt": "2026-04-13T20:38:21.624Z"
+}

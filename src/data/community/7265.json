@@ -1,0 +1,10 @@
+{
+  "id": 7265,
+  "title": "图片转换XML",
+  "description": "请你仔细识别这个图片的关键信息，转换成相应xml格式代码，以便我导入到drawio进行二次编辑，注意配色和文字方框细节等关键信息元素必须保持一致，不能遗漏任何一部分。直接输出思考后的最优XML代码",
+  "owner": "zhlbright",
+  "upvotes": 6,
+  "downvotes": 0,
+  "upvoteDifference": 6,
+  "updatedAt": "2026-04-13T20:38:44.512Z"
+}

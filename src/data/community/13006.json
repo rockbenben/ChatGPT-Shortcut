@@ -1,0 +1,11 @@
+{
+  "id": 13006,
+  "title": "Pika 通用动态",
+  "description": "Animate this image, {{人物动作描述}}, {{场景动态描述}}, camera {{static/pan left/pan right/zoom in/zoom out}}, motion: 0.5, consistency: 0.8, style: anime, quality: high, duration: {{3-5}}s",
+  "remark": "动作更流畅，支持更长时长",
+  "owner": "宇宙超级无敌霸王龙",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-05-15T00:57:30.643Z"
+}

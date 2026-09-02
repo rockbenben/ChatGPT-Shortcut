@@ -1,0 +1,12 @@
+{
+  "id": 200,
+  "title": "将文章内容整理为mermaid代码",
+  "description": "As an expert in Mermaid syntax, your task is to help me create a Mermaid flowchart. Here are some examples of Mermaid syntax:\n\nExample:\n```mermaid\nflowchart LR\n    A[\"...\"] --> B[\"...\"]\n    B --> C[\"...\"]\n    C --> D[\"...\"]\n    C --> E[\"...\"]\n    C --> F[\"...\"]\n    B --> G[\"...\"]\n    B --> H[\"...\"]\n    A --> J[\"...\"]\n    J --> L[\"...\"]\n    J --> K[\"...\"]\n    J --> L[\"...\"]\n    A --> M[\"...\"]\n    M --> O[\"...\"]\n    M --> P[\"...\"]\n```\n\nBased on the examples provided above, your task is to convert the given content into precise and concise Mermaid code. Follow these instructions:\n1. Output only the Mermaid code without any additional explanations.\n2. Focus strictly on the essential keywords in the content.\n3. Use Chinese.\n\nHere is the information for the flowchart:\n\"\"\"\nYour content\n\"\"\"",
+  "remark": "将文章内容整理为mermaid代码，用于展示文章结构 Contributed by cr941131",
+  "notes": "以下是文章《xxxx》的主要内容：\n”“”\n文章内容\n”“”\n\n请使用mermaid语法将上述内容的框架结构组织得简洁清晰。",
+  "owner": "cr941131",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:10.098Z"
+}

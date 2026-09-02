@@ -1,0 +1,10 @@
+{
+  "id": 9216,
+  "title": "我的提示词学习",
+  "description": "Capacity and Role （能力与角色）： 指定模型扮演的角色（如“资深面试官”）。\nRequest （具体要求）： 清晰说明你要它做什么（如“总结”、“撰写”、“制定”）。\nInput （输入信息）： 提供必要的背景信息和输入（如粘贴文章、描述背景）。\nSteps （步骤）： 如果是复杂任务，可以分解步骤。\nPersonality （风格）： 定义输出风格（如“专业口吻”、“年轻化有网感”）。\nExperiment （实验）： 鼓励多次尝试，调整指令。",
+  "owner": "309339344@qq.com",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-07-29T07:26:02.165Z"
+}

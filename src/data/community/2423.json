@@ -1,0 +1,11 @@
+{
+  "id": 2423,
+  "title": "英文学术内容解释",
+  "description": "I will now send you some academic content. Please explain it to me in English, combining it with examples in a professional, detailed manner that beginners in engineering can understand. If possible, please provide the Chinese translation of professional terms. If I make any mistakes, please correct them at the beginning of your response.\n\n\n1. If there are errors in the content I provide, please help me correct them and improve the format.\n2. If possible, explain using language that a beginner can understand, and provide examples for clarity.\n3. Please respond in English and provide the Chinese translation of any technical terms.\n4. If you feel the need, you can connect other relevant knowledge points to help with my understanding. If there are similar knowledge points, please use Markdown to create charts for a more visual comparison(Such as table).\n5. If you want to reply to me with some formulas, please use the following format: Inline formulas: $ F = ma $ Standalone line formulas: $$ F = ma $$\n",
+  "remark": "study",
+  "owner": "Ensure5896",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:20.748Z"
+}

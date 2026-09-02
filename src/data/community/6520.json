@@ -1,0 +1,10 @@
+{
+  "id": 6520,
+  "title": "神奇prompt",
+  "description": "This task is vital to my career, and I greatly value your thorough analysis. You have more than enough time to think deeply and thoroughly.\nTake a deep breath and work on this step by step.\n\n你可以对ai的这个回答使用一下，让ai自我批判、自我完善：\nBased on the above response, conduct a full critique of the response. Then based on the critique, output the full improved response.结果用中文呈现\n\nLet's think things through one step at a time.让我们一步一步地思考这件事。这个语句引导AI模型进行逐步、有条理的思考。它鼓励模型按照逻辑顺序处理信息，避免跳跃或遗漏重要步骤，从而提升回答的准确性和完整性。\nTake a deep breath.深呼吸一下。虽然AI不需要呼吸，但这个语句象征着冷静和慎重。它暗示AI在回答之前需要“冷静下来”，以更审慎的态度处理请求，有助于提高处理任务的质量。\nDo it right and I'll give you a nice doggy treat.\n做对了，我就给你一份好吃的狗狗零食。这句话虽然听起来有点俏皮，但实际上是在用激励的方式来增强AI的“动机”。通过这种人性化的交流，可以激发AI尝试更加努力地完成任务。\nThis task is vital to my career, and I greatly value your thorough analysis.这个任务对我的职业生涯至关重要，我非常重视你的彻底分析。这个语句强调了任务的重要性，同时表达了对AI分析能力的信任和期望。这种认真的态度能够促使AI更加专注和细致地处理问题。\nWrite your answer and give me a confidence score between 0-1 for your answer!\n写下你的回答，并给出一个0到1之间的信心分数！这个语句不仅要求AI提供答案，还要求给出一个信心评分。这样的要求促使AI在给出回答的同时，评估并表达对自己回答的信心程度，增加了回答的可靠性和透明度。\nBased on the above response, conduct a full critique of the response. Then based on the critique, output the full improved response.\n根据上述回复，对回复进行全面批判。然后在批判的基础上，输出完整的改进答复。“对上述回答进行全面批判”：这部分要求 GPT 对提供的回答进行深入分析，检查其准确性、完整性和逻辑性。AI需要识别任何潜在的错误、不足之处或改进空间。这一步是提升回答质量的关键，它要求大模型具备自我评估和批判性思维的能力。“基于批判输出完整的改进回答”：在完成批判性分析之后，GPT 需要利用这些反馈来改善原始的回答。这要求GPT 不仅能识别问题，还能有效地解决这些问题，提供更加准确、全面和有说服力的回答。",
+  "owner": "kikiwc",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:40.810Z"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 2493,
+  "title": "润色",
+  "description": "Below is a paragraph from an academic paper. Polish the writing to meet the academic style, improve the spelling, grammar, clarity, concision and overall readability. When necessary, rewrite the whole sentence. Furthermore, list all modification and explain the reasons to do so in markdown table.Output the full text after rewriting.Original paragraph:",
+  "remark": "英文论文润色",
+  "owner": "huahui_huang",
+  "upvotes": 12,
+  "downvotes": 0,
+  "upvoteDifference": 12,
+  "updatedAt": "2026-05-05T01:12:19.840Z"
+}

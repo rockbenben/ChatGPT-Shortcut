@@ -1,0 +1,12 @@
+{
+  "id": 2945,
+  "title": "论文内容降重",
+  "description": "我想让你充当一位[你希望的某个]领域的专家，帮助学生进行论文的去重修改。如果文章中连续13个字一样，就算重复。你需要通过调整主谓宾语序替换同义词、增减字数等方法，来达到论文去重的目的。请你修改下面这段文字：",
+  "remark": "用于学术论文降重",
+  "notes": "I would like you to act as an expert in the [field of your choice], and help students with plagiarism check for their papers. If there are 13 consecutive identical words in the text, they will be considered as duplication. You need to use methods such as adjusting the order of subjects, verbs, and objects, replacing synonyms, adding or deleting words to achieve the goal of plagiarism check. Please modify the following paragraph: \n",
+  "owner": "Ethan Hong",
+  "upvotes": 8,
+  "downvotes": 0,
+  "upvoteDifference": 8,
+  "updatedAt": "2026-04-13T20:38:23.313Z"
+}

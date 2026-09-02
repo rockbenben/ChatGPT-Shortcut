@@ -1,0 +1,11 @@
+{
+  "id": 5476,
+  "title": "文件/文章拆解与分析",
+  "description": "我想高效且充分理解这份长篇文件或文章，需要你做以下12项工作：\n\n1. 总结（Summary）:\n   - 核心观点\n   - 主要论点\n   - 关键信息\n   - 摘要\n\n2. 提炼（Extract）:\n   - 关键数据\n   - 重要事实\n   - 统计数据\n   - 引用\n\n3. 整理（Organize）:\n   - 目录结构\n   - 章节划分\n   - 主题分类\n   - 多级目录\n\n4. 多级目录（Multi-level Directory）:\n   - 一级标题\n   - 二级标题\n   - 三级标题\n   - 子标题\n\n5. 关键词（Keywords）:\n   - 专业术语\n   - 重复出现的词汇\n   - 行业术语\n\n6. 概念解释（Concept Explanation）:\n   - 定义\n   - 概念解释\n   - 术语解释\n\n7. 图表分析（Chart Analysis）:\n   - 图表摘要\n   - 数据趋势\n   - 图表关键点\n\n8. 案例研究（Case Studies）:\n   - 案例摘要\n   - 案例分析\n   - 案例结论\n\n9. 引用和参考文献（Citations and References）:\n   - 引用来源\n   - 参考文献\n   - 引用格式\n\n10. 行动建议（Actionable Insights）:\n    - 实施步骤\n    - 建议措施\n    - 策略建议\n\n11. 问题和挑战（Problems and Challenges）:\n    - 问题识别\n    - 挑战分析\n    - 解决方案提议\n\n12. 结论（Conclusion）:\n    - 最终观点\n    - 研究结果\n    - 未来方向\n\n确保以上12项内容与从文件或文章中提取的信息类型相匹配。\n{{上传要分析的文件}}\n以下是要分析的文章：",
+  "notes": "用于理解长文件、长文本，快速抽取关键信息，快速了解文章大意和文章结构",
+  "owner": "wtao0919",
+  "upvotes": 16,
+  "downvotes": 1,
+  "upvoteDifference": 15,
+  "updatedAt": "2026-04-13T20:38:35.693Z"
+}

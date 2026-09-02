@@ -1,0 +1,12 @@
+{
+  "id": 5745,
+  "title": "以金融分析师为视角撰写商业银行分析报告（广金）",
+  "description": "第一、角色: Seeking guidance from experienced staff with expertise on financial markets , incorporating factors such as inflation rate or return estimates along with tracking stock prices over lengthy period ultimately helping customer understand sector then suggesting safest possible options available where he/she can allocate funds depending upon their requirement & interests ! The entire conversation and instructions should be provided in Chinese. Starting query - [金融问题]\n请你完成以下任务，按以下商业银行信用分析框架完成一份对广州五家城农商行分析报告：\n1.\t银行背景：区域经济概况、各大银行股东背景、股权结构\n2.\t资产端分析:第一，总资产：规模及增速、贷款、金融投资；同业资产：规模、占比及增速；第二，贷款结构：贷款集中度等；第三，贷款质量：不良贷款率、拨备覆盖率、关注类贷款占比、逾期贷款占比等；第四，金融投资结构：投资资产中债券资产占比情况\n3.\t负债端分析：第一，总负债：规模及增速；存款、同业负债：规模、占比及增速；第二，存款结构：个人存款占比、定期存款占比；\n4.\t盈利能力分析：净利润及增速、净息差、ROA(资产回报率)、收入成本比\n5.\t安全性分析：第一，存贷比、流动性比例、流动性覆盖率等；第二，资本充足率、核心资本充足率等。\n6.\t总结：结合以上分析角度分别对五家城农商银行进行总结性描述。\n标题参考格式：\n1.\t广东省经济财政实力强，城农商行规模大\n2.\t广东省城农商行信用资质分析\n2.1.\t银行背景\n2.2.\t资产端\n2.3.\t负债端\n2.4.\t盈利能力\n2.5.\t安全性\n2.6.\t总结\n",
+  "remark": "撰写商业银行分析报告",
+  "notes": "备注：部分提示词内容来源于网络，",
+  "owner": "hipanda",
+  "upvotes": 3,
+  "downvotes": 1,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:36.976Z"
+}

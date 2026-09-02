@@ -1,0 +1,12 @@
+{
+  "id": 3454,
+  "title": "根据sql生成dbt yml columns",
+  "description": "- 任务：从参考sql语句提取**最终字段信息**，包括字段名<name> 和中文注释<description>，按照以下示例生成yml文件\n- 示例：\ncolumns:\n  - name: batch_date\n    description: 采集日期\n  - name: shop_name\n    description: 店铺名\n\n参考sql语句是：\n【把你的sql或者建表语句放到这里】",
+  "remark": "根据sql生成 dbt yml 的 columns",
+  "notes": "作者：zyb\nchatgpt： yes\n文心一言：yes",
+  "owner": "syzn",
+  "upvotes": 3,
+  "downvotes": 0,
+  "upvoteDifference": 3,
+  "updatedAt": "2026-04-13T20:38:25.759Z"
+}

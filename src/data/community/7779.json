@@ -1,0 +1,11 @@
+{
+  "id": 7779,
+  "title": "UI/UX 页面优化（指定antd6）",
+  "description": "基于用户提供的页面截图，从美观性、可用性、信息层级和交互效率四个维度对 UI 进行专业级诊断与优化，修改方案优先使用 Ant Design v6 的成熟组件与规范实现，尽量避免自定义 CSS。输出可直接用于前端实现。",
+  "remark": "上传当前页面截图，让 AI 对 UI 进行诊断与重构优化。建议指定前端框架",
+  "owner": "test",
+  "upvotes": 8,
+  "downvotes": 0,
+  "upvoteDifference": 8,
+  "updatedAt": "2026-04-13T20:38:47.051Z"
+}

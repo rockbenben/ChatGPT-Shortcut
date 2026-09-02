@@ -1,0 +1,12 @@
+{
+  "id": 2603,
+  "title": "Stable Diffusion Deforum Subtitle",
+  "description": "Generate Chinese subtitles in SRT format for a video script that describes various scenes. Each number represents a specific scene in the video, and 30 frames equal 2 seconds. Translate and adapt the following scenes into Chinese subtitles that are concise, accurate, and aesthetically appealing.\n\nScenes:\n```{\n    \"0\": \"Stunning view of the Milky Way galaxy, millions of stars shining brightly, cosmic wonder\",\n    \"30\": \"Zooming in on a distant star cluster, intricate details of celestial bodies revealed\",\n    \"60\": \"A meteor shower lights up the night sky, streaks of brilliance across the Milky Way\",\n    \"90\": \"Silhouettes of trees against the Milky Way backdrop, tranquil night in the wilderness\"\n}\n```\n",
+  "remark": "将视频画面描述转换为字幕脚本，JSON 描述为 Stable Diffusion Deforum 格式",
+  "notes": "",
+  "owner": "test",
+  "upvotes": 9,
+  "downvotes": 0,
+  "upvoteDifference": 9,
+  "updatedAt": "2026-04-13T20:38:21.629Z"
+}

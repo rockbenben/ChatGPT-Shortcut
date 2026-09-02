@@ -1,0 +1,10 @@
+{
+  "id": 3765,
+  "title": "个人工作日志格式规范",
+  "description": "将以下工作日志文本转换为markdown格式，要求返回markdown原文，可复制，层次结构要分明，序号也要能够复制，不要用中文的序号，如果有中文的序号转化成1. 2. 3.的形式，分级的符号必须用*，标题大小从###开始，标题部分如果有年月日格式的日期需要转化为xxxx.xx.xx的格式:\n`\n日志内容\n`",
+  "owner": "qaeupokm",
+  "upvotes": 7,
+  "downvotes": 0,
+  "upvoteDifference": 7,
+  "updatedAt": "2026-04-13T20:38:27.241Z"
+}

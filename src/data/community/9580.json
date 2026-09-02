@@ -1,0 +1,12 @@
+{
+  "id": 9580,
+  "title": "DS官方提示词——代码改写",
+  "description": "USER\t\n下面这段的代码的效率很低，且没有处理边界情况。请先解释这段代码的问题与解决方法，然后进行优化：\n```\ndef fib(n):\n    if n <= 2:\n        return n\n    return fib(n-1) + fib(n-2)\n```\n\n样例输出\n### 问题分析\n\n这段代码实现了一个递归的斐波那契数列计算函数 `fib(n)`。虽然代码简洁，但它存在以下几个问题：\n\n1. **重复计算**：递归调用会导致大量的重复计算。例如，计算 `fib(5)` 时，`fib(3)` 和 `fib(2)` 会被多次计算，导致效率低下。\n\n2. **边界情况处理不完善**：虽然代码中处理了 `n <= 2` 的情况，但没有处理 `n < 0` 的情况。对于负数输入，函数会返回不正确的结果。\n\n3. **递归深度限制**：对于较大的 `n`，递归深度可能会超过 Python 的默认递归深度限制，导致 `RecursionError`。\n\n### 解决方法\n\n1. **使用记忆化（Memoization）**：通过缓存已经计算过的斐波那契数列值，避免重复计算，提高效率。\n\n2. **处理边界情况**：增加对 `n < 0` 的检查，并返回适当的错误信息或默认值。\n\n3. **使用迭代代替递归**：递归虽然简洁，但在处理大规模数据时效率较低。可以使用迭代方法来计算斐波那契数列，避免递归深度限制。\n\n### 优化后的代码\n\n#### 方法一：记忆化递归\n\n```python\ndef fib(n, memo={}):\n    if n < 0:\n        raise ValueError(\"Input must be a non-negative integer\")\n    if n <= 2:\n        return 1\n    if n in memo:\n        return memo[n]\n    memo[n] = fib(n-1, memo) + fib(n-2, memo)\n    return memo[n]\n```\n\n#### 方法二：迭代法\n\n```python\ndef fib(n):\n    if n < 0:\n        raise ValueError(\"Input must be a non-negative integer\")\n    if n <= 2:\n        return 1\n    \n    a, b = 1, 1\n    for _ in range(3, n+1):\n        a, b = b, a + b\n    return b\n```\n\n### 解释\n\n1. **记忆化递归**：\n   - 使用一个字典 `memo` 来存储已经计算过的斐波那契数列值。\n   - 在每次递归调用前，先检查 `memo` 中是否已经有结果，如果有则直接返回，避免重复计算。\n   - 处理了 `n < 0` 的情况，抛出 `ValueError`。\n\n2. **迭代法**：\n   - 使用两个变量 `a` 和 `b` 来保存前两个斐波那契数列值。\n   - 通过循环从 `3` 到 `n` 计算斐波那契数列值，避免了递归调用，提高了效率。\n   - 同样处理了 `n < 0` 的情况，抛出 `ValueError`。\n\n### 总结\n\n优化后的代码不仅提高了效率，还完善了边界情况的处理。记忆化递归和迭代法都是有效的优化手段，具体选择哪种方法取决于具体需求和场景。",
+  "remark": "对代码进行修改，来实现纠错、注释、调优等。",
+  "notes": "提示词来源https://api-docs.deepseek.com/zh-cn/prompt-library/",
+  "owner": "o0lirvyi0o",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:56.155Z"
+}

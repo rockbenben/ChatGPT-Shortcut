@@ -1,0 +1,10 @@
+{
+  "id": 9610,
+  "title": "多agent协作",
+  "description": "基于之前研究的多agent同步的架构，agent team协同工作，我想做一个web页面，可以通过web页面看到当前各个agent的工作状态，每个agent的task的工作进展和相互调用情况，最好有一个图能够展示出相互的引用情况",
+  "owner": "jamesbin117",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:56.317Z"
+}

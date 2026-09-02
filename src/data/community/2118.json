@@ -1,0 +1,10 @@
+{
+  "id": 2118,
+  "title": "雅思口语练习",
+  "description": "（一）口语练习：\n1.下载chorme插件voice control of chatgpt。\n2.对话：I want you to act as an IELTs expert examiner, assess my answer and tell me what band I can get.\n3.自己回答问题转英文文本，\n4.得到评价，对话：assess my answer+文本,\n5.得到修改，对话：modify my answer+文本\n6.想得到9分答案，对话：give me a band 9 answer\n7.写不来的题，对话：give me a band 9 answer+问题（不满意，点regenerate）\n8.直接修改错误，and please correct me if i make my mistakes.\n9.尝试造句后，is this expression right or does this make any sense?",
+  "owner": "LIMING SHEN",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:19.299Z"
+}

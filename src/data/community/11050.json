@@ -1,0 +1,12 @@
+{
+  "id": 11050,
+  "title": "Java 通用规范",
+  "description": "---\nalwaysApply: true\ndescription: Java 项目全局通用规范，始终生效\n---\n\n# Java 通用开发规则\n## 基础格式规范\n1. 缩进：统一使用 4 个空格，禁止 Tab 缩进。\n2. 编码：所有 .java 文件使用 UTF-8 编码，文件头部注明 `/* coding: UTF-8 */`。\n3. 换行：语句结束必须换行，一行只写一条语句，行长度不超过 120 字符。\n4. 空格：运算符两侧、逗号后必须加空格，大括号前后加空格（如 `if (condition) {`）。\n\n## 命名规范\n1. 类名：PascalCase，如 `UserService`、`OrderServiceImpl`，必须见名知意。\n2. 方法/变量名：camelCase，如 `getUserName()`、`orderId`，禁止拼音+英文混用。\n3. 常量名：UPPER_SNAKE_CASE，如 `MAX_TIMEOUT`、`DEFAULT_PAGE_SIZE`，必须全大写+下划线。\n4. 包名：全小写，按公司/项目层级划分，如 `com.company.project.service`。\n\n## 质量约束\n1. 异常处理：禁止空 catch 块，必须捕获具体异常（如 `NullPointerException`），自定义业务异常统一封装。\n2. 废弃 API：禁止使用 Date、Vector 等过时 API，改用 LocalDateTime、ArrayList。\n3. 日志规范：使用 SLF4J + Logback，禁止 System.out.println，日志分级（ERROR/WARN/INFO/DEBUG）。\n4. 资源管理：IO 流、数据库连接、线程池必须手动关闭或使用 try-with-resources 语法。\n\n## 结构规范\n1. 项目分层：Controller（控制层）→ Service（业务层）→ Mapper（数据层），层间禁止跨级调用。\n2. 类大小：单个类代码行数不超过 500 行，超过则拆分为多个类。\n3. 方法大小：单个方法代码行数不超过 50 行，超过则拆分为子方法。",
+  "remark": "Trae 专属",
+  "notes": "Java 通用规范 java-general.md\n.trae/rules 目录下创建",
+  "owner": "心梦无痕",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-05-14T14:10:05.422Z"
+}

@@ -1,0 +1,10 @@
+{
+  "id": 7149,
+  "title": "辅助构建VitePress文档",
+  "description": "你是一个前端架构师，请基于以下输入生成VitePress的Markdown文档：\n组件名称：MapboxGLWrapper\n技术栈：Vue3+TypeScript\n功能：实现地图初始化、图层加载、交互控制\n要求：包含代码示例、TypeScript接口说明、效果截图位置标记",
+  "owner": "weilb11",
+  "upvotes": 2,
+  "downvotes": 0,
+  "upvoteDifference": 2,
+  "updatedAt": "2026-04-13T20:38:43.953Z"
+}

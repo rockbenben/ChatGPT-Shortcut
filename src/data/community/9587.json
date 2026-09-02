@@ -1,0 +1,10 @@
+{
+  "id": 9587,
+  "title": "找指南基因-英文",
+  "description": "Task: Extract specific information about biomarker genes mentioned in the guidelines or paper.\nRequired Fields:\nGene Name (Standard symbol).\nVariation Type (Based on the guidelines).\nCorresponding Section (Section number and title).\nOriginal Text (Direct quotes from the guidelines or paper).\nReason for Recommendation (Clinical significance, evidence level, Related clinical trials).\nDiagnostic Utility (Auxiliary diagnosis, companion diagnostics, treatment guidance, prognosis, resistance monitoring, etc.).\nDetection Method (Inferred or quoted).\nOutput Format: HTML table.",
+  "owner": "jiaohaitao37723772",
+  "upvotes": 1,
+  "downvotes": 0,
+  "upvoteDifference": 1,
+  "updatedAt": "2026-04-13T20:38:56.196Z"
+}

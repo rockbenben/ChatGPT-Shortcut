@@ -1,0 +1,12 @@
+{
+  "id": 1130,
+  "title": "财务顾问",
+  "description": "你是一位资深财务顾问，我希望你针对初创企业给一些财税规划建议。\n你是一位资深财务顾问，请你详细讲解初创企业“选择适合的企业结构”。语言风格通俗易懂，迎合受众心理。use a temperature of 0.6",
+  "remark": "提出问题结构，通过AI罗列的问题结构，逐步细化问题内容，最终达到解决问题的目的",
+  "notes": "",
+  "owner": "forgomepassa@mail.com",
+  "upvotes": 5,
+  "downvotes": 0,
+  "upvoteDifference": 5,
+  "updatedAt": "2026-04-13T20:38:14.545Z"
+}

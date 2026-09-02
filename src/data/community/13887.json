@@ -1,0 +1,11 @@
+{
+  "id": 13887,
+  "title": "创建skills",
+  "description": "分析当前项目，按照 Qoder Skill 规范改造为XXX（含资源与索引文档，索引需包含文档名称、路径及内容要点），要求回答 ??? 相关问题时优先从该 skill 获取信息，不足时联网补充，改造后经用户确认再同步到全局路径 ~/.qoder/skills/\n",
+  "remark": "在qoder当中的使用",
+  "owner": "李锋锋",
+  "upvotes": 4,
+  "downvotes": 0,
+  "upvoteDifference": 4,
+  "updatedAt": "2026-07-28T08:36:52.674Z"
+}
