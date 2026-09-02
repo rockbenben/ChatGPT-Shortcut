@@ -21,6 +21,14 @@ const docusaurusBin = createRequire(import.meta.url).resolve("@docusaurus/core/b
 const SITEMAP_MAX_URLS = 50000;
 const SITEMAP_MAX_BYTES = 50 * 1024 * 1024;
 
+// EdgeOne Pages 单项目的文件数上限。超了它只回一句 "File count exceeds project limit"
+// 就整个部署失败，**线上静默停在上一版**——CI 全绿、gh-pages 也正常落库，
+// 从外部完全看不出来。2026-09-02 真实踩过一次：社区提示词全量静态化把产物推到
+// 23044 个文件，线上在旧版本上停了几小时才被发现。
+// 所以这里在构建结束时直接数一遍，超了就让构建失败在自己手里。
+const HOST_MAX_FILES = 20000;
+const HOST_WARN_FILES = HOST_MAX_FILES * 0.9;
+
 /** 切块。默认 locale 排首位；末块若只剩一个非默认 locale 就并回前一块（见文件头的坑）。 */
 function planChunks(chunkSize) {
   const ordered = [defaultLocale, ...locales.filter((l) => l !== defaultLocale)];
@@ -132,6 +140,36 @@ export function mergeSitemaps() {
   return { urls: blocks.length, bytes, files: files.length };
 }
 
+/** 递归数 build/ 下的文件数（不含目录）。产物 2 万级，一次同步遍历约 0.2s。 */
+function countFiles(dir) {
+  let n = 0;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    n += e.isDirectory() ? countFiles(path.join(dir, e.name)) : 1;
+  }
+  return n;
+}
+
+/** 托管层文件数护栏。见 HOST_MAX_FILES 的注释：这是唯一能在本地/CI 就发现超限的地方。 */
+function assertFileBudget(outDir) {
+  if (!fs.existsSync(outDir)) return 0;
+  const n = countFiles(outDir);
+  if (n > HOST_MAX_FILES) {
+    throw new Error(
+      `[build] 产物 ${n} 个文件，超过托管层上限 ${HOST_MAX_FILES} —— EdgeOne Pages 会拒绝整个部署
+` +
+        `    （报错只有一句 "File count exceeds project limit"，线上会静默停在上一版）
+` +
+        `    社区提示词静态页每条占 2 个文件，调 scripts/genCommunitySelection.mjs 的 MAX_PAGES 可减。`,
+    );
+  }
+  if (n > HOST_WARN_FILES) {
+    console.warn(`[build] ⚠ 产物 ${n} 个文件，已用到托管层上限 ${HOST_MAX_FILES} 的 ${((n / HOST_MAX_FILES) * 100).toFixed(0)}%`);
+  } else {
+    console.log(`[build] 产物 ${n} 个文件（托管层上限 ${HOST_MAX_FILES}，余量 ${HOST_MAX_FILES - n}）`);
+  }
+  return n;
+}
+
 function main() {
   // 带参（`yarn build --locale pt`）→ 转交单次 build，不分批也不合并 sitemap。
   // 供 Vercel/Cloudflare 只部署部分语言用，见 docs/deploy/standard.md。
@@ -149,6 +187,7 @@ function main() {
   console.log(`[build] ${locales.length} locales → ${chunks.length} chunk(s) of ≤${chunkSize}`);
   buildChunks(chunks);
   mergeSitemaps();
+  assertFileBudget("build");
   console.log(`\n[build] ✓ all ${locales.length} locales built into build/`);
 }
 

@@ -28,15 +28,6 @@ const COMMUNITY_STATIC_PAGES = true;
 // 两个条件与在一起，安全的那一侧永远是默认值。
 const communityStaticActive = COMMUNITY_STATIC_PAGES && fs.existsSync("./src/data/community");
 
-// 静态页覆盖到哪条 id 为止。提示词 id 单调递增，所以「id <= 水位线」等价于「有静态页」。
-// ?id= 壳靠它判断 canonical 该不该指向静态页：列表页最新的条目正是上次构建之后才提交的，
-// 实测 /community-prompt/15501 是 404 而 ?id=15501 是 200 —— 没有这条水位线，
-// 那批最新条目的 canonical 会全部指向 404。
-const communityStaticMaxId = communityStaticActive
-  ? fs
-      .readdirSync("./src/data/community")
-      .reduce((max, f) => (/^(\d+)\.json$/.test(f) ? Math.max(max, parseInt(f, 10)) : max), 0)
-  : 0;
 
 // 构建日期取 HEAD commit 时间而非 new Date()：
 // Docusaurus 对每个 locale 构建都会重新求值本 config，new Date() 会让 18 个 locale 的
@@ -90,7 +81,6 @@ const config = {
     buildDate,
     // 运行时读它决定社区详情页链接与 canonical 的形态，见 src/utils/i18n.ts
     communityStaticPages: communityStaticActive,
-    communityStaticMaxId,
   },
 
   // defaultLocale / locales 来自 scripts/i18nLocales.mjs（单一数据源，与分段构建共用）。

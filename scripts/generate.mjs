@@ -77,3 +77,5 @@ remote("genCommunitySnapshot.mjs", "snapshot");
 // 社区提示词全量静态化的数据侧：增量抓正文到 src/data/community/。
 // 路由那一半在 plugin-community-pages.js 里（构建期直接 addRoute，不生成薄壳文件）。
 remote("genCommunityData.mjs", "community-data");
+// 选品必须在抓取之后：它读语料算出哪些 id 出静态页（EdgeOne 有 20000 文件上限）
+await local("genCommunitySelection.mjs", "community-select");

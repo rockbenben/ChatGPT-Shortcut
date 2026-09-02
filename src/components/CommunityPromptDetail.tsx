@@ -13,9 +13,15 @@ interface CommunityPromptDetailProps {
    * 会传；?id= 的 CSR 壳不传，行为与静态化之前一致。
    */
   initialPrompt?: CommunityPrompt;
+  /**
+   * 出了静态页的 id 全集，只有 ?id= 壳会传（src/pages/community-prompt.tsx）。
+   * 壳靠它决定 canonical 要不要指向静态页 —— 选品之后「有没有静态页」不再能用
+   * id 水位线推断（选中的 id 是离散的），必须查表。
+   */
+  staticIds?: number[];
 }
 
-function CommunityPromptDetailInner({ initialPrompt }: CommunityPromptDetailProps) {
+function CommunityPromptDetailInner({ initialPrompt, staticIds }: CommunityPromptDetailProps) {
   const location = useLocation();
   const { message: messageApi } = App.useApp();
   const { userAuth } = useContext(AuthContext);
@@ -91,6 +97,10 @@ function CommunityPromptDetailInner({ initialPrompt }: CommunityPromptDetailProp
     };
   }, [promptId, isRefreshOnly]);
 
+  // 本页对应的 URL 是否有静态页：静态页自己当然有；?id= 壳查选品表。
+  const staticIdSet = useMemo(() => (staticIds ? new Set(staticIds) : null), [staticIds]);
+  const hasStaticPage = !!initialPrompt || (promptId != null && !!staticIdSet?.has(promptId));
+
   // 投票：optimistic UI + 后端真实计数回填 + 失败回滚
   const sessionVotedIdsRef = useRef<Set<string>>(new Set());
 
@@ -143,12 +153,12 @@ function CommunityPromptDetailInner({ initialPrompt }: CommunityPromptDetailProp
     [prompt, messageApi, userAuth],
   );
 
-  return <CommunityPromptPage prompt={prompt} loading={loading} error={error} onVote={handleVote} />;
+  return <CommunityPromptPage prompt={prompt} loading={loading} error={error} onVote={handleVote} hasStaticPage={hasStaticPage} />;
 }
 
-export default function CommunityPromptDetail({ initialPrompt }: CommunityPromptDetailProps = {}) {
+export default function CommunityPromptDetail({ initialPrompt, staticIds }: CommunityPromptDetailProps = {}) {
   // key：useState(initialPrompt) 的初始值只在挂载时取一次。静态页之间客户端跳转
   // （/community-prompt/1 → /2）若路由层复用了组件实例，会先显示上一条正文再等刷新覆盖。
   // 按 id 换 key 强制重挂，不依赖路由层的实现细节。
-  return <CommunityPromptDetailInner key={initialPrompt?.id ?? "query"} initialPrompt={initialPrompt} />;
+  return <CommunityPromptDetailInner key={initialPrompt?.id ?? "query"} initialPrompt={initialPrompt} staticIds={staticIds} />;
 }

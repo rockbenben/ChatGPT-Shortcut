@@ -1,5 +1,8 @@
 import React from "react";
 import CommunityPromptDetail from "@site/src/components/CommunityPromptDetail";
+// 出了静态页的 id 全集（构建期生成；main/offline 上是空表）。只有本壳需要它：
+// 用来决定 canonical 指不指向静态页。约 10KB，只进本路由的 chunk。
+import staticIds from "@site/src/data/communityStaticIds.json";
 
 // 动态入口（?id= 的 CSR 壳）。静态化之后它的职责收窄为两个：
 //   1) 非默认 locale 的详情页（/en/community-prompt?id=N …）——UGC 正文不随 locale
@@ -19,5 +22,5 @@ import CommunityPromptDetail from "@site/src/components/CommunityPromptDetail";
 // 里 CSR 注入的 per-id canonical/og/title 永远不生效 → 所有 ?id= 页被排除收录。
 // 裸路径（无 id / 无效 id）的 noindex 由 CommunityPromptPage 的错误分支客户端注入。
 export default function CommunityPromptDetailPage() {
-  return <CommunityPromptDetail />;
+  return <CommunityPromptDetail staticIds={staticIds} />;
 }

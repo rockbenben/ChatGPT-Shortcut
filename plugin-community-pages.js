@@ -20,6 +20,12 @@
  * addRoute 让 4409 条路由共用同一个 component chunk（同一个 import 请求 = 同一个 chunk），
  * 没有可复制的东西，上面三条全部不存在。locale 也由本插件直接决定，不依赖 exclude。
  *
+ * ── 页数上限 ──
+ * EdgeOne Pages 单项目最多 20000 个文件，每个静态页占 2 个（HTML + 它的 JSON chunk）。
+ * 2026-09-02 全量 4409 页时产物 23044 个文件，EdgeOne 只回一句
+ * "File count exceeds project limit" 就整个部署失败、线上静默停在上一版。
+ * 现在由 scripts/genCommunitySelection.mjs 选品封顶，并由 scripts/buildPhased.mjs 兜底断言。
+ *
  * ── 只注册默认 locale ──
  * UGC 正文不随 locale 翻译，18 份只差界面语言，不值 18 倍的构建代价。
  * 其余 locale 继续走 src/pages/community-prompt.tsx 的 ?id= CSR 壳，行为完全不变。
@@ -27,18 +33,21 @@
 const fs = require("fs");
 const path = require("path");
 
+const SELECTION = "src/data/communityStaticIds.json";
 const DATA_DIR = "src/data/community";
 
-/** 落盘的正文文件名（`<id>.json`）即 id 全集；_manifest.json 是抓取器的增量状态，跳过。 */
+/**
+ * 出静态页的 id 由 scripts/genCommunitySelection.mjs 决定，不是语料全集 ——
+ * EdgeOne Pages 单项目 20000 文件上限，全量 4409 页会超。见该脚本文件头的实测账。
+ */
 function readIds(siteDir) {
-  const dir = path.join(siteDir, DATA_DIR);
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .map((f) => /^(\d+)\.json$/.exec(f))
-    .filter(Boolean)
-    .map((m) => Number(m[1]))
-    .sort((a, b) => a - b);
+  try {
+    const ids = JSON.parse(fs.readFileSync(path.join(siteDir, SELECTION), "utf8"));
+    // 选品表可能比语料新/旧一步，正文不在就跳过，否则构建期 Module not found
+    return ids.filter((id) => Number.isInteger(id) && fs.existsSync(path.join(siteDir, DATA_DIR, `${id}.json`)));
+  } catch {
+    return [];
+  }
 }
 
 module.exports = function communityPagesPlugin(context, options = {}) {

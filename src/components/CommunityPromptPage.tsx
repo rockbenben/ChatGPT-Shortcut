@@ -26,6 +26,8 @@ interface CommunityPromptPageProps {
   loading?: boolean;
   error?: Error | null;
   onVote?: (id: number, action: "upvote" | "downvote") => void;
+  /** 该条是否有构建期静态页（由 CommunityPromptDetail 算好传入），决定 canonical 形态 */
+  hasStaticPage?: boolean;
 }
 
 // Card 容器复用：6px hairline，与 PromptCard 同家族
@@ -43,7 +45,7 @@ const monoNum: React.CSSProperties = { fontVariantNumeric: "tabular-nums" };
 const Eyebrow = ({ children }: { children: React.ReactNode }) => <span className="comp-sheet-eyebrow">{children}</span>;
 const Dot = () => <span style={{ opacity: 0.5 }}>·</span>;
 
-function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPromptPageProps) {
+function CommunityPromptPage({ prompt, loading, error, onVote, hasStaticPage }: CommunityPromptPageProps) {
   const { userAuth } = useContext(AuthContext);
   const { message: messageApi } = App.useApp();
   const { siteConfig, i18n } = useDocusaurusContext();
@@ -177,12 +179,12 @@ function CommunityPromptPage({ prompt, loading, error, onVote }: CommunityPrompt
   // 站内卡片链接**故意仍用 ?id=**：列表页最新的条目正是上次构建之后才出现、还没有静态页的，
   // 链过去就是 404；而卡片点击是客户端路由，CrUX 不计，静态页对它没有收益。
   // 开关关闭 / 非默认 locale / 读不到 customFields → 自指 ?id=，与静态化之前完全一致。
-  // id 必须落在构建期水位线之内：上次构建之后新提交的条目还没有静态页，
-  // 指过去就是 canonical 到 404（实测过 /community-prompt/15501）。
-  const staticMaxId = Number(siteConfig.customFields?.communityStaticMaxId ?? 0);
-  const hasStaticPage = siteConfig.customFields?.communityStaticPages === true && i18n.currentLocale === i18n.defaultLocale && prompt.id <= staticMaxId;
+  // 静态页只在默认 locale 存在，且只有被选中的那 2000 条有（EdgeOne 20000 文件上限，
+  // 见 scripts/genCommunitySelection.mjs）。没静态页就自指 ?id=，
+  // 否则就是 canonical 到 404 —— 实测踩过 /community-prompt/15501。
+  const canonicalToStatic = hasStaticPage === true && siteConfig.customFields?.communityStaticPages === true && i18n.currentLocale === i18n.defaultLocale;
   const localePrefix = i18n.currentLocale === i18n.defaultLocale ? "" : `/${i18n.currentLocale}`;
-  const canonicalUrl = `${siteConfig.url}${localePrefix}${hasStaticPage ? `/community-prompt/${prompt.id}` : `/community-prompt?id=${prompt.id}`}`;
+  const canonicalUrl = `${siteConfig.url}${localePrefix}${canonicalToStatic ? `/community-prompt/${prompt.id}` : `/community-prompt?id=${prompt.id}`}`;
 
   return (
     <Layout title={seoTitle} description={seoDescription}>
