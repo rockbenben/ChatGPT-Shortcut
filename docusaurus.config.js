@@ -142,6 +142,35 @@ const config = {
     ],
   ],
   plugins: [
+    // Docusaurus 对 **server 编译**关死了 splitChunks（node_modules/@docusaurus/core/lib/
+    // webpack/base.js: `splitChunks: isServer ? false : {...}`），于是每个异步路由 chunk
+    // 都把 antd / @ant-design/icons / react 各复制一份。
+    // 实测（zh-Hans 单 locale ×3，热缓存）：16.0s → 12.1s，__server 峰值 1257MB → 21MB。
+    // 产物等价，只是主包多 44 字节（Docusaurus 把插件注册表写进客户端站点元数据）。
+    // __server 是 SSG 中间产物，构建结束即删，不进 build 输出。
+    function serverSplitChunksPlugin() {
+      return {
+        name: "server-split-chunks",
+        configureWebpack(_config, isServer) {
+          if (!isServer) return {};
+          return {
+            optimization: {
+              splitChunks: {
+                chunks: "all",
+                // 默认 20KB 起分；这里要的是「被两个以上路由用到就抽出去」，
+                // 门槛设 0 才能把 antd 里成百上千个小模块也收进共享 chunk。
+                minSize: 0,
+                cacheGroups: {
+                  default: false,
+                  defaultVendors: false,
+                  serverShared: { name: "server-shared", minChunks: 2, priority: 10, reuseExistingChunk: true },
+                },
+              },
+            },
+          };
+        },
+      };
+    },
     require.resolve("./plugin-gen-geo"),
     // theme-classic 无条件把 lib/prism-include-languages.js 注册成 client module（见其
     // getClientModules），client module 走 eager 入口，于是那句 `import { Prism } from
