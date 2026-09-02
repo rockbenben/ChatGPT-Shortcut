@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchatgpt_shortcut=self.webpackChunkchatgpt_shortcut||[]).push([["63426"],{288104(t){t.exports=JSON.parse('{"id":13189,"title":"2d to 3d","description":"WFor making 2d layout into 3d layout without changing any things in the layout ","owner":"reemsuhry","upvotes":1,"downvotes":1,"upvoteDifference":0,"updatedAt":"2026-05-18T06:14:19.394Z"}')}}]);
